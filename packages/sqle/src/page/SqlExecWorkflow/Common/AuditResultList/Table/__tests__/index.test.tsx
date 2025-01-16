@@ -3,7 +3,10 @@ import { AuditResultTableProps } from '../index.type';
 import { superRender } from '../../../../../../testUtils/customRender';
 import { fireEvent, act, cleanup, screen } from '@testing-library/react';
 import { getAuditTaskSQLsV2FilterAuditLevelEnum } from '@actiontech/shared/lib/api/sqle/service/task/index.enum';
-import { createSpyFailResponse } from '@actiontech/shared/lib/testUtil/mockApi';
+import {
+  createSpyErrorResponse,
+  createSpyFailResponse
+} from '@actiontech/shared/lib/testUtil/mockApi';
 import {
   getBySelector,
   getAllBySelector
@@ -21,6 +24,7 @@ import {
 import EventEmitter from '../../../../../../utils/EventEmitter';
 import EmitterKey from '../../../../../../data/EmitterKey';
 import task from '../../../../../../testUtils/mockApi/task';
+import { AuditTaskSQLsData } from '../../../../../../testUtils/mockApi/execWorkflow/data';
 
 jest.mock('react-redux', () => {
   return {
@@ -77,6 +81,7 @@ describe('sqle/ExecWorkflow/Common/AuditResultList/List', () => {
   });
 
   it('render snap when get table data', async () => {
+    const updateTaskRecordCountSpy = jest.fn();
     const openSpy = jest.spyOn(window, 'open').mockImplementation(() => null);
     const { baseElement } = customRender({
       noDuplicate: true,
@@ -84,11 +89,6 @@ describe('sqle/ExecWorkflow/Common/AuditResultList/List', () => {
       projectID: 'projectID',
       auditLevelFilterValue: getAuditTaskSQLsV2FilterAuditLevelEnum.normal
     });
-
-    await act(async () => jest.advanceTimersByTime(500));
-    expect(baseElement).toMatchSnapshot();
-    await act(async () => jest.advanceTimersByTime(2600));
-    expect(baseElement).toMatchSnapshot();
     expect(requestGetAuditTaskSQLs).toHaveBeenCalled();
     expect(requestGetAuditTaskSQLs).toHaveBeenCalledWith({
       filter_audit_level: 'normal',
@@ -97,6 +97,9 @@ describe('sqle/ExecWorkflow/Common/AuditResultList/List', () => {
       page_size: '20',
       task_id: 'taskID'
     });
+    await act(async () => jest.advanceTimersByTime(3000));
+    expect(baseElement).toMatchSnapshot();
+    expect(updateTaskRecordCountSpy).toHaveBeenCalledTimes(0);
 
     const analyzeBtn = screen.getAllByText('分 析');
     expect(analyzeBtn.length).toBe(1);
@@ -389,6 +392,7 @@ describe('sqle/ExecWorkflow/Common/AuditResultList/List', () => {
         InstanceTipResV1SupportedBackupStrategyEnum.reverse_sql
       ]
     });
+
     await act(async () => jest.advanceTimersByTime(3000));
     expect(requestGetAuditTaskSQLs).toHaveBeenCalledTimes(2);
 
@@ -397,5 +401,62 @@ describe('sqle/ExecWorkflow/Common/AuditResultList/List', () => {
       await jest.advanceTimersByTime(3000);
     });
     expect(requestGetAuditTaskSQLs).toHaveBeenCalledTimes(3);
+  });
+
+  it('should call onSuccess when request succeed', async () => {
+    const updateTaskRecordCountSpy = jest.fn();
+    const updateTaskAuditRuleExceptionStatusSpy = jest.fn();
+    customRender({
+      noDuplicate: true,
+      taskID: 'taskID',
+      projectID: 'projectID',
+      auditLevelFilterValue: null,
+      allowSwitchBackupPolicy: true,
+      supportedBackupPolicies: [
+        InstanceTipResV1SupportedBackupStrategyEnum.reverse_sql
+      ],
+      updateTaskRecordCount: updateTaskRecordCountSpy,
+      updateTaskAuditRuleExceptionStatus: updateTaskAuditRuleExceptionStatusSpy
+    });
+
+    await act(async () => jest.advanceTimersByTime(3000));
+    expect(updateTaskRecordCountSpy).toHaveBeenCalledTimes(1);
+    expect(updateTaskRecordCountSpy).toHaveBeenNthCalledWith(1, 'taskID', 1);
+    expect(updateTaskAuditRuleExceptionStatusSpy).toHaveBeenCalledTimes(1);
+    expect(updateTaskAuditRuleExceptionStatusSpy).toHaveBeenNthCalledWith(
+      1,
+      AuditTaskSQLsData
+    );
+  });
+
+  it('should call onError when request fails', async () => {
+    requestGetAuditTaskSQLs.mockImplementation(() =>
+      createSpyErrorResponse({})
+    );
+
+    const updateTaskRecordCountSpy = jest.fn();
+    const updateTaskAuditRuleExceptionStatusSpy = jest.fn();
+    customRender({
+      noDuplicate: true,
+      taskID: 'taskID',
+      projectID: 'projectID',
+      auditLevelFilterValue: null,
+      allowSwitchBackupPolicy: true,
+      supportedBackupPolicies: [
+        InstanceTipResV1SupportedBackupStrategyEnum.reverse_sql
+      ],
+      updateTaskRecordCount: updateTaskRecordCountSpy,
+      updateTaskAuditRuleExceptionStatus: updateTaskAuditRuleExceptionStatusSpy
+    });
+
+    await act(async () => jest.advanceTimersByTime(3000));
+
+    expect(updateTaskRecordCountSpy).toHaveBeenCalledTimes(1);
+    expect(updateTaskRecordCountSpy).toHaveBeenNthCalledWith(1, 'taskID', 0);
+    expect(updateTaskAuditRuleExceptionStatusSpy).toHaveBeenCalledTimes(1);
+    expect(updateTaskAuditRuleExceptionStatusSpy).toHaveBeenNthCalledWith(
+      1,
+      []
+    );
   });
 });

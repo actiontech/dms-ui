@@ -39,6 +39,182 @@ export const AuditTaskSQLsMockData: IAuditTaskSQLResV2[] = [
   }
 ];
 
+export const AuditTaskSQLsMockDataWithExceptionRule: IAuditTaskSQLResV2[] = [
+  {
+    exec_sql_id: 4658,
+    number: 1,
+    exec_sql:
+      'create table "77_TABLE_2"\r\n(\r\nID BIGINT  not null  unique ,\r\n\tCOLUMN_1 CHAR(10),\r\n\tCOLUMN_2 CHAR(10),\r\n\tprimary key(ID)\r\n);',
+    sql_source_file: '',
+    sql_start_line: 1,
+    audit_result: [
+      {
+        level: 'error',
+        message: 'unique索引必须使用固定前缀',
+        rule_name: 'Oracle_013',
+        db_type: 'DM',
+        i18n_audit_result_info: {
+          zh: {
+            Message: 'unique索引必须使用固定前缀'
+          }
+        }
+      },
+      {
+        level: 'warn',
+        message: '表建议添加注释',
+        rule_name: 'Oracle_025',
+        db_type: 'DM',
+        i18n_audit_result_info: {
+          zh: {
+            Message: '表建议添加注释'
+          }
+        }
+      },
+      {
+        level: 'warn',
+        message: '列建议添加注释',
+        rule_name: 'Oracle_026',
+        db_type: 'DM',
+        i18n_audit_result_info: {
+          zh: {
+            Message: '列建议添加注释'
+          }
+        }
+      },
+      {
+        level: 'error',
+        message: '创建表时未指定表空间',
+        rule_name: 'Oracle_028',
+        db_type: 'DM',
+        i18n_audit_result_info: {
+          zh: {
+            Message: '创建表时未指定表空间'
+          }
+        }
+      },
+      {
+        level: 'audit_execution_error',
+        message:
+          'Audit规则异常：[数据库对象命名只能使用英文、下划线或数字，首字母必须是英文]解析错误;java.lang.NullPointerException\n\tat com.actiontech.sqle.dmplugin.common.rulehandler.Rule29$ObjectNameParserListener.a(Rule29.java:110)\n\tat com.actiontech.sqle.dmplugin.common.antlr4.PlSqlParser$Create_tableContext.enterRule(PlSqlParser.java:51260)\n\tat org.antlr.v4.runtime.tree.ParseTreeWalker.enterRule(ParseTreeWalker.java:50)\n\tat org.antlr.v4.runtime.tree.ParseTreeWalker.walk(ParseTreeWalker.java:33)\n\tat org.antlr.v4.runtime.tree.ParseTreeWalker.walk(ParseTreeWalker.java:36)\n\tat org.antlr.v4.runtime.tree.ParseTreeWalker.walk(ParseTreeWalker.java:36)\n\tat com.actiontech.sqle.dmplugin.common.rulehandler.Rule29.a(Rule29.java:68)\n\tat com.actiontech.sqle.dmplugin.common.grpcimpl.DriverImpl.a(DriverImpl.java:906)\n\tat com.actiontech.oracleplugin.grpc.DriverGrpc$MethodHandlers.invoke(DriverGrpc.java:1433)\n\tat io.grpc.stub.ServerCalls$UnaryServerCallHandler$UnaryServerCallListener.onHalfClose(ServerCalls.java:180)\n\tat io.grpc.internal.ServerCallImpl$ServerStreamListenerImpl.halfClosed(ServerCallImpl.java:331)\n\tat io.grpc.internal.ServerImpl$JumpToApplicationThreadServerStreamListener$1HalfClosed.runInContext(ServerImpl.java:814)\n\tat io.grpc.internal.ContextRunnable.run(ContextRunnable.java:37)\n\tat io.grpc.internal.SerializingExecutor.run(SerializingExecutor.java:123)\n\tat java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)\n\tat java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)\n\tat java.lang.Thread.run(Thread.java:750)\n',
+        rule_name: 'Oracle_029',
+        db_type: 'DM',
+        i18n_audit_result_info: {
+          zh: {
+            Message:
+              'Audit规则异常：[数据库对象命名只能使用英文、下划线或数字，首字母必须是英文]解析错误;java.lang.NullPointerException\n\tat com.actiontech.sqle.dmplugin.common.rulehandler.Rule29$ObjectNameParserListener.a(Rule29.java:110)\n\tat com.actiontech.sqle.dmplugin.common.antlr4.PlSqlParser$Create_tableContext.enterRule(PlSqlParser.java:51260)\n\tat org.antlr.v4.runtime.tree.ParseTreeWalker.enterRule(ParseTreeWalker.java:50)\n\tat org.antlr.v4.runtime.tree.ParseTreeWalker.walk(ParseTreeWalker.java:33)\n\tat org.antlr.v4.runtime.tree.ParseTreeWalker.walk(ParseTreeWalker.java:36)\n\tat org.antlr.v4.runtime.tree.ParseTreeWalker.walk(ParseTreeWalker.java:36)\n\tat com.actiontech.sqle.dmplugin.common.rulehandler.Rule29.a(Rule29.java:68)\n\tat com.actiontech.sqle.dmplugin.common.grpcimpl.DriverImpl.a(DriverImpl.java:906)\n\tat com.actiontech.oracleplugin.grpc.DriverGrpc$MethodHandlers.invoke(DriverGrpc.java:1433)\n\tat io.grpc.stub.ServerCalls$UnaryServerCallHandler$UnaryServerCallListener.onHalfClose(ServerCalls.java:180)\n\tat io.grpc.internal.ServerCallImpl$ServerStreamListenerImpl.halfClosed(ServerCallImpl.java:331)\n\tat io.grpc.internal.ServerImpl$JumpToApplicationThreadServerStreamListener$1HalfClosed.runInContext(ServerImpl.java:814)\n\tat io.grpc.internal.ContextRunnable.run(ContextRunnable.java:37)\n\tat io.grpc.internal.SerializingExecutor.run(SerializingExecutor.java:123)\n\tat java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)\n\tat java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)\n\tat java.lang.Thread.run(Thread.java:750)\n'
+          }
+        }
+      },
+      {
+        level: 'audit_execution_error',
+        message:
+          'Audit规则异常：[数据库对象命名只能使用英文、下划线或数字，首字母必须是英文]解析错误;java.lang.NullPointerException\n\tat com.actiontech.sqle.dmplugin.common.rulehandler.Rule29$ObjectNameParserListener.a(Rule29.java:110)\n\tat com.actiontech.sqle.dmplugin.common.antlr4.PlSqlParser$Create_tableContext.enterRule(PlSqlParser.java:51260)\n\tat org.antlr.v4.runtime.tree.ParseTreeWalker.enterRule(ParseTreeWalker.java:50)\n\tat org.antlr.v4.runtime.tree.ParseTreeWalker.walk(ParseTreeWalker.java:33)\n\tat org.antlr.v4.runtime.tree.ParseTreeWalker.walk(ParseTreeWalker.java:36)\n\tat org.antlr.v4.runtime.tree.ParseTreeWalker.walk(ParseTreeWalker.java:36)\n\tat com.actiontech.sqle.dmplugin.common.rulehandler.Rule29.a(Rule29.java:68)\n\tat com.actiontech.sqle.dmplugin.common.grpcimpl.DriverImpl.a(DriverImpl.java:906)\n\tat com.actiontech.oracleplugin.grpc.DriverGrpc$MethodHandlers.invoke(DriverGrpc.java:1433)\n\tat io.grpc.stub.ServerCalls$UnaryServerCallHandler$UnaryServerCallListener.onHalfClose(ServerCalls.java:180)\n\tat io.grpc.internal.ServerCallImpl$ServerStreamListenerImpl.halfClosed(ServerCallImpl.java:331)\n\tat io.grpc.internal.ServerImpl$JumpToApplicationThreadServerStreamListener$1HalfClosed.runInContext(ServerImpl.java:814)\n\tat io.grpc.internal.ContextRunnable.run(ContextRunnable.java:37)\n\tat io.grpc.internal.SerializingExecutor.run(SerializingExecutor.java:123)\n\tat java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)\n\tat java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)\n\tat java.lang.Thread.run(Thread.java:750)\n',
+        rule_name: 'Oracle_029',
+        db_type: 'DM',
+        i18n_audit_result_info: {
+          zh: {
+            Message:
+              'Audit规则异常：[数据库对象命名只能使用英文、下划线或数字，首字母必须是英文]解析错误;java.lang.NullPointerException\n\tat com.actiontech.sqle.dmplugin.common.rulehandler.Rule29$ObjectNameParserListener.a(Rule29.java:110)\n\tat com.actiontech.sqle.dmplugin.common.antlr4.PlSqlParser$Create_tableContext.enterRule(PlSqlParser.java:51260)\n\tat org.antlr.v4.runtime.tree.ParseTreeWalker.enterRule(ParseTreeWalker.java:50)\n\tat org.antlr.v4.runtime.tree.ParseTreeWalker.walk(ParseTreeWalker.java:33)\n\tat org.antlr.v4.runtime.tree.ParseTreeWalker.walk(ParseTreeWalker.java:36)\n\tat org.antlr.v4.runtime.tree.ParseTreeWalker.walk(ParseTreeWalker.java:36)\n\tat com.actiontech.sqle.dmplugin.common.rulehandler.Rule29.a(Rule29.java:68)\n\tat com.actiontech.sqle.dmplugin.common.grpcimpl.DriverImpl.a(DriverImpl.java:906)\n\tat com.actiontech.oracleplugin.grpc.DriverGrpc$MethodHandlers.invoke(DriverGrpc.java:1433)\n\tat io.grpc.stub.ServerCalls$UnaryServerCallHandler$UnaryServerCallListener.onHalfClose(ServerCalls.java:180)\n\tat io.grpc.internal.ServerCallImpl$ServerStreamListenerImpl.halfClosed(ServerCallImpl.java:331)\n\tat io.grpc.internal.ServerImpl$JumpToApplicationThreadServerStreamListener$1HalfClosed.runInContext(ServerImpl.java:814)\n\tat io.grpc.internal.ContextRunnable.run(ContextRunnable.java:37)\n\tat io.grpc.internal.SerializingExecutor.run(SerializingExecutor.java:123)\n\tat java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)\n\tat java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)\n\tat java.lang.Thread.run(Thread.java:750)\n'
+          }
+        }
+      },
+      {
+        level: 'warn',
+        message: '建议表名和关键字大写',
+        rule_name: 'Oracle_033',
+        db_type: 'DM',
+        i18n_audit_result_info: {
+          zh: {
+            Message: '建议表名和关键字大写'
+          }
+        }
+      },
+      {
+        level: 'warn',
+        message:
+          '建表DDL必须包含创建时间字段且默认值为SYSDATE，创建时间字段名: CREATE_TIME',
+        rule_name: 'Oracle_048',
+        db_type: 'DM',
+        i18n_audit_result_info: {
+          zh: {
+            Message:
+              '建表DDL必须包含创建时间字段且默认值为SYSDATE，创建时间字段名: CREATE_TIME'
+          }
+        }
+      },
+      {
+        level: 'warn',
+        message:
+          '建表DDL必须包含更新时间字段且默认值为SYSDATE，更新时间字段名: UPDATE_TIME',
+        rule_name: 'Oracle_049',
+        db_type: 'DM',
+        i18n_audit_result_info: {
+          zh: {
+            Message:
+              '建表DDL必须包含更新时间字段且默认值为SYSDATE，更新时间字段名: UPDATE_TIME'
+          }
+        }
+      }
+    ],
+    audit_level: 'audit_execution_error',
+    audit_status: 'finished',
+    exec_result: '',
+    exec_status: 'initialized',
+    description: '',
+    sql_type: 'ddl',
+    backup_strategy_tip: '',
+    backup_result: ''
+  }
+];
+
+export const AuditTaskSQLsMockDataWithOnlyExceptionRule: IAuditTaskSQLResV2[] =
+  [
+    {
+      exec_sql_id: 4658,
+      number: 1,
+      exec_sql:
+        'create table "77_TABLE_2"\r\n(\r\nID BIGINT  not null  unique ,\r\n\tCOLUMN_1 CHAR(10),\r\n\tCOLUMN_2 CHAR(10),\r\n\tprimary key(ID)\r\n);',
+      sql_source_file: '',
+      sql_start_line: 1,
+      audit_result: [
+        {
+          level: 'audit_execution_error',
+          message:
+            'Audit规则异常：[数据库对象命名只能使用英文、下划线或数字，首字母必须是英文]解析错误;java.lang.NullPointerException\n\tat com.actiontech.sqle.dmplugin.common.rulehandler.Rule29$ObjectNameParserListener.a(Rule29.java:110)\n\tat com.actiontech.sqle.dmplugin.common.antlr4.PlSqlParser$Create_tableContext.enterRule(PlSqlParser.java:51260)\n\tat org.antlr.v4.runtime.tree.ParseTreeWalker.enterRule(ParseTreeWalker.java:50)\n\tat org.antlr.v4.runtime.tree.ParseTreeWalker.walk(ParseTreeWalker.java:33)\n\tat org.antlr.v4.runtime.tree.ParseTreeWalker.walk(ParseTreeWalker.java:36)\n\tat org.antlr.v4.runtime.tree.ParseTreeWalker.walk(ParseTreeWalker.java:36)\n\tat com.actiontech.sqle.dmplugin.common.rulehandler.Rule29.a(Rule29.java:68)\n\tat com.actiontech.sqle.dmplugin.common.grpcimpl.DriverImpl.a(DriverImpl.java:906)\n\tat com.actiontech.oracleplugin.grpc.DriverGrpc$MethodHandlers.invoke(DriverGrpc.java:1433)\n\tat io.grpc.stub.ServerCalls$UnaryServerCallHandler$UnaryServerCallListener.onHalfClose(ServerCalls.java:180)\n\tat io.grpc.internal.ServerCallImpl$ServerStreamListenerImpl.halfClosed(ServerCallImpl.java:331)\n\tat io.grpc.internal.ServerImpl$JumpToApplicationThreadServerStreamListener$1HalfClosed.runInContext(ServerImpl.java:814)\n\tat io.grpc.internal.ContextRunnable.run(ContextRunnable.java:37)\n\tat io.grpc.internal.SerializingExecutor.run(SerializingExecutor.java:123)\n\tat java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)\n\tat java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)\n\tat java.lang.Thread.run(Thread.java:750)\n',
+          rule_name: 'Oracle_029',
+          db_type: 'DM',
+          i18n_audit_result_info: {
+            zh: {
+              Message:
+                'Audit规则异常：[数据库对象命名只能使用英文、下划线或数字，首字母必须是英文]解析错误;java.lang.NullPointerException\n\tat com.actiontech.sqle.dmplugin.common.rulehandler.Rule29$ObjectNameParserListener.a(Rule29.java:110)\n\tat com.actiontech.sqle.dmplugin.common.antlr4.PlSqlParser$Create_tableContext.enterRule(PlSqlParser.java:51260)\n\tat org.antlr.v4.runtime.tree.ParseTreeWalker.enterRule(ParseTreeWalker.java:50)\n\tat org.antlr.v4.runtime.tree.ParseTreeWalker.walk(ParseTreeWalker.java:33)\n\tat org.antlr.v4.runtime.tree.ParseTreeWalker.walk(ParseTreeWalker.java:36)\n\tat org.antlr.v4.runtime.tree.ParseTreeWalker.walk(ParseTreeWalker.java:36)\n\tat com.actiontech.sqle.dmplugin.common.rulehandler.Rule29.a(Rule29.java:68)\n\tat com.actiontech.sqle.dmplugin.common.grpcimpl.DriverImpl.a(DriverImpl.java:906)\n\tat com.actiontech.oracleplugin.grpc.DriverGrpc$MethodHandlers.invoke(DriverGrpc.java:1433)\n\tat io.grpc.stub.ServerCalls$UnaryServerCallHandler$UnaryServerCallListener.onHalfClose(ServerCalls.java:180)\n\tat io.grpc.internal.ServerCallImpl$ServerStreamListenerImpl.halfClosed(ServerCallImpl.java:331)\n\tat io.grpc.internal.ServerImpl$JumpToApplicationThreadServerStreamListener$1HalfClosed.runInContext(ServerImpl.java:814)\n\tat io.grpc.internal.ContextRunnable.run(ContextRunnable.java:37)\n\tat io.grpc.internal.SerializingExecutor.run(SerializingExecutor.java:123)\n\tat java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)\n\tat java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)\n\tat java.lang.Thread.run(Thread.java:750)\n'
+            }
+          }
+        },
+        {
+          level: 'audit_execution_error',
+          message:
+            'Audit规则异常：[数据库对象命名只能使用英文、下划线或数字，首字母必须是英文]解析错误;java.lang.NullPointerException\n\tat com.actiontech.sqle.dmplugin.common.rulehandler.Rule29$ObjectNameParserListener.a(Rule29.java:110)\n\tat com.actiontech.sqle.dmplugin.common.antlr4.PlSqlParser$Create_tableContext.enterRule(PlSqlParser.java:51260)\n\tat org.antlr.v4.runtime.tree.ParseTreeWalker.enterRule(ParseTreeWalker.java:50)\n\tat org.antlr.v4.runtime.tree.ParseTreeWalker.walk(ParseTreeWalker.java:33)\n\tat org.antlr.v4.runtime.tree.ParseTreeWalker.walk(ParseTreeWalker.java:36)\n\tat org.antlr.v4.runtime.tree.ParseTreeWalker.walk(ParseTreeWalker.java:36)\n\tat com.actiontech.sqle.dmplugin.common.rulehandler.Rule29.a(Rule29.java:68)\n\tat com.actiontech.sqle.dmplugin.common.grpcimpl.DriverImpl.a(DriverImpl.java:906)\n\tat com.actiontech.oracleplugin.grpc.DriverGrpc$MethodHandlers.invoke(DriverGrpc.java:1433)\n\tat io.grpc.stub.ServerCalls$UnaryServerCallHandler$UnaryServerCallListener.onHalfClose(ServerCalls.java:180)\n\tat io.grpc.internal.ServerCallImpl$ServerStreamListenerImpl.halfClosed(ServerCallImpl.java:331)\n\tat io.grpc.internal.ServerImpl$JumpToApplicationThreadServerStreamListener$1HalfClosed.runInContext(ServerImpl.java:814)\n\tat io.grpc.internal.ContextRunnable.run(ContextRunnable.java:37)\n\tat io.grpc.internal.SerializingExecutor.run(SerializingExecutor.java:123)\n\tat java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)\n\tat java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)\n\tat java.lang.Thread.run(Thread.java:750)\n',
+          rule_name: 'Oracle_029',
+          db_type: 'DM',
+          i18n_audit_result_info: {
+            zh: {
+              Message:
+                'Audit规则异常：[数据库对象命名只能使用英文、下划线或数字，首字母必须是英文]解析错误;java.lang.NullPointerException\n\tat com.actiontech.sqle.dmplugin.common.rulehandler.Rule29$ObjectNameParserListener.a(Rule29.java:110)\n\tat com.actiontech.sqle.dmplugin.common.antlr4.PlSqlParser$Create_tableContext.enterRule(PlSqlParser.java:51260)\n\tat org.antlr.v4.runtime.tree.ParseTreeWalker.enterRule(ParseTreeWalker.java:50)\n\tat org.antlr.v4.runtime.tree.ParseTreeWalker.walk(ParseTreeWalker.java:33)\n\tat org.antlr.v4.runtime.tree.ParseTreeWalker.walk(ParseTreeWalker.java:36)\n\tat org.antlr.v4.runtime.tree.ParseTreeWalker.walk(ParseTreeWalker.java:36)\n\tat com.actiontech.sqle.dmplugin.common.rulehandler.Rule29.a(Rule29.java:68)\n\tat com.actiontech.sqle.dmplugin.common.grpcimpl.DriverImpl.a(DriverImpl.java:906)\n\tat com.actiontech.oracleplugin.grpc.DriverGrpc$MethodHandlers.invoke(DriverGrpc.java:1433)\n\tat io.grpc.stub.ServerCalls$UnaryServerCallHandler$UnaryServerCallListener.onHalfClose(ServerCalls.java:180)\n\tat io.grpc.internal.ServerCallImpl$ServerStreamListenerImpl.halfClosed(ServerCallImpl.java:331)\n\tat io.grpc.internal.ServerImpl$JumpToApplicationThreadServerStreamListener$1HalfClosed.runInContext(ServerImpl.java:814)\n\tat io.grpc.internal.ContextRunnable.run(ContextRunnable.java:37)\n\tat io.grpc.internal.SerializingExecutor.run(SerializingExecutor.java:123)\n\tat java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)\n\tat java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)\n\tat java.lang.Thread.run(Thread.java:750)\n'
+            }
+          }
+        }
+      ],
+      audit_level: 'audit_execution_error',
+      audit_status: 'finished',
+      exec_result: '',
+      exec_status: 'initialized',
+      description: '',
+      sql_type: 'ddl',
+      backup_strategy_tip: '',
+      backup_result: ''
+    }
+  ];
+
 export const workflowTaskDetailMockData = {
   task_id: 'test_task_id',
   instance_name: 'mysql-1',

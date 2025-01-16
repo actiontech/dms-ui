@@ -1,6 +1,6 @@
 import { fireEvent, screen } from '@testing-library/dom';
 import SubmitWorkflowButton from '..';
-import { superRender } from '../../../../../testUtils/customRender';
+import { superRender } from '../../../../../../../testUtils/customRender';
 
 describe('test SubmitWorkflowButton', () => {
   it('handles button click', () => {
@@ -8,7 +8,7 @@ describe('test SubmitWorkflowButton', () => {
 
     const { container } = superRender(
       <SubmitWorkflowButton
-        isConfirmationRequiredForSubmission={false}
+        executeSQLsIsDQL={true}
         loading={false}
         onClick={onClick}
         hasExceptionAuditRule={false}
@@ -20,13 +20,12 @@ describe('test SubmitWorkflowButton', () => {
     expect(onClick).toHaveBeenCalledTimes(1);
   });
 
-  it('displays the confirmation message when isConfirmationRequiredForSubmission is true', async () => {
+  it('displays the tooltip message when executeSQLsIsDQL is false', async () => {
     const onClick = jest.fn();
 
     superRender(
       <SubmitWorkflowButton
-        isConfirmationRequiredForSubmission
-        submitWorkflowConfirmationMessage="Confirmation Message"
+        executeSQLsIsDQL={false}
         loading={false}
         onClick={onClick}
         hasExceptionAuditRule={false}
@@ -35,11 +34,9 @@ describe('test SubmitWorkflowButton', () => {
     fireEvent.click(screen.getByText('提交工单'));
     expect(onClick).not.toHaveBeenCalled();
 
-    await screen.findByText('Confirmation Message');
+    fireEvent.mouseOver(screen.getByText('提交工单'));
 
-    expect(screen.getByText('仍要创建')).toBeInTheDocument();
-    fireEvent.click(screen.getByText('仍要创建'));
-    expect(onClick).toHaveBeenCalledTimes(1);
+    await screen.findByText('仅支持对DQL语句创建导出工单');
   });
 
   it('disables the button when loading prop is true', () => {
@@ -47,7 +44,7 @@ describe('test SubmitWorkflowButton', () => {
 
     superRender(
       <SubmitWorkflowButton
-        isConfirmationRequiredForSubmission={false}
+        executeSQLsIsDQL={true}
         loading={true}
         onClick={onClick}
         hasExceptionAuditRule={false}
@@ -62,8 +59,7 @@ describe('test SubmitWorkflowButton', () => {
 
     superRender(
       <SubmitWorkflowButton
-        isConfirmationRequiredForSubmission
-        submitWorkflowConfirmationMessage="Confirmation Message"
+        executeSQLsIsDQL={false}
         loading={false}
         onClick={onClick}
         hasExceptionAuditRule

@@ -25,7 +25,8 @@ const AuditResultList: React.FC<AuditResultListProps> = ({
   showTaskTab = true,
   allowSwitchBackupPolicy = false,
   onBatchSwitchBackupPolicy,
-  tasksSupportedBackupPolicies
+  tasksSupportedBackupPolicies,
+  updateTaskAuditRuleExceptionStatus
 }) => {
   const { t } = useTranslation();
   const { projectID } = useCurrentProject();
@@ -147,6 +148,7 @@ const AuditResultList: React.FC<AuditResultListProps> = ({
         dbType={currentTask?.instance_db_type}
         allowSwitchBackupPolicy={allowSwitchBackupPolicy}
         supportedBackupPolicies={currentTaskSupportedBackupPolicies}
+        updateTaskAuditRuleExceptionStatus={updateTaskAuditRuleExceptionStatus}
       />
     </AuditResultForCreateWorkflowStyleWrapper>
   );

@@ -3,7 +3,8 @@ import { IListDataExportTaskSQL } from '@actiontech/shared/lib/api/base/service/
 export type AuditResultTableProps = {
   taskID?: string;
   projectID: string;
-  updateExecuteSQLsTypeIsDQL?: (val: boolean) => void;
+  onSuccessGetDataExportTaskSqls?: (taskSqls: IListDataExportTaskSQL[]) => void;
+  onErrorGetDataExportTaskSqls?: () => void;
 };
 
 export type AuditResultDrawerProps = {

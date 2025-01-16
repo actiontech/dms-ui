@@ -45,13 +45,16 @@ export default {
           '目前，支持 SQL 美化的数据库类型有 {{supportType}}。如果未选择数据源或选择的数据源类型尚未得到支持，进行 SQL 美化可能会导致 SQL 语句语法错误。'
       }
     },
+    submit: {
+      buttonText: '提交工单',
+      onlySupportDDLSqls: '仅支持对DQL语句创建导出工单',
+      hasExceptionRule: '当前存在审核规则未被校验，请排除问题后重新触发审核'
+    },
     update: {
       baseTitle: '工单基本信息',
       sourceTitle: '工单导出对象',
       methodTitle: '导出方式',
-      updateInfoAction: '修改工单',
-      submitAction: '提交工单',
-      submitTips: '仅支持对DQL语句创建导出工单'
+      updateInfoAction: '修改工单'
     },
     result: {
       success: '工单创建成功',

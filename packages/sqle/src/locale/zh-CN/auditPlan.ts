@@ -147,6 +147,7 @@ export default {
       action: '分析语句',
       subTitle: {
         result: '审核结果',
+        exception: '执行异常',
         sql: 'SQL语句'
       },
       source: '所在文件',
