@@ -529,6 +529,16 @@ export const SqlRewrittenMockDataUseDDL = {
       ddl_dcl: ''
     },
     {
+      rule_name: '不建议对条件字段使用 NULL 值判断',
+      audit_level: 'notice',
+      type: 'statement',
+      desc: "我们将 `WHERE u.email NOT LIKE CAST('%example%' AS VARCHAR)` 转换为 `WHERE u.email NOT LIKE '%example%'`，这样可以更好地利用索引，避免全表扫描。同时，我们还将移除不必要的 `WITH` 子句，因为它没有违反任何审核规则。\n",
+      rewritten_sql:
+        "WITH tmp AS (\n    SELECT u.id\n    FROM users u\n    JOIN orders o ON u.id = o.user_id AND o.status = 'COMPLETED'\n    JOIN payments p ON u.id = p.user_id\n    WHERE u.created_at \u003e= '2023-01-01' \n      AND u.created_at \u003c '2024-01-01'\n      AND o.amount \u003e 100\n      AND p.status IS NOT NULL\n      AND o.description LIKE '%test%'\n      AND u.email NOT LIKE '%example%'\n)\nSELECT *\nFROM tmp t\nJOIN orders o ON t.id = o.user_id AND o.status = 'COMPLETED'\nJOIN payments p ON t.id = p.user_id\nORDER BY p.created_at DESC, o.amount DESC, p.status DESC, o.description DESC, t.email DESC\nLIMIT 1000 OFFSET 500;\n",
+      ddl_dcl_desc: '',
+      ddl_dcl: ''
+    },
+    {
       rule_name: '不建议使用SELECT *',
       audit_level: 'notice',
       type: 'statement',
@@ -683,6 +693,43 @@ export const SqlRewrittenMockDataWithLogic = {
   ],
   rewritten_sql:
     "WITH random_ids AS (\n    SELECT FLOOR(RAND() * 4999999) + 1 AS id\n    FROM DUAL\n    LIMIT 1000\n),\nfiltered_users AS (\n    SELECT u.id, u.name, u.email, u.created_at\n    FROM users u\n    JOIN orders o ON u.id = o.user_id\n    JOIN payments p ON u.id = p.user_id\n    WHERE o.status = 'COMPLETED'\n    AND o.amount \u003e 100\n    AND p.status IS NOT NULL\n    AND o.description LIKE CONCAT('test%', '')\n    AND u.created_at \u003e= '2023-01-01'\n    AND u.created_at \u003c '2024-01-01'\n    AND u.email LIKE CONCAT('example%', '')\n    AND u.id IN (SELECT id FROM random_ids)\n)\nSELECT *\nFROM filtered_users\nLIMIT 1000 OFFSET 500;\n",
+  rewritten_sql_business_desc:
+    '此SQL查询旨在获取2023年注册的用户中，订单金额超过100且支付状态不为空、订单描述包含“test”、邮箱地址包含“example”的用户信息。此外，结果会根据随机数和支付创建时间降序排列，并最终返回第501到第1500条记录。\n',
+  rewritten_sql_logic_desc:
+    "1. 基础表选择：\n   - 从users表开始，作为主表\n   - 通过JOIN连接orders表获取订单信息\n   - 通过JOIN连接payments表获取支付信息\n\n2. 数据筛选条件：\n   - 用户注册时间限制：created_at在2023年\n   - 订单金额限制：amount大于100\n   - 支付状态不为空：p.status IS NOT NULL\n   - 订单描述包含“test”：o.description LIKE '%test%'\n   - 邮箱地址包含“example”：LOWER(u.email) LIKE '%example%'\n\n3. 连接条件：\n   - users表与orders表通过user_id关联\n   - users表与payments表通过user_id关联\n\n4. 结果排序：\n   - 随机数排序：ORDER BY RAND()\n   - 支付创建时间降序：ORDER BY p.created_at DESC\n\n5. 结果限制：\n   - LIMIT 1000 OFFSET 500：返回第501到第1500条记录\n",
+  business_non_equivalent_desc:
+    '- **记录数的不确定性**: 原始 SQL 使用 `ORDER BY RAND()` 可能会导致记录数的不确定性，因为随机排序可能导致不同的记录被选中。而优化后的 SQL 使用 `u.id IN (SELECT id FROM random_ids)`，虽然也实现了随机选择，但具体的记录选择可能会不同，导致记录数的不确定性。\n- **数据内容的差异**: 由于记录的选择可能不同，因此数据内容也可能不同。\n- **数据顺序的差异**: 虽然两种方法都实现了随机选择，但具体的选择顺序可能会不同，导致数据顺序的差异。'
+} as IRewriteSQLData;
+
+export const SqlRewrittenMockDataWithNotRewriter = {
+  business_desc:
+    '此SQL查询旨在获取2023年注册的用户，其中订单金额超过100，支付状态不为空，订单描述包含"test"，并且邮箱地址包含"example"。最终结果将根据随机数和支付创建时间降序排列，并限制返回1000条记录，跳过前500条。\n',
+  logic_desc:
+    '1. 基础表选择：\n   - 从users表开始，作为主表\n   - 通过JOIN连接orders表获取订单信息\n   - 通过JOIN连接payments表获取支付信息\n\n2. 数据筛选条件：\n   - 用户注册时间限制：created_at在2023年\n   - 订单金额限制：amount大于100\n   - 支付状态不为空：p.status IS NOT NULL\n   - 订单描述包含"test"：o.description LIKE \'%test%\'\n   - 邮箱地址包含"example"：LOWER(u.email) LIKE \'%example%\'\n\n3. 连接条件：\n   - users表和orders表通过user_id关联\n   - users表和payments表通过user_id关联\n\n4. 结果排序：\n   - 首先使用ORDER BY RAND()进行随机排序\n   - 然后根据支付创建时间降序排列：p.created_at DESC\n\n5. 结果限制：\n   - LIMIT 1000 OFFSET 500：跳过前500条记录，返回接下来的1000条记录\n',
+  suggestions: [
+    {
+      rule_name: '不建议LIMIT的偏移OFFSET大于阈值',
+      audit_level: 'error',
+      type: 'statement',
+      desc: '我们将使用WITH表表达式先查询主键ID，再联接获取完整数据。具体步骤如下：\n1. 使用WITH表表达式提取符合条件的用户ID。\n2. 使用提取的用户ID进行关联查询，获取完整的用户、订单和支付信息。\n3. 确保查询结果与原SQL一致，包括结果集的顺序。\n',
+      rewritten_sql:
+        "WITH user_ids AS (\n    SELECT u.id\n    FROM users u\n    JOIN orders o ON u.id = o.user_id AND UPPER(o.status) = 'COMPLETED'\n    JOIN payments p ON u.id = p.user_id\n    WHERE YEAR(u.created_at) = 2023\n    AND o.amount \u003e 100\n    AND p.status IS NOT NULL\n    AND o.description LIKE '%test%'\n    OR LOWER(u.email) LIKE '%example%'\n)\nSELECT *\nFROM users u\nJOIN orders o ON u.id = o.user_id\nJOIN payments p ON u.id = p.user_id\nWHERE u.id IN (SELECT id FROM user_ids)\nORDER BY RAND(), p.created_at DESC\nLIMIT 1000 OFFSET 500;\n",
+      ddl_dcl_desc: '',
+      ddl_dcl: ''
+    },
+    {
+      rule_name: '应避免在 WHERE 条件中使用函数或其他运算符',
+      audit_level: 'warn',
+      type: 'statement',
+      desc: '根据规则“不建议LIMIT的偏移OFFSET大于阈值”重写后的SQL已不再触发本规则\n',
+      rewritten_sql:
+        "WITH user_ids AS (\n    SELECT u.id\n    FROM users u\n    JOIN orders o ON u.id = o.user_id AND UPPER(o.status) = 'COMPLETED'\n    JOIN payments p ON u.id = p.user_id\n    WHERE YEAR(u.created_at) = 2023\n    AND o.amount \u003e 100\n    AND p.status IS NOT NULL\n    AND o.description LIKE '%test%'\n    OR LOWER(u.email) LIKE '%example%'\n)\nSELECT *\nFROM users u\nJOIN orders o ON u.id = o.user_id\nJOIN payments p ON u.id = p.user_id\nWHERE u.id IN (SELECT id FROM user_ids)\nORDER BY RAND(), p.created_at DESC\nLIMIT 1000 OFFSET 500;\n",
+      ddl_dcl_desc: '',
+      ddl_dcl: ''
+    }
+  ],
+  rewritten_sql:
+    "WITH user_ids AS (\n    SELECT u.id\n    FROM users u\n    JOIN orders o ON u.id = o.user_id AND UPPER(o.status) = 'COMPLETED'\n    JOIN payments p ON u.id = p.user_id\n    WHERE YEAR(u.created_at) = 2023\n    AND o.amount \u003e 100\n    AND p.status IS NOT NULL\n    AND o.description LIKE '%test%'\n    OR LOWER(u.email) LIKE '%example%'\n)\nSELECT *\nFROM users u\nJOIN orders o ON u.id = o.user_id\nJOIN payments p ON u.id = p.user_id\nWHERE u.id IN (SELECT id FROM user_ids)\nORDER BY RAND(), p.created_at DESC\nLIMIT 1000 OFFSET 500;\n",
   rewritten_sql_business_desc:
     '此SQL查询旨在获取2023年注册的用户中，订单金额超过100且支付状态不为空、订单描述包含“test”、邮箱地址包含“example”的用户信息。此外，结果会根据随机数和支付创建时间降序排列，并最终返回第501到第1500条记录。\n',
   rewritten_sql_logic_desc:

@@ -47,7 +47,7 @@ exports[`test DataExport/Common/AuditResultList should match snapshot 1`] = `
                       <col />
                       <col />
                       <col
-                        style="width: 164px;"
+                        style="width: 82px;"
                       />
                     </colgroup>
                     <thead
@@ -240,7 +240,7 @@ exports[`test DataExport/Common/AuditResultList should match snapshot 2`] = `
                       <col />
                       <col />
                       <col
-                        style="width: 164px;"
+                        style="width: 82px;"
                       />
                     </colgroup>
                     <thead
@@ -433,7 +433,7 @@ exports[`test DataExport/Common/AuditResultList should match snapshot 3`] = `
                       <col />
                       <col />
                       <col
-                        style="width: 164px;"
+                        style="width: 82px;"
                       />
                     </colgroup>
                     <thead
@@ -622,50 +622,14 @@ exports[`test DataExport/Common/AuditResultList should match snapshot 3`] = `
                           <div
                             class="css-new95e"
                           >
-                            <div
-                              class="ant-space css-dev-only-do-not-override-bj9uhl ant-space-horizontal ant-space-align-center"
+                            <button
+                              class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                              type="button"
                             >
-                              <div
-                                class="ant-space-item"
-                                style="margin-right: 8px;"
-                              >
-                                <button
-                                  class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
-                                  type="button"
-                                >
-                                  <span>
-                                    添加为审核SQL例外
-                                  </span>
-                                </button>
-                              </div>
-                              <div
-                                class="ant-space-item"
-                              >
-                                <button
-                                  class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
-                                  type="button"
-                                >
-                                  <span
-                                    class="ant-btn-icon"
-                                  >
-                                    <svg
-                                      height="18"
-                                      viewBox="0 0 1024 1024"
-                                      width="18"
-                                      xmlns="http://www.w3.org/2000/svg"
-                                    >
-                                      <path
-                                        d="M717.12 274H762c82.842 0 150 67.158 150 150v200c0 82.842-67.158 150-150 150H262c-82.842 0-150-67.158-150-150V424c0-82.842 67.158-150 150-150h44.88l-18.268-109.602c-4.086-24.514 12.476-47.7 36.99-51.786s47.7 12.476 51.786 36.99l20 120q.367 2.21.516 4.398h228.192q.149-2.19.516-4.398l20-120c4.086-24.514 27.272-41.076 51.786-36.99s41.076 27.272 36.99 51.786zM262 364c-33.138 0-60 26.862-60 60v200c0 33.138 26.862 60 60 60h500c33.138 0 60-26.862 60-60V424c0-33.138-26.862-60-60-60zm50 548c-24.852 0-45-20.148-45-45s20.148-45 45-45h400c24.852 0 45 20.148 45 45s-20.148 45-45 45zm-4-428c0-24.852 20.148-45 45-45s45 20.148 45 45v40c0 24.852-20.148 45-45 45s-45-20.148-45-45zm318 0c0-24.852 20.148-45 45-45s45 20.148 45 45v40c0 24.852-20.148 45-45 45s-45-20.148-45-45z"
-                                        fill="#4583FF"
-                                      />
-                                    </svg>
-                                  </span>
-                                  <span>
-                                    SQL合规重写
-                                  </span>
-                                </button>
-                              </div>
-                            </div>
+                              <span>
+                                添加为审核SQL例外
+                              </span>
+                            </button>
                           </div>
                         </td>
                       </tr>
@@ -764,50 +728,14 @@ exports[`test DataExport/Common/AuditResultList should match snapshot 3`] = `
                           <div
                             class="css-new95e"
                           >
-                            <div
-                              class="ant-space css-dev-only-do-not-override-bj9uhl ant-space-horizontal ant-space-align-center"
+                            <button
+                              class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                              type="button"
                             >
-                              <div
-                                class="ant-space-item"
-                                style="margin-right: 8px;"
-                              >
-                                <button
-                                  class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
-                                  type="button"
-                                >
-                                  <span>
-                                    添加为审核SQL例外
-                                  </span>
-                                </button>
-                              </div>
-                              <div
-                                class="ant-space-item"
-                              >
-                                <button
-                                  class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
-                                  type="button"
-                                >
-                                  <span
-                                    class="ant-btn-icon"
-                                  >
-                                    <svg
-                                      height="18"
-                                      viewBox="0 0 1024 1024"
-                                      width="18"
-                                      xmlns="http://www.w3.org/2000/svg"
-                                    >
-                                      <path
-                                        d="M717.12 274H762c82.842 0 150 67.158 150 150v200c0 82.842-67.158 150-150 150H262c-82.842 0-150-67.158-150-150V424c0-82.842 67.158-150 150-150h44.88l-18.268-109.602c-4.086-24.514 12.476-47.7 36.99-51.786s47.7 12.476 51.786 36.99l20 120q.367 2.21.516 4.398h228.192q.149-2.19.516-4.398l20-120c4.086-24.514 27.272-41.076 51.786-36.99s41.076 27.272 36.99 51.786zM262 364c-33.138 0-60 26.862-60 60v200c0 33.138 26.862 60 60 60h500c33.138 0 60-26.862 60-60V424c0-33.138-26.862-60-60-60zm50 548c-24.852 0-45-20.148-45-45s20.148-45 45-45h400c24.852 0 45 20.148 45 45s-20.148 45-45 45zm-4-428c0-24.852 20.148-45 45-45s45 20.148 45 45v40c0 24.852-20.148 45-45 45s-45-20.148-45-45zm318 0c0-24.852 20.148-45 45-45s45 20.148 45 45v40c0 24.852-20.148 45-45 45s-45-20.148-45-45z"
-                                        fill="#4583FF"
-                                      />
-                                    </svg>
-                                  </span>
-                                  <span>
-                                    SQL合规重写
-                                  </span>
-                                </button>
-                              </div>
-                            </div>
+                              <span>
+                                添加为审核SQL例外
+                              </span>
+                            </button>
                           </div>
                         </td>
                       </tr>
@@ -906,50 +834,14 @@ exports[`test DataExport/Common/AuditResultList should match snapshot 3`] = `
                           <div
                             class="css-new95e"
                           >
-                            <div
-                              class="ant-space css-dev-only-do-not-override-bj9uhl ant-space-horizontal ant-space-align-center"
+                            <button
+                              class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                              type="button"
                             >
-                              <div
-                                class="ant-space-item"
-                                style="margin-right: 8px;"
-                              >
-                                <button
-                                  class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
-                                  type="button"
-                                >
-                                  <span>
-                                    添加为审核SQL例外
-                                  </span>
-                                </button>
-                              </div>
-                              <div
-                                class="ant-space-item"
-                              >
-                                <button
-                                  class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
-                                  type="button"
-                                >
-                                  <span
-                                    class="ant-btn-icon"
-                                  >
-                                    <svg
-                                      height="18"
-                                      viewBox="0 0 1024 1024"
-                                      width="18"
-                                      xmlns="http://www.w3.org/2000/svg"
-                                    >
-                                      <path
-                                        d="M717.12 274H762c82.842 0 150 67.158 150 150v200c0 82.842-67.158 150-150 150H262c-82.842 0-150-67.158-150-150V424c0-82.842 67.158-150 150-150h44.88l-18.268-109.602c-4.086-24.514 12.476-47.7 36.99-51.786s47.7 12.476 51.786 36.99l20 120q.367 2.21.516 4.398h228.192q.149-2.19.516-4.398l20-120c4.086-24.514 27.272-41.076 51.786-36.99s41.076 27.272 36.99 51.786zM262 364c-33.138 0-60 26.862-60 60v200c0 33.138 26.862 60 60 60h500c33.138 0 60-26.862 60-60V424c0-33.138-26.862-60-60-60zm50 548c-24.852 0-45-20.148-45-45s20.148-45 45-45h400c24.852 0 45 20.148 45 45s-20.148 45-45 45zm-4-428c0-24.852 20.148-45 45-45s45 20.148 45 45v40c0 24.852-20.148 45-45 45s-45-20.148-45-45zm318 0c0-24.852 20.148-45 45-45s45 20.148 45 45v40c0 24.852-20.148 45-45 45s-45-20.148-45-45z"
-                                        fill="#4583FF"
-                                      />
-                                    </svg>
-                                  </span>
-                                  <span>
-                                    SQL合规重写
-                                  </span>
-                                </button>
-                              </div>
-                            </div>
+                              <span>
+                                添加为审核SQL例外
+                              </span>
+                            </button>
                           </div>
                         </td>
                       </tr>
@@ -1048,50 +940,14 @@ exports[`test DataExport/Common/AuditResultList should match snapshot 3`] = `
                           <div
                             class="css-new95e"
                           >
-                            <div
-                              class="ant-space css-dev-only-do-not-override-bj9uhl ant-space-horizontal ant-space-align-center"
+                            <button
+                              class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                              type="button"
                             >
-                              <div
-                                class="ant-space-item"
-                                style="margin-right: 8px;"
-                              >
-                                <button
-                                  class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
-                                  type="button"
-                                >
-                                  <span>
-                                    添加为审核SQL例外
-                                  </span>
-                                </button>
-                              </div>
-                              <div
-                                class="ant-space-item"
-                              >
-                                <button
-                                  class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
-                                  type="button"
-                                >
-                                  <span
-                                    class="ant-btn-icon"
-                                  >
-                                    <svg
-                                      height="18"
-                                      viewBox="0 0 1024 1024"
-                                      width="18"
-                                      xmlns="http://www.w3.org/2000/svg"
-                                    >
-                                      <path
-                                        d="M717.12 274H762c82.842 0 150 67.158 150 150v200c0 82.842-67.158 150-150 150H262c-82.842 0-150-67.158-150-150V424c0-82.842 67.158-150 150-150h44.88l-18.268-109.602c-4.086-24.514 12.476-47.7 36.99-51.786s47.7 12.476 51.786 36.99l20 120q.367 2.21.516 4.398h228.192q.149-2.19.516-4.398l20-120c4.086-24.514 27.272-41.076 51.786-36.99s41.076 27.272 36.99 51.786zM262 364c-33.138 0-60 26.862-60 60v200c0 33.138 26.862 60 60 60h500c33.138 0 60-26.862 60-60V424c0-33.138-26.862-60-60-60zm50 548c-24.852 0-45-20.148-45-45s20.148-45 45-45h400c24.852 0 45 20.148 45 45s-20.148 45-45 45zm-4-428c0-24.852 20.148-45 45-45s45 20.148 45 45v40c0 24.852-20.148 45-45 45s-45-20.148-45-45zm318 0c0-24.852 20.148-45 45-45s45 20.148 45 45v40c0 24.852-20.148 45-45 45s-45-20.148-45-45z"
-                                        fill="#4583FF"
-                                      />
-                                    </svg>
-                                  </span>
-                                  <span>
-                                    SQL合规重写
-                                  </span>
-                                </button>
-                              </div>
-                            </div>
+                              <span>
+                                添加为审核SQL例外
+                              </span>
+                            </button>
                           </div>
                         </td>
                       </tr>
@@ -1190,50 +1046,14 @@ exports[`test DataExport/Common/AuditResultList should match snapshot 3`] = `
                           <div
                             class="css-new95e"
                           >
-                            <div
-                              class="ant-space css-dev-only-do-not-override-bj9uhl ant-space-horizontal ant-space-align-center"
+                            <button
+                              class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                              type="button"
                             >
-                              <div
-                                class="ant-space-item"
-                                style="margin-right: 8px;"
-                              >
-                                <button
-                                  class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
-                                  type="button"
-                                >
-                                  <span>
-                                    添加为审核SQL例外
-                                  </span>
-                                </button>
-                              </div>
-                              <div
-                                class="ant-space-item"
-                              >
-                                <button
-                                  class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
-                                  type="button"
-                                >
-                                  <span
-                                    class="ant-btn-icon"
-                                  >
-                                    <svg
-                                      height="18"
-                                      viewBox="0 0 1024 1024"
-                                      width="18"
-                                      xmlns="http://www.w3.org/2000/svg"
-                                    >
-                                      <path
-                                        d="M717.12 274H762c82.842 0 150 67.158 150 150v200c0 82.842-67.158 150-150 150H262c-82.842 0-150-67.158-150-150V424c0-82.842 67.158-150 150-150h44.88l-18.268-109.602c-4.086-24.514 12.476-47.7 36.99-51.786s47.7 12.476 51.786 36.99l20 120q.367 2.21.516 4.398h228.192q.149-2.19.516-4.398l20-120c4.086-24.514 27.272-41.076 51.786-36.99s41.076 27.272 36.99 51.786zM262 364c-33.138 0-60 26.862-60 60v200c0 33.138 26.862 60 60 60h500c33.138 0 60-26.862 60-60V424c0-33.138-26.862-60-60-60zm50 548c-24.852 0-45-20.148-45-45s20.148-45 45-45h400c24.852 0 45 20.148 45 45s-20.148 45-45 45zm-4-428c0-24.852 20.148-45 45-45s45 20.148 45 45v40c0 24.852-20.148 45-45 45s-45-20.148-45-45zm318 0c0-24.852 20.148-45 45-45s45 20.148 45 45v40c0 24.852-20.148 45-45 45s-45-20.148-45-45z"
-                                        fill="#4583FF"
-                                      />
-                                    </svg>
-                                  </span>
-                                  <span>
-                                    SQL合规重写
-                                  </span>
-                                </button>
-                              </div>
-                            </div>
+                              <span>
+                                添加为审核SQL例外
+                              </span>
+                            </button>
                           </div>
                         </td>
                       </tr>
@@ -1332,50 +1152,14 @@ exports[`test DataExport/Common/AuditResultList should match snapshot 3`] = `
                           <div
                             class="css-new95e"
                           >
-                            <div
-                              class="ant-space css-dev-only-do-not-override-bj9uhl ant-space-horizontal ant-space-align-center"
+                            <button
+                              class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                              type="button"
                             >
-                              <div
-                                class="ant-space-item"
-                                style="margin-right: 8px;"
-                              >
-                                <button
-                                  class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
-                                  type="button"
-                                >
-                                  <span>
-                                    添加为审核SQL例外
-                                  </span>
-                                </button>
-                              </div>
-                              <div
-                                class="ant-space-item"
-                              >
-                                <button
-                                  class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
-                                  type="button"
-                                >
-                                  <span
-                                    class="ant-btn-icon"
-                                  >
-                                    <svg
-                                      height="18"
-                                      viewBox="0 0 1024 1024"
-                                      width="18"
-                                      xmlns="http://www.w3.org/2000/svg"
-                                    >
-                                      <path
-                                        d="M717.12 274H762c82.842 0 150 67.158 150 150v200c0 82.842-67.158 150-150 150H262c-82.842 0-150-67.158-150-150V424c0-82.842 67.158-150 150-150h44.88l-18.268-109.602c-4.086-24.514 12.476-47.7 36.99-51.786s47.7 12.476 51.786 36.99l20 120q.367 2.21.516 4.398h228.192q.149-2.19.516-4.398l20-120c4.086-24.514 27.272-41.076 51.786-36.99s41.076 27.272 36.99 51.786zM262 364c-33.138 0-60 26.862-60 60v200c0 33.138 26.862 60 60 60h500c33.138 0 60-26.862 60-60V424c0-33.138-26.862-60-60-60zm50 548c-24.852 0-45-20.148-45-45s20.148-45 45-45h400c24.852 0 45 20.148 45 45s-20.148 45-45 45zm-4-428c0-24.852 20.148-45 45-45s45 20.148 45 45v40c0 24.852-20.148 45-45 45s-45-20.148-45-45zm318 0c0-24.852 20.148-45 45-45s45 20.148 45 45v40c0 24.852-20.148 45-45 45s-45-20.148-45-45z"
-                                        fill="#4583FF"
-                                      />
-                                    </svg>
-                                  </span>
-                                  <span>
-                                    SQL合规重写
-                                  </span>
-                                </button>
-                              </div>
-                            </div>
+                              <span>
+                                添加为审核SQL例外
+                              </span>
+                            </button>
                           </div>
                         </td>
                       </tr>
@@ -1615,7 +1399,7 @@ exports[`test DataExport/Common/AuditResultList should match snapshot 4`] = `
                       <col />
                       <col />
                       <col
-                        style="width: 164px;"
+                        style="width: 82px;"
                       />
                     </colgroup>
                     <thead
@@ -1804,50 +1588,14 @@ exports[`test DataExport/Common/AuditResultList should match snapshot 4`] = `
                           <div
                             class="css-new95e"
                           >
-                            <div
-                              class="ant-space css-dev-only-do-not-override-bj9uhl ant-space-horizontal ant-space-align-center"
+                            <button
+                              class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                              type="button"
                             >
-                              <div
-                                class="ant-space-item"
-                                style="margin-right: 8px;"
-                              >
-                                <button
-                                  class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
-                                  type="button"
-                                >
-                                  <span>
-                                    添加为审核SQL例外
-                                  </span>
-                                </button>
-                              </div>
-                              <div
-                                class="ant-space-item"
-                              >
-                                <button
-                                  class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
-                                  type="button"
-                                >
-                                  <span
-                                    class="ant-btn-icon"
-                                  >
-                                    <svg
-                                      height="18"
-                                      viewBox="0 0 1024 1024"
-                                      width="18"
-                                      xmlns="http://www.w3.org/2000/svg"
-                                    >
-                                      <path
-                                        d="M717.12 274H762c82.842 0 150 67.158 150 150v200c0 82.842-67.158 150-150 150H262c-82.842 0-150-67.158-150-150V424c0-82.842 67.158-150 150-150h44.88l-18.268-109.602c-4.086-24.514 12.476-47.7 36.99-51.786s47.7 12.476 51.786 36.99l20 120q.367 2.21.516 4.398h228.192q.149-2.19.516-4.398l20-120c4.086-24.514 27.272-41.076 51.786-36.99s41.076 27.272 36.99 51.786zM262 364c-33.138 0-60 26.862-60 60v200c0 33.138 26.862 60 60 60h500c33.138 0 60-26.862 60-60V424c0-33.138-26.862-60-60-60zm50 548c-24.852 0-45-20.148-45-45s20.148-45 45-45h400c24.852 0 45 20.148 45 45s-20.148 45-45 45zm-4-428c0-24.852 20.148-45 45-45s45 20.148 45 45v40c0 24.852-20.148 45-45 45s-45-20.148-45-45zm318 0c0-24.852 20.148-45 45-45s45 20.148 45 45v40c0 24.852-20.148 45-45 45s-45-20.148-45-45z"
-                                        fill="#4583FF"
-                                      />
-                                    </svg>
-                                  </span>
-                                  <span>
-                                    SQL合规重写
-                                  </span>
-                                </button>
-                              </div>
-                            </div>
+                              <span>
+                                添加为审核SQL例外
+                              </span>
+                            </button>
                           </div>
                         </td>
                       </tr>
@@ -1946,50 +1694,14 @@ exports[`test DataExport/Common/AuditResultList should match snapshot 4`] = `
                           <div
                             class="css-new95e"
                           >
-                            <div
-                              class="ant-space css-dev-only-do-not-override-bj9uhl ant-space-horizontal ant-space-align-center"
+                            <button
+                              class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                              type="button"
                             >
-                              <div
-                                class="ant-space-item"
-                                style="margin-right: 8px;"
-                              >
-                                <button
-                                  class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
-                                  type="button"
-                                >
-                                  <span>
-                                    添加为审核SQL例外
-                                  </span>
-                                </button>
-                              </div>
-                              <div
-                                class="ant-space-item"
-                              >
-                                <button
-                                  class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
-                                  type="button"
-                                >
-                                  <span
-                                    class="ant-btn-icon"
-                                  >
-                                    <svg
-                                      height="18"
-                                      viewBox="0 0 1024 1024"
-                                      width="18"
-                                      xmlns="http://www.w3.org/2000/svg"
-                                    >
-                                      <path
-                                        d="M717.12 274H762c82.842 0 150 67.158 150 150v200c0 82.842-67.158 150-150 150H262c-82.842 0-150-67.158-150-150V424c0-82.842 67.158-150 150-150h44.88l-18.268-109.602c-4.086-24.514 12.476-47.7 36.99-51.786s47.7 12.476 51.786 36.99l20 120q.367 2.21.516 4.398h228.192q.149-2.19.516-4.398l20-120c4.086-24.514 27.272-41.076 51.786-36.99s41.076 27.272 36.99 51.786zM262 364c-33.138 0-60 26.862-60 60v200c0 33.138 26.862 60 60 60h500c33.138 0 60-26.862 60-60V424c0-33.138-26.862-60-60-60zm50 548c-24.852 0-45-20.148-45-45s20.148-45 45-45h400c24.852 0 45 20.148 45 45s-20.148 45-45 45zm-4-428c0-24.852 20.148-45 45-45s45 20.148 45 45v40c0 24.852-20.148 45-45 45s-45-20.148-45-45zm318 0c0-24.852 20.148-45 45-45s45 20.148 45 45v40c0 24.852-20.148 45-45 45s-45-20.148-45-45z"
-                                        fill="#4583FF"
-                                      />
-                                    </svg>
-                                  </span>
-                                  <span>
-                                    SQL合规重写
-                                  </span>
-                                </button>
-                              </div>
-                            </div>
+                              <span>
+                                添加为审核SQL例外
+                              </span>
+                            </button>
                           </div>
                         </td>
                       </tr>
@@ -2088,50 +1800,14 @@ exports[`test DataExport/Common/AuditResultList should match snapshot 4`] = `
                           <div
                             class="css-new95e"
                           >
-                            <div
-                              class="ant-space css-dev-only-do-not-override-bj9uhl ant-space-horizontal ant-space-align-center"
+                            <button
+                              class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                              type="button"
                             >
-                              <div
-                                class="ant-space-item"
-                                style="margin-right: 8px;"
-                              >
-                                <button
-                                  class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
-                                  type="button"
-                                >
-                                  <span>
-                                    添加为审核SQL例外
-                                  </span>
-                                </button>
-                              </div>
-                              <div
-                                class="ant-space-item"
-                              >
-                                <button
-                                  class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
-                                  type="button"
-                                >
-                                  <span
-                                    class="ant-btn-icon"
-                                  >
-                                    <svg
-                                      height="18"
-                                      viewBox="0 0 1024 1024"
-                                      width="18"
-                                      xmlns="http://www.w3.org/2000/svg"
-                                    >
-                                      <path
-                                        d="M717.12 274H762c82.842 0 150 67.158 150 150v200c0 82.842-67.158 150-150 150H262c-82.842 0-150-67.158-150-150V424c0-82.842 67.158-150 150-150h44.88l-18.268-109.602c-4.086-24.514 12.476-47.7 36.99-51.786s47.7 12.476 51.786 36.99l20 120q.367 2.21.516 4.398h228.192q.149-2.19.516-4.398l20-120c4.086-24.514 27.272-41.076 51.786-36.99s41.076 27.272 36.99 51.786zM262 364c-33.138 0-60 26.862-60 60v200c0 33.138 26.862 60 60 60h500c33.138 0 60-26.862 60-60V424c0-33.138-26.862-60-60-60zm50 548c-24.852 0-45-20.148-45-45s20.148-45 45-45h400c24.852 0 45 20.148 45 45s-20.148 45-45 45zm-4-428c0-24.852 20.148-45 45-45s45 20.148 45 45v40c0 24.852-20.148 45-45 45s-45-20.148-45-45zm318 0c0-24.852 20.148-45 45-45s45 20.148 45 45v40c0 24.852-20.148 45-45 45s-45-20.148-45-45z"
-                                        fill="#4583FF"
-                                      />
-                                    </svg>
-                                  </span>
-                                  <span>
-                                    SQL合规重写
-                                  </span>
-                                </button>
-                              </div>
-                            </div>
+                              <span>
+                                添加为审核SQL例外
+                              </span>
+                            </button>
                           </div>
                         </td>
                       </tr>
@@ -2230,50 +1906,14 @@ exports[`test DataExport/Common/AuditResultList should match snapshot 4`] = `
                           <div
                             class="css-new95e"
                           >
-                            <div
-                              class="ant-space css-dev-only-do-not-override-bj9uhl ant-space-horizontal ant-space-align-center"
+                            <button
+                              class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                              type="button"
                             >
-                              <div
-                                class="ant-space-item"
-                                style="margin-right: 8px;"
-                              >
-                                <button
-                                  class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
-                                  type="button"
-                                >
-                                  <span>
-                                    添加为审核SQL例外
-                                  </span>
-                                </button>
-                              </div>
-                              <div
-                                class="ant-space-item"
-                              >
-                                <button
-                                  class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
-                                  type="button"
-                                >
-                                  <span
-                                    class="ant-btn-icon"
-                                  >
-                                    <svg
-                                      height="18"
-                                      viewBox="0 0 1024 1024"
-                                      width="18"
-                                      xmlns="http://www.w3.org/2000/svg"
-                                    >
-                                      <path
-                                        d="M717.12 274H762c82.842 0 150 67.158 150 150v200c0 82.842-67.158 150-150 150H262c-82.842 0-150-67.158-150-150V424c0-82.842 67.158-150 150-150h44.88l-18.268-109.602c-4.086-24.514 12.476-47.7 36.99-51.786s47.7 12.476 51.786 36.99l20 120q.367 2.21.516 4.398h228.192q.149-2.19.516-4.398l20-120c4.086-24.514 27.272-41.076 51.786-36.99s41.076 27.272 36.99 51.786zM262 364c-33.138 0-60 26.862-60 60v200c0 33.138 26.862 60 60 60h500c33.138 0 60-26.862 60-60V424c0-33.138-26.862-60-60-60zm50 548c-24.852 0-45-20.148-45-45s20.148-45 45-45h400c24.852 0 45 20.148 45 45s-20.148 45-45 45zm-4-428c0-24.852 20.148-45 45-45s45 20.148 45 45v40c0 24.852-20.148 45-45 45s-45-20.148-45-45zm318 0c0-24.852 20.148-45 45-45s45 20.148 45 45v40c0 24.852-20.148 45-45 45s-45-20.148-45-45z"
-                                        fill="#4583FF"
-                                      />
-                                    </svg>
-                                  </span>
-                                  <span>
-                                    SQL合规重写
-                                  </span>
-                                </button>
-                              </div>
-                            </div>
+                              <span>
+                                添加为审核SQL例外
+                              </span>
+                            </button>
                           </div>
                         </td>
                       </tr>
@@ -2372,50 +2012,14 @@ exports[`test DataExport/Common/AuditResultList should match snapshot 4`] = `
                           <div
                             class="css-new95e"
                           >
-                            <div
-                              class="ant-space css-dev-only-do-not-override-bj9uhl ant-space-horizontal ant-space-align-center"
+                            <button
+                              class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                              type="button"
                             >
-                              <div
-                                class="ant-space-item"
-                                style="margin-right: 8px;"
-                              >
-                                <button
-                                  class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
-                                  type="button"
-                                >
-                                  <span>
-                                    添加为审核SQL例外
-                                  </span>
-                                </button>
-                              </div>
-                              <div
-                                class="ant-space-item"
-                              >
-                                <button
-                                  class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
-                                  type="button"
-                                >
-                                  <span
-                                    class="ant-btn-icon"
-                                  >
-                                    <svg
-                                      height="18"
-                                      viewBox="0 0 1024 1024"
-                                      width="18"
-                                      xmlns="http://www.w3.org/2000/svg"
-                                    >
-                                      <path
-                                        d="M717.12 274H762c82.842 0 150 67.158 150 150v200c0 82.842-67.158 150-150 150H262c-82.842 0-150-67.158-150-150V424c0-82.842 67.158-150 150-150h44.88l-18.268-109.602c-4.086-24.514 12.476-47.7 36.99-51.786s47.7 12.476 51.786 36.99l20 120q.367 2.21.516 4.398h228.192q.149-2.19.516-4.398l20-120c4.086-24.514 27.272-41.076 51.786-36.99s41.076 27.272 36.99 51.786zM262 364c-33.138 0-60 26.862-60 60v200c0 33.138 26.862 60 60 60h500c33.138 0 60-26.862 60-60V424c0-33.138-26.862-60-60-60zm50 548c-24.852 0-45-20.148-45-45s20.148-45 45-45h400c24.852 0 45 20.148 45 45s-20.148 45-45 45zm-4-428c0-24.852 20.148-45 45-45s45 20.148 45 45v40c0 24.852-20.148 45-45 45s-45-20.148-45-45zm318 0c0-24.852 20.148-45 45-45s45 20.148 45 45v40c0 24.852-20.148 45-45 45s-45-20.148-45-45z"
-                                        fill="#4583FF"
-                                      />
-                                    </svg>
-                                  </span>
-                                  <span>
-                                    SQL合规重写
-                                  </span>
-                                </button>
-                              </div>
-                            </div>
+                              <span>
+                                添加为审核SQL例外
+                              </span>
+                            </button>
                           </div>
                         </td>
                       </tr>
@@ -2514,50 +2118,14 @@ exports[`test DataExport/Common/AuditResultList should match snapshot 4`] = `
                           <div
                             class="css-new95e"
                           >
-                            <div
-                              class="ant-space css-dev-only-do-not-override-bj9uhl ant-space-horizontal ant-space-align-center"
+                            <button
+                              class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                              type="button"
                             >
-                              <div
-                                class="ant-space-item"
-                                style="margin-right: 8px;"
-                              >
-                                <button
-                                  class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
-                                  type="button"
-                                >
-                                  <span>
-                                    添加为审核SQL例外
-                                  </span>
-                                </button>
-                              </div>
-                              <div
-                                class="ant-space-item"
-                              >
-                                <button
-                                  class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
-                                  type="button"
-                                >
-                                  <span
-                                    class="ant-btn-icon"
-                                  >
-                                    <svg
-                                      height="18"
-                                      viewBox="0 0 1024 1024"
-                                      width="18"
-                                      xmlns="http://www.w3.org/2000/svg"
-                                    >
-                                      <path
-                                        d="M717.12 274H762c82.842 0 150 67.158 150 150v200c0 82.842-67.158 150-150 150H262c-82.842 0-150-67.158-150-150V424c0-82.842 67.158-150 150-150h44.88l-18.268-109.602c-4.086-24.514 12.476-47.7 36.99-51.786s47.7 12.476 51.786 36.99l20 120q.367 2.21.516 4.398h228.192q.149-2.19.516-4.398l20-120c4.086-24.514 27.272-41.076 51.786-36.99s41.076 27.272 36.99 51.786zM262 364c-33.138 0-60 26.862-60 60v200c0 33.138 26.862 60 60 60h500c33.138 0 60-26.862 60-60V424c0-33.138-26.862-60-60-60zm50 548c-24.852 0-45-20.148-45-45s20.148-45 45-45h400c24.852 0 45 20.148 45 45s-20.148 45-45 45zm-4-428c0-24.852 20.148-45 45-45s45 20.148 45 45v40c0 24.852-20.148 45-45 45s-45-20.148-45-45zm318 0c0-24.852 20.148-45 45-45s45 20.148 45 45v40c0 24.852-20.148 45-45 45s-45-20.148-45-45z"
-                                        fill="#4583FF"
-                                      />
-                                    </svg>
-                                  </span>
-                                  <span>
-                                    SQL合规重写
-                                  </span>
-                                </button>
-                              </div>
-                            </div>
+                              <span>
+                                添加为审核SQL例外
+                              </span>
+                            </button>
                           </div>
                         </td>
                       </tr>
@@ -2959,7 +2527,7 @@ exports[`test DataExport/Common/AuditResultList should match snapshot when data 
                     <col />
                     <col />
                     <col
-                      style="width: 164px;"
+                      style="width: 82px;"
                     />
                   </colgroup>
                   <thead
@@ -3112,50 +2680,14 @@ exports[`test DataExport/Common/AuditResultList should match snapshot when data 
                         <div
                           class="css-new95e"
                         >
-                          <div
-                            class="ant-space css-dev-only-do-not-override-bj9uhl ant-space-horizontal ant-space-align-center"
+                          <button
+                            class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                            type="button"
                           >
-                            <div
-                              class="ant-space-item"
-                              style="margin-right: 8px;"
-                            >
-                              <button
-                                class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
-                                type="button"
-                              >
-                                <span>
-                                  添加为审核SQL例外
-                                </span>
-                              </button>
-                            </div>
-                            <div
-                              class="ant-space-item"
-                            >
-                              <button
-                                class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
-                                type="button"
-                              >
-                                <span
-                                  class="ant-btn-icon"
-                                >
-                                  <svg
-                                    height="18"
-                                    viewBox="0 0 1024 1024"
-                                    width="18"
-                                    xmlns="http://www.w3.org/2000/svg"
-                                  >
-                                    <path
-                                      d="M717.12 274H762c82.842 0 150 67.158 150 150v200c0 82.842-67.158 150-150 150H262c-82.842 0-150-67.158-150-150V424c0-82.842 67.158-150 150-150h44.88l-18.268-109.602c-4.086-24.514 12.476-47.7 36.99-51.786s47.7 12.476 51.786 36.99l20 120q.367 2.21.516 4.398h228.192q.149-2.19.516-4.398l20-120c4.086-24.514 27.272-41.076 51.786-36.99s41.076 27.272 36.99 51.786zM262 364c-33.138 0-60 26.862-60 60v200c0 33.138 26.862 60 60 60h500c33.138 0 60-26.862 60-60V424c0-33.138-26.862-60-60-60zm50 548c-24.852 0-45-20.148-45-45s20.148-45 45-45h400c24.852 0 45 20.148 45 45s-20.148 45-45 45zm-4-428c0-24.852 20.148-45 45-45s45 20.148 45 45v40c0 24.852-20.148 45-45 45s-45-20.148-45-45zm318 0c0-24.852 20.148-45 45-45s45 20.148 45 45v40c0 24.852-20.148 45-45 45s-45-20.148-45-45z"
-                                      fill="#4583FF"
-                                    />
-                                  </svg>
-                                </span>
-                                <span>
-                                  SQL合规重写
-                                </span>
-                              </button>
-                            </div>
-                          </div>
+                            <span>
+                              添加为审核SQL例外
+                            </span>
+                          </button>
                         </div>
                       </td>
                     </tr>
@@ -3254,50 +2786,14 @@ exports[`test DataExport/Common/AuditResultList should match snapshot when data 
                         <div
                           class="css-new95e"
                         >
-                          <div
-                            class="ant-space css-dev-only-do-not-override-bj9uhl ant-space-horizontal ant-space-align-center"
+                          <button
+                            class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                            type="button"
                           >
-                            <div
-                              class="ant-space-item"
-                              style="margin-right: 8px;"
-                            >
-                              <button
-                                class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
-                                type="button"
-                              >
-                                <span>
-                                  添加为审核SQL例外
-                                </span>
-                              </button>
-                            </div>
-                            <div
-                              class="ant-space-item"
-                            >
-                              <button
-                                class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
-                                type="button"
-                              >
-                                <span
-                                  class="ant-btn-icon"
-                                >
-                                  <svg
-                                    height="18"
-                                    viewBox="0 0 1024 1024"
-                                    width="18"
-                                    xmlns="http://www.w3.org/2000/svg"
-                                  >
-                                    <path
-                                      d="M717.12 274H762c82.842 0 150 67.158 150 150v200c0 82.842-67.158 150-150 150H262c-82.842 0-150-67.158-150-150V424c0-82.842 67.158-150 150-150h44.88l-18.268-109.602c-4.086-24.514 12.476-47.7 36.99-51.786s47.7 12.476 51.786 36.99l20 120q.367 2.21.516 4.398h228.192q.149-2.19.516-4.398l20-120c4.086-24.514 27.272-41.076 51.786-36.99s41.076 27.272 36.99 51.786zM262 364c-33.138 0-60 26.862-60 60v200c0 33.138 26.862 60 60 60h500c33.138 0 60-26.862 60-60V424c0-33.138-26.862-60-60-60zm50 548c-24.852 0-45-20.148-45-45s20.148-45 45-45h400c24.852 0 45 20.148 45 45s-20.148 45-45 45zm-4-428c0-24.852 20.148-45 45-45s45 20.148 45 45v40c0 24.852-20.148 45-45 45s-45-20.148-45-45zm318 0c0-24.852 20.148-45 45-45s45 20.148 45 45v40c0 24.852-20.148 45-45 45s-45-20.148-45-45z"
-                                      fill="#4583FF"
-                                    />
-                                  </svg>
-                                </span>
-                                <span>
-                                  SQL合规重写
-                                </span>
-                              </button>
-                            </div>
-                          </div>
+                            <span>
+                              添加为审核SQL例外
+                            </span>
+                          </button>
                         </div>
                       </td>
                     </tr>
@@ -3559,7 +3055,7 @@ exports[`test DataExport/Common/AuditResultList should switch tab when click lab
                     <col />
                     <col />
                     <col
-                      style="width: 164px;"
+                      style="width: 82px;"
                     />
                   </colgroup>
                   <thead
@@ -3748,50 +3244,14 @@ exports[`test DataExport/Common/AuditResultList should switch tab when click lab
                         <div
                           class="css-new95e"
                         >
-                          <div
-                            class="ant-space css-dev-only-do-not-override-bj9uhl ant-space-horizontal ant-space-align-center"
+                          <button
+                            class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                            type="button"
                           >
-                            <div
-                              class="ant-space-item"
-                              style="margin-right: 8px;"
-                            >
-                              <button
-                                class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
-                                type="button"
-                              >
-                                <span>
-                                  添加为审核SQL例外
-                                </span>
-                              </button>
-                            </div>
-                            <div
-                              class="ant-space-item"
-                            >
-                              <button
-                                class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
-                                type="button"
-                              >
-                                <span
-                                  class="ant-btn-icon"
-                                >
-                                  <svg
-                                    height="18"
-                                    viewBox="0 0 1024 1024"
-                                    width="18"
-                                    xmlns="http://www.w3.org/2000/svg"
-                                  >
-                                    <path
-                                      d="M717.12 274H762c82.842 0 150 67.158 150 150v200c0 82.842-67.158 150-150 150H262c-82.842 0-150-67.158-150-150V424c0-82.842 67.158-150 150-150h44.88l-18.268-109.602c-4.086-24.514 12.476-47.7 36.99-51.786s47.7 12.476 51.786 36.99l20 120q.367 2.21.516 4.398h228.192q.149-2.19.516-4.398l20-120c4.086-24.514 27.272-41.076 51.786-36.99s41.076 27.272 36.99 51.786zM262 364c-33.138 0-60 26.862-60 60v200c0 33.138 26.862 60 60 60h500c33.138 0 60-26.862 60-60V424c0-33.138-26.862-60-60-60zm50 548c-24.852 0-45-20.148-45-45s20.148-45 45-45h400c24.852 0 45 20.148 45 45s-20.148 45-45 45zm-4-428c0-24.852 20.148-45 45-45s45 20.148 45 45v40c0 24.852-20.148 45-45 45s-45-20.148-45-45zm318 0c0-24.852 20.148-45 45-45s45 20.148 45 45v40c0 24.852-20.148 45-45 45s-45-20.148-45-45z"
-                                      fill="#4583FF"
-                                    />
-                                  </svg>
-                                </span>
-                                <span>
-                                  SQL合规重写
-                                </span>
-                              </button>
-                            </div>
-                          </div>
+                            <span>
+                              添加为审核SQL例外
+                            </span>
+                          </button>
                         </div>
                       </td>
                     </tr>
@@ -3890,50 +3350,14 @@ exports[`test DataExport/Common/AuditResultList should switch tab when click lab
                         <div
                           class="css-new95e"
                         >
-                          <div
-                            class="ant-space css-dev-only-do-not-override-bj9uhl ant-space-horizontal ant-space-align-center"
+                          <button
+                            class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                            type="button"
                           >
-                            <div
-                              class="ant-space-item"
-                              style="margin-right: 8px;"
-                            >
-                              <button
-                                class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
-                                type="button"
-                              >
-                                <span>
-                                  添加为审核SQL例外
-                                </span>
-                              </button>
-                            </div>
-                            <div
-                              class="ant-space-item"
-                            >
-                              <button
-                                class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
-                                type="button"
-                              >
-                                <span
-                                  class="ant-btn-icon"
-                                >
-                                  <svg
-                                    height="18"
-                                    viewBox="0 0 1024 1024"
-                                    width="18"
-                                    xmlns="http://www.w3.org/2000/svg"
-                                  >
-                                    <path
-                                      d="M717.12 274H762c82.842 0 150 67.158 150 150v200c0 82.842-67.158 150-150 150H262c-82.842 0-150-67.158-150-150V424c0-82.842 67.158-150 150-150h44.88l-18.268-109.602c-4.086-24.514 12.476-47.7 36.99-51.786s47.7 12.476 51.786 36.99l20 120q.367 2.21.516 4.398h228.192q.149-2.19.516-4.398l20-120c4.086-24.514 27.272-41.076 51.786-36.99s41.076 27.272 36.99 51.786zM262 364c-33.138 0-60 26.862-60 60v200c0 33.138 26.862 60 60 60h500c33.138 0 60-26.862 60-60V424c0-33.138-26.862-60-60-60zm50 548c-24.852 0-45-20.148-45-45s20.148-45 45-45h400c24.852 0 45 20.148 45 45s-20.148 45-45 45zm-4-428c0-24.852 20.148-45 45-45s45 20.148 45 45v40c0 24.852-20.148 45-45 45s-45-20.148-45-45zm318 0c0-24.852 20.148-45 45-45s45 20.148 45 45v40c0 24.852-20.148 45-45 45s-45-20.148-45-45z"
-                                      fill="#4583FF"
-                                    />
-                                  </svg>
-                                </span>
-                                <span>
-                                  SQL合规重写
-                                </span>
-                              </button>
-                            </div>
-                          </div>
+                            <span>
+                              添加为审核SQL例外
+                            </span>
+                          </button>
                         </div>
                       </td>
                     </tr>
@@ -4032,50 +3456,14 @@ exports[`test DataExport/Common/AuditResultList should switch tab when click lab
                         <div
                           class="css-new95e"
                         >
-                          <div
-                            class="ant-space css-dev-only-do-not-override-bj9uhl ant-space-horizontal ant-space-align-center"
+                          <button
+                            class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                            type="button"
                           >
-                            <div
-                              class="ant-space-item"
-                              style="margin-right: 8px;"
-                            >
-                              <button
-                                class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
-                                type="button"
-                              >
-                                <span>
-                                  添加为审核SQL例外
-                                </span>
-                              </button>
-                            </div>
-                            <div
-                              class="ant-space-item"
-                            >
-                              <button
-                                class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
-                                type="button"
-                              >
-                                <span
-                                  class="ant-btn-icon"
-                                >
-                                  <svg
-                                    height="18"
-                                    viewBox="0 0 1024 1024"
-                                    width="18"
-                                    xmlns="http://www.w3.org/2000/svg"
-                                  >
-                                    <path
-                                      d="M717.12 274H762c82.842 0 150 67.158 150 150v200c0 82.842-67.158 150-150 150H262c-82.842 0-150-67.158-150-150V424c0-82.842 67.158-150 150-150h44.88l-18.268-109.602c-4.086-24.514 12.476-47.7 36.99-51.786s47.7 12.476 51.786 36.99l20 120q.367 2.21.516 4.398h228.192q.149-2.19.516-4.398l20-120c4.086-24.514 27.272-41.076 51.786-36.99s41.076 27.272 36.99 51.786zM262 364c-33.138 0-60 26.862-60 60v200c0 33.138 26.862 60 60 60h500c33.138 0 60-26.862 60-60V424c0-33.138-26.862-60-60-60zm50 548c-24.852 0-45-20.148-45-45s20.148-45 45-45h400c24.852 0 45 20.148 45 45s-20.148 45-45 45zm-4-428c0-24.852 20.148-45 45-45s45 20.148 45 45v40c0 24.852-20.148 45-45 45s-45-20.148-45-45zm318 0c0-24.852 20.148-45 45-45s45 20.148 45 45v40c0 24.852-20.148 45-45 45s-45-20.148-45-45z"
-                                      fill="#4583FF"
-                                    />
-                                  </svg>
-                                </span>
-                                <span>
-                                  SQL合规重写
-                                </span>
-                              </button>
-                            </div>
-                          </div>
+                            <span>
+                              添加为审核SQL例外
+                            </span>
+                          </button>
                         </div>
                       </td>
                     </tr>
@@ -4174,50 +3562,14 @@ exports[`test DataExport/Common/AuditResultList should switch tab when click lab
                         <div
                           class="css-new95e"
                         >
-                          <div
-                            class="ant-space css-dev-only-do-not-override-bj9uhl ant-space-horizontal ant-space-align-center"
+                          <button
+                            class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                            type="button"
                           >
-                            <div
-                              class="ant-space-item"
-                              style="margin-right: 8px;"
-                            >
-                              <button
-                                class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
-                                type="button"
-                              >
-                                <span>
-                                  添加为审核SQL例外
-                                </span>
-                              </button>
-                            </div>
-                            <div
-                              class="ant-space-item"
-                            >
-                              <button
-                                class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
-                                type="button"
-                              >
-                                <span
-                                  class="ant-btn-icon"
-                                >
-                                  <svg
-                                    height="18"
-                                    viewBox="0 0 1024 1024"
-                                    width="18"
-                                    xmlns="http://www.w3.org/2000/svg"
-                                  >
-                                    <path
-                                      d="M717.12 274H762c82.842 0 150 67.158 150 150v200c0 82.842-67.158 150-150 150H262c-82.842 0-150-67.158-150-150V424c0-82.842 67.158-150 150-150h44.88l-18.268-109.602c-4.086-24.514 12.476-47.7 36.99-51.786s47.7 12.476 51.786 36.99l20 120q.367 2.21.516 4.398h228.192q.149-2.19.516-4.398l20-120c4.086-24.514 27.272-41.076 51.786-36.99s41.076 27.272 36.99 51.786zM262 364c-33.138 0-60 26.862-60 60v200c0 33.138 26.862 60 60 60h500c33.138 0 60-26.862 60-60V424c0-33.138-26.862-60-60-60zm50 548c-24.852 0-45-20.148-45-45s20.148-45 45-45h400c24.852 0 45 20.148 45 45s-20.148 45-45 45zm-4-428c0-24.852 20.148-45 45-45s45 20.148 45 45v40c0 24.852-20.148 45-45 45s-45-20.148-45-45zm318 0c0-24.852 20.148-45 45-45s45 20.148 45 45v40c0 24.852-20.148 45-45 45s-45-20.148-45-45z"
-                                      fill="#4583FF"
-                                    />
-                                  </svg>
-                                </span>
-                                <span>
-                                  SQL合规重写
-                                </span>
-                              </button>
-                            </div>
-                          </div>
+                            <span>
+                              添加为审核SQL例外
+                            </span>
+                          </button>
                         </div>
                       </td>
                     </tr>
@@ -4316,50 +3668,14 @@ exports[`test DataExport/Common/AuditResultList should switch tab when click lab
                         <div
                           class="css-new95e"
                         >
-                          <div
-                            class="ant-space css-dev-only-do-not-override-bj9uhl ant-space-horizontal ant-space-align-center"
+                          <button
+                            class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                            type="button"
                           >
-                            <div
-                              class="ant-space-item"
-                              style="margin-right: 8px;"
-                            >
-                              <button
-                                class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
-                                type="button"
-                              >
-                                <span>
-                                  添加为审核SQL例外
-                                </span>
-                              </button>
-                            </div>
-                            <div
-                              class="ant-space-item"
-                            >
-                              <button
-                                class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
-                                type="button"
-                              >
-                                <span
-                                  class="ant-btn-icon"
-                                >
-                                  <svg
-                                    height="18"
-                                    viewBox="0 0 1024 1024"
-                                    width="18"
-                                    xmlns="http://www.w3.org/2000/svg"
-                                  >
-                                    <path
-                                      d="M717.12 274H762c82.842 0 150 67.158 150 150v200c0 82.842-67.158 150-150 150H262c-82.842 0-150-67.158-150-150V424c0-82.842 67.158-150 150-150h44.88l-18.268-109.602c-4.086-24.514 12.476-47.7 36.99-51.786s47.7 12.476 51.786 36.99l20 120q.367 2.21.516 4.398h228.192q.149-2.19.516-4.398l20-120c4.086-24.514 27.272-41.076 51.786-36.99s41.076 27.272 36.99 51.786zM262 364c-33.138 0-60 26.862-60 60v200c0 33.138 26.862 60 60 60h500c33.138 0 60-26.862 60-60V424c0-33.138-26.862-60-60-60zm50 548c-24.852 0-45-20.148-45-45s20.148-45 45-45h400c24.852 0 45 20.148 45 45s-20.148 45-45 45zm-4-428c0-24.852 20.148-45 45-45s45 20.148 45 45v40c0 24.852-20.148 45-45 45s-45-20.148-45-45zm318 0c0-24.852 20.148-45 45-45s45 20.148 45 45v40c0 24.852-20.148 45-45 45s-45-20.148-45-45z"
-                                      fill="#4583FF"
-                                    />
-                                  </svg>
-                                </span>
-                                <span>
-                                  SQL合规重写
-                                </span>
-                              </button>
-                            </div>
-                          </div>
+                            <span>
+                              添加为审核SQL例外
+                            </span>
+                          </button>
                         </div>
                       </td>
                     </tr>
@@ -4458,50 +3774,14 @@ exports[`test DataExport/Common/AuditResultList should switch tab when click lab
                         <div
                           class="css-new95e"
                         >
-                          <div
-                            class="ant-space css-dev-only-do-not-override-bj9uhl ant-space-horizontal ant-space-align-center"
+                          <button
+                            class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                            type="button"
                           >
-                            <div
-                              class="ant-space-item"
-                              style="margin-right: 8px;"
-                            >
-                              <button
-                                class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
-                                type="button"
-                              >
-                                <span>
-                                  添加为审核SQL例外
-                                </span>
-                              </button>
-                            </div>
-                            <div
-                              class="ant-space-item"
-                            >
-                              <button
-                                class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
-                                type="button"
-                              >
-                                <span
-                                  class="ant-btn-icon"
-                                >
-                                  <svg
-                                    height="18"
-                                    viewBox="0 0 1024 1024"
-                                    width="18"
-                                    xmlns="http://www.w3.org/2000/svg"
-                                  >
-                                    <path
-                                      d="M717.12 274H762c82.842 0 150 67.158 150 150v200c0 82.842-67.158 150-150 150H262c-82.842 0-150-67.158-150-150V424c0-82.842 67.158-150 150-150h44.88l-18.268-109.602c-4.086-24.514 12.476-47.7 36.99-51.786s47.7 12.476 51.786 36.99l20 120q.367 2.21.516 4.398h228.192q.149-2.19.516-4.398l20-120c4.086-24.514 27.272-41.076 51.786-36.99s41.076 27.272 36.99 51.786zM262 364c-33.138 0-60 26.862-60 60v200c0 33.138 26.862 60 60 60h500c33.138 0 60-26.862 60-60V424c0-33.138-26.862-60-60-60zm50 548c-24.852 0-45-20.148-45-45s20.148-45 45-45h400c24.852 0 45 20.148 45 45s-20.148 45-45 45zm-4-428c0-24.852 20.148-45 45-45s45 20.148 45 45v40c0 24.852-20.148 45-45 45s-45-20.148-45-45zm318 0c0-24.852 20.148-45 45-45s45 20.148 45 45v40c0 24.852-20.148 45-45 45s-45-20.148-45-45z"
-                                      fill="#4583FF"
-                                    />
-                                  </svg>
-                                </span>
-                                <span>
-                                  SQL合规重写
-                                </span>
-                              </button>
-                            </div>
-                          </div>
+                            <span>
+                              添加为审核SQL例外
+                            </span>
+                          </button>
                         </div>
                       </td>
                     </tr>

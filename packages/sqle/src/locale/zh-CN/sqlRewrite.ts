@@ -24,7 +24,7 @@ export default {
   pendingRewriteRules: '待应用的规则',
   enableDatabaseStructureOptimization: '启动数据库结构优化',
   noPendingRewriteRulesForCurrentSql: '当前SQL无需待重写的规则',
-  copy: '复制',
+  copy: '复制重写后SQL',
   viewCurrentTableStructureInSqlAnalysis: '在SQL分析中查看当前表结构',
   databaseStructureChangeStatement: '数据库结构变更语句',
   sqlRewriteResult: 'SQL重写结果',
@@ -33,8 +33,8 @@ export default {
   summary: '总结',
   sqlRewriteConclusion:
     '本次 SQL 重写基于 {{optimizedCount}} 条规则进行了优化，目前还有 {{remainingCount}} 条规则有待进一步优化。此外，有 {{businessCount}} 条规则需要人工处理。',
-  executionOrderExplanation: 'SQL执行顺序解释',
-  viewExecuteOrderExplanation: '查看SQL执行顺序解释',
+  executionOrderExplanation: 'SQL执行解释',
+  viewExecuteOrderExplanation: '查看SQL执行解释',
   originalSql: '原始SQL',
   rewrittenSql: '重写后SQL',
   updateRewrittenResult: '更新重写结果'

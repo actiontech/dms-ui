@@ -1224,7 +1224,7 @@ exports[`first should match snapshot when pageState is equal SUBMIT_WORKFLOW 1`]
                     <col />
                     <col />
                     <col
-                      style="width: 164px;"
+                      style="width: 82px;"
                     />
                   </colgroup>
                   <thead

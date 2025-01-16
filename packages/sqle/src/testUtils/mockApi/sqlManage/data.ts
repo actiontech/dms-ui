@@ -234,3 +234,88 @@ export const mockGlobalSqlManageListData = [
     project_priority: 'high'
   }
 ];
+
+export const mockSqlManageSqlAnalysisChartData = {
+  points: [
+    {
+      y: 1.2,
+      x: '2025-01-06T09:22:53.713Z',
+      info: [
+        {
+          id: '1',
+          select_id: '1',
+          table: 'test_table',
+          partitions: 'a,b,c',
+          type: 'const',
+          possible_keys: 'a,b,c',
+          key: 'key_name',
+          key_len: '231',
+          ref: 'abc',
+          rows: '100',
+          filtered: '100',
+          select_type: 'SIMPLE'
+        }
+      ]
+    },
+    {
+      y: 3.2,
+      x: '2025-01-07T09:32:53.713Z',
+      info: [
+        {
+          id: '2',
+          select_id: '1',
+          table: 'test_table',
+          partitions: 'a,b,c',
+          type: 'const',
+          possible_keys: 'a,b,c',
+          key: 'key_name',
+          key_len: '231',
+          ref: 'abc',
+          rows: '100',
+          filtered: '100',
+          select_type: 'SIMPLE'
+        }
+      ]
+    },
+    {
+      y: 2.2,
+      x: '2025-01-07T09:42:53.713Z',
+      info: [
+        {
+          id: '3',
+          select_id: '1',
+          table: 'test_table',
+          partitions: 'a,b,c',
+          type: 'const',
+          possible_keys: 'a,b,c',
+          key: 'key_name',
+          key_len: '231',
+          ref: 'abc',
+          rows: '100',
+          filtered: '100',
+          select_type: 'SIMPLE'
+        }
+      ]
+    },
+    {
+      y: 5.2,
+      x: '2025-01-07T09:52:53.713Z',
+      info: [
+        {
+          id: '4',
+          select_id: '1',
+          table: 'test_table',
+          partitions: 'a,b,c',
+          type: 'const',
+          possible_keys: 'a,b,c',
+          key: 'key_name',
+          key_len: '231',
+          ref: 'abc',
+          rows: '100',
+          filtered: '100',
+          select_type: 'SIMPLE'
+        }
+      ]
+    }
+  ]
+};
