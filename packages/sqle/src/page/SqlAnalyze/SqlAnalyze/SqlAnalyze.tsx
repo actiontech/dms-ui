@@ -22,11 +22,22 @@ const SqlAnalyze: React.FC<SqlAnalyzeProps> = (props) => {
     errorMessage,
     loading = false,
     performanceStatistics,
-    errorType = 'error'
+    errorType = 'error',
+    sqlExecPlanCostDataSource,
+    getSqlExecPlanCostDataSource,
+    getSqlExecPlanCostDataSourceLoading,
+    getSqlExecPlanCostDataSourceError,
+    showExecPlanCostChart
   } = props;
 
   const { generateTableSchemaContent } = useTableSchema();
-  const { generateSQLExecPlanContent } = useSQLExecPlan();
+  const { generateSQLExecPlanContent } = useSQLExecPlan({
+    sqlExecPlanCostDataSource,
+    getSqlExecPlanCostDataSource,
+    getSqlExecPlanCostDataSourceLoading,
+    getSqlExecPlanCostDataSourceError,
+    showExecPlanCostChart
+  });
 
   const [tabStatus, setTabStatus] = useState<string>('sql');
 

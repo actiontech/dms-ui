@@ -37,19 +37,22 @@ const SqlRewrittenDrawerEE: React.FC<SqlRewrittenDrawerWithBaseProps> = ({
   const [enableStructureOptimize, updateEnableStructureOptimize] =
     useState(false);
 
+  const originSqlNumber = originSqlInfo?.number ?? 0;
+  const originalSql = originSqlInfo?.sql ?? '';
+
   const {
     loading,
     data,
     run: rewriteSQLAction
   } = useRequest(
-    (sqlNumber: number, enable: boolean) =>
+    (number: number, enable: boolean) =>
       TaskService.RewriteSQL({
         task_id: taskID,
-        number: sqlNumber,
+        number: number,
         enable_structure_type: enable
       }).then((res) => {
         if (res.data.code === ResponseCode.SUCCESS) {
-          sqlNumberToRewriteStatusMap.current.set(sqlNumber, true);
+          sqlNumberToRewriteStatusMap.current.set(number, true);
           return res.data.data;
         }
       }),
@@ -60,10 +63,10 @@ const SqlRewrittenDrawerEE: React.FC<SqlRewrittenDrawerWithBaseProps> = ({
 
   const toggleEnableStructureOptimizeAction = useCallback(() => {
     updateEnableStructureOptimize(!enableStructureOptimize);
-    rewriteSQLAction(originSqlInfo.number, !enableStructureOptimize);
+    rewriteSQLAction(originSqlNumber, !enableStructureOptimize);
   }, [
     enableStructureOptimize,
-    originSqlInfo.number,
+    originSqlNumber,
     rewriteSQLAction,
     updateEnableStructureOptimize
   ]);
@@ -103,7 +106,7 @@ const SqlRewrittenDrawerEE: React.FC<SqlRewrittenDrawerWithBaseProps> = ({
         ),
         children: (
           <OverallRewrittenSuggestion
-            originalSql={originSqlInfo?.sql ?? ''}
+            originalSql={originalSql}
             businessNonEquivalentDesc={data?.business_non_equivalent_desc}
             rewrittenSql={data?.rewritten_sql}
             suggestions={data?.suggestions ?? []}
@@ -131,8 +134,8 @@ const SqlRewrittenDrawerEE: React.FC<SqlRewrittenDrawerWithBaseProps> = ({
         children: (
           <RewrittenSuggestionDetails
             taskID={taskID}
-            sqlNumber={originSqlInfo?.number ?? 0}
-            originalSql={originSqlInfo?.sql ?? ''}
+            sqlNumber={originSqlNumber}
+            originalSql={originalSql}
             dataSource={optimizedSuggestions}
           />
         )
@@ -190,49 +193,40 @@ const SqlRewrittenDrawerEE: React.FC<SqlRewrittenDrawerWithBaseProps> = ({
       return true;
     });
   }, [
-    data?.business_desc,
-    data?.business_non_equivalent_desc,
-    data?.logic_desc,
-    data?.rewritten_sql,
-    data?.rewritten_sql_logic_desc,
     data?.suggestions,
+    data?.business_non_equivalent_desc,
+    data?.rewritten_sql,
+    data?.business_desc,
+    data?.logic_desc,
+    data?.rewritten_sql_logic_desc,
     enableStructureOptimize,
-    toggleEnableStructureOptimizeAction,
-    originSqlInfo?.number,
-    originSqlInfo?.sql,
     t,
-    taskID
+    originalSql,
+    taskID,
+    originSqlNumber,
+    toggleEnableStructureOptimizeAction
   ]);
 
   useEffect(() => {
-    if (
-      open &&
-      originSqlInfo &&
-      !sqlNumberToRewriteStatusMap.current.has(originSqlInfo.number)
-    ) {
+    if (open && !sqlNumberToRewriteStatusMap.current.has(originSqlNumber)) {
       //初次加载数据重置该状态
       updateEnableStructureOptimize(false);
-      rewriteSQLAction(originSqlInfo.number, false);
+      rewriteSQLAction(originSqlNumber, false);
     }
-  }, [open, originSqlInfo, rewriteSQLAction]);
+  }, [open, originSqlNumber, rewriteSQLAction]);
 
   return (
     <BasicDrawer
       {...props}
       open={open}
       extra={
-        <EmptyBox
-          if={
-            !!originSqlInfo &&
-            !!sqlNumberToRewriteStatusMap.current.has(originSqlInfo!.number)
-          }
-        >
+        <EmptyBox if={sqlNumberToRewriteStatusMap.current.has(originSqlNumber)}>
           <BasicButton
             loading={loading}
             type="primary"
             onClick={() => {
               updateEnableStructureOptimize(false);
-              rewriteSQLAction(originSqlInfo.number, false);
+              rewriteSQLAction(originSqlNumber, false);
             }}
           >
             {t('sqlRewrite.updateRewrittenResult')}

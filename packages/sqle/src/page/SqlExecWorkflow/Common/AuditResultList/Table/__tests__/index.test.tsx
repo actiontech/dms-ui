@@ -25,6 +25,10 @@ import EventEmitter from '../../../../../../utils/EventEmitter';
 import EmitterKey from '../../../../../../data/EmitterKey';
 import task from '../../../../../../testUtils/mockApi/task';
 import { AuditTaskSQLsData } from '../../../../../../testUtils/mockApi/execWorkflow/data';
+import {
+  UtilsConsoleErrorStringsEnum,
+  ignoreConsoleErrors
+} from '@actiontech/shared/lib/testUtil/common';
 
 jest.mock('react-redux', () => {
   return {
@@ -43,6 +47,8 @@ describe('sqle/ExecWorkflow/Common/AuditResultList/List', () => {
   const customRender = (params: AuditResultTableProps) => {
     return superRender(<AuditResultTable {...params} />);
   };
+
+  ignoreConsoleErrors([UtilsConsoleErrorStringsEnum.INVALID_CUSTOM_ATTRIBUTE]);
 
   beforeEach(() => {
     mockUseCurrentUser();

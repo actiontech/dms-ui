@@ -4,8 +4,10 @@ import {
   IPerformanceStatistics,
   ISQLExplain,
   ITableMeta,
-  ITableMetas
+  ITableMetas,
+  IChartPoint
 } from '@actiontech/shared/lib/api/sqle/service/common';
+import { Dayjs } from 'dayjs';
 
 export type SqlAnalyzeProps = {
   errorMessage: string;
@@ -14,7 +16,25 @@ export type SqlAnalyzeProps = {
   sqlExplain?: ISQLExplain;
   performanceStatistics?: IPerformanceStatistics;
   loading?: boolean;
+  sqlExecPlanCostDataSource?: IChartPoint[];
+  getSqlExecPlanCostDataSourceLoading?: boolean;
+  getSqlExecPlanCostDataSourceError?: string;
+  getSqlExecPlanCostDataSource?: (startTime?: Dayjs, endTime?: Dayjs) => void;
+  showExecPlanCostChart?: boolean;
 };
+
+export type ExecPlanParams = Pick<
+  SqlAnalyzeProps,
+  | 'getSqlExecPlanCostDataSource'
+  | 'getSqlExecPlanCostDataSourceLoading'
+  | 'sqlExecPlanCostDataSource'
+  | 'showExecPlanCostChart'
+  | 'getSqlExecPlanCostDataSourceError'
+>;
+
+export type ExecPlanCostChartProps = {
+  setHistoryExecPlan: (data: IChartPoint) => void;
+} & Omit<ExecPlanParams, 'showExecPlanCostChart'>;
 
 export type UseTableSchemaOption = {
   schemaName?: string;

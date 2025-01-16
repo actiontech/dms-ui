@@ -1,6 +1,6 @@
-import { getInstanceTipListV1FunctionalModuleEnum } from './index.enum';
-
 import {
+  IGetDatabaseDriverLogosResV1,
+  IGetDatabaseDriverOptionsResV1,
   IGetInstanceTipsResV1,
   IBatchCheckInstanceConnectionsReqV1,
   IBatchGetInstanceConnectionsResV1,
@@ -11,6 +11,18 @@ import {
   IGetTableMetadataResV1,
   IGetInstanceResV2
 } from '../common.d';
+
+import { getInstanceTipListV1FunctionalModuleEnum } from './index.enum';
+
+export interface IGetDatabaseDriverLogosParams {
+  db_types: string;
+}
+
+export interface IGetDatabaseDriverLogosReturn
+  extends IGetDatabaseDriverLogosResV1 {}
+
+export interface IGetDatabaseDriverOptionsReturn
+  extends IGetDatabaseDriverOptionsResV1 {}
 
 export interface IGetInstanceTipListV1Params {
   project_name: string;
