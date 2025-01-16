@@ -8,7 +8,6 @@ import { BasicButton } from '@actiontech/shared';
 import TableTopList, {
   ITableTopList
 } from '../../../../components/ChartCom/TableTopList';
-import { useCurrentProject } from '@actiontech/shared/lib/global';
 import useChatsDataByAPI from '../../hooks/useChatsDataByAPI';
 import { formatTime } from '@actiontech/shared/lib/utils/Common';
 import { formatParamsBySeparator } from '@actiontech/shared/lib/utils/Tool';
@@ -16,6 +15,7 @@ import { IRiskAuditPlan } from '@actiontech/shared/lib/api/sqle/service/common';
 import statistic from '@actiontech/shared/lib/api/sqle/service/statistic';
 import { TableColumnWithIconStyleWrapper } from '@actiontech/shared/lib/styleWrapper/element';
 import { ScanTaskFilled } from '@actiontech/icons';
+import { useCurrentProject } from '@actiontech/shared/lib/global';
 
 //todo 智能扫描重构后 处于废弃状态，不进行 useNavigate 和 Link 调整。
 const ScanRiskList = () => {

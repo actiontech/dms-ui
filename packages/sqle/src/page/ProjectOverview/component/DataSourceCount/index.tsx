@@ -4,12 +4,14 @@ import ChartWrapper from '../../../../components/ChartCom/ChartWrapper';
 import CardWrapper from '../../../../components/CardWrapper';
 import { BasicButton, useTypedNavigate } from '@actiontech/shared';
 import { Column, ColumnConfig } from '@ant-design/plots';
-import { useCurrentProject } from '@actiontech/shared/lib/global';
+import {
+  useChangeTheme,
+  useCurrentProject
+} from '@actiontech/shared/lib/global';
 import useThemeStyleData from '../../../../hooks/useThemeStyleData';
 import useChatsDataByAPI from '../../hooks/useChatsDataByAPI';
 import statistic from '@actiontech/shared/lib/api/sqle/service/statistic';
 import { IDBTypeHealth } from '@actiontech/shared/lib/api/sqle/service/common';
-import { useChangeTheme } from '@actiontech/shared/lib/hooks';
 import { DBHealthEnum } from './index.enum';
 import { DataSourceCountDataType } from './index.type';
 import ToolTipCustomContent from './ToolTipCustomContent';
