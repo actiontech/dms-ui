@@ -12,7 +12,8 @@ import {
 import {
   useCurrentProject,
   useCurrentUser,
-  useDbServiceDriver
+  useDbServiceDriver,
+  usePermission
 } from '@actiontech/shared/lib/global';
 import { useBoolean, useRequest } from 'ahooks';
 import { useEffect, useMemo } from 'react';
@@ -35,7 +36,6 @@ import {
   BookMarkTagOutlined
 } from '@actiontech/icons';
 import useAuditPlanTypes from '../../../hooks/useAuditPlanTypes';
-import usePermission from '@actiontech/shared/lib/global/usePermission/usePermission';
 import {
   SqlManagementConfPageHeaderActions,
   SqlManagementConfTableActions

@@ -2,9 +2,11 @@ import CardWrapper from '../../../../components/CardWrapper';
 import { useTranslation } from 'react-i18next';
 import { useState } from 'react';
 import useChatsDataByAPI from '../../hooks/useChatsDataByAPI';
-import { useCurrentProject } from '@actiontech/shared/lib/global';
+import {
+  useChangeTheme,
+  useCurrentProject
+} from '@actiontech/shared/lib/global';
 import { Bar, BarConfig } from '@ant-design/plots';
-import { useChangeTheme } from '@actiontech/shared/lib/hooks';
 import useThemeStyleData from '../../../../hooks/useThemeStyleData';
 import ChartWrapper from '../../../../components/ChartCom/ChartWrapper';
 import sqlOptimization from '@actiontech/shared/lib/api/sqle/service/sql_optimization';

@@ -542,6 +542,16 @@ export interface IBlacklistResV1 {
   type?: BlacklistResV1TypeEnum;
 }
 
+export interface IChartPoint {
+  info?: Array<{
+    [key: string]: string;
+  }>;
+
+  x?: string;
+
+  y?: number;
+}
+
 export interface ICheckLicenseResV1 {
   code?: number;
 
@@ -878,6 +888,18 @@ export interface IDatabaseDiffObject {
   object_type?: DatabaseDiffObjectObjectTypeEnum;
 
   objects_diff_result?: IObjectDiffResult[];
+}
+
+export interface IDatabaseDriverLogosV1 {
+  db_type?: string;
+
+  logo?: number[];
+}
+
+export interface IDatabaseDriverOptionsV1 {
+  db_type?: string;
+
+  params?: IInstanceAdditionalParamResV1[];
 }
 
 export interface IDatabaseObject {
@@ -1294,6 +1316,22 @@ export interface IGetDatabaseComparisonReqV1 {
   base_db_object?: IDatabaseComparisonObject;
 
   comparison_db_object?: IDatabaseComparisonObject;
+}
+
+export interface IGetDatabaseDriverLogosResV1 {
+  code?: number;
+
+  data?: IDatabaseDriverLogosV1[];
+
+  message?: string;
+}
+
+export interface IGetDatabaseDriverOptionsResV1 {
+  code?: number;
+
+  data?: IDatabaseDriverOptionsV1[];
+
+  message?: string;
 }
 
 export interface IGetDepBetweenStageInstanceResV1 {
@@ -2812,6 +2850,14 @@ export interface ISqlAnalysis {
   table_metas?: ITableMetas;
 }
 
+export interface ISqlAnalysisChart {
+  points?: IChartPoint[];
+
+  x_info?: string;
+
+  y_info?: string;
+}
+
 export interface ISqlAnalysisResDataV1 {
   sql_explain?: ISQLExplain;
 
@@ -2900,6 +2946,14 @@ export interface ISqlManage {
   sql_fingerprint?: string;
 
   status?: SqlManageStatusEnum;
+}
+
+export interface ISqlManageAnalysisChartResp {
+  code?: number;
+
+  data?: ISqlAnalysisChart;
+
+  message?: string;
 }
 
 export interface ISqlManageCodingReq {
