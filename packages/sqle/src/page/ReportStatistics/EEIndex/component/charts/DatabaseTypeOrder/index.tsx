@@ -4,20 +4,18 @@ import { useState } from 'react';
 import { Tooltip, Treemap } from '@ant-design/plots';
 import { TreemapConfig } from '@ant-design/plots/es/components/treemap';
 import ChartWrapper from '../../../../../../components/ChartCom/ChartWrapper';
-
 import useThemeStyleData from '../../../../../../hooks/useThemeStyleData';
 import { AxiosResponse } from 'axios';
 import usePanelCommonRequest from '../../../hooks/usePanelCommonRequest';
 import ChartTooltip from '../../../../../../components/ChartCom/ChartTooltip';
 import useGetConfig from '../../../../../../components/ChartCom/ChartTooltip/useGetConfig';
-
 import { formatParamsBySeparator } from '@actiontech/shared/lib/utils/Tool';
 import { IGetWorkflowPercentCountedByInstanceTypeV1Return } from '@actiontech/shared/lib/api/sqle/service/statistic/index.d';
 import { IWorkflowPercentCountedByInstanceType } from '@actiontech/shared/lib/api/sqle/service/common';
 import statistic from '@actiontech/shared/lib/api/sqle/service/statistic';
 import { floatToNumberPercent } from '@actiontech/shared/lib/utils/Math';
-import { useChangeTheme } from '@actiontech/shared/lib/hooks';
 import { SharedTheme } from '@actiontech/shared/lib/types/theme.type';
+import { useChangeTheme } from '@actiontech/shared/lib/global';
 
 const renderLabelContent = (obj: { [key: string]: any }) => {
   return obj.name ?? '';

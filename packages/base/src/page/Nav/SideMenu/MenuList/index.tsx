@@ -6,7 +6,7 @@ import { useLocation } from 'react-router-dom';
 import { CustomMenuItemType } from './menus/index.type';
 import { sideMenuData } from './menus/menu.data';
 import { dmsSideMenuData } from './menus/menu.data.dms';
-import usePermission from '@actiontech/shared/lib/global/usePermission/usePermission';
+import { usePermission } from '@actiontech/shared/lib/global';
 
 type Props = {
   projectID: string;

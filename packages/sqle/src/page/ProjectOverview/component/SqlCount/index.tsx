@@ -1,21 +1,19 @@
 import { useTranslation } from 'react-i18next';
 import { useState } from 'react';
-
 import ChartWrapper from '../../../../components/ChartCom/ChartWrapper';
 import CardWrapper from '../../../../components/CardWrapper';
 import ChartContTitle from '../../../../page/ReportStatistics/EEIndex/component/base/ChartContTitle';
-
 import { formatParamsBySeparator } from '@actiontech/shared/lib/utils/Tool';
-
 import { RingProgress, RingProgressConfig } from '@ant-design/plots';
 import useChatsDataByAPI from '../../hooks/useChatsDataByAPI';
-
-import { useCurrentProject } from '@actiontech/shared/lib/global';
+import {
+  useChangeTheme,
+  useCurrentProject
+} from '@actiontech/shared/lib/global';
 import useThemeStyleData from '../../../../hooks/useThemeStyleData';
 import ChartTooltip from '../../../../components/ChartCom/ChartTooltip';
 import { PopoverTooltipStyleWrapper } from '../../../../components/ChartCom/ChartTooltip/style';
 import statistic from '@actiontech/shared/lib/api/sqle/service/statistic';
-import { useChangeTheme } from '@actiontech/shared/lib/hooks';
 import { floor } from 'lodash';
 import { floatToPercent } from '@actiontech/shared/lib/utils/Math';
 

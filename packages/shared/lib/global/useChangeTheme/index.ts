@@ -1,6 +1,6 @@
 import React from 'react';
 import { SupportTheme } from '../../enum';
-import { useCurrentUser } from '../../global';
+import useCurrentUser from '../useCurrentUser';
 
 const useChangeTheme = () => {
   const { theme, updateTheme } = useCurrentUser();
