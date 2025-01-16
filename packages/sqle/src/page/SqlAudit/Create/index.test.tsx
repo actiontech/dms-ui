@@ -213,9 +213,7 @@ describe('sqle/SqlAudit/Create', () => {
 
     fireEvent.mouseDown(getBySelector('#ruleTemplate', baseElement));
     expect(baseElement).toMatchSnapshot();
-    fireEvent.click(
-      getBySelector('div[title="custom_template_b"]', baseElement)
-    );
+    fireEvent.click(getBySelector('div[title="custom_template"]', baseElement));
     await jest.advanceTimersByTime(0);
 
     const sqlValue = 'SELECT 1;';
@@ -242,7 +240,7 @@ describe('sqle/SqlAudit/Create', () => {
       instance_name: undefined,
       instance_schema: undefined,
       project_name: 'default',
-      rule_template_name: 'custom_template_b',
+      rule_template_name: 'custom_template',
       sqls: formatterSQL(sqlValue, instanceTipsMockData[0].instance_type)
     });
 

@@ -2,6 +2,8 @@
  * Do not modify this file in the dms-ui repository
  */
 
-export const dmsSideMenuData = (_: string) => {
-  return [];
-};
+import { GenerateMenuItemI18nConfig, MenuTreeI18n } from './index.type';
+
+export const DMS_MENU_STRUCT: MenuTreeI18n[] = [];
+
+export const DMS_ALL_MENUS: GenerateMenuItemI18nConfig[] = [];

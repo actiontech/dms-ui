@@ -1,26 +1,23 @@
-import { BasicButton, EmptyBox } from '@actiontech/shared';
+import { BasicButton, BasicDrawer, EmptyBox } from '@actiontech/shared';
 import { IRewriteSuggestion } from '@actiontech/shared/lib/api/sqle/service/common';
 import { RewriteSuggestionTypeEnum } from '@actiontech/shared/lib/api/sqle/service/common.enum';
 import { useRequest } from 'ahooks';
 import { CollapseProps } from 'antd';
-import { useMemo } from 'react';
+import { useCallback, useMemo, useRef, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import BusinessRewrittenSuggestion from './components/BusinessRewrittenSuggestion';
 import CustomLoadingIndicator from './components/CustomLoadingIndicator';
 import DependDatabaseStructure from './components/DependDatabaseStructure';
 import OverallRewrittenSuggestion from './components/OverallRewrittenSuggestion';
 import RewrittenSuggestionDetails from './components/RewrittenSuggestionDetails';
-import { SqlRewrittenDrawerProps } from './index.type';
+import { SqlRewrittenDrawerWithBaseProps } from './index.type';
 import {
   ModuleHeaderTitleStyleWrapper,
   RewrittenSqlCollapseStyleWrapper
 } from './style';
 import TaskService from '@actiontech/shared/lib/api/sqle/service/task';
-
-type Props = Omit<SqlRewrittenDrawerProps, 'onClose'> & {
-  enableStructureOptimize: boolean;
-  toggleEnableStructureOptimize: () => void;
-};
+import { useEffect } from 'react';
+import { ResponseCode } from '@actiontech/shared/lib/enum';
 
 enum CollapseItemKeyEnum {
   rewritten_sql_details,
@@ -29,26 +26,50 @@ enum CollapseItemKeyEnum {
   depend_database_structure_optimization
 }
 
-const SqlRewrittenDrawerEE: React.FC<Props> = ({
+const SqlRewrittenDrawerEE: React.FC<SqlRewrittenDrawerWithBaseProps> = ({
   open,
   taskID,
   originSqlInfo,
-  enableStructureOptimize,
-  toggleEnableStructureOptimize
+  ...props
 }) => {
   const { t } = useTranslation();
-  const { loading, data } = useRequest(
-    () =>
+  const sqlNumberToRewriteStatusMap = useRef<Map<number, boolean>>(new Map());
+  const [enableStructureOptimize, updateEnableStructureOptimize] =
+    useState(false);
+
+  const originSqlNumber = originSqlInfo?.number ?? 0;
+  const originalSql = originSqlInfo?.sql ?? '';
+
+  const {
+    loading,
+    data,
+    run: rewriteSQLAction
+  } = useRequest(
+    (number: number, enable: boolean) =>
       TaskService.RewriteSQL({
         task_id: taskID,
-        number: originSqlInfo!.number,
-        enable_structure_type: enableStructureOptimize
-      }).then((res) => res.data.data),
+        number: number,
+        enable_structure_type: enable
+      }).then((res) => {
+        if (res.data.code === ResponseCode.SUCCESS) {
+          sqlNumberToRewriteStatusMap.current.set(number, true);
+          return res.data.data;
+        }
+      }),
     {
-      ready: open && !!originSqlInfo,
-      refreshDeps: [enableStructureOptimize]
+      manual: true
     }
   );
+
+  const toggleEnableStructureOptimizeAction = useCallback(() => {
+    updateEnableStructureOptimize(!enableStructureOptimize);
+    rewriteSQLAction(originSqlNumber, !enableStructureOptimize);
+  }, [
+    enableStructureOptimize,
+    originSqlNumber,
+    rewriteSQLAction,
+    updateEnableStructureOptimize
+  ]);
 
   const collapseItems = useMemo<CollapseProps['items']>(() => {
     const statementTypeSuggestion: IRewriteSuggestion[] = [];
@@ -85,7 +106,7 @@ const SqlRewrittenDrawerEE: React.FC<Props> = ({
         ),
         children: (
           <OverallRewrittenSuggestion
-            originalSql={originSqlInfo?.sql ?? ''}
+            originalSql={originalSql}
             businessNonEquivalentDesc={data?.business_non_equivalent_desc}
             rewrittenSql={data?.rewritten_sql}
             suggestions={data?.suggestions ?? []}
@@ -113,8 +134,8 @@ const SqlRewrittenDrawerEE: React.FC<Props> = ({
         children: (
           <RewrittenSuggestionDetails
             taskID={taskID}
-            sqlNumber={originSqlInfo?.number ?? 0}
-            originalSql={originSqlInfo?.sql ?? ''}
+            sqlNumber={originSqlNumber}
+            originalSql={originalSql}
             dataSource={optimizedSuggestions}
           />
         )
@@ -132,7 +153,7 @@ const SqlRewrittenDrawerEE: React.FC<Props> = ({
               </span>
             </ModuleHeaderTitleStyleWrapper>
 
-            <BasicButton onClick={toggleEnableStructureOptimize}>
+            <BasicButton onClick={toggleEnableStructureOptimizeAction}>
               {t('sqlRewrite.enableDatabaseStructureOptimization')}
             </BasicButton>
           </div>
@@ -140,7 +161,9 @@ const SqlRewrittenDrawerEE: React.FC<Props> = ({
         children: (
           <DependDatabaseStructure
             dataSource={remainingSuggestions}
-            toggleEnableStructureOptimize={toggleEnableStructureOptimize}
+            toggleEnableStructureOptimizeAction={
+              toggleEnableStructureOptimizeAction
+            }
           />
         )
       },
@@ -170,27 +193,54 @@ const SqlRewrittenDrawerEE: React.FC<Props> = ({
       return true;
     });
   }, [
-    data?.business_desc,
-    data?.business_non_equivalent_desc,
-    data?.logic_desc,
-    data?.rewritten_sql,
-    data?.rewritten_sql_logic_desc,
     data?.suggestions,
+    data?.business_non_equivalent_desc,
+    data?.rewritten_sql,
+    data?.business_desc,
+    data?.logic_desc,
+    data?.rewritten_sql_logic_desc,
     enableStructureOptimize,
-    originSqlInfo?.number,
-    originSqlInfo?.sql,
     t,
+    originalSql,
     taskID,
-    toggleEnableStructureOptimize
+    originSqlNumber,
+    toggleEnableStructureOptimizeAction
   ]);
 
+  useEffect(() => {
+    if (open && !sqlNumberToRewriteStatusMap.current.has(originSqlNumber)) {
+      //初次加载数据重置该状态
+      updateEnableStructureOptimize(false);
+      rewriteSQLAction(originSqlNumber, false);
+    }
+  }, [open, originSqlNumber, rewriteSQLAction]);
+
   return (
-    <EmptyBox if={!loading} defaultNode={<CustomLoadingIndicator />}>
-      <RewrittenSqlCollapseStyleWrapper
-        defaultActiveKey={[CollapseItemKeyEnum.overall_rewritten_suggestion]}
-        items={collapseItems}
-      />
-    </EmptyBox>
+    <BasicDrawer
+      {...props}
+      open={open}
+      extra={
+        <EmptyBox if={sqlNumberToRewriteStatusMap.current.has(originSqlNumber)}>
+          <BasicButton
+            loading={loading}
+            type="primary"
+            onClick={() => {
+              updateEnableStructureOptimize(false);
+              rewriteSQLAction(originSqlNumber, false);
+            }}
+          >
+            {t('sqlRewrite.updateRewrittenResult')}
+          </BasicButton>
+        </EmptyBox>
+      }
+    >
+      <EmptyBox if={!loading} defaultNode={<CustomLoadingIndicator />}>
+        <RewrittenSqlCollapseStyleWrapper
+          defaultActiveKey={[CollapseItemKeyEnum.overall_rewritten_suggestion]}
+          items={collapseItems}
+        />
+      </EmptyBox>
+    </BasicDrawer>
   );
 };
 

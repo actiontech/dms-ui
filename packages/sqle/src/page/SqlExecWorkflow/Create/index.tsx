@@ -25,6 +25,7 @@ import { LazyLoadComponent } from '@actiontech/shared';
 import { useSelector } from 'react-redux';
 import { IReduxState } from '../../../store';
 import useCreationMode from './hooks/useCreationMode';
+import useCheckTaskAuditRuleExceptionStatus from './hooks/useCheckTaskAuditRuleExceptionStatus';
 
 const CreateSqlExecWorkflow: React.FC = () => {
   const { t } = useTranslation();
@@ -35,6 +36,8 @@ const CreateSqlExecWorkflow: React.FC = () => {
   const createdWorkflowID = useRef('');
   const { updateTaskRecordCount, checkTaskCountIsEmpty } =
     useCheckTaskAuditSqlCount();
+  const { hasExceptionAuditRule, updateTaskAuditRuleExceptionStatus } =
+    useCheckTaskAuditRuleExceptionStatus();
 
   const {
     isCloneMode,
@@ -228,6 +231,10 @@ const CreateSqlExecWorkflow: React.FC = () => {
 
       <LazyLoadComponent open={isAtAuditResultStep} animation={false}>
         <AuditResultStep
+          hasExceptionAuditRule={hasExceptionAuditRule}
+          updateTaskAuditRuleExceptionStatus={
+            updateTaskAuditRuleExceptionStatus
+          }
           baseFormValues={baseInfoForm.getFieldsValue()}
           sqlAuditInfoFormValues={sqlAuditInfoForm.getFieldsValue()}
           tasks={taskInfos}

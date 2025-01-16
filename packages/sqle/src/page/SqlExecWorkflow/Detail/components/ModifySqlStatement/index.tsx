@@ -35,6 +35,7 @@ import { WORKFLOW_OVERVIEW_TAB_KEY } from '../../hooks/useAuditExecResultPanelSe
 import { BriefcaseFilled, LeftArrowOutlined } from '@actiontech/icons';
 import Icon from '@ant-design/icons';
 import useInstance from '../../../../../hooks/useInstance';
+import useCheckTaskAuditRuleExceptionStatus from '../../../Create/hooks/useCheckTaskAuditRuleExceptionStatus';
 
 const ModifySqlStatement: React.FC<ModifySqlStatementProps> = ({
   currentTasks,
@@ -55,6 +56,9 @@ const ModifySqlStatement: React.FC<ModifySqlStatementProps> = ({
   const { t } = useTranslation();
   const { projectName } = useCurrentProject();
   const { updateInstanceList, instanceList } = useInstance();
+
+  const { hasExceptionAuditRule, updateTaskAuditRuleExceptionStatus } =
+    useCheckTaskAuditRuleExceptionStatus();
 
   const [form] = Form.useForm<{ [key in string]: SqlStatementFields }>();
 
@@ -267,6 +271,7 @@ const ModifySqlStatement: React.FC<ModifySqlStatementProps> = ({
           extra={
             <EmptyBox if={!!modifiedTasks?.length}>
               <SubmitWorkflowButton
+                hasExceptionAuditRule={hasExceptionAuditRule}
                 isConfirmationRequiredForSubmission={
                   isConfirmationRequiredForSubmission
                 }
@@ -311,6 +316,9 @@ const ModifySqlStatement: React.FC<ModifySqlStatementProps> = ({
           <AuditResultList
             tasks={modifiedTasks!}
             updateTaskRecordCount={updateTaskRecordCount}
+            updateTaskAuditRuleExceptionStatus={
+              updateTaskAuditRuleExceptionStatus
+            }
           />
         </EmptyBox>
       </PageLayoutHasFixedHeaderStyleWrapper>

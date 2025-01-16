@@ -10,12 +10,12 @@ import { DependDatabaseStructureStyleWrapper } from './style';
 
 type Props = {
   dataSource: IRewriteSuggestion[];
-  toggleEnableStructureOptimize: () => void;
+  toggleEnableStructureOptimizeAction: () => void;
 };
 
 const DependDatabaseStructure: React.FC<Props> = ({
   dataSource,
-  toggleEnableStructureOptimize
+  toggleEnableStructureOptimizeAction
 }) => {
   const { t } = useTranslation();
   return (
@@ -27,7 +27,7 @@ const DependDatabaseStructure: React.FC<Props> = ({
         message={
           <Space>
             <span>{t('sqlRewrite.rewriteRulesAffectingStructure')}</span>
-            <BasicButton onClick={toggleEnableStructureOptimize}>
+            <BasicButton onClick={toggleEnableStructureOptimizeAction}>
               {t('sqlRewrite.enableDatabaseStructureOptimization')}
             </BasicButton>
           </Space>

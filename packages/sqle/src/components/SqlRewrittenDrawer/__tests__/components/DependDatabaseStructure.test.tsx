@@ -11,12 +11,14 @@ describe('DependDatabaseStructure', () => {
   )!;
 
   it('should render alert message with enable button', () => {
-    const toggleEnableStructureOptimizeMock = jest.fn();
+    const toggleEnableStructureOptimizeActionMock = jest.fn();
 
     superRender(
       <DependDatabaseStructure
         dataSource={mockDataSource}
-        toggleEnableStructureOptimize={toggleEnableStructureOptimizeMock}
+        toggleEnableStructureOptimizeAction={
+          toggleEnableStructureOptimizeActionMock
+        }
       />
     );
 
@@ -28,13 +30,15 @@ describe('DependDatabaseStructure', () => {
     expect(screen.getByText('启动数据库结构优化')).toBeInTheDocument();
   });
 
-  it('should call toggleEnableStructureOptimize when enable button is clicked', () => {
-    const toggleEnableStructureOptimizeMock = jest.fn();
+  it('should call toggleEnableStructureOptimizeAction when enable button is clicked', () => {
+    const toggleEnableStructureOptimizeActionMock = jest.fn();
 
     superRender(
       <DependDatabaseStructure
         dataSource={mockDataSource}
-        toggleEnableStructureOptimize={toggleEnableStructureOptimizeMock}
+        toggleEnableStructureOptimizeAction={
+          toggleEnableStructureOptimizeActionMock
+        }
       />
     );
 
@@ -43,14 +47,14 @@ describe('DependDatabaseStructure', () => {
       .closest('button')!;
     fireEvent.click(enableButton);
 
-    expect(toggleEnableStructureOptimizeMock).toHaveBeenCalled();
+    expect(toggleEnableStructureOptimizeActionMock).toHaveBeenCalled();
   });
 
   it('should render list items when dataSource has items', () => {
     superRender(
       <DependDatabaseStructure
         dataSource={mockDataSource}
-        toggleEnableStructureOptimize={() => {}}
+        toggleEnableStructureOptimizeAction={() => {}}
       />
     );
 
@@ -63,7 +67,7 @@ describe('DependDatabaseStructure', () => {
     superRender(
       <DependDatabaseStructure
         dataSource={[]}
-        toggleEnableStructureOptimize={() => {}}
+        toggleEnableStructureOptimizeAction={() => {}}
       />
     );
 

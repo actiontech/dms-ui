@@ -1,27 +1,55 @@
 // @warn/cli/create-dms-page
 
 import { PermissionsConstantType } from '@actiontech/shared/lib/global';
-import { ItemType } from 'antd/es/menu/hooks/useItems';
+import { ItemType, MenuItemType } from 'antd/es/menu/hooks/useItems';
+import { I18nKey } from '../../../../../locale';
+import { ReactNode } from 'react';
+import { To } from 'react-router-dom';
 
 export type CustomMenuItemType =
-  | (ItemType & {
-      structKey: MenuStructTreeKey;
-      permission?: PermissionsConstantType;
-    })
+  | (ItemType<MenuItemType> &
+      Pick<MenuItemI18nConfig, 'structKey' | 'permission'>)
   | null;
 
-export type MenuStructTreeType = Array<
-  | MenuStructTreeKey
-  | {
-      type: 'group';
-      label: string;
-      group: Array<MenuStructTreeKey>;
-      permission?: PermissionsConstantType;
-    }
-  | { type: 'divider' }
->;
+export type GenerateMenuItemI18nConfig = (
+  projectID: string
+) => MenuItemI18nConfig;
 
-export type GenerateMenuItemType = (projectID: string) => CustomMenuItemType;
+export interface MenuItemI18nConfig {
+  to: To;
+  label: I18nKey;
+  icon: ReactNode;
+  key: string;
+  structKey: MenuTreeKey;
+  permission?: PermissionsConstantType;
+}
+
+export interface MenuItemTranslatedConfig
+  extends Omit<MenuItemI18nConfig, 'label'> {
+  label: ReactNode;
+}
+
+interface MenuTreeGroupI18n {
+  type: 'group';
+  groupLabelKey: I18nKey;
+  groups: Array<MenuTreeKey>;
+  permission?: PermissionsConstantType;
+}
+
+interface MenuTreeGroupTranslated
+  extends Omit<MenuTreeGroupI18n, 'groupLabelKey'> {
+  label: string;
+}
+
+interface MenuTreeDivider {
+  type: 'divider';
+}
+export type MenuTreeKey = BaseMenuStructTreeKey | SqleMenuStructTreeKey;
+export type MenuTreeI18n = MenuTreeKey | MenuTreeGroupI18n | MenuTreeDivider;
+export type MenuTreeTranslated =
+  | MenuTreeKey
+  | MenuTreeGroupTranslated
+  | MenuTreeDivider;
 
 type BaseMenuStructTreeKey =
   | 'instance'
@@ -46,5 +74,3 @@ type SqleMenuStructTreeKey =
   | 'pipeline-configuration'
   | 'version-management'
   | 'data-source-comparison';
-
-export type MenuStructTreeKey = BaseMenuStructTreeKey | SqleMenuStructTreeKey;

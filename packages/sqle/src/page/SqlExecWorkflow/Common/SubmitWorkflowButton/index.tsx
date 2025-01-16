@@ -1,39 +1,54 @@
-import { BasicButton } from '@actiontech/shared';
+import { ActionButton, BasicButton } from '@actiontech/shared';
 import { SubmitWorkflowButtonProps } from './index.type';
 import { useTranslation } from 'react-i18next';
 import { InfoHexagonOutlined } from '@actiontech/icons';
-import { Popconfirm } from 'antd';
 
 const SubmitWorkflowButton: React.FC<SubmitWorkflowButtonProps> = ({
   isConfirmationRequiredForSubmission,
   loading,
   submitWorkflowConfirmationMessage,
-  onClick
+  onClick,
+  hasExceptionAuditRule
 }) => {
   const { t } = useTranslation();
-  if (!isConfirmationRequiredForSubmission) {
+
+  if (hasExceptionAuditRule) {
     return (
-      <BasicButton loading={loading} type="primary" onClick={onClick}>
-        {t('execWorkflow.create.auditResult.submit')}
-      </BasicButton>
+      <ActionButton
+        danger
+        disabled
+        actionType="tooltip"
+        icon={<InfoHexagonOutlined color="currentColor" height={20} />}
+        tooltip={{
+          title: t('execWorkflow.create.auditResult.submitTooltipTitle')
+        }}
+        text={t('execWorkflow.create.auditResult.submit')}
+      />
+    );
+  }
+
+  if (isConfirmationRequiredForSubmission) {
+    return (
+      <ActionButton
+        danger
+        loading={loading}
+        icon={<InfoHexagonOutlined color="currentColor" height={20} />}
+        text={t('execWorkflow.create.auditResult.submit')}
+        actionType="confirm"
+        confirm={{
+          title: submitWorkflowConfirmationMessage,
+          okText: t('execWorkflow.create.auditResult.continueSubmission'),
+          onConfirm: onClick,
+          okButtonProps: { loading }
+        }}
+      />
     );
   }
 
   return (
-    <Popconfirm
-      title={submitWorkflowConfirmationMessage}
-      okText={t('execWorkflow.create.auditResult.continueSubmission')}
-      onConfirm={onClick}
-      okButtonProps={{ loading }}
-    >
-      <BasicButton
-        danger
-        loading={loading}
-        icon={<InfoHexagonOutlined color="currentColor" height={20} />}
-      >
-        {t('execWorkflow.create.auditResult.submit')}
-      </BasicButton>
-    </Popconfirm>
+    <BasicButton loading={loading} type="primary" onClick={onClick}>
+      {t('execWorkflow.create.auditResult.submit')}
+    </BasicButton>
   );
 };
 
