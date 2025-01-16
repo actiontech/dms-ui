@@ -34,12 +34,6 @@ export interface IAccessTokenInfo {
   token_expired_timestamp?: string;
 }
 
-export interface IAddDBServicePreCheckReply {
-  code?: number;
-
-  message?: string;
-}
-
 export interface IAddDBServiceReply {
   code?: number;
 
@@ -562,30 +556,12 @@ export interface IDbServiceConnections {
   db_service_uid?: string;
 }
 
-export interface IDelDBServicePreCheckReply {
-  code?: number;
-
-  message?: string;
-}
-
 export interface IDelSessionReply {
   code?: number;
 
   data?: {
     location?: string;
   };
-
-  message?: string;
-}
-
-export interface IDelUserGroupPreCheckReply {
-  code?: number;
-
-  message?: string;
-}
-
-export interface IDelUserPreCheckReply {
-  code?: number;
 
   message?: string;
 }
@@ -944,24 +920,6 @@ export interface IGetWebHookConfigurationReplyItem {
 
 export interface II18nStr {
   [key: string]: string;
-}
-
-export interface IIPluginDBService {
-  Business?: string;
-
-  DBType?: string;
-
-  Host?: string;
-
-  Name?: string;
-
-  Port?: string;
-
-  SQLERuleTemplateId?: string;
-
-  SQLERuleTemplateName?: string;
-
-  User?: string;
 }
 
 export interface IImportDBService {
@@ -1701,14 +1659,6 @@ export interface IPersonalizationReq {
 }
 
 export interface IPlugin {
-  add_db_service_pre_check_url?: string;
-
-  del_db_service_pre_check_url?: string;
-
-  del_user_group_pre_check_url?: string;
-
-  del_user_pre_check_url?: string;
-
   name?: string;
 
   operate_data_resource_handle_url?: string;

@@ -11,10 +11,7 @@ import {
   SpinIndicator,
   useTypedNavigate
 } from '@actiontech/shared';
-import {
-  useChangeTheme,
-  useNotificationContext
-} from '@actiontech/shared/lib/hooks';
+import { useNotificationContext } from '@actiontech/shared/lib/hooks';
 import {
   ResponseCode,
   SupportLanguage,
@@ -22,8 +19,10 @@ import {
 } from '@actiontech/shared/lib/enum';
 import Nav from './page/Nav';
 import {
+  useChangeTheme,
   useCurrentUser,
-  useDbServiceDriver
+  useDbServiceDriver,
+  usePermission
 } from '@actiontech/shared/lib/global';
 import useSessionUser from './hooks/useSessionUser';
 import { ConfigProvider, Spin, theme as antdTheme } from 'antd';
@@ -42,7 +41,6 @@ import updateLocale from 'dayjs/plugin/updateLocale';
 import i18n from './locale';
 import antd_zh_CN from 'antd/locale/zh_CN';
 import antd_en_US from 'antd/locale/en_US';
-import usePermission from '@actiontech/shared/lib/global/usePermission/usePermission';
 import useFetchPermissionData from './hooks/useFetchPermissionData';
 import { useDispatch } from 'react-redux';
 import { updateModuleFeatureSupport } from './store/permission';

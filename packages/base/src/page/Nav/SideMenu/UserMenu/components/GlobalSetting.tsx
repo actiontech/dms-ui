@@ -12,9 +12,9 @@ import { ContextMenuItem } from './ContextMenu/index.type';
 import ContextMenu from './ContextMenu';
 import {
   PERMISSIONS,
-  PermissionsConstantType
+  PermissionsConstantType,
+  usePermission
 } from '@actiontech/shared/lib/global';
-import usePermission from '@actiontech/shared/lib/global/usePermission/usePermission';
 import { useTypedNavigate } from '@actiontech/shared';
 
 const GlobalSetting: React.FC = () => {

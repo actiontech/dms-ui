@@ -5,12 +5,12 @@ import { Bar, BarConfig } from '@ant-design/plots';
 import { typeTaskItem } from './index';
 import { limitDataLength } from '../../index.data';
 import useThemeStyleData from '../../../../../../hooks/useThemeStyleData';
-import { useChangeTheme } from '@actiontech/shared/lib/hooks';
 import {
   barChartLabelContent,
   barChartStateActive,
   barChartToolTipCustomContent
 } from './index.data';
+import { useChangeTheme } from '@actiontech/shared/lib/global';
 
 interface IBarChat {
   onReady: BarConfig['onReady'];

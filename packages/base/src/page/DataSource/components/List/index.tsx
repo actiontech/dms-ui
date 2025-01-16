@@ -9,7 +9,8 @@ import {
 import { TestConnectDisableReasonStyleWrapper } from '@actiontech/shared/lib/components/TestDatabaseConnectButton/style';
 import {
   useCurrentProject,
-  useDbServiceDriver
+  useDbServiceDriver,
+  usePermission
 } from '@actiontech/shared/lib/global';
 import useDbService from '../../../../hooks/useDbService';
 import { useBoolean, useRequest } from 'ahooks';
@@ -31,7 +32,6 @@ import {
   DataSourceListParamType,
   filterDataMaskOptions
 } from './columns';
-import usePermission from '@actiontech/shared/lib/global/usePermission/usePermission';
 import { DataSourceListActions, DataSourcePageHeaderActions } from './actions';
 import { ROUTE_PATHS } from '@actiontech/shared/lib/data/routePaths';
 import useStaticTips from '../../../../hooks/useStaticTips';
