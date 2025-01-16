@@ -16,9 +16,9 @@ import GlobalDataSource from '../GlobalDataSource';
 import SyncDataSource from '../SyncDataSource';
 import {
   PERMISSIONS,
-  PermissionsConstantType
+  PermissionsConstantType,
+  usePermission
 } from '@actiontech/shared/lib/global';
-import usePermission from '@actiontech/shared/lib/global/usePermission/usePermission';
 import { DataSourceManagementPageHeaderActions } from './action';
 import { ROUTE_PATHS } from '@actiontech/shared/lib/data/routePaths';
 

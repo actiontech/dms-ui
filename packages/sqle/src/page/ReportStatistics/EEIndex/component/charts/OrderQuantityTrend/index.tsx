@@ -6,7 +6,6 @@ import { useEffect, useMemo, useState } from 'react';
 import { Area, Tooltip } from '@ant-design/plots';
 import { AreaConfig } from '@ant-design/plots';
 import { RangePickerProps } from 'antd/es/date-picker';
-
 import CardWrapper from '../../../../../../components/CardWrapper';
 import Icon from '@ant-design/icons/lib/components/Icon';
 import { AxiosResponse } from 'axios';
@@ -28,9 +27,9 @@ import {
   IGetWorkflowCreatedCountEachDayV1Return
 } from '@actiontech/shared/lib/api/sqle/service/statistic/index.d';
 import statistic from '@actiontech/shared/lib/api/sqle/service/statistic';
-import { useChangeTheme } from '@actiontech/shared/lib/hooks';
 import { SharedTheme } from '@actiontech/shared/lib/types/theme.type';
 import { ArrowRightOutlined } from '@actiontech/icons';
+import { useChangeTheme } from '@actiontech/shared/lib/global';
 
 const dateFormat = 'YYYY-MM-DD';
 type RangeValue = [Dayjs | null, Dayjs | null] | null;

@@ -2,7 +2,10 @@ import { useCallback, useEffect, useMemo } from 'react';
 import { useTranslation } from 'react-i18next';
 import { message, Modal } from 'antd';
 import { TestConnectDisableReasonStyleWrapper } from '@actiontech/shared/lib/components/TestDatabaseConnectButton/style';
-import { useDbServiceDriver } from '@actiontech/shared/lib/global';
+import {
+  useDbServiceDriver,
+  usePermission
+} from '@actiontech/shared/lib/global';
 import { useRequest } from 'ahooks';
 import DBService from '@actiontech/shared/lib/api/base/service/DBService';
 import ProjectService from '@actiontech/shared/lib/api/base/service/Project';
@@ -25,7 +28,6 @@ import eventEmitter from '../../../utils/EventEmitter';
 import EmitterKey from '../../../data/EmitterKey';
 import useProjectTips from '../../../hooks/useProjectTips';
 import useGlobalDataSourceType from '../hooks/useGlobalDataSourceType';
-import usePermission from '@actiontech/shared/lib/global/usePermission/usePermission';
 import { GlobalDataSourceListActions } from './action';
 import { useTypedNavigate } from '@actiontech/shared';
 import { ROUTE_PATHS } from '@actiontech/shared/lib/data/routePaths';

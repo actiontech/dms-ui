@@ -1,7 +1,6 @@
 import { Space, Button, Spin } from 'antd';
 import { BasicSegmented, BasicRangePicker } from '@actiontech/shared';
 import { Line, LineConfig, Tooltip } from '@ant-design/plots';
-import { useChangeTheme } from '@actiontech/shared/lib/hooks';
 import useThemeStyleData from '../../../../hooks/useThemeStyleData';
 import { SqlAnalyzeCostLineChartStyleWrapper } from '../style';
 import dayjs from 'dayjs';
@@ -15,6 +14,7 @@ import { SharedTheme } from '@actiontech/shared/lib/types/theme.type';
 import ChartWrapper from '../../../../components/ChartCom/ChartWrapper';
 import { formatTime } from '@actiontech/shared/lib/utils/Common';
 import { t } from '../../../../locale/index';
+import { useChangeTheme } from '@actiontech/shared/lib/global';
 
 const renderTooltipFormatter: Tooltip['formatter'] = (item) => {
   return {

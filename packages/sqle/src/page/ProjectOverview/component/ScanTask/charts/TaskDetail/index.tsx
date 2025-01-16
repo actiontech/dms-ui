@@ -1,18 +1,16 @@
 import { useTranslation } from 'react-i18next';
 import { useState, useEffect, useRef } from 'react';
-
 import { Pie, PieConfig } from '@ant-design/plots';
-
 import useThemeStyleData from '../../../../../../hooks/useThemeStyleData';
 import { formatParamsBySeparator } from '@actiontech/shared/lib/utils/Tool';
 import ChartWrapper from '../../../../../../components/ChartCom/ChartWrapper';
 import { typeChartChildrenProps } from '../..';
 import { IDBTypeAuditPlan } from '@actiontech/shared/lib/api/sqle/service/common';
-import { useChangeTheme } from '@actiontech/shared/lib/hooks';
 import {
   renderTooltipCustomContent,
   renderTooltipFormatter
 } from './index.data';
+import { useChangeTheme } from '@actiontech/shared/lib/global';
 
 export interface ITaskDetail extends typeChartChildrenProps {
   dataSource: IDBTypeAuditPlan;

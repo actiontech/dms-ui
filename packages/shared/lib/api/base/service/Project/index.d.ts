@@ -34,6 +34,8 @@ export interface IListProjectsParams {
   filter_by_project_uids?: string[];
 
   filter_by_project_priority?: ListProjectsFilterByProjectPriorityEnum;
+
+  filter_by_desc?: string;
 }
 
 export interface IListProjectsReturn extends IListProjectReply {}

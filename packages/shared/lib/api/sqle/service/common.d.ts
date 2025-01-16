@@ -2852,6 +2852,10 @@ export interface ISqlAnalysis {
 
 export interface ISqlAnalysisChart {
   points?: IChartPoint[];
+
+  x_info?: string;
+
+  y_info?: string;
 }
 
 export interface ISqlAnalysisResDataV1 {
