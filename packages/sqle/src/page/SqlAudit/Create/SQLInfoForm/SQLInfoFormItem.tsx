@@ -120,27 +120,12 @@ const SQLInfoFormItem = ({
   };
 
   const ruleTemplateOptions: SelectProps['options'] = useMemo(() => {
-    const dbTypeDefaultRuleTemplateName = globalRuleTemplateList.find(
-      (v) => v.is_default_rule_template
-    )?.rule_template_name;
-
-    const ruleTemplateTipsOptions: SelectProps['options'] =
-      ruleTemplateList.map((v) => ({
-        label: v.rule_template_name,
-        value: v.rule_template_name
-      }));
-
-    if (!dbTypeDefaultRuleTemplateName) {
-      return ruleTemplateTipsOptions;
-    }
-
-    return [
-      ...(ruleTemplateTipsOptions ?? []),
-      {
-        label: dbTypeDefaultRuleTemplateName,
-        value: dbTypeDefaultRuleTemplateName
-      }
-    ];
+    return [...ruleTemplateList, ...globalRuleTemplateList].map((item) => {
+      return {
+        label: item.rule_template_name,
+        value: item.rule_template_name
+      };
+    });
   }, [globalRuleTemplateList, ruleTemplateList]);
 
   return (
