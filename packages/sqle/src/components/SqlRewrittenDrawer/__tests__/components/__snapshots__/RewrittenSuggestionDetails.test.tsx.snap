@@ -60,7 +60,7 @@ exports[`RewrittenSuggestionDetails and RewrittenSuggestionItem RewrittenSuggest
                   type="button"
                 >
                   <span>
-                    复 制
+                    复制重写后SQL
                   </span>
                 </button>
                 <div
@@ -216,7 +216,7 @@ exports[`RewrittenSuggestionDetails and RewrittenSuggestionItem RewrittenSuggest
           type="button"
         >
           <span>
-            复 制
+            复制重写后SQL
           </span>
         </button>
         <div
@@ -377,7 +377,7 @@ exports[`RewrittenSuggestionDetails and RewrittenSuggestionItem RewrittenSuggest
           type="button"
         >
           <span>
-            复 制
+            复制重写后SQL
           </span>
         </button>
         <div

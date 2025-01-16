@@ -29,7 +29,9 @@ const useBackendTable = () => {
       options?: {
         customRender?: (
           text: string,
-          record: DataSourceItem
+          record: DataSourceItem,
+          index: number,
+          fieldName: string
         ) => React.ReactNode;
       }
     ): ColumnType<DataSourceItem>[] => {
@@ -51,9 +53,14 @@ const useBackendTable = () => {
         );
       };
       return head.map((item) => {
-        const renderMethod = (text: string, record: DataSourceItem) => {
+        const renderMethod = (
+          text: string,
+          record: DataSourceItem,
+          index: number,
+          fieldName: string
+        ) => {
           if (options?.customRender) {
-            return options?.customRender?.(text, record);
+            return options?.customRender?.(text, record, index, fieldName);
           }
           return tableCellRenderWithEllipsisAndTooltipAndCopyable(text);
         };
@@ -61,7 +68,7 @@ const useBackendTable = () => {
         return {
           dataIndex: item.field_name ?? '',
           title: (item.desc || item.field_name) ?? '',
-          render: renderMethod
+          render: (...rest) => renderMethod(...rest, item.field_name ?? '')
         };
       });
     },

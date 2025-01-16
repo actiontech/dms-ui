@@ -1,13 +1,8 @@
 import { useCurrentProject } from '@actiontech/shared/lib/global';
 import useCreateDataExportReduxManage from '../../hooks/index.redux';
-import { useEffect, useState } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 import UpdateInfoDrawer from './UpdateInfoDrawer';
-import {
-  BasicButton,
-  BasicToolTip,
-  EmptyBox,
-  PageHeader
-} from '@actiontech/shared';
+import { BasicButton, PageHeader } from '@actiontech/shared';
 import { useTranslation } from 'react-i18next';
 import BackToWorkflowList from '../../../Common/BackToWorkflowList';
 import { Space } from 'antd';
@@ -17,6 +12,9 @@ import AuditResultList from '../../../Common/AuditResultList';
 import DataExportWorkflows from '@actiontech/shared/lib/api/base/service/DataExportWorkflows';
 import { ResponseCode } from '@actiontech/shared/lib/enum';
 import { CreateDataExportPageEnum } from '../../../../../store/dataExport';
+import useCheckTaskAuditRuleExceptionStatus from '../../hooks/useCheckTaskAuditRuleExceptionStatus';
+import { IListDataExportTaskSQL } from '@actiontech/shared/lib/api/base/service/common';
+import SubmitWorkflowButton from './SubmitWorkflowButton';
 
 const SubmitExportWorkflow: React.FC = () => {
   const { t } = useTranslation();
@@ -34,7 +32,28 @@ const SubmitExportWorkflow: React.FC = () => {
 
   const [executeSQLsIsDQL, updateExecuteSQLsTypeIsDQL] = useState(true);
 
-  const submit = () => {
+  const {
+    hasExceptionAuditRule,
+    updateTaskAuditRuleExceptionStatus,
+    resetTaskAuditRuleExceptionStatus
+  } = useCheckTaskAuditRuleExceptionStatus();
+
+  const onSuccessGetDataExportTaskSqls = useCallback(
+    (taskSqls: IListDataExportTaskSQL[]) => {
+      updateTaskAuditRuleExceptionStatus(taskSqls);
+      updateExecuteSQLsTypeIsDQL?.(
+        taskSqls?.every((item) => item.export_sql_type === 'dql')
+      );
+    },
+    [updateTaskAuditRuleExceptionStatus]
+  );
+
+  const onErrorGetDataExportTaskSqls = useCallback(() => {
+    resetTaskAuditRuleExceptionStatus();
+    updateExecuteSQLsTypeIsDQL(true);
+  }, [resetTaskAuditRuleExceptionStatus]);
+
+  const onSubmit = () => {
     updateSubmitLoading(true);
     DataExportWorkflows.AddDataExportWorkflow({
       project_uid: projectID,
@@ -77,26 +96,12 @@ const SubmitExportWorkflow: React.FC = () => {
               {t('dmsDataExport.create.update.updateInfoAction')}
             </BasicButton>
 
-            <EmptyBox
-              if={executeSQLsIsDQL}
-              defaultNode={
-                <BasicToolTip
-                  title={t('dmsDataExport.create.update.submitTips')}
-                >
-                  <BasicButton disabled={true} type="primary">
-                    {t('dmsDataExport.create.update.submitAction')}
-                  </BasicButton>
-                </BasicToolTip>
-              }
-            >
-              <BasicButton
-                disabled={submitLoading}
-                type="primary"
-                onClick={submit}
-              >
-                {t('dmsDataExport.create.update.submitAction')}
-              </BasicButton>
-            </EmptyBox>
+            <SubmitWorkflowButton
+              loading={submitLoading}
+              onClick={onSubmit}
+              hasExceptionAuditRule={hasExceptionAuditRule}
+              executeSQLsIsDQL={executeSQLsIsDQL}
+            />
           </Space>
         }
       />
@@ -108,7 +113,8 @@ const SubmitExportWorkflow: React.FC = () => {
       <AuditResultList
         projectID={projectID}
         taskIDs={taskIDs ?? []}
-        updateExecuteSQLsTypeIsDQL={updateExecuteSQLsTypeIsDQL}
+        onErrorGetDataExportTaskSqls={onErrorGetDataExportTaskSqls}
+        onSuccessGetDataExportTaskSqls={onSuccessGetDataExportTaskSqls}
       />
 
       <UpdateInfoDrawer />

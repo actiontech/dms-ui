@@ -37,6 +37,7 @@ describe('test AuditResultStep ce', () => {
         submitWorkflowConfirmationMessage={''}
         createAction={createAction}
         auditAction={jest.fn()}
+        hasExceptionAuditRule={false}
         {...MockSharedStepDetail}
       />
     );

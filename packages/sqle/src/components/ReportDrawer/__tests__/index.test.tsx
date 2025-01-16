@@ -53,7 +53,7 @@ describe('sqle/components/ReportDrawer', () => {
           {
             rule_name: 'rule a',
             message: 'message',
-            level: 'level',
+            level: 'error',
             annotation: 'annotation',
             db_type: 'mysql'
           }
@@ -79,7 +79,7 @@ describe('sqle/components/ReportDrawer', () => {
           {
             rule_name: 'rule a',
             message: 'message',
-            level: 'level',
+            level: 'warn',
             annotation: 'annotation',
             db_type: 'mysql'
           }
@@ -105,7 +105,7 @@ describe('sqle/components/ReportDrawer', () => {
           {
             rule_name: 'rule a',
             message: 'message',
-            level: 'level',
+            level: 'normal',
             annotation: 'annotation',
             db_type: 'mysql'
           }
@@ -131,7 +131,7 @@ describe('sqle/components/ReportDrawer', () => {
           {
             rule_name: 'rule a',
             message: 'message1',
-            level: 'level',
+            level: 'warn',
             annotation: 'annotation',
             db_type: 'mysql',
             isRuleDeleted: true
@@ -139,7 +139,7 @@ describe('sqle/components/ReportDrawer', () => {
           {
             rule_name: 'rule b',
             message: 'message2',
-            level: 'level',
+            level: 'error',
             annotation: 'annotation',
             db_type: 'mysql'
           }
@@ -163,7 +163,32 @@ describe('sqle/components/ReportDrawer', () => {
           {
             rule_name: 'rule a',
             message: 'message',
-            level: 'level',
+            level: 'error',
+            annotation: 'annotation',
+            db_type: 'mysql'
+          }
+        ]
+      },
+      onClose: jest.fn(),
+      extra: <div>extra</div>
+    });
+    expect(baseElement).toMatchSnapshot();
+  });
+
+  it.only('render snap when audit rule is exception', () => {
+    const { baseElement } = customRender({
+      open: true,
+      title: 'this is a title',
+      showAnnotation: true,
+      data: {
+        sql: 'select 1',
+        sqlSourceFile: 'file_source',
+        sqlStartLine: 3,
+        auditResult: [
+          {
+            rule_name: 'rule a',
+            message: 'message',
+            level: 'audit_execution_error',
             annotation: 'annotation',
             db_type: 'mysql'
           }

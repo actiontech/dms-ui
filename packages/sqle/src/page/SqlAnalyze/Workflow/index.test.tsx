@@ -16,6 +16,8 @@ import task from '@actiontech/shared/lib/api/sqle/service/task';
 import { WorkflowSqlAnalyzeData } from '../__testData__';
 
 import WorkflowSqlAnalyze from '.';
+import MockDate from 'mockdate';
+import dayjs from 'dayjs';
 
 jest.mock('react-router', () => {
   return {
@@ -30,7 +32,8 @@ describe('SqlAnalyze/Workflow', () => {
   const useParamsMock: jest.Mock = useParams as jest.Mock;
 
   beforeEach(() => {
-    jest.useFakeTimers();
+    MockDate.set(dayjs('2025-01-09 12:00:00').valueOf());
+    jest.useFakeTimers({ legacyFakeTimers: true });
     useParamsMock.mockReturnValue({
       taskId: 'taskId1',
       sqlNum: '123'

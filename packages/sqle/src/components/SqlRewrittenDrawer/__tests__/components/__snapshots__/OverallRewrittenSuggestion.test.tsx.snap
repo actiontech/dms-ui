@@ -108,7 +108,7 @@ exports[`OverallRewrittenSuggestion should render execution order explanation se
             type="button"
           >
             <span>
-              复 制
+              复制重写后SQL
             </span>
           </button>
           <div
@@ -119,7 +119,7 @@ exports[`OverallRewrittenSuggestion should render execution order explanation se
           <div
             class="toggle-button-wrapper css-14po76i"
           >
-            查看SQL执行顺序解释
+            查看SQL执行解释
           </div>
         </div>
       </div>
@@ -252,7 +252,7 @@ LIMIT 1000 OFFSET 500;
           <span
             class="title-text"
           >
-            SQL执行顺序解释
+            SQL执行解释
           </span>
         </div>
       </div>
