@@ -7,3 +7,8 @@ export type AuditResultMessageProps = {
   moreBtnLink?: string;
   isRuleDeleted?: boolean;
 };
+
+export type ResultIconRenderProps = {
+  iconLevels?: string[];
+  isAuditing?: boolean;
+};
