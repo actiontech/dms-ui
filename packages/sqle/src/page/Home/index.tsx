@@ -3,7 +3,7 @@ import { useTranslation } from 'react-i18next';
 import { PageHeader } from '@actiontech/shared';
 import DBAPanel from './DBAPanel';
 import DEVPanel from './DEVPanel';
-import { useCurrentProject } from '@actiontech/shared/lib/global';
+import { useCurrentProject } from '@actiontech/shared/lib/features';
 import dashboard from '@actiontech/shared/lib/api/sqle/service/dashboard';
 
 const Home = () => {

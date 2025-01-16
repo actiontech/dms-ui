@@ -10,7 +10,7 @@ import {
   useTypedParams
 } from '@actiontech/shared';
 import RuleTemplateForm from '../RuleTemplateForm';
-import { useCurrentProject } from '@actiontech/shared/lib/global';
+import { useCurrentProject } from '@actiontech/shared/lib/features';
 import { RuleTemplateContStyleWrapper } from '../CreateRuleTemplate/style';
 import rule_template from '@actiontech/shared/lib/api/sqle/service/rule_template';
 import { ResponseCode } from '@actiontech/shared/lib/enum';

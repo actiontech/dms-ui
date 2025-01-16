@@ -25,7 +25,7 @@ import useRuleManagerSegmented from '../../RuleManager/useRuleManagerSegmented';
 import { RuleManagerSegmentedKey } from '../../RuleManager/index.type';
 import ExportRuleTemplateModal from './Modal/ExportRuleTemplate';
 import { RuleTemplateListActions } from './action';
-import { usePermission } from '@actiontech/shared/lib/global';
+import { usePermission } from '@actiontech/shared/lib/features';
 
 const RuleTemplateList: React.FC<{ hiddenOperations?: boolean }> = ({
   hiddenOperations = false

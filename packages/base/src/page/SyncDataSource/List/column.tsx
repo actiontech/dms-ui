@@ -3,7 +3,7 @@ import { formatTime } from '@actiontech/shared/lib/utils/Common';
 import { IListDBServiceSyncTask } from '@actiontech/shared/lib/api/base/service/common';
 import { ActiontechTableColumn } from '@actiontech/shared/lib/components/ActiontechTable';
 import { BasicTag, BasicToolTip, DatabaseTypeLogo } from '@actiontech/shared';
-import { useDbServiceDriver } from '@actiontech/shared/lib/global';
+import { useDbServiceDriver } from '@actiontech/shared/lib/features';
 import { Space } from 'antd';
 
 export const SyncTaskListTableColumnFactory: () => ActiontechTableColumn<IListDBServiceSyncTask> =

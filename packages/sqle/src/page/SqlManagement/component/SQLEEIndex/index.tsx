@@ -20,7 +20,7 @@ import {
   useCurrentProject,
   useCurrentUser,
   usePermission
-} from '@actiontech/shared/lib/global';
+} from '@actiontech/shared/lib/features';
 import { ResponseCode } from '@actiontech/shared/lib/enum';
 import StatusFilter, { TypeStatus } from './StatusFilter';
 import {

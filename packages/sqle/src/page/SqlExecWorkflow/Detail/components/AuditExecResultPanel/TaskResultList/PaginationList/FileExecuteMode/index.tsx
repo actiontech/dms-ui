@@ -3,7 +3,7 @@ import { FileExecuteModeProps } from './index.type';
 import {
   useCurrentProject,
   useCurrentUser
-} from '@actiontech/shared/lib/global';
+} from '@actiontech/shared/lib/features';
 import { useRequest } from 'ahooks';
 import task from '@actiontech/shared/lib/api/sqle/service/task';
 import { List } from 'antd';

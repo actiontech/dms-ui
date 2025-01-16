@@ -2,7 +2,7 @@ import { IListGlobalDBService } from '@actiontech/shared/lib/api/base/service/co
 import {
   ActiontechTableActionsWithPermissions,
   PERMISSIONS
-} from '@actiontech/shared/lib/global';
+} from '@actiontech/shared/lib/features';
 import { t } from '../../../locale';
 
 export const GlobalDataSourceListActions = (

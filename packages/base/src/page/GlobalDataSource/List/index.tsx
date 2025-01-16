@@ -5,7 +5,7 @@ import { TestConnectDisableReasonStyleWrapper } from '@actiontech/shared/lib/com
 import {
   useDbServiceDriver,
   usePermission
-} from '@actiontech/shared/lib/global';
+} from '@actiontech/shared/lib/features';
 import { useRequest } from 'ahooks';
 import DBService from '@actiontech/shared/lib/api/base/service/DBService';
 import ProjectService from '@actiontech/shared/lib/api/base/service/Project';

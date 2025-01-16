@@ -14,7 +14,7 @@ import {
   PERMISSIONS,
   PermissionsConstantType,
   usePermission
-} from '@actiontech/shared/lib/global';
+} from '@actiontech/shared/lib/features';
 import { useTypedNavigate } from '@actiontech/shared';
 
 const GlobalSetting: React.FC = () => {

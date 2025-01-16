@@ -9,7 +9,7 @@ import {
 } from '@actiontech/shared';
 import { Spin, Typography, Row, Col } from 'antd';
 import { useTranslation } from 'react-i18next';
-import { useCurrentProject } from '@actiontech/shared/lib/global';
+import { useCurrentProject } from '@actiontech/shared/lib/features';
 import { useBoolean, useRequest } from 'ahooks';
 import sqlOptimization from '@actiontech/shared/lib/api/sqle/service/sql_optimization';
 import {

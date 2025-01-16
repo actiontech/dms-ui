@@ -1,6 +1,6 @@
 // @warn/cli/create-dms-page
 import { GenerateMenuItemI18nConfig, MenuTreeI18n } from './index.type';
-import { PERMISSIONS } from '@actiontech/shared/lib/global';
+import { PERMISSIONS } from '@actiontech/shared/lib/features';
 import sqleMenusCollection from './sqle';
 import baseMenusCollection from './base';
 

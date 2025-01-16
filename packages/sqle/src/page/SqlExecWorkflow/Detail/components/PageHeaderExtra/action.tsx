@@ -1,4 +1,7 @@
-import { PERMISSIONS, PermissionControl } from '@actiontech/shared/lib/global';
+import {
+  PERMISSIONS,
+  PermissionControl
+} from '@actiontech/shared/lib/features';
 import { WorkflowDetailActionMeta } from './index.type';
 import { ActionButton } from '@actiontech/shared';
 import { t } from '../../../../../locale';

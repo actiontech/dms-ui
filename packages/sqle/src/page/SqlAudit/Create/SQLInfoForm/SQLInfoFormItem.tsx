@@ -6,7 +6,7 @@ import {
   SQLInfoFormItemProps,
   UploadTypeEnum
 } from './index.type';
-import { useCurrentProject } from '@actiontech/shared/lib/global';
+import { useCurrentProject } from '@actiontech/shared/lib/features';
 
 import {
   FormItemLabel,

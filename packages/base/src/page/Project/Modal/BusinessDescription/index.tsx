@@ -1,7 +1,7 @@
 import { Typography } from 'antd';
 import { ProjectBusinessDescriptionStyleWrapper } from '../../style';
 import { useTranslation } from 'react-i18next';
-import { useCurrentUser } from '@actiontech/shared/lib/global';
+import { useCurrentUser } from '@actiontech/shared/lib/features';
 import { SupportLanguage } from '@actiontech/shared/lib/enum';
 
 const BusinessDescription = () => {

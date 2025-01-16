@@ -13,7 +13,7 @@ import {
 } from '../../../Create/index.type';
 import { useEffect, useMemo } from 'react';
 import { useBoolean } from 'ahooks';
-import { useCurrentProject } from '@actiontech/shared/lib/global';
+import { useCurrentProject } from '@actiontech/shared/lib/features';
 import workflow from '@actiontech/shared/lib/api/sqle/service/workflow';
 import { ResponseCode } from '@actiontech/shared/lib/enum';
 import { PageLayoutHasFixedHeaderStyleWrapper } from '@actiontech/shared/lib/styleWrapper/element';

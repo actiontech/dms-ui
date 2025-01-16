@@ -15,7 +15,7 @@ import instance_audit_plan from '@actiontech/shared/lib/api/sqle/service/instanc
 import {
   useCurrentProject,
   useCurrentUser
-} from '@actiontech/shared/lib/global';
+} from '@actiontech/shared/lib/features';
 import {
   ScanTypeSqlCollectionProps,
   ScanTypeSqlTableDataSourceItem

@@ -7,7 +7,7 @@ import {
 import { BasicButton, BasicToolTip, EmptyBox } from '@actiontech/shared';
 import { message } from 'antd';
 import { ToggleButtonStyleWrapper } from '@actiontech/shared/lib/styleWrapper/element';
-import { useCurrentProject } from '@actiontech/shared/lib/global';
+import { useCurrentProject } from '@actiontech/shared/lib/features';
 import { useBoolean, useRequest, useToggle } from 'ahooks';
 import databaseCompareService from '@actiontech/shared/lib/api/sqle/service/database_comparison';
 import EnvironmentSelector from './component/EnvironmentSelector';

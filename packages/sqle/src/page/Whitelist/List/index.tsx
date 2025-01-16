@@ -4,7 +4,7 @@ import { useTranslation } from 'react-i18next';
 import {
   useCurrentProject,
   usePermission
-} from '@actiontech/shared/lib/global';
+} from '@actiontech/shared/lib/features';
 import { WhitelistColumn, WhitelistTableFilterParamType } from './columns';
 import { ModalName } from '../../../data/ModalName';
 import { message } from 'antd';

@@ -12,7 +12,7 @@ import DownloadRecord from '../DownloadRecord';
 import AuditResultTable from './Table';
 import AuditResultFilterContainer from '../AuditResultFilterContainer';
 import { AuditTaskResV1AuditLevelEnum } from '@actiontech/shared/lib/api/sqle/service/common.enum';
-import { useCurrentProject } from '@actiontech/shared/lib/global';
+import { useCurrentProject } from '@actiontech/shared/lib/features';
 import useAuditResultFilterParams from '../AuditResultFilterContainer/useAuditResultFilterParams';
 import {
   auditLevelDictionary,

@@ -1,4 +1,4 @@
-import * as useCurrentProject from '../../global/useCurrentProject';
+import * as useCurrentProject from '../../features/useCurrentProject';
 import { mockProjectInfo } from './data';
 
 export const mockUseCurrentProject = (

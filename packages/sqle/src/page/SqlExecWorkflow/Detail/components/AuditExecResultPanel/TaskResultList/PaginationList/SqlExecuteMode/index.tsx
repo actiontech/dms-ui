@@ -4,7 +4,7 @@ import { SqlExecuteModeProps } from './index.type';
 import { WorkflowResV2ExecModeEnum } from '@actiontech/shared/lib/api/sqle/service/common.enum';
 import { useRequest } from 'ahooks';
 import task from '@actiontech/shared/lib/api/sqle/service/task';
-import { useCurrentProject } from '@actiontech/shared/lib/global';
+import { useCurrentProject } from '@actiontech/shared/lib/features';
 import ResultCard from '../../Common/ResultCard';
 import { WORKFLOW_OVERVIEW_TAB_KEY } from '../../../../../hooks/useAuditExecResultPanelSetup';
 import { TaskResultListLayoutEnum } from '../../../index.enum';

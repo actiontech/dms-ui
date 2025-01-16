@@ -7,7 +7,7 @@ import {
   PERMISSIONS,
   PermissionsConstantType,
   ActiontechTableToolbarActionWithPermissions
-} from '@actiontech/shared/lib/global';
+} from '@actiontech/shared/lib/features';
 import { ACTIONTECH_TABLE_ACTION_BUTTON_WIDTH } from '@actiontech/shared/lib/components/ActiontechTable/hooks/useTableAction';
 
 export const SqlManagementRowAction = (

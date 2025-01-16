@@ -3,7 +3,7 @@ import { IDatabaseDiffModifySQL } from '@actiontech/shared/lib/api/sqle/service/
 import { Spin } from 'antd';
 import { useTranslation } from 'react-i18next';
 import { SelectedInstanceInfo } from '../../index.type';
-import { useCurrentProject } from '@actiontech/shared/lib/global';
+import { useCurrentProject } from '@actiontech/shared/lib/features';
 import { CreateWorkflowForModifiedSqlAction } from '../../actions';
 import { IGenDatabaseDiffModifySQLsV1Params } from '@actiontech/shared/lib/api/sqle/service/database_comparison/index.d';
 import ModifiedSqlAuditResult from '../ModifiedSqlAuditResult';

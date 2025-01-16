@@ -4,7 +4,7 @@ import { IAuditTaskSQLResV2 } from '@actiontech/shared/lib/api/sqle/service/comm
 import {
   ActiontechTableActionsWithPermissions,
   PERMISSIONS
-} from '@actiontech/shared/lib/global';
+} from '@actiontech/shared/lib/features';
 
 export const AuditResultForCreateWorkflowActions = (
   clickAnalyze: (sqlNum?: number) => void,

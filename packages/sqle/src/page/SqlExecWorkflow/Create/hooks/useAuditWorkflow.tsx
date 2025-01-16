@@ -1,6 +1,6 @@
 import { useBoolean } from 'ahooks';
 import { useCallback, useState } from 'react';
-import { useCurrentProject } from '@actiontech/shared/lib/global';
+import { useCurrentProject } from '@actiontech/shared/lib/features';
 import { useAllowAuditLevel } from './useAllowAuditLevel';
 import { IAuditTaskResV1 } from '@actiontech/shared/lib/api/sqle/service/common';
 import {

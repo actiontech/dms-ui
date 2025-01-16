@@ -10,7 +10,7 @@ import {
 import { useForm } from 'antd/es/form/Form';
 import BaseInfoForm from './BaseInfoForm';
 import SQLInfoForm from './SQLInfoForm';
-import { useCurrentProject } from '@actiontech/shared/lib/global';
+import { useCurrentProject } from '@actiontech/shared/lib/features';
 import sql_audit_record from '@actiontech/shared/lib/api/sqle/service/sql_audit_record';
 import { SqlAuditBaseInfoFormFields } from './BaseInfoForm/index.type';
 import { SQLInfoFormFields, SQLInfoFormProps } from './SQLInfoForm/index.type';

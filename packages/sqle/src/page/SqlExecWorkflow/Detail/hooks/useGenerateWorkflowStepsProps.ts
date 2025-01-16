@@ -3,7 +3,7 @@ import { useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
 import { ResponseCode } from '../../../../data/common';
 import workflow from '@actiontech/shared/lib/api/sqle/service/workflow';
-import { useCurrentProject } from '@actiontech/shared/lib/global';
+import { useCurrentProject } from '@actiontech/shared/lib/features';
 import {
   IWorkflowResV2,
   IAuditTaskResV1

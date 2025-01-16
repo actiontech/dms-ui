@@ -27,7 +27,7 @@ import { useMemo, useState } from 'react';
 import { SelectedInstanceInfo } from '../../../index.type';
 import dayjs from 'dayjs';
 import { CreateWorkflowForModifiedSqlAction } from '../../../actions';
-import { useCurrentProject } from '@actiontech/shared/lib/global';
+import { useCurrentProject } from '@actiontech/shared/lib/features';
 import {
   filterSchemasInDatabase,
   getComparisonResultByNodeKey,

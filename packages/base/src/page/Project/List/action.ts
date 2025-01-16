@@ -3,7 +3,7 @@ import {
   CheckActionPermissionOtherValues,
   PERMISSIONS,
   PermissionsConstantType
-} from '@actiontech/shared/lib/global';
+} from '@actiontech/shared/lib/features';
 import { t } from '../../../locale';
 import { ACTIONTECH_TABLE_ACTION_BUTTON_WIDTH } from '@actiontech/shared/lib/components/ActiontechTable/hooks/useTableAction';
 import { ActiontechTableActionsConfig } from '@actiontech/shared/lib/components/ActiontechTable/index.type';

@@ -7,7 +7,7 @@ import {
 } from '@actiontech/shared';
 import { useTranslation } from 'react-i18next';
 import BatchImportDataSourceForm from '../../../Project/BatchImportDataSource/UploadForm';
-import { useCurrentProject } from '@actiontech/shared/lib/global';
+import { useCurrentProject } from '@actiontech/shared/lib/features';
 import DBService from '@actiontech/shared/lib/api/base/service/DBService';
 import { ResponseCode } from '@actiontech/shared/lib/enum';
 import useBatchImportDataSource from '../../../Project/BatchImportDataSource/hooks/useBatchImportDataSource';

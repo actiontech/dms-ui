@@ -1,4 +1,4 @@
-import * as useProjectBusinessTips from '../../global/useProjectBusinessTips';
+import * as useProjectBusinessTips from '../../features/useProjectBusinessTips';
 import { mockUseProjectBusinessTipsData } from './data';
 
 export const mockUseProjectBusinessTips = (

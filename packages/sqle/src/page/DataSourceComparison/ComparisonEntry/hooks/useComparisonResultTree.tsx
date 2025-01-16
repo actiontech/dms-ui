@@ -21,7 +21,7 @@ import {
   renderComparisonResultObjectName
 } from '../utils/TreeNode';
 import { useBoolean } from 'ahooks';
-import { useCurrentProject } from '@actiontech/shared/lib/global';
+import { useCurrentProject } from '@actiontech/shared/lib/features';
 import {
   IGenDatabaseDiffModifySQLsV1Params,
   IGetComparisonStatementV1Params

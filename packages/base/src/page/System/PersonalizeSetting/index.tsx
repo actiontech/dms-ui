@@ -20,7 +20,7 @@ import useSystemConfig from '../../../hooks/useSystemConfig';
 import BasicInfo from '@actiontech/shared/lib/api/base/service/BasicInfo';
 import { ResponseCode } from '@actiontech/shared/lib/enum';
 import { IPersonalizationParams } from '@actiontech/shared/lib/api/base/service/BasicInfo/index.d';
-import { PERMISSIONS, usePermission } from '@actiontech/shared/lib/global';
+import { PERMISSIONS, usePermission } from '@actiontech/shared/lib/features';
 
 const PersonalizeSetting: React.FC = () => {
   const { t } = useTranslation();
