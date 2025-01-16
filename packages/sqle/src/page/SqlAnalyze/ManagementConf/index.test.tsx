@@ -1,4 +1,4 @@
-import { act, fireEvent } from '@testing-library/react';
+import { act, fireEvent, screen } from '@testing-library/react';
 import { useParams } from 'react-router-dom';
 import ManagementConfAnalyze from '.';
 import {
@@ -16,6 +16,8 @@ import instance_audit_plan from '@actiontech/shared/lib/api/sqle/service/instanc
 import { mockUseCurrentProject } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentProject';
 import MockDate from 'mockdate';
 import dayjs from 'dayjs';
+import sqlManage from '../../../testUtils/mockApi/sqlManage';
+import { translateTimeForRequest } from '@actiontech/shared/lib/utils/Common';
 
 jest.mock('react-router', () => {
   return {
@@ -31,6 +33,8 @@ describe('SqlAnalyze/ManagementConfAnalyze', () => {
 
   const useParamsMock: jest.Mock = useParams as jest.Mock;
 
+  let getSqlManageSqlAnalysisChartSpy: jest.SpyInstance;
+  let currentTime = dayjs('2025-01-09 12:00:00');
   beforeEach(() => {
     MockDate.set(dayjs('2025-01-09 12:00:00').valueOf());
     jest.useFakeTimers({ legacyFakeTimers: true });
@@ -40,6 +44,7 @@ describe('SqlAnalyze/ManagementConfAnalyze', () => {
       id: '2',
       projectName
     });
+    getSqlManageSqlAnalysisChartSpy = sqlManage.getSqlManageSqlAnalysisChart();
   });
 
   afterEach(() => {
@@ -77,6 +82,34 @@ describe('SqlAnalyze/ManagementConfAnalyze', () => {
     await act(async () => jest.advanceTimersByTime(0));
 
     expect(container).toMatchSnapshot();
+  });
+
+  it('filter sql execution plan cost', async () => {
+    mockGetAnalyzeData();
+    const { container } = renderWithReduxAndTheme(<ManagementConfAnalyze />);
+    await act(async () => jest.advanceTimersByTime(3000));
+    expect(container).toMatchSnapshot();
+
+    expect(screen.getByText('SQL执行计划 Cost趋势')).toBeInTheDocument();
+    expect(getSqlManageSqlAnalysisChartSpy).toHaveBeenCalledTimes(1);
+    expect(getSqlManageSqlAnalysisChartSpy).toHaveBeenNthCalledWith(1, {
+      sql_manage_id: '2',
+      project_name: projectName,
+      metric_name: 'explain_cost',
+      start_time: translateTimeForRequest(currentTime.subtract(24, 'hour')),
+      end_time: translateTimeForRequest(currentTime)
+    });
+
+    fireEvent.click(screen.getByText('7天'));
+    await act(async () => jest.advanceTimersByTime(0));
+    expect(getSqlManageSqlAnalysisChartSpy).toHaveBeenCalledTimes(2);
+    expect(getSqlManageSqlAnalysisChartSpy).toHaveBeenNthCalledWith(2, {
+      sql_manage_id: '2',
+      project_name: projectName,
+      metric_name: 'explain_cost',
+      start_time: translateTimeForRequest(currentTime.subtract(7, 'day')),
+      end_time: translateTimeForRequest(currentTime)
+    });
   });
 
   test('should render error result of type "info" when response code is 8001', async () => {

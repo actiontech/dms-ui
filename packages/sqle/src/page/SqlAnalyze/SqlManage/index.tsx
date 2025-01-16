@@ -12,9 +12,7 @@ import { useCurrentProject } from '@actiontech/shared/lib/global';
 import SqlAnalyze from '../SqlAnalyze';
 import { useTypedParams } from '@actiontech/shared';
 import { ROUTE_PATHS } from '@actiontech/shared/lib/data/routePaths';
-import { useRequest } from 'ahooks';
-import dayjs, { Dayjs } from 'dayjs';
-import { translateTimeForRequest } from '@actiontech/shared/lib/utils/Common';
+import useSqlExecPlanCost from '../hooks/useSqlExecPlanCost';
 
 const SQLManageAnalyze = () => {
   const urlParams =
@@ -65,36 +63,10 @@ const SQLManageAnalyze = () => {
 
   const {
     data,
-    loading: getSqlExecPlanCostDataSourceLoading,
-    run: getSqlExecPlanCostDataSource,
-    error: getSqlExecPlanCostDataSourceError
-  } = useRequest((startTime?: Dayjs, endTime?: Dayjs) => {
-    const startTimeParam = startTime ?? dayjs().subtract(24, 'hour');
-    const endTimeParam = endTime ?? dayjs();
-    return SqlManage.GetSqlManageSqlAnalysisChartV1({
-      sql_manage_id: urlParams.sqlManageId ?? '',
-      project_name: projectName,
-      metric_name: 'explain_cost',
-      start_time: translateTimeForRequest(startTimeParam),
-      end_time: translateTimeForRequest(endTimeParam)
-    }).then((res) => {
-      if (res.data.code === ResponseCode.SUCCESS) {
-        // 根据start_time和end_time填充数据
-        const { points } = res.data.data ?? {};
-        const firstPoint = points?.[0];
-        const lastPoint = points?.[points.length - 1];
-        if (startTimeParam?.isBefore(dayjs(firstPoint?.x))) {
-          points?.unshift({
-            x: translateTimeForRequest(startTimeParam)
-          });
-        }
-        if (endTimeParam?.isAfter(dayjs(lastPoint?.x))) {
-          points?.push({ x: translateTimeForRequest(endTimeParam) });
-        }
-        return points;
-      }
-    });
-  });
+    getSqlExecPlanCostDataSourceLoading,
+    getSqlExecPlanCostDataSource,
+    getSqlExecPlanCostDataSourceError
+  } = useSqlExecPlanCost(urlParams.sqlManageId ?? '');
 
   useEffect(() => {
     getSqlAnalyze();
