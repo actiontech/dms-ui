@@ -4,11 +4,10 @@ import { useTranslation } from 'react-i18next';
 import { InfoHexagonOutlined } from '@actiontech/icons';
 
 const SubmitWorkflowButton: React.FC<SubmitWorkflowButtonProps> = ({
-  isConfirmationRequiredForSubmission,
   loading,
-  submitWorkflowConfirmationMessage,
   onClick,
-  hasExceptionAuditRule
+  hasExceptionAuditRule,
+  executeSQLsIsDQL
 }) => {
   const { t } = useTranslation();
 
@@ -20,34 +19,30 @@ const SubmitWorkflowButton: React.FC<SubmitWorkflowButtonProps> = ({
         actionType="tooltip"
         icon={<InfoHexagonOutlined color="currentColor" height={20} />}
         tooltip={{
-          title: t('execWorkflow.create.auditResult.submitTooltipTitle')
+          title: t('dmsDataExport.create.submit.hasExceptionRule')
         }}
-        text={t('execWorkflow.create.auditResult.submit')}
+        text={t('dmsDataExport.create.submit.buttonText')}
       />
     );
   }
 
-  if (isConfirmationRequiredForSubmission) {
+  if (!executeSQLsIsDQL) {
     return (
       <ActionButton
-        danger
-        loading={loading}
+        disabled
+        actionType="tooltip"
         icon={<InfoHexagonOutlined color="currentColor" height={20} />}
-        text={t('execWorkflow.create.auditResult.submit')}
-        actionType="confirm"
-        confirm={{
-          title: submitWorkflowConfirmationMessage,
-          okText: t('execWorkflow.create.auditResult.continueSubmission'),
-          onConfirm: onClick,
-          okButtonProps: { loading }
+        tooltip={{
+          title: t('dmsDataExport.create.submit.onlySupportDDLSqls')
         }}
+        text={t('dmsDataExport.create.submit.buttonText')}
       />
     );
   }
 
   return (
     <BasicButton loading={loading} type="primary" onClick={onClick}>
-      {t('execWorkflow.create.auditResult.submit')}
+      {t('dmsDataExport.create.submit.buttonText')}
     </BasicButton>
   );
 };

@@ -20,7 +20,8 @@ import SqlRewrittenDrawer from 'sqle/src/components/SqlRewrittenDrawer';
 const AuditResultTable: React.FC<AuditResultTableProps> = ({
   taskID,
   projectID,
-  updateExecuteSQLsTypeIsDQL
+  onSuccessGetDataExportTaskSqls,
+  onErrorGetDataExportTaskSqls
 }) => {
   const [currentAuditResultRecord, setCurrentAuditResultRecord] =
     useState<IListDataExportTaskSQL>();
@@ -63,12 +64,10 @@ const AuditResultTable: React.FC<AuditResultTableProps> = ({
       ready: typeof taskID === 'string',
       refreshDeps: [pagination, taskID],
       onSuccess(res) {
-        updateExecuteSQLsTypeIsDQL?.(
-          !!res.list?.every((item) => item.export_sql_type === 'dql')
-        );
+        onSuccessGetDataExportTaskSqls?.(res.list ?? []);
       },
       onError() {
-        updateExecuteSQLsTypeIsDQL?.(true);
+        onErrorGetDataExportTaskSqls?.();
       }
     }
   );

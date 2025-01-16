@@ -126,6 +126,7 @@ export default {
       clearDuplicate: '数据去重',
       allLevel: '全部等级',
       submit: '提交工单',
+      submitTooltipTitle: '当前存在审核规则未被校验，请排除问题后重新触发审核',
       updateInfo: '修改工单',
       continueSubmission: '仍要创建',
       submitWorkflowConfirmationMessage:

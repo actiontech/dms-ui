@@ -32,7 +32,8 @@ const AuditResultTable: React.FC<AuditResultTableProps> = ({
   updateTaskRecordCount,
   dbType,
   allowSwitchBackupPolicy = false,
-  supportedBackupPolicies
+  supportedBackupPolicies,
+  updateTaskAuditRuleExceptionStatus
 }) => {
   const {
     sqlRewrittenOpen,
@@ -100,9 +101,11 @@ const AuditResultTable: React.FC<AuditResultTableProps> = ({
         if (auditLevelFilterValue === null) {
           updateTaskRecordCount?.(taskID ?? '', res.total ?? 0);
         }
+        updateTaskAuditRuleExceptionStatus?.(res.list ?? []);
       },
       onError() {
         updateTaskRecordCount?.(taskID ?? '', 0);
+        updateTaskAuditRuleExceptionStatus?.([]);
       }
     }
   );
