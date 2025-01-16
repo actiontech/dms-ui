@@ -12,6 +12,7 @@ import {
 import instance_audit_plan from '@actiontech/shared/lib/api/sqle/service/instance_audit_plan';
 import { useTypedParams } from '@actiontech/shared';
 import { ROUTE_PATHS } from '@actiontech/shared/lib/data/routePaths';
+import useSqlExecPlanCost from '../hooks/useSqlExecPlanCost';
 
 const ManagementConfAnalyze = () => {
   const urlParams =
@@ -62,6 +63,13 @@ const ManagementConfAnalyze = () => {
     getSqlAnalyzeFinish
   ]);
 
+  const {
+    data,
+    getSqlExecPlanCostDataSourceLoading,
+    getSqlExecPlanCostDataSource,
+    getSqlExecPlanCostDataSourceError
+  } = useSqlExecPlanCost(urlParams.id ?? '');
+
   useEffect(() => {
     getSqlAnalyze();
   }, [getSqlAnalyze]);
@@ -74,6 +82,13 @@ const ManagementConfAnalyze = () => {
       errorMessage={errorMessage}
       performanceStatistics={performanceStatistics}
       loading={loading}
+      sqlExecPlanCostDataSource={data}
+      getSqlExecPlanCostDataSourceLoading={getSqlExecPlanCostDataSourceLoading}
+      getSqlExecPlanCostDataSource={getSqlExecPlanCostDataSource}
+      getSqlExecPlanCostDataSourceError={
+        getSqlExecPlanCostDataSourceError?.message
+      }
+      showExecPlanCostChart
     />
   );
 };
