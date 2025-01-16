@@ -86,7 +86,9 @@ describe('test base/DataExport/Create/SubmitWorkflow', () => {
     superRender(<SubmitExportWorkflow />);
 
     expect(screen.getByText('修改工单').closest('button')).toBeDisabled();
-    expect(screen.getByText('提交工单').closest('button')).toBeDisabled();
+    expect(screen.getByText('提交工单').closest('button')).toHaveClass(
+      'ant-btn-loading'
+    );
   });
 
   it('should send submit request when clicked submit button', async () => {

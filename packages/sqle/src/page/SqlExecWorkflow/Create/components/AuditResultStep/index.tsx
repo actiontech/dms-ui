@@ -16,13 +16,15 @@ import { InstanceTipResV1SupportedBackupStrategyEnum } from '@actiontech/shared/
 
 const AuditResultStep: React.FC<AuditResultStepProps> = ({
   tasks,
-  updateTaskRecordCount,
   baseFormValues,
   sqlAuditInfoFormValues,
   isConfirmationRequiredForSubmission,
   submitWorkflowConfirmationMessage,
+  hasExceptionAuditRule,
   createAction,
   auditAction,
+  updateTaskRecordCount,
+  updateTaskAuditRuleExceptionStatus,
   ...sharedStepDetail
 }) => {
   const { t } = useTranslation();
@@ -104,6 +106,7 @@ const AuditResultStep: React.FC<AuditResultStepProps> = ({
               {t('execWorkflow.create.auditResult.updateInfo')}
             </BasicButton>
             <SubmitWorkflowButton
+              hasExceptionAuditRule={hasExceptionAuditRule}
               isConfirmationRequiredForSubmission={
                 isConfirmationRequiredForSubmission
               }
@@ -127,6 +130,7 @@ const AuditResultStep: React.FC<AuditResultStepProps> = ({
         allowSwitchBackupPolicy
         onBatchSwitchBackupPolicy={onBatchSwitchBackupPolicy}
         tasksSupportedBackupPolicies={tasksSupportedBackupPolicies}
+        updateTaskAuditRuleExceptionStatus={updateTaskAuditRuleExceptionStatus}
       />
 
       <UpdateFormDrawer

@@ -13,7 +13,7 @@ export const AuditReportStyleWrapper = styled('div')`
         font-weight: 600;
         line-height: 28px;
         padding: 24px 24px 16px;
-        color: #292c33;
+        color: ${({ theme }) => theme.sharedTheme.uiToken.colorText};
       }
 
       .wrapper-cont {
@@ -22,8 +22,10 @@ export const AuditReportStyleWrapper = styled('div')`
         overflow-y: auto;
 
         .result-item {
-          background: #f7f6f4;
-          border: 1px solid #f2f1f0;
+          background: ${({ theme }) =>
+            theme.sharedTheme.uiToken.colorFillTertiary};
+          border: 1px solid
+            ${({ theme }) => theme.sharedTheme.basic.colorGrayLine};
           border-radius: 4px;
           padding: 8px 12px;
           margin-bottom: 4px;
@@ -49,6 +51,42 @@ export const AuditReportStyleWrapper = styled('div')`
           max-width: 200px;
         }
       }
+    }
+  }
+`;
+
+export const AuditResultExceptionStyleWrapper = styled('div')`
+  padding: 0 24px;
+
+  .title {
+    margin-bottom: 0;
+    font-size: 14px !important;
+    font-weight: 600;
+    line-height: 28px;
+    padding: 24px 0;
+    color: ${({ theme }) => theme.sharedTheme.uiToken.colorText};
+  }
+
+  .exception-item {
+    display: flex;
+    background: ${({ theme }) => theme.sharedTheme.uiToken.colorFillTertiary};
+    border: 1px solid ${({ theme }) => theme.sharedTheme.basic.colorGrayLine};
+    border-radius: 4px;
+    padding: 8px 12px;
+    margin-bottom: 4px;
+
+    .exception-item-icon {
+      width: 20px;
+      height: 20px;
+    }
+
+    .exception-item-text {
+      width: 95%;
+      margin-left: 12px;
+    }
+
+    &:last-child {
+      margin-bottom: 0;
     }
   }
 `;

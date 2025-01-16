@@ -213,3 +213,38 @@ exports[`sqle/components/AuditResultMessage/ResultIconRender render normal icon 
   </div>
 </body>
 `;
+
+exports[`sqle/components/AuditResultMessage/ResultIconRender should render exception info when levels include "audit_execution_error" 1`] = `
+<body>
+  <div>
+    <div
+      class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+    >
+      <div
+        class="ant-space-item"
+        style="margin-right: 8px;"
+      >
+        <svg
+          fill="none"
+          height="20"
+          viewBox="0 0 16 16"
+          width="20"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="m8.577 2 6.35 11a.667.667 0 0 1-.577 1H1.648a.667.667 0 0 1-.577-1l6.35-11a.667.667 0 0 1 1.156 0m-1.244 8.667V12h1.333v-1.333zm0-4.667v3.334h1.333V6z"
+            fill="#EBAD1C"
+          />
+        </svg>
+      </div>
+      <div
+        class="ant-space-item"
+      >
+        <span>
+          审核存在异常
+        </span>
+      </div>
+    </div>
+  </div>
+</body>
+`;

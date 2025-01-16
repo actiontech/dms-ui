@@ -6,15 +6,25 @@ import {
   EmptyBox,
   BasicToolTip,
   SQLRenderer,
-  BasicTypographyEllipsis
+  BasicTypographyEllipsis,
+  parse2ReactRouterPath
 } from '@actiontech/shared';
 import { DetailReportDrawerProps, IAuditResultItem } from './index.type';
-import { AuditReportStyleWrapper } from './style';
+import {
+  AuditReportStyleWrapper,
+  AuditResultExceptionStyleWrapper
+} from './style';
 import AuditResultMessage from '../AuditResultMessage';
 import { Typography, Space } from 'antd';
-import { ProfileSquareFilled, EnvironmentFilled } from '@actiontech/icons';
+import {
+  ProfileSquareFilled,
+  EnvironmentFilled,
+  WarningFilled
+} from '@actiontech/icons';
 import useThemeStyleData from '../../hooks/useThemeStyleData';
 import { Spin } from 'antd';
+import { RuleResV1LevelEnum } from '@actiontech/shared/lib/api/sqle/service/common.enum';
+import { ROUTE_PATHS } from '@actiontech/shared/lib/data/routePaths';
 
 const ReportDrawer = ({
   open,
@@ -33,6 +43,23 @@ const ReportDrawer = ({
   const closeModal = () => {
     onClose();
   };
+
+  const { auditResultWithNormalLevel, auditResultWithAuditException } =
+    useMemo(() => {
+      const normalLevel: IAuditResultItem[] = [];
+      const exceptionResult: IAuditResultItem[] = [];
+      (data?.auditResult ?? []).forEach((item) => {
+        if (Object.keys(RuleResV1LevelEnum).includes(item.level ?? '')) {
+          normalLevel.push(item);
+        } else if (item.level === 'audit_execution_error') {
+          exceptionResult.push(item);
+        }
+      });
+      return {
+        auditResultWithAuditException: exceptionResult,
+        auditResultWithNormalLevel: normalLevel
+      };
+    }, [data?.auditResult]);
 
   const resultDataIsEmpty = useMemo(() => {
     return (
@@ -63,7 +90,7 @@ const ReportDrawer = ({
                 {resultDataIsEmpty ? (
                   <AuditResultMessage styleClass="result-item" />
                 ) : (
-                  (data?.auditResult ?? [])?.map(
+                  auditResultWithNormalLevel.map(
                     (item: IAuditResultItem, index: number) => {
                       if (!showAnnotation || item.isRuleDeleted) {
                         return (
@@ -94,7 +121,15 @@ const ReportDrawer = ({
                           showAnnotation
                           moreBtnLink={
                             item?.rule_name && item?.db_type
-                              ? `/sqle/rule/knowledge/${item?.rule_name}/${item?.db_type}`
+                              ? parse2ReactRouterPath(
+                                  ROUTE_PATHS.SQLE.RULE_KNOWLEDGE.index,
+                                  {
+                                    params: {
+                                      ruleName: item.rule_name ?? '',
+                                      dbType: item.db_type ?? ''
+                                    }
+                                  }
+                                )
                               : ''
                           }
                         />
@@ -105,6 +140,29 @@ const ReportDrawer = ({
               </div>
             </section>
           </Spin>
+
+          <EmptyBox if={auditResultWithAuditException.length > 0}>
+            <AuditResultExceptionStyleWrapper>
+              <div className="title">
+                {t('auditPlan.report.drawer.subTitle.exception')}
+              </div>
+              {auditResultWithAuditException.map((item, index) => {
+                return (
+                  <div
+                    className="exception-item"
+                    key={`${item.rule_name}-${index}`}
+                  >
+                    <WarningFilled width={20} height={20} />
+                    <BasicTypographyEllipsis
+                      className="exception-item-text"
+                      textCont={item.message ?? ''}
+                    />
+                  </div>
+                );
+              })}
+            </AuditResultExceptionStyleWrapper>
+          </EmptyBox>
+
           <section className="wrapper-item">
             <div className="title-wrap">
               <Typography.Title level={3}>
