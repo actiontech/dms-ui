@@ -759,7 +759,7 @@ exports[`test SqlManagementConf/Detail/index.tsx should match snapshot 2`] = `
                                   />
                                 </svg>
                                 <span>
-                                  启用
+                                  运行中
                                 </span>
                               </div>
                             </td>
@@ -1060,7 +1060,7 @@ exports[`test SqlManagementConf/Detail/index.tsx should match snapshot 2`] = `
                                   />
                                 </svg>
                                 <span>
-                                  启用
+                                  运行中
                                 </span>
                               </div>
                             </td>
@@ -1178,7 +1178,7 @@ exports[`test SqlManagementConf/Detail/index.tsx should match snapshot 2`] = `
                                   />
                                 </svg>
                                 <span>
-                                  启用
+                                  运行中
                                 </span>
                               </div>
                             </td>

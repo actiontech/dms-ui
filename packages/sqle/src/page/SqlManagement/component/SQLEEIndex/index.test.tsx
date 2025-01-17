@@ -2,6 +2,7 @@ import { act, cleanup, fireEvent, screen } from '@testing-library/react';
 import SQLEEIndex from '.';
 import { superRender } from '../../../../testUtils/customRender';
 import sqlManage from '../../../../testUtils/mockApi/sqlManage';
+import { mockAbnormalInstanceAuditPlansData } from '../../../../testUtils/mockApi/sqlManage/data';
 import { mockUseCurrentProject } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentProject';
 import { mockUseCurrentUser } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentUser';
 import { mockUseProjectBusinessTips } from '@actiontech/shared/lib/testUtil/mockHook/mockUseProjectBusinessTips';
@@ -824,5 +825,16 @@ describe('page/SqlManagement/SQLEEIndex', () => {
       type: 'sqlManagement/setSqlManagementBatchSelectData',
       payload: [sqlManageListData.data[0]]
     });
+  });
+
+  it('render abnormal status audit plan tips when request return data', async () => {
+    const request = sqlManage.getAbnormalInstanceAuditPlans();
+    request.mockImplementation(() =>
+      createSpySuccessResponse({ data: mockAbnormalInstanceAuditPlansData })
+    );
+    superRender(<SQLEEIndex />);
+    expect(request).toHaveBeenCalled();
+    await act(async () => jest.advanceTimersByTime(3000));
+    expect(getBySelector('.ant-alert-warning')).toBeInTheDocument();
   });
 });

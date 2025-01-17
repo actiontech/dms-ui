@@ -4,14 +4,16 @@ import { superRender } from '../../../../../testUtils/customRender';
 import { SQL_MANAGEMENT_CONF_OVERVIEW_TAB_KEY } from '../../index.data';
 import { mockUseCurrentUser } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentUser';
 import instanceAuditPlan from '../../../../../testUtils/mockApi/instanceAuditPlan';
-import { act, fireEvent } from '@testing-library/react';
+import { act, fireEvent, screen } from '@testing-library/react';
 import { mockProjectInfo } from '@actiontech/shared/lib/testUtil/mockHook/data';
 import { mockInstanceAuditPlanInfo } from '../../../../../testUtils/mockApi/instanceAuditPlan/data';
 import {
   InstanceAuditPlanInfoActiveStatusEnum,
-  UpdateAuditPlanStatusReqV1ActiveEnum
+  UpdateAuditPlanStatusReqV1ActiveEnum,
+  InstanceAuditPlanInfoLastCollectionStatusEnum
 } from '@actiontech/shared/lib/api/sqle/service/common.enum';
 import { mockUsePermission } from '@actiontech/shared/lib/testUtil/mockHook/mockUsePermission';
+import { createSpySuccessResponse } from '@actiontech/shared/lib/testUtil/mockApi';
 
 jest.mock('react-redux', () => {
   return {
@@ -174,5 +176,28 @@ describe('test Overview', () => {
   it('should match snapshot when hasOpPermission is equal false', () => {
     const { container } = customRender();
     expect(container).toMatchSnapshot();
+  });
+
+  it('render abnormal status audit plan', async () => {
+    getInstanceAuditPlanOverviewSpy.mockImplementation(() =>
+      createSpySuccessResponse({
+        data: [
+          {
+            ...mockInstanceAuditPlanInfo[0],
+            active_status: InstanceAuditPlanInfoActiveStatusEnum.normal,
+            last_collection_status:
+              InstanceAuditPlanInfoLastCollectionStatusEnum.abnormal
+          },
+          {
+            ...mockInstanceAuditPlanInfo[1],
+            active_status: undefined
+          }
+        ]
+      })
+    );
+    const { container } = customRender();
+    await act(async () => jest.advanceTimersByTime(3000));
+    expect(container).toMatchSnapshot();
+    expect(screen.getByText('运行异常')).toBeInTheDocument();
   });
 });
