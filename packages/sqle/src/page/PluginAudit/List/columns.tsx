@@ -80,9 +80,10 @@ export const PluginAuditListColumns: (
             className="audit-result-wrapper"
           >
             <ResultIconRender
-              iconLevels={result?.map((item) => {
-                return item.level ?? '';
-              })}
+              auditResultInfo={result?.map((item) => ({
+                level: item.level ?? '',
+                executionFailed: !!item.execution_failed
+              }))}
             />
           </div>
         );

@@ -18,13 +18,15 @@ const IconLevelDictionary = {
 };
 
 const ResultIconRender = (props: ResultIconRenderProps) => {
-  const { iconLevels, isAuditing } = props;
+  const { auditResultInfo, isAuditing } = props;
 
   const { t } = useTranslation();
 
   const iconData = useMemo(() => {
-    return Array.from(new Set(iconLevels?.filter((icon: string) => icon)));
-  }, [iconLevels]);
+    return Array.from(
+      new Set(auditResultInfo?.map((v) => v.level)?.filter(Boolean))
+    );
+  }, [auditResultInfo]);
 
   if (isAuditing) {
     return (
@@ -34,7 +36,7 @@ const ResultIconRender = (props: ResultIconRenderProps) => {
     );
   }
 
-  if (iconLevels?.includes('audit_execution_error')) {
+  if (auditResultInfo?.some((item) => item.executionFailed)) {
     return (
       <Space>
         <WarningFilled width={20} height={20} />
