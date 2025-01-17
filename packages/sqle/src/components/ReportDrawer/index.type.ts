@@ -1,10 +1,13 @@
-import { IAuditResult } from '@actiontech/shared/lib/api/sqle/service/common';
+import {
+  IAuditResult,
+  IRuleResV1
+} from '@actiontech/shared/lib/api/sqle/service/common';
 import { ReactNode } from 'react';
 
-export type IAuditResultItem = IAuditResult & {
-  isRuleDeleted?: boolean;
-  annotation?: string;
-};
+export type IAuditResultItem = IRuleResV1 &
+  IAuditResult & {
+    isRuleDeleted?: boolean;
+  };
 
 export type TypeData = {
   auditResult: Array<IAuditResultItem>;
