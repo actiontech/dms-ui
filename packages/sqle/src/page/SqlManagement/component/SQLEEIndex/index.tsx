@@ -17,7 +17,7 @@ import {
   ColumnsSettingProps,
   useTableRequestParams
 } from '@actiontech/shared/lib/components/ActiontechTable';
-import SqlManage from '@actiontech/shared/lib/api/sqle/service/SqlManage';
+import { SqlManageService } from '@actiontech/shared/lib/api';
 import {
   IExportSqlManageV1Params,
   IGetSqlManageListV2Params
@@ -171,7 +171,9 @@ const SQLEEIndex = () => {
           ? GetSqlManageListV2FilterPriorityEnum.high
           : undefined
       };
-      return handleTableRequestError(SqlManage.GetSqlManageListV2(params));
+      return handleTableRequestError(
+        SqlManageService.GetSqlManageListV2(params)
+      );
     },
     {
       refreshDeps: [
@@ -209,7 +211,7 @@ const SQLEEIndex = () => {
 
   const { data: abnormalInstances, loading: getAbnormalInstancesLoading } =
     useRequest(() =>
-      SqlManage.getAbnormalInstanceAuditPlansV1({
+      SqlManageService.getAbnormalInstanceAuditPlansV1({
         project_name: projectName
       }).then((res) => {
         if (res.data.code === ResponseCode.SUCCESS) {
@@ -299,7 +301,7 @@ const SQLEEIndex = () => {
         return;
       }
       updateRemarkProtect.current = true;
-      SqlManage.BatchUpdateSqlManage({
+      SqlManageService.BatchUpdateSqlManage({
         project_name: projectName,
         sql_manage_id_list: [id],
         remark
@@ -388,7 +390,7 @@ const SQLEEIndex = () => {
         DB_TYPE_RULE_NAME_SEPARATOR
       )?.[1]
     } as IExportSqlManageV1Params;
-    SqlManage.exportSqlManageV1(params, { responseType: 'blob' })
+    SqlManageService.exportSqlManageV1(params, { responseType: 'blob' })
       .then((res) => {
         if (res.data.code === ResponseCode.SUCCESS) {
           messageApi.success(
@@ -490,7 +492,7 @@ const SQLEEIndex = () => {
         <AbnormalAuditPlanTipsStyleWrapper>
           <Alert
             message={
-              <div>
+              <>
                 <Space>
                   {abnormalInstances?.map((instance, index) => {
                     return (
@@ -508,7 +510,7 @@ const SQLEEIndex = () => {
                   })}
                 </Space>
                 {t('sqlManagement.abnormalAuditPlanTips')}
-              </div>
+              </>
             }
             type="warning"
             showIcon

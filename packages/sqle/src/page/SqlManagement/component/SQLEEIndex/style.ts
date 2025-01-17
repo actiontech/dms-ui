@@ -6,7 +6,7 @@ export const SqlManagementTableStyleWrapper = styled(ActiontechTable)<{
 }>`
   .ant-table-body {
     max-height: ${(hasAbnormalAuditPlan) =>
-      `calc(100vh - ${hasAbnormalAuditPlan ? '378px' : '338px'}) !important`};
+      `calc(100vh - ${hasAbnormalAuditPlan ? '388px' : '338px'}) !important`};
   }
 
   .audit-status .ant-tag {
