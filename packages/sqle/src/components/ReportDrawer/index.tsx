@@ -23,7 +23,6 @@ import {
 } from '@actiontech/icons';
 import useThemeStyleData from '../../hooks/useThemeStyleData';
 import { Spin } from 'antd';
-import { RuleResV1LevelEnum } from '@actiontech/shared/lib/api/sqle/service/common.enum';
 import { ROUTE_PATHS } from '@actiontech/shared/lib/data/routePaths';
 
 const ReportDrawer = ({
@@ -48,10 +47,10 @@ const ReportDrawer = ({
       const normalLevel: IAuditResultItem[] = [];
       const exceptionResult: IAuditResultItem[] = [];
       (data?.auditResult ?? []).forEach((item) => {
-        if (Object.keys(RuleResV1LevelEnum).includes(item.level ?? '')) {
-          normalLevel.push(item);
-        } else if ((item.level as string) === 'audit_execution_error') {
+        if (item.execution_failed) {
           exceptionResult.push(item);
+        } else {
+          normalLevel.push(item);
         }
       });
       return {
@@ -162,13 +161,13 @@ const ReportDrawer = ({
                           <WarningFilled width={20} height={20} />
                         </span>
                         <span className="exception-item-rule-desc-text">
-                          {item.desc}
+                          {item.message}
                         </span>
                       </div>
 
                       <BasicTypographyEllipsis
                         className="exception-item-message-wrapper"
-                        textCont={item.message ?? ''}
+                        textCont={item.error_info ?? ''}
                       />
                     </div>
                   );

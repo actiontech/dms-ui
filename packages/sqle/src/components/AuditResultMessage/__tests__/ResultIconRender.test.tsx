@@ -10,14 +10,16 @@ describe('sqle/components/AuditResultMessage/ResultIconRender', () => {
 
   it('render icon when has diff icon', () => {
     const { baseElement } = customRender({
-      iconLevels: ['normal', 'notice', 'warn', 'error', '']
+      auditResultInfo: ['normal', 'notice', 'warn', 'error', ''].map(
+        (item) => ({ level: item, executionFailed: false })
+      )
     });
     expect(baseElement).toMatchSnapshot();
   });
 
   it('render icon when has same icon', () => {
     const { baseElement } = customRender({
-      iconLevels: [
+      auditResultInfo: [
         'normal',
         'notice',
         'warn',
@@ -26,14 +28,14 @@ describe('sqle/components/AuditResultMessage/ResultIconRender', () => {
         'normal',
         'error',
         ''
-      ]
+      ].map((item) => ({ level: item, executionFailed: false }))
     });
     expect(baseElement).toMatchSnapshot();
   });
 
   it('render normal icon when no icon data', () => {
     const { baseElement } = customRender({
-      iconLevels: []
+      auditResultInfo: []
     });
     expect(baseElement).toMatchSnapshot();
   });
@@ -50,13 +52,11 @@ describe('sqle/components/AuditResultMessage/ResultIconRender', () => {
 
   it('should render exception info when levels include "audit_execution_error"', () => {
     const { baseElement } = customRender({
-      iconLevels: [
-        'audit_execution_error',
-        'notice',
-        'warn',
-        'normal',
-        'normal',
-        'normal'
+      auditResultInfo: [
+        { level: 'normal', executionFailed: false },
+        { level: 'warn', executionFailed: false },
+        { level: 'warn', executionFailed: true },
+        { level: 'normal', executionFailed: false }
       ]
     });
 
