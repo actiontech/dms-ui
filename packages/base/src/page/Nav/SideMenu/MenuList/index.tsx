@@ -6,6 +6,7 @@ import {
   genMenuItemsWithMenuStructTree
 } from './menus/common';
 import { useLocation } from 'react-router-dom';
+import { usePermission } from '@actiontech/shared/lib/global';
 import {
   CustomMenuItemType,
   GenerateMenuItemI18nConfig,
@@ -15,7 +16,6 @@ import {
 } from './menus/index.type';
 import { SQLE_ALL_MENUS, SQLE_MENU_STRUCT } from './menus/menu.data';
 import { DMS_ALL_MENUS, DMS_MENU_STRUCT } from './menus/menu.data.dms';
-import usePermission from '@actiontech/shared/lib/global/usePermission/usePermission';
 import { useTranslation } from 'react-i18next';
 import { TypedLink } from '@actiontech/shared';
 

@@ -39,6 +39,182 @@ export const AuditTaskSQLsMockData: IAuditTaskSQLResV2[] = [
   }
 ];
 
+export const AuditTaskSQLsMockDataWithExceptionRule: IAuditTaskSQLResV2[] = [
+  {
+    exec_sql_id: 4658,
+    number: 1,
+    exec_sql:
+      'create table "77_TABLE_2"\r\n(\r\nID BIGINT  not null  unique ,\r\n\tCOLUMN_1 CHAR(10),\r\n\tCOLUMN_2 CHAR(10),\r\n\tprimary key(ID)\r\n);',
+    sql_source_file: '',
+    sql_start_line: 1,
+    audit_result: [
+      {
+        level: 'error',
+        message: 'unique索引必须使用固定前缀',
+        rule_name: 'Oracle_013',
+        db_type: 'DM',
+        i18n_audit_result_info: {
+          zh: {
+            Message: 'unique索引必须使用固定前缀'
+          }
+        }
+      },
+      {
+        level: 'warn',
+        message: '表建议添加注释',
+        rule_name: 'Oracle_025',
+        db_type: 'DM',
+        i18n_audit_result_info: {
+          zh: {
+            Message: '表建议添加注释'
+          }
+        }
+      },
+      {
+        level: 'warn',
+        message: '列建议添加注释',
+        rule_name: 'Oracle_026',
+        db_type: 'DM',
+        i18n_audit_result_info: {
+          zh: {
+            Message: '列建议添加注释'
+          }
+        }
+      },
+      {
+        level: 'error',
+        message: '创建表时未指定表空间',
+        rule_name: 'Oracle_028',
+        db_type: 'DM',
+        i18n_audit_result_info: {
+          zh: {
+            Message: '创建表时未指定表空间'
+          }
+        }
+      },
+      {
+        level: 'audit_execution_error',
+        message:
+          'Audit规则异常：[数据库对象命名只能使用英文、下划线或数字，首字母必须是英文]解析错误;java.lang.NullPointerException\n\tat com.actiontech.sqle.dmplugin.common.rulehandler.Rule29$ObjectNameParserListener.a(Rule29.java:110)\n\tat com.actiontech.sqle.dmplugin.common.antlr4.PlSqlParser$Create_tableContext.enterRule(PlSqlParser.java:51260)\n\tat org.antlr.v4.runtime.tree.ParseTreeWalker.enterRule(ParseTreeWalker.java:50)\n\tat org.antlr.v4.runtime.tree.ParseTreeWalker.walk(ParseTreeWalker.java:33)\n\tat org.antlr.v4.runtime.tree.ParseTreeWalker.walk(ParseTreeWalker.java:36)\n\tat org.antlr.v4.runtime.tree.ParseTreeWalker.walk(ParseTreeWalker.java:36)\n\tat com.actiontech.sqle.dmplugin.common.rulehandler.Rule29.a(Rule29.java:68)\n\tat com.actiontech.sqle.dmplugin.common.grpcimpl.DriverImpl.a(DriverImpl.java:906)\n\tat com.actiontech.oracleplugin.grpc.DriverGrpc$MethodHandlers.invoke(DriverGrpc.java:1433)\n\tat io.grpc.stub.ServerCalls$UnaryServerCallHandler$UnaryServerCallListener.onHalfClose(ServerCalls.java:180)\n\tat io.grpc.internal.ServerCallImpl$ServerStreamListenerImpl.halfClosed(ServerCallImpl.java:331)\n\tat io.grpc.internal.ServerImpl$JumpToApplicationThreadServerStreamListener$1HalfClosed.runInContext(ServerImpl.java:814)\n\tat io.grpc.internal.ContextRunnable.run(ContextRunnable.java:37)\n\tat io.grpc.internal.SerializingExecutor.run(SerializingExecutor.java:123)\n\tat java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)\n\tat java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)\n\tat java.lang.Thread.run(Thread.java:750)\n',
+        rule_name: 'Oracle_029',
+        db_type: 'DM',
+        i18n_audit_result_info: {
+          zh: {
+            Message:
+              'Audit规则异常：[数据库对象命名只能使用英文、下划线或数字，首字母必须是英文]解析错误;java.lang.NullPointerException\n\tat com.actiontech.sqle.dmplugin.common.rulehandler.Rule29$ObjectNameParserListener.a(Rule29.java:110)\n\tat com.actiontech.sqle.dmplugin.common.antlr4.PlSqlParser$Create_tableContext.enterRule(PlSqlParser.java:51260)\n\tat org.antlr.v4.runtime.tree.ParseTreeWalker.enterRule(ParseTreeWalker.java:50)\n\tat org.antlr.v4.runtime.tree.ParseTreeWalker.walk(ParseTreeWalker.java:33)\n\tat org.antlr.v4.runtime.tree.ParseTreeWalker.walk(ParseTreeWalker.java:36)\n\tat org.antlr.v4.runtime.tree.ParseTreeWalker.walk(ParseTreeWalker.java:36)\n\tat com.actiontech.sqle.dmplugin.common.rulehandler.Rule29.a(Rule29.java:68)\n\tat com.actiontech.sqle.dmplugin.common.grpcimpl.DriverImpl.a(DriverImpl.java:906)\n\tat com.actiontech.oracleplugin.grpc.DriverGrpc$MethodHandlers.invoke(DriverGrpc.java:1433)\n\tat io.grpc.stub.ServerCalls$UnaryServerCallHandler$UnaryServerCallListener.onHalfClose(ServerCalls.java:180)\n\tat io.grpc.internal.ServerCallImpl$ServerStreamListenerImpl.halfClosed(ServerCallImpl.java:331)\n\tat io.grpc.internal.ServerImpl$JumpToApplicationThreadServerStreamListener$1HalfClosed.runInContext(ServerImpl.java:814)\n\tat io.grpc.internal.ContextRunnable.run(ContextRunnable.java:37)\n\tat io.grpc.internal.SerializingExecutor.run(SerializingExecutor.java:123)\n\tat java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)\n\tat java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)\n\tat java.lang.Thread.run(Thread.java:750)\n'
+          }
+        }
+      },
+      {
+        level: 'audit_execution_error',
+        message:
+          'Audit规则异常：[数据库对象命名只能使用英文、下划线或数字，首字母必须是英文]解析错误;java.lang.NullPointerException\n\tat com.actiontech.sqle.dmplugin.common.rulehandler.Rule29$ObjectNameParserListener.a(Rule29.java:110)\n\tat com.actiontech.sqle.dmplugin.common.antlr4.PlSqlParser$Create_tableContext.enterRule(PlSqlParser.java:51260)\n\tat org.antlr.v4.runtime.tree.ParseTreeWalker.enterRule(ParseTreeWalker.java:50)\n\tat org.antlr.v4.runtime.tree.ParseTreeWalker.walk(ParseTreeWalker.java:33)\n\tat org.antlr.v4.runtime.tree.ParseTreeWalker.walk(ParseTreeWalker.java:36)\n\tat org.antlr.v4.runtime.tree.ParseTreeWalker.walk(ParseTreeWalker.java:36)\n\tat com.actiontech.sqle.dmplugin.common.rulehandler.Rule29.a(Rule29.java:68)\n\tat com.actiontech.sqle.dmplugin.common.grpcimpl.DriverImpl.a(DriverImpl.java:906)\n\tat com.actiontech.oracleplugin.grpc.DriverGrpc$MethodHandlers.invoke(DriverGrpc.java:1433)\n\tat io.grpc.stub.ServerCalls$UnaryServerCallHandler$UnaryServerCallListener.onHalfClose(ServerCalls.java:180)\n\tat io.grpc.internal.ServerCallImpl$ServerStreamListenerImpl.halfClosed(ServerCallImpl.java:331)\n\tat io.grpc.internal.ServerImpl$JumpToApplicationThreadServerStreamListener$1HalfClosed.runInContext(ServerImpl.java:814)\n\tat io.grpc.internal.ContextRunnable.run(ContextRunnable.java:37)\n\tat io.grpc.internal.SerializingExecutor.run(SerializingExecutor.java:123)\n\tat java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)\n\tat java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)\n\tat java.lang.Thread.run(Thread.java:750)\n',
+        rule_name: 'Oracle_029',
+        db_type: 'DM',
+        i18n_audit_result_info: {
+          zh: {
+            Message:
+              'Audit规则异常：[数据库对象命名只能使用英文、下划线或数字，首字母必须是英文]解析错误;java.lang.NullPointerException\n\tat com.actiontech.sqle.dmplugin.common.rulehandler.Rule29$ObjectNameParserListener.a(Rule29.java:110)\n\tat com.actiontech.sqle.dmplugin.common.antlr4.PlSqlParser$Create_tableContext.enterRule(PlSqlParser.java:51260)\n\tat org.antlr.v4.runtime.tree.ParseTreeWalker.enterRule(ParseTreeWalker.java:50)\n\tat org.antlr.v4.runtime.tree.ParseTreeWalker.walk(ParseTreeWalker.java:33)\n\tat org.antlr.v4.runtime.tree.ParseTreeWalker.walk(ParseTreeWalker.java:36)\n\tat org.antlr.v4.runtime.tree.ParseTreeWalker.walk(ParseTreeWalker.java:36)\n\tat com.actiontech.sqle.dmplugin.common.rulehandler.Rule29.a(Rule29.java:68)\n\tat com.actiontech.sqle.dmplugin.common.grpcimpl.DriverImpl.a(DriverImpl.java:906)\n\tat com.actiontech.oracleplugin.grpc.DriverGrpc$MethodHandlers.invoke(DriverGrpc.java:1433)\n\tat io.grpc.stub.ServerCalls$UnaryServerCallHandler$UnaryServerCallListener.onHalfClose(ServerCalls.java:180)\n\tat io.grpc.internal.ServerCallImpl$ServerStreamListenerImpl.halfClosed(ServerCallImpl.java:331)\n\tat io.grpc.internal.ServerImpl$JumpToApplicationThreadServerStreamListener$1HalfClosed.runInContext(ServerImpl.java:814)\n\tat io.grpc.internal.ContextRunnable.run(ContextRunnable.java:37)\n\tat io.grpc.internal.SerializingExecutor.run(SerializingExecutor.java:123)\n\tat java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)\n\tat java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)\n\tat java.lang.Thread.run(Thread.java:750)\n'
+          }
+        }
+      },
+      {
+        level: 'warn',
+        message: '建议表名和关键字大写',
+        rule_name: 'Oracle_033',
+        db_type: 'DM',
+        i18n_audit_result_info: {
+          zh: {
+            Message: '建议表名和关键字大写'
+          }
+        }
+      },
+      {
+        level: 'warn',
+        message:
+          '建表DDL必须包含创建时间字段且默认值为SYSDATE，创建时间字段名: CREATE_TIME',
+        rule_name: 'Oracle_048',
+        db_type: 'DM',
+        i18n_audit_result_info: {
+          zh: {
+            Message:
+              '建表DDL必须包含创建时间字段且默认值为SYSDATE，创建时间字段名: CREATE_TIME'
+          }
+        }
+      },
+      {
+        level: 'warn',
+        message:
+          '建表DDL必须包含更新时间字段且默认值为SYSDATE，更新时间字段名: UPDATE_TIME',
+        rule_name: 'Oracle_049',
+        db_type: 'DM',
+        i18n_audit_result_info: {
+          zh: {
+            Message:
+              '建表DDL必须包含更新时间字段且默认值为SYSDATE，更新时间字段名: UPDATE_TIME'
+          }
+        }
+      }
+    ],
+    audit_level: 'audit_execution_error',
+    audit_status: 'finished',
+    exec_result: '',
+    exec_status: 'initialized',
+    description: '',
+    sql_type: 'ddl',
+    backup_strategy_tip: '',
+    backup_result: ''
+  }
+];
+
+export const AuditTaskSQLsMockDataWithOnlyExceptionRule: IAuditTaskSQLResV2[] =
+  [
+    {
+      exec_sql_id: 4658,
+      number: 1,
+      exec_sql:
+        'create table "77_TABLE_2"\r\n(\r\nID BIGINT  not null  unique ,\r\n\tCOLUMN_1 CHAR(10),\r\n\tCOLUMN_2 CHAR(10),\r\n\tprimary key(ID)\r\n);',
+      sql_source_file: '',
+      sql_start_line: 1,
+      audit_result: [
+        {
+          level: 'audit_execution_error',
+          message:
+            'Audit规则异常：[数据库对象命名只能使用英文、下划线或数字，首字母必须是英文]解析错误;java.lang.NullPointerException\n\tat com.actiontech.sqle.dmplugin.common.rulehandler.Rule29$ObjectNameParserListener.a(Rule29.java:110)\n\tat com.actiontech.sqle.dmplugin.common.antlr4.PlSqlParser$Create_tableContext.enterRule(PlSqlParser.java:51260)\n\tat org.antlr.v4.runtime.tree.ParseTreeWalker.enterRule(ParseTreeWalker.java:50)\n\tat org.antlr.v4.runtime.tree.ParseTreeWalker.walk(ParseTreeWalker.java:33)\n\tat org.antlr.v4.runtime.tree.ParseTreeWalker.walk(ParseTreeWalker.java:36)\n\tat org.antlr.v4.runtime.tree.ParseTreeWalker.walk(ParseTreeWalker.java:36)\n\tat com.actiontech.sqle.dmplugin.common.rulehandler.Rule29.a(Rule29.java:68)\n\tat com.actiontech.sqle.dmplugin.common.grpcimpl.DriverImpl.a(DriverImpl.java:906)\n\tat com.actiontech.oracleplugin.grpc.DriverGrpc$MethodHandlers.invoke(DriverGrpc.java:1433)\n\tat io.grpc.stub.ServerCalls$UnaryServerCallHandler$UnaryServerCallListener.onHalfClose(ServerCalls.java:180)\n\tat io.grpc.internal.ServerCallImpl$ServerStreamListenerImpl.halfClosed(ServerCallImpl.java:331)\n\tat io.grpc.internal.ServerImpl$JumpToApplicationThreadServerStreamListener$1HalfClosed.runInContext(ServerImpl.java:814)\n\tat io.grpc.internal.ContextRunnable.run(ContextRunnable.java:37)\n\tat io.grpc.internal.SerializingExecutor.run(SerializingExecutor.java:123)\n\tat java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)\n\tat java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)\n\tat java.lang.Thread.run(Thread.java:750)\n',
+          rule_name: 'Oracle_029',
+          db_type: 'DM',
+          i18n_audit_result_info: {
+            zh: {
+              Message:
+                'Audit规则异常：[数据库对象命名只能使用英文、下划线或数字，首字母必须是英文]解析错误;java.lang.NullPointerException\n\tat com.actiontech.sqle.dmplugin.common.rulehandler.Rule29$ObjectNameParserListener.a(Rule29.java:110)\n\tat com.actiontech.sqle.dmplugin.common.antlr4.PlSqlParser$Create_tableContext.enterRule(PlSqlParser.java:51260)\n\tat org.antlr.v4.runtime.tree.ParseTreeWalker.enterRule(ParseTreeWalker.java:50)\n\tat org.antlr.v4.runtime.tree.ParseTreeWalker.walk(ParseTreeWalker.java:33)\n\tat org.antlr.v4.runtime.tree.ParseTreeWalker.walk(ParseTreeWalker.java:36)\n\tat org.antlr.v4.runtime.tree.ParseTreeWalker.walk(ParseTreeWalker.java:36)\n\tat com.actiontech.sqle.dmplugin.common.rulehandler.Rule29.a(Rule29.java:68)\n\tat com.actiontech.sqle.dmplugin.common.grpcimpl.DriverImpl.a(DriverImpl.java:906)\n\tat com.actiontech.oracleplugin.grpc.DriverGrpc$MethodHandlers.invoke(DriverGrpc.java:1433)\n\tat io.grpc.stub.ServerCalls$UnaryServerCallHandler$UnaryServerCallListener.onHalfClose(ServerCalls.java:180)\n\tat io.grpc.internal.ServerCallImpl$ServerStreamListenerImpl.halfClosed(ServerCallImpl.java:331)\n\tat io.grpc.internal.ServerImpl$JumpToApplicationThreadServerStreamListener$1HalfClosed.runInContext(ServerImpl.java:814)\n\tat io.grpc.internal.ContextRunnable.run(ContextRunnable.java:37)\n\tat io.grpc.internal.SerializingExecutor.run(SerializingExecutor.java:123)\n\tat java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)\n\tat java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)\n\tat java.lang.Thread.run(Thread.java:750)\n'
+            }
+          }
+        },
+        {
+          level: 'audit_execution_error',
+          message:
+            'Audit规则异常：[数据库对象命名只能使用英文、下划线或数字，首字母必须是英文]解析错误;java.lang.NullPointerException\n\tat com.actiontech.sqle.dmplugin.common.rulehandler.Rule29$ObjectNameParserListener.a(Rule29.java:110)\n\tat com.actiontech.sqle.dmplugin.common.antlr4.PlSqlParser$Create_tableContext.enterRule(PlSqlParser.java:51260)\n\tat org.antlr.v4.runtime.tree.ParseTreeWalker.enterRule(ParseTreeWalker.java:50)\n\tat org.antlr.v4.runtime.tree.ParseTreeWalker.walk(ParseTreeWalker.java:33)\n\tat org.antlr.v4.runtime.tree.ParseTreeWalker.walk(ParseTreeWalker.java:36)\n\tat org.antlr.v4.runtime.tree.ParseTreeWalker.walk(ParseTreeWalker.java:36)\n\tat com.actiontech.sqle.dmplugin.common.rulehandler.Rule29.a(Rule29.java:68)\n\tat com.actiontech.sqle.dmplugin.common.grpcimpl.DriverImpl.a(DriverImpl.java:906)\n\tat com.actiontech.oracleplugin.grpc.DriverGrpc$MethodHandlers.invoke(DriverGrpc.java:1433)\n\tat io.grpc.stub.ServerCalls$UnaryServerCallHandler$UnaryServerCallListener.onHalfClose(ServerCalls.java:180)\n\tat io.grpc.internal.ServerCallImpl$ServerStreamListenerImpl.halfClosed(ServerCallImpl.java:331)\n\tat io.grpc.internal.ServerImpl$JumpToApplicationThreadServerStreamListener$1HalfClosed.runInContext(ServerImpl.java:814)\n\tat io.grpc.internal.ContextRunnable.run(ContextRunnable.java:37)\n\tat io.grpc.internal.SerializingExecutor.run(SerializingExecutor.java:123)\n\tat java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)\n\tat java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)\n\tat java.lang.Thread.run(Thread.java:750)\n',
+          rule_name: 'Oracle_029',
+          db_type: 'DM',
+          i18n_audit_result_info: {
+            zh: {
+              Message:
+                'Audit规则异常：[数据库对象命名只能使用英文、下划线或数字，首字母必须是英文]解析错误;java.lang.NullPointerException\n\tat com.actiontech.sqle.dmplugin.common.rulehandler.Rule29$ObjectNameParserListener.a(Rule29.java:110)\n\tat com.actiontech.sqle.dmplugin.common.antlr4.PlSqlParser$Create_tableContext.enterRule(PlSqlParser.java:51260)\n\tat org.antlr.v4.runtime.tree.ParseTreeWalker.enterRule(ParseTreeWalker.java:50)\n\tat org.antlr.v4.runtime.tree.ParseTreeWalker.walk(ParseTreeWalker.java:33)\n\tat org.antlr.v4.runtime.tree.ParseTreeWalker.walk(ParseTreeWalker.java:36)\n\tat org.antlr.v4.runtime.tree.ParseTreeWalker.walk(ParseTreeWalker.java:36)\n\tat com.actiontech.sqle.dmplugin.common.rulehandler.Rule29.a(Rule29.java:68)\n\tat com.actiontech.sqle.dmplugin.common.grpcimpl.DriverImpl.a(DriverImpl.java:906)\n\tat com.actiontech.oracleplugin.grpc.DriverGrpc$MethodHandlers.invoke(DriverGrpc.java:1433)\n\tat io.grpc.stub.ServerCalls$UnaryServerCallHandler$UnaryServerCallListener.onHalfClose(ServerCalls.java:180)\n\tat io.grpc.internal.ServerCallImpl$ServerStreamListenerImpl.halfClosed(ServerCallImpl.java:331)\n\tat io.grpc.internal.ServerImpl$JumpToApplicationThreadServerStreamListener$1HalfClosed.runInContext(ServerImpl.java:814)\n\tat io.grpc.internal.ContextRunnable.run(ContextRunnable.java:37)\n\tat io.grpc.internal.SerializingExecutor.run(SerializingExecutor.java:123)\n\tat java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)\n\tat java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)\n\tat java.lang.Thread.run(Thread.java:750)\n'
+            }
+          }
+        }
+      ],
+      audit_level: 'audit_execution_error',
+      audit_status: 'finished',
+      exec_result: '',
+      exec_status: 'initialized',
+      description: '',
+      sql_type: 'ddl',
+      backup_strategy_tip: '',
+      backup_result: ''
+    }
+  ];
+
 export const workflowTaskDetailMockData = {
   task_id: 'test_task_id',
   instance_name: 'mysql-1',
@@ -353,6 +529,16 @@ export const SqlRewrittenMockDataUseDDL = {
       ddl_dcl: ''
     },
     {
+      rule_name: '不建议对条件字段使用 NULL 值判断',
+      audit_level: 'notice',
+      type: 'statement',
+      desc: "我们将 `WHERE u.email NOT LIKE CAST('%example%' AS VARCHAR)` 转换为 `WHERE u.email NOT LIKE '%example%'`，这样可以更好地利用索引，避免全表扫描。同时，我们还将移除不必要的 `WITH` 子句，因为它没有违反任何审核规则。\n",
+      rewritten_sql:
+        "WITH tmp AS (\n    SELECT u.id\n    FROM users u\n    JOIN orders o ON u.id = o.user_id AND o.status = 'COMPLETED'\n    JOIN payments p ON u.id = p.user_id\n    WHERE u.created_at \u003e= '2023-01-01' \n      AND u.created_at \u003c '2024-01-01'\n      AND o.amount \u003e 100\n      AND p.status IS NOT NULL\n      AND o.description LIKE '%test%'\n      AND u.email NOT LIKE '%example%'\n)\nSELECT *\nFROM tmp t\nJOIN orders o ON t.id = o.user_id AND o.status = 'COMPLETED'\nJOIN payments p ON t.id = p.user_id\nORDER BY p.created_at DESC, o.amount DESC, p.status DESC, o.description DESC, t.email DESC\nLIMIT 1000 OFFSET 500;\n",
+      ddl_dcl_desc: '',
+      ddl_dcl: ''
+    },
+    {
       rule_name: '不建议使用SELECT *',
       audit_level: 'notice',
       type: 'statement',
@@ -507,6 +693,43 @@ export const SqlRewrittenMockDataWithLogic = {
   ],
   rewritten_sql:
     "WITH random_ids AS (\n    SELECT FLOOR(RAND() * 4999999) + 1 AS id\n    FROM DUAL\n    LIMIT 1000\n),\nfiltered_users AS (\n    SELECT u.id, u.name, u.email, u.created_at\n    FROM users u\n    JOIN orders o ON u.id = o.user_id\n    JOIN payments p ON u.id = p.user_id\n    WHERE o.status = 'COMPLETED'\n    AND o.amount \u003e 100\n    AND p.status IS NOT NULL\n    AND o.description LIKE CONCAT('test%', '')\n    AND u.created_at \u003e= '2023-01-01'\n    AND u.created_at \u003c '2024-01-01'\n    AND u.email LIKE CONCAT('example%', '')\n    AND u.id IN (SELECT id FROM random_ids)\n)\nSELECT *\nFROM filtered_users\nLIMIT 1000 OFFSET 500;\n",
+  rewritten_sql_business_desc:
+    '此SQL查询旨在获取2023年注册的用户中，订单金额超过100且支付状态不为空、订单描述包含“test”、邮箱地址包含“example”的用户信息。此外，结果会根据随机数和支付创建时间降序排列，并最终返回第501到第1500条记录。\n',
+  rewritten_sql_logic_desc:
+    "1. 基础表选择：\n   - 从users表开始，作为主表\n   - 通过JOIN连接orders表获取订单信息\n   - 通过JOIN连接payments表获取支付信息\n\n2. 数据筛选条件：\n   - 用户注册时间限制：created_at在2023年\n   - 订单金额限制：amount大于100\n   - 支付状态不为空：p.status IS NOT NULL\n   - 订单描述包含“test”：o.description LIKE '%test%'\n   - 邮箱地址包含“example”：LOWER(u.email) LIKE '%example%'\n\n3. 连接条件：\n   - users表与orders表通过user_id关联\n   - users表与payments表通过user_id关联\n\n4. 结果排序：\n   - 随机数排序：ORDER BY RAND()\n   - 支付创建时间降序：ORDER BY p.created_at DESC\n\n5. 结果限制：\n   - LIMIT 1000 OFFSET 500：返回第501到第1500条记录\n",
+  business_non_equivalent_desc:
+    '- **记录数的不确定性**: 原始 SQL 使用 `ORDER BY RAND()` 可能会导致记录数的不确定性，因为随机排序可能导致不同的记录被选中。而优化后的 SQL 使用 `u.id IN (SELECT id FROM random_ids)`，虽然也实现了随机选择，但具体的记录选择可能会不同，导致记录数的不确定性。\n- **数据内容的差异**: 由于记录的选择可能不同，因此数据内容也可能不同。\n- **数据顺序的差异**: 虽然两种方法都实现了随机选择，但具体的选择顺序可能会不同，导致数据顺序的差异。'
+} as IRewriteSQLData;
+
+export const SqlRewrittenMockDataWithNotRewriter = {
+  business_desc:
+    '此SQL查询旨在获取2023年注册的用户，其中订单金额超过100，支付状态不为空，订单描述包含"test"，并且邮箱地址包含"example"。最终结果将根据随机数和支付创建时间降序排列，并限制返回1000条记录，跳过前500条。\n',
+  logic_desc:
+    '1. 基础表选择：\n   - 从users表开始，作为主表\n   - 通过JOIN连接orders表获取订单信息\n   - 通过JOIN连接payments表获取支付信息\n\n2. 数据筛选条件：\n   - 用户注册时间限制：created_at在2023年\n   - 订单金额限制：amount大于100\n   - 支付状态不为空：p.status IS NOT NULL\n   - 订单描述包含"test"：o.description LIKE \'%test%\'\n   - 邮箱地址包含"example"：LOWER(u.email) LIKE \'%example%\'\n\n3. 连接条件：\n   - users表和orders表通过user_id关联\n   - users表和payments表通过user_id关联\n\n4. 结果排序：\n   - 首先使用ORDER BY RAND()进行随机排序\n   - 然后根据支付创建时间降序排列：p.created_at DESC\n\n5. 结果限制：\n   - LIMIT 1000 OFFSET 500：跳过前500条记录，返回接下来的1000条记录\n',
+  suggestions: [
+    {
+      rule_name: '不建议LIMIT的偏移OFFSET大于阈值',
+      audit_level: 'error',
+      type: 'statement',
+      desc: '我们将使用WITH表表达式先查询主键ID，再联接获取完整数据。具体步骤如下：\n1. 使用WITH表表达式提取符合条件的用户ID。\n2. 使用提取的用户ID进行关联查询，获取完整的用户、订单和支付信息。\n3. 确保查询结果与原SQL一致，包括结果集的顺序。\n',
+      rewritten_sql:
+        "WITH user_ids AS (\n    SELECT u.id\n    FROM users u\n    JOIN orders o ON u.id = o.user_id AND UPPER(o.status) = 'COMPLETED'\n    JOIN payments p ON u.id = p.user_id\n    WHERE YEAR(u.created_at) = 2023\n    AND o.amount \u003e 100\n    AND p.status IS NOT NULL\n    AND o.description LIKE '%test%'\n    OR LOWER(u.email) LIKE '%example%'\n)\nSELECT *\nFROM users u\nJOIN orders o ON u.id = o.user_id\nJOIN payments p ON u.id = p.user_id\nWHERE u.id IN (SELECT id FROM user_ids)\nORDER BY RAND(), p.created_at DESC\nLIMIT 1000 OFFSET 500;\n",
+      ddl_dcl_desc: '',
+      ddl_dcl: ''
+    },
+    {
+      rule_name: '应避免在 WHERE 条件中使用函数或其他运算符',
+      audit_level: 'warn',
+      type: 'statement',
+      desc: '根据规则“不建议LIMIT的偏移OFFSET大于阈值”重写后的SQL已不再触发本规则\n',
+      rewritten_sql:
+        "WITH user_ids AS (\n    SELECT u.id\n    FROM users u\n    JOIN orders o ON u.id = o.user_id AND UPPER(o.status) = 'COMPLETED'\n    JOIN payments p ON u.id = p.user_id\n    WHERE YEAR(u.created_at) = 2023\n    AND o.amount \u003e 100\n    AND p.status IS NOT NULL\n    AND o.description LIKE '%test%'\n    OR LOWER(u.email) LIKE '%example%'\n)\nSELECT *\nFROM users u\nJOIN orders o ON u.id = o.user_id\nJOIN payments p ON u.id = p.user_id\nWHERE u.id IN (SELECT id FROM user_ids)\nORDER BY RAND(), p.created_at DESC\nLIMIT 1000 OFFSET 500;\n",
+      ddl_dcl_desc: '',
+      ddl_dcl: ''
+    }
+  ],
+  rewritten_sql:
+    "WITH user_ids AS (\n    SELECT u.id\n    FROM users u\n    JOIN orders o ON u.id = o.user_id AND UPPER(o.status) = 'COMPLETED'\n    JOIN payments p ON u.id = p.user_id\n    WHERE YEAR(u.created_at) = 2023\n    AND o.amount \u003e 100\n    AND p.status IS NOT NULL\n    AND o.description LIKE '%test%'\n    OR LOWER(u.email) LIKE '%example%'\n)\nSELECT *\nFROM users u\nJOIN orders o ON u.id = o.user_id\nJOIN payments p ON u.id = p.user_id\nWHERE u.id IN (SELECT id FROM user_ids)\nORDER BY RAND(), p.created_at DESC\nLIMIT 1000 OFFSET 500;\n",
   rewritten_sql_business_desc:
     '此SQL查询旨在获取2023年注册的用户中，订单金额超过100且支付状态不为空、订单描述包含“test”、邮箱地址包含“example”的用户信息。此外，结果会根据随机数和支付创建时间降序排列，并最终返回第501到第1500条记录。\n',
   rewritten_sql_logic_desc:

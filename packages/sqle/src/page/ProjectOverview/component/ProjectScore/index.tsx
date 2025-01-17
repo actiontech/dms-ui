@@ -1,19 +1,17 @@
 import { useTranslation } from 'react-i18next';
 import { useMemo, useState } from 'react';
-
 import ChartWrapper from '../../../../components/ChartCom/ChartWrapper';
 import CardWrapper from '../../../../components/CardWrapper';
-
 import ChartContTitle from '../../../../page/ReportStatistics/EEIndex/component/base/ChartContTitle';
-
 import { Gauge, GaugeConfig } from '@ant-design/plots';
-
-import { useCurrentProject } from '@actiontech/shared/lib/global';
+import {
+  useChangeTheme,
+  useCurrentProject
+} from '@actiontech/shared/lib/global';
 import useThemeStyleData from '../../../../hooks/useThemeStyleData';
 import useChatsDataByAPI from '../../hooks/useChatsDataByAPI';
 import { floatRound } from '@actiontech/shared/lib/utils/Math';
 import statistic from '@actiontech/shared/lib/api/sqle/service/statistic';
-import { useChangeTheme } from '@actiontech/shared/lib/hooks';
 
 enum EnumLevel {
   dangerous = 'dangerous',

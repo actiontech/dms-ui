@@ -66,18 +66,24 @@ const RewrittenSuggestionItem: React.FC<Props> = ({
       <LazyLoadComponent open={showDetails} animation={false}>
         <RewrittenSuggestionDetailsStyleWrapper>
           <div className="action-items-wrapper">
-            <CopySqlAction sql={displaySQL ?? '-'} />
+            <CopySqlAction
+              sql={displaySQL ?? '-'}
+              hidden={originalSql === displaySQL}
+            />
             <ShowSqlDifferenceAction
+              hidden={originalSql === displaySQL}
               showSqlDifference={showSqlDifference}
               toggleShowSqlDifference={toggleShowSqlDifference}
             />
           </div>
 
-          <RewrittenSqlCommonEditor
-            showSqlDifference={showSqlDifference}
-            originalSql={originalSql}
-            rewrittenSql={displaySQL ?? '-'}
-          />
+          <EmptyBox if={originalSql !== displaySQL}>
+            <RewrittenSqlCommonEditor
+              showSqlDifference={showSqlDifference}
+              originalSql={originalSql}
+              rewrittenSql={displaySQL ?? '-'}
+            />
+          </EmptyBox>
 
           <EmptyBox if={!!desc}>
             <OptimizationDescriptionStyleWrapper>
