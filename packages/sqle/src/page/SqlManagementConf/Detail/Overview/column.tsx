@@ -2,13 +2,17 @@ import { ActiontechTableColumn } from '@actiontech/shared/lib/components/Actiont
 import { t } from '../../../../locale';
 import { formatTime } from '@actiontech/shared/lib/utils/Common';
 import { IInstanceAuditPlanInfo } from '@actiontech/shared/lib/api/sqle/service/common';
-import { SensitiveDisplay, TypedLink } from '@actiontech/shared';
-import { InstanceAuditPlanInfoActiveStatusEnum } from '@actiontech/shared/lib/api/sqle/service/common.enum';
+import { SensitiveDisplay, TypedLink, BasicToolTip } from '@actiontech/shared';
+import {
+  InstanceAuditPlanInfoLastCollectionStatusEnum,
+  InstanceAuditPlanInfoActiveStatusEnum
+} from '@actiontech/shared/lib/api/sqle/service/common.enum';
 import { TableColumnWithIconStyleWrapper } from '@actiontech/shared/lib/styleWrapper/element';
 import {
   CheckCircleOutlined,
   CloseHexagonOutlined,
-  InfoHexagonOutlined
+  InfoHexagonOutlined,
+  InfoCircleOutlined
 } from '@actiontech/icons';
 import { Typography } from 'antd';
 import { ROUTE_PATHS } from '@actiontech/shared/lib/data/routePaths';
@@ -62,13 +66,30 @@ export const ConfDetailOverviewColumns: (
     {
       dataIndex: 'active_status',
       title: () => t('managementConf.detail.overview.column.status'),
-      render: (status) => {
+      render: (status, record) => {
         if (status === InstanceAuditPlanInfoActiveStatusEnum.disabled) {
           return (
             <TableColumnWithIconStyleWrapper>
               <CloseHexagonOutlined />
               <span>
-                {t('managementConf.list.table.column.taskStatus.disabled')}
+                {t('managementConf.detail.overview.column.taskStatus.disabled')}
+              </span>
+            </TableColumnWithIconStyleWrapper>
+          );
+        }
+        if (
+          status === InstanceAuditPlanInfoActiveStatusEnum.normal &&
+          record.last_collection_status ===
+            InstanceAuditPlanInfoLastCollectionStatusEnum.abnormal
+        ) {
+          return (
+            <TableColumnWithIconStyleWrapper>
+              <BasicToolTip
+                prefixIcon={<InfoCircleOutlined />}
+                title={t('managementConf.detail.overview.column.abnormalTips')}
+              />
+              <span>
+                {t('managementConf.detail.overview.column.taskStatus.abnormal')}
               </span>
             </TableColumnWithIconStyleWrapper>
           );
@@ -78,7 +99,7 @@ export const ConfDetailOverviewColumns: (
             <TableColumnWithIconStyleWrapper>
               <CheckCircleOutlined />
               <span>
-                {t('managementConf.list.table.column.taskStatus.normal')}
+                {t('managementConf.detail.overview.column.taskStatus.normal')}
               </span>
             </TableColumnWithIconStyleWrapper>
           );

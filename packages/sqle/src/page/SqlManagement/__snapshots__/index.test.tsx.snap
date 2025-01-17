@@ -467,7 +467,7 @@ exports[`page/SqlManagement render sql management page 1`] = `
             </div>
           </div>
           <div
-            class="ant-table-wrapper actiontech-table-namespace table-row-cursor css-1xsk37k css-dev-only-do-not-override-bj9uhl"
+            class="ant-table-wrapper actiontech-table-namespace table-row-cursor css-1wtv5xm css-dev-only-do-not-override-bj9uhl"
           >
             <div
               class="ant-spin-nested-loading css-dev-only-do-not-override-bj9uhl"

@@ -34,7 +34,8 @@ export default {
         scanStatus: '采集状态',
         notificationMethod: '推送方式',
         createdAt: '创建时间',
-        creator: '创建人'
+        creator: '创建人',
+        abnormalTips: 'SQL采集存在异常'
       },
       action: {
         disabled: {
@@ -117,7 +118,14 @@ export default {
         connectionInfo: '连接信息',
         collectedSqlCount: '采集到的SQL数',
         problematicSqlCount: '审核有问题的SQL数',
-        lastCollectionTime: '最近一次采集时间'
+        lastCollectionTime: '最近一次采集时间',
+        taskStatus: {
+          disabled: '停用',
+          normal: '运行中',
+          abnormal: '运行异常'
+        },
+        abnormalTips:
+          '请根据"execute extract sql failed"关键字到sqled.log日志中检索相关信息'
       },
       actions: {
         enabled: '启用',

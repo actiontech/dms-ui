@@ -24,6 +24,7 @@ import {
   IGetGlobalSqlManageListResp,
   IGetGlobalSqlManageStatisticsResp,
   IGetSqlManageListResp,
+  IGetAbnormalAuditPlanInstancesResp,
   IBatchUpdateSqlManageReq,
   IBaseRes,
   IGetSqlManageRuleTipsResp,
@@ -96,6 +97,13 @@ export interface IGetSqlManageListParams {
 }
 
 export interface IGetSqlManageListReturn extends IGetSqlManageListResp {}
+
+export interface IGetAbnormalInstanceAuditPlansV1Params {
+  project_name: string;
+}
+
+export interface IGetAbnormalInstanceAuditPlansV1Return
+  extends IGetAbnormalAuditPlanInstancesResp {}
 
 export interface IBatchUpdateSqlManageParams extends IBatchUpdateSqlManageReq {
   project_name: string;

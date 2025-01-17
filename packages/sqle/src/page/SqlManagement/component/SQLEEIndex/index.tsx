@@ -1,7 +1,13 @@
 import { useTranslation } from 'react-i18next';
 import { useBoolean, useRequest } from 'ahooks';
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
-import { BasicButton, PageHeader, useTypedQuery } from '@actiontech/shared';
+import {
+  BasicButton,
+  PageHeader,
+  useTypedQuery,
+  TypedLink,
+  EmptyBox
+} from '@actiontech/shared';
 import SQLStatistics, { ISQLStatisticsProps } from '../SQLStatistics';
 import {
   useTableFilterContainer,
@@ -11,7 +17,7 @@ import {
   ColumnsSettingProps,
   useTableRequestParams
 } from '@actiontech/shared/lib/components/ActiontechTable';
-import SqlManage from '@actiontech/shared/lib/api/sqle/service/SqlManage';
+import { SqlManageService } from '@actiontech/shared/lib/api';
 import {
   IExportSqlManageV1Params,
   IGetSqlManageListV2Params
@@ -42,7 +48,7 @@ import {
 import { ModalName } from '../../../../data/ModalName';
 import { SorterResult, TableRowSelection } from 'antd/es/table/interface';
 import { ISqlManage } from '@actiontech/shared/lib/api/sqle/service/common';
-import { Spin, message } from 'antd';
+import { Spin, message, Alert, Space } from 'antd';
 import SqlManagementModal from './Modal';
 import EmitterKey from '../../../../data/EmitterKey';
 import EventEmitter from '../../../../utils/EventEmitter';
@@ -53,7 +59,10 @@ import useGetTableFilterInfo from './hooks/useGetTableFilterInfo';
 import { DownArrowLineOutlined } from '@actiontech/icons';
 import useSqlManagementExceptionRedux from '../../../SqlManagementException/hooks/useSqlManagementExceptionRedux';
 import useWhitelistRedux from '../../../Whitelist/hooks/useWhitelistRedux';
-import { SqlManagementTableStyleWrapper } from './style';
+import {
+  SqlManagementTableStyleWrapper,
+  AbnormalAuditPlanTipsStyleWrapper
+} from './style';
 import { SqlManageAuditStatusEnum } from '@actiontech/shared/lib/api/sqle/service/common.enum';
 import { GetSqlManageListV2FilterSourceEnum } from '@actiontech/shared/lib/api/sqle/service/SqlManage/index.enum';
 import { ROUTE_PATHS } from '@actiontech/shared/lib/data/routePaths';
@@ -162,7 +171,9 @@ const SQLEEIndex = () => {
           ? GetSqlManageListV2FilterPriorityEnum.high
           : undefined
       };
-      return handleTableRequestError(SqlManage.GetSqlManageListV2(params));
+      return handleTableRequestError(
+        SqlManageService.GetSqlManageListV2(params)
+      );
     },
     {
       refreshDeps: [
@@ -197,6 +208,17 @@ const SQLEEIndex = () => {
       }
     }
   );
+
+  const { data: abnormalInstances, loading: getAbnormalInstancesLoading } =
+    useRequest(() =>
+      SqlManageService.getAbnormalInstanceAuditPlansV1({
+        project_name: projectName
+      }).then((res) => {
+        if (res.data.code === ResponseCode.SUCCESS) {
+          return res.data.data;
+        }
+      })
+    );
 
   const openModal = useCallback((name: ModalName, row?: ISqlManage) => {
     if (row) {
@@ -279,7 +301,7 @@ const SQLEEIndex = () => {
         return;
       }
       updateRemarkProtect.current = true;
-      SqlManage.BatchUpdateSqlManage({
+      SqlManageService.BatchUpdateSqlManage({
         project_name: projectName,
         sql_manage_id_list: [id],
         remark
@@ -368,7 +390,7 @@ const SQLEEIndex = () => {
         DB_TYPE_RULE_NAME_SEPARATOR
       )?.[1]
     } as IExportSqlManageV1Params;
-    SqlManage.exportSqlManageV1(params, { responseType: 'blob' })
+    SqlManageService.exportSqlManageV1(params, { responseType: 'blob' })
       .then((res) => {
         if (res.data.code === ResponseCode.SUCCESS) {
           messageApi.success(
@@ -445,7 +467,7 @@ const SQLEEIndex = () => {
   }, []);
 
   return (
-    <Spin spinning={loading} delay={300}>
+    <Spin spinning={loading || getAbnormalInstancesLoading} delay={300}>
       {messageContextHolder}
       <PageHeader
         title={t('sqlManagement.pageTitle')}
@@ -466,6 +488,35 @@ const SQLEEIndex = () => {
         errorMessage={getListError}
         loading={loading}
       />
+      <EmptyBox if={!!abnormalInstances?.length}>
+        <AbnormalAuditPlanTipsStyleWrapper>
+          <Alert
+            message={
+              <>
+                <Space>
+                  {abnormalInstances?.map((instance, index) => {
+                    return (
+                      <TypedLink
+                        to={ROUTE_PATHS.SQLE.SQL_MANAGEMENT_CONF.detail}
+                        params={{
+                          projectID,
+                          id: instance.instance_audit_plan_id?.toString() ?? ''
+                        }}
+                        key={index}
+                      >
+                        {instance.instance_name}
+                      </TypedLink>
+                    );
+                  })}
+                </Space>
+                {t('sqlManagement.abnormalAuditPlanTips')}
+              </>
+            }
+            type="warning"
+            showIcon
+          />
+        </AbnormalAuditPlanTipsStyleWrapper>
+      </EmptyBox>
       {/* table  */}
       <TableToolbar
         refreshButton={{ refresh, disabled: loading }}
@@ -491,6 +542,7 @@ const SQLEEIndex = () => {
         filterCustomProps={filterCustomProps}
       />
       <SqlManagementTableStyleWrapper
+        hasAbnormalAuditPlan={!!abnormalInstances?.length}
         className="table-row-cursor"
         setting={tableSetting}
         dataSource={sqlList?.list}

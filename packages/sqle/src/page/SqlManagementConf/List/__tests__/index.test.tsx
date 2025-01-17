@@ -23,6 +23,10 @@ import {
 import instance from '../../../../testUtils/mockApi/instance';
 import { InstanceAuditPlanStatusEnum } from '../index.enum';
 import { mockUsePermission } from '@actiontech/shared/lib/testUtil/mockHook/mockUsePermission';
+import {
+  AuditPlanTypeResBaseActiveStatusEnum,
+  AuditPlanTypeResBaseLastCollectionStatusEnum
+} from '@actiontech/shared/lib/api/sqle/service/common.enum';
 
 jest.mock('react-redux', () => {
   return {
@@ -75,6 +79,32 @@ describe('test sqle/SqlManagementConf/List', () => {
     expect(getInstanceAuditPlansSpy).toHaveBeenCalled();
     expect(getAuditPlanTypesSpy).toHaveBeenCalled();
     expect(getInstanceTipListSpy).toHaveBeenCalled();
+  });
+
+  it('render sql management conf list with audit plan active status', async () => {
+    getInstanceAuditPlansSpy.mockClear();
+    getInstanceAuditPlansSpy.mockImplementation(() =>
+      createSpySuccessResponse({
+        data: [
+          {
+            ...mockInstanceAuditPlanListData[0],
+            audit_plan_types: [
+              {
+                audit_plan_id: 1,
+                type: 'sql_file',
+                desc: 'SQL文件',
+                active_status: AuditPlanTypeResBaseActiveStatusEnum.normal,
+                last_collection_status:
+                  AuditPlanTypeResBaseLastCollectionStatusEnum.abnormal
+              }
+            ]
+          }
+        ]
+      })
+    );
+    const { baseElement } = superRender(<SqlManagementConfList />);
+    await act(async () => jest.advanceTimersByTime(3000));
+    expect(baseElement).toMatchSnapshot();
   });
 
   it('render create button when project is archived', async () => {

@@ -4,7 +4,12 @@ import {
   ActiontechTableFilterMetaValue
 } from '@actiontech/shared/lib/components/ActiontechTable';
 import { t } from '../../../locale';
-import { DatabaseTypeLogo, TypedLink } from '@actiontech/shared';
+import {
+  DatabaseTypeLogo,
+  TypedLink,
+  BasicToolTip,
+  EmptyBox
+} from '@actiontech/shared';
 import { IInstanceAuditPlanResV1 } from '@actiontech/shared/lib/api/sqle/service/common';
 import { InstanceAuditPlanTableFilterParamType } from './index.type';
 import { formatTime } from '@actiontech/shared/lib/utils/Common';
@@ -13,10 +18,16 @@ import {
   CloseHexagonOutlined,
   InfoHexagonOutlined
 } from '@actiontech/icons';
-import { InstanceAuditPlanResV1ActiveStatusEnum } from '@actiontech/shared/lib/api/sqle/service/common.enum';
+import {
+  InstanceAuditPlanResV1ActiveStatusEnum,
+  AuditPlanTypeResBaseLastCollectionStatusEnum,
+  AuditPlanTypeResBaseActiveStatusEnum
+} from '@actiontech/shared/lib/api/sqle/service/common.enum';
 import ScanTypeTagsCell from './ScanTypeTagsCell';
 import { TableColumnWithIconStyleWrapper } from '@actiontech/shared/lib/styleWrapper/element';
 import { ROUTE_PATHS } from '@actiontech/shared/lib/data/routePaths';
+import { InfoCircleOutlined } from '@actiontech/icons/';
+import { PlanListTaskTypeButtonStyleWrapper } from './style';
 
 export const ExtraFilterMeta: () => ActiontechTableFilterMeta<
   IInstanceAuditPlanResV1,
@@ -49,17 +60,32 @@ export const SqlManagementConfColumns: (
       dataIndex: 'instance_name',
       title: () => t('managementConf.list.table.column.dbName'),
       render: (instanceName, record) => {
+        const hasAbnormalPlan = record.audit_plan_types?.some(
+          (plan) =>
+            plan.active_status ===
+              AuditPlanTypeResBaseActiveStatusEnum.normal &&
+            plan.last_collection_status ===
+              AuditPlanTypeResBaseLastCollectionStatusEnum.abnormal
+        );
         return (
-          <TypedLink
-            to={ROUTE_PATHS.SQLE.SQL_MANAGEMENT_CONF.detail}
-            params={{
-              projectID,
-              id: record.instance_audit_plan_id?.toString() ?? ''
-            }}
-          >
-            {instanceName ||
-              t('managementConf.list.table.column.staticScanType')}
-          </TypedLink>
+          <PlanListTaskTypeButtonStyleWrapper>
+            <TypedLink
+              to={ROUTE_PATHS.SQLE.SQL_MANAGEMENT_CONF.detail}
+              params={{
+                projectID,
+                id: record.instance_audit_plan_id?.toString() ?? ''
+              }}
+            >
+              {instanceName ||
+                t('managementConf.list.table.column.staticScanType')}
+            </TypedLink>
+            <EmptyBox if={hasAbnormalPlan}>
+              <BasicToolTip
+                prefixIcon={<InfoCircleOutlined />}
+                title={t('managementConf.list.table.column.abnormalTips')}
+              />
+            </EmptyBox>
+          </PlanListTaskTypeButtonStyleWrapper>
         );
       },
       filterCustomType: 'select',
