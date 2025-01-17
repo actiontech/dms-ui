@@ -93,9 +93,11 @@ export const AuditTaskSQLsMockDataWithExceptionRule: IAuditTaskSQLResV2[] = [
         }
       },
       {
-        level: 'audit_execution_error',
-        message:
+        level: 'warn',
+        execution_failed: true,
+        error_info:
           'Audit规则异常：[数据库对象命名只能使用英文、下划线或数字，首字母必须是英文]解析错误;java.lang.NullPointerException\n\tat com.actiontech.sqle.dmplugin.common.rulehandler.Rule29$ObjectNameParserListener.a(Rule29.java:110)\n\tat com.actiontech.sqle.dmplugin.common.antlr4.PlSqlParser$Create_tableContext.enterRule(PlSqlParser.java:51260)\n\tat org.antlr.v4.runtime.tree.ParseTreeWalker.enterRule(ParseTreeWalker.java:50)\n\tat org.antlr.v4.runtime.tree.ParseTreeWalker.walk(ParseTreeWalker.java:33)\n\tat org.antlr.v4.runtime.tree.ParseTreeWalker.walk(ParseTreeWalker.java:36)\n\tat org.antlr.v4.runtime.tree.ParseTreeWalker.walk(ParseTreeWalker.java:36)\n\tat com.actiontech.sqle.dmplugin.common.rulehandler.Rule29.a(Rule29.java:68)\n\tat com.actiontech.sqle.dmplugin.common.grpcimpl.DriverImpl.a(DriverImpl.java:906)\n\tat com.actiontech.oracleplugin.grpc.DriverGrpc$MethodHandlers.invoke(DriverGrpc.java:1433)\n\tat io.grpc.stub.ServerCalls$UnaryServerCallHandler$UnaryServerCallListener.onHalfClose(ServerCalls.java:180)\n\tat io.grpc.internal.ServerCallImpl$ServerStreamListenerImpl.halfClosed(ServerCallImpl.java:331)\n\tat io.grpc.internal.ServerImpl$JumpToApplicationThreadServerStreamListener$1HalfClosed.runInContext(ServerImpl.java:814)\n\tat io.grpc.internal.ContextRunnable.run(ContextRunnable.java:37)\n\tat io.grpc.internal.SerializingExecutor.run(SerializingExecutor.java:123)\n\tat java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)\n\tat java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)\n\tat java.lang.Thread.run(Thread.java:750)\n',
+        message: '数据库对象命名只能使用英文、下划线或数字，首字母必须是英文',
         rule_name: 'Oracle_029',
         db_type: 'DM',
         i18n_audit_result_info: {
@@ -106,8 +108,10 @@ export const AuditTaskSQLsMockDataWithExceptionRule: IAuditTaskSQLResV2[] = [
         }
       },
       {
-        level: 'audit_execution_error',
-        message:
+        level: 'error',
+        message: '数据库对象命名只能使用英文、下划线或数字，首字母必须是英文',
+        execution_failed: true,
+        error_info:
           'Audit规则异常：[数据库对象命名只能使用英文、下划线或数字，首字母必须是英文]解析错误;java.lang.NullPointerException\n\tat com.actiontech.sqle.dmplugin.common.rulehandler.Rule29$ObjectNameParserListener.a(Rule29.java:110)\n\tat com.actiontech.sqle.dmplugin.common.antlr4.PlSqlParser$Create_tableContext.enterRule(PlSqlParser.java:51260)\n\tat org.antlr.v4.runtime.tree.ParseTreeWalker.enterRule(ParseTreeWalker.java:50)\n\tat org.antlr.v4.runtime.tree.ParseTreeWalker.walk(ParseTreeWalker.java:33)\n\tat org.antlr.v4.runtime.tree.ParseTreeWalker.walk(ParseTreeWalker.java:36)\n\tat org.antlr.v4.runtime.tree.ParseTreeWalker.walk(ParseTreeWalker.java:36)\n\tat com.actiontech.sqle.dmplugin.common.rulehandler.Rule29.a(Rule29.java:68)\n\tat com.actiontech.sqle.dmplugin.common.grpcimpl.DriverImpl.a(DriverImpl.java:906)\n\tat com.actiontech.oracleplugin.grpc.DriverGrpc$MethodHandlers.invoke(DriverGrpc.java:1433)\n\tat io.grpc.stub.ServerCalls$UnaryServerCallHandler$UnaryServerCallListener.onHalfClose(ServerCalls.java:180)\n\tat io.grpc.internal.ServerCallImpl$ServerStreamListenerImpl.halfClosed(ServerCallImpl.java:331)\n\tat io.grpc.internal.ServerImpl$JumpToApplicationThreadServerStreamListener$1HalfClosed.runInContext(ServerImpl.java:814)\n\tat io.grpc.internal.ContextRunnable.run(ContextRunnable.java:37)\n\tat io.grpc.internal.SerializingExecutor.run(SerializingExecutor.java:123)\n\tat java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)\n\tat java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)\n\tat java.lang.Thread.run(Thread.java:750)\n',
         rule_name: 'Oracle_029',
         db_type: 'DM',
@@ -156,7 +160,7 @@ export const AuditTaskSQLsMockDataWithExceptionRule: IAuditTaskSQLResV2[] = [
         }
       }
     ],
-    audit_level: 'audit_execution_error',
+    audit_level: 'error',
     audit_status: 'finished',
     exec_result: '',
     exec_status: 'initialized',
@@ -178,8 +182,10 @@ export const AuditTaskSQLsMockDataWithOnlyExceptionRule: IAuditTaskSQLResV2[] =
       sql_start_line: 1,
       audit_result: [
         {
-          level: 'audit_execution_error',
-          message:
+          level: 'error',
+          execution_failed: true,
+          message: '数据库对象命名只能使用英文、下划线或数字，首字母必须是英文',
+          error_info:
             'Audit规则异常：[数据库对象命名只能使用英文、下划线或数字，首字母必须是英文]解析错误;java.lang.NullPointerException\n\tat com.actiontech.sqle.dmplugin.common.rulehandler.Rule29$ObjectNameParserListener.a(Rule29.java:110)\n\tat com.actiontech.sqle.dmplugin.common.antlr4.PlSqlParser$Create_tableContext.enterRule(PlSqlParser.java:51260)\n\tat org.antlr.v4.runtime.tree.ParseTreeWalker.enterRule(ParseTreeWalker.java:50)\n\tat org.antlr.v4.runtime.tree.ParseTreeWalker.walk(ParseTreeWalker.java:33)\n\tat org.antlr.v4.runtime.tree.ParseTreeWalker.walk(ParseTreeWalker.java:36)\n\tat org.antlr.v4.runtime.tree.ParseTreeWalker.walk(ParseTreeWalker.java:36)\n\tat com.actiontech.sqle.dmplugin.common.rulehandler.Rule29.a(Rule29.java:68)\n\tat com.actiontech.sqle.dmplugin.common.grpcimpl.DriverImpl.a(DriverImpl.java:906)\n\tat com.actiontech.oracleplugin.grpc.DriverGrpc$MethodHandlers.invoke(DriverGrpc.java:1433)\n\tat io.grpc.stub.ServerCalls$UnaryServerCallHandler$UnaryServerCallListener.onHalfClose(ServerCalls.java:180)\n\tat io.grpc.internal.ServerCallImpl$ServerStreamListenerImpl.halfClosed(ServerCallImpl.java:331)\n\tat io.grpc.internal.ServerImpl$JumpToApplicationThreadServerStreamListener$1HalfClosed.runInContext(ServerImpl.java:814)\n\tat io.grpc.internal.ContextRunnable.run(ContextRunnable.java:37)\n\tat io.grpc.internal.SerializingExecutor.run(SerializingExecutor.java:123)\n\tat java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)\n\tat java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)\n\tat java.lang.Thread.run(Thread.java:750)\n',
           rule_name: 'Oracle_029',
           db_type: 'DM',
@@ -191,8 +197,10 @@ export const AuditTaskSQLsMockDataWithOnlyExceptionRule: IAuditTaskSQLResV2[] =
           }
         },
         {
-          level: 'audit_execution_error',
-          message:
+          level: 'warn',
+          execution_failed: true,
+          message: '数据库对象命名只能使用英文、下划线或数字，首字母必须是英文',
+          error_info:
             'Audit规则异常：[数据库对象命名只能使用英文、下划线或数字，首字母必须是英文]解析错误;java.lang.NullPointerException\n\tat com.actiontech.sqle.dmplugin.common.rulehandler.Rule29$ObjectNameParserListener.a(Rule29.java:110)\n\tat com.actiontech.sqle.dmplugin.common.antlr4.PlSqlParser$Create_tableContext.enterRule(PlSqlParser.java:51260)\n\tat org.antlr.v4.runtime.tree.ParseTreeWalker.enterRule(ParseTreeWalker.java:50)\n\tat org.antlr.v4.runtime.tree.ParseTreeWalker.walk(ParseTreeWalker.java:33)\n\tat org.antlr.v4.runtime.tree.ParseTreeWalker.walk(ParseTreeWalker.java:36)\n\tat org.antlr.v4.runtime.tree.ParseTreeWalker.walk(ParseTreeWalker.java:36)\n\tat com.actiontech.sqle.dmplugin.common.rulehandler.Rule29.a(Rule29.java:68)\n\tat com.actiontech.sqle.dmplugin.common.grpcimpl.DriverImpl.a(DriverImpl.java:906)\n\tat com.actiontech.oracleplugin.grpc.DriverGrpc$MethodHandlers.invoke(DriverGrpc.java:1433)\n\tat io.grpc.stub.ServerCalls$UnaryServerCallHandler$UnaryServerCallListener.onHalfClose(ServerCalls.java:180)\n\tat io.grpc.internal.ServerCallImpl$ServerStreamListenerImpl.halfClosed(ServerCallImpl.java:331)\n\tat io.grpc.internal.ServerImpl$JumpToApplicationThreadServerStreamListener$1HalfClosed.runInContext(ServerImpl.java:814)\n\tat io.grpc.internal.ContextRunnable.run(ContextRunnable.java:37)\n\tat io.grpc.internal.SerializingExecutor.run(SerializingExecutor.java:123)\n\tat java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)\n\tat java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)\n\tat java.lang.Thread.run(Thread.java:750)\n',
           rule_name: 'Oracle_029',
           db_type: 'DM',
@@ -204,7 +212,7 @@ export const AuditTaskSQLsMockDataWithOnlyExceptionRule: IAuditTaskSQLResV2[] =
           }
         }
       ],
-      audit_level: 'audit_execution_error',
+      audit_level: 'error',
       audit_status: 'finished',
       exec_result: '',
       exec_status: 'initialized',
