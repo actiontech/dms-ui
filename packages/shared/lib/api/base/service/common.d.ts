@@ -215,6 +215,10 @@ export interface IAuditPlanTypes {
 export interface IAuditSQLResult {
   db_type?: string;
 
+  error_info?: string;
+
+  execution_failed?: boolean;
+
   level?: string;
 
   message?: string;
@@ -1659,6 +1663,10 @@ export interface IPersonalizationReq {
 }
 
 export interface IPlugin {
+  get_database_driver_logos_url?: string;
+
+  get_database_driver_options_url?: string;
+
   name?: string;
 
   operate_data_resource_handle_url?: string;

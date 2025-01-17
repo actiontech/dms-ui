@@ -42,6 +42,7 @@ import { mergeFilterButtonMeta } from '@actiontech/shared/lib/components/Actiont
 import { ResponseCode } from '@actiontech/shared/lib/enum';
 import { message } from 'antd';
 import { ROUTE_PATHS } from '@actiontech/shared/lib/data/routePaths';
+import { ResultIconRenderProps } from '../../../../components/AuditResultMessage/index.type';
 
 const BEING_AUDITED = 'being_audited';
 
@@ -290,7 +291,9 @@ const ScanTypeSqlCollection: React.FC<ScanTypeSqlCollectionProps> = ({
     [polling, getFilterMetaListLoading, getTableRowLoading]
   );
 
-  const parseAuditResult = (resultString: string) => {
+  const parseAuditResult = (
+    resultString: string
+  ): ResultIconRenderProps['auditResultInfo'] => {
     let results: IAuditResult[] = [];
     try {
       results = JSON.parse(resultString ?? '[]') as IAuditResult[];
@@ -299,7 +302,10 @@ const ScanTypeSqlCollection: React.FC<ScanTypeSqlCollectionProps> = ({
     }
 
     return results?.map((item) => {
-      return item.level ?? '';
+      return {
+        level: item.level ?? '',
+        executionFailed: !!item.execution_failed
+      };
     });
   };
 
@@ -338,7 +344,7 @@ const ScanTypeSqlCollection: React.FC<ScanTypeSqlCollectionProps> = ({
                   }}
                 >
                   <ResultIconRender
-                    iconLevels={parseAuditResult(text)}
+                    auditResultInfo={parseAuditResult(text)}
                     isAuditing={currentAuditStatusIsBeingAudited}
                   />
                 </div>

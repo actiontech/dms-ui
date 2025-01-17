@@ -9,6 +9,6 @@ export type AuditResultMessageProps = {
 };
 
 export type ResultIconRenderProps = {
-  iconLevels?: string[];
+  auditResultInfo?: Array<{ level: string; executionFailed: boolean }>;
   isAuditing?: boolean;
 };

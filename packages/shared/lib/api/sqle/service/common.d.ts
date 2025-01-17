@@ -110,6 +110,8 @@ export interface IBaseRes {
 }
 
 export interface IAuditResultInfo {
+  errorInfo?: string;
+
   message?: string;
 }
 
@@ -343,6 +345,10 @@ export interface IAuditResDataV1 {
 
 export interface IAuditResult {
   db_type?: string;
+
+  error_info?: string;
+
+  execution_failed?: boolean;
 
   i18n_audit_result_info?: II18nAuditResultInfo;
 

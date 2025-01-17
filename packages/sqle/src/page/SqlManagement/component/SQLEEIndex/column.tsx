@@ -226,9 +226,10 @@ const SqlManagementColumn: (
             className="audit-result-wrapper"
           >
             <ResultIconRender
-              iconLevels={result?.map((item) => {
-                return item.level ?? '';
-              })}
+              auditResultInfo={result?.map((item) => ({
+                level: item.level ?? '',
+                executionFailed: !!item.execution_failed
+              }))}
               isAuditing={
                 record.audit_status === SqlManageAuditStatusEnum.being_audited
               }

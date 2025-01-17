@@ -187,19 +187,20 @@ describe('sqle/components/ReportDrawer', () => {
         auditResult: [
           {
             rule_name: 'rule a',
-            desc: 'rule a',
             message: 'message',
             level: RuleResV1LevelEnum.error,
             annotation: 'annotation',
-            db_type: 'mysql'
+            db_type: 'mysql',
+            execution_failed: false
           },
           {
             rule_name: 'rule b',
-            desc: 'rule b',
-            message: 'message',
-            level: 'audit_execution_error',
+            message: 'rule b',
+            error_info: 'message',
+            level: ' RuleResV1LevelEnum.error',
             annotation: 'annotation',
-            db_type: 'mysql'
+            db_type: 'mysql',
+            execution_failed: true
           }
         ]
       },
@@ -209,7 +210,7 @@ describe('sqle/components/ReportDrawer', () => {
     expect(baseElement).toMatchSnapshot();
   });
 
-  it('should hidden audit result when rule level is only exist audit_execution_error', () => {
+  it('should hidden audit result when all rule execution failed', () => {
     customRender({
       open: true,
       title: 'this is a title',
@@ -221,11 +222,12 @@ describe('sqle/components/ReportDrawer', () => {
         auditResult: [
           {
             rule_name: 'rule b',
-            desc: 'rule b',
-            message: 'message',
-            level: 'audit_execution_error',
+            message: 'rule b',
+            error_info: 'message',
+            level: RuleResV1LevelEnum.error,
             annotation: 'annotation',
-            db_type: 'mysql'
+            db_type: 'mysql',
+            execution_failed: true
           }
         ]
       },
