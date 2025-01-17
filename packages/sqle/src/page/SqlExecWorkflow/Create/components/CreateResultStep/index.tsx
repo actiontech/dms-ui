@@ -1,7 +1,7 @@
 import { ActionButton, BasicResult, PageHeader } from '@actiontech/shared';
 import { useTranslation } from 'react-i18next';
 import { CreateResultStepProps } from './index.type';
-import { useCurrentProject } from '@actiontech/shared/lib/global';
+import { useCurrentProject } from '@actiontech/shared/lib/features';
 import BackToList from '../../../Common/BackToList';
 import { ROUTE_PATHS } from '@actiontech/shared/lib/data/routePaths';
 

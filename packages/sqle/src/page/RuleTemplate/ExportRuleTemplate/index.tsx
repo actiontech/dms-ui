@@ -3,7 +3,7 @@ import ExportRuleTemplate from '../../GlobalRuleTemplate/ExportRuleTemplate';
 import { useCallback } from 'react';
 import { Form, message } from 'antd';
 import rule_template from '@actiontech/shared/lib/api/sqle/service/rule_template';
-import { useCurrentProject } from '@actiontech/shared/lib/global';
+import { useCurrentProject } from '@actiontech/shared/lib/features';
 import { ExportRuleTemplateFormFields } from '../../GlobalRuleTemplate/ExportRuleTemplate/index.type';
 import { exportProjectRuleTemplateV1ExportTypeEnum } from '@actiontech/shared/lib/api/sqle/service/rule_template/index.enum';
 import { useDispatch, useSelector } from 'react-redux';

@@ -1,6 +1,6 @@
 import { PageHeader } from '@actiontech/shared';
 import { useTranslation } from 'react-i18next';
-import { useCurrentProject } from '@actiontech/shared/lib/global';
+import { useCurrentProject } from '@actiontech/shared/lib/features';
 import { useMemo, useEffect } from 'react';
 import { useCallback } from 'react';
 import { updateSqlManagementExceptModalStatus } from '../../../store/sqlManagementException';
@@ -29,7 +29,7 @@ import { SqlManagementExceptionMatchTypeOptions } from '../index.data';
 import { message } from 'antd';
 import { ResponseCode } from '@actiontech/shared/lib/enum';
 import useSqlManagementExceptionRedux from '../hooks/useSqlManagementExceptionRedux';
-import { usePermission } from '@actiontech/shared/lib/global';
+import { usePermission } from '@actiontech/shared/lib/features';
 import {
   SqlManagementExceptionActions,
   SqlManagementExceptionPageHeaderActions

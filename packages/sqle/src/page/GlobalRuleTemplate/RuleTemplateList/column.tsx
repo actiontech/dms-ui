@@ -11,7 +11,7 @@ import {
   DatabaseTypeLogo,
   TypedLink
 } from '@actiontech/shared';
-import { useDbServiceDriver } from '@actiontech/shared/lib/global';
+import { useDbServiceDriver } from '@actiontech/shared/lib/features';
 import {
   ProfileSquareFilled,
   LogoutBoxFilled,

@@ -5,7 +5,7 @@ import useChatsDataByAPI from '../../hooks/useChatsDataByAPI';
 import {
   useChangeTheme,
   useCurrentProject
-} from '@actiontech/shared/lib/global';
+} from '@actiontech/shared/lib/features';
 import { Bar, BarConfig } from '@ant-design/plots';
 import useThemeStyleData from '../../../../hooks/useThemeStyleData';
 import ChartWrapper from '../../../../components/ChartCom/ChartWrapper';

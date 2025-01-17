@@ -4,7 +4,7 @@ import { ModalName } from '../../../../../../data/ModalName';
 import useSqlManagementRedux from '../../hooks/useSqlManagementRedux';
 import { useBoolean } from 'ahooks';
 import { useForm } from 'antd/es/form/Form';
-import { useCurrentProject } from '@actiontech/shared/lib/global';
+import { useCurrentProject } from '@actiontech/shared/lib/features';
 import { ISendSqlManageParams } from '@actiontech/shared/lib/api/sqle/service/SqlManage/index.d';
 import { ResponseCode } from '@actiontech/shared/lib/enum';
 import SqlManage from '@actiontech/shared/lib/api/sqle/service/SqlManage';

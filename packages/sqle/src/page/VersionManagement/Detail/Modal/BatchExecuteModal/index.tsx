@@ -15,7 +15,7 @@ import {
 import { Space, Typography, message } from 'antd';
 import sqlVersion from '@actiontech/shared/lib/api/sqle/service/sql_version';
 import { useBoolean } from 'ahooks';
-import { useCurrentProject } from '@actiontech/shared/lib/global';
+import { useCurrentProject } from '@actiontech/shared/lib/features';
 import { ResponseCode } from '@actiontech/shared/lib/enum';
 import EmitterKey from '../../../../../data/EmitterKey';
 import EventEmitter from '../../../../../utils/EventEmitter';

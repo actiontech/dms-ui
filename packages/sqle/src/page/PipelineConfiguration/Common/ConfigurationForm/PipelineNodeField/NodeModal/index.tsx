@@ -24,7 +24,7 @@ import {
 } from '@actiontech/shared/lib/api/sqle/service/common.enum';
 import useInstance from '../../../../../../hooks/useInstance';
 import { useEffect, useMemo } from 'react';
-import { useCurrentProject } from '@actiontech/shared/lib/global';
+import { useCurrentProject } from '@actiontech/shared/lib/features';
 import useGlobalRuleTemplate from '../../../../../../hooks/useGlobalRuleTemplate';
 import useRuleTemplate from '../../../../../../hooks/useRuleTemplate';
 import { ruleTemplateListDefaultKey } from '../../../../../../data/common';

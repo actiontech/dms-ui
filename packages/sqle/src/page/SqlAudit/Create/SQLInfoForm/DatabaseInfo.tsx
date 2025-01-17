@@ -9,7 +9,7 @@ import { Form, Space } from 'antd';
 import { CustomSelect } from '@actiontech/shared/lib/components/CustomSelect';
 import useInstanceSchema from '../../../../hooks/useInstanceSchema';
 import { IInstanceResV2 } from '@actiontech/shared/lib/api/sqle/service/common';
-import { useCurrentProject } from '@actiontech/shared/lib/global';
+import { useCurrentProject } from '@actiontech/shared/lib/features';
 import instance from '@actiontech/shared/lib/api/sqle/service/instance';
 import { ResponseCode } from '@actiontech/shared/lib/enum';
 import { BasicButton, BasicToolTip, TypedLink } from '@actiontech/shared';

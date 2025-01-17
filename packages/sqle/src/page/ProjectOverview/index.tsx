@@ -17,7 +17,7 @@ import { useCallback, useEffect } from 'react';
 import {
   useCurrentProject,
   usePermission
-} from '@actiontech/shared/lib/global';
+} from '@actiontech/shared/lib/features';
 
 const Overview = () => {
   const { t } = useTranslation();

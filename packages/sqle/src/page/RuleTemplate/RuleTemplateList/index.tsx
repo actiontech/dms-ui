@@ -3,7 +3,7 @@ import { Space } from 'antd';
 import { PageHeader, EmptyBox, SegmentedTabs } from '@actiontech/shared';
 import { TableRefreshButton } from '@actiontech/shared/lib/components/ActiontechTable';
 import { useState } from 'react';
-import { useCurrentProject } from '@actiontech/shared/lib/global';
+import { useCurrentProject } from '@actiontech/shared/lib/features';
 import { EnumTemplateType } from './index.type';
 import ProjectTable from './ProjectTable';
 import EventEmitter from '../../../utils/EventEmitter';

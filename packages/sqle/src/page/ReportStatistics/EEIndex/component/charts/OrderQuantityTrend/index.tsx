@@ -29,7 +29,7 @@ import {
 import statistic from '@actiontech/shared/lib/api/sqle/service/statistic';
 import { SharedTheme } from '@actiontech/shared/lib/types/theme.type';
 import { ArrowRightOutlined } from '@actiontech/icons';
-import { useChangeTheme } from '@actiontech/shared/lib/global';
+import { useChangeTheme } from '@actiontech/shared/lib/features';
 
 const dateFormat = 'YYYY-MM-DD';
 type RangeValue = [Dayjs | null, Dayjs | null] | null;

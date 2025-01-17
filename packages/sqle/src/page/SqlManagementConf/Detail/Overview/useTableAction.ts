@@ -1,6 +1,6 @@
 import { UpdateAuditPlanStatusReqV1ActiveEnum } from '@actiontech/shared/lib/api/sqle/service/common.enum';
 import instance_audit_plan from '@actiontech/shared/lib/api/sqle/service/instance_audit_plan';
-import { useCurrentProject } from '@actiontech/shared/lib/global';
+import { useCurrentProject } from '@actiontech/shared/lib/features';
 import { useRequest } from 'ahooks';
 
 export const useTableAction = () => {

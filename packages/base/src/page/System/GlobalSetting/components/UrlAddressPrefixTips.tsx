@@ -5,7 +5,7 @@ import {
   LabelContent
 } from '@actiontech/shared/lib/components/ConfigItem';
 import { IUpdateSystemVariablesReqV1 } from '@actiontech/shared/lib/api/sqle/service/common';
-import { PERMISSIONS, usePermission } from '@actiontech/shared/lib/global';
+import { PERMISSIONS, usePermission } from '@actiontech/shared/lib/features';
 
 export interface UrlAddressPrefixTipsProps {
   url: string | undefined;

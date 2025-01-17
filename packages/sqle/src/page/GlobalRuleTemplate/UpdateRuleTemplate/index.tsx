@@ -15,7 +15,7 @@ import { RuleTemplateContStyleWrapper } from '../../RuleTemplate/CreateRuleTempl
 import classNames from 'classnames';
 import RuleTemplateForm from '../../RuleTemplate/RuleTemplateForm';
 import { ResponseCode } from '@actiontech/shared/lib/enum';
-import { useCurrentProject } from '@actiontech/shared/lib/global';
+import { useCurrentProject } from '@actiontech/shared/lib/features';
 import {
   useUpdateRuleTemplateForm,
   useBackToListPage

@@ -13,7 +13,7 @@ import { EmptyBox } from '@actiontech/shared';
 import AuditTemplate from './AuditTemplate';
 import useGlobalRuleTemplate from '../../../../../hooks/useGlobalRuleTemplate';
 import useRuleTemplate from '../../../../../hooks/useRuleTemplate';
-import { useCurrentProject } from '@actiontech/shared/lib/global';
+import { useCurrentProject } from '@actiontech/shared/lib/features';
 import { Form } from 'antd';
 import { SqlManagementConfFormFields } from '../index.type';
 import HightPriorityConditions from './HighPriorityConditions';

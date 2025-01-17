@@ -10,7 +10,7 @@ import {
 import {
   useCurrentProject,
   usePermission
-} from '@actiontech/shared/lib/global';
+} from '@actiontech/shared/lib/features';
 import { useRequest } from 'ahooks';
 import { IListMemberGroup } from '@actiontech/shared/lib/api/base/service/common';
 import { IListMemberGroupsParams } from '@actiontech/shared/lib/api/base/service/MemberGroup/index.d';

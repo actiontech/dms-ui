@@ -1,4 +1,4 @@
-import * as useUserInfo from '../../global/useUserInfo';
+import * as useUserInfo from '../../features/useUserInfo';
 import { mockUserInfo } from './data';
 
 export const mockUseUserInfo = (mockData?: Partial<typeof mockUserInfo>) => {

@@ -3,7 +3,7 @@ import { PushRuleConfigurationStyleWrapper } from './style';
 import { EnterpriseFeatureDisplay, PageHeader } from '@actiontech/shared';
 import { useRequest } from 'ahooks';
 import ReportPushConfigService from '@actiontech/shared/lib/api/sqle/service/ReportPushConfig';
-import { useCurrentProject } from '@actiontech/shared/lib/global';
+import { useCurrentProject } from '@actiontech/shared/lib/features';
 import { Spin, Typography } from 'antd';
 import WorkflowUpdateNotifier from './components/WorkflowUpdateNotifier';
 import SqlManagementIssuePush from './components/SqlManagementIssuePush';

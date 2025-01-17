@@ -9,7 +9,7 @@ import { useMemo, useEffect } from 'react';
 import { TableColumnWithIconStyleWrapper } from '@actiontech/shared/lib/styleWrapper/element';
 import useRuleTemplate from '../../../hooks/useRuleTemplate';
 import useGlobalRuleTemplate from '../../../hooks/useGlobalRuleTemplate';
-import { useDbServiceDriver } from '@actiontech/shared/lib/global';
+import { useDbServiceDriver } from '@actiontech/shared/lib/features';
 import { RuleListFilterProps } from '../index.type';
 import CustomSelectField from './CustomSelectFiled';
 import { FlagFilled } from '@actiontech/icons';

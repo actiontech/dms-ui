@@ -4,7 +4,7 @@ import { useRequest } from 'ahooks';
 import { SideMenuStyleWrapper } from '@actiontech/shared/lib/styleWrapper/nav';
 import ProjectSelector from './ProjectSelector';
 import useRecentlyOpenedProjects from './useRecentlyOpenedProjects';
-import { useCurrentUser } from '@actiontech/shared/lib/global';
+import { useCurrentUser } from '@actiontech/shared/lib/features';
 import { ProjectSelectorLabelStyleWrapper } from './ProjectSelector/style';
 import UserMenu from './UserMenu';
 import ProjectTitle from './ProjectTitle';

@@ -2,7 +2,7 @@ import { Timeline, TimelineProps, Space, Typography } from 'antd';
 import { useMemo } from 'react';
 import WorkflowStatus from '../../../../List/components/WorkflowStatus';
 import { WorkflowDetailResV1StatusEnum } from '@actiontech/shared/lib/api/sqle/service/common.enum';
-import { useCurrentProject } from '@actiontech/shared/lib/global';
+import { useCurrentProject } from '@actiontech/shared/lib/features';
 import { useTranslation } from 'react-i18next';
 import { TypedLink } from '@actiontech/shared';
 import { ROUTE_PATHS } from '@actiontech/shared/lib/data/routePaths';

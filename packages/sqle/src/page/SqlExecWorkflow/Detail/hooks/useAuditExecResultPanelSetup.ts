@@ -2,7 +2,7 @@ import { IGetWorkflowTasksItemV2 } from '@actiontech/shared/lib/api/sqle/service
 import { GetWorkflowTasksItemV2StatusEnum } from '@actiontech/shared/lib/api/sqle/service/common.enum';
 import workflow from '@actiontech/shared/lib/api/sqle/service/workflow';
 import { useTableRequestError } from '@actiontech/shared/lib/components/ActiontechTable';
-import { useCurrentProject } from '@actiontech/shared/lib/global';
+import { useCurrentProject } from '@actiontech/shared/lib/features';
 import { useRequest } from 'ahooks';
 import { useState, useMemo } from 'react';
 import { MaintenanceTimeInfoType } from '../components/PageHeaderExtra/index.type';

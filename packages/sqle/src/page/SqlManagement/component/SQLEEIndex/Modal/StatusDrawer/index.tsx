@@ -3,7 +3,7 @@ import { ModalName } from '../../../../../../data/ModalName';
 import ReportDrawer from '../../../../../../components/ReportDrawer';
 import useSqlManagementRedux from '../../hooks/useSqlManagementRedux';
 import useAuditResultRuleInfo from '../../../../../../components/ReportDrawer/useAuditResultRuleInfo';
-import { useCurrentProject } from '@actiontech/shared/lib/global';
+import { useCurrentProject } from '@actiontech/shared/lib/features';
 import { BasicButton, TypedLink } from '@actiontech/shared';
 import { ROUTE_PATHS } from '@actiontech/shared/lib/data/routePaths';
 

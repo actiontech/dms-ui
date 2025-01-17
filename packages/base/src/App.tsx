@@ -22,7 +22,7 @@ import {
   useCurrentUser,
   useDbServiceDriver,
   usePermission
-} from '@actiontech/shared/lib/global';
+} from '@actiontech/shared/lib/features';
 import useSessionUser from './hooks/useSessionUser';
 import { ConfigProvider, Spin, theme as antdTheme } from 'antd';
 import { ThemeData } from './theme';

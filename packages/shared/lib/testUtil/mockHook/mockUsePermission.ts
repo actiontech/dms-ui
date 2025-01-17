@@ -2,7 +2,7 @@ import { useSelector } from 'react-redux';
 import { mockCurrentUserReturn, mockProjectInfo } from './data';
 import { mockUseCurrentUser } from './mockUseCurrentUser';
 import { mockUseCurrentProject } from './mockUseCurrentProject';
-import * as usePermissionModule from '../../global/usePermission/usePermission';
+import * as usePermissionModule from '../../features/usePermission/usePermission';
 
 jest.mock('react-redux', () => ({
   ...jest.requireActual('react-redux'),

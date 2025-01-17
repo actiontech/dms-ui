@@ -14,7 +14,7 @@ import {
   useCurrentUser,
   useDbServiceDriver,
   usePermission
-} from '@actiontech/shared/lib/global';
+} from '@actiontech/shared/lib/features';
 import { useBoolean, useRequest } from 'ahooks';
 import { useEffect, useMemo } from 'react';
 import { useTranslation } from 'react-i18next';

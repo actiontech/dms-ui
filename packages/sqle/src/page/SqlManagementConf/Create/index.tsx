@@ -2,7 +2,7 @@ import { PageLayoutHasFixedHeaderStyleWrapper } from '@actiontech/shared/lib/sty
 import CreationResult from './CreationResult';
 import BackToConf from '../Common/BackToConf';
 import { useTranslation } from 'react-i18next';
-import { useCurrentProject } from '@actiontech/shared/lib/global';
+import { useCurrentProject } from '@actiontech/shared/lib/features';
 import { Space } from 'antd';
 import {
   BasicButton,

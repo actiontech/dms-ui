@@ -6,7 +6,7 @@ import {
   ActionButton
 } from '@actiontech/shared';
 import { useTranslation } from 'react-i18next';
-import { useCurrentProject } from '@actiontech/shared/lib/global';
+import { useCurrentProject } from '@actiontech/shared/lib/features';
 import sqlOptimization from '@actiontech/shared/lib/api/sqle/service/sql_optimization';
 import { useRequest } from 'ahooks';
 import { Spin, Col, Row, Statistic, Typography, Card } from 'antd';

@@ -14,7 +14,7 @@ import { IInstanceTypePercent } from '@actiontech/shared/lib/api/sqle/service/co
 import statistic from '@actiontech/shared/lib/api/sqle/service/statistic';
 import { SharedTheme } from '@actiontech/shared/lib/types/theme.type';
 import { floatToNumberPercent } from '@actiontech/shared/lib/utils/Math';
-import { useChangeTheme } from '@actiontech/shared/lib/global';
+import { useChangeTheme } from '@actiontech/shared/lib/features';
 
 const renderTooltipFormatter: Tooltip['formatter'] = (item) => {
   return {

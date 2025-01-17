@@ -2,7 +2,7 @@ import { Col, Row, Spin } from 'antd';
 import React, { useState } from 'react';
 import workflow from '@actiontech/shared/lib/api/sqle/service/workflow';
 import { useRequest } from 'ahooks';
-import { useCurrentProject } from '@actiontech/shared/lib/global';
+import { useCurrentProject } from '@actiontech/shared/lib/features';
 import WorkflowTemplateAuthInfo from './components/WorkflowTemplateAuthInfo';
 import WorkflowTemplateStepInfo from './components/WorkflowTemplateStepInfo';
 import { IWorkFlowStepTemplateResV1 } from '@actiontech/shared/lib/api/sqle/service/common';

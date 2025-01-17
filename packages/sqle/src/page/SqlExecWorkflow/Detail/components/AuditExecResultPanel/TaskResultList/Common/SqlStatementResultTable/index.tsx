@@ -6,7 +6,7 @@ import { IAuditTaskSQLResV2 } from '@actiontech/shared/lib/api/sqle/service/comm
 import { useState } from 'react';
 import { SQLStatementResultTableStyleWrapper } from './style';
 import AuditResultDrawer from '../../../../../../Common/AuditResultList/Table/AuditResultDrawer';
-import { useCurrentProject } from '@actiontech/shared/lib/global';
+import { useCurrentProject } from '@actiontech/shared/lib/features';
 import { parse2ReactRouterPath } from '@actiontech/shared/lib/components/TypedRouter/utils';
 import { ROUTE_PATHS } from '@actiontech/shared/lib/data/routePaths';
 

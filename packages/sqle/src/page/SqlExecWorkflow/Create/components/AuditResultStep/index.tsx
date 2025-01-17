@@ -11,7 +11,7 @@ import SubmitWorkflowButton from '../../../Common/SubmitWorkflowButton';
 import BatchSwitchBackupStrategyModal from './BatchSwitchBackupStrategyModal';
 import { useState, useEffect, useMemo } from 'react';
 import useInstance from '../../../../../hooks/useInstance';
-import { useCurrentProject } from '@actiontech/shared/lib/global';
+import { useCurrentProject } from '@actiontech/shared/lib/features';
 import { InstanceTipResV1SupportedBackupStrategyEnum } from '@actiontech/shared/lib/api/sqle/service/common.enum';
 
 const AuditResultStep: React.FC<AuditResultStepProps> = ({

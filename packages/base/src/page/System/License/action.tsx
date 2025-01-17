@@ -1,5 +1,8 @@
 import { ActionButton, BasicTooltipProps } from '@actiontech/shared';
-import { PERMISSIONS, PermissionControl } from '@actiontech/shared/lib/global';
+import {
+  PERMISSIONS,
+  PermissionControl
+} from '@actiontech/shared/lib/features';
 import { ReactNode } from 'react';
 import { t } from '../../../locale';
 

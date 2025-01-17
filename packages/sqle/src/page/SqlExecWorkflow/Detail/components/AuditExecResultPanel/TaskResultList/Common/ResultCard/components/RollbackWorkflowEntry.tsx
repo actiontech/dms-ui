@@ -4,7 +4,7 @@ import { BasicButton, TypedLink } from '@actiontech/shared';
 import { DownOutlined } from '@actiontech/icons';
 import { useMemo } from 'react';
 import { ROUTE_PATHS } from '@actiontech/shared/lib/data/routePaths';
-import { useCurrentProject } from '@actiontech/shared/lib/global';
+import { useCurrentProject } from '@actiontech/shared/lib/features';
 import { useTranslation } from 'react-i18next';
 import { RollbackWorkflowItemStyleWrapper } from './style';
 

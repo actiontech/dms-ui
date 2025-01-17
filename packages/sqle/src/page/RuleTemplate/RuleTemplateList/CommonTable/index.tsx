@@ -6,7 +6,7 @@ import { RuleTemplateTableColumn } from '../columns';
 import {
   useCurrentProject,
   useDbServiceDriver
-} from '@actiontech/shared/lib/global';
+} from '@actiontech/shared/lib/features';
 import rule_template from '@actiontech/shared/lib/api/sqle/service/rule_template';
 import { IRuleTemplateResV1 } from '@actiontech/shared/lib/api/sqle/service/common';
 import { IGetRuleTemplateListV1Params } from '@actiontech/shared/lib/api/sqle/service/rule_template/index.d';

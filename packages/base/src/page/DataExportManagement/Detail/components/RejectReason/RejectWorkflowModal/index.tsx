@@ -6,7 +6,7 @@ import useDataExportDetailReduxManage from '../../../hooks/index.redux';
 import { RejectWorkflowModalAlertStyleWrapper } from './style';
 import { useBoolean } from 'ahooks';
 import DataExportWorkflows from '@actiontech/shared/lib/api/base/service/DataExportWorkflows';
-import { useCurrentProject } from '@actiontech/shared/lib/global';
+import { useCurrentProject } from '@actiontech/shared/lib/features';
 import { ResponseCode } from '@actiontech/shared/lib/enum';
 import EmitterKey from '../../../../../../data/EmitterKey';
 import eventEmitter from '../../../../../../utils/EventEmitter';

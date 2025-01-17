@@ -27,7 +27,7 @@ import workflow from '@actiontech/shared/lib/api/sqle/service/workflow';
 import {
   useCurrentProject,
   useCurrentUser
-} from '@actiontech/shared/lib/global';
+} from '@actiontech/shared/lib/features';
 import { BookMarkTagFilled } from '@actiontech/icons';
 
 const DBAPanel: React.FC<IDBAPanelProps> = ({
