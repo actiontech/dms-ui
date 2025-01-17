@@ -1,5 +1,5 @@
 import { BasicButton, BasicResult, TypedLink } from '@actiontech/shared';
-import { useCurrentProject } from '@actiontech/shared/lib/global';
+import { useCurrentProject } from '@actiontech/shared/lib/features';
 import { useTranslation } from 'react-i18next';
 import useCreateDataExportReduxManage from '../../hooks/index.redux';
 import { ROUTE_PATHS } from '@actiontech/shared/lib/data/routePaths';

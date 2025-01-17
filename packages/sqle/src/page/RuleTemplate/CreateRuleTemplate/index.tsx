@@ -5,7 +5,7 @@ import { Space } from 'antd';
 import { RuleTemplateContStyleWrapper } from './style';
 import RuleTemplateForm from '../RuleTemplateForm';
 import { useCallback } from 'react';
-import { useCurrentProject } from '@actiontech/shared/lib/global';
+import { useCurrentProject } from '@actiontech/shared/lib/features';
 import rule_template from '@actiontech/shared/lib/api/sqle/service/rule_template';
 import { IRuleReqV1 } from '@actiontech/shared/lib/api/sqle/service/common';
 import { ResponseCode } from '../../../data/common';

@@ -1,6 +1,9 @@
 import { PlusOutlined } from '@actiontech/icons';
 import { ActionButton } from '@actiontech/shared';
-import { PermissionControl, PERMISSIONS } from '@actiontech/shared/lib/global';
+import {
+  PermissionControl,
+  PERMISSIONS
+} from '@actiontech/shared/lib/features';
 import { ReactNode } from 'react';
 import { DataSourceManagerSegmentedKey } from './index.type';
 import { t } from '../../locale';

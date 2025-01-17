@@ -13,7 +13,7 @@ import {
   DownArrowLineOutlined
 } from '@actiontech/icons';
 import { CommonIconStyleWrapper } from '@actiontech/shared/lib/styleWrapper/element';
-// import { useCurrentProject } from '@actiontech/shared/lib/global';
+// import { useCurrentProject } from '@actiontech/shared/lib/features';
 
 const DownloadRecord: React.FC<DownloadRecordProps> = ({
   noDuplicate,

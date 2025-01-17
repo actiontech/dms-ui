@@ -8,7 +8,7 @@ import {
 import { Card, Space, Typography } from 'antd';
 import type { Node, NodeProps } from '@xyflow/react';
 import { StageNodeStyleWrapper } from '../../style';
-import { useCurrentProject } from '@actiontech/shared/lib/global';
+import { useCurrentProject } from '@actiontech/shared/lib/features';
 import { useTranslation } from 'react-i18next';
 import classNames from 'classnames';
 import WorkflowStatus from '../../../../SqlExecWorkflow/List/components/WorkflowStatus';

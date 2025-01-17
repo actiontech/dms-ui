@@ -2,7 +2,7 @@ import {
   ActiontechTableActionsWithPermissions,
   ActiontechTableToolbarActionWithPermissions,
   PERMISSIONS
-} from '@actiontech/shared/lib/global';
+} from '@actiontech/shared/lib/features';
 import { t } from '../../../locale';
 import { ICBOperationLog } from '@actiontech/shared/lib/api/base/service/common';
 import { OperationOperationTypeEnum } from '@actiontech/shared/lib/api/base/service/common.enum';

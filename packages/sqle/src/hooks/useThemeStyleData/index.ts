@@ -1,6 +1,6 @@
 import { useMemo } from 'react';
 import { ThemeData } from '../../theme';
-import { useCurrentUser } from '@actiontech/shared/lib/global';
+import { useCurrentUser } from '@actiontech/shared/lib/features';
 
 const useThemeStyleData = () => {
   const { theme } = useCurrentUser();

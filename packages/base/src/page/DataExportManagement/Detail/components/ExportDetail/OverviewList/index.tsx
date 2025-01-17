@@ -5,7 +5,7 @@ import DataExportTask from '@actiontech/shared/lib/api/base/service/DataExportTa
 import {
   useCurrentProject,
   useCurrentUser
-} from '@actiontech/shared/lib/global';
+} from '@actiontech/shared/lib/features';
 import { useBoolean } from 'ahooks';
 import { useMemo } from 'react';
 

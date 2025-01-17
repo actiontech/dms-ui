@@ -8,7 +8,7 @@ import { BasicSelect, useTypedQuery } from '@actiontech/shared';
 import {
   useCurrentProject,
   useProjectBusinessTips
-} from '@actiontech/shared/lib/global';
+} from '@actiontech/shared/lib/features';
 import { Form } from 'antd';
 import useInstance from '../../../../../hooks/useInstance';
 import { useContext, useEffect, useMemo } from 'react';

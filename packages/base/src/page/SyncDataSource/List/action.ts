@@ -2,7 +2,7 @@ import { IListDBServiceSyncTask } from '@actiontech/shared/lib/api/base/service/
 import {
   ActiontechTableActionsWithPermissions,
   PERMISSIONS
-} from '@actiontech/shared/lib/global';
+} from '@actiontech/shared/lib/features';
 import { t } from '../../../locale';
 import { ROUTE_PATHS } from '@actiontech/shared/lib/data/routePaths';
 import { parse2ReactRouterPath } from '@actiontech/shared/lib/components/TypedRouter/utils';

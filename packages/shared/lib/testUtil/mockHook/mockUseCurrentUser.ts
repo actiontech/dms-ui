@@ -1,4 +1,4 @@
-import * as useCurrentUser from '../../global/useCurrentUser';
+import * as useCurrentUser from '../../features/useCurrentUser';
 import { mockCurrentUserReturn } from './data';
 
 export const mockUseCurrentUser = (

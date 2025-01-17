@@ -5,7 +5,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import blacklist from '@actiontech/shared/lib/api/sqle/service/blacklist';
 import { Space, message, Form } from 'antd';
 import { BasicButton, BasicDrawer } from '@actiontech/shared';
-import { useCurrentProject } from '@actiontech/shared/lib/global';
+import { useCurrentProject } from '@actiontech/shared/lib/features';
 import { ResponseCode } from '@actiontech/shared/lib/enum';
 import { ModalName } from '../../../../data/ModalName';
 import EmitterKey from '../../../../data/EmitterKey';

@@ -22,7 +22,7 @@ import {
 import { DrawerFormLayout } from '@actiontech/shared/lib/data/common';
 import { RingPieFilled } from '@actiontech/icons';
 import useInstance from '../../../../../hooks/useInstance';
-import { useCurrentProject } from '@actiontech/shared/lib/global';
+import { useCurrentProject } from '@actiontech/shared/lib/features';
 import { getInstanceTipListV1FunctionalModuleEnum } from '@actiontech/shared/lib/api/sqle/service/instance/index.enum';
 import { ReleaseModalFormStyleWrapper } from '../../style';
 import DataSourceField from './DataSourceField';

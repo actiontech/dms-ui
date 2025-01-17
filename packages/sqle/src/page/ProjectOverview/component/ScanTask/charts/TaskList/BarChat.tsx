@@ -10,7 +10,7 @@ import {
   barChartStateActive,
   barChartToolTipCustomContent
 } from './index.data';
-import { useChangeTheme } from '@actiontech/shared/lib/global';
+import { useChangeTheme } from '@actiontech/shared/lib/features';
 
 interface IBarChat {
   onReady: BarConfig['onReady'];

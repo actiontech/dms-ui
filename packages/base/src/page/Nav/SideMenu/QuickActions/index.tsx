@@ -19,7 +19,7 @@ import {
   PERMISSIONS,
   PermissionsConstantType,
   usePermission
-} from '@actiontech/shared/lib/global';
+} from '@actiontech/shared/lib/features';
 import { ROUTE_PATHS } from '@actiontech/shared/lib/data/routePaths';
 
 type QuickActionItemType = {

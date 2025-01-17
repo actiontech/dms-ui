@@ -15,7 +15,10 @@ import Configuration from '@actiontech/shared/lib/api/base/service/Configuration
 import { ResponseCode } from '@actiontech/shared/lib/enum';
 import { WechatFormFields } from './index.type';
 import { IWeChatConfigurationResData } from '@actiontech/shared/lib/api/base/service/common';
-import { PERMISSIONS, PermissionControl } from '@actiontech/shared/lib/global';
+import {
+  PERMISSIONS,
+  PermissionControl
+} from '@actiontech/shared/lib/features';
 
 const Wechat = () => {
   const { t } = useTranslation();

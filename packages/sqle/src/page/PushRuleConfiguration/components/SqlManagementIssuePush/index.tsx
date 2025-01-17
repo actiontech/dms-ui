@@ -6,7 +6,7 @@ import type {
 import { useRequest } from 'ahooks';
 import ReportPushConfig from '@actiontech/shared/lib/api/sqle/service/ReportPushConfig';
 import { ResponseCode } from '@actiontech/shared/lib/enum';
-import { useCurrentProject } from '@actiontech/shared/lib/global';
+import { useCurrentProject } from '@actiontech/shared/lib/features';
 import { useTranslation } from 'react-i18next';
 import {
   CustomAvatar,
@@ -32,7 +32,10 @@ import { getNextExecutionTimesByCronExpression } from '@actiontech/shared/lib/co
 import { InfoCircleOutlined } from '@actiontech/icons';
 import useThemeStyleData from '../../../../hooks/useThemeStyleData';
 import useCurrentTime from './useCurrentTime';
-import { PermissionControl, PERMISSIONS } from '@actiontech/shared/lib/global';
+import {
+  PermissionControl,
+  PERMISSIONS
+} from '@actiontech/shared/lib/features';
 
 const switchFieldName: keyof SqlManagementIssuePushFields = 'enabled';
 

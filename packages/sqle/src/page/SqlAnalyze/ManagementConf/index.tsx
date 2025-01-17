@@ -2,7 +2,7 @@ import { useBoolean } from 'ahooks';
 import { ResultStatusType } from 'antd/es/result';
 import { useCallback, useEffect, useState } from 'react';
 import { ResponseCode } from '../../../data/common';
-import { useCurrentProject } from '@actiontech/shared/lib/global';
+import { useCurrentProject } from '@actiontech/shared/lib/features';
 import SqlAnalyze from '../SqlAnalyze';
 import {
   IPerformanceStatistics,

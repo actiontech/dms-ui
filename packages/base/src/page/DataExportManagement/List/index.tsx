@@ -14,7 +14,7 @@ import {
   useCurrentUser,
   usePermission,
   PERMISSIONS
-} from '@actiontech/shared/lib/global';
+} from '@actiontech/shared/lib/features';
 import { useRequest } from 'ahooks';
 import { message } from 'antd';
 import { useTranslation } from 'react-i18next';

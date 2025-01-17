@@ -1,5 +1,8 @@
 import { ActionButton } from '@actiontech/shared';
-import { PERMISSIONS, PermissionControl } from '@actiontech/shared/lib/global';
+import {
+  PERMISSIONS,
+  PermissionControl
+} from '@actiontech/shared/lib/features';
 import { t } from '../../../../../../locale';
 
 export const CompanyNoticeModalActions = (

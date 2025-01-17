@@ -3,7 +3,7 @@ import { IListDataExportTaskSQL } from '@actiontech/shared/lib/api/base/service/
 import {
   PERMISSIONS,
   ActiontechTableActionsWithPermissions
-} from '@actiontech/shared/lib/global';
+} from '@actiontech/shared/lib/features';
 
 export const AuditResultForCreateOrderActions = (
   onCreateWhitelist: (record?: IListDataExportTaskSQL) => void,

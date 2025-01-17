@@ -1,5 +1,5 @@
 import { RuleObject } from 'antd/es/form';
-import { PermissionsConstantType } from '../global';
+import { PermissionsConstantType } from '../features';
 import { SystemRole } from '../enum';
 import { IndexRouteObject, NonIndexRouteObject } from 'react-router-dom';
 

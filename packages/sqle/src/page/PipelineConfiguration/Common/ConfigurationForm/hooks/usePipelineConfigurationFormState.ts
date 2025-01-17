@@ -7,7 +7,7 @@ import {
 } from '../../../../../store/pipeline';
 import { ModalName } from '../../../../../data/ModalName';
 import { useCallback } from 'react';
-import { useCurrentProject } from '@actiontech/shared/lib/global';
+import { useCurrentProject } from '@actiontech/shared/lib/features';
 import { useDispatch } from 'react-redux';
 import { PipelineFormType } from '../index.type';
 import { useTypedNavigate } from '@actiontech/shared';

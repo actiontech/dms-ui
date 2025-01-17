@@ -8,7 +8,7 @@ import {
   useCurrentProject,
   useDbServiceDriver,
   useProjectBusinessTips
-} from '@actiontech/shared/lib/global';
+} from '@actiontech/shared/lib/features';
 import {
   BasicInput,
   BasicInputNumber,

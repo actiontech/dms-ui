@@ -3,7 +3,7 @@ import {
   ActiontechTableActionsWithPermissions,
   PERMISSIONS,
   PermissionControl
-} from '@actiontech/shared/lib/global';
+} from '@actiontech/shared/lib/features';
 import { t } from '../../../../locale';
 import { PlusOutlined } from '@actiontech/icons';
 import { ActionButton } from '@actiontech/shared';

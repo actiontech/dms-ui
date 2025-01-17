@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import { PageHeader, BasicButton, ConfigItem } from '@actiontech/shared';
-import useUserInfo from '@actiontech/shared/lib/global/useUserInfo';
+import useUserInfo from '@actiontech/shared/lib/features/useUserInfo';
 import {
   AccountContentStyleWrapper,
   AccountContentTitleStyleWrapper

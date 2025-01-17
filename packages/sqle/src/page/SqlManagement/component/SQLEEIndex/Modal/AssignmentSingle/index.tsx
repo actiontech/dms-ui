@@ -7,7 +7,7 @@ import AssignmentForm from '../AssignmentForm';
 import { useBoolean } from 'ahooks';
 import { useForm } from 'antd/es/form/Form';
 import { BasicButton, BasicModal } from '@actiontech/shared';
-import { useCurrentProject } from '@actiontech/shared/lib/global';
+import { useCurrentProject } from '@actiontech/shared/lib/features';
 import { IBatchUpdateSqlManageParams } from '@actiontech/shared/lib/api/sqle/service/SqlManage/index.d';
 import SqlManage from '@actiontech/shared/lib/api/sqle/service/SqlManage';
 import { ResponseCode } from '@actiontech/shared/lib/enum';

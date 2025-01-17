@@ -1,5 +1,5 @@
 import { DEFAULT_PROJECT_ID } from '@actiontech/shared/lib/data/common';
-import { useCurrentUser } from '@actiontech/shared/lib/global';
+import { useCurrentUser } from '@actiontech/shared/lib/features';
 import { useEffect } from 'react';
 import { Outlet, useLocation } from 'react-router-dom';
 import useFetchPermissionData from '../../../hooks/useFetchPermissionData';

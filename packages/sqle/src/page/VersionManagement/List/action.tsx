@@ -3,7 +3,7 @@ import {
   PERMISSIONS,
   PermissionControl,
   PermissionsConstantType
-} from '@actiontech/shared/lib/global';
+} from '@actiontech/shared/lib/features';
 import { t } from '../../../locale';
 import { ReactNode } from 'react';
 import { ISqlVersionResV1 } from '@actiontech/shared/lib/api/sqle/service/common';

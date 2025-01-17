@@ -1,4 +1,4 @@
-import { PERMISSIONS } from '@actiontech/shared/lib/global';
+import { PERMISSIONS } from '@actiontech/shared/lib/features';
 import { t } from '../../../../../../locale';
 import baseMenusCollection from '../base';
 import { genMenuItemsWithMenuStructTree } from '../common';

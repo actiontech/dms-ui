@@ -3,13 +3,13 @@ import {
   NormalUserDevopsSteps
 } from './components/StepItems/index.data';
 import { DefaultSceneStepContainerWrapper } from '../style';
-import { useCurrentUser } from '@actiontech/shared/lib/global';
+import { useCurrentUser } from '@actiontech/shared/lib/features';
 import useRecentlyOpenedProjects from '../../Nav/SideMenu/useRecentlyOpenedProjects';
 import NotFoundProject from './components/NotFoundProject';
 import { useState } from 'react';
 import StepItems from './components/StepItems';
 import useThemeStyleData from '../../../hooks/useThemeStyleData';
-import { usePermission, PERMISSIONS } from '@actiontech/shared/lib/global';
+import { usePermission, PERMISSIONS } from '@actiontech/shared/lib/features';
 import { useTypedNavigate } from '@actiontech/shared';
 
 const DefaultScene: React.FC = () => {

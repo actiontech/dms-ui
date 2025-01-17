@@ -15,7 +15,7 @@ import { IWorkflowPercentCountedByInstanceType } from '@actiontech/shared/lib/ap
 import statistic from '@actiontech/shared/lib/api/sqle/service/statistic';
 import { floatToNumberPercent } from '@actiontech/shared/lib/utils/Math';
 import { SharedTheme } from '@actiontech/shared/lib/types/theme.type';
-import { useChangeTheme } from '@actiontech/shared/lib/global';
+import { useChangeTheme } from '@actiontech/shared/lib/features';
 
 const renderLabelContent = (obj: { [key: string]: any }) => {
   return obj.name ?? '';

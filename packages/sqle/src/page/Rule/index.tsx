@@ -13,7 +13,10 @@ import { RuleListStyleWrapper } from './style';
 import RuleListFilter from './RuleListFilter';
 import useRuleListFilter from './hooks/useRuleListFilter';
 import { RuleListFilterForm } from './index.type';
-import { PermissionControl, PERMISSIONS } from '@actiontech/shared/lib/global';
+import {
+  PermissionControl,
+  PERMISSIONS
+} from '@actiontech/shared/lib/features';
 import { ROUTE_PATHS } from '@actiontech/shared/lib/data/routePaths';
 
 const Rule = () => {

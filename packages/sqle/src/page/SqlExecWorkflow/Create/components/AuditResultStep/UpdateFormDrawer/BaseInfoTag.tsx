@@ -4,7 +4,7 @@ import dayjs from 'dayjs';
 import {
   useCurrentProject,
   useCurrentUser
-} from '@actiontech/shared/lib/global';
+} from '@actiontech/shared/lib/features';
 import { FlagFilled, UserFilled, ClockCircleFilled } from '@actiontech/icons';
 import useThemeStyleData from '../../../../../../hooks/useThemeStyleData';
 

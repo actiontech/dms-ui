@@ -2,7 +2,7 @@ import { Steps, Typography, StepProps } from 'antd';
 import { BasicButton } from '@actiontech/shared';
 import { PluginAuditDefaultPromptsWrapper } from '../style';
 import { useTranslation } from 'react-i18next';
-import { useCurrentUser } from '@actiontech/shared/lib/global';
+import { useCurrentUser } from '@actiontech/shared/lib/features';
 import { SupportLanguage } from '@actiontech/shared/lib/enum';
 
 const DefaultPrompts = () => {

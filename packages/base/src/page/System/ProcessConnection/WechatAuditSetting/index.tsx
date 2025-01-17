@@ -16,7 +16,10 @@ import { FormFields } from './index.type';
 import { defaultFormData, switchFieldName } from './index.data';
 import ConfigSubmitButtonField from '../../components/ConfigSubmitButtonField';
 import { IWechatConfigurationV1 } from '@actiontech/shared/lib/api/sqle/service/common';
-import { PERMISSIONS, PermissionControl } from '@actiontech/shared/lib/global';
+import {
+  PERMISSIONS,
+  PermissionControl
+} from '@actiontech/shared/lib/features';
 
 const WechatAuditSetting: React.FC = () => {
   const { t } = useTranslation();

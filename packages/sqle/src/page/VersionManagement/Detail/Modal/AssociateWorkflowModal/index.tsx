@@ -15,7 +15,7 @@ import {
   updateVersionManagementModalStatus,
   updateSelectVersionStageId
 } from '../../../../../store/versionManagement';
-import { useCurrentProject } from '@actiontech/shared/lib/global';
+import { useCurrentProject } from '@actiontech/shared/lib/features';
 import { ResponseCode } from '@actiontech/shared/lib/enum';
 import EmitterKey from '../../../../../data/EmitterKey';
 import EventEmitter from '../../../../../utils/EventEmitter';

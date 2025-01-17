@@ -11,7 +11,7 @@ import {
   useCurrentProject,
   useDbServiceDriver,
   usePermission
-} from '@actiontech/shared/lib/global';
+} from '@actiontech/shared/lib/features';
 import useDbService from '../../../../hooks/useDbService';
 import { useBoolean, useRequest } from 'ahooks';
 import DBService from '@actiontech/shared/lib/api/base/service/DBService';

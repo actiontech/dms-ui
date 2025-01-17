@@ -8,7 +8,7 @@ import ChartTooltip from '../../../../../../components/ChartCom/ChartTooltip';
 import useGetConfig from '../../../../../../components/ChartCom/ChartTooltip/useGetConfig';
 import { floatToNumberPercent } from '@actiontech/shared/lib/utils/Math';
 import { SharedTheme } from '@actiontech/shared/lib/types/theme.type';
-import { useChangeTheme } from '@actiontech/shared/lib/global';
+import { useChangeTheme } from '@actiontech/shared/lib/features';
 
 export interface ILicenseColumn {
   data: ColumnConfig['data'];

@@ -13,7 +13,7 @@ import { IListDataExportTaskSQL } from '@actiontech/shared/lib/api/base/service/
 import useWhitelistRedux from 'sqle/src/page/Whitelist/hooks/useWhitelistRedux';
 import AddWhitelistModal from 'sqle/src/page/Whitelist/Drawer/AddWhitelist';
 import { AuditResultForCreateOrderActions } from './actions';
-import { usePermission } from '@actiontech/shared/lib/global';
+import { usePermission } from '@actiontech/shared/lib/features';
 import useSqlRewrittenDrawerState from 'sqle/src/components/SqlRewrittenDrawer/hooks/useSqlRewrittenDrawerState';
 import SqlRewrittenDrawer from 'sqle/src/components/SqlRewrittenDrawer';
 

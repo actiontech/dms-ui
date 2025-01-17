@@ -1,5 +1,8 @@
 import { t } from '../../../locale';
-import { PERMISSIONS, PermissionControl } from '@actiontech/shared/lib/global';
+import {
+  PERMISSIONS,
+  PermissionControl
+} from '@actiontech/shared/lib/features';
 import { ActionButton } from '@actiontech/shared';
 import { EditOutlined } from '@ant-design/icons';
 import { ROUTE_PATHS } from '@actiontech/shared/lib/data/routePaths';

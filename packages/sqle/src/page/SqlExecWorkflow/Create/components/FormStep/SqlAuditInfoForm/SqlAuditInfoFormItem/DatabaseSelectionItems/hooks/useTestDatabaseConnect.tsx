@@ -1,7 +1,7 @@
 import { ReminderInformation, EmptyBox } from '@actiontech/shared';
 import instance from '@actiontech/shared/lib/api/sqle/service/instance';
 import { ResponseCode } from '@actiontech/shared/lib/enum';
-import { useCurrentProject } from '@actiontech/shared/lib/global';
+import { useCurrentProject } from '@actiontech/shared/lib/features';
 import { useBoolean } from 'ahooks';
 import { useCallback, useMemo } from 'react';
 import { useTranslation } from 'react-i18next';

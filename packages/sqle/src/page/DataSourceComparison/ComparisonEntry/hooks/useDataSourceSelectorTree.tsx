@@ -1,6 +1,6 @@
 import instance from '@actiontech/shared/lib/api/sqle/service/instance';
 import { ResponseCode } from '@actiontech/shared/lib/enum';
-import { useCurrentProject } from '@actiontech/shared/lib/global';
+import { useCurrentProject } from '@actiontech/shared/lib/features';
 import { useBoolean } from 'ahooks';
 import { Form, TreeSelectProps } from 'antd';
 import { Key, ReactNode, useCallback, useEffect, useState } from 'react';

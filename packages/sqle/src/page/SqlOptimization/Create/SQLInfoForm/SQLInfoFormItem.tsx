@@ -2,7 +2,7 @@ import { useTranslation } from 'react-i18next';
 import { useContext, useEffect } from 'react';
 import { SqlInfoFormProps } from '../../index.type';
 import { UploadTypeEnum } from '../../../SqlAudit/Create/SQLInfoForm/index.type';
-import { useCurrentProject } from '@actiontech/shared/lib/global';
+import { useCurrentProject } from '@actiontech/shared/lib/features';
 import { Form, Space } from 'antd';
 import { BasicButton, BasicToolTip } from '@actiontech/shared';
 import DatabaseInfo from './DatabaseInfo';

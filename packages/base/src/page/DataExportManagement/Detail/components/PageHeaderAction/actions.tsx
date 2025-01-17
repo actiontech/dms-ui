@@ -1,5 +1,8 @@
 import { t } from '../../../../../locale';
-import { PERMISSIONS, PermissionControl } from '@actiontech/shared/lib/global';
+import {
+  PERMISSIONS,
+  PermissionControl
+} from '@actiontech/shared/lib/features';
 import { ActionButton } from '@actiontech/shared';
 import { ActionMeta } from './index.type';
 import { Divider } from 'antd';
