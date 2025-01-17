@@ -1,7 +1,7 @@
 import { useParams } from 'react-router-dom';
 import { ProjectDetailUrlParamType } from './index.type';
-import { useCurrentUser } from '..';
 import { useMemo } from 'react';
+import useCurrentUser from '../useCurrentUser';
 
 const useCurrentProject = () => {
   const { projectID = '' } = useParams<ProjectDetailUrlParamType>();

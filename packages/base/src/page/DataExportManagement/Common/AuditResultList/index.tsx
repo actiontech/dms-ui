@@ -14,7 +14,8 @@ import { AuditTaskResV1AuditLevelEnum } from '@actiontech/shared/lib/api/sqle/se
 const AuditResultList: React.FC<AuditResultListProps> = ({
   taskIDs,
   projectID,
-  updateExecuteSQLsTypeIsDQL
+  onErrorGetDataExportTaskSqls,
+  onSuccessGetDataExportTaskSqls
 }) => {
   const [tasks, setTasks] = useState<IGetDataExportTask[]>([]);
 
@@ -68,7 +69,8 @@ const AuditResultList: React.FC<AuditResultListProps> = ({
       <AuditResultTable
         taskID={currentTaskID}
         projectID={projectID}
-        updateExecuteSQLsTypeIsDQL={updateExecuteSQLsTypeIsDQL}
+        onErrorGetDataExportTaskSqls={onErrorGetDataExportTaskSqls}
+        onSuccessGetDataExportTaskSqls={onSuccessGetDataExportTaskSqls}
       />
     </AuditResultStyleWrapper>
   );

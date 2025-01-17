@@ -5,8 +5,13 @@ import {
   CreateWorkflowDatabaseInfo
 } from '../../../Create/index.type';
 import React from 'react';
+import { SubmitWorkflowButtonProps } from '../../../Common/SubmitWorkflowButton/index.type';
 
-export type ModifySqlStatementProps = {
+export interface ModifySqlStatementProps
+  extends Pick<
+    SubmitWorkflowButtonProps,
+    'submitWorkflowConfirmationMessage' | 'isConfirmationRequiredForSubmission'
+  > {
   backToDetail: () => void;
   backToDetailText?: React.ReactNode;
   isAtRejectStep: boolean;
@@ -17,11 +22,9 @@ export type ModifySqlStatementProps = {
   currentTasks?: IAuditTaskResV1[];
   isSameSqlForAll: boolean;
   modifiedTasks?: IAuditTaskResV1[];
-  isConfirmationRequiredForSubmission: boolean;
-  submitWorkflowConfirmationMessage: string;
   workflowId: string;
   refreshWorkflow?: () => void;
   refreshOverviewAction?: () => void;
   executeMode?: WorkflowResV2ExecModeEnum;
   auditExecPanelTabChangeEvent?: (key: string) => void;
-};
+}

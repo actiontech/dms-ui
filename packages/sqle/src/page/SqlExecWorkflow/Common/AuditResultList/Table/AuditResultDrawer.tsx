@@ -1,16 +1,19 @@
+import { RobotOutlined } from '@actiontech/icons';
 import ReportDrawer from '../../../../../components/ReportDrawer';
 import useAuditResultRuleInfo from '../../../../../components/ReportDrawer/useAuditResultRuleInfo';
 import { AuditResultDrawerProps } from './index.type';
 import { AuditResultDrawerTitleStyleWrapper } from './style';
 import { BasicButton } from '@actiontech/shared';
 import { useTranslation } from 'react-i18next';
+import { Space } from 'antd';
 
 const AuditResultDrawer: React.FC<AuditResultDrawerProps> = ({
   onClose,
   open,
   auditResultRecord,
   dbType,
-  clickAnalyze
+  clickAnalyze,
+  handleClickSqlRewritten
 }) => {
   const { t } = useTranslation();
   const { auditResultRuleInfo, loading } = useAuditResultRuleInfo(
@@ -39,9 +42,22 @@ const AuditResultDrawer: React.FC<AuditResultDrawerProps> = ({
       showAnnotation
       loading={loading}
       extra={
-        <BasicButton onClick={() => clickAnalyze(auditResultRecord?.number)}>
-          {t('execWorkflow.audit.table.analyze')}
-        </BasicButton>
+        <Space>
+          {handleClickSqlRewritten && (
+            <BasicButton
+              icon={<RobotOutlined height={18} width={18} />}
+              onClick={() => {
+                handleClickSqlRewritten(auditResultRecord!);
+                onClose();
+              }}
+            >
+              {t('sqlRewrite.actionName')}
+            </BasicButton>
+          )}
+          <BasicButton onClick={() => clickAnalyze(auditResultRecord?.number)}>
+            {t('execWorkflow.audit.table.analyze')}
+          </BasicButton>
+        </Space>
       }
     />
   );

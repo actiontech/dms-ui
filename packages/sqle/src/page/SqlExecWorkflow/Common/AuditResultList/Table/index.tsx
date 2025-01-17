@@ -32,7 +32,8 @@ const AuditResultTable: React.FC<AuditResultTableProps> = ({
   updateTaskRecordCount,
   dbType,
   allowSwitchBackupPolicy = false,
-  supportedBackupPolicies
+  supportedBackupPolicies,
+  updateTaskAuditRuleExceptionStatus
 }) => {
   const {
     sqlRewrittenOpen,
@@ -100,9 +101,11 @@ const AuditResultTable: React.FC<AuditResultTableProps> = ({
         if (auditLevelFilterValue === null) {
           updateTaskRecordCount?.(taskID ?? '', res.total ?? 0);
         }
+        updateTaskAuditRuleExceptionStatus?.(res.list ?? []);
       },
       onError() {
         updateTaskRecordCount?.(taskID ?? '', 0);
+        updateTaskAuditRuleExceptionStatus?.([]);
       }
     }
   );
@@ -237,18 +240,15 @@ const AuditResultTable: React.FC<AuditResultTableProps> = ({
         auditResultRecord={currentAuditResultRecord}
         dbType={dbType}
         clickAnalyze={handleClickAnalyze}
+        handleClickSqlRewritten={handleClickSqlRewritten}
       />
       <AddWhitelistModal onCreated={refresh} />
-
-      {originSqlInfo && (
-        <SqlRewrittenDrawer
-          taskID={taskID ?? ''}
-          open={sqlRewrittenOpen}
-          onClose={handleCloseSqlRewrittenDrawer}
-          originSqlInfo={originSqlInfo}
-        />
-      )}
-
+      <SqlRewrittenDrawer
+        taskID={taskID ?? ''}
+        open={sqlRewrittenOpen}
+        onClose={handleCloseSqlRewrittenDrawer}
+        originSqlInfo={originSqlInfo}
+      />
       {/* #if [ee] */}
       <EmptyBox if={allowSwitchBackupPolicy}>
         <SwitchSqlBackupStrategyModal

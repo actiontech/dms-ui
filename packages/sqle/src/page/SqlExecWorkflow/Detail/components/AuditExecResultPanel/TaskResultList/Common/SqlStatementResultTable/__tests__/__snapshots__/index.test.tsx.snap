@@ -646,14 +646,22 @@ exports[`test TaskResultList/SQLStatementResultTable should match snapshot 2`] =
               <div
                 class="ant-drawer-extra"
               >
-                <button
-                  class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default basic-button-wrapper css-geipcv"
-                  type="button"
+                <div
+                  class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
                 >
-                  <span>
-                    分 析
-                  </span>
-                </button>
+                  <div
+                    class="ant-space-item"
+                  >
+                    <button
+                      class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default basic-button-wrapper css-geipcv"
+                      type="button"
+                    >
+                      <span>
+                        分 析
+                      </span>
+                    </button>
+                  </div>
+                </div>
               </div>
             </div>
             <div
@@ -683,7 +691,7 @@ exports[`test TaskResultList/SQLStatementResultTable should match snapshot 2`] =
                 </span>
               </div>
               <div
-                class="audit-report-wrapper css-126skhi"
+                class="audit-report-wrapper css-1lblrgt"
               >
                 <div
                   class="ant-spin-nested-loading css-dev-only-do-not-override-txh9fw"

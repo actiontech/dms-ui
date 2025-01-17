@@ -22,7 +22,7 @@ import { useRequest } from 'ahooks';
 import EventEmitter from '../../../../utils/EventEmitter';
 import EmitterKey from '../../../../data/EmitterKey';
 import { RoleListActions } from './action';
-import usePermission from '@actiontech/shared/lib/global/usePermission/usePermission';
+import { usePermission } from '@actiontech/shared/lib/global';
 
 const RoleList: React.FC<{ activePage: UserCenterListEnum }> = ({
   activePage

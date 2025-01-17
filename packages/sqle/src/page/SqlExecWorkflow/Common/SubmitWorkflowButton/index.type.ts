@@ -3,4 +3,5 @@ export type SubmitWorkflowButtonProps = {
   loading: boolean;
   submitWorkflowConfirmationMessage?: string;
   onClick: () => void;
+  hasExceptionAuditRule: boolean;
 };

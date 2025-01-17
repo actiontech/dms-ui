@@ -14,8 +14,10 @@ import OptimizationDistribution from './component/OptimizationDistribution';
 import eventEmitter from '../../utils/EventEmitter';
 import EmitterKey from '../../data/EmitterKey';
 import { useCallback, useEffect } from 'react';
-import { useCurrentProject } from '@actiontech/shared/lib/global';
-import usePermission from '@actiontech/shared/lib/global/usePermission/usePermission';
+import {
+  useCurrentProject,
+  usePermission
+} from '@actiontech/shared/lib/global';
 
 const Overview = () => {
   const { t } = useTranslation();

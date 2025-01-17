@@ -5,12 +5,12 @@ import { IRuleResV1 } from '@actiontech/shared/lib/api/sqle/service/common';
 import { ReactNode } from 'react';
 import { EmptyBox } from '@actiontech/shared';
 import { RuleItemTagStyleWrapper } from '../style';
-import usePermission from '@actiontech/shared/lib/global/usePermission/usePermission';
 import {
   RuleCategoryDictionaryGroup,
   RuleCategoryDictionary
 } from '../../../hooks/useRuleCategories/index.data';
 import { isEmpty } from 'lodash';
+import { usePermission } from '@actiontech/shared/lib/global';
 
 export type typeRuleBaseInfo = {
   dataSource: IRuleResV1 | undefined;

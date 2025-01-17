@@ -6,7 +6,8 @@
   "scripts": {
     "test": "jest --watchAll=true",
     "test:c": "jest --watchAll=false --coverage",
-    "test:ci": "jest --ci --watchAll=false --coverage --color --silent --testLocationInResults"
+    "test:ci": "jest --ci --watchAll=false --coverage --color --silent --testLocationInResults",
+    "api:exports:g": "node scripts/generateAPIExports.mjs"
   },
   "dependencies": {
     "@actiontech/icons": "workspace:^"

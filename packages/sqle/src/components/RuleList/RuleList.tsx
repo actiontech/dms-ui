@@ -34,8 +34,8 @@ import {
   WarningFilled,
   CloseCircleFilled
 } from '@actiontech/icons';
-import usePermission from '@actiontech/shared/lib/global/usePermission/usePermission';
 import { RuleCategoryDictionaryGroup } from '../../hooks/useRuleCategories/index.data';
+import { usePermission } from '@actiontech/shared/lib/global';
 
 const scrollStepRange = 30;
 
