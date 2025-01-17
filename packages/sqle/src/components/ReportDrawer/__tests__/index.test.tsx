@@ -197,7 +197,7 @@ describe('sqle/components/ReportDrawer', () => {
             rule_name: 'rule b',
             desc: 'rule b',
             message: 'message',
-            level: 'audit_execution_error' as any,
+            level: 'audit_execution_error',
             annotation: 'annotation',
             db_type: 'mysql'
           }
@@ -223,7 +223,7 @@ describe('sqle/components/ReportDrawer', () => {
             rule_name: 'rule b',
             desc: 'rule b',
             message: 'message',
-            level: 'audit_execution_error' as any,
+            level: 'audit_execution_error',
             annotation: 'annotation',
             db_type: 'mysql'
           }
