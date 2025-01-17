@@ -2,6 +2,7 @@ import { useMemo } from 'react';
 import { useRequest } from 'ahooks';
 import { IAuditResult } from '@actiontech/shared/lib/api/sqle/service/common';
 import rule_template from '@actiontech/shared/lib/api/sqle/service/rule_template/index';
+import { IAuditResultItem } from './index.type';
 
 const useAuditResultRuleInfo = (
   auditResult: IAuditResult[],
@@ -27,7 +28,7 @@ const useAuditResultRuleInfo = (
     }
   );
 
-  const auditResultRuleInfo = useMemo(() => {
+  const auditResultRuleInfo: IAuditResultItem[] = useMemo(() => {
     return (
       auditResult?.map((item) => {
         const findData =
