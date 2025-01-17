@@ -45,7 +45,6 @@ import { useDispatch } from 'react-redux';
 import { updateModuleFeatureSupport } from './store/permission';
 import { ROUTE_PATHS } from '@actiontech/shared/lib/data/routePaths';
 import useSyncDmsCloudBeaverChannel from './hooks/useSyncDmsCloudBeaverChannel';
-import { cloneDeep } from 'lodash';
 import './index.less';
 
 dayjs.extend(updateLocale);
@@ -135,20 +134,25 @@ function App() {
     const filterRoutesByPermission: (
       routes: RouterConfigItem[]
     ) => RouterConfigItem[] = (routes) => {
-      return routes.filter((route) => {
-        if (route.permission) {
-          return checkPagePermission(route.permission);
+      const verifiedRoutes: RouterConfigItem[] = [];
+      return routes.reduce((acc, route) => {
+        if (route.permission && !checkPagePermission(route.permission)) {
+          return acc;
         }
-
         if (route.children) {
-          route.children = filterRoutesByPermission(route.children);
+          acc.push({
+            ...route,
+            children: filterRoutesByPermission(route.children)
+          });
+          return acc;
         }
-
-        return true;
-      });
+        acc.push(route);
+        return acc;
+      }, verifiedRoutes);
     };
+
     if (isUserInfoFetched && isFeatureSupportFetched) {
-      return filterRoutesByPermission(cloneDeep(AuthRouterConfig));
+      return filterRoutesByPermission(AuthRouterConfig);
     }
     return AuthRouterConfig;
   }, [checkPagePermission, isFeatureSupportFetched, isUserInfoFetched]);
