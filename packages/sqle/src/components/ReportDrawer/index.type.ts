@@ -4,7 +4,7 @@ import {
 } from '@actiontech/shared/lib/api/sqle/service/common';
 import { ReactNode } from 'react';
 
-export type IAuditResultItem = IRuleResV1 &
+export type IAuditResultItem = Omit<IRuleResV1, 'level'> &
   IAuditResult & {
     isRuleDeleted?: boolean;
   };

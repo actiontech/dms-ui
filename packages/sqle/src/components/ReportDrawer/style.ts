@@ -81,6 +81,7 @@ export const AuditResultExceptionStyleWrapper = styled('div')`
         width: 20px;
         height: 20px;
       }
+
       .exception-item-rule-desc-text {
         flex: 1;
         color: ${({ theme }) => theme.sharedTheme.uiToken.colorText};
