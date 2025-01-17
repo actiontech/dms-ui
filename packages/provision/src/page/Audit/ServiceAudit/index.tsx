@@ -19,7 +19,7 @@ import {
   ServiceAuditTableColumns,
   ServiceAuditTableActions
 } from './columns';
-import { useCurrentProject } from '@actiontech/shared/lib/global';
+import { useCurrentProject } from '@actiontech/shared/lib/features';
 import ServiceAuditDetailDrawer from './DetailDrawer';
 import { useBoolean } from 'ahooks';
 import useServiceOptions from '~/hooks/useServiceOptions';

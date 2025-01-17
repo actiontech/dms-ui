@@ -16,7 +16,10 @@ import { ResponseCode } from '@actiontech/shared/lib/enum';
 import { FormFields } from './index.type';
 import { defaultFormData, switchFieldName } from './index.data';
 import ConfigSubmitButtonField from '../../components/ConfigSubmitButtonField';
-import { PERMISSIONS, PermissionControl } from '@actiontech/shared/lib/global';
+import {
+  PERMISSIONS,
+  PermissionControl
+} from '@actiontech/shared/lib/features';
 
 const DingTalkSetting: React.FC = () => {
   const { t } = useTranslation();

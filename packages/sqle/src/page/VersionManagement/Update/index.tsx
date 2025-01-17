@@ -12,7 +12,7 @@ import VersionForm from '../Common/VersionForm';
 import sqlVersion from '@actiontech/shared/lib/api/sqle/service/sql_version';
 import { IUpdateSqlVersionV1Params } from '@actiontech/shared/lib/api/sqle/service/sql_version/index.d';
 import { useRequest } from 'ahooks';
-import { useCurrentProject } from '@actiontech/shared/lib/global';
+import { useCurrentProject } from '@actiontech/shared/lib/features';
 import { ResponseCode } from '@actiontech/shared/lib/enum';
 import { useMemo } from 'react';
 import useVersionFormState from '../Common/VersionForm/hooks/useVersionFormState';

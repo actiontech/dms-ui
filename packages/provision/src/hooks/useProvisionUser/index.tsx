@@ -1,5 +1,5 @@
 import { Typography } from 'antd';
-import { useCurrentProject } from '@actiontech/shared/lib/global';
+import { useCurrentProject } from '@actiontech/shared/lib/features';
 import auth from '@actiontech/shared/lib/api/provision/service/auth';
 import { useBoolean } from 'ahooks';
 import { useMemo, useCallback, useState } from 'react';

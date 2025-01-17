@@ -3,7 +3,7 @@ import { useBoolean } from 'ahooks';
 import { Select } from 'antd';
 import { ResponseCode } from '@actiontech/shared/lib/enum';
 import { IDBServiceSyncTaskTip } from '@actiontech/shared/lib/api/base/service/common';
-import { useDbServiceDriver } from '@actiontech/shared/lib/global';
+import { useDbServiceDriver } from '@actiontech/shared/lib/features';
 import { DatabaseTypeLogo } from '@actiontech/shared';
 import DBServiceSyncTaskService from '@actiontech/shared/lib/api/base/service/DBServiceSyncTask';
 

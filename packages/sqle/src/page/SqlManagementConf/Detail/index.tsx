@@ -16,7 +16,7 @@ import ScanTypeSqlCollection from './ScanTypeSqlCollection/indx';
 import { useBoolean, useRequest } from 'ahooks';
 import { useLocation } from 'react-router-dom';
 import instance_audit_plan from '@actiontech/shared/lib/api/sqle/service/instance_audit_plan';
-import { useCurrentProject } from '@actiontech/shared/lib/global';
+import { useCurrentProject } from '@actiontech/shared/lib/features';
 import { Result, Space } from 'antd';
 import { getErrorMessage } from '@actiontech/shared/lib/utils/Common';
 import { SQL_MANAGEMENT_CONF_OVERVIEW_TAB_KEY } from './index.data';

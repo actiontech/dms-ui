@@ -5,7 +5,7 @@ import { EmptyBox, BasicTag, TypedLink } from '@actiontech/shared';
 import { useTranslation } from 'react-i18next';
 import { execWorkflowStatusDictionary } from '../../../../hooks/useStaticStatus/index.data';
 import { Space } from 'antd';
-import { useCurrentProject } from '@actiontech/shared/lib/global';
+import { useCurrentProject } from '@actiontech/shared/lib/features';
 import { ROUTE_PATHS } from '@actiontech/shared/lib/data/routePaths';
 
 const BasicInfoWrapper: React.FC<BasicInfoWrapperProps> = ({

@@ -2,7 +2,7 @@ import { useRequest } from 'ahooks';
 import dayjs, { Dayjs } from 'dayjs';
 import { translateTimeForRequest } from '@actiontech/shared/lib/utils/Common';
 import SqlManage from '@actiontech/shared/lib/api/sqle/service/SqlManage';
-import { useCurrentProject } from '@actiontech/shared/lib/global';
+import { useCurrentProject } from '@actiontech/shared/lib/features';
 import { ResponseCode } from '@actiontech/shared/lib/enum';
 
 const useSqlExecPlanCost = (id: string) => {

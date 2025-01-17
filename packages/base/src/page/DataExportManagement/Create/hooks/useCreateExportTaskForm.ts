@@ -1,6 +1,6 @@
 import DBService from '@actiontech/shared/lib/api/base/service/DBService';
 import DataExportTask from '@actiontech/shared/lib/api/base/service/DataExportTask';
-import { useCurrentProject } from '@actiontech/shared/lib/global';
+import { useCurrentProject } from '@actiontech/shared/lib/features';
 import { useForm } from 'antd/es/form/Form';
 import useCreateDataExportReduxManage from './index.redux';
 import {

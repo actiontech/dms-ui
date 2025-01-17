@@ -14,7 +14,7 @@ import { DatabaseRoleTableColumns } from './column';
 import {
   useCurrentProject,
   usePermission
-} from '@actiontech/shared/lib/global';
+} from '@actiontech/shared/lib/features';
 import { CreateDatabaseRoleAction, DatabaseRoleTableActions } from './action';
 import { message } from 'antd';
 import DbRoleService from '@actiontech/shared/lib/api/provision/service/db_role';

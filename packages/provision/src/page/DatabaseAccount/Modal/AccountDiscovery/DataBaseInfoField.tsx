@@ -8,7 +8,7 @@ import useServiceOptions from '../../../../hooks/useServiceOptions';
 import { useEffect } from 'react';
 import AccountTableField from './AccountTableField';
 import dbAccountService from '@actiontech/shared/lib/api/provision/service/db_account/';
-import { useCurrentProject } from '@actiontech/shared/lib/global';
+import { useCurrentProject } from '@actiontech/shared/lib/features';
 import { IAuthDiscoveryDBAccountParams } from '@actiontech/shared/lib/api/provision/service/db_account/index.d';
 import { useRequest } from 'ahooks';
 

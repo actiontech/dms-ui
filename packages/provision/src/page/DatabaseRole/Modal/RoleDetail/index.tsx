@@ -18,7 +18,7 @@ import {
 } from '../../../../store/databaseRole';
 import DbRoleService from '@actiontech/shared/lib/api/provision/service/db_role';
 import { useRecoilState } from 'recoil';
-import { useCurrentProject } from '@actiontech/shared/lib/global';
+import { useCurrentProject } from '@actiontech/shared/lib/features';
 import { AccountDetailDrawerStyleWrapper } from '../../../DatabaseAccount/style';
 import AccountInfoItem from '../../../DatabaseAccount/components/AccountInfoItem';
 import { IDBAccountDataPermission } from '@actiontech/shared/lib/api/provision/service/common';

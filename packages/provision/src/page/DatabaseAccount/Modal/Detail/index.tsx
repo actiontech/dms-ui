@@ -18,7 +18,7 @@ import { ModalName } from '../../../../data/enum';
 import { useRecoilState } from 'recoil';
 import dbAccountService from '@actiontech/shared/lib/api/provision/service/db_account/';
 import { useRequest } from 'ahooks';
-import { useCurrentProject } from '@actiontech/shared/lib/global';
+import { useCurrentProject } from '@actiontech/shared/lib/features';
 import { Space, Spin, message } from 'antd';
 import { AccountDetailDrawerStyleWrapper } from '../../style';
 import { formatTime } from '@actiontech/shared/lib/utils/Common';

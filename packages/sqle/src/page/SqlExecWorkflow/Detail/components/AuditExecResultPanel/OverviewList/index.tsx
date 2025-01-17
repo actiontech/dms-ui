@@ -3,7 +3,7 @@ import {
   useCurrentProject,
   useCurrentUser,
   usePermission
-} from '@actiontech/shared/lib/global';
+} from '@actiontech/shared/lib/features';
 import ScheduleTimeModal from './ScheduleTimeModal';
 import { ActiontechTable } from '@actiontech/shared/lib/components/ActiontechTable';
 import { auditResultOverviewColumn } from './column';

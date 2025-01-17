@@ -5,7 +5,7 @@ import { Select, SelectProps } from 'antd';
 import { IDriverMeta } from '@actiontech/shared/lib/api/sqle/service/common';
 import { DatabaseTypeLogo } from '@actiontech/shared';
 import configuration from '@actiontech/shared/lib/api/sqle/service/configuration';
-import { useDbServiceDriver } from '@actiontech/shared/lib/global';
+import { useDbServiceDriver } from '@actiontech/shared/lib/features';
 
 const useDatabaseType = () => {
   const [driverNameList, setDriverNameList] = useState<string[]>([]);

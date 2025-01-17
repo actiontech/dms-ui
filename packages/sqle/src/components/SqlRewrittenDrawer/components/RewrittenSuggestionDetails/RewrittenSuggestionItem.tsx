@@ -17,7 +17,7 @@ import { useMemo } from 'react';
 import { useTranslation } from 'react-i18next';
 import rehypeSanitize from 'rehype-sanitize';
 import { ROUTE_PATHS } from '@actiontech/shared/lib/data/routePaths';
-import { useCurrentProject } from '@actiontech/shared/lib/global';
+import { useCurrentProject } from '@actiontech/shared/lib/features';
 import { CopySqlAction, ShowSqlDifferenceAction } from '../Common/actions';
 import RewrittenSqlCommonEditor from '../Common/RewrittenSqlCommonEditor';
 

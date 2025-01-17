@@ -26,7 +26,10 @@ import {
 import { IUpdateOauth2ConfigurationParams } from '@actiontech/shared/lib/api/base/service/Configuration/index.d';
 import { InfoCircleOutlined } from '@actiontech/icons';
 import useThemeStyleData from '../../../../hooks/useThemeStyleData';
-import { PERMISSIONS, PermissionControl } from '@actiontech/shared/lib/global';
+import {
+  PERMISSIONS,
+  PermissionControl
+} from '@actiontech/shared/lib/features';
 
 const Oauth = () => {
   const { t } = useTranslation();

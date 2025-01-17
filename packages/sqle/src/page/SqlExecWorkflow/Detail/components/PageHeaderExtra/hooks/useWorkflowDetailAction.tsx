@@ -8,7 +8,7 @@ import {
   WorkflowRecordResV2StatusEnum,
   WorkflowStepResV2TypeEnum
 } from '@actiontech/shared/lib/api/sqle/service/common.enum';
-import { useCurrentUser } from '@actiontech/shared/lib/global';
+import { useCurrentUser } from '@actiontech/shared/lib/features';
 import dayjs, { Dayjs } from 'dayjs';
 import {
   WorkflowDetailActionMeta,

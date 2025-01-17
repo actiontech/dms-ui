@@ -1,6 +1,6 @@
 // @warn/cli/create-dms-page
 
-import { PermissionsConstantType } from '@actiontech/shared/lib/global';
+import { PermissionsConstantType } from '@actiontech/shared/lib/features';
 import { ItemType, MenuItemType } from 'antd/es/menu/hooks/useItems';
 import { I18nKey } from '../../../../../locale';
 import { ReactNode } from 'react';

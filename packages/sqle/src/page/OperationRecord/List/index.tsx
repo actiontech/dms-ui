@@ -18,7 +18,7 @@ import {
   FilterCustomProps,
   TableToolbar
 } from '@actiontech/shared/lib/components/ActiontechTable';
-import { useCurrentProject } from '@actiontech/shared/lib/global';
+import { useCurrentProject } from '@actiontech/shared/lib/features';
 import {
   OperationRecordListColumn,
   OperationRecordListFilterParamType

@@ -18,7 +18,7 @@ import {
 import { Divider, Form, InputRef, SelectProps, message } from 'antd';
 import { PlusOutlined } from '@ant-design/icons';
 
-import { useCurrentProject } from '@actiontech/shared/lib/global';
+import { useCurrentProject } from '@actiontech/shared/lib/features';
 import useSQLAuditRecordTag from '../../../../hooks/useSQLAuditRecordTag';
 import { useForm } from 'antd/es/form/Form';
 import { tagNameRule } from '@actiontech/shared/lib/utils/FormRule';

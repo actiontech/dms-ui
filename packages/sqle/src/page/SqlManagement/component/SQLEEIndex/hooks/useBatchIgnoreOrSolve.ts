@@ -2,7 +2,7 @@ import i18n from 'i18next';
 import { useBoolean } from 'ahooks';
 import { Key } from 'antd/es/table/interface';
 import SqlManage from '@actiontech/shared/lib/api/sqle/service/SqlManage';
-import { useCurrentProject } from '@actiontech/shared/lib/global';
+import { useCurrentProject } from '@actiontech/shared/lib/features';
 import { BatchUpdateSqlManageReqStatusEnum } from '@actiontech/shared/lib/api/sqle/service/common.enum';
 import { useMemo } from 'react';
 import { ResponseCode } from '@actiontech/shared/lib/enum';

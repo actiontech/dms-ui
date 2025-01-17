@@ -8,10 +8,10 @@ import { BasicSelect, useTypedQuery } from '@actiontech/shared';
 import {
   useCurrentProject,
   useProjectBusinessTips
-} from '@actiontech/shared/lib/global';
+} from '@actiontech/shared/lib/features';
 import { Form } from 'antd';
 import useInstance from '../../../../../hooks/useInstance';
-import { useContext, useEffect, useMemo, useCallback } from 'react';
+import { useContext, useEffect, useMemo } from 'react';
 import useDatabaseType from '../../../../../hooks/useDatabaseType';
 import { ConfFormContext } from '../context';
 import { SqlManagementConfFormFields } from '../index.type';
@@ -103,8 +103,8 @@ const DataSourceSelection: React.FC = () => {
     updateDriverNameList();
   }, [updateDriverNameList]);
 
-  const updateInstanceListByProjectName = useCallback(
-    (id: string) => {
+  useEffect(() => {
+    if (!!instanceIdByUrlSearchParams && !!businessByUrlSearchParams) {
       updateInstanceList(
         {
           project_name: projectName,
@@ -113,34 +113,32 @@ const DataSourceSelection: React.FC = () => {
         },
         {
           onSuccess: (list) => {
-            const instance = list.find((v) => v.instance_id === id);
+            const instance = list.find(
+              (v) => v.instance_id === instanceIdByUrlSearchParams
+            );
             form.setFieldsValue({
+              businessScope: businessByUrlSearchParams,
+              instanceId: instanceIdByUrlSearchParams,
               instanceName: instance?.instance_name ?? '',
               instanceType: instance?.instance_type ?? ''
             });
           }
         }
       );
-    },
-    [form, projectName, updateInstanceList]
-  );
-
-  useEffect(() => {
-    if (!!instanceIdByUrlSearchParams && !!businessByUrlSearchParams) {
-      form.setFieldsValue({
-        businessScope: businessByUrlSearchParams,
-        instanceId: instanceIdByUrlSearchParams
-      });
-      updateInstanceListByProjectName(instanceIdByUrlSearchParams);
     } else if (!!defaultValue) {
-      updateInstanceListByProjectName(defaultValue.instanceId as string);
+      updateInstanceList({
+        project_name: projectName,
+        functional_module:
+          getInstanceTipListV1FunctionalModuleEnum.create_audit_plan
+      });
     }
   }, [
     businessByUrlSearchParams,
     instanceIdByUrlSearchParams,
     defaultValue,
-    updateInstanceListByProjectName,
-    form
+    updateInstanceList,
+    form,
+    projectName
   ]);
 
   useEffect(() => {

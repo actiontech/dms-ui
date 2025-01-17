@@ -1,5 +1,5 @@
 import { ActionButton, BasicButton, BasicResult } from '@actiontech/shared';
-import { useCurrentProject } from '@actiontech/shared/lib/global';
+import { useCurrentProject } from '@actiontech/shared/lib/features';
 import { useTranslation } from 'react-i18next';
 import { SqlManagementConfCreationResultProps } from './index.type';
 import { ROUTE_PATHS } from '@actiontech/shared/lib/data/routePaths';

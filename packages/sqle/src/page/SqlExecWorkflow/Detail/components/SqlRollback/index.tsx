@@ -27,7 +27,7 @@ import {
 import TableTransfer from './TableTransfer';
 import { ExpandedBackupSqlType, TableTransferProps } from './index.type';
 import workflow from '@actiontech/shared/lib/api/sqle/service/workflow';
-import { useCurrentProject } from '@actiontech/shared/lib/global';
+import { useCurrentProject } from '@actiontech/shared/lib/features';
 import { SqlExecStatusOptions } from './index.data';
 import useInstance from '../../../../../hooks/useInstance';
 import { getInstanceTipListV1FunctionalModuleEnum } from '@actiontech/shared/lib/api/sqle/service/instance/index.enum';

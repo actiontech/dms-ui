@@ -16,7 +16,7 @@ import {
   IWorkFlowStepTemplateReqV1,
   IWorkFlowStepTemplateResV1
 } from '@actiontech/shared/lib/api/sqle/service/common';
-import { useCurrentProject } from '@actiontech/shared/lib/global';
+import { useCurrentProject } from '@actiontech/shared/lib/features';
 import { BaseFormFields } from './components/BasicInfo/index.type';
 import { AxiosResponse } from 'axios';
 import {

@@ -1,5 +1,5 @@
 import { useMemo } from 'react';
-import { useCurrentUser } from '@actiontech/shared/lib/global';
+import { useCurrentUser } from '@actiontech/shared/lib/features';
 import sharedDarkTheme from '@actiontech/shared/lib/theme/dark';
 import sharedLightTheme from '@actiontech/shared/lib/theme/light';
 import { SupportTheme } from '@actiontech/shared/lib/enum';

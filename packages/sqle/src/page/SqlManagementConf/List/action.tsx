@@ -3,7 +3,7 @@ import {
   ActiontechTableActionsWithPermissions,
   PERMISSIONS,
   PermissionControl
-} from '@actiontech/shared/lib/global';
+} from '@actiontech/shared/lib/features';
 import { ReactNode } from 'react';
 import { t } from '../../../locale';
 import { IInstanceAuditPlanResV1 } from '@actiontech/shared/lib/api/sqle/service/common';

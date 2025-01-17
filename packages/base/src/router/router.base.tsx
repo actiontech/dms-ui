@@ -1,5 +1,5 @@
 // @warn/cli/create-dms-page
-import { PERMISSIONS } from '@actiontech/shared/lib/global';
+import { PERMISSIONS } from '@actiontech/shared/lib/features';
 import { ROUTE_PATHS } from '@actiontech/shared/lib/data/routePaths';
 import { RouterConfigItem } from '@actiontech/shared/lib/types/common.type';
 import React from 'react';

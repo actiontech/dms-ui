@@ -21,7 +21,7 @@ import { UserListColumns } from './column';
 import { ModalName } from '../../../../data/ModalName';
 import EventEmitter from '../../../../utils/EventEmitter';
 import EmitterKey from '../../../../data/EmitterKey';
-import { useCurrentUser, usePermission } from '@actiontech/shared/lib/global';
+import { useCurrentUser, usePermission } from '@actiontech/shared/lib/features';
 import { UserListActions } from './action';
 
 const UserList: React.FC<{ activePage: UserCenterListEnum }> = ({

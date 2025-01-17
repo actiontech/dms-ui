@@ -31,7 +31,7 @@ import task from '@actiontech/shared/lib/api/sqle/service/task';
 import InfiniteScroll from 'react-infinite-scroll-component';
 import { useTableRequestError } from '@actiontech/shared/lib/components/ActiontechTable';
 import { ResponseCode } from '@actiontech/shared/lib/enum';
-import { useCurrentProject } from '@actiontech/shared/lib/global';
+import { useCurrentProject } from '@actiontech/shared/lib/features';
 
 const SortableSqlFilesModal: React.FC<SortableSQLFilesModalProps> = ({
   open,

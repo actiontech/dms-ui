@@ -5,7 +5,7 @@ import useServiceOptions from '../../../../hooks/useServiceOptions';
 import { BasicInput, BasicSelect } from '@actiontech/shared';
 import { useEffect } from 'react';
 import DatabasePrivilegesSelector from '../../../../components/DatabasePrivilegesSelector';
-import { useCurrentProject } from '@actiontech/shared/lib/global';
+import { useCurrentProject } from '@actiontech/shared/lib/features';
 import {
   FormAreaBlockStyleWrapper,
   formItemLayout,

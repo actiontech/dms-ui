@@ -1,5 +1,5 @@
 import { useEffect, useMemo } from 'react';
-import { useCurrentProject } from '@actiontech/shared/lib/global';
+import { useCurrentProject } from '@actiontech/shared/lib/features';
 import { Space, Divider, Form } from 'antd';
 import { useTranslation } from 'react-i18next';
 import { CustomSelect } from '@actiontech/shared/lib/components/CustomSelect';

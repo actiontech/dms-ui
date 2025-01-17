@@ -23,7 +23,7 @@ import { CustomToolbar } from '../CommonTable/CustomToolbar';
 import {
   useCurrentProject,
   useCurrentUser
-} from '@actiontech/shared/lib/global';
+} from '@actiontech/shared/lib/features';
 import { getWorkflowsV1FilterStatusEnum } from '@actiontech/shared/lib/api/sqle/service/workflow/index.enum';
 import { IGetWorkflowsV1Params } from '@actiontech/shared/lib/api/sqle/service/workflow/index.d';
 import workflow from '@actiontech/shared/lib/api/sqle/service/workflow';

@@ -21,7 +21,7 @@ import {
   useCurrentUser,
   usePermission,
   PERMISSIONS
-} from '@actiontech/shared/lib/global';
+} from '@actiontech/shared/lib/features';
 import ExportWorkflowButton from './components/ExportWorkflowButton';
 import { useCallback, useEffect, useMemo, useState } from 'react';
 import {

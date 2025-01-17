@@ -19,7 +19,7 @@ import {
   TemplateAuditTableColumns,
   TemplateAuditTableActions
 } from './columns';
-import { useCurrentProject } from '@actiontech/shared/lib/global';
+import { useCurrentProject } from '@actiontech/shared/lib/features';
 import TemplateAuditDetailDrawer from './DetailDrawer';
 import { useBoolean } from 'ahooks';
 import useProvisionUser from '~/hooks/useProvisionUser';

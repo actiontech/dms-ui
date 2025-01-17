@@ -6,7 +6,7 @@ import {
 } from '../../../index.type';
 import { useRequest } from 'ahooks';
 import { IBatchCheckInstanceIsConnectableByNameParams } from '@actiontech/shared/lib/api/sqle/service/instance/index.d';
-import { useCurrentProject } from '@actiontech/shared/lib/global';
+import { useCurrentProject } from '@actiontech/shared/lib/features';
 import { useMemo, useCallback } from 'react';
 import { EmptyBox, ReminderInformation } from '@actiontech/shared';
 import { useTranslation } from 'react-i18next';

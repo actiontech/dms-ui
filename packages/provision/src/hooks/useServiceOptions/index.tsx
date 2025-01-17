@@ -2,7 +2,7 @@ import {
   useCurrentProject,
   useDbServiceDriver,
   usePermission
-} from '@actiontech/shared/lib/global';
+} from '@actiontech/shared/lib/features';
 import auth from '@actiontech/shared/lib/api/provision/service/auth';
 import { useMemo, useCallback, useState } from 'react';
 import { IListService } from '@actiontech/shared/lib/api/provision/service/common';

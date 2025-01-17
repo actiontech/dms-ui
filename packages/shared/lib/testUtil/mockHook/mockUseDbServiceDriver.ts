@@ -1,4 +1,4 @@
-import * as useDbServiceDriver from '../../global/useDbServiceDriver';
+import * as useDbServiceDriver from '../../features/useDbServiceDriver';
 import { mockDBServiceDriverInfo } from './data';
 
 export const mockUseDbServiceDriver = (

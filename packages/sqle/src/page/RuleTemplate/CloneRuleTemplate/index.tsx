@@ -6,7 +6,7 @@ import { ModalName } from '../../../data/ModalName';
 import { updateRuleTemplateListModalStatus } from '../../../store/ruleTemplate';
 import { message } from 'antd';
 import { useForm } from 'antd/es/form/Form';
-import { useCurrentProject } from '@actiontech/shared/lib/global';
+import { useCurrentProject } from '@actiontech/shared/lib/features';
 import rule_template from '@actiontech/shared/lib/api/sqle/service/rule_template';
 import { IProjectRuleTemplateResV1 } from '@actiontech/shared/lib/api/sqle/service/common';
 import { ResponseCode } from '@actiontech/shared/lib/enum';

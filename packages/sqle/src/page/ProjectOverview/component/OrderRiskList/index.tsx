@@ -11,7 +11,7 @@ import {
   TypedLink,
   useTypedNavigate
 } from '@actiontech/shared';
-import { useCurrentProject } from '@actiontech/shared/lib/global';
+import { useCurrentProject } from '@actiontech/shared/lib/features';
 import { formatTime } from '@actiontech/shared/lib/utils/Common';
 import useChatsDataByAPI from '../../hooks/useChatsDataByAPI';
 import { IRiskWorkflow } from '@actiontech/shared/lib/api/sqle/service/common';

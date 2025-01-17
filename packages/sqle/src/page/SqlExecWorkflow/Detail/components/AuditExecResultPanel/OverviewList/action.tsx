@@ -10,7 +10,7 @@ import {
 import {
   ActiontechTableActionsWithPermissions,
   PERMISSIONS
-} from '@actiontech/shared/lib/global';
+} from '@actiontech/shared/lib/features';
 import dayjs from 'dayjs';
 import { checkTimeInWithMaintenanceTime } from '../../../../Common/utils';
 import { t } from '../../../../../../locale';

@@ -7,7 +7,7 @@ import {
 import { useTranslation } from 'react-i18next';
 import { Form, message, Space, Spin } from 'antd';
 import { useBoolean, useRequest } from 'ahooks';
-import { useCurrentProject } from '@actiontech/shared/lib/global';
+import { useCurrentProject } from '@actiontech/shared/lib/features';
 import DbRoleService from '@actiontech/shared/lib/api/provision/service/db_role';
 import { ResponseCode } from '@actiontech/shared/lib/enum';
 import { IDatabaseRoleFormFields } from '../../components/Common/index.type';

@@ -2,7 +2,7 @@ import { List } from 'antd';
 import { SqlExecuteModeProps } from './index.type';
 import { useInfiniteScroll } from 'ahooks';
 import task from '@actiontech/shared/lib/api/sqle/service/task';
-import { useCurrentProject } from '@actiontech/shared/lib/global';
+import { useCurrentProject } from '@actiontech/shared/lib/features';
 import ResultCard from '../../Common/ResultCard';
 import { useCallback, useRef } from 'react';
 import { IAuditTaskSQLResV2 } from '@actiontech/shared/lib/api/sqle/service/common';

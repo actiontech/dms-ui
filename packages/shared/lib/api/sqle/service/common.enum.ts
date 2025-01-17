@@ -50,6 +50,18 @@ export enum AuditPlanSQLHeadV1TypeEnum {
   'sql' = 'sql'
 }
 
+export enum AuditPlanTypeResBaseActiveStatusEnum {
+  'normal' = 'normal',
+
+  'disabled' = 'disabled'
+}
+
+export enum AuditPlanTypeResBaseLastCollectionStatusEnum {
+  'normal' = 'normal',
+
+  'abnormal' = 'abnormal'
+}
+
 export enum AuditPlanTypesV1InstanceTypeEnum {
   'MySQL' = 'MySQL',
 
@@ -330,6 +342,12 @@ export enum InstanceAuditPlanInfoActiveStatusEnum {
   'normal' = 'normal',
 
   'disabled' = 'disabled'
+}
+
+export enum InstanceAuditPlanInfoLastCollectionStatusEnum {
+  'normal' = 'normal',
+
+  'abnormal' = 'abnormal'
 }
 
 export enum InstanceAuditPlanResV1ActiveStatusEnum {

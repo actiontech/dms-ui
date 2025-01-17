@@ -6,7 +6,7 @@ import {
   TypedLink
 } from '@actiontech/shared';
 import { useTranslation } from 'react-i18next';
-import { useCurrentProject } from '@actiontech/shared/lib/global';
+import { useCurrentProject } from '@actiontech/shared/lib/features';
 import { Form, Space } from 'antd';
 import { CreateAccountFormType } from '../index.type';
 import { CreateAccountFormStyleWrapper } from '../style';

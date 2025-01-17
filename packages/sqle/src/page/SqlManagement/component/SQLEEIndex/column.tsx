@@ -24,7 +24,7 @@ import { SqlManageAuditStatusEnum } from '@actiontech/shared/lib/api/sqle/servic
 import {
   PERMISSIONS,
   PermissionsConstantType
-} from '@actiontech/shared/lib/global';
+} from '@actiontech/shared/lib/features';
 import { ROUTE_PATHS } from '@actiontech/shared/lib/data/routePaths';
 
 export type SqlManagementTableFilterParamType = PageInfoWithoutIndexAndSize<

@@ -8,7 +8,7 @@ import ExportTaskList from './ExportTaskList';
 import DbServiceSegmentedLabel from '../../../Common/DbServiceSegmentedLabel';
 import { AuditTaskResV1AuditLevelEnum } from '@actiontech/shared/lib/api/sqle/service/common.enum';
 import DataExportTask from '@actiontech/shared/lib/api/base/service/DataExportTask';
-import { useCurrentProject } from '@actiontech/shared/lib/global';
+import { useCurrentProject } from '@actiontech/shared/lib/features';
 import { useBoolean } from 'ahooks';
 import { PanelCardOutlined } from '@actiontech/icons';
 

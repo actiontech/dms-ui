@@ -15,7 +15,10 @@ import Configuration from '@actiontech/shared/lib/api/base/service/Configuration
 import { ResponseCode } from '@actiontech/shared/lib/enum';
 import { IFeishuConfigurationResData } from '@actiontech/shared/lib/api/base/service/common';
 import { switchFieldName } from './index.data';
-import { PERMISSIONS, PermissionControl } from '@actiontech/shared/lib/global';
+import {
+  PERMISSIONS,
+  PermissionControl
+} from '@actiontech/shared/lib/features';
 
 const LarkSetting: React.FC = () => {
   const { t } = useTranslation();

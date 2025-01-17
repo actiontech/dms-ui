@@ -12,7 +12,7 @@ import { BasicInput, EmptyBox, BasicSelect } from '@actiontech/shared';
 import { SqlManagementExceptionMatchTypeOptions } from '../../index.data';
 import useInstance from '../../../../hooks/useInstance';
 import { useEffect } from 'react';
-import { useCurrentProject } from '@actiontech/shared/lib/global';
+import { useCurrentProject } from '@actiontech/shared/lib/features';
 import { WarningFilled } from '@actiontech/icons';
 
 const SqlManagementExceptionForm: React.FC<SqlManagementExceptionFormProps> = ({

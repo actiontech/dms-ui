@@ -16,7 +16,7 @@ import {
   useConfigRender
 } from '@actiontech/shared';
 import ReportPushConfig from '@actiontech/shared/lib/api/sqle/service/ReportPushConfig';
-import { useCurrentProject } from '@actiontech/shared/lib/global';
+import { useCurrentProject } from '@actiontech/shared/lib/features';
 import { ResponseCode } from '@actiontech/shared/lib/enum';
 import { useBoolean, useRequest } from 'ahooks';
 import {
@@ -27,7 +27,10 @@ import { IReportPushConfigList } from '@actiontech/shared/lib/api/sqle/service/c
 import { useMemo } from 'react';
 import { InfoCircleOutlined } from '@actiontech/icons';
 import useThemeStyleData from '../../../../hooks/useThemeStyleData';
-import { PermissionControl, PERMISSIONS } from '@actiontech/shared/lib/global';
+import {
+  PermissionControl,
+  PERMISSIONS
+} from '@actiontech/shared/lib/features';
 
 const switchFieldName: keyof WorkflowUpdateNotifierFields = 'enabled';
 

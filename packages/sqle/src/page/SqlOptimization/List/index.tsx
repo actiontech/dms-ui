@@ -5,7 +5,7 @@ import {
   useCurrentProject,
   useCurrentUser,
   useDbServiceDriver
-} from '@actiontech/shared/lib/global';
+} from '@actiontech/shared/lib/features';
 import useInstance from '../../../hooks/useInstance';
 import {
   ActiontechTable,
