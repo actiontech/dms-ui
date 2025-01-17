@@ -2,7 +2,7 @@ import { useBoolean } from 'ahooks';
 import { message, Form, Space, Row, Col } from 'antd';
 import { useTranslation } from 'react-i18next';
 import { ResponseCode } from '@actiontech/shared/lib/enum';
-import { useCurrentProject } from '@actiontech/shared/lib/global';
+import { useCurrentProject } from '@actiontech/shared/lib/features';
 import { BasicButton, BasicTypographyEllipsis } from '@actiontech/shared';
 import useModalStatus from '../../../../hooks/useModalStatus';
 import {

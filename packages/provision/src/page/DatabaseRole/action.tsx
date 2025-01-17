@@ -3,7 +3,7 @@ import {
   ActiontechTableActionsWithPermissions,
   PermissionControl,
   PERMISSIONS
-} from '@actiontech/shared/lib/global';
+} from '@actiontech/shared/lib/features';
 import { t } from '../../locale';
 import { IListDBRole } from '@actiontech/shared/lib/api/provision/service/common';
 

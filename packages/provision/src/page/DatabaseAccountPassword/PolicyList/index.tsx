@@ -1,6 +1,6 @@
 import { useRequest } from 'ahooks';
 import { useMemo, useEffect } from 'react';
-import { useCurrentProject } from '@actiontech/shared/lib/global';
+import { useCurrentProject } from '@actiontech/shared/lib/features';
 import {
   ActiontechTable,
   useTableRequestError,

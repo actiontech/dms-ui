@@ -2,7 +2,7 @@ import { useBoolean } from 'ahooks';
 import { message, Form, Space } from 'antd';
 import { useTranslation } from 'react-i18next';
 import { ResponseCode } from '@actiontech/shared/lib/enum';
-import { useCurrentProject } from '@actiontech/shared/lib/global';
+import { useCurrentProject } from '@actiontech/shared/lib/features';
 import EventEmitter from '../../../../utils/EventEmitter';
 import { BasicButton, BasicDrawer } from '@actiontech/shared';
 import PolicyForm from './PolicyForm';

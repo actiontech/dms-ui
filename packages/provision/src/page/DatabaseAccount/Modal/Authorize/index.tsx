@@ -13,7 +13,7 @@ import { useRecoilState } from 'recoil';
 import useProvisionUser from '../../../../hooks/useProvisionUser';
 import { useEffect } from 'react';
 import dbAccountService from '@actiontech/shared/lib/api/provision/service/db_account/';
-import { useCurrentProject } from '@actiontech/shared/lib/global';
+import { useCurrentProject } from '@actiontech/shared/lib/features';
 import { ResponseCode } from '@actiontech/shared/lib/enum';
 import { filterOptionByLabel } from '@actiontech/shared/lib/components/BasicSelect/utils';
 import { accountNameRender } from '../../index.utils';

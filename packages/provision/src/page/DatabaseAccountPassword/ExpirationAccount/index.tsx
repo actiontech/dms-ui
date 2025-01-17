@@ -13,7 +13,7 @@ import {
   useCurrentProject,
   useCurrentUser,
   usePermission
-} from '@actiontech/shared/lib/global';
+} from '@actiontech/shared/lib/features';
 import dbAccountService from '@actiontech/shared/lib/api/provision/service/db_account/';
 import { IAuthListDBAccountParams } from '@actiontech/shared/lib/api/provision/service/db_account/index.d';
 import { IListDBAccount } from '@actiontech/shared/lib/api/provision/service/common';

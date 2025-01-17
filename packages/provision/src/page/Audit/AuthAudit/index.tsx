@@ -19,7 +19,7 @@ import {
   AuthAuditTableColumns,
   AuthAuditTableActions
 } from './columns';
-import { useCurrentProject } from '@actiontech/shared/lib/global';
+import { useCurrentProject } from '@actiontech/shared/lib/features';
 import AuthAuditDetailDrawer from './DetailDrawer';
 import { useBoolean } from 'ahooks';
 import useProvisionUser from '~/hooks/useProvisionUser';

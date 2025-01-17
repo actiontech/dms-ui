@@ -1,4 +1,4 @@
-import { useCurrentProject } from '@actiontech/shared/lib/global';
+import { useCurrentProject } from '@actiontech/shared/lib/features';
 import auth from '@actiontech/shared/lib/api/provision/service/auth';
 import { useMemo, useCallback, useState } from 'react';
 import { ResponseCode } from '@actiontech/shared/lib/enum';
