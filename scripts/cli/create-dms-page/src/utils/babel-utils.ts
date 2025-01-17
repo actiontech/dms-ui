@@ -488,7 +488,7 @@ export class BabelUtils {
 
       const functionId = t.identifier(variableName);
       functionId.typeAnnotation = t.tsTypeAnnotation(
-        t.tsTypeReference(t.identifier('GenerateMenuItemType'))
+        t.tsTypeReference(t.identifier('GenerateMenuItemI18nConfig'))
       );
 
       const arrowFunction = t.arrowFunctionExpression(

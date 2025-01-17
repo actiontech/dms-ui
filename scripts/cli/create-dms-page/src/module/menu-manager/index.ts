@@ -70,52 +70,31 @@ export class MenuManager implements IMenuManager {
   private generateMenuItemValueData(): Record<string, ObjectValue> {
     return {
       label: {
-        type: 'JSXElement',
-        name: 'TypedLink',
-        attribute: this.routePathManager.config.isProjectRoute
-          ? [
-              {
-                name: 'to',
+        type: 'literal',
+        value: this.localeManager.config.menuI18nKeyPath
+      },
+      to: {
+        type: 'function',
+        functionName: 'parse2ReactRouterPath',
+        params: [
+          {
+            type: 'identifier',
+            name: this.routePathManager.config
+              .routeDataIndexObjectPathWithComponent
+          },
+          {
+            type: 'literal',
+            value: {
+              params: {
+                type: 'literal',
                 value: {
-                  type: 'identifier',
-                  name: this.routePathManager.config
-                    .routeDataIndexObjectPathWithComponent
-                }
-              },
-              {
-                name: 'params',
-                value: {
-                  type: 'literal',
-                  value: {
-                    projectID: {
-                      type: 'shorthand',
-                      name: 'projectID'
-                    }
+                  projectID: {
+                    type: 'shorthand',
+                    name: 'projectID'
                   }
                 }
               }
-            ]
-          : [
-              {
-                name: 'to',
-                value: {
-                  type: 'identifier',
-                  name: this.routePathManager.config
-                    .routeDataIndexObjectPathWithComponent
-                }
-              }
-            ],
-        selfClosing: false,
-        children: [
-          {
-            type: 'function',
-            functionName: 't',
-            params: [
-              {
-                type: 'literal',
-                value: this.localeManager.config.menuI18nKeyPath
-              }
-            ]
+            }
           }
         ]
       },
