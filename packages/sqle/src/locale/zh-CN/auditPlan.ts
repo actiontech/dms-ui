@@ -148,6 +148,7 @@ export default {
       subTitle: {
         result: '审核结果',
         exception: '执行异常',
+        exceptionTips: '请结合错误信息到sqled.log日志中检索相关信息',
         sql: 'SQL语句'
       },
       source: '所在文件',

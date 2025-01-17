@@ -100,45 +100,7 @@ exports[`sqle/components/ReportDrawer render snap is empty 1`] = `
                   </div>
                   <div
                     class="ant-spin-container ant-spin-blur"
-                  >
-                    <section
-                      class="wrapper-item"
-                    >
-                      <h3
-                        class="ant-typography css-dev-only-do-not-override-txh9fw"
-                      >
-                        审核结果
-                      </h3>
-                      <div
-                        class="wrapper-cont"
-                      >
-                        <div
-                          class="result-item css-1avyf41"
-                        >
-                          <span
-                            class="icon-wrapper"
-                          >
-                            <svg
-                              height="20"
-                              viewBox="0 0 20 20"
-                              width="20"
-                              xmlns="http://www.w3.org/2000/svg"
-                            >
-                              <path
-                                d="M10 18.333a8.333 8.333 0 1 1 0-16.666 8.333 8.333 0 1 1 0 16.666m-.83-5 5.89-5.892-1.177-1.178-4.714 4.714-2.357-2.358-1.179 1.179z"
-                                fill="#41BF9A"
-                              />
-                            </svg>
-                          </span>
-                          <span
-                            class="text-wrapper"
-                          >
-                            审核通过
-                          </span>
-                        </div>
-                      </div>
-                    </section>
-                  </div>
+                  />
                 </div>
                 <section
                   class="wrapper-item"
@@ -309,108 +271,198 @@ exports[`sqle/components/ReportDrawer render snap when audit rule is exception 1
                       </h3>
                       <div
                         class="wrapper-cont"
-                      />
-                    </section>
-                  </div>
-                </div>
-                <div
-                  class="css-1ld22uq"
-                >
-                  <div
-                    class="title"
-                  >
-                    执行异常
-                  </div>
-                  <div
-                    class="exception-item"
-                  >
-                    <svg
-                      fill="none"
-                      height="20"
-                      viewBox="0 0 16 16"
-                      width="20"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        d="m8.577 2 6.35 11a.667.667 0 0 1-.577 1H1.648a.667.667 0 0 1-.577-1l6.35-11a.667.667 0 0 1 1.156 0m-1.244 8.667V12h1.333v-1.333zm0-4.667v3.334h1.333V6z"
-                        fill="#EBAD1C"
-                      />
-                    </svg>
-                    <div
-                      aria-label="message"
-                      class="ant-typography ant-typography-ellipsis ant-typography-single-line exception-item-text basic-typography-ellipsis css-wgj5gs css-dev-only-do-not-override-txh9fw"
-                    >
-                      message
-                      <div
-                        aria-label="Copy"
-                        class="ant-typography-copy"
-                        role="button"
-                        style="border: 0px; background: transparent; padding: 0px; line-height: inherit; display: inline-block;"
-                        tabindex="0"
                       >
-                        <span
-                          aria-label="copy"
-                          class="anticon anticon-copy"
-                          role="img"
-                        >
-                          <svg
-                            aria-hidden="true"
-                            data-icon="copy"
-                            fill="currentColor"
-                            focusable="false"
-                            height="1em"
-                            viewBox="64 64 896 896"
-                            width="1em"
-                          >
-                            <path
-                              d="M832 64H296c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h496v688c0 4.4 3.6 8 8 8h56c4.4 0 8-3.6 8-8V96c0-17.7-14.3-32-32-32zM704 192H192c-17.7 0-32 14.3-32 32v530.7c0 8.5 3.4 16.6 9.4 22.6l173.3 173.3c2.2 2.2 4.7 4 7.4 5.5v1.9h4.2c3.5 1.3 7.2 2 11 2H704c17.7 0 32-14.3 32-32V224c0-17.7-14.3-32-32-32zM350 856.2L263.9 770H350v86.2zM664 888H414V746c0-22.1-17.9-40-40-40H232V264h432v624z"
-                            />
-                          </svg>
-                        </span>
-                      </div>
-                      <span
-                        aria-hidden="true"
-                        style="position: fixed; display: block; left: 0px; top: 0px; z-index: -9999; visibility: hidden; pointer-events: none; font-size: 0px; word-break: keep-all; white-space: nowrap;"
-                      >
-                        lg
-                      </span>
-                      <span
-                        aria-hidden="true"
-                        style="position: fixed; display: block; left: 0px; top: 0px; z-index: -9999; visibility: hidden; pointer-events: none; font-size: 0px; width: 0px; white-space: normal; margin: 0px; padding: 0px;"
-                      >
-                        <span
-                          aria-hidden="true"
-                        >
-                          ...
-                        </span>
                         <div
-                          aria-label="Copy"
-                          class="ant-typography-copy"
-                          role="button"
-                          style="border: 0px; background: transparent; padding: 0px; line-height: inherit; display: inline-block;"
-                          tabindex="0"
+                          class="result-item css-1v03opz"
+                        >
+                          <div
+                            class="css-1avyf41"
+                          >
+                            <span
+                              class="icon-wrapper"
+                            >
+                              <svg
+                                height="20"
+                                viewBox="0 0 16 16"
+                                width="20"
+                                xmlns="http://www.w3.org/2000/svg"
+                              >
+                                <path
+                                  d="M8 14.666A6.666 6.666 0 1 1 8 1.333a6.666 6.666 0 0 1 0 13.333m0-7.609L6.115 5.171l-.944.943L7.057 8 5.171 9.885l.944.943L8 8.942l1.885 1.886.944-.943L8.943 8l1.886-1.886-.944-.943z"
+                                  fill="#F66074"
+                                />
+                              </svg>
+                            </span>
+                            <span
+                              class="text-wrapper"
+                            >
+                              message
+                            </span>
+                          </div>
+                          <div
+                            class="annotation-wrapper"
+                          >
+                            annotation
+                            <a
+                              class="ant-typography css-dev-only-do-not-override-txh9fw"
+                              href="/sqle/rule/knowledge/rule a/mysql"
+                              rel="noopener noreferrer"
+                              target="_blank"
+                            >
+                              查看更多
+                            </a>
+                          </div>
+                        </div>
+                      </div>
+                    </section>
+                    <div
+                      class="css-1gd5knw"
+                    >
+                      <div
+                        class="title"
+                      >
+                        <div
+                          class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
+                        >
+                          <div
+                            class="ant-space-item"
+                            style="margin-right: 8px;"
+                          >
+                            执行异常
+                          </div>
+                          <div
+                            class="ant-space-item"
+                          >
+                            <span
+                              aria-label="info-circle"
+                              class="anticon anticon-info-circle tooltips-default-icon"
+                              role="img"
+                            >
+                              <svg
+                                aria-hidden="true"
+                                data-icon="info-circle"
+                                fill="currentColor"
+                                focusable="false"
+                                height="1em"
+                                viewBox="64 64 896 896"
+                                width="1em"
+                              >
+                                <path
+                                  d="M512 64C264.6 64 64 264.6 64 512s200.6 448 448 448 448-200.6 448-448S759.4 64 512 64zm0 820c-205.4 0-372-166.6-372-372s166.6-372 372-372 372 166.6 372 372-166.6 372-372 372z"
+                                />
+                                <path
+                                  d="M464 336a48 48 0 1096 0 48 48 0 10-96 0zm72 112h-48c-4.4 0-8 3.6-8 8v272c0 4.4 3.6 8 8 8h48c4.4 0 8-3.6 8-8V456c0-4.4-3.6-8-8-8z"
+                                />
+                              </svg>
+                            </span>
+                          </div>
+                        </div>
+                      </div>
+                      <div
+                        class="exception-item"
+                      >
+                        <div
+                          class="exception-item-rule-desc-wrapper"
                         >
                           <span
-                            aria-label="copy"
-                            class="anticon anticon-copy"
-                            role="img"
+                            class="exception-item-rule-desc-icon"
                           >
                             <svg
-                              aria-hidden="true"
-                              data-icon="copy"
-                              fill="currentColor"
-                              focusable="false"
-                              height="1em"
-                              viewBox="64 64 896 896"
-                              width="1em"
+                              fill="none"
+                              height="20"
+                              viewBox="0 0 16 16"
+                              width="20"
+                              xmlns="http://www.w3.org/2000/svg"
                             >
                               <path
-                                d="M832 64H296c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h496v688c0 4.4 3.6 8 8 8h56c4.4 0 8-3.6 8-8V96c0-17.7-14.3-32-32-32zM704 192H192c-17.7 0-32 14.3-32 32v530.7c0 8.5 3.4 16.6 9.4 22.6l173.3 173.3c2.2 2.2 4.7 4 7.4 5.5v1.9h4.2c3.5 1.3 7.2 2 11 2H704c17.7 0 32-14.3 32-32V224c0-17.7-14.3-32-32-32zM350 856.2L263.9 770H350v86.2zM664 888H414V746c0-22.1-17.9-40-40-40H232V264h432v624z"
+                                d="m8.577 2 6.35 11a.667.667 0 0 1-.577 1H1.648a.667.667 0 0 1-.577-1l6.35-11a.667.667 0 0 1 1.156 0m-1.244 8.667V12h1.333v-1.333zm0-4.667v3.334h1.333V6z"
+                                fill="#EBAD1C"
                               />
                             </svg>
                           </span>
+                          <span
+                            class="exception-item-rule-desc-text"
+                          >
+                            rule b
+                          </span>
                         </div>
-                      </span>
+                        <div
+                          aria-label="message"
+                          class="ant-typography ant-typography-ellipsis ant-typography-single-line exception-item-message-wrapper basic-typography-ellipsis css-wgj5gs css-dev-only-do-not-override-txh9fw"
+                        >
+                          message
+                          <div
+                            aria-label="Copy"
+                            class="ant-typography-copy"
+                            role="button"
+                            style="border: 0px; background: transparent; padding: 0px; line-height: inherit; display: inline-block;"
+                            tabindex="0"
+                          >
+                            <span
+                              aria-label="copy"
+                              class="anticon anticon-copy"
+                              role="img"
+                            >
+                              <svg
+                                aria-hidden="true"
+                                data-icon="copy"
+                                fill="currentColor"
+                                focusable="false"
+                                height="1em"
+                                viewBox="64 64 896 896"
+                                width="1em"
+                              >
+                                <path
+                                  d="M832 64H296c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h496v688c0 4.4 3.6 8 8 8h56c4.4 0 8-3.6 8-8V96c0-17.7-14.3-32-32-32zM704 192H192c-17.7 0-32 14.3-32 32v530.7c0 8.5 3.4 16.6 9.4 22.6l173.3 173.3c2.2 2.2 4.7 4 7.4 5.5v1.9h4.2c3.5 1.3 7.2 2 11 2H704c17.7 0 32-14.3 32-32V224c0-17.7-14.3-32-32-32zM350 856.2L263.9 770H350v86.2zM664 888H414V746c0-22.1-17.9-40-40-40H232V264h432v624z"
+                                />
+                              </svg>
+                            </span>
+                          </div>
+                          <span
+                            aria-hidden="true"
+                            style="position: fixed; display: block; left: 0px; top: 0px; z-index: -9999; visibility: hidden; pointer-events: none; font-size: 0px; word-break: keep-all; white-space: nowrap;"
+                          >
+                            lg
+                          </span>
+                          <span
+                            aria-hidden="true"
+                            style="position: fixed; display: block; left: 0px; top: 0px; z-index: -9999; visibility: hidden; pointer-events: none; font-size: 0px; width: 0px; white-space: normal; margin: 0px; padding: 0px;"
+                          >
+                            <span
+                              aria-hidden="true"
+                            >
+                              ...
+                            </span>
+                            <div
+                              aria-label="Copy"
+                              class="ant-typography-copy"
+                              role="button"
+                              style="border: 0px; background: transparent; padding: 0px; line-height: inherit; display: inline-block;"
+                              tabindex="0"
+                            >
+                              <span
+                                aria-label="copy"
+                                class="anticon anticon-copy"
+                                role="img"
+                              >
+                                <svg
+                                  aria-hidden="true"
+                                  data-icon="copy"
+                                  fill="currentColor"
+                                  focusable="false"
+                                  height="1em"
+                                  viewBox="64 64 896 896"
+                                  width="1em"
+                                >
+                                  <path
+                                    d="M832 64H296c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h496v688c0 4.4 3.6 8 8 8h56c4.4 0 8-3.6 8-8V96c0-17.7-14.3-32-32-32zM704 192H192c-17.7 0-32 14.3-32 32v530.7c0 8.5 3.4 16.6 9.4 22.6l173.3 173.3c2.2 2.2 4.7 4 7.4 5.5v1.9h4.2c3.5 1.3 7.2 2 11 2H704c17.7 0 32-14.3 32-32V224c0-17.7-14.3-32-32-32zM350 856.2L263.9 770H350v86.2zM664 888H414V746c0-22.1-17.9-40-40-40H232V264h432v624z"
+                                  />
+                                </svg>
+                              </span>
+                            </div>
+                          </span>
+                        </div>
+                      </div>
                     </div>
                   </div>
                 </div>

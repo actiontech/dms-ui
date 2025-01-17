@@ -63,26 +63,43 @@ export const AuditResultExceptionStyleWrapper = styled('div')`
     font-size: 14px !important;
     font-weight: 600;
     line-height: 28px;
-    padding: 24px 0;
+    padding: 24px 0 16px;
     color: ${({ theme }) => theme.sharedTheme.uiToken.colorText};
   }
 
   .exception-item {
-    display: flex;
     background: ${({ theme }) => theme.sharedTheme.uiToken.colorFillTertiary};
     border: 1px solid ${({ theme }) => theme.sharedTheme.basic.colorGrayLine};
     border-radius: 4px;
     padding: 8px 12px;
     margin-bottom: 4px;
 
-    .exception-item-icon {
-      width: 20px;
-      height: 20px;
+    .exception-item-rule-desc-wrapper {
+      display: flex;
+
+      .exception-item-rule-desc-icon {
+        width: 20px;
+        height: 20px;
+      }
+
+      .exception-item-rule-desc-text {
+        flex: 1;
+        color: ${({ theme }) => theme.sharedTheme.uiToken.colorText};
+        margin-left: 12px;
+        font-size: 13px;
+        font-weight: 400;
+        line-height: 20px;
+      }
     }
 
-    .exception-item-text {
-      width: 95%;
-      margin-left: 12px;
+    .exception-item-message-wrapper {
+      width: 100%;
+      margin-bottom: 0;
+      color: ${({ theme }) => theme.sharedTheme.uiToken.colorTextTertiary};
+      font-size: 12px;
+      font-weight: 400;
+      padding-left: 32px;
+      margin-top: 8px;
     }
 
     &:last-child {

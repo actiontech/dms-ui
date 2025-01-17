@@ -48,7 +48,8 @@ export default {
     submit: {
       buttonText: '提交工单',
       onlySupportDDLSqls: '仅支持对DQL语句创建导出工单',
-      hasExceptionRule: '当前存在审核规则未被校验，请排除问题后重新触发审核'
+      hasExceptionRule: '当前存在审核规则未被校验，请排除问题后重新触发审核',
+      continueSubmission: '仍要创建'
     },
     update: {
       baseTitle: '工单基本信息',

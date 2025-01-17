@@ -1,9 +1,9 @@
 import ReportDrawer from '..';
-
 import { renderWithTheme } from '../../../testUtils/customRender';
 import { DetailReportDrawerProps } from '../index.type';
-import { cleanup } from '@testing-library/react';
+import { cleanup, screen } from '@testing-library/react';
 import { mockUseCurrentUser } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentUser';
+import { RuleResV1LevelEnum } from '@actiontech/shared/lib/api/sqle/service/common.enum';
 
 describe('sqle/components/ReportDrawer', () => {
   const customRender = (params: DetailReportDrawerProps) => {
@@ -53,7 +53,7 @@ describe('sqle/components/ReportDrawer', () => {
           {
             rule_name: 'rule a',
             message: 'message',
-            level: 'error',
+            level: RuleResV1LevelEnum.error,
             annotation: 'annotation',
             db_type: 'mysql'
           }
@@ -79,7 +79,7 @@ describe('sqle/components/ReportDrawer', () => {
           {
             rule_name: 'rule a',
             message: 'message',
-            level: 'warn',
+            level: RuleResV1LevelEnum.warn,
             annotation: 'annotation',
             db_type: 'mysql'
           }
@@ -105,7 +105,7 @@ describe('sqle/components/ReportDrawer', () => {
           {
             rule_name: 'rule a',
             message: 'message',
-            level: 'normal',
+            level: RuleResV1LevelEnum.normal,
             annotation: 'annotation',
             db_type: 'mysql'
           }
@@ -131,7 +131,7 @@ describe('sqle/components/ReportDrawer', () => {
           {
             rule_name: 'rule a',
             message: 'message1',
-            level: 'warn',
+            level: RuleResV1LevelEnum.warn,
             annotation: 'annotation',
             db_type: 'mysql',
             isRuleDeleted: true
@@ -139,7 +139,7 @@ describe('sqle/components/ReportDrawer', () => {
           {
             rule_name: 'rule b',
             message: 'message2',
-            level: 'error',
+            level: RuleResV1LevelEnum.error,
             annotation: 'annotation',
             db_type: 'mysql'
           }
@@ -163,7 +163,7 @@ describe('sqle/components/ReportDrawer', () => {
           {
             rule_name: 'rule a',
             message: 'message',
-            level: 'error',
+            level: RuleResV1LevelEnum.error,
             annotation: 'annotation',
             db_type: 'mysql'
           }
@@ -175,7 +175,7 @@ describe('sqle/components/ReportDrawer', () => {
     expect(baseElement).toMatchSnapshot();
   });
 
-  it.only('render snap when audit rule is exception', () => {
+  it('render snap when audit rule is exception', () => {
     const { baseElement } = customRender({
       open: true,
       title: 'this is a title',
@@ -187,6 +187,15 @@ describe('sqle/components/ReportDrawer', () => {
         auditResult: [
           {
             rule_name: 'rule a',
+            desc: 'rule a',
+            message: 'message',
+            level: RuleResV1LevelEnum.error,
+            annotation: 'annotation',
+            db_type: 'mysql'
+          },
+          {
+            rule_name: 'rule b',
+            desc: 'rule b',
             message: 'message',
             level: 'audit_execution_error',
             annotation: 'annotation',
@@ -198,5 +207,32 @@ describe('sqle/components/ReportDrawer', () => {
       extra: <div>extra</div>
     });
     expect(baseElement).toMatchSnapshot();
+  });
+
+  it('should hidden audit result when rule level is only exist audit_execution_error', () => {
+    customRender({
+      open: true,
+      title: 'this is a title',
+      showAnnotation: true,
+      data: {
+        sql: 'select 1',
+        sqlSourceFile: 'file_source',
+        sqlStartLine: 3,
+        auditResult: [
+          {
+            rule_name: 'rule b',
+            desc: 'rule b',
+            message: 'message',
+            level: 'audit_execution_error',
+            annotation: 'annotation',
+            db_type: 'mysql'
+          }
+        ]
+      },
+      onClose: jest.fn(),
+      extra: <div>extra</div>
+    });
+
+    expect(screen.queryByText('审核结果')).not.toBeInTheDocument();
   });
 });
