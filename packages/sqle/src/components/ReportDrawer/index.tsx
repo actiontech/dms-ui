@@ -43,7 +43,6 @@ const ReportDrawer = ({
   const closeModal = () => {
     onClose();
   };
-
   const { auditResultWithNormalLevel, auditResultWithAuditException } =
     useMemo(() => {
       const normalLevel: IAuditResultItem[] = [];
@@ -51,7 +50,7 @@ const ReportDrawer = ({
       (data?.auditResult ?? []).forEach((item) => {
         if (Object.keys(RuleResV1LevelEnum).includes(item.level ?? '')) {
           normalLevel.push(item);
-        } else if (item.level === 'audit_execution_error') {
+        } else if ((item.level as string) === 'audit_execution_error') {
           exceptionResult.push(item);
         }
       });
@@ -82,17 +81,32 @@ const ReportDrawer = ({
       >
         <AuditReportStyleWrapper className="audit-report-wrapper">
           <Spin spinning={loading}>
-            <section className="wrapper-item">
-              <Typography.Title level={3}>
-                {t('auditPlan.report.drawer.subTitle.result')}
-              </Typography.Title>
-              <div className="wrapper-cont">
-                {resultDataIsEmpty ? (
-                  <AuditResultMessage styleClass="result-item" />
-                ) : (
-                  auditResultWithNormalLevel.map(
-                    (item: IAuditResultItem, index: number) => {
-                      if (!showAnnotation || item.isRuleDeleted) {
+            <EmptyBox if={auditResultWithNormalLevel.length > 0}>
+              <section className="wrapper-item">
+                <Typography.Title level={3}>
+                  {t('auditPlan.report.drawer.subTitle.result')}
+                </Typography.Title>
+                <div className="wrapper-cont">
+                  {resultDataIsEmpty ? (
+                    <AuditResultMessage styleClass="result-item" />
+                  ) : (
+                    auditResultWithNormalLevel.map(
+                      (item: IAuditResultItem, index: number) => {
+                        if (!showAnnotation || item.isRuleDeleted) {
+                          return (
+                            <AuditResultMessage
+                              styleClass="result-item"
+                              key={`${item.rule_name ?? ''}${
+                                item.message ?? ''
+                              }-${index}`}
+                              auditResult={{
+                                level: item?.level ?? '',
+                                message: item?.message ?? ''
+                              }}
+                              isRuleDeleted={item.isRuleDeleted}
+                            />
+                          );
+                        }
                         return (
                           <AuditResultMessage
                             styleClass="result-item"
@@ -101,67 +115,67 @@ const ReportDrawer = ({
                             }-${index}`}
                             auditResult={{
                               level: item?.level ?? '',
-                              message: item?.message ?? ''
+                              message: item?.message ?? '',
+                              annotation: item.annotation ?? ''
                             }}
-                            isRuleDeleted={item.isRuleDeleted}
+                            showAnnotation
+                            moreBtnLink={
+                              item?.rule_name && item?.db_type
+                                ? parse2ReactRouterPath(
+                                    ROUTE_PATHS.SQLE.RULE_KNOWLEDGE.index,
+                                    {
+                                      params: {
+                                        ruleName: item.rule_name ?? '',
+                                        dbType: item.db_type ?? ''
+                                      }
+                                    }
+                                  )
+                                : ''
+                            }
                           />
                         );
                       }
-                      return (
-                        <AuditResultMessage
-                          styleClass="result-item"
-                          key={`${item.rule_name ?? ''}${
-                            item.message ?? ''
-                          }-${index}`}
-                          auditResult={{
-                            level: item?.level ?? '',
-                            message: item?.message ?? '',
-                            annotation: item.annotation ?? ''
-                          }}
-                          showAnnotation
-                          moreBtnLink={
-                            item?.rule_name && item?.db_type
-                              ? parse2ReactRouterPath(
-                                  ROUTE_PATHS.SQLE.RULE_KNOWLEDGE.index,
-                                  {
-                                    params: {
-                                      ruleName: item.rule_name ?? '',
-                                      dbType: item.db_type ?? ''
-                                    }
-                                  }
-                                )
-                              : ''
-                          }
-                        />
-                      );
-                    }
-                  )
-                )}
-              </div>
-            </section>
-          </Spin>
+                    )
+                  )}
+                </div>
+              </section>
+            </EmptyBox>
 
-          <EmptyBox if={auditResultWithAuditException.length > 0}>
-            <AuditResultExceptionStyleWrapper>
-              <div className="title">
-                {t('auditPlan.report.drawer.subTitle.exception')}
-              </div>
-              {auditResultWithAuditException.map((item, index) => {
-                return (
-                  <div
-                    className="exception-item"
-                    key={`${item.rule_name}-${index}`}
+            <EmptyBox if={auditResultWithAuditException.length > 0}>
+              <AuditResultExceptionStyleWrapper>
+                <div className="title">
+                  <BasicToolTip
+                    title={t('auditPlan.report.drawer.subTitle.exceptionTips')}
+                    suffixIcon
                   >
-                    <WarningFilled width={20} height={20} />
-                    <BasicTypographyEllipsis
-                      className="exception-item-text"
-                      textCont={item.message ?? ''}
-                    />
-                  </div>
-                );
-              })}
-            </AuditResultExceptionStyleWrapper>
-          </EmptyBox>
+                    {t('auditPlan.report.drawer.subTitle.exception')}
+                  </BasicToolTip>
+                </div>
+                {auditResultWithAuditException.map((item, index) => {
+                  return (
+                    <div
+                      className="exception-item"
+                      key={`${item.rule_name}-${index}`}
+                    >
+                      <div className="exception-item-rule-desc-wrapper">
+                        <span className="exception-item-rule-desc-icon">
+                          <WarningFilled width={20} height={20} />
+                        </span>
+                        <span className="exception-item-rule-desc-text">
+                          {item.desc}
+                        </span>
+                      </div>
+
+                      <BasicTypographyEllipsis
+                        className="exception-item-message-wrapper"
+                        textCont={item.message ?? ''}
+                      />
+                    </div>
+                  );
+                })}
+              </AuditResultExceptionStyleWrapper>
+            </EmptyBox>
+          </Spin>
 
           <section className="wrapper-item">
             <div className="title-wrap">

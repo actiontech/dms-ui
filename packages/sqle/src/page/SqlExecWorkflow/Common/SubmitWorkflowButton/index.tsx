@@ -16,13 +16,16 @@ const SubmitWorkflowButton: React.FC<SubmitWorkflowButtonProps> = ({
     return (
       <ActionButton
         danger
-        disabled
-        actionType="tooltip"
+        loading={loading}
         icon={<InfoHexagonOutlined color="currentColor" height={20} />}
-        tooltip={{
-          title: t('execWorkflow.create.auditResult.submitTooltipTitle')
-        }}
         text={t('execWorkflow.create.auditResult.submit')}
+        actionType="confirm"
+        confirm={{
+          title: t('execWorkflow.create.auditResult.submitTooltipTitle'),
+          okText: t('execWorkflow.create.auditResult.continueSubmission'),
+          onConfirm: onClick,
+          okButtonProps: { loading }
+        }}
       />
     );
   }
