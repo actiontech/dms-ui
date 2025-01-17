@@ -15,13 +15,16 @@ const SubmitWorkflowButton: React.FC<SubmitWorkflowButtonProps> = ({
     return (
       <ActionButton
         danger
-        disabled
-        actionType="tooltip"
+        loading={loading}
         icon={<InfoHexagonOutlined color="currentColor" height={20} />}
-        tooltip={{
-          title: t('dmsDataExport.create.submit.hasExceptionRule')
-        }}
         text={t('dmsDataExport.create.submit.buttonText')}
+        actionType="confirm"
+        confirm={{
+          title: t('dmsDataExport.create.submit.hasExceptionRule'),
+          okText: t('dmsDataExport.create.submit.continueSubmission'),
+          onConfirm: onClick,
+          okButtonProps: { loading }
+        }}
       />
     );
   }

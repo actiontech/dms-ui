@@ -57,7 +57,7 @@ describe('test SubmitWorkflowButton', () => {
     expect(onClick).not.toHaveBeenCalled();
   });
 
-  it('displays the tooltip message when hasExceptionAuditRule is equal true', async () => {
+  it('displays the confirm message when hasExceptionAuditRule is equal true', async () => {
     const onClick = jest.fn();
 
     superRender(
@@ -77,5 +77,8 @@ describe('test SubmitWorkflowButton', () => {
     await screen.findByText(
       '当前存在审核规则未被校验，请排除问题后重新触发审核'
     );
+
+    fireEvent.click(screen.getByText('仍要创建'));
+    expect(onClick).toHaveBeenCalledTimes(1);
   });
 });
