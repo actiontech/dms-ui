@@ -9,8 +9,8 @@ import { Progress, Typography } from 'antd';
 import { useTranslation } from 'react-i18next';
 import useThemeStyleData from '../../../../../hooks/useThemeStyleData';
 import { useGetLevelData } from '../../../hooks/useGetLevelData';
-import moment from 'moment';
 import { ClockCircleOutlined } from '@actiontech/icons';
+import { formatTime } from '@actiontech/shared/lib/utils/Common';
 
 const WorkflowTemplateAuthInfo: React.FC<WorkflowTemplateAuthInfoProps> = ({
   level,
@@ -60,9 +60,7 @@ const WorkflowTemplateAuthInfo: React.FC<WorkflowTemplateAuthInfoProps> = ({
         </Typography.Text>
         <Typography.Paragraph className="auth-info-item auth-info-time">
           <ClockCircleOutlined />
-          <span className="update-time">
-            {time ? moment(time).format('YYYY-MM-DD HH:mm:ss') : '-'}
-          </span>
+          <span className="update-time">{time ? formatTime(time) : '-'}</span>
         </Typography.Paragraph>
       </WorkflowTemplateAuthInfoStyleWrapper>
     </WorkflowTemplateDetailRightContentStyleWrapper>
