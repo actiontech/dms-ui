@@ -1003,7 +1003,7 @@ exports[`test SqlManagementIssuePush should render the component and display ini
                   <span
                     class="ant-descriptions-item-content"
                   >
-                    0001-01-01 08:05:43
+                    1-01-01 08:05:43
                   </span>
                 </div>
               </td>
