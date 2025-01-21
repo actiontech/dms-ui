@@ -1,8 +1,7 @@
 import { AxiosResponse } from 'axios';
-import moment from 'moment';
 import i18n from 'i18next';
 import { MIMETypeEnum, ResponseBlobJsonType } from '../enum';
-import { Dayjs } from 'dayjs';
+import dayjs, { Dayjs } from 'dayjs';
 
 export const emailValidate = (email: string): boolean => {
   if (!email || typeof email !== 'string') {
@@ -47,7 +46,7 @@ export const formatTime = (
   if (!timeVal) {
     return defaultVal;
   }
-  return moment(timeVal).format('YYYY-MM-DD HH:mm:ss');
+  return dayjs(timeVal).format('YYYY-MM-DD HH:mm:ss');
 };
 
 export function translateTimeForRequest(time: undefined): undefined;
