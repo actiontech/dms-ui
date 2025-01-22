@@ -12,3 +12,7 @@ export type ResultIconRenderProps = {
   auditResultInfo?: Array<{ level: string; executionFailed: boolean }>;
   isAuditing?: boolean;
 };
+
+export type AuditExceptionItemProps = {
+  auditExceptionResult: IAuditResult;
+};

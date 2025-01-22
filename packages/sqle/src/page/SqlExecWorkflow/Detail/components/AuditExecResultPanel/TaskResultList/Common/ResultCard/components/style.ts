@@ -33,6 +33,14 @@ export const TaskAuditResultTreeStyleWrapper = styled(Tree)`
       }
     }
 
+    .ant-tree-treenode {
+      max-width: 100%;
+
+      .ant-tree-node-content-wrapper {
+        max-width: 99%;
+      }
+    }
+
     .audit-result-tree-title {
       color: ${({ theme }) => theme.sharedTheme.uiToken.colorTextBase};
     }
