@@ -1,5 +1,10 @@
+import { screen } from '@testing-library/dom';
 import { superRender } from '../../../../testUtils/customRender';
 import rule_template from '../../../../testUtils/mockApi/rule_template';
+import {
+  AuditTaskSQLsMockDataWithExceptionRule,
+  AuditTaskSQLsMockDataWithOnlyExceptionRule
+} from '../../../../testUtils/mockApi/task/data';
 import SqlAuditResult from '../component/SqlAuditResult';
 
 describe('SqlAuditResult', () => {
@@ -94,5 +99,32 @@ describe('SqlAuditResult', () => {
     });
 
     expect(container).toMatchSnapshot();
+  });
+
+  it('should render audit exception wrapper when auditResultWithAuditException length greater than zero', () => {
+    const { container } = superRender(
+      <SqlAuditResult
+        instanceType="MySQL"
+        shouldFetchRules
+        auditResults={AuditTaskSQLsMockDataWithExceptionRule[0].audit_result!}
+      />
+    );
+
+    expect(screen.getByText('审核异常')).toBeInTheDocument();
+    expect(container).toMatchSnapshot();
+  });
+
+  it('should not render audit result when auditResultWithNormalLevel length is equal zero', () => {
+    superRender(
+      <SqlAuditResult
+        instanceType="MySQL"
+        shouldFetchRules
+        auditResults={
+          AuditTaskSQLsMockDataWithOnlyExceptionRule[0].audit_result!
+        }
+      />
+    );
+
+    expect(screen.queryByText('审核结果')).not.toBeInTheDocument();
   });
 });

@@ -60,3 +60,35 @@ export const AuditResultMessageWithAnnotationStyleWrapper = styled('div')<{
     }
   }
 `;
+
+export const AuditExceptionItemStyleWrapper = styled('div')`
+  &.exception-item {
+    .exception-item-rule-desc-wrapper {
+      display: flex;
+
+      .exception-item-rule-desc-icon {
+        width: 20px;
+        height: 20px;
+      }
+
+      .exception-item-rule-desc-text {
+        flex: 1;
+        color: ${({ theme }) => theme.sharedTheme.uiToken.colorText};
+        margin-left: 12px;
+        font-size: 13px;
+        font-weight: 400;
+        line-height: 20px;
+      }
+    }
+
+    .exception-item-message-wrapper {
+      width: 100%;
+      margin-bottom: 0;
+      color: ${({ theme }) => theme.sharedTheme.uiToken.colorTextTertiary};
+      font-size: 12px;
+      font-weight: 400;
+      padding-left: 32px;
+      margin-top: 8px;
+    }
+  }
+`;
