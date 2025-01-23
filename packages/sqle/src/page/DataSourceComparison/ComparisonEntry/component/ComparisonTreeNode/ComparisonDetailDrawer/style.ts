@@ -28,14 +28,24 @@ export const SqlAuditResultStyleWrapper = styled('div')`
   overflow-y: auto;
   max-height: 300px;
 
-  .result-item {
+  .title {
+    margin-bottom: 0;
+    font-size: 14px !important;
+    font-weight: 600;
+    line-height: 28px;
+    padding: 12px 0 10px;
+    color: ${({ theme }) => theme.sharedTheme.uiToken.colorText};
+  }
+
+  .result-item,
+  .audit-exception-wrapper .exception-item {
     background: ${({ theme }) => theme.sharedTheme.uiToken.colorFillTertiary};
     border: 1px solid ${({ theme }) => theme.sharedTheme.basic.colorGrayLine};
     border-radius: 4px;
     padding: 8px 12px;
     margin-bottom: 4px;
 
-    &:last-child {
+    &:last-of-type {
       margin-bottom: 0;
     }
   }

@@ -277,7 +277,7 @@ exports[`sqle/ExecWorkflow/AuditDetail/SqlMode render associated rollback workfl
           </div>
         </div>
         <div
-          class="ant-tree ant-tree-icon-hide ant-tree-unselectable css-1fzwdia css-dev-only-do-not-override-txh9fw ant-tree-show-line"
+          class="ant-tree ant-tree-icon-hide ant-tree-unselectable css-ks72ok css-dev-only-do-not-override-txh9fw ant-tree-show-line"
           role="tree"
         >
           <div>
@@ -733,7 +733,7 @@ exports[`sqle/ExecWorkflow/AuditDetail/SqlMode render backup strategy tip 1`] = 
           </div>
         </div>
         <div
-          class="ant-tree ant-tree-icon-hide ant-tree-unselectable css-1fzwdia css-dev-only-do-not-override-txh9fw ant-tree-show-line"
+          class="ant-tree ant-tree-icon-hide ant-tree-unselectable css-ks72ok css-dev-only-do-not-override-txh9fw ant-tree-show-line"
           role="tree"
         >
           <div>
@@ -1112,7 +1112,7 @@ exports[`sqle/ExecWorkflow/AuditDetail/SqlMode render change exec_sql & rollback
           </div>
         </div>
         <div
-          class="ant-tree ant-tree-icon-hide ant-tree-unselectable css-1fzwdia css-dev-only-do-not-override-txh9fw ant-tree-show-line"
+          class="ant-tree ant-tree-icon-hide ant-tree-unselectable css-ks72ok css-dev-only-do-not-override-txh9fw ant-tree-show-line"
           role="tree"
         >
           <div>
@@ -1553,7 +1553,7 @@ exports[`sqle/ExecWorkflow/AuditDetail/SqlMode render change exec_sql & rollback
           </div>
         </div>
         <div
-          class="ant-tree ant-tree-icon-hide ant-tree-unselectable css-1fzwdia css-dev-only-do-not-override-txh9fw ant-tree-show-line"
+          class="ant-tree ant-tree-icon-hide ant-tree-unselectable css-ks72ok css-dev-only-do-not-override-txh9fw ant-tree-show-line"
           role="tree"
         >
           <div>
@@ -1994,7 +1994,7 @@ exports[`sqle/ExecWorkflow/AuditDetail/SqlMode render change exec_sql & rollback
           </div>
         </div>
         <div
-          class="ant-tree ant-tree-icon-hide ant-tree-unselectable css-1fzwdia css-dev-only-do-not-override-txh9fw ant-tree-show-line"
+          class="ant-tree ant-tree-icon-hide ant-tree-unselectable css-ks72ok css-dev-only-do-not-override-txh9fw ant-tree-show-line"
           role="tree"
         >
           <div>
@@ -2440,7 +2440,7 @@ exports[`sqle/ExecWorkflow/AuditDetail/SqlMode render change exec_sql & rollback
           </div>
         </div>
         <div
-          class="ant-tree ant-tree-icon-hide ant-tree-unselectable css-1fzwdia css-dev-only-do-not-override-txh9fw ant-tree-show-line"
+          class="ant-tree ant-tree-icon-hide ant-tree-unselectable css-ks72ok css-dev-only-do-not-override-txh9fw ant-tree-show-line"
           role="tree"
         >
           <div>
@@ -2810,7 +2810,7 @@ exports[`sqle/ExecWorkflow/AuditDetail/SqlMode render click add desc 1`] = `
           </div>
         </div>
         <div
-          class="ant-tree ant-tree-icon-hide ant-tree-unselectable css-1fzwdia css-dev-only-do-not-override-txh9fw ant-tree-show-line"
+          class="ant-tree ant-tree-icon-hide ant-tree-unselectable css-ks72ok css-dev-only-do-not-override-txh9fw ant-tree-show-line"
           role="tree"
         >
           <div>
@@ -3180,7 +3180,7 @@ exports[`sqle/ExecWorkflow/AuditDetail/SqlMode render click add desc 2`] = `
           </div>
         </div>
         <div
-          class="ant-tree ant-tree-icon-hide ant-tree-unselectable css-1fzwdia css-dev-only-do-not-override-txh9fw ant-tree-show-line"
+          class="ant-tree ant-tree-icon-hide ant-tree-unselectable css-ks72ok css-dev-only-do-not-override-txh9fw ant-tree-show-line"
           role="tree"
         >
           <div>
@@ -3559,7 +3559,7 @@ exports[`sqle/ExecWorkflow/AuditDetail/SqlMode render click icon arrow when has 
           </div>
         </div>
         <div
-          class="ant-tree ant-tree-icon-hide ant-tree-unselectable css-1fzwdia css-dev-only-do-not-override-txh9fw ant-tree-show-line"
+          class="ant-tree ant-tree-icon-hide ant-tree-unselectable css-ks72ok css-dev-only-do-not-override-txh9fw ant-tree-show-line"
           role="tree"
         >
           <div>
@@ -3967,7 +3967,7 @@ exports[`sqle/ExecWorkflow/AuditDetail/SqlMode render click icon arrow when no c
           </div>
         </div>
         <div
-          class="ant-tree ant-tree-icon-hide ant-tree-unselectable css-1fzwdia css-dev-only-do-not-override-txh9fw ant-tree-show-line"
+          class="ant-tree ant-tree-icon-hide ant-tree-unselectable css-ks72ok css-dev-only-do-not-override-txh9fw ant-tree-show-line"
           role="tree"
         >
           <div>
@@ -4454,7 +4454,7 @@ exports[`sqle/ExecWorkflow/AuditDetail/SqlMode render has backup conflict 1`] = 
           </div>
         </div>
         <div
-          class="ant-tree ant-tree-icon-hide ant-tree-unselectable css-1fzwdia css-dev-only-do-not-override-txh9fw ant-tree-show-line"
+          class="ant-tree ant-tree-icon-hide ant-tree-unselectable css-ks72ok css-dev-only-do-not-override-txh9fw ant-tree-show-line"
           role="tree"
         >
           <div>
@@ -4943,7 +4943,7 @@ exports[`sqle/ExecWorkflow/AuditDetail/SqlMode render no sql execution result 1`
           </div>
         </div>
         <div
-          class="ant-tree ant-tree-icon-hide ant-tree-unselectable css-1fzwdia css-dev-only-do-not-override-txh9fw ant-tree-show-line"
+          class="ant-tree ant-tree-icon-hide ant-tree-unselectable css-ks72ok css-dev-only-do-not-override-txh9fw ant-tree-show-line"
           role="tree"
         >
           <div>
@@ -5431,7 +5431,7 @@ exports[`sqle/ExecWorkflow/AuditDetail/SqlMode render no sql execution result an
           </div>
         </div>
         <div
-          class="ant-tree ant-tree-icon-hide ant-tree-unselectable css-1fzwdia css-dev-only-do-not-override-txh9fw ant-tree-show-line"
+          class="ant-tree ant-tree-icon-hide ant-tree-unselectable css-ks72ok css-dev-only-do-not-override-txh9fw ant-tree-show-line"
           role="tree"
         >
           <div>
@@ -5801,7 +5801,7 @@ exports[`sqle/ExecWorkflow/AuditDetail/SqlMode render snap when data is empty 1`
           </div>
         </div>
         <div
-          class="ant-tree ant-tree-icon-hide ant-tree-unselectable css-1fzwdia css-dev-only-do-not-override-txh9fw ant-tree-show-line"
+          class="ant-tree ant-tree-icon-hide ant-tree-unselectable css-ks72ok css-dev-only-do-not-override-txh9fw ant-tree-show-line"
           role="tree"
         >
           <div>
@@ -6290,7 +6290,7 @@ exports[`sqle/ExecWorkflow/AuditDetail/SqlMode render sql execution result 1`] =
           </div>
         </div>
         <div
-          class="ant-tree ant-tree-icon-hide ant-tree-unselectable css-1fzwdia css-dev-only-do-not-override-txh9fw ant-tree-show-line"
+          class="ant-tree ant-tree-icon-hide ant-tree-unselectable css-ks72ok css-dev-only-do-not-override-txh9fw ant-tree-show-line"
           role="tree"
         >
           <div>

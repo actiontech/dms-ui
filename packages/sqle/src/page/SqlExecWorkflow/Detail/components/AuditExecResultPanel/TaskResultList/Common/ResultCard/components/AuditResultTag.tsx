@@ -14,9 +14,13 @@ import {
 
 export interface AuditResultTagProps {
   auditResult?: IAuditResult[];
+  auditExceptionResultCount?: number;
 }
 
-const AuditResultTag: React.FC<AuditResultTagProps> = ({ auditResult }) => {
+const AuditResultTag: React.FC<AuditResultTagProps> = ({
+  auditResult,
+  auditExceptionResultCount = 0
+}) => {
   const { t } = useTranslation();
 
   const noticeResult = useMemo(() => {
@@ -84,7 +88,7 @@ const AuditResultTag: React.FC<AuditResultTagProps> = ({ auditResult }) => {
             icon={<WarningFilled width={18} height={19} />}
             bordered={false}
           >
-            {warnResult.length}
+            {warnResult.length + auditExceptionResultCount}
           </BasicTag>
         ) : null}
         {errorResult.length > 0 ? (

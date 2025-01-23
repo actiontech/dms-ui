@@ -318,7 +318,7 @@ exports[`test WaterfallList/SQLExecuteMode render onUpdateDescription 1`] = `
                       </div>
                     </div>
                     <div
-                      class="ant-tree ant-tree-icon-hide ant-tree-unselectable css-1fzwdia css-dev-only-do-not-override-txh9fw ant-tree-show-line"
+                      class="ant-tree ant-tree-icon-hide ant-tree-unselectable css-ks72ok css-dev-only-do-not-override-txh9fw ant-tree-show-line"
                       role="tree"
                     >
                       <div>
@@ -818,7 +818,7 @@ exports[`test WaterfallList/SQLExecuteMode should match snapshot 2`] = `
                       </div>
                     </div>
                     <div
-                      class="ant-tree ant-tree-icon-hide ant-tree-unselectable css-1fzwdia css-dev-only-do-not-override-txh9fw ant-tree-show-line"
+                      class="ant-tree ant-tree-icon-hide ant-tree-unselectable css-ks72ok css-dev-only-do-not-override-txh9fw ant-tree-show-line"
                       role="tree"
                     >
                       <div>

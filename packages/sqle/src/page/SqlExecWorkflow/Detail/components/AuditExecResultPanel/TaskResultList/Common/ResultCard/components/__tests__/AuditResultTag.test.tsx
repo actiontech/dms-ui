@@ -1,6 +1,7 @@
 import { RuleResV1LevelEnum } from '@actiontech/shared/lib/api/sqle/service/common.enum';
 import AuditResultTag, { AuditResultTagProps } from '../AuditResultTag';
 import { superRender } from '../../../../../../../../../../testUtils/customRender';
+import { screen } from '@testing-library/dom';
 
 describe('sqle/ExecWorkflow/AuditDetail/AuditResultTag', () => {
   const customRender = (params: AuditResultTagProps = {}) => {
@@ -60,5 +61,23 @@ describe('sqle/ExecWorkflow/AuditDetail/AuditResultTag', () => {
       ]
     });
     expect(baseElement).toMatchSnapshot();
+  });
+
+  it('render auditExceptionResultCount', () => {
+    customRender({
+      auditResult: [
+        {
+          level: RuleResV1LevelEnum.warn
+        },
+        {
+          level: RuleResV1LevelEnum.warn
+        },
+        {
+          level: RuleResV1LevelEnum.error
+        }
+      ],
+      auditExceptionResultCount: 3
+    });
+    expect(screen.getByText(5)).toBeInTheDocument();
   });
 });

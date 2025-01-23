@@ -16,14 +16,11 @@ import {
 } from './style';
 import AuditResultMessage from '../AuditResultMessage';
 import { Typography, Space } from 'antd';
-import {
-  ProfileSquareFilled,
-  EnvironmentFilled,
-  WarningFilled
-} from '@actiontech/icons';
+import { ProfileSquareFilled, EnvironmentFilled } from '@actiontech/icons';
 import useThemeStyleData from '../../hooks/useThemeStyleData';
 import { Spin } from 'antd';
 import { ROUTE_PATHS } from '@actiontech/shared/lib/data/routePaths';
+import AuditExceptionItem from '../AuditResultMessage/AuditExceptionItem';
 
 const ReportDrawer = ({
   open,
@@ -150,28 +147,17 @@ const ReportDrawer = ({
                     {t('auditPlan.report.drawer.subTitle.exception')}
                   </BasicToolTip>
                 </div>
-                {auditResultWithAuditException.map((item, index) => {
-                  return (
-                    <div
-                      className="exception-item"
-                      key={`${item.rule_name}-${index}`}
-                    >
-                      <div className="exception-item-rule-desc-wrapper">
-                        <span className="exception-item-rule-desc-icon">
-                          <WarningFilled width={20} height={20} />
-                        </span>
-                        <span className="exception-item-rule-desc-text">
-                          {item.message}
-                        </span>
-                      </div>
 
-                      <BasicTypographyEllipsis
-                        className="exception-item-message-wrapper"
-                        textCont={item.error_info ?? ''}
+                <div className="audit-exception-wrapper">
+                  {auditResultWithAuditException.map((item, index) => {
+                    return (
+                      <AuditExceptionItem
+                        key={`${item.rule_name}-${index}`}
+                        auditExceptionResult={item}
                       />
-                    </div>
-                  );
-                })}
+                    );
+                  })}
+                </div>
               </AuditResultExceptionStyleWrapper>
             </EmptyBox>
           </Spin>
