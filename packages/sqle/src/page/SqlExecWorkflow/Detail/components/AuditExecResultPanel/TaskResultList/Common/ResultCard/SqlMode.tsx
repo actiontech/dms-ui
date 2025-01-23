@@ -33,6 +33,8 @@ import {
 import { WarningFilled } from '@actiontech/icons';
 import RollbackWorkflowEntry from './components/RollbackWorkflowEntry';
 import { formatterSQL } from '@actiontech/shared/lib/utils/FormatterSQL';
+import AuditExceptionTree from './components/AuditExceptionTree';
+import { IAuditResultItem } from '../../../../../../../../components/ReportDrawer/index.type';
 
 const SqlMode: React.FC<SqlExecuteResultCardProps> = ({
   projectID,
@@ -51,6 +53,23 @@ const SqlMode: React.FC<SqlExecuteResultCardProps> = ({
 
   const [currentContentKey, setCurrentContentKey] =
     useState<TaskResultContentTypeEnum>(TaskResultContentTypeEnum.exec_sql);
+
+  const { auditResultWithNormalLevel, auditResultWithAuditException } =
+    useMemo(() => {
+      const normalLevel: IAuditResultItem[] = [];
+      const exceptionResult: IAuditResultItem[] = [];
+      (props.audit_result ?? []).forEach((item) => {
+        if (item.execution_failed) {
+          exceptionResult.push(item);
+        } else {
+          normalLevel.push(item);
+        }
+      });
+      return {
+        auditResultWithAuditException: exceptionResult,
+        auditResultWithNormalLevel: normalLevel
+      };
+    }, [props?.audit_result]);
 
   const onCopyExecSql = () => {
     Copy.copyTextByTextarea(props.exec_sql ?? '');
@@ -128,7 +147,10 @@ const SqlMode: React.FC<SqlExecuteResultCardProps> = ({
               }
             />
             <Divider type="vertical" className="result-card-status-divider" />
-            <AuditResultTag auditResult={props.audit_result}></AuditResultTag>
+            <AuditResultTag
+              auditResult={auditResultWithNormalLevel}
+              auditExceptionResultCount={auditResultWithAuditException.length}
+            />
           </div>
         </Space>
         <Space>
@@ -266,7 +288,13 @@ const SqlMode: React.FC<SqlExecuteResultCardProps> = ({
             }
           />
         </div>
-        <AuditResultTree auditResult={props.audit_result} />
+        <AuditResultTree auditResult={auditResultWithNormalLevel} />
+
+        <EmptyBox if={auditResultWithAuditException.length > 0}>
+          <AuditExceptionTree
+            auditExceptionResults={auditResultWithAuditException}
+          />
+        </EmptyBox>
       </div>
       <div className="result-card-footer">
         <Spin spinning={loading}>
