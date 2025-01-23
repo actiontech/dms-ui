@@ -147,7 +147,7 @@ export default {
       action: '分析语句',
       subTitle: {
         result: '审核结果',
-        exception: '执行异常',
+        exception: '审核异常',
         exceptionTips: '请结合错误信息到sqled.log日志中检索相关信息',
         sql: 'SQL语句'
       },

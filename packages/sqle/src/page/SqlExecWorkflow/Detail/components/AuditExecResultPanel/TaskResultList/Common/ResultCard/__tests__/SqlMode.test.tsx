@@ -13,6 +13,7 @@ import rule_template from '../../../../../../../../../testUtils/mockApi/rule_tem
 import { mockUseCurrentUser } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentUser';
 import { AuditTaskSQLResV2BackupStrategyEnum } from '@actiontech/shared/lib/api/sqle/service/common.enum';
 import { AuditTaskResV1StatusEnum } from '@actiontech/shared/lib/api/sqle/service/common.enum';
+import { AuditTaskSQLsMockDataWithExceptionRule } from '../../../../../../../../../testUtils/mockApi/task/data';
 
 const projectID = '700300';
 const taskId = 'task_id_1234';
@@ -285,5 +286,27 @@ describe('sqle/ExecWorkflow/AuditDetail/SqlMode', () => {
       screen.queryByText('回滚语句将在上线阶段自动生成')
     ).not.toBeInTheDocument();
     expect(baseElement).toMatchSnapshot();
+  });
+
+  it.only('render audit exception wrapper when audit_result exists exception rule', () => {
+    customRender({
+      number: 1,
+      exec_sql: 'exec_sql cont',
+      rollback_sqls: ['rollback_sql cont'],
+      backup_strategy_tip: 'test tips',
+      backup_strategy: AuditTaskSQLResV2BackupStrategyEnum.reverse_sql,
+      associated_rollback_workflows: [
+        {
+          workflow_name: 'test_workflow_name',
+          workflow_id: '1'
+        }
+      ],
+      backup_result: '',
+      enableBackup: true,
+      taskStatus: AuditTaskResV1StatusEnum.exec_failed,
+      audit_result: AuditTaskSQLsMockDataWithExceptionRule[0].audit_result
+    });
+
+    expect(screen.getByText('审核异常')).toBeInTheDocument();
   });
 });

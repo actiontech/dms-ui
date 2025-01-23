@@ -5,6 +5,13 @@ import { SqlAuditResultStyleWrapper } from '../ComparisonTreeNode/ComparisonDeta
 import useAuditResultRuleInfo from '../../../../../components/ReportDrawer/useAuditResultRuleInfo';
 import { useTranslation } from 'react-i18next';
 import { Result, Spin } from 'antd';
+import {
+  BasicToolTip,
+  EmptyBox,
+  parse2ReactRouterPath
+} from '@actiontech/shared';
+import AuditExceptionItem from '../../../../../components/AuditResultMessage/AuditExceptionItem';
+import { ROUTE_PATHS } from '@actiontech/shared/lib/data/routePaths';
 
 type Props = {
   auditResults: IAuditResultItem[];
@@ -27,8 +34,25 @@ const AuditResult: React.FC<Props> = ({
     );
   }, [auditResults]);
 
+  const { auditResultWithNormalLevel, auditResultWithAuditException } =
+    useMemo(() => {
+      const normalLevel: IAuditResultItem[] = [];
+      const exceptionResult: IAuditResultItem[] = [];
+      (auditResults ?? []).forEach((item) => {
+        if (item.execution_failed) {
+          exceptionResult.push(item);
+        } else {
+          normalLevel.push(item);
+        }
+      });
+      return {
+        auditResultWithAuditException: exceptionResult,
+        auditResultWithNormalLevel: normalLevel
+      };
+    }, [auditResults]);
+
   const { auditResultRuleInfo, loading } = useAuditResultRuleInfo(
-    auditResults ?? [],
+    auditResultWithNormalLevel,
     instanceType,
     shouldFetchRules && !auditError
   );
@@ -50,8 +74,11 @@ const AuditResult: React.FC<Props> = ({
   return (
     <Spin spinning={loading} delay={300}>
       <SqlAuditResultStyleWrapper>
-        {(auditResultRuleInfo ?? [])?.map(
-          (item: IAuditResultItem, index: number) => {
+        <EmptyBox if={auditResultWithNormalLevel.length > 0}>
+          <div className="title">
+            {t('dataSourceComparison.entry.comparisonDetail.auditResult')}
+          </div>
+          {auditResultRuleInfo.map((item, index) => {
             if (item.isRuleDeleted) {
               return (
                 <AuditResultMessage
@@ -77,13 +104,45 @@ const AuditResult: React.FC<Props> = ({
                 showAnnotation
                 moreBtnLink={
                   item?.rule_name && item?.db_type
-                    ? `/sqle/rule/knowledge/${item?.rule_name}/${item?.db_type}`
+                    ? parse2ReactRouterPath(
+                        ROUTE_PATHS.SQLE.RULE_KNOWLEDGE.index,
+                        {
+                          params: {
+                            ruleName: item.rule_name ?? '',
+                            dbType: item.db_type ?? ''
+                          }
+                        }
+                      )
                     : ''
                 }
               />
             );
-          }
-        )}
+          })}
+        </EmptyBox>
+
+        <EmptyBox if={auditResultWithAuditException.length > 0}>
+          <div className="title">
+            <BasicToolTip
+              title={t(
+                'dataSourceComparison.entry.comparisonDetail.exceptionTips'
+              )}
+              suffixIcon
+            >
+              {t('dataSourceComparison.entry.comparisonDetail.exception')}
+            </BasicToolTip>
+          </div>
+
+          <div className="audit-exception-wrapper">
+            {auditResultWithAuditException.map((item, index) => {
+              return (
+                <AuditExceptionItem
+                  key={`${item.rule_name}-${index}`}
+                  auditExceptionResult={item}
+                />
+              );
+            })}
+          </div>
+        </EmptyBox>
       </SqlAuditResultStyleWrapper>
     </Spin>
   );
