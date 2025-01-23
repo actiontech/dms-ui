@@ -2812,6 +2812,8 @@ export interface ISQLAuditResult {
 export interface ISQLExplain {
   classic_result?: IExplainClassicResult;
 
+  cost?: number;
+
   err_message?: string;
 
   sql?: string;
