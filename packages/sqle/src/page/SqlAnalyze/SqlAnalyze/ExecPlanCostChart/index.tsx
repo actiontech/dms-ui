@@ -1,4 +1,4 @@
-import { Space, Button, Spin } from 'antd';
+import { Space, Spin } from 'antd';
 import { BasicSegmented, BasicRangePicker } from '@actiontech/shared';
 import { Line, LineConfig, Tooltip } from '@ant-design/plots';
 import useThemeStyleData from '../../../../hooks/useThemeStyleData';
@@ -15,6 +15,7 @@ import ChartWrapper from '../../../../components/ChartCom/ChartWrapper';
 import { formatTime } from '@actiontech/shared/lib/utils/Common';
 import { t } from '../../../../locale/index';
 import { useChangeTheme } from '@actiontech/shared/lib/features';
+import { CompareExecutionPlanButtonStyleWrapper } from './style';
 
 const renderTooltipFormatter: Tooltip['formatter'] = (item) => {
   return {
@@ -38,15 +39,17 @@ const renderTooltipCustomContent = (
       }}
       listData={[
         {
-          label: t('sqlQuery.executePlan.costValue'),
+          label: t('sqlQuery.executePlan.cost'),
           value: data.y
         },
         {
           label: '',
           value: (
-            <Button size="small" onClick={() => setHistoryExecPlan(data)}>
+            <CompareExecutionPlanButtonStyleWrapper
+              onClick={() => setHistoryExecPlan(data)}
+            >
               {t('sqlQuery.executePlan.compareDifference')}
-            </Button>
+            </CompareExecutionPlanButtonStyleWrapper>
           )
         }
       ]}
@@ -77,6 +80,8 @@ const ExecPlanCostChart: React.FC<ExecPlanCostChartProps> = ({
   const [timePeriod, setTimePeriod] = useState<DateRangeEnum>(
     DateRangeEnum['24H']
   );
+
+  // const [annotations, setAnnotations] = useState<IChartPoint[]>([]);
 
   const { data, minPoint, maxPoint, exceptUndefinedDataSource } =
     useMemo(() => {
@@ -110,115 +115,116 @@ const ExecPlanCostChart: React.FC<ExecPlanCostChartProps> = ({
       };
     }, [sqlExecPlanCostDataSource]);
 
-  const dataMarkerCommonSetting = {
-    type: 'dataMarker',
-    text: {
-      content: '',
-      style: {
-        textAlign: 'left'
-      }
-    },
-    point: {
-      style: {
-        fill: sharedTheme.basic.colorWhite,
-        stroke: sharedTheme.uiToken.colorPrimary
-      }
-    },
-    autoAdjust: false
-  };
-
-  const config: LineConfig = {
-    data,
-    xField: 'x',
-    yField: 'y',
-    xAxis: {
-      nice: true
-    },
-    point: {
-      style: {
-        fill: sharedTheme.basic.colorWhite,
-        stroke: sharedTheme.uiToken.colorPrimary
-      }
-    },
-    slider: {
-      start: 0,
-      end: 1
-    },
-    appendPadding: 20,
-    annotations: [
-      // todo 平均值和平均线 本期不需要展示 代码暂时保留
-      // {
-      //   type: 'line',
-      //   start: ['min', averageValue],
-      //   end: ['max', averageValue],
-      //   style: {
-      //     stroke: sharedTheme.uiToken.colorPrimary,
-      //     lineWidth: 2,
-      //     lineDash: [5, 5]
-      //   }
-      // },
-      // {
-      //   type: 'text',
-      //   position: ['max', averageValue],
-      //   content: averageValue,
-      //   offsetY: -10,
-      //   style: {
-      //     fill: sharedTheme.uiToken.colorPrimary,
-      //     fontSize: 12
-      //   }
-      // },
-      {
-        type: 'text',
-        content: renderAnnotationsContent(maxPoint?.y ?? 0),
-        position: renderAnnotationsPosition(maxPoint) as [string, number],
+  const config: LineConfig = useMemo(() => {
+    return {
+      data,
+      xField: 'x',
+      yField: 'y',
+      xAxis: {
+        nice: true
+      },
+      point: {
         style: {
-          textAlign: 'center',
-          fill: sharedTheme.basic.colorWhite
+          fill: sharedTheme.basic.colorWhite,
+          stroke: sharedTheme.uiToken.colorPrimary
         },
-        offsetY: -16,
-        background: {
-          padding: 4,
+        size: 4
+      },
+      slider: {
+        start: 0,
+        end: 1
+      },
+      appendPadding: 20,
+      annotations: [
+        // todo 平均值和平均线 本期不需要展示 代码暂时保留
+        // {
+        //   type: 'line',
+        //   start: ['min', averageValue],
+        //   end: ['max', averageValue],
+        //   style: {
+        //     stroke: sharedTheme.uiToken.colorPrimary,
+        //     lineWidth: 2,
+        //     lineDash: [5, 5]
+        //   }
+        // },
+        // {
+        //   type: 'text',
+        //   position: ['max', averageValue],
+        //   content: averageValue,
+        //   offsetY: -10,
+        //   style: {
+        //     fill: sharedTheme.uiToken.colorPrimary,
+        //     fontSize: 12
+        //   }
+        // },
+        // todo 可以任意对比两个时间点的Cost 产品交互尚未完善 暂时注释相关代码
+        // {
+        //   type: 'line',
+        //   start: [annotations?.[0]?.x ?? '', 'min'],
+        //   end: [annotations?.[0]?.x ?? '', 'max'],
+        //   style: {
+        //     stroke: sharedTheme.basic.colorDangerousActive,
+        //     lineWidth: 2
+        //   }
+        // },
+        // {
+        //   type: 'line',
+        //   start: [annotations?.[1]?.x ?? '', 'min'],
+        //   end: [annotations?.[1]?.x ?? '', 'max'],
+        //   style: {
+        //     stroke: sharedTheme.basic.colorDangerousActive,
+        //     lineWidth: 2
+        //   }
+        // },
+        {
+          type: 'text',
+          content: renderAnnotationsContent(maxPoint?.y ?? 0),
+          position: renderAnnotationsPosition(maxPoint) as [string, number],
           style: {
-            radius: 4,
-            fill: sharedTheme.uiToken.colorPrimary
+            textAlign: 'center',
+            fill: sharedTheme.basic.colorWhite
+          },
+          offsetY: -16,
+          background: {
+            padding: 4,
+            style: {
+              radius: 4,
+              fill: sharedTheme.uiToken.colorPrimary
+            }
+          }
+        },
+        {
+          type: 'text',
+          content: renderAnnotationsContent(minPoint?.y ?? 0),
+          position: renderAnnotationsPosition(minPoint) as [string, number],
+          style: {
+            textAlign: 'center',
+            fill: sharedTheme.basic.colorWhite
+          },
+          offsetY: -16,
+          background: {
+            padding: 4,
+            style: {
+              radius: 4,
+              fill: sharedTheme.uiToken.colorPrimary
+            }
           }
         }
-      },
-      {
-        position: [maxPoint?.x ?? '', maxPoint?.y ?? 0],
-        ...dataMarkerCommonSetting
-      },
-      {
-        type: 'text',
-        content: renderAnnotationsContent(minPoint?.y ?? 0),
-        position: renderAnnotationsPosition(minPoint) as [string, number],
-        style: {
-          textAlign: 'center',
-          fill: sharedTheme.basic.colorWhite
-        },
-        offsetY: -16,
-        background: {
-          padding: 4,
-          style: {
-            radius: 4,
-            fill: sharedTheme.uiToken.colorPrimary
-          }
-        }
-      },
-      {
-        position: [minPoint?.x ?? '', minPoint?.y ?? 0],
-        ...dataMarkerCommonSetting
+      ],
+      tooltip: {
+        fields: ['created_time', 'cost', 'id'],
+        enterable: true,
+        follow: true,
+        formatter: renderTooltipFormatter,
+        customContent: (title: string, dataSource: any[]) =>
+          renderTooltipCustomContent(
+            dataSource,
+            sharedTheme,
+            setHistoryExecPlan
+          )
       }
-    ],
-    tooltip: {
-      fields: ['created_time', 'cost', 'id'],
-      enterable: true,
-      follow: true,
-      formatter: renderTooltipFormatter,
-      customContent: (title: string, dataSource: any[]) =>
-        renderTooltipCustomContent(dataSource, sharedTheme, setHistoryExecPlan)
-    }
-  };
+    };
+  }, [data, maxPoint, minPoint, sharedTheme, setHistoryExecPlan]);
 
   const onSegmentedChange = (value: SegmentedValue) => {
     setTimePeriod(value as DateRangeEnum);
@@ -229,7 +235,11 @@ const ExecPlanCostChart: React.FC<ExecPlanCostChartProps> = ({
     } else if (value === DateRangeEnum['30D']) {
       startTime = dayjs().subtract(30, 'day');
     }
-    getSqlExecPlanCostDataSource?.(startTime, endTime);
+    getSqlExecPlanCostDataSource?.({
+      startTime,
+      endTime,
+      lastPointEnabled: value === DateRangeEnum['24H']
+    });
   };
 
   const onRefresh = () => {
@@ -254,10 +264,10 @@ const ExecPlanCostChart: React.FC<ExecPlanCostChartProps> = ({
             }}
             onChange={(value) => {
               if (value) {
-                getSqlExecPlanCostDataSource?.(
-                  value?.[0] ?? undefined,
-                  value?.[1] ?? undefined
-                );
+                getSqlExecPlanCostDataSource?.({
+                  startTime: value?.[0] ?? undefined,
+                  endTime: value?.[1] ?? undefined
+                });
               } else {
                 onSegmentedChange(timePeriod);
               }
@@ -274,7 +284,27 @@ const ExecPlanCostChart: React.FC<ExecPlanCostChartProps> = ({
             emptyCont={t('sqlQuery.executePlan.emptyText')}
             onRefresh={onRefresh}
           >
-            <Line {...config} theme={currentTheme} />
+            <Line
+              {...config}
+              theme={currentTheme}
+              // todo 可以任意对比两个时间点的Cost 产品交互尚未完善 暂时注释相关代码
+              // onEvent={(chart, event) => {
+              //   const { type } = event;
+              //   if (type === 'point:click') {
+              //     // updateChart(event);
+              //     setAnnotations((state) => {
+              //       const { x } = event.data?.data ?? {};
+              //       if (state.some((i) => i.x === x)) {
+              //         return state.filter((i) => i.x !== x);
+              //       }
+              //       if (state.length < 2) {
+              //         return [...state, event.data?.data];
+              //       }
+              //       return state;
+              //     });
+              //   }
+              // }}
+            />
           </ChartWrapper>
         </Spin>
       </div>

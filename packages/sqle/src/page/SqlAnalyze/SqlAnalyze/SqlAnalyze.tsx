@@ -27,7 +27,8 @@ const SqlAnalyze: React.FC<SqlAnalyzeProps> = (props) => {
     getSqlExecPlanCostDataSource,
     getSqlExecPlanCostDataSourceLoading,
     getSqlExecPlanCostDataSourceError,
-    showExecPlanCostChart
+    showExecPlanCostChart,
+    initTime
   } = props;
 
   const { generateTableSchemaContent } = useTableSchema();
@@ -36,7 +37,8 @@ const SqlAnalyze: React.FC<SqlAnalyzeProps> = (props) => {
     getSqlExecPlanCostDataSource,
     getSqlExecPlanCostDataSourceLoading,
     getSqlExecPlanCostDataSourceError,
-    showExecPlanCostChart
+    showExecPlanCostChart,
+    initTime
   });
 
   const [tabStatus, setTabStatus] = useState<string>('sql');

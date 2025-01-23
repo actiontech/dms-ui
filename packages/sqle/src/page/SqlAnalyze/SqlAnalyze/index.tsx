@@ -7,7 +7,7 @@ import {
   ITableMetas,
   IChartPoint
 } from '@actiontech/shared/lib/api/sqle/service/common';
-import { Dayjs } from 'dayjs';
+import { getSqlExecPlanCostDataSourceParams } from '../hooks/useSqlExecPlanCost';
 
 export type SqlAnalyzeProps = {
   errorMessage: string;
@@ -19,8 +19,11 @@ export type SqlAnalyzeProps = {
   sqlExecPlanCostDataSource?: IChartPoint[];
   getSqlExecPlanCostDataSourceLoading?: boolean;
   getSqlExecPlanCostDataSourceError?: string;
-  getSqlExecPlanCostDataSource?: (startTime?: Dayjs, endTime?: Dayjs) => void;
+  getSqlExecPlanCostDataSource?: (
+    params: getSqlExecPlanCostDataSourceParams
+  ) => void;
   showExecPlanCostChart?: boolean;
+  initTime?: string;
 };
 
 export type ExecPlanParams = Pick<
@@ -30,6 +33,7 @@ export type ExecPlanParams = Pick<
   | 'sqlExecPlanCostDataSource'
   | 'showExecPlanCostChart'
   | 'getSqlExecPlanCostDataSourceError'
+  | 'initTime'
 >;
 
 export type ExecPlanCostChartProps = {

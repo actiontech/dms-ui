@@ -65,12 +65,14 @@ const SQLManageAnalyze = () => {
     data,
     getSqlExecPlanCostDataSourceLoading,
     getSqlExecPlanCostDataSource,
-    getSqlExecPlanCostDataSourceError
+    getSqlExecPlanCostDataSourceError,
+    initTime
   } = useSqlExecPlanCost(urlParams.sqlManageId ?? '');
 
   useEffect(() => {
     getSqlAnalyze();
-  }, [getSqlAnalyze]);
+    getSqlExecPlanCostDataSource({ lastPointEnabled: true });
+  }, [getSqlAnalyze, getSqlExecPlanCostDataSource]);
 
   return (
     <SqlAnalyze
@@ -87,6 +89,7 @@ const SQLManageAnalyze = () => {
         getSqlExecPlanCostDataSourceError?.message
       }
       showExecPlanCostChart
+      initTime={initTime}
     />
   );
 };

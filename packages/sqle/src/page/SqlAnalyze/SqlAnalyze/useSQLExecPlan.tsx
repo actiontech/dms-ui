@@ -16,9 +16,10 @@ import { formatParamsBySeparator } from '@actiontech/shared/lib/utils/Tool';
 import { HorizontalTripleLineOutlined } from '@actiontech/icons';
 import ExecPlanCostChart from './ExecPlanCostChart';
 import { ExecPlanParams } from './index';
-import { useState, useRef, useEffect, useMemo } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import { formatTime } from '@actiontech/shared/lib/utils/Common';
 import classNames from 'classnames';
+import { isNumber } from 'lodash';
 
 const useSQLExecPlan = (params: ExecPlanParams) => {
   const {
@@ -26,7 +27,8 @@ const useSQLExecPlan = (params: ExecPlanParams) => {
     getSqlExecPlanCostDataSource,
     getSqlExecPlanCostDataSourceLoading,
     showExecPlanCostChart,
-    getSqlExecPlanCostDataSourceError
+    getSqlExecPlanCostDataSourceError,
+    initTime
   } = params;
   const { t } = useTranslation();
   const { tableColumnFactory } = useBackendTable();
@@ -41,15 +43,22 @@ const useSQLExecPlan = (params: ExecPlanParams) => {
     }
   }, [historyExecPlan]);
 
-  const currentTime = useMemo(() => formatTime(new Date()), []);
-
   const generateSQLExecPlanContent = <
-    T extends Pick<SQLExecPlanItem, 'sql' | 'classic_result' | 'err_message'> &
+    T extends Pick<
+      SQLExecPlanItem,
+      'sql' | 'classic_result' | 'err_message' | 'cost'
+    > &
       IPerformanceStatistics
   >(
     item: T
   ) => {
-    const { sql, classic_result: explain, err_message, affect_rows } = item;
+    const {
+      sql,
+      classic_result: explain,
+      err_message,
+      affect_rows,
+      cost
+    } = item;
 
     const renderSQL = () => {
       return (
@@ -87,6 +96,9 @@ const useSQLExecPlan = (params: ExecPlanParams) => {
             <Typography.Text type="secondary">
               {historyExecPlan?.x}
             </Typography.Text>
+            <Typography.Text type="secondary">
+              {t('sqlQuery.executePlan.cost')}：{historyExecPlan?.y}
+            </Typography.Text>
           </Space>
           <BasicTable
             columns={tableColumnFactory(explain?.head ?? [], {
@@ -104,7 +116,16 @@ const useSQLExecPlan = (params: ExecPlanParams) => {
         <>
           <Space className="header-title full-width-element">
             {t('sqlQuery.executePlan.sqlExplain')}
-            <Typography.Text type="secondary">{currentTime}</Typography.Text>
+            <EmptyBox if={!!initTime}>
+              <Typography.Text type="secondary">
+                {formatTime(initTime)}
+              </Typography.Text>
+            </EmptyBox>
+            <EmptyBox if={isNumber(cost)}>
+              <Typography.Text type="secondary">
+                {t('sqlQuery.executePlan.cost')}：{cost}
+              </Typography.Text>
+            </EmptyBox>
           </Space>
           <EmptyBox
             if={!err_message}
