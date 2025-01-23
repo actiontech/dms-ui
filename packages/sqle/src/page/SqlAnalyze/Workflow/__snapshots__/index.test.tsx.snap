@@ -133,13 +133,11 @@ exports[`SqlAnalyze/Workflow should get analyze data from origin 1`] = `
                     </div>
                     <div
                       class="ant-space-item"
-                    >
-                      <span
-                        class="ant-typography ant-typography-secondary css-dev-only-do-not-override-txh9fw"
-                      >
-                        2025-01-09 12:00:00
-                      </span>
-                    </div>
+                      style="margin-right: 8px;"
+                    />
+                    <div
+                      class="ant-space-item"
+                    />
                   </div>
                 </div>
                 <div
@@ -478,13 +476,11 @@ exports[`SqlAnalyze/Workflow should get analyze data from origin 2`] = `
                     </div>
                     <div
                       class="ant-space-item"
-                    >
-                      <span
-                        class="ant-typography ant-typography-secondary css-dev-only-do-not-override-txh9fw"
-                      >
-                        2025-01-09 12:00:00
-                      </span>
-                    </div>
+                      style="margin-right: 8px;"
+                    />
+                    <div
+                      class="ant-space-item"
+                    />
                   </div>
                 </div>
                 <div

@@ -93,8 +93,33 @@ describe('SqlAnalyze/useSQLExecPlan', () => {
       </>
     );
     expect(baseElement).toMatchSnapshot();
-    expect(screen.getByText('SQL执行计划 Cost趋势')).toBeInTheDocument();
+    expect(screen.getByText('SQL执行计划代价趋势')).toBeInTheDocument();
     expect(screen.queryByText('历史执行计划')).not.toBeInTheDocument();
+  });
+
+  it('render generateSQLExecPlanContent when init time and cost is not undefined', async () => {
+    const { result } = renderHooksWithTheme(() =>
+      useSQLExecPlan({
+        showExecPlanCostChart: true,
+        sqlExecPlanCostDataSource: mockSqlManageSqlAnalysisChartData.points,
+        getSqlExecPlanCostDataSourceLoading: false,
+        initTime: '2024-01-09 12:00:00'
+      })
+    );
+
+    const { baseElement } = superRender(
+      <>
+        {result.current.generateSQLExecPlanContent({
+          sql: "CREATE TABLE IF NOT EXISTS task (  id BIGINT UNSIGNED AUTO_INCREMENT PRIMARY KEY,  title VARCHAR(255) NOT NULL DEFAULT '',  description TEXT,  status ENUM('pending', 'completed') NOT NULL DEFAULT 'pending',  created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,  updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP);",
+          classic_result: sqlExecPlans[1].classic_result,
+          cost: 4.6
+        })}
+      </>
+    );
+    expect(baseElement).toMatchSnapshot();
+    expect(screen.getByText('当前执行计划')).toBeInTheDocument();
+    expect(screen.getByText('2024-01-09 12:00:00')).toBeInTheDocument();
+    expect(screen.getByText('代价：4.6')).toBeInTheDocument();
   });
 
   it('render generateSQLExecPlanContent when show history execute plan', async () => {
@@ -120,7 +145,7 @@ describe('SqlAnalyze/useSQLExecPlan', () => {
       </>
     );
     expect(baseElement).toMatchSnapshot();
-    expect(screen.getByText('SQL执行计划 Cost趋势')).toBeInTheDocument();
+    expect(screen.getByText('SQL执行计划代价趋势')).toBeInTheDocument();
     expect(screen.getByText('历史执行计划')).toBeInTheDocument();
   });
 

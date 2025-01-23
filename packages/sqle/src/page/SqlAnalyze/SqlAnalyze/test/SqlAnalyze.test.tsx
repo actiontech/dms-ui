@@ -107,6 +107,26 @@ describe('SqlAnalyze/Global-SqlAnalyze', () => {
       />
     );
     expect(baseElement).toMatchSnapshot();
-    expect(screen.getByText('SQL执行计划 Cost趋势')).toBeInTheDocument();
+    expect(screen.getByText('SQL执行计划代价趋势')).toBeInTheDocument();
+  });
+
+  it('render snap when init time and cost is not undefined', async () => {
+    const { baseElement } = superRender(
+      <SqlAnalyze
+        loading={false}
+        tableMetas={SQLManageSqlAnalyzeData.table_metas}
+        sqlExplain={{
+          ...SQLManageSqlAnalyzeData.sql_explain,
+          cost: 4.6
+        }}
+        performanceStatistics={SQLManageSqlAnalyzeData.performance_statistics}
+        errorMessage={''}
+        initTime="2024-01-09 12:00:00"
+      />
+    );
+    expect(baseElement).toMatchSnapshot();
+    expect(screen.getByText('当前执行计划')).toBeInTheDocument();
+    expect(screen.getByText('2024-01-09 12:00:00')).toBeInTheDocument();
+    expect(screen.getByText('代价：4.6')).toBeInTheDocument();
   });
 });

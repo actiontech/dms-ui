@@ -118,5 +118,36 @@ describe('ExecPlanCostChart', () => {
     fireEvent.click(screen.getByText('刷新'));
     await act(async () => jest.advanceTimersByTime(0));
     expect(getSqlExecPlanCostDataSourceSpy).toHaveBeenCalledTimes(1);
+    expect(getSqlExecPlanCostDataSourceSpy).toHaveBeenCalledWith({
+      endTime: dayjs('2024-01-09 12:00:00'),
+      lastPointEnabled: true,
+      startTime: dayjs('2024-01-08 12:00:00')
+    });
+  });
+
+  it('lastPointEnabled should be true when filter by 24 hours', async () => {
+    const getSqlExecPlanCostDataSourceSpy = jest.fn();
+    const { baseElement } = superRender(
+      <ExecPlanCostChart
+        setHistoryExecPlan={jest.fn()}
+        getSqlExecPlanCostDataSource={getSqlExecPlanCostDataSourceSpy}
+        sqlExecPlanCostDataSource={mockSqlManageSqlAnalysisChartData.points}
+        getSqlExecPlanCostDataSourceLoading={false}
+      />
+    );
+    expect(baseElement).toMatchSnapshot();
+    fireEvent.click(screen.getByText('7天'));
+    await act(async () => jest.advanceTimersByTime(0));
+    expect(getSqlExecPlanCostDataSourceSpy).toHaveBeenNthCalledWith(1, {
+      endTime: dayjs('2024-01-09 12:00:00'),
+      lastPointEnabled: false,
+      startTime: dayjs('2024-01-02 12:00:00')
+    });
+    fireEvent.click(screen.getByText('24小时'));
+    expect(getSqlExecPlanCostDataSourceSpy).toHaveBeenNthCalledWith(2, {
+      endTime: dayjs('2024-01-09 12:00:00'),
+      lastPointEnabled: true,
+      startTime: dayjs('2024-01-08 12:00:00')
+    });
   });
 });

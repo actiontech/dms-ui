@@ -175,7 +175,7 @@ exports[`SqlAnalyze/ManagementConfAnalyze filter sql execution plan cost 1`] = `
                         style="margin-right: 8px;"
                       >
                         <h3>
-                          SQL执行计划 Cost趋势
+                          SQL执行计划代价趋势
                         </h3>
                       </div>
                       <div
@@ -312,7 +312,7 @@ exports[`SqlAnalyze/ManagementConfAnalyze filter sql execution plan cost 1`] = `
                               class="chart-box"
                             >
                               <div
-                                data-custom-params="{"data":[{"y":1.2,"x":"2025-01-06 17:22:53","info":[{"id":"1","select_id":"1","table":"test_table","partitions":"a,b,c","type":"const","possible_keys":"a,b,c","key":"key_name","key_len":"231","ref":"abc","rows":"100","filtered":"100","select_type":"SIMPLE"}]},{"y":3.2,"x":"2025-01-07 17:32:53","info":[{"id":"2","select_id":"1","table":"test_table","partitions":"a,b,c","type":"const","possible_keys":"a,b,c","key":"key_name","key_len":"231","ref":"abc","rows":"100","filtered":"100","select_type":"SIMPLE"}]},{"y":2.2,"x":"2025-01-07 17:42:53","info":[{"id":"3","select_id":"1","table":"test_table","partitions":"a,b,c","type":"const","possible_keys":"a,b,c","key":"key_name","key_len":"231","ref":"abc","rows":"100","filtered":"100","select_type":"SIMPLE"}]},{"y":5.2,"x":"2025-01-07 17:52:53","info":[{"id":"4","select_id":"1","table":"test_table","partitions":"a,b,c","type":"const","possible_keys":"a,b,c","key":"key_name","key_len":"231","ref":"abc","rows":"100","filtered":"100","select_type":"SIMPLE"}]},{"x":"2025-01-09 12:00:00"}],"xField":"x","yField":"y","xAxis":{"nice":true},"point":{"style":{"fill":"#FFFFFF","stroke":"#4583ff"}},"slider":{"start":0,"end":1},"appendPadding":20,"annotations":[{"type":"text","content":5.2,"position":["2025-01-07 17:52:53",5.2],"style":{"textAlign":"center","fill":"#FFFFFF"},"offsetY":-16,"background":{"padding":4,"style":{"radius":4,"fill":"#4583ff"}}},{"position":["2025-01-07 17:52:53",5.2],"type":"dataMarker","text":{"content":"","style":{"textAlign":"left"}},"point":{"style":{"fill":"#FFFFFF","stroke":"#4583ff"}},"autoAdjust":false},{"type":"text","content":1.2,"position":["2025-01-06 17:22:53",1.2],"style":{"textAlign":"center","fill":"#FFFFFF"},"offsetY":-16,"background":{"padding":4,"style":{"radius":4,"fill":"#4583ff"}}},{"position":["2025-01-06 17:22:53",1.2],"type":"dataMarker","text":{"content":"","style":{"textAlign":"left"}},"point":{"style":{"fill":"#FFFFFF","stroke":"#4583ff"}},"autoAdjust":false}],"tooltip":{"fields":["created_time","cost","id"],"enterable":true,"follow":true},"theme":"light"}"
+                                data-custom-params="{"data":[{"y":1.2,"x":"2025-01-06 17:22:53","info":[{"id":"1","select_id":"1","table":"test_table","partitions":"a,b,c","type":"const","possible_keys":"a,b,c","key":"key_name","key_len":"231","ref":"abc","rows":"100","filtered":"100","select_type":"SIMPLE"}]},{"y":3.2,"x":"2025-01-07 17:32:53","info":[{"id":"2","select_id":"1","table":"test_table","partitions":"a,b,c","type":"const","possible_keys":"a,b,c","key":"key_name","key_len":"231","ref":"abc","rows":"100","filtered":"100","select_type":"SIMPLE"}]},{"y":2.2,"x":"2025-01-07 17:42:53","info":[{"id":"3","select_id":"1","table":"test_table","partitions":"a,b,c","type":"const","possible_keys":"a,b,c","key":"key_name","key_len":"231","ref":"abc","rows":"100","filtered":"100","select_type":"SIMPLE"}]},{"y":5.2,"x":"2025-01-07 17:52:53","info":[{"id":"4","select_id":"1","table":"test_table","partitions":"a,b,c","type":"const","possible_keys":"a,b,c","key":"key_name","key_len":"231","ref":"abc","rows":"100","filtered":"100","select_type":"SIMPLE"}]},{"x":"2025-01-09 12:00:00"}],"xField":"x","yField":"y","xAxis":{"nice":true},"point":{"style":{"fill":"#FFFFFF","stroke":"#4583ff"},"size":4},"slider":{"start":0,"end":1},"appendPadding":20,"annotations":[{"type":"text","content":5.2,"position":["2025-01-07 17:52:53",5.2],"style":{"textAlign":"center","fill":"#FFFFFF"},"offsetY":-16,"background":{"padding":4,"style":{"radius":4,"fill":"#4583ff"}}},{"type":"text","content":1.2,"position":["2025-01-06 17:22:53",1.2],"style":{"textAlign":"center","fill":"#FFFFFF"},"offsetY":-16,"background":{"padding":4,"style":{"radius":4,"fill":"#4583ff"}}}],"tooltip":{"fields":["created_time","cost","id"],"enterable":true,"follow":true},"theme":"light"}"
                               />
                             </div>
                           </div>
@@ -336,11 +336,23 @@ exports[`SqlAnalyze/ManagementConfAnalyze filter sql execution plan cost 1`] = `
                     </div>
                     <div
                       class="ant-space-item"
+                      style="margin-right: 8px;"
                     >
                       <span
                         class="ant-typography ant-typography-secondary css-dev-only-do-not-override-txh9fw"
                       >
                         2025-01-09 12:00:00
+                      </span>
+                    </div>
+                    <div
+                      class="ant-space-item"
+                    >
+                      <span
+                        class="ant-typography ant-typography-secondary css-dev-only-do-not-override-txh9fw"
+                      >
+                        代价
+                        ：
+                        3
                       </span>
                     </div>
                   </div>
@@ -6478,7 +6490,7 @@ exports[`SqlAnalyze/ManagementConfAnalyze should get analyze data from origin 1`
                         style="margin-right: 8px;"
                       >
                         <h3>
-                          SQL执行计划 Cost趋势
+                          SQL执行计划代价趋势
                         </h3>
                       </div>
                       <div
@@ -6605,32 +6617,8 @@ exports[`SqlAnalyze/ManagementConfAnalyze should get analyze data from origin 1`
                       <div
                         class="ant-spin-nested-loading css-dev-only-do-not-override-txh9fw"
                       >
-                        <div>
-                          <div
-                            aria-busy="true"
-                            aria-live="polite"
-                            class="ant-spin ant-spin-spinning css-dev-only-do-not-override-txh9fw"
-                          >
-                            <span
-                              class="ant-spin-dot ant-spin-dot-spin"
-                            >
-                              <i
-                                class="ant-spin-dot-item"
-                              />
-                              <i
-                                class="ant-spin-dot-item"
-                              />
-                              <i
-                                class="ant-spin-dot-item"
-                              />
-                              <i
-                                class="ant-spin-dot-item"
-                              />
-                            </span>
-                          </div>
-                        </div>
                         <div
-                          class="ant-spin-container ant-spin-blur"
+                          class="ant-spin-container"
                         >
                           <div
                             class="chart-wrapper css-1hgbe7b"
@@ -6724,13 +6712,11 @@ exports[`SqlAnalyze/ManagementConfAnalyze should get analyze data from origin 1`
                     </div>
                     <div
                       class="ant-space-item"
-                    >
-                      <span
-                        class="ant-typography ant-typography-secondary css-dev-only-do-not-override-txh9fw"
-                      >
-                        2025-01-09 12:00:00
-                      </span>
-                    </div>
+                      style="margin-right: 8px;"
+                    />
+                    <div
+                      class="ant-space-item"
+                    />
                   </div>
                 </div>
                 <div

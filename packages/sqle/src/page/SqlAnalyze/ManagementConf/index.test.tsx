@@ -59,7 +59,15 @@ describe('SqlAnalyze/ManagementConfAnalyze', () => {
       instance_audit_plan,
       'getAuditPlanSqlAnalysisDataV1'
     );
-    spy.mockImplementation(() => resolveThreeSecond(AuditPlanSqlAnalyzeData));
+    spy.mockImplementation(() =>
+      resolveThreeSecond({
+        ...AuditPlanSqlAnalyzeData,
+        sql_explain: {
+          ...AuditPlanSqlAnalyzeData.sql_explain,
+          cost: 3
+        }
+      })
+    );
     return spy;
   };
 
@@ -90,14 +98,15 @@ describe('SqlAnalyze/ManagementConfAnalyze', () => {
     await act(async () => jest.advanceTimersByTime(3000));
     expect(container).toMatchSnapshot();
 
-    expect(screen.getByText('SQL执行计划 Cost趋势')).toBeInTheDocument();
+    expect(screen.getByText('SQL执行计划代价趋势')).toBeInTheDocument();
     expect(getSqlManageSqlAnalysisChartSpy).toHaveBeenCalledTimes(1);
     expect(getSqlManageSqlAnalysisChartSpy).toHaveBeenNthCalledWith(1, {
       sql_manage_id: '2',
       project_name: projectName,
       metric_name: 'explain_cost',
       start_time: translateTimeForRequest(currentTime.subtract(24, 'hour')),
-      end_time: translateTimeForRequest(currentTime)
+      end_time: translateTimeForRequest(currentTime),
+      latest_point_enabled: true
     });
 
     fireEvent.click(screen.getByText('7天'));
@@ -108,7 +117,8 @@ describe('SqlAnalyze/ManagementConfAnalyze', () => {
       project_name: projectName,
       metric_name: 'explain_cost',
       start_time: translateTimeForRequest(currentTime.subtract(7, 'day')),
-      end_time: translateTimeForRequest(currentTime)
+      end_time: translateTimeForRequest(currentTime),
+      latest_point_enabled: false
     });
   });
 
