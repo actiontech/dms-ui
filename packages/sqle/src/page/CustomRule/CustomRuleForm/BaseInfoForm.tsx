@@ -14,8 +14,14 @@ import {
   FormItemLabel,
   FormItemNoLabel
 } from '@actiontech/shared/lib/components/CustomForm';
-import { BasicButton, BasicInput, BasicSelect } from '@actiontech/shared';
+import {
+  BasicButton,
+  BasicInput,
+  BasicSelect,
+  BasicToolTip
+} from '@actiontech/shared';
 import useRuleCategories from '../../../hooks/useRuleCategories';
+import { InfoCircleOutlined } from '@actiontech/icons';
 
 const BaseInfoForm: React.FC<BaseInfoFormProps> = (props) => {
   const { t } = useTranslation();
@@ -31,7 +37,8 @@ const BaseInfoForm: React.FC<BaseInfoFormProps> = (props) => {
     auditAccuracyOptions,
     operandOptions,
     sqlOptions,
-    auditPurposeOptions
+    auditPurposeOptions,
+    performanceLevelOptions
   } = useRuleCategories();
 
   const { getRuleLevelStatusSelectOption } = useStaticStatus();
@@ -52,7 +59,8 @@ const BaseInfoForm: React.FC<BaseInfoFormProps> = (props) => {
         sql: props.defaultData.categories?.sql?.[0],
         operand: props.defaultData.categories?.operand,
         auditPurpose: props.defaultData.categories?.audit_purpose?.[0],
-        auditAccuracy: props.defaultData.categories?.audit_accuracy?.[0]
+        auditAccuracy: props.defaultData.categories?.audit_accuracy?.[0],
+        performanceCost: props.defaultData.categories?.performance_cost?.[0]
       });
     }
   }, [props.defaultData, props.form]);
@@ -144,6 +152,7 @@ const BaseInfoForm: React.FC<BaseInfoFormProps> = (props) => {
           options={auditPurposeOptions}
         />
       </FormItemLabel>
+
       <FormItemLabel
         className="has-required-style"
         label={t('customRule.baseInfoForm.category.sql')}
@@ -182,7 +191,28 @@ const BaseInfoForm: React.FC<BaseInfoFormProps> = (props) => {
           options={auditAccuracyOptions}
         />
       </FormItemLabel>
-
+      <FormItemLabel
+        className="has-required-style"
+        label={
+          <BasicToolTip
+            title={t('customRule.baseInfoForm.category.performanceLevelTips')}
+            suffixIcon={<InfoCircleOutlined />}
+          >
+            {t('customRule.baseInfoForm.category.performanceCost')}
+          </BasicToolTip>
+        }
+        name="performanceCost"
+        {...formItemLayout.fullLine}
+      >
+        <BasicSelect
+          loading={getRuleCategoriesLoading}
+          placeholder={t('common.form.placeholder.select', {
+            name: t('customRule.baseInfoForm.category.performanceCost')
+          })}
+          options={performanceLevelOptions}
+          allowClear
+        />
+      </FormItemLabel>
       <FormItemLabel
         className="has-required-style"
         label={t('customRule.baseInfoForm.level')}

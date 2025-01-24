@@ -95,7 +95,8 @@ describe('sqle/components/RuleList/RuleBaseInfo', () => {
           audit_accuracy: ['offline'],
           sql: ['dcl'],
           operand: ['database', 'table_space'],
-          audit_purpose: ['correction']
+          audit_purpose: ['correction'],
+          performance_cost: ['high']
         }
       },
       children: <span>child note a</span>

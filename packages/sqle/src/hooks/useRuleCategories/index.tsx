@@ -20,7 +20,8 @@ const useRuleCategories = (showOptionCount = false) => {
     auditAccuracyOptions,
     operandOptions,
     sqlOptions,
-    auditPurposeOptions
+    auditPurposeOptions,
+    performanceLevelOptions
   } = useMemo(() => {
     const renderOptionLabel = (
       dictionary: DictionaryType,
@@ -30,12 +31,12 @@ const useRuleCategories = (showOptionCount = false) => {
       if (showOptionCount) {
         return (
           <RuleCategoryOptionStyleWrapper>
-            {dictionary[tag]}
+            {dictionary?.[tag]}
             <Typography.Text type="secondary">{count}</Typography.Text>
           </RuleCategoryOptionStyleWrapper>
         );
       }
-      return dictionary[tag];
+      return dictionary?.[tag];
     };
 
     const optionGroup: {
@@ -48,14 +49,15 @@ const useRuleCategories = (showOptionCount = false) => {
       optionGroup[key] = ruleCategories?.[key]?.map((i) => ({
         label: renderOptionLabel(dictionary, i.tag ?? '', i.count ?? 0),
         value: i.tag ?? '',
-        text: dictionary[i.tag ?? '']
+        text: dictionary?.[i.tag ?? ''] ?? i.tag
       }));
     });
     return {
       auditAccuracyOptions: optionGroup.audit_accuracy,
       operandOptions: optionGroup.operand,
       sqlOptions: optionGroup.sql,
-      auditPurposeOptions: optionGroup.audit_purpose
+      auditPurposeOptions: optionGroup.audit_purpose,
+      performanceLevelOptions: optionGroup.performance_cost
     };
   }, [ruleCategories, showOptionCount]);
 
@@ -65,7 +67,8 @@ const useRuleCategories = (showOptionCount = false) => {
     auditAccuracyOptions,
     operandOptions,
     sqlOptions,
-    auditPurposeOptions
+    auditPurposeOptions,
+    performanceLevelOptions
   };
 };
 

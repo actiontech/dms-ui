@@ -35,5 +35,6 @@ describe('sqle/components/RuleList/RuleFilter', () => {
     expect(screen.getByText('审核目的')).toBeInTheDocument();
     expect(screen.getByText('SQL分类')).toBeInTheDocument();
     expect(screen.getByText('审核精度')).toBeInTheDocument();
+    expect(screen.getByText('性能消耗')).toBeInTheDocument();
   });
 });

@@ -38,6 +38,9 @@ export default {
     auditPurpose: '审核目的',
     operand: '操作对象',
     sql: 'SQL分类',
+    performanceCost: '性能消耗',
+    performanceLevelTips:
+      '高消耗规则会产生大量数据扫描或复杂查询，可能对数据库性能造成显著影响，建议在生产环境谨慎使用。',
     tag: {
       online: '在线',
       offline: '离线',
@@ -63,7 +66,10 @@ export default {
       correction: '正确性',
       security: '安全性',
       maintenance: '可维护性',
-      performance: '性能问题'
+      performance: '性能问题',
+      high: '高消耗',
+      medium: '中消耗',
+      low: '低消耗'
     }
   }
 };

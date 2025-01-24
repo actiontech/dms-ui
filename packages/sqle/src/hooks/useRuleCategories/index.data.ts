@@ -6,7 +6,8 @@ export const RuleCategoryDictionary: DictionaryType = {
   audit_accuracy: t('rule.category.auditAccuracy'),
   audit_purpose: t('rule.category.auditPurpose'),
   operand: t('rule.category.operand'),
-  sql: t('rule.category.sql')
+  sql: t('rule.category.sql'),
+  performance_cost: t('rule.category.performanceCost')
 };
 
 export const RuleCategoryOperandDictionary = {
@@ -46,9 +47,16 @@ export const RuleCategoryAuditAccuracyDictionary = {
   offline: t('rule.category.tag.offline')
 };
 
+export const RuleCategoryPerformanceCostDictionary = {
+  high: t('rule.category.tag.high'),
+  medium: t('rule.category.tag.medium'),
+  low: t('rule.category.tag.low')
+};
+
 export const RuleCategoryDictionaryGroup: { [key: string]: DictionaryType } = {
   audit_accuracy: RuleCategoryAuditAccuracyDictionary,
   audit_purpose: RuleCategoryAuditPurposeDictionary,
   operand: RuleCategoryOperandDictionary,
-  sql: RuleCategorySqlDictionary
+  sql: RuleCategorySqlDictionary,
+  performance_cost: RuleCategoryPerformanceCostDictionary
 };

@@ -132,6 +132,11 @@ describe('sqle/CustomRule/UpdateCustomRule', () => {
     fireEvent.click(screen.getByText('在线'));
     await act(async () => jest.advanceTimersByTime(0));
 
+    fireEvent.mouseDown(getBySelector('#performanceCost'));
+    await act(async () => jest.advanceTimersByTime(0));
+    fireEvent.click(screen.getByText('高消耗'));
+    await act(async () => jest.advanceTimersByTime(0));
+
     fireEvent.mouseDown(getBySelector('#level'));
     await act(async () => jest.advanceTimersByTime(0));
     fireEvent.click(getBySelector('div[title="告警"]'));
@@ -167,7 +172,8 @@ describe('sqle/CustomRule/UpdateCustomRule', () => {
         'trigger',
         'performance',
         'online',
-        'integrity'
+        'integrity',
+        'high'
       ]
     });
     const resultTip = getBySelector('.basic-result-wrapper', baseElement);

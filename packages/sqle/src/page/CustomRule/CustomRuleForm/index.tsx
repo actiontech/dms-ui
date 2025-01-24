@@ -11,6 +11,7 @@ export type CustomRuleFormBaseInfoFields = {
   sql: string;
   auditPurpose: string;
   auditAccuracy: string;
+  performanceCost?: string;
 };
 
 export type EditRuleScriptFields = {

@@ -737,6 +737,7 @@ exports[`sqle/GlobalRuleTemplate/CreateRuleTemplate create global rule template 
                   </div>
                   <div
                     class="ant-space-item"
+                    style="margin-right: 12px;"
                   >
                     <div
                       class="ant-select ant-select-sm ant-select-borderless basic-select-wrapper custom-select-namespace css-pti5z8 css-dev-only-do-not-override-v9sov3 ant-select-single ant-select-allow-clear ant-select-show-arrow"
@@ -790,6 +791,95 @@ exports[`sqle/GlobalRuleTemplate/CreateRuleTemplate create global rule template 
                         style="user-select: none;"
                         unselectable="on"
                       />
+                    </div>
+                  </div>
+                  <div
+                    class="ant-space-item"
+                  >
+                    <div
+                      class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center css-1nt49ug"
+                    >
+                      <div
+                        class="ant-space-item"
+                        style="margin-right: 4px;"
+                      >
+                        <div
+                          class="ant-select ant-select-sm ant-select-borderless basic-select-wrapper custom-select-namespace css-pti5z8 css-dev-only-do-not-override-v9sov3 ant-select-single ant-select-allow-clear ant-select-show-arrow"
+                        >
+                          <div
+                            class="ant-select-selector"
+                          >
+                            <span
+                              class="ant-select-selection-search"
+                            >
+                              <input
+                                aria-activedescendant="performance_cost_list_0"
+                                aria-autocomplete="list"
+                                aria-controls="performance_cost_list"
+                                aria-expanded="false"
+                                aria-haspopup="listbox"
+                                aria-owns="performance_cost_list"
+                                autocomplete="off"
+                                class="ant-select-selection-search-input"
+                                id="performance_cost"
+                                readonly=""
+                                role="combobox"
+                                style="opacity: 0;"
+                                type="search"
+                                unselectable="on"
+                                value=""
+                              />
+                            </span>
+                            <span
+                              class="ant-select-selection-placeholder"
+                            >
+                              <span
+                                class="custom-select-placeholder css-qly0fu"
+                              >
+                                <span
+                                  class="custom-select-placeholder-prefix"
+                                >
+                                  性能消耗
+                                </span>
+                                <span
+                                  class="custom-select-placeholder-value"
+                                >
+                                  请选择{{name}}
+                                </span>
+                              </span>
+                            </span>
+                          </div>
+                          <span
+                            aria-hidden="true"
+                            class="ant-select-arrow"
+                            style="user-select: none;"
+                            unselectable="on"
+                          />
+                        </div>
+                      </div>
+                      <div
+                        class="ant-space-item"
+                      >
+                        <div
+                          class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
+                        >
+                          <div
+                            class="ant-space-item"
+                          >
+                            <svg
+                              height="16"
+                              viewBox="0 0 14 14"
+                              width="16"
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <path
+                                d="M7 12.833A5.833 5.833 0 1 1 7 1.167a5.833 5.833 0 0 1 0 11.666m0-1.166a4.666 4.666 0 1 0 0-9.333 4.666 4.666 0 0 0 0 9.333m-.583-7.584h1.166V5.25H6.417zm0 2.334h1.166v3.5H6.417z"
+                                fill="#EDB054"
+                              />
+                            </svg>
+                          </div>
+                        </div>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -861,7 +951,7 @@ exports[`sqle/GlobalRuleTemplate/CreateRuleTemplate create global rule template 
                               style="margin-right: 8px; padding-bottom: 8px;"
                             >
                               <div
-                                class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center rule-param-tag css-1yzh26w"
+                                class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center rule-param-tag css-x5diec"
                               >
                                 <div
                                   class="ant-space-item"
@@ -882,7 +972,7 @@ exports[`sqle/GlobalRuleTemplate/CreateRuleTemplate create global rule template 
                               style="margin-right: 8px; padding-bottom: 8px;"
                             >
                               <div
-                                class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center rule-category-audit_accuracy rule-category-tag-wrap css-1yzh26w"
+                                class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center rule-category-audit_accuracy rule-category-tag-wrap css-x5diec"
                               >
                                 <div
                                   class="ant-space-item"
@@ -900,7 +990,7 @@ exports[`sqle/GlobalRuleTemplate/CreateRuleTemplate create global rule template 
                               style="margin-right: 8px; padding-bottom: 8px;"
                             >
                               <div
-                                class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center rule-category-sql rule-category-tag-wrap css-1yzh26w"
+                                class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center rule-category-sql rule-category-tag-wrap css-x5diec"
                               >
                                 <div
                                   class="ant-space-item"
@@ -918,7 +1008,7 @@ exports[`sqle/GlobalRuleTemplate/CreateRuleTemplate create global rule template 
                               style="margin-right: 8px; padding-bottom: 8px;"
                             >
                               <div
-                                class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center rule-category-operand rule-category-tag-wrap css-1yzh26w"
+                                class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center rule-category-operand rule-category-tag-wrap css-x5diec"
                               >
                                 <div
                                   class="ant-space-item"
@@ -946,7 +1036,7 @@ exports[`sqle/GlobalRuleTemplate/CreateRuleTemplate create global rule template 
                               style="margin-right: 8px; padding-bottom: 8px;"
                             >
                               <div
-                                class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center rule-category-audit_purpose rule-category-tag-wrap css-1yzh26w"
+                                class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center rule-category-audit_purpose rule-category-tag-wrap css-x5diec"
                               >
                                 <div
                                   class="ant-space-item"
@@ -955,6 +1045,24 @@ exports[`sqle/GlobalRuleTemplate/CreateRuleTemplate create global rule template 
                                     class=""
                                   >
                                     正确性
+                                  </span>
+                                </div>
+                              </div>
+                            </div>
+                            <div
+                              class="ant-space-item"
+                              style="margin-right: 8px; padding-bottom: 8px;"
+                            >
+                              <div
+                                class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center rule-category-performance_cost rule-category-tag-wrap css-x5diec"
+                              >
+                                <div
+                                  class="ant-space-item"
+                                >
+                                  <span
+                                    class=""
+                                  >
+                                    高消耗
                                   </span>
                                 </div>
                               </div>
@@ -2399,6 +2507,7 @@ exports[`sqle/GlobalRuleTemplate/CreateRuleTemplate rule list action 1`] = `
                   </div>
                   <div
                     class="ant-space-item"
+                    style="margin-right: 12px;"
                   >
                     <div
                       class="ant-select ant-select-sm ant-select-borderless basic-select-wrapper custom-select-namespace css-pti5z8 css-dev-only-do-not-override-v9sov3 ant-select-single ant-select-allow-clear ant-select-show-arrow"
@@ -2452,6 +2561,95 @@ exports[`sqle/GlobalRuleTemplate/CreateRuleTemplate rule list action 1`] = `
                         style="user-select: none;"
                         unselectable="on"
                       />
+                    </div>
+                  </div>
+                  <div
+                    class="ant-space-item"
+                  >
+                    <div
+                      class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center css-1nt49ug"
+                    >
+                      <div
+                        class="ant-space-item"
+                        style="margin-right: 4px;"
+                      >
+                        <div
+                          class="ant-select ant-select-sm ant-select-borderless basic-select-wrapper custom-select-namespace css-pti5z8 css-dev-only-do-not-override-v9sov3 ant-select-single ant-select-allow-clear ant-select-show-arrow"
+                        >
+                          <div
+                            class="ant-select-selector"
+                          >
+                            <span
+                              class="ant-select-selection-search"
+                            >
+                              <input
+                                aria-activedescendant="performance_cost_list_0"
+                                aria-autocomplete="list"
+                                aria-controls="performance_cost_list"
+                                aria-expanded="false"
+                                aria-haspopup="listbox"
+                                aria-owns="performance_cost_list"
+                                autocomplete="off"
+                                class="ant-select-selection-search-input"
+                                id="performance_cost"
+                                readonly=""
+                                role="combobox"
+                                style="opacity: 0;"
+                                type="search"
+                                unselectable="on"
+                                value=""
+                              />
+                            </span>
+                            <span
+                              class="ant-select-selection-placeholder"
+                            >
+                              <span
+                                class="custom-select-placeholder css-qly0fu"
+                              >
+                                <span
+                                  class="custom-select-placeholder-prefix"
+                                >
+                                  性能消耗
+                                </span>
+                                <span
+                                  class="custom-select-placeholder-value"
+                                >
+                                  请选择{{name}}
+                                </span>
+                              </span>
+                            </span>
+                          </div>
+                          <span
+                            aria-hidden="true"
+                            class="ant-select-arrow"
+                            style="user-select: none;"
+                            unselectable="on"
+                          />
+                        </div>
+                      </div>
+                      <div
+                        class="ant-space-item"
+                      >
+                        <div
+                          class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
+                        >
+                          <div
+                            class="ant-space-item"
+                          >
+                            <svg
+                              height="16"
+                              viewBox="0 0 14 14"
+                              width="16"
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <path
+                                d="M7 12.833A5.833 5.833 0 1 1 7 1.167a5.833 5.833 0 0 1 0 11.666m0-1.166a4.666 4.666 0 1 0 0-9.333 4.666 4.666 0 0 0 0 9.333m-.583-7.584h1.166V5.25H6.417zm0 2.334h1.166v3.5H6.417z"
+                                fill="#EDB054"
+                              />
+                            </svg>
+                          </div>
+                        </div>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -2523,7 +2721,7 @@ exports[`sqle/GlobalRuleTemplate/CreateRuleTemplate rule list action 1`] = `
                               style="margin-right: 8px; padding-bottom: 8px;"
                             >
                               <div
-                                class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center rule-param-tag css-1yzh26w"
+                                class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center rule-param-tag css-x5diec"
                               >
                                 <div
                                   class="ant-space-item"
@@ -2544,7 +2742,7 @@ exports[`sqle/GlobalRuleTemplate/CreateRuleTemplate rule list action 1`] = `
                               style="margin-right: 8px; padding-bottom: 8px;"
                             >
                               <div
-                                class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center rule-category-audit_accuracy rule-category-tag-wrap css-1yzh26w"
+                                class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center rule-category-audit_accuracy rule-category-tag-wrap css-x5diec"
                               >
                                 <div
                                   class="ant-space-item"
@@ -2562,7 +2760,7 @@ exports[`sqle/GlobalRuleTemplate/CreateRuleTemplate rule list action 1`] = `
                               style="margin-right: 8px; padding-bottom: 8px;"
                             >
                               <div
-                                class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center rule-category-sql rule-category-tag-wrap css-1yzh26w"
+                                class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center rule-category-sql rule-category-tag-wrap css-x5diec"
                               >
                                 <div
                                   class="ant-space-item"
@@ -2580,7 +2778,7 @@ exports[`sqle/GlobalRuleTemplate/CreateRuleTemplate rule list action 1`] = `
                               style="margin-right: 8px; padding-bottom: 8px;"
                             >
                               <div
-                                class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center rule-category-operand rule-category-tag-wrap css-1yzh26w"
+                                class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center rule-category-operand rule-category-tag-wrap css-x5diec"
                               >
                                 <div
                                   class="ant-space-item"
@@ -2608,7 +2806,7 @@ exports[`sqle/GlobalRuleTemplate/CreateRuleTemplate rule list action 1`] = `
                               style="margin-right: 8px; padding-bottom: 8px;"
                             >
                               <div
-                                class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center rule-category-audit_purpose rule-category-tag-wrap css-1yzh26w"
+                                class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center rule-category-audit_purpose rule-category-tag-wrap css-x5diec"
                               >
                                 <div
                                   class="ant-space-item"
@@ -2617,6 +2815,24 @@ exports[`sqle/GlobalRuleTemplate/CreateRuleTemplate rule list action 1`] = `
                                     class=""
                                   >
                                     正确性
+                                  </span>
+                                </div>
+                              </div>
+                            </div>
+                            <div
+                              class="ant-space-item"
+                              style="margin-right: 8px; padding-bottom: 8px;"
+                            >
+                              <div
+                                class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center rule-category-performance_cost rule-category-tag-wrap css-x5diec"
+                              >
+                                <div
+                                  class="ant-space-item"
+                                >
+                                  <span
+                                    class=""
+                                  >
+                                    高消耗
                                   </span>
                                 </div>
                               </div>
@@ -3544,7 +3760,7 @@ exports[`sqle/GlobalRuleTemplate/CreateRuleTemplate rule list action 1`] = `
                               style="margin-bottom: 8px;"
                             >
                               <div
-                                class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center rule-category-audit_accuracy rule-detail-category css-1yzh26w"
+                                class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center rule-category-audit_accuracy rule-detail-category css-x5diec"
                                 style="flex-wrap: wrap; margin-bottom: -8px;"
                               >
                                 <div
@@ -3581,7 +3797,7 @@ exports[`sqle/GlobalRuleTemplate/CreateRuleTemplate rule list action 1`] = `
                               style="margin-bottom: 8px;"
                             >
                               <div
-                                class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center rule-category-sql rule-detail-category css-1yzh26w"
+                                class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center rule-category-sql rule-detail-category css-x5diec"
                                 style="flex-wrap: wrap; margin-bottom: -8px;"
                               >
                                 <div
@@ -3618,7 +3834,7 @@ exports[`sqle/GlobalRuleTemplate/CreateRuleTemplate rule list action 1`] = `
                               style="margin-bottom: 8px;"
                             >
                               <div
-                                class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center rule-category-operand rule-detail-category css-1yzh26w"
+                                class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center rule-category-operand rule-detail-category css-x5diec"
                                 style="flex-wrap: wrap; margin-bottom: -8px;"
                               >
                                 <div
@@ -3660,9 +3876,10 @@ exports[`sqle/GlobalRuleTemplate/CreateRuleTemplate rule list action 1`] = `
                             </div>
                             <div
                               class="ant-space-item"
+                              style="margin-bottom: 8px;"
                             >
                               <div
-                                class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center rule-category-audit_purpose rule-detail-category css-1yzh26w"
+                                class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center rule-category-audit_purpose rule-detail-category css-x5diec"
                                 style="flex-wrap: wrap; margin-bottom: -8px;"
                               >
                                 <div
@@ -3688,6 +3905,42 @@ exports[`sqle/GlobalRuleTemplate/CreateRuleTemplate rule list action 1`] = `
                                     >
                                       <span>
                                         正确性
+                                      </span>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                            <div
+                              class="ant-space-item"
+                            >
+                              <div
+                                class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center rule-category-performance_cost rule-detail-category css-x5diec"
+                                style="flex-wrap: wrap; margin-bottom: -8px;"
+                              >
+                                <div
+                                  class="ant-space-item"
+                                  style="margin-right: 8px; padding-bottom: 8px;"
+                                >
+                                  <span>
+                                    性能消耗
+                                    :
+                                  </span>
+                                </div>
+                                <div
+                                  class="ant-space-item"
+                                  style="padding-bottom: 8px;"
+                                >
+                                  <div
+                                    class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+                                    style="flex-wrap: wrap; margin-bottom: -8px;"
+                                  >
+                                    <div
+                                      class="ant-space-item"
+                                      style="padding-bottom: 8px;"
+                                    >
+                                      <span>
+                                        高消耗
                                       </span>
                                     </div>
                                   </div>
@@ -4601,6 +4854,7 @@ exports[`sqle/GlobalRuleTemplate/CreateRuleTemplate should match snap shot 1`] =
                   </div>
                   <div
                     class="ant-space-item"
+                    style="margin-right: 12px;"
                   >
                     <div
                       class="ant-select ant-select-sm ant-select-borderless basic-select-wrapper custom-select-namespace css-pti5z8 css-dev-only-do-not-override-v9sov3 ant-select-single ant-select-allow-clear ant-select-show-arrow"
@@ -4654,6 +4908,95 @@ exports[`sqle/GlobalRuleTemplate/CreateRuleTemplate should match snap shot 1`] =
                         style="user-select: none;"
                         unselectable="on"
                       />
+                    </div>
+                  </div>
+                  <div
+                    class="ant-space-item"
+                  >
+                    <div
+                      class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center css-1nt49ug"
+                    >
+                      <div
+                        class="ant-space-item"
+                        style="margin-right: 4px;"
+                      >
+                        <div
+                          class="ant-select ant-select-sm ant-select-borderless basic-select-wrapper custom-select-namespace css-pti5z8 css-dev-only-do-not-override-v9sov3 ant-select-single ant-select-allow-clear ant-select-show-arrow"
+                        >
+                          <div
+                            class="ant-select-selector"
+                          >
+                            <span
+                              class="ant-select-selection-search"
+                            >
+                              <input
+                                aria-activedescendant="performance_cost_list_0"
+                                aria-autocomplete="list"
+                                aria-controls="performance_cost_list"
+                                aria-expanded="false"
+                                aria-haspopup="listbox"
+                                aria-owns="performance_cost_list"
+                                autocomplete="off"
+                                class="ant-select-selection-search-input"
+                                id="performance_cost"
+                                readonly=""
+                                role="combobox"
+                                style="opacity: 0;"
+                                type="search"
+                                unselectable="on"
+                                value=""
+                              />
+                            </span>
+                            <span
+                              class="ant-select-selection-placeholder"
+                            >
+                              <span
+                                class="custom-select-placeholder css-qly0fu"
+                              >
+                                <span
+                                  class="custom-select-placeholder-prefix"
+                                >
+                                  性能消耗
+                                </span>
+                                <span
+                                  class="custom-select-placeholder-value"
+                                >
+                                  请选择{{name}}
+                                </span>
+                              </span>
+                            </span>
+                          </div>
+                          <span
+                            aria-hidden="true"
+                            class="ant-select-arrow"
+                            style="user-select: none;"
+                            unselectable="on"
+                          />
+                        </div>
+                      </div>
+                      <div
+                        class="ant-space-item"
+                      >
+                        <div
+                          class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
+                        >
+                          <div
+                            class="ant-space-item"
+                          >
+                            <svg
+                              height="16"
+                              viewBox="0 0 14 14"
+                              width="16"
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <path
+                                d="M7 12.833A5.833 5.833 0 1 1 7 1.167a5.833 5.833 0 0 1 0 11.666m0-1.166a4.666 4.666 0 1 0 0-9.333 4.666 4.666 0 0 0 0 9.333m-.583-7.584h1.166V5.25H6.417zm0 2.334h1.166v3.5H6.417z"
+                                fill="#EDB054"
+                              />
+                            </svg>
+                          </div>
+                        </div>
+                      </div>
                     </div>
                   </div>
                 </div>

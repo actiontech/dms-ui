@@ -56,7 +56,8 @@ export const ruleListData = [
       audit_accuracy: ['offline'],
       sql: ['dcl'],
       operand: ['database', 'table_space'],
-      audit_purpose: ['correction']
+      audit_purpose: ['correction'],
+      performance_cost: ['high']
     }
   },
   {
@@ -171,7 +172,8 @@ export const customRuleMockData = [
         'event',
         'user'
       ],
-      audit_purpose: ['maintenance']
+      audit_purpose: ['maintenance'],
+      performance_cost: ['high']
     }
   },
   {
@@ -232,7 +234,8 @@ export const ruleListMockData: IRuleResV1[] = [
         'event',
         'user'
       ],
-      audit_purpose: ['maintenance']
+      audit_purpose: ['maintenance'],
+      performance_cost: ['high']
     }
   },
   {
@@ -455,6 +458,13 @@ export const mockRuleCategoriesData = {
     {
       category: 'sql',
       tag: 'transaction',
+      count: 2
+    }
+  ],
+  performance_cost: [
+    {
+      category: 'performance_cost',
+      tag: 'high',
       count: 2
     }
   ]
