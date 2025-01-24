@@ -320,7 +320,8 @@ export const importRuleTemplateMockData = {
   name: 'default_MySQL',
   desc: '',
   db_type: 'MySQL',
-  rule_list: [ruleListData[0]]
+  rule_list: [ruleListData[0]],
+  rule_version: 'v2'
 };
 
 export const mockRuleCategoriesData = {
