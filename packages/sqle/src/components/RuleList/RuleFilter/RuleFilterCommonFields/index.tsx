@@ -3,6 +3,9 @@ import { Form, Space } from 'antd';
 import { useTranslation } from 'react-i18next';
 import { CustomSelect } from '@actiontech/shared/lib/components/CustomSelect';
 import useRuleCategories from '../../../../hooks/useRuleCategories';
+import { InfoCircleOutlined } from '@actiontech/icons';
+import { BasicToolTip } from '@actiontech/shared';
+import { RuleFilterCommonFieldSelectStyleWrapper } from '../../style';
 
 const RuleFilterCommonFields = () => {
   const { t } = useTranslation();
@@ -12,7 +15,8 @@ const RuleFilterCommonFields = () => {
     auditAccuracyOptions,
     operandOptions,
     sqlOptions,
-    auditPurposeOptions
+    auditPurposeOptions,
+    performanceLevelOptions
   } = useRuleCategories();
 
   return (
@@ -62,6 +66,22 @@ const RuleFilterCommonFields = () => {
           options={auditAccuracyOptions}
         />
       </Form.Item>
+      <RuleFilterCommonFieldSelectStyleWrapper size={4}>
+        <Form.Item noStyle name="performance_cost">
+          <CustomSelect
+            prefix={t('rule.category.performanceCost')}
+            suffixIcon={null}
+            bordered={false}
+            allowClear
+            loading={getRuleCategoriesLoading}
+            options={performanceLevelOptions}
+          />
+        </Form.Item>
+        <BasicToolTip
+          title={t('rule.category.performanceLevelTips')}
+          suffixIcon={<InfoCircleOutlined />}
+        ></BasicToolTip>
+      </RuleFilterCommonFieldSelectStyleWrapper>
     </Space>
   );
 };

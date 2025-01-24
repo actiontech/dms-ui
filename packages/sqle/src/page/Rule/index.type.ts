@@ -12,6 +12,7 @@ export type RuleListFilterForm = {
   audit_accuracy: string;
   sql: string;
   filter_rule_version: RuleVersionDictionaryEnum;
+  performance_cost: string;
 };
 
 export type RuleListFilterFormKey = keyof RuleListFilterForm;

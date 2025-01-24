@@ -307,6 +307,17 @@ export const RuleItemTagStyleWrapper = styled(Space)`
     }
   }
 
+  &.rule-category-performance_cost {
+    border: 1px solid
+      ${({ theme }) => theme.sharedTheme.components.basicTag.Grape.color};
+    color: ${({ theme }) => theme.sharedTheme.components.basicTag.Grape.color};
+
+    & .rule-category-active-tag {
+      background-color: ${({ theme }) =>
+        theme.sharedTheme.components.basicTag.Grape.color};
+    }
+  }
+
   .rule-category-active-tag {
     color: ${({ theme }) => theme.sharedTheme.basic.colorWhite};
     padding: 0 4px;
@@ -344,4 +355,10 @@ export const RuleFilterCustomInputStyleWrapper = styled(
   CustomInputStyleWrapper
 )`
   width: 210px;
+`;
+
+export const RuleFilterCommonFieldSelectStyleWrapper = styled(Space)`
+  .ant-space-item {
+    display: flex;
+  }
 `;

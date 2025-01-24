@@ -54,7 +54,10 @@ export default {
       auditAccuracy: '审核精度',
       auditPurpose: '审核目的',
       operand: '操作对象',
-      sql: 'SQL分类'
+      sql: 'SQL分类',
+      performanceCost: '性能消耗',
+      performanceLevelTips:
+        '高消耗规则会产生大量数据扫描或复杂查询，可能对数据库性能造成显著影响，建议在生产环境谨慎使用。'
     }
   },
 
