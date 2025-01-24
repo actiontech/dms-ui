@@ -470,5 +470,16 @@ describe('sqle/GlobalRuleTemplate/ImportRuleTemplate', () => {
       fuzzy_keyword_rule: 'test',
       filter_rule_version: 'v2'
     });
+
+    fireEvent.mouseDown(getBySelector('#performance_cost'));
+    await act(async () => jest.advanceTimersByTime(0));
+    fireEvent.click(getBySelector('#performance_cost_list_0'));
+    await act(async () => jest.advanceTimersByTime(3000));
+    expect(getAllRuleSpy).toHaveBeenNthCalledWith(7, {
+      tags: 'column,correction,offline,dcl,high',
+      filter_db_type: 'MySQL',
+      fuzzy_keyword_rule: 'test',
+      filter_rule_version: 'v2'
+    });
   });
 });

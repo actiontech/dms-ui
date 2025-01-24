@@ -226,7 +226,7 @@ exports[`sqle/RuleTemplate/EditRuleTemplate should match snap shot 1`] = `
                               style="margin-bottom: 8px;"
                             >
                               <div
-                                class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center rule-category-audit_accuracy rule-detail-category css-1yzh26w"
+                                class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center rule-category-audit_accuracy rule-detail-category css-v80oh9"
                                 style="flex-wrap: wrap; margin-bottom: -8px;"
                               >
                                 <div
@@ -263,7 +263,7 @@ exports[`sqle/RuleTemplate/EditRuleTemplate should match snap shot 1`] = `
                               style="margin-bottom: 8px;"
                             >
                               <div
-                                class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center rule-category-sql rule-detail-category css-1yzh26w"
+                                class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center rule-category-sql rule-detail-category css-v80oh9"
                                 style="flex-wrap: wrap; margin-bottom: -8px;"
                               >
                                 <div
@@ -300,7 +300,7 @@ exports[`sqle/RuleTemplate/EditRuleTemplate should match snap shot 1`] = `
                               style="margin-bottom: 8px;"
                             >
                               <div
-                                class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center rule-category-operand rule-detail-category css-1yzh26w"
+                                class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center rule-category-operand rule-detail-category css-v80oh9"
                                 style="flex-wrap: wrap; margin-bottom: -8px;"
                               >
                                 <div
@@ -414,9 +414,10 @@ exports[`sqle/RuleTemplate/EditRuleTemplate should match snap shot 1`] = `
                             </div>
                             <div
                               class="ant-space-item"
+                              style="margin-bottom: 8px;"
                             >
                               <div
-                                class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center rule-category-audit_purpose rule-detail-category css-1yzh26w"
+                                class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center rule-category-audit_purpose rule-detail-category css-v80oh9"
                                 style="flex-wrap: wrap; margin-bottom: -8px;"
                               >
                                 <div
@@ -442,6 +443,42 @@ exports[`sqle/RuleTemplate/EditRuleTemplate should match snap shot 1`] = `
                                     >
                                       <span>
                                         可维护性
+                                      </span>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                            <div
+                              class="ant-space-item"
+                            >
+                              <div
+                                class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center rule-category-performance_cost rule-detail-category css-v80oh9"
+                                style="flex-wrap: wrap; margin-bottom: -8px;"
+                              >
+                                <div
+                                  class="ant-space-item"
+                                  style="margin-right: 8px; padding-bottom: 8px;"
+                                >
+                                  <span>
+                                    性能消耗
+                                    :
+                                  </span>
+                                </div>
+                                <div
+                                  class="ant-space-item"
+                                  style="padding-bottom: 8px;"
+                                >
+                                  <div
+                                    class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+                                    style="flex-wrap: wrap; margin-bottom: -8px;"
+                                  >
+                                    <div
+                                      class="ant-space-item"
+                                      style="padding-bottom: 8px;"
+                                    >
+                                      <span>
+                                        高消耗
                                       </span>
                                     </div>
                                   </div>
@@ -1303,7 +1340,7 @@ exports[`sqle/RuleTemplate/EditRuleTemplate when param type is boolean 1`] = `
                               style="margin-bottom: 8px;"
                             >
                               <div
-                                class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center rule-category-audit_accuracy rule-detail-category css-1yzh26w"
+                                class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center rule-category-audit_accuracy rule-detail-category css-v80oh9"
                                 style="flex-wrap: wrap; margin-bottom: -8px;"
                               >
                                 <div
@@ -1340,7 +1377,7 @@ exports[`sqle/RuleTemplate/EditRuleTemplate when param type is boolean 1`] = `
                               style="margin-bottom: 8px;"
                             >
                               <div
-                                class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center rule-category-sql rule-detail-category css-1yzh26w"
+                                class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center rule-category-sql rule-detail-category css-v80oh9"
                                 style="flex-wrap: wrap; margin-bottom: -8px;"
                               >
                                 <div
@@ -1377,7 +1414,7 @@ exports[`sqle/RuleTemplate/EditRuleTemplate when param type is boolean 1`] = `
                               style="margin-bottom: 8px;"
                             >
                               <div
-                                class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center rule-category-operand rule-detail-category css-1yzh26w"
+                                class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center rule-category-operand rule-detail-category css-v80oh9"
                                 style="flex-wrap: wrap; margin-bottom: -8px;"
                               >
                                 <div
@@ -1491,9 +1528,10 @@ exports[`sqle/RuleTemplate/EditRuleTemplate when param type is boolean 1`] = `
                             </div>
                             <div
                               class="ant-space-item"
+                              style="margin-bottom: 8px;"
                             >
                               <div
-                                class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center rule-category-audit_purpose rule-detail-category css-1yzh26w"
+                                class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center rule-category-audit_purpose rule-detail-category css-v80oh9"
                                 style="flex-wrap: wrap; margin-bottom: -8px;"
                               >
                                 <div
@@ -1519,6 +1557,42 @@ exports[`sqle/RuleTemplate/EditRuleTemplate when param type is boolean 1`] = `
                                     >
                                       <span>
                                         可维护性
+                                      </span>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                            <div
+                              class="ant-space-item"
+                            >
+                              <div
+                                class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center rule-category-performance_cost rule-detail-category css-v80oh9"
+                                style="flex-wrap: wrap; margin-bottom: -8px;"
+                              >
+                                <div
+                                  class="ant-space-item"
+                                  style="margin-right: 8px; padding-bottom: 8px;"
+                                >
+                                  <span>
+                                    性能消耗
+                                    :
+                                  </span>
+                                </div>
+                                <div
+                                  class="ant-space-item"
+                                  style="padding-bottom: 8px;"
+                                >
+                                  <div
+                                    class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+                                    style="flex-wrap: wrap; margin-bottom: -8px;"
+                                  >
+                                    <div
+                                      class="ant-space-item"
+                                      style="padding-bottom: 8px;"
+                                    >
+                                      <span>
+                                        高消耗
                                       </span>
                                     </div>
                                   </div>
