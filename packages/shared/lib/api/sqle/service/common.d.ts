@@ -735,6 +735,8 @@ export interface ICreateProjectRuleTemplateReqV1 {
   rule_list?: IRuleReqV1[];
 
   rule_template_name?: string;
+
+  rule_version?: string;
 }
 
 export interface ICreateRollbackWorkflowReq {
@@ -769,6 +771,8 @@ export interface ICreateRuleTemplateReqV1 {
   rule_list?: IRuleReqV1[];
 
   rule_template_name?: string;
+
+  rule_version?: string;
 }
 
 export interface ICreateSQLAuditRecordResV1 {
@@ -2489,6 +2493,8 @@ export interface IParseProjectRuleTemplateFileResDataV1 {
   name?: string;
 
   rule_list?: IRuleResV1[];
+
+  rule_version?: string;
 }
 
 export interface IParseProjectRuleTemplateFileResV1 {
@@ -2683,6 +2689,8 @@ export interface IRuleProjectTemplateDetailResV1 {
   rule_list?: IRuleResV1[];
 
   rule_template_name?: string;
+
+  rule_version?: string;
 }
 
 export interface IRuleReqV1 {
@@ -2735,6 +2743,8 @@ export interface IRuleTemplateDetailResV1 {
   rule_list?: IRuleResV1[];
 
   rule_template_name?: string;
+
+  rule_version?: string;
 }
 
 export interface IRuleTemplateResV1 {
@@ -2743,6 +2753,8 @@ export interface IRuleTemplateResV1 {
   desc?: string;
 
   rule_template_name?: string;
+
+  rule_version?: string;
 }
 
 export interface IRuleTemplateTipResV1 {
@@ -2753,6 +2765,8 @@ export interface IRuleTemplateTipResV1 {
   rule_template_id?: string;
 
   rule_template_name?: string;
+
+  rule_version?: string;
 }
 
 export interface IRuleTips {
@@ -2799,6 +2813,10 @@ export interface ISQLAuditRecordResData {
 
 export interface ISQLAuditResult {
   db_type?: string;
+
+  error_info?: string;
+
+  execution_failed?: boolean;
 
   i18n_audit_result_info?: II18nAuditResultInfo;
 

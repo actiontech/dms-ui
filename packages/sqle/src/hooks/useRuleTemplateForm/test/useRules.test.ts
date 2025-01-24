@@ -6,6 +6,7 @@ import { ruleListData } from '../../../testUtils/mockApi/rule_template/data';
 import { Form } from 'antd';
 import { RuleFilterFieldsType } from '../../../components/RuleList';
 import { NamePath } from 'antd/es/form/interface';
+import { RuleVersionDictionaryEnum } from '../../useRuleVersionTips';
 
 describe('sqle/hooks/useRuleTemplateForm/useRules', () => {
   let getRulesSpy: jest.SpyInstance;
@@ -58,7 +59,10 @@ describe('sqle/hooks/useRuleTemplateForm/useRules', () => {
       return mockFormValue[key as keyof RuleFilterFieldsType];
     });
 
-    const { result } = renderHooksWithRedux(() => useRules('MySQL'), {});
+    const { result } = renderHooksWithRedux(
+      () => useRules('MySQL', RuleVersionDictionaryEnum.v2),
+      {}
+    );
     expect(result.current.getAllRulesLoading).toEqual(true);
     await act(async () => jest.advanceTimersByTime(3000));
     expect(result.current.allRules).toEqual(ruleListData);
@@ -73,6 +77,7 @@ describe('sqle/hooks/useRuleTemplateForm/useRules', () => {
     expect(getRulesSpy).toHaveBeenNthCalledWith(1, {
       filter_db_type: 'MySQL',
       fuzzy_keyword_rule: 'keyword',
+      filter_rule_version: 'v2',
       tags: 'table,security,offline,dcl'
     });
   });

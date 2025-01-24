@@ -19,6 +19,7 @@ import {
   isExportFileResponse,
   jsonParse
 } from '@actiontech/shared/lib/utils/Common';
+import useRuleVersionTips from '../useRuleVersionTips';
 
 const useImportRuleTemplate = () => {
   const { t } = useTranslation();
@@ -34,7 +35,8 @@ const useImportRuleTemplate = () => {
     nextStep,
     baseInfoFormSubmitLoading,
     setBaseInfoFormSubmitLoading,
-    dbType
+    dbType,
+    ruleVersion
   } = useFormStep();
 
   const [ruleTemplateFormVisibility, { setTrue: showRuleTemplateForm }] =
@@ -60,7 +62,8 @@ const useImportRuleTemplate = () => {
     setFilteredRule,
     ruleFilterForm,
     filterCategoryTags
-  } = useRules(dbType);
+  } = useRules(dbType, ruleVersion);
+  const { transformBackendRuleVersion2FormValues } = useRuleVersionTips();
 
   const importServicesCheck = useCallback(
     (
@@ -138,10 +141,19 @@ const useImportRuleTemplate = () => {
       ruleTemplateForm.setFieldsValue({
         templateDesc: importFileData.current.desc,
         templateName: importFileData.current.name,
-        db_type: importFileData.current.db_type
+        db_type: importFileData.current.db_type,
+        ruleVersion: transformBackendRuleVersion2FormValues(
+          importFileData.current.db_type!,
+          importFileData.current.rule_version
+        )
       });
     }
-  }, [ruleTemplateForm, selectFileForm, showRuleTemplateForm]);
+  }, [
+    ruleTemplateForm,
+    selectFileForm,
+    showRuleTemplateForm,
+    transformBackendRuleVersion2FormValues
+  ]);
 
   const removeUploadFile = useCallback(() => {
     setUploadCheckStatus({

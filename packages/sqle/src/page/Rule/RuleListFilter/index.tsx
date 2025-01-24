@@ -16,6 +16,9 @@ import { FlagFilled } from '@actiontech/icons';
 import { useTypedQuery } from '@actiontech/shared';
 import { ROUTE_PATHS } from '@actiontech/shared/lib/data/routePaths';
 import { RuleFilterCommonFields } from '../../../components/RuleList';
+import useRuleVersionTips, {
+  RuleVersionDictionaryEnum
+} from '../../../hooks/useRuleVersionTips';
 
 const RuleListFilter: React.FC<RuleListFilterProps> = ({
   setShowNorRuleTemplatePage,
@@ -48,6 +51,8 @@ const RuleListFilter: React.FC<RuleListFilterProps> = ({
     dbDriverOptions,
     loading: getDbTypeLoading
   } = useDbServiceDriver();
+
+  const { ruleVersionOptions } = useRuleVersionTips();
 
   const {
     loading: getRuleTemplateLoading,
@@ -112,8 +117,17 @@ const RuleListFilter: React.FC<RuleListFilterProps> = ({
   const onTemplateAfterChange = (templateName: string) => {
     if (!templateName) {
       form.setFieldValue('project_name', undefined);
+      form.setFieldValue('filter_rule_version', RuleVersionDictionaryEnum.v1);
     }
   };
+
+  useEffect(() => {
+    if (filterDbType !== 'MySQL') {
+      form.setFieldValue('filter_rule_version', undefined);
+    } else {
+      form.setFieldValue('filter_rule_version', RuleVersionDictionaryEnum.v1);
+    }
+  }, [filterDbType, form]);
 
   useEffect(() => {
     updateGlobalRuleTemplateList();
@@ -165,6 +179,21 @@ const RuleListFilter: React.FC<RuleListFilterProps> = ({
               allowClear={false}
               disabled={!!filterRuleTemplate}
               loading={getDbTypeLoading}
+            />
+          </Form.Item>
+
+          <Form.Item
+            noStyle
+            name="filter_rule_version"
+            hidden={filterDbType !== 'MySQL'}
+          >
+            <CustomSelect
+              prefix={t('rule.form.ruleVersion')}
+              suffixIcon={null}
+              bordered={false}
+              options={ruleVersionOptions}
+              allowClear={false}
+              disabled={!!filterRuleTemplate}
             />
           </Form.Item>
         </Space>

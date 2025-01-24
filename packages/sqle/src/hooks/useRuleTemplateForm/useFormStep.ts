@@ -9,6 +9,8 @@ const useFormStep = () => {
 
   const dbType = Form.useWatch('db_type', form);
 
+  const ruleVersion = Form.useWatch('ruleVersion', form);
+
   const [step, setStep] = useState(0);
 
   const [baseInfoFormSubmitLoading, setBaseInfoFormSubmitLoading] =
@@ -17,7 +19,9 @@ const useFormStep = () => {
   const submitSuccessStatus = useMemo(() => step === SUCCESS_STEP_NUM, [step]);
 
   const prevStep = useCallback(() => {
-    setStep(step - 1);
+    if (step > 0) {
+      setStep(step - 1);
+    }
   }, [step]);
 
   const nextStep = useCallback(() => {
@@ -33,7 +37,8 @@ const useFormStep = () => {
     submitSuccessStatus,
     baseInfoFormSubmitLoading,
     setBaseInfoFormSubmitLoading,
-    dbType
+    dbType,
+    ruleVersion
   };
 };
 
