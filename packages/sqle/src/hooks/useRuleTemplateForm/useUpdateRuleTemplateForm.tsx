@@ -14,7 +14,8 @@ const useUpdateRuleTemplateForm = () => {
     nextStep,
     baseInfoFormSubmitLoading,
     setBaseInfoFormSubmitLoading,
-    dbType
+    dbType,
+    ruleVersion
   } = useFormStep();
 
   const {
@@ -27,7 +28,7 @@ const useUpdateRuleTemplateForm = () => {
     setFilteredRule,
     ruleFilterForm,
     filterCategoryTags
-  } = useRules(dbType);
+  } = useRules(dbType, ruleVersion);
 
   const [
     updateTemplateLoading,

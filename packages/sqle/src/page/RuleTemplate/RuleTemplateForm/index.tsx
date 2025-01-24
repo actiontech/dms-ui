@@ -1,5 +1,4 @@
 import { RuleTemplateFormProps } from './index.type';
-
 import { FormAreaBlockStyleWrapper } from '@actiontech/shared/lib/components/CustomForm/style';
 import { FormItemBigTitle } from '@actiontech/shared/lib/components/CustomForm';
 import Icon from '@ant-design/icons/lib/components/Icon';

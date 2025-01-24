@@ -17,6 +17,7 @@ import {
 import useRuleManagerSegmented from '../../RuleManager/useRuleManagerSegmented';
 import { RuleManagerSegmentedKey } from '../../RuleManager/index.type';
 import { LeftArrowOutlined } from '@actiontech/icons';
+import useRuleVersionTips from '../../../hooks/useRuleVersionTips';
 
 const CreateRuleTemplate = () => {
   const { t } = useTranslation();
@@ -46,6 +47,8 @@ const CreateRuleTemplate = () => {
     filterCategoryTags
   } = useCreateRuleTemplateForm();
 
+  const { transformRuleVersion2BackendParams } = useRuleVersionTips();
+
   const { onGoToGlobalRuleTemplateList } = useBackToListPage();
 
   const { updateActiveSegmentedKey } = useRuleManagerSegmented();
@@ -73,7 +76,8 @@ const CreateRuleTemplate = () => {
         rule_template_name: baseInfo.templateName,
         desc: baseInfo.templateDesc,
         db_type: baseInfo.db_type,
-        rule_list: activeRuleWithNewField
+        rule_list: activeRuleWithNewField,
+        rule_version: transformRuleVersion2BackendParams(baseInfo.ruleVersion)
       })
       .then((res) => {
         if (res.data.code === ResponseCode.SUCCESS) {
@@ -83,7 +87,14 @@ const CreateRuleTemplate = () => {
       .finally(() => {
         finishSubmit();
       });
-  }, [activeRule, finishSubmit, form, nextStep, startSubmit]);
+  }, [
+    activeRule,
+    finishSubmit,
+    form,
+    nextStep,
+    startSubmit,
+    transformRuleVersion2BackendParams
+  ]);
 
   return (
     <PageLayoutHasFixedHeaderStyleWrapper>
