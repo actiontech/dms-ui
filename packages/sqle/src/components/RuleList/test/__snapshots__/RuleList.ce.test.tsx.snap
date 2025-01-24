@@ -62,7 +62,7 @@ exports[`sqle/components/RuleList CE should match snap 1`] = `
                     style="margin-right: 8px; padding-bottom: 8px;"
                   >
                     <div
-                      class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center rule-param-tag css-1yzh26w"
+                      class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center rule-param-tag css-x5diec"
                     >
                       <div
                         class="ant-space-item"
@@ -83,7 +83,7 @@ exports[`sqle/components/RuleList CE should match snap 1`] = `
                     style="margin-right: 8px; padding-bottom: 8px;"
                   >
                     <div
-                      class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center rule-category-audit_accuracy rule-category-tag-wrap css-1yzh26w"
+                      class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center rule-category-audit_accuracy rule-category-tag-wrap css-x5diec"
                     >
                       <div
                         class="ant-space-item"
@@ -101,7 +101,7 @@ exports[`sqle/components/RuleList CE should match snap 1`] = `
                     style="margin-right: 8px; padding-bottom: 8px;"
                   >
                     <div
-                      class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center rule-category-sql rule-category-tag-wrap css-1yzh26w"
+                      class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center rule-category-sql rule-category-tag-wrap css-x5diec"
                     >
                       <div
                         class="ant-space-item"
@@ -119,7 +119,7 @@ exports[`sqle/components/RuleList CE should match snap 1`] = `
                     style="margin-right: 8px; padding-bottom: 8px;"
                   >
                     <div
-                      class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center rule-category-operand rule-category-tag-wrap css-1yzh26w"
+                      class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center rule-category-operand rule-category-tag-wrap css-x5diec"
                     >
                       <div
                         class="ant-space-item"
@@ -237,7 +237,7 @@ exports[`sqle/components/RuleList CE should match snap 1`] = `
                     style="margin-right: 8px; padding-bottom: 8px;"
                   >
                     <div
-                      class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center rule-category-audit_purpose rule-category-tag-wrap css-1yzh26w"
+                      class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center rule-category-audit_purpose rule-category-tag-wrap css-x5diec"
                     >
                       <div
                         class="ant-space-item"
@@ -255,7 +255,25 @@ exports[`sqle/components/RuleList CE should match snap 1`] = `
                     style="margin-right: 8px; padding-bottom: 8px;"
                   >
                     <div
-                      class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center rule-audit-tag css-1yzh26w"
+                      class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center rule-category-performance_cost rule-category-tag-wrap css-x5diec"
+                    >
+                      <div
+                        class="ant-space-item"
+                      >
+                        <span
+                          class=""
+                        >
+                          高消耗
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    class="ant-space-item"
+                    style="margin-right: 8px; padding-bottom: 8px;"
+                  >
+                    <div
+                      class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center rule-audit-tag css-x5diec"
                     >
                       <div
                         class="ant-space-item"
@@ -269,7 +287,7 @@ exports[`sqle/components/RuleList CE should match snap 1`] = `
                     style="padding-bottom: 8px;"
                   >
                     <div
-                      class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center rule-rewrite-tag css-1yzh26w"
+                      class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center rule-rewrite-tag css-x5diec"
                     >
                       <div
                         class="ant-space-item"
@@ -371,7 +389,7 @@ exports[`sqle/components/RuleList CE should match snap 1`] = `
                     style="margin-right: 8px; padding-bottom: 8px;"
                   >
                     <div
-                      class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center rule-category-audit_accuracy rule-category-tag-wrap css-1yzh26w"
+                      class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center rule-category-audit_accuracy rule-category-tag-wrap css-x5diec"
                     >
                       <div
                         class="ant-space-item"
@@ -389,7 +407,7 @@ exports[`sqle/components/RuleList CE should match snap 1`] = `
                     style="margin-right: 8px; padding-bottom: 8px;"
                   >
                     <div
-                      class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center rule-category-sql rule-category-tag-wrap css-1yzh26w"
+                      class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center rule-category-sql rule-category-tag-wrap css-x5diec"
                     >
                       <div
                         class="ant-space-item"
@@ -407,7 +425,7 @@ exports[`sqle/components/RuleList CE should match snap 1`] = `
                     style="margin-right: 8px; padding-bottom: 8px;"
                   >
                     <div
-                      class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center rule-category-operand rule-category-tag-wrap css-1yzh26w"
+                      class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center rule-category-operand rule-category-tag-wrap css-x5diec"
                     >
                       <div
                         class="ant-space-item"
@@ -435,7 +453,7 @@ exports[`sqle/components/RuleList CE should match snap 1`] = `
                     style="margin-right: 8px; padding-bottom: 8px;"
                   >
                     <div
-                      class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center rule-category-audit_purpose rule-category-tag-wrap css-1yzh26w"
+                      class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center rule-category-audit_purpose rule-category-tag-wrap css-x5diec"
                     >
                       <div
                         class="ant-space-item"
@@ -453,7 +471,7 @@ exports[`sqle/components/RuleList CE should match snap 1`] = `
                     style="margin-right: 8px; padding-bottom: 8px;"
                   >
                     <div
-                      class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center rule-audit-tag css-1yzh26w"
+                      class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center rule-audit-tag css-x5diec"
                     >
                       <div
                         class="ant-space-item"
@@ -559,7 +577,7 @@ exports[`sqle/components/RuleList CE should match snap 1`] = `
                     style="margin-right: 8px; padding-bottom: 8px;"
                   >
                     <div
-                      class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center rule-category-audit_accuracy rule-category-tag-wrap css-1yzh26w"
+                      class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center rule-category-audit_accuracy rule-category-tag-wrap css-x5diec"
                     >
                       <div
                         class="ant-space-item"
@@ -577,7 +595,7 @@ exports[`sqle/components/RuleList CE should match snap 1`] = `
                     style="margin-right: 8px; padding-bottom: 8px;"
                   >
                     <div
-                      class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center rule-category-sql rule-category-tag-wrap css-1yzh26w"
+                      class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center rule-category-sql rule-category-tag-wrap css-x5diec"
                     >
                       <div
                         class="ant-space-item"
@@ -595,7 +613,7 @@ exports[`sqle/components/RuleList CE should match snap 1`] = `
                     style="margin-right: 8px; padding-bottom: 8px;"
                   >
                     <div
-                      class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center rule-category-operand rule-category-tag-wrap css-1yzh26w"
+                      class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center rule-category-operand rule-category-tag-wrap css-x5diec"
                     >
                       <div
                         class="ant-space-item"
@@ -623,7 +641,7 @@ exports[`sqle/components/RuleList CE should match snap 1`] = `
                     style="margin-right: 8px; padding-bottom: 8px;"
                   >
                     <div
-                      class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center rule-category-audit_purpose rule-category-tag-wrap css-1yzh26w"
+                      class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center rule-category-audit_purpose rule-category-tag-wrap css-x5diec"
                     >
                       <div
                         class="ant-space-item"
@@ -645,7 +663,7 @@ exports[`sqle/components/RuleList CE should match snap 1`] = `
                     style="padding-bottom: 8px;"
                   >
                     <div
-                      class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center rule-rewrite-tag css-1yzh26w"
+                      class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center rule-rewrite-tag css-x5diec"
                     >
                       <div
                         class="ant-space-item"
@@ -748,7 +766,7 @@ exports[`sqle/components/RuleList CE should match snap 1`] = `
                     style="margin-right: 8px; padding-bottom: 8px;"
                   >
                     <div
-                      class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center rule-category-audit_accuracy rule-category-tag-wrap css-1yzh26w"
+                      class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center rule-category-audit_accuracy rule-category-tag-wrap css-x5diec"
                     >
                       <div
                         class="ant-space-item"
@@ -766,7 +784,7 @@ exports[`sqle/components/RuleList CE should match snap 1`] = `
                     style="margin-right: 8px; padding-bottom: 8px;"
                   >
                     <div
-                      class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center rule-category-sql rule-category-tag-wrap css-1yzh26w"
+                      class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center rule-category-sql rule-category-tag-wrap css-x5diec"
                     >
                       <div
                         class="ant-space-item"
@@ -784,7 +802,7 @@ exports[`sqle/components/RuleList CE should match snap 1`] = `
                     style="margin-right: 8px; padding-bottom: 8px;"
                   >
                     <div
-                      class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center rule-category-operand rule-category-tag-wrap css-1yzh26w"
+                      class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center rule-category-operand rule-category-tag-wrap css-x5diec"
                     >
                       <div
                         class="ant-space-item"
@@ -812,7 +830,7 @@ exports[`sqle/components/RuleList CE should match snap 1`] = `
                     style="margin-right: 8px; padding-bottom: 8px;"
                   >
                     <div
-                      class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center rule-category-audit_purpose rule-category-tag-wrap css-1yzh26w"
+                      class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center rule-category-audit_purpose rule-category-tag-wrap css-x5diec"
                     >
                       <div
                         class="ant-space-item"

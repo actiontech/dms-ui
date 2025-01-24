@@ -423,6 +423,16 @@ describe('sqle/Rule', () => {
       filter_db_type: 'MySQL',
       filter_rule_version: ''
     });
+
+    fireEvent.mouseDown(getBySelector('#performance_cost'));
+    await act(async () => jest.advanceTimersByTime(0));
+    fireEvent.click(getBySelector('#performance_cost_list_0'));
+    await act(async () => jest.advanceTimersByTime(3000));
+    expect(getAllRulesSpy).toHaveBeenNthCalledWith(7, {
+      tags: 'column,correction,offline,dcl,high',
+      filter_db_type: 'MySQL',
+      filter_rule_version: ''
+    });
   });
 
   it('should hide empty list tips', async () => {

@@ -750,6 +750,121 @@ exports[`sqle/CustomRule/UpdateCustomRule return to custom list page 1`] = `
                     </div>
                   </div>
                   <div
+                    class="ant-form-item has-required-style css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+                  >
+                    <div
+                      class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                    >
+                      <div
+                        class="ant-col ant-col-24 ant-form-item-label ant-form-item-label-left css-dev-only-do-not-override-txh9fw"
+                      >
+                        <label
+                          class="ant-form-item-no-colon"
+                          for="performanceCost"
+                          title=""
+                        >
+                          <div
+                            class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
+                          >
+                            <div
+                              class="ant-space-item"
+                              style="margin-right: 8px;"
+                            >
+                              性能消耗
+                            </div>
+                            <div
+                              class="ant-space-item"
+                            >
+                              <svg
+                                height="16"
+                                viewBox="0 0 14 14"
+                                width="16"
+                                xmlns="http://www.w3.org/2000/svg"
+                              >
+                                <path
+                                  d="M7 12.833A5.833 5.833 0 1 1 7 1.167a5.833 5.833 0 0 1 0 11.666m0-1.166a4.666 4.666 0 1 0 0-9.333 4.666 4.666 0 0 0 0 9.333m-.583-7.584h1.166V5.25H6.417zm0 2.334h1.166v3.5H6.417z"
+                                  fill="#EDB054"
+                                />
+                              </svg>
+                            </div>
+                          </div>
+                        </label>
+                      </div>
+                      <div
+                        class="ant-col ant-col-24 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                      >
+                        <div
+                          class="ant-form-item-control-input"
+                        >
+                          <div
+                            class="ant-form-item-control-input-content"
+                          >
+                            <div
+                              class="ant-select ant-select-in-form-item basic-select-wrapper css-iy4o4x css-dev-only-do-not-override-v9sov3 ant-select-single ant-select-allow-clear ant-select-show-arrow"
+                            >
+                              <div
+                                class="ant-select-selector"
+                              >
+                                <span
+                                  class="ant-select-selection-search"
+                                >
+                                  <input
+                                    aria-activedescendant="performanceCost_list_0"
+                                    aria-autocomplete="list"
+                                    aria-controls="performanceCost_list"
+                                    aria-expanded="false"
+                                    aria-haspopup="listbox"
+                                    aria-owns="performanceCost_list"
+                                    autocomplete="off"
+                                    class="ant-select-selection-search-input"
+                                    id="performanceCost"
+                                    readonly=""
+                                    role="combobox"
+                                    style="opacity: 0;"
+                                    type="search"
+                                    unselectable="on"
+                                    value=""
+                                  />
+                                </span>
+                                <span
+                                  class="ant-select-selection-placeholder"
+                                >
+                                  请选择性能消耗
+                                </span>
+                              </div>
+                              <span
+                                aria-hidden="true"
+                                class="ant-select-arrow"
+                                style="user-select: none;"
+                                unselectable="on"
+                              >
+                                <span
+                                  aria-label="down"
+                                  class="anticon anticon-down ant-select-suffix"
+                                  role="img"
+                                >
+                                  <svg
+                                    aria-hidden="true"
+                                    data-icon="down"
+                                    fill="currentColor"
+                                    focusable="false"
+                                    height="1em"
+                                    viewBox="64 64 896 896"
+                                    width="1em"
+                                  >
+                                    <path
+                                      d="M884 256h-75c-5.1 0-9.9 2.5-12.9 6.6L512 654.2 227.9 262.6c-3-4.1-7.8-6.6-12.9-6.6h-75c-6.5 0-10.3 7.4-6.5 12.7l352.6 486.1c12.8 17.6 39 17.6 51.7 0l352.6-486.1c3.9-5.3.1-12.7-6.4-12.7z"
+                                    />
+                                  </svg>
+                                </span>
+                              </span>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div
                     class="ant-form-item has-required-style css-1jlm9cy css-dev-only-do-not-override-txh9fw ant-form-item-has-success"
                   >
                     <div
@@ -2154,6 +2269,140 @@ exports[`sqle/CustomRule/UpdateCustomRule update custom rule 1`] = `
                         class="ant-col ant-col-24 ant-form-item-label ant-form-item-label-left css-dev-only-do-not-override-txh9fw"
                       >
                         <label
+                          class="ant-form-item-no-colon"
+                          for="performanceCost"
+                          title=""
+                        >
+                          <div
+                            class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
+                          >
+                            <div
+                              class="ant-space-item"
+                              style="margin-right: 8px;"
+                            >
+                              性能消耗
+                            </div>
+                            <div
+                              class="ant-space-item"
+                            >
+                              <svg
+                                height="16"
+                                viewBox="0 0 14 14"
+                                width="16"
+                                xmlns="http://www.w3.org/2000/svg"
+                              >
+                                <path
+                                  d="M7 12.833A5.833 5.833 0 1 1 7 1.167a5.833 5.833 0 0 1 0 11.666m0-1.166a4.666 4.666 0 1 0 0-9.333 4.666 4.666 0 0 0 0 9.333m-.583-7.584h1.166V5.25H6.417zm0 2.334h1.166v3.5H6.417z"
+                                  fill="#EDB054"
+                                />
+                              </svg>
+                            </div>
+                          </div>
+                        </label>
+                      </div>
+                      <div
+                        class="ant-col ant-col-24 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                      >
+                        <div
+                          class="ant-form-item-control-input"
+                        >
+                          <div
+                            class="ant-form-item-control-input-content"
+                          >
+                            <div
+                              class="ant-select ant-select-in-form-item ant-select-status-success basic-select-wrapper css-iy4o4x css-dev-only-do-not-override-v9sov3 ant-select-single ant-select-allow-clear ant-select-show-arrow"
+                            >
+                              <div
+                                class="ant-select-selector"
+                              >
+                                <span
+                                  class="ant-select-selection-search"
+                                >
+                                  <input
+                                    aria-activedescendant="performanceCost_list_0"
+                                    aria-autocomplete="list"
+                                    aria-controls="performanceCost_list"
+                                    aria-expanded="false"
+                                    aria-haspopup="listbox"
+                                    aria-owns="performanceCost_list"
+                                    autocomplete="off"
+                                    class="ant-select-selection-search-input"
+                                    id="performanceCost"
+                                    readonly=""
+                                    role="combobox"
+                                    style="opacity: 0;"
+                                    type="search"
+                                    unselectable="on"
+                                    value=""
+                                  />
+                                </span>
+                                <span
+                                  class="ant-select-selection-item"
+                                  title="高消耗"
+                                >
+                                  高消耗
+                                </span>
+                              </div>
+                              <span
+                                aria-hidden="true"
+                                class="ant-select-arrow"
+                                style="user-select: none;"
+                                unselectable="on"
+                              >
+                                <span
+                                  aria-label="down"
+                                  class="anticon anticon-down ant-select-suffix"
+                                  role="img"
+                                >
+                                  <svg
+                                    aria-hidden="true"
+                                    data-icon="down"
+                                    fill="currentColor"
+                                    focusable="false"
+                                    height="1em"
+                                    viewBox="64 64 896 896"
+                                    width="1em"
+                                  >
+                                    <path
+                                      d="M884 256h-75c-5.1 0-9.9 2.5-12.9 6.6L512 654.2 227.9 262.6c-3-4.1-7.8-6.6-12.9-6.6h-75c-6.5 0-10.3 7.4-6.5 12.7l352.6 486.1c12.8 17.6 39 17.6 51.7 0l352.6-486.1c3.9-5.3.1-12.7-6.4-12.7z"
+                                    />
+                                  </svg>
+                                </span>
+                              </span>
+                              <span
+                                aria-hidden="true"
+                                class="ant-select-clear"
+                                style="user-select: none;"
+                                unselectable="on"
+                              >
+                                <svg
+                                  fill="currentColor"
+                                  height="14"
+                                  viewBox="0 0 14 14"
+                                  width="14"
+                                  xmlns="http://www.w3.org/2000/svg"
+                                >
+                                  <path
+                                    d="m7 6.175 2.887-2.887.825.825L7.825 7l2.887 2.888-.825.824L7 7.825l-2.888 2.887-.824-.824L6.175 7 3.288 4.113l.824-.825z"
+                                  />
+                                </svg>
+                              </span>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    class="ant-form-item has-required-style css-1jlm9cy css-dev-only-do-not-override-txh9fw ant-form-item-has-success"
+                  >
+                    <div
+                      class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                    >
+                      <div
+                        class="ant-col ant-col-24 ant-form-item-label ant-form-item-label-left css-dev-only-do-not-override-txh9fw"
+                      >
+                        <label
                           class="ant-form-item-required ant-form-item-no-colon"
                           for="level"
                           title="默认告警等级"
@@ -3405,6 +3654,72 @@ exports[`sqle/CustomRule/UpdateCustomRule update custom rule 1`] = `
     >
       <div>
         <div
+          id="performanceCost_list"
+          role="listbox"
+          style="height: 0px; width: 0px; overflow: hidden;"
+        >
+          <div
+            aria-label="高消耗"
+            aria-selected="true"
+            id="performanceCost_list_0"
+            role="option"
+          >
+            high
+          </div>
+        </div>
+        <div
+          class="rc-virtual-list"
+          style="position: relative;"
+        >
+          <div
+            class="rc-virtual-list-holder"
+            style="max-height: 256px; overflow-y: hidden;"
+          >
+            <div>
+              <div
+                class="rc-virtual-list-holder-inner"
+                style="display: flex; flex-direction: column;"
+              >
+                <div
+                  aria-selected="true"
+                  class="ant-select-item ant-select-item-option ant-select-item-option-active ant-select-item-option-selected"
+                  title="高消耗"
+                >
+                  <div
+                    class="ant-select-item-option-content"
+                  >
+                    高消耗
+                  </div>
+                  <span
+                    aria-hidden="true"
+                    class="ant-select-item-option-state"
+                    style="user-select: none;"
+                    unselectable="on"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="rc-virtual-list-scrollbar"
+            style="width: 8px; top: 0px; bottom: 0px; right: 0px; position: absolute; display: none;"
+          >
+            <div
+              class="rc-virtual-list-scrollbar-thumb"
+              style="width: 100%; height: 128px; top: 0px; left: 0px; position: absolute; background: rgba(0, 0, 0, 0.5); border-radius: 99px; cursor: pointer; user-select: none;"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div>
+    <div
+      class="ant-select-dropdown ant-select-dropdown-hidden css-dev-only-do-not-override-v9sov3 ant-select-dropdown-placement-bottomLeft"
+      style="--arrow-x: 0px; --arrow-y: 0px; left: 0px; top: 0px; box-sizing: border-box; min-width: 0; width: 0px; pointer-events: none;"
+    >
+      <div>
+        <div
           id="level_list"
           role="listbox"
           style="height: 0px; width: 0px; overflow: hidden;"
@@ -4298,6 +4613,140 @@ exports[`sqle/CustomRule/UpdateCustomRule update custom rule 2`] = `
                                     />
                                   </svg>
                                 </span>
+                              </span>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    class="ant-form-item has-required-style css-1jlm9cy css-dev-only-do-not-override-txh9fw ant-form-item-has-success"
+                  >
+                    <div
+                      class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                    >
+                      <div
+                        class="ant-col ant-col-24 ant-form-item-label ant-form-item-label-left css-dev-only-do-not-override-txh9fw"
+                      >
+                        <label
+                          class="ant-form-item-no-colon"
+                          for="performanceCost"
+                          title=""
+                        >
+                          <div
+                            class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
+                          >
+                            <div
+                              class="ant-space-item"
+                              style="margin-right: 8px;"
+                            >
+                              性能消耗
+                            </div>
+                            <div
+                              class="ant-space-item"
+                            >
+                              <svg
+                                height="16"
+                                viewBox="0 0 14 14"
+                                width="16"
+                                xmlns="http://www.w3.org/2000/svg"
+                              >
+                                <path
+                                  d="M7 12.833A5.833 5.833 0 1 1 7 1.167a5.833 5.833 0 0 1 0 11.666m0-1.166a4.666 4.666 0 1 0 0-9.333 4.666 4.666 0 0 0 0 9.333m-.583-7.584h1.166V5.25H6.417zm0 2.334h1.166v3.5H6.417z"
+                                  fill="#EDB054"
+                                />
+                              </svg>
+                            </div>
+                          </div>
+                        </label>
+                      </div>
+                      <div
+                        class="ant-col ant-col-24 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                      >
+                        <div
+                          class="ant-form-item-control-input"
+                        >
+                          <div
+                            class="ant-form-item-control-input-content"
+                          >
+                            <div
+                              class="ant-select ant-select-in-form-item ant-select-status-success basic-select-wrapper css-iy4o4x css-dev-only-do-not-override-v9sov3 ant-select-single ant-select-allow-clear ant-select-show-arrow"
+                            >
+                              <div
+                                class="ant-select-selector"
+                              >
+                                <span
+                                  class="ant-select-selection-search"
+                                >
+                                  <input
+                                    aria-activedescendant="performanceCost_list_0"
+                                    aria-autocomplete="list"
+                                    aria-controls="performanceCost_list"
+                                    aria-expanded="false"
+                                    aria-haspopup="listbox"
+                                    aria-owns="performanceCost_list"
+                                    autocomplete="off"
+                                    class="ant-select-selection-search-input"
+                                    id="performanceCost"
+                                    readonly=""
+                                    role="combobox"
+                                    style="opacity: 0;"
+                                    type="search"
+                                    unselectable="on"
+                                    value=""
+                                  />
+                                </span>
+                                <span
+                                  class="ant-select-selection-item"
+                                  title="高消耗"
+                                >
+                                  高消耗
+                                </span>
+                              </div>
+                              <span
+                                aria-hidden="true"
+                                class="ant-select-arrow"
+                                style="user-select: none;"
+                                unselectable="on"
+                              >
+                                <span
+                                  aria-label="down"
+                                  class="anticon anticon-down ant-select-suffix"
+                                  role="img"
+                                >
+                                  <svg
+                                    aria-hidden="true"
+                                    data-icon="down"
+                                    fill="currentColor"
+                                    focusable="false"
+                                    height="1em"
+                                    viewBox="64 64 896 896"
+                                    width="1em"
+                                  >
+                                    <path
+                                      d="M884 256h-75c-5.1 0-9.9 2.5-12.9 6.6L512 654.2 227.9 262.6c-3-4.1-7.8-6.6-12.9-6.6h-75c-6.5 0-10.3 7.4-6.5 12.7l352.6 486.1c12.8 17.6 39 17.6 51.7 0l352.6-486.1c3.9-5.3.1-12.7-6.4-12.7z"
+                                    />
+                                  </svg>
+                                </span>
+                              </span>
+                              <span
+                                aria-hidden="true"
+                                class="ant-select-clear"
+                                style="user-select: none;"
+                                unselectable="on"
+                              >
+                                <svg
+                                  fill="currentColor"
+                                  height="14"
+                                  viewBox="0 0 14 14"
+                                  width="14"
+                                  xmlns="http://www.w3.org/2000/svg"
+                                >
+                                  <path
+                                    d="m7 6.175 2.887-2.887.825.825L7.825 7l2.887 2.888-.825.824L7 7.825l-2.888 2.887-.824-.824L6.175 7 3.288 4.113l.824-.825z"
+                                  />
+                                </svg>
                               </span>
                             </div>
                           </div>
@@ -5534,6 +5983,72 @@ exports[`sqle/CustomRule/UpdateCustomRule update custom rule 2`] = `
                     class="ant-select-item-option-content"
                   >
                     在线
+                  </div>
+                  <span
+                    aria-hidden="true"
+                    class="ant-select-item-option-state"
+                    style="user-select: none;"
+                    unselectable="on"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="rc-virtual-list-scrollbar"
+            style="width: 8px; top: 0px; bottom: 0px; right: 0px; position: absolute; display: none;"
+          >
+            <div
+              class="rc-virtual-list-scrollbar-thumb"
+              style="width: 100%; height: 128px; top: 0px; left: 0px; position: absolute; background: rgba(0, 0, 0, 0.5); border-radius: 99px; cursor: pointer; user-select: none;"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div>
+    <div
+      class="ant-select-dropdown ant-select-dropdown-hidden css-dev-only-do-not-override-v9sov3 ant-select-dropdown-placement-bottomLeft"
+      style="--arrow-x: 0px; --arrow-y: 0px; left: 0px; top: 0px; box-sizing: border-box; min-width: 0; width: 0px; pointer-events: none;"
+    >
+      <div>
+        <div
+          id="performanceCost_list"
+          role="listbox"
+          style="height: 0px; width: 0px; overflow: hidden;"
+        >
+          <div
+            aria-label="高消耗"
+            aria-selected="true"
+            id="performanceCost_list_0"
+            role="option"
+          >
+            high
+          </div>
+        </div>
+        <div
+          class="rc-virtual-list"
+          style="position: relative;"
+        >
+          <div
+            class="rc-virtual-list-holder"
+            style="max-height: 256px; overflow-y: hidden;"
+          >
+            <div>
+              <div
+                class="rc-virtual-list-holder-inner"
+                style="display: flex; flex-direction: column;"
+              >
+                <div
+                  aria-selected="true"
+                  class="ant-select-item ant-select-item-option ant-select-item-option-active ant-select-item-option-selected"
+                  title="高消耗"
+                >
+                  <div
+                    class="ant-select-item-option-content"
+                  >
+                    高消耗
                   </div>
                   <span
                     aria-hidden="true"

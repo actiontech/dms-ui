@@ -64,8 +64,9 @@ const UpdateCustomRule: React.FC = () => {
           ...baseInfo.operand,
           baseInfo.auditPurpose,
           baseInfo.auditAccuracy,
-          baseInfo.sql
-        ]
+          baseInfo.sql,
+          baseInfo.performanceCost ?? ''
+        ].filter((item) => !!item)
       })
       .then((res) => {
         if (res.data.code === ResponseCode.SUCCESS) {

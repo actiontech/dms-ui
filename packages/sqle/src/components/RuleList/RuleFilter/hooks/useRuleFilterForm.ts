@@ -17,12 +17,14 @@ const useRuleFilterForm = <T extends RuleFilterFieldsType>(
 
   const sql = Form.useWatch('sql', otherForm ?? form);
 
+  const performanceCost = Form.useWatch('performance_cost', otherForm ?? form);
+
   const tags = useMemo(() => {
-    const str = [operand, auditPurpose, auditAccuracy, sql]
+    const str = [operand, auditPurpose, auditAccuracy, sql, performanceCost]
       .filter((i) => !!i)
       .join(',');
     return !!str ? str : undefined;
-  }, [operand, auditPurpose, auditAccuracy, sql]);
+  }, [operand, auditPurpose, auditAccuracy, sql, performanceCost]);
 
   return { form, fuzzyKeyword, tags };
 };

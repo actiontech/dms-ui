@@ -53,7 +53,8 @@ describe('sqle/hooks/useRuleTemplateForm/useRules', () => {
       operand: 'table',
       audit_purpose: 'security',
       audit_accuracy: 'offline',
-      sql: 'dcl'
+      sql: 'dcl',
+      performance_cost: 'high'
     };
     jest.spyOn(Form, 'useWatch').mockImplementation((key: NamePath) => {
       return mockFormValue[key as keyof RuleFilterFieldsType];
@@ -70,7 +71,7 @@ describe('sqle/hooks/useRuleTemplateForm/useRules', () => {
     expect(result.current.activeRule).toEqual([]);
     expect(result.current.filteredRule).toEqual([]);
     expect(result.current.filterCategoryTags).toEqual(
-      'table,security,offline,dcl'
+      'table,security,offline,dcl,high'
     );
     expect(result.current.getAllRulesLoading).toEqual(false);
     expect(getRulesSpy).toHaveBeenCalledTimes(1);
@@ -78,7 +79,7 @@ describe('sqle/hooks/useRuleTemplateForm/useRules', () => {
       filter_db_type: 'MySQL',
       fuzzy_keyword_rule: 'keyword',
       filter_rule_version: 'v2',
-      tags: 'table,security,offline,dcl'
+      tags: 'table,security,offline,dcl,high'
     });
   });
 });

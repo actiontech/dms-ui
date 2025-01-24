@@ -24,6 +24,7 @@ describe('sqle/useRuleCategories', () => {
     expect(result.current.operandOptions).toBe(undefined);
     expect(result.current.sqlOptions).toBe(undefined);
     expect(result.current.auditPurposeOptions).toBe(undefined);
+    expect(result.current.performanceLevelOptions).toBe(undefined);
 
     await act(async () => jest.advanceTimersByTime(3000));
     expect(getCategoryStatisticsSpy).toHaveBeenCalledTimes(1);
@@ -36,6 +37,7 @@ describe('sqle/useRuleCategories', () => {
         <Select options={result.current.auditPurposeOptions} open />
         <Select options={result.current.operandOptions} open />
         <Select options={result.current.sqlOptions} open />
+        <Select options={result.current.performanceLevelOptions} open />
       </>
     );
     expect(baseElement).toMatchSnapshot();
@@ -49,6 +51,7 @@ describe('sqle/useRuleCategories', () => {
     expect(result.current.operandOptions).toBe(undefined);
     expect(result.current.sqlOptions).toBe(undefined);
     expect(result.current.auditPurposeOptions).toBe(undefined);
+    expect(result.current.performanceLevelOptions).toBe(undefined);
 
     await act(async () => jest.advanceTimersByTime(3000));
     expect(getCategoryStatisticsSpy).toHaveBeenCalledTimes(1);
@@ -61,6 +64,7 @@ describe('sqle/useRuleCategories', () => {
         <Select options={result.current.auditPurposeOptions} open />
         <Select options={result.current.operandOptions} open />
         <Select options={result.current.sqlOptions} open />
+        <Select options={result.current.performanceLevelOptions} open />
       </>
     );
     expect(baseElement).toMatchSnapshot();
