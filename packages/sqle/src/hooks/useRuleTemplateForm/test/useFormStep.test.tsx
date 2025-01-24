@@ -1,52 +1,84 @@
-import { cleanup, act } from '@testing-library/react';
-import { renderHooksWithRedux } from '@actiontech/shared/lib/testUtil/customRender';
+import { renderHook, act } from '@testing-library/react-hooks';
 import useFormStep from '../useFormStep';
 
-describe('sqle/hooks/useRuleTemplateForm/useFormStep', () => {
-  beforeEach(() => {
-    jest.useFakeTimers();
+describe('useFormStep', () => {
+  it('should initialize with default values', () => {
+    const { result } = renderHook(() => useFormStep());
+
+    expect(result.current.step).toBe(0);
+    expect(result.current.submitSuccessStatus).toBe(false);
+    expect(result.current.baseInfoFormSubmitLoading).toBe(false);
+    expect(result.current.dbType).toBeUndefined();
+    expect(result.current.ruleVersion).toBeUndefined();
   });
 
-  afterEach(() => {
-    jest.useRealTimers();
-    cleanup();
-  });
+  it('should update step when nextStep is called', () => {
+    const { result } = renderHook(() => useFormStep());
 
-  it('init state', async () => {
-    const { result } = renderHooksWithRedux(useFormStep, {});
-    expect(result.current.step).toEqual(0);
-    expect(result.current.submitSuccessStatus).toEqual(false);
-    expect(result.current.baseInfoFormSubmitLoading).toEqual(false);
-  });
-
-  it('change step state', async () => {
-    const { result } = renderHooksWithRedux(useFormStep, {});
-    expect(result.current.step).toEqual(0);
-    await act(async () => {
+    act(() => {
       result.current.nextStep();
-      await jest.advanceTimersByTime(100);
     });
-    expect(result.current.step).toEqual(1);
-    await act(async () => {
-      result.current.prevStep();
-      await jest.advanceTimersByTime(100);
-    });
-    expect(result.current.step).toEqual(0);
-    await act(async () => {
-      result.current.setStep(2);
-      await jest.advanceTimersByTime(100);
-    });
-    expect(result.current.step).toEqual(2);
-    expect(result.current.submitSuccessStatus).toEqual(true);
+
+    expect(result.current.step).toBe(1);
   });
 
-  it('change loading state', async () => {
-    const { result } = renderHooksWithRedux(useFormStep, {});
-    expect(result.current.baseInfoFormSubmitLoading).toEqual(false);
-    await act(async () => {
-      result.current.setBaseInfoFormSubmitLoading(true);
-      await jest.advanceTimersByTime(100);
+  it('should update step when prevStep is called', () => {
+    const { result } = renderHook(() => useFormStep());
+
+    act(() => {
+      result.current.nextStep();
     });
-    expect(result.current.baseInfoFormSubmitLoading).toEqual(true);
+
+    act(() => {
+      result.current.prevStep();
+    });
+
+    expect(result.current.step).toBe(0);
+  });
+
+  it('should not allow step to go below 0', () => {
+    const { result } = renderHook(() => useFormStep());
+
+    act(() => {
+      result.current.prevStep();
+    });
+
+    expect(result.current.step).toBe(0);
+  });
+
+  it('should set submitSuccessStatus to true when step is SUCCESS_STEP_NUM', () => {
+    const { result } = renderHook(() => useFormStep());
+
+    act(() => {
+      result.current.setStep(2);
+    });
+
+    expect(result.current.submitSuccessStatus).toBe(true);
+  });
+
+  it('should set submitSuccessStatus to false when step is not SUCCESS_STEP_NUM', () => {
+    const { result } = renderHook(() => useFormStep());
+
+    act(() => {
+      result.current.setStep(1);
+    });
+
+    expect(result.current.submitSuccessStatus).toBe(false);
+  });
+
+  it('should update baseInfoFormSubmitLoading when setBaseInfoFormSubmitLoading is called', () => {
+    const { result } = renderHook(() => useFormStep());
+
+    act(() => {
+      result.current.setBaseInfoFormSubmitLoading(true);
+    });
+
+    expect(result.current.baseInfoFormSubmitLoading).toBe(true);
+
+    act(() => {
+      result.current.setBaseInfoFormSubmitLoading(false);
+    });
+
+    expect(result.current.baseInfoFormSubmitLoading).toBe(false);
   });
 });

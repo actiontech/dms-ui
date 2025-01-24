@@ -34,6 +34,7 @@ import {
 import { LeftArrowOutlined, ProfileSquareFilled } from '@actiontech/icons';
 import { exportProjectRuleTemplateV1ExportTypeEnum } from '@actiontech/shared/lib/api/sqle/service/rule_template/index.enum';
 import FileUpload from './FileUpload';
+import useRuleVersionTips from '../../../hooks/useRuleVersionTips';
 
 const ImportRuleTemplate = () => {
   const { t } = useTranslation();
@@ -71,6 +72,8 @@ const ImportRuleTemplate = () => {
     filterCategoryTags
   } = useImportRuleTemplateForm();
 
+  const { transformRuleVersion2BackendParams } = useRuleVersionTips();
+
   const fileType = Form.useWatch('fileType', selectFileForm);
 
   const submit = useCallback(() => {
@@ -92,7 +95,8 @@ const ImportRuleTemplate = () => {
         desc: baseInfo.templateDesc,
         db_type: baseInfo.db_type,
         rule_list: activeRuleWithNewField,
-        project_name: projectName
+        project_name: projectName,
+        rule_version: transformRuleVersion2BackendParams(baseInfo.ruleVersion)
       })
       .then((res) => {
         if (res.data.code === ResponseCode.SUCCESS) {
@@ -103,12 +107,13 @@ const ImportRuleTemplate = () => {
         finishCreate();
       });
   }, [
-    activeRule,
-    finishCreate,
-    nextStep,
-    ruleTemplateForm,
     startCreate,
-    projectName
+    ruleTemplateForm,
+    activeRule,
+    projectName,
+    transformRuleVersion2BackendParams,
+    nextStep,
+    finishCreate
   ]);
 
   return (

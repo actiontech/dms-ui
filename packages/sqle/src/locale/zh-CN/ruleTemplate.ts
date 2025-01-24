@@ -59,6 +59,7 @@ export default {
     templateName: '模板名称',
     templateDesc: '模板描述',
     databaseType: '数据库类型',
+    ruleVersion: '规则版本',
 
     activeRuleTitle: '已启用规则',
     activeRule: '启用该规则',

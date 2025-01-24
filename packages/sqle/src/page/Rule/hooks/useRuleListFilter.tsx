@@ -6,6 +6,7 @@ import { useRequest } from 'ahooks';
 import { FormInstance, Form } from 'antd';
 import { useCurrentUser } from '@actiontech/shared/lib/features';
 import { useRuleFilterForm } from '../../../components/RuleList';
+import useRuleVersionTips from '../../../hooks/useRuleVersionTips';
 
 const useRuleListFilter = (form: FormInstance<RuleListFilterForm>) => {
   const [showNotRuleTemplatePage, setShowNorRuleTemplatePage] =
@@ -19,8 +20,14 @@ const useRuleListFilter = (form: FormInstance<RuleListFilterForm>) => {
   const projectName = Form.useWatch('project_name', form);
   const filterRuleTemplate = Form.useWatch('filter_rule_template', form);
   const filterDbType = Form.useWatch('filter_db_type', form);
+  const filterRuleVersion = Form.useWatch('filter_rule_version', form);
 
   const { tags } = useRuleFilterForm<RuleListFilterForm>(form);
+
+  const {
+    transformBackendRuleVersion2FormValues,
+    transformRuleVersion2BackendParams
+  } = useRuleVersionTips();
 
   const { data: allRules, loading: getAllRulesLoading } = useRequest(
     () => {
@@ -28,13 +35,15 @@ const useRuleListFilter = (form: FormInstance<RuleListFilterForm>) => {
         .getRuleListV1({
           filter_db_type: filterDbType,
           fuzzy_keyword_rule: fuzzyKeyword,
+          filter_rule_version:
+            transformRuleVersion2BackendParams(filterRuleVersion),
           tags
         })
         .then((res) => res.data?.data ?? []);
     },
     {
       ready: !!filterDbType,
-      refreshDeps: [filterDbType, fuzzyKeyword, tags]
+      refreshDeps: [filterDbType, fuzzyKeyword, tags, filterRuleVersion]
     }
   );
 
@@ -55,6 +64,13 @@ const useRuleListFilter = (form: FormInstance<RuleListFilterForm>) => {
       ).then((res) => {
         if (ResponseCode.SUCCESS === res.data.code) {
           form.setFieldValue('filter_db_type', res.data.data?.db_type);
+          form.setFieldValue(
+            'filter_rule_version',
+            transformBackendRuleVersion2FormValues(
+              res.data.data?.db_type!,
+              res.data.data?.rule_version
+            )
+          );
           return res.data?.data?.rule_list ?? [];
         }
       }),

@@ -14,7 +14,8 @@ const useCreateRuleTemplateForm = () => {
     nextStep,
     baseInfoFormSubmitLoading,
     setBaseInfoFormSubmitLoading,
-    dbType
+    dbType,
+    ruleVersion
   } = useFormStep();
 
   const {
@@ -27,7 +28,7 @@ const useCreateRuleTemplateForm = () => {
     setFilteredRule,
     ruleFilterForm,
     filterCategoryTags
-  } = useRules(dbType);
+  } = useRules(dbType, ruleVersion);
 
   const [createLoading, { setFalse: finishSubmit, setTrue: startSubmit }] =
     useBoolean(false);

@@ -252,6 +252,8 @@ export interface IGetRuleListV1Params {
 
   filter_rule_names?: string;
 
+  filter_rule_version?: string;
+
   tags?: string;
 }
 

@@ -14,6 +14,8 @@ import {
   FormItemNoLabel
 } from '@actiontech/shared/lib/components/CustomForm';
 import { FormItemLabel } from '@actiontech/shared/lib/components/CustomForm';
+import { useWatch } from 'antd/es/form/Form';
+import useRuleVersionTips from '../../../../hooks/useRuleVersionTips';
 
 const BaseInfoForm = (props: RuleTemplateBaseInfoFormProps) => {
   const { t } = useTranslation();
@@ -23,8 +25,17 @@ const BaseInfoForm = (props: RuleTemplateBaseInfoFormProps) => {
     generateDriverSelectOptions
   } = useDatabaseType();
 
+  const { ruleVersionOptions, transformBackendRuleVersion2FormValues } =
+    useRuleVersionTips();
+
+  const selectedDbType = useWatch(['db_type'], props.form);
+
   const isUpdate = useMemo(() => !!props.defaultData, [props.defaultData]);
   const [formDefaultLoading, setFormDefaultLoading] = useState(false);
+
+  const supportSelectRuleVersionField = useMemo(() => {
+    return selectedDbType === 'MySQL';
+  }, [selectedDbType]);
 
   const nameFormRule: () => Rule[] = useCallback(() => {
     const rule: Rule[] = [
@@ -52,7 +63,11 @@ const BaseInfoForm = (props: RuleTemplateBaseInfoFormProps) => {
       props.form.setFieldsValue({
         templateName: props.defaultData.rule_template_name,
         templateDesc: props.defaultData.desc,
-        db_type: props.defaultData.db_type
+        db_type: props.defaultData.db_type,
+        ruleVersion: transformBackendRuleVersion2FormValues(
+          props.defaultData.db_type!,
+          props.defaultData.rule_version
+        )
       });
       setFormDefaultLoading(false);
     }
@@ -107,9 +122,36 @@ const BaseInfoForm = (props: RuleTemplateBaseInfoFormProps) => {
           allowClear
           loading={getDriverNameListLoading}
           disabled={isUpdate || props.mode === 'import'}
+          onChange={(value) => {
+            if (!value) {
+              props.form.setFieldValue('ruleVersion', undefined);
+            }
+          }}
         >
           {generateDriverSelectOptions()}
         </BasicSelect>
+      </FormItemLabel>
+
+      <FormItemLabel
+        className="has-required-style"
+        {...formItemLayout.fullLine}
+        label={t('ruleTemplate.ruleTemplateForm.ruleVersion')}
+        name="ruleVersion"
+        hidden={!supportSelectRuleVersionField}
+        rules={[
+          {
+            required: supportSelectRuleVersionField
+          }
+        ]}
+      >
+        <BasicSelect
+          placeholder={t('common.form.placeholder.select', {
+            name: t('ruleTemplate.ruleTemplateForm.ruleVersion')
+          })}
+          allowClear
+          disabled={isUpdate || props.mode === 'import'}
+          options={ruleVersionOptions}
+        />
       </FormItemLabel>
       <BasicButton
         type="primary"
