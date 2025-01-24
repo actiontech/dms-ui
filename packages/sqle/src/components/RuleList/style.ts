@@ -243,15 +243,13 @@ export const RuleItemTagStyleWrapper = styled(Space)`
 
   &.rule-audit-tag {
     border: 1px solid
-      ${({ theme }) =>
-        theme.sharedTheme.components.basicTag.blue.backgroundColor};
+      ${({ theme }) => theme.sharedTheme.components.basicTag.blue.color};
     color: ${({ theme }) => theme.sharedTheme.components.basicTag.blue.color};
   }
 
   &.rule-rewrite-tag {
     border: 1px solid
-      ${({ theme }) =>
-        theme.sharedTheme.components.basicTag.green.backgroundColor};
+      ${({ theme }) => theme.sharedTheme.components.basicTag.green.color};
     color: ${({ theme }) => theme.sharedTheme.components.basicTag.green.color};
   }
 
