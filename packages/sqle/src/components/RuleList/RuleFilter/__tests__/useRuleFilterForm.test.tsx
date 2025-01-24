@@ -20,14 +20,15 @@ describe('sqle/components/RuleList/useRuleFilterForm', () => {
       operand: 'table',
       audit_purpose: 'security',
       audit_accuracy: 'offline',
-      sql: 'dcl'
+      sql: 'dcl',
+      performance_cost: ' high'
     };
     jest.spyOn(Form, 'useWatch').mockImplementation((key: NamePath) => {
       return mockFormValue[key as keyof RuleFilterFieldsType];
     });
     const { result } = renderHook(() => useRuleFilterForm());
     expect(result.current.fuzzyKeyword).toBe(mockFormValue.fuzzy_keyword);
-    expect(result.current.tags).toBe('table,security,offline,dcl');
+    expect(result.current.tags).toBe('table,security,offline,dcl, high');
   });
 
   it('render no other form', () => {
@@ -36,7 +37,8 @@ describe('sqle/components/RuleList/useRuleFilterForm', () => {
       operand: 'a',
       audit_purpose: 'b',
       audit_accuracy: 'c',
-      sql: 'd'
+      sql: 'd',
+      performance_cost: 'e'
     };
     jest.spyOn(Form, 'useWatch').mockImplementation((key: NamePath) => {
       return mockFormValue[key as keyof RuleFilterFieldsType];
@@ -48,6 +50,6 @@ describe('sqle/components/RuleList/useRuleFilterForm', () => {
       useRuleFilterForm(formResult.current[0])
     );
     expect(result.current.fuzzyKeyword).toBe(mockFormValue.fuzzy_keyword);
-    expect(result.current.tags).toBe('a,b,c,d');
+    expect(result.current.tags).toBe('a,b,c,d,e');
   });
 });

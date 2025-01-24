@@ -145,6 +145,11 @@ describe('sqle/CustomRule/CreateCustomRule', () => {
     fireEvent.click(screen.getByText('在线'));
     await act(async () => jest.advanceTimersByTime(0));
 
+    fireEvent.mouseDown(getBySelector('#performanceCost'));
+    await act(async () => jest.advanceTimersByTime(0));
+    fireEvent.click(screen.getByText('高消耗'));
+    await act(async () => jest.advanceTimersByTime(0));
+
     await act(async () => {
       fireEvent.mouseDown(getBySelector('#level'));
       await jest.advanceTimersByTime(100);
@@ -180,7 +185,7 @@ describe('sqle/CustomRule/CreateCustomRule', () => {
       level: CreateCustomRuleReqV1LevelEnum.warn,
       annotation: 'anno',
       rule_script: 'SELECT 1',
-      tags: ['database', 'performance', 'online', 'integrity']
+      tags: ['database', 'performance', 'online', 'integrity', 'high']
     });
     const resultTip = getBySelector('.basic-result-wrapper', baseElement);
     expect(resultTip).not.toBeVisible();

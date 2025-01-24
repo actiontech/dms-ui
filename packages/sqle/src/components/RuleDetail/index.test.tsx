@@ -200,6 +200,20 @@ describe('sqle/components/RuleDetail', () => {
       rule_template_name: mockRouteParams.templateName,
       tags: 'column,correction,offline,dcl'
     });
+
+    fireEvent.mouseDown(getBySelector('#performance_cost'));
+    await act(async () => jest.advanceTimersByTime(0));
+    fireEvent.click(getBySelector('#performance_cost_list_0'));
+    await act(async () => jest.advanceTimersByTime(3000));
+    expect(requestGetAllRule).toHaveBeenNthCalledWith(6, {
+      tags: 'column,correction,offline,dcl,high',
+      filter_db_type: mockRouteParams.dbType
+    });
+    expect(requestGetProjectRule).toHaveBeenNthCalledWith(6, {
+      project_name: 'default',
+      rule_template_name: mockRouteParams.templateName,
+      tags: 'column,correction,offline,dcl,high'
+    });
   });
 
   it('render snap when route params is undefined', async () => {
