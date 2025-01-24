@@ -217,7 +217,7 @@ exports[`sqle/CustomRuleList click rule item 1`] = `
                             style="margin-right: 8px; padding-bottom: 8px;"
                           >
                             <div
-                              class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center rule-category-audit_accuracy rule-category-tag-wrap css-v80oh9"
+                              class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center rule-category-audit_accuracy rule-category-tag-wrap css-x5diec"
                             >
                               <div
                                 class="ant-space-item"
@@ -235,7 +235,7 @@ exports[`sqle/CustomRuleList click rule item 1`] = `
                             style="margin-right: 8px; padding-bottom: 8px;"
                           >
                             <div
-                              class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center rule-category-sql rule-category-tag-wrap css-v80oh9"
+                              class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center rule-category-sql rule-category-tag-wrap css-x5diec"
                             >
                               <div
                                 class="ant-space-item"
@@ -253,7 +253,7 @@ exports[`sqle/CustomRuleList click rule item 1`] = `
                             style="margin-right: 8px; padding-bottom: 8px;"
                           >
                             <div
-                              class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center rule-category-operand rule-category-tag-wrap css-v80oh9"
+                              class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center rule-category-operand rule-category-tag-wrap css-x5diec"
                             >
                               <div
                                 class="ant-space-item"
@@ -371,7 +371,7 @@ exports[`sqle/CustomRuleList click rule item 1`] = `
                             style="margin-right: 8px; padding-bottom: 8px;"
                           >
                             <div
-                              class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center rule-category-audit_purpose rule-category-tag-wrap css-v80oh9"
+                              class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center rule-category-audit_purpose rule-category-tag-wrap css-x5diec"
                             >
                               <div
                                 class="ant-space-item"
@@ -389,7 +389,7 @@ exports[`sqle/CustomRuleList click rule item 1`] = `
                             style="margin-right: 8px; padding-bottom: 8px;"
                           >
                             <div
-                              class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center rule-category-performance_cost rule-category-tag-wrap css-v80oh9"
+                              class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center rule-category-performance_cost rule-category-tag-wrap css-x5diec"
                             >
                               <div
                                 class="ant-space-item"
@@ -729,7 +729,7 @@ exports[`sqle/CustomRuleList click rule item 1`] = `
                               style="margin-bottom: 8px;"
                             >
                               <div
-                                class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center rule-category-audit_accuracy rule-detail-category css-v80oh9"
+                                class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center rule-category-audit_accuracy rule-detail-category css-x5diec"
                                 style="flex-wrap: wrap; margin-bottom: -8px;"
                               >
                                 <div
@@ -766,7 +766,7 @@ exports[`sqle/CustomRuleList click rule item 1`] = `
                               style="margin-bottom: 8px;"
                             >
                               <div
-                                class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center rule-category-sql rule-detail-category css-v80oh9"
+                                class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center rule-category-sql rule-detail-category css-x5diec"
                                 style="flex-wrap: wrap; margin-bottom: -8px;"
                               >
                                 <div
@@ -803,7 +803,7 @@ exports[`sqle/CustomRuleList click rule item 1`] = `
                               style="margin-bottom: 8px;"
                             >
                               <div
-                                class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center rule-category-operand rule-detail-category css-v80oh9"
+                                class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center rule-category-operand rule-detail-category css-x5diec"
                                 style="flex-wrap: wrap; margin-bottom: -8px;"
                               >
                                 <div
@@ -920,7 +920,7 @@ exports[`sqle/CustomRuleList click rule item 1`] = `
                               style="margin-bottom: 8px;"
                             >
                               <div
-                                class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center rule-category-audit_purpose rule-detail-category css-v80oh9"
+                                class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center rule-category-audit_purpose rule-detail-category css-x5diec"
                                 style="flex-wrap: wrap; margin-bottom: -8px;"
                               >
                                 <div
@@ -956,7 +956,7 @@ exports[`sqle/CustomRuleList click rule item 1`] = `
                               class="ant-space-item"
                             >
                               <div
-                                class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center rule-category-performance_cost rule-detail-category css-v80oh9"
+                                class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center rule-category-performance_cost rule-detail-category css-x5diec"
                                 style="flex-wrap: wrap; margin-bottom: -8px;"
                               >
                                 <div
@@ -1301,7 +1301,7 @@ exports[`sqle/CustomRuleList should match snap shot 1`] = `
                             style="margin-right: 8px; padding-bottom: 8px;"
                           >
                             <div
-                              class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center rule-category-audit_accuracy rule-category-tag-wrap css-v80oh9"
+                              class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center rule-category-audit_accuracy rule-category-tag-wrap css-x5diec"
                             >
                               <div
                                 class="ant-space-item"
@@ -1319,7 +1319,7 @@ exports[`sqle/CustomRuleList should match snap shot 1`] = `
                             style="margin-right: 8px; padding-bottom: 8px;"
                           >
                             <div
-                              class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center rule-category-sql rule-category-tag-wrap css-v80oh9"
+                              class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center rule-category-sql rule-category-tag-wrap css-x5diec"
                             >
                               <div
                                 class="ant-space-item"
@@ -1337,7 +1337,7 @@ exports[`sqle/CustomRuleList should match snap shot 1`] = `
                             style="margin-right: 8px; padding-bottom: 8px;"
                           >
                             <div
-                              class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center rule-category-operand rule-category-tag-wrap css-v80oh9"
+                              class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center rule-category-operand rule-category-tag-wrap css-x5diec"
                             >
                               <div
                                 class="ant-space-item"
@@ -1455,7 +1455,7 @@ exports[`sqle/CustomRuleList should match snap shot 1`] = `
                             style="margin-right: 8px; padding-bottom: 8px;"
                           >
                             <div
-                              class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center rule-category-audit_purpose rule-category-tag-wrap css-v80oh9"
+                              class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center rule-category-audit_purpose rule-category-tag-wrap css-x5diec"
                             >
                               <div
                                 class="ant-space-item"
@@ -1473,7 +1473,7 @@ exports[`sqle/CustomRuleList should match snap shot 1`] = `
                             style="margin-right: 8px; padding-bottom: 8px;"
                           >
                             <div
-                              class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center rule-category-performance_cost rule-category-tag-wrap css-v80oh9"
+                              class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center rule-category-performance_cost rule-category-tag-wrap css-x5diec"
                             >
                               <div
                                 class="ant-space-item"
@@ -1608,7 +1608,7 @@ exports[`sqle/CustomRuleList should match snap shot 1`] = `
                             style="margin-right: 8px; padding-bottom: 8px;"
                           >
                             <div
-                              class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center rule-category-audit_accuracy rule-category-tag-wrap css-v80oh9"
+                              class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center rule-category-audit_accuracy rule-category-tag-wrap css-x5diec"
                             >
                               <div
                                 class="ant-space-item"
@@ -1626,7 +1626,7 @@ exports[`sqle/CustomRuleList should match snap shot 1`] = `
                             style="margin-right: 8px; padding-bottom: 8px;"
                           >
                             <div
-                              class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center rule-category-sql rule-category-tag-wrap css-v80oh9"
+                              class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center rule-category-sql rule-category-tag-wrap css-x5diec"
                             >
                               <div
                                 class="ant-space-item"
@@ -1644,7 +1644,7 @@ exports[`sqle/CustomRuleList should match snap shot 1`] = `
                             style="margin-right: 8px; padding-bottom: 8px;"
                           >
                             <div
-                              class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center rule-category-operand rule-category-tag-wrap css-v80oh9"
+                              class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center rule-category-operand rule-category-tag-wrap css-x5diec"
                             >
                               <div
                                 class="ant-space-item"
@@ -1672,7 +1672,7 @@ exports[`sqle/CustomRuleList should match snap shot 1`] = `
                             style="margin-right: 8px; padding-bottom: 8px;"
                           >
                             <div
-                              class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center rule-category-audit_purpose rule-category-tag-wrap css-v80oh9"
+                              class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center rule-category-audit_purpose rule-category-tag-wrap css-x5diec"
                             >
                               <div
                                 class="ant-space-item"

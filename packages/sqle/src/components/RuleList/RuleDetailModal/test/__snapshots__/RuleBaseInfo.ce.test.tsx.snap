@@ -52,7 +52,7 @@ exports[`sqle/components/RuleList/RuleBaseInfo render snap when current rule has
                     >
                       <section>
                         <div
-                          class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center rule-audit-tag css-v80oh9"
+                          class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center rule-audit-tag css-x5diec"
                         >
                           <div
                             class="ant-space-item"
@@ -61,7 +61,7 @@ exports[`sqle/components/RuleList/RuleBaseInfo render snap when current rule has
                           </div>
                         </div>
                         <div
-                          class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center rule-rewrite-tag css-v80oh9"
+                          class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center rule-rewrite-tag css-x5diec"
                         >
                           <div
                             class="ant-space-item"
@@ -150,7 +150,7 @@ exports[`sqle/components/RuleList/RuleBaseInfo render snap when current rule has
                     style="margin-bottom: 8px;"
                   >
                     <div
-                      class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center rule-category-audit_accuracy rule-detail-category css-v80oh9"
+                      class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center rule-category-audit_accuracy rule-detail-category css-x5diec"
                       style="flex-wrap: wrap; margin-bottom: -8px;"
                     >
                       <div
@@ -187,7 +187,7 @@ exports[`sqle/components/RuleList/RuleBaseInfo render snap when current rule has
                     style="margin-bottom: 8px;"
                   >
                     <div
-                      class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center rule-category-sql rule-detail-category css-v80oh9"
+                      class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center rule-category-sql rule-detail-category css-x5diec"
                       style="flex-wrap: wrap; margin-bottom: -8px;"
                     >
                       <div
@@ -224,7 +224,7 @@ exports[`sqle/components/RuleList/RuleBaseInfo render snap when current rule has
                     style="margin-bottom: 8px;"
                   >
                     <div
-                      class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center rule-category-operand rule-detail-category css-v80oh9"
+                      class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center rule-category-operand rule-detail-category css-x5diec"
                       style="flex-wrap: wrap; margin-bottom: -8px;"
                     >
                       <div
@@ -269,7 +269,7 @@ exports[`sqle/components/RuleList/RuleBaseInfo render snap when current rule has
                     style="margin-bottom: 8px;"
                   >
                     <div
-                      class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center rule-category-audit_purpose rule-detail-category css-v80oh9"
+                      class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center rule-category-audit_purpose rule-detail-category css-x5diec"
                       style="flex-wrap: wrap; margin-bottom: -8px;"
                     >
                       <div
@@ -305,7 +305,7 @@ exports[`sqle/components/RuleList/RuleBaseInfo render snap when current rule has
                     class="ant-space-item"
                   >
                     <div
-                      class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center rule-category-performance_cost rule-detail-category css-v80oh9"
+                      class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center rule-category-performance_cost rule-detail-category css-x5diec"
                       style="flex-wrap: wrap; margin-bottom: -8px;"
                     >
                       <div
@@ -602,7 +602,7 @@ exports[`sqle/components/RuleList/RuleBaseInfo render snap when has_audit_power 
                     >
                       <section>
                         <div
-                          class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center rule-audit-tag css-v80oh9"
+                          class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center rule-audit-tag css-x5diec"
                         >
                           <div
                             class="ant-space-item"
@@ -611,7 +611,7 @@ exports[`sqle/components/RuleList/RuleBaseInfo render snap when has_audit_power 
                           </div>
                         </div>
                         <div
-                          class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center rule-rewrite-tag css-v80oh9"
+                          class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center rule-rewrite-tag css-x5diec"
                         >
                           <div
                             class="ant-space-item"
