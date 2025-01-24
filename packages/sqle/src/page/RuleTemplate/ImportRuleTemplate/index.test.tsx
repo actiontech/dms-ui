@@ -217,7 +217,8 @@ describe('sqle/RuleTemplate/ImportRuleTemplate', () => {
           ]
         }
       ],
-      rule_template_name: 'test1'
+      rule_template_name: 'test1',
+      rule_version: 'v2'
     });
     await act(async () => jest.advanceTimersByTime(3000));
     expect(screen.getByTestId('rule-list')).not.toBeVisible();
@@ -396,7 +397,8 @@ describe('sqle/RuleTemplate/ImportRuleTemplate', () => {
       target: { value: 'test1' }
     });
     expect(getAllRuleSpy).toHaveBeenNthCalledWith(1, {
-      filter_db_type: 'MySQL'
+      filter_db_type: 'MySQL',
+      filter_rule_version: 'v2'
     });
     await act(async () => jest.advanceTimersByTime(3000));
 
@@ -418,7 +420,8 @@ describe('sqle/RuleTemplate/ImportRuleTemplate', () => {
     await act(async () => jest.advanceTimersByTime(0));
     expect(getAllRuleSpy).toHaveBeenNthCalledWith(2, {
       filter_db_type: 'MySQL',
-      fuzzy_keyword_rule: 'test'
+      fuzzy_keyword_rule: 'test',
+      filter_rule_version: 'v2'
     });
     await act(async () => jest.advanceTimersByTime(3000));
 
@@ -429,7 +432,8 @@ describe('sqle/RuleTemplate/ImportRuleTemplate', () => {
     expect(getAllRuleSpy).toHaveBeenNthCalledWith(3, {
       tags: 'column',
       filter_db_type: 'MySQL',
-      fuzzy_keyword_rule: 'test'
+      fuzzy_keyword_rule: 'test',
+      filter_rule_version: 'v2'
     });
 
     fireEvent.mouseDown(getBySelector('#audit_purpose'));
@@ -439,7 +443,8 @@ describe('sqle/RuleTemplate/ImportRuleTemplate', () => {
     expect(getAllRuleSpy).toHaveBeenNthCalledWith(4, {
       tags: 'column,correction',
       filter_db_type: 'MySQL',
-      fuzzy_keyword_rule: 'test'
+      fuzzy_keyword_rule: 'test',
+      filter_rule_version: 'v2'
     });
 
     fireEvent.mouseDown(getBySelector('#sql'));
@@ -449,7 +454,8 @@ describe('sqle/RuleTemplate/ImportRuleTemplate', () => {
     expect(getAllRuleSpy).toHaveBeenNthCalledWith(5, {
       tags: 'column,correction,dcl',
       filter_db_type: 'MySQL',
-      fuzzy_keyword_rule: 'test'
+      fuzzy_keyword_rule: 'test',
+      filter_rule_version: 'v2'
     });
 
     fireEvent.mouseDown(getBySelector('#audit_accuracy'));
@@ -459,7 +465,8 @@ describe('sqle/RuleTemplate/ImportRuleTemplate', () => {
     expect(getAllRuleSpy).toHaveBeenNthCalledWith(6, {
       tags: 'column,correction,offline,dcl',
       filter_db_type: 'MySQL',
-      fuzzy_keyword_rule: 'test'
+      fuzzy_keyword_rule: 'test',
+      filter_rule_version: 'v2'
     });
   });
 });

@@ -144,7 +144,8 @@ describe('sqle/RuleTemplate/UpdateRuleTemplate', () => {
     await act(async () => jest.advanceTimersByTime(3000));
     expect(getAllRuleSpy).toHaveBeenCalledTimes(1);
     expect(getAllRuleSpy).toHaveBeenNthCalledWith(1, {
-      filter_db_type: 'MySQL'
+      filter_db_type: 'MySQL',
+      filter_rule_version: ''
     });
     await act(async () => jest.advanceTimersByTime(3000));
     await act(async () => jest.advanceTimersByTime(100));
@@ -287,7 +288,8 @@ describe('sqle/RuleTemplate/UpdateRuleTemplate', () => {
     await act(async () => jest.advanceTimersByTime(0));
     expect(getAllRuleSpy).toHaveBeenNthCalledWith(2, {
       filter_db_type: 'MySQL',
-      fuzzy_keyword_rule: 'test'
+      fuzzy_keyword_rule: 'test',
+      filter_rule_version: ''
     });
     await act(async () => jest.advanceTimersByTime(3000));
 
@@ -298,7 +300,8 @@ describe('sqle/RuleTemplate/UpdateRuleTemplate', () => {
     expect(getAllRuleSpy).toHaveBeenNthCalledWith(3, {
       tags: 'column',
       filter_db_type: 'MySQL',
-      fuzzy_keyword_rule: 'test'
+      fuzzy_keyword_rule: 'test',
+      filter_rule_version: ''
     });
 
     fireEvent.mouseDown(getBySelector('#audit_purpose'));
@@ -308,7 +311,8 @@ describe('sqle/RuleTemplate/UpdateRuleTemplate', () => {
     expect(getAllRuleSpy).toHaveBeenNthCalledWith(4, {
       tags: 'column,correction',
       filter_db_type: 'MySQL',
-      fuzzy_keyword_rule: 'test'
+      fuzzy_keyword_rule: 'test',
+      filter_rule_version: ''
     });
 
     fireEvent.mouseDown(getBySelector('#sql'));
@@ -318,7 +322,8 @@ describe('sqle/RuleTemplate/UpdateRuleTemplate', () => {
     expect(getAllRuleSpy).toHaveBeenNthCalledWith(5, {
       tags: 'column,correction,dcl',
       filter_db_type: 'MySQL',
-      fuzzy_keyword_rule: 'test'
+      fuzzy_keyword_rule: 'test',
+      filter_rule_version: ''
     });
 
     fireEvent.mouseDown(getBySelector('#audit_accuracy'));
@@ -328,7 +333,8 @@ describe('sqle/RuleTemplate/UpdateRuleTemplate', () => {
     expect(getAllRuleSpy).toHaveBeenNthCalledWith(6, {
       tags: 'column,correction,offline,dcl',
       filter_db_type: 'MySQL',
-      fuzzy_keyword_rule: 'test'
+      fuzzy_keyword_rule: 'test',
+      filter_rule_version: ''
     });
   });
 });
