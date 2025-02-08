@@ -21,7 +21,9 @@ export const RuleCategoryOperandDictionary = {
   function: t('rule.category.tag.function'),
   trigger: t('rule.category.tag.trigger'),
   event: t('rule.category.tag.event'),
-  user: t('rule.category.tag.user')
+  user: t('rule.category.tag.user'),
+  sequence: t('rule.category.tag.sequence'),
+  business: t('rule.category.tag.business')
 };
 
 export const RuleCategorySqlDictionary = {
@@ -32,7 +34,14 @@ export const RuleCategorySqlDictionary = {
   query: t('rule.category.tag.query'),
   transaction: t('rule.category.tag.transaction'),
   privilege: t('rule.category.tag.privilege'),
-  management: t('rule.category.tag.management')
+  management: t('rule.category.tag.management'),
+  complete: t('rule.category.tag.complete'),
+  join: t('rule.category.tag.join'),
+  sql_table_space: t('rule.category.tag.table_space'),
+  sql_function: t('rule.category.tag.function'),
+  sql_procedure: t('rule.category.tag.procedure'),
+  sql_trigger: t('rule.category.tag.trigger'),
+  sql_view: t('rule.category.tag.view')
 };
 
 export const RuleCategoryAuditPurposeDictionary = {
