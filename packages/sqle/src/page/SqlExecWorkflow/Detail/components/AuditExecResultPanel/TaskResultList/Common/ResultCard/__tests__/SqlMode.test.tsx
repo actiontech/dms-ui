@@ -288,7 +288,7 @@ describe('sqle/ExecWorkflow/AuditDetail/SqlMode', () => {
     expect(baseElement).toMatchSnapshot();
   });
 
-  it.only('render audit exception wrapper when audit_result exists exception rule', () => {
+  it('render audit exception wrapper when audit_result exists exception rule', () => {
     customRender({
       number: 1,
       exec_sql: 'exec_sql cont',
