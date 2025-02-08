@@ -77,7 +77,6 @@ jobs:
       - name: Get EE Coverage
         run: |
           for shard in 1 2 3 4; do
-            mkdir -p coverage/shard-$shard
             actions/download-artifact@v4
             with:
               name: coverage-artifacts-$shard
