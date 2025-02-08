@@ -27,6 +27,9 @@ import {
 import useThemeStyleData from '../../hooks/useThemeStyleData';
 import { ROUTE_PATHS } from '@actiontech/shared/lib/data/routePaths';
 import { RuleFilter, useRuleFilterForm } from '../RuleList';
+import useRuleVersionTips, {
+  RuleVersionDictionaryEnum
+} from '../../hooks/useRuleVersionTips';
 
 const RuleDetail = () => {
   const { t } = useTranslation();
@@ -34,6 +37,7 @@ const RuleDetail = () => {
   const { goBack } = useBack();
 
   const { form, fuzzyKeyword, tags } = useRuleFilterForm();
+  const { transformRuleVersion2BackendParams } = useRuleVersionTips();
 
   const { templateName, dbType } =
     useTypedParams<typeof ROUTE_PATHS.SQLE.RULE_TEMPLATE.detail>();
@@ -54,6 +58,9 @@ const RuleDetail = () => {
           tags
         })
         .then((res) => {
+          getAllRulesAction(
+            res.data.data?.rule_version as RuleVersionDictionaryEnum
+          );
           return res.data?.data?.rule_list ?? [];
         }),
     {
@@ -75,6 +82,9 @@ const RuleDetail = () => {
           tags
         })
         .then((res) => {
+          getAllRulesAction(
+            res.data.data?.rule_version as RuleVersionDictionaryEnum
+          );
           return res.data?.data?.rule_list ?? [];
         }),
     {
@@ -86,19 +96,20 @@ const RuleDetail = () => {
   const {
     data: allRules,
     loading: getAllRulesLoading,
-    error: allRulesError
+    error: allRulesError,
+    run: getAllRulesAction
   } = useRequest(
-    () =>
+    (ruleVersion: RuleVersionDictionaryEnum) =>
       rule_template
         .getRuleListV1({
           filter_db_type: dbType,
           fuzzy_keyword_rule: fuzzyKeyword,
-          tags
+          tags,
+          filter_rule_version: transformRuleVersion2BackendParams(ruleVersion)
         })
         .then((res) => res.data?.data ?? []),
     {
-      ready: !!dbType,
-      refreshDeps: [dbType, fuzzyKeyword, tags]
+      manual: true
     }
   );
 
