@@ -74,14 +74,29 @@ jobs:
           name: ce-coverage-artifacts
           path: ce_coverage
 
-      - name: Get EE Coverage
-        run: |
-          for shard in 1 2 3 4; do
-            actions/download-artifact@v4
-            with:
-              name: coverage-artifacts-$shard
-              path: coverage
-          done
+      - name: Get EE Coverage 1
+        uses: actions/download-artifact@v4
+        with:
+          name: coverage-artifacts-1
+          path: coverage
+
+      - name: Get EE Coverage 2
+        uses: actions/download-artifact@v4
+        with:
+          name: coverage-artifacts-2
+          path: coverage
+      
+      - name: Get EE Coverage 3
+        uses: actions/download-artifact@v4
+        with:
+          name: coverage-artifacts-3
+          path: coverage
+
+      - name: Get EE Coverage 4
+        uses: actions/download-artifact@v4
+        with:
+          name: coverage-artifacts-4
+          path: coverage
 
       - name: Install dependencies
         uses: ./.github/actions/catch-install-pnpm
