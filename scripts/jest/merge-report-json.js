@@ -18,19 +18,19 @@ const ceReportJSONFilePath = path.resolve(
 );
 const report1JSONFilePath = path.resolve(
   process.cwd(),
-  'coverage/report-1.json'
+  'coverage/shard-1/report.json'
 );
 const report2JSONFilePath = path.resolve(
   process.cwd(),
-  'coverage/report-2.json'
+  'coverage/shard-2/report.json'
 );
 const report3JSONFilePath = path.resolve(
   process.cwd(),
-  'coverage/report-3.json'
+  'coverage/shard-3/report.json'
 );
 const report4JSONFilePath = path.resolve(
   process.cwd(),
-  'coverage/report-4.json'
+  'coverage/shard-4/report.json'
 );
 
 if (!fs.existsSync(ceReportJSONFilePath)) {

@@ -39,7 +39,7 @@ jobs:
 
       - uses: actions/upload-artifact@v4
         with:
-          name: coverage-artifacts
+          name: coverage-artifacts-${{ matrix.shard }}
           path: coverage/
 
   test-ce:
@@ -75,10 +75,14 @@ jobs:
           path: ce_coverage
 
       - name: Get EE Coverage
-        uses: actions/download-artifact@v4
-        with:
-          name: coverage-artifacts
-          path: coverage
+        run: |
+          for shard in 1 2 3 4; do
+            mkdir -p coverage/shard-$shard
+            actions/download-artifact@v4
+            with:
+              name: coverage-artifacts-$shard
+              path: coverage/shard-$shard
+          done
 
       - name: Install dependencies
         uses: ./.github/actions/catch-install-pnpm
@@ -98,4 +102,7 @@ jobs:
         with:
           name: |
             ce-coverage-artifacts
-            coverage-artifacts
+            coverage-artifacts-1
+            coverage-artifacts-2
+            coverage-artifacts-3
+            coverage-artifacts-4
