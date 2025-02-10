@@ -174,6 +174,8 @@ export interface IGetSqlManageSqlAnalysisChartV1Params {
 
   sql_manage_id: string;
 
+  latest_point_enabled: boolean;
+
   start_time: string;
 
   end_time: string;
