@@ -2122,44 +2122,6 @@ exports[`App render App when "checkPageAction" is false 1`] = `
                 >
                   <div
                     class="ant-space-item"
-                    style="margin-right: 8px; padding-bottom: 8px;"
-                  >
-                    <button
-                      class="ant-btn css-dev-only-do-not-override-eo1pvk ant-btn-default ant-btn-sm guidance-button-wrapper css-aj0zfl"
-                      type="button"
-                    >
-                      <div
-                        class="ant-space css-dev-only-do-not-override-eo1pvk ant-space-horizontal ant-space-align-center"
-                      >
-                        <div
-                          class="ant-space-item"
-                        >
-                          授权审计
-                        </div>
-                      </div>
-                    </button>
-                  </div>
-                  <div
-                    class="ant-space-item"
-                    style="margin-right: 8px; padding-bottom: 8px;"
-                  >
-                    <button
-                      class="ant-btn css-dev-only-do-not-override-eo1pvk ant-btn-default ant-btn-sm guidance-button-wrapper css-aj0zfl"
-                      type="button"
-                    >
-                      <div
-                        class="ant-space css-dev-only-do-not-override-eo1pvk ant-space-horizontal ant-space-align-center"
-                      >
-                        <div
-                          class="ant-space-item"
-                        >
-                          权限模板审计
-                        </div>
-                      </div>
-                    </button>
-                  </div>
-                  <div
-                    class="ant-space-item"
                     style="padding-bottom: 8px;"
                   >
                     <button
@@ -4456,44 +4418,6 @@ exports[`App render App when token is existed 1`] = `
                   class="ant-space css-dev-only-do-not-override-1thf7qv ant-space-horizontal ant-space-align-center actions"
                   style="flex-wrap: wrap; margin-bottom: -8px;"
                 >
-                  <div
-                    class="ant-space-item"
-                    style="margin-right: 8px; padding-bottom: 8px;"
-                  >
-                    <button
-                      class="ant-btn css-dev-only-do-not-override-eo1pvk ant-btn-default ant-btn-sm guidance-button-wrapper css-aj0zfl"
-                      type="button"
-                    >
-                      <div
-                        class="ant-space css-dev-only-do-not-override-eo1pvk ant-space-horizontal ant-space-align-center"
-                      >
-                        <div
-                          class="ant-space-item"
-                        >
-                          授权审计
-                        </div>
-                      </div>
-                    </button>
-                  </div>
-                  <div
-                    class="ant-space-item"
-                    style="margin-right: 8px; padding-bottom: 8px;"
-                  >
-                    <button
-                      class="ant-btn css-dev-only-do-not-override-eo1pvk ant-btn-default ant-btn-sm guidance-button-wrapper css-aj0zfl"
-                      type="button"
-                    >
-                      <div
-                        class="ant-space css-dev-only-do-not-override-eo1pvk ant-space-horizontal ant-space-align-center"
-                      >
-                        <div
-                          class="ant-space-item"
-                        >
-                          权限模板审计
-                        </div>
-                      </div>
-                    </button>
-                  </div>
                   <div
                     class="ant-space-item"
                     style="padding-bottom: 8px;"

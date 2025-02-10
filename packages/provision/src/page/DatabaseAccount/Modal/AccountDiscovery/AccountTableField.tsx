@@ -26,11 +26,25 @@ const AccountTableField: React.FC<AccountTableFieldProps> = ({
       data?.filter((i) => newSelectedRowKeys.includes(i.id as React.Key))
     );
   };
-
   const columns: BasicTableProps<ExpendedDBAccountBody>['columns'] = [
     {
       dataIndex: 'user',
-      title: t('databaseAccount.list.column.account')
+      title: t('databaseAccount.list.column.account'),
+      render: (username: string, record) => {
+        if (!username) {
+          return '-';
+        }
+
+        const hostname = record.additional_param?.find(
+          (v) => v.key === 'hostname'
+        )?.value;
+
+        if (!hostname) {
+          return username;
+        }
+
+        return `${username}@${hostname}`;
+      }
     },
     {
       dataIndex: 'db_roles',

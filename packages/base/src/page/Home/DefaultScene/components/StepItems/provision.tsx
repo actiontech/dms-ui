@@ -1,9 +1,5 @@
 import { t } from '../../../../../locale';
-import {
-  DevopsStepsProps,
-  UserDevopsStepButtonItem,
-  UserDevopsStepChildren
-} from '../../index.type';
+import { DevopsStepsProps, UserDevopsStepChildren } from '../../index.type';
 import { ROUTE_PATHS } from '@actiontech/shared/lib/data/routePaths';
 
 export const getDatabaseAuthStep: (
@@ -38,39 +34,4 @@ export const getDatabaseAuthStep: (
       }
     ]
   };
-};
-
-export const getAuthAuditStepItems = ({
-  navigate,
-  projectID
-}: DevopsStepsProps): UserDevopsStepButtonItem[] => {
-  return [
-    {
-      key: 'audit-auth-list',
-      label: t(
-        'dmsHome.defaultScene.steps.devopsAndAudit.innerContents.action_1_0'
-      ),
-      action: () =>
-        navigate(ROUTE_PATHS.PROVISION.AUDIT.auth, {
-          params: { projectID }
-        })
-    },
-    {
-      key: 'audit-template-list',
-      label: t(
-        'dmsHome.defaultScene.steps.devopsAndAudit.innerContents.action_1_1'
-      ),
-      action: () =>
-        navigate(ROUTE_PATHS.PROVISION.AUDIT.template, {
-          params: { projectID }
-        })
-    }
-    // {
-    //   key: 'audit-service-list',
-    //   label: t(
-    //     'dmsHome.defaultScene.steps.devopsAndAudit.innerContents.action_1_2'
-    //   ),
-    //   action: () => navigate(`/provision/project/${projectID}/audit/service`)
-    // }
-  ];
 };

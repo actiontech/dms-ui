@@ -192,7 +192,7 @@ const BatchModifyPasswordModal: React.FC = () => {
                         {...field}
                         label={
                           index === 0
-                            ? t('databaseAccount.create.form.confirm_password')
+                            ? t('databaseAccount.create.form.confirmPassword')
                             : ''
                         }
                         name={[field.name, 'confirm_password']}
