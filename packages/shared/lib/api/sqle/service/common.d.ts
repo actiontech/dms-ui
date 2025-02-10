@@ -1481,6 +1481,26 @@ export interface IGetInstancesTypePercentResV1 {
   message?: string;
 }
 
+export interface IGetKnowledgeBaseListRes {
+  code?: number;
+
+  data?: IKnowledgeBase[];
+
+  message?: string;
+
+  total_nums?: number;
+}
+
+export interface IGetKnowledgeBaseTagListRes {
+  code?: number;
+
+  data?: ITag[];
+
+  message?: string;
+
+  total_nums?: number;
+}
+
 export interface IGetLicenseResV1 {
   code?: number;
 
@@ -2259,6 +2279,18 @@ export interface IInstancesTypePercentV1 {
   instance_type_percents?: IInstanceTypePercent[];
 }
 
+export interface IKnowledgeBase {
+  content?: string;
+
+  description?: string;
+
+  id?: number;
+
+  tags?: ITag[];
+
+  title?: string;
+}
+
 export interface ILicenseItem {
   description?: string;
 
@@ -2830,6 +2862,8 @@ export interface ISQLAuditResult {
 export interface ISQLExplain {
   classic_result?: IExplainClassicResult;
 
+  cost?: number;
+
   err_message?: string;
 
   sql?: string;
@@ -3133,6 +3167,12 @@ export interface ITableMetas {
   err_message?: string;
 
   table_meta_items?: ITableMeta[];
+}
+
+export interface ITag {
+  id?: number;
+
+  name?: string;
 }
 
 export interface ITargetReleaseInstance {
