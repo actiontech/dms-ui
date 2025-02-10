@@ -433,9 +433,9 @@ exports[`provision/DatabaseAccount/BatchModifyPasswordModal render init snap 1`]
                           <label
                             class="ant-form-item-required"
                             for="passwords_0_confirm_password"
-                            title="databaseAccount.create.form.confirm_password"
+                            title="确认连接密码"
                           >
-                            databaseAccount.create.form.confirm_password
+                            确认连接密码
                           </label>
                         </div>
                         <div
