@@ -113,6 +113,14 @@ const WorkflowSqlAnalyze = React.lazy(
 // #if [ee]
 const RuleKnowledge = React.lazy(() => import('../page/RuleKnowledge'));
 
+const RuleKnowledgeRefineResults = React.lazy(
+  () => import('../page/RuleKnowledge/RefineResults')
+);
+
+const RuleKnowledgeDetail = React.lazy(
+  () => import('../page/RuleKnowledge/Detail')
+);
+
 const SqlManagementAnalyze = React.lazy(
   () => import('../page/SqlAnalyze/SqlManage')
 );
@@ -568,7 +576,23 @@ export const globalRouterConfig: RouterConfigItem[] = [
   {
     path: ROUTE_PATHS.SQLE.RULE_KNOWLEDGE.index.path,
     key: 'ruleKnowledge',
-    element: <RuleKnowledge />
+    children: [
+      {
+        index: true,
+        key: 'ruleKnowledgeIndex',
+        element: <RuleKnowledge />
+      },
+      {
+        path: ROUTE_PATHS.SQLE.RULE_KNOWLEDGE.refined.path,
+        key: 'ruleKnowledgeRefinedResults',
+        element: <RuleKnowledgeRefineResults />
+      },
+      {
+        path: ROUTE_PATHS.SQLE.RULE_KNOWLEDGE.detail.path,
+        key: 'ruleKnowledgeDetail',
+        element: <RuleKnowledgeDetail />
+      }
+    ]
   },
   // #endif
   {
