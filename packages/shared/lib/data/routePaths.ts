@@ -162,6 +162,12 @@ export const ROUTE_PATHS = {
     RULE_KNOWLEDGE: {
       index: {
         path: '/sqle/rule/knowledge/:ruleName/:dbType'
+      },
+      refined: {
+        path: '/sqle/rule/knowledge/:ruleName/:dbType/refined'
+      },
+      detail: {
+        path: '/sqle/rule/knowledge/:ruleName/:dbType/detail'
       }
     },
     PROJECT_OVERVIEW: {
