@@ -404,16 +404,6 @@ export const ROUTE_PATHS = {
         prefix: '/provision/project',
         path: ':projectID/database-account-password'
       }
-    },
-    AUDIT: {
-      auth: {
-        prefix: '/provision/project',
-        path: ':projectID/audit/auth'
-      },
-      template: {
-        prefix: '/provision/project',
-        path: ':projectID/audit/template'
-      }
     }
   }
 } as const;

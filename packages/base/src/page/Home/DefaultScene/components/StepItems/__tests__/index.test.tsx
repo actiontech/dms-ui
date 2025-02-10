@@ -143,24 +143,6 @@ describe('test base/Home/StepItems', () => {
       `/provision/project/${projectID}/database-account-password`
     );
 
-    fireEvent.click(screen.getByText('授权审计'));
-    expect(navigateSpy).toHaveBeenCalledTimes(17);
-    expect(navigateSpy).toHaveBeenCalledWith(
-      `/provision/project/${projectID}/audit/auth`
-    );
-
-    fireEvent.click(screen.getByText('权限模板审计'));
-    expect(navigateSpy).toHaveBeenCalledTimes(18);
-    expect(navigateSpy).toHaveBeenCalledWith(
-      `/provision/project/${projectID}/audit/template`
-    );
-
-    // fireEvent.click(screen.getByText('数据源操作审计'));
-    // expect(navigateSpy).toHaveBeenCalledTimes(19);
-    // expect(navigateSpy).toHaveBeenCalledWith(
-    //   `/provision/project/${projectID}/audit/service`
-    // );
-
     cleanup();
     jest.clearAllMocks();
 

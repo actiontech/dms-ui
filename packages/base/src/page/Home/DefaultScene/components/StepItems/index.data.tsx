@@ -1,7 +1,6 @@
 import { StringDictionary } from '@actiontech/shared/lib/types/common.type';
 import { t } from '../../../../../locale/index';
 import { DevopsStepsProps, UserDevopsStepsFactory } from '../../index.type';
-
 import {
   getDatabaseManagerSteps,
   getMemberAndPermissionSteps,
@@ -9,7 +8,6 @@ import {
   getDataExportTask,
   getDataMask
 } from './base';
-
 import {
   getAuditProgressStep,
   getAuditManageStep,
@@ -18,8 +16,7 @@ import {
 } from './sqle';
 import { LockFilled, SnippetsFilled, UtilOutlined } from '@actiontech/icons';
 import { CommonIconStyleWrapper } from '@actiontech/shared/lib/styleWrapper/element';
-
-import { getAuthAuditStepItems, getDatabaseAuthStep } from './provision';
+import { getDatabaseAuthStep } from './provision';
 
 export const UserTypeDictionary: StringDictionary = {
   admin: t('dmsHome.defaultScene.header.adminUser'),
@@ -115,10 +112,6 @@ export const AdminUserDevopsSteps: (
           'dmsHome.defaultScene.steps.devopsAndAudit.innerContents.content_1'
         ),
         buttons: [
-          // #if [provision]
-          ...getAuthAuditStepItems({ navigate, projectID }),
-          // #endif
-
           // #if [sqle]
           ...getSQLEOperateStepItem({ navigate, projectID })
           // #endif
@@ -153,33 +146,5 @@ export const NormalUserDevopsSteps: (
 
       getDataExportTask({ navigate, projectID })
     ]
-  },
-  // #if [provision]
-  {
-    key: 'devopsAndAudit',
-    title: t('dmsHome.defaultScene.steps.devopsAndAudit.title'),
-    icon: (
-      <CommonIconStyleWrapper className="step-icon">
-        <UtilOutlined
-          color={iconColor}
-          fill="currentColor"
-          height={24}
-          width={24}
-        />
-      </CommonIconStyleWrapper>
-    ),
-    children: [
-      {
-        key: 'operationCheck',
-        title: t(
-          'dmsHome.defaultScene.steps.devopsAndAudit.innerContents.title_1'
-        ),
-        content: t(
-          'dmsHome.defaultScene.steps.devopsAndAudit.innerContents.content_1'
-        ),
-        buttons: [...getAuthAuditStepItems({ navigate, projectID })]
-      }
-    ]
   }
-  // #endif
 ];

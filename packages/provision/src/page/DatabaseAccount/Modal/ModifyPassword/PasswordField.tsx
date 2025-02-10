@@ -30,7 +30,7 @@ const PasswordField = () => {
       </Form.Item>
       <Form.Item
         name="confirm_password"
-        label={t('databaseAccount.create.form.confirm_password')}
+        label={t('databaseAccount.create.form.confirmPassword')}
         rules={[
           { required: true },
           ({ getFieldValue }) => ({

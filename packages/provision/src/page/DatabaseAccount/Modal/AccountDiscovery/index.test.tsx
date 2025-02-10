@@ -14,7 +14,10 @@ import { DatabaseAccountModalStatus } from '../../../../store/databaseAccount';
 import { EventEmitterKey, ModalName } from '../../../../data/enum';
 import { discoveryDBAccountMockData } from '../../../../testUtil/mockApi/dbAccountService/data';
 import EventEmitter from '../../../../utils/EventEmitter';
-import { createSpyFailResponse } from '@actiontech/shared/lib/testUtil/mockApi';
+import {
+  createSpyFailResponse,
+  createSpySuccessResponse
+} from '@actiontech/shared/lib/testUtil/mockApi';
 import user from '../../../../testUtil/mockApi/user';
 import { mockUsePermission } from '@actiontech/shared/lib/testUtil/mockHook/mockUsePermission';
 
@@ -207,5 +210,110 @@ describe('provision/DatabaseAccount/AccountDiscoveryModal', () => {
     );
     fireEvent.click(screen.getByText('关 闭'));
     await act(async () => jest.advanceTimersByTime(100));
+  });
+
+  describe('render AccountTableField username field', () => {
+    it('should return "-" if username is empty', async () => {
+      authDiscoveryDBAccountsSpy.mockImplementation(() =>
+        createSpySuccessResponse({
+          data: {
+            accounts: [
+              {
+                user: undefined
+              }
+            ]
+          }
+        })
+      );
+      const { baseElement } = customRender();
+      await act(async () => jest.advanceTimersByTime(3000));
+
+      selectOptionByIndex('业务', 'business-1', 1);
+      await act(async () => jest.advanceTimersByTime(3000));
+      fireEvent.mouseDown(getBySelector('#service'));
+      await act(async () => jest.advanceTimersByTime(0));
+      fireEvent.click(
+        screen.getByText('Julian Lueilwitz (aromatic-hammock.org)')
+      );
+      expect(authDiscoveryDBAccountsSpy).toHaveBeenCalledTimes(1);
+      await act(async () => jest.advanceTimersByTime(3000));
+      expect(baseElement).toMatchSnapshot();
+    });
+
+    it('should return username if hostname is not found', async () => {
+      customRender();
+      await act(async () => jest.advanceTimersByTime(3000));
+
+      selectOptionByIndex('业务', 'business-1', 1);
+      await act(async () => jest.advanceTimersByTime(3000));
+      fireEvent.mouseDown(getBySelector('#service'));
+      await act(async () => jest.advanceTimersByTime(0));
+      fireEvent.click(
+        screen.getByText('Julian Lueilwitz (aromatic-hammock.org)')
+      );
+      expect(authDiscoveryDBAccountsSpy).toHaveBeenCalledTimes(1);
+      await act(async () => jest.advanceTimersByTime(3000));
+      expect(screen.getByText('root')).toBeInTheDocument();
+      expect(screen.getByText('mysql.session')).toBeInTheDocument();
+    });
+
+    it('should return username@hostname if hostname is found', async () => {
+      authDiscoveryDBAccountsSpy.mockImplementation(() =>
+        createSpySuccessResponse({
+          data: {
+            accounts: [
+              {
+                user: 'test_user1',
+                additional_param: [
+                  {
+                    key: 'hostname',
+                    value: 'localhost',
+                    desc: '主机名',
+                    type: 'string'
+                  }
+                ],
+                permission_info: {
+                  grants: [
+                    'GRANT SELECT,INSERT,UPDATE,DELETE ON `test_db`.* TO `test_user1`@`localhost`'
+                  ]
+                },
+                db_roles: []
+              },
+              {
+                user: 'test_user2',
+                additional_param: [
+                  {
+                    key: 'hostname',
+                    value: '%',
+                    desc: '主机名',
+                    type: 'string'
+                  }
+                ],
+                permission_info: {
+                  grants: [
+                    'GRANT SELECT ON `test_db`.* TO `test_user2`@`localhost`'
+                  ]
+                },
+                db_roles: []
+              }
+            ]
+          }
+        })
+      );
+      customRender();
+      await act(async () => jest.advanceTimersByTime(3000));
+
+      selectOptionByIndex('业务', 'business-1', 1);
+      await act(async () => jest.advanceTimersByTime(3000));
+      fireEvent.mouseDown(getBySelector('#service'));
+      await act(async () => jest.advanceTimersByTime(0));
+      fireEvent.click(
+        screen.getByText('Julian Lueilwitz (aromatic-hammock.org)')
+      );
+      expect(authDiscoveryDBAccountsSpy).toHaveBeenCalledTimes(1);
+      await act(async () => jest.advanceTimersByTime(3000));
+      expect(screen.getByText('test_user1@localhost')).toBeInTheDocument();
+      expect(screen.getByText('test_user2@%')).toBeInTheDocument();
+    });
   });
 });
