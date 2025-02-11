@@ -14,7 +14,7 @@ exports[`ExecPlanCostChart filter sql execute plan cost 1`] = `
           style="margin-right: 8px;"
         >
           <h3>
-            SQL执行计划 Cost趋势
+            SQL执行计划代价趋势
           </h3>
         </div>
         <div
@@ -151,7 +151,7 @@ exports[`ExecPlanCostChart filter sql execute plan cost 1`] = `
                 class="chart-box"
               >
                 <div
-                  data-custom-params="{"data":[{"y":1.2,"x":"2025-01-06 17:22:53","info":[{"id":"1","select_id":"1","table":"test_table","partitions":"a,b,c","type":"const","possible_keys":"a,b,c","key":"key_name","key_len":"231","ref":"abc","rows":"100","filtered":"100","select_type":"SIMPLE"}]},{"y":3.2,"x":"2025-01-07 17:32:53","info":[{"id":"2","select_id":"1","table":"test_table","partitions":"a,b,c","type":"const","possible_keys":"a,b,c","key":"key_name","key_len":"231","ref":"abc","rows":"100","filtered":"100","select_type":"SIMPLE"}]},{"y":2.2,"x":"2025-01-07 17:42:53","info":[{"id":"3","select_id":"1","table":"test_table","partitions":"a,b,c","type":"const","possible_keys":"a,b,c","key":"key_name","key_len":"231","ref":"abc","rows":"100","filtered":"100","select_type":"SIMPLE"}]},{"y":5.2,"x":"2025-01-07 17:52:53","info":[{"id":"4","select_id":"1","table":"test_table","partitions":"a,b,c","type":"const","possible_keys":"a,b,c","key":"key_name","key_len":"231","ref":"abc","rows":"100","filtered":"100","select_type":"SIMPLE"}]}],"xField":"x","yField":"y","xAxis":{"nice":true},"point":{"style":{"fill":"#FFFFFF","stroke":"#4583ff"}},"slider":{"start":0,"end":1},"appendPadding":20,"annotations":[{"type":"text","content":5.2,"position":["2025-01-07 17:52:53",5.2],"style":{"textAlign":"center","fill":"#FFFFFF"},"offsetY":-16,"background":{"padding":4,"style":{"radius":4,"fill":"#4583ff"}}},{"position":["2025-01-07 17:52:53",5.2],"type":"dataMarker","text":{"content":"","style":{"textAlign":"left"}},"point":{"style":{"fill":"#FFFFFF","stroke":"#4583ff"}},"autoAdjust":false},{"type":"text","content":1.2,"position":["2025-01-06 17:22:53",1.2],"style":{"textAlign":"center","fill":"#FFFFFF"},"offsetY":-16,"background":{"padding":4,"style":{"radius":4,"fill":"#4583ff"}}},{"position":["2025-01-06 17:22:53",1.2],"type":"dataMarker","text":{"content":"","style":{"textAlign":"left"}},"point":{"style":{"fill":"#FFFFFF","stroke":"#4583ff"}},"autoAdjust":false}],"tooltip":{"fields":["created_time","cost","id"],"enterable":true,"follow":true},"theme":"light"}"
+                  data-custom-params="{"data":[{"y":1.2,"x":"2025-01-06T09:22:53.713Z","info":[{"id":"1","select_id":"1","table":"test_table","partitions":"a,b,c","type":"const","possible_keys":"a,b,c","key":"key_name","key_len":"231","ref":"abc","rows":"100","filtered":"100","select_type":"SIMPLE"}]},{"y":3.2,"x":"2025-01-07T09:32:53.713Z","info":[{"id":"2","select_id":"1","table":"test_table","partitions":"a,b,c","type":"const","possible_keys":"a,b,c","key":"key_name","key_len":"231","ref":"abc","rows":"100","filtered":"100","select_type":"SIMPLE"}]},{"y":2.2,"x":"2025-01-07T09:42:53.713Z","info":[{"id":"3","select_id":"1","table":"test_table","partitions":"a,b,c","type":"const","possible_keys":"a,b,c","key":"key_name","key_len":"231","ref":"abc","rows":"100","filtered":"100","select_type":"SIMPLE"}]},{"y":5.2,"x":"2025-01-07T09:52:53.713Z","info":[{"id":"4","select_id":"1","table":"test_table","partitions":"a,b,c","type":"const","possible_keys":"a,b,c","key":"key_name","key_len":"231","ref":"abc","rows":"100","filtered":"100","select_type":"SIMPLE"}]}],"xField":"x","yField":"y","xAxis":{"nice":true},"point":{"style":{"fill":"#FFFFFF","stroke":"#4583ff"},"size":5},"slider":{"start":0,"end":1},"appendPadding":20,"annotations":[{"type":"line","start":["","min"],"end":["","max"],"style":{"stroke":"#FAAFB9","lineWidth":2},"animate":false},{"type":"line","start":["","min"],"end":["","max"],"style":{"stroke":"#FAAFB9","lineWidth":2},"animate":false}],"tooltip":{"fields":["created_time","cost","id"]},"theme":"light"}"
                 >
                   <div
                     class="tooltip-box-wrapper tooltip-box-database-source-order css-4m33fd"
@@ -176,7 +176,7 @@ exports[`ExecPlanCostChart filter sql execute plan cost 1`] = `
                           class="dot"
                           hidden=""
                         />
-                        Cost值
+                        代价
                       </dt>
                       <dd
                         class="tooltip-value"
@@ -194,20 +194,45 @@ exports[`ExecPlanCostChart filter sql execute plan cost 1`] = `
                           class="dot"
                           hidden=""
                         />
+                        <div
+                          class="css-516s8c"
+                          style="color: rgb(138, 143, 153);"
+                        >
+                          点击节点可查看详细执行计划，点击已选节点可取消选择
+                        </div>
                       </dt>
                       <dd
                         class="tooltip-value"
-                      >
-                        <button
-                          class="ant-btn css-dev-only-do-not-override-txh9fw ant-btn-default ant-btn-sm"
-                          type="button"
-                        >
-                          <span>
-                            对比执行计划
-                          </span>
-                        </button>
-                      </dd>
+                      />
                     </dl>
+                  </div>
+                  <div
+                    data-testid="data-point-0"
+                  >
+                    2025-01-06T09:22:53.713Z
+                    : 
+                    1.2
+                  </div>
+                  <div
+                    data-testid="data-point-1"
+                  >
+                    2025-01-07T09:32:53.713Z
+                    : 
+                    3.2
+                  </div>
+                  <div
+                    data-testid="data-point-2"
+                  >
+                    2025-01-07T09:42:53.713Z
+                    : 
+                    2.2
+                  </div>
+                  <div
+                    data-testid="data-point-3"
+                  >
+                    2025-01-07T09:52:53.713Z
+                    : 
+                    5.2
                   </div>
                 </div>
               </div>
@@ -234,7 +259,7 @@ exports[`ExecPlanCostChart refresh sql execute plan cost 1`] = `
           style="margin-right: 8px;"
         >
           <h3>
-            SQL执行计划 Cost趋势
+            SQL执行计划代价趋势
           </h3>
         </div>
         <div
@@ -458,7 +483,7 @@ exports[`ExecPlanCostChart render chart when data is not empty 1`] = `
           style="margin-right: 8px;"
         >
           <h3>
-            SQL执行计划 Cost趋势
+            SQL执行计划代价趋势
           </h3>
         </div>
         <div
@@ -595,7 +620,7 @@ exports[`ExecPlanCostChart render chart when data is not empty 1`] = `
                 class="chart-box"
               >
                 <div
-                  data-custom-params="{"data":[{"y":1.2,"x":"2025-01-06 17:22:53","info":[{"id":"1","select_id":"1","table":"test_table","partitions":"a,b,c","type":"const","possible_keys":"a,b,c","key":"key_name","key_len":"231","ref":"abc","rows":"100","filtered":"100","select_type":"SIMPLE"}]},{"y":3.2,"x":"2025-01-07 17:32:53","info":[{"id":"2","select_id":"1","table":"test_table","partitions":"a,b,c","type":"const","possible_keys":"a,b,c","key":"key_name","key_len":"231","ref":"abc","rows":"100","filtered":"100","select_type":"SIMPLE"}]},{"y":2.2,"x":"2025-01-07 17:42:53","info":[{"id":"3","select_id":"1","table":"test_table","partitions":"a,b,c","type":"const","possible_keys":"a,b,c","key":"key_name","key_len":"231","ref":"abc","rows":"100","filtered":"100","select_type":"SIMPLE"}]},{"y":5.2,"x":"2025-01-07 17:52:53","info":[{"id":"4","select_id":"1","table":"test_table","partitions":"a,b,c","type":"const","possible_keys":"a,b,c","key":"key_name","key_len":"231","ref":"abc","rows":"100","filtered":"100","select_type":"SIMPLE"}]}],"xField":"x","yField":"y","xAxis":{"nice":true},"point":{"style":{"fill":"#FFFFFF","stroke":"#4583ff"}},"slider":{"start":0,"end":1},"appendPadding":20,"annotations":[{"type":"text","content":5.2,"position":["2025-01-07 17:52:53",5.2],"style":{"textAlign":"center","fill":"#FFFFFF"},"offsetY":-16,"background":{"padding":4,"style":{"radius":4,"fill":"#4583ff"}}},{"position":["2025-01-07 17:52:53",5.2],"type":"dataMarker","text":{"content":"","style":{"textAlign":"left"}},"point":{"style":{"fill":"#FFFFFF","stroke":"#4583ff"}},"autoAdjust":false},{"type":"text","content":1.2,"position":["2025-01-06 17:22:53",1.2],"style":{"textAlign":"center","fill":"#FFFFFF"},"offsetY":-16,"background":{"padding":4,"style":{"radius":4,"fill":"#4583ff"}}},{"position":["2025-01-06 17:22:53",1.2],"type":"dataMarker","text":{"content":"","style":{"textAlign":"left"}},"point":{"style":{"fill":"#FFFFFF","stroke":"#4583ff"}},"autoAdjust":false}],"tooltip":{"fields":["created_time","cost","id"],"enterable":true,"follow":true},"theme":"light"}"
+                  data-custom-params="{"data":[{"y":1.2,"x":"2025-01-06T09:22:53.713Z","info":[{"id":"1","select_id":"1","table":"test_table","partitions":"a,b,c","type":"const","possible_keys":"a,b,c","key":"key_name","key_len":"231","ref":"abc","rows":"100","filtered":"100","select_type":"SIMPLE"}]},{"y":3.2,"x":"2025-01-07T09:32:53.713Z","info":[{"id":"2","select_id":"1","table":"test_table","partitions":"a,b,c","type":"const","possible_keys":"a,b,c","key":"key_name","key_len":"231","ref":"abc","rows":"100","filtered":"100","select_type":"SIMPLE"}]},{"y":2.2,"x":"2025-01-07T09:42:53.713Z","info":[{"id":"3","select_id":"1","table":"test_table","partitions":"a,b,c","type":"const","possible_keys":"a,b,c","key":"key_name","key_len":"231","ref":"abc","rows":"100","filtered":"100","select_type":"SIMPLE"}]},{"y":5.2,"x":"2025-01-07T09:52:53.713Z","info":[{"id":"4","select_id":"1","table":"test_table","partitions":"a,b,c","type":"const","possible_keys":"a,b,c","key":"key_name","key_len":"231","ref":"abc","rows":"100","filtered":"100","select_type":"SIMPLE"}]}],"xField":"x","yField":"y","xAxis":{"nice":true},"point":{"style":{"fill":"#FFFFFF","stroke":"#4583ff"},"size":5},"slider":{"start":0,"end":1},"appendPadding":20,"annotations":[{"type":"line","start":["","min"],"end":["","max"],"style":{"stroke":"#FAAFB9","lineWidth":2},"animate":false},{"type":"line","start":["","min"],"end":["","max"],"style":{"stroke":"#FAAFB9","lineWidth":2},"animate":false}],"tooltip":{"fields":["created_time","cost","id"]},"theme":"light"}"
                 >
                   <div
                     class="tooltip-box-wrapper tooltip-box-database-source-order css-4m33fd"
@@ -620,7 +645,7 @@ exports[`ExecPlanCostChart render chart when data is not empty 1`] = `
                           class="dot"
                           hidden=""
                         />
-                        Cost值
+                        代价
                       </dt>
                       <dd
                         class="tooltip-value"
@@ -638,20 +663,45 @@ exports[`ExecPlanCostChart render chart when data is not empty 1`] = `
                           class="dot"
                           hidden=""
                         />
+                        <div
+                          class="css-516s8c"
+                          style="color: rgb(138, 143, 153);"
+                        >
+                          点击节点可查看详细执行计划，点击已选节点可取消选择
+                        </div>
                       </dt>
                       <dd
                         class="tooltip-value"
-                      >
-                        <button
-                          class="ant-btn css-dev-only-do-not-override-txh9fw ant-btn-default ant-btn-sm"
-                          type="button"
-                        >
-                          <span>
-                            对比执行计划
-                          </span>
-                        </button>
-                      </dd>
+                      />
                     </dl>
+                  </div>
+                  <div
+                    data-testid="data-point-0"
+                  >
+                    2025-01-06T09:22:53.713Z
+                    : 
+                    1.2
+                  </div>
+                  <div
+                    data-testid="data-point-1"
+                  >
+                    2025-01-07T09:32:53.713Z
+                    : 
+                    3.2
+                  </div>
+                  <div
+                    data-testid="data-point-2"
+                  >
+                    2025-01-07T09:42:53.713Z
+                    : 
+                    2.2
+                  </div>
+                  <div
+                    data-testid="data-point-3"
+                  >
+                    2025-01-07T09:52:53.713Z
+                    : 
+                    5.2
                   </div>
                 </div>
               </div>
@@ -678,7 +728,7 @@ exports[`ExecPlanCostChart render error message 1`] = `
           style="margin-right: 8px;"
         >
           <h3>
-            SQL执行计划 Cost趋势
+            SQL执行计划代价趋势
           </h3>
         </div>
         <div
@@ -937,7 +987,7 @@ exports[`ExecPlanCostChart render init snap shot 1`] = `
           style="margin-right: 8px;"
         >
           <h3>
-            SQL执行计划 Cost趋势
+            SQL执行计划代价趋势
           </h3>
         </div>
         <div
