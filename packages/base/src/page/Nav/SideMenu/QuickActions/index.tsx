@@ -2,7 +2,8 @@ import {
   TodoListOutlined,
   SignalFilled,
   ProfileSquareFilled,
-  RingOutlined
+  RingOutlined,
+  BookMarkOutlined
 } from '@actiontech/icons';
 import { QuickActionsStyleWrapper } from '../style';
 import { BasicToolTip, EmptyBox, useTypedNavigate } from '@actiontech/shared';
@@ -75,7 +76,15 @@ const QuickActions = () => {
         icon: (
           <ProfileSquareFilled width={18} height={18} color="currentColor" />
         )
+      },
+      // #if [ee]
+      {
+        key: 'knowledge',
+        title: t('dmsMenu.globalSettings.knowledge'),
+        path: ROUTE_PATHS.SQLE.KNOWLEDGE.index.path,
+        icon: <BookMarkOutlined width={18} height={18} color="currentColor" />
       }
+      // #endif
     ];
     return actionList.filter((item) => {
       if (!item.permission) {
