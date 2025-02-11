@@ -71,7 +71,7 @@ import { parse2ReactRouterPath } from '@actiontech/shared/lib/components/TypedRo
 const SQLEEIndex = () => {
   const { t } = useTranslation();
 
-  const extraQueries = useTypedQuery();
+  const extractQueries = useTypedQuery();
 
   const [messageApi, messageContextHolder] = message.useMessage();
   const {
@@ -453,7 +453,7 @@ const SQLEEIndex = () => {
   );
 
   useEffect(() => {
-    const searchParams = extraQueries(ROUTE_PATHS.SQLE.SQL_MANAGEMENT.index);
+    const searchParams = extractQueries(ROUTE_PATHS.SQLE.SQL_MANAGEMENT.index);
     if (searchParams && !!searchParams.instance_id && !!searchParams.source) {
       updateAllSelectedFilterItem(true);
       updateTableFilterInfo({

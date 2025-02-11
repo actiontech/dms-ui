@@ -30,11 +30,11 @@ const useSetFormValuesWithGenModifiedSqlParams = ({
   handleInstanceNameChange,
   setGetModifiedSQLsPending
 }: Params) => {
-  const extraQueries = useTypedQuery();
+  const extractQueries = useTypedQuery();
 
   const searchParams = useMemo(() => {
-    return extraQueries(ROUTE_PATHS.SQLE.SQL_EXEC_WORKFLOW.create);
-  }, [extraQueries]);
+    return extractQueries(ROUTE_PATHS.SQLE.SQL_EXEC_WORKFLOW.create);
+  }, [extractQueries]);
 
   const getExistSchemaName = (schemaList: string[], schemaName?: string) => {
     if (schemaName && schemaList.includes(schemaName)) {

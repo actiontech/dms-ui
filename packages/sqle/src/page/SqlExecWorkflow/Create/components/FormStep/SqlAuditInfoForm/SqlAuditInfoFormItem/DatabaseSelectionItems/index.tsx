@@ -41,7 +41,7 @@ const DatabaseSelectionItem: React.FC<DatabaseSelectionItemProps> = ({
   const { t } = useTranslation();
   const form = Form.useFormInstance<SqlAuditInfoFormFields>();
   const { projectName } = useCurrentProject();
-  const extraQueries = useTypedQuery();
+  const extractQueries = useTypedQuery();
 
   const { sqleTheme } = useThemeStyleData();
 
@@ -125,7 +125,7 @@ const DatabaseSelectionItem: React.FC<DatabaseSelectionItemProps> = ({
   }, [projectName, updateInstanceList]);
 
   useEffect(() => {
-    const searchParams = extraQueries(
+    const searchParams = extractQueries(
       ROUTE_PATHS.SQLE.SQL_EXEC_WORKFLOW.create
     );
     if (searchParams) {
@@ -164,7 +164,7 @@ const DatabaseSelectionItem: React.FC<DatabaseSelectionItemProps> = ({
       }
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [extraQueries, form]);
+  }, [extractQueries, form]);
 
   return (
     <>
