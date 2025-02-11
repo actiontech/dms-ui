@@ -80,7 +80,8 @@ describe('SqlAnalyze/useSQLExecPlan', () => {
       useSQLExecPlan({
         showExecPlanCostChart: true,
         sqlExecPlanCostDataSource: mockSqlManageSqlAnalysisChartData.points,
-        getSqlExecPlanCostDataSourceLoading: false
+        getSqlExecPlanCostDataSourceLoading: false,
+        initTime: dayjs('2024-01-09 12:00:00')
       })
     );
 
@@ -93,23 +94,22 @@ describe('SqlAnalyze/useSQLExecPlan', () => {
       </>
     );
     expect(baseElement).toMatchSnapshot();
-    expect(screen.getByText('SQL执行计划 Cost趋势')).toBeInTheDocument();
-    expect(screen.queryByText('历史执行计划')).not.toBeInTheDocument();
+    expect(screen.getByText('SQL执行计划代价趋势')).toBeInTheDocument();
   });
 
-  it('render generateSQLExecPlanContent when show history execute plan', async () => {
+  it('render generateSQLExecPlanContent when selected point is not undefined', async () => {
     const { result } = renderHooksWithTheme(() =>
       useSQLExecPlan({
         showExecPlanCostChart: true,
         sqlExecPlanCostDataSource: mockSqlManageSqlAnalysisChartData.points,
-        getSqlExecPlanCostDataSourceLoading: false
+        getSqlExecPlanCostDataSourceLoading: false,
+        selectedPoint: [
+          mockSqlManageSqlAnalysisChartData.points[0],
+          mockSqlManageSqlAnalysisChartData.points[1]
+        ],
+        setSelectedPoint: jest.fn()
       })
     );
-    await act(async () => {
-      result.current.setHistoryExecPlan(
-        mockSqlManageSqlAnalysisChartData.points[0]
-      );
-    });
 
     const { baseElement } = superRender(
       <>
@@ -120,8 +120,13 @@ describe('SqlAnalyze/useSQLExecPlan', () => {
       </>
     );
     expect(baseElement).toMatchSnapshot();
-    expect(screen.getByText('SQL执行计划 Cost趋势')).toBeInTheDocument();
-    expect(screen.getByText('历史执行计划')).toBeInTheDocument();
+    expect(screen.getByText('SQL执行计划代价趋势')).toBeInTheDocument();
+    expect(
+      screen.getByText(mockSqlManageSqlAnalysisChartData.points[0].x)
+    ).toBeInTheDocument();
+    expect(
+      screen.getByText(mockSqlManageSqlAnalysisChartData.points[1].x)
+    ).toBeInTheDocument();
   });
 
   it('render generateSQLExecPlanContent when filter execute plan cost chart', async () => {
