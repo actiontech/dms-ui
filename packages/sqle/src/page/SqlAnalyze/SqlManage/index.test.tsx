@@ -58,7 +58,15 @@ describe('SqlAnalyze/SQLManage', () => {
 
   const mockGetAnalyzeData = () => {
     const spy = jest.spyOn(SqlManage, 'GetSqlManageSqlAnalysisV1');
-    spy.mockImplementation(() => resolveThreeSecond(SQLManageSqlAnalyzeData));
+    spy.mockImplementation(() =>
+      resolveThreeSecond({
+        ...SQLManageSqlAnalyzeData,
+        sql_explain: {
+          ...SQLManageSqlAnalyzeData.sql_explain,
+          cost: 3
+        }
+      })
+    );
     return spy;
   };
 
@@ -87,20 +95,19 @@ describe('SqlAnalyze/SQLManage', () => {
 
   it('filter sql execution plan cost', async () => {
     mockGetAnalyzeData();
-    const { container, baseElement } = renderWithReduxAndTheme(
-      <SQLManageAnalyze />
-    );
+    const { container } = renderWithReduxAndTheme(<SQLManageAnalyze />);
     await act(async () => jest.advanceTimersByTime(3000));
     expect(container).toMatchSnapshot();
 
-    expect(screen.getByText('SQL执行计划 Cost趋势')).toBeInTheDocument();
+    expect(screen.getByText('SQL执行计划代价趋势')).toBeInTheDocument();
     expect(getSqlManageSqlAnalysisChartSpy).toHaveBeenCalledTimes(1);
     expect(getSqlManageSqlAnalysisChartSpy).toHaveBeenNthCalledWith(1, {
       sql_manage_id: 'sqlManageId1',
       project_name: projectName,
       metric_name: 'explain_cost',
       start_time: translateTimeForRequest(currentTime.subtract(24, 'hour')),
-      end_time: translateTimeForRequest(currentTime)
+      end_time: translateTimeForRequest(currentTime),
+      latest_point_enabled: true
     });
 
     fireEvent.click(screen.getByText('7天'));
@@ -111,8 +118,13 @@ describe('SqlAnalyze/SQLManage', () => {
       project_name: projectName,
       metric_name: 'explain_cost',
       start_time: translateTimeForRequest(currentTime.subtract(7, 'day')),
-      end_time: translateTimeForRequest(currentTime)
+      end_time: translateTimeForRequest(currentTime),
+      latest_point_enabled: true
     });
+
+    fireEvent.click(screen.getByText('24小时'));
+    await act(async () => jest.advanceTimersByTime(0));
+    expect(getSqlManageSqlAnalysisChartSpy).not.toHaveBeenCalledTimes(3);
   });
 
   it('should render error result of type "info" when response code is 8001', async () => {
