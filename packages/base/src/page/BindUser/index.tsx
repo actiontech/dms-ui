@@ -35,10 +35,10 @@ const BindUser = () => {
 
   const { t } = useTranslation();
 
-  const extraQueries = useTypedQuery();
+  const extractQueries = useTypedQuery();
   const urlParams = useMemo(() => {
-    return extraQueries(ROUTE_PATHS.BASE.USER_BIND.index);
-  }, [extraQueries]);
+    return extractQueries(ROUTE_PATHS.BASE.USER_BIND.index);
+  }, [extractQueries]);
 
   useBrowserVersionTips();
 

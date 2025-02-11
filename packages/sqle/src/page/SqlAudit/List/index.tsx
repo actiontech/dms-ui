@@ -35,7 +35,7 @@ const SqlAuditList = () => {
   const [messageApi, messageContextHolder] = message.useMessage();
   const { projectName, projectID } = useCurrentProject();
   const { username } = useCurrentUser();
-  const extraQueries = useTypedQuery();
+  const extractQueries = useTypedQuery();
 
   const [polling, { setFalse: finishPollRequest, setTrue: startPollRequest }] =
     useBoolean();
@@ -55,11 +55,11 @@ const SqlAuditList = () => {
     SqlAuditListTableFilterParamType
   >();
   const filterDataFromUrl = useMemo(() => {
-    const searchStr = extraQueries(ROUTE_PATHS.SQLE.SQL_AUDIT.index);
+    const searchStr = extractQueries(ROUTE_PATHS.SQLE.SQL_AUDIT.index);
     if (searchStr?.SQLAuditRecordID) {
       return searchStr.SQLAuditRecordID ?? undefined;
     }
-  }, [extraQueries]);
+  }, [extractQueries]);
   const [filterStatus, setFilterStatus] = useState<
     getSQLAuditRecordsV1FilterSqlAuditStatusEnum | 'all'
   >('all');
