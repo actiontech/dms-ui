@@ -5,7 +5,8 @@ import {
   WorkflowTemplateTheme,
   ExecWorkflowTheme,
   IconTheme,
-  DataSourceComparisonTheme
+  DataSourceComparisonTheme,
+  KnowledgeTheme
 } from '../theme/type';
 
 export interface SqleTheme {
@@ -16,6 +17,7 @@ export interface SqleTheme {
   execWorkflow: ExecWorkflowTheme;
   icon: IconTheme;
   dataSourceComparison: DataSourceComparisonTheme;
+  knowledgeTheme: KnowledgeTheme;
 }
 
 interface ThemeCustom {
