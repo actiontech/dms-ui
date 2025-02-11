@@ -13,6 +13,7 @@ import SqlAnalyze from '../SqlAnalyze';
 import { useTypedParams } from '@actiontech/shared';
 import { ROUTE_PATHS } from '@actiontech/shared/lib/data/routePaths';
 import useSqlExecPlanCost from '../hooks/useSqlExecPlanCost';
+import { DateRangeEnum } from '../SqlAnalyze/ExecPlanCostChart/index.data';
 
 const SQLManageAnalyze = () => {
   const urlParams =
@@ -65,12 +66,19 @@ const SQLManageAnalyze = () => {
     data,
     getSqlExecPlanCostDataSourceLoading,
     getSqlExecPlanCostDataSource,
-    getSqlExecPlanCostDataSourceError
+    getSqlExecPlanCostDataSourceError,
+    initTime,
+    selectedPoint,
+    setSelectedPoint
   } = useSqlExecPlanCost(urlParams.sqlManageId ?? '');
 
   useEffect(() => {
     getSqlAnalyze();
-  }, [getSqlAnalyze]);
+    getSqlExecPlanCostDataSource({
+      lastPointEnabled: true,
+      rangeType: DateRangeEnum['24H']
+    });
+  }, [getSqlAnalyze, getSqlExecPlanCostDataSource]);
 
   return (
     <SqlAnalyze
@@ -87,6 +95,9 @@ const SQLManageAnalyze = () => {
         getSqlExecPlanCostDataSourceError?.message
       }
       showExecPlanCostChart
+      initTime={initTime}
+      selectedPoint={selectedPoint}
+      setSelectedPoint={setSelectedPoint}
     />
   );
 };

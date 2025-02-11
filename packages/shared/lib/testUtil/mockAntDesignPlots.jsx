@@ -94,12 +94,20 @@ const LineWithCustomRenderCalled = (options) => (props) => {
   const tooltipCustomContent = clonePropsData?.tooltip?.customContent?.(
     ...(options?.tooltip?.customContent?.(props) ?? [])
   );
+  const mockDataRender = options?.mockDataRender?.(props);
 
   const params = JSON.stringify(clonePropsData);
+
   if (tooltipCustomContent) {
-    return <div data-custom-params={params}>{tooltipCustomContent}</div>;
+    return (
+      <div data-custom-params={params}>
+        {tooltipCustomContent}
+        {mockDataRender}
+      </div>
+    );
   }
-  return <div data-custom-params={params} />;
+
+  return <div data-custom-params={params}>{mockDataRender}</div>;
 };
 
 export {
