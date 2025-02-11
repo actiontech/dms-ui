@@ -31,6 +31,7 @@ import versionManagement from './versionManagement';
 import globalDashboard from './globalDashboard';
 import dataSourceComparison from './dataSourceComparison';
 import sqlRewrite from './sqlRewrite';
+import knowledge from './knowledge';
 
 // eslint-disable-next-line import/no-anonymous-default-export
 export default {
@@ -65,6 +66,7 @@ export default {
     versionManagement,
     globalDashboard,
     dataSourceComparison,
-    sqlRewrite
+    sqlRewrite,
+    knowledge
   }
 };
