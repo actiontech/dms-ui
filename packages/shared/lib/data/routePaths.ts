@@ -159,15 +159,19 @@ export const ROUTE_PATHS = {
         path: 'custom-update/:ruleID'
       }
     },
+    KNOWLEDGE: {
+      index: {
+        path: '/sqle/knowledge'
+      },
+      refined: {
+        prefix: '/sqle/knowledge',
+        path: 'refined',
+        query: 'keywords'
+      }
+    },
     RULE_KNOWLEDGE: {
       index: {
         path: '/sqle/rule/knowledge/:ruleName/:dbType'
-      },
-      refined: {
-        path: '/sqle/rule/knowledge/:ruleName/:dbType/refined'
-      },
-      detail: {
-        path: '/sqle/rule/knowledge/:ruleName/:dbType/detail'
       }
     },
     PROJECT_OVERVIEW: {
