@@ -33,7 +33,7 @@ const Create: React.FC = () => {
   const { t } = useTranslation();
   const { projectName } = useCurrentProject();
   const instanceAuditPlanCreatedId = useRef<string>('');
-  const extraQueries = useTypedQuery();
+  const extractQueries = useTypedQuery();
 
   const { mergeFromValueIntoParams } = useAsyncParams();
   const { generateSubmitDataWithFormValues } = usePriorityConditionsParams();
@@ -53,7 +53,7 @@ const Create: React.FC = () => {
   } = useSqlManagementConfFormSharedStates();
 
   const onReset = () => {
-    const searchParams = extraQueries(
+    const searchParams = extractQueries(
       ROUTE_PATHS.SQLE.SQL_MANAGEMENT_CONF.create
     );
     if (!!searchParams?.instance_id && !!searchParams?.business) {

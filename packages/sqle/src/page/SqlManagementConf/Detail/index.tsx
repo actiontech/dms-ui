@@ -33,9 +33,9 @@ const ConfDetail: React.FC = () => {
   const { id } =
     useTypedParams<typeof ROUTE_PATHS.SQLE.SQL_MANAGEMENT_CONF.detail>();
 
-  const extraQueries = useTypedQuery();
+  const extractQueries = useTypedQuery();
 
-  const searchParams = extraQueries(
+  const searchParams = extractQueries(
     ROUTE_PATHS.SQLE.SQL_MANAGEMENT_CONF.detail
   );
 
