@@ -1,26 +1,23 @@
 import { styled } from '@mui/material';
 
-export const SearchWrapperStyleWrapper = styled('div')`
-  position: fixed;
-  top: 60px;
-  padding: 0 40px;
-  height: 90px;
-  width: 100%;
+export const SearchContentWrapperStyleWrapper = styled('div')`
   display: flex;
-  align-items: center;
+  flex-direction: column;
+  padding-top: 60px;
+  height: 100vh;
+`;
+
+export const SearchWrapperStyleWrapper = styled('div')`
+  padding: 12px 40px;
   border-bottom: 1px solid
     ${({ theme }) => theme.sharedTheme.uiToken.colorBorderSecondary};
   background-color: ${({ theme }) => theme.sharedTheme.uiToken.colorBgBase};
-  z-index: 1000;
-
-  .search-input-wrapper {
-    width: 100%;
-    max-width: 80% !important;
-  }
 `;
 
 export const ResultWrapperStyleWrapper = styled('div')`
-  padding: 174px 40px 24px;
+  padding: 24px 40px;
+  flex: 1;
+  overflow: auto;
 
   .ant-list-item {
     cursor: pointer;

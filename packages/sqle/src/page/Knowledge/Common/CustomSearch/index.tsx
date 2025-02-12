@@ -1,94 +1,134 @@
 import { useTranslation } from 'react-i18next';
-import { SearchOutlined } from '@actiontech/icons';
+import { ArrowRightCircleFilled, DownOutlined } from '@actiontech/icons';
 import knowledge_base from '@actiontech/shared/lib/api/sqle/service/knowledge_base';
 import { useRequest } from 'ahooks';
 import { ResponseCode } from '@actiontech/shared/lib/enum';
-import { AutoComplete, Space } from 'antd';
-import { BasicInput, BasicSelect, EmptyBox } from '@actiontech/shared';
-import { useState } from 'react';
+import { Space, Popover, Checkbox } from 'antd';
+import {
+  BasicInput,
+  BasicSwitch,
+  BasicTag,
+  EmptyBox
+} from '@actiontech/shared';
+import {
+  KnowledgeSearchStyleWrapper,
+  KnowledgeSearchPopoverContentStyleWrapper
+} from '../../style';
+import useSearchState from './useSearchState';
 
 type CustomSearchProps = {
-  onChange?: (keywords?: string, tag?: string) => void;
-  showTag?: boolean;
-  allowPrefixSelect?: boolean;
-  onPrefixChange?: (prefix?: string) => void;
-};
+  onSearch?: (
+    keywords?: string,
+    tags?: string[],
+    searchGraph?: boolean
+  ) => void;
+  allowSearchGraph?: boolean;
+} & Partial<ReturnType<typeof useSearchState>>;
 
 const CustomSearch: React.FC<CustomSearchProps> = ({
-  onChange,
-  showTag,
-  allowPrefixSelect,
-  onPrefixChange
+  onSearch,
+  allowSearchGraph = true,
+  setKeywords,
+  setTags,
+  setSearchGraph,
+  keywords,
+  tags,
+  searchGraph
 }) => {
   const { t } = useTranslation();
-  const [value, setValue] = useState<string>();
-  const [keywords, setKeywords] = useState<string>();
 
-  const [tag, setTag] = useState<string>();
-
-  const { data } = useRequest(
-    () =>
-      knowledge_base.getKnowledgeBaseTagList().then((res) => {
-        if (res.data.code === ResponseCode.SUCCESS) {
-          return res.data.data?.map((i) => ({
-            label: i.name,
-            value: i.name
-          }));
-        }
-      }),
-    {
-      manual: !showTag
-    }
+  const { data } = useRequest(() =>
+    knowledge_base.getKnowledgeBaseTagList().then((res) => {
+      if (res.data.code === ResponseCode.SUCCESS) {
+        return res.data.data?.map((i) => ({
+          label: i.name,
+          value: i.name
+        }));
+      }
+    })
   );
 
+  const onPressEnter = () => {
+    onSearch?.(keywords, tags, searchGraph);
+  };
+
   return (
-    <Space.Compact className="full-width-element">
-      <EmptyBox if={allowPrefixSelect}>
-        <BasicSelect onChange={onPrefixChange} />
-      </EmptyBox>
-      <AutoComplete
-        options={
-          data ?? [
-            {
-              label: 'test1',
-              value: 'test1'
-            },
-            {
-              label: 'test222',
-              value: 'test222'
+    <KnowledgeSearchStyleWrapper>
+      <Space size={4} wrap className="search-header">
+        {tags?.map((i) => (
+          <BasicTag
+            closable
+            onClose={() => setTags?.(tags?.filter((j) => j !== i))}
+            key={i}
+            size="small"
+          >
+            {i}
+          </BasicTag>
+        ))}
+      </Space>
+      <BasicInput.TextArea
+        placeholder={t('knowledgeBase.searchResults.searchPlaceholder')}
+        onPressEnter={(e) => {
+          e.preventDefault();
+          onPressEnter();
+        }}
+        rows={1}
+        bordered={false}
+        onChange={(e) => setKeywords?.(e.target.value)}
+        autoSize
+        value={keywords}
+      />
+      <Space className="search-footer">
+        <Space>
+          <EmptyBox if={allowSearchGraph}>
+            <Space className="switch-control">
+              {t('knowledgeBase.search.retrieveKnowledgeGraph')}
+              <BasicSwitch
+                checked={searchGraph}
+                onChange={(v) => setSearchGraph?.(v)}
+                size="small"
+              />
+            </Space>
+          </EmptyBox>
+
+          <Popover
+            content={
+              <KnowledgeSearchPopoverContentStyleWrapper
+                onChange={(e) => setTags?.(e as string[])}
+                value={tags}
+              >
+                {data?.map((i) => (
+                  <Checkbox key={i.value} value={i.value}>
+                    {i.label}
+                  </Checkbox>
+                ))}
+              </KnowledgeSearchPopoverContentStyleWrapper>
             }
-          ]
-        }
-        className="full-width-element"
-        onSelect={(v) => {
-          setValue(v);
-          setKeywords(undefined);
-          setTag(v);
-          onChange?.(undefined, v);
-        }}
-        open={showTag}
-        value={value}
-        onSearch={(v) => {
-          setValue(v);
-          setKeywords(v);
-          setTag(undefined);
-        }}
-      >
-        <BasicInput
-          size="large"
-          placeholder={t('knowledge.searchPlaceholder')}
-          onPressEnter={() => {
-            onChange?.(keywords, tag);
-          }}
-          suffix={
-            <SearchOutlined
-              className="pointer"
-              onClick={() => onChange?.(keywords, tag)}
-            />
-          }
+            trigger="click"
+            placement="bottom"
+            arrow={false}
+            overlayInnerStyle={{
+              width: '200px',
+              maxHeight: '400px',
+              overflowY: 'auto'
+            }}
+          >
+            <div className="popover-target">
+              <span>
+                {t('knowledgeBase.search.selectedTags')}({tags?.length ?? 0})
+              </span>
+              <DownOutlined width={20} height={20} />
+            </div>
+          </Popover>
+        </Space>
+        <ArrowRightCircleFilled
+          className="pointer"
+          width={26}
+          height={26}
+          onClick={onPressEnter}
         />
-      </AutoComplete>
-    </Space.Compact>
+      </Space>
+    </KnowledgeSearchStyleWrapper>
   );
 };
 
