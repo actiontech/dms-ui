@@ -31,7 +31,7 @@ import versionManagement from './versionManagement';
 import globalDashboard from './globalDashboard';
 import dataSourceComparison from './dataSourceComparison';
 import sqlRewrite from './sqlRewrite';
-import knowledge from './knowledge';
+import knowledgeBase from './knowledgeBase';
 
 // eslint-disable-next-line import/no-anonymous-default-export
 export default {
@@ -67,6 +67,6 @@ export default {
     globalDashboard,
     dataSourceComparison,
     sqlRewrite,
-    knowledge
+    knowledgeBase
   }
 };
