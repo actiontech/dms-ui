@@ -166,7 +166,7 @@ export const ROUTE_PATHS = {
       refined: {
         prefix: '/sqle/knowledge',
         path: 'refined',
-        query: 'keywords&tag'
+        query: 'keywords&tags'
       }
     },
     RULE_KNOWLEDGE: {
