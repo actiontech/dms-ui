@@ -1003,6 +1003,20 @@ export interface IDriversResV1 {
   driver_name_list?: string[];
 }
 
+export interface IEdgeResponse {
+  from_id?: string;
+
+  from_name?: string;
+
+  is_directed?: boolean;
+
+  to_id?: string;
+
+  to_name?: string;
+
+  weight?: number;
+}
+
 export interface IEnumsValueResV1 {
   desc?: string;
 
@@ -1499,6 +1513,14 @@ export interface IGetKnowledgeBaseTagListRes {
   message?: string;
 
   total_nums?: number;
+}
+
+export interface IGetKnowledgeGraphResp {
+  code?: number;
+
+  data?: IGraphResponse;
+
+  message?: string;
 }
 
 export interface IGetLicenseResV1 {
@@ -2111,6 +2133,20 @@ export interface IGlobalWorkflowStatisticsResV1 {
   total_nums?: number;
 }
 
+export interface IGraphResponse {
+  edges?: IEdgeResponse[];
+
+  nodes?: INodeResponse[];
+
+  stats?: IGraphStats;
+}
+
+export interface IGraphStats {
+  total_edges?: number;
+
+  total_nodes?: number;
+}
+
 export interface IHighPriorityConditionReq {
   key?: string;
 
@@ -2345,6 +2381,16 @@ export type IModuleRedDots = IModuleRedDot[];
 
 export interface IModuleStatusRes {
   is_supported?: boolean;
+}
+
+export interface INodeResponse {
+  data?: undefined;
+
+  id?: string;
+
+  name?: string;
+
+  weight?: number;
 }
 
 export interface IObjectDiffResult {
@@ -3173,6 +3219,8 @@ export interface ITag {
   id?: number;
 
   name?: string;
+
+  sub_tags?: ITag[];
 }
 
 export interface ITargetReleaseInstance {
