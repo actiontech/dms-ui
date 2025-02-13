@@ -1,5 +1,5 @@
 import { styled } from '@mui/material/styles';
-import { Checkbox } from 'antd';
+import { Space } from 'antd';
 
 export const KnowledgeSearchBarStyleWrapper = styled('div')`
   width: 100%;
@@ -16,27 +16,7 @@ export const KnowledgeSearchBarStyleWrapper = styled('div')`
 
   .search-header {
     margin-bottom: 12px;
-  }
-
-  .search-footer {
-    margin-top: 8px;
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-
-    .switch-control {
-      border: 1px solid
-        ${({ theme }) => theme.sharedTheme.uiToken.colorBorderSecondary};
-      border-radius: 10px;
-      padding: 6px;
-      font-size: 12px;
-      color: ${({ theme }) => theme.sharedTheme.uiToken.colorTextTertiary};
-    }
-
-    .pointer {
-      cursor: pointer;
-    }
+    padding: 0 11px;
 
     .popover-target {
       cursor: pointer;
@@ -48,10 +28,61 @@ export const KnowledgeSearchBarStyleWrapper = styled('div')`
       }
     }
   }
+
+  .input-wrapper {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+
+    .search-icon {
+      width: 36px;
+      height: 36px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  }
 `;
 
-export const KnowledgeSearchTagsPopoverStyleWrapper = styled(Checkbox.Group)`
-  .ant-checkbox-wrapper {
+export const KnowledgeSearchTagsPopoverStyleWrapper = styled(Space)`
+  width: 300px;
+  padding: 12px 0;
+  display: flex;
+  flex-direction: column;
+  max-height: 400px;
+
+  & .ant-space-item {
     width: 100%;
+    padding: 0 12px;
+
+    &:last-of-type {
+      flex: 1;
+      height: 400px;
+      overflow: auto;
+      padding-top: 8px;
+      border-top: 1px solid
+        ${({ theme }) => theme.sharedTheme.uiToken.colorBorderSecondary};
+    }
+  }
+
+  & .ant-space-item .ant-checkbox-group {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+
+    .ant-checkbox-wrapper {
+      width: 100%;
+
+      span:not(.ant-checkbox) {
+        flex: 1;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+    }
+  }
+
+  & .ant-input-clear-icon {
+    display: flex;
   }
 `;

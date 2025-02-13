@@ -1,42 +1,39 @@
 import { useTranslation } from 'react-i18next';
-import { ArrowRightCircleFilled, DownOutlined } from '@actiontech/icons';
+import { DownOutlined, SearchOutlined } from '@actiontech/icons';
 import knowledge_base from '@actiontech/shared/lib/api/sqle/service/knowledge_base';
 import { useRequest } from 'ahooks';
 import { ResponseCode } from '@actiontech/shared/lib/enum';
-import { Space, Popover, Checkbox } from 'antd';
-import {
-  BasicInput,
-  BasicSwitch,
-  BasicTag,
-  EmptyBox
-} from '@actiontech/shared';
+import { Space, Popover, Checkbox, Empty } from 'antd';
+import { BasicInput, BasicTag, EmptyBox } from '@actiontech/shared';
 import {
   KnowledgeSearchBarStyleWrapper,
   KnowledgeSearchTagsPopoverStyleWrapper
 } from './style';
 import useKnowledgeSearchBar from './hooks/useKnowledgeSearchBar';
+import { useEffect, useMemo, useState } from 'react';
 
-interface KnowledgeSearchBarProps
+export interface KnowledgeSearchBarProps
   extends Partial<ReturnType<typeof useKnowledgeSearchBar>> {
-  onSearch?: (params: {
-    searchText: string;
-    selectedTags: string[];
-    enableGraphMode: boolean;
-  }) => void;
-  allowGraphMode?: boolean;
+  onSearch?: (params: { searchText: string; selectedTags: string[] }) => void;
+  allowSelectTag?: boolean;
 }
 
 const KnowledgeSearchBar: React.FC<KnowledgeSearchBarProps> = ({
   onSearch,
-  allowGraphMode = true,
   searchText = '',
   selectedTags = [],
-  enableGraphMode = false,
   setSearchText,
   setSelectedTags,
-  setEnableGraphMode
+  allowSelectTag = false
 }) => {
   const { t } = useTranslation();
+
+  const [tagSearchText, setTagSearchText] = useState('');
+
+  const [innerSearchText, setInnerSearchText] = useState<string>(searchText);
+
+  const [innerSelectedTags, setInnerSelectedTags] =
+    useState<string[]>(selectedTags);
 
   const { data: tagOptions } = useRequest(() =>
     knowledge_base.getKnowledgeBaseTagList().then((res) => {
@@ -54,104 +51,115 @@ const KnowledgeSearchBar: React.FC<KnowledgeSearchBarProps> = ({
 
   const handleSearch = () => {
     onSearch?.({
-      searchText,
-      selectedTags,
-      enableGraphMode
+      searchText: innerSearchText,
+      selectedTags: innerSelectedTags
     });
   };
 
   const handleTagRemove = (tagToRemove: string) => {
-    setSelectedTags?.(selectedTags.filter((tag) => tag !== tagToRemove));
+    const filteredTags = innerSelectedTags.filter((tag) => tag !== tagToRemove);
+    setSelectedTags?.(filteredTags);
+    setInnerSelectedTags(filteredTags);
   };
 
-  const handleChangeEnableGraphMode = (checked: boolean) => {
-    setSelectedTags?.([]);
-    setSearchText?.('');
-    setEnableGraphMode?.(checked);
-  };
+  const filteredTagOptions = useMemo(() => {
+    return (
+      tagOptions?.filter((option) =>
+        option.label?.toLowerCase().includes(tagSearchText.toLowerCase())
+      ) ?? []
+    );
+  }, [tagSearchText, tagOptions]);
+
+  useEffect(() => {
+    setInnerSearchText(searchText);
+  }, [searchText]);
+
+  useEffect(() => {
+    setInnerSelectedTags(selectedTags);
+  }, [searchText, selectedTags]);
 
   return (
     <KnowledgeSearchBarStyleWrapper>
-      <Space size={4} wrap className="search-header">
-        {selectedTags.map((tag) => (
-          <BasicTag
-            key={tag}
-            closable
-            size="small"
-            onClose={() => handleTagRemove(tag)}
-          >
-            {tag}
-          </BasicTag>
-        ))}
-      </Space>
-
-      <BasicInput.TextArea
-        value={searchText}
-        placeholder={t('knowledgeBase.searchResults.searchPlaceholder')}
-        onChange={(e) => setSearchText?.(e.target.value)}
-        onPressEnter={(e) => {
-          e.preventDefault();
-          handleSearch();
-        }}
-        rows={1}
-        bordered={false}
-        autoSize
-      />
-
-      <Space className="search-footer">
-        <Space>
-          <EmptyBox if={allowGraphMode}>
-            <Space className="switch-control">
-              {t('knowledgeBase.search.retrieveKnowledgeGraph')}
-              <BasicSwitch
-                checked={enableGraphMode}
-                onChange={handleChangeEnableGraphMode}
-                size="small"
-              />
-            </Space>
-          </EmptyBox>
-
-          <EmptyBox if={!enableGraphMode}>
-            <Popover
-              trigger="click"
-              placement="bottom"
-              arrow={false}
-              overlayInnerStyle={{
-                width: '200px',
-                maxHeight: '400px',
-                overflowY: 'auto'
-              }}
-              content={
-                <KnowledgeSearchTagsPopoverStyleWrapper
-                  value={selectedTags}
-                  onChange={(tags) => setSelectedTags?.(tags as string[])}
+      <EmptyBox if={allowSelectTag}>
+        <Space size={4} wrap className="search-header">
+          <Popover
+            trigger="click"
+            placement="bottomLeft"
+            arrow={false}
+            overlayInnerStyle={{
+              padding: 0
+            }}
+            content={
+              <KnowledgeSearchTagsPopoverStyleWrapper direction="vertical">
+                <BasicInput
+                  size="small"
+                  value={tagSearchText}
+                  placeholder={t('common.search')}
+                  onChange={(e) => setTagSearchText(e.target.value)}
+                  allowClear
+                />
+                <EmptyBox
+                  if={!!filteredTagOptions?.length}
+                  defaultNode={<Empty image={Empty.PRESENTED_IMAGE_SIMPLE} />}
                 >
-                  {tagOptions?.map((option) => (
-                    <Checkbox key={option.value} value={option.value}>
-                      {option.label}
-                    </Checkbox>
-                  ))}
-                </KnowledgeSearchTagsPopoverStyleWrapper>
-              }
+                  <Checkbox.Group
+                    value={innerSelectedTags}
+                    onChange={(tags) => {
+                      setSelectedTags?.(tags as string[]);
+                      setInnerSelectedTags(tags as string[]);
+                    }}
+                  >
+                    {filteredTagOptions.map((option) => (
+                      <Checkbox key={option.value} value={option.value}>
+                        <span title={option.label}>{option.label}</span>
+                      </Checkbox>
+                    ))}
+                  </Checkbox.Group>
+                </EmptyBox>
+              </KnowledgeSearchTagsPopoverStyleWrapper>
+            }
+          >
+            <div className="popover-target">
+              <span>
+                {t('knowledgeBase.search.selectedTags')}(
+                {innerSelectedTags.length})
+              </span>
+              <DownOutlined width={20} height={20} />
+            </div>
+          </Popover>
+          {innerSelectedTags.map((tag) => (
+            <BasicTag
+              key={tag}
+              closable
+              size="small"
+              onClose={() => handleTagRemove(tag)}
             >
-              <div className="popover-target">
-                <span>
-                  {t('knowledgeBase.search.selectedTags')}({selectedTags.length}
-                  )
-                </span>
-                <DownOutlined width={20} height={20} />
-              </div>
-            </Popover>
-          </EmptyBox>
+              {tag}
+            </BasicTag>
+          ))}
         </Space>
+      </EmptyBox>
 
-        <ArrowRightCircleFilled
-          className="pointer"
-          width={26}
-          height={26}
-          onClick={handleSearch}
+      <div className="input-wrapper">
+        <BasicInput.TextArea
+          value={innerSearchText}
+          placeholder={t('knowledgeBase.searchResults.searchPlaceholder')}
+          onChange={(e) => {
+            setSearchText?.(e.target.value);
+            setInnerSearchText(e.target.value);
+          }}
+          onPressEnter={(e) => {
+            e.preventDefault();
+            handleSearch();
+          }}
+          rows={1}
+          bordered={false}
+          autoSize
         />
-      </Space>
+        <div className="search-icon">
+          <SearchOutlined width={20} height={20} onClick={handleSearch} />
+        </div>
+      </div>
     </KnowledgeSearchBarStyleWrapper>
   );
 };

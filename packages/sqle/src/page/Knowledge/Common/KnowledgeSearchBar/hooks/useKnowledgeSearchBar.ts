@@ -5,25 +5,17 @@ interface UseKnowledgeSearchBarReturn {
   setSearchText: (text: string) => void;
   selectedTags: string[];
   setSelectedTags: (tags: string[]) => void;
-  enableGraphMode: boolean;
-  setEnableGraphMode: (enable: boolean) => void;
 }
 
-const useKnowledgeSearchBar = (
-  initialGraphMode = false
-): UseKnowledgeSearchBarReturn => {
+const useKnowledgeSearchBar = (): UseKnowledgeSearchBarReturn => {
   const [searchText, setSearchText] = useState<string>('');
   const [selectedTags, setSelectedTags] = useState<string[]>([]);
-  const [enableGraphMode, setEnableGraphMode] =
-    useState<boolean>(initialGraphMode);
 
   return {
     searchText,
     setSearchText,
     selectedTags,
-    setSelectedTags,
-    enableGraphMode,
-    setEnableGraphMode
+    setSelectedTags
   };
 };
 
