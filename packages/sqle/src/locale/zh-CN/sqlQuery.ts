@@ -24,15 +24,18 @@ export default {
   executePlan: {
     title: '执行计划{{index}}',
     sql: 'SQL语句',
-    planCost: 'SQL执行计划 Cost趋势',
+    planCost: 'SQL执行计划代价趋势',
     twentyFourHours: '24小时',
     sevenDays: '7天',
     thirtyDays: '30天',
     costValue: 'Cost值',
     emptyText: '暂无数据，选择其他时间段查看',
     compareDifference: '对比执行计划',
-    historyExecPlan: '历史执行计划',
-    sqlExplain: '当前执行计划',
+    compareTips: '点击节点可查看详细执行计划，点击已选节点可取消选择',
+    compareCountLimitTips:
+      '当前仅支持两个节点对比，请先取消一个已选节点后再进行选择',
+    cost: '代价',
+    sqlExplain: '执行计划',
     performanceStatistics: '性能统计',
     affectRows: '影响行数',
     affectRowTips: '区别于执行计划的rows列，显示SQL的实际影响行数'

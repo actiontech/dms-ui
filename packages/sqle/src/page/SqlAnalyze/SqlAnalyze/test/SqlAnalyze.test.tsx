@@ -104,9 +104,54 @@ describe('SqlAnalyze/Global-SqlAnalyze', () => {
         getSqlExecPlanCostDataSourceLoading={false}
         getSqlExecPlanCostDataSource={getSqlExecPlanCostDataSourceSpy}
         showExecPlanCostChart
+        initTime={dayjs('2024-01-09 12:00:00')}
       />
     );
     expect(baseElement).toMatchSnapshot();
-    expect(screen.getByText('SQL执行计划 Cost趋势')).toBeInTheDocument();
+    expect(screen.getByText('SQL执行计划代价趋势')).toBeInTheDocument();
+  });
+
+  it('render snap when showExecPlanCostChart is true and selectedPoint is not empty', async () => {
+    const getSqlExecPlanCostDataSourceSpy = jest.fn();
+    const { baseElement } = superRender(
+      <SqlAnalyze
+        loading={false}
+        tableMetas={SQLManageSqlAnalyzeData.table_metas}
+        sqlExplain={SQLManageSqlAnalyzeData.sql_explain}
+        performanceStatistics={SQLManageSqlAnalyzeData.performance_statistics}
+        errorMessage={''}
+        sqlExecPlanCostDataSource={mockSqlManageSqlAnalysisChartData.points}
+        getSqlExecPlanCostDataSourceLoading={false}
+        getSqlExecPlanCostDataSource={getSqlExecPlanCostDataSourceSpy}
+        showExecPlanCostChart
+        initTime={dayjs('2024-01-09 12:00:00')}
+        selectedPoint={[
+          mockSqlManageSqlAnalysisChartData.points[0],
+          mockSqlManageSqlAnalysisChartData.points[1]
+        ]}
+        setSelectedPoint={jest.fn()}
+      />
+    );
+    expect(baseElement).toMatchSnapshot();
+    expect(screen.getByText('SQL执行计划代价趋势')).toBeInTheDocument();
+    expect(
+      screen.getByText(mockSqlManageSqlAnalysisChartData.points[0].x)
+    ).toBeInTheDocument();
+    expect(
+      screen.getByText(mockSqlManageSqlAnalysisChartData.points[1].x)
+    ).toBeInTheDocument();
+  });
+
+  it('render snap when init time and cost is not undefined', async () => {
+    const { baseElement } = superRender(
+      <SqlAnalyze
+        loading={false}
+        tableMetas={SQLManageSqlAnalyzeData.table_metas}
+        performanceStatistics={SQLManageSqlAnalyzeData.performance_statistics}
+        errorMessage={''}
+      />
+    );
+    expect(baseElement).toMatchSnapshot();
+    expect(screen.getByText('执行计划')).toBeInTheDocument();
   });
 });

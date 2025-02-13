@@ -8,17 +8,14 @@ import {
 } from '@actiontech/shared';
 import useBackendTable from '../../../hooks/useBackendTable/useBackendTable';
 import { SQLExecPlanItem } from './index.type';
-import {
-  IPerformanceStatistics,
-  IChartPoint
-} from '@actiontech/shared/lib/api/sqle/service/common.d';
+import { IPerformanceStatistics } from '@actiontech/shared/lib/api/sqle/service/common.d';
 import { formatParamsBySeparator } from '@actiontech/shared/lib/utils/Tool';
 import { HorizontalTripleLineOutlined } from '@actiontech/icons';
 import ExecPlanCostChart from './ExecPlanCostChart';
 import { ExecPlanParams } from './index';
-import { useState, useRef, useEffect, useMemo } from 'react';
-import { formatTime } from '@actiontech/shared/lib/utils/Common';
+import { useRef, useMemo } from 'react';
 import classNames from 'classnames';
+import dayjs from 'dayjs';
 
 const useSQLExecPlan = (params: ExecPlanParams) => {
   const {
@@ -26,25 +23,36 @@ const useSQLExecPlan = (params: ExecPlanParams) => {
     getSqlExecPlanCostDataSource,
     getSqlExecPlanCostDataSourceLoading,
     showExecPlanCostChart,
-    getSqlExecPlanCostDataSourceError
+    getSqlExecPlanCostDataSourceError,
+    initTime,
+    selectedPoint,
+    setSelectedPoint
   } = params;
   const { t } = useTranslation();
   const { tableColumnFactory } = useBackendTable();
 
   const targetRef = useRef<HTMLDivElement>(null);
 
-  const [historyExecPlan, setHistoryExecPlan] = useState<IChartPoint>();
-
-  useEffect(() => {
+  const onScrollIntoView = () => {
     if (targetRef.current) {
       targetRef.current.scrollIntoView({ behavior: 'smooth' });
     }
-  }, [historyExecPlan]);
+  };
 
-  const currentTime = useMemo(() => formatTime(new Date()), []);
+  const sortedSelectedPoint = useMemo(() => {
+    if (!selectedPoint) {
+      return;
+    }
+    return selectedPoint.sort((a, b) =>
+      dayjs(a?.x).isBefore(dayjs(b?.x)) ? -1 : 1
+    );
+  }, [selectedPoint]);
 
   const generateSQLExecPlanContent = <
-    T extends Pick<SQLExecPlanItem, 'sql' | 'classic_result' | 'err_message'> &
+    T extends Pick<
+      SQLExecPlanItem,
+      'sql' | 'classic_result' | 'err_message' | 'cost'
+    > &
       IPerformanceStatistics
   >(
     item: T
@@ -70,33 +78,54 @@ const useSQLExecPlan = (params: ExecPlanParams) => {
           getSqlExecPlanCostDataSourceLoading={
             getSqlExecPlanCostDataSourceLoading
           }
-          setHistoryExecPlan={setHistoryExecPlan}
+          onScrollIntoView={onScrollIntoView}
           getSqlExecPlanCostDataSourceError={getSqlExecPlanCostDataSourceError}
+          initTime={initTime}
+          selectedPoint={selectedPoint}
+          setSelectedPoint={setSelectedPoint}
         />
       );
     };
 
-    const renderHistoryExecPlan = () => {
-      if (!historyExecPlan) {
+    const renderExecPlanComparison = () => {
+      if (!sortedSelectedPoint) {
         return;
       }
-      return (
-        <div ref={targetRef} className="history-exec-plan-wrapper">
-          <Space className="header-title full-width-element">
-            {t('sqlQuery.executePlan.historyExecPlan')}
-            <Typography.Text type="secondary">
-              {historyExecPlan?.x}
-            </Typography.Text>
-          </Space>
-          <BasicTable
-            columns={tableColumnFactory(explain?.head ?? [], {
-              customRender: (v) => v || '-'
-            })}
-            dataSource={historyExecPlan.info}
-            pagination={false}
-          />
-        </div>
-      );
+      return sortedSelectedPoint.map((point, pointIndex) => {
+        return (
+          <div className="history-exec-plan-wrapper" key={point?.x}>
+            <Space className="header-title full-width-element">
+              {t('sqlQuery.executePlan.sqlExplain')}
+              <Typography.Text type="secondary">{point?.x}</Typography.Text>
+              <Typography.Text type="secondary">
+                {t('sqlQuery.executePlan.cost')}：{point?.y}
+              </Typography.Text>
+            </Space>
+            <BasicTable
+              columns={tableColumnFactory(explain?.head ?? [], {
+                customRender: (v, record, index, fieldName) => {
+                  if (pointIndex === 1) {
+                    const historyRecord = sortedSelectedPoint[0]?.info?.[index];
+                    return (
+                      <span
+                        className={classNames({
+                          'diff-highlight':
+                            historyRecord && historyRecord[fieldName] !== v
+                        })}
+                      >
+                        {v || '-'}
+                      </span>
+                    );
+                  }
+                  return v || '-';
+                }
+              })}
+              dataSource={point?.info}
+              pagination={false}
+            />
+          </div>
+        );
+      });
     };
 
     const renderSQLExecPlan = () => {
@@ -104,7 +133,6 @@ const useSQLExecPlan = (params: ExecPlanParams) => {
         <>
           <Space className="header-title full-width-element">
             {t('sqlQuery.executePlan.sqlExplain')}
-            <Typography.Text type="secondary">{currentTime}</Typography.Text>
           </Space>
           <EmptyBox
             if={!err_message}
@@ -112,19 +140,7 @@ const useSQLExecPlan = (params: ExecPlanParams) => {
           >
             <BasicTable
               columns={tableColumnFactory(explain?.head ?? [], {
-                customRender: (v, record, index, fieldName) => {
-                  const historyRecord = historyExecPlan?.info?.[index];
-                  return (
-                    <span
-                      className={classNames({
-                        'diff-highlight':
-                          historyRecord && historyRecord[fieldName] !== v
-                      })}
-                    >
-                      {v || '-'}
-                    </span>
-                  );
-                }
+                customRender: (v) => v || '-'
               })}
               dataSource={explain?.rows ?? []}
               pagination={false}
@@ -178,20 +194,17 @@ const useSQLExecPlan = (params: ExecPlanParams) => {
     return (
       <Space direction="vertical" className="full-width-element" size={0}>
         {renderSQL()}
-        <EmptyBox if={showExecPlanCostChart}>
+        <EmptyBox if={showExecPlanCostChart} defaultNode={renderSQLExecPlan()}>
           {renderSqlCostChart()}
-          {renderHistoryExecPlan()}
+          <div ref={targetRef}>{renderExecPlanComparison()}</div>
         </EmptyBox>
-        {renderSQLExecPlan()}
         {!err_message && renderPerformanceStatistics()}
       </Space>
     );
   };
 
   return {
-    generateSQLExecPlanContent,
-    historyExecPlan,
-    setHistoryExecPlan
+    generateSQLExecPlanContent
   };
 };
 

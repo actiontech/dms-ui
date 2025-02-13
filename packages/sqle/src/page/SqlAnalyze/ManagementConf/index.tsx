@@ -13,6 +13,7 @@ import instance_audit_plan from '@actiontech/shared/lib/api/sqle/service/instanc
 import { useTypedParams } from '@actiontech/shared';
 import { ROUTE_PATHS } from '@actiontech/shared/lib/data/routePaths';
 import useSqlExecPlanCost from '../hooks/useSqlExecPlanCost';
+import { DateRangeEnum } from '../SqlAnalyze/ExecPlanCostChart/index.data';
 
 const ManagementConfAnalyze = () => {
   const urlParams =
@@ -67,12 +68,19 @@ const ManagementConfAnalyze = () => {
     data,
     getSqlExecPlanCostDataSourceLoading,
     getSqlExecPlanCostDataSource,
-    getSqlExecPlanCostDataSourceError
+    getSqlExecPlanCostDataSourceError,
+    initTime,
+    selectedPoint,
+    setSelectedPoint
   } = useSqlExecPlanCost(urlParams.id ?? '');
 
   useEffect(() => {
     getSqlAnalyze();
-  }, [getSqlAnalyze]);
+    getSqlExecPlanCostDataSource({
+      lastPointEnabled: true,
+      rangeType: DateRangeEnum['24H']
+    });
+  }, [getSqlAnalyze, getSqlExecPlanCostDataSource]);
 
   return (
     <SqlAnalyze
@@ -89,6 +97,9 @@ const ManagementConfAnalyze = () => {
         getSqlExecPlanCostDataSourceError?.message
       }
       showExecPlanCostChart
+      initTime={initTime}
+      selectedPoint={selectedPoint}
+      setSelectedPoint={setSelectedPoint}
     />
   );
 };
