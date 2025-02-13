@@ -20,21 +20,17 @@ import HighlightText from './HighlightText';
 import { useEffect, useState } from 'react';
 import { List } from 'antd';
 import { PageLayoutHasFixedHeaderStyleWrapper } from '@actiontech/shared/lib/styleWrapper/element';
-import CustomSearch from '../Common/CustomSearch';
 import queryString from 'query-string';
-import useSearchState from '../Common/CustomSearch/useSearchState';
+import useKnowledgeSearchBar from '../Common/KnowledgeSearchBar/hooks/useKnowledgeSearchBar';
+import KnowledgeSearchBar from '../Common/KnowledgeSearchBar';
 
 const defaultPageSize = 20;
 const defaultPageIndex = 1;
 
 const KnowledgeSearchResults: React.FC = () => {
   const { t } = useTranslation();
-  const {
-    keywords: searchKeyword,
-    tags,
-    setKeywords,
-    setTags
-  } = useSearchState();
+  const { searchText, selectedTags, setSearchText, setSelectedTags } =
+    useKnowledgeSearchBar();
 
   const extractQueries = useTypedQuery();
   // const searchInputRef = useRef<InputRef>(null);
@@ -48,12 +44,7 @@ const KnowledgeSearchResults: React.FC = () => {
     run: startSearch,
     loading: isSearching
   } = useRequest(
-    ({
-      searchText,
-      selectedTags,
-      pageIndex,
-      pageSize
-    }: {
+    (params: {
       searchText?: string;
       selectedTags?: string[];
       pageIndex: number;
@@ -61,14 +52,14 @@ const KnowledgeSearchResults: React.FC = () => {
     }) =>
       KnowledgeBaseService.getKnowledgeBaseList(
         {
-          keywords: searchText,
-          page_index: pageIndex,
-          page_size: pageSize,
-          tags: selectedTags
+          keywords: params.searchText,
+          page_index: params.pageIndex,
+          page_size: params.pageSize,
+          tags: params.selectedTags
         },
         {
-          paramsSerializer: (params: IGetKnowledgeBaseListParams) => {
-            return queryString.stringify(params, {
+          paramsSerializer: (query: IGetKnowledgeBaseListParams) => {
+            return queryString.stringify(query, {
               arrayFormat: 'none'
             });
           }
@@ -100,8 +91,8 @@ const KnowledgeSearchResults: React.FC = () => {
   useEffect(() => {
     const params = extractQueries(ROUTE_PATHS.SQLE.KNOWLEDGE.refined);
     if (params?.keywords || params?.tags) {
-      setKeywords(params?.keywords ?? '');
-      setTags(params?.tags?.split(',') ?? []);
+      setSearchText(params?.keywords ?? '');
+      setSelectedTags(params?.tags?.split(',') ?? []);
       startSearch({
         searchText: params?.keywords ?? '',
         selectedTags: params?.tags?.split(',') ?? [],
@@ -109,7 +100,7 @@ const KnowledgeSearchResults: React.FC = () => {
         pageSize: defaultPageSize
       });
     }
-  }, [extractQueries, startSearch, setKeywords, setTags]);
+  }, [extractQueries, startSearch, setSearchText, setSelectedTags]);
 
   return (
     <PageLayoutHasFixedHeaderStyleWrapper>
@@ -126,21 +117,21 @@ const KnowledgeSearchResults: React.FC = () => {
       />
       <SearchContentWrapperStyleWrapper>
         <SearchWrapperStyleWrapper>
-          <CustomSearch
+          <KnowledgeSearchBar
             onSearch={() => {
               startSearch({
-                searchText: searchKeyword,
-                selectedTags: tags,
+                searchText: searchText,
+                selectedTags: selectedTags,
                 pageIndex: 1,
                 pageSize: pagination.page_size
               });
               setPagination({ page_index: 1, page_size: pagination.page_size });
             }}
-            allowSearchGraph={false}
-            keywords={searchKeyword}
-            tags={tags}
-            setKeywords={setKeywords}
-            setTags={setTags}
+            allowGraphMode={false}
+            searchText={searchText}
+            selectedTags={selectedTags}
+            setSearchText={setSearchText}
+            setSelectedTags={setSelectedTags}
           />
           {/* <BasicInput.TextArea
           autoSize={{ minRows: 2, maxRows: 2 }}
@@ -183,8 +174,8 @@ const KnowledgeSearchResults: React.FC = () => {
                 ),
                 onChange: (page, pageSize) => {
                   startSearch({
-                    searchText: searchKeyword,
-                    selectedTags: tags,
+                    searchText,
+                    selectedTags,
                     pageIndex: page,
                     pageSize
                   });
@@ -213,7 +204,7 @@ const KnowledgeSearchResults: React.FC = () => {
                         <h3 className="title">
                           <HighlightText
                             text={knowledgeItem.title ?? ''}
-                            keyword={searchKeyword}
+                            keyword={searchText}
                           />
                         </h3>
                       </div>
@@ -221,7 +212,7 @@ const KnowledgeSearchResults: React.FC = () => {
                         <div className="description">
                           <HighlightText
                             text={knowledgeItem.description}
-                            keyword={searchKeyword}
+                            keyword={searchText}
                           />
                         </div>
                       )}
@@ -229,7 +220,7 @@ const KnowledgeSearchResults: React.FC = () => {
                         <div className="content">
                           <HighlightText
                             text={knowledgeItem.content}
-                            keyword={searchKeyword}
+                            keyword={searchText}
                           />
                         </div>
                       )}
