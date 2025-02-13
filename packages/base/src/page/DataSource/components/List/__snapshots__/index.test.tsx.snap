@@ -4793,7 +4793,7 @@ exports[`page/DataSource/DataSourceList render table for action btn render table
       >
         <div
           aria-modal="true"
-          class="ant-modal css-dev-only-do-not-override-txh9fw ant-modal-confirm ant-modal-confirm-error ant-zoom-appear ant-zoom-appear-prepare ant-zoom"
+          class="ant-modal css-dev-only-do-not-override-txh9fw ant-modal-confirm ant-modal-confirm-error"
           role="dialog"
           style="width: 416px;"
         >
@@ -5693,7 +5693,7 @@ exports[`page/DataSource/DataSourceList render table for action btn render table
       >
         <div
           aria-modal="true"
-          class="ant-modal css-dev-only-do-not-override-txh9fw ant-modal-confirm ant-modal-confirm-error ant-zoom-appear ant-zoom-appear-prepare ant-zoom"
+          class="ant-modal css-dev-only-do-not-override-txh9fw ant-modal-confirm ant-modal-confirm-error"
           role="dialog"
           style="width: 416px;"
         >
