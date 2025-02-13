@@ -377,6 +377,7 @@ export const ROUTE_PATHS = {
         prefix: '/sqle/project',
         path: ':projectID/data-source-comparison'
       }
-    }
+    },
+    KNOWLEDGE_GRAPH: { index: { path: '/sqle/knowledge-graph' } }
   }
 } as const;
