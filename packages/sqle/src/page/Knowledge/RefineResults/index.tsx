@@ -127,11 +127,11 @@ const KnowledgeSearchResults: React.FC = () => {
               });
               setPagination({ page_index: 1, page_size: pagination.page_size });
             }}
-            allowGraphMode={false}
             searchText={searchText}
             selectedTags={selectedTags}
             setSearchText={setSearchText}
             setSelectedTags={setSelectedTags}
+            allowSelectTag
           />
           {/* <BasicInput.TextArea
           autoSize={{ minRows: 2, maxRows: 2 }}

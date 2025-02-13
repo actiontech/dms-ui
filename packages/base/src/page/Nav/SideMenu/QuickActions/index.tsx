@@ -104,7 +104,9 @@ const QuickActions = () => {
               <BasicToolTip key={action.key} title={action.title}>
                 <div
                   className={classNames('action-item', {
-                    'action-item-active': location.pathname === action.path
+                    'action-item-active': location.pathname.startsWith(
+                      action.path
+                    )
                   })}
                   onClick={() => navigate(action.path)}
                 >
