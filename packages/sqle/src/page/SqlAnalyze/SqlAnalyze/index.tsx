@@ -7,7 +7,9 @@ import {
   ITableMetas,
   IChartPoint
 } from '@actiontech/shared/lib/api/sqle/service/common';
+import { getSqlExecPlanCostDataSourceParams } from '../hooks/useSqlExecPlanCost';
 import { Dayjs } from 'dayjs';
+import { Dispatch, SetStateAction } from 'react';
 
 export type SqlAnalyzeProps = {
   errorMessage: string;
@@ -19,8 +21,13 @@ export type SqlAnalyzeProps = {
   sqlExecPlanCostDataSource?: IChartPoint[];
   getSqlExecPlanCostDataSourceLoading?: boolean;
   getSqlExecPlanCostDataSourceError?: string;
-  getSqlExecPlanCostDataSource?: (startTime?: Dayjs, endTime?: Dayjs) => void;
+  getSqlExecPlanCostDataSource?: (
+    params: getSqlExecPlanCostDataSourceParams
+  ) => void;
   showExecPlanCostChart?: boolean;
+  initTime?: Dayjs;
+  selectedPoint?: Array<IChartPoint | undefined>;
+  setSelectedPoint?: Dispatch<SetStateAction<(IChartPoint | undefined)[]>>;
 };
 
 export type ExecPlanParams = Pick<
@@ -30,10 +37,13 @@ export type ExecPlanParams = Pick<
   | 'sqlExecPlanCostDataSource'
   | 'showExecPlanCostChart'
   | 'getSqlExecPlanCostDataSourceError'
+  | 'initTime'
+  | 'selectedPoint'
+  | 'setSelectedPoint'
 >;
 
 export type ExecPlanCostChartProps = {
-  setHistoryExecPlan: (data: IChartPoint) => void;
+  onScrollIntoView: () => void;
 } & Omit<ExecPlanParams, 'showExecPlanCostChart'>;
 
 export type UseTableSchemaOption = {

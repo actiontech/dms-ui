@@ -117,35 +117,16 @@ exports[`SqlAnalyze/Workflow should get analyze data from origin 1`] = `
                 <div
                   class="ant-space-item"
                   style="margin-bottom: 0px;"
-                />
-                <div
-                  class="ant-space-item"
-                  style="margin-bottom: 0px;"
                 >
                   <div
                     class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center header-title full-width-element"
                   >
                     <div
                       class="ant-space-item"
-                      style="margin-right: 8px;"
                     >
-                      当前执行计划
-                    </div>
-                    <div
-                      class="ant-space-item"
-                    >
-                      <span
-                        class="ant-typography ant-typography-secondary css-dev-only-do-not-override-txh9fw"
-                      >
-                        2025-01-09 12:00:00
-                      </span>
+                      执行计划
                     </div>
                   </div>
-                </div>
-                <div
-                  class="ant-space-item"
-                  style="margin-bottom: 0px;"
-                >
                   <div
                     class="ant-table-wrapper actiontech-table-namespace css-fxd6ka css-dev-only-do-not-override-bj9uhl"
                   >
@@ -462,35 +443,16 @@ exports[`SqlAnalyze/Workflow should get analyze data from origin 2`] = `
                 <div
                   class="ant-space-item"
                   style="margin-bottom: 0px;"
-                />
-                <div
-                  class="ant-space-item"
-                  style="margin-bottom: 0px;"
                 >
                   <div
                     class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center header-title full-width-element"
                   >
                     <div
                       class="ant-space-item"
-                      style="margin-right: 8px;"
                     >
-                      当前执行计划
-                    </div>
-                    <div
-                      class="ant-space-item"
-                    >
-                      <span
-                        class="ant-typography ant-typography-secondary css-dev-only-do-not-override-txh9fw"
-                      >
-                        2025-01-09 12:00:00
-                      </span>
+                      执行计划
                     </div>
                   </div>
-                </div>
-                <div
-                  class="ant-space-item"
-                  style="margin-bottom: 0px;"
-                >
                   <div
                     class="ant-table-wrapper actiontech-table-namespace css-fxd6ka css-dev-only-do-not-override-bj9uhl"
                   >
@@ -716,110 +678,62 @@ exports[`SqlAnalyze/Workflow should get analyze data from origin 2`] = `
                                     <td
                                       class="ant-table-cell"
                                     >
-                                      <span
-                                        class=""
-                                      >
-                                        1
-                                      </span>
+                                      1
                                     </td>
                                     <td
                                       class="ant-table-cell"
                                     >
-                                      <span
-                                        class=""
-                                      >
-                                        SIMPLE
-                                      </span>
+                                      SIMPLE
                                     </td>
                                     <td
                                       class="ant-table-cell"
                                     >
-                                      <span
-                                        class=""
-                                      >
-                                        tasks
-                                      </span>
+                                      tasks
                                     </td>
                                     <td
                                       class="ant-table-cell"
                                     >
-                                      <span
-                                        class=""
-                                      >
-                                        -
-                                      </span>
+                                      -
                                     </td>
                                     <td
                                       class="ant-table-cell"
                                     >
-                                      <span
-                                        class=""
-                                      >
-                                        ALL
-                                      </span>
+                                      ALL
                                     </td>
                                     <td
                                       class="ant-table-cell"
                                     >
-                                      <span
-                                        class=""
-                                      >
-                                        -
-                                      </span>
+                                      -
                                     </td>
                                     <td
                                       class="ant-table-cell"
                                     >
-                                      <span
-                                        class=""
-                                      >
-                                        -
-                                      </span>
+                                      -
                                     </td>
                                     <td
                                       class="ant-table-cell"
                                     >
-                                      <span
-                                        class=""
-                                      >
-                                        -
-                                      </span>
+                                      -
                                     </td>
                                     <td
                                       class="ant-table-cell"
                                     >
-                                      <span
-                                        class=""
-                                      >
-                                        -
-                                      </span>
+                                      -
                                     </td>
                                     <td
                                       class="ant-table-cell"
                                     >
-                                      <span
-                                        class=""
-                                      >
-                                        1
-                                      </span>
+                                      1
                                     </td>
                                     <td
                                       class="ant-table-cell"
                                     >
-                                      <span
-                                        class=""
-                                      >
-                                        100.00
-                                      </span>
+                                      100.00
                                     </td>
                                     <td
                                       class="ant-table-cell"
                                     >
-                                      <span
-                                        class=""
-                                      >
-                                        -
-                                      </span>
+                                      -
                                     </td>
                                   </tr>
                                 </tbody>

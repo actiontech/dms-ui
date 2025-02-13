@@ -15,6 +15,7 @@
     "#E8F3FF": "{props.color ? 'currentColor' : '#E8F3FF'}",
     "#1CB889": "{props.color ? 'currentColor' : '#1CB889'}",
     "#41BF9A": "{props.color ? 'currentColor' : '#41BF9A'}",
-    "#FF7043": "{props.color ? 'currentColor' : '#FF7043'}"
+    "#FF7043": "{props.color ? 'currentColor' : '#FF7043'}",
+    "#169E75": "{props.color ? 'currentColor' : '#169E75'}"
   }
 }
