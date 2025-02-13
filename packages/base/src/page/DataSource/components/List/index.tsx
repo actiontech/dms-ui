@@ -182,6 +182,7 @@ const DataSourceList = () => {
         .then((res) => {
           hide();
           if (res.data.code === ResponseCode.SUCCESS) {
+            refresh();
             const connections = res.data.data ?? [];
             const isConnectable = connections.every(
               (connection) => !!connection?.is_connectable
