@@ -435,6 +435,7 @@ describe('page/DataSource/DataSourceList', () => {
       );
 
       customRender();
+      expect(requestTableList).toHaveBeenCalledTimes(1);
       await act(async () => jest.advanceTimersByTime(3000));
 
       fireEvent.click(getBySelector('.actiontech-table-actions-more-button'));
@@ -444,6 +445,7 @@ describe('page/DataSource/DataSourceList', () => {
       await act(async () => jest.advanceTimersByTime(0));
       expect(screen.getByText('正在尝试进行连接...')).toBeInTheDocument();
       await act(async () => jest.advanceTimersByTime(3000));
+      expect(requestTableList).toHaveBeenCalledTimes(2);
       expect(requestTestConnect).toHaveBeenCalled();
       expect(screen.getByText('数据源连通性测试成功')).toBeInTheDocument();
     });
@@ -456,7 +458,7 @@ describe('page/DataSource/DataSourceList', () => {
         })
       );
       const requestTableList = dms.getListDBServices();
-      requestTableList.mockImplementationOnce(() =>
+      requestTableList.mockImplementation(() =>
         createSpySuccessResponse({
           total_nums: 1,
           data: [DBServicesList[0]]
@@ -464,6 +466,7 @@ describe('page/DataSource/DataSourceList', () => {
       );
 
       const { baseElement } = customRender();
+      expect(requestTableList).toHaveBeenCalledTimes(1);
       await act(async () => jest.advanceTimersByTime(3000));
 
       fireEvent.click(getBySelector('.actiontech-table-actions-more-button'));
@@ -473,7 +476,8 @@ describe('page/DataSource/DataSourceList', () => {
       await act(async () => jest.advanceTimersByTime(300));
       expect(screen.getByText('正在尝试进行连接...')).toBeInTheDocument();
       await act(async () => jest.advanceTimersByTime(3000));
-      expect(requestTestConnect).toHaveBeenCalled();
+      expect(requestTableList).toHaveBeenCalledTimes(2);
+      await act(async () => jest.advanceTimersByTime(3000));
       expect(baseElement).toMatchSnapshot();
     });
 
@@ -485,7 +489,7 @@ describe('page/DataSource/DataSourceList', () => {
         })
       );
       const requestTableList = dms.getListDBServices();
-      requestTableList.mockImplementationOnce(() =>
+      requestTableList.mockImplementation(() =>
         createSpySuccessResponse({
           total_nums: 1,
           data: [DBServicesList[0]]
@@ -503,6 +507,8 @@ describe('page/DataSource/DataSourceList', () => {
       expect(screen.getByText('正在尝试进行连接...')).toBeInTheDocument();
       await act(async () => jest.advanceTimersByTime(3000));
       expect(requestTestConnect).toHaveBeenCalled();
+      await act(async () => jest.advanceTimersByTime(3000));
+      await act(async () => jest.advanceTimersByTime(3000));
       expect(baseElement).toMatchSnapshot();
     });
 
