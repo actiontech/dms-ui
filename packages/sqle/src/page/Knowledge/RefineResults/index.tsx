@@ -113,18 +113,16 @@ const KnowledgeSearchResults: React.FC = () => {
         <SearchWrapperStyleWrapper>
           <KnowledgeSearchBar
             onSearch={() => {
-              if (searchText || selectedTags.length) {
-                startSearch({
-                  searchText: searchText,
-                  selectedTags: selectedTags,
-                  pageIndex: 1,
-                  pageSize: pagination.page_size
-                });
-                setPagination({
-                  page_index: 1,
-                  page_size: pagination.page_size
-                });
-              }
+              startSearch({
+                searchText: searchText,
+                selectedTags: selectedTags,
+                pageIndex: 1,
+                pageSize: pagination.page_size
+              });
+              setPagination({
+                page_index: 1,
+                page_size: pagination.page_size
+              });
             }}
             searchText={searchText}
             selectedTags={selectedTags}

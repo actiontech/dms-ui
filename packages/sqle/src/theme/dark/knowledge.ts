@@ -15,5 +15,21 @@ export const knowledgeTheme: KnowledgeTheme = {
     description: {
       borderLeftColor: darkThemeUI.uiToken.colorSuccess
     }
+  },
+  graph: {
+    wrapper: {
+      dotColor: '#f0f0f0',
+      backgroundColor: 'transparent',
+      borderColor: darkThemeUI.uiToken.colorBorderSecondary
+    },
+    container: {
+      fullScreenBgColor: darkThemeUI.uiToken.colorBgBase
+    },
+    control: {
+      borderColor: darkThemeUI.uiToken.colorBorderSecondary
+    },
+    edge: {
+      color: 'rgba(96, 96, 96, 0.6)'
+    }
   }
 };

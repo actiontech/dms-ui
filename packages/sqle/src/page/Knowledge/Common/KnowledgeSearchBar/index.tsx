@@ -60,7 +60,7 @@ const KnowledgeSearchBar: React.FC<KnowledgeSearchBarProps> = (props) => {
           }}
           rows={1}
           bordered={false}
-          autoSize
+          autoSize={{ minRows: 1, maxRows: 3 }}
         />
         <div className="search-icon">
           <SearchOutlined width={20} height={20} onClick={handleSearch} />

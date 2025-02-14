@@ -319,4 +319,20 @@ export type KnowledgeTheme = {
       borderLeftColor: string;
     };
   };
+  graph: {
+    wrapper: {
+      borderColor: string;
+      backgroundColor: string;
+      dotColor: string;
+    };
+    container: {
+      fullScreenBgColor: string;
+    };
+    control: {
+      borderColor: string;
+    };
+    edge: {
+      color: string;
+    };
+  };
 };
