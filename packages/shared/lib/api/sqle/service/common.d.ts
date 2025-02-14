@@ -1006,13 +1006,9 @@ export interface IDriversResV1 {
 export interface IEdgeResponse {
   from_id?: string;
 
-  from_name?: string;
-
   is_directed?: boolean;
 
   to_id?: string;
-
-  to_name?: string;
 
   weight?: number;
 }
@@ -2137,14 +2133,6 @@ export interface IGraphResponse {
   edges?: IEdgeResponse[];
 
   nodes?: INodeResponse[];
-
-  stats?: IGraphStats;
-}
-
-export interface IGraphStats {
-  total_edges?: number;
-
-  total_nodes?: number;
 }
 
 export interface IHighPriorityConditionReq {
@@ -2386,8 +2374,6 @@ export interface IModuleStatusRes {
 }
 
 export interface INodeResponse {
-  data?: undefined;
-
   id?: string;
 
   name?: string;
