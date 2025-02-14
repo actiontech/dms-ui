@@ -335,6 +335,9 @@ importers:
       '@react-sigma/layout-force':
         specifier: ^5.0.2
         version: 5.0.2(graphology-layout-force@0.2.4)(graphology@0.25.4)(react@18.2.0)(sigma@3.0.1)
+      '@sigma/node-image':
+        specifier: ^3.0.0
+        version: 3.0.0(sigma@3.0.1)
       '@uiw/react-md-editor':
         specifier: ^3.23.5
         version: 3.23.5(@types/react@18.0.15)(react-dom@18.2.0)(react@18.2.0)
@@ -4692,6 +4695,14 @@ packages:
       domhandler: 5.0.3
       selderee: 0.11.0
     dev: true
+
+  /@sigma/node-image@3.0.0(sigma@3.0.1):
+    resolution: {integrity: sha512-i4WLNPugDY4jgQEZtNSiSVj4HHXOraciXLtlgdygeUxMVEhH8PJ/+Q1vQ9f/SlKFnZQ+7vH3HnsSDW6FD9aP+g==}
+    peerDependencies:
+      sigma: '>=3.0.0-beta.10'
+    dependencies:
+      sigma: 3.0.1(graphology-types@0.24.8)
+    dev: false
 
   /@sinclair/typebox@0.27.8:
     resolution: {integrity: sha512-+Fj43pSMwJs4KRrH/938Uf+uAELIgVBmQzg/q1YG10djyfA3TnrU8N8XzqCh/okZdszqBQTZf96idMfE5lnwTA==}

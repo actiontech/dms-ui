@@ -77,7 +77,6 @@ const QuickActions = () => {
           <ProfileSquareFilled width={18} height={18} color="currentColor" />
         )
       },
-      // #if [ee]
       {
         key: 'knowledge',
         title: t('dmsMenu.globalSettings.knowledge'),
@@ -85,7 +84,6 @@ const QuickActions = () => {
         icon: <BookMarkOutlined width={18} height={18} color="currentColor" />,
         permission: PERMISSIONS.PAGES.SQLE.KNOWLEDGE
       }
-      // #endif
     ];
     return actionList.filter((item) => {
       if (!item.permission) {

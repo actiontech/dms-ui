@@ -5,9 +5,11 @@ import {
   INodeResponse
 } from '@actiontech/shared/lib/api/sqle/service/common';
 import { EdgeType, NodeType } from '../index.type';
+import useThemeStyleData from '../../../../hooks/useThemeStyleData';
 
 const useGraph = () => {
-  const randomColor = useCallback(() => {
+  const { sqleTheme } = useThemeStyleData();
+  const generateNodeColor = useCallback(() => {
     const digits = '0123456789abcdef';
     let code = '#';
     for (let i = 0; i < 6; i++) {
@@ -72,10 +74,11 @@ const useGraph = () => {
         graph.addNode(node.id, {
           label: node.name ?? '',
           size: normalizedSize,
-          color: randomColor(),
+          color: generateNodeColor(),
           x: 0.5 + radius * Math.cos(theta),
           y: 0.5 + radius * Math.sin(theta),
-          shortLabel: (node.name ?? '')[0]?.toUpperCase() ?? ''
+          shortLabel: (node.name ?? '')[0]?.toUpperCase() ?? '',
+          image: '/static/image/knowledge.svg'
         });
       });
 
@@ -90,13 +93,19 @@ const useGraph = () => {
 
         graph.addEdge(edge.from_id, edge.to_id, {
           size: normalizedSize,
-          forceLabel: false
+          forceLabel: false,
+          color: sqleTheme.knowledgeTheme.graph.edge.color
         });
       });
 
       return graph as Graph<NodeType, EdgeType>;
     },
-    [calculateNormalizedSize, getWeightRange, randomColor]
+    [
+      getWeightRange,
+      calculateNormalizedSize,
+      generateNodeColor,
+      sqleTheme.knowledgeTheme.graph.edge.color
+    ]
   );
 
   return { createGraph };
