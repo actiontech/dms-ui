@@ -3,7 +3,7 @@ import { useTypedQuery } from '@actiontech/shared';
 import { ROUTE_PATHS } from '@actiontech/shared/lib/data/routePaths';
 
 const useCreationMode = () => {
-  const extraQueries = useTypedQuery();
+  const extractQueries = useTypedQuery();
 
   const {
     isAssociationVersionMode,
@@ -13,7 +13,7 @@ const useCreationMode = () => {
     isRollbackMode,
     rollbackWorkflowId
   } = useMemo(() => {
-    const searchParams = extraQueries(
+    const searchParams = extractQueries(
       ROUTE_PATHS.SQLE.SQL_EXEC_WORKFLOW.create
     );
     return {
@@ -25,7 +25,7 @@ const useCreationMode = () => {
       isRollbackMode: !!searchParams?.rollbackWorkflowId,
       rollbackWorkflowId: searchParams?.rollbackWorkflowId
     };
-  }, [extraQueries]);
+  }, [extractQueries]);
 
   return {
     isCloneMode,

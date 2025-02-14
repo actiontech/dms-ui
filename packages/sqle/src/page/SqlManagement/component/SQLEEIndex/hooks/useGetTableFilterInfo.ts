@@ -15,7 +15,7 @@ import { ROUTE_PATHS } from '@actiontech/shared/lib/data/routePaths';
 const useGetTableFilterInfo = () => {
   const { projectName } = useCurrentProject();
 
-  const extraQueries = useTypedQuery();
+  const extractQueries = useTypedQuery();
 
   const { generateAuditLevelSelectOptions } = useStaticStatus();
 
@@ -52,7 +52,7 @@ const useGetTableFilterInfo = () => {
   ]);
 
   const filterCustomProps = useMemo(() => {
-    const searchParams = extraQueries(ROUTE_PATHS.SQLE.SQL_MANAGEMENT.index);
+    const searchParams = extractQueries(ROUTE_PATHS.SQLE.SQL_MANAGEMENT.index);
     return new Map<keyof ExtraFilterMetaType, FilterCustomProps>([
       [
         'filter_business',
@@ -86,7 +86,7 @@ const useGetTableFilterInfo = () => {
       ]
     ]);
   }, [
-    extraQueries,
+    extractQueries,
     projectBusinessOption,
     getProjectBusinessLoading,
     instanceIDOptions,

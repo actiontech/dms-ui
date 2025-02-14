@@ -22,18 +22,18 @@ import { ROUTE_PATHS } from '@actiontech/shared/lib/data/routePaths';
 const DataSourceSelection: React.FC = () => {
   const { t } = useTranslation();
   const { projectName } = useCurrentProject();
-  const extraQueries = useTypedQuery();
+  const extractQueries = useTypedQuery();
 
   const { instanceIdByUrlSearchParams, businessByUrlSearchParams } =
     useMemo(() => {
-      const searchParams = extraQueries(
+      const searchParams = extractQueries(
         ROUTE_PATHS.SQLE.SQL_MANAGEMENT_CONF.create
       );
       return {
         instanceIdByUrlSearchParams: searchParams?.instance_id,
         businessByUrlSearchParams: searchParams?.business
       };
-    }, [extraQueries]);
+    }, [extractQueries]);
 
   const submitLoading = !!useContext(ConfFormContext)?.submitLoading;
   const defaultValue = useContext(ConfFormContext)?.defaultValue;
