@@ -33,7 +33,6 @@ const KnowledgeSearchResults: React.FC = () => {
     useKnowledgeSearchBar();
 
   const extractQueries = useTypedQuery();
-  // const searchInputRef = useRef<InputRef>(null);
 
   const [pagination, setPagination] = useState<TablePagination>({
     page_index: defaultPageIndex,
@@ -67,11 +66,6 @@ const KnowledgeSearchResults: React.FC = () => {
       ).then((response) => {
         return response.data;
       }),
-    // .finally(() => {
-    //   setTimeout(() => {
-    //     searchInputRef.current?.focus();
-    //   }, 200);
-    // }),
     {
       manual: true
     }
@@ -127,33 +121,13 @@ const KnowledgeSearchResults: React.FC = () => {
               });
               setPagination({ page_index: 1, page_size: pagination.page_size });
             }}
-            allowGraphMode={false}
             searchText={searchText}
             selectedTags={selectedTags}
             setSearchText={setSearchText}
             setSelectedTags={setSelectedTags}
+            allowSelectTag
+            allowSearchEmptyText
           />
-          {/* <BasicInput.TextArea
-          autoSize={{ minRows: 2, maxRows: 2 }}
-          className="search-input-wrapper"
-          ref={searchInputRef}
-          disabled={isSearching}
-          placeholder={t('knowledgeBase.searchResults.searchPlaceholder')}
-          onChange={(event) => {
-            const inputValue = event.target.value;
-            setSearchKeyword(inputValue);
-          }}
-          onPressEnter={(event) => {
-            const inputValue = event.target.value;
-            setPagination({ page_index: 1, page_size: pagination.page_size });
-            startSearch({
-              searchText: inputValue,
-              tags: [],
-              pageIndex: 1,
-              pageSize: pagination.page_size
-            });
-          }}
-        /> */}
         </SearchWrapperStyleWrapper>
 
         {searchResults?.data && (
