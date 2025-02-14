@@ -2,7 +2,7 @@ import { styled } from '@mui/material';
 
 export const KnowledgeGraphStyleWrapper = styled('div')`
   width: 100%;
-  height: calc(100% - 240px);
+  height: calc(100% - 140px);
   padding: 12px;
   margin-top: 20px;
   border-radius: 10px;
@@ -26,5 +26,10 @@ export const KnowledgeGraphStyleWrapper = styled('div')`
 
   .sigma-container-full-screen {
     background: ${({ theme }) => theme.sharedTheme.uiToken.colorBgBase};
+  }
+
+  .graph-control-container {
+    border: 1px solid
+      ${({ theme }) => theme.sharedTheme.uiToken.colorBorderSecondary};
   }
 `;

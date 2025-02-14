@@ -11,15 +11,18 @@ import FocusOnNode from './common/FocusOnNode';
 import LoadGraph from './common/LoadGraph';
 import '@react-sigma/core/lib/style.css';
 import { sigmaSettings } from './common/data';
-import { useCallback, useEffect, useMemo, useState } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 import { KnowledgeGraphStyleWrapper } from './style';
 import { KnowledgeGraphProp } from './index.type';
 import classNames from 'classnames';
+import NodePopover from './common/NodePopover';
 
 const KnowledgeGraph: React.FC<KnowledgeGraphProp> = ({ graphData }) => {
   const [selectedNode, setSelectedNode] = useState<string | null>(null);
   const [focusNode, setFocusNode] = useState<string | null>(null);
   const [isFullScreen, setIsFullScreen] = useState(false);
+  const [hoveredNode, setHoveredNode] = useState<string | null>(null);
+  const [isNodeHovered, setIsNodeHovered] = useState(false);
 
   const onFocus = useCallback((value: GraphSearchOption | null) => {
     if (value === null) setFocusNode(null);
@@ -69,24 +72,35 @@ const KnowledgeGraph: React.FC<KnowledgeGraphProp> = ({ graphData }) => {
         })}
         settings={sigmaSettings}
       >
-        <LoadGraph graphData={graphData} />
+        <LoadGraph
+          graphData={graphData}
+          hoveredNode={hoveredNode}
+          setHoveredNode={setHoveredNode}
+        />
         <FocusOnNode
           node={focusNode ?? selectedNode}
           move={focusNode ? false : true}
         />
-        <ControlsContainer position={'bottom-right'}>
+        <ControlsContainer
+          className="graph-control-container"
+          position={'bottom-right'}
+        >
           <ZoomControl />
           <FullScreenControl />
         </ControlsContainer>
-        {/* <ControlsContainer position={'top-right'}>
-        <GraphSearch
-          type="nodes"
-          value={selectedNode ? { type: 'nodes', id: selectedNode } : null}
-          onFocus={onFocus}
-          onChange={onChange}
-          postSearchResult={postSearchResult}
-        />
-      </ControlsContainer> */}
+        <ControlsContainer
+          className="graph-control-container"
+          position={'top-right'}
+        >
+          <GraphSearch
+            type="nodes"
+            value={selectedNode ? { type: 'nodes', id: selectedNode } : null}
+            onFocus={onFocus}
+            onChange={onChange}
+            postSearchResult={postSearchResult}
+          />
+        </ControlsContainer>
+        <NodePopover nodeId={hoveredNode} />
       </SigmaContainer>
     </KnowledgeGraphStyleWrapper>
   );

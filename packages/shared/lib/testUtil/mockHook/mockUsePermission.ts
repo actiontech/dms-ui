@@ -11,7 +11,8 @@ jest.mock('react-redux', () => ({
 
 const mockUsePermissionData = {
   moduleFeatureSupport: {
-    sqlOptimization: false
+    sqlOptimization: false,
+    knowledge: false
   },
   userOperationPermissions: null,
   checkDbServicePermission: jest.fn(),

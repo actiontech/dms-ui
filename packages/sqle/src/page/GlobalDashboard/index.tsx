@@ -5,7 +5,7 @@ import {
 } from '@actiontech/shared';
 import useDashboardFilter from './hooks/useDashboardFilter';
 import GlobalDashboardTableFilter from './components/TableFilter';
-import { useState, useMemo } from 'react';
+import { useState, useMemo, useEffect } from 'react';
 import { GlobalDashBoardSegmentedEnum } from './index.type';
 import { useTranslation } from 'react-i18next';
 import { Space } from 'antd';
