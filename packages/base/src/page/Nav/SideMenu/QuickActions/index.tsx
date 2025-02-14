@@ -82,7 +82,8 @@ const QuickActions = () => {
         key: 'knowledge',
         title: t('dmsMenu.globalSettings.knowledge'),
         path: ROUTE_PATHS.SQLE.KNOWLEDGE.index.path,
-        icon: <BookMarkOutlined width={18} height={18} color="currentColor" />
+        icon: <BookMarkOutlined width={18} height={18} color="currentColor" />,
+        permission: PERMISSIONS.PAGES.SQLE.KNOWLEDGE
       }
       // #endif
     ];

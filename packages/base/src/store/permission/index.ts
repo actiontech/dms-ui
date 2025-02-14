@@ -9,7 +9,8 @@ type PermissionState = {
 
 const initialState: PermissionState = {
   moduleFeatureSupport: {
-    sqlOptimization: false
+    sqlOptimization: false,
+    knowledge: false
   },
   userOperationPermissions: null
 };
