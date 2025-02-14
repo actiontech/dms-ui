@@ -12,6 +12,7 @@ export interface NodeType {
   color: string;
   shortLabel: string;
   forceLabel?: boolean;
+  image?: string;
 }
 export interface EdgeType {
   size: number;

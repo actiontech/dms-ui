@@ -2,21 +2,39 @@ import { styled } from '@mui/material';
 
 export const KnowledgeGraphStyleWrapper = styled('div')`
   width: 100%;
-  height: calc(100% - 140px);
+  height: calc(100% - 124px);
   padding: 12px;
   margin-top: 20px;
   border-radius: 10px;
   border: 1px solid
-    ${({ theme }) => theme.sharedTheme.uiToken.colorBorderSecondary};
-
-  background: linear-gradient(120deg, #fdfbfb 0%, #f9f7f7 100%),
-    radial-gradient(circle at 50% 50%, #ffffff 0%, transparent 100%);
+    ${({ theme }) => theme.sqleTheme.knowledgeTheme.graph.wrapper.borderColor};
   background-blend-mode: soft-light;
-
-  background-image: radial-gradient(#f0f0f0 1px, transparent 1px),
-    radial-gradient(#f0f0f0 1px, transparent 1px);
+  background-image: radial-gradient(
+      ${({ theme }) => theme.sqleTheme.knowledgeTheme.graph.wrapper.dotColor}
+        1px,
+      ${({ theme }) =>
+          theme.sqleTheme.knowledgeTheme.graph.wrapper.backgroundColor}
+        1px
+    ),
+    radial-gradient(
+      ${({ theme }) => theme.sqleTheme.knowledgeTheme.graph.wrapper.dotColor}
+        1px,
+      ${({ theme }) =>
+          theme.sqleTheme.knowledgeTheme.graph.wrapper.backgroundColor}
+        1px
+    );
   background-size: 20px 20px;
   background-position: 0 0, 10px 10px;
+
+  .ant-spin-nested-loading {
+    width: 100%;
+    height: 100%;
+
+    .ant-spin-container {
+      width: 100%;
+      height: 100%;
+    }
+  }
 
   .sigma-container {
     height: 100%;
@@ -25,11 +43,12 @@ export const KnowledgeGraphStyleWrapper = styled('div')`
   }
 
   .sigma-container-full-screen {
-    background: ${({ theme }) => theme.sharedTheme.uiToken.colorBgBase};
+    background: ${({ theme }) =>
+      theme.sqleTheme.knowledgeTheme.graph.container.fullScreenBgColor};
   }
 
   .graph-control-container {
     border: 1px solid
-      ${({ theme }) => theme.sharedTheme.uiToken.colorBorderSecondary};
+      ${({ theme }) => theme.sqleTheme.knowledgeTheme.graph.control.borderColor};
   }
 `;

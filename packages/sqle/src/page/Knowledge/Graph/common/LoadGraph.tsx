@@ -11,6 +11,7 @@ import {
   INodeResponse,
   IEdgeResponse
 } from '@actiontech/shared/lib/api/sqle/service/common';
+import useThemeStyleData from '../../../../hooks/useThemeStyleData';
 
 type props = {
   graphData?: {
@@ -19,18 +20,26 @@ type props = {
   };
   hoveredNode: string | null;
   setHoveredNode: (node: string | null) => void;
+  onLoaded?: () => void;
 };
-const LoadGraph: FC<props> = ({ graphData, hoveredNode, setHoveredNode }) => {
+const LoadGraph: FC<props> = ({
+  graphData,
+  hoveredNode,
+  setHoveredNode,
+  onLoaded
+}) => {
   const { createGraph } = useGraph();
   const sigma = useSigma<NodeType, EdgeType>();
   const registerEvents = useRegisterEvents<NodeType, EdgeType>();
   const setSettings = useSetSettings<NodeType, EdgeType>();
   const loadGraph = useLoadGraph<NodeType, EdgeType>();
+  const { sharedTheme } = useThemeStyleData();
 
   useEffect(() => {
     if (graphData) {
       const graph = createGraph(graphData);
       loadGraph(graph);
+      onLoaded?.();
 
       const handleEnterNode = (event: any) => {
         setHoveredNode(event.node);
@@ -57,7 +66,8 @@ const LoadGraph: FC<props> = ({ graphData, hoveredNode, setHoveredNode }) => {
     loadGraph,
     registerEvents,
     setHoveredNode,
-    sigma
+    sigma,
+    onLoaded
   ]);
 
   useEffect(() => {
@@ -70,19 +80,13 @@ const LoadGraph: FC<props> = ({ graphData, hoveredNode, setHoveredNode }) => {
         };
 
         if (hoveredNode && graph.hasNode(hoveredNode)) {
-          try {
-            const isNeighbor =
-              node === hoveredNode ||
-              graph.neighbors(hoveredNode).includes(node);
-            if (isNeighbor) {
-              newData.highlighted = true;
-            } else {
-              newData.color = '#E2E2E2';
-              newData.highlighted = false;
-            }
-          } catch (error) {
-            // 如果出现错误，保持节点原样
-            console.debug('Failed to process node highlighting:', error);
+          const isNeighbor =
+            node === hoveredNode || graph.neighbors(hoveredNode).includes(node);
+          if (isNeighbor) {
+            newData.highlighted = true;
+          } else {
+            newData.color = sharedTheme.uiToken.colorFillSecondary;
+            newData.highlighted = false;
           }
         }
         return newData;
@@ -93,20 +97,16 @@ const LoadGraph: FC<props> = ({ graphData, hoveredNode, setHoveredNode }) => {
         const newData = { ...data, hidden: false, size: edgeSize };
 
         if (hoveredNode && graph.hasNode(hoveredNode)) {
-          try {
-            if (graph.extremities(edge).includes(hoveredNode)) {
-              newData.size = edgeSize * 1.5;
-            } else {
-              newData.hidden = true;
-            }
-          } catch (error) {
-            console.debug('Failed to process edge highlighting:', error);
+          if (graph.extremities(edge).includes(hoveredNode)) {
+            newData.size = edgeSize * 1.5;
+          } else {
+            newData.hidden = true;
           }
         }
         return newData;
       }
     });
-  }, [hoveredNode, setSettings, sigma]);
+  }, [hoveredNode, setSettings, sharedTheme.uiToken.colorFillSecondary, sigma]);
 
   return null;
 };
