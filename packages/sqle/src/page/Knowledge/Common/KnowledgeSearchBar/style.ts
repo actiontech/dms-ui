@@ -80,6 +80,10 @@ export const KnowledgeSearchTagsPopoverStyleWrapper = styled(Space)`
         text-overflow: ellipsis;
       }
     }
+
+    .hidden-checkbox {
+      display: none !important;
+    }
   }
 
   & .ant-input-clear-icon {
