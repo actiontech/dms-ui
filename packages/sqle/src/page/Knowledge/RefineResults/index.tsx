@@ -133,85 +133,83 @@ const KnowledgeSearchResults: React.FC = () => {
           />
         </SearchWrapperStyleWrapper>
 
-        {searchResults?.data && (
-          <ResultWrapperStyleWrapper>
-            <List
-              pagination={{
-                showSizeChanger: true,
-                defaultPageSize: 20,
-                total: searchResults?.total_nums,
-                pageSize: pagination.page_size,
-                current: pagination.page_index,
-                showTotal: (total) => (
-                  <span>
-                    {t('common.actiontechTable.pagination.total', {
-                      total
-                    })}
-                  </span>
-                ),
-                onChange: (page, pageSize) => {
-                  startSearch({
-                    searchText,
-                    selectedTags,
-                    pageIndex: page,
-                    pageSize
-                  });
-                  setPagination({
-                    page_index: page,
-                    page_size: pageSize
-                  });
-                }
-              }}
-              dataSource={searchResults?.data}
-              split={true}
-              size="large"
-              itemLayout="vertical"
-              loading={isSearching}
-              renderItem={(knowledgeItem) => {
-                return (
-                  <List.Item
-                    key={knowledgeItem.id}
-                    className="result-card"
-                    onClick={() => {
-                      navigateToRuleKnowledge(
-                        knowledgeItem.rule_name ?? '',
-                        knowledgeItem.tags?.find((tag) => tag.name === 'DBType')
-                          ?.sub_tags?.[0].name ?? ''
-                      );
-                    }}
-                  >
-                    <div className="card-content">
-                      <div className="header">
-                        <h3 className="title">
-                          <HighlightText
-                            text={knowledgeItem.title ?? ''}
-                            keyword={searchText}
-                          />
-                        </h3>
-                      </div>
-                      {knowledgeItem.description && (
-                        <div className="description">
-                          <HighlightText
-                            text={knowledgeItem.description}
-                            keyword={searchText}
-                          />
-                        </div>
-                      )}
-                      {knowledgeItem.content && (
-                        <div className="content">
-                          <HighlightText
-                            text={knowledgeItem.content}
-                            keyword={searchText}
-                          />
-                        </div>
-                      )}
+        <ResultWrapperStyleWrapper>
+          <List
+            pagination={{
+              showSizeChanger: true,
+              defaultPageSize: 20,
+              total: searchResults?.total_nums,
+              pageSize: pagination.page_size,
+              current: pagination.page_index,
+              showTotal: (total) => (
+                <span>
+                  {t('common.actiontechTable.pagination.total', {
+                    total
+                  })}
+                </span>
+              ),
+              onChange: (page, pageSize) => {
+                startSearch({
+                  searchText,
+                  selectedTags,
+                  pageIndex: page,
+                  pageSize
+                });
+                setPagination({
+                  page_index: page,
+                  page_size: pageSize
+                });
+              }
+            }}
+            dataSource={searchResults?.data}
+            split={true}
+            size="large"
+            itemLayout="vertical"
+            loading={isSearching}
+            renderItem={(knowledgeItem) => {
+              return (
+                <List.Item
+                  key={knowledgeItem.id}
+                  className="result-card"
+                  onClick={() => {
+                    navigateToRuleKnowledge(
+                      knowledgeItem.rule_name ?? '',
+                      knowledgeItem.tags?.find((tag) => tag.name === 'DBType')
+                        ?.sub_tags?.[0].name ?? ''
+                    );
+                  }}
+                >
+                  <div className="card-content">
+                    <div className="header">
+                      <h3 className="title">
+                        <HighlightText
+                          text={knowledgeItem.title ?? ''}
+                          keyword={searchText}
+                        />
+                      </h3>
                     </div>
-                  </List.Item>
-                );
-              }}
-            />
-          </ResultWrapperStyleWrapper>
-        )}
+                    {knowledgeItem.description && (
+                      <div className="description">
+                        <HighlightText
+                          text={knowledgeItem.description}
+                          keyword={searchText}
+                        />
+                      </div>
+                    )}
+                    {knowledgeItem.content && (
+                      <div className="content">
+                        <HighlightText
+                          text={knowledgeItem.content}
+                          keyword={searchText}
+                        />
+                      </div>
+                    )}
+                  </div>
+                </List.Item>
+              );
+            }}
+          />
+        </ResultWrapperStyleWrapper>
       </SearchContentWrapperStyleWrapper>
     </PageLayoutHasFixedHeaderStyleWrapper>
   );
