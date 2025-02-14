@@ -7,6 +7,7 @@ export default {
   },
   search: {
     retrieveKnowledgeGraph: '检索知识图谱',
-    selectedTags: '已选择标签'
+    selectedTags: '已选择标签',
+    emptySearchTextTips: '请输入关键字'
   }
 };

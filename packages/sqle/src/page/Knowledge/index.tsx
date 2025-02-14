@@ -1,9 +1,8 @@
 import { PageHeader, useTypedNavigate } from '@actiontech/shared';
 import { useTranslation } from 'react-i18next';
 import { KnowledgeStyleWrapper } from './style';
-import KnowledgeSearchBar, {
-  KnowledgeSearchBarProps
-} from './Common/KnowledgeSearchBar';
+import KnowledgeSearchBar from './Common/KnowledgeSearchBar';
+import { KnowledgeSearchBarProps } from './Common/KnowledgeSearchBar/index.type';
 import { ROUTE_PATHS } from '@actiontech/shared/lib/data/routePaths';
 import KnowledgeGraph from './Graph';
 import { Divider } from 'antd';

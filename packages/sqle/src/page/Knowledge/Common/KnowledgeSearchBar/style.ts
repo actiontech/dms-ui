@@ -14,21 +14,6 @@ export const KnowledgeSearchBarStyleWrapper = styled('div')`
     overflow: hidden;
   }
 
-  .search-header {
-    margin-bottom: 12px;
-    padding: 0 11px;
-
-    .popover-target {
-      cursor: pointer;
-      display: flex;
-      align-items: center;
-
-      span {
-        font-size: 14px;
-      }
-    }
-  }
-
   .input-wrapper {
     display: flex;
     align-items: center;
@@ -40,6 +25,21 @@ export const KnowledgeSearchBarStyleWrapper = styled('div')`
       display: flex;
       align-items: center;
       justify-content: center;
+    }
+  }
+`;
+
+export const KnowledgeTagSelectorBarStyleWrapper = styled(Space)`
+  margin-bottom: 12px;
+  padding: 0 11px;
+
+  .popover-target {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+
+    span {
+      font-size: 14px;
     }
   }
 `;
