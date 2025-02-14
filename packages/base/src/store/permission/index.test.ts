@@ -7,7 +7,7 @@ import { IReduxState } from '..';
 
 describe('store system', () => {
   const state: IReduxState['permission'] = {
-    moduleFeatureSupport: { sqlOptimization: false },
+    moduleFeatureSupport: { sqlOptimization: false, knowledge: false },
     userOperationPermissions: null
   };
 
@@ -15,12 +15,13 @@ describe('store system', () => {
     const newState = reducers(
       state,
       updateModuleFeatureSupport({
-        sqlOptimization: true
+        sqlOptimization: true,
+        knowledge: true
       })
     );
     expect(newState).not.toBe(state);
     expect(newState).toEqual({
-      moduleFeatureSupport: { sqlOptimization: true },
+      moduleFeatureSupport: { sqlOptimization: true, knowledge: true },
       userOperationPermissions: null
     });
   });
@@ -32,7 +33,7 @@ describe('store system', () => {
     );
     expect(newState).not.toBe(state);
     expect(newState).toEqual({
-      moduleFeatureSupport: { sqlOptimization: false },
+      moduleFeatureSupport: { sqlOptimization: false, knowledge: false },
       userOperationPermissions: { is_admin: false }
     });
   });

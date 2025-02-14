@@ -4,7 +4,7 @@ import {
   useSetSettings,
   useSigma
 } from '@react-sigma/core';
-import { FC, useEffect, useState } from 'react';
+import { FC, useEffect } from 'react';
 import useGraph from '../hooks/useGraph';
 import { EdgeType, NodeType } from '../index.type';
 import {
@@ -17,25 +17,48 @@ type props = {
     nodes: INodeResponse[];
     edges: IEdgeResponse[];
   };
+  hoveredNode: string | null;
+  setHoveredNode: (node: string | null) => void;
 };
-const LoadGraph: FC<props> = ({ graphData }) => {
+const LoadGraph: FC<props> = ({ graphData, hoveredNode, setHoveredNode }) => {
   const { createGraph } = useGraph();
   const sigma = useSigma<NodeType, EdgeType>();
   const registerEvents = useRegisterEvents<NodeType, EdgeType>();
   const setSettings = useSetSettings<NodeType, EdgeType>();
   const loadGraph = useLoadGraph<NodeType, EdgeType>();
-  const [hoveredNode, setHoveredNode] = useState<string | null>(null);
 
   useEffect(() => {
     if (graphData) {
       const graph = createGraph(graphData);
       loadGraph(graph);
+
+      const handleEnterNode = (event: any) => {
+        setHoveredNode(event.node);
+      };
+
+      const handleLeaveNode = () => {
+        setHoveredNode(null);
+      };
+
       registerEvents({
-        enterNode: (event) => setHoveredNode(event.node),
-        leaveNode: () => setHoveredNode(null)
+        enterNode: handleEnterNode,
+        leaveNode: handleLeaveNode
       });
+
+      return () => {
+        // 清理事件监听
+        sigma.removeAllListeners('enterNode');
+        sigma.removeAllListeners('leaveNode');
+      };
     }
-  }, [graphData, createGraph, loadGraph, registerEvents]);
+  }, [
+    graphData,
+    createGraph,
+    loadGraph,
+    registerEvents,
+    setHoveredNode,
+    sigma
+  ]);
 
   useEffect(() => {
     setSettings({
@@ -46,15 +69,20 @@ const LoadGraph: FC<props> = ({ graphData }) => {
           highlighted: data.highlighted || false
         };
 
-        if (hoveredNode) {
-          if (
-            node === hoveredNode ||
-            graph.neighbors(hoveredNode).includes(node)
-          ) {
-            newData.highlighted = true;
-          } else {
-            newData.color = '#E2E2E2';
-            newData.highlighted = false;
+        if (hoveredNode && graph.hasNode(hoveredNode)) {
+          try {
+            const isNeighbor =
+              node === hoveredNode ||
+              graph.neighbors(hoveredNode).includes(node);
+            if (isNeighbor) {
+              newData.highlighted = true;
+            } else {
+              newData.color = '#E2E2E2';
+              newData.highlighted = false;
+            }
+          } catch (error) {
+            // 如果出现错误，保持节点原样
+            console.debug('Failed to process node highlighting:', error);
           }
         }
         return newData;
@@ -64,11 +92,15 @@ const LoadGraph: FC<props> = ({ graphData }) => {
         const edgeSize = data.size ?? 3;
         const newData = { ...data, hidden: false, size: edgeSize };
 
-        if (hoveredNode) {
-          if (graph.extremities(edge).includes(hoveredNode)) {
-            newData.size = edgeSize * 1.5;
-          } else {
-            newData.hidden = true;
+        if (hoveredNode && graph.hasNode(hoveredNode)) {
+          try {
+            if (graph.extremities(edge).includes(hoveredNode)) {
+              newData.size = edgeSize * 1.5;
+            } else {
+              newData.hidden = true;
+            }
+          } catch (error) {
+            console.debug('Failed to process edge highlighting:', error);
           }
         }
         return newData;

@@ -3,7 +3,7 @@ import { RuleDetailItemStyleWrapper } from './style';
 import { useTranslation } from 'react-i18next';
 import { IRuleResV1 } from '@actiontech/shared/lib/api/sqle/service/common';
 import { ReactNode } from 'react';
-import { EmptyBox } from '@actiontech/shared';
+import { EmptyBox, parse2ReactRouterPath } from '@actiontech/shared';
 import { RuleItemTagStyleWrapper } from '../style';
 import {
   RuleCategoryDictionaryGroup,
@@ -11,6 +11,7 @@ import {
 } from '../../../hooks/useRuleCategories/index.data';
 import { isEmpty } from 'lodash';
 import { usePermission } from '@actiontech/shared/lib/features';
+import { ROUTE_PATHS } from '@actiontech/shared/lib/data/routePaths';
 
 export type typeRuleBaseInfo = {
   dataSource: IRuleResV1 | undefined;
@@ -97,7 +98,15 @@ const RuleBaseInfo: React.FC<typeRuleBaseInfo> = ({
         <Form.Item label={t('rule.ruleDetail.knowledge')} name="knowledge">
           <RuleDetailItemStyleWrapper>
             <Typography.Link
-              href={`/sqle/rule/knowledge/${dataSource?.rule_name}/${dataSource?.db_type}`}
+              href={parse2ReactRouterPath(
+                ROUTE_PATHS.SQLE.RULE_KNOWLEDGE.index,
+                {
+                  params: {
+                    ruleName: dataSource?.rule_name ?? '',
+                    dbType: dataSource?.db_type ?? ''
+                  }
+                }
+              )}
               target="_blank"
             >
               {t('common.showMore')}

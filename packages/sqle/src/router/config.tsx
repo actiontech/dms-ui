@@ -574,6 +574,7 @@ export const globalRouterConfig: RouterConfigItem[] = [
   {
     path: ROUTE_PATHS.SQLE.KNOWLEDGE.index.path,
     key: 'knowledge',
+    permission: PERMISSIONS.PAGES.SQLE.KNOWLEDGE,
     children: [
       {
         index: true,

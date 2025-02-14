@@ -16,7 +16,7 @@ export interface NodeType {
 export interface EdgeType {
   size: number;
   weight?: number;
-  color: string;
+  color?: string;
   label?: string;
   forceLabel?: boolean;
 }

@@ -11,7 +11,8 @@ export const PERMISSIONS = {
       OPERATION_RECORD: 'page:operation_record',
       SQL_OPTIMIZATION: 'page:sql_optimization',
       REPORT_STATISTICS: 'page:report_statistics',
-      RULE_MANAGEMENT: 'page:rule_management'
+      RULE_MANAGEMENT: 'page:rule_management',
+      KNOWLEDGE: 'page:knowledge'
     }
   },
   ACTIONS: {

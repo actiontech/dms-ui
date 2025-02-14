@@ -1,8 +1,12 @@
 import { useRequest } from 'ahooks';
 import { useState } from 'react';
-import systemService from '@actiontech/shared/lib/api/sqle/service/system';
 import { getSystemModuleStatusModuleNameEnum } from '@actiontech/shared/lib/api/sqle/service/system/index.enum';
-import UserService from '@actiontech/shared/lib/api/base/service/User';
+import { SystemService, UserService } from '@actiontech/shared/lib/api';
+
+const REQUIRED_MODULES = [
+  getSystemModuleStatusModuleNameEnum.sql_optimization,
+  getSystemModuleStatusModuleNameEnum.knowledge_base
+] as const;
 
 const useFetchPermissionData = () => {
   const [isFeatureSupportFetched, setIsFeatureSupportFetched] = useState(false);
@@ -26,11 +30,19 @@ const useFetchPermissionData = () => {
 
   const { loading: isModuleStatusLoading, runAsync: fetchModuleSupportStatus } =
     useRequest(
-      () => {
-        // TODO: Adjust the interface to get support status for all modules.
-        return systemService.getSystemModuleStatus({
-          module_name: getSystemModuleStatusModuleNameEnum.sql_optimization
-        });
+      async () => {
+        // todo 临时处理方案，等待后续后端接口调整
+        const requests = REQUIRED_MODULES.map((moduleName) =>
+          SystemService.getSystemModuleStatus({
+            module_name: moduleName
+          })
+        );
+
+        const results = await Promise.all(requests);
+        return results.reduce((acc, curr, index) => {
+          acc[REQUIRED_MODULES[index]] = curr.data?.data?.is_supported ?? false;
+          return acc;
+        }, {} as Record<getSystemModuleStatusModuleNameEnum, boolean>);
       },
       {
         onFinally: () => {
@@ -39,7 +51,6 @@ const useFetchPermissionData = () => {
         manual: true
       }
     );
-
   return {
     isModuleStatusLoading,
     fetchModuleSupportStatus,

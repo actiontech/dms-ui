@@ -90,7 +90,6 @@ const useGraph = () => {
 
         graph.addEdge(edge.from_id, edge.to_id, {
           size: normalizedSize,
-          color: '#ccc',
           forceLabel: false
         });
       });
