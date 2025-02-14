@@ -11,7 +11,6 @@ export { default as DashboardService } from './service/dashboard';
 export { default as DatabaseComparisonService } from './service/database_comparison';
 export { default as InstanceService } from './service/instance';
 export { default as InstanceAuditPlanService } from './service/instance_audit_plan';
-export { default as KnowledgeService } from './service/knowledge';
 export { default as KnowledgeBaseService } from './service/knowledge_base';
 export { default as OperationService } from './service/operation';
 export { default as PipelineService } from './service/pipeline';
