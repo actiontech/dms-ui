@@ -75,6 +75,11 @@ export const PERMISSION_MANIFEST: Record<
     type: 'page',
     moduleSupport: [SystemModuleSupported.sqlOptimization]
   },
+  [PERMISSIONS.PAGES.SQLE.KNOWLEDGE]: {
+    id: PERMISSIONS.PAGES.SQLE.KNOWLEDGE,
+    type: 'page',
+    moduleSupport: [SystemModuleSupported.knowledge]
+  },
   // action
 
   //cloud beaver

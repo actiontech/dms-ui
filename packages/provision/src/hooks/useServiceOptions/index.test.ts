@@ -35,7 +35,7 @@ describe('provision/hooks/useServiceOptions', () => {
     authListServicesSpy = auth.listServices();
     mockUsePermission(
       {
-        moduleFeatureSupport: { sqlOptimization: false },
+        moduleFeatureSupport: { sqlOptimization: false, knowledge: false },
         userOperationPermissions: {
           is_admin: false,
           op_permission_list: [

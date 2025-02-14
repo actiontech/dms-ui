@@ -12,11 +12,7 @@ import {
   useTypedNavigate
 } from '@actiontech/shared';
 import { useNotificationContext } from '@actiontech/shared/lib/hooks';
-import {
-  ResponseCode,
-  SupportLanguage,
-  SupportTheme
-} from '@actiontech/shared/lib/enum';
+import { SupportLanguage, SupportTheme } from '@actiontech/shared/lib/enum';
 import Nav from './page/Nav';
 import {
   useChangeTheme,
@@ -46,6 +42,8 @@ import { useDispatch } from 'react-redux';
 import { updateModuleFeatureSupport } from './store/permission';
 import { ROUTE_PATHS } from '@actiontech/shared/lib/data/routePaths';
 import useSyncDmsCloudBeaverChannel from './hooks/useSyncDmsCloudBeaverChannel';
+import { getSystemModuleStatusModuleNameEnum } from '@actiontech/shared/lib/api/sqle/service/system/index.enum';
+
 import './index.less';
 
 dayjs.extend(updateLocale);
@@ -192,10 +190,15 @@ function App() {
       getUserBySession({});
       updateDriverList();
       fetchModuleSupportStatus().then((response) => {
-        if (response.data.code === ResponseCode.SUCCESS) {
+        if (response) {
           dispatch(
             updateModuleFeatureSupport({
-              sqlOptimization: !!response.data.data?.is_supported
+              sqlOptimization:
+                !!response?.[
+                  getSystemModuleStatusModuleNameEnum.sql_optimization
+                ],
+              knowledge:
+                !!response?.[getSystemModuleStatusModuleNameEnum.knowledge_base]
             })
           );
         }

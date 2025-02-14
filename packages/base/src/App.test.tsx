@@ -146,7 +146,7 @@ describe('App', () => {
     });
     expect(requestGetBasicInfo).toHaveBeenCalledTimes(1);
     expect(getUserBySessionSpy).toHaveBeenCalledTimes(1);
-    expect(requestGetModalStatus).toHaveBeenCalledTimes(1);
+    expect(requestGetModalStatus).toHaveBeenCalledTimes(2);
     expect(mockDBServiceDriverInfo.updateDriverList).toHaveBeenCalledTimes(1);
     await act(async () => jest.advanceTimersByTime(3000));
     expect(mockSystemConfigData.syncWebTitleAndLogo).toHaveBeenCalledTimes(1);

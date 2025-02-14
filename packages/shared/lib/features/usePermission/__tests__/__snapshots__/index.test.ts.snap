@@ -229,6 +229,7 @@ exports[`usePermission should match snapshot 1`] = `
       "USER_CENTER": "page:user_center",
     },
     "SQLE": {
+      "KNOWLEDGE": "page:knowledge",
       "OPERATION_RECORD": "page:operation_record",
       "REPORT_STATISTICS": "page:report_statistics",
       "RULE_MANAGEMENT": "page:rule_management",
@@ -1444,6 +1445,13 @@ exports[`usePermission should match snapshot 2`] = `
       "globalManager",
       "globalViewing",
       "certainProjectManager",
+    ],
+    "type": "page",
+  },
+  "page:knowledge": {
+    "id": "page:knowledge",
+    "moduleSupport": [
+      "knowledge",
     ],
     "type": "page",
   },

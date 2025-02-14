@@ -36,7 +36,8 @@ export type UserRolesType = {
 };
 
 export enum SystemModuleSupported {
-  sqlOptimization = 'sqlOptimization'
+  sqlOptimization = 'sqlOptimization',
+  knowledge = 'knowledge'
 }
 
 export type ModuleFeatureSupportStatus = {

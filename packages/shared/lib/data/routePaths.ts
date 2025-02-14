@@ -159,6 +159,16 @@ export const ROUTE_PATHS = {
         path: 'custom-update/:ruleID'
       }
     },
+    KNOWLEDGE: {
+      index: {
+        path: '/sqle/knowledge'
+      },
+      refined: {
+        prefix: '/sqle/knowledge',
+        path: 'refined',
+        query: 'keywords&tags'
+      }
+    },
     RULE_KNOWLEDGE: {
       index: {
         path: '/sqle/rule/knowledge/:ruleName/:dbType'
@@ -367,7 +377,8 @@ export const ROUTE_PATHS = {
         prefix: '/sqle/project',
         path: ':projectID/data-source-comparison'
       }
-    }
+    },
+    KNOWLEDGE_GRAPH: { index: { path: '/sqle/knowledge-graph' } }
   },
   PROVISION: {
     DATABASE_ROLE: {
