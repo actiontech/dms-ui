@@ -5,6 +5,9 @@ export default {
     backToKnowledgeBase: '返回知识库',
     searchPlaceholder: '请输入关键字搜索你感兴趣的SQL语法'
   },
+  graph: {
+    viewRelatedRules: '查看关联规则'
+  },
   search: {
     retrieveKnowledgeGraph: '检索知识图谱',
     selectedTags: '已选择标签',

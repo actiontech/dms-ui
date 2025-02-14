@@ -2322,6 +2322,8 @@ export interface IKnowledgeBase {
 
   id?: number;
 
+  rule_name?: string;
+
   tags?: ITag[];
 
   title?: string;

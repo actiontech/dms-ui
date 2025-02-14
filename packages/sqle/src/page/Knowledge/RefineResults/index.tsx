@@ -113,13 +113,18 @@ const KnowledgeSearchResults: React.FC = () => {
         <SearchWrapperStyleWrapper>
           <KnowledgeSearchBar
             onSearch={() => {
-              startSearch({
-                searchText: searchText,
-                selectedTags: selectedTags,
-                pageIndex: 1,
-                pageSize: pagination.page_size
-              });
-              setPagination({ page_index: 1, page_size: pagination.page_size });
+              if (searchText || selectedTags.length) {
+                startSearch({
+                  searchText: searchText,
+                  selectedTags: selectedTags,
+                  pageIndex: 1,
+                  pageSize: pagination.page_size
+                });
+                setPagination({
+                  page_index: 1,
+                  page_size: pagination.page_size
+                });
+              }
             }}
             searchText={searchText}
             selectedTags={selectedTags}
@@ -170,7 +175,11 @@ const KnowledgeSearchResults: React.FC = () => {
                     key={knowledgeItem.id}
                     className="result-card"
                     onClick={() => {
-                      navigateToRuleKnowledge(knowledgeItem.title!, 'MySQL');
+                      navigateToRuleKnowledge(
+                        knowledgeItem.rule_name ?? '',
+                        knowledgeItem.tags?.find((tag) => tag.name === 'DBType')
+                          ?.sub_tags?.[0].name ?? ''
+                      );
                     }}
                   >
                     <div className="card-content">

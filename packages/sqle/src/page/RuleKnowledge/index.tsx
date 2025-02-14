@@ -75,7 +75,7 @@ const RuleKnowledge: React.FC = () => {
             <Typography.Title level={4}>
               {ruleKnowledgeInfo?.rule?.desc ?? '-'}
             </Typography.Title>
-            <Typography.Text>
+            <Typography.Text type="secondary">
               {ruleKnowledgeInfo?.rule?.annotation ?? '-'}
             </Typography.Text>
           </Spin>

@@ -5,7 +5,6 @@ import KnowledgeSearchBar from './Common/KnowledgeSearchBar';
 import { KnowledgeSearchBarProps } from './Common/KnowledgeSearchBar/index.type';
 import { ROUTE_PATHS } from '@actiontech/shared/lib/data/routePaths';
 import KnowledgeGraph from './Graph';
-import { Divider } from 'antd';
 import { KnowledgeService } from '@actiontech/shared/lib/api';
 import { useRequest } from 'ahooks';
 import { ResponseCode } from '@actiontech/shared/lib/enum';
@@ -21,7 +20,7 @@ const Knowledge: React.FC = () => {
     });
   };
 
-  const { loading, data: graphData } = useRequest(() =>
+  const { data: graphData } = useRequest(() =>
     KnowledgeService.getKnowledgeGraph().then((res) => {
       if (res.data.code === ResponseCode.SUCCESS) {
         return {
@@ -37,11 +36,7 @@ const Knowledge: React.FC = () => {
       <PageHeader title={t('knowledgeBase.pageTitle')} />
 
       <KnowledgeStyleWrapper>
-        <Divider orientation="center">知识库搜索</Divider>
-
         <KnowledgeSearchBar onSearch={onSearch} />
-
-        <Divider orientation="center">知识图谱</Divider>
 
         <KnowledgeGraph graphData={graphData} />
       </KnowledgeStyleWrapper>
