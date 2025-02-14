@@ -29,7 +29,7 @@ describe('sqle/CustomRule/Form', () => {
     mockUseDbServiceDriver();
     mockUsePermission(
       {
-        moduleFeatureSupport: { sqlOptimization: true }
+        moduleFeatureSupport: { sqlOptimization: true, knowledge: false }
       },
       {
         useSpyOnMockHooks: true

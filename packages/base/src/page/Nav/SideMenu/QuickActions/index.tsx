@@ -102,7 +102,7 @@ const QuickActions = () => {
             return (
               <BasicToolTip key={action.key} title={action.title}>
                 <div
-                  className={classNames('action-item', {
+                  className={classNames(`action-item ${action.key}`, {
                     'action-item-active': location.pathname.startsWith(
                       action.path
                     )

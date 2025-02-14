@@ -23,7 +23,7 @@ describe('sqle/GlobalRuleTemplate/RuleTemplateDetail', () => {
     mockUseCurrentUser();
     mockUsePermission(
       {
-        moduleFeatureSupport: { sqlOptimization: true }
+        moduleFeatureSupport: { sqlOptimization: true, knowledge: false }
       },
       {
         useSpyOnMockHooks: true
