@@ -37,9 +37,12 @@ describe('useFetchPermissionData', () => {
       result.current.fetchModuleSupportStatus();
     });
 
-    expect(requestGetModalStatus).toHaveBeenCalledTimes(1);
+    expect(requestGetModalStatus).toHaveBeenCalledTimes(2);
     expect(requestGetModalStatus).toHaveBeenCalledWith({
       module_name: getSystemModuleStatusModuleNameEnum.sql_optimization
+    });
+    expect(requestGetModalStatus).toHaveBeenCalledWith({
+      module_name: getSystemModuleStatusModuleNameEnum.knowledge_base
     });
 
     await act(async () => jest.advanceTimersByTime(3000));

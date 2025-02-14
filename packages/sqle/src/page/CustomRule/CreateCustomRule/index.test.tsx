@@ -47,7 +47,7 @@ describe('sqle/CustomRule/CreateCustomRule', () => {
     );
     mockUsePermission(
       {
-        moduleFeatureSupport: { sqlOptimization: true }
+        moduleFeatureSupport: { sqlOptimization: true, knowledge: false }
       },
       {
         useSpyOnMockHooks: true

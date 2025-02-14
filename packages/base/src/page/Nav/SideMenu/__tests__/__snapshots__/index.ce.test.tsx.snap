@@ -71,7 +71,7 @@ exports[`test base/Nav/SideMenu/index.ce should match snapshot 1`] = `
                     class="ant-space-item"
                   >
                     <div
-                      class="action-item"
+                      class="action-item global-dashboard"
                     >
                       <svg
                         class="TodoListOutlined_svg__icon"
@@ -104,7 +104,7 @@ exports[`test base/Nav/SideMenu/index.ce should match snapshot 1`] = `
                     class="ant-space-item"
                   >
                     <div
-                      class="action-item"
+                      class="action-item view-rule"
                     >
                       <svg
                         color="currentColor"
@@ -223,7 +223,7 @@ exports[`test base/Nav/SideMenu/index.ce should match snapshot 2`] = `
                     class="ant-space-item"
                   >
                     <div
-                      class="action-item"
+                      class="action-item global-dashboard"
                     >
                       <svg
                         class="TodoListOutlined_svg__icon"
@@ -279,7 +279,7 @@ exports[`test base/Nav/SideMenu/index.ce should match snapshot 2`] = `
                     class="ant-space-item"
                   >
                     <div
-                      class="action-item"
+                      class="action-item view-rule"
                     >
                       <svg
                         color="currentColor"

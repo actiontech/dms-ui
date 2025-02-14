@@ -134,6 +134,20 @@ describe('base/router-sqle-ee', () => {
         expect(baseElement).toMatchSnapshot();
         expect(screen.getByText('ruleKnowledge')).toBeInTheDocument();
       });
+
+      it('render route knowledge', () => {
+        const { baseElement } = customRender(['/sqle/knowledge']);
+
+        expect(baseElement).toMatchSnapshot();
+        expect(screen.getByText('knowledgeIndex')).toBeInTheDocument();
+      });
+
+      it('render route knowledge refined', () => {
+        const { baseElement } = customRender(['/sqle/knowledge/refined']);
+
+        expect(baseElement).toMatchSnapshot();
+        expect(screen.getByText('knowledgeRefinedResults')).toBeInTheDocument();
+      });
     });
   });
 

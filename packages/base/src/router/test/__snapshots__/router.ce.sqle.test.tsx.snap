@@ -643,6 +643,19 @@ exports[`base/router-sqle-ce render sqle route data snap 1`] = `
     "permission": "page:rule_management",
   },
   {
+    "children": [
+      {
+        "element": <div>
+          knowledgeIndex
+        </div>,
+        "key": "knowledgeIndex",
+        "path": "",
+      },
+    ],
+    "key": "knowledge",
+    "path": "/sqle/knowledge",
+  },
+  {
     "element": <div>
       globalDashboard
     </div>,
