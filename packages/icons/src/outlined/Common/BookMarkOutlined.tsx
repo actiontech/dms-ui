@@ -21,8 +21,14 @@ const BookMarkOutlined = (props: SVGProps<SVGSVGElement>) => {
           y2={126.667}
           gradientUnits="userSpaceOnUse"
         >
-          <stop stopColor="#169E75" stopOpacity={0.4} />
-          <stop offset={1} stopColor="#169E75" />
+          <stop
+            stopColor={props.color ? 'currentColor' : '#169E75'}
+            stopOpacity={0.4}
+          />
+          <stop
+            offset={1}
+            stopColor={props.color ? 'currentColor' : '#169E75'}
+          />
         </linearGradient>
       </defs>
     </svg>

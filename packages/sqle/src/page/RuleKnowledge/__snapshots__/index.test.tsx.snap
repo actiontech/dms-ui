@@ -36,7 +36,7 @@ exports[`page/RuleKnowledge request rule info and custom rule knowledge 1`] = `
                 绑定的变量个数不建议超过阈值
               </h4>
               <span
-                class="ant-typography css-dev-only-do-not-override-txh9fw"
+                class="ant-typography ant-typography-secondary css-dev-only-do-not-override-txh9fw"
               >
                 因为过度使用绑定变量会增加查询的复杂度，从而降低查询性能。过度使用绑定变量还会增加维护成本。默认阈值:100
               </span>
@@ -151,7 +151,7 @@ exports[`page/RuleKnowledge request rule info and not custom rule knowledge 1`] 
                 绑定的变量个数不建议超过阈值
               </h4>
               <span
-                class="ant-typography css-dev-only-do-not-override-txh9fw"
+                class="ant-typography ant-typography-secondary css-dev-only-do-not-override-txh9fw"
               >
                 因为过度使用绑定变量会增加查询的复杂度，从而降低查询性能。过度使用绑定变量还会增加维护成本。默认阈值:100
               </span>
@@ -266,7 +266,7 @@ exports[`page/RuleKnowledge update rule and refresh 1`] = `
                 绑定的变量个数不建议超过阈值
               </h4>
               <span
-                class="ant-typography css-dev-only-do-not-override-txh9fw"
+                class="ant-typography ant-typography-secondary css-dev-only-do-not-override-txh9fw"
               >
                 因为过度使用绑定变量会增加查询的复杂度，从而降低查询性能。过度使用绑定变量还会增加维护成本。默认阈值:100
               </span>

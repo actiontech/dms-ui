@@ -304,3 +304,35 @@ export type IconTheme = {
 export type DataSourceComparisonTheme = {
   comparisonResultDiffBackgroundColor: string;
 };
+
+export type KnowledgeTheme = {
+  highlight: {
+    color: string;
+    background: string;
+  };
+  result: {
+    list: {
+      boxShadow: string;
+      hoverBoxShadow: string;
+    };
+    description: {
+      borderLeftColor: string;
+    };
+  };
+  graph: {
+    wrapper: {
+      borderColor: string;
+      backgroundColor: string;
+      dotColor: string;
+    };
+    container: {
+      fullScreenBgColor: string;
+    };
+    control: {
+      borderColor: string;
+    };
+    edge: {
+      color: string;
+    };
+  };
+};

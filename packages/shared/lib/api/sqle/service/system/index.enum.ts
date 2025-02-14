@@ -21,5 +21,7 @@ export enum getSystemModuleStatusModuleNameEnum {
 
   'sql_optimization' = 'sql_optimization',
 
-  'backup' = 'backup'
+  'backup' = 'backup',
+
+  'knowledge_base' = 'knowledge_base'
 }

@@ -19,7 +19,7 @@ const System = () => {
   const { t } = useTranslation();
 
   const dispatch = useDispatch();
-  const extraQueries = useTypedQuery();
+  const extractQueries = useTypedQuery();
 
   const options = useMemo(
     () => [
@@ -75,11 +75,11 @@ const System = () => {
   }, [activeTabKey, options]);
 
   useEffect(() => {
-    const urlSearchParams = extraQueries(ROUTE_PATHS.BASE.SYSTEM.index);
+    const urlSearchParams = extractQueries(ROUTE_PATHS.BASE.SYSTEM.index);
     if (urlSearchParams && urlSearchParams.active_tab) {
       setActiveTabKey(urlSearchParams.active_tab);
     }
-  }, [extraQueries]);
+  }, [extractQueries]);
 
   // #if [ee]
   useEffect(() => {

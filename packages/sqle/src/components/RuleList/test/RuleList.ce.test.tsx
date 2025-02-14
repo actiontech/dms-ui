@@ -14,7 +14,7 @@ describe('sqle/components/RuleList CE', () => {
   beforeEach(() => {
     mockUsePermission(
       {
-        moduleFeatureSupport: { sqlOptimization: true }
+        moduleFeatureSupport: { sqlOptimization: true, knowledge: false }
       },
       {
         useSpyOnMockHooks: true

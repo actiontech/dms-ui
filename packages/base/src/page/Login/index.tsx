@@ -42,7 +42,7 @@ const Login = () => {
   const [loading, { setTrue, setFalse }] = useBoolean();
 
   const navigate = useTypedNavigate();
-  const extraQueries = useTypedQuery();
+  const extractQueries = useTypedQuery();
   const login = (formData: LoginFormFieldValue) => {
     // #if [ee]
     if (!formData.userAgreement) {
@@ -67,7 +67,7 @@ const Login = () => {
               token
             })
           );
-          const encodedTarget = extraQueries(
+          const encodedTarget = extractQueries(
             ROUTE_PATHS.BASE.LOGIN.index
           )?.target;
 

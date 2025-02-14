@@ -2,7 +2,8 @@ import {
   TodoListOutlined,
   SignalFilled,
   ProfileSquareFilled,
-  RingOutlined
+  RingOutlined,
+  BookMarkOutlined
 } from '@actiontech/icons';
 import { QuickActionsStyleWrapper } from '../style';
 import { BasicToolTip, EmptyBox, useTypedNavigate } from '@actiontech/shared';
@@ -75,6 +76,13 @@ const QuickActions = () => {
         icon: (
           <ProfileSquareFilled width={18} height={18} color="currentColor" />
         )
+      },
+      {
+        key: 'knowledge',
+        title: t('dmsMenu.globalSettings.knowledge'),
+        path: ROUTE_PATHS.SQLE.KNOWLEDGE.index.path,
+        icon: <BookMarkOutlined width={18} height={18} color="currentColor" />,
+        permission: PERMISSIONS.PAGES.SQLE.KNOWLEDGE
       }
     ];
     return actionList.filter((item) => {
@@ -94,8 +102,10 @@ const QuickActions = () => {
             return (
               <BasicToolTip key={action.key} title={action.title}>
                 <div
-                  className={classNames('action-item', {
-                    'action-item-active': location.pathname === action.path
+                  className={classNames(`action-item ${action.key}`, {
+                    'action-item-active': location.pathname.startsWith(
+                      action.path
+                    )
                   })}
                   onClick={() => navigate(action.path)}
                 >

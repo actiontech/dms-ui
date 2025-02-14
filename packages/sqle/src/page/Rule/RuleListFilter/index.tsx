@@ -26,7 +26,7 @@ const RuleListFilter: React.FC<RuleListFilterProps> = ({
   bindProjects
 }) => {
   const { t } = useTranslation();
-  const extraQueries = useTypedQuery();
+  const extractQueries = useTypedQuery();
 
   const projectName = Form.useWatch('project_name', form);
   const filterRuleTemplate = Form.useWatch('filter_rule_template', form);
@@ -136,7 +136,7 @@ const RuleListFilter: React.FC<RuleListFilterProps> = ({
       form.setFieldValue('filter_db_type', res.data.data?.[0]?.db_type);
     });
 
-    const searchParams = extraQueries(ROUTE_PATHS.SQLE.RULE.index);
+    const searchParams = extractQueries(ROUTE_PATHS.SQLE.RULE.index);
 
     const projectNameInUrl = bindProjects.find(
       (v) => v.project_id === searchParams?.projectID

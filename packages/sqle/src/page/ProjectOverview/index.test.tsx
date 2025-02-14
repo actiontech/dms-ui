@@ -16,7 +16,7 @@ describe('page/ProjectOverview', () => {
     mockUseCurrentUser();
     mockUsePermission(
       {
-        moduleFeatureSupport: { sqlOptimization: true }
+        moduleFeatureSupport: { sqlOptimization: true, knowledge: false }
       },
       {
         useSpyOnMockHooks: true
@@ -53,7 +53,7 @@ describe('page/ProjectOverview', () => {
   it('render over view when sql optimization is not supported', async () => {
     mockUsePermission(
       {
-        moduleFeatureSupport: { sqlOptimization: false }
+        moduleFeatureSupport: { sqlOptimization: false, knowledge: false }
       },
       {
         useSpyOnMockHooks: true

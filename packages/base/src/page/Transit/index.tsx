@@ -22,10 +22,10 @@ const TARGET_DATA = (projectID: string): Record<string, string> => {
 const Transit: React.FC = () => {
   const navigate = useTypedNavigate();
   const { bindProjects } = useCurrentUser();
-  const extraQueries = useTypedQuery();
+  const extractQueries = useTypedQuery();
 
   useEffect(() => {
-    const searchParams = extraQueries(ROUTE_PATHS.BASE.TRANSIT.index);
+    const searchParams = extractQueries(ROUTE_PATHS.BASE.TRANSIT.index);
 
     const from = searchParams?.from;
     const to = searchParams?.to;
@@ -72,7 +72,7 @@ const Transit: React.FC = () => {
       console.error(`project name is undefined`);
       navigate(ROUTE_PATHS.BASE.HOME, { replace: true });
     }
-  }, [bindProjects, navigate, extraQueries]);
+  }, [bindProjects, navigate, extractQueries]);
 
   return <HeaderProgress />;
 };

@@ -8,6 +8,8 @@ import AuditResultMessage from '../../../../../../../../../components/AuditResul
 import { TaskAuditResultTreeStyleWrapper } from './style';
 import { DownOutlined } from '@actiontech/icons';
 import { CommonIconStyleWrapper } from '@actiontech/shared/lib/styleWrapper/element';
+import { parse2ReactRouterPath } from '@actiontech/shared';
+import { ROUTE_PATHS } from '@actiontech/shared/lib/data/routePaths';
 
 export interface AuditResultTreeProps {
   auditResult?: IAuditResult[];
@@ -109,7 +111,15 @@ const AuditResultTree: React.FC<AuditResultTreeProps> = ({ auditResult }) => {
                         showAnnotation
                         moreBtnLink={
                           item?.rule_name
-                            ? `/sqle/rule/knowledge/${item?.rule_name}/${item.db_type}`
+                            ? parse2ReactRouterPath(
+                                ROUTE_PATHS.SQLE.RULE_KNOWLEDGE.index,
+                                {
+                                  params: {
+                                    ruleName: item?.rule_name ?? '',
+                                    dbType: item.db_type ?? ''
+                                  }
+                                }
+                              )
                             : ''
                         }
                       />

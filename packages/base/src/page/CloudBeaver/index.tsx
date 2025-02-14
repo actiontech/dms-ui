@@ -21,14 +21,14 @@ import { ROUTE_PATHS } from '@actiontech/shared/lib/data/routePaths';
 const CloudBeaver = () => {
   const { t } = useTranslation();
   const cloudBeaverUrl = useRef('');
-  const extraQueries = useTypedQuery();
+  const extractQueries = useTypedQuery();
 
   const { data, loading } = useRequest(() => {
     return cloudBeaver.GetSQLQueryConfiguration().then((res) => {
       if (res?.data.data?.enable_sql_query) {
         cloudBeaverUrl.current = res?.data.data.sql_query_root_uri as string;
 
-        const params = extraQueries(ROUTE_PATHS.BASE.CLOUD_BEAVER.index);
+        const params = extractQueries(ROUTE_PATHS.BASE.CLOUD_BEAVER.index);
 
         if (params?.open_cloud_beaver === 'true') {
           window.open(cloudBeaverUrl.current);

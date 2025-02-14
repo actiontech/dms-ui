@@ -1003,6 +1003,16 @@ export interface IDriversResV1 {
   driver_name_list?: string[];
 }
 
+export interface IEdgeResponse {
+  from_id?: string;
+
+  is_directed?: boolean;
+
+  to_id?: string;
+
+  weight?: number;
+}
+
 export interface IEnumsValueResV1 {
   desc?: string;
 
@@ -1477,6 +1487,34 @@ export interface IGetInstancesTypePercentResV1 {
   code?: number;
 
   data?: IInstancesTypePercentV1;
+
+  message?: string;
+}
+
+export interface IGetKnowledgeBaseListRes {
+  code?: number;
+
+  data?: IKnowledgeBase[];
+
+  message?: string;
+
+  total_nums?: number;
+}
+
+export interface IGetKnowledgeBaseTagListRes {
+  code?: number;
+
+  data?: ITag[];
+
+  message?: string;
+
+  total_nums?: number;
+}
+
+export interface IGetKnowledgeGraphResp {
+  code?: number;
+
+  data?: IGraphResponse;
 
   message?: string;
 }
@@ -2091,6 +2129,12 @@ export interface IGlobalWorkflowStatisticsResV1 {
   total_nums?: number;
 }
 
+export interface IGraphResponse {
+  edges?: IEdgeResponse[];
+
+  nodes?: INodeResponse[];
+}
+
 export interface IHighPriorityConditionReq {
   key?: string;
 
@@ -2259,6 +2303,20 @@ export interface IInstancesTypePercentV1 {
   instance_type_percents?: IInstanceTypePercent[];
 }
 
+export interface IKnowledgeBase {
+  content?: string;
+
+  description?: string;
+
+  id?: number;
+
+  rule_name?: string;
+
+  tags?: ITag[];
+
+  title?: string;
+}
+
 export interface ILicenseItem {
   description?: string;
 
@@ -2313,6 +2371,14 @@ export type IModuleRedDots = IModuleRedDot[];
 
 export interface IModuleStatusRes {
   is_supported?: boolean;
+}
+
+export interface INodeResponse {
+  id?: string;
+
+  name?: string;
+
+  weight?: number;
 }
 
 export interface IObjectDiffResult {
@@ -3135,6 +3201,14 @@ export interface ITableMetas {
   err_message?: string;
 
   table_meta_items?: ITableMeta[];
+}
+
+export interface ITag {
+  id?: number;
+
+  name?: string;
+
+  sub_tags?: ITag[];
 }
 
 export interface ITargetReleaseInstance {

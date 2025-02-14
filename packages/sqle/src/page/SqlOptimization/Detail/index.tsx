@@ -5,7 +5,8 @@ import {
   SQLRenderer,
   ActionButton,
   useTypedParams,
-  CopyIcon
+  CopyIcon,
+  parse2ReactRouterPath
 } from '@actiontech/shared';
 import { Spin, Typography, Row, Col } from 'antd';
 import { useTranslation } from 'react-i18next';
@@ -134,7 +135,15 @@ const OptimizationDetail = () => {
                 return (
                   <TriggeredRuleStyleWrapper key={rule.rule_name}>
                     <Typography.Link
-                      href={`/sqle/rule/knowledge/${rule.rule_name}/${urlParams.dbType}`}
+                      href={parse2ReactRouterPath(
+                        ROUTE_PATHS.SQLE.RULE_KNOWLEDGE.index,
+                        {
+                          params: {
+                            ruleName: rule.rule_name ?? '',
+                            dbType: urlParams.dbType ?? ''
+                          }
+                        }
+                      )}
                       target="_blank"
                       className="rule-name"
                     >

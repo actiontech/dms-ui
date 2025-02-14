@@ -72,7 +72,7 @@ exports[`test Base/Nav/SideMenu/index mount and unmount component 1`] = `
                       class="ant-space-item"
                     >
                       <div
-                        class="action-item"
+                        class="action-item global-dashboard"
                       >
                         <svg
                           class="TodoListOutlined_svg__icon"
@@ -105,7 +105,7 @@ exports[`test Base/Nav/SideMenu/index mount and unmount component 1`] = `
                       class="ant-space-item"
                     >
                       <div
-                        class="action-item"
+                        class="action-item view-rule"
                       >
                         <svg
                           color="currentColor"
@@ -314,7 +314,7 @@ exports[`test Base/Nav/SideMenu/index mount and unmount component 2`] = `
                       class="ant-space-item"
                     >
                       <div
-                        class="action-item"
+                        class="action-item global-dashboard"
                       >
                         <svg
                           class="TodoListOutlined_svg__icon"
@@ -370,7 +370,7 @@ exports[`test Base/Nav/SideMenu/index mount and unmount component 2`] = `
                       class="ant-space-item"
                     >
                       <div
-                        class="action-item"
+                        class="action-item view-rule"
                       >
                         <svg
                           color="currentColor"
@@ -554,7 +554,7 @@ exports[`test Base/Nav/SideMenu/index mount and unmount component 3`] = `
                       class="ant-space-item"
                     >
                       <div
-                        class="action-item"
+                        class="action-item global-dashboard"
                       >
                         <svg
                           class="TodoListOutlined_svg__icon"
@@ -610,7 +610,7 @@ exports[`test Base/Nav/SideMenu/index mount and unmount component 3`] = `
                       class="ant-space-item"
                     >
                       <div
-                        class="action-item"
+                        class="action-item view-rule"
                       >
                         <svg
                           color="currentColor"
