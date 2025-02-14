@@ -11,6 +11,7 @@ import {
 } from '../style';
 import { useMemo, useState } from 'react';
 import { TagSelectorBarProps } from '../index.type';
+import classNames from 'classnames';
 
 const TagSelectorBar: React.FC<TagSelectorBarProps> = (props) => {
   const { t } = useTranslation();
@@ -20,7 +21,6 @@ const TagSelectorBar: React.FC<TagSelectorBarProps> = (props) => {
   >(props, {
     defaultValue: []
   });
-
   const [tagSearchText, setTagSearchText] = useState('');
 
   const { data: tagOptions } = useRequest(() =>
@@ -29,7 +29,8 @@ const TagSelectorBar: React.FC<TagSelectorBarProps> = (props) => {
         return (
           res.data.data?.map((tag) => ({
             label: tag.name,
-            value: tag.name
+            value: tag.name,
+            hidden: false
           })) ?? []
         );
       }
@@ -44,9 +45,12 @@ const TagSelectorBar: React.FC<TagSelectorBarProps> = (props) => {
 
   const filteredTagOptions = useMemo(() => {
     return (
-      tagOptions?.filter((option) =>
-        option.label?.toLowerCase().includes(tagSearchText.toLowerCase())
-      ) ?? []
+      tagOptions?.map((option) => ({
+        ...option,
+        hidden: !option.label
+          ?.toLowerCase()
+          .includes(tagSearchText.toLowerCase())
+      })) ?? []
     );
   }, [tagSearchText, tagOptions]);
 
@@ -79,7 +83,11 @@ const TagSelectorBar: React.FC<TagSelectorBarProps> = (props) => {
                 }}
               >
                 {filteredTagOptions.map((option) => (
-                  <Checkbox key={option.value} value={option.value}>
+                  <Checkbox
+                    key={option.value}
+                    value={option.value}
+                    className={classNames({ 'hidden-checkbox': option.hidden })}
+                  >
                     <span title={option.label}>{option.label}</span>
                   </Checkbox>
                 ))}

@@ -56,7 +56,7 @@ export const ResultWrapperStyleWrapper = styled('div')`
       font-size: 12px;
       color: ${({ theme }) => theme.sharedTheme.uiToken.colorTextTertiary};
       line-height: 1.6;
-      display: -webkit-box;
+      display: flex;
       overflow: hidden;
       text-overflow: ellipsis;
     }

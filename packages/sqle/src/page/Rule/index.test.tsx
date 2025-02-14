@@ -39,7 +39,8 @@ describe('sqle/Rule', () => {
     mockUsePermission(
       {
         moduleFeatureSupport: {
-          sqlOptimization: true
+          sqlOptimization: true,
+          knowledge: false
         }
       },
       {
@@ -244,7 +245,8 @@ describe('sqle/Rule', () => {
     mockUsePermission(
       {
         moduleFeatureSupport: {
-          sqlOptimization: true
+          sqlOptimization: true,
+          knowledge: false
         }
       },
       {
@@ -439,7 +441,8 @@ describe('sqle/Rule', () => {
     mockUsePermission(
       {
         moduleFeatureSupport: {
-          sqlOptimization: true
+          sqlOptimization: true,
+          knowledge: false
         }
       },
       {
