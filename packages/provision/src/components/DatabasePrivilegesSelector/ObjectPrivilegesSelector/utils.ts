@@ -1,7 +1,7 @@
 import { DefaultOptionType } from 'antd/es/select';
 import { IDataObjects, ObjectPrivilegeValues } from './index.type';
 import {
-  IDataPermissionForRole,
+  IDataPermission,
   IDBAccountDataPermission
 } from '@actiontech/shared/lib/api/provision/service/common';
 
@@ -100,8 +100,8 @@ export const generatePrivilegesSubmitDataByFormValues = (
   systemPrivileges: string[],
   objectPrivileges: ObjectPrivilegeValues[],
   dbServiceID: string
-): IDataPermissionForRole[] => {
-  const dataPrivileges: IDataPermissionForRole[] = [];
+): IDataPermission[] => {
+  const dataPrivileges: IDataPermission[] = [];
 
   systemPrivileges?.forEach((uid) => {
     dataPrivileges.push({

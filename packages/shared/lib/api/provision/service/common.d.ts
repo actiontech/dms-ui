@@ -7,6 +7,8 @@ import {
   GetUserAuthenticationTypeEnum,
   GetUserStatEnum,
   ListDBAccountStatusEnum,
+  ListDBServiceLastConnectionTestStatusEnum,
+  ListProjectProjectPriorityEnum,
   ListServiceDbTypeEnum,
   ListServiceTypeEnum,
   ListUserAuthenticationTypeEnum,
@@ -67,7 +69,7 @@ export interface IAccountStatics {
 }
 
 export interface IAddDBAccount {
-  data_permissions?: IDataPermissionForRole[];
+  data_permissions?: IDataPermission[];
 
   db_account: IDBAccount;
 
@@ -93,7 +95,7 @@ export interface IAddDBAccountReply {
 }
 
 export interface IAddDBRole {
-  data_permissions?: IDataPermissionForRole[];
+  data_permissions?: IDataPermission[];
 
   db_role_uids?: string[];
 
@@ -106,12 +108,6 @@ export interface IAddDBRoleReply {
   data?: {
     uid?: string;
   };
-
-  message?: string;
-}
-
-export interface IAddDBServicePreCheckReply {
-  code?: number;
 
   message?: string;
 }
@@ -192,6 +188,14 @@ export interface IAdditionalParam {
   type?: string;
 
   value?: string;
+}
+
+export interface IAuditPlanTypes {
+  audit_plan_id?: number;
+
+  desc?: string;
+
+  type?: string;
 }
 
 export interface IAuthGetAccountStaticsReply {
@@ -368,12 +372,6 @@ export interface IDataPermissionDifferent {
   original_data_permission?: string;
 }
 
-export interface IDataPermissionForRole {
-  data_object_uids: string[];
-
-  data_operation_uids: string[];
-}
-
 export interface IDataPermissionTemplateReply {
   name?: string;
 
@@ -386,26 +384,22 @@ export interface IDatabase {
   uid?: string;
 }
 
-export interface IDelDBServicePreCheckReply {
+export interface IDatabaseDriverOptions {
+  db_type?: string;
+
+  params?: IAdditionalParam[];
+}
+
+export interface IDatabaseDriverOptionsReply {
   code?: number;
+
+  data?: IDatabaseDriverOptions[];
 
   message?: string;
 }
 
 export interface IDelDataObjectSource {
   delete_mod: DelDataObjectSourceDeleteModEnum;
-}
-
-export interface IDelUserGroupPreCheckReply {
-  code?: number;
-
-  message?: string;
-}
-
-export interface IDelUserPreCheckReply {
-  code?: number;
-
-  message?: string;
 }
 
 export interface IDiscoveryDBAccountReply {
@@ -422,6 +416,10 @@ export interface IEnumsValue {
   desc?: string;
 
   value?: string;
+}
+
+export interface IGenAccessToken {
+  expiration_days?: string;
 }
 
 export interface IGenAccessTokenReply {
@@ -529,6 +527,8 @@ export interface IGetUser {
 
   is_admin?: boolean;
 
+  language?: string;
+
   name?: string;
 
   op_permissions?: IUidWithName[];
@@ -576,22 +576,8 @@ export interface IGetUsersFromDBServiceReply {
   message?: string;
 }
 
-export interface IIPluginDBService {
-  Business?: string;
-
-  DBType?: string;
-
-  Host?: string;
-
-  Name?: string;
-
-  Port?: string;
-
-  SQLERuleTemplateId?: string;
-
-  SQLERuleTemplateName?: string;
-
-  User?: string;
+export interface II18nStr {
+  [key: string]: string;
 }
 
 export interface IListAuthorizationEvent {
@@ -709,15 +695,29 @@ export interface IListDBRoleTipsReply {
 export interface IListDBService {
   additional_params?: IAdditionalParam[];
 
+  audit_plan_types?: IAuditPlanTypes[];
+
+  backup_max_rows?: number;
+
   business?: string;
 
   db_type?: string;
 
   desc?: string;
 
+  enable_backup?: boolean;
+
   host?: string;
 
+  instance_audit_plan_id?: number;
+
   is_enable_masking?: boolean;
+
+  last_connection_test_error_message?: string;
+
+  last_connection_test_status?: ListDBServiceLastConnectionTestStatusEnum;
+
+  last_connection_test_time?: string;
 
   maintenance_times?: IMaintenanceTime[];
 
@@ -931,6 +931,8 @@ export interface IListProject {
 
   name?: string;
 
+  project_priority?: ListProjectProjectPriorityEnum;
+
   uid?: string;
 }
 
@@ -1025,9 +1027,9 @@ export interface IMaintenanceTime {
 }
 
 export interface INotification {
-  notification_body?: string;
+  notification_body?: II18nStr;
 
-  notification_subject?: string;
+  notification_subject?: II18nStr;
 
   user_uids?: string[];
 }
@@ -1117,13 +1119,9 @@ export interface IPlatformManaged {
 }
 
 export interface IPlugin {
-  add_db_service_pre_check_url?: string;
+  get_database_driver_logos_url?: string;
 
-  del_db_service_pre_check_url?: string;
-
-  del_user_group_pre_check_url?: string;
-
-  del_user_pre_check_url?: string;
+  get_database_driver_options_url?: string;
 
   name?: string;
 
@@ -1136,10 +1134,18 @@ export interface IRegisterDMSPluginReply {
   message?: string;
 }
 
+export interface IRegisterDMSPluginReq {
+  plugin?: IPlugin;
+}
+
 export interface IRegisterDMSProxyTargetReply {
   code?: number;
 
   message?: string;
+}
+
+export interface IRegisterDMSProxyTargetReq {
+  dms_proxy_target?: IDMSProxyTarget;
 }
 
 export interface ISQLEConfig {
@@ -1209,7 +1215,7 @@ export interface IUidWithName {
 }
 
 export interface IUpdateDBAccount {
-  data_permissions?: IDataPermissionForRole[];
+  data_permissions?: IDataPermission[];
 
   db_roles?: string[];
 
@@ -1298,6 +1304,10 @@ export interface IWebHookSendMessageReply {
   code?: number;
 
   message?: string;
+}
+
+export interface IWebHookSendMessageReq {
+  webhook_message?: IWebHooksMessage;
 }
 
 export interface IWebHooksMessage {

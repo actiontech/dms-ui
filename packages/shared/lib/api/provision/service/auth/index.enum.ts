@@ -1,33 +1,5 @@
 /* tslint:disable no-duplicate-string */
 
-export enum AuditListAuthorizationEventsOrderByEnum {
-  'generated_time' = 'generated_time'
-}
-
-export enum AuditListDataObjectServiceEventsOrderByEnum {
-  'generated_time' = 'generated_time'
-}
-
-export enum AuditListDataPermissionTemplateEventsOrderByEnum {
-  'generated_time' = 'generated_time'
-}
-
-export enum AuthListDataObjectSourcesOrderByEnum {
-  'name' = 'name'
-}
-
-export enum AuthListDataOperationSetsOrderByEnum {
-  'name' = 'name'
-}
-
-export enum AuthListDataOperationSetsFilterByDbTypeEnum {
-  'MySQL' = 'MySQL',
-
-  'OceanBaseMySQL' = 'OceanBaseMySQL',
-
-  'Oracle' = 'Oracle'
-}
-
 export enum OperateDataResourceHandleDataResourceTypeEnum {
   'db_service' = 'db_service',
 
@@ -63,7 +35,7 @@ export enum AuthListOperationsOrderByEnum {
 export enum AuthListOperationsDbTypeEnum {
   'MySQL' = 'MySQL',
 
-  'OceanBaseMySQL' = 'OceanBaseMySQL',
+  'OceanBase For MySQL' = 'OceanBase For MySQL',
 
   'Oracle' = 'Oracle'
 }
