@@ -13,7 +13,8 @@ import {
   getFileFromUploadChangeEvent,
   jsonParse,
   translateTimeForRequest,
-  findDuplicateKeys
+  findDuplicateKeys,
+  paramsSerializer
 } from '../Common';
 import { act } from '@testing-library/react';
 import 'blob-polyfill';
@@ -331,5 +332,10 @@ describe('utils/Common', () => {
       expect(result.length).toBe(0);
       expect(result).toEqual([]);
     });
+  });
+
+  it('should stringify params', () => {
+    expect(paramsSerializer({ a: 1, b: 2 })).toBe('a=1&b=2');
+    expect(paramsSerializer({ a: 1, b: [2, 3, 4] })).toBe('a=1&b=2&b=3&b=4');
   });
 });
