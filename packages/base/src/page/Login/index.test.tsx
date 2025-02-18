@@ -1,6 +1,6 @@
 import { act, cleanup, fireEvent, screen } from '@testing-library/react';
 import { useDispatch } from 'react-redux';
-import { useNavigate, useLocation, useSearchParams } from 'react-router-dom';
+import { useNavigate, useSearchParams } from 'react-router-dom';
 import MockDate from 'mockdate';
 import { superRender } from '../../testUtils/customRender';
 import dms from '../../testUtils/mockApi/global';
@@ -12,9 +12,12 @@ import { eventEmitter } from '@actiontech/shared/lib/utils/EventEmitter';
 import Login from '.';
 import {
   CompanyNoticeDisplayStatusEnum,
-  StorageKey
+  StorageKey,
+  SystemRole
 } from '@actiontech/shared/lib/enum';
 import { OPEN_CLOUD_BEAVER_URL_PARAM_NAME } from '@actiontech/shared/lib/data/routePaths';
+import system from '../../testUtils/mockApi/system';
+import { mockGetLoginBasicConfigurationData } from '../../testUtils/mockApi/system/data';
 
 jest.mock('react-router-dom', () => {
   return {
@@ -33,6 +36,7 @@ describe('page/Login-ee', () => {
   const navigateSpy = jest.fn();
   const assignMock = jest.fn();
   const useSearchParamsSpy: jest.Mock = useSearchParams as jest.Mock;
+  let requestGetOauth2Tip: jest.SpyInstance;
 
   const customRender = (params = {}) => {
     return superRender(<Login />, undefined, { initStore: params });
@@ -44,24 +48,28 @@ describe('page/Login-ee', () => {
     jest.useFakeTimers();
     useSearchParamsSpy.mockReturnValue([new URLSearchParams()]);
     MockDate.set('2023-12-19 12:00:00');
+    requestGetOauth2Tip = system.getLoginTips();
     dms.mockAllApi();
   });
 
   afterEach(() => {
     jest.useRealTimers();
+    jest.clearAllMocks();
+    jest.clearAllTimers();
     assignMock.mockClear();
     cleanup();
     MockDate.reset();
   });
 
   it('render login snap', async () => {
-    const requestGetOauth2Tip = dms.getOauth2Tips();
     const { baseElement } = customRender();
     await act(async () => jest.advanceTimersByTime(3300));
     expect(requestGetOauth2Tip).toHaveBeenCalledTimes(1);
     expect(screen.queryByText('已阅读并同意')).toBeInTheDocument();
     expect(screen.queryByText('用户协议')).toBeInTheDocument();
-    expect(screen.queryByText('Login With Oauth2')).toBeInTheDocument();
+    expect(
+      screen.queryByText(mockGetLoginBasicConfigurationData.oauth2_login_tip)
+    ).toBeInTheDocument();
     expect(baseElement).toMatchSnapshot();
 
     const otherLoginBtn = getBySelector('.other-login-btn', baseElement);
@@ -69,10 +77,13 @@ describe('page/Login-ee', () => {
   });
 
   it('render login when return no auth', async () => {
-    const requestGetOauth2Tip = dms.getOauth2Tips();
     requestGetOauth2Tip.mockImplementation(() =>
       createSpySuccessResponse({
-        data: { enable_oauth2: false, login_tip: 'Login no Oauth2' }
+        data: {
+          enable_oauth2: false,
+          oauth2_login_tip: 'Login no Oauth2',
+          login_button_text: ''
+        }
       })
     );
 
@@ -101,11 +112,21 @@ describe('page/Login-ee', () => {
   });
 
   describe('render login success when has location search val', () => {
+    beforeEach(() => {
+      requestGetOauth2Tip.mockImplementation(() =>
+        createSpySuccessResponse({
+          data: {
+            login_button_text: '登录',
+            enable_oauth2: true,
+            oauth2_login_tip: 'Login With Oauth2'
+          }
+        })
+      );
+    });
+
     it('render with other search val', async () => {
-      const requestGetOauth2Tip = dms.getOauth2Tips();
       const requestLogin = dms.addSession();
       const LocalStorageWrapperSet = jest.spyOn(LocalStorageWrapper, 'set');
-
       useSearchParamsSpy.mockReturnValue([
         new URLSearchParams({
           target: encodeURIComponent('/index1')
@@ -156,10 +177,8 @@ describe('page/Login-ee', () => {
     });
 
     it('render with other search val', async () => {
-      const requestGetOauth2Tip = dms.getOauth2Tips();
       const requestLogin = dms.addSession();
       const LocalStorageWrapperSet = jest.spyOn(LocalStorageWrapper, 'set');
-
       useSearchParamsSpy.mockReturnValue([
         new URLSearchParams({
           target: encodeURIComponent('/project/700300/cloud-beaver')
@@ -212,10 +231,8 @@ describe('page/Login-ee', () => {
     });
 
     it('render search value with search params', async () => {
-      const requestGetOauth2Tip = dms.getOauth2Tips();
       const requestLogin = dms.addSession();
       const LocalStorageWrapperSet = jest.spyOn(LocalStorageWrapper, 'set');
-
       useSearchParamsSpy.mockReturnValue([
         new URLSearchParams({
           target: encodeURIComponent('/transit?from=cloudbeaver')
@@ -259,13 +276,38 @@ describe('page/Login-ee', () => {
     });
   });
 
+  it('should enable login button when user is admin regardless of disable_user_pwd_login setting', async () => {
+    requestGetOauth2Tip.mockImplementation(() =>
+      createSpySuccessResponse({
+        data: {
+          login_button_text: '登录',
+          enable_oauth2: true,
+          oauth2_login_tip: 'Login With Oauth2',
+          disable_user_pwd_login: true
+        }
+      })
+    );
+
+    superRender(<Login />);
+    await act(async () => jest.advanceTimersByTime(3000));
+
+    const usernameInput = getBySelector('#username');
+    const loginButton = screen.getByText('登 录').closest('button');
+
+    expect(loginButton).toBeDisabled();
+
+    fireEvent.change(usernameInput, { target: { value: SystemRole.admin } });
+    await act(async () => jest.advanceTimersByTime(0));
+
+    expect(loginButton).not.toBeDisabled();
+  });
+
   it('render login snap when current browser is not chrome', async () => {
     const eventEmitSpy = jest.spyOn(eventEmitter, 'emit');
     const userAgentGetter = jest.spyOn(window.navigator, 'userAgent', 'get');
     userAgentGetter.mockReturnValue(
       'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/16.1 Safari/605.1.15'
     );
-    const requestGetOauth2Tip = dms.getOauth2Tips();
     customRender();
     await act(async () => jest.advanceTimersByTime(3300));
     expect(requestGetOauth2Tip).toHaveBeenCalledTimes(1);
@@ -278,7 +320,6 @@ describe('page/Login-ee', () => {
     userAgentGetter.mockReturnValue(
       'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.0.0 Safari/537.36'
     );
-    const requestGetOauth2Tip = dms.getOauth2Tips();
     customRender();
     await act(async () => jest.advanceTimersByTime(3300));
     expect(requestGetOauth2Tip).toHaveBeenCalledTimes(1);
@@ -291,7 +332,6 @@ describe('page/Login-ee', () => {
     userAgentGetter.mockReturnValue(
       'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.0.0 Safari/537.36'
     );
-    const requestGetOauth2Tip = dms.getOauth2Tips();
     customRender();
     await act(async () => jest.advanceTimersByTime(3300));
     expect(requestGetOauth2Tip).toHaveBeenCalledTimes(1);

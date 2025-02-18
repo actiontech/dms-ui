@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`base/System/LoginConnection-ce render snap 1`] = `
+exports[`base/System/LoginConnection render snap 1`] = `
 <body>
   <div>
     <section
@@ -15,7 +15,7 @@ exports[`base/System/LoginConnection-ce render snap 1`] = `
           <div
             class="ant-space-item"
           >
-            登录对接
+            登录配置
           </div>
         </div>
       </div>
@@ -1414,14 +1414,14 @@ exports[`base/System/LoginConnection-ce render snap 1`] = `
                     >
                       <label
                         class="ant-form-item-no-colon"
-                        for="loginButtonText"
+                        for="oauth2ButtonText"
                         title=""
                       >
                         <div
                           class="label-cont-custom"
                         >
                           <div>
-                            登录按钮文字
+                            OAuth2.0 跳转按钮文字
                           </div>
                           <div
                             class="tip-content-box"
@@ -1442,8 +1442,8 @@ exports[`base/System/LoginConnection-ce render snap 1`] = `
                         >
                           <input
                             class="ant-input css-dev-only-do-not-override-ywkr0o basic-input-wrapper css-1pd1cd5"
-                            id="loginButtonText"
-                            placeholder="请输入登录按钮文字"
+                            id="oauth2ButtonText"
+                            placeholder="请输入OAuth2.0 跳转按钮文字"
                             type="text"
                             value=""
                           />
@@ -1640,6 +1640,155 @@ exports[`base/System/LoginConnection-ce render snap 1`] = `
               </div>
             </form>
             <div />
+          </div>
+        </div>
+      </div>
+      <div
+        class="ant-spin-nested-loading css-dev-only-do-not-override-txh9fw"
+      >
+        <div>
+          <div
+            aria-busy="true"
+            aria-live="polite"
+            class="ant-spin ant-spin-spinning css-dev-only-do-not-override-txh9fw"
+          >
+            <span
+              class="ant-spin-dot ant-spin-dot-spin"
+            >
+              <i
+                class="ant-spin-dot-item"
+              />
+              <i
+                class="ant-spin-dot-item"
+              />
+              <i
+                class="ant-spin-dot-item"
+              />
+              <i
+                class="ant-spin-dot-item"
+              />
+            </span>
+          </div>
+        </div>
+        <div
+          class="ant-spin-container ant-spin-blur"
+        >
+          <div
+            class="ant-row ant-row-space-between ant-row-middle css-19fu9ar css-dev-only-do-not-override-txh9fw"
+          >
+            <div
+              class="ant-col ant-col-11 config-item-label css-dev-only-do-not-override-txh9fw"
+            >
+              <div
+                class="config-item-label"
+              >
+                <div
+                  class="title"
+                >
+                  登录按钮文字
+                </div>
+                <div
+                  class="tips"
+                >
+                  login页面登录按钮文字
+                </div>
+              </div>
+            </div>
+            <div
+              class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center config-item-filed"
+            >
+              <div
+                class="ant-space-item"
+                style="margin-right: 8px;"
+              >
+                -
+              </div>
+              <div
+                class="ant-space-item"
+              >
+                <button
+                  class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default ant-btn-icon-only config-item-filed-edit-button basic-button-wrapper css-geipcv"
+                  hidden=""
+                  type="button"
+                >
+                  <span
+                    class="ant-btn-icon"
+                  >
+                    <svg
+                      height="16"
+                      viewBox="0 0 16 16"
+                      width="16"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M6.162 12.667H14V14H2v-2.829l6.6-6.6 2.828 2.83zm3.38-9.038 1.415-1.414a.667.667 0 0 1 .942 0L13.785 4.1a.667.667 0 0 1 0 .942l-1.414 1.414z"
+                        fill="#8A8F99"
+                      />
+                    </svg>
+                  </span>
+                </button>
+              </div>
+            </div>
+          </div>
+          <div
+            class="ant-row ant-row-space-between ant-row-middle css-19fu9ar css-dev-only-do-not-override-txh9fw"
+          >
+            <div
+              class="ant-col ant-col-11 config-item-label css-dev-only-do-not-override-txh9fw"
+            >
+              <div
+                class="config-item-label"
+              >
+                <div
+                  class="title"
+                >
+                  是否禁用账密登录
+                </div>
+                <div
+                  class="tips"
+                >
+                  禁止除管理员外的普通用户通过账号和密码登录
+                </div>
+              </div>
+            </div>
+            <div
+              class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center config-item-filed"
+            >
+              <div
+                class="ant-space-item"
+              >
+                <div
+                  class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
+                >
+                  <div
+                    class="ant-space-item"
+                  >
+                    <button
+                      aria-checked="false"
+                      class="ant-switch basic-switch-wrapper css-g6dhbn css-dev-only-do-not-override-txh9fw ant-switch-disabled"
+                      data-testid="password-disabled-login-switch-disabled-mode"
+                      disabled=""
+                      role="switch"
+                      type="button"
+                    >
+                      <div
+                        class="ant-switch-handle"
+                      />
+                      <span
+                        class="ant-switch-inner"
+                      >
+                        <span
+                          class="ant-switch-inner-checked"
+                        />
+                        <span
+                          class="ant-switch-inner-unchecked"
+                        />
+                      </span>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -1648,7 +1797,7 @@ exports[`base/System/LoginConnection-ce render snap 1`] = `
 </body>
 `;
 
-exports[`base/System/LoginConnection-ce render snap 2`] = `
+exports[`base/System/LoginConnection render snap 2`] = `
 <body>
   <div>
     <section
@@ -1663,7 +1812,7 @@ exports[`base/System/LoginConnection-ce render snap 2`] = `
           <div
             class="ant-space-item"
           >
-            登录对接
+            登录配置
           </div>
         </div>
       </div>
@@ -3014,14 +3163,14 @@ exports[`base/System/LoginConnection-ce render snap 2`] = `
                     >
                       <label
                         class="ant-form-item-no-colon"
-                        for="loginButtonText"
+                        for="oauth2ButtonText"
                         title=""
                       >
                         <div
                           class="label-cont-custom"
                         >
                           <div>
-                            登录按钮文字
+                            OAuth2.0 跳转按钮文字
                           </div>
                           <div
                             class="tip-content-box"
@@ -3042,8 +3191,8 @@ exports[`base/System/LoginConnection-ce render snap 2`] = `
                         >
                           <input
                             class="ant-input css-dev-only-do-not-override-ywkr0o basic-input-wrapper css-1pd1cd5"
-                            id="loginButtonText"
-                            placeholder="请输入登录按钮文字"
+                            id="oauth2ButtonText"
+                            placeholder="请输入OAuth2.0 跳转按钮文字"
                             type="text"
                             value=""
                           />
@@ -3240,6 +3389,131 @@ exports[`base/System/LoginConnection-ce render snap 2`] = `
               </div>
             </form>
             <div />
+          </div>
+        </div>
+      </div>
+      <div
+        class="ant-spin-nested-loading css-dev-only-do-not-override-txh9fw"
+      >
+        <div
+          class="ant-spin-container"
+        >
+          <div
+            class="ant-row ant-row-space-between ant-row-middle css-19fu9ar css-dev-only-do-not-override-txh9fw"
+          >
+            <div
+              class="ant-col ant-col-11 config-item-label css-dev-only-do-not-override-txh9fw"
+            >
+              <div
+                class="config-item-label"
+              >
+                <div
+                  class="title"
+                >
+                  登录按钮文字
+                </div>
+                <div
+                  class="tips"
+                >
+                  login页面登录按钮文字
+                </div>
+              </div>
+            </div>
+            <div
+              class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center config-item-filed"
+            >
+              <div
+                class="ant-space-item"
+                style="margin-right: 8px;"
+              >
+                Login
+              </div>
+              <div
+                class="ant-space-item"
+              >
+                <button
+                  class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default ant-btn-icon-only config-item-filed-edit-button basic-button-wrapper css-geipcv"
+                  hidden=""
+                  type="button"
+                >
+                  <span
+                    class="ant-btn-icon"
+                  >
+                    <svg
+                      height="16"
+                      viewBox="0 0 16 16"
+                      width="16"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M6.162 12.667H14V14H2v-2.829l6.6-6.6 2.828 2.83zm3.38-9.038 1.415-1.414a.667.667 0 0 1 .942 0L13.785 4.1a.667.667 0 0 1 0 .942l-1.414 1.414z"
+                        fill="#8A8F99"
+                      />
+                    </svg>
+                  </span>
+                </button>
+              </div>
+            </div>
+          </div>
+          <div
+            class="ant-row ant-row-space-between ant-row-middle css-19fu9ar css-dev-only-do-not-override-txh9fw"
+          >
+            <div
+              class="ant-col ant-col-11 config-item-label css-dev-only-do-not-override-txh9fw"
+            >
+              <div
+                class="config-item-label"
+              >
+                <div
+                  class="title"
+                >
+                  是否禁用账密登录
+                </div>
+                <div
+                  class="tips"
+                >
+                  禁止除管理员外的普通用户通过账号和密码登录
+                </div>
+              </div>
+            </div>
+            <div
+              class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center config-item-filed"
+            >
+              <div
+                class="ant-space-item"
+              >
+                <div
+                  class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
+                >
+                  <div
+                    class="ant-space-item"
+                  >
+                    <button
+                      aria-checked="false"
+                      class="ant-switch basic-switch-wrapper css-g6dhbn css-dev-only-do-not-override-txh9fw ant-switch-disabled"
+                      data-testid="password-disabled-login-switch-disabled-mode"
+                      disabled=""
+                      role="switch"
+                      type="button"
+                    >
+                      <div
+                        class="ant-switch-handle"
+                      />
+                      <span
+                        class="ant-switch-inner"
+                      >
+                        <span
+                          class="ant-switch-inner-checked"
+                        />
+                        <span
+                          class="ant-switch-inner-unchecked"
+                        />
+                      </span>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>

@@ -9,6 +9,8 @@ import {
   IGetLicenseReply,
   ICheckLicenseReply,
   IGetLicenseUsageReply,
+  IUpdateLoginConfigurationReq,
+  IGetLoginTipsReply,
   IGetOauth2ConfigurationResDataReply,
   IOauth2ConfigurationReq,
   IGetSMTPConfigurationReply,
@@ -61,6 +63,13 @@ export interface ICheckLicenseParams {
 export interface ICheckLicenseReturn extends ICheckLicenseReply {}
 
 export interface IGetLicenseUsageReturn extends IGetLicenseUsageReply {}
+
+export interface IUpdateLoginConfigurationParams
+  extends IUpdateLoginConfigurationReq {}
+
+export interface IUpdateLoginConfigurationReturn extends IGenericResp {}
+
+export interface IGetLoginTipsReturn extends IGetLoginTipsReply {}
 
 export interface IGetOauth2ConfigurationReturn
   extends IGetOauth2ConfigurationResDataReply {}

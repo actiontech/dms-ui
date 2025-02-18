@@ -30,11 +30,12 @@ import {
   PERMISSIONS,
   PermissionControl
 } from '@actiontech/shared/lib/features';
+import { useLoginConnectionContext } from '../context';
 
 const Oauth = () => {
   const { t } = useTranslation();
   const { baseTheme } = useThemeStyleData();
-
+  const { setOAuthEnabled } = useLoginConnectionContext();
   const {
     form,
     renderConfigForm,
@@ -58,6 +59,7 @@ const Oauth = () => {
     {
       onSuccess(res) {
         if (res) {
+          setOAuthEnabled(!!res.enable_oauth2);
           form.setFieldsValue({
             enable: !!res.enable_oauth2
           });
@@ -101,7 +103,7 @@ const Oauth = () => {
       server_user_id_url: value.serverUserIdUrl,
       server_logout_url: value.serverLayoutUrl,
       access_token_tag: value.accessTokenKeyName,
-      login_tip: value.loginButtonText,
+      login_tip: value.oauth2ButtonText,
       user_id_tag: value.userIdKeyName,
       user_email_tag: value.userEmailTag,
       user_wechat_tag: value.userWechatTag,
@@ -141,7 +143,7 @@ const Oauth = () => {
       serverLayoutUrl: oauthConfig?.server_logout_url,
       scopes: oauthConfig?.scopes?.join(','),
       accessTokenKeyName: oauthConfig?.access_token_tag,
-      loginButtonText: oauthConfig?.login_tip,
+      oauth2ButtonText: oauthConfig?.login_tip,
       userIdKeyName: oauthConfig?.user_id_tag,
       userEmailTag: oauthConfig?.user_email_tag,
       userWechatTag: oauthConfig?.user_wechat_tag,
@@ -203,6 +205,25 @@ const Oauth = () => {
           label: t('dmsSystem.oauth.clientHost'),
           span: 3,
           dataIndex: 'client_host',
+          hidden: !oauthConfig?.enable_oauth2
+        },
+        {
+          label: (
+            <BasicToolTip
+              title={t('dmsSystem.oauth.oauth2ButtonTextTips')}
+              suffixIcon={
+                <InfoCircleOutlined
+                  width={14}
+                  height={14}
+                  color={baseTheme.icon.system.basicTitleTips}
+                />
+              }
+            >
+              {t('dmsSystem.oauth.oauth2ButtonText')}
+            </BasicToolTip>
+          ),
+          span: 3,
+          dataIndex: 'login_tip',
           hidden: !oauthConfig?.enable_oauth2
         },
         {
@@ -320,25 +341,6 @@ const Oauth = () => {
           ),
           span: 3,
           dataIndex: 'user_wechat_tag',
-          hidden: !oauthConfig?.enable_oauth2
-        },
-        {
-          label: (
-            <BasicToolTip
-              title={t('dmsSystem.oauth.loginButtonTextTips')}
-              suffixIcon={
-                <InfoCircleOutlined
-                  width={14}
-                  height={14}
-                  color={baseTheme.icon.system.basicTitleTips}
-                />
-              }
-            >
-              {t('dmsSystem.oauth.loginButtonText')}
-            </BasicToolTip>
-          ),
-          span: 3,
-          dataIndex: 'login_tip',
           hidden: !oauthConfig?.enable_oauth2
         },
         {
