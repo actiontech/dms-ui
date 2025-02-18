@@ -21,6 +21,9 @@ import {
   ICheckLicenseParams,
   ICheckLicenseReturn,
   IGetLicenseUsageReturn,
+  IUpdateLoginConfigurationParams,
+  IUpdateLoginConfigurationReturn,
+  IGetLoginTipsReturn,
   IGetOauth2ConfigurationReturn,
   IUpdateOauth2ConfigurationParams,
   IUpdateOauth2ConfigurationReturn,
@@ -155,6 +158,26 @@ class ConfigurationService extends ServiceBase {
   public GetLicenseUsage(options?: AxiosRequestConfig) {
     return this.get<IGetLicenseUsageReturn>(
       '/v1/dms/configurations/license/usage',
+      undefined,
+      options
+    );
+  }
+
+  public UpdateLoginConfiguration(
+    params: IUpdateLoginConfigurationParams,
+    options?: AxiosRequestConfig
+  ) {
+    const paramsData = this.cloneDeep(params);
+    return this.patch<IUpdateLoginConfigurationReturn>(
+      '/v1/dms/configurations/login',
+      paramsData,
+      options
+    );
+  }
+
+  public GetLoginTips(options?: AxiosRequestConfig) {
+    return this.get<IGetLoginTipsReturn>(
+      '/v1/dms/configurations/login/tips',
       undefined,
       options
     );

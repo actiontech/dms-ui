@@ -21,17 +21,23 @@ import useThemeStyleData from '../../hooks/useThemeStyleData';
 import { LocalStorageWrapper } from '@actiontech/shared';
 import {
   StorageKey,
-  CompanyNoticeDisplayStatusEnum
+  CompanyNoticeDisplayStatusEnum,
+  SystemRole
 } from '@actiontech/shared/lib/enum';
 import {
   OPEN_CLOUD_BEAVER_URL_PARAM_NAME,
   ROUTE_PATHS
 } from '@actiontech/shared/lib/data/routePaths';
+import { ConfigurationService } from '@actiontech/shared/lib/api';
+import { useMemo } from 'react';
 
 const Login = () => {
   const { t } = useTranslation();
 
   const { baseTheme } = useThemeStyleData();
+  const [form] = Form.useForm<LoginFormFieldValue>();
+
+  const username = Form.useWatch('username', form);
 
   useBrowserVersionTips();
 
@@ -96,18 +102,28 @@ const Login = () => {
       });
   };
 
-  const { run: getOauth2Tips, data: oauthConfig } = useRequest(
+  const { run: getLoginBasicConfig, data: loginBasicConfig } = useRequest(
     () => {
-      return OAuth2.GetOauth2Tips().then((res) => res.data?.data ?? {});
+      return ConfigurationService.GetLoginTips().then(
+        (res) => res.data?.data ?? {}
+      );
     },
     {
       manual: true
     }
   );
 
+  const disabledLoginButton = useMemo(() => {
+    if (username === SystemRole.admin) {
+      return false;
+    }
+
+    return !!loginBasicConfig?.disable_user_pwd_login;
+  }, [loginBasicConfig?.disable_user_pwd_login, username]);
+
   // #if [ee]
   useEffect(() => {
-    getOauth2Tips();
+    getLoginBasicConfig();
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
   // #endif
@@ -116,6 +132,7 @@ const Login = () => {
     <LoginLayout>
       {contextHolder}
       <Form
+        form={form}
         onFinish={login}
         initialValues={{
           userAgreement: true
@@ -185,12 +202,13 @@ const Login = () => {
           className="login-btn"
           htmlType="submit"
           loading={loading}
+          disabled={disabledLoginButton}
         >
-          {t('dmsLogin.login')}
+          {loginBasicConfig?.login_button_text || t('dmsLogin.login')}
         </BasicButton>
-        {oauthConfig?.enable_oauth2 ? (
+        {loginBasicConfig?.enable_oauth2 ? (
           <BasicButton className="other-login-btn" href="/v1/dms/oauth2/link">
-            {oauthConfig?.login_tip}
+            {loginBasicConfig?.oauth2_login_tip}
           </BasicButton>
         ) : null}
       </Form>

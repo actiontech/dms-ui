@@ -249,7 +249,7 @@ exports[`page/Login-ee render login snap 1`] = `
               type="submit"
             >
               <span>
-                登 录
+                Login
               </span>
             </button>
             <a
@@ -257,7 +257,7 @@ exports[`page/Login-ee render login snap 1`] = `
               href="/v1/dms/oauth2/link"
             >
               <span>
-                Login With Oauth2
+                Oauth2 Login
               </span>
             </a>
           </form>
