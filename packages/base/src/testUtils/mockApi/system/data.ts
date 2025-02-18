@@ -97,3 +97,10 @@ export const mockCodingConfigurationData = {
   coding_url: 'https://g-izbz2140.coding.net/',
   is_coding_enabled: true
 };
+
+export const mockGetLoginBasicConfigurationData = {
+  login_button_text: 'Login',
+  disable_user_pwd_login: false,
+  oauth2_login_tip: 'Oauth2 Login',
+  enable_oauth2: true
+};
