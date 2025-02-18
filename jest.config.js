@@ -31,6 +31,12 @@ module.exports = {
     '@uiw/react-md-editor':
       '<rootDir>/packages/shared/lib/testUtil/mockEditor.jsx',
     '@actiontech/(.*)': '<rootDir>/packages/$1',
+    '@react-sigma/core(.*)$':
+      '<rootDir>/packages/shared/lib/testUtil/mockSigmaCore.tsx',
+    '@react-sigma/graph-search$':
+      '<rootDir>/packages/shared/lib/testUtil/mockSigmaGraphSearch.tsx',
+    '@sigma/node-image$':
+      '<rootDir>/packages/shared/lib/testUtil/mockSigmaNodeImage.tsx',
     ...pathsToModuleNameMapper(compilerOptions.paths)
   },
   collectCoverageFrom: [

@@ -1,0 +1,107 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Knowledge render init snap 1`] = `
+<body>
+  <div>
+    <div
+      class="actiontech-page-header-namespace css-1xspr0w"
+    >
+      <div
+        class="title"
+      >
+        知识库
+      </div>
+      <div
+        class="extra"
+      />
+    </div>
+    <section
+      class="css-1jnxkxd"
+    >
+      <div
+        class="css-o4a44a"
+      >
+        <div
+          class="input-wrapper"
+        >
+          <textarea
+            class="ant-input ant-input-borderless css-dev-only-do-not-override-txh9fw basic-input-wrapper css-1pd1cd5"
+            placeholder="请输入关键字搜索你感兴趣的SQL语法"
+            style="overflow-y: hidden; resize: none;"
+          />
+          <div
+            class="search-icon"
+          >
+            <svg
+              height="20"
+              viewBox="0 0 14 14"
+              width="20"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="m10.518 9.693 2.499 2.498-.826.825-2.498-2.498a5.252 5.252 0 0 1-8.527-4.101 5.25 5.25 0 0 1 5.25-5.25 5.252 5.252 0 0 1 4.102 8.526m-1.17-.433a4.082 4.082 0 0 0-2.931-6.927 4.08 4.08 0 0 0-4.084 4.084 4.082 4.082 0 0 0 6.927 2.93z"
+              />
+            </svg>
+          </div>
+        </div>
+      </div>
+      <div
+        class="css-1c94q4z"
+      >
+        <div
+          class="ant-spin-nested-loading css-dev-only-do-not-override-txh9fw"
+        >
+          <div>
+            <div
+              aria-busy="true"
+              aria-live="polite"
+              class="ant-spin ant-spin-spinning ant-spin-show-text css-dev-only-do-not-override-txh9fw"
+            >
+              <span
+                class="ant-spin-dot ant-spin-dot-spin"
+              >
+                <i
+                  class="ant-spin-dot-item"
+                />
+                <i
+                  class="ant-spin-dot-item"
+                />
+                <i
+                  class="ant-spin-dot-item"
+                />
+                <i
+                  class="ant-spin-dot-item"
+                />
+              </span>
+              <div
+                class="ant-spin-text"
+              >
+                加载知识图谱中...
+              </div>
+            </div>
+          </div>
+          <div
+            class="ant-spin-container ant-spin-blur"
+          />
+        </div>
+      </div>
+    </section>
+  </div>
+  <textarea
+    aria-hidden="true"
+    style="letter-spacing:normal;line-height:1.5714285714285714;padding-top:4px;padding-bottom:4px;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Arial,'Noto Sans',sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol','Noto Color Emoji';font-weight:;font-size:14px;font-variant:;text-rendering:auto;text-transform:none;width:100%;text-indent:0;padding-left:11px;padding-right:11px;border-width:;box-sizing:border-box;word-break:;white-space:pre-wrap;
+  min-height:0 !important;
+  max-height:none !important;
+  height:0 !important;
+  visibility:hidden !important;
+  overflow:hidden !important;
+  position:absolute !important;
+  z-index:-1000 !important;
+  top:0 !important;
+  right:0 !important;
+  pointer-events: none !important;
+"
+    tab-index="-1"
+  />
+</body>
+`;
