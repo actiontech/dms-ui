@@ -17,7 +17,7 @@ import {
 import { GlobalDashboardListProps } from '../../index.type';
 import { GlobalDashboardPendingWorkflowListColumn } from '../PendingWorkOrder/column';
 import { useCurrentUser } from '@actiontech/shared/lib/features';
-import { paramsSerializer } from '../../utils';
+import { paramsSerializer } from '@actiontech/shared';
 
 const InitiatedWorkOrder: React.FC<GlobalDashboardListProps> = ({
   filterValues,
