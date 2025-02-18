@@ -1,0 +1,31 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`HighlightText render text 1`] = `
+<div>
+  <div
+    class="css-13qpcs8"
+  >
+    SELECT
+  </div>
+</div>
+`;
+
+exports[`HighlightText render text with keyword 1`] = `
+<div>
+  <div
+    class="css-13qpcs8"
+  >
+    <span
+      class="normal-text"
+    />
+    <span
+      class="highlight-text css-eo1w8h"
+    >
+      SELECT
+    </span>
+    <span
+      class="normal-text"
+    />
+  </div>
+</div>
+`;

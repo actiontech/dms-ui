@@ -12,7 +12,7 @@ import {
 } from '@actiontech/shared/lib/api/sqle/service/workflow/index.enum';
 import { useRequest } from 'ahooks';
 import { ResponseCode } from '@actiontech/shared/lib/enum';
-import { paramsSerializer } from '../utils';
+import { paramsSerializer } from '@actiontech/shared';
 import { useBoolean } from 'ahooks';
 
 const useDashboardFilter = () => {
