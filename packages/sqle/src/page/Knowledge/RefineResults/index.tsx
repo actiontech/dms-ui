@@ -4,7 +4,8 @@ import {
   PageHeader,
   parse2ReactRouterPath,
   TablePagination,
-  useTypedQuery
+  useTypedQuery,
+  paramsSerializer
 } from '@actiontech/shared';
 import { ROUTE_PATHS } from '@actiontech/shared/lib/data/routePaths';
 import { useTranslation } from 'react-i18next';
@@ -20,7 +21,6 @@ import HighlightText from './HighlightText';
 import { useEffect, useState } from 'react';
 import { List } from 'antd';
 import { PageLayoutHasFixedHeaderStyleWrapper } from '@actiontech/shared/lib/styleWrapper/element';
-import queryString from 'query-string';
 import useKnowledgeSearchBar from '../Common/KnowledgeSearchBar/hooks/useKnowledgeSearchBar';
 import KnowledgeSearchBar from '../Common/KnowledgeSearchBar';
 
@@ -57,11 +57,7 @@ const KnowledgeSearchResults: React.FC = () => {
           tags: params.selectedTags
         },
         {
-          paramsSerializer: (query: IGetKnowledgeBaseListParams) => {
-            return queryString.stringify(query, {
-              arrayFormat: 'none'
-            });
-          }
+          paramsSerializer: paramsSerializer<IGetKnowledgeBaseListParams>
         }
       ).then((response) => {
         return response.data;
