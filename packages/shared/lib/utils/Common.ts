@@ -2,6 +2,7 @@ import { AxiosResponse } from 'axios';
 import i18n from 'i18next';
 import { MIMETypeEnum, ResponseBlobJsonType } from '../enum';
 import dayjs, { Dayjs } from 'dayjs';
+import queryString from 'query-string';
 
 export const emailValidate = (email: string): boolean => {
   if (!email || typeof email !== 'string') {
@@ -189,4 +190,10 @@ export const getCookie = (name: string): string => {
     return match[2];
   }
   return '';
+};
+
+export const paramsSerializer = <T extends Record<string, any>>(query: T) => {
+  return queryString.stringify(query, {
+    arrayFormat: 'none'
+  });
 };
