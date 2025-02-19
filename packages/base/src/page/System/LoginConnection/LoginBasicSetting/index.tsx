@@ -35,6 +35,9 @@ const LoginBasicSetting: React.FC = () => {
     });
     if (res.data.code === ResponseCode.SUCCESS) {
       refresh();
+      if (configKey === 'login_button_text') {
+        finishEditing();
+      }
     }
   };
 
