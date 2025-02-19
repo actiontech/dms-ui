@@ -1,0 +1,96 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`KnowledgeSearchBar render init snap 1`] = `
+<div>
+  <div
+    class="css-o4a44a"
+  >
+    <div
+      class="input-wrapper"
+    >
+      <textarea
+        class="ant-input ant-input-borderless css-dev-only-do-not-override-txh9fw basic-input-wrapper css-1pd1cd5"
+        placeholder="请输入关键字搜索你感兴趣的SQL语法"
+        style="overflow-y: hidden; resize: none;"
+      />
+      <div
+        class="search-icon"
+      >
+        <svg
+          height="20"
+          viewBox="0 0 14 14"
+          width="20"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="m10.518 9.693 2.499 2.498-.826.825-2.498-2.498a5.252 5.252 0 0 1-8.527-4.101 5.25 5.25 0 0 1 5.25-5.25 5.252 5.252 0 0 1 4.102 8.526m-1.17-.433a4.082 4.082 0 0 0-2.931-6.927 4.08 4.08 0 0 0-4.084 4.084 4.082 4.082 0 0 0 6.927 2.93z"
+          />
+        </svg>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`KnowledgeSearchBar render with allowSelectTag 1`] = `
+<div>
+  <div
+    class="css-o4a44a"
+  >
+    <div
+      class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center css-5rjiyz"
+      style="flex-wrap: wrap; margin-bottom: -4px;"
+    >
+      <div
+        class="ant-space-item"
+        style="padding-bottom: 4px;"
+      >
+        <div
+          class="popover-target ant-popover-open"
+        >
+          <span>
+            已选择标签
+            (
+            0
+            )
+          </span>
+          <svg
+            height="20"
+            viewBox="0 0 16 16"
+            width="20"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="m8 8.781 3.3-3.3.943.943L8 10.667 3.757 6.424l.943-.943z"
+              fill="#C3C6CD"
+            />
+          </svg>
+        </div>
+      </div>
+    </div>
+    <div
+      class="input-wrapper"
+    >
+      <textarea
+        class="ant-input ant-input-borderless css-dev-only-do-not-override-txh9fw basic-input-wrapper css-1pd1cd5"
+        placeholder="请输入关键字搜索你感兴趣的SQL语法"
+        style="overflow-y: hidden; resize: none;"
+      />
+      <div
+        class="search-icon"
+      >
+        <svg
+          height="20"
+          viewBox="0 0 14 14"
+          width="20"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="m10.518 9.693 2.499 2.498-.826.825-2.498-2.498a5.252 5.252 0 0 1-8.527-4.101 5.25 5.25 0 0 1 5.25-5.25 5.252 5.252 0 0 1 4.102 8.526m-1.17-.433a4.082 4.082 0 0 0-2.931-6.927 4.08 4.08 0 0 0-4.084 4.084 4.082 4.082 0 0 0 6.927 2.93z"
+          />
+        </svg>
+      </div>
+    </div>
+  </div>
+</div>
+`;
