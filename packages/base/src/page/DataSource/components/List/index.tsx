@@ -220,7 +220,7 @@ const DataSourceList = () => {
           hide();
         });
     },
-    [messageApi, modalApi, projectID, t]
+    [messageApi, modalApi, projectID, refresh, t]
   );
 
   const batchTestDatabaseConnection = () => {

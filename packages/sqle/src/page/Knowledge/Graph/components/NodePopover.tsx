@@ -50,7 +50,7 @@ const NodePopover: React.FC<NodePopoverProps> = ({ nodeId }) => {
 
       // 考虑左侧菜单栏和顶部区域的偏移
       const MENU_WIDTH = 270;
-      const HEADER_HEIGHT = 160;
+      const HEADER_HEIGHT = 156;
 
       const finalPosition = {
         x: containerRect.left + viewportPos.x - MENU_WIDTH,
