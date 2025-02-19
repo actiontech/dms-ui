@@ -1,0 +1,76 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`KnowledgeGraph should match snapshot 1`] = `
+<Styled(div)>
+  <Spin
+    spinning={true}
+    tip="加载知识图谱中..."
+  >
+    <mockConstructor
+      className="sigma-container"
+      settings={
+        {
+          "allowInvalidContainer": true,
+          "defaultEdgeType": "line",
+          "defaultNodeType": "circle",
+          "hideEdgesOnMove": false,
+          "hideLabelsOnMove": false,
+          "labelDensity": 0.1,
+          "labelFont": "'PlusJakartaSans Medium', -apple-system, 'Microsoft YaHei',
+  BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans',
+  sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol',
+  'Noto Color Emoji",
+          "labelGridCellSize": 150,
+          "labelRenderedSizeThreshold": 8,
+          "labelSize": 14,
+          "maxCameraRatio": 10,
+          "minCameraRatio": 0.1,
+          "nodeProgramClasses": {},
+          "renderEdgeLabels": false,
+          "renderLabels": true,
+          "zoomToSizeRatioFunction": [Function],
+        }
+      }
+    >
+      <Fa2 />
+      <LoadGraph
+        graphData={
+          {
+            "edges": [],
+            "nodes": [],
+          }
+        }
+        hoveredNode={null}
+        onLoaded={[Function]}
+        setHoveredNode={[Function]}
+      />
+      <FocusOnNode
+        move={true}
+        node={null}
+      />
+      <mockConstructor
+        className="graph-control-container"
+        position="bottom-right"
+      >
+        <mockConstructor />
+        <mockConstructor />
+      </mockConstructor>
+      <mockConstructor
+        className="graph-control-container"
+        position="top-right"
+      >
+        <mockConstructor
+          onChange={[Function]}
+          onFocus={[Function]}
+          postSearchResult={[Function]}
+          type="nodes"
+          value={null}
+        />
+      </mockConstructor>
+      <NodePopover
+        nodeId={null}
+      />
+    </mockConstructor>
+  </Spin>
+</Styled(div)>
+`;
