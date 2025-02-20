@@ -25,7 +25,7 @@ import { DMS_REDIRECT_KEY_PARAMS_NAME } from '@actiontech/shared/lib/data/routeP
 import { SystemRole } from '@actiontech/shared/lib/enum';
 import { AuthRouterConfig } from './router/router';
 import { cloneDeep } from 'lodash';
-
+import dmsSystem from './testUtils/mockApi/system';
 jest.mock('react-router-dom', () => ({
   ...jest.requireActual('react-router-dom'),
   useNavigate: jest.fn()
@@ -68,6 +68,7 @@ describe('App', () => {
     requestGetBasicInfo = mockDMSGlobalApi.getBasicInfo();
     getUserBySessionSpy = mockDMSGlobalApi.getUserBySession();
     getSystemModuleRedDotsSpy = baseSystem.getSystemModuleRedDots();
+    dmsSystem.getLoginTips();
     jest.useFakeTimers();
     (useNavigate as jest.Mock).mockImplementation(() => navigateSpy);
 
