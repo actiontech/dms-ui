@@ -159,7 +159,7 @@ export default {
     enableOAuthFirst: '需先启用OAuth2.0登录',
     confirmDisable: '是否确认关闭当前配置？',
     confirmEnableWithLDAP:
-      '基于账密登录的LDAP服务会被同时禁用，确认开启禁用吗?',
+      'LDAP服务基于账密登录，会同时被禁用，是否确认开启禁用？',
     confirmEnable: '是否确认开启当前配置？'
   },
 

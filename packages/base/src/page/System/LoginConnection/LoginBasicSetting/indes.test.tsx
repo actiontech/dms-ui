@@ -104,7 +104,7 @@ describe('LoginBasicSetting', () => {
       fireEvent.click(switchEle);
 
       await screen.findByText(
-        '基于账密登录的LDAP服务会被同时禁用，确认开启禁用吗?'
+        'LDAP服务基于账密登录，会同时被禁用，是否确认开启禁用？'
       );
 
       fireEvent.click(screen.getByText('确 认'));
