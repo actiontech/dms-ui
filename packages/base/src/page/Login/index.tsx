@@ -29,7 +29,6 @@ import {
   ROUTE_PATHS
 } from '@actiontech/shared/lib/data/routePaths';
 import { ConfigurationService } from '@actiontech/shared/lib/api';
-import { useMemo } from 'react';
 
 const Login = () => {
   const { t } = useTranslation();
