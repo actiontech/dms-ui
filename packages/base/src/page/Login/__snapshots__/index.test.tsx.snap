@@ -20,7 +20,7 @@ exports[`page/Login-ee render login snap 1`] = `
         </div>
       </div>
       <div
-        class="css-1pqzecc"
+        class="css-zhd3kf"
       >
         <div
           class="login-page-right-content"
@@ -288,7 +288,7 @@ exports[`page/Login-ee render login success when has location search val render 
         </div>
       </div>
       <div
-        class="css-1pqzecc"
+        class="css-zhd3kf"
       >
         <div
           class="login-page-right-content"
@@ -580,7 +580,7 @@ exports[`page/Login-ee render login success when has location search val render 
         </div>
       </div>
       <div
-        class="css-1pqzecc"
+        class="css-zhd3kf"
       >
         <div
           class="login-page-right-content"
@@ -872,7 +872,7 @@ exports[`page/Login-ee render login success when has location search val render 
         </div>
       </div>
       <div
-        class="css-1pqzecc"
+        class="css-zhd3kf"
       >
         <div
           class="login-page-right-content"
@@ -1164,7 +1164,7 @@ exports[`page/Login-ee render login when return no auth 1`] = `
         </div>
       </div>
       <div
-        class="css-1pqzecc"
+        class="css-zhd3kf"
       >
         <div
           class="login-page-right-content"

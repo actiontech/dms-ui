@@ -291,15 +291,14 @@ describe('page/Login-ee', () => {
     superRender(<Login />);
     await act(async () => jest.advanceTimersByTime(3000));
 
-    const usernameInput = getBySelector('#username');
-    const loginButton = screen.getByText('登 录').closest('button');
+    expect(screen.getByText('登 录').closest('button')).toBeDisabled();
 
-    expect(loginButton).toBeDisabled();
-
-    fireEvent.change(usernameInput, { target: { value: SystemRole.admin } });
+    fireEvent.change(getBySelector('#username'), {
+      target: { value: SystemRole.admin }
+    });
     await act(async () => jest.advanceTimersByTime(0));
 
-    expect(loginButton).not.toBeDisabled();
+    expect(screen.getByText('登 录').closest('button')).not.toBeDisabled();
   });
 
   it('render login snap when current browser is not chrome', async () => {

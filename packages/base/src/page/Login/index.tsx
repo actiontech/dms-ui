@@ -5,13 +5,13 @@ import { useDispatch } from 'react-redux';
 import { useRequest } from 'ahooks';
 import { updateToken } from '../../store/user';
 import Session from '@actiontech/shared/lib/api/base/service/Session';
-import OAuth2 from '@actiontech/shared/lib/api/base/service/OAuth2';
 import LoginLayout from './components/LoginLayout';
 import {
   BasicInput,
   BasicButton,
   useTypedNavigate,
-  useTypedQuery
+  useTypedQuery,
+  BasicToolTip
 } from '@actiontech/shared';
 import { LoginFormFieldValue } from './types';
 import { useBoolean } from 'ahooks';
@@ -113,13 +113,36 @@ const Login = () => {
     }
   );
 
-  const disabledLoginButton = useMemo(() => {
-    if (username === SystemRole.admin) {
-      return false;
+  const renderLoginButton = () => {
+    const disabledLoginButton =
+      username === SystemRole.admin
+        ? false
+        : !!loginBasicConfig?.disable_user_pwd_login;
+
+    const loginNode = (
+      <BasicButton
+        type="primary"
+        className="login-btn"
+        htmlType="submit"
+        loading={loading}
+        disabled={disabledLoginButton}
+      >
+        {loginBasicConfig?.login_button_text || t('dmsLogin.login')}
+      </BasicButton>
+    );
+    if (disabledLoginButton) {
+      return (
+        <BasicToolTip
+          className="login-btn-tooltip-wrapper"
+          title={t('dmsLogin.loginButtonDisabledTips')}
+        >
+          {loginNode}
+        </BasicToolTip>
+      );
     }
 
-    return !!loginBasicConfig?.disable_user_pwd_login;
-  }, [loginBasicConfig?.disable_user_pwd_login, username]);
+    return loginNode;
+  };
 
   // #if [ee]
   useEffect(() => {
@@ -197,15 +220,9 @@ const Login = () => {
           </Checkbox>
         </Form.Item>
         {/* #endif */}
-        <BasicButton
-          type="primary"
-          className="login-btn"
-          htmlType="submit"
-          loading={loading}
-          disabled={disabledLoginButton}
-        >
-          {loginBasicConfig?.login_button_text || t('dmsLogin.login')}
-        </BasicButton>
+
+        {renderLoginButton()}
+
         {loginBasicConfig?.enable_oauth2 ? (
           <BasicButton className="other-login-btn" href="/v1/dms/oauth2/link">
             {loginBasicConfig?.oauth2_login_tip}
