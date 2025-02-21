@@ -24,6 +24,11 @@ import {
   IGetOauth2ConfigurationReturn,
   IUpdateOauth2ConfigurationParams,
   IUpdateOauth2ConfigurationReturn,
+  IGetSmsConfigurationReturn,
+  IUpdateSmsConfigurationParams,
+  IUpdateSmsConfigurationReturn,
+  ITestSmsConfigurationParams,
+  ITestSmsConfigurationReturn,
   IGetSMTPConfigurationReturn,
   IUpdateSMTPConfigurationParams,
   IUpdateSMTPConfigurationReturn,
@@ -175,6 +180,38 @@ class ConfigurationService extends ServiceBase {
     const paramsData = this.cloneDeep(params);
     return this.patch<IUpdateOauth2ConfigurationReturn>(
       '/v1/dms/configurations/oauth2',
+      paramsData,
+      options
+    );
+  }
+
+  public GetSmsConfiguration(options?: AxiosRequestConfig) {
+    return this.get<IGetSmsConfigurationReturn>(
+      '/v1/dms/configurations/sms',
+      undefined,
+      options
+    );
+  }
+
+  public UpdateSmsConfiguration(
+    params: IUpdateSmsConfigurationParams,
+    options?: AxiosRequestConfig
+  ) {
+    const paramsData = this.cloneDeep(params);
+    return this.patch<IUpdateSmsConfigurationReturn>(
+      '/v1/dms/configurations/sms',
+      paramsData,
+      options
+    );
+  }
+
+  public TestSmsConfiguration(
+    params: ITestSmsConfigurationParams,
+    options?: AxiosRequestConfig
+  ) {
+    const paramsData = this.cloneDeep(params);
+    return this.post<ITestSmsConfigurationReturn>(
+      '/v1/dms/configurations/sms/test',
       paramsData,
       options
     );

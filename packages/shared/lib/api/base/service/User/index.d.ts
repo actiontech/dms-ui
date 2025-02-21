@@ -8,6 +8,8 @@ import {
   IAddUserReply,
   IGenAccessToken,
   IGenAccessTokenReply,
+  IAddSessionReq,
+  IVerifyUserLoginReply,
   IGetUserReply,
   IUpdateUserReq,
   IUserOpPermission,
@@ -41,6 +43,10 @@ export interface IAddUserReturn extends IAddUserReply {}
 export interface IGenAccessTokenParams extends IGenAccessToken {}
 
 export interface IGenAccessTokenReturn extends IGenAccessTokenReply {}
+
+export interface IVerifyUserLoginParams extends IAddSessionReq {}
+
+export interface IVerifyUserLoginReturn extends IVerifyUserLoginReply {}
 
 export interface IGetUserParams {
   user_uid: string;
