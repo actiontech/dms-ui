@@ -73,6 +73,8 @@ export default {
   success: '成功',
   fail: '失败',
 
+  phone: '手机号',
+
   theme: {
     light: '明亮模式',
     dark: '暗黑模式'
@@ -256,5 +258,10 @@ export default {
     eeButtonText: '联系我们',
     bottomDesc: '各版本完整功能对比请参考：',
     functionalComparison: '功能对比'
+  },
+  verificationCodeInput: {
+    code: '验证码',
+    sendCode: '发送验证码',
+    secondsLater: '{{number}}秒后重试'
   }
 };

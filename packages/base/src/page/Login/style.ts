@@ -131,3 +131,8 @@ export const LoginPageRightStyleWrapper = styled('div')`
     }
   }
 `;
+
+export const VerificationCodeReturnButtonStyleWrapper = styled('div')`
+  display: flex;
+  justify-content: center;
+`;

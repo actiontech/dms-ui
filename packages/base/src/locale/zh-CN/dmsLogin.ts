@@ -23,5 +23,9 @@ export default {
   },
   browserVersionTile: '浏览器版本不兼容',
   browserVersionDesc:
-    '为了正常使用平台功能，请使用 Chrome 80 或更高版本进行访问'
+    '为了正常使用平台功能，请使用 Chrome 80 或更高版本进行访问',
+  verifyCode: '验证码',
+  verifyCodePlaceholder: '请输入验证码',
+  verify: '验证',
+  returnLogin: '返回登录'
 };

@@ -74,7 +74,8 @@ export const PERMISSIONS = {
           OPERATION_LOG_EXPIRED_HOURS: 'action:operation_log_expired_hours',
           CB_OPERATION_LOG_EXPIRED_HOURS:
             'action:cb_operation_log_expired_hours',
-          URL_ADDRESS_PREFIX: 'action:url_address_prefix'
+          URL_ADDRESS_PREFIX: 'action:url_address_prefix',
+          SMS_SERVICE: 'action:sms_service'
         },
         LICENSE: {
           COLLECT_LICENSE: 'action:collect_license',

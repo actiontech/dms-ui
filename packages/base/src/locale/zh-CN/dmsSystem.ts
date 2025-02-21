@@ -213,7 +213,14 @@ export default {
     cbOperationLogsExpiredHours: 'CB工作台操作审计过期时间',
     urlAddressPrefix: 'URL地址前缀',
     urlAddressPrefixTips: '配置能访问SQLE的url地址信息',
-    urlAddressFormatTips: '格式为 http(s)://ip:port/sqle'
+    urlAddressFormatTips: '格式为 http(s)://ip:port/sqle',
+
+    smsSetting: {
+      title: '短信服务',
+      testSuccess: '当前短信服务验证通过',
+      testing: '正在测试短信服务...',
+      smsType: '短信服务类型'
+    }
   },
 
   personalize: {

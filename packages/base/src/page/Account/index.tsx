@@ -14,6 +14,7 @@ import UserWechat from './components/UserWechat';
 import UserPhone from './components/UserPhone';
 import UserEmail from './components/UserEmail';
 import AccessToken from './components/AccessToken';
+import PersonalSMS from './PersonalSMS';
 
 const Account: React.FC = () => {
   const { t } = useTranslation();
@@ -80,6 +81,13 @@ const Account: React.FC = () => {
             expiration={userInfo?.access_token_info?.token_expired_timestamp}
             updateUserInfo={updateUserInfo}
           />
+          {/* #if [ee] */}
+          <PersonalSMS
+            userBaseInfo={userInfo}
+            getUserInfo={getUserInfo}
+            loading={getUserInfoLoading}
+          />
+          {/* #endif */}
         </Spin>
       </AccountContentStyleWrapper>
     </div>

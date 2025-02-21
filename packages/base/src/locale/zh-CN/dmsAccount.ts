@@ -38,5 +38,11 @@ export default {
   updateWechatSuccess: '微信号更新成功',
   updatePhoneSuccess: '手机号更新成功',
   wechat: '企业微信UserID',
-  phone: '手机号'
+  phone: '手机号',
+  sms: {
+    title: '双因素认证',
+    verificationCode: '验证码',
+    noPhoneNumbersTips: '请先完成手机号绑定后开启双因素认证',
+    updateSuccessTips: '双因素认证更新成功'
+  }
 };
