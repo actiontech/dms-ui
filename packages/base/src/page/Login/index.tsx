@@ -28,7 +28,10 @@ import {
   OPEN_CLOUD_BEAVER_URL_PARAM_NAME,
   ROUTE_PATHS
 } from '@actiontech/shared/lib/data/routePaths';
-import { ConfigurationService } from '@actiontech/shared/lib/api';
+import {
+  ConfigurationService,
+  OAuth2Service
+} from '@actiontech/shared/lib/api';
 
 const Login = () => {
   const { t } = useTranslation();
@@ -112,6 +115,14 @@ const Login = () => {
     }
   );
 
+  const { run: getOauth2Tips, data: oauthConfig } = useRequest(
+    () => {
+      return OAuth2Service.GetOauth2Tips().then((res) => res.data?.data ?? {});
+    },
+    {
+      manual: true
+    }
+  );
   const renderLoginButton = () => {
     const disabledLoginButton =
       username === SystemRole.admin
@@ -146,6 +157,7 @@ const Login = () => {
   // #if [ee]
   useEffect(() => {
     getLoginBasicConfig();
+    getOauth2Tips();
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
   // #endif
@@ -222,9 +234,9 @@ const Login = () => {
 
         {renderLoginButton()}
 
-        {loginBasicConfig?.enable_oauth2 ? (
+        {oauthConfig?.enable_oauth2 ? (
           <BasicButton className="other-login-btn" href="/v1/dms/oauth2/link">
-            {loginBasicConfig?.oauth2_login_tip}
+            {oauthConfig?.login_tip}
           </BasicButton>
         ) : null}
       </Form>
