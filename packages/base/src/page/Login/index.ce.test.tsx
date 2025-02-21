@@ -10,6 +10,10 @@ import { superRender } from '../../testUtils/customRender';
 import Login from '.';
 import { getBySelector } from '@actiontech/shared/lib/testUtil/customQuery';
 import { createSpyFailResponse } from '@actiontech/shared/lib/testUtil/mockApi';
+import {
+  ignoreConsoleErrors,
+  UtilsConsoleErrorStringsEnum
+} from '@actiontech/shared/lib/testUtil/common';
 
 jest.mock('react-redux', () => ({
   ...jest.requireActual('react-redux'),
@@ -18,6 +22,11 @@ jest.mock('react-redux', () => ({
 
 describe('page/Login-ce', () => {
   const dispatchSpy = jest.fn();
+
+  ignoreConsoleErrors([
+    UtilsConsoleErrorStringsEnum.UNCONNECTED_FORM_COMPONENT
+  ]);
+
   const customRender = (params = {}) => {
     return superRender(<Login />, undefined, { initStore: params });
   };

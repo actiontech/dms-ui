@@ -9,7 +9,8 @@ import {
   GetUserPayload,
   maskRuleData,
   oauth2Tips,
-  UserInfo
+  UserInfo,
+  mockVerifyLoginData
 } from './data';
 import { mockProjectList } from '../project/data';
 import Session from '@actiontech/shared/lib/api/base/service/Session';
@@ -39,6 +40,7 @@ class MockDMSGlobalApi implements MockSpyApy {
     this.DelDBService();
     this.CheckDBServiceIsConnectable();
     this.getProjectList();
+    this.verifyUserLogin();
     this.getMaskRuleList();
   }
 
@@ -185,6 +187,16 @@ class MockDMSGlobalApi implements MockSpyApy {
       createSpySuccessResponse({
         total_nums: mockProjectList.length,
         data: mockProjectList
+      })
+    );
+    return spy;
+  }
+
+  public verifyUserLogin() {
+    const spy = jest.spyOn(User, 'VerifyUserLogin');
+    spy.mockImplementation(() =>
+      createSpySuccessResponse({
+        data: mockVerifyLoginData
       })
     );
     return spy;

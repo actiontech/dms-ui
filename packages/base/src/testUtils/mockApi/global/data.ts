@@ -114,6 +114,12 @@ export const DBServicesList: IListDBService[] = [
   }
 ];
 
+export const mockVerifyLoginData = {
+  verify_failed_msg: '',
+  user_uid: '700200',
+  two_factor_enabled: false
+};
+
 export const maskRuleData = [
   {
     effect: '182****8767',
