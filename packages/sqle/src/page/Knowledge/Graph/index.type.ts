@@ -9,10 +9,11 @@ export interface NodeType {
   y: number;
   size: number;
   label: string;
-  color: string;
+  color?: string;
   shortLabel: string;
   forceLabel?: boolean;
   image?: string;
+  community?: string;
 }
 export interface EdgeType {
   size: number;

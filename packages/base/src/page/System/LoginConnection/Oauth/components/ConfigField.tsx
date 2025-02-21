@@ -266,11 +266,11 @@ const ConfigField = () => {
         className="has-label-tip"
         label={
           <CustomLabelContent
-            title={t('dmsSystem.oauth.loginButtonText')}
-            tips={t('dmsSystem.oauth.loginButtonTextTips')}
+            title={t('dmsSystem.oauth.oauth2ButtonText')}
+            tips={t('dmsSystem.oauth.oauth2ButtonTextTips')}
           />
         }
-        name="loginButtonText"
+        name="oauth2ButtonText"
         rules={[
           {
             type: 'string',
@@ -281,7 +281,7 @@ const ConfigField = () => {
       >
         <BasicInput
           placeholder={t('common.form.placeholder.input', {
-            name: t('dmsSystem.oauth.loginButtonText')
+            name: t('dmsSystem.oauth.oauth2ButtonText')
           })}
         />
       </FormItemLabel>
