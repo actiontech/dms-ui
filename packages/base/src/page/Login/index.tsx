@@ -2,7 +2,6 @@ import { message, Form } from 'antd';
 import { useTranslation } from 'react-i18next';
 import { useDispatch } from 'react-redux';
 import { updateToken } from '../../store/user';
-import Session from '@actiontech/shared/lib/api/base/service/Session';
 import LoginLayout from './components/LoginLayout';
 import { useTypedNavigate, useTypedQuery, EmptyBox } from '@actiontech/shared';
 import { LoginFormFieldValue, VerificationCodeFormFieldValue } from './types';
@@ -20,7 +19,7 @@ import {
 } from '@actiontech/shared/lib/data/routePaths';
 import LoginForm from './components/LoginForm';
 import VerificationCodeForm from './components/VerificationCodeForm';
-import User from '@actiontech/shared/lib/api/base/service/User';
+import { UserService, SessionService } from '@actiontech/shared/lib/api';
 import { useState } from 'react';
 
 const Login = () => {
@@ -58,7 +57,7 @@ const Login = () => {
   const addSession = () => {
     const loginFormValues = loginForm.getFieldsValue();
     const verificationCodeFormValues = verificationCodeForm.getFieldsValue();
-    Session.AddSession({
+    SessionService.AddSession({
       session: {
         username: loginFormValues.username,
         password: loginFormValues.password,
@@ -117,7 +116,7 @@ const Login = () => {
     // #endif
     setTrue();
     // #if [ee]
-    User.VerifyUserLogin({
+    UserService.VerifyUserLogin({
       session: {
         username: formData.username,
         password: formData.password

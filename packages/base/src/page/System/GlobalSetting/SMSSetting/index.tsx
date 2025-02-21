@@ -5,7 +5,7 @@ import { Spin, Typography } from 'antd';
 import { CustomLabelContent } from '@actiontech/shared/lib/components/CustomForm';
 import ConfigExtraButtons from './components/ConfigExtraButtons';
 import ConfigField from './components/ConfigField';
-import baseConfiguration from '@actiontech/shared/lib/api/base/service/Configuration';
+import { ConfigurationService } from '@actiontech/shared/lib/api';
 import { IGetSmsConfigurationReplyItem } from '@actiontech/shared/lib/api/base/service/common';
 import { ResponseCode } from '@actiontech/shared/lib/enum';
 import { FormFields } from './index.type';
@@ -52,9 +52,9 @@ const CodingSetting: React.FC = () => {
     refresh: refreshSmsInfo
   } = useRequest(
     () =>
-      baseConfiguration
-        .GetSmsConfiguration()
-        .then((res) => res.data.data ?? {}),
+      ConfigurationService.GetSmsConfiguration().then(
+        (res) => res.data.data ?? {}
+      ),
     {
       onSuccess(res) {
         if (res) {
@@ -89,18 +89,17 @@ const CodingSetting: React.FC = () => {
 
   const onSubmit = (isCodingEnabled: boolean, values?: FormFields) => {
     startSubmit();
-    baseConfiguration
-      .UpdateSmsConfiguration({
-        update_sms_configuration: {
-          enable_sms: isCodingEnabled,
-          url: values?.url,
-          configuration: values?.token
-            ? {
-                token: values?.token ?? ''
-              }
-            : undefined
-        }
-      })
+    ConfigurationService.UpdateSmsConfiguration({
+      update_sms_configuration: {
+        enable_sms: isCodingEnabled,
+        url: values?.url,
+        configuration: values?.token
+          ? {
+              token: values?.token ?? ''
+            }
+          : undefined
+      }
+    })
       .then((res) => {
         if (res.data.code === ResponseCode.SUCCESS) {
           modifyFinish();

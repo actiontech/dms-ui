@@ -2,11 +2,15 @@ import { Form, Typography, Space, Checkbox } from 'antd';
 import React, { useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useRequest } from 'ahooks';
-import OAuth2 from '@actiontech/shared/lib/api/base/service/OAuth2';
-import { BasicInput, BasicButton } from '@actiontech/shared';
+import { BasicInput, BasicButton, BasicToolTip } from '@actiontech/shared';
 import { LockFilled, UserFilled } from '@actiontech/icons';
 import useThemeStyleData from '../../../hooks/useThemeStyleData';
 import { LoginFormProps } from '../types';
+import {
+  ConfigurationService,
+  OAuth2Service
+} from '@actiontech/shared/lib/api';
+import { SystemRole } from '@actiontech/shared/lib/enum';
 
 const LoginForm: React.FC<LoginFormProps> = ({
   onSubmit,
@@ -16,19 +20,64 @@ const LoginForm: React.FC<LoginFormProps> = ({
 }) => {
   const { t } = useTranslation();
 
+  const username = Form.useWatch('username', form);
+
   const { baseTheme } = useThemeStyleData();
 
   const { run: getOauth2Tips, data: oauthConfig } = useRequest(
     () => {
-      return OAuth2.GetOauth2Tips().then((res) => res.data?.data ?? {});
+      return OAuth2Service.GetOauth2Tips().then((res) => res.data?.data ?? {});
     },
     {
       manual: true
     }
   );
 
+  const { run: getLoginBasicConfig, data: loginBasicConfig } = useRequest(
+    () => {
+      return ConfigurationService.GetLoginTips().then(
+        (res) => res.data?.data ?? {}
+      );
+    },
+    {
+      manual: true
+    }
+  );
+
+  const renderLoginButton = () => {
+    const disabledLoginButton =
+      username === SystemRole.admin
+        ? false
+        : !!loginBasicConfig?.disable_user_pwd_login;
+
+    const loginNode = (
+      <BasicButton
+        type="primary"
+        className="login-btn"
+        htmlType="submit"
+        loading={loading}
+        disabled={disabledLoginButton}
+      >
+        {loginBasicConfig?.login_button_text || t('dmsLogin.login')}
+      </BasicButton>
+    );
+    if (disabledLoginButton) {
+      return (
+        <BasicToolTip
+          className="login-btn-tooltip-wrapper"
+          title={t('dmsLogin.loginButtonDisabledTips')}
+        >
+          {loginNode}
+        </BasicToolTip>
+      );
+    }
+
+    return loginNode;
+  };
+
   // #if [ee]
   useEffect(() => {
+    getLoginBasicConfig();
     getOauth2Tips();
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
@@ -102,14 +151,7 @@ const LoginForm: React.FC<LoginFormProps> = ({
         </Checkbox>
       </Form.Item>
       {/* #endif */}
-      <BasicButton
-        type="primary"
-        className="login-btn"
-        htmlType="submit"
-        loading={loading}
-      >
-        {t('dmsLogin.login')}
-      </BasicButton>
+      {renderLoginButton()}
       {oauthConfig?.enable_oauth2 ? (
         <BasicButton className="other-login-btn" href="/v1/dms/oauth2/link">
           {oauthConfig?.login_tip}
