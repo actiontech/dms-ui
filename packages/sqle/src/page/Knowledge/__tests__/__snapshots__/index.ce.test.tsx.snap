@@ -1054,7 +1054,7 @@ exports[`Knowledge ce render init snap 1`] = `
                     class="title"
                   >
                     Action 
-                    SQLE
+                    DMS
                   </div>
                   <p
                     class="cont-tip"
@@ -1153,7 +1153,7 @@ exports[`Knowledge ce render init snap 1`] = `
                     class="title"
                   >
                     Action 
-                    SQLE
+                    DMS
                   </div>
                   <p
                     class="cont-tip"
