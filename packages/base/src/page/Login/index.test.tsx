@@ -15,6 +15,10 @@ import {
   StorageKey
 } from '@actiontech/shared/lib/enum';
 import { OPEN_CLOUD_BEAVER_URL_PARAM_NAME } from '@actiontech/shared/lib/data/routePaths';
+import {
+  ignoreConsoleErrors,
+  UtilsConsoleErrorStringsEnum
+} from '@actiontech/shared/lib/testUtil/common';
 
 jest.mock('react-router-dom', () => {
   return {
@@ -33,6 +37,10 @@ describe('page/Login-ee', () => {
   const navigateSpy = jest.fn();
   const assignMock = jest.fn();
   const useSearchParamsSpy: jest.Mock = useSearchParams as jest.Mock;
+
+  ignoreConsoleErrors([
+    UtilsConsoleErrorStringsEnum.UNCONNECTED_FORM_COMPONENT
+  ]);
 
   const customRender = (params = {}) => {
     return superRender(<Login />, undefined, { initStore: params });
@@ -104,6 +112,7 @@ describe('page/Login-ee', () => {
     it('render with other search val', async () => {
       const requestGetOauth2Tip = dms.getOauth2Tips();
       const requestLogin = dms.addSession();
+      const verifyUserLoginSpy = dms.verifyUserLogin();
       const LocalStorageWrapperSet = jest.spyOn(LocalStorageWrapper, 'set');
 
       useSearchParamsSpy.mockReturnValue([
@@ -131,6 +140,7 @@ describe('page/Login-ee', () => {
       fireEvent.click(screen.getByText('登 录'));
       await act(async () => jest.advanceTimersByTime(300));
       expect(baseElement).toMatchSnapshot();
+      expect(verifyUserLoginSpy).toHaveBeenCalledTimes(1);
       await act(async () => jest.advanceTimersByTime(3000));
       expect(requestLogin).toHaveBeenCalledTimes(1);
       expect(requestLogin).toHaveBeenCalledWith({
@@ -139,6 +149,7 @@ describe('page/Login-ee', () => {
           password: 'admin1'
         }
       });
+      await act(async () => jest.advanceTimersByTime(3000));
       expect(dispatchSpy).toHaveBeenCalledTimes(1);
       expect(dispatchSpy).toHaveBeenCalledWith({
         type: 'user/updateToken',
@@ -158,6 +169,7 @@ describe('page/Login-ee', () => {
     it('render with other search val', async () => {
       const requestGetOauth2Tip = dms.getOauth2Tips();
       const requestLogin = dms.addSession();
+      const verifyUserLoginSpy = dms.verifyUserLogin();
       const LocalStorageWrapperSet = jest.spyOn(LocalStorageWrapper, 'set');
 
       useSearchParamsSpy.mockReturnValue([
@@ -185,6 +197,7 @@ describe('page/Login-ee', () => {
       fireEvent.click(screen.getByText('登 录'));
       await act(async () => jest.advanceTimersByTime(300));
       expect(baseElement).toMatchSnapshot();
+      expect(verifyUserLoginSpy).toHaveBeenCalledTimes(1);
       await act(async () => jest.advanceTimersByTime(3000));
       expect(requestLogin).toHaveBeenCalledTimes(1);
       expect(requestLogin).toHaveBeenCalledWith({
@@ -193,6 +206,7 @@ describe('page/Login-ee', () => {
           password: 'admin1'
         }
       });
+      await act(async () => jest.advanceTimersByTime(3000));
       expect(dispatchSpy).toHaveBeenCalledTimes(1);
       expect(dispatchSpy).toHaveBeenCalledWith({
         type: 'user/updateToken',
@@ -214,6 +228,7 @@ describe('page/Login-ee', () => {
     it('render search value with search params', async () => {
       const requestGetOauth2Tip = dms.getOauth2Tips();
       const requestLogin = dms.addSession();
+      const verifyUserLoginSpy = dms.verifyUserLogin();
       const LocalStorageWrapperSet = jest.spyOn(LocalStorageWrapper, 'set');
 
       useSearchParamsSpy.mockReturnValue([
@@ -241,6 +256,7 @@ describe('page/Login-ee', () => {
       fireEvent.click(screen.getByText('登 录'));
       await act(async () => jest.advanceTimersByTime(300));
       expect(baseElement).toMatchSnapshot();
+      expect(verifyUserLoginSpy).toHaveBeenCalledTimes(1);
       await act(async () => jest.advanceTimersByTime(3000));
       expect(requestLogin).toHaveBeenCalledTimes(1);
       expect(requestLogin).toHaveBeenCalledWith({
@@ -249,6 +265,7 @@ describe('page/Login-ee', () => {
           password: 'admin1'
         }
       });
+      await act(async () => jest.advanceTimersByTime(3000));
       expect(navigateSpy).toHaveBeenCalled();
       expect(navigateSpy).toHaveBeenCalledWith('/transit?from=cloudbeaver');
       expect(LocalStorageWrapperSet).toHaveBeenCalled();
