@@ -6,7 +6,7 @@ import {
 import { Form, Typography, Space } from 'antd';
 import { useTranslation } from 'react-i18next';
 import { VerificationCodeReturnButtonStyleWrapper } from '../style';
-import SMS from '@actiontech/shared/lib/api/base/service/SMS';
+import { SMSService } from '@actiontech/shared/lib/api';
 import { VerificationCodeFormProps } from '../types';
 
 const VerificationCodeForm: React.FC<VerificationCodeFormProps> = ({
@@ -20,7 +20,7 @@ const VerificationCodeForm: React.FC<VerificationCodeFormProps> = ({
   const { t } = useTranslation();
 
   const onSendCode = () => {
-    return SMS.SendSmsCode({ username });
+    return SMSService.SendSmsCode({ username });
   };
 
   return (

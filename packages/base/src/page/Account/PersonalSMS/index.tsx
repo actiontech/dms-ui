@@ -14,8 +14,7 @@ import {
   useConfigSwitchControls
 } from '@actiontech/shared';
 import { PersonalSMSProps } from './index.type';
-import User from '@actiontech/shared/lib/api/base/service/User';
-import SMS from '@actiontech/shared/lib/api/base/service/SMS';
+import { UserService, SMSService } from '@actiontech/shared/lib/api';
 
 const PersonalSMS: React.FC<PersonalSMSProps> = ({
   userBaseInfo,
@@ -66,7 +65,7 @@ const PersonalSMS: React.FC<PersonalSMSProps> = ({
   const onSubmit = async (isCodingEnabled: boolean, values?: FormFields) => {
     startSubmit();
     if (isCodingEnabled) {
-      const verificationRes = await SMS.VerifySmsCode({
+      const verificationRes = await SMSService.VerifySmsCode({
         code: values?.code,
         username: userBaseInfo?.name
       });
@@ -81,7 +80,7 @@ const PersonalSMS: React.FC<PersonalSMSProps> = ({
         return;
       }
     }
-    User.UpdateCurrentUser({
+    UserService.UpdateCurrentUser({
       current_user: {
         two_factor_enabled: isCodingEnabled
       }
