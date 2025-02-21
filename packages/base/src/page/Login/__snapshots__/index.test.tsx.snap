@@ -257,7 +257,7 @@ exports[`page/Login-ee render login snap 1`] = `
               href="/v1/dms/oauth2/link"
             >
               <span>
-                Oauth2 Login
+                Login With Oauth2
               </span>
             </a>
           </form>

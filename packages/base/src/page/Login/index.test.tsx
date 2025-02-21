@@ -4,7 +4,7 @@ import { useNavigate, useSearchParams } from 'react-router-dom';
 import MockDate from 'mockdate';
 import { superRender } from '../../testUtils/customRender';
 import dms from '../../testUtils/mockApi/global';
-import { UserInfo } from '../../testUtils/mockApi/global/data';
+import { oauth2Tips, UserInfo } from '../../testUtils/mockApi/global/data';
 import { getBySelector } from '@actiontech/shared/lib/testUtil/customQuery';
 import { createSpySuccessResponse } from '@actiontech/shared/lib/testUtil/mockApi';
 import { LocalStorageWrapper } from '@actiontech/shared';
@@ -37,6 +37,7 @@ describe('page/Login-ee', () => {
   const assignMock = jest.fn();
   const useSearchParamsSpy: jest.Mock = useSearchParams as jest.Mock;
   let requestGetOauth2Tip: jest.SpyInstance;
+  let requestGetLoginBasicConfig: jest.SpyInstance;
 
   const customRender = (params = {}) => {
     return superRender(<Login />, undefined, { initStore: params });
@@ -48,7 +49,8 @@ describe('page/Login-ee', () => {
     jest.useFakeTimers();
     useSearchParamsSpy.mockReturnValue([new URLSearchParams()]);
     MockDate.set('2023-12-19 12:00:00');
-    requestGetOauth2Tip = system.getLoginTips();
+    requestGetOauth2Tip = dms.getOauth2Tips();
+    requestGetLoginBasicConfig = system.getLoginTips();
     dms.mockAllApi();
   });
 
@@ -63,13 +65,13 @@ describe('page/Login-ee', () => {
 
   it('render login snap', async () => {
     const { baseElement } = customRender();
-    await act(async () => jest.advanceTimersByTime(3300));
     expect(requestGetOauth2Tip).toHaveBeenCalledTimes(1);
+    expect(requestGetLoginBasicConfig).toHaveBeenCalledTimes(1);
+
+    await act(async () => jest.advanceTimersByTime(3300));
     expect(screen.queryByText('已阅读并同意')).toBeInTheDocument();
     expect(screen.queryByText('用户协议')).toBeInTheDocument();
-    expect(
-      screen.queryByText(mockGetLoginBasicConfigurationData.oauth2_login_tip)
-    ).toBeInTheDocument();
+    expect(screen.queryByText(oauth2Tips.login_tip!)).toBeInTheDocument();
     expect(baseElement).toMatchSnapshot();
 
     const otherLoginBtn = getBySelector('.other-login-btn', baseElement);
@@ -81,8 +83,16 @@ describe('page/Login-ee', () => {
       createSpySuccessResponse({
         data: {
           enable_oauth2: false,
-          oauth2_login_tip: 'Login no Oauth2',
-          login_button_text: ''
+          login_tip: 'Login no Oauth2'
+        }
+      })
+    );
+
+    requestGetLoginBasicConfig.mockImplementation(() =>
+      createSpySuccessResponse({
+        data: {
+          login_button_text: '登录',
+          disable_user_pwd_login: false
         }
       })
     );
@@ -116,9 +126,17 @@ describe('page/Login-ee', () => {
       requestGetOauth2Tip.mockImplementation(() =>
         createSpySuccessResponse({
           data: {
-            login_button_text: '登录',
             enable_oauth2: true,
-            oauth2_login_tip: 'Login With Oauth2'
+            login_tip: 'Login With Oauth2'
+          }
+        })
+      );
+
+      requestGetLoginBasicConfig.mockImplementation(() =>
+        createSpySuccessResponse({
+          data: {
+            login_button_text: '登录',
+            disable_user_pwd_login: false
           }
         })
       );
@@ -280,9 +298,16 @@ describe('page/Login-ee', () => {
     requestGetOauth2Tip.mockImplementation(() =>
       createSpySuccessResponse({
         data: {
-          login_button_text: '登录',
           enable_oauth2: true,
-          oauth2_login_tip: 'Login With Oauth2',
+          login_tip: 'Login With Oauth2'
+        }
+      })
+    );
+
+    requestGetLoginBasicConfig.mockImplementation(() =>
+      createSpySuccessResponse({
+        data: {
+          login_button_text: '登录',
           disable_user_pwd_login: true
         }
       })
@@ -292,6 +317,10 @@ describe('page/Login-ee', () => {
     await act(async () => jest.advanceTimersByTime(3000));
 
     expect(screen.getByText('登 录').closest('button')).toBeDisabled();
+
+    fireEvent.mouseEnter(screen.getByText('登 录'));
+
+    await screen.findByText('当前已禁用账密登录');
 
     fireEvent.change(getBySelector('#username'), {
       target: { value: SystemRole.admin }
