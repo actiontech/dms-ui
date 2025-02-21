@@ -161,7 +161,7 @@ describe('base/System/LoginConnection/Oauth', () => {
         }
       });
 
-      fireEvent.change(getBySelector('#loginButtonText', baseElement), {
+      fireEvent.change(getBySelector('#oauth2ButtonText', baseElement), {
         target: {
           value: 'login button text'
         }

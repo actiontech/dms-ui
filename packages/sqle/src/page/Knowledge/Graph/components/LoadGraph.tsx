@@ -4,7 +4,7 @@ import {
   useSetSettings,
   useSigma
 } from '@react-sigma/core';
-import { FC, useEffect } from 'react';
+import { FC, useEffect, useState } from 'react';
 import useGraph from '../hooks/useGraph';
 import { EdgeType, NodeType } from '../index.type';
 import {
@@ -34,6 +34,7 @@ const LoadGraph: FC<props> = ({
   const setSettings = useSetSettings<NodeType, EdgeType>();
   const loadGraph = useLoadGraph<NodeType, EdgeType>();
   const { sharedTheme } = useThemeStyleData();
+  const [clickedNode, setClickedNode] = useState<string | null>(null);
 
   useEffect(() => {
     if (graphData) {
@@ -41,23 +42,24 @@ const LoadGraph: FC<props> = ({
       loadGraph(graph);
       onLoaded?.();
 
-      const handleEnterNode = (event: any) => {
-        setHoveredNode(event.node);
-      };
-
-      const handleLeaveNode = () => {
-        setHoveredNode(null);
-      };
-
       registerEvents({
-        enterNode: handleEnterNode,
-        leaveNode: handleLeaveNode
+        enterNode: (event) => {
+          setHoveredNode(event.node);
+        },
+        leaveNode: () => {
+          setHoveredNode(null);
+        },
+        clickNode: (event) => {
+          setClickedNode((nodeId) =>
+            nodeId === event.node ? null : event.node
+          );
+        }
       });
 
       return () => {
-        // 清理事件监听
         sigma.removeAllListeners('enterNode');
         sigma.removeAllListeners('leaveNode');
+        sigma.removeAllListeners('clickNode');
       };
     }
   }, [
@@ -78,6 +80,18 @@ const LoadGraph: FC<props> = ({
           ...data,
           highlighted: data.highlighted || false
         };
+
+        if (clickedNode && graph.hasNode(clickedNode)) {
+          const isNeighbor =
+            node === clickedNode || graph.neighbors(clickedNode).includes(node);
+          if (isNeighbor) {
+            newData.highlighted = true;
+          } else {
+            newData.color = sharedTheme.uiToken.colorFillSecondary;
+            newData.highlighted = false;
+          }
+          return newData;
+        }
 
         if (hoveredNode && graph.hasNode(hoveredNode)) {
           const isNeighbor =
@@ -106,7 +120,13 @@ const LoadGraph: FC<props> = ({
         return newData;
       }
     });
-  }, [hoveredNode, setSettings, sharedTheme.uiToken.colorFillSecondary, sigma]);
+  }, [
+    clickedNode,
+    hoveredNode,
+    setSettings,
+    sharedTheme.uiToken.colorFillSecondary,
+    sigma
+  ]);
 
   return null;
 };

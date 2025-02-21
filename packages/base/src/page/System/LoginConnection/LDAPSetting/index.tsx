@@ -19,9 +19,11 @@ import {
   PERMISSIONS,
   PermissionControl
 } from '@actiontech/shared/lib/features';
+import { useLoginConnectionContext } from '../context';
 
 const LDAPSetting = () => {
   const { t } = useTranslation();
+  const { setLDAPEnabled } = useLoginConnectionContext();
 
   const {
     form,
@@ -44,6 +46,7 @@ const LDAPSetting = () => {
     {
       onSuccess(res) {
         if (res) {
+          setLDAPEnabled(!!res.enable_ldap);
           form.setFieldsValue({
             enable_ldap: !!res.enable_ldap
           });
