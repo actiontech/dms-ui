@@ -5,13 +5,13 @@ import { useDispatch } from 'react-redux';
 import { useRequest } from 'ahooks';
 import { updateToken } from '../../store/user';
 import Session from '@actiontech/shared/lib/api/base/service/Session';
-import OAuth2 from '@actiontech/shared/lib/api/base/service/OAuth2';
 import LoginLayout from './components/LoginLayout';
 import {
   BasicInput,
   BasicButton,
   useTypedNavigate,
-  useTypedQuery
+  useTypedQuery,
+  BasicToolTip
 } from '@actiontech/shared';
 import { LoginFormFieldValue } from './types';
 import { useBoolean } from 'ahooks';
@@ -21,17 +21,25 @@ import useThemeStyleData from '../../hooks/useThemeStyleData';
 import { LocalStorageWrapper } from '@actiontech/shared';
 import {
   StorageKey,
-  CompanyNoticeDisplayStatusEnum
+  CompanyNoticeDisplayStatusEnum,
+  SystemRole
 } from '@actiontech/shared/lib/enum';
 import {
   OPEN_CLOUD_BEAVER_URL_PARAM_NAME,
   ROUTE_PATHS
 } from '@actiontech/shared/lib/data/routePaths';
+import {
+  ConfigurationService,
+  OAuth2Service
+} from '@actiontech/shared/lib/api';
 
 const Login = () => {
   const { t } = useTranslation();
 
   const { baseTheme } = useThemeStyleData();
+  const [form] = Form.useForm<LoginFormFieldValue>();
+
+  const username = Form.useWatch('username', form);
 
   useBrowserVersionTips();
 
@@ -96,17 +104,59 @@ const Login = () => {
       });
   };
 
-  const { run: getOauth2Tips, data: oauthConfig } = useRequest(
+  const { run: getLoginBasicConfig, data: loginBasicConfig } = useRequest(
     () => {
-      return OAuth2.GetOauth2Tips().then((res) => res.data?.data ?? {});
+      return ConfigurationService.GetLoginTips().then(
+        (res) => res.data?.data ?? {}
+      );
     },
     {
       manual: true
     }
   );
 
+  const { run: getOauth2Tips, data: oauthConfig } = useRequest(
+    () => {
+      return OAuth2Service.GetOauth2Tips().then((res) => res.data?.data ?? {});
+    },
+    {
+      manual: true
+    }
+  );
+  const renderLoginButton = () => {
+    const disabledLoginButton =
+      username === SystemRole.admin
+        ? false
+        : !!loginBasicConfig?.disable_user_pwd_login;
+
+    const loginNode = (
+      <BasicButton
+        type="primary"
+        className="login-btn"
+        htmlType="submit"
+        loading={loading}
+        disabled={disabledLoginButton}
+      >
+        {loginBasicConfig?.login_button_text || t('dmsLogin.login')}
+      </BasicButton>
+    );
+    if (disabledLoginButton) {
+      return (
+        <BasicToolTip
+          className="login-btn-tooltip-wrapper"
+          title={t('dmsLogin.loginButtonDisabledTips')}
+        >
+          {loginNode}
+        </BasicToolTip>
+      );
+    }
+
+    return loginNode;
+  };
+
   // #if [ee]
   useEffect(() => {
+    getLoginBasicConfig();
     getOauth2Tips();
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
@@ -116,6 +166,7 @@ const Login = () => {
     <LoginLayout>
       {contextHolder}
       <Form
+        form={form}
         onFinish={login}
         initialValues={{
           userAgreement: true
@@ -180,14 +231,9 @@ const Login = () => {
           </Checkbox>
         </Form.Item>
         {/* #endif */}
-        <BasicButton
-          type="primary"
-          className="login-btn"
-          htmlType="submit"
-          loading={loading}
-        >
-          {t('dmsLogin.login')}
-        </BasicButton>
+
+        {renderLoginButton()}
+
         {oauthConfig?.enable_oauth2 ? (
           <BasicButton className="other-login-btn" href="/v1/dms/oauth2/link">
             {oauthConfig?.login_tip}

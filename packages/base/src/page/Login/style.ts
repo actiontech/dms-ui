@@ -88,6 +88,14 @@ export const LoginPageRightStyleWrapper = styled('div')`
     }
   }
 
+  .login-btn-tooltip-wrapper {
+    width: 100%;
+
+    .ant-space-item {
+      width: 100%;
+    }
+  }
+
   & .ant-btn.login-btn {
     width: 100%;
     height: 56px;
