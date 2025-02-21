@@ -386,6 +386,11 @@ export const PERMISSION_MANIFEST: Record<
     type: 'action',
     role: [SystemRole.admin, SystemRole.globalManager]
   },
+  [PERMISSIONS.ACTIONS.BASE.SYSTEM.GLOBAL_SETTING.SMS_SERVICE]: {
+    id: PERMISSIONS.ACTIONS.BASE.SYSTEM.GLOBAL_SETTING.SMS_SERVICE,
+    type: 'action',
+    role: [SystemRole.admin, SystemRole.globalManager]
+  },
   [PERMISSIONS.ACTIONS.BASE.SYSTEM.LICENSE.COLLECT_LICENSE]: {
     id: PERMISSIONS.ACTIONS.BASE.SYSTEM.LICENSE.COLLECT_LICENSE,
     type: 'action',

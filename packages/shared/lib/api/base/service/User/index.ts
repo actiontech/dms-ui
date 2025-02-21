@@ -15,6 +15,8 @@ import {
   IAddUserReturn,
   IGenAccessTokenParams,
   IGenAccessTokenReturn,
+  IVerifyUserLoginParams,
+  IVerifyUserLoginReturn,
   IGetUserParams,
   IGetUserReturn,
   IUpdateUserParams,
@@ -55,6 +57,18 @@ class UserService extends ServiceBase {
     const paramsData = this.cloneDeep(params);
     return this.post<IGenAccessTokenReturn>(
       '/v1/dms/users/gen_token',
+      paramsData,
+      options
+    );
+  }
+
+  public VerifyUserLogin(
+    params: IVerifyUserLoginParams,
+    options?: AxiosRequestConfig
+  ) {
+    const paramsData = this.cloneDeep(params);
+    return this.post<IVerifyUserLoginReturn>(
+      '/v1/dms/users/verify_user_login',
       paramsData,
       options
     );

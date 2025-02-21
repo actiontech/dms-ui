@@ -47,3 +47,4 @@ export * from './SystemConfigurationHub';
 export * from './TestDatabaseConnectButton';
 export * from './ToggleTokens';
 export * from './TypedRouter';
+export * from './VerificationCodeInput';
