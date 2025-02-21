@@ -98,6 +98,15 @@ export const mockCodingConfigurationData = {
   is_coding_enabled: true
 };
 
+export const mockSMSConfigurationData = {
+  enable: true,
+  url: 'absc1',
+  sms_type: 'webhook',
+  configuration: {
+    token: '1231'
+  }
+};
+
 export const mockGetLoginBasicConfigurationData = {
   login_button_text: 'Login',
   disable_user_pwd_login: false

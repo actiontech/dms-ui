@@ -197,3 +197,10 @@ export const paramsSerializer = <T extends Record<string, any>>(query: T) => {
     arrayFormat: 'none'
   });
 };
+
+export const maskPhoneNumber = (phone: string): string => {
+  if (!/^\d{11}$/.test(phone)) {
+    return phone;
+  }
+  return phone.replace(/(\d{3})\d{4}(\d{4})/, '$1****$2');
+};

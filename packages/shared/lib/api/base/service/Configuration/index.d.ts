@@ -13,6 +13,10 @@ import {
   IGetLoginTipsReply,
   IGetOauth2ConfigurationResDataReply,
   IOauth2ConfigurationReq,
+  IGetSmsConfigurationReply,
+  IUpdateSmsConfigurationReq,
+  ITestSmsConfigurationReq,
+  ITestSmsConfigurationReply,
   IGetSMTPConfigurationReply,
   IUpdateSMTPConfigurationReq,
   ITestSMTPConfigurationReq,
@@ -78,6 +82,18 @@ export interface IUpdateOauth2ConfigurationParams
   extends IOauth2ConfigurationReq {}
 
 export interface IUpdateOauth2ConfigurationReturn extends IGenericResp {}
+
+export interface IGetSmsConfigurationReturn extends IGetSmsConfigurationReply {}
+
+export interface IUpdateSmsConfigurationParams
+  extends IUpdateSmsConfigurationReq {}
+
+export interface IUpdateSmsConfigurationReturn extends IGenericResp {}
+
+export interface ITestSmsConfigurationParams extends ITestSmsConfigurationReq {}
+
+export interface ITestSmsConfigurationReturn
+  extends ITestSmsConfigurationReply {}
 
 export interface IGetSMTPConfigurationReturn
   extends IGetSMTPConfigurationReply {}

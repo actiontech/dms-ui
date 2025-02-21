@@ -1,47 +1,37 @@
-import { Form, message, Typography, Space, Checkbox } from 'antd';
-import { useEffect } from 'react';
+import { message, Form } from 'antd';
 import { useTranslation } from 'react-i18next';
 import { useDispatch } from 'react-redux';
-import { useRequest } from 'ahooks';
 import { updateToken } from '../../store/user';
-import Session from '@actiontech/shared/lib/api/base/service/Session';
 import LoginLayout from './components/LoginLayout';
-import {
-  BasicInput,
-  BasicButton,
-  useTypedNavigate,
-  useTypedQuery,
-  BasicToolTip
-} from '@actiontech/shared';
-import { LoginFormFieldValue } from './types';
+import { useTypedNavigate, useTypedQuery, EmptyBox } from '@actiontech/shared';
+import { LoginFormFieldValue, VerificationCodeFormFieldValue } from './types';
 import { useBoolean } from 'ahooks';
 import useBrowserVersionTips from '../../hooks/useBrowserVersionTips';
-import { LockFilled, UserFilled } from '@actiontech/icons';
-import useThemeStyleData from '../../hooks/useThemeStyleData';
 import { LocalStorageWrapper } from '@actiontech/shared';
 import {
   StorageKey,
   CompanyNoticeDisplayStatusEnum,
-  SystemRole
+  ResponseCode
 } from '@actiontech/shared/lib/enum';
 import {
   OPEN_CLOUD_BEAVER_URL_PARAM_NAME,
   ROUTE_PATHS
 } from '@actiontech/shared/lib/data/routePaths';
-import {
-  ConfigurationService,
-  OAuth2Service
-} from '@actiontech/shared/lib/api';
+import LoginForm from './components/LoginForm';
+import VerificationCodeForm from './components/VerificationCodeForm';
+import { UserService, SessionService } from '@actiontech/shared/lib/api';
+import { useState } from 'react';
 
 const Login = () => {
   const { t } = useTranslation();
 
-  const { baseTheme } = useThemeStyleData();
-  const [form] = Form.useForm<LoginFormFieldValue>();
-
-  const username = Form.useWatch('username', form);
-
   useBrowserVersionTips();
+
+  const [loginForm] = Form.useForm<LoginFormFieldValue>();
+
+  const username = Form.useWatch('username', loginForm);
+
+  const [verificationCodeForm] = Form.useForm<VerificationCodeFormFieldValue>();
 
   const dispatch = useDispatch();
 
@@ -49,26 +39,40 @@ const Login = () => {
 
   const [loading, { setTrue, setFalse }] = useBoolean();
 
+  const [phone, setPhone] = useState<string>();
+
+  const [
+    verifyCodeLoading,
+    { setTrue: verifyCodePending, setFalse: verifyCodeDone }
+  ] = useBoolean();
+
+  const [
+    allowVerificationCode,
+    { setTrue: showVerificationForm, setFalse: hideVerificationForm }
+  ] = useBoolean();
+
   const navigate = useTypedNavigate();
   const extractQueries = useTypedQuery();
-  const login = (formData: LoginFormFieldValue) => {
-    // #if [ee]
-    if (!formData.userAgreement) {
-      messageApi.error(t('dmsLogin.errorMessage.userAgreement'));
-      return;
-    }
-    // #endif
-    setTrue();
-    Session.AddSession({
+
+  const addSession = () => {
+    const loginFormValues = loginForm.getFieldsValue();
+    const verificationCodeFormValues = verificationCodeForm.getFieldsValue();
+    SessionService.AddSession({
       session: {
-        username: formData.username,
-        password: formData.password
+        username: loginFormValues.username,
+        password: loginFormValues.password,
+        // #if [ee]
+        verify_code: verificationCodeFormValues.verificationCode
+        // #endif
       }
     })
       .then((res) => {
         const token = res.data.data?.token
           ? `Bearer ${res.data.data.token}`
           : '';
+        if (res.data.data?.message) {
+          messageApi.error(res.data.data.message);
+        }
         if (token) {
           dispatch(
             updateToken({
@@ -78,11 +82,9 @@ const Login = () => {
           const encodedTarget = extractQueries(
             ROUTE_PATHS.BASE.LOGIN.index
           )?.target;
-
           if (encodedTarget) {
             const decoded = decodeURIComponent(encodedTarget);
             const [path, targetParams] = decoded.split('?');
-
             if (targetParams) {
               navigate(`${path}?${targetParams}`);
             } else if (path.endsWith('cloud-beaver')) {
@@ -101,145 +103,73 @@ const Login = () => {
       })
       .finally(() => {
         setFalse();
+        verifyCodeDone();
       });
   };
 
-  const { run: getLoginBasicConfig, data: loginBasicConfig } = useRequest(
-    () => {
-      return ConfigurationService.GetLoginTips().then(
-        (res) => res.data?.data ?? {}
-      );
-    },
-    {
-      manual: true
+  const login = (formData: LoginFormFieldValue) => {
+    // #if [ee]
+    if (!formData.userAgreement) {
+      messageApi.error(t('dmsLogin.errorMessage.userAgreement'));
+      return;
     }
-  );
-
-  const { run: getOauth2Tips, data: oauthConfig } = useRequest(
-    () => {
-      return OAuth2Service.GetOauth2Tips().then((res) => res.data?.data ?? {});
-    },
-    {
-      manual: true
-    }
-  );
-  const renderLoginButton = () => {
-    const disabledLoginButton =
-      username === SystemRole.admin
-        ? false
-        : !!loginBasicConfig?.disable_user_pwd_login;
-
-    const loginNode = (
-      <BasicButton
-        type="primary"
-        className="login-btn"
-        htmlType="submit"
-        loading={loading}
-        disabled={disabledLoginButton}
-      >
-        {loginBasicConfig?.login_button_text || t('dmsLogin.login')}
-      </BasicButton>
-    );
-    if (disabledLoginButton) {
-      return (
-        <BasicToolTip
-          className="login-btn-tooltip-wrapper"
-          title={t('dmsLogin.loginButtonDisabledTips')}
-        >
-          {loginNode}
-        </BasicToolTip>
-      );
-    }
-
-    return loginNode;
+    // #endif
+    setTrue();
+    // #if [ee]
+    UserService.VerifyUserLogin({
+      session: {
+        username: formData.username,
+        password: formData.password
+      }
+    })
+      .then((res) => {
+        const { code, data } = res.data;
+        if (code === ResponseCode.SUCCESS) {
+          if (data?.two_factor_enabled) {
+            showVerificationForm();
+            setPhone(data.phone);
+            setFalse();
+          } else {
+            addSession();
+          }
+        }
+      })
+      .catch(() => {
+        setFalse();
+      });
+    // #else
+    addSession();
+    // #endif
   };
 
   // #if [ee]
-  useEffect(() => {
-    getLoginBasicConfig();
-    getOauth2Tips();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  const onVerify = () => {
+    verifyCodePending();
+    addSession();
+  };
   // #endif
 
   return (
     <LoginLayout>
       {contextHolder}
-      <Form
-        form={form}
-        onFinish={login}
-        initialValues={{
-          userAgreement: true
-        }}
-      >
-        <Form.Item
-          name="username"
-          rules={[
-            {
-              required: true,
-              message: t('common.form.rule.require', {
-                name: t('common.username')
-              })
-            }
-          ]}
-        >
-          <BasicInput
-            className="login-form-field"
-            placeholder={t('common.username')}
-            autoFocus
-            prefix={
-              <UserFilled
-                width="18"
-                height="19"
-                color={baseTheme.icon.bindUser.user}
-              />
-            }
-          />
-        </Form.Item>
-        <Form.Item
-          name="password"
-          rules={[
-            {
-              required: true,
-              message: t('common.form.rule.require', {
-                name: t('common.password')
-              })
-            }
-          ]}
-        >
-          <BasicInput.Password
-            className="login-form-field"
-            placeholder={t('common.password')}
-            prefix={
-              <LockFilled
-                width={18}
-                height={18}
-                color={baseTheme.icon.bindUser.password}
-              />
-            }
-          />
-        </Form.Item>
-        {/* #if [ee] */}
-        <Form.Item name="userAgreement" valuePropName="checked">
-          <Checkbox>
-            <Space>
-              {t('dmsLogin.userAgreementTips')}
-              <Typography.Link href="/user-agreement.html" target="_blank">
-                {t('dmsLogin.userAgreement')}
-              </Typography.Link>
-            </Space>
-          </Checkbox>
-        </Form.Item>
-        {/* #endif */}
-
-        {renderLoginButton()}
-
-        {oauthConfig?.enable_oauth2 ? (
-          <BasicButton className="other-login-btn" href="/v1/dms/oauth2/link">
-            {oauthConfig?.login_tip}
-          </BasicButton>
-        ) : null}
-      </Form>
+      <LoginForm
+        hidden={allowVerificationCode}
+        form={loginForm}
+        onSubmit={login}
+        loading={loading}
+      />
+      {/* #if [ee] */}
+      <EmptyBox if={allowVerificationCode}>
+        <VerificationCodeForm
+          form={verificationCodeForm}
+          loading={verifyCodeLoading}
+          onVerify={onVerify}
+          hideVerificationForm={hideVerificationForm}
+          username={username}
+          phone={phone}
+        />
+      </EmptyBox>
+      {/* #endif */}
     </LoginLayout>
   );
 };

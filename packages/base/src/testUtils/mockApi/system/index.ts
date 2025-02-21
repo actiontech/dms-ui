@@ -16,6 +16,7 @@ import {
   successWebhookTestReturn,
   mockModuleRedHotsData,
   mockCodingConfigurationData,
+  mockSMSConfigurationData,
   mockGetLoginBasicConfigurationData
 } from './data';
 import configuration from '@actiontech/shared/lib/api/sqle/service/configuration';
@@ -62,6 +63,9 @@ class MockSystemApi implements MockSpyApy {
     this.getCodingConfiguration();
     this.updateCodingConfiguration();
     this.testCodingConfig();
+    this.getSmsConfiguration();
+    this.updateSmsConfiguration();
+    this.testSmsConfiguration();
     this.getLoginTips();
     this.updateLoginConfiguration();
   }
@@ -390,11 +394,40 @@ class MockSystemApi implements MockSpyApy {
     return spy;
   }
 
+  public getSmsConfiguration() {
+    const spy = jest.spyOn(DMSConfiguration, 'GetSmsConfiguration');
+    spy.mockImplementation(() =>
+      createSpySuccessResponse({
+        data: mockSMSConfigurationData
+      })
+    );
+    return spy;
+  }
+
   public getLoginTips() {
     const spy = jest.spyOn(DMSConfiguration, 'GetLoginTips');
     spy.mockImplementation(() =>
       createSpySuccessResponse({
         data: mockGetLoginBasicConfigurationData
+      })
+    );
+    return spy;
+  }
+
+  public updateSmsConfiguration() {
+    const spy = jest.spyOn(DMSConfiguration, 'UpdateSmsConfiguration');
+    spy.mockImplementation(() => createSpySuccessResponse({}));
+    return spy;
+  }
+
+  public testSmsConfiguration() {
+    const spy = jest.spyOn(DMSConfiguration, 'TestSmsConfiguration');
+    spy.mockImplementation(() =>
+      createSpySuccessResponse({
+        data: {
+          is_smtp_send_normal: true,
+          send_error_message: 'ok'
+        }
       })
     );
     return spy;
