@@ -2,7 +2,7 @@
 export default {
   login: '登录',
   otherMethod: '其他登录方式',
-
+  loginButtonDisabledTips: '当前已禁用账密登录',
   userAgreementTips: '已阅读并同意',
   userAgreement: '用户协议',
 

@@ -15,8 +15,7 @@ module.exports = {
   },
   transformIgnorePatterns: [
     '/dist/',
-    // Ignore modules without es dir.
-    'node_modules/(?!(?:.pnpm/)?(.+/es))[^/]+?/(?!(es|node_modules)/)'
+    'node_modules/(?!(?:.pnpm/)?(@react-sigma|.+/es))[^/]+?/(?!(es|node_modules)/)'
   ],
   moduleFileExtensions: ['ts', 'tsx', 'js', 'json', 'jsx', 'node'],
   testEnvironment: 'jest-environment-jsdom',
@@ -35,10 +34,9 @@ module.exports = {
       '<rootDir>/packages/shared/lib/testUtil/mockSigmaCore.tsx',
     '@react-sigma/graph-search$':
       '<rootDir>/packages/shared/lib/testUtil/mockSigmaGraphSearch.tsx',
-    '@sigma/node-image$':
-      '<rootDir>/packages/shared/lib/testUtil/mockSigmaNodeImage.tsx',
     ...pathsToModuleNameMapper(compilerOptions.paths)
   },
+
   collectCoverageFrom: [
     'packages/**/{src,lib}/{page,components,hooks,global,store,utils}/**/*.{ts,tsx}',
     'packages/**/src/App.tsx',
@@ -46,7 +44,8 @@ module.exports = {
     '!packages/**/index.type.ts',
     '!packages/**/index.enum.ts',
     '!packages/sqle/src/page/SqlAnalyze/SqlAnalyze/ProcessListCom/**',
-    '!packages/shared/lib/hooks/usePrompt/index.tsx'
+    '!packages/shared/lib/hooks/usePrompt/index.tsx',
+    '!packages/sqle/src/page/Knowledge/Graph/components/**'
   ],
   setupFilesAfterEnv: ['<rootDir>/jest-setup.ts'],
   reporters: [

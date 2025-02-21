@@ -106,3 +106,8 @@ export const mockSMSConfigurationData = {
     token: '1231'
   }
 };
+
+export const mockGetLoginBasicConfigurationData = {
+  login_button_text: 'Login',
+  disable_user_pwd_login: false
+};

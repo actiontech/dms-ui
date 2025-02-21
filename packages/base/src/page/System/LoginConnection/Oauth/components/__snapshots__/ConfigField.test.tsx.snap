@@ -612,14 +612,14 @@ exports[`base/System/LoginConnection/Oauth/ConfigField render snap 1`] = `
           >
             <label
               class=""
-              for="loginButtonText"
+              for="oauth2ButtonText"
               title=""
             >
               <div
                 class="label-cont-custom"
               >
                 <div>
-                  登录按钮文字
+                  OAuth2.0 跳转按钮文字
                 </div>
                 <div
                   class="tip-content-box"
@@ -640,8 +640,8 @@ exports[`base/System/LoginConnection/Oauth/ConfigField render snap 1`] = `
               >
                 <input
                   class="ant-input css-dev-only-do-not-override-ywkr0o basic-input-wrapper css-1pd1cd5"
-                  id="loginButtonText"
-                  placeholder="请输入登录按钮文字"
+                  id="oauth2ButtonText"
+                  placeholder="请输入OAuth2.0 跳转按钮文字"
                   type="text"
                   value=""
                 />

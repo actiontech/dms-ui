@@ -5,19 +5,10 @@ import {
   INodeResponse
 } from '@actiontech/shared/lib/api/sqle/service/common';
 import { EdgeType, NodeType } from '../index.type';
-import useThemeStyleData from '../../../../hooks/useThemeStyleData';
+import louvain from 'graphology-communities-louvain';
+import iwanthue from 'iwanthue';
 
 const useGraph = () => {
-  const { sqleTheme } = useThemeStyleData();
-  const generateNodeColor = useCallback(() => {
-    const digits = '0123456789abcdef';
-    let code = '#';
-    for (let i = 0; i < 6; i++) {
-      code += digits.charAt(Math.floor(Math.random() * 16));
-    }
-    return code;
-  }, []);
-
   const calculateNormalizedSize = useCallback(
     (
       value: number,
@@ -48,12 +39,13 @@ const useGraph = () => {
   const createGraph = useCallback(
     (data: { nodes: INodeResponse[]; edges: IEdgeResponse[] }) => {
       const graph = new MultiDirectedGraph<NodeType, EdgeType>();
+      const communities = new Set<string>();
       const nodeCount = data.nodes.length;
 
-      const MIN_NODE_SIZE = 5;
-      const MAX_NODE_SIZE = 20;
+      const MIN_NODE_SIZE = 10;
+      const MAX_NODE_SIZE = 28;
       const MIN_EDGE_SIZE = 2;
-      const MAX_EDGE_SIZE = 8;
+      const MAX_EDGE_SIZE = 16;
 
       const nodeWeightRange = getWeightRange(data.nodes);
       const edgeWeightRange = getWeightRange(data.edges);
@@ -74,14 +66,13 @@ const useGraph = () => {
         graph.addNode(node.id, {
           label: node.name ?? '',
           size: normalizedSize,
-          color: generateNodeColor(),
           x: 0.5 + radius * Math.cos(theta),
           y: 0.5 + radius * Math.sin(theta),
-          shortLabel: (node.name ?? '')[0]?.toUpperCase() ?? '',
-          image: '/static/image/knowledge.svg'
+          shortLabel: (node.name ?? '')[0]?.toUpperCase() ?? ''
         });
       });
 
+      // 添加边
       data.edges.forEach((edge) => {
         const normalizedSize = calculateNormalizedSize(
           edge.weight ?? 1,
@@ -93,19 +84,34 @@ const useGraph = () => {
 
         graph.addEdge(edge.from_id, edge.to_id, {
           size: normalizedSize,
-          forceLabel: false,
-          color: sqleTheme.knowledgeTheme.graph.edge.color
+          forceLabel: false
         });
       });
 
+      /**
+       * - 参考至：https://www.sigmajs.org/storybook/?path=/story/sigma-utils--fit-viewport-to-nodes
+       * - louvain.assign() 是一个社区检测算法，它会自动将相互联系紧密的节点分为一组，给每个节点添加 community 属性
+       * - iwanthue 是一个颜色生成库，用于生成互相区分度高的颜色
+       */
+      louvain.assign(graph, { nodeCommunityAttribute: 'community' });
+      graph.forEachNode((_, attrs) => {
+        communities.add(attrs.community!);
+      });
+      const communitiesArray = Array.from(communities);
+      const palette: Record<string, string> = iwanthue(communities.size).reduce(
+        (iter, color, i) => ({
+          ...iter,
+          [communitiesArray[i]]: color
+        }),
+        {}
+      );
+      graph.forEachNode((node, attr) =>
+        graph.setNodeAttribute(node, 'color', palette[attr.community!])
+      );
+
       return graph as Graph<NodeType, EdgeType>;
     },
-    [
-      getWeightRange,
-      calculateNormalizedSize,
-      generateNodeColor,
-      sqleTheme.knowledgeTheme.graph.edge.color
-    ]
+    [getWeightRange, calculateNormalizedSize]
   );
 
   return { createGraph };

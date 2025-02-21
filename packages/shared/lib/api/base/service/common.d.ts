@@ -734,6 +734,14 @@ export interface IGetLicenseUsageReply {
   message?: string;
 }
 
+export interface IGetLoginTipsReply {
+  code?: number;
+
+  data?: ILoginTipsResData;
+
+  message?: string;
+}
+
 export interface IGetMemberGroup {
   is_project_admin?: boolean;
 
@@ -1560,6 +1568,18 @@ export interface IListUserReply {
   total_nums?: number;
 }
 
+export interface ILoginConfiguration {
+  disable_user_pwd_login?: boolean;
+
+  login_button_text?: string;
+}
+
+export interface ILoginTipsResData {
+  disable_user_pwd_login?: boolean;
+
+  login_button_text?: string;
+}
+
 export interface IMIMEHeader {
   [key: string]: any;
 }
@@ -2040,6 +2060,10 @@ export interface IUpdateFeishuConfigurationReq {
 
 export interface IUpdateLDAPConfigurationReq {
   ldap?: ILDAPConfiguration;
+}
+
+export interface IUpdateLoginConfigurationReq {
+  login?: ILoginConfiguration;
 }
 
 export interface IUpdateMember {
