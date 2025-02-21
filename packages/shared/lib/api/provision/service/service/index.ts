@@ -8,7 +8,8 @@ import { AxiosRequestConfig } from 'axios';
 
 import {
   IAuthGetDBAccountMetaParams,
-  IAuthGetDBAccountMetaReturn
+  IAuthGetDBAccountMetaReturn,
+  IGetDatabaseDriverOptionsReturn
 } from './index.d';
 
 class ServiceService extends ServiceBase {
@@ -26,6 +27,14 @@ class ServiceService extends ServiceBase {
     return this.get<IAuthGetDBAccountMetaReturn>(
       `/v1/auth/projects/${project_uid}/services/${service_uid}/`,
       paramsData,
+      options
+    );
+  }
+
+  public GetDatabaseDriverOptions(options?: AxiosRequestConfig) {
+    return this.get<IGetDatabaseDriverOptionsReturn>(
+      '/v1/plugin/database_driver_options',
+      undefined,
       options
     );
   }

@@ -43,7 +43,13 @@ export enum GetUserStatEnum {
 
   '被禁用' = '被禁用',
 
-  '未知' = '未知'
+  '未知' = '未知',
+
+  'Normal' = 'Normal',
+
+  'Disabled' = 'Disabled',
+
+  'Unknown' = 'Unknown'
 }
 
 export enum ListDBAccountStatusEnum {
@@ -52,10 +58,26 @@ export enum ListDBAccountStatusEnum {
   'unlock' = 'unlock'
 }
 
+export enum ListDBServiceLastConnectionTestStatusEnum {
+  'connect_success' = 'connect_success',
+
+  'connect_failed' = 'connect_failed'
+}
+
+export enum ListProjectProjectPriorityEnum {
+  'high' = 'high',
+
+  'medium' = 'medium',
+
+  'low' = 'low',
+
+  'unknown' = 'unknown'
+}
+
 export enum ListServiceDbTypeEnum {
   'MySQL' = 'MySQL',
 
-  'OceanBaseMySQL' = 'OceanBaseMySQL',
+  'OceanBase For MySQL' = 'OceanBase For MySQL',
 
   'Oracle' = 'Oracle'
 }
@@ -85,13 +107,23 @@ export enum ListUserStatEnum {
 
   '被禁用' = '被禁用',
 
-  '未知' = '未知'
+  '未知' = '未知',
+
+  'Normal' = 'Normal',
+
+  'Disabled' = 'Disabled',
+
+  'Unknown' = 'Unknown'
 }
 
 export enum OpPermissionItemOpPermissionTypeEnum {
   'unknown' = 'unknown',
 
   'create_project' = 'create_project',
+
+  'global_view' = 'global_view',
+
+  'global_management' = 'global_management',
 
   'project_admin' = 'project_admin',
 
@@ -117,7 +149,9 @@ export enum OpPermissionItemOpPermissionTypeEnum {
 
   'create_optimization' = 'create_optimization',
 
-  'view_others_optimization' = 'view_others_optimization'
+  'view_others_optimization' = 'view_others_optimization',
+
+  'create_pipeline' = 'create_pipeline'
 }
 
 export enum OpPermissionItemRangeTypeEnum {
@@ -153,7 +187,7 @@ export enum OperationInfoDataObjectTypesEnum {
 export enum OperationInfoDbTypeEnum {
   'MySQL' = 'MySQL',
 
-  'OceanBaseMySQL' = 'OceanBaseMySQL',
+  'OceanBase For MySQL' = 'OceanBase For MySQL',
 
   'Oracle' = 'Oracle'
 }
@@ -171,7 +205,7 @@ export enum SQLQueryConfigAllowQueryWhenLessThanAuditLevelEnum {
 export enum ServiceDbTypeEnum {
   'MySQL' = 'MySQL',
 
-  'OceanBaseMySQL' = 'OceanBaseMySQL',
+  'OceanBase For MySQL' = 'OceanBase For MySQL',
 
   'Oracle' = 'Oracle'
 }

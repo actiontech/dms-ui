@@ -1,4 +1,7 @@
-import { IGetDBAccountMetaReply } from '../common.d';
+import {
+  IGetDBAccountMetaReply,
+  IDatabaseDriverOptionsReply
+} from '../common.d';
 
 export interface IAuthGetDBAccountMetaParams {
   project_uid: string;
@@ -9,3 +12,6 @@ export interface IAuthGetDBAccountMetaParams {
 }
 
 export interface IAuthGetDBAccountMetaReturn extends IGetDBAccountMetaReply {}
+
+export interface IGetDatabaseDriverOptionsReturn
+  extends IDatabaseDriverOptionsReply {}

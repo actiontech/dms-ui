@@ -16,8 +16,7 @@ import {
 import {
   DataObjectSourceNameEnum,
   ListServiceDbTypeEnum,
-  ListServiceTypeEnum,
-  OperationInfoDbTypeEnum
+  ListServiceTypeEnum
 } from '@actiontech/shared/lib/api/provision/service/common.enum';
 
 export const userList: IListInternalUser[] = [
@@ -340,107 +339,6 @@ export const operationList: IOperation[] = [
   {
     name: 'Brett Rippin',
     uid: '53533'
-  }
-];
-
-export const operationSetList: any = [
-  {
-    uid: '27',
-    name: '查询',
-    operations: [
-      {
-        data_object_types: ['Database', 'Table', 'Instance'],
-        data_operations: [
-          {
-            uid: '86',
-            name: 'select'
-          }
-        ],
-        db_type: OperationInfoDbTypeEnum.MySQL
-      },
-      {
-        data_object_types: ['Database', 'Table', 'Instance'],
-        data_operations: [
-          {
-            uid: '87',
-            name: 'select'
-          }
-        ],
-        db_type: OperationInfoDbTypeEnum.OceanBaseMySQL
-      }
-    ]
-  },
-  {
-    uid: '96',
-    name: '变更',
-    operations: [
-      {
-        db_type: OperationInfoDbTypeEnum.MySQL,
-        data_object_types: ['Service', 'Instance'],
-        data_operations: [
-          {
-            name: 'select',
-            uid: '8'
-          },
-          {
-            uid: '67',
-            name: 'delete'
-          },
-          {
-            uid: '15',
-            name: 'add'
-          }
-        ]
-      },
-      {
-        data_object_types: ['Database', 'Table', 'Instance'],
-        data_operations: [
-          {
-            uid: '80',
-            name: 'add'
-          }
-        ],
-        db_type: OperationInfoDbTypeEnum.OceanBaseMySQL
-      }
-    ]
-  },
-  {
-    uid: '36',
-    name: '导出',
-    operations: [
-      {
-        db_type: OperationInfoDbTypeEnum.MySQL,
-        data_operations: [
-          {
-            name: 'update',
-            uid: '57'
-          },
-          {
-            name: 'select',
-            uid: '49'
-          },
-          {
-            uid: '31',
-            name: 'remove'
-          }
-        ],
-        data_object_types: ['Instance', 'Database']
-      },
-      {
-        data_object_types: ['Database', 'Table', 'Instance'],
-        data_operations: [
-          {
-            uid: '80',
-            name: 'add'
-          },
-          {
-            name: 'update',
-            uid: '57'
-          }
-        ],
-        db_type: OperationInfoDbTypeEnum.OceanBaseMySQL
-      }
-    ]
   }
 ];
 
