@@ -15,7 +15,8 @@ import {
   successWechatTestReturn,
   successWebhookTestReturn,
   mockModuleRedHotsData,
-  mockCodingConfigurationData
+  mockCodingConfigurationData,
+  mockSMSConfigurationData
 } from './data';
 import configuration from '@actiontech/shared/lib/api/sqle/service/configuration';
 import DMSConfiguration from '@actiontech/shared/lib/api/base/service/Configuration';
@@ -61,6 +62,9 @@ class MockSystemApi implements MockSpyApy {
     this.getCodingConfiguration();
     this.updateCodingConfiguration();
     this.testCodingConfig();
+    this.getSmsConfiguration();
+    this.updateSmsConfiguration();
+    this.testSmsConfiguration();
   }
 
   public getLDAPConfig() {
@@ -381,6 +385,35 @@ class MockSystemApi implements MockSpyApy {
       createSpySuccessResponse({
         data: {
           is_message_sent_normally: true
+        }
+      })
+    );
+    return spy;
+  }
+
+  public getSmsConfiguration() {
+    const spy = jest.spyOn(DMSConfiguration, 'GetSmsConfiguration');
+    spy.mockImplementation(() =>
+      createSpySuccessResponse({
+        data: mockSMSConfigurationData
+      })
+    );
+    return spy;
+  }
+
+  public updateSmsConfiguration() {
+    const spy = jest.spyOn(DMSConfiguration, 'UpdateSmsConfiguration');
+    spy.mockImplementation(() => createSpySuccessResponse({}));
+    return spy;
+  }
+
+  public testSmsConfiguration() {
+    const spy = jest.spyOn(DMSConfiguration, 'TestSmsConfiguration');
+    spy.mockImplementation(() =>
+      createSpySuccessResponse({
+        data: {
+          is_smtp_send_normal: true,
+          send_error_message: 'ok'
         }
       })
     );

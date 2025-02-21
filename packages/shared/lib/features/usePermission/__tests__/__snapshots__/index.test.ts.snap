@@ -69,6 +69,7 @@ exports[`usePermission should match snapshot 1`] = `
         "GLOBAL_SETTING": {
           "CB_OPERATION_LOG_EXPIRED_HOURS": "action:cb_operation_log_expired_hours",
           "OPERATION_LOG_EXPIRED_HOURS": "action:operation_log_expired_hours",
+          "SMS_SERVICE": "action:sms_service",
           "URL_ADDRESS_PREFIX": "action:url_address_prefix",
         },
         "LICENSE": {
@@ -1107,6 +1108,14 @@ exports[`usePermission should match snapshot 2`] = `
   "action:schedule_time_exec_task": {
     "id": "action:schedule_time_exec_task",
     "projectArchived": false,
+    "type": "action",
+  },
+  "action:sms_service": {
+    "id": "action:sms_service",
+    "role": [
+      "admin",
+      "globalManager",
+    ],
     "type": "action",
   },
   "action:sql_assignment": {

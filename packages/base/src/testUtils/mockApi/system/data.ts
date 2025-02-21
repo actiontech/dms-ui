@@ -97,3 +97,12 @@ export const mockCodingConfigurationData = {
   coding_url: 'https://g-izbz2140.coding.net/',
   is_coding_enabled: true
 };
+
+export const mockSMSConfigurationData = {
+  enable: true,
+  url: 'absc1',
+  sms_type: 'webhook',
+  configuration: {
+    token: '1231'
+  }
+};

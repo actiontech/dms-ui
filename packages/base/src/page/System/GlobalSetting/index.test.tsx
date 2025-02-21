@@ -14,6 +14,7 @@ import { mockUseCurrentUser } from '@actiontech/shared/lib/testUtil/mockHook/moc
 describe('base/System/GlobalSetting', () => {
   let requestGetSystemVariables: jest.SpyInstance;
   let requestUpdateSystemVariables: jest.SpyInstance;
+  let getSmsConfigurationSpy: jest.SpyInstance;
 
   const customRender = () => {
     return superRender(<GlobalSetting />);
@@ -24,6 +25,7 @@ describe('base/System/GlobalSetting', () => {
     jest.useFakeTimers();
     requestGetSystemVariables = system.getSystemVariables();
     requestUpdateSystemVariables = system.updateSystemVariables();
+    getSmsConfigurationSpy = system.getSmsConfiguration();
   });
 
   afterEach(() => {
@@ -38,6 +40,7 @@ describe('base/System/GlobalSetting', () => {
     expect(baseElement).toMatchSnapshot();
     await act(async () => jest.advanceTimersByTime(2600));
     expect(requestGetSystemVariables).toHaveBeenCalled();
+    expect(getSmsConfigurationSpy).toHaveBeenCalledTimes(1);
     expect(baseElement).toMatchSnapshot();
   });
 
