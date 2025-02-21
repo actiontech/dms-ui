@@ -150,12 +150,16 @@ export interface IAddSession {
   password: string;
 
   username: string;
+
+  verify_code?: string;
 }
 
 export interface IAddSessionReply {
   code?: number;
 
   data?: {
+    message?: string;
+
     token?: string;
   };
 
@@ -832,6 +836,26 @@ export interface IGetSQLQueryConfigurationReply {
   message?: string;
 }
 
+export interface IGetSmsConfigurationReply {
+  code?: number;
+
+  data?: IGetSmsConfigurationReplyItem;
+
+  message?: string;
+}
+
+export interface IGetSmsConfigurationReplyItem {
+  configuration?: {
+    [key: string]: string;
+  };
+
+  enable?: boolean;
+
+  sms_type?: string;
+
+  url?: string;
+}
+
 export interface IGetUser {
   access_token_info?: IAccessTokenInfo;
 
@@ -852,6 +876,8 @@ export interface IGetUser {
   stat?: GetUserStatEnum;
 
   third_party_user_info?: string;
+
+  two_factor_enabled?: boolean;
 
   uid?: string;
 
@@ -1772,6 +1798,24 @@ export interface ISQLQueryConfig {
   query_timeout_second?: number;
 }
 
+export interface ISendSmsCodeReply {
+  code?: number;
+
+  data?: ISendSmsCodeReplyData;
+
+  message?: string;
+}
+
+export interface ISendSmsCodeReplyData {
+  is_sms_code_sent_normally?: boolean;
+
+  send_error_message?: string;
+}
+
+export interface ISendSmsCodeReq {
+  username?: string;
+}
+
 export interface ITask {
   task_uid?: string;
 }
@@ -1827,6 +1871,28 @@ export interface ITestSMTPConfigurationReq {
 }
 
 export interface ITestSMTPConfigurationResData {
+  is_smtp_send_normal?: boolean;
+
+  send_error_message?: string;
+}
+
+export interface ITestSmsConfiguration {
+  recipient_phone?: string;
+}
+
+export interface ITestSmsConfigurationReply {
+  code?: number;
+
+  data?: ITestSmsConfigurationResData;
+
+  message?: string;
+}
+
+export interface ITestSmsConfigurationReq {
+  test_sms_configuration?: ITestSmsConfiguration;
+}
+
+export interface ITestSmsConfigurationResData {
   is_smtp_send_normal?: boolean;
 
   send_error_message?: string;
@@ -1904,6 +1970,8 @@ export interface IUpdateCurrentUser {
   password?: string;
 
   phone?: string;
+
+  two_factor_enabled?: boolean;
 
   wxid?: string;
 }
@@ -2040,6 +2108,22 @@ export interface IUpdateSMTPConfigurationReq {
   smtp_configuration?: IUpdateSMTPConfiguration;
 }
 
+export interface IUpdateSmsConfiguration {
+  configuration?: {
+    [key: string]: string;
+  };
+
+  enable_sms?: boolean;
+
+  sms_type?: string;
+
+  url?: string;
+}
+
+export interface IUpdateSmsConfigurationReq {
+  update_sms_configuration?: IUpdateSmsConfiguration;
+}
+
 export interface IUpdateUser {
   email?: string;
 
@@ -2132,6 +2216,42 @@ export interface IUserGroup {
 
 export interface IUserOpPermission {
   project_uid?: string;
+}
+
+export interface IVerifySmsCodeReply {
+  code?: number;
+
+  data?: IVerifySmsCodeReplyData;
+
+  message?: string;
+}
+
+export interface IVerifySmsCodeReplyData {
+  is_verify_sent_normally?: boolean;
+
+  verify_error_message?: string;
+}
+
+export interface IVerifySmsCodeReq {
+  code?: string;
+
+  username?: string;
+}
+
+export interface IVerifyUserLoginReply {
+  code?: number;
+
+  data?: {
+    phone?: string;
+
+    two_factor_enabled?: boolean;
+
+    user_uid?: string;
+
+    verify_failed_msg?: string;
+  };
+
+  message?: string;
 }
 
 export interface IWeChatConfigurationResData {
