@@ -65,9 +65,9 @@ exports[`base/System-ee render snap 1`] = `
               />
               <div
                 class="ant-segmented-item-label"
-                title="登录对接"
+                title="登录配置"
               >
-                登录对接
+                登录配置
               </div>
             </label>
             <label
@@ -1751,9 +1751,9 @@ exports[`base/System-ee render snap 2`] = `
               />
               <div
                 class="ant-segmented-item-label"
-                title="登录对接"
+                title="登录配置"
               >
-                登录对接
+                登录配置
               </div>
             </label>
             <label
@@ -3511,9 +3511,9 @@ exports[`base/System-ee render snap 3`] = `
               />
               <div
                 class="ant-segmented-item-label"
-                title="登录对接"
+                title="登录配置"
               >
-                登录对接
+                登录配置
               </div>
             </label>
             <label

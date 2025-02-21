@@ -15,7 +15,8 @@ import {
   successWechatTestReturn,
   successWebhookTestReturn,
   mockModuleRedHotsData,
-  mockCodingConfigurationData
+  mockCodingConfigurationData,
+  mockGetLoginBasicConfigurationData
 } from './data';
 import configuration from '@actiontech/shared/lib/api/sqle/service/configuration';
 import DMSConfiguration from '@actiontech/shared/lib/api/base/service/Configuration';
@@ -61,6 +62,8 @@ class MockSystemApi implements MockSpyApy {
     this.getCodingConfiguration();
     this.updateCodingConfiguration();
     this.testCodingConfig();
+    this.getLoginTips();
+    this.updateLoginConfiguration();
   }
 
   public getLDAPConfig() {
@@ -384,6 +387,22 @@ class MockSystemApi implements MockSpyApy {
         }
       })
     );
+    return spy;
+  }
+
+  public getLoginTips() {
+    const spy = jest.spyOn(DMSConfiguration, 'GetLoginTips');
+    spy.mockImplementation(() =>
+      createSpySuccessResponse({
+        data: mockGetLoginBasicConfigurationData
+      })
+    );
+    return spy;
+  }
+
+  public updateLoginConfiguration() {
+    const spy = jest.spyOn(DMSConfiguration, 'UpdateLoginConfiguration');
+    spy.mockImplementation(() => createSpySuccessResponse({}));
     return spy;
   }
 }

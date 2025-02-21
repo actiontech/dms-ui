@@ -20,7 +20,7 @@ exports[`page/Login/LoginLayout render ui snap 1`] = `
         </div>
       </div>
       <div
-        class="css-1pqzecc"
+        class="css-zhd3kf"
       >
         <div
           class="login-page-right-content"
@@ -71,7 +71,7 @@ exports[`page/Login/LoginLayout render ui snap redux has data 1`] = `
         </div>
       </div>
       <div
-        class="css-1pqzecc"
+        class="css-zhd3kf"
       >
         <div
           class="login-page-right-content"

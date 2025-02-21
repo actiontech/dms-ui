@@ -12,7 +12,7 @@ export default {
   tabPaneTitle: {
     pushNotification: '消息推送',
     processConnection: '流程对接',
-    loginConnection: '登录对接',
+    loginConnection: '登录配置',
     globalConfiguration: '全局配置',
     license: '许可证',
     personalize: '个性化设置'
@@ -133,9 +133,9 @@ export default {
     userWechatTagNameTips:
       'sqle会尝试使用此路径，从第三方平台获取用户信息的响应中解析出用户微信ID',
 
-    loginButtonText: '登录按钮文字',
-    loginButtonTextTips: 'login页面OAuth2.0登录按钮文字',
     loginButtonTextValidateMessage: '最多输入28个字符',
+    oauth2ButtonText: 'OAuth2.0 跳转按钮文字',
+    oauth2ButtonTextTips: 'login页面OAuth2.0登录按钮文字',
 
     autoCreateUser: '自动创建并绑定用户',
     autoCreateUserTips:
@@ -149,6 +149,18 @@ export default {
     userPassword: '默认登录密码',
     userPasswordTips:
       '系统自动创建的新用户将使用此密码作为初始登录密码，请妥善保存。此外，为保证账户安全，建议用户首次登录后及时修改密码。如果之前配置过该项，更新时不填写该项代表不更新密钥。'
+  },
+
+  loginBasic: {
+    passwordLoginDisabled: '是否禁用账密登录',
+    passwordLoginDisabledTips: '禁止除管理员外的普通用户通过账号和密码登录',
+    loginButtonText: '登录按钮文字',
+    loginButtonTextTips: 'login页面登录按钮文字',
+    enableOAuthFirst: '需先启用OAuth2.0登录',
+    confirmDisable: '是否确认关闭当前配置？',
+    confirmEnableWithLDAP:
+      'LDAP服务基于账密登录，会同时被禁用，是否确认开启禁用？',
+    confirmEnable: '是否确认开启当前配置？'
   },
 
   dingTalk: {

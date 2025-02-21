@@ -10,10 +10,10 @@ export type OauthFormField = {
   scopes: string;
   accessTokenKeyName: string;
   userIdKeyName: string;
-  loginButtonText: string;
   userEmailTag: string;
   userWechatTag: string;
   autoCreateUser: boolean;
   userPassword?: string;
   skipCheckState: boolean;
+  oauth2ButtonText: string;
 };
