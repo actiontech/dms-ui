@@ -1551,11 +1551,7 @@ export interface ILoginConfiguration {
 export interface ILoginTipsResData {
   disable_user_pwd_login?: boolean;
 
-  enable_oauth2?: boolean;
-
   login_button_text?: string;
-
-  oauth2_login_tip?: string;
 }
 
 export interface IMIMEHeader {
