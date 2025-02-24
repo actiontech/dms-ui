@@ -41,3 +41,5 @@ class DatabaseComparisonMockService {
 }
 
 export default new DatabaseComparisonMockService();
+
+console.log('first');
