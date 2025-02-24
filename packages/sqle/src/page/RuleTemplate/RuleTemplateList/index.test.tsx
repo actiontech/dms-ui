@@ -18,6 +18,7 @@ import { ModalName } from '../../../data/ModalName';
 import { useDispatch, useSelector } from 'react-redux';
 import { SystemRole } from '@actiontech/shared/lib/enum';
 import { createSpySuccessResponse } from '@actiontech/shared/lib/testUtil/mockApi';
+import { mockUsePermission } from '@actiontech/shared/lib/testUtil/mockHook/mockUsePermission';
 
 jest.mock('react-redux', () => ({
   ...jest.requireActual('react-redux'),
@@ -181,5 +182,21 @@ describe('sqle/RuleTemplate/List', () => {
     expect(baseElement).toMatchSnapshot();
     expect(screen.getByText('克隆规则模板')).toBeInTheDocument();
     expect(screen.getByText('导出规则模板')).toBeInTheDocument();
+  });
+
+  it('should not render public rule template list when user in not admin', async () => {
+    mockUseCurrentUser({
+      ...mockCurrentUserReturn,
+      userRoles: {
+        ...mockCurrentUserReturn.userRoles,
+        [SystemRole.admin]: false,
+        [SystemRole.globalManager]: false,
+        [SystemRole.globalViewing]: false
+      }
+    });
+    customRender();
+
+    await act(async () => jest.advanceTimersByTime(3000));
+    expect(screen.queryByText('公共规则模板')).not.toBeInTheDocument();
   });
 });
