@@ -117,5 +117,6 @@ export const DBServicesList: IListDBService[] = [
 export const mockVerifyLoginData = {
   verify_failed_msg: '',
   user_uid: '700200',
-  two_factor_enabled: false
+  two_factor_enabled: false,
+  phone: '12345678901'
 };

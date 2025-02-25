@@ -14,7 +14,8 @@ import {
   jsonParse,
   translateTimeForRequest,
   findDuplicateKeys,
-  paramsSerializer
+  paramsSerializer,
+  maskPhoneNumber
 } from '../Common';
 import { act } from '@testing-library/react';
 import 'blob-polyfill';
@@ -337,5 +338,10 @@ describe('utils/Common', () => {
   it('should stringify params', () => {
     expect(paramsSerializer({ a: 1, b: 2 })).toBe('a=1&b=2');
     expect(paramsSerializer({ a: 1, b: [2, 3, 4] })).toBe('a=1&b=2&b=3&b=4');
+  });
+
+  it('should mask phone number', () => {
+    expect(maskPhoneNumber('12345678901')).toBe('123****8901');
+    expect(maskPhoneNumber('123')).toBe('123');
   });
 });
