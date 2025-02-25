@@ -378,7 +378,7 @@ exports[`test base/page/Account should match snapshot 1`] = `
                         class="switch-field-wrapper"
                       >
                         <div
-                          class="ant-form-item has-label-tip css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+                          class="ant-form-item  css-1jlm9cy css-dev-only-do-not-override-txh9fw"
                         >
                           <div
                             class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
@@ -388,19 +388,9 @@ exports[`test base/page/Account should match snapshot 1`] = `
                             >
                               <label
                                 class="ant-form-item-no-colon"
-                                title=""
+                                title="双因素认证"
                               >
-                                <div
-                                  class="label-cont-custom"
-                                >
-                                  <div>
-                                    双因素认证
-                                  </div>
-                                  <div
-                                    class="tip-content-box"
-                                    hidden=""
-                                  />
-                                </div>
+                                双因素认证
                               </label>
                             </div>
                             <div
@@ -1013,7 +1003,7 @@ exports[`test base/page/Account should match snapshot 2`] = `
                         class="switch-field-wrapper"
                       >
                         <div
-                          class="ant-form-item has-label-tip css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+                          class="ant-form-item  css-1jlm9cy css-dev-only-do-not-override-txh9fw"
                         >
                           <div
                             class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
@@ -1023,19 +1013,9 @@ exports[`test base/page/Account should match snapshot 2`] = `
                             >
                               <label
                                 class="ant-form-item-no-colon"
-                                title=""
+                                title="双因素认证"
                               >
-                                <div
-                                  class="label-cont-custom"
-                                >
-                                  <div>
-                                    双因素认证
-                                  </div>
-                                  <div
-                                    class="tip-content-box"
-                                    hidden=""
-                                  />
-                                </div>
+                                双因素认证
                               </label>
                             </div>
                             <div
@@ -2020,7 +2000,7 @@ exports[`test base/page/Account should match snapshot when "getUserInfoLoading" 
                         class="switch-field-wrapper"
                       >
                         <div
-                          class="ant-form-item has-label-tip css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+                          class="ant-form-item  css-1jlm9cy css-dev-only-do-not-override-txh9fw"
                         >
                           <div
                             class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
@@ -2030,19 +2010,9 @@ exports[`test base/page/Account should match snapshot when "getUserInfoLoading" 
                             >
                               <label
                                 class="ant-form-item-no-colon"
-                                title=""
+                                title="双因素认证"
                               >
-                                <div
-                                  class="label-cont-custom"
-                                >
-                                  <div>
-                                    双因素认证
-                                  </div>
-                                  <div
-                                    class="tip-content-box"
-                                    hidden=""
-                                  />
-                                </div>
+                                双因素认证
                               </label>
                             </div>
                             <div
