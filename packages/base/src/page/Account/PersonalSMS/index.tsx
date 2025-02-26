@@ -2,7 +2,6 @@ import { useTranslation } from 'react-i18next';
 import { useBoolean } from 'ahooks';
 import { useMemo, useEffect } from 'react';
 import { Spin, message } from 'antd';
-import { CustomLabelContent } from '@actiontech/shared/lib/components/CustomForm';
 import ConfigField from './components/ConfigField';
 import { ResponseCode } from '@actiontech/shared/lib/enum';
 import { FormFields } from './index.type';
@@ -37,9 +36,7 @@ const PersonalSMS: React.FC<PersonalSMSProps> = ({
     enabled
   } = useConfigRender<FormFields>({
     switchFieldName,
-    switchFieldLabel: (
-      <CustomLabelContent title={t('dmsAccount.sms.title')} tips="" />
-    )
+    switchFieldLabel: t('dmsAccount.sms.title')
   });
 
   useEffect(() => {
