@@ -207,7 +207,7 @@ exports[`base/System/GlobalSetting render api return no data 1`] = `
                   class="switch-field-wrapper"
                 >
                   <div
-                    class="ant-form-item has-label-tip css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+                    class="ant-form-item  css-1jlm9cy css-dev-only-do-not-override-txh9fw"
                   >
                     <div
                       class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
@@ -217,19 +217,9 @@ exports[`base/System/GlobalSetting render api return no data 1`] = `
                       >
                         <label
                           class="ant-form-item-no-colon"
-                          title=""
+                          title="短信服务"
                         >
-                          <div
-                            class="label-cont-custom"
-                          >
-                            <div>
-                              短信服务
-                            </div>
-                            <div
-                              class="tip-content-box"
-                              hidden=""
-                            />
-                          </div>
+                          短信服务
                         </label>
                       </div>
                       <div
@@ -874,7 +864,7 @@ exports[`base/System/GlobalSetting render snap 1`] = `
                   class="switch-field-wrapper"
                 >
                   <div
-                    class="ant-form-item has-label-tip css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+                    class="ant-form-item  css-1jlm9cy css-dev-only-do-not-override-txh9fw"
                   >
                     <div
                       class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
@@ -884,19 +874,9 @@ exports[`base/System/GlobalSetting render snap 1`] = `
                       >
                         <label
                           class="ant-form-item-no-colon"
-                          title=""
+                          title="短信服务"
                         >
-                          <div
-                            class="label-cont-custom"
-                          >
-                            <div>
-                              短信服务
-                            </div>
-                            <div
-                              class="tip-content-box"
-                              hidden=""
-                            />
-                          </div>
+                          短信服务
                         </label>
                       </div>
                       <div
@@ -1427,7 +1407,7 @@ exports[`base/System/GlobalSetting render snap 2`] = `
                   class="switch-field-wrapper"
                 >
                   <div
-                    class="ant-form-item has-label-tip css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+                    class="ant-form-item  css-1jlm9cy css-dev-only-do-not-override-txh9fw"
                   >
                     <div
                       class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
@@ -1437,19 +1417,9 @@ exports[`base/System/GlobalSetting render snap 2`] = `
                       >
                         <label
                           class="ant-form-item-no-colon"
-                          title=""
+                          title="短信服务"
                         >
-                          <div
-                            class="label-cont-custom"
-                          >
-                            <div>
-                              短信服务
-                            </div>
-                            <div
-                              class="tip-content-box"
-                              hidden=""
-                            />
-                          </div>
+                          短信服务
                         </label>
                       </div>
                       <div

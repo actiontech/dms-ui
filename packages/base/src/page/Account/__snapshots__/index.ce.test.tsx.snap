@@ -1,0 +1,370 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`test base/page/Account ce should match snapshot 1`] = `
+<body>
+  <div>
+    <div>
+      <div
+        class="actiontech-page-header-namespace css-1xspr0w"
+      >
+        <div
+          class="title"
+        >
+          个人中心
+        </div>
+        <div
+          class="extra"
+        />
+      </div>
+      <div
+        class="css-1vouckw"
+      >
+        <div
+          class="css-ip7bgn"
+        >
+          账户基本信息
+          <button
+            class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary basic-button-wrapper css-geipcv"
+            type="button"
+          >
+            <span>
+              修改密码
+            </span>
+          </button>
+        </div>
+        <div
+          class="ant-spin-nested-loading css-dev-only-do-not-override-txh9fw"
+        >
+          <div
+            class="ant-spin-container"
+          >
+            <div
+              class="ant-row ant-row-space-between ant-row-middle css-19fu9ar css-dev-only-do-not-override-txh9fw"
+            >
+              <div
+                class="ant-col ant-col-11 config-item-label css-dev-only-do-not-override-txh9fw"
+              >
+                <div
+                  class="config-item-label"
+                >
+                  <div
+                    class="title"
+                  >
+                    用户名
+                  </div>
+                </div>
+              </div>
+              <div
+                class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center config-item-filed"
+              >
+                <div
+                  class="ant-space-item"
+                  style="margin-right: 8px;"
+                >
+                  admin
+                </div>
+                <div
+                  class="ant-space-item"
+                >
+                  <button
+                    class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default ant-btn-icon-only config-item-filed-edit-button basic-button-wrapper css-geipcv"
+                    hidden=""
+                    type="button"
+                  >
+                    <span
+                      class="ant-btn-icon"
+                    >
+                      <svg
+                        height="16"
+                        viewBox="0 0 16 16"
+                        width="16"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M6.162 12.667H14V14H2v-2.829l6.6-6.6 2.828 2.83zm3.38-9.038 1.415-1.414a.667.667 0 0 1 .942 0L13.785 4.1a.667.667 0 0 1 0 .942l-1.414 1.414z"
+                          fill="#8A8F99"
+                        />
+                      </svg>
+                    </span>
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div
+              class="ant-row ant-row-space-between ant-row-middle css-19fu9ar css-dev-only-do-not-override-txh9fw"
+            >
+              <div
+                class="ant-col ant-col-11 config-item-label css-dev-only-do-not-override-txh9fw"
+              >
+                <div
+                  class="config-item-label"
+                >
+                  <div
+                    class="title"
+                  >
+                    邮箱
+                  </div>
+                </div>
+              </div>
+              <div
+                class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center config-item-filed"
+              >
+                <div
+                  class="ant-space-item"
+                  style="margin-right: 8px;"
+                >
+                  admin@gmail.com
+                </div>
+                <div
+                  class="ant-space-item"
+                >
+                  <button
+                    class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default ant-btn-icon-only config-item-filed-edit-button basic-button-wrapper css-geipcv"
+                    hidden=""
+                    type="button"
+                  >
+                    <span
+                      class="ant-btn-icon"
+                    >
+                      <svg
+                        height="16"
+                        viewBox="0 0 16 16"
+                        width="16"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M6.162 12.667H14V14H2v-2.829l6.6-6.6 2.828 2.83zm3.38-9.038 1.415-1.414a.667.667 0 0 1 .942 0L13.785 4.1a.667.667 0 0 1 0 .942l-1.414 1.414z"
+                          fill="#8A8F99"
+                        />
+                      </svg>
+                    </span>
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div
+              class="ant-row ant-row-space-between ant-row-middle css-19fu9ar css-dev-only-do-not-override-txh9fw"
+            >
+              <div
+                class="ant-col ant-col-11 config-item-label css-dev-only-do-not-override-txh9fw"
+              >
+                <div
+                  class="config-item-label"
+                >
+                  <div
+                    class="title"
+                  >
+                    企业微信UserID
+                  </div>
+                </div>
+              </div>
+              <div
+                class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center config-item-filed"
+              >
+                <div
+                  class="ant-space-item"
+                  style="margin-right: 8px;"
+                >
+                  wx_test_id
+                </div>
+                <div
+                  class="ant-space-item"
+                >
+                  <button
+                    class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default ant-btn-icon-only config-item-filed-edit-button basic-button-wrapper css-geipcv"
+                    hidden=""
+                    type="button"
+                  >
+                    <span
+                      class="ant-btn-icon"
+                    >
+                      <svg
+                        height="16"
+                        viewBox="0 0 16 16"
+                        width="16"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M6.162 12.667H14V14H2v-2.829l6.6-6.6 2.828 2.83zm3.38-9.038 1.415-1.414a.667.667 0 0 1 .942 0L13.785 4.1a.667.667 0 0 1 0 .942l-1.414 1.414z"
+                          fill="#8A8F99"
+                        />
+                      </svg>
+                    </span>
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div
+              class="ant-row ant-row-space-between ant-row-middle css-19fu9ar css-dev-only-do-not-override-txh9fw"
+            >
+              <div
+                class="ant-col ant-col-11 config-item-label css-dev-only-do-not-override-txh9fw"
+              >
+                <div
+                  class="config-item-label"
+                >
+                  <div
+                    class="title"
+                  >
+                    手机号
+                  </div>
+                </div>
+              </div>
+              <div
+                class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center config-item-filed"
+              >
+                <div
+                  class="ant-space-item"
+                  style="margin-right: 8px;"
+                >
+                  13112341234
+                </div>
+                <div
+                  class="ant-space-item"
+                >
+                  <button
+                    class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default ant-btn-icon-only config-item-filed-edit-button basic-button-wrapper css-geipcv"
+                    hidden=""
+                    type="button"
+                  >
+                    <span
+                      class="ant-btn-icon"
+                    >
+                      <svg
+                        height="16"
+                        viewBox="0 0 16 16"
+                        width="16"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M6.162 12.667H14V14H2v-2.829l6.6-6.6 2.828 2.83zm3.38-9.038 1.415-1.414a.667.667 0 0 1 .942 0L13.785 4.1a.667.667 0 0 1 0 .942l-1.414 1.414z"
+                          fill="#8A8F99"
+                        />
+                      </svg>
+                    </span>
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div
+              class="ant-row clear-padding-top css-nsnt4h css-dev-only-do-not-override-txh9fw"
+            >
+              <div
+                class="label-content"
+              >
+                <div
+                  class="config-item-label"
+                >
+                  <div
+                    class="title"
+                  >
+                    访问令牌
+                  </div>
+                  <div
+                    class="tips"
+                  >
+                    您可以在IDE工具上使用访问令牌，进行用户认证
+                  </div>
+                </div>
+                <button
+                  class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary basic-button-wrapper css-geipcv"
+                  type="button"
+                >
+                  <span>
+                    生成Token
+                  </span>
+                </button>
+              </div>
+              <div
+                class="token-content"
+              >
+                <div
+                  class="token-content-item"
+                >
+                  <span
+                    class="token-content-item-label"
+                  >
+                    Token
+                  </span>
+                  <span
+                    class="css-1sg2lsz"
+                  >
+                    <div
+                      class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
+                    >
+                      <div
+                        class="ant-space-item"
+                      >
+                        <span
+                          class="rect-border-wrapper css-1iiq8r2"
+                        >
+                          <svg
+                            height="16"
+                            viewBox="0 0 16 16"
+                            width="16"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              d="M11.333 9.333H8.44A4.002 4.002 0 0 1 .667 8a4 4 0 0 1 7.772-1.333h6.894v2.666H14V12h-2.667zm-6.666 0a1.333 1.333 0 1 0 0-2.666 1.333 1.333 0 0 0 0 2.666"
+                              fill="#8A8F99"
+                            />
+                          </svg>
+                        </span>
+                      </div>
+                    </div>
+                    <span
+                      class="ant-typography css-dev-only-do-not-override-txh9fw"
+                    >
+                      <div
+                        aria-label="Copy"
+                        class="ant-typography-copy"
+                        role="button"
+                        style="border: 0px; background: transparent; padding: 0px; line-height: inherit; display: inline-block;"
+                        tabindex="0"
+                      >
+                        <span
+                          aria-label="copy"
+                          class="anticon anticon-copy"
+                          role="img"
+                        >
+                          <svg
+                            aria-hidden="true"
+                            data-icon="copy"
+                            fill="currentColor"
+                            focusable="false"
+                            height="1em"
+                            viewBox="64 64 896 896"
+                            width="1em"
+                          >
+                            <path
+                              d="M832 64H296c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h496v688c0 4.4 3.6 8 8 8h56c4.4 0 8-3.6 8-8V96c0-17.7-14.3-32-32-32zM704 192H192c-17.7 0-32 14.3-32 32v530.7c0 8.5 3.4 16.6 9.4 22.6l173.3 173.3c2.2 2.2 4.7 4 7.4 5.5v1.9h4.2c3.5 1.3 7.2 2 11 2H704c17.7 0 32-14.3 32-32V224c0-17.7-14.3-32-32-32zM350 856.2L263.9 770H350v86.2zM664 888H414V746c0-22.1-17.9-40-40-40H232V264h432v624z"
+                            />
+                          </svg>
+                        </span>
+                      </div>
+                    </span>
+                  </span>
+                </div>
+                <div
+                  class="token-content-item"
+                >
+                  <span
+                    class="token-content-item-label"
+                  >
+                    过期时间
+                  </span>
+                  <span
+                    class="token-content-item-value"
+                  >
+                    2024-03-31 10:25:10
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+`;
