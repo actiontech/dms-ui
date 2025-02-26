@@ -1490,7 +1490,7 @@ exports[`page/Login-ee render login when two_factor_enabled is true 1`] = `
               <span
                 class="label label-base"
               >
-                SQLE
+                DMS
               </span>
             </div>
           </div>
