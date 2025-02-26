@@ -4,7 +4,11 @@ import { useNavigate, useSearchParams } from 'react-router-dom';
 import MockDate from 'mockdate';
 import { superRender } from '../../testUtils/customRender';
 import dms from '../../testUtils/mockApi/global';
-import { oauth2Tips, UserInfo } from '../../testUtils/mockApi/global/data';
+import {
+  oauth2Tips,
+  UserInfo,
+  mockVerifyLoginData
+} from '../../testUtils/mockApi/global/data';
 import { getBySelector } from '@actiontech/shared/lib/testUtil/customQuery';
 import { createSpySuccessResponse } from '@actiontech/shared/lib/testUtil/mockApi';
 import { LocalStorageWrapper } from '@actiontech/shared';
@@ -21,7 +25,7 @@ import {
   UtilsConsoleErrorStringsEnum
 } from '@actiontech/shared/lib/testUtil/common';
 import system from '../../testUtils/mockApi/system';
-import { mockGetLoginBasicConfigurationData } from '../../testUtils/mockApi/system/data';
+import sms from '../../testUtils/mockApi/sms';
 
 jest.mock('react-router-dom', () => {
   return {
@@ -42,6 +46,8 @@ describe('page/Login-ee', () => {
   const useSearchParamsSpy: jest.Mock = useSearchParams as jest.Mock;
   let requestGetOauth2Tip: jest.SpyInstance;
   let requestGetLoginBasicConfig: jest.SpyInstance;
+  let verifyUserLoginSpy: jest.SpyInstance;
+  let sendSmsCodeSpy: jest.SpyInstance;
 
   ignoreConsoleErrors([
     UtilsConsoleErrorStringsEnum.UNCONNECTED_FORM_COMPONENT
@@ -59,6 +65,8 @@ describe('page/Login-ee', () => {
     MockDate.set('2023-12-19 12:00:00');
     requestGetOauth2Tip = dms.getOauth2Tips();
     requestGetLoginBasicConfig = system.getLoginTips();
+    verifyUserLoginSpy = dms.verifyUserLogin();
+    sendSmsCodeSpy = sms.sendSmsCode();
     dms.mockAllApi();
   });
 
@@ -129,6 +137,82 @@ describe('page/Login-ee', () => {
     expect(baseElement).toMatchSnapshot();
   });
 
+  it('render login when two_factor_enabled is true', async () => {
+    const requestLogin = dms.addSession();
+    verifyUserLoginSpy.mockImplementation(() =>
+      createSpySuccessResponse({
+        data: {
+          ...mockVerifyLoginData,
+          two_factor_enabled: true
+        }
+      })
+    );
+    requestGetLoginBasicConfig.mockImplementation(() =>
+      createSpySuccessResponse({
+        data: {
+          login_button_text: '登录',
+          disable_user_pwd_login: false
+        }
+      })
+    );
+    const { baseElement } = customRender();
+    await act(async () => jest.advanceTimersByTime(3300));
+    expect(requestGetOauth2Tip).toHaveBeenCalledTimes(1);
+
+    fireEvent.change(getBySelector('#username', baseElement), {
+      target: {
+        value: 'admin'
+      }
+    });
+    await act(async () => jest.advanceTimersByTime(300));
+    fireEvent.change(getBySelector('#password', baseElement), {
+      target: {
+        value: 'admin'
+      }
+    });
+    await act(async () => jest.advanceTimersByTime(0));
+    fireEvent.click(screen.getByText('登 录'));
+    await act(async () => jest.advanceTimersByTime(300));
+    expect(verifyUserLoginSpy).toHaveBeenCalledTimes(1);
+    expect(verifyUserLoginSpy).toHaveBeenCalledWith({
+      session: {
+        username: 'admin',
+        password: 'admin'
+      }
+    });
+    await act(async () => jest.advanceTimersByTime(3000));
+    expect(baseElement).toMatchSnapshot();
+    expect(screen.getByText('发送验证码')).toBeInTheDocument();
+    fireEvent.click(screen.getByText('发送验证码'));
+    await act(async () => jest.advanceTimersByTime(3000));
+    expect(sendSmsCodeSpy).toHaveBeenCalledTimes(1);
+
+    fireEvent.change(getBySelector('#verificationCode'), {
+      target: {
+        value: '1234'
+      }
+    });
+    await act(async () => jest.advanceTimersByTime(0));
+    fireEvent.click(screen.getByText('验 证'));
+    await act(async () => jest.advanceTimersByTime(3000));
+    expect(requestLogin).toHaveBeenCalledTimes(1);
+    expect(requestLogin).toHaveBeenCalledWith({
+      session: {
+        username: 'admin',
+        password: 'admin',
+        verify_code: '1234'
+      }
+    });
+    await act(async () => jest.advanceTimersByTime(3000));
+    expect(dispatchSpy).toHaveBeenCalledTimes(1);
+    expect(dispatchSpy).toHaveBeenCalledWith({
+      type: 'user/updateToken',
+      payload: {
+        token: `Bearer ${UserInfo.token}`
+      }
+    });
+  });
+
   describe('render login success when has location search val', () => {
     beforeEach(() => {
       requestGetOauth2Tip.mockImplementation(() =>
@@ -152,7 +236,6 @@ describe('page/Login-ee', () => {
 
     it('render with other search val', async () => {
       const requestLogin = dms.addSession();
-      const verifyUserLoginSpy = dms.verifyUserLogin();
       const LocalStorageWrapperSet = jest.spyOn(LocalStorageWrapper, 'set');
       useSearchParamsSpy.mockReturnValue([
         new URLSearchParams({
@@ -207,7 +290,6 @@ describe('page/Login-ee', () => {
 
     it('render with other search val', async () => {
       const requestLogin = dms.addSession();
-      const verifyUserLoginSpy = dms.verifyUserLogin();
       const LocalStorageWrapperSet = jest.spyOn(LocalStorageWrapper, 'set');
       useSearchParamsSpy.mockReturnValue([
         new URLSearchParams({
@@ -264,7 +346,6 @@ describe('page/Login-ee', () => {
 
     it('render search value with search params', async () => {
       const requestLogin = dms.addSession();
-      const verifyUserLoginSpy = dms.verifyUserLogin();
       const LocalStorageWrapperSet = jest.spyOn(LocalStorageWrapper, 'set');
       useSearchParamsSpy.mockReturnValue([
         new URLSearchParams({

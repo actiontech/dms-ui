@@ -2,7 +2,6 @@ import { useTranslation } from 'react-i18next';
 import { useBoolean, useRequest } from 'ahooks';
 import { useCallback, useMemo } from 'react';
 import { Spin, Typography } from 'antd';
-import { CustomLabelContent } from '@actiontech/shared/lib/components/CustomForm';
 import ConfigExtraButtons from './components/ConfigExtraButtons';
 import ConfigField from './components/ConfigField';
 import { ConfigurationService } from '@actiontech/shared/lib/api';
@@ -22,7 +21,7 @@ import {
   PermissionControl
 } from '@actiontech/shared/lib/features';
 
-const CodingSetting: React.FC = () => {
+const SMSSetting: React.FC = () => {
   const { t } = useTranslation();
 
   const [submitLoading, { setTrue: startSubmit, setFalse: submitFinish }] =
@@ -38,12 +37,7 @@ const CodingSetting: React.FC = () => {
     enabled
   } = useConfigRender<FormFields>({
     switchFieldName,
-    switchFieldLabel: (
-      <CustomLabelContent
-        title={t('dmsSystem.global.smsSetting.title')}
-        tips=""
-      />
-    )
+    switchFieldLabel: t('dmsSystem.global.smsSetting.title')
   });
 
   const {
@@ -208,4 +202,4 @@ const CodingSetting: React.FC = () => {
   );
 };
 
-export default CodingSetting;
+export default SMSSetting;
