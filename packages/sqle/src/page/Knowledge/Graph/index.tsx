@@ -66,6 +66,7 @@ const KnowledgeGraph: React.FC<KnowledgeGraphProp> = ({ graphData }) => {
   const [isFullScreen, setIsFullScreen] = useState(false);
   const [hoveredNode, setHoveredNode] = useState<string | null>(null);
   const [isLoading, setIsLoading] = useState(true);
+  const [clickedNode, setClickedNode] = useState<string | null>(null);
 
   const onFocus = useCallback((value: GraphSearchOption | null) => {
     if (value === null) {
@@ -73,6 +74,7 @@ const KnowledgeGraph: React.FC<KnowledgeGraphProp> = ({ graphData }) => {
     } else if (value.type === 'nodes') {
       setFocusNode(value.id);
     }
+    setClickedNode(null);
   }, []);
 
   const onChange = useCallback((value: GraphSearchOption | null) => {
@@ -81,6 +83,7 @@ const KnowledgeGraph: React.FC<KnowledgeGraphProp> = ({ graphData }) => {
     } else if (value.type === 'nodes') {
       setSelectedNode(value.id);
     }
+    setClickedNode(null);
   }, []);
 
   const handleGraphLoaded = useCallback(() => {
@@ -132,6 +135,8 @@ const KnowledgeGraph: React.FC<KnowledgeGraphProp> = ({ graphData }) => {
             hoveredNode={hoveredNode}
             setHoveredNode={setHoveredNode}
             onLoaded={handleGraphLoaded}
+            clickedNode={clickedNode}
+            setClickedNode={setClickedNode}
           />
           <FocusOnNode
             node={focusNode ?? selectedNode}
