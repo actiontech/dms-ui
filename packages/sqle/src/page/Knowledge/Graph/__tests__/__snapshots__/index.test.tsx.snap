@@ -34,6 +34,7 @@ exports[`KnowledgeGraph should match snapshot 1`] = `
     >
       <Fa2 />
       <LoadGraph
+        clickedNode={null}
         graphData={
           {
             "edges": [],
@@ -42,6 +43,7 @@ exports[`KnowledgeGraph should match snapshot 1`] = `
         }
         hoveredNode={null}
         onLoaded={[Function]}
+        setClickedNode={[Function]}
         setHoveredNode={[Function]}
       />
       <FocusOnNode
