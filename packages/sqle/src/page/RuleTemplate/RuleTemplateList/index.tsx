@@ -1,9 +1,19 @@
 import { useTranslation } from 'react-i18next';
 import { Space } from 'antd';
-import { PageHeader, EmptyBox, SegmentedTabs } from '@actiontech/shared';
+import {
+  PageHeader,
+  EmptyBox,
+  SegmentedTabs,
+  SegmentedTabsProps
+} from '@actiontech/shared';
 import { TableRefreshButton } from '@actiontech/shared/lib/components/ActiontechTable';
-import { useState } from 'react';
-import { useCurrentProject } from '@actiontech/shared/lib/features';
+import { useMemo, useState } from 'react';
+import {
+  PERMISSIONS,
+  PermissionsConstantType,
+  useCurrentProject,
+  usePermission
+} from '@actiontech/shared/lib/features';
 import { EnumTemplateType } from './index.type';
 import ProjectTable from './ProjectTable';
 import EventEmitter from '../../../utils/EventEmitter';
@@ -26,6 +36,33 @@ const RuleTemplateList = () => {
 
   const [activeKey, setActiveKey] = useState(EnumTemplateType.project);
 
+  const { checkPagePermission } = usePermission();
+
+  const tabItems = useMemo<SegmentedTabsProps['items']>(() => {
+    const items: Array<
+      SegmentedTabsProps['items'][0] & { permission?: PermissionsConstantType }
+    > = [
+      {
+        label: t('ruleTemplate.ruleTemplateTitle.project'),
+        value: EnumTemplateType.project,
+        children: <ProjectTable />
+      },
+      {
+        label: t('ruleTemplate.ruleTemplateTitle.common'),
+        value: EnumTemplateType.common,
+        children: <CommonTable />,
+        permission: PERMISSIONS.PAGES.SQLE.RULE_MANAGEMENT
+      }
+    ];
+
+    return items.filter((item) => {
+      if (item.permission === undefined) {
+        return true;
+      }
+      return checkPagePermission(item.permission);
+    });
+  }, [checkPagePermission, t]);
+
   return (
     <>
       <PageHeader
@@ -47,18 +84,7 @@ const RuleTemplateList = () => {
       <SegmentedTabs
         activeKey={activeKey}
         onChange={setActiveKey}
-        items={[
-          {
-            label: t('ruleTemplate.ruleTemplateTitle.project'),
-            value: EnumTemplateType.project,
-            children: <ProjectTable />
-          },
-          {
-            label: t('ruleTemplate.ruleTemplateTitle.common'),
-            value: EnumTemplateType.common,
-            children: <CommonTable />
-          }
-        ]}
+        items={tabItems}
       />
       <CloneRuleTemplate />
       <ExportProjectRuleTemplate />
