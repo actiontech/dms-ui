@@ -107,7 +107,8 @@ describe('sqle/components/RuleDetail', () => {
     await act(async () => jest.advanceTimersByTime(3000));
     expect(requestGetAllRule).toHaveBeenCalledTimes(1);
     expect(requestGetAllRule).toHaveBeenNthCalledWith(1, {
-      filter_db_type: mockRouteParams.dbType
+      filter_db_type: mockRouteParams.dbType,
+      filter_rule_version: 2
     });
   });
 
@@ -149,7 +150,8 @@ describe('sqle/components/RuleDetail', () => {
     await act(async () => jest.advanceTimersByTime(3000));
     expect(requestGetAllRule).toHaveBeenNthCalledWith(2, {
       fuzzy_keyword_rule: 'text1',
-      filter_db_type: mockRouteParams.dbType
+      filter_db_type: mockRouteParams.dbType,
+      filter_rule_version: 2
     });
   });
 
@@ -176,7 +178,8 @@ describe('sqle/components/RuleDetail', () => {
     await act(async () => jest.advanceTimersByTime(3000));
     expect(requestGetAllRule).toHaveBeenNthCalledWith(2, {
       tags: 'column',
-      filter_db_type: mockRouteParams.dbType
+      filter_db_type: mockRouteParams.dbType,
+      filter_rule_version: 2
     });
 
     fireEvent.mouseDown(getBySelector('#audit_purpose'));
@@ -192,7 +195,8 @@ describe('sqle/components/RuleDetail', () => {
     await act(async () => jest.advanceTimersByTime(3000));
     expect(requestGetAllRule).toHaveBeenNthCalledWith(3, {
       tags: 'column,correction',
-      filter_db_type: mockRouteParams.dbType
+      filter_db_type: mockRouteParams.dbType,
+      filter_rule_version: 2
     });
 
     fireEvent.mouseDown(getBySelector('#sql'));
@@ -208,7 +212,8 @@ describe('sqle/components/RuleDetail', () => {
     await act(async () => jest.advanceTimersByTime(3000));
     expect(requestGetAllRule).toHaveBeenNthCalledWith(4, {
       tags: 'column,correction,dcl',
-      filter_db_type: mockRouteParams.dbType
+      filter_db_type: mockRouteParams.dbType,
+      filter_rule_version: 2
     });
     fireEvent.mouseDown(getBySelector('#audit_accuracy'));
     await act(async () => jest.advanceTimersByTime(0));
@@ -222,7 +227,8 @@ describe('sqle/components/RuleDetail', () => {
     await act(async () => jest.advanceTimersByTime(3000));
     expect(requestGetAllRule).toHaveBeenNthCalledWith(5, {
       tags: 'column,correction,offline,dcl',
-      filter_db_type: mockRouteParams.dbType
+      filter_db_type: mockRouteParams.dbType,
+      filter_rule_version: 2
     });
 
     fireEvent.mouseDown(getBySelector('#performance_cost'));
@@ -236,7 +242,8 @@ describe('sqle/components/RuleDetail', () => {
     await act(async () => jest.advanceTimersByTime(3000));
     expect(requestGetAllRule).toHaveBeenNthCalledWith(6, {
       tags: 'column,correction,offline,dcl,high',
-      filter_db_type: mockRouteParams.dbType
+      filter_db_type: mockRouteParams.dbType,
+      filter_rule_version: 2
     });
   });
 
