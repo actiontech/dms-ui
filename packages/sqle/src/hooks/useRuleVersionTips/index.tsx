@@ -15,7 +15,6 @@ const useRuleVersionTips = () => {
   const updateRuleVersionTips = useCallback(() => {
     setTrue();
     RuleTemplateService.GetDriverRuleVersionTips()
-
       .then((res) => {
         if (res.data.code === ResponseCode.SUCCESS) {
           setRuleVersionTips(res.data?.data ?? []);

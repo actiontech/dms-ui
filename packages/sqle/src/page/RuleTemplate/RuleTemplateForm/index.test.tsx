@@ -44,7 +44,7 @@ describe('sqle/RuleTemplate/RuleTemplateForm', () => {
     cleanup();
   });
 
-  it.only('should match snap shot', async () => {
+  it('should match snap shot', async () => {
     const { result } = renderHooksWithTheme(() =>
       Form.useForm<RuleTemplateBaseInfoFields>()
     );
