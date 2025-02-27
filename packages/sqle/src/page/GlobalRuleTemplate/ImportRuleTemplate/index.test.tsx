@@ -45,6 +45,7 @@ describe('sqle/GlobalRuleTemplate/ImportRuleTemplate', () => {
   let createRuleTemplateSpy: jest.SpyInstance;
   let importProjectRuleTemplateSpy: jest.SpyInstance;
   let getCategoryStatisticsSpy: jest.SpyInstance;
+  let getRuleVersionTipsSpy: jest.SpyInstance;
   beforeEach(() => {
     (useNavigate as jest.Mock).mockImplementation(() => navigateSpy);
     (useDispatch as jest.Mock).mockImplementation(() => dispatchSpy);
@@ -66,6 +67,7 @@ describe('sqle/GlobalRuleTemplate/ImportRuleTemplate', () => {
       }
     );
     mockUseDbServiceDriver();
+    getRuleVersionTipsSpy = rule_template.mockGetDriverRuleVersionTips();
     getAllRuleSpy = rule_template.getRuleList();
     getDriversSpy = jest.spyOn(configuration, 'getDriversV2');
     createRuleTemplateSpy = rule_template.createRuleTemplate();
@@ -220,7 +222,7 @@ describe('sqle/GlobalRuleTemplate/ImportRuleTemplate', () => {
         }
       ],
       rule_template_name: 'test1',
-      rule_version: 'v2'
+      rule_version: 2
     });
     await act(async () => jest.advanceTimersByTime(3000));
     expect(screen.getByTestId('rule-list')).not.toBeVisible();
@@ -400,7 +402,7 @@ describe('sqle/GlobalRuleTemplate/ImportRuleTemplate', () => {
     });
     expect(getAllRuleSpy).toHaveBeenNthCalledWith(1, {
       filter_db_type: 'MySQL',
-      filter_rule_version: 'v2'
+      filter_rule_version: 2
     });
     await act(async () => jest.advanceTimersByTime(3000));
 
@@ -423,7 +425,7 @@ describe('sqle/GlobalRuleTemplate/ImportRuleTemplate', () => {
     expect(getAllRuleSpy).toHaveBeenNthCalledWith(2, {
       filter_db_type: 'MySQL',
       fuzzy_keyword_rule: 'test',
-      filter_rule_version: 'v2'
+      filter_rule_version: 2
     });
     await act(async () => jest.advanceTimersByTime(3000));
 
@@ -435,7 +437,7 @@ describe('sqle/GlobalRuleTemplate/ImportRuleTemplate', () => {
       tags: 'column',
       filter_db_type: 'MySQL',
       fuzzy_keyword_rule: 'test',
-      filter_rule_version: 'v2'
+      filter_rule_version: 2
     });
 
     fireEvent.mouseDown(getBySelector('#audit_purpose'));
@@ -446,7 +448,7 @@ describe('sqle/GlobalRuleTemplate/ImportRuleTemplate', () => {
       tags: 'column,correction',
       filter_db_type: 'MySQL',
       fuzzy_keyword_rule: 'test',
-      filter_rule_version: 'v2'
+      filter_rule_version: 2
     });
 
     fireEvent.mouseDown(getBySelector('#sql'));
@@ -457,7 +459,7 @@ describe('sqle/GlobalRuleTemplate/ImportRuleTemplate', () => {
       tags: 'column,correction,dcl',
       filter_db_type: 'MySQL',
       fuzzy_keyword_rule: 'test',
-      filter_rule_version: 'v2'
+      filter_rule_version: 2
     });
 
     fireEvent.mouseDown(getBySelector('#audit_accuracy'));
@@ -468,7 +470,7 @@ describe('sqle/GlobalRuleTemplate/ImportRuleTemplate', () => {
       tags: 'column,correction,offline,dcl',
       filter_db_type: 'MySQL',
       fuzzy_keyword_rule: 'test',
-      filter_rule_version: 'v2'
+      filter_rule_version: 2
     });
 
     fireEvent.mouseDown(getBySelector('#performance_cost'));
@@ -479,7 +481,7 @@ describe('sqle/GlobalRuleTemplate/ImportRuleTemplate', () => {
       tags: 'column,correction,offline,dcl,high',
       filter_db_type: 'MySQL',
       fuzzy_keyword_rule: 'test',
-      filter_rule_version: 'v2'
+      filter_rule_version: 2
     });
   });
 });

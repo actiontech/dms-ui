@@ -39,6 +39,7 @@ describe('sqle/RuleTemplate/UpdateRuleTemplate', () => {
   let updateProjectRuleTemplateSpy: jest.SpyInstance;
   let getProjectRuleTemplateSpy: jest.SpyInstance;
   let getCategoryStatisticsSpy: jest.SpyInstance;
+  let getRuleVersionTipsSpy: jest.SpyInstance;
   const useParamsMock: jest.Mock = useParams as jest.Mock;
   beforeEach(() => {
     (useNavigate as jest.Mock).mockImplementation(() => navigateSpy);
@@ -57,6 +58,7 @@ describe('sqle/RuleTemplate/UpdateRuleTemplate', () => {
       useSpyOnMockHooks: true
     });
     getAllRuleSpy = rule_template.getRuleList();
+    getRuleVersionTipsSpy = rule_template.mockGetDriverRuleVersionTips();
     getDriversSpy = jest.spyOn(configuration, 'getDriversV2');
     updateProjectRuleTemplateSpy = rule_template.updateProjectRuleTemplate();
     getProjectRuleTemplateSpy = rule_template.getProjectRuleTemplate();
@@ -145,7 +147,7 @@ describe('sqle/RuleTemplate/UpdateRuleTemplate', () => {
     expect(getAllRuleSpy).toHaveBeenCalledTimes(1);
     expect(getAllRuleSpy).toHaveBeenNthCalledWith(1, {
       filter_db_type: 'MySQL',
-      filter_rule_version: ''
+      filter_rule_version: 2
     });
     await act(async () => jest.advanceTimersByTime(3000));
     await act(async () => jest.advanceTimersByTime(100));
@@ -289,7 +291,7 @@ describe('sqle/RuleTemplate/UpdateRuleTemplate', () => {
     expect(getAllRuleSpy).toHaveBeenNthCalledWith(2, {
       filter_db_type: 'MySQL',
       fuzzy_keyword_rule: 'test',
-      filter_rule_version: ''
+      filter_rule_version: 2
     });
     await act(async () => jest.advanceTimersByTime(3000));
 
@@ -301,7 +303,7 @@ describe('sqle/RuleTemplate/UpdateRuleTemplate', () => {
       tags: 'column',
       filter_db_type: 'MySQL',
       fuzzy_keyword_rule: 'test',
-      filter_rule_version: ''
+      filter_rule_version: 2
     });
 
     fireEvent.mouseDown(getBySelector('#audit_purpose'));
@@ -312,7 +314,7 @@ describe('sqle/RuleTemplate/UpdateRuleTemplate', () => {
       tags: 'column,correction',
       filter_db_type: 'MySQL',
       fuzzy_keyword_rule: 'test',
-      filter_rule_version: ''
+      filter_rule_version: 2
     });
 
     fireEvent.mouseDown(getBySelector('#sql'));
@@ -323,7 +325,7 @@ describe('sqle/RuleTemplate/UpdateRuleTemplate', () => {
       tags: 'column,correction,dcl',
       filter_db_type: 'MySQL',
       fuzzy_keyword_rule: 'test',
-      filter_rule_version: ''
+      filter_rule_version: 2
     });
 
     fireEvent.mouseDown(getBySelector('#audit_accuracy'));
@@ -334,7 +336,7 @@ describe('sqle/RuleTemplate/UpdateRuleTemplate', () => {
       tags: 'column,correction,offline,dcl',
       filter_db_type: 'MySQL',
       fuzzy_keyword_rule: 'test',
-      filter_rule_version: ''
+      filter_rule_version: 2
     });
 
     fireEvent.mouseDown(getBySelector('#performance_cost'));
@@ -345,7 +347,7 @@ describe('sqle/RuleTemplate/UpdateRuleTemplate', () => {
       tags: 'column,correction,offline,dcl,high',
       filter_db_type: 'MySQL',
       fuzzy_keyword_rule: 'test',
-      filter_rule_version: ''
+      filter_rule_version: 2
     });
   });
 });

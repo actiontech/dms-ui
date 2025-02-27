@@ -15,7 +15,7 @@ import {
 import { getInstanceTipListV1FunctionalModuleEnum } from './index.enum';
 
 export interface IGetDatabaseDriverLogosParams {
-  db_types: string;
+  db_types: string[];
 }
 
 export interface IGetDatabaseDriverLogosReturn

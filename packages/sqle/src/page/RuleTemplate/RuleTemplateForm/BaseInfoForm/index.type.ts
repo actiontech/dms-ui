@@ -1,13 +1,12 @@
 import { FormInstance } from 'antd';
 import { RuleTemplateFormProps } from '../index.type';
 import { IRuleProjectTemplateDetailResV1 } from '@actiontech/shared/lib/api/sqle/service/common';
-import { RuleVersionDictionaryEnum } from '../../../../hooks/useRuleVersionTips';
 
 export type RuleTemplateBaseInfoFields = {
   templateName: string;
   templateDesc?: string;
   db_type: string;
-  ruleVersion?: RuleVersionDictionaryEnum;
+  ruleVersion?: number;
 };
 
 export type RuleTemplateBaseInfoFormProps = {
