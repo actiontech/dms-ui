@@ -4,7 +4,7 @@ import {
   useSetSettings,
   useSigma
 } from '@react-sigma/core';
-import { FC, useEffect, useState } from 'react';
+import { Dispatch, FC, SetStateAction, useEffect } from 'react';
 import useGraph from '../hooks/useGraph';
 import { EdgeType, NodeType } from '../index.type';
 import {
@@ -20,12 +20,16 @@ type props = {
   };
   hoveredNode: string | null;
   setHoveredNode: (node: string | null) => void;
+  clickedNode: string | null;
+  setClickedNode: Dispatch<SetStateAction<string | null>>;
   onLoaded?: () => void;
 };
 const LoadGraph: FC<props> = ({
   graphData,
   hoveredNode,
   setHoveredNode,
+  clickedNode,
+  setClickedNode,
   onLoaded
 }) => {
   const { createGraph } = useGraph();
@@ -34,7 +38,6 @@ const LoadGraph: FC<props> = ({
   const setSettings = useSetSettings<NodeType, EdgeType>();
   const loadGraph = useLoadGraph<NodeType, EdgeType>();
   const { sharedTheme } = useThemeStyleData();
-  const [clickedNode, setClickedNode] = useState<string | null>(null);
 
   useEffect(() => {
     if (graphData) {
@@ -69,7 +72,8 @@ const LoadGraph: FC<props> = ({
     registerEvents,
     setHoveredNode,
     sigma,
-    onLoaded
+    onLoaded,
+    setClickedNode
   ]);
 
   useEffect(() => {
