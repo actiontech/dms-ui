@@ -12,10 +12,7 @@ import {
   selectOptionByIndex
 } from '@actiontech/shared/lib/testUtil/customQuery';
 import rule_template from '../../../testUtils/mockApi/rule_template';
-import {
-  ruleType,
-  ruleListData
-} from '../../../testUtils/mockApi/rule_template/data';
+import { ruleType } from '../../../testUtils/mockApi/rule_template/data';
 import configuration from '@actiontech/shared/lib/api/sqle/service/configuration';
 import { createSpySuccessResponse } from '@actiontech/shared/lib/testUtil/mockApi';
 import { mockUsePermission } from '@actiontech/shared/lib/testUtil/mockHook/mockUsePermission';
@@ -40,6 +37,7 @@ describe('sqle/GlobalRuleTemplate/CreateRuleTemplate', () => {
   let getDriversSpy: jest.SpyInstance;
   let createRuleTemplateSpy: jest.SpyInstance;
   let getCategoryStatisticsSpy: jest.SpyInstance;
+  let getRuleVersionTipsSpy: jest.SpyInstance;
   beforeEach(() => {
     (useNavigate as jest.Mock).mockImplementation(() => navigateSpy);
     (useDispatch as jest.Mock).mockImplementation(() => dispatchSpy);
@@ -62,6 +60,7 @@ describe('sqle/GlobalRuleTemplate/CreateRuleTemplate', () => {
     mockUseCurrentUser();
     mockUseDbServiceDriver();
     getAllRuleSpy = rule_template.getRuleList();
+    getRuleVersionTipsSpy = rule_template.mockGetDriverRuleVersionTips();
     getCategoryStatisticsSpy = rule_template.getCategoryStatistics();
     getDriversSpy = jest.spyOn(configuration, 'getDriversV2');
     createRuleTemplateSpy = rule_template.createRuleTemplate();
@@ -87,6 +86,7 @@ describe('sqle/GlobalRuleTemplate/CreateRuleTemplate', () => {
     const { baseElement } = renderWithReduxAndTheme(<CreateRuleTemplate />);
     await act(async () => jest.advanceTimersByTime(3000));
     expect(baseElement).toMatchSnapshot();
+    expect(getRuleVersionTipsSpy).toHaveBeenCalledTimes(1);
     expect(getCategoryStatisticsSpy).toHaveBeenCalledTimes(1);
     expect(getDriversSpy).toHaveBeenCalledTimes(1);
     expect(screen.getByTestId('base-form')).toBeVisible();
@@ -159,13 +159,13 @@ describe('sqle/GlobalRuleTemplate/CreateRuleTemplate', () => {
 
     fireEvent.mouseDown(getBySelector('#ruleVersion'));
     await act(async () => jest.advanceTimersByTime(0));
-    fireEvent.click(getBySelector('div[title="v2"]'));
+    fireEvent.click(getBySelector('div[title="2"]'));
     expect(getAllRuleSpy).toHaveBeenCalledTimes(2);
     expect(getAllRuleSpy).toHaveBeenNthCalledWith(2, {
       filter_db_type: 'MySQL',
       fuzzy_keyword_rule: undefined,
       tags: undefined,
-      filter_rule_version: 'v2'
+      filter_rule_version: 2
     });
     await act(async () => jest.advanceTimersByTime(3000));
 
@@ -229,7 +229,7 @@ describe('sqle/GlobalRuleTemplate/CreateRuleTemplate', () => {
         }
       ],
       rule_template_name: 'test1',
-      rule_version: 'v2'
+      rule_version: 2
     });
     await act(async () => jest.advanceTimersByTime(3000));
     expect(screen.getByTestId('rule-list')).not.toBeVisible();
@@ -257,7 +257,7 @@ describe('sqle/GlobalRuleTemplate/CreateRuleTemplate', () => {
     await act(async () => jest.advanceTimersByTime(3000));
     fireEvent.mouseDown(getBySelector('#ruleVersion'));
     await act(async () => jest.advanceTimersByTime(0));
-    fireEvent.click(getBySelector('div[title="v1"]'));
+    fireEvent.click(getBySelector('div[title="1"]'));
     await act(async () => jest.advanceTimersByTime(3000));
     fireEvent.click(screen.getByText('下一步'));
     await act(async () => jest.advanceTimersByTime(300));
@@ -331,7 +331,7 @@ describe('sqle/GlobalRuleTemplate/CreateRuleTemplate', () => {
         }
       ],
       rule_template_name: 'test1',
-      rule_version: ''
+      rule_version: 1
     });
     await act(async () => jest.advanceTimersByTime(3000));
     expect(screen.getByTestId('rule-list')).not.toBeVisible();
@@ -356,7 +356,7 @@ describe('sqle/GlobalRuleTemplate/CreateRuleTemplate', () => {
     await act(async () => jest.advanceTimersByTime(3000));
     fireEvent.mouseDown(getBySelector('#ruleVersion'));
     await act(async () => jest.advanceTimersByTime(0));
-    fireEvent.click(getBySelector('div[title="v2"]'));
+    fireEvent.click(getBySelector('div[title="2"]'));
     await act(async () => jest.advanceTimersByTime(3000));
     expect(getAllRuleSpy).toHaveBeenCalledTimes(2);
 
@@ -379,7 +379,7 @@ describe('sqle/GlobalRuleTemplate/CreateRuleTemplate', () => {
     expect(getAllRuleSpy).toHaveBeenNthCalledWith(3, {
       filter_db_type: 'MySQL',
       fuzzy_keyword_rule: 'test',
-      filter_rule_version: 'v2'
+      filter_rule_version: 2
     });
     await act(async () => jest.advanceTimersByTime(3000));
 
@@ -391,7 +391,7 @@ describe('sqle/GlobalRuleTemplate/CreateRuleTemplate', () => {
       tags: 'column',
       filter_db_type: 'MySQL',
       fuzzy_keyword_rule: 'test',
-      filter_rule_version: 'v2'
+      filter_rule_version: 2
     });
 
     fireEvent.mouseDown(getBySelector('#audit_purpose'));
@@ -402,7 +402,7 @@ describe('sqle/GlobalRuleTemplate/CreateRuleTemplate', () => {
       tags: 'column,correction',
       filter_db_type: 'MySQL',
       fuzzy_keyword_rule: 'test',
-      filter_rule_version: 'v2'
+      filter_rule_version: 2
     });
 
     fireEvent.mouseDown(getBySelector('#sql'));
@@ -413,7 +413,7 @@ describe('sqle/GlobalRuleTemplate/CreateRuleTemplate', () => {
       tags: 'column,correction,dcl',
       filter_db_type: 'MySQL',
       fuzzy_keyword_rule: 'test',
-      filter_rule_version: 'v2'
+      filter_rule_version: 2
     });
 
     fireEvent.mouseDown(getBySelector('#audit_accuracy'));
@@ -424,7 +424,7 @@ describe('sqle/GlobalRuleTemplate/CreateRuleTemplate', () => {
       tags: 'column,correction,offline,dcl',
       filter_db_type: 'MySQL',
       fuzzy_keyword_rule: 'test',
-      filter_rule_version: 'v2'
+      filter_rule_version: 2
     });
 
     fireEvent.mouseDown(getBySelector('#performance_cost'));
@@ -435,7 +435,7 @@ describe('sqle/GlobalRuleTemplate/CreateRuleTemplate', () => {
       tags: 'column,correction,offline,dcl,high',
       filter_db_type: 'MySQL',
       fuzzy_keyword_rule: 'test',
-      filter_rule_version: 'v2'
+      filter_rule_version: 2
     });
   });
 });

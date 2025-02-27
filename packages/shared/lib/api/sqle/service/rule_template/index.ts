@@ -62,7 +62,8 @@ import {
   IExportRuleTemplateV1Params,
   IGetRuleListV1Params,
   IGetRuleListV1Return,
-  IGetCategoryStatisticsReturn
+  IGetCategoryStatisticsReturn,
+  IGetDriverRuleVersionTipsReturn
 } from './index.d';
 
 class RuleTemplateService extends ServiceBase {
@@ -516,6 +517,14 @@ class RuleTemplateService extends ServiceBase {
   public getCategoryStatistics(options?: AxiosRequestConfig) {
     return this.get<IGetCategoryStatisticsReturn>(
       '/v1/rules/categoryStatistics',
+      undefined,
+      options
+    );
+  }
+
+  public GetDriverRuleVersionTips(options?: AxiosRequestConfig) {
+    return this.get<IGetDriverRuleVersionTipsReturn>(
+      '/v1/rules_version_tips',
       undefined,
       options
     );

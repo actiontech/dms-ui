@@ -36,7 +36,6 @@ import { RuleManagerSegmentedKey } from '../../RuleManager/index.type';
 import { LeftArrowOutlined, ProfileSquareFilled } from '@actiontech/icons';
 import { exportRuleTemplateV1ExportTypeEnum } from '@actiontech/shared/lib/api/sqle/service/rule_template/index.enum';
 import FileUpload from '../../RuleTemplate/ImportRuleTemplate/FileUpload';
-import useRuleVersionTips from '../../../hooks/useRuleVersionTips';
 
 const ImportRuleTemplate: React.FC = () => {
   const { t } = useTranslation();
@@ -78,8 +77,6 @@ const ImportRuleTemplate: React.FC = () => {
 
   const { updateActiveSegmentedKey } = useRuleManagerSegmented();
 
-  const { transformRuleVersion2BackendParams } = useRuleVersionTips();
-
   const gotoListPage = () => {
     updateActiveSegmentedKey(RuleManagerSegmentedKey.GlobalRuleTemplate);
     onGoToGlobalRuleTemplateList();
@@ -103,7 +100,7 @@ const ImportRuleTemplate: React.FC = () => {
         desc: baseInfo.templateDesc,
         db_type: baseInfo.db_type,
         rule_list: activeRuleWithNewField,
-        rule_version: transformRuleVersion2BackendParams(baseInfo.ruleVersion)
+        rule_version: baseInfo.ruleVersion
       })
       .then((res) => {
         if (res.data.code === ResponseCode.SUCCESS) {
@@ -113,14 +110,7 @@ const ImportRuleTemplate: React.FC = () => {
       .finally(() => {
         finishCreate();
       });
-  }, [
-    activeRule,
-    finishCreate,
-    nextStep,
-    ruleTemplateForm,
-    startCreate,
-    transformRuleVersion2BackendParams
-  ]);
+  }, [activeRule, finishCreate, nextStep, ruleTemplateForm, startCreate]);
 
   return (
     <PageLayoutHasFixedHeaderStyleWrapper>

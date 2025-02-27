@@ -20,7 +20,8 @@ import {
   IUpdateRuleTemplateReqV1,
   ICloneRuleTemplateReqV1,
   IGetRulesResV1,
-  IGetRuleCategoryStatisticResV1
+  IGetRuleCategoryStatisticResV1,
+  IGetDriverRuleVersionTipsResV1
 } from '../common.d';
 
 import {
@@ -252,7 +253,7 @@ export interface IGetRuleListV1Params {
 
   filter_rule_names?: string;
 
-  filter_rule_version?: string;
+  filter_rule_version?: number;
 
   tags?: string;
 }
@@ -261,3 +262,6 @@ export interface IGetRuleListV1Return extends IGetRulesResV1 {}
 
 export interface IGetCategoryStatisticsReturn
   extends IGetRuleCategoryStatisticResV1 {}
+
+export interface IGetDriverRuleVersionTipsReturn
+  extends IGetDriverRuleVersionTipsResV1 {}

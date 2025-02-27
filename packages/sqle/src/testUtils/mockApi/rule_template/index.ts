@@ -16,7 +16,8 @@ import {
   publicRuleTemplateListMockData,
   customRuleMockData,
   importRuleTemplateMockData,
-  mockRuleCategoriesData
+  mockRuleCategoriesData,
+  GetDriverRuleVersionTipsMockData
 } from './data';
 import { MIMETypeEnum } from '@actiontech/shared/lib/enum';
 import { AxiosResponse } from 'axios';
@@ -318,6 +319,14 @@ class MockRuleTemplateApi implements MockSpyApy {
     const spy = jest.spyOn(rule_template, 'getCategoryStatistics');
     spy.mockImplementation(() =>
       createSpySuccessResponse({ data: mockRuleCategoriesData })
+    );
+    return spy;
+  }
+
+  public mockGetDriverRuleVersionTips() {
+    const spy = jest.spyOn(rule_template, 'GetDriverRuleVersionTips');
+    spy.mockImplementation(() =>
+      createSpySuccessResponse({ data: GetDriverRuleVersionTipsMockData })
     );
     return spy;
   }

@@ -15,14 +15,11 @@ import {
   useBackToListPage
 } from '../../../hooks/useRuleTemplateForm';
 import { LeftArrowOutlined } from '@actiontech/icons';
-import useRuleVersionTips from '../../../hooks/useRuleVersionTips';
 
 const CreateRuleTemplate = () => {
   const { t } = useTranslation();
 
   const { projectName, projectID } = useCurrentProject();
-
-  const { transformRuleVersion2BackendParams } = useRuleVersionTips();
 
   const {
     form,
@@ -69,7 +66,7 @@ const CreateRuleTemplate = () => {
         db_type: baseInfo.db_type,
         rule_list: activeRuleWithNewField,
         project_name: projectName,
-        rule_version: transformRuleVersion2BackendParams(baseInfo.ruleVersion)
+        rule_version: baseInfo.ruleVersion
       })
       .then((res) => {
         if (res.data.code === ResponseCode.SUCCESS) {
@@ -79,15 +76,7 @@ const CreateRuleTemplate = () => {
       .finally(() => {
         finishSubmit();
       });
-  }, [
-    startSubmit,
-    form,
-    activeRule,
-    projectName,
-    transformRuleVersion2BackendParams,
-    nextStep,
-    finishSubmit
-  ]);
+  }, [startSubmit, form, activeRule, projectName, nextStep, finishSubmit]);
 
   return (
     <PageLayoutHasFixedHeaderStyleWrapper>

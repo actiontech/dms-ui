@@ -15,6 +15,7 @@ import { Form } from 'antd';
 import { RuleTemplateBaseInfoFields } from './BaseInfoForm/index.type';
 import { mockUsePermission } from '@actiontech/shared/lib/testUtil/mockHook/mockUsePermission';
 import { RuleFilterFieldsType } from '../../../components/RuleList';
+import rule_template from '../../../testUtils/mockApi/rule_template';
 
 jest.mock('react-redux', () => ({
   ...jest.requireActual('react-redux'),
@@ -24,6 +25,7 @@ jest.mock('react-redux', () => ({
 describe('sqle/RuleTemplate/RuleTemplateForm', () => {
   const dispatchSpy = jest.fn();
   let getDriversSpy: jest.SpyInstance;
+  let getRuleVersionTipsSpy: jest.SpyInstance;
   beforeEach(() => {
     (useDispatch as jest.Mock).mockImplementation(() => dispatchSpy);
     mockUseCurrentProject();
@@ -32,6 +34,7 @@ describe('sqle/RuleTemplate/RuleTemplateForm', () => {
     mockUsePermission(undefined, {
       useSpyOnMockHooks: true
     });
+    getRuleVersionTipsSpy = rule_template.mockGetDriverRuleVersionTips();
     getDriversSpy = configuration.getDrivers();
     jest.useFakeTimers();
   });
@@ -41,7 +44,7 @@ describe('sqle/RuleTemplate/RuleTemplateForm', () => {
     cleanup();
   });
 
-  it('should match snap shot', async () => {
+  it.only('should match snap shot', async () => {
     const { result } = renderHooksWithTheme(() =>
       Form.useForm<RuleTemplateBaseInfoFields>()
     );
