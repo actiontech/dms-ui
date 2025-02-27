@@ -736,7 +736,7 @@ export interface ICreateProjectRuleTemplateReqV1 {
 
   rule_template_name?: string;
 
-  rule_version?: string;
+  rule_version?: number;
 }
 
 export interface ICreateRollbackWorkflowReq {
@@ -772,7 +772,7 @@ export interface ICreateRuleTemplateReqV1 {
 
   rule_template_name?: string;
 
-  rule_version?: string;
+  rule_version?: number;
 }
 
 export interface ICreateSQLAuditRecordResV1 {
@@ -1389,6 +1389,20 @@ export interface IGetDingTalkConfigurationResV1 {
   data?: IDingTalkConfigurationV1;
 
   message?: string;
+}
+
+export interface IGetDriverRuleVersionTipsResV1 {
+  code?: number;
+
+  data?: IGetDriverRuleVersionTipsV1[];
+
+  message?: string;
+}
+
+export interface IGetDriverRuleVersionTipsV1 {
+  db_type?: string;
+
+  rule_versions?: number[];
 }
 
 export interface IGetDriversResV1 {
@@ -2560,7 +2574,7 @@ export interface IParseProjectRuleTemplateFileResDataV1 {
 
   rule_list?: IRuleResV1[];
 
-  rule_version?: string;
+  rule_version?: number;
 }
 
 export interface IParseProjectRuleTemplateFileResV1 {
@@ -2756,7 +2770,7 @@ export interface IRuleProjectTemplateDetailResV1 {
 
   rule_template_name?: string;
 
-  rule_version?: string;
+  rule_version?: number;
 }
 
 export interface IRuleReqV1 {
@@ -2810,7 +2824,7 @@ export interface IRuleTemplateDetailResV1 {
 
   rule_template_name?: string;
 
-  rule_version?: string;
+  rule_version?: number;
 }
 
 export interface IRuleTemplateResV1 {
@@ -2820,7 +2834,7 @@ export interface IRuleTemplateResV1 {
 
   rule_template_name?: string;
 
-  rule_version?: string;
+  rule_version?: number;
 }
 
 export interface IRuleTemplateTipResV1 {
@@ -2832,7 +2846,7 @@ export interface IRuleTemplateTipResV1 {
 
   rule_template_name?: string;
 
-  rule_version?: string;
+  rule_version?: number;
 }
 
 export interface IRuleTips {

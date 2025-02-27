@@ -1,88 +1,98 @@
-import { renderHook } from '@testing-library/react-hooks';
-import useRuleVersionTips, { RuleVersionDictionaryEnum } from '.';
+import { act, renderHook } from '@testing-library/react';
+import useRuleVersionTips from '.';
+import rule_template from '../../testUtils/mockApi/rule_template';
+import {
+  createSpyErrorResponse,
+  createSpyFailResponse
+} from '@actiontech/shared/lib/testUtil/mockApi';
+import { GetDriverRuleVersionTipsMockData } from '../../testUtils/mockApi/rule_template/data';
 
 describe('useRuleVersionTips', () => {
-  describe('ruleVersionOptions', () => {
-    it('should return correct options for rule version', () => {
-      const { result } = renderHook(() => useRuleVersionTips());
-
-      expect(result.current.ruleVersionOptions).toEqual([
-        { label: 'v1', value: RuleVersionDictionaryEnum.v1 },
-        { label: 'v2', value: RuleVersionDictionaryEnum.v2 }
-      ]);
-    });
+  let requestSpy: jest.SpyInstance;
+  beforeEach(() => {
+    requestSpy = rule_template.mockGetDriverRuleVersionTips();
+    jest.useFakeTimers();
   });
 
-  describe('transformRuleVersion2BackendParams', () => {
-    it('should return empty string when rule version is v1', () => {
-      const { result } = renderHook(() => useRuleVersionTips());
-
-      expect(
-        result.current.transformRuleVersion2BackendParams(
-          RuleVersionDictionaryEnum.v1
-        )
-      ).toBe('');
-    });
-
-    it('should return the same rule version when rule version is not v1', () => {
-      const { result } = renderHook(() => useRuleVersionTips());
-
-      expect(
-        result.current.transformRuleVersion2BackendParams(
-          RuleVersionDictionaryEnum.v2
-        )
-      ).toBe(RuleVersionDictionaryEnum.v2);
-    });
-
-    it('should return undefined when rule version is undefined', () => {
-      const { result } = renderHook(() => useRuleVersionTips());
-
-      expect(
-        result.current.transformRuleVersion2BackendParams(undefined)
-      ).toBeUndefined();
-    });
+  afterEach(() => {
+    jest.clearAllMocks();
+    jest.clearAllTimers();
+    jest.useRealTimers();
   });
 
-  describe('transformBackendRuleVersion2FormValues', () => {
-    it('should return v1 when dbType is MySQL and ruleVersion is undefined', () => {
-      const { result } = renderHook(() => useRuleVersionTips());
+  it('should get rule version tips when call updateRuleVersionTips', async () => {
+    const requestSpy = rule_template.mockGetDriverRuleVersionTips();
+    const { result } = renderHook(() => useRuleVersionTips());
+    expect(result.current.ruleVersionTips).toEqual([]);
+    expect(result.current.loading).toBeFalsy();
 
-      expect(
-        result.current.transformBackendRuleVersion2FormValues(
-          'MySQL',
-          undefined
-        )
-      ).toBe(RuleVersionDictionaryEnum.v1);
+    act(() => {
+      result.current.updateRuleVersionTips();
     });
+    expect(result.current.loading).toBeTruthy();
+    expect(requestSpy).toHaveBeenCalledTimes(1);
 
-    it('should return the same rule version when dbType is MySQL and ruleVersion is defined', () => {
-      const { result } = renderHook(() => useRuleVersionTips());
+    await act(async () => jest.advanceTimersByTime(3000));
+    expect(result.current.loading).toBeFalsy();
+    expect(result.current.ruleVersionTips).toEqual(
+      GetDriverRuleVersionTipsMockData
+    );
+  });
 
-      expect(
-        result.current.transformBackendRuleVersion2FormValues('MySQL', 'v2')
-      ).toBe(RuleVersionDictionaryEnum.v2);
+  it('should set empty array when request failed', async () => {
+    requestSpy.mockImplementation(() => createSpyFailResponse({}));
+
+    const { result } = renderHook(() => useRuleVersionTips());
+    expect(result.current.ruleVersionTips).toEqual([]);
+
+    act(() => {
+      result.current.updateRuleVersionTips();
     });
+    expect(requestSpy).toHaveBeenCalledTimes(1);
+    expect(result.current.loading).toBeTruthy();
 
-    it('should return the same rule version when dbType is not MySQL', () => {
-      const { result } = renderHook(() => useRuleVersionTips());
+    await act(async () => jest.advanceTimersByTime(3000));
+    expect(result.current.ruleVersionTips).toEqual([]);
+    expect(result.current.loading).toBeFalsy();
+  });
 
-      expect(
-        result.current.transformBackendRuleVersion2FormValues(
-          'PostgreSQL',
-          'v2'
-        )
-      ).toBe(RuleVersionDictionaryEnum.v2);
+  it('should set empty array when request throw error', async () => {
+    requestSpy.mockImplementation(() => createSpyErrorResponse({}));
+
+    const { result } = renderHook(() => useRuleVersionTips());
+    expect(result.current.ruleVersionTips).toEqual([]);
+
+    act(() => {
+      result.current.updateRuleVersionTips();
     });
+    expect(result.current.loading).toBeTruthy();
+    expect(requestSpy).toHaveBeenCalledTimes(1);
 
-    it('should return undefined when dbType is not MySQL and ruleVersion is undefined', () => {
-      const { result } = renderHook(() => useRuleVersionTips());
+    await act(async () => jest.advanceTimersByTime(3000));
+    expect(result.current.ruleVersionTips).toEqual([]);
+    expect(result.current.loading).toBeFalsy();
+  });
 
-      expect(
-        result.current.transformBackendRuleVersion2FormValues(
-          'PostgreSQL',
-          undefined
-        )
-      ).toBeUndefined();
+  it('should generate rule version options by dbType', async () => {
+    const { result } = renderHook(() => useRuleVersionTips());
+    expect(result.current.generateRuleVersionOptions('MySQL')).toBeUndefined();
+
+    act(() => {
+      result.current.updateRuleVersionTips();
     });
+    await act(async () => jest.advanceTimersByTime(3000));
+
+    const mysqlOptions = result.current.generateRuleVersionOptions('MySQL');
+    expect(mysqlOptions).toEqual([
+      { label: '1', value: 1 },
+      { label: '2', value: 2 },
+      { label: '3', value: 3 }
+    ]);
+
+    const pgOptions = result.current.generateRuleVersionOptions('PostgreSQL');
+    expect(pgOptions).toEqual([{ label: '2', value: 2 }]);
+
+    const unknownOptions = result.current.generateRuleVersionOptions('unknown');
+    expect(unknownOptions).toBeUndefined();
   });
 });

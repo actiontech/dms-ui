@@ -33,6 +33,7 @@ describe('sqle/Rule', () => {
   let getRuleTemplateSpy: jest.SpyInstance;
   let getProjectListSpy: jest.SpyInstance;
   let getCategoryStatisticsSpy: jest.SpyInstance;
+  let getRuleVersionTipsSpy: jest.SpyInstance;
   beforeEach(() => {
     jest.useFakeTimers();
     mockUseCurrentUser();
@@ -92,7 +93,7 @@ describe('sqle/Rule', () => {
       })
     });
     // useSearchParamsMock.mockReturnValue([new URLSearchParams()]);
-
+    getRuleVersionTipsSpy = rule_template.mockGetDriverRuleVersionTips();
     getAllRulesSpy = rule_template.getRuleList();
     getGlobalTemplateListSpy = rule_template.getRuleTemplateTips();
     getProjectRuleTemplateTipsSpy = rule_template.getProjectRuleTemplateTips();
@@ -126,16 +127,11 @@ describe('sqle/Rule', () => {
     expect(getGlobalTemplateListSpy).toHaveBeenCalledTimes(1);
     await act(async () => jest.advanceTimersByTime(3000));
     expect(baseElement).toMatchSnapshot();
-    expect(getAllRulesSpy).toHaveBeenCalledTimes(2);
+    expect(getRuleVersionTipsSpy).toHaveBeenCalledTimes(1);
+    expect(getAllRulesSpy).toHaveBeenCalledTimes(1);
     expect(getAllRulesSpy).toHaveBeenNthCalledWith(1, {
       filter_db_type: 'MySQL',
       filter_rule_version: undefined,
-      fuzzy_keyword_rule: undefined,
-      tags: undefined
-    });
-    expect(getAllRulesSpy).toHaveBeenNthCalledWith(2, {
-      filter_db_type: 'MySQL',
-      filter_rule_version: '',
       fuzzy_keyword_rule: undefined,
       tags: undefined
     });
@@ -168,7 +164,7 @@ describe('sqle/Rule', () => {
     await act(async () => jest.advanceTimersByTime(3000));
     expect(getGlobalTemplateListSpy).toHaveBeenCalledTimes(1);
     await act(async () => jest.advanceTimersByTime(3000));
-    expect(getAllRulesSpy).toHaveBeenCalledTimes(2);
+    expect(getAllRulesSpy).toHaveBeenCalledTimes(1);
 
     const searchInputEle = getBySelector('#fuzzy_keyword', baseElement);
     await act(async () => {
@@ -186,21 +182,20 @@ describe('sqle/Rule', () => {
       await act(() => jest.advanceTimersByTime(300));
     });
     await act(async () => jest.advanceTimersByTime(3000));
-    expect(getAllRulesSpy).toHaveBeenCalledTimes(3);
-    expect(getAllRulesSpy).toHaveBeenNthCalledWith(3, {
+    expect(getAllRulesSpy).toHaveBeenCalledTimes(2);
+    expect(getAllRulesSpy).toHaveBeenNthCalledWith(2, {
       filter_db_type: 'MySQL',
-      fuzzy_keyword_rule: 'test',
-      filter_rule_version: ''
+      fuzzy_keyword_rule: 'test'
     });
 
     fireEvent.mouseDown(getBySelector('#filter_rule_version', baseElement));
     await act(async () => jest.advanceTimersByTime(0));
-    fireEvent.click(getBySelector('div[title="v2"]'));
-    expect(getAllRulesSpy).toHaveBeenCalledTimes(4);
-    expect(getAllRulesSpy).toHaveBeenNthCalledWith(4, {
+    fireEvent.click(getBySelector('div[title="2"]'));
+    expect(getAllRulesSpy).toHaveBeenCalledTimes(3);
+    expect(getAllRulesSpy).toHaveBeenNthCalledWith(3, {
       filter_db_type: 'MySQL',
       fuzzy_keyword_rule: 'test',
-      filter_rule_version: 'v2'
+      filter_rule_version: 2
     });
 
     fireEvent.mouseDown(getBySelector('#filter_rule_template', baseElement));
@@ -228,11 +223,11 @@ describe('sqle/Rule', () => {
       await act(() => jest.advanceTimersByTime(300));
     });
     await act(async () => jest.advanceTimersByTime(3000));
-    expect(getAllRulesSpy).toHaveBeenCalledTimes(6);
-    expect(getAllRulesSpy).toHaveBeenNthCalledWith(6, {
+    expect(getAllRulesSpy).toHaveBeenCalledTimes(4);
+    expect(getAllRulesSpy).toHaveBeenNthCalledWith(4, {
       filter_db_type: 'MySQL',
       fuzzy_keyword_rule: 'test1',
-      filter_rule_version: ''
+      filter_rule_version: 2
     });
     expect(getRuleTemplateSpy).toHaveBeenCalledTimes(2);
     expect(getRuleTemplateSpy).toHaveBeenNthCalledWith(2, {
@@ -372,8 +367,8 @@ describe('sqle/Rule', () => {
     await act(async () => jest.advanceTimersByTime(300));
     fireEvent.click(screen.getByText('MySQL1'));
     await act(async () => jest.advanceTimersByTime(3300));
-    expect(getAllRulesSpy).toHaveBeenCalledTimes(4);
-    expect(getAllRulesSpy).toHaveBeenNthCalledWith(4, {
+    expect(getAllRulesSpy).toHaveBeenCalledTimes(2);
+    expect(getAllRulesSpy).toHaveBeenNthCalledWith(2, {
       filter_db_type: 'MySQL1',
       fuzzy_keyword_rule: undefined
     });
@@ -384,56 +379,51 @@ describe('sqle/Rule', () => {
     await act(async () => jest.advanceTimersByTime(3000));
     expect(getGlobalTemplateListSpy).toHaveBeenCalledTimes(1);
     await act(async () => jest.advanceTimersByTime(3000));
-    expect(getAllRulesSpy).toHaveBeenCalledTimes(2);
+    expect(getAllRulesSpy).toHaveBeenCalledTimes(1);
 
     fireEvent.mouseDown(getBySelector('#operand'));
     await act(async () => jest.advanceTimersByTime(0));
     fireEvent.click(getBySelector('#operand_list_0'));
     await act(async () => jest.advanceTimersByTime(3000));
-    expect(getAllRulesSpy).toHaveBeenNthCalledWith(3, {
+    expect(getAllRulesSpy).toHaveBeenNthCalledWith(2, {
       tags: 'column',
-      filter_db_type: 'MySQL',
-      filter_rule_version: ''
+      filter_db_type: 'MySQL'
     });
 
     fireEvent.mouseDown(getBySelector('#audit_purpose'));
     await act(async () => jest.advanceTimersByTime(0));
     fireEvent.click(getBySelector('#audit_purpose_list_0'));
     await act(async () => jest.advanceTimersByTime(3000));
-    expect(getAllRulesSpy).toHaveBeenNthCalledWith(4, {
+    expect(getAllRulesSpy).toHaveBeenNthCalledWith(3, {
       tags: 'column,correction',
-      filter_db_type: 'MySQL',
-      filter_rule_version: ''
+      filter_db_type: 'MySQL'
     });
 
     fireEvent.mouseDown(getBySelector('#sql'));
     await act(async () => jest.advanceTimersByTime(0));
     fireEvent.click(getBySelector('#sql_list_0'));
     await act(async () => jest.advanceTimersByTime(3000));
-    expect(getAllRulesSpy).toHaveBeenNthCalledWith(5, {
+    expect(getAllRulesSpy).toHaveBeenNthCalledWith(4, {
       tags: 'column,correction,dcl',
-      filter_db_type: 'MySQL',
-      filter_rule_version: ''
+      filter_db_type: 'MySQL'
     });
 
     fireEvent.mouseDown(getBySelector('#audit_accuracy'));
     await act(async () => jest.advanceTimersByTime(0));
     fireEvent.click(getBySelector('#audit_accuracy_list_0'));
     await act(async () => jest.advanceTimersByTime(3000));
-    expect(getAllRulesSpy).toHaveBeenNthCalledWith(6, {
+    expect(getAllRulesSpy).toHaveBeenNthCalledWith(5, {
       tags: 'column,correction,offline,dcl',
-      filter_db_type: 'MySQL',
-      filter_rule_version: ''
+      filter_db_type: 'MySQL'
     });
 
     fireEvent.mouseDown(getBySelector('#performance_cost'));
     await act(async () => jest.advanceTimersByTime(0));
     fireEvent.click(getBySelector('#performance_cost_list_0'));
     await act(async () => jest.advanceTimersByTime(3000));
-    expect(getAllRulesSpy).toHaveBeenNthCalledWith(7, {
+    expect(getAllRulesSpy).toHaveBeenNthCalledWith(6, {
       tags: 'column,correction,offline,dcl,high',
-      filter_db_type: 'MySQL',
-      filter_rule_version: ''
+      filter_db_type: 'MySQL'
     });
   });
 

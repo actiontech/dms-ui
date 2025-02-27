@@ -682,7 +682,7 @@ exports[`sqle/Rule filter list based on project name 1`] = `
                               <span
                                 class="custom-select-option-content-label"
                               >
-                                v1
+                                2
                               </span>
                             </span>
                           </span>
@@ -1694,20 +1694,20 @@ exports[`sqle/Rule filter list based on project name 2`] = `
                             />
                           </span>
                           <span
-                            class="ant-select-selection-item"
+                            class="ant-select-selection-placeholder"
                           >
                             <span
-                              class="custom-select-option-content css-vgjuov"
+                              class="custom-select-placeholder css-qly0fu"
                             >
                               <span
-                                class="custom-select-option-content-prefix"
+                                class="custom-select-placeholder-prefix"
                               >
                                 规则版本
                               </span>
                               <span
-                                class="custom-select-option-content-label"
+                                class="custom-select-placeholder-value"
                               >
-                                v1
+                                请选择{{name}}
                               </span>
                             </span>
                           </span>
@@ -2530,20 +2530,20 @@ exports[`sqle/Rule request return no data 1`] = `
                             />
                           </span>
                           <span
-                            class="ant-select-selection-item"
+                            class="ant-select-selection-placeholder"
                           >
                             <span
-                              class="custom-select-option-content css-vgjuov"
+                              class="custom-select-placeholder css-qly0fu"
                             >
                               <span
-                                class="custom-select-option-content-prefix"
+                                class="custom-select-placeholder-prefix"
                               >
                                 规则版本
                               </span>
                               <span
-                                class="custom-select-option-content-label"
+                                class="custom-select-placeholder-value"
                               >
-                                v1
+                                请选择{{name}}
                               </span>
                             </span>
                           </span>
@@ -3280,20 +3280,20 @@ exports[`sqle/Rule should hide empty list tips 1`] = `
                             />
                           </span>
                           <span
-                            class="ant-select-selection-item"
+                            class="ant-select-selection-placeholder"
                           >
                             <span
-                              class="custom-select-option-content css-vgjuov"
+                              class="custom-select-placeholder css-qly0fu"
                             >
                               <span
-                                class="custom-select-option-content-prefix"
+                                class="custom-select-placeholder-prefix"
                               >
                                 规则版本
                               </span>
                               <span
-                                class="custom-select-option-content-label"
+                                class="custom-select-placeholder-value"
                               >
-                                v1
+                                请选择{{name}}
                               </span>
                             </span>
                           </span>
@@ -4108,20 +4108,20 @@ exports[`sqle/Rule should match snap shot 1`] = `
                             />
                           </span>
                           <span
-                            class="ant-select-selection-item"
+                            class="ant-select-selection-placeholder"
                           >
                             <span
-                              class="custom-select-option-content css-vgjuov"
+                              class="custom-select-placeholder css-qly0fu"
                             >
                               <span
-                                class="custom-select-option-content-prefix"
+                                class="custom-select-placeholder-prefix"
                               >
                                 规则版本
                               </span>
                               <span
-                                class="custom-select-option-content-label"
+                                class="custom-select-placeholder-value"
                               >
-                                v1
+                                请选择{{name}}
                               </span>
                             </span>
                           </span>

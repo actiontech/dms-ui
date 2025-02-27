@@ -16,9 +16,7 @@ import { FlagFilled } from '@actiontech/icons';
 import { useTypedQuery } from '@actiontech/shared';
 import { ROUTE_PATHS } from '@actiontech/shared/lib/data/routePaths';
 import { RuleFilterCommonFields } from '../../../components/RuleList';
-import useRuleVersionTips, {
-  RuleVersionDictionaryEnum
-} from '../../../hooks/useRuleVersionTips';
+import useRuleVersionTips from '../../../hooks/useRuleVersionTips';
 
 const RuleListFilter: React.FC<RuleListFilterProps> = ({
   setShowNorRuleTemplatePage,
@@ -52,7 +50,11 @@ const RuleListFilter: React.FC<RuleListFilterProps> = ({
     loading: getDbTypeLoading
   } = useDbServiceDriver();
 
-  const { ruleVersionOptions } = useRuleVersionTips();
+  const {
+    generateRuleVersionOptions,
+    updateRuleVersionTips,
+    loading: getRuleVersionLoading
+  } = useRuleVersionTips();
 
   const {
     loading: getRuleTemplateLoading,
@@ -117,21 +119,17 @@ const RuleListFilter: React.FC<RuleListFilterProps> = ({
   const onTemplateAfterChange = (templateName: string) => {
     if (!templateName) {
       form.setFieldValue('project_name', undefined);
-      form.setFieldValue('filter_rule_version', RuleVersionDictionaryEnum.v1);
+      form.setFieldValue('filter_rule_version', undefined);
     }
   };
 
-  useEffect(() => {
-    if (filterDbType !== 'MySQL') {
-      form.setFieldValue('filter_rule_version', undefined);
-    } else {
-      form.setFieldValue('filter_rule_version', RuleVersionDictionaryEnum.v1);
-    }
-  }, [filterDbType, form]);
+  const onDbTypeChange = (dbType: string) => {
+    form.setFieldValue('filter_rule_version', undefined);
+  };
 
   useEffect(() => {
     updateGlobalRuleTemplateList();
-
+    updateRuleVersionTips();
     updateDriverListAsync().then((res) => {
       form.setFieldValue('filter_db_type', res.data.data?.[0]?.db_type);
     });
@@ -179,21 +177,19 @@ const RuleListFilter: React.FC<RuleListFilterProps> = ({
               allowClear={false}
               disabled={!!filterRuleTemplate}
               loading={getDbTypeLoading}
+              onChange={onDbTypeChange}
             />
           </Form.Item>
 
-          <Form.Item
-            noStyle
-            name="filter_rule_version"
-            hidden={filterDbType !== 'MySQL'}
-          >
+          <Form.Item noStyle name="filter_rule_version">
             <CustomSelect
               prefix={t('rule.form.ruleVersion')}
               suffixIcon={null}
               bordered={false}
-              options={ruleVersionOptions}
+              options={generateRuleVersionOptions(filterDbType)}
               allowClear={false}
               disabled={!!filterRuleTemplate}
+              loading={getRuleVersionLoading}
             />
           </Form.Item>
         </Space>

@@ -4,18 +4,13 @@ import { IRuleResV1 } from '@actiontech/shared/lib/api/sqle/service/common';
 import { useState, useCallback } from 'react';
 import { useRuleFilterForm } from '../../components/RuleList';
 import { cloneDeep } from 'lodash';
-import useRuleVersionTips, {
-  RuleVersionDictionaryEnum
-} from '../useRuleVersionTips';
 
-const useRules = (dbType: string, ruleVersion?: RuleVersionDictionaryEnum) => {
+const useRules = (dbType: string, ruleVersion?: number) => {
   const [activeRule, setActiveRule] = useState<IRuleResV1[]>([]);
 
   const [filteredRule, setFilteredRule] = useState<IRuleResV1[]>([]);
 
   const { form: ruleFilterForm, fuzzyKeyword, tags } = useRuleFilterForm();
-
-  const { transformRuleVersion2BackendParams } = useRuleVersionTips();
 
   const { data: allRules, loading: getAllRulesLoading } = useRequest(
     () =>
@@ -24,7 +19,7 @@ const useRules = (dbType: string, ruleVersion?: RuleVersionDictionaryEnum) => {
           filter_db_type: dbType,
           fuzzy_keyword_rule: fuzzyKeyword,
           tags,
-          filter_rule_version: transformRuleVersion2BackendParams(ruleVersion)
+          filter_rule_version: ruleVersion
         })
         .then((res) => res.data.data ?? []),
     {
