@@ -1,49 +1,57 @@
 import { BasicSelectProps } from '@actiontech/shared';
-import { useCallback } from 'react';
-
-export enum RuleVersionDictionaryEnum {
-  v1 = 'v1',
-  v2 = 'v2'
-}
+import { RuleTemplateService } from '@actiontech/shared/lib/api';
+import { IGetDriverRuleVersionTipsV1 } from '@actiontech/shared/lib/api/sqle/service/common';
+import { ResponseCode } from '@actiontech/shared/lib/enum';
+import { useBoolean } from 'ahooks';
+import { useCallback, useState } from 'react';
 
 const useRuleVersionTips = () => {
-  //todo 临时处理方式
-  const ruleVersionOptions: BasicSelectProps['options'] = Object.keys(
-    RuleVersionDictionaryEnum
-  ).map((key) => ({
-    label: key,
-    value:
-      RuleVersionDictionaryEnum[key as keyof typeof RuleVersionDictionaryEnum]
-  }));
+  const [loading, { setTrue, setFalse }] = useBoolean();
 
-  const transformRuleVersion2BackendParams = useCallback(
-    (ruleVersion?: RuleVersionDictionaryEnum) => {
-      if (ruleVersion === RuleVersionDictionaryEnum.v1) {
-        return '';
-      }
-      return ruleVersion;
-    },
-    []
-  );
+  const [ruleVersionTips, setRuleVersionTips] = useState<
+    IGetDriverRuleVersionTipsV1[]
+  >([]);
 
-  const transformBackendRuleVersion2FormValues = useCallback(
-    (dbType: string, ruleVersion?: string) => {
-      if (dbType === 'MySQL') {
-        if (!ruleVersion) {
-          return RuleVersionDictionaryEnum.v1;
+  const updateRuleVersionTips = useCallback(() => {
+    setTrue();
+    RuleTemplateService.GetDriverRuleVersionTips()
+
+      .then((res) => {
+        if (res.data.code === ResponseCode.SUCCESS) {
+          setRuleVersionTips(res.data?.data ?? []);
+        } else {
+          setRuleVersionTips([]);
         }
+      })
+      .catch(() => {
+        setRuleVersionTips([]);
+      })
+      .finally(() => {
+        setFalse();
+      });
+  }, [setFalse, setTrue]);
 
-        return ruleVersion as RuleVersionDictionaryEnum;
-      }
-      return ruleVersion as RuleVersionDictionaryEnum;
+  const generateRuleVersionOptions: (
+    dbType: string
+  ) => BasicSelectProps['options'] = useCallback(
+    (dbType) => {
+      return ruleVersionTips
+        .find((item) => item.db_type === dbType)
+        ?.rule_versions?.map((item) => {
+          return {
+            label: item.toString(),
+            value: item
+          };
+        });
     },
-    []
+    [ruleVersionTips]
   );
 
   return {
-    ruleVersionOptions,
-    transformRuleVersion2BackendParams,
-    transformBackendRuleVersion2FormValues
+    loading,
+    ruleVersionTips,
+    updateRuleVersionTips,
+    generateRuleVersionOptions
   };
 };
 
