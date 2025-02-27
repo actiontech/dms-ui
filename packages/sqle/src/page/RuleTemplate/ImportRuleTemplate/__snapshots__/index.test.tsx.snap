@@ -370,9 +370,9 @@ exports[`sqle/RuleTemplate/ImportRuleTemplate import rule template 1`] = `
                                 </span>
                                 <span
                                   class="ant-select-selection-item"
-                                  title="v2"
+                                  title="2"
                                 >
-                                  v2
+                                  2
                                 </span>
                               </div>
                               <span
@@ -3428,9 +3428,9 @@ exports[`sqle/RuleTemplate/ImportRuleTemplate rule list action 1`] = `
                                 </span>
                                 <span
                                   class="ant-select-selection-item"
-                                  title="v2"
+                                  title="2"
                                 >
-                                  v2
+                                  2
                                 </span>
                               </div>
                               <span

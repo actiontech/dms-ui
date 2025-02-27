@@ -367,9 +367,9 @@ exports[`sqle/RuleTemplate/UpdateRuleTemplate rule list action 1`] = `
                             </span>
                             <span
                               class="ant-select-selection-item"
-                              title="v1"
+                              title="2"
                             >
-                              v1
+                              2
                             </span>
                           </div>
                           <span
@@ -2555,9 +2555,9 @@ exports[`sqle/RuleTemplate/UpdateRuleTemplate should match snap shot 1`] = `
                             </span>
                             <span
                               class="ant-select-selection-item"
-                              title="v1"
+                              title="2"
                             >
-                              v1
+                              2
                             </span>
                           </div>
                           <span
@@ -4116,9 +4116,9 @@ exports[`sqle/RuleTemplate/UpdateRuleTemplate update rule template 1`] = `
                             </span>
                             <span
                               class="ant-select-selection-item"
-                              title="v1"
+                              title="2"
                             >
-                              v1
+                              2
                             </span>
                           </div>
                           <span

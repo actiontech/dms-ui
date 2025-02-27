@@ -1,4 +1,7 @@
-import { IRuleResV1 } from '@actiontech/shared/lib/api/sqle/service/common';
+import {
+  IRuleResV1,
+  IGetDriverRuleVersionTipsV1
+} from '@actiontech/shared/lib/api/sqle/service/common.d';
 import {
   RuleResV1LevelEnum,
   RuleParamResV1TypeEnum,
@@ -195,7 +198,8 @@ export const projectRulesMockData = {
   rule_template_name: 'default_MySQL',
   desc: '',
   db_type: 'MySQL',
-  rule_list: [ruleListData[0]]
+  rule_list: [ruleListData[0]],
+  rule_version: 2
 };
 
 export const ruleListMockData: IRuleResV1[] = [
@@ -324,7 +328,7 @@ export const importRuleTemplateMockData = {
   desc: '',
   db_type: 'MySQL',
   rule_list: [ruleListData[0]],
-  rule_version: 'v2'
+  rule_version: 2
 };
 
 export const mockRuleCategoriesData = {
@@ -469,3 +473,18 @@ export const mockRuleCategoriesData = {
     }
   ]
 };
+
+export const GetDriverRuleVersionTipsMockData = [
+  {
+    db_type: 'MySQL',
+    rule_versions: [1, 2, 3]
+  },
+  {
+    db_type: 'PostgreSQL',
+    rule_versions: [2]
+  },
+  {
+    db_type: 'SQLite',
+    rule_versions: [1, 3]
+  }
+] as IGetDriverRuleVersionTipsV1[];
