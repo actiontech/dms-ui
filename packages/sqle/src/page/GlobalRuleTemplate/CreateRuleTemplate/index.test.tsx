@@ -159,7 +159,7 @@ describe('sqle/GlobalRuleTemplate/CreateRuleTemplate', () => {
 
     fireEvent.mouseDown(getBySelector('#ruleVersion'));
     await act(async () => jest.advanceTimersByTime(0));
-    fireEvent.click(getBySelector('div[title="2"]'));
+    fireEvent.click(getBySelector('div[title="v2"]'));
     expect(getAllRuleSpy).toHaveBeenCalledTimes(2);
     expect(getAllRuleSpy).toHaveBeenNthCalledWith(2, {
       filter_db_type: 'MySQL',
@@ -257,7 +257,7 @@ describe('sqle/GlobalRuleTemplate/CreateRuleTemplate', () => {
     await act(async () => jest.advanceTimersByTime(3000));
     fireEvent.mouseDown(getBySelector('#ruleVersion'));
     await act(async () => jest.advanceTimersByTime(0));
-    fireEvent.click(getBySelector('div[title="1"]'));
+    fireEvent.click(getBySelector('div[title="v1"]'));
     await act(async () => jest.advanceTimersByTime(3000));
     fireEvent.click(screen.getByText('下一步'));
     await act(async () => jest.advanceTimersByTime(300));
@@ -356,7 +356,7 @@ describe('sqle/GlobalRuleTemplate/CreateRuleTemplate', () => {
     await act(async () => jest.advanceTimersByTime(3000));
     fireEvent.mouseDown(getBySelector('#ruleVersion'));
     await act(async () => jest.advanceTimersByTime(0));
-    fireEvent.click(getBySelector('div[title="2"]'));
+    fireEvent.click(getBySelector('div[title="v2"]'));
     await act(async () => jest.advanceTimersByTime(3000));
     expect(getAllRuleSpy).toHaveBeenCalledTimes(2);
 
