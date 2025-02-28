@@ -682,7 +682,7 @@ exports[`sqle/Rule filter list based on project name 1`] = `
                               <span
                                 class="custom-select-option-content-label"
                               >
-                                2
+                                v2
                               </span>
                             </span>
                           </span>
