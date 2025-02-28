@@ -382,9 +382,9 @@ exports[`sqle/RuleTemplate/CreateRuleTemplate create rule template 1`] = `
                             </span>
                             <span
                               class="ant-select-selection-item"
-                              title="2"
+                              title="v2"
                             >
-                              2
+                              v2
                             </span>
                           </div>
                           <span
@@ -1688,7 +1688,7 @@ exports[`sqle/RuleTemplate/CreateRuleTemplate create rule template 1`] = `
           style="height: 0px; width: 0px; overflow: hidden;"
         >
           <div
-            aria-label="1"
+            aria-label="v1"
             aria-selected="false"
             id="ruleVersion_list_0"
             role="option"
@@ -1696,7 +1696,7 @@ exports[`sqle/RuleTemplate/CreateRuleTemplate create rule template 1`] = `
             1
           </div>
           <div
-            aria-label="2"
+            aria-label="v2"
             aria-selected="true"
             id="ruleVersion_list_1"
             role="option"
@@ -1720,12 +1720,12 @@ exports[`sqle/RuleTemplate/CreateRuleTemplate create rule template 1`] = `
                 <div
                   aria-selected="false"
                   class="ant-select-item ant-select-item-option ant-select-item-option-active"
-                  title="1"
+                  title="v1"
                 >
                   <div
                     class="ant-select-item-option-content"
                   >
-                    1
+                    v1
                   </div>
                   <span
                     aria-hidden="true"
@@ -1737,12 +1737,12 @@ exports[`sqle/RuleTemplate/CreateRuleTemplate create rule template 1`] = `
                 <div
                   aria-selected="true"
                   class="ant-select-item ant-select-item-option ant-select-item-option-selected"
-                  title="2"
+                  title="v2"
                 >
                   <div
                     class="ant-select-item-option-content"
                   >
-                    2
+                    v2
                   </div>
                   <span
                     aria-hidden="true"
@@ -1754,12 +1754,12 @@ exports[`sqle/RuleTemplate/CreateRuleTemplate create rule template 1`] = `
                 <div
                   aria-selected="false"
                   class="ant-select-item ant-select-item-option"
-                  title="3"
+                  title="v3"
                 >
                   <div
                     class="ant-select-item-option-content"
                   >
-                    3
+                    v3
                   </div>
                   <span
                     aria-hidden="true"
@@ -2169,9 +2169,9 @@ exports[`sqle/RuleTemplate/CreateRuleTemplate rule list action 1`] = `
                             </span>
                             <span
                               class="ant-select-selection-item"
-                              title="1"
+                              title="v1"
                             >
-                              1
+                              v1
                             </span>
                           </div>
                           <span
@@ -3475,7 +3475,7 @@ exports[`sqle/RuleTemplate/CreateRuleTemplate rule list action 1`] = `
           style="height: 0px; width: 0px; overflow: hidden;"
         >
           <div
-            aria-label="1"
+            aria-label="v1"
             aria-selected="true"
             id="ruleVersion_list_0"
             role="option"
@@ -3483,7 +3483,7 @@ exports[`sqle/RuleTemplate/CreateRuleTemplate rule list action 1`] = `
             1
           </div>
           <div
-            aria-label="2"
+            aria-label="v2"
             aria-selected="false"
             id="ruleVersion_list_1"
             role="option"
@@ -3507,12 +3507,12 @@ exports[`sqle/RuleTemplate/CreateRuleTemplate rule list action 1`] = `
                 <div
                   aria-selected="true"
                   class="ant-select-item ant-select-item-option ant-select-item-option-active ant-select-item-option-selected"
-                  title="1"
+                  title="v1"
                 >
                   <div
                     class="ant-select-item-option-content"
                   >
-                    1
+                    v1
                   </div>
                   <span
                     aria-hidden="true"
@@ -3524,12 +3524,12 @@ exports[`sqle/RuleTemplate/CreateRuleTemplate rule list action 1`] = `
                 <div
                   aria-selected="false"
                   class="ant-select-item ant-select-item-option"
-                  title="2"
+                  title="v2"
                 >
                   <div
                     class="ant-select-item-option-content"
                   >
-                    2
+                    v2
                   </div>
                   <span
                     aria-hidden="true"
@@ -3541,12 +3541,12 @@ exports[`sqle/RuleTemplate/CreateRuleTemplate rule list action 1`] = `
                 <div
                   aria-selected="false"
                   class="ant-select-item ant-select-item-option"
-                  title="3"
+                  title="v3"
                 >
                   <div
                     class="ant-select-item-option-content"
                   >
-                    3
+                    v3
                   </div>
                   <span
                     aria-hidden="true"

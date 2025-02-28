@@ -38,7 +38,7 @@ const useRuleVersionTips = () => {
         .find((item) => item.db_type === dbType)
         ?.rule_versions?.map((item) => {
           return {
-            label: item.toString(),
+            label: `v${item}`,
             value: item
           };
         });
