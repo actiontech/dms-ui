@@ -85,7 +85,7 @@ jobs:
         with:
           name: coverage-artifacts-2
           path: coverage
-      
+
       - name: Get EE Coverage 3
         uses: actions/download-artifact@v4
         with:
@@ -112,7 +112,7 @@ jobs:
           coverage-file: coverage-merged.json
 
       - name: Delete artifact
-        uses: geekyeggo/delete-artifact@v2
+        uses: geekyeggo/delete-artifact@v5
         with:
           name: |
             ce-coverage-artifacts
