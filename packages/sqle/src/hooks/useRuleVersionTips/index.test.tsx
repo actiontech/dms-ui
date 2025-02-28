@@ -84,13 +84,13 @@ describe('useRuleVersionTips', () => {
 
     const mysqlOptions = result.current.generateRuleVersionOptions('MySQL');
     expect(mysqlOptions).toEqual([
-      { label: '1', value: 1 },
-      { label: '2', value: 2 },
-      { label: '3', value: 3 }
+      { label: 'v1', value: 1 },
+      { label: 'v2', value: 2 },
+      { label: 'v3', value: 3 }
     ]);
 
     const pgOptions = result.current.generateRuleVersionOptions('PostgreSQL');
-    expect(pgOptions).toEqual([{ label: '2', value: 2 }]);
+    expect(pgOptions).toEqual([{ label: 'v2', value: 2 }]);
 
     const unknownOptions = result.current.generateRuleVersionOptions('unknown');
     expect(unknownOptions).toBeUndefined();

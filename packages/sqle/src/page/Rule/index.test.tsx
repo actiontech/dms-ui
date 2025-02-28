@@ -190,7 +190,7 @@ describe('sqle/Rule', () => {
 
     fireEvent.mouseDown(getBySelector('#filter_rule_version', baseElement));
     await act(async () => jest.advanceTimersByTime(0));
-    fireEvent.click(getBySelector('div[title="2"]'));
+    fireEvent.click(getBySelector('div[title="v2"]'));
     expect(getAllRulesSpy).toHaveBeenCalledTimes(3);
     expect(getAllRulesSpy).toHaveBeenNthCalledWith(3, {
       filter_db_type: 'MySQL',
