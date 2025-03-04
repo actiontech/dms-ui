@@ -16,6 +16,10 @@ export interface IGetKnowledgeBaseListParams {
 
 export interface IGetKnowledgeBaseListReturn extends IGetKnowledgeBaseListRes {}
 
+export interface IGetKnowledgeGraphParams {
+  filter_by_rule_name?: string;
+}
+
 export interface IGetKnowledgeGraphReturn extends IGetKnowledgeGraphResp {}
 
 export interface IGetKnowledgeBaseTagListReturn
