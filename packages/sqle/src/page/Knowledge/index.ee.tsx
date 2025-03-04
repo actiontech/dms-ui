@@ -21,7 +21,7 @@ const KnowledgeEE: React.FC = () => {
   };
 
   const { data: graphData } = useRequest(() =>
-    KnowledgeBaseService.getKnowledgeGraph().then((res) => {
+    KnowledgeBaseService.getKnowledgeGraph({}).then((res) => {
       if (res.data.code === ResponseCode.SUCCESS) {
         return {
           edges: res.data.data?.edges ?? [],
