@@ -34,6 +34,8 @@ module.exports = {
       '<rootDir>/packages/shared/lib/testUtil/mockSigmaCore.tsx',
     '@react-sigma/graph-search$':
       '<rootDir>/packages/shared/lib/testUtil/mockSigmaGraphSearch.tsx',
+    'rehype-rewrite':
+      '<rootDir>/packages/shared/lib/testUtil/mockRehypeRewrite.ts',
     ...pathsToModuleNameMapper(compilerOptions.paths)
   },
 
