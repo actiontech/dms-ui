@@ -26,7 +26,6 @@ export const markdownPreviewOptions: MDEditorProps['previewOptions'] = {
         props.node && props.node.children
           ? getCodeString(props.node.children)
           : children;
-
       /**
      * sql_diff 代码块
      * Example:
