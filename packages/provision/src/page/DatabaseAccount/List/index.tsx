@@ -250,6 +250,24 @@ const DatabaseAccountList = () => {
     [messageApi, projectID, onRefresh, t]
   );
 
+  const onUnsyncAccount = useCallback(
+    (id?: string) => {
+      dbAccountService
+        .AuthDelDBAccount({
+          detach_from_database: true,
+          project_uid: projectID,
+          db_account_uid: id ?? ''
+        })
+        .then((res) => {
+          if (res.data.code === ResponseCode.SUCCESS) {
+            messageApi.success(t('databaseAccount.list.unsyncSuccessTips'));
+            onRefresh();
+          }
+        });
+    },
+    [messageApi, projectID, onRefresh, t]
+  );
+
   const columns = useMemo(() => {
     return DatabaseAccountListColumns(onUpdateFilter);
   }, [onUpdateFilter]);
@@ -280,6 +298,7 @@ const DatabaseAccountList = () => {
       onSetLockedStatus,
       onSetManagedStatus,
       onDeleteAccount,
+      onUnsyncAccount,
       onNavigateToUpdatePage,
       (dbServiceId) =>
         checkDbServicePermission(
@@ -292,6 +311,7 @@ const DatabaseAccountList = () => {
     onSetLockedStatus,
     onSetManagedStatus,
     onDeleteAccount,
+    onUnsyncAccount,
     onNavigateToUpdatePage,
     checkDbServicePermission
   ]);

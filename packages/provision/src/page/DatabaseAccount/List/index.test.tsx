@@ -472,6 +472,29 @@ describe('provision/DatabaseAccount/List-2', () => {
     expect(screen.getByText('账号删除成功')).toBeInTheDocument();
   });
 
+  test('render unsync account', async () => {
+    customRender();
+    await act(async () => jest.advanceTimersByTime(3000));
+    fireEvent.click(getBySelector('.actiontech-table-actions-more-button'));
+    await act(async () => jest.advanceTimersByTime(100));
+    expect(screen.getByText('解除同步')).toBeInTheDocument();
+    fireEvent.click(screen.getByText('解除同步'));
+    await act(async () => jest.advanceTimersByTime(100));
+    expect(
+      screen.getByText(`确定要解除同步账号：test1@%？`)
+    ).toBeInTheDocument();
+    fireEvent.click(screen.getByText('确 认'));
+    await act(async () => jest.advanceTimersByTime(100));
+    expect(authDelDBAccountSpy).toHaveBeenCalled();
+    expect(authDelDBAccountSpy).toHaveBeenCalledWith({
+      project_uid: mockProjectInfo.projectID,
+      db_account_uid: dbAccountMockData[0].db_account_uid,
+      detach_from_database: true
+    });
+    await act(async () => jest.advanceTimersByTime(2900));
+    expect(screen.getByText('账号解除同步成功')).toBeInTheDocument();
+  });
+
   test('render cancel managed', async () => {
     customRender();
     await act(async () => jest.advanceTimersByTime(3000));
