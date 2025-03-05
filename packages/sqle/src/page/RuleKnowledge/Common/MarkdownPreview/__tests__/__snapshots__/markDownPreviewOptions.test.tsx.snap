@@ -104,7 +104,7 @@ exports[`markdownPreviewOptions should handle sql code blocks correctly 1`] = `
 exports[`markdownPreviewOptions should handle sql_diff code blocks correctly 1`] = `
 <div>
   <div
-    class="css-16831mo"
+    class="css-ddrn28"
   >
     <div
       class="diff-header"
