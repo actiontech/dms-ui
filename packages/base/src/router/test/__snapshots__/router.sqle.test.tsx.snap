@@ -809,6 +809,13 @@ exports[`base/router-sqle-ee render sqle route data snap 1`] = `
     "path": "/sqle/rule",
   },
   {
+    "element": <div>
+      globalRuleTemplateDetail
+    </div>,
+    "key": "globalRuleTemplateDetail",
+    "path": "/sqle/rule-manager/global-detail/:templateName/:dbType",
+  },
+  {
     "children": [
       {
         "element": <div>
@@ -837,13 +844,6 @@ exports[`base/router-sqle-ee render sqle route data snap 1`] = `
         </div>,
         "key": "globalRuleTemplateUpdate",
         "path": "global-update/:templateName",
-      },
-      {
-        "element": <div>
-          globalRuleTemplateDetail
-        </div>,
-        "key": "globalRuleTemplateDetail",
-        "path": "global-detail/:templateName/:dbType",
       },
       {
         "element": <div>

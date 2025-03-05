@@ -529,6 +529,11 @@ export const globalRouterConfig: RouterConfigItem[] = [
     key: 'rule'
   },
   {
+    path: `${ROUTE_PATHS.SQLE.RULE_MANAGEMENT.detail.prefix}/${ROUTE_PATHS.SQLE.RULE_MANAGEMENT.detail.path}`,
+    key: 'globalRuleTemplateDetail',
+    element: <GlobalRuleTemplateDetail />
+  },
+  {
     key: 'ruleManager',
     permission: PERMISSIONS.PAGES.SQLE.RULE_MANAGEMENT,
     path: ROUTE_PATHS.SQLE.RULE_MANAGEMENT.index.path,
@@ -552,11 +557,6 @@ export const globalRouterConfig: RouterConfigItem[] = [
         path: ROUTE_PATHS.SQLE.RULE_MANAGEMENT.update.path,
         key: 'globalRuleTemplateUpdate',
         element: <GlobalUpdateRuleTemplate />
-      },
-      {
-        path: ROUTE_PATHS.SQLE.RULE_MANAGEMENT.detail.path,
-        key: 'globalRuleTemplateDetail',
-        element: <GlobalRuleTemplateDetail />
       },
       {
         path: ROUTE_PATHS.SQLE.CUSTOM_RULE.create.path,
