@@ -28,7 +28,8 @@
     "icon:docs:build": "pnpm --filter @actiontech/icons docs:build",
     "icon:build": "pnpm --filter @actiontech/icons build",
     "dms:g": "pnpm --filter @actiontech/cli-create-dms-page build && create-dms-page",
-    "api:g": "sh ./scripts/api/gen_api.sh"
+    "api_client:g": "sh ./scripts/api/gen_api.sh",
+    "api_mocks:g": "npm_config_registry=http://10.186.18.19:4873 pnpx @actiontech/cli api-mocks -y"
   },
   "keywords": [],
   "author": "",
