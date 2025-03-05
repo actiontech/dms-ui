@@ -12,8 +12,6 @@ export const SqlDiffPreviewStyleWrapper = styled('div')`
     display: flex;
     justify-content: space-between;
     margin-bottom: 8px;
-    font-weight: 500;
-    color: #333;
 
     div {
       flex: 1;

@@ -36,6 +36,12 @@ jest.mock('react-router-dom', () => {
   };
 });
 
+jest.mock('rehype-rewrite', () => {
+  return {
+    getCodeString: jest.fn()
+  };
+});
+
 describe('page/RuleKnowledge', () => {
   let getKnowledgeGraphSpy: jest.SpyInstance;
   ignoreConsoleErrors([UtilsConsoleErrorStringsEnum.INVALID_CUSTOM_ATTRIBUTE]);

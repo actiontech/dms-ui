@@ -2,6 +2,12 @@ import { markdownPreviewOptions } from '../markdownPreviewOptions';
 import { superRender } from '@actiontech/shared/lib/testUtil/customRender';
 import React from 'react';
 
+jest.mock('rehype-rewrite', () => {
+  return {
+    getCodeString: jest.fn()
+  };
+});
+
 type CodeMethodProps = {
   className: string;
   children: React.ReactNode;

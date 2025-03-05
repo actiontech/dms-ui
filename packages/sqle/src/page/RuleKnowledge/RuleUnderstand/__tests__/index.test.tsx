@@ -19,6 +19,12 @@ jest.mock('react-redux', () => {
   };
 });
 
+jest.mock('rehype-rewrite', () => {
+  return {
+    getCodeString: jest.fn()
+  };
+});
+
 describe('page/RuleUnderstand', () => {
   let getKnowledgeGraphSpy: jest.SpyInstance;
   ignoreConsoleErrors([UtilsConsoleErrorStringsEnum.INVALID_CUSTOM_ATTRIBUTE]);
