@@ -1,0 +1,36 @@
+{
+  "client": {
+    "sqle-ui": {
+      "project": "sqle-ui",
+      "output": "packages/shared/lib/api/sqle/service",
+      "branch": "main",
+      "swaggerPath": "",
+      "swaggerOutput": "",
+      "plugin": "dot-remove",
+      "template": "complex"
+    },
+    "dms-ui": {
+      "project": "dms-ui",
+      "output": "packages/shared/lib/api/base/service",
+      "branch": "main",
+      "swaggerPath": "",
+      "swaggerOutput": "",
+      "plugin": "simple-cleaner",
+      "template": "complex"
+    }
+  },
+  "mocks": {
+    "packages/shared/lib/api/sqle/service": {
+      "clientPath": "packages/shared/lib/api/sqle/service",
+      "output": "packages/sqle/src/testUtils/mockApi",
+      "utilsAlias": "@actiontech/shared/lib/testUtil/mockApi",
+      "serviceAlias": "@actiontech/shared/lib/api/sqle/service"
+    },
+    "packages/shared/lib/api/base/service": {
+      "clientPath": "packages/shared/lib/api/base/service",
+      "output": "packages/base/src/testUtils/mockApi",
+      "utilsAlias": "@actiontech/shared/lib/testUtil/mockApi",
+      "serviceAlias": "@actiontech/shared/lib/api/base/service"
+    }
+  }
+}
