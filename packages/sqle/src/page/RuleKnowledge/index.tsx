@@ -11,7 +11,7 @@ import {
   RuleKnowledgeStyleWrapper
 } from './style';
 import { ROUTE_PATHS } from '@actiontech/shared/lib/data/routePaths';
-import { RuleKnowledgeEditActions } from './RuleUnderstand/actions';
+import { RuleKnowledgeEditActions } from './actions';
 import { useBoolean } from 'ahooks';
 import KnowledgeBaseInfo from './components/KnowledgeBaseInfo';
 import PageHeaderExtraAction from './components/PageHeaderExtraAction';

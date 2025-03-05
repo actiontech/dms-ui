@@ -5,7 +5,7 @@ interface SqlPreviewProps {
 }
 
 const SqlPreview: React.FC<SqlPreviewProps> = ({ code }) => {
-  return <SqlPreviewStyleWrapper sql={code} tooltip={false} />;
+  return <SqlPreviewStyleWrapper rows={0} sql={code} tooltip={false} />;
 };
 
 export default SqlPreview;
