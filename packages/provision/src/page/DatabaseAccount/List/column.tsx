@@ -143,6 +143,7 @@ export const DatabaseAccountListActions = (
   onSetLockedStatus: (lock: boolean, id?: string) => void,
   onSetManagedStatus: (managed: boolean, id?: string) => void,
   onDeleteAccount: (id?: string) => void,
+  onUnsyncAccount: (id?: string) => void,
   onNavigateToUpdatePage: (id?: string) => void,
   isHaveServicePermission: (serviceID?: string) => boolean
 ): {
@@ -224,6 +225,20 @@ export const DatabaseAccountListActions = (
               cancelText: t('common.cancel'),
               onConfirm: () => {
                 onDeleteAccount(record?.db_account_uid);
+              }
+            })
+          },
+          {
+            key: 'account_unsync',
+            text: t('databaseAccount.list.action.unsync'),
+            confirm: (record) => ({
+              title: t('databaseAccount.list.unsyncConfirm', {
+                name: accountNameRender(record?.account_info)
+              }),
+              okText: t('common.ok'),
+              cancelText: t('common.cancel'),
+              onConfirm: () => {
+                onUnsyncAccount(record?.db_account_uid);
               }
             })
           },

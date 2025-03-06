@@ -21,6 +21,8 @@ export default {
     unmanagedSuccessTips: '密码已取消托管',
     deleteSuccessTips: '账号删除成功',
     deleteConfirm: '确定要删除账号：{{name}}？',
+    unsyncConfirm: '确定要解除同步账号：{{name}}？',
+    unsyncSuccessTips: '账号解除同步成功',
     cancelManage:
       '取消托管后，平台将不再记录账号密码，成员无法通过CB工作台访问该账号，是否确认取消托管？',
     column: {
@@ -49,6 +51,7 @@ export default {
       disable: '禁用',
       enable: '启用',
       delete: '删除',
+      unsync: '解除同步',
       manage: '托管密码',
       cancelManage: '取消托管',
       usedByWorkbench: '开启工作台查询',

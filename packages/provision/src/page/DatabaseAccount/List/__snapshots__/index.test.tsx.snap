@@ -1264,6 +1264,18 @@ exports[`provision/DatabaseAccount/List-2 render cancel managed 1`] = `
         <span
           class="more-button-item-text"
         >
+          解除同步
+        </span>
+      </div>
+      <div
+        class="more-button-item"
+      >
+        <span
+          class="more-button-item-icon"
+        />
+        <span
+          class="more-button-item-text"
+        >
           取消托管
         </span>
       </div>
@@ -3622,6 +3634,18 @@ exports[`provision/DatabaseAccount/List-2 render lock account 1`] = `
         <span
           class="more-button-item-text"
         >
+          解除同步
+        </span>
+      </div>
+      <div
+        class="more-button-item"
+      >
+        <span
+          class="more-button-item-icon"
+        />
+        <span
+          class="more-button-item-text"
+        >
           取消托管
         </span>
       </div>
@@ -3711,6 +3735,18 @@ exports[`provision/DatabaseAccount/List-2 render manage account 1`] = `
         <span
           class="more-button-item-text"
         >
+          解除同步
+        </span>
+      </div>
+      <div
+        class="more-button-item"
+      >
+        <span
+          class="more-button-item-icon"
+        />
+        <span
+          class="more-button-item-text"
+        >
           托管密码
         </span>
       </div>
@@ -3789,6 +3825,18 @@ exports[`provision/DatabaseAccount/List-2 render unlock account 1`] = `
           class="more-button-item-text"
         >
           删除
+        </span>
+      </div>
+      <div
+        class="more-button-item"
+      >
+        <span
+          class="more-button-item-icon"
+        />
+        <span
+          class="more-button-item-text"
+        >
+          解除同步
         </span>
       </div>
       <div

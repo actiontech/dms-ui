@@ -118,6 +118,8 @@ export interface IAuthDelDBAccountParams {
   project_uid: string;
 
   db_account_uid: string;
+
+  detach_from_database?: boolean;
 }
 
 export interface IAuthDelDBAccountReturn extends IGenericResp {}
