@@ -34,6 +34,7 @@ export type SQLInfoFormFields = {
   gitHttpUrl: string;
   gitUserName: string;
   gitUserPassword: string;
+  gitBranch: string;
 };
 
 export type SQLInfoFormProps = {
