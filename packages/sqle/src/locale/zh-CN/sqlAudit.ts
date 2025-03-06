@@ -86,7 +86,11 @@ export default {
         zipFile: 'ZIP文件',
         gitUrl: 'GIT地址',
         gitUrlTips:
-          '请输入git仓库的HTTP(S)克隆地址，若为私有GIT仓库，则必须输入有读权限的账号密码'
+          '请输入git仓库的HTTP(S)克隆地址，若为私有GIT仓库，则必须输入有读权限的账号密码',
+        gitBranch: '代码分支',
+        verifyConnection: '验证连接',
+        connectSuccess: '连接成功',
+        pleaseVerifyConnection: '请先验证仓库连通性'
       },
       uploadFileTip: {
         sqlFile: '点击选择SQL文件或将文件拖拽到此区域',

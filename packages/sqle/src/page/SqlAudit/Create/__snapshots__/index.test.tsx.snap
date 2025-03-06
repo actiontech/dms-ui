@@ -1167,7 +1167,7 @@ exports[`sqle/SqlAudit/Create configure git repository 1`] = `
           </div>
         </div>
         <div
-          class="ant-form-item css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+          class="ant-form-item has-required-style css-1jlm9cy css-dev-only-do-not-override-txh9fw"
         >
           <div
             class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
@@ -1241,7 +1241,7 @@ exports[`sqle/SqlAudit/Create configure git repository 1`] = `
           </div>
         </div>
         <div
-          class="ant-form-item css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+          class="ant-form-item has-required-style css-1jlm9cy css-dev-only-do-not-override-txh9fw"
         >
           <div
             class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
@@ -1250,7 +1250,7 @@ exports[`sqle/SqlAudit/Create configure git repository 1`] = `
               class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left css-dev-only-do-not-override-txh9fw"
             >
               <label
-                class="ant-form-item-no-colon"
+                class="ant-form-item-required ant-form-item-no-colon"
                 for="gitUserName"
                 title="用户名"
               >
@@ -1267,6 +1267,7 @@ exports[`sqle/SqlAudit/Create configure git repository 1`] = `
                   class="ant-form-item-control-input-content"
                 >
                   <input
+                    aria-required="true"
                     class="ant-input css-dev-only-do-not-override-ywkr0o basic-input-wrapper css-1pd1cd5"
                     id="gitUserName"
                     placeholder="请输入用户名"
@@ -1279,7 +1280,7 @@ exports[`sqle/SqlAudit/Create configure git repository 1`] = `
           </div>
         </div>
         <div
-          class="ant-form-item css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+          class="ant-form-item has-required-style css-1jlm9cy css-dev-only-do-not-override-txh9fw"
         >
           <div
             class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
@@ -1288,7 +1289,7 @@ exports[`sqle/SqlAudit/Create configure git repository 1`] = `
               class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left css-dev-only-do-not-override-txh9fw"
             >
               <label
-                class="ant-form-item-no-colon"
+                class="ant-form-item-required ant-form-item-no-colon"
                 for="gitUserPassword"
                 title="密码"
               >
@@ -1308,6 +1309,7 @@ exports[`sqle/SqlAudit/Create configure git repository 1`] = `
                     class="ant-input-affix-wrapper ant-input-password basic-input-wrapper css-1pd1cd5 css-dev-only-do-not-override-txh9fw"
                   >
                     <input
+                      aria-required="true"
                       class="ant-input css-dev-only-do-not-override-txh9fw"
                       id="gitUserPassword"
                       placeholder="请输入密码"
@@ -1341,6 +1343,133 @@ exports[`sqle/SqlAudit/Create configure git repository 1`] = `
                       </span>
                     </span>
                   </span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="ant-form-item css-15d6abf css-dev-only-do-not-override-txh9fw"
+        >
+          <div
+            class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+          >
+            <div
+              class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left css-dev-only-do-not-override-txh9fw"
+            >
+              <label
+                class="ant-form-item-no-colon"
+                title=""
+              />
+            </div>
+            <div
+              class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+            >
+              <div
+                class="ant-form-item-control-input"
+              >
+                <div
+                  class="ant-form-item-control-input-content"
+                >
+                  <button
+                    class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default basic-button-wrapper css-geipcv"
+                    type="button"
+                  >
+                    <span>
+                      验证连接
+                    </span>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="ant-form-item has-required-style css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+        >
+          <div
+            class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+          >
+            <div
+              class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left css-dev-only-do-not-override-txh9fw"
+            >
+              <label
+                class="ant-form-item-required ant-form-item-no-colon"
+                for="gitBranch"
+                title="代码分支"
+              >
+                代码分支
+              </label>
+            </div>
+            <div
+              class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+            >
+              <div
+                class="ant-form-item-control-input"
+              >
+                <div
+                  class="ant-form-item-control-input-content"
+                >
+                  <div
+                    aria-required="true"
+                    class="ant-select ant-select-in-form-item basic-select-wrapper css-iy4o4x css-dev-only-do-not-override-v9sov3 ant-select-single ant-select-show-arrow ant-select-disabled ant-select-show-search"
+                  >
+                    <div
+                      class="ant-select-selector"
+                    >
+                      <span
+                        class="ant-select-selection-search"
+                      >
+                        <input
+                          aria-activedescendant="gitBranch_list_0"
+                          aria-autocomplete="list"
+                          aria-controls="gitBranch_list"
+                          aria-expanded="false"
+                          aria-haspopup="listbox"
+                          aria-owns="gitBranch_list"
+                          aria-required="true"
+                          autocomplete="off"
+                          class="ant-select-selection-search-input"
+                          disabled=""
+                          id="gitBranch"
+                          role="combobox"
+                          type="search"
+                          value=""
+                        />
+                      </span>
+                      <span
+                        class="ant-select-selection-placeholder"
+                      >
+                        请先验证仓库连通性
+                      </span>
+                    </div>
+                    <span
+                      aria-hidden="true"
+                      class="ant-select-arrow"
+                      style="user-select: none;"
+                      unselectable="on"
+                    >
+                      <span
+                        aria-label="down"
+                        class="anticon anticon-down ant-select-suffix"
+                        role="img"
+                      >
+                        <svg
+                          aria-hidden="true"
+                          data-icon="down"
+                          fill="currentColor"
+                          focusable="false"
+                          height="1em"
+                          viewBox="64 64 896 896"
+                          width="1em"
+                        >
+                          <path
+                            d="M884 256h-75c-5.1 0-9.9 2.5-12.9 6.6L512 654.2 227.9 262.6c-3-4.1-7.8-6.6-12.9-6.6h-75c-6.5 0-10.3 7.4-6.5 12.7l352.6 486.1c12.8 17.6 39 17.6 51.7 0l352.6-486.1c3.9-5.3.1-12.7-6.4-12.7z"
+                          />
+                        </svg>
+                      </span>
+                    </span>
+                  </div>
                 </div>
               </div>
             </div>
