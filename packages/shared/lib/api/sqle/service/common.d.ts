@@ -3301,6 +3301,30 @@ export interface ITestFeishuConfigurationReqV1 {
   account_type?: TestFeishuConfigurationReqV1AccountTypeEnum;
 }
 
+export interface ITestGitConnectionReqV1 {
+  git_http_url?: string;
+
+  git_user_name?: string;
+
+  git_user_password?: string;
+}
+
+export interface ITestGitConnectionResDataV1 {
+  branches?: string[];
+
+  error_message?: string;
+
+  is_connected_success?: boolean;
+}
+
+export interface ITestGitConnectionResV1 {
+  code?: number;
+
+  data?: ITestGitConnectionResDataV1;
+
+  message?: string;
+}
+
 export interface ITestWechatConfigResDataV1 {
   error_message?: string;
 
