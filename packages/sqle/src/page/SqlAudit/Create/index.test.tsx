@@ -41,6 +41,7 @@ describe('sqle/SqlAudit/Create', () => {
   let getDriversSpy: jest.SpyInstance;
   let getRuleTemplateTipsSpy: jest.SpyInstance;
   let getGlobalRuleTemplateTipsSpy: jest.SpyInstance;
+  let testGitConnectionSpy: jest.SpyInstance;
   beforeEach(() => {
     jest.useFakeTimers();
     (useNavigate as jest.Mock).mockImplementation(() => navigateSpy);
@@ -56,6 +57,7 @@ describe('sqle/SqlAudit/Create', () => {
     getDriversSpy = configuration.getDrivers();
     getGlobalRuleTemplateTipsSpy = rule_template.getRuleTemplateTips();
     getRuleTemplateTipsSpy = rule_template.getProjectRuleTemplateTips();
+    testGitConnectionSpy = configuration.testGitConnection();
 
     getGlobalRuleTemplateTipsSpy.mockImplementation(() =>
       createSpySuccessResponse({
@@ -422,6 +424,7 @@ describe('sqle/SqlAudit/Create', () => {
     expect(screen.getByText('GIT地址')).toBeInTheDocument();
     expect(screen.getByText('用户名')).toBeInTheDocument();
     expect(screen.getByText('密码')).toBeInTheDocument();
+    expect(screen.getByText('代码分支')).toBeInTheDocument();
 
     fireEvent.input(screen.getByLabelText('GIT地址'), {
       target: { value: 'https://test.com' }
@@ -434,7 +437,22 @@ describe('sqle/SqlAudit/Create', () => {
     fireEvent.input(screen.getByLabelText('密码'), {
       target: { value: '123456' }
     });
-    await act(async () => jest.advanceTimersByTime(300));
+    await act(async () => jest.advanceTimersByTime(0));
+    fireEvent.click(screen.getByText('验证连接'));
+    await act(async () => jest.advanceTimersByTime(0));
+    expect(testGitConnectionSpy).toHaveBeenCalledTimes(1);
+    expect(testGitConnectionSpy).toHaveBeenCalledWith({
+      git_http_url: 'https://test.com',
+      git_user_name: 'test',
+      git_user_password: '123456'
+    });
+    await act(async () => jest.advanceTimersByTime(3000));
+    expect(screen.getByText('连接成功')).toBeInTheDocument();
+    fireEvent.mouseDown(getBySelector('#gitBranch', baseElement));
+    await act(async () => jest.advanceTimersByTime(0));
+    fireEvent.click(getBySelector('div[title="main"]', baseElement));
+    await act(async () => jest.advanceTimersByTime(0));
+
     fireEvent.click(screen.getByText('审 核'));
     await act(async () => {
       await jest.advanceTimersByTime(3000);
@@ -445,6 +463,7 @@ describe('sqle/SqlAudit/Create', () => {
       git_http_url: 'https://test.com',
       git_user_name: 'test',
       git_user_password: '123456',
+      git_branch_name: 'main',
       input_mybatis_xml_file: undefined,
       input_sql_file: undefined,
       input_zip_file: undefined,
