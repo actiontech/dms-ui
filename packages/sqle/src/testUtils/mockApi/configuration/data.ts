@@ -5,3 +5,9 @@ export const deriversMockData = [
     logo_url: 'test/logo?instance_type=mysql'
   }
 ];
+
+export const testGitConnectionMockData = {
+  is_connected_success: true,
+  error_message: null,
+  branches: ['main', 'test']
+};
