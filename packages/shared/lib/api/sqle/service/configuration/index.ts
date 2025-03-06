@@ -22,6 +22,8 @@ import {
   IUpdateFeishuAuditConfigurationV1Return,
   ITestFeishuAuditConfigV1Params,
   ITestFeishuAuditConfigV1Return,
+  ITestGitConnectionV1Params,
+  ITestGitConnectionV1Return,
   IGetSQLELicenseV1Return,
   ISetSQLELicenseV1Params,
   ISetSQLELicenseV1Return,
@@ -134,6 +136,18 @@ class ConfigurationService extends ServiceBase {
     const paramsData = this.cloneDeep(params);
     return this.post<ITestFeishuAuditConfigV1Return>(
       '/v1/configurations/feishu_audit/test',
+      paramsData,
+      options
+    );
+  }
+
+  public TestGitConnectionV1(
+    params: ITestGitConnectionV1Params,
+    options?: AxiosRequestConfig
+  ) {
+    const paramsData = this.cloneDeep(params);
+    return this.post<ITestGitConnectionV1Return>(
+      '/v1/configurations/git/test',
       paramsData,
       options
     );
