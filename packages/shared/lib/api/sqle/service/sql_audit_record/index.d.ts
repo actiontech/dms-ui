@@ -54,6 +54,8 @@ export interface ICreateSQLAuditRecordV1Params {
 
   git_user_name?: string;
 
+  git_branch_name?: string;
+
   git_user_password?: string;
 }
 
