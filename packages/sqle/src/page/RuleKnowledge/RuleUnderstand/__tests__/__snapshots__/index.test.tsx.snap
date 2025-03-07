@@ -1,0 +1,218 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`page/RuleUnderstand render content data 1`] = `
+<body>
+  <div>
+    <div
+      class=" css-1yb442y"
+    >
+      <div
+        class="ant-spin-nested-loading css-dev-only-do-not-override-txh9fw"
+      >
+        <div
+          class="ant-spin-container"
+        >
+          <div
+            class="markdown-container"
+          >
+            <div
+              class="css-1pkzawh"
+              components="[object Object]"
+              rehypeplugins="() => jest.fn()"
+            >
+              
+  ## 标签
+  \`\`\`label [数据库版本:MySQL 5.7.25,检查方式:不连库审核]\`\`\`
+  ### 示例
+  \`\`\`sql
+  select * from customers where name is not null;        
+  \`\`\`
+  ### SQL Diff
+  \`\`\`sql_diff
+    ---before
+      SELECT * FROM Users
+      WHERE id &gt; 0 
+      AND status = 'active'
+    ---after
+      SELECT id, name 
+      FROM Users
+      WHERE id &gt; 0 
+      AND status = 'active'
+  \`\`\`
+
+            </div>
+            <h2
+              class="ant-typography graph-title css-dev-only-do-not-override-txh9fw"
+              id="header-0"
+            >
+              关联的语法节点
+            </h2>
+            <div
+              class="css-1c94q4z"
+            >
+              <div
+                class="ant-spin-nested-loading css-dev-only-do-not-override-txh9fw"
+              >
+                <div>
+                  <div
+                    aria-busy="true"
+                    aria-live="polite"
+                    class="ant-spin ant-spin-spinning ant-spin-show-text css-dev-only-do-not-override-txh9fw"
+                  >
+                    <span
+                      class="ant-spin-dot ant-spin-dot-spin"
+                    >
+                      <i
+                        class="ant-spin-dot-item"
+                      />
+                      <i
+                        class="ant-spin-dot-item"
+                      />
+                      <i
+                        class="ant-spin-dot-item"
+                      />
+                      <i
+                        class="ant-spin-dot-item"
+                      />
+                    </span>
+                    <div
+                      class="ant-spin-text"
+                    >
+                      加载知识图谱中...
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="ant-spin-container ant-spin-blur"
+                />
+              </div>
+            </div>
+          </div>
+          <div>
+            <div
+              class=""
+            >
+              <div
+                class="css-dev-only-do-not-override-txh9fw ant-anchor-wrapper"
+                style="max-height: 100vh;"
+              >
+                <div
+                  class="ant-anchor"
+                >
+                  <span
+                    class="ant-anchor-ink ant-anchor-ink-visible"
+                    style="top: 0px; height: 0px;"
+                  />
+                  <div
+                    class="ant-anchor-link ant-anchor-link-active"
+                  >
+                    <a
+                      class="ant-anchor-link-title ant-anchor-link-title-active"
+                      href="#header-0"
+                      title="关联的语法节点"
+                    >
+                      关联的语法节点
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`page/RuleUnderstand render empty data 1`] = `
+<body>
+  <div>
+    <div
+      class=" css-1yb442y"
+    >
+      <div
+        class="ant-spin-nested-loading css-dev-only-do-not-override-txh9fw"
+      >
+        <div>
+          <div
+            aria-busy="true"
+            aria-live="polite"
+            class="ant-spin ant-spin-spinning css-dev-only-do-not-override-txh9fw"
+          >
+            <span
+              class="ant-spin-dot ant-spin-dot-spin"
+            >
+              <i
+                class="ant-spin-dot-item"
+              />
+              <i
+                class="ant-spin-dot-item"
+              />
+              <i
+                class="ant-spin-dot-item"
+              />
+              <i
+                class="ant-spin-dot-item"
+              />
+            </span>
+          </div>
+        </div>
+        <div
+          class="ant-spin-container ant-spin-blur"
+        >
+          <div
+            class="css-dev-only-do-not-override-txh9fw ant-empty ant-empty-normal"
+          >
+            <div
+              class="ant-empty-image"
+            >
+              <svg
+                height="41"
+                viewBox="0 0 64 41"
+                width="64"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <g
+                  fill="none"
+                  fill-rule="evenodd"
+                  transform="translate(0 1)"
+                >
+                  <ellipse
+                    cx="32"
+                    cy="33"
+                    fill="#f5f5f5"
+                    rx="32"
+                    ry="7"
+                  />
+                  <g
+                    fill-rule="nonzero"
+                    stroke="#d9d9d9"
+                  >
+                    <path
+                      d="M55 12.76L44.854 1.258C44.367.474 43.656 0 42.907 0H21.093c-.749 0-1.46.474-1.947 1.257L9 12.761V22h46v-9.24z"
+                    />
+                    <path
+                      d="M41.613 15.931c0-1.605.994-2.93 2.227-2.931H55v18.137C55 33.26 53.68 35 52.05 35h-40.1C10.32 35 9 33.259 9 31.137V13h11.16c1.233 0 2.227 1.323 2.227 2.928v.022c0 1.605 1.005 2.901 2.237 2.901h14.752c1.232 0 2.237-1.308 2.237-2.913v-.007z"
+                      fill="#fafafa"
+                    />
+                  </g>
+                </g>
+              </svg>
+            </div>
+            <div
+              class="ant-empty-description"
+            >
+              <span
+                class="ant-typography ant-typography-secondary css-dev-only-do-not-override-txh9fw"
+              >
+                暂无数据, 请编辑
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+`;

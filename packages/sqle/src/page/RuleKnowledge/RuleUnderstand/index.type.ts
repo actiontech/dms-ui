@@ -1,12 +1,13 @@
 import { MDEditorProps } from '@uiw/react-md-editor';
 
 export type RuleUnderstandProps = {
-  ruleName: string;
   content?: string;
-  refresh: () => void;
-  dbType: string;
   loading: boolean;
-  isCustomRule: boolean;
+  isModifying: boolean;
+  editValue: MDEditorProps['value'];
+  setEditValue: (val: MDEditorProps['value']) => void;
+  setHasDirtyData: (val: boolean) => void;
+  ruleName: string;
 };
 
 export type EditKnowledgeContentProps = {

@@ -1,98 +1,76 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`page/RuleKnowledge request rule info and custom rule knowledge 1`] = `
+exports[`page/RuleKnowledge render markdown with custom code block 1`] = `
 <body>
   <div>
     <div
-      class="actiontech-page-header-namespace css-1xspr0w"
+      class="css-bwb9yf"
     >
       <div
-        class="title"
-      >
-        知识库
-      </div>
-      <div
-        class="extra"
-      />
-    </div>
-    <div
-      class="css-1vnfydc"
-    >
-      <div
-        class="ant-card ant-card-bordered css-dev-only-do-not-override-txh9fw"
+        class="actiontech-page-header-namespace css-1xspr0w"
       >
         <div
-          class="ant-card-body"
+          class="title"
         >
-          <div
-            class="ant-spin-nested-loading css-dev-only-do-not-override-txh9fw"
+          知识库
+        </div>
+        <div
+          class="extra"
+        >
+          <button
+            class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary basic-button-wrapper css-geipcv"
+            type="button"
           >
-            <div
-              class="ant-spin-container"
-            >
-              <h4
-                class="ant-typography css-dev-only-do-not-override-txh9fw"
-              >
-                绑定的变量个数不建议超过阈值
-              </h4>
-              <span
-                class="ant-typography ant-typography-secondary css-dev-only-do-not-override-txh9fw"
-              >
-                因为过度使用绑定变量会增加查询的复杂度，从而降低查询性能。过度使用绑定变量还会增加维护成本。默认阈值:100
-              </span>
-            </div>
-          </div>
+            <span>
+              编 辑
+            </span>
+          </button>
         </div>
       </div>
       <div
-        class="next-icon-wrap"
-      >
-        <svg
-          fill="none"
-          height="18"
-          viewBox="0 0 18 6"
-          width="18"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <path
-            d="m1 1 8 4 8-4"
-            stroke="#E6E4E3"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            stroke-width="2"
-          />
-        </svg>
-      </div>
-      <div
-        class="ant-card ant-card-bordered css-dev-only-do-not-override-txh9fw"
+        class="css-1ie1bey"
       >
         <div
-          class="ant-card-head"
+          class="ant-card ant-card-bordered rule-knowledge-info-card css-dev-only-do-not-override-txh9fw"
         >
           <div
-            class="ant-card-head-wrapper"
+            class="ant-card-body"
           >
             <div
-              class="ant-card-head-title"
+              class="ant-spin-nested-loading css-dev-only-do-not-override-txh9fw"
             >
-              规则理解
-            </div>
-            <div
-              class="ant-card-extra"
-            >
-              <button
-                class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary basic-button-wrapper css-geipcv"
-                type="button"
+              <div
+                class="ant-spin-container"
               >
-                <span>
-                  编 辑
-                </span>
-              </button>
+                <div
+                  class="ant-space css-dev-only-do-not-override-txh9fw ant-space-vertical"
+                >
+                  <div
+                    class="ant-space-item"
+                    style="margin-bottom: 8px;"
+                  >
+                    <h4
+                      class="ant-typography css-dev-only-do-not-override-txh9fw"
+                    >
+                      绑定的变量个数不建议超过阈值
+                    </h4>
+                  </div>
+                  <div
+                    class="ant-space-item"
+                  >
+                    <span
+                      class="ant-typography ant-typography-secondary css-dev-only-do-not-override-txh9fw"
+                    >
+                      因为过度使用绑定变量会增加查询的复杂度，从而降低查询性能。过度使用绑定变量还会增加维护成本。默认阈值:100
+                    </span>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
         <div
-          class="ant-card-body"
+          class=" css-1yb442y"
         >
           <div
             class="ant-spin-nested-loading css-dev-only-do-not-override-txh9fw"
@@ -101,10 +79,284 @@ exports[`page/RuleKnowledge request rule info and custom rule knowledge 1`] = `
               class="ant-spin-container"
             >
               <div
-                class="css-1pkzawh"
-                rehypeplugins="() => jest.fn()"
+                class="markdown-container"
               >
-                123
+                <div
+                  class="css-1pkzawh"
+                  components="[object Object]"
+                  rehypeplugins="() => jest.fn()"
+                >
+                  
+  ## 标签
+  \`\`\`label [数据库版本:MySQL 5.7.25,检查方式:不连库审核]\`\`\`
+  ### 示例
+  \`\`\`sql
+  select * from customers where name is not null;        
+  \`\`\`
+  ### SQL Diff
+  \`\`\`sql_diff
+    ---before
+      SELECT * FROM Users
+      WHERE id &gt; 0 
+      AND status = 'active'
+    ---after
+      SELECT id, name 
+      FROM Users
+      WHERE id &gt; 0 
+      AND status = 'active'
+  \`\`\`
+
+                </div>
+                <h2
+                  class="ant-typography graph-title css-dev-only-do-not-override-txh9fw"
+                  id="header-0"
+                >
+                  关联的语法节点
+                </h2>
+                <div
+                  class="css-1c94q4z"
+                >
+                  <div
+                    class="ant-spin-nested-loading css-dev-only-do-not-override-txh9fw"
+                  >
+                    <div>
+                      <div
+                        aria-busy="true"
+                        aria-live="polite"
+                        class="ant-spin ant-spin-spinning ant-spin-show-text css-dev-only-do-not-override-txh9fw"
+                      >
+                        <span
+                          class="ant-spin-dot ant-spin-dot-spin"
+                        >
+                          <i
+                            class="ant-spin-dot-item"
+                          />
+                          <i
+                            class="ant-spin-dot-item"
+                          />
+                          <i
+                            class="ant-spin-dot-item"
+                          />
+                          <i
+                            class="ant-spin-dot-item"
+                          />
+                        </span>
+                        <div
+                          class="ant-spin-text"
+                        >
+                          加载知识图谱中...
+                        </div>
+                      </div>
+                    </div>
+                    <div
+                      class="ant-spin-container ant-spin-blur"
+                    />
+                  </div>
+                </div>
+              </div>
+              <div>
+                <div
+                  class=""
+                >
+                  <div
+                    class="css-dev-only-do-not-override-txh9fw ant-anchor-wrapper"
+                    style="max-height: 100vh;"
+                  >
+                    <div
+                      class="ant-anchor"
+                    >
+                      <span
+                        class="ant-anchor-ink ant-anchor-ink-visible"
+                        style="top: 0px; height: 0px;"
+                      />
+                      <div
+                        class="ant-anchor-link ant-anchor-link-active"
+                      >
+                        <a
+                          class="ant-anchor-link-title ant-anchor-link-title-active"
+                          href="#header-0"
+                          title="关联的语法节点"
+                        >
+                          关联的语法节点
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`page/RuleKnowledge request rule info and custom rule knowledge 1`] = `
+<body>
+  <div>
+    <div
+      class="css-bwb9yf"
+    >
+      <div
+        class="actiontech-page-header-namespace css-1xspr0w"
+      >
+        <div
+          class="title"
+        >
+          知识库
+        </div>
+        <div
+          class="extra"
+        >
+          <button
+            class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary basic-button-wrapper css-geipcv"
+            type="button"
+          >
+            <span>
+              编 辑
+            </span>
+          </button>
+        </div>
+      </div>
+      <div
+        class="css-1ie1bey"
+      >
+        <div
+          class="ant-card ant-card-bordered rule-knowledge-info-card css-dev-only-do-not-override-txh9fw"
+        >
+          <div
+            class="ant-card-body"
+          >
+            <div
+              class="ant-spin-nested-loading css-dev-only-do-not-override-txh9fw"
+            >
+              <div
+                class="ant-spin-container"
+              >
+                <div
+                  class="ant-space css-dev-only-do-not-override-txh9fw ant-space-vertical"
+                >
+                  <div
+                    class="ant-space-item"
+                    style="margin-bottom: 8px;"
+                  >
+                    <h4
+                      class="ant-typography css-dev-only-do-not-override-txh9fw"
+                    >
+                      绑定的变量个数不建议超过阈值
+                    </h4>
+                  </div>
+                  <div
+                    class="ant-space-item"
+                  >
+                    <span
+                      class="ant-typography ant-typography-secondary css-dev-only-do-not-override-txh9fw"
+                    >
+                      因为过度使用绑定变量会增加查询的复杂度，从而降低查询性能。过度使用绑定变量还会增加维护成本。默认阈值:100
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class=" css-1yb442y"
+        >
+          <div
+            class="ant-spin-nested-loading css-dev-only-do-not-override-txh9fw"
+          >
+            <div
+              class="ant-spin-container"
+            >
+              <div
+                class="markdown-container"
+              >
+                <div
+                  class="css-1pkzawh"
+                  components="[object Object]"
+                  rehypeplugins="() => jest.fn()"
+                >
+                  123
+                </div>
+                <h2
+                  class="ant-typography graph-title css-dev-only-do-not-override-txh9fw"
+                  id="header-0"
+                >
+                  关联的语法节点
+                </h2>
+                <div
+                  class="css-1c94q4z"
+                >
+                  <div
+                    class="ant-spin-nested-loading css-dev-only-do-not-override-txh9fw"
+                  >
+                    <div>
+                      <div
+                        aria-busy="true"
+                        aria-live="polite"
+                        class="ant-spin ant-spin-spinning ant-spin-show-text css-dev-only-do-not-override-txh9fw"
+                      >
+                        <span
+                          class="ant-spin-dot ant-spin-dot-spin"
+                        >
+                          <i
+                            class="ant-spin-dot-item"
+                          />
+                          <i
+                            class="ant-spin-dot-item"
+                          />
+                          <i
+                            class="ant-spin-dot-item"
+                          />
+                          <i
+                            class="ant-spin-dot-item"
+                          />
+                        </span>
+                        <div
+                          class="ant-spin-text"
+                        >
+                          加载知识图谱中...
+                        </div>
+                      </div>
+                    </div>
+                    <div
+                      class="ant-spin-container ant-spin-blur"
+                    />
+                  </div>
+                </div>
+              </div>
+              <div>
+                <div
+                  class=""
+                >
+                  <div
+                    class="css-dev-only-do-not-override-txh9fw ant-anchor-wrapper"
+                    style="max-height: 100vh;"
+                  >
+                    <div
+                      class="ant-anchor"
+                    >
+                      <span
+                        class="ant-anchor-ink ant-anchor-ink-visible"
+                        style="top: 0px; height: 0px;"
+                      />
+                      <div
+                        class="ant-anchor-link ant-anchor-link-active"
+                      >
+                        <a
+                          class="ant-anchor-link-title ant-anchor-link-title-active"
+                          href="#header-0"
+                          title="关联的语法节点"
+                        >
+                          关联的语法节点
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
@@ -119,95 +371,73 @@ exports[`page/RuleKnowledge request rule info and not custom rule knowledge 1`] 
 <body>
   <div>
     <div
-      class="actiontech-page-header-namespace css-1xspr0w"
+      class="css-bwb9yf"
     >
       <div
-        class="title"
-      >
-        知识库
-      </div>
-      <div
-        class="extra"
-      />
-    </div>
-    <div
-      class="css-1vnfydc"
-    >
-      <div
-        class="ant-card ant-card-bordered css-dev-only-do-not-override-txh9fw"
+        class="actiontech-page-header-namespace css-1xspr0w"
       >
         <div
-          class="ant-card-body"
+          class="title"
         >
-          <div
-            class="ant-spin-nested-loading css-dev-only-do-not-override-txh9fw"
+          知识库
+        </div>
+        <div
+          class="extra"
+        >
+          <button
+            class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary basic-button-wrapper css-geipcv"
+            type="button"
           >
-            <div
-              class="ant-spin-container"
-            >
-              <h4
-                class="ant-typography css-dev-only-do-not-override-txh9fw"
-              >
-                绑定的变量个数不建议超过阈值
-              </h4>
-              <span
-                class="ant-typography ant-typography-secondary css-dev-only-do-not-override-txh9fw"
-              >
-                因为过度使用绑定变量会增加查询的复杂度，从而降低查询性能。过度使用绑定变量还会增加维护成本。默认阈值:100
-              </span>
-            </div>
-          </div>
+            <span>
+              编 辑
+            </span>
+          </button>
         </div>
       </div>
       <div
-        class="next-icon-wrap"
-      >
-        <svg
-          fill="none"
-          height="18"
-          viewBox="0 0 18 6"
-          width="18"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <path
-            d="m1 1 8 4 8-4"
-            stroke="#E6E4E3"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            stroke-width="2"
-          />
-        </svg>
-      </div>
-      <div
-        class="ant-card ant-card-bordered css-dev-only-do-not-override-txh9fw"
+        class="css-1ie1bey"
       >
         <div
-          class="ant-card-head"
+          class="ant-card ant-card-bordered rule-knowledge-info-card css-dev-only-do-not-override-txh9fw"
         >
           <div
-            class="ant-card-head-wrapper"
+            class="ant-card-body"
           >
             <div
-              class="ant-card-head-title"
+              class="ant-spin-nested-loading css-dev-only-do-not-override-txh9fw"
             >
-              规则理解
-            </div>
-            <div
-              class="ant-card-extra"
-            >
-              <button
-                class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary basic-button-wrapper css-geipcv"
-                type="button"
+              <div
+                class="ant-spin-container"
               >
-                <span>
-                  编 辑
-                </span>
-              </button>
+                <div
+                  class="ant-space css-dev-only-do-not-override-txh9fw ant-space-vertical"
+                >
+                  <div
+                    class="ant-space-item"
+                    style="margin-bottom: 8px;"
+                  >
+                    <h4
+                      class="ant-typography css-dev-only-do-not-override-txh9fw"
+                    >
+                      绑定的变量个数不建议超过阈值
+                    </h4>
+                  </div>
+                  <div
+                    class="ant-space-item"
+                  >
+                    <span
+                      class="ant-typography ant-typography-secondary css-dev-only-do-not-override-txh9fw"
+                    >
+                      因为过度使用绑定变量会增加查询的复杂度，从而降低查询性能。过度使用绑定变量还会增加维护成本。默认阈值:100
+                    </span>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
         <div
-          class="ant-card-body"
+          class=" css-1yb442y"
         >
           <div
             class="ant-spin-nested-loading css-dev-only-do-not-override-txh9fw"
@@ -216,10 +446,91 @@ exports[`page/RuleKnowledge request rule info and not custom rule knowledge 1`] 
               class="ant-spin-container"
             >
               <div
-                class="css-1pkzawh"
-                rehypeplugins="() => jest.fn()"
+                class="markdown-container"
               >
-                123
+                <div
+                  class="css-1pkzawh"
+                  components="[object Object]"
+                  rehypeplugins="() => jest.fn()"
+                >
+                  123
+                </div>
+                <h2
+                  class="ant-typography graph-title css-dev-only-do-not-override-txh9fw"
+                  id="header-0"
+                >
+                  关联的语法节点
+                </h2>
+                <div
+                  class="css-1c94q4z"
+                >
+                  <div
+                    class="ant-spin-nested-loading css-dev-only-do-not-override-txh9fw"
+                  >
+                    <div>
+                      <div
+                        aria-busy="true"
+                        aria-live="polite"
+                        class="ant-spin ant-spin-spinning ant-spin-show-text css-dev-only-do-not-override-txh9fw"
+                      >
+                        <span
+                          class="ant-spin-dot ant-spin-dot-spin"
+                        >
+                          <i
+                            class="ant-spin-dot-item"
+                          />
+                          <i
+                            class="ant-spin-dot-item"
+                          />
+                          <i
+                            class="ant-spin-dot-item"
+                          />
+                          <i
+                            class="ant-spin-dot-item"
+                          />
+                        </span>
+                        <div
+                          class="ant-spin-text"
+                        >
+                          加载知识图谱中...
+                        </div>
+                      </div>
+                    </div>
+                    <div
+                      class="ant-spin-container ant-spin-blur"
+                    />
+                  </div>
+                </div>
+              </div>
+              <div>
+                <div
+                  class=""
+                >
+                  <div
+                    class="css-dev-only-do-not-override-txh9fw ant-anchor-wrapper"
+                    style="max-height: 100vh;"
+                  >
+                    <div
+                      class="ant-anchor"
+                    >
+                      <span
+                        class="ant-anchor-ink ant-anchor-ink-visible"
+                        style="top: 0px; height: 0px;"
+                      />
+                      <div
+                        class="ant-anchor-link ant-anchor-link-active"
+                      >
+                        <a
+                          class="ant-anchor-link-title ant-anchor-link-title-active"
+                          href="#header-0"
+                          title="关联的语法节点"
+                        >
+                          关联的语法节点
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
@@ -230,99 +541,77 @@ exports[`page/RuleKnowledge request rule info and not custom rule knowledge 1`] 
 </body>
 `;
 
-exports[`page/RuleKnowledge update rule and refresh 1`] = `
+exports[`page/RuleKnowledge update rule knowledge and refresh 1`] = `
 <body>
   <div>
     <div
-      class="actiontech-page-header-namespace css-1xspr0w"
+      class="css-bwb9yf"
     >
       <div
-        class="title"
-      >
-        知识库
-      </div>
-      <div
-        class="extra"
-      />
-    </div>
-    <div
-      class="css-1vnfydc"
-    >
-      <div
-        class="ant-card ant-card-bordered css-dev-only-do-not-override-txh9fw"
+        class="actiontech-page-header-namespace css-1xspr0w"
       >
         <div
-          class="ant-card-body"
+          class="title"
         >
-          <div
-            class="ant-spin-nested-loading css-dev-only-do-not-override-txh9fw"
+          知识库
+        </div>
+        <div
+          class="extra"
+        >
+          <button
+            class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary basic-button-wrapper css-geipcv"
+            type="button"
           >
-            <div
-              class="ant-spin-container"
-            >
-              <h4
-                class="ant-typography css-dev-only-do-not-override-txh9fw"
-              >
-                绑定的变量个数不建议超过阈值
-              </h4>
-              <span
-                class="ant-typography ant-typography-secondary css-dev-only-do-not-override-txh9fw"
-              >
-                因为过度使用绑定变量会增加查询的复杂度，从而降低查询性能。过度使用绑定变量还会增加维护成本。默认阈值:100
-              </span>
-            </div>
-          </div>
+            <span>
+              编 辑
+            </span>
+          </button>
         </div>
       </div>
       <div
-        class="next-icon-wrap"
-      >
-        <svg
-          fill="none"
-          height="18"
-          viewBox="0 0 18 6"
-          width="18"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <path
-            d="m1 1 8 4 8-4"
-            stroke="#E6E4E3"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            stroke-width="2"
-          />
-        </svg>
-      </div>
-      <div
-        class="ant-card ant-card-bordered css-dev-only-do-not-override-txh9fw"
+        class="css-1ie1bey"
       >
         <div
-          class="ant-card-head"
+          class="ant-card ant-card-bordered rule-knowledge-info-card css-dev-only-do-not-override-txh9fw"
         >
           <div
-            class="ant-card-head-wrapper"
+            class="ant-card-body"
           >
             <div
-              class="ant-card-head-title"
+              class="ant-spin-nested-loading css-dev-only-do-not-override-txh9fw"
             >
-              规则理解
-            </div>
-            <div
-              class="ant-card-extra"
-            >
-              <button
-                class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary basic-button-wrapper css-geipcv"
-                type="button"
+              <div
+                class="ant-spin-container"
               >
-                <span>
-                  编 辑
-                </span>
-              </button>
+                <div
+                  class="ant-space css-dev-only-do-not-override-txh9fw ant-space-vertical"
+                >
+                  <div
+                    class="ant-space-item"
+                    style="margin-bottom: 8px;"
+                  >
+                    <h4
+                      class="ant-typography css-dev-only-do-not-override-txh9fw"
+                    >
+                      绑定的变量个数不建议超过阈值
+                    </h4>
+                  </div>
+                  <div
+                    class="ant-space-item"
+                  >
+                    <span
+                      class="ant-typography ant-typography-secondary css-dev-only-do-not-override-txh9fw"
+                    >
+                      因为过度使用绑定变量会增加查询的复杂度，从而降低查询性能。过度使用绑定变量还会增加维护成本。默认阈值:100
+                    </span>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
         <div
-          class="ant-card-body"
+          class=" css-1yb442y"
         >
           <div
             class="ant-spin-nested-loading css-dev-only-do-not-override-txh9fw"
@@ -331,10 +620,91 @@ exports[`page/RuleKnowledge update rule and refresh 1`] = `
               class="ant-spin-container"
             >
               <div
-                class="css-1pkzawh"
-                rehypeplugins="() => jest.fn()"
+                class="markdown-container"
               >
-                123
+                <div
+                  class="css-1pkzawh"
+                  components="[object Object]"
+                  rehypeplugins="() => jest.fn()"
+                >
+                  123
+                </div>
+                <h2
+                  class="ant-typography graph-title css-dev-only-do-not-override-txh9fw"
+                  id="header-0"
+                >
+                  关联的语法节点
+                </h2>
+                <div
+                  class="css-1c94q4z"
+                >
+                  <div
+                    class="ant-spin-nested-loading css-dev-only-do-not-override-txh9fw"
+                  >
+                    <div>
+                      <div
+                        aria-busy="true"
+                        aria-live="polite"
+                        class="ant-spin ant-spin-spinning ant-spin-show-text css-dev-only-do-not-override-txh9fw"
+                      >
+                        <span
+                          class="ant-spin-dot ant-spin-dot-spin"
+                        >
+                          <i
+                            class="ant-spin-dot-item"
+                          />
+                          <i
+                            class="ant-spin-dot-item"
+                          />
+                          <i
+                            class="ant-spin-dot-item"
+                          />
+                          <i
+                            class="ant-spin-dot-item"
+                          />
+                        </span>
+                        <div
+                          class="ant-spin-text"
+                        >
+                          加载知识图谱中...
+                        </div>
+                      </div>
+                    </div>
+                    <div
+                      class="ant-spin-container ant-spin-blur"
+                    />
+                  </div>
+                </div>
+              </div>
+              <div>
+                <div
+                  class=""
+                >
+                  <div
+                    class="css-dev-only-do-not-override-txh9fw ant-anchor-wrapper"
+                    style="max-height: 100vh;"
+                  >
+                    <div
+                      class="ant-anchor"
+                    >
+                      <span
+                        class="ant-anchor-ink ant-anchor-ink-visible"
+                        style="top: 0px; height: 0px;"
+                      />
+                      <div
+                        class="ant-anchor-link ant-anchor-link-active"
+                      >
+                        <a
+                          class="ant-anchor-link-title ant-anchor-link-title-active"
+                          href="#header-0"
+                          title="关联的语法节点"
+                        >
+                          关联的语法节点
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
