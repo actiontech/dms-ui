@@ -40,7 +40,10 @@ const NodePopover: React.FC<NodePopoverProps> = ({ nodeId }) => {
     }
 
     clearHideTimeout();
-    setIsPositionReady(false); // 重置位置状态
+    // 避免不必要的状态重置，只在真正需要时设置
+    if (visible) {
+      setIsPositionReady(false); // 重置位置状态
+    }
     const node = sigma.getGraph().getNodeAttributes(nodeId);
     const displayData = sigma.getNodeDisplayData(nodeId);
 
@@ -48,18 +51,17 @@ const NodePopover: React.FC<NodePopoverProps> = ({ nodeId }) => {
       const containerRect = sigma.getContainer().getBoundingClientRect();
       const viewportPos = sigma.framedGraphToViewport(displayData);
 
-      // 考虑左侧菜单栏和顶部区域的偏移
-      const MENU_WIDTH = 270;
-      const HEADER_HEIGHT = 156;
-
+      // 直接使用容器相对位置，不再硬编码菜单和头部偏移 这样更灵活，适应不同布局情况
       const finalPosition = {
-        x: containerRect.left + viewportPos.x - MENU_WIDTH,
-        y: containerRect.top + viewportPos.y - HEADER_HEIGHT + window.scrollY
+        x: viewportPos.x,
+        y: viewportPos.y
       };
 
       // 调整 Popover 位置，考虑节点大小
-      const nodeSize = displayData.size;
-      finalPosition.y -= nodeSize + 20;
+      const nodeSize = displayData.size || 5;
+
+      // 将弹出框定位在节点上方，距离为节点大小的 1.5 倍
+      finalPosition.y -= nodeSize * 1.5;
 
       // 确保不超出图谱容器边界
       const graphWidth = containerRect.width;
@@ -75,9 +77,13 @@ const NodePopover: React.FC<NodePopoverProps> = ({ nodeId }) => {
       }
 
       if (finalPosition.y < 0) {
-        finalPosition.y = nodeSize + 20; // 如果超出顶部，显示在节点下方
-      } else if (finalPosition.y + POPOVER_HEIGHT > graphHeight) {
-        finalPosition.y = graphHeight - POPOVER_HEIGHT;
+        // 如果上方放不下，则放在节点下方
+        finalPosition.y = viewportPos.y + nodeSize * 1.5;
+
+        // 如果下方也放不下，则尽量靠近顶部但不超出
+        if (finalPosition.y + POPOVER_HEIGHT > graphHeight) {
+          finalPosition.y = Math.min(5, graphHeight - POPOVER_HEIGHT);
+        }
       }
 
       setPosition(finalPosition);
@@ -89,7 +95,7 @@ const NodePopover: React.FC<NodePopoverProps> = ({ nodeId }) => {
         setVisible(true);
       });
     }
-  }, [nodeId, sigma, hidePopover, clearHideTimeout]);
+  }, [nodeId, sigma, hidePopover, clearHideTimeout, visible]);
 
   useEffect(() => {
     if (!nodeId) {
@@ -99,7 +105,7 @@ const NodePopover: React.FC<NodePopoverProps> = ({ nodeId }) => {
     clearHideTimeout();
     // 使用防抖处理位置更新
     const createDebouncedUpdate = (updateFn: () => void) =>
-      debounce(updateFn, 16, { leading: true, trailing: true });
+      debounce(updateFn, 50, { leading: true, trailing: true });
 
     const debouncedUpdatePosition = createDebouncedUpdate(updatePosition);
 
@@ -123,34 +129,47 @@ const NodePopover: React.FC<NodePopoverProps> = ({ nodeId }) => {
 
   return (
     <div
+      className="node-popover-container"
       style={{
         position: 'absolute',
-        left: `${position.x}px`,
-        top: `${position.y}px`,
-        transform: 'translate(-50%, -100%)',
-        pointerEvents: 'auto',
-        zIndex: 1000,
-        opacity: isPositionReady ? 1 : 0,
-        transition: 'opacity 0.2s'
+        left: 0,
+        top: 0,
+        width: '100%',
+        height: '100%',
+        pointerEvents: 'none',
+        zIndex: 1000
       }}
-      onMouseEnter={clearHideTimeout}
-      onMouseLeave={hidePopover}
     >
-      <Popover
-        open={visible}
-        content={
-          <Typography.Link
-            href={parse2ReactRouterPath(ROUTE_PATHS.SQLE.KNOWLEDGE.refined, {
-              queries: {
-                tags: nodeData.label
-              }
-            })}
-            target="__blank"
-          >
-            {t('knowledgeBase.graph.viewRelatedRules')}
-          </Typography.Link>
-        }
-      />
+      <div
+        className="node-popover-content"
+        style={{
+          position: 'absolute',
+          left: `${position.x}px`,
+          top: `${position.y}px`,
+          transform: 'translate(-50%, -50%)',
+          pointerEvents: 'auto',
+          opacity: 1,
+          transition: 'opacity 0.2s'
+        }}
+        onMouseEnter={clearHideTimeout}
+        onMouseLeave={hidePopover}
+      >
+        <Popover
+          open={true}
+          content={
+            <Typography.Link
+              href={parse2ReactRouterPath(ROUTE_PATHS.SQLE.KNOWLEDGE.refined, {
+                queries: {
+                  tags: nodeData.label
+                }
+              })}
+              target="__blank"
+            >
+              {t('knowledgeBase.graph.viewRelatedRules')}
+            </Typography.Link>
+          }
+        />
+      </div>
     </div>
   );
 };
