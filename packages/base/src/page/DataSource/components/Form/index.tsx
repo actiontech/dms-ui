@@ -571,6 +571,7 @@ const DataSourceForm: React.FC<IDataSourceFormProps> = (props) => {
                   placeholder={t('common.form.placeholder.input', {
                     name: t('dmsDataSource.dataSourceForm.lineNumberLimit')
                   })}
+                  integer
                 />
               </FormItemLabel>
             </EmptyBox>
