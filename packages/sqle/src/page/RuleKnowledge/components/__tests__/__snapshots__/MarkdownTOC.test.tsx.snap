@@ -1,0 +1,148 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`RuleKnowledge/MarkdownTOC should create proper hierarchy for nested headers 1`] = `
+<div>
+  <div>
+    <div
+      class=""
+    >
+      <div
+        class="css-dev-only-do-not-override-txh9fw ant-anchor-wrapper"
+        style="max-height: 100vh;"
+      >
+        <div
+          class="ant-anchor"
+        >
+          <span
+            class="ant-anchor-ink ant-anchor-ink-visible"
+            style="top: 0px; height: 0px;"
+          />
+          <div
+            class="ant-anchor-link"
+          >
+            <a
+              class="ant-anchor-link-title"
+              href="#main"
+              title="Main Title"
+            >
+              Main Title
+            </a>
+            <div
+              class="ant-anchor-link"
+            >
+              <a
+                class="ant-anchor-link-title"
+                href="#sub1"
+                title="Sub 1"
+              >
+                Sub 1
+              </a>
+              <div
+                class="ant-anchor-link ant-anchor-link-active"
+              >
+                <a
+                  class="ant-anchor-link-title ant-anchor-link-title-active"
+                  href="#nested1"
+                  title="Nested 1"
+                >
+                  Nested 1
+                </a>
+              </div>
+              <div
+                class="ant-anchor-link"
+              >
+                <a
+                  class="ant-anchor-link-title"
+                  href="#nested2"
+                  title="Nested 2"
+                >
+                  Nested 2
+                </a>
+              </div>
+            </div>
+            <div
+              class="ant-anchor-link"
+            >
+              <a
+                class="ant-anchor-link-title"
+                href="#sub2"
+                title="Sub 2"
+              >
+                Sub 2
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`RuleKnowledge/MarkdownTOC should render anchor items based on headers 1`] = `
+<div>
+  <div>
+    <div
+      class=""
+    >
+      <div
+        class="css-dev-only-do-not-override-txh9fw ant-anchor-wrapper"
+        style="max-height: 100vh;"
+      >
+        <div
+          class="ant-anchor"
+        >
+          <span
+            class="ant-anchor-ink ant-anchor-ink-visible"
+            style="top: 0px; height: 0px;"
+          />
+          <div
+            class="ant-anchor-link"
+          >
+            <a
+              class="ant-anchor-link-title"
+              href="#title1"
+              title="Title 1"
+            >
+              Title 1
+            </a>
+            <div
+              class="ant-anchor-link ant-anchor-link-active"
+            >
+              <a
+                class="ant-anchor-link-title ant-anchor-link-title-active"
+                href="#subtitle1"
+                title="Subtitle 1"
+              >
+                Subtitle 1
+              </a>
+            </div>
+            <div
+              class="ant-anchor-link"
+            >
+              <a
+                class="ant-anchor-link-title"
+                href="#header-2"
+                title="Subtitle without ID"
+              >
+                Subtitle without ID
+              </a>
+              <div
+                class="ant-anchor-link"
+              >
+                <a
+                  class="ant-anchor-link-title"
+                  href="#header-3"
+                  title="Nested subtitle"
+                >
+                  Nested subtitle
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;

@@ -1,0 +1,139 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`markdownPreviewOptions should handle label code blocks correctly 1`] = `
+<div>
+  <span
+    class="ant-tag ant-tag-geekblue tag basic-tag-wrapper basic-small-tag-wrapper css-c557z4 css-dev-only-do-not-override-txh9fw"
+  >
+    test1
+  </span>
+  <span
+    class="ant-tag ant-tag-geekblue tag basic-tag-wrapper basic-small-tag-wrapper css-c557z4 css-dev-only-do-not-override-txh9fw"
+  >
+     test2
+  </span>
+</div>
+`;
+
+exports[`markdownPreviewOptions should handle null or undefined children 1`] = `
+<div>
+  <code
+    class="language-javascript"
+  />
+</div>
+`;
+
+exports[`markdownPreviewOptions should handle null or undefined children 2`] = `
+<div>
+  <code
+    class="language-javascript"
+  />
+</div>
+`;
+
+exports[`markdownPreviewOptions should handle sql code blocks correctly 1`] = `
+<div>
+  <div
+    class="actiontech-sql-snippet-renderer-wrapper css-eqikrj"
+  >
+    <div
+      class="ant-typography ant-typography-ellipsis margin-bottom-0 css-dev-only-do-not-override-txh9fw"
+    >
+      <span>
+        <span
+          class="hljs-keyword"
+        >
+          SELECT
+        </span>
+         
+        <span
+          class="hljs-operator"
+        >
+          *
+        </span>
+         
+        <span
+          class="hljs-keyword"
+        >
+          FROM
+        </span>
+         Users
+    
+        <span
+          class="hljs-keyword"
+        >
+          WHERE
+        </span>
+         id 
+        <span
+          class="hljs-operator"
+        >
+          &gt;
+        </span>
+         
+        <span
+          class="hljs-number"
+        >
+          0
+        </span>
+         
+    
+        <span
+          class="hljs-keyword"
+        >
+          AND
+        </span>
+         status 
+        <span
+          class="hljs-operator"
+        >
+          =
+        </span>
+         
+        <span
+          class="hljs-string"
+        >
+          'active'
+        </span>
+      </span>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`markdownPreviewOptions should handle sql_diff code blocks correctly 1`] = `
+<div>
+  <div
+    class="css-ddrn28"
+  >
+    <div
+      class="diff-header"
+    >
+      <div>
+        原始SQL
+      </div>
+      <div>
+        优化SQL
+      </div>
+    </div>
+    <div
+      class="actiontech-diff-sql-view-only-editor-renderer-wrapper custom-diff-monaco-editor css-1esok7i"
+    >
+      <input
+        height="116"
+        language="sql"
+        modified="SELECT id, name 
+      FROM Users
+      WHERE id > 0 
+      AND status = 'active'"
+        options="{"automaticLayout":true,"minimap":{"enabled":false},"fontFamily":"SF Mono","fontSize":14,"fontWeight":"400","lineNumbersMinChars":2,"suggestFontSize":14,"scrollBeyondLastLine":false,"lineHeight":24,"letterSpacing":0.8,"overviewRulerBorder":false,"scrollbar":{"alwaysConsumeMouseWheel":false},"folding":false,"lineNumbers":"on","glyphMargin":false,"lineDecorationsWidth":50,"renderValidationDecorations":"on","guides":{"indentation":true,"highlightActiveIndentation":true},"renderOverviewRuler":false,"readOnly":true}"
+        original="SELECT * FROM Users
+      WHERE id > 0 
+      AND status = 'active'"
+        theme="editorCustomTheme"
+        value=""
+      />
+    </div>
+  </div>
+</div>
+`;

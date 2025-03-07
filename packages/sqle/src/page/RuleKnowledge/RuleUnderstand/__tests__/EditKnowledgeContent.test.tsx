@@ -1,12 +1,21 @@
-import { act, cleanup, fireEvent, screen } from '@testing-library/react';
-import { superRender } from '../../../testUtils/customRender';
-import EditKnowledgeContent from './EditKnowledgeContent';
-import { EditKnowledgeContentProps } from './index.type';
-import { getBySelector } from '@actiontech/shared/lib/testUtil/customQuery';
+import { act, cleanup, fireEvent } from '@testing-library/react';
+import { superRender } from '../../../../testUtils/customRender';
+import EditKnowledgeContent from '../EditKnowledgeContent';
+import { EditKnowledgeContentProps } from '../index.type';
+import {
+  getBySelector,
+  getAllBySelector
+} from '@actiontech/shared/lib/testUtil/customQuery';
 import {
   ignoreConsoleErrors,
   UtilsConsoleErrorStringsEnum
 } from '@actiontech/shared/lib/testUtil/common';
+
+jest.mock('rehype-rewrite', () => {
+  return {
+    getCodeString: jest.fn()
+  };
+});
 
 describe('page/RuleKnowledge/EditKnowledgeContent', () => {
   ignoreConsoleErrors([UtilsConsoleErrorStringsEnum.INVALID_CUSTOM_ATTRIBUTE]);
@@ -37,6 +46,19 @@ describe('page/RuleKnowledge/EditKnowledgeContent', () => {
     const { baseElement } = customRender(editKnowledgeProps);
     expect(baseElement).toMatchSnapshot();
     expect(getBySelector('input')).toBeInTheDocument();
+  });
+
+  it('render csutom commands', async () => {
+    customRender(editKnowledgeProps);
+    expect(getAllBySelector('button')).toHaveLength(2);
+    expect(getAllBySelector('button')[0]).toHaveTextContent('label');
+    expect(getAllBySelector('button')[1]).toHaveTextContent('Diff');
+
+    fireEvent.click(getAllBySelector('button')[0]);
+    await act(async () => jest.advanceTimersByTime(0));
+
+    fireEvent.click(getAllBySelector('button')[1]);
+    await act(async () => jest.advanceTimersByTime(0));
   });
 
   it('render default content', () => {
