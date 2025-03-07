@@ -95,6 +95,27 @@ export const ruleKnowledgeData = {
   }
 };
 
+export const mockMarkdownWithCustomCodeBlock = `
+  ## 标签
+  \`\`\`label [数据库版本:MySQL 5.7.25,检查方式:不连库审核]\`\`\`
+  ### 示例
+  \`\`\`sql
+  select * from customers where name is not null;        
+  \`\`\`
+  ### SQL Diff
+  \`\`\`sql_diff
+    ---before
+      SELECT * FROM Users
+      WHERE id > 0 
+      AND status = 'active'
+    ---after
+      SELECT id, name 
+      FROM Users
+      WHERE id > 0 
+      AND status = 'active'
+  \`\`\`
+`;
+
 export const projectRuleTemplate = [
   {
     rule_template_name: 'mysql',

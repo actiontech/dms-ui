@@ -1,16 +1,20 @@
 import { styled } from '@mui/material/styles';
 import MDEditor from '@uiw/react-md-editor';
 
+export const RuleKnowledgeStyleWrapper = styled('div')`
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+`;
+
 export const RuleKnowledgeContentStyleWrapper = styled('div')`
-  padding: 24px;
+  flex: 1;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
 
   .space-wrapper {
     width: 100%;
-  }
-
-  .next-icon-wrap {
-    text-align: center;
-    margin: 12px 0;
   }
 
   .card-editing-status .w-md-editor {
@@ -19,6 +23,24 @@ export const RuleKnowledgeContentStyleWrapper = styled('div')`
 
   .card-editing-status.ant-card .ant-card-body {
     padding: 0;
+  }
+
+  .rule-knowledge-info-card.ant-card-bordered {
+    border: 0;
+    border-bottom: 1px solid
+      ${({ theme }) => theme.sharedTheme.uiToken.colorBorderSecondary};
+
+    .ant-card-body {
+      padding: 24px 40px;
+    }
+
+    .ant-tag {
+      display: inline-block;
+    }
+
+    .ant-typography {
+      margin: 0;
+    }
   }
 `;
 
@@ -55,5 +77,44 @@ export const RuleKnowledgeEditorStyleWrapper = styled(MDEditor)`
 export const RuleKnowledgeMarkDownStyleWrapper = styled(MDEditor.Markdown)`
   &.wmde-markdown {
     background-color: transparent;
+  }
+`;
+
+export const RuleKnowledgeDocumentStyleWrapper = styled('div')`
+  display: flex;
+  padding: 24px 40px;
+  flex: 1;
+  overflow: auto;
+
+  &.card-editing-status .w-md-editor {
+    box-shadow: none;
+    width: 100% !important;
+  }
+
+  .ant-spin-nested-loading {
+    height: 100%;
+    width: 100%;
+
+    .ant-spin-container {
+      height: 100%;
+      width: 100%;
+      display: flex;
+    }
+  }
+
+  .markdown-container {
+    height: 100%;
+    overflow-y: auto;
+    padding-bottom: 24px;
+    padding-right: 12px;
+    flex: 1;
+  }
+
+  .ant-empty-normal {
+    margin: 32px auto !important;
+  }
+
+  .graph-title {
+    margin-top: 16px;
   }
 `;

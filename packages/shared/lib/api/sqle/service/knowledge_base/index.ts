@@ -9,6 +9,7 @@ import { AxiosRequestConfig } from 'axios';
 import {
   IGetKnowledgeBaseListParams,
   IGetKnowledgeBaseListReturn,
+  IGetKnowledgeGraphParams,
   IGetKnowledgeGraphReturn,
   IGetKnowledgeBaseTagListReturn
 } from './index.d';
@@ -26,10 +27,14 @@ class KnowledgeBaseService extends ServiceBase {
     );
   }
 
-  public getKnowledgeGraph(options?: AxiosRequestConfig) {
+  public getKnowledgeGraph(
+    params: IGetKnowledgeGraphParams,
+    options?: AxiosRequestConfig
+  ) {
+    const paramsData = this.cloneDeep(params);
     return this.get<IGetKnowledgeGraphReturn>(
       '/v1/knowledge_bases/graph',
-      undefined,
+      paramsData,
       options
     );
   }

@@ -1,0 +1,97 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`page/RuleKnowledge/EditKnowledgeContent input text for edit knowledge content 1`] = `
+<body>
+  <div>
+    <div>
+      <input
+        class="css-ldyx34"
+        height="500px"
+        previewoptions="{"rehypePlugins":[[null]],"components":{}}"
+        textareaprops="{"placeholder":"在此处输入.."}"
+        value="123"
+      />
+      <button
+        aria-label="Insert help"
+      >
+        label
+        <span>
+          Label
+        </span>
+      </button>
+      <button
+        aria-label="Insert help"
+      >
+        Diff
+        <span>
+          Diff
+        </span>
+      </button>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`page/RuleKnowledge/EditKnowledgeContent render default content 1`] = `
+<body>
+  <div>
+    <div>
+      <input
+        class="css-ldyx34"
+        height="500px"
+        previewoptions="{"rehypePlugins":[[null]],"components":{}}"
+        textareaprops="{"placeholder":"在此处输入.."}"
+        value="edit text"
+      />
+      <button
+        aria-label="Insert help"
+      >
+        label
+        <span>
+          Label
+        </span>
+      </button>
+      <button
+        aria-label="Insert help"
+      >
+        Diff
+        <span>
+          Diff
+        </span>
+      </button>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`page/RuleKnowledge/EditKnowledgeContent render empty content 1`] = `
+<body>
+  <div>
+    <div>
+      <input
+        class="css-ldyx34"
+        height="500px"
+        previewoptions="{"rehypePlugins":[[null]],"components":{}}"
+        textareaprops="{"placeholder":"在此处输入.."}"
+        value=""
+      />
+      <button
+        aria-label="Insert help"
+      >
+        label
+        <span>
+          Label
+        </span>
+      </button>
+      <button
+        aria-label="Insert help"
+      >
+        Diff
+        <span>
+          Diff
+        </span>
+      </button>
+    </div>
+  </div>
+</body>
+`;

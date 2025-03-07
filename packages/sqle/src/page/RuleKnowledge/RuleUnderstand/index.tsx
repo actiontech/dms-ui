@@ -1,158 +1,95 @@
-import {
-  Card,
-  Empty,
-  Space,
-  Typography,
-  Spin,
-  message,
-  Popconfirm
-} from 'antd';
+import { Empty, Typography, Spin } from 'antd';
 import { RuleUnderstandProps } from './index.type';
 import { useTranslation } from 'react-i18next';
-import { EmptyBox, BasicButton } from '@actiontech/shared';
-import { useBoolean } from 'ahooks';
+import { EmptyBox } from '@actiontech/shared';
 import EditKnowledgeContent from './EditKnowledgeContent';
-import { useEffect, useState } from 'react';
 import rehypeSanitize from 'rehype-sanitize';
-import rule_template from '@actiontech/shared/lib/api/sqle/service/rule_template';
-import { ResponseCode } from '../../../data/common';
-import { RuleKnowledgeMarkDownStyleWrapper } from '../style';
+import {
+  RuleKnowledgeMarkDownStyleWrapper,
+  RuleKnowledgeDocumentStyleWrapper
+} from '../style';
+import MarkdownTOC from '../components/MarkdownTOC';
 import classNames from 'classnames';
-import { RuleKnowledgeEditActions } from './actions';
+import { useRef } from 'react';
+import { useRequest } from 'ahooks';
+import { KnowledgeBaseService } from '@actiontech/shared/lib/api';
+import { ResponseCode } from '@actiontech/shared/lib/enum';
+import Graph from '../../Knowledge/Graph';
+import { markdownPreviewOptions } from '../Common/MarkdownPreview/markdownPreviewOptions';
 
 const RuleUnderstand: React.FC<RuleUnderstandProps> = ({
   content,
-  ruleName,
-  refresh,
-  dbType,
   loading,
-  isCustomRule
+  isModifying,
+  editValue,
+  setEditValue,
+  setHasDirtyData,
+  ruleName
 }) => {
   const { t } = useTranslation();
-  const [modifyFlag, { setTrue: startModify, setFalse: modifyFinish }] =
-    useBoolean();
+  const markdownRef = useRef<HTMLDivElement>(null);
 
-  const [hasDirtyData, setHasDirtyData] = useState(false);
-
-  const [editValue, setEditValue] = useState<string>();
-
-  const [submitLoading, { setFalse: submitFinish, setTrue: startSubmit }] =
-    useBoolean();
-
-  const [messageApi, contextHolder] = message.useMessage();
-
-  const submit = () => {
-    startSubmit();
-    const request = isCustomRule
-      ? rule_template.updateCustomRuleKnowledge({
-          rule_name: ruleName,
-          knowledge_content: editValue,
-          db_type: dbType
-        })
-      : rule_template.updateRuleKnowledge({
-          rule_name: ruleName,
-          knowledge_content: editValue,
-          db_type: dbType
-        });
-
-    request
-      .then((res) => {
-        if (res.data.code === ResponseCode.SUCCESS) {
-          messageApi.success(t('ruleKnowledge.successTips'));
-          setHasDirtyData(false);
-          modifyFinish();
-          refresh();
-          setEditValue('');
-        }
-      })
-      .finally(() => {
-        submitFinish();
-      });
-  };
-
-  useEffect(() => {
-    if (modifyFlag) {
-      setEditValue(content);
-    }
-  }, [content, modifyFlag]);
-
-  const actions = RuleKnowledgeEditActions(startModify, loading);
+  const { data: graphData, loading: getGraphLoading } = useRequest(() =>
+    KnowledgeBaseService.getKnowledgeGraph({
+      filter_by_rule_name: ruleName
+    }).then((res) => {
+      if (res.data.code === ResponseCode.SUCCESS) {
+        return {
+          edges: res.data.data?.edges ?? [],
+          nodes: res.data.data?.nodes ?? []
+        };
+      }
+    })
+  );
 
   return (
-    <>
-      {contextHolder}
-      <Card
-        title={t('ruleKnowledge.ruleUnderstanding')}
-        extra={
-          !modifyFlag ? (
-            actions['edit-rule-knowledge']
-          ) : (
-            <Space>
-              <EmptyBox
-                if={hasDirtyData}
-                defaultNode={
-                  <BasicButton disabled={submitLoading} onClick={modifyFinish}>
-                    {t('common.cancel')}
-                  </BasicButton>
+    <RuleKnowledgeDocumentStyleWrapper
+      className={classNames({ 'card-editing-status': isModifying })}
+    >
+      <Spin spinning={loading || getGraphLoading}>
+        {isModifying ? (
+          <EditKnowledgeContent
+            value={editValue}
+            onChange={setEditValue}
+            setHasDirtyData={setHasDirtyData}
+          />
+        ) : (
+          <EmptyBox
+            if={!!content}
+            defaultNode={
+              <Empty
+                image={Empty.PRESENTED_IMAGE_SIMPLE}
+                description={
+                  <Typography.Text type="secondary">
+                    {t('ruleKnowledge.noData')}
+                  </Typography.Text>
                 }
-              >
-                <Popconfirm
-                  title={t('ruleKnowledge.hasDirtyDataTips')}
-                  okText={t('common.ok')}
-                  cancelText={t('common.cancel')}
-                  onConfirm={() => {
-                    modifyFinish();
-                    setHasDirtyData(false);
-                    setEditValue(content);
-                  }}
-                >
-                  <BasicButton disabled={submitLoading}>
-                    {t('common.cancel')}
-                  </BasicButton>
-                </Popconfirm>
-              </EmptyBox>
-              <BasicButton
-                disabled={submitLoading}
-                type="primary"
-                onClick={submit}
-              >
-                {t('common.submit')}
-              </BasicButton>
-            </Space>
-          )
-        }
-        className={classNames({ 'card-editing-status': modifyFlag })}
-      >
-        <Spin spinning={loading}>
-          {modifyFlag ? (
-            <EditKnowledgeContent
-              value={editValue}
-              onChange={setEditValue}
-              setHasDirtyData={setHasDirtyData}
-            />
-          ) : (
-            <EmptyBox
-              if={!!content}
-              defaultNode={
-                <Empty
-                  image={Empty.PRESENTED_IMAGE_SIMPLE}
-                  description={
-                    <Typography.Text type="secondary">
-                      {t('ruleKnowledge.noData')}
-                    </Typography.Text>
-                  }
-                />
-              }
-            >
+              />
+            }
+          >
+            <div ref={markdownRef} className="markdown-container">
               <RuleKnowledgeMarkDownStyleWrapper
                 source={content}
                 rehypePlugins={[rehypeSanitize]}
+                components={markdownPreviewOptions?.components}
               />
-            </EmptyBox>
-          )}
-        </Spin>
-      </Card>
-    </>
+              <EmptyBox
+                if={!!graphData?.nodes.length && !!graphData?.edges.length}
+              >
+                <Typography.Title className="graph-title" level={2}>
+                  {t('ruleKnowledge.knowledgeGraph')}
+                </Typography.Title>
+                <Graph graphData={graphData} />
+              </EmptyBox>
+            </div>
+            <MarkdownTOC
+              markdownLoaded={!loading && !getGraphLoading}
+              containerRef={markdownRef}
+            />
+          </EmptyBox>
+        )}
+      </Spin>
+    </RuleKnowledgeDocumentStyleWrapper>
   );
 };
 
