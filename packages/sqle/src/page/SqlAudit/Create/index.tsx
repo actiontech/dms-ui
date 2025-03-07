@@ -49,7 +49,8 @@ const SqlAuditCreate = () => {
       git_user_name: values.gitUserName ? values.gitUserName.trim() : undefined,
       git_user_password: values.gitUserPassword
         ? values.gitUserPassword.trim()
-        : undefined
+        : undefined,
+      git_branch_name: values.gitBranch
     };
 
     return sql_audit_record.CreateSQLAuditRecordV1(params).then((res) => {

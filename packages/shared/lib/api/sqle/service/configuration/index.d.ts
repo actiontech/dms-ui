@@ -12,6 +12,8 @@ import {
   IUpdateFeishuConfigurationReqV1,
   ITestFeishuConfigurationReqV1,
   ITestFeishuConfigResV1,
+  ITestGitConnectionReqV1,
+  ITestGitConnectionResV1,
   IGetLicenseResV1,
   ICheckLicenseResV1,
   IGetSystemVariablesResV1,
@@ -61,6 +63,10 @@ export interface ITestFeishuAuditConfigV1Params
 
 export interface ITestFeishuAuditConfigV1Return
   extends ITestFeishuConfigResV1 {}
+
+export interface ITestGitConnectionV1Params extends ITestGitConnectionReqV1 {}
+
+export interface ITestGitConnectionV1Return extends ITestGitConnectionResV1 {}
 
 export interface IGetSQLELicenseV1Return extends IGetLicenseResV1 {}
 

@@ -92,6 +92,10 @@ class SqlAuditRecordService extends ServiceBase {
       paramsData.append('git_user_name', params.git_user_name as any);
     }
 
+    if (params.git_branch_name != undefined) {
+      paramsData.append('git_branch_name', params.git_branch_name as any);
+    }
+
     if (params.git_user_password != undefined) {
       paramsData.append('git_user_password', params.git_user_password as any);
     }

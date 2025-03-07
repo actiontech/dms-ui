@@ -3,13 +3,14 @@ import {
   MockSpyApy,
   createSpySuccessResponse
 } from '@actiontech/shared/lib/testUtil/mockApi';
-import { deriversMockData } from './data';
+import { deriversMockData, testGitConnectionMockData } from './data';
 
 class ConfigurationMockApi implements MockSpyApy {
   public mockAllApi(): void {
     this.getDrivers();
     this.getWechatAuditConfiguration();
     this.getFeishuAuditConfiguration();
+    this.testGitConnection();
   }
 
   public getDrivers() {
@@ -42,6 +43,16 @@ class ConfigurationMockApi implements MockSpyApy {
         data: {
           is_feishu_notification_enabled: false
         }
+      })
+    );
+    return spy;
+  }
+
+  public testGitConnection() {
+    const spy = jest.spyOn(configuration, 'TestGitConnectionV1');
+    spy.mockImplementation(() =>
+      createSpySuccessResponse({
+        data: testGitConnectionMockData
       })
     );
     return spy;
