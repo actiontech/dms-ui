@@ -8,6 +8,7 @@ import { mockUseCurrentProject } from '@actiontech/shared/lib/testUtil/mockHook/
 import { translateTimeForRequest } from '@actiontech/shared/lib/utils/Common';
 import { formatTime } from '@actiontech/shared/lib/utils/Common';
 import { DateRangeEnum } from '../../SqlAnalyze/ExecPlanCostChart/index.data';
+import { createSpySuccessResponse } from '@actiontech/shared/lib/testUtil/mockApi';
 
 describe('SqlAnalyze/useSqlExecPlanCost', () => {
   let getSqlManageSqlAnalysisChartSpy: jest.SpyInstance;
@@ -192,5 +193,27 @@ describe('SqlAnalyze/useSqlExecPlanCost', () => {
       mockPoints[mockPoints.length - 2],
       mockPoints[mockPoints.length - 1]
     ]);
+  });
+
+  it('should return error when request api failed', async () => {
+    const { result } = renderHook(() => useSqlExecPlanCost(mockId));
+    getSqlManageSqlAnalysisChartSpy.mockImplementation(() =>
+      createSpySuccessResponse({
+        data: {
+          message: 'SQL is not supported'
+        }
+      })
+    );
+    await act(async () => {
+      result.current.getSqlExecPlanCostDataSource({
+        startTime: currentTime.subtract(24, 'hour'),
+        endTime: currentTime,
+        lastPointEnabled: true
+      });
+      await jest.advanceTimersByTime(3000);
+    });
+    expect(result.current.getSqlExecPlanCostDataSourceError).toBe(
+      'SQL is not supported'
+    );
   });
 });
