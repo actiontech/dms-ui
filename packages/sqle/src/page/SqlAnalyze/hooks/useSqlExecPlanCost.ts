@@ -31,13 +31,17 @@ const useSqlExecPlanCost = (id: string) => {
     Array<IChartPoint | undefined>
   >([]);
 
+  const [
+    getSqlExecPlanCostDataSourceError,
+    setGetSqlExecPlanCostDataSourceError
+  ] = useState<string | undefined>(undefined);
+
   const initTime = useMemo(() => dayjs(), []);
 
   const {
     data,
     loading: getSqlExecPlanCostDataSourceLoading,
     run,
-    error: getSqlExecPlanCostDataSourceError,
     mutate
   } = useRequest(
     ({
@@ -69,7 +73,7 @@ const useSqlExecPlanCost = (id: string) => {
           const firstPoint = convertedPoints?.[0];
           const lastPoint = convertedPoints?.[convertedPoints.length - 1];
 
-          if (!selectedPoint.length) {
+          if (!selectedPoint.length && !!convertedPoints.length) {
             setSelectedPoint([
               convertedPoints?.[convertedPoints.length - 2],
               lastPoint
@@ -94,6 +98,10 @@ const useSqlExecPlanCost = (id: string) => {
               state[rangeType] = convertedPoints;
               return state;
             });
+          }
+
+          if (!!res.data.data?.message) {
+            setGetSqlExecPlanCostDataSourceError(res.data.data?.message);
           }
           return convertedPoints;
         }
