@@ -2980,6 +2980,8 @@ export interface ISqlAnalysis {
 }
 
 export interface ISqlAnalysisChart {
+  message?: string;
+
   points?: IChartPoint[];
 
   x_info?: string;

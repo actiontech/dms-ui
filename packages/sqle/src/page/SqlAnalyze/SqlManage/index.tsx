@@ -91,9 +91,7 @@ const SQLManageAnalyze = () => {
       sqlExecPlanCostDataSource={data}
       getSqlExecPlanCostDataSourceLoading={getSqlExecPlanCostDataSourceLoading}
       getSqlExecPlanCostDataSource={getSqlExecPlanCostDataSource}
-      getSqlExecPlanCostDataSourceError={
-        getSqlExecPlanCostDataSourceError?.message
-      }
+      getSqlExecPlanCostDataSourceError={getSqlExecPlanCostDataSourceError}
       showExecPlanCostChart
       initTime={initTime}
       selectedPoint={selectedPoint}
