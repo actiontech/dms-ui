@@ -20,6 +20,7 @@ export default {
     generateSQLErrorTips:
       '当前选中的节点中包含对比结果一致的对象，请修改选择对象后重试！',
     generateSQLDisabledTips: '请先选择数据对象',
+    noDifferencesFound: '当前对比结果暂无差异',
     comparisonDetail: {
       title: '查看对比详情',
       generateSQL: '生成变更SQL',
