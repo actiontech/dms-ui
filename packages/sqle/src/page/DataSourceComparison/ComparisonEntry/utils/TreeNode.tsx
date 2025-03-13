@@ -91,6 +91,10 @@ export const generateTreeNodeKey = (...args: string[]) => {
   return args.join(TREE_NODE_KEY_SEPARATOR);
 };
 
+export const isValidChildNodeKey = (key: string) => {
+  return key.split(TREE_NODE_KEY_SEPARATOR).length === 3;
+};
+
 export const parseTreeNodeKey = (
   key: string,
   comparisonResults: ISchemaObject[]
@@ -109,6 +113,7 @@ export const parseTreeNodeKey = (
   }
 
   const [index, objectType, objectName] = key.split(TREE_NODE_KEY_SEPARATOR);
+
   return {
     baselineSchemaName: getComparisonResultSchemaName(
       comparisonResults[Number(index)],

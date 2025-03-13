@@ -12,6 +12,8 @@ import ComparisonEntry from '..';
 import DatabaseComparisonMockService from '../../../../testUtils/mockApi/database_comparison';
 import { mockProjectInfo } from '@actiontech/shared/lib/testUtil/mockHook/data';
 import { mockUsePermission } from '@actiontech/shared/lib/testUtil/mockHook/mockUsePermission';
+import { createSpySuccessResponse } from '@actiontech/shared/lib/testUtil/mockApi';
+import { executeDatabaseComparisonMockData } from '../../../../testUtils/mockApi/database_comparison/data';
 
 describe('EnvironmentSelector', () => {
   let executeDatabaseComparisonSpy: jest.SpyInstance;
@@ -144,20 +146,12 @@ describe('EnvironmentSelector', () => {
           comparison_schema_name: 'test3',
           database_objects: [
             {
-              object_name: undefined,
-              object_type: 'TABLE'
-            },
-            {
               object_name: 'task',
               object_type: 'TABLE'
             },
             {
               object_name: 'task_copy',
               object_type: 'TABLE'
-            },
-            {
-              object_name: undefined,
-              object_type: undefined
             }
           ]
         }
@@ -202,14 +196,6 @@ describe('EnvironmentSelector', () => {
           comparison_schema_name: 'test3',
           database_objects: [
             {
-              object_name: undefined,
-              object_type: undefined
-            },
-            {
-              object_name: undefined,
-              object_type: 'TABLE'
-            },
-            {
               object_name: 'task',
               object_type: 'TABLE'
             },
@@ -222,5 +208,37 @@ describe('EnvironmentSelector', () => {
       ],
       project_name: mockProjectInfo.projectName
     });
+  });
+
+  it('should disabled showDifferencesOnly button when comparison result is not differences', async () => {
+    executeDatabaseComparisonSpy.mockImplementation(() =>
+      createSpySuccessResponse({
+        data: executeDatabaseComparisonMockData.filter(
+          (item) => item.comparison_result === 'same'
+        )
+      })
+    );
+    superRender(<ComparisonEntry />);
+
+    await act(async () => jest.advanceTimersByTime(3000));
+
+    const baselineInstanceSelect = getBySelector('#baselineInstance');
+    fireEvent.mouseDown(baselineInstanceSelect);
+    fireEvent.click(screen.getAllByText('mysql-1(10.186.62.13:33061)')[0]);
+
+    const comparisonInstanceSelect = getBySelector('#comparisonInstance');
+    fireEvent.mouseDown(comparisonInstanceSelect);
+    fireEvent.click(
+      screen.getAllByText('xin-test-database(10.186.62.15:33063)')[1]
+    );
+    await act(async () => jest.advanceTimersByTime(0));
+
+    fireEvent.click(screen.getByText('执行对比'));
+    await act(async () => jest.advanceTimersByTime(0));
+    await act(async () => jest.advanceTimersByTime(3000));
+
+    fireEvent.mouseEnter(screen.getByText('只看差异'));
+
+    await screen.findByText('当前对比结果暂无差异');
   });
 });
