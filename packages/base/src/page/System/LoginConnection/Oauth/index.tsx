@@ -109,7 +109,8 @@ const Oauth = () => {
       user_wechat_tag: value.userWechatTag,
       auto_create_user: value.autoCreateUser,
       auto_create_user_pwd: value.userPassword,
-      skip_check_state: value.skipCheckState
+      skip_check_state: value.skipCheckState,
+      login_perm_expr: value.loginPermissionQueryGJsonExpression
     };
 
     if (!!value.scopes) {
@@ -149,7 +150,8 @@ const Oauth = () => {
       userWechatTag: oauthConfig?.user_wechat_tag,
       autoCreateUser: oauthConfig?.auto_create_user,
       // userPassword: oauthConfig?.auto_create_user_pwd,
-      skipCheckState: oauthConfig?.skip_check_state
+      skipCheckState: oauthConfig?.skip_check_state,
+      loginPermissionQueryGJsonExpression: oauthConfig?.login_perm_expr
     });
   }, [form, oauthConfig]);
 
@@ -251,6 +253,12 @@ const Oauth = () => {
           hidden: !oauthConfig?.enable_oauth2
         },
         {
+          label: t('dmsSystem.oauth.backChannelLogoutUri'),
+          span: 3,
+          dataIndex: 'back_channel_logout_uri',
+          hidden: !oauthConfig?.enable_oauth2
+        },
+        {
           label: t('dmsSystem.oauth.scopes'),
           span: 3,
           dataIndex: 'scopes',
@@ -341,6 +349,27 @@ const Oauth = () => {
           ),
           span: 3,
           dataIndex: 'user_wechat_tag',
+          hidden: !oauthConfig?.enable_oauth2
+        },
+        {
+          label: (
+            <BasicToolTip
+              title={t(
+                'dmsSystem.oauth.loginPermissionQueryGJsonExpressionTips'
+              )}
+              suffixIcon={
+                <InfoCircleOutlined
+                  width={14}
+                  height={14}
+                  color={baseTheme.icon.system.basicTitleTips}
+                />
+              }
+            >
+              {t('dmsSystem.oauth.loginPermissionQueryGJsonExpression')}
+            </BasicToolTip>
+          ),
+          span: 3,
+          dataIndex: 'login_perm_expr',
           hidden: !oauthConfig?.enable_oauth2
         },
         {

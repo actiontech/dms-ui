@@ -15,11 +15,11 @@ import { ArgsProps } from 'antd/es/notification/interface';
 import EmitterKey from '../../../data/EmitterKey';
 
 class ApiBase {
-  public interceptorsResponse(authInvalid: () => void) {
+  public interceptorsResponse(refreshAuthToken: () => void) {
     const successFn = async (res: AxiosResponse<any, any>) => {
       const code = await getResponseCode(res);
       if (res.status === 401) {
-        authInvalid();
+        refreshAuthToken();
       } else if (isExportFileResponse(res)) {
         const disposition: string = res.headers?.['content-disposition'];
         const flag = 'filename=';
@@ -55,7 +55,7 @@ class ApiBase {
 
     const errorFn = async (error: any) => {
       if (error?.response?.status === 401) {
-        authInvalid();
+        refreshAuthToken();
       } else if (error?.response?.status !== 200) {
         const message = await getResponseErrorMessage(error.response);
         eventEmitter.emit<[NotificationInstanceKeyType, ArgsProps]>(
