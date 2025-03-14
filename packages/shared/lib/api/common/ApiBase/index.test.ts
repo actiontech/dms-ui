@@ -46,8 +46,19 @@ describe('Api', () => {
     api.close();
   });
 
-  test('should execute authInvalid  when request return 401', async () => {
+  it('should execute authInvalid  when request return 401', async () => {
     let result;
+    authInvalid.mockImplementation(() => {
+      return Promise.reject({
+        response: {
+          data: {
+            code: 2,
+            msg: 'error'
+          },
+          status: 401
+        }
+      });
+    });
     try {
       expect(authInvalid).toHaveBeenCalledTimes(0);
 

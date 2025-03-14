@@ -1,7 +1,7 @@
 import axios from 'axios';
 import ApiBase from '../../common/ApiBase';
 import store from '../../../../../base/src/store';
-import { refreshAuthToken } from '../../common/authInvalid';
+import { addFailedRequest } from '../../common/authInvalid';
 
 const doNotAddAuthRequest = ['v1/dms/sessions'];
 
@@ -16,7 +16,7 @@ apiInstance.interceptors.request.use((config) =>
   )(config)
 );
 
-const { successFn, errorFn } = apiBase.interceptorsResponse(refreshAuthToken);
+const { successFn, errorFn } = apiBase.interceptorsResponse(addFailedRequest);
 
 apiInstance.interceptors.response.use(
   (res) => successFn(res),

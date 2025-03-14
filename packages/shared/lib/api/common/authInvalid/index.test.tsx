@@ -1,5 +1,5 @@
 import { act } from '@testing-library/react';
-import { redirectToLogin, refreshAuthToken } from '.';
+import { redirectToLogin, refreshAuthToken, addFailedRequest } from '.';
 import store from '../../../../../base/src/store';
 import * as history from 'history';
 import axios from 'axios';
@@ -173,17 +173,14 @@ describe('authInvalid', () => {
       (axios.post as jest.Mock).mockResolvedValueOnce(mockResponse);
 
       await act(async () => {
-        // 连续调用三次
         const promise1 = refreshAuthToken();
         const promise2 = refreshAuthToken();
         const promise3 = refreshAuthToken();
 
-        // 确保所有Promise都完成
         await Promise.all([promise1, promise2, promise3]);
         await jest.runAllTimers();
       });
 
-      // 验证只发起了一次请求
       expect(axios.post).toHaveBeenCalledTimes(1);
       expect(axios.post).toHaveBeenCalledWith('/v1/dms/sessions/refresh');
       expect(scopeDispatch).toHaveBeenCalledTimes(1);
@@ -215,16 +212,13 @@ describe('authInvalid', () => {
         .mockResolvedValueOnce(mockResponse2);
 
       await act(async () => {
-        // 第一次调用
         await refreshAuthToken();
         await jest.runAllTimers();
 
-        // 第二次调用（应该发起新请求）
         await refreshAuthToken();
         await jest.runAllTimers();
       });
 
-      // 验证发起了两次请求
       expect(axios.post).toHaveBeenCalledTimes(2);
       expect(scopeDispatch).toHaveBeenCalledTimes(2);
       expect(scopeDispatch).toHaveBeenNthCalledWith(1, {
@@ -307,6 +301,121 @@ describe('authInvalid', () => {
       expect(window.location.href).toBe(
         `/login?target=${encodeURIComponent('/')}`
       );
+    });
+  });
+
+  describe('addFailedRequest', () => {
+    it('should add request to queue and retry after token refresh', async () => {
+      // 模拟刷新 token 的成功响应
+      const refreshResponse = {
+        status: 200,
+        data: {
+          code: ResponseCode.SUCCESS,
+          data: {
+            token: 'new-token'
+          }
+        }
+      };
+
+      // 模拟原始请求的成功响应
+      const originalResponse = {
+        status: 200,
+        data: {
+          code: ResponseCode.SUCCESS,
+          data: {
+            result: 'success'
+          }
+        }
+      };
+
+      // 设置 axios.post 和 axios 的模拟实现
+      (axios.post as jest.Mock).mockResolvedValueOnce(refreshResponse);
+      (axios as unknown as jest.Mock).mockResolvedValueOnce(originalResponse);
+
+      // 创建一个请求配置
+      const requestConfig = {
+        url: '/api/test',
+        method: 'GET',
+        headers: {
+          Authorization: 'Bearer old-token'
+        }
+      };
+
+      // 调用 addFailedRequest 并等待结果
+      let result;
+      await act(async () => {
+        const promise = addFailedRequest(requestConfig);
+        // 触发 refreshAuthToken
+        await jest.runAllTimers();
+        result = await promise;
+      });
+
+      // 验证 token 刷新请求被调用
+      expect(axios.post).toHaveBeenCalledWith('/v1/dms/sessions/refresh');
+
+      // 验证 token 被更新
+      expect(scopeDispatch).toHaveBeenCalledWith({
+        payload: { token: 'Bearer new-token' },
+        type: 'user/updateToken'
+      });
+
+      // 验证原始请求被重试，并使用了新的 token
+      expect(axios).toHaveBeenCalledWith({
+        ...requestConfig,
+        headers: {
+          Authorization: 'Bearer new-token'
+        }
+      });
+
+      // 验证返回了原始请求的响应
+      expect(result).toEqual(originalResponse);
+    });
+
+    it('should handle multiple queued requests', async () => {
+      const refreshResponse = {
+        status: 200,
+        data: {
+          code: ResponseCode.SUCCESS,
+          data: {
+            token: 'new-token'
+          }
+        }
+      };
+
+      const originalResponse1 = { status: 200, data: { result: 'success1' } };
+      const originalResponse2 = { status: 200, data: { result: 'success2' } };
+      const originalResponse3 = { status: 200, data: { result: 'success3' } };
+
+      (axios.post as jest.Mock).mockResolvedValueOnce(refreshResponse);
+      (axios as unknown as jest.Mock)
+        .mockResolvedValueOnce(originalResponse1)
+        .mockResolvedValueOnce(originalResponse2)
+        .mockResolvedValueOnce(originalResponse3);
+
+      const requestConfig1 = { url: '/api/test1', method: 'GET', headers: {} };
+      const requestConfig2 = { url: '/api/test2', method: 'GET', headers: {} };
+      const requestConfig3 = { url: '/api/test3', method: 'GET', headers: {} };
+
+      let results: any[] = [];
+      await act(async () => {
+        const promise1 = addFailedRequest(requestConfig1);
+        const promise2 = addFailedRequest(requestConfig2);
+        const promise3 = addFailedRequest(requestConfig3);
+
+        await jest.runAllTimers();
+
+        results = await Promise.all([promise1, promise2, promise3]);
+      });
+
+      expect(axios.post).toHaveBeenCalledTimes(1);
+
+      expect(axios).toHaveBeenCalledTimes(3);
+
+      expect(results).toEqual([
+        originalResponse1,
+        originalResponse2,
+        originalResponse3
+      ]);
     });
   });
 });
