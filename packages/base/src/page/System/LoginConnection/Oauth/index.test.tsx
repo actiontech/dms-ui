@@ -118,7 +118,11 @@ describe('base/System/LoginConnection/Oauth', () => {
 
       expect(requestUpdateOauth2Configuration).toHaveBeenCalledTimes(1);
       expect(requestUpdateOauth2Configuration).toHaveBeenNthCalledWith(1, {
-        oauth2: { ...oauthConfig, enable_oauth2: true }
+        oauth2: {
+          ...oauthConfig,
+          enable_oauth2: true,
+          back_channel_logout_uri: undefined
+        }
       });
       await act(async () => jest.advanceTimersByTime(3000));
       expect(requestGetOauth2Configuration).toHaveBeenCalledTimes(2);
@@ -215,6 +219,15 @@ describe('base/System/LoginConnection/Oauth', () => {
         }
       });
 
+      fireEvent.change(
+        getBySelector('#loginPermissionQueryGJsonExpression', baseElement),
+        {
+          target: {
+            value: 'resource_access.sqle.roles.#(=="logout")'
+          }
+        }
+      );
+
       fireEvent.click(getBySelector('#autoCreateUser', baseElement));
       await act(async () => jest.advanceTimersByTime(0));
 
@@ -251,7 +264,8 @@ describe('base/System/LoginConnection/Oauth', () => {
           auto_create_user: true,
           skip_check_state: true,
           server_logout_url: 'server layout url',
-          auto_create_user_pwd: '123'
+          auto_create_user_pwd: '123',
+          login_perm_expr: 'resource_access.sqle.roles.#(=="logout")'
         }
       });
       await act(async () => jest.advanceTimersByTime(3000));

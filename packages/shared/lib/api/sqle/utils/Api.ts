@@ -1,7 +1,7 @@
 import axios from 'axios';
 import { SQLE_BASE_URL } from '../../../data/common';
-import globalAuthInvalid from '../../common/authInvalid';
 import ApiBase from '../../common/ApiBase';
+import { addFailedRequest } from '../../common/authInvalid';
 
 const doNotAddAuthRequest = ['/login'];
 
@@ -9,7 +9,7 @@ const apiInstance = axios.create({ baseURL: SQLE_BASE_URL });
 
 const apiBase = new ApiBase();
 
-const { successFn, errorFn } = apiBase.interceptorsResponse(globalAuthInvalid);
+const { successFn, errorFn } = apiBase.interceptorsResponse(addFailedRequest);
 
 apiInstance.interceptors.request.use((config) =>
   apiBase.interceptorsRequest(doNotAddAuthRequest)(config)

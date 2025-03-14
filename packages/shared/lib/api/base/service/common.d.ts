@@ -767,11 +767,15 @@ export interface IGetOauth2ConfigurationResData {
 
   auto_create_user?: boolean;
 
+  back_channel_logout_uri?: string;
+
   client_host?: string;
 
   client_id?: string;
 
   enable_oauth2?: boolean;
+
+  login_perm_expr?: string;
 
   login_tip?: string;
 
@@ -1644,6 +1648,8 @@ export interface IOauth2Configuration {
   client_key?: string;
 
   enable_oauth2?: boolean;
+
+  login_perm_expr?: string;
 
   login_tip?: string;
 

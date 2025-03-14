@@ -289,6 +289,22 @@ const ConfigField = () => {
         className="has-label-tip"
         label={
           <CustomLabelContent
+            title={t('dmsSystem.oauth.loginPermissionQueryGJsonExpression')}
+            tips={t('dmsSystem.oauth.loginPermissionQueryGJsonExpressionTips')}
+          />
+        }
+        name="loginPermissionQueryGJsonExpression"
+      >
+        <BasicInput
+          placeholder={t('common.form.placeholder.input', {
+            name: t('dmsSystem.oauth.loginPermissionQueryGJsonExpression')
+          })}
+        />
+      </FormItemLabel>
+      <FormItemLabel
+        className="has-label-tip"
+        label={
+          <CustomLabelContent
             title={t('dmsSystem.oauth.autoCreateUser')}
             tips={t('dmsSystem.oauth.autoCreateUserTips')}
           />

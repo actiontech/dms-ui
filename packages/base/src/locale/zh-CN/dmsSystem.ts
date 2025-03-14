@@ -144,11 +144,15 @@ export default {
     skipStateCheckTips:
       '跳过对请求发送来源的验证，可能会使您的账户面临安全风险，建议仅在可信环境下启用此选项。启用后，SQLE将不再验证回调中的state参数。',
     layoutUrl: '注销跳转地址',
+    backChannelLogoutUri: 'OIDC后端通道注销接口',
     layoutUrlTips:
       '用户登出时，系统自动将浏览器重定向至此地址进行注销操作，以关闭第三方平台的会话信息。格式示例：http://localhost:8080/logout?id_token_hint=${id_token}&post_logout_redirect_uri=${sqle_url}',
     userPassword: '默认登录密码',
     userPasswordTips:
-      '系统自动创建的新用户将使用此密码作为初始登录密码，请妥善保存。此外，为保证账户安全，建议用户首次登录后及时修改密码。如果之前配置过该项，更新时不填写该项代表不更新密钥。'
+      '系统自动创建的新用户将使用此密码作为初始登录密码，请妥善保存。此外，为保证账户安全，建议用户首次登录后及时修改密码。如果之前配置过该项，更新时不填写该项代表不更新密钥。',
+    loginPermissionQueryGJsonExpression: '登录权限查询GJSON表达式',
+    loginPermissionQueryGJsonExpressionTips:
+      '通过该表达式查询AccessToken载荷json，存在查询结果即有登录权限，不填默认有登录权限'
   },
 
   loginBasic: {

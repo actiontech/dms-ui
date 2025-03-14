@@ -661,6 +661,55 @@ exports[`base/System/LoginConnection/Oauth/ConfigField render snap 1`] = `
           >
             <label
               class=""
+              for="loginPermissionQueryGJsonExpression"
+              title=""
+            >
+              <div
+                class="label-cont-custom"
+              >
+                <div>
+                  登录权限查询GJSON表达式
+                </div>
+                <div
+                  class="tip-content-box"
+                >
+                  通过该表达式查询AccessToken载荷json，存在查询结果即有登录权限，不填默认有登录权限
+                </div>
+              </div>
+            </label>
+          </div>
+          <div
+            class="ant-col ant-form-item-control css-dev-only-do-not-override-txh9fw"
+          >
+            <div
+              class="ant-form-item-control-input"
+            >
+              <div
+                class="ant-form-item-control-input-content"
+              >
+                <input
+                  class="ant-input css-dev-only-do-not-override-ywkr0o basic-input-wrapper css-1pd1cd5"
+                  id="loginPermissionQueryGJsonExpression"
+                  placeholder="请输入登录权限查询GJSON表达式"
+                  type="text"
+                  value=""
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="ant-form-item has-label-tip css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+      >
+        <div
+          class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+        >
+          <div
+            class="ant-col ant-form-item-label css-dev-only-do-not-override-txh9fw"
+          >
+            <label
+              class=""
               for="autoCreateUser"
               title=""
             >

@@ -11,6 +11,8 @@ export interface IAddSessionReturn extends IAddSessionReply {}
 
 export interface IDelSessionReturn extends IDelSessionReply {}
 
+export interface IRefreshSessionReturn extends IAddSessionReply {}
+
 export interface IGetUserBySessionParams {
   user_uid?: string;
 }
