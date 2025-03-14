@@ -10,6 +10,7 @@ import {
   IAddSessionParams,
   IAddSessionReturn,
   IDelSessionReturn,
+  IRefreshSessionReturn,
   IGetUserBySessionParams,
   IGetUserBySessionReturn
 } from './index.d';
@@ -27,6 +28,14 @@ class SessionService extends ServiceBase {
   public DelSession(options?: AxiosRequestConfig) {
     return this.delete<IDelSessionReturn>(
       '/v1/dms/sessions',
+      undefined,
+      options
+    );
+  }
+
+  public RefreshSession(options?: AxiosRequestConfig) {
+    return this.post<IRefreshSessionReturn>(
+      '/v1/dms/sessions/refresh',
       undefined,
       options
     );
