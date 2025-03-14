@@ -17,6 +17,7 @@ import {
   filterSchemasInDatabase,
   filteredWithoutParentNodeKey,
   getComparisonResultByNodeKey,
+  isValidChildNodeKey,
   parseTreeNodeKey
 } from './utils/TreeNode';
 import {
@@ -143,7 +144,9 @@ const ComparisonEntry: React.FC = () => {
                 keys: []
               };
             }
-            acc[key].keys.push(curr.key);
+            if (isValidChildNodeKey(curr.key)) {
+              acc[key].keys.push(curr.key);
+            }
             return acc;
           },
           {} as Record<
@@ -235,6 +238,13 @@ const ComparisonEntry: React.FC = () => {
       generateModifiedSqlInfoApi();
     }
   };
+
+  const noDifferencesFound = useMemo(() => {
+    return filteredComparisonResultsWithoutSame.every(
+      (item) => item.comparison_result === SchemaObjectComparisonResultEnum.same
+    );
+  }, [filteredComparisonResultsWithoutSame]);
+
   return (
     <ComparisonEntryStyleWrapper>
       {messageContextHolder}
@@ -266,15 +276,32 @@ const ComparisonEntry: React.FC = () => {
         }
       >
         <ComparisonActionStyleWrapper size={12}>
-          <ToggleButtonStyleWrapper
-            active={showDifferencesOnly}
-            onClick={() => {
-              toggleShowDifferencesOnly();
-              setCheckedObjectNodeKeys([]);
-            }}
-          >
-            {t('dataSourceComparison.entry.showDifferencesOnly')}
-          </ToggleButtonStyleWrapper>
+          {noDifferencesFound ? (
+            <BasicToolTip
+              title={t('dataSourceComparison.entry.noDifferencesFound')}
+            >
+              <ToggleButtonStyleWrapper
+                disabled={true}
+                active={showDifferencesOnly}
+                onClick={() => {
+                  toggleShowDifferencesOnly();
+                  setCheckedObjectNodeKeys([]);
+                }}
+              >
+                {t('dataSourceComparison.entry.showDifferencesOnly')}
+              </ToggleButtonStyleWrapper>
+            </BasicToolTip>
+          ) : (
+            <ToggleButtonStyleWrapper
+              active={showDifferencesOnly}
+              onClick={() => {
+                toggleShowDifferencesOnly();
+                setCheckedObjectNodeKeys([]);
+              }}
+            >
+              {t('dataSourceComparison.entry.showDifferencesOnly')}
+            </ToggleButtonStyleWrapper>
+          )}
 
           {/* <BasicButton disabled={executeComparisonPending}>
           {t('dataSourceComparison.entry.modifyMappings')}
