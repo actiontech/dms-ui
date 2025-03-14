@@ -159,6 +159,84 @@ describe('authInvalid', () => {
       });
     });
 
+    it('should not send multiple requests when called multiple times', async () => {
+      const mockResponse = {
+        status: 200,
+        data: {
+          code: ResponseCode.SUCCESS,
+          data: {
+            token: 'new-token'
+          }
+        }
+      };
+
+      (axios.post as jest.Mock).mockResolvedValueOnce(mockResponse);
+
+      await act(async () => {
+        // 连续调用三次
+        const promise1 = refreshAuthToken();
+        const promise2 = refreshAuthToken();
+        const promise3 = refreshAuthToken();
+
+        // 确保所有Promise都完成
+        await Promise.all([promise1, promise2, promise3]);
+        await jest.runAllTimers();
+      });
+
+      // 验证只发起了一次请求
+      expect(axios.post).toHaveBeenCalledTimes(1);
+      expect(axios.post).toHaveBeenCalledWith('/v1/dms/sessions/refresh');
+      expect(scopeDispatch).toHaveBeenCalledTimes(1);
+    });
+
+    it('should reset refreshing state after completion', async () => {
+      const mockResponse1 = {
+        status: 200,
+        data: {
+          code: ResponseCode.SUCCESS,
+          data: {
+            token: 'new-token-1'
+          }
+        }
+      };
+
+      const mockResponse2 = {
+        status: 200,
+        data: {
+          code: ResponseCode.SUCCESS,
+          data: {
+            token: 'new-token-2'
+          }
+        }
+      };
+
+      (axios.post as jest.Mock)
+        .mockResolvedValueOnce(mockResponse1)
+        .mockResolvedValueOnce(mockResponse2);
+
+      await act(async () => {
+        // 第一次调用
+        await refreshAuthToken();
+        await jest.runAllTimers();
+
+        // 第二次调用（应该发起新请求）
+        await refreshAuthToken();
+        await jest.runAllTimers();
+      });
+
+      // 验证发起了两次请求
+      expect(axios.post).toHaveBeenCalledTimes(2);
+      expect(scopeDispatch).toHaveBeenCalledTimes(2);
+      expect(scopeDispatch).toHaveBeenNthCalledWith(1, {
+        payload: { token: 'Bearer new-token-1' },
+        type: 'user/updateToken'
+      });
+      expect(scopeDispatch).toHaveBeenNthCalledWith(2, {
+        payload: { token: 'Bearer new-token-2' },
+        type: 'user/updateToken'
+      });
+    });
+
     it('should redirect to login on 401 response', async () => {
       const mockResponse = {
         status: 401
@@ -201,7 +279,9 @@ describe('authInvalid', () => {
       (axios.post as jest.Mock).mockRejectedValueOnce(error);
 
       await act(async () => {
-        refreshAuthToken();
+        try {
+          await refreshAuthToken();
+        } catch (e) {}
         await jest.runAllTimers();
       });
 
@@ -218,7 +298,9 @@ describe('authInvalid', () => {
       (axios.post as jest.Mock).mockRejectedValueOnce(error);
 
       await act(async () => {
-        refreshAuthToken();
+        try {
+          await refreshAuthToken();
+        } catch (e) {}
         await jest.runAllTimers();
       });
 
