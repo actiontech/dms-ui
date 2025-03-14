@@ -32,7 +32,14 @@ const ContextMenu: React.FC<ContextMenuProps> = ({
       onOpenChange={onOpenChange}
       content={
         <PopoverInnerStyleWrapper>
-          {header && <div className="header">{header}</div>}
+          {header && (
+            <div
+              className="header"
+              title={typeof header === 'string' ? header : undefined}
+            >
+              {header}
+            </div>
+          )}
           <div className="content">
             {items.map((menu) => {
               return (
