@@ -16,4 +16,5 @@ export type OauthFormField = {
   userPassword?: string;
   skipCheckState: boolean;
   oauth2ButtonText: string;
+  loginPermissionQueryGJsonExpression: string;
 };

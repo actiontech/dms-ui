@@ -1,7 +1,7 @@
 import axios from 'axios';
 import ApiBase from '../../common/ApiBase';
 import store from '../../../../../base/src/store';
-import globalAuthInvalid from '../../common/authInvalid';
+import { refreshAuthToken } from '../../common/authInvalid';
 
 const doNotAddAuthRequest = ['v1/dms/sessions'];
 
@@ -16,7 +16,7 @@ apiInstance.interceptors.request.use((config) =>
   )(config)
 );
 
-const { successFn, errorFn } = apiBase.interceptorsResponse(globalAuthInvalid);
+const { successFn, errorFn } = apiBase.interceptorsResponse(refreshAuthToken);
 
 apiInstance.interceptors.response.use(
   (res) => successFn(res),
