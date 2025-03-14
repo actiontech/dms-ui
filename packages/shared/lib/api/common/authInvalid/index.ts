@@ -18,6 +18,10 @@ import { ArgsProps } from 'antd/es/notification/interface';
 import { NotificationInstanceKeyType } from '../../../hooks/useNotificationContext';
 import i18n from 'i18next';
 
+// 添加一个标志位和Promise来跟踪刷新状态
+let isRefreshing = false;
+let refreshPromise: Promise<any> | null = null;
+
 export const redirectToLogin = () => {
   const currentPath = window.location.pathname;
   const currentSearch = window.location.search;
@@ -39,7 +43,16 @@ export const redirectToLogin = () => {
 };
 
 export const refreshAuthToken = () => {
-  axios
+  // 如果已经在刷新中，直接返回之前的Promise
+  if (isRefreshing) {
+    return refreshPromise;
+  }
+
+  // 设置刷新状态为true
+  isRefreshing = true;
+
+  // 创建新的刷新Promise
+  refreshPromise = axios
     .post<IRefreshSessionReturn>('/v1/dms/sessions/refresh')
     .then(async (res) => {
       const responseCode = await getResponseCode(res);
@@ -63,6 +76,7 @@ export const refreshAuthToken = () => {
           }
         );
       }
+      return res;
     })
     .catch((error) => {
       const errorMessage =
@@ -79,5 +93,13 @@ export const refreshAuthToken = () => {
       if (error.response?.status === 401) {
         redirectToLogin();
       }
+      return Promise.reject(error);
+    })
+    .finally(() => {
+      // 重置刷新状态
+      isRefreshing = false;
+      refreshPromise = null;
     });
+
+  return refreshPromise;
 };
