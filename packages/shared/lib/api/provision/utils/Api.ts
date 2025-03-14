@@ -1,7 +1,7 @@
 import axios from 'axios';
 import { PROVISION_BASE_URL } from '../../../data/common';
 import ApiBase from '../../common/ApiBase';
-import globalAuthInvalid from '../../common/authInvalid';
+import { addFailedRequest } from '../../common/authInvalid';
 
 const doNotAddAuthRequest = ['/login'];
 
@@ -13,7 +13,7 @@ apiInstance.interceptors.request.use((config) =>
   apiBase.interceptorsRequest(doNotAddAuthRequest)(config)
 );
 
-const { successFn, errorFn } = apiBase.interceptorsResponse(globalAuthInvalid);
+const { successFn, errorFn } = apiBase.interceptorsResponse(addFailedRequest);
 
 apiInstance.interceptors.response.use(
   (res) => successFn(res),

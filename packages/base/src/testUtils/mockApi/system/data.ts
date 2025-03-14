@@ -33,7 +33,9 @@ export const oauthConfig = {
   server_logout_url: 'http://10.186.59.87:8080/realms/test/',
   user_id_tag: 'NFkVxY[4Xv^UFU&x&t5y',
   auto_create_user: false,
-  skip_check_state: false
+  skip_check_state: false,
+  login_perm_expr: 'resource_access.sqle.roles.#(=="login")',
+  back_channel_logout_uri: '/v1/dms/oauth2/backchannel_logout'
 };
 
 export const SMTPConfig: ISMTPConfigurationResData = {

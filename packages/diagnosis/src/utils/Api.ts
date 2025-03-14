@@ -18,7 +18,8 @@ const apiInstance = axios.create();
 
 const apiBase = new ApiBase();
 
-const { successFn, errorFn } = apiBase.interceptorsResponse(authInvalid);
+// todo 先添加 as any 临时处理
+const { successFn, errorFn } = apiBase.interceptorsResponse(authInvalid as any);
 
 apiInstance.interceptors.request.use((config) =>
   apiBase.interceptorsRequest(
