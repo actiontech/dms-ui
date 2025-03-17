@@ -48,10 +48,11 @@ exports[`base/page/Nav/SideMenu/UserNavigate-ce render snap 2`] = `
             class="ant-popover-inner-content"
           >
             <div
-              class="css-1uknfyo"
+              class="css-1lz0wpv"
             >
               <div
                 class="header"
+                title="Test name"
               >
                 Test name
               </div>
@@ -201,10 +202,11 @@ exports[`base/page/Nav/SideMenu/UserNavigate-ce render snap 3`] = `
             class="ant-popover-inner-content"
           >
             <div
-              class="css-1uknfyo"
+              class="css-1lz0wpv"
             >
               <div
                 class="header"
+                title="Test name"
               >
                 Test name
               </div>

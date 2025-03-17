@@ -82,10 +82,11 @@ exports[`base/page/Nav/SideMenu/GlobalSetting render snap when is "checkPagePerm
             class="ant-popover-inner-content"
           >
             <div
-              class="css-1uknfyo"
+              class="css-1lz0wpv"
             >
               <div
                 class="header"
+                title="全局设置"
               >
                 全局设置
               </div>
