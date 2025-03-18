@@ -1,5 +1,5 @@
 import { act, fireEvent, renderHook, screen } from '@testing-library/react';
-import { Form, Input } from 'antd';
+import { Form, FormInstance, Input } from 'antd';
 import SqlFormatterAndSubmitter from '../components/SqlFormatterAndSubmitter';
 import { SqlFormatterAndSubmitterProps } from '../components/index.type';
 import instance from '../../../../../../testUtils/mockApi/instance';
@@ -24,11 +24,14 @@ describe('test SqlFormatterAndSubmitter', () => {
     jest.clearAllTimers();
   });
 
-  const customRender = (params: Partial<SqlFormatterAndSubmitterProps>) => {
+  const customRender = (
+    params: Partial<SqlFormatterAndSubmitterProps>,
+    form?: FormInstance
+  ) => {
     const { result } = renderHook(() => Form.useForm());
 
     return superRender(
-      <Form form={result.current[0]}>
+      <Form form={form ?? result.current[0]}>
         <SqlFormatterAndSubmitter
           isAuditing={{ set: jest.fn(), value: false }}
           auditAction={auditActionSpy}
@@ -162,5 +165,35 @@ describe('test SqlFormatterAndSubmitter', () => {
     expect(screen.getByLabelText('sql语句')).toHaveValue(
       SQL_EDITOR_PLACEHOLDER_VALUE
     );
+  });
+
+  it('form validateFields return errorFields on submit button click', async () => {
+    const { result } = renderHook(() => Form.useForm());
+    const form = result.current[0];
+    jest.spyOn(form, 'validateFields').mockReturnValue(
+      Promise.reject({
+        values: {},
+        errorFields: [
+          {
+            name: ['1', AuditTaskResV1SqlSourceEnum.form_data],
+            errors: ['请输入SQL']
+          }
+        ],
+        outOfDate: false
+      })
+    );
+    const setActiveKeySpy = jest.fn();
+    customRender(
+      {
+        fieldPrefixPath: '1',
+        setActiveKey: setActiveKeySpy
+      },
+      form
+    );
+
+    fireEvent.click(screen.getByText('审 核'));
+    await act(async () => jest.advanceTimersByTime(0));
+    expect(setActiveKeySpy).toHaveBeenCalledTimes(1);
+    expect(setActiveKeySpy).toHaveBeenCalledWith('1');
   });
 });

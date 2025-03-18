@@ -30,6 +30,7 @@ describe('test SqlStatementFormItem', () => {
           databaseInfo={[
             { key: '1', instanceName: 'mysql-1', schemaName: 'test' }
           ]}
+          setActiveKey={jest.fn()}
           isAtFormStep
           {...params}
         />

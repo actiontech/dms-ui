@@ -21,6 +21,7 @@ export type SqlFormatterAndSubmitterProps = {
   | 'auditAction'
   | 'databaseInfo'
   | 'isSameSqlForAll'
+  | 'setActiveKey'
 >;
 
 export type SqlBackupSwitcherProps = Pick<
