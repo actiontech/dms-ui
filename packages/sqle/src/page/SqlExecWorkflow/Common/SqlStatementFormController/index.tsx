@@ -74,6 +74,7 @@ const SqlStatementFormController: React.FC<SqlStatementFormControllerProps> = ({
                 isSupportFileModeExecuteSql={
                   !!isSupportFileModeExecuteSqlRecord?.[v.key]
                 }
+                setActiveKey={setActiveKey}
                 {...props}
               />
             </div>

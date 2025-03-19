@@ -51,3 +51,13 @@ export type RouterConfigItem =
       });
 
 export type ExcludeSymbol<T> = T extends symbol ? never : T;
+
+export type FormValidateError<T> = {
+  values: T;
+  errorFields: Array<{
+    name: string[];
+    errors: string[];
+    warnings: string[];
+  }>;
+  outOfDate: boolean;
+};

@@ -13,6 +13,7 @@ import instance from '@actiontech/shared/lib/api/sqle/service/instance';
 import { useCurrentProject } from '@actiontech/shared/lib/features';
 import { useBoolean } from 'ahooks';
 import { SQL_EDITOR_PLACEHOLDER_VALUE } from '@actiontech/shared/lib/data/common';
+import { FormValidateError } from '@actiontech/shared/lib/types/common.type';
 
 const SqlFormatterAndSubmitter: React.FC<SqlFormatterAndSubmitterProps> = ({
   fieldPrefixPath,
@@ -20,7 +21,8 @@ const SqlFormatterAndSubmitter: React.FC<SqlFormatterAndSubmitterProps> = ({
   auditAction,
   databaseInfo,
   isSameSqlForAll,
-  currentSqlUploadType
+  currentSqlUploadType,
+  setActiveKey
 }) => {
   const { t } = useTranslation();
   const { projectName } = useCurrentProject();
@@ -32,8 +34,21 @@ const SqlFormatterAndSubmitter: React.FC<SqlFormatterAndSubmitterProps> = ({
   ] = useBoolean();
 
   const internalSubmit = async () => {
-    const values = await form.validateFields();
-    auditAction(values);
+    form
+      .validateFields()
+      .then((values) => {
+        auditAction(values);
+      })
+      .catch((error: FormValidateError<SqlAuditInfoFormFields>) => {
+        const errorField = error.errorFields.filter((i) => {
+          return Object.keys(AuditTaskResV1SqlSourceEnum).some((v) => {
+            return i.name.includes(v);
+          });
+        });
+        if (!!errorField.length) {
+          setActiveKey?.(errorField[0].name?.[0]);
+        }
+      });
   };
 
   const formatSql = async () => {
