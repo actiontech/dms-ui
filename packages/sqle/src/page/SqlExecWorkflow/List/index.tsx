@@ -2,11 +2,10 @@ import {
   ActiontechTable,
   ColumnsSettingProps,
   FilterCustomProps,
-  TableFilterContainer,
-  TableToolbar,
   useTableFilterContainer,
   useTableRequestError,
-  useTableRequestParams
+  useTableRequestParams,
+  ActiontechTableContextProvide
 } from '@actiontech/shared/lib/components/ActiontechTable';
 import { SqlExecWorkflowListStyleWrapper } from './style';
 import {
@@ -253,71 +252,75 @@ const SqlExecWorkflowList: React.FC = () => {
           </Space>
         }
       />
-      <TableToolbar
-        refreshButton={{ refresh, disabled: loading }}
-        setting={tableSetting}
-        actions={toolbarActions}
-        filterButton={{
-          filterButtonMeta,
-          updateAllSelectedFilterItem
-        }}
-        searchInput={{
-          onChange: setSearchKeyword,
-          onSearch: () => {
-            refreshBySearchKeyword();
+      <ActiontechTableContextProvide
+        value={{
+          loading,
+          toolbar: {
+            refreshButton: { refresh, disabled: loading },
+            setting: tableSetting,
+            actions: toolbarActions,
+            filterButton: {
+              filterButtonMeta,
+              updateAllSelectedFilterItem
+            },
+            searchInput: {
+              onChange: setSearchKeyword,
+              onSearch: () => {
+                refreshBySearchKeyword();
+              }
+            },
+            children: (
+              <CustomSegmentedFilter
+                value={filterStatus}
+                onChange={setFilterStatus}
+                labelDictionary={translateDictionaryI18nLabel(
+                  execWorkflowStatusDictionary
+                )}
+                options={Object.keys(getWorkflowsV1FilterStatusEnum)}
+                withAll
+              />
+            )
+          },
+          filterContainerProps: {
+            filterContainerMeta,
+            updateTableFilterInfo,
+            disabled: loading,
+            filterCustomProps
           }
         }}
-        loading={loading}
       >
-        <CustomSegmentedFilter
-          value={filterStatus}
-          onChange={setFilterStatus}
-          labelDictionary={translateDictionaryI18nLabel(
-            execWorkflowStatusDictionary
-          )}
-          options={Object.keys(getWorkflowsV1FilterStatusEnum)}
-          withAll
+        <ActiontechTable
+          className="table-row-cursor"
+          setting={tableSetting}
+          dataSource={workflowList?.list}
+          rowKey={(record: IWorkflowDetailResV1) => {
+            return `${record?.workflow_id}`;
+          }}
+          rowSelection={
+            checkActionPermission(
+              PERMISSIONS.ACTIONS.BASE.DATA_EXPORT.BATCH_CLOSE
+            )
+              ? (rowSelection as TableRowSelection<IWorkflowDetailResV1>)
+              : undefined
+          }
+          pagination={{
+            total: workflowList?.total ?? 0,
+            current: pagination.page_index
+          }}
+          columns={columns}
+          errorMessage={requestErrorMessage}
+          onChange={tableChange}
+          onRow={(record) => {
+            return {
+              onClick() {
+                navigate(ROUTE_PATHS.SQLE.SQL_EXEC_WORKFLOW.detail, {
+                  params: { workflowId: record.workflow_id ?? '', projectID }
+                });
+              }
+            };
+          }}
         />
-      </TableToolbar>
-
-      <TableFilterContainer
-        filterContainerMeta={filterContainerMeta}
-        updateTableFilterInfo={updateTableFilterInfo}
-        disabled={loading}
-        filterCustomProps={filterCustomProps}
-      />
-      <ActiontechTable
-        className="table-row-cursor"
-        setting={tableSetting}
-        dataSource={workflowList?.list}
-        rowKey={(record: IWorkflowDetailResV1) => {
-          return `${record?.workflow_id}`;
-        }}
-        rowSelection={
-          checkActionPermission(
-            PERMISSIONS.ACTIONS.BASE.DATA_EXPORT.BATCH_CLOSE
-          )
-            ? (rowSelection as TableRowSelection<IWorkflowDetailResV1>)
-            : undefined
-        }
-        pagination={{
-          total: workflowList?.total ?? 0,
-          current: pagination.page_index
-        }}
-        loading={loading}
-        columns={columns}
-        errorMessage={requestErrorMessage}
-        onChange={tableChange}
-        onRow={(record) => {
-          return {
-            onClick() {
-              navigate(ROUTE_PATHS.SQLE.SQL_EXEC_WORKFLOW.detail, {
-                params: { workflowId: record.workflow_id ?? '', projectID }
-              });
-            }
-          };
-        }}
-      />
+      </ActiontechTableContextProvide>
     </SqlExecWorkflowListStyleWrapper>
   );
 };

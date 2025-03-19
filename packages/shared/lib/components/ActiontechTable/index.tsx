@@ -14,3 +14,9 @@ export { default as SearchInput } from './components/SearchInput';
 export { default as useTableFilterContainer } from './hooks/useTableFilterContainer';
 export { default as useTableRequestError } from './hooks/useTableRequestError';
 export { default as useTableRequestParams } from './hooks/useTableRequestParams';
+
+//context
+export {
+  ActiontechTableContext,
+  ActiontechTableContextProvide
+} from './common/context';
