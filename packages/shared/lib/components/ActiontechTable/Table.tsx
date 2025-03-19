@@ -1,4 +1,4 @@
-import { Result, ConfigProvider, Spin } from 'antd';
+import { Result, ConfigProvider } from 'antd';
 import { ActiontechTableColumn, ActiontechTableProps } from './index.type';
 import ToolBar from './components/Toolbar';
 import FilterContainer from './components/FilterContainer';
@@ -27,8 +27,9 @@ const ActiontechTable = <
 
   const tableContextValue = useContext(ActiontechTableContext);
 
-  const setting =
-    props.setting ?? (toolbar ? toolbar.setting : tableContextValue?.setting);
+  const tableSetting = tableContextValue?.setting ?? props.setting;
+
+  const setting = tableSetting ?? (toolbar && toolbar.setting);
   const { tableName = '', username = '' } = setting || {};
 
   const { renderActionInTable } = useTableAction();
@@ -49,7 +50,7 @@ const ActiontechTable = <
   }, [columns, props.actions, renderActionInTable]);
 
   const innerColumns = useMemo(() => {
-    if (!props.setting) {
+    if (!tableSetting) {
       return mergerColumns;
     }
     return mergerColumns
@@ -60,7 +61,7 @@ const ActiontechTable = <
         order: localColumns?.[v.dataIndex]?.order
       }))
       .sort((prev, current) => prev.order - current.order);
-  }, [localColumns, mergerColumns, props.setting]);
+  }, [localColumns, mergerColumns, tableSetting]);
 
   useEffect(() => {
     if (tableName && username) {
@@ -68,66 +69,56 @@ const ActiontechTable = <
     }
   }, [catchDefaultColumnsInfo, mergerColumns, tableName, username]);
 
-  const tableRender = () => {
-    return (
-      <>
-        {toolbar && (
-          <ToolBar {...toolbar} setting={setting}>
-            {toolbar.children}
-          </ToolBar>
-        )}
+  return (
+    <>
+      {toolbar && (
+        <ToolBar {...toolbar} setting={setting}>
+          {toolbar.children}
+        </ToolBar>
+      )}
 
-        {!!filterContainerProps && (
-          <FilterContainer {...filterContainerProps} />
-        )}
+      {!!filterContainerProps && <FilterContainer {...filterContainerProps} />}
 
-        <ConfigProvider theme={tableToken}>
-          <ActiontechTableStyleWrapper
-            className={classnames('actiontech-table-namespace', className)}
-            locale={{
-              emptyText: errorMessage ? (
-                <Result
-                  status="error"
-                  title={t('common.request.noticeFailTitle')}
-                  subTitle={errorMessage}
-                />
-              ) : undefined
-            }}
-            scroll={{
-              x: 'max-content'
-            }}
-            {...props}
-            columns={innerColumns}
-            pagination={
-              !props.pagination
-                ? false
-                : {
-                    defaultPageSize: 20,
-                    showSizeChanger: true,
-                    showTotal: (total) => (
-                      <span>
-                        {t('common.actiontechTable.pagination.total', {
-                          total
-                        })}
-                      </span>
-                    ),
-                    className: classnames('actiontech-table-pagination', {
-                      'actiontech-table-pagination-fixed': isPaginationFixed
-                    }),
-                    ...props.pagination
-                  }
-            }
-          />
-        </ConfigProvider>
-      </>
-    );
-  };
-
-  if (tableContextValue?.loading === undefined) {
-    return tableRender();
-  }
-
-  return <Spin spinning={tableContextValue?.loading}>{tableRender()}</Spin>;
+      <ConfigProvider theme={tableToken}>
+        <ActiontechTableStyleWrapper
+          className={classnames('actiontech-table-namespace', className)}
+          locale={{
+            emptyText: errorMessage ? (
+              <Result
+                status="error"
+                title={t('common.request.noticeFailTitle')}
+                subTitle={errorMessage}
+              />
+            ) : undefined
+          }}
+          scroll={{
+            x: 'max-content'
+          }}
+          {...props}
+          columns={innerColumns}
+          pagination={
+            !props.pagination
+              ? false
+              : {
+                  defaultPageSize: 20,
+                  showSizeChanger: true,
+                  showTotal: (total) => (
+                    <span>
+                      {t('common.actiontechTable.pagination.total', {
+                        total
+                      })}
+                    </span>
+                  ),
+                  className: classnames('actiontech-table-pagination', {
+                    'actiontech-table-pagination-fixed': isPaginationFixed
+                  }),
+                  ...props.pagination
+                }
+          }
+        />
+      </ConfigProvider>
+    </>
+  );
 };
 
 export default ActiontechTable;
