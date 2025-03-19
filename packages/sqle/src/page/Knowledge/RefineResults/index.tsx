@@ -15,7 +15,7 @@ import {
   SearchContentWrapperStyleWrapper
 } from './style';
 import { useRequest } from 'ahooks';
-import { KnowledgeBaseService } from '@actiontech/shared/lib/api';
+import { SqleApi } from '@actiontech/shared/lib/api';
 import { IGetKnowledgeBaseListParams } from '@actiontech/shared/lib/api/sqle/service/knowledge_base/index.d';
 import HighlightText from './HighlightText';
 import { useEffect, useState } from 'react';
@@ -49,7 +49,7 @@ const KnowledgeSearchResults: React.FC = () => {
       pageIndex: number;
       pageSize: number;
     }) =>
-      KnowledgeBaseService.getKnowledgeBaseList(
+      SqleApi.KnowledgeBaseService.getKnowledgeBaseList(
         {
           keywords: params.searchText,
           page_index: params.pageIndex,

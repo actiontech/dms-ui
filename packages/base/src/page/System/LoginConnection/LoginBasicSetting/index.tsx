@@ -10,7 +10,7 @@ import {
 import { useState } from 'react';
 import { useLoginConnectionContext } from '../context';
 import { useBoolean, useRequest } from 'ahooks';
-import { ConfigurationService } from '@actiontech/shared/lib/api';
+import { DmsApi } from '@actiontech/shared/lib/api';
 import { ResponseCode } from '@actiontech/shared/lib/enum';
 import { ILoginConfiguration } from '@actiontech/shared/lib/api/base/service/common';
 
@@ -28,7 +28,7 @@ const LoginBasicSetting: React.FC = () => {
     value: string | boolean,
     configKey: keyof ILoginConfiguration
   ) => {
-    const res = await ConfigurationService.UpdateLoginConfiguration({
+    const res = await DmsApi.ConfigurationService.UpdateLoginConfiguration({
       login: {
         [configKey]: value
       }
@@ -42,7 +42,7 @@ const LoginBasicSetting: React.FC = () => {
   };
 
   const { loading, refresh } = useRequest(() =>
-    ConfigurationService.GetLoginTips().then((res) => {
+    DmsApi.ConfigurationService.GetLoginTips().then((res) => {
       if (res.data.code === ResponseCode.SUCCESS) {
         setLoginButtonText(res.data.data?.login_button_text);
         setIsPasswordLoginDisabled(!!res.data.data?.disable_user_pwd_login);
