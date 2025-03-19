@@ -2,7 +2,6 @@ import { createContext } from 'react';
 import { ActiontechTableProps } from '../index.type';
 
 type ActiontechTableContextType = {
-  loading: boolean;
   setting?: ActiontechTableProps['setting'];
 };
 

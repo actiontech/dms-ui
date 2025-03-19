@@ -5,7 +5,9 @@ import {
   useTableFilterContainer,
   useTableRequestError,
   useTableRequestParams,
-  ActiontechTableContextProvide
+  ActiontechTableWrapper,
+  TableFilterContainer,
+  TableToolbar
 } from '@actiontech/shared/lib/components/ActiontechTable';
 import { SqlExecWorkflowListStyleWrapper } from './style';
 import {
@@ -249,16 +251,39 @@ const SqlExecWorkflowList: React.FC = () => {
           </Space>
         }
       />
-      <ActiontechTableContextProvide
-        value={{
-          loading,
-          setting: tableSetting
-        }}
-      >
-        <ActiontechTable<
-          WorkflowDetailResV1WithExtraParams,
-          SqlExecWorkflowListTableFilterParam
+      <ActiontechTableWrapper loading={loading} setting={tableSetting}>
+        <TableToolbar
+          refreshButton={{ refresh, disabled: loading }}
+          actions={toolbarActions}
+          filterButton={{
+            filterButtonMeta,
+            updateAllSelectedFilterItem
+          }}
+          searchInput={{
+            onChange: setSearchKeyword,
+            onSearch: () => {
+              refreshBySearchKeyword();
+            }
+          }}
         >
+          <CustomSegmentedFilter
+            value={filterStatus}
+            onChange={setFilterStatus}
+            labelDictionary={translateDictionaryI18nLabel(
+              execWorkflowStatusDictionary
+            )}
+            options={Object.keys(getWorkflowsV1FilterStatusEnum)}
+            withAll
+          />
+        </TableToolbar>
+
+        <TableFilterContainer
+          filterContainerMeta={filterContainerMeta}
+          updateTableFilterInfo={updateTableFilterInfo}
+          disabled={loading}
+          filterCustomProps={filterCustomProps}
+        />
+        <ActiontechTable
           className="table-row-cursor"
           dataSource={workflowList?.list}
           rowKey={(record: IWorkflowDetailResV1) => {
@@ -287,40 +312,8 @@ const SqlExecWorkflowList: React.FC = () => {
               }
             };
           }}
-          toolbar={{
-            refreshButton: { refresh, disabled: loading },
-            setting: tableSetting,
-            actions: toolbarActions,
-            filterButton: {
-              filterButtonMeta,
-              updateAllSelectedFilterItem
-            },
-            searchInput: {
-              onChange: setSearchKeyword,
-              onSearch: () => {
-                refreshBySearchKeyword();
-              }
-            },
-            children: (
-              <CustomSegmentedFilter
-                value={filterStatus}
-                onChange={setFilterStatus}
-                labelDictionary={translateDictionaryI18nLabel(
-                  execWorkflowStatusDictionary
-                )}
-                options={Object.keys(getWorkflowsV1FilterStatusEnum)}
-                withAll
-              />
-            )
-          }}
-          filterContainerProps={{
-            filterContainerMeta,
-            updateTableFilterInfo,
-            disabled: loading,
-            filterCustomProps
-          }}
         />
-      </ActiontechTableContextProvide>
+      </ActiontechTableWrapper>
     </SqlExecWorkflowListStyleWrapper>
   );
 };

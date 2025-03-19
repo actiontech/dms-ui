@@ -9,6 +9,7 @@ export { default as TableFilterContainer } from './components/FilterContainer';
 export { default as TableRefreshButton } from './components/RefreshButton';
 export { default as TableToolbar } from './components/Toolbar';
 export { default as SearchInput } from './components/SearchInput';
+export { default as ActiontechTableWrapper } from './components/TableWrapper';
 
 //hooks
 export { default as useTableFilterContainer } from './hooks/useTableFilterContainer';
