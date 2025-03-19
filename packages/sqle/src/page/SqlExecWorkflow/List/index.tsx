@@ -48,6 +48,7 @@ import {
 } from './action';
 import useSQLVersionTips from '../../../hooks/useSQLVersionTips';
 import { ROUTE_PATHS } from '@actiontech/shared/lib/data/routePaths';
+import { WorkflowDetailResV1WithExtraParams } from './index.type';
 
 const SqlExecWorkflowList: React.FC = () => {
   const { t } = useTranslation();
@@ -114,37 +115,33 @@ const SqlExecWorkflowList: React.FC = () => {
     useTableFilterContainer(columns, updateTableFilterInfo, ExtraFilterMeta());
 
   const filterCustomProps = useMemo(() => {
-    return new Map<
-      keyof (IWorkflowDetailResV1 & {
-        instance_name?: string;
-        execute_time?: string;
-      }),
-      FilterCustomProps
-    >([
-      ['create_user_name', { options: usernameOptions }],
-      ['current_step_assignee_user_name_list', { options: usernameOptions }],
+    return new Map<keyof WorkflowDetailResV1WithExtraParams, FilterCustomProps>(
       [
-        'instance_name',
-        {
-          options: instanceIDOptions
-        }
-      ],
-      [
-        'create_time',
-        {
-          showTime: true
-        }
-      ],
-      [
-        'execute_time',
-        {
-          showTime: true
-        }
-      ],
-      // #if [ee]
-      ['sql_version_name', { options: sqlVersionOptions }]
-      // #endif
-    ]);
+        ['create_user_name', { options: usernameOptions }],
+        ['current_step_assignee_user_name_list', { options: usernameOptions }],
+        [
+          'instance_name',
+          {
+            options: instanceIDOptions
+          }
+        ],
+        [
+          'create_time',
+          {
+            showTime: true
+          }
+        ],
+        [
+          'execute_time',
+          {
+            showTime: true
+          }
+        ],
+        // #if [ee]
+        ['sql_version_name', { options: sqlVersionOptions }]
+        // #endif
+      ]
+    );
   }, [instanceIDOptions, usernameOptions, sqlVersionOptions]);
 
   const { requestErrorMessage, handleTableRequestError } =
@@ -255,43 +252,14 @@ const SqlExecWorkflowList: React.FC = () => {
       <ActiontechTableContextProvide
         value={{
           loading,
-          toolbar: {
-            refreshButton: { refresh, disabled: loading },
-            setting: tableSetting,
-            actions: toolbarActions,
-            filterButton: {
-              filterButtonMeta,
-              updateAllSelectedFilterItem
-            },
-            searchInput: {
-              onChange: setSearchKeyword,
-              onSearch: () => {
-                refreshBySearchKeyword();
-              }
-            },
-            children: (
-              <CustomSegmentedFilter
-                value={filterStatus}
-                onChange={setFilterStatus}
-                labelDictionary={translateDictionaryI18nLabel(
-                  execWorkflowStatusDictionary
-                )}
-                options={Object.keys(getWorkflowsV1FilterStatusEnum)}
-                withAll
-              />
-            )
-          },
-          filterContainerProps: {
-            filterContainerMeta,
-            updateTableFilterInfo,
-            disabled: loading,
-            filterCustomProps
-          }
+          setting: tableSetting
         }}
       >
-        <ActiontechTable
+        <ActiontechTable<
+          WorkflowDetailResV1WithExtraParams,
+          SqlExecWorkflowListTableFilterParam
+        >
           className="table-row-cursor"
-          setting={tableSetting}
           dataSource={workflowList?.list}
           rowKey={(record: IWorkflowDetailResV1) => {
             return `${record?.workflow_id}`;
@@ -318,6 +286,38 @@ const SqlExecWorkflowList: React.FC = () => {
                 });
               }
             };
+          }}
+          toolbar={{
+            refreshButton: { refresh, disabled: loading },
+            setting: tableSetting,
+            actions: toolbarActions,
+            filterButton: {
+              filterButtonMeta,
+              updateAllSelectedFilterItem
+            },
+            searchInput: {
+              onChange: setSearchKeyword,
+              onSearch: () => {
+                refreshBySearchKeyword();
+              }
+            },
+            children: (
+              <CustomSegmentedFilter
+                value={filterStatus}
+                onChange={setFilterStatus}
+                labelDictionary={translateDictionaryI18nLabel(
+                  execWorkflowStatusDictionary
+                )}
+                options={Object.keys(getWorkflowsV1FilterStatusEnum)}
+                withAll
+              />
+            )
+          }}
+          filterContainerProps={{
+            filterContainerMeta,
+            updateTableFilterInfo,
+            disabled: loading,
+            filterCustomProps
           }}
         />
       </ActiontechTableContextProvide>

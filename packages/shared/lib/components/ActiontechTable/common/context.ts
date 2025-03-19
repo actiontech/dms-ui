@@ -3,8 +3,7 @@ import { ActiontechTableProps } from '../index.type';
 
 type ActiontechTableContextType = {
   loading: boolean;
-  toolbar?: ActiontechTableProps['toolbar'];
-  filterContainerProps?: ActiontechTableProps['filterContainerProps'];
+  setting?: ActiontechTableProps['setting'];
 };
 
 const ActiontechTableContext = createContext<ActiontechTableContextType | null>(

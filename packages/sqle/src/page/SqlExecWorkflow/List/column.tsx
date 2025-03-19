@@ -13,7 +13,10 @@ import { TableColumnWithIconStyleWrapper } from '@actiontech/shared/lib/styleWra
 import { formatTime } from '@actiontech/shared/lib/utils/Common';
 import { t } from '../../../locale';
 import WorkflowStatus from './components/WorkflowStatus';
-import { SqlExecWorkflowListTableFilterParam } from './index.type';
+import {
+  SqlExecWorkflowListTableFilterParam,
+  WorkflowDetailResV1WithExtraParams
+} from './index.type';
 import { WorkflowNameStyleWrapper } from './style';
 import { BriefcaseFilled } from '@actiontech/icons';
 import { Space } from 'antd';
@@ -21,17 +24,11 @@ import { parse2ReactRouterPath } from '@actiontech/shared/lib/components/TypedRo
 import { ROUTE_PATHS } from '@actiontech/shared/lib/data/routePaths';
 
 export const ExtraFilterMeta: () => ActiontechTableFilterMeta<
-  IWorkflowDetailResV1 & {
-    instance_name?: string;
-    execute_time?: string;
-  },
+  WorkflowDetailResV1WithExtraParams,
   SqlExecWorkflowListTableFilterParam
 > = () => {
   return new Map<
-    keyof (IWorkflowDetailResV1 & {
-      instance_name?: string;
-      execute_time?: string;
-    }),
+    keyof WorkflowDetailResV1WithExtraParams,
     ActiontechTableFilterMetaValue<SqlExecWorkflowListTableFilterParam>
   >([
     [
