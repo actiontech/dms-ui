@@ -1,7 +1,7 @@
 import { useState, useCallback } from 'react';
 import { SelectProps } from 'antd';
 import { useBoolean, useRequest } from 'ahooks';
-import { ConfigurationSQLEService } from '@actiontech/shared/lib/api';
+import { SqleApi } from '@actiontech/shared/lib/api';
 import { ResponseCode } from '@actiontech/shared/lib/enum';
 import { SQLStatementFormProps } from '../../SQLInfoForm/index.type';
 
@@ -21,7 +21,7 @@ const useRespConnection = (form: SQLStatementFormProps['form']) => {
 
   const { run, loading: verifyConnectionLoading } = useRequest(
     () => {
-      return ConfigurationSQLEService.TestGitConnectionV1({
+      return SqleApi.ConfigurationService.TestGitConnectionV1({
         git_http_url: form.getFieldValue('gitHttpUrl'),
         git_user_name: form.getFieldValue('gitUserName'),
         git_user_password: form.getFieldValue('gitUserPassword')

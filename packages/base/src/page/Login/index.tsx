@@ -19,7 +19,7 @@ import {
 } from '@actiontech/shared/lib/data/routePaths';
 import LoginForm from './components/LoginForm';
 import VerificationCodeForm from './components/VerificationCodeForm';
-import { UserService, SessionService } from '@actiontech/shared/lib/api';
+import { DmsApi } from '@actiontech/shared/lib/api';
 import { useState } from 'react';
 
 const Login = () => {
@@ -57,7 +57,7 @@ const Login = () => {
   const addSession = () => {
     const loginFormValues = loginForm.getFieldsValue();
     const verificationCodeFormValues = verificationCodeForm.getFieldsValue();
-    SessionService.AddSession({
+    DmsApi.SessionService.AddSession({
       session: {
         username: loginFormValues.username,
         password: loginFormValues.password,
@@ -116,7 +116,7 @@ const Login = () => {
     // #endif
     setTrue();
     // #if [ee]
-    UserService.VerifyUserLogin({
+    DmsApi.UserService.VerifyUserLogin({
       session: {
         username: formData.username,
         password: formData.password
