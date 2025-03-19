@@ -19,23 +19,16 @@ const ActiontechTable = <
   errorMessage,
   columns = [],
   isPaginationFixed = true,
-  ...restprops
+  toolbar,
+  filterContainerProps,
+  ...props
 }: ActiontechTableProps<T, F, OtherColumnKeys>) => {
-  const {
-    toolbar: toolbarProps,
-    filterContainerProps: fcProps,
-    ...props
-  } = restprops;
-
   const { t } = useTranslation();
 
   const tableContextValue = useContext(ActiontechTableContext);
 
-  const toolbar = toolbarProps ?? tableContextValue?.toolbar;
-  const filterContainerProps =
-    fcProps ?? tableContextValue?.filterContainerProps;
-
-  const setting = props.setting ?? (toolbar && toolbar.setting);
+  const setting =
+    props.setting ?? (toolbar ? toolbar.setting : tableContextValue?.setting);
   const { tableName = '', username = '' } = setting || {};
 
   const { renderActionInTable } = useTableAction();
