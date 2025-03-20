@@ -251,6 +251,9 @@ export const PopoverInnerStyleWrapper = styled('div')`
     font-style: normal;
     font-weight: 500;
     line-height: 20px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
   }
 
   .content {

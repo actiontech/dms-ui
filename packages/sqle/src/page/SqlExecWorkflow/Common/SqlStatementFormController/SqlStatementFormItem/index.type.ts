@@ -9,4 +9,5 @@ export type SqlStatementFormItemProps = {
   isSameSqlForAll: boolean;
   isSupportFileModeExecuteSql: boolean;
   isAtRejectStep?: boolean;
+  setActiveKey?: (key: string) => void;
 } & Pick<SqlAuditInfoFormProps, 'isAuditing' | 'auditAction' | 'isAtFormStep'>;
