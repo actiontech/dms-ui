@@ -1,6 +1,7 @@
 import { renderWithTheme } from '../../../../testUtil/customRender';
 import { TableToolbarProps } from '../../index.type';
 import ToolBar from '../Toolbar';
+import { ActiontechTableContextProvide } from '../../context';
 
 describe('lib/ActiontechTable-ToolBar', () => {
   const customRender = (params: TableToolbarProps) => {
@@ -41,5 +42,16 @@ describe('lib/ActiontechTable-ToolBar', () => {
       children: <>我是插入的信息</>
     });
     expect(baseElement).toMatchSnapshot();
+  });
+
+  it('render table with context', () => {
+    const { getByText } = renderWithTheme(
+      <ActiontechTableContextProvide
+        value={{ setting: { tableName: 'test_list', username: 'admin' } }}
+      >
+        <ToolBar />
+      </ActiontechTableContextProvide>
+    );
+    expect(getByText('表格设置')).toBeInTheDocument();
   });
 });

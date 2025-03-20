@@ -14,7 +14,7 @@ import classNames from 'classnames';
 import system from '@actiontech/shared/lib/api/sqle/service/system';
 import { useRequest } from 'ahooks';
 import { ResponseCode } from '@actiontech/shared/lib/enum';
-import { Spin, Space } from 'antd';
+import { Space } from 'antd';
 import { ModuleRedDotModuleNameEnum } from '@actiontech/shared/lib/api/sqle/service/common.enum';
 import {
   PERMISSIONS,
@@ -22,6 +22,7 @@ import {
   usePermission
 } from '@actiontech/shared/lib/features';
 import { ROUTE_PATHS } from '@actiontech/shared/lib/data/routePaths';
+import { IModuleRedDots } from '@actiontech/shared/lib/api/sqle/service/common';
 
 type QuickActionItemType = {
   key: string;
@@ -32,7 +33,14 @@ type QuickActionItemType = {
   dot?: boolean;
 };
 
-const QuickActions = () => {
+type QuickActionsProps = {
+  systemModuleRedDots?: IModuleRedDots;
+  setSystemModuleRedDotsLoading: (loading: boolean) => void;
+};
+
+const QuickActions: React.FC<QuickActionsProps> = ({
+  setSystemModuleRedDotsLoading
+}) => {
   const { t } = useTranslation();
 
   const navigate = useTypedNavigate();
@@ -41,12 +49,22 @@ const QuickActions = () => {
 
   const { checkPagePermission } = usePermission();
 
-  const { data, loading } = useRequest(() =>
-    system.GetSystemModuleRedDots().then((res) => {
-      if (res.data.code === ResponseCode.SUCCESS) {
-        return res.data.data;
+  const { data } = useRequest(
+    () =>
+      system.GetSystemModuleRedDots().then((res) => {
+        if (res.data.code === ResponseCode.SUCCESS) {
+          return res.data.data;
+        }
+      }),
+    {
+      onBefore: () => {
+        // 父级只负责loading状态管理 api调用还是在组件内部 如果在父级调用需要多个条件编译
+        setSystemModuleRedDotsLoading(true);
+      },
+      onFinally: () => {
+        setSystemModuleRedDotsLoading(false);
       }
-    })
+    }
   );
 
   const actionItems: Array<QuickActionItemType> = useMemo(() => {
@@ -96,29 +114,27 @@ const QuickActions = () => {
 
   return (
     <QuickActionsStyleWrapper>
-      <Spin spinning={loading}>
-        <Space className="action-space-wrapper">
-          {actionItems.map((action) => {
-            return (
-              <BasicToolTip key={action.key} title={action.title}>
-                <div
-                  className={classNames(`action-item ${action.key}`, {
-                    'action-item-active': location.pathname.startsWith(
-                      action.path
-                    )
-                  })}
-                  onClick={() => navigate(action.path)}
-                >
-                  {action.icon}
-                  <EmptyBox if={action.dot}>
-                    <RingOutlined className="action-item-dot" />
-                  </EmptyBox>
-                </div>
-              </BasicToolTip>
-            );
-          })}
-        </Space>
-      </Spin>
+      <Space className="action-space-wrapper">
+        {actionItems.map((action) => {
+          return (
+            <BasicToolTip key={action.key} title={action.title}>
+              <div
+                className={classNames(`action-item ${action.key}`, {
+                  'action-item-active': location.pathname.startsWith(
+                    action.path
+                  )
+                })}
+                onClick={() => navigate(action.path)}
+              >
+                {action.icon}
+                <EmptyBox if={action.dot}>
+                  <RingOutlined className="action-item-dot" />
+                </EmptyBox>
+              </div>
+            </BasicToolTip>
+          );
+        })}
+      </Space>
     </QuickActionsStyleWrapper>
   );
 };

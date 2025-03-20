@@ -29,7 +29,8 @@ import {
   TableToolbar,
   FilterCustomProps,
   ColumnsSettingProps,
-  useTableRequestParams
+  useTableRequestParams,
+  ActiontechTableWrapper
 } from '@actiontech/shared/lib/components/ActiontechTable';
 import { ResponseCode } from '../../../data/common';
 import AddWhitelistModal from '../../Whitelist/Drawer/AddWhitelist';
@@ -172,10 +173,9 @@ const PluginAuditList = () => {
 
   return (
     <EmptyBox if={!showEmptyPrompt || loading} defaultNode={<DefaultPrompts />}>
-      <>
+      <ActiontechTableWrapper loading={loading} setting={tableSetting}>
         <TableToolbar
           refreshButton={{ refresh, disabled: loading }}
-          setting={tableSetting}
           filterButton={{
             filterButtonMeta,
             updateAllSelectedFilterItem
@@ -186,7 +186,6 @@ const PluginAuditList = () => {
               refreshBySearchKeyword();
             }
           }}
-          loading={loading}
         />
         <TableFilterContainer
           filterContainerMeta={filterContainerMeta}
@@ -196,7 +195,6 @@ const PluginAuditList = () => {
         />
         <ActiontechTable
           className="table-row-cursor"
-          setting={tableSetting}
           dataSource={data?.list}
           rowKey={(record: ISqlDEVRecord) => {
             return `${record?.id}`;
@@ -205,7 +203,6 @@ const PluginAuditList = () => {
             total: data?.total ?? 0,
             current: pagination.page_index
           }}
-          loading={loading}
           columns={columns}
           errorMessage={requestErrorMessage}
           onChange={tableChange}
@@ -214,7 +211,7 @@ const PluginAuditList = () => {
         />
         <AuditResultDrawer />
         <AddWhitelistModal onCreated={refresh} />
-      </>
+      </ActiontechTableWrapper>
     </EmptyBox>
   );
 };
