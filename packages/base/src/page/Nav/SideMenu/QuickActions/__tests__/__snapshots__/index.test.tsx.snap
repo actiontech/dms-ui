@@ -7,175 +7,143 @@ exports[`base/Nav/QuickActions render navigate event 1`] = `
       class="css-22avtw"
     >
       <div
-        class="ant-spin-nested-loading css-dev-only-do-not-override-txh9fw"
+        class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center action-space-wrapper"
       >
-        <div>
+        <div
+          class="ant-space-item"
+          style="margin-right: 8px;"
+        >
           <div
-            aria-busy="true"
-            aria-live="polite"
-            class="ant-spin ant-spin-spinning css-dev-only-do-not-override-txh9fw"
+            class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
           >
-            <span
-              class="ant-spin-dot ant-spin-dot-spin"
+            <div
+              class="ant-space-item"
             >
-              <i
-                class="ant-spin-dot-item"
-              />
-              <i
-                class="ant-spin-dot-item"
-              />
-              <i
-                class="ant-spin-dot-item"
-              />
-              <i
-                class="ant-spin-dot-item"
-              />
-            </span>
+              <div
+                class="action-item global-dashboard action-item-active"
+              >
+                <svg
+                  class="TodoListOutlined_svg__icon"
+                  color="currentColor"
+                  height="18"
+                  viewBox="0 0 1024 1024"
+                  width="18"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M924 540c-19.9 0-36 16.1-36 36v312H136V136h568c19.9 0 36-16.1 36-36s-16.1-36-36-36H136c-39.8 0-72 32.2-72 72v752c0 39.8 32.2 72 72 72h752c39.8 0 72-32.2 72-72V576c0-19.9-16.1-36-36-36"
+                    fill="currentColor"
+                  />
+                  <path
+                    d="M316.5 478.5c-14.1-14.1-36.9-14.1-50.9 0-14.1 14.1-14.1 36.9 0 50.9l178.2 178.2c5.7 5.7 12.8 9.1 20.1 10.2 11.2 1.9 23.1-1.4 31.7-10l454.2-454.2c14.1-14.1 14.1-36.9 0-50.9-14.1-14.1-36.9-14.1-50.9 0l-429.2 429z"
+                    fill="currentColor"
+                  />
+                </svg>
+              </div>
+            </div>
           </div>
         </div>
         <div
-          class="ant-spin-container ant-spin-blur"
+          class="ant-space-item"
+          style="margin-right: 8px;"
         >
           <div
-            class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center action-space-wrapper"
+            class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
           >
             <div
               class="ant-space-item"
-              style="margin-right: 8px;"
             >
               <div
-                class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
+                class="action-item report-statistics"
               >
-                <div
-                  class="ant-space-item"
+                <svg
+                  color="currentColor"
+                  height="18"
+                  viewBox="0 0 16 16"
+                  width="18"
+                  xmlns="http://www.w3.org/2000/svg"
                 >
-                  <div
-                    class="action-item global-dashboard action-item-active"
-                  >
-                    <svg
-                      class="TodoListOutlined_svg__icon"
-                      color="currentColor"
-                      height="18"
-                      viewBox="0 0 1024 1024"
-                      width="18"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        d="M924 540c-19.9 0-36 16.1-36 36v312H136V136h568c19.9 0 36-16.1 36-36s-16.1-36-36-36H136c-39.8 0-72 32.2-72 72v752c0 39.8 32.2 72 72 72h752c39.8 0 72-32.2 72-72V576c0-19.9-16.1-36-36-36"
-                        fill="currentColor"
-                      />
-                      <path
-                        d="M316.5 478.5c-14.1-14.1-36.9-14.1-50.9 0-14.1 14.1-14.1 36.9 0 50.9l178.2 178.2c5.7 5.7 12.8 9.1 20.1 10.2 11.2 1.9 23.1-1.4 31.7-10l454.2-454.2c14.1-14.1 14.1-36.9 0-50.9-14.1-14.1-36.9-14.1-50.9 0l-429.2 429z"
-                        fill="currentColor"
-                      />
-                    </svg>
-                  </div>
-                </div>
+                  <path
+                    d="M2 8h2.667v6H2zm9.333-2.667H14V14h-2.667zm-4.666-4h2.666V14H6.667z"
+                    fill="currentColor"
+                  />
+                </svg>
               </div>
             </div>
-            <div
-              class="ant-space-item"
-              style="margin-right: 8px;"
-            >
-              <div
-                class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
-              >
-                <div
-                  class="ant-space-item"
-                >
-                  <div
-                    class="action-item report-statistics"
-                  >
-                    <svg
-                      color="currentColor"
-                      height="18"
-                      viewBox="0 0 16 16"
-                      width="18"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        d="M2 8h2.667v6H2zm9.333-2.667H14V14h-2.667zm-4.666-4h2.666V14H6.667z"
-                        fill="currentColor"
-                      />
-                    </svg>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div
-              class="ant-space-item"
-              style="margin-right: 8px;"
-            >
-              <div
-                class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
-              >
-                <div
-                  class="ant-space-item"
-                >
-                  <div
-                    class="action-item view-rule"
-                  >
-                    <svg
-                      color="currentColor"
-                      height="18"
-                      viewBox="0 0 18 19"
-                      width="18"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        d="M15 17H3a.75.75 0 0 1-.75-.75V2.75A.75.75 0 0 1 3 2h12a.75.75 0 0 1 .75.75v13.5A.75.75 0 0 1 15 17M6 5.75v1.5h6v-1.5zm0 3v1.5h6v-1.5zm0 3v1.5h3.75v-1.5z"
-                        fill="currentColor"
-                      />
-                    </svg>
-                  </div>
-                </div>
-              </div>
-            </div>
+          </div>
+        </div>
+        <div
+          class="ant-space-item"
+          style="margin-right: 8px;"
+        >
+          <div
+            class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
+          >
             <div
               class="ant-space-item"
             >
               <div
-                class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
+                class="action-item view-rule"
               >
-                <div
-                  class="ant-space-item"
+                <svg
+                  color="currentColor"
+                  height="18"
+                  viewBox="0 0 18 19"
+                  width="18"
+                  xmlns="http://www.w3.org/2000/svg"
                 >
-                  <div
-                    class="action-item knowledge"
-                  >
-                    <svg
-                      color="currentColor"
-                      height="18"
-                      viewBox="0 0 160 140"
-                      width="18"
-                      xmlns="http://www.w3.org/2000/svg"
+                  <path
+                    d="M15 17H3a.75.75 0 0 1-.75-.75V2.75A.75.75 0 0 1 3 2h12a.75.75 0 0 1 .75.75v13.5A.75.75 0 0 1 15 17M6 5.75v1.5h6v-1.5zm0 3v1.5h6v-1.5zm0 3v1.5h3.75v-1.5z"
+                    fill="currentColor"
+                  />
+                </svg>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="ant-space-item"
+        >
+          <div
+            class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
+          >
+            <div
+              class="ant-space-item"
+            >
+              <div
+                class="action-item knowledge"
+              >
+                <svg
+                  color="currentColor"
+                  height="18"
+                  viewBox="0 0 160 140"
+                  width="18"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M20 103.333v-90c0-11.045 8.954-20 20-20h93.333A6.667 6.667 0 0 1 140 0v120a6.667 6.667 0 0 1-6.667 6.667h-90C30.447 126.667 20 116.22 20 103.333m106.667 10v-20H43.333c-5.523 0-10 4.478-10 10s4.477 10 10 10zm-60-106.666H40a6.667 6.667 0 0 0-6.667 6.666v68.912a23.24 23.24 0 0 1 10-2.245h83.334V6.667h-13.334V60L90 46.667 66.667 60z"
+                    fill="url(#BookMarkOutlined_svg__a)"
+                  />
+                  <defs>
+                    <lineargradient
+                      gradientUnits="userSpaceOnUse"
+                      id="BookMarkOutlined_svg__a"
+                      x1="80"
+                      x2="80"
+                      y1="-6.667"
+                      y2="126.667"
                     >
-                      <path
-                        d="M20 103.333v-90c0-11.045 8.954-20 20-20h93.333A6.667 6.667 0 0 1 140 0v120a6.667 6.667 0 0 1-6.667 6.667h-90C30.447 126.667 20 116.22 20 103.333m106.667 10v-20H43.333c-5.523 0-10 4.478-10 10s4.477 10 10 10zm-60-106.666H40a6.667 6.667 0 0 0-6.667 6.666v68.912a23.24 23.24 0 0 1 10-2.245h83.334V6.667h-13.334V60L90 46.667 66.667 60z"
-                        fill="url(#BookMarkOutlined_svg__a)"
+                      <stop
+                        stop-color="currentColor"
+                        stop-opacity="0.4"
                       />
-                      <defs>
-                        <lineargradient
-                          gradientUnits="userSpaceOnUse"
-                          id="BookMarkOutlined_svg__a"
-                          x1="80"
-                          x2="80"
-                          y1="-6.667"
-                          y2="126.667"
-                        >
-                          <stop
-                            stop-color="currentColor"
-                            stop-opacity="0.4"
-                          />
-                          <stop
-                            offset="1"
-                            stop-color="currentColor"
-                          />
-                        </lineargradient>
-                      </defs>
-                    </svg>
-                  </div>
-                </div>
+                      <stop
+                        offset="1"
+                        stop-color="currentColor"
+                      />
+                    </lineargradient>
+                  </defs>
+                </svg>
               </div>
             </div>
           </div>
@@ -193,174 +161,166 @@ exports[`base/Nav/QuickActions render quick action when current user is admin 1`
       class="css-22avtw"
     >
       <div
-        class="ant-spin-nested-loading css-dev-only-do-not-override-txh9fw"
+        class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center action-space-wrapper"
       >
         <div
-          class="ant-spin-container"
+          class="ant-space-item"
+          style="margin-right: 8px;"
         >
           <div
-            class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center action-space-wrapper"
+            class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
           >
             <div
               class="ant-space-item"
-              style="margin-right: 8px;"
             >
               <div
-                class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
+                class="action-item global-dashboard action-item-active"
               >
-                <div
-                  class="ant-space-item"
+                <svg
+                  class="TodoListOutlined_svg__icon"
+                  color="currentColor"
+                  height="18"
+                  viewBox="0 0 1024 1024"
+                  width="18"
+                  xmlns="http://www.w3.org/2000/svg"
                 >
-                  <div
-                    class="action-item global-dashboard action-item-active"
-                  >
-                    <svg
-                      class="TodoListOutlined_svg__icon"
-                      color="currentColor"
-                      height="18"
-                      viewBox="0 0 1024 1024"
-                      width="18"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        d="M924 540c-19.9 0-36 16.1-36 36v312H136V136h568c19.9 0 36-16.1 36-36s-16.1-36-36-36H136c-39.8 0-72 32.2-72 72v752c0 39.8 32.2 72 72 72h752c39.8 0 72-32.2 72-72V576c0-19.9-16.1-36-36-36"
-                        fill="currentColor"
-                      />
-                      <path
-                        d="M316.5 478.5c-14.1-14.1-36.9-14.1-50.9 0-14.1 14.1-14.1 36.9 0 50.9l178.2 178.2c5.7 5.7 12.8 9.1 20.1 10.2 11.2 1.9 23.1-1.4 31.7-10l454.2-454.2c14.1-14.1 14.1-36.9 0-50.9-14.1-14.1-36.9-14.1-50.9 0l-429.2 429z"
-                        fill="currentColor"
-                      />
-                    </svg>
-                    <svg
-                      class="action-item-dot"
-                      fill="none"
-                      height="16"
-                      viewBox="0 0 14 12"
-                      width="16"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <circle
-                        cx="6"
-                        cy="6"
-                        fill="#F66074"
-                        r="2.5"
-                      />
-                      <circle
-                        cx="6"
-                        cy="6"
-                        r="4"
-                        stroke="#F66074"
-                        stroke-opacity="0.2"
-                        stroke-width="3"
-                      />
-                    </svg>
-                  </div>
-                </div>
+                  <path
+                    d="M924 540c-19.9 0-36 16.1-36 36v312H136V136h568c19.9 0 36-16.1 36-36s-16.1-36-36-36H136c-39.8 0-72 32.2-72 72v752c0 39.8 32.2 72 72 72h752c39.8 0 72-32.2 72-72V576c0-19.9-16.1-36-36-36"
+                    fill="currentColor"
+                  />
+                  <path
+                    d="M316.5 478.5c-14.1-14.1-36.9-14.1-50.9 0-14.1 14.1-14.1 36.9 0 50.9l178.2 178.2c5.7 5.7 12.8 9.1 20.1 10.2 11.2 1.9 23.1-1.4 31.7-10l454.2-454.2c14.1-14.1 14.1-36.9 0-50.9-14.1-14.1-36.9-14.1-50.9 0l-429.2 429z"
+                    fill="currentColor"
+                  />
+                </svg>
+                <svg
+                  class="action-item-dot"
+                  fill="none"
+                  height="16"
+                  viewBox="0 0 14 12"
+                  width="16"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <circle
+                    cx="6"
+                    cy="6"
+                    fill="#F66074"
+                    r="2.5"
+                  />
+                  <circle
+                    cx="6"
+                    cy="6"
+                    r="4"
+                    stroke="#F66074"
+                    stroke-opacity="0.2"
+                    stroke-width="3"
+                  />
+                </svg>
               </div>
             </div>
-            <div
-              class="ant-space-item"
-              style="margin-right: 8px;"
-            >
-              <div
-                class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
-              >
-                <div
-                  class="ant-space-item"
-                >
-                  <div
-                    class="action-item report-statistics"
-                  >
-                    <svg
-                      color="currentColor"
-                      height="18"
-                      viewBox="0 0 16 16"
-                      width="18"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        d="M2 8h2.667v6H2zm9.333-2.667H14V14h-2.667zm-4.666-4h2.666V14H6.667z"
-                        fill="currentColor"
-                      />
-                    </svg>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div
-              class="ant-space-item"
-              style="margin-right: 8px;"
-            >
-              <div
-                class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
-              >
-                <div
-                  class="ant-space-item"
-                >
-                  <div
-                    class="action-item view-rule"
-                  >
-                    <svg
-                      color="currentColor"
-                      height="18"
-                      viewBox="0 0 18 19"
-                      width="18"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        d="M15 17H3a.75.75 0 0 1-.75-.75V2.75A.75.75 0 0 1 3 2h12a.75.75 0 0 1 .75.75v13.5A.75.75 0 0 1 15 17M6 5.75v1.5h6v-1.5zm0 3v1.5h6v-1.5zm0 3v1.5h3.75v-1.5z"
-                        fill="currentColor"
-                      />
-                    </svg>
-                  </div>
-                </div>
-              </div>
-            </div>
+          </div>
+        </div>
+        <div
+          class="ant-space-item"
+          style="margin-right: 8px;"
+        >
+          <div
+            class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
+          >
             <div
               class="ant-space-item"
             >
               <div
-                class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
+                class="action-item report-statistics"
               >
-                <div
-                  class="ant-space-item"
+                <svg
+                  color="currentColor"
+                  height="18"
+                  viewBox="0 0 16 16"
+                  width="18"
+                  xmlns="http://www.w3.org/2000/svg"
                 >
-                  <div
-                    class="action-item knowledge"
-                  >
-                    <svg
-                      color="currentColor"
-                      height="18"
-                      viewBox="0 0 160 140"
-                      width="18"
-                      xmlns="http://www.w3.org/2000/svg"
+                  <path
+                    d="M2 8h2.667v6H2zm9.333-2.667H14V14h-2.667zm-4.666-4h2.666V14H6.667z"
+                    fill="currentColor"
+                  />
+                </svg>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="ant-space-item"
+          style="margin-right: 8px;"
+        >
+          <div
+            class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
+          >
+            <div
+              class="ant-space-item"
+            >
+              <div
+                class="action-item view-rule"
+              >
+                <svg
+                  color="currentColor"
+                  height="18"
+                  viewBox="0 0 18 19"
+                  width="18"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M15 17H3a.75.75 0 0 1-.75-.75V2.75A.75.75 0 0 1 3 2h12a.75.75 0 0 1 .75.75v13.5A.75.75 0 0 1 15 17M6 5.75v1.5h6v-1.5zm0 3v1.5h6v-1.5zm0 3v1.5h3.75v-1.5z"
+                    fill="currentColor"
+                  />
+                </svg>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="ant-space-item"
+        >
+          <div
+            class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
+          >
+            <div
+              class="ant-space-item"
+            >
+              <div
+                class="action-item knowledge"
+              >
+                <svg
+                  color="currentColor"
+                  height="18"
+                  viewBox="0 0 160 140"
+                  width="18"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M20 103.333v-90c0-11.045 8.954-20 20-20h93.333A6.667 6.667 0 0 1 140 0v120a6.667 6.667 0 0 1-6.667 6.667h-90C30.447 126.667 20 116.22 20 103.333m106.667 10v-20H43.333c-5.523 0-10 4.478-10 10s4.477 10 10 10zm-60-106.666H40a6.667 6.667 0 0 0-6.667 6.666v68.912a23.24 23.24 0 0 1 10-2.245h83.334V6.667h-13.334V60L90 46.667 66.667 60z"
+                    fill="url(#BookMarkOutlined_svg__a)"
+                  />
+                  <defs>
+                    <lineargradient
+                      gradientUnits="userSpaceOnUse"
+                      id="BookMarkOutlined_svg__a"
+                      x1="80"
+                      x2="80"
+                      y1="-6.667"
+                      y2="126.667"
                     >
-                      <path
-                        d="M20 103.333v-90c0-11.045 8.954-20 20-20h93.333A6.667 6.667 0 0 1 140 0v120a6.667 6.667 0 0 1-6.667 6.667h-90C30.447 126.667 20 116.22 20 103.333m106.667 10v-20H43.333c-5.523 0-10 4.478-10 10s4.477 10 10 10zm-60-106.666H40a6.667 6.667 0 0 0-6.667 6.666v68.912a23.24 23.24 0 0 1 10-2.245h83.334V6.667h-13.334V60L90 46.667 66.667 60z"
-                        fill="url(#BookMarkOutlined_svg__a)"
+                      <stop
+                        stop-color="currentColor"
+                        stop-opacity="0.4"
                       />
-                      <defs>
-                        <lineargradient
-                          gradientUnits="userSpaceOnUse"
-                          id="BookMarkOutlined_svg__a"
-                          x1="80"
-                          x2="80"
-                          y1="-6.667"
-                          y2="126.667"
-                        >
-                          <stop
-                            stop-color="currentColor"
-                            stop-opacity="0.4"
-                          />
-                          <stop
-                            offset="1"
-                            stop-color="currentColor"
-                          />
-                        </lineargradient>
-                      </defs>
-                    </svg>
-                  </div>
-                </div>
+                      <stop
+                        offset="1"
+                        stop-color="currentColor"
+                      />
+                    </lineargradient>
+                  </defs>
+                </svg>
               </div>
             </div>
           </div>

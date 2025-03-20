@@ -32,6 +32,7 @@ describe('base/Nav/QuickActions', () => {
   const navigateSpy = jest.fn();
   const useLocationMock: jest.Mock = useLocation as jest.Mock;
   let getSystemModuleRedDotsSpy: jest.SpyInstance;
+  const mockSetSystemModuleRedDotsLoading = jest.fn();
 
   beforeEach(() => {
     (useNavigate as jest.Mock).mockImplementation(() => navigateSpy);
@@ -48,7 +49,11 @@ describe('base/Nav/QuickActions', () => {
   });
 
   const customRender = () => {
-    return superRender(<QuickActions />);
+    return superRender(
+      <QuickActions
+        setSystemModuleRedDotsLoading={mockSetSystemModuleRedDotsLoading}
+      />
+    );
   };
 
   it('render quick action when current user is admin', async () => {
@@ -80,6 +85,7 @@ describe('base/Nav/QuickActions', () => {
     expect(baseElement).toMatchSnapshot();
     expect(getBySelector('.action-item-dot')).toBeInTheDocument();
     expect(getBySelector('.report-statistics')).toBeInTheDocument();
+    expect(mockSetSystemModuleRedDotsLoading).toHaveBeenCalledTimes(2);
   });
 
   it('render quick action when current user has global view permission', () => {
