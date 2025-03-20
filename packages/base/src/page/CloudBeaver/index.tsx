@@ -1,6 +1,6 @@
 import { useRequest } from 'ahooks';
 import { Card, Space, Typography, Spin } from 'antd';
-import { useRef } from 'react';
+import { useRef, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import cloudBeaver from '@actiontech/shared/lib/api/base/service/CloudBeaver';
 import {
@@ -22,6 +22,8 @@ const CloudBeaver = () => {
   const { t } = useTranslation();
   const cloudBeaverUrl = useRef('');
   const extractQueries = useTypedQuery();
+
+  const [getOperationLogsLoading, setGetOperationLogsLoading] = useState(false);
 
   const { data, loading } = useRequest(() => {
     return cloudBeaver.GetSQLQueryConfiguration().then((res) => {
@@ -54,11 +56,11 @@ const CloudBeaver = () => {
           </EmptyBox>
         }
       />
-      <EmptyBox if={!data?.enable_sql_query}>
-        <CloudBeaverContentStyleWrapper>
-          <CloudBeaverContentSpaceStyleWrapper direction="vertical">
-            <Card>
-              <Spin spinning={loading}>
+      <Spin spinning={getOperationLogsLoading || loading}>
+        <EmptyBox if={!data?.enable_sql_query}>
+          <CloudBeaverContentStyleWrapper>
+            <CloudBeaverContentSpaceStyleWrapper direction="vertical">
+              <Card>
                 <Space>
                   <CloudBeaverContentIconStyleWrapper />
                   <div>
@@ -73,21 +75,23 @@ const CloudBeaver = () => {
                     </a>
                   </div>
                 </Space>
-              </Spin>
-            </Card>
-          </CloudBeaverContentSpaceStyleWrapper>
-        </CloudBeaverContentStyleWrapper>
-      </EmptyBox>
-      <EnterpriseFeatureDisplay
-        featureName={t('dmsCloudBeaver.pageTitle')}
-        eeFeatureDescription={
-          <Typography.Paragraph className="paragraph">
-            {t('dmsCloudBeaver.ceTips')}
-          </Typography.Paragraph>
-        }
-      >
-        <CBOperationLogsList enableSqlQuery={data?.enable_sql_query} />
-      </EnterpriseFeatureDisplay>
+              </Card>
+            </CloudBeaverContentSpaceStyleWrapper>
+          </CloudBeaverContentStyleWrapper>
+        </EmptyBox>
+        <EnterpriseFeatureDisplay
+          featureName={t('dmsCloudBeaver.pageTitle')}
+          eeFeatureDescription={
+            <Typography.Paragraph className="paragraph">
+              {t('dmsCloudBeaver.ceTips')}
+            </Typography.Paragraph>
+          }
+        >
+          <CBOperationLogsList
+            setGetOperationLogsLoading={setGetOperationLogsLoading}
+          />
+        </EnterpriseFeatureDisplay>
+      </Spin>
     </>
   );
 };

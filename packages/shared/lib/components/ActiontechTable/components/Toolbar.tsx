@@ -8,7 +8,7 @@ import SearchInput from './SearchInput';
 import classnames from 'classnames';
 import { ToolbarStyleWrapper } from './style';
 import { useContext } from 'react';
-import { ActiontechTableContext } from '../common/context';
+import { ActiontechTableContext } from '../context';
 
 const ToolBar = <T extends Record<string, any>>({
   children,

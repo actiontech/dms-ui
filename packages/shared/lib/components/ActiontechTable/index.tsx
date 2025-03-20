@@ -20,4 +20,4 @@ export { default as useTableRequestParams } from './hooks/useTableRequestParams'
 export {
   ActiontechTableContext,
   ActiontechTableContextProvide
-} from './common/context';
+} from './context';
