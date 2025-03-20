@@ -24,7 +24,8 @@ import {
   TableToolbar,
   TableFilterContainer,
   useTableFilterContainer,
-  FilterCustomProps
+  FilterCustomProps,
+  ActiontechTableWrapper
 } from '@actiontech/shared/lib/components/ActiontechTable';
 import { whitelistMatchTypeOptions } from '../index.data';
 import useWhitelistRedux from '../hooks/useWhitelistRedux';
@@ -149,41 +150,41 @@ const WhitelistList = () => {
         title={t('whitelist.pageTitle')}
         extra={pageHeaderActions['create-whitelist']}
       />
-      <TableToolbar
-        refreshButton={{ refresh, disabled: loading }}
-        filterButton={{
-          filterButtonMeta,
-          updateAllSelectedFilterItem
-        }}
-        searchInput={{
-          onChange: setSearchKeyword,
-          onSearch: () => {
-            refreshBySearchKeyword();
-          }
-        }}
-        loading={loading}
-      />
-      <TableFilterContainer
-        filterContainerMeta={filterContainerMeta}
-        updateTableFilterInfo={updateTableFilterInfo}
-        disabled={loading}
-        filterCustomProps={filterCustomProps}
-      />
-      <ActiontechTable
-        dataSource={whitelistList?.list}
-        rowKey={(record: IAuditWhitelistResV1) => {
-          return `${record?.audit_whitelist_id}`;
-        }}
-        pagination={{
-          total: whitelistList?.total ?? 0
-        }}
-        loading={loading}
-        columns={columns}
-        actions={actions}
-        errorMessage={requestErrorMessage}
-        onChange={tableChange}
-        scroll={{}}
-      />
+      <ActiontechTableWrapper loading={loading}>
+        <TableToolbar
+          refreshButton={{ refresh, disabled: loading }}
+          filterButton={{
+            filterButtonMeta,
+            updateAllSelectedFilterItem
+          }}
+          searchInput={{
+            onChange: setSearchKeyword,
+            onSearch: () => {
+              refreshBySearchKeyword();
+            }
+          }}
+        />
+        <TableFilterContainer
+          filterContainerMeta={filterContainerMeta}
+          updateTableFilterInfo={updateTableFilterInfo}
+          disabled={loading}
+          filterCustomProps={filterCustomProps}
+        />
+        <ActiontechTable
+          dataSource={whitelistList?.list}
+          rowKey={(record: IAuditWhitelistResV1) => {
+            return `${record?.audit_whitelist_id}`;
+          }}
+          pagination={{
+            total: whitelistList?.total ?? 0
+          }}
+          columns={columns}
+          actions={actions}
+          errorMessage={requestErrorMessage}
+          onChange={tableChange}
+          scroll={{}}
+        />
+      </ActiontechTableWrapper>
       <WhitelistDrawer />
     </>
   );
