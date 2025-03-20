@@ -2,7 +2,7 @@ import React from 'react';
 import {
   ActiontechTableContextProvide,
   ActiontechTableContextType
-} from '../common/context';
+} from '../context';
 import { Spin } from 'antd';
 
 interface TableWrapperProps extends ActiontechTableContextType {

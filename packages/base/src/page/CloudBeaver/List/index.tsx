@@ -25,7 +25,7 @@ import CBOperationLogs from '@actiontech/shared/lib/api/base/service/CBOperation
 import { useMemo, useEffect } from 'react';
 import useMemberTips from '../../../hooks/useMemberTips';
 import useDbService from '../../../hooks/useDbService';
-import { Spin, message } from 'antd';
+import { message } from 'antd';
 import useCBOperationTips from '../hooks/useCBOperationTips';
 import CBSqlOperationAuditDetailDrawer from '../Drawer/CBSqlOperationAuditDetailDrawer';
 import { useDispatch } from 'react-redux';
@@ -43,7 +43,13 @@ import {
   CloudBeaverListToolbarActions
 } from './actions';
 
-const CBOperationLogsList: React.FC<{ enableSqlQuery?: boolean }> = () => {
+type CBOperationLogsListProps = {
+  setGetOperationLogsLoading: (loading: boolean) => void;
+};
+
+const CBOperationLogsList: React.FC<CBOperationLogsListProps> = ({
+  setGetOperationLogsLoading
+}) => {
   const { t } = useTranslation();
   const { parse2TableToolbarActionPermissions, parse2TableActionPermissions } =
     usePermission();
@@ -94,7 +100,13 @@ const CBOperationLogsList: React.FC<{ enableSqlQuery?: boolean }> = () => {
       );
     },
     {
-      refreshDeps: [projectID, tableFilterInfo, pagination]
+      refreshDeps: [projectID, tableFilterInfo, pagination],
+      onBefore: () => {
+        setGetOperationLogsLoading(true);
+      },
+      onFinally: () => {
+        setGetOperationLogsLoading(false);
+      }
     }
   );
 
@@ -192,52 +204,50 @@ const CBOperationLogsList: React.FC<{ enableSqlQuery?: boolean }> = () => {
     <>
       <CloudBeaverOperationLogsListStyleWrapper>
         {contextHolder}
-        <Spin spinning={loading}>
-          <OperationStatistics
-            total={data?.otherData?.exec_sql_total}
-            succeedRate={data?.otherData?.exec_success_rate}
-            interceptedTotal={data?.otherData?.audit_intercepted_sql_count}
-            failedTotal={data?.otherData?.exec_failed_sql_count}
-          />
-          <TableToolbar
-            refreshButton={{ refresh }}
-            actions={parse2TableToolbarActionPermissions(
-              CloudBeaverListToolbarActions(onExport, exporting)
-            )}
-            filterButton={{
-              filterButtonMeta,
-              updateAllSelectedFilterItem
-            }}
-            setting={tableSetting}
-            searchInput={{
-              onChange: setSearchKeyword,
-              onSearch: () => {
-                refreshBySearchKeyword();
-              }
-            }}
-          />
-          <TableFilterContainer
-            filterContainerMeta={filterContainerMeta}
-            updateTableFilterInfo={updateTableFilterInfo}
-            disabled={loading}
-            filterCustomProps={filterCustomProps}
-          />
-          <ActiontechTable
-            rowKey="uid"
-            setting={tableSetting}
-            dataSource={data?.list ?? []}
-            pagination={{
-              total: data?.total || 0
-            }}
-            columns={columns}
-            onChange={tableChange}
-            errorMessage={requestErrorMessage}
-            actions={parse2TableActionPermissions(
-              CloudBeaverListActions(onCreateWhitelist)
-            )}
-          />
-          <CBSqlOperationAuditDetailDrawer />
-        </Spin>
+        <OperationStatistics
+          total={data?.otherData?.exec_sql_total}
+          succeedRate={data?.otherData?.exec_success_rate}
+          interceptedTotal={data?.otherData?.audit_intercepted_sql_count}
+          failedTotal={data?.otherData?.exec_failed_sql_count}
+        />
+        <TableToolbar
+          refreshButton={{ refresh }}
+          actions={parse2TableToolbarActionPermissions(
+            CloudBeaverListToolbarActions(onExport, exporting)
+          )}
+          filterButton={{
+            filterButtonMeta,
+            updateAllSelectedFilterItem
+          }}
+          setting={tableSetting}
+          searchInput={{
+            onChange: setSearchKeyword,
+            onSearch: () => {
+              refreshBySearchKeyword();
+            }
+          }}
+        />
+        <TableFilterContainer
+          filterContainerMeta={filterContainerMeta}
+          updateTableFilterInfo={updateTableFilterInfo}
+          disabled={loading}
+          filterCustomProps={filterCustomProps}
+        />
+        <ActiontechTable
+          rowKey="uid"
+          setting={tableSetting}
+          dataSource={data?.list ?? []}
+          pagination={{
+            total: data?.total || 0
+          }}
+          columns={columns}
+          onChange={tableChange}
+          errorMessage={requestErrorMessage}
+          actions={parse2TableActionPermissions(
+            CloudBeaverListActions(onCreateWhitelist)
+          )}
+        />
+        <CBSqlOperationAuditDetailDrawer />
       </CloudBeaverOperationLogsListStyleWrapper>
       <CreateWhitelistModal onCreated={refresh} />
     </>

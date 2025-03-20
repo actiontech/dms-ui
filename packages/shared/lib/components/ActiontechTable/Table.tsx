@@ -8,7 +8,7 @@ import useTableAction from './hooks/useTableAction';
 import classnames from 'classnames';
 import { useEffect, useMemo, useContext } from 'react';
 import useTableSettings from './hooks/useTableSettings';
-import { ActiontechTableContext } from './common/context';
+import { ActiontechTableContext } from './context';
 
 const ActiontechTable = <
   T extends Record<string, any>,
