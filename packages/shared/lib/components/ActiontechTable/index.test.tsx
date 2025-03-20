@@ -4,6 +4,7 @@ import { renderWithTheme } from '../../testUtil/customRender';
 
 import ActiontechTable from './Table';
 import { ActiontechTableProps, TypeFilterElement } from './index.type';
+import { ActiontechTableContextProvide } from './context';
 
 describe('lib/ActiontechTable', () => {
   beforeEach(() => {
@@ -196,5 +197,20 @@ describe('lib/ActiontechTable', () => {
       });
       expect(baseElement).toMatchSnapshot();
     });
+  });
+
+  it('render table with context', () => {
+    const { getByText } = renderWithTheme(
+      <ActiontechTableContextProvide
+        value={{ setting: { tableName: 'test_list', username: 'admin' } }}
+      >
+        <ActiontechTable
+          dataSource={[{ name: 'a', age: 11 }]}
+          rowKey="name"
+          columns={[{ dataIndex: 'a', title: '名称' }]}
+        />
+      </ActiontechTableContextProvide>
+    );
+    expect(getByText('名称')).toBeInTheDocument();
   });
 });

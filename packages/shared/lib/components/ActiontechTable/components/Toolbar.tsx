@@ -7,6 +7,8 @@ import RefreshButton from './RefreshButton';
 import SearchInput from './SearchInput';
 import classnames from 'classnames';
 import { ToolbarStyleWrapper } from './style';
+import { useContext } from 'react';
+import { ActiontechTableContext } from '../context';
 
 const ToolBar = <T extends Record<string, any>>({
   children,
@@ -21,6 +23,11 @@ const ToolBar = <T extends Record<string, any>>({
   loading = false
 }: TableToolbarProps<T>) => {
   const { renderAction } = useTableAction();
+
+  const tableContextValue = useContext(ActiontechTableContext);
+
+  const columnsSetting = tableContextValue?.setting ?? setting;
+
   return (
     <ConfigProvider
       theme={{
@@ -46,7 +53,7 @@ const ToolBar = <T extends Record<string, any>>({
 
           <Space size={12}>
             {!!actions && renderAction(actions)}
-            {!!setting && <ColumnsSetting<T> {...setting} />}
+            {!!columnsSetting && <ColumnsSetting<T> {...columnsSetting} />}
             {!!refreshButton && <RefreshButton {...refreshButton} />}
           </Space>
         </ToolbarStyleWrapper>

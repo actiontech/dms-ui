@@ -14,50 +14,50 @@ exports[`test base/page/CloudBeaver should match snapshot when sql query is disa
       class="extra"
     />
   </div>
-  <section
-    class="css-l3x35e"
+  <div
+    class="ant-spin-nested-loading css-dev-only-do-not-override-txh9fw"
   >
-    <div
-      class="ant-space css-dev-only-do-not-override-txh9fw ant-space-vertical css-1ago99h"
-    >
+    <div>
       <div
-        class="ant-space-item"
+        aria-busy="true"
+        aria-live="polite"
+        class="ant-spin ant-spin-spinning css-dev-only-do-not-override-txh9fw"
+      >
+        <span
+          class="ant-spin-dot ant-spin-dot-spin"
+        >
+          <i
+            class="ant-spin-dot-item"
+          />
+          <i
+            class="ant-spin-dot-item"
+          />
+          <i
+            class="ant-spin-dot-item"
+          />
+          <i
+            class="ant-spin-dot-item"
+          />
+        </span>
+      </div>
+    </div>
+    <div
+      class="ant-spin-container ant-spin-blur"
+    >
+      <section
+        class="css-l3x35e"
       >
         <div
-          class="ant-card ant-card-bordered css-dev-only-do-not-override-txh9fw"
+          class="ant-space css-dev-only-do-not-override-txh9fw ant-space-vertical css-1ago99h"
         >
           <div
-            class="ant-card-body"
+            class="ant-space-item"
           >
             <div
-              class="ant-spin-nested-loading css-dev-only-do-not-override-txh9fw"
+              class="ant-card ant-card-bordered css-dev-only-do-not-override-txh9fw"
             >
-              <div>
-                <div
-                  aria-busy="true"
-                  aria-live="polite"
-                  class="ant-spin ant-spin-spinning css-dev-only-do-not-override-txh9fw"
-                >
-                  <span
-                    class="ant-spin-dot ant-spin-dot-spin"
-                  >
-                    <i
-                      class="ant-spin-dot-item"
-                    />
-                    <i
-                      class="ant-spin-dot-item"
-                    />
-                    <i
-                      class="ant-spin-dot-item"
-                    />
-                    <i
-                      class="ant-spin-dot-item"
-                    />
-                  </span>
-                </div>
-              </div>
               <div
-                class="ant-spin-container ant-spin-blur"
+                class="ant-card-body"
               >
                 <div
                   class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
@@ -107,41 +107,9 @@ exports[`test base/page/CloudBeaver should match snapshot when sql query is disa
             </div>
           </div>
         </div>
-      </div>
-    </div>
-  </section>
-  <section
-    class="css-1c1a29h"
-  >
-    <div
-      class="ant-spin-nested-loading css-dev-only-do-not-override-txh9fw"
-    >
-      <div>
-        <div
-          aria-busy="true"
-          aria-live="polite"
-          class="ant-spin ant-spin-spinning css-dev-only-do-not-override-txh9fw"
-        >
-          <span
-            class="ant-spin-dot ant-spin-dot-spin"
-          >
-            <i
-              class="ant-spin-dot-item"
-            />
-            <i
-              class="ant-spin-dot-item"
-            />
-            <i
-              class="ant-spin-dot-item"
-            />
-            <i
-              class="ant-spin-dot-item"
-            />
-          </span>
-        </div>
-      </div>
-      <div
-        class="ant-spin-container ant-spin-blur"
+      </section>
+      <section
+        class="css-1c1a29h"
       >
         <div
           class="ant-row css-1cdm1o2 css-dev-only-do-not-override-txh9fw"
@@ -689,9 +657,9 @@ exports[`test base/page/CloudBeaver should match snapshot when sql query is disa
             </div>
           </div>
         </div>
-      </div>
+      </section>
     </div>
-  </section>
+  </div>
 </div>
 `;
 
@@ -709,26 +677,26 @@ exports[`test base/page/CloudBeaver should match snapshot when sql query is disa
       class="extra"
     />
   </div>
-  <section
-    class="css-l3x35e"
+  <div
+    class="ant-spin-nested-loading css-dev-only-do-not-override-txh9fw"
   >
     <div
-      class="ant-space css-dev-only-do-not-override-txh9fw ant-space-vertical css-1ago99h"
+      class="ant-spin-container"
     >
-      <div
-        class="ant-space-item"
+      <section
+        class="css-l3x35e"
       >
         <div
-          class="ant-card ant-card-bordered css-dev-only-do-not-override-txh9fw"
+          class="ant-space css-dev-only-do-not-override-txh9fw ant-space-vertical css-1ago99h"
         >
           <div
-            class="ant-card-body"
+            class="ant-space-item"
           >
             <div
-              class="ant-spin-nested-loading css-dev-only-do-not-override-txh9fw"
+              class="ant-card ant-card-bordered css-dev-only-do-not-override-txh9fw"
             >
               <div
-                class="ant-spin-container"
+                class="ant-card-body"
               >
                 <div
                   class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
@@ -778,17 +746,9 @@ exports[`test base/page/CloudBeaver should match snapshot when sql query is disa
             </div>
           </div>
         </div>
-      </div>
-    </div>
-  </section>
-  <section
-    class="css-1c1a29h"
-  >
-    <div
-      class="ant-spin-nested-loading css-dev-only-do-not-override-txh9fw"
-    >
-      <div
-        class="ant-spin-container"
+      </section>
+      <section
+        class="css-1c1a29h"
       >
         <div
           class="ant-row css-1cdm1o2 css-dev-only-do-not-override-txh9fw"
@@ -2179,9 +2139,9 @@ exports[`test base/page/CloudBeaver should match snapshot when sql query is disa
             </div>
           </div>
         </div>
-      </div>
+      </section>
     </div>
-  </section>
+  </div>
 </div>
 `;
 
@@ -2208,14 +2168,14 @@ exports[`test base/page/CloudBeaver should render jump to cloud beaver when sql 
       </button>
     </div>
   </div>
-  <section
-    class="css-1c1a29h"
+  <div
+    class="ant-spin-nested-loading css-dev-only-do-not-override-txh9fw"
   >
     <div
-      class="ant-spin-nested-loading css-dev-only-do-not-override-txh9fw"
+      class="ant-spin-container"
     >
-      <div
-        class="ant-spin-container"
+      <section
+        class="css-1c1a29h"
       >
         <div
           class="ant-row css-1cdm1o2 css-dev-only-do-not-override-txh9fw"
@@ -3606,8 +3566,8 @@ exports[`test base/page/CloudBeaver should render jump to cloud beaver when sql 
             </div>
           </div>
         </div>
-      </div>
+      </section>
     </div>
-  </section>
+  </div>
 </div>
 `;

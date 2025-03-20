@@ -28,203 +28,6 @@ exports[`App render App when "checkPageAction" is false 1`] = `
           </div>
         </div>
         <div
-          class="css-22avtw"
-        >
-          <div
-            class="ant-spin-nested-loading css-dev-only-do-not-override-1thf7qv"
-          >
-            <div>
-              <div
-                aria-busy="true"
-                aria-live="polite"
-                class="ant-spin ant-spin-spinning css-dev-only-do-not-override-1thf7qv"
-              >
-                <span
-                  class="custom-icon-spin-dot ant-spin-dot css-u3jcp4"
-                >
-                  <svg
-                    fill="currentColor"
-                    height="30"
-                    viewBox="0 0 24 30"
-                    width="24"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <rect
-                      fill="currentColor"
-                      height="10"
-                      opacity="0.2"
-                      width="4"
-                      x="0"
-                      y="10"
-                    >
-                      <animate
-                        attributeName="opacity"
-                        attributeType="XML"
-                        begin="0s"
-                        dur="0.6s"
-                        repeatCount="indefinite"
-                        values="0.2; 1; .2"
-                      />
-                      <animate
-                        attributeName="height"
-                        attributeType="XML"
-                        begin="0s"
-                        dur="0.6s"
-                        repeatCount="indefinite"
-                        values="10; 20; 10"
-                      />
-                      <animate
-                        attributeName="y"
-                        attributeType="XML"
-                        begin="0s"
-                        dur="0.6s"
-                        repeatCount="indefinite"
-                        values="10; 5; 10"
-                      />
-                    </rect>
-                    <rect
-                      fill="currentColor"
-                      height="10"
-                      opacity="0.2"
-                      width="4"
-                      x="8"
-                      y="10"
-                    >
-                      <animate
-                        attributeName="opacity"
-                        attributeType="XML"
-                        begin="0.15s"
-                        dur="0.6s"
-                        repeatCount="indefinite"
-                        values="0.2; 1; .2"
-                      />
-                      <animate
-                        attributeName="height"
-                        attributeType="XML"
-                        begin="0.15s"
-                        dur="0.6s"
-                        repeatCount="indefinite"
-                        values="10; 20; 10"
-                      />
-                      <animate
-                        attributeName="y"
-                        attributeType="XML"
-                        begin="0.15s"
-                        dur="0.6s"
-                        repeatCount="indefinite"
-                        values="10; 5; 10"
-                      />
-                    </rect>
-                    <rect
-                      fill="currentColor"
-                      height="10"
-                      opacity="0.2"
-                      width="4"
-                      x="16"
-                      y="10"
-                    >
-                      <animate
-                        attributeName="opacity"
-                        attributeType="XML"
-                        begin="0.3s"
-                        dur="0.6s"
-                        repeatCount="indefinite"
-                        values="0.2; 1; .2"
-                      />
-                      <animate
-                        attributeName="height"
-                        attributeType="XML"
-                        begin="0.3s"
-                        dur="0.6s"
-                        repeatCount="indefinite"
-                        values="10; 20; 10"
-                      />
-                      <animate
-                        attributeName="y"
-                        attributeType="XML"
-                        begin="0.3s"
-                        dur="0.6s"
-                        repeatCount="indefinite"
-                        values="10; 5; 10"
-                      />
-                    </rect>
-                  </svg>
-                </span>
-              </div>
-            </div>
-            <div
-              class="ant-spin-container ant-spin-blur"
-            >
-              <div
-                class="ant-space css-dev-only-do-not-override-1thf7qv ant-space-horizontal ant-space-align-center action-space-wrapper"
-              >
-                <div
-                  class="ant-space-item"
-                  style="margin-right: 8px;"
-                >
-                  <div
-                    class="ant-space css-dev-only-do-not-override-1thf7qv ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
-                  >
-                    <div
-                      class="ant-space-item"
-                    >
-                      <div
-                        class="action-item global-dashboard"
-                      >
-                        <svg
-                          class="TodoListOutlined_svg__icon"
-                          color="currentColor"
-                          height="18"
-                          viewBox="0 0 1024 1024"
-                          width="18"
-                          xmlns="http://www.w3.org/2000/svg"
-                        >
-                          <path
-                            d="M924 540c-19.9 0-36 16.1-36 36v312H136V136h568c19.9 0 36-16.1 36-36s-16.1-36-36-36H136c-39.8 0-72 32.2-72 72v752c0 39.8 32.2 72 72 72h752c39.8 0 72-32.2 72-72V576c0-19.9-16.1-36-36-36"
-                            fill="currentColor"
-                          />
-                          <path
-                            d="M316.5 478.5c-14.1-14.1-36.9-14.1-50.9 0-14.1 14.1-14.1 36.9 0 50.9l178.2 178.2c5.7 5.7 12.8 9.1 20.1 10.2 11.2 1.9 23.1-1.4 31.7-10l454.2-454.2c14.1-14.1 14.1-36.9 0-50.9-14.1-14.1-36.9-14.1-50.9 0l-429.2 429z"
-                            fill="currentColor"
-                          />
-                        </svg>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div
-                  class="ant-space-item"
-                >
-                  <div
-                    class="ant-space css-dev-only-do-not-override-1thf7qv ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
-                  >
-                    <div
-                      class="ant-space-item"
-                    >
-                      <div
-                        class="action-item view-rule"
-                      >
-                        <svg
-                          color="currentColor"
-                          height="18"
-                          viewBox="0 0 18 19"
-                          width="18"
-                          xmlns="http://www.w3.org/2000/svg"
-                        >
-                          <path
-                            d="M15 17H3a.75.75 0 0 1-.75-.75V2.75A.75.75 0 0 1 3 2h12a.75.75 0 0 1 .75.75v13.5A.75.75 0 0 1 15 17M6 5.75v1.5h6v-1.5zm0 3v1.5h6v-1.5zm0 3v1.5h3.75v-1.5z"
-                            fill="currentColor"
-                          />
-                        </svg>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div
           class="ant-spin-nested-loading css-dev-only-do-not-override-1thf7qv"
         >
           <div>
@@ -349,6 +152,76 @@ exports[`App render App when "checkPageAction" is false 1`] = `
           <div
             class="ant-spin-container ant-spin-blur"
           >
+            <div
+              class="css-22avtw"
+            >
+              <div
+                class="ant-space css-dev-only-do-not-override-1thf7qv ant-space-horizontal ant-space-align-center action-space-wrapper"
+              >
+                <div
+                  class="ant-space-item"
+                  style="margin-right: 8px;"
+                >
+                  <div
+                    class="ant-space css-dev-only-do-not-override-1thf7qv ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
+                  >
+                    <div
+                      class="ant-space-item"
+                    >
+                      <div
+                        class="action-item global-dashboard"
+                      >
+                        <svg
+                          class="TodoListOutlined_svg__icon"
+                          color="currentColor"
+                          height="18"
+                          viewBox="0 0 1024 1024"
+                          width="18"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M924 540c-19.9 0-36 16.1-36 36v312H136V136h568c19.9 0 36-16.1 36-36s-16.1-36-36-36H136c-39.8 0-72 32.2-72 72v752c0 39.8 32.2 72 72 72h752c39.8 0 72-32.2 72-72V576c0-19.9-16.1-36-36-36"
+                            fill="currentColor"
+                          />
+                          <path
+                            d="M316.5 478.5c-14.1-14.1-36.9-14.1-50.9 0-14.1 14.1-14.1 36.9 0 50.9l178.2 178.2c5.7 5.7 12.8 9.1 20.1 10.2 11.2 1.9 23.1-1.4 31.7-10l454.2-454.2c14.1-14.1 14.1-36.9 0-50.9-14.1-14.1-36.9-14.1-50.9 0l-429.2 429z"
+                            fill="currentColor"
+                          />
+                        </svg>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="ant-space-item"
+                >
+                  <div
+                    class="ant-space css-dev-only-do-not-override-1thf7qv ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
+                  >
+                    <div
+                      class="ant-space-item"
+                    >
+                      <div
+                        class="action-item view-rule"
+                      >
+                        <svg
+                          color="currentColor"
+                          height="18"
+                          viewBox="0 0 18 19"
+                          width="18"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M15 17H3a.75.75 0 0 1-.75-.75V2.75A.75.75 0 0 1 3 2h12a.75.75 0 0 1 .75.75v13.5A.75.75 0 0 1 15 17M6 5.75v1.5h6v-1.5zm0 3v1.5h6v-1.5zm0 3v1.5h3.75v-1.5z"
+                            fill="currentColor"
+                          />
+                        </svg>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
             <div
               class="ant-select ant-select-lg ant-select-borderless basic-select-wrapper custom-select-namespace custom-project-selector css-wk9fc9 css-dev-only-do-not-override-is2hm8 ant-select-single ant-select-show-arrow"
               searchinputref="[object Object]"
@@ -1225,132 +1098,132 @@ exports[`App render App when token is existed 1`] = `
           </div>
         </div>
         <div
-          class="css-22avtw"
+          class="ant-spin-nested-loading css-dev-only-do-not-override-1thf7qv"
         >
-          <div
-            class="ant-spin-nested-loading css-dev-only-do-not-override-1thf7qv"
-          >
-            <div>
-              <div
-                aria-busy="true"
-                aria-live="polite"
-                class="ant-spin ant-spin-spinning css-dev-only-do-not-override-1thf7qv"
-              >
-                <span
-                  class="custom-icon-spin-dot ant-spin-dot css-u3jcp4"
-                >
-                  <svg
-                    fill="currentColor"
-                    height="30"
-                    viewBox="0 0 24 30"
-                    width="24"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <rect
-                      fill="currentColor"
-                      height="10"
-                      opacity="0.2"
-                      width="4"
-                      x="0"
-                      y="10"
-                    >
-                      <animate
-                        attributeName="opacity"
-                        attributeType="XML"
-                        begin="0s"
-                        dur="0.6s"
-                        repeatCount="indefinite"
-                        values="0.2; 1; .2"
-                      />
-                      <animate
-                        attributeName="height"
-                        attributeType="XML"
-                        begin="0s"
-                        dur="0.6s"
-                        repeatCount="indefinite"
-                        values="10; 20; 10"
-                      />
-                      <animate
-                        attributeName="y"
-                        attributeType="XML"
-                        begin="0s"
-                        dur="0.6s"
-                        repeatCount="indefinite"
-                        values="10; 5; 10"
-                      />
-                    </rect>
-                    <rect
-                      fill="currentColor"
-                      height="10"
-                      opacity="0.2"
-                      width="4"
-                      x="8"
-                      y="10"
-                    >
-                      <animate
-                        attributeName="opacity"
-                        attributeType="XML"
-                        begin="0.15s"
-                        dur="0.6s"
-                        repeatCount="indefinite"
-                        values="0.2; 1; .2"
-                      />
-                      <animate
-                        attributeName="height"
-                        attributeType="XML"
-                        begin="0.15s"
-                        dur="0.6s"
-                        repeatCount="indefinite"
-                        values="10; 20; 10"
-                      />
-                      <animate
-                        attributeName="y"
-                        attributeType="XML"
-                        begin="0.15s"
-                        dur="0.6s"
-                        repeatCount="indefinite"
-                        values="10; 5; 10"
-                      />
-                    </rect>
-                    <rect
-                      fill="currentColor"
-                      height="10"
-                      opacity="0.2"
-                      width="4"
-                      x="16"
-                      y="10"
-                    >
-                      <animate
-                        attributeName="opacity"
-                        attributeType="XML"
-                        begin="0.3s"
-                        dur="0.6s"
-                        repeatCount="indefinite"
-                        values="0.2; 1; .2"
-                      />
-                      <animate
-                        attributeName="height"
-                        attributeType="XML"
-                        begin="0.3s"
-                        dur="0.6s"
-                        repeatCount="indefinite"
-                        values="10; 20; 10"
-                      />
-                      <animate
-                        attributeName="y"
-                        attributeType="XML"
-                        begin="0.3s"
-                        dur="0.6s"
-                        repeatCount="indefinite"
-                        values="10; 5; 10"
-                      />
-                    </rect>
-                  </svg>
-                </span>
-              </div>
-            </div>
+          <div>
             <div
-              class="ant-spin-container ant-spin-blur"
+              aria-busy="true"
+              aria-live="polite"
+              class="ant-spin ant-spin-spinning css-dev-only-do-not-override-1thf7qv"
+            >
+              <span
+                class="custom-icon-spin-dot ant-spin-dot css-u3jcp4"
+              >
+                <svg
+                  fill="currentColor"
+                  height="30"
+                  viewBox="0 0 24 30"
+                  width="24"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <rect
+                    fill="currentColor"
+                    height="10"
+                    opacity="0.2"
+                    width="4"
+                    x="0"
+                    y="10"
+                  >
+                    <animate
+                      attributeName="opacity"
+                      attributeType="XML"
+                      begin="0s"
+                      dur="0.6s"
+                      repeatCount="indefinite"
+                      values="0.2; 1; .2"
+                    />
+                    <animate
+                      attributeName="height"
+                      attributeType="XML"
+                      begin="0s"
+                      dur="0.6s"
+                      repeatCount="indefinite"
+                      values="10; 20; 10"
+                    />
+                    <animate
+                      attributeName="y"
+                      attributeType="XML"
+                      begin="0s"
+                      dur="0.6s"
+                      repeatCount="indefinite"
+                      values="10; 5; 10"
+                    />
+                  </rect>
+                  <rect
+                    fill="currentColor"
+                    height="10"
+                    opacity="0.2"
+                    width="4"
+                    x="8"
+                    y="10"
+                  >
+                    <animate
+                      attributeName="opacity"
+                      attributeType="XML"
+                      begin="0.15s"
+                      dur="0.6s"
+                      repeatCount="indefinite"
+                      values="0.2; 1; .2"
+                    />
+                    <animate
+                      attributeName="height"
+                      attributeType="XML"
+                      begin="0.15s"
+                      dur="0.6s"
+                      repeatCount="indefinite"
+                      values="10; 20; 10"
+                    />
+                    <animate
+                      attributeName="y"
+                      attributeType="XML"
+                      begin="0.15s"
+                      dur="0.6s"
+                      repeatCount="indefinite"
+                      values="10; 5; 10"
+                    />
+                  </rect>
+                  <rect
+                    fill="currentColor"
+                    height="10"
+                    opacity="0.2"
+                    width="4"
+                    x="16"
+                    y="10"
+                  >
+                    <animate
+                      attributeName="opacity"
+                      attributeType="XML"
+                      begin="0.3s"
+                      dur="0.6s"
+                      repeatCount="indefinite"
+                      values="0.2; 1; .2"
+                    />
+                    <animate
+                      attributeName="height"
+                      attributeType="XML"
+                      begin="0.3s"
+                      dur="0.6s"
+                      repeatCount="indefinite"
+                      values="10; 20; 10"
+                    />
+                    <animate
+                      attributeName="y"
+                      attributeType="XML"
+                      begin="0.3s"
+                      dur="0.6s"
+                      repeatCount="indefinite"
+                      values="10; 5; 10"
+                    />
+                  </rect>
+                </svg>
+              </span>
+            </div>
+          </div>
+          <div
+            class="ant-spin-container ant-spin-blur"
+          >
+            <div
+              class="css-22avtw"
             >
               <div
                 class="ant-space css-dev-only-do-not-override-1thf7qv ant-space-horizontal ant-space-align-center action-space-wrapper"
@@ -1496,133 +1369,6 @@ exports[`App render App when token is existed 1`] = `
                 </div>
               </div>
             </div>
-          </div>
-        </div>
-        <div
-          class="ant-spin-nested-loading css-dev-only-do-not-override-1thf7qv"
-        >
-          <div>
-            <div
-              aria-busy="true"
-              aria-live="polite"
-              class="ant-spin ant-spin-spinning css-dev-only-do-not-override-1thf7qv"
-            >
-              <span
-                class="custom-icon-spin-dot ant-spin-dot css-u3jcp4"
-              >
-                <svg
-                  fill="currentColor"
-                  height="30"
-                  viewBox="0 0 24 30"
-                  width="24"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <rect
-                    fill="currentColor"
-                    height="10"
-                    opacity="0.2"
-                    width="4"
-                    x="0"
-                    y="10"
-                  >
-                    <animate
-                      attributeName="opacity"
-                      attributeType="XML"
-                      begin="0s"
-                      dur="0.6s"
-                      repeatCount="indefinite"
-                      values="0.2; 1; .2"
-                    />
-                    <animate
-                      attributeName="height"
-                      attributeType="XML"
-                      begin="0s"
-                      dur="0.6s"
-                      repeatCount="indefinite"
-                      values="10; 20; 10"
-                    />
-                    <animate
-                      attributeName="y"
-                      attributeType="XML"
-                      begin="0s"
-                      dur="0.6s"
-                      repeatCount="indefinite"
-                      values="10; 5; 10"
-                    />
-                  </rect>
-                  <rect
-                    fill="currentColor"
-                    height="10"
-                    opacity="0.2"
-                    width="4"
-                    x="8"
-                    y="10"
-                  >
-                    <animate
-                      attributeName="opacity"
-                      attributeType="XML"
-                      begin="0.15s"
-                      dur="0.6s"
-                      repeatCount="indefinite"
-                      values="0.2; 1; .2"
-                    />
-                    <animate
-                      attributeName="height"
-                      attributeType="XML"
-                      begin="0.15s"
-                      dur="0.6s"
-                      repeatCount="indefinite"
-                      values="10; 20; 10"
-                    />
-                    <animate
-                      attributeName="y"
-                      attributeType="XML"
-                      begin="0.15s"
-                      dur="0.6s"
-                      repeatCount="indefinite"
-                      values="10; 5; 10"
-                    />
-                  </rect>
-                  <rect
-                    fill="currentColor"
-                    height="10"
-                    opacity="0.2"
-                    width="4"
-                    x="16"
-                    y="10"
-                  >
-                    <animate
-                      attributeName="opacity"
-                      attributeType="XML"
-                      begin="0.3s"
-                      dur="0.6s"
-                      repeatCount="indefinite"
-                      values="0.2; 1; .2"
-                    />
-                    <animate
-                      attributeName="height"
-                      attributeType="XML"
-                      begin="0.3s"
-                      dur="0.6s"
-                      repeatCount="indefinite"
-                      values="10; 20; 10"
-                    />
-                    <animate
-                      attributeName="y"
-                      attributeType="XML"
-                      begin="0.3s"
-                      dur="0.6s"
-                      repeatCount="indefinite"
-                      values="10; 5; 10"
-                    />
-                  </rect>
-                </svg>
-              </span>
-            </div>
-          </div>
-          <div
-            class="ant-spin-container ant-spin-blur"
-          >
             <div
               class="ant-select ant-select-lg ant-select-borderless basic-select-wrapper custom-select-namespace custom-project-selector css-wk9fc9 css-dev-only-do-not-override-is2hm8 ant-select-single ant-select-show-arrow"
               searchinputref="[object Object]"

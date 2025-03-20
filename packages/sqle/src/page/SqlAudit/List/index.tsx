@@ -10,7 +10,8 @@ import {
   TableToolbar,
   FilterCustomProps,
   ColumnsSettingProps,
-  useTableRequestParams
+  useTableRequestParams,
+  ActiontechTableWrapper
 } from '@actiontech/shared/lib/components/ActiontechTable';
 import SqlAuditStatusFilter from './component/SqlAuditStatusFilter';
 import { useRequest } from 'ahooks';
@@ -188,48 +189,46 @@ const SqlAuditList = () => {
       />
       <div className="margin-top-60" />
       {/* table */}
-      <TableToolbar
-        refreshButton={{ refresh, disabled: pageLoading }}
-        setting={tableSetting}
-        filterButton={{
-          filterButtonMeta,
-          updateAllSelectedFilterItem
-        }}
-        searchInput={{
-          onChange: setSearchKeyword,
-          onSearch: () => {
-            refreshBySearchKeyword();
-          },
-          placeholder: t('sqlAudit.list.filter.inputTagPlaceholder')
-        }}
-        loading={pageLoading}
-      >
-        <SqlAuditStatusFilter
-          status={filterStatus}
-          onChange={setFilterStatus}
+      <ActiontechTableWrapper loading={pageLoading} setting={tableSetting}>
+        <TableToolbar
+          refreshButton={{ refresh, disabled: pageLoading }}
+          filterButton={{
+            filterButtonMeta,
+            updateAllSelectedFilterItem
+          }}
+          searchInput={{
+            onChange: setSearchKeyword,
+            onSearch: () => {
+              refreshBySearchKeyword();
+            },
+            placeholder: t('sqlAudit.list.filter.inputTagPlaceholder')
+          }}
+        >
+          <SqlAuditStatusFilter
+            status={filterStatus}
+            onChange={setFilterStatus}
+          />
+        </TableToolbar>
+        <TableFilterContainer
+          filterContainerMeta={filterContainerMeta}
+          updateTableFilterInfo={updateTableFilterInfo}
+          disabled={pageLoading}
+          filterCustomProps={filterCustomProps}
         />
-      </TableToolbar>
-      <TableFilterContainer
-        filterContainerMeta={filterContainerMeta}
-        updateTableFilterInfo={updateTableFilterInfo}
-        disabled={pageLoading}
-        filterCustomProps={filterCustomProps}
-      />
-      <ActiontechTable
-        setting={tableSetting}
-        dataSource={dataList?.list}
-        rowKey={(record: ISQLAuditRecord) => {
-          return `${record?.sql_audit_record_id}`;
-        }}
-        pagination={{
-          total: dataList?.total ?? 0,
-          current: pagination.page_index
-        }}
-        loading={pageLoading}
-        columns={columns}
-        errorMessage={requestErrorMessage}
-        onChange={tableChange}
-      />
+        <ActiontechTable
+          dataSource={dataList?.list}
+          rowKey={(record: ISQLAuditRecord) => {
+            return `${record?.sql_audit_record_id}`;
+          }}
+          pagination={{
+            total: dataList?.total ?? 0,
+            current: pagination.page_index
+          }}
+          columns={columns}
+          errorMessage={requestErrorMessage}
+          onChange={tableChange}
+        />
+      </ActiontechTableWrapper>
     </>
   );
 };

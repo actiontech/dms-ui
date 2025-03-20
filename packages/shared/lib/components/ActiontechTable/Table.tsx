@@ -6,8 +6,9 @@ import { useTranslation } from 'react-i18next';
 import { ActiontechTableStyleWrapper, tableToken } from './style';
 import useTableAction from './hooks/useTableAction';
 import classnames from 'classnames';
-import { useEffect, useMemo } from 'react';
+import { useEffect, useMemo, useContext } from 'react';
 import useTableSettings from './hooks/useTableSettings';
+import { ActiontechTableContext } from './context';
 
 const ActiontechTable = <
   T extends Record<string, any>,
@@ -15,16 +16,20 @@ const ActiontechTable = <
   OtherColumnKeys extends string = never
 >({
   className,
-  toolbar,
   errorMessage,
-  filterContainerProps,
   columns = [],
   isPaginationFixed = true,
+  toolbar,
+  filterContainerProps,
   ...props
 }: ActiontechTableProps<T, F, OtherColumnKeys>) => {
   const { t } = useTranslation();
 
-  const setting = props.setting ?? (toolbar && toolbar.setting);
+  const tableContextValue = useContext(ActiontechTableContext);
+
+  const tableSetting = tableContextValue?.setting ?? props.setting;
+
+  const setting = tableSetting ?? (toolbar && toolbar.setting);
   const { tableName = '', username = '' } = setting || {};
 
   const { renderActionInTable } = useTableAction();
@@ -45,7 +50,7 @@ const ActiontechTable = <
   }, [columns, props.actions, renderActionInTable]);
 
   const innerColumns = useMemo(() => {
-    if (!props.setting) {
+    if (!tableSetting) {
       return mergerColumns;
     }
     return mergerColumns
@@ -56,13 +61,14 @@ const ActiontechTable = <
         order: localColumns?.[v.dataIndex]?.order
       }))
       .sort((prev, current) => prev.order - current.order);
-  }, [localColumns, mergerColumns, props.setting]);
+  }, [localColumns, mergerColumns, tableSetting]);
 
   useEffect(() => {
     if (tableName && username) {
       catchDefaultColumnsInfo(mergerColumns);
     }
   }, [catchDefaultColumnsInfo, mergerColumns, tableName, username]);
+
   return (
     <>
       {toolbar && (

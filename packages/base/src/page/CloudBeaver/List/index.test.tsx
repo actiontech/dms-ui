@@ -35,6 +35,7 @@ describe('test base/CloudBeaver/List', () => {
   let dbServiceTipsSpy: jest.SpyInstance;
   let memberTipsSpy: jest.SpyInstance;
   const mockDispatch = jest.fn();
+  const mockSetGetOperationLogsLoading = jest.fn();
 
   beforeEach(() => {
     jest.useFakeTimers();
@@ -72,8 +73,16 @@ describe('test base/CloudBeaver/List', () => {
     cleanup();
   });
 
+  const customRender = () => {
+    return superRender(
+      <CBOperationLogsList
+        setGetOperationLogsLoading={mockSetGetOperationLogsLoading}
+      />
+    );
+  };
+
   it('render init table', async () => {
-    const { baseElement } = superRender(<CBOperationLogsList />);
+    const { baseElement } = customRender();
     await act(async () => jest.advanceTimersByTime(3000));
     expect(baseElement).toMatchSnapshot();
     expect(
@@ -83,18 +92,19 @@ describe('test base/CloudBeaver/List', () => {
     expect(getCBOperationLogTipsSpy).toHaveBeenCalledTimes(1);
     expect(dbServiceTipsSpy).toHaveBeenCalledTimes(1);
     expect(memberTipsSpy).toHaveBeenCalledTimes(1);
+    expect(mockSetGetOperationLogsLoading).toHaveBeenCalledTimes(2);
   });
 
   it('render table when request return failed', async () => {
     listCBOperationLogsSpy.mockClear();
     listCBOperationLogsSpy.mockImplementation(() => createSpyFailResponse({}));
-    const { baseElement } = superRender(<CBOperationLogsList />);
+    const { baseElement } = customRender();
     await act(async () => jest.advanceTimersByTime(3000));
     expect(baseElement).toMatchSnapshot();
   });
 
   it('filter data with search', async () => {
-    const { baseElement } = superRender(<CBOperationLogsList />);
+    const { baseElement } = customRender();
     expect(listCBOperationLogsSpy).toHaveBeenCalledTimes(1);
     const searchText = 'search text';
     const inputEle = getBySelector('#actiontech-table-search-input');
@@ -124,7 +134,7 @@ describe('test base/CloudBeaver/List', () => {
   });
 
   it('export file', async () => {
-    superRender(<CBOperationLogsList />);
+    customRender();
     await act(async () => jest.advanceTimersByTime(3000));
     fireEvent.click(screen.getByText('导 出'));
     await act(async () => jest.advanceTimersByTime(100));
@@ -144,7 +154,7 @@ describe('test base/CloudBeaver/List', () => {
   });
 
   it('click sql and open cloud beaver sql operation result', async () => {
-    superRender(<CBOperationLogsList />);
+    customRender();
     await act(async () => jest.advanceTimersByTime(3000));
     expect(screen.getAllByText('SELECT')).toHaveLength(2);
     fireEvent.click(screen.getAllByText('SELECT')[1]);
@@ -165,7 +175,7 @@ describe('test base/CloudBeaver/List', () => {
   });
 
   it('click audit result and open cloud beaver sql operation result', async () => {
-    superRender(<CBOperationLogsList />);
+    customRender();
     await act(async () => jest.advanceTimersByTime(3000));
     expect(getAllBySelector('.audit-result-wrapper')).toHaveLength(2);
     fireEvent.click(getAllBySelector('.audit-result-wrapper')[0]);
@@ -186,7 +196,7 @@ describe('test base/CloudBeaver/List', () => {
   });
 
   it('render create whitelist', async () => {
-    superRender(<CBOperationLogsList />);
+    customRender();
     await act(async () => jest.advanceTimersByTime(3000));
     await act(async () => jest.advanceTimersByTime(3000));
     expect(screen.queryAllByText('添加为审核SQL例外')[0]).toBeInTheDocument();
@@ -205,7 +215,7 @@ describe('test base/CloudBeaver/List', () => {
 
   describe('action permissions', () => {
     it('should render actions', async () => {
-      superRender(<CBOperationLogsList />);
+      customRender();
 
       await act(async () => jest.advanceTimersByTime(3000));
 
@@ -226,7 +236,7 @@ describe('test base/CloudBeaver/List', () => {
           }
         ]
       });
-      superRender(<CBOperationLogsList />);
+      customRender();
 
       await act(async () => jest.advanceTimersByTime(3000));
 
@@ -252,7 +262,7 @@ describe('test base/CloudBeaver/List', () => {
           }
         ]
       });
-      superRender(<CBOperationLogsList />);
+      customRender();
 
       await act(async () => jest.advanceTimersByTime(3000));
 

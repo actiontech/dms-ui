@@ -17,7 +17,8 @@ import {
   TableToolbar,
   TableFilterContainer,
   useTableFilterContainer,
-  FilterCustomProps
+  FilterCustomProps,
+  ActiontechTableWrapper
 } from '@actiontech/shared/lib/components/ActiontechTable';
 import { IGetBlacklistV1Params } from '@actiontech/shared/lib/api/sqle/service/blacklist/index.d';
 import { IBlacklistResV1 } from '@actiontech/shared/lib/api/sqle/service/common';
@@ -162,40 +163,40 @@ const SqlManagementExceptionList = () => {
         title={t('sqlManagementException.pageTitle')}
         extra={pageHeaderActions['create-sql-exception']}
       />
-      <TableToolbar
-        refreshButton={{ refresh, disabled: loading }}
-        filterButton={{
-          filterButtonMeta,
-          updateAllSelectedFilterItem
-        }}
-        searchInput={{
-          onChange: setSearchKeyword,
-          onSearch: () => {
-            refreshBySearchKeyword();
-          }
-        }}
-        loading={loading}
-      />
-      <TableFilterContainer
-        filterContainerMeta={filterContainerMeta}
-        updateTableFilterInfo={updateTableFilterInfo}
-        disabled={loading}
-        filterCustomProps={filterCustomProps}
-      />
-      <ActiontechTable
-        dataSource={whitelistList?.list}
-        rowKey={(record: IBlacklistResV1) => {
-          return `${record?.blacklist_id}`;
-        }}
-        pagination={{
-          total: whitelistList?.total ?? 0
-        }}
-        columns={SqlManagementExceptionListColumns()}
-        loading={loading}
-        errorMessage={requestErrorMessage}
-        onChange={tableChange}
-        actions={actions}
-      />
+      <ActiontechTableWrapper loading={loading}>
+        <TableToolbar
+          refreshButton={{ refresh, disabled: loading }}
+          filterButton={{
+            filterButtonMeta,
+            updateAllSelectedFilterItem
+          }}
+          searchInput={{
+            onChange: setSearchKeyword,
+            onSearch: () => {
+              refreshBySearchKeyword();
+            }
+          }}
+        />
+        <TableFilterContainer
+          filterContainerMeta={filterContainerMeta}
+          updateTableFilterInfo={updateTableFilterInfo}
+          disabled={loading}
+          filterCustomProps={filterCustomProps}
+        />
+        <ActiontechTable
+          dataSource={whitelistList?.list}
+          rowKey={(record: IBlacklistResV1) => {
+            return `${record?.blacklist_id}`;
+          }}
+          pagination={{
+            total: whitelistList?.total ?? 0
+          }}
+          columns={SqlManagementExceptionListColumns()}
+          errorMessage={requestErrorMessage}
+          onChange={tableChange}
+          actions={actions}
+        />
+      </ActiontechTableWrapper>
       <SqlManagementExceptionModal />
     </>
   );
