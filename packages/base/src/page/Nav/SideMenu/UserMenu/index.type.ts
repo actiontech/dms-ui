@@ -11,7 +11,7 @@ export type UserMenuProps = {
 export type BasicVersionModalProps = {
   open: boolean;
   width?: number | string;
-  versions: Array<VersionEnum.DMS | VersionEnum.SQLE>;
+  versions: Array<VersionEnum.DMS | VersionEnum.SQLE | VersionEnum.PROVISION>;
   desc: React.ReactNode;
   feature: React.ReactNode;
   setVersionModalClose: () => void;
