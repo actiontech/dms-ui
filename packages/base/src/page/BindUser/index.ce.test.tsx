@@ -126,7 +126,7 @@ describe('page/BindUser-ce', () => {
       await act(async () => jest.advanceTimersByTime(3000));
       expect(requestFn).toHaveBeenCalled();
       expect(requestFn).toHaveBeenCalledWith({
-        id_token: null,
+        refresh_token: null,
         oauth2_token: 'oauth2_token_val',
         user_name: 'oauth2_admin',
         pwd: 'oauth2_admin'
