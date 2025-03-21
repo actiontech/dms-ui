@@ -2,7 +2,7 @@ import {
   DEFAULT_PROJECT_ID,
   DEFAULT_PROJECT_NAME
 } from '@actiontech/shared/lib/data/common';
-import { Typography } from 'antd';
+import { Typography, Spin } from 'antd';
 import ProjectTitle from './ProjectTitle';
 import UserMenu from './UserMenu';
 import { CEModeProjectWrapperStyleWrapper } from './style';
@@ -11,16 +11,24 @@ import { useCurrentUser } from '@actiontech/shared/lib/features';
 import MenuList from './MenuList';
 import { FlagFilled } from '@actiontech/icons';
 import QuickActions from './QuickActions';
+import { useState } from 'react';
 
 const CESideMenu = () => {
   const { username, theme, updateTheme, language } = useCurrentUser();
+
+  const [systemModuleRedDotsLoading, setSystemModuleRedDotsLoading] =
+    useState(false);
 
   return (
     <SideMenuStyleWrapper className="dms-layout-side">
       <div className="dms-layout-side-start">
         <ProjectTitle />
         {/* #if [sqle] */}
-        <QuickActions />
+        <Spin spinning={systemModuleRedDotsLoading}>
+          <QuickActions
+            setSystemModuleRedDotsLoading={setSystemModuleRedDotsLoading}
+          />
+        </Spin>
         {/* #endif */}
         <CEModeProjectWrapperStyleWrapper>
           <FlagFilled width={18} height={18} className="project-flag-icon" />

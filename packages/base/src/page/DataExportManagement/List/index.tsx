@@ -7,7 +7,8 @@ import {
   useTableFilterContainer,
   TableFilterContainer,
   FilterCustomProps,
-  ActiontechTable
+  ActiontechTable,
+  ActiontechTableWrapper
 } from '@actiontech/shared/lib/components/ActiontechTable';
 import {
   useCurrentProject,
@@ -223,67 +224,65 @@ const ExportWorkflowList: React.FC = () => {
         extra={DataExportManagementCreateAction(projectID)}
       />
 
-      <TableToolbar
-        refreshButton={{ refresh, disabled: loading }}
-        setting={tableSetting}
-        actions={tableToolbarActions}
-        filterButton={{
-          filterButtonMeta,
-          updateAllSelectedFilterItem
-        }}
-        searchInput={{
-          onChange: setSearchKeyword,
-          onSearch: () => {
-            refreshBySearchKeyword();
-          }
-        }}
-        loading={loading}
-      >
-        <WorkflowStatusFilter
-          status={filterStatus}
-          onChange={setFilterStatus}
-        />
-      </TableToolbar>
-
-      <TableFilterContainer
-        filterContainerMeta={filterContainerMeta}
-        updateTableFilterInfo={updateTableFilterInfo}
-        disabled={loading}
-        filterCustomProps={filterCustomProps}
-      />
-
-      <ActiontechTable
-        className="table-row-cursor"
-        setting={tableSetting}
-        dataSource={exportWorkflowList?.list}
-        rowKey={(record: IListDataExportWorkflow) => {
-          return `${record?.workflow_uid}`;
-        }}
-        rowSelection={
-          checkActionPermission(
-            PERMISSIONS.ACTIONS.BASE.DATA_EXPORT.BATCH_CLOSE
-          )
-            ? (rowSelection as TableRowSelection<IListDataExportWorkflow>)
-            : undefined
-        }
-        pagination={{
-          total: exportWorkflowList?.total ?? 0,
-          current: pagination.page_index
-        }}
-        loading={loading}
-        columns={columns}
-        errorMessage={requestErrorMessage}
-        onChange={tableChange}
-        onRow={(record) => {
-          return {
-            onClick() {
-              navigate(ROUTE_PATHS.BASE.DATA_EXPORT.detail, {
-                params: { projectID, workflowID: record.workflow_uid ?? '' }
-              });
+      <ActiontechTableWrapper loading={loading} setting={tableSetting}>
+        <TableToolbar
+          refreshButton={{ refresh, disabled: loading }}
+          actions={tableToolbarActions}
+          filterButton={{
+            filterButtonMeta,
+            updateAllSelectedFilterItem
+          }}
+          searchInput={{
+            onChange: setSearchKeyword,
+            onSearch: () => {
+              refreshBySearchKeyword();
             }
-          };
-        }}
-      />
+          }}
+        >
+          <WorkflowStatusFilter
+            status={filterStatus}
+            onChange={setFilterStatus}
+          />
+        </TableToolbar>
+
+        <TableFilterContainer
+          filterContainerMeta={filterContainerMeta}
+          updateTableFilterInfo={updateTableFilterInfo}
+          disabled={loading}
+          filterCustomProps={filterCustomProps}
+        />
+
+        <ActiontechTable
+          className="table-row-cursor"
+          dataSource={exportWorkflowList?.list}
+          rowKey={(record: IListDataExportWorkflow) => {
+            return `${record?.workflow_uid}`;
+          }}
+          rowSelection={
+            checkActionPermission(
+              PERMISSIONS.ACTIONS.BASE.DATA_EXPORT.BATCH_CLOSE
+            )
+              ? (rowSelection as TableRowSelection<IListDataExportWorkflow>)
+              : undefined
+          }
+          pagination={{
+            total: exportWorkflowList?.total ?? 0,
+            current: pagination.page_index
+          }}
+          columns={columns}
+          errorMessage={requestErrorMessage}
+          onChange={tableChange}
+          onRow={(record) => {
+            return {
+              onClick() {
+                navigate(ROUTE_PATHS.BASE.DATA_EXPORT.detail, {
+                  params: { projectID, workflowID: record.workflow_uid ?? '' }
+                });
+              }
+            };
+          }}
+        />
+      </ActiontechTableWrapper>
     </section>
   );
 };

@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useMemo } from 'react';
+import { useCallback, useEffect, useMemo, useState } from 'react';
 import { SelectProps, Spin } from 'antd';
 import { useRequest } from 'ahooks';
 import { SideMenuStyleWrapper } from '@actiontech/shared/lib/styleWrapper/nav';
@@ -23,6 +23,9 @@ import { ROUTE_PATHS } from '@actiontech/shared/lib/data/routePaths';
 const SideMenu: React.FC = () => {
   const navigate = useTypedNavigate();
   const dispatch = useDispatch();
+
+  const [systemModuleRedDotsLoading, setSystemModuleRedDotsLoading] =
+    useState(false);
 
   const { username, theme, updateTheme, bindProjects, language } =
     useCurrentUser();
@@ -128,10 +131,12 @@ const SideMenu: React.FC = () => {
     <SideMenuStyleWrapper className="dms-layout-side">
       <div className="dms-layout-side-start">
         <ProjectTitle />
-        {/* #if [sqle] */}
-        <QuickActions />
-        {/* #endif */}
-        <Spin spinning={getProjectListLoading}>
+        <Spin spinning={getProjectListLoading || systemModuleRedDotsLoading}>
+          {/* #if [sqle] */}
+          <QuickActions
+            setSystemModuleRedDotsLoading={setSystemModuleRedDotsLoading}
+          />
+          {/* #endif */}
           <ProjectSelector
             value={currentProjectID}
             prefix={
@@ -146,7 +151,6 @@ const SideMenu: React.FC = () => {
             bindProjects={bindProjectsWithArchiveStatus}
           />
         </Spin>
-
         <MenuList projectID={currentProjectID ?? ''} />
       </div>
 
