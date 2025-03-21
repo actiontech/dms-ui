@@ -4120,37 +4120,37 @@ exports[`test Base/Nav/SideMenu/index should match snapshot when checkPagePermis
         </div>
       </div>
       <div
-        class="css-22avtw"
+        class="ant-spin-nested-loading css-dev-only-do-not-override-txh9fw"
       >
-        <div
-          class="ant-spin-nested-loading css-dev-only-do-not-override-txh9fw"
-        >
-          <div>
-            <div
-              aria-busy="true"
-              aria-live="polite"
-              class="ant-spin ant-spin-spinning css-dev-only-do-not-override-txh9fw"
-            >
-              <span
-                class="ant-spin-dot ant-spin-dot-spin"
-              >
-                <i
-                  class="ant-spin-dot-item"
-                />
-                <i
-                  class="ant-spin-dot-item"
-                />
-                <i
-                  class="ant-spin-dot-item"
-                />
-                <i
-                  class="ant-spin-dot-item"
-                />
-              </span>
-            </div>
-          </div>
+        <div>
           <div
-            class="ant-spin-container ant-spin-blur"
+            aria-busy="true"
+            aria-live="polite"
+            class="ant-spin ant-spin-spinning css-dev-only-do-not-override-txh9fw"
+          >
+            <span
+              class="ant-spin-dot ant-spin-dot-spin"
+            >
+              <i
+                class="ant-spin-dot-item"
+              />
+              <i
+                class="ant-spin-dot-item"
+              />
+              <i
+                class="ant-spin-dot-item"
+              />
+              <i
+                class="ant-spin-dot-item"
+              />
+            </span>
+          </div>
+        </div>
+        <div
+          class="ant-spin-container ant-spin-blur"
+        >
+          <div
+            class="css-22avtw"
           >
             <div
               class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center action-space-wrapper"
@@ -4219,38 +4219,6 @@ exports[`test Base/Nav/SideMenu/index should match snapshot when checkPagePermis
               </div>
             </div>
           </div>
-        </div>
-      </div>
-      <div
-        class="ant-spin-nested-loading css-dev-only-do-not-override-txh9fw"
-      >
-        <div>
-          <div
-            aria-busy="true"
-            aria-live="polite"
-            class="ant-spin ant-spin-spinning css-dev-only-do-not-override-txh9fw"
-          >
-            <span
-              class="ant-spin-dot ant-spin-dot-spin"
-            >
-              <i
-                class="ant-spin-dot-item"
-              />
-              <i
-                class="ant-spin-dot-item"
-              />
-              <i
-                class="ant-spin-dot-item"
-              />
-              <i
-                class="ant-spin-dot-item"
-              />
-            </span>
-          </div>
-        </div>
-        <div
-          class="ant-spin-container ant-spin-blur"
-        >
           <div
             class="ant-select ant-select-lg ant-select-borderless basic-select-wrapper custom-select-namespace custom-project-selector css-wk9fc9 css-dev-only-do-not-override-v9sov3 ant-select-single ant-select-show-arrow"
             searchinputref="[object Object]"
@@ -5248,13 +5216,13 @@ exports[`test Base/Nav/SideMenu/index should match snapshot when checkPagePermis
         </div>
       </div>
       <div
-        class="css-22avtw"
+        class="ant-spin-nested-loading css-dev-only-do-not-override-txh9fw"
       >
         <div
-          class="ant-spin-nested-loading css-dev-only-do-not-override-txh9fw"
+          class="ant-spin-container"
         >
           <div
-            class="ant-spin-container"
+            class="css-22avtw"
           >
             <div
               class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center action-space-wrapper"
@@ -5346,14 +5314,6 @@ exports[`test Base/Nav/SideMenu/index should match snapshot when checkPagePermis
               </div>
             </div>
           </div>
-        </div>
-      </div>
-      <div
-        class="ant-spin-nested-loading css-dev-only-do-not-override-txh9fw"
-      >
-        <div
-          class="ant-spin-container"
-        >
           <div
             class="ant-select ant-select-lg ant-select-borderless basic-select-wrapper custom-select-namespace custom-project-selector css-wk9fc9 css-dev-only-do-not-override-v9sov3 ant-select-single ant-select-show-arrow"
             searchinputref="[object Object]"
