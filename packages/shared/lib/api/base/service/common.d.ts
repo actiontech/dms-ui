@@ -263,11 +263,11 @@ export interface IBindOauth2UserReply {
 }
 
 export interface IBindOauth2UserReq {
-  id_token?: string;
-
   oauth2_token?: string;
 
   pwd?: string;
+
+  refresh_token?: string;
 
   user_name?: string;
 }
