@@ -2174,37 +2174,37 @@ exports[`test base/Nav/SideMenu/index.ce should match snapshot when checkPagePer
         </div>
       </div>
       <div
-        class="css-22avtw"
+        class="ant-spin-nested-loading css-dev-only-do-not-override-txh9fw"
       >
-        <div
-          class="ant-spin-nested-loading css-dev-only-do-not-override-txh9fw"
-        >
-          <div>
-            <div
-              aria-busy="true"
-              aria-live="polite"
-              class="ant-spin ant-spin-spinning css-dev-only-do-not-override-txh9fw"
-            >
-              <span
-                class="ant-spin-dot ant-spin-dot-spin"
-              >
-                <i
-                  class="ant-spin-dot-item"
-                />
-                <i
-                  class="ant-spin-dot-item"
-                />
-                <i
-                  class="ant-spin-dot-item"
-                />
-                <i
-                  class="ant-spin-dot-item"
-                />
-              </span>
-            </div>
-          </div>
+        <div>
           <div
-            class="ant-spin-container ant-spin-blur"
+            aria-busy="true"
+            aria-live="polite"
+            class="ant-spin ant-spin-spinning css-dev-only-do-not-override-txh9fw"
+          >
+            <span
+              class="ant-spin-dot ant-spin-dot-spin"
+            >
+              <i
+                class="ant-spin-dot-item"
+              />
+              <i
+                class="ant-spin-dot-item"
+              />
+              <i
+                class="ant-spin-dot-item"
+              />
+              <i
+                class="ant-spin-dot-item"
+              />
+            </span>
+          </div>
+        </div>
+        <div
+          class="ant-spin-container ant-spin-blur"
+        >
+          <div
+            class="css-22avtw"
           >
             <div
               class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center action-space-wrapper"
@@ -3403,13 +3403,13 @@ exports[`test base/Nav/SideMenu/index.ce should match snapshot when checkPagePer
         </div>
       </div>
       <div
-        class="css-22avtw"
+        class="ant-spin-nested-loading css-dev-only-do-not-override-txh9fw"
       >
         <div
-          class="ant-spin-nested-loading css-dev-only-do-not-override-txh9fw"
+          class="ant-spin-container"
         >
           <div
-            class="ant-spin-container"
+            class="css-22avtw"
           >
             <div
               class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center action-space-wrapper"
