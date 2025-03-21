@@ -131,7 +131,7 @@ describe('page/BindUser-ee', () => {
       expect(requestFn).toHaveBeenCalled();
       expect(requestFn).toHaveBeenCalledWith({
         oauth2_token: 'oauth2_token_val',
-        id_token: 'id_token_val',
+        refresh_token: 'id_token_val',
         user_name: 'oauth2_admin',
         pwd: 'oauth2_admin'
       });
