@@ -40,8 +40,15 @@ import { PermissionReduxState } from '@actiontech/shared/lib/types/common.type';
 import i18n from './locale';
 import antd_zh_CN from 'antd/locale/zh_CN';
 import antd_en_US from 'antd/locale/en_US';
+import antd_ko_KR from 'antd/locale/ko_KR';
 
 import './index.less';
+
+const antdLanguageMap = {
+  [SupportLanguage.zhCN]: antd_zh_CN,
+  [SupportLanguage.enUS]: antd_en_US,
+  [SupportLanguage.koKR]: antd_ko_KR
+};
 
 dayjs.extend(updateLocale);
 dayjs.updateLocale('zh-cn', {
@@ -86,8 +93,7 @@ function App() {
     language: currentLanguage
   } = useCurrentUser();
 
-  const antdLanguage =
-    currentLanguage === SupportLanguage.enUS ? antd_en_US : antd_zh_CN;
+  const antdLanguage = antdLanguageMap[currentLanguage];
 
   const { driverInfoFetched, updateDriverList } = useDbServiceDriver();
   const { updateFeaturePermission, featurePermissionFetched } =
