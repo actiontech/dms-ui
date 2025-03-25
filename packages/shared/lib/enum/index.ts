@@ -4,7 +4,8 @@ export enum PackageNameEnum {
 
 export enum SupportLanguage {
   zhCN = 'zh-CN',
-  enUS = 'en-US'
+  enUS = 'en-US',
+  koKR = 'ko-KR'
 }
 
 export enum ResponseCode {

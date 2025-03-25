@@ -3,10 +3,13 @@ import { initReactI18next } from 'react-i18next';
 import i18n from 'i18next';
 import sqleZhCN from 'sqle/src/locale/zh-CN';
 import sqleEnUS from 'sqle/src/locale/en-US';
+import sqleKoKR from 'sqle/src/locale/ko_KR';
 import commonZhCN from '@actiontech/shared/lib/locale/zh-CN';
 import commonEnUS from '@actiontech/shared/lib/locale/en-US';
+import commonKoKR from '@actiontech/shared/lib/locale/ko_KR';
 import zhCN from './zh-CN';
 import enUS from './en-US';
+import koKR from './ko_KR';
 import { TOptions } from 'i18next';
 import { LocalStorageWrapper } from '@actiontech/shared';
 import { TemplateKeyPath } from '@actiontech/shared/lib/types/common.type';
@@ -53,13 +56,22 @@ const allEnUS = {
   }
 };
 
+const allKoKR = {
+  translation: {
+    ...commonKoKR.translation,
+    ...sqleKoKR.translation,
+    ...koKR.translation
+  }
+};
+
 export type I18nKey = TemplateKeyPath<typeof allZhCN.translation>;
 
 const initReactI18n = () => {
   i18n.use(initReactI18next).init({
     resources: {
       [SupportLanguage.zhCN]: allZhCN,
-      [SupportLanguage.enUS]: allEnUS
+      [SupportLanguage.enUS]: allEnUS,
+      [SupportLanguage.koKR]: allKoKR
     },
     lng: LocalStorageWrapper.getOrDefault(
       StorageKey.Language,
