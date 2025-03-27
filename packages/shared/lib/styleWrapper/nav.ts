@@ -29,6 +29,10 @@ export const SideMenuStyleWrapper = styled('div')`
       flex-direction: column;
       align-items: flex-start;
 
+      .ant-spin-nested-loading {
+        width: 100%;
+      }
+
       .title {
         display: flex;
         height: 60px;
