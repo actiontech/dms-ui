@@ -80,6 +80,16 @@ export const PERMISSION_MANIFEST: Record<
     type: 'page',
     moduleSupport: [SystemModuleSupported.knowledge]
   },
+  [PERMISSIONS.PAGES.BASE.RESOURCE_OVERVIEW]: {
+    id: PERMISSIONS.PAGES.BASE.RESOURCE_OVERVIEW,
+    type: 'page',
+    role: [
+      SystemRole.admin,
+      SystemRole.globalManager,
+      SystemRole.globalViewing,
+      SystemRole.certainProjectManager
+    ]
+  },
   // action
 
   //cloud beaver

@@ -99,4 +99,8 @@ export type IconTheme = {
     basicTitleTips: string;
     modify: string;
   };
+  resourceOverview: {
+    databaseFilled: string;
+    schemaFilled: string;
+  };
 };

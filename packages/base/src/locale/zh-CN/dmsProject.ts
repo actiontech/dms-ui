@@ -26,8 +26,9 @@ export default {
     name: '项目名称',
     desc: '项目描述',
     priority: '项目优先级',
-    business: '可用业务',
+    business: '所属业务',
     addBusiness: '添加业务',
+    deleteBusinessConfirmTitle: '确认要删除此业务么?',
     deleteTip: '当前业务已有关联资源，无法删除',
     fixedBusiness: '是否固定可选业务标签',
     fixedBusinessExtra:

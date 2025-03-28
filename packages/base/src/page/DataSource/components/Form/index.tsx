@@ -53,6 +53,7 @@ import {
   getSystemModuleStatusModuleNameEnum
 } from '@actiontech/shared/lib/api/sqle/service/system/index.enum';
 import { ResponseCode } from '@actiontech/shared/lib/enum';
+import EnvironmentField from './EnvironmentField';
 
 const DataSourceForm: React.FC<IDataSourceFormProps> = (props) => {
   const { t } = useTranslation();
@@ -75,8 +76,8 @@ const DataSourceForm: React.FC<IDataSourceFormProps> = (props) => {
     generateDriverSelectOptions
   } = useDbServiceDriver();
 
-  const { updateProjectBusinessTips, projectBusinessOption, isFixedBusiness } =
-    useProjectBusinessTips();
+  // const { updateProjectBusinessTips, projectBusinessOption, isFixedBusiness } =
+  //   useProjectBusinessTips();
 
   const { updateProjects, projectIDOptions } = useProjectTips();
 
@@ -296,13 +297,13 @@ const DataSourceForm: React.FC<IDataSourceFormProps> = (props) => {
     updateProjects();
   }, [updateDriverList, updateProjects]);
 
-  // #if [ee]
-  useEffect(() => {
-    if (project) {
-      updateProjectBusinessTips(project);
-    }
-  }, [updateProjectBusinessTips, project]);
-  // #endif
+  // // #if [ee]
+  // useEffect(() => {
+  //   if (project) {
+  //     updateProjectBusinessTips(project);
+  //   }
+  // }, [updateProjectBusinessTips, project]);
+  // // #endif
 
   useEffect(() => {
     if (projectID) {
@@ -390,7 +391,7 @@ const DataSourceForm: React.FC<IDataSourceFormProps> = (props) => {
             currentAsyncParams={params}
             isExternalInstance={isExternalInstance}
           />
-          <EmptyBox
+          {/* <EmptyBox
             if={isFixedBusiness}
             defaultNode={
               <FormItemLabel
@@ -414,7 +415,15 @@ const DataSourceForm: React.FC<IDataSourceFormProps> = (props) => {
                 disabled={!project}
               />
             </FormItemLabel>
-          </EmptyBox>
+          </EmptyBox> */}
+          <FormItemLabel
+            className="has-required-style"
+            label={t('dmsDataSource.dataSourceForm.environmentAttribute')}
+            name="environment"
+            rules={[{ required: true }]}
+          >
+            <EnvironmentField />
+          </FormItemLabel>
           <FormItemLabel
             className="has-label-tip"
             label={

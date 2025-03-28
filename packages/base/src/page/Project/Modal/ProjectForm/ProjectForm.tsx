@@ -8,14 +8,15 @@ import {
   EmptyBox,
   BasicSelect
 } from '@actiontech/shared';
-import BusinessListField from './BusinessListField';
-import { FormListAddButtonWrapper } from '@actiontech/shared/lib/styleWrapper/element';
-import {
-  CustomLabelContent,
-  FormItemLabel
-} from '@actiontech/shared/lib/components/CustomForm';
-import { PlusCircleFilled } from '@actiontech/icons';
+// import BusinessListField from './BusinessListField';
+// import { FormListAddButtonWrapper } from '@actiontech/shared/lib/styleWrapper/element';
+// import {
+//   CustomLabelContent,
+//   FormItemLabel
+// } from '@actiontech/shared/lib/components/CustomForm';
+// import { PlusCircleFilled } from '@actiontech/icons';
 import { ProjectPriorityOptions } from 'sqle/src/page/GlobalDashboard/index.data';
+import BusinessField from './BusinessField';
 
 const ProjectForm: React.FC<ProjectFormProps> = ({
   form,
@@ -23,8 +24,8 @@ const ProjectForm: React.FC<ProjectFormProps> = ({
 }) => {
   const { t } = useTranslation();
 
-  const fixedBusiness = Form.useWatch('isFixedBusiness', form);
-  const business = Form.useWatch('business', form);
+  // const fixedBusiness = Form.useWatch('isFixedBusiness', form);
+  // const business = Form.useWatch('business', form);
 
   return (
     <Form<ProjectFormFields> form={form} colon={false} layout="vertical">
@@ -56,7 +57,7 @@ const ProjectForm: React.FC<ProjectFormProps> = ({
       >
         <BasicSelect options={ProjectPriorityOptions} />
       </Form.Item>
-      <FormItemLabel
+      {/* <FormItemLabel
         name="isFixedBusiness"
         className="has-label-tip"
         label={
@@ -115,7 +116,18 @@ const ProjectForm: React.FC<ProjectFormProps> = ({
             </>
           )}
         </Form.List>
-      </EmptyBox>
+      </EmptyBox> */}
+      <Form.Item
+        name="business"
+        rules={[
+          {
+            required: true
+          }
+        ]}
+        label={t('dmsProject.projectForm.business')}
+      >
+        <BusinessField />
+      </Form.Item>
     </Form>
   );
 };
