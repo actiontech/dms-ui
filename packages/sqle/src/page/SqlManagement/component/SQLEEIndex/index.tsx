@@ -17,7 +17,7 @@ import {
   ColumnsSettingProps,
   useTableRequestParams
 } from '@actiontech/shared/lib/components/ActiontechTable';
-import { SqlManageService } from '@actiontech/shared/lib/api';
+import { SqleApi } from '@actiontech/shared/lib/api';
 import {
   IExportSqlManageV1Params,
   IGetSqlManageListV2Params
@@ -172,7 +172,7 @@ const SQLEEIndex = () => {
           : undefined
       };
       return handleTableRequestError(
-        SqlManageService.GetSqlManageListV2(params)
+        SqleApi.SqlManageService.GetSqlManageListV2(params)
       );
     },
     {
@@ -211,7 +211,7 @@ const SQLEEIndex = () => {
 
   const { data: abnormalInstances, loading: getAbnormalInstancesLoading } =
     useRequest(() =>
-      SqlManageService.getAbnormalInstanceAuditPlansV1({
+      SqleApi.SqlManageService.getAbnormalInstanceAuditPlansV1({
         project_name: projectName
       }).then((res) => {
         if (res.data.code === ResponseCode.SUCCESS) {
@@ -301,7 +301,7 @@ const SQLEEIndex = () => {
         return;
       }
       updateRemarkProtect.current = true;
-      SqlManageService.BatchUpdateSqlManage({
+      SqleApi.SqlManageService.BatchUpdateSqlManage({
         project_name: projectName,
         sql_manage_id_list: [id],
         remark
@@ -390,7 +390,7 @@ const SQLEEIndex = () => {
         DB_TYPE_RULE_NAME_SEPARATOR
       )?.[1]
     } as IExportSqlManageV1Params;
-    SqlManageService.exportSqlManageV1(params, { responseType: 'blob' })
+    SqleApi.SqlManageService.exportSqlManageV1(params, { responseType: 'blob' })
       .then((res) => {
         if (res.data.code === ResponseCode.SUCCESS) {
           messageApi.success(

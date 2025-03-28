@@ -12,7 +12,7 @@ import MarkdownTOC from '../components/MarkdownTOC';
 import classNames from 'classnames';
 import { useRef } from 'react';
 import { useRequest } from 'ahooks';
-import { KnowledgeBaseService } from '@actiontech/shared/lib/api';
+import { SqleApi } from '@actiontech/shared/lib/api';
 import { ResponseCode } from '@actiontech/shared/lib/enum';
 import Graph from '../../Knowledge/Graph';
 import { markdownPreviewOptions } from '../Common/MarkdownPreview/markdownPreviewOptions';
@@ -30,7 +30,7 @@ const RuleUnderstand: React.FC<RuleUnderstandProps> = ({
   const markdownRef = useRef<HTMLDivElement>(null);
 
   const { data: graphData, loading: getGraphLoading } = useRequest(() =>
-    KnowledgeBaseService.getKnowledgeGraph({
+    SqleApi.KnowledgeBaseService.getKnowledgeGraph({
       filter_by_rule_name: ruleName
     }).then((res) => {
       if (res.data.code === ResponseCode.SUCCESS) {
