@@ -11,14 +11,34 @@ const edition = process.argv[2] ?? 'ce';
 let version = '';
 
 try {
-  // 尝试获取当前 commit 的 tag
-  const tag = execSync('git describe --exact-match --tags HEAD 2>/dev/null', {
-    encoding: 'utf8',
-    stdio: ['pipe', 'pipe', 'ignore'] // 忽略错误输出
+  // 获取当前 commit hash
+  const currentCommit = execSync('git rev-parse HEAD', {
+    encoding: 'utf8'
   }).trim();
 
-  const formattedTag = tag.replace(/^v/i, '');
+  // 获取所有 tag 并按创建时间倒序排序
+  const tags = execSync(
+    'git tag --sort=-creatordate -l --format="%(objectname) %(refname:short)"',
+    {
+      encoding: 'utf8'
+    }
+  )
+    .trim()
+    .split('\n')
+    .filter(Boolean); // 过滤空行
 
+  // 找到所有与当前 commit 关联的 tag
+  const matchingTags = tags.filter((t) =>
+    t.split(' ')[0].startsWith(currentCommit)
+  );
+
+  if (matchingTags.length === 0) {
+    throw new Error('No tag found for current commit');
+  }
+
+  const selectedTag = matchingTags[matchingTags.length - 1] || matchingTags[0];
+
+  const formattedTag = selectedTag.split(' ')[1].replace(/^v/i, '');
   const commitId = execSync('git rev-parse --short HEAD', {
     encoding: 'utf8'
   }).trim();
