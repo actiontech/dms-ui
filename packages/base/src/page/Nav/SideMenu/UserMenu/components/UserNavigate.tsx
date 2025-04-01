@@ -35,6 +35,11 @@ type Props = {
   onOpenVersionModal: () => void;
 };
 
+type LanguageOptions = Array<{
+  key: SupportLanguage;
+  text: string;
+}>;
+
 const UserNavigate: React.FC<Props> = ({
   username,
   language: currentLanguage,
@@ -79,6 +84,21 @@ const UserNavigate: React.FC<Props> = ({
     }
   );
 
+  const languageOptions: LanguageOptions = [
+    {
+      key: SupportLanguage.zhCN,
+      text: '中文'
+    },
+    {
+      key: SupportLanguage.enUS,
+      text: 'English'
+    },
+    {
+      key: SupportLanguage.koKR,
+      text: '한국어'
+    }
+  ];
+
   const menus: ContextMenuItem[] = [
     {
       key: 'language',
@@ -91,44 +111,25 @@ const UserNavigate: React.FC<Props> = ({
               document.getElementById('change-language-trigger-node')!,
             placement: 'right'
           }}
-          items={[
-            {
-              key: 'znCN',
+          items={languageOptions.map((language) => {
+            return {
+              key: language.key,
               text: (
                 <Radio
                   className="full-width-element"
                   onClick={() => {
-                    if (currentLanguage !== SupportLanguage.zhCN) {
-                      updateLanguage(SupportLanguage.zhCN);
+                    if (currentLanguage !== language.key) {
+                      updateLanguage(language.key);
                     }
                   }}
-                  checked={currentLanguage === SupportLanguage.zhCN}
+                  checked={currentLanguage === language.key}
                 >
-                  {t('dmsMenu.userNavigate.language.zhCN')}
+                  {language.text}
                 </Radio>
               ),
-
               disabled: updateLanguagePending
-            },
-            {
-              key: 'enUS',
-              text: (
-                <Radio
-                  className="full-width-element"
-                  onClick={() => {
-                    if (currentLanguage !== SupportLanguage.enUS) {
-                      updateLanguage(SupportLanguage.enUS);
-                    }
-                  }}
-                  checked={currentLanguage === SupportLanguage.enUS}
-                >
-                  {t('dmsMenu.userNavigate.language.enUS')}
-                </Radio>
-              ),
-
-              disabled: updateLanguagePending
-            }
-          ]}
+            };
+          })}
         >
           <div id="change-language-trigger-node" className="flex-space-between">
             <span>{t('dmsMenu.userNavigate.language.text')}</span>

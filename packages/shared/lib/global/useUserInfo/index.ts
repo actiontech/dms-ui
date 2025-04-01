@@ -69,7 +69,8 @@ const useUserInfo = () => {
           let language = DEFAULT_LANGUAGE;
           if (
             data?.language === SupportLanguage.enUS ||
-            data?.language === SupportLanguage.zhCN
+            data?.language === SupportLanguage.zhCN ||
+            data?.language === SupportLanguage.koKR
           ) {
             language = data.language;
           }
