@@ -49,7 +49,7 @@ export const mergeFilterButtonMeta = <
   // #if [DEV]
   if (
     Array.from(map).some(
-      ([_, value]) =>
+      ([, value]) =>
         value.filterLabel === '' && value.filterCustomType !== 'search-input'
     )
   ) {
@@ -63,7 +63,7 @@ export const mergeFilterButtonMeta = <
 const useTableFilterContainer = <
   T extends Record<string, any>,
   F extends Record<string, any>,
-  OtherKeys extends string = ''
+  OtherKeys extends string = never
 >(
   columns: ActiontechTableColumn<T, F, OtherKeys>,
   updateTableFilterInfo: UpdateTableFilterInfoType<F>,
@@ -77,7 +77,7 @@ const useTableFilterContainer = <
     ActiontechTableFilterContainerMeta<T, F>
   >(() => {
     const checkedFilterMeta = Array.from(filterButtonMeta).filter(
-      ([_, value]) => !!value.checked
+      ([, value]) => !!value.checked
     );
 
     const meta: ActiontechTableFilterContainerMeta<T, F> = [];
@@ -109,7 +109,7 @@ const useTableFilterContainer = <
 
   const updateAllSelectedFilterItem = useCallback(
     (checked: boolean) => {
-      updateTableFilterInfo((_: F) => ({} as F));
+      updateTableFilterInfo(() => ({} as F));
       setFilterButtonMeta((meta) => {
         meta.forEach((value, key) => {
           meta.set(key, { ...value, checked });

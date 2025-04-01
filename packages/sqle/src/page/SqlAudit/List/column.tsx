@@ -14,6 +14,7 @@ import SqlAuditStatusTag from './component/SqlAuditStatusTag';
 import { getSQLAuditRecordsV1FilterSqlAuditStatusEnum } from '@actiontech/shared/lib/api/sqle/service/sql_audit_record/index.enum';
 import SqlAuditTags from './component/SqlAuditTags';
 import { ROUTE_PATHS } from '@actiontech/shared/lib/data/routePaths';
+import { ISQLAuditRecordExtraParams } from './index.type';
 
 export type SqlAuditListTableFilterParamType = PageInfoWithoutIndexAndSize<
   IGetSQLAuditRecordsV1Params,
@@ -21,17 +22,11 @@ export type SqlAuditListTableFilterParamType = PageInfoWithoutIndexAndSize<
 >;
 
 export const ExtraFilterMeta: () => ActiontechTableFilterMeta<
-  ISQLAuditRecord & {
-    instance_name?: string;
-    auditTime?: string;
-  },
+  ISQLAuditRecordExtraParams,
   SqlAuditListTableFilterParamType
 > = () => {
   return new Map<
-    keyof (ISQLAuditRecord & {
-      instance_name?: string;
-      auditTime?: string;
-    }),
+    keyof ISQLAuditRecordExtraParams,
     ActiontechTableFilterMetaValue<SqlAuditListTableFilterParamType>
   >([
     [

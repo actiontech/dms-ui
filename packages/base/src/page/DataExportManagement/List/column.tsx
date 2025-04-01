@@ -12,6 +12,7 @@ import { IListDataExportWorkflow } from '@actiontech/shared/lib/api/base/service
 import { IListDataExportWorkflowsParams } from '@actiontech/shared/lib/api/base/service/DataExportWorkflows/index.d';
 import { TableColumnWithIconStyleWrapper } from '@actiontech/shared/lib/styleWrapper/element';
 import { BriefcaseFilled } from '@actiontech/icons';
+import { IListDataExportWorkflowWithExtraParams } from './index.type';
 
 export type ExportWorkflowListFilterParamType = PageInfoWithoutIndexAndSize<
   IListDataExportWorkflowsParams & { page_index: number },
@@ -19,9 +20,7 @@ export type ExportWorkflowListFilterParamType = PageInfoWithoutIndexAndSize<
 >;
 
 export const ExportWorkflowExtraFilterMeta: () => ActiontechTableFilterMeta<
-  IListDataExportWorkflow & {
-    db_service_uid?: string;
-  },
+  IListDataExportWorkflowWithExtraParams,
   ExportWorkflowListFilterParamType
 > = () => {
   return new Map<

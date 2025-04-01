@@ -77,7 +77,9 @@ const FileExecuteMode: React.FC<FileExecuteModeProps> = ({
   );
 
   const loadMore = () => {
-    next && next();
+    if (next) {
+      next();
+    }
   };
 
   return (

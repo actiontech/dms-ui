@@ -123,7 +123,7 @@ const RuleListFilter: React.FC<RuleListFilterProps> = ({
     }
   };
 
-  const onDbTypeChange = (dbType: string) => {
+  const onDbTypeChange = () => {
     form.setFieldValue('filter_rule_version', undefined);
   };
 

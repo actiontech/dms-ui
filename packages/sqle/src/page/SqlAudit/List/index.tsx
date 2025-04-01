@@ -30,6 +30,7 @@ import { getSQLAuditRecordsV1FilterSqlAuditStatusEnum } from '@actiontech/shared
 import { useBoolean } from 'ahooks';
 import { SqlAuditPageHeaderActions } from './actions';
 import { ROUTE_PATHS } from '@actiontech/shared/lib/data/routePaths';
+import { ISQLAuditRecordExtraParams } from './index.type';
 
 const SqlAuditList = () => {
   const { t } = useTranslation();
@@ -147,15 +148,13 @@ const SqlAuditList = () => {
     [username]
   );
   const { filterButtonMeta, filterContainerMeta, updateAllSelectedFilterItem } =
-    useTableFilterContainer(columns, updateTableFilterInfo, ExtraFilterMeta());
+    useTableFilterContainer<
+      ISQLAuditRecordExtraParams,
+      SqlAuditListTableFilterParamType,
+      'instance' | 'score' | 'audit_pass_rate'
+    >(columns, updateTableFilterInfo, ExtraFilterMeta());
   const filterCustomProps = useMemo(() => {
-    return new Map<
-      keyof (ISQLAuditRecord & {
-        instance_name?: string;
-        auditTime?: string;
-      }),
-      FilterCustomProps
-    >([
+    return new Map<keyof ISQLAuditRecordExtraParams, FilterCustomProps>([
       ['instance_name', { options: instanceIDOptions }],
       [
         'auditTime',

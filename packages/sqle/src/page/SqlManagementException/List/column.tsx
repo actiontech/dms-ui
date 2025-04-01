@@ -57,7 +57,7 @@ export const SqlManagementExceptionListColumns: () => ActiontechTableColumn<
     {
       dataIndex: 'type',
       title: () => t('sqlManagementException.table.matchType'),
-      render: (type, record) => {
+      render: (type) => {
         return type ? SqlManagementExceptionMatchTypeDirection[type] : '-';
       },
       filterCustomType: 'select',
