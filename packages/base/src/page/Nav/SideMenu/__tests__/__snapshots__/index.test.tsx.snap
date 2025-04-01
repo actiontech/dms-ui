@@ -1292,7 +1292,7 @@ exports[`test Base/Nav/SideMenu/index mount and unmount component 2`] = `
 <body>
   <div>
     <div
-      class="dms-layout-side css-13dah2i"
+      class="dms-layout-side css-13z0syi"
     >
       <div
         class="dms-layout-side-start"
@@ -2578,7 +2578,7 @@ exports[`test Base/Nav/SideMenu/index mount and unmount component 3`] = `
 <body>
   <div>
     <div
-      class="dms-layout-side css-13dah2i"
+      class="dms-layout-side css-13z0syi"
     >
       <div
         class="dms-layout-side-start"
@@ -4098,7 +4098,7 @@ exports[`test Base/Nav/SideMenu/index mount and unmount component 3`] = `
 exports[`test Base/Nav/SideMenu/index should match snapshot when checkPagePermission return value is equal false 1`] = `
 <div>
   <div
-    class="dms-layout-side css-13dah2i"
+    class="dms-layout-side css-13z0syi"
   >
     <div
       class="dms-layout-side-start"
@@ -5194,7 +5194,7 @@ exports[`test Base/Nav/SideMenu/index should match snapshot when checkPagePermis
 exports[`test Base/Nav/SideMenu/index should match snapshot when checkPagePermission return value is equal false 2`] = `
 <div>
   <div
-    class="dms-layout-side css-13dah2i"
+    class="dms-layout-side css-13z0syi"
   >
     <div
       class="dms-layout-side-start"
