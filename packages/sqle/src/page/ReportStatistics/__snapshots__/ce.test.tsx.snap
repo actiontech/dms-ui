@@ -1307,7 +1307,7 @@ exports[`sqle/ReportStatistics CE should match snap shot 1`] = `
                       class="title"
                     >
                       Action 
-                      SQLE
+                      DMS
                     </div>
                     <p
                       class="cont-tip"
@@ -1406,7 +1406,7 @@ exports[`sqle/ReportStatistics CE should match snap shot 1`] = `
                       class="title"
                     >
                       Action 
-                      SQLE
+                      DMS
                     </div>
                     <p
                       class="cont-tip"
