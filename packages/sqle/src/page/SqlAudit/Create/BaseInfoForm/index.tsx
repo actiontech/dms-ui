@@ -59,7 +59,7 @@ const BaseInfoForm = ({ form }: SqlAuditBaseInfoFormProps) => {
         color="geekblue"
         closable={true}
         size="small"
-        onClose={(e) => {
+        onClose={() => {
           setFormTagVal((values) => values.filter((v) => v !== props.value));
           form.setFieldsValue({
             tags: formTagVal.filter((v) => v !== props.value)

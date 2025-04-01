@@ -7,6 +7,7 @@ import {
 
 export const AuditResultForCreateOrderActions = (
   onCreateWhitelist: (record?: IListDataExportTaskSQL) => void,
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   handleClickSqlRewritten: (record: IListDataExportTaskSQL) => void
 ): ActiontechTableActionsWithPermissions<IListDataExportTaskSQL> => {
   return [

@@ -57,6 +57,7 @@ export class Writer {
       if (existsSync(configPath)) {
         this.options = {
           parser: 'typescript',
+          // eslint-disable-next-line @typescript-eslint/no-require-imports
           ...require(configPath)
         };
       }

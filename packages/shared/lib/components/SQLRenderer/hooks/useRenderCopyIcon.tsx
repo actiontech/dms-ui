@@ -19,7 +19,7 @@ const useRenderCopyIcon = (
     const onCopyExecSql = () => {
       try {
         navigator.clipboard.writeText(sql);
-      } catch (err) {
+      } catch {
         Copy.copyTextByTextarea(sql);
       }
     };

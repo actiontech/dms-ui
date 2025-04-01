@@ -51,7 +51,7 @@ const BasicDatePicker: React.FC<BasicDatePickerProps> = ({
           suffixIcon={!open ? <DownOutlined /> : <UpOutlined />}
           onOpenChange={(data: boolean) => {
             set(data);
-            onOpenChange && onOpenChange(data);
+            onOpenChange?.(data);
           }}
           getPopupContainer={() => {
             return ref.current!;

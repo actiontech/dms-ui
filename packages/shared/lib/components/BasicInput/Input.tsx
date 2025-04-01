@@ -14,7 +14,7 @@ const InternalInput: React.ForwardRefRenderFunction<InputRef, InputProps> = (
   ref
 ) => {
   const { t } = useTranslation();
-  const { children, className, allowClear, ...otherParams } = props;
+  const { className, allowClear, ...otherParams } = props;
 
   return (
     <ConfigProvider
