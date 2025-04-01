@@ -13,7 +13,7 @@ const InternalPassword: React.ForwardRefRenderFunction<
   PasswordProps
 > = (props, ref) => {
   const { t } = useTranslation();
-  const { children, className, allowClear, ...otherParams } = props;
+  const { className, ...otherParams } = props;
 
   return (
     <ConfigProvider

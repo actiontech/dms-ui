@@ -45,7 +45,7 @@ const useUpdateRuleTemplateForm = () => {
       await form.validateFields();
       nextStep();
       setBaseInfoFormSubmitLoading(false);
-    } catch (error) {
+    } catch {
       setBaseInfoFormSubmitLoading(false);
     }
   }, [form, nextStep, setBaseInfoFormSubmitLoading]);

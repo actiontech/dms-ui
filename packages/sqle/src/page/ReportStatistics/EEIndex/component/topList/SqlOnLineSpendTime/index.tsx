@@ -33,7 +33,7 @@ const SqlOnLineSpendTime = () => {
     res: AxiosResponse<IGetSqlAverageExecutionTimeV1Return>
   ) => {
     setData(
-      res.data.data?.map((e, i) => ({ id: String(id.current++), ...e })) ?? []
+      res.data.data?.map((e) => ({ id: String(id.current++), ...e })) ?? []
     );
   };
   const { loading, errorMessage, getApiData } = usePanelCommonRequest(
