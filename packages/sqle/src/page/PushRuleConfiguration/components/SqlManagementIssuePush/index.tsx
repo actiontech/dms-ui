@@ -127,7 +127,7 @@ const SqlManagementIssuePush: React.FC<SqlManagementIssuePushProps> = ({
                     time: formatTime(nextExecutionTimes[0], '--')
                   }
                 );
-              } catch (error) {
+              } catch {
                 return t(
                   'pushRule.pushRule.workflowUpdateNotifier.pushFrequencyErrorTips'
                 );

@@ -21,7 +21,7 @@ export class StrUtils {
       const parser = new DOMParser();
       const doc = parser.parseFromString(str, 'image/svg+xml');
       return doc.documentElement.tagName.toLowerCase() === 'svg';
-    } catch (error) {
+    } catch {
       return false;
     }
   }

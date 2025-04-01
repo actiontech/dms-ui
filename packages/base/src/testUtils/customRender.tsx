@@ -23,7 +23,7 @@ export const renderWithReduxAndTheme = (
         <Provider store={storeFactory(initStore)}>{children}</Provider>
       </ThemeProvider>
     ),
-    ...Option
+    ...option
   });
 };
 

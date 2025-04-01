@@ -45,8 +45,9 @@ const CreateExportTask: React.FC = () => {
           <ExportFormAction
             auditAction={() => {
               return auditAction().then((res) => {
-                res &&
+                if (res) {
                   updatePageState(CreateDataExportPageEnum.SUBMIT_WORKFLOW);
+                }
                 return res;
               });
             }}

@@ -13,7 +13,7 @@ const FilterButton = <T extends Record<string, any>>({
   const { t } = useTranslation();
 
   const hasSelectedFilter = useMemo(
-    () => Array.from(filterButtonMeta).some(([_, value]) => !!value.checked),
+    () => Array.from(filterButtonMeta).some(([, value]) => !!value.checked),
     [filterButtonMeta]
   );
 

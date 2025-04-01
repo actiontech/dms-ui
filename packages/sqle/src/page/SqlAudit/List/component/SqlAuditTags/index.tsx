@@ -150,7 +150,9 @@ const SqlAuditTags = ({
           open={open}
           onOpenChange={(val) => {
             setOpen(val);
-            !val && extraTagForm.resetFields();
+            if (!val) {
+              extraTagForm.resetFields();
+            }
           }}
           content={content}
           overlayClassName="custom-tags-box"

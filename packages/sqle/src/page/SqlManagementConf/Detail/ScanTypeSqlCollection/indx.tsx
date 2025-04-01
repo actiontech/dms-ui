@@ -211,7 +211,7 @@ const ScanTypeSqlCollection: React.FC<ScanTypeSqlCollectionProps> = ({
       return JSON.parse(
         currentAuditResultRecord?.['audit_results'] ?? '[]'
       ) as IAuditResult[];
-    } catch (error) {
+    } catch {
       return [];
     }
   }, [currentAuditResultRecord]);
@@ -297,7 +297,7 @@ const ScanTypeSqlCollection: React.FC<ScanTypeSqlCollectionProps> = ({
     let results: IAuditResult[] = [];
     try {
       results = JSON.parse(resultString ?? '[]') as IAuditResult[];
-    } catch (error) {
+    } catch {
       results = [];
     }
 
