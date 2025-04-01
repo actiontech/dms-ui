@@ -15,8 +15,7 @@ const BasicTreeSelect = <V extends string | number>(
   props: BasicTreeSelectProps<V>
 ) => {
   const { t } = useTranslation();
-  const { className, allowClear, loading, popupClassName, ...otherParams } =
-    props;
+  const { className, allowClear, loading, ...otherParams } = props;
 
   const renderDropdown: BasicTreeSelectProps<V>['dropdownRender'] = (menu) => {
     const customMenu = (

@@ -17,8 +17,7 @@ import { CommonIconStyleWrapper } from '@actiontech/shared/lib/styleWrapper/elem
 
 const DownloadRecord: React.FC<DownloadRecordProps> = ({
   noDuplicate,
-  taskId,
-  workflowId
+  taskId
 }) => {
   const { t } = useTranslation();
   const [open, setOpen] = useState(false);

@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-duplicate-enum-values */
 import { format } from 'sql-formatter';
 
 export enum FormatLanguageSupport {

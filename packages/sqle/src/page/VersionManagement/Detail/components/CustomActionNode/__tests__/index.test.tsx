@@ -19,6 +19,10 @@ describe('sqle/VersionManagement/Detail/CustomActionNode', () => {
         id="test-custom-action-node"
         type="action-node"
         dragging
+        selectable
+        deletable
+        draggable
+        selected
         isConnectable={false}
         positionAbsoluteX={0}
         positionAbsoluteY={0}

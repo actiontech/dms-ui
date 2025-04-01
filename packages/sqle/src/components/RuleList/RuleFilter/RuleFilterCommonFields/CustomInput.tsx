@@ -16,7 +16,7 @@ const CustomSearchInput: React.FC<
       className="custom-search-input"
       style={{ width: 210 }}
       onPressEnter={(e) => {
-        onChange?.(e.target.value);
+        onChange?.((e.target as HTMLInputElement).value);
       }}
       onChange={(e) => {
         setValue(e.target.value);

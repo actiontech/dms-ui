@@ -41,7 +41,6 @@ const MemberForm: React.FC<IMemberFormProps> = ({
             suffixIcon
             title={
               <Trans i18nKey={'dmsMember.memberForm.usernameTips'}>
-                {/* eslint-disable-next-line jsx-a11y/anchor-has-content */}
                 <TypedLink target="_blank" to={ROUTE_PATHS.BASE.USER_CENTER} />
               </Trans>
             }

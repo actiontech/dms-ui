@@ -149,7 +149,6 @@ const ConfirmationSettingForm: React.FC<ConfirmationSettingFormProps> = ({
                     'execWorkflow.detail.operator.scheduleTimeExecuteConfirmMethodTips'
                   }
                 >
-                  {/* eslint-disable-next-line jsx-a11y/anchor-has-content */}
                   <TypedLink
                     target="_blank"
                     to={ROUTE_PATHS.BASE.SYSTEM.index}
