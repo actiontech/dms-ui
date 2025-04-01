@@ -54,7 +54,7 @@ const useRuleTemplate = () => {
           setRuleTemplate([]);
           return [];
         }
-      } catch (error) {
+      } catch {
         setRuleTemplate([]);
         return [];
       } finally {

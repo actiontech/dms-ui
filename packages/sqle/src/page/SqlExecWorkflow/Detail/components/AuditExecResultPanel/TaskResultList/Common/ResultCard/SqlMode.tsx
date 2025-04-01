@@ -111,7 +111,7 @@ const SqlMode: React.FC<SqlExecuteResultCardProps> = ({
       return props.rollback_sqls
         ?.map((v) => formatterSQL(v, props.dbType))
         ?.join('\n');
-    } catch (error) {
+    } catch {
       // 当切换task时 当新的task sql请求未完成时 这时rollback_sqls还是老的数据 这时如果dbType不同 可能会导致解析sql失败报错
       return props.rollback_sqls?.join('\n');
     }

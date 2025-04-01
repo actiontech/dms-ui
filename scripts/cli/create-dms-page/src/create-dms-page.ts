@@ -11,6 +11,7 @@ import { RoutePathConfigManager } from './module/route-path-config-manager';
 import { MenuManager } from './module/menu-manager';
 import { handleError } from './utils/handle-error';
 
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 const initOptionsSchema = z.object({
   verbose: z.boolean(),
   info: z.boolean()
@@ -33,11 +34,11 @@ export class CreateDMSPage implements Task {
         logger.info('\nAllowed page types:');
         logger.info(Object.keys(initComponentTypeSchema.Values).join(', '));
       })
-      .action((type: IComponentType, options: IOptions) => {
-        this.run(type, options);
+      .action((type: IComponentType) => {
+        this.run(type);
       });
   }
-  async run(type: IComponentType, options: IOptions): Promise<void> {
+  async run(type: IComponentType): Promise<void> {
     try {
       await initComponentTypeSchema.parseAsync(type);
 

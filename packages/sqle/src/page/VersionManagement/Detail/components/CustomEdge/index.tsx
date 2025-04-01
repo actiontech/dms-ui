@@ -13,7 +13,6 @@ import { CustomEdgeStyleWrapper } from '../../style';
 import { CustomEdgeData } from '../../index.type';
 
 const CustomEdge: React.FC<EdgeProps<Edge<CustomEdgeData>>> = ({
-  id,
   sourceX,
   sourceY,
   targetX,
