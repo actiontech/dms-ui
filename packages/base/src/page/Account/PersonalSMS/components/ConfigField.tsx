@@ -2,13 +2,13 @@ import { useTranslation } from 'react-i18next';
 import { FormItemLabel } from '@actiontech/shared/lib/components/CustomForm';
 import { VerificationCodeInput } from '@actiontech/shared';
 import { ConfigFieldProps } from '../index.type';
-import { SMSService } from '@actiontech/shared/lib/api';
+import { DmsApi } from '@actiontech/shared/lib/api';
 
 const ConfigField: React.FC<ConfigFieldProps> = ({ userPhone, username }) => {
   const { t } = useTranslation();
 
   const onSendCode = () => {
-    return SMSService.SendSmsCode({ username });
+    return DmsApi.SMSService.SendSmsCode({ username });
   };
 
   return (

@@ -1,5 +1,5 @@
 import { BasicSelectProps } from '@actiontech/shared';
-import { RuleTemplateService } from '@actiontech/shared/lib/api';
+import { SqleApi } from '@actiontech/shared/lib/api';
 import { IGetDriverRuleVersionTipsV1 } from '@actiontech/shared/lib/api/sqle/service/common';
 import { ResponseCode } from '@actiontech/shared/lib/enum';
 import { useBoolean } from 'ahooks';
@@ -14,7 +14,7 @@ const useRuleVersionTips = () => {
 
   const updateRuleVersionTips = useCallback(() => {
     setTrue();
-    RuleTemplateService.GetDriverRuleVersionTips()
+    SqleApi.RuleTemplateService.GetDriverRuleVersionTips()
       .then((res) => {
         if (res.data.code === ResponseCode.SUCCESS) {
           setRuleVersionTips(res.data?.data ?? []);

@@ -1,7 +1,7 @@
 import { useRequest } from 'ahooks';
 import { useState } from 'react';
 import { getSystemModuleStatusModuleNameEnum } from '@actiontech/shared/lib/api/sqle/service/system/index.enum';
-import { SystemService, UserService } from '@actiontech/shared/lib/api';
+import { DmsApi, SqleApi } from '@actiontech/shared/lib/api';
 
 const REQUIRED_MODULES = [
   getSystemModuleStatusModuleNameEnum.sql_optimization,
@@ -16,7 +16,7 @@ const useFetchPermissionData = () => {
   const { loading: isUserPermissionsLoading, runAsync: fetchUserPermissions } =
     useRequest(
       (projectId: string, userId: string) =>
-        UserService.GetUserOpPermission({
+        DmsApi.UserService.GetUserOpPermission({
           user_uid: userId,
           project_uid: projectId
         }),
@@ -33,7 +33,7 @@ const useFetchPermissionData = () => {
       async () => {
         // todo 临时处理方案，等待后续后端接口调整
         const requests = REQUIRED_MODULES.map((moduleName) =>
-          SystemService.getSystemModuleStatus({
+          SqleApi.SystemService.getSystemModuleStatus({
             module_name: moduleName
           })
         );

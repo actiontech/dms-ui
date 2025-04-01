@@ -6,10 +6,7 @@ import { BasicInput, BasicButton, BasicToolTip } from '@actiontech/shared';
 import { LockFilled, UserFilled } from '@actiontech/icons';
 import useThemeStyleData from '../../../hooks/useThemeStyleData';
 import { LoginFormProps } from '../types';
-import {
-  ConfigurationService,
-  OAuth2Service
-} from '@actiontech/shared/lib/api';
+import { DmsApi } from '@actiontech/shared/lib/api';
 import { SystemRole } from '@actiontech/shared/lib/enum';
 
 const LoginForm: React.FC<LoginFormProps> = ({
@@ -26,7 +23,9 @@ const LoginForm: React.FC<LoginFormProps> = ({
 
   const { run: getOauth2Tips, data: oauthConfig } = useRequest(
     () => {
-      return OAuth2Service.GetOauth2Tips().then((res) => res.data?.data ?? {});
+      return DmsApi.OAuth2Service.GetOauth2Tips().then(
+        (res) => res.data?.data ?? {}
+      );
     },
     {
       manual: true
@@ -35,7 +34,7 @@ const LoginForm: React.FC<LoginFormProps> = ({
 
   const { run: getLoginBasicConfig, data: loginBasicConfig } = useRequest(
     () => {
-      return ConfigurationService.GetLoginTips().then(
+      return DmsApi.ConfigurationService.GetLoginTips().then(
         (res) => res.data?.data ?? {}
       );
     },
