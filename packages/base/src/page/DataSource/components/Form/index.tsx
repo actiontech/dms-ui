@@ -256,9 +256,12 @@ const DataSourceForm: React.FC<IDataSourceFormProps> = (props) => {
   const reset = useCallback(() => {
     EventEmitter.emit(EmitterKey.Reset_Test_Data_Source_Connect);
     props.form.resetFields();
+    if (projectID) {
+      props.form.setFieldValue('project', projectID);
+    }
     setAuditEnabled(false);
     setDatabaseType('');
-  }, [props.form]);
+  }, [props.form, projectID]);
 
   const submit = useCallback(async () => {
     const values = await props.form.validateFields();
