@@ -4,7 +4,7 @@ exports[`diagnosis/SideMenu click other menu 1`] = `
 <body>
   <div>
     <div
-      class="dms-layout-side css-13dah2i"
+      class="dms-layout-side css-13z0syi"
     >
       <div
         class="dms-layout-side-start"
@@ -117,7 +117,7 @@ exports[`diagnosis/SideMenu should match snapshot 1`] = `
 <body>
   <div>
     <div
-      class="dms-layout-side css-13dah2i"
+      class="dms-layout-side css-13z0syi"
     >
       <div
         class="dms-layout-side-start"

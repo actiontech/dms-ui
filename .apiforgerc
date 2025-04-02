@@ -6,7 +6,7 @@
       "branch": "main",
       "swaggerPath": "",
       "swaggerOutput": "",
-      "plugin": "dot-remove",
+      "plugin": "dot-remove, ./scripts/api/plugin.js",
       "template": "complex"
     },
     "dms-ui": {
@@ -15,7 +15,7 @@
       "branch": "main",
       "swaggerPath": "",
       "swaggerOutput": "",
-      "plugin": "simple-cleaner",
+      "plugin": "simple-cleaner, ./scripts/api/plugin.js",
       "template": "complex"
     },
     "provision-ui": {
@@ -23,7 +23,7 @@
       "output": "packages/shared/lib/api/provision/service",
       "branch": "main",
       "swaggerPath": "",
-      "swaggerOutput": "",
+      "swaggerOutput": "./scripts/api/plugin.js",
       "plugin": "",
       "template": "complex"
     }

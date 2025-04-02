@@ -1,9 +1,5 @@
-import { resolve, dirname, join } from 'path';
-import { writeFileSync, readdirSync, statSync } from 'fs';
-import { fileURLToPath } from 'url';
-
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = dirname(__filename);
+const { writeFileSync, readdirSync, statSync } = require('fs');
+const { join } = require('path');
 
 function isDirectory(path) {
   try {
@@ -48,7 +44,7 @@ function validateServiceName(name) {
   return /^[A-Z][a-zA-Z0-9]*$/.test(name);
 }
 
-function generateServiceExports(servicesPath, moduleName, exportedNames) {
+function generateServiceExports(servicesPath) {
   const serviceDirectories = getSubDirectories(servicesPath);
 
   const exports = serviceDirectories.map((dirName) => {
@@ -60,14 +56,9 @@ function generateServiceExports(servicesPath, moduleName, exportedNames) {
       );
     }
 
-    // 添加模块名前缀以确保唯一性
-    const uniqueName = exportedNames.includes(formattedName)
-      ? `${formattedName}${moduleName.toUpperCase()}`
-      : formattedName;
-    exportedNames.push(uniqueName);
     return {
       original: dirName,
-      formatted: uniqueName
+      formatted: formattedName
     };
   });
 
@@ -98,43 +89,16 @@ function generateServiceExports(servicesPath, moduleName, exportedNames) {
     .join('\n');
 }
 
-async function generateApiExports(
-  options = {
-    excludeDirs: ['common'],
-    servicesDirName: 'service'
-  }
-) {
-  const apiRootPath = resolve(__dirname, '..', 'lib', 'api');
-  const exportedNames = [];
-
+function generateApiExports(servicesPath) {
   try {
-    const apiModules = readdirSync(apiRootPath).filter(
-      (name) => !options.excludeDirs.includes(name)
-    );
+    if (!isDirectory(servicesPath)) {
+      throw new Error(`Invalid services path: ${servicesPath}`);
+    }
 
-    for (const moduleName of apiModules) {
-      const modulePath = join(apiRootPath, moduleName);
-
-      if (!isDirectory(modulePath)) {
-        continue;
-      }
-
-      const servicesPath = join(modulePath, options.servicesDirName);
-      if (!isDirectory(servicesPath)) {
-        continue;
-      }
-
-      const exportContent = generateServiceExports(
-        servicesPath,
-        moduleName,
-        exportedNames
-      );
-      if (exportContent) {
-        const outputPath = join(modulePath, 'index.ts');
-        writeFileSync(outputPath, exportContent + '\n');
-
-        console.log(`Generated exports for module: ${moduleName}`);
-      }
+    const exportContent = generateServiceExports(servicesPath);
+    if (exportContent) {
+      const outputPath = join(servicesPath, '..', 'index.ts');
+      writeFileSync(outputPath, exportContent + '\n');
     }
   } catch (error) {
     console.error('Error generating API exports:', error);
@@ -142,4 +106,4 @@ async function generateApiExports(
   }
 }
 
-generateApiExports().catch(console.error);
+module.exports = generateApiExports;

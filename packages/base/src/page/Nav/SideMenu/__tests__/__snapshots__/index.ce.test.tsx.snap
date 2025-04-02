@@ -3,7 +3,7 @@
 exports[`test base/Nav/SideMenu/index.ce should match snapshot when checkPagePermission return value is equal false 1`] = `
 <div>
   <div
-    class="dms-layout-side css-13dah2i"
+    class="dms-layout-side css-13z0syi"
   >
     <div
       class="dms-layout-side-start"
@@ -1078,7 +1078,7 @@ exports[`test base/Nav/SideMenu/index.ce should match snapshot when checkPagePer
 exports[`test base/Nav/SideMenu/index.ce should match snapshot when checkPagePermission return value is equal false 2`] = `
 <div>
   <div
-    class="dms-layout-side css-13dah2i"
+    class="dms-layout-side css-13z0syi"
   >
     <div
       class="dms-layout-side-start"
@@ -2152,7 +2152,7 @@ exports[`test base/Nav/SideMenu/index.ce should match snapshot when checkPagePer
 exports[`test base/Nav/SideMenu/index.ce should match snapshot when checkPagePermission return value is equal true 1`] = `
 <div>
   <div
-    class="dms-layout-side css-13dah2i"
+    class="dms-layout-side css-13z0syi"
   >
     <div
       class="dms-layout-side-start"
@@ -3381,7 +3381,7 @@ exports[`test base/Nav/SideMenu/index.ce should match snapshot when checkPagePer
 exports[`test base/Nav/SideMenu/index.ce should match snapshot when checkPagePermission return value is equal true 2`] = `
 <div>
   <div
-    class="dms-layout-side css-13dah2i"
+    class="dms-layout-side css-13z0syi"
   >
     <div
       class="dms-layout-side-start"
