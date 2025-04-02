@@ -6,6 +6,7 @@ import {
   getBySelector
 } from '@actiontech/shared/lib/testUtil/customQuery';
 import project from '../../../../testUtils/mockApi/project';
+import { mockProjectList } from '../../../../testUtils/mockApi/project/data';
 import { Form } from 'antd';
 import { DataSourceFormField } from './index.type';
 import { createSpySuccessResponse } from '@actiontech/shared/lib/testUtil/mockApi';
@@ -15,6 +16,8 @@ import { DBServicesList } from '../../../../testUtils/mockApi/global/data';
 import { IListDBService } from '@actiontech/shared/lib/api/base/service/common';
 import { mockUseCurrentProject } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentProject';
 import system from 'sqle/src/testUtils/mockApi/system';
+import EventEmitter from '../../../../utils/EventEmitter';
+import EmitterKey from '../../../../data/EmitterKey';
 
 import DataSourceForm from '.';
 
@@ -247,5 +250,63 @@ describe('page/DataSource/DataSourceForm', () => {
     fireEvent.click(getBySelector('.ant-popconfirm-buttons .ant-btn-primary'));
     await act(async () => jest.advanceTimersByTime(300));
     expect(baseElement).toMatchSnapshot();
+  });
+
+  it('reset form when projectID is not undefined', async () => {
+    getProjectTipsSpy.mockImplementation(() =>
+      createSpySuccessResponse({
+        data: [{ is_fixed_business: false }]
+      })
+    );
+    mockUseCurrentProject({ projectID: mockProjectList[0].uid });
+    customRender();
+    await act(async () => jest.advanceTimersByTime(3000));
+    expect(screen.getByText(mockProjectList[0].name!)).toBeInTheDocument();
+    await act(async () => jest.advanceTimersByTime(3000));
+    fireEvent.change(getBySelector('#business'), {
+      target: {
+        value: 'business111'
+      }
+    });
+    await act(async () => jest.advanceTimersByTime(0));
+    expect(getBySelector('#business')).toHaveValue('business111');
+
+    await act(async () => {
+      EventEmitter.emit(EmitterKey.DMS_Reset_DataSource_Form);
+      await jest.advanceTimersByTime(300);
+    });
+    expect(getBySelector('#business')).toHaveValue('');
+    expect(screen.getByText(mockProjectList[0].name!)).toBeInTheDocument();
+  });
+
+  it('reset form when projectID is undefined', async () => {
+    getProjectTipsSpy.mockImplementation(() =>
+      createSpySuccessResponse({
+        data: [{ is_fixed_business: false }]
+      })
+    );
+    mockUseCurrentProject({ projectID: undefined });
+    customRender();
+    await act(async () => jest.advanceTimersByTime(3000));
+    const projectEle = getBySelector('#project');
+    fireEvent.mouseDown(projectEle);
+    await act(async () => jest.advanceTimersByTime(0));
+    fireEvent.click(screen.getByText('test_project_1'));
+    await act(async () => jest.advanceTimersByTime(3000));
+
+    fireEvent.change(getBySelector('#business'), {
+      target: {
+        value: 'business111'
+      }
+    });
+    await act(async () => jest.advanceTimersByTime(0));
+    expect(getBySelector('#business')).toHaveValue('business111');
+
+    await act(async () => {
+      EventEmitter.emit(EmitterKey.DMS_Reset_DataSource_Form);
+      await jest.advanceTimersByTime(300);
+    });
+    expect(getBySelector('#business')).toHaveValue('');
+    expect(screen.queryByText('test_project_1')).not.toBeInTheDocument();
   });
 });
