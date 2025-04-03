@@ -79,7 +79,11 @@ const useConfigSwitch = (props: IUseConfigSwitchProps) => {
 
       handleToggleSwitch(true);
 
-      open ? showConfigSwitchPopover() : hideConfigSwitchPopover();
+      if (open) {
+        showConfigSwitchPopover();
+      } else {
+        hideConfigSwitchPopover();
+      }
     },
     [
       handleToggleSwitch,

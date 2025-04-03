@@ -14,7 +14,7 @@ const InternalTextArea: React.ForwardRefRenderFunction<
   TextAreaProps
 > = (props, ref) => {
   const { t } = useTranslation();
-  const { children, className, allowClear, ...otherParams } = props;
+  const { className, ...otherParams } = props;
 
   return (
     <ConfigProvider

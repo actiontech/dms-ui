@@ -102,14 +102,12 @@ export const createSpyErrorResponse = (
   });
 };
 
-export const throwErrorThreeSecond = (
-  error = 'error',
-  { status = 500, headers = {}, config = {}, statusText = '' } = {}
-) => {
-  return new Promise((res) => {
+export const throwErrorThreeSecond = (error = 'error') => {
+  return new Promise(() => {
     throw new Error(error);
   });
 };
 export type MockServer = ReturnType<typeof setupServer>;
 
+// eslint-disable-next-line import/no-anonymous-default-export
 export default new TestMockApi();

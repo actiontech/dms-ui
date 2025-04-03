@@ -32,6 +32,7 @@ const SegmentedTabs = <T extends string | number = string>({
 
   const segmentedOptions: SegmentedProps['options'] = useMemo(() => {
     return items.map((item) => {
+      // eslint-disable-next-line @typescript-eslint/no-unused-vars
       const { forceRender, destroyInactivePane, children, ...option } = item;
       return option;
     });

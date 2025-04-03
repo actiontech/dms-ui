@@ -171,7 +171,7 @@ const useImportRuleTemplate = () => {
       }
       nextStep();
       setBaseInfoFormSubmitLoading(false);
-    } catch (error) {
+    } catch {
       setBaseInfoFormSubmitLoading(false);
     }
   }, [

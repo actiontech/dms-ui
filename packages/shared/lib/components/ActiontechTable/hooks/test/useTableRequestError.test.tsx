@@ -14,7 +14,7 @@ describe('lib/ActiontechTable-hooks-useTableRequestError', () => {
     const { result } = renderHook(() => useTableRequestError());
     await act(async () => {
       const eacuteResult = result.current.handleTableRequestError(
-        new Promise((resolve, reject) => {
+        new Promise((resolve) => {
           resolve({
             data: {
               data: [],
@@ -37,7 +37,7 @@ describe('lib/ActiontechTable-hooks-useTableRequestError', () => {
 
     await act(async () => {
       const eacuteResult = result.current.handleTableRequestError(
-        new Promise((resolve, reject) => {
+        new Promise((resolve) => {
           resolve({
             data: {
               data: [],
