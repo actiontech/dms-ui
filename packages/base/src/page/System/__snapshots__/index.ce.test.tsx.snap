@@ -84,6 +84,20 @@ exports[`base/System-ee render snap 1`] = `
                 全局配置
               </div>
             </label>
+            <label
+              class="ant-segmented-item"
+            >
+              <input
+                class="ant-segmented-item-input"
+                type="radio"
+              />
+              <div
+                class="ant-segmented-item-label"
+                title="Git SSH配置"
+              >
+                Git SSH配置
+              </div>
+            </label>
           </div>
         </div>
       </div>
@@ -1768,6 +1782,20 @@ exports[`base/System-ee render snap 2`] = `
                 title="全局配置"
               >
                 全局配置
+              </div>
+            </label>
+            <label
+              class="ant-segmented-item"
+            >
+              <input
+                class="ant-segmented-item-input"
+                type="radio"
+              />
+              <div
+                class="ant-segmented-item-label"
+                title="Git SSH配置"
+              >
+                Git SSH配置
               </div>
             </label>
           </div>
