@@ -42,7 +42,11 @@ const AddDataSource = () => {
       port: values.port.toString(),
       user: values.user,
       password: values.password,
+      // todo business参数应该删除
       business: values.business,
+      environment_tag: {
+        id: +values.environmentTag
+      },
       maintenance_times:
         values.maintenanceTime?.map((time) => ({
           maintenance_start_time: time.startTime,
@@ -68,7 +72,7 @@ const AddDataSource = () => {
       backup_max_rows: values.backupMaxRows
       // #endif
     };
-    return DBService.AddDBService({
+    return DBService.AddDBServiceV2({
       db_service: dbService,
       project_uid: values.project
     })

@@ -54,7 +54,7 @@ export const ExtraFilterMeta: () => ActiontechTableFilterMeta<
       {
         filterCustomType: 'select',
         filterKey: 'filter_business',
-        filterLabel: t('sqlManagement.table.filter.business'),
+        filterLabel: t('sqlManagement.table.filter.environmentAttribute'),
         checked: false
       }
     ],

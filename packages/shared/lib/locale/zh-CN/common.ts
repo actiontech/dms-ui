@@ -263,5 +263,6 @@ export default {
     code: '验证码',
     sendCode: '发送验证码',
     secondsLater: '{{number}}秒后重试'
-  }
+  },
+  deleteConfirmTitle: '确认要删除么?'
 };

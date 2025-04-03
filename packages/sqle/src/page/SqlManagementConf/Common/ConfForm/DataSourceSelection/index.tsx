@@ -153,7 +153,7 @@ const DataSourceSelection: React.FC = () => {
 
       <FormItemLabel
         className="has-required-style"
-        label={t('dmsDataSource.dataSourceForm.business')}
+        label={t('managementConf.create.environmentAttribute')}
         name="businessScope"
         rules={[{ required: true }]}
       >

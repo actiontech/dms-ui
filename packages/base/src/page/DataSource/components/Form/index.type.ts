@@ -17,6 +17,7 @@ export type DataSourceFormField = {
   password: string;
   project: string;
   business: string;
+  environmentTag: string;
   maintenanceTime: MaintenanceTimeValue[];
   needSqlAuditService?: boolean;
   ruleTemplateId?: string;

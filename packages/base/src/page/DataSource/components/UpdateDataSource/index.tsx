@@ -51,7 +51,11 @@ const UpdateDataSource = () => {
     const params: IUpdateDBServiceParams = {
       db_service_uid: urlParams.dbServiceUid ?? '',
       db_service: {
+        //todo business参数应该删除
         business: values.business,
+        environment_tag: {
+          id: +values.environmentTag
+        },
         db_type: values.type,
         desc: values.describe,
         host: values.ip,
@@ -114,6 +118,7 @@ const UpdateDataSource = () => {
 
   const getInstanceInfo = useCallback(() => {
     setRetryLoading(true);
+    // todo 修改为ListDBServicesV2
     DBService.ListDBServices({
       filter_by_uid: urlParams.dbServiceUid ?? '',
       page_size: 9999,

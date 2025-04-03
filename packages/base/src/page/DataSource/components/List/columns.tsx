@@ -109,7 +109,7 @@ export const DataSourceColumns = (
     // #endif
     {
       dataIndex: 'business',
-      title: () => t('dmsDataSource.databaseList.business')
+      title: () => t('dmsDataSource.databaseList.environmentAttribute')
     },
 
     // #if [dms]
