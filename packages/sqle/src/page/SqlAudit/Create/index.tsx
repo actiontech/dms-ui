@@ -1,6 +1,6 @@
 import { useTranslation } from 'react-i18next';
 import React, { useEffect, useState } from 'react';
-import { message } from 'antd';
+import { Spin, message } from 'antd';
 import {
   ActionButton,
   BasicButton,
@@ -119,14 +119,16 @@ const SqlAuditCreate = () => {
         }
       />
       <FormSubmitStatusContext.Provider value={auditLoading}>
-        <BaseInfoForm form={baseForm} />
-        <SQLInfoForm
-          form={sqlInfoForm}
-          submit={auditSQL}
-          setAuditLoading={(submitStatus: boolean) => {
-            setAuditLoading(submitStatus);
-          }}
-        />
+        <Spin spinning={auditLoading}>
+          <BaseInfoForm form={baseForm} />
+          <SQLInfoForm
+            form={sqlInfoForm}
+            submit={auditSQL}
+            setAuditLoading={(submitStatus: boolean) => {
+              setAuditLoading(submitStatus);
+            }}
+          />
+        </Spin>
       </FormSubmitStatusContext.Provider>
     </>
   );
