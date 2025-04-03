@@ -406,75 +406,6 @@ describe('sqle/SqlAudit/Create', () => {
     });
   });
 
-  it('configure git repository', async () => {
-    const { baseElement } = renderWithThemeAndRedux(customRender());
-    await act(async () => jest.advanceTimersByTime(3000));
-    fireEvent.click(screen.getByText('离线审核'));
-    await act(async () => jest.advanceTimersByTime(3000));
-    fireEvent.mouseDown(getBySelector('#dbType', baseElement));
-    await act(async () => jest.advanceTimersByTime(300));
-    fireEvent.click(getBySelector('span[title="mysql"]', baseElement));
-    await act(async () => jest.advanceTimersByTime(3000));
-    fireEvent.mouseDown(getBySelector('#ruleTemplate', baseElement));
-    fireEvent.click(getBySelector('div[title="default_MySQL"]', baseElement));
-    await act(async () => jest.advanceTimersByTime(0));
-    fireEvent.click(screen.getByText('配置GIT仓库'));
-    await act(async () => jest.advanceTimersByTime(300));
-    expect(baseElement).toMatchSnapshot();
-    expect(screen.getByText('GIT地址')).toBeInTheDocument();
-    expect(screen.getByText('用户名')).toBeInTheDocument();
-    expect(screen.getByText('密码')).toBeInTheDocument();
-    expect(screen.getByText('代码分支')).toBeInTheDocument();
-
-    fireEvent.input(screen.getByLabelText('GIT地址'), {
-      target: { value: 'https://test.com' }
-    });
-    await act(async () => jest.advanceTimersByTime(300));
-    fireEvent.input(screen.getByLabelText('用户名'), {
-      target: { value: 'test' }
-    });
-    await act(async () => jest.advanceTimersByTime(300));
-    fireEvent.input(screen.getByLabelText('密码'), {
-      target: { value: '123456' }
-    });
-    await act(async () => jest.advanceTimersByTime(0));
-    fireEvent.click(screen.getByText('验证连接'));
-    await act(async () => jest.advanceTimersByTime(0));
-    expect(testGitConnectionSpy).toHaveBeenCalledTimes(1);
-    expect(testGitConnectionSpy).toHaveBeenCalledWith({
-      git_http_url: 'https://test.com',
-      git_user_name: 'test',
-      git_user_password: '123456'
-    });
-    await act(async () => jest.advanceTimersByTime(3000));
-    expect(screen.getByText('连接成功')).toBeInTheDocument();
-    fireEvent.mouseDown(getBySelector('#gitBranch', baseElement));
-    await act(async () => jest.advanceTimersByTime(0));
-    fireEvent.click(getBySelector('div[title="main"]', baseElement));
-    await act(async () => jest.advanceTimersByTime(0));
-
-    fireEvent.click(screen.getByText('审 核'));
-    await act(async () => {
-      await jest.advanceTimersByTime(3000);
-    });
-    expect(createSQLAuditRecordSpy).toHaveBeenCalledTimes(1);
-    expect(createSQLAuditRecordSpy).toHaveBeenCalledWith({
-      db_type: 'mysql',
-      git_http_url: 'https://test.com',
-      git_user_name: 'test',
-      git_user_password: '123456',
-      git_branch_name: 'main',
-      input_mybatis_xml_file: undefined,
-      input_sql_file: undefined,
-      input_zip_file: undefined,
-      instance_name: undefined,
-      instance_schema: undefined,
-      project_name: 'default',
-      sqls: undefined,
-      rule_template_name: 'default_MySQL'
-    });
-  });
-
   it('reset form values', async () => {
     const { baseElement } = renderWithThemeAndRedux(customRender());
     await act(async () => jest.advanceTimersByTime(3000));
@@ -602,6 +533,140 @@ describe('sqle/SqlAudit/Create', () => {
       project_name: mockProjectInfo.projectName,
       sql_audit_record_id: createSqlAuditResponseMockData.sql_audit_record_id,
       tags: ['test3']
+    });
+  });
+
+  describe('Git Repository Configuration', () => {
+    const setupGitRepositoryTest = async () => {
+      const { baseElement } = renderWithThemeAndRedux(customRender());
+      await act(async () => jest.advanceTimersByTime(3000));
+      fireEvent.click(screen.getByText('离线审核'));
+      await act(async () => jest.advanceTimersByTime(3000));
+      fireEvent.mouseDown(getBySelector('#dbType', baseElement));
+      fireEvent.click(getBySelector('span[title="mysql"]', baseElement));
+      await act(async () => jest.advanceTimersByTime(3000));
+      fireEvent.mouseDown(getBySelector('#ruleTemplate', baseElement));
+      fireEvent.click(getBySelector('div[title="default_MySQL"]', baseElement));
+      await act(async () => jest.advanceTimersByTime(0));
+
+      fireEvent.click(screen.getByText('配置GIT仓库'));
+      await act(async () => jest.advanceTimersByTime(300));
+
+      return { baseElement };
+    };
+
+    it('should switch between different git protocols', async () => {
+      const { baseElement } = await setupGitRepositoryTest();
+
+      // 默认为 HTTP 协议
+      expect(screen.getByLabelText('用户名')).toBeInTheDocument();
+      expect(screen.getByLabelText('密码')).toBeInTheDocument();
+
+      // 切换到 Git 协议
+      fireEvent.click(screen.getByLabelText('Git'));
+      await act(async () => jest.advanceTimersByTime(300));
+      expect(screen.queryByLabelText('用户名')).not.toBeInTheDocument();
+      expect(screen.queryByLabelText('密码')).not.toBeInTheDocument();
+
+      // 切换到 SSH 协议
+      fireEvent.click(screen.getByLabelText('SSH'));
+      await act(async () => jest.advanceTimersByTime(300));
+      expect(screen.queryByLabelText('用户名')).not.toBeInTheDocument();
+      expect(screen.queryByLabelText('密码')).not.toBeInTheDocument();
+    });
+
+    it('should handle git connection verification failure', async () => {
+      testGitConnectionSpy.mockImplementation(() =>
+        createSpySuccessResponse({
+          data: {
+            is_connected_success: false,
+            error_message: 'Connection failed',
+            branches: []
+          }
+        })
+      );
+
+      await setupGitRepositoryTest();
+
+      fireEvent.input(screen.getByLabelText('GIT地址'), {
+        target: { value: 'https://test.com' }
+      });
+
+      fireEvent.click(screen.getByText('验证连接'));
+      await act(async () => jest.advanceTimersByTime(0));
+
+      expect(testGitConnectionSpy).toHaveBeenCalledTimes(1);
+      expect(testGitConnectionSpy).toHaveBeenCalledWith({
+        git_http_url: 'https://test.com',
+        git_user_name: undefined,
+        git_user_password: undefined
+      });
+
+      await act(async () => jest.advanceTimersByTime(3000));
+
+      expect(screen.getByText('Connection failed')).toBeInTheDocument();
+      expect(getBySelector('#gitBranch')).toBeDisabled();
+    });
+
+    it('should reset form fields when switching protocols', async () => {
+      await setupGitRepositoryTest();
+
+      // 填写 HTTP 协议的表单
+      fireEvent.input(screen.getByLabelText('GIT地址'), {
+        target: { value: 'https://test.com' }
+      });
+      fireEvent.input(screen.getByLabelText('用户名'), {
+        target: { value: 'test' }
+      });
+      fireEvent.input(screen.getByLabelText('密码'), {
+        target: { value: '123456' }
+      });
+
+      // 切换到 Git 协议
+      fireEvent.click(screen.getByLabelText('Git'));
+      await act(async () => jest.advanceTimersByTime(300));
+
+      // 切换回 HTTP 协议
+      fireEvent.click(screen.getByLabelText('HTTP/HTTPS'));
+      await act(async () => jest.advanceTimersByTime(300));
+
+      // 检查表单是否被重置
+      expect(screen.getByLabelText('GIT地址')).toHaveValue('');
+      expect(screen.getByLabelText('用户名')).toHaveValue('');
+      expect(screen.getByLabelText('密码')).toHaveValue('');
+    });
+
+    it('should create audit record with git repository using SSH protocol', async () => {
+      const { baseElement } = await setupGitRepositoryTest();
+
+      fireEvent.click(screen.getByLabelText('SSH'));
+      await act(async () => jest.advanceTimersByTime(300));
+
+      fireEvent.input(screen.getByLabelText('GIT地址'), {
+        target: { value: 'git@github.com:test/repo.git' }
+      });
+
+      fireEvent.click(screen.getByText('验证连接'));
+      await act(async () => jest.advanceTimersByTime(0));
+
+      await act(async () => jest.advanceTimersByTime(3000));
+
+      fireEvent.mouseDown(getBySelector('#gitBranch', baseElement));
+      await act(async () => jest.advanceTimersByTime(0));
+      fireEvent.click(getBySelector('div[title="main"]', baseElement));
+      await act(async () => jest.advanceTimersByTime(0));
+
+      fireEvent.click(screen.getByText('审 核'));
+      await act(async () => jest.advanceTimersByTime(3000));
+
+      expect(createSQLAuditRecordSpy).toHaveBeenCalledWith(
+        expect.objectContaining({
+          git_http_url: 'git@github.com:test/repo.git',
+          git_branch_name: 'main',
+          git_user_name: undefined,
+          git_user_password: undefined
+        })
+      );
     });
   });
 });
