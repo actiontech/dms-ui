@@ -2939,6 +2939,18 @@ export interface ISQLStatementWithAuditResult {
   sql_statement?: string;
 }
 
+export interface ISSHPublicKeyInfo {
+  public_key?: string;
+}
+
+export interface ISSHPublicKeyInfoV1Rsp {
+  code?: number;
+
+  data?: ISSHPublicKeyInfo;
+
+  message?: string;
+}
+
 export interface IScheduleTaskDefaultOption {
   default_selector?: ScheduleTaskDefaultOptionDefaultSelectorEnum;
 }

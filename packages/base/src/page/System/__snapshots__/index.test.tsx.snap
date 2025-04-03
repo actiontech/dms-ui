@@ -112,6 +112,20 @@ exports[`base/System-ee render snap 1`] = `
                 个性化设置
               </div>
             </label>
+            <label
+              class="ant-segmented-item"
+            >
+              <input
+                class="ant-segmented-item-input"
+                type="radio"
+              />
+              <div
+                class="ant-segmented-item-label"
+                title="Git SSH配置"
+              >
+                Git SSH配置
+              </div>
+            </label>
           </div>
         </div>
       </div>
@@ -2276,6 +2290,20 @@ exports[`base/System-ee render snap 2`] = `
                 title="个性化设置"
               >
                 个性化设置
+              </div>
+            </label>
+            <label
+              class="ant-segmented-item"
+            >
+              <input
+                class="ant-segmented-item-input"
+                type="radio"
+              />
+              <div
+                class="ant-segmented-item-label"
+                title="Git SSH配置"
+              >
+                Git SSH配置
               </div>
             </label>
           </div>
@@ -4518,6 +4546,20 @@ exports[`base/System-ee render snap 3`] = `
                 个性化设置
               </div>
             </label>
+            <label
+              class="ant-segmented-item"
+            >
+              <input
+                class="ant-segmented-item-input"
+                type="radio"
+              />
+              <div
+                class="ant-segmented-item-label"
+                title="Git SSH配置"
+              >
+                Git SSH配置
+              </div>
+            </label>
           </div>
         </div>
       </div>
@@ -6188,6 +6230,20 @@ exports[`base/System-ee should changed current active tab when url params is exi
                 title="个性化设置"
               >
                 个性化设置
+              </div>
+            </label>
+            <label
+              class="ant-segmented-item"
+            >
+              <input
+                class="ant-segmented-item-input"
+                type="radio"
+              />
+              <div
+                class="ant-segmented-item-label"
+                title="Git SSH配置"
+              >
+                Git SSH配置
               </div>
             </label>
           </div>
