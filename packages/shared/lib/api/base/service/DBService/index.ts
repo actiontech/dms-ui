@@ -29,7 +29,18 @@ import {
   IDelDBServiceParams,
   IDelDBServiceReturn,
   ICheckDBServiceIsConnectableByIdParams,
-  ICheckDBServiceIsConnectableByIdReturn
+  ICheckDBServiceIsConnectableByIdReturn,
+  IListGlobalDBServicesV2Params,
+  IListGlobalDBServicesV2Return,
+  IListDBServicesV2Params,
+  IListDBServicesV2Return,
+  IAddDBServiceV2Params,
+  IAddDBServiceV2Return,
+  IImportDBServicesOfOneProjectV2Params,
+  IImportDBServicesOfOneProjectV2Return,
+  IImportDBServicesOfOneProjectCheckV2Params,
+  IUpdateDBServiceV2Params,
+  IUpdateDBServiceV2Return
 } from './index.d';
 
 class DBServiceService extends ServiceBase {
@@ -227,6 +238,108 @@ class DBServiceService extends ServiceBase {
 
     return this.post<ICheckDBServiceIsConnectableByIdReturn>(
       `/v1/dms/projects/${project_uid}/db_services/${db_service_uid}/connection`,
+      paramsData,
+      options
+    );
+  }
+
+  public ListGlobalDBServicesV2(
+    params: IListGlobalDBServicesV2Params,
+    options?: AxiosRequestConfig
+  ) {
+    const paramsData = this.cloneDeep(params);
+    return this.get<IListGlobalDBServicesV2Return>(
+      '/v2/dms/db_services',
+      paramsData,
+      options
+    );
+  }
+
+  public ListDBServicesV2(
+    params: IListDBServicesV2Params,
+    options?: AxiosRequestConfig
+  ) {
+    const paramsData = this.cloneDeep(params);
+    const project_uid = paramsData.project_uid;
+    delete paramsData.project_uid;
+
+    return this.get<IListDBServicesV2Return>(
+      `/v2/dms/projects/${project_uid}/db_services`,
+      paramsData,
+      options
+    );
+  }
+
+  public AddDBServiceV2(
+    params: IAddDBServiceV2Params,
+    options?: AxiosRequestConfig
+  ) {
+    const paramsData = this.cloneDeep(params);
+    const project_uid = paramsData.project_uid;
+    delete paramsData.project_uid;
+
+    return this.post<IAddDBServiceV2Return>(
+      `/v2/dms/projects/${project_uid}/db_services`,
+      paramsData,
+      options
+    );
+  }
+
+  public ImportDBServicesOfOneProjectV2(
+    params: IImportDBServicesOfOneProjectV2Params,
+    options?: AxiosRequestConfig
+  ) {
+    const paramsData = this.cloneDeep(params);
+    const project_uid = paramsData.project_uid;
+    delete paramsData.project_uid;
+
+    return this.post<IImportDBServicesOfOneProjectV2Return>(
+      `/v2/dms/projects/${project_uid}/db_services/import`,
+      paramsData,
+      options
+    );
+  }
+
+  public ImportDBServicesOfOneProjectCheckV2(
+    params: IImportDBServicesOfOneProjectCheckV2Params,
+    options?: AxiosRequestConfig
+  ) {
+    const config = options || {};
+    const headers = config.headers ? config.headers : {};
+    config.headers = {
+      ...headers,
+
+      'Content-Type': 'multipart/form-data'
+    };
+
+    const paramsData = new FormData();
+
+    if (params.db_services_file != undefined) {
+      paramsData.append('db_services_file', params.db_services_file as any);
+    }
+
+    const project_uid = params.project_uid;
+
+    return this.post(
+      `/v2/dms/projects/${project_uid}/db_services/import_check`,
+      paramsData,
+      config
+    );
+  }
+
+  public UpdateDBServiceV2(
+    params: IUpdateDBServiceV2Params,
+    options?: AxiosRequestConfig
+  ) {
+    const paramsData = this.cloneDeep(params);
+    const project_uid = paramsData.project_uid;
+    delete paramsData.project_uid;
+
+    const db_service_uid = paramsData.db_service_uid;
+    delete paramsData.db_service_uid;
+
+    return this.put<IUpdateDBServiceV2Return>(
+      `/v2/dms/projects/${project_uid}/db_services/${db_service_uid}`,
       paramsData,
       options
     );

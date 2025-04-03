@@ -3,7 +3,11 @@ import {
   ListGlobalDBServicesFilterLastConnectionTestStatusEnum,
   ListDBServicesOrderByEnum,
   ListDBServicesFilterLastConnectionTestStatusEnum,
-  ListDBServiceTipsFunctionalModuleEnum
+  ListDBServiceTipsFunctionalModuleEnum,
+  ListGlobalDBServicesV2OrderByEnum,
+  ListGlobalDBServicesV2FilterLastConnectionTestStatusEnum,
+  ListDBServicesV2OrderByEnum,
+  ListDBServicesV2FilterLastConnectionTestStatusEnum
 } from './index.enum';
 
 import {
@@ -33,6 +37,8 @@ export interface IListGlobalDBServicesParams {
   filter_last_connection_test_status?: ListGlobalDBServicesFilterLastConnectionTestStatusEnum;
 
   filter_by_business?: string;
+
+  filter_by_environment_tag?: string;
 
   filter_by_host?: string;
 
@@ -84,6 +90,8 @@ export interface IListDBServicesParams {
   project_uid: string;
 
   filter_by_db_service_ids?: string[];
+
+  filter_by_environment_tag?: string;
 
   fuzzy_keyword?: string;
 
@@ -161,3 +169,97 @@ export interface ICheckDBServiceIsConnectableByIdParams {
 
 export interface ICheckDBServiceIsConnectableByIdReturn
   extends ICheckDBServiceIsConnectableReply {}
+
+export interface IListGlobalDBServicesV2Params {
+  page_size: number;
+
+  page_index?: number;
+
+  order_by?: ListGlobalDBServicesV2OrderByEnum;
+
+  filter_last_connection_test_status?: ListGlobalDBServicesV2FilterLastConnectionTestStatusEnum;
+
+  filter_by_business?: string;
+
+  filter_by_environment_tag?: string;
+
+  filter_by_host?: string;
+
+  filter_by_uid?: string;
+
+  filter_by_name?: string;
+
+  filter_by_port?: string;
+
+  filter_by_db_type?: string;
+
+  filter_by_project_uid?: string;
+
+  filter_by_is_enable_masking?: boolean;
+
+  fuzzy_keyword?: string;
+}
+
+export interface IListGlobalDBServicesV2Return
+  extends IListGlobalDBServicesReply {}
+
+export interface IListDBServicesV2Params {
+  page_size: number;
+
+  page_index?: number;
+
+  order_by?: ListDBServicesV2OrderByEnum;
+
+  filter_by_business?: string;
+
+  filter_last_connection_test_status?: ListDBServicesV2FilterLastConnectionTestStatusEnum;
+
+  filter_by_host?: string;
+
+  filter_by_uid?: string;
+
+  filter_by_name?: string;
+
+  filter_by_port?: string;
+
+  filter_by_db_type?: string;
+
+  project_uid: string;
+
+  filter_by_db_service_ids?: string[];
+
+  filter_by_environment_tag?: string;
+
+  fuzzy_keyword?: string;
+
+  is_enable_masking?: boolean;
+}
+
+export interface IListDBServicesV2Return extends IListDBServiceReply {}
+
+export interface IAddDBServiceV2Params extends IAddDBServiceReq {
+  project_uid: string;
+}
+
+export interface IAddDBServiceV2Return extends IAddDBServiceReply {}
+
+export interface IImportDBServicesOfOneProjectV2Params
+  extends IImportDBServicesOfOneProjectReq {
+  project_uid: string;
+}
+
+export interface IImportDBServicesOfOneProjectV2Return extends IGenericResp {}
+
+export interface IImportDBServicesOfOneProjectCheckV2Params {
+  project_uid: string;
+
+  db_services_file?: any;
+}
+
+export interface IUpdateDBServiceV2Params extends IUpdateDBServiceReq {
+  project_uid: string;
+
+  db_service_uid: string;
+}
+
+export interface IUpdateDBServiceV2Return extends IGenericResp {}
