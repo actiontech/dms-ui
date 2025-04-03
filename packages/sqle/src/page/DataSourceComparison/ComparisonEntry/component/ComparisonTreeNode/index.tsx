@@ -7,7 +7,7 @@ import { ISchemaObject } from '@actiontech/shared/lib/api/sqle/service/common';
 import { DownOutlined, RightOutlined } from '@actiontech/icons';
 import { AntTreeNodeProps } from 'antd/es/tree';
 import useComparisonResultTree from '../../hooks/useComparisonResultTree';
-import { useEffect, useMemo, useRef } from 'react';
+import { useEffect, useMemo, useRef, UIEventHandler, useState } from 'react';
 import ComparisonDetailDrawer from './ComparisonDetailDrawer';
 import { generateTreeDefaultExpandedKeys } from '../../utils/TreeNode';
 import { SelectedInstanceInfo } from '../../index.type';
@@ -28,6 +28,59 @@ const ComparisonTreeNode: React.FC<Props> = ({
   comparisonObjectCheckKeys
 }) => {
   const isFirstRenderTreeNode = useRef(true);
+  const baselineTreeRef = useRef<HTMLDivElement>(null);
+  const comparisonTreeRef = useRef<HTMLDivElement>(null);
+  const isScrolling = useRef(false);
+
+  const handleTreeScroll: UIEventHandler<HTMLDivElement> = (e) => {
+    if (isScrolling.current) {
+      return;
+    }
+
+    isScrolling.current = true;
+    const currentTarget = e.target as HTMLDivElement;
+    const scrollTop = currentTarget.scrollTop;
+
+    const baselineTree = baselineTreeRef.current?.querySelector(
+      '.ant-tree-list-holder'
+    ) as HTMLDivElement;
+    const comparisonTree = comparisonTreeRef.current?.querySelector(
+      '.ant-tree-list-holder'
+    ) as HTMLDivElement;
+
+    if (!baselineTree || !comparisonTree) {
+      isScrolling.current = false;
+      return;
+    }
+
+    // 计算滚动百分比
+    const currentMaxScroll =
+      currentTarget.scrollHeight - currentTarget.clientHeight;
+    const scrollPercentage =
+      currentMaxScroll > 0 ? scrollTop / currentMaxScroll : 0;
+
+    requestAnimationFrame(() => {
+      try {
+        if (currentTarget === baselineTree) {
+          const targetScroll = Math.round(
+            scrollPercentage *
+              (comparisonTree.scrollHeight - comparisonTree.clientHeight)
+          );
+          comparisonTree.scrollTop = targetScroll;
+        } else {
+          const targetScroll = Math.round(
+            scrollPercentage *
+              (baselineTree.scrollHeight - baselineTree.clientHeight)
+          );
+          baselineTree.scrollTop = targetScroll;
+        }
+      } finally {
+        requestAnimationFrame(() => {
+          isScrolling.current = false;
+        });
+      }
+    });
+  };
 
   const {
     assemblingBaselineTreeData,
@@ -59,6 +112,23 @@ const ComparisonTreeNode: React.FC<Props> = ({
     );
   }, [assemblingComparisonTreeData, selectedComparisonInstanceInfo]);
 
+  const [treeHeight, setTreeHeight] = useState(0);
+
+  useEffect(() => {
+    const calculateHeight = () => {
+      // 其他元素的高度
+      const fixedHeight = 416;
+      setTreeHeight(window.innerHeight - fixedHeight);
+    };
+
+    calculateHeight();
+    window.addEventListener('resize', calculateHeight);
+
+    return () => {
+      window.removeEventListener('resize', calculateHeight);
+    };
+  }, []);
+
   useEffect(() => {
     if (isFirstRenderTreeNode.current) {
       setTreeExpandedKeys(generateTreeDefaultExpandedKeys(baselineTreeData));
@@ -68,9 +138,11 @@ const ComparisonTreeNode: React.FC<Props> = ({
 
   return (
     <ComparisonTreeContainerStyleWrapper>
-      <ComparisonTreeItemStyleWrapper>
+      <ComparisonTreeItemStyleWrapper ref={baselineTreeRef}>
         <Tree
           selectable={false}
+          height={treeHeight}
+          onScroll={handleTreeScroll}
           expandedKeys={treeExpandedKeys}
           onExpand={setTreeExpandedKeys}
           switcherIcon={({ expanded }: AntTreeNodeProps) => {
@@ -82,10 +154,12 @@ const ComparisonTreeNode: React.FC<Props> = ({
           treeData={baselineTreeData}
         />
       </ComparisonTreeItemStyleWrapper>
-      <ComparisonTreeItemStyleWrapper>
+      <ComparisonTreeItemStyleWrapper ref={comparisonTreeRef}>
         <Tree
           selectable={false}
           checkable
+          height={treeHeight}
+          onScroll={handleTreeScroll}
           expandedKeys={treeExpandedKeys}
           onExpand={setTreeExpandedKeys}
           checkedKeys={comparisonObjectCheckKeys}
