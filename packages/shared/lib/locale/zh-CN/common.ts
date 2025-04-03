@@ -83,6 +83,7 @@ export default {
   logout: '退出登录',
   account: '个人中心',
 
+  copy: '复制',
   copySuccess: '复制成功',
   clickHere: '点击此处',
 

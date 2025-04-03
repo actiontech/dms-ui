@@ -13,6 +13,7 @@ import GlobalSetting from './GlobalSetting';
 import LoginConnection from './LoginConnection/index';
 import License from './License';
 import PersonalizeSetting from './PersonalizeSetting';
+import GitSSHConfig from './GitSSHConfig';
 import { ROUTE_PATHS } from '@actiontech/shared/lib/data/routePaths';
 
 const System = () => {
@@ -26,26 +27,26 @@ const System = () => {
       // #if [sqle]
       {
         label: t('dmsSystem.tabPaneTitle.pushNotification'),
-        value: 'push_notification',
+        value: SystemSegmentedKeyEnum.PushNotification,
         components: <PushNotification />
       },
       {
         label: t('dmsSystem.tabPaneTitle.processConnection'),
-        value: 'process_connection',
+        value: SystemSegmentedKeyEnum.ProcessConnection,
         components: <ProcessConnection />
       },
       // #endif
 
       {
         label: t('dmsSystem.tabPaneTitle.loginConnection'),
-        value: 'login_connection',
+        value: SystemSegmentedKeyEnum.LoginConnection,
         components: <LoginConnection />
       },
 
       // #if [sqle]
       {
         label: t('dmsSystem.tabPaneTitle.globalConfiguration'),
-        value: 'global_configuration',
+        value: SystemSegmentedKeyEnum.GlobalConfiguration,
         components: <GlobalSetting />
       },
       // #endif
@@ -53,22 +54,25 @@ const System = () => {
       // #if [ee]
       {
         label: t('dmsSystem.tabPaneTitle.license'),
-        value: 'license',
+        value: SystemSegmentedKeyEnum.License,
         components: <License />
       },
       {
         label: t('dmsSystem.tabPaneTitle.personalize'),
-        value: 'personalize',
+        value: SystemSegmentedKeyEnum.PersonalizeSetting,
         components: <PersonalizeSetting />
-      }
+      },
       // #endif
+      {
+        label: t('dmsSystem.tabPaneTitle.gitSSH'),
+        value: SystemSegmentedKeyEnum.GitSSHConfig,
+        components: <GitSSHConfig />
+      }
     ],
     [t]
   );
 
-  const [activeTabKey, setActiveTabKey] = useState(
-    options[0]?.value ?? SystemSegmentedKeyEnum.PushNotification
-  );
+  const [activeTabKey, setActiveTabKey] = useState(options[0].value);
 
   const renderActiveTab = useCallback(() => {
     return options.find((item) => item.value === activeTabKey)?.components;
@@ -77,7 +81,7 @@ const System = () => {
   useEffect(() => {
     const urlSearchParams = extractQueries(ROUTE_PATHS.BASE.SYSTEM.index);
     if (urlSearchParams && urlSearchParams.active_tab) {
-      setActiveTabKey(urlSearchParams.active_tab);
+      setActiveTabKey(urlSearchParams.active_tab as SystemSegmentedKeyEnum);
     }
   }, [extractQueries]);
 

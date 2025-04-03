@@ -85,12 +85,17 @@ export default {
         mybatisFile: 'Mybatis的XML文件',
         zipFile: 'ZIP文件',
         gitUrl: 'GIT地址',
-        gitUrlTips:
-          '请输入git仓库的HTTP(S)克隆地址，若为私有GIT仓库，则必须输入有读权限的账号密码',
+        gitProtocol: 'Git协议类型',
+        gitUrlTips: '请输入代码仓库地址',
         gitBranch: '代码分支',
         verifyConnection: '验证连接',
         connectSuccess: '连接成功',
-        pleaseVerifyConnection: '请先验证仓库连通性'
+        pleaseVerifyConnection: '请先验证仓库连通性',
+        configureSsh: '配置SSH密钥',
+        protocolHttpDesc: '使用HTTPS协议，需要提供用户名和密码认证',
+        protocolGitDesc: '使用Git协议，适用于公开仓库',
+        protocolSshDesc: '使用SSH协议，通过SSH密钥进行认证',
+        sshAuthTips: '使用SSH协议克隆仓库时，需要先配置SSH密钥。'
       },
       uploadFileTip: {
         sqlFile: '点击选择SQL文件或将文件拖拽到此区域',
