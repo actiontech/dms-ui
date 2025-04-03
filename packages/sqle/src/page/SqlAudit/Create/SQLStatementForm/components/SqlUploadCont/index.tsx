@@ -5,7 +5,7 @@ import {
   SQLStatementFields,
   SqlUploadFileContProps,
   UploadTypeEnum
-} from '../SQLInfoForm/index.type';
+} from '../../../SQLInfoForm/index.type';
 import { FormItemNoLabel } from '@actiontech/shared/lib/components/CustomForm';
 import { Form } from 'antd';
 import {
@@ -14,7 +14,7 @@ import {
 } from '@actiontech/shared/lib/components/MonacoEditor';
 import { CustomDraggerUpload, EmptyBox } from '@actiontech/shared';
 import { getFileFromUploadChangeEvent } from '@actiontech/shared/lib/utils/Common';
-import { FormSubmitStatusContext } from '..';
+import { FormSubmitStatusContext } from '../../..';
 import { whiteSpaceSql } from '@actiontech/shared/lib/utils/FormRule';
 import { SQL_EDITOR_PLACEHOLDER_VALUE } from '@actiontech/shared/lib/data/common';
 
