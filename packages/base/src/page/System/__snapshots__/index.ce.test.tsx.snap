@@ -3558,6 +3558,20 @@ exports[`base/System-ee render snap 3`] = `
                 全局配置
               </div>
             </label>
+            <label
+              class="ant-segmented-item"
+            >
+              <input
+                class="ant-segmented-item-input"
+                type="radio"
+              />
+              <div
+                class="ant-segmented-item-label"
+                title="Git SSH配置"
+              >
+                Git SSH配置
+              </div>
+            </label>
           </div>
         </div>
       </div>
