@@ -11,6 +11,14 @@ import {
   IListProjectsReturn,
   IAddProjectParams,
   IAddProjectReturn,
+  IListBusinessTagsParams,
+  IListBusinessTagsReturn,
+  ICreateBusinessTagParams,
+  ICreateBusinessTagReturn,
+  IUpdateBusinessTagParams,
+  IUpdateBusinessTagReturn,
+  IDeleteBusinessTagParams,
+  IDeleteBusinessTagReturn,
   IDBServicesConnectionParams,
   IDBServicesConnectionReturn,
   ICheckGlobalDBServicesConnectionsParams,
@@ -31,8 +39,25 @@ import {
   IDelProjectReturn,
   IArchiveProjectParams,
   IArchiveProjectReturn,
+  IListEnvironmentTagsParams,
+  IListEnvironmentTagsReturn,
+  ICreateEnvironmentTagParams,
+  ICreateEnvironmentTagReturn,
+  IUpdateEnvironmentTagParams,
+  IUpdateEnvironmentTagReturn,
+  IDeleteEnvironmentTagParams,
+  IDeleteEnvironmentTagReturn,
   IUnarchiveProjectParams,
-  IUnarchiveProjectReturn
+  IUnarchiveProjectReturn,
+  IListProjectsV2Params,
+  IListProjectsV2Return,
+  IAddProjectV2Params,
+  IAddProjectV2Return,
+  IImportProjectsV2Params,
+  IImportProjectsV2Return,
+  IPreviewImportProjectsV2Return,
+  IUpdateProjectV2Params,
+  IUpdateProjectV2Return
 } from './index.d';
 
 class ProjectService extends ServiceBase {
@@ -52,6 +77,60 @@ class ProjectService extends ServiceBase {
     const paramsData = this.cloneDeep(params);
     return this.post<IAddProjectReturn>(
       '/v1/dms/projects',
+      paramsData,
+      options
+    );
+  }
+
+  public ListBusinessTags(
+    params: IListBusinessTagsParams,
+    options?: AxiosRequestConfig
+  ) {
+    const paramsData = this.cloneDeep(params);
+    return this.get<IListBusinessTagsReturn>(
+      '/v1/dms/projects/business_tags',
+      paramsData,
+      options
+    );
+  }
+
+  public CreateBusinessTag(
+    params: ICreateBusinessTagParams,
+    options?: AxiosRequestConfig
+  ) {
+    const paramsData = this.cloneDeep(params);
+    return this.post<ICreateBusinessTagReturn>(
+      '/v1/dms/projects/business_tags',
+      paramsData,
+      options
+    );
+  }
+
+  public UpdateBusinessTag(
+    params: IUpdateBusinessTagParams,
+    options?: AxiosRequestConfig
+  ) {
+    const paramsData = this.cloneDeep(params);
+    const business_tag_id = paramsData.business_tag_id;
+    delete paramsData.business_tag_id;
+
+    return this.put<IUpdateBusinessTagReturn>(
+      `/v1/dms/projects/business_tags/${business_tag_id}`,
+      paramsData,
+      options
+    );
+  }
+
+  public DeleteBusinessTag(
+    params: IDeleteBusinessTagParams,
+    options?: AxiosRequestConfig
+  ) {
+    const paramsData = this.cloneDeep(params);
+    const business_tag_id = paramsData.business_tag_id;
+    delete paramsData.business_tag_id;
+
+    return this.delete<IDeleteBusinessTagReturn>(
+      `/v1/dms/projects/business_tags/${business_tag_id}`,
       paramsData,
       options
     );
@@ -229,6 +308,72 @@ class ProjectService extends ServiceBase {
     );
   }
 
+  public ListEnvironmentTags(
+    params: IListEnvironmentTagsParams,
+    options?: AxiosRequestConfig
+  ) {
+    const paramsData = this.cloneDeep(params);
+    const project_uid = paramsData.project_uid;
+    delete paramsData.project_uid;
+
+    return this.get<IListEnvironmentTagsReturn>(
+      `/v1/dms/projects/${project_uid}/environment_tags`,
+      paramsData,
+      options
+    );
+  }
+
+  public CreateEnvironmentTag(
+    params: ICreateEnvironmentTagParams,
+    options?: AxiosRequestConfig
+  ) {
+    const paramsData = this.cloneDeep(params);
+    const project_uid = paramsData.project_uid;
+    delete paramsData.project_uid;
+
+    return this.post<ICreateEnvironmentTagReturn>(
+      `/v1/dms/projects/${project_uid}/environment_tags`,
+      paramsData,
+      options
+    );
+  }
+
+  public UpdateEnvironmentTag(
+    params: IUpdateEnvironmentTagParams,
+    options?: AxiosRequestConfig
+  ) {
+    const paramsData = this.cloneDeep(params);
+    const project_uid = paramsData.project_uid;
+    delete paramsData.project_uid;
+
+    const environment_tag_id = paramsData.environment_tag_id;
+    delete paramsData.environment_tag_id;
+
+    return this.put<IUpdateEnvironmentTagReturn>(
+      `/v1/dms/projects/${project_uid}/environment_tags/${environment_tag_id}`,
+      paramsData,
+      options
+    );
+  }
+
+  public DeleteEnvironmentTag(
+    params: IDeleteEnvironmentTagParams,
+    options?: AxiosRequestConfig
+  ) {
+    const paramsData = this.cloneDeep(params);
+    const project_uid = paramsData.project_uid;
+    delete paramsData.project_uid;
+
+    const environment_tag_id = paramsData.environment_tag_id;
+    delete paramsData.environment_tag_id;
+
+    return this.delete<IDeleteEnvironmentTagReturn>(
+      `/v1/dms/projects/${project_uid}/environment_tags/${environment_tag_id}`,
+      paramsData,
+      options
+    );
+  }
+
   public UnarchiveProject(
     params: IUnarchiveProjectParams,
     options?: AxiosRequestConfig
@@ -239,6 +384,73 @@ class ProjectService extends ServiceBase {
 
     return this.put<IUnarchiveProjectReturn>(
       `/v1/dms/projects/${project_uid}/unarchive`,
+      paramsData,
+      options
+    );
+  }
+
+  public ListProjectsV2(
+    params: IListProjectsV2Params,
+    options?: AxiosRequestConfig
+  ) {
+    const paramsData = this.cloneDeep(params);
+    return this.get<IListProjectsV2Return>(
+      '/v2/dms/projects',
+      paramsData,
+      options
+    );
+  }
+
+  public AddProjectV2(
+    params: IAddProjectV2Params,
+    options?: AxiosRequestConfig
+  ) {
+    const paramsData = this.cloneDeep(params);
+    return this.post<IAddProjectV2Return>(
+      '/v2/dms/projects',
+      paramsData,
+      options
+    );
+  }
+
+  public ImportProjectsV2(
+    params: IImportProjectsV2Params,
+    options?: AxiosRequestConfig
+  ) {
+    const paramsData = this.cloneDeep(params);
+    return this.post<IImportProjectsV2Return>(
+      '/v2/dms/projects/import',
+      paramsData,
+      options
+    );
+  }
+
+  public ImportDBServicesOfProjectsCheckV2(options?: AxiosRequestConfig) {
+    return this.post(
+      '/v2/dms/projects/import_db_services_check',
+      undefined,
+      options
+    );
+  }
+
+  public PreviewImportProjectsV2(options?: AxiosRequestConfig) {
+    return this.post<IPreviewImportProjectsV2Return>(
+      '/v2/dms/projects/preview_import',
+      undefined,
+      options
+    );
+  }
+
+  public UpdateProjectV2(
+    params: IUpdateProjectV2Params,
+    options?: AxiosRequestConfig
+  ) {
+    const paramsData = this.cloneDeep(params);
+    const project_uid = paramsData.project_uid;
+    delete paramsData.project_uid;
+
+    return this.put<IUpdateProjectV2Return>(
+      `/v2/dms/projects/${project_uid}`,
       paramsData,
       options
     );

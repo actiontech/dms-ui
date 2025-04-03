@@ -290,6 +290,12 @@ export interface IBusinessForUpdate {
   name?: string;
 }
 
+export interface IBusinessTag {
+  id?: number;
+
+  name?: string;
+}
+
 export interface ICBOperationLog {
   audit_result?: IAuditSQLResult[];
 
@@ -416,6 +422,14 @@ export interface IComponentNameWithVersion {
   version?: string;
 }
 
+export interface ICreateBusinessTagReq {
+  business_tag?: IBusinessTag;
+}
+
+export interface ICreateEnvironmentTagReq {
+  environment_tag?: IEnvironmentTag;
+}
+
 export interface IDBService {
   additional_params?: IAdditionalParam[];
 
@@ -428,6 +442,8 @@ export interface IDBService {
   desc?: string;
 
   enable_backup?: boolean;
+
+  environment_tag: IEnvironmentTag;
 
   host: string;
 
@@ -572,6 +588,12 @@ export interface IDelSessionReply {
   };
 
   message?: string;
+}
+
+export interface IEnvironmentTag {
+  id?: number;
+
+  name?: string;
 }
 
 export interface IFeishuConfigurationResData {
@@ -973,6 +995,8 @@ export interface IImportDBService {
 
   desc?: string;
 
+  environment_tag: IEnvironmentTag;
+
   host?: string;
 
   is_enable_masking?: boolean;
@@ -1012,6 +1036,8 @@ export interface IImportDBServicesOfProjectsReq {
 
 export interface IImportProjects {
   business?: string[];
+
+  business_tag?: IBusinessTag;
 
   desc?: string;
 
@@ -1086,6 +1112,16 @@ export interface ILicenseUsageItem {
   used?: number;
 }
 
+export interface IListBusinessTagsReply {
+  code?: number;
+
+  data?: IBusinessTag[];
+
+  message?: string;
+
+  total_nums?: number;
+}
+
 export interface IListCBOperationLogsReply {
   audit_intercepted_sql_count?: number;
 
@@ -1118,6 +1154,8 @@ export interface IListDBService {
   desc?: string;
 
   enable_backup?: boolean;
+
+  environment_tag?: IEnvironmentTag;
 
   host?: string;
 
@@ -1282,6 +1320,16 @@ export interface IListDataExportWorkflowsReply {
   total_nums?: number;
 }
 
+export interface IListEnvironmentTagsReply {
+  code?: number;
+
+  data?: IEnvironmentTag[];
+
+  message?: string;
+
+  total_nums?: number;
+}
+
 export interface IListGlobalDBService {
   backup_max_rows?: number;
 
@@ -1292,6 +1340,8 @@ export interface IListGlobalDBService {
   desc?: string;
 
   enable_backup?: boolean;
+
+  environment_tag?: IEnvironmentTag;
 
   host?: string;
 
@@ -1468,6 +1518,8 @@ export interface IListProject {
   archived?: boolean;
 
   business?: IBusiness[];
+
+  business_tag?: IBusinessTag;
 
   create_time?: string;
 
@@ -1727,6 +1779,8 @@ export interface IPlugin {
 export interface IPreviewImportProjects {
   business?: string[];
 
+  business_tag?: IBusinessTag;
+
   desc?: string;
 
   name?: string;
@@ -1742,6 +1796,8 @@ export interface IPreviewImportProjectsReply {
 
 export interface IProject {
   business?: string[];
+
+  business_tag?: IBusinessTag;
 
   desc?: string;
 
@@ -1978,6 +2034,10 @@ export interface IUidWithName {
   uid?: string;
 }
 
+export interface IUpdateBusinessTagReq {
+  business_tag?: IBusinessTag;
+}
+
 export interface IUpdateCompanyNotice {
   notice_str?: string;
 }
@@ -2019,6 +2079,8 @@ export interface IUpdateDBService {
 
   enable_backup?: boolean;
 
+  environment_tag: IEnvironmentTag;
+
   host: string;
 
   is_enable_masking?: boolean;
@@ -2050,6 +2112,10 @@ export interface IUpdateDBServiceReq {
 
 export interface IUpdateDBServiceSyncTaskReq {
   db_service_sync_task?: IDBServiceSyncTask;
+}
+
+export interface IUpdateEnvironmentTagReq {
+  environment_tag?: IEnvironmentTag;
 }
 
 export interface IUpdateFeishuConfiguration {
@@ -2096,6 +2162,8 @@ export interface IUpdateMemberReq {
 
 export interface IUpdateProject {
   business?: IBusinessForUpdate[];
+
+  business_tag?: IBusinessTag;
 
   desc?: string;
 

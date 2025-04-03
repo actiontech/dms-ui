@@ -17,3 +17,17 @@ export enum ListProjectsFilterByProjectPriorityEnum {
 export enum ExportProjectsOrderByEnum {
   'name' = 'name'
 }
+
+export enum ListProjectsV2OrderByEnum {
+  'name' = 'name'
+}
+
+export enum ListProjectsV2FilterByProjectPriorityEnum {
+  'high' = 'high',
+
+  'medium' = 'medium',
+
+  'low' = 'low',
+
+  'unknown' = 'unknown'
+}
