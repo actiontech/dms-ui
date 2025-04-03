@@ -15,5 +15,9 @@ export const iconTheme: IconTheme = {
   system: {
     basicTitleTips: '#8A8F99',
     modify: '#292C33'
+  },
+  resourceOverview: {
+    databaseFilled: '#4583FF',
+    schemaFilled: '#15C7D4'
   }
 };
