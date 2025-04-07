@@ -11,6 +11,17 @@ export const FilterContainerStyleWrapper = styled(Space)`
   padding: 10px 40px;
   margin-bottom: 0 !important;
 
+  & .ant-input,
+  .ant-select-selector {
+    font-size: 13px !important;
+  }
+
+  & .ant-picker-input {
+    input {
+      font-size: 13px !important;
+    }
+  }
+
   & .ant-space-item {
     padding-bottom: 0 !important;
   }
@@ -111,9 +122,25 @@ export const ToolbarStyleWrapper = styled(Space)`
     theme.sharedTheme.components.toolbar.backgroundColor};
   padding: 14px 40px;
   margin-bottom: 0 !important;
+  font-size: 13px !important;
 
   .ant-space-item {
     padding-bottom: 0 !important;
+  }
+
+  & * {
+    font-size: 13px !important;
+  }
+
+  & input,
+  & textarea,
+  & select {
+    font-size: 13px !important;
+  }
+
+  & button,
+  & .ant-btn {
+    font-size: 13px !important;
   }
 `;
 
