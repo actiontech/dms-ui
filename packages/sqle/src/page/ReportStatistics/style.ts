@@ -17,6 +17,12 @@ export const EEIndexStyleWrapper = styled('section')`
     width: 100%;
     height: 100%;
 
+    & .ant-card {
+      .ant-card-body {
+        padding: 20px;
+      }
+    }
+
     &.card-wrapper {
       height: 170px;
     }

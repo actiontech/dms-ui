@@ -1,9 +1,9 @@
-import { Result, ConfigProvider } from 'antd';
+import { Result } from 'antd';
 import { ActiontechTableColumn, ActiontechTableProps } from './index.type';
 import ToolBar from './components/Toolbar';
 import FilterContainer from './components/FilterContainer';
 import { useTranslation } from 'react-i18next';
-import { ActiontechTableStyleWrapper, tableToken } from './style';
+import { ActiontechTableStyleWrapper } from './style';
 import useTableAction from './hooks/useTableAction';
 import classnames from 'classnames';
 import { useEffect, useMemo, useContext } from 'react';
@@ -79,44 +79,42 @@ const ActiontechTable = <
 
       {!!filterContainerProps && <FilterContainer {...filterContainerProps} />}
 
-      <ConfigProvider theme={tableToken}>
-        <ActiontechTableStyleWrapper
-          className={classnames('actiontech-table-namespace', className)}
-          locale={{
-            emptyText: errorMessage ? (
-              <Result
-                status="error"
-                title={t('common.request.noticeFailTitle')}
-                subTitle={errorMessage}
-              />
-            ) : undefined
-          }}
-          scroll={{
-            x: 'max-content'
-          }}
-          {...props}
-          columns={innerColumns}
-          pagination={
-            !props.pagination
-              ? false
-              : {
-                  defaultPageSize: 20,
-                  showSizeChanger: true,
-                  showTotal: (total) => (
-                    <span>
-                      {t('common.actiontechTable.pagination.total', {
-                        total
-                      })}
-                    </span>
-                  ),
-                  className: classnames('actiontech-table-pagination', {
-                    'actiontech-table-pagination-fixed': isPaginationFixed
-                  }),
-                  ...props.pagination
-                }
-          }
-        />
-      </ConfigProvider>
+      <ActiontechTableStyleWrapper
+        className={classnames('actiontech-table-namespace', className)}
+        locale={{
+          emptyText: errorMessage ? (
+            <Result
+              status="error"
+              title={t('common.request.noticeFailTitle')}
+              subTitle={errorMessage}
+            />
+          ) : undefined
+        }}
+        scroll={{
+          x: 'max-content'
+        }}
+        {...props}
+        columns={innerColumns}
+        pagination={
+          !props.pagination
+            ? false
+            : {
+                defaultPageSize: 20,
+                showSizeChanger: true,
+                showTotal: (total) => (
+                  <span>
+                    {t('common.actiontechTable.pagination.total', {
+                      total
+                    })}
+                  </span>
+                ),
+                className: classnames('actiontech-table-pagination', {
+                  'actiontech-table-pagination-fixed': isPaginationFixed
+                }),
+                ...props.pagination
+              }
+        }
+      />
     </>
   );
 };
