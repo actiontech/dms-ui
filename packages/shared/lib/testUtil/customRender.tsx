@@ -93,7 +93,7 @@ export const renderHooksWithTheme = <TProps, TResult>(
     wrapper: ({ children }) => (
       <ConfigProvider
         locale={zhCN}
-        theme={{ algorithm: antdTheme.defaultAlgorithm }}
+        theme={{ algorithm: antdTheme.defaultAlgorithm, hashed: false }}
       >
         <StyledEngineProvider injectFirst>
           <ThemeProvider theme={lightTheme}>{children}</ThemeProvider>
@@ -133,13 +133,18 @@ export const superRender = (
   const renderReturn = render(ui, {
     wrapper: ({ children }) => {
       return (
-        <RecoilRoot {...otherProps?.recoilRootProps}>
-          <Provider store={storeFactory(otherProps?.initStore)}>
-            <MemoryRouter {...otherProps?.routerProps}>
-              <ThemeProvider theme={lightTheme}>{children}</ThemeProvider>
-            </MemoryRouter>
-          </Provider>
-        </RecoilRoot>
+        <ConfigProvider
+          locale={zhCN}
+          theme={{ algorithm: antdTheme.defaultAlgorithm, hashed: false }}
+        >
+          <RecoilRoot {...otherProps?.recoilRootProps}>
+            <Provider store={storeFactory(otherProps?.initStore)}>
+              <MemoryRouter {...otherProps?.routerProps}>
+                <ThemeProvider theme={lightTheme}>{children}</ThemeProvider>
+              </MemoryRouter>
+            </Provider>
+          </RecoilRoot>
+        </ConfigProvider>
       );
     },
     ...option
