@@ -38,6 +38,7 @@ const SideMenu: React.FC = () => {
     refresh: refreshProjectList
   } = useRequest(
     () =>
+      // todo ListProjectsV2联调后替换ListProjectsV2
       Project.ListProjects({ page_size: 9999 }).then(
         (res) => res?.data?.data ?? []
       ),

@@ -12,8 +12,8 @@ import EventEmitter from '../../../utils/EventEmitter';
 import { ProjectFormFields } from './ProjectForm';
 import ProjectForm from './ProjectForm/ProjectForm';
 import { updateProjectModalStatus } from '../../../store/project';
-import { IUpdateProjectParams } from '@actiontech/shared/lib/api/base/service/Project/index.d';
-import Project from '@actiontech/shared/lib/api/base/service/Project';
+import { IUpdateProjectV2Params } from '@actiontech/shared/lib/api/base/service/Project/index.d';
+import { DmsApi } from '@actiontech/shared/lib/api';
 import { BasicButton, BasicDrawer } from '@actiontech/shared';
 import {
   ProjectProjectPriorityEnum,
@@ -48,18 +48,20 @@ const UpdateProject: React.FC = () => {
 
   const submit = async () => {
     const values = await form.validateFields();
-    const params: IUpdateProjectParams = {
+    const params: IUpdateProjectV2Params = {
       project_uid: selectProjectItem?.uid ?? '',
       project: {
         desc: values.desc,
         is_fixed_business: values.isFixedBusiness,
-        business: values.business,
+        business_tag: {
+          id: values.businessTag
+        },
         project_priority:
           values.priority as unknown as UpdateProjectProjectPriorityEnum
       }
     };
     startSubmit();
-    Project.UpdateProject(params)
+    DmsApi.ProjectService.UpdateProjectV2(params)
       .then((res) => {
         if (res.data.code === ResponseCode.SUCCESS) {
           messageApi.success(
@@ -82,7 +84,7 @@ const UpdateProject: React.FC = () => {
         desc: selectProjectItem?.desc ?? '',
         name: selectProjectItem?.name ?? '',
         isFixedBusiness: selectProjectItem?.is_fixed_business ?? false,
-        business: selectProjectItem?.business,
+        businessTag: selectProjectItem?.business_tag?.id ?? 0,
         priority:
           selectProjectItem?.project_priority as unknown as ProjectProjectPriorityEnum
       });

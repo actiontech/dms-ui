@@ -21,7 +21,7 @@ import { getFileFromUploadChangeEvent } from '@actiontech/shared/lib/utils/Commo
 import { ActiontechTable } from '@actiontech/shared/lib/components/ActiontechTable';
 import { useBoolean } from 'ahooks';
 import FileUpload from './FileUpload';
-import Project from '@actiontech/shared/lib/api/base/service/Project';
+import { DmsApi } from '@actiontech/shared/lib/api';
 import { ResponseCode } from '@actiontech/shared/lib/enum';
 import { useState } from 'react';
 import { IPreviewImportProjects } from '@actiontech/shared/lib/api/base/service/common';
@@ -63,7 +63,7 @@ const ImportProject = () => {
       }
       return project;
     });
-    Project.ImportProjects({
+    DmsApi.ProjectService.ImportProjectsV2({
       projects: projects
     })
       .then((res) => {
@@ -164,7 +164,10 @@ const ImportProject = () => {
                 }}
                 accept=".csv"
                 customRequest={(option) => {
-                  Project.PreviewImportProjects({ projects_file: option.file })
+                  DmsApi.ProjectService.PreviewImportProjectsV2({
+                    // todo 接口定义错误 待后端补充参数
+                    // projects_file: option.file
+                  })
                     .then((res) => {
                       if (res.data.code === ResponseCode.SUCCESS) {
                         option?.onSuccess?.(option.file);
