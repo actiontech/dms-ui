@@ -6,11 +6,9 @@ import { TableColumnWithIconStyleWrapper } from '@actiontech/shared/lib/styleWra
 import { FlagFilled, LockOutlined } from '@actiontech/icons';
 import {
   BasicTag,
-  BasicToolTip,
   BasicTypographyEllipsis,
   TypedLink
 } from '@actiontech/shared';
-import { Space } from 'antd';
 import { ProjectPriorityDictionary } from 'sqle/src/page/GlobalDashboard/index.data';
 import { ROUTE_PATHS } from '@actiontech/shared/lib/data/routePaths';
 
@@ -32,32 +30,13 @@ export const ProjectListTableColumnFactory =
         }
       },
       {
-        dataIndex: 'business',
+        dataIndex: 'business_tag',
         title: () => t('dmsProject.projectForm.business'),
         render: (business) => {
-          if (!business || !business.length) {
+          if (!business) {
             return '-';
           }
-          return (
-            <BasicToolTip
-              title={
-                business.length > 1 ? (
-                  <Space wrap>
-                    {business.map((v) => (
-                      <BasicTag key={v.id}>{v.name}</BasicTag>
-                    ))}
-                  </Space>
-                ) : null
-              }
-            >
-              <Space>
-                <BasicTag style={{ marginRight: 0 }}>
-                  {business[0].name}
-                </BasicTag>
-                {business.length > 1 ? '...' : null}
-              </Space>
-            </BasicToolTip>
-          );
+          return <BasicTag>{business.name}</BasicTag>;
         }
       },
       {
