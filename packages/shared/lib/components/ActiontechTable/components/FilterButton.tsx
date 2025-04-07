@@ -33,9 +33,9 @@ const FilterButton = <T extends Record<string, any>>({
           : t('common.actiontechTable.filterButton.filter')}
 
         {hasSelectedFilter ? (
-          <UpOutlined color="currrentColor" width={14} height={14} />
+          <UpOutlined color="currentColor" width={14} height={14} />
         ) : (
-          <DownOutlined color="currrentColor" width={14} height={14} />
+          <DownOutlined color="currentColor" width={14} height={14} />
         )}
       </ColumnsSettingStyleWrapper>
     </BasicButton>
