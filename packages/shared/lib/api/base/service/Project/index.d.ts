@@ -67,13 +67,13 @@ export interface ICreateBusinessTagParams extends ICreateBusinessTagReq {}
 export interface ICreateBusinessTagReturn extends IGenericResp {}
 
 export interface IUpdateBusinessTagParams extends IUpdateBusinessTagReq {
-  business_tag_id: string;
+  business_tag_uid: string;
 }
 
 export interface IUpdateBusinessTagReturn extends IGenericResp {}
 
 export interface IDeleteBusinessTagParams {
-  business_tag_id: number;
+  business_tag_uid: string;
 }
 
 export interface IDeleteBusinessTagReturn extends IGenericResp {}
@@ -160,13 +160,13 @@ export interface ICreateEnvironmentTagReturn extends IGenericResp {}
 export interface IUpdateEnvironmentTagParams extends IUpdateEnvironmentTagReq {
   project_uid: string;
 
-  environment_tag_id: string;
+  environment_tag_uid: string;
 }
 
 export interface IUpdateEnvironmentTagReturn extends IGenericResp {}
 
 export interface IDeleteEnvironmentTagParams {
-  environment_tag_id: number;
+  environment_tag_uid: string;
 
   project_uid: string;
 }

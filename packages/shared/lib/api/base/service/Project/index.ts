@@ -111,11 +111,11 @@ class ProjectService extends ServiceBase {
     options?: AxiosRequestConfig
   ) {
     const paramsData = this.cloneDeep(params);
-    const business_tag_id = paramsData.business_tag_id;
-    delete paramsData.business_tag_id;
+    const business_tag_uid = paramsData.business_tag_uid;
+    delete paramsData.business_tag_uid;
 
     return this.put<IUpdateBusinessTagReturn>(
-      `/v1/dms/projects/business_tags/${business_tag_id}`,
+      `/v1/dms/projects/business_tags/${business_tag_uid}`,
       paramsData,
       options
     );
@@ -126,11 +126,11 @@ class ProjectService extends ServiceBase {
     options?: AxiosRequestConfig
   ) {
     const paramsData = this.cloneDeep(params);
-    const business_tag_id = paramsData.business_tag_id;
-    delete paramsData.business_tag_id;
+    const business_tag_uid = paramsData.business_tag_uid;
+    delete paramsData.business_tag_uid;
 
     return this.delete<IDeleteBusinessTagReturn>(
-      `/v1/dms/projects/business_tags/${business_tag_id}`,
+      `/v1/dms/projects/business_tags/${business_tag_uid}`,
       paramsData,
       options
     );
@@ -346,11 +346,11 @@ class ProjectService extends ServiceBase {
     const project_uid = paramsData.project_uid;
     delete paramsData.project_uid;
 
-    const environment_tag_id = paramsData.environment_tag_id;
-    delete paramsData.environment_tag_id;
+    const environment_tag_uid = paramsData.environment_tag_uid;
+    delete paramsData.environment_tag_uid;
 
     return this.put<IUpdateEnvironmentTagReturn>(
-      `/v1/dms/projects/${project_uid}/environment_tags/${environment_tag_id}`,
+      `/v1/dms/projects/${project_uid}/environment_tags/${environment_tag_uid}`,
       paramsData,
       options
     );
@@ -364,11 +364,11 @@ class ProjectService extends ServiceBase {
     const project_uid = paramsData.project_uid;
     delete paramsData.project_uid;
 
-    const environment_tag_id = paramsData.environment_tag_id;
-    delete paramsData.environment_tag_id;
+    const environment_tag_uid = paramsData.environment_tag_uid;
+    delete paramsData.environment_tag_uid;
 
     return this.delete<IDeleteEnvironmentTagReturn>(
-      `/v1/dms/projects/${project_uid}/environment_tags/${environment_tag_id}`,
+      `/v1/dms/projects/${project_uid}/environment_tags/${environment_tag_uid}`,
       paramsData,
       options
     );
