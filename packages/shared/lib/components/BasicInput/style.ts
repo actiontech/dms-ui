@@ -1,12 +1,10 @@
 import { styled } from '@mui/material/styles';
 import { Input } from 'antd';
-import TextArea from 'antd/es/input/TextArea';
-import Password from 'antd/es/input/Password';
 
 const ComponentType = {
   Input,
-  TextArea,
-  Password
+  TextArea: Input.TextArea,
+  Password: Input.Password
 };
 
 export const StyleComponent = (type: keyof typeof ComponentType) => {

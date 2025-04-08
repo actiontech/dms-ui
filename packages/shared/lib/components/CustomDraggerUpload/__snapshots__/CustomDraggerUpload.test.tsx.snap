@@ -3,47 +3,10 @@
 exports[`lib/CustomDraggerUpload should render ui snap by default params 1`] = `
 <div>
   <span
-    class="ant-upload-wrapper css-1c6xfw5 css-dev-only-do-not-override-txh9fw"
+    class="ant-upload-wrapper css-1c6xfw5"
   >
     <div
-      class="css-dev-only-do-not-override-txh9fw ant-upload ant-upload-drag"
-    >
-      <span
-        class="ant-upload ant-upload-btn"
-        role="button"
-        tabindex="0"
-      >
-        <input
-          accept=""
-          style="display: none;"
-          type="file"
-        />
-        <div
-          class="ant-upload-drag-container"
-        >
-          自定义图标
-          <div
-            class="title"
-          >
-            自定义的标题
-          </div>
-        </div>
-      </span>
-    </div>
-    <div
-      class="ant-upload-list ant-upload-list-text"
-    />
-  </span>
-</div>
-`;
-
-exports[`lib/CustomDraggerUpload should render ui when fileList length is empty 1`] = `
-<div>
-  <span
-    class="ant-upload-wrapper css-1c6xfw5 css-dev-only-do-not-override-txh9fw"
-  >
-    <div
-      class="css-dev-only-do-not-override-txh9fw ant-upload ant-upload-drag"
+      class="ant-upload ant-upload-drag"
     >
       <span
         class="ant-upload ant-upload-btn"

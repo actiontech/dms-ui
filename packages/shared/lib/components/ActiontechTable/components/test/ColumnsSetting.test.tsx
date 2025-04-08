@@ -2,7 +2,7 @@ import {
   getAllBySelector,
   getBySelector
 } from '../../../../testUtil/customQuery';
-import { renderWithTheme } from '../../../../testUtil/customRender';
+import { superRender } from '../../../../testUtil/customRender';
 import { fireEvent, act, cleanup, screen } from '@testing-library/react';
 
 import { ColumnsSettingProps } from '../../index.type';
@@ -26,7 +26,7 @@ describe('lib/ActiontechTable-ColumnsSetting', () => {
     cleanup();
   });
   const customRender = (params: ColumnsSettingProps) => {
-    return renderWithTheme(<ColumnsSetting {...params} />);
+    return superRender(<ColumnsSetting {...params} />);
   };
 
   describe('render icon setting snap when in diff scene', () => {
