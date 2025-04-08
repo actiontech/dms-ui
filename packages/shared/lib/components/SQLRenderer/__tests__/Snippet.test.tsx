@@ -3,6 +3,8 @@ import { getBySelector } from '../../../testUtil/customQuery';
 import { superRender } from '../../../testUtil/customRender';
 import Snippet from '../component/Snippet';
 import { SQLSnippetRendererProps } from '../SQLRenderer.types';
+import Copy from '../../../utils/Copy';
+import { act } from '@testing-library/react';
 
 describe('test SQLRenderer.Snippet', () => {
   const customRender = (params?: Partial<SQLSnippetRendererProps>) => {
@@ -22,14 +24,19 @@ describe('test SQLRenderer.Snippet', () => {
     );
   };
 
-  it('render snap', () => {
+  it('render snap when basic props are set', () => {
     const { container } = customRender();
     expect(container).toMatchSnapshot();
   });
 
-  it('render snap when tooltip is equal false', () => {
-    const { container } = customRender({ tooltip: false });
-    expect(container).toMatchSnapshot();
+  it('render snap when loading is not undefined', () => {
+    expect(customRender({ loading: true }).container).toMatchSnapshot();
+  });
+
+  it('render snap when sql is empty', () => {
+    expect(
+      customRender({ sql: '', emptySqlContent: 'empty' }).container
+    ).toMatchSnapshot();
   });
 
   it('render showCopyIcon is equal hover', () => {
@@ -39,32 +46,44 @@ describe('test SQLRenderer.Snippet', () => {
 
   it('should call onClick when clicked sql wrapper', () => {
     const onClick = jest.fn();
-
     customRender({ onClick, className: 'custom-wrapper' });
-
     fireEvent.click(getBySelector('.actiontech-sql-snippet-renderer-wrapper'));
-
     expect(onClick).toHaveBeenCalledTimes(1);
-
     fireEvent.click(getBySelector('.custom-wrapper'));
-
     expect(onClick).toHaveBeenCalledTimes(2);
   });
 
-  it('render snap when loading is not undefined', () => {
-    expect(customRender({ loading: false }).container).toMatchSnapshot();
-    expect(customRender({ loading: true }).container).toMatchSnapshot();
+  it('should call onCopyComplete when copy icon is clicked', async () => {
+    jest.useFakeTimers();
+    jest.spyOn(Copy, 'copyTextByTextarea').mockImplementation(jest.fn());
+    const onCopyComplete = jest.fn();
+    customRender({ showCopyIcon: true, onCopyComplete });
+    fireEvent.click(getBySelector('.actiontech-sql-renderer-copy-icon'));
+
+    await act(async () => jest.advanceTimersByTime(0));
+    expect(onCopyComplete).toHaveBeenCalledTimes(1);
+    jest.useRealTimers();
   });
 
-  it('render empty content', () => {
-    expect(customRender({ sql: '' }).container).toMatchSnapshot();
-    expect(
-      customRender({ sql: '', emptySqlContent: 'empty' }).container
-    ).toMatchSnapshot();
+  it('should render with custom paragraph props', () => {
+    customRender({
+      paragraph: {
+        className: 'custom-paragraph',
+        style: { color: 'red' }
+      }
+    });
+    expect(getBySelector('.custom-paragraph')).toBeInTheDocument();
+    expect(getBySelector('.custom-paragraph')).toHaveStyle({ color: 'red' });
   });
 
-  it('render snap when cuttingLength is 200', () => {
-    const { container } = customRender({ cuttingLength: 200 });
-    expect(container).toMatchSnapshot();
+  it('should not highlight syntax when highlightSyntax is false', () => {
+    const { container } = customRender({ highlightSyntax: false });
+    expect(container.querySelector('.hljs')).not.toBeInTheDocument();
+  });
+
+  it('should slice sql content when cuttingLength is set', () => {
+    const sql = 'SELECT * FROM table';
+    const { container } = customRender({ sql, cuttingLength: 10 });
+    expect(container.textContent).toContain('SELECT * F');
   });
 });

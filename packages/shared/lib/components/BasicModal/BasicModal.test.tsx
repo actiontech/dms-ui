@@ -1,45 +1,96 @@
-import { renderWithTheme } from '../../testUtil/customRender';
+import { screen } from '@testing-library/react';
+import { superRender } from '../../testUtil/customRender';
 import BasicModal from './BasicModal';
 import { BasicModalProps } from './BasicModal.types';
 
 describe('lib/BasicModal', () => {
   const customRender = (params: BasicModalProps) => {
-    return renderWithTheme(<BasicModal {...params} />);
+    return superRender(<BasicModal {...params} />);
   };
 
-  it('render diff size modal', () => {
+  it('should match snapshot', () => {
     const { baseElement } = customRender({
-      title: '基础modal480',
-      open: true,
-      closable: false
-    });
-    expect(baseElement).toMatchSnapshot();
-
-    const { baseElement: baseElement1 } = customRender({
-      title: '基础modal960',
-      open: true,
-      closable: false,
-      size: 'large'
-    });
-    expect(baseElement1).toMatchSnapshot();
-  });
-
-  it('render has close icon modal', () => {
-    const { baseElement } = customRender({
-      title: '基础modal480',
-      open: true,
-      children: <>内容区域</>
+      title: '基础modal',
+      open: true
     });
     expect(baseElement).toMatchSnapshot();
   });
 
-  it('render has width prop modal', () => {
-    const { baseElement } = customRender({
-      title: '基础modal480',
-      open: true,
-      children: <>内容区域</>,
-      width: 720
+  describe('width calculation', () => {
+    it('should render small modal with width 480px by default', () => {
+      const { baseElement } = customRender({
+        title: '基础modal480',
+        open: true
+      });
+      const modalElement = baseElement.querySelector('.ant-modal');
+      expect(modalElement).toHaveStyle({ width: '480px' });
     });
-    expect(baseElement).toMatchSnapshot();
+
+    it('should render large modal with width 960px', () => {
+      const { baseElement } = customRender({
+        title: '基础modal960',
+        open: true,
+        size: 'large'
+      });
+      const modalElement = baseElement.querySelector('.ant-modal');
+      expect(modalElement).toHaveStyle({ width: '960px' });
+    });
+
+    it('should prioritize custom width over size prop', () => {
+      const { baseElement } = customRender({
+        title: '自定义宽度',
+        open: true,
+        size: 'small',
+        width: 720
+      });
+      const modalElement = baseElement.querySelector('.ant-modal');
+      expect(modalElement).toHaveStyle({ width: '720px' });
+    });
+  });
+
+  describe('close icon', () => {
+    it('should render close icon by default', () => {
+      const { baseElement } = customRender({
+        title: '基础modal',
+        open: true
+      });
+      expect(baseElement.querySelector('.ant-modal-close')).toBeInTheDocument();
+    });
+
+    it('should not render close icon when closable is false', () => {
+      const { baseElement } = customRender({
+        title: '基础modal',
+        open: true,
+        closable: false
+      });
+      expect(
+        baseElement.querySelector('.ant-modal-close')
+      ).not.toBeInTheDocument();
+    });
+  });
+
+  describe('custom className', () => {
+    it('should apply custom className correctly', () => {
+      const { baseElement } = customRender({
+        title: '基础modal',
+        open: true,
+        className: 'custom-modal'
+      });
+      expect(baseElement.querySelector('.custom-modal')).toBeInTheDocument();
+      expect(
+        baseElement.querySelector('.basic-modal-wrapper')
+      ).toBeInTheDocument();
+    });
+  });
+
+  describe('content rendering', () => {
+    it('should render children content correctly', () => {
+      customRender({
+        title: '基础modal',
+        open: true,
+        children: <div data-testid="modal-content">测试内容</div>
+      });
+      expect(screen.getByTestId('modal-content')).toHaveTextContent('测试内容');
+    });
   });
 });

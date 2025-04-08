@@ -1,5 +1,5 @@
 import { fireEvent, act, cleanup } from '@testing-library/react';
-import { renderWithTheme } from '../../../../testUtil/customRender';
+import { superRender } from '../../../../testUtil/customRender';
 
 import { TableSearchInputProps } from '../../index.type';
 import SearchInput from '../SearchInput';
@@ -17,7 +17,7 @@ describe('lib/ActiontechTable-SearchInput', () => {
   });
 
   const customRender = (params: TableSearchInputProps) => {
-    return renderWithTheme(<SearchInput {...params} />);
+    return superRender(<SearchInput {...params} />);
   };
 
   it('render search input ui', () => {
