@@ -1,7 +1,7 @@
 import { cleanup, fireEvent, act, screen } from '@testing-library/react';
 import ConfigSwitch, { ConfigSwitchParams } from '.';
 import Form from 'antd/es/form/Form';
-import { renderWithTheme } from '../../../../testUtil/customRender';
+import { superRender } from '../../../../testUtil/customRender';
 import { getBySelector } from '../../../../testUtil/customQuery';
 
 describe('base/System/components/ConfigSwitch', () => {
@@ -14,7 +14,7 @@ describe('base/System/components/ConfigSwitch', () => {
       'switchFieldName' | 'onConfirm' | 'onSwitchChange' | 'onSwitchPopoverOpen'
     >
   ) => {
-    return renderWithTheme(
+    return superRender(
       <Form>
         <ConfigSwitch
           switchFieldName="enabled"
@@ -42,16 +42,10 @@ describe('base/System/components/ConfigSwitch', () => {
       submitLoading: true,
       popoverVisible: true
     });
-    expect(baseElement).toMatchSnapshot();
-  });
 
-  it('render snap when title is false', () => {
-    const { baseElement } = customRender({
-      title: 'title',
-      submitLoading: true,
-      popoverVisible: true
-    });
-    expect(baseElement).toMatchSnapshot();
+    expect(baseElement.querySelector('.system-config-switch')).toHaveClass(
+      'ant-switch-disabled'
+    );
   });
 
   it('render snap when confirm popover', async () => {

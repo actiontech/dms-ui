@@ -3,7 +3,7 @@
 exports[`lib/ActiontechTable-hooks-useTableAction -renderAction render btn click confirm 1`] = `
 <div>
   <button
-    class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+    class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
     data-testid="test-button"
     type="button"
   >
@@ -17,7 +17,7 @@ exports[`lib/ActiontechTable-hooks-useTableAction -renderAction render btn click
 exports[`lib/ActiontechTable-hooks-useTableAction -renderAction render btn click fn 1`] = `
 <div>
   <button
-    class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default ant-btn-sm ant-btn-block actiontech-table-actions-button test-btn-click basic-button-wrapper css-geipcv"
+    class="ant-btn ant-btn-default ant-btn-sm ant-btn-block actiontech-table-actions-button test-btn-click basic-button-wrapper css-geipcv"
     data-testid="test-button"
     type="button"
   >
@@ -31,7 +31,7 @@ exports[`lib/ActiontechTable-hooks-useTableAction -renderAction render btn click
 exports[`lib/ActiontechTable-hooks-useTableAction -renderAction render btn is disabled 1`] = `
 <div>
   <button
-    class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+    class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
     data-testid="add"
     disabled=""
     type="button"
@@ -49,7 +49,7 @@ exports[`lib/ActiontechTable-hooks-useTableAction -renderAction render btn when 
     href="/home"
   >
     <button
-      class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default ant-btn-sm ant-btn-block actiontech-table-actions-button test-btn-click basic-button-wrapper css-geipcv"
+      class="ant-btn ant-btn-default ant-btn-sm ant-btn-block actiontech-table-actions-button test-btn-click basic-button-wrapper css-geipcv"
       data-testid="test-button"
       type="button"
     >
@@ -64,14 +64,14 @@ exports[`lib/ActiontechTable-hooks-useTableAction -renderAction render btn when 
 exports[`lib/ActiontechTable-hooks-useTableAction -renderAction render use renderAction 1`] = `
 <div>
   <div
-    class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+    class="ant-space ant-space-horizontal ant-space-align-center"
   >
     <div
       class="ant-space-item"
       style="margin-right: 8px;"
     >
       <button
-        class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default ant-btn-sm ant-btn-block actiontech-table-actions-button basic-button-wrapper css-geipcv"
+        class="ant-btn ant-btn-default ant-btn-sm ant-btn-block actiontech-table-actions-button basic-button-wrapper css-geipcv"
         data-testid="add"
         type="button"
       >
@@ -84,7 +84,7 @@ exports[`lib/ActiontechTable-hooks-useTableAction -renderAction render use rende
       class="ant-space-item"
     >
       <button
-        class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default ant-btn-sm ant-btn-dangerous actiontech-table-actions-button basic-button-wrapper css-geipcv"
+        class="ant-btn ant-btn-default ant-btn-sm ant-btn-dangerous actiontech-table-actions-button basic-button-wrapper css-geipcv"
         data-testid="delete"
         type="button"
       >
@@ -103,7 +103,7 @@ exports[`lib/ActiontechTable-hooks-useTableAction -renderActionInTable render bu
     class="css-new95e"
   >
     <button
-      class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+      class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
       type="button"
     >
       <span>
@@ -111,7 +111,7 @@ exports[`lib/ActiontechTable-hooks-useTableAction -renderActionInTable render bu
       </span>
     </button>
     <button
-      class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default ant-btn-sm ant-btn-icon-only actiontech-table-actions-button actiontech-table-actions-more-button basic-button-wrapper css-geipcv"
+      class="ant-btn ant-btn-default ant-btn-sm ant-btn-icon-only actiontech-table-actions-button actiontech-table-actions-more-button basic-button-wrapper css-geipcv"
       type="button"
     >
       <span
@@ -152,14 +152,14 @@ exports[`lib/ActiontechTable-hooks-useTableAction -renderActionInTable render bu
     class="css-new95e"
   >
     <div
-      class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+      class="ant-space ant-space-horizontal ant-space-align-center"
     >
       <div
         class="ant-space-item"
         style="margin-right: 8px;"
       >
         <button
-          class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default ant-btn-sm ant-btn-block actiontech-table-actions-button basic-button-wrapper css-geipcv"
+          class="ant-btn ant-btn-default ant-btn-sm ant-btn-block actiontech-table-actions-button basic-button-wrapper css-geipcv"
           data-testid="add"
           type="button"
         >
@@ -172,7 +172,7 @@ exports[`lib/ActiontechTable-hooks-useTableAction -renderActionInTable render bu
         class="ant-space-item"
       >
         <button
-          class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default ant-btn-sm ant-btn-dangerous actiontech-table-actions-button basic-button-wrapper css-geipcv"
+          class="ant-btn ant-btn-default ant-btn-sm ant-btn-dangerous actiontech-table-actions-button basic-button-wrapper css-geipcv"
           data-testid="delete"
           type="button"
         >
@@ -192,14 +192,14 @@ exports[`lib/ActiontechTable-hooks-useTableAction -renderActionInTable render mo
     class="css-new95e"
   >
     <div
-      class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+      class="ant-space ant-space-horizontal ant-space-align-center"
     >
       <div
         class="ant-space-item"
         style="margin-right: 8px;"
       >
         <button
-          class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+          class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
           type="button"
         >
           <span>
@@ -211,7 +211,7 @@ exports[`lib/ActiontechTable-hooks-useTableAction -renderActionInTable render mo
         class="ant-space-item"
       >
         <button
-          class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+          class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
           type="button"
         >
           <span>
@@ -221,7 +221,7 @@ exports[`lib/ActiontechTable-hooks-useTableAction -renderActionInTable render mo
       </div>
     </div>
     <button
-      class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default ant-btn-sm ant-btn-icon-only actiontech-table-actions-button actiontech-table-actions-more-button basic-button-wrapper css-geipcv"
+      class="ant-btn ant-btn-default ant-btn-sm ant-btn-icon-only actiontech-table-actions-button actiontech-table-actions-more-button basic-button-wrapper css-geipcv"
       type="button"
     >
       <span
@@ -251,7 +251,7 @@ exports[`lib/ActiontechTable-hooks-useTableAction -renderActionInTable render mo
     class="css-new95e"
   >
     <button
-      class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+      class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
       type="button"
     >
       <span>
@@ -259,7 +259,7 @@ exports[`lib/ActiontechTable-hooks-useTableAction -renderActionInTable render mo
       </span>
     </button>
     <button
-      class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default ant-btn-sm ant-btn-icon-only actiontech-table-actions-button actiontech-table-actions-more-button basic-button-wrapper css-geipcv"
+      class="ant-btn ant-btn-default ant-btn-sm ant-btn-icon-only actiontech-table-actions-button actiontech-table-actions-more-button basic-button-wrapper css-geipcv"
       type="button"
     >
       <span

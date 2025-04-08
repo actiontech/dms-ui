@@ -4,7 +4,7 @@ exports[`hooks/useDatabaseType should get driver from request 1`] = `
 <body>
   <div>
     <div
-      class="ant-select css-dev-only-do-not-override-txh9fw ant-select-single ant-select-show-arrow"
+      class="ant-select ant-select-single ant-select-show-arrow"
     >
       <div
         class="ant-select-selector"
@@ -69,7 +69,7 @@ exports[`hooks/useDatabaseType should get driver from request 2`] = `
 <body>
   <div>
     <div
-      class="ant-select css-dev-only-do-not-override-txh9fw ant-select-single ant-select-show-arrow"
+      class="ant-select ant-select-single ant-select-show-arrow"
       data-testid="testId"
     >
       <div
@@ -138,7 +138,7 @@ exports[`hooks/useDatabaseType should get driver from request 3`] = `
 <body>
   <div>
     <div
-      class="ant-select css-dev-only-do-not-override-txh9fw ant-select-single ant-select-show-arrow ant-select-open"
+      class="ant-select ant-select-single ant-select-show-arrow ant-select-open"
       data-testid="testId"
     >
       <div
@@ -202,7 +202,7 @@ exports[`hooks/useDatabaseType should get driver from request 3`] = `
   </div>
   <div>
     <div
-      class="ant-select-dropdown ant-slide-up-appear ant-slide-up-appear-prepare ant-slide-up css-dev-only-do-not-override-txh9fw ant-select-dropdown-placement-bottomLeft"
+      class="ant-select-dropdown ant-slide-up-appear ant-slide-up-appear-prepare ant-slide-up ant-select-dropdown-placement-bottomLeft"
       style="--arrow-x: 0px; --arrow-y: 0px; left: -1000vw; top: -1000vh; box-sizing: border-box; min-width: 0; width: 0px;"
     >
       <div>
@@ -297,15 +297,6 @@ exports[`hooks/useDatabaseType should get driver from request 3`] = `
                 </div>
               </div>
             </div>
-          </div>
-          <div
-            class="rc-virtual-list-scrollbar"
-            style="width: 8px; top: 0px; bottom: 0px; right: 0px; position: absolute; display: none;"
-          >
-            <div
-              class="rc-virtual-list-scrollbar-thumb"
-              style="width: 100%; height: 128px; top: 0px; left: 0px; position: absolute; background: rgba(0, 0, 0, 0.5); border-radius: 99px; cursor: pointer; user-select: none;"
-            />
           </div>
         </div>
       </div>

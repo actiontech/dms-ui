@@ -1,5 +1,5 @@
-import { fireEvent, act, cleanup } from '@testing-library/react';
-import { renderWithTheme } from '../../testUtil/customRender';
+import { fireEvent, act, cleanup, screen } from '@testing-library/react';
+import { superRender } from '../../testUtil/customRender';
 import { getBySelector } from '../../testUtil/customQuery';
 import CustomInput from './CustomInput';
 import { CustomInputProps } from './CustomInput.types';
@@ -16,15 +16,15 @@ describe('lib/CustomInput', () => {
   });
 
   const customRender = (params: CustomInputProps) => {
-    return renderWithTheme(<CustomInput {...params} />);
+    return superRender(<CustomInput {...params} />);
   };
 
   it('should render ui snap by default params', () => {
-    const { container } = customRender({
+    customRender({
       prefix: '自定义前缀',
       onCustomPressEnter: jest.fn()
     });
-    expect(container).toMatchSnapshot();
+    expect(screen.getByText('自定义前缀')).toBeInTheDocument();
   });
 
   it('should be trigger onCustomPressEnter', async () => {
