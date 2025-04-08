@@ -4,7 +4,7 @@ exports[`shared/lib/components/ReminderInformation render error message 1`] = `
 <body>
   <div>
     <div
-      class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-start css-1nec0wd"
+      class="ant-space ant-space-horizontal ant-space-align-start css-1nec0wd"
     >
       <div
         class="ant-space-item"
@@ -31,7 +31,7 @@ exports[`shared/lib/components/ReminderInformation render error message 1`] = `
         class="ant-space-item"
       >
         <span
-          class="ant-typography ant-typography-danger css-dev-only-do-not-override-txh9fw"
+          class="ant-typography ant-typography-danger"
         >
           <pre>
             error message
@@ -47,7 +47,7 @@ exports[`shared/lib/components/ReminderInformation render success message 1`] = 
 <body>
   <div>
     <div
-      class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-start css-1nec0wd"
+      class="ant-space ant-space-horizontal ant-space-align-start css-1nec0wd"
     >
       <div
         class="ant-space-item"
@@ -74,7 +74,7 @@ exports[`shared/lib/components/ReminderInformation render success message 1`] = 
         class="ant-space-item"
       >
         <span
-          class="ant-typography ant-typography-success css-dev-only-do-not-override-txh9fw"
+          class="ant-typography ant-typography-success"
         >
           <pre>
             success message

@@ -1,6 +1,6 @@
 import { getBySelector } from '../../testUtil/customQuery';
-import { renderWithTheme } from '../../testUtil/customRender';
-import { fireEvent, act, cleanup } from '@testing-library/react';
+import { superRender } from '../../testUtil/customRender';
+import { fireEvent, act, cleanup, screen } from '@testing-library/react';
 import { BasicTooltipProps } from './BasicToolTip.types';
 import BasicToolTip from './BasicToolTip';
 
@@ -15,10 +15,20 @@ describe('lib/BasicToolTip', () => {
     cleanup();
   });
   const customRender = (params: BasicTooltipProps) => {
-    return renderWithTheme(<BasicToolTip {...params} />);
+    return superRender(<BasicToolTip {...params} />);
   };
 
-  it('render custom class name', async () => {
+  it('should render without title', () => {
+    const { container } = customRender({
+      children: <span>content</span>
+    });
+    expect(
+      container.querySelector('.basic-tooltips-wrapper')
+    ).not.toBeInTheDocument();
+    expect(container).toHaveTextContent('content');
+  });
+
+  it('should render with custom class name', async () => {
     const { baseElement } = customRender({
       children: <span className="custom-children-name">tool tip</span>,
       className: 'custom-tool-tip-name',
@@ -31,12 +41,44 @@ describe('lib/BasicToolTip', () => {
     expect(baseElement).toMatchSnapshot();
   });
 
-  it('render icon for tool', async () => {
+  describe('icon rendering', () => {
+    it('should render with boolean prefix icon', () => {
+      const { container } = customRender({
+        prefixIcon: true,
+        title: 'this is a tip',
+        children: <span>content</span>
+      });
+      expect(
+        container.querySelector('.tooltips-default-icon')
+      ).toBeInTheDocument();
+    });
+
+    it('should render with custom prefix icon', () => {
+      const CustomIcon = () => <div data-testid="custom-icon">Icon</div>;
+      customRender({
+        prefixIcon: <CustomIcon />,
+        title: 'this is a tip',
+        children: <span>content</span>
+      });
+      expect(screen.getByTestId('custom-icon')).toBeInTheDocument();
+    });
+
+    it('should not render icon when boolean is false', () => {
+      const { container } = customRender({
+        suffixIcon: false,
+        title: 'this is a tip',
+        children: <span>content</span>
+      });
+      expect(
+        container.querySelector('.tooltips-default-icon')
+      ).not.toBeInTheDocument();
+    });
+  });
+
+  it('should render with title width', async () => {
     const { baseElement } = customRender({
-      prefixIcon: true,
       title: 'this is a tip',
       titleWidth: 300,
-      suffixIcon: false,
       children: <span className="custom-children-name">tool tip</span>
     });
     await act(async () => {

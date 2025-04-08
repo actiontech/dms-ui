@@ -7,24 +7,6 @@ exports[`test DatabaseTypeLogo should match snapshot 1`] = `
   >
     <img
       alt=""
-      src=""
-    />
-    <span
-      title="mysql"
-    >
-      mysql
-    </span>
-  </div>
-</div>
-`;
-
-exports[`test DatabaseTypeLogo should match snapshot 2`] = `
-<div>
-  <div
-    class="css-1uw16ge"
-  >
-    <img
-      alt=""
       src="/static/medit/logo.png"
     />
     <span
