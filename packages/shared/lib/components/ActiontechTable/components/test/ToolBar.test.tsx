@@ -1,11 +1,11 @@
-import { renderWithTheme } from '../../../../testUtil/customRender';
+import { superRender } from '../../../../testUtil/customRender';
 import { TableToolbarProps } from '../../index.type';
 import ToolBar from '../Toolbar';
 import { ActiontechTableContextProvide } from '../../context';
 
 describe('lib/ActiontechTable-ToolBar', () => {
   const customRender = (params: TableToolbarProps) => {
-    return renderWithTheme(<ToolBar {...params} />);
+    return superRender(<ToolBar {...params} />);
   };
 
   it('render loading is true', () => {
@@ -45,7 +45,7 @@ describe('lib/ActiontechTable-ToolBar', () => {
   });
 
   it('render table with context', () => {
-    const { getByText } = renderWithTheme(
+    const { getByText } = superRender(
       <ActiontechTableContextProvide
         value={{ setting: { tableName: 'test_list', username: 'admin' } }}
       >

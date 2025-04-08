@@ -1,20 +1,213 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`test SQLRenderer render empty content 1`] = `
+exports[`test SQLRenderer should render with different props configurations 1`] = `
 <div>
   <div
-    class="actiontech-sql-renderer-wrapper css-dz7fl9"
+    class="ant-spin-nested-loading"
   >
-    <span
-      class="empty-sql-placeholder"
+    <div
+      class="ant-spin-container"
     >
-      -
-    </span>
+      <div
+        class="actiontech-sql-renderer-wrapper css-dz7fl9"
+      >
+        <pre>
+          <code>
+            <div
+              class="code-line"
+            >
+              <span
+                class="hljs-keyword"
+              >
+                CREATE TABLE
+              </span>
+               IF 
+              <span
+                class="hljs-keyword"
+              >
+                NOT
+              </span>
+               
+              <span
+                class="hljs-keyword"
+              >
+                EXISTS
+              </span>
+            </div>
+            <div
+              class="code-line"
+            >
+                  task (
+            </div>
+            <div
+              class="code-line"
+            >
+                    id 
+              <span
+                class="hljs-type"
+              >
+                BIGINT
+              </span>
+               UNSIGNED AUTO_INCREMENT 
+              <span
+                class="hljs-keyword"
+              >
+                PRIMARY KEY
+              </span>
+              ,
+            </div>
+            <div
+              class="code-line"
+            >
+                    title 
+              <span
+                class="hljs-type"
+              >
+                VARCHAR
+              </span>
+              (
+              <span
+                class="hljs-number"
+              >
+                255
+              </span>
+              ) 
+              <span
+                class="hljs-keyword"
+              >
+                NOT NULL
+              </span>
+               
+              <span
+                class="hljs-keyword"
+              >
+                DEFAULT
+              </span>
+               
+              <span
+                class="hljs-string"
+              >
+                ''
+              </span>
+              ,
+            </div>
+            <div
+              class="code-line"
+            >
+                    description TEXT,
+            </div>
+            <div
+              class="code-line"
+            >
+                    status ENUM(
+              <span
+                class="hljs-string"
+              >
+                'pending'
+              </span>
+              , 
+              <span
+                class="hljs-string"
+              >
+                'completed'
+              </span>
+              ) 
+              <span
+                class="hljs-keyword"
+              >
+                NOT NULL
+              </span>
+               
+              <span
+                class="hljs-keyword"
+              >
+                DEFAULT
+              </span>
+               
+              <span
+                class="hljs-string"
+              >
+                'pending'
+              </span>
+              ,
+            </div>
+            <div
+              class="code-line"
+            >
+                    created_at 
+              <span
+                class="hljs-type"
+              >
+                TIMESTAMP
+              </span>
+               
+              <span
+                class="hljs-keyword"
+              >
+                DEFAULT
+              </span>
+               
+              <span
+                class="hljs-built_in"
+              >
+                CURRENT_TIMESTAMP
+              </span>
+              ,
+            </div>
+            <div
+              class="code-line"
+            >
+                    updated_at 
+              <span
+                class="hljs-type"
+              >
+                TIMESTAMP
+              </span>
+               
+              <span
+                class="hljs-keyword"
+              >
+                DEFAULT
+              </span>
+               
+              <span
+                class="hljs-built_in"
+              >
+                CURRENT_TIMESTAMP
+              </span>
+               
+              <span
+                class="hljs-keyword"
+              >
+                ON
+              </span>
+               
+              <span
+                class="hljs-keyword"
+              >
+                UPDATE
+              </span>
+               
+              <span
+                class="hljs-built_in"
+              >
+                CURRENT_TIMESTAMP
+              </span>
+            </div>
+            <div
+              class="code-line"
+            >
+                  );
+            </div>
+          </code>
+        </pre>
+      </div>
+    </div>
   </div>
 </div>
 `;
 
-exports[`test SQLRenderer render empty content 2`] = `
+exports[`test SQLRenderer should render with different props configurations 2`] = `
 <div>
   <div
     class="actiontech-sql-renderer-wrapper css-dz7fl9"
@@ -28,7 +221,7 @@ exports[`test SQLRenderer render empty content 2`] = `
 </div>
 `;
 
-exports[`test SQLRenderer render showCopyIcon is equal always 1`] = `
+exports[`test SQLRenderer should render with different showCopyIcon values 1`] = `
 <div>
   <div
     class="actiontech-sql-renderer-wrapper css-dz7fl9"
@@ -41,13 +234,7 @@ exports[`test SQLRenderer render showCopyIcon is equal always 1`] = `
           <span
             class="hljs-keyword"
           >
-            CREATE
-          </span>
-           
-          <span
-            class="hljs-keyword"
-          >
-            TABLE
+            CREATE TABLE
           </span>
            IF 
           <span
@@ -80,9 +267,9 @@ exports[`test SQLRenderer render showCopyIcon is equal always 1`] = `
           <span
             class="hljs-keyword"
           >
-            PRIMARY
+            PRIMARY KEY
           </span>
-           KEY,
+          ,
         </div>
         <div
           class="code-line"
@@ -103,13 +290,7 @@ exports[`test SQLRenderer render showCopyIcon is equal always 1`] = `
           <span
             class="hljs-keyword"
           >
-            NOT
-          </span>
-           
-          <span
-            class="hljs-keyword"
-          >
-            NULL
+            NOT NULL
           </span>
            
           <span
@@ -149,13 +330,7 @@ exports[`test SQLRenderer render showCopyIcon is equal always 1`] = `
           <span
             class="hljs-keyword"
           >
-            NOT
-          </span>
-           
-          <span
-            class="hljs-keyword"
-          >
-            NULL
+            NOT NULL
           </span>
            
           <span
@@ -264,959 +439,6 @@ exports[`test SQLRenderer render showCopyIcon is equal always 1`] = `
         </svg>
       </span>
     </div>
-  </div>
-</div>
-`;
-
-exports[`test SQLRenderer render snap when highlightSyntax is equal false 1`] = `
-<div>
-  <div
-    class="actiontech-sql-renderer-wrapper css-dz7fl9"
-  >
-    <pre>
-      <code>
-        <div
-          class="code-line"
-        >
-          CREATE TABLE IF NOT EXISTS
-        </div>
-        <div
-          class="code-line"
-        >
-              task (
-        </div>
-        <div
-          class="code-line"
-        >
-                id BIGINT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
-        </div>
-        <div
-          class="code-line"
-        >
-                title VARCHAR(255) NOT NULL DEFAULT '',
-        </div>
-        <div
-          class="code-line"
-        >
-                description TEXT,
-        </div>
-        <div
-          class="code-line"
-        >
-                status ENUM('pending', 'completed') NOT NULL DEFAULT 'pending',
-        </div>
-        <div
-          class="code-line"
-        >
-                created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-        </div>
-        <div
-          class="code-line"
-        >
-                updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
-        </div>
-        <div
-          class="code-line"
-        >
-              );
-        </div>
-      </code>
-    </pre>
-  </div>
-</div>
-`;
-
-exports[`test SQLRenderer render snap when loading is not undefined 1`] = `
-<div>
-  <div
-    class="ant-spin-nested-loading css-dev-only-do-not-override-txh9fw"
-  >
-    <div
-      class="ant-spin-container"
-    >
-      <div
-        class="actiontech-sql-renderer-wrapper css-dz7fl9"
-      >
-        <pre>
-          <code>
-            <div
-              class="code-line"
-            >
-              <span
-                class="hljs-keyword"
-              >
-                CREATE
-              </span>
-               
-              <span
-                class="hljs-keyword"
-              >
-                TABLE
-              </span>
-               IF 
-              <span
-                class="hljs-keyword"
-              >
-                NOT
-              </span>
-               
-              <span
-                class="hljs-keyword"
-              >
-                EXISTS
-              </span>
-            </div>
-            <div
-              class="code-line"
-            >
-                  task (
-            </div>
-            <div
-              class="code-line"
-            >
-                    id 
-              <span
-                class="hljs-type"
-              >
-                BIGINT
-              </span>
-               UNSIGNED AUTO_INCREMENT 
-              <span
-                class="hljs-keyword"
-              >
-                PRIMARY
-              </span>
-               KEY,
-            </div>
-            <div
-              class="code-line"
-            >
-                    title 
-              <span
-                class="hljs-type"
-              >
-                VARCHAR
-              </span>
-              (
-              <span
-                class="hljs-number"
-              >
-                255
-              </span>
-              ) 
-              <span
-                class="hljs-keyword"
-              >
-                NOT
-              </span>
-               
-              <span
-                class="hljs-keyword"
-              >
-                NULL
-              </span>
-               
-              <span
-                class="hljs-keyword"
-              >
-                DEFAULT
-              </span>
-               
-              <span
-                class="hljs-string"
-              >
-                ''
-              </span>
-              ,
-            </div>
-            <div
-              class="code-line"
-            >
-                    description TEXT,
-            </div>
-            <div
-              class="code-line"
-            >
-                    status ENUM(
-              <span
-                class="hljs-string"
-              >
-                'pending'
-              </span>
-              , 
-              <span
-                class="hljs-string"
-              >
-                'completed'
-              </span>
-              ) 
-              <span
-                class="hljs-keyword"
-              >
-                NOT
-              </span>
-               
-              <span
-                class="hljs-keyword"
-              >
-                NULL
-              </span>
-               
-              <span
-                class="hljs-keyword"
-              >
-                DEFAULT
-              </span>
-               
-              <span
-                class="hljs-string"
-              >
-                'pending'
-              </span>
-              ,
-            </div>
-            <div
-              class="code-line"
-            >
-                    created_at 
-              <span
-                class="hljs-type"
-              >
-                TIMESTAMP
-              </span>
-               
-              <span
-                class="hljs-keyword"
-              >
-                DEFAULT
-              </span>
-               
-              <span
-                class="hljs-built_in"
-              >
-                CURRENT_TIMESTAMP
-              </span>
-              ,
-            </div>
-            <div
-              class="code-line"
-            >
-                    updated_at 
-              <span
-                class="hljs-type"
-              >
-                TIMESTAMP
-              </span>
-               
-              <span
-                class="hljs-keyword"
-              >
-                DEFAULT
-              </span>
-               
-              <span
-                class="hljs-built_in"
-              >
-                CURRENT_TIMESTAMP
-              </span>
-               
-              <span
-                class="hljs-keyword"
-              >
-                ON
-              </span>
-               
-              <span
-                class="hljs-keyword"
-              >
-                UPDATE
-              </span>
-               
-              <span
-                class="hljs-built_in"
-              >
-                CURRENT_TIMESTAMP
-              </span>
-            </div>
-            <div
-              class="code-line"
-            >
-                  );
-            </div>
-          </code>
-        </pre>
-      </div>
-    </div>
-  </div>
-</div>
-`;
-
-exports[`test SQLRenderer render snap when loading is not undefined 2`] = `
-<div>
-  <div
-    class="ant-spin-nested-loading css-dev-only-do-not-override-txh9fw"
-  >
-    <div
-      class="ant-spin-container"
-    >
-      <div
-        class="actiontech-sql-renderer-wrapper css-dz7fl9"
-      >
-        <pre>
-          <code>
-            <div
-              class="code-line"
-            >
-              <span
-                class="hljs-keyword"
-              >
-                CREATE
-              </span>
-               
-              <span
-                class="hljs-keyword"
-              >
-                TABLE
-              </span>
-               IF 
-              <span
-                class="hljs-keyword"
-              >
-                NOT
-              </span>
-               
-              <span
-                class="hljs-keyword"
-              >
-                EXISTS
-              </span>
-            </div>
-            <div
-              class="code-line"
-            >
-                  task (
-            </div>
-            <div
-              class="code-line"
-            >
-                    id 
-              <span
-                class="hljs-type"
-              >
-                BIGINT
-              </span>
-               UNSIGNED AUTO_INCREMENT 
-              <span
-                class="hljs-keyword"
-              >
-                PRIMARY
-              </span>
-               KEY,
-            </div>
-            <div
-              class="code-line"
-            >
-                    title 
-              <span
-                class="hljs-type"
-              >
-                VARCHAR
-              </span>
-              (
-              <span
-                class="hljs-number"
-              >
-                255
-              </span>
-              ) 
-              <span
-                class="hljs-keyword"
-              >
-                NOT
-              </span>
-               
-              <span
-                class="hljs-keyword"
-              >
-                NULL
-              </span>
-               
-              <span
-                class="hljs-keyword"
-              >
-                DEFAULT
-              </span>
-               
-              <span
-                class="hljs-string"
-              >
-                ''
-              </span>
-              ,
-            </div>
-            <div
-              class="code-line"
-            >
-                    description TEXT,
-            </div>
-            <div
-              class="code-line"
-            >
-                    status ENUM(
-              <span
-                class="hljs-string"
-              >
-                'pending'
-              </span>
-              , 
-              <span
-                class="hljs-string"
-              >
-                'completed'
-              </span>
-              ) 
-              <span
-                class="hljs-keyword"
-              >
-                NOT
-              </span>
-               
-              <span
-                class="hljs-keyword"
-              >
-                NULL
-              </span>
-               
-              <span
-                class="hljs-keyword"
-              >
-                DEFAULT
-              </span>
-               
-              <span
-                class="hljs-string"
-              >
-                'pending'
-              </span>
-              ,
-            </div>
-            <div
-              class="code-line"
-            >
-                    created_at 
-              <span
-                class="hljs-type"
-              >
-                TIMESTAMP
-              </span>
-               
-              <span
-                class="hljs-keyword"
-              >
-                DEFAULT
-              </span>
-               
-              <span
-                class="hljs-built_in"
-              >
-                CURRENT_TIMESTAMP
-              </span>
-              ,
-            </div>
-            <div
-              class="code-line"
-            >
-                    updated_at 
-              <span
-                class="hljs-type"
-              >
-                TIMESTAMP
-              </span>
-               
-              <span
-                class="hljs-keyword"
-              >
-                DEFAULT
-              </span>
-               
-              <span
-                class="hljs-built_in"
-              >
-                CURRENT_TIMESTAMP
-              </span>
-               
-              <span
-                class="hljs-keyword"
-              >
-                ON
-              </span>
-               
-              <span
-                class="hljs-keyword"
-              >
-                UPDATE
-              </span>
-               
-              <span
-                class="hljs-built_in"
-              >
-                CURRENT_TIMESTAMP
-              </span>
-            </div>
-            <div
-              class="code-line"
-            >
-                  );
-            </div>
-          </code>
-        </pre>
-      </div>
-    </div>
-  </div>
-</div>
-`;
-
-exports[`test SQLRenderer render snap when preserveOriginalFormat is equal false 1`] = `
-<div>
-  <div
-    class="actiontech-sql-renderer-wrapper css-dz7fl9"
-  >
-    <pre>
-      <code>
-        <span
-          class="hljs-keyword"
-        >
-          CREATE
-        </span>
-         
-        <span
-          class="hljs-keyword"
-        >
-          TABLE
-        </span>
-         IF 
-        <span
-          class="hljs-keyword"
-        >
-          NOT
-        </span>
-         
-        <span
-          class="hljs-keyword"
-        >
-          EXISTS
-        </span>
-        
-    task (
-      id 
-        <span
-          class="hljs-type"
-        >
-          BIGINT
-        </span>
-         UNSIGNED AUTO_INCREMENT 
-        <span
-          class="hljs-keyword"
-        >
-          PRIMARY
-        </span>
-         KEY,
-      title 
-        <span
-          class="hljs-type"
-        >
-          VARCHAR
-        </span>
-        (
-        <span
-          class="hljs-number"
-        >
-          255
-        </span>
-        ) 
-        <span
-          class="hljs-keyword"
-        >
-          NOT
-        </span>
-         
-        <span
-          class="hljs-keyword"
-        >
-          NULL
-        </span>
-         
-        <span
-          class="hljs-keyword"
-        >
-          DEFAULT
-        </span>
-         
-        <span
-          class="hljs-string"
-        >
-          ''
-        </span>
-        ,
-      description TEXT,
-      status ENUM(
-        <span
-          class="hljs-string"
-        >
-          'pending'
-        </span>
-        , 
-        <span
-          class="hljs-string"
-        >
-          'completed'
-        </span>
-        ) 
-        <span
-          class="hljs-keyword"
-        >
-          NOT
-        </span>
-         
-        <span
-          class="hljs-keyword"
-        >
-          NULL
-        </span>
-         
-        <span
-          class="hljs-keyword"
-        >
-          DEFAULT
-        </span>
-         
-        <span
-          class="hljs-string"
-        >
-          'pending'
-        </span>
-        ,
-      created_at 
-        <span
-          class="hljs-type"
-        >
-          TIMESTAMP
-        </span>
-         
-        <span
-          class="hljs-keyword"
-        >
-          DEFAULT
-        </span>
-         
-        <span
-          class="hljs-built_in"
-        >
-          CURRENT_TIMESTAMP
-        </span>
-        ,
-      updated_at 
-        <span
-          class="hljs-type"
-        >
-          TIMESTAMP
-        </span>
-         
-        <span
-          class="hljs-keyword"
-        >
-          DEFAULT
-        </span>
-         
-        <span
-          class="hljs-built_in"
-        >
-          CURRENT_TIMESTAMP
-        </span>
-         
-        <span
-          class="hljs-keyword"
-        >
-          ON
-        </span>
-         
-        <span
-          class="hljs-keyword"
-        >
-          UPDATE
-        </span>
-         
-        <span
-          class="hljs-built_in"
-        >
-          CURRENT_TIMESTAMP
-        </span>
-        
-    );
-      </code>
-    </pre>
-  </div>
-</div>
-`;
-
-exports[`test SQLRenderer render snap when showLineNumbers is equal true 1`] = `
-<div>
-  <div
-    class="actiontech-sql-renderer-wrapper css-dz7fl9"
-  >
-    <pre>
-      <code>
-        <div
-          class="code-line"
-        >
-          <span
-            class="code-line-number"
-          >
-            1
-          </span>
-          <span
-            class="hljs-keyword"
-          >
-            CREATE
-          </span>
-           
-          <span
-            class="hljs-keyword"
-          >
-            TABLE
-          </span>
-           IF 
-          <span
-            class="hljs-keyword"
-          >
-            NOT
-          </span>
-           
-          <span
-            class="hljs-keyword"
-          >
-            EXISTS
-          </span>
-        </div>
-        <div
-          class="code-line"
-        >
-          <span
-            class="code-line-number"
-          >
-            2
-          </span>
-              task (
-        </div>
-        <div
-          class="code-line"
-        >
-          <span
-            class="code-line-number"
-          >
-            3
-          </span>
-                id 
-          <span
-            class="hljs-type"
-          >
-            BIGINT
-          </span>
-           UNSIGNED AUTO_INCREMENT 
-          <span
-            class="hljs-keyword"
-          >
-            PRIMARY
-          </span>
-           KEY,
-        </div>
-        <div
-          class="code-line"
-        >
-          <span
-            class="code-line-number"
-          >
-            4
-          </span>
-                title 
-          <span
-            class="hljs-type"
-          >
-            VARCHAR
-          </span>
-          (
-          <span
-            class="hljs-number"
-          >
-            255
-          </span>
-          ) 
-          <span
-            class="hljs-keyword"
-          >
-            NOT
-          </span>
-           
-          <span
-            class="hljs-keyword"
-          >
-            NULL
-          </span>
-           
-          <span
-            class="hljs-keyword"
-          >
-            DEFAULT
-          </span>
-           
-          <span
-            class="hljs-string"
-          >
-            ''
-          </span>
-          ,
-        </div>
-        <div
-          class="code-line"
-        >
-          <span
-            class="code-line-number"
-          >
-            5
-          </span>
-                description TEXT,
-        </div>
-        <div
-          class="code-line"
-        >
-          <span
-            class="code-line-number"
-          >
-            6
-          </span>
-                status ENUM(
-          <span
-            class="hljs-string"
-          >
-            'pending'
-          </span>
-          , 
-          <span
-            class="hljs-string"
-          >
-            'completed'
-          </span>
-          ) 
-          <span
-            class="hljs-keyword"
-          >
-            NOT
-          </span>
-           
-          <span
-            class="hljs-keyword"
-          >
-            NULL
-          </span>
-           
-          <span
-            class="hljs-keyword"
-          >
-            DEFAULT
-          </span>
-           
-          <span
-            class="hljs-string"
-          >
-            'pending'
-          </span>
-          ,
-        </div>
-        <div
-          class="code-line"
-        >
-          <span
-            class="code-line-number"
-          >
-            7
-          </span>
-                created_at 
-          <span
-            class="hljs-type"
-          >
-            TIMESTAMP
-          </span>
-           
-          <span
-            class="hljs-keyword"
-          >
-            DEFAULT
-          </span>
-           
-          <span
-            class="hljs-built_in"
-          >
-            CURRENT_TIMESTAMP
-          </span>
-          ,
-        </div>
-        <div
-          class="code-line"
-        >
-          <span
-            class="code-line-number"
-          >
-            8
-          </span>
-                updated_at 
-          <span
-            class="hljs-type"
-          >
-            TIMESTAMP
-          </span>
-           
-          <span
-            class="hljs-keyword"
-          >
-            DEFAULT
-          </span>
-           
-          <span
-            class="hljs-built_in"
-          >
-            CURRENT_TIMESTAMP
-          </span>
-           
-          <span
-            class="hljs-keyword"
-          >
-            ON
-          </span>
-           
-          <span
-            class="hljs-keyword"
-          >
-            UPDATE
-          </span>
-           
-          <span
-            class="hljs-built_in"
-          >
-            CURRENT_TIMESTAMP
-          </span>
-        </div>
-        <div
-          class="code-line"
-        >
-          <span
-            class="code-line-number"
-          >
-            9
-          </span>
-              );
-        </div>
-      </code>
-    </pre>
   </div>
 </div>
 `;

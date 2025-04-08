@@ -1,6 +1,6 @@
 import { getBySelector } from '../../testUtil/customQuery';
 import { fireEvent, act, cleanup, screen } from '@testing-library/react';
-import { renderWithTheme } from '../../testUtil/customRender';
+import { superRender } from '../../testUtil/customRender';
 
 import ActiontechTable from './Table';
 import { ActiontechTableProps, TypeFilterElement } from './index.type';
@@ -18,7 +18,7 @@ describe('lib/ActiontechTable', () => {
   });
 
   const customRender = (params: ActiontechTableProps) => {
-    return renderWithTheme(<ActiontechTable {...params} />);
+    return superRender(<ActiontechTable {...params} />);
   };
 
   describe('-normal table', () => {
@@ -200,7 +200,7 @@ describe('lib/ActiontechTable', () => {
   });
 
   it('render table with context', () => {
-    const { getByText } = renderWithTheme(
+    const { getByText } = superRender(
       <ActiontechTableContextProvide
         value={{ setting: { tableName: 'test_list', username: 'admin' } }}
       >

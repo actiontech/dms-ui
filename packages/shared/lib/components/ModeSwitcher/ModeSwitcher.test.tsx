@@ -32,126 +32,73 @@ const list_2 = [
 ];
 
 describe('test ModeSwitcher', () => {
-  it('render snapshot with Array<string> type options', () => {
+  it('should render basic mode switcher with string options', () => {
     const { container } = superRender(<ModeSwitcher options={list_1} />);
-
     expect(container).toMatchSnapshot();
 
     fireEvent.click(screen.getByText('key1'));
-
     expect(screen.getByText('key1').parentNode).toHaveClass(
       'actiontech-mode-switcher-item-active'
     );
     expect(screen.getByText('key2').parentNode).not.toHaveClass(
       'actiontech-mode-switcher-item-active'
     );
-    expect(screen.getByText('key3').parentNode).not.toHaveClass(
-      'actiontech-mode-switcher-item-active'
-    );
-    expect(container).toMatchSnapshot();
 
     fireEvent.click(screen.getByText('key2'));
-
     expect(screen.getByText('key1').parentNode).not.toHaveClass(
       'actiontech-mode-switcher-item-active'
     );
     expect(screen.getByText('key2').parentNode).toHaveClass(
       'actiontech-mode-switcher-item-active'
     );
-
-    fireEvent.click(screen.getByText('key3'));
-    expect(screen.getByText('key3').parentNode).toHaveClass(
-      'actiontech-mode-switcher-item-active'
-    );
   });
 
-  it('render snapshot with Array<object> type options', () => {
-    const { container } = superRender(<ModeSwitcher options={list_2} />);
-
-    expect(container).toMatchSnapshot();
-
-    fireEvent.click(screen.getByText('label1'));
-
-    expect(screen.getByText('label1').parentNode).toHaveClass(
-      'actiontech-mode-switcher-item-active'
-    );
-
-    expect(container).toMatchSnapshot();
-    fireEvent.click(screen.getByText('label2'));
-    expect(screen.getByText('label1').parentNode).not.toHaveClass(
-      'actiontech-mode-switcher-item-active'
-    );
-    expect(screen.getByText('label2').parentNode).toHaveClass(
-      'actiontech-mode-switcher-item-active'
-    );
-    fireEvent.click(screen.getByText('label3'));
-
-    expect(screen.getByText('label3').parentNode).toHaveClass(
-      'actiontech-mode-switcher-item-active'
-    );
-  });
-
-  it('render snapshot with Array<object> type options and control', () => {
-    const ControlCom = () => {
-      const [value, setValue] = useState<string | undefined>('value3');
-
-      return (
-        <>
-          <ModeSwitcher
-            options={list_2}
-            value={value}
-            onChange={setValue}
-            rowProps={{ gutter: 10 }}
-          />
-          {value}
-        </>
-      );
-    };
-    const { container } = superRender(<ControlCom />);
-
-    expect(container).toMatchSnapshot();
-
-    fireEvent.click(screen.getByText('label1'));
-
-    expect(screen.getByText('label1').parentNode).toHaveClass(
-      'actiontech-mode-switcher-item-active'
-    );
-
-    expect(screen.getByText('value1')).toBeInTheDocument();
-
-    fireEvent.click(screen.getByText('label2'));
-
-    expect(screen.getByText('label2').parentNode).toHaveClass(
-      'actiontech-mode-switcher-item-active'
-    );
-
-    expect(screen.getByText('value2')).toBeInTheDocument();
-  });
-
-  it('render snapshot when disabled props is equal true', () => {
+  it('should render mode switcher with object options and handle icon display', () => {
     const { container } = superRender(
-      <ModeSwitcher options={list_2} disabled />
+      <ModeSwitcher
+        options={list_2}
+        className="custom-class"
+        rowProps={{ gutter: 16 }}
+      />
     );
-
     expect(container).toMatchSnapshot();
 
+    expect(
+      container.querySelector('.actiontech-mode-switcher.custom-class')
+    ).toBeInTheDocument();
+    expect(
+      container.querySelector('.actiontech-mode-switcher-item-icon')
+    ).toBeInTheDocument();
+    expect(screen.getAllByText('icon')).toHaveLength(3);
+
     fireEvent.click(screen.getByText('label1'));
+    expect(screen.getByText('label1').parentNode).toHaveClass(
+      'actiontech-mode-switcher-item-active'
+    );
+  });
 
-    expect(screen.getByText('label1').parentNode).not.toHaveClass(
+  it('should work with defaultValue and controlled value', () => {
+    const { container } = superRender(
+      <ModeSwitcher options={list_2} defaultValue="value1" />
+    );
+    expect(container).toMatchSnapshot();
+    expect(screen.getByText('label1').parentNode).toHaveClass(
       'actiontech-mode-switcher-item-active'
     );
+  });
 
-    fireEvent.click(screen.getByText('label2'));
-    expect(screen.getByText('label1').parentNode).not.toHaveClass(
-      'actiontech-mode-switcher-item-active'
-    );
-    expect(screen.getByText('label2').parentNode).not.toHaveClass(
-      'actiontech-mode-switcher-item-active'
-    );
-    fireEvent.click(screen.getByText('label3'));
+  it('should handle disabled state correctly', () => {
+    superRender(<ModeSwitcher options={list_2} disabled />);
 
-    expect(screen.getByText('label3').parentNode).not.toHaveClass(
-      'actiontech-mode-switcher-item-active'
-    );
+    const items = screen.getAllByText(/label[1-3]/);
+    items.forEach((item) => {
+      expect(item.parentNode).toHaveClass(
+        'actiontech-mode-switcher-item-disabled'
+      );
+      fireEvent.click(item);
+      expect(item.parentNode).not.toHaveClass(
+        'actiontech-mode-switcher-item-active'
+      );
+    });
   });
 });

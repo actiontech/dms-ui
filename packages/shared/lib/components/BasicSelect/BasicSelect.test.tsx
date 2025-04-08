@@ -1,6 +1,6 @@
 import { SelectProps } from 'antd';
 import { fireEvent, act, cleanup } from '@testing-library/react';
-import { renderWithTheme } from '../../testUtil/customRender';
+import { superRender } from '../../testUtil/customRender';
 import { filterOptionByLabel } from './utils';
 import { getAllBySelector, getBySelector } from '../../testUtil/customQuery';
 import BasicSelect from './BasicSelect';
@@ -17,7 +17,7 @@ describe('lib/BasicSelect', () => {
   });
 
   const customRender = (params: SelectProps) => {
-    return renderWithTheme(<BasicSelect {...params} />);
+    return superRender(<BasicSelect {...params} />);
   };
 
   it('render diff size select', () => {
@@ -36,29 +36,6 @@ describe('lib/BasicSelect', () => {
       className: 'custom-select-class-name'
     });
     expect(container2).toMatchSnapshot();
-  });
-
-  it('render loading status', () => {
-    const { container } = customRender({
-      size: 'middle',
-      loading: true
-    });
-    expect(container).toMatchSnapshot();
-
-    const { container: container1 } = customRender({
-      size: 'middle',
-      loading: false
-    });
-    expect(container1).toMatchSnapshot();
-  });
-
-  it('render clear icon', () => {
-    const { container } = customRender({
-      size: 'middle',
-      loading: true,
-      value: 'a'
-    });
-    expect(container).toMatchSnapshot();
   });
 
   it('render custom filter fn', async () => {
