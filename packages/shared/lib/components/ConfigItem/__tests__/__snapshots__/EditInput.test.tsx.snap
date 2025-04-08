@@ -1,77 +1,22 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`lib/ConfigItem-EditInput render input and click select icon 1`] = `
-<body>
-  <div>
-    <div
-      class="ant-spin-nested-loading css-dev-only-do-not-override-txh9fw"
-    >
-      <div
-        class="ant-spin-container"
-      >
-        <span
-          class="ant-input-group-wrapper basic-input-wrapper css-1pd1cd5 css-dev-only-do-not-override-ywkr0o"
-        >
-          <span
-            class="ant-input-wrapper ant-input-group css-dev-only-do-not-override-ywkr0o"
-          >
-            <input
-              class="ant-input css-dev-only-do-not-override-ywkr0o"
-              id="editInput"
-              placeholder="请输入{{name}}"
-              type="text"
-              value="val key"
-            />
-            <span
-              class="ant-input-group-addon"
-            >
-              <svg
-                class="custom-icon custom-icon-selected"
-                fill="none"
-                height="16"
-                viewBox="0 0 16 16"
-                width="16"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <g
-                  id="selected"
-                >
-                  <path
-                    d="M3.33334 8.00002L6.66668 11.3334L13.3333 4.66669"
-                    id="Vector"
-                    stroke="#4583FF"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
-                  />
-                </g>
-              </svg>
-            </span>
-          </span>
-        </span>
-      </div>
-    </div>
-  </div>
-</body>
-`;
-
 exports[`lib/ConfigItem-EditInput render input for error 1`] = `
 <body>
   <div>
     <div
-      class="ant-spin-nested-loading css-dev-only-do-not-override-txh9fw"
+      class="ant-spin-nested-loading"
     >
       <div
         class="ant-spin-container"
       >
         <span
-          class="ant-input-group-wrapper basic-input-wrapper css-1pd1cd5 ant-input-group-wrapper-status-error css-dev-only-do-not-override-ywkr0o"
+          class="ant-input-group-wrapper basic-input-wrapper css-1pd1cd5 ant-input-group-wrapper-status-error"
         >
           <span
-            class="ant-input-wrapper ant-input-group css-dev-only-do-not-override-ywkr0o"
+            class="ant-input-wrapper ant-input-group"
           >
             <input
-              class="ant-input ant-input-status-error css-dev-only-do-not-override-ywkr0o"
+              class="ant-input ant-input-status-error"
               id="editInput"
               placeholder="请输入{{name}}"
               type="text"
@@ -110,78 +55,23 @@ exports[`lib/ConfigItem-EditInput render input for error 1`] = `
 </body>
 `;
 
-exports[`lib/ConfigItem-EditInput render input for key 1`] = `
-<body>
-  <div>
-    <div
-      class="ant-spin-nested-loading css-dev-only-do-not-override-txh9fw"
-    >
-      <div
-        class="ant-spin-container"
-      >
-        <span
-          class="ant-input-group-wrapper basic-input-wrapper css-1pd1cd5 css-dev-only-do-not-override-ywkr0o"
-        >
-          <span
-            class="ant-input-wrapper ant-input-group css-dev-only-do-not-override-ywkr0o"
-          >
-            <input
-              class="ant-input css-dev-only-do-not-override-ywkr0o"
-              id="editInput"
-              placeholder="请输入{{name}}"
-              type="text"
-              value="val key"
-            />
-            <span
-              class="ant-input-group-addon"
-            >
-              <svg
-                class="custom-icon custom-icon-selected"
-                fill="none"
-                height="16"
-                viewBox="0 0 16 16"
-                width="16"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <g
-                  id="selected"
-                >
-                  <path
-                    d="M3.33334 8.00002L6.66668 11.3334L13.3333 4.66669"
-                    id="Vector"
-                    stroke="#4583FF"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
-                  />
-                </g>
-              </svg>
-            </span>
-          </span>
-        </span>
-      </div>
-    </div>
-  </div>
-</body>
-`;
-
 exports[`lib/ConfigItem-EditInput render input val change 1`] = `
 <body>
   <div>
     <div
-      class="ant-spin-nested-loading css-dev-only-do-not-override-txh9fw"
+      class="ant-spin-nested-loading"
     >
       <div
         class="ant-spin-container"
       >
         <span
-          class="ant-input-group-wrapper basic-input-wrapper css-1pd1cd5 css-dev-only-do-not-override-ywkr0o"
+          class="ant-input-group-wrapper basic-input-wrapper css-1pd1cd5"
         >
           <span
-            class="ant-input-wrapper ant-input-group css-dev-only-do-not-override-ywkr0o"
+            class="ant-input-wrapper ant-input-group"
           >
             <input
-              class="ant-input css-dev-only-do-not-override-ywkr0o"
+              class="ant-input"
               id="editInput"
               placeholder="请输入{{name}}"
               type="text"
@@ -224,13 +114,13 @@ exports[`lib/ConfigItem-EditInput render loading is true 1`] = `
 <body>
   <div>
     <div
-      class="ant-spin-nested-loading css-dev-only-do-not-override-txh9fw"
+      class="ant-spin-nested-loading"
     >
       <div>
         <div
           aria-busy="true"
           aria-live="polite"
-          class="ant-spin ant-spin-spinning css-dev-only-do-not-override-txh9fw"
+          class="ant-spin ant-spin-spinning"
         >
           <span
             class="ant-spin-dot ant-spin-dot-spin"
@@ -254,13 +144,13 @@ exports[`lib/ConfigItem-EditInput render loading is true 1`] = `
         class="ant-spin-container ant-spin-blur"
       >
         <span
-          class="ant-input-group-wrapper basic-input-wrapper css-1pd1cd5 css-dev-only-do-not-override-ywkr0o"
+          class="ant-input-group-wrapper basic-input-wrapper css-1pd1cd5"
         >
           <span
-            class="ant-input-wrapper ant-input-group css-dev-only-do-not-override-ywkr0o"
+            class="ant-input-wrapper ant-input-group"
           >
             <input
-              class="ant-input css-dev-only-do-not-override-ywkr0o"
+              class="ant-input"
               id="editInput"
               placeholder="请输入{{name}}"
               type="text"
