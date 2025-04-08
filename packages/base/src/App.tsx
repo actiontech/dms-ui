@@ -42,6 +42,7 @@ import { updateModuleFeatureSupport } from './store/permission';
 import { ROUTE_PATHS } from '@actiontech/shared/lib/data/routePaths';
 import useSyncDmsCloudBeaverChannel from './hooks/useSyncDmsCloudBeaverChannel';
 import { getSystemModuleStatusModuleNameEnum } from '@actiontech/shared/lib/api/sqle/service/system/index.enum';
+import { ComponentControlHeight } from '@actiontech/shared/lib/data/common';
 
 import './index.less';
 
@@ -226,6 +227,35 @@ function App() {
         <ConfigProvider
           locale={antdLanguage}
           theme={{
+            components: {
+              Input: {
+                controlHeight: ComponentControlHeight.default,
+                controlHeightLG: ComponentControlHeight.lg,
+                controlHeightSM: ComponentControlHeight.sm
+              },
+              Button: {
+                controlHeight: 32,
+                controlHeightLG: 36,
+                controlHeightSM: 28
+              },
+              DatePicker: {
+                controlHeight: ComponentControlHeight.default,
+                controlHeightLG: ComponentControlHeight.lg,
+                controlHeightSM: ComponentControlHeight.sm
+              },
+              Select: {
+                controlHeight: ComponentControlHeight.default,
+                controlHeightLG: ComponentControlHeight.lg,
+                controlHeightSM: ComponentControlHeight.sm
+              },
+              Pagination: {
+                itemSize: 28
+              },
+              Table: {
+                fontSize: 13,
+                fontWeightStrong: 500
+              }
+            },
             algorithm:
               theme === SupportTheme.DARK
                 ? antdTheme.darkAlgorithm
