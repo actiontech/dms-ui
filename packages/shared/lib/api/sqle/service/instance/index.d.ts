@@ -12,7 +12,10 @@ import {
   IGetInstanceResV2
 } from '../common.d';
 
-import { getInstanceTipListV1FunctionalModuleEnum } from './index.enum';
+import {
+  getInstanceTipListV1FunctionalModuleEnum,
+  getInstanceTipListV2FunctionalModuleEnum
+} from './index.enum';
 
 export interface IGetDatabaseDriverLogosParams {
   db_types: string[];
@@ -92,6 +95,20 @@ export interface IGetTableMetadataParams {
 }
 
 export interface IGetTableMetadataReturn extends IGetTableMetadataResV1 {}
+
+export interface IGetInstanceTipListV2Params {
+  project_name: string;
+
+  filter_db_type?: string;
+
+  filter_by_environment_tag?: string;
+
+  filter_workflow_template_id?: string;
+
+  functional_module?: getInstanceTipListV2FunctionalModuleEnum;
+}
+
+export interface IGetInstanceTipListV2Return extends IGetInstanceTipsResV1 {}
 
 export interface IGetInstanceV2Params {
   project_name: string;

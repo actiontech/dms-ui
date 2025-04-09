@@ -1,9 +1,6 @@
-import { IListProject } from '@actiontech/shared/lib/api/base/service/common';
-import Project from '@actiontech/shared/lib/api/base/service/Project';
-import {
-  IListProjectsReturn,
-  IListProjectsParams
-} from '@actiontech/shared/lib/api/base/service/Project/index.d';
+import { IListProjectV2 } from '@actiontech/shared/lib/api/base/service/common';
+import { DmsApi } from '@actiontech/shared/lib/api';
+import { IListProjectsV2Params } from '@actiontech/shared/lib/api/base/service/Project/index.d';
 import {
   ActiontechTable,
   useTableRequestError,
@@ -38,8 +35,8 @@ const ProjectList: React.FC = () => {
     useTableRequestError();
 
   const { pagination, tableChange } = useTableRequestParams<
-    IListProject,
-    IListProjectsParams
+    IListProjectV2,
+    IListProjectsV2Params
   >();
 
   const {
@@ -48,11 +45,11 @@ const ProjectList: React.FC = () => {
     refresh
   } = useRequest(
     () => {
-      const params: IListProjectsParams = {
+      const params: IListProjectsV2Params = {
         ...pagination
       };
-      return handleTableRequestError<IListProjectsReturn>(
-        Project.ListProjects(params)
+      return handleTableRequestError(
+        DmsApi.ProjectService.ListProjectsV2(params)
       );
     },
     {
@@ -62,9 +59,9 @@ const ProjectList: React.FC = () => {
   );
 
   const deleteProject = useCallback(
-    (record: IListProject) => {
+    (record: IListProjectV2) => {
       const { uid = '', name = '' } = record;
-      Project.DelProject({ project_uid: uid }).then((res) => {
+      DmsApi.ProjectService.DelProject({ project_uid: uid }).then((res) => {
         if (res.data.code === ResponseCode.SUCCESS) {
           messageApi.success(
             t('dmsProject.projectList.deleteSuccessTips', {
@@ -79,9 +76,9 @@ const ProjectList: React.FC = () => {
   );
 
   const archiveProject = useCallback(
-    (record: IListProject) => {
+    (record: IListProjectV2) => {
       const { uid = '', name = '' } = record;
-      Project.ArchiveProject({ project_uid: uid }).then((res) => {
+      DmsApi.ProjectService.ArchiveProject({ project_uid: uid }).then((res) => {
         if (res.data.code === ResponseCode.SUCCESS) {
           messageApi.success(
             t('dmsProject.projectList.archiveProjectSuccessTips', {
@@ -97,25 +94,27 @@ const ProjectList: React.FC = () => {
   );
 
   const unarchiveProject = useCallback(
-    (record: IListProject) => {
+    (record: IListProjectV2) => {
       const { uid = '', name = '' } = record;
-      Project.UnarchiveProject({ project_uid: uid }).then((res) => {
-        if (res.data.code === ResponseCode.SUCCESS) {
-          messageApi.success(
-            t('dmsProject.projectList.unarchiveProjectSuccessTips', {
-              name
-            })
-          );
-          refresh();
-          EventEmitter.emit(EmitterKey.DMS_Sync_Project_Archived_Status);
+      DmsApi.ProjectService.UnarchiveProject({ project_uid: uid }).then(
+        (res) => {
+          if (res.data.code === ResponseCode.SUCCESS) {
+            messageApi.success(
+              t('dmsProject.projectList.unarchiveProjectSuccessTips', {
+                name
+              })
+            );
+            refresh();
+            EventEmitter.emit(EmitterKey.DMS_Sync_Project_Archived_Status);
+          }
         }
-      });
+      );
     },
     [refresh, t, messageApi]
   );
 
   const updateProject = useCallback(
-    (record: IListProject) => {
+    (record: IListProjectV2) => {
       dispatch(
         updateProjectModalStatus({
           modalName: ModalName.DMS_Update_Project,

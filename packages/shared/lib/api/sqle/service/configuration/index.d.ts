@@ -16,6 +16,7 @@ import {
   ITestGitConnectionResV1,
   IGetLicenseResV1,
   ICheckLicenseResV1,
+  ISSHPublicKeyInfoV1Rsp,
   IGetSystemVariablesResV1,
   IUpdateSystemVariablesReqV1,
   IGetWechatAuditConfigurationResV1,
@@ -81,6 +82,10 @@ export interface ICheckSQLELicenseV1Params {
 }
 
 export interface ICheckSQLELicenseV1Return extends ICheckLicenseResV1 {}
+
+export interface IGetSSHPublicKeyReturn extends ISSHPublicKeyInfoV1Rsp {}
+
+export interface IGenSSHPublicKeyReturn extends IBaseRes {}
 
 export interface IGetSystemVariablesV1Return extends IGetSystemVariablesResV1 {}
 
