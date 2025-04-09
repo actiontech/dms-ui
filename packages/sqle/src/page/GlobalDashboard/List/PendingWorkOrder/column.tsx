@@ -10,7 +10,7 @@ import {
 import WorkflowStatus from '../../../SqlExecWorkflow/List/components/WorkflowStatus';
 import { Space, Typography } from 'antd';
 import { ProjectPriorityDictionary } from '../../index.data';
-import { ProjectProjectPriorityEnum } from '@actiontech/shared/lib/api/base/service/common.enum';
+import { ProjectV2ProjectPriorityEnum } from '@actiontech/shared/lib/api/base/service/common.enum';
 import { TableColumnWithIconStyleWrapper } from '@actiontech/shared/lib/styleWrapper/element';
 import { BriefcaseFilled } from '@actiontech/icons';
 import { ROUTE_PATHS } from '@actiontech/shared/lib/data/routePaths';
@@ -138,7 +138,7 @@ export const GlobalDashboardPendingWorkflowListColumn: (
       title: t('globalDashboard.pendingSql.column.projectPriority'),
       render: (priority) => {
         return priority
-          ? ProjectPriorityDictionary[priority as ProjectProjectPriorityEnum]
+          ? ProjectPriorityDictionary[priority as ProjectV2ProjectPriorityEnum]
           : '-';
       }
     }
