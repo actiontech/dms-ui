@@ -5,7 +5,6 @@ export type EditableSelectValue = string | number;
 export interface EditableSelectOption {
   value: EditableSelectValue;
   label: string;
-  [key: string]: any;
 }
 
 export interface EditableSelectProps {
