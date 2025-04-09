@@ -24,7 +24,12 @@ import {
   IImportDBServicesOfOneProjectReq,
   IGenericResp,
   IListDBServiceTipsReply,
-  IUpdateDBServiceReq
+  IUpdateDBServiceReq,
+  IListGlobalDBServicesReplyV2,
+  IListDBServiceReplyV2,
+  IAddDBServiceReqV2,
+  IImportDBServicesOfOneProjectReqV2,
+  IUpdateDBServiceReqV2
 } from '../common.d';
 
 export interface IListGlobalDBServicesParams {
@@ -90,8 +95,6 @@ export interface IListDBServicesParams {
   project_uid: string;
 
   filter_by_db_service_ids?: string[];
-
-  filter_by_environment_tag?: string;
 
   fuzzy_keyword?: string;
 
@@ -201,7 +204,7 @@ export interface IListGlobalDBServicesV2Params {
 }
 
 export interface IListGlobalDBServicesV2Return
-  extends IListGlobalDBServicesReply {}
+  extends IListGlobalDBServicesReplyV2 {}
 
 export interface IListDBServicesV2Params {
   page_size: number;
@@ -235,16 +238,16 @@ export interface IListDBServicesV2Params {
   is_enable_masking?: boolean;
 }
 
-export interface IListDBServicesV2Return extends IListDBServiceReply {}
+export interface IListDBServicesV2Return extends IListDBServiceReplyV2 {}
 
-export interface IAddDBServiceV2Params extends IAddDBServiceReq {
+export interface IAddDBServiceV2Params extends IAddDBServiceReqV2 {
   project_uid: string;
 }
 
 export interface IAddDBServiceV2Return extends IAddDBServiceReply {}
 
 export interface IImportDBServicesOfOneProjectV2Params
-  extends IImportDBServicesOfOneProjectReq {
+  extends IImportDBServicesOfOneProjectReqV2 {
   project_uid: string;
 }
 
@@ -256,7 +259,7 @@ export interface IImportDBServicesOfOneProjectCheckV2Params {
   db_services_file?: any;
 }
 
-export interface IUpdateDBServiceV2Params extends IUpdateDBServiceReq {
+export interface IUpdateDBServiceV2Params extends IUpdateDBServiceReqV2 {
   project_uid: string;
 
   db_service_uid: string;

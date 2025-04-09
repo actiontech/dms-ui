@@ -25,7 +25,14 @@ import {
   IUpdateProjectReq,
   IListEnvironmentTagsReply,
   ICreateEnvironmentTagReq,
-  IUpdateEnvironmentTagReq
+  IUpdateEnvironmentTagReq,
+  IListProjectReplyV2,
+  IAddProjectReqV2,
+  IAddProjectReplyV2,
+  IImportProjectsReqV2,
+  IImportDBServicesOfProjectsReqV2,
+  IPreviewImportProjectsReplyV2,
+  IUpdateProjectReqV2
 } from '../common.d';
 
 export interface IListProjectsParams {
@@ -42,8 +49,6 @@ export interface IListProjectsParams {
   filter_by_project_uids?: string[];
 
   filter_by_project_priority?: ListProjectsFilterByProjectPriorityEnum;
-
-  filter_by_business_tag?: string;
 
   filter_by_desc?: string;
 }
@@ -199,20 +204,33 @@ export interface IListProjectsV2Params {
   filter_by_desc?: string;
 }
 
-export interface IListProjectsV2Return extends IListProjectReply {}
+export interface IListProjectsV2Return extends IListProjectReplyV2 {}
 
-export interface IAddProjectV2Params extends IAddProjectReq {}
+export interface IAddProjectV2Params extends IAddProjectReqV2 {}
 
-export interface IAddProjectV2Return extends IAddProjectReply {}
+export interface IAddProjectV2Return extends IAddProjectReplyV2 {}
 
-export interface IImportProjectsV2Params extends IImportProjectsReq {}
+export interface IImportProjectsV2Params extends IImportProjectsReqV2 {}
 
 export interface IImportProjectsV2Return extends IGenericResp {}
 
-export interface IPreviewImportProjectsV2Return
-  extends IPreviewImportProjectsReply {}
+export interface IImportDBServicesOfProjectsV2Params
+  extends IImportDBServicesOfProjectsReqV2 {}
 
-export interface IUpdateProjectV2Params extends IUpdateProjectReq {
+export interface IImportDBServicesOfProjectsV2Return extends IGenericResp {}
+
+export interface IImportDBServicesOfProjectsCheckV2Params {
+  db_services_file?: any;
+}
+
+export interface IPreviewImportProjectsV2Params {
+  projects_file?: any;
+}
+
+export interface IPreviewImportProjectsV2Return
+  extends IPreviewImportProjectsReplyV2 {}
+
+export interface IUpdateProjectV2Params extends IUpdateProjectReqV2 {
   project_uid: string;
 }
 

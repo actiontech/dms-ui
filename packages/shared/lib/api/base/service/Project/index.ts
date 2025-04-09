@@ -55,6 +55,10 @@ import {
   IAddProjectV2Return,
   IImportProjectsV2Params,
   IImportProjectsV2Return,
+  IImportDBServicesOfProjectsV2Params,
+  IImportDBServicesOfProjectsV2Return,
+  IImportDBServicesOfProjectsCheckV2Params,
+  IPreviewImportProjectsV2Params,
   IPreviewImportProjectsV2Return,
   IUpdateProjectV2Params,
   IUpdateProjectV2Return
@@ -425,19 +429,65 @@ class ProjectService extends ServiceBase {
     );
   }
 
-  public ImportDBServicesOfProjectsCheckV2(options?: AxiosRequestConfig) {
-    return this.post(
-      '/v2/dms/projects/import_db_services_check',
-      undefined,
+  public ImportDBServicesOfProjectsV2(
+    params: IImportDBServicesOfProjectsV2Params,
+    options?: AxiosRequestConfig
+  ) {
+    const paramsData = this.cloneDeep(params);
+    return this.post<IImportDBServicesOfProjectsV2Return>(
+      '/v2/dms/projects/import_db_services',
+      paramsData,
       options
     );
   }
 
-  public PreviewImportProjectsV2(options?: AxiosRequestConfig) {
+  public ImportDBServicesOfProjectsCheckV2(
+    params: IImportDBServicesOfProjectsCheckV2Params,
+    options?: AxiosRequestConfig
+  ) {
+    const config = options || {};
+    const headers = config.headers ? config.headers : {};
+    config.headers = {
+      ...headers,
+
+      'Content-Type': 'multipart/form-data'
+    };
+
+    const paramsData = new FormData();
+
+    if (params.db_services_file != undefined) {
+      paramsData.append('db_services_file', params.db_services_file as any);
+    }
+
+    return this.post(
+      '/v2/dms/projects/import_db_services_check',
+      paramsData,
+      config
+    );
+  }
+
+  public PreviewImportProjectsV2(
+    params: IPreviewImportProjectsV2Params,
+    options?: AxiosRequestConfig
+  ) {
+    const config = options || {};
+    const headers = config.headers ? config.headers : {};
+    config.headers = {
+      ...headers,
+
+      'Content-Type': 'multipart/form-data'
+    };
+
+    const paramsData = new FormData();
+
+    if (params.projects_file != undefined) {
+      paramsData.append('projects_file', params.projects_file as any);
+    }
+
     return this.post<IPreviewImportProjectsV2Return>(
       '/v2/dms/projects/preview_import',
-      undefined,
-      options
+      paramsData,
+      config
     );
   }
 
