@@ -28,7 +28,7 @@
     "icon:docs:build": "pnpm --filter @actiontech/icons docs:build",
     "icon:build": "pnpm --filter @actiontech/icons build",
     "dms:g": "pnpm --filter @actiontech/cli-create-dms-page build && create-dms-page",
-    "api_client:g": "sh ./scripts/api/gen_api.sh",
+    "api_client:g": "npm_config_registry=http://10.186.18.19:4873 pnpx @actiontech/cli api-client -y",
     "api_mocks:g": "npm_config_registry=http://10.186.18.19:4873 pnpx @actiontech/cli api-mocks -y"
   },
   "keywords": [],
@@ -136,6 +136,7 @@
   "resolutions": {
     "headers-polyfill": "3.0.10",
     "cheerio": "1.0.0-rc.3",
-    "@babel/core": "^7.22.0"
+    "@babel/core": "^7.22.0",
+    "@ant-design/cssinjs": "1.17.0"
   }
 }

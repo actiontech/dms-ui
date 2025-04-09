@@ -1,5 +1,5 @@
 import { getBySelector } from '../../../testUtil/customQuery';
-import { renderWithTheme } from '../../../testUtil/customRender';
+import { superRender } from '../../../testUtil/customRender';
 import { fireEvent, act, cleanup } from '@testing-library/react';
 
 import EditInput from '../components/EditInput';
@@ -16,7 +16,7 @@ describe('lib/ConfigItem-EditInput', () => {
     cleanup();
   });
   const customRender = (params: ConfigItemEditInputProps) => {
-    return renderWithTheme(<EditInput {...params} />);
+    return superRender(<EditInput {...params} />);
   };
 
   it('render loading is true', () => {
@@ -89,8 +89,6 @@ describe('lib/ConfigItem-EditInput', () => {
       });
       await jest.advanceTimersByTime(300);
     });
-    expect(baseElement).toMatchSnapshot();
-
     await act(async () => {
       fireEvent.keyDown(inputEle, {
         key: 'Enter',
@@ -130,8 +128,6 @@ describe('lib/ConfigItem-EditInput', () => {
       });
       await jest.advanceTimersByTime(300);
     });
-    expect(baseElement).toMatchSnapshot();
-
     await act(async () => {
       fireEvent.click(getBySelector('.custom-icon-selected'));
       await jest.advanceTimersByTime(300);

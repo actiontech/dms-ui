@@ -1,45 +1,54 @@
 import { fireEvent, act, cleanup, screen } from '@testing-library/react';
-import { renderWithTheme } from '../../testUtil/customRender';
+import { superRender } from '../../testUtil/customRender';
 import { getBySelector, getAllBySelector } from '../../testUtil/customQuery';
 import CronInputCom from './CronInput';
 import { CronInputModeEnum } from './CronInput.enum';
 import { CronInputProps } from './CronInput.types';
 
 describe('lib/CronInputCom', () => {
+  let updateErrorMessageSpy: jest.Mock;
+
   beforeEach(() => {
     jest.useFakeTimers();
+    updateErrorMessageSpy = jest.fn();
   });
 
   afterEach(() => {
     jest.useRealTimers();
     jest.clearAllTimers();
     cleanup();
+    jest.clearAllMocks();
   });
 
   const customRender = (params: CronInputProps) => {
-    return renderWithTheme(<CronInputCom {...params} />);
+    return superRender(<CronInputCom {...params} />);
   };
 
-  it('render disabled status', () => {
+  it('should match snapshot', () => {
+    const { baseElement } = customRender({
+      inputMode: CronInputModeEnum.Manual,
+      value: '0 0 * * *'
+    });
+    expect(baseElement).toMatchSnapshot();
+  });
+
+  it('should render disabled status correctly', () => {
     const { baseElement } = customRender({
       disabled: true
     });
-    expect(baseElement).toMatchSnapshot();
+    const inputEle = getBySelector('.input-element', baseElement);
+    expect(inputEle).toHaveAttribute('disabled');
   });
 
-  it('render diff mode', async () => {
+  it('should switch between different input modes', async () => {
     const { baseElement } = customRender({
       inputMode: CronInputModeEnum.Select
     });
-    expect(baseElement).toMatchSnapshot();
-
-    const { baseElement: baseElement1 } = customRender({
-      inputMode: CronInputModeEnum.Manual
-    });
-    expect(baseElement1).toMatchSnapshot();
+    const btnChangeModeEle = getBySelector('.button-element', baseElement);
+    expect(btnChangeModeEle).toBeInTheDocument();
   });
 
-  it('render change mode for cron', async () => {
+  it('should trigger mode change callback when switching modes', async () => {
     const modeChangeSpy = jest.fn();
     const { baseElement } = customRender({
       inputMode: CronInputModeEnum.Manual,
@@ -63,7 +72,7 @@ describe('lib/CronInputCom', () => {
     expect(modeChangeSpy).toHaveBeenCalledWith(CronInputModeEnum.Select);
   });
 
-  it('render change mode for cron when mode prop is null', async () => {
+  it('should handle mode changes when input mode is not provided', async () => {
     const { baseElement } = customRender({
       value: '0 0 * * *'
     });
@@ -84,7 +93,7 @@ describe('lib/CronInputCom', () => {
     });
   });
 
-  it('render click week', async () => {
+  it('should update cron expression when selecting week days', async () => {
     const { baseElement } = customRender({
       inputMode: CronInputModeEnum.Select,
       value: '0 0 * * *'
@@ -105,10 +114,11 @@ describe('lib/CronInputCom', () => {
     expect(inputEle).toHaveAttribute('value', '0 0 * * 1-6');
   });
 
-  it('render click every day', async () => {
+  it('should update cron expression when clicking every day button', async () => {
     const { baseElement } = customRender({
       inputMode: CronInputModeEnum.Select,
-      value: '0 0 0 0 0'
+      value: '0 0 0 0 0',
+      onError: updateErrorMessageSpy
     });
     const inputEle = getBySelector('.input-element', baseElement);
     const everyDayBtn = screen.getByText('每 天');
@@ -117,10 +127,9 @@ describe('lib/CronInputCom', () => {
       await jest.advanceTimersByTime(300);
     });
     expect(inputEle).toHaveAttribute('value', '0 0 0 0 *');
-    expect(baseElement).toMatchSnapshot();
   });
 
-  it('render click hour', async () => {
+  it('should update cron expression when selecting hours', async () => {
     const { baseElement } = customRender({
       inputMode: CronInputModeEnum.Select,
       value: '0 0 * * *'
@@ -149,7 +158,7 @@ describe('lib/CronInputCom', () => {
     expect(inputEle).toHaveAttribute('value', '0 1 * * *');
   });
 
-  it('render click minute', async () => {
+  it('should update cron expression when selecting minutes', async () => {
     const { baseElement } = customRender({
       inputMode: CronInputModeEnum.Select,
       value: '0 0 * * *'
@@ -178,7 +187,7 @@ describe('lib/CronInputCom', () => {
     expect(inputEle).toHaveAttribute('value', '1 0 * * *');
   });
 
-  it('render error for select style', async () => {
+  it('should handle and display error states correctly', async () => {
     const updateErrorMessageSpy = jest.fn();
     const { baseElement } = customRender({
       inputMode: CronInputModeEnum.Manual,
@@ -211,6 +220,5 @@ describe('lib/CronInputCom', () => {
       fireEvent.click(btnChangeModeEle);
       await jest.advanceTimersByTime(300);
     });
-    expect(baseElement).toMatchSnapshot();
   });
 });

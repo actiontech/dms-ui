@@ -7,7 +7,7 @@ exports[`lib/SensitiveDisplay render copy token 1`] = `
       class="css-1sg2lsz"
     >
       <div
-        class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
+        class="ant-space ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
       >
         <div
           class="ant-space-item"
@@ -30,10 +30,10 @@ exports[`lib/SensitiveDisplay render copy token 1`] = `
         </div>
       </div>
       <span
-        class="ant-typography css-dev-only-do-not-override-txh9fw"
+        class="ant-typography"
       >
         <div
-          aria-label="Copied"
+          aria-label="复制成功"
           class="ant-typography-copy ant-typography-copy-success"
           role="button"
           style="border: 0px; background: transparent; padding: 0px; line-height: inherit; display: inline-block;"
@@ -72,7 +72,7 @@ exports[`lib/SensitiveDisplay render hide token 1`] = `
       class="css-1sg2lsz"
     >
       <div
-        class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center ant-tooltip-open basic-tooltips-wrapper css-4jbtl9"
+        class="ant-space ant-space-horizontal ant-space-align-center ant-tooltip-open basic-tooltips-wrapper css-4jbtl9"
       >
         <div
           class="ant-space-item"
@@ -95,10 +95,10 @@ exports[`lib/SensitiveDisplay render hide token 1`] = `
         </div>
       </div>
       <span
-        class="ant-typography css-dev-only-do-not-override-txh9fw"
+        class="ant-typography"
       >
         <div
-          aria-label="Copy"
+          aria-label="复制"
           class="ant-typography-copy"
           role="button"
           style="border: 0px; background: transparent; padding: 0px; line-height: inherit; display: inline-block;"
@@ -129,7 +129,7 @@ exports[`lib/SensitiveDisplay render hide token 1`] = `
   </div>
   <div>
     <div
-      class="ant-tooltip ant-zoom-big-fast-appear ant-zoom-big-fast-appear-prepare ant-zoom-big-fast css-dev-only-do-not-override-txh9fw ant-tooltip-placement-top"
+      class="ant-tooltip ant-zoom-big-fast-appear ant-zoom-big-fast-appear-prepare ant-zoom-big-fast ant-tooltip-placement-top"
       style="--arrow-x: 0px; --arrow-y: 0px; left: -1000vw; top: -1000vh; box-sizing: border-box;"
     >
       <div
@@ -159,7 +159,7 @@ exports[`lib/SensitiveDisplay render show token 1`] = `
       class="css-1sg2lsz"
     >
       <div
-        class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center ant-tooltip-open basic-tooltips-wrapper css-4jbtl9"
+        class="ant-space ant-space-horizontal ant-space-align-center ant-tooltip-open basic-tooltips-wrapper css-4jbtl9"
       >
         <div
           class="ant-space-item"
@@ -168,7 +168,7 @@ exports[`lib/SensitiveDisplay render show token 1`] = `
             class="rect-border-wrapper css-1iiq8r2"
           >
             <span
-              class="ant-typography ant-typography-ellipsis ant-typography-single-line ant-typography-ellipsis-single-line css-dev-only-do-not-override-txh9fw"
+              class="ant-typography ant-typography-ellipsis ant-typography-single-line ant-typography-ellipsis-single-line"
               style="width: 120px; line-height: 20px;"
             >
               test token text
@@ -177,10 +177,10 @@ exports[`lib/SensitiveDisplay render show token 1`] = `
         </div>
       </div>
       <span
-        class="ant-typography css-dev-only-do-not-override-txh9fw"
+        class="ant-typography"
       >
         <div
-          aria-label="Copy"
+          aria-label="复制"
           class="ant-typography-copy"
           role="button"
           style="border: 0px; background: transparent; padding: 0px; line-height: inherit; display: inline-block;"
@@ -211,7 +211,7 @@ exports[`lib/SensitiveDisplay render show token 1`] = `
   </div>
   <div>
     <div
-      class="ant-tooltip ant-zoom-big-fast-appear ant-zoom-big-fast-appear-prepare ant-zoom-big-fast css-dev-only-do-not-override-txh9fw ant-tooltip-placement-top"
+      class="ant-tooltip ant-zoom-big-fast-appear ant-zoom-big-fast-appear-prepare ant-zoom-big-fast ant-tooltip-placement-top"
       style="--arrow-x: 0px; --arrow-y: 0px; left: -1000vw; top: -1000vh; box-sizing: border-box;"
     >
       <div

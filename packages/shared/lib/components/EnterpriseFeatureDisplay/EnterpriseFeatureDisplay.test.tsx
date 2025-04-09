@@ -1,12 +1,12 @@
 import EnterpriseFeatureDisplay from './EnterpriseFeatureDisplay';
 import { Space } from 'antd';
-import { renderWithTheme } from '../../testUtil/customRender';
+import { superRender } from '../../testUtil/customRender';
 
 const children = <>ee version display</>;
 
 describe('test ee EnterpriseFeatureDisplay', () => {
   test('should match snapshot', () => {
-    const { container } = renderWithTheme(
+    const { container } = superRender(
       <EnterpriseFeatureDisplay
         featureName="featureName"
         eeFeatureDescription="eeFeatureDescription1"
@@ -17,7 +17,7 @@ describe('test ee EnterpriseFeatureDisplay', () => {
 
     expect(container).toMatchSnapshot();
 
-    const { container: container1 } = renderWithTheme(
+    const { container: container1 } = superRender(
       <EnterpriseFeatureDisplay
         featureName="featureName"
         eeFeatureDescription={

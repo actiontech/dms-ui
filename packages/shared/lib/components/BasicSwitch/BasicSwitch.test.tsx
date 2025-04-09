@@ -1,4 +1,4 @@
-import { renderWithTheme } from '../../testUtil/customRender';
+import { superRender } from '../../testUtil/customRender';
 import BasicSwitch from './BasicSwitch';
 import { BasicSwitchProps } from './BasicSwitch.types';
 
@@ -8,7 +8,7 @@ describe('lib/BasicSwitch', () => {
       className: 'custom-switch-demo',
       checked: true
     };
-    const { baseElement } = renderWithTheme(<BasicSwitch {...params} />);
+    const { baseElement } = superRender(<BasicSwitch {...params} />);
 
     expect(baseElement).toMatchSnapshot();
   });

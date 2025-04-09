@@ -1,0 +1,190 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`base/System/GitSSHConfig should match snapshot when get ssh public key 1`] = `
+<body>
+  <div>
+    <section
+      class="system-form-wrapper"
+    >
+      <div
+        class="ant-row ant-row-space-between ant-row-middle config-title-wrapper has-border css-dev-only-do-not-override-txh9fw"
+      >
+        <div
+          class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+        >
+          <div
+            class="ant-space-item"
+          >
+            Git SSH配置
+          </div>
+        </div>
+      </div>
+      <div
+        class="ant-spin-nested-loading css-dev-only-do-not-override-txh9fw"
+      >
+        <div
+          class="ant-spin-container"
+        >
+          <div
+            class="css-1scia9f"
+          >
+            <div
+              class="ant-space css-dev-only-do-not-override-txh9fw ant-space-vertical full-width-element"
+            >
+              <div
+                class="ant-space-item"
+                style="margin-bottom: 16px;"
+              >
+                <div
+                  class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
+                >
+                  <div
+                    class="ant-space-item"
+                    style="margin-right: 8px;"
+                  >
+                    Git SSH密钥配置
+                  </div>
+                  <div
+                    class="ant-space-item"
+                  >
+                    <span
+                      aria-label="info-circle"
+                      class="anticon anticon-info-circle tooltips-default-icon"
+                      role="img"
+                    >
+                      <svg
+                        aria-hidden="true"
+                        data-icon="info-circle"
+                        fill="currentColor"
+                        focusable="false"
+                        height="1em"
+                        viewBox="64 64 896 896"
+                        width="1em"
+                      >
+                        <path
+                          d="M512 64C264.6 64 64 264.6 64 512s200.6 448 448 448 448-200.6 448-448S759.4 64 512 64zm0 820c-205.4 0-372-166.6-372-372s166.6-372 372-372 372 166.6 372 372-166.6 372-372 372z"
+                        />
+                        <path
+                          d="M464 336a48 48 0 1096 0 48 48 0 10-96 0zm72 112h-48c-4.4 0-8 3.6-8 8v272c0 4.4 3.6 8 8 8h48c4.4 0 8-3.6 8-8V456c0-4.4-3.6-8-8-8z"
+                        />
+                      </svg>
+                    </span>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="ant-space-item"
+              >
+                <div
+                  class="ant-space css-dev-only-do-not-override-txh9fw ant-space-vertical full-width-element"
+                >
+                  <div
+                    class="ant-space-item"
+                    style="margin-bottom: 16px;"
+                  >
+                    <div
+                      class="key-header"
+                    >
+                      <span
+                        class="ant-typography css-dev-only-do-not-override-txh9fw"
+                      >
+                        <strong>
+                          公钥
+                        </strong>
+                      </span>
+                      <button
+                        class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default basic-button-wrapper css-geipcv"
+                        type="button"
+                      >
+                        <span>
+                          复 制
+                        </span>
+                      </button>
+                    </div>
+                  </div>
+                  <div
+                    class="ant-space-item"
+                  >
+                    <div
+                      class="ant-card ant-card-bordered css-dev-only-do-not-override-txh9fw"
+                    >
+                      <div
+                        class="ant-card-body"
+                      >
+                        <div
+                          class="ant-typography css-dev-only-do-not-override-txh9fw"
+                        >
+                          ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQDzBOtcopZ1IdU51augExmKzRRYsJdNDnxVf5mlCRch2hMq4y02F4q4T71WFoLg22FptnxmY+LkOPgYyIvl6MdfBS6RQarc3aC2rO5bCbzuMf2f6+2hbYH3ACXJWAn4xX8b0ZK25t1u8jrXmAJPVXIMLEcLL4Wo7IqCQ1PwrkIeXuMfznHzVoAEv5o+jbUkj++I46AEmqrmDsgWCt83JK7ctBzhEXJWhF5rSyqGxXBptVPVMEO4ShJi2rKdk+ZbBGIAGu0db72hlvdqzUeU2Ng+J0dcIDsS/4pmEtQ+6uJFgslqF2Vt708tcOPTG4qdfFaK453PyceZ/F/f/BN+bPDJCh+oPQ3zdsKHmh0rXefICPMWe73QRLAyW/JeWcsnFlgoBmlwB4++Isc6xYx0dHFM/ws10vTJDif3CAi0VE1vKdSZvVxTFq5bZKhTX3zfA24yZzAl9BCOrQzWh20NWJ3Lgwk2JWL3NVsChKNk4aTCHNz1OyW/nojrd5tCyyqF06OqG1/xc5RmRkCH9gXqFA0Ngf3IdxJdpL9q3G60CBAi7Gfs6+gLIlMc6sgnlZdnyCj3Gmh7yRrmMZUDAmZnyvrYw3+4qQcVBi5gw64wuya2K6Hz6lrgxT9AlcUTNdHn1W6TimZtO3JUDclMUbA6euN/NOFsY4VpYPVNoMND3Lwesw==
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
+              class="ant-alert ant-alert-success ant-alert-no-icon css-dev-only-do-not-override-txh9fw"
+              data-show="true"
+              role="alert"
+            >
+              <div
+                class="ant-alert-content"
+              >
+                <div
+                  class="ant-alert-message"
+                >
+                  <div
+                    class="ant-space css-dev-only-do-not-override-txh9fw ant-space-vertical"
+                  >
+                    <div
+                      class="ant-space-item"
+                      style="margin-bottom: 8px;"
+                    >
+                      <span
+                        class="ant-typography css-dev-only-do-not-override-txh9fw"
+                      >
+                        <strong>
+                          使用说明
+                        </strong>
+                      </span>
+                    </div>
+                    <div
+                      class="ant-space-item"
+                      style="margin-bottom: 8px;"
+                    >
+                      <span
+                        class="ant-typography css-dev-only-do-not-override-txh9fw"
+                      >
+                        1. 复制上方生成的公钥，前往Git代码托管平台的SSH密钥设置页面
+                      </span>
+                    </div>
+                    <div
+                      class="ant-space-item"
+                      style="margin-bottom: 8px;"
+                    >
+                      <span
+                        class="ant-typography css-dev-only-do-not-override-txh9fw"
+                      >
+                        2. 在平台上添加新的SSH密钥
+                      </span>
+                    </div>
+                    <div
+                      class="ant-space-item"
+                    >
+                      <span
+                        class="ant-typography css-dev-only-do-not-override-txh9fw"
+                      >
+                        3. 在标题中输入描述性名称（如"DMS Key"），在密钥输入框中粘贴公钥，完成添加
+                      </span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+</body>
+`;

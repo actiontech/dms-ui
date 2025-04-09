@@ -1,0 +1,10 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`lib/BasicInput/TextArea should render basic textarea with default props 1`] = `
+<div>
+  <textarea
+    class="ant-input basic-input-wrapper css-1pd1cd5"
+    placeholder="请输入{{name}}"
+  />
+</div>
+`;

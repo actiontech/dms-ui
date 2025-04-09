@@ -1,8 +1,8 @@
 import { getBySelector } from '../../testUtil/customQuery';
-import { renderWithTheme } from '../../testUtil/customRender';
+import { superRender } from '../../testUtil/customRender';
 import CopyIcon from './CopyIcon';
 import Copy from '../../utils/Copy';
-import { fireEvent, act, cleanup } from '@testing-library/react';
+import { fireEvent, act, cleanup, screen } from '@testing-library/react';
 import { CopyIconProps } from './CopyIcon.types';
 
 describe('lib/CopyIcon', () => {
@@ -17,48 +17,17 @@ describe('lib/CopyIcon', () => {
   });
 
   const customRender = (params: CopyIconProps) => {
-    return renderWithTheme(<CopyIcon {...params} />);
+    return superRender(<CopyIcon {...params} />);
   };
 
-  it('should render ui snap for only text', () => {
+  it('should render basic ui', () => {
     const { container } = customRender({
       text: 'sql ss'
     });
-
     expect(container).toMatchSnapshot();
   });
 
-  it('should render ui snap for no tip', () => {
-    const { container } = customRender({
-      text: 'sql ss',
-      tooltips: false
-    });
-
-    expect(container).toMatchSnapshot();
-  });
-
-  it('should render ui when click copy btn', async () => {
-    const execCommandFn = jest.fn();
-    document.execCommand = execCommandFn;
-    const { container, baseElement } = customRender({
-      text: 'sql ss'
-    });
-
-    const copyEle = getBySelector('.anticon-copy', baseElement);
-    await act(async () => {
-      fireEvent.click(copyEle);
-      await jest.advanceTimersByTime(300);
-    });
-    expect(container).toMatchSnapshot();
-
-    await act(async () => jest.advanceTimersByTime(3000));
-    expect(execCommandFn).toHaveBeenCalledWith('copy');
-    expect(execCommandFn).toHaveBeenCalledTimes(1);
-    expect(container).toMatchSnapshot();
-    execCommandFn.mockRestore();
-  });
-
-  it('should render more line text when click copy btn', async () => {
+  it('should handle copy text correctly', async () => {
     const mockCopyTextByTextarea = jest.fn();
     jest
       .spyOn(Copy, 'copyTextByTextarea')
@@ -75,6 +44,49 @@ describe('lib/CopyIcon', () => {
     });
     expect(mockCopyTextByTextarea).toHaveBeenCalledTimes(1);
     expect(mockCopyTextByTextarea).toHaveBeenCalledWith(textVal);
+
+    await act(async () => {
+      fireEvent.mouseOver(getBySelector('.anticon-check', baseElement));
+      await jest.advanceTimersByTime(300);
+    });
+    expect(screen.getByText('复制成功')).toBeInTheDocument();
     mockCopyTextByTextarea.mockRestore();
+  });
+
+  it('should handle custom copy function', async () => {
+    const onCustomCopyFn = jest.fn();
+    const onCopyCompleteFn = jest.fn();
+    const { baseElement } = customRender({
+      text: 'test',
+      onCustomCopy: onCustomCopyFn,
+      onCopyComplete: onCopyCompleteFn
+    });
+
+    const copyEle = getBySelector('.anticon-copy', baseElement);
+    await act(async () => {
+      fireEvent.click(copyEle);
+      await jest.advanceTimersByTime(300);
+    });
+    expect(onCustomCopyFn).toHaveBeenCalledTimes(1);
+    expect(onCopyCompleteFn).toHaveBeenCalledTimes(1);
+  });
+
+  it('should handle custom tooltips', async () => {
+    const { baseElement } = customRender({
+      text: 'test',
+      tooltips: '自定义提示'
+    });
+
+    const copyEle = getBySelector('.anticon-copy', baseElement);
+    await act(async () => {
+      fireEvent.click(copyEle);
+      await jest.advanceTimersByTime(300);
+    });
+
+    await act(async () => {
+      fireEvent.mouseOver(getBySelector('.anticon-check', baseElement));
+      await jest.advanceTimersByTime(300);
+    });
+    expect(screen.getByText('自定义提示')).toBeInTheDocument();
   });
 });

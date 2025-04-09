@@ -5,7 +5,7 @@ exports[`lib/BasicSwitch render switch style 1`] = `
   <div>
     <button
       aria-checked="true"
-      class="ant-switch basic-switch-wrapper custom-switch-demo css-g6dhbn css-dev-only-do-not-override-txh9fw ant-switch-checked"
+      class="ant-switch basic-switch-wrapper custom-switch-demo css-g6dhbn ant-switch-checked"
       role="switch"
       type="button"
     >

@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import { message } from 'antd';
 import { useTranslation } from 'react-i18next';
 import { useRequest } from 'ahooks';
-import { RuleTemplateService } from '@actiontech/shared/lib/api';
+import { SqleApi } from '@actiontech/shared/lib/api';
 import RuleUnderstand from './RuleUnderstand';
 import { EmptyBox, PageHeader, useTypedParams } from '@actiontech/shared';
 import { ResponseCode } from '@actiontech/shared/lib/enum';
@@ -44,14 +44,14 @@ const RuleKnowledge: React.FC = () => {
   } = useRequest(
     (isCustomType: boolean, type: string) => {
       if (isCustomType) {
-        return RuleTemplateService.getCustomRuleKnowledgeV1({
+        return SqleApi.RuleTemplateService.getCustomRuleKnowledgeV1({
           rule_name: ruleName,
           db_type: type
         }).then((res) => {
           return res.data.data;
         });
       }
-      return RuleTemplateService.getRuleKnowledgeV1({
+      return SqleApi.RuleTemplateService.getRuleKnowledgeV1({
         rule_name: ruleName,
         db_type: type
       }).then((res) => {
@@ -66,12 +66,12 @@ const RuleKnowledge: React.FC = () => {
   const submit = () => {
     startSubmit();
     const request = isCustomRule
-      ? RuleTemplateService.updateCustomRuleKnowledge({
+      ? SqleApi.RuleTemplateService.updateCustomRuleKnowledge({
           rule_name: ruleName,
           knowledge_content: editValue,
           db_type: dbType
         })
-      : RuleTemplateService.updateRuleKnowledge({
+      : SqleApi.RuleTemplateService.updateRuleKnowledge({
           rule_name: ruleName,
           knowledge_content: editValue,
           db_type: dbType
@@ -100,7 +100,7 @@ const RuleKnowledge: React.FC = () => {
 
   useEffect(() => {
     if (!!ruleName && !!dbType) {
-      RuleTemplateService.getRuleListV1({
+      SqleApi.RuleTemplateService.getRuleListV1({
         filter_rule_names: ruleName,
         filter_db_type: dbType
       }).then((res) => {

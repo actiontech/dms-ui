@@ -1,4 +1,5 @@
 import { FormInstance, SelectProps } from 'antd';
+import { GitProtocolType } from '../SQLStatementForm/components/RepositoryConfig/index.type';
 
 export enum AuditTypeEnum {
   static,
@@ -35,6 +36,7 @@ export type SQLInfoFormFields = {
   gitUserName: string;
   gitUserPassword: string;
   gitBranch: string;
+  gitProtocol: GitProtocolType;
 };
 
 export type SQLInfoFormProps = {

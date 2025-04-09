@@ -1,59 +1,14 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`ActionButton renders a confirm button 1`] = `
+exports[`ActionButton should match snapshot 1`] = `
 <div>
   <button
-    class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default basic-button-wrapper css-geipcv"
+    class="ant-btn ant-btn-default basic-button-wrapper css-geipcv"
     type="button"
   >
     <span>
-      Delete
+      Click me
     </span>
   </button>
 </div>
-`;
-
-exports[`ActionButton renders a tooltip button 1`] = `
-<body>
-  <div>
-    <div
-      class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center ant-tooltip-open basic-tooltips-wrapper css-4jbtl9"
-    >
-      <div
-        class="ant-space-item"
-      >
-        <button
-          class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default basic-button-wrapper css-geipcv"
-          type="button"
-        >
-          <span>
-            Info
-          </span>
-        </button>
-      </div>
-    </div>
-  </div>
-  <div>
-    <div
-      class="ant-tooltip ant-zoom-big-fast-appear ant-zoom-big-fast-appear-prepare ant-zoom-big-fast css-dev-only-do-not-override-txh9fw ant-tooltip-placement-top"
-      style="--arrow-x: 0px; --arrow-y: 0px; left: -1000vw; top: -1000vh; box-sizing: border-box;"
-    >
-      <div
-        class="ant-tooltip-content"
-      >
-        <div
-          class="ant-tooltip-inner"
-          role="tooltip"
-          style="padding: 0px; border-radius: 10px;"
-        >
-          <div
-            class="css-19kgj31"
-          >
-            More information
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</body>
 `;

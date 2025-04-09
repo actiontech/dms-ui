@@ -3,13 +3,13 @@
 exports[`lib/IFormItemNoLabel should render ui 1`] = `
 <div>
   <div
-    class="ant-form-item css-15d6abf css-dev-only-do-not-override-txh9fw"
+    class="ant-form-item css-15d6abf"
   >
     <div
-      class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+      class="ant-row ant-form-item-row"
     >
       <div
-        class="ant-col ant-form-item-label css-dev-only-do-not-override-txh9fw"
+        class="ant-col ant-form-item-label"
       >
         <label
           class=""
@@ -17,7 +17,7 @@ exports[`lib/IFormItemNoLabel should render ui 1`] = `
         />
       </div>
       <div
-        class="ant-col ant-form-item-control css-dev-only-do-not-override-txh9fw"
+        class="ant-col ant-form-item-control"
       >
         <div
           class="ant-form-item-control-input"

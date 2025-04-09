@@ -16,7 +16,7 @@ const EditInputNumber: React.FC<ConfigItemEditInputNumberProps> = ({
     useBoolean();
 
   const inputChange = (value: number | string | null) => {
-    if (!value) return;
+    if (value === null) return;
     setInputValue(Number(value));
   };
 

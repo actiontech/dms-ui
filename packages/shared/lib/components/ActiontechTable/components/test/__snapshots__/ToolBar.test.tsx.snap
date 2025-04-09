@@ -4,13 +4,13 @@ exports[`lib/ActiontechTable-ToolBar render all items 1`] = `
 <body>
   <div>
     <div
-      class="ant-spin-nested-loading css-dev-only-do-not-override-1kh50jg"
+      class="ant-spin-nested-loading"
     >
       <div
         class="ant-spin-container"
       >
         <div
-          class="ant-space css-dev-only-do-not-override-1kh50jg ant-space-horizontal ant-space-align-center full-width-element flex-space-between actiontech-table-toolbar-namespace css-c38ntt"
+          class="ant-space ant-space-horizontal ant-space-align-center full-width-element flex-space-between actiontech-table-toolbar-namespace css-a7k93w"
           style="flex-wrap: wrap; margin-bottom: -8px;"
         >
           <div
@@ -18,7 +18,7 @@ exports[`lib/ActiontechTable-ToolBar render all items 1`] = `
             style="margin-right: 8px; padding-bottom: 8px;"
           >
             <div
-              class="ant-space css-dev-only-do-not-override-1kh50jg ant-space-horizontal ant-space-align-center"
+              class="ant-space ant-space-horizontal ant-space-align-center"
             >
               <div
                 class="ant-space-item"
@@ -31,10 +31,10 @@ exports[`lib/ActiontechTable-ToolBar render all items 1`] = `
                 style="margin-right: 12px;"
               >
                 <span
-                  class="ant-input-affix-wrapper basic-input-wrapper actiontech-table-search-input-namespace css-1f6svkh ant-input-affix-wrapper-sm css-dev-only-do-not-override-mlhibv"
+                  class="ant-input-affix-wrapper basic-input-wrapper actiontech-table-search-input-namespace css-1f6svkh ant-input-affix-wrapper-sm"
                 >
                   <input
-                    class="ant-input ant-input-sm css-dev-only-do-not-override-mlhibv"
+                    class="ant-input ant-input-sm"
                     id="actiontech-table-search-input"
                     placeholder="输入关键字搜索"
                     type="text"
@@ -43,6 +43,23 @@ exports[`lib/ActiontechTable-ToolBar render all items 1`] = `
                   <span
                     class="ant-input-suffix"
                   >
+                    <span
+                      class="ant-input-clear-icon ant-input-clear-icon-hidden ant-input-clear-icon-has-suffix"
+                      role="button"
+                      tabindex="-1"
+                    >
+                      <svg
+                        fill="currentColor"
+                        height="14"
+                        viewBox="0 0 14 14"
+                        width="14"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="m7 6.175 2.887-2.887.825.825L7.825 7l2.887 2.888-.825.824L7 7.825l-2.888 2.887-.824-.824L6.175 7 3.288 4.113l.824-.825z"
+                        />
+                      </svg>
+                    </span>
                     <svg
                       class="custom-icon custom-icon-search"
                       height="14"
@@ -61,12 +78,12 @@ exports[`lib/ActiontechTable-ToolBar render all items 1`] = `
                 class="ant-space-item"
               >
                 <button
-                  class="ant-btn css-dev-only-do-not-override-czn7jp ant-btn-default ant-btn-sm ant-btn-two-chinese-chars actiontech-filter-button-namespace basic-button-wrapper css-geipcv"
+                  class="ant-btn ant-btn-default ant-btn-sm ant-btn-two-chinese-chars actiontech-filter-button-namespace basic-button-wrapper css-geipcv"
                   style="padding: 0px 6px 0px 10px;"
                   type="button"
                 >
                   <div
-                    class="ant-space css-dev-only-do-not-override-czn7jp ant-space-horizontal ant-space-align-center css-1nt49ug"
+                    class="ant-space ant-space-horizontal ant-space-align-center css-1nt49ug"
                   >
                     <div
                       class="ant-space-item"
@@ -78,7 +95,7 @@ exports[`lib/ActiontechTable-ToolBar render all items 1`] = `
                       class="ant-space-item"
                     >
                       <svg
-                        color="currrentColor"
+                        color="currentColor"
                         height="14"
                         viewBox="0 0 16 16"
                         width="14"
@@ -100,19 +117,19 @@ exports[`lib/ActiontechTable-ToolBar render all items 1`] = `
             style="padding-bottom: 8px;"
           >
             <div
-              class="ant-space css-dev-only-do-not-override-1kh50jg ant-space-horizontal ant-space-align-center"
+              class="ant-space ant-space-horizontal ant-space-align-center"
             >
               <div
                 class="ant-space-item"
                 style="margin-right: 12px;"
               >
                 <button
-                  class="ant-btn css-dev-only-do-not-override-czn7jp ant-btn-default ant-btn-sm actiontech-table-setting-namespace basic-button-wrapper css-geipcv"
+                  class="ant-btn ant-btn-default ant-btn-sm actiontech-table-setting-namespace basic-button-wrapper css-geipcv"
                   style="padding: 0px 6px 0px 8px;"
                   type="button"
                 >
                   <div
-                    class="ant-space css-dev-only-do-not-override-czn7jp ant-space-horizontal ant-space-align-center css-1nt49ug"
+                    class="ant-space ant-space-horizontal ant-space-align-center css-1nt49ug"
                   >
                     <div
                       class="ant-space-item"
@@ -160,7 +177,7 @@ exports[`lib/ActiontechTable-ToolBar render all items 1`] = `
                 class="ant-space-item"
               >
                 <button
-                  class="ant-btn css-dev-only-do-not-override-czn7jp ant-btn-default ant-btn-sm ant-btn-icon-only basic-button-wrapper css-geipcv"
+                  class="ant-btn ant-btn-default ant-btn-sm ant-btn-icon-only basic-button-wrapper css-geipcv"
                   type="button"
                 >
                   <span
@@ -193,13 +210,13 @@ exports[`lib/ActiontechTable-ToolBar render loading is true 1`] = `
 <body>
   <div>
     <div
-      class="ant-spin-nested-loading css-dev-only-do-not-override-1kh50jg"
+      class="ant-spin-nested-loading"
     >
       <div
         class="ant-spin-container"
       >
         <div
-          class="ant-space css-dev-only-do-not-override-1kh50jg ant-space-horizontal ant-space-align-center full-width-element flex-space-between actiontech-table-toolbar-namespace css-c38ntt"
+          class="ant-space ant-space-horizontal ant-space-align-center full-width-element flex-space-between actiontech-table-toolbar-namespace css-a7k93w"
           style="flex-wrap: wrap; margin-bottom: -8px;"
         >
           <div
@@ -207,7 +224,7 @@ exports[`lib/ActiontechTable-ToolBar render loading is true 1`] = `
             style="margin-right: 8px; padding-bottom: 8px;"
           >
             <div
-              class="ant-space css-dev-only-do-not-override-1kh50jg ant-space-horizontal ant-space-align-center"
+              class="ant-space ant-space-horizontal ant-space-align-center"
             />
           </div>
           <div
@@ -215,7 +232,7 @@ exports[`lib/ActiontechTable-ToolBar render loading is true 1`] = `
             style="padding-bottom: 8px;"
           >
             <div
-              class="ant-space css-dev-only-do-not-override-1kh50jg ant-space-horizontal ant-space-align-center"
+              class="ant-space ant-space-horizontal ant-space-align-center"
             />
           </div>
         </div>
@@ -229,13 +246,13 @@ exports[`lib/ActiontechTable-ToolBar render noStyle is true 1`] = `
 <body>
   <div>
     <div
-      class="ant-spin-nested-loading css-dev-only-do-not-override-1kh50jg"
+      class="ant-spin-nested-loading"
     >
       <div
         class="ant-spin-container"
       >
         <div
-          class="ant-space css-dev-only-do-not-override-1kh50jg ant-space-horizontal ant-space-align-center  css-c38ntt"
+          class="ant-space ant-space-horizontal ant-space-align-center css-a7k93w"
           style="flex-wrap: wrap; margin-bottom: -8px; color: rgb(0, 0, 0);"
         >
           <div
@@ -243,7 +260,7 @@ exports[`lib/ActiontechTable-ToolBar render noStyle is true 1`] = `
             style="margin-right: 8px; padding-bottom: 8px;"
           >
             <div
-              class="ant-space css-dev-only-do-not-override-1kh50jg ant-space-horizontal ant-space-align-center"
+              class="ant-space ant-space-horizontal ant-space-align-center"
             />
           </div>
           <div
@@ -251,7 +268,7 @@ exports[`lib/ActiontechTable-ToolBar render noStyle is true 1`] = `
             style="padding-bottom: 8px;"
           >
             <div
-              class="ant-space css-dev-only-do-not-override-1kh50jg ant-space-horizontal ant-space-align-center"
+              class="ant-space ant-space-horizontal ant-space-align-center"
             />
           </div>
         </div>

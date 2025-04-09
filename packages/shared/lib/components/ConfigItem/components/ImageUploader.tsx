@@ -15,7 +15,6 @@ const ImageUploader: React.FC<ConfigItemImageUploaderProps> = ({
     useBoolean(false);
   return (
     <Upload
-      data-testid="upload-logo"
       name="logo"
       listType="picture-card"
       showUploadList={false}

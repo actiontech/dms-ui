@@ -4,7 +4,7 @@ const MockPlots = (props) => {
   const clonePropsData = cloneDeep(props);
   // 考虑到输入的属性是作为 div 的自定义属性，故而对 params 做了 stringify 的处理
   const params = JSON.stringify(clonePropsData);
-  return <div data-custom-params={params} />;
+  return <div data-testid="mock-antd-plots" data-custom-params={params} />;
 };
 
 const Line = MockPlots;

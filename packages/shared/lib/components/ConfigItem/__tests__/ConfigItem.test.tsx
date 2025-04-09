@@ -1,6 +1,5 @@
 import { fireEvent, act, cleanup, screen } from '@testing-library/react';
-import { renderWithTheme } from '../../../testUtil/customRender';
-
+import { superRender } from '../../../testUtil/customRender';
 import { ConfigItemProps } from '../ConfigItem.types';
 import ConfigItem from '../ConfigItem';
 import { getBySelector } from '../../../testUtil/customQuery';
@@ -17,7 +16,7 @@ describe('lib/ConfigItem', () => {
   });
 
   const customRender = (params: ConfigItemProps) => {
-    return renderWithTheme(<ConfigItem {...params} />);
+    return superRender(<ConfigItem {...params} />);
   };
 
   it('only render input no desc', () => {
@@ -31,7 +30,10 @@ describe('lib/ConfigItem', () => {
       label: 'label',
       fieldVisible: false
     });
-    expect(baseElement1).toMatchSnapshot();
+    expect(baseElement1.querySelector('.ant-row')).toBeInTheDocument();
+    expect(
+      baseElement1.querySelector('.config-item-filed-edit-button')
+    ).not.toBeInTheDocument();
   });
 
   it('only render desc no button', async () => {
@@ -40,22 +42,32 @@ describe('lib/ConfigItem', () => {
       descNode: 'descNode',
       needEditButton: false
     });
-    expect(baseElement).toMatchSnapshot();
 
     const configItemWrapper = getBySelector(
       '.ant-row,.ant-row-space-between.ant-row-middle',
       baseElement
     );
+    expect(configItemWrapper).toBeInTheDocument();
+    expect(
+      baseElement.querySelector('.config-item-filed-edit-button')
+    ).toHaveAttribute('hidden');
+    expect(baseElement.textContent).toContain('descNode');
+
     await act(async () => {
       fireEvent.mouseEnter(configItemWrapper);
       await jest.advanceTimersByTime(300);
     });
-    expect(baseElement).toMatchSnapshot();
+    expect(
+      baseElement.querySelector('.config-item-filed-edit-button')
+    ).toHaveAttribute('hidden');
+
     await act(async () => {
       fireEvent.mouseLeave(configItemWrapper);
       await jest.advanceTimersByTime(300);
     });
-    expect(baseElement).toMatchSnapshot();
+    expect(
+      baseElement.querySelector('.config-item-filed-edit-button')
+    ).toHaveAttribute('hidden');
   });
 
   it('render button when mouse move', async () => {
@@ -67,16 +79,25 @@ describe('lib/ConfigItem', () => {
       '.ant-row,.ant-row-space-between.ant-row-middle',
       baseElement
     );
+    expect(
+      baseElement.querySelector('.config-item-filed-edit-button')
+    ).toHaveAttribute('hidden');
+
     await act(async () => {
       fireEvent.mouseEnter(configItemWrapper);
       await jest.advanceTimersByTime(300);
     });
-    expect(baseElement).toMatchSnapshot();
+    expect(
+      baseElement.querySelector('.config-item-filed-edit-button')
+    ).toBeInTheDocument();
+
     await act(async () => {
       fireEvent.mouseLeave(configItemWrapper);
       await jest.advanceTimersByTime(300);
     });
-    expect(baseElement).toMatchSnapshot();
+    expect(
+      baseElement.querySelector('.config-item-filed-edit-button')
+    ).toHaveAttribute('hidden');
   });
 
   it('render show field', async () => {
@@ -95,18 +116,19 @@ describe('lib/ConfigItem', () => {
       await jest.advanceTimersByTime(300);
     });
     const btnEle = getBySelector('.config-item-filed-edit-button', baseElement);
+    expect(btnEle).toBeInTheDocument();
+
     await act(async () => {
       fireEvent.click(btnEle);
       await jest.advanceTimersByTime(300);
     });
     expect(showFieldFn).toHaveBeenCalledTimes(1);
-    expect(baseElement).toMatchSnapshot();
   });
 
   it('should execute "hideField" when clicking outside', () => {
     const hideField = jest.fn();
 
-    renderWithTheme(
+    superRender(
       <>
         <span>outside</span>
         <ConfigItem label="label" hideField={hideField} />
@@ -117,7 +139,7 @@ describe('lib/ConfigItem', () => {
     expect(hideField).not.toHaveBeenCalled();
 
     cleanup();
-    renderWithTheme(
+    superRender(
       <>
         <span>outside</span>
         <ConfigItem label="label" hideField={hideField} fieldVisible />
@@ -127,7 +149,7 @@ describe('lib/ConfigItem', () => {
     expect(hideField).toHaveBeenCalledTimes(1);
 
     cleanup();
-    renderWithTheme(
+    superRender(
       <>
         <div className="config-item-filed">
           <span>outside</span>

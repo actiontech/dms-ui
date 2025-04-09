@@ -1,18 +1,19 @@
-import { renderWithTheme } from '../../../testUtil/customRender';
+import { screen } from '@testing-library/dom';
+import { superRender } from '../../../testUtil/customRender';
 import LabelContent, {
   IConfigItemLabelContentProps
 } from '../components/LabelContent';
 
 describe('lib/ConfigItem-LabelContent', () => {
   const customRender = (params: IConfigItemLabelContentProps) => {
-    return renderWithTheme(<LabelContent {...params} />);
+    return superRender(<LabelContent {...params} />);
   };
 
   it('render title for LabelContent', () => {
-    const { baseElement } = customRender({
+    customRender({
       children: 'children title'
     });
-    expect(baseElement).toMatchSnapshot();
+    expect(screen.getByText('children title')).toBeInTheDocument();
   });
 
   it('render title & tips for LabelContent', () => {

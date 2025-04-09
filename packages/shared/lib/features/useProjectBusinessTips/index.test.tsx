@@ -2,7 +2,6 @@ import {
   cleanup,
   renderHook,
   act,
-  render,
   fireEvent,
   screen
 } from '@testing-library/react';
@@ -15,6 +14,7 @@ import {
   createSpyFailResponse,
   createSpyErrorResponse
 } from '../../testUtil/mockApi';
+import { superRender } from '../../testUtil/customRender';
 
 describe('useProjectBusinessTips', () => {
   let getProjectTipsSpy: jest.SpyInstance;
@@ -87,7 +87,7 @@ describe('useProjectBusinessTips', () => {
 
   it('should return options when use projectBusinessOption', async () => {
     const { result } = renderHook(() => useProjectBusinessTips());
-    const { baseElement: baseElementWithOptions } = render(
+    const { baseElement: baseElementWithOptions } = superRender(
       <Select
         data-testid="testId"
         value="test"

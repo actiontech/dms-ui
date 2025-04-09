@@ -1,7 +1,6 @@
 import { fireEvent, act, cleanup } from '@testing-library/react';
-
 import CustomSelectSearchInput from '../CustomSelectSearchInput';
-import { renderWithTheme } from '../../../testUtil/customRender';
+import { superRender } from '../../../testUtil/customRender';
 import { getBySelector } from '../../../testUtil/customQuery';
 
 describe('lib/CustomSelectSearchInput', () => {
@@ -17,7 +16,7 @@ describe('lib/CustomSelectSearchInput', () => {
 
   it('should render search input ui', () => {
     const onChangeFn = jest.fn();
-    const { container } = renderWithTheme(
+    const { container } = superRender(
       <CustomSelectSearchInput value="test-value" onChange={onChangeFn} />
     );
     expect(container).toMatchSnapshot();
@@ -25,7 +24,7 @@ describe('lib/CustomSelectSearchInput', () => {
 
   it('should render search value change', async () => {
     const onChangeFn = jest.fn();
-    const { container, baseElement } = renderWithTheme(
+    const { baseElement } = superRender(
       <CustomSelectSearchInput onChange={onChangeFn} />
     );
     const inputEle = getBySelector('.ant-input', baseElement);
@@ -37,6 +36,5 @@ describe('lib/CustomSelectSearchInput', () => {
     });
     expect(onChangeFn).toHaveBeenCalled();
     expect(onChangeFn).toHaveBeenCalledTimes(1);
-    expect(container).toMatchSnapshot();
   });
 });

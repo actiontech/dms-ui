@@ -7,10 +7,10 @@ exports[`lib/BasicSegmentedPage should match snapshot with controlled 1`] = `
       class="segmented-tabs-wrapper"
     >
       <div
-        class="ant-row segmented-row-wrapper css-156vlto css-dev-only-do-not-override-txh9fw"
+        class="ant-row segmented-row-wrapper css-156vlto"
       >
         <div
-          class="ant-segmented basic-segmented-wrapper css-192b3m1 css-dev-only-do-not-override-txh9fw"
+          class="ant-segmented basic-segmented-wrapper css-192b3m1"
         >
           <div
             class="ant-segmented-group"
@@ -64,10 +64,10 @@ exports[`lib/BasicSegmentedPage should match snapshot with no controlled 1`] = `
       class="segmented-tabs-wrapper"
     >
       <div
-        class="ant-row segmented-row-wrapper css-156vlto css-dev-only-do-not-override-txh9fw"
+        class="ant-row segmented-row-wrapper css-156vlto"
       >
         <div
-          class="ant-segmented basic-segmented-wrapper css-192b3m1 css-dev-only-do-not-override-txh9fw"
+          class="ant-segmented basic-segmented-wrapper css-192b3m1"
         >
           <div
             class="ant-segmented-group"
@@ -120,10 +120,10 @@ exports[`lib/BasicSegmentedPage should set default active key 1`] = `
     class="segmented-tabs-wrapper"
   >
     <div
-      class="ant-row segmented-row-wrapper css-156vlto css-dev-only-do-not-override-txh9fw"
+      class="ant-row segmented-row-wrapper css-156vlto"
     >
       <div
-        class="ant-segmented basic-segmented-wrapper css-192b3m1 css-dev-only-do-not-override-txh9fw"
+        class="ant-segmented basic-segmented-wrapper css-192b3m1"
       >
         <div
           class="ant-segmented-group"

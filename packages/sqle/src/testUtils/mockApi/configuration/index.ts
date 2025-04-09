@@ -3,7 +3,11 @@ import {
   MockSpyApy,
   createSpySuccessResponse
 } from '@actiontech/shared/lib/testUtil/mockApi';
-import { deriversMockData, testGitConnectionMockData } from './data';
+import {
+  deriversMockData,
+  getSSHPublicKeyMockData,
+  testGitConnectionMockData
+} from './data';
 
 class ConfigurationMockApi implements MockSpyApy {
   public mockAllApi(): void {
@@ -55,6 +59,20 @@ class ConfigurationMockApi implements MockSpyApy {
         data: testGitConnectionMockData
       })
     );
+    return spy;
+  }
+
+  public mockGetSSHPublicKey() {
+    const spy = jest.spyOn(configuration, 'getSSHPublicKey');
+    spy.mockImplementation(() =>
+      createSpySuccessResponse({ data: getSSHPublicKeyMockData })
+    );
+    return spy;
+  }
+
+  public mockGenSSHPublicKey() {
+    const spy = jest.spyOn(configuration, 'genSSHPublicKey');
+    spy.mockImplementation(() => createSpySuccessResponse({}));
     return spy;
   }
 }

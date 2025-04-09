@@ -1,10 +1,10 @@
-import { renderWithTheme } from '../../../../testUtil/customRender';
+import { superRender } from '../../../../testUtil/customRender';
 import CustomLabelContent from '../CustomLabelContent';
 import { CustomLabelContentProps } from '../FormItem.types';
 
 describe('lib/CustomLabelContent', () => {
   const customRender = (params: CustomLabelContentProps) => {
-    return renderWithTheme(<CustomLabelContent {...params} />);
+    return superRender(<CustomLabelContent {...params} />);
   };
 
   it('should render label has tip', () => {

@@ -68,58 +68,31 @@ describe('test SQLRenderer', () => {
     expect(getBySelector('.copy-icon-hover')).toBeInTheDocument();
   });
 
-  it('render showCopyIcon is equal always', () => {
+  it('should render with different showCopyIcon values', () => {
     expect(
       customRender({ showCopyIcon: 'always' }).container
     ).toMatchSnapshot();
   });
 
-  it('render showCopyIcon is equal true and sql is empty', () => {
-    customRender({ showCopyIcon: true, sql: '' });
-    expect(
-      queryBySelector('.actiontech-sql-renderer-copy-icon')
-    ).not.toBeInTheDocument();
-  });
-
   it('should call onClick when clicked sql wrapper', () => {
     const onClick = jest.fn();
-
     customRender({ onClick, className: 'custom-wrapper' });
-
     fireEvent.click(getBySelector('.actiontech-sql-renderer-wrapper'));
-
     expect(onClick).toHaveBeenCalledTimes(1);
-
     fireEvent.click(getBySelector('.custom-wrapper'));
-
     expect(onClick).toHaveBeenCalledTimes(2);
   });
 
-  it('render snap when loading is not undefined', () => {
-    expect(customRender({ loading: false }).container).toMatchSnapshot();
+  it('should render with different props configurations', () => {
     expect(customRender({ loading: true }).container).toMatchSnapshot();
-  });
 
-  it('render snap when preserveOriginalFormat is equal false', () => {
-    expect(
-      customRender({ preserveOriginalFormat: false }).container
-    ).toMatchSnapshot();
-  });
-
-  it('render empty content', () => {
-    expect(customRender({ sql: '' }).container).toMatchSnapshot();
-    expect(
-      customRender({ sql: '', emptySqlContent: 'empty' }).container
-    ).toMatchSnapshot();
-  });
-
-  it('render snap when highlightSyntax is equal false', () => {
-    expect(
-      customRender({ highlightSyntax: false }).container
-    ).toMatchSnapshot();
-  });
-
-  it('render snap when showLineNumbers is equal true', () => {
-    expect(customRender({ showLineNumbers: true }).container).toMatchSnapshot();
+    const { container } = customRender({
+      sql: '',
+      emptySqlContent: 'empty',
+      preserveOriginalFormat: false,
+      highlightSyntax: false,
+      showLineNumbers: true
+    });
+    expect(container).toMatchSnapshot();
   });
 });

@@ -3,7 +3,7 @@
 exports[`lib/FormInputBotBorder should render ui 1`] = `
 <div>
   <input
-    class="ant-input css-dev-only-do-not-override-ywkr0o basic-input-wrapper css-opeiev"
+    class="ant-input basic-input-wrapper css-opeiev"
     placeholder="请输入{{name}}"
     title="这是一个标题"
     type="text"

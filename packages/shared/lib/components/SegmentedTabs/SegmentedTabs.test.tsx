@@ -1,6 +1,6 @@
 import { fireEvent, screen } from '@testing-library/dom';
 import SegmentedTabs from './SegmentedTabs';
-import { renderWithReduxAndTheme } from '../../testUtil/customRender';
+import { superRender } from '../../testUtil/customRender';
 import { getBySelector } from '../../testUtil/customQuery';
 
 describe('lib/BasicSegmentedPage', () => {
@@ -18,7 +18,7 @@ describe('lib/BasicSegmentedPage', () => {
   ];
   it('should match snapshot with controlled', () => {
     const mockChange = jest.fn();
-    const { baseElement } = renderWithReduxAndTheme(
+    const { baseElement } = superRender(
       <SegmentedTabs activeKey="test1" onChange={mockChange} items={items} />
     );
     expect(baseElement).toMatchSnapshot();
@@ -29,9 +29,7 @@ describe('lib/BasicSegmentedPage', () => {
   });
 
   it('should match snapshot with no controlled', () => {
-    const { baseElement } = renderWithReduxAndTheme(
-      <SegmentedTabs items={items} />
-    );
+    const { baseElement } = superRender(<SegmentedTabs items={items} />);
     expect(baseElement).toMatchSnapshot();
 
     fireEvent.click(screen.getByText('label2'));
@@ -42,7 +40,7 @@ describe('lib/BasicSegmentedPage', () => {
   });
 
   it('should render segmented row extra content', () => {
-    renderWithReduxAndTheme(
+    superRender(
       <SegmentedTabs
         items={items}
         segmentedRowExtraContent={<span>segmentedRowExtraContent</span>}
@@ -53,7 +51,7 @@ describe('lib/BasicSegmentedPage', () => {
   });
 
   it('should render segmented row class name', () => {
-    renderWithReduxAndTheme(
+    superRender(
       <SegmentedTabs
         items={items}
         segmentedRowClassName="segmentedRowClassName"
@@ -64,7 +62,7 @@ describe('lib/BasicSegmentedPage', () => {
   });
 
   it('should set default active key', () => {
-    const { container } = renderWithReduxAndTheme(
+    const { container } = superRender(
       <SegmentedTabs items={items} defaultActiveKey="test2" />
     );
     expect(screen.getByText('label2').parentNode).toHaveClass(
@@ -74,9 +72,7 @@ describe('lib/BasicSegmentedPage', () => {
   });
 
   it('should set root class name', () => {
-    renderWithReduxAndTheme(
-      <SegmentedTabs items={items} rootClassName="rootClassName" />
-    );
+    superRender(<SegmentedTabs items={items} rootClassName="rootClassName" />);
 
     expect(getBySelector('.rootClassName')).toBeInTheDocument();
   });

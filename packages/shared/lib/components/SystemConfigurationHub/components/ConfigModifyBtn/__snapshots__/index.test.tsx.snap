@@ -4,49 +4,13 @@ exports[`base/System/components/ConfigModifyBtn render snap 1`] = `
 <body>
   <div>
     <div
-      class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
+      class="ant-space ant-space-horizontal ant-space-align-center ant-tooltip-open basic-tooltips-wrapper css-4jbtl9"
     >
       <div
         class="ant-space-item"
       >
         <button
-          class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-text ant-btn-icon-only basic-button-wrapper css-11ugcfo"
-          type="button"
-        >
-          <span
-            class="ant-btn-icon"
-          >
-            <svg
-              color="#292c33"
-              height="16"
-              viewBox="0 0 16 16"
-              width="16"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M6.162 12.667H14V14H2v-2.829l6.6-6.6 2.828 2.83zm3.38-9.038 1.415-1.414a.667.667 0 0 1 .942 0L13.785 4.1a.667.667 0 0 1 0 .942l-1.414 1.414z"
-                fill="currentColor"
-              />
-            </svg>
-          </span>
-        </button>
-      </div>
-    </div>
-  </div>
-</body>
-`;
-
-exports[`base/System/components/ConfigModifyBtn render snap 2`] = `
-<body>
-  <div>
-    <div
-      class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center ant-tooltip-open basic-tooltips-wrapper css-4jbtl9"
-    >
-      <div
-        class="ant-space-item"
-      >
-        <button
-          class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-text ant-btn-icon-only basic-button-wrapper css-11ugcfo"
+          class="ant-btn ant-btn-text ant-btn-icon-only basic-button-wrapper css-11ugcfo"
           type="button"
         >
           <span
@@ -71,7 +35,7 @@ exports[`base/System/components/ConfigModifyBtn render snap 2`] = `
   </div>
   <div>
     <div
-      class="ant-tooltip ant-zoom-big-fast-appear ant-zoom-big-fast-appear-prepare ant-zoom-big-fast css-dev-only-do-not-override-txh9fw ant-tooltip-placement-top"
+      class="ant-tooltip ant-zoom-big-fast-appear ant-zoom-big-fast-appear-prepare ant-zoom-big-fast ant-tooltip-placement-top"
       style="--arrow-x: 0px; --arrow-y: 0px; left: -1000vw; top: -1000vh; box-sizing: border-box;"
     >
       <div

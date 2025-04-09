@@ -3,49 +3,13 @@
 exports[`lib/CustomSelectSearchInput should render search input ui 1`] = `
 <div>
   <span
-    class="ant-input-affix-wrapper basic-input-wrapper custom-select-popup-search-input css-d0jdfn ant-input-affix-wrapper-borderless css-dev-only-do-not-override-ywkr0o"
+    class="ant-input-affix-wrapper basic-input-wrapper custom-select-popup-search-input css-d0jdfn ant-input-affix-wrapper-borderless"
   >
     <input
-      class="ant-input ant-input-borderless css-dev-only-do-not-override-ywkr0o"
+      class="ant-input ant-input-borderless"
       placeholder="搜索"
       type="text"
       value="test-value"
-    />
-    <span
-      class="ant-input-suffix"
-    >
-      <span
-        class="ant-input-clear-icon"
-        role="button"
-        tabindex="-1"
-      >
-        <svg
-          fill="currentColor"
-          height="14"
-          viewBox="0 0 14 14"
-          width="14"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <path
-            d="m7 6.175 2.887-2.887.825.825L7.825 7l2.887 2.888-.825.824L7 7.825l-2.888 2.887-.824-.824L6.175 7 3.288 4.113l.824-.825z"
-          />
-        </svg>
-      </span>
-    </span>
-  </span>
-</div>
-`;
-
-exports[`lib/CustomSelectSearchInput should render search value change 1`] = `
-<div>
-  <span
-    class="ant-input-affix-wrapper basic-input-wrapper custom-select-popup-search-input css-d0jdfn ant-input-affix-wrapper-borderless css-dev-only-do-not-override-ywkr0o"
-  >
-    <input
-      class="ant-input ant-input-borderless css-dev-only-do-not-override-ywkr0o"
-      placeholder="搜索"
-      type="text"
-      value="test-value-change"
     />
     <span
       class="ant-input-suffix"
