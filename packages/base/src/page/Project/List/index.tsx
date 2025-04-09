@@ -1,9 +1,6 @@
-import { IListProject } from '@actiontech/shared/lib/api/base/service/common';
+import { IListProjectV2 } from '@actiontech/shared/lib/api/base/service/common';
 import { DmsApi } from '@actiontech/shared/lib/api';
-import {
-  IListProjectsReturn,
-  IListProjectsV2Params
-} from '@actiontech/shared/lib/api/base/service/Project/index.d';
+import { IListProjectsV2Params } from '@actiontech/shared/lib/api/base/service/Project/index.d';
 import {
   ActiontechTable,
   useTableRequestError,
@@ -38,7 +35,7 @@ const ProjectList: React.FC = () => {
     useTableRequestError();
 
   const { pagination, tableChange } = useTableRequestParams<
-    IListProject,
+    IListProjectV2,
     IListProjectsV2Params
   >();
 
@@ -51,7 +48,7 @@ const ProjectList: React.FC = () => {
       const params: IListProjectsV2Params = {
         ...pagination
       };
-      return handleTableRequestError<IListProjectsReturn>(
+      return handleTableRequestError(
         DmsApi.ProjectService.ListProjectsV2(params)
       );
     },
@@ -62,7 +59,7 @@ const ProjectList: React.FC = () => {
   );
 
   const deleteProject = useCallback(
-    (record: IListProject) => {
+    (record: IListProjectV2) => {
       const { uid = '', name = '' } = record;
       DmsApi.ProjectService.DelProject({ project_uid: uid }).then((res) => {
         if (res.data.code === ResponseCode.SUCCESS) {
@@ -79,7 +76,7 @@ const ProjectList: React.FC = () => {
   );
 
   const archiveProject = useCallback(
-    (record: IListProject) => {
+    (record: IListProjectV2) => {
       const { uid = '', name = '' } = record;
       DmsApi.ProjectService.ArchiveProject({ project_uid: uid }).then((res) => {
         if (res.data.code === ResponseCode.SUCCESS) {
@@ -97,7 +94,7 @@ const ProjectList: React.FC = () => {
   );
 
   const unarchiveProject = useCallback(
-    (record: IListProject) => {
+    (record: IListProjectV2) => {
       const { uid = '', name = '' } = record;
       DmsApi.ProjectService.UnarchiveProject({ project_uid: uid }).then(
         (res) => {
@@ -117,7 +114,7 @@ const ProjectList: React.FC = () => {
   );
 
   const updateProject = useCallback(
-    (record: IListProject) => {
+    (record: IListProjectV2) => {
       dispatch(
         updateProjectModalStatus({
           modalName: ModalName.DMS_Update_Project,

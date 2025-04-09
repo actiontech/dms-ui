@@ -11,7 +11,7 @@ import { useRequest } from 'ahooks';
 import { ResponseCode } from '@actiontech/shared/lib/enum';
 import { message } from 'antd';
 import { useState } from 'react';
-import { IListProject } from '@actiontech/shared/lib/api/base/service/common';
+import { IListProjectV2 } from '@actiontech/shared/lib/api/base/service/common';
 
 interface BusinessSelectorProps {
   value?: EditableSelectValue;
@@ -23,7 +23,7 @@ const BusinessField = (props: BusinessSelectorProps) => {
 
   const [messageApi, contextHolder] = message.useMessage();
 
-  const [bindedProjectList, setBindedProjectList] = useState<IListProject[]>(
+  const [bindedProjectList, setBindedProjectList] = useState<IListProjectV2[]>(
     []
   );
 
@@ -34,8 +34,8 @@ const BusinessField = (props: BusinessSelectorProps) => {
     }).then((res) => {
       if (res.data.code === ResponseCode.SUCCESS) {
         return res.data.data?.map((item) => ({
-          value: item.id ?? 0,
-          label: item.name ?? ''
+          value: item.uid || '',
+          label: item.name || ''
         }));
       }
     })
@@ -72,7 +72,7 @@ const BusinessField = (props: BusinessSelectorProps) => {
     }).then((res) => {
       if (res.data.code === ResponseCode.SUCCESS) {
         setBindedProjectList(res.data.data ?? []);
-        if (bindedProjectList.length === 0) {
+        if (res.data.data?.length === 0) {
           deleteBusinessTag(Number(item.value));
         }
       }
@@ -97,10 +97,6 @@ const BusinessField = (props: BusinessSelectorProps) => {
     <>
       {contextHolder}
       <EditableSelect
-        // options={[
-        //   { value: '1', label: '市场部' },
-        //   { value: '2', label: '研发部' }
-        // ]}
         options={businessList ?? []}
         onAdd={onAddBusiness}
         onDelete={onDelete}
