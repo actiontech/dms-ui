@@ -15,10 +15,10 @@ import {
 import DataSourceForm from '../Form';
 import EmitterKey from '../../../../data/EmitterKey';
 import EventEmitter from '../../../../utils/EventEmitter';
-import DBService from '@actiontech/shared/lib/api/base/service/DBService';
 import { ResponseCode } from '@actiontech/shared/lib/enum';
-import { IDBService } from '@actiontech/shared/lib/api/base/service/common';
+import { IDBServiceV2 } from '@actiontech/shared/lib/api/base/service/common';
 import { DataSourceFormField } from '../Form/index.type';
+import { DmsApi } from '@actiontech/shared/lib/api';
 
 const AddDataSource = () => {
   const { t } = useTranslation();
@@ -34,7 +34,7 @@ const AddDataSource = () => {
 
   const addDatabase = async (values: DataSourceFormField) => {
     startSubmit();
-    const dbService: IDBService = {
+    const dbService: IDBServiceV2 = {
       name: values.name,
       desc: values.describe,
       db_type: values.type,
@@ -42,7 +42,9 @@ const AddDataSource = () => {
       port: values.port.toString(),
       user: values.user,
       password: values.password,
-      business: values.business,
+      environment_tag: {
+        uid: values.environmentTagId
+      },
       maintenance_times:
         values.maintenanceTime?.map((time) => ({
           maintenance_start_time: time.startTime,
@@ -68,7 +70,7 @@ const AddDataSource = () => {
       backup_max_rows: values.backupMaxRows
       // #endif
     };
-    return DBService.AddDBService({
+    return DmsApi.DBServiceService.AddDBServiceV2({
       db_service: dbService,
       project_uid: values.project
     })

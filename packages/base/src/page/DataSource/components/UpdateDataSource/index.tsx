@@ -11,20 +11,17 @@ import {
 } from '@actiontech/shared';
 import { PageLayoutHasFixedHeaderStyleWrapper } from '@actiontech/shared/lib/styleWrapper/element';
 import DataSourceForm from '../Form';
-
 import { useForm } from 'antd/es/form/Form';
 import { ResponseCode } from '@actiontech/shared/lib/enum';
-
 import { useCurrentProject } from '@actiontech/shared/lib/features';
 import EmitterKey from '../../../../data/EmitterKey';
 import EventEmitter from '../../../../utils/EventEmitter';
-
-import DBService from '@actiontech/shared/lib/api/base/service/DBService';
 import { DataSourceFormField } from '../Form/index.type';
-import { IListDBService } from '@actiontech/shared/lib/api/base/service/common';
-import { IUpdateDBServiceParams } from '@actiontech/shared/lib/api/base/service/DBService/index.d';
+import { IListDBServiceV2 } from '@actiontech/shared/lib/api/base/service/common';
+import { IUpdateDBServiceV2Params } from '@actiontech/shared/lib/api/base/service/DBService/index.d';
 import { LeftArrowOutlined } from '@actiontech/icons';
 import { ROUTE_PATHS } from '@actiontech/shared/lib/data/routePaths';
+import { DmsApi } from '@actiontech/shared/lib/api';
 
 const UpdateDataSource = () => {
   const { t } = useTranslation();
@@ -43,15 +40,17 @@ const UpdateDataSource = () => {
   const [submitLoading, { setTrue: startSubmit, setFalse: submitFinish }] =
     useBoolean();
   const [instanceInfo, setInstanceInfo] = useState<
-    IListDBService | undefined
+    IListDBServiceV2 | undefined
   >();
 
   const updateDatabase = async (values: DataSourceFormField) => {
     startSubmit();
-    const params: IUpdateDBServiceParams = {
+    const params: IUpdateDBServiceV2Params = {
       db_service_uid: urlParams.dbServiceUid ?? '',
       db_service: {
-        business: values.business,
+        environment_tag: {
+          uid: values.environmentTagId
+        },
         db_type: values.type,
         desc: values.describe,
         host: values.ip,
@@ -89,7 +88,7 @@ const UpdateDataSource = () => {
       params.db_service.password = values.password;
     }
 
-    return DBService.UpdateDBService(params)
+    return DmsApi.DBServiceService.UpdateDBServiceV2(params)
       .then((res) => {
         if (res.data.code === ResponseCode.SUCCESS) {
           messageApi.success(
@@ -114,7 +113,7 @@ const UpdateDataSource = () => {
 
   const getInstanceInfo = useCallback(() => {
     setRetryLoading(true);
-    DBService.ListDBServices({
+    DmsApi.DBServiceService.ListDBServicesV2({
       filter_by_uid: urlParams.dbServiceUid ?? '',
       page_size: 9999,
       page_index: 1,
