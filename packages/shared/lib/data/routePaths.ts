@@ -227,7 +227,7 @@ export const ROUTE_PATHS = {
       create: {
         prefix: '/sqle/project/:projectID/sql-management-conf',
         path: 'create',
-        query: 'instance_id&business'
+        query: 'instance_id&environment_tag'
       },
       update: {
         prefix: '/sqle/project/:projectID/sql-management-conf',
