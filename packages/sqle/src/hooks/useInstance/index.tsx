@@ -3,11 +3,11 @@ import { Select } from 'antd';
 import { useMemo, useState, useCallback } from 'react';
 import { ResponseCode } from '../../data/common';
 import { instanceListDefaultKey } from '../../data/common';
-import { IGetInstanceTipListV1Params } from '@actiontech/shared/lib/api/sqle/service/instance/index.d';
+import { IGetInstanceTipListV2Params } from '@actiontech/shared/lib/api/sqle/service/instance/index.d';
 import { IInstanceTipResV1 } from '@actiontech/shared/lib/api/sqle/service/common';
 import { DatabaseTypeLogo } from '@actiontech/shared';
-import instance from '@actiontech/shared/lib/api/sqle/service/instance';
 import useDatabaseType from '../useDatabaseType';
+import { SqleApi } from '@actiontech/shared/lib/api';
 
 const useInstance = () => {
   const [instanceList, setInstanceList] = useState<IInstanceTipResV1[]>([]);
@@ -16,12 +16,11 @@ const useInstance = () => {
 
   const updateInstanceList = useCallback(
     (
-      params: IGetInstanceTipListV1Params,
+      params: IGetInstanceTipListV2Params,
       options?: { onSuccess?: (data: IInstanceTipResV1[]) => void }
     ) => {
       setTrue();
-      instance
-        .getInstanceTipListV1(params)
+      SqleApi.InstanceService.getInstanceTipListV2(params)
         .then((res) => {
           if (res.data.code === ResponseCode.SUCCESS) {
             options?.onSuccess?.(res.data.data ?? []);
