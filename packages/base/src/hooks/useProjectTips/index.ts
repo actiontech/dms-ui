@@ -10,6 +10,7 @@ const useProjectTips = () => {
 
   const updateProjects = useCallback(() => {
     setTrue();
+    // todo ListProjectsV2联调后替换ListProjectsV2
     Project.ListProjects({ page_size: 9999 })
       .then((res) => {
         if (res.data.code === ResponseCode.SUCCESS) {

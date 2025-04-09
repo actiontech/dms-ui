@@ -149,3 +149,97 @@ export enum GetSqlManageListV2SortOrderEnum {
 
   'desc' = 'desc'
 }
+
+export enum exportSqlManageV2FilterPriorityEnum {
+  'high' = 'high',
+
+  'low' = 'low'
+}
+
+export enum exportSqlManageV2FilterSourceEnum {
+  'audit_plan' = 'audit_plan',
+
+  'sql_audit_record' = 'sql_audit_record'
+}
+
+export enum exportSqlManageV2FilterAuditLevelEnum {
+  'normal' = 'normal',
+
+  'notice' = 'notice',
+
+  'warn' = 'warn',
+
+  'error' = 'error'
+}
+
+export enum exportSqlManageV2FilterStatusEnum {
+  'unhandled' = 'unhandled',
+
+  'solved' = 'solved',
+
+  'ignored' = 'ignored',
+
+  'manual_audited' = 'manual_audited'
+}
+
+export enum exportSqlManageV2SortFieldEnum {
+  'first_appear_timestamp' = 'first_appear_timestamp',
+
+  'last_receive_timestamp' = 'last_receive_timestamp',
+
+  'fp_count' = 'fp_count'
+}
+
+export enum exportSqlManageV2SortOrderEnum {
+  'asc' = 'asc',
+
+  'desc' = 'desc'
+}
+
+export enum GetSqlManageListV3FilterSourceEnum {
+  'audit_plan' = 'audit_plan',
+
+  'sql_audit_record' = 'sql_audit_record'
+}
+
+export enum GetSqlManageListV3FilterAuditLevelEnum {
+  'normal' = 'normal',
+
+  'notice' = 'notice',
+
+  'warn' = 'warn',
+
+  'error' = 'error'
+}
+
+export enum GetSqlManageListV3FilterStatusEnum {
+  'unhandled' = 'unhandled',
+
+  'solved' = 'solved',
+
+  'ignored' = 'ignored',
+
+  'manual_audited' = 'manual_audited',
+
+  'sent' = 'sent'
+}
+
+export enum GetSqlManageListV3FilterPriorityEnum {
+  'high' = 'high',
+
+  'low' = 'low'
+}
+
+export enum GetSqlManageListV3SortFieldEnum {
+  'first_appear_timestamp' = 'first_appear_timestamp',
+
+  'last_receive_timestamp' = 'last_receive_timestamp',
+
+  'fp_count' = 'fp_count'
+}
+
+export enum GetSqlManageListV3SortOrderEnum {
+  'asc' = 'asc',
+
+  'desc' = 'desc'
+}

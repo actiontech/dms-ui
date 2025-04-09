@@ -2186,6 +2186,8 @@ export interface IInstanceAuditPlanDetailResV1 {
 
   business?: string;
 
+  environment?: string;
+
   instance_id?: string;
 
   instance_name?: string;
@@ -2227,6 +2229,8 @@ export interface IInstanceAuditPlanResV1 {
   create_time?: string;
 
   creator?: string;
+
+  environment?: string;
 
   instance_audit_plan_id?: number;
 
@@ -2937,6 +2941,18 @@ export interface ISQLStatementWithAuditResult {
   audit_results?: ISQLAuditResult[];
 
   sql_statement?: string;
+}
+
+export interface ISSHPublicKeyInfo {
+  public_key?: string;
+}
+
+export interface ISSHPublicKeyInfoV1Rsp {
+  code?: number;
+
+  data?: ISSHPublicKeyInfo;
+
+  message?: string;
 }
 
 export interface IScheduleTaskDefaultOption {

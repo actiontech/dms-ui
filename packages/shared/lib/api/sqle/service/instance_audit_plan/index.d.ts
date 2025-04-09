@@ -22,6 +22,8 @@ export interface IGetInstanceAuditPlansV1Params {
 
   filter_by_business?: string;
 
+  filter_by_environment_tag?: string;
+
   filter_by_db_type?: string;
 
   filter_by_instance_id?: string;
