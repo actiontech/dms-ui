@@ -16,8 +16,8 @@ import { IUpdateProjectV2Params } from '@actiontech/shared/lib/api/base/service/
 import { DmsApi } from '@actiontech/shared/lib/api';
 import { BasicButton, BasicDrawer } from '@actiontech/shared';
 import {
-  ProjectProjectPriorityEnum,
-  UpdateProjectProjectPriorityEnum
+  ProjectV2ProjectPriorityEnum,
+  UpdateProjectV2ProjectPriorityEnum
 } from '@actiontech/shared/lib/api/base/service/common.enum';
 
 const UpdateProject: React.FC = () => {
@@ -52,12 +52,11 @@ const UpdateProject: React.FC = () => {
       project_uid: selectProjectItem?.uid ?? '',
       project: {
         desc: values.desc,
-        is_fixed_business: values.isFixedBusiness,
         business_tag: {
-          id: values.businessTag
+          uid: values.businessTagId
         },
         project_priority:
-          values.priority as unknown as UpdateProjectProjectPriorityEnum
+          values.priority as unknown as UpdateProjectV2ProjectPriorityEnum
       }
     };
     startSubmit();
@@ -83,10 +82,9 @@ const UpdateProject: React.FC = () => {
       form.setFieldsValue({
         desc: selectProjectItem?.desc ?? '',
         name: selectProjectItem?.name ?? '',
-        isFixedBusiness: selectProjectItem?.is_fixed_business ?? false,
-        businessTag: selectProjectItem?.business_tag?.id ?? 0,
+        businessTagId: selectProjectItem?.business_tag?.uid,
         priority:
-          selectProjectItem?.project_priority as unknown as ProjectProjectPriorityEnum
+          selectProjectItem?.project_priority as unknown as ProjectV2ProjectPriorityEnum
       });
     }
   }, [form, visible, selectProjectItem]);

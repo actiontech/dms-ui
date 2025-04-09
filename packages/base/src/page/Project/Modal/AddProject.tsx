@@ -46,9 +46,8 @@ const AddProject: React.FC = () => {
       project: {
         name: values.name,
         desc: values.desc,
-        is_fixed_business: values.isFixedBusiness,
         business_tag: {
-          id: values.businessTag
+          uid: values.businessTagId
         },
         project_priority: values.priority
       }

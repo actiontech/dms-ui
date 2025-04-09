@@ -43,7 +43,7 @@ const ProjectForm: React.FC<ProjectFormProps> = ({
         <BasicSelect options={ProjectPriorityOptions} />
       </Form.Item>
       <Form.Item
-        name="businessTag"
+        name="businessTagId"
         rules={[
           {
             required: true

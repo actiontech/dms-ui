@@ -1,6 +1,6 @@
 import { t } from '../../../locale';
 import { formatTime } from '@actiontech/shared/lib/utils/Common';
-import { IListProject } from '@actiontech/shared/lib/api/base/service/common';
+import { IListProjectV2 } from '@actiontech/shared/lib/api/base/service/common';
 import { ActiontechTableColumn } from '@actiontech/shared/lib/components/ActiontechTable';
 import { TableColumnWithIconStyleWrapper } from '@actiontech/shared/lib/styleWrapper/element';
 import { FlagFilled, LockOutlined } from '@actiontech/icons';
@@ -13,8 +13,8 @@ import { ProjectPriorityDictionary } from 'sqle/src/page/GlobalDashboard/index.d
 import { ROUTE_PATHS } from '@actiontech/shared/lib/data/routePaths';
 
 export const ProjectListTableColumnFactory =
-  (): ActiontechTableColumn<IListProject> => {
-    const columns: ActiontechTableColumn<IListProject> = [
+  (): ActiontechTableColumn<IListProjectV2> => {
+    const columns: ActiontechTableColumn<IListProjectV2> = [
       {
         dataIndex: 'name',
         title: () => t('dmsProject.projectForm.name'),
