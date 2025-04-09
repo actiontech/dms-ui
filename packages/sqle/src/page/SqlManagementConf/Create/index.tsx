@@ -56,7 +56,7 @@ const Create: React.FC = () => {
     const searchParams = extractQueries(
       ROUTE_PATHS.SQLE.SQL_MANAGEMENT_CONF.create
     );
-    if (!!searchParams?.instance_id && !!searchParams?.business) {
+    if (!!searchParams?.instance_id && !!searchParams?.environment_tag) {
       resetFormExceptFreezingFields();
     } else {
       form.resetFields();
