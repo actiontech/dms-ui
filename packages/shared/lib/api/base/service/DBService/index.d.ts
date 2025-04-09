@@ -213,8 +213,6 @@ export interface IListDBServicesV2Params {
 
   order_by?: ListDBServicesV2OrderByEnum;
 
-  filter_by_business?: string;
-
   filter_last_connection_test_status?: ListDBServicesV2FilterLastConnectionTestStatusEnum;
 
   filter_by_host?: string;

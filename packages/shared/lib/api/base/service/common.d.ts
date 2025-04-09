@@ -450,7 +450,7 @@ export interface ICreateBusinessTagReq {
 }
 
 export interface ICreateEnvironmentTagReq {
-  environment_tag?: IEnvironmentTag;
+  environment_name?: string;
 }
 
 export interface IDBService {
@@ -642,9 +642,9 @@ export interface IDelSessionReply {
 }
 
 export interface IEnvironmentTag {
-  id?: number;
-
   name?: string;
+
+  uid?: string;
 }
 
 export interface IFeishuConfigurationResData {
@@ -2392,7 +2392,7 @@ export interface IUpdateDBServiceV2 {
 }
 
 export interface IUpdateEnvironmentTagReq {
-  environment_tag?: IEnvironmentTag;
+  environment_name?: string;
 }
 
 export interface IUpdateFeishuConfiguration {
