@@ -106,7 +106,7 @@ export const SqlManagementConfColumns: (
     },
     {
       dataIndex: 'business',
-      title: () => t('managementConf.list.table.column.business')
+      title: () => t('managementConf.list.table.column.environmentAttribute')
     },
     {
       dataIndex: 'audit_plan_types',

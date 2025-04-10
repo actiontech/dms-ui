@@ -9,7 +9,7 @@ import { ProjectSelectorLabelStyleWrapper } from './ProjectSelector/style';
 import UserMenu from './UserMenu';
 import ProjectTitle from './ProjectTitle';
 import MenuList from './MenuList';
-import Project from '@actiontech/shared/lib/api/base/service/Project';
+import { DmsApi } from '@actiontech/shared/lib/api';
 import { IBindProject } from './ProjectSelector/index.type';
 import EventEmitter from '../../../utils/EventEmitter';
 import EmitterKey from '../../../data/EmitterKey';
@@ -38,8 +38,7 @@ const SideMenu: React.FC = () => {
     refresh: refreshProjectList
   } = useRequest(
     () =>
-      // todo ListProjectsV2联调后替换ListProjectsV2
-      Project.ListProjects({ page_size: 9999 }).then(
+      DmsApi.ProjectService.ListProjectsV2({ page_size: 9999 }).then(
         (res) => res?.data?.data ?? []
       ),
     {

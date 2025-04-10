@@ -98,6 +98,7 @@ export default {
         sent: '已推送至其他平台'
       },
       business: '业务',
+      environmentAttribute: '环境属性',
       instanceName: '数据源',
       source: {
         label: '来源',

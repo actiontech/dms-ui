@@ -12,6 +12,7 @@ import { ResponseCode } from '@actiontech/shared/lib/enum';
 import { message } from 'antd';
 import { useState } from 'react';
 import { IListProjectV2 } from '@actiontech/shared/lib/api/base/service/common';
+import { useBoolean } from 'ahooks';
 
 interface BusinessSelectorProps {
   value?: EditableSelectValue;
@@ -23,11 +24,20 @@ const BusinessField = (props: BusinessSelectorProps) => {
 
   const [messageApi, contextHolder] = message.useMessage();
 
-  const [bindedProjectList, setBindedProjectList] = useState<IListProjectV2[]>(
+  const [boundProjectList, setBoundProjectList] = useState<IListProjectV2[]>(
     []
   );
 
-  const { data: businessList, refresh } = useRequest(() =>
+  const [
+    operationLoading,
+    { setTrue: startOperationLoading, setFalse: stopOperationLoading }
+  ] = useBoolean();
+
+  const {
+    data: businessList,
+    refresh,
+    loading
+  } = useRequest(() =>
     DmsApi.ProjectService.ListBusinessTags({
       page_index: 1,
       page_size: 9999
@@ -42,55 +52,75 @@ const BusinessField = (props: BusinessSelectorProps) => {
   );
 
   const onAddBusiness = (v: string) => {
+    startOperationLoading();
     DmsApi.ProjectService.CreateBusinessTag({
       business_tag: {
         name: v
       }
-    }).then((res) => {
-      if (res.data.code === ResponseCode.SUCCESS) {
-        messageApi.success(t('dmsProject.projectForm.createBusinessSuccess'));
-        refresh();
-      }
-    });
+    })
+      .then((res) => {
+        if (res.data.code === ResponseCode.SUCCESS) {
+          messageApi.success(t('dmsProject.projectForm.createBusinessSuccess'));
+          refresh();
+        }
+      })
+      .finally(() => {
+        stopOperationLoading();
+      });
   };
 
-  const deleteBusinessTag = (id: number) => {
+  const deleteBusinessTag = (id: string) => {
+    startOperationLoading();
     DmsApi.ProjectService.DeleteBusinessTag({
-      business_tag_uid: id.toString()
-    }).then((res) => {
-      if (res.data.code === ResponseCode.SUCCESS) {
-        messageApi.success(t('dmsProject.projectForm.deleteBusinessSuccess'));
-        refresh();
-      }
-    });
+      business_tag_uid: id
+    })
+      .then((res) => {
+        if (res.data.code === ResponseCode.SUCCESS) {
+          messageApi.success(t('dmsProject.projectForm.deleteBusinessSuccess'));
+          refresh();
+        }
+      })
+      .finally(() => {
+        stopOperationLoading();
+      });
   };
 
   const onDelete = (item: EditableSelectOption) => {
+    startOperationLoading();
     DmsApi.ProjectService.ListProjectsV2({
-      filter_by_business_tag: item.value.toString(),
+      filter_by_business_tag: item.label,
       page_size: 9999
-    }).then((res) => {
-      if (res.data.code === ResponseCode.SUCCESS) {
-        setBindedProjectList(res.data.data ?? []);
-        if (res.data.data?.length === 0) {
-          deleteBusinessTag(Number(item.value));
+    })
+      .then((res) => {
+        if (res.data.code === ResponseCode.SUCCESS) {
+          setBoundProjectList(res.data.data ?? []);
+          if (res.data.data?.length === 0) {
+            deleteBusinessTag(item.value.toString());
+          }
         }
-      }
-    });
+      })
+      .finally(() => {
+        stopOperationLoading();
+      });
   };
 
   const onUpdate = (item: EditableSelectOption) => {
+    startOperationLoading();
     DmsApi.ProjectService.UpdateBusinessTag({
       business_tag_uid: item.value.toString(),
       business_tag: {
         name: item.label
       }
-    }).then((res) => {
-      if (res.data.code === ResponseCode.SUCCESS) {
-        messageApi.success(t('dmsProject.projectForm.updateBusinessSuccess'));
-        refresh();
-      }
-    });
+    })
+      .then((res) => {
+        if (res.data.code === ResponseCode.SUCCESS) {
+          messageApi.success(t('dmsProject.projectForm.updateBusinessSuccess'));
+          refresh();
+        }
+      })
+      .finally(() => {
+        stopOperationLoading();
+      });
   };
 
   return (
@@ -105,13 +135,14 @@ const BusinessField = (props: BusinessSelectorProps) => {
         deletionConfirmTitle={t(
           'dmsProject.projectForm.deleteBusinessConfirmTitle'
         )}
+        loading={operationLoading || loading}
         {...props}
       />
-      <EmptyBox if={bindedProjectList.length > 0}>
+      <EmptyBox if={boundProjectList.length > 0}>
         <ReminderInformation
           status="error"
           message={t('dmsProject.projectForm.deleteBusinessError', {
-            name: bindedProjectList.map((item) => item.name).join(',')
+            name: boundProjectList.map((item) => item.name).join(',')
           })}
         />
       </EmptyBox>
