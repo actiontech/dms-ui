@@ -3,11 +3,11 @@ import {
   IGetOauth2TipsResData,
   IBasicInfo,
   ICompanyNotice,
-  IListDBService
+  IListDBServiceV2
 } from '@actiontech/shared/lib/api/base/service/common';
 import {
   GetUserAuthenticationTypeEnum,
-  ListDBServiceLastConnectionTestStatusEnum
+  ListDBServiceV2LastConnectionTestStatusEnum
 } from '@actiontech/shared/lib/api/base/service/common.enum';
 import { SupportLanguage } from '@actiontech/shared/lib/enum';
 
@@ -49,7 +49,7 @@ export const CompanyNoticeMockData: ICompanyNotice = {
   read_by_current_user: false
 };
 
-export const DBServicesList: IListDBService[] = [
+export const DBServicesList: IListDBServiceV2[] = [
   {
     uid: '1739531854064652288',
     name: 'mysql-1',
@@ -58,7 +58,10 @@ export const DBServicesList: IListDBService[] = [
     port: '33061',
     user: 'root',
     password: 'Zgl4cTg5xeIq9c/pkc8Y5A==',
-    business: 'test',
+    environment_tag: {
+      uid: '1',
+      name: 'test'
+    },
     maintenance_times: [],
     desc: '',
     source: 'SQLE',
@@ -79,7 +82,7 @@ export const DBServicesList: IListDBService[] = [
     ],
     last_connection_test_error_message: '',
     last_connection_test_status:
-      ListDBServiceLastConnectionTestStatusEnum.connect_success,
+      ListDBServiceV2LastConnectionTestStatusEnum.connect_success,
     last_connection_test_time: '2024-11-15T15:05:10.175+08:00',
     enable_backup: true
   },
@@ -91,7 +94,10 @@ export const DBServicesList: IListDBService[] = [
     port: '33062',
     user: 'root',
     password: 'Zgl4cTg5xeIq9c/pkc8Y5A==',
-    business: 'test-2',
+    environment_tag: {
+      uid: '2',
+      name: 'test2'
+    },
     maintenance_times: [],
     desc: '',
     source: 'SQLE',
@@ -108,7 +114,7 @@ export const DBServicesList: IListDBService[] = [
     is_enable_masking: false,
     last_connection_test_error_message: 'error message',
     last_connection_test_status:
-      ListDBServiceLastConnectionTestStatusEnum.connect_failed,
+      ListDBServiceV2LastConnectionTestStatusEnum.connect_failed,
     last_connection_test_time: '2024-11-15T15:05:10.175+08:00',
     enable_backup: false
   }

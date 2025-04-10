@@ -9,7 +9,7 @@ import { Form } from 'antd';
 import { DataSourceFormField } from './index.type';
 import dms from '../../../../testUtils/mockApi/global';
 import ruleTemplate from 'sqle/src/testUtils/mockApi/rule_template';
-import { IListDBService } from '@actiontech/shared/lib/api/base/service/common';
+import { IListDBServiceV2 } from '@actiontech/shared/lib/api/base/service/common';
 import DataSourceForm from '.';
 import { mockUseCurrentProject } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentProject';
 
@@ -18,7 +18,7 @@ describe('page/DataSource/DataSourceForm CE', () => {
   let getProjectTipsSpy: jest.SpyInstance;
   const customRender = (params?: {
     isUpdate: boolean;
-    defaultData?: IListDBService;
+    defaultData?: IListDBServiceV2;
   }) => {
     const { result } = renderHooksWithTheme(() =>
       Form.useForm<DataSourceFormField>()

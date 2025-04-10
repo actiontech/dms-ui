@@ -384,7 +384,7 @@ describe('page/DataSource/DataSourceList', () => {
       expect(navigateSpy).toHaveBeenCalledTimes(2);
       expect(navigateSpy).toHaveBeenNthCalledWith(
         2,
-        `/sqle/project/${projectID}/sql-management-conf/create?instance_id=${DBServicesList[1].uid}&business=${DBServicesList[1].business}`
+        `/sqle/project/${projectID}/sql-management-conf/create?instance_id=${DBServicesList[1].uid}&environment_tag=${DBServicesList[1].environment_tag?.uid}`
       );
     });
 
