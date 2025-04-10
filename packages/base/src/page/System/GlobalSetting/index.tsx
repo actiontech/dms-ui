@@ -11,7 +11,6 @@ import OperationRecordExpiredHours from './components/OperationRecordExpiredHour
 import UrlAddressPrefixTips from './components/UrlAddressPrefixTips';
 import CBOperationLogsExpiredHours from './components/CBOperationLogsExpiredHours';
 import { ConfigFieldMapMeta } from '@actiontech/shared';
-import SMSSetting from './SMSSetting';
 
 const GlobalSetting = () => {
   const { t } = useTranslation();
@@ -135,9 +134,6 @@ const GlobalSetting = () => {
           />
         </Spin>
       </>
-      {/* #if [ee] */}
-      <SMSSetting />
-      {/* #endif */}
     </SystemBasicTitle>
   );
 };
