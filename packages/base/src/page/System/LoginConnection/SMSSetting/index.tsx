@@ -14,7 +14,8 @@ import {
   ReadOnlyConfigColumnsType,
   ConfigSwitch,
   ConfigSubmitButtonField,
-  useConfigSwitchControls
+  useConfigSwitchControls,
+  CustomLabelContent
 } from '@actiontech/shared';
 import {
   PERMISSIONS,
@@ -37,7 +38,21 @@ const SMSSetting: React.FC = () => {
     enabled
   } = useConfigRender<FormFields>({
     switchFieldName,
-    switchFieldLabel: t('dmsSystem.global.smsSetting.title')
+    switchFieldLabel: (
+      <CustomLabelContent
+        title={t('dmsSystem.global.smsSetting.title')}
+        tips={
+          <Typography.Link
+            style={{ fontSize: '12px' }}
+            href="https://actiontech.github.io/sqle-docs/docs/user-manual/sys-configuration/MFA"
+            target="_blank"
+            rel="noreferrer"
+          >
+            {t('dmsSystem.global.smsSetting.configDocs')}
+          </Typography.Link>
+        }
+      />
+    )
   });
 
   const {

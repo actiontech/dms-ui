@@ -1,6 +1,9 @@
 import { useTranslation } from 'react-i18next';
 
-import { FormItemLabel } from '@actiontech/shared/lib/components/CustomForm';
+import {
+  CustomLabelContent,
+  FormItemLabel
+} from '@actiontech/shared/lib/components/CustomForm';
 import { BasicInput } from '@actiontech/shared';
 
 const ConfigField = () => {
@@ -9,8 +12,13 @@ const ConfigField = () => {
   return (
     <>
       <FormItemLabel
-        className="has-required-style"
-        label="url"
+        className="has-required-style has-label-tip"
+        label={
+          <CustomLabelContent
+            title="url"
+            tips={t('dmsSystem.global.smsSetting.urlTips')}
+          />
+        }
         name="url"
         rules={[{ required: true }]}
       >
@@ -21,8 +29,13 @@ const ConfigField = () => {
         />
       </FormItemLabel>
       <FormItemLabel
-        className="has-required-style"
-        label="token"
+        className="has-required-style has-label-tip"
+        label={
+          <CustomLabelContent
+            title="token"
+            tips={t('dmsSystem.global.smsSetting.tokenTips')}
+          />
+        }
         name="token"
         rules={[{ required: true }]}
       >

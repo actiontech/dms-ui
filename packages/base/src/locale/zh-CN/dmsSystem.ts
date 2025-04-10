@@ -249,10 +249,13 @@ export default {
     urlAddressFormatTips: '格式为 http(s)://ip:port/sqle',
 
     smsSetting: {
-      title: '短信服务',
+      title: '是否启用短信服务',
       testSuccess: '当前短信服务验证通过',
       testing: '正在测试短信服务...',
-      smsType: '短信服务类型'
+      smsType: '短信服务类型',
+      urlTips: '短信服务接口地址',
+      tokenTips: '接口访问令牌',
+      configDocs: '短信服务配置文档'
     }
   },
 
