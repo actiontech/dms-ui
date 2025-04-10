@@ -95,6 +95,7 @@ import {
   DirectAuditFileReqV2SqlTypeEnum,
   DirectAuditReqV2SqlTypeEnum,
   GetWorkflowTasksItemV2StatusEnum,
+  InstanceTipResV2SupportedBackupStrategyEnum,
   UpdateWorkflowScheduleReqV2NotifyTypeEnum,
   WorkflowRecordResV2StatusEnum,
   WorkflowResV2ExecModeEnum,
@@ -4249,6 +4250,14 @@ export interface IGetInstanceResV2 {
   message?: string;
 }
 
+export interface IGetInstanceTipsResV2 {
+  code?: number;
+
+  data?: IInstanceTipResV2[];
+
+  message?: string;
+}
+
 export interface IGetTaskAnalysisDataResV2 {
   code?: number;
 
@@ -4319,6 +4328,26 @@ export interface IInstanceResV2 {
   source?: string;
 
   sql_query_config?: ISQLQueryConfigResV1;
+}
+
+export interface IInstanceTipResV2 {
+  backup_max_rows?: number;
+
+  enable_backup?: boolean;
+
+  host?: string;
+
+  instance_id?: string;
+
+  instance_name?: string;
+
+  instance_type?: string;
+
+  port?: string;
+
+  supported_backup_strategy?: InstanceTipResV2SupportedBackupStrategyEnum[];
+
+  workflow_template_id?: number;
 }
 
 export interface IPartialSyncAuditPlanSQLsReqV2 {

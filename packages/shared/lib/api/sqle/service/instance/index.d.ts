@@ -9,6 +9,7 @@ import {
   IGetInstanceSchemaResV1,
   IListTableBySchemaResV1,
   IGetTableMetadataResV1,
+  IGetInstanceTipsResV2,
   IGetInstanceResV2
 } from '../common.d';
 
@@ -108,7 +109,7 @@ export interface IGetInstanceTipListV2Params {
   functional_module?: getInstanceTipListV2FunctionalModuleEnum;
 }
 
-export interface IGetInstanceTipListV2Return extends IGetInstanceTipsResV1 {}
+export interface IGetInstanceTipListV2Return extends IGetInstanceTipsResV2 {}
 
 export interface IGetInstanceV2Params {
   project_name: string;
