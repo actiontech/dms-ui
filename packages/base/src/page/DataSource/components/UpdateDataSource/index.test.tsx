@@ -1,7 +1,10 @@
 import { act, cleanup, fireEvent, screen } from '@testing-library/react';
 import Router, { useNavigate } from 'react-router-dom';
 import { superRender } from '../../../../testUtils/customRender';
-import { getBySelector } from '@actiontech/shared/lib/testUtil/customQuery';
+import {
+  getBySelector,
+  getAllBySelector
+} from '@actiontech/shared/lib/testUtil/customQuery';
 
 import dms from '../../../../testUtils/mockApi/global';
 import ruleTemplate from 'sqle/src/testUtils/mockApi/rule_template';
@@ -31,7 +34,7 @@ describe('page/DataSource/UpdateDataSource', () => {
   const navigateSpy = jest.fn();
   const projectID = mockProjectInfo.projectID;
   const uId = '1739531854064652288';
-  let getProjectTipsSpy: jest.SpyInstance;
+  let listEnvironmentTagsSpy: jest.SpyInstance;
   let getSystemModuleStatusSpy: jest.SpyInstance;
   const customRender = () => {
     return superRender(<UpdateDataSource />, undefined, {
@@ -49,8 +52,8 @@ describe('page/DataSource/UpdateDataSource', () => {
       dbServiceUid: uId
     });
     ruleTemplate.mockAllApi();
-    mockUseCurrentProject();
-    getProjectTipsSpy = project.getProjectTips();
+    listEnvironmentTagsSpy = mockUseCurrentProject();
+    project.listEnvironmentTags();
     getSystemModuleStatusSpy = system.getSystemModuleStatus();
   });
 
@@ -80,7 +83,7 @@ describe('page/DataSource/UpdateDataSource', () => {
     await act(async () => jest.advanceTimersByTime(9300));
     expect(requestRuleTemplateList).toHaveBeenCalled();
     expect(requestDriverOptions).toHaveBeenCalled();
-
+    expect(listEnvironmentTagsSpy).toHaveBeenCalled();
     expect(baseElement).toMatchSnapshot();
   });
 
@@ -101,7 +104,10 @@ describe('page/DataSource/UpdateDataSource', () => {
             port: '33061',
             user: 'root',
             password: 'Zgl4cTg5xeIq9c/pkc8Y5A==',
-            business: 'business1',
+            environment_tag: {
+              uid: '1',
+              name: 'environment-1'
+            },
             maintenance_times: [
               {
                 maintenance_start_time: {
@@ -143,7 +149,6 @@ describe('page/DataSource/UpdateDataSource', () => {
     const { baseElement } = customRender();
     await act(async () => jest.advanceTimersByTime(9300));
 
-    expect(getProjectTipsSpy).toHaveBeenCalled();
     expect(getSystemModuleStatusSpy).toHaveBeenCalledTimes(1);
     const updatePasswordLabel = getBySelector('label[title="更新连接密码"]');
     expect(updatePasswordLabel).not.toHaveClass('ant-form-item-required');
@@ -170,11 +175,12 @@ describe('page/DataSource/UpdateDataSource', () => {
       await act(async () => jest.advanceTimersByTime(300));
     });
     expect(screen.queryByText('provision: 链接失败')).not.toBeInTheDocument();
-    // business
-    fireEvent.mouseDown(getBySelector('#business', baseElement));
-    await act(async () => jest.advanceTimersByTime(300));
-    fireEvent.click(getBySelector('div[title="business2"]', baseElement));
-    await act(async () => jest.advanceTimersByTime(300));
+    // environment
+    fireEvent.click(getBySelector('.editable-select-trigger', baseElement));
+    await act(async () => jest.advanceTimersByTime(0));
+    const firstOption = getAllBySelector('.ant-dropdown-menu-item')[0];
+    fireEvent.click(firstOption);
+    await act(async () => jest.advanceTimersByTime(0));
 
     const eventEmitSpy = jest.spyOn(EventEmitter, 'emit');
     await act(async () => {

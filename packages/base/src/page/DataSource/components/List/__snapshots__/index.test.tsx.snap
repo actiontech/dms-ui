@@ -266,7 +266,7 @@ exports[`page/DataSource/DataSourceList render list no permission 1`] = `
                         class="ant-table-cell"
                         scope="col"
                       >
-                        所属业务
+                        环境属性
                       </th>
                       <th
                         class="ant-table-cell"
@@ -757,7 +757,7 @@ exports[`page/DataSource/DataSourceList render list snap 1`] = `
                         class="ant-table-cell"
                         scope="col"
                       >
-                        所属业务
+                        环境属性
                       </th>
                       <th
                         class="ant-table-cell"
@@ -1461,7 +1461,7 @@ exports[`page/DataSource/DataSourceList render table by filter enable masking 1`
                         class="ant-table-cell"
                         scope="col"
                       >
-                        所属业务
+                        环境属性
                       </th>
                       <th
                         class="ant-table-cell"
@@ -1686,7 +1686,11 @@ exports[`page/DataSource/DataSourceList render table by filter enable masking 1`
                       <td
                         class="ant-table-cell"
                       >
-                        test
+                        <span
+                          class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-1wks1o6 css-dev-only-do-not-override-bj9uhl"
+                        >
+                          test
+                        </span>
                       </td>
                       <td
                         class="ant-table-cell"
@@ -1830,7 +1834,11 @@ exports[`page/DataSource/DataSourceList render table by filter enable masking 1`
                       <td
                         class="ant-table-cell"
                       >
-                        test-2
+                        <span
+                          class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-1wks1o6 css-dev-only-do-not-override-bj9uhl"
+                        >
+                          test2
+                        </span>
                       </td>
                       <td
                         class="ant-table-cell"
@@ -2602,7 +2610,7 @@ exports[`page/DataSource/DataSourceList render table filter option val 1`] = `
                         class="ant-table-cell"
                         scope="col"
                       >
-                        所属业务
+                        环境属性
                       </th>
                       <th
                         class="ant-table-cell"
@@ -2827,7 +2835,11 @@ exports[`page/DataSource/DataSourceList render table filter option val 1`] = `
                       <td
                         class="ant-table-cell"
                       >
-                        test
+                        <span
+                          class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-1wks1o6 css-dev-only-do-not-override-bj9uhl"
+                        >
+                          test
+                        </span>
                       </td>
                       <td
                         class="ant-table-cell"
@@ -2971,7 +2983,11 @@ exports[`page/DataSource/DataSourceList render table filter option val 1`] = `
                       <td
                         class="ant-table-cell"
                       >
-                        test-2
+                        <span
+                          class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-1wks1o6 css-dev-only-do-not-override-bj9uhl"
+                        >
+                          test2
+                        </span>
                       </td>
                       <td
                         class="ant-table-cell"
@@ -3451,7 +3467,7 @@ exports[`page/DataSource/DataSourceList render table for action btn render table
                         class="ant-table-cell"
                         scope="col"
                       >
-                        所属业务
+                        环境属性
                       </th>
                       <th
                         class="ant-table-cell"
@@ -3676,7 +3692,11 @@ exports[`page/DataSource/DataSourceList render table for action btn render table
                       <td
                         class="ant-table-cell"
                       >
-                        test
+                        <span
+                          class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-1wks1o6 css-dev-only-do-not-override-bj9uhl"
+                        >
+                          test
+                        </span>
                       </td>
                       <td
                         class="ant-table-cell"
@@ -3778,7 +3798,11 @@ exports[`page/DataSource/DataSourceList render table for action btn render table
                       <td
                         class="ant-table-cell"
                       >
-                        test-2
+                        <span
+                          class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-1wks1o6 css-dev-only-do-not-override-bj9uhl"
+                        >
+                          test2
+                        </span>
                       </td>
                       <td
                         class="ant-table-cell"
@@ -4270,7 +4294,7 @@ exports[`page/DataSource/DataSourceList render table for action btn render table
                         class="ant-table-cell"
                         scope="col"
                       >
-                        所属业务
+                        环境属性
                       </th>
                       <th
                         class="ant-table-cell"
@@ -4495,7 +4519,11 @@ exports[`page/DataSource/DataSourceList render table for action btn render table
                       <td
                         class="ant-table-cell"
                       >
-                        test
+                        <span
+                          class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-1wks1o6 css-dev-only-do-not-override-bj9uhl"
+                        >
+                          test
+                        </span>
                       </td>
                       <td
                         class="ant-table-cell"
@@ -5170,7 +5198,7 @@ exports[`page/DataSource/DataSourceList render table for action btn render table
                         class="ant-table-cell"
                         scope="col"
                       >
-                        所属业务
+                        环境属性
                       </th>
                       <th
                         class="ant-table-cell"
@@ -5395,7 +5423,11 @@ exports[`page/DataSource/DataSourceList render table for action btn render table
                       <td
                         class="ant-table-cell"
                       >
-                        test
+                        <span
+                          class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-1wks1o6 css-dev-only-do-not-override-bj9uhl"
+                        >
+                          test
+                        </span>
                       </td>
                       <td
                         class="ant-table-cell"
@@ -6070,7 +6102,7 @@ exports[`page/DataSource/DataSourceList render table for api has data 1`] = `
                         class="ant-table-cell"
                         scope="col"
                       >
-                        所属业务
+                        环境属性
                       </th>
                       <th
                         class="ant-table-cell"
@@ -6295,7 +6327,11 @@ exports[`page/DataSource/DataSourceList render table for api has data 1`] = `
                       <td
                         class="ant-table-cell"
                       >
-                        test
+                        <span
+                          class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-1wks1o6 css-dev-only-do-not-override-bj9uhl"
+                        >
+                          test
+                        </span>
                       </td>
                       <td
                         class="ant-table-cell"
@@ -6439,7 +6475,11 @@ exports[`page/DataSource/DataSourceList render table for api has data 1`] = `
                       <td
                         class="ant-table-cell"
                       >
-                        test-2
+                        <span
+                          class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-1wks1o6 css-dev-only-do-not-override-bj9uhl"
+                        >
+                          test2
+                        </span>
                       </td>
                       <td
                         class="ant-table-cell"
@@ -6998,7 +7038,7 @@ exports[`page/DataSource/DataSourceList render table for api has data 2`] = `
                         class="ant-table-cell"
                         scope="col"
                       >
-                        所属业务
+                        环境属性
                       </th>
                       <th
                         class="ant-table-cell"
@@ -7223,7 +7263,11 @@ exports[`page/DataSource/DataSourceList render table for api has data 2`] = `
                       <td
                         class="ant-table-cell"
                       >
-                        test
+                        <span
+                          class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-1wks1o6 css-dev-only-do-not-override-bj9uhl"
+                        >
+                          test
+                        </span>
                       </td>
                       <td
                         class="ant-table-cell"
@@ -7367,7 +7411,11 @@ exports[`page/DataSource/DataSourceList render table for api has data 2`] = `
                       <td
                         class="ant-table-cell"
                       >
-                        test-2
+                        <span
+                          class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-1wks1o6 css-dev-only-do-not-override-bj9uhl"
+                        >
+                          test2
+                        </span>
                       </td>
                       <td
                         class="ant-table-cell"
@@ -7901,7 +7949,7 @@ exports[`page/DataSource/DataSourceList render table for api return no data 1`] 
                         class="ant-table-cell"
                         scope="col"
                       >
-                        所属业务
+                        环境属性
                       </th>
                       <th
                         class="ant-table-cell"
@@ -8367,7 +8415,7 @@ exports[`page/DataSource/DataSourceList render table for api return no data 2`] 
                         class="ant-table-cell"
                         scope="col"
                       >
-                        所属业务
+                        环境属性
                       </th>
                       <th
                         class="ant-table-cell"
@@ -8833,7 +8881,7 @@ exports[`page/DataSource/DataSourceList render table for column val 1`] = `
                         class="ant-table-cell"
                         scope="col"
                       >
-                        所属业务
+                        环境属性
                       </th>
                       <th
                         class="ant-table-cell"
@@ -9096,7 +9144,7 @@ exports[`page/DataSource/DataSourceList render table for column val 1`] = `
                       <td
                         class="ant-table-cell"
                       >
-                        test
+                        -
                       </td>
                       <td
                         class="ant-table-cell"
