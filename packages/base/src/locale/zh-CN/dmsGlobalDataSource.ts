@@ -17,7 +17,7 @@ export default {
     workflow: '工作流',
     maintenanceTime: '运维时间',
     source: '来源',
-    business: '所属业务',
+    environmentAttribute: '环境属性',
     dataMask: '数据查询脱敏',
     unfinishedWorkflowNum: '未完成工单数量',
     workbenchQueryAudit: '工作台查询审核'

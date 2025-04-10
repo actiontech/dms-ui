@@ -5,7 +5,7 @@ import {
 } from 'sqle/src/components/BackendForm';
 import { MaintenanceTimeValue } from './MaintenanceTimePicker';
 import { SQLQueryConfigAllowQueryWhenLessThanAuditLevelEnum } from '@actiontech/shared/lib/api/base/service/common.enum';
-import { IListDBService } from '@actiontech/shared/lib/api/base/service/common';
+import { IListDBServiceV2 } from '@actiontech/shared/lib/api/base/service/common';
 
 export type DataSourceFormField = {
   name: string;
@@ -16,7 +16,7 @@ export type DataSourceFormField = {
   user: string;
   password: string;
   project: string;
-  business: string;
+  environmentTagId: string;
   maintenanceTime: MaintenanceTimeValue[];
   needSqlAuditService?: boolean;
   ruleTemplateId?: string;
@@ -34,6 +34,6 @@ export type DataSourceFormField = {
 export type IDataSourceFormProps = {
   form: FormInstance<DataSourceFormField>;
   isUpdate?: boolean;
-  defaultData?: IListDBService;
+  defaultData?: IListDBServiceV2;
   submit: (values: DataSourceFormField) => Promise<void>;
 };

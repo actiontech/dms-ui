@@ -6,8 +6,7 @@ import EventEmitter from '../../../../utils/EventEmitter';
 import EmitterKey from '../../../../data/EmitterKey';
 import {
   useCurrentProject,
-  useDbServiceDriver,
-  useProjectBusinessTips
+  useDbServiceDriver
 } from '@actiontech/shared/lib/features';
 import {
   BasicInput,
@@ -53,6 +52,7 @@ import {
   getSystemModuleStatusModuleNameEnum
 } from '@actiontech/shared/lib/api/sqle/service/system/index.enum';
 import { ResponseCode } from '@actiontech/shared/lib/enum';
+import EnvironmentField from './EnvironmentField';
 
 const DataSourceForm: React.FC<IDataSourceFormProps> = (props) => {
   const { t } = useTranslation();
@@ -74,9 +74,6 @@ const DataSourceForm: React.FC<IDataSourceFormProps> = (props) => {
     updateDriverList,
     generateDriverSelectOptions
   } = useDbServiceDriver();
-
-  const { updateProjectBusinessTips, projectBusinessOption, isFixedBusiness } =
-    useProjectBusinessTips();
 
   const { updateProjects, projectIDOptions } = useProjectTips();
 
@@ -218,7 +215,7 @@ const DataSourceForm: React.FC<IDataSourceFormProps> = (props) => {
             ?.allow_query_when_less_than_audit_level,
         // #endif
         needUpdatePassword: false,
-        business: props.defaultData.business,
+        environmentTagId: props.defaultData.environment_tag?.uid ?? '',
         password: props.defaultData.password,
         // #if [dms]
         is_enable_masking: props.defaultData.is_enable_masking,
@@ -295,14 +292,6 @@ const DataSourceForm: React.FC<IDataSourceFormProps> = (props) => {
     updateDriverList();
     updateProjects();
   }, [updateDriverList, updateProjects]);
-
-  // #if [ee]
-  useEffect(() => {
-    if (project) {
-      updateProjectBusinessTips(project);
-    }
-  }, [updateProjectBusinessTips, project]);
-  // #endif
 
   useEffect(() => {
     if (projectID) {
@@ -391,31 +380,14 @@ const DataSourceForm: React.FC<IDataSourceFormProps> = (props) => {
             currentAsyncParams={params}
             isExternalInstance={isExternalInstance}
           />
-          <EmptyBox
-            if={isFixedBusiness}
-            defaultNode={
-              <FormItemLabel
-                className="has-required-style"
-                label={t('dmsDataSource.dataSourceForm.business')}
-                name="business"
-                rules={[{ required: true }]}
-              >
-                <BasicInput disabled={!project} />
-              </FormItemLabel>
-            }
+          <FormItemLabel
+            className="has-required-style"
+            label={t('dmsDataSource.dataSourceForm.environmentAttribute')}
+            name="environmentTagId"
+            rules={[{ required: true }]}
           >
-            <FormItemLabel
-              className="has-required-style"
-              label={t('dmsDataSource.dataSourceForm.business')}
-              name="business"
-              rules={[{ required: true }]}
-            >
-              <BasicSelect
-                options={projectBusinessOption()}
-                disabled={!project}
-              />
-            </FormItemLabel>
-          </EmptyBox>
+            <EnvironmentField projectID={project} disabled={!project} />
+          </FormItemLabel>
           <FormItemLabel
             className="has-label-tip"
             label={
