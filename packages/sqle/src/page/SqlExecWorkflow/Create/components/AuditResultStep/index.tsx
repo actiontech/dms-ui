@@ -12,7 +12,7 @@ import BatchSwitchBackupStrategyModal from './BatchSwitchBackupStrategyModal';
 import { useState, useEffect, useMemo } from 'react';
 import useInstance from '../../../../../hooks/useInstance';
 import { useCurrentProject } from '@actiontech/shared/lib/features';
-import { InstanceTipResV1SupportedBackupStrategyEnum } from '@actiontech/shared/lib/api/sqle/service/common.enum';
+import { InstanceTipResV2SupportedBackupStrategyEnum } from '@actiontech/shared/lib/api/sqle/service/common.enum';
 
 const AuditResultStep: React.FC<AuditResultStepProps> = ({
   tasks,
@@ -51,7 +51,7 @@ const AuditResultStep: React.FC<AuditResultStepProps> = ({
   const [
     currentTaskSupportedBackupPolicies,
     setCurrentTaskSupportedBackupPolicies
-  ] = useState<InstanceTipResV1SupportedBackupStrategyEnum[]>();
+  ] = useState<InstanceTipResV2SupportedBackupStrategyEnum[]>();
 
   const { instanceList, updateInstanceList } = useInstance();
 
@@ -67,7 +67,7 @@ const AuditResultStep: React.FC<AuditResultStepProps> = ({
 
   const tasksSupportedBackupPolicies = useMemo(() => {
     const policies: {
-      [key: number]: InstanceTipResV1SupportedBackupStrategyEnum[] | undefined;
+      [key: number]: InstanceTipResV2SupportedBackupStrategyEnum[] | undefined;
     } = {};
     tasks.forEach((task) => {
       if (task.task_id) {
@@ -81,7 +81,7 @@ const AuditResultStep: React.FC<AuditResultStepProps> = ({
 
   const onBatchSwitchBackupPolicy = (
     currentTaskID?: string,
-    supportedBackupStrategy?: InstanceTipResV1SupportedBackupStrategyEnum[]
+    supportedBackupStrategy?: InstanceTipResV2SupportedBackupStrategyEnum[]
   ) => {
     openSwitchBackupPolicyModal();
     setTaskID(currentTaskID);
