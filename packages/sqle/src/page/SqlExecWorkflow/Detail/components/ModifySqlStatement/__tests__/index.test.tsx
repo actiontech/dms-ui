@@ -19,7 +19,7 @@ import workflowTemplate from '../../../../../../testUtils/mockApi/workflowTempla
 import instance from '../../../../../../testUtils/mockApi/instance';
 import { useSelector } from 'react-redux';
 import { mockUseDbServiceDriver } from '@actiontech/shared/lib/testUtil/mockHook/mockUseDbServiceDriver';
-import { InstanceTipResV1SupportedBackupStrategyEnum } from '@actiontech/shared/lib/api/sqle/service/common.enum';
+import { InstanceTipResV2SupportedBackupStrategyEnum } from '@actiontech/shared/lib/api/sqle/service/common.enum';
 
 jest.mock('react-redux', () => ({
   ...jest.requireActual('react-redux'),
@@ -82,7 +82,7 @@ describe('sqle/ExecWorkflow/Detail/ModifySqlStatement', () => {
             port: '33061',
             enable_backup: true,
             supported_backup_strategy: [
-              InstanceTipResV1SupportedBackupStrategyEnum.manual
+              InstanceTipResV2SupportedBackupStrategyEnum.manual
             ],
             backup_max_rows: 1000
           }
