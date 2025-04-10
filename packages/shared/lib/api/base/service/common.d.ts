@@ -2416,7 +2416,7 @@ export interface IUpdateDBServiceV2 {
 
   enable_backup?: boolean;
 
-  environment_tag: IEnvironmentTag;
+  environment_tag_uid: string;
 
   host: string;
 
