@@ -48,9 +48,7 @@ const UpdateDataSource = () => {
     const params: IUpdateDBServiceV2Params = {
       db_service_uid: urlParams.dbServiceUid ?? '',
       db_service: {
-        environment_tag: {
-          uid: values.environmentTagId
-        },
+        environment_tag_uid: values.environmentTagId,
         db_type: values.type,
         desc: values.describe,
         host: values.ip,

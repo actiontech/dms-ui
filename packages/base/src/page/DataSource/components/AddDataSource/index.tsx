@@ -42,9 +42,7 @@ const AddDataSource = () => {
       port: values.port.toString(),
       user: values.user,
       password: values.password,
-      environment_tag: {
-        uid: values.environmentTagId
-      },
+      environment_tag_uid: values.environmentTagId,
       maintenance_times:
         values.maintenanceTime?.map((time) => ({
           maintenance_start_time: time.startTime,

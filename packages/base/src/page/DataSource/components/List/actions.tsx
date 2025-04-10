@@ -121,9 +121,7 @@ export const DataSourcePageHeaderActions = (
     </PermissionControl>
   ),
   'add-data-source': (
-    <PermissionControl
-      permission={PERMISSIONS.ACTIONS.BASE.DB_SERVICE.BATCH_IMPORT}
-    >
+    <PermissionControl permission={PERMISSIONS.ACTIONS.BASE.DB_SERVICE.ADD}>
       <ActionButton
         text={t('dmsDataSource.addDatabase')}
         type="primary"
