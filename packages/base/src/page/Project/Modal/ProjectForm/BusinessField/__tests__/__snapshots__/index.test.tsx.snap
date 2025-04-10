@@ -1,0 +1,32 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Project/BusinessField render init snap 1`] = `
+<body>
+  <div>
+    <div
+      class="ant-dropdown-trigger editable-select-trigger css-kk4zre"
+    >
+      <span
+        class="placeholder"
+      >
+        请选择{{name}}
+      </span>
+      <span
+        class="arrow-icon"
+      >
+        <svg
+          height="20"
+          viewBox="0 0 16 16"
+          width="20"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="m8 8.781 3.3-3.3.943.943L8 10.667 3.757 6.424l.943-.943z"
+            fill="#C3C6CD"
+          />
+        </svg>
+      </span>
+    </div>
+  </div>
+</body>
+`;
