@@ -22,7 +22,7 @@ exports[`base/System/GlobalSetting/SMSSetting render edit sms configuration 1`] 
                 class="switch-field-wrapper"
               >
                 <div
-                  class="ant-form-item  css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+                  class="ant-form-item has-label-tip css-1jlm9cy css-dev-only-do-not-override-txh9fw"
                 >
                   <div
                     class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
@@ -32,9 +32,28 @@ exports[`base/System/GlobalSetting/SMSSetting render edit sms configuration 1`] 
                     >
                       <label
                         class="ant-form-item-no-colon"
-                        title="短信服务"
+                        title=""
                       >
-                        短信服务
+                        <div
+                          class="label-cont-custom"
+                        >
+                          <div>
+                            是否启用短信服务
+                          </div>
+                          <div
+                            class="tip-content-box"
+                          >
+                            <a
+                              class="ant-typography css-dev-only-do-not-override-txh9fw"
+                              href="https://actiontech.github.io/sqle-docs/docs/user-manual/sys-configuration/MFA"
+                              rel="noreferrer"
+                              style="font-size: 12px;"
+                              target="_blank"
+                            >
+                              短信服务配置文档
+                            </a>
+                          </div>
+                        </div>
                       </label>
                     </div>
                     <div
@@ -179,7 +198,7 @@ exports[`base/System/GlobalSetting/SMSSetting render edit sms configuration 1`] 
                 class="config-field-wrapper"
               >
                 <div
-                  class="ant-form-item has-required-style css-1jlm9cy css-dev-only-do-not-override-txh9fw ant-form-item-has-success"
+                  class="ant-form-item has-required-style has-label-tip css-1jlm9cy css-dev-only-do-not-override-txh9fw ant-form-item-has-success"
                 >
                   <div
                     class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
@@ -190,9 +209,20 @@ exports[`base/System/GlobalSetting/SMSSetting render edit sms configuration 1`] 
                       <label
                         class="ant-form-item-required ant-form-item-no-colon"
                         for="url"
-                        title="url"
+                        title=""
                       >
-                        url
+                        <div
+                          class="label-cont-custom"
+                        >
+                          <div>
+                            url
+                          </div>
+                          <div
+                            class="tip-content-box"
+                          >
+                            短信服务接口地址
+                          </div>
+                        </div>
                       </label>
                     </div>
                     <div
@@ -218,7 +248,7 @@ exports[`base/System/GlobalSetting/SMSSetting render edit sms configuration 1`] 
                   </div>
                 </div>
                 <div
-                  class="ant-form-item has-required-style css-1jlm9cy css-dev-only-do-not-override-txh9fw ant-form-item-has-success"
+                  class="ant-form-item has-required-style has-label-tip css-1jlm9cy css-dev-only-do-not-override-txh9fw ant-form-item-has-success"
                 >
                   <div
                     class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
@@ -229,9 +259,20 @@ exports[`base/System/GlobalSetting/SMSSetting render edit sms configuration 1`] 
                       <label
                         class="ant-form-item-required ant-form-item-no-colon"
                         for="token"
-                        title="token"
+                        title=""
                       >
-                        token
+                        <div
+                          class="label-cont-custom"
+                        >
+                          <div>
+                            token
+                          </div>
+                          <div
+                            class="tip-content-box"
+                          >
+                            接口访问令牌
+                          </div>
+                        </div>
                       </label>
                     </div>
                     <div
@@ -378,7 +419,7 @@ exports[`base/System/GlobalSetting/SMSSetting render init snap 1`] = `
                 class="switch-field-wrapper"
               >
                 <div
-                  class="ant-form-item  css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+                  class="ant-form-item has-label-tip css-1jlm9cy css-dev-only-do-not-override-txh9fw"
                 >
                   <div
                     class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
@@ -388,9 +429,28 @@ exports[`base/System/GlobalSetting/SMSSetting render init snap 1`] = `
                     >
                       <label
                         class="ant-form-item-no-colon"
-                        title="短信服务"
+                        title=""
                       >
-                        短信服务
+                        <div
+                          class="label-cont-custom"
+                        >
+                          <div>
+                            是否启用短信服务
+                          </div>
+                          <div
+                            class="tip-content-box"
+                          >
+                            <a
+                              class="ant-typography css-dev-only-do-not-override-txh9fw"
+                              href="https://actiontech.github.io/sqle-docs/docs/user-manual/sys-configuration/MFA"
+                              rel="noreferrer"
+                              style="font-size: 12px;"
+                              target="_blank"
+                            >
+                              短信服务配置文档
+                            </a>
+                          </div>
+                        </div>
                       </label>
                     </div>
                     <div
@@ -537,7 +597,7 @@ exports[`base/System/GlobalSetting/SMSSetting render init snap 1`] = `
                 hidden=""
               >
                 <div
-                  class="ant-form-item has-required-style css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+                  class="ant-form-item has-required-style has-label-tip css-1jlm9cy css-dev-only-do-not-override-txh9fw"
                 >
                   <div
                     class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
@@ -548,9 +608,20 @@ exports[`base/System/GlobalSetting/SMSSetting render init snap 1`] = `
                       <label
                         class="ant-form-item-required ant-form-item-no-colon"
                         for="url"
-                        title="url"
+                        title=""
                       >
-                        url
+                        <div
+                          class="label-cont-custom"
+                        >
+                          <div>
+                            url
+                          </div>
+                          <div
+                            class="tip-content-box"
+                          >
+                            短信服务接口地址
+                          </div>
+                        </div>
                       </label>
                     </div>
                     <div
@@ -576,7 +647,7 @@ exports[`base/System/GlobalSetting/SMSSetting render init snap 1`] = `
                   </div>
                 </div>
                 <div
-                  class="ant-form-item has-required-style css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+                  class="ant-form-item has-required-style has-label-tip css-1jlm9cy css-dev-only-do-not-override-txh9fw"
                 >
                   <div
                     class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
@@ -587,9 +658,20 @@ exports[`base/System/GlobalSetting/SMSSetting render init snap 1`] = `
                       <label
                         class="ant-form-item-required ant-form-item-no-colon"
                         for="token"
-                        title="token"
+                        title=""
                       >
-                        token
+                        <div
+                          class="label-cont-custom"
+                        >
+                          <div>
+                            token
+                          </div>
+                          <div
+                            class="tip-content-box"
+                          >
+                            接口访问令牌
+                          </div>
+                        </div>
                       </label>
                     </div>
                     <div
@@ -801,7 +883,7 @@ exports[`base/System/GlobalSetting/SMSSetting render test sms connection 1`] = `
                 class="switch-field-wrapper"
               >
                 <div
-                  class="ant-form-item  css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+                  class="ant-form-item has-label-tip css-1jlm9cy css-dev-only-do-not-override-txh9fw"
                 >
                   <div
                     class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
@@ -811,9 +893,28 @@ exports[`base/System/GlobalSetting/SMSSetting render test sms connection 1`] = `
                     >
                       <label
                         class="ant-form-item-no-colon"
-                        title="短信服务"
+                        title=""
                       >
-                        短信服务
+                        <div
+                          class="label-cont-custom"
+                        >
+                          <div>
+                            是否启用短信服务
+                          </div>
+                          <div
+                            class="tip-content-box"
+                          >
+                            <a
+                              class="ant-typography css-dev-only-do-not-override-txh9fw"
+                              href="https://actiontech.github.io/sqle-docs/docs/user-manual/sys-configuration/MFA"
+                              rel="noreferrer"
+                              style="font-size: 12px;"
+                              target="_blank"
+                            >
+                              短信服务配置文档
+                            </a>
+                          </div>
+                        </div>
                       </label>
                     </div>
                     <div
@@ -959,7 +1060,7 @@ exports[`base/System/GlobalSetting/SMSSetting render test sms connection 1`] = `
                 hidden=""
               >
                 <div
-                  class="ant-form-item has-required-style css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+                  class="ant-form-item has-required-style has-label-tip css-1jlm9cy css-dev-only-do-not-override-txh9fw"
                 >
                   <div
                     class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
@@ -970,9 +1071,20 @@ exports[`base/System/GlobalSetting/SMSSetting render test sms connection 1`] = `
                       <label
                         class="ant-form-item-required ant-form-item-no-colon"
                         for="url"
-                        title="url"
+                        title=""
                       >
-                        url
+                        <div
+                          class="label-cont-custom"
+                        >
+                          <div>
+                            url
+                          </div>
+                          <div
+                            class="tip-content-box"
+                          >
+                            短信服务接口地址
+                          </div>
+                        </div>
                       </label>
                     </div>
                     <div
@@ -998,7 +1110,7 @@ exports[`base/System/GlobalSetting/SMSSetting render test sms connection 1`] = `
                   </div>
                 </div>
                 <div
-                  class="ant-form-item has-required-style css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+                  class="ant-form-item has-required-style has-label-tip css-1jlm9cy css-dev-only-do-not-override-txh9fw"
                 >
                   <div
                     class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
@@ -1009,9 +1121,20 @@ exports[`base/System/GlobalSetting/SMSSetting render test sms connection 1`] = `
                       <label
                         class="ant-form-item-required ant-form-item-no-colon"
                         for="token"
-                        title="token"
+                        title=""
                       >
-                        token
+                        <div
+                          class="label-cont-custom"
+                        >
+                          <div>
+                            token
+                          </div>
+                          <div
+                            class="tip-content-box"
+                          >
+                            接口访问令牌
+                          </div>
+                        </div>
                       </label>
                     </div>
                     <div
