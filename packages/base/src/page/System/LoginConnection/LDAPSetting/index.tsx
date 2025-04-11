@@ -14,7 +14,10 @@ import useConfigSwitch from '../../hooks/useConfigSwitch';
 import Configuration from '@actiontech/shared/lib/api/base/service/Configuration';
 import { LDAPFormFields } from './index.type';
 import { ResponseCode } from '@actiontech/shared/lib/enum';
-import { ILDAPConfigurationResData } from '@actiontech/shared/lib/api/base/service/common';
+import {
+  ILDAPConfiguration,
+  ILDAPConfigurationResData
+} from '@actiontech/shared/lib/api/base/service/common';
 import {
   PERMISSIONS,
   PermissionControl
@@ -76,11 +79,24 @@ const LDAPSetting = () => {
     { setTrue: startUpdateLdap, setFalse: updateLdapFinish }
   ] = useBoolean();
   const handleSubmit = (values: LDAPFormFields) => {
+    const params: ILDAPConfiguration = {
+      enable_ldap: values.enable_ldap,
+      enable_ssl: values.enable_ssl,
+      ldap_connect_dn: values.ldap_connect_dn,
+      ldap_search_base_dn: values.ldap_search_base_dn,
+      ldap_server_host: values.ldap_server_host,
+      ldap_server_port: values.ldap_server_port,
+      ldap_user_email_rdn_key: values.ldap_user_email_rdn_key,
+      ldap_user_name_rdn_key: values.ldap_user_name_rdn_key
+    };
+
+    if (values.update_password) {
+      params.ldap_connect_pwd = values.ldap_connect_pwd;
+    }
+
     startUpdateLdap();
     Configuration.UpdateLDAPConfiguration({
-      ldap: {
-        ...values
-      }
+      ldap: params
     })
       .then((res) => {
         if (res.data.code === ResponseCode.SUCCESS) {

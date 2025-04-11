@@ -8,4 +8,5 @@ export type LDAPFormFields = {
   ldap_search_base_dn?: string;
   ldap_user_name_rdn_key?: string;
   ldap_user_email_rdn_key?: string;
+  update_password?: boolean;
 };

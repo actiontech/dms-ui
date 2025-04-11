@@ -1,6 +1,9 @@
-import { cleanup, fireEvent, act } from '@testing-library/react';
+import { cleanup, fireEvent, act, screen } from '@testing-library/react';
 import { renderWithTheme } from '@actiontech/shared/lib/testUtil/customRender';
-import { getBySelector } from '@actiontech/shared/lib/testUtil/customQuery';
+import {
+  getBySelector,
+  queryBySelector
+} from '@actiontech/shared/lib/testUtil/customQuery';
 
 import { Form } from 'antd';
 import ConfigField from './ConfigField';
@@ -54,5 +57,17 @@ describe('base/System/LoginConnection/LDAPSetting/ConfigField', () => {
       }
     });
     await act(async () => jest.advanceTimersByTime(500));
+  });
+
+  it('should render snap when update_password is true', () => {
+    const { baseElement } = customRender();
+
+    expect(baseElement.querySelectorAll('.ant-form-item-hidden').length).toBe(
+      1
+    );
+    fireEvent.click(queryBySelector('#update_password', baseElement)!);
+    expect(baseElement.querySelectorAll('.ant-form-item-hidden').length).toBe(
+      0
+    );
   });
 });
