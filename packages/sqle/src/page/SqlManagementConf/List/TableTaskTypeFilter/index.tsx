@@ -48,7 +48,9 @@ const TableTaskTypeFilter = (props: TableTaskTypeFilterProps) => {
         desc && /Top\s+SQL$/i.test(desc)
           ? 'Top SQL'
           : desc ?? 'custom_action_desc';
-      currentDesc && dataTypeSource.add(currentDesc);
+      if (currentDesc) {
+        dataTypeSource.add(currentDesc);
+      }
       if (typeof instance_type === undefined) {
         return;
       }

@@ -22,8 +22,7 @@ type ExtractPathParams<T extends string> = string extends T
 // 提取查询参数
 export type ExtractPathQueries<T extends string> = string extends T
   ? Record<string, string | undefined>
-  : // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  T extends `${infer Param}&${infer Rest}`
+  : T extends `${infer Param}&${infer Rest}`
   ? { [K in Param]?: string } & ExtractPathQueries<Rest>
   : T extends `${infer Param}`
   ? { [K in Param]?: string }

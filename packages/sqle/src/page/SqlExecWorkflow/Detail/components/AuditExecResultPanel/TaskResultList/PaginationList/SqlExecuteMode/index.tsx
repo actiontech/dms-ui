@@ -106,13 +106,12 @@ const SqlExecuteMode: React.FC<SqlExecuteModeProps> = ({
           </span>
         ),
         onChange: (page, pageSize) => {
-          tableChange &&
-            tableChange(
-              { current: page, pageSize },
-              {},
-              {},
-              { currentDataSource: [], action: 'paginate' }
-            );
+          tableChange?.(
+            { current: page, pageSize },
+            {},
+            {},
+            { currentDataSource: [], action: 'paginate' }
+          );
         }
       }}
     />

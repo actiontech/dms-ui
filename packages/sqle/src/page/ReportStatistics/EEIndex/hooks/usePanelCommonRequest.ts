@@ -25,7 +25,9 @@ const usePanelCommonRequest = <
     const { unsubscribe } = eventEmitter.subscribe(
       EmitterKey.Refresh_Report_Statistics,
       () => {
-        !noDispatchEmitter && getData();
+        if (!noDispatchEmitter) {
+          getData();
+        }
       }
     );
     return unsubscribe;

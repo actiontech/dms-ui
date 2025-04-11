@@ -4,7 +4,7 @@ import { Command } from 'commander';
 import { CreateDMSPage } from './create-dms-page';
 
 const program = new Command();
-// eslint-disable-next-line @typescript-eslint/no-var-requires
+// eslint-disable-next-line @typescript-eslint/no-require-imports
 const pkg = require('../package.json');
 
 program.name(pkg.name).description(pkg.description).version(pkg.version);

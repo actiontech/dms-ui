@@ -36,7 +36,7 @@ export const WorkflowRollbackSqlTableColumn: () => ActiontechTableColumn<
       title: 'SQL',
       className: 'ellipsis-column-width',
       width: 350,
-      render: (sql_fingerprint, record) => {
+      render: (sql_fingerprint) => {
         if (!sql_fingerprint) return null;
         return (
           <SQLRenderer.Snippet

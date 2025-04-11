@@ -114,7 +114,10 @@ const SqlExecWorkflowList: React.FC = () => {
   );
 
   const { filterButtonMeta, filterContainerMeta, updateAllSelectedFilterItem } =
-    useTableFilterContainer(columns, updateTableFilterInfo, ExtraFilterMeta());
+    useTableFilterContainer<
+      WorkflowDetailResV1WithExtraParams,
+      SqlExecWorkflowListTableFilterParam
+    >(columns, updateTableFilterInfo, ExtraFilterMeta());
 
   const filterCustomProps = useMemo(() => {
     return new Map<keyof WorkflowDetailResV1WithExtraParams, FilterCustomProps>(

@@ -1,6 +1,6 @@
 import { TableToolbarProps } from '../index.type';
 import ColumnsSetting from './ColumnsSetting';
-import { Space, Spin, ConfigProvider } from 'antd';
+import { Space, Spin } from 'antd';
 import useTableAction from '../hooks/useTableAction';
 import FilterButton from './FilterButton';
 import RefreshButton from './RefreshButton';
@@ -20,7 +20,7 @@ const ToolBar = <T extends Record<string, any>>({
   className = '',
   noStyle = false,
   style,
-  loading = false
+  loading
 }: TableToolbarProps<T>) => {
   const { renderAction } = useTableAction();
 
@@ -28,37 +28,39 @@ const ToolBar = <T extends Record<string, any>>({
 
   const columnsSetting = tableContextValue?.setting ?? setting;
 
-  return (
-    <ConfigProvider
-      theme={{
-        token: {
-          fontSize: 13
-        }
-      }}
-    >
-      <Spin spinning={loading} delay={300}>
-        <ToolbarStyleWrapper
-          className={classnames(className, {
-            'full-width-element flex-space-between actiontech-table-toolbar-namespace':
-              !noStyle
-          })}
-          style={style}
-          wrap
-        >
-          <Space size={12}>
-            {children}
-            {searchInput && <SearchInput {...searchInput} />}
-            {filterButton && <FilterButton {...filterButton} />}
-          </Space>
+  const render = () => {
+    return (
+      <ToolbarStyleWrapper
+        className={classnames(className, {
+          'full-width-element flex-space-between actiontech-table-toolbar-namespace':
+            !noStyle
+        })}
+        style={style}
+        wrap
+      >
+        <Space size={12}>
+          {children}
+          {searchInput && <SearchInput {...searchInput} />}
+          {filterButton && <FilterButton {...filterButton} />}
+        </Space>
 
-          <Space size={12}>
-            {!!actions && renderAction(actions)}
-            {!!columnsSetting && <ColumnsSetting<T> {...columnsSetting} />}
-            {!!refreshButton && <RefreshButton {...refreshButton} />}
-          </Space>
-        </ToolbarStyleWrapper>
-      </Spin>
-    </ConfigProvider>
+        <Space size={12}>
+          {!!actions && renderAction(actions)}
+          {!!columnsSetting && <ColumnsSetting<T> {...columnsSetting} />}
+          {!!refreshButton && <RefreshButton {...refreshButton} />}
+        </Space>
+      </ToolbarStyleWrapper>
+    );
+  };
+
+  if (typeof loading !== 'boolean') {
+    return render();
+  }
+
+  return (
+    <Spin spinning={loading} delay={300}>
+      {render()}
+    </Spin>
   );
 };
 
