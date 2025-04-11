@@ -1,7 +1,7 @@
-import { IInstanceTipResV1 } from '@actiontech/shared/lib/api/sqle/service/common';
-import { InstanceTipResV1SupportedBackupStrategyEnum } from '@actiontech/shared/lib/api/sqle/service/common.enum';
+import { IInstanceTipResV2 } from '@actiontech/shared/lib/api/sqle/service/common';
+import { InstanceTipResV2SupportedBackupStrategyEnum } from '@actiontech/shared/lib/api/sqle/service/common.enum';
 
-export const instanceTipsMockData: IInstanceTipResV1[] = [
+export const instanceTipsMockData: IInstanceTipResV2[] = [
   {
     instance_id: '1739531854064652288',
     instance_name: 'mysql-1',
@@ -11,10 +11,10 @@ export const instanceTipsMockData: IInstanceTipResV1[] = [
     port: '33061',
     enable_backup: true,
     supported_backup_strategy: [
-      InstanceTipResV1SupportedBackupStrategyEnum.manual,
-      InstanceTipResV1SupportedBackupStrategyEnum.none,
-      InstanceTipResV1SupportedBackupStrategyEnum.original_row,
-      InstanceTipResV1SupportedBackupStrategyEnum.reverse_sql
+      InstanceTipResV2SupportedBackupStrategyEnum.manual,
+      InstanceTipResV2SupportedBackupStrategyEnum.none,
+      InstanceTipResV2SupportedBackupStrategyEnum.original_row,
+      InstanceTipResV2SupportedBackupStrategyEnum.reverse_sql
     ],
     backup_max_rows: 1000
   },
