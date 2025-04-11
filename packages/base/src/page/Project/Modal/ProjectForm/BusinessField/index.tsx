@@ -1,9 +1,7 @@
 import {
   EditableSelect,
   EditableSelectValue,
-  EditableSelectOption,
-  ReminderInformation,
-  EmptyBox
+  EditableSelectOption
 } from '@actiontech/shared';
 import { useTranslation } from 'react-i18next';
 import { DmsApi } from '@actiontech/shared/lib/api';
@@ -69,39 +67,53 @@ const BusinessField = (props: BusinessSelectorProps) => {
       });
   };
 
-  const deleteBusinessTag = (id: string) => {
-    startOperationLoading();
+  const deleteBusinessTag = (
+    id: string,
+    resolve: (value: boolean) => void,
+    reject: () => void
+  ) => {
     DmsApi.ProjectService.DeleteBusinessTag({
       business_tag_uid: id
     })
       .then((res) => {
         if (res.data.code === ResponseCode.SUCCESS) {
           messageApi.success(t('dmsProject.projectForm.deleteBusinessSuccess'));
+          resolve(true);
           refresh();
+        } else {
+          reject();
         }
       })
-      .finally(() => {
-        stopOperationLoading();
+      .catch(() => {
+        reject();
       });
   };
 
   const onDelete = (item: EditableSelectOption) => {
-    startOperationLoading();
-    DmsApi.ProjectService.ListProjectsV2({
-      filter_by_business_tag: item.label,
-      page_size: 9999
-    })
-      .then((res) => {
-        if (res.data.code === ResponseCode.SUCCESS) {
-          setBoundProjectList(res.data.data ?? []);
-          if (res.data.data?.length === 0) {
-            deleteBusinessTag(item.value.toString());
-          }
-        }
+    if (boundProjectList.length > 0) {
+      return Promise.resolve(false);
+    }
+    return new Promise<boolean>((resolve, reject) => {
+      DmsApi.ProjectService.ListProjectsV2({
+        filter_by_business_tag: item.label,
+        page_size: 9999
       })
-      .finally(() => {
-        stopOperationLoading();
-      });
+        .then((res) => {
+          if (res.data.code === ResponseCode.SUCCESS) {
+            setBoundProjectList(res.data.data ?? []);
+            if (res.data.data?.length === 0) {
+              deleteBusinessTag(item.value.toString(), resolve, reject);
+            } else {
+              reject();
+            }
+          } else {
+            reject();
+          }
+        })
+        .catch(() => {
+          reject();
+        });
+    });
   };
 
   const onUpdate = (item: EditableSelectOption) => {
@@ -127,25 +139,26 @@ const BusinessField = (props: BusinessSelectorProps) => {
     <>
       {contextHolder}
       <EditableSelect
+        {...props}
         options={businessList ?? []}
         onAdd={onAddBusiness}
         onDelete={onDelete}
         onUpdate={onUpdate}
         addButtonText={t('dmsProject.projectForm.addBusiness')}
-        deletionConfirmTitle={t(
-          'dmsProject.projectForm.deleteBusinessConfirmTitle'
-        )}
+        deletionConfirmTitle={
+          boundProjectList.length > 0
+            ? t('dmsProject.projectForm.deleteBusinessError', {
+                name: boundProjectList.map((item) => item.name).join(',')
+              })
+            : t('dmsProject.projectForm.deleteBusinessConfirmTitle')
+        }
         loading={operationLoading || loading}
-        {...props}
+        onConfirmOpenChange={(open) => {
+          if (!open) {
+            setBoundProjectList([]);
+          }
+        }}
       />
-      <EmptyBox if={boundProjectList.length > 0}>
-        <ReminderInformation
-          status="error"
-          message={t('dmsProject.projectForm.deleteBusinessError', {
-            name: boundProjectList.map((item) => item.name).join(',')
-          })}
-        />
-      </EmptyBox>
     </>
   );
 };

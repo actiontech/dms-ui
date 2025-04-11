@@ -57,7 +57,7 @@ export default {
     project: '所属项目',
     environmentAttribute: '环境属性',
     addEnvironmentAttribute: '添加环境属性',
-    deleteEnvironmentAttributeConfirm: '确认要删除此环境属性么?',
+    deleteEnvironmentAttributeConfirm: '确认要删除此环境属性吗?',
     updateEnvironmentAttributeSuccess: '环境属性更新成功',
     deleteEnvironmentAttributeSuccess: '环境属性删除成功',
     addEnvironmentAttributeSuccess: '环境属性添加成功',
