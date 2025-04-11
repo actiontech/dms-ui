@@ -11,7 +11,7 @@ import { ROUTE_PATHS } from '@actiontech/shared/lib/data/routePaths';
 import useServiceEnvironment from '../../../../../hooks/useServiceEnvironment';
 
 const useGetTableFilterInfo = () => {
-  const { projectName } = useCurrentProject();
+  const { projectName, projectID } = useCurrentProject();
 
   const extractQueries = useTypedQuery();
 
@@ -41,8 +41,14 @@ const useGetTableFilterInfo = () => {
   useEffect(() => {
     updateInstanceList({ project_name: projectName });
     updateRuleTips(projectName);
-    updateEnvironmentList();
-  }, [projectName, updateInstanceList, updateEnvironmentList, updateRuleTips]);
+    updateEnvironmentList(projectID);
+  }, [
+    projectName,
+    projectID,
+    updateInstanceList,
+    updateEnvironmentList,
+    updateRuleTips
+  ]);
 
   const filterCustomProps = useMemo(() => {
     const searchParams = extractQueries(ROUTE_PATHS.SQLE.SQL_MANAGEMENT.index);

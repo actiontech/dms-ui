@@ -15,11 +15,12 @@ export interface EditableSelectProps {
   addable?: boolean;
   onUpdate?: (newData: EditableSelectOption) => void;
   updatable?: boolean;
-  onDelete?: (item: EditableSelectOption) => void;
+  onDelete?: (item: EditableSelectOption) => Promise<boolean> | void;
   deletable?: boolean;
   deletionConfirmTitle?: React.ReactNode;
   options: EditableSelectOption[];
   addButtonText?: string;
   placeholder?: string;
   disabled?: boolean;
+  onConfirmOpenChange?: (open: boolean) => void;
 }

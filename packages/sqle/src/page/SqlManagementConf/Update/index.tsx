@@ -13,7 +13,6 @@ import {
 import BackToConf from '../Common/BackToConf';
 import { Space, Spin, message } from 'antd';
 import ConfForm from '../Common/ConfForm';
-import instance_audit_plan from '@actiontech/shared/lib/api/sqle/service/instance_audit_plan';
 import {
   ScanTypeParams,
   SqlManagementConfFormFields
@@ -31,6 +30,7 @@ import {
   formItemLayout
 } from '@actiontech/shared/lib/components/CustomForm/style';
 import { AuditPlanParamResV1TypeEnum } from '@actiontech/shared/lib/api/sqle/service/common.enum';
+import { SqleApi } from '@actiontech/shared/lib/api';
 
 const Update: React.FC = () => {
   const { t } = useTranslation();
@@ -61,53 +61,52 @@ const Update: React.FC = () => {
   const onSubmit = async () => {
     const values = await form.validateFields();
     startSubmit();
-    instance_audit_plan
-      .updateInstanceAuditPlanV1({
-        project_name: projectName,
-        instance_audit_plan_id: id ?? '',
-        audit_plans: values.scanTypes
-          .filter((item) => item !== SCAN_TYPE_ALL_OPTION_VALUE)
-          .map<IAuditPlan>((item) => {
-            const {
-              ruleTemplateName,
-              markHighPrioritySql,
-              prioritySqlConditions,
-              ...paramValues
-            } = values[item] as ScanTypeParams;
+    SqleApi.InstanceAuditPlanService.updateInstanceAuditPlanV1({
+      project_name: projectName,
+      instance_audit_plan_id: id ?? '',
+      audit_plans: values.scanTypes
+        .filter((item) => item !== SCAN_TYPE_ALL_OPTION_VALUE)
+        .map<IAuditPlan>((item) => {
+          const {
+            ruleTemplateName,
+            markHighPrioritySql,
+            prioritySqlConditions,
+            ...paramValues
+          } = values[item] as ScanTypeParams;
 
-            const auditPlanParamsWithScanType =
-              scanTypeMetas?.find((v) => v.audit_plan_type === item)
-                ?.audit_plan_params ?? [];
+          const auditPlanParamsWithScanType =
+            scanTypeMetas?.find((v) => v.audit_plan_type === item)
+              ?.audit_plan_params ?? [];
 
-            const mergedBackendAdditionalParams = mergeFromValueIntoParams(
-              paramValues as BackendFormValues,
-              auditPlanParamsWithScanType
-            );
+          const mergedBackendAdditionalParams = mergeFromValueIntoParams(
+            paramValues as BackendFormValues,
+            auditPlanParamsWithScanType
+          );
 
-            const params: IAuditPlan = {
-              audit_plan_type: item,
-              rule_template_name: ruleTemplateName,
-              need_mark_high_priority_sql: markHighPrioritySql,
-              high_priority_conditions: markHighPrioritySql
-                ? generateSubmitDataWithFormValues(prioritySqlConditions)
-                : undefined,
-              audit_plan_params: mergedBackendAdditionalParams.filter(
-                (backendAdditionalParam) => {
-                  const type = auditPlanParamsWithScanType.find(
-                    (auditPlanParam) =>
-                      auditPlanParam.key === backendAdditionalParam.key
-                  )?.type;
+          const params: IAuditPlan = {
+            audit_plan_type: item,
+            rule_template_name: ruleTemplateName,
+            need_mark_high_priority_sql: markHighPrioritySql,
+            high_priority_conditions: markHighPrioritySql
+              ? generateSubmitDataWithFormValues(prioritySqlConditions)
+              : undefined,
+            audit_plan_params: mergedBackendAdditionalParams.filter(
+              (backendAdditionalParam) => {
+                const type = auditPlanParamsWithScanType.find(
+                  (auditPlanParam) =>
+                    auditPlanParam.key === backendAdditionalParam.key
+                )?.type;
 
-                  return !(
-                    type === AuditPlanParamResV1TypeEnum.password &&
-                    !backendAdditionalParam.value
-                  );
-                }
-              )
-            };
-            return params;
-          })
-      })
+                return !(
+                  type === AuditPlanParamResV1TypeEnum.password &&
+                  !backendAdditionalParam.value
+                );
+              }
+            )
+          };
+          return params;
+        })
+    })
       .then((res) => {
         if (res.data.code === ResponseCode.SUCCESS) {
           messageApi.success(t('managementConf.update.successTips'));
@@ -122,19 +121,17 @@ const Update: React.FC = () => {
   };
 
   const { data: auditPlanDetail, loading: getDetailLoading } = useRequest(() =>
-    instance_audit_plan
-      .getInstanceAuditPlanDetailV1({
-        project_name: projectName,
-        instance_audit_plan_id: id ?? ''
-      })
-      .then((res) => {
-        return res.data.data;
-      })
+    SqleApi.InstanceAuditPlanService.getInstanceAuditPlanDetailV2({
+      project_name: projectName,
+      instance_audit_plan_id: id ?? ''
+    }).then((res) => {
+      return res.data.data;
+    })
   );
 
   const defaultValue = useMemo<SqlManagementConfFormFields>(() => {
     return {
-      businessScope: auditPlanDetail?.business ?? '',
+      environmentTag: auditPlanDetail?.environment ?? '',
       instanceType: auditPlanDetail?.instance_type ?? '',
       instanceName: auditPlanDetail?.instance_name ?? '',
       instanceId: auditPlanDetail?.instance_id ?? '',
@@ -161,7 +158,7 @@ const Update: React.FC = () => {
     };
   }, [
     auditPlanDetail?.audit_plans,
-    auditPlanDetail?.business,
+    auditPlanDetail?.environment,
     auditPlanDetail?.instance_id,
     auditPlanDetail?.instance_name,
     auditPlanDetail?.instance_type,

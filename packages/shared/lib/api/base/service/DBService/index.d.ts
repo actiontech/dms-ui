@@ -182,9 +182,7 @@ export interface IListGlobalDBServicesV2Params {
 
   filter_last_connection_test_status?: ListGlobalDBServicesV2FilterLastConnectionTestStatusEnum;
 
-  filter_by_business?: string;
-
-  filter_by_environment_tag?: string;
+  filter_by_environment_tag_uid?: string;
 
   filter_by_host?: string;
 
@@ -229,7 +227,7 @@ export interface IListDBServicesV2Params {
 
   filter_by_db_service_ids?: string[];
 
-  filter_by_environment_tag?: string;
+  filter_by_environment_tag_uid?: string;
 
   fuzzy_keyword?: string;
 

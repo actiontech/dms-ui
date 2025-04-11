@@ -33,6 +33,7 @@ import { useTypedNavigate } from '@actiontech/shared';
 import { ROUTE_PATHS } from '@actiontech/shared/lib/data/routePaths';
 import useStaticTips from '../../../hooks/useStaticTips';
 import { DmsApi } from '@actiontech/shared/lib/api';
+import useServiceEnvironment from 'sqle/src/hooks/useServiceEnvironment';
 
 const GlobalDataSourceList = () => {
   const { t } = useTranslation();
@@ -60,6 +61,12 @@ const GlobalDataSourceList = () => {
     updateProjects,
     loading: getProjectsLoading
   } = useProjectTips();
+
+  const {
+    environmentOptions,
+    loading: getEnvironmentListLoading,
+    updateEnvironmentList
+  } = useServiceEnvironment();
 
   const {
     tableFilterInfo,
@@ -110,11 +117,21 @@ const GlobalDataSourceList = () => {
       ['db_type', { options: dbTypeOptions, loading: getDbTypeListLoading }],
       [
         'project_name',
-        { options: projectIDOptions, loading: getProjectsLoading }
+        {
+          options: projectIDOptions,
+          loading: getProjectsLoading,
+          onChange: (v: string) => {
+            updateEnvironmentList(v);
+          }
+        }
       ],
       [
         'last_connection_test_status',
         { options: generateDatabaseTestConnectionStatusSelectOptions }
+      ],
+      [
+        'environment_tag',
+        { options: environmentOptions, loading: getEnvironmentListLoading }
       ]
     ]);
   }, [
@@ -122,7 +139,10 @@ const GlobalDataSourceList = () => {
     getDbTypeListLoading,
     projectIDOptions,
     getProjectsLoading,
-    generateDatabaseTestConnectionStatusSelectOptions
+    generateDatabaseTestConnectionStatusSelectOptions,
+    environmentOptions,
+    getEnvironmentListLoading,
+    updateEnvironmentList
   ]);
 
   const actions = useMemo(() => {

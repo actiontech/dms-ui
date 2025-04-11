@@ -12,6 +12,7 @@ import { SupportTheme, SystemRole } from '@actiontech/shared/lib/enum';
 import { createSpySuccessResponse } from '@actiontech/shared/lib/testUtil/mockApi';
 import DataSourceList from '.';
 import dbServices from '../../../../testUtils/mockApi/dbServices';
+import project from '../../../../testUtils/mockApi/project';
 
 jest.mock('react-router-dom', () => {
   return {
@@ -68,6 +69,7 @@ describe('page/DataSource/DataSourceList', () => {
     useParamsMock.mockReturnValue({ projectID });
     dms.mockAllApi();
     dbServices.ListDBServicesTips();
+    project.listEnvironmentTags();
     CheckProjectDBServicesConnectionsSpy =
       dbServices.CheckProjectDBServicesConnections();
   });
@@ -200,7 +202,7 @@ describe('page/DataSource/DataSourceList', () => {
       '.actiontech-table-filter-container-namespace .ant-space-item',
       baseElement
     );
-    expect(filterItems.length).toBe(4);
+    expect(filterItems.length).toBe(5);
     expect(baseElement).toMatchSnapshot();
   });
 
@@ -273,9 +275,9 @@ describe('page/DataSource/DataSourceList', () => {
       '.actiontech-table-filter-container-namespace .ant-space-item',
       baseElement
     );
-    expect(filterItems.length).toBe(4);
+    expect(filterItems.length).toBe(5);
     expect(baseElement).toMatchSnapshot();
-    const enableFilterElement = getBySelector('input', filterItems[3]);
+    const enableFilterElement = getBySelector('input', filterItems[4]);
     fireEvent.mouseDown(enableFilterElement);
     const selectOptions = getAllBySelector('.ant-select-item-option');
     await act(async () => {
