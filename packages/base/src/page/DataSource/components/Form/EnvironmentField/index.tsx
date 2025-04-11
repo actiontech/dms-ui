@@ -78,8 +78,9 @@ const EnvironmentField: React.FC<EnvironmentFieldProps> = ({
 
   const deleteEnvironmentTag = (id: string) => {
     startOperationLoading();
-    DmsApi.ProjectService.DeleteBusinessTag({
-      business_tag_uid: id
+    DmsApi.ProjectService.DeleteEnvironmentTag({
+      environment_tag_uid: id,
+      project_uid: projectID ?? ''
     })
       .then((res) => {
         if (res.data.code === ResponseCode.SUCCESS) {

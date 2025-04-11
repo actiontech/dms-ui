@@ -4,20 +4,20 @@ import { useMemo, useState, useCallback } from 'react';
 import { ResponseCode } from '../../data/common';
 import { instanceListDefaultKey } from '../../data/common';
 import { IGetInstanceTipListV2Params } from '@actiontech/shared/lib/api/sqle/service/instance/index.d';
-import { IInstanceTipResV1 } from '@actiontech/shared/lib/api/sqle/service/common';
+import { IInstanceTipResV2 } from '@actiontech/shared/lib/api/sqle/service/common';
 import { DatabaseTypeLogo } from '@actiontech/shared';
 import useDatabaseType from '../useDatabaseType';
 import { SqleApi } from '@actiontech/shared/lib/api';
 
 const useInstance = () => {
-  const [instanceList, setInstanceList] = useState<IInstanceTipResV1[]>([]);
+  const [instanceList, setInstanceList] = useState<IInstanceTipResV2[]>([]);
   const [loading, { setTrue, setFalse }] = useBoolean();
   const { getLogoUrlByDbType } = useDatabaseType();
 
   const updateInstanceList = useCallback(
     (
       params: IGetInstanceTipListV2Params,
-      options?: { onSuccess?: (data: IInstanceTipResV1[]) => void }
+      options?: { onSuccess?: (data: IInstanceTipResV2[]) => void }
     ) => {
       setTrue();
       SqleApi.InstanceService.getInstanceTipListV2(params)
@@ -41,7 +41,7 @@ const useInstance = () => {
 
   const generateInstanceSelectOption = useCallback(
     (instance_type: string = instanceListDefaultKey) => {
-      let filterInstanceList: IInstanceTipResV1[] = [];
+      let filterInstanceList: IInstanceTipResV2[] = [];
       if (instance_type !== instanceListDefaultKey) {
         filterInstanceList = instanceList.filter(
           (i) => i.instance_type === instance_type

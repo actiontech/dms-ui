@@ -1,7 +1,10 @@
 import { act, cleanup, fireEvent, screen } from '@testing-library/react';
 import { useNavigate } from 'react-router-dom';
 import { superRender } from '../../../../testUtils/customRender';
-import { getBySelector } from '@actiontech/shared/lib/testUtil/customQuery';
+import {
+  getAllBySelector,
+  getBySelector
+} from '@actiontech/shared/lib/testUtil/customQuery';
 import dms from '../../../../testUtils/mockApi/global';
 import ruleTemplate from 'sqle/src/testUtils/mockApi/rule_template';
 import EmitterKey from '../../../../data/EmitterKey';
@@ -24,7 +27,6 @@ jest.mock('react-router-dom', () => {
 describe('page/DataSource/AddDataSource', () => {
   const navigateSpy = jest.fn();
   const projectID = mockProjectInfo.projectID;
-  let getProjectTipsSpy: jest.SpyInstance;
   let getProjectListSpy: jest.SpyInstance;
   let requestAddDBServiceSpy: jest.SpyInstance;
   let getSystemModuleStatusSpy: jest.SpyInstance;
@@ -37,8 +39,9 @@ describe('page/DataSource/AddDataSource', () => {
     jest.useFakeTimers();
     (useNavigate as jest.Mock).mockImplementation(() => navigateSpy);
     dms.mockAllApi();
-    getProjectTipsSpy = project.getProjectTips();
     getProjectListSpy = project.getProjectList();
+    project.listEnvironmentTags();
+
     requestAddDBServiceSpy = dms.AddDBService();
     getSystemModuleStatusSpy = system.getSystemModuleStatus();
     ruleTemplate.mockAllApi();
@@ -64,10 +67,6 @@ describe('page/DataSource/AddDataSource', () => {
   });
 
   it('render submit when add database api success', async () => {
-    getProjectTipsSpy.mockClear();
-    getProjectTipsSpy.mockImplementation(() =>
-      createSpySuccessResponse({ data: [{ is_fixed_business: false }] })
-    );
     const { baseElement } = customRender();
     await act(async () => jest.advanceTimersByTime(9300));
     expect(getBySelector('#project')).toBeDisabled();
@@ -111,15 +110,13 @@ describe('page/DataSource/AddDataSource', () => {
       }
     });
     await act(async () => jest.advanceTimersByTime(300));
-    // business
-    await act(async () => {
-      fireEvent.change(getBySelector('#business', baseElement), {
-        target: {
-          value: 'business'
-        }
-      });
-      await act(async () => jest.advanceTimersByTime(300));
-    });
+    // environment
+    fireEvent.click(getBySelector('.editable-select-trigger', baseElement));
+    await act(async () => jest.advanceTimersByTime(0));
+    const firstOption = getAllBySelector('.ant-dropdown-menu-item')[0];
+    fireEvent.click(firstOption);
+    await act(async () => jest.advanceTimersByTime(0));
+
     // ruleTemplateName
     fireEvent.mouseDown(getBySelector('#ruleTemplateName', baseElement));
     await act(async () => jest.advanceTimersByTime(300));
@@ -145,7 +142,7 @@ describe('page/DataSource/AddDataSource', () => {
             value: ''
           }
         ],
-        business: 'business',
+        environment_tag_uid: '1',
         db_type: 'mysql',
         desc: undefined,
         host: '1.1.1.1',
@@ -179,10 +176,6 @@ describe('page/DataSource/AddDataSource', () => {
 
   it('render submit when projectID is undefined', async () => {
     mockUseCurrentProject({ projectID: undefined });
-    getProjectTipsSpy.mockClear();
-    getProjectTipsSpy.mockImplementation(() =>
-      createSpySuccessResponse({ data: [{ is_fixed_business: false }] })
-    );
     const eventEmitSpy = jest.spyOn(EventEmitter, 'emit');
 
     const { baseElement } = customRender();
@@ -190,14 +183,12 @@ describe('page/DataSource/AddDataSource', () => {
     expect(getProjectListSpy).toHaveBeenCalledTimes(1);
     const projectEle = getBySelector('#project');
     expect(projectEle).not.toBeDisabled();
-    expect(getBySelector('#business')).toBeDisabled();
 
     // project
     fireEvent.mouseDown(projectEle, baseElement);
     await act(async () => jest.advanceTimersByTime(300));
     fireEvent.click(screen.getByText('test_project_1'));
     await act(async () => jest.advanceTimersByTime(3000));
-    expect(getBySelector('#business')).not.toBeDisabled();
     // name
     fireEvent.change(getBySelector('#name', baseElement), {
       target: {
@@ -238,14 +229,12 @@ describe('page/DataSource/AddDataSource', () => {
     });
     await act(async () => jest.advanceTimersByTime(300));
     // business
-    await act(async () => {
-      fireEvent.change(getBySelector('#business', baseElement), {
-        target: {
-          value: 'business'
-        }
-      });
-      await act(async () => jest.advanceTimersByTime(300));
-    });
+    fireEvent.click(getBySelector('.editable-select-trigger', baseElement));
+    await act(async () => jest.advanceTimersByTime(0));
+    const firstOption = getAllBySelector('.ant-dropdown-menu-item')[0];
+    fireEvent.click(firstOption);
+    await act(async () => jest.advanceTimersByTime(0));
+
     // ruleTemplateName
     fireEvent.mouseDown(getBySelector('#ruleTemplateName', baseElement));
     await act(async () => jest.advanceTimersByTime(300));
@@ -286,7 +275,7 @@ describe('page/DataSource/AddDataSource', () => {
             value: ''
           }
         ],
-        business: 'business',
+        environment_tag_uid: '1',
         db_type: 'mysql',
         desc: undefined,
         host: '1.1.1.1',
@@ -384,18 +373,5 @@ describe('page/DataSource/AddDataSource', () => {
       'href',
       `/project/${mockProjectList[0].uid}/data-mask-rule-overview`
     );
-  });
-
-  it('render isFixedBusiness is true', async () => {
-    const { baseElement } = customRender();
-    await act(async () => jest.advanceTimersByTime(3000));
-    expect(getProjectTipsSpy).toHaveBeenCalled();
-    // business
-    fireEvent.mouseDown(getBySelector('#business', baseElement));
-    await act(async () => jest.advanceTimersByTime(300));
-    fireEvent.click(getBySelector('div[title="business1"]', baseElement));
-    await act(async () => jest.advanceTimersByTime(300));
-    // ruleTemplateName
-    expect(baseElement).toMatchSnapshot();
   });
 });

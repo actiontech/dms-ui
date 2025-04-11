@@ -4,13 +4,10 @@ import { t } from '../../../../locale';
 import { IListDBServiceV2 } from '@actiontech/shared/lib/api/base/service/common';
 import { ActiontechTableColumn } from '@actiontech/shared/lib/components/ActiontechTable';
 import { IListDBServicesV2Params } from '@actiontech/shared/lib/api/base/service/DBService/index.d';
-import {
-  BasicTypographyEllipsis,
-  DatabaseTypeLogo,
-  BasicTag
-} from '@actiontech/shared';
+import { BasicTypographyEllipsis, DatabaseTypeLogo } from '@actiontech/shared';
 import ScanTypeTagsCell from 'sqle/src/page/SqlManagementConf/List/ScanTypeTagsCell';
 import ConnectionResultColumn from './ConnectionResultColumn';
+import { ServiceEnvironmentTagStyleWrapper } from './style';
 
 /*
  *PS：
@@ -118,7 +115,11 @@ export const DataSourceColumns = (
         if (!environment?.name) {
           return '-';
         }
-        return <BasicTag>{environment?.name}</BasicTag>;
+        return (
+          <ServiceEnvironmentTagStyleWrapper>
+            {environment?.name}
+          </ServiceEnvironmentTagStyleWrapper>
+        );
       }
     },
 

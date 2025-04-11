@@ -8,7 +8,7 @@ import { Divider, Form, Space, SelectProps } from 'antd';
 import { useEffect, useMemo } from 'react';
 import { useCurrentProject } from '@actiontech/shared/lib/features';
 import useInstance from '../../../../../../../../hooks/useInstance';
-import { getInstanceTipListV1FunctionalModuleEnum } from '@actiontech/shared/lib/api/sqle/service/instance/index.enum';
+import { getInstanceTipListV2FunctionalModuleEnum } from '@actiontech/shared/lib/api/sqle/service/instance/index.enum';
 import useTestDatabaseConnect from './hooks/useTestDatabaseConnect';
 import {
   SqlAuditInfoFormFields,
@@ -120,7 +120,7 @@ const DatabaseSelectionItem: React.FC<DatabaseSelectionItemProps> = ({
     updateInstanceList({
       project_name: projectName,
       functional_module:
-        getInstanceTipListV1FunctionalModuleEnum.create_workflow
+        getInstanceTipListV2FunctionalModuleEnum.create_workflow
     });
   }, [projectName, updateInstanceList]);
 

@@ -8,7 +8,7 @@ import { BasicButton, BasicToolTip } from '@actiontech/shared';
 import DatabaseInfo from './DatabaseInfo';
 import useInstance from '../../../../hooks/useInstance';
 import SQLStatementForm from '../SQLStatementForm';
-import { getInstanceTipListV1FunctionalModuleEnum } from '@actiontech/shared/lib/api/sqle/service/instance/index.enum';
+import { getInstanceTipListV2FunctionalModuleEnum } from '@actiontech/shared/lib/api/sqle/service/instance/index.enum';
 import { FormSubmitStatusContext } from '..';
 import {
   FormatLanguageSupport,
@@ -34,7 +34,7 @@ const SQLInfoFormItem: React.FC<SqlInfoFormProps> = ({ form, submit }) => {
     updateInstanceList({
       project_name: projectName,
       functional_module:
-        getInstanceTipListV1FunctionalModuleEnum.create_optimization
+        getInstanceTipListV2FunctionalModuleEnum.create_optimization
     });
   }, [projectName, updateInstanceList]);
 
