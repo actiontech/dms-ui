@@ -1,27 +1,31 @@
 import { useTranslation } from 'react-i18next';
-
 import { BasicInput, BasicSwitch } from '@actiontech/shared';
 import {
   CustomLabelContent,
   FormItemLabel
 } from '@actiontech/shared/lib/components/CustomForm';
-
 import { validatorPort } from '@actiontech/shared/lib/utils/FormRule';
+import { Form } from 'antd';
 
 const ConfigField = () => {
   const { t } = useTranslation();
+  const updatePassword = Form.useWatch('update_password');
   return (
     <>
       <FormItemLabel
         label={t('dmsSystem.ldap.enableLdapSSL')}
         name="enable_ssl"
         valuePropName="checked"
+        className="has-required-style"
+        rules={[{ required: true }]}
       >
         <BasicSwitch />
       </FormItemLabel>
       <FormItemLabel
         label={t('dmsSystem.ldap.ldapServerHost')}
         name="ldap_server_host"
+        className="has-required-style"
+        rules={[{ required: true }]}
       >
         <BasicInput
           placeholder={t('common.form.placeholder.input', {
@@ -32,9 +36,13 @@ const ConfigField = () => {
       <FormItemLabel
         label={t('dmsSystem.ldap.ldapServerPort')}
         name="ldap_server_port"
+        className="has-required-style"
         rules={[
           {
             validator: validatorPort()
+          },
+          {
+            required: true
           }
         ]}
       >
@@ -45,7 +53,7 @@ const ConfigField = () => {
         />
       </FormItemLabel>
       <FormItemLabel
-        className="has-label-tip"
+        className="has-label-tip has-required-style"
         label={
           <CustomLabelContent
             title={t('dmsSystem.ldap.ldapConnectDn')}
@@ -53,6 +61,14 @@ const ConfigField = () => {
           />
         }
         name="ldap_connect_dn"
+        rules={[
+          {
+            required: true,
+            message: t('common.form.placeholder.input', {
+              name: t('dmsSystem.ldap.ldapConnectDn')
+            })
+          }
+        ]}
       >
         <BasicInput
           placeholder={t('common.form.placeholder.input', {
@@ -61,8 +77,18 @@ const ConfigField = () => {
         />
       </FormItemLabel>
       <FormItemLabel
+        label={t('dmsSystem.ldap.updatePassword')}
+        name="update_password"
+        valuePropName="checked"
+      >
+        <BasicSwitch />
+      </FormItemLabel>
+      <FormItemLabel
         label={t('dmsSystem.ldap.ldapConnectPwd')}
         name="ldap_connect_pwd"
+        className="has-required-style"
+        rules={[{ required: updatePassword }]}
+        hidden={!updatePassword}
       >
         <BasicInput.Password
           placeholder={t('common.form.placeholder.input', {
@@ -71,7 +97,7 @@ const ConfigField = () => {
         />
       </FormItemLabel>
       <FormItemLabel
-        className="has-label-tip"
+        className="has-label-tip has-required-style"
         label={
           <CustomLabelContent
             title={t('dmsSystem.ldap.ldapSearchBaseDn')}
@@ -79,6 +105,14 @@ const ConfigField = () => {
           />
         }
         name="ldap_search_base_dn"
+        rules={[
+          {
+            required: true,
+            message: t('common.form.placeholder.input', {
+              name: t('dmsSystem.ldap.ldapSearchBaseDn')
+            })
+          }
+        ]}
       >
         <BasicInput
           placeholder={t('common.form.placeholder.input', {
@@ -87,7 +121,7 @@ const ConfigField = () => {
         />
       </FormItemLabel>
       <FormItemLabel
-        className="has-label-tip"
+        className="has-label-tip has-required-style"
         label={
           <CustomLabelContent
             title={t('dmsSystem.ldap.ldapUserNameRdnKey')}
@@ -95,8 +129,20 @@ const ConfigField = () => {
           />
         }
         name="ldap_user_name_rdn_key"
+        rules={[
+          {
+            required: true,
+            message: t('common.form.placeholder.input', {
+              name: t('dmsSystem.ldap.ldapUserNameRdnKey')
+            })
+          }
+        ]}
       >
-        <BasicInput placeholder={t('common.form.placeholder.input')} />
+        <BasicInput
+          placeholder={t('common.form.placeholder.input', {
+            name: t('dmsSystem.ldap.ldapUserNameRdnKey')
+          })}
+        />
       </FormItemLabel>
       <FormItemLabel
         className="has-label-tip"
