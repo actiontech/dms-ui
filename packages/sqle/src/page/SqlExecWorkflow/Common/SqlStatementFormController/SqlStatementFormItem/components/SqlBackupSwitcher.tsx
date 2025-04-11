@@ -154,7 +154,11 @@ const SqlBackupSwitcher: React.FC<SqlBackupSwitcherProps> = ({
           name={[fieldPrefixPath, 'backupMaxRows']}
           initialValue={1000}
         >
-          <BasicInputNumber min={0} disabled={getInstanceEnableBackup()} />
+          <BasicInputNumber
+            integer
+            min={0}
+            disabled={getInstanceEnableBackup()}
+          />
         </FormItemLabel>
       </EmptyBox>
     </EmptyBox>
