@@ -267,7 +267,7 @@ exports[`test base/page/project/modal/add should match snapshot 1`] = `
                           class="ant-form-item-control-input-content"
                         >
                           <div
-                            class="ant-dropdown-trigger editable-select-trigger css-kk4zre"
+                            class="ant-dropdown-trigger editable-select-trigger css-e92p61"
                           >
                             <span
                               class="placeholder"
@@ -643,7 +643,7 @@ exports[`test base/page/project/modal/add should match snapshot when getPreferre
                           class="ant-form-item-control-input-content"
                         >
                           <div
-                            class="ant-dropdown-trigger editable-select-trigger css-kk4zre"
+                            class="ant-dropdown-trigger editable-select-trigger css-e92p61"
                           >
                             <span
                               class="placeholder"

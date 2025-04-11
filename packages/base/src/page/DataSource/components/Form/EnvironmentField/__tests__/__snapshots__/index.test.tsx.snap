@@ -4,7 +4,7 @@ exports[`Project/EnvironmentField render init snap 1`] = `
 <body>
   <div>
     <div
-      class="ant-dropdown-trigger editable-select-trigger css-kk4zre"
+      class="ant-dropdown-trigger editable-select-trigger css-e92p61"
     >
       <span
         class="placeholder"
