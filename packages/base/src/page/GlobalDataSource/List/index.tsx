@@ -117,7 +117,13 @@ const GlobalDataSourceList = () => {
       ['db_type', { options: dbTypeOptions, loading: getDbTypeListLoading }],
       [
         'project_name',
-        { options: projectIDOptions, loading: getProjectsLoading }
+        {
+          options: projectIDOptions,
+          loading: getProjectsLoading,
+          onChange: (v: string) => {
+            updateEnvironmentList(v);
+          }
+        }
       ],
       [
         'last_connection_test_status',
@@ -135,7 +141,8 @@ const GlobalDataSourceList = () => {
     getProjectsLoading,
     generateDatabaseTestConnectionStatusSelectOptions,
     environmentOptions,
-    getEnvironmentListLoading
+    getEnvironmentListLoading,
+    updateEnvironmentList
   ]);
 
   const actions = useMemo(() => {
@@ -273,12 +280,6 @@ const GlobalDataSourceList = () => {
     updateProjects();
     updateDbTypeList();
   }, [updateDbTypeList, updateDriverList, updateProjects]);
-
-  useEffect(() => {
-    if (tableFilterInfo.filter_by_project_uid) {
-      updateEnvironmentList(tableFilterInfo.filter_by_project_uid);
-    }
-  }, [updateEnvironmentList, tableFilterInfo.filter_by_project_uid]);
 
   useEffect(() => {
     const { unsubscribe: unsubscribeRefresh } = eventEmitter.subscribe(
