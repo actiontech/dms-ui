@@ -14,7 +14,7 @@ import {
 import ConfForm from '../Common/ConfForm';
 import { ConfFormContextProvide } from '../Common/ConfForm/context';
 import { ScanTypeParams } from '../Common/ConfForm/index.type';
-import instance_audit_plan from '@actiontech/shared/lib/api/sqle/service/instance_audit_plan';
+import { SqleApi } from '@actiontech/shared/lib/api';
 import useAsyncParams from '../../../components/BackendForm/useAsyncParams';
 import { ResponseCode } from '@actiontech/shared/lib/enum';
 import { useSqlManagementConfFormSharedStates } from '../Common/ConfForm/hooks';
@@ -66,35 +66,34 @@ const Create: React.FC = () => {
   const onSubmit = async () => {
     const values = await form.validateFields();
     startSubmit();
-    instance_audit_plan
-      .createInstanceAuditPlanV1({
-        project_name: projectName,
-        instance_id: values.instanceId,
-        audit_plans: values.scanTypes
-          .filter((item) => item !== SCAN_TYPE_ALL_OPTION_VALUE)
-          .map<IAuditPlan>((item) => {
-            const {
-              ruleTemplateName,
-              markHighPrioritySql,
-              prioritySqlConditions,
-              ...paramValues
-            } = values[item] as ScanTypeParams;
-            const params: IAuditPlan = {
-              audit_plan_type: item,
-              rule_template_name: ruleTemplateName,
-              need_mark_high_priority_sql: markHighPrioritySql,
-              high_priority_conditions: markHighPrioritySql
-                ? generateSubmitDataWithFormValues(prioritySqlConditions)
-                : undefined,
-              audit_plan_params: mergeFromValueIntoParams(
-                paramValues as BackendFormValues,
-                scanTypeMetas?.find((v) => v.audit_plan_type === item)
-                  ?.audit_plan_params ?? []
-              )
-            };
-            return params;
-          })
-      })
+    SqleApi.InstanceAuditPlanService.createInstanceAuditPlanV1({
+      project_name: projectName,
+      instance_id: values.instanceId,
+      audit_plans: values.scanTypes
+        .filter((item) => item !== SCAN_TYPE_ALL_OPTION_VALUE)
+        .map<IAuditPlan>((item) => {
+          const {
+            ruleTemplateName,
+            markHighPrioritySql,
+            prioritySqlConditions,
+            ...paramValues
+          } = values[item] as ScanTypeParams;
+          const params: IAuditPlan = {
+            audit_plan_type: item,
+            rule_template_name: ruleTemplateName,
+            need_mark_high_priority_sql: markHighPrioritySql,
+            high_priority_conditions: markHighPrioritySql
+              ? generateSubmitDataWithFormValues(prioritySqlConditions)
+              : undefined,
+            audit_plan_params: mergeFromValueIntoParams(
+              paramValues as BackendFormValues,
+              scanTypeMetas?.find((v) => v.audit_plan_type === item)
+                ?.audit_plan_params ?? []
+            )
+          };
+          return params;
+        })
+    })
       .then((res) => {
         if (res.data.code === ResponseCode.SUCCESS) {
           successfulSubmit();

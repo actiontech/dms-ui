@@ -678,7 +678,7 @@ exports[`page/DataSource/DataSourceForm render cancel rule 1`] = `
                     class="ant-form-item-control-input-content"
                   >
                     <div
-                      class="ant-dropdown-trigger editable-select-trigger css-kk4zre"
+                      class="ant-dropdown-trigger editable-select-trigger css-e92p61"
                     >
                       <span>
                         environment-1
@@ -2180,7 +2180,7 @@ exports[`page/DataSource/DataSourceForm render cancel rule 2`] = `
                     class="ant-form-item-control-input-content"
                   >
                     <div
-                      class="ant-dropdown-trigger editable-select-trigger css-kk4zre"
+                      class="ant-dropdown-trigger editable-select-trigger css-e92p61"
                     >
                       <span>
                         environment-1
@@ -3602,7 +3602,7 @@ exports[`page/DataSource/DataSourceForm render change switch when page is update
                     class="ant-form-item-control-input-content"
                   >
                     <div
-                      class="ant-dropdown-trigger editable-select-trigger css-kk4zre"
+                      class="ant-dropdown-trigger editable-select-trigger css-e92p61"
                     >
                       <span
                         class="placeholder"
@@ -4766,7 +4766,7 @@ exports[`page/DataSource/DataSourceForm render change switch when page is update
                     class="ant-form-item-control-input-content"
                   >
                     <div
-                      class="ant-dropdown-trigger editable-select-trigger css-kk4zre"
+                      class="ant-dropdown-trigger editable-select-trigger css-e92p61"
                     >
                       <span
                         class="placeholder"
@@ -5931,7 +5931,7 @@ exports[`page/DataSource/DataSourceForm render change switch when page is update
                     class="ant-form-item-control-input-content"
                   >
                     <div
-                      class="ant-dropdown-trigger editable-select-trigger css-kk4zre"
+                      class="ant-dropdown-trigger editable-select-trigger css-e92p61"
                     >
                       <span
                         class="placeholder"
@@ -7166,7 +7166,7 @@ exports[`page/DataSource/DataSourceForm render database type 1`] = `
                     class="ant-form-item-control-input-content"
                   >
                     <div
-                      class="ant-dropdown-trigger editable-select-trigger css-kk4zre"
+                      class="ant-dropdown-trigger editable-select-trigger css-e92p61"
                     >
                       <span
                         class="placeholder"
@@ -8419,7 +8419,7 @@ exports[`page/DataSource/DataSourceForm render name rule 1`] = `
                     class="ant-form-item-control-input-content"
                   >
                     <div
-                      class="ant-dropdown-trigger editable-select-trigger css-kk4zre"
+                      class="ant-dropdown-trigger editable-select-trigger css-e92p61"
                     >
                       <span
                         class="placeholder"
@@ -9520,7 +9520,7 @@ exports[`page/DataSource/DataSourceForm render name rule 2`] = `
                     class="ant-form-item-control-input-content"
                   >
                     <div
-                      class="ant-dropdown-trigger editable-select-trigger css-kk4zre"
+                      class="ant-dropdown-trigger editable-select-trigger css-e92p61"
                     >
                       <span
                         class="placeholder"
@@ -10662,7 +10662,7 @@ exports[`page/DataSource/DataSourceForm render update form snap 1`] = `
                     class="ant-form-item-control-input-content"
                   >
                     <div
-                      class="ant-dropdown-trigger editable-select-trigger css-kk4zre"
+                      class="ant-dropdown-trigger editable-select-trigger css-e92p61"
                     >
                       <span
                         class="placeholder"

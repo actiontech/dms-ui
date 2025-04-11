@@ -83,7 +83,10 @@ describe('Project/BusinessField', () => {
     expect(screen.getByText('更新业务成功')).toBeInTheDocument();
   });
 
+  // todo 删除时有多种情况会rejected 暂时只覆盖一种 后续补充其他case
   it('render delete business tag when business tag is bound', async () => {
+    const mockPromiseRejected = jest.spyOn(Promise, 'reject');
+    mockPromiseRejected.mockImplementation(() => Promise.resolve(false));
     superRender(<BusinessField />);
     await act(async () => jest.advanceTimersByTime(3000));
     expect(listBusinessTagsSpy).toHaveBeenCalledTimes(1);
@@ -92,7 +95,7 @@ describe('Project/BusinessField', () => {
     const deleteButton = getAllBySelector('.delete-button')[0];
     fireEvent.click(deleteButton);
     await act(async () => jest.advanceTimersByTime(0));
-    expect(screen.getByText('确认要删除此业务么?')).toBeInTheDocument();
+    expect(screen.getByText('确认要删除此业务吗?')).toBeInTheDocument();
 
     const confirmButton = getBySelector('.ant-btn-primary.ant-btn-sm');
     fireEvent.click(confirmButton);
@@ -102,6 +105,7 @@ describe('Project/BusinessField', () => {
       page_size: 9999
     });
     await act(async () => jest.advanceTimersByTime(3000));
+    expect(mockPromiseRejected).toHaveBeenCalledTimes(1);
     expect(
       screen.getByText(
         `当前业务已绑定：${mockProjectList
@@ -125,7 +129,7 @@ describe('Project/BusinessField', () => {
     const deleteButton = getAllBySelector('.delete-button')[0];
     fireEvent.click(deleteButton);
     await act(async () => jest.advanceTimersByTime(0));
-    expect(screen.getByText('确认要删除此业务么?')).toBeInTheDocument();
+    expect(screen.getByText('确认要删除此业务吗?')).toBeInTheDocument();
 
     const confirmButton = getBySelector('.ant-btn-primary.ant-btn-sm');
     fireEvent.click(confirmButton);

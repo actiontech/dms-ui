@@ -1,9 +1,7 @@
 import {
   EditableSelect,
   EditableSelectProps,
-  EditableSelectOption,
-  ReminderInformation,
-  EmptyBox
+  EditableSelectOption
 } from '@actiontech/shared';
 import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
@@ -76,43 +74,59 @@ const EnvironmentField: React.FC<EnvironmentFieldProps> = ({
       });
   };
 
-  const deleteEnvironmentTag = (id: string) => {
-    startOperationLoading();
+  const deleteEnvironmentTag = (
+    environmentTagUid: string,
+    resolve: (value: boolean) => void,
+    reject: () => void
+  ) => {
     DmsApi.ProjectService.DeleteEnvironmentTag({
-      environment_tag_uid: id,
+      environment_tag_uid: environmentTagUid,
       project_uid: projectID ?? ''
     })
-      .then((res) => {
-        if (res.data.code === ResponseCode.SUCCESS) {
+      .then((delRes) => {
+        if (delRes.data.code === ResponseCode.SUCCESS) {
           messageApi.success(
             t('dmsDataSource.dataSourceForm.deleteEnvironmentAttributeSuccess')
           );
+          resolve(true);
           refresh();
+        } else {
+          reject();
         }
       })
-      .finally(() => {
-        stopOperationLoading();
+      .catch(() => {
+        reject();
       });
   };
 
+  //todo 目前这种写法不太友好 待和产品沟通 优化删除交互 修改此处代码
   const onDelete = (item: EditableSelectOption) => {
-    startOperationLoading();
-    DmsApi.DBServiceService.ListDBServicesV2({
-      filter_by_environment_tag: item.label,
-      project_uid: projectID ?? '',
-      page_size: 9999
-    })
-      .then((res) => {
-        if (res.data.code === ResponseCode.SUCCESS) {
-          setBoundServices(res.data.data ?? []);
-          if (res.data.data?.length === 0) {
-            deleteEnvironmentTag(item.value.toString());
-          }
-        }
+    if (boundServices.length > 0) {
+      return Promise.resolve(false);
+    }
+    const environmentTagUid = item.value.toString();
+    return new Promise<boolean>((resolve, reject) => {
+      DmsApi.DBServiceService.ListDBServicesV2({
+        filter_by_environment_tag_uid: environmentTagUid,
+        project_uid: projectID ?? '',
+        page_size: 9999
       })
-      .finally(() => {
-        stopOperationLoading();
-      });
+        .then((res) => {
+          if (res.data.code === ResponseCode.SUCCESS) {
+            setBoundServices(res.data.data ?? []);
+            if (res.data.data?.length === 0) {
+              deleteEnvironmentTag(environmentTagUid, resolve, reject);
+            } else {
+              reject();
+            }
+          } else {
+            reject();
+          }
+        })
+        .catch(() => {
+          reject();
+        });
+    });
   };
 
   const onUpdate = (item: EditableSelectOption) => {
@@ -144,25 +158,28 @@ const EnvironmentField: React.FC<EnvironmentFieldProps> = ({
         addButtonText={t(
           'dmsDataSource.dataSourceForm.addEnvironmentAttribute'
         )}
-        deletionConfirmTitle={t(
-          'dmsDataSource.dataSourceForm.deleteEnvironmentAttributeConfirm'
-        )}
+        deletionConfirmTitle={
+          boundServices.length > 0
+            ? t(
+                'dmsDataSource.dataSourceForm.deleteEnvironmentAttributeError',
+                {
+                  name: boundServices.map((item) => item.name).join(',')
+                }
+              )
+            : t(
+                'dmsDataSource.dataSourceForm.deleteEnvironmentAttributeConfirm'
+              )
+        }
         onDelete={onDelete}
         onUpdate={onUpdate}
         onAdd={onAdd}
         loading={operationLoading || loading}
+        onConfirmOpenChange={(open) => {
+          if (!open) {
+            setBoundServices([]);
+          }
+        }}
       />
-      <EmptyBox if={boundServices.length > 0}>
-        <ReminderInformation
-          status="error"
-          message={t(
-            'dmsDataSource.dataSourceForm.deleteEnvironmentAttributeError',
-            {
-              name: boundServices.map((item) => item.name).join(',')
-            }
-          )}
-        />
-      </EmptyBox>
     </>
   );
 };

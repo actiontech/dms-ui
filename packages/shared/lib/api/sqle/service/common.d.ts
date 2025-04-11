@@ -2225,8 +2225,6 @@ export interface IInstanceAuditPlanResV1 {
 
   audit_plan_types?: IAuditPlanTypeResBase[];
 
-  business?: string;
-
   create_time?: string;
 
   creator?: string;
@@ -4242,6 +4240,24 @@ export interface IGetDriversRes {
   message?: string;
 }
 
+export interface IGetInstanceAuditPlanDetailRes {
+  code?: number;
+
+  data?: IInstanceAuditPlanDetailRes;
+
+  message?: string;
+}
+
+export interface IGetInstanceAuditPlansRes {
+  code?: number;
+
+  data?: IInstanceAuditPlanResV1[];
+
+  message?: string;
+
+  total_nums?: number;
+}
+
 export interface IGetInstanceResV2 {
   code?: number;
 
@@ -4304,6 +4320,18 @@ export interface IGetWorkflowTasksResV2 {
   data?: IGetWorkflowTasksItemV2[];
 
   message?: string;
+}
+
+export interface IInstanceAuditPlanDetailRes {
+  audit_plans?: IAuditPlanRes[];
+
+  environment?: string;
+
+  instance_id?: string;
+
+  instance_name?: string;
+
+  instance_type?: string;
 }
 
 export interface IInstanceResV2 {

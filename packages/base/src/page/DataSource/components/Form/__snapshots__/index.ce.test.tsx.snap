@@ -564,7 +564,7 @@ exports[`page/DataSource/DataSourceForm CE render business field when getProject
                     class="ant-form-item-control-input-content"
                   >
                     <div
-                      class="ant-dropdown-trigger editable-select-trigger css-kk4zre"
+                      class="ant-dropdown-trigger editable-select-trigger css-e92p61"
                     >
                       <span
                         class="placeholder"

@@ -46,7 +46,9 @@ export const GlobalDataSourceColumns = (
             {environment?.name}
           </ServiceEnvironmentTagStyleWrapper>
         );
-      }
+      },
+      filterCustomType: 'select',
+      filterKey: 'filter_by_environment_tag_uid'
     },
     {
       dataIndex: 'address',

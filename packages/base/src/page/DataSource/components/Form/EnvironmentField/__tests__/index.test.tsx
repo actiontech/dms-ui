@@ -90,6 +90,8 @@ describe('Project/EnvironmentField', () => {
   });
 
   it('render delete environment tag when environment tag is bound', async () => {
+    const mockPromiseRejected = jest.spyOn(Promise, 'reject');
+    mockPromiseRejected.mockImplementation(() => Promise.resolve(false));
     customRender();
     await act(async () => jest.advanceTimersByTime(3000));
     expect(listEnvironmentTagsSpy).toHaveBeenCalledTimes(1);
@@ -98,17 +100,18 @@ describe('Project/EnvironmentField', () => {
     const deleteButton = getAllBySelector('.delete-button')[0];
     fireEvent.click(deleteButton);
     await act(async () => jest.advanceTimersByTime(0));
-    expect(screen.getByText('确认要删除此环境属性么?')).toBeInTheDocument();
+    expect(screen.getByText('确认要删除此环境属性吗?')).toBeInTheDocument();
 
     const confirmButton = getBySelector('.ant-btn-primary.ant-btn-sm');
     fireEvent.click(confirmButton);
     await act(async () => jest.advanceTimersByTime(0));
     expect(getListDBServicesSpy).toHaveBeenCalledWith({
-      filter_by_environment_tag: 'environment-1',
+      filter_by_environment_tag_uid: '1',
       page_size: 9999,
       project_uid: mockProjectInfo.projectID
     });
     await act(async () => jest.advanceTimersByTime(3000));
+    expect(mockPromiseRejected).toHaveBeenCalledTimes(1);
     expect(
       screen.getByText(
         `当前环境已绑定：${DBServicesList.map((item) => item.name).join(
@@ -132,13 +135,13 @@ describe('Project/EnvironmentField', () => {
     const deleteButton = getAllBySelector('.delete-button')[0];
     fireEvent.click(deleteButton);
     await act(async () => jest.advanceTimersByTime(0));
-    expect(screen.getByText('确认要删除此环境属性么?')).toBeInTheDocument();
+    expect(screen.getByText('确认要删除此环境属性吗?')).toBeInTheDocument();
 
     const confirmButton = getBySelector('.ant-btn-primary.ant-btn-sm');
     fireEvent.click(confirmButton);
     await act(async () => jest.advanceTimersByTime(0));
     expect(getListDBServicesSpy).toHaveBeenCalledWith({
-      filter_by_environment_tag: 'environment-1',
+      filter_by_environment_tag_uid: '1',
       page_size: 9999,
       project_uid: mockProjectInfo.projectID
     });

@@ -120,7 +120,9 @@ export const DataSourceColumns = (
             {environment?.name}
           </ServiceEnvironmentTagStyleWrapper>
         );
-      }
+      },
+      filterCustomType: 'select',
+      filterKey: 'filter_by_environment_tag_uid'
     },
 
     // #if [dms]

@@ -50,7 +50,6 @@ export const EditableSelectTriggerStyleWrapper = styled('div')<{
       open
         ? theme.sharedTheme.uiToken.colorPrimary
         : theme.sharedTheme.uiToken.colorBorderSecondary};
-  border-radius: 2px;
   padding: 4px 11px;
   min-height: 34px;
   justify-content: space-between;

@@ -19,7 +19,7 @@ import useServiceEnvironment from '../../../../../hooks/useServiceEnvironment';
 
 const DataSourceSelection: React.FC = () => {
   const { t } = useTranslation();
-  const { projectName } = useCurrentProject();
+  const { projectName, projectID } = useCurrentProject();
   const extractQueries = useTypedQuery();
 
   const { instanceIdByUrlSearchParams, environmentTagByUrlSearchParams } =
@@ -140,8 +140,8 @@ const DataSourceSelection: React.FC = () => {
   ]);
 
   useEffect(() => {
-    updateEnvironmentList();
-  }, [updateEnvironmentList]);
+    updateEnvironmentList(projectID);
+  }, [updateEnvironmentList, projectID]);
 
   return (
     <>
