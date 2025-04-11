@@ -19,14 +19,14 @@ import { useBoolean, useRequest } from 'ahooks';
 import { useEffect, useMemo } from 'react';
 import { useTranslation } from 'react-i18next';
 import { ExtraFilterMeta, SqlManagementConfColumns } from './column';
-import instance_audit_plan from '@actiontech/shared/lib/api/sqle/service/instance_audit_plan';
+import { SqleApi } from '@actiontech/shared/lib/api';
 import { Spin, message } from 'antd';
 import TableTaskTypeFilter from './TableTaskTypeFilter';
 import {
   PlanListTaskTypeButtonStyleWrapper,
   SqlManagementConfPageStyleWrapper
 } from './style';
-import { IGetInstanceAuditPlansV1Params } from '@actiontech/shared/lib/api/sqle/service/instance_audit_plan/index.d';
+import { IGetInstanceAuditPlansV2Params } from '@actiontech/shared/lib/api/sqle/service/instance_audit_plan/index.d';
 import useTableFilter from './hooks/useTableFilter';
 import { InstanceAuditPlanTableFilterParamType } from './index.type';
 import useTableAction from './hooks/useTableAction';
@@ -78,7 +78,8 @@ const List: React.FC = () => {
     filterCustomData,
     filterCustomProps,
     setFilterCustomData,
-    updateInstanceList
+    updateInstanceList,
+    updateEnvironmentList
   } = useTableFilter();
 
   const [
@@ -110,17 +111,18 @@ const List: React.FC = () => {
     refresh: onRefresh
   } = useRequest(
     () => {
-      const params: IGetInstanceAuditPlansV1Params = {
+      const params: IGetInstanceAuditPlansV2Params = {
         ...pagination,
         filter_by_db_type: filterCustomData.filter_by_db_type,
         filter_by_audit_plan_type: filterCustomData.filter_by_audit_plan_type,
         filter_by_active_status: tableFilterInfo.filter_by_active_status,
         filter_by_instance_id: tableFilterInfo.filter_by_instance_id,
         fuzzy_search: searchKeyword,
-        project_name: projectName
+        project_name: projectName,
+        filter_by_environment_tag: tableFilterInfo.filter_by_environment_tag
       };
       return handleTableRequestError(
-        instance_audit_plan.getInstanceAuditPlansV1(params)
+        SqleApi.InstanceAuditPlanService.getInstanceAuditPlansV2(params)
       );
     },
     {
@@ -147,6 +149,10 @@ const List: React.FC = () => {
   useEffect(() => {
     updateInstanceList({ project_name: projectName });
   }, [updateInstanceList, projectName]);
+
+  useEffect(() => {
+    updateEnvironmentList(projectID);
+  }, [updateEnvironmentList, projectID]);
 
   return (
     <SqlManagementConfPageStyleWrapper>
