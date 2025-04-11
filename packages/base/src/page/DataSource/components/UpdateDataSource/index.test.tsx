@@ -54,6 +54,7 @@ describe('page/DataSource/UpdateDataSource', () => {
     ruleTemplate.mockAllApi();
     listEnvironmentTagsSpy = mockUseCurrentProject();
     project.listEnvironmentTags();
+    project.getProjectList();
     getSystemModuleStatusSpy = system.getSystemModuleStatus();
   });
 

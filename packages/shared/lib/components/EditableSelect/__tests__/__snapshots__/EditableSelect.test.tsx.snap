@@ -4,7 +4,7 @@ exports[`EditableSelect should render select with options 1`] = `
 <body>
   <div>
     <div
-      class="ant-dropdown-trigger editable-select-trigger css-kk4zre"
+      class="ant-dropdown-trigger editable-select-trigger css-e92p61"
     >
       <span
         class="placeholder"
@@ -35,7 +35,7 @@ exports[`EditableSelect should render select with options 2`] = `
 <body>
   <div>
     <div
-      class="ant-dropdown-trigger editable-select-trigger ant-dropdown-open css-1vuwsyq"
+      class="ant-dropdown-trigger editable-select-trigger ant-dropdown-open css-iiqyi4"
       open=""
     >
       <span
@@ -270,7 +270,7 @@ exports[`EditableSelect should render without options 1`] = `
 <body>
   <div>
     <div
-      class="ant-dropdown-trigger editable-select-trigger css-kk4zre"
+      class="ant-dropdown-trigger editable-select-trigger css-e92p61"
     >
       <span
         class="placeholder"

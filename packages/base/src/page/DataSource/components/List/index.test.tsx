@@ -12,6 +12,7 @@ import { SupportTheme, SystemRole } from '@actiontech/shared/lib/enum';
 import { createSpySuccessResponse } from '@actiontech/shared/lib/testUtil/mockApi';
 import DataSourceList from '.';
 import dbServices from '../../../../testUtils/mockApi/dbServices';
+import project from '../../../../testUtils/mockApi/project';
 
 jest.mock('react-router-dom', () => {
   return {
@@ -68,6 +69,7 @@ describe('page/DataSource/DataSourceList', () => {
     useParamsMock.mockReturnValue({ projectID });
     dms.mockAllApi();
     dbServices.ListDBServicesTips();
+    project.listEnvironmentTags();
     CheckProjectDBServicesConnectionsSpy =
       dbServices.CheckProjectDBServicesConnections();
   });
