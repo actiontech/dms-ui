@@ -105,7 +105,8 @@ export default {
     ldapUserNameRdnKey: '用户名属性名',
     ldapUserNameRdnKeyTips: 'SQLE绑定的用户名在LDAP中对应的属性名',
     ldapUserEmailRdnKey: '用户邮箱属性名',
-    ldapUserEmailRdnKeyTips: 'SQLE绑定的用户邮箱在LDAP中对应的属性名'
+    ldapUserEmailRdnKeyTips: 'SQLE绑定的用户邮箱在LDAP中对应的属性名',
+    updatePassword: '是否修改连接用户密码'
   },
 
   oauth: {

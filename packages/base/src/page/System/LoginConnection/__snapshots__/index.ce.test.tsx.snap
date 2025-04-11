@@ -186,7 +186,7 @@ exports[`base/System/LoginConnection-ce render snap 1`] = `
                 hidden=""
               >
                 <div
-                  class="ant-form-item css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+                  class="ant-form-item has-required-style css-1jlm9cy css-dev-only-do-not-override-txh9fw"
                 >
                   <div
                     class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
@@ -195,7 +195,7 @@ exports[`base/System/LoginConnection-ce render snap 1`] = `
                       class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left css-dev-only-do-not-override-txh9fw"
                     >
                       <label
-                        class="ant-form-item-no-colon"
+                        class="ant-form-item-required ant-form-item-no-colon"
                         for="enable_ssl"
                         title="是否启用SSL"
                       >
@@ -213,6 +213,7 @@ exports[`base/System/LoginConnection-ce render snap 1`] = `
                         >
                           <button
                             aria-checked="false"
+                            aria-required="true"
                             class="ant-switch basic-switch-wrapper css-g6dhbn css-dev-only-do-not-override-txh9fw"
                             id="enable_ssl"
                             role="switch"
@@ -238,7 +239,7 @@ exports[`base/System/LoginConnection-ce render snap 1`] = `
                   </div>
                 </div>
                 <div
-                  class="ant-form-item css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+                  class="ant-form-item has-required-style css-1jlm9cy css-dev-only-do-not-override-txh9fw"
                 >
                   <div
                     class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
@@ -247,7 +248,7 @@ exports[`base/System/LoginConnection-ce render snap 1`] = `
                       class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left css-dev-only-do-not-override-txh9fw"
                     >
                       <label
-                        class="ant-form-item-no-colon"
+                        class="ant-form-item-required ant-form-item-no-colon"
                         for="ldap_server_host"
                         title="LDAP服务器地址"
                       >
@@ -264,6 +265,7 @@ exports[`base/System/LoginConnection-ce render snap 1`] = `
                           class="ant-form-item-control-input-content"
                         >
                           <input
+                            aria-required="true"
                             class="ant-input css-dev-only-do-not-override-ywkr0o basic-input-wrapper css-1pd1cd5"
                             id="ldap_server_host"
                             placeholder="请输入LDAP服务器地址"
@@ -276,7 +278,7 @@ exports[`base/System/LoginConnection-ce render snap 1`] = `
                   </div>
                 </div>
                 <div
-                  class="ant-form-item css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+                  class="ant-form-item has-required-style css-1jlm9cy css-dev-only-do-not-override-txh9fw"
                 >
                   <div
                     class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
@@ -285,7 +287,7 @@ exports[`base/System/LoginConnection-ce render snap 1`] = `
                       class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left css-dev-only-do-not-override-txh9fw"
                     >
                       <label
-                        class="ant-form-item-no-colon"
+                        class="ant-form-item-required ant-form-item-no-colon"
                         for="ldap_server_port"
                         title="LDAP服务器端口"
                       >
@@ -302,6 +304,7 @@ exports[`base/System/LoginConnection-ce render snap 1`] = `
                           class="ant-form-item-control-input-content"
                         >
                           <input
+                            aria-required="true"
                             class="ant-input css-dev-only-do-not-override-ywkr0o basic-input-wrapper css-1pd1cd5"
                             id="ldap_server_port"
                             placeholder="请输入LDAP服务器端口"
@@ -314,7 +317,7 @@ exports[`base/System/LoginConnection-ce render snap 1`] = `
                   </div>
                 </div>
                 <div
-                  class="ant-form-item has-label-tip css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+                  class="ant-form-item has-label-tip has-required-style css-1jlm9cy css-dev-only-do-not-override-txh9fw"
                 >
                   <div
                     class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
@@ -323,7 +326,7 @@ exports[`base/System/LoginConnection-ce render snap 1`] = `
                       class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left css-dev-only-do-not-override-txh9fw"
                     >
                       <label
-                        class="ant-form-item-no-colon"
+                        class="ant-form-item-required ant-form-item-no-colon"
                         for="ldap_connect_dn"
                         title=""
                       >
@@ -351,6 +354,7 @@ exports[`base/System/LoginConnection-ce render snap 1`] = `
                           class="ant-form-item-control-input-content"
                         >
                           <input
+                            aria-required="true"
                             class="ant-input css-dev-only-do-not-override-ywkr0o basic-input-wrapper css-1pd1cd5"
                             id="ldap_connect_dn"
                             placeholder="请输入连接用户DN"
@@ -364,6 +368,58 @@ exports[`base/System/LoginConnection-ce render snap 1`] = `
                 </div>
                 <div
                   class="ant-form-item css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+                >
+                  <div
+                    class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                  >
+                    <div
+                      class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left css-dev-only-do-not-override-txh9fw"
+                    >
+                      <label
+                        class="ant-form-item-no-colon"
+                        for="update_password"
+                        title="是否修改连接用户密码"
+                      >
+                        是否修改连接用户密码
+                      </label>
+                    </div>
+                    <div
+                      class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                    >
+                      <div
+                        class="ant-form-item-control-input"
+                      >
+                        <div
+                          class="ant-form-item-control-input-content"
+                        >
+                          <button
+                            aria-checked="false"
+                            class="ant-switch basic-switch-wrapper css-g6dhbn css-dev-only-do-not-override-txh9fw"
+                            id="update_password"
+                            role="switch"
+                            type="button"
+                          >
+                            <div
+                              class="ant-switch-handle"
+                            />
+                            <span
+                              class="ant-switch-inner"
+                            >
+                              <span
+                                class="ant-switch-inner-checked"
+                              />
+                              <span
+                                class="ant-switch-inner-unchecked"
+                              />
+                            </span>
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="ant-form-item has-required-style css-1jlm9cy css-dev-only-do-not-override-txh9fw ant-form-item-hidden"
                 >
                   <div
                     class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
@@ -431,7 +487,7 @@ exports[`base/System/LoginConnection-ce render snap 1`] = `
                   </div>
                 </div>
                 <div
-                  class="ant-form-item has-label-tip css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+                  class="ant-form-item has-label-tip has-required-style css-1jlm9cy css-dev-only-do-not-override-txh9fw"
                 >
                   <div
                     class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
@@ -440,7 +496,7 @@ exports[`base/System/LoginConnection-ce render snap 1`] = `
                       class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left css-dev-only-do-not-override-txh9fw"
                     >
                       <label
-                        class="ant-form-item-no-colon"
+                        class="ant-form-item-required ant-form-item-no-colon"
                         for="ldap_search_base_dn"
                         title=""
                       >
@@ -468,6 +524,7 @@ exports[`base/System/LoginConnection-ce render snap 1`] = `
                           class="ant-form-item-control-input-content"
                         >
                           <input
+                            aria-required="true"
                             class="ant-input css-dev-only-do-not-override-ywkr0o basic-input-wrapper css-1pd1cd5"
                             id="ldap_search_base_dn"
                             placeholder="请输入查询根DN"
@@ -480,7 +537,7 @@ exports[`base/System/LoginConnection-ce render snap 1`] = `
                   </div>
                 </div>
                 <div
-                  class="ant-form-item has-label-tip css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+                  class="ant-form-item has-label-tip has-required-style css-1jlm9cy css-dev-only-do-not-override-txh9fw"
                 >
                   <div
                     class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
@@ -489,7 +546,7 @@ exports[`base/System/LoginConnection-ce render snap 1`] = `
                       class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left css-dev-only-do-not-override-txh9fw"
                     >
                       <label
-                        class="ant-form-item-no-colon"
+                        class="ant-form-item-required ant-form-item-no-colon"
                         for="ldap_user_name_rdn_key"
                         title=""
                       >
@@ -517,9 +574,10 @@ exports[`base/System/LoginConnection-ce render snap 1`] = `
                           class="ant-form-item-control-input-content"
                         >
                           <input
+                            aria-required="true"
                             class="ant-input css-dev-only-do-not-override-ywkr0o basic-input-wrapper css-1pd1cd5"
                             id="ldap_user_name_rdn_key"
-                            placeholder="请输入{{name}}"
+                            placeholder="请输入用户名属性名"
                             type="text"
                             value=""
                           />
@@ -2229,7 +2287,7 @@ exports[`base/System/LoginConnection-ce render snap 2`] = `
                 hidden=""
               >
                 <div
-                  class="ant-form-item css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+                  class="ant-form-item has-required-style css-1jlm9cy css-dev-only-do-not-override-txh9fw"
                 >
                   <div
                     class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
@@ -2238,7 +2296,7 @@ exports[`base/System/LoginConnection-ce render snap 2`] = `
                       class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left css-dev-only-do-not-override-txh9fw"
                     >
                       <label
-                        class="ant-form-item-no-colon"
+                        class="ant-form-item-required ant-form-item-no-colon"
                         for="enable_ssl"
                         title="是否启用SSL"
                       >
@@ -2256,6 +2314,7 @@ exports[`base/System/LoginConnection-ce render snap 2`] = `
                         >
                           <button
                             aria-checked="false"
+                            aria-required="true"
                             class="ant-switch basic-switch-wrapper css-g6dhbn css-dev-only-do-not-override-txh9fw"
                             id="enable_ssl"
                             role="switch"
@@ -2281,7 +2340,7 @@ exports[`base/System/LoginConnection-ce render snap 2`] = `
                   </div>
                 </div>
                 <div
-                  class="ant-form-item css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+                  class="ant-form-item has-required-style css-1jlm9cy css-dev-only-do-not-override-txh9fw"
                 >
                   <div
                     class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
@@ -2290,7 +2349,7 @@ exports[`base/System/LoginConnection-ce render snap 2`] = `
                       class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left css-dev-only-do-not-override-txh9fw"
                     >
                       <label
-                        class="ant-form-item-no-colon"
+                        class="ant-form-item-required ant-form-item-no-colon"
                         for="ldap_server_host"
                         title="LDAP服务器地址"
                       >
@@ -2307,6 +2366,7 @@ exports[`base/System/LoginConnection-ce render snap 2`] = `
                           class="ant-form-item-control-input-content"
                         >
                           <input
+                            aria-required="true"
                             class="ant-input css-dev-only-do-not-override-ywkr0o basic-input-wrapper css-1pd1cd5"
                             id="ldap_server_host"
                             placeholder="请输入LDAP服务器地址"
@@ -2319,7 +2379,7 @@ exports[`base/System/LoginConnection-ce render snap 2`] = `
                   </div>
                 </div>
                 <div
-                  class="ant-form-item css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+                  class="ant-form-item has-required-style css-1jlm9cy css-dev-only-do-not-override-txh9fw"
                 >
                   <div
                     class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
@@ -2328,7 +2388,7 @@ exports[`base/System/LoginConnection-ce render snap 2`] = `
                       class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left css-dev-only-do-not-override-txh9fw"
                     >
                       <label
-                        class="ant-form-item-no-colon"
+                        class="ant-form-item-required ant-form-item-no-colon"
                         for="ldap_server_port"
                         title="LDAP服务器端口"
                       >
@@ -2345,6 +2405,7 @@ exports[`base/System/LoginConnection-ce render snap 2`] = `
                           class="ant-form-item-control-input-content"
                         >
                           <input
+                            aria-required="true"
                             class="ant-input css-dev-only-do-not-override-ywkr0o basic-input-wrapper css-1pd1cd5"
                             id="ldap_server_port"
                             placeholder="请输入LDAP服务器端口"
@@ -2357,7 +2418,7 @@ exports[`base/System/LoginConnection-ce render snap 2`] = `
                   </div>
                 </div>
                 <div
-                  class="ant-form-item has-label-tip css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+                  class="ant-form-item has-label-tip has-required-style css-1jlm9cy css-dev-only-do-not-override-txh9fw"
                 >
                   <div
                     class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
@@ -2366,7 +2427,7 @@ exports[`base/System/LoginConnection-ce render snap 2`] = `
                       class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left css-dev-only-do-not-override-txh9fw"
                     >
                       <label
-                        class="ant-form-item-no-colon"
+                        class="ant-form-item-required ant-form-item-no-colon"
                         for="ldap_connect_dn"
                         title=""
                       >
@@ -2394,6 +2455,7 @@ exports[`base/System/LoginConnection-ce render snap 2`] = `
                           class="ant-form-item-control-input-content"
                         >
                           <input
+                            aria-required="true"
                             class="ant-input css-dev-only-do-not-override-ywkr0o basic-input-wrapper css-1pd1cd5"
                             id="ldap_connect_dn"
                             placeholder="请输入连接用户DN"
@@ -2407,6 +2469,58 @@ exports[`base/System/LoginConnection-ce render snap 2`] = `
                 </div>
                 <div
                   class="ant-form-item css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+                >
+                  <div
+                    class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                  >
+                    <div
+                      class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left css-dev-only-do-not-override-txh9fw"
+                    >
+                      <label
+                        class="ant-form-item-no-colon"
+                        for="update_password"
+                        title="是否修改连接用户密码"
+                      >
+                        是否修改连接用户密码
+                      </label>
+                    </div>
+                    <div
+                      class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                    >
+                      <div
+                        class="ant-form-item-control-input"
+                      >
+                        <div
+                          class="ant-form-item-control-input-content"
+                        >
+                          <button
+                            aria-checked="false"
+                            class="ant-switch basic-switch-wrapper css-g6dhbn css-dev-only-do-not-override-txh9fw"
+                            id="update_password"
+                            role="switch"
+                            type="button"
+                          >
+                            <div
+                              class="ant-switch-handle"
+                            />
+                            <span
+                              class="ant-switch-inner"
+                            >
+                              <span
+                                class="ant-switch-inner-checked"
+                              />
+                              <span
+                                class="ant-switch-inner-unchecked"
+                              />
+                            </span>
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="ant-form-item has-required-style css-1jlm9cy css-dev-only-do-not-override-txh9fw ant-form-item-hidden"
                 >
                   <div
                     class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
@@ -2474,7 +2588,7 @@ exports[`base/System/LoginConnection-ce render snap 2`] = `
                   </div>
                 </div>
                 <div
-                  class="ant-form-item has-label-tip css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+                  class="ant-form-item has-label-tip has-required-style css-1jlm9cy css-dev-only-do-not-override-txh9fw"
                 >
                   <div
                     class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
@@ -2483,7 +2597,7 @@ exports[`base/System/LoginConnection-ce render snap 2`] = `
                       class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left css-dev-only-do-not-override-txh9fw"
                     >
                       <label
-                        class="ant-form-item-no-colon"
+                        class="ant-form-item-required ant-form-item-no-colon"
                         for="ldap_search_base_dn"
                         title=""
                       >
@@ -2511,6 +2625,7 @@ exports[`base/System/LoginConnection-ce render snap 2`] = `
                           class="ant-form-item-control-input-content"
                         >
                           <input
+                            aria-required="true"
                             class="ant-input css-dev-only-do-not-override-ywkr0o basic-input-wrapper css-1pd1cd5"
                             id="ldap_search_base_dn"
                             placeholder="请输入查询根DN"
@@ -2523,7 +2638,7 @@ exports[`base/System/LoginConnection-ce render snap 2`] = `
                   </div>
                 </div>
                 <div
-                  class="ant-form-item has-label-tip css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+                  class="ant-form-item has-label-tip has-required-style css-1jlm9cy css-dev-only-do-not-override-txh9fw"
                 >
                   <div
                     class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
@@ -2532,7 +2647,7 @@ exports[`base/System/LoginConnection-ce render snap 2`] = `
                       class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left css-dev-only-do-not-override-txh9fw"
                     >
                       <label
-                        class="ant-form-item-no-colon"
+                        class="ant-form-item-required ant-form-item-no-colon"
                         for="ldap_user_name_rdn_key"
                         title=""
                       >
@@ -2560,9 +2675,10 @@ exports[`base/System/LoginConnection-ce render snap 2`] = `
                           class="ant-form-item-control-input-content"
                         >
                           <input
+                            aria-required="true"
                             class="ant-input css-dev-only-do-not-override-ywkr0o basic-input-wrapper css-1pd1cd5"
                             id="ldap_user_name_rdn_key"
-                            placeholder="请输入{{name}}"
+                            placeholder="请输入用户名属性名"
                             type="text"
                             value=""
                           />
