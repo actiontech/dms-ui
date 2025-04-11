@@ -35,6 +35,7 @@ import { DataSourceListActions, DataSourcePageHeaderActions } from './actions';
 import { ROUTE_PATHS } from '@actiontech/shared/lib/data/routePaths';
 import useStaticTips from '../../../../hooks/useStaticTips';
 import { DmsApi } from '@actiontech/shared/lib/api';
+import useServiceEnvironment from 'sqle/src/hooks/useServiceEnvironment';
 
 const DataSourceList = () => {
   const { t } = useTranslation();
@@ -62,6 +63,12 @@ const DataSourceList = () => {
     loading: getDbServiceOptionsLoading,
     updateDbServiceList
   } = useDbService();
+
+  const {
+    environmentOptions,
+    loading: getEnvironmentListLoading,
+    updateEnvironmentList
+  } = useServiceEnvironment();
 
   const { generateDatabaseTestConnectionStatusSelectOptions } = useStaticTips();
 
@@ -273,6 +280,10 @@ const DataSourceList = () => {
         'last_connection_test_status',
         { options: generateDatabaseTestConnectionStatusSelectOptions }
       ],
+      [
+        'environment_tag',
+        { options: environmentOptions, loading: getEnvironmentListLoading }
+      ],
       // #if [dms]
       ['is_enable_masking', { options: filterDataMaskOptions }]
       // #endif
@@ -282,7 +293,9 @@ const DataSourceList = () => {
     dbServiceOptions,
     generateDatabaseTestConnectionStatusSelectOptions,
     getDbServiceOptionsLoading,
-    getDriveOptionsLoading
+    getDriveOptionsLoading,
+    environmentOptions,
+    getEnvironmentListLoading
   ]);
 
   const tableActions = useMemo(() => {
@@ -311,6 +324,7 @@ const DataSourceList = () => {
     if (projectID) {
       updateDriverList();
       updateDbServiceList({ project_uid: projectID });
+      updateEnvironmentList(projectID);
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [projectID]);
