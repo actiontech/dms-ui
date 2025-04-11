@@ -33,7 +33,8 @@ const EditableSelect: React.FC<EditableSelectProps> = ({
   loading = false,
   addable = true,
   updatable = true,
-  deletable = true
+  deletable = true,
+  onConfirmOpenChange
 }) => {
   const { t } = useTranslation();
   const [newItemName, setNewItemName] = useState('');
@@ -144,11 +145,12 @@ const EditableSelect: React.FC<EditableSelectProps> = ({
                     }
                     onConfirm={(e) => {
                       e?.stopPropagation();
-                      onDelete?.(option);
+                      return onDelete?.(option);
                     }}
                     onCancel={(e) => {
                       e?.stopPropagation();
                     }}
+                    onOpenChange={onConfirmOpenChange}
                   >
                     <BasicButton
                       type="text"
