@@ -11,10 +11,9 @@ import EventEmitter from '../../../utils/EventEmitter';
 import ProjectForm from './ProjectForm/ProjectForm';
 import { ResponseCode } from '@actiontech/shared/lib/enum';
 import { ProjectFormFields } from './ProjectForm';
-import { IAddProjectParams } from '@actiontech/shared/lib/api/base/service/Project/index.d';
-import Project from '@actiontech/shared/lib/api/base/service/Project';
+import { IAddProjectV2Params } from '@actiontech/shared/lib/api/base/service/Project/index.d';
+import { DmsApi } from '@actiontech/shared/lib/api';
 import { BasicButton, BasicDrawer } from '@actiontech/shared';
-import BusinessDescription from './BusinessDescription';
 
 const AddProject: React.FC = () => {
   const { t } = useTranslation();
@@ -43,17 +42,18 @@ const AddProject: React.FC = () => {
 
   const submit = async () => {
     const values = await form.validateFields();
-    const params: IAddProjectParams = {
+    const params: IAddProjectV2Params = {
       project: {
         name: values.name,
         desc: values.desc,
-        is_fixed_business: values.isFixedBusiness,
-        business: values.business?.map((i) => i.name ?? ''),
+        business_tag: {
+          uid: values.businessTagId
+        },
         project_priority: values.priority
       }
     };
     startSubmit();
-    Project.AddProject(params)
+    DmsApi.ProjectService.AddProjectV2(params)
       .then((res) => {
         if (res.data.code === ResponseCode.SUCCESS) {
           messageApi.success(
@@ -94,7 +94,6 @@ const AddProject: React.FC = () => {
       >
         {contextHolder}
         <ProjectForm form={form} />
-        <BusinessDescription />
       </BasicDrawer>
     </>
   );

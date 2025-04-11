@@ -1,12 +1,13 @@
 import { timeAddZero } from '@actiontech/shared/lib/utils/Common';
 import { Tag } from 'antd';
 import { t } from '../../../../locale';
-import { IListDBService } from '@actiontech/shared/lib/api/base/service/common';
+import { IListDBServiceV2 } from '@actiontech/shared/lib/api/base/service/common';
 import { ActiontechTableColumn } from '@actiontech/shared/lib/components/ActiontechTable';
-import { IListDBServicesParams } from '@actiontech/shared/lib/api/base/service/DBService/index.d';
+import { IListDBServicesV2Params } from '@actiontech/shared/lib/api/base/service/DBService/index.d';
 import { BasicTypographyEllipsis, DatabaseTypeLogo } from '@actiontech/shared';
 import ScanTypeTagsCell from 'sqle/src/page/SqlManagementConf/List/ScanTypeTagsCell';
 import ConnectionResultColumn from './ConnectionResultColumn';
+import { ServiceEnvironmentTagStyleWrapper } from './style';
 
 /*
  *PS：
@@ -14,14 +15,14 @@ import ConnectionResultColumn from './ConnectionResultColumn';
  * IAuthListDataOperationSetsParams里的page_index 是可选项，和TablePagination类型不匹配，期望后续后端可以修改。
  */
 export type DataSourceListParamType = Omit<
-  IListDBServicesParams,
+  IListDBServicesV2Params,
   'page_index' | 'page_size' | 'project_uid'
 >;
 
 export const DataSourceColumns = (
   getLogoUrlByDbType: (dbType: string) => string
 ): ActiontechTableColumn<
-  IListDBService,
+  IListDBServiceV2,
   DataSourceListParamType,
   'address'
 > => {
@@ -108,8 +109,20 @@ export const DataSourceColumns = (
     },
     // #endif
     {
-      dataIndex: 'business',
-      title: () => t('dmsDataSource.databaseList.business')
+      dataIndex: 'environment_tag',
+      title: () => t('dmsDataSource.databaseList.environmentAttribute'),
+      render: (environment) => {
+        if (!environment?.name) {
+          return '-';
+        }
+        return (
+          <ServiceEnvironmentTagStyleWrapper>
+            {environment?.name}
+          </ServiceEnvironmentTagStyleWrapper>
+        );
+      },
+      filterCustomType: 'select',
+      filterKey: 'filter_by_environment_tag_uid'
     },
 
     // #if [dms]

@@ -2,10 +2,10 @@ import {
   ICheckDBServiceIsConnectableReplyItem,
   IListDBService,
   IListDBServiceTipItem,
-  IListGlobalDBService
+  IListGlobalDBServiceV2
 } from '@actiontech/shared/lib/api/base/service/common';
 import {
-  ListGlobalDBServiceLastConnectionTestStatusEnum,
+  ListGlobalDBServiceV2LastConnectionTestStatusEnum,
   SQLQueryConfigAllowQueryWhenLessThanAuditLevelEnum
 } from '@actiontech/shared/lib/api/base/service/common.enum';
 
@@ -76,14 +76,17 @@ export const checkConnectableReply: ICheckDBServiceIsConnectableReplyItem[] = [
   }
 ];
 
-export const globalDataSourceMockData: IListGlobalDBService[] = [
+export const globalDataSourceMockData: IListGlobalDBServiceV2[] = [
   {
     uid: '123456',
     name: 'vm1-mysql',
     db_type: 'MySQL',
     host: '10.186.62.41',
     port: '3306',
-    business: 'vm1',
+    environment_tag: {
+      uid: '1',
+      name: 'environment-1'
+    },
     maintenance_times: [
       {
         maintenance_start_time: {
@@ -105,7 +108,7 @@ export const globalDataSourceMockData: IListGlobalDBService[] = [
     is_enable_audit: true,
     last_connection_test_error_message: 'error message',
     last_connection_test_status:
-      ListGlobalDBServiceLastConnectionTestStatusEnum.connect_failed,
+      ListGlobalDBServiceV2LastConnectionTestStatusEnum.connect_failed,
     last_connection_test_time: '2024-11-15T15:28:13.315+08:00'
   },
   {
@@ -114,7 +117,10 @@ export const globalDataSourceMockData: IListGlobalDBService[] = [
     db_type: 'MySQL',
     host: '',
     port: '3306',
-    business: 'test',
+    environment_tag: {
+      uid: '2',
+      name: 'environment-2'
+    },
     maintenance_times: [],
     desc: '',
     source: 'SQLE',
@@ -125,7 +131,7 @@ export const globalDataSourceMockData: IListGlobalDBService[] = [
     is_enable_audit: false,
     last_connection_test_error_message: '',
     last_connection_test_status:
-      ListGlobalDBServiceLastConnectionTestStatusEnum.connect_success,
+      ListGlobalDBServiceV2LastConnectionTestStatusEnum.connect_success,
     last_connection_test_time: '2024-11-15T15:28:13.315+08:00'
   },
   {
@@ -134,7 +140,10 @@ export const globalDataSourceMockData: IListGlobalDBService[] = [
     db_type: 'Oracle',
     host: '10.186.62.41',
     port: '',
-    business: 'vm1',
+    environment_tag: {
+      uid: '2',
+      name: 'environment-2'
+    },
     maintenance_times: [],
     desc: '',
     source: 'SQLE',

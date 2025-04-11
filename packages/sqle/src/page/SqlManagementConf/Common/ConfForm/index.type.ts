@@ -18,7 +18,7 @@ export type PrioritySqlConditionsParams = Record<
   HighPriorityConditionParams
 >;
 export type SqlManagementConfFormFields = {
-  businessScope: string;
+  environmentTag: string;
   instanceId: string;
   instanceName: string;
   instanceType: string;

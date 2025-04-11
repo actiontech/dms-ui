@@ -7,7 +7,9 @@ import {
   mockPreviewImportProjects,
   mockProjectTips,
   mockBatchImportDBCheckData,
-  mockDbServicesConnectionData
+  mockDbServicesConnectionData,
+  mockEnvironmentTagsData,
+  mockBusinessTagsData
 } from './data';
 import { AxiosResponse } from 'axios';
 import { MIMETypeEnum } from '@actiontech/shared/lib/enum';
@@ -34,10 +36,18 @@ class MockProjectApi implements MockSpyApy {
     this.importDBServicesOfOneProjectCheck();
     this.dbServicesConnection();
     this.CheckGlobalDBServicesConnections();
+    this.listEnvironmentTags();
+    this.createEnvironmentTag();
+    this.updateEnvironmentTag();
+    this.deleteEnvironmentTag();
+    this.listBusinessTags();
+    this.createBusinessTag();
+    this.updateBusinessTag();
+    this.deleteBusinessTag();
   }
 
   public getProjectList() {
-    const spy = jest.spyOn(Project, 'ListProjects');
+    const spy = jest.spyOn(Project, 'ListProjectsV2');
     spy.mockImplementation(() =>
       createSpySuccessResponse({
         total_nums: mockProjectList.length,
@@ -48,7 +58,7 @@ class MockProjectApi implements MockSpyApy {
   }
 
   public addProject() {
-    const spy = jest.spyOn(Project, 'AddProject');
+    const spy = jest.spyOn(Project, 'AddProjectV2');
     spy.mockImplementation(() =>
       createSpySuccessResponse({
         data: {
@@ -60,7 +70,7 @@ class MockProjectApi implements MockSpyApy {
   }
 
   public updateProject() {
-    const spy = jest.spyOn(Project, 'UpdateProject');
+    const spy = jest.spyOn(Project, 'UpdateProjectV2');
     spy.mockImplementation(() => createSpySuccessResponse({}));
     return spy;
   }
@@ -102,7 +112,7 @@ class MockProjectApi implements MockSpyApy {
   }
 
   public importProjects() {
-    const spy = jest.spyOn(Project, 'ImportProjects');
+    const spy = jest.spyOn(Project, 'ImportProjectsV2');
     spy.mockImplementation(() => createSpySuccessResponse({}));
     return spy;
   }
@@ -114,13 +124,16 @@ class MockProjectApi implements MockSpyApy {
   }
 
   public previewImportProjects() {
-    const spy = jest.spyOn(Project, 'PreviewImportProjects');
+    const spy = jest.spyOn(Project, 'PreviewImportProjectsV2');
     spy.mockImplementation(() =>
       createSpySuccessResponse({ data: mockPreviewImportProjects })
     );
     return spy;
   }
 
+  /**
+   * @deprecated 废弃
+   */
   public getProjectTips() {
     const spy = jest.spyOn(Project, 'GetProjectTips');
     spy.mockImplementation(() =>
@@ -130,13 +143,13 @@ class MockProjectApi implements MockSpyApy {
   }
 
   public importDBServicesOfProjects() {
-    const spy = jest.spyOn(Project, 'ImportDBServicesOfProjects');
+    const spy = jest.spyOn(Project, 'ImportDBServicesOfProjectsV2');
     spy.mockImplementation(() => createSpySuccessResponse({ data: {} }));
     return spy;
   }
 
   public importDBServicesOfOneProject() {
-    const spy = jest.spyOn(DBService, 'ImportDBServicesOfOneProject');
+    const spy = jest.spyOn(DBService, 'ImportDBServicesOfOneProjectV2');
     spy.mockImplementation(() => createSpySuccessResponse({ data: {} }));
     return spy;
   }
@@ -148,7 +161,7 @@ class MockProjectApi implements MockSpyApy {
   }
 
   public importDBServicesOfProjectsCheck() {
-    const spy = jest.spyOn(Project, 'ImportDBServicesOfProjectsCheck');
+    const spy = jest.spyOn(Project, 'ImportDBServicesOfProjectsCheckV2');
     spy.mockImplementation(() => {
       return new Promise<AxiosResponse<any>>((res) => {
         setTimeout(() => {
@@ -177,7 +190,7 @@ class MockProjectApi implements MockSpyApy {
   }
 
   public importDBServicesOfOneProjectCheck() {
-    const spy = jest.spyOn(DBService, 'ImportDBServicesOfOneProjectCheck');
+    const spy = jest.spyOn(DBService, 'ImportDBServicesOfOneProjectCheckV2');
     spy.mockImplementation(() => {
       return new Promise<AxiosResponse<any>>((res) => {
         setTimeout(() => {
@@ -215,6 +228,58 @@ class MockProjectApi implements MockSpyApy {
 
   public CheckGlobalDBServicesConnections() {
     const spy = jest.spyOn(Project, 'CheckGlobalDBServicesConnections');
+    spy.mockImplementation(() => createSpySuccessResponse({}));
+    return spy;
+  }
+
+  public listEnvironmentTags() {
+    const spy = jest.spyOn(Project, 'ListEnvironmentTags');
+    spy.mockImplementation(() =>
+      createSpySuccessResponse({ data: mockEnvironmentTagsData })
+    );
+    return spy;
+  }
+
+  public createEnvironmentTag() {
+    const spy = jest.spyOn(Project, 'CreateEnvironmentTag');
+    spy.mockImplementation(() => createSpySuccessResponse({}));
+    return spy;
+  }
+
+  public updateEnvironmentTag() {
+    const spy = jest.spyOn(Project, 'UpdateEnvironmentTag');
+    spy.mockImplementation(() => createSpySuccessResponse({}));
+    return spy;
+  }
+
+  public deleteEnvironmentTag() {
+    const spy = jest.spyOn(Project, 'DeleteEnvironmentTag');
+    spy.mockImplementation(() => createSpySuccessResponse({}));
+    return spy;
+  }
+
+  public listBusinessTags() {
+    const spy = jest.spyOn(Project, 'ListBusinessTags');
+    spy.mockImplementation(() =>
+      createSpySuccessResponse({ data: mockBusinessTagsData })
+    );
+    return spy;
+  }
+
+  public createBusinessTag() {
+    const spy = jest.spyOn(Project, 'CreateBusinessTag');
+    spy.mockImplementation(() => createSpySuccessResponse({}));
+    return spy;
+  }
+
+  public updateBusinessTag() {
+    const spy = jest.spyOn(Project, 'UpdateBusinessTag');
+    spy.mockImplementation(() => createSpySuccessResponse({}));
+    return spy;
+  }
+
+  public deleteBusinessTag() {
+    const spy = jest.spyOn(Project, 'DeleteBusinessTag');
     spy.mockImplementation(() => createSpySuccessResponse({}));
     return spy;
   }

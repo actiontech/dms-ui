@@ -147,7 +147,7 @@ class MockDMSGlobalApi implements MockSpyApy {
   }
 
   public getListDBServices() {
-    const spy = jest.spyOn(DBService, 'ListDBServices');
+    const spy = jest.spyOn(DBService, 'ListDBServicesV2');
     spy.mockImplementation(() =>
       createSpySuccessResponse({
         total_nums: DBServicesList.length,
@@ -158,7 +158,7 @@ class MockDMSGlobalApi implements MockSpyApy {
   }
 
   public AddDBService() {
-    const spy = jest.spyOn(DBService, 'AddDBService');
+    const spy = jest.spyOn(DBService, 'AddDBServiceV2');
     spy.mockImplementation(() => createSpySuccessResponse({}));
     return spy;
   }
@@ -170,7 +170,7 @@ class MockDMSGlobalApi implements MockSpyApy {
   }
 
   public UpdateDBService() {
-    const spy = jest.spyOn(DBService, 'UpdateDBService');
+    const spy = jest.spyOn(DBService, 'UpdateDBServiceV2');
     spy.mockImplementation(() => createSpySuccessResponse({}));
     return spy;
   }

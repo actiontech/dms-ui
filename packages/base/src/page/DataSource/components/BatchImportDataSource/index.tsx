@@ -8,13 +8,13 @@ import {
 import { useTranslation } from 'react-i18next';
 import BatchImportDataSourceForm from '../../../Project/BatchImportDataSource/UploadForm';
 import { useCurrentProject } from '@actiontech/shared/lib/features';
-import DBService from '@actiontech/shared/lib/api/base/service/DBService';
 import { ResponseCode } from '@actiontech/shared/lib/enum';
 import useBatchImportDataSource from '../../../Project/BatchImportDataSource/hooks/useBatchImportDataSource';
 import { UploadProps } from 'antd';
 import { useCallback } from 'react';
 import { LeftArrowOutlined } from '@actiontech/icons';
 import { ROUTE_PATHS } from '@actiontech/shared/lib/data/routePaths';
+import { DmsApi } from '@actiontech/shared/lib/api';
 
 const BatchImportDataSource = () => {
   const { t } = useTranslation();
@@ -39,7 +39,7 @@ const BatchImportDataSource = () => {
   const onSubmit = async () => {
     await form.validateFields();
     setImportPending();
-    DBService.ImportDBServicesOfOneProject({
+    DmsApi.DBServiceService.ImportDBServicesOfOneProjectV2({
       db_services: dbServices,
       project_uid: projectID
     })
@@ -59,7 +59,7 @@ const BatchImportDataSource = () => {
     (option) => {
       setDBservices([]);
       clearUploadCheckStatus();
-      DBService.ImportDBServicesOfOneProjectCheck(
+      DmsApi.DBServiceService.ImportDBServicesOfOneProjectCheckV2(
         {
           project_uid: projectID,
           db_services_file: option.file

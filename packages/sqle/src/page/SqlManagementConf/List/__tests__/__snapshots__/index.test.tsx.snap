@@ -452,7 +452,7 @@ exports[`test sqle/SqlManagementConf/List render close task type filter field 1`
                               class="ant-table-cell"
                               scope="col"
                             >
-                              所属业务
+                              环境属性
                             </th>
                             <th
                               class="ant-table-cell"
@@ -612,7 +612,7 @@ exports[`test sqle/SqlManagementConf/List render close task type filter field 1`
                             <td
                               class="ant-table-cell"
                             >
-                              test
+                              environment-1
                             </td>
                             <td
                               class="ant-table-cell"
@@ -735,7 +735,7 @@ exports[`test sqle/SqlManagementConf/List render close task type filter field 1`
                             <td
                               class="ant-table-cell"
                             >
-                              test
+                              environment-1
                             </td>
                             <td
                               class="ant-table-cell"
@@ -903,7 +903,7 @@ exports[`test sqle/SqlManagementConf/List render close task type filter field 1`
                             <td
                               class="ant-table-cell"
                             >
-                              test
+                              environment-2
                             </td>
                             <td
                               class="ant-table-cell"
@@ -1489,7 +1489,7 @@ exports[`test sqle/SqlManagementConf/List render create button when project is a
                               class="ant-table-cell"
                               scope="col"
                             >
-                              所属业务
+                              环境属性
                             </th>
                             <th
                               class="ant-table-cell"
@@ -1967,6 +1967,64 @@ exports[`test sqle/SqlManagementConf/List render filter list data by active stat
             </div>
             <div
               class="ant-space-item"
+              style="margin-right: 12px; padding-bottom: 12px;"
+            >
+              <div
+                class="ant-select ant-select-sm ant-select-borderless basic-select-wrapper custom-select-namespace css-pti5z8 css-dev-only-do-not-override-jx040l ant-select-single ant-select-allow-clear ant-select-show-arrow"
+              >
+                <div
+                  class="ant-select-selector"
+                >
+                  <span
+                    class="ant-select-selection-search"
+                  >
+                    <input
+                      aria-activedescendant="rc_select_TEST_OR_SSR_list_0"
+                      aria-autocomplete="list"
+                      aria-controls="rc_select_TEST_OR_SSR_list"
+                      aria-expanded="false"
+                      aria-haspopup="listbox"
+                      aria-owns="rc_select_TEST_OR_SSR_list"
+                      autocomplete="off"
+                      class="ant-select-selection-search-input"
+                      id="rc_select_TEST_OR_SSR"
+                      readonly=""
+                      role="combobox"
+                      style="opacity: 0;"
+                      type="search"
+                      unselectable="on"
+                      value=""
+                    />
+                  </span>
+                  <span
+                    class="ant-select-selection-placeholder"
+                  >
+                    <span
+                      class="custom-select-placeholder css-qly0fu"
+                    >
+                      <span
+                        class="custom-select-placeholder-prefix"
+                      >
+                        环境属性
+                      </span>
+                      <span
+                        class="custom-select-placeholder-value"
+                      >
+                        请选择{{name}}
+                      </span>
+                    </span>
+                  </span>
+                </div>
+                <span
+                  aria-hidden="true"
+                  class="ant-select-arrow"
+                  style="user-select: none;"
+                  unselectable="on"
+                />
+              </div>
+            </div>
+            <div
+              class="ant-space-item"
               style="padding-bottom: 12px;"
             >
               <div
@@ -2208,7 +2266,7 @@ exports[`test sqle/SqlManagementConf/List render filter list data by active stat
                               class="ant-table-cell"
                               scope="col"
                             >
-                              所属业务
+                              环境属性
                             </th>
                             <th
                               class="ant-table-cell"
@@ -2805,7 +2863,7 @@ exports[`test sqle/SqlManagementConf/List render init snap shot 1`] = `
                               class="ant-table-cell"
                               scope="col"
                             >
-                              所属业务
+                              环境属性
                             </th>
                             <th
                               class="ant-table-cell"
@@ -2965,7 +3023,7 @@ exports[`test sqle/SqlManagementConf/List render init snap shot 1`] = `
                             <td
                               class="ant-table-cell"
                             >
-                              test
+                              environment-1
                             </td>
                             <td
                               class="ant-table-cell"
@@ -3088,7 +3146,7 @@ exports[`test sqle/SqlManagementConf/List render init snap shot 1`] = `
                             <td
                               class="ant-table-cell"
                             >
-                              test
+                              environment-1
                             </td>
                             <td
                               class="ant-table-cell"
@@ -3256,7 +3314,7 @@ exports[`test sqle/SqlManagementConf/List render init snap shot 1`] = `
                             <td
                               class="ant-table-cell"
                             >
-                              test
+                              environment-2
                             </td>
                             <td
                               class="ant-table-cell"
@@ -3958,7 +4016,7 @@ exports[`test sqle/SqlManagementConf/List render sql management conf list with a
                               class="ant-table-cell"
                               scope="col"
                             >
-                              所属业务
+                              环境属性
                             </th>
                             <th
                               class="ant-table-cell"
@@ -4138,7 +4196,7 @@ exports[`test sqle/SqlManagementConf/List render sql management conf list with a
                             <td
                               class="ant-table-cell"
                             >
-                              test
+                              environment-1
                             </td>
                             <td
                               class="ant-table-cell"

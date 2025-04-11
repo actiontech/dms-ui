@@ -14,7 +14,6 @@ import {
 } from '@actiontech/shared/lib/features';
 import useDbService from '../../../../hooks/useDbService';
 import { useBoolean, useRequest } from 'ahooks';
-import DBService from '@actiontech/shared/lib/api/base/service/DBService';
 import { ResponseCode } from '@actiontech/shared/lib/enum';
 import {
   ActiontechTable,
@@ -25,7 +24,7 @@ import {
   TableToolbar,
   TableFilterContainer
 } from '@actiontech/shared/lib/components/ActiontechTable';
-import { IListDBService } from '@actiontech/shared/lib/api/base/service/common';
+import { IListDBServiceV2 } from '@actiontech/shared/lib/api/base/service/common';
 import {
   DataMaskingFilterTypeEnum,
   DataSourceColumns,
@@ -35,6 +34,8 @@ import {
 import { DataSourceListActions, DataSourcePageHeaderActions } from './actions';
 import { ROUTE_PATHS } from '@actiontech/shared/lib/data/routePaths';
 import useStaticTips from '../../../../hooks/useStaticTips';
+import { DmsApi } from '@actiontech/shared/lib/api';
+import useServiceEnvironment from 'sqle/src/hooks/useServiceEnvironment';
 
 const DataSourceList = () => {
   const { t } = useTranslation();
@@ -63,6 +64,12 @@ const DataSourceList = () => {
     updateDbServiceList
   } = useDbService();
 
+  const {
+    environmentOptions,
+    loading: getEnvironmentListLoading,
+    updateEnvironmentList
+  } = useServiceEnvironment();
+
   const { generateDatabaseTestConnectionStatusSelectOptions } = useStaticTips();
 
   const {
@@ -73,7 +80,7 @@ const DataSourceList = () => {
     refreshBySearchKeyword,
     searchKeyword,
     setSearchKeyword
-  } = useTableRequestParams<IListDBService, DataSourceListParamType>({
+  } = useTableRequestParams<IListDBServiceV2, DataSourceListParamType>({
     defaultSearchKeyword:
       extractQuery(ROUTE_PATHS.BASE.DATA_SOURCE.index)?.address || ''
   });
@@ -100,7 +107,7 @@ const DataSourceList = () => {
         tableFilterInfo.is_enable_masking as unknown as DataMaskingFilterTypeEnum
       );
       return handleTableRequestError(
-        DBService.ListDBServices({
+        DmsApi.DBServiceService.ListDBServicesV2({
           ...tableFilterInfo,
           page_index: pagination.page_index,
           page_size: pagination.page_size,
@@ -125,7 +132,7 @@ const DataSourceList = () => {
   );
 
   const navigateToSqlManagementConf = useCallback(
-    (uid: string, business: string, instanceAuditPlanId?: string) => {
+    (uid: string, environment: string, instanceAuditPlanId?: string) => {
       if (instanceAuditPlanId) {
         navigate(ROUTE_PATHS.SQLE.SQL_MANAGEMENT_CONF.update, {
           params: { projectID, id: instanceAuditPlanId }
@@ -133,7 +140,7 @@ const DataSourceList = () => {
       } else {
         navigate(ROUTE_PATHS.SQLE.SQL_MANAGEMENT_CONF.create, {
           params: { projectID },
-          queries: { instance_id: uid, business }
+          queries: { instance_id: uid, environment_tag: environment }
         });
       }
     },
@@ -148,7 +155,7 @@ const DataSourceList = () => {
         }),
         0
       );
-      DBService.DelDBService({
+      DmsApi.DBServiceService.DelDBService({
         db_service_uid: dbServiceUid,
         project_uid: projectID
       })
@@ -175,7 +182,7 @@ const DataSourceList = () => {
         t('common.testDatabaseConnectButton.testing'),
         0
       );
-      DBService.CheckDBServiceIsConnectableById({
+      DmsApi.DBServiceService.CheckDBServiceIsConnectableById({
         db_service_uid: dbServiceUid,
         project_uid: projectID
       })
@@ -229,7 +236,7 @@ const DataSourceList = () => {
       return;
     }
     startTestConnection();
-    DBService.CheckProjectDBServicesConnections({
+    DmsApi.DBServiceService.CheckProjectDBServicesConnections({
       project_uid: projectID,
       db_services:
         dataSourceList?.list?.map((v) => ({
@@ -260,7 +267,7 @@ const DataSourceList = () => {
     useTableFilterContainer(columns, updateTableFilterInfo);
 
   const filterCustomProps = useMemo(() => {
-    return new Map<keyof IListDBService, FilterCustomProps>([
+    return new Map<keyof IListDBServiceV2, FilterCustomProps>([
       [
         'name',
         {
@@ -277,6 +284,10 @@ const DataSourceList = () => {
         'last_connection_test_status',
         { options: generateDatabaseTestConnectionStatusSelectOptions }
       ],
+      [
+        'environment_tag',
+        { options: environmentOptions, loading: getEnvironmentListLoading }
+      ],
       // #if [dms]
       ['is_enable_masking', { options: filterDataMaskOptions }]
       // #endif
@@ -287,6 +298,8 @@ const DataSourceList = () => {
     generateDatabaseTestConnectionStatusSelectOptions,
     getDbServiceOptionsLoading,
     getDriveOptionsLoading,
+    environmentOptions,
+    getEnvironmentListLoading,
     tableFilterInfo.filter_by_name
   ]);
 
@@ -316,6 +329,7 @@ const DataSourceList = () => {
     if (projectID) {
       updateDriverList();
       updateDbServiceList({ project_uid: projectID });
+      updateEnvironmentList(projectID);
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [projectID]);
@@ -373,7 +387,7 @@ const DataSourceList = () => {
       />
       <ActiontechTable
         dataSource={dataSourceList?.list}
-        rowKey={(record: IListDBService) => {
+        rowKey={(record: IListDBServiceV2) => {
           return `${record?.uid}`;
         }}
         pagination={{

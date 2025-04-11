@@ -2,10 +2,10 @@ import { useTranslation } from 'react-i18next';
 import { BasicTag, BasicToolTip } from '@actiontech/shared';
 import { formatTime } from '@actiontech/shared/lib/utils/Common';
 import { Space, Typography } from 'antd';
-import { ListDBServiceLastConnectionTestStatusEnum } from '@actiontech/shared/lib/api/base/service/common.enum';
+import { ListDBServiceV2LastConnectionTestStatusEnum } from '@actiontech/shared/lib/api/base/service/common.enum';
 
 type Props = {
-  connectionStatus?: ListDBServiceLastConnectionTestStatusEnum;
+  connectionStatus?: ListDBServiceV2LastConnectionTestStatusEnum;
   connectionTestTime?: string;
   connectionErrorMessage?: string;
 };
@@ -19,7 +19,7 @@ const ConnectionStatusColumn: React.FC<Props> = ({
 
   if (
     connectionStatus ===
-    ListDBServiceLastConnectionTestStatusEnum.connect_success
+    ListDBServiceV2LastConnectionTestStatusEnum.connect_success
   ) {
     return (
       <BasicToolTip
@@ -40,7 +40,7 @@ const ConnectionStatusColumn: React.FC<Props> = ({
 
   if (
     connectionStatus ===
-    ListDBServiceLastConnectionTestStatusEnum.connect_failed
+    ListDBServiceV2LastConnectionTestStatusEnum.connect_failed
   ) {
     return (
       <BasicToolTip

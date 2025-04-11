@@ -30,7 +30,7 @@ import workflow from '@actiontech/shared/lib/api/sqle/service/workflow';
 import { useCurrentProject } from '@actiontech/shared/lib/features';
 import { SqlExecStatusOptions } from './index.data';
 import useInstance from '../../../../../hooks/useInstance';
-import { getInstanceTipListV1FunctionalModuleEnum } from '@actiontech/shared/lib/api/sqle/service/instance/index.enum';
+import { getInstanceTipListV2FunctionalModuleEnum } from '@actiontech/shared/lib/api/sqle/service/instance/index.enum';
 import { groupBy } from 'lodash';
 import { SqlStatementFields } from '../../../Create/index.type';
 import { AuditTaskResV1SqlSourceEnum } from '@actiontech/shared/lib/api/sqle/service/common.enum';
@@ -279,7 +279,7 @@ const SqlRollback: React.FC<SqlRollbackProps> = ({
     updateInstanceList({
       project_name: projectName,
       functional_module:
-        getInstanceTipListV1FunctionalModuleEnum.create_workflow
+        getInstanceTipListV2FunctionalModuleEnum.create_workflow
     });
   }, [updateInstanceList, projectName]);
 

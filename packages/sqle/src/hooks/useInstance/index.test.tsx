@@ -45,7 +45,7 @@ describe('useInstance', () => {
   });
 
   const mockRequest = () => {
-    const spy = jest.spyOn(instance, 'getInstanceTipListV1');
+    const spy = jest.spyOn(instance, 'getInstanceTipListV2');
     return spy;
   };
 

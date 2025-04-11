@@ -15,7 +15,7 @@ import { useCallback, useState } from 'react';
 import ScanTypeSqlCollection from './ScanTypeSqlCollection/indx';
 import { useBoolean, useRequest } from 'ahooks';
 import { useLocation } from 'react-router-dom';
-import instance_audit_plan from '@actiontech/shared/lib/api/sqle/service/instance_audit_plan';
+import { SqleApi } from '@actiontech/shared/lib/api';
 import { useCurrentProject } from '@actiontech/shared/lib/features';
 import { Result, Space } from 'antd';
 import { getErrorMessage } from '@actiontech/shared/lib/utils/Common';
@@ -59,17 +59,15 @@ const ConfDetail: React.FC = () => {
     error,
     refresh: refreshAuditPlanDetail
   } = useRequest(() =>
-    instance_audit_plan
-      .getInstanceAuditPlanDetailV1({
-        project_name: projectName,
-        instance_audit_plan_id: id ?? ''
-      })
-      .then((res) => {
-        if (searchParams?.active_audit_plan_id) {
-          setActiveKey(searchParams.active_audit_plan_id);
-        }
-        return res.data.data;
-      })
+    SqleApi.InstanceAuditPlanService.getInstanceAuditPlanDetailV2({
+      project_name: projectName,
+      instance_audit_plan_id: id ?? ''
+    }).then((res) => {
+      if (searchParams?.active_audit_plan_id) {
+        setActiveKey(searchParams.active_audit_plan_id);
+      }
+      return res.data.data;
+    })
   );
 
   const handleChangeTable = useCallback(
@@ -138,12 +136,11 @@ const ConfDetail: React.FC = () => {
 
   const onAuditImmediately = () => {
     auditPending();
-    instance_audit_plan
-      .auditPlanTriggerSqlAuditV1({
-        project_name: projectName,
-        instance_audit_plan_id: id ?? '',
-        audit_plan_id: activeKey
-      })
+    SqleApi.InstanceAuditPlanService.auditPlanTriggerSqlAuditV1({
+      project_name: projectName,
+      instance_audit_plan_id: id ?? '',
+      audit_plan_id: activeKey
+    })
       .then((res) => {
         if (res.data.code === ResponseCode.SUCCESS) {
           messageApi.success(
