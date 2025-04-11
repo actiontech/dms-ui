@@ -99,6 +99,7 @@ const EnvironmentField: React.FC<EnvironmentFieldProps> = ({
       });
   };
 
+  //todo 目前这种写法不太友好 待和产品沟通 优化删除交互 修改此处代码
   const onDelete = (item: EditableSelectOption) => {
     if (boundServices.length > 0) {
       return Promise.resolve(false);
