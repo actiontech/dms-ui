@@ -200,7 +200,7 @@ describe('page/DataSource/DataSourceList', () => {
       '.actiontech-table-filter-container-namespace .ant-space-item',
       baseElement
     );
-    expect(filterItems.length).toBe(4);
+    expect(filterItems.length).toBe(5);
     expect(baseElement).toMatchSnapshot();
   });
 
@@ -273,9 +273,9 @@ describe('page/DataSource/DataSourceList', () => {
       '.actiontech-table-filter-container-namespace .ant-space-item',
       baseElement
     );
-    expect(filterItems.length).toBe(4);
+    expect(filterItems.length).toBe(5);
     expect(baseElement).toMatchSnapshot();
-    const enableFilterElement = getBySelector('input', filterItems[3]);
+    const enableFilterElement = getBySelector('input', filterItems[4]);
     fireEvent.mouseDown(enableFilterElement);
     const selectOptions = getAllBySelector('.ant-select-item-option');
     await act(async () => {
