@@ -33,6 +33,7 @@ import { useTypedNavigate } from '@actiontech/shared';
 import { ROUTE_PATHS } from '@actiontech/shared/lib/data/routePaths';
 import useStaticTips from '../../../hooks/useStaticTips';
 import { DmsApi } from '@actiontech/shared/lib/api';
+import useServiceEnvironment from 'sqle/src/hooks/useServiceEnvironment';
 
 const GlobalDataSourceList = () => {
   const { t } = useTranslation();
@@ -60,6 +61,12 @@ const GlobalDataSourceList = () => {
     updateProjects,
     loading: getProjectsLoading
   } = useProjectTips();
+
+  const {
+    environmentOptions,
+    loading: getEnvironmentListLoading,
+    updateEnvironmentList
+  } = useServiceEnvironment();
 
   const {
     tableFilterInfo,
@@ -115,6 +122,10 @@ const GlobalDataSourceList = () => {
       [
         'last_connection_test_status',
         { options: generateDatabaseTestConnectionStatusSelectOptions }
+      ],
+      [
+        'environment_tag',
+        { options: environmentOptions, loading: getEnvironmentListLoading }
       ]
     ]);
   }, [
@@ -122,7 +133,9 @@ const GlobalDataSourceList = () => {
     getDbTypeListLoading,
     projectIDOptions,
     getProjectsLoading,
-    generateDatabaseTestConnectionStatusSelectOptions
+    generateDatabaseTestConnectionStatusSelectOptions,
+    environmentOptions,
+    getEnvironmentListLoading
   ]);
 
   const actions = useMemo(() => {
@@ -260,6 +273,12 @@ const GlobalDataSourceList = () => {
     updateProjects();
     updateDbTypeList();
   }, [updateDbTypeList, updateDriverList, updateProjects]);
+
+  useEffect(() => {
+    if (tableFilterInfo.filter_by_project_uid) {
+      updateEnvironmentList(tableFilterInfo.filter_by_project_uid);
+    }
+  }, [updateEnvironmentList, tableFilterInfo.filter_by_project_uid]);
 
   useEffect(() => {
     const { unsubscribe: unsubscribeRefresh } = eventEmitter.subscribe(
