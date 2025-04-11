@@ -182,7 +182,7 @@ exports[`test base/GlobalDataSource should match snapshot 1`] = `
                         class="ant-table-cell"
                         scope="col"
                       >
-                        所属业务
+                        环境属性
                       </th>
                       <th
                         class="ant-table-cell"

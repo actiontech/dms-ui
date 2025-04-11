@@ -7,7 +7,7 @@ import { superRender } from '../../../../../testUtils/customRender';
 import PendingWorkOrder from '../index';
 import { GlobalDashboardFilterType } from '../../../index.type';
 import { getGlobalWorkflowsV1FilterStatusListEnum } from '@actiontech/shared/lib/api/sqle/service/workflow/index.enum';
-import { ListProjectProjectPriorityEnum } from '@actiontech/shared/lib/api/base/service/common.enum';
+import { ListProjectV2ProjectPriorityEnum } from '@actiontech/shared/lib/api/base/service/common.enum';
 import eventEmitter from '../../../../../utils/EventEmitter';
 import EmitterKey from '../../../../../data/EmitterKey';
 import { paramsSerializer } from '@actiontech/shared';
@@ -63,7 +63,7 @@ describe('sqle/GlobalDashboard/PendingWorkOrder', () => {
     customRender({
       projectId: '1',
       instanceId: '2',
-      projectPriority: ListProjectProjectPriorityEnum.low
+      projectPriority: ListProjectV2ProjectPriorityEnum.low
     });
     await act(async () => jest.advanceTimersByTime(3000));
     expect(getGlobalWorkflowsSpy).toHaveBeenCalledTimes(1);

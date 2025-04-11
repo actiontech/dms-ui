@@ -5,7 +5,7 @@ import { mockUseCurrentProject } from '@actiontech/shared/lib/testUtil/mockHook/
 import { mockDatabaseType } from '../../../../testUtils/mockHooks/mockDatabaseType';
 import { mockUseCurrentUser } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentUser';
 import { mockProjectInfo } from '@actiontech/shared/lib/testUtil/mockHook/data';
-import { getInstanceTipListV1FunctionalModuleEnum } from '@actiontech/shared/lib/api/sqle/service/instance/index.enum';
+import { getInstanceTipListV2FunctionalModuleEnum } from '@actiontech/shared/lib/api/sqle/service/instance/index.enum';
 import { instanceTipsMockData } from '../../../../testUtils/mockApi/instance/data';
 import { act } from '@testing-library/react';
 
@@ -36,7 +36,7 @@ describe('useDataSourceSelectorTree', () => {
     expect(getInstanceTipsSpy).toHaveBeenCalledWith({
       project_name: mockProjectInfo.projectName,
       functional_module:
-        getInstanceTipListV1FunctionalModuleEnum.create_workflow
+        getInstanceTipListV2FunctionalModuleEnum.create_workflow
     });
 
     expect(result.current.getTreeDataPending).toBeTruthy();

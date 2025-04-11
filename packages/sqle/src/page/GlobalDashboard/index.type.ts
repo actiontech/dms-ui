@@ -1,10 +1,10 @@
-import { ListProjectProjectPriorityEnum } from '@actiontech/shared/lib/api/base/service/common.enum';
+import { ListProjectV2ProjectPriorityEnum } from '@actiontech/shared/lib/api/base/service/common.enum';
 import { FormInstance, SelectProps } from 'antd';
 
 export type GlobalDashboardFilterType = {
   projectId?: string;
   instanceId?: string;
-  projectPriority?: ListProjectProjectPriorityEnum;
+  projectPriority?: ListProjectV2ProjectPriorityEnum;
 };
 
 export type GlobalDashboardTableFilterProps = {

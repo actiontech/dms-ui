@@ -319,6 +319,12 @@ export interface IBusinessTag {
   uid?: string;
 }
 
+export interface IBusinessTagCommon {
+  name?: string;
+
+  uid?: string;
+}
+
 export interface ICBOperationLog {
   audit_result?: IAuditSQLResult[];
 
@@ -534,7 +540,7 @@ export interface IDBServiceV2 {
 
   enable_backup?: boolean;
 
-  environment_tag: IEnvironmentTag;
+  environment_tag_uid: string;
 
   host: string;
 
@@ -1067,6 +1073,34 @@ export interface IImportDBService {
   user?: string;
 }
 
+export interface IImportDBServiceCommon {
+  additional_params?: IAdditionalParam[];
+
+  db_type?: string;
+
+  desc?: string;
+
+  host?: string;
+
+  is_enable_masking?: boolean;
+
+  maintenance_times?: IMaintenanceTime[];
+
+  name?: string;
+
+  password?: string;
+
+  port?: string;
+
+  project_uid?: string;
+
+  source?: string;
+
+  sqle_config?: ISQLEConfig;
+
+  user?: string;
+}
+
 export interface IImportDBServiceV2 {
   additional_params?: IAdditionalParam[];
 
@@ -1074,7 +1108,7 @@ export interface IImportDBServiceV2 {
 
   desc?: string;
 
-  environment_tag: IEnvironmentTag;
+  environment_tag_uid: string;
 
   host?: string;
 
@@ -1101,6 +1135,14 @@ export interface IImportDBServicesCheckReply {
   code?: number;
 
   data?: IImportDBService[];
+
+  message?: string;
+}
+
+export interface IImportDBServicesCheckReplyV2 {
+  code?: number;
+
+  data?: IImportDBServiceV2[];
 
   message?: string;
 }
@@ -1756,7 +1798,7 @@ export interface IListProjectV1 {
 export interface IListProjectV2 {
   archived?: boolean;
 
-  business_tag?: IBusinessTag;
+  business_tag?: IBusinessTagCommon;
 
   create_time?: string;
 
@@ -2374,7 +2416,7 @@ export interface IUpdateDBServiceV2 {
 
   enable_backup?: boolean;
 
-  environment_tag: IEnvironmentTag;
+  environment_tag_uid: string;
 
   host: string;
 

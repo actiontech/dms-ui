@@ -9,11 +9,10 @@ import project from '../../../../testUtils/mockApi/project';
 import { mockProjectList } from '../../../../testUtils/mockApi/project/data';
 import { Form } from 'antd';
 import { DataSourceFormField } from './index.type';
-import { createSpySuccessResponse } from '@actiontech/shared/lib/testUtil/mockApi';
 import dms from '../../../../testUtils/mockApi/global';
 import ruleTemplate from 'sqle/src/testUtils/mockApi/rule_template';
 import { DBServicesList } from '../../../../testUtils/mockApi/global/data';
-import { IListDBService } from '@actiontech/shared/lib/api/base/service/common';
+import { IListDBServiceV2 } from '@actiontech/shared/lib/api/base/service/common';
 import { mockUseCurrentProject } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentProject';
 import system from 'sqle/src/testUtils/mockApi/system';
 import EventEmitter from '../../../../utils/EventEmitter';
@@ -23,12 +22,12 @@ import DataSourceForm from '.';
 
 describe('page/DataSource/DataSourceForm', () => {
   const submitFn = jest.fn();
-  let getProjectTipsSpy: jest.SpyInstance;
+  let listEnvironmentTagsSpy: jest.SpyInstance;
   let getProjectListSpy: jest.SpyInstance;
   let getSystemModuleStatusSpy: jest.SpyInstance;
   const customRender = (params?: {
     isUpdate: boolean;
-    defaultData?: IListDBService;
+    defaultData?: IListDBServiceV2;
   }) => {
     const { result } = renderHooksWithTheme(() =>
       Form.useForm<DataSourceFormField>()
@@ -47,8 +46,8 @@ describe('page/DataSource/DataSourceForm', () => {
 
   beforeEach(() => {
     jest.useFakeTimers();
-    getProjectTipsSpy = project.getProjectTips();
     getProjectListSpy = project.getProjectList();
+    listEnvironmentTagsSpy = project.listEnvironmentTags();
     getSystemModuleStatusSpy = system.getSystemModuleStatus();
     dms.mockAllApi();
     ruleTemplate.mockAllApi();
@@ -61,31 +60,13 @@ describe('page/DataSource/DataSourceForm', () => {
     cleanup();
   });
 
-  it('render form snap when isFixedBusiness is true', async () => {
-    const { baseElement } = customRender();
-
-    expect(screen.getByText('添加数据源')).toBeInTheDocument();
-    expect(baseElement).toMatchSnapshot();
-  });
-
-  it('render form snap when isFixedBusiness is false', async () => {
-    getProjectTipsSpy.mockClear();
-    getProjectTipsSpy.mockImplementation(() =>
-      createSpySuccessResponse({ data: [{ is_fixed_business: false }] })
-    );
-    const { baseElement } = customRender();
-
-    expect(screen.getByText('添加数据源')).toBeInTheDocument();
-    expect(baseElement).toMatchSnapshot();
-  });
-
   it('render form snap when current projectID is undefined', async () => {
     const requestRuleTemplateTip = ruleTemplate.getProjectRuleTemplateTips();
     const requestProjectRuleTemplateTips = ruleTemplate.getRuleTemplateTips();
     customRender();
     expect(getProjectListSpy).toHaveBeenCalledTimes(1);
     expect(requestProjectRuleTemplateTips).toHaveBeenCalledTimes(1);
-    expect(getProjectTipsSpy).toHaveBeenCalledTimes(1);
+    expect(listEnvironmentTagsSpy).toHaveBeenCalledTimes(1);
     await act(async () => {
       await jest.advanceTimersByTime(3000);
     });
@@ -97,20 +78,24 @@ describe('page/DataSource/DataSourceForm', () => {
     const { baseElement } = customRender();
     expect(getProjectListSpy).toHaveBeenCalledTimes(2);
     expect(requestProjectRuleTemplateTips).toHaveBeenCalledTimes(2);
-    expect(getProjectTipsSpy).toHaveBeenCalledTimes(1);
+    expect(listEnvironmentTagsSpy).toHaveBeenCalledTimes(1);
     await act(async () => {
       await jest.advanceTimersByTime(3000);
     });
     expect(requestRuleTemplateTip).toHaveBeenCalledTimes(1);
     const projectEle = getBySelector('#project');
     expect(projectEle).not.toBeDisabled();
-    expect(getBySelector('#business')).toBeDisabled();
+    expect(getBySelector('.editable-select-trigger')).toHaveClass(
+      'editable-select-trigger-disabled'
+    );
     fireEvent.mouseDown(projectEle, baseElement);
     await act(async () => jest.advanceTimersByTime(300));
     fireEvent.click(screen.getByText('test_project_1'));
     await act(async () => jest.advanceTimersByTime(300));
-    expect(getBySelector('#business')).not.toBeDisabled();
-    expect(getProjectTipsSpy).toHaveBeenCalledTimes(2);
+    expect(getBySelector('.editable-select-trigger')).not.toHaveClass(
+      'editable-select-trigger-disabled'
+    );
+    expect(listEnvironmentTagsSpy).toHaveBeenCalledTimes(2);
     expect(requestRuleTemplateTip).toHaveBeenCalledTimes(2);
   });
 
@@ -225,7 +210,6 @@ describe('page/DataSource/DataSourceForm', () => {
     });
 
     await act(async () => jest.advanceTimersByTime(9300));
-    expect(getProjectTipsSpy).toHaveBeenCalledTimes(1);
     expect(requestProjectRuleTemplateTips).toHaveBeenCalled();
     await act(async () => jest.advanceTimersByTime(3000));
     expect(requestRuleTemplateTip).toHaveBeenCalled();
@@ -253,38 +237,29 @@ describe('page/DataSource/DataSourceForm', () => {
   });
 
   it('reset form when projectID is not undefined', async () => {
-    getProjectTipsSpy.mockImplementation(() =>
-      createSpySuccessResponse({
-        data: [{ is_fixed_business: false }]
-      })
-    );
     mockUseCurrentProject({ projectID: mockProjectList[0].uid });
     customRender();
     await act(async () => jest.advanceTimersByTime(3000));
     expect(screen.getByText(mockProjectList[0].name!)).toBeInTheDocument();
     await act(async () => jest.advanceTimersByTime(3000));
-    fireEvent.change(getBySelector('#business'), {
-      target: {
-        value: 'business111'
-      }
-    });
+
+    const environmentTagEle = getBySelector('.editable-select-trigger');
+    fireEvent.click(environmentTagEle);
     await act(async () => jest.advanceTimersByTime(0));
-    expect(getBySelector('#business')).toHaveValue('business111');
+    const firstOption = getAllBySelector('.ant-dropdown-menu-item')[0];
+    fireEvent.click(firstOption);
+    await act(async () => jest.advanceTimersByTime(0));
+    expect(environmentTagEle).toHaveTextContent('environment-1');
 
     await act(async () => {
       EventEmitter.emit(EmitterKey.DMS_Reset_DataSource_Form);
       await jest.advanceTimersByTime(300);
     });
-    expect(getBySelector('#business')).toHaveValue('');
+    expect(environmentTagEle).toHaveTextContent('environment-1');
     expect(screen.getByText(mockProjectList[0].name!)).toBeInTheDocument();
   });
 
   it('reset form when projectID is undefined', async () => {
-    getProjectTipsSpy.mockImplementation(() =>
-      createSpySuccessResponse({
-        data: [{ is_fixed_business: false }]
-      })
-    );
     mockUseCurrentProject({ projectID: undefined });
     customRender();
     await act(async () => jest.advanceTimersByTime(3000));
@@ -294,19 +269,18 @@ describe('page/DataSource/DataSourceForm', () => {
     fireEvent.click(screen.getByText('test_project_1'));
     await act(async () => jest.advanceTimersByTime(3000));
 
-    fireEvent.change(getBySelector('#business'), {
-      target: {
-        value: 'business111'
-      }
-    });
+    const environmentTagEle = getBySelector('.editable-select-trigger');
+    fireEvent.click(environmentTagEle);
     await act(async () => jest.advanceTimersByTime(0));
-    expect(getBySelector('#business')).toHaveValue('business111');
-
+    const firstOption = getAllBySelector('.ant-dropdown-menu-item')[0];
+    fireEvent.click(firstOption);
+    await act(async () => jest.advanceTimersByTime(0));
+    expect(environmentTagEle).toHaveTextContent('environment-1');
     await act(async () => {
       EventEmitter.emit(EmitterKey.DMS_Reset_DataSource_Form);
       await jest.advanceTimersByTime(300);
     });
-    expect(getBySelector('#business')).toHaveValue('');
+    expect(screen.queryByText('environment-1')).not.toBeInTheDocument();
     expect(screen.queryByText('test_project_1')).not.toBeInTheDocument();
   });
 });
