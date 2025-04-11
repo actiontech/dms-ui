@@ -24,6 +24,8 @@ import {
   IListTableBySchemaReturn,
   IGetTableMetadataParams,
   IGetTableMetadataReturn,
+  IGetInstanceTipListV2Params,
+  IGetInstanceTipListV2Return,
   IGetInstanceV2Params,
   IGetInstanceV2Return
 } from './index.d';
@@ -173,6 +175,21 @@ class InstanceService extends ServiceBase {
 
     return this.get<IGetTableMetadataReturn>(
       `/v1/projects/${project_name}/instances/${instance_name}/schemas/${schema_name}/tables/${table_name}/metadata`,
+      paramsData,
+      options
+    );
+  }
+
+  public getInstanceTipListV2(
+    params: IGetInstanceTipListV2Params,
+    options?: AxiosRequestConfig
+  ) {
+    const paramsData = this.cloneDeep(params);
+    const project_name = paramsData.project_name;
+    delete paramsData.project_name;
+
+    return this.get<IGetInstanceTipListV2Return>(
+      `/v2/projects/${project_name}/instance_tips`,
       paramsData,
       options
     );

@@ -9,7 +9,7 @@ import { useDispatch } from 'react-redux';
 import { updateProjectModalStatus } from '../../store/project';
 import { ModalName } from '../../data/ModalName';
 import ProjectManageModal from './Modal';
-import ProjectApi from '@actiontech/shared/lib/api/base/service/Project';
+import { DmsApi } from '@actiontech/shared/lib/api';
 import { useBoolean } from 'ahooks';
 import { ProjectManagementPageHeaderActions } from './action';
 
@@ -42,10 +42,12 @@ const Project: React.FC = () => {
       t('dmsProject.projectList.exportMessage'),
       0
     );
-    ProjectApi.ExportProjects({}, { responseType: 'blob' }).finally(() => {
-      exportFinish();
-      hideLoading();
-    });
+    DmsApi.ProjectService.ExportProjects({}, { responseType: 'blob' }).finally(
+      () => {
+        exportFinish();
+        hideLoading();
+      }
+    );
   };
 
   const headerActions = ProjectManagementPageHeaderActions(

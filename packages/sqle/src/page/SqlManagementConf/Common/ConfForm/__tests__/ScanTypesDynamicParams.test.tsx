@@ -139,7 +139,7 @@ describe('test SqlManagementConf/ScanTypesDynamicParams', () => {
 
   it('render defaultValue is defined', async () => {
     const { baseElement } = customRender(false, selectedScanTypeParamsMock, {
-      businessScope: mockAuditPlanDetailData.business!,
+      environmentTag: mockAuditPlanDetailData.environment!,
       instanceType: mockAuditPlanDetailData.instance_type!,
       instanceName: mockAuditPlanDetailData.instance_name!,
       instanceId: mockAuditPlanDetailData.instance_id!,

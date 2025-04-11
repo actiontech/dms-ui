@@ -696,7 +696,7 @@ exports[`base/Project/Import render upload file 1`] = `
                               class="ant-table-cell ellipsis-column-width"
                               scope="col"
                             >
-                              业务
+                              所属业务
                             </th>
                           </tr>
                         </thead>
@@ -828,41 +828,11 @@ exports[`base/Project/Import render upload file 1`] = `
                             <td
                               class="ant-table-cell ellipsis-column-width"
                             >
-                              <div
-                                class="ant-space css-dev-only-do-not-override-bj9uhl ant-space-horizontal ant-space-align-center"
-                                style="flex-wrap: wrap; margin-bottom: -8px;"
+                              <span
+                                class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-1wks1o6 css-dev-only-do-not-override-bj9uhl"
                               >
-                                <div
-                                  class="ant-space-item"
-                                  style="margin-right: 8px; padding-bottom: 8px;"
-                                >
-                                  <span
-                                    class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-1mjwlcb css-dev-only-do-not-override-bj9uhl"
-                                  >
-                                    business1
-                                  </span>
-                                </div>
-                                <div
-                                  class="ant-space-item"
-                                  style="margin-right: 8px; padding-bottom: 8px;"
-                                >
-                                  <span
-                                    class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-1mjwlcb css-dev-only-do-not-override-bj9uhl"
-                                  >
-                                    business2
-                                  </span>
-                                </div>
-                                <div
-                                  class="ant-space-item"
-                                  style="padding-bottom: 8px;"
-                                >
-                                  <span
-                                    class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-1mjwlcb css-dev-only-do-not-override-bj9uhl"
-                                  >
-                                    business3
-                                  </span>
-                                </div>
-                              </div>
+                                business1
+                              </span>
                             </td>
                           </tr>
                           <tr
@@ -882,21 +852,11 @@ exports[`base/Project/Import render upload file 1`] = `
                             <td
                               class="ant-table-cell ellipsis-column-width"
                             >
-                              <div
-                                class="ant-space css-dev-only-do-not-override-bj9uhl ant-space-horizontal ant-space-align-center"
-                                style="flex-wrap: wrap; margin-bottom: -8px;"
+                              <span
+                                class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-1wks1o6 css-dev-only-do-not-override-bj9uhl"
                               >
-                                <div
-                                  class="ant-space-item"
-                                  style="padding-bottom: 8px;"
-                                >
-                                  <span
-                                    class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-1mjwlcb css-dev-only-do-not-override-bj9uhl"
-                                  >
-                                    business1
-                                  </span>
-                                </div>
-                              </div>
+                                business2
+                              </span>
                             </td>
                           </tr>
                           <tr
@@ -916,7 +876,11 @@ exports[`base/Project/Import render upload file 1`] = `
                             <td
                               class="ant-table-cell ellipsis-column-width"
                             >
-                              -
+                              <span
+                                class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-1wks1o6 css-dev-only-do-not-override-bj9uhl"
+                              >
+                                business3
+                              </span>
                             </td>
                           </tr>
                           <tr

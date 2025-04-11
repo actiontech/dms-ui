@@ -19,7 +19,7 @@ import {
   TableToolbar,
   TableFilterContainer
 } from '@actiontech/shared/lib/components/ActiontechTable';
-import { IListGlobalDBService } from '@actiontech/shared/lib/api/base/service/common';
+import { IListGlobalDBServiceV2 } from '@actiontech/shared/lib/api/base/service/common';
 import {
   GlobalDataSourceColumns,
   GLobalDataSourceListParamType
@@ -32,6 +32,8 @@ import { GlobalDataSourceListActions } from './action';
 import { useTypedNavigate } from '@actiontech/shared';
 import { ROUTE_PATHS } from '@actiontech/shared/lib/data/routePaths';
 import useStaticTips from '../../../hooks/useStaticTips';
+import { DmsApi } from '@actiontech/shared/lib/api';
+import useServiceEnvironment from 'sqle/src/hooks/useServiceEnvironment';
 
 const GlobalDataSourceList = () => {
   const { t } = useTranslation();
@@ -61,6 +63,12 @@ const GlobalDataSourceList = () => {
   } = useProjectTips();
 
   const {
+    environmentOptions,
+    loading: getEnvironmentListLoading,
+    updateEnvironmentList
+  } = useServiceEnvironment();
+
+  const {
     tableFilterInfo,
     updateTableFilterInfo,
     tableChange,
@@ -69,7 +77,7 @@ const GlobalDataSourceList = () => {
     searchKeyword,
     setSearchKeyword
   } = useTableRequestParams<
-    IListGlobalDBService,
+    IListGlobalDBServiceV2,
     GLobalDataSourceListParamType
   >();
 
@@ -83,7 +91,7 @@ const GlobalDataSourceList = () => {
   } = useRequest(
     () => {
       return handleTableRequestError(
-        DBService.ListGlobalDBServices({
+        DmsApi.DBServiceService.ListGlobalDBServicesV2({
           ...tableFilterInfo,
           page_index: pagination.page_index,
           page_size: pagination.page_size,
@@ -105,15 +113,25 @@ const GlobalDataSourceList = () => {
     useTableFilterContainer(columns, updateTableFilterInfo);
 
   const filterCustomProps = useMemo(() => {
-    return new Map<keyof IListGlobalDBService, FilterCustomProps>([
+    return new Map<keyof IListGlobalDBServiceV2, FilterCustomProps>([
       ['db_type', { options: dbTypeOptions, loading: getDbTypeListLoading }],
       [
         'project_name',
-        { options: projectIDOptions, loading: getProjectsLoading }
+        {
+          options: projectIDOptions,
+          loading: getProjectsLoading,
+          onChange: (v: string) => {
+            updateEnvironmentList(v);
+          }
+        }
       ],
       [
         'last_connection_test_status',
         { options: generateDatabaseTestConnectionStatusSelectOptions }
+      ],
+      [
+        'environment_tag',
+        { options: environmentOptions, loading: getEnvironmentListLoading }
       ]
     ]);
   }, [
@@ -121,7 +139,10 @@ const GlobalDataSourceList = () => {
     getDbTypeListLoading,
     projectIDOptions,
     getProjectsLoading,
-    generateDatabaseTestConnectionStatusSelectOptions
+    generateDatabaseTestConnectionStatusSelectOptions,
+    environmentOptions,
+    getEnvironmentListLoading,
+    updateEnvironmentList
   ]);
 
   const actions = useMemo(() => {
@@ -302,7 +323,7 @@ const GlobalDataSourceList = () => {
       />
       <ActiontechTable
         dataSource={dataSourceList?.list}
-        rowKey={(record: IListGlobalDBService) => {
+        rowKey={(record: IListGlobalDBServiceV2) => {
           return `${record?.uid}`;
         }}
         pagination={{

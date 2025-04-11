@@ -55,10 +55,10 @@ exports[`test sqle/SqlManagementConf/ConfForm render init snap shot 1`] = `
                 >
                   <label
                     class="ant-form-item-required ant-form-item-no-colon"
-                    for="businessScope"
-                    title="所属业务"
+                    for="environmentTag"
+                    title="环境属性"
                   >
-                    所属业务
+                    环境属性
                   </label>
                 </div>
                 <div
@@ -81,16 +81,16 @@ exports[`test sqle/SqlManagementConf/ConfForm render init snap shot 1`] = `
                             class="ant-select-selection-search"
                           >
                             <input
-                              aria-activedescendant="businessScope_list_0"
+                              aria-activedescendant="environmentTag_list_0"
                               aria-autocomplete="list"
-                              aria-controls="businessScope_list"
+                              aria-controls="environmentTag_list"
                               aria-expanded="false"
                               aria-haspopup="listbox"
-                              aria-owns="businessScope_list"
+                              aria-owns="environmentTag_list"
                               aria-required="true"
                               autocomplete="off"
                               class="ant-select-selection-search-input"
-                              id="businessScope"
+                              id="environmentTag"
                               readonly=""
                               role="combobox"
                               style="opacity: 0;"
@@ -535,10 +535,10 @@ exports[`test sqle/SqlManagementConf/ConfForm render snap shot when defaultValue
                 >
                   <label
                     class="ant-form-item-required ant-form-item-no-colon"
-                    for="businessScope"
-                    title="所属业务"
+                    for="environmentTag"
+                    title="环境属性"
                   >
-                    所属业务
+                    环境属性
                   </label>
                 </div>
                 <div
@@ -561,17 +561,17 @@ exports[`test sqle/SqlManagementConf/ConfForm render snap shot when defaultValue
                             class="ant-select-selection-search"
                           >
                             <input
-                              aria-activedescendant="businessScope_list_0"
+                              aria-activedescendant="environmentTag_list_0"
                               aria-autocomplete="list"
-                              aria-controls="businessScope_list"
+                              aria-controls="environmentTag_list"
                               aria-expanded="false"
                               aria-haspopup="listbox"
-                              aria-owns="businessScope_list"
+                              aria-owns="environmentTag_list"
                               aria-required="true"
                               autocomplete="off"
                               class="ant-select-selection-search-input"
                               disabled=""
-                              id="businessScope"
+                              id="environmentTag"
                               readonly=""
                               role="combobox"
                               style="opacity: 0;"
@@ -582,9 +582,9 @@ exports[`test sqle/SqlManagementConf/ConfForm render snap shot when defaultValue
                           </span>
                           <span
                             class="ant-select-selection-item"
-                            title="business1"
+                            title="environment-1"
                           >
-                            business1
+                            environment-1
                           </span>
                         </div>
                         <span

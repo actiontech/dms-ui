@@ -20,7 +20,7 @@ import DatabaseInfo from './DatabaseInfo';
 import useDatabaseType from '../../../../hooks/useDatabaseType';
 import useInstance from '../../../../hooks/useInstance';
 import SQLStatementForm from '../SQLStatementForm';
-import { getInstanceTipListV1FunctionalModuleEnum } from '@actiontech/shared/lib/api/sqle/service/instance/index.enum';
+import { getInstanceTipListV2FunctionalModuleEnum } from '@actiontech/shared/lib/api/sqle/service/instance/index.enum';
 import { FormSubmitStatusContext } from '..';
 import {
   FormatLanguageSupport,
@@ -75,7 +75,7 @@ const SQLInfoFormItem = ({
       updateInstanceList({
         project_name: projectName,
         functional_module:
-          getInstanceTipListV1FunctionalModuleEnum.create_workflow
+          getInstanceTipListV2FunctionalModuleEnum.create_workflow
       });
     }
   }, [projectName, updateDriverNameList, updateInstanceList, auditType]);

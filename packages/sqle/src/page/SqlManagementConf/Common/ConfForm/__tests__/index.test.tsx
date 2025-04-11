@@ -24,6 +24,7 @@ import { ConfFormContextProvide, SelectScanTypeParamsType } from '../context';
 import { Form } from 'antd';
 import { SqlManagementConfFormFields } from '../index.type';
 import { AuditPlanParamResV1TypeEnum } from '@actiontech/shared/lib/api/sqle/service/common.enum';
+import project from '../../../../../testUtils/mockApi/project';
 
 describe('test sqle/SqlManagementConf/ConfForm', () => {
   let getDriversSpy: jest.SpyInstance;
@@ -31,9 +32,8 @@ describe('test sqle/SqlManagementConf/ConfForm', () => {
   let getProjectRuleTemplateTipSpy: jest.SpyInstance;
   let getInstanceSpy: jest.SpyInstance;
   let getGlobalRuleTemplateTipSpy: jest.SpyInstance;
-
+  let listEnvironmentTagsSpy: jest.SpyInstance;
   beforeEach(() => {
-    mockUseProjectBusinessTips();
     mockUseCurrentProject();
     mockUseCurrentUser();
     mockUseDbServiceDriver();
@@ -42,6 +42,7 @@ describe('test sqle/SqlManagementConf/ConfForm', () => {
     getGlobalRuleTemplateTipSpy = rule_template.getRuleTemplateTips();
     getInstanceTipListSpy = instance.getInstanceTipList();
     getInstanceSpy = instance.getInstance();
+    listEnvironmentTagsSpy = project.listEnvironmentTags();
     getInstanceSpy.mockClear();
     getInstanceSpy.mockImplementation(() =>
       createSpySuccessResponse({
@@ -92,6 +93,7 @@ describe('test sqle/SqlManagementConf/ConfForm', () => {
     expect(getDriversSpy).toHaveBeenCalledTimes(1);
     expect(getProjectRuleTemplateTipSpy).toHaveBeenCalledTimes(1);
     expect(getGlobalRuleTemplateTipSpy).toHaveBeenCalledTimes(1);
+    expect(listEnvironmentTagsSpy).toHaveBeenCalledTimes(1);
   });
 
   it('render snap shot when defaultValue is defined', async () => {
@@ -115,7 +117,7 @@ describe('test sqle/SqlManagementConf/ConfForm', () => {
         }
       ],
       {
-        businessScope: mockAuditPlanDetailData.business!,
+        environmentTag: mockAuditPlanDetailData.environment!,
         instanceType: mockAuditPlanDetailData.instance_type!,
         instanceName: mockAuditPlanDetailData.instance_name!,
         instanceId: mockAuditPlanDetailData.instance_id!,
@@ -138,7 +140,7 @@ describe('test sqle/SqlManagementConf/ConfForm', () => {
     expect(getGlobalRuleTemplateTipSpy).toHaveBeenCalled();
     expect(getInstanceTipListSpy).toHaveBeenCalled();
     expect(getInstanceSpy).toHaveBeenCalled();
-    expect(getBySelector('#businessScope')).toBeDisabled();
+    expect(getBySelector('#environmentTag')).toBeDisabled();
     expect(getBySelector('#instanceType')).toBeDisabled();
     expect(getBySelector('#instanceId')).toBeDisabled();
     expect(screen.getByText('MySQL库表元数据')).toBeInTheDocument();

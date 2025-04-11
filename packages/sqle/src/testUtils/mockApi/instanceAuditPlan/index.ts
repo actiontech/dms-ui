@@ -34,7 +34,7 @@ class MockInstanceAuditPlanApi implements MockSpyApy {
   }
 
   public getInstanceAuditPlans() {
-    const spy = jest.spyOn(instance_audit_plan, 'getInstanceAuditPlansV1');
+    const spy = jest.spyOn(instance_audit_plan, 'getInstanceAuditPlansV2');
     spy.mockImplementation(() =>
       createSpySuccessResponse({
         data: mockInstanceAuditPlanListData,
@@ -86,7 +86,7 @@ class MockInstanceAuditPlanApi implements MockSpyApy {
   }
 
   public getInstanceAuditPlanDetail() {
-    const spy = jest.spyOn(instance_audit_plan, 'getInstanceAuditPlanDetailV1');
+    const spy = jest.spyOn(instance_audit_plan, 'getInstanceAuditPlanDetailV2');
     spy.mockImplementation(() =>
       createSpySuccessResponse({
         data: mockAuditPlanDetailData

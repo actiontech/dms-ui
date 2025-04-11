@@ -27,7 +27,10 @@ import {
   IGetSqlManageSqlAnalysisChartV1Params,
   IGetSqlManageSqlAnalysisChartV1Return,
   IGetSqlManageListV2Params,
-  IGetSqlManageListV2Return
+  IGetSqlManageListV2Return,
+  IExportSqlManageV2Params,
+  IGetSqlManageListV3Params,
+  IGetSqlManageListV3Return
 } from './index.d';
 
 class SqlManageService extends ServiceBase {
@@ -191,6 +194,36 @@ class SqlManageService extends ServiceBase {
 
     return this.get<IGetSqlManageListV2Return>(
       `/v2/projects/${project_name}/sql_manages`,
+      paramsData,
+      options
+    );
+  }
+
+  public exportSqlManageV2(
+    params: IExportSqlManageV2Params,
+    options?: AxiosRequestConfig
+  ) {
+    const paramsData = this.cloneDeep(params);
+    const project_name = paramsData.project_name;
+    delete paramsData.project_name;
+
+    return this.get<any>(
+      `/v2/projects/${project_name}/sql_manages/exports`,
+      paramsData,
+      options
+    );
+  }
+
+  public GetSqlManageListV3(
+    params: IGetSqlManageListV3Params,
+    options?: AxiosRequestConfig
+  ) {
+    const paramsData = this.cloneDeep(params);
+    const project_name = paramsData.project_name;
+    delete paramsData.project_name;
+
+    return this.get<IGetSqlManageListV3Return>(
+      `/v3/projects/${project_name}/sql_manages`,
       paramsData,
       options
     );

@@ -509,7 +509,7 @@ exports[`page/SqlManagement/SQLEEIndex filter data with rule name 1`] = `
                     <span
                       class="custom-select-placeholder-prefix"
                     >
-                      业务
+                      环境属性
                     </span>
                     <span
                       class="custom-select-placeholder-value"

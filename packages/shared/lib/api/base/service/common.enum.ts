@@ -52,6 +52,12 @@ export enum ListDBServiceLastConnectionTestStatusEnum {
   'connect_failed' = 'connect_failed'
 }
 
+export enum ListDBServiceV2LastConnectionTestStatusEnum {
+  'connect_success' = 'connect_success',
+
+  'connect_failed' = 'connect_failed'
+}
+
 export enum ListDataExportWorkflowStatusEnum {
   'wait_for_approve' = 'wait_for_approve',
 
@@ -69,6 +75,12 @@ export enum ListDataExportWorkflowStatusEnum {
 }
 
 export enum ListGlobalDBServiceLastConnectionTestStatusEnum {
+  'connect_success' = 'connect_success',
+
+  'connect_failed' = 'connect_failed'
+}
+
+export enum ListGlobalDBServiceV2LastConnectionTestStatusEnum {
   'connect_success' = 'connect_success',
 
   'connect_failed' = 'connect_failed'
@@ -94,7 +106,17 @@ export enum ListOpPermissionRangeTypeEnum {
   'db_service' = 'db_service'
 }
 
-export enum ListProjectProjectPriorityEnum {
+export enum ListProjectV1ProjectPriorityEnum {
+  'high' = 'high',
+
+  'medium' = 'medium',
+
+  'low' = 'low',
+
+  'unknown' = 'unknown'
+}
+
+export enum ListProjectV2ProjectPriorityEnum {
   'high' = 'high',
 
   'medium' = 'medium',
@@ -218,7 +240,17 @@ export enum OperationOperationTypeEnum {
   'SQL' = 'SQL'
 }
 
-export enum ProjectProjectPriorityEnum {
+export enum ProjectV1ProjectPriorityEnum {
+  'high' = 'high',
+
+  'medium' = 'medium',
+
+  'low' = 'low',
+
+  'unknown' = 'unknown'
+}
+
+export enum ProjectV2ProjectPriorityEnum {
   'high' = 'high',
 
   'medium' = 'medium',
@@ -245,6 +277,16 @@ export enum TestFeishuConfigurationAccountTypeEnum {
 }
 
 export enum UpdateProjectProjectPriorityEnum {
+  'high' = 'high',
+
+  'medium' = 'medium',
+
+  'low' = 'low',
+
+  'unknown' = 'unknown'
+}
+
+export enum UpdateProjectV2ProjectPriorityEnum {
   'high' = 'high',
 
   'medium' = 'medium',

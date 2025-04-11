@@ -7,13 +7,13 @@ import {
 } from '@actiontech/shared';
 import { useTranslation } from 'react-i18next';
 import BatchImportDataSourceForm from './UploadForm';
-import Project from '@actiontech/shared/lib/api/base/service/Project';
 import { ResponseCode } from '@actiontech/shared/lib/enum';
 import useBatchImportDataSource from './hooks/useBatchImportDataSource';
 import { UploadProps } from 'antd';
 import { useCallback } from 'react';
 import { LeftArrowOutlined } from '@actiontech/icons';
 import { ROUTE_PATHS } from '@actiontech/shared/lib/data/routePaths';
+import { DmsApi } from '@actiontech/shared/lib/api';
 
 const BatchImportDataSource = () => {
   const { t } = useTranslation();
@@ -36,7 +36,7 @@ const BatchImportDataSource = () => {
   const onSubmit = async () => {
     await form.validateFields();
     setImportPending();
-    Project.ImportDBServicesOfProjects({
+    DmsApi.ProjectService.ImportDBServicesOfProjectsV2({
       db_services: dbServices
     })
       .then((res) => {
@@ -55,7 +55,7 @@ const BatchImportDataSource = () => {
     (option) => {
       setDBservices([]);
       clearUploadCheckStatus();
-      Project.ImportDBServicesOfProjectsCheck(
+      DmsApi.ProjectService.ImportDBServicesOfProjectsCheckV2(
         { db_services_file: option.file },
         { responseType: 'blob' }
       )

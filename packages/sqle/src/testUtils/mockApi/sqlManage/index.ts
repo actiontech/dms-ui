@@ -44,7 +44,7 @@ class MockSqlManageApi implements MockSpyApy {
   }
 
   public getSqlManageList() {
-    const spy = jest.spyOn(SqlManage, 'GetSqlManageListV2');
+    const spy = jest.spyOn(SqlManage, 'GetSqlManageListV3');
     spy.mockImplementation(() =>
       createSpySuccessResponse({
         ...sqlManageListData,
@@ -55,7 +55,7 @@ class MockSqlManageApi implements MockSpyApy {
   }
 
   public exportSqlManage() {
-    const spy = jest.spyOn(SqlManage, 'exportSqlManageV1');
+    const spy = jest.spyOn(SqlManage, 'exportSqlManageV2');
     spy.mockImplementation(() => createSpySuccessResponse({}));
     return spy;
   }

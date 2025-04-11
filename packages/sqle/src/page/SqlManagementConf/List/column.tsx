@@ -105,8 +105,13 @@ export const SqlManagementConfColumns: (
       }
     },
     {
-      dataIndex: 'business',
-      title: () => t('managementConf.list.table.column.business')
+      dataIndex: 'environment',
+      title: () => t('managementConf.list.table.column.environmentAttribute'),
+      render: (environment) => {
+        return environment || '-';
+      },
+      filterCustomType: 'select',
+      filterKey: 'filter_by_environment_tag'
     },
     {
       dataIndex: 'audit_plan_types',
