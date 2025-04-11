@@ -7,7 +7,7 @@ import { UpdateSqlBackupStrategyReqStrategyEnum } from '@actiontech/shared/lib/a
 import { BackupStrategyOptions } from './index.data';
 import { SwitchSqlBackupStrategyModalProps } from './index.type';
 import { useMemo } from 'react';
-import { InstanceTipResV1SupportedBackupStrategyEnum } from '@actiontech/shared/lib/api/sqle/service/common.enum';
+import { InstanceTipResV2SupportedBackupStrategyEnum } from '@actiontech/shared/lib/api/sqle/service/common.enum';
 
 const SwitchSqlBackupStrategyModal: React.FC<
   SwitchSqlBackupStrategyModalProps
@@ -47,7 +47,7 @@ const SwitchSqlBackupStrategyModal: React.FC<
   const options = useMemo(() => {
     return BackupStrategyOptions.filter((i) =>
       supportedBackupPolicies?.includes(
-        i.value as unknown as InstanceTipResV1SupportedBackupStrategyEnum
+        i.value as unknown as InstanceTipResV2SupportedBackupStrategyEnum
       )
     );
   }, [supportedBackupPolicies]);

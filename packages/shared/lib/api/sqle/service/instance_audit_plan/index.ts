@@ -37,7 +37,11 @@ import {
   IGetAuditPlanSqlAnalysisDataV1Params,
   IGetAuditPlanSqlAnalysisDataV1Return,
   IUploadInstanceAuditPlanSQLsV2Params,
-  IUploadInstanceAuditPlanSQLsV2Return
+  IUploadInstanceAuditPlanSQLsV2Return,
+  IGetInstanceAuditPlansV2Params,
+  IGetInstanceAuditPlansV2Return,
+  IGetInstanceAuditPlanDetailV2Params,
+  IGetInstanceAuditPlanDetailV2Return
 } from './index.d';
 
 class InstanceAuditPlanService extends ServiceBase {
@@ -342,6 +346,39 @@ class InstanceAuditPlanService extends ServiceBase {
 
     return this.post<IUploadInstanceAuditPlanSQLsV2Return>(
       `/v2/projects/${project_name}/audit_plans/${audit_plan_id}/sqls/upload`,
+      paramsData,
+      options
+    );
+  }
+
+  public getInstanceAuditPlansV2(
+    params: IGetInstanceAuditPlansV2Params,
+    options?: AxiosRequestConfig
+  ) {
+    const paramsData = this.cloneDeep(params);
+    const project_name = paramsData.project_name;
+    delete paramsData.project_name;
+
+    return this.get<IGetInstanceAuditPlansV2Return>(
+      `/v2/projects/${project_name}/instance_audit_plans`,
+      paramsData,
+      options
+    );
+  }
+
+  public getInstanceAuditPlanDetailV2(
+    params: IGetInstanceAuditPlanDetailV2Params,
+    options?: AxiosRequestConfig
+  ) {
+    const paramsData = this.cloneDeep(params);
+    const project_name = paramsData.project_name;
+    delete paramsData.project_name;
+
+    const instance_audit_plan_id = paramsData.instance_audit_plan_id;
+    delete paramsData.instance_audit_plan_id;
+
+    return this.get<IGetInstanceAuditPlanDetailV2Return>(
+      `/v2/projects/${project_name}/instance_audit_plans/${instance_audit_plan_id}`,
       paramsData,
       options
     );

@@ -1,4 +1,4 @@
-import { IListProject } from '@actiontech/shared/lib/api/base/service/common';
+import { IListProjectV2 } from '@actiontech/shared/lib/api/base/service/common';
 import {
   CheckActionPermissionOtherValues,
   PERMISSIONS,
@@ -11,12 +11,12 @@ import { ActiontechTableActionsConfig } from '@actiontech/shared/lib/components/
 type Params = {
   checkActionPermission: (
     permission: PermissionsConstantType,
-    otherValues?: CheckActionPermissionOtherValues<IListProject>
+    otherValues?: CheckActionPermissionOtherValues<IListProjectV2>
   ) => boolean;
-  deleteProject: (record: IListProject) => void;
-  updateProject: (record: IListProject) => void;
-  archiveProject: (record: IListProject) => void;
-  unarchiveProject: (record: IListProject) => void;
+  deleteProject: (record: IListProjectV2) => void;
+  updateProject: (record: IListProjectV2) => void;
+  archiveProject: (record: IListProjectV2) => void;
+  unarchiveProject: (record: IListProjectV2) => void;
 };
 
 export const ProjectManagementTableActions = ({
@@ -25,7 +25,7 @@ export const ProjectManagementTableActions = ({
   updateProject,
   archiveProject,
   unarchiveProject
-}: Params): ActiontechTableActionsConfig<IListProject> => {
+}: Params): ActiontechTableActionsConfig<IListProjectV2> => {
   return {
     width: ACTIONTECH_TABLE_ACTION_BUTTON_WIDTH * 3,
     buttons: [

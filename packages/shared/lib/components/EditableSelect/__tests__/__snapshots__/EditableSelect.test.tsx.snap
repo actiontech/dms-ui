@@ -1,0 +1,298 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`EditableSelect should render select with options 1`] = `
+<body>
+  <div>
+    <div
+      class="ant-dropdown-trigger editable-select-trigger css-e92p61"
+    >
+      <span
+        class="placeholder"
+      >
+        请选择{{name}}
+      </span>
+      <span
+        class="arrow-icon"
+      >
+        <svg
+          height="20"
+          viewBox="0 0 16 16"
+          width="20"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="m8 8.781 3.3-3.3.943.943L8 10.667 3.757 6.424l.943-.943z"
+            fill="#C3C6CD"
+          />
+        </svg>
+      </span>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`EditableSelect should render select with options 2`] = `
+<body>
+  <div>
+    <div
+      class="ant-dropdown-trigger editable-select-trigger ant-dropdown-open css-iiqyi4"
+      open=""
+    >
+      <span
+        class="placeholder"
+      >
+        请选择{{name}}
+      </span>
+      <span
+        class="arrow-icon"
+      >
+        <svg
+          fill="none"
+          height="20"
+          viewBox="0 0 16 16"
+          width="20"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="m8 7.219-3.3 3.3-.942-.943L8 5.333l4.243 4.243-.943.943z"
+            fill="#C3C6CD"
+          />
+        </svg>
+      </span>
+    </div>
+  </div>
+  <div>
+    <div
+      class="ant-dropdown ant-slide-up-appear ant-slide-up-appear-prepare ant-slide-up css-dev-only-do-not-override-txh9fw ant-dropdown-placement-bottomLeft"
+      style="--arrow-x: 0px; --arrow-y: 0px; left: -1000vw; top: -1000vh; box-sizing: border-box;"
+    >
+      <div
+        class="css-5jt1cn"
+      >
+        <div
+          class="ant-spin-nested-loading css-dev-only-do-not-override-txh9fw"
+        >
+          <div
+            class="ant-spin-container"
+          >
+            <ul
+              class="ant-dropdown-menu ant-dropdown-menu-root ant-dropdown-menu-vertical ant-dropdown-menu-light editable-select-menu css-dev-only-do-not-override-txh9fw"
+              data-menu-list="true"
+              role="menu"
+              tabindex="0"
+            >
+              <li
+                class="ant-dropdown-menu-item ant-dropdown-menu-item-only-child"
+                data-menu-id="rc-menu-uuid-test-1"
+                role="menuitem"
+                tabindex="-1"
+              >
+                <span
+                  class="ant-dropdown-menu-title-content"
+                >
+                  <div
+                    class="menu-item-content"
+                  >
+                    <span>
+                      Option 1
+                    </span>
+                    <div
+                      class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+                    >
+                      <div
+                        class="ant-space-item"
+                        style="margin-right: 8px;"
+                      >
+                        <button
+                          class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-text ant-btn-sm ant-btn-icon-only edit-button basic-button-wrapper css-geipcv"
+                          type="button"
+                        >
+                          <span
+                            class="ant-btn-icon"
+                          >
+                            <svg
+                              height="16"
+                              viewBox="0 0 16 16"
+                              width="16"
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <path
+                                d="M6.162 12.667H14V14H2v-2.829l6.6-6.6 2.828 2.83zm3.38-9.038 1.415-1.414a.667.667 0 0 1 .942 0L13.785 4.1a.667.667 0 0 1 0 .942l-1.414 1.414z"
+                                fill="#8A8F99"
+                              />
+                            </svg>
+                          </span>
+                        </button>
+                      </div>
+                      <div
+                        class="ant-space-item"
+                      >
+                        <button
+                          class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-text ant-btn-sm ant-btn-icon-only ant-btn-dangerous delete-button basic-button-wrapper css-geipcv"
+                          type="button"
+                        >
+                          <span
+                            class="ant-btn-icon"
+                          >
+                            <svg
+                              height="14"
+                              viewBox="0 0 18 18"
+                              width="14"
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <path
+                                d="M9 16.5a7.5 7.5 0 1 1 0-15 7.5 7.5 0 0 1 0 15M5.25 8.25v1.5h7.5v-1.5z"
+                                fill="#F66074"
+                              />
+                            </svg>
+                          </span>
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </span>
+              </li>
+              <li
+                class="ant-dropdown-menu-item ant-dropdown-menu-item-only-child"
+                data-menu-id="rc-menu-uuid-test-2"
+                role="menuitem"
+                tabindex="-1"
+              >
+                <span
+                  class="ant-dropdown-menu-title-content"
+                >
+                  <div
+                    class="menu-item-content"
+                  >
+                    <span>
+                      Option 2
+                    </span>
+                    <div
+                      class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+                    >
+                      <div
+                        class="ant-space-item"
+                        style="margin-right: 8px;"
+                      >
+                        <button
+                          class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-text ant-btn-sm ant-btn-icon-only edit-button basic-button-wrapper css-geipcv"
+                          type="button"
+                        >
+                          <span
+                            class="ant-btn-icon"
+                          >
+                            <svg
+                              height="16"
+                              viewBox="0 0 16 16"
+                              width="16"
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <path
+                                d="M6.162 12.667H14V14H2v-2.829l6.6-6.6 2.828 2.83zm3.38-9.038 1.415-1.414a.667.667 0 0 1 .942 0L13.785 4.1a.667.667 0 0 1 0 .942l-1.414 1.414z"
+                                fill="#8A8F99"
+                              />
+                            </svg>
+                          </span>
+                        </button>
+                      </div>
+                      <div
+                        class="ant-space-item"
+                      >
+                        <button
+                          class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-text ant-btn-sm ant-btn-icon-only ant-btn-dangerous delete-button basic-button-wrapper css-geipcv"
+                          type="button"
+                        >
+                          <span
+                            class="ant-btn-icon"
+                          >
+                            <svg
+                              height="14"
+                              viewBox="0 0 18 18"
+                              width="14"
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <path
+                                d="M9 16.5a7.5 7.5 0 1 1 0-15 7.5 7.5 0 0 1 0 15M5.25 8.25v1.5h7.5v-1.5z"
+                                fill="#F66074"
+                              />
+                            </svg>
+                          </span>
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </span>
+              </li>
+              <li
+                class="ant-dropdown-menu-item-divider"
+              />
+              <li
+                class="ant-dropdown-menu-item"
+                data-menu-id="rc-menu-uuid-test-add-button"
+                role="menuitem"
+                tabindex="-1"
+              >
+                <svg
+                  class="ant-dropdown-menu-item-icon"
+                  fill="none"
+                  height="14"
+                  viewBox="0 0 10 10"
+                  width="14"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="m5.02.5-.012 9M.5 5h9"
+                    stroke="#1CB889"
+                    stroke-linejoin="round"
+                    stroke-width="1.5"
+                  />
+                </svg>
+                <span
+                  class="ant-dropdown-menu-title-content"
+                >
+                  添加
+                </span>
+              </li>
+            </ul>
+            <div
+              aria-hidden="true"
+              style="display: none;"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`EditableSelect should render without options 1`] = `
+<body>
+  <div>
+    <div
+      class="ant-dropdown-trigger editable-select-trigger css-e92p61"
+    >
+      <span
+        class="placeholder"
+      >
+        请选择{{name}}
+      </span>
+      <span
+        class="arrow-icon"
+      >
+        <svg
+          height="20"
+          viewBox="0 0 16 16"
+          width="20"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="m8 8.781 3.3-3.3.943.943L8 10.667 3.757 6.424l.943-.943z"
+            fill="#C3C6CD"
+          />
+        </svg>
+      </span>
+    </div>
+  </div>
+</body>
+`;

@@ -17,7 +17,19 @@ import {
   GetSqlManageListV2FilterStatusEnum,
   GetSqlManageListV2FilterPriorityEnum,
   GetSqlManageListV2SortFieldEnum,
-  GetSqlManageListV2SortOrderEnum
+  GetSqlManageListV2SortOrderEnum,
+  exportSqlManageV2FilterPriorityEnum,
+  exportSqlManageV2FilterSourceEnum,
+  exportSqlManageV2FilterAuditLevelEnum,
+  exportSqlManageV2FilterStatusEnum,
+  exportSqlManageV2SortFieldEnum,
+  exportSqlManageV2SortOrderEnum,
+  GetSqlManageListV3FilterSourceEnum,
+  GetSqlManageListV3FilterAuditLevelEnum,
+  GetSqlManageListV3FilterStatusEnum,
+  GetSqlManageListV3FilterPriorityEnum,
+  GetSqlManageListV3SortFieldEnum,
+  GetSqlManageListV3SortOrderEnum
 } from './index.enum';
 
 import {
@@ -211,6 +223,8 @@ export interface IGetSqlManageListV2Params {
 
   filter_business?: string;
 
+  filter_by_environment_tag?: string;
+
   filter_priority?: GetSqlManageListV2FilterPriorityEnum;
 
   fuzzy_search_endpoint?: string;
@@ -227,3 +241,81 @@ export interface IGetSqlManageListV2Params {
 }
 
 export interface IGetSqlManageListV2Return extends IGetSqlManageListResp {}
+
+export interface IExportSqlManageV2Params {
+  project_name: string;
+
+  fuzzy_search_sql_fingerprint?: string;
+
+  filter_assignee?: string;
+
+  filter_by_environment_tag?: string;
+
+  filter_priority?: exportSqlManageV2FilterPriorityEnum;
+
+  filter_instance_id?: string;
+
+  filter_source?: exportSqlManageV2FilterSourceEnum;
+
+  filter_audit_level?: exportSqlManageV2FilterAuditLevelEnum;
+
+  filter_last_audit_start_time_from?: string;
+
+  filter_last_audit_start_time_to?: string;
+
+  filter_status?: exportSqlManageV2FilterStatusEnum;
+
+  filter_db_type?: string;
+
+  filter_rule_name?: string;
+
+  fuzzy_search_endpoint?: string;
+
+  fuzzy_search_schema_name?: string;
+
+  sort_field?: exportSqlManageV2SortFieldEnum;
+
+  sort_order?: exportSqlManageV2SortOrderEnum;
+}
+
+export interface IGetSqlManageListV3Params {
+  project_name: string;
+
+  fuzzy_search_sql_fingerprint?: string;
+
+  filter_assignee?: string;
+
+  filter_instance_id?: string;
+
+  filter_source?: GetSqlManageListV3FilterSourceEnum;
+
+  filter_audit_level?: GetSqlManageListV3FilterAuditLevelEnum;
+
+  filter_last_audit_start_time_from?: string;
+
+  filter_last_audit_start_time_to?: string;
+
+  filter_status?: GetSqlManageListV3FilterStatusEnum;
+
+  filter_rule_name?: string;
+
+  filter_db_type?: string;
+
+  filter_by_environment_tag?: string;
+
+  filter_priority?: GetSqlManageListV3FilterPriorityEnum;
+
+  fuzzy_search_endpoint?: string;
+
+  fuzzy_search_schema_name?: string;
+
+  sort_field?: GetSqlManageListV3SortFieldEnum;
+
+  sort_order?: GetSqlManageListV3SortOrderEnum;
+
+  page_index: number;
+
+  page_size: number;
+}
+
+export interface IGetSqlManageListV3Return extends IGetSqlManageListResp {}

@@ -7,14 +7,14 @@ import { UpdateTaskBackupStrategyReqStrategyEnum } from '@actiontech/shared/lib/
 import { BackupStrategyOptions } from '../../../../Common/AuditResultList/Table/index.data';
 import EventEmitter from '../../../../../../utils/EventEmitter';
 import EmitterKey from '../../../../../../data/EmitterKey';
-import { InstanceTipResV1SupportedBackupStrategyEnum } from '@actiontech/shared/lib/api/sqle/service/common.enum';
+import { InstanceTipResV2SupportedBackupStrategyEnum } from '@actiontech/shared/lib/api/sqle/service/common.enum';
 import { useMemo } from 'react';
 
 type BatchSwitchBackupStrategyModalProps = {
   taskID?: string;
   open: boolean;
   onCancel: () => void;
-  currentTaskSupportedBackupPolicies?: InstanceTipResV1SupportedBackupStrategyEnum[];
+  currentTaskSupportedBackupPolicies?: InstanceTipResV2SupportedBackupStrategyEnum[];
 };
 
 const BatchSwitchBackupStrategyModal: React.FC<
@@ -59,7 +59,7 @@ const BatchSwitchBackupStrategyModal: React.FC<
   const options = useMemo(() => {
     return BackupStrategyOptions.filter((i) =>
       currentTaskSupportedBackupPolicies?.includes(
-        i.value as unknown as InstanceTipResV1SupportedBackupStrategyEnum
+        i.value as unknown as InstanceTipResV2SupportedBackupStrategyEnum
       )
     );
   }, [currentTaskSupportedBackupPolicies]);

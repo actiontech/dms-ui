@@ -1,4 +1,4 @@
-import { IListDBService } from '@actiontech/shared/lib/api/base/service/common';
+import { IListDBServiceV2 } from '@actiontech/shared/lib/api/base/service/common';
 import {
   ActiontechTableActionsWithPermissions,
   PERMISSIONS,
@@ -16,10 +16,10 @@ export const DataSourceListActions = (
   onTestConnection: (uid: string, name: string) => void,
   navigateToSqlManagementConf: (
     name: string,
-    business: string,
+    environment: string,
     instanceAuditPlanId?: string
   ) => void
-): ActiontechTableActionsWithPermissions<IListDBService> => {
+): ActiontechTableActionsWithPermissions<IListDBServiceV2> => {
   return {
     buttons: [
       {
@@ -75,7 +75,7 @@ export const DataSourceListActions = (
         onClick: (record) => {
           navigateToSqlManagementConf(
             record?.uid ?? '',
-            record?.business ?? '',
+            record?.environment_tag?.uid ?? '',
             record?.instance_audit_plan_id?.toString()
           );
         }
@@ -121,9 +121,7 @@ export const DataSourcePageHeaderActions = (
     </PermissionControl>
   ),
   'add-data-source': (
-    <PermissionControl
-      permission={PERMISSIONS.ACTIONS.BASE.DB_SERVICE.BATCH_IMPORT}
-    >
+    <PermissionControl permission={PERMISSIONS.ACTIONS.BASE.DB_SERVICE.ADD}>
       <ActionButton
         text={t('dmsDataSource.addDatabase')}
         type="primary"

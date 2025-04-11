@@ -9,6 +9,7 @@ import { renderHooksWithRedux } from '../../../../../../testUtils/customRender';
 import { useSelector } from 'react-redux';
 import { mockUseAuditPlanTypes } from '../../../../../../testUtils/mockRequest';
 import { useSearchParams } from 'react-router-dom';
+import project from '../../../../../../testUtils/mockApi/project';
 
 jest.mock('react-redux', () => {
   return {
@@ -26,10 +27,13 @@ jest.mock('react-router-dom', () => {
 
 describe('SqlManagement/useGetTableFilterInfo', () => {
   const useSearchParamsSpy: jest.Mock = useSearchParams as jest.Mock;
+  let listEnvironmentTagsSpy: jest.SpyInstance;
+
   beforeEach(() => {
     mockUseCurrentProject();
     instance.mockAllApi();
     sqlManage.mockAllApi();
+    listEnvironmentTagsSpy = project.listEnvironmentTags();
     jest.useFakeTimers();
     mockUseAuditPlanTypes();
     (useSelector as jest.Mock).mockImplementation((selector) => {
@@ -61,6 +65,7 @@ describe('SqlManagement/useGetTableFilterInfo', () => {
     expect(instanceRequest).toHaveBeenCalledWith({
       project_name: mockProjectInfo.projectName
     });
+    expect(listEnvironmentTagsSpy).toHaveBeenCalledTimes(1);
     expect(
       (
         result.current.filterCustomProps.get(

@@ -13,7 +13,7 @@ import StatusTag from '../../../SqlManagement/component/SQLEEIndex/StatusTag';
 import { SqlManageStatusEnum } from '@actiontech/shared/lib/api/sqle/service/common.enum';
 import { formatTime } from '@actiontech/shared/lib/utils/Common';
 import { ProjectPriorityDictionary } from '../../index.data';
-import { ProjectProjectPriorityEnum } from '@actiontech/shared/lib/api/base/service/common.enum';
+import { ProjectV2ProjectPriorityEnum } from '@actiontech/shared/lib/api/base/service/common.enum';
 import { Typography } from 'antd';
 import { ROUTE_PATHS } from '@actiontech/shared/lib/data/routePaths';
 
@@ -137,7 +137,7 @@ export const PendingSqlListColumn: (
       render: (priority) => {
         return priority
           ? ProjectPriorityDictionary[
-              priority as unknown as ProjectProjectPriorityEnum
+              priority as unknown as ProjectV2ProjectPriorityEnum
             ]
           : '-';
       }

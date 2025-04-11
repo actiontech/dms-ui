@@ -15,7 +15,7 @@ import { mockUseCurrentUser } from '@actiontech/shared/lib/testUtil/mockHook/moc
 import { useSelector } from 'react-redux';
 import * as useCreationMode from '../../../../../../hooks/useCreationMode';
 import { instanceTipsMockData } from '../../../../../../../../../testUtils/mockApi/instance/data';
-import { InstanceTipResV1SupportedBackupStrategyEnum } from '@actiontech/shared/lib/api/sqle/service/common.enum';
+import { InstanceTipResV2SupportedBackupStrategyEnum } from '@actiontech/shared/lib/api/sqle/service/common.enum';
 
 jest.mock('react-redux', () => ({
   ...jest.requireActual('react-redux'),
@@ -80,10 +80,10 @@ describe('test useRenderDatabaseSelectionItems', () => {
             instance_name: 'instance1',
             enable_backup: true,
             supported_backup_strategy: [
-              InstanceTipResV1SupportedBackupStrategyEnum.manual,
-              InstanceTipResV1SupportedBackupStrategyEnum.none,
-              InstanceTipResV1SupportedBackupStrategyEnum.original_row,
-              InstanceTipResV1SupportedBackupStrategyEnum.reverse_sql
+              InstanceTipResV2SupportedBackupStrategyEnum.manual,
+              InstanceTipResV2SupportedBackupStrategyEnum.none,
+              InstanceTipResV2SupportedBackupStrategyEnum.original_row,
+              InstanceTipResV2SupportedBackupStrategyEnum.reverse_sql
             ],
             backup_max_rows: 2000
           }
@@ -432,10 +432,10 @@ describe('test useRenderDatabaseSelectionItems', () => {
             instance_name: 'mysql-1',
             enable_backup: true,
             supported_backup_strategy: [
-              InstanceTipResV1SupportedBackupStrategyEnum.manual,
-              InstanceTipResV1SupportedBackupStrategyEnum.none,
-              InstanceTipResV1SupportedBackupStrategyEnum.original_row,
-              InstanceTipResV1SupportedBackupStrategyEnum.reverse_sql
+              InstanceTipResV2SupportedBackupStrategyEnum.manual,
+              InstanceTipResV2SupportedBackupStrategyEnum.none,
+              InstanceTipResV2SupportedBackupStrategyEnum.original_row,
+              InstanceTipResV2SupportedBackupStrategyEnum.reverse_sql
             ],
             backup_max_rows: 2000
           }
