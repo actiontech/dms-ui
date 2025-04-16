@@ -26,7 +26,7 @@ jest.mock('react-router-dom', () => {
 
 describe('provision/DatabaseAccount/Update', () => {
   let authListServicesSpy: jest.SpyInstance;
-  let authListBusinessesSpy: jest.SpyInstance;
+  let authListEnvironmentTags: jest.SpyInstance;
   let authListPasswordSecurityPoliciesSpy: jest.SpyInstance;
   let authListDatabasesSpy: jest.SpyInstance;
   let authListTableSpy: jest.SpyInstance;
@@ -41,7 +41,7 @@ describe('provision/DatabaseAccount/Update', () => {
 
   beforeEach(() => {
     authListServicesSpy = auth.listServices();
-    authListBusinessesSpy = auth.listBusinesses();
+    authListEnvironmentTags = auth.authListEnvironmentTags();
     authListDatabasesSpy = auth.listDataBases();
     authListTableSpy = auth.listTables();
     authListPasswordSecurityPoliciesSpy =
@@ -70,7 +70,7 @@ describe('provision/DatabaseAccount/Update', () => {
     const { baseElement } = superRender(<UpdateDatabaseAccount />);
     await act(async () => jest.advanceTimersByTime(3000));
     expect(authListPasswordSecurityPoliciesSpy).toHaveBeenCalled();
-    expect(authListBusinessesSpy).toHaveBeenCalled();
+    expect(authListEnvironmentTags).toHaveBeenCalled();
     expect(authGetDBAccountSpy).toHaveBeenCalledTimes(1);
     expect(authListServicesSpy).toHaveBeenCalledTimes(1);
     expect(authGetDBAccountSpy).toHaveBeenNthCalledWith(1, {

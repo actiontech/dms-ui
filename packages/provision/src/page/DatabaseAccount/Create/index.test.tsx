@@ -23,7 +23,7 @@ import { ListServiceDbTypeEnum } from '@actiontech/shared/lib/api/provision/serv
 
 describe('provision/DatabaseAccount/Create', () => {
   let authListServicesSpy: jest.SpyInstance;
-  let authListBusinessesSpy: jest.SpyInstance;
+  let authListEnvironmentTagsSpy: jest.SpyInstance;
   let authListPasswordSecurityPoliciesSpy: jest.SpyInstance;
   let authListDatabasesSpy: jest.SpyInstance;
   let authListTableSpy: jest.SpyInstance;
@@ -35,7 +35,7 @@ describe('provision/DatabaseAccount/Create', () => {
 
   beforeEach(() => {
     authListServicesSpy = auth.listServices();
-    authListBusinessesSpy = auth.listBusinesses();
+    authListEnvironmentTagsSpy = auth.authListEnvironmentTags();
     authListDatabasesSpy = auth.listDataBases();
     authListTableSpy = auth.listTables();
     authListPasswordSecurityPoliciesSpy =
@@ -65,7 +65,7 @@ describe('provision/DatabaseAccount/Create', () => {
     const { baseElement } = superRender(<CreateDatabaseAccount />);
     await act(async () => jest.advanceTimersByTime(3000));
     expect(authListPasswordSecurityPoliciesSpy).toHaveBeenCalled();
-    expect(authListBusinessesSpy).toHaveBeenCalled();
+    expect(authListEnvironmentTagsSpy).toHaveBeenCalled();
     expect(baseElement).toMatchSnapshot();
     await act(async () => {
       fireEvent.input(getBySelector('#username', baseElement), {
@@ -87,12 +87,12 @@ describe('provision/DatabaseAccount/Create', () => {
     await act(async () => jest.advanceTimersByTime(3000));
 
     // business
-    selectOptionByIndex('业务', 'business-1', 1);
+    selectOptionByIndex('环境属性', 'environment-1', 0);
     await act(async () => jest.advanceTimersByTime(100));
     expect(getBySelector('.ant-btn-icon-only')).toHaveAttribute('disabled');
     expect(authListServicesSpy).toHaveBeenCalledTimes(1);
     expect(authListServicesSpy).toHaveBeenNthCalledWith(1, {
-      business: 'business-1',
+      filter_by_environment_tag_uid: '1',
       filter_by_namespace: mockProjectInfo.projectID,
       page_index: 1,
       page_size: 9999
@@ -301,11 +301,11 @@ describe('provision/DatabaseAccount/Create', () => {
     await act(async () => jest.advanceTimersByTime(3000));
 
     // business
-    selectOptionByIndex('业务', 'business-1', 1);
+    selectOptionByIndex('环境属性', 'environment-1', 0);
     await act(async () => jest.advanceTimersByTime(100));
     expect(authListServicesSpy).toHaveBeenCalledTimes(1);
     expect(authListServicesSpy).toHaveBeenNthCalledWith(1, {
-      business: 'business-1',
+      filter_by_environment_tag_uid: '1',
       filter_by_namespace: mockProjectInfo.projectID,
       page_index: 1,
       page_size: 9999

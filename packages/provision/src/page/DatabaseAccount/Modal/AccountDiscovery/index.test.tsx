@@ -23,13 +23,13 @@ import { mockUsePermission } from '@actiontech/shared/lib/testUtil/mockHook/mock
 
 describe('provision/DatabaseAccount/AccountDiscoveryModal', () => {
   let authListServicesSpy: jest.SpyInstance;
-  let authListBusinessesSpy: jest.SpyInstance;
+  let authListEnvironmentTagsSpy: jest.SpyInstance;
   let authDiscoveryDBAccountsSpy: jest.SpyInstance;
   let authSyncDBAccountSpy: jest.SpyInstance;
 
   beforeEach(() => {
     authListServicesSpy = auth.listServices();
-    authListBusinessesSpy = auth.listBusinesses();
+    authListEnvironmentTagsSpy = auth.authListEnvironmentTags();
     authDiscoveryDBAccountsSpy = dbAccountService.authDiscoveryDBAccount();
     authSyncDBAccountSpy = dbAccountService.authSyncDBAccount();
     auth.mockAllApi();
@@ -63,7 +63,7 @@ describe('provision/DatabaseAccount/AccountDiscoveryModal', () => {
   it('render init snap', async () => {
     const { baseElement } = customRender();
     await act(async () => jest.advanceTimersByTime(3000));
-    expect(authListBusinessesSpy).toHaveBeenCalledTimes(1);
+    expect(authListEnvironmentTagsSpy).toHaveBeenCalledTimes(1);
     expect(authListServicesSpy).not.toHaveBeenCalled();
     expect(authDiscoveryDBAccountsSpy).not.toHaveBeenCalled();
     expect(baseElement).toMatchSnapshot();
@@ -74,11 +74,11 @@ describe('provision/DatabaseAccount/AccountDiscoveryModal', () => {
     const eventEmitterSpy = jest.spyOn(EventEmitter, 'emit');
     const { baseElement } = customRender();
     await act(async () => jest.advanceTimersByTime(3000));
-    selectOptionByIndex('业务', 'business-1', 1);
-    await act(async () => jest.advanceTimersByTime(100));
-    expect(authListServicesSpy).toHaveBeenCalledTimes(1);
+    selectOptionByIndex('环境属性', 'environment-1', 0);
+    await act(async () => jest.advanceTimersByTime(0));
+    expect(authListEnvironmentTagsSpy).toHaveBeenCalledTimes(1);
     expect(authListServicesSpy).toHaveBeenNthCalledWith(1, {
-      business: 'business-1',
+      filter_by_environment_tag_uid: '1',
       filter_by_namespace: mockProjectInfo.projectID,
       page_index: 1,
       page_size: 9999
@@ -130,11 +130,11 @@ describe('provision/DatabaseAccount/AccountDiscoveryModal', () => {
     );
     expect(filterInput).not.toBeVisible();
     expect(getBySelector('.ant-btn-icon-only')).not.toBeVisible();
-    selectOptionByIndex('业务', 'business-1', 1);
+    selectOptionByIndex('环境属性', 'environment-1', 0);
     await act(async () => jest.advanceTimersByTime(100));
     expect(authListServicesSpy).toHaveBeenCalledTimes(1);
     expect(authListServicesSpy).toHaveBeenNthCalledWith(1, {
-      business: 'business-1',
+      filter_by_environment_tag_uid: '1',
       filter_by_namespace: mockProjectInfo.projectID,
       page_index: 1,
       page_size: 9999
@@ -173,7 +173,7 @@ describe('provision/DatabaseAccount/AccountDiscoveryModal', () => {
     const eventEmitterSpy = jest.spyOn(EventEmitter, 'emit');
     customRender();
     await act(async () => jest.advanceTimersByTime(3000));
-    selectOptionByIndex('业务', 'business-1', 1);
+    selectOptionByIndex('环境属性', 'environment-1', 0);
     await act(async () => jest.advanceTimersByTime(100));
     expect(authListServicesSpy).toHaveBeenCalledTimes(1);
     await act(async () => jest.advanceTimersByTime(2900));
@@ -228,7 +228,7 @@ describe('provision/DatabaseAccount/AccountDiscoveryModal', () => {
       const { baseElement } = customRender();
       await act(async () => jest.advanceTimersByTime(3000));
 
-      selectOptionByIndex('业务', 'business-1', 1);
+      selectOptionByIndex('环境属性', 'environment-1', 0);
       await act(async () => jest.advanceTimersByTime(3000));
       fireEvent.mouseDown(getBySelector('#service'));
       await act(async () => jest.advanceTimersByTime(0));
@@ -244,7 +244,7 @@ describe('provision/DatabaseAccount/AccountDiscoveryModal', () => {
       customRender();
       await act(async () => jest.advanceTimersByTime(3000));
 
-      selectOptionByIndex('业务', 'business-1', 1);
+      selectOptionByIndex('环境属性', 'environment-1', 0);
       await act(async () => jest.advanceTimersByTime(3000));
       fireEvent.mouseDown(getBySelector('#service'));
       await act(async () => jest.advanceTimersByTime(0));
@@ -303,7 +303,7 @@ describe('provision/DatabaseAccount/AccountDiscoveryModal', () => {
       customRender();
       await act(async () => jest.advanceTimersByTime(3000));
 
-      selectOptionByIndex('业务', 'business-1', 1);
+      selectOptionByIndex('环境属性', 'environment-1', 0);
       await act(async () => jest.advanceTimersByTime(3000));
       fireEvent.mouseDown(getBySelector('#service'));
       await act(async () => jest.advanceTimersByTime(0));
