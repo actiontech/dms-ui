@@ -15,8 +15,8 @@ import {
   IAuthListOperationsReturn,
   IAuthListServiceParams,
   IAuthListServiceReturn,
-  IAuthListBusinessParams,
-  IAuthListBusinessReturn,
+  IAuthListEnvironmentTagsParams,
+  IAuthListEnvironmentTagsReturn,
   IAuthSyncServiceParams,
   IAuthSyncServiceReturn,
   IAuthGetUsersFromDBServiceParams,
@@ -76,13 +76,13 @@ class AuthService extends ServiceBase {
     );
   }
 
-  public AuthListBusiness(
-    params: IAuthListBusinessParams,
+  public AuthListEnvironmentTags(
+    params: IAuthListEnvironmentTagsParams,
     options?: AxiosRequestConfig
   ) {
     const paramsData = this.cloneDeep(params);
-    return this.get<IAuthListBusinessReturn>(
-      '/v1/auth/services/business',
+    return this.get<IAuthListEnvironmentTagsReturn>(
+      '/v1/auth/services/environment_tags',
       paramsData,
       options
     );

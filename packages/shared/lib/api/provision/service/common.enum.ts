@@ -64,7 +64,23 @@ export enum ListDBServiceLastConnectionTestStatusEnum {
   'connect_failed' = 'connect_failed'
 }
 
-export enum ListProjectProjectPriorityEnum {
+export enum ListDBServiceV2LastConnectionTestStatusEnum {
+  'connect_success' = 'connect_success',
+
+  'connect_failed' = 'connect_failed'
+}
+
+export enum ListProjectV1ProjectPriorityEnum {
+  'high' = 'high',
+
+  'medium' = 'medium',
+
+  'low' = 'low',
+
+  'unknown' = 'unknown'
+}
+
+export enum ListProjectV2ProjectPriorityEnum {
   'high' = 'high',
 
   'medium' = 'medium',
