@@ -20,7 +20,7 @@ exports[`base/System/GlobalSetting/UrlAddressPrefixTips render snap when field s
           <div
             class="tips"
           >
-            配置能访问SQLE的url地址信息, 格式为 http(s)://ip:port/sqle 
+            配置能访问SQLE的url地址信息
           </div>
         </div>
       </div>
@@ -105,7 +105,7 @@ exports[`base/System/GlobalSetting/UrlAddressPrefixTips render snap when has url
           <div
             class="tips"
           >
-            配置能访问SQLE的url地址信息, 格式为 http(s)://ip:port/sqle 
+            配置能访问SQLE的url地址信息
           </div>
         </div>
       </div>
@@ -169,7 +169,7 @@ exports[`base/System/GlobalSetting/UrlAddressPrefixTips render snap when no url 
           <div
             class="tips"
           >
-            配置能访问SQLE的url地址信息, 格式为 http(s)://ip:port/sqle 
+            配置能访问SQLE的url地址信息
           </div>
         </div>
       </div>

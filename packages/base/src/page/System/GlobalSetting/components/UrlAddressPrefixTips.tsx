@@ -31,11 +31,7 @@ const UrlAddressPrefixTips = ({
     <>
       <ConfigItem
         label={
-          <LabelContent
-            tips={`${t('dmsSystem.global.urlAddressPrefixTips')}, ${t(
-              'dmsSystem.global.urlAddressFormatTips'
-            )} `}
-          >
+          <LabelContent tips={`${t('dmsSystem.global.urlAddressPrefixTips')}`}>
             {t('dmsSystem.global.urlAddressPrefix')}
           </LabelContent>
         }
