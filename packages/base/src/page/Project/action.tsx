@@ -12,7 +12,11 @@ export const ProjectManagementPageHeaderActions = (
   exportPending: boolean,
   onCreate: () => void
 ): Record<
-  'batch_import_data_source' | 'import' | 'export' | 'create',
+  | 'batch_import_data_source'
+  | 'import'
+  | 'export'
+  | 'create'
+  | 'global_resource_overview',
   ReactNode
 > => {
   return {
@@ -63,6 +67,21 @@ export const ProjectManagementPageHeaderActions = (
           type="primary"
           text={t('dmsProject.createProject.modalTitle')}
           onClick={onCreate}
+        />
+      </PermissionControl>
+    ),
+    global_resource_overview: (
+      <PermissionControl
+        permission={
+          PERMISSIONS.ACTIONS.BASE.PROJECT_MANAGER.GLOBAL_RESOURCE_OVERVIEW
+        }
+      >
+        <ActionButton
+          actionType="navigate-link"
+          text={t('dmsProject.resourceOverview')}
+          link={{
+            to: ROUTE_PATHS.BASE.RESOURCE_OVERVIEW
+          }}
         />
       </PermissionControl>
     )
