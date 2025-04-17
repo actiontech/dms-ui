@@ -67,53 +67,39 @@ const BusinessField = (props: BusinessSelectorProps) => {
       });
   };
 
-  const deleteBusinessTag = (
-    id: string,
-    resolve: (value: boolean) => void,
-    reject: () => void
-  ) => {
+  const deleteBusinessTag = (id: string) => {
+    startOperationLoading();
     DmsApi.ProjectService.DeleteBusinessTag({
       business_tag_uid: id
     })
       .then((res) => {
         if (res.data.code === ResponseCode.SUCCESS) {
           messageApi.success(t('dmsProject.projectForm.deleteBusinessSuccess'));
-          resolve(true);
           refresh();
-        } else {
-          reject();
         }
       })
-      .catch(() => {
-        reject();
+      .finally(() => {
+        stopOperationLoading();
       });
   };
 
   const onDelete = (item: EditableSelectOption) => {
-    if (boundProjectList.length > 0) {
-      return Promise.resolve(false);
-    }
-    return new Promise<boolean>((resolve, reject) => {
-      DmsApi.ProjectService.ListProjectsV2({
-        filter_by_business_tag: item.label,
-        page_size: 9999
-      })
-        .then((res) => {
-          if (res.data.code === ResponseCode.SUCCESS) {
-            setBoundProjectList(res.data.data ?? []);
-            if (res.data.data?.length === 0) {
-              deleteBusinessTag(item.value.toString(), resolve, reject);
-            } else {
-              reject();
-            }
-          } else {
-            reject();
+    startOperationLoading();
+    DmsApi.ProjectService.ListProjectsV2({
+      filter_by_business_tag: item.label,
+      page_size: 9999
+    })
+      .then((res) => {
+        if (res.data.code === ResponseCode.SUCCESS) {
+          setBoundProjectList(res.data.data ?? []);
+          if (res.data.data?.length === 0) {
+            deleteBusinessTag(item.value.toString());
           }
-        })
-        .catch(() => {
-          reject();
-        });
-    });
+        }
+      })
+      .finally(() => {
+        stopOperationLoading();
+      });
   };
 
   const onUpdate = (item: EditableSelectOption) => {
@@ -145,19 +131,17 @@ const BusinessField = (props: BusinessSelectorProps) => {
         onDelete={onDelete}
         onUpdate={onUpdate}
         addButtonText={t('dmsProject.projectForm.addBusiness')}
-        deletionConfirmTitle={
+        deletionConfirmTitle={t(
+          'dmsProject.projectForm.deleteBusinessConfirmTitle'
+        )}
+        errorMessage={
           boundProjectList.length > 0
             ? t('dmsProject.projectForm.deleteBusinessError', {
                 name: boundProjectList.map((item) => item.name).join(',')
               })
-            : t('dmsProject.projectForm.deleteBusinessConfirmTitle')
+            : undefined
         }
         loading={operationLoading || loading}
-        onConfirmOpenChange={(open) => {
-          if (!open) {
-            setBoundProjectList([]);
-          }
-        }}
       />
     </>
   );
