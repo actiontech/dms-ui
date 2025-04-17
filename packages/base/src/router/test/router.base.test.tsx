@@ -183,6 +183,15 @@ describe('base/router-base-ee', () => {
       });
     });
 
+    describe('render route resourceOverview', () => {
+      it('render router resourceOverview', async () => {
+        const { baseElement } = customRender(['/resource-overview']);
+
+        expect(screen.getByText('resourceOverview')).toBeInTheDocument();
+        expect(baseElement).toMatchSnapshot();
+      });
+    });
+
     describe('render route syncDataSource', () => {
       it('render route syncDataSourceList', async () => {
         const { baseElement } = customRender([
