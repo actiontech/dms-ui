@@ -84,6 +84,18 @@ exports[`test base/hooks/useThemeStyleData should match snapshot 1`] = `
       "modify": "#292C33",
     },
   },
+  "resourceOverview": {
+    "chart": {
+      "activeStroke": "#ffffff",
+      "markShowdowColor": "rgba(26, 206, 219, 0.2)",
+      "markStroke": "rgba(26, 206, 219, 0.2)",
+      "pieStroke": "#ffffff",
+    },
+    "icon": {
+      "databaseFilled": "#4583FF",
+      "schemaFilled": "#15C7D4",
+    },
+  },
   "sideMenu": {
     "projectSelector": {
       "dropdown": {

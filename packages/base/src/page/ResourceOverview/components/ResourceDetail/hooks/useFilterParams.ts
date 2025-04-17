@@ -50,9 +50,7 @@ const useFilterParams = (projectId?: string) => {
           loading: getBusinessTagLoading,
           onChange: (v: string) => {
             const businessTag = businessTagList.find((item) => item.uid === v);
-            if (businessTag) {
-              updateProjects({ filter_by_business_tag: businessTag.name });
-            }
+            updateProjects({ filter_by_business_tag: businessTag?.name });
           }
         }
       ],
