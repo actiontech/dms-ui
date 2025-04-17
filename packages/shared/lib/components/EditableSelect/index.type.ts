@@ -22,5 +22,5 @@ export interface EditableSelectProps {
   addButtonText?: string;
   placeholder?: string;
   disabled?: boolean;
-  onConfirmOpenChange?: (open: boolean) => void;
+  errorMessage?: string;
 }
