@@ -8,7 +8,9 @@ import {
   GetUserStatEnum,
   ListDBAccountStatusEnum,
   ListDBServiceLastConnectionTestStatusEnum,
-  ListProjectProjectPriorityEnum,
+  ListDBServiceV2LastConnectionTestStatusEnum,
+  ListProjectV1ProjectPriorityEnum,
+  ListProjectV2ProjectPriorityEnum,
   ListServiceDbTypeEnum,
   ListServiceTypeEnum,
   ListUserAuthenticationTypeEnum,
@@ -228,6 +230,12 @@ export interface IBusiness {
   name?: string;
 }
 
+export interface IBusinessTagCommon {
+  name?: string;
+
+  uid?: string;
+}
+
 export interface ICopyDataPermissionTemplate {
   name: string;
 }
@@ -418,6 +426,12 @@ export interface IEnumsValue {
   value?: string;
 }
 
+export interface IEnvironmentTag {
+  name?: string;
+
+  uid?: string;
+}
+
 export interface IGenAccessToken {
   expiration_days?: string;
 }
@@ -479,6 +493,8 @@ export interface IGetDataPermissionsInDataPermissionTemplate {
 
   data_operation_sets?: IDataOperationInDataPermission[];
 
+  environment_tag?: string;
+
   service_name?: string;
 
   service_uid?: string;
@@ -538,6 +554,8 @@ export interface IGetUser {
   stat?: GetUserStatEnum;
 
   third_party_user_info?: string;
+
+  two_factor_enabled?: boolean;
 
   uid?: string;
 
@@ -616,16 +634,6 @@ export interface IListAuthorizationEventsReply {
   message?: string;
 
   total_nums?: number;
-}
-
-export interface IListBusinessFromDBServiceReply {
-  code?: number;
-
-  data?: {
-    businesses?: string[];
-  };
-
-  message?: string;
 }
 
 export interface IListDBAccount {
@@ -748,10 +756,68 @@ export interface IListDBServiceReply {
   total_nums?: number;
 }
 
+export interface IListDBServiceReplyV2 {
+  code?: number;
+
+  data?: IListDBServiceV2[];
+
+  message?: string;
+
+  total_nums?: number;
+}
+
+export interface IListDBServiceV2 {
+  additional_params?: IAdditionalParam[];
+
+  audit_plan_types?: IAuditPlanTypes[];
+
+  backup_max_rows?: number;
+
+  db_type?: string;
+
+  desc?: string;
+
+  enable_backup?: boolean;
+
+  environment_tag?: IEnvironmentTag;
+
+  host?: string;
+
+  instance_audit_plan_id?: number;
+
+  is_enable_masking?: boolean;
+
+  last_connection_test_error_message?: string;
+
+  last_connection_test_status?: ListDBServiceV2LastConnectionTestStatusEnum;
+
+  last_connection_test_time?: string;
+
+  maintenance_times?: IMaintenanceTime[];
+
+  name?: string;
+
+  password?: string;
+
+  port?: string;
+
+  project_uid?: string;
+
+  source?: string;
+
+  sqle_config?: ISQLEConfig;
+
+  uid?: string;
+
+  user?: string;
+}
+
 export interface IListDataObjectServiceEvent {
   business?: string;
 
   data_object_service_name?: string;
+
+  environment_tag?: string;
 
   event_uid?: string;
 
@@ -862,6 +928,16 @@ export interface IListDatabaseReply {
   total_nums?: number;
 }
 
+export interface IListEnvironmentTagsFromDBServiceReply {
+  code?: number;
+
+  data?: {
+    environment_tags?: IEnvironmentTag[];
+  };
+
+  message?: string;
+}
+
 export interface IListInternalUser {
   name?: string;
 
@@ -916,7 +992,27 @@ export interface IListPasswordSecurityPolicysReply {
   total_nums?: number;
 }
 
-export interface IListProject {
+export interface IListProjectReply {
+  code?: number;
+
+  data?: IListProjectV1[];
+
+  message?: string;
+
+  total_nums?: number;
+}
+
+export interface IListProjectReplyV2 {
+  code?: number;
+
+  data?: IListProjectV2[];
+
+  message?: string;
+
+  total_nums?: number;
+}
+
+export interface IListProjectV1 {
   archived?: boolean;
 
   business?: IBusiness[];
@@ -931,27 +1027,35 @@ export interface IListProject {
 
   name?: string;
 
-  project_priority?: ListProjectProjectPriorityEnum;
+  project_priority?: ListProjectV1ProjectPriorityEnum;
 
   uid?: string;
 }
 
-export interface IListProjectReply {
-  code?: number;
+export interface IListProjectV2 {
+  archived?: boolean;
 
-  data?: IListProject[];
+  business_tag?: IBusinessTagCommon;
 
-  message?: string;
+  create_time?: string;
 
-  total_nums?: number;
+  create_user?: IUidWithName;
+
+  desc?: string;
+
+  name?: string;
+
+  project_priority?: ListProjectV2ProjectPriorityEnum;
+
+  uid?: string;
 }
 
 export interface IListService {
   address?: string;
 
-  business?: string;
-
   db_type?: ListServiceDbTypeEnum;
+
+  environment_tag?: IEnvironmentTag;
 
   last_sync_data_result?: string;
 
@@ -1172,6 +1276,8 @@ export interface IService {
   business: string;
 
   db_type: ServiceDbTypeEnum;
+
+  environment_tag: string;
 
   name: string;
 

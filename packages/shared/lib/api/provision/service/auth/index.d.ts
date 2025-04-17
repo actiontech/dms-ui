@@ -14,7 +14,7 @@ import {
   IListDatabaseReply,
   IListOperationsReply,
   IListServiceReply,
-  IListBusinessFromDBServiceReply,
+  IListEnvironmentTagsFromDBServiceReply,
   IGetUsersFromDBServiceReply,
   IListTableReply,
   IListInternalUserReply
@@ -69,7 +69,7 @@ export interface IAuthListServiceParams {
 
   order_by?: AuthListServiceOrderByEnum;
 
-  business?: string;
+  filter_by_environment_tag_uid?: string;
 
   filter_by_address?: string;
 
@@ -84,12 +84,12 @@ export interface IAuthListServiceParams {
 
 export interface IAuthListServiceReturn extends IListServiceReply {}
 
-export interface IAuthListBusinessParams {
+export interface IAuthListEnvironmentTagsParams {
   namespace_uid?: string;
 }
 
-export interface IAuthListBusinessReturn
-  extends IListBusinessFromDBServiceReply {}
+export interface IAuthListEnvironmentTagsReturn
+  extends IListEnvironmentTagsFromDBServiceReply {}
 
 export interface IAuthSyncServiceParams {
   service_uids: string[];

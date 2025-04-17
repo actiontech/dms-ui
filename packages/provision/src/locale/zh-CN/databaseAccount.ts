@@ -68,6 +68,7 @@ export default {
   discovery: {
     title: '账号发现',
     business: '业务',
+    environment: '环境属性',
     service: '数据源',
     dbAccount: '数据库账户',
     dbAccountNumber: '本次发现数据库账号数量：{{number}}',

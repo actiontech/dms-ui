@@ -379,10 +379,14 @@ const ObjectPrivilegesModal: React.FC<ObjectPrivilegesModalProps> = ({
                           loading={databaseOptionsLoading}
                           onChange={handleDatabaseChange.bind(null, index)}
                           allowClear={true}
-                          options={databaseOptions?.map((v) => ({
-                            ...v,
-                            disabled: selectedDatabase.includes(v.value)
-                          }))}
+                          options={
+                            databaseOptionsLoading
+                              ? []
+                              : databaseOptions?.map((v) => ({
+                                  ...v,
+                                  disabled: selectedDatabase.includes(v.value)
+                                }))
+                          }
                           filterOption={filterOptionByLabel}
                           showSearch
                         />

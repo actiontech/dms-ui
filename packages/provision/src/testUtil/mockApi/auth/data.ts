@@ -11,7 +11,8 @@ import {
   IStatement,
   ITable,
   IUserInfo,
-  IListInternalUser
+  IListInternalUser,
+  IEnvironmentTag
 } from '@actiontech/shared/lib/api/provision/service/common';
 import {
   DataObjectSourceNameEnum,
@@ -539,8 +540,6 @@ export const dataSourceList: IDataObjectSource[] = [
   }
 ];
 
-export const businesses: string[] = ['business-1', 'business-2', 'business-3'];
-
 export const authAuditList: IListAuthorizationEvent[] = [
   {
     generated_time: '2022-12-29T17:20:53.012+08:00',
@@ -855,5 +854,16 @@ export const mockOracleInstanceData = [
     business: 'test',
     last_sync_data_result: '',
     last_sync_data_time: '0001-01-01T08:05:43.000+08:05'
+  }
+];
+
+export const mockEnvironmentTagsData: IEnvironmentTag[] = [
+  {
+    uid: '1',
+    name: 'environment-1'
+  },
+  {
+    uid: '2',
+    name: 'environment-2'
   }
 ];

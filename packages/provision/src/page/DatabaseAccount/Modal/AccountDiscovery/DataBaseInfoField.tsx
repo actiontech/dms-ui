@@ -3,7 +3,6 @@ import { BasicSelect, BasicToolTip } from '@actiontech/shared';
 import { useTranslation } from 'react-i18next';
 import { AccountDiscoveryFormType } from '../../index.type';
 import { FormInstance } from 'antd/lib/form/Form';
-import useBusinessOptions from '../../../../hooks/useBusinessOptions';
 import useServiceOptions from '../../../../hooks/useServiceOptions';
 import { useEffect } from 'react';
 import AccountTableField from './AccountTableField';
@@ -11,6 +10,7 @@ import dbAccountService from '@actiontech/shared/lib/api/provision/service/db_ac
 import { useCurrentProject } from '@actiontech/shared/lib/features';
 import { IAuthDiscoveryDBAccountParams } from '@actiontech/shared/lib/api/provision/service/db_account/index.d';
 import { useRequest } from 'ahooks';
+import useServiceEnvironment from '../../../../hooks/useServiceEnvironment';
 
 const DataBaseInfoField: React.FC<{
   form: FormInstance<AccountDiscoveryFormType>;
@@ -22,9 +22,13 @@ const DataBaseInfoField: React.FC<{
 
   const service = Form.useWatch('service', form);
 
-  const business = Form.useWatch('business', form);
+  const environment = Form.useWatch('environment', form);
 
-  const { businessOptions, updateBusinessList, loading } = useBusinessOptions();
+  const {
+    updateEnvironmentList,
+    loading: environmentLoading,
+    environmentOptions
+  } = useServiceEnvironment();
 
   const {
     data,
@@ -57,17 +61,21 @@ const DataBaseInfoField: React.FC<{
   } = useServiceOptions(true);
 
   useEffect(() => {
-    updateBusinessList();
-  }, [updateBusinessList]);
+    updateEnvironmentList({
+      namespace_uid: projectID
+    });
+  }, [updateEnvironmentList, projectID]);
 
   useEffect(() => {
-    if (business) {
-      updateServiceList(business);
+    if (environment) {
+      updateServiceList({
+        filter_by_environment_tag_uid: environment
+      });
       form.resetFields(['service']);
       setData(undefined);
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [business]);
+  }, [environment]);
 
   useEffect(() => {
     if (!visible) {
@@ -78,15 +86,15 @@ const DataBaseInfoField: React.FC<{
   return (
     <Form form={form} layout="vertical">
       <Form.Item
-        name="business"
-        label={t('databaseAccount.discovery.business')}
+        name="environment"
+        label={t('databaseAccount.discovery.environment')}
         rules={[{ required: true }]}
       >
         <BasicSelect
-          loading={loading}
-          options={businessOptions}
+          loading={environmentLoading}
+          options={environmentOptions}
           placeholder={t('common.form.placeholder.select', {
-            name: t('databaseAccount.discovery.business')
+            name: t('databaseAccount.discovery.environment')
           })}
         />
       </Form.Item>
@@ -102,7 +110,7 @@ const DataBaseInfoField: React.FC<{
         <BasicSelect
           className="data-service-select"
           loading={servicesLoading}
-          options={serviceOptions}
+          options={servicesLoading ? [] : serviceOptions}
           placeholder={t('common.form.placeholder.select', {
             name: t('databaseAccount.discovery.service')
           })}

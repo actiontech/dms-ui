@@ -3,13 +3,14 @@ import {
   useDbServiceDriver,
   usePermission
 } from '@actiontech/shared/lib/features';
-import auth from '@actiontech/shared/lib/api/provision/service/auth';
 import { useMemo, useCallback, useState } from 'react';
 import { IListService } from '@actiontech/shared/lib/api/provision/service/common';
 import { ResponseCode } from '@actiontech/shared/lib/enum';
 import { useBoolean } from 'ahooks';
 import { DatabaseTypeLogo } from '@actiontech/shared';
 import { OpPermissionItemOpPermissionTypeEnum } from '@actiontech/shared/lib/api/base/service/common.enum';
+import { ProvisionApi } from '@actiontech/shared/lib/api';
+import { IAuthListServiceParams } from '@actiontech/shared/lib/api/provision/service/auth/index.d';
 
 const useServiceOptions = (isNeedFilterByOperationPermission = false) => {
   const { projectID } = useCurrentProject();
@@ -23,15 +24,20 @@ const useServiceOptions = (isNeedFilterByOperationPermission = false) => {
   const { checkDbServicePermission } = usePermission();
 
   const updateServiceList = useCallback(
-    (business?: string, onSuccess?: (data?: IListService[]) => void) => {
+    (
+      params?: Omit<
+        IAuthListServiceParams,
+        'page_size' | 'page_index' | 'filter_by_namespace'
+      >,
+      onSuccess?: (data?: IListService[]) => void
+    ) => {
       setTrue();
-      auth
-        .AuthListService({
-          page_index: 1,
-          page_size: 9999,
-          filter_by_namespace: projectID,
-          business
-        })
+      ProvisionApi.AuthService.AuthListService({
+        ...params,
+        page_index: 1,
+        page_size: 9999,
+        filter_by_namespace: projectID
+      })
         .then((res) => {
           if (res.data.code === ResponseCode.SUCCESS) {
             setServiceList(res.data?.data ?? []);

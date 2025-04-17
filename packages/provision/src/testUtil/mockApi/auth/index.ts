@@ -6,23 +6,23 @@ import {
   instanceList,
   databaseList,
   tableList,
-  businesses,
   userList,
   accountListByService,
-  mockDBOperationsData
+  mockDBOperationsData,
+  mockEnvironmentTagsData
 } from './data';
 import auth from '@actiontech/shared/lib/api/provision/service/auth';
 
 class MockAuthApi implements MockSpyApy {
   public mockAllApi(): void {
     this.listUsers();
-    this.listBusinesses();
     this.listServices();
     this.syncService();
     this.listDataBases();
     this.getUsersFromDBService();
     this.listTables();
     this.authListOperations();
+    this.authListEnvironmentTags();
   }
 
   public listUsers() {
@@ -81,18 +81,20 @@ class MockAuthApi implements MockSpyApy {
     return spy;
   }
 
-  public listBusinesses() {
-    const spy = jest.spyOn(auth, 'AuthListBusiness');
-    spy.mockImplementation(() =>
-      createSpySuccessResponse({ data: { businesses } })
-    );
-    return spy;
-  }
-
   public authListOperations() {
     const spy = jest.spyOn(auth, 'AuthListOperations');
     spy.mockImplementation(() =>
       createSpySuccessResponse({ data: mockDBOperationsData })
+    );
+    return spy;
+  }
+
+  public authListEnvironmentTags() {
+    const spy = jest.spyOn(auth, 'AuthListEnvironmentTags');
+    spy.mockImplementation(() =>
+      createSpySuccessResponse({
+        data: { environment_tags: mockEnvironmentTagsData }
+      })
     );
     return spy;
   }

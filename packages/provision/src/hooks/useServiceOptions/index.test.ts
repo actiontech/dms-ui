@@ -24,7 +24,6 @@ jest.mock('react-redux', () => ({
 
 describe('provision/hooks/useServiceOptions', () => {
   let authListServicesSpy: jest.SpyInstance;
-  const business = 'business-1';
   beforeEach(() => {
     mockUseCurrentProject();
     mockUseCurrentUser();
@@ -67,7 +66,7 @@ describe('provision/hooks/useServiceOptions', () => {
     expect(result.current.serviceNameOptions).toEqual([]);
 
     act(() => {
-      result.current.updateServiceList(business);
+      result.current.updateServiceList();
     });
 
     expect(result.current.loading).toBeTruthy();
@@ -75,8 +74,7 @@ describe('provision/hooks/useServiceOptions', () => {
     expect(authListServicesSpy).toHaveBeenCalledWith({
       page_index: 1,
       page_size: 9999,
-      filter_by_namespace: mockProjectInfo.projectID,
-      business
+      filter_by_namespace: mockProjectInfo.projectID
     });
 
     await act(async () => jest.advanceTimersByTime(3000));
@@ -87,11 +85,36 @@ describe('provision/hooks/useServiceOptions', () => {
     expect(result.current.serviceNameOptions).toMatchSnapshot();
   });
 
+  it('should get service data by params and success callback will be called', async () => {
+    const onSuccess = jest.fn();
+    const { result } = renderHooksWithRedux(useServiceOptions, {});
+
+    act(() => {
+      result.current.updateServiceList(
+        {
+          filter_by_environment_tag_uid: '1'
+        },
+        onSuccess
+      );
+    });
+    await act(async () => jest.advanceTimersByTime(3000));
+
+    expect(authListServicesSpy).toHaveBeenCalledTimes(1);
+    expect(authListServicesSpy).toHaveBeenCalledWith({
+      page_index: 1,
+      page_size: 9999,
+      filter_by_namespace: mockProjectInfo.projectID,
+      filter_by_environment_tag_uid: '1'
+    });
+
+    expect(onSuccess).toHaveBeenCalled();
+  });
+
   it('should get service data from request when isNeedFilterByOperationPermission is true', async () => {
     const { result } = renderHooksWithRedux(() => useServiceOptions(true), {});
 
     act(() => {
-      result.current.updateServiceList(business);
+      result.current.updateServiceList();
     });
 
     await act(async () => jest.advanceTimersByTime(3000));

@@ -14,7 +14,6 @@ import {
 import { useRequest } from 'ahooks';
 import AuthService from '@actiontech/shared/lib/api/provision/service/auth';
 import { ResponseCode } from '@actiontech/shared/lib/enum';
-import useBusinessOptions from '../../../../hooks/useBusinessOptions';
 import useServiceOptions from '../../../../hooks/useServiceOptions';
 import { useEffect } from 'react';
 import { EventEmitterKey } from '../../../../data/enum';
@@ -27,6 +26,8 @@ import useSecurityPolicy, {
 } from '../../../../hooks/useSecurityPolicy';
 import ServiceFiled from './ServiceField';
 import { IDBAccountMeta } from '@actiontech/shared/lib/api/provision/service/common';
+import useServiceEnvironment from '../../../../hooks/useServiceEnvironment';
+import { useCurrentProject } from '@actiontech/shared/lib/features';
 
 // todo 后续在 dms-ui 调整至shared 后修改这里
 import AutoCreatedFormItemByApi from '../../../../../../sqle/src/components/BackendForm';
@@ -40,15 +41,21 @@ type Props = {
 const BaseInfoForm: React.FC<Props> = ({ mode, dbAccountMeta }) => {
   const { t } = useTranslation();
 
+  const { projectID } = useCurrentProject();
+
   const form = Form.useFormInstance<CreateAccountFormType>();
 
   const [messageApi, contextHolder] = message.useMessage();
 
-  const business = Form.useWatch('business', form);
+  const environment = Form.useWatch('environment', form);
 
   const selectedDBServiceID = Form.useWatch('dbServiceID', form);
 
-  const { businessOptions, updateBusinessList, loading } = useBusinessOptions();
+  const {
+    environmentOptions,
+    updateEnvironmentList,
+    loading: environmentLoading
+  } = useServiceEnvironment();
   const policy = Form.useWatch('policy', form);
 
   const disabled = mode === 'update';
@@ -88,16 +95,20 @@ const BaseInfoForm: React.FC<Props> = ({ mode, dbAccountMeta }) => {
   );
 
   useEffect(() => {
-    updateBusinessList();
-  }, [updateBusinessList]);
+    updateEnvironmentList({
+      namespace_uid: projectID
+    });
+  }, [updateEnvironmentList, projectID]);
 
   useEffect(() => {
-    if (business) {
-      updateServiceList(business);
+    if (environment) {
+      updateServiceList({
+        filter_by_environment_tag_uid: environment
+      });
       form.resetFields(['service']);
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [business]);
+  }, [environment]);
 
   useEffect(() => {
     if (disabled) {
@@ -146,8 +157,8 @@ const BaseInfoForm: React.FC<Props> = ({ mode, dbAccountMeta }) => {
       </FormItemSubTitle>
       <EmptyBox if={!disabled}>
         <FormItemLabel
-          name="business"
-          label={t('databaseAccount.discovery.business')}
+          name="environment"
+          label={t('databaseAccount.discovery.environment')}
           rules={[{ required: true }]}
           className="has-required-style"
         >
@@ -156,8 +167,8 @@ const BaseInfoForm: React.FC<Props> = ({ mode, dbAccountMeta }) => {
               form.setFieldValue('dbServiceID', undefined);
             }}
             disabled={disabled}
-            loading={loading}
-            options={businessOptions}
+            loading={environmentLoading}
+            options={environmentOptions}
             showSearch
             filterOption={filterOptionByLabel}
           />
@@ -172,7 +183,7 @@ const BaseInfoForm: React.FC<Props> = ({ mode, dbAccountMeta }) => {
         <ServiceFiled
           disabled={disabled}
           loading={servicesLoading}
-          options={serviceOptions}
+          options={servicesLoading ? [] : serviceOptions}
           onSyncService={onSyncService}
           syncServiceLoading={SyncService.loading}
         />

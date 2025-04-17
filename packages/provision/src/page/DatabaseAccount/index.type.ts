@@ -8,7 +8,7 @@ import { IDatabasePrivilegesSelectorBaseFields } from '../../components/Database
 export type ExpendedDBAccountBody = IDBAccountBody & { id?: string };
 
 export type AccountDiscoveryFormType = {
-  business: string;
+  environment: string;
   service: string;
   account: ExpendedDBAccountBody[];
 };
@@ -28,7 +28,7 @@ export type CreateAccountFormType = {
   effective_time_day: number;
   policy: string;
   explanation: string;
-  business: string;
+  environment: string;
   additionalParams: BackendFormValues;
 } & IDatabasePrivilegesSelectorBaseFields;
 
