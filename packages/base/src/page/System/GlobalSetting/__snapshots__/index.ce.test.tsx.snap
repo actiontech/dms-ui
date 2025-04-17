@@ -170,7 +170,7 @@ exports[`base/System/GlobalSetting ce render snap 1`] = `
                 <div
                   class="tips"
                 >
-                  配置能访问SQLE的url地址信息, 格式为 http(s)://ip:port/sqle 
+                  配置能访问SQLE的url地址信息
                 </div>
               </div>
             </div>
@@ -363,7 +363,7 @@ exports[`base/System/GlobalSetting ce render snap 2`] = `
                 <div
                   class="tips"
                 >
-                  配置能访问SQLE的url地址信息, 格式为 http(s)://ip:port/sqle 
+                  配置能访问SQLE的url地址信息
                 </div>
               </div>
             </div>
