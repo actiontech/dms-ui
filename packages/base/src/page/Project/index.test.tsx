@@ -111,6 +111,7 @@ describe('test base/page/project', () => {
     expect(screen.getByText('创建项目')).toBeInTheDocument();
     expect(screen.getByText('导 入')).toBeInTheDocument();
     expect(screen.getByText('导 出')).toBeInTheDocument();
+    expect(screen.getByText('资源全景视图')).toBeInTheDocument();
     fireEvent.click(screen.getByText('创建项目'));
     expect(dispatchSpy).toHaveBeenCalledTimes(2);
 
@@ -130,6 +131,21 @@ describe('test base/page/project', () => {
     expect(screen.queryByText('创建项目')).not.toBeInTheDocument();
     expect(screen.queryByText('导 入')).not.toBeInTheDocument();
     expect(screen.queryByText('导 出')).not.toBeInTheDocument();
+
+    cleanup();
+    jest.clearAllMocks();
+    jest.clearAllTimers();
+    mockUseCurrentUser({
+      userRoles: {
+        ...mockCurrentUserReturn.userRoles,
+        [SystemRole.admin]: false,
+        [SystemRole.globalManager]: false,
+        [SystemRole.certainProjectManager]: false,
+        [SystemRole.globalViewing]: false
+      }
+    });
+    superRender(<Project />);
+    expect(screen.queryByText('资源全景视图')).not.toBeInTheDocument();
   });
 
   it('should export project info', async () => {
