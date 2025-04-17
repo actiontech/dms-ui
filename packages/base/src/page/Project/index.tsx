@@ -68,6 +68,7 @@ const Project: React.FC = () => {
         }
         extra={
           <Space>
+            {headerActions.global_resource_overview}
             {headerActions.batch_import_data_source}
             {headerActions.export}
             {headerActions.import}
