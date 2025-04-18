@@ -1,0 +1,27 @@
+import { atom } from 'recoil';
+import { StoreKey } from '..';
+import { ModalStatus } from '@actiontech/shared/lib/types/common.type';
+import { ModalName } from '~/data/enum';
+import { IListDBRole } from '@actiontech/shared/lib/api/provision/service/common';
+
+export const DatabaseRoleModalStatus = atom<ModalStatus>({
+  key: StoreKey.Database_Role_Modal_Status,
+  default: {
+    [ModalName.DatabaseRoleDetailModal]: false
+  }
+});
+
+export const DatabaseRoleSelectData = atom<IListDBRole | null>({
+  key: StoreKey.Database_Role_Select_Data,
+  default: null
+});
+
+export const DatabaseRoleFilteredDBServiceID = atom<string | null>({
+  key: StoreKey.Database_Role_Filtered_DB_Service_ID,
+  default: null
+});
+
+export const DatabaseRoleFilteredDBServiceName = atom<string | null>({
+  key: StoreKey.Database_Role_Filtered_DB_Service_Name,
+  default: null
+});

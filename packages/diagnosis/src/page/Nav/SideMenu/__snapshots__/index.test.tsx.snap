@@ -1,0 +1,227 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`diagnosis/SideMenu click other menu 1`] = `
+<body>
+  <div>
+    <div
+      class="dms-layout-side css-13z0syi"
+    >
+      <div
+        class="dms-layout-side-start"
+      >
+        <div
+          class="home-page-shortcut"
+        >
+          <div
+            class="title"
+          >
+            <span
+              class="label label-primary"
+            >
+              Action
+            </span>
+            <span
+              class="label label-base"
+            >
+              Diagnosis
+            </span>
+          </div>
+        </div>
+        <ul
+          class="ant-menu ant-menu-root ant-menu-inline ant-menu-light custom-menu css-dev-only-do-not-override-txh9fw"
+          data-menu-list="true"
+          role="menu"
+          tabindex="0"
+        >
+          <li
+            class="ant-menu-item-divider"
+          />
+          <li
+            class="ant-menu-item"
+            data-menu-id="rc-menu-uuid-test-/monitor-source-config"
+            role="menuitem"
+            style="padding-left: 24px;"
+            tabindex="-1"
+          >
+            <svg
+              class="ant-menu-item-icon"
+              height="18"
+              viewBox="0 0 18 18"
+              width="18"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M5.956 13.5c-.223-.954-1.228-1.736-1.64-2.25a6 6 0 1 1 9.368.002c-.413.513-1.417 1.294-1.64 2.248zM12 15v.75a1.5 1.5 0 0 1-1.5 1.5h-3a1.5 1.5 0 0 1-1.5-1.5V15zM9.75 7.504V4.5L6.375 9.004H8.25v3l3.375-4.5z"
+                fill="#C3C6CD"
+              />
+              <path
+                d="M12 15v.75a1.5 1.5 0 0 1-1.5 1.5h-3a1.5 1.5 0 0 1-1.5-1.5V15z"
+                fill="#8A8F99"
+              />
+            </svg>
+            <span
+              class="ant-menu-title-content"
+            >
+              监控源配置
+            </span>
+          </li>
+          <li
+            class="ant-menu-item"
+            data-menu-id="rc-menu-uuid-test-/user-management"
+            role="menuitem"
+            style="padding-left: 24px;"
+            tabindex="-1"
+          >
+            <svg
+              class="ant-menu-item-icon"
+              height="18"
+              viewBox="0 0 16 16"
+              width="18"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M2.522 1.884 8 .667l5.478 1.217a.67.67 0 0 1 .522.65v6.659a4 4 0 0 1-1.781 3.328L8 15.333l-4.219-2.812A4 4 0 0 1 2 9.193V2.535a.67.67 0 0 1 .522-.65M8 7.334A1.667 1.667 0 1 0 8 4a1.667 1.667 0 0 0 0 3.333m-2.982 3.333h5.964a3 3 0 0 0-5.964 0"
+                fill="#C3C6CD"
+              />
+            </svg>
+            <span
+              class="ant-menu-title-content"
+            >
+              用户管理
+            </span>
+          </li>
+        </ul>
+        <div
+          aria-hidden="true"
+          style="display: none;"
+        />
+      </div>
+      <div
+        class="dms-layout-side-end"
+      >
+        <span
+          class="ant-avatar ant-avatar-circle action-avatar css-1wq79dc css-dev-only-do-not-override-txh9fw"
+        >
+          <span
+            class="ant-avatar-string"
+            style="transform: scale(1) translateX(-50%);"
+          />
+        </span>
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`diagnosis/SideMenu should match snapshot 1`] = `
+<body>
+  <div>
+    <div
+      class="dms-layout-side css-13z0syi"
+    >
+      <div
+        class="dms-layout-side-start"
+      >
+        <div
+          class="home-page-shortcut"
+        >
+          <div
+            class="title"
+          >
+            <span
+              class="label label-primary"
+            >
+              Action
+            </span>
+            <span
+              class="label label-base"
+            >
+              Diagnosis
+            </span>
+          </div>
+        </div>
+        <ul
+          class="ant-menu ant-menu-root ant-menu-inline ant-menu-light custom-menu css-dev-only-do-not-override-txh9fw"
+          data-menu-list="true"
+          role="menu"
+          tabindex="0"
+        >
+          <li
+            class="ant-menu-item-divider"
+          />
+          <li
+            class="ant-menu-item"
+            data-menu-id="rc-menu-uuid-test-/monitor-source-config"
+            role="menuitem"
+            style="padding-left: 24px;"
+            tabindex="-1"
+          >
+            <svg
+              class="ant-menu-item-icon"
+              height="18"
+              viewBox="0 0 18 18"
+              width="18"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M5.956 13.5c-.223-.954-1.228-1.736-1.64-2.25a6 6 0 1 1 9.368.002c-.413.513-1.417 1.294-1.64 2.248zM12 15v.75a1.5 1.5 0 0 1-1.5 1.5h-3a1.5 1.5 0 0 1-1.5-1.5V15zM9.75 7.504V4.5L6.375 9.004H8.25v3l3.375-4.5z"
+                fill="#C3C6CD"
+              />
+              <path
+                d="M12 15v.75a1.5 1.5 0 0 1-1.5 1.5h-3a1.5 1.5 0 0 1-1.5-1.5V15z"
+                fill="#8A8F99"
+              />
+            </svg>
+            <span
+              class="ant-menu-title-content"
+            >
+              监控源配置
+            </span>
+          </li>
+          <li
+            class="ant-menu-item"
+            data-menu-id="rc-menu-uuid-test-/user-management"
+            role="menuitem"
+            style="padding-left: 24px;"
+            tabindex="-1"
+          >
+            <svg
+              class="ant-menu-item-icon"
+              height="18"
+              viewBox="0 0 16 16"
+              width="18"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M2.522 1.884 8 .667l5.478 1.217a.67.67 0 0 1 .522.65v6.659a4 4 0 0 1-1.781 3.328L8 15.333l-4.219-2.812A4 4 0 0 1 2 9.193V2.535a.67.67 0 0 1 .522-.65M8 7.334A1.667 1.667 0 1 0 8 4a1.667 1.667 0 0 0 0 3.333m-2.982 3.333h5.964a3 3 0 0 0-5.964 0"
+                fill="#C3C6CD"
+              />
+            </svg>
+            <span
+              class="ant-menu-title-content"
+            >
+              用户管理
+            </span>
+          </li>
+        </ul>
+        <div
+          aria-hidden="true"
+          style="display: none;"
+        />
+      </div>
+      <div
+        class="dms-layout-side-end"
+      >
+        <span
+          class="ant-avatar ant-avatar-circle action-avatar css-1wq79dc css-dev-only-do-not-override-txh9fw"
+        >
+          <span
+            class="ant-avatar-string"
+            style="transform: scale(1) translateX(-50%);"
+          />
+        </span>
+      </div>
+    </div>
+  </div>
+</body>
+`;
