@@ -5,7 +5,8 @@ export const PERMISSIONS = {
       DATA_SOURCE_MANAGEMENT: 'page:data_source_management',
       GLOBAL_DATA_SOURCE: 'page:global_data_source',
       SYNC_DATA_SOURCE: 'page:sync_data_source',
-      SYSTEM_SETTING: 'page:system_setting'
+      SYSTEM_SETTING: 'page:system_setting',
+      RESOURCE_OVERVIEW: 'page:resource_overview'
     },
     SQLE: {
       OPERATION_RECORD: 'page:operation_record',
@@ -116,7 +117,9 @@ export const PERMISSIONS = {
         EDIT: 'action:project_manager_edit',
         DELETE: 'action:project_manager_delete',
         ARCHIVE: 'action:project_manager_archive',
-        UNARCHIVE: 'action:project_manager_unarchive'
+        UNARCHIVE: 'action:project_manager_unarchive',
+        GLOBAL_RESOURCE_OVERVIEW:
+          'action:project_manager_global_resource_overview'
       },
       HOME: {
         ALL_OPERATIONS: 'action:home_all_operations'

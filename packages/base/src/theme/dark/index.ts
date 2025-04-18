@@ -5,6 +5,7 @@ import { systemTheme } from './system';
 import { dataExportTheme } from './dataExport';
 import { sqleDarkTheme } from 'sqle/src/theme/dark';
 import { iconTheme } from './icon';
+import { resourceOverviewTheme } from './resourceOverview';
 
 const darkTheme = createTheme({
   baseTheme: {
@@ -12,7 +13,8 @@ const darkTheme = createTheme({
     guidance: guidanceTheme,
     system: systemTheme,
     dataExport: dataExportTheme,
-    icon: iconTheme
+    icon: iconTheme,
+    resourceOverview: resourceOverviewTheme
   },
   sqleTheme: sqleDarkTheme
 });

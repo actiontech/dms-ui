@@ -1073,34 +1073,6 @@ export interface IImportDBService {
   user?: string;
 }
 
-export interface IImportDBServiceCommon {
-  additional_params?: IAdditionalParam[];
-
-  db_type?: string;
-
-  desc?: string;
-
-  host?: string;
-
-  is_enable_masking?: boolean;
-
-  maintenance_times?: IMaintenanceTime[];
-
-  name?: string;
-
-  password?: string;
-
-  port?: string;
-
-  project_uid?: string;
-
-  source?: string;
-
-  sqle_config?: ISQLEConfig;
-
-  user?: string;
-}
-
 export interface IImportDBServiceV2 {
   additional_params?: IAdditionalParam[];
 
@@ -1108,7 +1080,7 @@ export interface IImportDBServiceV2 {
 
   desc?: string;
 
-  environment_tag_uid: string;
+  environment_tag_name: string;
 
   host?: string;
 
@@ -2129,6 +2101,96 @@ export interface IRejectDataExportWorkflowPayload {
 
 export interface IRejectDataExportWorkflowReq {
   payload?: IRejectDataExportWorkflowPayload;
+}
+
+export interface IResourceBusiness {
+  business_tag?: IBusinessTag;
+
+  project?: IResourceProject[];
+}
+
+export interface IResourceDBService {
+  db_service_name?: string;
+
+  db_service_uid?: string;
+}
+
+export interface IResourceListData {
+  audit_score?: number;
+
+  business_tag?: IBusinessTag;
+
+  environment_tag?: IEnvironmentTag;
+
+  high_priority_sql_count?: number;
+
+  pending_workflow_count?: number;
+
+  project?: IResourceProject;
+
+  resource_name?: string;
+
+  resource_type?: string;
+
+  resource_uid?: string;
+}
+
+export interface IResourceOverviewResourceListResV1 {
+  code?: number;
+
+  data?: IResourceListData[];
+
+  message?: string;
+
+  total_nums?: number;
+}
+
+export interface IResourceOverviewResourceTypeDistributionResV1 {
+  code?: number;
+
+  data?: IResourceTypeDistributionData[];
+
+  message?: string;
+
+  total_nums?: number;
+}
+
+export interface IResourceOverviewStatisticsResV1 {
+  code?: number;
+
+  data?: {
+    business_total_number?: number;
+
+    db_service_total_number?: number;
+
+    project_total_number?: number;
+  };
+
+  message?: string;
+}
+
+export interface IResourceOverviewTopologyResV1 {
+  code?: number;
+
+  data?: IResourceBusiness[];
+
+  message?: string;
+
+  total_nums?: number;
+}
+
+export interface IResourceProject {
+  db_service?: IResourceDBService[];
+
+  project_name?: string;
+
+  project_uid?: string;
+}
+
+export interface IResourceTypeDistributionData {
+  count?: number;
+
+  resource_type?: string;
 }
 
 export interface IRole {

@@ -22,3 +22,4 @@ export { default as SMSService } from './service/SMS';
 export { default as UserService } from './service/User';
 export { default as UserGroupService } from './service/UserGroup';
 export { default as WebhookService } from './service/Webhook';
+export { default as ResourceOverviewService } from './service/ResourceOverview';

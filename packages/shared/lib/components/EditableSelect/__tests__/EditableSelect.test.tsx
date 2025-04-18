@@ -220,6 +220,28 @@ describe('EditableSelect', () => {
     expect(mockOnDelete).toHaveBeenCalledWith(mockOptions[0]);
   });
 
+  it('render error message when confirm delete failed', async () => {
+    const errorMessage = '当前数据不可删除';
+    customRender({
+      errorMessage
+    });
+    fireEvent.click(getBySelector('.editable-select-trigger'));
+    await act(async () => jest.advanceTimersByTime(0));
+
+    const deleteButton = getAllBySelector('.delete-button')[0];
+    fireEvent.click(deleteButton);
+    await act(async () => jest.advanceTimersByTime(0));
+    expect(screen.getByText('确认要删除么?')).toBeInTheDocument();
+
+    const confirmButton = getBySelector('.ant-btn-primary.ant-btn-sm');
+    fireEvent.click(confirmButton);
+    await act(async () => jest.advanceTimersByTime(0));
+
+    expect(mockOnDelete).toHaveBeenCalledWith(mockOptions[0]);
+
+    expect(screen.getByText(errorMessage)).toBeInTheDocument();
+  });
+
   it('should not show actions when disabled', async () => {
     customRender({
       disabled: true

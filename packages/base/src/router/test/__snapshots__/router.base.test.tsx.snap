@@ -114,6 +114,13 @@ exports[`base/router-base-ee render base route data snap 1`] = `
     "path": "/project",
   },
   {
+    "element": <div>
+      resourceOverview
+    </div>,
+    "key": "resourceOverview",
+    "path": "/resource-overview",
+  },
+  {
     "children": [
       {
         "element": <div>
@@ -431,6 +438,16 @@ exports[`base/router-base-ee render base router when version is ee render route 
   <div>
     <div>
       projectList
+    </div>
+  </div>
+</body>
+`;
+
+exports[`base/router-base-ee render base router when version is ee render route resourceOverview render router resourceOverview 1`] = `
+<body>
+  <div>
+    <div>
+      resourceOverview
     </div>
   </div>
 </body>

@@ -18,6 +18,7 @@ import {
   DownOutlined
 } from '@actiontech/icons';
 import type { MenuProps } from 'antd';
+import { ReminderInformation } from '../ReminderInformation';
 
 const EditableSelect: React.FC<EditableSelectProps> = ({
   value,
@@ -34,7 +35,7 @@ const EditableSelect: React.FC<EditableSelectProps> = ({
   addable = true,
   updatable = true,
   deletable = true,
-  onConfirmOpenChange
+  errorMessage
 }) => {
   const { t } = useTranslation();
   const [newItemName, setNewItemName] = useState('');
@@ -44,6 +45,9 @@ const EditableSelect: React.FC<EditableSelectProps> = ({
   );
   const [editName, setEditName] = useState('');
   const [dropdownOpen, setDropdownOpen] = useState(false);
+  const [deletingItem, setDeletingItem] = useState<EditableSelectOption | null>(
+    null
+  );
 
   const handleAdd = () => {
     onAdd?.(newItemName);
@@ -63,6 +67,7 @@ const EditableSelect: React.FC<EditableSelectProps> = ({
   const startEditing = (item: EditableSelectOption) => {
     setEditingItem(item);
     setEditName(item.label);
+    setDeletingItem(null);
   };
 
   const cancelEditing = () => {
@@ -72,6 +77,7 @@ const EditableSelect: React.FC<EditableSelectProps> = ({
 
   const startAdding = () => {
     setIsAdding(true);
+    setDeletingItem(null);
   };
 
   const resetState = () => {
@@ -79,6 +85,7 @@ const EditableSelect: React.FC<EditableSelectProps> = ({
     setIsAdding(false);
     setEditingItem(null);
     setEditName('');
+    setDeletingItem(null);
   };
 
   const onOpenChange = (open: boolean) => {
@@ -100,73 +107,78 @@ const EditableSelect: React.FC<EditableSelectProps> = ({
         resetState();
       },
       label: (
-        <div className="menu-item-content">
-          {editingItem?.value === option.value ? (
-            <div className="edit-mode" onClick={(e) => e.stopPropagation()}>
-              <BasicInput
-                value={editName}
-                autoFocus
-                onChange={(e) => setEditName(e.target.value)}
-              />
-              <div className="button-group">
-                <BasicButton size="small" onClick={cancelEditing}>
-                  {t('common.cancel')}
-                </BasicButton>
-                <BasicButton
-                  type="primary"
-                  size="small"
-                  onClick={handleUpdate}
-                  disabled={!editName.trim()}
-                >
-                  {t('common.save')}
-                </BasicButton>
-              </div>
-            </div>
-          ) : (
-            <>
-              <span>{option.label}</span>
-              <Space>
-                <EmptyBox if={updatable}>
+        <div>
+          <div className="menu-item-content">
+            {editingItem?.value === option.value ? (
+              <div className="edit-mode" onClick={(e) => e.stopPropagation()}>
+                <BasicInput
+                  value={editName}
+                  autoFocus
+                  onChange={(e) => setEditName(e.target.value)}
+                />
+                <div className="button-group">
+                  <BasicButton size="small" onClick={cancelEditing}>
+                    {t('common.cancel')}
+                  </BasicButton>
                   <BasicButton
-                    type="text"
+                    type="primary"
                     size="small"
-                    icon={<EditFilled />}
-                    onClick={(e) => {
-                      e.stopPropagation();
-                      startEditing(option);
-                    }}
-                    className="edit-button"
-                  />
-                </EmptyBox>
-                <EmptyBox if={deletable}>
-                  <Popconfirm
-                    title={
-                      deletionConfirmTitle ?? t('common.deleteConfirmTitle')
-                    }
-                    onConfirm={(e) => {
-                      e?.stopPropagation();
-                      return onDelete?.(option);
-                    }}
-                    onCancel={(e) => {
-                      e?.stopPropagation();
-                    }}
-                    onOpenChange={onConfirmOpenChange}
+                    onClick={handleUpdate}
+                    disabled={!editName.trim()}
                   >
+                    {t('common.save')}
+                  </BasicButton>
+                </div>
+              </div>
+            ) : (
+              <>
+                <span>{option.label}</span>
+                <Space>
+                  <EmptyBox if={updatable}>
                     <BasicButton
                       type="text"
                       size="small"
-                      danger
-                      icon={<MinusCircleFilled width={14} height={14} />}
+                      icon={<EditFilled />}
                       onClick={(e) => {
                         e.stopPropagation();
+                        startEditing(option);
                       }}
-                      className="delete-button"
+                      className="edit-button"
                     />
-                  </Popconfirm>
-                </EmptyBox>
-              </Space>
-            </>
-          )}
+                  </EmptyBox>
+                  <EmptyBox if={deletable}>
+                    <Popconfirm
+                      title={
+                        deletionConfirmTitle ?? t('common.deleteConfirmTitle')
+                      }
+                      onConfirm={(e) => {
+                        e?.stopPropagation();
+                        setDeletingItem(option);
+                        onDelete?.(option);
+                      }}
+                      onCancel={(e) => {
+                        e?.stopPropagation();
+                      }}
+                    >
+                      <BasicButton
+                        type="text"
+                        size="small"
+                        danger
+                        icon={<MinusCircleFilled width={14} height={14} />}
+                        onClick={(e) => {
+                          e.stopPropagation();
+                        }}
+                        className="delete-button"
+                      />
+                    </Popconfirm>
+                  </EmptyBox>
+                </Space>
+              </>
+            )}
+          </div>
+          <EmptyBox if={!!errorMessage && deletingItem?.value === option.value}>
+            <ReminderInformation status="error" message={errorMessage ?? ''} />
+          </EmptyBox>
         </div>
       )
     }));
