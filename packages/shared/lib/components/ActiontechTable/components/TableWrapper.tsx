@@ -17,7 +17,11 @@ const TableWrapper: React.FC<TableWrapperProps> = ({
 }) => {
   return (
     <ActiontechTableContextProvide value={restProps}>
-      <Spin spinning={loading}>{children}</Spin>
+      {typeof loading === 'boolean' ? (
+        <Spin spinning={loading}>{children}</Spin>
+      ) : (
+        children
+      )}
     </ActiontechTableContextProvide>
   );
 };

@@ -74,7 +74,9 @@ const CronInput: React.FC<CronInputProps> = (props: CronInputProps) => {
 
   const onChangeWeekDay = (val: string | number) => {
     if (typeof val === 'string') {
-      val === 'all' && updateWeek(isEveryWeekDay ? [] : weekDayValues);
+      if (val === 'all') {
+        updateWeek(isEveryWeekDay ? [] : weekDayValues);
+      }
       return;
     }
     if (isEveryWeekDay || week.includes(val as number)) {

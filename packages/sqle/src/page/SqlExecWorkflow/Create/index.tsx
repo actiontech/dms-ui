@@ -137,9 +137,7 @@ const CreateSqlExecWorkflow: React.FC = () => {
             onSuccess
           ).finally(finallyFunc);
         }
-      } catch (error) {
-        /* empty */
-      }
+      } catch {}
     },
     [
       auditWorkflowWithSameSql,

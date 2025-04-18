@@ -3,7 +3,6 @@ import editorWorker from 'monaco-editor/esm/vs/language/json/json.worker?worker'
 import jsonWorker from 'monaco-editor/esm/vs/language/json/json.worker?worker';
 import { loader } from '@monaco-editor/react';
 
-// eslint-disable-next-line no-restricted-globals
 self.MonacoEnvironment = {
   getWorker(_, label) {
     if (label === 'json') {

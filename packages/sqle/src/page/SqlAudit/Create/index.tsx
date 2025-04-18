@@ -89,10 +89,12 @@ const SqlAuditCreate = () => {
   };
 
   useEffect(() => {
-    auditId &&
+    if (auditId) {
       navigate(ROUTE_PATHS.SQLE.SQL_AUDIT.detail, {
         params: { projectID, sql_audit_record_id: auditId }
       });
+    }
+
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [auditId]);
 

@@ -4,6 +4,7 @@ import { Button } from 'antd';
 export const GuidanceButtonStyleWrapper = styled(Button)`
   &.guidance-button-wrapper.ant-btn.ant-btn-sm {
     padding: 0 10px;
+    height: 28px;
   }
 
   /* default */

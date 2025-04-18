@@ -6,6 +6,8 @@ import { MemoryRouter, MemoryRouterProps } from 'react-router-dom';
 import { storeFactory } from '@actiontech/shared/lib/testUtil/mockRedux';
 import lightTheme from '@actiontech/shared/lib/theme/light';
 import basePackageTheme from '../theme/light';
+import { ConfigProvider, theme as antdTheme } from 'antd';
+import zhCN from 'antd/locale/zh_CN';
 
 export type RenderParams = Parameters<typeof render>;
 
@@ -19,11 +21,16 @@ export const renderWithReduxAndTheme = (
 ) => {
   return render(ui, {
     wrapper: ({ children }) => (
-      <ThemeProvider theme={themeData}>
-        <Provider store={storeFactory(initStore)}>{children}</Provider>
-      </ThemeProvider>
+      <ConfigProvider
+        locale={zhCN}
+        theme={{ algorithm: antdTheme.defaultAlgorithm, hashed: false }}
+      >
+        <ThemeProvider theme={themeData}>
+          <Provider store={storeFactory(initStore)}>{children}</Provider>
+        </ThemeProvider>
+      </ConfigProvider>
     ),
-    ...Option
+    ...option
   });
 };
 
@@ -39,11 +46,16 @@ export const superRender = (
   const renderReturn = render(ui, {
     wrapper: ({ children }) => {
       return (
-        <Provider store={storeFactory(otherProps?.initStore)}>
-          <MemoryRouter {...otherProps?.routerProps}>
-            <ThemeProvider theme={themeData}>{children}</ThemeProvider>
-          </MemoryRouter>
-        </Provider>
+        <ConfigProvider
+          locale={zhCN}
+          theme={{ algorithm: antdTheme.defaultAlgorithm, hashed: false }}
+        >
+          <Provider store={storeFactory(otherProps?.initStore)}>
+            <MemoryRouter {...otherProps?.routerProps}>
+              <ThemeProvider theme={themeData}>{children}</ThemeProvider>
+            </MemoryRouter>
+          </Provider>
+        </ConfigProvider>
       );
     },
     ...option
