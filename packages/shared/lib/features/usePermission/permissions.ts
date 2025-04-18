@@ -126,6 +126,9 @@ export const PERMISSIONS = {
       },
       NAV: {
         EDIT_SYSTEM_NOTICE: 'action: edit_system_notice'
+      },
+      RESOURCE_OVERVIEW: {
+        EXPORT: 'action:resource_overview_export'
       }
     },
     SQLE: {

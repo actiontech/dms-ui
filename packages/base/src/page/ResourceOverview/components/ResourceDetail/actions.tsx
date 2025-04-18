@@ -1,19 +1,24 @@
 import { t } from '../../../../locale';
-import { ActiontechTableToolbarActionMeta } from '@actiontech/shared/lib/components/ActiontechTable';
 import { IResourceListData } from '@actiontech/shared/lib/api/base/service/common';
 import { ActiontechTableActionMeta } from '@actiontech/shared/lib/components/ActiontechTable/index.type';
+import {
+  ActiontechTableToolbarActionWithPermissions,
+  PERMISSIONS
+} from '@actiontech/shared/lib/features';
+
 export const ResourceDetailToolbarActions = (
   onExport: () => void,
   exporting: boolean
-): ActiontechTableToolbarActionMeta[] => {
+): ActiontechTableToolbarActionWithPermissions => {
   return [
     {
       key: 'export',
-      text: t('dmsCloudBeaver.operationList.exportButton'),
+      text: t('resourceOverview.export'),
       buttonProps: {
         onClick: onExport,
         loading: exporting
-      }
+      },
+      permissions: PERMISSIONS.ACTIONS.BASE.RESOURCE_OVERVIEW.EXPORT
     }
   ];
 };
