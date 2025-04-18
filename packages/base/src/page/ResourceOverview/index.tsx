@@ -1,6 +1,9 @@
 import { PageHeader } from '@actiontech/shared/';
 import { useTranslation } from 'react-i18next';
-import { ResourceOverviewStyleWrapper } from './style';
+import {
+  ResourceOverviewDetailStyleWrapper,
+  ResourceOverviewStyleWrapper
+} from './style';
 import ResourceDetail from './components/ResourceDetail';
 import ResourceOverviewStatistic from './components/Statistic';
 import { TableRefreshButton } from '@actiontech/shared/lib/components/ActiontechTable';
@@ -16,7 +19,7 @@ const ResourceOverview = () => {
   };
 
   return (
-    <section>
+    <ResourceOverviewStyleWrapper>
       <PageHeader
         title={
           <Space size={12}>
@@ -25,11 +28,11 @@ const ResourceOverview = () => {
           </Space>
         }
       />
-      <ResourceOverviewStyleWrapper>
+      <ResourceOverviewDetailStyleWrapper>
         <ResourceOverviewStatistic />
         <ResourceDetail />
-      </ResourceOverviewStyleWrapper>
-    </section>
+      </ResourceOverviewDetailStyleWrapper>
+    </ResourceOverviewStyleWrapper>
   );
 };
 

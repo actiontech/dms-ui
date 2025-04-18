@@ -228,6 +228,7 @@ const ResourceManagementPage: React.FC = () => {
             <Card
               className="resource-detail-table-card"
               title={t('resourceOverview.resourceDetail')}
+              hoverable
             >
               <ActiontechTable
                 className="cursor-pointer"
@@ -239,6 +240,7 @@ const ResourceManagementPage: React.FC = () => {
                   total: resourceList?.total ?? 0,
                   current: pagination.page_index
                 }}
+                isPaginationFixed={false}
                 columns={columns}
                 errorMessage={requestErrorMessage}
                 onChange={tableChange}

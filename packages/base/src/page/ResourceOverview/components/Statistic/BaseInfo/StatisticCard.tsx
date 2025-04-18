@@ -7,7 +7,7 @@ const StatisticCard: React.FC<StatisticCardProps> = ({
   icon
 }) => {
   return (
-    <Card className="statistic-card">
+    <Card className="statistic-card" hoverable>
       <div className="statistic-card-content">
         <div className="statistic-card-icon">{icon}</div>
         <Statistic title={<Space>{title}</Space>} value={count} />

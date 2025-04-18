@@ -96,6 +96,7 @@ const ResourceTopology: React.FC<ResourceTopologyProps> = ({
           </BasicButton>
         </Space>
       }
+      hoverable
     >
       <Tree
         showLine
