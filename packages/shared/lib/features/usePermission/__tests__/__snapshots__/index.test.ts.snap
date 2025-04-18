@@ -56,6 +56,7 @@ exports[`usePermission should match snapshot 1`] = `
         "DELETE": "action:project_manager_delete",
         "EDIT": "action:project_manager_edit",
         "EXPORT": "action:project_manager_export",
+        "GLOBAL_RESOURCE_OVERVIEW": "action:project_manager_global_resource_overview",
         "IMPORT": "action:project_manager_import",
         "UNARCHIVE": "action:project_manager_unarchive",
       },
@@ -225,6 +226,7 @@ exports[`usePermission should match snapshot 1`] = `
     "BASE": {
       "DATA_SOURCE_MANAGEMENT": "page:data_source_management",
       "GLOBAL_DATA_SOURCE": "page:global_data_source",
+      "RESOURCE_OVERVIEW": "page:resource_overview",
       "SYNC_DATA_SOURCE": "page:sync_data_source",
       "SYSTEM_SETTING": "page:system_setting",
       "USER_CENTER": "page:user_center",
@@ -1067,6 +1069,16 @@ exports[`usePermission should match snapshot 2`] = `
     ],
     "type": "action",
   },
+  "action:project_manager_global_resource_overview": {
+    "id": "action:project_manager_global_resource_overview",
+    "role": [
+      "admin",
+      "globalManager",
+      "globalViewing",
+      "certainProjectManager",
+    ],
+    "type": "action",
+  },
   "action:project_manager_import": {
     "id": "action:project_manager_import",
     "role": [
@@ -1479,6 +1491,16 @@ exports[`usePermission should match snapshot 2`] = `
       "admin",
       "globalManager",
       "globalViewing",
+    ],
+    "type": "page",
+  },
+  "page:resource_overview": {
+    "id": "page:resource_overview",
+    "role": [
+      "admin",
+      "globalManager",
+      "globalViewing",
+      "certainProjectManager",
     ],
     "type": "page",
   },

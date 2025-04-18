@@ -90,8 +90,6 @@ describe('Project/EnvironmentField', () => {
   });
 
   it('render delete environment tag when environment tag is bound', async () => {
-    const mockPromiseRejected = jest.spyOn(Promise, 'reject');
-    mockPromiseRejected.mockImplementation(() => Promise.resolve(false));
     customRender();
     await act(async () => jest.advanceTimersByTime(3000));
     expect(listEnvironmentTagsSpy).toHaveBeenCalledTimes(1);
@@ -111,7 +109,6 @@ describe('Project/EnvironmentField', () => {
       project_uid: mockProjectInfo.projectID
     });
     await act(async () => jest.advanceTimersByTime(3000));
-    expect(mockPromiseRejected).toHaveBeenCalledTimes(1);
     expect(
       screen.getByText(
         `当前环境已绑定：${DBServicesList.map((item) => item.name).join(

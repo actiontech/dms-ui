@@ -13,7 +13,8 @@ enum EmitterKey {
   DMS_Refresh_Export_Data_Workflow = 'DMS_Refresh_Export_Data_Workflow',
   DMS_Refresh_Sync_Data_Source = 'DMS_Refresh_Sync_Data_Source',
   DMS_Refresh_Global_Data_Source = 'DMS_Refresh_Global_Data_Source',
-  DMS_Batch_Test_Data_Source_Connection = 'DMS_Batch_Test_Data_Source_Connection'
+  DMS_Batch_Test_Data_Source_Connection = 'DMS_Batch_Test_Data_Source_Connection',
+  Refresh_Resource_Overview_Page = 'Refresh_Resource_Overview_Page'
 }
 
 export default EmitterKey;

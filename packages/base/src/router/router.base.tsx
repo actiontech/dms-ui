@@ -36,6 +36,8 @@ const GlobalBatchImportDataSource = React.lazy(
 const GlobalAddDataSource = React.lazy(
   () => import('../page/DataSource/components/AddDataSource')
 );
+
+const ResourceOverview = React.lazy(() => import('../page/ResourceOverview'));
 // #endif
 
 const Home = React.lazy(() => import('../page/Home'));
@@ -158,6 +160,12 @@ export const BaseGlobalRouterConfig: RouterConfigItem[] = [
         element: <ProjectBatchImportDataSource />
       }
     ]
+  },
+  {
+    path: ROUTE_PATHS.BASE.RESOURCE_OVERVIEW,
+    key: 'resourceOverview',
+    element: <ResourceOverview />,
+    permission: PERMISSIONS.PAGES.BASE.RESOURCE_OVERVIEW
   }
   // #endif
 ];

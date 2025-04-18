@@ -74,11 +74,8 @@ const EnvironmentField: React.FC<EnvironmentFieldProps> = ({
       });
   };
 
-  const deleteEnvironmentTag = (
-    environmentTagUid: string,
-    resolve: (value: boolean) => void,
-    reject: () => void
-  ) => {
+  const deleteEnvironmentTag = (environmentTagUid: string) => {
+    startOperationLoading();
     DmsApi.ProjectService.DeleteEnvironmentTag({
       environment_tag_uid: environmentTagUid,
       project_uid: projectID ?? ''
@@ -88,45 +85,32 @@ const EnvironmentField: React.FC<EnvironmentFieldProps> = ({
           messageApi.success(
             t('dmsDataSource.dataSourceForm.deleteEnvironmentAttributeSuccess')
           );
-          resolve(true);
           refresh();
-        } else {
-          reject();
         }
       })
-      .catch(() => {
-        reject();
+      .finally(() => {
+        stopOperationLoading();
       });
   };
 
-  //todo 目前这种写法不太友好 待和产品沟通 优化删除交互 修改此处代码
   const onDelete = (item: EditableSelectOption) => {
-    if (boundServices.length > 0) {
-      return Promise.resolve(false);
-    }
     const environmentTagUid = item.value.toString();
-    return new Promise<boolean>((resolve, reject) => {
-      DmsApi.DBServiceService.ListDBServicesV2({
-        filter_by_environment_tag_uid: environmentTagUid,
-        project_uid: projectID ?? '',
-        page_size: 9999
-      })
-        .then((res) => {
-          if (res.data.code === ResponseCode.SUCCESS) {
-            setBoundServices(res.data.data ?? []);
-            if (res.data.data?.length === 0) {
-              deleteEnvironmentTag(environmentTagUid, resolve, reject);
-            } else {
-              reject();
-            }
-          } else {
-            reject();
+    DmsApi.DBServiceService.ListDBServicesV2({
+      filter_by_environment_tag_uid: environmentTagUid,
+      project_uid: projectID ?? '',
+      page_size: 9999
+    })
+      .then((res) => {
+        if (res.data.code === ResponseCode.SUCCESS) {
+          setBoundServices(res.data.data ?? []);
+          if (res.data.data?.length === 0) {
+            deleteEnvironmentTag(environmentTagUid);
           }
-        })
-        .catch(() => {
-          reject();
-        });
-    });
+        }
+      })
+      .finally(() => {
+        stopOperationLoading();
+      });
   };
 
   const onUpdate = (item: EditableSelectOption) => {
@@ -158,7 +142,14 @@ const EnvironmentField: React.FC<EnvironmentFieldProps> = ({
         addButtonText={t(
           'dmsDataSource.dataSourceForm.addEnvironmentAttribute'
         )}
-        deletionConfirmTitle={
+        deletionConfirmTitle={t(
+          'dmsDataSource.dataSourceForm.deleteEnvironmentAttributeConfirm'
+        )}
+        onDelete={onDelete}
+        onUpdate={onUpdate}
+        onAdd={onAdd}
+        loading={operationLoading || loading}
+        errorMessage={
           boundServices.length > 0
             ? t(
                 'dmsDataSource.dataSourceForm.deleteEnvironmentAttributeError',
@@ -166,19 +157,8 @@ const EnvironmentField: React.FC<EnvironmentFieldProps> = ({
                   name: boundServices.map((item) => item.name).join(',')
                 }
               )
-            : t(
-                'dmsDataSource.dataSourceForm.deleteEnvironmentAttributeConfirm'
-              )
+            : undefined
         }
-        onDelete={onDelete}
-        onUpdate={onUpdate}
-        onAdd={onAdd}
-        loading={operationLoading || loading}
-        onConfirmOpenChange={(open) => {
-          if (!open) {
-            setBoundServices([]);
-          }
-        }}
       />
     </>
   );
