@@ -1,6 +1,6 @@
 import { useMemo, useEffect, useCallback, useState } from 'react';
 import { useTypedNavigate } from '@actiontech/shared';
-import { Card, Row, Col, Typography } from 'antd';
+import { Card, Row, Col, Typography, message } from 'antd';
 import {
   FlagFilled,
   DatabaseFilled,
@@ -24,13 +24,16 @@ import { IResourceListData } from '@actiontech/shared/lib/api/base/service/commo
 import { ResourceDetailWrapper } from '../../style';
 import { useTranslation } from 'react-i18next';
 import { IGetResourceOverviewResourceListV1Params } from '@actiontech/shared/lib/api/base/service/ResourceOverview/index.d';
-import { ResourceDetailTableActions } from './actions';
+import {
+  ResourceDetailTableActions,
+  ResourceDetailToolbarActions
+} from './actions';
 import { ROUTE_PATHS } from '@actiontech/shared/lib/data/routePaths';
-import useCurrentUser from '@actiontech/shared/lib/features/useCurrentUser';
 import ResourceTopology from './ResourceTopology';
 import useFilterParams from './hooks/useFilterParams';
 import EmitterKey from '../../../../data/EmitterKey';
 import EventEmitter from '../../../../utils/EventEmitter';
+import { useCurrentUser, usePermission } from '@actiontech/shared/lib/features';
 
 const ResourceManagementPage: React.FC = () => {
   const { t } = useTranslation();
@@ -41,6 +44,10 @@ const ResourceManagementPage: React.FC = () => {
 
   const [selectedKey, setSelectedKey] = useState<string>();
   const [expandedKeys, setExpandedKeys] = useState<string[]>([]);
+
+  const { parse2TableToolbarActionPermissions } = usePermission();
+
+  const [messageApi, messageContextHolder] = message.useMessage();
 
   const {
     tableFilterInfo,
@@ -174,6 +181,30 @@ const ResourceManagementPage: React.FC = () => {
     [username]
   );
 
+  const { run: onExport, loading: exporting } = useRequest(
+    () => {
+      const hideLoading = messageApi.loading(t('resourceOverview.exportTips'));
+      return DmsApi.ResourceOverviewService.DownloadResourceOverviewList(
+        {
+          ...tableFilterInfo,
+          fuzzy_search_resource_name: searchKeyword
+        },
+        { responseType: 'blob' }
+      ).then(() => {
+        hideLoading();
+      });
+    },
+    {
+      manual: true
+    }
+  );
+
+  const toolbarActions = useMemo(() => {
+    return parse2TableToolbarActionPermissions(
+      ResourceDetailToolbarActions(onExport, exporting)
+    );
+  }, [parse2TableToolbarActionPermissions, exporting, onExport]);
+
   const refreshPage = useCallback(() => {
     refreshTopology();
     refreshResourceList();
@@ -192,6 +223,7 @@ const ResourceManagementPage: React.FC = () => {
 
   return (
     <ResourceDetailWrapper>
+      {messageContextHolder}
       <ActiontechTableWrapper
         loading={topologyLoading || getResourceListLoading}
         setting={tableSetting}
@@ -209,6 +241,7 @@ const ResourceManagementPage: React.FC = () => {
                 refreshBySearchKeyword();
               }
             }}
+            actions={toolbarActions}
           />
           <TableFilterContainer
             filterContainerMeta={filterContainerMeta}

@@ -33,5 +33,6 @@ export default {
     sourceNumItem: '数据源数量',
     sourceProportionItem: '数据源占比'
   },
-  export: '导出'
+  export: '导出',
+  exportTips: '正在导出资源详情数据'
 };

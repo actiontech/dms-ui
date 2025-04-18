@@ -5,6 +5,18 @@ import {
   IResourceOverviewTopologyResV1
 } from '../common.d';
 
+export interface IDownloadResourceOverviewListParams {
+  filter_by_db_type?: string;
+
+  filter_by_business_tag_uid?: string;
+
+  filter_by_environment_tag_uid?: string;
+
+  filter_by_project_uid?: string;
+
+  fuzzy_search_resource_name?: string;
+}
+
 export interface IGetResourceOverviewResourceListV1Params {
   filter_by_db_type?: string;
 
@@ -15,10 +27,6 @@ export interface IGetResourceOverviewResourceListV1Params {
   filter_by_project_uid?: string;
 
   fuzzy_search_resource_name?: string;
-
-  sort_by_field?: string;
-
-  sort_asc?: boolean;
 
   page_index?: number;
 

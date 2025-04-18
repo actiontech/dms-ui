@@ -886,6 +886,15 @@ export const PERMISSION_MANIFEST: Record<
       SystemRole.certainProjectManager
     ]
   },
+  [PERMISSIONS.ACTIONS.BASE.RESOURCE_OVERVIEW.EXPORT]: {
+    id: PERMISSIONS.ACTIONS.BASE.RESOURCE_OVERVIEW.EXPORT,
+    type: 'action',
+    role: [
+      SystemRole.admin,
+      SystemRole.globalManager,
+      SystemRole.certainProjectManager
+    ]
+  },
 
   // 版本管理
   [PERMISSIONS.ACTIONS.SQLE.VERSION_MANAGEMENT.ADD]: {
