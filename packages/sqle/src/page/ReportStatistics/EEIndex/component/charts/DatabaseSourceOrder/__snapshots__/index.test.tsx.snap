@@ -176,7 +176,7 @@ exports[`ReportStatistics/DatabaseSourceOrder render chart snap when api return 
             <span
               class="no-data-cont tip-without-title"
             >
-              暂无数据，购买数据源后回到本页查看
+              暂无数据，添加数据源后回到本页查看
             </span>
           </div>
           <div
