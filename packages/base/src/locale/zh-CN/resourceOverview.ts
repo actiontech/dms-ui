@@ -21,6 +21,7 @@ export default {
     project: '所属项目',
     environment: '所属环境',
     auditScore: '审核质量评分',
+    auditScoreTips: '分数区间是(0-100)分',
     highPrioritySqlCount: '高优先级SQL数',
     pendingWorkflowCount: '待处理工单数量',
     viewDetail: '查看详情'

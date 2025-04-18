@@ -149,8 +149,9 @@ const ResourceManagementPage: React.FC = () => {
   );
 
   const columns = useMemo(
-    () => ResourceDetailListColumns(getLogoUrlByDbType),
-    [getLogoUrlByDbType]
+    () =>
+      ResourceDetailListColumns(getLogoUrlByDbType, baseTheme.resourceOverview),
+    [getLogoUrlByDbType, baseTheme.resourceOverview]
   );
 
   const actions = useMemo(() => {
@@ -195,25 +196,27 @@ const ResourceManagementPage: React.FC = () => {
         loading={topologyLoading || getResourceListLoading}
         setting={tableSetting}
       >
-        <TableToolbar
-          filterButton={{
-            filterButtonMeta,
-            updateAllSelectedFilterItem
-          }}
-          searchInput={{
-            onChange: setSearchKeyword,
-            defaultValue: searchKeyword,
-            onSearch: () => {
-              refreshBySearchKeyword();
-            }
-          }}
-        />
-        <TableFilterContainer
-          filterContainerMeta={filterContainerMeta}
-          updateTableFilterInfo={updateTableFilterInfo}
-          disabled={getResourceListLoading}
-          filterCustomProps={filterCustomProps}
-        />
+        <Card hoverable className="resource-detail-table-toolbar-card">
+          <TableToolbar
+            filterButton={{
+              filterButtonMeta,
+              updateAllSelectedFilterItem
+            }}
+            searchInput={{
+              onChange: setSearchKeyword,
+              defaultValue: searchKeyword,
+              onSearch: () => {
+                refreshBySearchKeyword();
+              }
+            }}
+          />
+          <TableFilterContainer
+            filterContainerMeta={filterContainerMeta}
+            updateTableFilterInfo={updateTableFilterInfo}
+            disabled={getResourceListLoading}
+            filterCustomProps={filterCustomProps}
+          />
+        </Card>
         <Row gutter={16} className="resource-detail-wrapper">
           <Col span={6}>
             <ResourceTopology

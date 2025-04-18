@@ -2,10 +2,14 @@ import { t } from '../../../../locale';
 import { IResourceListData } from '@actiontech/shared/lib/api/base/service/common';
 import { ActiontechTableColumn } from '@actiontech/shared/lib/components/ActiontechTable';
 import { IGetResourceOverviewResourceListV1Params } from '@actiontech/shared/lib/api/base/service/ResourceOverview/index.d';
-import { DatabaseTypeLogo } from '@actiontech/shared';
+import { DatabaseTypeLogo, BasicToolTip } from '@actiontech/shared';
+import { TableColumnWithIconStyleWrapper } from '@actiontech/shared/lib/styleWrapper/element';
+import { FlagFilled, DatabaseSchemaFilled } from '@actiontech/icons';
+import { ResourceOverviewTheme } from '../../../../theme/type';
 
 export const ResourceDetailListColumns = (
-  getLogoUrlByDbType: (dbType: string) => string
+  getLogoUrlByDbType: (dbType: string) => string,
+  theme: ResourceOverviewTheme
 ): ActiontechTableColumn<
   IResourceListData,
   IGetResourceOverviewResourceListV1Params,
@@ -36,7 +40,12 @@ export const ResourceDetailListColumns = (
       dataIndex: 'business_tag',
       title: t('resourceOverview.resourceList.business'),
       render: (businessTag) => {
-        return businessTag?.name ?? '-';
+        return (
+          <TableColumnWithIconStyleWrapper>
+            <DatabaseSchemaFilled color={theme.icon.schemaFilled} />
+            <span>{businessTag?.name}</span>
+          </TableColumnWithIconStyleWrapper>
+        );
       },
       filterCustomType: 'select',
       filterKey: 'filter_by_business_tag_uid'
@@ -45,7 +54,12 @@ export const ResourceDetailListColumns = (
       dataIndex: 'project',
       title: t('resourceOverview.resourceList.project'),
       render: (project) => {
-        return project?.project_name ?? '-';
+        return (
+          <TableColumnWithIconStyleWrapper>
+            <FlagFilled />
+            <span>{project?.project_name}</span>
+          </TableColumnWithIconStyleWrapper>
+        );
       },
       filterCustomType: 'select',
       filterKey: 'filter_by_project_uid'
@@ -61,7 +75,14 @@ export const ResourceDetailListColumns = (
     },
     {
       dataIndex: 'audit_score',
-      title: t('resourceOverview.resourceList.auditScore')
+      title: (
+        <BasicToolTip
+          suffixIcon
+          title={t('resourceOverview.resourceList.auditScoreTips')}
+        >
+          {t('resourceOverview.resourceList.auditScore')}
+        </BasicToolTip>
+      )
     },
     {
       dataIndex: 'high_priority_sql_count',
