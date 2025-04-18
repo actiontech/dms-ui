@@ -53,15 +53,21 @@ export const ResourceOverviewDetailStyleWrapper = styled('div')`
 `;
 
 export const ResourceDetailWrapper = styled('div')`
-  padding-bottom: 60px;
+  padding: 0 40px 60px;
 
-  .actiontech-table-toolbar-namespace {
-    border-top: 1px solid
-      ${({ theme }) => theme.sharedTheme.uiToken.colorBorderSecondary} !important;
+  .resource-detail-table-toolbar-card.ant-card {
+    .ant-card-body {
+      padding: 0;
+    }
+  }
+
+  .actiontech-table-toolbar-namespace,
+  .actiontech-table-filter-container-namespace {
+    border: 0;
+    border-radius: 8px;
   }
 
   .resource-detail-wrapper {
-    padding: 0 40px;
     margin-top: 24px;
   }
 
@@ -85,5 +91,9 @@ export const ResourceDetailWrapper = styled('div')`
 
   & .ant-table-wrapper.actiontech-table-namespace.cursor-pointer {
     padding-bottom: 0;
+
+    .actiontech-table-pagination {
+      border-radius: 8px;
+    }
   }
 `;
