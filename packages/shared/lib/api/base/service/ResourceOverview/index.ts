@@ -7,6 +7,7 @@ import ServiceBase from '../Service.base';
 import { AxiosRequestConfig } from 'axios';
 
 import {
+  IDownloadResourceOverviewListParams,
   IGetResourceOverviewResourceListV1Params,
   IGetResourceOverviewResourceListV1Return,
   IGetResourceOverviewResourceTypeDistributionV1Return,
@@ -16,6 +17,14 @@ import {
 } from './index.d';
 
 class ResourceOverviewService extends ServiceBase {
+  public DownloadResourceOverviewList(
+    params: IDownloadResourceOverviewListParams,
+    options?: AxiosRequestConfig
+  ) {
+    const paramsData = this.cloneDeep(params);
+    return this.get('/v1/dms/resource_overview/download', paramsData, options);
+  }
+
   public GetResourceOverviewResourceListV1(
     params: IGetResourceOverviewResourceListV1Params,
     options?: AxiosRequestConfig
