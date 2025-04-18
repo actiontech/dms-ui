@@ -696,6 +696,13 @@ exports[`base/router-sqle-ee render sqle route data snap 1`] = `
     "path": "/project",
   },
   {
+    "element": <div>
+      resourceOverview
+    </div>,
+    "key": "resourceOverview",
+    "path": "/resource-overview",
+  },
+  {
     "children": [
       {
         "element": <div>

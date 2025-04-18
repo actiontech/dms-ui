@@ -4623,63 +4623,65 @@ exports[`page/DataSource/UpdateDataSource render edit data when has all value 3`
                 <span
                   class="ant-dropdown-menu-title-content"
                 >
-                  <div
-                    class="menu-item-content"
-                  >
-                    <span>
-                      environment-1
-                    </span>
+                  <div>
                     <div
-                      class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+                      class="menu-item-content"
                     >
+                      <span>
+                        environment-1
+                      </span>
                       <div
-                        class="ant-space-item"
-                        style="margin-right: 8px;"
+                        class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
                       >
-                        <button
-                          class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-text ant-btn-sm ant-btn-icon-only edit-button basic-button-wrapper css-geipcv"
-                          type="button"
+                        <div
+                          class="ant-space-item"
+                          style="margin-right: 8px;"
                         >
-                          <span
-                            class="ant-btn-icon"
+                          <button
+                            class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-text ant-btn-sm ant-btn-icon-only edit-button basic-button-wrapper css-geipcv"
+                            type="button"
                           >
-                            <svg
-                              height="16"
-                              viewBox="0 0 16 16"
-                              width="16"
-                              xmlns="http://www.w3.org/2000/svg"
+                            <span
+                              class="ant-btn-icon"
                             >
-                              <path
-                                d="M6.162 12.667H14V14H2v-2.829l6.6-6.6 2.828 2.83zm3.38-9.038 1.415-1.414a.667.667 0 0 1 .942 0L13.785 4.1a.667.667 0 0 1 0 .942l-1.414 1.414z"
-                                fill="#8A8F99"
-                              />
-                            </svg>
-                          </span>
-                        </button>
-                      </div>
-                      <div
-                        class="ant-space-item"
-                      >
-                        <button
-                          class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-text ant-btn-sm ant-btn-icon-only ant-btn-dangerous delete-button basic-button-wrapper css-geipcv"
-                          type="button"
+                              <svg
+                                height="16"
+                                viewBox="0 0 16 16"
+                                width="16"
+                                xmlns="http://www.w3.org/2000/svg"
+                              >
+                                <path
+                                  d="M6.162 12.667H14V14H2v-2.829l6.6-6.6 2.828 2.83zm3.38-9.038 1.415-1.414a.667.667 0 0 1 .942 0L13.785 4.1a.667.667 0 0 1 0 .942l-1.414 1.414z"
+                                  fill="#8A8F99"
+                                />
+                              </svg>
+                            </span>
+                          </button>
+                        </div>
+                        <div
+                          class="ant-space-item"
                         >
-                          <span
-                            class="ant-btn-icon"
+                          <button
+                            class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-text ant-btn-sm ant-btn-icon-only ant-btn-dangerous delete-button basic-button-wrapper css-geipcv"
+                            type="button"
                           >
-                            <svg
-                              height="14"
-                              viewBox="0 0 18 18"
-                              width="14"
-                              xmlns="http://www.w3.org/2000/svg"
+                            <span
+                              class="ant-btn-icon"
                             >
-                              <path
-                                d="M9 16.5a7.5 7.5 0 1 1 0-15 7.5 7.5 0 0 1 0 15M5.25 8.25v1.5h7.5v-1.5z"
-                                fill="#F66074"
-                              />
-                            </svg>
-                          </span>
-                        </button>
+                              <svg
+                                height="14"
+                                viewBox="0 0 18 18"
+                                width="14"
+                                xmlns="http://www.w3.org/2000/svg"
+                              >
+                                <path
+                                  d="M9 16.5a7.5 7.5 0 1 1 0-15 7.5 7.5 0 0 1 0 15M5.25 8.25v1.5h7.5v-1.5z"
+                                  fill="#F66074"
+                                />
+                              </svg>
+                            </span>
+                          </button>
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -4694,63 +4696,65 @@ exports[`page/DataSource/UpdateDataSource render edit data when has all value 3`
                 <span
                   class="ant-dropdown-menu-title-content"
                 >
-                  <div
-                    class="menu-item-content"
-                  >
-                    <span>
-                      environment-2
-                    </span>
+                  <div>
                     <div
-                      class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+                      class="menu-item-content"
                     >
+                      <span>
+                        environment-2
+                      </span>
                       <div
-                        class="ant-space-item"
-                        style="margin-right: 8px;"
+                        class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
                       >
-                        <button
-                          class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-text ant-btn-sm ant-btn-icon-only edit-button basic-button-wrapper css-geipcv"
-                          type="button"
+                        <div
+                          class="ant-space-item"
+                          style="margin-right: 8px;"
                         >
-                          <span
-                            class="ant-btn-icon"
+                          <button
+                            class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-text ant-btn-sm ant-btn-icon-only edit-button basic-button-wrapper css-geipcv"
+                            type="button"
                           >
-                            <svg
-                              height="16"
-                              viewBox="0 0 16 16"
-                              width="16"
-                              xmlns="http://www.w3.org/2000/svg"
+                            <span
+                              class="ant-btn-icon"
                             >
-                              <path
-                                d="M6.162 12.667H14V14H2v-2.829l6.6-6.6 2.828 2.83zm3.38-9.038 1.415-1.414a.667.667 0 0 1 .942 0L13.785 4.1a.667.667 0 0 1 0 .942l-1.414 1.414z"
-                                fill="#8A8F99"
-                              />
-                            </svg>
-                          </span>
-                        </button>
-                      </div>
-                      <div
-                        class="ant-space-item"
-                      >
-                        <button
-                          class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-text ant-btn-sm ant-btn-icon-only ant-btn-dangerous delete-button basic-button-wrapper css-geipcv"
-                          type="button"
+                              <svg
+                                height="16"
+                                viewBox="0 0 16 16"
+                                width="16"
+                                xmlns="http://www.w3.org/2000/svg"
+                              >
+                                <path
+                                  d="M6.162 12.667H14V14H2v-2.829l6.6-6.6 2.828 2.83zm3.38-9.038 1.415-1.414a.667.667 0 0 1 .942 0L13.785 4.1a.667.667 0 0 1 0 .942l-1.414 1.414z"
+                                  fill="#8A8F99"
+                                />
+                              </svg>
+                            </span>
+                          </button>
+                        </div>
+                        <div
+                          class="ant-space-item"
                         >
-                          <span
-                            class="ant-btn-icon"
+                          <button
+                            class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-text ant-btn-sm ant-btn-icon-only ant-btn-dangerous delete-button basic-button-wrapper css-geipcv"
+                            type="button"
                           >
-                            <svg
-                              height="14"
-                              viewBox="0 0 18 18"
-                              width="14"
-                              xmlns="http://www.w3.org/2000/svg"
+                            <span
+                              class="ant-btn-icon"
                             >
-                              <path
-                                d="M9 16.5a7.5 7.5 0 1 1 0-15 7.5 7.5 0 0 1 0 15M5.25 8.25v1.5h7.5v-1.5z"
-                                fill="#F66074"
-                              />
-                            </svg>
-                          </span>
-                        </button>
+                              <svg
+                                height="14"
+                                viewBox="0 0 18 18"
+                                width="14"
+                                xmlns="http://www.w3.org/2000/svg"
+                              >
+                                <path
+                                  d="M9 16.5a7.5 7.5 0 1 1 0-15 7.5 7.5 0 0 1 0 15M5.25 8.25v1.5h7.5v-1.5z"
+                                  fill="#F66074"
+                                />
+                              </svg>
+                            </span>
+                          </button>
+                        </div>
                       </div>
                     </div>
                   </div>
