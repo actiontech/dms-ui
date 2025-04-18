@@ -1,6 +1,11 @@
 import { styled } from '@mui/material/styles';
 
-export const ResourceOverviewStyleWrapper = styled('div')`
+export const ResourceOverviewStyleWrapper = styled('section')`
+  background-color: ${({ theme }) =>
+    theme.sharedTheme.uiToken.colorFillTertiary};
+`;
+
+export const ResourceOverviewDetailStyleWrapper = styled('div')`
   padding: 24px 0;
 
   .resource-overview-base-info-wrapper {
@@ -76,5 +81,9 @@ export const ResourceDetailWrapper = styled('div')`
   & .ant-btn-default.btn-active {
     color: ${({ theme }) => theme.sharedTheme.uiToken.colorPrimary};
     background: ${({ theme }) => theme.sharedTheme.basic.colorPrimaryBgActive};
+  }
+
+  & .ant-table-wrapper.actiontech-table-namespace.cursor-pointer {
+    padding-bottom: 0;
   }
 `;

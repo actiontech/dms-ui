@@ -15,6 +15,7 @@ const ResourceOverviewStatistic: React.FC = () => {
         <Card
           title={t('resourceOverview.distributionChart.title')}
           className="resource-overview-base-info-chart-card"
+          hoverable
         >
           <DistributionChart />
         </Card>
