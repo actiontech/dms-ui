@@ -60,6 +60,9 @@ exports[`usePermission should match snapshot 1`] = `
         "IMPORT": "action:project_manager_import",
         "UNARCHIVE": "action:project_manager_unarchive",
       },
+      "RESOURCE_OVERVIEW": {
+        "EXPORT": "action:resource_overview_export",
+      },
       "SYNC_DATA_SOURCE": {
         "ADD": "action:add_task",
         "DELETE": "action:delete_task",
@@ -1110,6 +1113,15 @@ exports[`usePermission should match snapshot 2`] = `
   "action:reject_data_export": {
     "id": "action:reject_data_export",
     "projectArchived": false,
+    "type": "action",
+  },
+  "action:resource_overview_export": {
+    "id": "action:resource_overview_export",
+    "role": [
+      "admin",
+      "globalManager",
+      "certainProjectManager",
+    ],
     "type": "action",
   },
   "action:retry_workflow": {
