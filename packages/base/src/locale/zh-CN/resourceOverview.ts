@@ -28,7 +28,7 @@ export default {
   },
   distributionChart: {
     title: '资源类型分布',
-    emptyText: '暂无数据，购买数据源后回到本页查看',
+    emptyText: '暂无数据，添加数据源后回到本页查看',
     sourceTotal: '数据源总计',
     sourceNumItem: '数据源数量',
     sourceProportionItem: '数据源占比'
