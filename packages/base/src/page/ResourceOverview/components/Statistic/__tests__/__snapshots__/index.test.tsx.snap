@@ -1,0 +1,252 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`base/page/ResourceOverview/Statictis render init snap 1`] = `
+<div>
+  <div
+    class="ant-row resource-overview-base-info-wrapper css-dev-only-do-not-override-txh9fw"
+    style="margin-left: -8px; margin-right: -8px;"
+  >
+    <div
+      class="ant-col ant-col-8 css-dev-only-do-not-override-txh9fw"
+      style="padding-left: 8px; padding-right: 8px;"
+    >
+      <div
+        class="ant-spin-nested-loading css-dev-only-do-not-override-txh9fw"
+      >
+        <div
+          class="ant-spin-container"
+        >
+          <div
+            class="ant-space css-dev-only-do-not-override-txh9fw ant-space-vertical statistic-card-wrapper full-width-element"
+          >
+            <div
+              class="ant-space-item"
+              style="margin-bottom: 24px;"
+            >
+              <div
+                class="ant-card ant-card-bordered ant-card-hoverable statistic-card css-dev-only-do-not-override-txh9fw"
+              >
+                <div
+                  class="ant-card-body"
+                >
+                  <div
+                    class="statistic-card-content"
+                  >
+                    <div
+                      class="statistic-card-icon"
+                    >
+                      <svg
+                        color="#15C7D4"
+                        height="24"
+                        viewBox="0 0 18 18"
+                        width="24"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M8.25 5.25V3A.75.75 0 0 1 9 2.25h6.75a.75.75 0 0 1 .75.75v12a.75.75 0 0 1-.75.75H2.25A.75.75 0 0 1 1.5 15V6a.75.75 0 0 1 .75-.75zM3.75 12v1.5H7.5V12zm6.75 0v1.5h3.75V12zm0-2.25v1.5h3.75v-1.5zm0-2.25V9h3.75V7.5zM3.75 9.75v1.5H7.5v-1.5z"
+                          fill="currentColor"
+                        />
+                      </svg>
+                    </div>
+                    <div
+                      class="ant-statistic css-dev-only-do-not-override-txh9fw"
+                    >
+                      <div
+                        class="ant-statistic-title"
+                      >
+                        <div
+                          class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+                        >
+                          <div
+                            class="ant-space-item"
+                          >
+                            业务总数
+                          </div>
+                        </div>
+                      </div>
+                      <div
+                        class="ant-statistic-content"
+                      >
+                        <span
+                          class="ant-statistic-content-value"
+                        >
+                          <span
+                            class="ant-statistic-content-value-int"
+                          >
+                            1
+                          </span>
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
+              class="ant-space-item"
+              style="margin-bottom: 24px;"
+            >
+              <div
+                class="ant-card ant-card-bordered ant-card-hoverable statistic-card css-dev-only-do-not-override-txh9fw"
+              >
+                <div
+                  class="ant-card-body"
+                >
+                  <div
+                    class="statistic-card-content"
+                  >
+                    <div
+                      class="statistic-card-icon"
+                    >
+                      <svg
+                        height="24"
+                        viewBox="0 0 18 18"
+                        width="24"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M2.25 2.25h7.037a.75.75 0 0 1 .67.415L10.5 3.75H15a.75.75 0 0 1 .75.75v8.25a.75.75 0 0 1-.75.75h-4.786a.75.75 0 0 1-.671-.415L9 12H3.75v4.5h-1.5z"
+                          fill="#EBAD1C"
+                        />
+                      </svg>
+                    </div>
+                    <div
+                      class="ant-statistic css-dev-only-do-not-override-txh9fw"
+                    >
+                      <div
+                        class="ant-statistic-title"
+                      >
+                        <div
+                          class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+                        >
+                          <div
+                            class="ant-space-item"
+                          >
+                            项目总数
+                          </div>
+                        </div>
+                      </div>
+                      <div
+                        class="ant-statistic-content"
+                      >
+                        <span
+                          class="ant-statistic-content-value"
+                        >
+                          <span
+                            class="ant-statistic-content-value-int"
+                          >
+                            3
+                          </span>
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
+              class="ant-space-item"
+            >
+              <div
+                class="ant-card ant-card-bordered ant-card-hoverable statistic-card css-dev-only-do-not-override-txh9fw"
+              >
+                <div
+                  class="ant-card-body"
+                >
+                  <div
+                    class="statistic-card-content"
+                  >
+                    <div
+                      class="statistic-card-icon"
+                    >
+                      <svg
+                        color="#4583FF"
+                        height="24"
+                        viewBox="0 0 18 18"
+                        width="24"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M15.75 7.125v2.25c0 1.864-3.023 3.375-6.75 3.375s-6.75-1.511-6.75-3.375v-2.25C2.25 8.989 5.273 10.5 9 10.5s6.75-1.511 6.75-3.375m-13.5 3.75c0 1.864 3.023 3.375 6.75 3.375s6.75-1.511 6.75-3.375v2.25c0 1.864-3.023 3.375-6.75 3.375s-6.75-1.511-6.75-3.375zM9 9C5.273 9 2.25 7.489 2.25 5.625S5.273 2.25 9 2.25s6.75 1.511 6.75 3.375S12.727 9 9 9"
+                          fill="currentColor"
+                        />
+                      </svg>
+                    </div>
+                    <div
+                      class="ant-statistic css-dev-only-do-not-override-txh9fw"
+                    >
+                      <div
+                        class="ant-statistic-title"
+                      >
+                        <div
+                          class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+                        >
+                          <div
+                            class="ant-space-item"
+                          >
+                            数据源总数
+                          </div>
+                        </div>
+                      </div>
+                      <div
+                        class="ant-statistic-content"
+                      >
+                        <span
+                          class="ant-statistic-content-value"
+                        >
+                          <span
+                            class="ant-statistic-content-value-int"
+                          >
+                            2
+                          </span>
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="ant-col ant-col-16 css-dev-only-do-not-override-txh9fw"
+      style="padding-left: 8px; padding-right: 8px;"
+    >
+      <div
+        class="ant-card ant-card-bordered ant-card-hoverable resource-overview-base-info-chart-card css-dev-only-do-not-override-txh9fw"
+      >
+        <div
+          class="ant-card-head"
+        >
+          <div
+            class="ant-card-head-wrapper"
+          >
+            <div
+              class="ant-card-head-title"
+            >
+              资源类型分布
+            </div>
+          </div>
+        </div>
+        <div
+          class="ant-card-body"
+        >
+          <div
+            class="chart-wrapper css-1hgbe7b"
+          >
+            <div
+              class="chart-box"
+            >
+              <div
+                data-custom-params="{"data":[{"name":"MySQL","value":1},{"name":"Oracle","value":2},{"name":"PostgreSQL","value":3}],"appendPadding":20,"angleField":"value","colorField":"name","color":["#7470ED","#6094FC","#3DB5F1","#1ACEDB","#4BCCA6"],"radius":0.9,"innerRadius":0.85,"pieStyle":{"stroke":"#ffffff","strokeOpacity":1,"lineWidth":4,"lineCap":"round"},"label":false,"legend":{"layout":"vertical","position":"left","flipPage":false,"reversed":false,"animate":false,"itemSpacing":16,"offsetY":-10,"textAlign":"center","itemName":{"style":{"fill":"#8a8f99","fontSize":12,"fontWeight":500,"fontFamily":"PlusJakartaSans Medium"}},"marker":{"symbol":"circle","style":{"lineWidth":5,"shadowBlur":5,"stroke":"rgba(26, 206, 219, 0.2)","shadowColor":"rgba(26, 206, 219, 0.2)","textAlign":"center"}}},"statistic":{"title":{"style":{"fontSize":"24px","lineHeight":"32px","height":"32px","color":"#292C33","fontWeight":700,"fontFamily":"PlusJakartaSans Medium","marginTop":"10px"}},"content":{"style":{"fontSize":"12px","lineHeight":"20px","height":"20px","color":"#8a8f99","fontWeight":400,"marginTop":"14px"},"content":"数据源总计"}},"tooltip":{"fields":["name","value"]},"interactions":[{"type":"element-selected"},{"type":"element-active"}],"state":{"active":{"style":{"lineWidth":0,"stroke":"#ffffff","offsetY":4}}},"theme":"light"}"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
