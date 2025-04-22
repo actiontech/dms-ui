@@ -1,0 +1,68 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`base/page/ResourceOverview/Statictis/DistributionChart render init snap 1`] = `
+<div>
+  <div
+    class="chart-wrapper css-1hgbe7b"
+  >
+    <div
+      class="chart-box"
+    >
+      <div
+        data-custom-params="{"data":[{"name":"MySQL","value":1},{"name":"Oracle","value":2},{"name":"PostgreSQL","value":3}],"appendPadding":20,"angleField":"value","colorField":"name","color":["#7470ED","#6094FC","#3DB5F1","#1ACEDB","#4BCCA6"],"radius":0.9,"innerRadius":0.85,"pieStyle":{"stroke":"#ffffff","strokeOpacity":1,"lineWidth":4,"lineCap":"round"},"label":false,"legend":{"layout":"vertical","position":"left","flipPage":false,"reversed":false,"animate":false,"itemSpacing":16,"offsetY":-10,"textAlign":"center","itemName":{"style":{"fill":"#8a8f99","fontSize":12,"fontWeight":500,"fontFamily":"PlusJakartaSans Medium"}},"marker":{"symbol":"circle","style":{"lineWidth":5,"shadowBlur":5,"stroke":"rgba(26, 206, 219, 0.2)","shadowColor":"rgba(26, 206, 219, 0.2)","textAlign":"center"}}},"statistic":{"title":{"style":{"fontSize":"24px","lineHeight":"32px","height":"32px","color":"#292C33","fontWeight":700,"fontFamily":"PlusJakartaSans Medium","marginTop":"10px"},"customHtml":"6"},"content":{"style":{"fontSize":"12px","lineHeight":"20px","height":"20px","color":"#8a8f99","fontWeight":400,"marginTop":"14px"},"content":"数据源总计"}},"tooltip":{"fields":["name","value"]},"interactions":[{"type":"element-selected"},{"type":"element-active"}],"state":{"active":{"style":{"lineWidth":0,"stroke":"#ffffff","offsetY":4}}},"theme":"light"}"
+      >
+        <div
+          class="tooltip-box-wrapper tooltip-box-database-source-order css-4m33fd"
+        >
+          <header
+            class="tooltip-title"
+            style="color: rgb(138, 143, 153);"
+          >
+            <span
+              class="dot"
+              style="background: rgb(96, 148, 252);"
+            />
+            MySQL
+          </header>
+          <dl
+            class="tooltip-list"
+          >
+            <dt
+              class="tooltip-name"
+            >
+              <span
+                class="dot"
+                hidden=""
+              />
+              数据源数量
+            </dt>
+            <dd
+              class="tooltip-value"
+            >
+              1
+            </dd>
+          </dl>
+          <dl
+            class="tooltip-list"
+          >
+            <dt
+              class="tooltip-name"
+            >
+              <span
+                class="dot"
+                hidden=""
+              />
+              数据源占比
+            </dt>
+            <dd
+              class="tooltip-value"
+            >
+              16.67%
+            </dd>
+          </dl>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
