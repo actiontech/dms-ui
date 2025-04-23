@@ -207,7 +207,6 @@ exports[`provision/DatabaseAccountPassword/ExpirationAccount-1 render table more
                     <col />
                     <col />
                     <col />
-                    <col />
                     <col
                       style="width: 164px;"
                     />
@@ -239,12 +238,6 @@ exports[`provision/DatabaseAccountPassword/ExpirationAccount-1 render table more
                         scope="col"
                       >
                         密码有效时间
-                      </th>
-                      <th
-                        class="ant-table-cell"
-                        scope="col"
-                      >
-                        密码安全策略
                       </th>
                       <th
                         class="ant-table-cell"
@@ -323,15 +316,6 @@ exports[`provision/DatabaseAccountPassword/ExpirationAccount-1 render table more
                            
                         </div>
                       </td>
-                      <td
-                        style="padding: 0px; border: 0px; height: 0px;"
-                      >
-                        <div
-                          style="height: 0px; overflow: hidden;"
-                        >
-                           
-                        </div>
-                      </td>
                     </tr>
                     <tr
                       class="ant-table-row ant-table-row-level-0"
@@ -354,17 +338,12 @@ exports[`provision/DatabaseAccountPassword/ExpirationAccount-1 render table more
                       <td
                         class="ant-table-cell"
                       >
-                        2024-08-25 17:27:05
+                        2025-08-25 17:27:05
                       </td>
                       <td
                         class="ant-table-cell"
                       >
                         89天2小时
-                      </td>
-                      <td
-                        class="ant-table-cell"
-                      >
-                        低
                       </td>
                       <td
                         class="ant-table-cell"
@@ -431,17 +410,12 @@ exports[`provision/DatabaseAccountPassword/ExpirationAccount-1 render table more
                       <td
                         class="ant-table-cell"
                       >
-                        -
+                        2025-08-25 17:27:05
                       </td>
                       <td
                         class="ant-table-cell"
                       >
                         0
-                      </td>
-                      <td
-                        class="ant-table-cell"
-                      >
-                        中
                       </td>
                       <td
                         class="ant-table-cell"
@@ -478,7 +452,7 @@ exports[`provision/DatabaseAccountPassword/ExpirationAccount-1 render table more
                       <td
                         class="ant-table-cell"
                       >
-                        -
+                        2025-08-25 17:27:05
                       </td>
                       <td
                         class="ant-table-cell"
@@ -488,12 +462,7 @@ exports[`provision/DatabaseAccountPassword/ExpirationAccount-1 render table more
                       <td
                         class="ant-table-cell"
                       >
-                        -
-                      </td>
-                      <td
-                        class="ant-table-cell"
-                      >
-                        -
+                        可用
                       </td>
                       <td
                         class="ant-table-cell actiontech-table-actions-column ant-table-cell-fix-right ant-table-cell-fix-right-first"
@@ -534,6 +503,90 @@ exports[`provision/DatabaseAccountPassword/ExpirationAccount-1 render table more
                         </div>
                       </td>
                     </tr>
+                    <tr
+                      class="ant-table-row ant-table-row-level-0"
+                      data-row-key="1794998179528183811"
+                    >
+                      <td
+                        class="ant-table-cell"
+                      >
+                        testa11@%
+                      </td>
+                      <td
+                        class="ant-table-cell"
+                      >
+                        <a
+                          class="ant-typography css-dev-only-do-not-override-bj9uhl"
+                        >
+                          test2
+                        </a>
+                      </td>
+                      <td
+                        class="ant-table-cell"
+                      >
+                        2023-08-25 17:27:05
+                      </td>
+                      <td
+                        class="ant-table-cell"
+                      >
+                        0
+                      </td>
+                      <td
+                        class="ant-table-cell"
+                      >
+                        已锁定
+                      </td>
+                      <td
+                        class="ant-table-cell actiontech-table-actions-column ant-table-cell-fix-right ant-table-cell-fix-right-first"
+                        style="position: sticky; right: 0px;"
+                      >
+                        <div
+                          class="css-new95e"
+                        />
+                      </td>
+                    </tr>
+                    <tr
+                      class="ant-table-row ant-table-row-level-0"
+                      data-row-key="1794998179528183812"
+                    >
+                      <td
+                        class="ant-table-cell"
+                      >
+                        testa11@%
+                      </td>
+                      <td
+                        class="ant-table-cell"
+                      >
+                        <a
+                          class="ant-typography css-dev-only-do-not-override-bj9uhl"
+                        >
+                          test2
+                        </a>
+                      </td>
+                      <td
+                        class="ant-table-cell"
+                      >
+                        2023-08-25 17:27:05
+                      </td>
+                      <td
+                        class="ant-table-cell"
+                      >
+                        0
+                      </td>
+                      <td
+                        class="ant-table-cell"
+                      >
+                        已锁定
+                      </td>
+                      <td
+                        class="ant-table-cell actiontech-table-actions-column ant-table-cell-fix-right ant-table-cell-fix-right-first"
+                        style="position: sticky; right: 0px;"
+                      >
+                        <div
+                          class="css-new95e"
+                        />
+                      </td>
+                    </tr>
                   </tbody>
                 </table>
               </div>
@@ -546,7 +599,7 @@ exports[`provision/DatabaseAccountPassword/ExpirationAccount-1 render table more
               class="ant-pagination-total-text"
             >
               <span>
-                共 3 条数据
+                共 5 条数据
               </span>
             </li>
             <li
@@ -903,7 +956,6 @@ exports[`provision/DatabaseAccountPassword/ExpirationAccount-2 render init snap 
                     <col />
                     <col />
                     <col />
-                    <col />
                     <col
                       style="width: 164px;"
                     />
@@ -935,12 +987,6 @@ exports[`provision/DatabaseAccountPassword/ExpirationAccount-2 render init snap 
                         scope="col"
                       >
                         密码有效时间
-                      </th>
-                      <th
-                        class="ant-table-cell"
-                        scope="col"
-                      >
-                        密码安全策略
                       </th>
                       <th
                         class="ant-table-cell"
@@ -1019,15 +1065,6 @@ exports[`provision/DatabaseAccountPassword/ExpirationAccount-2 render init snap 
                            
                         </div>
                       </td>
-                      <td
-                        style="padding: 0px; border: 0px; height: 0px;"
-                      >
-                        <div
-                          style="height: 0px; overflow: hidden;"
-                        >
-                           
-                        </div>
-                      </td>
                     </tr>
                     <tr
                       class="ant-table-row ant-table-row-level-0"
@@ -1050,17 +1087,12 @@ exports[`provision/DatabaseAccountPassword/ExpirationAccount-2 render init snap 
                       <td
                         class="ant-table-cell"
                       >
-                        2024-08-25 17:27:05
+                        2025-08-25 17:27:05
                       </td>
                       <td
                         class="ant-table-cell"
                       >
                         89天2小时
-                      </td>
-                      <td
-                        class="ant-table-cell"
-                      >
-                        低
                       </td>
                       <td
                         class="ant-table-cell"
@@ -1127,17 +1159,12 @@ exports[`provision/DatabaseAccountPassword/ExpirationAccount-2 render init snap 
                       <td
                         class="ant-table-cell"
                       >
-                        -
+                        2025-08-25 17:27:05
                       </td>
                       <td
                         class="ant-table-cell"
                       >
                         0
-                      </td>
-                      <td
-                        class="ant-table-cell"
-                      >
-                        中
                       </td>
                       <td
                         class="ant-table-cell"
@@ -1204,7 +1231,7 @@ exports[`provision/DatabaseAccountPassword/ExpirationAccount-2 render init snap 
                       <td
                         class="ant-table-cell"
                       >
-                        -
+                        2025-08-25 17:27:05
                       </td>
                       <td
                         class="ant-table-cell"
@@ -1214,12 +1241,151 @@ exports[`provision/DatabaseAccountPassword/ExpirationAccount-2 render init snap 
                       <td
                         class="ant-table-cell"
                       >
-                        -
+                        可用
+                      </td>
+                      <td
+                        class="ant-table-cell actiontech-table-actions-column ant-table-cell-fix-right ant-table-cell-fix-right-first"
+                        style="position: sticky; right: 0px;"
+                      >
+                        <div
+                          class="css-new95e"
+                        >
+                          <div
+                            class="ant-space css-dev-only-do-not-override-bj9uhl ant-space-horizontal ant-space-align-center"
+                          >
+                            <div
+                              class="ant-space-item"
+                              style="margin-right: 8px;"
+                            >
+                              <button
+                                class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                type="button"
+                              >
+                                <span>
+                                  修改密码
+                                </span>
+                              </button>
+                            </div>
+                            <div
+                              class="ant-space-item"
+                            >
+                              <button
+                                class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                type="button"
+                              >
+                                <span>
+                                  续用当前密码
+                                </span>
+                              </button>
+                            </div>
+                          </div>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr
+                      class="ant-table-row ant-table-row-level-0"
+                      data-row-key="1794998179528183811"
+                    >
+                      <td
+                        class="ant-table-cell"
+                      >
+                        testa11@%
                       </td>
                       <td
                         class="ant-table-cell"
                       >
-                        -
+                        <a
+                          class="ant-typography css-dev-only-do-not-override-bj9uhl"
+                        >
+                          test2
+                        </a>
+                      </td>
+                      <td
+                        class="ant-table-cell"
+                      >
+                        2023-08-25 17:27:05
+                      </td>
+                      <td
+                        class="ant-table-cell"
+                      >
+                        0
+                      </td>
+                      <td
+                        class="ant-table-cell"
+                      >
+                        已锁定
+                      </td>
+                      <td
+                        class="ant-table-cell actiontech-table-actions-column ant-table-cell-fix-right ant-table-cell-fix-right-first"
+                        style="position: sticky; right: 0px;"
+                      >
+                        <div
+                          class="css-new95e"
+                        >
+                          <div
+                            class="ant-space css-dev-only-do-not-override-bj9uhl ant-space-horizontal ant-space-align-center"
+                          >
+                            <div
+                              class="ant-space-item"
+                              style="margin-right: 8px;"
+                            >
+                              <button
+                                class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                type="button"
+                              >
+                                <span>
+                                  修改密码
+                                </span>
+                              </button>
+                            </div>
+                            <div
+                              class="ant-space-item"
+                            >
+                              <button
+                                class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                type="button"
+                              >
+                                <span>
+                                  续用当前密码
+                                </span>
+                              </button>
+                            </div>
+                          </div>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr
+                      class="ant-table-row ant-table-row-level-0"
+                      data-row-key="1794998179528183812"
+                    >
+                      <td
+                        class="ant-table-cell"
+                      >
+                        testa11@%
+                      </td>
+                      <td
+                        class="ant-table-cell"
+                      >
+                        <a
+                          class="ant-typography css-dev-only-do-not-override-bj9uhl"
+                        >
+                          test2
+                        </a>
+                      </td>
+                      <td
+                        class="ant-table-cell"
+                      >
+                        2023-08-25 17:27:05
+                      </td>
+                      <td
+                        class="ant-table-cell"
+                      >
+                        0
+                      </td>
+                      <td
+                        class="ant-table-cell"
+                      >
+                        已锁定
                       </td>
                       <td
                         class="ant-table-cell actiontech-table-actions-column ant-table-cell-fix-right ant-table-cell-fix-right-first"
@@ -1272,7 +1438,7 @@ exports[`provision/DatabaseAccountPassword/ExpirationAccount-2 render init snap 
               class="ant-pagination-total-text"
             >
               <span>
-                共 3 条数据
+                共 5 条数据
               </span>
             </li>
             <li
@@ -1608,7 +1774,7 @@ exports[`provision/DatabaseAccountPassword/ExpirationAccount-2 render update tab
     >
       <div
         class="ant-space-item"
-        style="margin-right: 12px; padding-bottom: 12px;"
+        style="padding-bottom: 12px;"
       >
         <div
           class="ant-select ant-select-sm ant-select-borderless basic-select-wrapper custom-select-namespace css-pti5z8 css-dev-only-do-not-override-jx040l ant-select-single ant-select-allow-clear ant-select-show-arrow"
@@ -1670,64 +1836,6 @@ exports[`provision/DatabaseAccountPassword/ExpirationAccount-2 render update tab
           </span>
         </div>
       </div>
-      <div
-        class="ant-space-item"
-        style="padding-bottom: 12px;"
-      >
-        <div
-          class="ant-select ant-select-sm ant-select-borderless basic-select-wrapper custom-select-namespace css-pti5z8 css-dev-only-do-not-override-jx040l ant-select-single ant-select-allow-clear ant-select-show-arrow"
-        >
-          <div
-            class="ant-select-selector"
-          >
-            <span
-              class="ant-select-selection-search"
-            >
-              <input
-                aria-activedescendant="rc_select_TEST_OR_SSR_list_0"
-                aria-autocomplete="list"
-                aria-controls="rc_select_TEST_OR_SSR_list"
-                aria-expanded="false"
-                aria-haspopup="listbox"
-                aria-owns="rc_select_TEST_OR_SSR_list"
-                autocomplete="off"
-                class="ant-select-selection-search-input"
-                id="rc_select_TEST_OR_SSR"
-                readonly=""
-                role="combobox"
-                style="opacity: 0;"
-                type="search"
-                unselectable="on"
-                value=""
-              />
-            </span>
-            <span
-              class="ant-select-selection-placeholder"
-            >
-              <span
-                class="custom-select-placeholder css-qly0fu"
-              >
-                <span
-                  class="custom-select-placeholder-prefix"
-                >
-                  密码安全策略
-                </span>
-                <span
-                  class="custom-select-placeholder-value"
-                >
-                  请选择{{name}}
-                </span>
-              </span>
-            </span>
-          </div>
-          <span
-            aria-hidden="true"
-            class="ant-select-arrow"
-            style="user-select: none;"
-            unselectable="on"
-          />
-        </div>
-      </div>
     </div>
     <div
       class="ant-table-wrapper actiontech-table-namespace css-fxd6ka css-dev-only-do-not-override-bj9uhl"
@@ -1752,7 +1860,6 @@ exports[`provision/DatabaseAccountPassword/ExpirationAccount-2 render update tab
                   style="min-width: 100%; table-layout: auto;"
                 >
                   <colgroup>
-                    <col />
                     <col />
                     <col />
                     <col />
@@ -1789,12 +1896,6 @@ exports[`provision/DatabaseAccountPassword/ExpirationAccount-2 render update tab
                         scope="col"
                       >
                         密码有效时间
-                      </th>
-                      <th
-                        class="ant-table-cell"
-                        scope="col"
-                      >
-                        密码安全策略
                       </th>
                       <th
                         class="ant-table-cell"
@@ -1873,15 +1974,6 @@ exports[`provision/DatabaseAccountPassword/ExpirationAccount-2 render update tab
                            
                         </div>
                       </td>
-                      <td
-                        style="padding: 0px; border: 0px; height: 0px;"
-                      >
-                        <div
-                          style="height: 0px; overflow: hidden;"
-                        >
-                           
-                        </div>
-                      </td>
                     </tr>
                     <tr
                       class="ant-table-row ant-table-row-level-0"
@@ -1904,17 +1996,12 @@ exports[`provision/DatabaseAccountPassword/ExpirationAccount-2 render update tab
                       <td
                         class="ant-table-cell"
                       >
-                        2024-08-25 17:27:05
+                        2025-08-25 17:27:05
                       </td>
                       <td
                         class="ant-table-cell"
                       >
                         89天2小时
-                      </td>
-                      <td
-                        class="ant-table-cell"
-                      >
-                        低
                       </td>
                       <td
                         class="ant-table-cell"
@@ -1981,17 +2068,12 @@ exports[`provision/DatabaseAccountPassword/ExpirationAccount-2 render update tab
                       <td
                         class="ant-table-cell"
                       >
-                        -
+                        2025-08-25 17:27:05
                       </td>
                       <td
                         class="ant-table-cell"
                       >
                         0
-                      </td>
-                      <td
-                        class="ant-table-cell"
-                      >
-                        中
                       </td>
                       <td
                         class="ant-table-cell"
@@ -2058,7 +2140,7 @@ exports[`provision/DatabaseAccountPassword/ExpirationAccount-2 render update tab
                       <td
                         class="ant-table-cell"
                       >
-                        -
+                        2025-08-25 17:27:05
                       </td>
                       <td
                         class="ant-table-cell"
@@ -2068,12 +2150,151 @@ exports[`provision/DatabaseAccountPassword/ExpirationAccount-2 render update tab
                       <td
                         class="ant-table-cell"
                       >
-                        -
+                        可用
+                      </td>
+                      <td
+                        class="ant-table-cell actiontech-table-actions-column ant-table-cell-fix-right ant-table-cell-fix-right-first"
+                        style="position: sticky; right: 0px;"
+                      >
+                        <div
+                          class="css-new95e"
+                        >
+                          <div
+                            class="ant-space css-dev-only-do-not-override-bj9uhl ant-space-horizontal ant-space-align-center"
+                          >
+                            <div
+                              class="ant-space-item"
+                              style="margin-right: 8px;"
+                            >
+                              <button
+                                class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                type="button"
+                              >
+                                <span>
+                                  修改密码
+                                </span>
+                              </button>
+                            </div>
+                            <div
+                              class="ant-space-item"
+                            >
+                              <button
+                                class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                type="button"
+                              >
+                                <span>
+                                  续用当前密码
+                                </span>
+                              </button>
+                            </div>
+                          </div>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr
+                      class="ant-table-row ant-table-row-level-0"
+                      data-row-key="1794998179528183811"
+                    >
+                      <td
+                        class="ant-table-cell"
+                      >
+                        testa11@%
                       </td>
                       <td
                         class="ant-table-cell"
                       >
-                        -
+                        <a
+                          class="ant-typography css-dev-only-do-not-override-bj9uhl"
+                        >
+                          test2
+                        </a>
+                      </td>
+                      <td
+                        class="ant-table-cell"
+                      >
+                        2023-08-25 17:27:05
+                      </td>
+                      <td
+                        class="ant-table-cell"
+                      >
+                        0
+                      </td>
+                      <td
+                        class="ant-table-cell"
+                      >
+                        已锁定
+                      </td>
+                      <td
+                        class="ant-table-cell actiontech-table-actions-column ant-table-cell-fix-right ant-table-cell-fix-right-first"
+                        style="position: sticky; right: 0px;"
+                      >
+                        <div
+                          class="css-new95e"
+                        >
+                          <div
+                            class="ant-space css-dev-only-do-not-override-bj9uhl ant-space-horizontal ant-space-align-center"
+                          >
+                            <div
+                              class="ant-space-item"
+                              style="margin-right: 8px;"
+                            >
+                              <button
+                                class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                type="button"
+                              >
+                                <span>
+                                  修改密码
+                                </span>
+                              </button>
+                            </div>
+                            <div
+                              class="ant-space-item"
+                            >
+                              <button
+                                class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                type="button"
+                              >
+                                <span>
+                                  续用当前密码
+                                </span>
+                              </button>
+                            </div>
+                          </div>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr
+                      class="ant-table-row ant-table-row-level-0"
+                      data-row-key="1794998179528183812"
+                    >
+                      <td
+                        class="ant-table-cell"
+                      >
+                        testa11@%
+                      </td>
+                      <td
+                        class="ant-table-cell"
+                      >
+                        <a
+                          class="ant-typography css-dev-only-do-not-override-bj9uhl"
+                        >
+                          test2
+                        </a>
+                      </td>
+                      <td
+                        class="ant-table-cell"
+                      >
+                        2023-08-25 17:27:05
+                      </td>
+                      <td
+                        class="ant-table-cell"
+                      >
+                        0
+                      </td>
+                      <td
+                        class="ant-table-cell"
+                      >
+                        已锁定
                       </td>
                       <td
                         class="ant-table-cell actiontech-table-actions-column ant-table-cell-fix-right ant-table-cell-fix-right-first"
@@ -2126,7 +2347,7 @@ exports[`provision/DatabaseAccountPassword/ExpirationAccount-2 render update tab
               class="ant-pagination-total-text"
             >
               <span>
-                共 3 条数据
+                共 5 条数据
               </span>
             </li>
             <li

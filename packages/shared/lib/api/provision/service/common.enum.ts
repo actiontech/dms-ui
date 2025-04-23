@@ -1,7 +1,25 @@
+export enum AccountDetailPasswordExpirationPolicyEnum {
+  'expiration_lock' = 'expiration_lock',
+
+  'expiration_available' = 'expiration_available'
+}
+
+export enum AddDBAccountPasswordExpirationPolicyEnum {
+  'expiration_lock' = 'expiration_lock',
+
+  'expiration_available' = 'expiration_available'
+}
+
 export enum AddDataObjectSourceNameEnum {
   'Actiontech DMP' = 'Actiontech DMP',
 
   'Actiontech DMS' = 'Actiontech DMS'
+}
+
+export enum BatchUpdateDBAccountPasswordPasswordExpirationPolicyEnum {
+  'expiration_lock' = 'expiration_lock',
+
+  'expiration_available' = 'expiration_available'
 }
 
 export enum DMSProxyTargetScenarioEnum {
@@ -25,7 +43,9 @@ export enum DelDataObjectSourceDeleteModEnum {
 export enum StatusEnum {
   'lock' = 'lock',
 
-  'unlock' = 'unlock'
+  'unlock' = 'unlock',
+
+  'expired' = 'expired'
 }
 
 export enum GetUserAuthenticationTypeEnum {
@@ -52,10 +72,18 @@ export enum GetUserStatEnum {
   'Unknown' = 'Unknown'
 }
 
+export enum ListDBAccountPasswordExpirationPolicyEnum {
+  'expiration_lock' = 'expiration_lock',
+
+  'expiration_available' = 'expiration_available'
+}
+
 export enum ListDBAccountStatusEnum {
   'lock' = 'lock',
 
-  'unlock' = 'unlock'
+  'unlock' = 'unlock',
+
+  'expired' = 'expired'
 }
 
 export enum ListDBServiceLastConnectionTestStatusEnum {
@@ -206,6 +234,18 @@ export enum OperationInfoDbTypeEnum {
   'OceanBase For MySQL' = 'OceanBase For MySQL',
 
   'Oracle' = 'Oracle'
+}
+
+export enum PasswordConfigPasswordExpirationPolicyEnum {
+  'expiration_lock' = 'expiration_lock',
+
+  'expiration_available' = 'expiration_available'
+}
+
+export enum PlatformManagedPasswordExpirationPolicyEnum {
+  'expiration_lock' = 'expiration_lock',
+
+  'expiration_available' = 'expiration_available'
 }
 
 export enum SQLQueryConfigAllowQueryWhenLessThanAuditLevelEnum {

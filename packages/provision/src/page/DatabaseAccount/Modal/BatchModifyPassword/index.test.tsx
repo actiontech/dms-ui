@@ -106,7 +106,8 @@ describe('provision/DatabaseAccount/BatchModifyPasswordModal', () => {
             db_account_uid: '1794998179528183808'
           }
         ],
-        renewal_effective_time_day: 30
+        renewal_effective_time_day: 30,
+        password_expiration_policy: 'expiration_lock'
       }
     });
     await act(async () => jest.advanceTimersByTime(3000));
@@ -154,7 +155,8 @@ describe('provision/DatabaseAccount/BatchModifyPasswordModal', () => {
             db_account_uid: '1794998179528183808'
           }
         ],
-        renewal_effective_time_day: 30
+        renewal_effective_time_day: 30,
+        password_expiration_policy: 'expiration_lock'
       }
     });
     await act(async () => jest.advanceTimersByTime(3000));

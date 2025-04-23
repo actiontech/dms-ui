@@ -417,7 +417,7 @@ exports[`provision/DatabaseAccount/DatabaseAccount render init snap 1`] = `
                             class="ant-table-cell"
                             scope="col"
                           >
-                            密码安全策略
+                            密码到期策略
                           </th>
                           <th
                             class="ant-table-cell"
@@ -661,12 +661,12 @@ exports[`provision/DatabaseAccount/DatabaseAccount render init snap 1`] = `
                           <td
                             class="ant-table-cell"
                           >
-                            2024-08-25 17:27:05
+                            2025-08-25 17:27:05
                           </td>
                           <td
                             class="ant-table-cell"
                           >
-                            低
+                            自动锁定
                           </td>
                           <td
                             class="ant-table-cell"
@@ -771,12 +771,12 @@ exports[`provision/DatabaseAccount/DatabaseAccount render init snap 1`] = `
                           <td
                             class="ant-table-cell"
                           >
-                            -
+                            2025-08-25 17:27:05
                           </td>
                           <td
                             class="ant-table-cell"
                           >
-                            中
+                            保持可用
                           </td>
                           <td
                             class="ant-table-cell"
@@ -856,22 +856,192 @@ exports[`provision/DatabaseAccount/DatabaseAccount render init snap 1`] = `
                           <td
                             class="ant-table-cell"
                           >
-                            -
+                            2025-08-25 17:27:05
                           </td>
                           <td
                             class="ant-table-cell"
                           >
-                            -
+                            自动锁定
                           </td>
                           <td
                             class="ant-table-cell"
                           >
-                            -
+                            可用
                           </td>
                           <td
                             class="ant-table-cell"
                           >
                             已托管
+                          </td>
+                          <td
+                            class="ant-table-cell ellipsis-column-width"
+                          >
+                            -
+                          </td>
+                          <td
+                            class="ant-table-cell"
+                          >
+                            -
+                          </td>
+                          <td
+                            class="ant-table-cell actiontech-table-actions-column ant-table-cell-fix-right ant-table-cell-fix-right-first"
+                            style="position: sticky; right: 0px;"
+                          >
+                            <div
+                              class="css-new95e"
+                            >
+                              <button
+                                class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                type="button"
+                              >
+                                <span>
+                                  查 看
+                                </span>
+                              </button>
+                            </div>
+                          </td>
+                        </tr>
+                        <tr
+                          class="ant-table-row ant-table-row-level-0"
+                          data-row-key="1794998179528183811"
+                        >
+                          <td
+                            class="ant-table-cell ant-table-selection-column"
+                          >
+                            <label
+                              class="ant-checkbox-wrapper css-dev-only-do-not-override-bj9uhl"
+                            >
+                              <span
+                                class="ant-checkbox css-dev-only-do-not-override-bj9uhl"
+                              >
+                                <input
+                                  class="ant-checkbox-input"
+                                  type="checkbox"
+                                />
+                                <span
+                                  class="ant-checkbox-inner"
+                                />
+                              </span>
+                            </label>
+                          </td>
+                          <td
+                            class="ant-table-cell"
+                          >
+                            testa11@%
+                          </td>
+                          <td
+                            class="ant-table-cell"
+                          >
+                            <a
+                              class="ant-typography css-dev-only-do-not-override-bj9uhl"
+                            >
+                              test2
+                            </a>
+                          </td>
+                          <td
+                            class="ant-table-cell"
+                          >
+                            2023-08-25 17:27:05（已过期）
+                          </td>
+                          <td
+                            class="ant-table-cell"
+                          >
+                            保持可用
+                          </td>
+                          <td
+                            class="ant-table-cell"
+                          >
+                            已锁定
+                          </td>
+                          <td
+                            class="ant-table-cell"
+                          >
+                            未托管
+                          </td>
+                          <td
+                            class="ant-table-cell ellipsis-column-width"
+                          >
+                            -
+                          </td>
+                          <td
+                            class="ant-table-cell"
+                          >
+                            -
+                          </td>
+                          <td
+                            class="ant-table-cell actiontech-table-actions-column ant-table-cell-fix-right ant-table-cell-fix-right-first"
+                            style="position: sticky; right: 0px;"
+                          >
+                            <div
+                              class="css-new95e"
+                            >
+                              <button
+                                class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                type="button"
+                              >
+                                <span>
+                                  查 看
+                                </span>
+                              </button>
+                            </div>
+                          </td>
+                        </tr>
+                        <tr
+                          class="ant-table-row ant-table-row-level-0"
+                          data-row-key="1794998179528183812"
+                        >
+                          <td
+                            class="ant-table-cell ant-table-selection-column"
+                          >
+                            <label
+                              class="ant-checkbox-wrapper css-dev-only-do-not-override-bj9uhl"
+                            >
+                              <span
+                                class="ant-checkbox css-dev-only-do-not-override-bj9uhl"
+                              >
+                                <input
+                                  class="ant-checkbox-input"
+                                  type="checkbox"
+                                />
+                                <span
+                                  class="ant-checkbox-inner"
+                                />
+                              </span>
+                            </label>
+                          </td>
+                          <td
+                            class="ant-table-cell"
+                          >
+                            testa11@%
+                          </td>
+                          <td
+                            class="ant-table-cell"
+                          >
+                            <a
+                              class="ant-typography css-dev-only-do-not-override-bj9uhl"
+                            >
+                              test2
+                            </a>
+                          </td>
+                          <td
+                            class="ant-table-cell"
+                          >
+                            2023-08-25 17:27:05（已过期）
+                          </td>
+                          <td
+                            class="ant-table-cell"
+                          >
+                            自动锁定
+                          </td>
+                          <td
+                            class="ant-table-cell"
+                          >
+                            已锁定
+                          </td>
+                          <td
+                            class="ant-table-cell"
+                          >
+                            未托管
                           </td>
                           <td
                             class="ant-table-cell ellipsis-column-width"
@@ -913,7 +1083,7 @@ exports[`provision/DatabaseAccount/DatabaseAccount render init snap 1`] = `
                   class="ant-pagination-total-text"
                 >
                   <span>
-                    共 3 条数据
+                    共 5 条数据
                   </span>
                 </li>
                 <li

@@ -65,15 +65,6 @@ export const ExpirationAccountListColumns = (
       render: (val) => val ?? '-'
     },
     {
-      dataIndex: 'password_security_policy',
-      title: t('databaseAccount.list.column.policy'),
-      render: (value: IListDBAccount['password_security_policy']) => {
-        return value || '-';
-      },
-      filterCustomType: 'select',
-      filterKey: 'filter_by_policy'
-    },
-    {
       dataIndex: 'status',
       title: t('databaseAccount.list.column.status'),
       render: (value: IListDBAccount['status']) => {

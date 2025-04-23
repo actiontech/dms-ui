@@ -34,6 +34,7 @@ import { ROUTE_PATHS } from '@actiontech/shared/lib/data/routePaths';
 
 // todo 后续在 dms-ui 调整至shared 后修改这里
 import useAsyncParams from '../../../../../sqle/src/components/BackendForm/useAsyncParams';
+import { AddDBAccountPasswordExpirationPolicyEnum } from '@actiontech/shared/lib/api/provision/service/common.enum';
 
 const UpdateDatabaseAccount = () => {
   const { t } = useTranslation();
@@ -122,6 +123,8 @@ const UpdateDatabaseAccount = () => {
               policy: data?.password_security_policy || NORMAL_POLICY_VALUE,
               explanation: data?.account_info?.explanation,
               dbServiceID: data?.db_service?.uid,
+              password_expiration_policy: data?.account_info
+                ?.password_expiration_policy as unknown as AddDBAccountPasswordExpirationPolicyEnum,
               systemPrivileges:
                 data?.data_permissions
                   ?.filter((v) => (v.data_objects ?? []).length === 0)

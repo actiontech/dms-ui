@@ -272,6 +272,92 @@ exports[`provision/DatabaseAccount/BatchModifyPasswordModal render init snap 1`]
                   </div>
                 </div>
                 <div
+                  class="ant-form-item has-label-tip css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+                >
+                  <div
+                    class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                  >
+                    <div
+                      class="ant-col ant-form-item-label css-dev-only-do-not-override-txh9fw"
+                    >
+                      <label
+                        class=""
+                        for="password_expiration_policy"
+                        title=""
+                      >
+                        <div
+                          class="label-cont-custom"
+                        >
+                          <div>
+                            密码到期策略
+                          </div>
+                          <div
+                            class="tip-content-box"
+                          >
+                            到期后保持可用适用于应用服务账号;到期后自动锁定适用于普通测试账号
+                          </div>
+                        </div>
+                      </label>
+                    </div>
+                    <div
+                      class="ant-col ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                    >
+                      <div
+                        class="ant-form-item-control-input"
+                      >
+                        <div
+                          class="ant-form-item-control-input-content"
+                        >
+                          <div
+                            class="ant-radio-group ant-radio-group-outline css-dev-only-do-not-override-txh9fw"
+                            id="password_expiration_policy"
+                          >
+                            <label
+                              class="ant-radio-wrapper ant-radio-wrapper-in-form-item css-dev-only-do-not-override-txh9fw"
+                            >
+                              <span
+                                class="ant-radio"
+                              >
+                                <input
+                                  class="ant-radio-input"
+                                  type="radio"
+                                  value="expiration_available"
+                                />
+                                <span
+                                  class="ant-radio-inner"
+                                />
+                              </span>
+                              <span>
+                                到期后保持可用
+                              </span>
+                            </label>
+                            <label
+                              class="ant-radio-wrapper ant-radio-wrapper-checked ant-radio-wrapper-in-form-item css-dev-only-do-not-override-txh9fw"
+                            >
+                              <span
+                                class="ant-radio ant-radio-checked"
+                              >
+                                <input
+                                  checked=""
+                                  class="ant-radio-input"
+                                  type="radio"
+                                  value="expiration_lock"
+                                />
+                                <span
+                                  class="ant-radio-inner"
+                                />
+                              </span>
+                              <span>
+                                到期后自动锁定
+                              </span>
+                            </label>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div
                   class="ant-form-item css-dev-only-do-not-override-txh9fw"
                 >
                   <div

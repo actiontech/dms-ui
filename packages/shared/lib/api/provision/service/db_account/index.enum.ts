@@ -9,5 +9,7 @@ export enum AuthListDBAccountOrderByEnum {
 export enum AuthListDBAccountFilterByStatusEnum {
   'lock' = 'lock',
 
-  'unlock' = 'unlock'
+  'unlock' = 'unlock',
+
+  'expired' = 'expired'
 }

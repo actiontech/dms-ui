@@ -12,7 +12,10 @@ import { Space, Typography } from 'antd';
 import { DBAccountStatusDictionary } from '../index.data';
 import { formatTime } from '@actiontech/shared/lib/utils/Common';
 import { ModalName } from '../../../data/enum';
-import { ListDBAccountStatusEnum } from '@actiontech/shared/lib/api/provision/service/common.enum';
+import {
+  ListDBAccountPasswordExpirationPolicyEnum,
+  ListDBAccountStatusEnum
+} from '@actiontech/shared/lib/api/provision/service/common.enum';
 import { accountNameRender } from '../index.utils';
 
 export type DatabaseAccountListFilterParamType = PageInfoWithoutIndexAndSize<
@@ -57,16 +60,27 @@ export const DatabaseAccountListColumns = (
     {
       dataIndex: 'expired_time',
       title: t('databaseAccount.list.column.expiredTime'),
-      render: (val) => (val ? formatTime(val) : '-'),
+      render: (val, record) => {
+        if (!val) {
+          return '-';
+        }
+        if (record.password_expired) {
+          return `${formatTime(val)}（${t(
+            'databaseAccount.list.column.expired'
+          )}）`;
+        }
+        return formatTime(val);
+      },
       filterKey: ['filter_by_expired_time_from', 'filter_by_expired_time_to'],
       filterCustomType: 'date-range'
     },
     {
-      dataIndex: 'password_security_policy',
-      title: t('databaseAccount.list.column.policy'),
-      render: (value) => {
-        return value || '-';
-      }
+      dataIndex: 'password_expiration_policy',
+      title: t('databaseAccount.list.column.passwordExpirationPolicy'),
+      render: (val) =>
+        val === ListDBAccountPasswordExpirationPolicyEnum.expiration_lock
+          ? t('databaseAccount.list.column.lock')
+          : t('databaseAccount.list.column.available')
     },
     {
       dataIndex: 'status',

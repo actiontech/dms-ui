@@ -4,7 +4,7 @@ import {
   FormItemSubTitle
 } from '@actiontech/shared/lib/components/CustomForm';
 import { useTranslation } from 'react-i18next';
-import { Form, message } from 'antd';
+import { Form, message, Radio } from 'antd';
 import {
   BasicInput,
   BasicInputNumber,
@@ -32,6 +32,8 @@ import { useCurrentProject } from '@actiontech/shared/lib/features';
 // todo 后续在 dms-ui 调整至shared 后修改这里
 import AutoCreatedFormItemByApi from '../../../../../../sqle/src/components/BackendForm';
 import { filterOptionByLabel } from '@actiontech/shared/lib/components/BasicSelect/utils';
+import { passwordExpirationPolicyOptions } from './index.data';
+import { AddDBAccountPasswordExpirationPolicyEnum } from '@actiontech/shared/lib/api/provision/service/common.enum';
 
 type Props = {
   mode: 'create' | 'update';
@@ -58,7 +60,7 @@ const BaseInfoForm: React.FC<Props> = ({ mode, dbAccountMeta }) => {
   } = useServiceEnvironment();
   const policy = Form.useWatch('policy', form);
 
-  const disabled = mode === 'update';
+  const isUpdate = mode === 'update';
 
   const {
     updateSecurityPolicyList,
@@ -111,11 +113,11 @@ const BaseInfoForm: React.FC<Props> = ({ mode, dbAccountMeta }) => {
   }, [environment]);
 
   useEffect(() => {
-    if (disabled) {
+    if (isUpdate) {
       updateServiceList();
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [disabled]);
+  }, [isUpdate]);
 
   useEffect(() => {
     updateSecurityPolicyList();
@@ -155,7 +157,7 @@ const BaseInfoForm: React.FC<Props> = ({ mode, dbAccountMeta }) => {
       <FormItemSubTitle>
         {t('databaseAccount.create.baseInfo')}
       </FormItemSubTitle>
-      <EmptyBox if={!disabled}>
+      <EmptyBox if={!isUpdate}>
         <FormItemLabel
           name="environment"
           label={t('databaseAccount.discovery.environment')}
@@ -166,7 +168,7 @@ const BaseInfoForm: React.FC<Props> = ({ mode, dbAccountMeta }) => {
             onChange={() => {
               form.setFieldValue('dbServiceID', undefined);
             }}
-            disabled={disabled}
+            disabled={isUpdate}
             loading={environmentLoading}
             options={environmentOptions}
             showSearch
@@ -181,7 +183,7 @@ const BaseInfoForm: React.FC<Props> = ({ mode, dbAccountMeta }) => {
         className="has-required-style"
       >
         <ServiceFiled
-          disabled={disabled}
+          disabled={isUpdate}
           loading={servicesLoading}
           options={servicesLoading ? [] : serviceOptions}
           onSyncService={onSyncService}
@@ -204,7 +206,7 @@ const BaseInfoForm: React.FC<Props> = ({ mode, dbAccountMeta }) => {
         rules={[{ required: true }]}
         className="has-required-style has-label-tip"
       >
-        <BasicInput disabled={disabled} />
+        <BasicInput disabled={isUpdate} />
       </FormItemLabel>
 
       <FormItemLabel
@@ -219,7 +221,7 @@ const BaseInfoForm: React.FC<Props> = ({ mode, dbAccountMeta }) => {
         className="has-required-style has-label-tip"
       >
         <InputPassword
-          disabled={disabled}
+          disabled={isUpdate}
           clickGeneratePassword={generatePassword}
         />
       </FormItemLabel>
@@ -247,12 +249,12 @@ const BaseInfoForm: React.FC<Props> = ({ mode, dbAccountMeta }) => {
         dependencies={['password']}
         className="has-required-style has-label-tip"
       >
-        <BasicInput.Password disabled={disabled} />
+        <BasicInput.Password disabled={isUpdate} />
       </FormItemLabel>
 
       <EmptyBox if={!!selectedDBServiceID}>
         <AutoCreatedFormItemByApi
-          disabled={disabled}
+          disabled={isUpdate}
           paramsKey="additionalParams"
           params={dbAccountMeta}
         />
@@ -269,9 +271,9 @@ const BaseInfoForm: React.FC<Props> = ({ mode, dbAccountMeta }) => {
         rules={[{ required: true }]}
         className="has-required-style has-label-tip"
       >
-        <BasicSelect options={securityPolicyOptions()} disabled={disabled} />
+        <BasicSelect options={securityPolicyOptions()} disabled={isUpdate} />
       </FormItemLabel>
-      <EmptyBox if={!disabled}>
+      <EmptyBox if={!isUpdate}>
         <FormItemLabel
           label={
             <CustomLabelContent
@@ -301,11 +303,29 @@ const BaseInfoForm: React.FC<Props> = ({ mode, dbAccountMeta }) => {
           <BasicInputNumber
             disabled={
               (policy !== undefined && policy !== NORMAL_POLICY_VALUE) ||
-              disabled
+              isUpdate
             }
           />
         </FormItemLabel>
       </EmptyBox>
+
+      <FormItemLabel
+        label={
+          <CustomLabelContent
+            title={t('databaseAccount.create.form.passwordExpirationPolicy')}
+            tips={t('databaseAccount.create.form.passwordExpirationPolicyTips')}
+          />
+        }
+        name="password_expiration_policy"
+        initialValue={AddDBAccountPasswordExpirationPolicyEnum.expiration_lock}
+        className="has-required-style has-label-tip"
+        rules={[{ required: true }]}
+      >
+        <Radio.Group
+          disabled={isUpdate}
+          options={passwordExpirationPolicyOptions}
+        />
+      </FormItemLabel>
       <FormItemLabel
         label={
           <CustomLabelContent
@@ -317,7 +337,7 @@ const BaseInfoForm: React.FC<Props> = ({ mode, dbAccountMeta }) => {
         className="has-label-tip"
       >
         <BasicInput.TextArea
-          disabled={disabled}
+          disabled={isUpdate}
           autoSize={{
             maxRows: 10,
             minRows: 2

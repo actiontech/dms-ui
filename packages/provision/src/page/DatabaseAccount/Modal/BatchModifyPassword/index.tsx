@@ -65,7 +65,8 @@ const BatchModifyPasswordModal: React.FC = () => {
             db_account_uid: i.id,
             db_account_password: i.password
           })),
-          renewal_effective_time_day: values.effective_time_day
+          renewal_effective_time_day: values.effective_time_day,
+          password_expiration_policy: values.password_expiration_policy
         }
       })
       .then((res) => {
