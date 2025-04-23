@@ -4,7 +4,7 @@ exports[`sqle/ExecWorkflow/Common/DownloadRecord render snap download btn 1`] = 
 <body>
   <div>
     <button
-      class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default ant-btn-sm basic-button-wrapper css-geipcv"
+      class="ant-btn ant-btn-default ant-btn-sm basic-button-wrapper css-geipcv"
       type="button"
     >
       <span
@@ -22,7 +22,7 @@ exports[`sqle/ExecWorkflow/Common/DownloadRecord render snap download btn 1`] = 
         </svg>
       </span>
       <div
-        class="ant-space css-dev-only-do-not-override-674gwq ant-space-horizontal ant-space-align-center"
+        class="ant-space ant-space-horizontal ant-space-align-center"
       >
         <div
           class="ant-space-item"
@@ -60,7 +60,7 @@ exports[`sqle/ExecWorkflow/Common/DownloadRecord render snap when click down fil
 <body>
   <div>
     <button
-      class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default ant-btn-sm basic-button-wrapper css-geipcv"
+      class="ant-btn ant-btn-default ant-btn-sm basic-button-wrapper css-geipcv"
       type="button"
     >
       <span
@@ -78,7 +78,7 @@ exports[`sqle/ExecWorkflow/Common/DownloadRecord render snap when click down fil
         </svg>
       </span>
       <div
-        class="ant-space css-dev-only-do-not-override-674gwq ant-space-horizontal ant-space-align-center"
+        class="ant-space ant-space-horizontal ant-space-align-center"
       >
         <div
           class="ant-space-item"
@@ -111,7 +111,7 @@ exports[`sqle/ExecWorkflow/Common/DownloadRecord render snap when click down fil
   </div>
   <div>
     <div
-      class="ant-popover ant-popover-hidden css-dev-only-do-not-override-txh9fw css-dev-only-do-not-override-txh9fw ant-popover-placement-bottomLeft"
+      class="ant-popover ant-popover-hidden ant-popover-placement-bottomLeft"
       style="--arrow-x: 0px; --arrow-y: 0px; left: 0px; top: 0px; box-sizing: border-box; pointer-events: none;"
     >
       <div
@@ -176,7 +176,7 @@ exports[`sqle/ExecWorkflow/Common/DownloadRecord render snap when click down rep
 <body>
   <div>
     <button
-      class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default ant-btn-sm basic-button-wrapper css-geipcv"
+      class="ant-btn ant-btn-default ant-btn-sm basic-button-wrapper css-geipcv"
       type="button"
     >
       <span
@@ -194,7 +194,7 @@ exports[`sqle/ExecWorkflow/Common/DownloadRecord render snap when click down rep
         </svg>
       </span>
       <div
-        class="ant-space css-dev-only-do-not-override-674gwq ant-space-horizontal ant-space-align-center"
+        class="ant-space ant-space-horizontal ant-space-align-center"
       >
         <div
           class="ant-space-item"
@@ -227,7 +227,7 @@ exports[`sqle/ExecWorkflow/Common/DownloadRecord render snap when click down rep
   </div>
   <div>
     <div
-      class="ant-popover ant-popover-hidden css-dev-only-do-not-override-txh9fw css-dev-only-do-not-override-txh9fw ant-popover-placement-bottomLeft"
+      class="ant-popover ant-popover-hidden ant-popover-placement-bottomLeft"
       style="--arrow-x: 0px; --arrow-y: 0px; left: 0px; top: 0px; box-sizing: border-box; pointer-events: none;"
     >
       <div
@@ -292,7 +292,7 @@ exports[`sqle/ExecWorkflow/Common/DownloadRecord render snap when click down sho
 <body>
   <div>
     <button
-      class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default ant-btn-sm ant-popover-open basic-button-wrapper css-geipcv"
+      class="ant-btn ant-btn-default ant-btn-sm ant-popover-open basic-button-wrapper css-geipcv"
       type="button"
     >
       <span
@@ -310,7 +310,7 @@ exports[`sqle/ExecWorkflow/Common/DownloadRecord render snap when click down sho
         </svg>
       </span>
       <div
-        class="ant-space css-dev-only-do-not-override-674gwq ant-space-horizontal ant-space-align-center"
+        class="ant-space ant-space-horizontal ant-space-align-center"
       >
         <div
           class="ant-space-item"
@@ -344,7 +344,7 @@ exports[`sqle/ExecWorkflow/Common/DownloadRecord render snap when click down sho
   </div>
   <div>
     <div
-      class="ant-popover css-dev-only-do-not-override-txh9fw css-dev-only-do-not-override-txh9fw ant-popover-placement-bottomLeft"
+      class="ant-popover ant-popover-placement-bottomLeft"
       style="--arrow-x: 0px; --arrow-y: 0px; left: -1000vw; top: -1000vh; box-sizing: border-box;"
     >
       <div

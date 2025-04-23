@@ -25,7 +25,7 @@ exports[`Knowledge render init snap 1`] = `
           class="input-wrapper"
         >
           <textarea
-            class="ant-input ant-input-borderless css-dev-only-do-not-override-txh9fw basic-input-wrapper css-1pd1cd5"
+            class="ant-input ant-input-borderless basic-input-wrapper css-1pd1cd5"
             placeholder="请输入关键字搜索你感兴趣的SQL语法"
             style="overflow-y: hidden; resize: none;"
           />
@@ -49,13 +49,13 @@ exports[`Knowledge render init snap 1`] = `
         class="css-1c94q4z"
       >
         <div
-          class="ant-spin-nested-loading css-dev-only-do-not-override-txh9fw"
+          class="ant-spin-nested-loading"
         >
           <div>
             <div
               aria-busy="true"
               aria-live="polite"
-              class="ant-spin ant-spin-spinning ant-spin-show-text css-dev-only-do-not-override-txh9fw"
+              class="ant-spin ant-spin-spinning ant-spin-show-text"
             >
               <span
                 class="ant-spin-dot ant-spin-dot-spin"

@@ -3,10 +3,10 @@
 exports[`test base/DataExport/Detail/OverviewList should match snapshot 1`] = `
 <div>
   <div
-    class="ant-table-wrapper actiontech-table-namespace table-row-cursor css-fxd6ka css-dev-only-do-not-override-bj9uhl"
+    class="ant-table-wrapper actiontech-table-namespace table-row-cursor css-fxd6ka"
   >
     <div
-      class="ant-spin-nested-loading css-dev-only-do-not-override-bj9uhl"
+      class="ant-spin-nested-loading"
     >
       <div
         class="ant-spin-container"
@@ -81,7 +81,7 @@ exports[`test base/DataExport/Detail/OverviewList should match snapshot 1`] = `
                       style="position: sticky; right: 0px;"
                     >
                       <div
-                        class="ant-space css-dev-only-do-not-override-bj9uhl ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
+                        class="ant-space ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
                       >
                         <div
                           class="ant-space-item"
@@ -247,7 +247,7 @@ exports[`test base/DataExport/Detail/OverviewList should match snapshot 1`] = `
                         class="css-new95e"
                       >
                         <button
-                          class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                          class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
                           type="button"
                         >
                           <span>
@@ -324,7 +324,7 @@ exports[`test base/DataExport/Detail/OverviewList should match snapshot 1`] = `
                         class="css-new95e"
                       >
                         <button
-                          class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                          class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
                           disabled=""
                           type="button"
                         >
@@ -396,7 +396,7 @@ exports[`test base/DataExport/Detail/OverviewList should match snapshot 1`] = `
                         class="css-new95e"
                       >
                         <button
-                          class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                          class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
                           disabled=""
                           type="button"
                         >

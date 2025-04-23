@@ -80,7 +80,7 @@ exports[`sqle/ExecWorkflow/BasicInfoWrapper render snap when has all params 1`] 
         </span>
       </div>
       <div
-        class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center workflow-base-info-title"
+        class="ant-space ant-space-horizontal ant-space-align-center workflow-base-info-title"
       >
         <div
           class="ant-space-item"
@@ -95,7 +95,7 @@ exports[`sqle/ExecWorkflow/BasicInfoWrapper render snap when has all params 1`] 
             href="/sqle/project/700300/version-management/detail/1"
           >
             <span
-              class="ant-tag ant-tag-orange basic-tag-wrapper basic-large-tag-wrapper css-17gmaof css-dev-only-do-not-override-txh9fw"
+              class="ant-tag ant-tag-orange basic-tag-wrapper basic-large-tag-wrapper css-17gmaof"
             >
               版本
               ：
@@ -118,10 +118,10 @@ exports[`sqle/ExecWorkflow/BasicInfoWrapper render snap when has need params 1`]
 <body>
   <div>
     <div
-      class=" css-sjztq0"
+      class="css-sjztq0"
     >
       <div
-        class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center workflow-base-info-title"
+        class="ant-space ant-space-horizontal ant-space-align-center workflow-base-info-title"
       >
         <div
           class="ant-space-item"

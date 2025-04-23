@@ -4,18 +4,18 @@ exports[`ReportStatistics/CardNumberShow render snap loading 1`] = `
 <body>
   <div>
     <div
-      class="ant-row ant-row-center ant-row-top card-box css-dev-only-do-not-override-txh9fw"
+      class="ant-row ant-row-center ant-row-top card-box"
       style="margin-left: -10px; margin-right: -10px;"
     >
       <div
-        class="ant-col ant-col-24 ant-col-lg-12 ant-col-xl-12 ant-col-xxl-6 css-dev-only-do-not-override-txh9fw"
+        class="ant-col ant-col-24 ant-col-lg-12 ant-col-xl-12 ant-col-xxl-6"
         style="padding-left: 10px; padding-right: 10px;"
       >
         <div
           class="item-wrapper card-wrapper marginTop20"
         >
           <div
-            class="ant-card ant-card-hoverable css-16wnzq6 css-dev-only-do-not-override-13rucla"
+            class="ant-card ant-card-hoverable css-16wnzq6"
           >
             <div
               class="ant-card-body"
@@ -83,11 +83,11 @@ exports[`ReportStatistics/CardNumberShow render snap loading 1`] = `
                   class="number-cont"
                 >
                   <div
-                    class="ant-statistic css-dev-only-do-not-override-13rucla"
+                    class="ant-statistic"
                   >
                     <div
                       class="ant-statistic-content"
-                      style="font-weight: 700; height: 40px; line-height: 40px; color: rgb(41, 44, 51);"
+                      style="font-weight: 700; height: 40px; line-height: 40px; color: rgb(41, 44, 51); font-size: 32px;"
                     >
                       <span
                         class="ant-statistic-content-value"
@@ -112,14 +112,14 @@ exports[`ReportStatistics/CardNumberShow render snap loading 1`] = `
         </div>
       </div>
       <div
-        class="ant-col ant-col-24 ant-col-lg-12 ant-col-xl-12 ant-col-xxl-6 css-dev-only-do-not-override-txh9fw"
+        class="ant-col ant-col-24 ant-col-lg-12 ant-col-xl-12 ant-col-xxl-6"
         style="padding-left: 10px; padding-right: 10px;"
       >
         <div
           class="item-wrapper card-wrapper marginTop20"
         >
           <div
-            class="ant-card ant-card-hoverable css-16wnzq6 css-dev-only-do-not-override-13rucla"
+            class="ant-card ant-card-hoverable css-16wnzq6"
           >
             <div
               class="ant-card-body"
@@ -180,11 +180,11 @@ exports[`ReportStatistics/CardNumberShow render snap loading 1`] = `
                   class="number-cont"
                 >
                   <div
-                    class="ant-statistic css-dev-only-do-not-override-13rucla"
+                    class="ant-statistic"
                   >
                     <div
                       class="ant-statistic-content"
-                      style="font-weight: 700; height: 40px; line-height: 40px; color: rgb(41, 44, 51);"
+                      style="font-weight: 700; height: 40px; line-height: 40px; color: rgb(41, 44, 51); font-size: 32px;"
                     >
                       <span
                         class="ant-statistic-content-value"
@@ -209,14 +209,14 @@ exports[`ReportStatistics/CardNumberShow render snap loading 1`] = `
         </div>
       </div>
       <div
-        class="ant-col ant-col-24 ant-col-lg-12 ant-col-xl-12 ant-col-xxl-6 css-dev-only-do-not-override-txh9fw"
+        class="ant-col ant-col-24 ant-col-lg-12 ant-col-xl-12 ant-col-xxl-6"
         style="padding-left: 10px; padding-right: 10px;"
       >
         <div
           class="item-wrapper card-wrapper marginTop20"
         >
           <div
-            class="ant-card ant-card-hoverable css-16wnzq6 css-dev-only-do-not-override-13rucla"
+            class="ant-card ant-card-hoverable css-16wnzq6"
           >
             <div
               class="ant-card-body"
@@ -289,14 +289,14 @@ exports[`ReportStatistics/CardNumberShow render snap loading 1`] = `
         </div>
       </div>
       <div
-        class="ant-col ant-col-24 ant-col-lg-12 ant-col-xl-12 ant-col-xxl-6 css-dev-only-do-not-override-txh9fw"
+        class="ant-col ant-col-24 ant-col-lg-12 ant-col-xl-12 ant-col-xxl-6"
         style="padding-left: 10px; padding-right: 10px;"
       >
         <div
           class="item-wrapper card-wrapper marginTop20"
         >
           <div
-            class="ant-card ant-card-hoverable css-16wnzq6 css-dev-only-do-not-override-13rucla"
+            class="ant-card ant-card-hoverable css-16wnzq6"
           >
             <div
               class="ant-card-body"
@@ -381,18 +381,18 @@ exports[`ReportStatistics/CardNumberShow render snap when api return data 1`] = 
 <body>
   <div>
     <div
-      class="ant-row ant-row-center ant-row-top card-box css-dev-only-do-not-override-txh9fw"
+      class="ant-row ant-row-center ant-row-top card-box"
       style="margin-left: -10px; margin-right: -10px;"
     >
       <div
-        class="ant-col ant-col-24 ant-col-lg-12 ant-col-xl-12 ant-col-xxl-6 css-dev-only-do-not-override-txh9fw"
+        class="ant-col ant-col-24 ant-col-lg-12 ant-col-xl-12 ant-col-xxl-6"
         style="padding-left: 10px; padding-right: 10px;"
       >
         <div
           class="item-wrapper card-wrapper marginTop20"
         >
           <div
-            class="ant-card ant-card-hoverable css-16wnzq6 css-dev-only-do-not-override-13rucla"
+            class="ant-card ant-card-hoverable css-16wnzq6"
           >
             <div
               class="ant-card-body"
@@ -472,14 +472,14 @@ exports[`ReportStatistics/CardNumberShow render snap when api return data 1`] = 
         </div>
       </div>
       <div
-        class="ant-col ant-col-24 ant-col-lg-12 ant-col-xl-12 ant-col-xxl-6 css-dev-only-do-not-override-txh9fw"
+        class="ant-col ant-col-24 ant-col-lg-12 ant-col-xl-12 ant-col-xxl-6"
         style="padding-left: 10px; padding-right: 10px;"
       >
         <div
           class="item-wrapper card-wrapper marginTop20"
         >
           <div
-            class="ant-card ant-card-hoverable css-16wnzq6 css-dev-only-do-not-override-13rucla"
+            class="ant-card ant-card-hoverable css-16wnzq6"
           >
             <div
               class="ant-card-body"
@@ -552,14 +552,14 @@ exports[`ReportStatistics/CardNumberShow render snap when api return data 1`] = 
         </div>
       </div>
       <div
-        class="ant-col ant-col-24 ant-col-lg-12 ant-col-xl-12 ant-col-xxl-6 css-dev-only-do-not-override-txh9fw"
+        class="ant-col ant-col-24 ant-col-lg-12 ant-col-xl-12 ant-col-xxl-6"
         style="padding-left: 10px; padding-right: 10px;"
       >
         <div
           class="item-wrapper card-wrapper marginTop20"
         >
           <div
-            class="ant-card ant-card-hoverable css-16wnzq6 css-dev-only-do-not-override-13rucla"
+            class="ant-card ant-card-hoverable css-16wnzq6"
           >
             <div
               class="ant-card-body"
@@ -632,14 +632,14 @@ exports[`ReportStatistics/CardNumberShow render snap when api return data 1`] = 
         </div>
       </div>
       <div
-        class="ant-col ant-col-24 ant-col-lg-12 ant-col-xl-12 ant-col-xxl-6 css-dev-only-do-not-override-txh9fw"
+        class="ant-col ant-col-24 ant-col-lg-12 ant-col-xl-12 ant-col-xxl-6"
         style="padding-left: 10px; padding-right: 10px;"
       >
         <div
           class="item-wrapper card-wrapper marginTop20"
         >
           <div
-            class="ant-card ant-card-hoverable css-16wnzq6 css-dev-only-do-not-override-13rucla"
+            class="ant-card ant-card-hoverable css-16wnzq6"
           >
             <div
               class="ant-card-body"
@@ -724,18 +724,18 @@ exports[`ReportStatistics/CardNumberShow render snap when api return empty 1`] =
 <body>
   <div>
     <div
-      class="ant-row ant-row-center ant-row-top card-box css-dev-only-do-not-override-txh9fw"
+      class="ant-row ant-row-center ant-row-top card-box"
       style="margin-left: -10px; margin-right: -10px;"
     >
       <div
-        class="ant-col ant-col-24 ant-col-lg-12 ant-col-xl-12 ant-col-xxl-6 css-dev-only-do-not-override-txh9fw"
+        class="ant-col ant-col-24 ant-col-lg-12 ant-col-xl-12 ant-col-xxl-6"
         style="padding-left: 10px; padding-right: 10px;"
       >
         <div
           class="item-wrapper card-wrapper marginTop20"
         >
           <div
-            class="ant-card ant-card-hoverable css-16wnzq6 css-dev-only-do-not-override-13rucla"
+            class="ant-card ant-card-hoverable css-16wnzq6"
           >
             <div
               class="ant-card-body"
@@ -815,14 +815,14 @@ exports[`ReportStatistics/CardNumberShow render snap when api return empty 1`] =
         </div>
       </div>
       <div
-        class="ant-col ant-col-24 ant-col-lg-12 ant-col-xl-12 ant-col-xxl-6 css-dev-only-do-not-override-txh9fw"
+        class="ant-col ant-col-24 ant-col-lg-12 ant-col-xl-12 ant-col-xxl-6"
         style="padding-left: 10px; padding-right: 10px;"
       >
         <div
           class="item-wrapper card-wrapper marginTop20"
         >
           <div
-            class="ant-card ant-card-hoverable css-16wnzq6 css-dev-only-do-not-override-13rucla"
+            class="ant-card ant-card-hoverable css-16wnzq6"
           >
             <div
               class="ant-card-body"
@@ -895,14 +895,14 @@ exports[`ReportStatistics/CardNumberShow render snap when api return empty 1`] =
         </div>
       </div>
       <div
-        class="ant-col ant-col-24 ant-col-lg-12 ant-col-xl-12 ant-col-xxl-6 css-dev-only-do-not-override-txh9fw"
+        class="ant-col ant-col-24 ant-col-lg-12 ant-col-xl-12 ant-col-xxl-6"
         style="padding-left: 10px; padding-right: 10px;"
       >
         <div
           class="item-wrapper card-wrapper marginTop20"
         >
           <div
-            class="ant-card ant-card-hoverable css-16wnzq6 css-dev-only-do-not-override-13rucla"
+            class="ant-card ant-card-hoverable css-16wnzq6"
           >
             <div
               class="ant-card-body"
@@ -975,14 +975,14 @@ exports[`ReportStatistics/CardNumberShow render snap when api return empty 1`] =
         </div>
       </div>
       <div
-        class="ant-col ant-col-24 ant-col-lg-12 ant-col-xl-12 ant-col-xxl-6 css-dev-only-do-not-override-txh9fw"
+        class="ant-col ant-col-24 ant-col-lg-12 ant-col-xl-12 ant-col-xxl-6"
         style="padding-left: 10px; padding-right: 10px;"
       >
         <div
           class="item-wrapper card-wrapper marginTop20"
         >
           <div
-            class="ant-card ant-card-hoverable css-16wnzq6 css-dev-only-do-not-override-13rucla"
+            class="ant-card ant-card-hoverable css-16wnzq6"
           >
             <div
               class="ant-card-body"
@@ -1067,18 +1067,18 @@ exports[`ReportStatistics/CardNumberShow render snap when api return error 1`] =
 <body>
   <div>
     <div
-      class="ant-row ant-row-center ant-row-top card-box css-dev-only-do-not-override-txh9fw"
+      class="ant-row ant-row-center ant-row-top card-box"
       style="margin-left: -10px; margin-right: -10px;"
     >
       <div
-        class="ant-col ant-col-24 ant-col-lg-12 ant-col-xl-12 ant-col-xxl-6 css-dev-only-do-not-override-txh9fw"
+        class="ant-col ant-col-24 ant-col-lg-12 ant-col-xl-12 ant-col-xxl-6"
         style="padding-left: 10px; padding-right: 10px;"
       >
         <div
           class="item-wrapper card-wrapper marginTop20"
         >
           <div
-            class="ant-card ant-card-hoverable css-16wnzq6 css-dev-only-do-not-override-13rucla"
+            class="ant-card ant-card-hoverable css-16wnzq6"
           >
             <div
               class="ant-card-body"
@@ -1146,11 +1146,11 @@ exports[`ReportStatistics/CardNumberShow render snap when api return error 1`] =
                   class="number-cont"
                 >
                   <div
-                    class="ant-statistic css-dev-only-do-not-override-13rucla"
+                    class="ant-statistic"
                   >
                     <div
                       class="ant-statistic-content"
-                      style="font-weight: 700; height: 40px; line-height: 40px; color: rgb(41, 44, 51);"
+                      style="font-weight: 700; height: 40px; line-height: 40px; color: rgb(41, 44, 51); font-size: 32px;"
                     >
                       <span
                         class="ant-statistic-content-value"
@@ -1175,14 +1175,14 @@ exports[`ReportStatistics/CardNumberShow render snap when api return error 1`] =
         </div>
       </div>
       <div
-        class="ant-col ant-col-24 ant-col-lg-12 ant-col-xl-12 ant-col-xxl-6 css-dev-only-do-not-override-txh9fw"
+        class="ant-col ant-col-24 ant-col-lg-12 ant-col-xl-12 ant-col-xxl-6"
         style="padding-left: 10px; padding-right: 10px;"
       >
         <div
           class="item-wrapper card-wrapper marginTop20"
         >
           <div
-            class="ant-card ant-card-hoverable css-16wnzq6 css-dev-only-do-not-override-13rucla"
+            class="ant-card ant-card-hoverable css-16wnzq6"
           >
             <div
               class="ant-card-body"
@@ -1243,11 +1243,11 @@ exports[`ReportStatistics/CardNumberShow render snap when api return error 1`] =
                   class="number-cont"
                 >
                   <div
-                    class="ant-statistic css-dev-only-do-not-override-13rucla"
+                    class="ant-statistic"
                   >
                     <div
                       class="ant-statistic-content"
-                      style="font-weight: 700; height: 40px; line-height: 40px; color: rgb(41, 44, 51);"
+                      style="font-weight: 700; height: 40px; line-height: 40px; color: rgb(41, 44, 51); font-size: 32px;"
                     >
                       <span
                         class="ant-statistic-content-value"
@@ -1272,14 +1272,14 @@ exports[`ReportStatistics/CardNumberShow render snap when api return error 1`] =
         </div>
       </div>
       <div
-        class="ant-col ant-col-24 ant-col-lg-12 ant-col-xl-12 ant-col-xxl-6 css-dev-only-do-not-override-txh9fw"
+        class="ant-col ant-col-24 ant-col-lg-12 ant-col-xl-12 ant-col-xxl-6"
         style="padding-left: 10px; padding-right: 10px;"
       >
         <div
           class="item-wrapper card-wrapper marginTop20"
         >
           <div
-            class="ant-card ant-card-hoverable css-16wnzq6 css-dev-only-do-not-override-13rucla"
+            class="ant-card ant-card-hoverable css-16wnzq6"
           >
             <div
               class="ant-card-body"
@@ -1352,14 +1352,14 @@ exports[`ReportStatistics/CardNumberShow render snap when api return error 1`] =
         </div>
       </div>
       <div
-        class="ant-col ant-col-24 ant-col-lg-12 ant-col-xl-12 ant-col-xxl-6 css-dev-only-do-not-override-txh9fw"
+        class="ant-col ant-col-24 ant-col-lg-12 ant-col-xl-12 ant-col-xxl-6"
         style="padding-left: 10px; padding-right: 10px;"
       >
         <div
           class="item-wrapper card-wrapper marginTop20"
         >
           <div
-            class="ant-card ant-card-hoverable css-16wnzq6 css-dev-only-do-not-override-13rucla"
+            class="ant-card ant-card-hoverable css-16wnzq6"
           >
             <div
               class="ant-card-body"

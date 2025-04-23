@@ -4,7 +4,7 @@ exports[`page/ProjectOverview/ProjectScore render error and refresh data 1`] = `
 <body>
   <div>
     <div
-      class="ant-card ant-card-hoverable css-121p60i css-dev-only-do-not-override-txh9fw"
+      class="ant-card ant-card-hoverable css-121p60i"
     >
       <div
         class="ant-card-body"
@@ -35,7 +35,7 @@ exports[`page/ProjectOverview/ProjectScore render error and refresh data 1`] = `
               class="icon-center-wrapper MuiBox-root css-0"
             >
               <div
-                class="css-dev-only-do-not-override-txh9fw ant-empty is-icon-tips css-19kysfv"
+                class="ant-empty is-icon-tips css-19kysfv"
               >
                 <div
                   class="ant-empty-image"
@@ -100,7 +100,7 @@ exports[`page/ProjectOverview/ProjectScore render error and refresh data 1`] = `
                   class="ant-empty-footer"
                 >
                   <button
-                    class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-text ant-btn-sm basic-button-wrapper css-geipcv"
+                    class="ant-btn ant-btn-text ant-btn-sm basic-button-wrapper css-geipcv"
                     type="button"
                   >
                     <span>
@@ -122,7 +122,7 @@ exports[`page/ProjectOverview/ProjectScore render order status and click create 
 <body>
   <div>
     <div
-      class="ant-card ant-card-hoverable css-121p60i css-dev-only-do-not-override-txh9fw"
+      class="ant-card ant-card-hoverable css-121p60i"
     >
       <div
         class="ant-card-body"
@@ -188,6 +188,7 @@ exports[`page/ProjectOverview/ProjectScore render order status and click create 
               >
                 <div
                   data-custom-params="{"percent":1,"range":{"color":"#4BCCA6","width":20},"autoFit":true,"appendPadding":[10,0,40,0],"radius":0.9,"innerRadius":0.8,"startAngle":15,"endAngle":0.7,"indicator":{"pointer":{"style":{"stroke":"#c3c6cd","lineWidth":3}},"pin":{"style":{"r":6,"fill":"#fcfbf9","lineWidth":3,"stroke":"#c3c6cd"}}},"axis":false,"statistic":{"content":{"offsetY":20,"style":{"height":"28px","lineHeight":28,"fontWeight":300,"fontSize":"13px","color":"#4BCCA6","background":"#4BCCA610","borderRadius":"100px","padding":"0 16px"}}},"theme":"light"}"
+                  data-testid="mock-antd-plots"
                 />
               </section>
             </div>
@@ -203,7 +204,7 @@ exports[`page/ProjectOverview/ProjectScore render score between 40-60 1`] = `
 <body>
   <div>
     <div
-      class="ant-card ant-card-hoverable css-121p60i css-dev-only-do-not-override-txh9fw"
+      class="ant-card ant-card-hoverable css-121p60i"
     >
       <div
         class="ant-card-body"
@@ -269,6 +270,7 @@ exports[`page/ProjectOverview/ProjectScore render score between 40-60 1`] = `
               >
                 <div
                   data-custom-params="{"percent":0.5,"range":{"color":"#EBAD1C","width":20},"autoFit":true,"appendPadding":[10,0,40,0],"radius":0.9,"innerRadius":0.8,"startAngle":15,"endAngle":0.7,"indicator":{"pointer":{"style":{"stroke":"#c3c6cd","lineWidth":3}},"pin":{"style":{"r":6,"fill":"#fcfbf9","lineWidth":3,"stroke":"#c3c6cd"}}},"axis":false,"statistic":{"content":{"offsetY":20,"style":{"height":"28px","lineHeight":28,"fontWeight":300,"fontSize":"13px","color":"#EBAD1C","background":"#EBAD1C10","borderRadius":"100px","padding":"0 16px"}}},"theme":"light"}"
+                  data-testid="mock-antd-plots"
                 />
               </section>
             </div>
@@ -284,7 +286,7 @@ exports[`page/ProjectOverview/ProjectScore render score between 60-80 1`] = `
 <body>
   <div>
     <div
-      class="ant-card ant-card-hoverable css-121p60i css-dev-only-do-not-override-txh9fw"
+      class="ant-card ant-card-hoverable css-121p60i"
     >
       <div
         class="ant-card-body"
@@ -350,6 +352,7 @@ exports[`page/ProjectOverview/ProjectScore render score between 60-80 1`] = `
               >
                 <div
                   data-custom-params="{"percent":0.7,"range":{"color":"#6094FC","width":20},"autoFit":true,"appendPadding":[10,0,40,0],"radius":0.9,"innerRadius":0.8,"startAngle":15,"endAngle":0.7,"indicator":{"pointer":{"style":{"stroke":"#c3c6cd","lineWidth":3}},"pin":{"style":{"r":6,"fill":"#fcfbf9","lineWidth":3,"stroke":"#c3c6cd"}}},"axis":false,"statistic":{"content":{"offsetY":20,"style":{"height":"28px","lineHeight":28,"fontWeight":300,"fontSize":"13px","color":"#6094FC","background":"#6094FC10","borderRadius":"100px","padding":"0 16px"}}},"theme":"light"}"
+                  data-testid="mock-antd-plots"
                 />
               </section>
             </div>
@@ -365,7 +368,7 @@ exports[`page/ProjectOverview/ProjectScore render score less than 40 1`] = `
 <body>
   <div>
     <div
-      class="ant-card ant-card-hoverable css-121p60i css-dev-only-do-not-override-txh9fw"
+      class="ant-card ant-card-hoverable css-121p60i"
     >
       <div
         class="ant-card-body"
@@ -431,6 +434,7 @@ exports[`page/ProjectOverview/ProjectScore render score less than 40 1`] = `
               >
                 <div
                   data-custom-params="{"percent":0.3,"range":{"color":"#F66074","width":20},"autoFit":true,"appendPadding":[10,0,40,0],"radius":0.9,"innerRadius":0.8,"startAngle":15,"endAngle":0.7,"indicator":{"pointer":{"style":{"stroke":"#c3c6cd","lineWidth":3}},"pin":{"style":{"r":6,"fill":"#fcfbf9","lineWidth":3,"stroke":"#c3c6cd"}}},"axis":false,"statistic":{"content":{"offsetY":20,"style":{"height":"28px","lineHeight":28,"fontWeight":300,"fontSize":"13px","color":"#F66074","background":"#F6607410","borderRadius":"100px","padding":"0 16px"}}},"theme":"light"}"
+                  data-testid="mock-antd-plots"
                 />
               </section>
             </div>

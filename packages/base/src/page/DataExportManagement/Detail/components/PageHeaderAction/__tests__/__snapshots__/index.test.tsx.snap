@@ -7,7 +7,7 @@ exports[`test base/DataExport/Detail/PageHeaderAction clicked workflow detail bu
   >
     <div>
       <button
-        class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default ant-btn-dangerous basic-button-wrapper css-geipcv"
+        class="ant-btn ant-btn-default ant-btn-dangerous basic-button-wrapper css-geipcv"
         type="button"
       >
         <span>
@@ -15,12 +15,12 @@ exports[`test base/DataExport/Detail/PageHeaderAction clicked workflow detail bu
         </span>
       </button>
       <div
-        class="ant-divider css-dev-only-do-not-override-txh9fw ant-divider-vertical export-detail-page-header-divider"
+        class="ant-divider ant-divider-vertical export-detail-page-header-divider"
         role="separator"
       />
     </div>
     <button
-      class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default basic-button-wrapper css-geipcv"
+      class="ant-btn ant-btn-default basic-button-wrapper css-geipcv"
       type="button"
     >
       <span>
@@ -28,7 +28,7 @@ exports[`test base/DataExport/Detail/PageHeaderAction clicked workflow detail bu
       </span>
     </button>
     <button
-      class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary basic-button-wrapper css-geipcv"
+      class="ant-btn ant-btn-primary basic-button-wrapper css-geipcv"
       type="button"
     >
       <span>
@@ -36,7 +36,7 @@ exports[`test base/DataExport/Detail/PageHeaderAction clicked workflow detail bu
       </span>
     </button>
     <button
-      class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary basic-button-wrapper css-geipcv"
+      class="ant-btn ant-btn-primary basic-button-wrapper css-geipcv"
       type="button"
     >
       <span>
@@ -44,7 +44,7 @@ exports[`test base/DataExport/Detail/PageHeaderAction clicked workflow detail bu
       </span>
     </button>
     <div
-      class="ant-divider css-dev-only-do-not-override-txh9fw ant-divider-vertical export-detail-page-header-divider"
+      class="ant-divider ant-divider-vertical export-detail-page-header-divider"
       role="separator"
     />
     <div
@@ -63,7 +63,7 @@ exports[`test base/DataExport/Detail/PageHeaderAction should match snapshot 1`] 
   >
     <div>
       <button
-        class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default ant-btn-dangerous basic-button-wrapper css-geipcv"
+        class="ant-btn ant-btn-default ant-btn-dangerous basic-button-wrapper css-geipcv"
         type="button"
       >
         <span>
@@ -71,12 +71,12 @@ exports[`test base/DataExport/Detail/PageHeaderAction should match snapshot 1`] 
         </span>
       </button>
       <div
-        class="ant-divider css-dev-only-do-not-override-txh9fw ant-divider-vertical export-detail-page-header-divider"
+        class="ant-divider ant-divider-vertical export-detail-page-header-divider"
         role="separator"
       />
     </div>
     <button
-      class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default basic-button-wrapper css-geipcv"
+      class="ant-btn ant-btn-default basic-button-wrapper css-geipcv"
       type="button"
     >
       <span>
@@ -84,7 +84,7 @@ exports[`test base/DataExport/Detail/PageHeaderAction should match snapshot 1`] 
       </span>
     </button>
     <button
-      class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary basic-button-wrapper css-geipcv"
+      class="ant-btn ant-btn-primary basic-button-wrapper css-geipcv"
       type="button"
     >
       <span>
@@ -92,7 +92,7 @@ exports[`test base/DataExport/Detail/PageHeaderAction should match snapshot 1`] 
       </span>
     </button>
     <button
-      class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary basic-button-wrapper css-geipcv"
+      class="ant-btn ant-btn-primary basic-button-wrapper css-geipcv"
       type="button"
     >
       <span>
@@ -100,7 +100,7 @@ exports[`test base/DataExport/Detail/PageHeaderAction should match snapshot 1`] 
       </span>
     </button>
     <div
-      class="ant-divider css-dev-only-do-not-override-txh9fw ant-divider-vertical export-detail-page-header-divider"
+      class="ant-divider ant-divider-vertical export-detail-page-header-divider"
       role="separator"
     />
     <div

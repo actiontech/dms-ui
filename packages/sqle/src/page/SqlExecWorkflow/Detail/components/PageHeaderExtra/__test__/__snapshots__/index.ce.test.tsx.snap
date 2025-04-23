@@ -10,7 +10,7 @@ exports[`sqle/SqlExecWorkflow/Detail/WorkflowDetailPageHeaderExtra ce render rol
         hidden=""
       >
         <button
-          class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default ant-btn-dangerous basic-button-wrapper css-geipcv"
+          class="ant-btn ant-btn-default ant-btn-dangerous basic-button-wrapper css-geipcv"
           type="button"
         >
           <span>
@@ -18,12 +18,12 @@ exports[`sqle/SqlExecWorkflow/Detail/WorkflowDetailPageHeaderExtra ce render rol
           </span>
         </button>
         <div
-          class="ant-divider css-dev-only-do-not-override-txh9fw ant-divider-vertical workflow-detail-page-header-divider"
+          class="ant-divider ant-divider-vertical workflow-detail-page-header-divider"
           role="separator"
         />
       </div>
       <button
-        class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default basic-button-wrapper css-geipcv"
+        class="ant-btn ant-btn-default basic-button-wrapper css-geipcv"
         hidden=""
         type="button"
       >
@@ -32,7 +32,7 @@ exports[`sqle/SqlExecWorkflow/Detail/WorkflowDetailPageHeaderExtra ce render rol
         </span>
       </button>
       <button
-        class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default basic-button-wrapper css-geipcv"
+        class="ant-btn ant-btn-default basic-button-wrapper css-geipcv"
         type="button"
       >
         <span>
@@ -40,7 +40,7 @@ exports[`sqle/SqlExecWorkflow/Detail/WorkflowDetailPageHeaderExtra ce render rol
         </span>
       </button>
       <button
-        class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default basic-button-wrapper css-geipcv"
+        class="ant-btn ant-btn-default basic-button-wrapper css-geipcv"
         hidden=""
         type="button"
       >
@@ -49,7 +49,7 @@ exports[`sqle/SqlExecWorkflow/Detail/WorkflowDetailPageHeaderExtra ce render rol
         </span>
       </button>
       <button
-        class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary basic-button-wrapper css-geipcv"
+        class="ant-btn ant-btn-primary basic-button-wrapper css-geipcv"
         hidden=""
         type="button"
       >
@@ -58,7 +58,7 @@ exports[`sqle/SqlExecWorkflow/Detail/WorkflowDetailPageHeaderExtra ce render rol
         </span>
       </button>
       <button
-        class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary basic-button-wrapper css-geipcv"
+        class="ant-btn ant-btn-primary basic-button-wrapper css-geipcv"
         confirm="[object Object]"
         disabled=""
         hidden=""
@@ -69,7 +69,7 @@ exports[`sqle/SqlExecWorkflow/Detail/WorkflowDetailPageHeaderExtra ce render rol
         </span>
       </button>
       <button
-        class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary basic-button-wrapper css-geipcv"
+        class="ant-btn ant-btn-primary basic-button-wrapper css-geipcv"
         confirm="[object Object]"
         disabled=""
         hidden=""
@@ -80,7 +80,7 @@ exports[`sqle/SqlExecWorkflow/Detail/WorkflowDetailPageHeaderExtra ce render rol
         </span>
       </button>
       <div
-        class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+        class="ant-space ant-space-horizontal ant-space-align-center"
         hidden=""
       >
         <div
@@ -88,7 +88,7 @@ exports[`sqle/SqlExecWorkflow/Detail/WorkflowDetailPageHeaderExtra ce render rol
           style="margin-right: 0px;"
         >
           <button
-            class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default ant-btn-dangerous basic-button-wrapper css-geipcv"
+            class="ant-btn ant-btn-default ant-btn-dangerous basic-button-wrapper css-geipcv"
             type="button"
           >
             <span>
@@ -101,7 +101,7 @@ exports[`sqle/SqlExecWorkflow/Detail/WorkflowDetailPageHeaderExtra ce render rol
           style="margin-right: 0px;"
         >
           <div
-            class="ant-divider css-dev-only-do-not-override-txh9fw ant-divider-vertical workflow-detail-page-header-divider"
+            class="ant-divider ant-divider-vertical workflow-detail-page-header-divider"
             role="separator"
           />
         </div>
@@ -109,7 +109,7 @@ exports[`sqle/SqlExecWorkflow/Detail/WorkflowDetailPageHeaderExtra ce render rol
           class="ant-space-item"
         >
           <button
-            class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default basic-button-wrapper css-geipcv"
+            class="ant-btn ant-btn-default basic-button-wrapper css-geipcv"
             type="button"
           >
             <span>

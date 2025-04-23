@@ -4,22 +4,22 @@ exports[`base/Member/Modal/AddMemberGroup should add fields when click add butto
 <body>
   <div>
     <form
-      class="ant-form ant-form-horizontal css-dev-only-do-not-override-txh9fw"
+      class="ant-form ant-form-horizontal"
     >
       <div
-        class="ant-row css-cubq3u css-dev-only-do-not-override-txh9fw"
+        class="ant-row css-cubq3u"
       >
         <div
-          class="ant-col ant-col-8 css-dev-only-do-not-override-txh9fw"
+          class="ant-col ant-col-8"
         >
           <div
-            class="ant-form-item css-dev-only-do-not-override-txh9fw"
+            class="ant-form-item"
           >
             <div
-              class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+              class="ant-row ant-form-item-row"
             >
               <div
-                class="ant-col ant-form-item-label css-dev-only-do-not-override-txh9fw"
+                class="ant-col ant-form-item-label"
               >
                 <label
                   class="ant-form-item-required"
@@ -30,7 +30,7 @@ exports[`base/Member/Modal/AddMemberGroup should add fields when click add butto
                 </label>
               </div>
               <div
-                class="ant-col ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                class="ant-col ant-form-item-control"
               >
                 <div
                   class="ant-form-item-control-input"
@@ -40,7 +40,7 @@ exports[`base/Member/Modal/AddMemberGroup should add fields when click add butto
                   >
                     <div
                       aria-required="true"
-                      class="ant-select ant-select-in-form-item basic-select-wrapper css-iy4o4x css-dev-only-do-not-override-v9sov3 ant-select-single ant-select-show-arrow ant-select-show-search"
+                      class="ant-select ant-select-in-form-item basic-select-wrapper css-iy4o4x ant-select-single ant-select-show-arrow ant-select-show-search"
                     >
                       <div
                         class="ant-select-selector"
@@ -104,16 +104,16 @@ exports[`base/Member/Modal/AddMemberGroup should add fields when click add butto
           </div>
         </div>
         <div
-          class="ant-col ant-col-12 ant-col-offset-1 css-dev-only-do-not-override-txh9fw"
+          class="ant-col ant-col-12 ant-col-offset-1"
         >
           <div
-            class="ant-form-item css-dev-only-do-not-override-txh9fw"
+            class="ant-form-item"
           >
             <div
-              class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+              class="ant-row ant-form-item-row"
             >
               <div
-                class="ant-col ant-form-item-label css-dev-only-do-not-override-txh9fw"
+                class="ant-col ant-form-item-label"
               >
                 <label
                   class="ant-form-item-required"
@@ -124,7 +124,7 @@ exports[`base/Member/Modal/AddMemberGroup should add fields when click add butto
                 </label>
               </div>
               <div
-                class="ant-col ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                class="ant-col ant-form-item-control"
               >
                 <div
                   class="ant-form-item-control-input"
@@ -134,7 +134,7 @@ exports[`base/Member/Modal/AddMemberGroup should add fields when click add butto
                   >
                     <div
                       aria-required="true"
-                      class="ant-select ant-select-in-form-item basic-select-wrapper css-iy4o4x css-dev-only-do-not-override-v9sov3 ant-select-multiple ant-select-allow-clear ant-select-show-arrow ant-select-show-search"
+                      class="ant-select ant-select-in-form-item basic-select-wrapper css-iy4o4x ant-select-multiple ant-select-allow-clear ant-select-show-arrow ant-select-show-search"
                     >
                       <div
                         class="ant-select-selector"
@@ -217,10 +217,10 @@ exports[`base/Member/Modal/AddMemberGroup should add fields when click add butto
           </div>
         </div>
         <div
-          class="ant-col ant-col-0 css-dev-only-do-not-override-txh9fw"
+          class="ant-col ant-col-0"
         >
           <input
-            class="ant-input css-dev-only-do-not-override-ywkr0o basic-input-wrapper css-1pd1cd5"
+            class="ant-input basic-input-wrapper css-1pd1cd5"
             id="roles_0_op_range_type"
             placeholder="请输入{{name}}"
             type="text"
@@ -228,16 +228,16 @@ exports[`base/Member/Modal/AddMemberGroup should add fields when click add butto
           />
         </div>
         <div
-          class="ant-col ant-col-1 ant-col-offset-1 css-dev-only-do-not-override-txh9fw"
+          class="ant-col ant-col-1 ant-col-offset-1"
         >
           <div
-            class="ant-form-item css-dev-only-do-not-override-txh9fw"
+            class="ant-form-item"
           >
             <div
-              class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+              class="ant-row ant-form-item-row"
             >
               <div
-                class="ant-col ant-form-item-label css-dev-only-do-not-override-txh9fw"
+                class="ant-col ant-form-item-label"
               >
                 <label
                   class="ant-form-item-no-colon"
@@ -247,7 +247,7 @@ exports[`base/Member/Modal/AddMemberGroup should add fields when click add butto
                 </label>
               </div>
               <div
-                class="ant-col ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                class="ant-col ant-form-item-control"
               >
                 <div
                   class="ant-form-item-control-input"
@@ -256,7 +256,7 @@ exports[`base/Member/Modal/AddMemberGroup should add fields when click add butto
                     class="ant-form-item-control-input-content"
                   >
                     <button
-                      class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default ant-btn-icon-only basic-button-wrapper css-iieact"
+                      class="ant-btn ant-btn-default ant-btn-icon-only basic-button-wrapper css-iieact"
                       type="button"
                     >
                       <span
@@ -283,13 +283,13 @@ exports[`base/Member/Modal/AddMemberGroup should add fields when click add butto
         </div>
       </div>
       <div
-        class="ant-form-item css-dev-only-do-not-override-txh9fw"
+        class="ant-form-item"
       >
         <div
-          class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+          class="ant-row ant-form-item-row"
         >
           <div
-            class="ant-col ant-form-item-control css-dev-only-do-not-override-txh9fw"
+            class="ant-col ant-form-item-control"
           >
             <div
               class="ant-form-item-control-input"
@@ -298,7 +298,7 @@ exports[`base/Member/Modal/AddMemberGroup should add fields when click add butto
                 class="ant-form-item-control-input-content"
               >
                 <button
-                  class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default member-form-add-button basic-button-wrapper css-1719g3l"
+                  class="ant-btn ant-btn-default member-form-add-button basic-button-wrapper css-1719g3l"
                   type="button"
                 >
                   <span
@@ -334,16 +334,16 @@ exports[`base/Member/Modal/AddMemberGroup should match snap shot 1`] = `
 <body>
   <div>
     <form
-      class="ant-form ant-form-horizontal css-dev-only-do-not-override-txh9fw"
+      class="ant-form ant-form-horizontal"
     >
       <div
-        class="ant-form-item css-dev-only-do-not-override-txh9fw"
+        class="ant-form-item"
       >
         <div
-          class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+          class="ant-row ant-form-item-row"
         >
           <div
-            class="ant-col ant-form-item-control css-dev-only-do-not-override-txh9fw"
+            class="ant-col ant-form-item-control"
           >
             <div
               class="ant-form-item-control-input"
@@ -352,7 +352,7 @@ exports[`base/Member/Modal/AddMemberGroup should match snap shot 1`] = `
                 class="ant-form-item-control-input-content"
               >
                 <button
-                  class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default member-form-add-button basic-button-wrapper css-1719g3l"
+                  class="ant-btn ant-btn-default member-form-add-button basic-button-wrapper css-1719g3l"
                   type="button"
                 >
                   <span

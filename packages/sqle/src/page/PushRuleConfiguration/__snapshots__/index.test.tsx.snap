@@ -18,7 +18,7 @@ exports[`test PushRuleConfiguration should match snapshot 1`] = `
       />
     </div>
     <div
-      class="ant-spin-nested-loading css-dev-only-do-not-override-txh9fw"
+      class="ant-spin-nested-loading"
     >
       <div
         class="ant-spin-container"
@@ -35,26 +35,26 @@ exports[`test PushRuleConfiguration should match snapshot 1`] = `
             class="css-zupqof"
           >
             <form
-              class="ant-form ant-form-horizontal css-dev-only-do-not-override-txh9fw"
+              class="ant-form ant-form-horizontal"
             >
               <div
                 class="switch-field-wrapper"
               >
                 <div
-                  class="ant-form-item has-label-tip css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+                  class="ant-form-item has-label-tip css-1jlm9cy"
                 >
                   <div
-                    class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                    class="ant-row ant-form-item-row"
                   >
                     <div
-                      class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left css-dev-only-do-not-override-txh9fw"
+                      class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left"
                     >
                       <label
                         class="ant-form-item-no-colon"
                         title=""
                       >
                         <div
-                          class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
+                          class="ant-space ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
                         >
                           <div
                             class="ant-space-item"
@@ -84,7 +84,7 @@ exports[`test PushRuleConfiguration should match snapshot 1`] = `
                       </label>
                     </div>
                     <div
-                      class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                      class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control"
                     >
                       <div
                         class="ant-form-item-control-input"
@@ -93,14 +93,14 @@ exports[`test PushRuleConfiguration should match snapshot 1`] = `
                           class="ant-form-item-control-input-content"
                         >
                           <div
-                            class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+                            class="ant-space ant-space-horizontal ant-space-align-center"
                           >
                             <div
                               class="ant-space-item"
                             >
                               <button
                                 aria-checked="true"
-                                class="ant-switch basic-switch-wrapper css-g6dhbn css-dev-only-do-not-override-txh9fw ant-switch-checked"
+                                class="ant-switch basic-switch-wrapper css-g6dhbn ant-switch-checked"
                                 data-testid="config-switch"
                                 role="switch"
                                 type="button"
@@ -133,7 +133,7 @@ exports[`test PushRuleConfiguration should match snapshot 1`] = `
               />
             </form>
             <div
-              class="ant-descriptions system-config-view-wrapper css-cs8tvb css-dev-only-do-not-override-txh9fw"
+              class="ant-descriptions system-config-view-wrapper css-cs8tvb"
             >
               <div
                 class="ant-descriptions-view"
@@ -204,7 +204,7 @@ exports[`test PushRuleConfiguration should match snapshot 1`] = `
                           <span
                             class="ant-descriptions-item-content"
                           >
-                            1-01-01 08:05:43
+                            0001-01-01 08:05:43
                           </span>
                         </div>
                       </td>
@@ -218,26 +218,26 @@ exports[`test PushRuleConfiguration should match snapshot 1`] = `
             class="css-zupqof"
           >
             <form
-              class="ant-form ant-form-horizontal css-dev-only-do-not-override-txh9fw"
+              class="ant-form ant-form-horizontal"
             >
               <div
                 class="switch-field-wrapper"
               >
                 <div
-                  class="ant-form-item has-label-tip css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+                  class="ant-form-item has-label-tip css-1jlm9cy"
                 >
                   <div
-                    class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                    class="ant-row ant-form-item-row"
                   >
                     <div
-                      class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left css-dev-only-do-not-override-txh9fw"
+                      class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left"
                     >
                       <label
                         class="ant-form-item-no-colon"
                         title=""
                       >
                         <div
-                          class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
+                          class="ant-space ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
                         >
                           <div
                             class="ant-space-item"
@@ -267,7 +267,7 @@ exports[`test PushRuleConfiguration should match snapshot 1`] = `
                       </label>
                     </div>
                     <div
-                      class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                      class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control"
                     >
                       <div
                         class="ant-form-item-control-input"
@@ -276,7 +276,7 @@ exports[`test PushRuleConfiguration should match snapshot 1`] = `
                           class="ant-form-item-control-input-content"
                         >
                           <div
-                            class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+                            class="ant-space ant-space-horizontal ant-space-align-center"
                           >
                             <div
                               class="ant-space-item"
@@ -286,13 +286,13 @@ exports[`test PushRuleConfiguration should match snapshot 1`] = `
                               class="ant-space-item"
                             >
                               <div
-                                class="ant-form-item css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+                                class="ant-form-item css-1jlm9cy"
                               >
                                 <div
-                                  class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                                  class="ant-row ant-form-item-row"
                                 >
                                   <div
-                                    class="ant-col ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                                    class="ant-col ant-form-item-control"
                                   >
                                     <div
                                       class="ant-form-item-control-input"
@@ -302,7 +302,7 @@ exports[`test PushRuleConfiguration should match snapshot 1`] = `
                                       >
                                         <button
                                           aria-checked="false"
-                                          class="ant-switch basic-switch-wrapper system-config-switch css-g6dhbn css-dev-only-do-not-override-txh9fw"
+                                          class="ant-switch basic-switch-wrapper system-config-switch css-g6dhbn"
                                           id="enabled"
                                           role="switch"
                                           type="button"
@@ -339,13 +339,13 @@ exports[`test PushRuleConfiguration should match snapshot 1`] = `
                 hidden=""
               >
                 <div
-                  class="ant-form-item has-required-style has-label-tip css-1jlm9cy css-dev-only-do-not-override-txh9fw ant-form-item-has-success"
+                  class="ant-form-item has-required-style has-label-tip css-1jlm9cy ant-form-item-has-success"
                 >
                   <div
-                    class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                    class="ant-row ant-form-item-row"
                   >
                     <div
-                      class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left css-dev-only-do-not-override-txh9fw"
+                      class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left"
                     >
                       <label
                         class="ant-form-item-required ant-form-item-no-colon"
@@ -367,7 +367,7 @@ exports[`test PushRuleConfiguration should match snapshot 1`] = `
                       </label>
                     </div>
                     <div
-                      class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                      class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control"
                     >
                       <div
                         class="ant-form-item-control-input"
@@ -379,13 +379,13 @@ exports[`test PushRuleConfiguration should match snapshot 1`] = `
                             class="css-1q8fejj"
                           >
                             <input
-                              class="ant-input ant-input-status-success css-dev-only-do-not-override-ywkr0o basic-input-wrapper input-element css-1pd1cd5"
+                              class="ant-input ant-input-status-success basic-input-wrapper input-element css-1pd1cd5"
                               placeholder="请输入时间"
                               type="text"
                               value="* * * * *"
                             />
                             <button
-                              class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default ant-btn-lg ant-btn-icon-only button-element basic-button-wrapper css-geipcv"
+                              class="ant-btn ant-btn-default ant-btn-lg ant-btn-icon-only button-element basic-button-wrapper css-geipcv"
                               type="button"
                             >
                               <span
@@ -411,13 +411,13 @@ exports[`test PushRuleConfiguration should match snapshot 1`] = `
                   </div>
                 </div>
                 <div
-                  class="ant-form-item has-required-style css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+                  class="ant-form-item has-required-style css-1jlm9cy"
                 >
                   <div
-                    class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                    class="ant-row ant-form-item-row"
                   >
                     <div
-                      class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left css-dev-only-do-not-override-txh9fw"
+                      class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left"
                     >
                       <label
                         class="ant-form-item-required ant-form-item-no-colon"
@@ -428,7 +428,7 @@ exports[`test PushRuleConfiguration should match snapshot 1`] = `
                       </label>
                     </div>
                     <div
-                      class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                      class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control"
                     >
                       <div
                         class="ant-form-item-control-input"
@@ -438,7 +438,7 @@ exports[`test PushRuleConfiguration should match snapshot 1`] = `
                         >
                           <div
                             aria-required="true"
-                            class="ant-select ant-select-in-form-item basic-select-wrapper css-iy4o4x css-dev-only-do-not-override-v9sov3 ant-select-multiple ant-select-show-arrow ant-select-loading ant-select-show-search"
+                            class="ant-select ant-select-in-form-item basic-select-wrapper css-iy4o4x ant-select-multiple ant-select-show-arrow ant-select-loading ant-select-show-search"
                           >
                             <div
                               class="ant-select-selector"
@@ -520,13 +520,13 @@ exports[`test PushRuleConfiguration should match snapshot 1`] = `
                   </div>
                 </div>
                 <div
-                  class="ant-form-item css-15d6abf css-dev-only-do-not-override-txh9fw"
+                  class="ant-form-item css-15d6abf"
                 >
                   <div
-                    class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                    class="ant-row ant-form-item-row"
                   >
                     <div
-                      class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left css-dev-only-do-not-override-txh9fw"
+                      class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left"
                     >
                       <label
                         class="ant-form-item-no-colon"
@@ -536,7 +536,7 @@ exports[`test PushRuleConfiguration should match snapshot 1`] = `
                       </label>
                     </div>
                     <div
-                      class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                      class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control"
                     >
                       <div
                         class="ant-form-item-control-input"
@@ -545,14 +545,14 @@ exports[`test PushRuleConfiguration should match snapshot 1`] = `
                           class="ant-form-item-control-input-content"
                         >
                           <div
-                            class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+                            class="ant-space ant-space-horizontal ant-space-align-center"
                           >
                             <div
                               class="ant-space-item"
                               style="margin-right: 12px;"
                             >
                               <button
-                                class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default basic-button-wrapper css-geipcv"
+                                class="ant-btn ant-btn-default basic-button-wrapper css-geipcv"
                                 type="button"
                               >
                                 <span>
@@ -564,7 +564,7 @@ exports[`test PushRuleConfiguration should match snapshot 1`] = `
                               class="ant-space-item"
                             >
                               <button
-                                class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary basic-button-wrapper css-geipcv"
+                                class="ant-btn ant-btn-primary basic-button-wrapper css-geipcv"
                                 type="submit"
                               >
                                 <span>

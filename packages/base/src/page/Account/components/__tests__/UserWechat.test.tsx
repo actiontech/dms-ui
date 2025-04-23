@@ -1,15 +1,16 @@
 import { renderWithTheme } from '@actiontech/shared/lib/testUtil/customRender';
 import UserWechat from '../UserWechat';
-import { act, fireEvent, screen } from '@testing-library/react';
+import { act, fireEvent } from '@testing-library/react';
 import { getBySelector } from '@actiontech/shared/lib/testUtil/customQuery';
 import account from '../../../../testUtils/mockApi/account';
+import { superRender } from '../../../../testUtils/customRender';
 
 describe('test base/page/Account/UserWechat', () => {
   const updateUserInfoSpy = jest.fn();
   const messageSuccessSpy = jest.fn();
 
   const customRender = (wxid?: string) => {
-    return renderWithTheme(
+    return superRender(
       <UserWechat
         messageApi={{ success: messageSuccessSpy } as any}
         updateUserInfo={updateUserInfoSpy}

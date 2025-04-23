@@ -7,13 +7,13 @@ exports[`sqle/components/BackendForm render type is bool render layout has desc 
       class="ant-form ant-form-horizontal css-dev-only-do-not-override-txh9fw"
     >
       <div
-        class="ant-form-item has-label-tip css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+        class="ant-form-item has-label-tip css-1jlm9cy"
       >
         <div
-          class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+          class="ant-row ant-form-item-row"
         >
           <div
-            class="ant-col ant-col-11 ant-form-item-label css-dev-only-do-not-override-txh9fw"
+            class="ant-col ant-col-11 ant-form-item-label"
           >
             <label
               class=""
@@ -35,7 +35,7 @@ exports[`sqle/components/BackendForm render type is bool render layout has desc 
             </label>
           </div>
           <div
-            class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+            class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control"
           >
             <div
               class="ant-form-item-control-input"
@@ -45,7 +45,7 @@ exports[`sqle/components/BackendForm render type is bool render layout has desc 
               >
                 <button
                   aria-checked="false"
-                  class="ant-switch basic-switch-wrapper css-g6dhbn css-dev-only-do-not-override-txh9fw ant-switch-disabled"
+                  class="ant-switch basic-switch-wrapper css-g6dhbn ant-switch-disabled"
                   disabled=""
                   id="params_bool3"
                   role="switch"
@@ -82,13 +82,13 @@ exports[`sqle/components/BackendForm render type is bool render layout is fullLi
       class="ant-form ant-form-horizontal css-dev-only-do-not-override-txh9fw"
     >
       <div
-        class="ant-form-item  css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+        class="ant-form-item css-1jlm9cy"
       >
         <div
-          class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+          class="ant-row ant-form-item-row"
         >
           <div
-            class="ant-col ant-col-24 ant-form-item-label css-dev-only-do-not-override-txh9fw"
+            class="ant-col ant-col-24 ant-form-item-label"
           >
             <label
               class=""
@@ -109,7 +109,7 @@ exports[`sqle/components/BackendForm render type is bool render layout is fullLi
             </label>
           </div>
           <div
-            class="ant-col ant-col-24 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+            class="ant-col ant-col-24 ant-form-item-control"
           >
             <div
               class="ant-form-item-control-input"
@@ -119,7 +119,7 @@ exports[`sqle/components/BackendForm render type is bool render layout is fullLi
               >
                 <button
                   aria-checked="false"
-                  class="ant-switch basic-switch-wrapper css-g6dhbn css-dev-only-do-not-override-txh9fw"
+                  class="ant-switch basic-switch-wrapper css-g6dhbn"
                   id="params_bool1"
                   role="switch"
                   type="button"
@@ -155,13 +155,13 @@ exports[`sqle/components/BackendForm render type is bool render layout is spaceB
       class="ant-form ant-form-horizontal css-dev-only-do-not-override-txh9fw"
     >
       <div
-        class="ant-form-item  css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+        class="ant-form-item css-1jlm9cy"
       >
         <div
-          class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+          class="ant-row ant-form-item-row"
         >
           <div
-            class="ant-col ant-col-11 ant-form-item-label css-dev-only-do-not-override-txh9fw"
+            class="ant-col ant-col-11 ant-form-item-label"
           >
             <label
               class=""
@@ -182,7 +182,7 @@ exports[`sqle/components/BackendForm render type is bool render layout is spaceB
             </label>
           </div>
           <div
-            class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+            class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control"
           >
             <div
               class="ant-form-item-control-input"
@@ -192,7 +192,7 @@ exports[`sqle/components/BackendForm render type is bool render layout is spaceB
               >
                 <button
                   aria-checked="false"
-                  class="ant-switch basic-switch-wrapper css-g6dhbn css-dev-only-do-not-override-txh9fw"
+                  class="ant-switch basic-switch-wrapper css-g6dhbn"
                   id="params_bool2"
                   role="switch"
                   type="button"
@@ -228,13 +228,13 @@ exports[`sqle/components/BackendForm render type is input render hidden is true 
       class="ant-form ant-form-horizontal css-dev-only-do-not-override-txh9fw"
     >
       <div
-        class="ant-form-item has-label-tip css-1jlm9cy css-dev-only-do-not-override-txh9fw ant-form-item-hidden"
+        class="ant-form-item has-label-tip css-1jlm9cy ant-form-item-hidden"
       >
         <div
-          class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+          class="ant-row ant-form-item-row"
         >
           <div
-            class="ant-col ant-col-11 ant-form-item-label css-dev-only-do-not-override-txh9fw"
+            class="ant-col ant-col-11 ant-form-item-label"
           >
             <label
               class=""
@@ -256,7 +256,7 @@ exports[`sqle/components/BackendForm render type is input render hidden is true 
             </label>
           </div>
           <div
-            class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+            class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control"
           >
             <div
               class="ant-form-item-control-input"
@@ -265,7 +265,7 @@ exports[`sqle/components/BackendForm render type is input render hidden is true 
                 class="ant-form-item-control-input-content"
               >
                 <input
-                  class="ant-input css-dev-only-do-not-override-ywkr0o basic-input-wrapper css-1pd1cd5"
+                  class="ant-input basic-input-wrapper css-1pd1cd5"
                   id="params_input1"
                   placeholder="请输入{{name}}"
                   type="text"
@@ -288,13 +288,13 @@ exports[`sqle/components/BackendForm render type is input render layout is fullL
       class="ant-form ant-form-horizontal css-dev-only-do-not-override-txh9fw"
     >
       <div
-        class="ant-form-item has-label-tip css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+        class="ant-form-item has-label-tip css-1jlm9cy"
       >
         <div
-          class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+          class="ant-row ant-form-item-row"
         >
           <div
-            class="ant-col ant-col-11 ant-form-item-label css-dev-only-do-not-override-txh9fw"
+            class="ant-col ant-col-11 ant-form-item-label"
           >
             <label
               class=""
@@ -316,7 +316,7 @@ exports[`sqle/components/BackendForm render type is input render layout is fullL
             </label>
           </div>
           <div
-            class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+            class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control"
           >
             <div
               class="ant-form-item-control-input"
@@ -325,7 +325,7 @@ exports[`sqle/components/BackendForm render type is input render layout is fullL
                 class="ant-form-item-control-input-content"
               >
                 <input
-                  class="ant-input css-dev-only-do-not-override-ywkr0o basic-input-wrapper css-1pd1cd5"
+                  class="ant-input basic-input-wrapper css-1pd1cd5"
                   id="params_input1"
                   placeholder="请输入{{name}}"
                   type="text"
@@ -348,13 +348,13 @@ exports[`sqle/components/BackendForm render type is input render layout is space
       class="ant-form ant-form-horizontal css-dev-only-do-not-override-txh9fw"
     >
       <div
-        class="ant-form-item has-label-tip css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+        class="ant-form-item has-label-tip css-1jlm9cy"
       >
         <div
-          class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+          class="ant-row ant-form-item-row"
         >
           <div
-            class="ant-col ant-col-11 ant-form-item-label css-dev-only-do-not-override-txh9fw"
+            class="ant-col ant-col-11 ant-form-item-label"
           >
             <label
               class=""
@@ -376,7 +376,7 @@ exports[`sqle/components/BackendForm render type is input render layout is space
             </label>
           </div>
           <div
-            class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+            class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control"
           >
             <div
               class="ant-form-item-control-input"
@@ -385,7 +385,7 @@ exports[`sqle/components/BackendForm render type is input render layout is space
                 class="ant-form-item-control-input-content"
               >
                 <input
-                  class="ant-input ant-input-disabled css-dev-only-do-not-override-ywkr0o basic-input-wrapper css-1pd1cd5"
+                  class="ant-input ant-input-disabled basic-input-wrapper css-1pd1cd5"
                   disabled=""
                   id="params_input2"
                   placeholder="请输入{{name}}"
@@ -409,13 +409,13 @@ exports[`sqle/components/BackendForm render type is password render form mode is
       class="ant-form ant-form-horizontal css-dev-only-do-not-override-txh9fw"
     >
       <div
-        class="ant-form-item has-label-tip css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+        class="ant-form-item has-label-tip css-1jlm9cy"
       >
         <div
-          class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+          class="ant-row ant-form-item-row"
         >
           <div
-            class="ant-col ant-col-11 ant-form-item-label css-dev-only-do-not-override-txh9fw"
+            class="ant-col ant-col-11 ant-form-item-label"
           >
             <label
               class=""
@@ -437,7 +437,7 @@ exports[`sqle/components/BackendForm render type is password render form mode is
             </label>
           </div>
           <div
-            class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+            class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control"
           >
             <div
               class="ant-form-item-control-input"
@@ -446,10 +446,10 @@ exports[`sqle/components/BackendForm render type is password render form mode is
                 class="ant-form-item-control-input-content"
               >
                 <span
-                  class="ant-input-affix-wrapper ant-input-password basic-input-wrapper css-1pd1cd5 css-dev-only-do-not-override-txh9fw"
+                  class="ant-input-affix-wrapper ant-input-password basic-input-wrapper css-1pd1cd5"
                 >
                   <input
-                    class="ant-input css-dev-only-do-not-override-txh9fw"
+                    class="ant-input"
                     id="params_input1"
                     placeholder="请输入{{name}}"
                     type="password"
@@ -500,13 +500,13 @@ exports[`sqle/components/BackendForm render type is password render layout is fu
       class="ant-form ant-form-horizontal css-dev-only-do-not-override-txh9fw"
     >
       <div
-        class="ant-form-item has-label-tip css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+        class="ant-form-item has-label-tip css-1jlm9cy"
       >
         <div
-          class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+          class="ant-row ant-form-item-row"
         >
           <div
-            class="ant-col ant-col-11 ant-form-item-label css-dev-only-do-not-override-txh9fw"
+            class="ant-col ant-col-11 ant-form-item-label"
           >
             <label
               class=""
@@ -528,7 +528,7 @@ exports[`sqle/components/BackendForm render type is password render layout is fu
             </label>
           </div>
           <div
-            class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+            class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control"
           >
             <div
               class="ant-form-item-control-input"
@@ -537,10 +537,10 @@ exports[`sqle/components/BackendForm render type is password render layout is fu
                 class="ant-form-item-control-input-content"
               >
                 <span
-                  class="ant-input-affix-wrapper ant-input-password basic-input-wrapper css-1pd1cd5 css-dev-only-do-not-override-txh9fw"
+                  class="ant-input-affix-wrapper ant-input-password basic-input-wrapper css-1pd1cd5"
                 >
                   <input
-                    class="ant-input css-dev-only-do-not-override-txh9fw"
+                    class="ant-input"
                     id="params_input1"
                     placeholder="请输入{{name}}"
                     type="password"
@@ -591,13 +591,13 @@ exports[`sqle/components/BackendForm render type is password render layout is sp
       class="ant-form ant-form-horizontal css-dev-only-do-not-override-txh9fw"
     >
       <div
-        class="ant-form-item has-label-tip css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+        class="ant-form-item has-label-tip css-1jlm9cy"
       >
         <div
-          class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+          class="ant-row ant-form-item-row"
         >
           <div
-            class="ant-col ant-col-11 ant-form-item-label css-dev-only-do-not-override-txh9fw"
+            class="ant-col ant-col-11 ant-form-item-label"
           >
             <label
               class=""
@@ -619,7 +619,7 @@ exports[`sqle/components/BackendForm render type is password render layout is sp
             </label>
           </div>
           <div
-            class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+            class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control"
           >
             <div
               class="ant-form-item-control-input"
@@ -628,10 +628,10 @@ exports[`sqle/components/BackendForm render type is password render layout is sp
                 class="ant-form-item-control-input-content"
               >
                 <span
-                  class="ant-input-affix-wrapper ant-input-affix-wrapper-disabled ant-input-password basic-input-wrapper css-1pd1cd5 css-dev-only-do-not-override-txh9fw"
+                  class="ant-input-affix-wrapper ant-input-affix-wrapper-disabled ant-input-password basic-input-wrapper css-1pd1cd5"
                 >
                   <input
-                    class="ant-input ant-input-disabled css-dev-only-do-not-override-txh9fw"
+                    class="ant-input ant-input-disabled"
                     disabled=""
                     id="params_input2"
                     placeholder="请输入{{name}}"
@@ -683,13 +683,13 @@ exports[`sqle/components/BackendForm render type is spaceBetween render layout i
       class="ant-form ant-form-horizontal css-dev-only-do-not-override-txh9fw"
     >
       <div
-        class="ant-form-item has-label-tip css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+        class="ant-form-item has-label-tip css-1jlm9cy"
       >
         <div
-          class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+          class="ant-row ant-form-item-row"
         >
           <div
-            class="ant-col ant-col-11 ant-form-item-label css-dev-only-do-not-override-txh9fw"
+            class="ant-col ant-col-11 ant-form-item-label"
           >
             <label
               class=""
@@ -711,7 +711,7 @@ exports[`sqle/components/BackendForm render type is spaceBetween render layout i
             </label>
           </div>
           <div
-            class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+            class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control"
           >
             <div
               class="ant-form-item-control-input"
@@ -720,7 +720,7 @@ exports[`sqle/components/BackendForm render type is spaceBetween render layout i
                 class="ant-form-item-control-input-content"
               >
                 <input
-                  class="ant-input css-dev-only-do-not-override-ywkr0o basic-input-wrapper css-1pd1cd5"
+                  class="ant-input basic-input-wrapper css-1pd1cd5"
                   id="params_int1"
                   placeholder="请输入{{name}}"
                   type="text"
@@ -743,13 +743,13 @@ exports[`sqle/components/BackendForm render type is spaceBetween render layout i
       class="ant-form ant-form-horizontal css-dev-only-do-not-override-txh9fw"
     >
       <div
-        class="ant-form-item has-label-tip css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+        class="ant-form-item has-label-tip css-1jlm9cy"
       >
         <div
-          class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+          class="ant-row ant-form-item-row"
         >
           <div
-            class="ant-col ant-col-11 ant-form-item-label css-dev-only-do-not-override-txh9fw"
+            class="ant-col ant-col-11 ant-form-item-label"
           >
             <label
               class=""
@@ -771,7 +771,7 @@ exports[`sqle/components/BackendForm render type is spaceBetween render layout i
             </label>
           </div>
           <div
-            class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+            class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control"
           >
             <div
               class="ant-form-item-control-input"
@@ -780,7 +780,7 @@ exports[`sqle/components/BackendForm render type is spaceBetween render layout i
                 class="ant-form-item-control-input-content"
               >
                 <input
-                  class="ant-input ant-input-disabled css-dev-only-do-not-override-ywkr0o basic-input-wrapper css-1pd1cd5"
+                  class="ant-input ant-input-disabled basic-input-wrapper css-1pd1cd5"
                   disabled=""
                   id="params_int2"
                   placeholder="请输入{{name}}"

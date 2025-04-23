@@ -10,7 +10,7 @@ exports[`ReportStatistics/DatabaseTypeOrder render chart snap 1`] = `
         class="icon-center-wrapper MuiBox-root css-0"
       >
         <div
-          class="css-dev-only-do-not-override-txh9fw ant-empty is-icon-loading css-19kysfv"
+          class="ant-empty is-icon-loading css-19kysfv"
         >
           <div
             class="ant-empty-image"
@@ -18,7 +18,7 @@ exports[`ReportStatistics/DatabaseTypeOrder render chart snap 1`] = `
             <div
               aria-busy="true"
               aria-live="polite"
-              class="ant-spin ant-spin-spinning css-dev-only-do-not-override-txh9fw"
+              class="ant-spin ant-spin-spinning"
             >
               <span
                 class="ant-spin-dot ant-spin-dot-spin"
@@ -62,6 +62,7 @@ exports[`ReportStatistics/DatabaseTypeOrder render chart snap 2`] = `
       >
         <div
           data-custom-params="{"className":"database-type-order-charts","data":{"name":"root","children":[{"name":"mysql","value":2},{"name":"oracle","value":10000}]},"legend":false,"colorField":"value","color":["#7470ED","#6094FC","#3DB5F1","#1ACEDB","#4BCCA6"],"rectStyle":{"lineWidth":4,"radius":4,"radiusTopLeft":4,"radiusTopRight":4,"radiusBottomRight":4,"radiusBottomLeft":4,"lineCap":"round","lineJoin":"round","fontSize":16},"label":{"style":{"fontFamily":"PlusJakartaSans Medium","textAlign":"center","fontSize":12,"fontWeight":600,"lineHeight":19,"opacity":0.8,"fill":"#fff"},"fields":["name","value"]},"tooltip":{"fields":["name","value"],"domStyles":{"g2-tooltip":{"width":"170px","height":"auto","borderRadius":"8px","background":"#fcfbf9","border":"1px solid #ebe9e8","boxShadow":"0 3px 12px 0 #332c1f1a","padding":"0 12px"}}},"theme":"light"}"
+          data-testid="mock-antd-plots"
         />
       </div>
     </div>
@@ -79,7 +80,7 @@ exports[`ReportStatistics/DatabaseTypeOrder render chart snap when api return em
         class="icon-center-wrapper MuiBox-root css-0"
       >
         <div
-          class="css-dev-only-do-not-override-txh9fw ant-empty is-icon-tips css-19kysfv"
+          class="ant-empty is-icon-tips css-19kysfv"
         >
           <div
             class="ant-empty-image"
@@ -133,7 +134,7 @@ exports[`ReportStatistics/DatabaseTypeOrder render chart snap when api return em
             class="ant-empty-footer"
           >
             <button
-              class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-text ant-btn-sm basic-button-wrapper css-geipcv"
+              class="ant-btn ant-btn-text ant-btn-sm basic-button-wrapper css-geipcv"
               type="button"
             >
               <span>
@@ -159,6 +160,7 @@ exports[`ReportStatistics/DatabaseTypeOrder render empty count for workflow 1`] 
       >
         <div
           data-custom-params="{"className":"database-type-order-charts","data":{"name":"root","children":[{"name":"","value":0},{"name":"","value":0}]},"legend":false,"colorField":"value","color":["#7470ED","#6094FC","#3DB5F1","#1ACEDB","#4BCCA6"],"rectStyle":{"lineWidth":4,"radius":4,"radiusTopLeft":4,"radiusTopRight":4,"radiusBottomRight":4,"radiusBottomLeft":4,"lineCap":"round","lineJoin":"round","fontSize":16},"label":{"style":{"fontFamily":"PlusJakartaSans Medium","textAlign":"center","fontSize":12,"fontWeight":600,"lineHeight":19,"opacity":0.8,"fill":"#fff"},"fields":["name","value"]},"tooltip":{"fields":["name","value"],"domStyles":{"g2-tooltip":{"width":"170px","height":"auto","borderRadius":"8px","background":"#fcfbf9","border":"1px solid #ebe9e8","boxShadow":"0 3px 12px 0 #332c1f1a","padding":"0 12px"}}},"theme":"light"}"
+          data-testid="mock-antd-plots"
         />
       </div>
     </div>

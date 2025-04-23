@@ -4,13 +4,13 @@ exports[`page/WorkflowTemplate/UserAvatar render user avatar 1`] = `
 <body>
   <div>
     <div
-      class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center work-flow-auth-avatar-wrapper basic-tooltips-wrapper css-4jbtl9"
+      class="ant-space ant-space-horizontal ant-space-align-center work-flow-auth-avatar-wrapper basic-tooltips-wrapper css-4jbtl9"
     >
       <div
         class="ant-space-item"
       >
         <span
-          class="ant-avatar ant-avatar-sm ant-avatar-circle work-flow-auth-avatar css-7njbce css-dev-only-do-not-override-txh9fw"
+          class="ant-avatar ant-avatar-sm ant-avatar-circle work-flow-auth-avatar css-7njbce"
         >
           <span
             class="ant-avatar-string"

@@ -4,10 +4,10 @@ exports[`sqle/GlobalRuleTemplate/RuleTemplateList render rule template list when
 <body>
   <div>
     <div
-      class="ant-table-wrapper actiontech-table-namespace css-fxd6ka css-dev-only-do-not-override-bj9uhl"
+      class="ant-table-wrapper actiontech-table-namespace css-fxd6ka"
     >
       <div
-        class="ant-spin-nested-loading css-dev-only-do-not-override-bj9uhl"
+        class="ant-spin-nested-loading"
       >
         <div
           class="ant-spin-container"
@@ -121,7 +121,7 @@ exports[`sqle/GlobalRuleTemplate/RuleTemplateList render rule template list when
                           href="/sqle/rule-manager/global-detail/default_template/MySQL"
                         >
                           <div
-                            class="ant-space css-dev-only-do-not-override-bj9uhl ant-space-horizontal ant-space-align-center"
+                            class="ant-space ant-space-horizontal ant-space-align-center"
                           >
                             <div
                               class="ant-space-item"
@@ -152,11 +152,11 @@ exports[`sqle/GlobalRuleTemplate/RuleTemplateList render rule template list when
                       >
                         <div
                           aria-label="test desc"
-                          class="ant-typography ant-typography-ellipsis ant-typography-single-line basic-typography-ellipsis css-wgj5gs css-dev-only-do-not-override-bj9uhl"
+                          class="ant-typography ant-typography-ellipsis ant-typography-single-line basic-typography-ellipsis css-wgj5gs"
                         >
                           test desc
                           <div
-                            aria-label="Copy"
+                            aria-label="复制"
                             class="ant-typography-copy"
                             role="button"
                             style="border: 0px; background: transparent; padding: 0px; line-height: inherit; display: inline-block;"
@@ -198,7 +198,7 @@ exports[`sqle/GlobalRuleTemplate/RuleTemplateList render rule template list when
                               ...
                             </span>
                             <div
-                              aria-label="Copy"
+                              aria-label="复制"
                               class="ant-typography-copy"
                               role="button"
                               style="border: 0px; background: transparent; padding: 0px; line-height: inherit; display: inline-block;"
@@ -251,7 +251,7 @@ exports[`sqle/GlobalRuleTemplate/RuleTemplateList render rule template list when
                           class="css-new95e"
                         >
                           <div
-                            class="ant-space css-dev-only-do-not-override-bj9uhl ant-space-horizontal ant-space-align-center"
+                            class="ant-space ant-space-horizontal ant-space-align-center"
                           >
                             <div
                               class="ant-space-item"
@@ -261,7 +261,7 @@ exports[`sqle/GlobalRuleTemplate/RuleTemplateList render rule template list when
                                 href="/sqle/rule-manager/global-update/default_template"
                               >
                                 <button
-                                  class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                  class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
                                   type="button"
                                 >
                                   <span>
@@ -274,7 +274,7 @@ exports[`sqle/GlobalRuleTemplate/RuleTemplateList render rule template list when
                               class="ant-space-item"
                             >
                               <button
-                                class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm ant-btn-dangerous actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                class="ant-btn ant-btn-default ant-btn-sm ant-btn-dangerous actiontech-table-actions-button basic-button-wrapper css-geipcv"
                                 type="button"
                               >
                                 <span>
@@ -284,7 +284,7 @@ exports[`sqle/GlobalRuleTemplate/RuleTemplateList render rule template list when
                             </div>
                           </div>
                           <button
-                            class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm ant-btn-icon-only actiontech-table-actions-button actiontech-table-actions-more-button basic-button-wrapper css-geipcv"
+                            class="ant-btn ant-btn-default ant-btn-sm ant-btn-icon-only actiontech-table-actions-button actiontech-table-actions-more-button basic-button-wrapper css-geipcv"
                             type="button"
                           >
                             <span
@@ -318,7 +318,7 @@ exports[`sqle/GlobalRuleTemplate/RuleTemplateList render rule template list when
                           href="/sqle/rule-manager/global-detail/global_test/MySQL"
                         >
                           <div
-                            class="ant-space css-dev-only-do-not-override-bj9uhl ant-space-horizontal ant-space-align-center"
+                            class="ant-space ant-space-horizontal ant-space-align-center"
                           >
                             <div
                               class="ant-space-item"
@@ -372,7 +372,7 @@ exports[`sqle/GlobalRuleTemplate/RuleTemplateList render rule template list when
                           class="css-new95e"
                         >
                           <div
-                            class="ant-space css-dev-only-do-not-override-bj9uhl ant-space-horizontal ant-space-align-center"
+                            class="ant-space ant-space-horizontal ant-space-align-center"
                           >
                             <div
                               class="ant-space-item"
@@ -382,7 +382,7 @@ exports[`sqle/GlobalRuleTemplate/RuleTemplateList render rule template list when
                                 href="/sqle/rule-manager/global-update/global_test"
                               >
                                 <button
-                                  class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                  class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
                                   type="button"
                                 >
                                   <span>
@@ -395,7 +395,7 @@ exports[`sqle/GlobalRuleTemplate/RuleTemplateList render rule template list when
                               class="ant-space-item"
                             >
                               <button
-                                class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm ant-btn-dangerous actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                class="ant-btn ant-btn-default ant-btn-sm ant-btn-dangerous actiontech-table-actions-button basic-button-wrapper css-geipcv"
                                 type="button"
                               >
                                 <span>
@@ -405,7 +405,7 @@ exports[`sqle/GlobalRuleTemplate/RuleTemplateList render rule template list when
                             </div>
                           </div>
                           <button
-                            class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm ant-btn-icon-only actiontech-table-actions-button actiontech-table-actions-more-button basic-button-wrapper css-geipcv"
+                            class="ant-btn ant-btn-default ant-btn-sm ant-btn-icon-only actiontech-table-actions-button actiontech-table-actions-more-button basic-button-wrapper css-geipcv"
                             type="button"
                           >
                             <span
@@ -454,7 +454,7 @@ exports[`sqle/GlobalRuleTemplate/RuleTemplateList render rule template list when
                           class="css-new95e"
                         >
                           <div
-                            class="ant-space css-dev-only-do-not-override-bj9uhl ant-space-horizontal ant-space-align-center"
+                            class="ant-space ant-space-horizontal ant-space-align-center"
                           >
                             <div
                               class="ant-space-item"
@@ -464,7 +464,7 @@ exports[`sqle/GlobalRuleTemplate/RuleTemplateList render rule template list when
                                 href="/sqle/rule-manager/global-update/"
                               >
                                 <button
-                                  class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                  class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
                                   type="button"
                                 >
                                   <span>
@@ -477,7 +477,7 @@ exports[`sqle/GlobalRuleTemplate/RuleTemplateList render rule template list when
                               class="ant-space-item"
                             >
                               <button
-                                class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm ant-btn-dangerous actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                class="ant-btn ant-btn-default ant-btn-sm ant-btn-dangerous actiontech-table-actions-button basic-button-wrapper css-geipcv"
                                 type="button"
                               >
                                 <span>
@@ -487,7 +487,7 @@ exports[`sqle/GlobalRuleTemplate/RuleTemplateList render rule template list when
                             </div>
                           </div>
                           <button
-                            class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm ant-btn-icon-only actiontech-table-actions-button actiontech-table-actions-more-button basic-button-wrapper css-geipcv"
+                            class="ant-btn ant-btn-default ant-btn-sm ant-btn-icon-only actiontech-table-actions-button actiontech-table-actions-more-button basic-button-wrapper css-geipcv"
                             type="button"
                           >
                             <span
@@ -516,7 +516,7 @@ exports[`sqle/GlobalRuleTemplate/RuleTemplateList render rule template list when
             </div>
           </div>
           <ul
-            class="ant-pagination ant-table-pagination ant-table-pagination-right actiontech-table-pagination actiontech-table-pagination-fixed css-dev-only-do-not-override-bj9uhl"
+            class="ant-pagination ant-table-pagination ant-table-pagination-right actiontech-table-pagination actiontech-table-pagination-fixed"
           >
             <li
               class="ant-pagination-total-text"
@@ -528,7 +528,7 @@ exports[`sqle/GlobalRuleTemplate/RuleTemplateList render rule template list when
             <li
               aria-disabled="true"
               class="ant-pagination-prev ant-pagination-disabled"
-              title="Previous Page"
+              title="上一页"
             >
               <button
                 class="ant-pagination-item-link"
@@ -571,7 +571,7 @@ exports[`sqle/GlobalRuleTemplate/RuleTemplateList render rule template list when
             <li
               aria-disabled="true"
               class="ant-pagination-next ant-pagination-disabled"
-              title="Next Page"
+              title="下一页"
             >
               <button
                 class="ant-pagination-item-link"
@@ -604,8 +604,8 @@ exports[`sqle/GlobalRuleTemplate/RuleTemplateList render rule template list when
               class="ant-pagination-options"
             >
               <div
-                aria-label="Page Size"
-                class="ant-select ant-pagination-options-size-changer css-dev-only-do-not-override-bj9uhl ant-select-single ant-select-show-arrow ant-select-show-search"
+                aria-label="页码"
+                class="ant-select ant-pagination-options-size-changer ant-select-single ant-select-show-arrow ant-select-show-search"
               >
                 <div
                   class="ant-select-selector"
@@ -619,7 +619,7 @@ exports[`sqle/GlobalRuleTemplate/RuleTemplateList render rule template list when
                       aria-controls="rc_select_TEST_OR_SSR_list"
                       aria-expanded="false"
                       aria-haspopup="listbox"
-                      aria-label="Page Size"
+                      aria-label="页码"
                       aria-owns="rc_select_TEST_OR_SSR_list"
                       autocomplete="off"
                       class="ant-select-selection-search-input"
@@ -631,9 +631,9 @@ exports[`sqle/GlobalRuleTemplate/RuleTemplateList render rule template list when
                   </span>
                   <span
                     class="ant-select-selection-item"
-                    title="20 / page"
+                    title="20 条/页"
                   >
-                    20 / page
+                    20 条/页
                   </span>
                 </div>
                 <span
@@ -676,10 +676,10 @@ exports[`sqle/GlobalRuleTemplate/RuleTemplateList render rule template list when
 <body>
   <div>
     <div
-      class="ant-table-wrapper actiontech-table-namespace css-fxd6ka css-dev-only-do-not-override-bj9uhl"
+      class="ant-table-wrapper actiontech-table-namespace css-fxd6ka"
     >
       <div
-        class="ant-spin-nested-loading css-dev-only-do-not-override-bj9uhl"
+        class="ant-spin-nested-loading"
       >
         <div
           class="ant-spin-container"
@@ -770,7 +770,7 @@ exports[`sqle/GlobalRuleTemplate/RuleTemplateList render rule template list when
                           href="/sqle/rule-manager/global-detail/default_template/MySQL"
                         >
                           <div
-                            class="ant-space css-dev-only-do-not-override-bj9uhl ant-space-horizontal ant-space-align-center"
+                            class="ant-space ant-space-horizontal ant-space-align-center"
                           >
                             <div
                               class="ant-space-item"
@@ -801,11 +801,11 @@ exports[`sqle/GlobalRuleTemplate/RuleTemplateList render rule template list when
                       >
                         <div
                           aria-label="test desc"
-                          class="ant-typography ant-typography-ellipsis ant-typography-single-line basic-typography-ellipsis css-wgj5gs css-dev-only-do-not-override-bj9uhl"
+                          class="ant-typography ant-typography-ellipsis ant-typography-single-line basic-typography-ellipsis css-wgj5gs"
                         >
                           test desc
                           <div
-                            aria-label="Copy"
+                            aria-label="复制"
                             class="ant-typography-copy"
                             role="button"
                             style="border: 0px; background: transparent; padding: 0px; line-height: inherit; display: inline-block;"
@@ -847,7 +847,7 @@ exports[`sqle/GlobalRuleTemplate/RuleTemplateList render rule template list when
                               ...
                             </span>
                             <div
-                              aria-label="Copy"
+                              aria-label="复制"
                               class="ant-typography-copy"
                               role="button"
                               style="border: 0px; background: transparent; padding: 0px; line-height: inherit; display: inline-block;"
@@ -904,7 +904,7 @@ exports[`sqle/GlobalRuleTemplate/RuleTemplateList render rule template list when
                           href="/sqle/rule-manager/global-detail/global_test/MySQL"
                         >
                           <div
-                            class="ant-space css-dev-only-do-not-override-bj9uhl ant-space-horizontal ant-space-align-center"
+                            class="ant-space ant-space-horizontal ant-space-align-center"
                           >
                             <div
                               class="ant-space-item"
@@ -976,7 +976,7 @@ exports[`sqle/GlobalRuleTemplate/RuleTemplateList render rule template list when
             </div>
           </div>
           <ul
-            class="ant-pagination ant-table-pagination ant-table-pagination-right actiontech-table-pagination actiontech-table-pagination-fixed css-dev-only-do-not-override-bj9uhl"
+            class="ant-pagination ant-table-pagination ant-table-pagination-right actiontech-table-pagination actiontech-table-pagination-fixed"
           >
             <li
               class="ant-pagination-total-text"
@@ -988,7 +988,7 @@ exports[`sqle/GlobalRuleTemplate/RuleTemplateList render rule template list when
             <li
               aria-disabled="true"
               class="ant-pagination-prev ant-pagination-disabled"
-              title="Previous Page"
+              title="上一页"
             >
               <button
                 class="ant-pagination-item-link"
@@ -1031,7 +1031,7 @@ exports[`sqle/GlobalRuleTemplate/RuleTemplateList render rule template list when
             <li
               aria-disabled="true"
               class="ant-pagination-next ant-pagination-disabled"
-              title="Next Page"
+              title="下一页"
             >
               <button
                 class="ant-pagination-item-link"
@@ -1064,8 +1064,8 @@ exports[`sqle/GlobalRuleTemplate/RuleTemplateList render rule template list when
               class="ant-pagination-options"
             >
               <div
-                aria-label="Page Size"
-                class="ant-select ant-pagination-options-size-changer css-dev-only-do-not-override-bj9uhl ant-select-single ant-select-show-arrow ant-select-show-search"
+                aria-label="页码"
+                class="ant-select ant-pagination-options-size-changer ant-select-single ant-select-show-arrow ant-select-show-search"
               >
                 <div
                   class="ant-select-selector"
@@ -1079,7 +1079,7 @@ exports[`sqle/GlobalRuleTemplate/RuleTemplateList render rule template list when
                       aria-controls="rc_select_TEST_OR_SSR_list"
                       aria-expanded="false"
                       aria-haspopup="listbox"
-                      aria-label="Page Size"
+                      aria-label="页码"
                       aria-owns="rc_select_TEST_OR_SSR_list"
                       autocomplete="off"
                       class="ant-select-selection-search-input"
@@ -1091,9 +1091,9 @@ exports[`sqle/GlobalRuleTemplate/RuleTemplateList render rule template list when
                   </span>
                   <span
                     class="ant-select-selection-item"
-                    title="20 / page"
+                    title="20 条/页"
                   >
-                    20 / page
+                    20 条/页
                   </span>
                 </div>
                 <span
@@ -1136,10 +1136,10 @@ exports[`sqle/GlobalRuleTemplate/RuleTemplateList should render empty tips when 
 <body>
   <div>
     <div
-      class="ant-table-wrapper actiontech-table-namespace css-fxd6ka css-dev-only-do-not-override-bj9uhl"
+      class="ant-table-wrapper actiontech-table-namespace css-fxd6ka"
     >
       <div
-        class="ant-spin-nested-loading css-dev-only-do-not-override-bj9uhl"
+        class="ant-spin-nested-loading"
       >
         <div
           class="ant-spin-container"
