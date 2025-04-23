@@ -3,16 +3,16 @@
 exports[`test HighPriorityConditions should match snapshot 1`] = `
 <div>
   <form
-    class="ant-form ant-form-horizontal css-dev-only-do-not-override-txh9fw"
+    class="ant-form ant-form-horizontal"
   >
     <div
-      class="ant-form-item has-required-style css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+      class="ant-form-item has-required-style css-1jlm9cy"
     >
       <div
-        class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+        class="ant-row ant-form-item-row"
       >
         <div
-          class="ant-col ant-col-11 ant-form-item-label css-dev-only-do-not-override-txh9fw"
+          class="ant-col ant-col-11 ant-form-item-label"
         >
           <label
             class=""
@@ -23,7 +23,7 @@ exports[`test HighPriorityConditions should match snapshot 1`] = `
           </label>
         </div>
         <div
-          class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+          class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control"
         >
           <div
             class="ant-form-item-control-input"
@@ -33,7 +33,7 @@ exports[`test HighPriorityConditions should match snapshot 1`] = `
             >
               <button
                 aria-checked="false"
-                class="ant-switch basic-switch-wrapper css-g6dhbn css-dev-only-do-not-override-txh9fw"
+                class="ant-switch basic-switch-wrapper css-g6dhbn"
                 id="prefixPath_markHighPrioritySql"
                 role="switch"
                 type="button"
@@ -64,16 +64,16 @@ exports[`test HighPriorityConditions should match snapshot 1`] = `
 exports[`test HighPriorityConditions should match snapshot 2`] = `
 <div>
   <form
-    class="ant-form ant-form-horizontal css-dev-only-do-not-override-txh9fw"
+    class="ant-form ant-form-horizontal"
   >
     <div
-      class="ant-form-item has-required-style css-1jlm9cy css-dev-only-do-not-override-txh9fw ant-form-item-has-success"
+      class="ant-form-item has-required-style css-1jlm9cy ant-form-item-has-success"
     >
       <div
-        class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+        class="ant-row ant-form-item-row"
       >
         <div
-          class="ant-col ant-col-11 ant-form-item-label css-dev-only-do-not-override-txh9fw"
+          class="ant-col ant-col-11 ant-form-item-label"
         >
           <label
             class=""
@@ -84,7 +84,7 @@ exports[`test HighPriorityConditions should match snapshot 2`] = `
           </label>
         </div>
         <div
-          class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+          class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control"
         >
           <div
             class="ant-form-item-control-input"
@@ -94,7 +94,7 @@ exports[`test HighPriorityConditions should match snapshot 2`] = `
             >
               <button
                 aria-checked="true"
-                class="ant-switch basic-switch-wrapper css-g6dhbn css-dev-only-do-not-override-txh9fw ant-switch-checked"
+                class="ant-switch basic-switch-wrapper css-g6dhbn ant-switch-checked"
                 id="prefixPath_markHighPrioritySql"
                 role="switch"
                 type="button"
@@ -119,15 +119,15 @@ exports[`test HighPriorityConditions should match snapshot 2`] = `
       </div>
     </div>
     <div
-      class="ant-row css-dev-only-do-not-override-txh9fw"
+      class="ant-row"
       style="margin-left: -6px; margin-right: -6px;"
     >
       <div
-        class="ant-col ant-col-5 ant-col-offset-9 css-dev-only-do-not-override-txh9fw"
+        class="ant-col ant-col-5 ant-col-offset-9"
         style="padding-left: 6px; padding-right: 6px;"
       >
         <span
-          class="ant-tag ant-tag-blue ant-tag-borderless basic-tag-wrapper basic-default-tag-wrapper css-9plkpp css-dev-only-do-not-override-txh9fw"
+          class="ant-tag ant-tag-blue ant-tag-borderless basic-tag-wrapper basic-default-tag-wrapper css-9plkpp"
         >
           <svg
             height="16"
@@ -142,7 +142,7 @@ exports[`test HighPriorityConditions should match snapshot 2`] = `
           </svg>
           <span>
             <div
-              class="ant-typography ant-typography-ellipsis ant-typography-single-line ant-typography-ellipsis-single-line basic-typography-ellipsis css-wgj5gs css-dev-only-do-not-override-txh9fw"
+              class="ant-typography ant-typography-ellipsis ant-typography-single-line ant-typography-ellipsis-single-line basic-typography-ellipsis css-wgj5gs"
             >
               审核等级
             </div>
@@ -150,17 +150,17 @@ exports[`test HighPriorityConditions should match snapshot 2`] = `
         </span>
       </div>
       <div
-        class="ant-col ant-col-3 css-dev-only-do-not-override-txh9fw"
+        class="ant-col ant-col-3"
         style="padding-left: 6px; padding-right: 6px;"
       >
         <div
-          class="ant-form-item css-15d6abf css-dev-only-do-not-override-txh9fw"
+          class="ant-form-item css-15d6abf"
         >
           <div
-            class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+            class="ant-row ant-form-item-row"
           >
             <div
-              class="ant-col ant-col-24 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+              class="ant-col ant-col-24 ant-form-item-control"
             >
               <div
                 class="ant-form-item-control-input"
@@ -170,7 +170,7 @@ exports[`test HighPriorityConditions should match snapshot 2`] = `
                 >
                   <div
                     aria-required="true"
-                    class="ant-select ant-select-in-form-item basic-select-wrapper css-iy4o4x css-dev-only-do-not-override-v9sov3 ant-select-single ant-select-show-arrow"
+                    class="ant-select ant-select-in-form-item basic-select-wrapper css-iy4o4x ant-select-single ant-select-show-arrow"
                     data-testid="audit_level_operator"
                   >
                     <div
@@ -239,17 +239,17 @@ exports[`test HighPriorityConditions should match snapshot 2`] = `
         </div>
       </div>
       <div
-        class="ant-col ant-col-5 css-dev-only-do-not-override-txh9fw"
+        class="ant-col ant-col-5"
         style="padding-left: 6px; padding-right: 6px;"
       >
         <div
-          class="ant-form-item css-15d6abf css-dev-only-do-not-override-txh9fw"
+          class="ant-form-item css-15d6abf"
         >
           <div
-            class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+            class="ant-row ant-form-item-row"
           >
             <div
-              class="ant-col ant-col-24 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+              class="ant-col ant-col-24 ant-form-item-control"
             >
               <div
                 class="ant-form-item-control-input"
@@ -259,7 +259,7 @@ exports[`test HighPriorityConditions should match snapshot 2`] = `
                 >
                   <div
                     aria-required="true"
-                    class="ant-select ant-select-in-form-item basic-select-wrapper css-iy4o4x css-dev-only-do-not-override-v9sov3 ant-select-single ant-select-show-arrow"
+                    class="ant-select ant-select-in-form-item basic-select-wrapper css-iy4o4x ant-select-single ant-select-show-arrow"
                     data-testid="audit_level_value"
                   >
                     <div
@@ -328,18 +328,18 @@ exports[`test HighPriorityConditions should match snapshot 2`] = `
         </div>
       </div>
       <div
-        class="ant-divider css-dev-only-do-not-override-txh9fw ant-divider-vertical"
+        class="ant-divider ant-divider-vertical"
         role="separator"
         style="height: 36px; margin-left: 6px; margin-right: 12px;"
       />
       <div
-        class="ant-form-item css-15d6abf css-dev-only-do-not-override-txh9fw"
+        class="ant-form-item css-15d6abf"
       >
         <div
-          class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+          class="ant-row ant-form-item-row"
         >
           <div
-            class="ant-col ant-col-24 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+            class="ant-col ant-col-24 ant-form-item-control"
           >
             <div
               class="ant-form-item-control-input"
@@ -349,7 +349,7 @@ exports[`test HighPriorityConditions should match snapshot 2`] = `
               >
                 <button
                   aria-checked="true"
-                  class="ant-switch ant-switch-small basic-switch-wrapper css-g6dhbn css-dev-only-do-not-override-txh9fw ant-switch-checked"
+                  class="ant-switch ant-switch-small basic-switch-wrapper css-g6dhbn ant-switch-checked"
                   data-testid="audit_level_switch"
                   id="prefixPath_prioritySqlConditions_audit_level_checked"
                   role="switch"
@@ -376,15 +376,15 @@ exports[`test HighPriorityConditions should match snapshot 2`] = `
       </div>
     </div>
     <div
-      class="ant-row css-dev-only-do-not-override-txh9fw"
+      class="ant-row"
       style="margin-left: -6px; margin-right: -6px;"
     >
       <div
-        class="ant-col ant-col-5 ant-col-offset-9 css-dev-only-do-not-override-txh9fw"
+        class="ant-col ant-col-5 ant-col-offset-9"
         style="padding-left: 6px; padding-right: 6px;"
       >
         <span
-          class="ant-tag ant-tag-blue ant-tag-borderless basic-tag-wrapper basic-default-tag-wrapper css-9plkpp css-dev-only-do-not-override-txh9fw"
+          class="ant-tag ant-tag-blue ant-tag-borderless basic-tag-wrapper basic-default-tag-wrapper css-9plkpp"
         >
           <svg
             height="16"
@@ -399,7 +399,7 @@ exports[`test HighPriorityConditions should match snapshot 2`] = `
           </svg>
           <span>
             <div
-              class="ant-typography ant-typography-ellipsis ant-typography-single-line ant-typography-ellipsis-single-line basic-typography-ellipsis css-wgj5gs css-dev-only-do-not-override-txh9fw"
+              class="ant-typography ant-typography-ellipsis ant-typography-single-line ant-typography-ellipsis-single-line basic-typography-ellipsis css-wgj5gs"
             >
               审核时间
             </div>
@@ -407,17 +407,17 @@ exports[`test HighPriorityConditions should match snapshot 2`] = `
         </span>
       </div>
       <div
-        class="ant-col ant-col-3 css-dev-only-do-not-override-txh9fw"
+        class="ant-col ant-col-3"
         style="padding-left: 6px; padding-right: 6px;"
       >
         <div
-          class="ant-form-item css-15d6abf css-dev-only-do-not-override-txh9fw"
+          class="ant-form-item css-15d6abf"
         >
           <div
-            class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+            class="ant-row ant-form-item-row"
           >
             <div
-              class="ant-col ant-col-24 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+              class="ant-col ant-col-24 ant-form-item-control"
             >
               <div
                 class="ant-form-item-control-input"
@@ -427,7 +427,7 @@ exports[`test HighPriorityConditions should match snapshot 2`] = `
                 >
                   <input
                     aria-required="true"
-                    class="ant-input css-dev-only-do-not-override-ywkr0o basic-input-wrapper css-1pd1cd5"
+                    class="ant-input basic-input-wrapper css-1pd1cd5"
                     data-testid="audit_time_operator"
                     id="prefixPath_prioritySqlConditions_audit_time_operator"
                     placeholder=""
@@ -441,17 +441,17 @@ exports[`test HighPriorityConditions should match snapshot 2`] = `
         </div>
       </div>
       <div
-        class="ant-col ant-col-5 css-dev-only-do-not-override-txh9fw"
+        class="ant-col ant-col-5"
         style="padding-left: 6px; padding-right: 6px;"
       >
         <div
-          class="ant-form-item css-15d6abf css-dev-only-do-not-override-txh9fw"
+          class="ant-form-item css-15d6abf"
         >
           <div
-            class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+            class="ant-row ant-form-item-row"
           >
             <div
-              class="ant-col ant-col-24 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+              class="ant-col ant-col-24 ant-form-item-control"
             >
               <div
                 class="ant-form-item-control-input"
@@ -461,7 +461,7 @@ exports[`test HighPriorityConditions should match snapshot 2`] = `
                 >
                   <input
                     aria-required="true"
-                    class="ant-input css-dev-only-do-not-override-ywkr0o basic-input-wrapper css-1pd1cd5"
+                    class="ant-input basic-input-wrapper css-1pd1cd5"
                     data-testid="audit_time_value"
                     id="prefixPath_prioritySqlConditions_audit_time_value"
                     placeholder="请输入阈值"
@@ -475,18 +475,18 @@ exports[`test HighPriorityConditions should match snapshot 2`] = `
         </div>
       </div>
       <div
-        class="ant-divider css-dev-only-do-not-override-txh9fw ant-divider-vertical"
+        class="ant-divider ant-divider-vertical"
         role="separator"
         style="height: 36px; margin-left: 6px; margin-right: 12px;"
       />
       <div
-        class="ant-form-item css-15d6abf css-dev-only-do-not-override-txh9fw"
+        class="ant-form-item css-15d6abf"
       >
         <div
-          class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+          class="ant-row ant-form-item-row"
         >
           <div
-            class="ant-col ant-col-24 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+            class="ant-col ant-col-24 ant-form-item-control"
           >
             <div
               class="ant-form-item-control-input"
@@ -496,7 +496,7 @@ exports[`test HighPriorityConditions should match snapshot 2`] = `
               >
                 <button
                   aria-checked="true"
-                  class="ant-switch ant-switch-small basic-switch-wrapper css-g6dhbn css-dev-only-do-not-override-txh9fw ant-switch-checked"
+                  class="ant-switch ant-switch-small basic-switch-wrapper css-g6dhbn ant-switch-checked"
                   data-testid="audit_time_switch"
                   id="prefixPath_prioritySqlConditions_audit_time_checked"
                   role="switch"
@@ -529,16 +529,16 @@ exports[`test HighPriorityConditions should match snapshot 2`] = `
 exports[`test HighPriorityConditions should match snapshot when submitLoading is equal true 1`] = `
 <div>
   <form
-    class="ant-form ant-form-horizontal css-dev-only-do-not-override-txh9fw"
+    class="ant-form ant-form-horizontal"
   >
     <div
-      class="ant-form-item has-required-style css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+      class="ant-form-item has-required-style css-1jlm9cy"
     >
       <div
-        class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+        class="ant-row ant-form-item-row"
       >
         <div
-          class="ant-col ant-col-11 ant-form-item-label css-dev-only-do-not-override-txh9fw"
+          class="ant-col ant-col-11 ant-form-item-label"
         >
           <label
             class=""
@@ -549,7 +549,7 @@ exports[`test HighPriorityConditions should match snapshot when submitLoading is
           </label>
         </div>
         <div
-          class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+          class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control"
         >
           <div
             class="ant-form-item-control-input"
@@ -559,7 +559,7 @@ exports[`test HighPriorityConditions should match snapshot when submitLoading is
             >
               <button
                 aria-checked="false"
-                class="ant-switch basic-switch-wrapper css-g6dhbn css-dev-only-do-not-override-txh9fw ant-switch-disabled"
+                class="ant-switch basic-switch-wrapper css-g6dhbn ant-switch-disabled"
                 disabled=""
                 id="prefixPath_markHighPrioritySql"
                 role="switch"

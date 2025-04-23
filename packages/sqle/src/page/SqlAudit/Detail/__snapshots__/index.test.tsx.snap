@@ -4,7 +4,7 @@ exports[`sqle/SqlAudit/Detail should match snap shot 1`] = `
 <body>
   <div>
     <div
-      class="ant-spin-nested-loading css-dev-only-do-not-override-txh9fw"
+      class="ant-spin-nested-loading"
     >
       <div
         class="ant-spin-container"
@@ -19,7 +19,7 @@ exports[`sqle/SqlAudit/Detail should match snap shot 1`] = `
               href="/sqle/project/700300/sql-audit"
             >
               <button
-                class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default basic-button-wrapper css-geipcv"
+                class="ant-btn ant-btn-default basic-button-wrapper css-geipcv"
                 type="button"
               >
                 <span
@@ -50,7 +50,7 @@ exports[`sqle/SqlAudit/Detail should match snap shot 1`] = `
               href="/sqle/project/700300/sql-audit/create"
             >
               <button
-                class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary basic-button-wrapper css-geipcv"
+                class="ant-btn ant-btn-primary basic-button-wrapper css-geipcv"
                 type="button"
               >
                 <span
@@ -102,7 +102,7 @@ exports[`sqle/SqlAudit/Detail should match snap shot 1`] = `
               审核状态
               ：
               <span
-                class="ant-tag ant-tag-green basic-tag-wrapper basic-small-tag-wrapper css-13qu6j1 css-dev-only-do-not-override-txh9fw"
+                class="ant-tag ant-tag-green basic-tag-wrapper basic-small-tag-wrapper css-13qu6j1"
               >
                 审核成功
               </span>
@@ -113,7 +113,7 @@ exports[`sqle/SqlAudit/Detail should match snap shot 1`] = `
               业务标签
               ：
               <span
-                class="ant-tag ant-tag-geekblue basic-tag-wrapper basic-small-tag-wrapper css-8cend7 css-dev-only-do-not-override-txh9fw"
+                class="ant-tag ant-tag-geekblue basic-tag-wrapper basic-small-tag-wrapper css-8cend7"
               >
                 test
               </span>
@@ -124,11 +124,11 @@ exports[`sqle/SqlAudit/Detail should match snap shot 1`] = `
           class="css-avbjmz"
         >
           <div
-            class="ant-row ant-row-space-between css-156vlto css-dev-only-do-not-override-txh9fw"
+            class="ant-row ant-row-space-between css-156vlto"
           >
             <div />
             <div
-              class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+              class="ant-space ant-space-horizontal ant-space-align-center"
             >
               <div
                 class="ant-space-item"
@@ -149,7 +149,7 @@ exports[`sqle/SqlAudit/Detail should match snap shot 1`] = `
                 style="margin-right: 4px;"
               >
                 <div
-                  class="ant-divider css-dev-only-do-not-override-txh9fw ant-divider-vertical"
+                  class="ant-divider ant-divider-vertical"
                   role="separator"
                   style="height: 28px;"
                 />
@@ -158,7 +158,7 @@ exports[`sqle/SqlAudit/Detail should match snap shot 1`] = `
                 class="ant-space-item"
               >
                 <button
-                  class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default ant-btn-sm basic-button-wrapper css-geipcv"
+                  class="ant-btn ant-btn-default ant-btn-sm basic-button-wrapper css-geipcv"
                   type="button"
                 >
                   <span
@@ -176,7 +176,7 @@ exports[`sqle/SqlAudit/Detail should match snap shot 1`] = `
                     </svg>
                   </span>
                   <div
-                    class="ant-space css-dev-only-do-not-override-674gwq ant-space-horizontal ant-space-align-center"
+                    class="ant-space ant-space-horizontal ant-space-align-center"
                   >
                     <div
                       class="ant-space-item"
@@ -242,7 +242,7 @@ exports[`sqle/SqlAudit/Detail should match snap shot 1`] = `
               </div>
             </div>
             <div
-              class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center audit-result-info"
+              class="ant-space ant-space-horizontal ant-space-align-center audit-result-info"
             >
               <div
                 class="ant-space-item"
@@ -304,10 +304,10 @@ exports[`sqle/SqlAudit/Detail should match snap shot 1`] = `
             </div>
           </div>
           <div
-            class="ant-table-wrapper actiontech-table-namespace css-fxd6ka css-dev-only-do-not-override-bj9uhl"
+            class="ant-table-wrapper actiontech-table-namespace css-fxd6ka"
           >
             <div
-              class="ant-spin-nested-loading css-dev-only-do-not-override-bj9uhl"
+              class="ant-spin-nested-loading"
             >
               <div
                 class="ant-spin-container"
@@ -443,7 +443,7 @@ exports[`sqle/SqlAudit/Detail should match snap shot 1`] = `
                                 class="actiontech-sql-snippet-renderer-wrapper css-dz7fl9"
                               >
                                 <div
-                                  class="ant-typography ant-typography-ellipsis ant-typography-single-line ant-typography-ellipsis-single-line margin-bottom-0 css-dev-only-do-not-override-bj9uhl"
+                                  class="ant-typography ant-typography-ellipsis ant-typography-single-line ant-typography-ellipsis-single-line margin-bottom-0"
                                 >
                                   <span>
                                     <span
@@ -490,7 +490,7 @@ exports[`sqle/SqlAudit/Detail should match snap shot 1`] = `
                             >
                               <div>
                                 <div
-                                  class="ant-space css-dev-only-do-not-override-bj9uhl ant-space-horizontal ant-space-align-center"
+                                  class="ant-space ant-space-horizontal ant-space-align-center"
                                 >
                                   <div
                                     class="ant-space-item"
@@ -515,11 +515,11 @@ exports[`sqle/SqlAudit/Detail should match snap shot 1`] = `
                             >
                               <div
                                 aria-label="test"
-                                class="ant-typography ant-typography-ellipsis ant-typography-single-line css-1am9q1l css-dev-only-do-not-override-bj9uhl"
+                                class="ant-typography ant-typography-ellipsis ant-typography-single-line css-1am9q1l"
                               >
                                 test
                                 <div
-                                  aria-label="Edit"
+                                  aria-label="编辑"
                                   class="ant-typography-edit"
                                   role="button"
                                   style="border: 0px; background: transparent; padding: 0px; line-height: inherit; display: inline-block;"
@@ -555,7 +555,7 @@ exports[`sqle/SqlAudit/Detail should match snap shot 1`] = `
                                     ...
                                   </span>
                                   <div
-                                    aria-label="Edit"
+                                    aria-label="编辑"
                                     class="ant-typography-edit"
                                     role="button"
                                     style="border: 0px; background: transparent; padding: 0px; line-height: inherit; display: inline-block;"
@@ -586,14 +586,14 @@ exports[`sqle/SqlAudit/Detail should match snap shot 1`] = `
                                 class="css-new95e"
                               >
                                 <div
-                                  class="ant-space css-dev-only-do-not-override-bj9uhl ant-space-horizontal ant-space-align-center"
+                                  class="ant-space ant-space-horizontal ant-space-align-center"
                                 >
                                   <div
                                     class="ant-space-item"
                                     style="margin-right: 8px;"
                                   >
                                     <button
-                                      class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                      class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
                                       type="button"
                                     >
                                       <span>
@@ -606,7 +606,7 @@ exports[`sqle/SqlAudit/Detail should match snap shot 1`] = `
                                     style="margin-right: 8px;"
                                   >
                                     <button
-                                      class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                      class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
                                       type="button"
                                     >
                                       <span>
@@ -618,7 +618,7 @@ exports[`sqle/SqlAudit/Detail should match snap shot 1`] = `
                                     class="ant-space-item"
                                   >
                                     <button
-                                      class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                      class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
                                       type="button"
                                     >
                                       <span
@@ -651,7 +651,7 @@ exports[`sqle/SqlAudit/Detail should match snap shot 1`] = `
                   </div>
                 </div>
                 <ul
-                  class="ant-pagination ant-table-pagination ant-table-pagination-right actiontech-table-pagination actiontech-table-pagination-fixed css-dev-only-do-not-override-bj9uhl"
+                  class="ant-pagination ant-table-pagination ant-table-pagination-right actiontech-table-pagination actiontech-table-pagination-fixed"
                 >
                   <li
                     class="ant-pagination-total-text"
@@ -663,7 +663,7 @@ exports[`sqle/SqlAudit/Detail should match snap shot 1`] = `
                   <li
                     aria-disabled="true"
                     class="ant-pagination-prev ant-pagination-disabled"
-                    title="Previous Page"
+                    title="上一页"
                   >
                     <button
                       class="ant-pagination-item-link"
@@ -706,7 +706,7 @@ exports[`sqle/SqlAudit/Detail should match snap shot 1`] = `
                   <li
                     aria-disabled="true"
                     class="ant-pagination-next ant-pagination-disabled"
-                    title="Next Page"
+                    title="下一页"
                   >
                     <button
                       class="ant-pagination-item-link"
@@ -739,8 +739,8 @@ exports[`sqle/SqlAudit/Detail should match snap shot 1`] = `
                     class="ant-pagination-options"
                   >
                     <div
-                      aria-label="Page Size"
-                      class="ant-select ant-pagination-options-size-changer css-dev-only-do-not-override-bj9uhl ant-select-single ant-select-show-arrow ant-select-show-search"
+                      aria-label="页码"
+                      class="ant-select ant-pagination-options-size-changer ant-select-single ant-select-show-arrow ant-select-show-search"
                     >
                       <div
                         class="ant-select-selector"
@@ -754,7 +754,7 @@ exports[`sqle/SqlAudit/Detail should match snap shot 1`] = `
                             aria-controls="rc_select_TEST_OR_SSR_list"
                             aria-expanded="false"
                             aria-haspopup="listbox"
-                            aria-label="Page Size"
+                            aria-label="页码"
                             aria-owns="rc_select_TEST_OR_SSR_list"
                             autocomplete="off"
                             class="ant-select-selection-search-input"
@@ -766,9 +766,9 @@ exports[`sqle/SqlAudit/Detail should match snap shot 1`] = `
                         </span>
                         <span
                           class="ant-select-selection-item"
-                          title="20 / page"
+                          title="20 条/页"
                         >
-                          20 / page
+                          20 条/页
                         </span>
                       </div>
                       <span

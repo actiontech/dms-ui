@@ -4,7 +4,7 @@ exports[`ProjectOverview/OptimizationDistribution refresh optimization distribut
 <body>
   <div>
     <div
-      class="ant-card ant-card-hoverable css-121p60i css-dev-only-do-not-override-txh9fw"
+      class="ant-card ant-card-hoverable css-121p60i"
     >
       <div
         class="ant-card-body"
@@ -36,14 +36,14 @@ exports[`ProjectOverview/OptimizationDistribution refresh optimization distribut
                 class="css-1y8q0oh"
               >
                 <div
-                  class="ant-picker ant-picker-range ant-picker-small ant-picker-borderless css-dev-only-do-not-override-1xo6ltj basic-range-picker-wrapper orderQuantityTrend-range css-w7y1zu"
+                  class="ant-picker ant-picker-range ant-picker-small ant-picker-borderless basic-range-picker-wrapper orderQuantityTrend-range css-w7y1zu"
                 >
                   <div
                     class="ant-picker-input ant-picker-input-active"
                   >
                     <input
                       autocomplete="off"
-                      placeholder="Start date"
+                      placeholder="开始日期"
                       readonly=""
                       size="12"
                       value="2021-12-02"
@@ -69,7 +69,7 @@ exports[`ProjectOverview/OptimizationDistribution refresh optimization distribut
                   >
                     <input
                       autocomplete="off"
-                      placeholder="End date"
+                      placeholder="结束日期"
                       readonly=""
                       size="12"
                       value="2022-01-01"
@@ -97,7 +97,7 @@ exports[`ProjectOverview/OptimizationDistribution refresh optimization distribut
               class="icon-center-wrapper MuiBox-root css-0"
             >
               <div
-                class="css-dev-only-do-not-override-txh9fw ant-empty is-icon-loading css-19kysfv"
+                class="ant-empty is-icon-loading css-19kysfv"
               >
                 <div
                   class="ant-empty-image"
@@ -105,7 +105,7 @@ exports[`ProjectOverview/OptimizationDistribution refresh optimization distribut
                   <div
                     aria-busy="true"
                     aria-live="polite"
-                    class="ant-spin ant-spin-spinning css-dev-only-do-not-override-txh9fw"
+                    class="ant-spin ant-spin-spinning"
                   >
                     <span
                       class="ant-spin-dot ant-spin-dot-spin"
@@ -145,7 +145,7 @@ exports[`ProjectOverview/OptimizationDistribution render chart snap 1`] = `
 <body>
   <div>
     <div
-      class="ant-card ant-card-hoverable css-121p60i css-dev-only-do-not-override-txh9fw"
+      class="ant-card ant-card-hoverable css-121p60i"
     >
       <div
         class="ant-card-body"
@@ -177,14 +177,14 @@ exports[`ProjectOverview/OptimizationDistribution render chart snap 1`] = `
                 class="css-1y8q0oh"
               >
                 <div
-                  class="ant-picker ant-picker-range ant-picker-small ant-picker-borderless css-dev-only-do-not-override-1xo6ltj basic-range-picker-wrapper orderQuantityTrend-range css-w7y1zu"
+                  class="ant-picker ant-picker-range ant-picker-small ant-picker-borderless basic-range-picker-wrapper orderQuantityTrend-range css-w7y1zu"
                 >
                   <div
                     class="ant-picker-input ant-picker-input-active"
                   >
                     <input
                       autocomplete="off"
-                      placeholder="Start date"
+                      placeholder="开始日期"
                       readonly=""
                       size="12"
                       value="2021-12-02"
@@ -210,7 +210,7 @@ exports[`ProjectOverview/OptimizationDistribution render chart snap 1`] = `
                   >
                     <input
                       autocomplete="off"
-                      placeholder="End date"
+                      placeholder="结束日期"
                       readonly=""
                       size="12"
                       value="2022-01-01"
@@ -238,7 +238,7 @@ exports[`ProjectOverview/OptimizationDistribution render chart snap 1`] = `
               class="icon-center-wrapper MuiBox-root css-0"
             >
               <div
-                class="css-dev-only-do-not-override-txh9fw ant-empty is-icon-loading css-19kysfv"
+                class="ant-empty is-icon-loading css-19kysfv"
               >
                 <div
                   class="ant-empty-image"
@@ -246,7 +246,7 @@ exports[`ProjectOverview/OptimizationDistribution render chart snap 1`] = `
                   <div
                     aria-busy="true"
                     aria-live="polite"
-                    class="ant-spin ant-spin-spinning css-dev-only-do-not-override-txh9fw"
+                    class="ant-spin ant-spin-spinning"
                   >
                     <span
                       class="ant-spin-dot ant-spin-dot-spin"
@@ -286,7 +286,7 @@ exports[`ProjectOverview/OptimizationDistribution render chart snap 2`] = `
 <body>
   <div>
     <div
-      class="ant-card ant-card-hoverable css-121p60i css-dev-only-do-not-override-txh9fw"
+      class="ant-card ant-card-hoverable css-121p60i"
     >
       <div
         class="ant-card-body"
@@ -318,14 +318,14 @@ exports[`ProjectOverview/OptimizationDistribution render chart snap 2`] = `
                 class="css-1y8q0oh"
               >
                 <div
-                  class="ant-picker ant-picker-range ant-picker-small ant-picker-borderless css-dev-only-do-not-override-1xo6ltj basic-range-picker-wrapper orderQuantityTrend-range css-w7y1zu"
+                  class="ant-picker ant-picker-range ant-picker-small ant-picker-borderless basic-range-picker-wrapper orderQuantityTrend-range css-w7y1zu"
                 >
                   <div
                     class="ant-picker-input ant-picker-input-active"
                   >
                     <input
                       autocomplete="off"
-                      placeholder="Start date"
+                      placeholder="开始日期"
                       readonly=""
                       size="12"
                       value="2021-12-02"
@@ -351,7 +351,7 @@ exports[`ProjectOverview/OptimizationDistribution render chart snap 2`] = `
                   >
                     <input
                       autocomplete="off"
-                      placeholder="End date"
+                      placeholder="结束日期"
                       readonly=""
                       size="12"
                       value="2022-01-01"
@@ -427,7 +427,7 @@ exports[`ProjectOverview/OptimizationDistribution render chart snap when api ret
 <body>
   <div>
     <div
-      class="ant-card ant-card-hoverable css-121p60i css-dev-only-do-not-override-txh9fw"
+      class="ant-card ant-card-hoverable css-121p60i"
     >
       <div
         class="ant-card-body"
@@ -459,14 +459,14 @@ exports[`ProjectOverview/OptimizationDistribution render chart snap when api ret
                 class="css-1y8q0oh"
               >
                 <div
-                  class="ant-picker ant-picker-range ant-picker-small ant-picker-borderless css-dev-only-do-not-override-1xo6ltj basic-range-picker-wrapper orderQuantityTrend-range css-w7y1zu"
+                  class="ant-picker ant-picker-range ant-picker-small ant-picker-borderless basic-range-picker-wrapper orderQuantityTrend-range css-w7y1zu"
                 >
                   <div
                     class="ant-picker-input ant-picker-input-active"
                   >
                     <input
                       autocomplete="off"
-                      placeholder="Start date"
+                      placeholder="开始日期"
                       readonly=""
                       size="12"
                       value="2021-12-02"
@@ -492,7 +492,7 @@ exports[`ProjectOverview/OptimizationDistribution render chart snap when api ret
                   >
                     <input
                       autocomplete="off"
-                      placeholder="End date"
+                      placeholder="结束日期"
                       readonly=""
                       size="12"
                       value="2022-01-01"
@@ -520,7 +520,7 @@ exports[`ProjectOverview/OptimizationDistribution render chart snap when api ret
               class="icon-center-wrapper MuiBox-root css-0"
             >
               <div
-                class="css-dev-only-do-not-override-txh9fw ant-empty is-icon-tips css-19kysfv"
+                class="ant-empty is-icon-tips css-19kysfv"
               >
                 <div
                   class="ant-empty-image"
@@ -574,7 +574,7 @@ exports[`ProjectOverview/OptimizationDistribution render chart snap when api ret
                   class="ant-empty-footer"
                 >
                   <button
-                    class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-text ant-btn-sm basic-button-wrapper css-geipcv"
+                    class="ant-btn ant-btn-text ant-btn-sm basic-button-wrapper css-geipcv"
                     type="button"
                   >
                     <span>
@@ -1103,7 +1103,7 @@ exports[`ProjectOverview/OptimizationDistribution select diff time to show optim
 <body>
   <div>
     <div
-      class="ant-card ant-card-hoverable css-121p60i css-dev-only-do-not-override-txh9fw"
+      class="ant-card ant-card-hoverable css-121p60i"
     >
       <div
         class="ant-card-body"
@@ -1135,14 +1135,14 @@ exports[`ProjectOverview/OptimizationDistribution select diff time to show optim
                 class="css-1y8q0oh"
               >
                 <div
-                  class="ant-picker ant-picker-range ant-picker-small ant-picker-borderless css-dev-only-do-not-override-1xo6ltj basic-range-picker-wrapper orderQuantityTrend-range css-w7y1zu"
+                  class="ant-picker ant-picker-range ant-picker-small ant-picker-borderless basic-range-picker-wrapper orderQuantityTrend-range css-w7y1zu"
                 >
                   <div
                     class="ant-picker-input ant-picker-input-active"
                   >
                     <input
                       autocomplete="off"
-                      placeholder="Start date"
+                      placeholder="开始日期"
                       readonly=""
                       size="12"
                       value="2021-12-02"
@@ -1168,7 +1168,7 @@ exports[`ProjectOverview/OptimizationDistribution select diff time to show optim
                   >
                     <input
                       autocomplete="off"
-                      placeholder="End date"
+                      placeholder="结束日期"
                       readonly=""
                       size="12"
                       value="2022-01-01"
@@ -1196,7 +1196,7 @@ exports[`ProjectOverview/OptimizationDistribution select diff time to show optim
               class="icon-center-wrapper MuiBox-root css-0"
             >
               <div
-                class="css-dev-only-do-not-override-txh9fw ant-empty is-icon-loading css-19kysfv"
+                class="ant-empty is-icon-loading css-19kysfv"
               >
                 <div
                   class="ant-empty-image"
@@ -1204,7 +1204,7 @@ exports[`ProjectOverview/OptimizationDistribution select diff time to show optim
                   <div
                     aria-busy="true"
                     aria-live="polite"
-                    class="ant-spin ant-spin-spinning css-dev-only-do-not-override-txh9fw"
+                    class="ant-spin ant-spin-spinning"
                   >
                     <span
                       class="ant-spin-dot ant-spin-dot-spin"
@@ -1244,7 +1244,7 @@ exports[`ProjectOverview/OptimizationDistribution select diff time to show optim
 <body>
   <div>
     <div
-      class="ant-card ant-card-hoverable css-121p60i css-dev-only-do-not-override-txh9fw"
+      class="ant-card ant-card-hoverable css-121p60i"
     >
       <div
         class="ant-card-body"
@@ -1276,14 +1276,14 @@ exports[`ProjectOverview/OptimizationDistribution select diff time to show optim
                 class="css-1y8q0oh"
               >
                 <div
-                  class="ant-picker ant-picker-range ant-picker-small ant-picker-borderless css-dev-only-do-not-override-1xo6ltj basic-range-picker-wrapper orderQuantityTrend-range css-w7y1zu ant-picker-focused"
+                  class="ant-picker ant-picker-range ant-picker-small ant-picker-borderless basic-range-picker-wrapper orderQuantityTrend-range css-w7y1zu ant-picker-focused"
                 >
                   <div
                     class="ant-picker-input"
                   >
                     <input
                       autocomplete="off"
-                      placeholder="Start date"
+                      placeholder="开始日期"
                       size="12"
                       value="2021-12-15"
                     />
@@ -1308,7 +1308,7 @@ exports[`ProjectOverview/OptimizationDistribution select diff time to show optim
                   >
                     <input
                       autocomplete="off"
-                      placeholder="End date"
+                      placeholder="结束日期"
                       size="12"
                       value="2022-01-01"
                     />
@@ -1321,7 +1321,7 @@ exports[`ProjectOverview/OptimizationDistribution select diff time to show optim
                     class="ant-picker-suffix"
                   />
                   <div
-                    class="ant-picker-dropdown css-dev-only-do-not-override-1xo6ltj ant-picker-dropdown-range ant-picker-dropdown-placement-bottomLeft"
+                    class="ant-picker-dropdown ant-picker-dropdown-range ant-picker-dropdown-placement-bottomLeft"
                     style="--arrow-x: 0px; --arrow-y: 0px; left: -1000vw; top: -1000vh; box-sizing: border-box;"
                   >
                     <div
@@ -1387,18 +1387,18 @@ exports[`ProjectOverview/OptimizationDistribution select diff time to show optim
                                       class="ant-picker-header-view"
                                     >
                                       <button
+                                        class="ant-picker-year-btn"
+                                        tabindex="-1"
+                                        type="button"
+                                      >
+                                        2021年
+                                      </button>
+                                      <button
                                         class="ant-picker-month-btn"
                                         tabindex="-1"
                                         type="button"
                                       >
                                         Dec
-                                      </button>
-                                      <button
-                                        class="ant-picker-year-btn"
-                                        tabindex="-1"
-                                        type="button"
-                                      >
-                                        2021
                                       </button>
                                     </div>
                                     <button
@@ -1948,18 +1948,18 @@ exports[`ProjectOverview/OptimizationDistribution select diff time to show optim
                                       class="ant-picker-header-view"
                                     >
                                       <button
+                                        class="ant-picker-year-btn"
+                                        tabindex="-1"
+                                        type="button"
+                                      >
+                                        2022年
+                                      </button>
+                                      <button
                                         class="ant-picker-month-btn"
                                         tabindex="-1"
                                         type="button"
                                       >
                                         Jan
-                                      </button>
-                                      <button
-                                        class="ant-picker-year-btn"
-                                        tabindex="-1"
-                                        type="button"
-                                      >
-                                        2022
                                       </button>
                                     </div>
                                     <button
@@ -2482,7 +2482,7 @@ exports[`ProjectOverview/OptimizationDistribution select diff time to show optim
               class="icon-center-wrapper MuiBox-root css-0"
             >
               <div
-                class="css-dev-only-do-not-override-txh9fw ant-empty is-icon-loading css-19kysfv"
+                class="ant-empty is-icon-loading css-19kysfv"
               >
                 <div
                   class="ant-empty-image"
@@ -2490,7 +2490,7 @@ exports[`ProjectOverview/OptimizationDistribution select diff time to show optim
                   <div
                     aria-busy="true"
                     aria-live="polite"
-                    class="ant-spin ant-spin-spinning css-dev-only-do-not-override-txh9fw"
+                    class="ant-spin ant-spin-spinning"
                   >
                     <span
                       class="ant-spin-dot ant-spin-dot-spin"

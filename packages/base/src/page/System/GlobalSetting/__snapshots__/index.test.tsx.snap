@@ -7,10 +7,10 @@ exports[`base/System/GlobalSetting render api return no data 1`] = `
       class="system-form-wrapper"
     >
       <div
-        class="ant-row ant-row-space-between ant-row-middle config-title-wrapper has-border css-dev-only-do-not-override-txh9fw"
+        class="ant-row ant-row-space-between ant-row-middle config-title-wrapper has-border"
       >
         <div
-          class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+          class="ant-space ant-space-horizontal ant-space-align-center"
         >
           <div
             class="ant-space-item"
@@ -20,16 +20,16 @@ exports[`base/System/GlobalSetting render api return no data 1`] = `
         </div>
       </div>
       <div
-        class="ant-spin-nested-loading css-dev-only-do-not-override-txh9fw"
+        class="ant-spin-nested-loading"
       >
         <div
           class="ant-spin-container"
         >
           <div
-            class="ant-row ant-row-space-between ant-row-middle css-19fu9ar css-dev-only-do-not-override-txh9fw"
+            class="ant-row ant-row-space-between ant-row-middle css-19fu9ar"
           >
             <div
-              class="ant-col ant-col-11 config-item-label css-dev-only-do-not-override-txh9fw"
+              class="ant-col ant-col-11 config-item-label"
             >
               <div
                 class="config-item-label"
@@ -42,7 +42,7 @@ exports[`base/System/GlobalSetting render api return no data 1`] = `
               </div>
             </div>
             <div
-              class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center config-item-filed"
+              class="ant-space ant-space-horizontal ant-space-align-center config-item-filed"
             >
               <div
                 class="ant-space-item"
@@ -54,7 +54,7 @@ exports[`base/System/GlobalSetting render api return no data 1`] = `
                 class="ant-space-item"
               >
                 <button
-                  class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default ant-btn-icon-only config-item-filed-edit-button basic-button-wrapper css-geipcv"
+                  class="ant-btn ant-btn-default ant-btn-icon-only config-item-filed-edit-button basic-button-wrapper css-geipcv"
                   hidden=""
                   type="button"
                 >
@@ -78,10 +78,10 @@ exports[`base/System/GlobalSetting render api return no data 1`] = `
             </div>
           </div>
           <div
-            class="ant-row ant-row-space-between ant-row-middle css-19fu9ar css-dev-only-do-not-override-txh9fw"
+            class="ant-row ant-row-space-between ant-row-middle css-19fu9ar"
           >
             <div
-              class="ant-col ant-col-11 config-item-label css-dev-only-do-not-override-txh9fw"
+              class="ant-col ant-col-11 config-item-label"
             >
               <div
                 class="config-item-label"
@@ -94,7 +94,7 @@ exports[`base/System/GlobalSetting render api return no data 1`] = `
               </div>
             </div>
             <div
-              class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center config-item-filed"
+              class="ant-space ant-space-horizontal ant-space-align-center config-item-filed"
             >
               <div
                 class="ant-space-item"
@@ -106,7 +106,7 @@ exports[`base/System/GlobalSetting render api return no data 1`] = `
                 class="ant-space-item"
               >
                 <button
-                  class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default ant-btn-icon-only config-item-filed-edit-button basic-button-wrapper css-geipcv"
+                  class="ant-btn ant-btn-default ant-btn-icon-only config-item-filed-edit-button basic-button-wrapper css-geipcv"
                   hidden=""
                   type="button"
                 >
@@ -130,10 +130,10 @@ exports[`base/System/GlobalSetting render api return no data 1`] = `
             </div>
           </div>
           <div
-            class="ant-row ant-row-space-between ant-row-middle css-19fu9ar css-dev-only-do-not-override-txh9fw"
+            class="ant-row ant-row-space-between ant-row-middle css-19fu9ar"
           >
             <div
-              class="ant-col ant-col-11 config-item-label css-dev-only-do-not-override-txh9fw"
+              class="ant-col ant-col-11 config-item-label"
             >
               <div
                 class="config-item-label"
@@ -151,7 +151,7 @@ exports[`base/System/GlobalSetting render api return no data 1`] = `
               </div>
             </div>
             <div
-              class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center config-item-filed"
+              class="ant-space ant-space-horizontal ant-space-align-center config-item-filed"
             >
               <div
                 class="ant-space-item"
@@ -163,7 +163,7 @@ exports[`base/System/GlobalSetting render api return no data 1`] = `
                 class="ant-space-item"
               >
                 <button
-                  class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default ant-btn-icon-only config-item-filed-edit-button basic-button-wrapper css-geipcv"
+                  class="ant-btn ant-btn-default ant-btn-icon-only config-item-filed-edit-button basic-button-wrapper css-geipcv"
                   hidden=""
                   type="button"
                 >
@@ -200,10 +200,10 @@ exports[`base/System/GlobalSetting render snap 1`] = `
       class="system-form-wrapper"
     >
       <div
-        class="ant-row ant-row-space-between ant-row-middle config-title-wrapper has-border css-dev-only-do-not-override-txh9fw"
+        class="ant-row ant-row-space-between ant-row-middle config-title-wrapper has-border"
       >
         <div
-          class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+          class="ant-space ant-space-horizontal ant-space-align-center"
         >
           <div
             class="ant-space-item"
@@ -213,13 +213,13 @@ exports[`base/System/GlobalSetting render snap 1`] = `
         </div>
       </div>
       <div
-        class="ant-spin-nested-loading css-dev-only-do-not-override-txh9fw"
+        class="ant-spin-nested-loading"
       >
         <div>
           <div
             aria-busy="true"
             aria-live="polite"
-            class="ant-spin ant-spin-spinning css-dev-only-do-not-override-txh9fw"
+            class="ant-spin ant-spin-spinning"
           >
             <span
               class="ant-spin-dot ant-spin-dot-spin"
@@ -243,10 +243,10 @@ exports[`base/System/GlobalSetting render snap 1`] = `
           class="ant-spin-container ant-spin-blur"
         >
           <div
-            class="ant-row ant-row-space-between ant-row-middle css-19fu9ar css-dev-only-do-not-override-txh9fw"
+            class="ant-row ant-row-space-between ant-row-middle css-19fu9ar"
           >
             <div
-              class="ant-col ant-col-11 config-item-label css-dev-only-do-not-override-txh9fw"
+              class="ant-col ant-col-11 config-item-label"
             >
               <div
                 class="config-item-label"
@@ -259,7 +259,7 @@ exports[`base/System/GlobalSetting render snap 1`] = `
               </div>
             </div>
             <div
-              class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center config-item-filed"
+              class="ant-space ant-space-horizontal ant-space-align-center config-item-filed"
             >
               <div
                 class="ant-space-item"
@@ -271,7 +271,7 @@ exports[`base/System/GlobalSetting render snap 1`] = `
                 class="ant-space-item"
               >
                 <button
-                  class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default ant-btn-icon-only config-item-filed-edit-button basic-button-wrapper css-geipcv"
+                  class="ant-btn ant-btn-default ant-btn-icon-only config-item-filed-edit-button basic-button-wrapper css-geipcv"
                   hidden=""
                   type="button"
                 >
@@ -295,10 +295,10 @@ exports[`base/System/GlobalSetting render snap 1`] = `
             </div>
           </div>
           <div
-            class="ant-row ant-row-space-between ant-row-middle css-19fu9ar css-dev-only-do-not-override-txh9fw"
+            class="ant-row ant-row-space-between ant-row-middle css-19fu9ar"
           >
             <div
-              class="ant-col ant-col-11 config-item-label css-dev-only-do-not-override-txh9fw"
+              class="ant-col ant-col-11 config-item-label"
             >
               <div
                 class="config-item-label"
@@ -311,7 +311,7 @@ exports[`base/System/GlobalSetting render snap 1`] = `
               </div>
             </div>
             <div
-              class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center config-item-filed"
+              class="ant-space ant-space-horizontal ant-space-align-center config-item-filed"
             >
               <div
                 class="ant-space-item"
@@ -323,7 +323,7 @@ exports[`base/System/GlobalSetting render snap 1`] = `
                 class="ant-space-item"
               >
                 <button
-                  class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default ant-btn-icon-only config-item-filed-edit-button basic-button-wrapper css-geipcv"
+                  class="ant-btn ant-btn-default ant-btn-icon-only config-item-filed-edit-button basic-button-wrapper css-geipcv"
                   hidden=""
                   type="button"
                 >
@@ -347,10 +347,10 @@ exports[`base/System/GlobalSetting render snap 1`] = `
             </div>
           </div>
           <div
-            class="ant-row ant-row-space-between ant-row-middle css-19fu9ar css-dev-only-do-not-override-txh9fw"
+            class="ant-row ant-row-space-between ant-row-middle css-19fu9ar"
           >
             <div
-              class="ant-col ant-col-11 config-item-label css-dev-only-do-not-override-txh9fw"
+              class="ant-col ant-col-11 config-item-label"
             >
               <div
                 class="config-item-label"
@@ -368,7 +368,7 @@ exports[`base/System/GlobalSetting render snap 1`] = `
               </div>
             </div>
             <div
-              class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center config-item-filed"
+              class="ant-space ant-space-horizontal ant-space-align-center config-item-filed"
             >
               <div
                 class="ant-space-item"
@@ -380,7 +380,7 @@ exports[`base/System/GlobalSetting render snap 1`] = `
                 class="ant-space-item"
               >
                 <button
-                  class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default ant-btn-icon-only config-item-filed-edit-button basic-button-wrapper css-geipcv"
+                  class="ant-btn ant-btn-default ant-btn-icon-only config-item-filed-edit-button basic-button-wrapper css-geipcv"
                   hidden=""
                   type="button"
                 >
@@ -417,10 +417,10 @@ exports[`base/System/GlobalSetting render snap 2`] = `
       class="system-form-wrapper"
     >
       <div
-        class="ant-row ant-row-space-between ant-row-middle config-title-wrapper has-border css-dev-only-do-not-override-txh9fw"
+        class="ant-row ant-row-space-between ant-row-middle config-title-wrapper has-border"
       >
         <div
-          class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+          class="ant-space ant-space-horizontal ant-space-align-center"
         >
           <div
             class="ant-space-item"
@@ -430,16 +430,16 @@ exports[`base/System/GlobalSetting render snap 2`] = `
         </div>
       </div>
       <div
-        class="ant-spin-nested-loading css-dev-only-do-not-override-txh9fw"
+        class="ant-spin-nested-loading"
       >
         <div
           class="ant-spin-container"
         >
           <div
-            class="ant-row ant-row-space-between ant-row-middle css-19fu9ar css-dev-only-do-not-override-txh9fw"
+            class="ant-row ant-row-space-between ant-row-middle css-19fu9ar"
           >
             <div
-              class="ant-col ant-col-11 config-item-label css-dev-only-do-not-override-txh9fw"
+              class="ant-col ant-col-11 config-item-label"
             >
               <div
                 class="config-item-label"
@@ -452,7 +452,7 @@ exports[`base/System/GlobalSetting render snap 2`] = `
               </div>
             </div>
             <div
-              class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center config-item-filed"
+              class="ant-space ant-space-horizontal ant-space-align-center config-item-filed"
             >
               <div
                 class="ant-space-item"
@@ -464,7 +464,7 @@ exports[`base/System/GlobalSetting render snap 2`] = `
                 class="ant-space-item"
               >
                 <button
-                  class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default ant-btn-icon-only config-item-filed-edit-button basic-button-wrapper css-geipcv"
+                  class="ant-btn ant-btn-default ant-btn-icon-only config-item-filed-edit-button basic-button-wrapper css-geipcv"
                   hidden=""
                   type="button"
                 >
@@ -488,10 +488,10 @@ exports[`base/System/GlobalSetting render snap 2`] = `
             </div>
           </div>
           <div
-            class="ant-row ant-row-space-between ant-row-middle css-19fu9ar css-dev-only-do-not-override-txh9fw"
+            class="ant-row ant-row-space-between ant-row-middle css-19fu9ar"
           >
             <div
-              class="ant-col ant-col-11 config-item-label css-dev-only-do-not-override-txh9fw"
+              class="ant-col ant-col-11 config-item-label"
             >
               <div
                 class="config-item-label"
@@ -504,7 +504,7 @@ exports[`base/System/GlobalSetting render snap 2`] = `
               </div>
             </div>
             <div
-              class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center config-item-filed"
+              class="ant-space ant-space-horizontal ant-space-align-center config-item-filed"
             >
               <div
                 class="ant-space-item"
@@ -516,7 +516,7 @@ exports[`base/System/GlobalSetting render snap 2`] = `
                 class="ant-space-item"
               >
                 <button
-                  class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default ant-btn-icon-only config-item-filed-edit-button basic-button-wrapper css-geipcv"
+                  class="ant-btn ant-btn-default ant-btn-icon-only config-item-filed-edit-button basic-button-wrapper css-geipcv"
                   hidden=""
                   type="button"
                 >
@@ -540,10 +540,10 @@ exports[`base/System/GlobalSetting render snap 2`] = `
             </div>
           </div>
           <div
-            class="ant-row ant-row-space-between ant-row-middle css-19fu9ar css-dev-only-do-not-override-txh9fw"
+            class="ant-row ant-row-space-between ant-row-middle css-19fu9ar"
           >
             <div
-              class="ant-col ant-col-11 config-item-label css-dev-only-do-not-override-txh9fw"
+              class="ant-col ant-col-11 config-item-label"
             >
               <div
                 class="config-item-label"
@@ -561,7 +561,7 @@ exports[`base/System/GlobalSetting render snap 2`] = `
               </div>
             </div>
             <div
-              class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center config-item-filed"
+              class="ant-space ant-space-horizontal ant-space-align-center config-item-filed"
             >
               <div
                 class="ant-space-item"
@@ -573,7 +573,7 @@ exports[`base/System/GlobalSetting render snap 2`] = `
                 class="ant-space-item"
               >
                 <button
-                  class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default ant-btn-icon-only config-item-filed-edit-button basic-button-wrapper css-geipcv"
+                  class="ant-btn ant-btn-default ant-btn-icon-only config-item-filed-edit-button basic-button-wrapper css-geipcv"
                   hidden=""
                   type="button"
                 >

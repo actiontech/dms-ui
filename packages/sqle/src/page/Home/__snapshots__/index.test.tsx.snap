@@ -43,13 +43,13 @@ exports[`page/Home render Home page 1`] = `
         class="css-eydntv"
       >
         <div
-          class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+          class="ant-space ant-space-horizontal ant-space-align-center"
         >
           <div
             class="ant-space-item"
           >
             <div
-              class="ant-segmented basic-segmented-wrapper css-192b3m1 css-dev-only-do-not-override-txh9fw"
+              class="ant-segmented basic-segmented-wrapper css-192b3m1"
             >
               <div
                 class="ant-segmented-group"
@@ -88,7 +88,7 @@ exports[`page/Home render Home page 1`] = `
           </div>
         </div>
         <div
-          class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+          class="ant-space ant-space-horizontal ant-space-align-center"
         >
           <div
             class="ant-space-item"
@@ -104,7 +104,7 @@ exports[`page/Home render Home page 1`] = `
             class="ant-space-item"
           >
             <button
-              class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default ant-btn-sm ant-btn-icon-only btn-icon-no-border basic-button-wrapper css-geipcv"
+              class="ant-btn ant-btn-default ant-btn-sm ant-btn-icon-only btn-icon-no-border basic-button-wrapper css-geipcv"
               type="button"
             >
               <span
@@ -127,10 +127,10 @@ exports[`page/Home render Home page 1`] = `
         </div>
       </div>
       <div
-        class="ant-table-wrapper actiontech-table-namespace css-fxd6ka css-dev-only-do-not-override-bj9uhl"
+        class="ant-table-wrapper actiontech-table-namespace css-fxd6ka"
       >
         <div
-          class="ant-spin-nested-loading css-dev-only-do-not-override-bj9uhl"
+          class="ant-spin-nested-loading"
         >
           <div
             class="ant-spin-container"
@@ -252,11 +252,11 @@ exports[`page/Home render Home page 1`] = `
                         >
                           <div
                             aria-label="this is desc for order"
-                            class="ant-typography ant-typography-ellipsis ant-typography-single-line basic-typography-ellipsis css-wgj5gs css-dev-only-do-not-override-bj9uhl"
+                            class="ant-typography ant-typography-ellipsis ant-typography-single-line basic-typography-ellipsis css-wgj5gs"
                           >
                             this is desc for order
                             <div
-                              aria-label="Copy"
+                              aria-label="复制"
                               class="ant-typography-copy"
                               role="button"
                               style="border: 0px; background: transparent; padding: 0px; line-height: inherit; display: inline-block;"
@@ -298,7 +298,7 @@ exports[`page/Home render Home page 1`] = `
                                 ...
                               </span>
                               <div
-                                aria-label="Copy"
+                                aria-label="复制"
                                 class="ant-typography-copy"
                                 role="button"
                                 style="border: 0px; background: transparent; padding: 0px; line-height: inherit; display: inline-block;"
@@ -390,13 +390,13 @@ exports[`page/Home render Home page 1`] = `
         class="css-eydntv"
       >
         <div
-          class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+          class="ant-space ant-space-horizontal ant-space-align-center"
         >
           <div
             class="ant-space-item"
           >
             <div
-              class="ant-segmented basic-segmented-wrapper css-192b3m1 css-dev-only-do-not-override-txh9fw"
+              class="ant-segmented basic-segmented-wrapper css-192b3m1"
             >
               <div
                 class="ant-segmented-group"
@@ -449,7 +449,7 @@ exports[`page/Home render Home page 1`] = `
           </div>
         </div>
         <div
-          class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+          class="ant-space ant-space-horizontal ant-space-align-center"
         >
           <div
             class="ant-space-item"
@@ -465,7 +465,7 @@ exports[`page/Home render Home page 1`] = `
             class="ant-space-item"
           >
             <button
-              class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default ant-btn-sm ant-btn-icon-only btn-icon-no-border basic-button-wrapper css-geipcv"
+              class="ant-btn ant-btn-default ant-btn-sm ant-btn-icon-only btn-icon-no-border basic-button-wrapper css-geipcv"
               type="button"
             >
               <span
@@ -488,10 +488,10 @@ exports[`page/Home render Home page 1`] = `
         </div>
       </div>
       <div
-        class="ant-table-wrapper actiontech-table-namespace css-fxd6ka css-dev-only-do-not-override-bj9uhl"
+        class="ant-table-wrapper actiontech-table-namespace css-fxd6ka"
       >
         <div
-          class="ant-spin-nested-loading css-dev-only-do-not-override-bj9uhl"
+          class="ant-spin-nested-loading"
         >
           <div
             class="ant-spin-container"
@@ -613,11 +613,11 @@ exports[`page/Home render Home page 1`] = `
                         >
                           <div
                             aria-label="this is desc for order"
-                            class="ant-typography ant-typography-ellipsis ant-typography-single-line basic-typography-ellipsis css-wgj5gs css-dev-only-do-not-override-bj9uhl"
+                            class="ant-typography ant-typography-ellipsis ant-typography-single-line basic-typography-ellipsis css-wgj5gs"
                           >
                             this is desc for order
                             <div
-                              aria-label="Copy"
+                              aria-label="复制"
                               class="ant-typography-copy"
                               role="button"
                               style="border: 0px; background: transparent; padding: 0px; line-height: inherit; display: inline-block;"
@@ -659,7 +659,7 @@ exports[`page/Home render Home page 1`] = `
                                 ...
                               </span>
                               <div
-                                aria-label="Copy"
+                                aria-label="复制"
                                 class="ant-typography-copy"
                                 role="button"
                                 style="border: 0px; background: transparent; padding: 0px; line-height: inherit; display: inline-block;"

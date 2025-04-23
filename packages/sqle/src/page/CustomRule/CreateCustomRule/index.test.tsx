@@ -11,6 +11,10 @@ import { RuleManagerSegmentedKey } from '../../RuleManager/index.type';
 import { CreateCustomRuleReqV1LevelEnum } from '@actiontech/shared/lib/api/sqle/service/common.enum';
 import { createSpyFailResponse } from '@actiontech/shared/lib/testUtil/mockApi';
 import { mockUsePermission } from '@actiontech/shared/lib/testUtil/mockHook/mockUsePermission';
+import {
+  UtilsConsoleErrorStringsEnum,
+  ignoreConsoleErrors
+} from '@actiontech/shared/lib/testUtil/common';
 
 jest.mock('react-router-dom', () => {
   return {
@@ -62,6 +66,7 @@ describe('sqle/CustomRule/CreateCustomRule', () => {
     jest.useRealTimers();
     cleanup();
   });
+  ignoreConsoleErrors([UtilsConsoleErrorStringsEnum.UNKNOWN_EVENT_HANDLER]);
 
   it('return to custom list page', async () => {
     const { baseElement } = renderWithThemeAndRedux(<CreateCustomRule />);

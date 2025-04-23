@@ -46,14 +46,14 @@ exports[`sqle/SqlExecWorkflow/Detail/RecordInfo ce render init snap 1`] = `
               创建人
             </div>
             <div
-              class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center workflow-steps-basic-info-item-value"
+              class="ant-space ant-space-horizontal ant-space-align-center workflow-steps-basic-info-item-value"
             >
               <div
                 class="ant-space-item"
                 style="margin-right: 8px;"
               >
                 <span
-                  class="ant-avatar ant-avatar-circle action-avatar css-1wq79dc css-dev-only-do-not-override-txh9fw"
+                  class="ant-avatar ant-avatar-circle action-avatar css-1wq79dc"
                   style="width: 20px; height: 20px; line-height: 20px; font-size: 18px;"
                 >
                   <span
@@ -82,7 +82,7 @@ exports[`sqle/SqlExecWorkflow/Detail/RecordInfo ce render init snap 1`] = `
               创建时间
             </div>
             <div
-              class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center workflow-steps-basic-info-item-value"
+              class="ant-space ant-space-horizontal ant-space-align-center workflow-steps-basic-info-item-value"
             >
               <div
                 class="ant-space-item"
@@ -162,7 +162,7 @@ exports[`sqle/SqlExecWorkflow/Detail/RecordInfo ce render init snap 1`] = `
             工单进度
           </div>
           <div
-            class="ant-steps ant-steps-vertical css-1epey7k css-dev-only-do-not-override-txh9fw"
+            class="ant-steps ant-steps-vertical css-1epey7k"
           >
             <div
               class="ant-steps-item ant-steps-item-finish ant-steps-item-custom"
@@ -212,7 +212,7 @@ exports[`sqle/SqlExecWorkflow/Detail/RecordInfo ce render init snap 1`] = `
                         class="step-info"
                       >
                         <div
-                          class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+                          class="ant-space ant-space-horizontal ant-space-align-center"
                         >
                           <div
                             class="ant-space-item"
@@ -227,7 +227,7 @@ exports[`sqle/SqlExecWorkflow/Detail/RecordInfo ce render init snap 1`] = `
                             style="margin-right: 8px;"
                           >
                             <div
-                              class="ant-divider css-dev-only-do-not-override-txh9fw ant-divider-vertical"
+                              class="ant-divider ant-divider-vertical"
                               role="separator"
                             />
                           </div>
@@ -291,7 +291,7 @@ exports[`sqle/SqlExecWorkflow/Detail/RecordInfo ce render init snap 1`] = `
                         class="step-info"
                       >
                         <div
-                          class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+                          class="ant-space ant-space-horizontal ant-space-align-center"
                         >
                           <div
                             class="ant-space-item"
@@ -306,7 +306,7 @@ exports[`sqle/SqlExecWorkflow/Detail/RecordInfo ce render init snap 1`] = `
                             style="margin-right: 8px;"
                           >
                             <div
-                              class="ant-divider css-dev-only-do-not-override-txh9fw ant-divider-vertical"
+                              class="ant-divider ant-divider-vertical"
                               role="separator"
                             />
                           </div>
@@ -417,7 +417,7 @@ exports[`sqle/SqlExecWorkflow/Detail/RecordInfo ce render init snap 1`] = `
             关联工单信息
           </div>
           <ul
-            class="ant-timeline css-dev-only-do-not-override-txh9fw"
+            class="ant-timeline"
           >
             <li
               class="ant-timeline-item"
@@ -432,14 +432,14 @@ exports[`sqle/SqlExecWorkflow/Detail/RecordInfo ce render init snap 1`] = `
                 class="ant-timeline-item-content"
               >
                 <div
-                  class="ant-space css-dev-only-do-not-override-txh9fw ant-space-vertical associated-workflows-wrap-item"
+                  class="ant-space ant-space-vertical associated-workflows-wrap-item"
                 >
                   <div
                     class="ant-space-item"
                     style="margin-bottom: 8px;"
                   >
                     <div
-                      class="ant-typography ant-typography-ellipsis ant-typography-single-line ant-typography-ellipsis-single-line css-dev-only-do-not-override-txh9fw"
+                      class="ant-typography ant-typography-ellipsis ant-typography-single-line ant-typography-ellipsis-single-line"
                       title="v-12-dev-3"
                     >
                       <a
@@ -454,7 +454,7 @@ exports[`sqle/SqlExecWorkflow/Detail/RecordInfo ce render init snap 1`] = `
                     class="ant-space-item"
                   >
                     <div
-                      class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+                      class="ant-space ant-space-horizontal ant-space-align-center"
                     >
                       <div
                         class="ant-space-item"
@@ -526,14 +526,14 @@ exports[`sqle/SqlExecWorkflow/Detail/RecordInfo ce render init snap 1`] = `
                 class="ant-timeline-item-content"
               >
                 <div
-                  class="ant-space css-dev-only-do-not-override-txh9fw ant-space-vertical associated-workflows-wrap-item associated-workflows-wrap-item-highlight"
+                  class="ant-space ant-space-vertical associated-workflows-wrap-item associated-workflows-wrap-item-highlight"
                 >
                   <div
                     class="ant-space-item"
                     style="margin-bottom: 8px;"
                   >
                     <div
-                      class="ant-typography ant-typography-ellipsis ant-typography-single-line ant-typography-ellipsis-single-line css-dev-only-do-not-override-txh9fw"
+                      class="ant-typography ant-typography-ellipsis ant-typography-single-line ant-typography-ellipsis-single-line"
                       title="workflow_name"
                     >
                       workflow_name
@@ -543,7 +543,7 @@ exports[`sqle/SqlExecWorkflow/Detail/RecordInfo ce render init snap 1`] = `
                     class="ant-space-item"
                   >
                     <div
-                      class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+                      class="ant-space ant-space-horizontal ant-space-align-center"
                     >
                       <div
                         class="ant-space-item"
@@ -603,14 +603,14 @@ exports[`sqle/SqlExecWorkflow/Detail/RecordInfo ce render init snap 1`] = `
                 class="ant-timeline-item-content"
               >
                 <div
-                  class="ant-space css-dev-only-do-not-override-txh9fw ant-space-vertical associated-workflows-wrap-item"
+                  class="ant-space ant-space-vertical associated-workflows-wrap-item"
                 >
                   <div
                     class="ant-space-item"
                     style="margin-bottom: 8px;"
                   >
                     <div
-                      class="ant-typography ant-typography-ellipsis ant-typography-single-line ant-typography-ellipsis-single-line css-dev-only-do-not-override-txh9fw"
+                      class="ant-typography ant-typography-ellipsis ant-typography-single-line ant-typography-ellipsis-single-line"
                       title="v-12-dev-3_生产"
                     >
                       <a
@@ -625,7 +625,7 @@ exports[`sqle/SqlExecWorkflow/Detail/RecordInfo ce render init snap 1`] = `
                     class="ant-space-item"
                   >
                     <div
-                      class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+                      class="ant-space ant-space-horizontal ant-space-align-center"
                     >
                       <div
                         class="ant-space-item"

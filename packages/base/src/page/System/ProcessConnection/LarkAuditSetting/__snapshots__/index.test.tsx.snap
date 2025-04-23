@@ -7,13 +7,13 @@ exports[`base/System/ProcessConnection/LarkAuditSetting render snap 1`] = `
       class="config-form-wrapper"
     >
       <div
-        class="ant-spin-nested-loading css-dev-only-do-not-override-txh9fw"
+        class="ant-spin-nested-loading"
       >
         <div>
           <div
             aria-busy="true"
             aria-live="polite"
-            class="ant-spin ant-spin-spinning css-dev-only-do-not-override-txh9fw"
+            class="ant-spin ant-spin-spinning"
           >
             <span
               class="ant-spin-dot ant-spin-dot-spin"
@@ -37,19 +37,19 @@ exports[`base/System/ProcessConnection/LarkAuditSetting render snap 1`] = `
           class="ant-spin-container ant-spin-blur"
         >
           <form
-            class="ant-form ant-form-horizontal css-dev-only-do-not-override-txh9fw"
+            class="ant-form ant-form-horizontal"
           >
             <div
               class="switch-field-wrapper"
             >
               <div
-                class="ant-form-item has-label-tip css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+                class="ant-form-item has-label-tip css-1jlm9cy"
               >
                 <div
-                  class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                  class="ant-row ant-form-item-row"
                 >
                   <div
-                    class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left css-dev-only-do-not-override-txh9fw"
+                    class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left"
                   >
                     <label
                       class="ant-form-item-no-colon"
@@ -70,7 +70,7 @@ exports[`base/System/ProcessConnection/LarkAuditSetting render snap 1`] = `
                     </label>
                   </div>
                   <div
-                    class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                    class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control"
                   >
                     <div
                       class="ant-form-item-control-input"
@@ -79,14 +79,14 @@ exports[`base/System/ProcessConnection/LarkAuditSetting render snap 1`] = `
                         class="ant-form-item-control-input-content"
                       >
                         <div
-                          class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+                          class="ant-space ant-space-horizontal ant-space-align-center"
                         >
                           <div
                             class="ant-space-item"
                             style="margin-right: 12px;"
                           >
                             <div
-                              class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+                              class="ant-space ant-space-horizontal ant-space-align-center"
                               hidden=""
                             >
                               <div
@@ -94,13 +94,13 @@ exports[`base/System/ProcessConnection/LarkAuditSetting render snap 1`] = `
                                 style="margin-right: 12px;"
                               >
                                 <div
-                                  class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
+                                  class="ant-space ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
                                 >
                                   <div
                                     class="ant-space-item"
                                   >
                                     <button
-                                      class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-text ant-btn-icon-only system-config-button basic-button-wrapper css-geipcv"
+                                      class="ant-btn ant-btn-text ant-btn-icon-only system-config-button basic-button-wrapper css-geipcv"
                                       type="button"
                                     >
                                       <span
@@ -125,13 +125,13 @@ exports[`base/System/ProcessConnection/LarkAuditSetting render snap 1`] = `
                                 class="ant-space-item"
                               >
                                 <div
-                                  class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
+                                  class="ant-space ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
                                 >
                                   <div
                                     class="ant-space-item"
                                   >
                                     <button
-                                      class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-text ant-btn-icon-only system-config-button basic-button-wrapper css-geipcv"
+                                      class="ant-btn ant-btn-text ant-btn-icon-only system-config-button basic-button-wrapper css-geipcv"
                                       type="button"
                                     >
                                       <span
@@ -160,13 +160,13 @@ exports[`base/System/ProcessConnection/LarkAuditSetting render snap 1`] = `
                             class="ant-space-item"
                           >
                             <div
-                              class="ant-form-item css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+                              class="ant-form-item css-1jlm9cy"
                             >
                               <div
-                                class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                                class="ant-row ant-form-item-row"
                               >
                                 <div
-                                  class="ant-col ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                                  class="ant-col ant-form-item-control"
                                 >
                                   <div
                                     class="ant-form-item-control-input"
@@ -176,7 +176,7 @@ exports[`base/System/ProcessConnection/LarkAuditSetting render snap 1`] = `
                                     >
                                       <button
                                         aria-checked="false"
-                                        class="ant-switch basic-switch-wrapper system-config-switch css-g6dhbn css-dev-only-do-not-override-txh9fw"
+                                        class="ant-switch basic-switch-wrapper system-config-switch css-g6dhbn"
                                         id="enabled"
                                         role="switch"
                                         type="button"
@@ -213,13 +213,13 @@ exports[`base/System/ProcessConnection/LarkAuditSetting render snap 1`] = `
               hidden=""
             >
               <div
-                class="ant-form-item has-required-style css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+                class="ant-form-item has-required-style css-1jlm9cy"
               >
                 <div
-                  class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                  class="ant-row ant-form-item-row"
                 >
                   <div
-                    class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left css-dev-only-do-not-override-txh9fw"
+                    class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left"
                   >
                     <label
                       class="ant-form-item-required ant-form-item-no-colon"
@@ -230,7 +230,7 @@ exports[`base/System/ProcessConnection/LarkAuditSetting render snap 1`] = `
                     </label>
                   </div>
                   <div
-                    class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                    class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control"
                   >
                     <div
                       class="ant-form-item-control-input"
@@ -240,7 +240,7 @@ exports[`base/System/ProcessConnection/LarkAuditSetting render snap 1`] = `
                       >
                         <input
                           aria-required="true"
-                          class="ant-input css-dev-only-do-not-override-ywkr0o basic-input-wrapper css-1pd1cd5"
+                          class="ant-input basic-input-wrapper css-1pd1cd5"
                           id="appKey"
                           placeholder="请输入App Key"
                           type="text"
@@ -252,13 +252,13 @@ exports[`base/System/ProcessConnection/LarkAuditSetting render snap 1`] = `
                 </div>
               </div>
               <div
-                class="ant-form-item has-required-style css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+                class="ant-form-item has-required-style css-1jlm9cy"
               >
                 <div
-                  class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                  class="ant-row ant-form-item-row"
                 >
                   <div
-                    class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left css-dev-only-do-not-override-txh9fw"
+                    class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left"
                   >
                     <label
                       class="ant-form-item-required ant-form-item-no-colon"
@@ -269,7 +269,7 @@ exports[`base/System/ProcessConnection/LarkAuditSetting render snap 1`] = `
                     </label>
                   </div>
                   <div
-                    class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                    class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control"
                   >
                     <div
                       class="ant-form-item-control-input"
@@ -278,11 +278,11 @@ exports[`base/System/ProcessConnection/LarkAuditSetting render snap 1`] = `
                         class="ant-form-item-control-input-content"
                       >
                         <span
-                          class="ant-input-affix-wrapper ant-input-password basic-input-wrapper css-1pd1cd5 css-dev-only-do-not-override-txh9fw"
+                          class="ant-input-affix-wrapper ant-input-password basic-input-wrapper css-1pd1cd5"
                         >
                           <input
                             aria-required="true"
-                            class="ant-input css-dev-only-do-not-override-txh9fw"
+                            class="ant-input"
                             id="appSecret"
                             placeholder="请输入App Secret"
                             type="password"
@@ -321,13 +321,13 @@ exports[`base/System/ProcessConnection/LarkAuditSetting render snap 1`] = `
                 </div>
               </div>
               <div
-                class="ant-form-item css-15d6abf css-dev-only-do-not-override-txh9fw"
+                class="ant-form-item css-15d6abf"
               >
                 <div
-                  class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                  class="ant-row ant-form-item-row"
                 >
                   <div
-                    class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left css-dev-only-do-not-override-txh9fw"
+                    class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left"
                   >
                     <label
                       class="ant-form-item-no-colon"
@@ -337,7 +337,7 @@ exports[`base/System/ProcessConnection/LarkAuditSetting render snap 1`] = `
                     </label>
                   </div>
                   <div
-                    class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                    class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control"
                   >
                     <div
                       class="ant-form-item-control-input"
@@ -346,14 +346,14 @@ exports[`base/System/ProcessConnection/LarkAuditSetting render snap 1`] = `
                         class="ant-form-item-control-input-content"
                       >
                         <div
-                          class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+                          class="ant-space ant-space-horizontal ant-space-align-center"
                         >
                           <div
                             class="ant-space-item"
                             style="margin-right: 12px;"
                           >
                             <button
-                              class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default basic-button-wrapper css-geipcv"
+                              class="ant-btn ant-btn-default basic-button-wrapper css-geipcv"
                               type="button"
                             >
                               <span>
@@ -365,7 +365,7 @@ exports[`base/System/ProcessConnection/LarkAuditSetting render snap 1`] = `
                             class="ant-space-item"
                           >
                             <button
-                              class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary basic-button-wrapper css-geipcv"
+                              class="ant-btn ant-btn-primary basic-button-wrapper css-geipcv"
                               type="submit"
                             >
                               <span>
@@ -396,25 +396,25 @@ exports[`base/System/ProcessConnection/LarkAuditSetting render snap 2`] = `
       class="config-form-wrapper"
     >
       <div
-        class="ant-spin-nested-loading css-dev-only-do-not-override-txh9fw"
+        class="ant-spin-nested-loading"
       >
         <div
           class="ant-spin-container"
         >
           <form
-            class="ant-form ant-form-horizontal css-dev-only-do-not-override-txh9fw"
+            class="ant-form ant-form-horizontal"
           >
             <div
               class="switch-field-wrapper"
             >
               <div
-                class="ant-form-item has-label-tip css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+                class="ant-form-item has-label-tip css-1jlm9cy"
               >
                 <div
-                  class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                  class="ant-row ant-form-item-row"
                 >
                   <div
-                    class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left css-dev-only-do-not-override-txh9fw"
+                    class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left"
                   >
                     <label
                       class="ant-form-item-no-colon"
@@ -435,7 +435,7 @@ exports[`base/System/ProcessConnection/LarkAuditSetting render snap 2`] = `
                     </label>
                   </div>
                   <div
-                    class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                    class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control"
                   >
                     <div
                       class="ant-form-item-control-input"
@@ -444,14 +444,14 @@ exports[`base/System/ProcessConnection/LarkAuditSetting render snap 2`] = `
                         class="ant-form-item-control-input-content"
                       >
                         <div
-                          class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+                          class="ant-space ant-space-horizontal ant-space-align-center"
                         >
                           <div
                             class="ant-space-item"
                             style="margin-right: 12px;"
                           >
                             <div
-                              class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+                              class="ant-space ant-space-horizontal ant-space-align-center"
                               hidden=""
                             >
                               <div
@@ -459,13 +459,13 @@ exports[`base/System/ProcessConnection/LarkAuditSetting render snap 2`] = `
                                 style="margin-right: 12px;"
                               >
                                 <div
-                                  class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
+                                  class="ant-space ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
                                 >
                                   <div
                                     class="ant-space-item"
                                   >
                                     <button
-                                      class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-text ant-btn-icon-only system-config-button basic-button-wrapper css-geipcv"
+                                      class="ant-btn ant-btn-text ant-btn-icon-only system-config-button basic-button-wrapper css-geipcv"
                                       type="button"
                                     >
                                       <span
@@ -490,13 +490,13 @@ exports[`base/System/ProcessConnection/LarkAuditSetting render snap 2`] = `
                                 class="ant-space-item"
                               >
                                 <div
-                                  class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
+                                  class="ant-space ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
                                 >
                                   <div
                                     class="ant-space-item"
                                   >
                                     <button
-                                      class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-text ant-btn-icon-only system-config-button basic-button-wrapper css-geipcv"
+                                      class="ant-btn ant-btn-text ant-btn-icon-only system-config-button basic-button-wrapper css-geipcv"
                                       type="button"
                                     >
                                       <span
@@ -525,13 +525,13 @@ exports[`base/System/ProcessConnection/LarkAuditSetting render snap 2`] = `
                             class="ant-space-item"
                           >
                             <div
-                              class="ant-form-item css-1jlm9cy css-dev-only-do-not-override-txh9fw ant-form-item-has-success"
+                              class="ant-form-item css-1jlm9cy ant-form-item-has-success"
                             >
                               <div
-                                class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                                class="ant-row ant-form-item-row"
                               >
                                 <div
-                                  class="ant-col ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                                  class="ant-col ant-form-item-control"
                                 >
                                   <div
                                     class="ant-form-item-control-input"
@@ -541,7 +541,7 @@ exports[`base/System/ProcessConnection/LarkAuditSetting render snap 2`] = `
                                     >
                                       <button
                                         aria-checked="false"
-                                        class="ant-switch basic-switch-wrapper system-config-switch css-g6dhbn css-dev-only-do-not-override-txh9fw"
+                                        class="ant-switch basic-switch-wrapper system-config-switch css-g6dhbn"
                                         id="enabled"
                                         role="switch"
                                         type="button"
@@ -578,13 +578,13 @@ exports[`base/System/ProcessConnection/LarkAuditSetting render snap 2`] = `
               hidden=""
             >
               <div
-                class="ant-form-item has-required-style css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+                class="ant-form-item has-required-style css-1jlm9cy"
               >
                 <div
-                  class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                  class="ant-row ant-form-item-row"
                 >
                   <div
-                    class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left css-dev-only-do-not-override-txh9fw"
+                    class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left"
                   >
                     <label
                       class="ant-form-item-required ant-form-item-no-colon"
@@ -595,7 +595,7 @@ exports[`base/System/ProcessConnection/LarkAuditSetting render snap 2`] = `
                     </label>
                   </div>
                   <div
-                    class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                    class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control"
                   >
                     <div
                       class="ant-form-item-control-input"
@@ -605,7 +605,7 @@ exports[`base/System/ProcessConnection/LarkAuditSetting render snap 2`] = `
                       >
                         <input
                           aria-required="true"
-                          class="ant-input css-dev-only-do-not-override-ywkr0o basic-input-wrapper css-1pd1cd5"
+                          class="ant-input basic-input-wrapper css-1pd1cd5"
                           id="appKey"
                           placeholder="请输入App Key"
                           type="text"
@@ -617,13 +617,13 @@ exports[`base/System/ProcessConnection/LarkAuditSetting render snap 2`] = `
                 </div>
               </div>
               <div
-                class="ant-form-item has-required-style css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+                class="ant-form-item has-required-style css-1jlm9cy"
               >
                 <div
-                  class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                  class="ant-row ant-form-item-row"
                 >
                   <div
-                    class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left css-dev-only-do-not-override-txh9fw"
+                    class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left"
                   >
                     <label
                       class="ant-form-item-required ant-form-item-no-colon"
@@ -634,7 +634,7 @@ exports[`base/System/ProcessConnection/LarkAuditSetting render snap 2`] = `
                     </label>
                   </div>
                   <div
-                    class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                    class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control"
                   >
                     <div
                       class="ant-form-item-control-input"
@@ -643,11 +643,11 @@ exports[`base/System/ProcessConnection/LarkAuditSetting render snap 2`] = `
                         class="ant-form-item-control-input-content"
                       >
                         <span
-                          class="ant-input-affix-wrapper ant-input-password basic-input-wrapper css-1pd1cd5 css-dev-only-do-not-override-txh9fw"
+                          class="ant-input-affix-wrapper ant-input-password basic-input-wrapper css-1pd1cd5"
                         >
                           <input
                             aria-required="true"
-                            class="ant-input css-dev-only-do-not-override-txh9fw"
+                            class="ant-input"
                             id="appSecret"
                             placeholder="请输入App Secret"
                             type="password"
@@ -686,13 +686,13 @@ exports[`base/System/ProcessConnection/LarkAuditSetting render snap 2`] = `
                 </div>
               </div>
               <div
-                class="ant-form-item css-15d6abf css-dev-only-do-not-override-txh9fw"
+                class="ant-form-item css-15d6abf"
               >
                 <div
-                  class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                  class="ant-row ant-form-item-row"
                 >
                   <div
-                    class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left css-dev-only-do-not-override-txh9fw"
+                    class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left"
                   >
                     <label
                       class="ant-form-item-no-colon"
@@ -702,7 +702,7 @@ exports[`base/System/ProcessConnection/LarkAuditSetting render snap 2`] = `
                     </label>
                   </div>
                   <div
-                    class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                    class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control"
                   >
                     <div
                       class="ant-form-item-control-input"
@@ -711,14 +711,14 @@ exports[`base/System/ProcessConnection/LarkAuditSetting render snap 2`] = `
                         class="ant-form-item-control-input-content"
                       >
                         <div
-                          class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+                          class="ant-space ant-space-horizontal ant-space-align-center"
                         >
                           <div
                             class="ant-space-item"
                             style="margin-right: 12px;"
                           >
                             <button
-                              class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default basic-button-wrapper css-geipcv"
+                              class="ant-btn ant-btn-default basic-button-wrapper css-geipcv"
                               type="button"
                             >
                               <span>
@@ -730,7 +730,7 @@ exports[`base/System/ProcessConnection/LarkAuditSetting render snap 2`] = `
                             class="ant-space-item"
                           >
                             <button
-                              class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary basic-button-wrapper css-geipcv"
+                              class="ant-btn ant-btn-primary basic-button-wrapper css-geipcv"
                               type="submit"
                             >
                               <span>
@@ -761,25 +761,25 @@ exports[`base/System/ProcessConnection/LarkAuditSetting render snap when user is
       class="config-form-wrapper"
     >
       <div
-        class="ant-spin-nested-loading css-dev-only-do-not-override-txh9fw"
+        class="ant-spin-nested-loading"
       >
         <div
           class="ant-spin-container"
         >
           <form
-            class="ant-form ant-form-horizontal css-dev-only-do-not-override-txh9fw"
+            class="ant-form ant-form-horizontal"
           >
             <div
               class="switch-field-wrapper"
             >
               <div
-                class="ant-form-item has-label-tip css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+                class="ant-form-item has-label-tip css-1jlm9cy"
               >
                 <div
-                  class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                  class="ant-row ant-form-item-row"
                 >
                   <div
-                    class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left css-dev-only-do-not-override-txh9fw"
+                    class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left"
                   >
                     <label
                       class="ant-form-item-no-colon"
@@ -800,7 +800,7 @@ exports[`base/System/ProcessConnection/LarkAuditSetting render snap when user is
                     </label>
                   </div>
                   <div
-                    class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                    class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control"
                   >
                     <div
                       class="ant-form-item-control-input"
@@ -809,14 +809,14 @@ exports[`base/System/ProcessConnection/LarkAuditSetting render snap when user is
                         class="ant-form-item-control-input-content"
                       >
                         <div
-                          class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+                          class="ant-space ant-space-horizontal ant-space-align-center"
                         >
                           <div
                             class="ant-space-item"
                             style="margin-right: 12px;"
                           >
                             <div
-                              class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+                              class="ant-space ant-space-horizontal ant-space-align-center"
                               hidden=""
                             >
                               <div
@@ -824,13 +824,13 @@ exports[`base/System/ProcessConnection/LarkAuditSetting render snap when user is
                                 style="margin-right: 12px;"
                               >
                                 <div
-                                  class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
+                                  class="ant-space ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
                                 >
                                   <div
                                     class="ant-space-item"
                                   >
                                     <button
-                                      class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-text ant-btn-icon-only system-config-button basic-button-wrapper css-geipcv"
+                                      class="ant-btn ant-btn-text ant-btn-icon-only system-config-button basic-button-wrapper css-geipcv"
                                       type="button"
                                     >
                                       <span
@@ -855,13 +855,13 @@ exports[`base/System/ProcessConnection/LarkAuditSetting render snap when user is
                                 class="ant-space-item"
                               >
                                 <div
-                                  class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
+                                  class="ant-space ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
                                 >
                                   <div
                                     class="ant-space-item"
                                   >
                                     <button
-                                      class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-text ant-btn-icon-only system-config-button basic-button-wrapper css-geipcv"
+                                      class="ant-btn ant-btn-text ant-btn-icon-only system-config-button basic-button-wrapper css-geipcv"
                                       type="button"
                                     >
                                       <span
@@ -890,13 +890,13 @@ exports[`base/System/ProcessConnection/LarkAuditSetting render snap when user is
                             class="ant-space-item"
                           >
                             <div
-                              class="ant-form-item css-1jlm9cy css-dev-only-do-not-override-txh9fw ant-form-item-has-success"
+                              class="ant-form-item css-1jlm9cy ant-form-item-has-success"
                             >
                               <div
-                                class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                                class="ant-row ant-form-item-row"
                               >
                                 <div
-                                  class="ant-col ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                                  class="ant-col ant-form-item-control"
                                 >
                                   <div
                                     class="ant-form-item-control-input"
@@ -906,7 +906,7 @@ exports[`base/System/ProcessConnection/LarkAuditSetting render snap when user is
                                     >
                                       <button
                                         aria-checked="false"
-                                        class="ant-switch basic-switch-wrapper system-config-switch css-g6dhbn css-dev-only-do-not-override-txh9fw"
+                                        class="ant-switch basic-switch-wrapper system-config-switch css-g6dhbn"
                                         id="enabled"
                                         role="switch"
                                         type="button"
@@ -943,13 +943,13 @@ exports[`base/System/ProcessConnection/LarkAuditSetting render snap when user is
               hidden=""
             >
               <div
-                class="ant-form-item has-required-style css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+                class="ant-form-item has-required-style css-1jlm9cy"
               >
                 <div
-                  class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                  class="ant-row ant-form-item-row"
                 >
                   <div
-                    class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left css-dev-only-do-not-override-txh9fw"
+                    class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left"
                   >
                     <label
                       class="ant-form-item-required ant-form-item-no-colon"
@@ -960,7 +960,7 @@ exports[`base/System/ProcessConnection/LarkAuditSetting render snap when user is
                     </label>
                   </div>
                   <div
-                    class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                    class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control"
                   >
                     <div
                       class="ant-form-item-control-input"
@@ -970,7 +970,7 @@ exports[`base/System/ProcessConnection/LarkAuditSetting render snap when user is
                       >
                         <input
                           aria-required="true"
-                          class="ant-input css-dev-only-do-not-override-ywkr0o basic-input-wrapper css-1pd1cd5"
+                          class="ant-input basic-input-wrapper css-1pd1cd5"
                           id="appKey"
                           placeholder="请输入App Key"
                           type="text"
@@ -982,13 +982,13 @@ exports[`base/System/ProcessConnection/LarkAuditSetting render snap when user is
                 </div>
               </div>
               <div
-                class="ant-form-item has-required-style css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+                class="ant-form-item has-required-style css-1jlm9cy"
               >
                 <div
-                  class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                  class="ant-row ant-form-item-row"
                 >
                   <div
-                    class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left css-dev-only-do-not-override-txh9fw"
+                    class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left"
                   >
                     <label
                       class="ant-form-item-required ant-form-item-no-colon"
@@ -999,7 +999,7 @@ exports[`base/System/ProcessConnection/LarkAuditSetting render snap when user is
                     </label>
                   </div>
                   <div
-                    class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                    class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control"
                   >
                     <div
                       class="ant-form-item-control-input"
@@ -1008,11 +1008,11 @@ exports[`base/System/ProcessConnection/LarkAuditSetting render snap when user is
                         class="ant-form-item-control-input-content"
                       >
                         <span
-                          class="ant-input-affix-wrapper ant-input-password basic-input-wrapper css-1pd1cd5 css-dev-only-do-not-override-txh9fw"
+                          class="ant-input-affix-wrapper ant-input-password basic-input-wrapper css-1pd1cd5"
                         >
                           <input
                             aria-required="true"
-                            class="ant-input css-dev-only-do-not-override-txh9fw"
+                            class="ant-input"
                             id="appSecret"
                             placeholder="请输入App Secret"
                             type="password"
@@ -1051,13 +1051,13 @@ exports[`base/System/ProcessConnection/LarkAuditSetting render snap when user is
                 </div>
               </div>
               <div
-                class="ant-form-item css-15d6abf css-dev-only-do-not-override-txh9fw"
+                class="ant-form-item css-15d6abf"
               >
                 <div
-                  class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                  class="ant-row ant-form-item-row"
                 >
                   <div
-                    class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left css-dev-only-do-not-override-txh9fw"
+                    class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left"
                   >
                     <label
                       class="ant-form-item-no-colon"
@@ -1067,7 +1067,7 @@ exports[`base/System/ProcessConnection/LarkAuditSetting render snap when user is
                     </label>
                   </div>
                   <div
-                    class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                    class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control"
                   >
                     <div
                       class="ant-form-item-control-input"
@@ -1076,14 +1076,14 @@ exports[`base/System/ProcessConnection/LarkAuditSetting render snap when user is
                         class="ant-form-item-control-input-content"
                       >
                         <div
-                          class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+                          class="ant-space ant-space-horizontal ant-space-align-center"
                         >
                           <div
                             class="ant-space-item"
                             style="margin-right: 12px;"
                           >
                             <button
-                              class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default basic-button-wrapper css-geipcv"
+                              class="ant-btn ant-btn-default basic-button-wrapper css-geipcv"
                               type="button"
                             >
                               <span>
@@ -1095,7 +1095,7 @@ exports[`base/System/ProcessConnection/LarkAuditSetting render snap when user is
                             class="ant-space-item"
                           >
                             <button
-                              class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary basic-button-wrapper css-geipcv"
+                              class="ant-btn ant-btn-primary basic-button-wrapper css-geipcv"
                               type="submit"
                             >
                               <span>
@@ -1126,25 +1126,25 @@ exports[`base/System/ProcessConnection/LarkAuditSetting render switch cancel btn
       class="config-form-wrapper"
     >
       <div
-        class="ant-spin-nested-loading css-dev-only-do-not-override-txh9fw"
+        class="ant-spin-nested-loading"
       >
         <div
           class="ant-spin-container"
         >
           <form
-            class="ant-form ant-form-horizontal css-dev-only-do-not-override-txh9fw"
+            class="ant-form ant-form-horizontal"
           >
             <div
               class="switch-field-wrapper"
             >
               <div
-                class="ant-form-item has-label-tip css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+                class="ant-form-item has-label-tip css-1jlm9cy"
               >
                 <div
-                  class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                  class="ant-row ant-form-item-row"
                 >
                   <div
-                    class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left css-dev-only-do-not-override-txh9fw"
+                    class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left"
                   >
                     <label
                       class="ant-form-item-no-colon"
@@ -1165,7 +1165,7 @@ exports[`base/System/ProcessConnection/LarkAuditSetting render switch cancel btn
                     </label>
                   </div>
                   <div
-                    class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                    class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control"
                   >
                     <div
                       class="ant-form-item-control-input"
@@ -1174,14 +1174,14 @@ exports[`base/System/ProcessConnection/LarkAuditSetting render switch cancel btn
                         class="ant-form-item-control-input-content"
                       >
                         <div
-                          class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+                          class="ant-space ant-space-horizontal ant-space-align-center"
                         >
                           <div
                             class="ant-space-item"
                             style="margin-right: 12px;"
                           >
                             <div
-                              class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+                              class="ant-space ant-space-horizontal ant-space-align-center"
                               hidden=""
                             >
                               <div
@@ -1189,13 +1189,13 @@ exports[`base/System/ProcessConnection/LarkAuditSetting render switch cancel btn
                                 style="margin-right: 12px;"
                               >
                                 <div
-                                  class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
+                                  class="ant-space ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
                                 >
                                   <div
                                     class="ant-space-item"
                                   >
                                     <button
-                                      class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-text ant-btn-icon-only system-config-button basic-button-wrapper css-geipcv"
+                                      class="ant-btn ant-btn-text ant-btn-icon-only system-config-button basic-button-wrapper css-geipcv"
                                       type="button"
                                     >
                                       <span
@@ -1220,13 +1220,13 @@ exports[`base/System/ProcessConnection/LarkAuditSetting render switch cancel btn
                                 class="ant-space-item"
                               >
                                 <div
-                                  class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
+                                  class="ant-space ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
                                 >
                                   <div
                                     class="ant-space-item"
                                   >
                                     <button
-                                      class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-text ant-btn-icon-only system-config-button basic-button-wrapper css-geipcv"
+                                      class="ant-btn ant-btn-text ant-btn-icon-only system-config-button basic-button-wrapper css-geipcv"
                                       type="button"
                                     >
                                       <span
@@ -1255,13 +1255,13 @@ exports[`base/System/ProcessConnection/LarkAuditSetting render switch cancel btn
                             class="ant-space-item"
                           >
                             <div
-                              class="ant-form-item css-1jlm9cy css-dev-only-do-not-override-txh9fw ant-form-item-has-success"
+                              class="ant-form-item css-1jlm9cy ant-form-item-has-success"
                             >
                               <div
-                                class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                                class="ant-row ant-form-item-row"
                               >
                                 <div
-                                  class="ant-col ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                                  class="ant-col ant-form-item-control"
                                 >
                                   <div
                                     class="ant-form-item-control-input"
@@ -1271,7 +1271,7 @@ exports[`base/System/ProcessConnection/LarkAuditSetting render switch cancel btn
                                     >
                                       <button
                                         aria-checked="true"
-                                        class="ant-switch basic-switch-wrapper system-config-switch css-g6dhbn css-dev-only-do-not-override-txh9fw ant-switch-checked"
+                                        class="ant-switch basic-switch-wrapper system-config-switch css-g6dhbn ant-switch-checked"
                                         id="enabled"
                                         role="switch"
                                         type="button"
@@ -1307,13 +1307,13 @@ exports[`base/System/ProcessConnection/LarkAuditSetting render switch cancel btn
               class="config-field-wrapper"
             >
               <div
-                class="ant-form-item has-required-style css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+                class="ant-form-item has-required-style css-1jlm9cy"
               >
                 <div
-                  class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                  class="ant-row ant-form-item-row"
                 >
                   <div
-                    class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left css-dev-only-do-not-override-txh9fw"
+                    class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left"
                   >
                     <label
                       class="ant-form-item-required ant-form-item-no-colon"
@@ -1324,7 +1324,7 @@ exports[`base/System/ProcessConnection/LarkAuditSetting render switch cancel btn
                     </label>
                   </div>
                   <div
-                    class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                    class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control"
                   >
                     <div
                       class="ant-form-item-control-input"
@@ -1334,7 +1334,7 @@ exports[`base/System/ProcessConnection/LarkAuditSetting render switch cancel btn
                       >
                         <input
                           aria-required="true"
-                          class="ant-input css-dev-only-do-not-override-ywkr0o basic-input-wrapper css-1pd1cd5"
+                          class="ant-input basic-input-wrapper css-1pd1cd5"
                           id="appKey"
                           placeholder="请输入App Key"
                           type="text"
@@ -1346,13 +1346,13 @@ exports[`base/System/ProcessConnection/LarkAuditSetting render switch cancel btn
                 </div>
               </div>
               <div
-                class="ant-form-item has-required-style css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+                class="ant-form-item has-required-style css-1jlm9cy"
               >
                 <div
-                  class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                  class="ant-row ant-form-item-row"
                 >
                   <div
-                    class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left css-dev-only-do-not-override-txh9fw"
+                    class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left"
                   >
                     <label
                       class="ant-form-item-required ant-form-item-no-colon"
@@ -1363,7 +1363,7 @@ exports[`base/System/ProcessConnection/LarkAuditSetting render switch cancel btn
                     </label>
                   </div>
                   <div
-                    class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                    class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control"
                   >
                     <div
                       class="ant-form-item-control-input"
@@ -1372,11 +1372,11 @@ exports[`base/System/ProcessConnection/LarkAuditSetting render switch cancel btn
                         class="ant-form-item-control-input-content"
                       >
                         <span
-                          class="ant-input-affix-wrapper ant-input-password basic-input-wrapper css-1pd1cd5 css-dev-only-do-not-override-txh9fw"
+                          class="ant-input-affix-wrapper ant-input-password basic-input-wrapper css-1pd1cd5"
                         >
                           <input
                             aria-required="true"
-                            class="ant-input css-dev-only-do-not-override-txh9fw"
+                            class="ant-input"
                             id="appSecret"
                             placeholder="请输入App Secret"
                             type="password"
@@ -1415,13 +1415,13 @@ exports[`base/System/ProcessConnection/LarkAuditSetting render switch cancel btn
                 </div>
               </div>
               <div
-                class="ant-form-item css-15d6abf css-dev-only-do-not-override-txh9fw"
+                class="ant-form-item css-15d6abf"
               >
                 <div
-                  class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                  class="ant-row ant-form-item-row"
                 >
                   <div
-                    class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left css-dev-only-do-not-override-txh9fw"
+                    class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left"
                   >
                     <label
                       class="ant-form-item-no-colon"
@@ -1431,7 +1431,7 @@ exports[`base/System/ProcessConnection/LarkAuditSetting render switch cancel btn
                     </label>
                   </div>
                   <div
-                    class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                    class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control"
                   >
                     <div
                       class="ant-form-item-control-input"
@@ -1440,14 +1440,14 @@ exports[`base/System/ProcessConnection/LarkAuditSetting render switch cancel btn
                         class="ant-form-item-control-input-content"
                       >
                         <div
-                          class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+                          class="ant-space ant-space-horizontal ant-space-align-center"
                         >
                           <div
                             class="ant-space-item"
                             style="margin-right: 12px;"
                           >
                             <button
-                              class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default basic-button-wrapper css-geipcv"
+                              class="ant-btn ant-btn-default basic-button-wrapper css-geipcv"
                               type="button"
                             >
                               <span>
@@ -1459,7 +1459,7 @@ exports[`base/System/ProcessConnection/LarkAuditSetting render switch cancel btn
                             class="ant-space-item"
                           >
                             <button
-                              class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary basic-button-wrapper css-geipcv"
+                              class="ant-btn ant-btn-primary basic-button-wrapper css-geipcv"
                               type="submit"
                             >
                               <span>
@@ -1492,25 +1492,25 @@ exports[`base/System/ProcessConnection/LarkAuditSetting render switch cancel btn
       class="config-form-wrapper"
     >
       <div
-        class="ant-spin-nested-loading css-dev-only-do-not-override-txh9fw"
+        class="ant-spin-nested-loading"
       >
         <div
           class="ant-spin-container"
         >
           <form
-            class="ant-form ant-form-horizontal css-dev-only-do-not-override-txh9fw"
+            class="ant-form ant-form-horizontal"
           >
             <div
               class="switch-field-wrapper"
             >
               <div
-                class="ant-form-item has-label-tip css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+                class="ant-form-item has-label-tip css-1jlm9cy"
               >
                 <div
-                  class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                  class="ant-row ant-form-item-row"
                 >
                   <div
-                    class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left css-dev-only-do-not-override-txh9fw"
+                    class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left"
                   >
                     <label
                       class="ant-form-item-no-colon"
@@ -1531,7 +1531,7 @@ exports[`base/System/ProcessConnection/LarkAuditSetting render switch cancel btn
                     </label>
                   </div>
                   <div
-                    class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                    class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control"
                   >
                     <div
                       class="ant-form-item-control-input"
@@ -1540,14 +1540,14 @@ exports[`base/System/ProcessConnection/LarkAuditSetting render switch cancel btn
                         class="ant-form-item-control-input-content"
                       >
                         <div
-                          class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+                          class="ant-space ant-space-horizontal ant-space-align-center"
                         >
                           <div
                             class="ant-space-item"
                             style="margin-right: 12px;"
                           >
                             <div
-                              class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+                              class="ant-space ant-space-horizontal ant-space-align-center"
                               hidden=""
                             >
                               <div
@@ -1555,13 +1555,13 @@ exports[`base/System/ProcessConnection/LarkAuditSetting render switch cancel btn
                                 style="margin-right: 12px;"
                               >
                                 <div
-                                  class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
+                                  class="ant-space ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
                                 >
                                   <div
                                     class="ant-space-item"
                                   >
                                     <button
-                                      class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-text ant-btn-icon-only system-config-button basic-button-wrapper css-geipcv"
+                                      class="ant-btn ant-btn-text ant-btn-icon-only system-config-button basic-button-wrapper css-geipcv"
                                       type="button"
                                     >
                                       <span
@@ -1586,13 +1586,13 @@ exports[`base/System/ProcessConnection/LarkAuditSetting render switch cancel btn
                                 class="ant-space-item"
                               >
                                 <div
-                                  class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
+                                  class="ant-space ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
                                 >
                                   <div
                                     class="ant-space-item"
                                   >
                                     <button
-                                      class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-text ant-btn-icon-only system-config-button basic-button-wrapper css-geipcv"
+                                      class="ant-btn ant-btn-text ant-btn-icon-only system-config-button basic-button-wrapper css-geipcv"
                                       type="button"
                                     >
                                       <span
@@ -1621,13 +1621,13 @@ exports[`base/System/ProcessConnection/LarkAuditSetting render switch cancel btn
                             class="ant-space-item"
                           >
                             <div
-                              class="ant-form-item css-1jlm9cy css-dev-only-do-not-override-txh9fw ant-form-item-has-success"
+                              class="ant-form-item css-1jlm9cy ant-form-item-has-success"
                             >
                               <div
-                                class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                                class="ant-row ant-form-item-row"
                               >
                                 <div
-                                  class="ant-col ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                                  class="ant-col ant-form-item-control"
                                 >
                                   <div
                                     class="ant-form-item-control-input"
@@ -1637,7 +1637,7 @@ exports[`base/System/ProcessConnection/LarkAuditSetting render switch cancel btn
                                     >
                                       <button
                                         aria-checked="false"
-                                        class="ant-switch basic-switch-wrapper system-config-switch css-g6dhbn css-dev-only-do-not-override-txh9fw"
+                                        class="ant-switch basic-switch-wrapper system-config-switch css-g6dhbn"
                                         id="enabled"
                                         role="switch"
                                         type="button"
@@ -1674,13 +1674,13 @@ exports[`base/System/ProcessConnection/LarkAuditSetting render switch cancel btn
               hidden=""
             >
               <div
-                class="ant-form-item has-required-style css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+                class="ant-form-item has-required-style css-1jlm9cy"
               >
                 <div
-                  class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                  class="ant-row ant-form-item-row"
                 >
                   <div
-                    class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left css-dev-only-do-not-override-txh9fw"
+                    class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left"
                   >
                     <label
                       class="ant-form-item-required ant-form-item-no-colon"
@@ -1691,7 +1691,7 @@ exports[`base/System/ProcessConnection/LarkAuditSetting render switch cancel btn
                     </label>
                   </div>
                   <div
-                    class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                    class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control"
                   >
                     <div
                       class="ant-form-item-control-input"
@@ -1701,7 +1701,7 @@ exports[`base/System/ProcessConnection/LarkAuditSetting render switch cancel btn
                       >
                         <input
                           aria-required="true"
-                          class="ant-input css-dev-only-do-not-override-ywkr0o basic-input-wrapper css-1pd1cd5"
+                          class="ant-input basic-input-wrapper css-1pd1cd5"
                           id="appKey"
                           placeholder="请输入App Key"
                           type="text"
@@ -1713,13 +1713,13 @@ exports[`base/System/ProcessConnection/LarkAuditSetting render switch cancel btn
                 </div>
               </div>
               <div
-                class="ant-form-item has-required-style css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+                class="ant-form-item has-required-style css-1jlm9cy"
               >
                 <div
-                  class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                  class="ant-row ant-form-item-row"
                 >
                   <div
-                    class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left css-dev-only-do-not-override-txh9fw"
+                    class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left"
                   >
                     <label
                       class="ant-form-item-required ant-form-item-no-colon"
@@ -1730,7 +1730,7 @@ exports[`base/System/ProcessConnection/LarkAuditSetting render switch cancel btn
                     </label>
                   </div>
                   <div
-                    class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                    class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control"
                   >
                     <div
                       class="ant-form-item-control-input"
@@ -1739,11 +1739,11 @@ exports[`base/System/ProcessConnection/LarkAuditSetting render switch cancel btn
                         class="ant-form-item-control-input-content"
                       >
                         <span
-                          class="ant-input-affix-wrapper ant-input-password basic-input-wrapper css-1pd1cd5 css-dev-only-do-not-override-txh9fw"
+                          class="ant-input-affix-wrapper ant-input-password basic-input-wrapper css-1pd1cd5"
                         >
                           <input
                             aria-required="true"
-                            class="ant-input css-dev-only-do-not-override-txh9fw"
+                            class="ant-input"
                             id="appSecret"
                             placeholder="请输入App Secret"
                             type="password"
@@ -1782,13 +1782,13 @@ exports[`base/System/ProcessConnection/LarkAuditSetting render switch cancel btn
                 </div>
               </div>
               <div
-                class="ant-form-item css-15d6abf css-dev-only-do-not-override-txh9fw"
+                class="ant-form-item css-15d6abf"
               >
                 <div
-                  class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                  class="ant-row ant-form-item-row"
                 >
                   <div
-                    class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left css-dev-only-do-not-override-txh9fw"
+                    class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left"
                   >
                     <label
                       class="ant-form-item-no-colon"
@@ -1798,7 +1798,7 @@ exports[`base/System/ProcessConnection/LarkAuditSetting render switch cancel btn
                     </label>
                   </div>
                   <div
-                    class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                    class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control"
                   >
                     <div
                       class="ant-form-item-control-input"
@@ -1807,14 +1807,14 @@ exports[`base/System/ProcessConnection/LarkAuditSetting render switch cancel btn
                         class="ant-form-item-control-input-content"
                       >
                         <div
-                          class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+                          class="ant-space ant-space-horizontal ant-space-align-center"
                         >
                           <div
                             class="ant-space-item"
                             style="margin-right: 12px;"
                           >
                             <button
-                              class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default basic-button-wrapper css-geipcv"
+                              class="ant-btn ant-btn-default basic-button-wrapper css-geipcv"
                               type="button"
                             >
                               <span>
@@ -1826,7 +1826,7 @@ exports[`base/System/ProcessConnection/LarkAuditSetting render switch cancel btn
                             class="ant-space-item"
                           >
                             <button
-                              class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary basic-button-wrapper css-geipcv"
+                              class="ant-btn ant-btn-primary basic-button-wrapper css-geipcv"
                               type="submit"
                             >
                               <span>
@@ -1857,25 +1857,25 @@ exports[`base/System/ProcessConnection/LarkAuditSetting render switch cancel btn
       class="config-form-wrapper"
     >
       <div
-        class="ant-spin-nested-loading css-dev-only-do-not-override-txh9fw"
+        class="ant-spin-nested-loading"
       >
         <div
           class="ant-spin-container"
         >
           <form
-            class="ant-form ant-form-horizontal css-dev-only-do-not-override-txh9fw"
+            class="ant-form ant-form-horizontal"
           >
             <div
               class="switch-field-wrapper"
             >
               <div
-                class="ant-form-item has-label-tip css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+                class="ant-form-item has-label-tip css-1jlm9cy"
               >
                 <div
-                  class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                  class="ant-row ant-form-item-row"
                 >
                   <div
-                    class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left css-dev-only-do-not-override-txh9fw"
+                    class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left"
                   >
                     <label
                       class="ant-form-item-no-colon"
@@ -1896,7 +1896,7 @@ exports[`base/System/ProcessConnection/LarkAuditSetting render switch cancel btn
                     </label>
                   </div>
                   <div
-                    class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                    class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control"
                   >
                     <div
                       class="ant-form-item-control-input"
@@ -1905,14 +1905,14 @@ exports[`base/System/ProcessConnection/LarkAuditSetting render switch cancel btn
                         class="ant-form-item-control-input-content"
                       >
                         <div
-                          class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+                          class="ant-space ant-space-horizontal ant-space-align-center"
                         >
                           <div
                             class="ant-space-item"
                             style="margin-right: 12px;"
                           >
                             <div
-                              class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+                              class="ant-space ant-space-horizontal ant-space-align-center"
                               hidden=""
                             >
                               <div
@@ -1920,13 +1920,13 @@ exports[`base/System/ProcessConnection/LarkAuditSetting render switch cancel btn
                                 style="margin-right: 12px;"
                               >
                                 <div
-                                  class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
+                                  class="ant-space ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
                                 >
                                   <div
                                     class="ant-space-item"
                                   >
                                     <button
-                                      class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-text ant-btn-icon-only system-config-button basic-button-wrapper css-geipcv"
+                                      class="ant-btn ant-btn-text ant-btn-icon-only system-config-button basic-button-wrapper css-geipcv"
                                       type="button"
                                     >
                                       <span
@@ -1951,13 +1951,13 @@ exports[`base/System/ProcessConnection/LarkAuditSetting render switch cancel btn
                                 class="ant-space-item"
                               >
                                 <div
-                                  class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
+                                  class="ant-space ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
                                 >
                                   <div
                                     class="ant-space-item"
                                   >
                                     <button
-                                      class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-text ant-btn-icon-only system-config-button basic-button-wrapper css-geipcv"
+                                      class="ant-btn ant-btn-text ant-btn-icon-only system-config-button basic-button-wrapper css-geipcv"
                                       type="button"
                                     >
                                       <span
@@ -1986,13 +1986,13 @@ exports[`base/System/ProcessConnection/LarkAuditSetting render switch cancel btn
                             class="ant-space-item"
                           >
                             <div
-                              class="ant-form-item ant-popover-open css-1jlm9cy css-dev-only-do-not-override-txh9fw ant-form-item-has-success"
+                              class="ant-form-item ant-popover-open css-1jlm9cy ant-form-item-has-success"
                             >
                               <div
-                                class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                                class="ant-row ant-form-item-row"
                               >
                                 <div
-                                  class="ant-col ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                                  class="ant-col ant-form-item-control"
                                 >
                                   <div
                                     class="ant-form-item-control-input"
@@ -2002,7 +2002,7 @@ exports[`base/System/ProcessConnection/LarkAuditSetting render switch cancel btn
                                     >
                                       <button
                                         aria-checked="true"
-                                        class="ant-switch basic-switch-wrapper system-config-switch css-g6dhbn css-dev-only-do-not-override-txh9fw ant-switch-checked"
+                                        class="ant-switch basic-switch-wrapper system-config-switch css-g6dhbn ant-switch-checked"
                                         id="enabled"
                                         role="switch"
                                         type="button"
@@ -2038,13 +2038,13 @@ exports[`base/System/ProcessConnection/LarkAuditSetting render switch cancel btn
               class="config-field-wrapper"
             >
               <div
-                class="ant-form-item has-required-style css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+                class="ant-form-item has-required-style css-1jlm9cy"
               >
                 <div
-                  class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                  class="ant-row ant-form-item-row"
                 >
                   <div
-                    class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left css-dev-only-do-not-override-txh9fw"
+                    class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left"
                   >
                     <label
                       class="ant-form-item-required ant-form-item-no-colon"
@@ -2055,7 +2055,7 @@ exports[`base/System/ProcessConnection/LarkAuditSetting render switch cancel btn
                     </label>
                   </div>
                   <div
-                    class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                    class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control"
                   >
                     <div
                       class="ant-form-item-control-input"
@@ -2065,7 +2065,7 @@ exports[`base/System/ProcessConnection/LarkAuditSetting render switch cancel btn
                       >
                         <input
                           aria-required="true"
-                          class="ant-input css-dev-only-do-not-override-ywkr0o basic-input-wrapper css-1pd1cd5"
+                          class="ant-input basic-input-wrapper css-1pd1cd5"
                           id="appKey"
                           placeholder="请输入App Key"
                           type="text"
@@ -2077,13 +2077,13 @@ exports[`base/System/ProcessConnection/LarkAuditSetting render switch cancel btn
                 </div>
               </div>
               <div
-                class="ant-form-item has-required-style css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+                class="ant-form-item has-required-style css-1jlm9cy"
               >
                 <div
-                  class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                  class="ant-row ant-form-item-row"
                 >
                   <div
-                    class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left css-dev-only-do-not-override-txh9fw"
+                    class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left"
                   >
                     <label
                       class="ant-form-item-required ant-form-item-no-colon"
@@ -2094,7 +2094,7 @@ exports[`base/System/ProcessConnection/LarkAuditSetting render switch cancel btn
                     </label>
                   </div>
                   <div
-                    class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                    class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control"
                   >
                     <div
                       class="ant-form-item-control-input"
@@ -2103,11 +2103,11 @@ exports[`base/System/ProcessConnection/LarkAuditSetting render switch cancel btn
                         class="ant-form-item-control-input-content"
                       >
                         <span
-                          class="ant-input-affix-wrapper ant-input-password basic-input-wrapper css-1pd1cd5 css-dev-only-do-not-override-txh9fw"
+                          class="ant-input-affix-wrapper ant-input-password basic-input-wrapper css-1pd1cd5"
                         >
                           <input
                             aria-required="true"
-                            class="ant-input css-dev-only-do-not-override-txh9fw"
+                            class="ant-input"
                             id="appSecret"
                             placeholder="请输入App Secret"
                             type="password"
@@ -2146,13 +2146,13 @@ exports[`base/System/ProcessConnection/LarkAuditSetting render switch cancel btn
                 </div>
               </div>
               <div
-                class="ant-form-item css-15d6abf css-dev-only-do-not-override-txh9fw"
+                class="ant-form-item css-15d6abf"
               >
                 <div
-                  class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                  class="ant-row ant-form-item-row"
                 >
                   <div
-                    class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left css-dev-only-do-not-override-txh9fw"
+                    class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left"
                   >
                     <label
                       class="ant-form-item-no-colon"
@@ -2162,7 +2162,7 @@ exports[`base/System/ProcessConnection/LarkAuditSetting render switch cancel btn
                     </label>
                   </div>
                   <div
-                    class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                    class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control"
                   >
                     <div
                       class="ant-form-item-control-input"
@@ -2171,14 +2171,14 @@ exports[`base/System/ProcessConnection/LarkAuditSetting render switch cancel btn
                         class="ant-form-item-control-input-content"
                       >
                         <div
-                          class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+                          class="ant-space ant-space-horizontal ant-space-align-center"
                         >
                           <div
                             class="ant-space-item"
                             style="margin-right: 12px;"
                           >
                             <button
-                              class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default basic-button-wrapper css-geipcv"
+                              class="ant-btn ant-btn-default basic-button-wrapper css-geipcv"
                               type="button"
                             >
                               <span>
@@ -2190,7 +2190,7 @@ exports[`base/System/ProcessConnection/LarkAuditSetting render switch cancel btn
                             class="ant-space-item"
                           >
                             <button
-                              class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary basic-button-wrapper css-geipcv"
+                              class="ant-btn ant-btn-primary basic-button-wrapper css-geipcv"
                               type="submit"
                             >
                               <span>
@@ -2215,7 +2215,7 @@ exports[`base/System/ProcessConnection/LarkAuditSetting render switch cancel btn
   </div>
   <div>
     <div
-      class="ant-popover ant-popconfirm css-dev-only-do-not-override-txh9fw css-dev-only-do-not-override-txh9fw ant-popover-placement-top"
+      class="ant-popover ant-popconfirm ant-popover-placement-top"
       style="--arrow-x: 0px; --arrow-y: 0px; left: -1000vw; top: -1000vh; box-sizing: border-box;"
     >
       <div
@@ -2275,19 +2275,19 @@ exports[`base/System/ProcessConnection/LarkAuditSetting render switch cancel btn
                 class="ant-popconfirm-buttons"
               >
                 <button
-                  class="ant-btn css-dev-only-do-not-override-txh9fw ant-btn-default ant-btn-sm"
+                  class="ant-btn ant-btn-default ant-btn-sm"
                   type="button"
                 >
                   <span>
-                    Cancel
+                    取 消
                   </span>
                 </button>
                 <button
-                  class="ant-btn css-dev-only-do-not-override-txh9fw ant-btn-primary ant-btn-sm"
+                  class="ant-btn ant-btn-primary ant-btn-sm"
                   type="button"
                 >
                   <span>
-                    OK
+                    确 定
                   </span>
                 </button>
               </div>
@@ -2307,13 +2307,13 @@ exports[`base/System/ProcessConnection/LarkAuditSetting render switch cancel btn
       class="config-form-wrapper"
     >
       <div
-        class="ant-spin-nested-loading css-dev-only-do-not-override-txh9fw"
+        class="ant-spin-nested-loading"
       >
         <div>
           <div
             aria-busy="true"
             aria-live="polite"
-            class="ant-spin ant-spin-spinning css-dev-only-do-not-override-txh9fw"
+            class="ant-spin ant-spin-spinning"
           >
             <span
               class="ant-spin-dot ant-spin-dot-spin"
@@ -2337,19 +2337,19 @@ exports[`base/System/ProcessConnection/LarkAuditSetting render switch cancel btn
           class="ant-spin-container ant-spin-blur"
         >
           <form
-            class="ant-form ant-form-horizontal css-dev-only-do-not-override-txh9fw"
+            class="ant-form ant-form-horizontal"
           >
             <div
               class="switch-field-wrapper"
             >
               <div
-                class="ant-form-item has-label-tip css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+                class="ant-form-item has-label-tip css-1jlm9cy"
               >
                 <div
-                  class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                  class="ant-row ant-form-item-row"
                 >
                   <div
-                    class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left css-dev-only-do-not-override-txh9fw"
+                    class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left"
                   >
                     <label
                       class="ant-form-item-no-colon"
@@ -2370,7 +2370,7 @@ exports[`base/System/ProcessConnection/LarkAuditSetting render switch cancel btn
                     </label>
                   </div>
                   <div
-                    class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                    class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control"
                   >
                     <div
                       class="ant-form-item-control-input"
@@ -2379,14 +2379,14 @@ exports[`base/System/ProcessConnection/LarkAuditSetting render switch cancel btn
                         class="ant-form-item-control-input-content"
                       >
                         <div
-                          class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+                          class="ant-space ant-space-horizontal ant-space-align-center"
                         >
                           <div
                             class="ant-space-item"
                             style="margin-right: 12px;"
                           >
                             <div
-                              class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+                              class="ant-space ant-space-horizontal ant-space-align-center"
                               hidden=""
                             >
                               <div
@@ -2394,13 +2394,13 @@ exports[`base/System/ProcessConnection/LarkAuditSetting render switch cancel btn
                                 style="margin-right: 12px;"
                               >
                                 <div
-                                  class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
+                                  class="ant-space ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
                                 >
                                   <div
                                     class="ant-space-item"
                                   >
                                     <button
-                                      class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-text ant-btn-icon-only system-config-button basic-button-wrapper css-geipcv"
+                                      class="ant-btn ant-btn-text ant-btn-icon-only system-config-button basic-button-wrapper css-geipcv"
                                       type="button"
                                     >
                                       <span
@@ -2425,13 +2425,13 @@ exports[`base/System/ProcessConnection/LarkAuditSetting render switch cancel btn
                                 class="ant-space-item"
                               >
                                 <div
-                                  class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
+                                  class="ant-space ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
                                 >
                                   <div
                                     class="ant-space-item"
                                   >
                                     <button
-                                      class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-text ant-btn-icon-only system-config-button basic-button-wrapper css-geipcv"
+                                      class="ant-btn ant-btn-text ant-btn-icon-only system-config-button basic-button-wrapper css-geipcv"
                                       type="button"
                                     >
                                       <span
@@ -2460,13 +2460,13 @@ exports[`base/System/ProcessConnection/LarkAuditSetting render switch cancel btn
                             class="ant-space-item"
                           >
                             <div
-                              class="ant-form-item css-1jlm9cy css-dev-only-do-not-override-txh9fw ant-form-item-has-success"
+                              class="ant-form-item css-1jlm9cy ant-form-item-has-success"
                             >
                               <div
-                                class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                                class="ant-row ant-form-item-row"
                               >
                                 <div
-                                  class="ant-col ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                                  class="ant-col ant-form-item-control"
                                 >
                                   <div
                                     class="ant-form-item-control-input"
@@ -2476,7 +2476,7 @@ exports[`base/System/ProcessConnection/LarkAuditSetting render switch cancel btn
                                     >
                                       <button
                                         aria-checked="true"
-                                        class="ant-switch basic-switch-wrapper system-config-switch css-g6dhbn css-dev-only-do-not-override-txh9fw ant-switch-checked"
+                                        class="ant-switch basic-switch-wrapper system-config-switch css-g6dhbn ant-switch-checked"
                                         id="enabled"
                                         role="switch"
                                         type="button"
@@ -2513,13 +2513,13 @@ exports[`base/System/ProcessConnection/LarkAuditSetting render switch cancel btn
               hidden=""
             >
               <div
-                class="ant-form-item has-required-style css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+                class="ant-form-item has-required-style css-1jlm9cy"
               >
                 <div
-                  class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                  class="ant-row ant-form-item-row"
                 >
                   <div
-                    class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left css-dev-only-do-not-override-txh9fw"
+                    class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left"
                   >
                     <label
                       class="ant-form-item-required ant-form-item-no-colon"
@@ -2530,7 +2530,7 @@ exports[`base/System/ProcessConnection/LarkAuditSetting render switch cancel btn
                     </label>
                   </div>
                   <div
-                    class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                    class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control"
                   >
                     <div
                       class="ant-form-item-control-input"
@@ -2540,7 +2540,7 @@ exports[`base/System/ProcessConnection/LarkAuditSetting render switch cancel btn
                       >
                         <input
                           aria-required="true"
-                          class="ant-input css-dev-only-do-not-override-ywkr0o basic-input-wrapper css-1pd1cd5"
+                          class="ant-input basic-input-wrapper css-1pd1cd5"
                           id="appKey"
                           placeholder="请输入App Key"
                           type="text"
@@ -2552,13 +2552,13 @@ exports[`base/System/ProcessConnection/LarkAuditSetting render switch cancel btn
                 </div>
               </div>
               <div
-                class="ant-form-item has-required-style css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+                class="ant-form-item has-required-style css-1jlm9cy"
               >
                 <div
-                  class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                  class="ant-row ant-form-item-row"
                 >
                   <div
-                    class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left css-dev-only-do-not-override-txh9fw"
+                    class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left"
                   >
                     <label
                       class="ant-form-item-required ant-form-item-no-colon"
@@ -2569,7 +2569,7 @@ exports[`base/System/ProcessConnection/LarkAuditSetting render switch cancel btn
                     </label>
                   </div>
                   <div
-                    class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                    class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control"
                   >
                     <div
                       class="ant-form-item-control-input"
@@ -2578,11 +2578,11 @@ exports[`base/System/ProcessConnection/LarkAuditSetting render switch cancel btn
                         class="ant-form-item-control-input-content"
                       >
                         <span
-                          class="ant-input-affix-wrapper ant-input-password basic-input-wrapper css-1pd1cd5 css-dev-only-do-not-override-txh9fw"
+                          class="ant-input-affix-wrapper ant-input-password basic-input-wrapper css-1pd1cd5"
                         >
                           <input
                             aria-required="true"
-                            class="ant-input css-dev-only-do-not-override-txh9fw"
+                            class="ant-input"
                             id="appSecret"
                             placeholder="请输入App Secret"
                             type="password"
@@ -2621,13 +2621,13 @@ exports[`base/System/ProcessConnection/LarkAuditSetting render switch cancel btn
                 </div>
               </div>
               <div
-                class="ant-form-item css-15d6abf css-dev-only-do-not-override-txh9fw"
+                class="ant-form-item css-15d6abf"
               >
                 <div
-                  class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                  class="ant-row ant-form-item-row"
                 >
                   <div
-                    class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left css-dev-only-do-not-override-txh9fw"
+                    class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left"
                   >
                     <label
                       class="ant-form-item-no-colon"
@@ -2637,7 +2637,7 @@ exports[`base/System/ProcessConnection/LarkAuditSetting render switch cancel btn
                     </label>
                   </div>
                   <div
-                    class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                    class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control"
                   >
                     <div
                       class="ant-form-item-control-input"
@@ -2646,14 +2646,14 @@ exports[`base/System/ProcessConnection/LarkAuditSetting render switch cancel btn
                         class="ant-form-item-control-input-content"
                       >
                         <div
-                          class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+                          class="ant-space ant-space-horizontal ant-space-align-center"
                         >
                           <div
                             class="ant-space-item"
                             style="margin-right: 12px;"
                           >
                             <button
-                              class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default basic-button-wrapper css-geipcv"
+                              class="ant-btn ant-btn-default basic-button-wrapper css-geipcv"
                               type="button"
                             >
                               <span>
@@ -2665,7 +2665,7 @@ exports[`base/System/ProcessConnection/LarkAuditSetting render switch cancel btn
                             class="ant-space-item"
                           >
                             <button
-                              class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary basic-button-wrapper css-geipcv"
+                              class="ant-btn ant-btn-primary basic-button-wrapper css-geipcv"
                               type="submit"
                             >
                               <span>
@@ -2688,7 +2688,7 @@ exports[`base/System/ProcessConnection/LarkAuditSetting render switch cancel btn
   </div>
   <div>
     <div
-      class="ant-popover ant-popover-hidden ant-popconfirm css-dev-only-do-not-override-txh9fw css-dev-only-do-not-override-txh9fw ant-popover-placement-top"
+      class="ant-popover ant-popover-hidden ant-popconfirm ant-popover-placement-top"
       style="--arrow-x: 0px; --arrow-y: 0px; left: 0px; top: 0px; box-sizing: border-box; pointer-events: none;"
     >
       <div
@@ -2748,19 +2748,19 @@ exports[`base/System/ProcessConnection/LarkAuditSetting render switch cancel btn
                 class="ant-popconfirm-buttons"
               >
                 <button
-                  class="ant-btn css-dev-only-do-not-override-txh9fw ant-btn-default ant-btn-sm"
+                  class="ant-btn ant-btn-default ant-btn-sm"
                   type="button"
                 >
                   <span>
-                    Cancel
+                    取 消
                   </span>
                 </button>
                 <button
-                  class="ant-btn css-dev-only-do-not-override-txh9fw ant-btn-primary ant-btn-sm"
+                  class="ant-btn ant-btn-primary ant-btn-sm"
                   type="button"
                 >
                   <span>
-                    OK
+                    确 定
                   </span>
                 </button>
               </div>

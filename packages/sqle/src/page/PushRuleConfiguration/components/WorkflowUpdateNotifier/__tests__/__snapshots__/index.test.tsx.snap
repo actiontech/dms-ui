@@ -6,26 +6,26 @@ exports[`test WorkflowUpdateNotifier should disable the switch and hide the conf
     class="css-zupqof"
   >
     <form
-      class="ant-form ant-form-horizontal css-dev-only-do-not-override-txh9fw"
+      class="ant-form ant-form-horizontal"
     >
       <div
         class="switch-field-wrapper"
       >
         <div
-          class="ant-form-item has-label-tip css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+          class="ant-form-item has-label-tip css-1jlm9cy"
         >
           <div
-            class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+            class="ant-row ant-form-item-row"
           >
             <div
-              class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left css-dev-only-do-not-override-txh9fw"
+              class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left"
             >
               <label
                 class="ant-form-item-no-colon"
                 title=""
               >
                 <div
-                  class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
+                  class="ant-space ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
                 >
                   <div
                     class="ant-space-item"
@@ -55,7 +55,7 @@ exports[`test WorkflowUpdateNotifier should disable the switch and hide the conf
               </label>
             </div>
             <div
-              class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+              class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control"
             >
               <div
                 class="ant-form-item-control-input"
@@ -64,7 +64,7 @@ exports[`test WorkflowUpdateNotifier should disable the switch and hide the conf
                   class="ant-form-item-control-input-content"
                 >
                   <div
-                    class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+                    class="ant-space ant-space-horizontal ant-space-align-center"
                   >
                     <div
                       class="ant-space-item"
@@ -91,26 +91,26 @@ exports[`test WorkflowUpdateNotifier should render the component with the initia
     class="css-zupqof"
   >
     <form
-      class="ant-form ant-form-horizontal css-dev-only-do-not-override-txh9fw"
+      class="ant-form ant-form-horizontal"
     >
       <div
         class="switch-field-wrapper"
       >
         <div
-          class="ant-form-item has-label-tip css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+          class="ant-form-item has-label-tip css-1jlm9cy"
         >
           <div
-            class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+            class="ant-row ant-form-item-row"
           >
             <div
-              class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left css-dev-only-do-not-override-txh9fw"
+              class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left"
             >
               <label
                 class="ant-form-item-no-colon"
                 title=""
               >
                 <div
-                  class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
+                  class="ant-space ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
                 >
                   <div
                     class="ant-space-item"
@@ -140,7 +140,7 @@ exports[`test WorkflowUpdateNotifier should render the component with the initia
               </label>
             </div>
             <div
-              class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+              class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control"
             >
               <div
                 class="ant-form-item-control-input"
@@ -149,14 +149,14 @@ exports[`test WorkflowUpdateNotifier should render the component with the initia
                   class="ant-form-item-control-input-content"
                 >
                   <div
-                    class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+                    class="ant-space ant-space-horizontal ant-space-align-center"
                   >
                     <div
                       class="ant-space-item"
                     >
                       <button
                         aria-checked="true"
-                        class="ant-switch basic-switch-wrapper css-g6dhbn css-dev-only-do-not-override-txh9fw ant-switch-checked"
+                        class="ant-switch basic-switch-wrapper css-g6dhbn ant-switch-checked"
                         data-testid="config-switch"
                         role="switch"
                         type="button"
@@ -189,7 +189,7 @@ exports[`test WorkflowUpdateNotifier should render the component with the initia
       />
     </form>
     <div
-      class="ant-descriptions system-config-view-wrapper css-cs8tvb css-dev-only-do-not-override-txh9fw"
+      class="ant-descriptions system-config-view-wrapper css-cs8tvb"
     >
       <div
         class="ant-descriptions-view"
@@ -260,7 +260,7 @@ exports[`test WorkflowUpdateNotifier should render the component with the initia
                   <span
                     class="ant-descriptions-item-content"
                   >
-                    1-01-01 08:05:43
+                    0001-01-01 08:05:43
                   </span>
                 </div>
               </td>

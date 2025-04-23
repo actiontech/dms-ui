@@ -3,16 +3,16 @@
 exports[`test SqlStatementFormController ce should match snapshot 1`] = `
 <div>
   <form
-    class="ant-form ant-form-horizontal css-dev-only-do-not-override-txh9fw"
+    class="ant-form ant-form-horizontal"
   >
     <div
-      class="ant-form-item form-item-label-mb-16 css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+      class="ant-form-item form-item-label-mb-16 css-1jlm9cy"
     >
       <div
-        class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+        class="ant-row ant-form-item-row"
       >
         <div
-          class="ant-col ant-form-item-label css-dev-only-do-not-override-txh9fw"
+          class="ant-col ant-form-item-label"
         >
           <label
             class=""
@@ -47,7 +47,7 @@ exports[`test SqlStatementFormController ce should match snapshot 1`] = `
           </label>
         </div>
         <div
-          class="ant-col ant-form-item-control css-dev-only-do-not-override-txh9fw"
+          class="ant-col ant-form-item-control"
         >
           <div
             class="ant-form-item-control-input"
@@ -60,13 +60,13 @@ exports[`test SqlStatementFormController ce should match snapshot 1`] = `
       </div>
     </div>
     <div
-      class="ant-form-item css-15d6abf css-dev-only-do-not-override-txh9fw"
+      class="ant-form-item css-15d6abf"
     >
       <div
-        class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+        class="ant-row ant-form-item-row"
       >
         <div
-          class="ant-col ant-form-item-label css-dev-only-do-not-override-txh9fw"
+          class="ant-col ant-form-item-label"
         >
           <label
             class=""
@@ -75,7 +75,7 @@ exports[`test SqlStatementFormController ce should match snapshot 1`] = `
           />
         </div>
         <div
-          class="ant-col ant-form-item-control css-dev-only-do-not-override-txh9fw"
+          class="ant-col ant-form-item-control"
         >
           <div
             class="ant-form-item-control-input"
@@ -84,12 +84,12 @@ exports[`test SqlStatementFormController ce should match snapshot 1`] = `
               class="ant-form-item-control-input-content"
             >
               <div
-                class="ant-row actiontech-mode-switcher css-dev-only-do-not-override-txh9fw"
+                class="ant-row actiontech-mode-switcher"
                 id="0_currentUploadType"
                 style="margin-left: -6px; margin-right: -6px;"
               >
                 <div
-                  class="ant-col ant-col-8 css-dev-only-do-not-override-txh9fw"
+                  class="ant-col ant-col-8"
                   style="padding-left: 6px; padding-right: 6px;"
                 >
                   <div
@@ -145,7 +145,7 @@ exports[`test SqlStatementFormController ce should match snapshot 1`] = `
                   </div>
                 </div>
                 <div
-                  class="ant-col ant-col-8 css-dev-only-do-not-override-txh9fw"
+                  class="ant-col ant-col-8"
                   style="padding-left: 6px; padding-right: 6px;"
                 >
                   <div
@@ -202,7 +202,7 @@ exports[`test SqlStatementFormController ce should match snapshot 1`] = `
                   </div>
                 </div>
                 <div
-                  class="ant-col ant-col-8 css-dev-only-do-not-override-txh9fw"
+                  class="ant-col ant-col-8"
                   style="padding-left: 6px; padding-right: 6px;"
                 >
                   <div
@@ -268,13 +268,13 @@ exports[`test SqlStatementFormController ce should match snapshot 1`] = `
       class="lazy-load-wrapper lazy-load-wrapper-show css-952l0m"
     >
       <div
-        class="ant-form-item css-15d6abf css-dev-only-do-not-override-txh9fw"
+        class="ant-form-item css-15d6abf"
       >
         <div
-          class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+          class="ant-row ant-form-item-row"
         >
           <div
-            class="ant-col ant-form-item-label css-dev-only-do-not-override-txh9fw"
+            class="ant-col ant-form-item-label"
           >
             <label
               class="ant-form-item-required"
@@ -283,7 +283,7 @@ exports[`test SqlStatementFormController ce should match snapshot 1`] = `
             />
           </div>
           <div
-            class="ant-col ant-form-item-control css-dev-only-do-not-override-txh9fw"
+            class="ant-col ant-form-item-control"
           >
             <div
               class="ant-form-item-control-input"
@@ -312,13 +312,13 @@ exports[`test SqlStatementFormController ce should match snapshot 1`] = `
       </div>
     </div>
     <div
-      class="ant-form-item css-15d6abf css-dev-only-do-not-override-txh9fw"
+      class="ant-form-item css-15d6abf"
     >
       <div
-        class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+        class="ant-row ant-form-item-row"
       >
         <div
-          class="ant-col ant-form-item-label css-dev-only-do-not-override-txh9fw"
+          class="ant-col ant-form-item-label"
         >
           <label
             class=""
@@ -326,7 +326,7 @@ exports[`test SqlStatementFormController ce should match snapshot 1`] = `
           />
         </div>
         <div
-          class="ant-col ant-form-item-control css-dev-only-do-not-override-txh9fw"
+          class="ant-col ant-form-item-control"
         >
           <div
             class="ant-form-item-control-input"
@@ -335,14 +335,14 @@ exports[`test SqlStatementFormController ce should match snapshot 1`] = `
               class="ant-form-item-control-input-content"
             >
               <div
-                class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+                class="ant-space ant-space-horizontal ant-space-align-center"
               >
                 <div
                   class="ant-space-item"
                   style="margin-right: 12px;"
                 >
                   <button
-                    class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary basic-button-wrapper css-geipcv"
+                    class="ant-btn ant-btn-primary basic-button-wrapper css-geipcv"
                     type="button"
                   >
                     <span>
@@ -354,14 +354,14 @@ exports[`test SqlStatementFormController ce should match snapshot 1`] = `
                   class="ant-space-item"
                 >
                   <div
-                    class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
+                    class="ant-space ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
                   >
                     <div
                       class="ant-space-item"
                       style="margin-right: 8px;"
                     >
                       <button
-                        class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default basic-button-wrapper css-geipcv"
+                        class="ant-btn ant-btn-default basic-button-wrapper css-geipcv"
                         type="button"
                       >
                         <span>

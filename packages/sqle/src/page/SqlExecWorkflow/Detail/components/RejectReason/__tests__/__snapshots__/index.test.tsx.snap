@@ -18,10 +18,10 @@ exports[`sqle/ExecWorkflow/Detail/RejectReason render snap 1`] = `
         />
       </svg>
       <div
-        class="ant-row ant-row-no-wrap ant-row-middle full-width-element css-dev-only-do-not-override-txh9fw"
+        class="ant-row ant-row-no-wrap ant-row-middle full-width-element"
       >
         <div
-          class="ant-col ant-col-sm-20 ant-col-xxl-22 css-dev-only-do-not-override-txh9fw"
+          class="ant-col ant-col-sm-20 ant-col-xxl-22"
         >
           <div
             class="reject-workflow-reason-content"
@@ -32,11 +32,11 @@ exports[`sqle/ExecWorkflow/Detail/RejectReason render snap 1`] = `
               admin驳回了当前工单，驳回原因为: 
               <div
                 aria-label="a reason"
-                class="ant-typography ant-typography-ellipsis ant-typography-single-line reject-workflow-reason-content-text-reason basic-typography-ellipsis css-wgj5gs css-dev-only-do-not-override-txh9fw"
+                class="ant-typography ant-typography-ellipsis ant-typography-single-line reject-workflow-reason-content-text-reason basic-typography-ellipsis css-wgj5gs"
               >
                 a reason
                 <div
-                  aria-label="Copy"
+                  aria-label="复制"
                   class="ant-typography-copy"
                   role="button"
                   style="border: 0px; background: transparent; padding: 0px; line-height: inherit; display: inline-block;"
@@ -78,7 +78,7 @@ exports[`sqle/ExecWorkflow/Detail/RejectReason render snap 1`] = `
                     ...
                   </span>
                   <div
-                    aria-label="Copy"
+                    aria-label="复制"
                     class="ant-typography-copy"
                     role="button"
                     style="border: 0px; background: transparent; padding: 0px; line-height: inherit; display: inline-block;"
@@ -115,10 +115,10 @@ exports[`sqle/ExecWorkflow/Detail/RejectReason render snap 1`] = `
           </div>
         </div>
         <div
-          class="ant-col ant-col-sm-4 ant-col-xxl-2 css-dev-only-do-not-override-txh9fw"
+          class="ant-col ant-col-sm-4 ant-col-xxl-2"
         >
           <button
-            class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary basic-button-wrapper css-geipcv"
+            class="ant-btn ant-btn-primary basic-button-wrapper css-geipcv"
             type="button"
           >
             <span>

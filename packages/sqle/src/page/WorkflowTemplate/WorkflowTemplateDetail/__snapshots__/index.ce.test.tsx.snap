@@ -19,26 +19,26 @@ exports[`page/WorkflowTemplate CE render workflow template detail 1`] = `
         />
       </div>
       <div
-        class="ant-spin-nested-loading css-dev-only-do-not-override-txh9fw"
+        class="ant-spin-nested-loading"
       >
         <div
           class="ant-spin-container"
         >
           <div
-            class="ant-row workflow-template-wrapper css-dev-only-do-not-override-txh9fw"
+            class="ant-row workflow-template-wrapper"
           >
             <div
-              class="ant-col css-dev-only-do-not-override-txh9fw"
+              class="ant-col"
               style="flex-basis: auto;"
             >
               <div
                 class="css-1j4pcp2"
               >
                 <div
-                  class="ant-row ant-row-no-wrap workflow-step-container  css-dev-only-do-not-override-txh9fw"
+                  class="ant-row ant-row-no-wrap workflow-step-container "
                 >
                   <div
-                    class="ant-col icon-wrapper css-dev-only-do-not-override-txh9fw"
+                    class="ant-col icon-wrapper"
                   >
                     <span
                       class="add-file-icon"
@@ -58,13 +58,13 @@ exports[`page/WorkflowTemplate CE render workflow template detail 1`] = `
                     </span>
                   </div>
                   <div
-                    class="ant-col step-box css-dev-only-do-not-override-txh9fw"
+                    class="ant-col step-box"
                   >
                     <div
-                      class="ant-row ant-row-no-wrap css-dev-only-do-not-override-txh9fw"
+                      class="ant-row ant-row-no-wrap"
                     >
                       <div
-                        class="ant-card ant-card-bordered ant-card-hoverable step-card-style  css-18lc8oi css-dev-only-do-not-override-txh9fw"
+                        class="ant-card ant-card-bordered ant-card-hoverable step-card-style css-18lc8oi"
                       >
                         <div
                           class="ant-card-body"
@@ -85,7 +85,7 @@ exports[`page/WorkflowTemplate CE render workflow template detail 1`] = `
                   </div>
                 </div>
                 <div
-                  class="ant-row next-step-icon css-dev-only-do-not-override-txh9fw"
+                  class="ant-row next-step-icon"
                 >
                   <svg
                     fill="none"
@@ -119,10 +119,10 @@ exports[`page/WorkflowTemplate CE render workflow template detail 1`] = `
                   </svg>
                 </div>
                 <div
-                  class="ant-row ant-row-no-wrap workflow-step-container  css-dev-only-do-not-override-txh9fw"
+                  class="ant-row ant-row-no-wrap workflow-step-container "
                 >
                   <div
-                    class="ant-col icon-wrapper css-dev-only-do-not-override-txh9fw"
+                    class="ant-col icon-wrapper"
                   >
                     <span
                       class="audit-icon"
@@ -142,13 +142,13 @@ exports[`page/WorkflowTemplate CE render workflow template detail 1`] = `
                     </span>
                   </div>
                   <div
-                    class="ant-col step-box css-dev-only-do-not-override-txh9fw"
+                    class="ant-col step-box"
                   >
                     <div
-                      class="ant-row ant-row-no-wrap css-dev-only-do-not-override-txh9fw"
+                      class="ant-row ant-row-no-wrap"
                     >
                       <div
-                        class="ant-card ant-card-bordered ant-card-hoverable step-card-style  css-18lc8oi css-dev-only-do-not-override-txh9fw"
+                        class="ant-card ant-card-bordered ant-card-hoverable step-card-style css-18lc8oi"
                       >
                         <div
                           class="ant-card-body"
@@ -204,7 +204,7 @@ exports[`page/WorkflowTemplate CE render workflow template detail 1`] = `
                   </div>
                 </div>
                 <div
-                  class="ant-row next-step-icon css-dev-only-do-not-override-txh9fw"
+                  class="ant-row next-step-icon"
                 >
                   <svg
                     fill="none"
@@ -223,10 +223,10 @@ exports[`page/WorkflowTemplate CE render workflow template detail 1`] = `
                   </svg>
                 </div>
                 <div
-                  class="ant-row ant-row-no-wrap workflow-step-container  css-dev-only-do-not-override-txh9fw"
+                  class="ant-row ant-row-no-wrap workflow-step-container "
                 >
                   <div
-                    class="ant-col icon-wrapper css-dev-only-do-not-override-txh9fw"
+                    class="ant-col icon-wrapper"
                   >
                     <span
                       class="audit-icon"
@@ -246,13 +246,13 @@ exports[`page/WorkflowTemplate CE render workflow template detail 1`] = `
                     </span>
                   </div>
                   <div
-                    class="ant-col step-box css-dev-only-do-not-override-txh9fw"
+                    class="ant-col step-box"
                   >
                     <div
-                      class="ant-row ant-row-no-wrap css-dev-only-do-not-override-txh9fw"
+                      class="ant-row ant-row-no-wrap"
                     >
                       <div
-                        class="ant-card ant-card-bordered ant-card-hoverable step-card-style  css-18lc8oi css-dev-only-do-not-override-txh9fw"
+                        class="ant-card ant-card-bordered ant-card-hoverable step-card-style css-18lc8oi"
                       >
                         <div
                           class="ant-card-body"
@@ -284,13 +284,13 @@ exports[`page/WorkflowTemplate CE render workflow template detail 1`] = `
                               class="operator-content"
                             >
                               <div
-                                class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center work-flow-auth-avatar-wrapper basic-tooltips-wrapper css-4jbtl9"
+                                class="ant-space ant-space-horizontal ant-space-align-center work-flow-auth-avatar-wrapper basic-tooltips-wrapper css-4jbtl9"
                               >
                                 <div
                                   class="ant-space-item"
                                 >
                                   <span
-                                    class="ant-avatar ant-avatar-sm ant-avatar-circle work-flow-auth-avatar css-7njbce css-dev-only-do-not-override-txh9fw"
+                                    class="ant-avatar ant-avatar-sm ant-avatar-circle work-flow-auth-avatar css-7njbce"
                                   >
                                     <span
                                       class="ant-avatar-string"
@@ -309,7 +309,7 @@ exports[`page/WorkflowTemplate CE render workflow template detail 1`] = `
                   </div>
                 </div>
                 <div
-                  class="ant-row next-step-icon css-dev-only-do-not-override-txh9fw"
+                  class="ant-row next-step-icon"
                 >
                   <svg
                     fill="none"
@@ -343,10 +343,10 @@ exports[`page/WorkflowTemplate CE render workflow template detail 1`] = `
                   </svg>
                 </div>
                 <div
-                  class="ant-row ant-row-no-wrap workflow-step-container workflow-card-space css-dev-only-do-not-override-txh9fw"
+                  class="ant-row ant-row-no-wrap workflow-step-container workflow-card-space"
                 >
                   <div
-                    class="ant-col icon-wrapper css-dev-only-do-not-override-txh9fw"
+                    class="ant-col icon-wrapper"
                   >
                     <span
                       class="send-plane-icon"
@@ -366,13 +366,13 @@ exports[`page/WorkflowTemplate CE render workflow template detail 1`] = `
                     </span>
                   </div>
                   <div
-                    class="ant-col step-box css-dev-only-do-not-override-txh9fw"
+                    class="ant-col step-box"
                   >
                     <div
-                      class="ant-row ant-row-no-wrap css-dev-only-do-not-override-txh9fw"
+                      class="ant-row ant-row-no-wrap"
                     >
                       <div
-                        class="ant-card ant-card-bordered ant-card-hoverable step-card-style  css-18lc8oi css-dev-only-do-not-override-txh9fw"
+                        class="ant-card ant-card-bordered ant-card-hoverable step-card-style css-18lc8oi"
                       >
                         <div
                           class="ant-card-body"
@@ -425,7 +425,7 @@ exports[`page/WorkflowTemplate CE render workflow template detail 1`] = `
               </div>
             </div>
             <div
-              class="ant-col workflow-template-right-module css-dev-only-do-not-override-txh9fw"
+              class="ant-col workflow-template-right-module"
               style="flex: 0 0 360px;"
             >
               <div
@@ -435,19 +435,19 @@ exports[`page/WorkflowTemplate CE render workflow template detail 1`] = `
                   class="css-4kgje5"
                 >
                   <span
-                    class="ant-typography top-auth-level css-dev-only-do-not-override-txh9fw"
+                    class="ant-typography top-auth-level"
                   >
                     允许创建工单的最高审核等级
                   </span>
                   <span
-                    class="ant-typography auth-level-text css-dev-only-do-not-override-txh9fw"
+                    class="ant-typography auth-level-text"
                     style="color: rgb(235, 173, 28);"
                   >
                     告警(Warning)
                   </span>
                   <div
                     aria-valuenow="75"
-                    class="ant-progress ant-progress-status-normal ant-progress-steps css-dev-only-do-not-override-txh9fw"
+                    class="ant-progress ant-progress-status-normal ant-progress-steps"
                     role="progressbar"
                   >
                     <div
@@ -476,12 +476,12 @@ exports[`page/WorkflowTemplate CE render workflow template detail 1`] = `
                   class="css-aaj731"
                 >
                   <span
-                    class="ant-typography auth-info-title css-dev-only-do-not-override-txh9fw"
+                    class="ant-typography auth-info-title"
                   >
                     注意事项
                   </span>
                   <div
-                    class="ant-typography auth-info-item css-dev-only-do-not-override-txh9fw"
+                    class="ant-typography auth-info-item"
                   >
                     <ul
                       class="auth-info-item-icon"
@@ -508,12 +508,12 @@ exports[`page/WorkflowTemplate CE render workflow template detail 1`] = `
                   class="css-aaj731"
                 >
                   <span
-                    class="ant-typography auth-info-title css-dev-only-do-not-override-txh9fw"
+                    class="ant-typography auth-info-title"
                   >
                     审批流程模板更新时间
                   </span>
                   <div
-                    class="ant-typography auth-info-item auth-info-time css-dev-only-do-not-override-txh9fw"
+                    class="ant-typography auth-info-item auth-info-time"
                   >
                     <svg
                       height="16"

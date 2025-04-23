@@ -11,7 +11,7 @@ exports[`base/Nav/SideMenu/UserMenu/BasicVersionModal render snap when open is t
   <div />
   <div>
     <div
-      class="ant-modal-root css-dev-only-do-not-override-txh9fw"
+      class="ant-modal-root"
     >
       <div
         class="ant-modal-mask"
@@ -22,7 +22,7 @@ exports[`base/Nav/SideMenu/UserMenu/BasicVersionModal render snap when open is t
       >
         <div
           aria-modal="true"
-          class="ant-modal css-dev-only-do-not-override-txh9fw version-modal basic-modal-wrapper css-vvpsbb ant-zoom-appear ant-zoom-appear-prepare ant-zoom"
+          class="ant-modal version-modal basic-modal-wrapper css-vvpsbb ant-zoom-appear ant-zoom-appear-prepare ant-zoom"
           role="dialog"
           style="width: 960px;"
         >
@@ -59,20 +59,20 @@ exports[`base/Nav/SideMenu/UserMenu/BasicVersionModal render snap when open is t
               class="ant-modal-body"
             >
               <div
-                class="ant-space css-dev-only-do-not-override-txh9fw ant-space-vertical"
+                class="ant-space ant-space-vertical"
               >
                 <div
                   class="ant-space-item"
                   style="margin-bottom: 24px;"
                 >
                   <div
-                    class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+                    class="ant-space ant-space-horizontal ant-space-align-center"
                   >
                     <div
                       class="ant-space-item"
                     >
                       <h2
-                        class="ant-typography css-dev-only-do-not-override-txh9fw"
+                        class="ant-typography"
                       >
                         SQLE
                       </h2>
@@ -84,14 +84,14 @@ exports[`base/Nav/SideMenu/UserMenu/BasicVersionModal render snap when open is t
                   style="margin-bottom: 24px;"
                 >
                   <div
-                    class="ant-space css-dev-only-do-not-override-txh9fw ant-space-vertical ant-space-align-start"
+                    class="ant-space ant-space-vertical ant-space-align-start"
                   >
                     <div
                       class="ant-space-item"
                       style="margin-bottom: 8px;"
                     >
                       <h5
-                        class="ant-typography css-dev-only-do-not-override-txh9fw"
+                        class="ant-typography"
                       >
                         版本信息
                       </h5>
@@ -100,14 +100,14 @@ exports[`base/Nav/SideMenu/UserMenu/BasicVersionModal render snap when open is t
                       class="ant-space-item"
                     >
                       <div
-                        class="ant-space css-dev-only-do-not-override-txh9fw ant-space-vertical"
+                        class="ant-space ant-space-vertical"
                       >
                         <div
                           class="ant-space-item"
                           style="margin-bottom: 8px;"
                         >
                           <article
-                            class="ant-typography css-dev-only-do-not-override-txh9fw"
+                            class="ant-typography"
                           >
                             UI: 
                             feature/add-make-command   ba9c9c5
@@ -118,7 +118,7 @@ exports[`base/Nav/SideMenu/UserMenu/BasicVersionModal render snap when open is t
                           style="margin-bottom: 8px;"
                         >
                           <article
-                            class="ant-typography css-dev-only-do-not-override-txh9fw"
+                            class="ant-typography"
                           >
                             DMS: 
                             dms-ce 081d27e60f
@@ -128,7 +128,7 @@ exports[`base/Nav/SideMenu/UserMenu/BasicVersionModal render snap when open is t
                           class="ant-space-item"
                         >
                           <article
-                            class="ant-typography css-dev-only-do-not-override-txh9fw"
+                            class="ant-typography"
                           >
                             SQLE: 
                             sqle-ce 081d27e699
@@ -143,14 +143,14 @@ exports[`base/Nav/SideMenu/UserMenu/BasicVersionModal render snap when open is t
                   style="margin-bottom: 24px;"
                 >
                   <div
-                    class="ant-space css-dev-only-do-not-override-txh9fw ant-space-vertical ant-space-align-start"
+                    class="ant-space ant-space-vertical ant-space-align-start"
                   >
                     <div
                       class="ant-space-item"
                       style="margin-bottom: 8px;"
                     >
                       <h5
-                        class="ant-typography css-dev-only-do-not-override-txh9fw"
+                        class="ant-typography"
                       >
                         产品简介
                       </h5>
@@ -159,7 +159,7 @@ exports[`base/Nav/SideMenu/UserMenu/BasicVersionModal render snap when open is t
                       class="ant-space-item"
                     >
                       <span
-                        class="ant-typography css-dev-only-do-not-override-txh9fw"
+                        class="ant-typography"
                       >
                         desc
                       </span>
@@ -170,14 +170,14 @@ exports[`base/Nav/SideMenu/UserMenu/BasicVersionModal render snap when open is t
                   class="ant-space-item"
                 >
                   <div
-                    class="ant-space css-dev-only-do-not-override-txh9fw ant-space-vertical ant-space-align-start full-width-element css-ac649q"
+                    class="ant-space ant-space-vertical ant-space-align-start full-width-element css-ac649q"
                   >
                     <div
                       class="ant-space-item"
                       style="margin-bottom: 8px;"
                     >
                       <h5
-                        class="ant-typography css-dev-only-do-not-override-txh9fw"
+                        class="ant-typography"
                       >
                         功能特点
                       </h5>
@@ -195,14 +195,14 @@ exports[`base/Nav/SideMenu/UserMenu/BasicVersionModal render snap when open is t
               class="ant-modal-footer"
             >
               <div
-                class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+                class="ant-space ant-space-horizontal ant-space-align-center"
               >
                 <div
                   class="ant-space-item"
                   style="margin-right: 8px;"
                 >
                   <button
-                    class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary basic-button-wrapper css-geipcv"
+                    class="ant-btn ant-btn-primary basic-button-wrapper css-geipcv"
                     type="button"
                   >
                     <a
@@ -218,7 +218,7 @@ exports[`base/Nav/SideMenu/UserMenu/BasicVersionModal render snap when open is t
                   class="ant-space-item"
                 >
                   <button
-                    class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary basic-button-wrapper css-geipcv"
+                    class="ant-btn ant-btn-primary basic-button-wrapper css-geipcv"
                     type="button"
                   >
                     <span>
@@ -246,7 +246,7 @@ exports[`base/Nav/SideMenu/UserMenu/BasicVersionModal render snap when open is t
   <div />
   <div>
     <div
-      class="ant-modal-root css-dev-only-do-not-override-txh9fw"
+      class="ant-modal-root"
     >
       <div
         class="ant-modal-mask"
@@ -257,7 +257,7 @@ exports[`base/Nav/SideMenu/UserMenu/BasicVersionModal render snap when open is t
       >
         <div
           aria-modal="true"
-          class="ant-modal css-dev-only-do-not-override-txh9fw version-modal basic-modal-wrapper css-vvpsbb ant-zoom-appear ant-zoom-appear-prepare ant-zoom"
+          class="ant-modal version-modal basic-modal-wrapper css-vvpsbb ant-zoom-appear ant-zoom-appear-prepare ant-zoom"
           role="dialog"
           style="width: 960px;"
         >
@@ -294,20 +294,20 @@ exports[`base/Nav/SideMenu/UserMenu/BasicVersionModal render snap when open is t
               class="ant-modal-body"
             >
               <div
-                class="ant-space css-dev-only-do-not-override-txh9fw ant-space-vertical"
+                class="ant-space ant-space-vertical"
               >
                 <div
                   class="ant-space-item"
                   style="margin-bottom: 24px;"
                 >
                   <div
-                    class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+                    class="ant-space ant-space-horizontal ant-space-align-center"
                   >
                     <div
                       class="ant-space-item"
                     >
                       <h2
-                        class="ant-typography css-dev-only-do-not-override-txh9fw"
+                        class="ant-typography"
                       >
                         SQLE
                       </h2>
@@ -319,14 +319,14 @@ exports[`base/Nav/SideMenu/UserMenu/BasicVersionModal render snap when open is t
                   style="margin-bottom: 24px;"
                 >
                   <div
-                    class="ant-space css-dev-only-do-not-override-txh9fw ant-space-vertical ant-space-align-start"
+                    class="ant-space ant-space-vertical ant-space-align-start"
                   >
                     <div
                       class="ant-space-item"
                       style="margin-bottom: 8px;"
                     >
                       <h5
-                        class="ant-typography css-dev-only-do-not-override-txh9fw"
+                        class="ant-typography"
                       >
                         版本信息
                       </h5>
@@ -335,14 +335,14 @@ exports[`base/Nav/SideMenu/UserMenu/BasicVersionModal render snap when open is t
                       class="ant-space-item"
                     >
                       <div
-                        class="ant-space css-dev-only-do-not-override-txh9fw ant-space-vertical"
+                        class="ant-space ant-space-vertical"
                       >
                         <div
                           class="ant-space-item"
                           style="margin-bottom: 8px;"
                         >
                           <article
-                            class="ant-typography css-dev-only-do-not-override-txh9fw"
+                            class="ant-typography"
                           >
                             UI: 
                             feature/add-make-command   ba9c9c5
@@ -364,14 +364,14 @@ exports[`base/Nav/SideMenu/UserMenu/BasicVersionModal render snap when open is t
                   style="margin-bottom: 24px;"
                 >
                   <div
-                    class="ant-space css-dev-only-do-not-override-txh9fw ant-space-vertical ant-space-align-start"
+                    class="ant-space ant-space-vertical ant-space-align-start"
                   >
                     <div
                       class="ant-space-item"
                       style="margin-bottom: 8px;"
                     >
                       <h5
-                        class="ant-typography css-dev-only-do-not-override-txh9fw"
+                        class="ant-typography"
                       >
                         产品简介
                       </h5>
@@ -380,7 +380,7 @@ exports[`base/Nav/SideMenu/UserMenu/BasicVersionModal render snap when open is t
                       class="ant-space-item"
                     >
                       <span
-                        class="ant-typography css-dev-only-do-not-override-txh9fw"
+                        class="ant-typography"
                       >
                         desc
                       </span>
@@ -391,14 +391,14 @@ exports[`base/Nav/SideMenu/UserMenu/BasicVersionModal render snap when open is t
                   class="ant-space-item"
                 >
                   <div
-                    class="ant-space css-dev-only-do-not-override-txh9fw ant-space-vertical ant-space-align-start full-width-element css-ac649q"
+                    class="ant-space ant-space-vertical ant-space-align-start full-width-element css-ac649q"
                   >
                     <div
                       class="ant-space-item"
                       style="margin-bottom: 8px;"
                     >
                       <h5
-                        class="ant-typography css-dev-only-do-not-override-txh9fw"
+                        class="ant-typography"
                       >
                         功能特点
                       </h5>
@@ -416,14 +416,14 @@ exports[`base/Nav/SideMenu/UserMenu/BasicVersionModal render snap when open is t
               class="ant-modal-footer"
             >
               <div
-                class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+                class="ant-space ant-space-horizontal ant-space-align-center"
               >
                 <div
                   class="ant-space-item"
                   style="margin-right: 8px;"
                 >
                   <button
-                    class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary basic-button-wrapper css-geipcv"
+                    class="ant-btn ant-btn-primary basic-button-wrapper css-geipcv"
                     type="button"
                   >
                     <a
@@ -439,7 +439,7 @@ exports[`base/Nav/SideMenu/UserMenu/BasicVersionModal render snap when open is t
                   class="ant-space-item"
                 >
                   <button
-                    class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary basic-button-wrapper css-geipcv"
+                    class="ant-btn ant-btn-primary basic-button-wrapper css-geipcv"
                     type="button"
                   >
                     <span>

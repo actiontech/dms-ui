@@ -4,6 +4,10 @@ import { DetailReportDrawerProps } from '../index.type';
 import { cleanup, screen } from '@testing-library/react';
 import { mockUseCurrentUser } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentUser';
 import { RuleResV1LevelEnum } from '@actiontech/shared/lib/api/sqle/service/common.enum';
+import {
+  ignoreConsoleErrors,
+  UtilsConsoleErrorStringsEnum
+} from '@actiontech/shared/lib/testUtil/common';
 
 describe('sqle/components/ReportDrawer', () => {
   const customRender = (params: DetailReportDrawerProps) => {
@@ -19,7 +23,7 @@ describe('sqle/components/ReportDrawer', () => {
     jest.useRealTimers();
     cleanup();
   });
-
+  ignoreConsoleErrors([UtilsConsoleErrorStringsEnum.UNKNOWN_EVENT_HANDLER]);
   it('render snap open is false', () => {
     const { baseElement } = customRender({
       open: false,
