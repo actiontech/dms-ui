@@ -45,8 +45,7 @@ const ExpirationAccountList = () => {
 
   const { updateServiceList, serviceOptions } = useServiceOptions();
 
-  const { updateSecurityPolicyList, securityPolicyOptions } =
-    useSecurityPolicy();
+  const { updateSecurityPolicyList } = useSecurityPolicy();
 
   const { toggleModal, initModalStatus } = useModalStatus(
     DatabaseAccountModalStatus
@@ -109,16 +108,9 @@ const ExpirationAccountList = () => {
           options: serviceOptions,
           value: tableFilterInfo.filter_by_db_service
         }
-      ],
-      [
-        'password_security_policy',
-        {
-          options: securityPolicyOptions(false),
-          value: tableFilterInfo.filter_by_policy
-        }
       ]
     ]);
-  }, [serviceOptions, tableFilterInfo, securityPolicyOptions]);
+  }, [serviceOptions, tableFilterInfo]);
 
   const onUpdateFilter = useCallback(
     (key: keyof ExpirationAccountListFilterParamType, value: string) => {

@@ -4,6 +4,11 @@ import { IAuthAddDBAccountParams } from '@actiontech/shared/lib/api/provision/se
 import { IGetDBAccountReply } from '@actiontech/shared/lib/api/provision/service/common.d';
 import { BackendFormValues } from '../../../../sqle/src/components/BackendForm';
 import { IDatabasePrivilegesSelectorBaseFields } from '../../components/DatabasePrivilegesSelector/index.type';
+import {
+  AddDBAccountPasswordExpirationPolicyEnum,
+  BatchUpdateDBAccountPasswordPasswordExpirationPolicyEnum,
+  PasswordConfigPasswordExpirationPolicyEnum
+} from '@actiontech/shared/lib/api/provision/service/common.enum';
 
 export type ExpendedDBAccountBody = IDBAccountBody & { id?: string };
 
@@ -30,6 +35,7 @@ export type CreateAccountFormType = {
   explanation: string;
   environment: string;
   additionalParams: BackendFormValues;
+  password_expiration_policy: AddDBAccountPasswordExpirationPolicyEnum;
 } & IDatabasePrivilegesSelectorBaseFields;
 
 export type PermissionsType = {
@@ -94,6 +100,7 @@ export type ModifyPasswordFormType = {
   password: string;
   confirm_password: string;
   effective_time_day: number;
+  password_expiration_policy: PasswordConfigPasswordExpirationPolicyEnum;
 };
 
 export type ModifyPasswordItemType = {
@@ -107,4 +114,5 @@ export type BatchModifyPasswordFormType = {
   policy: string;
   effective_time_day: number;
   passwords: ModifyPasswordItemType[];
+  password_expiration_policy: BatchUpdateDBAccountPasswordPasswordExpirationPolicyEnum;
 };

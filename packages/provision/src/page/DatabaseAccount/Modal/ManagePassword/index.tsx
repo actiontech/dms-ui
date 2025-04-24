@@ -21,6 +21,7 @@ import { useRecoilState } from 'recoil';
 import EventEmitter from '../../../../utils/EventEmitter';
 import { EventEmitterKey, ModalName } from '../../../../data/enum';
 import PasswordPolicyField from '../ModifyPassword/PasswordPolicyField';
+import { PlatformManagedPasswordExpirationPolicyEnum } from '@actiontech/shared/lib/api/provision/service/common.enum';
 
 const ManagePasswordModal: React.FC = () => {
   const { t } = useTranslation();
@@ -62,7 +63,9 @@ const ManagePasswordModal: React.FC = () => {
             password_expired_day: values.effective_time_day,
             manage_password: values.password,
             password_security_policy:
-              values.policy === NORMAL_POLICY_VALUE ? '' : values.policy
+              values.policy === NORMAL_POLICY_VALUE ? '' : values.policy,
+            password_expiration_policy:
+              values.password_expiration_policy as unknown as PlatformManagedPasswordExpirationPolicyEnum
           }
         }
       })

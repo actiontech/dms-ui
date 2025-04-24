@@ -23,8 +23,8 @@
       "output": "packages/shared/lib/api/provision/service",
       "branch": "main",
       "swaggerPath": "",
-      "swaggerOutput": "./scripts/api/plugin.js",
-      "plugin": "",
+      "swaggerOutput": "",
+      "plugin": "./scripts/api/plugin.js",
       "template": "complex"
     }
   },

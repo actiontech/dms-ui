@@ -164,6 +164,8 @@ describe('provision/DatabaseAccount/Create', () => {
     });
     await act(async () => jest.advanceTimersByTime(100));
 
+    fireEvent.click(screen.getByText('到期后保持可用'));
+
     fireEvent.mouseDown(getBySelector('#dbRoles', baseElement));
     await act(async () => jest.advanceTimersByTime(0));
     fireEvent.click(screen.getByText('role1'));
@@ -275,7 +277,8 @@ describe('provision/DatabaseAccount/Create', () => {
         effective_time_day: 30,
         data_permissions,
         password_security_policy: undefined,
-        db_roles: ['123']
+        db_roles: ['123'],
+        password_expiration_policy: 'expiration_available'
       }
     });
     await act(async () => jest.advanceTimersByTime(2900));

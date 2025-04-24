@@ -98,7 +98,8 @@ describe('provision/DatabaseAccount/ManagePasswordModal', () => {
           platform_managed: true,
           password_expired_day: 30,
           manage_password: '123456',
-          password_security_policy: ''
+          password_security_policy: '',
+          password_expiration_policy: 'expiration_lock'
         }
       }
     });
@@ -123,6 +124,7 @@ describe('provision/DatabaseAccount/ManagePasswordModal', () => {
     await act(async () => jest.advanceTimersByTime(100));
     expect(getBySelector('#effective_time_day')).toHaveValue('30');
     expect(getBySelector('#effective_time_day')).toHaveAttribute('disabled');
+    fireEvent.click(screen.getByText('到期后保持可用'));
 
     fireEvent.input(getBySelector('#password'), {
       target: { value: 'abc' }
@@ -139,7 +141,8 @@ describe('provision/DatabaseAccount/ManagePasswordModal', () => {
           platform_managed: true,
           password_expired_day: 30,
           manage_password: 'abc',
-          password_security_policy: '12345'
+          password_security_policy: '12345',
+          password_expiration_policy: 'expiration_available'
         }
       }
     });

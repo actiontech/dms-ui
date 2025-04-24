@@ -156,7 +156,7 @@ describe('provision/DatabaseAccount/List-2', () => {
     return { modalStatusChangeSpy };
   };
 
-  test('render init snap', async () => {
+  it('render init snap', async () => {
     const { baseElement } = superRender(<DatabaseAccountList />);
     await act(async () => jest.advanceTimersByTime(3000));
     expect(baseElement).toMatchSnapshot();
@@ -171,7 +171,7 @@ describe('provision/DatabaseAccount/List-2', () => {
     );
   });
 
-  test('render update table filter', async () => {
+  it('render update table filter', async () => {
     const { baseElement } = superRender(<DatabaseAccountList />);
     await act(async () => jest.advanceTimersByTime(3000));
     expect(authListDBAccountSpy).toHaveBeenCalledTimes(1);
@@ -192,7 +192,7 @@ describe('provision/DatabaseAccount/List-2', () => {
     expect(baseElement).toMatchSnapshot();
   });
 
-  test('filter data with search', async () => {
+  it('filter data with search', async () => {
     superRender(<DatabaseAccountList />);
     expect(authListDBAccountSpy).toHaveBeenCalled();
     const searchText = 'search text';
@@ -218,7 +218,7 @@ describe('provision/DatabaseAccount/List-2', () => {
     });
   });
 
-  test('render emit "Refresh_Account_Management_List_Table" event', async () => {
+  it('render emit "Refresh_Account_Management_List_Table" event', async () => {
     superRender(<DatabaseAccountList />);
     await act(async () => jest.advanceTimersByTime(3000));
     expect(authListDBAccountSpy).toHaveBeenCalledTimes(1);
@@ -245,7 +245,7 @@ describe('provision/DatabaseAccount/List-2', () => {
     });
   });
 
-  test('render account discovery', async () => {
+  it('render account discovery', async () => {
     const modalStatusChangeSpy = jest.fn();
     superRender(
       <>
@@ -271,7 +271,7 @@ describe('provision/DatabaseAccount/List-2', () => {
     });
   });
 
-  test('render batch modify password', async () => {
+  it('render batch modify password', async () => {
     const modalStatusChangeSpy = jest.fn();
     superRender(
       <>
@@ -302,7 +302,7 @@ describe('provision/DatabaseAccount/List-2', () => {
     });
   });
 
-  test('render check account detail', async () => {
+  it('render check account detail', async () => {
     const { modalStatusChangeSpy } = customRender();
     await act(async () => jest.advanceTimersByTime(3000));
     fireEvent.click(screen.getByText('查 看'));
@@ -318,7 +318,7 @@ describe('provision/DatabaseAccount/List-2', () => {
     });
   });
 
-  test('render authorize', async () => {
+  it('render authorize', async () => {
     const { modalStatusChangeSpy } = customRender();
     await act(async () => jest.advanceTimersByTime(3000));
     expect(screen.getByText('授 权')).toBeInTheDocument();
@@ -336,7 +336,7 @@ describe('provision/DatabaseAccount/List-2', () => {
     });
   });
 
-  test('render modify password', async () => {
+  it('render modify password', async () => {
     const { modalStatusChangeSpy } = customRender();
     await act(async () => jest.advanceTimersByTime(3000));
     fireEvent.click(getBySelector('.actiontech-table-actions-more-button'));
@@ -355,7 +355,7 @@ describe('provision/DatabaseAccount/List-2', () => {
     });
   });
 
-  test('render renewal password', async () => {
+  it('render renewal password', async () => {
     const { modalStatusChangeSpy } = customRender();
     await act(async () => jest.advanceTimersByTime(3000));
     fireEvent.click(getBySelector('.actiontech-table-actions-more-button'));
@@ -374,7 +374,7 @@ describe('provision/DatabaseAccount/List-2', () => {
     });
   });
 
-  test('render update permission', async () => {
+  it('render update permission', async () => {
     customRender();
     await act(async () => jest.advanceTimersByTime(3000));
     fireEvent.click(getBySelector('.actiontech-table-actions-more-button'));
@@ -389,7 +389,7 @@ describe('provision/DatabaseAccount/List-2', () => {
     );
   });
 
-  test('render unlock account', async () => {
+  it('render unlock account', async () => {
     customRender();
     await act(async () => jest.advanceTimersByTime(3000));
     fireEvent.click(getBySelector('.actiontech-table-actions-more-button'));
@@ -410,7 +410,7 @@ describe('provision/DatabaseAccount/List-2', () => {
     expect(screen.getByText('账号已启用')).toBeInTheDocument();
   });
 
-  test('render lock account', async () => {
+  it('render lock account', async () => {
     dbAccountService.authGetDBAccount();
     authListDBAccountSpy.mockClear();
     authListDBAccountSpy.mockImplementation(() =>
@@ -452,7 +452,7 @@ describe('provision/DatabaseAccount/List-2', () => {
     expect(screen.getByText('账号已禁用')).toBeInTheDocument();
   });
 
-  test('render delete account', async () => {
+  it('render delete account', async () => {
     customRender();
     await act(async () => jest.advanceTimersByTime(3000));
     fireEvent.click(getBySelector('.actiontech-table-actions-more-button'));
@@ -472,7 +472,7 @@ describe('provision/DatabaseAccount/List-2', () => {
     expect(screen.getByText('账号删除成功')).toBeInTheDocument();
   });
 
-  test('render unsync account', async () => {
+  it('render unsync account', async () => {
     customRender();
     await act(async () => jest.advanceTimersByTime(3000));
     fireEvent.click(getBySelector('.actiontech-table-actions-more-button'));
@@ -495,7 +495,7 @@ describe('provision/DatabaseAccount/List-2', () => {
     expect(screen.getByText('账号解除同步成功')).toBeInTheDocument();
   });
 
-  test('render cancel managed', async () => {
+  it('render cancel managed', async () => {
     customRender();
     await act(async () => jest.advanceTimersByTime(3000));
     fireEvent.click(getBySelector('.actiontech-table-actions-more-button'));
@@ -525,7 +525,7 @@ describe('provision/DatabaseAccount/List-2', () => {
     expect(screen.getByText('密码已取消托管')).toBeInTheDocument();
   });
 
-  test('render manage account', async () => {
+  it('render manage account', async () => {
     dbAccountService.authGetDBAccount();
     authListDBAccountSpy.mockClear();
     authListDBAccountSpy.mockImplementation(() =>
@@ -568,7 +568,7 @@ describe('provision/DatabaseAccount/List-2', () => {
     });
   });
 
-  test('render create and discovery button', async () => {
+  it('render create and discovery button', async () => {
     checkDbServicePermissionSpy.mockReturnValue(false);
 
     const { baseElement } = superRender(<DatabaseAccountList />);

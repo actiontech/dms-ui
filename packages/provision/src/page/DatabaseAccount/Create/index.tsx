@@ -101,6 +101,7 @@ const CreateDatabaseAccount = () => {
           explanation: values.explanation,
           additional_params: mergeFromValueWithDescIntoParams()
         },
+        password_expiration_policy: values.password_expiration_policy,
         effective_time_day: values.effective_time_day,
         data_permissions: generatePrivilegesSubmitDataByFormValues(
           values.systemPrivileges ?? [],

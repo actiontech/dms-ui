@@ -104,7 +104,8 @@ describe('provision/DatabaseAccount/ModifyPasswordModal', () => {
         password_config: {
           password_expired_day: 30,
           db_account_password: '123456',
-          password_security_policy: ''
+          password_security_policy: '',
+          password_expiration_policy: 'expiration_lock'
         }
       }
     });
@@ -135,6 +136,9 @@ describe('provision/DatabaseAccount/ModifyPasswordModal', () => {
 
     expect(getBySelector('#password')).not.toHaveValue();
     expect(getBySelector('#confirm_password')).not.toHaveValue();
+
+    fireEvent.click(screen.getByText('到期后保持可用'));
+
     fireEvent.click(screen.getByText('生 成'));
     expect(generateMySQLPassword).toHaveBeenCalled();
     expect(getBySelector('#password')).toHaveValue('abc');
@@ -150,7 +154,8 @@ describe('provision/DatabaseAccount/ModifyPasswordModal', () => {
         password_config: {
           password_expired_day: 30,
           db_account_password: 'abc',
-          password_security_policy: '12345'
+          password_security_policy: '12345',
+          password_expiration_policy: 'expiration_available'
         }
       }
     });

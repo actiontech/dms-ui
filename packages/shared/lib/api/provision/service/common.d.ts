@@ -1,11 +1,15 @@
 import {
+  AccountDetailPasswordExpirationPolicyEnum,
+  AddDBAccountPasswordExpirationPolicyEnum,
   AddDataObjectSourceNameEnum,
+  BatchUpdateDBAccountPasswordPasswordExpirationPolicyEnum,
   DMSProxyTargetScenarioEnum,
   DataObjectSourceNameEnum,
   DelDataObjectSourceDeleteModEnum,
   StatusEnum,
   GetUserAuthenticationTypeEnum,
   GetUserStatEnum,
+  ListDBAccountPasswordExpirationPolicyEnum,
   ListDBAccountStatusEnum,
   ListDBServiceLastConnectionTestStatusEnum,
   ListDBServiceV2LastConnectionTestStatusEnum,
@@ -20,6 +24,8 @@ import {
   OperationScopeEnum,
   OperationInfoDataObjectTypesEnum,
   OperationInfoDbTypeEnum,
+  PasswordConfigPasswordExpirationPolicyEnum,
+  PlatformManagedPasswordExpirationPolicyEnum,
   SQLQueryConfigAllowQueryWhenLessThanAuditLevelEnum,
   ServiceDbTypeEnum,
   SyncRuleFieldNameEnum,
@@ -48,6 +54,8 @@ export interface IAccountDetail {
   password?: string;
 
   password_create_time?: string;
+
+  password_expiration_policy?: AccountDetailPasswordExpirationPolicyEnum;
 
   user?: string;
 }
@@ -82,6 +90,8 @@ export interface IAddDBAccount {
   effective_time_day?: number;
 
   explanation?: string;
+
+  password_expiration_policy: AddDBAccountPasswordExpirationPolicyEnum;
 
   password_security_policy?: string;
 }
@@ -209,6 +219,8 @@ export interface IAuthGetAccountStaticsReply {
 }
 
 export interface IBatchUpdateDBAccountPassword {
+  password_expiration_policy?: BatchUpdateDBAccountPasswordPasswordExpirationPolicyEnum;
+
   password_security_policy?: string;
 
   passwords?: IBatchUpdatePassword[];
@@ -649,7 +661,9 @@ export interface IListDBAccount {
 
   explanation?: string;
 
-  password_security_policy?: string;
+  password_expiration_policy?: ListDBAccountPasswordExpirationPolicyEnum;
+
+  password_expired?: boolean;
 
   platform_managed?: boolean;
 
@@ -1189,6 +1203,8 @@ export type IParams = IParam[];
 export interface IPasswordConfig {
   db_account_password?: string;
 
+  password_expiration_policy?: PasswordConfigPasswordExpirationPolicyEnum;
+
   password_expired_day?: number;
 
   password_security_policy?: string;
@@ -1214,6 +1230,8 @@ export interface IPermissionUsers {
 
 export interface IPlatformManaged {
   manage_password?: string;
+
+  password_expiration_policy?: PlatformManagedPasswordExpirationPolicyEnum;
 
   password_expired_day?: number;
 

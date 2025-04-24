@@ -4,7 +4,10 @@ import {
   IStatement,
   IDBAccountBody
 } from '@actiontech/shared/lib/api/provision/service/common';
-import { ListDBAccountStatusEnum } from '@actiontech/shared/lib/api/provision/service/common.enum';
+import {
+  ListDBAccountPasswordExpirationPolicyEnum,
+  ListDBAccountStatusEnum
+} from '@actiontech/shared/lib/api/provision/service/common.enum';
 
 export const dbAccountMockData: IListDBAccount[] = [
   {
@@ -18,8 +21,10 @@ export const dbAccountMockData: IListDBAccount[] = [
       uid: '1793883708181188608',
       name: 'test1'
     },
-    expired_time: '2024-08-25T17:27:05.000+08:00',
-    password_security_policy: '低',
+    expired_time: '2025-08-25T17:27:05.000+08:00',
+    password_expired: false,
+    password_expiration_policy:
+      ListDBAccountPasswordExpirationPolicyEnum.expiration_lock,
     status: ListDBAccountStatusEnum.lock,
     platform_managed: true,
     auth_users: [
@@ -42,8 +47,11 @@ export const dbAccountMockData: IListDBAccount[] = [
       uid: '1793905180144570368',
       name: 'test2'
     },
-    expired_time: '',
-    password_security_policy: '中',
+    expired_time: '2025-08-25T17:27:05.000+08:00',
+    password_expired: false,
+
+    password_expiration_policy:
+      ListDBAccountPasswordExpirationPolicyEnum.expiration_available,
     status: ListDBAccountStatusEnum.unlock,
     platform_managed: false,
     auth_users: [],
@@ -54,11 +62,58 @@ export const dbAccountMockData: IListDBAccount[] = [
     account_info: {
       user: 'testa11'
     },
+    expired_time: '2025-08-25T17:27:05.000+08:00',
+    password_expired: false,
+
     explanation: '',
     db_service: {},
-    password_security_policy: '',
+    password_expiration_policy:
+      ListDBAccountPasswordExpirationPolicyEnum.expiration_lock,
+    status: ListDBAccountStatusEnum.unlock,
     platform_managed: true,
     remaining_days: '29天3小时'
+  },
+  {
+    db_account_uid: '1794998179528183811',
+    account_info: {
+      user: 'testa11',
+      hostname: '%',
+      password: ''
+    },
+    explanation: '',
+    db_service: {
+      uid: '1793905180144570368',
+      name: 'test2'
+    },
+    expired_time: '2023-08-25T17:27:05.000+08:00',
+    password_expired: true,
+    password_expiration_policy:
+      ListDBAccountPasswordExpirationPolicyEnum.expiration_available,
+    status: ListDBAccountStatusEnum.expired,
+    platform_managed: false,
+    auth_users: [],
+    remaining_days: '0'
+  },
+  {
+    db_account_uid: '1794998179528183812',
+    account_info: {
+      user: 'testa11',
+      hostname: '%',
+      password: ''
+    },
+    explanation: '',
+    db_service: {
+      uid: '1793905180144570368',
+      name: 'test2'
+    },
+    expired_time: '2023-08-25T17:27:05.000+08:00',
+    password_expired: true,
+    password_expiration_policy:
+      ListDBAccountPasswordExpirationPolicyEnum.expiration_lock,
+    status: ListDBAccountStatusEnum.expired,
+    platform_managed: false,
+    auth_users: [],
+    remaining_days: '0'
   }
 ];
 
