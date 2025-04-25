@@ -88,13 +88,7 @@ const GenerateTokenModal: React.FC<GenerateTokenModalProps> = ({
           ]}
         >
           <BasicInputNumber
-            formatter={(value) => {
-              if (!value) {
-                return '';
-              }
-
-              return `${Math.floor(value as number)}`;
-            }}
+            integer
             min={1}
             placeholder={t('common.form.placeholder.input', {
               name: t(

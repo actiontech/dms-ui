@@ -1,6 +1,8 @@
 import { renderWithTheme } from '../../testUtil/customRender';
 import BasicInputNumber from './BasicInputNumber';
 import { BasicInputNumberProps } from './BasicInputNumber.types';
+import { act, fireEvent } from '@testing-library/react';
+import { getBySelector } from '../../testUtil/customQuery';
 
 describe('lib/BasicInputNumber', () => {
   const customRender = (params: BasicInputNumberProps) => {
@@ -27,5 +29,24 @@ describe('lib/BasicInputNumber', () => {
       size: 'small'
     });
     expect(container3).toMatchSnapshot();
+  });
+
+  it('render integer input', async () => {
+    const { container } = customRender({
+      integer: true
+    });
+    expect(container).toMatchSnapshot();
+
+    const inputElement = getBySelector('input');
+
+    fireEvent.change(inputElement, {
+      target: { value: 1.1111 }
+    });
+
+    await act(async () => {
+      fireEvent.blur(inputElement);
+    });
+
+    expect(inputElement).toHaveValue('1');
   });
 });
