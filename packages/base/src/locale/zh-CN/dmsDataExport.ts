@@ -30,6 +30,7 @@ export default {
       },
       source: {
         title: '选择导出对象',
+        titleTips: '数据导出仅支持MySQL/Oracle/PG/SQL Server',
         business: '业务类型',
         dbService: '数据源',
         schema: '数据库'
