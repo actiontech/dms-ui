@@ -7,7 +7,8 @@ import {
   getResponseErrorMessage,
   getResponseCode,
   isExportFileResponse,
-  isFileStreamResponse
+  isFileStreamResponse,
+  getRecentlySelectedZone
 } from '../../../utils/Common';
 import { eventEmitter } from '../../../utils/EventEmitter';
 import { NotificationInstanceKeyType } from '../../../hooks/useNotificationContext';
@@ -97,7 +98,8 @@ class ApiBase {
         ...config,
         headers: {
           ...config.headers,
-          Authorization: token
+          Authorization: token,
+          zone: getRecentlySelectedZone()
         }
       };
     };
