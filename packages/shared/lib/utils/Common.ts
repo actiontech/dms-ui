@@ -1,8 +1,9 @@
 import { AxiosResponse } from 'axios';
 import i18n from 'i18next';
-import { MIMETypeEnum, ResponseBlobJsonType } from '../enum';
+import { MIMETypeEnum, ResponseBlobJsonType, StorageKey } from '../enum';
 import dayjs, { Dayjs } from 'dayjs';
 import queryString from 'query-string';
+import LocalStorageWrapper from './LocalStorageWrapper';
 
 export const emailValidate = (email: string): boolean => {
   if (!email || typeof email !== 'string') {
@@ -203,4 +204,16 @@ export const maskPhoneNumber = (phone: string): string => {
     return phone;
   }
   return phone.replace(/(\d{3})\d{4}(\d{4})/, '$1****$2');
+};
+
+export const getRecentlySelectedZone = (): string => {
+  const data = LocalStorageWrapper.get(StorageKey.DMS_AVAILABILITY_ZONE);
+  try {
+    const parsedData = JSON.parse(data || '[]');
+    return parsedData?.[0]?.uid ?? '';
+  } catch (error) {
+    // eslint-disable-next-line no-console
+    console.error(error);
+    return '';
+  }
 };

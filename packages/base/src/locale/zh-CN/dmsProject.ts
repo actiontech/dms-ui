@@ -90,5 +90,6 @@ export default {
     dataSource:
       '数据源：数据源是构建在业务基础上的实际操作对象。您可以在数据源层面执行具体的数据操作，如查询、更新和管理数据。'
   },
-  resourceOverview: '资源全景视图'
+  resourceOverview: '资源全景视图',
+  availabilityZone: '配置可用区'
 };
