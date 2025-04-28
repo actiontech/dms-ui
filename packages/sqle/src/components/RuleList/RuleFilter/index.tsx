@@ -5,14 +5,16 @@ import { RuleFilterFieldsType } from '../index.type';
 
 type RuleFilterProps = {
   form: FormInstance<RuleFilterFieldsType>;
+  extra?: React.ReactNode;
 };
 
-const RuleFilter: React.FC<RuleFilterProps> = ({ form }) => {
+const RuleFilter: React.FC<RuleFilterProps> = ({ form, extra }) => {
   return (
-    <FilterContainerStyleWrapper className="full-width-element">
+    <FilterContainerStyleWrapper className="full-width-element flex-space-between">
       <Form form={form}>
         <RuleFilterCommonFields />
       </Form>
+      {extra}
     </FilterContainerStyleWrapper>
   );
 };
