@@ -201,10 +201,11 @@ exports[`sqle/RuleTemplate/RuleTemplateDetail should match snap shot 1`] = `
             </section>
           </section>
           <div
-            class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center full-width-element css-de5ds5"
+            class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center full-width-element flex-space-between css-de5ds5"
           >
             <div
               class="ant-space-item"
+              style="margin-right: 8px;"
             >
               <form
                 class="ant-form ant-form-horizontal css-dev-only-do-not-override-txh9fw"
@@ -584,6 +585,15 @@ exports[`sqle/RuleTemplate/RuleTemplateDetail should match snap shot 1`] = `
                   </div>
                 </div>
               </form>
+            </div>
+            <div
+              class="ant-space-item"
+            >
+              <span
+                class="ant-tag ant-tag-blue basic-tag-wrapper basic-large-tag-wrapper css-1q0n2j9 css-dev-only-do-not-override-txh9fw"
+              >
+                1条规则
+              </span>
             </div>
           </div>
           <div

@@ -1,27 +1,27 @@
-import { RuleListFilterForm } from '../index.type';
-import { useState, useMemo, useEffect } from 'react';
+import { useState, useMemo, useCallback } from 'react';
 import rule_template from '@actiontech/shared/lib/api/sqle/service/rule_template';
 import { ResponseCode } from '@actiontech/shared/lib/enum';
 import { useRequest } from 'ahooks';
 import { FormInstance, Form } from 'antd';
 import { useCurrentUser } from '@actiontech/shared/lib/features';
 import { useRuleFilterForm } from '../../../components/RuleList';
+import { RuleListFilterForm } from '../index.type';
 
 const useRuleListFilter = (form: FormInstance<RuleListFilterForm>) => {
   const [showNotRuleTemplatePage, setShowNorRuleTemplatePage] =
     useState<boolean>(false);
 
-  const [loading, setLoading] = useState<boolean>(false);
+  const [visible, setVisible] = useState<boolean>(false);
 
   const { bindProjects } = useCurrentUser();
 
-  const fuzzyKeyword = Form.useWatch('fuzzy_keyword', form);
+  const [fuzzyKeyword, setFuzzyKeyword] = useState<string>();
   const projectName = Form.useWatch('project_name', form);
   const filterRuleTemplate = Form.useWatch('filter_rule_template', form);
   const filterDbType = Form.useWatch('filter_db_type', form);
   const filterRuleVersion = Form.useWatch('filter_rule_version', form);
 
-  const { tags } = useRuleFilterForm<RuleListFilterForm>(form);
+  const { tags } = useRuleFilterForm(form);
 
   const { data: allRules, loading: getAllRulesLoading } = useRequest(
     () => {
@@ -36,7 +36,7 @@ const useRuleListFilter = (form: FormInstance<RuleListFilterForm>) => {
     },
     {
       ready: !!filterDbType,
-      refreshDeps: [filterDbType, fuzzyKeyword, tags, filterRuleVersion]
+      refreshDeps: [filterDbType, fuzzyKeyword, filterRuleVersion, tags]
     }
   );
 
@@ -74,25 +74,37 @@ const useRuleListFilter = (form: FormInstance<RuleListFilterForm>) => {
     return bindProjects.find((v) => v.project_name === projectName)?.project_id;
   }, [bindProjects, projectName]);
 
-  useEffect(() => {
-    setLoading(getAllRulesLoading || getTemplateRulesLoading);
-  }, [getAllRulesLoading, getTemplateRulesLoading]);
+  const onFuzzyKeywordChange = (value: string | undefined) => {
+    setFuzzyKeyword(value);
+  };
+
+  const toggleFilterVisible = useCallback(() => {
+    setVisible(!visible);
+    if (visible) {
+      form.resetFields([
+        'project_name',
+        'filter_rule_template',
+        'operand',
+        'audit_purpose',
+        'audit_accuracy',
+        'sql',
+        'performance_cost'
+      ]);
+    }
+  }, [form, visible]);
 
   return {
+    loading: getAllRulesLoading || getTemplateRulesLoading,
     showNotRuleTemplatePage,
     setShowNorRuleTemplatePage,
     allRules,
-    getAllRulesLoading,
     filterRuleTemplate,
-    projectName,
     templateRules,
-    getTemplateRulesLoading,
     bindProjects,
     projectID,
-    loading,
-    setLoading,
-    filterDbType,
-    tags
+    visible,
+    toggleFilterVisible,
+    onFuzzyKeywordChange
   };
 };
 

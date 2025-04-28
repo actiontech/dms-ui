@@ -1,27 +1,23 @@
 import { Form, Space } from 'antd';
 import { CustomSelect } from '@actiontech/shared/lib/components/CustomSelect';
 import { useTranslation } from 'react-i18next';
-import {
-  RuleListFilterStyleWrapper,
-  RuleListProjectFilterStyleWrapper
-} from '../style';
-import { useMemo, useEffect } from 'react';
-import { TableColumnWithIconStyleWrapper } from '@actiontech/shared/lib/styleWrapper/element';
+import { useMemo, useEffect, useCallback } from 'react';
+import { useDbServiceDriver } from '@actiontech/shared/lib/features';
+import CustomSelectField from './CustomSelectField';
+import useRuleVersionTips from '../../../hooks/useRuleVersionTips';
 import useRuleTemplate from '../../../hooks/useRuleTemplate';
 import useGlobalRuleTemplate from '../../../hooks/useGlobalRuleTemplate';
-import { useDbServiceDriver } from '@actiontech/shared/lib/features';
-import { RuleListFilterProps } from '../index.type';
-import CustomSelectField from './CustomSelectFiled';
-import { FlagFilled } from '@actiontech/icons';
 import { useTypedQuery } from '@actiontech/shared';
 import { ROUTE_PATHS } from '@actiontech/shared/lib/data/routePaths';
+import { RuleListFilterProps } from '../index.type';
+import { RuleListFilterStyleWrapper } from './style';
 import { RuleFilterCommonFields } from '../../../components/RuleList';
-import useRuleVersionTips from '../../../hooks/useRuleVersionTips';
 
 const RuleListFilter: React.FC<RuleListFilterProps> = ({
-  setShowNorRuleTemplatePage,
   form,
-  bindProjects
+  visible,
+  bindProjects,
+  setShowNorRuleTemplatePage
 }) => {
   const { t } = useTranslation();
   const extractQueries = useTypedQuery();
@@ -29,20 +25,6 @@ const RuleListFilter: React.FC<RuleListFilterProps> = ({
   const projectName = Form.useWatch('project_name', form);
   const filterRuleTemplate = Form.useWatch('filter_rule_template', form);
   const filterDbType = Form.useWatch('filter_db_type', form);
-
-  const projectOptions = useMemo(() => {
-    return bindProjects.map((v) => ({
-      label: (
-        <RuleListProjectFilterStyleWrapper>
-          <TableColumnWithIconStyleWrapper>
-            <FlagFilled width={18} height={18} />
-            <span> {v.project_name} </span>
-          </TableColumnWithIconStyleWrapper>
-        </RuleListProjectFilterStyleWrapper>
-      ),
-      value: v.project_name
-    }));
-  }, [bindProjects]);
 
   const {
     updateDriverListAsync,
@@ -52,8 +34,9 @@ const RuleListFilter: React.FC<RuleListFilterProps> = ({
 
   const {
     generateRuleVersionOptions,
-    updateRuleVersionTips,
-    loading: getRuleVersionLoading
+    updateRuleVersionTipsAsync,
+    loading: getRuleVersionLoading,
+    ruleVersionTips
   } = useRuleVersionTips();
 
   const {
@@ -67,6 +50,13 @@ const RuleListFilter: React.FC<RuleListFilterProps> = ({
     updateGlobalRuleTemplateList,
     globalRuleTemplateTipsOptions
   } = useGlobalRuleTemplate();
+
+  const projectOptions = useMemo(() => {
+    return bindProjects.map((v) => ({
+      label: v.project_name,
+      value: v.project_name
+    }));
+  }, [bindProjects]);
 
   const ruleTemplateOptions = useMemo(() => {
     const options = projectName
@@ -91,48 +81,67 @@ const RuleListFilter: React.FC<RuleListFilterProps> = ({
     t
   ]);
 
-  const onProjectAfterChange = (name?: string) => {
-    if (!name) {
-      form.setFieldValue('filter_rule_template', undefined);
-      setShowNorRuleTemplatePage(false);
-    } else {
-      updateRuleTemplateListSync(name).then((res) => {
-        const ruleTemplateListByProjectName = res ?? [];
-        if (ruleTemplateListByProjectName.length > 0) {
-          form.setFieldValue(
-            'filter_rule_template',
-            ruleTemplateListByProjectName[0]?.rule_template_name
-          );
-          form.setFieldValue(
-            'filter_db_type',
-            ruleTemplateListByProjectName[0]?.db_type
-          );
-          setShowNorRuleTemplatePage(false);
-        } else {
-          form.setFieldValue('filter_rule_template', undefined);
-          setShowNorRuleTemplatePage(true);
-        }
-      });
-    }
-  };
+  const onProjectAfterChange = useCallback(
+    (name?: string) => {
+      if (!name) {
+        form.setFieldValue('filter_rule_template', undefined);
+        setShowNorRuleTemplatePage(false);
+      } else {
+        updateRuleTemplateListSync(name).then((res) => {
+          const ruleTemplateListByProjectName = res ?? [];
+          if (ruleTemplateListByProjectName.length > 0) {
+            form.setFieldValue(
+              'filter_rule_template',
+              ruleTemplateListByProjectName[0]?.rule_template_name
+            );
+            form.setFieldValue(
+              'filter_db_type',
+              ruleTemplateListByProjectName[0]?.db_type
+            );
+            setShowNorRuleTemplatePage(false);
+          } else {
+            form.setFieldValue('filter_rule_template', undefined);
+            setShowNorRuleTemplatePage(true);
+          }
+        });
+      }
+    },
+    [form, setShowNorRuleTemplatePage, updateRuleTemplateListSync]
+  );
 
   const onTemplateAfterChange = (templateName: string) => {
     if (!templateName) {
       form.setFieldValue('project_name', undefined);
-      form.setFieldValue('filter_rule_version', undefined);
+      form.setFieldValue(
+        'filter_rule_version',
+        ruleVersionTips?.find((v) => v.db_type === filterDbType)
+          ?.rule_versions?.[0]
+      );
     }
   };
 
   const onDbTypeChange = (dbType: string) => {
-    form.setFieldValue('filter_rule_version', undefined);
+    form.setFieldValue(
+      'filter_rule_version',
+      ruleVersionTips?.find((v) => v.db_type === dbType)?.rule_versions?.[0]
+    );
   };
 
   useEffect(() => {
+    Promise.all([updateRuleVersionTipsAsync(), updateDriverListAsync()]).then(
+      ([ruleVersionRes, dbTypeRes]) => {
+        const defaultDbType = dbTypeRes.data.data?.[0]?.db_type;
+        if (defaultDbType) {
+          form.setFieldValue('filter_db_type', defaultDbType);
+          form.setFieldValue(
+            'filter_rule_version',
+            ruleVersionRes.data.data?.find((v) => v.db_type === defaultDbType)
+              ?.rule_versions?.[0]
+          );
+        }
+      }
+    );
     updateGlobalRuleTemplateList();
-    updateRuleVersionTips();
-    updateDriverListAsync().then((res) => {
-      form.setFieldValue('filter_db_type', res.data.data?.[0]?.db_type);
-    });
 
     const searchParams = extractQueries(ROUTE_PATHS.SQLE.RULE.index);
 
@@ -141,21 +150,57 @@ const RuleListFilter: React.FC<RuleListFilterProps> = ({
     )?.project_name;
     form.setFieldValue('project_name', projectNameInUrl);
     onProjectAfterChange(projectNameInUrl);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  }, [
+    bindProjects,
+    extractQueries,
+    form,
+    onProjectAfterChange,
+    updateDriverListAsync,
+    updateGlobalRuleTemplateList,
+    updateRuleVersionTipsAsync
+  ]);
 
   return (
-    <RuleListFilterStyleWrapper className="full-width-element">
+    <RuleListFilterStyleWrapper
+      hidden={!visible}
+      className="full-width-element rule-list-filter-wrapper"
+    >
       <Form form={form}>
-        <Space size={12} wrap>
-          <RuleFilterCommonFields />
+        <Space size={[12, 8]} wrap>
+          <Form.Item noStyle name="filter_db_type">
+            <CustomSelect
+              prefix={t('rule.form.dbType')}
+              suffixIcon={null}
+              bordered={false}
+              allowClear={false}
+              disabled={!!filterRuleTemplate}
+              loading={getDbTypeLoading}
+              options={dbDriverOptions}
+              onChange={onDbTypeChange}
+              placeholder={t('rule.filter.pleaseSelect')}
+            />
+          </Form.Item>
+          <Form.Item noStyle name="filter_rule_version">
+            <CustomSelect
+              prefix={t('rule.form.ruleVersion')}
+              suffixIcon={null}
+              bordered={false}
+              allowClear={false}
+              disabled={!!filterRuleTemplate}
+              loading={getRuleVersionLoading}
+              options={generateRuleVersionOptions(filterDbType)}
+              placeholder={t('rule.filter.pleaseSelect')}
+            />
+          </Form.Item>
           <Form.Item noStyle name="project_name">
             <CustomSelectField
               prefix={t('rule.form.project')}
               suffixIcon={null}
               bordered={false}
+              allowClear
               options={projectOptions}
               onAfterChange={onProjectAfterChange}
+              placeholder={t('rule.filter.pleaseSelect')}
             />
           </Form.Item>
           <Form.Item noStyle name="filter_rule_template">
@@ -163,35 +208,14 @@ const RuleListFilter: React.FC<RuleListFilterProps> = ({
               prefix={t('rule.form.ruleTemplate')}
               suffixIcon={null}
               bordered={false}
+              allowClear
               options={ruleTemplateOptions}
               loading={getRuleTemplateLoading || getGlobalRuleTemplateLoading}
               onAfterChange={onTemplateAfterChange}
+              placeholder={t('rule.filter.pleaseSelect')}
             />
           </Form.Item>
-          <Form.Item noStyle name="filter_db_type">
-            <CustomSelect
-              prefix={t('rule.form.dbType')}
-              suffixIcon={null}
-              bordered={false}
-              options={dbDriverOptions}
-              allowClear={false}
-              disabled={!!filterRuleTemplate}
-              loading={getDbTypeLoading}
-              onChange={onDbTypeChange}
-            />
-          </Form.Item>
-
-          <Form.Item noStyle name="filter_rule_version">
-            <CustomSelect
-              prefix={t('rule.form.ruleVersion')}
-              suffixIcon={null}
-              bordered={false}
-              options={generateRuleVersionOptions(filterDbType)}
-              allowClear={false}
-              disabled={!!filterRuleTemplate}
-              loading={getRuleVersionLoading}
-            />
-          </Form.Item>
+          <RuleFilterCommonFields withoutFuzzyKeywordFilterItem />
         </Space>
       </Form>
     </RuleListFilterStyleWrapper>

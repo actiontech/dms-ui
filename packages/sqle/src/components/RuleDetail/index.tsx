@@ -10,7 +10,8 @@ import {
   BasicButton,
   BasicResult,
   EmptyBox,
-  useTypedParams
+  useTypedParams,
+  BasicTag
 } from '@actiontech/shared';
 import { RuleStatus, RuleList } from '../RuleList';
 import useRuleList from '../RuleList/useRuleList';
@@ -131,6 +132,10 @@ const RuleDetail = () => {
     return globalTemplateRules;
   }, [projectRuleData, globalTemplateRules, projectName]);
 
+  const templateRulesWithStatus = useMemo(() => {
+    return getCurrentStatusRules(allRules, ruleData, templateName);
+  }, [allRules, getCurrentStatusRules, ruleData, templateName]);
+
   return (
     <RuleTemplateDetailStyleWrapper>
       <PageHeader
@@ -190,10 +195,19 @@ const RuleDetail = () => {
               </section>
             </section>
           </DetailComStyleWrapper>
-          <RuleFilter form={form} />
+          <RuleFilter
+            form={form}
+            extra={
+              <BasicTag size="large" color="blue">
+                {t('rule.ruleCount', {
+                  count: templateRulesWithStatus.length
+                })}
+              </BasicTag>
+            }
+          />
           <RuleList
             pageHeaderHeight={122}
-            rules={getCurrentStatusRules(allRules, ruleData, templateName)}
+            rules={templateRulesWithStatus}
             enableCheckDetail
             tags={tags}
           />

@@ -1,7 +1,7 @@
 import { useTranslation } from 'react-i18next';
 import { useBoolean } from 'ahooks';
 import { useMemo, useState, useCallback } from 'react';
-import { BasicButton } from '@actiontech/shared';
+import { BasicButton, BasicTag } from '@actiontech/shared';
 import { RuleSelectProps } from './index.type';
 import { Spin } from 'antd';
 import {
@@ -157,9 +157,21 @@ const RuleSelect = (props: RuleSelectProps) => {
           currentRuleStatus={ruleStatus}
           ruleStatusChange={setRuleStatus}
         />
+
         {renderBatchAction()}
       </SegmentedRowStyleWrapper>
-      <RuleFilter form={props.ruleFilterForm} />
+      <div className="flex-space-between">
+        <RuleFilter
+          form={props.ruleFilterForm}
+          extra={
+            <BasicTag size="large" color="blue">
+              {t('rule.ruleCount', {
+                count: rulesData.length
+              })}
+            </BasicTag>
+          }
+        />
+      </div>
       <Spin spinning={props.listLoading || props.formSubmitLoading}>
         <RuleList
           isAction
