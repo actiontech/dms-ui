@@ -14,7 +14,10 @@ enum EmitterKey {
   DMS_Refresh_Sync_Data_Source = 'DMS_Refresh_Sync_Data_Source',
   DMS_Refresh_Global_Data_Source = 'DMS_Refresh_Global_Data_Source',
   DMS_Batch_Test_Data_Source_Connection = 'DMS_Batch_Test_Data_Source_Connection',
-  Refresh_Resource_Overview_Page = 'Refresh_Resource_Overview_Page'
+  Refresh_Resource_Overview_Page = 'Refresh_Resource_Overview_Page',
+  Refresh_Availability_Zone_Page = 'Refresh_Availability_Zone_Page',
+  Refresh_Availability_Zone_Selector = 'Refresh_Availability_Zone_Selector',
+  DMS_Reload_Initial_Data = 'DMS_Reload_Initial_Data'
 }
 
 export default EmitterKey;

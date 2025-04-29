@@ -10,6 +10,11 @@ export type SideMenuTheme = {
       groupLabelColor: string;
     };
   };
+  availabilityZoneSelector: {
+    dropdown: {
+      boxShadowColor: string;
+    };
+  };
 };
 
 export type GuidanceTheme = {

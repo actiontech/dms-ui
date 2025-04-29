@@ -886,6 +886,11 @@ export const PERMISSION_MANIFEST: Record<
       SystemRole.certainProjectManager
     ]
   },
+  [PERMISSIONS.ACTIONS.BASE.PROJECT_MANAGER.CONFIGURE_AVAILABILITY_ZONE]: {
+    id: PERMISSIONS.ACTIONS.BASE.PROJECT_MANAGER.CONFIGURE_AVAILABILITY_ZONE,
+    type: 'action',
+    role: [SystemRole.admin, SystemRole.globalManager, SystemRole.globalViewing]
+  },
   [PERMISSIONS.ACTIONS.BASE.RESOURCE_OVERVIEW.EXPORT]: {
     id: PERMISSIONS.ACTIONS.BASE.RESOURCE_OVERVIEW.EXPORT,
     type: 'action',
@@ -894,6 +899,21 @@ export const PERMISSION_MANIFEST: Record<
       SystemRole.globalManager,
       SystemRole.certainProjectManager
     ]
+  },
+  [PERMISSIONS.ACTIONS.BASE.AVAILABILITY_ZONE.CREATE]: {
+    id: PERMISSIONS.ACTIONS.BASE.AVAILABILITY_ZONE.CREATE,
+    type: 'action',
+    role: [SystemRole.admin, SystemRole.globalManager]
+  },
+  [PERMISSIONS.ACTIONS.BASE.AVAILABILITY_ZONE.EDIT]: {
+    id: PERMISSIONS.ACTIONS.BASE.AVAILABILITY_ZONE.EDIT,
+    type: 'action',
+    role: [SystemRole.admin, SystemRole.globalManager]
+  },
+  [PERMISSIONS.ACTIONS.BASE.AVAILABILITY_ZONE.DELETE]: {
+    id: PERMISSIONS.ACTIONS.BASE.AVAILABILITY_ZONE.DELETE,
+    type: 'action',
+    role: [SystemRole.admin, SystemRole.globalManager]
   },
 
   // 版本管理
