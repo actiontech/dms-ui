@@ -38,7 +38,7 @@ const CreateAvailabilityZoneModal: React.FC = () => {
       add_gateway: {
         gateway_name: values.name,
         gateway_address: values.address,
-        gateway_id: `${values.name}${dayjs().format('YYYYMMDDHHmmssSSS')}`
+        gateway_id: dayjs().format('YYYYMMDDHHmmssSSS')
       }
     })
       .then((res) => {

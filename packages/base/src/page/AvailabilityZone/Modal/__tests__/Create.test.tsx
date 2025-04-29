@@ -62,7 +62,7 @@ describe('base/AvailabilityZone/Modal/Create', () => {
       add_gateway: {
         gateway_name: 'test-zone',
         gateway_address: '127.0.0.1',
-        gateway_id: `test-zone${currentTime.format('YYYYMMDDHHmmssSSS')}`
+        gateway_id: currentTime.format('YYYYMMDDHHmmssSSS')
       }
     });
 
