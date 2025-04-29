@@ -5,9 +5,11 @@ import { useControllableValue } from 'ahooks';
 
 const RuleStatus: React.FC<RuleStatusProps> = ({
   currentRuleStatus,
-  ruleStatusChange
+  ruleStatusChange,
+  options
 }) => {
   const { t } = useTranslation();
+  const { renderLabel } = options || {};
 
   const [internalRuleStatus, setInternalRuleStatus] =
     useControllableValue<RuleStatusEnum>(
@@ -31,12 +33,16 @@ const RuleStatus: React.FC<RuleStatusProps> = ({
       }}
       options={[
         {
-          label: t('common.enabled'),
+          label: renderLabel
+            ? renderLabel(t('common.enabled'), RuleStatusEnum.enabled)
+            : t('common.enabled'),
           value: RuleStatusEnum.enabled,
           className: 'enabled-rule'
         },
         {
-          label: t('common.disabled'),
+          label: renderLabel
+            ? renderLabel(t('common.disabled'), RuleStatusEnum.disabled)
+            : t('common.disabled'),
           value: RuleStatusEnum.disabled,
           className: 'disabled-rule'
         }

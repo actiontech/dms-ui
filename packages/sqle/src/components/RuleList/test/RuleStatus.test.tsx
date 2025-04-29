@@ -42,4 +42,29 @@ describe('sqle/components/RuleStatus', () => {
     await act(async () => jest.advanceTimersByTime(100));
     expect(baseElement).toMatchSnapshot();
   });
+
+  it('should render custom label when options.renderLabel is provided', async () => {
+    const customLabel = {
+      [RuleStatusEnum.disabled]: 'disabled',
+      [RuleStatusEnum.enabled]: 'enabled'
+    };
+    const renderLabel = (label: string, status: RuleStatusEnum) =>
+      `${customLabel[status]} - ${label}`;
+
+    const { baseElement } = renderWithTheme(
+      <RuleStatus
+        currentRuleStatus={RuleStatusEnum.enabled}
+        options={{ renderLabel }}
+      />
+    );
+
+    await act(async () => jest.advanceTimersByTime(3000));
+    expect(
+      screen.getByText(`${customLabel[RuleStatusEnum.enabled]} - 已启用`)
+    ).toBeInTheDocument();
+    expect(
+      screen.getByText(`${customLabel[RuleStatusEnum.disabled]} - 已禁用`)
+    ).toBeInTheDocument();
+    expect(baseElement).toMatchSnapshot();
+  });
 });
