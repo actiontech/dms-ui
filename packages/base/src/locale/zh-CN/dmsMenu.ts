@@ -74,5 +74,8 @@ export default {
   copyRight: '© {{year}} 上海爱可生信息技术股份有限公司 版权所有',
   quickActions: {
     globalDashboard: '全局Dashboard'
+  },
+  availabilityZone: {
+    switchAvailabilityZone: '切换可用区将重新加载数据，是否确认？'
   }
 };

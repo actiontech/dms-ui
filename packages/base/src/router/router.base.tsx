@@ -36,6 +36,10 @@ const GlobalAddDataSource = React.lazy(
 );
 
 const ResourceOverview = React.lazy(() => import('../page/ResourceOverview'));
+
+const AvailabilityZoneList = React.lazy(
+  () => import('../page/AvailabilityZone/List')
+);
 // #endif
 
 const Home = React.lazy(() => import('../page/Home'));
@@ -65,12 +69,26 @@ const DataSourceManagement = React.lazy(
 
 const Transit = React.lazy(() => import('../page/Transit'));
 
-export const BaseGlobalRouterConfig: RouterConfigItem[] = [
+/**
+ * 默认所有页面（除了login和bind user外）都需要可用区验证，（当配置了可用区时，如果没有选择当前可用区，则显示可用区选择弹窗，阻塞页面跳转）
+ * 如果页面不需要可用区验证，则在此处添加，将不会进行可用区验证
+ */
+export const BaseNoZoneRequiredRouterConfig: RouterConfigItem[] = [
   {
     path: ROUTE_PATHS.BASE.HOME,
     key: 'home',
     element: <Home />
   },
+  // #if [ee]
+  {
+    path: ROUTE_PATHS.BASE.AVAILABILITY_ZONE,
+    key: 'availabilityZone',
+    element: <AvailabilityZoneList />
+  }
+  // #endif
+];
+
+export const BaseGlobalRouterConfig: RouterConfigItem[] = [
   {
     path: ROUTE_PATHS.BASE.USER_CENTER,
     key: 'userCenter',
