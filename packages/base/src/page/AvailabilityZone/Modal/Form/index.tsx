@@ -4,8 +4,7 @@ import { useTranslation } from 'react-i18next';
 import { AvailabilityZoneFormProps } from './type';
 
 const AvailabilityZoneForm: React.FC<AvailabilityZoneFormProps> = ({
-  form,
-  isUpdate
+  form
 }) => {
   const { t } = useTranslation();
 

@@ -13,13 +13,21 @@ import {
 export const DEFAULT_MAX_SELECTED_ZONE_NUMBER = 3;
 
 const useRecentlySelectedZone = () => {
-  const { availabilityZone, recentlySelectedZoneRecord } = useSelector(
-    (state: IReduxState) => ({
-      availabilityZone: state.availabilityZone.memorizedAvailabilityZone,
-      recentlySelectedZoneRecord:
-        state.availabilityZone.recentlySelectedZoneRecord
-    })
-  );
+  const {
+    availabilityZone,
+    recentlySelectedZoneRecord,
+    availabilityZoneOptions
+  } = useSelector((state: IReduxState) => ({
+    availabilityZone: state.availabilityZone.memorizedAvailabilityZone,
+    recentlySelectedZoneRecord:
+      state.availabilityZone.recentlySelectedZoneRecord,
+    availabilityZoneOptions: state.availabilityZone.availabilityZoneTips?.map(
+      (zone) => ({
+        label: zone.name,
+        value: zone.uid
+      })
+    )
+  }));
 
   const dispatch = useDispatch();
 
@@ -138,7 +146,8 @@ const useRecentlySelectedZone = () => {
     setRecentlySelectedZoneRecord,
     updateRecentlySelectedZone,
     initializeAvailabilityZone,
-    verifyRecentlySelectedZoneRecord
+    verifyRecentlySelectedZoneRecord,
+    availabilityZoneOptions
   };
 };
 
