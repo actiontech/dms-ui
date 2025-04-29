@@ -5,7 +5,7 @@ exports[`sqle/components/RuleList/RuleFilter render init snap shot 1`] = `
   <div />
   <div>
     <div
-      class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center full-width-element css-de5ds5"
+      class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center full-width-element flex-space-between css-de5ds5"
     >
       <div
         class="ant-space-item"

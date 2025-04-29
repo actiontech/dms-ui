@@ -4,7 +4,7 @@ import { useMemo } from 'react';
 import { useBack } from '@actiontech/shared/lib/hooks';
 import { useCurrentProject } from '@actiontech/shared/lib/features';
 import rule_template from '@actiontech/shared/lib/api/sqle/service/rule_template';
-import { Spin } from 'antd';
+import { Space, Spin } from 'antd';
 import {
   PageHeader,
   BasicButton,
@@ -28,6 +28,7 @@ import {
 import useThemeStyleData from '../../hooks/useThemeStyleData';
 import { ROUTE_PATHS } from '@actiontech/shared/lib/data/routePaths';
 import { RuleFilter, useRuleFilterForm } from '../RuleList';
+import { RuleStatusEnum } from '../RuleList/index.type';
 
 const RuleDetail = () => {
   const { t } = useTranslation();
@@ -191,20 +192,26 @@ const RuleDetail = () => {
                 <RuleStatus
                   currentRuleStatus={ruleStatus}
                   ruleStatusChange={setRuleStatus}
+                  options={{
+                    renderLabel(label, status) {
+                      return (
+                        <Space>
+                          <span>{label}</span>
+                          <span>
+                            {status === RuleStatusEnum.disabled
+                              ? (allRules ?? []).length -
+                                (ruleData ?? []).length
+                              : (ruleData ?? []).length}
+                          </span>
+                        </Space>
+                      );
+                    }
+                  }}
                 />
               </section>
             </section>
           </DetailComStyleWrapper>
-          <RuleFilter
-            form={form}
-            extra={
-              <BasicTag size="large" color="blue">
-                {t('rule.ruleCount', {
-                  count: templateRulesWithStatus.length
-                })}
-              </BasicTag>
-            }
-          />
+          <RuleFilter form={form} />
           <RuleList
             pageHeaderHeight={122}
             rules={templateRulesWithStatus}

@@ -470,9 +470,26 @@ exports[`sqle/RuleTemplate/CreateRuleTemplate create rule template 1`] = `
                   />
                   <div
                     class="ant-segmented-item-label"
-                    title="已启用"
                   >
-                    已启用
+                    <div
+                      class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+                    >
+                      <div
+                        class="ant-space-item"
+                        style="margin-right: 8px;"
+                      >
+                        <span>
+                          已启用
+                        </span>
+                      </div>
+                      <div
+                        class="ant-space-item"
+                      >
+                        <span>
+                          1
+                        </span>
+                      </div>
+                    </div>
                   </div>
                 </label>
                 <label
@@ -484,9 +501,26 @@ exports[`sqle/RuleTemplate/CreateRuleTemplate create rule template 1`] = `
                   />
                   <div
                     class="ant-segmented-item-label"
-                    title="已禁用"
                   >
-                    已禁用
+                    <div
+                      class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+                    >
+                      <div
+                        class="ant-space-item"
+                        style="margin-right: 8px;"
+                      >
+                        <span>
+                          已禁用
+                        </span>
+                      </div>
+                      <div
+                        class="ant-space-item"
+                      >
+                        <span>
+                          1
+                        </span>
+                      </div>
+                    </div>
                   </div>
                 </label>
               </div>
@@ -508,7 +542,6 @@ exports[`sqle/RuleTemplate/CreateRuleTemplate create rule template 1`] = `
             >
               <div
                 class="ant-space-item"
-                style="margin-right: 8px;"
               >
                 <form
                   class="ant-form ant-form-horizontal css-dev-only-do-not-override-txh9fw"
@@ -888,15 +921,6 @@ exports[`sqle/RuleTemplate/CreateRuleTemplate create rule template 1`] = `
                     </div>
                   </div>
                 </form>
-              </div>
-              <div
-                class="ant-space-item"
-              >
-                <span
-                  class="ant-tag ant-tag-blue basic-tag-wrapper basic-large-tag-wrapper css-1q0n2j9 css-dev-only-do-not-override-txh9fw"
-                >
-                  1条规则
-                </span>
               </div>
             </div>
           </div>
@@ -2271,9 +2295,26 @@ exports[`sqle/RuleTemplate/CreateRuleTemplate rule list action 1`] = `
                   />
                   <div
                     class="ant-segmented-item-label"
-                    title="已启用"
                   >
-                    已启用
+                    <div
+                      class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+                    >
+                      <div
+                        class="ant-space-item"
+                        style="margin-right: 8px;"
+                      >
+                        <span>
+                          已启用
+                        </span>
+                      </div>
+                      <div
+                        class="ant-space-item"
+                      >
+                        <span>
+                          1
+                        </span>
+                      </div>
+                    </div>
                   </div>
                 </label>
                 <label
@@ -2285,9 +2326,26 @@ exports[`sqle/RuleTemplate/CreateRuleTemplate rule list action 1`] = `
                   />
                   <div
                     class="ant-segmented-item-label"
-                    title="已禁用"
                   >
-                    已禁用
+                    <div
+                      class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+                    >
+                      <div
+                        class="ant-space-item"
+                        style="margin-right: 8px;"
+                      >
+                        <span>
+                          已禁用
+                        </span>
+                      </div>
+                      <div
+                        class="ant-space-item"
+                      >
+                        <span>
+                          1
+                        </span>
+                      </div>
+                    </div>
                   </div>
                 </label>
               </div>
@@ -2309,7 +2367,6 @@ exports[`sqle/RuleTemplate/CreateRuleTemplate rule list action 1`] = `
             >
               <div
                 class="ant-space-item"
-                style="margin-right: 8px;"
               >
                 <form
                   class="ant-form ant-form-horizontal css-dev-only-do-not-override-txh9fw"
@@ -2689,15 +2746,6 @@ exports[`sqle/RuleTemplate/CreateRuleTemplate rule list action 1`] = `
                     </div>
                   </div>
                 </form>
-              </div>
-              <div
-                class="ant-space-item"
-              >
-                <span
-                  class="ant-tag ant-tag-blue basic-tag-wrapper basic-large-tag-wrapper css-1q0n2j9 css-dev-only-do-not-override-txh9fw"
-                >
-                  1条规则
-                </span>
               </div>
             </div>
           </div>
@@ -4651,9 +4699,26 @@ exports[`sqle/RuleTemplate/CreateRuleTemplate should match snap shot 1`] = `
                   />
                   <div
                     class="ant-segmented-item-label"
-                    title="已启用"
                   >
-                    已启用
+                    <div
+                      class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+                    >
+                      <div
+                        class="ant-space-item"
+                        style="margin-right: 8px;"
+                      >
+                        <span>
+                          已启用
+                        </span>
+                      </div>
+                      <div
+                        class="ant-space-item"
+                      >
+                        <span>
+                          0
+                        </span>
+                      </div>
+                    </div>
                   </div>
                 </label>
                 <label
@@ -4665,9 +4730,26 @@ exports[`sqle/RuleTemplate/CreateRuleTemplate should match snap shot 1`] = `
                   />
                   <div
                     class="ant-segmented-item-label"
-                    title="已禁用"
                   >
-                    已禁用
+                    <div
+                      class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+                    >
+                      <div
+                        class="ant-space-item"
+                        style="margin-right: 8px;"
+                      >
+                        <span>
+                          已禁用
+                        </span>
+                      </div>
+                      <div
+                        class="ant-space-item"
+                      >
+                        <span>
+                          0
+                        </span>
+                      </div>
+                    </div>
                   </div>
                 </label>
               </div>
@@ -4690,7 +4772,6 @@ exports[`sqle/RuleTemplate/CreateRuleTemplate should match snap shot 1`] = `
             >
               <div
                 class="ant-space-item"
-                style="margin-right: 8px;"
               >
                 <form
                   class="ant-form ant-form-horizontal css-dev-only-do-not-override-txh9fw"
@@ -5070,15 +5151,6 @@ exports[`sqle/RuleTemplate/CreateRuleTemplate should match snap shot 1`] = `
                     </div>
                   </div>
                 </form>
-              </div>
-              <div
-                class="ant-space-item"
-              >
-                <span
-                  class="ant-tag ant-tag-blue basic-tag-wrapper basic-large-tag-wrapper css-1q0n2j9 css-dev-only-do-not-override-txh9fw"
-                >
-                  0条规则
-                </span>
               </div>
             </div>
           </div>

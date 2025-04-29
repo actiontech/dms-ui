@@ -20,6 +20,9 @@ export type typeActionType =
 export type RuleStatusProps = {
   currentRuleStatus?: RuleStatusEnum;
   ruleStatusChange?: (status: RuleStatusEnum) => void;
+  options?: {
+    renderLabel?: (label: string, status: RuleStatusEnum) => ReactNode;
+  };
 };
 
 export type RuleListProps = {
