@@ -7,5 +7,4 @@ export type AvailabilityZoneFormType = {
 
 export type AvailabilityZoneFormProps = {
   form: FormInstance<AvailabilityZoneFormType>;
-  isUpdate?: boolean;
 };

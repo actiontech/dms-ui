@@ -102,8 +102,6 @@ function App() {
 
   const dispatch = useDispatch();
 
-  const { initializeAvailabilityZone } = useRecentlySelectedZone();
-
   const { notificationContextHolder } = useNotificationContext();
 
   const { getUserBySession } = useSessionUser();
@@ -233,6 +231,8 @@ function App() {
 
     return unsubscribe;
   }, [getInitialData]);
+
+  const { initializeAvailabilityZone } = useRecentlySelectedZone();
 
   useEffect(() => {
     initializeAvailabilityZone();
