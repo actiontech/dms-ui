@@ -7,6 +7,7 @@ import {
 } from '@actiontech/shared';
 import { IHighPriorityConditionResV1 } from '@actiontech/shared/lib/api/sqle/service/common';
 import {
+  CustomLabelContent,
   FormItemLabel,
   FormItemNoLabel
 } from '@actiontech/shared/lib/components/CustomForm';
@@ -58,10 +59,17 @@ const HighPriorityConditions: React.FC<Props> = ({
   return (
     <>
       <FormItemLabel
-        className="has-required-style"
-        label={t(
-          'managementConf.create.scanTypeParams.hightPriorityConditions.mark'
-        )}
+        className="has-label-tip"
+        label={
+          <CustomLabelContent
+            tips={t(
+              'managementConf.create.scanTypeParams.hightPriorityConditions.markTips'
+            )}
+            title={t(
+              'managementConf.create.scanTypeParams.hightPriorityConditions.mark'
+            )}
+          />
+        }
         {...formItemLayout.spaceBetween}
         name={[prefixPath, 'markHighPrioritySql']}
         valuePropName="checked"
