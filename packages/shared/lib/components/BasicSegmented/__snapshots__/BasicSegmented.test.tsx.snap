@@ -3,7 +3,7 @@
 exports[`lib/BasicSegmented render segmented ui 1`] = `
 <div>
   <div
-    class="ant-segmented basic-segmented-wrapper custom-segmented-class css-192b3m1 css-dev-only-do-not-override-txh9fw"
+    class="ant-segmented basic-segmented-wrapper custom-segmented-class css-192b3m1"
   >
     <div
       class="ant-segmented-group"

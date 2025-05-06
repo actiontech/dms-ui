@@ -367,6 +367,7 @@ const DataSourceForm: React.FC<IDataSourceFormProps> = (props) => {
             name="project"
             rules={[{ required: true }]}
             className="has-required-style"
+            initialValue={projectID}
           >
             <BasicSelect options={projectIDOptions} disabled={!!projectID} />
           </FormItemLabel>

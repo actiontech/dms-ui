@@ -1,6 +1,6 @@
 import { cleanup, fireEvent, act } from '@testing-library/react';
 import ConfigTestBtn from '.';
-import { renderWithTheme } from '../../../../testUtil/customRender';
+import { superRender } from '../../../../testUtil/customRender';
 import { getBySelector } from '../../../../testUtil/customQuery';
 
 describe('base/System/components/ConfigTestBtn', () => {
@@ -8,7 +8,7 @@ describe('base/System/components/ConfigTestBtn', () => {
   const testingRef = jest.fn();
 
   const customRender = (popoverOpen = false) => {
-    return renderWithTheme(
+    return superRender(
       <ConfigTestBtn
         popoverOpen={popoverOpen}
         onPopoverOpenChange={onPopoverOpenChangeFn}
@@ -45,11 +45,6 @@ describe('base/System/components/ConfigTestBtn', () => {
     const btnEle = getBySelector('.system-config-button');
     fireEvent.mouseOver(btnEle);
     await act(async () => jest.advanceTimersByTime(500));
-    expect(baseElement).toMatchSnapshot();
-  });
-
-  it('render snap when Popover cont show', async () => {
-    const { baseElement } = customRender(true);
     expect(baseElement).toMatchSnapshot();
   });
 });

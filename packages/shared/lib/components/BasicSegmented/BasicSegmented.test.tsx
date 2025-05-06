@@ -1,4 +1,4 @@
-import { renderWithTheme } from '../../testUtil/customRender';
+import { superRender } from '../../testUtil/customRender';
 import BasicSegmented from './BasicSegmented';
 import { BasicSegmentedProps } from './BasicSegmented.types';
 
@@ -17,7 +17,7 @@ describe('lib/BasicSegmented', () => {
         }
       ]
     };
-    const { container } = renderWithTheme(<BasicSegmented {...params} />);
+    const { container } = superRender(<BasicSegmented {...params} />);
     expect(container).toMatchSnapshot();
   });
 });

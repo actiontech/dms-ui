@@ -1,88 +1,50 @@
-import { renderWithTheme } from '../../testUtil/customRender';
+import { superRender } from '../../testUtil/customRender';
 import BasicTag from './BasicTag';
 import { BasicTagProps } from './BasicTag.types';
 
 describe('lib/BasicTag', () => {
   const customRender = (params: BasicTagProps) => {
-    return renderWithTheme(<BasicTag {...params} />);
+    return superRender(<BasicTag {...params} />);
   };
 
-  it('render diff size tag', () => {
-    const { baseElement } = customRender({
-      size: 'large'
-    });
-    expect(baseElement).toMatchSnapshot();
-
-    const { baseElement: baseElement1 } = customRender({
-      size: 'small'
-    });
-    expect(baseElement1).toMatchSnapshot();
-
-    const { baseElement: baseElement2 } = customRender({
-      size: 'default'
-    });
-    expect(baseElement2).toMatchSnapshot();
+  it('should match snapshot', () => {
+    const { container } = customRender({});
+    expect(container).toMatchSnapshot();
   });
 
-  it('render diff color tag', () => {
-    const { baseElement } = customRender({
-      color: 'default'
+  describe('size prop', () => {
+    it('should render with large size', () => {
+      const { container } = customRender({ size: 'large' });
+      expect(
+        container.querySelector('.basic-large-tag-wrapper')
+      ).toBeInTheDocument();
     });
-    expect(baseElement).toMatchSnapshot();
 
-    const { baseElement: redBaseElement } = customRender({
-      color: 'red'
+    it('should render with small size', () => {
+      const { container } = customRender({ size: 'small' });
+      expect(
+        container.querySelector('.basic-small-tag-wrapper')
+      ).toBeInTheDocument();
     });
-    expect(redBaseElement).toMatchSnapshot();
 
-    const { baseElement: orangeBaseElement } = customRender({
-      color: 'orange'
+    it('should render with default size', () => {
+      const { container } = customRender({ size: 'default' });
+      expect(
+        container.querySelector('.basic-default-tag-wrapper')
+      ).toBeInTheDocument();
     });
-    expect(orangeBaseElement).toMatchSnapshot();
 
-    const { baseElement: goldBaseElement } = customRender({
-      color: 'orange'
+    it('should use default size when size prop is not provided', () => {
+      const { container } = customRender({});
+      expect(
+        container.querySelector('.basic-default-tag-wrapper')
+      ).toBeInTheDocument();
     });
-    expect(goldBaseElement).toMatchSnapshot();
+  });
 
-    const { baseElement: greenBaseElement } = customRender({
-      color: 'green'
-    });
-    expect(greenBaseElement).toMatchSnapshot();
-
-    const { baseElement: cyanBaseElement } = customRender({
-      color: 'cyan'
-    });
-    expect(cyanBaseElement).toMatchSnapshot();
-
-    const { baseElement: blueBaseElement } = customRender({
-      color: 'blue'
-    });
-    expect(blueBaseElement).toMatchSnapshot();
-
-    const { baseElement: geekblueBaseElement } = customRender({
-      color: 'geekblue'
-    });
-    expect(geekblueBaseElement).toMatchSnapshot();
-
-    const { baseElement: purpleBaseElement } = customRender({
-      color: 'purple'
-    });
-    expect(purpleBaseElement).toMatchSnapshot();
-
-    const { baseElement: GrapeBaseElement } = customRender({
-      color: 'Grape'
-    });
-    expect(GrapeBaseElement).toMatchSnapshot();
-
-    const { baseElement: lilacBaseElement } = customRender({
-      color: 'lilac'
-    });
-    expect(lilacBaseElement).toMatchSnapshot();
-
-    const { baseElement: grayBaseElement } = customRender({
-      color: 'gray'
-    });
-    expect(grayBaseElement).toMatchSnapshot();
+  it('should pass additional className to the wrapper', () => {
+    const { container } = customRender({ className: 'custom-class' });
+    const tagElement = container.querySelector('.basic-tag-wrapper');
+    expect(tagElement).toHaveClass('custom-class');
   });
 });

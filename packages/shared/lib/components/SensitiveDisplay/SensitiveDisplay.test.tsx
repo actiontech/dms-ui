@@ -1,4 +1,4 @@
-import { renderWithTheme } from '../../testUtil/customRender';
+import { superRender } from '../../testUtil/customRender';
 import { getBySelector } from '../../testUtil/customQuery';
 import SensitiveDisplay from './SensitiveDisplay';
 import { fireEvent, screen, cleanup, act } from '@testing-library/react';
@@ -14,7 +14,7 @@ describe('lib/SensitiveDisplay', () => {
   });
 
   const customRender = (text: string) => {
-    return renderWithTheme(<SensitiveDisplay text={text} />);
+    return superRender(<SensitiveDisplay text={text} />);
   };
 
   it('render hide token', async () => {

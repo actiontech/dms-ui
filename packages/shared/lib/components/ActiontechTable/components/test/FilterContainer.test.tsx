@@ -2,7 +2,7 @@ import {
   getAllBySelector,
   getBySelector
 } from '../../../../testUtil/customQuery';
-import { renderWithTheme } from '../../../../testUtil/customRender';
+import { superRender } from '../../../../testUtil/customRender';
 import { TypeFilterElement } from '../../index.type';
 import FilterContainer from '../FilterContainer';
 import { fireEvent, act, cleanup, screen } from '@testing-library/react';
@@ -64,7 +64,7 @@ describe('lib/ActiontechTable-FilterContainer', () => {
         }
       ]
     };
-    const { baseElement } = renderWithTheme(<FilterContainer {...params} />);
+    const { baseElement } = superRender(<FilterContainer {...params} />);
     expect(baseElement).toMatchSnapshot();
   });
 
@@ -96,7 +96,7 @@ describe('lib/ActiontechTable-FilterContainer', () => {
         ]
       ])
     };
-    const { baseElement } = renderWithTheme(<FilterContainer {...params} />);
+    const { baseElement } = superRender(<FilterContainer {...params} />);
     expect(baseElement).toMatchSnapshot();
 
     await act(async () => {
@@ -149,7 +149,7 @@ describe('lib/ActiontechTable-FilterContainer', () => {
         ]
       ])
     };
-    const { baseElement } = renderWithTheme(<FilterContainer {...params} />);
+    const { baseElement } = superRender(<FilterContainer {...params} />);
     expect(baseElement).toMatchSnapshot();
     await act(async () => {
       fireEvent.mouseDown(
@@ -203,7 +203,7 @@ describe('lib/ActiontechTable-FilterContainer', () => {
         ]
       ])
     };
-    const { baseElement } = renderWithTheme(<FilterContainer {...params} />);
+    const { baseElement } = superRender(<FilterContainer {...params} />);
     expect(baseElement).toMatchSnapshot();
 
     const toDateEle = getAllBySelector('.ant-picker-input input')[1];
@@ -259,7 +259,7 @@ describe('lib/ActiontechTable-FilterContainer', () => {
         ]
       ])
     };
-    const { baseElement } = renderWithTheme(<FilterContainer {...params} />);
+    const { baseElement } = superRender(<FilterContainer {...params} />);
     expect(baseElement).toMatchSnapshot();
     const inputEle = getBySelector(
       '.custom-input-class-name input.ant-input',
@@ -317,7 +317,7 @@ describe('lib/ActiontechTable-FilterContainer', () => {
         ]
       ])
     };
-    const { baseElement } = renderWithTheme(<FilterContainer {...params} />);
+    const { baseElement } = superRender(<FilterContainer {...params} />);
     expect(baseElement).toMatchSnapshot();
     const inputEle = getBySelector(
       '.custom-wrapper-search-input-class input.ant-input',
