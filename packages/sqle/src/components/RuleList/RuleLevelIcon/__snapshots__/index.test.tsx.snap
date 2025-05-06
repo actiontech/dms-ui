@@ -4,7 +4,7 @@ exports[`sqle/components/RuleList/RuleLevelIcon render snap when data is empty 1
 <body>
   <div>
     <div
-      class="ant-space css-dev-only-do-not-override-txh9fw ant-space-vertical ant-space-align-center sqle-rule-icon"
+      class="ant-space ant-space-vertical ant-space-align-center sqle-rule-icon"
     >
       <div
         class="ant-space-item"
@@ -37,7 +37,7 @@ exports[`sqle/components/RuleList/RuleLevelIcon render snap when data is empty 1
         class="ant-space-item"
       >
         <span
-          class="ant-typography ant-typography-secondary css-dev-only-do-not-override-txh9fw"
+          class="ant-typography ant-typography-secondary"
         >
           normal
         </span>
@@ -51,7 +51,7 @@ exports[`sqle/components/RuleList/RuleLevelIcon render snap when level is error 
 <body>
   <div>
     <div
-      class="ant-space css-dev-only-do-not-override-txh9fw ant-space-vertical ant-space-align-center sqle-rule-icon"
+      class="ant-space ant-space-vertical ant-space-align-center sqle-rule-icon"
     >
       <div
         class="ant-space-item"
@@ -87,7 +87,7 @@ exports[`sqle/components/RuleList/RuleLevelIcon render snap when level is error 
         class="ant-space-item"
       >
         <span
-          class="ant-typography ant-typography-secondary css-dev-only-do-not-override-txh9fw"
+          class="ant-typography ant-typography-secondary"
         >
           error
         </span>
@@ -101,7 +101,7 @@ exports[`sqle/components/RuleList/RuleLevelIcon render snap when level is normal
 <body>
   <div>
     <div
-      class="ant-space css-dev-only-do-not-override-txh9fw ant-space-vertical ant-space-align-center sqle-rule-icon"
+      class="ant-space ant-space-vertical ant-space-align-center sqle-rule-icon"
     >
       <div
         class="ant-space-item"
@@ -137,7 +137,7 @@ exports[`sqle/components/RuleList/RuleLevelIcon render snap when level is normal
         class="ant-space-item"
       >
         <span
-          class="ant-typography ant-typography-secondary css-dev-only-do-not-override-txh9fw"
+          class="ant-typography ant-typography-secondary"
         >
           notice
         </span>
@@ -151,7 +151,7 @@ exports[`sqle/components/RuleList/RuleLevelIcon render snap when level is warn 1
 <body>
   <div>
     <div
-      class="ant-space css-dev-only-do-not-override-txh9fw ant-space-vertical ant-space-align-center sqle-rule-icon"
+      class="ant-space ant-space-vertical ant-space-align-center sqle-rule-icon"
     >
       <div
         class="ant-space-item"
@@ -184,7 +184,7 @@ exports[`sqle/components/RuleList/RuleLevelIcon render snap when level is warn 1
         class="ant-space-item"
       >
         <span
-          class="ant-typography ant-typography-secondary css-dev-only-do-not-override-txh9fw"
+          class="ant-typography ant-typography-secondary"
         >
           warn
         </span>

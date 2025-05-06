@@ -4,16 +4,16 @@ exports[`page/DataSource/DatabaseFormItem render async params 1`] = `
 <body>
   <div>
     <form
-      class="ant-form ant-form-horizontal css-dev-only-do-not-override-txh9fw"
+      class="ant-form ant-form-horizontal"
     >
       <div
-        class="ant-form-item has-required-style css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+        class="ant-form-item has-required-style css-1jlm9cy"
       >
         <div
-          class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+          class="ant-row ant-form-item-row"
         >
           <div
-            class="ant-col ant-form-item-label css-dev-only-do-not-override-txh9fw"
+            class="ant-col ant-form-item-label"
           >
             <label
               class="ant-form-item-required"
@@ -24,7 +24,7 @@ exports[`page/DataSource/DatabaseFormItem render async params 1`] = `
             </label>
           </div>
           <div
-            class="ant-col ant-form-item-control css-dev-only-do-not-override-txh9fw"
+            class="ant-col ant-form-item-control"
           >
             <div
               class="ant-form-item-control-input"
@@ -34,7 +34,7 @@ exports[`page/DataSource/DatabaseFormItem render async params 1`] = `
               >
                 <div
                   aria-required="true"
-                  class="ant-select ant-select-in-form-item basic-select-wrapper css-iy4o4x css-dev-only-do-not-override-v9sov3 ant-select-single ant-select-allow-clear ant-select-show-arrow ant-select-show-search"
+                  class="ant-select ant-select-in-form-item basic-select-wrapper css-iy4o4x ant-select-single ant-select-allow-clear ant-select-show-arrow ant-select-show-search"
                 >
                   <div
                     class="ant-select-selector"
@@ -97,13 +97,13 @@ exports[`page/DataSource/DatabaseFormItem render async params 1`] = `
         </div>
       </div>
       <div
-        class="ant-form-item has-required-style css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+        class="ant-form-item has-required-style css-1jlm9cy"
       >
         <div
-          class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+          class="ant-row ant-form-item-row"
         >
           <div
-            class="ant-col ant-form-item-label css-dev-only-do-not-override-txh9fw"
+            class="ant-col ant-form-item-label"
           >
             <label
               class="ant-form-item-required"
@@ -114,7 +114,7 @@ exports[`page/DataSource/DatabaseFormItem render async params 1`] = `
             </label>
           </div>
           <div
-            class="ant-col ant-form-item-control css-dev-only-do-not-override-txh9fw"
+            class="ant-col ant-form-item-control"
           >
             <div
               class="ant-form-item-control-input"
@@ -124,7 +124,7 @@ exports[`page/DataSource/DatabaseFormItem render async params 1`] = `
               >
                 <input
                   aria-required="true"
-                  class="ant-input css-dev-only-do-not-override-ywkr0o basic-input-wrapper css-1pd1cd5"
+                  class="ant-input basic-input-wrapper css-1pd1cd5"
                   id="ip"
                   placeholder="请输入数据源IP或域名"
                   type="text"
@@ -136,13 +136,13 @@ exports[`page/DataSource/DatabaseFormItem render async params 1`] = `
         </div>
       </div>
       <div
-        class="ant-form-item has-required-style css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+        class="ant-form-item has-required-style css-1jlm9cy"
       >
         <div
-          class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+          class="ant-row ant-form-item-row"
         >
           <div
-            class="ant-col ant-form-item-label css-dev-only-do-not-override-txh9fw"
+            class="ant-col ant-form-item-label"
           >
             <label
               class="ant-form-item-required"
@@ -153,7 +153,7 @@ exports[`page/DataSource/DatabaseFormItem render async params 1`] = `
             </label>
           </div>
           <div
-            class="ant-col ant-form-item-control css-dev-only-do-not-override-txh9fw"
+            class="ant-col ant-form-item-control"
           >
             <div
               class="ant-form-item-control-input"
@@ -163,7 +163,7 @@ exports[`page/DataSource/DatabaseFormItem render async params 1`] = `
               >
                 <input
                   aria-required="true"
-                  class="ant-input css-dev-only-do-not-override-ywkr0o basic-input-wrapper css-1pd1cd5"
+                  class="ant-input basic-input-wrapper css-1pd1cd5"
                   id="port"
                   placeholder="请输入数据源端口"
                   type="text"
@@ -175,13 +175,13 @@ exports[`page/DataSource/DatabaseFormItem render async params 1`] = `
         </div>
       </div>
       <div
-        class="ant-form-item has-required-style css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+        class="ant-form-item has-required-style css-1jlm9cy"
       >
         <div
-          class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+          class="ant-row ant-form-item-row"
         >
           <div
-            class="ant-col ant-form-item-label css-dev-only-do-not-override-txh9fw"
+            class="ant-col ant-form-item-label"
           >
             <label
               class="ant-form-item-required"
@@ -192,7 +192,7 @@ exports[`page/DataSource/DatabaseFormItem render async params 1`] = `
             </label>
           </div>
           <div
-            class="ant-col ant-form-item-control css-dev-only-do-not-override-txh9fw"
+            class="ant-col ant-form-item-control"
           >
             <div
               class="ant-form-item-control-input"
@@ -202,7 +202,7 @@ exports[`page/DataSource/DatabaseFormItem render async params 1`] = `
               >
                 <input
                   aria-required="true"
-                  class="ant-input css-dev-only-do-not-override-ywkr0o basic-input-wrapper css-1pd1cd5"
+                  class="ant-input basic-input-wrapper css-1pd1cd5"
                   id="user"
                   placeholder="请输入连接用户"
                   type="text"
@@ -214,13 +214,13 @@ exports[`page/DataSource/DatabaseFormItem render async params 1`] = `
         </div>
       </div>
       <div
-        class="ant-form-item has-required-style css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+        class="ant-form-item has-required-style css-1jlm9cy"
       >
         <div
-          class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+          class="ant-row ant-form-item-row"
         >
           <div
-            class="ant-col ant-form-item-label css-dev-only-do-not-override-txh9fw"
+            class="ant-col ant-form-item-label"
           >
             <label
               class="ant-form-item-required"
@@ -231,7 +231,7 @@ exports[`page/DataSource/DatabaseFormItem render async params 1`] = `
             </label>
           </div>
           <div
-            class="ant-col ant-form-item-control css-dev-only-do-not-override-txh9fw"
+            class="ant-col ant-form-item-control"
           >
             <div
               class="ant-form-item-control-input"
@@ -240,11 +240,11 @@ exports[`page/DataSource/DatabaseFormItem render async params 1`] = `
                 class="ant-form-item-control-input-content"
               >
                 <span
-                  class="ant-input-affix-wrapper ant-input-password basic-input-wrapper css-1pd1cd5 css-dev-only-do-not-override-txh9fw"
+                  class="ant-input-affix-wrapper ant-input-password basic-input-wrapper css-1pd1cd5"
                 >
                   <input
                     aria-required="true"
-                    class="ant-input css-dev-only-do-not-override-txh9fw"
+                    class="ant-input"
                     id="password"
                     placeholder="请输入密码"
                     type="password"
@@ -284,13 +284,13 @@ exports[`page/DataSource/DatabaseFormItem render async params 1`] = `
         </div>
       </div>
       <div
-        class="ant-form-item  css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+        class="ant-form-item css-1jlm9cy"
       >
         <div
-          class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+          class="ant-row ant-form-item-row"
         >
           <div
-            class="ant-col ant-col-11 ant-form-item-label css-dev-only-do-not-override-txh9fw"
+            class="ant-col ant-col-11 ant-form-item-label"
           >
             <label
               class=""
@@ -311,7 +311,7 @@ exports[`page/DataSource/DatabaseFormItem render async params 1`] = `
             </label>
           </div>
           <div
-            class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+            class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control"
           >
             <div
               class="ant-form-item-control-input"
@@ -321,7 +321,7 @@ exports[`page/DataSource/DatabaseFormItem render async params 1`] = `
               >
                 <button
                   aria-checked="false"
-                  class="ant-switch basic-switch-wrapper css-g6dhbn css-dev-only-do-not-override-txh9fw"
+                  class="ant-switch basic-switch-wrapper css-g6dhbn"
                   id="params_c1"
                   role="switch"
                   type="button"
@@ -346,13 +346,13 @@ exports[`page/DataSource/DatabaseFormItem render async params 1`] = `
         </div>
       </div>
       <div
-        class="ant-form-item css-15d6abf css-dev-only-do-not-override-txh9fw"
+        class="ant-form-item css-15d6abf"
       >
         <div
-          class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+          class="ant-row ant-form-item-row"
         >
           <div
-            class="ant-col ant-form-item-label css-dev-only-do-not-override-txh9fw"
+            class="ant-col ant-form-item-label"
           >
             <label
               class=""
@@ -360,7 +360,7 @@ exports[`page/DataSource/DatabaseFormItem render async params 1`] = `
             />
           </div>
           <div
-            class="ant-col ant-form-item-control css-dev-only-do-not-override-txh9fw"
+            class="ant-col ant-form-item-control"
           >
             <div
               class="ant-form-item-control-input"
@@ -369,14 +369,14 @@ exports[`page/DataSource/DatabaseFormItem render async params 1`] = `
                 class="ant-form-item-control-input-content"
               >
                 <div
-                  class="ant-space css-dev-only-do-not-override-txh9fw ant-space-vertical"
+                  class="ant-space ant-space-vertical"
                 >
                   <div
                     class="ant-space-item"
                     style="margin-bottom: 8px;"
                   >
                     <button
-                      class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default basic-button-wrapper css-geipcv"
+                      class="ant-btn ant-btn-default basic-button-wrapper css-geipcv"
                       type="button"
                     >
                       <span>
@@ -402,16 +402,16 @@ exports[`page/DataSource/DatabaseFormItem render form item snap 1`] = `
 <body>
   <div>
     <form
-      class="ant-form ant-form-horizontal css-dev-only-do-not-override-txh9fw"
+      class="ant-form ant-form-horizontal"
     >
       <div
-        class="ant-form-item has-required-style css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+        class="ant-form-item has-required-style css-1jlm9cy"
       >
         <div
-          class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+          class="ant-row ant-form-item-row"
         >
           <div
-            class="ant-col ant-form-item-label css-dev-only-do-not-override-txh9fw"
+            class="ant-col ant-form-item-label"
           >
             <label
               class="ant-form-item-required"
@@ -422,7 +422,7 @@ exports[`page/DataSource/DatabaseFormItem render form item snap 1`] = `
             </label>
           </div>
           <div
-            class="ant-col ant-form-item-control css-dev-only-do-not-override-txh9fw"
+            class="ant-col ant-form-item-control"
           >
             <div
               class="ant-form-item-control-input"
@@ -432,7 +432,7 @@ exports[`page/DataSource/DatabaseFormItem render form item snap 1`] = `
               >
                 <div
                   aria-required="true"
-                  class="ant-select ant-select-in-form-item basic-select-wrapper css-iy4o4x css-dev-only-do-not-override-v9sov3 ant-select-single ant-select-allow-clear ant-select-show-arrow ant-select-show-search"
+                  class="ant-select ant-select-in-form-item basic-select-wrapper css-iy4o4x ant-select-single ant-select-allow-clear ant-select-show-arrow ant-select-show-search"
                 >
                   <div
                     class="ant-select-selector"
@@ -495,13 +495,13 @@ exports[`page/DataSource/DatabaseFormItem render form item snap 1`] = `
         </div>
       </div>
       <div
-        class="ant-form-item has-required-style css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+        class="ant-form-item has-required-style css-1jlm9cy"
       >
         <div
-          class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+          class="ant-row ant-form-item-row"
         >
           <div
-            class="ant-col ant-form-item-label css-dev-only-do-not-override-txh9fw"
+            class="ant-col ant-form-item-label"
           >
             <label
               class="ant-form-item-required"
@@ -512,7 +512,7 @@ exports[`page/DataSource/DatabaseFormItem render form item snap 1`] = `
             </label>
           </div>
           <div
-            class="ant-col ant-form-item-control css-dev-only-do-not-override-txh9fw"
+            class="ant-col ant-form-item-control"
           >
             <div
               class="ant-form-item-control-input"
@@ -522,7 +522,7 @@ exports[`page/DataSource/DatabaseFormItem render form item snap 1`] = `
               >
                 <input
                   aria-required="true"
-                  class="ant-input css-dev-only-do-not-override-ywkr0o basic-input-wrapper css-1pd1cd5"
+                  class="ant-input basic-input-wrapper css-1pd1cd5"
                   id="ip"
                   placeholder="请输入数据源IP或域名"
                   type="text"
@@ -534,13 +534,13 @@ exports[`page/DataSource/DatabaseFormItem render form item snap 1`] = `
         </div>
       </div>
       <div
-        class="ant-form-item has-required-style css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+        class="ant-form-item has-required-style css-1jlm9cy"
       >
         <div
-          class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+          class="ant-row ant-form-item-row"
         >
           <div
-            class="ant-col ant-form-item-label css-dev-only-do-not-override-txh9fw"
+            class="ant-col ant-form-item-label"
           >
             <label
               class="ant-form-item-required"
@@ -551,7 +551,7 @@ exports[`page/DataSource/DatabaseFormItem render form item snap 1`] = `
             </label>
           </div>
           <div
-            class="ant-col ant-form-item-control css-dev-only-do-not-override-txh9fw"
+            class="ant-col ant-form-item-control"
           >
             <div
               class="ant-form-item-control-input"
@@ -561,7 +561,7 @@ exports[`page/DataSource/DatabaseFormItem render form item snap 1`] = `
               >
                 <input
                   aria-required="true"
-                  class="ant-input css-dev-only-do-not-override-ywkr0o basic-input-wrapper css-1pd1cd5"
+                  class="ant-input basic-input-wrapper css-1pd1cd5"
                   id="port"
                   placeholder="请输入数据源端口"
                   type="text"
@@ -573,13 +573,13 @@ exports[`page/DataSource/DatabaseFormItem render form item snap 1`] = `
         </div>
       </div>
       <div
-        class="ant-form-item has-required-style css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+        class="ant-form-item has-required-style css-1jlm9cy"
       >
         <div
-          class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+          class="ant-row ant-form-item-row"
         >
           <div
-            class="ant-col ant-form-item-label css-dev-only-do-not-override-txh9fw"
+            class="ant-col ant-form-item-label"
           >
             <label
               class="ant-form-item-required"
@@ -590,7 +590,7 @@ exports[`page/DataSource/DatabaseFormItem render form item snap 1`] = `
             </label>
           </div>
           <div
-            class="ant-col ant-form-item-control css-dev-only-do-not-override-txh9fw"
+            class="ant-col ant-form-item-control"
           >
             <div
               class="ant-form-item-control-input"
@@ -600,7 +600,7 @@ exports[`page/DataSource/DatabaseFormItem render form item snap 1`] = `
               >
                 <input
                   aria-required="true"
-                  class="ant-input css-dev-only-do-not-override-ywkr0o basic-input-wrapper css-1pd1cd5"
+                  class="ant-input basic-input-wrapper css-1pd1cd5"
                   id="user"
                   placeholder="请输入连接用户"
                   type="text"
@@ -612,13 +612,13 @@ exports[`page/DataSource/DatabaseFormItem render form item snap 1`] = `
         </div>
       </div>
       <div
-        class="ant-form-item has-required-style css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+        class="ant-form-item has-required-style css-1jlm9cy"
       >
         <div
-          class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+          class="ant-row ant-form-item-row"
         >
           <div
-            class="ant-col ant-form-item-label css-dev-only-do-not-override-txh9fw"
+            class="ant-col ant-form-item-label"
           >
             <label
               class="ant-form-item-required"
@@ -629,7 +629,7 @@ exports[`page/DataSource/DatabaseFormItem render form item snap 1`] = `
             </label>
           </div>
           <div
-            class="ant-col ant-form-item-control css-dev-only-do-not-override-txh9fw"
+            class="ant-col ant-form-item-control"
           >
             <div
               class="ant-form-item-control-input"
@@ -638,11 +638,11 @@ exports[`page/DataSource/DatabaseFormItem render form item snap 1`] = `
                 class="ant-form-item-control-input-content"
               >
                 <span
-                  class="ant-input-affix-wrapper ant-input-password basic-input-wrapper css-1pd1cd5 css-dev-only-do-not-override-txh9fw"
+                  class="ant-input-affix-wrapper ant-input-password basic-input-wrapper css-1pd1cd5"
                 >
                   <input
                     aria-required="true"
-                    class="ant-input css-dev-only-do-not-override-txh9fw"
+                    class="ant-input"
                     id="password"
                     placeholder="请输入密码"
                     type="password"
@@ -682,13 +682,13 @@ exports[`page/DataSource/DatabaseFormItem render form item snap 1`] = `
         </div>
       </div>
       <div
-        class="ant-form-item css-15d6abf css-dev-only-do-not-override-txh9fw"
+        class="ant-form-item css-15d6abf"
       >
         <div
-          class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+          class="ant-row ant-form-item-row"
         >
           <div
-            class="ant-col ant-form-item-label css-dev-only-do-not-override-txh9fw"
+            class="ant-col ant-form-item-label"
           >
             <label
               class=""
@@ -696,7 +696,7 @@ exports[`page/DataSource/DatabaseFormItem render form item snap 1`] = `
             />
           </div>
           <div
-            class="ant-col ant-form-item-control css-dev-only-do-not-override-txh9fw"
+            class="ant-col ant-form-item-control"
           >
             <div
               class="ant-form-item-control-input"
@@ -705,14 +705,14 @@ exports[`page/DataSource/DatabaseFormItem render form item snap 1`] = `
                 class="ant-form-item-control-input-content"
               >
                 <div
-                  class="ant-space css-dev-only-do-not-override-txh9fw ant-space-vertical"
+                  class="ant-space ant-space-vertical"
                 >
                   <div
                     class="ant-space-item"
                     style="margin-bottom: 8px;"
                   >
                     <button
-                      class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default basic-button-wrapper css-geipcv"
+                      class="ant-btn ant-btn-default basic-button-wrapper css-geipcv"
                       type="button"
                     >
                       <span>
@@ -738,16 +738,16 @@ exports[`page/DataSource/DatabaseFormItem render form item snap when update 1`] 
 <body>
   <div>
     <form
-      class="ant-form ant-form-horizontal css-dev-only-do-not-override-txh9fw"
+      class="ant-form ant-form-horizontal"
     >
       <div
-        class="ant-form-item has-required-style css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+        class="ant-form-item has-required-style css-1jlm9cy"
       >
         <div
-          class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+          class="ant-row ant-form-item-row"
         >
           <div
-            class="ant-col ant-form-item-label css-dev-only-do-not-override-txh9fw"
+            class="ant-col ant-form-item-label"
           >
             <label
               class="ant-form-item-required"
@@ -758,7 +758,7 @@ exports[`page/DataSource/DatabaseFormItem render form item snap when update 1`] 
             </label>
           </div>
           <div
-            class="ant-col ant-form-item-control css-dev-only-do-not-override-txh9fw"
+            class="ant-col ant-form-item-control"
           >
             <div
               class="ant-form-item-control-input"
@@ -768,7 +768,7 @@ exports[`page/DataSource/DatabaseFormItem render form item snap when update 1`] 
               >
                 <div
                   aria-required="true"
-                  class="ant-select ant-select-in-form-item basic-select-wrapper css-iy4o4x css-dev-only-do-not-override-v9sov3 ant-select-single ant-select-allow-clear ant-select-show-arrow ant-select-disabled ant-select-show-search"
+                  class="ant-select ant-select-in-form-item basic-select-wrapper css-iy4o4x ant-select-single ant-select-allow-clear ant-select-show-arrow ant-select-disabled ant-select-show-search"
                 >
                   <div
                     class="ant-select-selector"
@@ -832,13 +832,13 @@ exports[`page/DataSource/DatabaseFormItem render form item snap when update 1`] 
         </div>
       </div>
       <div
-        class="ant-form-item has-required-style css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+        class="ant-form-item has-required-style css-1jlm9cy"
       >
         <div
-          class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+          class="ant-row ant-form-item-row"
         >
           <div
-            class="ant-col ant-form-item-label css-dev-only-do-not-override-txh9fw"
+            class="ant-col ant-form-item-label"
           >
             <label
               class="ant-form-item-required"
@@ -849,7 +849,7 @@ exports[`page/DataSource/DatabaseFormItem render form item snap when update 1`] 
             </label>
           </div>
           <div
-            class="ant-col ant-form-item-control css-dev-only-do-not-override-txh9fw"
+            class="ant-col ant-form-item-control"
           >
             <div
               class="ant-form-item-control-input"
@@ -859,7 +859,7 @@ exports[`page/DataSource/DatabaseFormItem render form item snap when update 1`] 
               >
                 <input
                   aria-required="true"
-                  class="ant-input css-dev-only-do-not-override-ywkr0o basic-input-wrapper css-1pd1cd5"
+                  class="ant-input basic-input-wrapper css-1pd1cd5"
                   id="ip"
                   placeholder="请输入数据源IP或域名"
                   type="text"
@@ -871,13 +871,13 @@ exports[`page/DataSource/DatabaseFormItem render form item snap when update 1`] 
         </div>
       </div>
       <div
-        class="ant-form-item has-required-style css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+        class="ant-form-item has-required-style css-1jlm9cy"
       >
         <div
-          class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+          class="ant-row ant-form-item-row"
         >
           <div
-            class="ant-col ant-form-item-label css-dev-only-do-not-override-txh9fw"
+            class="ant-col ant-form-item-label"
           >
             <label
               class="ant-form-item-required"
@@ -888,7 +888,7 @@ exports[`page/DataSource/DatabaseFormItem render form item snap when update 1`] 
             </label>
           </div>
           <div
-            class="ant-col ant-form-item-control css-dev-only-do-not-override-txh9fw"
+            class="ant-col ant-form-item-control"
           >
             <div
               class="ant-form-item-control-input"
@@ -898,7 +898,7 @@ exports[`page/DataSource/DatabaseFormItem render form item snap when update 1`] 
               >
                 <input
                   aria-required="true"
-                  class="ant-input css-dev-only-do-not-override-ywkr0o basic-input-wrapper css-1pd1cd5"
+                  class="ant-input basic-input-wrapper css-1pd1cd5"
                   id="port"
                   placeholder="请输入数据源端口"
                   type="text"
@@ -910,13 +910,13 @@ exports[`page/DataSource/DatabaseFormItem render form item snap when update 1`] 
         </div>
       </div>
       <div
-        class="ant-form-item has-required-style css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+        class="ant-form-item has-required-style css-1jlm9cy"
       >
         <div
-          class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+          class="ant-row ant-form-item-row"
         >
           <div
-            class="ant-col ant-form-item-label css-dev-only-do-not-override-txh9fw"
+            class="ant-col ant-form-item-label"
           >
             <label
               class="ant-form-item-required"
@@ -927,7 +927,7 @@ exports[`page/DataSource/DatabaseFormItem render form item snap when update 1`] 
             </label>
           </div>
           <div
-            class="ant-col ant-form-item-control css-dev-only-do-not-override-txh9fw"
+            class="ant-col ant-form-item-control"
           >
             <div
               class="ant-form-item-control-input"
@@ -937,7 +937,7 @@ exports[`page/DataSource/DatabaseFormItem render form item snap when update 1`] 
               >
                 <input
                   aria-required="true"
-                  class="ant-input css-dev-only-do-not-override-ywkr0o basic-input-wrapper css-1pd1cd5"
+                  class="ant-input basic-input-wrapper css-1pd1cd5"
                   id="user"
                   placeholder="请输入连接用户"
                   type="text"
@@ -949,13 +949,13 @@ exports[`page/DataSource/DatabaseFormItem render form item snap when update 1`] 
         </div>
       </div>
       <div
-        class="ant-form-item css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+        class="ant-form-item css-1jlm9cy"
       >
         <div
-          class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+          class="ant-row ant-form-item-row"
         >
           <div
-            class="ant-col ant-form-item-label css-dev-only-do-not-override-txh9fw"
+            class="ant-col ant-form-item-label"
           >
             <label
               class=""
@@ -966,7 +966,7 @@ exports[`page/DataSource/DatabaseFormItem render form item snap when update 1`] 
             </label>
           </div>
           <div
-            class="ant-col ant-form-item-control css-dev-only-do-not-override-txh9fw"
+            class="ant-col ant-form-item-control"
           >
             <div
               class="ant-form-item-control-input"
@@ -976,7 +976,7 @@ exports[`page/DataSource/DatabaseFormItem render form item snap when update 1`] 
               >
                 <button
                   aria-checked="false"
-                  class="ant-switch basic-switch-wrapper css-g6dhbn css-dev-only-do-not-override-txh9fw"
+                  class="ant-switch basic-switch-wrapper css-g6dhbn"
                   id="needUpdatePassword"
                   role="switch"
                   type="button"
@@ -1001,13 +1001,13 @@ exports[`page/DataSource/DatabaseFormItem render form item snap when update 1`] 
         </div>
       </div>
       <div
-        class="ant-form-item has-required-style css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+        class="ant-form-item has-required-style css-1jlm9cy"
       >
         <div
-          class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+          class="ant-row ant-form-item-row"
         >
           <div
-            class="ant-col ant-form-item-label css-dev-only-do-not-override-txh9fw"
+            class="ant-col ant-form-item-label"
           >
             <label
               class=""
@@ -1018,7 +1018,7 @@ exports[`page/DataSource/DatabaseFormItem render form item snap when update 1`] 
             </label>
           </div>
           <div
-            class="ant-col ant-form-item-control css-dev-only-do-not-override-txh9fw"
+            class="ant-col ant-form-item-control"
           >
             <div
               class="ant-form-item-control-input"
@@ -1027,10 +1027,10 @@ exports[`page/DataSource/DatabaseFormItem render form item snap when update 1`] 
                 class="ant-form-item-control-input-content"
               >
                 <span
-                  class="ant-input-affix-wrapper ant-input-password basic-input-wrapper css-1pd1cd5 css-dev-only-do-not-override-txh9fw"
+                  class="ant-input-affix-wrapper ant-input-password basic-input-wrapper css-1pd1cd5"
                 >
                   <input
-                    class="ant-input css-dev-only-do-not-override-txh9fw"
+                    class="ant-input"
                     id="password"
                     placeholder="请输入密码"
                     type="password"
@@ -1070,13 +1070,13 @@ exports[`page/DataSource/DatabaseFormItem render form item snap when update 1`] 
         </div>
       </div>
       <div
-        class="ant-form-item css-15d6abf css-dev-only-do-not-override-txh9fw"
+        class="ant-form-item css-15d6abf"
       >
         <div
-          class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+          class="ant-row ant-form-item-row"
         >
           <div
-            class="ant-col ant-form-item-label css-dev-only-do-not-override-txh9fw"
+            class="ant-col ant-form-item-label"
           >
             <label
               class=""
@@ -1084,7 +1084,7 @@ exports[`page/DataSource/DatabaseFormItem render form item snap when update 1`] 
             />
           </div>
           <div
-            class="ant-col ant-form-item-control css-dev-only-do-not-override-txh9fw"
+            class="ant-col ant-form-item-control"
           >
             <div
               class="ant-form-item-control-input"
@@ -1093,14 +1093,14 @@ exports[`page/DataSource/DatabaseFormItem render form item snap when update 1`] 
                 class="ant-form-item-control-input-content"
               >
                 <div
-                  class="ant-space css-dev-only-do-not-override-txh9fw ant-space-vertical"
+                  class="ant-space ant-space-vertical"
                 >
                   <div
                     class="ant-space-item"
                     style="margin-bottom: 8px;"
                   >
                     <button
-                      class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default basic-button-wrapper css-geipcv"
+                      class="ant-btn ant-btn-default basic-button-wrapper css-geipcv"
                       type="button"
                     >
                       <span>
@@ -1126,16 +1126,16 @@ exports[`page/DataSource/DatabaseFormItem render need pwd 1`] = `
 <body>
   <div>
     <form
-      class="ant-form ant-form-horizontal css-dev-only-do-not-override-txh9fw"
+      class="ant-form ant-form-horizontal"
     >
       <div
-        class="ant-form-item has-required-style css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+        class="ant-form-item has-required-style css-1jlm9cy"
       >
         <div
-          class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+          class="ant-row ant-form-item-row"
         >
           <div
-            class="ant-col ant-form-item-label css-dev-only-do-not-override-txh9fw"
+            class="ant-col ant-form-item-label"
           >
             <label
               class="ant-form-item-required"
@@ -1146,7 +1146,7 @@ exports[`page/DataSource/DatabaseFormItem render need pwd 1`] = `
             </label>
           </div>
           <div
-            class="ant-col ant-form-item-control css-dev-only-do-not-override-txh9fw"
+            class="ant-col ant-form-item-control"
           >
             <div
               class="ant-form-item-control-input"
@@ -1156,7 +1156,7 @@ exports[`page/DataSource/DatabaseFormItem render need pwd 1`] = `
               >
                 <div
                   aria-required="true"
-                  class="ant-select ant-select-in-form-item basic-select-wrapper css-iy4o4x css-dev-only-do-not-override-v9sov3 ant-select-single ant-select-allow-clear ant-select-show-arrow ant-select-disabled ant-select-show-search"
+                  class="ant-select ant-select-in-form-item basic-select-wrapper css-iy4o4x ant-select-single ant-select-allow-clear ant-select-show-arrow ant-select-disabled ant-select-show-search"
                 >
                   <div
                     class="ant-select-selector"
@@ -1220,13 +1220,13 @@ exports[`page/DataSource/DatabaseFormItem render need pwd 1`] = `
         </div>
       </div>
       <div
-        class="ant-form-item has-required-style css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+        class="ant-form-item has-required-style css-1jlm9cy"
       >
         <div
-          class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+          class="ant-row ant-form-item-row"
         >
           <div
-            class="ant-col ant-form-item-label css-dev-only-do-not-override-txh9fw"
+            class="ant-col ant-form-item-label"
           >
             <label
               class="ant-form-item-required"
@@ -1237,7 +1237,7 @@ exports[`page/DataSource/DatabaseFormItem render need pwd 1`] = `
             </label>
           </div>
           <div
-            class="ant-col ant-form-item-control css-dev-only-do-not-override-txh9fw"
+            class="ant-col ant-form-item-control"
           >
             <div
               class="ant-form-item-control-input"
@@ -1247,7 +1247,7 @@ exports[`page/DataSource/DatabaseFormItem render need pwd 1`] = `
               >
                 <input
                   aria-required="true"
-                  class="ant-input css-dev-only-do-not-override-ywkr0o basic-input-wrapper css-1pd1cd5"
+                  class="ant-input basic-input-wrapper css-1pd1cd5"
                   id="ip"
                   placeholder="请输入数据源IP或域名"
                   type="text"
@@ -1259,13 +1259,13 @@ exports[`page/DataSource/DatabaseFormItem render need pwd 1`] = `
         </div>
       </div>
       <div
-        class="ant-form-item has-required-style css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+        class="ant-form-item has-required-style css-1jlm9cy"
       >
         <div
-          class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+          class="ant-row ant-form-item-row"
         >
           <div
-            class="ant-col ant-form-item-label css-dev-only-do-not-override-txh9fw"
+            class="ant-col ant-form-item-label"
           >
             <label
               class="ant-form-item-required"
@@ -1276,7 +1276,7 @@ exports[`page/DataSource/DatabaseFormItem render need pwd 1`] = `
             </label>
           </div>
           <div
-            class="ant-col ant-form-item-control css-dev-only-do-not-override-txh9fw"
+            class="ant-col ant-form-item-control"
           >
             <div
               class="ant-form-item-control-input"
@@ -1286,7 +1286,7 @@ exports[`page/DataSource/DatabaseFormItem render need pwd 1`] = `
               >
                 <input
                   aria-required="true"
-                  class="ant-input css-dev-only-do-not-override-ywkr0o basic-input-wrapper css-1pd1cd5"
+                  class="ant-input basic-input-wrapper css-1pd1cd5"
                   id="port"
                   placeholder="请输入数据源端口"
                   type="text"
@@ -1298,13 +1298,13 @@ exports[`page/DataSource/DatabaseFormItem render need pwd 1`] = `
         </div>
       </div>
       <div
-        class="ant-form-item has-required-style css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+        class="ant-form-item has-required-style css-1jlm9cy"
       >
         <div
-          class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+          class="ant-row ant-form-item-row"
         >
           <div
-            class="ant-col ant-form-item-label css-dev-only-do-not-override-txh9fw"
+            class="ant-col ant-form-item-label"
           >
             <label
               class="ant-form-item-required"
@@ -1315,7 +1315,7 @@ exports[`page/DataSource/DatabaseFormItem render need pwd 1`] = `
             </label>
           </div>
           <div
-            class="ant-col ant-form-item-control css-dev-only-do-not-override-txh9fw"
+            class="ant-col ant-form-item-control"
           >
             <div
               class="ant-form-item-control-input"
@@ -1325,7 +1325,7 @@ exports[`page/DataSource/DatabaseFormItem render need pwd 1`] = `
               >
                 <input
                   aria-required="true"
-                  class="ant-input css-dev-only-do-not-override-ywkr0o basic-input-wrapper css-1pd1cd5"
+                  class="ant-input basic-input-wrapper css-1pd1cd5"
                   id="user"
                   placeholder="请输入连接用户"
                   type="text"
@@ -1337,13 +1337,13 @@ exports[`page/DataSource/DatabaseFormItem render need pwd 1`] = `
         </div>
       </div>
       <div
-        class="ant-form-item css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+        class="ant-form-item css-1jlm9cy"
       >
         <div
-          class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+          class="ant-row ant-form-item-row"
         >
           <div
-            class="ant-col ant-form-item-label css-dev-only-do-not-override-txh9fw"
+            class="ant-col ant-form-item-label"
           >
             <label
               class=""
@@ -1354,7 +1354,7 @@ exports[`page/DataSource/DatabaseFormItem render need pwd 1`] = `
             </label>
           </div>
           <div
-            class="ant-col ant-form-item-control css-dev-only-do-not-override-txh9fw"
+            class="ant-col ant-form-item-control"
           >
             <div
               class="ant-form-item-control-input"
@@ -1364,7 +1364,7 @@ exports[`page/DataSource/DatabaseFormItem render need pwd 1`] = `
               >
                 <button
                   aria-checked="false"
-                  class="ant-switch basic-switch-wrapper css-g6dhbn css-dev-only-do-not-override-txh9fw"
+                  class="ant-switch basic-switch-wrapper css-g6dhbn"
                   id="needUpdatePassword"
                   role="switch"
                   type="button"
@@ -1390,13 +1390,13 @@ exports[`page/DataSource/DatabaseFormItem render need pwd 1`] = `
         </div>
       </div>
       <div
-        class="ant-form-item has-required-style css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+        class="ant-form-item has-required-style css-1jlm9cy"
       >
         <div
-          class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+          class="ant-row ant-form-item-row"
         >
           <div
-            class="ant-col ant-form-item-label css-dev-only-do-not-override-txh9fw"
+            class="ant-col ant-form-item-label"
           >
             <label
               class=""
@@ -1407,7 +1407,7 @@ exports[`page/DataSource/DatabaseFormItem render need pwd 1`] = `
             </label>
           </div>
           <div
-            class="ant-col ant-form-item-control css-dev-only-do-not-override-txh9fw"
+            class="ant-col ant-form-item-control"
           >
             <div
               class="ant-form-item-control-input"
@@ -1416,10 +1416,10 @@ exports[`page/DataSource/DatabaseFormItem render need pwd 1`] = `
                 class="ant-form-item-control-input-content"
               >
                 <span
-                  class="ant-input-affix-wrapper ant-input-password basic-input-wrapper css-1pd1cd5 css-dev-only-do-not-override-txh9fw"
+                  class="ant-input-affix-wrapper ant-input-password basic-input-wrapper css-1pd1cd5"
                 >
                   <input
-                    class="ant-input css-dev-only-do-not-override-txh9fw"
+                    class="ant-input"
                     id="password"
                     placeholder="请输入密码"
                     type="password"
@@ -1458,13 +1458,13 @@ exports[`page/DataSource/DatabaseFormItem render need pwd 1`] = `
         </div>
       </div>
       <div
-        class="ant-form-item css-15d6abf css-dev-only-do-not-override-txh9fw"
+        class="ant-form-item css-15d6abf"
       >
         <div
-          class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+          class="ant-row ant-form-item-row"
         >
           <div
-            class="ant-col ant-form-item-label css-dev-only-do-not-override-txh9fw"
+            class="ant-col ant-form-item-label"
           >
             <label
               class=""
@@ -1472,7 +1472,7 @@ exports[`page/DataSource/DatabaseFormItem render need pwd 1`] = `
             />
           </div>
           <div
-            class="ant-col ant-form-item-control css-dev-only-do-not-override-txh9fw"
+            class="ant-col ant-form-item-control"
           >
             <div
               class="ant-form-item-control-input"
@@ -1481,14 +1481,14 @@ exports[`page/DataSource/DatabaseFormItem render need pwd 1`] = `
                 class="ant-form-item-control-input-content"
               >
                 <div
-                  class="ant-space css-dev-only-do-not-override-txh9fw ant-space-vertical"
+                  class="ant-space ant-space-vertical"
                 >
                   <div
                     class="ant-space-item"
                     style="margin-bottom: 8px;"
                   >
                     <button
-                      class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default basic-button-wrapper css-geipcv"
+                      class="ant-btn ant-btn-default basic-button-wrapper css-geipcv"
                       type="button"
                     >
                       <span>
@@ -1514,16 +1514,16 @@ exports[`page/DataSource/DatabaseFormItem render port validator 1`] = `
 <body>
   <div>
     <form
-      class="ant-form ant-form-horizontal css-dev-only-do-not-override-txh9fw"
+      class="ant-form ant-form-horizontal"
     >
       <div
-        class="ant-form-item has-required-style css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+        class="ant-form-item has-required-style css-1jlm9cy"
       >
         <div
-          class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+          class="ant-row ant-form-item-row"
         >
           <div
-            class="ant-col ant-form-item-label css-dev-only-do-not-override-txh9fw"
+            class="ant-col ant-form-item-label"
           >
             <label
               class="ant-form-item-required"
@@ -1534,7 +1534,7 @@ exports[`page/DataSource/DatabaseFormItem render port validator 1`] = `
             </label>
           </div>
           <div
-            class="ant-col ant-form-item-control css-dev-only-do-not-override-txh9fw"
+            class="ant-col ant-form-item-control"
           >
             <div
               class="ant-form-item-control-input"
@@ -1544,7 +1544,7 @@ exports[`page/DataSource/DatabaseFormItem render port validator 1`] = `
               >
                 <div
                   aria-required="true"
-                  class="ant-select ant-select-in-form-item basic-select-wrapper css-iy4o4x css-dev-only-do-not-override-v9sov3 ant-select-single ant-select-allow-clear ant-select-show-arrow ant-select-show-search"
+                  class="ant-select ant-select-in-form-item basic-select-wrapper css-iy4o4x ant-select-single ant-select-allow-clear ant-select-show-arrow ant-select-show-search"
                 >
                   <div
                     class="ant-select-selector"
@@ -1607,13 +1607,13 @@ exports[`page/DataSource/DatabaseFormItem render port validator 1`] = `
         </div>
       </div>
       <div
-        class="ant-form-item has-required-style css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+        class="ant-form-item has-required-style css-1jlm9cy"
       >
         <div
-          class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+          class="ant-row ant-form-item-row"
         >
           <div
-            class="ant-col ant-form-item-label css-dev-only-do-not-override-txh9fw"
+            class="ant-col ant-form-item-label"
           >
             <label
               class="ant-form-item-required"
@@ -1624,7 +1624,7 @@ exports[`page/DataSource/DatabaseFormItem render port validator 1`] = `
             </label>
           </div>
           <div
-            class="ant-col ant-form-item-control css-dev-only-do-not-override-txh9fw"
+            class="ant-col ant-form-item-control"
           >
             <div
               class="ant-form-item-control-input"
@@ -1634,7 +1634,7 @@ exports[`page/DataSource/DatabaseFormItem render port validator 1`] = `
               >
                 <input
                   aria-required="true"
-                  class="ant-input css-dev-only-do-not-override-ywkr0o basic-input-wrapper css-1pd1cd5"
+                  class="ant-input basic-input-wrapper css-1pd1cd5"
                   id="ip"
                   placeholder="请输入数据源IP或域名"
                   type="text"
@@ -1646,13 +1646,13 @@ exports[`page/DataSource/DatabaseFormItem render port validator 1`] = `
         </div>
       </div>
       <div
-        class="ant-form-item has-required-style css-1jlm9cy css-dev-only-do-not-override-txh9fw ant-form-item-has-error"
+        class="ant-form-item has-required-style css-1jlm9cy ant-form-item-has-error"
       >
         <div
-          class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+          class="ant-row ant-form-item-row"
         >
           <div
-            class="ant-col ant-form-item-label css-dev-only-do-not-override-txh9fw"
+            class="ant-col ant-form-item-label"
           >
             <label
               class="ant-form-item-required"
@@ -1663,7 +1663,7 @@ exports[`page/DataSource/DatabaseFormItem render port validator 1`] = `
             </label>
           </div>
           <div
-            class="ant-col ant-form-item-control css-dev-only-do-not-override-txh9fw"
+            class="ant-col ant-form-item-control"
           >
             <div
               class="ant-form-item-control-input"
@@ -1675,7 +1675,7 @@ exports[`page/DataSource/DatabaseFormItem render port validator 1`] = `
                   aria-describedby="port_help"
                   aria-invalid="true"
                   aria-required="true"
-                  class="ant-input ant-input-status-error css-dev-only-do-not-override-ywkr0o basic-input-wrapper css-1pd1cd5"
+                  class="ant-input ant-input-status-error basic-input-wrapper css-1pd1cd5"
                   id="port"
                   placeholder="请输入数据源端口"
                   type="text"
@@ -1698,13 +1698,13 @@ exports[`page/DataSource/DatabaseFormItem render port validator 1`] = `
         />
       </div>
       <div
-        class="ant-form-item has-required-style css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+        class="ant-form-item has-required-style css-1jlm9cy"
       >
         <div
-          class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+          class="ant-row ant-form-item-row"
         >
           <div
-            class="ant-col ant-form-item-label css-dev-only-do-not-override-txh9fw"
+            class="ant-col ant-form-item-label"
           >
             <label
               class="ant-form-item-required"
@@ -1715,7 +1715,7 @@ exports[`page/DataSource/DatabaseFormItem render port validator 1`] = `
             </label>
           </div>
           <div
-            class="ant-col ant-form-item-control css-dev-only-do-not-override-txh9fw"
+            class="ant-col ant-form-item-control"
           >
             <div
               class="ant-form-item-control-input"
@@ -1725,7 +1725,7 @@ exports[`page/DataSource/DatabaseFormItem render port validator 1`] = `
               >
                 <input
                   aria-required="true"
-                  class="ant-input css-dev-only-do-not-override-ywkr0o basic-input-wrapper css-1pd1cd5"
+                  class="ant-input basic-input-wrapper css-1pd1cd5"
                   id="user"
                   placeholder="请输入连接用户"
                   type="text"
@@ -1737,13 +1737,13 @@ exports[`page/DataSource/DatabaseFormItem render port validator 1`] = `
         </div>
       </div>
       <div
-        class="ant-form-item has-required-style css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+        class="ant-form-item has-required-style css-1jlm9cy"
       >
         <div
-          class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+          class="ant-row ant-form-item-row"
         >
           <div
-            class="ant-col ant-form-item-label css-dev-only-do-not-override-txh9fw"
+            class="ant-col ant-form-item-label"
           >
             <label
               class="ant-form-item-required"
@@ -1754,7 +1754,7 @@ exports[`page/DataSource/DatabaseFormItem render port validator 1`] = `
             </label>
           </div>
           <div
-            class="ant-col ant-form-item-control css-dev-only-do-not-override-txh9fw"
+            class="ant-col ant-form-item-control"
           >
             <div
               class="ant-form-item-control-input"
@@ -1763,11 +1763,11 @@ exports[`page/DataSource/DatabaseFormItem render port validator 1`] = `
                 class="ant-form-item-control-input-content"
               >
                 <span
-                  class="ant-input-affix-wrapper ant-input-password basic-input-wrapper css-1pd1cd5 css-dev-only-do-not-override-txh9fw"
+                  class="ant-input-affix-wrapper ant-input-password basic-input-wrapper css-1pd1cd5"
                 >
                   <input
                     aria-required="true"
-                    class="ant-input css-dev-only-do-not-override-txh9fw"
+                    class="ant-input"
                     id="password"
                     placeholder="请输入密码"
                     type="password"
@@ -1806,13 +1806,13 @@ exports[`page/DataSource/DatabaseFormItem render port validator 1`] = `
         </div>
       </div>
       <div
-        class="ant-form-item css-15d6abf css-dev-only-do-not-override-txh9fw"
+        class="ant-form-item css-15d6abf"
       >
         <div
-          class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+          class="ant-row ant-form-item-row"
         >
           <div
-            class="ant-col ant-form-item-label css-dev-only-do-not-override-txh9fw"
+            class="ant-col ant-form-item-label"
           >
             <label
               class=""
@@ -1820,7 +1820,7 @@ exports[`page/DataSource/DatabaseFormItem render port validator 1`] = `
             />
           </div>
           <div
-            class="ant-col ant-form-item-control css-dev-only-do-not-override-txh9fw"
+            class="ant-col ant-form-item-control"
           >
             <div
               class="ant-form-item-control-input"
@@ -1829,14 +1829,14 @@ exports[`page/DataSource/DatabaseFormItem render port validator 1`] = `
                 class="ant-form-item-control-input-content"
               >
                 <div
-                  class="ant-space css-dev-only-do-not-override-txh9fw ant-space-vertical"
+                  class="ant-space ant-space-vertical"
                 >
                   <div
                     class="ant-space-item"
                     style="margin-bottom: 8px;"
                   >
                     <button
-                      class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default basic-button-wrapper css-geipcv"
+                      class="ant-btn ant-btn-default basic-button-wrapper css-geipcv"
                       type="button"
                     >
                       <span>
@@ -1862,16 +1862,16 @@ exports[`page/DataSource/DatabaseFormItem render port validator 2`] = `
 <body>
   <div>
     <form
-      class="ant-form ant-form-horizontal css-dev-only-do-not-override-txh9fw"
+      class="ant-form ant-form-horizontal"
     >
       <div
-        class="ant-form-item has-required-style css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+        class="ant-form-item has-required-style css-1jlm9cy"
       >
         <div
-          class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+          class="ant-row ant-form-item-row"
         >
           <div
-            class="ant-col ant-form-item-label css-dev-only-do-not-override-txh9fw"
+            class="ant-col ant-form-item-label"
           >
             <label
               class="ant-form-item-required"
@@ -1882,7 +1882,7 @@ exports[`page/DataSource/DatabaseFormItem render port validator 2`] = `
             </label>
           </div>
           <div
-            class="ant-col ant-form-item-control css-dev-only-do-not-override-txh9fw"
+            class="ant-col ant-form-item-control"
           >
             <div
               class="ant-form-item-control-input"
@@ -1892,7 +1892,7 @@ exports[`page/DataSource/DatabaseFormItem render port validator 2`] = `
               >
                 <div
                   aria-required="true"
-                  class="ant-select ant-select-in-form-item basic-select-wrapper css-iy4o4x css-dev-only-do-not-override-v9sov3 ant-select-single ant-select-allow-clear ant-select-show-arrow ant-select-show-search"
+                  class="ant-select ant-select-in-form-item basic-select-wrapper css-iy4o4x ant-select-single ant-select-allow-clear ant-select-show-arrow ant-select-show-search"
                 >
                   <div
                     class="ant-select-selector"
@@ -1955,13 +1955,13 @@ exports[`page/DataSource/DatabaseFormItem render port validator 2`] = `
         </div>
       </div>
       <div
-        class="ant-form-item has-required-style css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+        class="ant-form-item has-required-style css-1jlm9cy"
       >
         <div
-          class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+          class="ant-row ant-form-item-row"
         >
           <div
-            class="ant-col ant-form-item-label css-dev-only-do-not-override-txh9fw"
+            class="ant-col ant-form-item-label"
           >
             <label
               class="ant-form-item-required"
@@ -1972,7 +1972,7 @@ exports[`page/DataSource/DatabaseFormItem render port validator 2`] = `
             </label>
           </div>
           <div
-            class="ant-col ant-form-item-control css-dev-only-do-not-override-txh9fw"
+            class="ant-col ant-form-item-control"
           >
             <div
               class="ant-form-item-control-input"
@@ -1982,7 +1982,7 @@ exports[`page/DataSource/DatabaseFormItem render port validator 2`] = `
               >
                 <input
                   aria-required="true"
-                  class="ant-input css-dev-only-do-not-override-ywkr0o basic-input-wrapper css-1pd1cd5"
+                  class="ant-input basic-input-wrapper css-1pd1cd5"
                   id="ip"
                   placeholder="请输入数据源IP或域名"
                   type="text"
@@ -1994,13 +1994,13 @@ exports[`page/DataSource/DatabaseFormItem render port validator 2`] = `
         </div>
       </div>
       <div
-        class="ant-form-item has-required-style css-1jlm9cy css-dev-only-do-not-override-txh9fw ant-form-item-has-error"
+        class="ant-form-item has-required-style css-1jlm9cy ant-form-item-has-error"
       >
         <div
-          class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+          class="ant-row ant-form-item-row"
         >
           <div
-            class="ant-col ant-form-item-label css-dev-only-do-not-override-txh9fw"
+            class="ant-col ant-form-item-label"
           >
             <label
               class="ant-form-item-required"
@@ -2011,7 +2011,7 @@ exports[`page/DataSource/DatabaseFormItem render port validator 2`] = `
             </label>
           </div>
           <div
-            class="ant-col ant-form-item-control css-dev-only-do-not-override-txh9fw"
+            class="ant-col ant-form-item-control"
           >
             <div
               class="ant-form-item-control-input"
@@ -2023,7 +2023,7 @@ exports[`page/DataSource/DatabaseFormItem render port validator 2`] = `
                   aria-describedby="port_help"
                   aria-invalid="true"
                   aria-required="true"
-                  class="ant-input ant-input-status-error css-dev-only-do-not-override-ywkr0o basic-input-wrapper css-1pd1cd5"
+                  class="ant-input ant-input-status-error basic-input-wrapper css-1pd1cd5"
                   id="port"
                   placeholder="请输入数据源端口"
                   type="text"
@@ -2046,13 +2046,13 @@ exports[`page/DataSource/DatabaseFormItem render port validator 2`] = `
         />
       </div>
       <div
-        class="ant-form-item has-required-style css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+        class="ant-form-item has-required-style css-1jlm9cy"
       >
         <div
-          class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+          class="ant-row ant-form-item-row"
         >
           <div
-            class="ant-col ant-form-item-label css-dev-only-do-not-override-txh9fw"
+            class="ant-col ant-form-item-label"
           >
             <label
               class="ant-form-item-required"
@@ -2063,7 +2063,7 @@ exports[`page/DataSource/DatabaseFormItem render port validator 2`] = `
             </label>
           </div>
           <div
-            class="ant-col ant-form-item-control css-dev-only-do-not-override-txh9fw"
+            class="ant-col ant-form-item-control"
           >
             <div
               class="ant-form-item-control-input"
@@ -2073,7 +2073,7 @@ exports[`page/DataSource/DatabaseFormItem render port validator 2`] = `
               >
                 <input
                   aria-required="true"
-                  class="ant-input css-dev-only-do-not-override-ywkr0o basic-input-wrapper css-1pd1cd5"
+                  class="ant-input basic-input-wrapper css-1pd1cd5"
                   id="user"
                   placeholder="请输入连接用户"
                   type="text"
@@ -2085,13 +2085,13 @@ exports[`page/DataSource/DatabaseFormItem render port validator 2`] = `
         </div>
       </div>
       <div
-        class="ant-form-item has-required-style css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+        class="ant-form-item has-required-style css-1jlm9cy"
       >
         <div
-          class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+          class="ant-row ant-form-item-row"
         >
           <div
-            class="ant-col ant-form-item-label css-dev-only-do-not-override-txh9fw"
+            class="ant-col ant-form-item-label"
           >
             <label
               class="ant-form-item-required"
@@ -2102,7 +2102,7 @@ exports[`page/DataSource/DatabaseFormItem render port validator 2`] = `
             </label>
           </div>
           <div
-            class="ant-col ant-form-item-control css-dev-only-do-not-override-txh9fw"
+            class="ant-col ant-form-item-control"
           >
             <div
               class="ant-form-item-control-input"
@@ -2111,11 +2111,11 @@ exports[`page/DataSource/DatabaseFormItem render port validator 2`] = `
                 class="ant-form-item-control-input-content"
               >
                 <span
-                  class="ant-input-affix-wrapper ant-input-password basic-input-wrapper css-1pd1cd5 css-dev-only-do-not-override-txh9fw"
+                  class="ant-input-affix-wrapper ant-input-password basic-input-wrapper css-1pd1cd5"
                 >
                   <input
                     aria-required="true"
-                    class="ant-input css-dev-only-do-not-override-txh9fw"
+                    class="ant-input"
                     id="password"
                     placeholder="请输入密码"
                     type="password"
@@ -2154,13 +2154,13 @@ exports[`page/DataSource/DatabaseFormItem render port validator 2`] = `
         </div>
       </div>
       <div
-        class="ant-form-item css-15d6abf css-dev-only-do-not-override-txh9fw"
+        class="ant-form-item css-15d6abf"
       >
         <div
-          class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+          class="ant-row ant-form-item-row"
         >
           <div
-            class="ant-col ant-form-item-label css-dev-only-do-not-override-txh9fw"
+            class="ant-col ant-form-item-label"
           >
             <label
               class=""
@@ -2168,7 +2168,7 @@ exports[`page/DataSource/DatabaseFormItem render port validator 2`] = `
             />
           </div>
           <div
-            class="ant-col ant-form-item-control css-dev-only-do-not-override-txh9fw"
+            class="ant-col ant-form-item-control"
           >
             <div
               class="ant-form-item-control-input"
@@ -2177,14 +2177,14 @@ exports[`page/DataSource/DatabaseFormItem render port validator 2`] = `
                 class="ant-form-item-control-input-content"
               >
                 <div
-                  class="ant-space css-dev-only-do-not-override-txh9fw ant-space-vertical"
+                  class="ant-space ant-space-vertical"
                 >
                   <div
                     class="ant-space-item"
                     style="margin-bottom: 8px;"
                   >
                     <button
-                      class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default basic-button-wrapper css-geipcv"
+                      class="ant-btn ant-btn-default basic-button-wrapper css-geipcv"
                       type="button"
                     >
                       <span>
@@ -2210,16 +2210,16 @@ exports[`page/DataSource/DatabaseFormItem render port validator 3`] = `
 <body>
   <div>
     <form
-      class="ant-form ant-form-horizontal css-dev-only-do-not-override-txh9fw"
+      class="ant-form ant-form-horizontal"
     >
       <div
-        class="ant-form-item has-required-style css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+        class="ant-form-item has-required-style css-1jlm9cy"
       >
         <div
-          class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+          class="ant-row ant-form-item-row"
         >
           <div
-            class="ant-col ant-form-item-label css-dev-only-do-not-override-txh9fw"
+            class="ant-col ant-form-item-label"
           >
             <label
               class="ant-form-item-required"
@@ -2230,7 +2230,7 @@ exports[`page/DataSource/DatabaseFormItem render port validator 3`] = `
             </label>
           </div>
           <div
-            class="ant-col ant-form-item-control css-dev-only-do-not-override-txh9fw"
+            class="ant-col ant-form-item-control"
           >
             <div
               class="ant-form-item-control-input"
@@ -2240,7 +2240,7 @@ exports[`page/DataSource/DatabaseFormItem render port validator 3`] = `
               >
                 <div
                   aria-required="true"
-                  class="ant-select ant-select-in-form-item basic-select-wrapper css-iy4o4x css-dev-only-do-not-override-v9sov3 ant-select-single ant-select-allow-clear ant-select-show-arrow ant-select-show-search"
+                  class="ant-select ant-select-in-form-item basic-select-wrapper css-iy4o4x ant-select-single ant-select-allow-clear ant-select-show-arrow ant-select-show-search"
                 >
                   <div
                     class="ant-select-selector"
@@ -2303,13 +2303,13 @@ exports[`page/DataSource/DatabaseFormItem render port validator 3`] = `
         </div>
       </div>
       <div
-        class="ant-form-item has-required-style css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+        class="ant-form-item has-required-style css-1jlm9cy"
       >
         <div
-          class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+          class="ant-row ant-form-item-row"
         >
           <div
-            class="ant-col ant-form-item-label css-dev-only-do-not-override-txh9fw"
+            class="ant-col ant-form-item-label"
           >
             <label
               class="ant-form-item-required"
@@ -2320,7 +2320,7 @@ exports[`page/DataSource/DatabaseFormItem render port validator 3`] = `
             </label>
           </div>
           <div
-            class="ant-col ant-form-item-control css-dev-only-do-not-override-txh9fw"
+            class="ant-col ant-form-item-control"
           >
             <div
               class="ant-form-item-control-input"
@@ -2330,7 +2330,7 @@ exports[`page/DataSource/DatabaseFormItem render port validator 3`] = `
               >
                 <input
                   aria-required="true"
-                  class="ant-input css-dev-only-do-not-override-ywkr0o basic-input-wrapper css-1pd1cd5"
+                  class="ant-input basic-input-wrapper css-1pd1cd5"
                   id="ip"
                   placeholder="请输入数据源IP或域名"
                   type="text"
@@ -2342,13 +2342,13 @@ exports[`page/DataSource/DatabaseFormItem render port validator 3`] = `
         </div>
       </div>
       <div
-        class="ant-form-item has-required-style css-1jlm9cy css-dev-only-do-not-override-txh9fw ant-form-item-with-help ant-form-item-has-error"
+        class="ant-form-item has-required-style css-1jlm9cy ant-form-item-with-help ant-form-item-has-error"
       >
         <div
-          class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+          class="ant-row ant-form-item-row"
         >
           <div
-            class="ant-col ant-form-item-label css-dev-only-do-not-override-txh9fw"
+            class="ant-col ant-form-item-label"
           >
             <label
               class="ant-form-item-required"
@@ -2359,7 +2359,7 @@ exports[`page/DataSource/DatabaseFormItem render port validator 3`] = `
             </label>
           </div>
           <div
-            class="ant-col ant-form-item-control css-dev-only-do-not-override-txh9fw"
+            class="ant-col ant-form-item-control"
           >
             <div
               class="ant-form-item-control-input"
@@ -2371,7 +2371,7 @@ exports[`page/DataSource/DatabaseFormItem render port validator 3`] = `
                   aria-describedby="port_help"
                   aria-invalid="true"
                   aria-required="true"
-                  class="ant-input ant-input-status-error css-dev-only-do-not-override-ywkr0o basic-input-wrapper css-1pd1cd5"
+                  class="ant-input ant-input-status-error basic-input-wrapper css-1pd1cd5"
                   id="port"
                   placeholder="请输入数据源端口"
                   type="text"
@@ -2394,13 +2394,13 @@ exports[`page/DataSource/DatabaseFormItem render port validator 3`] = `
         />
       </div>
       <div
-        class="ant-form-item has-required-style css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+        class="ant-form-item has-required-style css-1jlm9cy"
       >
         <div
-          class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+          class="ant-row ant-form-item-row"
         >
           <div
-            class="ant-col ant-form-item-label css-dev-only-do-not-override-txh9fw"
+            class="ant-col ant-form-item-label"
           >
             <label
               class="ant-form-item-required"
@@ -2411,7 +2411,7 @@ exports[`page/DataSource/DatabaseFormItem render port validator 3`] = `
             </label>
           </div>
           <div
-            class="ant-col ant-form-item-control css-dev-only-do-not-override-txh9fw"
+            class="ant-col ant-form-item-control"
           >
             <div
               class="ant-form-item-control-input"
@@ -2421,7 +2421,7 @@ exports[`page/DataSource/DatabaseFormItem render port validator 3`] = `
               >
                 <input
                   aria-required="true"
-                  class="ant-input css-dev-only-do-not-override-ywkr0o basic-input-wrapper css-1pd1cd5"
+                  class="ant-input basic-input-wrapper css-1pd1cd5"
                   id="user"
                   placeholder="请输入连接用户"
                   type="text"
@@ -2433,13 +2433,13 @@ exports[`page/DataSource/DatabaseFormItem render port validator 3`] = `
         </div>
       </div>
       <div
-        class="ant-form-item has-required-style css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+        class="ant-form-item has-required-style css-1jlm9cy"
       >
         <div
-          class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+          class="ant-row ant-form-item-row"
         >
           <div
-            class="ant-col ant-form-item-label css-dev-only-do-not-override-txh9fw"
+            class="ant-col ant-form-item-label"
           >
             <label
               class="ant-form-item-required"
@@ -2450,7 +2450,7 @@ exports[`page/DataSource/DatabaseFormItem render port validator 3`] = `
             </label>
           </div>
           <div
-            class="ant-col ant-form-item-control css-dev-only-do-not-override-txh9fw"
+            class="ant-col ant-form-item-control"
           >
             <div
               class="ant-form-item-control-input"
@@ -2459,11 +2459,11 @@ exports[`page/DataSource/DatabaseFormItem render port validator 3`] = `
                 class="ant-form-item-control-input-content"
               >
                 <span
-                  class="ant-input-affix-wrapper ant-input-password basic-input-wrapper css-1pd1cd5 css-dev-only-do-not-override-txh9fw"
+                  class="ant-input-affix-wrapper ant-input-password basic-input-wrapper css-1pd1cd5"
                 >
                   <input
                     aria-required="true"
-                    class="ant-input css-dev-only-do-not-override-txh9fw"
+                    class="ant-input"
                     id="password"
                     placeholder="请输入密码"
                     type="password"
@@ -2502,13 +2502,13 @@ exports[`page/DataSource/DatabaseFormItem render port validator 3`] = `
         </div>
       </div>
       <div
-        class="ant-form-item css-15d6abf css-dev-only-do-not-override-txh9fw"
+        class="ant-form-item css-15d6abf"
       >
         <div
-          class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+          class="ant-row ant-form-item-row"
         >
           <div
-            class="ant-col ant-form-item-label css-dev-only-do-not-override-txh9fw"
+            class="ant-col ant-form-item-label"
           >
             <label
               class=""
@@ -2516,7 +2516,7 @@ exports[`page/DataSource/DatabaseFormItem render port validator 3`] = `
             />
           </div>
           <div
-            class="ant-col ant-form-item-control css-dev-only-do-not-override-txh9fw"
+            class="ant-col ant-form-item-control"
           >
             <div
               class="ant-form-item-control-input"
@@ -2525,14 +2525,14 @@ exports[`page/DataSource/DatabaseFormItem render port validator 3`] = `
                 class="ant-form-item-control-input-content"
               >
                 <div
-                  class="ant-space css-dev-only-do-not-override-txh9fw ant-space-vertical"
+                  class="ant-space ant-space-vertical"
                 >
                   <div
                     class="ant-space-item"
                     style="margin-bottom: 8px;"
                   >
                     <button
-                      class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default basic-button-wrapper css-geipcv"
+                      class="ant-btn ant-btn-default basic-button-wrapper css-geipcv"
                       type="button"
                     >
                       <span>

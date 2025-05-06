@@ -7,10 +7,10 @@ exports[`base/System/components/BasicTitle render title 1`] = `
       class="system-form-wrapper"
     >
       <div
-        class="ant-row ant-row-space-between ant-row-middle config-title-wrapper has-border css-dev-only-do-not-override-txh9fw"
+        class="ant-row ant-row-space-between ant-row-middle config-title-wrapper has-border"
       >
         <div
-          class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+          class="ant-space ant-space-horizontal ant-space-align-center"
         >
           <div
             class="ant-space-item"
@@ -34,10 +34,10 @@ exports[`base/System/components/BasicTitle render title when title other params 
       class="system-form-wrapper"
     >
       <div
-        class="ant-row ant-row-space-between ant-row-middle config-title-wrapper has-border css-dev-only-do-not-override-txh9fw"
+        class="ant-row ant-row-space-between ant-row-middle config-title-wrapper has-border"
       >
         <div
-          class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+          class="ant-space ant-space-horizontal ant-space-align-center"
         >
           <div
             class="ant-space-item"
@@ -49,7 +49,7 @@ exports[`base/System/components/BasicTitle render title when title other params 
             class="ant-space-item"
           >
             <div
-              class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
+              class="ant-space ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
             >
               <div
                 class="ant-space-item"

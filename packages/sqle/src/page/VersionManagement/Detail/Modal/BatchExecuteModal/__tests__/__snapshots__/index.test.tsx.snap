@@ -5,7 +5,7 @@ exports[`sqle/VersionManagement/Detail/BatchExecuteModal render init snap shot 1
   <div />
   <div>
     <div
-      class="ant-modal-root css-dev-only-do-not-override-txh9fw"
+      class="ant-modal-root"
     >
       <div
         class="ant-modal-mask"
@@ -17,7 +17,7 @@ exports[`sqle/VersionManagement/Detail/BatchExecuteModal render init snap shot 1
         <div
           aria-labelledby="test-id"
           aria-modal="true"
-          class="ant-modal css-dev-only-do-not-override-txh9fw basic-modal-wrapper css-vvpsbb ant-zoom-appear ant-zoom-appear-prepare ant-zoom"
+          class="ant-modal basic-modal-wrapper css-vvpsbb ant-zoom-appear ant-zoom-appear-prepare ant-zoom"
           role="dialog"
           style="width: 480px;"
         >
@@ -43,14 +43,14 @@ exports[`sqle/VersionManagement/Detail/BatchExecuteModal render init snap shot 1
               class="ant-modal-body"
             >
               <div
-                class="ant-space css-dev-only-do-not-override-txh9fw ant-space-vertical"
+                class="ant-space ant-space-vertical"
               >
                 <div
                   class="ant-space-item"
                   style="margin-bottom: 8px;"
                 >
                   <span
-                    class="ant-typography ant-typography-secondary css-dev-only-do-not-override-txh9fw"
+                    class="ant-typography ant-typography-secondary"
                   >
                     工单将按顺序依次上线，当前阶段具备上线条件的工单如下，是否确认上线？
                   </span>
@@ -71,14 +71,14 @@ exports[`sqle/VersionManagement/Detail/BatchExecuteModal render init snap shot 1
               class="ant-modal-footer"
             >
               <div
-                class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+                class="ant-space ant-space-horizontal ant-space-align-center"
               >
                 <div
                   class="ant-space-item"
                   style="margin-right: 8px;"
                 >
                   <button
-                    class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default basic-button-wrapper css-geipcv"
+                    class="ant-btn ant-btn-default basic-button-wrapper css-geipcv"
                     type="button"
                   >
                     <span>
@@ -90,7 +90,7 @@ exports[`sqle/VersionManagement/Detail/BatchExecuteModal render init snap shot 1
                   class="ant-space-item"
                 >
                   <button
-                    class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary basic-button-wrapper css-geipcv"
+                    class="ant-btn ant-btn-primary basic-button-wrapper css-geipcv"
                     type="button"
                   >
                     <span>

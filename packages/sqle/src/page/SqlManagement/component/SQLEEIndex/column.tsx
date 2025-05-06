@@ -6,7 +6,7 @@ import {
   PageInfoWithoutIndexAndSize
 } from '@actiontech/shared/lib/components/ActiontechTable';
 import { ModalName } from '../../../../data/ModalName';
-import { IGetSqlManageListV2Params } from '@actiontech/shared/lib/api/sqle/service/SqlManage/index.d';
+import { IGetSqlManageListV3Params } from '@actiontech/shared/lib/api/sqle/service/SqlManage/index.d';
 import { ISqlManage } from '@actiontech/shared/lib/api/sqle/service/common';
 import ResultIconRender from '../../../../components/AuditResultMessage/ResultIconRender';
 import {
@@ -28,12 +28,12 @@ import {
 import { ROUTE_PATHS } from '@actiontech/shared/lib/data/routePaths';
 
 export type SqlManagementTableFilterParamType = PageInfoWithoutIndexAndSize<
-  IGetSqlManageListV2Params,
+  IGetSqlManageListV3Params,
   'fuzzy_search_sql_fingerprint' | 'filter_status' | 'project_name'
 >;
 
 export type ExtraFilterMetaType = ISqlManage & {
-  filter_business?: string;
+  filter_by_environment_tag?: string;
   filter_source?: string;
   filter_instance_id?: string;
   filter_audit_level?: string;
@@ -50,11 +50,11 @@ export const ExtraFilterMeta: () => ActiontechTableFilterMeta<
     ActiontechTableFilterMetaValue<SqlManagementTableFilterParamType>
   >([
     [
-      'filter_business',
+      'filter_by_environment_tag',
       {
         filterCustomType: 'select',
-        filterKey: 'filter_business',
-        filterLabel: t('sqlManagement.table.filter.business'),
+        filterKey: 'filter_by_environment_tag',
+        filterLabel: t('sqlManagement.table.filter.environmentAttribute'),
         checked: false
       }
     ],

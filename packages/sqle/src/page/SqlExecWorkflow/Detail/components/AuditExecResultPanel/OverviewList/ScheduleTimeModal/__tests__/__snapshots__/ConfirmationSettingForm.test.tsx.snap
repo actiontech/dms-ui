@@ -3,22 +3,22 @@
 exports[`test ConfirmationSettingForm render snapshot when enable is equal false 1`] = `
 <div>
   <form
-    class="ant-form ant-form-horizontal css-dev-only-do-not-override-txh9fw"
+    class="ant-form ant-form-horizontal"
   >
     <div
-      class="ant-spin-nested-loading css-dev-only-do-not-override-txh9fw"
+      class="ant-spin-nested-loading"
     >
       <div
         class="ant-spin-container"
       >
         <div
-          class="ant-form-item has-label-tip css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+          class="ant-form-item has-label-tip css-1jlm9cy"
         >
           <div
-            class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+            class="ant-row ant-form-item-row"
           >
             <div
-              class="ant-col ant-col-20 ant-form-item-label css-dev-only-do-not-override-txh9fw"
+              class="ant-col ant-col-20 ant-form-item-label"
             >
               <label
                 class=""
@@ -40,7 +40,7 @@ exports[`test ConfirmationSettingForm render snapshot when enable is equal false
               </label>
             </div>
             <div
-              class="ant-col ant-col-2 ant-col-push-1 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+              class="ant-col ant-col-2 ant-col-push-1 ant-form-item-control"
             >
               <div
                 class="ant-form-item-control-input"
@@ -50,7 +50,7 @@ exports[`test ConfirmationSettingForm render snapshot when enable is equal false
                 >
                   <button
                     aria-checked="false"
-                    class="ant-switch basic-switch-wrapper css-g6dhbn css-dev-only-do-not-override-txh9fw"
+                    class="ant-switch basic-switch-wrapper css-g6dhbn"
                     id="notification_confirmation"
                     role="switch"
                     type="button"
@@ -83,22 +83,22 @@ exports[`test ConfirmationSettingForm render snapshot when enable is equal false
 exports[`test ConfirmationSettingForm render snapshot when enable is equal true and close the config 1`] = `
 <div>
   <form
-    class="ant-form ant-form-horizontal css-dev-only-do-not-override-txh9fw"
+    class="ant-form ant-form-horizontal"
   >
     <div
-      class="ant-spin-nested-loading css-dev-only-do-not-override-txh9fw"
+      class="ant-spin-nested-loading"
     >
       <div
         class="ant-spin-container"
       >
         <div
-          class="ant-form-item has-label-tip css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+          class="ant-form-item has-label-tip css-1jlm9cy"
         >
           <div
-            class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+            class="ant-row ant-form-item-row"
           >
             <div
-              class="ant-col ant-col-20 ant-form-item-label css-dev-only-do-not-override-txh9fw"
+              class="ant-col ant-col-20 ant-form-item-label"
             >
               <label
                 class=""
@@ -120,7 +120,7 @@ exports[`test ConfirmationSettingForm render snapshot when enable is equal true 
               </label>
             </div>
             <div
-              class="ant-col ant-col-2 ant-col-push-1 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+              class="ant-col ant-col-2 ant-col-push-1 ant-form-item-control"
             >
               <div
                 class="ant-form-item-control-input"
@@ -130,7 +130,7 @@ exports[`test ConfirmationSettingForm render snapshot when enable is equal true 
                 >
                   <button
                     aria-checked="false"
-                    class="ant-switch basic-switch-wrapper css-g6dhbn css-dev-only-do-not-override-txh9fw"
+                    class="ant-switch basic-switch-wrapper css-g6dhbn"
                     id="notification_confirmation"
                     role="switch"
                     type="button"
@@ -155,13 +155,13 @@ exports[`test ConfirmationSettingForm render snapshot when enable is equal true 
           </div>
         </div>
         <div
-          class="ant-form-item has-label-tip has-required-style css-15ihijf css-dev-only-do-not-override-txh9fw"
+          class="ant-form-item has-label-tip has-required-style css-15ihijf"
         >
           <div
-            class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+            class="ant-row ant-form-item-row"
           >
             <div
-              class="ant-col ant-col-16 ant-form-item-label css-dev-only-do-not-override-txh9fw"
+              class="ant-col ant-col-16 ant-form-item-label"
             >
               <label
                 class="ant-form-item-required"
@@ -190,7 +190,7 @@ exports[`test ConfirmationSettingForm render snapshot when enable is equal true 
               </label>
             </div>
             <div
-              class="ant-col ant-col-6 ant-col-push-2 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+              class="ant-col ant-col-6 ant-col-push-2 ant-form-item-control"
             >
               <div
                 class="ant-form-item-control-input"
@@ -200,7 +200,7 @@ exports[`test ConfirmationSettingForm render snapshot when enable is equal true 
                 >
                   <div
                     aria-required="true"
-                    class="ant-space css-dev-only-do-not-override-txh9fw ant-space-vertical full-width-element actiontech-toggle-tokens css-inle2o"
+                    class="ant-space ant-space-vertical full-width-element actiontech-toggle-tokens css-inle2o"
                     id="confirmation_method"
                   >
                     <div
@@ -208,7 +208,7 @@ exports[`test ConfirmationSettingForm render snapshot when enable is equal true 
                       style="margin-bottom: 8px;"
                     >
                       <button
-                        class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default toggle-token-item toggle-token-item-button-style basic-button-wrapper css-geipcv"
+                        class="ant-btn ant-btn-default toggle-token-item toggle-token-item-button-style basic-button-wrapper css-geipcv"
                         type="button"
                       >
                         <span
@@ -224,7 +224,7 @@ exports[`test ConfirmationSettingForm render snapshot when enable is equal true 
                       class="ant-space-item"
                     >
                       <button
-                        class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default toggle-token-item toggle-token-item-button-style basic-button-wrapper css-geipcv"
+                        class="ant-btn ant-btn-default toggle-token-item toggle-token-item-button-style basic-button-wrapper css-geipcv"
                         type="button"
                       >
                         <span
@@ -251,22 +251,22 @@ exports[`test ConfirmationSettingForm render snapshot when enable is equal true 
 exports[`test ConfirmationSettingForm render snapshot when enable is equal true and open the config 1`] = `
 <div>
   <form
-    class="ant-form ant-form-horizontal css-dev-only-do-not-override-txh9fw"
+    class="ant-form ant-form-horizontal"
   >
     <div
-      class="ant-spin-nested-loading css-dev-only-do-not-override-txh9fw"
+      class="ant-spin-nested-loading"
     >
       <div
         class="ant-spin-container"
       >
         <div
-          class="ant-form-item has-label-tip css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+          class="ant-form-item has-label-tip css-1jlm9cy"
         >
           <div
-            class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+            class="ant-row ant-form-item-row"
           >
             <div
-              class="ant-col ant-col-20 ant-form-item-label css-dev-only-do-not-override-txh9fw"
+              class="ant-col ant-col-20 ant-form-item-label"
             >
               <label
                 class=""
@@ -288,7 +288,7 @@ exports[`test ConfirmationSettingForm render snapshot when enable is equal true 
               </label>
             </div>
             <div
-              class="ant-col ant-col-2 ant-col-push-1 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+              class="ant-col ant-col-2 ant-col-push-1 ant-form-item-control"
             >
               <div
                 class="ant-form-item-control-input"
@@ -298,7 +298,7 @@ exports[`test ConfirmationSettingForm render snapshot when enable is equal true 
                 >
                   <button
                     aria-checked="false"
-                    class="ant-switch basic-switch-wrapper css-g6dhbn css-dev-only-do-not-override-txh9fw"
+                    class="ant-switch basic-switch-wrapper css-g6dhbn"
                     id="notification_confirmation"
                     role="switch"
                     type="button"
@@ -323,13 +323,13 @@ exports[`test ConfirmationSettingForm render snapshot when enable is equal true 
           </div>
         </div>
         <div
-          class="ant-form-item has-label-tip has-required-style css-15ihijf css-dev-only-do-not-override-txh9fw"
+          class="ant-form-item has-label-tip has-required-style css-15ihijf"
         >
           <div
-            class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+            class="ant-row ant-form-item-row"
           >
             <div
-              class="ant-col ant-col-16 ant-form-item-label css-dev-only-do-not-override-txh9fw"
+              class="ant-col ant-col-16 ant-form-item-label"
             >
               <label
                 class="ant-form-item-required"
@@ -358,7 +358,7 @@ exports[`test ConfirmationSettingForm render snapshot when enable is equal true 
               </label>
             </div>
             <div
-              class="ant-col ant-col-6 ant-col-push-2 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+              class="ant-col ant-col-6 ant-col-push-2 ant-form-item-control"
             >
               <div
                 class="ant-form-item-control-input"
@@ -368,7 +368,7 @@ exports[`test ConfirmationSettingForm render snapshot when enable is equal true 
                 >
                   <div
                     aria-required="true"
-                    class="ant-space css-dev-only-do-not-override-txh9fw ant-space-vertical full-width-element actiontech-toggle-tokens css-inle2o"
+                    class="ant-space ant-space-vertical full-width-element actiontech-toggle-tokens css-inle2o"
                     id="confirmation_method"
                   >
                     <div
@@ -376,7 +376,7 @@ exports[`test ConfirmationSettingForm render snapshot when enable is equal true 
                       style="margin-bottom: 8px;"
                     >
                       <button
-                        class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default toggle-token-item toggle-token-item-button-style basic-button-wrapper css-geipcv"
+                        class="ant-btn ant-btn-default toggle-token-item toggle-token-item-button-style basic-button-wrapper css-geipcv"
                         type="button"
                       >
                         <span
@@ -392,7 +392,7 @@ exports[`test ConfirmationSettingForm render snapshot when enable is equal true 
                       class="ant-space-item"
                     >
                       <button
-                        class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary toggle-token-item toggle-token-item-checked toggle-token-item-button-style basic-button-wrapper css-geipcv"
+                        class="ant-btn ant-btn-primary toggle-token-item toggle-token-item-checked toggle-token-item-button-style basic-button-wrapper css-geipcv"
                         type="button"
                       >
                         <span
@@ -419,22 +419,22 @@ exports[`test ConfirmationSettingForm render snapshot when enable is equal true 
 exports[`test ConfirmationSettingForm render snapshot when enable is equal true and open the feishu config 1`] = `
 <div>
   <form
-    class="ant-form ant-form-horizontal css-dev-only-do-not-override-txh9fw"
+    class="ant-form ant-form-horizontal"
   >
     <div
-      class="ant-spin-nested-loading css-dev-only-do-not-override-txh9fw"
+      class="ant-spin-nested-loading"
     >
       <div
         class="ant-spin-container"
       >
         <div
-          class="ant-form-item has-label-tip css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+          class="ant-form-item has-label-tip css-1jlm9cy"
         >
           <div
-            class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+            class="ant-row ant-form-item-row"
           >
             <div
-              class="ant-col ant-col-20 ant-form-item-label css-dev-only-do-not-override-txh9fw"
+              class="ant-col ant-col-20 ant-form-item-label"
             >
               <label
                 class=""
@@ -456,7 +456,7 @@ exports[`test ConfirmationSettingForm render snapshot when enable is equal true 
               </label>
             </div>
             <div
-              class="ant-col ant-col-2 ant-col-push-1 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+              class="ant-col ant-col-2 ant-col-push-1 ant-form-item-control"
             >
               <div
                 class="ant-form-item-control-input"
@@ -466,7 +466,7 @@ exports[`test ConfirmationSettingForm render snapshot when enable is equal true 
                 >
                   <button
                     aria-checked="false"
-                    class="ant-switch basic-switch-wrapper css-g6dhbn css-dev-only-do-not-override-txh9fw"
+                    class="ant-switch basic-switch-wrapper css-g6dhbn"
                     id="notification_confirmation"
                     role="switch"
                     type="button"
@@ -491,13 +491,13 @@ exports[`test ConfirmationSettingForm render snapshot when enable is equal true 
           </div>
         </div>
         <div
-          class="ant-form-item has-label-tip has-required-style css-15ihijf css-dev-only-do-not-override-txh9fw"
+          class="ant-form-item has-label-tip has-required-style css-15ihijf"
         >
           <div
-            class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+            class="ant-row ant-form-item-row"
           >
             <div
-              class="ant-col ant-col-16 ant-form-item-label css-dev-only-do-not-override-txh9fw"
+              class="ant-col ant-col-16 ant-form-item-label"
             >
               <label
                 class="ant-form-item-required"
@@ -526,7 +526,7 @@ exports[`test ConfirmationSettingForm render snapshot when enable is equal true 
               </label>
             </div>
             <div
-              class="ant-col ant-col-6 ant-col-push-2 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+              class="ant-col ant-col-6 ant-col-push-2 ant-form-item-control"
             >
               <div
                 class="ant-form-item-control-input"
@@ -536,7 +536,7 @@ exports[`test ConfirmationSettingForm render snapshot when enable is equal true 
                 >
                   <div
                     aria-required="true"
-                    class="ant-space css-dev-only-do-not-override-txh9fw ant-space-vertical full-width-element actiontech-toggle-tokens css-inle2o"
+                    class="ant-space ant-space-vertical full-width-element actiontech-toggle-tokens css-inle2o"
                     id="confirmation_method"
                   >
                     <div
@@ -544,7 +544,7 @@ exports[`test ConfirmationSettingForm render snapshot when enable is equal true 
                       style="margin-bottom: 8px;"
                     >
                       <button
-                        class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default toggle-token-item toggle-token-item-button-style basic-button-wrapper css-geipcv"
+                        class="ant-btn ant-btn-default toggle-token-item toggle-token-item-button-style basic-button-wrapper css-geipcv"
                         type="button"
                       >
                         <span
@@ -560,7 +560,7 @@ exports[`test ConfirmationSettingForm render snapshot when enable is equal true 
                       class="ant-space-item"
                     >
                       <button
-                        class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default toggle-token-item toggle-token-item-button-style basic-button-wrapper css-geipcv"
+                        class="ant-btn ant-btn-default toggle-token-item toggle-token-item-button-style basic-button-wrapper css-geipcv"
                         type="button"
                       >
                         <span
@@ -587,22 +587,22 @@ exports[`test ConfirmationSettingForm render snapshot when enable is equal true 
 exports[`test ConfirmationSettingForm render snapshot when enable is equal true and open the wechat config 1`] = `
 <div>
   <form
-    class="ant-form ant-form-horizontal css-dev-only-do-not-override-txh9fw"
+    class="ant-form ant-form-horizontal"
   >
     <div
-      class="ant-spin-nested-loading css-dev-only-do-not-override-txh9fw"
+      class="ant-spin-nested-loading"
     >
       <div
         class="ant-spin-container"
       >
         <div
-          class="ant-form-item has-label-tip css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+          class="ant-form-item has-label-tip css-1jlm9cy"
         >
           <div
-            class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+            class="ant-row ant-form-item-row"
           >
             <div
-              class="ant-col ant-col-20 ant-form-item-label css-dev-only-do-not-override-txh9fw"
+              class="ant-col ant-col-20 ant-form-item-label"
             >
               <label
                 class=""
@@ -624,7 +624,7 @@ exports[`test ConfirmationSettingForm render snapshot when enable is equal true 
               </label>
             </div>
             <div
-              class="ant-col ant-col-2 ant-col-push-1 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+              class="ant-col ant-col-2 ant-col-push-1 ant-form-item-control"
             >
               <div
                 class="ant-form-item-control-input"
@@ -634,7 +634,7 @@ exports[`test ConfirmationSettingForm render snapshot when enable is equal true 
                 >
                   <button
                     aria-checked="false"
-                    class="ant-switch basic-switch-wrapper css-g6dhbn css-dev-only-do-not-override-txh9fw"
+                    class="ant-switch basic-switch-wrapper css-g6dhbn"
                     id="notification_confirmation"
                     role="switch"
                     type="button"
@@ -659,13 +659,13 @@ exports[`test ConfirmationSettingForm render snapshot when enable is equal true 
           </div>
         </div>
         <div
-          class="ant-form-item has-label-tip has-required-style css-15ihijf css-dev-only-do-not-override-txh9fw"
+          class="ant-form-item has-label-tip has-required-style css-15ihijf"
         >
           <div
-            class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+            class="ant-row ant-form-item-row"
           >
             <div
-              class="ant-col ant-col-16 ant-form-item-label css-dev-only-do-not-override-txh9fw"
+              class="ant-col ant-col-16 ant-form-item-label"
             >
               <label
                 class="ant-form-item-required"
@@ -694,7 +694,7 @@ exports[`test ConfirmationSettingForm render snapshot when enable is equal true 
               </label>
             </div>
             <div
-              class="ant-col ant-col-6 ant-col-push-2 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+              class="ant-col ant-col-6 ant-col-push-2 ant-form-item-control"
             >
               <div
                 class="ant-form-item-control-input"
@@ -704,7 +704,7 @@ exports[`test ConfirmationSettingForm render snapshot when enable is equal true 
                 >
                   <div
                     aria-required="true"
-                    class="ant-space css-dev-only-do-not-override-txh9fw ant-space-vertical full-width-element actiontech-toggle-tokens css-inle2o"
+                    class="ant-space ant-space-vertical full-width-element actiontech-toggle-tokens css-inle2o"
                     id="confirmation_method"
                   >
                     <div
@@ -712,7 +712,7 @@ exports[`test ConfirmationSettingForm render snapshot when enable is equal true 
                       style="margin-bottom: 8px;"
                     >
                       <button
-                        class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default toggle-token-item toggle-token-item-button-style basic-button-wrapper css-geipcv"
+                        class="ant-btn ant-btn-default toggle-token-item toggle-token-item-button-style basic-button-wrapper css-geipcv"
                         type="button"
                       >
                         <span
@@ -728,7 +728,7 @@ exports[`test ConfirmationSettingForm render snapshot when enable is equal true 
                       class="ant-space-item"
                     >
                       <button
-                        class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default toggle-token-item toggle-token-item-button-style basic-button-wrapper css-geipcv"
+                        class="ant-btn ant-btn-default toggle-token-item toggle-token-item-button-style basic-button-wrapper css-geipcv"
                         type="button"
                       >
                         <span
@@ -755,22 +755,22 @@ exports[`test ConfirmationSettingForm render snapshot when enable is equal true 
 exports[`test ConfirmationSettingForm render snapshot when enable is equal true and request throw catch 1`] = `
 <div>
   <form
-    class="ant-form ant-form-horizontal css-dev-only-do-not-override-txh9fw"
+    class="ant-form ant-form-horizontal"
   >
     <div
-      class="ant-spin-nested-loading css-dev-only-do-not-override-txh9fw"
+      class="ant-spin-nested-loading"
     >
       <div
         class="ant-spin-container"
       >
         <div
-          class="ant-form-item has-label-tip css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+          class="ant-form-item has-label-tip css-1jlm9cy"
         >
           <div
-            class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+            class="ant-row ant-form-item-row"
           >
             <div
-              class="ant-col ant-col-20 ant-form-item-label css-dev-only-do-not-override-txh9fw"
+              class="ant-col ant-col-20 ant-form-item-label"
             >
               <label
                 class=""
@@ -792,7 +792,7 @@ exports[`test ConfirmationSettingForm render snapshot when enable is equal true 
               </label>
             </div>
             <div
-              class="ant-col ant-col-2 ant-col-push-1 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+              class="ant-col ant-col-2 ant-col-push-1 ant-form-item-control"
             >
               <div
                 class="ant-form-item-control-input"
@@ -802,7 +802,7 @@ exports[`test ConfirmationSettingForm render snapshot when enable is equal true 
                 >
                   <button
                     aria-checked="false"
-                    class="ant-switch basic-switch-wrapper css-g6dhbn css-dev-only-do-not-override-txh9fw"
+                    class="ant-switch basic-switch-wrapper css-g6dhbn"
                     id="notification_confirmation"
                     role="switch"
                     type="button"
@@ -827,13 +827,13 @@ exports[`test ConfirmationSettingForm render snapshot when enable is equal true 
           </div>
         </div>
         <div
-          class="ant-form-item has-label-tip has-required-style css-15ihijf css-dev-only-do-not-override-txh9fw"
+          class="ant-form-item has-label-tip has-required-style css-15ihijf"
         >
           <div
-            class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+            class="ant-row ant-form-item-row"
           >
             <div
-              class="ant-col ant-col-16 ant-form-item-label css-dev-only-do-not-override-txh9fw"
+              class="ant-col ant-col-16 ant-form-item-label"
             >
               <label
                 class="ant-form-item-required"
@@ -862,7 +862,7 @@ exports[`test ConfirmationSettingForm render snapshot when enable is equal true 
               </label>
             </div>
             <div
-              class="ant-col ant-col-6 ant-col-push-2 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+              class="ant-col ant-col-6 ant-col-push-2 ant-form-item-control"
             >
               <div
                 class="ant-form-item-control-input"
@@ -872,7 +872,7 @@ exports[`test ConfirmationSettingForm render snapshot when enable is equal true 
                 >
                   <div
                     aria-required="true"
-                    class="ant-space css-dev-only-do-not-override-txh9fw ant-space-vertical full-width-element actiontech-toggle-tokens css-inle2o"
+                    class="ant-space ant-space-vertical full-width-element actiontech-toggle-tokens css-inle2o"
                     id="confirmation_method"
                   >
                     <div
@@ -880,7 +880,7 @@ exports[`test ConfirmationSettingForm render snapshot when enable is equal true 
                       style="margin-bottom: 8px;"
                     >
                       <button
-                        class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default toggle-token-item toggle-token-item-button-style basic-button-wrapper css-geipcv"
+                        class="ant-btn ant-btn-default toggle-token-item toggle-token-item-button-style basic-button-wrapper css-geipcv"
                         type="button"
                       >
                         <span
@@ -896,7 +896,7 @@ exports[`test ConfirmationSettingForm render snapshot when enable is equal true 
                       class="ant-space-item"
                     >
                       <button
-                        class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default toggle-token-item toggle-token-item-button-style basic-button-wrapper css-geipcv"
+                        class="ant-btn ant-btn-default toggle-token-item toggle-token-item-button-style basic-button-wrapper css-geipcv"
                         type="button"
                       >
                         <span
@@ -923,22 +923,22 @@ exports[`test ConfirmationSettingForm render snapshot when enable is equal true 
 exports[`test ConfirmationSettingForm should match snapshot when current language is en 1`] = `
 <div>
   <form
-    class="ant-form ant-form-horizontal css-dev-only-do-not-override-txh9fw"
+    class="ant-form ant-form-horizontal"
   >
     <div
-      class="ant-spin-nested-loading css-dev-only-do-not-override-txh9fw"
+      class="ant-spin-nested-loading"
     >
       <div
         class="ant-spin-container"
       >
         <div
-          class="ant-form-item has-label-tip css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+          class="ant-form-item has-label-tip css-1jlm9cy"
         >
           <div
-            class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+            class="ant-row ant-form-item-row"
           >
             <div
-              class="ant-col ant-col-20 ant-form-item-label css-dev-only-do-not-override-txh9fw"
+              class="ant-col ant-col-20 ant-form-item-label"
             >
               <label
                 class=""
@@ -960,7 +960,7 @@ exports[`test ConfirmationSettingForm should match snapshot when current languag
               </label>
             </div>
             <div
-              class="ant-col ant-col-2 ant-col-push-1 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+              class="ant-col ant-col-2 ant-col-push-1 ant-form-item-control"
             >
               <div
                 class="ant-form-item-control-input"
@@ -970,7 +970,7 @@ exports[`test ConfirmationSettingForm should match snapshot when current languag
                 >
                   <button
                     aria-checked="false"
-                    class="ant-switch basic-switch-wrapper css-g6dhbn css-dev-only-do-not-override-txh9fw"
+                    class="ant-switch basic-switch-wrapper css-g6dhbn"
                     id="notification_confirmation"
                     role="switch"
                     type="button"
@@ -995,13 +995,13 @@ exports[`test ConfirmationSettingForm should match snapshot when current languag
           </div>
         </div>
         <div
-          class="ant-form-item has-label-tip has-required-style css-15ihijf css-dev-only-do-not-override-txh9fw"
+          class="ant-form-item has-label-tip has-required-style css-15ihijf"
         >
           <div
-            class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+            class="ant-row ant-form-item-row"
           >
             <div
-              class="ant-col ant-col-16 ant-form-item-label css-dev-only-do-not-override-txh9fw"
+              class="ant-col ant-col-16 ant-form-item-label"
             >
               <label
                 class="ant-form-item-required"
@@ -1030,7 +1030,7 @@ exports[`test ConfirmationSettingForm should match snapshot when current languag
               </label>
             </div>
             <div
-              class="ant-col ant-col-8 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+              class="ant-col ant-col-8 ant-form-item-control"
             >
               <div
                 class="ant-form-item-control-input"
@@ -1040,7 +1040,7 @@ exports[`test ConfirmationSettingForm should match snapshot when current languag
                 >
                   <div
                     aria-required="true"
-                    class="ant-space css-dev-only-do-not-override-txh9fw ant-space-vertical full-width-element actiontech-toggle-tokens css-inle2o"
+                    class="ant-space ant-space-vertical full-width-element actiontech-toggle-tokens css-inle2o"
                     id="confirmation_method"
                   >
                     <div
@@ -1048,7 +1048,7 @@ exports[`test ConfirmationSettingForm should match snapshot when current languag
                       style="margin-bottom: 8px;"
                     >
                       <button
-                        class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default toggle-token-item toggle-token-item-button-style basic-button-wrapper css-geipcv"
+                        class="ant-btn ant-btn-default toggle-token-item toggle-token-item-button-style basic-button-wrapper css-geipcv"
                         type="button"
                       >
                         <span
@@ -1064,7 +1064,7 @@ exports[`test ConfirmationSettingForm should match snapshot when current languag
                       class="ant-space-item"
                     >
                       <button
-                        class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary toggle-token-item toggle-token-item-checked toggle-token-item-button-style basic-button-wrapper css-geipcv"
+                        class="ant-btn ant-btn-primary toggle-token-item toggle-token-item-checked toggle-token-item-button-style basic-button-wrapper css-geipcv"
                         type="button"
                       >
                         <span

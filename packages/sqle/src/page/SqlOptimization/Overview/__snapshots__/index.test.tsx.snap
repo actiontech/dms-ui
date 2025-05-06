@@ -4,7 +4,7 @@ exports[`sqle/SqlOptimization/Overview render overview page 1`] = `
 <body>
   <div>
     <div
-      class="ant-spin-nested-loading css-dev-only-do-not-override-txh9fw"
+      class="ant-spin-nested-loading"
     >
       <div
         class="ant-spin-container"
@@ -19,7 +19,7 @@ exports[`sqle/SqlOptimization/Overview render overview page 1`] = `
               href="/sqle/project/700300/sql-optimization"
             >
               <button
-                class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default basic-button-wrapper css-geipcv"
+                class="ant-btn ant-btn-default basic-button-wrapper css-geipcv"
                 type="button"
               >
                 <span
@@ -69,7 +69,7 @@ exports[`sqle/SqlOptimization/Overview render overview page 1`] = `
                 class="custom-tag-item"
               >
                 <div
-                  class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center project-name-space css-cw8mc"
+                  class="ant-space ant-space-horizontal ant-space-align-center project-name-space css-cw8mc"
                 >
                   <div
                     class="ant-space-item"
@@ -103,7 +103,7 @@ exports[`sqle/SqlOptimization/Overview render overview page 1`] = `
                 class="custom-tag-item"
               >
                 <div
-                  class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center database-type-space css-cw8mc"
+                  class="ant-space ant-space-horizontal ant-space-align-center database-type-space css-cw8mc"
                 >
                   <div
                     class="ant-space-item"
@@ -140,26 +140,26 @@ exports[`sqle/SqlOptimization/Overview render overview page 1`] = `
           class="css-abvdc0"
         >
           <h5
-            class="ant-typography title-wrap css-dev-only-do-not-override-txh9fw"
+            class="ant-typography title-wrap"
           >
             优化概要
           </h5>
           <div
-            class="ant-row css-dev-only-do-not-override-txh9fw"
+            class="ant-row"
             style="margin-left: -8px; margin-right: -8px;"
           >
             <div
-              class="ant-col ant-col-6 css-dev-only-do-not-override-txh9fw"
+              class="ant-col ant-col-6"
               style="padding-left: 8px; padding-right: 8px;"
             >
               <div
-                class="ant-card ant-card-bordered css-dev-only-do-not-override-txh9fw"
+                class="ant-card ant-card-bordered"
               >
                 <div
                   class="ant-card-body"
                 >
                   <div
-                    class="ant-statistic css-dev-only-do-not-override-txh9fw"
+                    class="ant-statistic"
                   >
                     <div
                       class="ant-statistic-title"
@@ -184,17 +184,17 @@ exports[`sqle/SqlOptimization/Overview render overview page 1`] = `
               </div>
             </div>
             <div
-              class="ant-col ant-col-6 css-dev-only-do-not-override-txh9fw"
+              class="ant-col ant-col-6"
               style="padding-left: 8px; padding-right: 8px;"
             >
               <div
-                class="ant-card ant-card-bordered css-dev-only-do-not-override-txh9fw"
+                class="ant-card ant-card-bordered"
               >
                 <div
                   class="ant-card-body"
                 >
                   <div
-                    class="ant-statistic css-dev-only-do-not-override-txh9fw"
+                    class="ant-statistic"
                   >
                     <div
                       class="ant-statistic-title"
@@ -219,17 +219,17 @@ exports[`sqle/SqlOptimization/Overview render overview page 1`] = `
               </div>
             </div>
             <div
-              class="ant-col ant-col-6 css-dev-only-do-not-override-txh9fw"
+              class="ant-col ant-col-6"
               style="padding-left: 8px; padding-right: 8px;"
             >
               <div
-                class="ant-card ant-card-bordered css-dev-only-do-not-override-txh9fw"
+                class="ant-card ant-card-bordered"
               >
                 <div
                   class="ant-card-body"
                 >
                   <div
-                    class="ant-statistic css-dev-only-do-not-override-txh9fw"
+                    class="ant-statistic"
                   >
                     <div
                       class="ant-statistic-title"
@@ -254,17 +254,17 @@ exports[`sqle/SqlOptimization/Overview render overview page 1`] = `
               </div>
             </div>
             <div
-              class="ant-col ant-col-6 css-dev-only-do-not-override-txh9fw"
+              class="ant-col ant-col-6"
               style="padding-left: 8px; padding-right: 8px;"
             >
               <div
-                class="ant-card ant-card-bordered css-dev-only-do-not-override-txh9fw"
+                class="ant-card ant-card-bordered"
               >
                 <div
                   class="ant-card-body"
                 >
                   <div
-                    class="ant-statistic css-dev-only-do-not-override-txh9fw"
+                    class="ant-statistic"
                   >
                     <div
                       class="ant-statistic-title"
@@ -286,15 +286,15 @@ exports[`sqle/SqlOptimization/Overview render overview page 1`] = `
             </div>
           </div>
           <h5
-            class="ant-typography title-wrap css-dev-only-do-not-override-txh9fw"
+            class="ant-typography title-wrap"
           >
             SQL语句列表
           </h5>
           <div
-            class="ant-table-wrapper actiontech-table-namespace table-row-cursor optimization-sql-table css-fxd6ka css-dev-only-do-not-override-bj9uhl"
+            class="ant-table-wrapper actiontech-table-namespace table-row-cursor optimization-sql-table css-fxd6ka"
           >
             <div
-              class="ant-spin-nested-loading css-dev-only-do-not-override-bj9uhl"
+              class="ant-spin-nested-loading"
             >
               <div
                 class="ant-spin-container"
@@ -501,10 +501,10 @@ exports[`sqle/SqlOptimization/Overview render overview page 1`] = `
             class="last-title"
           >
             <h5
-              class="ant-typography title-wrap css-dev-only-do-not-override-txh9fw"
+              class="ant-typography title-wrap"
             >
               <div
-                class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
+                class="ant-space ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
               >
                 <div
                   class="ant-space-item"
@@ -547,7 +547,7 @@ exports[`sqle/SqlOptimization/Overview render overview page 1`] = `
                 class="actiontech-sql-snippet-renderer-wrapper css-dz7fl9"
               >
                 <div
-                  class="ant-typography ant-typography-ellipsis ant-typography-single-line ant-typography-ellipsis-single-line margin-bottom-0 css-dev-only-do-not-override-txh9fw"
+                  class="ant-typography ant-typography-ellipsis ant-typography-single-line ant-typography-ellipsis-single-line margin-bottom-0"
                 >
                   <span>
                     <span
@@ -592,7 +592,7 @@ exports[`sqle/SqlOptimization/Overview render overview page 1`] = `
                 class="actiontech-sql-snippet-renderer-wrapper css-dz7fl9"
               >
                 <div
-                  class="ant-typography ant-typography-ellipsis ant-typography-single-line ant-typography-ellipsis-single-line margin-bottom-0 css-dev-only-do-not-override-txh9fw"
+                  class="ant-typography ant-typography-ellipsis ant-typography-single-line ant-typography-ellipsis-single-line margin-bottom-0"
                 >
                   <span>
                     <span
@@ -646,7 +646,7 @@ exports[`sqle/SqlOptimization/Overview render overview page when index_recommend
 <body>
   <div>
     <div
-      class="ant-spin-nested-loading css-dev-only-do-not-override-txh9fw"
+      class="ant-spin-nested-loading"
     >
       <div
         class="ant-spin-container"
@@ -661,7 +661,7 @@ exports[`sqle/SqlOptimization/Overview render overview page when index_recommend
               href="/sqle/project/700300/sql-optimization"
             >
               <button
-                class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default basic-button-wrapper css-geipcv"
+                class="ant-btn ant-btn-default basic-button-wrapper css-geipcv"
                 type="button"
               >
                 <span
@@ -711,7 +711,7 @@ exports[`sqle/SqlOptimization/Overview render overview page when index_recommend
                 class="custom-tag-item"
               >
                 <div
-                  class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center project-name-space css-cw8mc"
+                  class="ant-space ant-space-horizontal ant-space-align-center project-name-space css-cw8mc"
                 >
                   <div
                     class="ant-space-item"
@@ -745,7 +745,7 @@ exports[`sqle/SqlOptimization/Overview render overview page when index_recommend
                 class="custom-tag-item"
               >
                 <div
-                  class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center database-type-space css-cw8mc"
+                  class="ant-space ant-space-horizontal ant-space-align-center database-type-space css-cw8mc"
                 >
                   <div
                     class="ant-space-item"
@@ -782,26 +782,26 @@ exports[`sqle/SqlOptimization/Overview render overview page when index_recommend
           class="css-abvdc0"
         >
           <h5
-            class="ant-typography title-wrap css-dev-only-do-not-override-txh9fw"
+            class="ant-typography title-wrap"
           >
             优化概要
           </h5>
           <div
-            class="ant-row css-dev-only-do-not-override-txh9fw"
+            class="ant-row"
             style="margin-left: -8px; margin-right: -8px;"
           >
             <div
-              class="ant-col ant-col-6 css-dev-only-do-not-override-txh9fw"
+              class="ant-col ant-col-6"
               style="padding-left: 8px; padding-right: 8px;"
             >
               <div
-                class="ant-card ant-card-bordered css-dev-only-do-not-override-txh9fw"
+                class="ant-card ant-card-bordered"
               >
                 <div
                   class="ant-card-body"
                 >
                   <div
-                    class="ant-statistic css-dev-only-do-not-override-txh9fw"
+                    class="ant-statistic"
                   >
                     <div
                       class="ant-statistic-title"
@@ -826,17 +826,17 @@ exports[`sqle/SqlOptimization/Overview render overview page when index_recommend
               </div>
             </div>
             <div
-              class="ant-col ant-col-6 css-dev-only-do-not-override-txh9fw"
+              class="ant-col ant-col-6"
               style="padding-left: 8px; padding-right: 8px;"
             >
               <div
-                class="ant-card ant-card-bordered css-dev-only-do-not-override-txh9fw"
+                class="ant-card ant-card-bordered"
               >
                 <div
                   class="ant-card-body"
                 >
                   <div
-                    class="ant-statistic css-dev-only-do-not-override-txh9fw"
+                    class="ant-statistic"
                   >
                     <div
                       class="ant-statistic-title"
@@ -861,17 +861,17 @@ exports[`sqle/SqlOptimization/Overview render overview page when index_recommend
               </div>
             </div>
             <div
-              class="ant-col ant-col-6 css-dev-only-do-not-override-txh9fw"
+              class="ant-col ant-col-6"
               style="padding-left: 8px; padding-right: 8px;"
             >
               <div
-                class="ant-card ant-card-bordered css-dev-only-do-not-override-txh9fw"
+                class="ant-card ant-card-bordered"
               >
                 <div
                   class="ant-card-body"
                 >
                   <div
-                    class="ant-statistic css-dev-only-do-not-override-txh9fw"
+                    class="ant-statistic"
                   >
                     <div
                       class="ant-statistic-title"
@@ -896,17 +896,17 @@ exports[`sqle/SqlOptimization/Overview render overview page when index_recommend
               </div>
             </div>
             <div
-              class="ant-col ant-col-6 css-dev-only-do-not-override-txh9fw"
+              class="ant-col ant-col-6"
               style="padding-left: 8px; padding-right: 8px;"
             >
               <div
-                class="ant-card ant-card-bordered css-dev-only-do-not-override-txh9fw"
+                class="ant-card ant-card-bordered"
               >
                 <div
                   class="ant-card-body"
                 >
                   <div
-                    class="ant-statistic css-dev-only-do-not-override-txh9fw"
+                    class="ant-statistic"
                   >
                     <div
                       class="ant-statistic-title"
@@ -928,15 +928,15 @@ exports[`sqle/SqlOptimization/Overview render overview page when index_recommend
             </div>
           </div>
           <h5
-            class="ant-typography title-wrap css-dev-only-do-not-override-txh9fw"
+            class="ant-typography title-wrap"
           >
             SQL语句列表
           </h5>
           <div
-            class="ant-table-wrapper actiontech-table-namespace table-row-cursor optimization-sql-table css-fxd6ka css-dev-only-do-not-override-bj9uhl"
+            class="ant-table-wrapper actiontech-table-namespace table-row-cursor optimization-sql-table css-fxd6ka"
           >
             <div
-              class="ant-spin-nested-loading css-dev-only-do-not-override-bj9uhl"
+              class="ant-spin-nested-loading"
             >
               <div
                 class="ant-spin-container"
@@ -1143,10 +1143,10 @@ exports[`sqle/SqlOptimization/Overview render overview page when index_recommend
             class="last-title"
           >
             <h5
-              class="ant-typography title-wrap css-dev-only-do-not-override-txh9fw"
+              class="ant-typography title-wrap"
             >
               <div
-                class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
+                class="ant-space ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
               >
                 <div
                   class="ant-space-item"
@@ -1186,14 +1186,14 @@ exports[`sqle/SqlOptimization/Overview render overview page when index_recommend
               class="css-1m486f3"
             >
               <div
-                class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+                class="ant-space ant-space-horizontal ant-space-align-center"
               >
                 <div
                   class="ant-space-item"
                   style="margin-right: 8px;"
                 >
                   <span
-                    class="ant-typography css-dev-only-do-not-override-txh9fw"
+                    class="ant-typography"
                   >
                     暂无需要优化的索引
                   </span>
@@ -1227,7 +1227,7 @@ exports[`sqle/SqlOptimization/Overview render overview page when status is faile
 <body>
   <div>
     <div
-      class="ant-spin-nested-loading css-dev-only-do-not-override-txh9fw"
+      class="ant-spin-nested-loading"
     >
       <div
         class="ant-spin-container"
@@ -1242,7 +1242,7 @@ exports[`sqle/SqlOptimization/Overview render overview page when status is faile
               href="/sqle/project/700300/sql-optimization"
             >
               <button
-                class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default basic-button-wrapper css-geipcv"
+                class="ant-btn ant-btn-default basic-button-wrapper css-geipcv"
                 type="button"
               >
                 <span
@@ -1292,7 +1292,7 @@ exports[`sqle/SqlOptimization/Overview render overview page when status is faile
                 class="custom-tag-item"
               >
                 <div
-                  class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center project-name-space css-cw8mc"
+                  class="ant-space ant-space-horizontal ant-space-align-center project-name-space css-cw8mc"
                 >
                   <div
                     class="ant-space-item"
@@ -1326,7 +1326,7 @@ exports[`sqle/SqlOptimization/Overview render overview page when status is faile
                 class="custom-tag-item"
               >
                 <div
-                  class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center database-type-space css-cw8mc"
+                  class="ant-space ant-space-horizontal ant-space-align-center database-type-space css-cw8mc"
                 >
                   <div
                     class="ant-space-item"
@@ -1364,7 +1364,7 @@ exports[`sqle/SqlOptimization/Overview render overview page when status is faile
                 class="custom-tag-item"
               >
                 <div
-                  class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center database-type-space css-cw8mc"
+                  class="ant-space ant-space-horizontal ant-space-align-center database-type-space css-cw8mc"
                 >
                   <div
                     class="ant-space-item"
@@ -1400,26 +1400,26 @@ exports[`sqle/SqlOptimization/Overview render overview page when status is faile
           class="css-abvdc0"
         >
           <h5
-            class="ant-typography title-wrap css-dev-only-do-not-override-txh9fw"
+            class="ant-typography title-wrap"
           >
             优化概要
           </h5>
           <div
-            class="ant-row css-dev-only-do-not-override-txh9fw"
+            class="ant-row"
             style="margin-left: -8px; margin-right: -8px;"
           >
             <div
-              class="ant-col ant-col-6 css-dev-only-do-not-override-txh9fw"
+              class="ant-col ant-col-6"
               style="padding-left: 8px; padding-right: 8px;"
             >
               <div
-                class="ant-card ant-card-bordered css-dev-only-do-not-override-txh9fw"
+                class="ant-card ant-card-bordered"
               >
                 <div
                   class="ant-card-body"
                 >
                   <div
-                    class="ant-statistic css-dev-only-do-not-override-txh9fw"
+                    class="ant-statistic"
                   >
                     <div
                       class="ant-statistic-title"
@@ -1444,17 +1444,17 @@ exports[`sqle/SqlOptimization/Overview render overview page when status is faile
               </div>
             </div>
             <div
-              class="ant-col ant-col-6 css-dev-only-do-not-override-txh9fw"
+              class="ant-col ant-col-6"
               style="padding-left: 8px; padding-right: 8px;"
             >
               <div
-                class="ant-card ant-card-bordered css-dev-only-do-not-override-txh9fw"
+                class="ant-card ant-card-bordered"
               >
                 <div
                   class="ant-card-body"
                 >
                   <div
-                    class="ant-statistic css-dev-only-do-not-override-txh9fw"
+                    class="ant-statistic"
                   >
                     <div
                       class="ant-statistic-title"
@@ -1479,17 +1479,17 @@ exports[`sqle/SqlOptimization/Overview render overview page when status is faile
               </div>
             </div>
             <div
-              class="ant-col ant-col-6 css-dev-only-do-not-override-txh9fw"
+              class="ant-col ant-col-6"
               style="padding-left: 8px; padding-right: 8px;"
             >
               <div
-                class="ant-card ant-card-bordered css-dev-only-do-not-override-txh9fw"
+                class="ant-card ant-card-bordered"
               >
                 <div
                   class="ant-card-body"
                 >
                   <div
-                    class="ant-statistic css-dev-only-do-not-override-txh9fw"
+                    class="ant-statistic"
                   >
                     <div
                       class="ant-statistic-title"
@@ -1514,17 +1514,17 @@ exports[`sqle/SqlOptimization/Overview render overview page when status is faile
               </div>
             </div>
             <div
-              class="ant-col ant-col-6 css-dev-only-do-not-override-txh9fw"
+              class="ant-col ant-col-6"
               style="padding-left: 8px; padding-right: 8px;"
             >
               <div
-                class="ant-card ant-card-bordered css-dev-only-do-not-override-txh9fw"
+                class="ant-card ant-card-bordered"
               >
                 <div
                   class="ant-card-body"
                 >
                   <div
-                    class="ant-statistic css-dev-only-do-not-override-txh9fw"
+                    class="ant-statistic"
                   >
                     <div
                       class="ant-statistic-title"
@@ -1546,15 +1546,15 @@ exports[`sqle/SqlOptimization/Overview render overview page when status is faile
             </div>
           </div>
           <h5
-            class="ant-typography title-wrap css-dev-only-do-not-override-txh9fw"
+            class="ant-typography title-wrap"
           >
             SQL语句列表
           </h5>
           <div
-            class="ant-table-wrapper actiontech-table-namespace table-row-cursor optimization-sql-table css-fxd6ka css-dev-only-do-not-override-bj9uhl"
+            class="ant-table-wrapper actiontech-table-namespace table-row-cursor optimization-sql-table css-fxd6ka"
           >
             <div
-              class="ant-spin-nested-loading css-dev-only-do-not-override-bj9uhl"
+              class="ant-spin-nested-loading"
             >
               <div
                 class="ant-spin-container"
@@ -1761,10 +1761,10 @@ exports[`sqle/SqlOptimization/Overview render overview page when status is faile
             class="last-title"
           >
             <h5
-              class="ant-typography title-wrap css-dev-only-do-not-override-txh9fw"
+              class="ant-typography title-wrap"
             >
               <div
-                class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
+                class="ant-space ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
               >
                 <div
                   class="ant-space-item"
@@ -1807,7 +1807,7 @@ exports[`sqle/SqlOptimization/Overview render overview page when status is faile
                 class="actiontech-sql-snippet-renderer-wrapper css-dz7fl9"
               >
                 <div
-                  class="ant-typography ant-typography-ellipsis ant-typography-single-line ant-typography-ellipsis-single-line margin-bottom-0 css-dev-only-do-not-override-txh9fw"
+                  class="ant-typography ant-typography-ellipsis ant-typography-single-line ant-typography-ellipsis-single-line margin-bottom-0"
                 >
                   <span>
                     <span
@@ -1852,7 +1852,7 @@ exports[`sqle/SqlOptimization/Overview render overview page when status is faile
                 class="actiontech-sql-snippet-renderer-wrapper css-dz7fl9"
               >
                 <div
-                  class="ant-typography ant-typography-ellipsis ant-typography-single-line ant-typography-ellipsis-single-line margin-bottom-0 css-dev-only-do-not-override-txh9fw"
+                  class="ant-typography ant-typography-ellipsis ant-typography-single-line ant-typography-ellipsis-single-line margin-bottom-0"
                 >
                   <span>
                     <span
@@ -1906,13 +1906,13 @@ exports[`sqle/SqlOptimization/Overview render overview page when status is optim
 <body>
   <div>
     <div
-      class="ant-spin-nested-loading css-dev-only-do-not-override-txh9fw"
+      class="ant-spin-nested-loading"
     >
       <div>
         <div
           aria-busy="true"
           aria-live="polite"
-          class="ant-spin ant-spin-spinning css-dev-only-do-not-override-txh9fw"
+          class="ant-spin ant-spin-spinning"
         >
           <span
             class="ant-spin-dot ant-spin-dot-spin"
@@ -1945,7 +1945,7 @@ exports[`sqle/SqlOptimization/Overview render overview page when status is optim
               href="/sqle/project/700300/sql-optimization"
             >
               <button
-                class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default basic-button-wrapper css-geipcv"
+                class="ant-btn ant-btn-default basic-button-wrapper css-geipcv"
                 type="button"
               >
                 <span
@@ -1995,7 +1995,7 @@ exports[`sqle/SqlOptimization/Overview render overview page when status is optim
                 class="custom-tag-item"
               >
                 <div
-                  class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center project-name-space css-cw8mc"
+                  class="ant-space ant-space-horizontal ant-space-align-center project-name-space css-cw8mc"
                 >
                   <div
                     class="ant-space-item"
@@ -2029,7 +2029,7 @@ exports[`sqle/SqlOptimization/Overview render overview page when status is optim
                 class="custom-tag-item"
               >
                 <div
-                  class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center database-type-space css-cw8mc"
+                  class="ant-space ant-space-horizontal ant-space-align-center database-type-space css-cw8mc"
                 >
                   <div
                     class="ant-space-item"
@@ -2066,26 +2066,26 @@ exports[`sqle/SqlOptimization/Overview render overview page when status is optim
           class="css-abvdc0"
         >
           <h5
-            class="ant-typography title-wrap css-dev-only-do-not-override-txh9fw"
+            class="ant-typography title-wrap"
           >
             优化概要
           </h5>
           <div
-            class="ant-row css-dev-only-do-not-override-txh9fw"
+            class="ant-row"
             style="margin-left: -8px; margin-right: -8px;"
           >
             <div
-              class="ant-col ant-col-6 css-dev-only-do-not-override-txh9fw"
+              class="ant-col ant-col-6"
               style="padding-left: 8px; padding-right: 8px;"
             >
               <div
-                class="ant-card ant-card-bordered css-dev-only-do-not-override-txh9fw"
+                class="ant-card ant-card-bordered"
               >
                 <div
                   class="ant-card-body"
                 >
                   <div
-                    class="ant-statistic css-dev-only-do-not-override-txh9fw"
+                    class="ant-statistic"
                   >
                     <div
                       class="ant-statistic-title"
@@ -2110,17 +2110,17 @@ exports[`sqle/SqlOptimization/Overview render overview page when status is optim
               </div>
             </div>
             <div
-              class="ant-col ant-col-6 css-dev-only-do-not-override-txh9fw"
+              class="ant-col ant-col-6"
               style="padding-left: 8px; padding-right: 8px;"
             >
               <div
-                class="ant-card ant-card-bordered css-dev-only-do-not-override-txh9fw"
+                class="ant-card ant-card-bordered"
               >
                 <div
                   class="ant-card-body"
                 >
                   <div
-                    class="ant-statistic css-dev-only-do-not-override-txh9fw"
+                    class="ant-statistic"
                   >
                     <div
                       class="ant-statistic-title"
@@ -2145,17 +2145,17 @@ exports[`sqle/SqlOptimization/Overview render overview page when status is optim
               </div>
             </div>
             <div
-              class="ant-col ant-col-6 css-dev-only-do-not-override-txh9fw"
+              class="ant-col ant-col-6"
               style="padding-left: 8px; padding-right: 8px;"
             >
               <div
-                class="ant-card ant-card-bordered css-dev-only-do-not-override-txh9fw"
+                class="ant-card ant-card-bordered"
               >
                 <div
                   class="ant-card-body"
                 >
                   <div
-                    class="ant-statistic css-dev-only-do-not-override-txh9fw"
+                    class="ant-statistic"
                   >
                     <div
                       class="ant-statistic-title"
@@ -2180,17 +2180,17 @@ exports[`sqle/SqlOptimization/Overview render overview page when status is optim
               </div>
             </div>
             <div
-              class="ant-col ant-col-6 css-dev-only-do-not-override-txh9fw"
+              class="ant-col ant-col-6"
               style="padding-left: 8px; padding-right: 8px;"
             >
               <div
-                class="ant-card ant-card-bordered css-dev-only-do-not-override-txh9fw"
+                class="ant-card ant-card-bordered"
               >
                 <div
                   class="ant-card-body"
                 >
                   <div
-                    class="ant-statistic css-dev-only-do-not-override-txh9fw"
+                    class="ant-statistic"
                   >
                     <div
                       class="ant-statistic-title"
@@ -2212,15 +2212,15 @@ exports[`sqle/SqlOptimization/Overview render overview page when status is optim
             </div>
           </div>
           <h5
-            class="ant-typography title-wrap css-dev-only-do-not-override-txh9fw"
+            class="ant-typography title-wrap"
           >
             SQL语句列表
           </h5>
           <div
-            class="ant-table-wrapper actiontech-table-namespace table-row-cursor optimization-sql-table css-fxd6ka css-dev-only-do-not-override-bj9uhl"
+            class="ant-table-wrapper actiontech-table-namespace table-row-cursor optimization-sql-table css-fxd6ka"
           >
             <div
-              class="ant-spin-nested-loading css-dev-only-do-not-override-bj9uhl"
+              class="ant-spin-nested-loading"
             >
               <div
                 class="ant-spin-container"
@@ -2427,10 +2427,10 @@ exports[`sqle/SqlOptimization/Overview render overview page when status is optim
             class="last-title"
           >
             <h5
-              class="ant-typography title-wrap css-dev-only-do-not-override-txh9fw"
+              class="ant-typography title-wrap"
             >
               <div
-                class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
+                class="ant-space ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
               >
                 <div
                   class="ant-space-item"
@@ -2470,14 +2470,14 @@ exports[`sqle/SqlOptimization/Overview render overview page when status is optim
               class="css-1m486f3"
             >
               <div
-                class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+                class="ant-space ant-space-horizontal ant-space-align-center"
               >
                 <div
                   class="ant-space-item"
                   style="margin-right: 8px;"
                 >
                   <span
-                    class="ant-typography css-dev-only-do-not-override-txh9fw"
+                    class="ant-typography"
                   >
                     暂无需要优化的索引
                   </span>

@@ -4,13 +4,13 @@ exports[`base/System/components/ConfigSubmitButtonField render snap when submit 
 <body>
   <div>
     <div
-      class="ant-form-item css-15d6abf css-dev-only-do-not-override-txh9fw"
+      class="ant-form-item css-15d6abf"
     >
       <div
-        class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+        class="ant-row ant-form-item-row"
       >
         <div
-          class="ant-col ant-form-item-label css-dev-only-do-not-override-txh9fw"
+          class="ant-col ant-form-item-label"
         >
           <label
             class="ant-form-item-no-colon"
@@ -20,7 +20,7 @@ exports[`base/System/components/ConfigSubmitButtonField render snap when submit 
           </label>
         </div>
         <div
-          class="ant-col ant-form-item-control css-dev-only-do-not-override-txh9fw"
+          class="ant-col ant-form-item-control"
         >
           <div
             class="ant-form-item-control-input"
@@ -29,14 +29,14 @@ exports[`base/System/components/ConfigSubmitButtonField render snap when submit 
               class="ant-form-item-control-input-content"
             >
               <div
-                class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+                class="ant-space ant-space-horizontal ant-space-align-center"
               >
                 <div
                   class="ant-space-item"
                   style="margin-right: 12px;"
                 >
                   <button
-                    class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default basic-button-wrapper css-geipcv"
+                    class="ant-btn ant-btn-default basic-button-wrapper css-geipcv"
                     type="button"
                   >
                     <span>
@@ -48,7 +48,7 @@ exports[`base/System/components/ConfigSubmitButtonField render snap when submit 
                   class="ant-space-item"
                 >
                   <button
-                    class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary basic-button-wrapper css-geipcv"
+                    class="ant-btn ant-btn-primary basic-button-wrapper css-geipcv"
                     type="submit"
                   >
                     <span>
@@ -70,13 +70,13 @@ exports[`base/System/components/ConfigSubmitButtonField render snap when submit 
 <body>
   <div>
     <div
-      class="ant-form-item css-15d6abf css-dev-only-do-not-override-txh9fw"
+      class="ant-form-item css-15d6abf"
     >
       <div
-        class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+        class="ant-row ant-form-item-row"
       >
         <div
-          class="ant-col ant-form-item-label css-dev-only-do-not-override-txh9fw"
+          class="ant-col ant-form-item-label"
         >
           <label
             class="ant-form-item-no-colon"
@@ -86,7 +86,7 @@ exports[`base/System/components/ConfigSubmitButtonField render snap when submit 
           </label>
         </div>
         <div
-          class="ant-col ant-form-item-control css-dev-only-do-not-override-txh9fw"
+          class="ant-col ant-form-item-control"
         >
           <div
             class="ant-form-item-control-input"
@@ -95,14 +95,14 @@ exports[`base/System/components/ConfigSubmitButtonField render snap when submit 
               class="ant-form-item-control-input-content"
             >
               <div
-                class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+                class="ant-space ant-space-horizontal ant-space-align-center"
               >
                 <div
                   class="ant-space-item"
                   style="margin-right: 12px;"
                 >
                   <button
-                    class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default basic-button-wrapper css-geipcv"
+                    class="ant-btn ant-btn-default basic-button-wrapper css-geipcv"
                     disabled=""
                     type="button"
                   >
@@ -115,7 +115,7 @@ exports[`base/System/components/ConfigSubmitButtonField render snap when submit 
                   class="ant-space-item"
                 >
                   <button
-                    class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary ant-btn-loading basic-button-wrapper css-geipcv"
+                    class="ant-btn ant-btn-primary ant-btn-loading basic-button-wrapper css-geipcv"
                     disabled=""
                     type="submit"
                   >

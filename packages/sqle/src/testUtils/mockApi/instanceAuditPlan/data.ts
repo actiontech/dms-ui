@@ -5,7 +5,7 @@ import {
   IInstanceAuditPlanInfo,
   IAuditPlanSQLDataResV1,
   IAuditPlanSQLMetaResV1,
-  IInstanceAuditPlanDetailResV1
+  IInstanceAuditPlanDetailRes
 } from '@actiontech/shared/lib/api/sqle/service/common';
 import {
   InstanceAuditPlanResV1ActiveStatusEnum,
@@ -22,7 +22,7 @@ export const mockInstanceAuditPlanListData: IInstanceAuditPlanResV1[] = [
   {
     instance_audit_plan_id: 1,
     instance_name: '',
-    business: 'test',
+    environment: 'environment-1',
     instance_type: 'MySQL',
     audit_plan_types: [
       {
@@ -38,7 +38,7 @@ export const mockInstanceAuditPlanListData: IInstanceAuditPlanResV1[] = [
   {
     instance_audit_plan_id: 2,
     instance_name: 'test instance name',
-    business: 'test',
+    environment: 'environment-1',
     instance_type: '',
     audit_plan_types: [
       {
@@ -64,7 +64,7 @@ export const mockInstanceAuditPlanListData: IInstanceAuditPlanResV1[] = [
   {
     instance_audit_plan_id: 3,
     instance_name: '',
-    business: 'test',
+    environment: 'environment-2',
     instance_type: '',
     audit_plan_types: [],
     create_time: '2024-07-29T16:12:35.858+08:00',
@@ -320,8 +320,8 @@ export const mockAuditPlanMetaData: IAuditPlanMetaV1[] = [
   }
 ];
 
-export const mockAuditPlanDetailData: IInstanceAuditPlanDetailResV1 = {
-  business: 'business1',
+export const mockAuditPlanDetailData: IInstanceAuditPlanDetailRes = {
+  environment: '1',
   instance_type: 'MySQL',
   instance_name: 'mysql-1',
   instance_id: '1739531854064652288',

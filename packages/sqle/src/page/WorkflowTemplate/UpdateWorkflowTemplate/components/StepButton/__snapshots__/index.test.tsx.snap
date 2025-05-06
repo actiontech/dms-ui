@@ -17,7 +17,7 @@ exports[`page/WorkflowTemplate/StepButton render step button with no prev button
       class="css-1uvv7g7"
     >
       <button
-        class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary basic-button-wrapper css-geipcv"
+        class="ant-btn ant-btn-primary basic-button-wrapper css-geipcv"
         type="button"
       >
         <span>
@@ -36,7 +36,7 @@ exports[`page/WorkflowTemplate/StepButton render step button with prev button an
       class="css-1uvv7g7"
     >
       <button
-        class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default basic-button-wrapper css-geipcv"
+        class="ant-btn ant-btn-default basic-button-wrapper css-geipcv"
         type="button"
       >
         <span>
@@ -44,7 +44,7 @@ exports[`page/WorkflowTemplate/StepButton render step button with prev button an
         </span>
       </button>
       <button
-        class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary basic-button-wrapper css-geipcv"
+        class="ant-btn ant-btn-primary basic-button-wrapper css-geipcv"
         type="button"
       >
         <span>

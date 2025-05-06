@@ -8,14 +8,15 @@ overrides:
   headers-polyfill: 3.0.10
   cheerio: 1.0.0-rc.3
   '@babel/core': ^7.22.0
+  '@ant-design/cssinjs': 1.17.0
 
 importers:
 
   .:
     dependencies:
       '@ant-design/cssinjs':
-        specifier: ^1.17.0
-        version: 1.23.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+        specifier: 1.17.0
+        version: 1.17.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@ant-design/icons':
         specifier: ^4.7.0
         version: 4.8.3(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
@@ -455,8 +456,8 @@ packages:
   '@ant-design/colors@7.2.0':
     resolution: {integrity: sha512-bjTObSnZ9C/O8MB/B4OUtd/q9COomuJAR2SYfhxLyHvCKn4EKwCN3e+fWGMo7H5InAyV0wL17jdE9ALrdOW/6A==}
 
-  '@ant-design/cssinjs@1.23.0':
-    resolution: {integrity: sha512-7GAg9bD/iC9ikWatU9ym+P9ugJhi/WbsTWzcKN6T4gU0aehsprtke1UAaaSxxkjjmkJb3llet/rbUSLPgwlY4w==}
+  '@ant-design/cssinjs@1.17.0':
+    resolution: {integrity: sha512-MgGCZ6sfD3yQB0XW0hN4jgixMxApTlDYyct+pc7fRZNO4CaqWWm/9iXkkljNR27lyWLZmm+XiDfcIOo1bnrnMA==}
     peerDependencies:
       react: '>=16.0.0'
       react-dom: '>=16.0.0'
@@ -8311,7 +8312,6 @@ packages:
     engines: {node: '>=0.6.0', teleport: '>=0.2.0'}
     deprecated: |-
       You or someone you depend on is using Q, the JavaScript Promise library that gave JavaScript developers strong feelings about promises. They can almost certainly migrate to the native JavaScript promise now. Thank you literally everyone for joining me in this bet against the odds. Be excellent to each other.
-
       (For a CapTP with native promises, see @endo/eventual-send and @endo/captp)
 
   qrcode.react@3.2.0:
@@ -10535,7 +10535,7 @@ snapshots:
     dependencies:
       '@ant-design/fast-color': 2.0.6
 
-  '@ant-design/cssinjs@1.23.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
+  '@ant-design/cssinjs@1.17.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
     dependencies:
       '@babel/runtime': 7.27.0
       '@emotion/hash': 0.8.0
@@ -14697,7 +14697,7 @@ snapshots:
   antd@5.7.3(luxon@3.6.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1):
     dependencies:
       '@ant-design/colors': 7.2.0
-      '@ant-design/cssinjs': 1.23.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+      '@ant-design/cssinjs': 1.17.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@ant-design/icons': 5.6.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@ant-design/react-slick': 1.0.2(react@18.3.1)
       '@babel/runtime': 7.27.0

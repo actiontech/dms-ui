@@ -13,13 +13,13 @@ import {
 import { isExportFileResponse } from '@actiontech/shared/lib/utils/Common';
 import { AxiosResponse } from 'axios';
 import { useTranslation } from 'react-i18next';
-import { IDBService } from '@actiontech/shared/lib/api/base/service/common';
+import { IImportDBServiceV2 } from '@actiontech/shared/lib/api/base/service/common';
 import { useState, useCallback } from 'react';
 
-const useBatchImportDataSource = () => {
+const useBatchImportDataSource = <T extends IImportDBServiceV2>() => {
   const { t } = useTranslation();
 
-  const [dbServices, setDBservices] = useState<IDBService[]>();
+  const [dbServices, setDBservices] = useState<T[]>();
 
   const [
     importLoading,
@@ -50,9 +50,7 @@ const useBatchImportDataSource = () => {
         res.data.type === MIMETypeEnum.Application_Json
       ) {
         res.data.text().then((text) => {
-          const json = jsonParse<ResponseBlobJsonType & { data: IDBService[] }>(
-            text
-          );
+          const json = jsonParse<ResponseBlobJsonType & { data: T[] }>(text);
           if (json.code === ResponseCode.SUCCESS) {
             setDBservices(json.data);
             setUploadCheckStatus({

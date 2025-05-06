@@ -100,3 +100,16 @@ export type IconTheme = {
     modify: string;
   };
 };
+
+export type ResourceOverviewTheme = {
+  icon: {
+    databaseFilled: string;
+    schemaFilled: string;
+  };
+  chart: {
+    pieStroke: string;
+    markStroke: string;
+    markShowdowColor: string;
+    activeStroke: string;
+  };
+};

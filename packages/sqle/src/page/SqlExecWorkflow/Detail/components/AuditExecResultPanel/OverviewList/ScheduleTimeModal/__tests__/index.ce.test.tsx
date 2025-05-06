@@ -65,7 +65,7 @@ describe('test ScheduleTimeModal ce', () => {
     await act(async () => jest.advanceTimersByTime(300));
     fireEvent.click(screen.getAllByText('06')[2]);
     await act(async () => jest.advanceTimersByTime(300));
-    fireEvent.click(screen.getByText('OK'));
+    fireEvent.click(screen.getByText('确 定'));
     await act(async () => jest.advanceTimersByTime(300));
     expect(getWechatAuditConfigSpy).not.toHaveBeenCalled();
     expect(baseElement).toMatchSnapshot();

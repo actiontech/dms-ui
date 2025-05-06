@@ -21,16 +21,16 @@ exports[`sqle/SqlManagementException/SqlManagementExceptionForm render switch ma
   <div />
   <div>
     <form
-      class="ant-form ant-form-vertical css-dev-only-do-not-override-txh9fw"
+      class="ant-form ant-form-vertical"
     >
       <div
-        class="ant-form-item css-dev-only-do-not-override-txh9fw ant-form-item-has-success"
+        class="ant-form-item ant-form-item-has-success"
       >
         <div
-          class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+          class="ant-row ant-form-item-row"
         >
           <div
-            class="ant-col ant-col-24 ant-form-item-label css-dev-only-do-not-override-txh9fw"
+            class="ant-col ant-col-24 ant-form-item-label"
           >
             <label
               class=""
@@ -41,7 +41,7 @@ exports[`sqle/SqlManagementException/SqlManagementExceptionForm render switch ma
             </label>
           </div>
           <div
-            class="ant-col ant-col-24 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+            class="ant-col ant-col-24 ant-form-item-control"
           >
             <div
               class="ant-form-item-control-input"
@@ -50,11 +50,11 @@ exports[`sqle/SqlManagementException/SqlManagementExceptionForm render switch ma
                 class="ant-form-item-control-input-content"
               >
                 <div
-                  class="ant-radio-group ant-radio-group-outline css-dev-only-do-not-override-txh9fw"
+                  class="ant-radio-group ant-radio-group-outline"
                   id="type"
                 >
                   <label
-                    class="ant-radio-wrapper ant-radio-wrapper-in-form-item css-dev-only-do-not-override-txh9fw"
+                    class="ant-radio-wrapper ant-radio-wrapper-in-form-item"
                   >
                     <span
                       class="ant-radio"
@@ -74,7 +74,7 @@ exports[`sqle/SqlManagementException/SqlManagementExceptionForm render switch ma
                     </span>
                   </label>
                   <label
-                    class="ant-radio-wrapper ant-radio-wrapper-checked ant-radio-wrapper-in-form-item css-dev-only-do-not-override-txh9fw"
+                    class="ant-radio-wrapper ant-radio-wrapper-checked ant-radio-wrapper-in-form-item"
                   >
                     <span
                       class="ant-radio ant-radio-checked"
@@ -93,7 +93,7 @@ exports[`sqle/SqlManagementException/SqlManagementExceptionForm render switch ma
                     </span>
                   </label>
                   <label
-                    class="ant-radio-wrapper ant-radio-wrapper-in-form-item css-dev-only-do-not-override-txh9fw"
+                    class="ant-radio-wrapper ant-radio-wrapper-in-form-item"
                   >
                     <span
                       class="ant-radio"
@@ -112,7 +112,7 @@ exports[`sqle/SqlManagementException/SqlManagementExceptionForm render switch ma
                     </span>
                   </label>
                   <label
-                    class="ant-radio-wrapper ant-radio-wrapper-in-form-item css-dev-only-do-not-override-txh9fw"
+                    class="ant-radio-wrapper ant-radio-wrapper-in-form-item"
                   >
                     <span
                       class="ant-radio"
@@ -131,7 +131,7 @@ exports[`sqle/SqlManagementException/SqlManagementExceptionForm render switch ma
                     </span>
                   </label>
                   <label
-                    class="ant-radio-wrapper ant-radio-wrapper-in-form-item css-dev-only-do-not-override-txh9fw"
+                    class="ant-radio-wrapper ant-radio-wrapper-in-form-item"
                   >
                     <span
                       class="ant-radio"
@@ -150,7 +150,7 @@ exports[`sqle/SqlManagementException/SqlManagementExceptionForm render switch ma
                     </span>
                   </label>
                   <label
-                    class="ant-radio-wrapper ant-radio-wrapper-in-form-item css-dev-only-do-not-override-txh9fw"
+                    class="ant-radio-wrapper ant-radio-wrapper-in-form-item"
                   >
                     <span
                       class="ant-radio"
@@ -175,13 +175,13 @@ exports[`sqle/SqlManagementException/SqlManagementExceptionForm render switch ma
         </div>
       </div>
       <div
-        class="ant-form-item css-dev-only-do-not-override-txh9fw"
+        class="ant-form-item"
       >
         <div
-          class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+          class="ant-row ant-form-item-row"
         >
           <div
-            class="ant-col ant-col-24 ant-form-item-label css-dev-only-do-not-override-txh9fw"
+            class="ant-col ant-col-24 ant-form-item-label"
           >
             <label
               class=""
@@ -192,7 +192,7 @@ exports[`sqle/SqlManagementException/SqlManagementExceptionForm render switch ma
             </label>
           </div>
           <div
-            class="ant-col ant-col-24 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+            class="ant-col ant-col-24 ant-form-item-control"
           >
             <div
               class="ant-form-item-control-input"
@@ -201,7 +201,7 @@ exports[`sqle/SqlManagementException/SqlManagementExceptionForm render switch ma
                 class="ant-form-item-control-input-content"
               >
                 <textarea
-                  class="ant-input css-dev-only-do-not-override-txh9fw basic-input-wrapper textarea-no-resize css-1pd1cd5"
+                  class="ant-input basic-input-wrapper textarea-no-resize css-1pd1cd5"
                   id="desc"
                   placeholder="请输入{{name}}"
                   style="resize: none; height: -70px; min-height: -14px; max-height: -70px;"
@@ -212,13 +212,13 @@ exports[`sqle/SqlManagementException/SqlManagementExceptionForm render switch ma
         </div>
       </div>
       <div
-        class="ant-form-item css-dev-only-do-not-override-txh9fw"
+        class="ant-form-item"
       >
         <div
-          class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+          class="ant-row ant-form-item-row"
         >
           <div
-            class="ant-col ant-col-24 ant-form-item-label css-dev-only-do-not-override-txh9fw"
+            class="ant-col ant-col-24 ant-form-item-label"
           >
             <label
               class="ant-form-item-required"
@@ -229,7 +229,7 @@ exports[`sqle/SqlManagementException/SqlManagementExceptionForm render switch ma
             </label>
           </div>
           <div
-            class="ant-col ant-col-24 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+            class="ant-col ant-col-24 ant-form-item-control"
           >
             <div
               class="ant-form-item-control-input"
@@ -282,16 +282,16 @@ exports[`sqle/SqlManagementException/SqlManagementExceptionForm render switch ma
   <div />
   <div>
     <form
-      class="ant-form ant-form-vertical css-dev-only-do-not-override-txh9fw"
+      class="ant-form ant-form-vertical"
     >
       <div
-        class="ant-form-item css-dev-only-do-not-override-txh9fw ant-form-item-has-success"
+        class="ant-form-item ant-form-item-has-success"
       >
         <div
-          class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+          class="ant-row ant-form-item-row"
         >
           <div
-            class="ant-col ant-col-24 ant-form-item-label css-dev-only-do-not-override-txh9fw"
+            class="ant-col ant-col-24 ant-form-item-label"
           >
             <label
               class=""
@@ -302,7 +302,7 @@ exports[`sqle/SqlManagementException/SqlManagementExceptionForm render switch ma
             </label>
           </div>
           <div
-            class="ant-col ant-col-24 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+            class="ant-col ant-col-24 ant-form-item-control"
           >
             <div
               class="ant-form-item-control-input"
@@ -311,11 +311,11 @@ exports[`sqle/SqlManagementException/SqlManagementExceptionForm render switch ma
                 class="ant-form-item-control-input-content"
               >
                 <div
-                  class="ant-radio-group ant-radio-group-outline css-dev-only-do-not-override-txh9fw"
+                  class="ant-radio-group ant-radio-group-outline"
                   id="type"
                 >
                   <label
-                    class="ant-radio-wrapper ant-radio-wrapper-in-form-item css-dev-only-do-not-override-txh9fw"
+                    class="ant-radio-wrapper ant-radio-wrapper-in-form-item"
                   >
                     <span
                       class="ant-radio"
@@ -335,7 +335,7 @@ exports[`sqle/SqlManagementException/SqlManagementExceptionForm render switch ma
                     </span>
                   </label>
                   <label
-                    class="ant-radio-wrapper ant-radio-wrapper-in-form-item css-dev-only-do-not-override-txh9fw"
+                    class="ant-radio-wrapper ant-radio-wrapper-in-form-item"
                   >
                     <span
                       class="ant-radio"
@@ -354,7 +354,7 @@ exports[`sqle/SqlManagementException/SqlManagementExceptionForm render switch ma
                     </span>
                   </label>
                   <label
-                    class="ant-radio-wrapper ant-radio-wrapper-checked ant-radio-wrapper-in-form-item css-dev-only-do-not-override-txh9fw"
+                    class="ant-radio-wrapper ant-radio-wrapper-checked ant-radio-wrapper-in-form-item"
                   >
                     <span
                       class="ant-radio ant-radio-checked"
@@ -373,7 +373,7 @@ exports[`sqle/SqlManagementException/SqlManagementExceptionForm render switch ma
                     </span>
                   </label>
                   <label
-                    class="ant-radio-wrapper ant-radio-wrapper-in-form-item css-dev-only-do-not-override-txh9fw"
+                    class="ant-radio-wrapper ant-radio-wrapper-in-form-item"
                   >
                     <span
                       class="ant-radio"
@@ -392,7 +392,7 @@ exports[`sqle/SqlManagementException/SqlManagementExceptionForm render switch ma
                     </span>
                   </label>
                   <label
-                    class="ant-radio-wrapper ant-radio-wrapper-in-form-item css-dev-only-do-not-override-txh9fw"
+                    class="ant-radio-wrapper ant-radio-wrapper-in-form-item"
                   >
                     <span
                       class="ant-radio"
@@ -411,7 +411,7 @@ exports[`sqle/SqlManagementException/SqlManagementExceptionForm render switch ma
                     </span>
                   </label>
                   <label
-                    class="ant-radio-wrapper ant-radio-wrapper-in-form-item css-dev-only-do-not-override-txh9fw"
+                    class="ant-radio-wrapper ant-radio-wrapper-in-form-item"
                   >
                     <span
                       class="ant-radio"
@@ -436,13 +436,13 @@ exports[`sqle/SqlManagementException/SqlManagementExceptionForm render switch ma
         </div>
       </div>
       <div
-        class="ant-form-item css-dev-only-do-not-override-txh9fw"
+        class="ant-form-item"
       >
         <div
-          class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+          class="ant-row ant-form-item-row"
         >
           <div
-            class="ant-col ant-col-24 ant-form-item-label css-dev-only-do-not-override-txh9fw"
+            class="ant-col ant-col-24 ant-form-item-label"
           >
             <label
               class=""
@@ -453,7 +453,7 @@ exports[`sqle/SqlManagementException/SqlManagementExceptionForm render switch ma
             </label>
           </div>
           <div
-            class="ant-col ant-col-24 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+            class="ant-col ant-col-24 ant-form-item-control"
           >
             <div
               class="ant-form-item-control-input"
@@ -462,7 +462,7 @@ exports[`sqle/SqlManagementException/SqlManagementExceptionForm render switch ma
                 class="ant-form-item-control-input-content"
               >
                 <textarea
-                  class="ant-input css-dev-only-do-not-override-txh9fw basic-input-wrapper textarea-no-resize css-1pd1cd5"
+                  class="ant-input basic-input-wrapper textarea-no-resize css-1pd1cd5"
                   id="desc"
                   placeholder="请输入{{name}}"
                   style="resize: none; height: -70px; min-height: -14px; max-height: -70px;"
@@ -473,13 +473,13 @@ exports[`sqle/SqlManagementException/SqlManagementExceptionForm render switch ma
         </div>
       </div>
       <div
-        class="ant-form-item css-dev-only-do-not-override-txh9fw"
+        class="ant-form-item"
       >
         <div
-          class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+          class="ant-row ant-form-item-row"
         >
           <div
-            class="ant-col ant-col-24 ant-form-item-label css-dev-only-do-not-override-txh9fw"
+            class="ant-col ant-col-24 ant-form-item-label"
           >
             <label
               class="ant-form-item-required"
@@ -490,7 +490,7 @@ exports[`sqle/SqlManagementException/SqlManagementExceptionForm render switch ma
             </label>
           </div>
           <div
-            class="ant-col ant-col-24 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+            class="ant-col ant-col-24 ant-form-item-control"
           >
             <div
               class="ant-form-item-control-input"
@@ -500,7 +500,7 @@ exports[`sqle/SqlManagementException/SqlManagementExceptionForm render switch ma
               >
                 <input
                   aria-required="true"
-                  class="ant-input css-dev-only-do-not-override-ywkr0o basic-input-wrapper css-1pd1cd5"
+                  class="ant-input basic-input-wrapper css-1pd1cd5"
                   id="ip"
                   placeholder="请输入{{name}}"
                   type="text"
@@ -537,16 +537,16 @@ exports[`sqle/SqlManagementException/SqlManagementExceptionForm render switch ma
   <div />
   <div>
     <form
-      class="ant-form ant-form-vertical css-dev-only-do-not-override-txh9fw"
+      class="ant-form ant-form-vertical"
     >
       <div
-        class="ant-form-item css-dev-only-do-not-override-txh9fw ant-form-item-has-success"
+        class="ant-form-item ant-form-item-has-success"
       >
         <div
-          class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+          class="ant-row ant-form-item-row"
         >
           <div
-            class="ant-col ant-col-24 ant-form-item-label css-dev-only-do-not-override-txh9fw"
+            class="ant-col ant-col-24 ant-form-item-label"
           >
             <label
               class=""
@@ -557,7 +557,7 @@ exports[`sqle/SqlManagementException/SqlManagementExceptionForm render switch ma
             </label>
           </div>
           <div
-            class="ant-col ant-col-24 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+            class="ant-col ant-col-24 ant-form-item-control"
           >
             <div
               class="ant-form-item-control-input"
@@ -566,11 +566,11 @@ exports[`sqle/SqlManagementException/SqlManagementExceptionForm render switch ma
                 class="ant-form-item-control-input-content"
               >
                 <div
-                  class="ant-radio-group ant-radio-group-outline css-dev-only-do-not-override-txh9fw"
+                  class="ant-radio-group ant-radio-group-outline"
                   id="type"
                 >
                   <label
-                    class="ant-radio-wrapper ant-radio-wrapper-in-form-item css-dev-only-do-not-override-txh9fw"
+                    class="ant-radio-wrapper ant-radio-wrapper-in-form-item"
                   >
                     <span
                       class="ant-radio"
@@ -590,7 +590,7 @@ exports[`sqle/SqlManagementException/SqlManagementExceptionForm render switch ma
                     </span>
                   </label>
                   <label
-                    class="ant-radio-wrapper ant-radio-wrapper-in-form-item css-dev-only-do-not-override-txh9fw"
+                    class="ant-radio-wrapper ant-radio-wrapper-in-form-item"
                   >
                     <span
                       class="ant-radio"
@@ -609,7 +609,7 @@ exports[`sqle/SqlManagementException/SqlManagementExceptionForm render switch ma
                     </span>
                   </label>
                   <label
-                    class="ant-radio-wrapper ant-radio-wrapper-in-form-item css-dev-only-do-not-override-txh9fw"
+                    class="ant-radio-wrapper ant-radio-wrapper-in-form-item"
                   >
                     <span
                       class="ant-radio"
@@ -628,7 +628,7 @@ exports[`sqle/SqlManagementException/SqlManagementExceptionForm render switch ma
                     </span>
                   </label>
                   <label
-                    class="ant-radio-wrapper ant-radio-wrapper-checked ant-radio-wrapper-in-form-item css-dev-only-do-not-override-txh9fw"
+                    class="ant-radio-wrapper ant-radio-wrapper-checked ant-radio-wrapper-in-form-item"
                   >
                     <span
                       class="ant-radio ant-radio-checked"
@@ -647,7 +647,7 @@ exports[`sqle/SqlManagementException/SqlManagementExceptionForm render switch ma
                     </span>
                   </label>
                   <label
-                    class="ant-radio-wrapper ant-radio-wrapper-in-form-item css-dev-only-do-not-override-txh9fw"
+                    class="ant-radio-wrapper ant-radio-wrapper-in-form-item"
                   >
                     <span
                       class="ant-radio"
@@ -666,7 +666,7 @@ exports[`sqle/SqlManagementException/SqlManagementExceptionForm render switch ma
                     </span>
                   </label>
                   <label
-                    class="ant-radio-wrapper ant-radio-wrapper-in-form-item css-dev-only-do-not-override-txh9fw"
+                    class="ant-radio-wrapper ant-radio-wrapper-in-form-item"
                   >
                     <span
                       class="ant-radio"
@@ -691,13 +691,13 @@ exports[`sqle/SqlManagementException/SqlManagementExceptionForm render switch ma
         </div>
       </div>
       <div
-        class="ant-form-item css-dev-only-do-not-override-txh9fw"
+        class="ant-form-item"
       >
         <div
-          class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+          class="ant-row ant-form-item-row"
         >
           <div
-            class="ant-col ant-col-24 ant-form-item-label css-dev-only-do-not-override-txh9fw"
+            class="ant-col ant-col-24 ant-form-item-label"
           >
             <label
               class=""
@@ -708,7 +708,7 @@ exports[`sqle/SqlManagementException/SqlManagementExceptionForm render switch ma
             </label>
           </div>
           <div
-            class="ant-col ant-col-24 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+            class="ant-col ant-col-24 ant-form-item-control"
           >
             <div
               class="ant-form-item-control-input"
@@ -717,7 +717,7 @@ exports[`sqle/SqlManagementException/SqlManagementExceptionForm render switch ma
                 class="ant-form-item-control-input-content"
               >
                 <textarea
-                  class="ant-input css-dev-only-do-not-override-txh9fw basic-input-wrapper textarea-no-resize css-1pd1cd5"
+                  class="ant-input basic-input-wrapper textarea-no-resize css-1pd1cd5"
                   id="desc"
                   placeholder="请输入{{name}}"
                   style="resize: none; height: -70px; min-height: -14px; max-height: -70px;"
@@ -728,13 +728,13 @@ exports[`sqle/SqlManagementException/SqlManagementExceptionForm render switch ma
         </div>
       </div>
       <div
-        class="ant-form-item css-dev-only-do-not-override-txh9fw"
+        class="ant-form-item"
       >
         <div
-          class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+          class="ant-row ant-form-item-row"
         >
           <div
-            class="ant-col ant-col-24 ant-form-item-label css-dev-only-do-not-override-txh9fw"
+            class="ant-col ant-col-24 ant-form-item-label"
           >
             <label
               class="ant-form-item-required"
@@ -745,7 +745,7 @@ exports[`sqle/SqlManagementException/SqlManagementExceptionForm render switch ma
             </label>
           </div>
           <div
-            class="ant-col ant-col-24 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+            class="ant-col ant-col-24 ant-form-item-control"
           >
             <div
               class="ant-form-item-control-input"
@@ -755,7 +755,7 @@ exports[`sqle/SqlManagementException/SqlManagementExceptionForm render switch ma
               >
                 <input
                   aria-required="true"
-                  class="ant-input css-dev-only-do-not-override-ywkr0o basic-input-wrapper css-1pd1cd5"
+                  class="ant-input basic-input-wrapper css-1pd1cd5"
                   id="cidr"
                   placeholder="请输入{{name}}"
                   type="text"
@@ -792,16 +792,16 @@ exports[`sqle/SqlManagementException/SqlManagementExceptionForm render switch ma
   <div />
   <div>
     <form
-      class="ant-form ant-form-vertical css-dev-only-do-not-override-txh9fw"
+      class="ant-form ant-form-vertical"
     >
       <div
-        class="ant-form-item css-dev-only-do-not-override-txh9fw ant-form-item-has-success"
+        class="ant-form-item ant-form-item-has-success"
       >
         <div
-          class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+          class="ant-row ant-form-item-row"
         >
           <div
-            class="ant-col ant-col-24 ant-form-item-label css-dev-only-do-not-override-txh9fw"
+            class="ant-col ant-col-24 ant-form-item-label"
           >
             <label
               class=""
@@ -812,7 +812,7 @@ exports[`sqle/SqlManagementException/SqlManagementExceptionForm render switch ma
             </label>
           </div>
           <div
-            class="ant-col ant-col-24 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+            class="ant-col ant-col-24 ant-form-item-control"
           >
             <div
               class="ant-form-item-control-input"
@@ -821,11 +821,11 @@ exports[`sqle/SqlManagementException/SqlManagementExceptionForm render switch ma
                 class="ant-form-item-control-input-content"
               >
                 <div
-                  class="ant-radio-group ant-radio-group-outline css-dev-only-do-not-override-txh9fw"
+                  class="ant-radio-group ant-radio-group-outline"
                   id="type"
                 >
                   <label
-                    class="ant-radio-wrapper ant-radio-wrapper-in-form-item css-dev-only-do-not-override-txh9fw"
+                    class="ant-radio-wrapper ant-radio-wrapper-in-form-item"
                   >
                     <span
                       class="ant-radio"
@@ -845,7 +845,7 @@ exports[`sqle/SqlManagementException/SqlManagementExceptionForm render switch ma
                     </span>
                   </label>
                   <label
-                    class="ant-radio-wrapper ant-radio-wrapper-in-form-item css-dev-only-do-not-override-txh9fw"
+                    class="ant-radio-wrapper ant-radio-wrapper-in-form-item"
                   >
                     <span
                       class="ant-radio"
@@ -864,7 +864,7 @@ exports[`sqle/SqlManagementException/SqlManagementExceptionForm render switch ma
                     </span>
                   </label>
                   <label
-                    class="ant-radio-wrapper ant-radio-wrapper-in-form-item css-dev-only-do-not-override-txh9fw"
+                    class="ant-radio-wrapper ant-radio-wrapper-in-form-item"
                   >
                     <span
                       class="ant-radio"
@@ -883,7 +883,7 @@ exports[`sqle/SqlManagementException/SqlManagementExceptionForm render switch ma
                     </span>
                   </label>
                   <label
-                    class="ant-radio-wrapper ant-radio-wrapper-in-form-item css-dev-only-do-not-override-txh9fw"
+                    class="ant-radio-wrapper ant-radio-wrapper-in-form-item"
                   >
                     <span
                       class="ant-radio"
@@ -902,7 +902,7 @@ exports[`sqle/SqlManagementException/SqlManagementExceptionForm render switch ma
                     </span>
                   </label>
                   <label
-                    class="ant-radio-wrapper ant-radio-wrapper-checked ant-radio-wrapper-in-form-item css-dev-only-do-not-override-txh9fw"
+                    class="ant-radio-wrapper ant-radio-wrapper-checked ant-radio-wrapper-in-form-item"
                   >
                     <span
                       class="ant-radio ant-radio-checked"
@@ -921,7 +921,7 @@ exports[`sqle/SqlManagementException/SqlManagementExceptionForm render switch ma
                     </span>
                   </label>
                   <label
-                    class="ant-radio-wrapper ant-radio-wrapper-in-form-item css-dev-only-do-not-override-txh9fw"
+                    class="ant-radio-wrapper ant-radio-wrapper-in-form-item"
                   >
                     <span
                       class="ant-radio"
@@ -946,13 +946,13 @@ exports[`sqle/SqlManagementException/SqlManagementExceptionForm render switch ma
         </div>
       </div>
       <div
-        class="ant-form-item css-dev-only-do-not-override-txh9fw"
+        class="ant-form-item"
       >
         <div
-          class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+          class="ant-row ant-form-item-row"
         >
           <div
-            class="ant-col ant-col-24 ant-form-item-label css-dev-only-do-not-override-txh9fw"
+            class="ant-col ant-col-24 ant-form-item-label"
           >
             <label
               class=""
@@ -963,7 +963,7 @@ exports[`sqle/SqlManagementException/SqlManagementExceptionForm render switch ma
             </label>
           </div>
           <div
-            class="ant-col ant-col-24 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+            class="ant-col ant-col-24 ant-form-item-control"
           >
             <div
               class="ant-form-item-control-input"
@@ -972,7 +972,7 @@ exports[`sqle/SqlManagementException/SqlManagementExceptionForm render switch ma
                 class="ant-form-item-control-input-content"
               >
                 <textarea
-                  class="ant-input css-dev-only-do-not-override-txh9fw basic-input-wrapper textarea-no-resize css-1pd1cd5"
+                  class="ant-input basic-input-wrapper textarea-no-resize css-1pd1cd5"
                   id="desc"
                   placeholder="请输入{{name}}"
                   style="resize: none; height: -70px; min-height: -14px; max-height: -70px;"
@@ -983,13 +983,13 @@ exports[`sqle/SqlManagementException/SqlManagementExceptionForm render switch ma
         </div>
       </div>
       <div
-        class="ant-form-item css-dev-only-do-not-override-txh9fw"
+        class="ant-form-item"
       >
         <div
-          class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+          class="ant-row ant-form-item-row"
         >
           <div
-            class="ant-col ant-col-24 ant-form-item-label css-dev-only-do-not-override-txh9fw"
+            class="ant-col ant-col-24 ant-form-item-label"
           >
             <label
               class="ant-form-item-required"
@@ -1000,7 +1000,7 @@ exports[`sqle/SqlManagementException/SqlManagementExceptionForm render switch ma
             </label>
           </div>
           <div
-            class="ant-col ant-col-24 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+            class="ant-col ant-col-24 ant-form-item-control"
           >
             <div
               class="ant-form-item-control-input"
@@ -1010,7 +1010,7 @@ exports[`sqle/SqlManagementException/SqlManagementExceptionForm render switch ma
               >
                 <input
                   aria-required="true"
-                  class="ant-input css-dev-only-do-not-override-ywkr0o basic-input-wrapper css-1pd1cd5"
+                  class="ant-input basic-input-wrapper css-1pd1cd5"
                   id="host"
                   placeholder="请输入{{name}}"
                   type="text"
@@ -1047,16 +1047,16 @@ exports[`sqle/SqlManagementException/SqlManagementExceptionForm render switch ma
   <div />
   <div>
     <form
-      class="ant-form ant-form-vertical css-dev-only-do-not-override-txh9fw"
+      class="ant-form ant-form-vertical"
     >
       <div
-        class="ant-form-item css-dev-only-do-not-override-txh9fw ant-form-item-has-success"
+        class="ant-form-item ant-form-item-has-success"
       >
         <div
-          class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+          class="ant-row ant-form-item-row"
         >
           <div
-            class="ant-col ant-col-24 ant-form-item-label css-dev-only-do-not-override-txh9fw"
+            class="ant-col ant-col-24 ant-form-item-label"
           >
             <label
               class=""
@@ -1067,7 +1067,7 @@ exports[`sqle/SqlManagementException/SqlManagementExceptionForm render switch ma
             </label>
           </div>
           <div
-            class="ant-col ant-col-24 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+            class="ant-col ant-col-24 ant-form-item-control"
           >
             <div
               class="ant-form-item-control-input"
@@ -1076,11 +1076,11 @@ exports[`sqle/SqlManagementException/SqlManagementExceptionForm render switch ma
                 class="ant-form-item-control-input-content"
               >
                 <div
-                  class="ant-radio-group ant-radio-group-outline css-dev-only-do-not-override-txh9fw"
+                  class="ant-radio-group ant-radio-group-outline"
                   id="type"
                 >
                   <label
-                    class="ant-radio-wrapper ant-radio-wrapper-in-form-item css-dev-only-do-not-override-txh9fw"
+                    class="ant-radio-wrapper ant-radio-wrapper-in-form-item"
                   >
                     <span
                       class="ant-radio"
@@ -1100,7 +1100,7 @@ exports[`sqle/SqlManagementException/SqlManagementExceptionForm render switch ma
                     </span>
                   </label>
                   <label
-                    class="ant-radio-wrapper ant-radio-wrapper-in-form-item css-dev-only-do-not-override-txh9fw"
+                    class="ant-radio-wrapper ant-radio-wrapper-in-form-item"
                   >
                     <span
                       class="ant-radio"
@@ -1119,7 +1119,7 @@ exports[`sqle/SqlManagementException/SqlManagementExceptionForm render switch ma
                     </span>
                   </label>
                   <label
-                    class="ant-radio-wrapper ant-radio-wrapper-in-form-item css-dev-only-do-not-override-txh9fw"
+                    class="ant-radio-wrapper ant-radio-wrapper-in-form-item"
                   >
                     <span
                       class="ant-radio"
@@ -1138,7 +1138,7 @@ exports[`sqle/SqlManagementException/SqlManagementExceptionForm render switch ma
                     </span>
                   </label>
                   <label
-                    class="ant-radio-wrapper ant-radio-wrapper-in-form-item css-dev-only-do-not-override-txh9fw"
+                    class="ant-radio-wrapper ant-radio-wrapper-in-form-item"
                   >
                     <span
                       class="ant-radio"
@@ -1157,7 +1157,7 @@ exports[`sqle/SqlManagementException/SqlManagementExceptionForm render switch ma
                     </span>
                   </label>
                   <label
-                    class="ant-radio-wrapper ant-radio-wrapper-in-form-item css-dev-only-do-not-override-txh9fw"
+                    class="ant-radio-wrapper ant-radio-wrapper-in-form-item"
                   >
                     <span
                       class="ant-radio"
@@ -1176,7 +1176,7 @@ exports[`sqle/SqlManagementException/SqlManagementExceptionForm render switch ma
                     </span>
                   </label>
                   <label
-                    class="ant-radio-wrapper ant-radio-wrapper-checked ant-radio-wrapper-in-form-item css-dev-only-do-not-override-txh9fw"
+                    class="ant-radio-wrapper ant-radio-wrapper-checked ant-radio-wrapper-in-form-item"
                   >
                     <span
                       class="ant-radio ant-radio-checked"
@@ -1201,13 +1201,13 @@ exports[`sqle/SqlManagementException/SqlManagementExceptionForm render switch ma
         </div>
       </div>
       <div
-        class="ant-form-item css-dev-only-do-not-override-txh9fw"
+        class="ant-form-item"
       >
         <div
-          class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+          class="ant-row ant-form-item-row"
         >
           <div
-            class="ant-col ant-col-24 ant-form-item-label css-dev-only-do-not-override-txh9fw"
+            class="ant-col ant-col-24 ant-form-item-label"
           >
             <label
               class=""
@@ -1218,7 +1218,7 @@ exports[`sqle/SqlManagementException/SqlManagementExceptionForm render switch ma
             </label>
           </div>
           <div
-            class="ant-col ant-col-24 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+            class="ant-col ant-col-24 ant-form-item-control"
           >
             <div
               class="ant-form-item-control-input"
@@ -1227,7 +1227,7 @@ exports[`sqle/SqlManagementException/SqlManagementExceptionForm render switch ma
                 class="ant-form-item-control-input-content"
               >
                 <textarea
-                  class="ant-input css-dev-only-do-not-override-txh9fw basic-input-wrapper textarea-no-resize css-1pd1cd5"
+                  class="ant-input basic-input-wrapper textarea-no-resize css-1pd1cd5"
                   id="desc"
                   placeholder="请输入{{name}}"
                   style="resize: none; height: -70px; min-height: -14px; max-height: -70px;"
@@ -1238,13 +1238,13 @@ exports[`sqle/SqlManagementException/SqlManagementExceptionForm render switch ma
         </div>
       </div>
       <div
-        class="ant-form-item css-dev-only-do-not-override-txh9fw"
+        class="ant-form-item"
       >
         <div
-          class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+          class="ant-row ant-form-item-row"
         >
           <div
-            class="ant-col ant-col-24 ant-form-item-label css-dev-only-do-not-override-txh9fw"
+            class="ant-col ant-col-24 ant-form-item-label"
           >
             <label
               class="ant-form-item-required"
@@ -1255,7 +1255,7 @@ exports[`sqle/SqlManagementException/SqlManagementExceptionForm render switch ma
             </label>
           </div>
           <div
-            class="ant-col ant-col-24 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+            class="ant-col ant-col-24 ant-form-item-control"
           >
             <div
               class="ant-form-item-control-input"
@@ -1265,7 +1265,7 @@ exports[`sqle/SqlManagementException/SqlManagementExceptionForm render switch ma
               >
                 <div
                   aria-required="true"
-                  class="ant-select ant-select-in-form-item basic-select-wrapper css-iy4o4x css-dev-only-do-not-override-v9sov3 ant-select-single ant-select-show-arrow"
+                  class="ant-select ant-select-in-form-item basic-select-wrapper css-iy4o4x ant-select-single ant-select-show-arrow"
                 >
                   <div
                     class="ant-select-selector"
@@ -1340,16 +1340,16 @@ exports[`sqle/SqlManagementException/SqlManagementExceptionForm should match sna
   <div />
   <div>
     <form
-      class="ant-form ant-form-vertical css-dev-only-do-not-override-txh9fw"
+      class="ant-form ant-form-vertical"
     >
       <div
-        class="ant-form-item css-dev-only-do-not-override-txh9fw"
+        class="ant-form-item"
       >
         <div
-          class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+          class="ant-row ant-form-item-row"
         >
           <div
-            class="ant-col ant-col-24 ant-form-item-label css-dev-only-do-not-override-txh9fw"
+            class="ant-col ant-col-24 ant-form-item-label"
           >
             <label
               class=""
@@ -1360,7 +1360,7 @@ exports[`sqle/SqlManagementException/SqlManagementExceptionForm should match sna
             </label>
           </div>
           <div
-            class="ant-col ant-col-24 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+            class="ant-col ant-col-24 ant-form-item-control"
           >
             <div
               class="ant-form-item-control-input"
@@ -1369,11 +1369,11 @@ exports[`sqle/SqlManagementException/SqlManagementExceptionForm should match sna
                 class="ant-form-item-control-input-content"
               >
                 <div
-                  class="ant-radio-group ant-radio-group-outline css-dev-only-do-not-override-txh9fw"
+                  class="ant-radio-group ant-radio-group-outline"
                   id="type"
                 >
                   <label
-                    class="ant-radio-wrapper ant-radio-wrapper-checked ant-radio-wrapper-in-form-item css-dev-only-do-not-override-txh9fw"
+                    class="ant-radio-wrapper ant-radio-wrapper-checked ant-radio-wrapper-in-form-item"
                   >
                     <span
                       class="ant-radio ant-radio-checked"
@@ -1393,7 +1393,7 @@ exports[`sqle/SqlManagementException/SqlManagementExceptionForm should match sna
                     </span>
                   </label>
                   <label
-                    class="ant-radio-wrapper ant-radio-wrapper-in-form-item css-dev-only-do-not-override-txh9fw"
+                    class="ant-radio-wrapper ant-radio-wrapper-in-form-item"
                   >
                     <span
                       class="ant-radio"
@@ -1412,7 +1412,7 @@ exports[`sqle/SqlManagementException/SqlManagementExceptionForm should match sna
                     </span>
                   </label>
                   <label
-                    class="ant-radio-wrapper ant-radio-wrapper-in-form-item css-dev-only-do-not-override-txh9fw"
+                    class="ant-radio-wrapper ant-radio-wrapper-in-form-item"
                   >
                     <span
                       class="ant-radio"
@@ -1431,7 +1431,7 @@ exports[`sqle/SqlManagementException/SqlManagementExceptionForm should match sna
                     </span>
                   </label>
                   <label
-                    class="ant-radio-wrapper ant-radio-wrapper-in-form-item css-dev-only-do-not-override-txh9fw"
+                    class="ant-radio-wrapper ant-radio-wrapper-in-form-item"
                   >
                     <span
                       class="ant-radio"
@@ -1450,7 +1450,7 @@ exports[`sqle/SqlManagementException/SqlManagementExceptionForm should match sna
                     </span>
                   </label>
                   <label
-                    class="ant-radio-wrapper ant-radio-wrapper-in-form-item css-dev-only-do-not-override-txh9fw"
+                    class="ant-radio-wrapper ant-radio-wrapper-in-form-item"
                   >
                     <span
                       class="ant-radio"
@@ -1469,7 +1469,7 @@ exports[`sqle/SqlManagementException/SqlManagementExceptionForm should match sna
                     </span>
                   </label>
                   <label
-                    class="ant-radio-wrapper ant-radio-wrapper-in-form-item css-dev-only-do-not-override-txh9fw"
+                    class="ant-radio-wrapper ant-radio-wrapper-in-form-item"
                   >
                     <span
                       class="ant-radio"
@@ -1494,13 +1494,13 @@ exports[`sqle/SqlManagementException/SqlManagementExceptionForm should match sna
         </div>
       </div>
       <div
-        class="ant-form-item css-dev-only-do-not-override-txh9fw"
+        class="ant-form-item"
       >
         <div
-          class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+          class="ant-row ant-form-item-row"
         >
           <div
-            class="ant-col ant-col-24 ant-form-item-label css-dev-only-do-not-override-txh9fw"
+            class="ant-col ant-col-24 ant-form-item-label"
           >
             <label
               class=""
@@ -1511,7 +1511,7 @@ exports[`sqle/SqlManagementException/SqlManagementExceptionForm should match sna
             </label>
           </div>
           <div
-            class="ant-col ant-col-24 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+            class="ant-col ant-col-24 ant-form-item-control"
           >
             <div
               class="ant-form-item-control-input"
@@ -1520,7 +1520,7 @@ exports[`sqle/SqlManagementException/SqlManagementExceptionForm should match sna
                 class="ant-form-item-control-input-content"
               >
                 <textarea
-                  class="ant-input css-dev-only-do-not-override-txh9fw basic-input-wrapper textarea-no-resize css-1pd1cd5"
+                  class="ant-input basic-input-wrapper textarea-no-resize css-1pd1cd5"
                   id="desc"
                   placeholder="请输入{{name}}"
                   style="resize: none; height: -70px; min-height: -14px; max-height: -70px;"
@@ -1531,13 +1531,13 @@ exports[`sqle/SqlManagementException/SqlManagementExceptionForm should match sna
         </div>
       </div>
       <div
-        class="ant-form-item css-dev-only-do-not-override-txh9fw"
+        class="ant-form-item"
       >
         <div
-          class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+          class="ant-row ant-form-item-row"
         >
           <div
-            class="ant-col ant-col-24 ant-form-item-label css-dev-only-do-not-override-txh9fw"
+            class="ant-col ant-col-24 ant-form-item-label"
           >
             <label
               class="ant-form-item-required"
@@ -1548,7 +1548,7 @@ exports[`sqle/SqlManagementException/SqlManagementExceptionForm should match sna
             </label>
           </div>
           <div
-            class="ant-col ant-col-24 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+            class="ant-col ant-col-24 ant-form-item-control"
           >
             <div
               class="ant-form-item-control-input"

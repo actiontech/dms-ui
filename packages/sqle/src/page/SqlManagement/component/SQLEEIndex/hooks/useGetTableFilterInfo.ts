@@ -1,19 +1,17 @@
 import { FilterCustomProps } from '@actiontech/shared/lib/components/ActiontechTable';
 import { useEffect, useMemo } from 'react';
 import useStaticStatus from './useStaticStatus';
-import {
-  useCurrentProject,
-  useProjectBusinessTips
-} from '@actiontech/shared/lib/features';
+import { useCurrentProject } from '@actiontech/shared/lib/features';
 import useInstance from '../../../../../hooks/useInstance';
 import useRuleTips from './useRuleTips';
 import { ExtraFilterMetaType } from '../column';
 import useSourceTips from './useSourceTips';
 import { useTypedQuery } from '@actiontech/shared';
 import { ROUTE_PATHS } from '@actiontech/shared/lib/data/routePaths';
+import useServiceEnvironment from '../../../../../hooks/useServiceEnvironment';
 
 const useGetTableFilterInfo = () => {
-  const { projectName } = useCurrentProject();
+  const { projectName, projectID } = useCurrentProject();
 
   const extractQueries = useTypedQuery();
 
@@ -29,10 +27,10 @@ const useGetTableFilterInfo = () => {
   } = useInstance();
 
   const {
-    updateProjectBusinessTips,
-    projectBusinessOption,
-    loading: getProjectBusinessLoading
-  } = useProjectBusinessTips();
+    environmentOptions,
+    loading: getEnvironmentListLoading,
+    updateEnvironmentList
+  } = useServiceEnvironment();
 
   const {
     generateRuleTipsSelectOptions,
@@ -43,11 +41,12 @@ const useGetTableFilterInfo = () => {
   useEffect(() => {
     updateInstanceList({ project_name: projectName });
     updateRuleTips(projectName);
-    updateProjectBusinessTips();
+    updateEnvironmentList(projectID);
   }, [
     projectName,
+    projectID,
     updateInstanceList,
-    updateProjectBusinessTips,
+    updateEnvironmentList,
     updateRuleTips
   ]);
 
@@ -55,8 +54,8 @@ const useGetTableFilterInfo = () => {
     const searchParams = extractQueries(ROUTE_PATHS.SQLE.SQL_MANAGEMENT.index);
     return new Map<keyof ExtraFilterMetaType, FilterCustomProps>([
       [
-        'filter_business',
-        { options: projectBusinessOption(), loading: getProjectBusinessLoading }
+        'filter_by_environment_tag',
+        { options: environmentOptions, loading: getEnvironmentListLoading }
       ],
       [
         'filter_instance_id',
@@ -87,8 +86,8 @@ const useGetTableFilterInfo = () => {
     ]);
   }, [
     extractQueries,
-    projectBusinessOption,
-    getProjectBusinessLoading,
+    environmentOptions,
+    getEnvironmentListLoading,
     instanceIDOptions,
     getInstanceLoading,
     generateSourceSelectOptions,

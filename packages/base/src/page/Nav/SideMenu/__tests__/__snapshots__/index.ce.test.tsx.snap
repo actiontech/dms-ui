@@ -25,13 +25,13 @@ exports[`test base/Nav/SideMenu/index.ce should match snapshot 1`] = `
         </div>
       </div>
       <div
-        class="ant-spin-nested-loading css-dev-only-do-not-override-txh9fw"
+        class="ant-spin-nested-loading"
       >
         <div>
           <div
             aria-busy="true"
             aria-live="polite"
-            class="ant-spin ant-spin-spinning css-dev-only-do-not-override-txh9fw"
+            class="ant-spin ant-spin-spinning"
           >
             <span
               class="ant-spin-dot ant-spin-dot-spin"
@@ -58,14 +58,14 @@ exports[`test base/Nav/SideMenu/index.ce should match snapshot 1`] = `
             class="css-22avtw"
           >
             <div
-              class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center action-space-wrapper"
+              class="ant-space ant-space-horizontal ant-space-align-center action-space-wrapper"
             >
               <div
                 class="ant-space-item"
                 style="margin-right: 8px;"
               >
                 <div
-                  class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
+                  class="ant-space ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
                 >
                   <div
                     class="ant-space-item"
@@ -98,7 +98,7 @@ exports[`test base/Nav/SideMenu/index.ce should match snapshot 1`] = `
                 class="ant-space-item"
               >
                 <div
-                  class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
+                  class="ant-space ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
                 >
                   <div
                     class="ant-space-item"
@@ -142,13 +142,13 @@ exports[`test base/Nav/SideMenu/index.ce should match snapshot 1`] = `
           />
         </svg>
         <span
-          class="ant-typography default-project-name css-dev-only-do-not-override-txh9fw"
+          class="ant-typography default-project-name"
         >
           default
         </span>
       </div>
       <ul
-        class="ant-menu ant-menu-root ant-menu-inline ant-menu-light custom-menu css-dev-only-do-not-override-txh9fw"
+        class="ant-menu ant-menu-root ant-menu-inline ant-menu-light custom-menu"
         data-menu-list="true"
         role="menu"
         tabindex="0"
@@ -162,7 +162,7 @@ exports[`test base/Nav/SideMenu/index.ce should match snapshot 1`] = `
       class="dms-layout-side-end"
     >
       <span
-        class="ant-avatar ant-avatar-circle action-avatar css-1wq79dc css-dev-only-do-not-override-txh9fw"
+        class="ant-avatar ant-avatar-circle action-avatar css-1wq79dc"
       >
         <span
           class="ant-avatar-string"
@@ -201,7 +201,7 @@ exports[`test base/Nav/SideMenu/index.ce should match snapshot 2`] = `
         </div>
       </div>
       <div
-        class="ant-spin-nested-loading css-dev-only-do-not-override-txh9fw"
+        class="ant-spin-nested-loading"
       >
         <div
           class="ant-spin-container"
@@ -210,14 +210,14 @@ exports[`test base/Nav/SideMenu/index.ce should match snapshot 2`] = `
             class="css-22avtw"
           >
             <div
-              class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center action-space-wrapper"
+              class="ant-space ant-space-horizontal ant-space-align-center action-space-wrapper"
             >
               <div
                 class="ant-space-item"
                 style="margin-right: 8px;"
               >
                 <div
-                  class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
+                  class="ant-space ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
                 >
                   <div
                     class="ant-space-item"
@@ -273,7 +273,7 @@ exports[`test base/Nav/SideMenu/index.ce should match snapshot 2`] = `
                 class="ant-space-item"
               >
                 <div
-                  class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
+                  class="ant-space ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
                 >
                   <div
                     class="ant-space-item"
@@ -317,13 +317,13 @@ exports[`test base/Nav/SideMenu/index.ce should match snapshot 2`] = `
           />
         </svg>
         <span
-          class="ant-typography default-project-name css-dev-only-do-not-override-txh9fw"
+          class="ant-typography default-project-name"
         >
           default
         </span>
       </div>
       <ul
-        class="ant-menu ant-menu-root ant-menu-inline ant-menu-light custom-menu css-dev-only-do-not-override-txh9fw"
+        class="ant-menu ant-menu-root ant-menu-inline ant-menu-light custom-menu"
         data-menu-list="true"
         role="menu"
         tabindex="0"
@@ -337,7 +337,7 @@ exports[`test base/Nav/SideMenu/index.ce should match snapshot 2`] = `
       class="dms-layout-side-end"
     >
       <span
-        class="ant-avatar ant-avatar-circle action-avatar css-1wq79dc css-dev-only-do-not-override-txh9fw"
+        class="ant-avatar ant-avatar-circle action-avatar css-1wq79dc"
       >
         <span
           class="ant-avatar-string"

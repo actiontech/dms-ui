@@ -18,7 +18,7 @@ exports[`test base/DataExport/List render batch close button When the user is no
           href="/project/700300/data/export/create"
         >
           <button
-            class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary basic-button-wrapper css-geipcv"
+            class="ant-btn ant-btn-primary basic-button-wrapper css-geipcv"
             type="button"
           >
             <span
@@ -48,318 +48,327 @@ exports[`test base/DataExport/List render batch close button When the user is no
       </div>
     </div>
     <div
-      class="ant-spin-nested-loading css-dev-only-do-not-override-txh9fw"
+      class="ant-spin-nested-loading"
     >
       <div
         class="ant-spin-container"
       >
         <div
-          class="ant-spin-nested-loading css-dev-only-do-not-override-1kh50jg"
+          class="ant-space ant-space-horizontal ant-space-align-center full-width-element flex-space-between actiontech-table-toolbar-namespace css-a7k93w"
+          style="flex-wrap: wrap; margin-bottom: -8px;"
         >
           <div
-            class="ant-spin-container"
+            class="ant-space-item"
+            style="margin-right: 8px; padding-bottom: 8px;"
           >
             <div
-              class="ant-space css-dev-only-do-not-override-1kh50jg ant-space-horizontal ant-space-align-center full-width-element flex-space-between actiontech-table-toolbar-namespace css-c38ntt"
-              style="flex-wrap: wrap; margin-bottom: -8px;"
+              class="ant-space ant-space-horizontal ant-space-align-center"
             >
               <div
                 class="ant-space-item"
-                style="margin-right: 8px; padding-bottom: 8px;"
+                style="margin-right: 12px;"
               >
                 <div
-                  class="ant-space css-dev-only-do-not-override-1kh50jg ant-space-horizontal ant-space-align-center"
+                  class="ant-segmented basic-segmented-wrapper css-192b3m1"
                 >
                   <div
-                    class="ant-space-item"
-                    style="margin-right: 12px;"
+                    class="ant-segmented-group"
                   >
-                    <div
-                      class="ant-segmented basic-segmented-wrapper css-192b3m1 css-dev-only-do-not-override-1kh50jg"
-                    >
-                      <div
-                        class="ant-segmented-group"
-                      >
-                        <label
-                          class="ant-segmented-item ant-segmented-item-selected"
-                        >
-                          <input
-                            checked=""
-                            class="ant-segmented-item-input"
-                            type="radio"
-                          />
-                          <div
-                            class="ant-segmented-item-label"
-                            title="全部"
-                          >
-                            全部
-                          </div>
-                        </label>
-                        <label
-                          class="ant-segmented-item"
-                        >
-                          <input
-                            class="ant-segmented-item-input"
-                            type="radio"
-                          />
-                          <div
-                            class="ant-segmented-item-label"
-                            title="待审核"
-                          >
-                            待审核
-                          </div>
-                        </label>
-                        <label
-                          class="ant-segmented-item"
-                        >
-                          <input
-                            class="ant-segmented-item-input"
-                            type="radio"
-                          />
-                          <div
-                            class="ant-segmented-item-label"
-                            title="待导出"
-                          >
-                            待导出
-                          </div>
-                        </label>
-                        <label
-                          class="ant-segmented-item"
-                        >
-                          <input
-                            class="ant-segmented-item-input"
-                            type="radio"
-                          />
-                          <div
-                            class="ant-segmented-item-label"
-                            title="正在导出"
-                          >
-                            正在导出
-                          </div>
-                        </label>
-                        <label
-                          class="ant-segmented-item"
-                        >
-                          <input
-                            class="ant-segmented-item-input"
-                            type="radio"
-                          />
-                          <div
-                            class="ant-segmented-item-label"
-                            title="已驳回"
-                          >
-                            已驳回
-                          </div>
-                        </label>
-                        <label
-                          class="ant-segmented-item"
-                        >
-                          <input
-                            class="ant-segmented-item-input"
-                            type="radio"
-                          />
-                          <div
-                            class="ant-segmented-item-label"
-                            title="已关闭"
-                          >
-                            已关闭
-                          </div>
-                        </label>
-                        <label
-                          class="ant-segmented-item"
-                        >
-                          <input
-                            class="ant-segmented-item-input"
-                            type="radio"
-                          />
-                          <div
-                            class="ant-segmented-item-label"
-                            title="导出失败"
-                          >
-                            导出失败
-                          </div>
-                        </label>
-                        <label
-                          class="ant-segmented-item"
-                        >
-                          <input
-                            class="ant-segmented-item-input"
-                            type="radio"
-                          />
-                          <div
-                            class="ant-segmented-item-label"
-                            title="导出成功"
-                          >
-                            导出成功
-                          </div>
-                        </label>
-                      </div>
-                    </div>
-                  </div>
-                  <div
-                    class="ant-space-item"
-                    style="margin-right: 12px;"
-                  >
-                    <span
-                      class="ant-input-affix-wrapper basic-input-wrapper actiontech-table-search-input-namespace css-1f6svkh ant-input-affix-wrapper-sm css-dev-only-do-not-override-mlhibv"
+                    <label
+                      class="ant-segmented-item ant-segmented-item-selected"
                     >
                       <input
-                        class="ant-input ant-input-sm css-dev-only-do-not-override-mlhibv"
-                        id="actiontech-table-search-input"
-                        placeholder="输入关键字搜索"
-                        type="text"
-                        value=""
+                        checked=""
+                        class="ant-segmented-item-input"
+                        type="radio"
                       />
-                      <span
-                        class="ant-input-suffix"
-                      >
-                        <svg
-                          class="custom-icon custom-icon-search"
-                          height="14"
-                          viewBox="0 0 14 14"
-                          width="14"
-                          xmlns="http://www.w3.org/2000/svg"
-                        >
-                          <path
-                            d="m10.518 9.693 2.499 2.498-.826.825-2.498-2.498a5.252 5.252 0 0 1-8.527-4.101 5.25 5.25 0 0 1 5.25-5.25 5.252 5.252 0 0 1 4.102 8.526m-1.17-.433a4.082 4.082 0 0 0-2.931-6.927 4.08 4.08 0 0 0-4.084 4.084 4.082 4.082 0 0 0 6.927 2.93z"
-                          />
-                        </svg>
-                      </span>
-                    </span>
-                  </div>
-                  <div
-                    class="ant-space-item"
-                  >
-                    <button
-                      class="ant-btn css-dev-only-do-not-override-czn7jp ant-btn-default ant-btn-sm ant-btn-two-chinese-chars actiontech-filter-button-namespace basic-button-wrapper css-geipcv"
-                      style="padding: 0px 6px 0px 10px;"
-                      type="button"
-                    >
                       <div
-                        class="ant-space css-dev-only-do-not-override-czn7jp ant-space-horizontal ant-space-align-center css-1nt49ug"
+                        class="ant-segmented-item-label"
+                        title="全部"
                       >
-                        <div
-                          class="ant-space-item"
-                          style="margin-right: 2px;"
-                        >
-                          筛选
-                        </div>
-                        <div
-                          class="ant-space-item"
-                        >
-                          <svg
-                            color="currrentColor"
-                            height="14"
-                            viewBox="0 0 16 16"
-                            width="14"
-                            xmlns="http://www.w3.org/2000/svg"
-                          >
-                            <path
-                              d="m8 8.781 3.3-3.3.943.943L8 10.667 3.757 6.424l.943-.943z"
-                              fill="currentColor"
-                            />
-                          </svg>
-                        </div>
+                        全部
                       </div>
-                    </button>
+                    </label>
+                    <label
+                      class="ant-segmented-item"
+                    >
+                      <input
+                        class="ant-segmented-item-input"
+                        type="radio"
+                      />
+                      <div
+                        class="ant-segmented-item-label"
+                        title="待审核"
+                      >
+                        待审核
+                      </div>
+                    </label>
+                    <label
+                      class="ant-segmented-item"
+                    >
+                      <input
+                        class="ant-segmented-item-input"
+                        type="radio"
+                      />
+                      <div
+                        class="ant-segmented-item-label"
+                        title="待导出"
+                      >
+                        待导出
+                      </div>
+                    </label>
+                    <label
+                      class="ant-segmented-item"
+                    >
+                      <input
+                        class="ant-segmented-item-input"
+                        type="radio"
+                      />
+                      <div
+                        class="ant-segmented-item-label"
+                        title="正在导出"
+                      >
+                        正在导出
+                      </div>
+                    </label>
+                    <label
+                      class="ant-segmented-item"
+                    >
+                      <input
+                        class="ant-segmented-item-input"
+                        type="radio"
+                      />
+                      <div
+                        class="ant-segmented-item-label"
+                        title="已驳回"
+                      >
+                        已驳回
+                      </div>
+                    </label>
+                    <label
+                      class="ant-segmented-item"
+                    >
+                      <input
+                        class="ant-segmented-item-input"
+                        type="radio"
+                      />
+                      <div
+                        class="ant-segmented-item-label"
+                        title="已关闭"
+                      >
+                        已关闭
+                      </div>
+                    </label>
+                    <label
+                      class="ant-segmented-item"
+                    >
+                      <input
+                        class="ant-segmented-item-input"
+                        type="radio"
+                      />
+                      <div
+                        class="ant-segmented-item-label"
+                        title="导出失败"
+                      >
+                        导出失败
+                      </div>
+                    </label>
+                    <label
+                      class="ant-segmented-item"
+                    >
+                      <input
+                        class="ant-segmented-item-input"
+                        type="radio"
+                      />
+                      <div
+                        class="ant-segmented-item-label"
+                        title="导出成功"
+                      >
+                        导出成功
+                      </div>
+                    </label>
                   </div>
                 </div>
               </div>
               <div
                 class="ant-space-item"
-                style="padding-bottom: 8px;"
+                style="margin-right: 12px;"
               >
-                <div
-                  class="ant-space css-dev-only-do-not-override-1kh50jg ant-space-horizontal ant-space-align-center"
+                <span
+                  class="ant-input-affix-wrapper basic-input-wrapper actiontech-table-search-input-namespace css-1f6svkh ant-input-affix-wrapper-sm"
+                >
+                  <input
+                    class="ant-input ant-input-sm"
+                    id="actiontech-table-search-input"
+                    placeholder="输入关键字搜索"
+                    type="text"
+                    value=""
+                  />
+                  <span
+                    class="ant-input-suffix"
+                  >
+                    <span
+                      class="ant-input-clear-icon ant-input-clear-icon-hidden ant-input-clear-icon-has-suffix"
+                      role="button"
+                      tabindex="-1"
+                    >
+                      <svg
+                        fill="currentColor"
+                        height="14"
+                        viewBox="0 0 14 14"
+                        width="14"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="m7 6.175 2.887-2.887.825.825L7.825 7l2.887 2.888-.825.824L7 7.825l-2.888 2.887-.824-.824L6.175 7 3.288 4.113l.824-.825z"
+                        />
+                      </svg>
+                    </span>
+                    <svg
+                      class="custom-icon custom-icon-search"
+                      height="14"
+                      viewBox="0 0 14 14"
+                      width="14"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="m10.518 9.693 2.499 2.498-.826.825-2.498-2.498a5.252 5.252 0 0 1-8.527-4.101 5.25 5.25 0 0 1 5.25-5.25 5.252 5.252 0 0 1 4.102 8.526m-1.17-.433a4.082 4.082 0 0 0-2.931-6.927 4.08 4.08 0 0 0-4.084 4.084 4.082 4.082 0 0 0 6.927 2.93z"
+                      />
+                    </svg>
+                  </span>
+                </span>
+              </div>
+              <div
+                class="ant-space-item"
+              >
+                <button
+                  class="ant-btn ant-btn-default ant-btn-sm ant-btn-two-chinese-chars actiontech-filter-button-namespace basic-button-wrapper css-geipcv"
+                  style="padding: 0px 6px 0px 10px;"
+                  type="button"
                 >
                   <div
-                    class="ant-space-item"
-                    style="margin-right: 12px;"
+                    class="ant-space ant-space-horizontal ant-space-align-center css-1nt49ug"
                   >
-                    <button
-                      class="ant-btn css-dev-only-do-not-override-czn7jp ant-btn-default ant-btn-sm actiontech-table-setting-namespace basic-button-wrapper css-geipcv"
-                      style="padding: 0px 6px 0px 8px;"
-                      type="button"
+                    <div
+                      class="ant-space-item"
+                      style="margin-right: 2px;"
                     >
-                      <div
-                        class="ant-space css-dev-only-do-not-override-czn7jp ant-space-horizontal ant-space-align-center css-1nt49ug"
+                      筛选
+                    </div>
+                    <div
+                      class="ant-space-item"
+                    >
+                      <svg
+                        color="currentColor"
+                        height="14"
+                        viewBox="0 0 16 16"
+                        width="14"
+                        xmlns="http://www.w3.org/2000/svg"
                       >
-                        <div
-                          class="ant-space-item"
-                          style="margin-right: 5px;"
-                        >
-                          <svg
-                            class="custom-icon custom-icon-setting"
-                            height="11"
-                            viewBox="0 0 13 11"
-                            width="13"
-                            xmlns="http://www.w3.org/2000/svg"
-                          >
-                            <path
-                              d="M.167 8.5H4.25v1.167H.167zm0-4.083h5.25v1.166H.167zm0-4.084h11.666V1.5H.167zM11.06 5.598l.674-.228.584 1.01-.535.47c.067.319.067.648 0 .967l.535.47-.584 1.01-.674-.228c-.24.216-.524.382-.837.484l-.14.697H8.917l-.14-.698a2.3 2.3 0 0 1-.837-.484l-.674.229-.583-1.01.534-.47a2.3 2.3 0 0 1 0-.967l-.534-.47.583-1.01.674.228c.24-.216.524-.382.837-.484l.14-.697h1.166l.14.697c.313.102.598.269.837.485zM9.5 8.5a1.167 1.167 0 1 0 0-2.333 1.167 1.167 0 0 0 0 2.333"
-                            />
-                          </svg>
-                        </div>
-                        <div
-                          class="ant-space-item"
-                          style="margin-right: 5px;"
-                        >
-                          表格设置
-                        </div>
-                        <div
-                          class="ant-space-item"
-                        >
-                          <svg
-                            class="custom-icon custom-icon-arrow-down"
-                            color="currentColor"
-                            height="14"
-                            viewBox="0 0 16 16"
-                            width="14"
-                            xmlns="http://www.w3.org/2000/svg"
-                          >
-                            <path
-                              d="m8 8.781 3.3-3.3.943.943L8 10.667 3.757 6.424l.943-.943z"
-                              fill="currentColor"
-                            />
-                          </svg>
-                        </div>
-                      </div>
-                    </button>
+                        <path
+                          d="m8 8.781 3.3-3.3.943.943L8 10.667 3.757 6.424l.943-.943z"
+                          fill="currentColor"
+                        />
+                      </svg>
+                    </div>
                   </div>
+                </button>
+              </div>
+            </div>
+          </div>
+          <div
+            class="ant-space-item"
+            style="padding-bottom: 8px;"
+          >
+            <div
+              class="ant-space ant-space-horizontal ant-space-align-center"
+            >
+              <div
+                class="ant-space-item"
+                style="margin-right: 12px;"
+              >
+                <button
+                  class="ant-btn ant-btn-default ant-btn-sm actiontech-table-setting-namespace basic-button-wrapper css-geipcv"
+                  style="padding: 0px 6px 0px 8px;"
+                  type="button"
+                >
                   <div
-                    class="ant-space-item"
+                    class="ant-space ant-space-horizontal ant-space-align-center css-1nt49ug"
                   >
-                    <button
-                      class="ant-btn css-dev-only-do-not-override-czn7jp ant-btn-default ant-btn-sm ant-btn-icon-only basic-button-wrapper css-geipcv"
-                      type="button"
+                    <div
+                      class="ant-space-item"
+                      style="margin-right: 5px;"
                     >
-                      <span
-                        class="ant-btn-icon"
+                      <svg
+                        class="custom-icon custom-icon-setting"
+                        height="11"
+                        viewBox="0 0 13 11"
+                        width="13"
+                        xmlns="http://www.w3.org/2000/svg"
                       >
-                        <svg
-                          class="custom-icon custom-icon-refresh"
-                          height="14"
-                          viewBox="0 0 14 14"
-                          width="14"
-                          xmlns="http://www.w3.org/2000/svg"
-                        >
-                          <path
-                            d="M3.187 2.586a5.833 5.833 0 0 1 8.59 7.762L9.918 7h1.75a4.667 4.667 0 0 0-7.899-3.367zm7.626 8.828a5.833 5.833 0 0 1-8.59-7.762L4.083 7h-1.75a4.667 4.667 0 0 0 7.899 3.367z"
-                          />
-                        </svg>
-                      </span>
-                    </button>
+                        <path
+                          d="M.167 8.5H4.25v1.167H.167zm0-4.083h5.25v1.166H.167zm0-4.084h11.666V1.5H.167zM11.06 5.598l.674-.228.584 1.01-.535.47c.067.319.067.648 0 .967l.535.47-.584 1.01-.674-.228c-.24.216-.524.382-.837.484l-.14.697H8.917l-.14-.698a2.3 2.3 0 0 1-.837-.484l-.674.229-.583-1.01.534-.47a2.3 2.3 0 0 1 0-.967l-.534-.47.583-1.01.674.228c.24-.216.524-.382.837-.484l.14-.697h1.166l.14.697c.313.102.598.269.837.485zM9.5 8.5a1.167 1.167 0 1 0 0-2.333 1.167 1.167 0 0 0 0 2.333"
+                        />
+                      </svg>
+                    </div>
+                    <div
+                      class="ant-space-item"
+                      style="margin-right: 5px;"
+                    >
+                      表格设置
+                    </div>
+                    <div
+                      class="ant-space-item"
+                    >
+                      <svg
+                        class="custom-icon custom-icon-arrow-down"
+                        color="currentColor"
+                        height="14"
+                        viewBox="0 0 16 16"
+                        width="14"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="m8 8.781 3.3-3.3.943.943L8 10.667 3.757 6.424l.943-.943z"
+                          fill="currentColor"
+                        />
+                      </svg>
+                    </div>
                   </div>
-                </div>
+                </button>
+              </div>
+              <div
+                class="ant-space-item"
+              >
+                <button
+                  class="ant-btn ant-btn-default ant-btn-sm ant-btn-icon-only basic-button-wrapper css-geipcv"
+                  type="button"
+                >
+                  <span
+                    class="ant-btn-icon"
+                  >
+                    <svg
+                      class="custom-icon custom-icon-refresh"
+                      height="14"
+                      viewBox="0 0 14 14"
+                      width="14"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M3.187 2.586a5.833 5.833 0 0 1 8.59 7.762L9.918 7h1.75a4.667 4.667 0 0 0-7.899-3.367zm7.626 8.828a5.833 5.833 0 0 1-8.59-7.762L4.083 7h-1.75a4.667 4.667 0 0 0 7.899 3.367z"
+                      />
+                    </svg>
+                  </span>
+                </button>
               </div>
             </div>
           </div>
         </div>
         <div
-          class="ant-table-wrapper actiontech-table-namespace table-row-cursor css-fxd6ka css-dev-only-do-not-override-bj9uhl"
+          class="ant-table-wrapper actiontech-table-namespace table-row-cursor css-fxd6ka"
         >
           <div
-            class="ant-spin-nested-loading css-dev-only-do-not-override-bj9uhl"
+            class="ant-spin-nested-loading"
           >
             <div
               class="ant-spin-container"
@@ -530,7 +539,7 @@ exports[`test base/DataExport/List render batch close button When the user is no
                             class="ant-table-cell ellipsis-column-width"
                           >
                             <div
-                              class="ant-typography ant-typography-ellipsis ant-typography-single-line ant-typography-ellipsis-single-line basic-typography-ellipsis css-wgj5gs css-dev-only-do-not-override-bj9uhl"
+                              class="ant-typography ant-typography-ellipsis ant-typography-single-line ant-typography-ellipsis-single-line basic-typography-ellipsis css-wgj5gs"
                             >
                               mysql-1_20240130113114
                             </div>
@@ -540,11 +549,11 @@ exports[`test base/DataExport/List render batch close button When the user is no
                           >
                             <div
                               aria-label="desc"
-                              class="ant-typography ant-typography-ellipsis ant-typography-single-line basic-typography-ellipsis css-wgj5gs css-dev-only-do-not-override-bj9uhl"
+                              class="ant-typography ant-typography-ellipsis ant-typography-single-line basic-typography-ellipsis css-wgj5gs"
                             >
                               desc
                               <div
-                                aria-label="Copy"
+                                aria-label="复制"
                                 class="ant-typography-copy"
                                 role="button"
                                 style="border: 0px; background: transparent; padding: 0px; line-height: inherit; display: inline-block;"
@@ -586,7 +595,7 @@ exports[`test base/DataExport/List render batch close button When the user is no
                                   ...
                                 </span>
                                 <div
-                                  aria-label="Copy"
+                                  aria-label="复制"
                                   class="ant-typography-copy"
                                   role="button"
                                   style="border: 0px; background: transparent; padding: 0px; line-height: inherit; display: inline-block;"
@@ -692,7 +701,7 @@ exports[`test base/DataExport/List render batch close button When the user is no
                             class="ant-table-cell ellipsis-column-width"
                           >
                             <div
-                              class="ant-typography ant-typography-ellipsis ant-typography-single-line ant-typography-ellipsis-single-line basic-typography-ellipsis css-wgj5gs css-dev-only-do-not-override-bj9uhl"
+                              class="ant-typography ant-typography-ellipsis ant-typography-single-line ant-typography-ellipsis-single-line basic-typography-ellipsis css-wgj5gs"
                             >
                               mysql-2_20240130113114
                             </div>
@@ -702,11 +711,11 @@ exports[`test base/DataExport/List render batch close button When the user is no
                           >
                             <div
                               aria-label="desc"
-                              class="ant-typography ant-typography-ellipsis ant-typography-single-line basic-typography-ellipsis css-wgj5gs css-dev-only-do-not-override-bj9uhl"
+                              class="ant-typography ant-typography-ellipsis ant-typography-single-line basic-typography-ellipsis css-wgj5gs"
                             >
                               desc
                               <div
-                                aria-label="Copy"
+                                aria-label="复制"
                                 class="ant-typography-copy"
                                 role="button"
                                 style="border: 0px; background: transparent; padding: 0px; line-height: inherit; display: inline-block;"
@@ -748,7 +757,7 @@ exports[`test base/DataExport/List render batch close button When the user is no
                                   ...
                                 </span>
                                 <div
-                                  aria-label="Copy"
+                                  aria-label="复制"
                                   class="ant-typography-copy"
                                   role="button"
                                   style="border: 0px; background: transparent; padding: 0px; line-height: inherit; display: inline-block;"
@@ -815,13 +824,13 @@ exports[`test base/DataExport/List render batch close button When the user is no
                             class="ant-table-cell"
                           >
                             <div
-                              class="ant-space css-dev-only-do-not-override-bj9uhl ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
+                              class="ant-space ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
                             >
                               <div
                                 class="ant-space-item"
                               >
                                 <span
-                                  class="ant-avatar ant-avatar-circle action-avatar css-1wq79dc css-dev-only-do-not-override-bj9uhl"
+                                  class="ant-avatar ant-avatar-circle action-avatar css-1wq79dc"
                                 >
                                   <span
                                     class="ant-avatar-string"
@@ -840,7 +849,7 @@ exports[`test base/DataExport/List render batch close button When the user is no
                 </div>
               </div>
               <ul
-                class="ant-pagination ant-table-pagination ant-table-pagination-right actiontech-table-pagination actiontech-table-pagination-fixed css-dev-only-do-not-override-bj9uhl"
+                class="ant-pagination ant-table-pagination ant-table-pagination-right actiontech-table-pagination actiontech-table-pagination-fixed"
               >
                 <li
                   class="ant-pagination-total-text"
@@ -852,7 +861,7 @@ exports[`test base/DataExport/List render batch close button When the user is no
                 <li
                   aria-disabled="true"
                   class="ant-pagination-prev ant-pagination-disabled"
-                  title="Previous Page"
+                  title="上一页"
                 >
                   <button
                     class="ant-pagination-item-link"
@@ -895,7 +904,7 @@ exports[`test base/DataExport/List render batch close button When the user is no
                 <li
                   aria-disabled="true"
                   class="ant-pagination-next ant-pagination-disabled"
-                  title="Next Page"
+                  title="下一页"
                 >
                   <button
                     class="ant-pagination-item-link"
@@ -928,8 +937,8 @@ exports[`test base/DataExport/List render batch close button When the user is no
                   class="ant-pagination-options"
                 >
                   <div
-                    aria-label="Page Size"
-                    class="ant-select ant-pagination-options-size-changer css-dev-only-do-not-override-bj9uhl ant-select-single ant-select-show-arrow ant-select-show-search"
+                    aria-label="页码"
+                    class="ant-select ant-pagination-options-size-changer ant-select-single ant-select-show-arrow ant-select-show-search"
                   >
                     <div
                       class="ant-select-selector"
@@ -943,7 +952,7 @@ exports[`test base/DataExport/List render batch close button When the user is no
                           aria-controls="rc_select_TEST_OR_SSR_list"
                           aria-expanded="false"
                           aria-haspopup="listbox"
-                          aria-label="Page Size"
+                          aria-label="页码"
                           aria-owns="rc_select_TEST_OR_SSR_list"
                           autocomplete="off"
                           class="ant-select-selection-search-input"
@@ -955,9 +964,9 @@ exports[`test base/DataExport/List render batch close button When the user is no
                       </span>
                       <span
                         class="ant-select-selection-item"
-                        title="20 / page"
+                        title="20 条/页"
                       >
-                        20 / page
+                        20 条/页
                       </span>
                     </div>
                     <span
@@ -1016,7 +1025,7 @@ exports[`test base/DataExport/List render init snapshot 1`] = `
           href="/project/700300/data/export/create"
         >
           <button
-            class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary basic-button-wrapper css-geipcv"
+            class="ant-btn ant-btn-primary basic-button-wrapper css-geipcv"
             type="button"
           >
             <span
@@ -1046,13 +1055,13 @@ exports[`test base/DataExport/List render init snapshot 1`] = `
       </div>
     </div>
     <div
-      class="ant-spin-nested-loading css-dev-only-do-not-override-txh9fw"
+      class="ant-spin-nested-loading"
     >
       <div>
         <div
           aria-busy="true"
           aria-live="polite"
-          class="ant-spin ant-spin-spinning css-dev-only-do-not-override-txh9fw"
+          class="ant-spin ant-spin-spinning"
         >
           <span
             class="ant-spin-dot ant-spin-dot-spin"
@@ -1076,342 +1085,351 @@ exports[`test base/DataExport/List render init snapshot 1`] = `
         class="ant-spin-container ant-spin-blur"
       >
         <div
-          class="ant-spin-nested-loading css-dev-only-do-not-override-1kh50jg"
+          class="ant-space ant-space-horizontal ant-space-align-center full-width-element flex-space-between actiontech-table-toolbar-namespace css-a7k93w"
+          style="flex-wrap: wrap; margin-bottom: -8px;"
         >
           <div
-            class="ant-spin-container"
+            class="ant-space-item"
+            style="margin-right: 8px; padding-bottom: 8px;"
           >
             <div
-              class="ant-space css-dev-only-do-not-override-1kh50jg ant-space-horizontal ant-space-align-center full-width-element flex-space-between actiontech-table-toolbar-namespace css-c38ntt"
-              style="flex-wrap: wrap; margin-bottom: -8px;"
+              class="ant-space ant-space-horizontal ant-space-align-center"
             >
               <div
                 class="ant-space-item"
-                style="margin-right: 8px; padding-bottom: 8px;"
+                style="margin-right: 12px;"
               >
                 <div
-                  class="ant-space css-dev-only-do-not-override-1kh50jg ant-space-horizontal ant-space-align-center"
+                  class="ant-segmented basic-segmented-wrapper css-192b3m1"
                 >
                   <div
-                    class="ant-space-item"
-                    style="margin-right: 12px;"
+                    class="ant-segmented-group"
                   >
-                    <div
-                      class="ant-segmented basic-segmented-wrapper css-192b3m1 css-dev-only-do-not-override-1kh50jg"
-                    >
-                      <div
-                        class="ant-segmented-group"
-                      >
-                        <label
-                          class="ant-segmented-item ant-segmented-item-selected"
-                        >
-                          <input
-                            checked=""
-                            class="ant-segmented-item-input"
-                            type="radio"
-                          />
-                          <div
-                            class="ant-segmented-item-label"
-                            title="全部"
-                          >
-                            全部
-                          </div>
-                        </label>
-                        <label
-                          class="ant-segmented-item"
-                        >
-                          <input
-                            class="ant-segmented-item-input"
-                            type="radio"
-                          />
-                          <div
-                            class="ant-segmented-item-label"
-                            title="待审核"
-                          >
-                            待审核
-                          </div>
-                        </label>
-                        <label
-                          class="ant-segmented-item"
-                        >
-                          <input
-                            class="ant-segmented-item-input"
-                            type="radio"
-                          />
-                          <div
-                            class="ant-segmented-item-label"
-                            title="待导出"
-                          >
-                            待导出
-                          </div>
-                        </label>
-                        <label
-                          class="ant-segmented-item"
-                        >
-                          <input
-                            class="ant-segmented-item-input"
-                            type="radio"
-                          />
-                          <div
-                            class="ant-segmented-item-label"
-                            title="正在导出"
-                          >
-                            正在导出
-                          </div>
-                        </label>
-                        <label
-                          class="ant-segmented-item"
-                        >
-                          <input
-                            class="ant-segmented-item-input"
-                            type="radio"
-                          />
-                          <div
-                            class="ant-segmented-item-label"
-                            title="已驳回"
-                          >
-                            已驳回
-                          </div>
-                        </label>
-                        <label
-                          class="ant-segmented-item"
-                        >
-                          <input
-                            class="ant-segmented-item-input"
-                            type="radio"
-                          />
-                          <div
-                            class="ant-segmented-item-label"
-                            title="已关闭"
-                          >
-                            已关闭
-                          </div>
-                        </label>
-                        <label
-                          class="ant-segmented-item"
-                        >
-                          <input
-                            class="ant-segmented-item-input"
-                            type="radio"
-                          />
-                          <div
-                            class="ant-segmented-item-label"
-                            title="导出失败"
-                          >
-                            导出失败
-                          </div>
-                        </label>
-                        <label
-                          class="ant-segmented-item"
-                        >
-                          <input
-                            class="ant-segmented-item-input"
-                            type="radio"
-                          />
-                          <div
-                            class="ant-segmented-item-label"
-                            title="导出成功"
-                          >
-                            导出成功
-                          </div>
-                        </label>
-                      </div>
-                    </div>
-                  </div>
-                  <div
-                    class="ant-space-item"
-                    style="margin-right: 12px;"
-                  >
-                    <span
-                      class="ant-input-affix-wrapper basic-input-wrapper actiontech-table-search-input-namespace css-1f6svkh ant-input-affix-wrapper-sm css-dev-only-do-not-override-mlhibv"
+                    <label
+                      class="ant-segmented-item ant-segmented-item-selected"
                     >
                       <input
-                        class="ant-input ant-input-sm css-dev-only-do-not-override-mlhibv"
-                        id="actiontech-table-search-input"
-                        placeholder="输入关键字搜索"
-                        type="text"
-                        value=""
+                        checked=""
+                        class="ant-segmented-item-input"
+                        type="radio"
                       />
-                      <span
-                        class="ant-input-suffix"
-                      >
-                        <svg
-                          class="custom-icon custom-icon-search"
-                          height="14"
-                          viewBox="0 0 14 14"
-                          width="14"
-                          xmlns="http://www.w3.org/2000/svg"
-                        >
-                          <path
-                            d="m10.518 9.693 2.499 2.498-.826.825-2.498-2.498a5.252 5.252 0 0 1-8.527-4.101 5.25 5.25 0 0 1 5.25-5.25 5.252 5.252 0 0 1 4.102 8.526m-1.17-.433a4.082 4.082 0 0 0-2.931-6.927 4.08 4.08 0 0 0-4.084 4.084 4.082 4.082 0 0 0 6.927 2.93z"
-                          />
-                        </svg>
-                      </span>
-                    </span>
-                  </div>
-                  <div
-                    class="ant-space-item"
-                  >
-                    <button
-                      class="ant-btn css-dev-only-do-not-override-czn7jp ant-btn-default ant-btn-sm ant-btn-two-chinese-chars actiontech-filter-button-namespace basic-button-wrapper css-geipcv"
-                      style="padding: 0px 6px 0px 10px;"
-                      type="button"
-                    >
                       <div
-                        class="ant-space css-dev-only-do-not-override-czn7jp ant-space-horizontal ant-space-align-center css-1nt49ug"
+                        class="ant-segmented-item-label"
+                        title="全部"
                       >
-                        <div
-                          class="ant-space-item"
-                          style="margin-right: 2px;"
-                        >
-                          筛选
-                        </div>
-                        <div
-                          class="ant-space-item"
-                        >
-                          <svg
-                            color="currrentColor"
-                            height="14"
-                            viewBox="0 0 16 16"
-                            width="14"
-                            xmlns="http://www.w3.org/2000/svg"
-                          >
-                            <path
-                              d="m8 8.781 3.3-3.3.943.943L8 10.667 3.757 6.424l.943-.943z"
-                              fill="currentColor"
-                            />
-                          </svg>
-                        </div>
+                        全部
                       </div>
-                    </button>
+                    </label>
+                    <label
+                      class="ant-segmented-item"
+                    >
+                      <input
+                        class="ant-segmented-item-input"
+                        type="radio"
+                      />
+                      <div
+                        class="ant-segmented-item-label"
+                        title="待审核"
+                      >
+                        待审核
+                      </div>
+                    </label>
+                    <label
+                      class="ant-segmented-item"
+                    >
+                      <input
+                        class="ant-segmented-item-input"
+                        type="radio"
+                      />
+                      <div
+                        class="ant-segmented-item-label"
+                        title="待导出"
+                      >
+                        待导出
+                      </div>
+                    </label>
+                    <label
+                      class="ant-segmented-item"
+                    >
+                      <input
+                        class="ant-segmented-item-input"
+                        type="radio"
+                      />
+                      <div
+                        class="ant-segmented-item-label"
+                        title="正在导出"
+                      >
+                        正在导出
+                      </div>
+                    </label>
+                    <label
+                      class="ant-segmented-item"
+                    >
+                      <input
+                        class="ant-segmented-item-input"
+                        type="radio"
+                      />
+                      <div
+                        class="ant-segmented-item-label"
+                        title="已驳回"
+                      >
+                        已驳回
+                      </div>
+                    </label>
+                    <label
+                      class="ant-segmented-item"
+                    >
+                      <input
+                        class="ant-segmented-item-input"
+                        type="radio"
+                      />
+                      <div
+                        class="ant-segmented-item-label"
+                        title="已关闭"
+                      >
+                        已关闭
+                      </div>
+                    </label>
+                    <label
+                      class="ant-segmented-item"
+                    >
+                      <input
+                        class="ant-segmented-item-input"
+                        type="radio"
+                      />
+                      <div
+                        class="ant-segmented-item-label"
+                        title="导出失败"
+                      >
+                        导出失败
+                      </div>
+                    </label>
+                    <label
+                      class="ant-segmented-item"
+                    >
+                      <input
+                        class="ant-segmented-item-input"
+                        type="radio"
+                      />
+                      <div
+                        class="ant-segmented-item-label"
+                        title="导出成功"
+                      >
+                        导出成功
+                      </div>
+                    </label>
                   </div>
                 </div>
               </div>
               <div
                 class="ant-space-item"
-                style="padding-bottom: 8px;"
+                style="margin-right: 12px;"
               >
-                <div
-                  class="ant-space css-dev-only-do-not-override-1kh50jg ant-space-horizontal ant-space-align-center"
+                <span
+                  class="ant-input-affix-wrapper basic-input-wrapper actiontech-table-search-input-namespace css-1f6svkh ant-input-affix-wrapper-sm"
+                >
+                  <input
+                    class="ant-input ant-input-sm"
+                    id="actiontech-table-search-input"
+                    placeholder="输入关键字搜索"
+                    type="text"
+                    value=""
+                  />
+                  <span
+                    class="ant-input-suffix"
+                  >
+                    <span
+                      class="ant-input-clear-icon ant-input-clear-icon-hidden ant-input-clear-icon-has-suffix"
+                      role="button"
+                      tabindex="-1"
+                    >
+                      <svg
+                        fill="currentColor"
+                        height="14"
+                        viewBox="0 0 14 14"
+                        width="14"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="m7 6.175 2.887-2.887.825.825L7.825 7l2.887 2.888-.825.824L7 7.825l-2.888 2.887-.824-.824L6.175 7 3.288 4.113l.824-.825z"
+                        />
+                      </svg>
+                    </span>
+                    <svg
+                      class="custom-icon custom-icon-search"
+                      height="14"
+                      viewBox="0 0 14 14"
+                      width="14"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="m10.518 9.693 2.499 2.498-.826.825-2.498-2.498a5.252 5.252 0 0 1-8.527-4.101 5.25 5.25 0 0 1 5.25-5.25 5.252 5.252 0 0 1 4.102 8.526m-1.17-.433a4.082 4.082 0 0 0-2.931-6.927 4.08 4.08 0 0 0-4.084 4.084 4.082 4.082 0 0 0 6.927 2.93z"
+                      />
+                    </svg>
+                  </span>
+                </span>
+              </div>
+              <div
+                class="ant-space-item"
+              >
+                <button
+                  class="ant-btn ant-btn-default ant-btn-sm ant-btn-two-chinese-chars actiontech-filter-button-namespace basic-button-wrapper css-geipcv"
+                  style="padding: 0px 6px 0px 10px;"
+                  type="button"
                 >
                   <div
-                    class="ant-space-item"
-                    style="margin-right: 12px;"
+                    class="ant-space ant-space-horizontal ant-space-align-center css-1nt49ug"
                   >
-                    <button
-                      class="ant-btn css-dev-only-do-not-override-czn7jp ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
-                      disabled=""
-                      type="button"
+                    <div
+                      class="ant-space-item"
+                      style="margin-right: 2px;"
                     >
-                      <span
-                        class="ant-btn-icon"
+                      筛选
+                    </div>
+                    <div
+                      class="ant-space-item"
+                    >
+                      <svg
+                        color="currentColor"
+                        height="14"
+                        viewBox="0 0 16 16"
+                        width="14"
+                        xmlns="http://www.w3.org/2000/svg"
                       >
-                        <svg
+                        <path
+                          d="m8 8.781 3.3-3.3.943.943L8 10.667 3.757 6.424l.943-.943z"
                           fill="currentColor"
-                          height="14"
-                          viewBox="0 0 14 14"
-                          width="14"
-                          xmlns="http://www.w3.org/2000/svg"
-                        >
-                          <path
-                            d="M7 12.833A5.833 5.833 0 1 1 7 1.167a5.833 5.833 0 0 1 0 11.666m0-1.166a4.667 4.667 0 1 0 0-9.334 4.667 4.667 0 0 0 0 9.334m-2.917-5.25h5.834v1.166H4.083z"
-                          />
-                        </svg>
-                      </span>
-                      <span>
-                        批量关闭
-                      </span>
-                    </button>
+                        />
+                      </svg>
+                    </div>
                   </div>
-                  <div
-                    class="ant-space-item"
-                    style="margin-right: 12px;"
+                </button>
+              </div>
+            </div>
+          </div>
+          <div
+            class="ant-space-item"
+            style="padding-bottom: 8px;"
+          >
+            <div
+              class="ant-space ant-space-horizontal ant-space-align-center"
+            >
+              <div
+                class="ant-space-item"
+                style="margin-right: 12px;"
+              >
+                <button
+                  class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                  disabled=""
+                  type="button"
+                >
+                  <span
+                    class="ant-btn-icon"
                   >
-                    <button
-                      class="ant-btn css-dev-only-do-not-override-czn7jp ant-btn-default ant-btn-sm actiontech-table-setting-namespace basic-button-wrapper css-geipcv"
-                      style="padding: 0px 6px 0px 8px;"
-                      type="button"
+                    <svg
+                      fill="currentColor"
+                      height="14"
+                      viewBox="0 0 14 14"
+                      width="14"
+                      xmlns="http://www.w3.org/2000/svg"
                     >
-                      <div
-                        class="ant-space css-dev-only-do-not-override-czn7jp ant-space-horizontal ant-space-align-center css-1nt49ug"
-                      >
-                        <div
-                          class="ant-space-item"
-                          style="margin-right: 5px;"
-                        >
-                          <svg
-                            class="custom-icon custom-icon-setting"
-                            height="11"
-                            viewBox="0 0 13 11"
-                            width="13"
-                            xmlns="http://www.w3.org/2000/svg"
-                          >
-                            <path
-                              d="M.167 8.5H4.25v1.167H.167zm0-4.083h5.25v1.166H.167zm0-4.084h11.666V1.5H.167zM11.06 5.598l.674-.228.584 1.01-.535.47c.067.319.067.648 0 .967l.535.47-.584 1.01-.674-.228c-.24.216-.524.382-.837.484l-.14.697H8.917l-.14-.698a2.3 2.3 0 0 1-.837-.484l-.674.229-.583-1.01.534-.47a2.3 2.3 0 0 1 0-.967l-.534-.47.583-1.01.674.228c.24-.216.524-.382.837-.484l.14-.697h1.166l.14.697c.313.102.598.269.837.485zM9.5 8.5a1.167 1.167 0 1 0 0-2.333 1.167 1.167 0 0 0 0 2.333"
-                            />
-                          </svg>
-                        </div>
-                        <div
-                          class="ant-space-item"
-                          style="margin-right: 5px;"
-                        >
-                          表格设置
-                        </div>
-                        <div
-                          class="ant-space-item"
-                        >
-                          <svg
-                            class="custom-icon custom-icon-arrow-down"
-                            color="currentColor"
-                            height="14"
-                            viewBox="0 0 16 16"
-                            width="14"
-                            xmlns="http://www.w3.org/2000/svg"
-                          >
-                            <path
-                              d="m8 8.781 3.3-3.3.943.943L8 10.667 3.757 6.424l.943-.943z"
-                              fill="currentColor"
-                            />
-                          </svg>
-                        </div>
-                      </div>
-                    </button>
-                  </div>
+                      <path
+                        d="M7 12.833A5.833 5.833 0 1 1 7 1.167a5.833 5.833 0 0 1 0 11.666m0-1.166a4.667 4.667 0 1 0 0-9.334 4.667 4.667 0 0 0 0 9.334m-2.917-5.25h5.834v1.166H4.083z"
+                      />
+                    </svg>
+                  </span>
+                  <span>
+                    批量关闭
+                  </span>
+                </button>
+              </div>
+              <div
+                class="ant-space-item"
+                style="margin-right: 12px;"
+              >
+                <button
+                  class="ant-btn ant-btn-default ant-btn-sm actiontech-table-setting-namespace basic-button-wrapper css-geipcv"
+                  style="padding: 0px 6px 0px 8px;"
+                  type="button"
+                >
                   <div
-                    class="ant-space-item"
+                    class="ant-space ant-space-horizontal ant-space-align-center css-1nt49ug"
                   >
-                    <button
-                      class="ant-btn css-dev-only-do-not-override-czn7jp ant-btn-default ant-btn-sm ant-btn-icon-only basic-button-wrapper css-geipcv"
-                      disabled=""
-                      type="button"
+                    <div
+                      class="ant-space-item"
+                      style="margin-right: 5px;"
                     >
-                      <span
-                        class="ant-btn-icon"
+                      <svg
+                        class="custom-icon custom-icon-setting"
+                        height="11"
+                        viewBox="0 0 13 11"
+                        width="13"
+                        xmlns="http://www.w3.org/2000/svg"
                       >
-                        <svg
-                          class="custom-icon custom-icon-refresh"
-                          height="14"
-                          viewBox="0 0 14 14"
-                          width="14"
-                          xmlns="http://www.w3.org/2000/svg"
-                        >
-                          <path
-                            d="M3.187 2.586a5.833 5.833 0 0 1 8.59 7.762L9.918 7h1.75a4.667 4.667 0 0 0-7.899-3.367zm7.626 8.828a5.833 5.833 0 0 1-8.59-7.762L4.083 7h-1.75a4.667 4.667 0 0 0 7.899 3.367z"
-                          />
-                        </svg>
-                      </span>
-                    </button>
+                        <path
+                          d="M.167 8.5H4.25v1.167H.167zm0-4.083h5.25v1.166H.167zm0-4.084h11.666V1.5H.167zM11.06 5.598l.674-.228.584 1.01-.535.47c.067.319.067.648 0 .967l.535.47-.584 1.01-.674-.228c-.24.216-.524.382-.837.484l-.14.697H8.917l-.14-.698a2.3 2.3 0 0 1-.837-.484l-.674.229-.583-1.01.534-.47a2.3 2.3 0 0 1 0-.967l-.534-.47.583-1.01.674.228c.24-.216.524-.382.837-.484l.14-.697h1.166l.14.697c.313.102.598.269.837.485zM9.5 8.5a1.167 1.167 0 1 0 0-2.333 1.167 1.167 0 0 0 0 2.333"
+                        />
+                      </svg>
+                    </div>
+                    <div
+                      class="ant-space-item"
+                      style="margin-right: 5px;"
+                    >
+                      表格设置
+                    </div>
+                    <div
+                      class="ant-space-item"
+                    >
+                      <svg
+                        class="custom-icon custom-icon-arrow-down"
+                        color="currentColor"
+                        height="14"
+                        viewBox="0 0 16 16"
+                        width="14"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="m8 8.781 3.3-3.3.943.943L8 10.667 3.757 6.424l.943-.943z"
+                          fill="currentColor"
+                        />
+                      </svg>
+                    </div>
                   </div>
-                </div>
+                </button>
+              </div>
+              <div
+                class="ant-space-item"
+              >
+                <button
+                  class="ant-btn ant-btn-default ant-btn-sm ant-btn-icon-only basic-button-wrapper css-geipcv"
+                  disabled=""
+                  type="button"
+                >
+                  <span
+                    class="ant-btn-icon"
+                  >
+                    <svg
+                      class="custom-icon custom-icon-refresh"
+                      height="14"
+                      viewBox="0 0 14 14"
+                      width="14"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M3.187 2.586a5.833 5.833 0 0 1 8.59 7.762L9.918 7h1.75a4.667 4.667 0 0 0-7.899-3.367zm7.626 8.828a5.833 5.833 0 0 1-8.59-7.762L4.083 7h-1.75a4.667 4.667 0 0 0 7.899 3.367z"
+                      />
+                    </svg>
+                  </span>
+                </button>
               </div>
             </div>
           </div>
         </div>
         <div
-          class="ant-table-wrapper actiontech-table-namespace table-row-cursor css-fxd6ka css-dev-only-do-not-override-bj9uhl"
+          class="ant-table-wrapper actiontech-table-namespace table-row-cursor css-fxd6ka"
         >
           <div
-            class="ant-spin-nested-loading css-dev-only-do-not-override-bj9uhl"
+            class="ant-spin-nested-loading"
           >
             <div
               class="ant-spin-container"
@@ -1447,10 +1465,10 @@ exports[`test base/DataExport/List render init snapshot 1`] = `
                               class="ant-table-selection"
                             >
                               <label
-                                class="ant-checkbox-wrapper ant-checkbox-wrapper-disabled css-dev-only-do-not-override-bj9uhl"
+                                class="ant-checkbox-wrapper ant-checkbox-wrapper-disabled"
                               >
                                 <span
-                                  class="ant-checkbox css-dev-only-do-not-override-bj9uhl ant-checkbox-disabled"
+                                  class="ant-checkbox ant-checkbox-disabled"
                                 >
                                   <input
                                     aria-label="Select all"
@@ -1636,7 +1654,7 @@ exports[`test base/DataExport/List render init snapshot 2`] = `
           href="/project/700300/data/export/create"
         >
           <button
-            class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary basic-button-wrapper css-geipcv"
+            class="ant-btn ant-btn-primary basic-button-wrapper css-geipcv"
             type="button"
           >
             <span
@@ -1666,348 +1684,357 @@ exports[`test base/DataExport/List render init snapshot 2`] = `
       </div>
     </div>
     <div
-      class="ant-spin-nested-loading css-dev-only-do-not-override-txh9fw"
+      class="ant-spin-nested-loading"
     >
       <div
         class="ant-spin-container"
       >
         <div
-          class="ant-spin-nested-loading css-dev-only-do-not-override-1kh50jg"
+          class="ant-space ant-space-horizontal ant-space-align-center full-width-element flex-space-between actiontech-table-toolbar-namespace css-a7k93w"
+          style="flex-wrap: wrap; margin-bottom: -8px;"
         >
           <div
-            class="ant-spin-container"
+            class="ant-space-item"
+            style="margin-right: 8px; padding-bottom: 8px;"
           >
             <div
-              class="ant-space css-dev-only-do-not-override-1kh50jg ant-space-horizontal ant-space-align-center full-width-element flex-space-between actiontech-table-toolbar-namespace css-c38ntt"
-              style="flex-wrap: wrap; margin-bottom: -8px;"
+              class="ant-space ant-space-horizontal ant-space-align-center"
             >
               <div
                 class="ant-space-item"
-                style="margin-right: 8px; padding-bottom: 8px;"
+                style="margin-right: 12px;"
               >
                 <div
-                  class="ant-space css-dev-only-do-not-override-1kh50jg ant-space-horizontal ant-space-align-center"
+                  class="ant-segmented basic-segmented-wrapper css-192b3m1"
                 >
                   <div
-                    class="ant-space-item"
-                    style="margin-right: 12px;"
+                    class="ant-segmented-group"
                   >
-                    <div
-                      class="ant-segmented basic-segmented-wrapper css-192b3m1 css-dev-only-do-not-override-1kh50jg"
-                    >
-                      <div
-                        class="ant-segmented-group"
-                      >
-                        <label
-                          class="ant-segmented-item ant-segmented-item-selected"
-                        >
-                          <input
-                            checked=""
-                            class="ant-segmented-item-input"
-                            type="radio"
-                          />
-                          <div
-                            class="ant-segmented-item-label"
-                            title="全部"
-                          >
-                            全部
-                          </div>
-                        </label>
-                        <label
-                          class="ant-segmented-item"
-                        >
-                          <input
-                            class="ant-segmented-item-input"
-                            type="radio"
-                          />
-                          <div
-                            class="ant-segmented-item-label"
-                            title="待审核"
-                          >
-                            待审核
-                          </div>
-                        </label>
-                        <label
-                          class="ant-segmented-item"
-                        >
-                          <input
-                            class="ant-segmented-item-input"
-                            type="radio"
-                          />
-                          <div
-                            class="ant-segmented-item-label"
-                            title="待导出"
-                          >
-                            待导出
-                          </div>
-                        </label>
-                        <label
-                          class="ant-segmented-item"
-                        >
-                          <input
-                            class="ant-segmented-item-input"
-                            type="radio"
-                          />
-                          <div
-                            class="ant-segmented-item-label"
-                            title="正在导出"
-                          >
-                            正在导出
-                          </div>
-                        </label>
-                        <label
-                          class="ant-segmented-item"
-                        >
-                          <input
-                            class="ant-segmented-item-input"
-                            type="radio"
-                          />
-                          <div
-                            class="ant-segmented-item-label"
-                            title="已驳回"
-                          >
-                            已驳回
-                          </div>
-                        </label>
-                        <label
-                          class="ant-segmented-item"
-                        >
-                          <input
-                            class="ant-segmented-item-input"
-                            type="radio"
-                          />
-                          <div
-                            class="ant-segmented-item-label"
-                            title="已关闭"
-                          >
-                            已关闭
-                          </div>
-                        </label>
-                        <label
-                          class="ant-segmented-item"
-                        >
-                          <input
-                            class="ant-segmented-item-input"
-                            type="radio"
-                          />
-                          <div
-                            class="ant-segmented-item-label"
-                            title="导出失败"
-                          >
-                            导出失败
-                          </div>
-                        </label>
-                        <label
-                          class="ant-segmented-item"
-                        >
-                          <input
-                            class="ant-segmented-item-input"
-                            type="radio"
-                          />
-                          <div
-                            class="ant-segmented-item-label"
-                            title="导出成功"
-                          >
-                            导出成功
-                          </div>
-                        </label>
-                      </div>
-                    </div>
-                  </div>
-                  <div
-                    class="ant-space-item"
-                    style="margin-right: 12px;"
-                  >
-                    <span
-                      class="ant-input-affix-wrapper basic-input-wrapper actiontech-table-search-input-namespace css-1f6svkh ant-input-affix-wrapper-sm css-dev-only-do-not-override-mlhibv"
+                    <label
+                      class="ant-segmented-item ant-segmented-item-selected"
                     >
                       <input
-                        class="ant-input ant-input-sm css-dev-only-do-not-override-mlhibv"
-                        id="actiontech-table-search-input"
-                        placeholder="输入关键字搜索"
-                        type="text"
-                        value=""
+                        checked=""
+                        class="ant-segmented-item-input"
+                        type="radio"
                       />
-                      <span
-                        class="ant-input-suffix"
-                      >
-                        <svg
-                          class="custom-icon custom-icon-search"
-                          height="14"
-                          viewBox="0 0 14 14"
-                          width="14"
-                          xmlns="http://www.w3.org/2000/svg"
-                        >
-                          <path
-                            d="m10.518 9.693 2.499 2.498-.826.825-2.498-2.498a5.252 5.252 0 0 1-8.527-4.101 5.25 5.25 0 0 1 5.25-5.25 5.252 5.252 0 0 1 4.102 8.526m-1.17-.433a4.082 4.082 0 0 0-2.931-6.927 4.08 4.08 0 0 0-4.084 4.084 4.082 4.082 0 0 0 6.927 2.93z"
-                          />
-                        </svg>
-                      </span>
-                    </span>
-                  </div>
-                  <div
-                    class="ant-space-item"
-                  >
-                    <button
-                      class="ant-btn css-dev-only-do-not-override-czn7jp ant-btn-default ant-btn-sm ant-btn-two-chinese-chars actiontech-filter-button-namespace basic-button-wrapper css-geipcv"
-                      style="padding: 0px 6px 0px 10px;"
-                      type="button"
-                    >
                       <div
-                        class="ant-space css-dev-only-do-not-override-czn7jp ant-space-horizontal ant-space-align-center css-1nt49ug"
+                        class="ant-segmented-item-label"
+                        title="全部"
                       >
-                        <div
-                          class="ant-space-item"
-                          style="margin-right: 2px;"
-                        >
-                          筛选
-                        </div>
-                        <div
-                          class="ant-space-item"
-                        >
-                          <svg
-                            color="currrentColor"
-                            height="14"
-                            viewBox="0 0 16 16"
-                            width="14"
-                            xmlns="http://www.w3.org/2000/svg"
-                          >
-                            <path
-                              d="m8 8.781 3.3-3.3.943.943L8 10.667 3.757 6.424l.943-.943z"
-                              fill="currentColor"
-                            />
-                          </svg>
-                        </div>
+                        全部
                       </div>
-                    </button>
+                    </label>
+                    <label
+                      class="ant-segmented-item"
+                    >
+                      <input
+                        class="ant-segmented-item-input"
+                        type="radio"
+                      />
+                      <div
+                        class="ant-segmented-item-label"
+                        title="待审核"
+                      >
+                        待审核
+                      </div>
+                    </label>
+                    <label
+                      class="ant-segmented-item"
+                    >
+                      <input
+                        class="ant-segmented-item-input"
+                        type="radio"
+                      />
+                      <div
+                        class="ant-segmented-item-label"
+                        title="待导出"
+                      >
+                        待导出
+                      </div>
+                    </label>
+                    <label
+                      class="ant-segmented-item"
+                    >
+                      <input
+                        class="ant-segmented-item-input"
+                        type="radio"
+                      />
+                      <div
+                        class="ant-segmented-item-label"
+                        title="正在导出"
+                      >
+                        正在导出
+                      </div>
+                    </label>
+                    <label
+                      class="ant-segmented-item"
+                    >
+                      <input
+                        class="ant-segmented-item-input"
+                        type="radio"
+                      />
+                      <div
+                        class="ant-segmented-item-label"
+                        title="已驳回"
+                      >
+                        已驳回
+                      </div>
+                    </label>
+                    <label
+                      class="ant-segmented-item"
+                    >
+                      <input
+                        class="ant-segmented-item-input"
+                        type="radio"
+                      />
+                      <div
+                        class="ant-segmented-item-label"
+                        title="已关闭"
+                      >
+                        已关闭
+                      </div>
+                    </label>
+                    <label
+                      class="ant-segmented-item"
+                    >
+                      <input
+                        class="ant-segmented-item-input"
+                        type="radio"
+                      />
+                      <div
+                        class="ant-segmented-item-label"
+                        title="导出失败"
+                      >
+                        导出失败
+                      </div>
+                    </label>
+                    <label
+                      class="ant-segmented-item"
+                    >
+                      <input
+                        class="ant-segmented-item-input"
+                        type="radio"
+                      />
+                      <div
+                        class="ant-segmented-item-label"
+                        title="导出成功"
+                      >
+                        导出成功
+                      </div>
+                    </label>
                   </div>
                 </div>
               </div>
               <div
                 class="ant-space-item"
-                style="padding-bottom: 8px;"
+                style="margin-right: 12px;"
               >
-                <div
-                  class="ant-space css-dev-only-do-not-override-1kh50jg ant-space-horizontal ant-space-align-center"
+                <span
+                  class="ant-input-affix-wrapper basic-input-wrapper actiontech-table-search-input-namespace css-1f6svkh ant-input-affix-wrapper-sm"
+                >
+                  <input
+                    class="ant-input ant-input-sm"
+                    id="actiontech-table-search-input"
+                    placeholder="输入关键字搜索"
+                    type="text"
+                    value=""
+                  />
+                  <span
+                    class="ant-input-suffix"
+                  >
+                    <span
+                      class="ant-input-clear-icon ant-input-clear-icon-hidden ant-input-clear-icon-has-suffix"
+                      role="button"
+                      tabindex="-1"
+                    >
+                      <svg
+                        fill="currentColor"
+                        height="14"
+                        viewBox="0 0 14 14"
+                        width="14"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="m7 6.175 2.887-2.887.825.825L7.825 7l2.887 2.888-.825.824L7 7.825l-2.888 2.887-.824-.824L6.175 7 3.288 4.113l.824-.825z"
+                        />
+                      </svg>
+                    </span>
+                    <svg
+                      class="custom-icon custom-icon-search"
+                      height="14"
+                      viewBox="0 0 14 14"
+                      width="14"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="m10.518 9.693 2.499 2.498-.826.825-2.498-2.498a5.252 5.252 0 0 1-8.527-4.101 5.25 5.25 0 0 1 5.25-5.25 5.252 5.252 0 0 1 4.102 8.526m-1.17-.433a4.082 4.082 0 0 0-2.931-6.927 4.08 4.08 0 0 0-4.084 4.084 4.082 4.082 0 0 0 6.927 2.93z"
+                      />
+                    </svg>
+                  </span>
+                </span>
+              </div>
+              <div
+                class="ant-space-item"
+              >
+                <button
+                  class="ant-btn ant-btn-default ant-btn-sm ant-btn-two-chinese-chars actiontech-filter-button-namespace basic-button-wrapper css-geipcv"
+                  style="padding: 0px 6px 0px 10px;"
+                  type="button"
                 >
                   <div
-                    class="ant-space-item"
-                    style="margin-right: 12px;"
+                    class="ant-space ant-space-horizontal ant-space-align-center css-1nt49ug"
                   >
-                    <button
-                      class="ant-btn css-dev-only-do-not-override-czn7jp ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
-                      disabled=""
-                      type="button"
+                    <div
+                      class="ant-space-item"
+                      style="margin-right: 2px;"
                     >
-                      <span
-                        class="ant-btn-icon"
+                      筛选
+                    </div>
+                    <div
+                      class="ant-space-item"
+                    >
+                      <svg
+                        color="currentColor"
+                        height="14"
+                        viewBox="0 0 16 16"
+                        width="14"
+                        xmlns="http://www.w3.org/2000/svg"
                       >
-                        <svg
+                        <path
+                          d="m8 8.781 3.3-3.3.943.943L8 10.667 3.757 6.424l.943-.943z"
                           fill="currentColor"
-                          height="14"
-                          viewBox="0 0 14 14"
-                          width="14"
-                          xmlns="http://www.w3.org/2000/svg"
-                        >
-                          <path
-                            d="M7 12.833A5.833 5.833 0 1 1 7 1.167a5.833 5.833 0 0 1 0 11.666m0-1.166a4.667 4.667 0 1 0 0-9.334 4.667 4.667 0 0 0 0 9.334m-2.917-5.25h5.834v1.166H4.083z"
-                          />
-                        </svg>
-                      </span>
-                      <span>
-                        批量关闭
-                      </span>
-                    </button>
+                        />
+                      </svg>
+                    </div>
                   </div>
-                  <div
-                    class="ant-space-item"
-                    style="margin-right: 12px;"
+                </button>
+              </div>
+            </div>
+          </div>
+          <div
+            class="ant-space-item"
+            style="padding-bottom: 8px;"
+          >
+            <div
+              class="ant-space ant-space-horizontal ant-space-align-center"
+            >
+              <div
+                class="ant-space-item"
+                style="margin-right: 12px;"
+              >
+                <button
+                  class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                  disabled=""
+                  type="button"
+                >
+                  <span
+                    class="ant-btn-icon"
                   >
-                    <button
-                      class="ant-btn css-dev-only-do-not-override-czn7jp ant-btn-default ant-btn-sm actiontech-table-setting-namespace basic-button-wrapper css-geipcv"
-                      style="padding: 0px 6px 0px 8px;"
-                      type="button"
+                    <svg
+                      fill="currentColor"
+                      height="14"
+                      viewBox="0 0 14 14"
+                      width="14"
+                      xmlns="http://www.w3.org/2000/svg"
                     >
-                      <div
-                        class="ant-space css-dev-only-do-not-override-czn7jp ant-space-horizontal ant-space-align-center css-1nt49ug"
-                      >
-                        <div
-                          class="ant-space-item"
-                          style="margin-right: 5px;"
-                        >
-                          <svg
-                            class="custom-icon custom-icon-setting"
-                            height="11"
-                            viewBox="0 0 13 11"
-                            width="13"
-                            xmlns="http://www.w3.org/2000/svg"
-                          >
-                            <path
-                              d="M.167 8.5H4.25v1.167H.167zm0-4.083h5.25v1.166H.167zm0-4.084h11.666V1.5H.167zM11.06 5.598l.674-.228.584 1.01-.535.47c.067.319.067.648 0 .967l.535.47-.584 1.01-.674-.228c-.24.216-.524.382-.837.484l-.14.697H8.917l-.14-.698a2.3 2.3 0 0 1-.837-.484l-.674.229-.583-1.01.534-.47a2.3 2.3 0 0 1 0-.967l-.534-.47.583-1.01.674.228c.24-.216.524-.382.837-.484l.14-.697h1.166l.14.697c.313.102.598.269.837.485zM9.5 8.5a1.167 1.167 0 1 0 0-2.333 1.167 1.167 0 0 0 0 2.333"
-                            />
-                          </svg>
-                        </div>
-                        <div
-                          class="ant-space-item"
-                          style="margin-right: 5px;"
-                        >
-                          表格设置
-                        </div>
-                        <div
-                          class="ant-space-item"
-                        >
-                          <svg
-                            class="custom-icon custom-icon-arrow-down"
-                            color="currentColor"
-                            height="14"
-                            viewBox="0 0 16 16"
-                            width="14"
-                            xmlns="http://www.w3.org/2000/svg"
-                          >
-                            <path
-                              d="m8 8.781 3.3-3.3.943.943L8 10.667 3.757 6.424l.943-.943z"
-                              fill="currentColor"
-                            />
-                          </svg>
-                        </div>
-                      </div>
-                    </button>
-                  </div>
+                      <path
+                        d="M7 12.833A5.833 5.833 0 1 1 7 1.167a5.833 5.833 0 0 1 0 11.666m0-1.166a4.667 4.667 0 1 0 0-9.334 4.667 4.667 0 0 0 0 9.334m-2.917-5.25h5.834v1.166H4.083z"
+                      />
+                    </svg>
+                  </span>
+                  <span>
+                    批量关闭
+                  </span>
+                </button>
+              </div>
+              <div
+                class="ant-space-item"
+                style="margin-right: 12px;"
+              >
+                <button
+                  class="ant-btn ant-btn-default ant-btn-sm actiontech-table-setting-namespace basic-button-wrapper css-geipcv"
+                  style="padding: 0px 6px 0px 8px;"
+                  type="button"
+                >
                   <div
-                    class="ant-space-item"
+                    class="ant-space ant-space-horizontal ant-space-align-center css-1nt49ug"
                   >
-                    <button
-                      class="ant-btn css-dev-only-do-not-override-czn7jp ant-btn-default ant-btn-sm ant-btn-icon-only basic-button-wrapper css-geipcv"
-                      disabled=""
-                      type="button"
+                    <div
+                      class="ant-space-item"
+                      style="margin-right: 5px;"
                     >
-                      <span
-                        class="ant-btn-icon"
+                      <svg
+                        class="custom-icon custom-icon-setting"
+                        height="11"
+                        viewBox="0 0 13 11"
+                        width="13"
+                        xmlns="http://www.w3.org/2000/svg"
                       >
-                        <svg
-                          class="custom-icon custom-icon-refresh"
-                          height="14"
-                          viewBox="0 0 14 14"
-                          width="14"
-                          xmlns="http://www.w3.org/2000/svg"
-                        >
-                          <path
-                            d="M3.187 2.586a5.833 5.833 0 0 1 8.59 7.762L9.918 7h1.75a4.667 4.667 0 0 0-7.899-3.367zm7.626 8.828a5.833 5.833 0 0 1-8.59-7.762L4.083 7h-1.75a4.667 4.667 0 0 0 7.899 3.367z"
-                          />
-                        </svg>
-                      </span>
-                    </button>
+                        <path
+                          d="M.167 8.5H4.25v1.167H.167zm0-4.083h5.25v1.166H.167zm0-4.084h11.666V1.5H.167zM11.06 5.598l.674-.228.584 1.01-.535.47c.067.319.067.648 0 .967l.535.47-.584 1.01-.674-.228c-.24.216-.524.382-.837.484l-.14.697H8.917l-.14-.698a2.3 2.3 0 0 1-.837-.484l-.674.229-.583-1.01.534-.47a2.3 2.3 0 0 1 0-.967l-.534-.47.583-1.01.674.228c.24-.216.524-.382.837-.484l.14-.697h1.166l.14.697c.313.102.598.269.837.485zM9.5 8.5a1.167 1.167 0 1 0 0-2.333 1.167 1.167 0 0 0 0 2.333"
+                        />
+                      </svg>
+                    </div>
+                    <div
+                      class="ant-space-item"
+                      style="margin-right: 5px;"
+                    >
+                      表格设置
+                    </div>
+                    <div
+                      class="ant-space-item"
+                    >
+                      <svg
+                        class="custom-icon custom-icon-arrow-down"
+                        color="currentColor"
+                        height="14"
+                        viewBox="0 0 16 16"
+                        width="14"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="m8 8.781 3.3-3.3.943.943L8 10.667 3.757 6.424l.943-.943z"
+                          fill="currentColor"
+                        />
+                      </svg>
+                    </div>
                   </div>
-                </div>
+                </button>
+              </div>
+              <div
+                class="ant-space-item"
+              >
+                <button
+                  class="ant-btn ant-btn-default ant-btn-sm ant-btn-icon-only basic-button-wrapper css-geipcv"
+                  disabled=""
+                  type="button"
+                >
+                  <span
+                    class="ant-btn-icon"
+                  >
+                    <svg
+                      class="custom-icon custom-icon-refresh"
+                      height="14"
+                      viewBox="0 0 14 14"
+                      width="14"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M3.187 2.586a5.833 5.833 0 0 1 8.59 7.762L9.918 7h1.75a4.667 4.667 0 0 0-7.899-3.367zm7.626 8.828a5.833 5.833 0 0 1-8.59-7.762L4.083 7h-1.75a4.667 4.667 0 0 0 7.899 3.367z"
+                      />
+                    </svg>
+                  </span>
+                </button>
               </div>
             </div>
           </div>
         </div>
         <div
-          class="ant-table-wrapper actiontech-table-namespace table-row-cursor css-fxd6ka css-dev-only-do-not-override-bj9uhl"
+          class="ant-table-wrapper actiontech-table-namespace table-row-cursor css-fxd6ka"
         >
           <div
-            class="ant-spin-nested-loading css-dev-only-do-not-override-bj9uhl"
+            class="ant-spin-nested-loading"
           >
             <div
               class="ant-spin-container"
@@ -2043,10 +2070,10 @@ exports[`test base/DataExport/List render init snapshot 2`] = `
                               class="ant-table-selection"
                             >
                               <label
-                                class="ant-checkbox-wrapper css-dev-only-do-not-override-bj9uhl"
+                                class="ant-checkbox-wrapper"
                               >
                                 <span
-                                  class="ant-checkbox css-dev-only-do-not-override-bj9uhl"
+                                  class="ant-checkbox"
                                 >
                                   <input
                                     aria-label="Select all"
@@ -2195,10 +2222,10 @@ exports[`test base/DataExport/List render init snapshot 2`] = `
                             style="position: sticky; left: 0px;"
                           >
                             <label
-                              class="ant-checkbox-wrapper css-dev-only-do-not-override-bj9uhl"
+                              class="ant-checkbox-wrapper"
                             >
                               <span
-                                class="ant-checkbox css-dev-only-do-not-override-bj9uhl"
+                                class="ant-checkbox"
                               >
                                 <input
                                   class="ant-checkbox-input"
@@ -2237,7 +2264,7 @@ exports[`test base/DataExport/List render init snapshot 2`] = `
                             class="ant-table-cell ellipsis-column-width"
                           >
                             <div
-                              class="ant-typography ant-typography-ellipsis ant-typography-single-line ant-typography-ellipsis-single-line basic-typography-ellipsis css-wgj5gs css-dev-only-do-not-override-bj9uhl"
+                              class="ant-typography ant-typography-ellipsis ant-typography-single-line ant-typography-ellipsis-single-line basic-typography-ellipsis css-wgj5gs"
                             >
                               mysql-1_20240130113114
                             </div>
@@ -2247,11 +2274,11 @@ exports[`test base/DataExport/List render init snapshot 2`] = `
                           >
                             <div
                               aria-label="desc"
-                              class="ant-typography ant-typography-ellipsis ant-typography-single-line basic-typography-ellipsis css-wgj5gs css-dev-only-do-not-override-bj9uhl"
+                              class="ant-typography ant-typography-ellipsis ant-typography-single-line basic-typography-ellipsis css-wgj5gs"
                             >
                               desc
                               <div
-                                aria-label="Copy"
+                                aria-label="复制"
                                 class="ant-typography-copy"
                                 role="button"
                                 style="border: 0px; background: transparent; padding: 0px; line-height: inherit; display: inline-block;"
@@ -2293,7 +2320,7 @@ exports[`test base/DataExport/List render init snapshot 2`] = `
                                   ...
                                 </span>
                                 <div
-                                  aria-label="Copy"
+                                  aria-label="复制"
                                   class="ant-typography-copy"
                                   role="button"
                                   style="border: 0px; background: transparent; padding: 0px; line-height: inherit; display: inline-block;"
@@ -2377,10 +2404,10 @@ exports[`test base/DataExport/List render init snapshot 2`] = `
                             style="position: sticky; left: 0px;"
                           >
                             <label
-                              class="ant-checkbox-wrapper css-dev-only-do-not-override-bj9uhl"
+                              class="ant-checkbox-wrapper"
                             >
                               <span
-                                class="ant-checkbox css-dev-only-do-not-override-bj9uhl"
+                                class="ant-checkbox"
                               >
                                 <input
                                   class="ant-checkbox-input"
@@ -2419,7 +2446,7 @@ exports[`test base/DataExport/List render init snapshot 2`] = `
                             class="ant-table-cell ellipsis-column-width"
                           >
                             <div
-                              class="ant-typography ant-typography-ellipsis ant-typography-single-line ant-typography-ellipsis-single-line basic-typography-ellipsis css-wgj5gs css-dev-only-do-not-override-bj9uhl"
+                              class="ant-typography ant-typography-ellipsis ant-typography-single-line ant-typography-ellipsis-single-line basic-typography-ellipsis css-wgj5gs"
                             >
                               mysql-2_20240130113114
                             </div>
@@ -2429,11 +2456,11 @@ exports[`test base/DataExport/List render init snapshot 2`] = `
                           >
                             <div
                               aria-label="desc"
-                              class="ant-typography ant-typography-ellipsis ant-typography-single-line basic-typography-ellipsis css-wgj5gs css-dev-only-do-not-override-bj9uhl"
+                              class="ant-typography ant-typography-ellipsis ant-typography-single-line basic-typography-ellipsis css-wgj5gs"
                             >
                               desc
                               <div
-                                aria-label="Copy"
+                                aria-label="复制"
                                 class="ant-typography-copy"
                                 role="button"
                                 style="border: 0px; background: transparent; padding: 0px; line-height: inherit; display: inline-block;"
@@ -2475,7 +2502,7 @@ exports[`test base/DataExport/List render init snapshot 2`] = `
                                   ...
                                 </span>
                                 <div
-                                  aria-label="Copy"
+                                  aria-label="复制"
                                   class="ant-typography-copy"
                                   role="button"
                                   style="border: 0px; background: transparent; padding: 0px; line-height: inherit; display: inline-block;"
@@ -2542,13 +2569,13 @@ exports[`test base/DataExport/List render init snapshot 2`] = `
                             class="ant-table-cell"
                           >
                             <div
-                              class="ant-space css-dev-only-do-not-override-bj9uhl ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
+                              class="ant-space ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
                             >
                               <div
                                 class="ant-space-item"
                               >
                                 <span
-                                  class="ant-avatar ant-avatar-circle action-avatar css-1wq79dc css-dev-only-do-not-override-bj9uhl"
+                                  class="ant-avatar ant-avatar-circle action-avatar css-1wq79dc"
                                 >
                                   <span
                                     class="ant-avatar-string"
@@ -2567,7 +2594,7 @@ exports[`test base/DataExport/List render init snapshot 2`] = `
                 </div>
               </div>
               <ul
-                class="ant-pagination ant-table-pagination ant-table-pagination-right actiontech-table-pagination actiontech-table-pagination-fixed css-dev-only-do-not-override-bj9uhl"
+                class="ant-pagination ant-table-pagination ant-table-pagination-right actiontech-table-pagination actiontech-table-pagination-fixed"
               >
                 <li
                   class="ant-pagination-total-text"
@@ -2579,7 +2606,7 @@ exports[`test base/DataExport/List render init snapshot 2`] = `
                 <li
                   aria-disabled="true"
                   class="ant-pagination-prev ant-pagination-disabled"
-                  title="Previous Page"
+                  title="上一页"
                 >
                   <button
                     class="ant-pagination-item-link"
@@ -2622,7 +2649,7 @@ exports[`test base/DataExport/List render init snapshot 2`] = `
                 <li
                   aria-disabled="true"
                   class="ant-pagination-next ant-pagination-disabled"
-                  title="Next Page"
+                  title="下一页"
                 >
                   <button
                     class="ant-pagination-item-link"
@@ -2655,8 +2682,8 @@ exports[`test base/DataExport/List render init snapshot 2`] = `
                   class="ant-pagination-options"
                 >
                   <div
-                    aria-label="Page Size"
-                    class="ant-select ant-pagination-options-size-changer css-dev-only-do-not-override-bj9uhl ant-select-single ant-select-show-arrow ant-select-show-search"
+                    aria-label="页码"
+                    class="ant-select ant-pagination-options-size-changer ant-select-single ant-select-show-arrow ant-select-show-search"
                   >
                     <div
                       class="ant-select-selector"
@@ -2670,7 +2697,7 @@ exports[`test base/DataExport/List render init snapshot 2`] = `
                           aria-controls="rc_select_TEST_OR_SSR_list"
                           aria-expanded="false"
                           aria-haspopup="listbox"
-                          aria-label="Page Size"
+                          aria-label="页码"
                           aria-owns="rc_select_TEST_OR_SSR_list"
                           autocomplete="off"
                           class="ant-select-selection-search-input"
@@ -2682,9 +2709,9 @@ exports[`test base/DataExport/List render init snapshot 2`] = `
                       </span>
                       <span
                         class="ant-select-selection-item"
-                        title="20 / page"
+                        title="20 条/页"
                       >
-                        20 / page
+                        20 条/页
                       </span>
                     </div>
                     <span
@@ -2743,7 +2770,7 @@ exports[`test base/DataExport/List render table filter items 1`] = `
           href="/project/700300/data/export/create"
         >
           <button
-            class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary basic-button-wrapper css-geipcv"
+            class="ant-btn ant-btn-primary basic-button-wrapper css-geipcv"
             type="button"
           >
             <span
@@ -2773,345 +2800,354 @@ exports[`test base/DataExport/List render table filter items 1`] = `
       </div>
     </div>
     <div
-      class="ant-spin-nested-loading css-dev-only-do-not-override-txh9fw"
+      class="ant-spin-nested-loading"
     >
       <div
         class="ant-spin-container"
       >
         <div
-          class="ant-spin-nested-loading css-dev-only-do-not-override-1kh50jg"
+          class="ant-space ant-space-horizontal ant-space-align-center full-width-element flex-space-between actiontech-table-toolbar-namespace css-a7k93w"
+          style="flex-wrap: wrap; margin-bottom: -8px;"
         >
           <div
-            class="ant-spin-container"
+            class="ant-space-item"
+            style="margin-right: 8px; padding-bottom: 8px;"
           >
             <div
-              class="ant-space css-dev-only-do-not-override-1kh50jg ant-space-horizontal ant-space-align-center full-width-element flex-space-between actiontech-table-toolbar-namespace css-c38ntt"
-              style="flex-wrap: wrap; margin-bottom: -8px;"
+              class="ant-space ant-space-horizontal ant-space-align-center"
             >
               <div
                 class="ant-space-item"
-                style="margin-right: 8px; padding-bottom: 8px;"
+                style="margin-right: 12px;"
               >
                 <div
-                  class="ant-space css-dev-only-do-not-override-1kh50jg ant-space-horizontal ant-space-align-center"
+                  class="ant-segmented basic-segmented-wrapper css-192b3m1"
                 >
                   <div
-                    class="ant-space-item"
-                    style="margin-right: 12px;"
+                    class="ant-segmented-group"
                   >
-                    <div
-                      class="ant-segmented basic-segmented-wrapper css-192b3m1 css-dev-only-do-not-override-1kh50jg"
-                    >
-                      <div
-                        class="ant-segmented-group"
-                      >
-                        <label
-                          class="ant-segmented-item"
-                        >
-                          <input
-                            checked=""
-                            class="ant-segmented-item-input"
-                            type="radio"
-                          />
-                          <div
-                            class="ant-segmented-item-label"
-                            title="全部"
-                          >
-                            全部
-                          </div>
-                        </label>
-                        <label
-                          class="ant-segmented-item"
-                        >
-                          <input
-                            class="ant-segmented-item-input"
-                            type="radio"
-                          />
-                          <div
-                            class="ant-segmented-item-label"
-                            title="待审核"
-                          >
-                            待审核
-                          </div>
-                        </label>
-                        <label
-                          class="ant-segmented-item ant-segmented-item-selected"
-                        >
-                          <input
-                            class="ant-segmented-item-input"
-                            type="radio"
-                          />
-                          <div
-                            class="ant-segmented-item-label"
-                            title="待导出"
-                          >
-                            待导出
-                          </div>
-                        </label>
-                        <label
-                          class="ant-segmented-item"
-                        >
-                          <input
-                            class="ant-segmented-item-input"
-                            type="radio"
-                          />
-                          <div
-                            class="ant-segmented-item-label"
-                            title="正在导出"
-                          >
-                            正在导出
-                          </div>
-                        </label>
-                        <label
-                          class="ant-segmented-item"
-                        >
-                          <input
-                            class="ant-segmented-item-input"
-                            type="radio"
-                          />
-                          <div
-                            class="ant-segmented-item-label"
-                            title="已驳回"
-                          >
-                            已驳回
-                          </div>
-                        </label>
-                        <label
-                          class="ant-segmented-item"
-                        >
-                          <input
-                            class="ant-segmented-item-input"
-                            type="radio"
-                          />
-                          <div
-                            class="ant-segmented-item-label"
-                            title="已关闭"
-                          >
-                            已关闭
-                          </div>
-                        </label>
-                        <label
-                          class="ant-segmented-item"
-                        >
-                          <input
-                            class="ant-segmented-item-input"
-                            type="radio"
-                          />
-                          <div
-                            class="ant-segmented-item-label"
-                            title="导出失败"
-                          >
-                            导出失败
-                          </div>
-                        </label>
-                        <label
-                          class="ant-segmented-item"
-                        >
-                          <input
-                            class="ant-segmented-item-input"
-                            type="radio"
-                          />
-                          <div
-                            class="ant-segmented-item-label"
-                            title="导出成功"
-                          >
-                            导出成功
-                          </div>
-                        </label>
-                      </div>
-                    </div>
-                  </div>
-                  <div
-                    class="ant-space-item"
-                    style="margin-right: 12px;"
-                  >
-                    <span
-                      class="ant-input-affix-wrapper basic-input-wrapper actiontech-table-search-input-namespace css-1f6svkh ant-input-affix-wrapper-sm css-dev-only-do-not-override-mlhibv"
+                    <label
+                      class="ant-segmented-item"
                     >
                       <input
-                        class="ant-input ant-input-sm css-dev-only-do-not-override-mlhibv"
-                        id="actiontech-table-search-input"
-                        placeholder="输入关键字搜索"
-                        type="text"
-                        value=""
+                        checked=""
+                        class="ant-segmented-item-input"
+                        type="radio"
                       />
-                      <span
-                        class="ant-input-suffix"
-                      >
-                        <svg
-                          class="custom-icon custom-icon-search"
-                          height="14"
-                          viewBox="0 0 14 14"
-                          width="14"
-                          xmlns="http://www.w3.org/2000/svg"
-                        >
-                          <path
-                            d="m10.518 9.693 2.499 2.498-.826.825-2.498-2.498a5.252 5.252 0 0 1-8.527-4.101 5.25 5.25 0 0 1 5.25-5.25 5.252 5.252 0 0 1 4.102 8.526m-1.17-.433a4.082 4.082 0 0 0-2.931-6.927 4.08 4.08 0 0 0-4.084 4.084 4.082 4.082 0 0 0 6.927 2.93z"
-                          />
-                        </svg>
-                      </span>
-                    </span>
-                  </div>
-                  <div
-                    class="ant-space-item"
-                  >
-                    <button
-                      class="ant-btn css-dev-only-do-not-override-czn7jp ant-btn-default ant-btn-sm actiontech-filter-button-namespace basic-button-wrapper css-geipcv"
-                      style="padding: 0px 6px 0px 10px;"
-                      type="button"
-                    >
                       <div
-                        class="ant-space css-dev-only-do-not-override-czn7jp ant-space-horizontal ant-space-align-center css-1nt49ug"
+                        class="ant-segmented-item-label"
+                        title="全部"
                       >
-                        <div
-                          class="ant-space-item"
-                          style="margin-right: 2px;"
-                        >
-                          收起筛选
-                        </div>
-                        <div
-                          class="ant-space-item"
-                        >
-                          <svg
-                            color="currrentColor"
-                            fill="none"
-                            height="14"
-                            viewBox="0 0 16 16"
-                            width="14"
-                            xmlns="http://www.w3.org/2000/svg"
-                          >
-                            <path
-                              d="m8 7.219-3.3 3.3-.942-.943L8 5.333l4.243 4.243-.943.943z"
-                              fill="currentColor"
-                            />
-                          </svg>
-                        </div>
+                        全部
                       </div>
-                    </button>
+                    </label>
+                    <label
+                      class="ant-segmented-item"
+                    >
+                      <input
+                        class="ant-segmented-item-input"
+                        type="radio"
+                      />
+                      <div
+                        class="ant-segmented-item-label"
+                        title="待审核"
+                      >
+                        待审核
+                      </div>
+                    </label>
+                    <label
+                      class="ant-segmented-item ant-segmented-item-selected"
+                    >
+                      <input
+                        class="ant-segmented-item-input"
+                        type="radio"
+                      />
+                      <div
+                        class="ant-segmented-item-label"
+                        title="待导出"
+                      >
+                        待导出
+                      </div>
+                    </label>
+                    <label
+                      class="ant-segmented-item"
+                    >
+                      <input
+                        class="ant-segmented-item-input"
+                        type="radio"
+                      />
+                      <div
+                        class="ant-segmented-item-label"
+                        title="正在导出"
+                      >
+                        正在导出
+                      </div>
+                    </label>
+                    <label
+                      class="ant-segmented-item"
+                    >
+                      <input
+                        class="ant-segmented-item-input"
+                        type="radio"
+                      />
+                      <div
+                        class="ant-segmented-item-label"
+                        title="已驳回"
+                      >
+                        已驳回
+                      </div>
+                    </label>
+                    <label
+                      class="ant-segmented-item"
+                    >
+                      <input
+                        class="ant-segmented-item-input"
+                        type="radio"
+                      />
+                      <div
+                        class="ant-segmented-item-label"
+                        title="已关闭"
+                      >
+                        已关闭
+                      </div>
+                    </label>
+                    <label
+                      class="ant-segmented-item"
+                    >
+                      <input
+                        class="ant-segmented-item-input"
+                        type="radio"
+                      />
+                      <div
+                        class="ant-segmented-item-label"
+                        title="导出失败"
+                      >
+                        导出失败
+                      </div>
+                    </label>
+                    <label
+                      class="ant-segmented-item"
+                    >
+                      <input
+                        class="ant-segmented-item-input"
+                        type="radio"
+                      />
+                      <div
+                        class="ant-segmented-item-label"
+                        title="导出成功"
+                      >
+                        导出成功
+                      </div>
+                    </label>
                   </div>
                 </div>
               </div>
               <div
                 class="ant-space-item"
-                style="padding-bottom: 8px;"
+                style="margin-right: 12px;"
               >
-                <div
-                  class="ant-space css-dev-only-do-not-override-1kh50jg ant-space-horizontal ant-space-align-center"
+                <span
+                  class="ant-input-affix-wrapper basic-input-wrapper actiontech-table-search-input-namespace css-1f6svkh ant-input-affix-wrapper-sm"
+                >
+                  <input
+                    class="ant-input ant-input-sm"
+                    id="actiontech-table-search-input"
+                    placeholder="输入关键字搜索"
+                    type="text"
+                    value=""
+                  />
+                  <span
+                    class="ant-input-suffix"
+                  >
+                    <span
+                      class="ant-input-clear-icon ant-input-clear-icon-hidden ant-input-clear-icon-has-suffix"
+                      role="button"
+                      tabindex="-1"
+                    >
+                      <svg
+                        fill="currentColor"
+                        height="14"
+                        viewBox="0 0 14 14"
+                        width="14"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="m7 6.175 2.887-2.887.825.825L7.825 7l2.887 2.888-.825.824L7 7.825l-2.888 2.887-.824-.824L6.175 7 3.288 4.113l.824-.825z"
+                        />
+                      </svg>
+                    </span>
+                    <svg
+                      class="custom-icon custom-icon-search"
+                      height="14"
+                      viewBox="0 0 14 14"
+                      width="14"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="m10.518 9.693 2.499 2.498-.826.825-2.498-2.498a5.252 5.252 0 0 1-8.527-4.101 5.25 5.25 0 0 1 5.25-5.25 5.252 5.252 0 0 1 4.102 8.526m-1.17-.433a4.082 4.082 0 0 0-2.931-6.927 4.08 4.08 0 0 0-4.084 4.084 4.082 4.082 0 0 0 6.927 2.93z"
+                      />
+                    </svg>
+                  </span>
+                </span>
+              </div>
+              <div
+                class="ant-space-item"
+              >
+                <button
+                  class="ant-btn ant-btn-default ant-btn-sm actiontech-filter-button-namespace basic-button-wrapper css-geipcv"
+                  style="padding: 0px 6px 0px 10px;"
+                  type="button"
                 >
                   <div
-                    class="ant-space-item"
-                    style="margin-right: 12px;"
+                    class="ant-space ant-space-horizontal ant-space-align-center css-1nt49ug"
                   >
-                    <button
-                      class="ant-btn css-dev-only-do-not-override-czn7jp ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
-                      disabled=""
-                      type="button"
+                    <div
+                      class="ant-space-item"
+                      style="margin-right: 2px;"
                     >
-                      <span
-                        class="ant-btn-icon"
+                      收起筛选
+                    </div>
+                    <div
+                      class="ant-space-item"
+                    >
+                      <svg
+                        color="currentColor"
+                        fill="none"
+                        height="14"
+                        viewBox="0 0 16 16"
+                        width="14"
+                        xmlns="http://www.w3.org/2000/svg"
                       >
-                        <svg
+                        <path
+                          d="m8 7.219-3.3 3.3-.942-.943L8 5.333l4.243 4.243-.943.943z"
                           fill="currentColor"
-                          height="14"
-                          viewBox="0 0 14 14"
-                          width="14"
-                          xmlns="http://www.w3.org/2000/svg"
-                        >
-                          <path
-                            d="M7 12.833A5.833 5.833 0 1 1 7 1.167a5.833 5.833 0 0 1 0 11.666m0-1.166a4.667 4.667 0 1 0 0-9.334 4.667 4.667 0 0 0 0 9.334m-2.917-5.25h5.834v1.166H4.083z"
-                          />
-                        </svg>
-                      </span>
-                      <span>
-                        批量关闭
-                      </span>
-                    </button>
+                        />
+                      </svg>
+                    </div>
                   </div>
-                  <div
-                    class="ant-space-item"
-                    style="margin-right: 12px;"
+                </button>
+              </div>
+            </div>
+          </div>
+          <div
+            class="ant-space-item"
+            style="padding-bottom: 8px;"
+          >
+            <div
+              class="ant-space ant-space-horizontal ant-space-align-center"
+            >
+              <div
+                class="ant-space-item"
+                style="margin-right: 12px;"
+              >
+                <button
+                  class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                  disabled=""
+                  type="button"
+                >
+                  <span
+                    class="ant-btn-icon"
                   >
-                    <button
-                      class="ant-btn css-dev-only-do-not-override-czn7jp ant-btn-default ant-btn-sm actiontech-table-setting-namespace basic-button-wrapper css-geipcv"
-                      style="padding: 0px 6px 0px 8px;"
-                      type="button"
+                    <svg
+                      fill="currentColor"
+                      height="14"
+                      viewBox="0 0 14 14"
+                      width="14"
+                      xmlns="http://www.w3.org/2000/svg"
                     >
-                      <div
-                        class="ant-space css-dev-only-do-not-override-czn7jp ant-space-horizontal ant-space-align-center css-1nt49ug"
-                      >
-                        <div
-                          class="ant-space-item"
-                          style="margin-right: 5px;"
-                        >
-                          <svg
-                            class="custom-icon custom-icon-setting"
-                            height="11"
-                            viewBox="0 0 13 11"
-                            width="13"
-                            xmlns="http://www.w3.org/2000/svg"
-                          >
-                            <path
-                              d="M.167 8.5H4.25v1.167H.167zm0-4.083h5.25v1.166H.167zm0-4.084h11.666V1.5H.167zM11.06 5.598l.674-.228.584 1.01-.535.47c.067.319.067.648 0 .967l.535.47-.584 1.01-.674-.228c-.24.216-.524.382-.837.484l-.14.697H8.917l-.14-.698a2.3 2.3 0 0 1-.837-.484l-.674.229-.583-1.01.534-.47a2.3 2.3 0 0 1 0-.967l-.534-.47.583-1.01.674.228c.24-.216.524-.382.837-.484l.14-.697h1.166l.14.697c.313.102.598.269.837.485zM9.5 8.5a1.167 1.167 0 1 0 0-2.333 1.167 1.167 0 0 0 0 2.333"
-                            />
-                          </svg>
-                        </div>
-                        <div
-                          class="ant-space-item"
-                          style="margin-right: 5px;"
-                        >
-                          表格设置
-                        </div>
-                        <div
-                          class="ant-space-item"
-                        >
-                          <svg
-                            class="custom-icon custom-icon-arrow-down"
-                            color="currentColor"
-                            height="14"
-                            viewBox="0 0 16 16"
-                            width="14"
-                            xmlns="http://www.w3.org/2000/svg"
-                          >
-                            <path
-                              d="m8 8.781 3.3-3.3.943.943L8 10.667 3.757 6.424l.943-.943z"
-                              fill="currentColor"
-                            />
-                          </svg>
-                        </div>
-                      </div>
-                    </button>
-                  </div>
+                      <path
+                        d="M7 12.833A5.833 5.833 0 1 1 7 1.167a5.833 5.833 0 0 1 0 11.666m0-1.166a4.667 4.667 0 1 0 0-9.334 4.667 4.667 0 0 0 0 9.334m-2.917-5.25h5.834v1.166H4.083z"
+                      />
+                    </svg>
+                  </span>
+                  <span>
+                    批量关闭
+                  </span>
+                </button>
+              </div>
+              <div
+                class="ant-space-item"
+                style="margin-right: 12px;"
+              >
+                <button
+                  class="ant-btn ant-btn-default ant-btn-sm actiontech-table-setting-namespace basic-button-wrapper css-geipcv"
+                  style="padding: 0px 6px 0px 8px;"
+                  type="button"
+                >
                   <div
-                    class="ant-space-item"
+                    class="ant-space ant-space-horizontal ant-space-align-center css-1nt49ug"
                   >
-                    <button
-                      class="ant-btn css-dev-only-do-not-override-czn7jp ant-btn-default ant-btn-sm ant-btn-icon-only basic-button-wrapper css-geipcv"
-                      type="button"
+                    <div
+                      class="ant-space-item"
+                      style="margin-right: 5px;"
                     >
-                      <span
-                        class="ant-btn-icon"
+                      <svg
+                        class="custom-icon custom-icon-setting"
+                        height="11"
+                        viewBox="0 0 13 11"
+                        width="13"
+                        xmlns="http://www.w3.org/2000/svg"
                       >
-                        <svg
-                          class="custom-icon custom-icon-refresh"
-                          height="14"
-                          viewBox="0 0 14 14"
-                          width="14"
-                          xmlns="http://www.w3.org/2000/svg"
-                        >
-                          <path
-                            d="M3.187 2.586a5.833 5.833 0 0 1 8.59 7.762L9.918 7h1.75a4.667 4.667 0 0 0-7.899-3.367zm7.626 8.828a5.833 5.833 0 0 1-8.59-7.762L4.083 7h-1.75a4.667 4.667 0 0 0 7.899 3.367z"
-                          />
-                        </svg>
-                      </span>
-                    </button>
+                        <path
+                          d="M.167 8.5H4.25v1.167H.167zm0-4.083h5.25v1.166H.167zm0-4.084h11.666V1.5H.167zM11.06 5.598l.674-.228.584 1.01-.535.47c.067.319.067.648 0 .967l.535.47-.584 1.01-.674-.228c-.24.216-.524.382-.837.484l-.14.697H8.917l-.14-.698a2.3 2.3 0 0 1-.837-.484l-.674.229-.583-1.01.534-.47a2.3 2.3 0 0 1 0-.967l-.534-.47.583-1.01.674.228c.24-.216.524-.382.837-.484l.14-.697h1.166l.14.697c.313.102.598.269.837.485zM9.5 8.5a1.167 1.167 0 1 0 0-2.333 1.167 1.167 0 0 0 0 2.333"
+                        />
+                      </svg>
+                    </div>
+                    <div
+                      class="ant-space-item"
+                      style="margin-right: 5px;"
+                    >
+                      表格设置
+                    </div>
+                    <div
+                      class="ant-space-item"
+                    >
+                      <svg
+                        class="custom-icon custom-icon-arrow-down"
+                        color="currentColor"
+                        height="14"
+                        viewBox="0 0 16 16"
+                        width="14"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="m8 8.781 3.3-3.3.943.943L8 10.667 3.757 6.424l.943-.943z"
+                          fill="currentColor"
+                        />
+                      </svg>
+                    </div>
                   </div>
-                </div>
+                </button>
+              </div>
+              <div
+                class="ant-space-item"
+              >
+                <button
+                  class="ant-btn ant-btn-default ant-btn-sm ant-btn-icon-only basic-button-wrapper css-geipcv"
+                  type="button"
+                >
+                  <span
+                    class="ant-btn-icon"
+                  >
+                    <svg
+                      class="custom-icon custom-icon-refresh"
+                      height="14"
+                      viewBox="0 0 14 14"
+                      width="14"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M3.187 2.586a5.833 5.833 0 0 1 8.59 7.762L9.918 7h1.75a4.667 4.667 0 0 0-7.899-3.367zm7.626 8.828a5.833 5.833 0 0 1-8.59-7.762L4.083 7h-1.75a4.667 4.667 0 0 0 7.899 3.367z"
+                      />
+                    </svg>
+                  </span>
+                </button>
               </div>
             </div>
           </div>
         </div>
         <div
-          class="ant-space css-dev-only-do-not-override-1kh50jg ant-space-horizontal ant-space-align-center actiontech-table-filter-container-namespace full-width-element css-de5ds5"
+          class="ant-space ant-space-horizontal ant-space-align-center actiontech-table-filter-container-namespace full-width-element css-tvjydu"
           style="flex-wrap: wrap; margin-bottom: -12px;"
         >
           <div
@@ -3122,7 +3158,7 @@ exports[`test base/DataExport/List render table filter items 1`] = `
               class="css-1y8q0oh"
             >
               <div
-                class="ant-picker ant-picker-range ant-picker-small css-dev-only-do-not-override-1q11hvz basic-range-picker-wrapper custom-picker-prefix css-1o244th"
+                class="ant-picker ant-picker-range ant-picker-small basic-range-picker-wrapper custom-picker-prefix css-1o244th"
                 style="min-width: 320px;"
               >
                 <div
@@ -3183,7 +3219,7 @@ exports[`test base/DataExport/List render table filter items 1`] = `
             style="margin-right: 12px; padding-bottom: 12px;"
           >
             <div
-              class="ant-select ant-select-sm ant-select-borderless basic-select-wrapper custom-select-namespace css-pti5z8 css-dev-only-do-not-override-jx040l ant-select-single ant-select-allow-clear ant-select-show-arrow"
+              class="ant-select ant-select-sm ant-select-borderless basic-select-wrapper custom-select-namespace css-pti5z8 ant-select-single ant-select-allow-clear ant-select-show-arrow"
             >
               <div
                 class="ant-select-selector"
@@ -3241,7 +3277,7 @@ exports[`test base/DataExport/List render table filter items 1`] = `
             style="margin-right: 12px; padding-bottom: 12px;"
           >
             <div
-              class="ant-select ant-select-sm ant-select-borderless basic-select-wrapper custom-select-namespace css-pti5z8 css-dev-only-do-not-override-jx040l ant-select-single ant-select-allow-clear ant-select-show-arrow"
+              class="ant-select ant-select-sm ant-select-borderless basic-select-wrapper custom-select-namespace css-pti5z8 ant-select-single ant-select-allow-clear ant-select-show-arrow"
             >
               <div
                 class="ant-select-selector"
@@ -3299,7 +3335,7 @@ exports[`test base/DataExport/List render table filter items 1`] = `
             style="padding-bottom: 12px;"
           >
             <div
-              class="ant-select ant-select-sm ant-select-borderless basic-select-wrapper custom-select-namespace css-pti5z8 css-dev-only-do-not-override-jx040l ant-select-single ant-select-allow-clear ant-select-show-arrow"
+              class="ant-select ant-select-sm ant-select-borderless basic-select-wrapper custom-select-namespace css-pti5z8 ant-select-single ant-select-allow-clear ant-select-show-arrow"
             >
               <div
                 class="ant-select-selector"
@@ -3354,10 +3390,10 @@ exports[`test base/DataExport/List render table filter items 1`] = `
           </div>
         </div>
         <div
-          class="ant-table-wrapper actiontech-table-namespace table-row-cursor css-fxd6ka css-dev-only-do-not-override-bj9uhl"
+          class="ant-table-wrapper actiontech-table-namespace table-row-cursor css-fxd6ka"
         >
           <div
-            class="ant-spin-nested-loading css-dev-only-do-not-override-bj9uhl"
+            class="ant-spin-nested-loading"
           >
             <div
               class="ant-spin-container"
@@ -3393,10 +3429,10 @@ exports[`test base/DataExport/List render table filter items 1`] = `
                               class="ant-table-selection"
                             >
                               <label
-                                class="ant-checkbox-wrapper css-dev-only-do-not-override-bj9uhl"
+                                class="ant-checkbox-wrapper"
                               >
                                 <span
-                                  class="ant-checkbox css-dev-only-do-not-override-bj9uhl"
+                                  class="ant-checkbox"
                                 >
                                   <input
                                     aria-label="Select all"
@@ -3545,10 +3581,10 @@ exports[`test base/DataExport/List render table filter items 1`] = `
                             style="position: sticky; left: 0px;"
                           >
                             <label
-                              class="ant-checkbox-wrapper css-dev-only-do-not-override-bj9uhl"
+                              class="ant-checkbox-wrapper"
                             >
                               <span
-                                class="ant-checkbox css-dev-only-do-not-override-bj9uhl"
+                                class="ant-checkbox"
                               >
                                 <input
                                   class="ant-checkbox-input"
@@ -3587,7 +3623,7 @@ exports[`test base/DataExport/List render table filter items 1`] = `
                             class="ant-table-cell ellipsis-column-width"
                           >
                             <div
-                              class="ant-typography ant-typography-ellipsis ant-typography-single-line ant-typography-ellipsis-single-line basic-typography-ellipsis css-wgj5gs css-dev-only-do-not-override-bj9uhl"
+                              class="ant-typography ant-typography-ellipsis ant-typography-single-line ant-typography-ellipsis-single-line basic-typography-ellipsis css-wgj5gs"
                             >
                               mysql-1_20240130113114
                             </div>
@@ -3597,11 +3633,11 @@ exports[`test base/DataExport/List render table filter items 1`] = `
                           >
                             <div
                               aria-label="desc"
-                              class="ant-typography ant-typography-ellipsis ant-typography-single-line basic-typography-ellipsis css-wgj5gs css-dev-only-do-not-override-bj9uhl"
+                              class="ant-typography ant-typography-ellipsis ant-typography-single-line basic-typography-ellipsis css-wgj5gs"
                             >
                               desc
                               <div
-                                aria-label="Copy"
+                                aria-label="复制"
                                 class="ant-typography-copy"
                                 role="button"
                                 style="border: 0px; background: transparent; padding: 0px; line-height: inherit; display: inline-block;"
@@ -3643,7 +3679,7 @@ exports[`test base/DataExport/List render table filter items 1`] = `
                                   ...
                                 </span>
                                 <div
-                                  aria-label="Copy"
+                                  aria-label="复制"
                                   class="ant-typography-copy"
                                   role="button"
                                   style="border: 0px; background: transparent; padding: 0px; line-height: inherit; display: inline-block;"
@@ -3727,10 +3763,10 @@ exports[`test base/DataExport/List render table filter items 1`] = `
                             style="position: sticky; left: 0px;"
                           >
                             <label
-                              class="ant-checkbox-wrapper css-dev-only-do-not-override-bj9uhl"
+                              class="ant-checkbox-wrapper"
                             >
                               <span
-                                class="ant-checkbox css-dev-only-do-not-override-bj9uhl"
+                                class="ant-checkbox"
                               >
                                 <input
                                   class="ant-checkbox-input"
@@ -3769,7 +3805,7 @@ exports[`test base/DataExport/List render table filter items 1`] = `
                             class="ant-table-cell ellipsis-column-width"
                           >
                             <div
-                              class="ant-typography ant-typography-ellipsis ant-typography-single-line ant-typography-ellipsis-single-line basic-typography-ellipsis css-wgj5gs css-dev-only-do-not-override-bj9uhl"
+                              class="ant-typography ant-typography-ellipsis ant-typography-single-line ant-typography-ellipsis-single-line basic-typography-ellipsis css-wgj5gs"
                             >
                               mysql-2_20240130113114
                             </div>
@@ -3779,11 +3815,11 @@ exports[`test base/DataExport/List render table filter items 1`] = `
                           >
                             <div
                               aria-label="desc"
-                              class="ant-typography ant-typography-ellipsis ant-typography-single-line basic-typography-ellipsis css-wgj5gs css-dev-only-do-not-override-bj9uhl"
+                              class="ant-typography ant-typography-ellipsis ant-typography-single-line basic-typography-ellipsis css-wgj5gs"
                             >
                               desc
                               <div
-                                aria-label="Copy"
+                                aria-label="复制"
                                 class="ant-typography-copy"
                                 role="button"
                                 style="border: 0px; background: transparent; padding: 0px; line-height: inherit; display: inline-block;"
@@ -3825,7 +3861,7 @@ exports[`test base/DataExport/List render table filter items 1`] = `
                                   ...
                                 </span>
                                 <div
-                                  aria-label="Copy"
+                                  aria-label="复制"
                                   class="ant-typography-copy"
                                   role="button"
                                   style="border: 0px; background: transparent; padding: 0px; line-height: inherit; display: inline-block;"
@@ -3892,13 +3928,13 @@ exports[`test base/DataExport/List render table filter items 1`] = `
                             class="ant-table-cell"
                           >
                             <div
-                              class="ant-space css-dev-only-do-not-override-bj9uhl ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
+                              class="ant-space ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
                             >
                               <div
                                 class="ant-space-item"
                               >
                                 <span
-                                  class="ant-avatar ant-avatar-circle action-avatar css-1wq79dc css-dev-only-do-not-override-bj9uhl"
+                                  class="ant-avatar ant-avatar-circle action-avatar css-1wq79dc"
                                 >
                                   <span
                                     class="ant-avatar-string"
@@ -3917,7 +3953,7 @@ exports[`test base/DataExport/List render table filter items 1`] = `
                 </div>
               </div>
               <ul
-                class="ant-pagination ant-table-pagination ant-table-pagination-right actiontech-table-pagination actiontech-table-pagination-fixed css-dev-only-do-not-override-bj9uhl"
+                class="ant-pagination ant-table-pagination ant-table-pagination-right actiontech-table-pagination actiontech-table-pagination-fixed"
               >
                 <li
                   class="ant-pagination-total-text"
@@ -3929,7 +3965,7 @@ exports[`test base/DataExport/List render table filter items 1`] = `
                 <li
                   aria-disabled="true"
                   class="ant-pagination-prev ant-pagination-disabled"
-                  title="Previous Page"
+                  title="上一页"
                 >
                   <button
                     class="ant-pagination-item-link"
@@ -3972,7 +4008,7 @@ exports[`test base/DataExport/List render table filter items 1`] = `
                 <li
                   aria-disabled="true"
                   class="ant-pagination-next ant-pagination-disabled"
-                  title="Next Page"
+                  title="下一页"
                 >
                   <button
                     class="ant-pagination-item-link"
@@ -4005,8 +4041,8 @@ exports[`test base/DataExport/List render table filter items 1`] = `
                   class="ant-pagination-options"
                 >
                   <div
-                    aria-label="Page Size"
-                    class="ant-select ant-pagination-options-size-changer css-dev-only-do-not-override-bj9uhl ant-select-single ant-select-show-arrow ant-select-show-search"
+                    aria-label="页码"
+                    class="ant-select ant-pagination-options-size-changer ant-select-single ant-select-show-arrow ant-select-show-search"
                   >
                     <div
                       class="ant-select-selector"
@@ -4020,7 +4056,7 @@ exports[`test base/DataExport/List render table filter items 1`] = `
                           aria-controls="rc_select_TEST_OR_SSR_list"
                           aria-expanded="false"
                           aria-haspopup="listbox"
-                          aria-label="Page Size"
+                          aria-label="页码"
                           aria-owns="rc_select_TEST_OR_SSR_list"
                           autocomplete="off"
                           class="ant-select-selection-search-input"
@@ -4032,9 +4068,9 @@ exports[`test base/DataExport/List render table filter items 1`] = `
                       </span>
                       <span
                         class="ant-select-selection-item"
-                        title="20 / page"
+                        title="20 条/页"
                       >
-                        20 / page
+                        20 条/页
                       </span>
                     </div>
                     <span

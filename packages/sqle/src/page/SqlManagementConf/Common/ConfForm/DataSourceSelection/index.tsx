@@ -5,10 +5,7 @@ import {
 } from '@actiontech/shared/lib/components/CustomForm';
 import { useTranslation } from 'react-i18next';
 import { BasicSelect, useTypedQuery } from '@actiontech/shared';
-import {
-  useCurrentProject,
-  useProjectBusinessTips
-} from '@actiontech/shared/lib/features';
+import { useCurrentProject } from '@actiontech/shared/lib/features';
 import { Form } from 'antd';
 import useInstance from '../../../../../hooks/useInstance';
 import { useContext, useEffect, useMemo } from 'react';
@@ -16,22 +13,23 @@ import useDatabaseType from '../../../../../hooks/useDatabaseType';
 import { ConfFormContext } from '../context';
 import { SqlManagementConfFormFields } from '../index.type';
 import { filterOptionByLabel } from '@actiontech/shared/lib/components/BasicSelect/utils';
-import { getInstanceTipListV1FunctionalModuleEnum } from '@actiontech/shared/lib/api/sqle/service/instance/index.enum';
+import { getInstanceTipListV2FunctionalModuleEnum } from '@actiontech/shared/lib/api/sqle/service/instance/index.enum';
 import { ROUTE_PATHS } from '@actiontech/shared/lib/data/routePaths';
+import useServiceEnvironment from '../../../../../hooks/useServiceEnvironment';
 
 const DataSourceSelection: React.FC = () => {
   const { t } = useTranslation();
-  const { projectName } = useCurrentProject();
+  const { projectName, projectID } = useCurrentProject();
   const extractQueries = useTypedQuery();
 
-  const { instanceIdByUrlSearchParams, businessByUrlSearchParams } =
+  const { instanceIdByUrlSearchParams, environmentTagByUrlSearchParams } =
     useMemo(() => {
       const searchParams = extractQueries(
         ROUTE_PATHS.SQLE.SQL_MANAGEMENT_CONF.create
       );
       return {
         instanceIdByUrlSearchParams: searchParams?.instance_id,
-        businessByUrlSearchParams: searchParams?.business
+        environmentTagByUrlSearchParams: searchParams?.environment_tag
       };
     }, [extractQueries]);
 
@@ -39,13 +37,13 @@ const DataSourceSelection: React.FC = () => {
   const defaultValue = useContext(ConfFormContext)?.defaultValue;
 
   const {
-    updateProjectBusinessTips,
-    projectBusinessOption,
-    loading: getProjectBusinessTipsLoading
-  } = useProjectBusinessTips();
+    environmentOptions,
+    loading: getEnvironmentListLoading,
+    updateEnvironmentList
+  } = useServiceEnvironment();
 
   const form = Form.useFormInstance<SqlManagementConfFormFields>();
-  const businessScope = Form.useWatch('businessScope', form);
+  const environmentTag = Form.useWatch('environmentTag', form);
   const instanceType = Form.useWatch('instanceType', form);
 
   const {
@@ -70,28 +68,28 @@ const DataSourceSelection: React.FC = () => {
     }
   };
 
-  const handleChangeBusiness = (business: string) => {
+  const handleChangeEnvironmentTag = (tag: string) => {
     form.resetFields(['instanceName', 'instanceId']);
-    if (business) {
+    if (tag) {
       updateInstanceList({
         project_name: projectName,
         filter_db_type: instanceType,
-        filter_by_business: business,
+        filter_by_environment_tag: tag,
         functional_module:
-          getInstanceTipListV1FunctionalModuleEnum.create_audit_plan
+          getInstanceTipListV2FunctionalModuleEnum.create_audit_plan
       });
     }
   };
 
   const handleChangeInstanceType = (type: string) => {
     form.resetFields(['scanTypes', 'instanceId']);
-    if (businessScope) {
+    if (environmentTag) {
       updateInstanceList({
         project_name: projectName,
         filter_db_type: type,
-        filter_by_business: businessScope,
+        filter_by_environment_tag: environmentTag,
         functional_module:
-          getInstanceTipListV1FunctionalModuleEnum.create_audit_plan
+          getInstanceTipListV2FunctionalModuleEnum.create_audit_plan
       });
     }
   };
@@ -104,12 +102,12 @@ const DataSourceSelection: React.FC = () => {
   }, [updateDriverNameList]);
 
   useEffect(() => {
-    if (!!instanceIdByUrlSearchParams && !!businessByUrlSearchParams) {
+    if (!!instanceIdByUrlSearchParams && !!environmentTagByUrlSearchParams) {
       updateInstanceList(
         {
           project_name: projectName,
           functional_module:
-            getInstanceTipListV1FunctionalModuleEnum.create_audit_plan
+            getInstanceTipListV2FunctionalModuleEnum.create_audit_plan
         },
         {
           onSuccess: (list) => {
@@ -117,7 +115,7 @@ const DataSourceSelection: React.FC = () => {
               (v) => v.instance_id === instanceIdByUrlSearchParams
             );
             form.setFieldsValue({
-              businessScope: businessByUrlSearchParams,
+              environmentTag: environmentTagByUrlSearchParams,
               instanceId: instanceIdByUrlSearchParams,
               instanceName: instance?.instance_name ?? '',
               instanceType: instance?.instance_type ?? ''
@@ -129,11 +127,11 @@ const DataSourceSelection: React.FC = () => {
       updateInstanceList({
         project_name: projectName,
         functional_module:
-          getInstanceTipListV1FunctionalModuleEnum.create_audit_plan
+          getInstanceTipListV2FunctionalModuleEnum.create_audit_plan
       });
     }
   }, [
-    businessByUrlSearchParams,
+    environmentTagByUrlSearchParams,
     instanceIdByUrlSearchParams,
     defaultValue,
     updateInstanceList,
@@ -142,8 +140,8 @@ const DataSourceSelection: React.FC = () => {
   ]);
 
   useEffect(() => {
-    updateProjectBusinessTips();
-  }, [updateProjectBusinessTips]);
+    updateEnvironmentList(projectID);
+  }, [updateEnvironmentList, projectID]);
 
   return (
     <>
@@ -153,15 +151,15 @@ const DataSourceSelection: React.FC = () => {
 
       <FormItemLabel
         className="has-required-style"
-        label={t('dmsDataSource.dataSourceForm.business')}
-        name="businessScope"
+        label={t('managementConf.create.environmentAttribute')}
+        name="environmentTag"
         rules={[{ required: true }]}
       >
         <BasicSelect
-          loading={getProjectBusinessTipsLoading}
+          loading={getEnvironmentListLoading}
           disabled={formItemDisabled}
-          options={projectBusinessOption()}
-          onChange={handleChangeBusiness}
+          options={environmentOptions}
+          onChange={handleChangeEnvironmentTag}
         />
       </FormItemLabel>
 

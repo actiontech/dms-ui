@@ -23,8 +23,6 @@ import dayjs from 'dayjs';
 import dbServices from '../../../../../../testUtils/mockApi/dbServices';
 
 describe('test base/DataExport/Create/UpdateInfoDrawer', () => {
-  ignoreConsoleErrors([UtilsConsoleErrorStringsEnum.INVALID_CSS_VALUE]);
-
   const customRender = (
     mockCreateExportTaskForm?: Parameters<
       typeof mockUseCreateExportTaskForm
@@ -61,6 +59,11 @@ describe('test base/DataExport/Create/UpdateInfoDrawer', () => {
     jest.clearAllTimers();
     MockDate.reset();
   });
+
+  ignoreConsoleErrors([
+    UtilsConsoleErrorStringsEnum.INVALID_CSS_VALUE,
+    UtilsConsoleErrorStringsEnum.UNKNOWN_EVENT_HANDLER
+  ]);
 
   it('should match snapshot', () => {
     const { baseElement } = customRender();

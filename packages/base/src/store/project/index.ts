@@ -1,11 +1,11 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { commonModalReducer } from '../common';
 import { ModalStatus } from '@actiontech/shared/lib/types/common.type';
-import { IListProject } from '@actiontech/shared/lib/api/base/service/common';
+import { IListProjectV2 } from '@actiontech/shared/lib/api/base/service/common';
 
 type ProjectReduxState = {
   modalStatus: ModalStatus;
-  selectProject: IListProject | null;
+  selectProject: IListProjectV2 | null;
 };
 
 const initialState: ProjectReduxState = {
@@ -21,7 +21,7 @@ const project = createSlice({
       state,
       {
         payload: { selectProject }
-      }: PayloadAction<{ selectProject: IListProject | null }>
+      }: PayloadAction<{ selectProject: IListProjectV2 | null }>
     ) {
       state.selectProject = selectProject;
     },

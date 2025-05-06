@@ -10,7 +10,7 @@ exports[`ReportStatistics/LicenseStatistics render chart snap 1`] = `
         class="icon-center-wrapper MuiBox-root css-0"
       >
         <div
-          class="css-dev-only-do-not-override-txh9fw ant-empty is-icon-loading css-19kysfv"
+          class="ant-empty is-icon-loading css-19kysfv"
         >
           <div
             class="ant-empty-image"
@@ -18,7 +18,7 @@ exports[`ReportStatistics/LicenseStatistics render chart snap 1`] = `
             <div
               aria-busy="true"
               aria-live="polite"
-              class="ant-spin ant-spin-spinning css-dev-only-do-not-override-txh9fw"
+              class="ant-spin ant-spin-spinning"
             >
               <span
                 class="ant-spin-dot ant-spin-dot-spin"

@@ -8,7 +8,7 @@ const BackButton: React.FC<BackButtonProps> = (props) => {
 
   return (
     <BasicButton
-      icon={<LeftArrowOutlined />}
+      icon={<LeftArrowOutlined data-testid="left-arrow-icon" />}
       onClick={goBack}
       key="goBack"
       {...props}

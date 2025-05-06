@@ -43,11 +43,11 @@ exports[`sqle/components/ChartCom/OrderStateBar render snap order state bar 1`] 
         class="legend-wrapper"
       >
         <div
-          class="ant-row css-dev-only-do-not-override-txh9fw"
+          class="ant-row"
           style="margin-left: -10px; margin-right: -10px;"
         >
           <div
-            class="ant-col css-dev-only-do-not-override-txh9fw"
+            class="ant-col"
             style="padding-left: 10px; padding-right: 10px; width: 25%;"
           >
             <div
@@ -80,7 +80,7 @@ exports[`sqle/components/ChartCom/OrderStateBar render snap order state bar 1`] 
             </div>
           </div>
           <div
-            class="ant-col css-dev-only-do-not-override-txh9fw"
+            class="ant-col"
             style="padding-left: 10px; padding-right: 10px; width: 25%;"
           >
             <div
@@ -113,7 +113,7 @@ exports[`sqle/components/ChartCom/OrderStateBar render snap order state bar 1`] 
             </div>
           </div>
           <div
-            class="ant-col css-dev-only-do-not-override-txh9fw"
+            class="ant-col"
             style="padding-left: 10px; padding-right: 10px; width: 25%;"
           >
             <div
@@ -146,7 +146,7 @@ exports[`sqle/components/ChartCom/OrderStateBar render snap order state bar 1`] 
             </div>
           </div>
           <div
-            class="ant-col css-dev-only-do-not-override-txh9fw"
+            class="ant-col"
             style="padding-left: 10px; padding-right: 10px; width: 25%;"
           >
             <div
@@ -229,11 +229,11 @@ exports[`sqle/components/ChartCom/OrderStateBar render snap order state bar 2`] 
         class="legend-wrapper"
       >
         <div
-          class="ant-row css-dev-only-do-not-override-txh9fw"
+          class="ant-row"
           style="margin-left: -10px; margin-right: -10px;"
         >
           <div
-            class="ant-col css-dev-only-do-not-override-txh9fw"
+            class="ant-col"
             style="padding-left: 10px; padding-right: 10px; width: 25%;"
           >
             <div
@@ -266,7 +266,7 @@ exports[`sqle/components/ChartCom/OrderStateBar render snap order state bar 2`] 
             </div>
           </div>
           <div
-            class="ant-col css-dev-only-do-not-override-txh9fw"
+            class="ant-col"
             style="padding-left: 10px; padding-right: 10px; width: 25%;"
           >
             <div
@@ -299,7 +299,7 @@ exports[`sqle/components/ChartCom/OrderStateBar render snap order state bar 2`] 
             </div>
           </div>
           <div
-            class="ant-col css-dev-only-do-not-override-txh9fw"
+            class="ant-col"
             style="padding-left: 10px; padding-right: 10px; width: 25%;"
           >
             <div
@@ -332,7 +332,7 @@ exports[`sqle/components/ChartCom/OrderStateBar render snap order state bar 2`] 
             </div>
           </div>
           <div
-            class="ant-col css-dev-only-do-not-override-txh9fw"
+            class="ant-col"
             style="padding-left: 10px; padding-right: 10px; width: 25%;"
           >
             <div
@@ -370,7 +370,7 @@ exports[`sqle/components/ChartCom/OrderStateBar render snap order state bar 2`] 
   </div>
   <div>
     <div
-      class="ant-popover ant-zoom-big-appear ant-zoom-big-appear-prepare ant-zoom-big order-state-popover css-dev-only-do-not-override-txh9fw css-dev-only-do-not-override-txh9fw ant-popover-placement-topRight"
+      class="ant-popover ant-zoom-big-appear ant-zoom-big-appear-prepare ant-zoom-big order-state-popover ant-popover-placement-topRight"
       style="--arrow-x: 0px; --arrow-y: 0px; left: -1000vw; top: -1000vh; box-sizing: border-box;"
     >
       <div

@@ -1,5 +1,5 @@
 import {
-  IInstanceTipResV1,
+  IInstanceTipResV2,
   IWorkflowDetailWithInstance
 } from '@actiontech/shared/lib/api/sqle/service/common';
 import { SelectProps } from 'antd';
@@ -30,7 +30,7 @@ export type ReleaseWorkflowFormType = {
 export type DataSourceFieldProps = {
   fieldNamePath: (string | number)[];
   instanceTipsLoading: boolean;
-  instanceList: IInstanceTipResV1[];
+  instanceList: IInstanceTipResV2[];
   instanceOptions: SelectProps['options'];
   instanceIDOptions: SelectProps['options'];
 };

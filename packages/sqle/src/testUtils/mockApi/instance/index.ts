@@ -19,7 +19,7 @@ class MockInstanceApi implements MockSpyApy {
   }
 
   public getInstanceTipList() {
-    const spy = jest.spyOn(instance, 'getInstanceTipListV1');
+    const spy = jest.spyOn(instance, 'getInstanceTipListV2');
     spy.mockImplementation(() =>
       createSpySuccessResponse({
         data: instanceTipsMockData,

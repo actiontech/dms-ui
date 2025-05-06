@@ -10,7 +10,7 @@ exports[`sqle/SqlOptimization/CodeBlock render copy code 1`] = `
         class="copy-icon"
       >
         <div
-          class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
+          class="ant-space ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
         >
           <div
             class="ant-space-item"

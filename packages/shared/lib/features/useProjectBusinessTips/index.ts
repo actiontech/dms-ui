@@ -4,6 +4,9 @@ import useCurrentProject from '../useCurrentProject';
 import Project from '../../api/base/service/Project';
 import { ResponseCode } from '../../enum';
 
+/**
+ * @deprecated GetProjectTips接口已废弃，后续此hooks将删除
+ */
 const useProjectBusinessTips = () => {
   const [projectBusiness, setProjectBusiness] = useState<string[]>([]);
   const [isFixedBusiness, setIsFixedBusiness] = useState<boolean>(false);

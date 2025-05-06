@@ -7,7 +7,7 @@ exports[`RuleKnowledge/MarkdownTOC should create proper hierarchy for nested hea
       class=""
     >
       <div
-        class="css-dev-only-do-not-override-txh9fw ant-anchor-wrapper"
+        class="ant-anchor-wrapper"
         style="max-height: 100vh;"
       >
         <div
@@ -86,7 +86,7 @@ exports[`RuleKnowledge/MarkdownTOC should render anchor items based on headers 1
       class=""
     >
       <div
-        class="css-dev-only-do-not-override-txh9fw ant-anchor-wrapper"
+        class="ant-anchor-wrapper"
         style="max-height: 100vh;"
       >
         <div

@@ -1,6 +1,5 @@
 import { act, renderHook } from '@testing-library/react-hooks';
 import {
-  render,
   fireEvent,
   screen,
   act as reactAct,
@@ -16,6 +15,7 @@ import {
   UtilsConsoleErrorStringsEnum
 } from '../../testUtil/common';
 import DBService from '../../api/base/service/DBService';
+import { superRender } from '../../testUtil/customRender';
 
 jest.mock('react-redux', () => {
   return {
@@ -56,7 +56,7 @@ describe('hooks/useDatabaseType', () => {
     const { result, waitForNextUpdate } = renderHook(() => useDatabaseType());
     expect(result.current.loading).toBeFalsy();
     expect(result.current.driverNameList).toEqual([]);
-    const { baseElement } = render(
+    const { baseElement } = superRender(
       <Select>{result.current.generateDriverSelectOptions()}</Select>
     );
     expect(baseElement).toMatchSnapshot();
@@ -72,7 +72,7 @@ describe('hooks/useDatabaseType', () => {
     await act(async () => jest.advanceTimersByTime(3000));
     expect(mockDispatch).toHaveBeenCalled();
     cleanup();
-    const { baseElement: baseElementWithOptions } = render(
+    const { baseElement: baseElementWithOptions } = superRender(
       <Select data-testid="testId" value="value1">
         {result.current.generateDriverSelectOptions()}
       </Select>

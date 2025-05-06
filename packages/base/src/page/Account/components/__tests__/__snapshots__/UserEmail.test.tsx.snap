@@ -3,10 +3,10 @@
 exports[`test base/page/Account/UserEmail execute the onSubmit after triggering the enter event 1`] = `
 <div>
   <div
-    class="ant-row ant-row-space-between ant-row-middle css-19fu9ar css-dev-only-do-not-override-txh9fw"
+    class="ant-row ant-row-space-between ant-row-middle css-19fu9ar"
   >
     <div
-      class="ant-col ant-col-11 config-item-label css-dev-only-do-not-override-txh9fw"
+      class="ant-col ant-col-11 config-item-label"
     >
       <div
         class="config-item-label"
@@ -19,7 +19,7 @@ exports[`test base/page/Account/UserEmail execute the onSubmit after triggering 
       </div>
     </div>
     <div
-      class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center config-item-filed"
+      class="ant-space ant-space-horizontal ant-space-align-center config-item-filed"
     >
       <div
         class="ant-space-item"
@@ -31,7 +31,7 @@ exports[`test base/page/Account/UserEmail execute the onSubmit after triggering 
         class="ant-space-item"
       >
         <button
-          class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default ant-btn-icon-only config-item-filed-edit-button basic-button-wrapper css-geipcv"
+          class="ant-btn ant-btn-default ant-btn-icon-only config-item-filed-edit-button basic-button-wrapper css-geipcv"
           type="button"
         >
           <span
@@ -59,10 +59,10 @@ exports[`test base/page/Account/UserEmail execute the onSubmit after triggering 
 exports[`test base/page/Account/UserEmail should match snapshot 1`] = `
 <div>
   <div
-    class="ant-row ant-row-space-between ant-row-middle css-19fu9ar css-dev-only-do-not-override-txh9fw"
+    class="ant-row ant-row-space-between ant-row-middle css-19fu9ar"
   >
     <div
-      class="ant-col ant-col-11 config-item-label css-dev-only-do-not-override-txh9fw"
+      class="ant-col ant-col-11 config-item-label"
     >
       <div
         class="config-item-label"
@@ -75,7 +75,7 @@ exports[`test base/page/Account/UserEmail should match snapshot 1`] = `
       </div>
     </div>
     <div
-      class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center config-item-filed"
+      class="ant-space ant-space-horizontal ant-space-align-center config-item-filed"
     >
       <div
         class="ant-space-item"
@@ -87,7 +87,7 @@ exports[`test base/page/Account/UserEmail should match snapshot 1`] = `
         class="ant-space-item"
       >
         <button
-          class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default ant-btn-icon-only config-item-filed-edit-button basic-button-wrapper css-geipcv"
+          class="ant-btn ant-btn-default ant-btn-icon-only config-item-filed-edit-button basic-button-wrapper css-geipcv"
           hidden=""
           type="button"
         >

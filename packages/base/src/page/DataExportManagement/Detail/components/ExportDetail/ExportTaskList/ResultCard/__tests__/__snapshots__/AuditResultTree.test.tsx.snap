@@ -6,7 +6,7 @@ exports[`test base/DataExport/Detail/ExportDetail/ExportTaskList/AuditResultTree
   "baseElement": <body>
     <div>
       <div
-        class="ant-tree ant-tree-icon-hide ant-tree-unselectable css-p78ydn css-dev-only-do-not-override-txh9fw ant-tree-show-line"
+        class="ant-tree ant-tree-icon-hide ant-tree-unselectable css-p78ydn ant-tree-show-line"
         role="tree"
       >
         <div>
@@ -94,7 +94,7 @@ exports[`test base/DataExport/Detail/ExportDetail/ExportTaskList/AuditResultTree
   </body>,
   "container": <div>
     <div
-      class="ant-tree ant-tree-icon-hide ant-tree-unselectable css-p78ydn css-dev-only-do-not-override-txh9fw ant-tree-show-line"
+      class="ant-tree ant-tree-icon-hide ant-tree-unselectable css-p78ydn ant-tree-show-line"
       role="tree"
     >
       <div>
@@ -239,7 +239,7 @@ exports[`test base/DataExport/Detail/ExportDetail/ExportTaskList/AuditResultTree
   "baseElement": <body>
     <div>
       <div
-        class="ant-tree ant-tree-icon-hide ant-tree-unselectable css-p78ydn css-dev-only-do-not-override-txh9fw ant-tree-show-line"
+        class="ant-tree ant-tree-icon-hide ant-tree-unselectable css-p78ydn ant-tree-show-line"
         role="tree"
       >
         <div>
@@ -326,7 +326,7 @@ exports[`test base/DataExport/Detail/ExportDetail/ExportTaskList/AuditResultTree
     </div>
     <div>
       <div
-        class="ant-tree ant-tree-icon-hide ant-tree-unselectable css-p78ydn css-dev-only-do-not-override-txh9fw ant-tree-show-line"
+        class="ant-tree ant-tree-icon-hide ant-tree-unselectable css-p78ydn ant-tree-show-line"
         role="tree"
       >
         <div>
@@ -414,7 +414,7 @@ exports[`test base/DataExport/Detail/ExportDetail/ExportTaskList/AuditResultTree
   </body>,
   "container": <div>
     <div
-      class="ant-tree ant-tree-icon-hide ant-tree-unselectable css-p78ydn css-dev-only-do-not-override-txh9fw ant-tree-show-line"
+      class="ant-tree ant-tree-icon-hide ant-tree-unselectable css-p78ydn ant-tree-show-line"
       role="tree"
     >
       <div>

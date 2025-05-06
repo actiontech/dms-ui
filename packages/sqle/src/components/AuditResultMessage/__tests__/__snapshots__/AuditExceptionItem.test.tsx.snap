@@ -50,7 +50,7 @@ exports[`AuditExceptionItem should match snapshot 1`] = `
 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
 	at java.lang.Thread.run(Thread.java:750)
 "
-      class="ant-typography ant-typography-ellipsis ant-typography-single-line exception-item-message-wrapper basic-typography-ellipsis css-wgj5gs css-dev-only-do-not-override-txh9fw"
+      class="ant-typography ant-typography-ellipsis ant-typography-single-line exception-item-message-wrapper basic-typography-ellipsis css-wgj5gs"
     >
       Audit规则异常：[数据库对象命名只能使用英文、下划线或数字，首字母必须是英文]解析错误;java.lang.NullPointerException
 	at com.actiontech.sqle.dmplugin.common.rulehandler.Rule29$ObjectNameParserListener.a(Rule29.java:110)
@@ -72,7 +72,7 @@ exports[`AuditExceptionItem should match snapshot 1`] = `
 	at java.lang.Thread.run(Thread.java:750)
 
       <div
-        aria-label="Copy"
+        aria-label="复制"
         class="ant-typography-copy"
         role="button"
         style="border: 0px; background: transparent; padding: 0px; line-height: inherit; display: inline-block;"
@@ -114,7 +114,7 @@ exports[`AuditExceptionItem should match snapshot 1`] = `
           ...
         </span>
         <div
-          aria-label="Copy"
+          aria-label="复制"
           class="ant-typography-copy"
           role="button"
           style="border: 0px; background: transparent; padding: 0px; line-height: inherit; display: inline-block;"

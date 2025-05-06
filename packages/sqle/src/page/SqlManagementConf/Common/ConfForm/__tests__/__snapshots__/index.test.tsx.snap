@@ -5,7 +5,7 @@ exports[`test sqle/SqlManagementConf/ConfForm render init snap shot 1`] = `
   <div />
   <div>
     <form
-      class="ant-form ant-form-horizontal css-dev-only-do-not-override-txh9fw css-19jfn7e"
+      class="ant-form ant-form-horizontal css-19jfn7e"
     >
       <section
         class="css-1x6j49j"
@@ -17,7 +17,7 @@ exports[`test sqle/SqlManagementConf/ConfForm render init snap shot 1`] = `
             class="css-bspaai"
           >
             <h3
-              class="ant-typography css-p50odb css-dev-only-do-not-override-txh9fw"
+              class="ant-typography css-p50odb"
             >
               <svg
                 class="title-icon"
@@ -40,29 +40,29 @@ exports[`test sqle/SqlManagementConf/ConfForm render init snap shot 1`] = `
               </span>
             </h3>
             <h1
-              class="ant-typography css-1eepp70 css-dev-only-do-not-override-txh9fw"
+              class="ant-typography css-1eepp70"
             >
               选择数据源
             </h1>
             <div
-              class="ant-form-item has-required-style css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+              class="ant-form-item has-required-style css-1jlm9cy"
             >
               <div
-                class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                class="ant-row ant-form-item-row"
               >
                 <div
-                  class="ant-col ant-form-item-label css-dev-only-do-not-override-txh9fw"
+                  class="ant-col ant-form-item-label"
                 >
                   <label
                     class="ant-form-item-required ant-form-item-no-colon"
-                    for="businessScope"
-                    title="所属业务"
+                    for="environmentTag"
+                    title="环境属性"
                   >
-                    所属业务
+                    环境属性
                   </label>
                 </div>
                 <div
-                  class="ant-col ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                  class="ant-col ant-form-item-control"
                 >
                   <div
                     class="ant-form-item-control-input"
@@ -72,7 +72,7 @@ exports[`test sqle/SqlManagementConf/ConfForm render init snap shot 1`] = `
                     >
                       <div
                         aria-required="true"
-                        class="ant-select ant-select-in-form-item basic-select-wrapper css-iy4o4x css-dev-only-do-not-override-v9sov3 ant-select-single ant-select-show-arrow"
+                        class="ant-select ant-select-in-form-item basic-select-wrapper css-iy4o4x ant-select-single ant-select-show-arrow"
                       >
                         <div
                           class="ant-select-selector"
@@ -81,16 +81,16 @@ exports[`test sqle/SqlManagementConf/ConfForm render init snap shot 1`] = `
                             class="ant-select-selection-search"
                           >
                             <input
-                              aria-activedescendant="businessScope_list_0"
+                              aria-activedescendant="environmentTag_list_0"
                               aria-autocomplete="list"
-                              aria-controls="businessScope_list"
+                              aria-controls="environmentTag_list"
                               aria-expanded="false"
                               aria-haspopup="listbox"
-                              aria-owns="businessScope_list"
+                              aria-owns="environmentTag_list"
                               aria-required="true"
                               autocomplete="off"
                               class="ant-select-selection-search-input"
-                              id="businessScope"
+                              id="environmentTag"
                               readonly=""
                               role="combobox"
                               style="opacity: 0;"
@@ -138,13 +138,13 @@ exports[`test sqle/SqlManagementConf/ConfForm render init snap shot 1`] = `
               </div>
             </div>
             <div
-              class="ant-form-item has-required-style css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+              class="ant-form-item has-required-style css-1jlm9cy"
             >
               <div
-                class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                class="ant-row ant-form-item-row"
               >
                 <div
-                  class="ant-col ant-form-item-label css-dev-only-do-not-override-txh9fw"
+                  class="ant-col ant-form-item-label"
                 >
                   <label
                     class="ant-form-item-required ant-form-item-no-colon"
@@ -155,7 +155,7 @@ exports[`test sqle/SqlManagementConf/ConfForm render init snap shot 1`] = `
                   </label>
                 </div>
                 <div
-                  class="ant-col ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                  class="ant-col ant-form-item-control"
                 >
                   <div
                     class="ant-form-item-control-input"
@@ -165,7 +165,7 @@ exports[`test sqle/SqlManagementConf/ConfForm render init snap shot 1`] = `
                     >
                       <div
                         aria-required="true"
-                        class="ant-select ant-select-in-form-item basic-select-wrapper css-iy4o4x css-dev-only-do-not-override-v9sov3 ant-select-single ant-select-allow-clear ant-select-show-arrow"
+                        class="ant-select ant-select-in-form-item basic-select-wrapper css-iy4o4x ant-select-single ant-select-allow-clear ant-select-show-arrow"
                       >
                         <div
                           class="ant-select-selector"
@@ -231,13 +231,13 @@ exports[`test sqle/SqlManagementConf/ConfForm render init snap shot 1`] = `
               </div>
             </div>
             <div
-              class="ant-form-item css-1jlm9cy css-dev-only-do-not-override-txh9fw ant-form-item-hidden"
+              class="ant-form-item css-1jlm9cy ant-form-item-hidden"
             >
               <div
-                class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                class="ant-row ant-form-item-row"
               >
                 <div
-                  class="ant-col ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                  class="ant-col ant-form-item-control"
                 >
                   <div
                     class="ant-form-item-control-input"
@@ -246,7 +246,7 @@ exports[`test sqle/SqlManagementConf/ConfForm render init snap shot 1`] = `
                       class="ant-form-item-control-input-content"
                     >
                       <div
-                        class="ant-select ant-select-in-form-item basic-select-wrapper css-iy4o4x css-dev-only-do-not-override-v9sov3 ant-select-single ant-select-show-arrow"
+                        class="ant-select ant-select-in-form-item basic-select-wrapper css-iy4o4x ant-select-single ant-select-show-arrow"
                       >
                         <div
                           class="ant-select-selector"
@@ -311,13 +311,13 @@ exports[`test sqle/SqlManagementConf/ConfForm render init snap shot 1`] = `
               </div>
             </div>
             <div
-              class="ant-form-item has-required-style has-label-tip css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+              class="ant-form-item has-required-style has-label-tip css-1jlm9cy"
             >
               <div
-                class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                class="ant-row ant-form-item-row"
               >
                 <div
-                  class="ant-col ant-form-item-label css-dev-only-do-not-override-txh9fw"
+                  class="ant-col ant-form-item-label"
                 >
                   <label
                     class="ant-form-item-required ant-form-item-no-colon"
@@ -339,7 +339,7 @@ exports[`test sqle/SqlManagementConf/ConfForm render init snap shot 1`] = `
                   </label>
                 </div>
                 <div
-                  class="ant-col ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                  class="ant-col ant-form-item-control"
                 >
                   <div
                     class="ant-form-item-control-input"
@@ -349,7 +349,7 @@ exports[`test sqle/SqlManagementConf/ConfForm render init snap shot 1`] = `
                     >
                       <div
                         aria-required="true"
-                        class="ant-select ant-select-in-form-item basic-select-wrapper css-iy4o4x css-dev-only-do-not-override-v9sov3 ant-select-single ant-select-show-arrow ant-select-show-search"
+                        class="ant-select ant-select-in-form-item basic-select-wrapper css-iy4o4x ant-select-single ant-select-show-arrow ant-select-show-search"
                       >
                         <div
                           class="ant-select-selector"
@@ -412,24 +412,24 @@ exports[`test sqle/SqlManagementConf/ConfForm render init snap shot 1`] = `
               </div>
             </div>
             <div
-              class="ant-spin-nested-loading css-dev-only-do-not-override-txh9fw"
+              class="ant-spin-nested-loading"
             >
               <div
                 class="ant-spin-container"
               >
                 <h1
-                  class="ant-typography css-1eepp70 css-dev-only-do-not-override-txh9fw"
+                  class="ant-typography css-1eepp70"
                 >
                   选择扫描类型
                 </h1>
                 <div
-                  class="ant-form-item has-label-tip has-required-style css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+                  class="ant-form-item has-label-tip has-required-style css-1jlm9cy"
                 >
                   <div
-                    class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                    class="ant-row ant-form-item-row"
                   >
                     <div
-                      class="ant-col ant-form-item-label css-dev-only-do-not-override-txh9fw"
+                      class="ant-col ant-form-item-label"
                     >
                       <label
                         class="ant-form-item-no-colon"
@@ -451,7 +451,7 @@ exports[`test sqle/SqlManagementConf/ConfForm render init snap shot 1`] = `
                       </label>
                     </div>
                     <div
-                      class="ant-col ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                      class="ant-col ant-form-item-control"
                     >
                       <div
                         class="ant-form-item-control-input"
@@ -485,7 +485,7 @@ exports[`test sqle/SqlManagementConf/ConfForm render snap shot when defaultValue
   <div />
   <div>
     <form
-      class="ant-form ant-form-horizontal css-dev-only-do-not-override-txh9fw css-19jfn7e"
+      class="ant-form ant-form-horizontal css-19jfn7e"
     >
       <section
         class="css-1x6j49j"
@@ -497,7 +497,7 @@ exports[`test sqle/SqlManagementConf/ConfForm render snap shot when defaultValue
             class="css-bspaai"
           >
             <h3
-              class="ant-typography css-p50odb css-dev-only-do-not-override-txh9fw"
+              class="ant-typography css-p50odb"
             >
               <svg
                 class="title-icon"
@@ -520,29 +520,29 @@ exports[`test sqle/SqlManagementConf/ConfForm render snap shot when defaultValue
               </span>
             </h3>
             <h1
-              class="ant-typography css-1eepp70 css-dev-only-do-not-override-txh9fw"
+              class="ant-typography css-1eepp70"
             >
               选择数据源
             </h1>
             <div
-              class="ant-form-item has-required-style css-1jlm9cy css-dev-only-do-not-override-txh9fw ant-form-item-has-success"
+              class="ant-form-item has-required-style css-1jlm9cy ant-form-item-has-success"
             >
               <div
-                class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                class="ant-row ant-form-item-row"
               >
                 <div
-                  class="ant-col ant-form-item-label css-dev-only-do-not-override-txh9fw"
+                  class="ant-col ant-form-item-label"
                 >
                   <label
                     class="ant-form-item-required ant-form-item-no-colon"
-                    for="businessScope"
-                    title="所属业务"
+                    for="environmentTag"
+                    title="环境属性"
                   >
-                    所属业务
+                    环境属性
                   </label>
                 </div>
                 <div
-                  class="ant-col ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                  class="ant-col ant-form-item-control"
                 >
                   <div
                     class="ant-form-item-control-input"
@@ -552,7 +552,7 @@ exports[`test sqle/SqlManagementConf/ConfForm render snap shot when defaultValue
                     >
                       <div
                         aria-required="true"
-                        class="ant-select ant-select-in-form-item ant-select-status-success basic-select-wrapper css-iy4o4x css-dev-only-do-not-override-v9sov3 ant-select-single ant-select-show-arrow ant-select-disabled"
+                        class="ant-select ant-select-in-form-item ant-select-status-success basic-select-wrapper css-iy4o4x ant-select-single ant-select-show-arrow ant-select-disabled"
                       >
                         <div
                           class="ant-select-selector"
@@ -561,17 +561,17 @@ exports[`test sqle/SqlManagementConf/ConfForm render snap shot when defaultValue
                             class="ant-select-selection-search"
                           >
                             <input
-                              aria-activedescendant="businessScope_list_0"
+                              aria-activedescendant="environmentTag_list_0"
                               aria-autocomplete="list"
-                              aria-controls="businessScope_list"
+                              aria-controls="environmentTag_list"
                               aria-expanded="false"
                               aria-haspopup="listbox"
-                              aria-owns="businessScope_list"
+                              aria-owns="environmentTag_list"
                               aria-required="true"
                               autocomplete="off"
                               class="ant-select-selection-search-input"
                               disabled=""
-                              id="businessScope"
+                              id="environmentTag"
                               readonly=""
                               role="combobox"
                               style="opacity: 0;"
@@ -582,9 +582,9 @@ exports[`test sqle/SqlManagementConf/ConfForm render snap shot when defaultValue
                           </span>
                           <span
                             class="ant-select-selection-item"
-                            title="business1"
+                            title="environment-1"
                           >
-                            business1
+                            environment-1
                           </span>
                         </div>
                         <span
@@ -620,13 +620,13 @@ exports[`test sqle/SqlManagementConf/ConfForm render snap shot when defaultValue
               </div>
             </div>
             <div
-              class="ant-form-item has-required-style css-1jlm9cy css-dev-only-do-not-override-txh9fw ant-form-item-has-success"
+              class="ant-form-item has-required-style css-1jlm9cy ant-form-item-has-success"
             >
               <div
-                class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                class="ant-row ant-form-item-row"
               >
                 <div
-                  class="ant-col ant-form-item-label css-dev-only-do-not-override-txh9fw"
+                  class="ant-col ant-form-item-label"
                 >
                   <label
                     class="ant-form-item-required ant-form-item-no-colon"
@@ -637,7 +637,7 @@ exports[`test sqle/SqlManagementConf/ConfForm render snap shot when defaultValue
                   </label>
                 </div>
                 <div
-                  class="ant-col ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                  class="ant-col ant-form-item-control"
                 >
                   <div
                     class="ant-form-item-control-input"
@@ -647,7 +647,7 @@ exports[`test sqle/SqlManagementConf/ConfForm render snap shot when defaultValue
                     >
                       <div
                         aria-required="true"
-                        class="ant-select ant-select-in-form-item ant-select-status-success basic-select-wrapper css-iy4o4x css-dev-only-do-not-override-v9sov3 ant-select-single ant-select-allow-clear ant-select-show-arrow ant-select-disabled"
+                        class="ant-select ant-select-in-form-item ant-select-status-success basic-select-wrapper css-iy4o4x ant-select-single ant-select-allow-clear ant-select-show-arrow ant-select-disabled"
                       >
                         <div
                           class="ant-select-selector"
@@ -715,13 +715,13 @@ exports[`test sqle/SqlManagementConf/ConfForm render snap shot when defaultValue
               </div>
             </div>
             <div
-              class="ant-form-item css-1jlm9cy css-dev-only-do-not-override-txh9fw ant-form-item-has-success ant-form-item-hidden"
+              class="ant-form-item css-1jlm9cy ant-form-item-has-success ant-form-item-hidden"
             >
               <div
-                class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                class="ant-row ant-form-item-row"
               >
                 <div
-                  class="ant-col ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                  class="ant-col ant-form-item-control"
                 >
                   <div
                     class="ant-form-item-control-input"
@@ -730,7 +730,7 @@ exports[`test sqle/SqlManagementConf/ConfForm render snap shot when defaultValue
                       class="ant-form-item-control-input-content"
                     >
                       <div
-                        class="ant-select ant-select-in-form-item ant-select-status-success basic-select-wrapper css-iy4o4x css-dev-only-do-not-override-v9sov3 ant-select-single ant-select-show-arrow"
+                        class="ant-select ant-select-in-form-item ant-select-status-success basic-select-wrapper css-iy4o4x ant-select-single ant-select-show-arrow"
                       >
                         <div
                           class="ant-select-selector"
@@ -796,13 +796,13 @@ exports[`test sqle/SqlManagementConf/ConfForm render snap shot when defaultValue
               </div>
             </div>
             <div
-              class="ant-form-item has-required-style has-label-tip css-1jlm9cy css-dev-only-do-not-override-txh9fw ant-form-item-has-success"
+              class="ant-form-item has-required-style has-label-tip css-1jlm9cy ant-form-item-has-success"
             >
               <div
-                class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                class="ant-row ant-form-item-row"
               >
                 <div
-                  class="ant-col ant-form-item-label css-dev-only-do-not-override-txh9fw"
+                  class="ant-col ant-form-item-label"
                 >
                   <label
                     class="ant-form-item-required ant-form-item-no-colon"
@@ -824,7 +824,7 @@ exports[`test sqle/SqlManagementConf/ConfForm render snap shot when defaultValue
                   </label>
                 </div>
                 <div
-                  class="ant-col ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                  class="ant-col ant-form-item-control"
                 >
                   <div
                     class="ant-form-item-control-input"
@@ -834,7 +834,7 @@ exports[`test sqle/SqlManagementConf/ConfForm render snap shot when defaultValue
                     >
                       <div
                         aria-required="true"
-                        class="ant-select ant-select-in-form-item ant-select-status-success basic-select-wrapper css-iy4o4x css-dev-only-do-not-override-v9sov3 ant-select-single ant-select-show-arrow ant-select-disabled ant-select-show-search"
+                        class="ant-select ant-select-in-form-item ant-select-status-success basic-select-wrapper css-iy4o4x ant-select-single ant-select-show-arrow ant-select-disabled ant-select-show-search"
                       >
                         <div
                           class="ant-select-selector"
@@ -899,24 +899,24 @@ exports[`test sqle/SqlManagementConf/ConfForm render snap shot when defaultValue
               </div>
             </div>
             <div
-              class="ant-spin-nested-loading css-dev-only-do-not-override-txh9fw"
+              class="ant-spin-nested-loading"
             >
               <div
                 class="ant-spin-container"
               >
                 <h1
-                  class="ant-typography css-1eepp70 css-dev-only-do-not-override-txh9fw"
+                  class="ant-typography css-1eepp70"
                 >
                   选择扫描类型
                 </h1>
                 <div
-                  class="ant-form-item has-label-tip has-required-style css-1jlm9cy css-dev-only-do-not-override-txh9fw ant-form-item-has-success"
+                  class="ant-form-item has-label-tip has-required-style css-1jlm9cy ant-form-item-has-success"
                 >
                   <div
-                    class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                    class="ant-row ant-form-item-row"
                   >
                     <div
-                      class="ant-col ant-form-item-label css-dev-only-do-not-override-txh9fw"
+                      class="ant-col ant-form-item-label"
                     >
                       <label
                         class="ant-form-item-no-colon"
@@ -938,7 +938,7 @@ exports[`test sqle/SqlManagementConf/ConfForm render snap shot when defaultValue
                       </label>
                     </div>
                     <div
-                      class="ant-col ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                      class="ant-col ant-form-item-control"
                     >
                       <div
                         class="ant-form-item-control-input"
@@ -947,7 +947,7 @@ exports[`test sqle/SqlManagementConf/ConfForm render snap shot when defaultValue
                           class="ant-form-item-control-input-content"
                         >
                           <div
-                            class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center scan-types-selector actiontech-toggle-tokens css-jucxeg"
+                            class="ant-space ant-space-horizontal ant-space-align-center scan-types-selector actiontech-toggle-tokens css-jucxeg"
                             id="scanTypes"
                             style="flex-wrap: wrap; margin-bottom: -8px;"
                           >
@@ -980,7 +980,7 @@ exports[`test sqle/SqlManagementConf/ConfForm render snap shot when defaultValue
                                   title=""
                                 >
                                   <div
-                                    class="ant-typography ant-typography-ellipsis ant-typography-single-line ant-typography-ellipsis-single-line basic-typography-ellipsis css-wgj5gs css-dev-only-do-not-override-txh9fw"
+                                    class="ant-typography ant-typography-ellipsis ant-typography-single-line ant-typography-ellipsis-single-line basic-typography-ellipsis css-wgj5gs"
                                   >
                                     自定义
                                   </div>
@@ -1000,7 +1000,7 @@ exports[`test sqle/SqlManagementConf/ConfForm render snap shot when defaultValue
                                   title=""
                                 >
                                   <div
-                                    class="ant-typography ant-typography-ellipsis ant-typography-single-line ant-typography-ellipsis-single-line basic-typography-ellipsis css-wgj5gs css-dev-only-do-not-override-txh9fw"
+                                    class="ant-typography ant-typography-ellipsis ant-typography-single-line ant-typography-ellipsis-single-line basic-typography-ellipsis css-wgj5gs"
                                   >
                                     Mybatis 扫描
                                   </div>
@@ -1042,7 +1042,7 @@ exports[`test sqle/SqlManagementConf/ConfForm render snap shot when defaultValue
                                     title=""
                                   >
                                     <div
-                                      class="ant-typography ant-typography-ellipsis ant-typography-single-line ant-typography-ellipsis-single-line basic-typography-ellipsis css-wgj5gs css-dev-only-do-not-override-txh9fw"
+                                      class="ant-typography ant-typography-ellipsis ant-typography-single-line ant-typography-ellipsis-single-line basic-typography-ellipsis css-wgj5gs"
                                     >
                                       MySQL库表元数据
                                     </div>
@@ -1063,7 +1063,7 @@ exports[`test sqle/SqlManagementConf/ConfForm render snap shot when defaultValue
                                   title=""
                                 >
                                   <div
-                                    class="ant-typography ant-typography-ellipsis ant-typography-single-line ant-typography-ellipsis-single-line basic-typography-ellipsis css-wgj5gs css-dev-only-do-not-override-txh9fw"
+                                    class="ant-typography ant-typography-ellipsis ant-typography-single-line ant-typography-ellipsis-single-line basic-typography-ellipsis css-wgj5gs"
                                   >
                                     阿里RDS MySQL慢日志
                                   </div>
@@ -1083,7 +1083,7 @@ exports[`test sqle/SqlManagementConf/ConfForm render snap shot when defaultValue
                                   title=""
                                 >
                                   <div
-                                    class="ant-typography ant-typography-ellipsis ant-typography-single-line ant-typography-ellipsis-single-line basic-typography-ellipsis css-wgj5gs css-dev-only-do-not-override-txh9fw"
+                                    class="ant-typography ant-typography-ellipsis ant-typography-single-line ant-typography-ellipsis-single-line basic-typography-ellipsis css-wgj5gs"
                                   >
                                     SQL文件
                                   </div>
@@ -1103,7 +1103,7 @@ exports[`test sqle/SqlManagementConf/ConfForm render snap shot when defaultValue
                                   title=""
                                 >
                                   <div
-                                    class="ant-typography ant-typography-ellipsis ant-typography-single-line ant-typography-ellipsis-single-line basic-typography-ellipsis css-wgj5gs css-dev-only-do-not-override-txh9fw"
+                                    class="ant-typography ant-typography-ellipsis ant-typography-single-line ant-typography-ellipsis-single-line basic-typography-ellipsis css-wgj5gs"
                                   >
                                     测试扫描类型
                                   </div>
@@ -1127,18 +1127,18 @@ exports[`test sqle/SqlManagementConf/ConfForm render snap shot when defaultValue
             class="css-bspaai"
           >
             <h1
-              class="ant-typography css-1eepp70 css-dev-only-do-not-override-txh9fw"
+              class="ant-typography css-1eepp70"
             >
               编辑扫描详情·MySQL库表元数据
             </h1>
             <div
-              class="ant-form-item has-label-tip css-1jlm9cy css-dev-only-do-not-override-txh9fw ant-form-item-has-success"
+              class="ant-form-item has-label-tip css-1jlm9cy ant-form-item-has-success"
             >
               <div
-                class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                class="ant-row ant-form-item-row"
               >
                 <div
-                  class="ant-col ant-col-11 ant-form-item-label css-dev-only-do-not-override-txh9fw"
+                  class="ant-col ant-col-11 ant-form-item-label"
                 >
                   <label
                     class="ant-form-item-no-colon"
@@ -1160,7 +1160,7 @@ exports[`test sqle/SqlManagementConf/ConfForm render snap shot when defaultValue
                   </label>
                 </div>
                 <div
-                  class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                  class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control"
                 >
                   <div
                     class="ant-form-item-control-input"
@@ -1169,7 +1169,7 @@ exports[`test sqle/SqlManagementConf/ConfForm render snap shot when defaultValue
                       class="ant-form-item-control-input-content"
                     >
                       <input
-                        class="ant-input ant-input-status-success css-dev-only-do-not-override-ywkr0o basic-input-wrapper css-1pd1cd5"
+                        class="ant-input ant-input-status-success basic-input-wrapper css-1pd1cd5"
                         id="mysql_schema_meta_collect_interval_minute"
                         placeholder="请输入{{name}}"
                         type="text"
@@ -1181,13 +1181,13 @@ exports[`test sqle/SqlManagementConf/ConfForm render snap shot when defaultValue
               </div>
             </div>
             <div
-              class="ant-form-item  css-1jlm9cy css-dev-only-do-not-override-txh9fw ant-form-item-has-success"
+              class="ant-form-item css-1jlm9cy ant-form-item-has-success"
             >
               <div
-                class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                class="ant-row ant-form-item-row"
               >
                 <div
-                  class="ant-col ant-col-11 ant-form-item-label css-dev-only-do-not-override-txh9fw"
+                  class="ant-col ant-col-11 ant-form-item-label"
                 >
                   <label
                     class="ant-form-item-no-colon"
@@ -1208,7 +1208,7 @@ exports[`test sqle/SqlManagementConf/ConfForm render snap shot when defaultValue
                   </label>
                 </div>
                 <div
-                  class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                  class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control"
                 >
                   <div
                     class="ant-form-item-control-input"
@@ -1218,7 +1218,7 @@ exports[`test sqle/SqlManagementConf/ConfForm render snap shot when defaultValue
                     >
                       <button
                         aria-checked="false"
-                        class="ant-switch basic-switch-wrapper css-g6dhbn css-dev-only-do-not-override-txh9fw"
+                        class="ant-switch basic-switch-wrapper css-g6dhbn"
                         id="mysql_schema_meta_collect_view"
                         role="switch"
                         type="button"
@@ -1243,13 +1243,13 @@ exports[`test sqle/SqlManagementConf/ConfForm render snap shot when defaultValue
               </div>
             </div>
             <div
-              class="ant-form-item has-label-tip has-required-style css-1jlm9cy css-dev-only-do-not-override-txh9fw ant-form-item-has-success"
+              class="ant-form-item has-label-tip has-required-style css-1jlm9cy ant-form-item-has-success"
             >
               <div
-                class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                class="ant-row ant-form-item-row"
               >
                 <div
-                  class="ant-col ant-col-11 ant-form-item-label css-dev-only-do-not-override-txh9fw"
+                  class="ant-col ant-col-11 ant-form-item-label"
                 >
                   <label
                     class="ant-form-item-required ant-form-item-no-colon"
@@ -1271,7 +1271,7 @@ exports[`test sqle/SqlManagementConf/ConfForm render snap shot when defaultValue
                   </label>
                 </div>
                 <div
-                  class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                  class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control"
                 >
                   <div
                     class="ant-form-item-control-input"
@@ -1281,7 +1281,7 @@ exports[`test sqle/SqlManagementConf/ConfForm render snap shot when defaultValue
                     >
                       <div
                         aria-required="true"
-                        class="ant-select ant-select-in-form-item ant-select-status-success basic-select-wrapper css-iy4o4x css-dev-only-do-not-override-v9sov3 ant-select-single ant-select-allow-clear ant-select-show-arrow"
+                        class="ant-select ant-select-in-form-item ant-select-status-success basic-select-wrapper css-iy4o4x ant-select-single ant-select-allow-clear ant-select-show-arrow"
                       >
                         <div
                           class="ant-select-selector"

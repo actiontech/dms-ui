@@ -17,10 +17,10 @@ import {
   ColumnsSettingProps,
   useTableRequestParams
 } from '@actiontech/shared/lib/components/ActiontechTable';
-import { SqlManageService } from '@actiontech/shared/lib/api';
+import { SqleApi } from '@actiontech/shared/lib/api';
 import {
-  IExportSqlManageV1Params,
-  IGetSqlManageListV2Params
+  IExportSqlManageV2Params,
+  IGetSqlManageListV3Params
 } from '@actiontech/shared/lib/api/sqle/service/SqlManage/index.d';
 import {
   useCurrentProject,
@@ -30,12 +30,12 @@ import {
 import { ResponseCode } from '@actiontech/shared/lib/enum';
 import StatusFilter, { TypeStatus } from './StatusFilter';
 import {
-  GetSqlManageListV2FilterPriorityEnum,
-  GetSqlManageListV2FilterStatusEnum,
-  GetSqlManageListV2SortFieldEnum,
-  GetSqlManageListV2SortOrderEnum,
-  exportSqlManageV1FilterPriorityEnum,
-  exportSqlManageV1FilterStatusEnum
+  GetSqlManageListV3FilterPriorityEnum,
+  GetSqlManageListV3FilterStatusEnum,
+  GetSqlManageListV3SortFieldEnum,
+  GetSqlManageListV3SortOrderEnum,
+  exportSqlManageV2FilterPriorityEnum,
+  exportSqlManageV2FilterStatusEnum
 } from '@actiontech/shared/lib/api/sqle/service/SqlManage/index.enum';
 import SqlManagementColumn, {
   ExtraFilterMeta,
@@ -65,7 +65,7 @@ import {
   AbnormalAuditPlanTipsStyleWrapper
 } from './style';
 import { SqlManageAuditStatusEnum } from '@actiontech/shared/lib/api/sqle/service/common.enum';
-import { GetSqlManageListV2FilterSourceEnum } from '@actiontech/shared/lib/api/sqle/service/SqlManage/index.enum';
+import { GetSqlManageListV3FilterSourceEnum } from '@actiontech/shared/lib/api/sqle/service/SqlManage/index.enum';
 import { ROUTE_PATHS } from '@actiontech/shared/lib/data/routePaths';
 import { parse2ReactRouterPath } from '@actiontech/shared/lib/components/TypedRouter/utils';
 
@@ -86,7 +86,7 @@ const SQLEEIndex = () => {
   const { requestErrorMessage, handleTableRequestError } =
     useTableRequestError();
   const [filterStatus, setFilterStatus] = useState<TypeStatus>(
-    GetSqlManageListV2FilterStatusEnum.unhandled
+    GetSqlManageListV3FilterStatusEnum.unhandled
   );
 
   const [polling, { setFalse: finishPollRequest, setTrue: startPollRequest }] =
@@ -126,18 +126,18 @@ const SQLEEIndex = () => {
 
   const getCurrentSortParams = (
     sortData: SorterResult<ISqlManage> | SorterResult<ISqlManage>[]
-  ): Pick<IGetSqlManageListV2Params, 'sort_field' | 'sort_order'> => {
+  ): Pick<IGetSqlManageListV3Params, 'sort_field' | 'sort_order'> => {
     if (Array.isArray(sortData)) {
       return {};
     }
     const orderDesc = {
-      descend: GetSqlManageListV2SortOrderEnum.desc,
-      ascend: GetSqlManageListV2SortOrderEnum.asc
+      descend: GetSqlManageListV3SortOrderEnum.desc,
+      ascend: GetSqlManageListV3SortOrderEnum.asc
     };
 
     return {
       sort_field:
-        (sortData.field as unknown as GetSqlManageListV2SortFieldEnum) ??
+        (sortData.field as unknown as GetSqlManageListV3SortFieldEnum) ??
         undefined,
       sort_order: sortData?.order
         ? orderDesc[sortData?.order] ?? undefined
@@ -154,7 +154,7 @@ const SQLEEIndex = () => {
   } = useRequest(
     () => {
       const { filter_rule_name, ...otherTableFilterInfo } = tableFilterInfo;
-      const params: IGetSqlManageListV2Params = {
+      const params: IGetSqlManageListV3Params = {
         ...otherTableFilterInfo,
         ...pagination,
         ...getCurrentSortParams(sortInfo),
@@ -169,11 +169,11 @@ const SQLEEIndex = () => {
         project_name: projectName,
         filter_assignee: isAssigneeSelf ? userId : undefined, // filter_assignee 需要用 id
         filter_priority: isHighPriority
-          ? GetSqlManageListV2FilterPriorityEnum.high
+          ? GetSqlManageListV3FilterPriorityEnum.high
           : undefined
       };
       return handleTableRequestError(
-        SqlManageService.GetSqlManageListV2(params)
+        SqleApi.SqlManageService.GetSqlManageListV3(params)
       );
     },
     {
@@ -212,7 +212,7 @@ const SQLEEIndex = () => {
 
   const { data: abnormalInstances, loading: getAbnormalInstancesLoading } =
     useRequest(() =>
-      SqlManageService.getAbnormalInstanceAuditPlansV1({
+      SqleApi.SqlManageService.getAbnormalInstanceAuditPlansV1({
         project_name: projectName
       }).then((res) => {
         if (res.data.code === ResponseCode.SUCCESS) {
@@ -302,7 +302,7 @@ const SQLEEIndex = () => {
         return;
       }
       updateRemarkProtect.current = true;
-      SqlManageService.BatchUpdateSqlManage({
+      SqleApi.SqlManageService.BatchUpdateSqlManage({
         project_name: projectName,
         sql_manage_id_list: [id],
         remark
@@ -382,19 +382,19 @@ const SQLEEIndex = () => {
       filter_status:
         filterStatus === 'all'
           ? undefined
-          : (filterStatus as unknown as exportSqlManageV1FilterStatusEnum),
+          : (filterStatus as unknown as exportSqlManageV2FilterStatusEnum),
       fuzzy_search_sql_fingerprint: searchKeyword,
       project_name: projectName,
       filter_assignee: isAssigneeSelf ? userId : undefined,
       filter_priority: isHighPriority
-        ? exportSqlManageV1FilterPriorityEnum.high
+        ? exportSqlManageV2FilterPriorityEnum.high
         : undefined,
       filter_db_type: filter_rule_name?.split(DB_TYPE_RULE_NAME_SEPARATOR)?.[0],
       filter_rule_name: filter_rule_name?.split(
         DB_TYPE_RULE_NAME_SEPARATOR
       )?.[1]
-    } as IExportSqlManageV1Params;
-    SqlManageService.exportSqlManageV1(params, { responseType: 'blob' })
+    } as IExportSqlManageV2Params;
+    SqleApi.SqlManageService.exportSqlManageV2(params, { responseType: 'blob' })
       .then((res) => {
         if (res.data.code === ResponseCode.SUCCESS) {
           messageApi.success(
@@ -462,7 +462,7 @@ const SQLEEIndex = () => {
       updateAllSelectedFilterItem(true);
       updateTableFilterInfo({
         filter_source:
-          searchParams.source as GetSqlManageListV2FilterSourceEnum,
+          searchParams.source as GetSqlManageListV3FilterSourceEnum,
         filter_instance_id: searchParams.instance_id
       });
       setIsHighPriority(true);

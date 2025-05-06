@@ -77,7 +77,7 @@ describe('base/DataSource/BatchImportDataSource', () => {
 
   it('render check api return csv file', async () => {
     importDBServicesOfOneProjectCheckSpy.mockClear();
-    const spy = jest.spyOn(DBService, 'ImportDBServicesOfOneProjectCheck');
+    const spy = jest.spyOn(DBService, 'ImportDBServicesOfOneProjectCheckV2');
     spy.mockImplementation(() => {
       return new Promise<AxiosResponse<any>>((res) => {
         setTimeout(() => {

@@ -1,15 +1,16 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`BackButton should render a button 1`] = `
+exports[`BackButton should match snapshot 1`] = `
 <div>
   <button
-    class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default ant-btn-icon-only basic-button-wrapper css-geipcv"
+    class="ant-btn ant-btn-default ant-btn-icon-only basic-button-wrapper css-geipcv"
     type="button"
   >
     <span
       class="ant-btn-icon"
     >
       <svg
+        data-testid="left-arrow-icon"
         height="16"
         viewBox="0 0 16 16"
         width="16"

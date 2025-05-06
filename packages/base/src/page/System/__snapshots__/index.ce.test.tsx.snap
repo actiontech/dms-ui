@@ -19,10 +19,10 @@ exports[`base/System-ee render snap 1`] = `
         />
       </div>
       <div
-        class="ant-row ant-row-middle segmented-wrapper css-dev-only-do-not-override-txh9fw"
+        class="ant-row ant-row-middle segmented-wrapper"
       >
         <div
-          class="ant-segmented basic-segmented-wrapper css-192b3m1 css-dev-only-do-not-override-txh9fw"
+          class="ant-segmented basic-segmented-wrapper css-192b3m1"
         >
           <div
             class="ant-segmented-group"
@@ -84,20 +84,34 @@ exports[`base/System-ee render snap 1`] = `
                 全局配置
               </div>
             </label>
+            <label
+              class="ant-segmented-item"
+            >
+              <input
+                class="ant-segmented-item-input"
+                type="radio"
+              />
+              <div
+                class="ant-segmented-item-label"
+                title="Git SSH配置"
+              >
+                Git SSH配置
+              </div>
+            </label>
           </div>
         </div>
       </div>
       <div
-        class="ant-row ant-row-center css-dev-only-do-not-override-txh9fw"
+        class="ant-row ant-row-center"
       >
         <section
           class="system-form-wrapper"
         >
           <div
-            class="ant-row ant-row-space-between ant-row-middle config-title-wrapper has-border css-dev-only-do-not-override-txh9fw"
+            class="ant-row ant-row-space-between ant-row-middle config-title-wrapper has-border"
           >
             <div
-              class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+              class="ant-space ant-space-horizontal ant-space-align-center"
             >
               <div
                 class="ant-space-item"
@@ -110,13 +124,13 @@ exports[`base/System-ee render snap 1`] = `
             class="config-form-wrapper"
           >
             <div
-              class="ant-spin-nested-loading css-dev-only-do-not-override-txh9fw"
+              class="ant-spin-nested-loading"
             >
               <div>
                 <div
                   aria-busy="true"
                   aria-live="polite"
-                  class="ant-spin ant-spin-spinning css-dev-only-do-not-override-txh9fw"
+                  class="ant-spin ant-spin-spinning"
                 >
                   <span
                     class="ant-spin-dot ant-spin-dot-spin"
@@ -140,19 +154,19 @@ exports[`base/System-ee render snap 1`] = `
                 class="ant-spin-container ant-spin-blur"
               >
                 <form
-                  class="ant-form ant-form-horizontal css-dev-only-do-not-override-txh9fw"
+                  class="ant-form ant-form-horizontal"
                 >
                   <div
                     class="switch-field-wrapper"
                   >
                     <div
-                      class="ant-form-item  css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+                      class="ant-form-item css-1jlm9cy"
                     >
                       <div
-                        class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                        class="ant-row ant-form-item-row"
                       >
                         <div
-                          class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left css-dev-only-do-not-override-txh9fw"
+                          class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left"
                         >
                           <label
                             class="ant-form-item-no-colon"
@@ -162,7 +176,7 @@ exports[`base/System-ee render snap 1`] = `
                           </label>
                         </div>
                         <div
-                          class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                          class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control"
                         >
                           <div
                             class="ant-form-item-control-input"
@@ -171,7 +185,7 @@ exports[`base/System-ee render snap 1`] = `
                               class="ant-form-item-control-input-content"
                             >
                               <div
-                                class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+                                class="ant-space ant-space-horizontal ant-space-align-center"
                               >
                                 <div
                                   class="ant-space-item"
@@ -192,13 +206,13 @@ exports[`base/System-ee render snap 1`] = `
                     hidden=""
                   >
                     <div
-                      class="ant-form-item has-label-tip css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+                      class="ant-form-item has-label-tip css-1jlm9cy"
                     >
                       <div
-                        class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                        class="ant-row ant-form-item-row"
                       >
                         <div
-                          class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left css-dev-only-do-not-override-txh9fw"
+                          class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left"
                         >
                           <label
                             class="ant-form-item-no-colon"
@@ -220,7 +234,7 @@ exports[`base/System-ee render snap 1`] = `
                           </label>
                         </div>
                         <div
-                          class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                          class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control"
                         >
                           <div
                             class="ant-form-item-control-input"
@@ -230,7 +244,7 @@ exports[`base/System-ee render snap 1`] = `
                             >
                               <button
                                 aria-checked="false"
-                                class="ant-switch basic-switch-wrapper css-g6dhbn css-dev-only-do-not-override-txh9fw"
+                                class="ant-switch basic-switch-wrapper css-g6dhbn"
                                 id="isSkipVerify"
                                 role="switch"
                                 type="button"
@@ -255,13 +269,13 @@ exports[`base/System-ee render snap 1`] = `
                       </div>
                     </div>
                     <div
-                      class="ant-form-item has-required-style css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+                      class="ant-form-item has-required-style css-1jlm9cy"
                     >
                       <div
-                        class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                        class="ant-row ant-form-item-row"
                       >
                         <div
-                          class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left css-dev-only-do-not-override-txh9fw"
+                          class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left"
                         >
                           <label
                             class="ant-form-item-required ant-form-item-no-colon"
@@ -272,7 +286,7 @@ exports[`base/System-ee render snap 1`] = `
                           </label>
                         </div>
                         <div
-                          class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                          class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control"
                         >
                           <div
                             class="ant-form-item-control-input"
@@ -282,7 +296,7 @@ exports[`base/System-ee render snap 1`] = `
                             >
                               <input
                                 aria-required="true"
-                                class="ant-input css-dev-only-do-not-override-ywkr0o basic-input-wrapper css-1pd1cd5"
+                                class="ant-input basic-input-wrapper css-1pd1cd5"
                                 id="host"
                                 placeholder="请输入SMTP地址"
                                 type="text"
@@ -294,13 +308,13 @@ exports[`base/System-ee render snap 1`] = `
                       </div>
                     </div>
                     <div
-                      class="ant-form-item has-required-style css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+                      class="ant-form-item has-required-style css-1jlm9cy"
                     >
                       <div
-                        class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                        class="ant-row ant-form-item-row"
                       >
                         <div
-                          class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left css-dev-only-do-not-override-txh9fw"
+                          class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left"
                         >
                           <label
                             class="ant-form-item-required ant-form-item-no-colon"
@@ -311,7 +325,7 @@ exports[`base/System-ee render snap 1`] = `
                           </label>
                         </div>
                         <div
-                          class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                          class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control"
                         >
                           <div
                             class="ant-form-item-control-input"
@@ -321,7 +335,7 @@ exports[`base/System-ee render snap 1`] = `
                             >
                               <input
                                 aria-required="true"
-                                class="ant-input css-dev-only-do-not-override-ywkr0o basic-input-wrapper css-1pd1cd5"
+                                class="ant-input basic-input-wrapper css-1pd1cd5"
                                 id="port"
                                 placeholder="请输入SMTP端口"
                                 type="text"
@@ -333,13 +347,13 @@ exports[`base/System-ee render snap 1`] = `
                       </div>
                     </div>
                     <div
-                      class="ant-form-item has-required-style css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+                      class="ant-form-item has-required-style css-1jlm9cy"
                     >
                       <div
-                        class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                        class="ant-row ant-form-item-row"
                       >
                         <div
-                          class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left css-dev-only-do-not-override-txh9fw"
+                          class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left"
                         >
                           <label
                             class="ant-form-item-required ant-form-item-no-colon"
@@ -350,7 +364,7 @@ exports[`base/System-ee render snap 1`] = `
                           </label>
                         </div>
                         <div
-                          class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                          class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control"
                         >
                           <div
                             class="ant-form-item-control-input"
@@ -360,7 +374,7 @@ exports[`base/System-ee render snap 1`] = `
                             >
                               <input
                                 aria-required="true"
-                                class="ant-input css-dev-only-do-not-override-ywkr0o basic-input-wrapper css-1pd1cd5"
+                                class="ant-input basic-input-wrapper css-1pd1cd5"
                                 id="username"
                                 placeholder="请输入SMTP用户名"
                                 type="text"
@@ -372,13 +386,13 @@ exports[`base/System-ee render snap 1`] = `
                       </div>
                     </div>
                     <div
-                      class="ant-form-item has-required-style css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+                      class="ant-form-item has-required-style css-1jlm9cy"
                     >
                       <div
-                        class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                        class="ant-row ant-form-item-row"
                       >
                         <div
-                          class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left css-dev-only-do-not-override-txh9fw"
+                          class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left"
                         >
                           <label
                             class="ant-form-item-required ant-form-item-no-colon"
@@ -389,7 +403,7 @@ exports[`base/System-ee render snap 1`] = `
                           </label>
                         </div>
                         <div
-                          class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                          class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control"
                         >
                           <div
                             class="ant-form-item-control-input"
@@ -398,11 +412,11 @@ exports[`base/System-ee render snap 1`] = `
                               class="ant-form-item-control-input-content"
                             >
                               <span
-                                class="ant-input-affix-wrapper ant-input-password basic-input-wrapper css-1pd1cd5 css-dev-only-do-not-override-txh9fw"
+                                class="ant-input-affix-wrapper ant-input-password basic-input-wrapper css-1pd1cd5"
                               >
                                 <input
                                   aria-required="true"
-                                  class="ant-input css-dev-only-do-not-override-txh9fw"
+                                  class="ant-input"
                                   id="password"
                                   placeholder="请输入SMTP密码"
                                   type="password"
@@ -441,13 +455,13 @@ exports[`base/System-ee render snap 1`] = `
                       </div>
                     </div>
                     <div
-                      class="ant-form-item has-required-style css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+                      class="ant-form-item has-required-style css-1jlm9cy"
                     >
                       <div
-                        class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                        class="ant-row ant-form-item-row"
                       >
                         <div
-                          class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left css-dev-only-do-not-override-txh9fw"
+                          class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left"
                         >
                           <label
                             class="ant-form-item-required ant-form-item-no-colon"
@@ -458,7 +472,7 @@ exports[`base/System-ee render snap 1`] = `
                           </label>
                         </div>
                         <div
-                          class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                          class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control"
                         >
                           <div
                             class="ant-form-item-control-input"
@@ -467,11 +481,11 @@ exports[`base/System-ee render snap 1`] = `
                               class="ant-form-item-control-input-content"
                             >
                               <span
-                                class="ant-input-affix-wrapper ant-input-password basic-input-wrapper css-1pd1cd5 css-dev-only-do-not-override-txh9fw"
+                                class="ant-input-affix-wrapper ant-input-password basic-input-wrapper css-1pd1cd5"
                               >
                                 <input
                                   aria-required="true"
-                                  class="ant-input css-dev-only-do-not-override-txh9fw"
+                                  class="ant-input"
                                   id="passwordConfirm"
                                   placeholder="请输入确认SMTP密码"
                                   type="password"
@@ -510,13 +524,13 @@ exports[`base/System-ee render snap 1`] = `
                       </div>
                     </div>
                     <div
-                      class="ant-form-item css-15d6abf css-dev-only-do-not-override-txh9fw"
+                      class="ant-form-item css-15d6abf"
                     >
                       <div
-                        class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                        class="ant-row ant-form-item-row"
                       >
                         <div
-                          class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left css-dev-only-do-not-override-txh9fw"
+                          class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left"
                         >
                           <label
                             class="ant-form-item-no-colon"
@@ -526,7 +540,7 @@ exports[`base/System-ee render snap 1`] = `
                           </label>
                         </div>
                         <div
-                          class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                          class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control"
                         >
                           <div
                             class="ant-form-item-control-input"
@@ -535,14 +549,14 @@ exports[`base/System-ee render snap 1`] = `
                               class="ant-form-item-control-input-content"
                             >
                               <div
-                                class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+                                class="ant-space ant-space-horizontal ant-space-align-center"
                               >
                                 <div
                                   class="ant-space-item"
                                   style="margin-right: 12px;"
                                 >
                                   <button
-                                    class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default basic-button-wrapper css-geipcv"
+                                    class="ant-btn ant-btn-default basic-button-wrapper css-geipcv"
                                     type="button"
                                   >
                                     <span>
@@ -554,7 +568,7 @@ exports[`base/System-ee render snap 1`] = `
                                   class="ant-space-item"
                                 >
                                   <button
-                                    class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary basic-button-wrapper css-geipcv"
+                                    class="ant-btn ant-btn-primary basic-button-wrapper css-geipcv"
                                     type="submit"
                                   >
                                     <span>
@@ -578,13 +592,13 @@ exports[`base/System-ee render snap 1`] = `
             class="config-form-wrapper"
           >
             <div
-              class="ant-spin-nested-loading css-dev-only-do-not-override-txh9fw"
+              class="ant-spin-nested-loading"
             >
               <div>
                 <div
                   aria-busy="true"
                   aria-live="polite"
-                  class="ant-spin ant-spin-spinning css-dev-only-do-not-override-txh9fw"
+                  class="ant-spin ant-spin-spinning"
                 >
                   <span
                     class="ant-spin-dot ant-spin-dot-spin"
@@ -608,19 +622,19 @@ exports[`base/System-ee render snap 1`] = `
                 class="ant-spin-container ant-spin-blur"
               >
                 <form
-                  class="ant-form ant-form-horizontal css-dev-only-do-not-override-txh9fw"
+                  class="ant-form ant-form-horizontal"
                 >
                   <div
                     class="switch-field-wrapper"
                   >
                     <div
-                      class="ant-form-item  css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+                      class="ant-form-item css-1jlm9cy"
                     >
                       <div
-                        class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                        class="ant-row ant-form-item-row"
                       >
                         <div
-                          class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left css-dev-only-do-not-override-txh9fw"
+                          class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left"
                         >
                           <label
                             class="ant-form-item-no-colon"
@@ -630,7 +644,7 @@ exports[`base/System-ee render snap 1`] = `
                           </label>
                         </div>
                         <div
-                          class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                          class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control"
                         >
                           <div
                             class="ant-form-item-control-input"
@@ -639,7 +653,7 @@ exports[`base/System-ee render snap 1`] = `
                               class="ant-form-item-control-input-content"
                             >
                               <div
-                                class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+                                class="ant-space ant-space-horizontal ant-space-align-center"
                               >
                                 <div
                                   class="ant-space-item"
@@ -660,13 +674,13 @@ exports[`base/System-ee render snap 1`] = `
                     hidden=""
                   >
                     <div
-                      class="ant-form-item has-required-style css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+                      class="ant-form-item has-required-style css-1jlm9cy"
                     >
                       <div
-                        class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                        class="ant-row ant-form-item-row"
                       >
                         <div
-                          class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left css-dev-only-do-not-override-txh9fw"
+                          class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left"
                         >
                           <label
                             class="ant-form-item-required ant-form-item-no-colon"
@@ -677,7 +691,7 @@ exports[`base/System-ee render snap 1`] = `
                           </label>
                         </div>
                         <div
-                          class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                          class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control"
                         >
                           <div
                             class="ant-form-item-control-input"
@@ -687,7 +701,7 @@ exports[`base/System-ee render snap 1`] = `
                             >
                               <input
                                 aria-required="true"
-                                class="ant-input css-dev-only-do-not-override-ywkr0o basic-input-wrapper css-1pd1cd5"
+                                class="ant-input basic-input-wrapper css-1pd1cd5"
                                 id="corp_id"
                                 placeholder="请输入CorpID(微信企业号ID)"
                                 type="text"
@@ -699,13 +713,13 @@ exports[`base/System-ee render snap 1`] = `
                       </div>
                     </div>
                     <div
-                      class="ant-form-item has-required-style css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+                      class="ant-form-item has-required-style css-1jlm9cy"
                     >
                       <div
-                        class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                        class="ant-row ant-form-item-row"
                       >
                         <div
-                          class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left css-dev-only-do-not-override-txh9fw"
+                          class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left"
                         >
                           <label
                             class="ant-form-item-required ant-form-item-no-colon"
@@ -716,7 +730,7 @@ exports[`base/System-ee render snap 1`] = `
                           </label>
                         </div>
                         <div
-                          class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                          class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control"
                         >
                           <div
                             class="ant-form-item-control-input"
@@ -726,7 +740,7 @@ exports[`base/System-ee render snap 1`] = `
                             >
                               <input
                                 aria-required="true"
-                                class="ant-input css-dev-only-do-not-override-ywkr0o basic-input-wrapper css-1pd1cd5"
+                                class="ant-input basic-input-wrapper css-1pd1cd5"
                                 id="agent_id"
                                 placeholder="请输入企业微信应用ID"
                                 type="text"
@@ -738,13 +752,13 @@ exports[`base/System-ee render snap 1`] = `
                       </div>
                     </div>
                     <div
-                      class="ant-form-item has-required-style css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+                      class="ant-form-item has-required-style css-1jlm9cy"
                     >
                       <div
-                        class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                        class="ant-row ant-form-item-row"
                       >
                         <div
-                          class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left css-dev-only-do-not-override-txh9fw"
+                          class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left"
                         >
                           <label
                             class="ant-form-item-required ant-form-item-no-colon"
@@ -755,7 +769,7 @@ exports[`base/System-ee render snap 1`] = `
                           </label>
                         </div>
                         <div
-                          class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                          class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control"
                         >
                           <div
                             class="ant-form-item-control-input"
@@ -764,11 +778,11 @@ exports[`base/System-ee render snap 1`] = `
                               class="ant-form-item-control-input-content"
                             >
                               <span
-                                class="ant-input-affix-wrapper ant-input-password basic-input-wrapper css-1pd1cd5 css-dev-only-do-not-override-txh9fw"
+                                class="ant-input-affix-wrapper ant-input-password basic-input-wrapper css-1pd1cd5"
                               >
                                 <input
                                   aria-required="true"
-                                  class="ant-input css-dev-only-do-not-override-txh9fw"
+                                  class="ant-input"
                                   id="corp_secret"
                                   placeholder="请输入企业微信应用Secret"
                                   type="password"
@@ -807,13 +821,13 @@ exports[`base/System-ee render snap 1`] = `
                       </div>
                     </div>
                     <div
-                      class="ant-form-item css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+                      class="ant-form-item css-1jlm9cy"
                     >
                       <div
-                        class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                        class="ant-row ant-form-item-row"
                       >
                         <div
-                          class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left css-dev-only-do-not-override-txh9fw"
+                          class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left"
                         >
                           <label
                             class="ant-form-item-no-colon"
@@ -824,7 +838,7 @@ exports[`base/System-ee render snap 1`] = `
                           </label>
                         </div>
                         <div
-                          class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                          class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control"
                         >
                           <div
                             class="ant-form-item-control-input"
@@ -834,7 +848,7 @@ exports[`base/System-ee render snap 1`] = `
                             >
                               <button
                                 aria-checked="false"
-                                class="ant-switch basic-switch-wrapper css-g6dhbn css-dev-only-do-not-override-txh9fw"
+                                class="ant-switch basic-switch-wrapper css-g6dhbn"
                                 id="safe_enabled"
                                 role="switch"
                                 type="button"
@@ -859,13 +873,13 @@ exports[`base/System-ee render snap 1`] = `
                       </div>
                     </div>
                     <div
-                      class="ant-form-item css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+                      class="ant-form-item css-1jlm9cy"
                     >
                       <div
-                        class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                        class="ant-row ant-form-item-row"
                       >
                         <div
-                          class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left css-dev-only-do-not-override-txh9fw"
+                          class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left"
                         >
                           <label
                             class="ant-form-item-no-colon"
@@ -876,7 +890,7 @@ exports[`base/System-ee render snap 1`] = `
                           </label>
                         </div>
                         <div
-                          class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                          class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control"
                         >
                           <div
                             class="ant-form-item-control-input"
@@ -885,7 +899,7 @@ exports[`base/System-ee render snap 1`] = `
                               class="ant-form-item-control-input-content"
                             >
                               <input
-                                class="ant-input css-dev-only-do-not-override-ywkr0o basic-input-wrapper css-1pd1cd5"
+                                class="ant-input basic-input-wrapper css-1pd1cd5"
                                 id="proxy_ip"
                                 placeholder="请输入代理服务器IP"
                                 type="text"
@@ -897,13 +911,13 @@ exports[`base/System-ee render snap 1`] = `
                       </div>
                     </div>
                     <div
-                      class="ant-form-item css-15d6abf css-dev-only-do-not-override-txh9fw"
+                      class="ant-form-item css-15d6abf"
                     >
                       <div
-                        class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                        class="ant-row ant-form-item-row"
                       >
                         <div
-                          class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left css-dev-only-do-not-override-txh9fw"
+                          class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left"
                         >
                           <label
                             class="ant-form-item-no-colon"
@@ -913,7 +927,7 @@ exports[`base/System-ee render snap 1`] = `
                           </label>
                         </div>
                         <div
-                          class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                          class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control"
                         >
                           <div
                             class="ant-form-item-control-input"
@@ -922,14 +936,14 @@ exports[`base/System-ee render snap 1`] = `
                               class="ant-form-item-control-input-content"
                             >
                               <div
-                                class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+                                class="ant-space ant-space-horizontal ant-space-align-center"
                               >
                                 <div
                                   class="ant-space-item"
                                   style="margin-right: 12px;"
                                 >
                                   <button
-                                    class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default basic-button-wrapper css-geipcv"
+                                    class="ant-btn ant-btn-default basic-button-wrapper css-geipcv"
                                     type="button"
                                   >
                                     <span>
@@ -941,7 +955,7 @@ exports[`base/System-ee render snap 1`] = `
                                   class="ant-space-item"
                                 >
                                   <button
-                                    class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary basic-button-wrapper css-geipcv"
+                                    class="ant-btn ant-btn-primary basic-button-wrapper css-geipcv"
                                     type="submit"
                                   >
                                     <span>
@@ -965,13 +979,13 @@ exports[`base/System-ee render snap 1`] = `
             class="config-form-wrapper"
           >
             <div
-              class="ant-spin-nested-loading css-dev-only-do-not-override-txh9fw"
+              class="ant-spin-nested-loading"
             >
               <div>
                 <div
                   aria-busy="true"
                   aria-live="polite"
-                  class="ant-spin ant-spin-spinning css-dev-only-do-not-override-txh9fw"
+                  class="ant-spin ant-spin-spinning"
                 >
                   <span
                     class="ant-spin-dot ant-spin-dot-spin"
@@ -995,19 +1009,19 @@ exports[`base/System-ee render snap 1`] = `
                 class="ant-spin-container ant-spin-blur"
               >
                 <form
-                  class="ant-form ant-form-horizontal css-dev-only-do-not-override-txh9fw"
+                  class="ant-form ant-form-horizontal"
                 >
                   <div
                     class="switch-field-wrapper"
                   >
                     <div
-                      class="ant-form-item  css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+                      class="ant-form-item css-1jlm9cy"
                     >
                       <div
-                        class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                        class="ant-row ant-form-item-row"
                       >
                         <div
-                          class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left css-dev-only-do-not-override-txh9fw"
+                          class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left"
                         >
                           <label
                             class="ant-form-item-no-colon"
@@ -1017,7 +1031,7 @@ exports[`base/System-ee render snap 1`] = `
                           </label>
                         </div>
                         <div
-                          class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                          class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control"
                         >
                           <div
                             class="ant-form-item-control-input"
@@ -1026,7 +1040,7 @@ exports[`base/System-ee render snap 1`] = `
                               class="ant-form-item-control-input-content"
                             >
                               <div
-                                class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+                                class="ant-space ant-space-horizontal ant-space-align-center"
                               >
                                 <div
                                   class="ant-space-item"
@@ -1047,13 +1061,13 @@ exports[`base/System-ee render snap 1`] = `
                     hidden=""
                   >
                     <div
-                      class="ant-form-item has-required-style css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+                      class="ant-form-item has-required-style css-1jlm9cy"
                     >
                       <div
-                        class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                        class="ant-row ant-form-item-row"
                       >
                         <div
-                          class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left css-dev-only-do-not-override-txh9fw"
+                          class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left"
                         >
                           <label
                             class="ant-form-item-required ant-form-item-no-colon"
@@ -1064,7 +1078,7 @@ exports[`base/System-ee render snap 1`] = `
                           </label>
                         </div>
                         <div
-                          class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                          class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control"
                         >
                           <div
                             class="ant-form-item-control-input"
@@ -1074,7 +1088,7 @@ exports[`base/System-ee render snap 1`] = `
                             >
                               <input
                                 aria-required="true"
-                                class="ant-input css-dev-only-do-not-override-ywkr0o basic-input-wrapper css-1pd1cd5"
+                                class="ant-input basic-input-wrapper css-1pd1cd5"
                                 id="appKey"
                                 placeholder="请输入App ID"
                                 type="text"
@@ -1086,13 +1100,13 @@ exports[`base/System-ee render snap 1`] = `
                       </div>
                     </div>
                     <div
-                      class="ant-form-item has-required-style css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+                      class="ant-form-item has-required-style css-1jlm9cy"
                     >
                       <div
-                        class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                        class="ant-row ant-form-item-row"
                       >
                         <div
-                          class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left css-dev-only-do-not-override-txh9fw"
+                          class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left"
                         >
                           <label
                             class="ant-form-item-required ant-form-item-no-colon"
@@ -1103,7 +1117,7 @@ exports[`base/System-ee render snap 1`] = `
                           </label>
                         </div>
                         <div
-                          class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                          class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control"
                         >
                           <div
                             class="ant-form-item-control-input"
@@ -1112,11 +1126,11 @@ exports[`base/System-ee render snap 1`] = `
                               class="ant-form-item-control-input-content"
                             >
                               <span
-                                class="ant-input-affix-wrapper ant-input-password basic-input-wrapper css-1pd1cd5 css-dev-only-do-not-override-txh9fw"
+                                class="ant-input-affix-wrapper ant-input-password basic-input-wrapper css-1pd1cd5"
                               >
                                 <input
                                   aria-required="true"
-                                  class="ant-input css-dev-only-do-not-override-txh9fw"
+                                  class="ant-input"
                                   id="appSecret"
                                   placeholder="请输入App Secret"
                                   type="password"
@@ -1155,13 +1169,13 @@ exports[`base/System-ee render snap 1`] = `
                       </div>
                     </div>
                     <div
-                      class="ant-form-item css-15d6abf css-dev-only-do-not-override-txh9fw"
+                      class="ant-form-item css-15d6abf"
                     >
                       <div
-                        class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                        class="ant-row ant-form-item-row"
                       >
                         <div
-                          class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left css-dev-only-do-not-override-txh9fw"
+                          class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left"
                         >
                           <label
                             class="ant-form-item-no-colon"
@@ -1171,7 +1185,7 @@ exports[`base/System-ee render snap 1`] = `
                           </label>
                         </div>
                         <div
-                          class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                          class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control"
                         >
                           <div
                             class="ant-form-item-control-input"
@@ -1180,14 +1194,14 @@ exports[`base/System-ee render snap 1`] = `
                               class="ant-form-item-control-input-content"
                             >
                               <div
-                                class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+                                class="ant-space ant-space-horizontal ant-space-align-center"
                               >
                                 <div
                                   class="ant-space-item"
                                   style="margin-right: 12px;"
                                 >
                                   <button
-                                    class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default basic-button-wrapper css-geipcv"
+                                    class="ant-btn ant-btn-default basic-button-wrapper css-geipcv"
                                     type="button"
                                   >
                                     <span>
@@ -1199,7 +1213,7 @@ exports[`base/System-ee render snap 1`] = `
                                   class="ant-space-item"
                                 >
                                   <button
-                                    class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary basic-button-wrapper css-geipcv"
+                                    class="ant-btn ant-btn-primary basic-button-wrapper css-geipcv"
                                     type="submit"
                                   >
                                     <span>
@@ -1223,13 +1237,13 @@ exports[`base/System-ee render snap 1`] = `
             class="config-form-wrapper"
           >
             <div
-              class="ant-spin-nested-loading css-dev-only-do-not-override-txh9fw"
+              class="ant-spin-nested-loading"
             >
               <div>
                 <div
                   aria-busy="true"
                   aria-live="polite"
-                  class="ant-spin ant-spin-spinning css-dev-only-do-not-override-txh9fw"
+                  class="ant-spin ant-spin-spinning"
                 >
                   <span
                     class="ant-spin-dot ant-spin-dot-spin"
@@ -1253,19 +1267,19 @@ exports[`base/System-ee render snap 1`] = `
                 class="ant-spin-container ant-spin-blur"
               >
                 <form
-                  class="ant-form ant-form-horizontal css-dev-only-do-not-override-txh9fw"
+                  class="ant-form ant-form-horizontal"
                 >
                   <div
                     class="switch-field-wrapper"
                   >
                     <div
-                      class="ant-form-item has-label-tip css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+                      class="ant-form-item has-label-tip css-1jlm9cy"
                     >
                       <div
-                        class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                        class="ant-row ant-form-item-row"
                       >
                         <div
-                          class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left css-dev-only-do-not-override-txh9fw"
+                          class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left"
                         >
                           <label
                             class="ant-form-item-no-colon"
@@ -1292,7 +1306,7 @@ exports[`base/System-ee render snap 1`] = `
                           </label>
                         </div>
                         <div
-                          class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                          class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control"
                         >
                           <div
                             class="ant-form-item-control-input"
@@ -1301,7 +1315,7 @@ exports[`base/System-ee render snap 1`] = `
                               class="ant-form-item-control-input-content"
                             >
                               <div
-                                class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+                                class="ant-space ant-space-horizontal ant-space-align-center"
                               >
                                 <div
                                   class="ant-space-item"
@@ -1322,13 +1336,13 @@ exports[`base/System-ee render snap 1`] = `
                     hidden=""
                   >
                     <div
-                      class="ant-form-item has-required-style css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+                      class="ant-form-item has-required-style css-1jlm9cy"
                     >
                       <div
-                        class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                        class="ant-row ant-form-item-row"
                       >
                         <div
-                          class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left css-dev-only-do-not-override-txh9fw"
+                          class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left"
                         >
                           <label
                             class="ant-form-item-required ant-form-item-no-colon"
@@ -1339,7 +1353,7 @@ exports[`base/System-ee render snap 1`] = `
                           </label>
                         </div>
                         <div
-                          class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                          class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control"
                         >
                           <div
                             class="ant-form-item-control-input"
@@ -1349,7 +1363,7 @@ exports[`base/System-ee render snap 1`] = `
                             >
                               <input
                                 aria-required="true"
-                                class="ant-input css-dev-only-do-not-override-ywkr0o basic-input-wrapper css-1pd1cd5"
+                                class="ant-input basic-input-wrapper css-1pd1cd5"
                                 id="url"
                                 placeholder="请输入{{name}}"
                                 type="text"
@@ -1361,13 +1375,13 @@ exports[`base/System-ee render snap 1`] = `
                       </div>
                     </div>
                     <div
-                      class="ant-form-item has-required-style css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+                      class="ant-form-item has-required-style css-1jlm9cy"
                     >
                       <div
-                        class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                        class="ant-row ant-form-item-row"
                       >
                         <div
-                          class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left css-dev-only-do-not-override-txh9fw"
+                          class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left"
                         >
                           <label
                             class="ant-form-item-required ant-form-item-no-colon"
@@ -1378,7 +1392,7 @@ exports[`base/System-ee render snap 1`] = `
                           </label>
                         </div>
                         <div
-                          class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                          class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control"
                         >
                           <div
                             class="ant-form-item-control-input"
@@ -1387,7 +1401,7 @@ exports[`base/System-ee render snap 1`] = `
                               class="ant-form-item-control-input-content"
                             >
                               <div
-                                class="ant-input-number ant-input-number-lg ant-input-number-in-form-item css-dev-only-do-not-override-ezmdel basic-inputNumber-wrapper css-1fd5hnt"
+                                class="ant-input-number ant-input-number-lg ant-input-number-in-form-item basic-inputNumber-wrapper css-1fd5hnt"
                               >
                                 <div
                                   class="ant-input-number-handler-wrap"
@@ -1469,13 +1483,13 @@ exports[`base/System-ee render snap 1`] = `
                       </div>
                     </div>
                     <div
-                      class="ant-form-item has-required-style css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+                      class="ant-form-item has-required-style css-1jlm9cy"
                     >
                       <div
-                        class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                        class="ant-row ant-form-item-row"
                       >
                         <div
-                          class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left css-dev-only-do-not-override-txh9fw"
+                          class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left"
                         >
                           <label
                             class="ant-form-item-required ant-form-item-no-colon"
@@ -1486,7 +1500,7 @@ exports[`base/System-ee render snap 1`] = `
                           </label>
                         </div>
                         <div
-                          class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                          class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control"
                         >
                           <div
                             class="ant-form-item-control-input"
@@ -1495,7 +1509,7 @@ exports[`base/System-ee render snap 1`] = `
                               class="ant-form-item-control-input-content"
                             >
                               <div
-                                class="ant-input-number ant-input-number-lg ant-input-number-in-form-item css-dev-only-do-not-override-ezmdel basic-inputNumber-wrapper css-1fd5hnt"
+                                class="ant-input-number ant-input-number-lg ant-input-number-in-form-item basic-inputNumber-wrapper css-1fd5hnt"
                               >
                                 <div
                                   class="ant-input-number-handler-wrap"
@@ -1577,13 +1591,13 @@ exports[`base/System-ee render snap 1`] = `
                       </div>
                     </div>
                     <div
-                      class="ant-form-item css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+                      class="ant-form-item css-1jlm9cy"
                     >
                       <div
-                        class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                        class="ant-row ant-form-item-row"
                       >
                         <div
-                          class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left css-dev-only-do-not-override-txh9fw"
+                          class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left"
                         >
                           <label
                             class="ant-form-item-no-colon"
@@ -1594,7 +1608,7 @@ exports[`base/System-ee render snap 1`] = `
                           </label>
                         </div>
                         <div
-                          class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                          class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control"
                         >
                           <div
                             class="ant-form-item-control-input"
@@ -1603,7 +1617,7 @@ exports[`base/System-ee render snap 1`] = `
                               class="ant-form-item-control-input-content"
                             >
                               <input
-                                class="ant-input css-dev-only-do-not-override-ywkr0o basic-input-wrapper css-1pd1cd5"
+                                class="ant-input basic-input-wrapper css-1pd1cd5"
                                 id="token"
                                 placeholder="请输入token"
                                 type="text"
@@ -1615,13 +1629,13 @@ exports[`base/System-ee render snap 1`] = `
                       </div>
                     </div>
                     <div
-                      class="ant-form-item css-15d6abf css-dev-only-do-not-override-txh9fw"
+                      class="ant-form-item css-15d6abf"
                     >
                       <div
-                        class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                        class="ant-row ant-form-item-row"
                       >
                         <div
-                          class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left css-dev-only-do-not-override-txh9fw"
+                          class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left"
                         >
                           <label
                             class="ant-form-item-no-colon"
@@ -1631,7 +1645,7 @@ exports[`base/System-ee render snap 1`] = `
                           </label>
                         </div>
                         <div
-                          class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                          class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control"
                         >
                           <div
                             class="ant-form-item-control-input"
@@ -1640,14 +1654,14 @@ exports[`base/System-ee render snap 1`] = `
                               class="ant-form-item-control-input-content"
                             >
                               <div
-                                class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+                                class="ant-space ant-space-horizontal ant-space-align-center"
                               >
                                 <div
                                   class="ant-space-item"
                                   style="margin-right: 12px;"
                                 >
                                   <button
-                                    class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default basic-button-wrapper css-geipcv"
+                                    class="ant-btn ant-btn-default basic-button-wrapper css-geipcv"
                                     type="button"
                                   >
                                     <span>
@@ -1659,7 +1673,7 @@ exports[`base/System-ee render snap 1`] = `
                                   class="ant-space-item"
                                 >
                                   <button
-                                    class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary basic-button-wrapper css-geipcv"
+                                    class="ant-btn ant-btn-primary basic-button-wrapper css-geipcv"
                                     type="submit"
                                   >
                                     <span>
@@ -1705,10 +1719,10 @@ exports[`base/System-ee render snap 2`] = `
         />
       </div>
       <div
-        class="ant-row ant-row-middle segmented-wrapper css-dev-only-do-not-override-txh9fw"
+        class="ant-row ant-row-middle segmented-wrapper"
       >
         <div
-          class="ant-segmented basic-segmented-wrapper css-192b3m1 css-dev-only-do-not-override-txh9fw"
+          class="ant-segmented basic-segmented-wrapper css-192b3m1"
         >
           <div
             class="ant-segmented-group"
@@ -1770,20 +1784,34 @@ exports[`base/System-ee render snap 2`] = `
                 全局配置
               </div>
             </label>
+            <label
+              class="ant-segmented-item"
+            >
+              <input
+                class="ant-segmented-item-input"
+                type="radio"
+              />
+              <div
+                class="ant-segmented-item-label"
+                title="Git SSH配置"
+              >
+                Git SSH配置
+              </div>
+            </label>
           </div>
         </div>
       </div>
       <div
-        class="ant-row ant-row-center css-dev-only-do-not-override-txh9fw"
+        class="ant-row ant-row-center"
       >
         <section
           class="system-form-wrapper"
         >
           <div
-            class="ant-row ant-row-space-between ant-row-middle config-title-wrapper has-border css-dev-only-do-not-override-txh9fw"
+            class="ant-row ant-row-space-between ant-row-middle config-title-wrapper has-border"
           >
             <div
-              class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+              class="ant-space ant-space-horizontal ant-space-align-center"
             >
               <div
                 class="ant-space-item"
@@ -1796,25 +1824,25 @@ exports[`base/System-ee render snap 2`] = `
             class="config-form-wrapper"
           >
             <div
-              class="ant-spin-nested-loading css-dev-only-do-not-override-txh9fw"
+              class="ant-spin-nested-loading"
             >
               <div
                 class="ant-spin-container"
               >
                 <form
-                  class="ant-form ant-form-horizontal css-dev-only-do-not-override-txh9fw"
+                  class="ant-form ant-form-horizontal"
                 >
                   <div
                     class="switch-field-wrapper"
                   >
                     <div
-                      class="ant-form-item  css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+                      class="ant-form-item css-1jlm9cy"
                     >
                       <div
-                        class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                        class="ant-row ant-form-item-row"
                       >
                         <div
-                          class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left css-dev-only-do-not-override-txh9fw"
+                          class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left"
                         >
                           <label
                             class="ant-form-item-no-colon"
@@ -1824,7 +1852,7 @@ exports[`base/System-ee render snap 2`] = `
                           </label>
                         </div>
                         <div
-                          class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                          class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control"
                         >
                           <div
                             class="ant-form-item-control-input"
@@ -1833,7 +1861,7 @@ exports[`base/System-ee render snap 2`] = `
                               class="ant-form-item-control-input-content"
                             >
                               <div
-                                class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+                                class="ant-space ant-space-horizontal ant-space-align-center"
                               >
                                 <div
                                   class="ant-space-item"
@@ -1854,13 +1882,13 @@ exports[`base/System-ee render snap 2`] = `
                     hidden=""
                   >
                     <div
-                      class="ant-form-item has-label-tip css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+                      class="ant-form-item has-label-tip css-1jlm9cy"
                     >
                       <div
-                        class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                        class="ant-row ant-form-item-row"
                       >
                         <div
-                          class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left css-dev-only-do-not-override-txh9fw"
+                          class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left"
                         >
                           <label
                             class="ant-form-item-no-colon"
@@ -1882,7 +1910,7 @@ exports[`base/System-ee render snap 2`] = `
                           </label>
                         </div>
                         <div
-                          class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                          class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control"
                         >
                           <div
                             class="ant-form-item-control-input"
@@ -1892,7 +1920,7 @@ exports[`base/System-ee render snap 2`] = `
                             >
                               <button
                                 aria-checked="false"
-                                class="ant-switch basic-switch-wrapper css-g6dhbn css-dev-only-do-not-override-txh9fw"
+                                class="ant-switch basic-switch-wrapper css-g6dhbn"
                                 id="isSkipVerify"
                                 role="switch"
                                 type="button"
@@ -1917,13 +1945,13 @@ exports[`base/System-ee render snap 2`] = `
                       </div>
                     </div>
                     <div
-                      class="ant-form-item has-required-style css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+                      class="ant-form-item has-required-style css-1jlm9cy"
                     >
                       <div
-                        class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                        class="ant-row ant-form-item-row"
                       >
                         <div
-                          class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left css-dev-only-do-not-override-txh9fw"
+                          class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left"
                         >
                           <label
                             class="ant-form-item-required ant-form-item-no-colon"
@@ -1934,7 +1962,7 @@ exports[`base/System-ee render snap 2`] = `
                           </label>
                         </div>
                         <div
-                          class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                          class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control"
                         >
                           <div
                             class="ant-form-item-control-input"
@@ -1944,7 +1972,7 @@ exports[`base/System-ee render snap 2`] = `
                             >
                               <input
                                 aria-required="true"
-                                class="ant-input css-dev-only-do-not-override-ywkr0o basic-input-wrapper css-1pd1cd5"
+                                class="ant-input basic-input-wrapper css-1pd1cd5"
                                 id="host"
                                 placeholder="请输入SMTP地址"
                                 type="text"
@@ -1956,13 +1984,13 @@ exports[`base/System-ee render snap 2`] = `
                       </div>
                     </div>
                     <div
-                      class="ant-form-item has-required-style css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+                      class="ant-form-item has-required-style css-1jlm9cy"
                     >
                       <div
-                        class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                        class="ant-row ant-form-item-row"
                       >
                         <div
-                          class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left css-dev-only-do-not-override-txh9fw"
+                          class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left"
                         >
                           <label
                             class="ant-form-item-required ant-form-item-no-colon"
@@ -1973,7 +2001,7 @@ exports[`base/System-ee render snap 2`] = `
                           </label>
                         </div>
                         <div
-                          class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                          class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control"
                         >
                           <div
                             class="ant-form-item-control-input"
@@ -1983,7 +2011,7 @@ exports[`base/System-ee render snap 2`] = `
                             >
                               <input
                                 aria-required="true"
-                                class="ant-input css-dev-only-do-not-override-ywkr0o basic-input-wrapper css-1pd1cd5"
+                                class="ant-input basic-input-wrapper css-1pd1cd5"
                                 id="port"
                                 placeholder="请输入SMTP端口"
                                 type="text"
@@ -1995,13 +2023,13 @@ exports[`base/System-ee render snap 2`] = `
                       </div>
                     </div>
                     <div
-                      class="ant-form-item has-required-style css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+                      class="ant-form-item has-required-style css-1jlm9cy"
                     >
                       <div
-                        class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                        class="ant-row ant-form-item-row"
                       >
                         <div
-                          class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left css-dev-only-do-not-override-txh9fw"
+                          class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left"
                         >
                           <label
                             class="ant-form-item-required ant-form-item-no-colon"
@@ -2012,7 +2040,7 @@ exports[`base/System-ee render snap 2`] = `
                           </label>
                         </div>
                         <div
-                          class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                          class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control"
                         >
                           <div
                             class="ant-form-item-control-input"
@@ -2022,7 +2050,7 @@ exports[`base/System-ee render snap 2`] = `
                             >
                               <input
                                 aria-required="true"
-                                class="ant-input css-dev-only-do-not-override-ywkr0o basic-input-wrapper css-1pd1cd5"
+                                class="ant-input basic-input-wrapper css-1pd1cd5"
                                 id="username"
                                 placeholder="请输入SMTP用户名"
                                 type="text"
@@ -2034,13 +2062,13 @@ exports[`base/System-ee render snap 2`] = `
                       </div>
                     </div>
                     <div
-                      class="ant-form-item has-required-style css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+                      class="ant-form-item has-required-style css-1jlm9cy"
                     >
                       <div
-                        class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                        class="ant-row ant-form-item-row"
                       >
                         <div
-                          class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left css-dev-only-do-not-override-txh9fw"
+                          class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left"
                         >
                           <label
                             class="ant-form-item-required ant-form-item-no-colon"
@@ -2051,7 +2079,7 @@ exports[`base/System-ee render snap 2`] = `
                           </label>
                         </div>
                         <div
-                          class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                          class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control"
                         >
                           <div
                             class="ant-form-item-control-input"
@@ -2060,11 +2088,11 @@ exports[`base/System-ee render snap 2`] = `
                               class="ant-form-item-control-input-content"
                             >
                               <span
-                                class="ant-input-affix-wrapper ant-input-password basic-input-wrapper css-1pd1cd5 css-dev-only-do-not-override-txh9fw"
+                                class="ant-input-affix-wrapper ant-input-password basic-input-wrapper css-1pd1cd5"
                               >
                                 <input
                                   aria-required="true"
-                                  class="ant-input css-dev-only-do-not-override-txh9fw"
+                                  class="ant-input"
                                   id="password"
                                   placeholder="请输入SMTP密码"
                                   type="password"
@@ -2103,13 +2131,13 @@ exports[`base/System-ee render snap 2`] = `
                       </div>
                     </div>
                     <div
-                      class="ant-form-item has-required-style css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+                      class="ant-form-item has-required-style css-1jlm9cy"
                     >
                       <div
-                        class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                        class="ant-row ant-form-item-row"
                       >
                         <div
-                          class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left css-dev-only-do-not-override-txh9fw"
+                          class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left"
                         >
                           <label
                             class="ant-form-item-required ant-form-item-no-colon"
@@ -2120,7 +2148,7 @@ exports[`base/System-ee render snap 2`] = `
                           </label>
                         </div>
                         <div
-                          class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                          class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control"
                         >
                           <div
                             class="ant-form-item-control-input"
@@ -2129,11 +2157,11 @@ exports[`base/System-ee render snap 2`] = `
                               class="ant-form-item-control-input-content"
                             >
                               <span
-                                class="ant-input-affix-wrapper ant-input-password basic-input-wrapper css-1pd1cd5 css-dev-only-do-not-override-txh9fw"
+                                class="ant-input-affix-wrapper ant-input-password basic-input-wrapper css-1pd1cd5"
                               >
                                 <input
                                   aria-required="true"
-                                  class="ant-input css-dev-only-do-not-override-txh9fw"
+                                  class="ant-input"
                                   id="passwordConfirm"
                                   placeholder="请输入确认SMTP密码"
                                   type="password"
@@ -2172,13 +2200,13 @@ exports[`base/System-ee render snap 2`] = `
                       </div>
                     </div>
                     <div
-                      class="ant-form-item css-15d6abf css-dev-only-do-not-override-txh9fw"
+                      class="ant-form-item css-15d6abf"
                     >
                       <div
-                        class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                        class="ant-row ant-form-item-row"
                       >
                         <div
-                          class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left css-dev-only-do-not-override-txh9fw"
+                          class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left"
                         >
                           <label
                             class="ant-form-item-no-colon"
@@ -2188,7 +2216,7 @@ exports[`base/System-ee render snap 2`] = `
                           </label>
                         </div>
                         <div
-                          class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                          class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control"
                         >
                           <div
                             class="ant-form-item-control-input"
@@ -2197,14 +2225,14 @@ exports[`base/System-ee render snap 2`] = `
                               class="ant-form-item-control-input-content"
                             >
                               <div
-                                class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+                                class="ant-space ant-space-horizontal ant-space-align-center"
                               >
                                 <div
                                   class="ant-space-item"
                                   style="margin-right: 12px;"
                                 >
                                   <button
-                                    class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default basic-button-wrapper css-geipcv"
+                                    class="ant-btn ant-btn-default basic-button-wrapper css-geipcv"
                                     type="button"
                                   >
                                     <span>
@@ -2216,7 +2244,7 @@ exports[`base/System-ee render snap 2`] = `
                                   class="ant-space-item"
                                 >
                                   <button
-                                    class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary basic-button-wrapper css-geipcv"
+                                    class="ant-btn ant-btn-primary basic-button-wrapper css-geipcv"
                                     type="submit"
                                   >
                                     <span>
@@ -2234,7 +2262,7 @@ exports[`base/System-ee render snap 2`] = `
                 </form>
                 <div>
                   <div
-                    class="ant-descriptions desc-wrapper css-dev-only-do-not-override-txh9fw"
+                    class="ant-descriptions desc-wrapper"
                   >
                     <div
                       class="ant-descriptions-view"
@@ -2324,7 +2352,7 @@ exports[`base/System-ee render snap 2`] = `
                                   class="ant-descriptions-item-label"
                                 >
                                   <div
-                                    class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
+                                    class="ant-space ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
                                   >
                                     <div
                                       class="ant-space-item"
@@ -2370,25 +2398,25 @@ exports[`base/System-ee render snap 2`] = `
             class="config-form-wrapper"
           >
             <div
-              class="ant-spin-nested-loading css-dev-only-do-not-override-txh9fw"
+              class="ant-spin-nested-loading"
             >
               <div
                 class="ant-spin-container"
               >
                 <form
-                  class="ant-form ant-form-horizontal css-dev-only-do-not-override-txh9fw"
+                  class="ant-form ant-form-horizontal"
                 >
                   <div
                     class="switch-field-wrapper"
                   >
                     <div
-                      class="ant-form-item  css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+                      class="ant-form-item css-1jlm9cy"
                     >
                       <div
-                        class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                        class="ant-row ant-form-item-row"
                       >
                         <div
-                          class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left css-dev-only-do-not-override-txh9fw"
+                          class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left"
                         >
                           <label
                             class="ant-form-item-no-colon"
@@ -2398,7 +2426,7 @@ exports[`base/System-ee render snap 2`] = `
                           </label>
                         </div>
                         <div
-                          class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                          class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control"
                         >
                           <div
                             class="ant-form-item-control-input"
@@ -2407,7 +2435,7 @@ exports[`base/System-ee render snap 2`] = `
                               class="ant-form-item-control-input-content"
                             >
                               <div
-                                class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+                                class="ant-space ant-space-horizontal ant-space-align-center"
                               >
                                 <div
                                   class="ant-space-item"
@@ -2428,13 +2456,13 @@ exports[`base/System-ee render snap 2`] = `
                     hidden=""
                   >
                     <div
-                      class="ant-form-item has-required-style css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+                      class="ant-form-item has-required-style css-1jlm9cy"
                     >
                       <div
-                        class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                        class="ant-row ant-form-item-row"
                       >
                         <div
-                          class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left css-dev-only-do-not-override-txh9fw"
+                          class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left"
                         >
                           <label
                             class="ant-form-item-required ant-form-item-no-colon"
@@ -2445,7 +2473,7 @@ exports[`base/System-ee render snap 2`] = `
                           </label>
                         </div>
                         <div
-                          class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                          class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control"
                         >
                           <div
                             class="ant-form-item-control-input"
@@ -2455,7 +2483,7 @@ exports[`base/System-ee render snap 2`] = `
                             >
                               <input
                                 aria-required="true"
-                                class="ant-input css-dev-only-do-not-override-ywkr0o basic-input-wrapper css-1pd1cd5"
+                                class="ant-input basic-input-wrapper css-1pd1cd5"
                                 id="corp_id"
                                 placeholder="请输入CorpID(微信企业号ID)"
                                 type="text"
@@ -2467,13 +2495,13 @@ exports[`base/System-ee render snap 2`] = `
                       </div>
                     </div>
                     <div
-                      class="ant-form-item has-required-style css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+                      class="ant-form-item has-required-style css-1jlm9cy"
                     >
                       <div
-                        class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                        class="ant-row ant-form-item-row"
                       >
                         <div
-                          class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left css-dev-only-do-not-override-txh9fw"
+                          class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left"
                         >
                           <label
                             class="ant-form-item-required ant-form-item-no-colon"
@@ -2484,7 +2512,7 @@ exports[`base/System-ee render snap 2`] = `
                           </label>
                         </div>
                         <div
-                          class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                          class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control"
                         >
                           <div
                             class="ant-form-item-control-input"
@@ -2494,7 +2522,7 @@ exports[`base/System-ee render snap 2`] = `
                             >
                               <input
                                 aria-required="true"
-                                class="ant-input css-dev-only-do-not-override-ywkr0o basic-input-wrapper css-1pd1cd5"
+                                class="ant-input basic-input-wrapper css-1pd1cd5"
                                 id="agent_id"
                                 placeholder="请输入企业微信应用ID"
                                 type="text"
@@ -2506,13 +2534,13 @@ exports[`base/System-ee render snap 2`] = `
                       </div>
                     </div>
                     <div
-                      class="ant-form-item has-required-style css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+                      class="ant-form-item has-required-style css-1jlm9cy"
                     >
                       <div
-                        class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                        class="ant-row ant-form-item-row"
                       >
                         <div
-                          class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left css-dev-only-do-not-override-txh9fw"
+                          class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left"
                         >
                           <label
                             class="ant-form-item-required ant-form-item-no-colon"
@@ -2523,7 +2551,7 @@ exports[`base/System-ee render snap 2`] = `
                           </label>
                         </div>
                         <div
-                          class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                          class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control"
                         >
                           <div
                             class="ant-form-item-control-input"
@@ -2532,11 +2560,11 @@ exports[`base/System-ee render snap 2`] = `
                               class="ant-form-item-control-input-content"
                             >
                               <span
-                                class="ant-input-affix-wrapper ant-input-password basic-input-wrapper css-1pd1cd5 css-dev-only-do-not-override-txh9fw"
+                                class="ant-input-affix-wrapper ant-input-password basic-input-wrapper css-1pd1cd5"
                               >
                                 <input
                                   aria-required="true"
-                                  class="ant-input css-dev-only-do-not-override-txh9fw"
+                                  class="ant-input"
                                   id="corp_secret"
                                   placeholder="请输入企业微信应用Secret"
                                   type="password"
@@ -2575,13 +2603,13 @@ exports[`base/System-ee render snap 2`] = `
                       </div>
                     </div>
                     <div
-                      class="ant-form-item css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+                      class="ant-form-item css-1jlm9cy"
                     >
                       <div
-                        class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                        class="ant-row ant-form-item-row"
                       >
                         <div
-                          class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left css-dev-only-do-not-override-txh9fw"
+                          class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left"
                         >
                           <label
                             class="ant-form-item-no-colon"
@@ -2592,7 +2620,7 @@ exports[`base/System-ee render snap 2`] = `
                           </label>
                         </div>
                         <div
-                          class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                          class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control"
                         >
                           <div
                             class="ant-form-item-control-input"
@@ -2602,7 +2630,7 @@ exports[`base/System-ee render snap 2`] = `
                             >
                               <button
                                 aria-checked="false"
-                                class="ant-switch basic-switch-wrapper css-g6dhbn css-dev-only-do-not-override-txh9fw"
+                                class="ant-switch basic-switch-wrapper css-g6dhbn"
                                 id="safe_enabled"
                                 role="switch"
                                 type="button"
@@ -2627,13 +2655,13 @@ exports[`base/System-ee render snap 2`] = `
                       </div>
                     </div>
                     <div
-                      class="ant-form-item css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+                      class="ant-form-item css-1jlm9cy"
                     >
                       <div
-                        class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                        class="ant-row ant-form-item-row"
                       >
                         <div
-                          class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left css-dev-only-do-not-override-txh9fw"
+                          class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left"
                         >
                           <label
                             class="ant-form-item-no-colon"
@@ -2644,7 +2672,7 @@ exports[`base/System-ee render snap 2`] = `
                           </label>
                         </div>
                         <div
-                          class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                          class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control"
                         >
                           <div
                             class="ant-form-item-control-input"
@@ -2653,7 +2681,7 @@ exports[`base/System-ee render snap 2`] = `
                               class="ant-form-item-control-input-content"
                             >
                               <input
-                                class="ant-input css-dev-only-do-not-override-ywkr0o basic-input-wrapper css-1pd1cd5"
+                                class="ant-input basic-input-wrapper css-1pd1cd5"
                                 id="proxy_ip"
                                 placeholder="请输入代理服务器IP"
                                 type="text"
@@ -2665,13 +2693,13 @@ exports[`base/System-ee render snap 2`] = `
                       </div>
                     </div>
                     <div
-                      class="ant-form-item css-15d6abf css-dev-only-do-not-override-txh9fw"
+                      class="ant-form-item css-15d6abf"
                     >
                       <div
-                        class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                        class="ant-row ant-form-item-row"
                       >
                         <div
-                          class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left css-dev-only-do-not-override-txh9fw"
+                          class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left"
                         >
                           <label
                             class="ant-form-item-no-colon"
@@ -2681,7 +2709,7 @@ exports[`base/System-ee render snap 2`] = `
                           </label>
                         </div>
                         <div
-                          class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                          class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control"
                         >
                           <div
                             class="ant-form-item-control-input"
@@ -2690,14 +2718,14 @@ exports[`base/System-ee render snap 2`] = `
                               class="ant-form-item-control-input-content"
                             >
                               <div
-                                class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+                                class="ant-space ant-space-horizontal ant-space-align-center"
                               >
                                 <div
                                   class="ant-space-item"
                                   style="margin-right: 12px;"
                                 >
                                   <button
-                                    class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default basic-button-wrapper css-geipcv"
+                                    class="ant-btn ant-btn-default basic-button-wrapper css-geipcv"
                                     type="button"
                                   >
                                     <span>
@@ -2709,7 +2737,7 @@ exports[`base/System-ee render snap 2`] = `
                                   class="ant-space-item"
                                 >
                                   <button
-                                    class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary basic-button-wrapper css-geipcv"
+                                    class="ant-btn ant-btn-primary basic-button-wrapper css-geipcv"
                                     type="submit"
                                   >
                                     <span>
@@ -2733,25 +2761,25 @@ exports[`base/System-ee render snap 2`] = `
             class="config-form-wrapper"
           >
             <div
-              class="ant-spin-nested-loading css-dev-only-do-not-override-txh9fw"
+              class="ant-spin-nested-loading"
             >
               <div
                 class="ant-spin-container"
               >
                 <form
-                  class="ant-form ant-form-horizontal css-dev-only-do-not-override-txh9fw"
+                  class="ant-form ant-form-horizontal"
                 >
                   <div
                     class="switch-field-wrapper"
                   >
                     <div
-                      class="ant-form-item  css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+                      class="ant-form-item css-1jlm9cy"
                     >
                       <div
-                        class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                        class="ant-row ant-form-item-row"
                       >
                         <div
-                          class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left css-dev-only-do-not-override-txh9fw"
+                          class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left"
                         >
                           <label
                             class="ant-form-item-no-colon"
@@ -2761,7 +2789,7 @@ exports[`base/System-ee render snap 2`] = `
                           </label>
                         </div>
                         <div
-                          class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                          class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control"
                         >
                           <div
                             class="ant-form-item-control-input"
@@ -2770,7 +2798,7 @@ exports[`base/System-ee render snap 2`] = `
                               class="ant-form-item-control-input-content"
                             >
                               <div
-                                class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+                                class="ant-space ant-space-horizontal ant-space-align-center"
                               >
                                 <div
                                   class="ant-space-item"
@@ -2791,13 +2819,13 @@ exports[`base/System-ee render snap 2`] = `
                     hidden=""
                   >
                     <div
-                      class="ant-form-item has-required-style css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+                      class="ant-form-item has-required-style css-1jlm9cy"
                     >
                       <div
-                        class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                        class="ant-row ant-form-item-row"
                       >
                         <div
-                          class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left css-dev-only-do-not-override-txh9fw"
+                          class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left"
                         >
                           <label
                             class="ant-form-item-required ant-form-item-no-colon"
@@ -2808,7 +2836,7 @@ exports[`base/System-ee render snap 2`] = `
                           </label>
                         </div>
                         <div
-                          class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                          class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control"
                         >
                           <div
                             class="ant-form-item-control-input"
@@ -2818,7 +2846,7 @@ exports[`base/System-ee render snap 2`] = `
                             >
                               <input
                                 aria-required="true"
-                                class="ant-input css-dev-only-do-not-override-ywkr0o basic-input-wrapper css-1pd1cd5"
+                                class="ant-input basic-input-wrapper css-1pd1cd5"
                                 id="appKey"
                                 placeholder="请输入App ID"
                                 type="text"
@@ -2830,13 +2858,13 @@ exports[`base/System-ee render snap 2`] = `
                       </div>
                     </div>
                     <div
-                      class="ant-form-item has-required-style css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+                      class="ant-form-item has-required-style css-1jlm9cy"
                     >
                       <div
-                        class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                        class="ant-row ant-form-item-row"
                       >
                         <div
-                          class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left css-dev-only-do-not-override-txh9fw"
+                          class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left"
                         >
                           <label
                             class="ant-form-item-required ant-form-item-no-colon"
@@ -2847,7 +2875,7 @@ exports[`base/System-ee render snap 2`] = `
                           </label>
                         </div>
                         <div
-                          class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                          class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control"
                         >
                           <div
                             class="ant-form-item-control-input"
@@ -2856,11 +2884,11 @@ exports[`base/System-ee render snap 2`] = `
                               class="ant-form-item-control-input-content"
                             >
                               <span
-                                class="ant-input-affix-wrapper ant-input-password basic-input-wrapper css-1pd1cd5 css-dev-only-do-not-override-txh9fw"
+                                class="ant-input-affix-wrapper ant-input-password basic-input-wrapper css-1pd1cd5"
                               >
                                 <input
                                   aria-required="true"
-                                  class="ant-input css-dev-only-do-not-override-txh9fw"
+                                  class="ant-input"
                                   id="appSecret"
                                   placeholder="请输入App Secret"
                                   type="password"
@@ -2899,13 +2927,13 @@ exports[`base/System-ee render snap 2`] = `
                       </div>
                     </div>
                     <div
-                      class="ant-form-item css-15d6abf css-dev-only-do-not-override-txh9fw"
+                      class="ant-form-item css-15d6abf"
                     >
                       <div
-                        class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                        class="ant-row ant-form-item-row"
                       >
                         <div
-                          class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left css-dev-only-do-not-override-txh9fw"
+                          class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left"
                         >
                           <label
                             class="ant-form-item-no-colon"
@@ -2915,7 +2943,7 @@ exports[`base/System-ee render snap 2`] = `
                           </label>
                         </div>
                         <div
-                          class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                          class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control"
                         >
                           <div
                             class="ant-form-item-control-input"
@@ -2924,14 +2952,14 @@ exports[`base/System-ee render snap 2`] = `
                               class="ant-form-item-control-input-content"
                             >
                               <div
-                                class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+                                class="ant-space ant-space-horizontal ant-space-align-center"
                               >
                                 <div
                                   class="ant-space-item"
                                   style="margin-right: 12px;"
                                 >
                                   <button
-                                    class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default basic-button-wrapper css-geipcv"
+                                    class="ant-btn ant-btn-default basic-button-wrapper css-geipcv"
                                     type="button"
                                   >
                                     <span>
@@ -2943,7 +2971,7 @@ exports[`base/System-ee render snap 2`] = `
                                   class="ant-space-item"
                                 >
                                   <button
-                                    class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary basic-button-wrapper css-geipcv"
+                                    class="ant-btn ant-btn-primary basic-button-wrapper css-geipcv"
                                     type="submit"
                                   >
                                     <span>
@@ -2961,7 +2989,7 @@ exports[`base/System-ee render snap 2`] = `
                 </form>
                 <div>
                   <div
-                    class="ant-descriptions desc-wrapper css-dev-only-do-not-override-txh9fw"
+                    class="ant-descriptions desc-wrapper"
                   >
                     <div
                       class="ant-descriptions-view"
@@ -2987,7 +3015,7 @@ exports[`base/System-ee render snap 2`] = `
                                   class="ant-descriptions-item-content"
                                 >
                                   <div
-                                    class="ant-typography css-dev-only-do-not-override-txh9fw"
+                                    class="ant-typography"
                                   >
                                     app_id
                                   </div>
@@ -3007,25 +3035,25 @@ exports[`base/System-ee render snap 2`] = `
             class="config-form-wrapper"
           >
             <div
-              class="ant-spin-nested-loading css-dev-only-do-not-override-txh9fw"
+              class="ant-spin-nested-loading"
             >
               <div
                 class="ant-spin-container"
               >
                 <form
-                  class="ant-form ant-form-horizontal css-dev-only-do-not-override-txh9fw"
+                  class="ant-form ant-form-horizontal"
                 >
                   <div
                     class="switch-field-wrapper"
                   >
                     <div
-                      class="ant-form-item has-label-tip css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+                      class="ant-form-item has-label-tip css-1jlm9cy"
                     >
                       <div
-                        class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                        class="ant-row ant-form-item-row"
                       >
                         <div
-                          class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left css-dev-only-do-not-override-txh9fw"
+                          class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left"
                         >
                           <label
                             class="ant-form-item-no-colon"
@@ -3052,7 +3080,7 @@ exports[`base/System-ee render snap 2`] = `
                           </label>
                         </div>
                         <div
-                          class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                          class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control"
                         >
                           <div
                             class="ant-form-item-control-input"
@@ -3061,7 +3089,7 @@ exports[`base/System-ee render snap 2`] = `
                               class="ant-form-item-control-input-content"
                             >
                               <div
-                                class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+                                class="ant-space ant-space-horizontal ant-space-align-center"
                               >
                                 <div
                                   class="ant-space-item"
@@ -3082,13 +3110,13 @@ exports[`base/System-ee render snap 2`] = `
                     hidden=""
                   >
                     <div
-                      class="ant-form-item has-required-style css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+                      class="ant-form-item has-required-style css-1jlm9cy"
                     >
                       <div
-                        class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                        class="ant-row ant-form-item-row"
                       >
                         <div
-                          class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left css-dev-only-do-not-override-txh9fw"
+                          class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left"
                         >
                           <label
                             class="ant-form-item-required ant-form-item-no-colon"
@@ -3099,7 +3127,7 @@ exports[`base/System-ee render snap 2`] = `
                           </label>
                         </div>
                         <div
-                          class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                          class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control"
                         >
                           <div
                             class="ant-form-item-control-input"
@@ -3109,7 +3137,7 @@ exports[`base/System-ee render snap 2`] = `
                             >
                               <input
                                 aria-required="true"
-                                class="ant-input css-dev-only-do-not-override-ywkr0o basic-input-wrapper css-1pd1cd5"
+                                class="ant-input basic-input-wrapper css-1pd1cd5"
                                 id="url"
                                 placeholder="请输入{{name}}"
                                 type="text"
@@ -3121,13 +3149,13 @@ exports[`base/System-ee render snap 2`] = `
                       </div>
                     </div>
                     <div
-                      class="ant-form-item has-required-style css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+                      class="ant-form-item has-required-style css-1jlm9cy"
                     >
                       <div
-                        class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                        class="ant-row ant-form-item-row"
                       >
                         <div
-                          class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left css-dev-only-do-not-override-txh9fw"
+                          class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left"
                         >
                           <label
                             class="ant-form-item-required ant-form-item-no-colon"
@@ -3138,7 +3166,7 @@ exports[`base/System-ee render snap 2`] = `
                           </label>
                         </div>
                         <div
-                          class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                          class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control"
                         >
                           <div
                             class="ant-form-item-control-input"
@@ -3147,7 +3175,7 @@ exports[`base/System-ee render snap 2`] = `
                               class="ant-form-item-control-input-content"
                             >
                               <div
-                                class="ant-input-number ant-input-number-lg ant-input-number-in-form-item css-dev-only-do-not-override-ezmdel basic-inputNumber-wrapper css-1fd5hnt"
+                                class="ant-input-number ant-input-number-lg ant-input-number-in-form-item basic-inputNumber-wrapper css-1fd5hnt"
                               >
                                 <div
                                   class="ant-input-number-handler-wrap"
@@ -3229,13 +3257,13 @@ exports[`base/System-ee render snap 2`] = `
                       </div>
                     </div>
                     <div
-                      class="ant-form-item has-required-style css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+                      class="ant-form-item has-required-style css-1jlm9cy"
                     >
                       <div
-                        class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                        class="ant-row ant-form-item-row"
                       >
                         <div
-                          class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left css-dev-only-do-not-override-txh9fw"
+                          class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left"
                         >
                           <label
                             class="ant-form-item-required ant-form-item-no-colon"
@@ -3246,7 +3274,7 @@ exports[`base/System-ee render snap 2`] = `
                           </label>
                         </div>
                         <div
-                          class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                          class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control"
                         >
                           <div
                             class="ant-form-item-control-input"
@@ -3255,7 +3283,7 @@ exports[`base/System-ee render snap 2`] = `
                               class="ant-form-item-control-input-content"
                             >
                               <div
-                                class="ant-input-number ant-input-number-lg ant-input-number-in-form-item css-dev-only-do-not-override-ezmdel basic-inputNumber-wrapper css-1fd5hnt"
+                                class="ant-input-number ant-input-number-lg ant-input-number-in-form-item basic-inputNumber-wrapper css-1fd5hnt"
                               >
                                 <div
                                   class="ant-input-number-handler-wrap"
@@ -3337,13 +3365,13 @@ exports[`base/System-ee render snap 2`] = `
                       </div>
                     </div>
                     <div
-                      class="ant-form-item css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+                      class="ant-form-item css-1jlm9cy"
                     >
                       <div
-                        class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                        class="ant-row ant-form-item-row"
                       >
                         <div
-                          class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left css-dev-only-do-not-override-txh9fw"
+                          class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left"
                         >
                           <label
                             class="ant-form-item-no-colon"
@@ -3354,7 +3382,7 @@ exports[`base/System-ee render snap 2`] = `
                           </label>
                         </div>
                         <div
-                          class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                          class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control"
                         >
                           <div
                             class="ant-form-item-control-input"
@@ -3363,7 +3391,7 @@ exports[`base/System-ee render snap 2`] = `
                               class="ant-form-item-control-input-content"
                             >
                               <input
-                                class="ant-input css-dev-only-do-not-override-ywkr0o basic-input-wrapper css-1pd1cd5"
+                                class="ant-input basic-input-wrapper css-1pd1cd5"
                                 id="token"
                                 placeholder="请输入token"
                                 type="text"
@@ -3375,13 +3403,13 @@ exports[`base/System-ee render snap 2`] = `
                       </div>
                     </div>
                     <div
-                      class="ant-form-item css-15d6abf css-dev-only-do-not-override-txh9fw"
+                      class="ant-form-item css-15d6abf"
                     >
                       <div
-                        class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                        class="ant-row ant-form-item-row"
                       >
                         <div
-                          class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left css-dev-only-do-not-override-txh9fw"
+                          class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left"
                         >
                           <label
                             class="ant-form-item-no-colon"
@@ -3391,7 +3419,7 @@ exports[`base/System-ee render snap 2`] = `
                           </label>
                         </div>
                         <div
-                          class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                          class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control"
                         >
                           <div
                             class="ant-form-item-control-input"
@@ -3400,14 +3428,14 @@ exports[`base/System-ee render snap 2`] = `
                               class="ant-form-item-control-input-content"
                             >
                               <div
-                                class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+                                class="ant-space ant-space-horizontal ant-space-align-center"
                               >
                                 <div
                                   class="ant-space-item"
                                   style="margin-right: 12px;"
                                 >
                                   <button
-                                    class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default basic-button-wrapper css-geipcv"
+                                    class="ant-btn ant-btn-default basic-button-wrapper css-geipcv"
                                     type="button"
                                   >
                                     <span>
@@ -3419,7 +3447,7 @@ exports[`base/System-ee render snap 2`] = `
                                   class="ant-space-item"
                                 >
                                   <button
-                                    class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary basic-button-wrapper css-geipcv"
+                                    class="ant-btn ant-btn-primary basic-button-wrapper css-geipcv"
                                     type="submit"
                                   >
                                     <span>
@@ -3465,10 +3493,10 @@ exports[`base/System-ee render snap 3`] = `
         />
       </div>
       <div
-        class="ant-row ant-row-middle segmented-wrapper css-dev-only-do-not-override-txh9fw"
+        class="ant-row ant-row-middle segmented-wrapper"
       >
         <div
-          class="ant-segmented basic-segmented-wrapper css-192b3m1 css-dev-only-do-not-override-txh9fw"
+          class="ant-segmented basic-segmented-wrapper css-192b3m1"
         >
           <div
             class="ant-segmented-group"
@@ -3530,20 +3558,34 @@ exports[`base/System-ee render snap 3`] = `
                 全局配置
               </div>
             </label>
+            <label
+              class="ant-segmented-item"
+            >
+              <input
+                class="ant-segmented-item-input"
+                type="radio"
+              />
+              <div
+                class="ant-segmented-item-label"
+                title="Git SSH配置"
+              >
+                Git SSH配置
+              </div>
+            </label>
           </div>
         </div>
       </div>
       <div
-        class="ant-row ant-row-center css-dev-only-do-not-override-txh9fw"
+        class="ant-row ant-row-center"
       >
         <section
           class="system-form-wrapper"
         >
           <div
-            class="ant-row ant-row-space-between ant-row-middle config-title-wrapper has-border css-dev-only-do-not-override-txh9fw"
+            class="ant-row ant-row-space-between ant-row-middle config-title-wrapper has-border"
           >
             <div
-              class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+              class="ant-space ant-space-horizontal ant-space-align-center"
             >
               <div
                 class="ant-space-item"
@@ -3568,12 +3610,12 @@ exports[`base/System-ee render snap 3`] = `
                 class="left"
               >
                 <div
-                  class="ant-typography paragraph css-dev-only-do-not-override-txh9fw"
+                  class="ant-typography paragraph"
                 >
                   如果您使用钉钉、飞书、企业微信作为协作平台，并且希望在这些外部平台上进行工单审批，您可以启用流程对接功能。通过将工单审批集成到团队的协作平台中，审批过程将变得更加便捷、高效和可追溯，同时提升数据安全和团队协作的效率。
                 </div>
                 <div
-                  class="ant-space css-dev-only-do-not-override-txh9fw ant-space-vertical full-width-element version-comparison-wrap css-11wj1aa"
+                  class="ant-space ant-space-vertical full-width-element version-comparison-wrap css-11wj1aa"
                 >
                   <div
                     class="ant-space-item"
@@ -3583,34 +3625,34 @@ exports[`base/System-ee render snap 3`] = `
                       class="content-wrap"
                     >
                       <div
-                        class="ant-card ant-card-bordered ant-card-hoverable version-card css-13zv8cx css-dev-only-do-not-override-txh9fw"
+                        class="ant-card ant-card-bordered ant-card-hoverable version-card css-13zv8cx"
                         color="green"
                       >
                         <div
                           class="ant-card-body"
                         >
                           <div
-                            class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center version-tag-wrap"
+                            class="ant-space ant-space-horizontal ant-space-align-center version-tag-wrap"
                           >
                             <div
                               class="ant-space-item"
                             >
                               <span
-                                class="ant-tag ant-tag-green basic-tag-wrapper basic-large-tag-wrapper css-13qu6j1 css-dev-only-do-not-override-txh9fw"
+                                class="ant-tag ant-tag-green basic-tag-wrapper basic-large-tag-wrapper css-13qu6j1"
                               >
                                 社区版
                               </span>
                             </div>
                           </div>
                           <div
-                            class="ant-space css-dev-only-do-not-override-txh9fw ant-space-vertical ant-space-align-center version-item"
+                            class="ant-space ant-space-vertical ant-space-align-center version-item"
                           >
                             <div
                               class="ant-space-item"
                               style="margin-bottom: 16px;"
                             >
                               <h4
-                                class="ant-typography css-dev-only-do-not-override-txh9fw"
+                                class="ant-typography"
                               >
                                 免费
                               </h4>
@@ -3620,7 +3662,7 @@ exports[`base/System-ee render snap 3`] = `
                               style="margin-bottom: 16px;"
                             >
                               <span
-                                class="ant-typography term-wrap css-dev-only-do-not-override-txh9fw"
+                                class="ant-typography term-wrap"
                               >
                                 永久
                               </span>
@@ -3630,7 +3672,7 @@ exports[`base/System-ee render snap 3`] = `
                               style="margin-bottom: 16px;"
                             >
                               <a
-                                class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary apply-button basic-button-wrapper css-geipcv"
+                                class="ant-btn ant-btn-primary apply-button basic-button-wrapper css-geipcv"
                                 href="https://actiontech.github.io/sqle-docs/docs/deploy-manual/intro"
                                 target="_blank"
                               >
@@ -3644,7 +3686,7 @@ exports[`base/System-ee render snap 3`] = `
                               style="margin-bottom: 16px;"
                             >
                               <span
-                                class="ant-typography version-subTitle-wrap css-dev-only-do-not-override-txh9fw"
+                                class="ant-typography version-subTitle-wrap"
                               >
                                 适用于MySQL基础审核场景
                               </span>
@@ -3654,7 +3696,7 @@ exports[`base/System-ee render snap 3`] = `
                               style="margin-bottom: 16px;"
                             >
                               <div
-                                class="ant-divider css-dev-only-do-not-override-txh9fw ant-divider-horizontal"
+                                class="ant-divider ant-divider-horizontal"
                                 role="separator"
                               />
                             </div>
@@ -3662,14 +3704,14 @@ exports[`base/System-ee render snap 3`] = `
                               class="ant-space-item"
                             >
                               <div
-                                class="ant-space css-dev-only-do-not-override-txh9fw ant-space-vertical content-list"
+                                class="ant-space ant-space-vertical content-list"
                               >
                                 <div
                                   class="ant-space-item"
                                   style="margin-bottom: 8px;"
                                 >
                                   <div
-                                    class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-start full-width-element version-desc-wrap"
+                                    class="ant-space ant-space-horizontal ant-space-align-start full-width-element version-desc-wrap"
                                   >
                                     <div
                                       class="ant-space-item"
@@ -3691,7 +3733,7 @@ exports[`base/System-ee render snap 3`] = `
                                       class="ant-space-item"
                                     >
                                       <span
-                                        class="ant-typography css-dev-only-do-not-override-txh9fw"
+                                        class="ant-typography"
                                       >
                                         支持纳管MySQL数据源
                                       </span>
@@ -3703,7 +3745,7 @@ exports[`base/System-ee render snap 3`] = `
                                   style="margin-bottom: 8px;"
                                 >
                                   <div
-                                    class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-start full-width-element version-desc-wrap"
+                                    class="ant-space ant-space-horizontal ant-space-align-start full-width-element version-desc-wrap"
                                   >
                                     <div
                                       class="ant-space-item"
@@ -3725,7 +3767,7 @@ exports[`base/System-ee render snap 3`] = `
                                       class="ant-space-item"
                                     >
                                       <span
-                                        class="ant-typography css-dev-only-do-not-override-txh9fw"
+                                        class="ant-typography"
                                       >
                                         提供专业SQL审核能力
                                       </span>
@@ -3737,7 +3779,7 @@ exports[`base/System-ee render snap 3`] = `
                                   style="margin-bottom: 8px;"
                                 >
                                   <div
-                                    class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-start full-width-element version-desc-wrap"
+                                    class="ant-space ant-space-horizontal ant-space-align-start full-width-element version-desc-wrap"
                                   >
                                     <div
                                       class="ant-space-item"
@@ -3759,7 +3801,7 @@ exports[`base/System-ee render snap 3`] = `
                                       class="ant-space-item"
                                     >
                                       <span
-                                        class="ant-typography css-dev-only-do-not-override-txh9fw"
+                                        class="ant-typography"
                                       >
                                         集成CloudBeaver在线查询
                                       </span>
@@ -3771,7 +3813,7 @@ exports[`base/System-ee render snap 3`] = `
                                   style="margin-bottom: 8px;"
                                 >
                                   <div
-                                    class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-start full-width-element version-desc-wrap"
+                                    class="ant-space ant-space-horizontal ant-space-align-start full-width-element version-desc-wrap"
                                   >
                                     <div
                                       class="ant-space-item"
@@ -3793,7 +3835,7 @@ exports[`base/System-ee render snap 3`] = `
                                       class="ant-space-item"
                                     >
                                       <span
-                                        class="ant-typography css-dev-only-do-not-override-txh9fw"
+                                        class="ant-typography"
                                       >
                                         支持IDE工具审核
                                       </span>
@@ -3805,7 +3847,7 @@ exports[`base/System-ee render snap 3`] = `
                                   style="margin-bottom: 8px;"
                                 >
                                   <div
-                                    class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-start full-width-element version-desc-wrap"
+                                    class="ant-space ant-space-horizontal ant-space-align-start full-width-element version-desc-wrap"
                                   >
                                     <div
                                       class="ant-space-item"
@@ -3827,7 +3869,7 @@ exports[`base/System-ee render snap 3`] = `
                                       class="ant-space-item"
                                     >
                                       <span
-                                        class="ant-typography css-dev-only-do-not-override-txh9fw"
+                                        class="ant-typography"
                                       >
                                         支持多方式采集MySQL数据
                                       </span>
@@ -3838,7 +3880,7 @@ exports[`base/System-ee render snap 3`] = `
                                   class="ant-space-item"
                                 >
                                   <div
-                                    class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-start full-width-element version-desc-wrap"
+                                    class="ant-space ant-space-horizontal ant-space-align-start full-width-element version-desc-wrap"
                                   >
                                     <div
                                       class="ant-space-item"
@@ -3860,7 +3902,7 @@ exports[`base/System-ee render snap 3`] = `
                                       class="ant-space-item"
                                     >
                                       <span
-                                        class="ant-typography css-dev-only-do-not-override-txh9fw"
+                                        class="ant-typography"
                                       >
                                         无实例限制
                                       </span>
@@ -3873,34 +3915,34 @@ exports[`base/System-ee render snap 3`] = `
                         </div>
                       </div>
                       <div
-                        class="ant-card ant-card-bordered ant-card-hoverable version-card css-1npclps css-dev-only-do-not-override-txh9fw"
+                        class="ant-card ant-card-bordered ant-card-hoverable version-card css-1npclps"
                         color="blue"
                       >
                         <div
                           class="ant-card-body"
                         >
                           <div
-                            class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center version-tag-wrap"
+                            class="ant-space ant-space-horizontal ant-space-align-center version-tag-wrap"
                           >
                             <div
                               class="ant-space-item"
                             >
                               <span
-                                class="ant-tag ant-tag-blue basic-tag-wrapper basic-large-tag-wrapper css-1q0n2j9 css-dev-only-do-not-override-txh9fw"
+                                class="ant-tag ant-tag-blue basic-tag-wrapper basic-large-tag-wrapper css-1q0n2j9"
                               >
                                 专业版
                               </span>
                             </div>
                           </div>
                           <div
-                            class="ant-space css-dev-only-do-not-override-txh9fw ant-space-vertical ant-space-align-center version-item"
+                            class="ant-space ant-space-vertical ant-space-align-center version-item"
                           >
                             <div
                               class="ant-space-item"
                               style="margin-bottom: 16px;"
                             >
                               <h4
-                                class="ant-typography css-dev-only-do-not-override-txh9fw"
+                                class="ant-typography"
                               >
                                 免费
                               </h4>
@@ -3910,7 +3952,7 @@ exports[`base/System-ee render snap 3`] = `
                               style="margin-bottom: 16px;"
                             >
                               <span
-                                class="ant-typography term-wrap css-dev-only-do-not-override-txh9fw"
+                                class="ant-typography term-wrap"
                               >
                                 永久
                               </span>
@@ -3920,7 +3962,7 @@ exports[`base/System-ee render snap 3`] = `
                               style="margin-bottom: 16px;"
                             >
                               <a
-                                class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary apply-button basic-button-wrapper css-geipcv"
+                                class="ant-btn ant-btn-primary apply-button basic-button-wrapper css-geipcv"
                                 href="https://www.actionsky.com/sqle?question=true"
                                 target="_blank"
                               >
@@ -3934,7 +3976,7 @@ exports[`base/System-ee render snap 3`] = `
                               style="margin-bottom: 16px;"
                             >
                               <span
-                                class="ant-typography version-subTitle-wrap css-dev-only-do-not-override-txh9fw"
+                                class="ant-typography version-subTitle-wrap"
                               >
                                 适用于多种数据源类型体验场景
                               </span>
@@ -3944,7 +3986,7 @@ exports[`base/System-ee render snap 3`] = `
                               style="margin-bottom: 16px;"
                             >
                               <div
-                                class="ant-divider css-dev-only-do-not-override-txh9fw ant-divider-horizontal"
+                                class="ant-divider ant-divider-horizontal"
                                 role="separator"
                               />
                             </div>
@@ -3952,14 +3994,14 @@ exports[`base/System-ee render snap 3`] = `
                               class="ant-space-item"
                             >
                               <div
-                                class="ant-space css-dev-only-do-not-override-txh9fw ant-space-vertical content-list"
+                                class="ant-space ant-space-vertical content-list"
                               >
                                 <div
                                   class="ant-space-item"
                                   style="margin-bottom: 8px;"
                                 >
                                   <div
-                                    class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-start full-width-element version-desc-wrap"
+                                    class="ant-space ant-space-horizontal ant-space-align-start full-width-element version-desc-wrap"
                                   >
                                     <div
                                       class="ant-space-item"
@@ -3981,7 +4023,7 @@ exports[`base/System-ee render snap 3`] = `
                                       class="ant-space-item"
                                     >
                                       <span
-                                        class="ant-typography css-dev-only-do-not-override-txh9fw"
+                                        class="ant-typography"
                                       >
                                         支持纳管10多种主流数据源
                                       </span>
@@ -3993,7 +4035,7 @@ exports[`base/System-ee render snap 3`] = `
                                   style="margin-bottom: 8px;"
                                 >
                                   <div
-                                    class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-start full-width-element version-desc-wrap"
+                                    class="ant-space ant-space-horizontal ant-space-align-start full-width-element version-desc-wrap"
                                   >
                                     <div
                                       class="ant-space-item"
@@ -4015,7 +4057,7 @@ exports[`base/System-ee render snap 3`] = `
                                       class="ant-space-item"
                                     >
                                       <span
-                                        class="ant-typography css-dev-only-do-not-override-txh9fw"
+                                        class="ant-typography"
                                       >
                                         提供专业SQL审核能力
                                       </span>
@@ -4027,7 +4069,7 @@ exports[`base/System-ee render snap 3`] = `
                                   style="margin-bottom: 8px;"
                                 >
                                   <div
-                                    class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-start full-width-element version-desc-wrap"
+                                    class="ant-space ant-space-horizontal ant-space-align-start full-width-element version-desc-wrap"
                                   >
                                     <div
                                       class="ant-space-item"
@@ -4049,7 +4091,7 @@ exports[`base/System-ee render snap 3`] = `
                                       class="ant-space-item"
                                     >
                                       <span
-                                        class="ant-typography css-dev-only-do-not-override-txh9fw"
+                                        class="ant-typography"
                                       >
                                         集成CloudBeaver在线查询
                                       </span>
@@ -4061,7 +4103,7 @@ exports[`base/System-ee render snap 3`] = `
                                   style="margin-bottom: 8px;"
                                 >
                                   <div
-                                    class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-start full-width-element version-desc-wrap"
+                                    class="ant-space ant-space-horizontal ant-space-align-start full-width-element version-desc-wrap"
                                   >
                                     <div
                                       class="ant-space-item"
@@ -4083,7 +4125,7 @@ exports[`base/System-ee render snap 3`] = `
                                       class="ant-space-item"
                                     >
                                       <span
-                                        class="ant-typography css-dev-only-do-not-override-txh9fw"
+                                        class="ant-typography"
                                       >
                                         支持IDE工具审核
                                       </span>
@@ -4095,7 +4137,7 @@ exports[`base/System-ee render snap 3`] = `
                                   style="margin-bottom: 8px;"
                                 >
                                   <div
-                                    class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-start full-width-element version-desc-wrap"
+                                    class="ant-space ant-space-horizontal ant-space-align-start full-width-element version-desc-wrap"
                                   >
                                     <div
                                       class="ant-space-item"
@@ -4117,7 +4159,7 @@ exports[`base/System-ee render snap 3`] = `
                                       class="ant-space-item"
                                     >
                                       <span
-                                        class="ant-typography css-dev-only-do-not-override-txh9fw"
+                                        class="ant-typography"
                                       >
                                         支持多方式采集各数据源数据
                                       </span>
@@ -4128,7 +4170,7 @@ exports[`base/System-ee render snap 3`] = `
                                   class="ant-space-item"
                                 >
                                   <div
-                                    class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-start full-width-element version-desc-wrap"
+                                    class="ant-space ant-space-horizontal ant-space-align-start full-width-element version-desc-wrap"
                                   >
                                     <div
                                       class="ant-space-item"
@@ -4150,7 +4192,7 @@ exports[`base/System-ee render snap 3`] = `
                                       class="ant-space-item"
                                     >
                                       <span
-                                        class="ant-typography css-dev-only-do-not-override-txh9fw"
+                                        class="ant-typography"
                                       >
                                         最大实例个数20
                                       </span>
@@ -4163,34 +4205,34 @@ exports[`base/System-ee render snap 3`] = `
                         </div>
                       </div>
                       <div
-                        class="ant-card ant-card-bordered ant-card-hoverable version-card css-1gci04r css-dev-only-do-not-override-txh9fw"
+                        class="ant-card ant-card-bordered ant-card-hoverable version-card css-1gci04r"
                         color="orange"
                       >
                         <div
                           class="ant-card-body"
                         >
                           <div
-                            class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center version-tag-wrap"
+                            class="ant-space ant-space-horizontal ant-space-align-center version-tag-wrap"
                           >
                             <div
                               class="ant-space-item"
                             >
                               <span
-                                class="ant-tag ant-tag-orange basic-tag-wrapper basic-large-tag-wrapper css-17gmaof css-dev-only-do-not-override-txh9fw"
+                                class="ant-tag ant-tag-orange basic-tag-wrapper basic-large-tag-wrapper css-17gmaof"
                               >
                                 企业版
                               </span>
                             </div>
                           </div>
                           <div
-                            class="ant-space css-dev-only-do-not-override-txh9fw ant-space-vertical ant-space-align-center version-item"
+                            class="ant-space ant-space-vertical ant-space-align-center version-item"
                           >
                             <div
                               class="ant-space-item"
                               style="margin-bottom: 16px;"
                             >
                               <h4
-                                class="ant-typography css-dev-only-do-not-override-txh9fw"
+                                class="ant-typography"
                               >
                                 定制
                               </h4>
@@ -4200,7 +4242,7 @@ exports[`base/System-ee render snap 3`] = `
                               style="margin-bottom: 16px;"
                             >
                               <span
-                                class="ant-typography term-wrap css-dev-only-do-not-override-txh9fw"
+                                class="ant-typography term-wrap"
                               />
                             </div>
                             <div
@@ -4208,7 +4250,7 @@ exports[`base/System-ee render snap 3`] = `
                               style="margin-bottom: 16px;"
                             >
                               <a
-                                class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary apply-button basic-button-wrapper css-geipcv"
+                                class="ant-btn ant-btn-primary apply-button basic-button-wrapper css-geipcv"
                                 href="https://actiontech.github.io/sqle-docs/docs/support/commercial-support/"
                                 target="_blank"
                               >
@@ -4222,7 +4264,7 @@ exports[`base/System-ee render snap 3`] = `
                               style="margin-bottom: 16px;"
                             >
                               <span
-                                class="ant-typography version-subTitle-wrap css-dev-only-do-not-override-txh9fw"
+                                class="ant-typography version-subTitle-wrap"
                               >
                                 适用于私有云用户定制场景
                               </span>
@@ -4232,7 +4274,7 @@ exports[`base/System-ee render snap 3`] = `
                               style="margin-bottom: 16px;"
                             >
                               <div
-                                class="ant-divider css-dev-only-do-not-override-txh9fw ant-divider-horizontal"
+                                class="ant-divider ant-divider-horizontal"
                                 role="separator"
                               />
                             </div>
@@ -4240,14 +4282,14 @@ exports[`base/System-ee render snap 3`] = `
                               class="ant-space-item"
                             >
                               <div
-                                class="ant-space css-dev-only-do-not-override-txh9fw ant-space-vertical content-list"
+                                class="ant-space ant-space-vertical content-list"
                               >
                                 <div
                                   class="ant-space-item"
                                   style="margin-bottom: 8px;"
                                 >
                                   <div
-                                    class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-start full-width-element version-desc-wrap"
+                                    class="ant-space ant-space-horizontal ant-space-align-start full-width-element version-desc-wrap"
                                   >
                                     <div
                                       class="ant-space-item"
@@ -4269,7 +4311,7 @@ exports[`base/System-ee render snap 3`] = `
                                       class="ant-space-item"
                                     >
                                       <span
-                                        class="ant-typography css-dev-only-do-not-override-txh9fw"
+                                        class="ant-typography"
                                       >
                                         支持纳管10多种主流数据源
                                       </span>
@@ -4281,7 +4323,7 @@ exports[`base/System-ee render snap 3`] = `
                                   style="margin-bottom: 8px;"
                                 >
                                   <div
-                                    class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-start full-width-element version-desc-wrap"
+                                    class="ant-space ant-space-horizontal ant-space-align-start full-width-element version-desc-wrap"
                                   >
                                     <div
                                       class="ant-space-item"
@@ -4303,7 +4345,7 @@ exports[`base/System-ee render snap 3`] = `
                                       class="ant-space-item"
                                     >
                                       <span
-                                        class="ant-typography css-dev-only-do-not-override-txh9fw"
+                                        class="ant-typography"
                                       >
                                         提供专业SQL审核能力
                                       </span>
@@ -4315,7 +4357,7 @@ exports[`base/System-ee render snap 3`] = `
                                   style="margin-bottom: 8px;"
                                 >
                                   <div
-                                    class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-start full-width-element version-desc-wrap"
+                                    class="ant-space ant-space-horizontal ant-space-align-start full-width-element version-desc-wrap"
                                   >
                                     <div
                                       class="ant-space-item"
@@ -4337,7 +4379,7 @@ exports[`base/System-ee render snap 3`] = `
                                       class="ant-space-item"
                                     >
                                       <span
-                                        class="ant-typography css-dev-only-do-not-override-txh9fw"
+                                        class="ant-typography"
                                       >
                                         集成CloudBeaver在线查询
                                       </span>
@@ -4349,7 +4391,7 @@ exports[`base/System-ee render snap 3`] = `
                                   style="margin-bottom: 8px;"
                                 >
                                   <div
-                                    class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-start full-width-element version-desc-wrap"
+                                    class="ant-space ant-space-horizontal ant-space-align-start full-width-element version-desc-wrap"
                                   >
                                     <div
                                       class="ant-space-item"
@@ -4371,7 +4413,7 @@ exports[`base/System-ee render snap 3`] = `
                                       class="ant-space-item"
                                     >
                                       <span
-                                        class="ant-typography css-dev-only-do-not-override-txh9fw"
+                                        class="ant-typography"
                                       >
                                         支持IDE工具审核
                                       </span>
@@ -4383,7 +4425,7 @@ exports[`base/System-ee render snap 3`] = `
                                   style="margin-bottom: 8px;"
                                 >
                                   <div
-                                    class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-start full-width-element version-desc-wrap"
+                                    class="ant-space ant-space-horizontal ant-space-align-start full-width-element version-desc-wrap"
                                   >
                                     <div
                                       class="ant-space-item"
@@ -4405,7 +4447,7 @@ exports[`base/System-ee render snap 3`] = `
                                       class="ant-space-item"
                                     >
                                       <span
-                                        class="ant-typography css-dev-only-do-not-override-txh9fw"
+                                        class="ant-typography"
                                       >
                                         支持多方式采集各数据源数据
                                       </span>
@@ -4417,7 +4459,7 @@ exports[`base/System-ee render snap 3`] = `
                                   style="margin-bottom: 8px;"
                                 >
                                   <div
-                                    class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-start full-width-element version-desc-wrap"
+                                    class="ant-space ant-space-horizontal ant-space-align-start full-width-element version-desc-wrap"
                                   >
                                     <div
                                       class="ant-space-item"
@@ -4439,7 +4481,7 @@ exports[`base/System-ee render snap 3`] = `
                                       class="ant-space-item"
                                     >
                                       <span
-                                        class="ant-typography css-dev-only-do-not-override-txh9fw"
+                                        class="ant-typography"
                                       >
                                         无实例限制
                                       </span>
@@ -4451,7 +4493,7 @@ exports[`base/System-ee render snap 3`] = `
                                   style="margin-bottom: 8px;"
                                 >
                                   <div
-                                    class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-start full-width-element version-desc-wrap"
+                                    class="ant-space ant-space-horizontal ant-space-align-start full-width-element version-desc-wrap"
                                   >
                                     <div
                                       class="ant-space-item"
@@ -4473,7 +4515,7 @@ exports[`base/System-ee render snap 3`] = `
                                       class="ant-space-item"
                                     >
                                       <span
-                                        class="ant-typography css-dev-only-do-not-override-txh9fw"
+                                        class="ant-typography"
                                       >
                                         提供SQL问题下钻能力
                                       </span>
@@ -4485,7 +4527,7 @@ exports[`base/System-ee render snap 3`] = `
                                   style="margin-bottom: 8px;"
                                 >
                                   <div
-                                    class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-start full-width-element version-desc-wrap"
+                                    class="ant-space ant-space-horizontal ant-space-align-start full-width-element version-desc-wrap"
                                   >
                                     <div
                                       class="ant-space-item"
@@ -4507,7 +4549,7 @@ exports[`base/System-ee render snap 3`] = `
                                       class="ant-space-item"
                                     >
                                       <span
-                                        class="ant-typography css-dev-only-do-not-override-txh9fw"
+                                        class="ant-typography"
                                       >
                                         支持 SQL 变更的版本化管理
                                       </span>
@@ -4519,7 +4561,7 @@ exports[`base/System-ee render snap 3`] = `
                                   style="margin-bottom: 8px;"
                                 >
                                   <div
-                                    class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-start full-width-element version-desc-wrap"
+                                    class="ant-space ant-space-horizontal ant-space-align-start full-width-element version-desc-wrap"
                                   >
                                     <div
                                       class="ant-space-item"
@@ -4541,7 +4583,7 @@ exports[`base/System-ee render snap 3`] = `
                                       class="ant-space-item"
                                     >
                                       <span
-                                        class="ant-typography css-dev-only-do-not-override-txh9fw"
+                                        class="ant-typography"
                                       >
                                         支持备份恢复
                                       </span>
@@ -4553,7 +4595,7 @@ exports[`base/System-ee render snap 3`] = `
                                   style="margin-bottom: 8px;"
                                 >
                                   <div
-                                    class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-start full-width-element version-desc-wrap"
+                                    class="ant-space ant-space-horizontal ant-space-align-start full-width-element version-desc-wrap"
                                   >
                                     <div
                                       class="ant-space-item"
@@ -4575,7 +4617,7 @@ exports[`base/System-ee render snap 3`] = `
                                       class="ant-space-item"
                                     >
                                       <span
-                                        class="ant-typography css-dev-only-do-not-override-txh9fw"
+                                        class="ant-typography"
                                       >
                                         支持结构对比
                                       </span>
@@ -4587,7 +4629,7 @@ exports[`base/System-ee render snap 3`] = `
                                   style="margin-bottom: 8px;"
                                 >
                                   <div
-                                    class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-start full-width-element version-desc-wrap"
+                                    class="ant-space ant-space-horizontal ant-space-align-start full-width-element version-desc-wrap"
                                   >
                                     <div
                                       class="ant-space-item"
@@ -4609,7 +4651,7 @@ exports[`base/System-ee render snap 3`] = `
                                       class="ant-space-item"
                                     >
                                       <span
-                                        class="ant-typography css-dev-only-do-not-override-txh9fw"
+                                        class="ant-typography"
                                       >
                                         SQL合规重写
                                       </span>
@@ -4621,7 +4663,7 @@ exports[`base/System-ee render snap 3`] = `
                                   style="margin-bottom: 8px;"
                                 >
                                   <div
-                                    class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-start full-width-element version-desc-wrap"
+                                    class="ant-space ant-space-horizontal ant-space-align-start full-width-element version-desc-wrap"
                                   >
                                     <div
                                       class="ant-space-item"
@@ -4643,7 +4685,7 @@ exports[`base/System-ee render snap 3`] = `
                                       class="ant-space-item"
                                     >
                                       <span
-                                        class="ant-typography css-dev-only-do-not-override-txh9fw"
+                                        class="ant-typography"
                                       >
                                         SQL智能优化
                                       </span>
@@ -4655,7 +4697,7 @@ exports[`base/System-ee render snap 3`] = `
                                   style="margin-bottom: 8px;"
                                 >
                                   <div
-                                    class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-start full-width-element version-desc-wrap"
+                                    class="ant-space ant-space-horizontal ant-space-align-start full-width-element version-desc-wrap"
                                   >
                                     <div
                                       class="ant-space-item"
@@ -4677,7 +4719,7 @@ exports[`base/System-ee render snap 3`] = `
                                       class="ant-space-item"
                                     >
                                       <span
-                                        class="ant-typography css-dev-only-do-not-override-txh9fw"
+                                        class="ant-typography"
                                       >
                                         支持版本控制
                                       </span>
@@ -4689,7 +4731,7 @@ exports[`base/System-ee render snap 3`] = `
                                   style="margin-bottom: 8px;"
                                 >
                                   <div
-                                    class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-start full-width-element version-desc-wrap"
+                                    class="ant-space ant-space-horizontal ant-space-align-start full-width-element version-desc-wrap"
                                   >
                                     <div
                                       class="ant-space-item"
@@ -4711,7 +4753,7 @@ exports[`base/System-ee render snap 3`] = `
                                       class="ant-space-item"
                                     >
                                       <span
-                                        class="ant-typography css-dev-only-do-not-override-txh9fw"
+                                        class="ant-typography"
                                       >
                                         多维度智能统计
                                       </span>
@@ -4722,7 +4764,7 @@ exports[`base/System-ee render snap 3`] = `
                                   class="ant-space-item"
                                 >
                                   <div
-                                    class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-start full-width-element version-desc-wrap"
+                                    class="ant-space ant-space-horizontal ant-space-align-start full-width-element version-desc-wrap"
                                   >
                                     <div
                                       class="ant-space-item"
@@ -4744,7 +4786,7 @@ exports[`base/System-ee render snap 3`] = `
                                       class="ant-space-item"
                                     >
                                       <span
-                                        class="ant-typography css-dev-only-do-not-override-txh9fw"
+                                        class="ant-typography"
                                       >
                                         个性化定制
                                       </span>
@@ -4763,12 +4805,12 @@ exports[`base/System-ee render snap 3`] = `
                   >
                     <div>
                       <span
-                        class="ant-typography css-dev-only-do-not-override-txh9fw"
+                        class="ant-typography"
                       >
                         各版本完整功能对比请参考：
                       </span>
                       <a
-                        class="ant-typography css-dev-only-do-not-override-txh9fw"
+                        class="ant-typography"
                         href="https://actiontech.github.io/sqle-docs/docs/support/compare"
                         rel="noopener noreferrer"
                         target="_blank"
@@ -4783,7 +4825,7 @@ exports[`base/System-ee render snap 3`] = `
                 class="right"
               >
                 <div
-                  class="ant-card ant-card-bordered ant-card-hoverable ce-card-info css-dev-only-do-not-override-txh9fw"
+                  class="ant-card ant-card-bordered ant-card-hoverable ce-card-info"
                 >
                   <div
                     class="ant-card-body"
@@ -4838,7 +4880,7 @@ exports[`base/System-ee render snap 3`] = `
                         流程对接为企业版功能。如您想使用该功能，可以通过以下链接联系我们。
                       </p>
                       <div
-                        class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center button-group-wrapper"
+                        class="ant-space ant-space-horizontal ant-space-align-center button-group-wrapper"
                       >
                         <div
                           class="ant-space-item"
@@ -4850,7 +4892,7 @@ exports[`base/System-ee render snap 3`] = `
                             target="_blank"
                           >
                             <button
-                              class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary basic-button-wrapper css-geipcv"
+                              class="ant-btn ant-btn-primary basic-button-wrapper css-geipcv"
                               type="button"
                             >
                               <span>
@@ -4868,7 +4910,7 @@ exports[`base/System-ee render snap 3`] = `
                             target="_blank"
                           >
                             <button
-                              class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary basic-button-wrapper css-geipcv"
+                              class="ant-btn ant-btn-primary basic-button-wrapper css-geipcv"
                               type="button"
                             >
                               <span>
@@ -4882,7 +4924,7 @@ exports[`base/System-ee render snap 3`] = `
                   </div>
                 </div>
                 <div
-                  class="ant-card ant-card-bordered ant-card-hoverable ce-card-info css-dev-only-do-not-override-txh9fw"
+                  class="ant-card ant-card-bordered ant-card-hoverable ce-card-info"
                 >
                   <div
                     class="ant-card-body"
@@ -4945,7 +4987,7 @@ exports[`base/System-ee render snap 3`] = `
                           target="_blank"
                         >
                           <button
-                            class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary basic-button-wrapper css-geipcv"
+                            class="ant-btn ant-btn-primary basic-button-wrapper css-geipcv"
                             type="button"
                           >
                             <span>

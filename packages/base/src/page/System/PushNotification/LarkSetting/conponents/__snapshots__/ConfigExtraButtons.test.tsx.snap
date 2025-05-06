@@ -4,7 +4,7 @@ exports[`base/System/PushNotification/LarkSetting/ConfigExtraButtons render snap
 <body>
   <div>
     <div
-      class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+      class="ant-space ant-space-horizontal ant-space-align-center"
       hidden=""
     >
       <div
@@ -12,13 +12,13 @@ exports[`base/System/PushNotification/LarkSetting/ConfigExtraButtons render snap
         style="margin-right: 12px;"
       >
         <div
-          class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
+          class="ant-space ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
         >
           <div
             class="ant-space-item"
           >
             <button
-              class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-text ant-btn-icon-only system-config-button basic-button-wrapper css-geipcv"
+              class="ant-btn ant-btn-text ant-btn-icon-only system-config-button basic-button-wrapper css-geipcv"
               type="button"
             >
               <span
@@ -43,13 +43,13 @@ exports[`base/System/PushNotification/LarkSetting/ConfigExtraButtons render snap
         class="ant-space-item"
       >
         <div
-          class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
+          class="ant-space ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
         >
           <div
             class="ant-space-item"
           >
             <button
-              class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-text ant-btn-icon-only system-config-button basic-button-wrapper css-geipcv"
+              class="ant-btn ant-btn-text ant-btn-icon-only system-config-button basic-button-wrapper css-geipcv"
               type="button"
             >
               <span
@@ -81,7 +81,7 @@ exports[`base/System/PushNotification/LarkSetting/ConfigExtraButtons render snap
 <body>
   <div>
     <div
-      class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+      class="ant-space ant-space-horizontal ant-space-align-center"
       hidden=""
     >
       <div
@@ -89,13 +89,13 @@ exports[`base/System/PushNotification/LarkSetting/ConfigExtraButtons render snap
         style="margin-right: 12px;"
       >
         <div
-          class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
+          class="ant-space ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
         >
           <div
             class="ant-space-item"
           >
             <button
-              class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-text ant-btn-icon-only system-config-button basic-button-wrapper css-geipcv"
+              class="ant-btn ant-btn-text ant-btn-icon-only system-config-button basic-button-wrapper css-geipcv"
               type="button"
             >
               <span
@@ -120,13 +120,13 @@ exports[`base/System/PushNotification/LarkSetting/ConfigExtraButtons render snap
         class="ant-space-item"
       >
         <div
-          class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
+          class="ant-space ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
         >
           <div
             class="ant-space-item"
           >
             <button
-              class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-text ant-btn-icon-only system-config-button basic-button-wrapper css-geipcv"
+              class="ant-btn ant-btn-text ant-btn-icon-only system-config-button basic-button-wrapper css-geipcv"
               type="button"
             >
               <span
@@ -158,20 +158,20 @@ exports[`base/System/PushNotification/LarkSetting/ConfigExtraButtons render snap
 <body>
   <div>
     <div
-      class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+      class="ant-space ant-space-horizontal ant-space-align-center"
     >
       <div
         class="ant-space-item"
         style="margin-right: 12px;"
       >
         <div
-          class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
+          class="ant-space ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
         >
           <div
             class="ant-space-item"
           >
             <button
-              class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-text ant-btn-icon-only system-config-button basic-button-wrapper css-geipcv"
+              class="ant-btn ant-btn-text ant-btn-icon-only system-config-button basic-button-wrapper css-geipcv"
               type="button"
             >
               <span
@@ -196,13 +196,13 @@ exports[`base/System/PushNotification/LarkSetting/ConfigExtraButtons render snap
         class="ant-space-item"
       >
         <div
-          class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
+          class="ant-space ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
         >
           <div
             class="ant-space-item"
           >
             <button
-              class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-text ant-btn-icon-only system-config-button basic-button-wrapper css-geipcv"
+              class="ant-btn ant-btn-text ant-btn-icon-only system-config-button basic-button-wrapper css-geipcv"
               type="button"
             >
               <span
@@ -229,7 +229,7 @@ exports[`base/System/PushNotification/LarkSetting/ConfigExtraButtons render snap
   </div>
   <div>
     <div
-      class="ant-popover ant-popover-hidden css-dev-only-do-not-override-txh9fw css-dev-only-do-not-override-txh9fw ant-popover-placement-bottomRight"
+      class="ant-popover ant-popover-hidden ant-popover-placement-bottomRight"
       style="--arrow-x: 0px; --arrow-y: 0px; left: 0px; top: 0px; box-sizing: border-box; pointer-events: none;"
     >
       <div
@@ -247,24 +247,24 @@ exports[`base/System/PushNotification/LarkSetting/ConfigExtraButtons render snap
             class="ant-popover-inner-content"
           >
             <div
-              class="ant-space css-dev-only-do-not-override-txh9fw ant-space-vertical full-width-element"
+              class="ant-space ant-space-vertical full-width-element"
             >
               <div
                 class="ant-space-item"
                 style="margin-bottom: 16px;"
               >
                 <form
-                  class="ant-form ant-form-horizontal css-dev-only-do-not-override-txh9fw"
+                  class="ant-form ant-form-horizontal"
                 >
                   <div
-                    class="ant-form-item css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+                    class="ant-form-item css-1jlm9cy"
                     style="margin-bottom: 0px;"
                   >
                     <div
-                      class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                      class="ant-row ant-form-item-row"
                     >
                       <div
-                        class="ant-col ant-col-24 ant-form-item-label css-dev-only-do-not-override-txh9fw"
+                        class="ant-col ant-col-24 ant-form-item-label"
                       >
                         <label
                           class="ant-form-item-no-colon"
@@ -275,7 +275,7 @@ exports[`base/System/PushNotification/LarkSetting/ConfigExtraButtons render snap
                         </label>
                       </div>
                       <div
-                        class="ant-col ant-col-24 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                        class="ant-col ant-col-24 ant-form-item-control"
                       >
                         <div
                           class="ant-form-item-control-input"
@@ -284,11 +284,11 @@ exports[`base/System/PushNotification/LarkSetting/ConfigExtraButtons render snap
                             class="ant-form-item-control-input-content"
                           >
                             <div
-                              class="ant-radio-group ant-radio-group-outline ant-radio-group-small css-dev-only-do-not-override-txh9fw"
+                              class="ant-radio-group ant-radio-group-outline ant-radio-group-small"
                               id="receiveType"
                             >
                               <label
-                                class="ant-radio-button-wrapper ant-radio-button-wrapper-checked ant-radio-button-wrapper-in-form-item css-dev-only-do-not-override-txh9fw"
+                                class="ant-radio-button-wrapper ant-radio-button-wrapper-checked ant-radio-button-wrapper-in-form-item"
                               >
                                 <span
                                   class="ant-radio-button ant-radio-button-checked"
@@ -308,7 +308,7 @@ exports[`base/System/PushNotification/LarkSetting/ConfigExtraButtons render snap
                                 </span>
                               </label>
                               <label
-                                class="ant-radio-button-wrapper ant-radio-button-wrapper-in-form-item css-dev-only-do-not-override-txh9fw"
+                                class="ant-radio-button-wrapper ant-radio-button-wrapper-in-form-item"
                               >
                                 <span
                                   class="ant-radio-button"
@@ -333,14 +333,14 @@ exports[`base/System/PushNotification/LarkSetting/ConfigExtraButtons render snap
                     </div>
                   </div>
                   <div
-                    class="ant-form-item css-15d6abf css-dev-only-do-not-override-txh9fw"
+                    class="ant-form-item css-15d6abf"
                     style="margin-bottom: 0px;"
                   >
                     <div
-                      class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                      class="ant-row ant-form-item-row"
                     >
                       <div
-                        class="ant-col ant-col-24 ant-form-item-label css-dev-only-do-not-override-txh9fw"
+                        class="ant-col ant-col-24 ant-form-item-label"
                       >
                         <label
                           class="ant-form-item-required ant-form-item-no-colon"
@@ -349,7 +349,7 @@ exports[`base/System/PushNotification/LarkSetting/ConfigExtraButtons render snap
                         />
                       </div>
                       <div
-                        class="ant-col ant-col-24 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                        class="ant-col ant-col-24 ant-form-item-control"
                       >
                         <div
                           class="ant-form-item-control-input"
@@ -359,7 +359,7 @@ exports[`base/System/PushNotification/LarkSetting/ConfigExtraButtons render snap
                           >
                             <input
                               aria-required="true"
-                              class="ant-input css-dev-only-do-not-override-ywkr0o basic-input-wrapper css-1pd1cd5"
+                              class="ant-input basic-input-wrapper css-1pd1cd5"
                               id="receivePhone"
                               placeholder="请输入手机号"
                               type="text"
@@ -376,21 +376,21 @@ exports[`base/System/PushNotification/LarkSetting/ConfigExtraButtons render snap
                 class="ant-space-item"
               >
                 <div
-                  class="ant-row css-dev-only-do-not-override-txh9fw"
+                  class="ant-row"
                 >
                   <div
-                    class="ant-col ant-col-24 css-dev-only-do-not-override-txh9fw"
+                    class="ant-col ant-col-24"
                     style="text-align: right;"
                   >
                     <div
-                      class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+                      class="ant-space ant-space-horizontal ant-space-align-center"
                     >
                       <div
                         class="ant-space-item"
                         style="margin-right: 12px;"
                       >
                         <button
-                          class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default ant-btn-sm basic-button-wrapper css-geipcv"
+                          class="ant-btn ant-btn-default ant-btn-sm basic-button-wrapper css-geipcv"
                           type="button"
                         >
                           <span>
@@ -402,7 +402,7 @@ exports[`base/System/PushNotification/LarkSetting/ConfigExtraButtons render snap
                         class="ant-space-item"
                       >
                         <button
-                          class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary ant-btn-sm basic-button-wrapper css-geipcv"
+                          class="ant-btn ant-btn-primary ant-btn-sm basic-button-wrapper css-geipcv"
                           type="button"
                         >
                           <span>
@@ -421,11 +421,11 @@ exports[`base/System/PushNotification/LarkSetting/ConfigExtraButtons render snap
     </div>
   </div>
   <div
-    class="ant-message ant-message-top css-dev-only-do-not-override-txh9fw"
+    class="ant-message ant-message-top"
     style="left: 50%; transform: translateX(-50%); top: 8px;"
   >
     <div
-      class="ant-message-notice ant-message-notice-error css-dev-only-do-not-override-txh9fw"
+      class="ant-message-notice ant-message-notice-error"
     >
       <div
         class="ant-message-notice-content"
@@ -442,13 +442,14 @@ exports[`base/System/PushNotification/LarkSetting/ConfigExtraButtons render snap
               aria-hidden="true"
               data-icon="close-circle"
               fill="currentColor"
+              fill-rule="evenodd"
               focusable="false"
               height="1em"
               viewBox="64 64 896 896"
               width="1em"
             >
               <path
-                d="M512 64C264.6 64 64 264.6 64 512s200.6 448 448 448 448-200.6 448-448S759.4 64 512 64zm165.4 618.2l-66-.3L512 563.4l-99.3 118.4-66.1.3c-4.4 0-8-3.5-8-8 0-1.9.7-3.7 1.9-5.2l130.1-155L340.5 359a8.32 8.32 0 01-1.9-5.2c0-4.4 3.6-8 8-8l66.1.3L512 464.6l99.3-118.4 66-.3c4.4 0 8 3.5 8 8 0 1.9-.7 3.7-1.9 5.2L553.5 514l130 155c1.2 1.5 1.9 3.3 1.9 5.2 0 4.4-3.6 8-8 8z"
+                d="M512 64c247.4 0 448 200.6 448 448S759.4 960 512 960 64 759.4 64 512 264.6 64 512 64zm127.98 274.82h-.04l-.08.06L512 466.75 384.14 338.88c-.04-.05-.06-.06-.08-.06a.12.12 0 00-.07 0c-.03 0-.05.01-.09.05l-45.02 45.02a.2.2 0 00-.05.09.12.12 0 000 .07v.02a.27.27 0 00.06.06L466.75 512 338.88 639.86c-.05.04-.06.06-.06.08a.12.12 0 000 .07c0 .03.01.05.05.09l45.02 45.02a.2.2 0 00.09.05.12.12 0 00.07 0c.02 0 .04-.01.08-.05L512 557.25l127.86 127.87c.04.04.06.05.08.05a.12.12 0 00.07 0c.03 0 .05-.01.09-.05l45.02-45.02a.2.2 0 00.05-.09.12.12 0 000-.07v-.02a.27.27 0 00-.05-.06L557.25 512l127.87-127.86c.04-.04.05-.06.05-.08a.12.12 0 000-.07c0-.03-.01-.05-.05-.09l-45.02-45.02a.2.2 0 00-.09-.05.12.12 0 00-.07 0z"
               />
             </svg>
           </span>
@@ -466,20 +467,20 @@ exports[`base/System/PushNotification/LarkSetting/ConfigExtraButtons render snap
 <body>
   <div>
     <div
-      class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+      class="ant-space ant-space-horizontal ant-space-align-center"
     >
       <div
         class="ant-space-item"
         style="margin-right: 12px;"
       >
         <div
-          class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
+          class="ant-space ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
         >
           <div
             class="ant-space-item"
           >
             <button
-              class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-text ant-btn-icon-only ant-btn-loading system-config-button basic-button-wrapper css-geipcv"
+              class="ant-btn ant-btn-text ant-btn-icon-only ant-btn-loading system-config-button basic-button-wrapper css-geipcv"
               disabled=""
               type="button"
             >
@@ -514,13 +515,13 @@ exports[`base/System/PushNotification/LarkSetting/ConfigExtraButtons render snap
         class="ant-space-item"
       >
         <div
-          class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
+          class="ant-space ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
         >
           <div
             class="ant-space-item"
           >
             <button
-              class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-text ant-btn-icon-only system-config-button basic-button-wrapper css-geipcv"
+              class="ant-btn ant-btn-text ant-btn-icon-only system-config-button basic-button-wrapper css-geipcv"
               type="button"
             >
               <span
@@ -547,7 +548,7 @@ exports[`base/System/PushNotification/LarkSetting/ConfigExtraButtons render snap
   </div>
   <div>
     <div
-      class="ant-popover ant-popover-hidden css-dev-only-do-not-override-txh9fw css-dev-only-do-not-override-txh9fw ant-popover-placement-bottomRight"
+      class="ant-popover ant-popover-hidden ant-popover-placement-bottomRight"
       style="--arrow-x: 0px; --arrow-y: 0px; left: 0px; top: 0px; box-sizing: border-box; pointer-events: none;"
     >
       <div
@@ -565,24 +566,24 @@ exports[`base/System/PushNotification/LarkSetting/ConfigExtraButtons render snap
             class="ant-popover-inner-content"
           >
             <div
-              class="ant-space css-dev-only-do-not-override-txh9fw ant-space-vertical full-width-element"
+              class="ant-space ant-space-vertical full-width-element"
             >
               <div
                 class="ant-space-item"
                 style="margin-bottom: 16px;"
               >
                 <form
-                  class="ant-form ant-form-horizontal css-dev-only-do-not-override-txh9fw"
+                  class="ant-form ant-form-horizontal"
                 >
                   <div
-                    class="ant-form-item css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+                    class="ant-form-item css-1jlm9cy"
                     style="margin-bottom: 0px;"
                   >
                     <div
-                      class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                      class="ant-row ant-form-item-row"
                     >
                       <div
-                        class="ant-col ant-col-24 ant-form-item-label css-dev-only-do-not-override-txh9fw"
+                        class="ant-col ant-col-24 ant-form-item-label"
                       >
                         <label
                           class="ant-form-item-no-colon"
@@ -593,7 +594,7 @@ exports[`base/System/PushNotification/LarkSetting/ConfigExtraButtons render snap
                         </label>
                       </div>
                       <div
-                        class="ant-col ant-col-24 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                        class="ant-col ant-col-24 ant-form-item-control"
                       >
                         <div
                           class="ant-form-item-control-input"
@@ -602,11 +603,11 @@ exports[`base/System/PushNotification/LarkSetting/ConfigExtraButtons render snap
                             class="ant-form-item-control-input-content"
                           >
                             <div
-                              class="ant-radio-group ant-radio-group-outline ant-radio-group-small css-dev-only-do-not-override-txh9fw"
+                              class="ant-radio-group ant-radio-group-outline ant-radio-group-small"
                               id="receiveType"
                             >
                               <label
-                                class="ant-radio-button-wrapper ant-radio-button-wrapper-checked ant-radio-button-wrapper-in-form-item css-dev-only-do-not-override-txh9fw"
+                                class="ant-radio-button-wrapper ant-radio-button-wrapper-checked ant-radio-button-wrapper-in-form-item"
                               >
                                 <span
                                   class="ant-radio-button ant-radio-button-checked"
@@ -626,7 +627,7 @@ exports[`base/System/PushNotification/LarkSetting/ConfigExtraButtons render snap
                                 </span>
                               </label>
                               <label
-                                class="ant-radio-button-wrapper ant-radio-button-wrapper-in-form-item css-dev-only-do-not-override-txh9fw"
+                                class="ant-radio-button-wrapper ant-radio-button-wrapper-in-form-item"
                               >
                                 <span
                                   class="ant-radio-button"
@@ -651,14 +652,14 @@ exports[`base/System/PushNotification/LarkSetting/ConfigExtraButtons render snap
                     </div>
                   </div>
                   <div
-                    class="ant-form-item css-15d6abf css-dev-only-do-not-override-txh9fw"
+                    class="ant-form-item css-15d6abf"
                     style="margin-bottom: 0px;"
                   >
                     <div
-                      class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                      class="ant-row ant-form-item-row"
                     >
                       <div
-                        class="ant-col ant-col-24 ant-form-item-label css-dev-only-do-not-override-txh9fw"
+                        class="ant-col ant-col-24 ant-form-item-label"
                       >
                         <label
                           class="ant-form-item-required ant-form-item-no-colon"
@@ -667,7 +668,7 @@ exports[`base/System/PushNotification/LarkSetting/ConfigExtraButtons render snap
                         />
                       </div>
                       <div
-                        class="ant-col ant-col-24 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                        class="ant-col ant-col-24 ant-form-item-control"
                       >
                         <div
                           class="ant-form-item-control-input"
@@ -677,7 +678,7 @@ exports[`base/System/PushNotification/LarkSetting/ConfigExtraButtons render snap
                           >
                             <input
                               aria-required="true"
-                              class="ant-input css-dev-only-do-not-override-ywkr0o basic-input-wrapper css-1pd1cd5"
+                              class="ant-input basic-input-wrapper css-1pd1cd5"
                               id="receiveEmail"
                               placeholder="请输入邮箱"
                               type="text"
@@ -694,21 +695,21 @@ exports[`base/System/PushNotification/LarkSetting/ConfigExtraButtons render snap
                 class="ant-space-item"
               >
                 <div
-                  class="ant-row css-dev-only-do-not-override-txh9fw"
+                  class="ant-row"
                 >
                   <div
-                    class="ant-col ant-col-24 css-dev-only-do-not-override-txh9fw"
+                    class="ant-col ant-col-24"
                     style="text-align: right;"
                   >
                     <div
-                      class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+                      class="ant-space ant-space-horizontal ant-space-align-center"
                     >
                       <div
                         class="ant-space-item"
                         style="margin-right: 12px;"
                       >
                         <button
-                          class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default ant-btn-sm basic-button-wrapper css-geipcv"
+                          class="ant-btn ant-btn-default ant-btn-sm basic-button-wrapper css-geipcv"
                           type="button"
                         >
                           <span>
@@ -720,7 +721,7 @@ exports[`base/System/PushNotification/LarkSetting/ConfigExtraButtons render snap
                         class="ant-space-item"
                       >
                         <button
-                          class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary ant-btn-sm basic-button-wrapper css-geipcv"
+                          class="ant-btn ant-btn-primary ant-btn-sm basic-button-wrapper css-geipcv"
                           type="button"
                         >
                           <span>
@@ -739,11 +740,11 @@ exports[`base/System/PushNotification/LarkSetting/ConfigExtraButtons render snap
     </div>
   </div>
   <div
-    class="ant-message ant-message-top css-dev-only-do-not-override-txh9fw"
+    class="ant-message ant-message-top"
     style="left: 50%; transform: translateX(-50%); top: 8px;"
   >
     <div
-      class="ant-message-notice ant-message-notice-success css-dev-only-do-not-override-txh9fw"
+      class="ant-message-notice ant-message-notice-success"
     >
       <div
         class="ant-message-notice-content"
@@ -784,20 +785,20 @@ exports[`base/System/PushNotification/LarkSetting/ConfigExtraButtons render snap
 <body>
   <div>
     <div
-      class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+      class="ant-space ant-space-horizontal ant-space-align-center"
     >
       <div
         class="ant-space-item"
         style="margin-right: 12px;"
       >
         <div
-          class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
+          class="ant-space ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
         >
           <div
             class="ant-space-item"
           >
             <button
-              class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-text ant-btn-icon-only system-config-button basic-button-wrapper css-geipcv"
+              class="ant-btn ant-btn-text ant-btn-icon-only system-config-button basic-button-wrapper css-geipcv"
               type="button"
             >
               <span
@@ -822,13 +823,13 @@ exports[`base/System/PushNotification/LarkSetting/ConfigExtraButtons render snap
         class="ant-space-item"
       >
         <div
-          class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
+          class="ant-space ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
         >
           <div
             class="ant-space-item"
           >
             <button
-              class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-text ant-btn-icon-only system-config-button basic-button-wrapper css-geipcv"
+              class="ant-btn ant-btn-text ant-btn-icon-only system-config-button basic-button-wrapper css-geipcv"
               type="button"
             >
               <span
@@ -860,20 +861,20 @@ exports[`base/System/PushNotification/LarkSetting/ConfigExtraButtons render snap
 <body>
   <div>
     <div
-      class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+      class="ant-space ant-space-horizontal ant-space-align-center"
     >
       <div
         class="ant-space-item"
         style="margin-right: 12px;"
       >
         <div
-          class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center ant-popover-open basic-tooltips-wrapper css-4jbtl9"
+          class="ant-space ant-space-horizontal ant-space-align-center ant-popover-open basic-tooltips-wrapper css-4jbtl9"
         >
           <div
             class="ant-space-item"
           >
             <button
-              class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-text ant-btn-icon-only system-config-button basic-button-wrapper css-geipcv"
+              class="ant-btn ant-btn-text ant-btn-icon-only system-config-button basic-button-wrapper css-geipcv"
               type="button"
             >
               <span
@@ -898,13 +899,13 @@ exports[`base/System/PushNotification/LarkSetting/ConfigExtraButtons render snap
         class="ant-space-item"
       >
         <div
-          class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
+          class="ant-space ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
         >
           <div
             class="ant-space-item"
           >
             <button
-              class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-text ant-btn-icon-only system-config-button basic-button-wrapper css-geipcv"
+              class="ant-btn ant-btn-text ant-btn-icon-only system-config-button basic-button-wrapper css-geipcv"
               type="button"
             >
               <span
@@ -931,7 +932,7 @@ exports[`base/System/PushNotification/LarkSetting/ConfigExtraButtons render snap
   </div>
   <div>
     <div
-      class="ant-popover css-dev-only-do-not-override-txh9fw css-dev-only-do-not-override-txh9fw ant-popover-placement-bottomRight"
+      class="ant-popover ant-popover-placement-bottomRight"
       style="--arrow-x: 0px; --arrow-y: 0px; left: -1000vw; top: -1000vh; box-sizing: border-box;"
     >
       <div
@@ -949,24 +950,24 @@ exports[`base/System/PushNotification/LarkSetting/ConfigExtraButtons render snap
             class="ant-popover-inner-content"
           >
             <div
-              class="ant-space css-dev-only-do-not-override-txh9fw ant-space-vertical full-width-element"
+              class="ant-space ant-space-vertical full-width-element"
             >
               <div
                 class="ant-space-item"
                 style="margin-bottom: 16px;"
               >
                 <form
-                  class="ant-form ant-form-horizontal css-dev-only-do-not-override-txh9fw"
+                  class="ant-form ant-form-horizontal"
                 >
                   <div
-                    class="ant-form-item css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+                    class="ant-form-item css-1jlm9cy"
                     style="margin-bottom: 0px;"
                   >
                     <div
-                      class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                      class="ant-row ant-form-item-row"
                     >
                       <div
-                        class="ant-col ant-col-24 ant-form-item-label css-dev-only-do-not-override-txh9fw"
+                        class="ant-col ant-col-24 ant-form-item-label"
                       >
                         <label
                           class="ant-form-item-no-colon"
@@ -977,7 +978,7 @@ exports[`base/System/PushNotification/LarkSetting/ConfigExtraButtons render snap
                         </label>
                       </div>
                       <div
-                        class="ant-col ant-col-24 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                        class="ant-col ant-col-24 ant-form-item-control"
                       >
                         <div
                           class="ant-form-item-control-input"
@@ -986,11 +987,11 @@ exports[`base/System/PushNotification/LarkSetting/ConfigExtraButtons render snap
                             class="ant-form-item-control-input-content"
                           >
                             <div
-                              class="ant-radio-group ant-radio-group-outline ant-radio-group-small css-dev-only-do-not-override-txh9fw"
+                              class="ant-radio-group ant-radio-group-outline ant-radio-group-small"
                               id="receiveType"
                             >
                               <label
-                                class="ant-radio-button-wrapper ant-radio-button-wrapper-checked ant-radio-button-wrapper-in-form-item css-dev-only-do-not-override-txh9fw"
+                                class="ant-radio-button-wrapper ant-radio-button-wrapper-checked ant-radio-button-wrapper-in-form-item"
                               >
                                 <span
                                   class="ant-radio-button ant-radio-button-checked"
@@ -1010,7 +1011,7 @@ exports[`base/System/PushNotification/LarkSetting/ConfigExtraButtons render snap
                                 </span>
                               </label>
                               <label
-                                class="ant-radio-button-wrapper ant-radio-button-wrapper-in-form-item css-dev-only-do-not-override-txh9fw"
+                                class="ant-radio-button-wrapper ant-radio-button-wrapper-in-form-item"
                               >
                                 <span
                                   class="ant-radio-button"
@@ -1035,14 +1036,14 @@ exports[`base/System/PushNotification/LarkSetting/ConfigExtraButtons render snap
                     </div>
                   </div>
                   <div
-                    class="ant-form-item css-15d6abf css-dev-only-do-not-override-txh9fw"
+                    class="ant-form-item css-15d6abf"
                     style="margin-bottom: 0px;"
                   >
                     <div
-                      class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                      class="ant-row ant-form-item-row"
                     >
                       <div
-                        class="ant-col ant-col-24 ant-form-item-label css-dev-only-do-not-override-txh9fw"
+                        class="ant-col ant-col-24 ant-form-item-label"
                       >
                         <label
                           class="ant-form-item-required ant-form-item-no-colon"
@@ -1051,7 +1052,7 @@ exports[`base/System/PushNotification/LarkSetting/ConfigExtraButtons render snap
                         />
                       </div>
                       <div
-                        class="ant-col ant-col-24 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                        class="ant-col ant-col-24 ant-form-item-control"
                       >
                         <div
                           class="ant-form-item-control-input"
@@ -1061,7 +1062,7 @@ exports[`base/System/PushNotification/LarkSetting/ConfigExtraButtons render snap
                           >
                             <input
                               aria-required="true"
-                              class="ant-input css-dev-only-do-not-override-ywkr0o basic-input-wrapper css-1pd1cd5"
+                              class="ant-input basic-input-wrapper css-1pd1cd5"
                               id="receiveEmail"
                               placeholder="请输入邮箱"
                               type="text"
@@ -1078,21 +1079,21 @@ exports[`base/System/PushNotification/LarkSetting/ConfigExtraButtons render snap
                 class="ant-space-item"
               >
                 <div
-                  class="ant-row css-dev-only-do-not-override-txh9fw"
+                  class="ant-row"
                 >
                   <div
-                    class="ant-col ant-col-24 css-dev-only-do-not-override-txh9fw"
+                    class="ant-col ant-col-24"
                     style="text-align: right;"
                   >
                     <div
-                      class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+                      class="ant-space ant-space-horizontal ant-space-align-center"
                     >
                       <div
                         class="ant-space-item"
                         style="margin-right: 12px;"
                       >
                         <button
-                          class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default ant-btn-sm basic-button-wrapper css-geipcv"
+                          class="ant-btn ant-btn-default ant-btn-sm basic-button-wrapper css-geipcv"
                           type="button"
                         >
                           <span>
@@ -1104,7 +1105,7 @@ exports[`base/System/PushNotification/LarkSetting/ConfigExtraButtons render snap
                         class="ant-space-item"
                       >
                         <button
-                          class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary ant-btn-sm basic-button-wrapper css-geipcv"
+                          class="ant-btn ant-btn-primary ant-btn-sm basic-button-wrapper css-geipcv"
                           type="button"
                         >
                           <span>
@@ -1129,20 +1130,20 @@ exports[`base/System/PushNotification/LarkSetting/ConfigExtraButtons render snap
 <body>
   <div>
     <div
-      class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+      class="ant-space ant-space-horizontal ant-space-align-center"
     >
       <div
         class="ant-space-item"
         style="margin-right: 12px;"
       >
         <div
-          class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
+          class="ant-space ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
         >
           <div
             class="ant-space-item"
           >
             <button
-              class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-text ant-btn-icon-only system-config-button basic-button-wrapper css-geipcv"
+              class="ant-btn ant-btn-text ant-btn-icon-only system-config-button basic-button-wrapper css-geipcv"
               type="button"
             >
               <span
@@ -1167,13 +1168,13 @@ exports[`base/System/PushNotification/LarkSetting/ConfigExtraButtons render snap
         class="ant-space-item"
       >
         <div
-          class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
+          class="ant-space ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
         >
           <div
             class="ant-space-item"
           >
             <button
-              class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-text ant-btn-icon-only system-config-button basic-button-wrapper css-geipcv"
+              class="ant-btn ant-btn-text ant-btn-icon-only system-config-button basic-button-wrapper css-geipcv"
               type="button"
             >
               <span
@@ -1200,7 +1201,7 @@ exports[`base/System/PushNotification/LarkSetting/ConfigExtraButtons render snap
   </div>
   <div>
     <div
-      class="ant-popover ant-popover-hidden css-dev-only-do-not-override-txh9fw css-dev-only-do-not-override-txh9fw ant-popover-placement-bottomRight"
+      class="ant-popover ant-popover-hidden ant-popover-placement-bottomRight"
       style="--arrow-x: 0px; --arrow-y: 0px; left: 0px; top: 0px; box-sizing: border-box; pointer-events: none;"
     >
       <div
@@ -1218,24 +1219,24 @@ exports[`base/System/PushNotification/LarkSetting/ConfigExtraButtons render snap
             class="ant-popover-inner-content"
           >
             <div
-              class="ant-space css-dev-only-do-not-override-txh9fw ant-space-vertical full-width-element"
+              class="ant-space ant-space-vertical full-width-element"
             >
               <div
                 class="ant-space-item"
                 style="margin-bottom: 16px;"
               >
                 <form
-                  class="ant-form ant-form-horizontal css-dev-only-do-not-override-txh9fw"
+                  class="ant-form ant-form-horizontal"
                 >
                   <div
-                    class="ant-form-item css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+                    class="ant-form-item css-1jlm9cy"
                     style="margin-bottom: 0px;"
                   >
                     <div
-                      class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                      class="ant-row ant-form-item-row"
                     >
                       <div
-                        class="ant-col ant-col-24 ant-form-item-label css-dev-only-do-not-override-txh9fw"
+                        class="ant-col ant-col-24 ant-form-item-label"
                       >
                         <label
                           class="ant-form-item-no-colon"
@@ -1246,7 +1247,7 @@ exports[`base/System/PushNotification/LarkSetting/ConfigExtraButtons render snap
                         </label>
                       </div>
                       <div
-                        class="ant-col ant-col-24 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                        class="ant-col ant-col-24 ant-form-item-control"
                       >
                         <div
                           class="ant-form-item-control-input"
@@ -1255,11 +1256,11 @@ exports[`base/System/PushNotification/LarkSetting/ConfigExtraButtons render snap
                             class="ant-form-item-control-input-content"
                           >
                             <div
-                              class="ant-radio-group ant-radio-group-outline ant-radio-group-small css-dev-only-do-not-override-txh9fw"
+                              class="ant-radio-group ant-radio-group-outline ant-radio-group-small"
                               id="receiveType"
                             >
                               <label
-                                class="ant-radio-button-wrapper ant-radio-button-wrapper-checked ant-radio-button-wrapper-in-form-item css-dev-only-do-not-override-txh9fw"
+                                class="ant-radio-button-wrapper ant-radio-button-wrapper-checked ant-radio-button-wrapper-in-form-item"
                               >
                                 <span
                                   class="ant-radio-button ant-radio-button-checked"
@@ -1279,7 +1280,7 @@ exports[`base/System/PushNotification/LarkSetting/ConfigExtraButtons render snap
                                 </span>
                               </label>
                               <label
-                                class="ant-radio-button-wrapper ant-radio-button-wrapper-in-form-item css-dev-only-do-not-override-txh9fw"
+                                class="ant-radio-button-wrapper ant-radio-button-wrapper-in-form-item"
                               >
                                 <span
                                   class="ant-radio-button"
@@ -1304,14 +1305,14 @@ exports[`base/System/PushNotification/LarkSetting/ConfigExtraButtons render snap
                     </div>
                   </div>
                   <div
-                    class="ant-form-item css-15d6abf css-dev-only-do-not-override-txh9fw"
+                    class="ant-form-item css-15d6abf"
                     style="margin-bottom: 0px;"
                   >
                     <div
-                      class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                      class="ant-row ant-form-item-row"
                     >
                       <div
-                        class="ant-col ant-col-24 ant-form-item-label css-dev-only-do-not-override-txh9fw"
+                        class="ant-col ant-col-24 ant-form-item-label"
                       >
                         <label
                           class="ant-form-item-required ant-form-item-no-colon"
@@ -1320,7 +1321,7 @@ exports[`base/System/PushNotification/LarkSetting/ConfigExtraButtons render snap
                         />
                       </div>
                       <div
-                        class="ant-col ant-col-24 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                        class="ant-col ant-col-24 ant-form-item-control"
                       >
                         <div
                           class="ant-form-item-control-input"
@@ -1330,7 +1331,7 @@ exports[`base/System/PushNotification/LarkSetting/ConfigExtraButtons render snap
                           >
                             <input
                               aria-required="true"
-                              class="ant-input css-dev-only-do-not-override-ywkr0o basic-input-wrapper css-1pd1cd5"
+                              class="ant-input basic-input-wrapper css-1pd1cd5"
                               id="receiveEmail"
                               placeholder="请输入邮箱"
                               type="text"
@@ -1347,21 +1348,21 @@ exports[`base/System/PushNotification/LarkSetting/ConfigExtraButtons render snap
                 class="ant-space-item"
               >
                 <div
-                  class="ant-row css-dev-only-do-not-override-txh9fw"
+                  class="ant-row"
                 >
                   <div
-                    class="ant-col ant-col-24 css-dev-only-do-not-override-txh9fw"
+                    class="ant-col ant-col-24"
                     style="text-align: right;"
                   >
                     <div
-                      class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+                      class="ant-space ant-space-horizontal ant-space-align-center"
                     >
                       <div
                         class="ant-space-item"
                         style="margin-right: 12px;"
                       >
                         <button
-                          class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default ant-btn-sm basic-button-wrapper css-geipcv"
+                          class="ant-btn ant-btn-default ant-btn-sm basic-button-wrapper css-geipcv"
                           type="button"
                         >
                           <span>
@@ -1373,7 +1374,7 @@ exports[`base/System/PushNotification/LarkSetting/ConfigExtraButtons render snap
                         class="ant-space-item"
                       >
                         <button
-                          class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary ant-btn-sm basic-button-wrapper css-geipcv"
+                          class="ant-btn ant-btn-primary ant-btn-sm basic-button-wrapper css-geipcv"
                           type="button"
                         >
                           <span>
@@ -1398,20 +1399,20 @@ exports[`base/System/PushNotification/LarkSetting/ConfigExtraButtons render snap
 <body>
   <div>
     <div
-      class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+      class="ant-space ant-space-horizontal ant-space-align-center"
     >
       <div
         class="ant-space-item"
         style="margin-right: 12px;"
       >
         <div
-          class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center ant-tooltip-open basic-tooltips-wrapper css-4jbtl9"
+          class="ant-space ant-space-horizontal ant-space-align-center ant-tooltip-open basic-tooltips-wrapper css-4jbtl9"
         >
           <div
             class="ant-space-item"
           >
             <button
-              class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-text ant-btn-icon-only system-config-button basic-button-wrapper css-geipcv"
+              class="ant-btn ant-btn-text ant-btn-icon-only system-config-button basic-button-wrapper css-geipcv"
               type="button"
             >
               <span
@@ -1436,13 +1437,13 @@ exports[`base/System/PushNotification/LarkSetting/ConfigExtraButtons render snap
         class="ant-space-item"
       >
         <div
-          class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
+          class="ant-space ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
         >
           <div
             class="ant-space-item"
           >
             <button
-              class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-text ant-btn-icon-only system-config-button basic-button-wrapper css-geipcv"
+              class="ant-btn ant-btn-text ant-btn-icon-only system-config-button basic-button-wrapper css-geipcv"
               type="button"
             >
               <span
@@ -1469,7 +1470,7 @@ exports[`base/System/PushNotification/LarkSetting/ConfigExtraButtons render snap
   </div>
   <div>
     <div
-      class="ant-tooltip css-dev-only-do-not-override-txh9fw ant-tooltip-placement-top"
+      class="ant-tooltip ant-tooltip-placement-top"
       style="--arrow-x: 0px; --arrow-y: 0px; left: -1000vw; top: -1000vh; box-sizing: border-box;"
     >
       <div

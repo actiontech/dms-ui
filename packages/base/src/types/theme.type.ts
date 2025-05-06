@@ -3,7 +3,8 @@ import {
   GuidanceTheme,
   SideMenuTheme,
   SystemTheme,
-  IconTheme
+  IconTheme,
+  ResourceOverviewTheme
 } from '../theme/type';
 
 export interface BaseTheme {
@@ -12,6 +13,7 @@ export interface BaseTheme {
   system: SystemTheme;
   dataExport: DataExportTheme;
   icon: IconTheme;
+  resourceOverview: ResourceOverviewTheme;
 }
 
 interface ThemeCustom {

@@ -211,8 +211,7 @@ export default {
       'Cb workstation operation audit expiration time',
     urlAddressPrefix: 'Url address prefix',
     urlAddressPrefixTips:
-      'Configure the url address information that can access sqle',
-    urlAddressFormatTips: 'Format is http(s)://ip:port/sqle'
+      'Configure the url address information that can access sqle'
   },
 
   personalize: {

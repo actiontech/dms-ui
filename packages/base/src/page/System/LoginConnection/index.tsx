@@ -5,6 +5,7 @@ import SystemBasicTitle from '../components/BasicTitle';
 import LoginBasicSetting from './LoginBasicSetting';
 import { useState } from 'react';
 import { LoginConnectionContext } from './context';
+import SMSSetting from './SMSSetting';
 
 const LoginConnection = () => {
   const { t } = useTranslation();
@@ -24,6 +25,7 @@ const LoginConnection = () => {
         <LDAPSetting />
         <Oauth />
         {/* #if [ee] */}
+        <SMSSetting />
         <LoginBasicSetting />
         {/* #endif */}
       </SystemBasicTitle>

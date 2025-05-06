@@ -4,16 +4,16 @@ exports[`base/System/LoginConnection/Oauth/ConfigField render snap 1`] = `
 <body>
   <div>
     <form
-      class="ant-form ant-form-horizontal css-dev-only-do-not-override-txh9fw"
+      class="ant-form ant-form-horizontal"
     >
       <div
-        class="ant-form-item has-label-tip has-required-style css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+        class="ant-form-item has-label-tip has-required-style css-1jlm9cy"
       >
         <div
-          class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+          class="ant-row ant-form-item-row"
         >
           <div
-            class="ant-col ant-form-item-label css-dev-only-do-not-override-txh9fw"
+            class="ant-col ant-form-item-label"
           >
             <label
               class="ant-form-item-required"
@@ -35,7 +35,7 @@ exports[`base/System/LoginConnection/Oauth/ConfigField render snap 1`] = `
             </label>
           </div>
           <div
-            class="ant-col ant-form-item-control css-dev-only-do-not-override-txh9fw"
+            class="ant-col ant-form-item-control"
           >
             <div
               class="ant-form-item-control-input"
@@ -45,7 +45,7 @@ exports[`base/System/LoginConnection/Oauth/ConfigField render snap 1`] = `
               >
                 <input
                   aria-required="true"
-                  class="ant-input css-dev-only-do-not-override-ywkr0o basic-input-wrapper css-1pd1cd5"
+                  class="ant-input basic-input-wrapper css-1pd1cd5"
                   id="clientId"
                   placeholder="请输入应用 ID"
                   type="text"
@@ -57,13 +57,13 @@ exports[`base/System/LoginConnection/Oauth/ConfigField render snap 1`] = `
         </div>
       </div>
       <div
-        class="ant-form-item has-label-tip css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+        class="ant-form-item has-label-tip css-1jlm9cy"
       >
         <div
-          class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+          class="ant-row ant-form-item-row"
         >
           <div
-            class="ant-col ant-form-item-label css-dev-only-do-not-override-txh9fw"
+            class="ant-col ant-form-item-label"
           >
             <label
               class=""
@@ -85,7 +85,7 @@ exports[`base/System/LoginConnection/Oauth/ConfigField render snap 1`] = `
             </label>
           </div>
           <div
-            class="ant-col ant-form-item-control css-dev-only-do-not-override-txh9fw"
+            class="ant-col ant-form-item-control"
           >
             <div
               class="ant-form-item-control-input"
@@ -94,7 +94,7 @@ exports[`base/System/LoginConnection/Oauth/ConfigField render snap 1`] = `
                 class="ant-form-item-control-input-content"
               >
                 <input
-                  class="ant-input css-dev-only-do-not-override-ywkr0o basic-input-wrapper css-1pd1cd5"
+                  class="ant-input basic-input-wrapper css-1pd1cd5"
                   id="clientSecret"
                   placeholder="请输入应用密钥"
                   type="text"
@@ -106,13 +106,13 @@ exports[`base/System/LoginConnection/Oauth/ConfigField render snap 1`] = `
         </div>
       </div>
       <div
-        class="ant-form-item has-label-tip has-required-style css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+        class="ant-form-item has-label-tip has-required-style css-1jlm9cy"
       >
         <div
-          class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+          class="ant-row ant-form-item-row"
         >
           <div
-            class="ant-col ant-form-item-label css-dev-only-do-not-override-txh9fw"
+            class="ant-col ant-form-item-label"
           >
             <label
               class="ant-form-item-required"
@@ -134,7 +134,7 @@ exports[`base/System/LoginConnection/Oauth/ConfigField render snap 1`] = `
             </label>
           </div>
           <div
-            class="ant-col ant-form-item-control css-dev-only-do-not-override-txh9fw"
+            class="ant-col ant-form-item-control"
           >
             <div
               class="ant-form-item-control-input"
@@ -144,7 +144,7 @@ exports[`base/System/LoginConnection/Oauth/ConfigField render snap 1`] = `
               >
                 <input
                   aria-required="true"
-                  class="ant-input css-dev-only-do-not-override-ywkr0o basic-input-wrapper css-1pd1cd5"
+                  class="ant-input basic-input-wrapper css-1pd1cd5"
                   id="clientHost"
                   placeholder="请输入外部访问SQLE的地址"
                   type="text"
@@ -156,13 +156,13 @@ exports[`base/System/LoginConnection/Oauth/ConfigField render snap 1`] = `
         </div>
       </div>
       <div
-        class="ant-form-item has-label-tip has-required-style css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+        class="ant-form-item has-label-tip has-required-style css-1jlm9cy"
       >
         <div
-          class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+          class="ant-row ant-form-item-row"
         >
           <div
-            class="ant-col ant-form-item-label css-dev-only-do-not-override-txh9fw"
+            class="ant-col ant-form-item-label"
           >
             <label
               class="ant-form-item-required"
@@ -184,7 +184,7 @@ exports[`base/System/LoginConnection/Oauth/ConfigField render snap 1`] = `
             </label>
           </div>
           <div
-            class="ant-col ant-form-item-control css-dev-only-do-not-override-txh9fw"
+            class="ant-col ant-form-item-control"
           >
             <div
               class="ant-form-item-control-input"
@@ -194,7 +194,7 @@ exports[`base/System/LoginConnection/Oauth/ConfigField render snap 1`] = `
               >
                 <input
                   aria-required="true"
-                  class="ant-input css-dev-only-do-not-override-ywkr0o basic-input-wrapper css-1pd1cd5"
+                  class="ant-input basic-input-wrapper css-1pd1cd5"
                   id="serverAuthUrl"
                   placeholder="请输入OAuth2.0登录授权页面地址"
                   type="text"
@@ -206,13 +206,13 @@ exports[`base/System/LoginConnection/Oauth/ConfigField render snap 1`] = `
         </div>
       </div>
       <div
-        class="ant-form-item has-label-tip has-required-style css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+        class="ant-form-item has-label-tip has-required-style css-1jlm9cy"
       >
         <div
-          class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+          class="ant-row ant-form-item-row"
         >
           <div
-            class="ant-col ant-form-item-label css-dev-only-do-not-override-txh9fw"
+            class="ant-col ant-form-item-label"
           >
             <label
               class="ant-form-item-required"
@@ -234,7 +234,7 @@ exports[`base/System/LoginConnection/Oauth/ConfigField render snap 1`] = `
             </label>
           </div>
           <div
-            class="ant-col ant-form-item-control css-dev-only-do-not-override-txh9fw"
+            class="ant-col ant-form-item-control"
           >
             <div
               class="ant-form-item-control-input"
@@ -244,7 +244,7 @@ exports[`base/System/LoginConnection/Oauth/ConfigField render snap 1`] = `
               >
                 <input
                   aria-required="true"
-                  class="ant-input css-dev-only-do-not-override-ywkr0o basic-input-wrapper css-1pd1cd5"
+                  class="ant-input basic-input-wrapper css-1pd1cd5"
                   id="serverTokenUrl"
                   placeholder="请输入OAuth2.0 access_token 获取地址"
                   type="text"
@@ -256,13 +256,13 @@ exports[`base/System/LoginConnection/Oauth/ConfigField render snap 1`] = `
         </div>
       </div>
       <div
-        class="ant-form-item has-label-tip has-required-style css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+        class="ant-form-item has-label-tip has-required-style css-1jlm9cy"
       >
         <div
-          class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+          class="ant-row ant-form-item-row"
         >
           <div
-            class="ant-col ant-form-item-label css-dev-only-do-not-override-txh9fw"
+            class="ant-col ant-form-item-label"
           >
             <label
               class="ant-form-item-required"
@@ -284,7 +284,7 @@ exports[`base/System/LoginConnection/Oauth/ConfigField render snap 1`] = `
             </label>
           </div>
           <div
-            class="ant-col ant-form-item-control css-dev-only-do-not-override-txh9fw"
+            class="ant-col ant-form-item-control"
           >
             <div
               class="ant-form-item-control-input"
@@ -294,7 +294,7 @@ exports[`base/System/LoginConnection/Oauth/ConfigField render snap 1`] = `
               >
                 <input
                   aria-required="true"
-                  class="ant-input css-dev-only-do-not-override-ywkr0o basic-input-wrapper css-1pd1cd5"
+                  class="ant-input basic-input-wrapper css-1pd1cd5"
                   id="serverUserIdUrl"
                   placeholder="请输入OAuth2.0 user id 获取地址"
                   type="text"
@@ -306,13 +306,13 @@ exports[`base/System/LoginConnection/Oauth/ConfigField render snap 1`] = `
         </div>
       </div>
       <div
-        class="ant-form-item has-label-tip css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+        class="ant-form-item has-label-tip css-1jlm9cy"
       >
         <div
-          class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+          class="ant-row ant-form-item-row"
         >
           <div
-            class="ant-col ant-form-item-label css-dev-only-do-not-override-txh9fw"
+            class="ant-col ant-form-item-label"
           >
             <label
               class=""
@@ -334,7 +334,7 @@ exports[`base/System/LoginConnection/Oauth/ConfigField render snap 1`] = `
             </label>
           </div>
           <div
-            class="ant-col ant-form-item-control css-dev-only-do-not-override-txh9fw"
+            class="ant-col ant-form-item-control"
           >
             <div
               class="ant-form-item-control-input"
@@ -343,7 +343,7 @@ exports[`base/System/LoginConnection/Oauth/ConfigField render snap 1`] = `
                 class="ant-form-item-control-input-content"
               >
                 <input
-                  class="ant-input css-dev-only-do-not-override-ywkr0o basic-input-wrapper css-1pd1cd5"
+                  class="ant-input basic-input-wrapper css-1pd1cd5"
                   id="serverLayoutUrl"
                   placeholder="请输入注销跳转地址"
                   type="text"
@@ -355,13 +355,13 @@ exports[`base/System/LoginConnection/Oauth/ConfigField render snap 1`] = `
         </div>
       </div>
       <div
-        class="ant-form-item has-label-tip css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+        class="ant-form-item has-label-tip css-1jlm9cy"
       >
         <div
-          class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+          class="ant-row ant-form-item-row"
         >
           <div
-            class="ant-col ant-form-item-label css-dev-only-do-not-override-txh9fw"
+            class="ant-col ant-form-item-label"
           >
             <label
               class=""
@@ -383,7 +383,7 @@ exports[`base/System/LoginConnection/Oauth/ConfigField render snap 1`] = `
             </label>
           </div>
           <div
-            class="ant-col ant-form-item-control css-dev-only-do-not-override-txh9fw"
+            class="ant-col ant-form-item-control"
           >
             <div
               class="ant-form-item-control-input"
@@ -392,7 +392,7 @@ exports[`base/System/LoginConnection/Oauth/ConfigField render snap 1`] = `
                 class="ant-form-item-control-input-content"
               >
                 <input
-                  class="ant-input css-dev-only-do-not-override-ywkr0o basic-input-wrapper css-1pd1cd5"
+                  class="ant-input basic-input-wrapper css-1pd1cd5"
                   id="scopes"
                   placeholder="请输入请求资源范围"
                   type="text"
@@ -404,13 +404,13 @@ exports[`base/System/LoginConnection/Oauth/ConfigField render snap 1`] = `
         </div>
       </div>
       <div
-        class="ant-form-item has-label-tip has-required-style css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+        class="ant-form-item has-label-tip has-required-style css-1jlm9cy"
       >
         <div
-          class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+          class="ant-row ant-form-item-row"
         >
           <div
-            class="ant-col ant-form-item-label css-dev-only-do-not-override-txh9fw"
+            class="ant-col ant-form-item-label"
           >
             <label
               class="ant-form-item-required"
@@ -432,7 +432,7 @@ exports[`base/System/LoginConnection/Oauth/ConfigField render snap 1`] = `
             </label>
           </div>
           <div
-            class="ant-col ant-form-item-control css-dev-only-do-not-override-txh9fw"
+            class="ant-col ant-form-item-control"
           >
             <div
               class="ant-form-item-control-input"
@@ -442,7 +442,7 @@ exports[`base/System/LoginConnection/Oauth/ConfigField render snap 1`] = `
               >
                 <input
                   aria-required="true"
-                  class="ant-input css-dev-only-do-not-override-ywkr0o basic-input-wrapper css-1pd1cd5"
+                  class="ant-input basic-input-wrapper css-1pd1cd5"
                   id="accessTokenKeyName"
                   placeholder="请输入access_token Key名称"
                   type="text"
@@ -454,13 +454,13 @@ exports[`base/System/LoginConnection/Oauth/ConfigField render snap 1`] = `
         </div>
       </div>
       <div
-        class="ant-form-item has-label-tip has-required-style css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+        class="ant-form-item has-label-tip has-required-style css-1jlm9cy"
       >
         <div
-          class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+          class="ant-row ant-form-item-row"
         >
           <div
-            class="ant-col ant-form-item-label css-dev-only-do-not-override-txh9fw"
+            class="ant-col ant-form-item-label"
           >
             <label
               class="ant-form-item-required"
@@ -482,7 +482,7 @@ exports[`base/System/LoginConnection/Oauth/ConfigField render snap 1`] = `
             </label>
           </div>
           <div
-            class="ant-col ant-form-item-control css-dev-only-do-not-override-txh9fw"
+            class="ant-col ant-form-item-control"
           >
             <div
               class="ant-form-item-control-input"
@@ -492,7 +492,7 @@ exports[`base/System/LoginConnection/Oauth/ConfigField render snap 1`] = `
               >
                 <input
                   aria-required="true"
-                  class="ant-input css-dev-only-do-not-override-ywkr0o basic-input-wrapper css-1pd1cd5"
+                  class="ant-input basic-input-wrapper css-1pd1cd5"
                   id="userIdKeyName"
                   placeholder="请输入用户UID的JSON路径"
                   type="text"
@@ -504,13 +504,13 @@ exports[`base/System/LoginConnection/Oauth/ConfigField render snap 1`] = `
         </div>
       </div>
       <div
-        class="ant-form-item has-label-tip css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+        class="ant-form-item has-label-tip css-1jlm9cy"
       >
         <div
-          class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+          class="ant-row ant-form-item-row"
         >
           <div
-            class="ant-col ant-form-item-label css-dev-only-do-not-override-txh9fw"
+            class="ant-col ant-form-item-label"
           >
             <label
               class=""
@@ -532,7 +532,7 @@ exports[`base/System/LoginConnection/Oauth/ConfigField render snap 1`] = `
             </label>
           </div>
           <div
-            class="ant-col ant-form-item-control css-dev-only-do-not-override-txh9fw"
+            class="ant-col ant-form-item-control"
           >
             <div
               class="ant-form-item-control-input"
@@ -541,7 +541,7 @@ exports[`base/System/LoginConnection/Oauth/ConfigField render snap 1`] = `
                 class="ant-form-item-control-input-content"
               >
                 <input
-                  class="ant-input css-dev-only-do-not-override-ywkr0o basic-input-wrapper css-1pd1cd5"
+                  class="ant-input basic-input-wrapper css-1pd1cd5"
                   id="userEmailTag"
                   placeholder="请输入用户邮箱的JSON路径"
                   type="text"
@@ -553,13 +553,13 @@ exports[`base/System/LoginConnection/Oauth/ConfigField render snap 1`] = `
         </div>
       </div>
       <div
-        class="ant-form-item has-label-tip css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+        class="ant-form-item has-label-tip css-1jlm9cy"
       >
         <div
-          class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+          class="ant-row ant-form-item-row"
         >
           <div
-            class="ant-col ant-form-item-label css-dev-only-do-not-override-txh9fw"
+            class="ant-col ant-form-item-label"
           >
             <label
               class=""
@@ -581,7 +581,7 @@ exports[`base/System/LoginConnection/Oauth/ConfigField render snap 1`] = `
             </label>
           </div>
           <div
-            class="ant-col ant-form-item-control css-dev-only-do-not-override-txh9fw"
+            class="ant-col ant-form-item-control"
           >
             <div
               class="ant-form-item-control-input"
@@ -590,7 +590,7 @@ exports[`base/System/LoginConnection/Oauth/ConfigField render snap 1`] = `
                 class="ant-form-item-control-input-content"
               >
                 <input
-                  class="ant-input css-dev-only-do-not-override-ywkr0o basic-input-wrapper css-1pd1cd5"
+                  class="ant-input basic-input-wrapper css-1pd1cd5"
                   id="userWechatTag"
                   placeholder="请输入用户微信ID的JSON路径"
                   type="text"
@@ -602,13 +602,13 @@ exports[`base/System/LoginConnection/Oauth/ConfigField render snap 1`] = `
         </div>
       </div>
       <div
-        class="ant-form-item has-label-tip css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+        class="ant-form-item has-label-tip css-1jlm9cy"
       >
         <div
-          class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+          class="ant-row ant-form-item-row"
         >
           <div
-            class="ant-col ant-form-item-label css-dev-only-do-not-override-txh9fw"
+            class="ant-col ant-form-item-label"
           >
             <label
               class=""
@@ -630,7 +630,7 @@ exports[`base/System/LoginConnection/Oauth/ConfigField render snap 1`] = `
             </label>
           </div>
           <div
-            class="ant-col ant-form-item-control css-dev-only-do-not-override-txh9fw"
+            class="ant-col ant-form-item-control"
           >
             <div
               class="ant-form-item-control-input"
@@ -639,7 +639,7 @@ exports[`base/System/LoginConnection/Oauth/ConfigField render snap 1`] = `
                 class="ant-form-item-control-input-content"
               >
                 <input
-                  class="ant-input css-dev-only-do-not-override-ywkr0o basic-input-wrapper css-1pd1cd5"
+                  class="ant-input basic-input-wrapper css-1pd1cd5"
                   id="oauth2ButtonText"
                   placeholder="请输入OAuth2.0 跳转按钮文字"
                   type="text"
@@ -651,13 +651,13 @@ exports[`base/System/LoginConnection/Oauth/ConfigField render snap 1`] = `
         </div>
       </div>
       <div
-        class="ant-form-item has-label-tip css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+        class="ant-form-item has-label-tip css-1jlm9cy"
       >
         <div
-          class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+          class="ant-row ant-form-item-row"
         >
           <div
-            class="ant-col ant-form-item-label css-dev-only-do-not-override-txh9fw"
+            class="ant-col ant-form-item-label"
           >
             <label
               class=""
@@ -679,7 +679,7 @@ exports[`base/System/LoginConnection/Oauth/ConfigField render snap 1`] = `
             </label>
           </div>
           <div
-            class="ant-col ant-form-item-control css-dev-only-do-not-override-txh9fw"
+            class="ant-col ant-form-item-control"
           >
             <div
               class="ant-form-item-control-input"
@@ -688,7 +688,7 @@ exports[`base/System/LoginConnection/Oauth/ConfigField render snap 1`] = `
                 class="ant-form-item-control-input-content"
               >
                 <input
-                  class="ant-input css-dev-only-do-not-override-ywkr0o basic-input-wrapper css-1pd1cd5"
+                  class="ant-input basic-input-wrapper css-1pd1cd5"
                   id="loginPermissionQueryGJsonExpression"
                   placeholder="请输入登录权限查询GJSON表达式"
                   type="text"
@@ -700,13 +700,13 @@ exports[`base/System/LoginConnection/Oauth/ConfigField render snap 1`] = `
         </div>
       </div>
       <div
-        class="ant-form-item has-label-tip css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+        class="ant-form-item has-label-tip css-1jlm9cy"
       >
         <div
-          class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+          class="ant-row ant-form-item-row"
         >
           <div
-            class="ant-col ant-form-item-label css-dev-only-do-not-override-txh9fw"
+            class="ant-col ant-form-item-label"
           >
             <label
               class=""
@@ -728,7 +728,7 @@ exports[`base/System/LoginConnection/Oauth/ConfigField render snap 1`] = `
             </label>
           </div>
           <div
-            class="ant-col ant-form-item-control css-dev-only-do-not-override-txh9fw"
+            class="ant-col ant-form-item-control"
           >
             <div
               class="ant-form-item-control-input"
@@ -738,7 +738,7 @@ exports[`base/System/LoginConnection/Oauth/ConfigField render snap 1`] = `
               >
                 <button
                   aria-checked="false"
-                  class="ant-switch basic-switch-wrapper css-g6dhbn css-dev-only-do-not-override-txh9fw"
+                  class="ant-switch basic-switch-wrapper css-g6dhbn"
                   id="autoCreateUser"
                   role="switch"
                   type="button"
@@ -763,13 +763,13 @@ exports[`base/System/LoginConnection/Oauth/ConfigField render snap 1`] = `
         </div>
       </div>
       <div
-        class="ant-form-item has-label-tip css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+        class="ant-form-item has-label-tip css-1jlm9cy"
       >
         <div
-          class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+          class="ant-row ant-form-item-row"
         >
           <div
-            class="ant-col ant-form-item-label css-dev-only-do-not-override-txh9fw"
+            class="ant-col ant-form-item-label"
           >
             <label
               class=""
@@ -791,7 +791,7 @@ exports[`base/System/LoginConnection/Oauth/ConfigField render snap 1`] = `
             </label>
           </div>
           <div
-            class="ant-col ant-form-item-control css-dev-only-do-not-override-txh9fw"
+            class="ant-col ant-form-item-control"
           >
             <div
               class="ant-form-item-control-input"
@@ -801,7 +801,7 @@ exports[`base/System/LoginConnection/Oauth/ConfigField render snap 1`] = `
               >
                 <button
                   aria-checked="false"
-                  class="ant-switch basic-switch-wrapper css-g6dhbn css-dev-only-do-not-override-txh9fw"
+                  class="ant-switch basic-switch-wrapper css-g6dhbn"
                   id="skipCheckState"
                   role="switch"
                   type="button"

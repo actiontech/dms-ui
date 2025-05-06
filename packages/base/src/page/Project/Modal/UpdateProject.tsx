@@ -12,12 +12,12 @@ import EventEmitter from '../../../utils/EventEmitter';
 import { ProjectFormFields } from './ProjectForm';
 import ProjectForm from './ProjectForm/ProjectForm';
 import { updateProjectModalStatus } from '../../../store/project';
-import { IUpdateProjectParams } from '@actiontech/shared/lib/api/base/service/Project/index.d';
-import Project from '@actiontech/shared/lib/api/base/service/Project';
+import { IUpdateProjectV2Params } from '@actiontech/shared/lib/api/base/service/Project/index.d';
+import { DmsApi } from '@actiontech/shared/lib/api';
 import { BasicButton, BasicDrawer } from '@actiontech/shared';
 import {
-  ProjectProjectPriorityEnum,
-  UpdateProjectProjectPriorityEnum
+  ProjectV2ProjectPriorityEnum,
+  UpdateProjectV2ProjectPriorityEnum
 } from '@actiontech/shared/lib/api/base/service/common.enum';
 
 const UpdateProject: React.FC = () => {
@@ -48,18 +48,19 @@ const UpdateProject: React.FC = () => {
 
   const submit = async () => {
     const values = await form.validateFields();
-    const params: IUpdateProjectParams = {
+    const params: IUpdateProjectV2Params = {
       project_uid: selectProjectItem?.uid ?? '',
       project: {
         desc: values.desc,
-        is_fixed_business: values.isFixedBusiness,
-        business: values.business,
+        business_tag: {
+          uid: values.businessTagId
+        },
         project_priority:
-          values.priority as unknown as UpdateProjectProjectPriorityEnum
+          values.priority as unknown as UpdateProjectV2ProjectPriorityEnum
       }
     };
     startSubmit();
-    Project.UpdateProject(params)
+    DmsApi.ProjectService.UpdateProjectV2(params)
       .then((res) => {
         if (res.data.code === ResponseCode.SUCCESS) {
           messageApi.success(
@@ -81,10 +82,9 @@ const UpdateProject: React.FC = () => {
       form.setFieldsValue({
         desc: selectProjectItem?.desc ?? '',
         name: selectProjectItem?.name ?? '',
-        isFixedBusiness: selectProjectItem?.is_fixed_business ?? false,
-        business: selectProjectItem?.business,
+        businessTagId: selectProjectItem?.business_tag?.uid,
         priority:
-          selectProjectItem?.project_priority as unknown as ProjectProjectPriorityEnum
+          selectProjectItem?.project_priority as unknown as ProjectV2ProjectPriorityEnum
       });
     }
   }, [form, visible, selectProjectItem]);

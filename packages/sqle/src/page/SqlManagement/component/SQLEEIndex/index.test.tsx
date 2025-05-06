@@ -29,6 +29,7 @@ import {
 import { SupportLanguage } from '@actiontech/shared/lib/enum';
 import { SystemRole } from '@actiontech/shared/lib/enum';
 import { useSearchParams } from 'react-router-dom';
+import project from '../../../../testUtils/mockApi/project';
 
 jest.mock('react-redux', () => {
   return {
@@ -67,6 +68,7 @@ const requestParams = {
 describe('page/SqlManagement/SQLEEIndex', () => {
   const mockDispatch = jest.fn();
   const useSearchParamsSpy: jest.Mock = useSearchParams as jest.Mock;
+  let listEnvironmentTagsSpy: jest.SpyInstance;
   beforeEach(() => {
     mockUseCurrentProject();
     mockUseCurrentUser();
@@ -75,6 +77,7 @@ describe('page/SqlManagement/SQLEEIndex', () => {
     jest.useFakeTimers();
     instance.mockAllApi();
     sqlManage.mockAllApi();
+    listEnvironmentTagsSpy = project.listEnvironmentTags();
     (useDispatch as jest.Mock).mockImplementation(() => mockDispatch);
     (useSelector as jest.Mock).mockImplementation((selector) => {
       return selector({
@@ -118,6 +121,7 @@ describe('page/SqlManagement/SQLEEIndex', () => {
     );
     const { baseElement } = superRender(<SQLEEIndex />);
     expect(request).toHaveBeenCalled();
+    expect(listEnvironmentTagsSpy).toHaveBeenCalledTimes(1);
     await act(async () => jest.advanceTimersByTime(3000));
     expect(baseElement).toMatchSnapshot();
   });

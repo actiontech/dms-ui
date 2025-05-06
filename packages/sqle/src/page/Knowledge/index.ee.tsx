@@ -5,7 +5,7 @@ import KnowledgeSearchBar from './Common/KnowledgeSearchBar';
 import { KnowledgeSearchBarProps } from './Common/KnowledgeSearchBar/index.type';
 import { ROUTE_PATHS } from '@actiontech/shared/lib/data/routePaths';
 import KnowledgeGraph from './Graph';
-import { KnowledgeBaseService } from '@actiontech/shared/lib/api';
+import { SqleApi } from '@actiontech/shared/lib/api';
 import { useRequest } from 'ahooks';
 import { ResponseCode } from '@actiontech/shared/lib/enum';
 
@@ -21,7 +21,7 @@ const KnowledgeEE: React.FC = () => {
   };
 
   const { data: graphData } = useRequest(() =>
-    KnowledgeBaseService.getKnowledgeGraph({}).then((res) => {
+    SqleApi.KnowledgeBaseService.getKnowledgeGraph({}).then((res) => {
       if (res.data.code === ResponseCode.SUCCESS) {
         return {
           edges: res.data.data?.edges ?? [],

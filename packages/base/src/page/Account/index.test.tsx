@@ -1,10 +1,10 @@
 import { useDispatch } from 'react-redux';
 import account from '../../testUtils/mockApi/account';
-import { renderWithTheme } from '@actiontech/shared/lib/testUtil/customRender';
 import Account from '.';
 import { mockUseUserInfo } from '@actiontech/shared/lib/testUtil/mockHook/mockUseUserInfo';
 import { mockUserInfo } from '@actiontech/shared/lib/testUtil/mockHook/data';
 import { fireEvent, screen } from '@testing-library/react';
+import { superRender } from '../../testUtils/customRender';
 
 jest.mock('react-redux', () => {
   return {
@@ -29,7 +29,7 @@ describe('test base/page/Account', () => {
 
   it('should match snapshot', () => {
     mockUseUserInfo();
-    const { baseElement } = renderWithTheme(<Account />);
+    const { baseElement } = superRender(<Account />);
     expect(baseElement).toMatchSnapshot();
 
     expect(mockUserInfo.getUserInfo).toHaveBeenCalledTimes(1);
@@ -41,7 +41,7 @@ describe('test base/page/Account', () => {
 
   it('should match snapshot when "getUserInfoLoading" is equal true', () => {
     mockUseUserInfo({ getUserInfoLoading: true });
-    const { baseElement } = renderWithTheme(<Account />);
+    const { baseElement } = superRender(<Account />);
     expect(baseElement).toMatchSnapshot();
   });
 });

@@ -24,7 +24,7 @@ export default {
         staticScanType: '静态扫描',
         dbName: '数据源名称',
         dbType: '数据源类型',
-        business: '所属业务',
+        environmentAttribute: '环境属性',
         enabledScanTypes: '启用的扫描类型',
         dbTaskStatus: '数据源任务状态',
         taskStatus: {
@@ -58,7 +58,7 @@ export default {
     title: '为数据源开启扫描任务',
     dataSourceSelection: '选择数据源',
     dataSourceNeedsAudit: '是否需要连接数据源审核',
-    businessScope: '所属业务',
+    environmentAttribute: '环境属性',
     instanceName: '数据源名称',
     instanceNameTips: '请选择所属业务来获取对应的数据源',
     schema: '数据库',

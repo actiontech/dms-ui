@@ -13,7 +13,7 @@ import { DownTriangleOutlined } from '@actiontech/icons';
 import useInstance from '../../../../../hooks/useInstance';
 import { useEffect } from 'react';
 import { useCurrentProject } from '@actiontech/shared/lib/features';
-import { getInstanceTipListV1FunctionalModuleEnum } from '@actiontech/shared/lib/api/sqle/service/instance/index.enum';
+import { getInstanceTipListV2FunctionalModuleEnum } from '@actiontech/shared/lib/api/sqle/service/instance/index.enum';
 import classNames from 'classnames';
 import { VersionDeploymentConfStyleWrapper } from '../style';
 import { VersionFormType, VersionStage } from '../index.type';
@@ -72,7 +72,7 @@ const DeploymentConf: React.FC<{ allowEditStages?: boolean }> = ({
     updateInstanceList({
       project_name: projectName,
       functional_module:
-        getInstanceTipListV1FunctionalModuleEnum.create_workflow
+        getInstanceTipListV2FunctionalModuleEnum.create_workflow
     });
   }, [projectName, updateInstanceList]);
 
