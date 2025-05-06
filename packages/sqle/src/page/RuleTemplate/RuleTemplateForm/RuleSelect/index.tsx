@@ -3,7 +3,7 @@ import { useBoolean } from 'ahooks';
 import { useMemo, useState, useCallback } from 'react';
 import { BasicButton } from '@actiontech/shared';
 import { RuleSelectProps } from './index.type';
-import { Spin } from 'antd';
+import { Space, Spin } from 'antd';
 import {
   RuleList,
   RuleStatus,
@@ -156,10 +156,27 @@ const RuleSelect = (props: RuleSelectProps) => {
         <RuleStatus
           currentRuleStatus={ruleStatus}
           ruleStatusChange={setRuleStatus}
+          options={{
+            renderLabel(label, status) {
+              return (
+                <Space>
+                  <span>{label}</span>
+                  <span>
+                    {status === RuleStatusEnum.disabled
+                      ? disableRule.length
+                      : props.filteredRule.length}
+                  </span>
+                </Space>
+              );
+            }
+          }}
         />
+
         {renderBatchAction()}
       </SegmentedRowStyleWrapper>
-      <RuleFilter form={props.ruleFilterForm} />
+      <div className="flex-space-between">
+        <RuleFilter form={props.ruleFilterForm} />
+      </div>
       <Spin spinning={props.listLoading || props.formSubmitLoading}>
         <RuleList
           isAction
