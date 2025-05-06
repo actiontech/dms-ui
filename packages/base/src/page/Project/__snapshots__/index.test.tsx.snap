@@ -56,6 +56,23 @@ exports[`test base/page/project should match snapshot 1`] = `
               style="margin-right: 8px;"
             >
               <a
+                href="/availability-zone"
+              >
+                <button
+                  class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default basic-button-wrapper css-geipcv"
+                  type="button"
+                >
+                  <span>
+                    配置可用区
+                  </span>
+                </button>
+              </a>
+            </div>
+            <div
+              class="ant-space-item"
+              style="margin-right: 8px;"
+            >
+              <a
                 href="/resource-overview"
               >
                 <button
@@ -404,6 +421,23 @@ exports[`test base/page/project should match snapshot 2`] = `
           <div
             class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
           >
+            <div
+              class="ant-space-item"
+              style="margin-right: 8px;"
+            >
+              <a
+                href="/availability-zone"
+              >
+                <button
+                  class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default basic-button-wrapper css-geipcv"
+                  type="button"
+                >
+                  <span>
+                    配置可用区
+                  </span>
+                </button>
+              </a>
+            </div>
             <div
               class="ant-space-item"
               style="margin-right: 8px;"

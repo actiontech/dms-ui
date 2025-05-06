@@ -8,6 +8,8 @@ import { ModalName } from '../../../../../data/ModalName';
 import { selectOptionByIndex } from '@actiontech/shared/lib/testUtil/customQuery';
 import EmitterKey from '../../../../../data/EmitterKey';
 import { queryBySelector } from '@actiontech/shared/lib/testUtil/customQuery';
+import MockDate from 'mockdate';
+import dayjs from 'dayjs';
 
 jest.mock('react-redux', () => {
   return {
@@ -21,8 +23,10 @@ describe('base/UserCenter/Modal/AddUser', () => {
   let opPermissionListSpy: jest.SpyInstance;
   const dispatchSpy = jest.fn();
   let addUserSpy: jest.SpyInstance;
+  const currentTime = dayjs('2025-1-1 12:00:00');
   beforeEach(() => {
-    jest.useFakeTimers();
+    MockDate.set(currentTime.valueOf());
+    jest.useFakeTimers({ legacyFakeTimers: true });
     addUserSpy = userCenter.addUser();
 
     opPermissionListSpy = userCenter.getOpPermissionsList();
@@ -38,6 +42,7 @@ describe('base/UserCenter/Modal/AddUser', () => {
   afterEach(() => {
     jest.useRealTimers();
     cleanup();
+    MockDate.reset();
   });
 
   it('should send add user request when click submit button', async () => {
@@ -84,7 +89,8 @@ describe('base/UserCenter/Modal/AddUser', () => {
         email: 'test@163.com',
         phone: '13312341234',
         wxid: 'qwe',
-        op_permission_uids: ['700001']
+        op_permission_uids: ['700001'],
+        uid: `${currentTime.format('YYYYMMDDHHmmssSSS')}`
       }
     });
     expect(dispatchSpy).toHaveBeenCalledTimes(1);
