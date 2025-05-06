@@ -16,7 +16,7 @@ describe('base/router-base-ce', () => {
   const customRender = (
     initialEntries: MemoryRouterProps['initialEntries'] = []
   ) => {
-    return superRender(<RenderRouterComponent type="base" />, undefined, {
+    return superRender(<RenderRouterComponent type="auth" />, undefined, {
       routerProps: {
         initialEntries
       }
@@ -35,7 +35,7 @@ describe('base/router-base-ce', () => {
   });
 
   it('render base route data snap', () => {
-    expect(mockUseRoutes('base')).toMatchSnapshot();
+    expect(mockUseRoutes('auth')).toMatchSnapshot();
   });
 
   describe('render base router when version is ce', () => {

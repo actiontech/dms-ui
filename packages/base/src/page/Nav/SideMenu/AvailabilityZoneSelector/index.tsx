@@ -120,9 +120,11 @@ const AvailabilityZoneSelector: React.FC<AvailabilityZoneSelectorProps> = ({
         <EnvironmentFilled />
         <div
           className="text"
-          title={availabilityZone?.name || t('common.form.placeholder.select')}
+          title={
+            availabilityZone?.name || t('dmsMenu.availabilityZone.pleaseSelect')
+          }
         >
-          {availabilityZone?.name || t('common.form.placeholder.select')}
+          {availabilityZone?.name || t('dmsMenu.availabilityZone.pleaseSelect')}
         </div>
       </AvailabilityZoneSelectorStyleWrapper>
     </Dropdown>

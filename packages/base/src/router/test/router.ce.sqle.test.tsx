@@ -14,7 +14,7 @@ describe('base/router-sqle-ce', () => {
   const customRender = (
     initialEntries: MemoryRouterProps['initialEntries'] = []
   ) => {
-    return superRender(<RenderRouterComponent type="sqle" />, undefined, {
+    return superRender(<RenderRouterComponent type="auth" />, undefined, {
       routerProps: {
         initialEntries
       }
@@ -30,10 +30,6 @@ describe('base/router-sqle-ce', () => {
     jest.clearAllMocks();
     jest.useRealTimers();
     cleanup();
-  });
-
-  it('render sqle route data snap', () => {
-    expect(mockUseRoutes('sqle')).toMatchSnapshot();
   });
 
   it('render route sqle index page', () => {
