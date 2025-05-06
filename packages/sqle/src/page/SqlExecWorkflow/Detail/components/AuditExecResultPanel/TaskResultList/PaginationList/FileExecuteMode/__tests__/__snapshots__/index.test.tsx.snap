@@ -32,13 +32,13 @@ exports[`test PaginationList/FileExecuteMode should match snapshot 1`] = `
         />
       </svg>
       <span
-        class="ant-typography file-mode-title-text css-dev-only-do-not-override-txh9fw"
+        class="ant-typography file-mode-title-text"
       >
         文件信息概览
       </span>
     </div>
     <button
-      class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary basic-button-wrapper css-geipcv"
+      class="ant-btn ant-btn-primary basic-button-wrapper css-geipcv"
       type="button"
     >
       <span>
@@ -47,16 +47,16 @@ exports[`test PaginationList/FileExecuteMode should match snapshot 1`] = `
     </button>
   </div>
   <div
-    class="ant-list ant-list-vertical ant-list-loading ant-list-something-after-last-item file-execute-mode-list-wrapper css-dev-only-do-not-override-txh9fw"
+    class="ant-list ant-list-vertical ant-list-loading ant-list-something-after-last-item file-execute-mode-list-wrapper"
   >
     <div
-      class="ant-spin-nested-loading css-dev-only-do-not-override-txh9fw"
+      class="ant-spin-nested-loading"
     >
       <div>
         <div
           aria-busy="true"
           aria-live="polite"
-          class="ant-spin ant-spin-spinning css-dev-only-do-not-override-txh9fw"
+          class="ant-spin ant-spin-spinning"
         >
           <span
             class="ant-spin-dot ant-spin-dot-spin"
@@ -88,7 +88,7 @@ exports[`test PaginationList/FileExecuteMode should match snapshot 1`] = `
       class="ant-list-pagination ant-list-pagination-align-end"
     >
       <ul
-        class="ant-pagination task-result-pagination-list css-dev-only-do-not-override-txh9fw"
+        class="ant-pagination task-result-pagination-list"
       >
         <li
           class="ant-pagination-total-text"
@@ -100,7 +100,7 @@ exports[`test PaginationList/FileExecuteMode should match snapshot 1`] = `
         <li
           aria-disabled="true"
           class="ant-pagination-prev ant-pagination-disabled"
-          title="Previous Page"
+          title="上一页"
         >
           <button
             class="ant-pagination-item-link"
@@ -143,7 +143,7 @@ exports[`test PaginationList/FileExecuteMode should match snapshot 1`] = `
         <li
           aria-disabled="true"
           class="ant-pagination-next ant-pagination-disabled"
-          title="Next Page"
+          title="下一页"
         >
           <button
             class="ant-pagination-item-link"
@@ -176,8 +176,8 @@ exports[`test PaginationList/FileExecuteMode should match snapshot 1`] = `
           class="ant-pagination-options"
         >
           <div
-            aria-label="Page Size"
-            class="ant-select ant-pagination-options-size-changer css-dev-only-do-not-override-txh9fw ant-select-single ant-select-show-arrow ant-select-show-search"
+            aria-label="页码"
+            class="ant-select ant-pagination-options-size-changer ant-select-single ant-select-show-arrow ant-select-show-search"
           >
             <div
               class="ant-select-selector"
@@ -191,7 +191,7 @@ exports[`test PaginationList/FileExecuteMode should match snapshot 1`] = `
                   aria-controls="rc_select_TEST_OR_SSR_list"
                   aria-expanded="false"
                   aria-haspopup="listbox"
-                  aria-label="Page Size"
+                  aria-label="页码"
                   aria-owns="rc_select_TEST_OR_SSR_list"
                   autocomplete="off"
                   class="ant-select-selection-search-input"
@@ -203,9 +203,9 @@ exports[`test PaginationList/FileExecuteMode should match snapshot 1`] = `
               </span>
               <span
                 class="ant-select-selection-item"
-                title="20 / page"
+                title="20 条/页"
               >
-                20 / page
+                20 条/页
               </span>
             </div>
             <span
@@ -274,13 +274,13 @@ exports[`test PaginationList/FileExecuteMode should match snapshot 2`] = `
         />
       </svg>
       <span
-        class="ant-typography file-mode-title-text css-dev-only-do-not-override-txh9fw"
+        class="ant-typography file-mode-title-text"
       >
         文件信息概览
       </span>
     </div>
     <button
-      class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary basic-button-wrapper css-geipcv"
+      class="ant-btn ant-btn-primary basic-button-wrapper css-geipcv"
       type="button"
     >
       <span>
@@ -289,10 +289,10 @@ exports[`test PaginationList/FileExecuteMode should match snapshot 2`] = `
     </button>
   </div>
   <div
-    class="ant-list ant-list-vertical ant-list-something-after-last-item file-execute-mode-list-wrapper css-dev-only-do-not-override-txh9fw"
+    class="ant-list ant-list-vertical ant-list-something-after-last-item file-execute-mode-list-wrapper"
   >
     <div
-      class="ant-spin-nested-loading css-dev-only-do-not-override-txh9fw"
+      class="ant-spin-nested-loading"
     >
       <div
         class="ant-spin-container"
@@ -307,7 +307,7 @@ exports[`test PaginationList/FileExecuteMode should match snapshot 2`] = `
               class="css-1gxdwqg"
             >
               <div
-                class="ant-collapse ant-collapse-icon-position-start ant-collapse-ghost file-result-collapse-wrapper css-dev-only-do-not-override-txh9fw"
+                class="ant-collapse ant-collapse-icon-position-start ant-collapse-ghost file-result-collapse-wrapper"
               >
                 <div
                   class="ant-collapse-item"
@@ -349,7 +349,7 @@ exports[`test PaginationList/FileExecuteMode should match snapshot 2`] = `
                         class="file-result-card-wrapper result-card-header"
                       >
                         <div
-                          class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+                          class="ant-space ant-space-horizontal ant-space-align-center"
                         >
                           <div
                             class="ant-space-item"
@@ -396,23 +396,23 @@ exports[`test PaginationList/FileExecuteMode should match snapshot 2`] = `
                           class="result-card-status-wrap"
                         >
                           <span
-                            class="ant-tag ant-tag-default ant-tag-borderless basic-tag-wrapper basic-large-tag-wrapper css-1mjwlcb css-dev-only-do-not-override-txh9fw"
+                            class="ant-tag ant-tag-default ant-tag-borderless basic-tag-wrapper basic-large-tag-wrapper css-1mjwlcb"
                           >
                             准备执行
                           </span>
                           <div
-                            class="ant-divider css-dev-only-do-not-override-txh9fw ant-divider-vertical result-card-status-divider"
+                            class="ant-divider ant-divider-vertical result-card-status-divider"
                             role="separator"
                           />
                           <div
-                            class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+                            class="ant-space ant-space-horizontal ant-space-align-center"
                           >
                             <div
                               class="ant-space-item"
                               style="margin-right: 8px;"
                             >
                               <span
-                                class="ant-tag ant-tag-blue ant-tag-borderless basic-tag-wrapper basic-large-tag-wrapper css-1q0n2j9 css-dev-only-do-not-override-txh9fw"
+                                class="ant-tag ant-tag-blue ant-tag-borderless basic-tag-wrapper basic-large-tag-wrapper css-1q0n2j9"
                               >
                                 <svg
                                   height="19"
@@ -434,7 +434,7 @@ exports[`test PaginationList/FileExecuteMode should match snapshot 2`] = `
                               class="ant-space-item"
                             >
                               <span
-                                class="ant-tag ant-tag-orange ant-tag-borderless basic-tag-wrapper basic-large-tag-wrapper css-17gmaof css-dev-only-do-not-override-txh9fw"
+                                class="ant-tag ant-tag-orange ant-tag-borderless basic-tag-wrapper basic-large-tag-wrapper css-17gmaof"
                               >
                                 <svg
                                   fill="none"
@@ -469,7 +469,7 @@ exports[`test PaginationList/FileExecuteMode should match snapshot 2`] = `
               class="css-1gxdwqg"
             >
               <div
-                class="ant-collapse ant-collapse-icon-position-start ant-collapse-ghost file-result-collapse-wrapper css-dev-only-do-not-override-txh9fw"
+                class="ant-collapse ant-collapse-icon-position-start ant-collapse-ghost file-result-collapse-wrapper"
               >
                 <div
                   class="ant-collapse-item"
@@ -511,7 +511,7 @@ exports[`test PaginationList/FileExecuteMode should match snapshot 2`] = `
                         class="file-result-card-wrapper result-card-header"
                       >
                         <div
-                          class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+                          class="ant-space ant-space-horizontal ant-space-align-center"
                         >
                           <div
                             class="ant-space-item"
@@ -558,22 +558,22 @@ exports[`test PaginationList/FileExecuteMode should match snapshot 2`] = `
                           class="result-card-status-wrap"
                         >
                           <span
-                            class="ant-tag ant-tag-default ant-tag-borderless basic-tag-wrapper basic-large-tag-wrapper css-1mjwlcb css-dev-only-do-not-override-txh9fw"
+                            class="ant-tag ant-tag-default ant-tag-borderless basic-tag-wrapper basic-large-tag-wrapper css-1mjwlcb"
                           >
                             准备执行
                           </span>
                           <div
-                            class="ant-divider css-dev-only-do-not-override-txh9fw ant-divider-vertical result-card-status-divider"
+                            class="ant-divider ant-divider-vertical result-card-status-divider"
                             role="separator"
                           />
                           <div
-                            class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+                            class="ant-space ant-space-horizontal ant-space-align-center"
                           >
                             <div
                               class="ant-space-item"
                             >
                               <span
-                                class="ant-tag ant-tag-blue ant-tag-borderless basic-tag-wrapper basic-large-tag-wrapper css-1q0n2j9 css-dev-only-do-not-override-txh9fw"
+                                class="ant-tag ant-tag-blue ant-tag-borderless basic-tag-wrapper basic-large-tag-wrapper css-1q0n2j9"
                               >
                                 <svg
                                   height="19"
@@ -607,7 +607,7 @@ exports[`test PaginationList/FileExecuteMode should match snapshot 2`] = `
               class="css-1gxdwqg"
             >
               <div
-                class="ant-collapse ant-collapse-icon-position-start ant-collapse-ghost file-result-collapse-wrapper css-dev-only-do-not-override-txh9fw"
+                class="ant-collapse ant-collapse-icon-position-start ant-collapse-ghost file-result-collapse-wrapper"
               >
                 <div
                   class="ant-collapse-item"
@@ -649,7 +649,7 @@ exports[`test PaginationList/FileExecuteMode should match snapshot 2`] = `
                         class="file-result-card-wrapper result-card-header"
                       >
                         <div
-                          class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+                          class="ant-space ant-space-horizontal ant-space-align-center"
                         >
                           <div
                             class="ant-space-item"
@@ -696,23 +696,23 @@ exports[`test PaginationList/FileExecuteMode should match snapshot 2`] = `
                           class="result-card-status-wrap"
                         >
                           <span
-                            class="ant-tag ant-tag-default ant-tag-borderless basic-tag-wrapper basic-large-tag-wrapper css-1mjwlcb css-dev-only-do-not-override-txh9fw"
+                            class="ant-tag ant-tag-default ant-tag-borderless basic-tag-wrapper basic-large-tag-wrapper css-1mjwlcb"
                           >
                             准备执行
                           </span>
                           <div
-                            class="ant-divider css-dev-only-do-not-override-txh9fw ant-divider-vertical result-card-status-divider"
+                            class="ant-divider ant-divider-vertical result-card-status-divider"
                             role="separator"
                           />
                           <div
-                            class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+                            class="ant-space ant-space-horizontal ant-space-align-center"
                           >
                             <div
                               class="ant-space-item"
                               style="margin-right: 8px;"
                             >
                               <span
-                                class="ant-tag ant-tag-blue ant-tag-borderless basic-tag-wrapper basic-large-tag-wrapper css-1q0n2j9 css-dev-only-do-not-override-txh9fw"
+                                class="ant-tag ant-tag-blue ant-tag-borderless basic-tag-wrapper basic-large-tag-wrapper css-1q0n2j9"
                               >
                                 <svg
                                   height="19"
@@ -734,7 +734,7 @@ exports[`test PaginationList/FileExecuteMode should match snapshot 2`] = `
                               class="ant-space-item"
                             >
                               <span
-                                class="ant-tag ant-tag-orange ant-tag-borderless basic-tag-wrapper basic-large-tag-wrapper css-17gmaof css-dev-only-do-not-override-txh9fw"
+                                class="ant-tag ant-tag-orange ant-tag-borderless basic-tag-wrapper basic-large-tag-wrapper css-17gmaof"
                               >
                                 <svg
                                   fill="none"
@@ -769,7 +769,7 @@ exports[`test PaginationList/FileExecuteMode should match snapshot 2`] = `
               class="css-1gxdwqg"
             >
               <div
-                class="ant-collapse ant-collapse-icon-position-start ant-collapse-ghost file-result-collapse-wrapper css-dev-only-do-not-override-txh9fw"
+                class="ant-collapse ant-collapse-icon-position-start ant-collapse-ghost file-result-collapse-wrapper"
               >
                 <div
                   class="ant-collapse-item"
@@ -811,7 +811,7 @@ exports[`test PaginationList/FileExecuteMode should match snapshot 2`] = `
                         class="file-result-card-wrapper result-card-header"
                       >
                         <div
-                          class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+                          class="ant-space ant-space-horizontal ant-space-align-center"
                         >
                           <div
                             class="ant-space-item"
@@ -858,22 +858,22 @@ exports[`test PaginationList/FileExecuteMode should match snapshot 2`] = `
                           class="result-card-status-wrap"
                         >
                           <span
-                            class="ant-tag ant-tag-default ant-tag-borderless basic-tag-wrapper basic-large-tag-wrapper css-1mjwlcb css-dev-only-do-not-override-txh9fw"
+                            class="ant-tag ant-tag-default ant-tag-borderless basic-tag-wrapper basic-large-tag-wrapper css-1mjwlcb"
                           >
                             准备执行
                           </span>
                           <div
-                            class="ant-divider css-dev-only-do-not-override-txh9fw ant-divider-vertical result-card-status-divider"
+                            class="ant-divider ant-divider-vertical result-card-status-divider"
                             role="separator"
                           />
                           <div
-                            class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+                            class="ant-space ant-space-horizontal ant-space-align-center"
                           >
                             <div
                               class="ant-space-item"
                             >
                               <span
-                                class="ant-tag ant-tag-blue ant-tag-borderless basic-tag-wrapper basic-large-tag-wrapper css-1q0n2j9 css-dev-only-do-not-override-txh9fw"
+                                class="ant-tag ant-tag-blue ant-tag-borderless basic-tag-wrapper basic-large-tag-wrapper css-1q0n2j9"
                               >
                                 <svg
                                   height="19"
@@ -907,7 +907,7 @@ exports[`test PaginationList/FileExecuteMode should match snapshot 2`] = `
               class="css-1gxdwqg"
             >
               <div
-                class="ant-collapse ant-collapse-icon-position-start ant-collapse-ghost file-result-collapse-wrapper css-dev-only-do-not-override-txh9fw"
+                class="ant-collapse ant-collapse-icon-position-start ant-collapse-ghost file-result-collapse-wrapper"
               >
                 <div
                   class="ant-collapse-item"
@@ -949,7 +949,7 @@ exports[`test PaginationList/FileExecuteMode should match snapshot 2`] = `
                         class="file-result-card-wrapper result-card-header"
                       >
                         <div
-                          class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+                          class="ant-space ant-space-horizontal ant-space-align-center"
                         >
                           <div
                             class="ant-space-item"
@@ -996,23 +996,23 @@ exports[`test PaginationList/FileExecuteMode should match snapshot 2`] = `
                           class="result-card-status-wrap"
                         >
                           <span
-                            class="ant-tag ant-tag-default ant-tag-borderless basic-tag-wrapper basic-large-tag-wrapper css-1mjwlcb css-dev-only-do-not-override-txh9fw"
+                            class="ant-tag ant-tag-default ant-tag-borderless basic-tag-wrapper basic-large-tag-wrapper css-1mjwlcb"
                           >
                             准备执行
                           </span>
                           <div
-                            class="ant-divider css-dev-only-do-not-override-txh9fw ant-divider-vertical result-card-status-divider"
+                            class="ant-divider ant-divider-vertical result-card-status-divider"
                             role="separator"
                           />
                           <div
-                            class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+                            class="ant-space ant-space-horizontal ant-space-align-center"
                           >
                             <div
                               class="ant-space-item"
                               style="margin-right: 8px;"
                             >
                               <span
-                                class="ant-tag ant-tag-blue ant-tag-borderless basic-tag-wrapper basic-large-tag-wrapper css-1q0n2j9 css-dev-only-do-not-override-txh9fw"
+                                class="ant-tag ant-tag-blue ant-tag-borderless basic-tag-wrapper basic-large-tag-wrapper css-1q0n2j9"
                               >
                                 <svg
                                   height="19"
@@ -1034,7 +1034,7 @@ exports[`test PaginationList/FileExecuteMode should match snapshot 2`] = `
                               class="ant-space-item"
                             >
                               <span
-                                class="ant-tag ant-tag-orange ant-tag-borderless basic-tag-wrapper basic-large-tag-wrapper css-17gmaof css-dev-only-do-not-override-txh9fw"
+                                class="ant-tag ant-tag-orange ant-tag-borderless basic-tag-wrapper basic-large-tag-wrapper css-17gmaof"
                               >
                                 <svg
                                   fill="none"
@@ -1069,7 +1069,7 @@ exports[`test PaginationList/FileExecuteMode should match snapshot 2`] = `
               class="css-1gxdwqg"
             >
               <div
-                class="ant-collapse ant-collapse-icon-position-start ant-collapse-ghost file-result-collapse-wrapper css-dev-only-do-not-override-txh9fw"
+                class="ant-collapse ant-collapse-icon-position-start ant-collapse-ghost file-result-collapse-wrapper"
               >
                 <div
                   class="ant-collapse-item"
@@ -1111,7 +1111,7 @@ exports[`test PaginationList/FileExecuteMode should match snapshot 2`] = `
                         class="file-result-card-wrapper result-card-header"
                       >
                         <div
-                          class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+                          class="ant-space ant-space-horizontal ant-space-align-center"
                         >
                           <div
                             class="ant-space-item"
@@ -1158,22 +1158,22 @@ exports[`test PaginationList/FileExecuteMode should match snapshot 2`] = `
                           class="result-card-status-wrap"
                         >
                           <span
-                            class="ant-tag ant-tag-default ant-tag-borderless basic-tag-wrapper basic-large-tag-wrapper css-1mjwlcb css-dev-only-do-not-override-txh9fw"
+                            class="ant-tag ant-tag-default ant-tag-borderless basic-tag-wrapper basic-large-tag-wrapper css-1mjwlcb"
                           >
                             准备执行
                           </span>
                           <div
-                            class="ant-divider css-dev-only-do-not-override-txh9fw ant-divider-vertical result-card-status-divider"
+                            class="ant-divider ant-divider-vertical result-card-status-divider"
                             role="separator"
                           />
                           <div
-                            class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+                            class="ant-space ant-space-horizontal ant-space-align-center"
                           >
                             <div
                               class="ant-space-item"
                             >
                               <span
-                                class="ant-tag ant-tag-blue ant-tag-borderless basic-tag-wrapper basic-large-tag-wrapper css-1q0n2j9 css-dev-only-do-not-override-txh9fw"
+                                class="ant-tag ant-tag-blue ant-tag-borderless basic-tag-wrapper basic-large-tag-wrapper css-1q0n2j9"
                               >
                                 <svg
                                   height="19"
@@ -1207,7 +1207,7 @@ exports[`test PaginationList/FileExecuteMode should match snapshot 2`] = `
       class="ant-list-pagination ant-list-pagination-align-end"
     >
       <ul
-        class="ant-pagination task-result-pagination-list css-dev-only-do-not-override-txh9fw"
+        class="ant-pagination task-result-pagination-list"
       >
         <li
           class="ant-pagination-total-text"
@@ -1219,7 +1219,7 @@ exports[`test PaginationList/FileExecuteMode should match snapshot 2`] = `
         <li
           aria-disabled="true"
           class="ant-pagination-prev ant-pagination-disabled"
-          title="Previous Page"
+          title="上一页"
         >
           <button
             class="ant-pagination-item-link"
@@ -1262,7 +1262,7 @@ exports[`test PaginationList/FileExecuteMode should match snapshot 2`] = `
         <li
           aria-disabled="true"
           class="ant-pagination-next ant-pagination-disabled"
-          title="Next Page"
+          title="下一页"
         >
           <button
             class="ant-pagination-item-link"
@@ -1295,8 +1295,8 @@ exports[`test PaginationList/FileExecuteMode should match snapshot 2`] = `
           class="ant-pagination-options"
         >
           <div
-            aria-label="Page Size"
-            class="ant-select ant-pagination-options-size-changer css-dev-only-do-not-override-txh9fw ant-select-single ant-select-show-arrow ant-select-show-search"
+            aria-label="页码"
+            class="ant-select ant-pagination-options-size-changer ant-select-single ant-select-show-arrow ant-select-show-search"
           >
             <div
               class="ant-select-selector"
@@ -1310,7 +1310,7 @@ exports[`test PaginationList/FileExecuteMode should match snapshot 2`] = `
                   aria-controls="rc_select_TEST_OR_SSR_list"
                   aria-expanded="false"
                   aria-haspopup="listbox"
-                  aria-label="Page Size"
+                  aria-label="页码"
                   aria-owns="rc_select_TEST_OR_SSR_list"
                   autocomplete="off"
                   class="ant-select-selection-search-input"
@@ -1322,9 +1322,9 @@ exports[`test PaginationList/FileExecuteMode should match snapshot 2`] = `
               </span>
               <span
                 class="ant-select-selection-item"
-                title="20 / page"
+                title="20 条/页"
               >
-                20 / page
+                20 条/页
               </span>
             </div>
             <span

@@ -1,29 +1,29 @@
-import { ProjectProjectPriorityEnum } from '@actiontech/shared/lib/api/base/service/common.enum';
+import { ProjectV2ProjectPriorityEnum } from '@actiontech/shared/lib/api/base/service/common.enum';
 import { t } from '../../locale/index';
 
 export const ProjectPriorityDictionary: {
-  [key in ProjectProjectPriorityEnum]: string;
+  [key in ProjectV2ProjectPriorityEnum]: string;
 } = {
-  [ProjectProjectPriorityEnum.high]: t('globalDashboard.high'),
-  [ProjectProjectPriorityEnum.medium]: t('globalDashboard.medium'),
-  [ProjectProjectPriorityEnum.low]: t('globalDashboard.low'),
-  [ProjectProjectPriorityEnum.unknown]: t('common.unknown')
+  [ProjectV2ProjectPriorityEnum.high]: t('globalDashboard.high'),
+  [ProjectV2ProjectPriorityEnum.medium]: t('globalDashboard.medium'),
+  [ProjectV2ProjectPriorityEnum.low]: t('globalDashboard.low'),
+  [ProjectV2ProjectPriorityEnum.unknown]: t('common.unknown')
 };
 
 export const ProjectPriorityOptions: Array<{
   label: string;
-  value: ProjectProjectPriorityEnum;
+  value: ProjectV2ProjectPriorityEnum;
 }> = [
   {
-    label: ProjectPriorityDictionary[ProjectProjectPriorityEnum.high],
-    value: ProjectProjectPriorityEnum.high
+    label: ProjectPriorityDictionary[ProjectV2ProjectPriorityEnum.high],
+    value: ProjectV2ProjectPriorityEnum.high
   },
   {
-    label: ProjectPriorityDictionary[ProjectProjectPriorityEnum.medium],
-    value: ProjectProjectPriorityEnum.medium
+    label: ProjectPriorityDictionary[ProjectV2ProjectPriorityEnum.medium],
+    value: ProjectV2ProjectPriorityEnum.medium
   },
   {
-    label: ProjectPriorityDictionary[ProjectProjectPriorityEnum.low],
-    value: ProjectProjectPriorityEnum.low
+    label: ProjectPriorityDictionary[ProjectV2ProjectPriorityEnum.low],
+    value: ProjectV2ProjectPriorityEnum.low
   }
 ];

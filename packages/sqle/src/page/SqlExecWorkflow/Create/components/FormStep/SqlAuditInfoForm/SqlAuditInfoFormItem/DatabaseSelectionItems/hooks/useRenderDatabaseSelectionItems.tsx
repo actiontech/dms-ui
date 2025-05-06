@@ -17,7 +17,7 @@ import { useEffect } from 'react';
 import { useSelector } from 'react-redux';
 import { IReduxState } from '../../../../../../../../../store';
 import { ROUTE_PATHS } from '@actiontech/shared/lib/data/routePaths';
-import { IInstanceTipResV1 } from '@actiontech/shared/lib/api/sqle/service/common';
+import { IInstanceTipResV2 } from '@actiontech/shared/lib/api/sqle/service/common';
 
 const useRenderDatabaseSelectionItems = ({
   dbSourceInfoCollection,
@@ -26,7 +26,7 @@ const useRenderDatabaseSelectionItems = ({
 }: Pick<
   DatabaseSelectionItemProps,
   'dbSourceInfoCollection' | 'sqlStatementTabActiveKey'
-> & { instanceList?: IInstanceTipResV1[] }) => {
+> & { instanceList?: IInstanceTipResV2[] }) => {
   const { t } = useTranslation();
   const { projectName, projectID } = useCurrentProject();
   const { sqleTheme } = useThemeStyleData();

@@ -29,6 +29,7 @@ import {
   AuditPlanParamResV1TypeEnum,
   HighPriorityConditionResV1TypeEnum
 } from '@actiontech/shared/lib/api/sqle/service/common.enum';
+import project from '../../../../testUtils/mockApi/project';
 
 jest.mock('react-router-dom', () => {
   return {
@@ -47,7 +48,7 @@ describe('test sqle/SqlManagementConf/Update', () => {
   let getInstanceSpy: jest.SpyInstance;
   let getGlobalRuleTemplateTipSpy: jest.SpyInstance;
   let getInstanceAuditPlanDetailSpy: jest.SpyInstance;
-
+  let listEnvironmentTagsSpy: jest.SpyInstance;
   const auditPlanId = '1';
 
   const useParamsMock: jest.Mock = useParams as jest.Mock;
@@ -67,6 +68,7 @@ describe('test sqle/SqlManagementConf/Update', () => {
     getGlobalRuleTemplateTipSpy = rule_template.getRuleTemplateTips();
     getInstanceTipListSpy = instance.getInstanceTipList();
     getInstanceSpy = instance.getInstance();
+    listEnvironmentTagsSpy = project.listEnvironmentTags();
     getInstanceSpy.mockClear();
     getInstanceSpy.mockImplementation(() =>
       createSpySuccessResponse({
@@ -108,7 +110,8 @@ describe('test sqle/SqlManagementConf/Update', () => {
     expect(getInstanceTipListSpy).toHaveBeenCalled();
     expect(getAuditPlanMetaSpy).toHaveBeenCalled();
     expect(getInstanceSpy).toHaveBeenCalled();
-    expect(getBySelector('#businessScope')).toBeDisabled();
+    expect(listEnvironmentTagsSpy).toHaveBeenCalled();
+    expect(getBySelector('#environmentTag')).toBeDisabled();
     expect(getBySelector('#instanceType')).toBeDisabled();
     expect(getBySelector('#instanceId')).toBeDisabled();
     expect(screen.getByText('编辑扫描详情·自定义')).toBeInTheDocument();
@@ -117,7 +120,7 @@ describe('test sqle/SqlManagementConf/Update', () => {
     ).toBeInTheDocument();
     fireEvent.click(screen.getByText('重 置'));
     await act(async () => jest.advanceTimersByTime(100));
-    expect(screen.getByText('business1')).toBeInTheDocument();
+    expect(screen.getByText('environment-1')).toBeInTheDocument();
   });
 
   it('render update audit plan', async () => {
@@ -252,7 +255,7 @@ describe('test sqle/SqlManagementConf/Update', () => {
     getInstanceAuditPlanDetailSpy.mockImplementation(() =>
       createSpySuccessResponse({
         data: {
-          business: 'business1',
+          environment: '1',
           instance_type: 'MySQL',
           instance_name: 'mysql-1',
           instance_id: '1739531854064652288',

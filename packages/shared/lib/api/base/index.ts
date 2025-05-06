@@ -16,6 +16,7 @@ export { default as NotificationService } from './service/Notification';
 export { default as OAuth2Service } from './service/OAuth2';
 export { default as OpPermissionService } from './service/OpPermission';
 export { default as ProjectService } from './service/Project';
+export { default as ResourceOverviewService } from './service/ResourceOverview';
 export { default as RoleService } from './service/Role';
 export { default as SMSService } from './service/SMS';
 export { default as SessionService } from './service/Session';

@@ -7,7 +7,7 @@ exports[`page/Home/CustomToolbar render custom tool bar 1`] = `
       class="css-eydntv"
     >
       <div
-        class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+        class="ant-space ant-space-horizontal ant-space-align-center"
       >
         <div
           class="ant-space-item"
@@ -16,7 +16,7 @@ exports[`page/Home/CustomToolbar render custom tool bar 1`] = `
         </div>
       </div>
       <div
-        class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+        class="ant-space ant-space-horizontal ant-space-align-center"
       >
         <div
           class="ant-space-item"
@@ -32,7 +32,7 @@ exports[`page/Home/CustomToolbar render custom tool bar 1`] = `
           class="ant-space-item"
         >
           <button
-            class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default ant-btn-sm ant-btn-icon-only btn-icon-no-border basic-button-wrapper css-geipcv"
+            class="ant-btn ant-btn-default ant-btn-sm ant-btn-icon-only btn-icon-no-border basic-button-wrapper css-geipcv"
             type="button"
           >
             <span

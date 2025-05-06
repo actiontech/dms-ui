@@ -5,16 +5,16 @@ exports[`sqle/RuleTemplate/BaseInfoForm should match snap shot 1`] = `
   <div />
   <div>
     <form
-      class="ant-form ant-form-horizontal css-dev-only-do-not-override-txh9fw css-19jfn7e"
+      class="ant-form ant-form-horizontal css-19jfn7e"
     >
       <div
-        class="ant-form-item css-15d6abf css-dev-only-do-not-override-txh9fw"
+        class="ant-form-item css-15d6abf"
       >
         <div
-          class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+          class="ant-row ant-form-item-row"
         >
           <div
-            class="ant-col ant-form-item-label ant-form-item-label-left css-dev-only-do-not-override-txh9fw"
+            class="ant-col ant-form-item-label ant-form-item-label-left"
           >
             <label
               class="ant-form-item-required ant-form-item-no-colon"
@@ -23,7 +23,7 @@ exports[`sqle/RuleTemplate/BaseInfoForm should match snap shot 1`] = `
             />
           </div>
           <div
-            class="ant-col ant-form-item-control css-dev-only-do-not-override-txh9fw"
+            class="ant-col ant-form-item-control"
           >
             <div
               class="ant-form-item-control-input"
@@ -33,7 +33,7 @@ exports[`sqle/RuleTemplate/BaseInfoForm should match snap shot 1`] = `
               >
                 <input
                   aria-required="true"
-                  class="ant-input css-dev-only-do-not-override-ywkr0o basic-input-wrapper css-opeiev"
+                  class="ant-input basic-input-wrapper css-opeiev"
                   id="templateName"
                   placeholder="请输入模板名称"
                   type="text"
@@ -45,13 +45,13 @@ exports[`sqle/RuleTemplate/BaseInfoForm should match snap shot 1`] = `
         </div>
       </div>
       <div
-        class="ant-form-item css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+        class="ant-form-item css-1jlm9cy"
       >
         <div
-          class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+          class="ant-row ant-form-item-row"
         >
           <div
-            class="ant-col ant-col-24 ant-form-item-label ant-form-item-label-left css-dev-only-do-not-override-txh9fw"
+            class="ant-col ant-col-24 ant-form-item-label ant-form-item-label-left"
           >
             <label
               class="ant-form-item-no-colon"
@@ -62,7 +62,7 @@ exports[`sqle/RuleTemplate/BaseInfoForm should match snap shot 1`] = `
             </label>
           </div>
           <div
-            class="ant-col ant-col-24 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+            class="ant-col ant-col-24 ant-form-item-control"
           >
             <div
               class="ant-form-item-control-input"
@@ -71,12 +71,12 @@ exports[`sqle/RuleTemplate/BaseInfoForm should match snap shot 1`] = `
                 class="ant-form-item-control-input-content"
               >
                 <span
-                  class="ant-input-affix-wrapper basic-input-wrapper css-1pd1cd5 ant-input-textarea-affix-wrapper ant-input-textarea-show-count css-dev-only-do-not-override-txh9fw ant-input-show-count"
+                  class="ant-input-affix-wrapper basic-input-wrapper css-1pd1cd5 ant-input-textarea-affix-wrapper ant-input-textarea-show-count ant-input-show-count"
                   data-count="0 / 255"
                   style="resize: none;"
                 >
                   <textarea
-                    class="ant-input css-dev-only-do-not-override-txh9fw"
+                    class="ant-input"
                     id="templateDesc"
                     placeholder="点此添加模板描述"
                     rows="8"
@@ -98,13 +98,13 @@ exports[`sqle/RuleTemplate/BaseInfoForm should match snap shot 1`] = `
         </div>
       </div>
       <div
-        class="ant-form-item has-required-style css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+        class="ant-form-item has-required-style css-1jlm9cy"
       >
         <div
-          class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+          class="ant-row ant-form-item-row"
         >
           <div
-            class="ant-col ant-col-24 ant-form-item-label ant-form-item-label-left css-dev-only-do-not-override-txh9fw"
+            class="ant-col ant-col-24 ant-form-item-label ant-form-item-label-left"
           >
             <label
               class="ant-form-item-required ant-form-item-no-colon"
@@ -115,7 +115,7 @@ exports[`sqle/RuleTemplate/BaseInfoForm should match snap shot 1`] = `
             </label>
           </div>
           <div
-            class="ant-col ant-col-24 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+            class="ant-col ant-col-24 ant-form-item-control"
           >
             <div
               class="ant-form-item-control-input"
@@ -125,7 +125,7 @@ exports[`sqle/RuleTemplate/BaseInfoForm should match snap shot 1`] = `
               >
                 <div
                   aria-required="true"
-                  class="ant-select ant-select-in-form-item basic-select-wrapper css-iy4o4x css-dev-only-do-not-override-v9sov3 ant-select-single ant-select-allow-clear ant-select-show-arrow"
+                  class="ant-select ant-select-in-form-item basic-select-wrapper css-iy4o4x ant-select-single ant-select-allow-clear ant-select-show-arrow"
                 >
                   <div
                     class="ant-select-selector"
@@ -191,13 +191,13 @@ exports[`sqle/RuleTemplate/BaseInfoForm should match snap shot 1`] = `
         </div>
       </div>
       <div
-        class="ant-form-item has-required-style css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+        class="ant-form-item has-required-style css-1jlm9cy"
       >
         <div
-          class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+          class="ant-row ant-form-item-row"
         >
           <div
-            class="ant-col ant-col-24 ant-form-item-label ant-form-item-label-left css-dev-only-do-not-override-txh9fw"
+            class="ant-col ant-col-24 ant-form-item-label ant-form-item-label-left"
           >
             <label
               class="ant-form-item-required ant-form-item-no-colon"
@@ -208,7 +208,7 @@ exports[`sqle/RuleTemplate/BaseInfoForm should match snap shot 1`] = `
             </label>
           </div>
           <div
-            class="ant-col ant-col-24 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+            class="ant-col ant-col-24 ant-form-item-control"
           >
             <div
               class="ant-form-item-control-input"
@@ -218,7 +218,7 @@ exports[`sqle/RuleTemplate/BaseInfoForm should match snap shot 1`] = `
               >
                 <div
                   aria-required="true"
-                  class="ant-select ant-select-in-form-item basic-select-wrapper css-iy4o4x css-dev-only-do-not-override-v9sov3 ant-select-single ant-select-allow-clear ant-select-show-arrow ant-select-disabled ant-select-loading"
+                  class="ant-select ant-select-in-form-item basic-select-wrapper css-iy4o4x ant-select-single ant-select-allow-clear ant-select-show-arrow ant-select-disabled ant-select-loading"
                 >
                   <div
                     class="ant-select-selector"
@@ -285,7 +285,7 @@ exports[`sqle/RuleTemplate/BaseInfoForm should match snap shot 1`] = `
         </div>
       </div>
       <button
-        class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary basic-button-wrapper css-geipcv"
+        class="ant-btn ant-btn-primary basic-button-wrapper css-geipcv"
         type="button"
       >
         <span>

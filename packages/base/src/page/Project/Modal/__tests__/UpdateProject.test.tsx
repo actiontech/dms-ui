@@ -7,7 +7,10 @@ import UpdateProject from '../UpdateProject';
 import { act, fireEvent, screen } from '@testing-library/react';
 import EmitterKey from '../../../../data/EmitterKey';
 import { mockProjectList } from '../../../../testUtils/mockApi/project/data';
-import { getAllBySelector } from '@actiontech/shared/lib/testUtil/customQuery';
+import {
+  getAllBySelector,
+  getBySelector
+} from '@actiontech/shared/lib/testUtil/customQuery';
 
 jest.mock('react-redux', () => {
   return {
@@ -22,27 +25,7 @@ describe('test base/page/project/modal/update', () => {
 
   let updateProjectSpy: jest.SpyInstance;
   let emitSpy: jest.SpyInstance;
-
-  const mockProjectData = {
-    business: [
-      {
-        id: 'business1',
-        name: 'business1',
-        is_used: true
-      },
-      {
-        id: 'business2',
-        name: 'business2',
-        is_used: false
-      },
-      {
-        id: 'business3',
-        name: 'business3',
-        is_used: true
-      }
-    ],
-    is_fixed_business: true
-  };
+  let listBusinessTagsSpy: jest.SpyInstance;
 
   beforeEach(() => {
     (useSelector as jest.Mock).mockImplementation((e) =>
@@ -50,14 +33,14 @@ describe('test base/page/project/modal/update', () => {
         project: {
           modalStatus: { [ModalName.DMS_Update_Project]: true },
           selectProject: {
-            ...mockProjectList[1],
-            ...mockProjectData
+            ...mockProjectList[1]
           }
         }
       })
     );
     (useDispatch as jest.Mock).mockImplementation(() => dispatchSpy);
     updateProjectSpy = project.updateProject();
+    listBusinessTagsSpy = project.listBusinessTags();
     emitSpy = jest.spyOn(EventEmitter, 'emit');
     jest.useFakeTimers();
   });
@@ -77,38 +60,31 @@ describe('test base/page/project/modal/update', () => {
     expect(screen.getByLabelText('项目描述')).toHaveValue(
       mockProjectList[1].desc
     );
+
+    expect(listBusinessTagsSpy).toHaveBeenCalledTimes(1);
   });
 
   it('should send update project request when user click submit button', async () => {
     superRender(<UpdateProject />);
+
+    await act(async () => jest.advanceTimersByTime(3000));
 
     expect(updateProjectSpy).toHaveBeenCalledTimes(0);
 
     fireEvent.input(screen.getByLabelText('项目描述'), {
       target: { value: 'update_desc' }
     });
+    await act(async () => jest.advanceTimersByTime(0));
+    fireEvent.mouseDown(getBySelector('#priority'));
+    await act(async () => jest.advanceTimersByTime(0));
+    fireEvent.click(getBySelector('div[title="高"]'));
+    await act(async () => jest.advanceTimersByTime(0));
 
-    const businessDeleteButton = getAllBySelector('.delete-button-disabled');
-    expect(businessDeleteButton).toHaveLength(2);
-    await act(async () => {
-      fireEvent.mouseEnter(businessDeleteButton[0]);
-      await jest.advanceTimersByTime(100);
-    });
-    expect(
-      screen.getByText('当前业务已有关联资源，无法删除')
-    ).toBeInTheDocument();
-
-    expect(getAllBySelector('.delete-button')).toHaveLength(1);
-    fireEvent.click(getAllBySelector('.delete-button')[0]);
-    await act(async () => jest.advanceTimersByTime(100));
-    expect(getAllBySelector('.edit-button')).toHaveLength(2);
-    fireEvent.click(getAllBySelector('.edit-button')[0]);
-    await act(async () => jest.advanceTimersByTime(100));
-    fireEvent.input(getAllBySelector('#editInput')[0], {
-      target: { value: 'test' }
-    });
-    await act(async () => jest.advanceTimersByTime(100));
-    fireEvent.click(getAllBySelector('.custom-icon-selected')[0]);
+    fireEvent.click(getBySelector('.editable-select-trigger'));
+    await act(async () => jest.advanceTimersByTime(0));
+    const firstOption = getAllBySelector('.ant-dropdown-menu-item')[1];
+    fireEvent.click(firstOption);
+    await act(async () => jest.advanceTimersByTime(0));
     fireEvent.click(screen.getByText('提 交'));
     await act(async () => jest.advanceTimersByTime(0));
 
@@ -122,20 +98,10 @@ describe('test base/page/project/modal/update', () => {
       project_uid: mockProjectList[1].uid,
       project: {
         desc: 'update_desc',
-        is_fixed_business: true,
-        business: [
-          {
-            id: 'business1',
-            is_used: true,
-            name: 'test'
-          },
-          {
-            id: 'business3',
-            is_used: true,
-            name: 'business3'
-          }
-        ],
-        project_priority: 'medium'
+        project_priority: 'high',
+        business_tag: {
+          uid: '2'
+        }
       }
     });
 

@@ -5,7 +5,7 @@ exports[`sqle/ExecWorkflow/Detail/RejectWorkflowModal render snap when open & lo
   <div />
   <div>
     <div
-      class="ant-modal-root css-dev-only-do-not-override-txh9fw"
+      class="ant-modal-root"
     >
       <div
         class="ant-modal-mask"
@@ -17,7 +17,7 @@ exports[`sqle/ExecWorkflow/Detail/RejectWorkflowModal render snap when open & lo
         <div
           aria-labelledby="test-id"
           aria-modal="true"
-          class="ant-modal css-dev-only-do-not-override-txh9fw basic-modal-wrapper css-vvpsbb ant-zoom-appear ant-zoom-appear-prepare ant-zoom"
+          class="ant-modal basic-modal-wrapper css-vvpsbb ant-zoom-appear ant-zoom-appear-prepare ant-zoom"
           role="dialog"
           style="width: 480px;"
         >
@@ -43,16 +43,16 @@ exports[`sqle/ExecWorkflow/Detail/RejectWorkflowModal render snap when open & lo
               class="ant-modal-body"
             >
               <form
-                class="ant-form ant-form-vertical css-dev-only-do-not-override-txh9fw"
+                class="ant-form ant-form-vertical"
               >
                 <div
-                  class="ant-form-item css-dev-only-do-not-override-txh9fw"
+                  class="ant-form-item"
                 >
                   <div
-                    class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                    class="ant-row ant-form-item-row"
                   >
                     <div
-                      class="ant-col ant-form-item-label css-dev-only-do-not-override-txh9fw"
+                      class="ant-col ant-form-item-label"
                     >
                       <label
                         class="ant-form-item-required"
@@ -63,7 +63,7 @@ exports[`sqle/ExecWorkflow/Detail/RejectWorkflowModal render snap when open & lo
                       </label>
                     </div>
                     <div
-                      class="ant-col ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                      class="ant-col ant-form-item-control"
                     >
                       <div
                         class="ant-form-item-control-input"
@@ -73,7 +73,7 @@ exports[`sqle/ExecWorkflow/Detail/RejectWorkflowModal render snap when open & lo
                         >
                           <textarea
                             aria-required="true"
-                            class="ant-input css-dev-only-do-not-override-txh9fw basic-input-wrapper css-1pd1cd5"
+                            class="ant-input basic-input-wrapper css-1pd1cd5"
                             id="reason"
                             placeholder="请输入{{name}}"
                             rows="3"
@@ -94,7 +94,7 @@ exports[`sqle/ExecWorkflow/Detail/RejectWorkflowModal render snap when open & lo
               class="ant-modal-footer"
             >
               <button
-                class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default basic-button-wrapper css-geipcv"
+                class="ant-btn ant-btn-default basic-button-wrapper css-geipcv"
                 disabled=""
                 type="button"
               >
@@ -103,7 +103,7 @@ exports[`sqle/ExecWorkflow/Detail/RejectWorkflowModal render snap when open & lo
                 </span>
               </button>
               <button
-                class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary ant-btn-loading basic-button-wrapper css-geipcv"
+                class="ant-btn ant-btn-primary ant-btn-loading basic-button-wrapper css-geipcv"
                 disabled=""
                 type="button"
               >

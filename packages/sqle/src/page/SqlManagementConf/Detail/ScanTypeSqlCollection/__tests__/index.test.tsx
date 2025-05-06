@@ -9,6 +9,10 @@ import { getAllBySelector } from '@actiontech/shared/lib/testUtil/customQuery';
 import rule_template from '../../../../../testUtils/mockApi/rule_template';
 import { createSpySuccessResponse } from '@actiontech/shared/lib/testUtil/mockApi';
 import { mockAuditPlanSQLData } from '../../../../../testUtils/mockApi/instanceAuditPlan/data';
+import {
+  ignoreConsoleErrors,
+  UtilsConsoleErrorStringsEnum
+} from '@actiontech/shared/lib/testUtil/common';
 
 describe('test ScanTypeSqlCollection', () => {
   let getInstanceAuditPlanSQLMetaSpy: jest.SpyInstance;
@@ -28,6 +32,7 @@ describe('test ScanTypeSqlCollection', () => {
     jest.clearAllMocks();
     jest.clearAllTimers();
   });
+  ignoreConsoleErrors([UtilsConsoleErrorStringsEnum.UNKNOWN_EVENT_HANDLER]);
 
   const instanceAuditPlanId = '1';
   const auditPlanId = '121343';

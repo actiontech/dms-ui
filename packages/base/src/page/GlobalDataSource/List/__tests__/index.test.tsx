@@ -130,7 +130,7 @@ describe('page/GlobalDataSource/List', () => {
       '.actiontech-table-filter-container-namespace .ant-space-item',
       baseElement
     );
-    expect(filterItems.length).toBe(3);
+    expect(filterItems.length).toBe(4);
     expect(baseElement).toMatchSnapshot();
   });
 

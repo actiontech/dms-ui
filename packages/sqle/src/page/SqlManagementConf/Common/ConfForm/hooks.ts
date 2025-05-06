@@ -1,14 +1,13 @@
-import audit_plan from '@actiontech/shared/lib/api/sqle/service/audit_plan';
 import { useBoolean, useRequest } from 'ahooks';
 import { Form } from 'antd';
 import { SqlManagementConfFormFields, FreezingFormFields } from './index.type';
 import { SelectScanTypeParamsType } from './context';
 import { useMemo, useCallback } from 'react';
-
+import { SqleApi } from '@actiontech/shared/lib/api';
 const freezingFormFields: FreezingFormFields = [
   'instanceId',
   'instanceName',
-  'businessScope',
+  'environmentTag',
   'instanceType'
 ];
 
@@ -27,14 +26,12 @@ export const useSqlManagementConfFormSharedStates = () => {
 
   const { data: scanTypeMetas, loading: getScanTypeMetaPending } = useRequest(
     () =>
-      audit_plan
-        .getAuditPlanMetasV1({
-          filter_instance_type: selectedInstanceType,
-          filter_instance_id: selectedInstanceId
-        })
-        .then((res) => {
-          return res.data.data;
-        }),
+      SqleApi.AuditPlanService.getAuditPlanMetasV1({
+        filter_instance_type: selectedInstanceType,
+        filter_instance_id: selectedInstanceId
+      }).then((res) => {
+        return res.data.data;
+      }),
     {
       ready: !!selectedInstanceType,
       refreshDeps: [selectedInstanceType, selectedInstanceId]

@@ -8,10 +8,10 @@ exports[`base/Project/BatchImportDataSourceForm render init snap 1`] = `
       class="fix-header-padding css-bspaai"
     >
       <form
-        class="ant-form ant-form-horizontal css-dev-only-do-not-override-txh9fw hasTopHeader css-19jfn7e"
+        class="ant-form ant-form-horizontal hasTopHeader css-19jfn7e"
       >
         <h3
-          class="ant-typography css-p50odb css-dev-only-do-not-override-txh9fw"
+          class="ant-typography css-p50odb"
         >
           <span
             class="anticon title-icon"
@@ -42,13 +42,13 @@ exports[`base/Project/BatchImportDataSourceForm render init snap 1`] = `
           </span>
         </h3>
         <div
-          class="ant-form-item has-required-style css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+          class="ant-form-item has-required-style css-1jlm9cy"
         >
           <div
-            class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+            class="ant-row ant-form-item-row"
           >
             <div
-              class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left css-dev-only-do-not-override-txh9fw"
+              class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left"
             >
               <label
                 class="ant-form-item-required ant-form-item-no-colon"
@@ -59,7 +59,7 @@ exports[`base/Project/BatchImportDataSourceForm render init snap 1`] = `
               </label>
             </div>
             <div
-              class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+              class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control"
             >
               <div
                 class="ant-form-item-control-input"
@@ -68,7 +68,7 @@ exports[`base/Project/BatchImportDataSourceForm render init snap 1`] = `
                   class="ant-form-item-control-input-content"
                 >
                   <div
-                    class="ant-space css-dev-only-do-not-override-txh9fw ant-space-vertical"
+                    class="ant-space ant-space-vertical"
                   >
                     <div
                       class="ant-space-item"
@@ -78,7 +78,7 @@ exports[`base/Project/BatchImportDataSourceForm render init snap 1`] = `
                         class="css-18zq7vp"
                       >
                         <span
-                          class="ant-upload-wrapper css-dev-only-do-not-override-txh9fw"
+                          class="ant-upload-wrapper"
                         >
                           <div
                             class="ant-upload ant-upload-select"
@@ -96,7 +96,7 @@ exports[`base/Project/BatchImportDataSourceForm render init snap 1`] = `
                                 type="file"
                               />
                               <button
-                                class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default basic-button-wrapper css-geipcv"
+                                class="ant-btn ant-btn-default basic-button-wrapper css-geipcv"
                                 type="button"
                               >
                                 <span>
@@ -110,7 +110,7 @@ exports[`base/Project/BatchImportDataSourceForm render init snap 1`] = `
                           />
                         </span>
                         <button
-                          class="ant-btn css-dev-only-do-not-override-txh9fw ant-btn-link"
+                          class="ant-btn ant-btn-link"
                           type="button"
                         >
                           <span>
@@ -124,7 +124,7 @@ exports[`base/Project/BatchImportDataSourceForm render init snap 1`] = `
                       style="margin-bottom: 8px;"
                     >
                       <div
-                        class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-start css-1nec0wd"
+                        class="ant-space ant-space-horizontal ant-space-align-start css-1nec0wd"
                       >
                         <div
                           class="ant-space-item"
@@ -151,7 +151,7 @@ exports[`base/Project/BatchImportDataSourceForm render init snap 1`] = `
                           class="ant-space-item"
                         >
                           <span
-                            class="ant-typography ant-typography-success css-dev-only-do-not-override-txh9fw"
+                            class="ant-typography ant-typography-success"
                           >
                             <pre>
                               校验通过

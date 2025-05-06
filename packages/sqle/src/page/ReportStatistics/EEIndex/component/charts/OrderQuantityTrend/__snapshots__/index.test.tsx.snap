@@ -4,7 +4,7 @@ exports[`ReportStatistics/OrderQuantityTrend refresh order quantity trend 1`] = 
 <body>
   <div>
     <div
-      class="ant-card ant-card-hoverable css-121p60i css-dev-only-do-not-override-txh9fw"
+      class="ant-card ant-card-hoverable css-121p60i"
     >
       <div
         class="ant-card-body"
@@ -36,14 +36,14 @@ exports[`ReportStatistics/OrderQuantityTrend refresh order quantity trend 1`] = 
                 class="css-1y8q0oh"
               >
                 <div
-                  class="ant-picker ant-picker-range ant-picker-small ant-picker-borderless css-dev-only-do-not-override-1xo6ltj basic-range-picker-wrapper orderQuantityTrend-range css-w7y1zu"
+                  class="ant-picker ant-picker-range ant-picker-small ant-picker-borderless basic-range-picker-wrapper orderQuantityTrend-range css-w7y1zu"
                 >
                   <div
                     class="ant-picker-input ant-picker-input-active"
                   >
                     <input
                       autocomplete="off"
-                      placeholder="Start date"
+                      placeholder="开始日期"
                       readonly=""
                       size="12"
                       value="2021-12-02"
@@ -69,7 +69,7 @@ exports[`ReportStatistics/OrderQuantityTrend refresh order quantity trend 1`] = 
                   >
                     <input
                       autocomplete="off"
-                      placeholder="End date"
+                      placeholder="结束日期"
                       readonly=""
                       size="12"
                       value="2022-01-01"
@@ -97,7 +97,7 @@ exports[`ReportStatistics/OrderQuantityTrend refresh order quantity trend 1`] = 
               class="icon-center-wrapper MuiBox-root css-0"
             >
               <div
-                class="css-dev-only-do-not-override-txh9fw ant-empty is-icon-loading css-19kysfv"
+                class="ant-empty is-icon-loading css-19kysfv"
               >
                 <div
                   class="ant-empty-image"
@@ -105,7 +105,7 @@ exports[`ReportStatistics/OrderQuantityTrend refresh order quantity trend 1`] = 
                   <div
                     aria-busy="true"
                     aria-live="polite"
-                    class="ant-spin ant-spin-spinning css-dev-only-do-not-override-txh9fw"
+                    class="ant-spin ant-spin-spinning"
                   >
                     <span
                       class="ant-spin-dot ant-spin-dot-spin"
@@ -145,7 +145,7 @@ exports[`ReportStatistics/OrderQuantityTrend render chart snap 1`] = `
 <body>
   <div>
     <div
-      class="ant-card ant-card-hoverable css-121p60i css-dev-only-do-not-override-txh9fw"
+      class="ant-card ant-card-hoverable css-121p60i"
     >
       <div
         class="ant-card-body"
@@ -177,14 +177,14 @@ exports[`ReportStatistics/OrderQuantityTrend render chart snap 1`] = `
                 class="css-1y8q0oh"
               >
                 <div
-                  class="ant-picker ant-picker-range ant-picker-small ant-picker-borderless css-dev-only-do-not-override-1xo6ltj basic-range-picker-wrapper orderQuantityTrend-range css-w7y1zu"
+                  class="ant-picker ant-picker-range ant-picker-small ant-picker-borderless basic-range-picker-wrapper orderQuantityTrend-range css-w7y1zu"
                 >
                   <div
                     class="ant-picker-input ant-picker-input-active"
                   >
                     <input
                       autocomplete="off"
-                      placeholder="Start date"
+                      placeholder="开始日期"
                       readonly=""
                       size="12"
                       value="2021-12-02"
@@ -210,7 +210,7 @@ exports[`ReportStatistics/OrderQuantityTrend render chart snap 1`] = `
                   >
                     <input
                       autocomplete="off"
-                      placeholder="End date"
+                      placeholder="结束日期"
                       readonly=""
                       size="12"
                       value="2022-01-01"
@@ -238,7 +238,7 @@ exports[`ReportStatistics/OrderQuantityTrend render chart snap 1`] = `
               class="icon-center-wrapper MuiBox-root css-0"
             >
               <div
-                class="css-dev-only-do-not-override-txh9fw ant-empty is-icon-loading css-19kysfv"
+                class="ant-empty is-icon-loading css-19kysfv"
               >
                 <div
                   class="ant-empty-image"
@@ -246,7 +246,7 @@ exports[`ReportStatistics/OrderQuantityTrend render chart snap 1`] = `
                   <div
                     aria-busy="true"
                     aria-live="polite"
-                    class="ant-spin ant-spin-spinning css-dev-only-do-not-override-txh9fw"
+                    class="ant-spin ant-spin-spinning"
                   >
                     <span
                       class="ant-spin-dot ant-spin-dot-spin"
@@ -286,7 +286,7 @@ exports[`ReportStatistics/OrderQuantityTrend render chart snap 2`] = `
 <body>
   <div>
     <div
-      class="ant-card ant-card-hoverable css-121p60i css-dev-only-do-not-override-txh9fw"
+      class="ant-card ant-card-hoverable css-121p60i"
     >
       <div
         class="ant-card-body"
@@ -318,14 +318,14 @@ exports[`ReportStatistics/OrderQuantityTrend render chart snap 2`] = `
                 class="css-1y8q0oh"
               >
                 <div
-                  class="ant-picker ant-picker-range ant-picker-small ant-picker-borderless css-dev-only-do-not-override-1xo6ltj basic-range-picker-wrapper orderQuantityTrend-range css-w7y1zu"
+                  class="ant-picker ant-picker-range ant-picker-small ant-picker-borderless basic-range-picker-wrapper orderQuantityTrend-range css-w7y1zu"
                 >
                   <div
                     class="ant-picker-input ant-picker-input-active"
                   >
                     <input
                       autocomplete="off"
-                      placeholder="Start date"
+                      placeholder="开始日期"
                       readonly=""
                       size="12"
                       value="2021-12-02"
@@ -351,7 +351,7 @@ exports[`ReportStatistics/OrderQuantityTrend render chart snap 2`] = `
                   >
                     <input
                       autocomplete="off"
-                      placeholder="End date"
+                      placeholder="结束日期"
                       readonly=""
                       size="12"
                       value="2022-01-01"
@@ -383,6 +383,7 @@ exports[`ReportStatistics/OrderQuantityTrend render chart snap 2`] = `
               >
                 <div
                   data-custom-params="{"data":[{"date":"2022-01-01","value":2},{"date":"2022-01-02","value":1},{"date":"2022-01-03","value":10},{"date":"2022-01-04","value":9},{"date":"2022-01-05","value":1},{"date":"2022-01-06","value":0}],"xField":"date","yField":"value","appendPadding":[30,0],"xAxis":{"range":[0,1],"tickCount":7},"yAxis":{"animate":false,"label":null},"areaStyle":{"fill":"l(90) 0:#4583ff  1:#4583ff00"},"line":{"size":3,"color":"#4583ff"},"smooth":true,"annotations":[{"type":"text","content":10,"position":["2022-01-03",10],"style":{"textAlign":"center","fill":"#FFFFFF"},"offsetY":-16,"background":{"padding":4,"style":{"radius":4,"fill":"#4583ff"}}},{"type":"dataMarker","position":["2022-01-03",10],"text":{"content":"","style":{"textAlign":"left"}},"point":{"style":{"fill":"#FFFFFF","stroke":"#4583ff"}},"autoAdjust":false}],"tooltip":{"fields":["date","value"]},"interactions":[{"type":"element-selected"},{"type":"element-active"}],"theme":"light"}"
+                  data-testid="mock-antd-plots"
                 />
               </div>
             </div>
@@ -398,7 +399,7 @@ exports[`ReportStatistics/OrderQuantityTrend render chart snap when api return e
 <body>
   <div>
     <div
-      class="ant-card ant-card-hoverable css-121p60i css-dev-only-do-not-override-txh9fw"
+      class="ant-card ant-card-hoverable css-121p60i"
     >
       <div
         class="ant-card-body"
@@ -430,14 +431,14 @@ exports[`ReportStatistics/OrderQuantityTrend render chart snap when api return e
                 class="css-1y8q0oh"
               >
                 <div
-                  class="ant-picker ant-picker-range ant-picker-small ant-picker-borderless css-dev-only-do-not-override-1xo6ltj basic-range-picker-wrapper orderQuantityTrend-range css-w7y1zu"
+                  class="ant-picker ant-picker-range ant-picker-small ant-picker-borderless basic-range-picker-wrapper orderQuantityTrend-range css-w7y1zu"
                 >
                   <div
                     class="ant-picker-input ant-picker-input-active"
                   >
                     <input
                       autocomplete="off"
-                      placeholder="Start date"
+                      placeholder="开始日期"
                       readonly=""
                       size="12"
                       value="2021-12-02"
@@ -463,7 +464,7 @@ exports[`ReportStatistics/OrderQuantityTrend render chart snap when api return e
                   >
                     <input
                       autocomplete="off"
-                      placeholder="End date"
+                      placeholder="结束日期"
                       readonly=""
                       size="12"
                       value="2022-01-01"
@@ -491,7 +492,7 @@ exports[`ReportStatistics/OrderQuantityTrend render chart snap when api return e
               class="icon-center-wrapper MuiBox-root css-0"
             >
               <div
-                class="css-dev-only-do-not-override-txh9fw ant-empty is-icon-tips css-19kysfv"
+                class="ant-empty is-icon-tips css-19kysfv"
               >
                 <div
                   class="ant-empty-image"
@@ -545,7 +546,7 @@ exports[`ReportStatistics/OrderQuantityTrend render chart snap when api return e
                   class="ant-empty-footer"
                 >
                   <button
-                    class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-text ant-btn-sm basic-button-wrapper css-geipcv"
+                    class="ant-btn ant-btn-text ant-btn-sm basic-button-wrapper css-geipcv"
                     type="button"
                   >
                     <span>
@@ -1074,7 +1075,7 @@ exports[`ReportStatistics/OrderQuantityTrend select diff time to show trend 1`] 
 <body>
   <div>
     <div
-      class="ant-card ant-card-hoverable css-121p60i css-dev-only-do-not-override-txh9fw"
+      class="ant-card ant-card-hoverable css-121p60i"
     >
       <div
         class="ant-card-body"
@@ -1106,14 +1107,14 @@ exports[`ReportStatistics/OrderQuantityTrend select diff time to show trend 1`] 
                 class="css-1y8q0oh"
               >
                 <div
-                  class="ant-picker ant-picker-range ant-picker-small ant-picker-borderless css-dev-only-do-not-override-1xo6ltj basic-range-picker-wrapper orderQuantityTrend-range css-w7y1zu"
+                  class="ant-picker ant-picker-range ant-picker-small ant-picker-borderless basic-range-picker-wrapper orderQuantityTrend-range css-w7y1zu"
                 >
                   <div
                     class="ant-picker-input ant-picker-input-active"
                   >
                     <input
                       autocomplete="off"
-                      placeholder="Start date"
+                      placeholder="开始日期"
                       readonly=""
                       size="12"
                       value="2021-12-02"
@@ -1139,7 +1140,7 @@ exports[`ReportStatistics/OrderQuantityTrend select diff time to show trend 1`] 
                   >
                     <input
                       autocomplete="off"
-                      placeholder="End date"
+                      placeholder="结束日期"
                       readonly=""
                       size="12"
                       value="2022-01-01"
@@ -1167,7 +1168,7 @@ exports[`ReportStatistics/OrderQuantityTrend select diff time to show trend 1`] 
               class="icon-center-wrapper MuiBox-root css-0"
             >
               <div
-                class="css-dev-only-do-not-override-txh9fw ant-empty is-icon-loading css-19kysfv"
+                class="ant-empty is-icon-loading css-19kysfv"
               >
                 <div
                   class="ant-empty-image"
@@ -1175,7 +1176,7 @@ exports[`ReportStatistics/OrderQuantityTrend select diff time to show trend 1`] 
                   <div
                     aria-busy="true"
                     aria-live="polite"
-                    class="ant-spin ant-spin-spinning css-dev-only-do-not-override-txh9fw"
+                    class="ant-spin ant-spin-spinning"
                   >
                     <span
                       class="ant-spin-dot ant-spin-dot-spin"
@@ -1215,7 +1216,7 @@ exports[`ReportStatistics/OrderQuantityTrend select diff time to show trend 2`] 
 <body>
   <div>
     <div
-      class="ant-card ant-card-hoverable css-121p60i css-dev-only-do-not-override-txh9fw"
+      class="ant-card ant-card-hoverable css-121p60i"
     >
       <div
         class="ant-card-body"
@@ -1247,14 +1248,14 @@ exports[`ReportStatistics/OrderQuantityTrend select diff time to show trend 2`] 
                 class="css-1y8q0oh"
               >
                 <div
-                  class="ant-picker ant-picker-range ant-picker-small ant-picker-borderless css-dev-only-do-not-override-1xo6ltj basic-range-picker-wrapper orderQuantityTrend-range css-w7y1zu ant-picker-focused"
+                  class="ant-picker ant-picker-range ant-picker-small ant-picker-borderless basic-range-picker-wrapper orderQuantityTrend-range css-w7y1zu ant-picker-focused"
                 >
                   <div
                     class="ant-picker-input"
                   >
                     <input
                       autocomplete="off"
-                      placeholder="Start date"
+                      placeholder="开始日期"
                       size="12"
                       value="2021-12-15"
                     />
@@ -1279,7 +1280,7 @@ exports[`ReportStatistics/OrderQuantityTrend select diff time to show trend 2`] 
                   >
                     <input
                       autocomplete="off"
-                      placeholder="End date"
+                      placeholder="结束日期"
                       size="12"
                       value="2022-01-01"
                     />
@@ -1292,7 +1293,7 @@ exports[`ReportStatistics/OrderQuantityTrend select diff time to show trend 2`] 
                     class="ant-picker-suffix"
                   />
                   <div
-                    class="ant-picker-dropdown css-dev-only-do-not-override-1xo6ltj ant-picker-dropdown-range ant-picker-dropdown-placement-bottomLeft"
+                    class="ant-picker-dropdown ant-picker-dropdown-range ant-picker-dropdown-placement-bottomLeft"
                     style="--arrow-x: 0px; --arrow-y: 0px; left: -1000vw; top: -1000vh; box-sizing: border-box;"
                   >
                     <div
@@ -1358,18 +1359,18 @@ exports[`ReportStatistics/OrderQuantityTrend select diff time to show trend 2`] 
                                       class="ant-picker-header-view"
                                     >
                                       <button
+                                        class="ant-picker-year-btn"
+                                        tabindex="-1"
+                                        type="button"
+                                      >
+                                        2021年
+                                      </button>
+                                      <button
                                         class="ant-picker-month-btn"
                                         tabindex="-1"
                                         type="button"
                                       >
                                         Dec
-                                      </button>
-                                      <button
-                                        class="ant-picker-year-btn"
-                                        tabindex="-1"
-                                        type="button"
-                                      >
-                                        2021
                                       </button>
                                     </div>
                                     <button
@@ -1919,18 +1920,18 @@ exports[`ReportStatistics/OrderQuantityTrend select diff time to show trend 2`] 
                                       class="ant-picker-header-view"
                                     >
                                       <button
+                                        class="ant-picker-year-btn"
+                                        tabindex="-1"
+                                        type="button"
+                                      >
+                                        2022年
+                                      </button>
+                                      <button
                                         class="ant-picker-month-btn"
                                         tabindex="-1"
                                         type="button"
                                       >
                                         Jan
-                                      </button>
-                                      <button
-                                        class="ant-picker-year-btn"
-                                        tabindex="-1"
-                                        type="button"
-                                      >
-                                        2022
                                       </button>
                                     </div>
                                     <button
@@ -2453,7 +2454,7 @@ exports[`ReportStatistics/OrderQuantityTrend select diff time to show trend 2`] 
               class="icon-center-wrapper MuiBox-root css-0"
             >
               <div
-                class="css-dev-only-do-not-override-txh9fw ant-empty is-icon-loading css-19kysfv"
+                class="ant-empty is-icon-loading css-19kysfv"
               >
                 <div
                   class="ant-empty-image"
@@ -2461,7 +2462,7 @@ exports[`ReportStatistics/OrderQuantityTrend select diff time to show trend 2`] 
                   <div
                     aria-busy="true"
                     aria-live="polite"
-                    class="ant-spin ant-spin-spinning css-dev-only-do-not-override-txh9fw"
+                    class="ant-spin ant-spin-spinning"
                   >
                     <span
                       class="ant-spin-dot ant-spin-dot-spin"

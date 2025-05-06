@@ -4,16 +4,16 @@ exports[`base/System/PushNotification/SMTPSetting/ConfigField render pwd must be
 <body>
   <div>
     <form
-      class="ant-form ant-form-horizontal css-dev-only-do-not-override-txh9fw"
+      class="ant-form ant-form-horizontal"
     >
       <div
-        class="ant-form-item has-label-tip css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+        class="ant-form-item has-label-tip css-1jlm9cy"
       >
         <div
-          class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+          class="ant-row ant-form-item-row"
         >
           <div
-            class="ant-col ant-form-item-label css-dev-only-do-not-override-txh9fw"
+            class="ant-col ant-form-item-label"
           >
             <label
               class=""
@@ -35,7 +35,7 @@ exports[`base/System/PushNotification/SMTPSetting/ConfigField render pwd must be
             </label>
           </div>
           <div
-            class="ant-col ant-form-item-control css-dev-only-do-not-override-txh9fw"
+            class="ant-col ant-form-item-control"
           >
             <div
               class="ant-form-item-control-input"
@@ -45,7 +45,7 @@ exports[`base/System/PushNotification/SMTPSetting/ConfigField render pwd must be
               >
                 <button
                   aria-checked="false"
-                  class="ant-switch basic-switch-wrapper css-g6dhbn css-dev-only-do-not-override-txh9fw"
+                  class="ant-switch basic-switch-wrapper css-g6dhbn"
                   id="isSkipVerify"
                   role="switch"
                   type="button"
@@ -70,13 +70,13 @@ exports[`base/System/PushNotification/SMTPSetting/ConfigField render pwd must be
         </div>
       </div>
       <div
-        class="ant-form-item has-required-style css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+        class="ant-form-item has-required-style css-1jlm9cy"
       >
         <div
-          class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+          class="ant-row ant-form-item-row"
         >
           <div
-            class="ant-col ant-form-item-label css-dev-only-do-not-override-txh9fw"
+            class="ant-col ant-form-item-label"
           >
             <label
               class="ant-form-item-required"
@@ -87,7 +87,7 @@ exports[`base/System/PushNotification/SMTPSetting/ConfigField render pwd must be
             </label>
           </div>
           <div
-            class="ant-col ant-form-item-control css-dev-only-do-not-override-txh9fw"
+            class="ant-col ant-form-item-control"
           >
             <div
               class="ant-form-item-control-input"
@@ -97,7 +97,7 @@ exports[`base/System/PushNotification/SMTPSetting/ConfigField render pwd must be
               >
                 <input
                   aria-required="true"
-                  class="ant-input css-dev-only-do-not-override-ywkr0o basic-input-wrapper css-1pd1cd5"
+                  class="ant-input basic-input-wrapper css-1pd1cd5"
                   id="host"
                   placeholder="请输入SMTP地址"
                   type="text"
@@ -109,13 +109,13 @@ exports[`base/System/PushNotification/SMTPSetting/ConfigField render pwd must be
         </div>
       </div>
       <div
-        class="ant-form-item has-required-style css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+        class="ant-form-item has-required-style css-1jlm9cy"
       >
         <div
-          class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+          class="ant-row ant-form-item-row"
         >
           <div
-            class="ant-col ant-form-item-label css-dev-only-do-not-override-txh9fw"
+            class="ant-col ant-form-item-label"
           >
             <label
               class="ant-form-item-required"
@@ -126,7 +126,7 @@ exports[`base/System/PushNotification/SMTPSetting/ConfigField render pwd must be
             </label>
           </div>
           <div
-            class="ant-col ant-form-item-control css-dev-only-do-not-override-txh9fw"
+            class="ant-col ant-form-item-control"
           >
             <div
               class="ant-form-item-control-input"
@@ -136,7 +136,7 @@ exports[`base/System/PushNotification/SMTPSetting/ConfigField render pwd must be
               >
                 <input
                   aria-required="true"
-                  class="ant-input css-dev-only-do-not-override-ywkr0o basic-input-wrapper css-1pd1cd5"
+                  class="ant-input basic-input-wrapper css-1pd1cd5"
                   id="port"
                   placeholder="请输入SMTP端口"
                   type="text"
@@ -148,13 +148,13 @@ exports[`base/System/PushNotification/SMTPSetting/ConfigField render pwd must be
         </div>
       </div>
       <div
-        class="ant-form-item has-required-style css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+        class="ant-form-item has-required-style css-1jlm9cy"
       >
         <div
-          class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+          class="ant-row ant-form-item-row"
         >
           <div
-            class="ant-col ant-form-item-label css-dev-only-do-not-override-txh9fw"
+            class="ant-col ant-form-item-label"
           >
             <label
               class="ant-form-item-required"
@@ -165,7 +165,7 @@ exports[`base/System/PushNotification/SMTPSetting/ConfigField render pwd must be
             </label>
           </div>
           <div
-            class="ant-col ant-form-item-control css-dev-only-do-not-override-txh9fw"
+            class="ant-col ant-form-item-control"
           >
             <div
               class="ant-form-item-control-input"
@@ -175,7 +175,7 @@ exports[`base/System/PushNotification/SMTPSetting/ConfigField render pwd must be
               >
                 <input
                   aria-required="true"
-                  class="ant-input css-dev-only-do-not-override-ywkr0o basic-input-wrapper css-1pd1cd5"
+                  class="ant-input basic-input-wrapper css-1pd1cd5"
                   id="username"
                   placeholder="请输入SMTP用户名"
                   type="text"
@@ -187,13 +187,13 @@ exports[`base/System/PushNotification/SMTPSetting/ConfigField render pwd must be
         </div>
       </div>
       <div
-        class="ant-form-item has-required-style css-1jlm9cy css-dev-only-do-not-override-txh9fw ant-form-item-has-success"
+        class="ant-form-item has-required-style css-1jlm9cy ant-form-item-has-success"
       >
         <div
-          class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+          class="ant-row ant-form-item-row"
         >
           <div
-            class="ant-col ant-form-item-label css-dev-only-do-not-override-txh9fw"
+            class="ant-col ant-form-item-label"
           >
             <label
               class="ant-form-item-required"
@@ -204,7 +204,7 @@ exports[`base/System/PushNotification/SMTPSetting/ConfigField render pwd must be
             </label>
           </div>
           <div
-            class="ant-col ant-form-item-control css-dev-only-do-not-override-txh9fw"
+            class="ant-col ant-form-item-control"
           >
             <div
               class="ant-form-item-control-input"
@@ -213,14 +213,15 @@ exports[`base/System/PushNotification/SMTPSetting/ConfigField render pwd must be
                 class="ant-form-item-control-input-content"
               >
                 <span
-                  class="ant-input-affix-wrapper ant-input-password basic-input-wrapper css-1pd1cd5 css-dev-only-do-not-override-txh9fw"
+                  class="ant-input-affix-wrapper ant-input-password basic-input-wrapper css-1pd1cd5 ant-input-affix-wrapper-status-success"
                 >
                   <input
                     aria-required="true"
-                    class="ant-input css-dev-only-do-not-override-txh9fw"
+                    class="ant-input"
                     id="password"
                     placeholder="请输入SMTP密码"
                     type="password"
+                    value="1"
                   />
                   <span
                     class="ant-input-suffix"
@@ -256,13 +257,13 @@ exports[`base/System/PushNotification/SMTPSetting/ConfigField render pwd must be
         </div>
       </div>
       <div
-        class="ant-form-item has-required-style css-1jlm9cy css-dev-only-do-not-override-txh9fw ant-form-item-has-error"
+        class="ant-form-item has-required-style css-1jlm9cy ant-form-item-has-error"
       >
         <div
-          class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+          class="ant-row ant-form-item-row"
         >
           <div
-            class="ant-col ant-form-item-label css-dev-only-do-not-override-txh9fw"
+            class="ant-col ant-form-item-label"
           >
             <label
               class="ant-form-item-required"
@@ -273,7 +274,7 @@ exports[`base/System/PushNotification/SMTPSetting/ConfigField render pwd must be
             </label>
           </div>
           <div
-            class="ant-col ant-form-item-control css-dev-only-do-not-override-txh9fw"
+            class="ant-col ant-form-item-control"
           >
             <div
               class="ant-form-item-control-input"
@@ -282,13 +283,13 @@ exports[`base/System/PushNotification/SMTPSetting/ConfigField render pwd must be
                 class="ant-form-item-control-input-content"
               >
                 <span
-                  class="ant-input-affix-wrapper ant-input-password basic-input-wrapper css-1pd1cd5 css-dev-only-do-not-override-txh9fw"
+                  class="ant-input-affix-wrapper ant-input-password basic-input-wrapper css-1pd1cd5 ant-input-affix-wrapper-status-error"
                 >
                   <input
                     aria-describedby="passwordConfirm_help"
                     aria-invalid="true"
                     aria-required="true"
-                    class="ant-input css-dev-only-do-not-override-txh9fw"
+                    class="ant-input"
                     id="passwordConfirm"
                     placeholder="请输入确认SMTP密码"
                     type="password"
@@ -347,16 +348,16 @@ exports[`base/System/PushNotification/SMTPSetting/ConfigField render pwd must be
 <body>
   <div>
     <form
-      class="ant-form ant-form-horizontal css-dev-only-do-not-override-txh9fw"
+      class="ant-form ant-form-horizontal"
     >
       <div
-        class="ant-form-item has-label-tip css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+        class="ant-form-item has-label-tip css-1jlm9cy"
       >
         <div
-          class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+          class="ant-row ant-form-item-row"
         >
           <div
-            class="ant-col ant-form-item-label css-dev-only-do-not-override-txh9fw"
+            class="ant-col ant-form-item-label"
           >
             <label
               class=""
@@ -378,7 +379,7 @@ exports[`base/System/PushNotification/SMTPSetting/ConfigField render pwd must be
             </label>
           </div>
           <div
-            class="ant-col ant-form-item-control css-dev-only-do-not-override-txh9fw"
+            class="ant-col ant-form-item-control"
           >
             <div
               class="ant-form-item-control-input"
@@ -388,7 +389,7 @@ exports[`base/System/PushNotification/SMTPSetting/ConfigField render pwd must be
               >
                 <button
                   aria-checked="false"
-                  class="ant-switch basic-switch-wrapper css-g6dhbn css-dev-only-do-not-override-txh9fw"
+                  class="ant-switch basic-switch-wrapper css-g6dhbn"
                   id="isSkipVerify"
                   role="switch"
                   type="button"
@@ -413,13 +414,13 @@ exports[`base/System/PushNotification/SMTPSetting/ConfigField render pwd must be
         </div>
       </div>
       <div
-        class="ant-form-item has-required-style css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+        class="ant-form-item has-required-style css-1jlm9cy"
       >
         <div
-          class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+          class="ant-row ant-form-item-row"
         >
           <div
-            class="ant-col ant-form-item-label css-dev-only-do-not-override-txh9fw"
+            class="ant-col ant-form-item-label"
           >
             <label
               class="ant-form-item-required"
@@ -430,7 +431,7 @@ exports[`base/System/PushNotification/SMTPSetting/ConfigField render pwd must be
             </label>
           </div>
           <div
-            class="ant-col ant-form-item-control css-dev-only-do-not-override-txh9fw"
+            class="ant-col ant-form-item-control"
           >
             <div
               class="ant-form-item-control-input"
@@ -440,7 +441,7 @@ exports[`base/System/PushNotification/SMTPSetting/ConfigField render pwd must be
               >
                 <input
                   aria-required="true"
-                  class="ant-input css-dev-only-do-not-override-ywkr0o basic-input-wrapper css-1pd1cd5"
+                  class="ant-input basic-input-wrapper css-1pd1cd5"
                   id="host"
                   placeholder="请输入SMTP地址"
                   type="text"
@@ -452,13 +453,13 @@ exports[`base/System/PushNotification/SMTPSetting/ConfigField render pwd must be
         </div>
       </div>
       <div
-        class="ant-form-item has-required-style css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+        class="ant-form-item has-required-style css-1jlm9cy"
       >
         <div
-          class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+          class="ant-row ant-form-item-row"
         >
           <div
-            class="ant-col ant-form-item-label css-dev-only-do-not-override-txh9fw"
+            class="ant-col ant-form-item-label"
           >
             <label
               class="ant-form-item-required"
@@ -469,7 +470,7 @@ exports[`base/System/PushNotification/SMTPSetting/ConfigField render pwd must be
             </label>
           </div>
           <div
-            class="ant-col ant-form-item-control css-dev-only-do-not-override-txh9fw"
+            class="ant-col ant-form-item-control"
           >
             <div
               class="ant-form-item-control-input"
@@ -479,7 +480,7 @@ exports[`base/System/PushNotification/SMTPSetting/ConfigField render pwd must be
               >
                 <input
                   aria-required="true"
-                  class="ant-input css-dev-only-do-not-override-ywkr0o basic-input-wrapper css-1pd1cd5"
+                  class="ant-input basic-input-wrapper css-1pd1cd5"
                   id="port"
                   placeholder="请输入SMTP端口"
                   type="text"
@@ -491,13 +492,13 @@ exports[`base/System/PushNotification/SMTPSetting/ConfigField render pwd must be
         </div>
       </div>
       <div
-        class="ant-form-item has-required-style css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+        class="ant-form-item has-required-style css-1jlm9cy"
       >
         <div
-          class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+          class="ant-row ant-form-item-row"
         >
           <div
-            class="ant-col ant-form-item-label css-dev-only-do-not-override-txh9fw"
+            class="ant-col ant-form-item-label"
           >
             <label
               class="ant-form-item-required"
@@ -508,7 +509,7 @@ exports[`base/System/PushNotification/SMTPSetting/ConfigField render pwd must be
             </label>
           </div>
           <div
-            class="ant-col ant-form-item-control css-dev-only-do-not-override-txh9fw"
+            class="ant-col ant-form-item-control"
           >
             <div
               class="ant-form-item-control-input"
@@ -518,7 +519,7 @@ exports[`base/System/PushNotification/SMTPSetting/ConfigField render pwd must be
               >
                 <input
                   aria-required="true"
-                  class="ant-input css-dev-only-do-not-override-ywkr0o basic-input-wrapper css-1pd1cd5"
+                  class="ant-input basic-input-wrapper css-1pd1cd5"
                   id="username"
                   placeholder="请输入SMTP用户名"
                   type="text"
@@ -530,13 +531,13 @@ exports[`base/System/PushNotification/SMTPSetting/ConfigField render pwd must be
         </div>
       </div>
       <div
-        class="ant-form-item has-required-style css-1jlm9cy css-dev-only-do-not-override-txh9fw ant-form-item-has-success"
+        class="ant-form-item has-required-style css-1jlm9cy ant-form-item-has-success"
       >
         <div
-          class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+          class="ant-row ant-form-item-row"
         >
           <div
-            class="ant-col ant-form-item-label css-dev-only-do-not-override-txh9fw"
+            class="ant-col ant-form-item-label"
           >
             <label
               class="ant-form-item-required"
@@ -547,7 +548,7 @@ exports[`base/System/PushNotification/SMTPSetting/ConfigField render pwd must be
             </label>
           </div>
           <div
-            class="ant-col ant-form-item-control css-dev-only-do-not-override-txh9fw"
+            class="ant-col ant-form-item-control"
           >
             <div
               class="ant-form-item-control-input"
@@ -556,14 +557,15 @@ exports[`base/System/PushNotification/SMTPSetting/ConfigField render pwd must be
                 class="ant-form-item-control-input-content"
               >
                 <span
-                  class="ant-input-affix-wrapper ant-input-password basic-input-wrapper css-1pd1cd5 css-dev-only-do-not-override-txh9fw"
+                  class="ant-input-affix-wrapper ant-input-password basic-input-wrapper css-1pd1cd5 ant-input-affix-wrapper-status-success"
                 >
                   <input
                     aria-required="true"
-                    class="ant-input css-dev-only-do-not-override-txh9fw"
+                    class="ant-input"
                     id="password"
                     placeholder="请输入SMTP密码"
                     type="password"
+                    value="1"
                   />
                   <span
                     class="ant-input-suffix"
@@ -599,13 +601,13 @@ exports[`base/System/PushNotification/SMTPSetting/ConfigField render pwd must be
         </div>
       </div>
       <div
-        class="ant-form-item has-required-style css-1jlm9cy css-dev-only-do-not-override-txh9fw ant-form-item-has-success"
+        class="ant-form-item has-required-style css-1jlm9cy ant-form-item-has-success"
       >
         <div
-          class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+          class="ant-row ant-form-item-row"
         >
           <div
-            class="ant-col ant-form-item-label css-dev-only-do-not-override-txh9fw"
+            class="ant-col ant-form-item-label"
           >
             <label
               class="ant-form-item-required"
@@ -616,7 +618,7 @@ exports[`base/System/PushNotification/SMTPSetting/ConfigField render pwd must be
             </label>
           </div>
           <div
-            class="ant-col ant-form-item-control css-dev-only-do-not-override-txh9fw"
+            class="ant-col ant-form-item-control"
           >
             <div
               class="ant-form-item-control-input"
@@ -625,14 +627,15 @@ exports[`base/System/PushNotification/SMTPSetting/ConfigField render pwd must be
                 class="ant-form-item-control-input-content"
               >
                 <span
-                  class="ant-input-affix-wrapper ant-input-password basic-input-wrapper css-1pd1cd5 css-dev-only-do-not-override-txh9fw"
+                  class="ant-input-affix-wrapper ant-input-password basic-input-wrapper css-1pd1cd5 ant-input-affix-wrapper-status-success"
                 >
                   <input
                     aria-required="true"
-                    class="ant-input css-dev-only-do-not-override-txh9fw"
+                    class="ant-input"
                     id="passwordConfirm"
                     placeholder="请输入确认SMTP密码"
                     type="password"
+                    value="1"
                   />
                   <span
                     class="ant-input-suffix"
@@ -687,16 +690,16 @@ exports[`base/System/PushNotification/SMTPSetting/ConfigField render snap 1`] = 
 <body>
   <div>
     <form
-      class="ant-form ant-form-horizontal css-dev-only-do-not-override-txh9fw"
+      class="ant-form ant-form-horizontal"
     >
       <div
-        class="ant-form-item has-label-tip css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+        class="ant-form-item has-label-tip css-1jlm9cy"
       >
         <div
-          class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+          class="ant-row ant-form-item-row"
         >
           <div
-            class="ant-col ant-form-item-label css-dev-only-do-not-override-txh9fw"
+            class="ant-col ant-form-item-label"
           >
             <label
               class=""
@@ -718,7 +721,7 @@ exports[`base/System/PushNotification/SMTPSetting/ConfigField render snap 1`] = 
             </label>
           </div>
           <div
-            class="ant-col ant-form-item-control css-dev-only-do-not-override-txh9fw"
+            class="ant-col ant-form-item-control"
           >
             <div
               class="ant-form-item-control-input"
@@ -728,7 +731,7 @@ exports[`base/System/PushNotification/SMTPSetting/ConfigField render snap 1`] = 
               >
                 <button
                   aria-checked="false"
-                  class="ant-switch basic-switch-wrapper css-g6dhbn css-dev-only-do-not-override-txh9fw"
+                  class="ant-switch basic-switch-wrapper css-g6dhbn"
                   id="isSkipVerify"
                   role="switch"
                   type="button"
@@ -753,13 +756,13 @@ exports[`base/System/PushNotification/SMTPSetting/ConfigField render snap 1`] = 
         </div>
       </div>
       <div
-        class="ant-form-item has-required-style css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+        class="ant-form-item has-required-style css-1jlm9cy"
       >
         <div
-          class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+          class="ant-row ant-form-item-row"
         >
           <div
-            class="ant-col ant-form-item-label css-dev-only-do-not-override-txh9fw"
+            class="ant-col ant-form-item-label"
           >
             <label
               class="ant-form-item-required"
@@ -770,7 +773,7 @@ exports[`base/System/PushNotification/SMTPSetting/ConfigField render snap 1`] = 
             </label>
           </div>
           <div
-            class="ant-col ant-form-item-control css-dev-only-do-not-override-txh9fw"
+            class="ant-col ant-form-item-control"
           >
             <div
               class="ant-form-item-control-input"
@@ -780,7 +783,7 @@ exports[`base/System/PushNotification/SMTPSetting/ConfigField render snap 1`] = 
               >
                 <input
                   aria-required="true"
-                  class="ant-input css-dev-only-do-not-override-ywkr0o basic-input-wrapper css-1pd1cd5"
+                  class="ant-input basic-input-wrapper css-1pd1cd5"
                   id="host"
                   placeholder="请输入SMTP地址"
                   type="text"
@@ -792,13 +795,13 @@ exports[`base/System/PushNotification/SMTPSetting/ConfigField render snap 1`] = 
         </div>
       </div>
       <div
-        class="ant-form-item has-required-style css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+        class="ant-form-item has-required-style css-1jlm9cy"
       >
         <div
-          class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+          class="ant-row ant-form-item-row"
         >
           <div
-            class="ant-col ant-form-item-label css-dev-only-do-not-override-txh9fw"
+            class="ant-col ant-form-item-label"
           >
             <label
               class="ant-form-item-required"
@@ -809,7 +812,7 @@ exports[`base/System/PushNotification/SMTPSetting/ConfigField render snap 1`] = 
             </label>
           </div>
           <div
-            class="ant-col ant-form-item-control css-dev-only-do-not-override-txh9fw"
+            class="ant-col ant-form-item-control"
           >
             <div
               class="ant-form-item-control-input"
@@ -819,7 +822,7 @@ exports[`base/System/PushNotification/SMTPSetting/ConfigField render snap 1`] = 
               >
                 <input
                   aria-required="true"
-                  class="ant-input css-dev-only-do-not-override-ywkr0o basic-input-wrapper css-1pd1cd5"
+                  class="ant-input basic-input-wrapper css-1pd1cd5"
                   id="port"
                   placeholder="请输入SMTP端口"
                   type="text"
@@ -831,13 +834,13 @@ exports[`base/System/PushNotification/SMTPSetting/ConfigField render snap 1`] = 
         </div>
       </div>
       <div
-        class="ant-form-item has-required-style css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+        class="ant-form-item has-required-style css-1jlm9cy"
       >
         <div
-          class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+          class="ant-row ant-form-item-row"
         >
           <div
-            class="ant-col ant-form-item-label css-dev-only-do-not-override-txh9fw"
+            class="ant-col ant-form-item-label"
           >
             <label
               class="ant-form-item-required"
@@ -848,7 +851,7 @@ exports[`base/System/PushNotification/SMTPSetting/ConfigField render snap 1`] = 
             </label>
           </div>
           <div
-            class="ant-col ant-form-item-control css-dev-only-do-not-override-txh9fw"
+            class="ant-col ant-form-item-control"
           >
             <div
               class="ant-form-item-control-input"
@@ -858,7 +861,7 @@ exports[`base/System/PushNotification/SMTPSetting/ConfigField render snap 1`] = 
               >
                 <input
                   aria-required="true"
-                  class="ant-input css-dev-only-do-not-override-ywkr0o basic-input-wrapper css-1pd1cd5"
+                  class="ant-input basic-input-wrapper css-1pd1cd5"
                   id="username"
                   placeholder="请输入SMTP用户名"
                   type="text"
@@ -870,13 +873,13 @@ exports[`base/System/PushNotification/SMTPSetting/ConfigField render snap 1`] = 
         </div>
       </div>
       <div
-        class="ant-form-item has-required-style css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+        class="ant-form-item has-required-style css-1jlm9cy"
       >
         <div
-          class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+          class="ant-row ant-form-item-row"
         >
           <div
-            class="ant-col ant-form-item-label css-dev-only-do-not-override-txh9fw"
+            class="ant-col ant-form-item-label"
           >
             <label
               class="ant-form-item-required"
@@ -887,7 +890,7 @@ exports[`base/System/PushNotification/SMTPSetting/ConfigField render snap 1`] = 
             </label>
           </div>
           <div
-            class="ant-col ant-form-item-control css-dev-only-do-not-override-txh9fw"
+            class="ant-col ant-form-item-control"
           >
             <div
               class="ant-form-item-control-input"
@@ -896,11 +899,11 @@ exports[`base/System/PushNotification/SMTPSetting/ConfigField render snap 1`] = 
                 class="ant-form-item-control-input-content"
               >
                 <span
-                  class="ant-input-affix-wrapper ant-input-password basic-input-wrapper css-1pd1cd5 css-dev-only-do-not-override-txh9fw"
+                  class="ant-input-affix-wrapper ant-input-password basic-input-wrapper css-1pd1cd5"
                 >
                   <input
                     aria-required="true"
-                    class="ant-input css-dev-only-do-not-override-txh9fw"
+                    class="ant-input"
                     id="password"
                     placeholder="请输入SMTP密码"
                     type="password"
@@ -940,13 +943,13 @@ exports[`base/System/PushNotification/SMTPSetting/ConfigField render snap 1`] = 
         </div>
       </div>
       <div
-        class="ant-form-item has-required-style css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+        class="ant-form-item has-required-style css-1jlm9cy"
       >
         <div
-          class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+          class="ant-row ant-form-item-row"
         >
           <div
-            class="ant-col ant-form-item-label css-dev-only-do-not-override-txh9fw"
+            class="ant-col ant-form-item-label"
           >
             <label
               class="ant-form-item-required"
@@ -957,7 +960,7 @@ exports[`base/System/PushNotification/SMTPSetting/ConfigField render snap 1`] = 
             </label>
           </div>
           <div
-            class="ant-col ant-form-item-control css-dev-only-do-not-override-txh9fw"
+            class="ant-col ant-form-item-control"
           >
             <div
               class="ant-form-item-control-input"
@@ -966,11 +969,11 @@ exports[`base/System/PushNotification/SMTPSetting/ConfigField render snap 1`] = 
                 class="ant-form-item-control-input-content"
               >
                 <span
-                  class="ant-input-affix-wrapper ant-input-password basic-input-wrapper css-1pd1cd5 css-dev-only-do-not-override-txh9fw"
+                  class="ant-input-affix-wrapper ant-input-password basic-input-wrapper css-1pd1cd5"
                 >
                   <input
                     aria-required="true"
-                    class="ant-input css-dev-only-do-not-override-txh9fw"
+                    class="ant-input"
                     id="passwordConfirm"
                     placeholder="请输入确认SMTP密码"
                     type="password"
@@ -1018,16 +1021,16 @@ exports[`base/System/PushNotification/SMTPSetting/ConfigField render validator P
 <body>
   <div>
     <form
-      class="ant-form ant-form-horizontal css-dev-only-do-not-override-txh9fw"
+      class="ant-form ant-form-horizontal"
     >
       <div
-        class="ant-form-item has-label-tip css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+        class="ant-form-item has-label-tip css-1jlm9cy"
       >
         <div
-          class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+          class="ant-row ant-form-item-row"
         >
           <div
-            class="ant-col ant-form-item-label css-dev-only-do-not-override-txh9fw"
+            class="ant-col ant-form-item-label"
           >
             <label
               class=""
@@ -1049,7 +1052,7 @@ exports[`base/System/PushNotification/SMTPSetting/ConfigField render validator P
             </label>
           </div>
           <div
-            class="ant-col ant-form-item-control css-dev-only-do-not-override-txh9fw"
+            class="ant-col ant-form-item-control"
           >
             <div
               class="ant-form-item-control-input"
@@ -1059,7 +1062,7 @@ exports[`base/System/PushNotification/SMTPSetting/ConfigField render validator P
               >
                 <button
                   aria-checked="false"
-                  class="ant-switch basic-switch-wrapper css-g6dhbn css-dev-only-do-not-override-txh9fw"
+                  class="ant-switch basic-switch-wrapper css-g6dhbn"
                   id="isSkipVerify"
                   role="switch"
                   type="button"
@@ -1084,13 +1087,13 @@ exports[`base/System/PushNotification/SMTPSetting/ConfigField render validator P
         </div>
       </div>
       <div
-        class="ant-form-item has-required-style css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+        class="ant-form-item has-required-style css-1jlm9cy"
       >
         <div
-          class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+          class="ant-row ant-form-item-row"
         >
           <div
-            class="ant-col ant-form-item-label css-dev-only-do-not-override-txh9fw"
+            class="ant-col ant-form-item-label"
           >
             <label
               class="ant-form-item-required"
@@ -1101,7 +1104,7 @@ exports[`base/System/PushNotification/SMTPSetting/ConfigField render validator P
             </label>
           </div>
           <div
-            class="ant-col ant-form-item-control css-dev-only-do-not-override-txh9fw"
+            class="ant-col ant-form-item-control"
           >
             <div
               class="ant-form-item-control-input"
@@ -1111,7 +1114,7 @@ exports[`base/System/PushNotification/SMTPSetting/ConfigField render validator P
               >
                 <input
                   aria-required="true"
-                  class="ant-input css-dev-only-do-not-override-ywkr0o basic-input-wrapper css-1pd1cd5"
+                  class="ant-input basic-input-wrapper css-1pd1cd5"
                   id="host"
                   placeholder="请输入SMTP地址"
                   type="text"
@@ -1123,13 +1126,13 @@ exports[`base/System/PushNotification/SMTPSetting/ConfigField render validator P
         </div>
       </div>
       <div
-        class="ant-form-item has-required-style css-1jlm9cy css-dev-only-do-not-override-txh9fw ant-form-item-has-error"
+        class="ant-form-item has-required-style css-1jlm9cy ant-form-item-has-error"
       >
         <div
-          class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+          class="ant-row ant-form-item-row"
         >
           <div
-            class="ant-col ant-form-item-label css-dev-only-do-not-override-txh9fw"
+            class="ant-col ant-form-item-label"
           >
             <label
               class="ant-form-item-required"
@@ -1140,7 +1143,7 @@ exports[`base/System/PushNotification/SMTPSetting/ConfigField render validator P
             </label>
           </div>
           <div
-            class="ant-col ant-form-item-control css-dev-only-do-not-override-txh9fw"
+            class="ant-col ant-form-item-control"
           >
             <div
               class="ant-form-item-control-input"
@@ -1152,7 +1155,7 @@ exports[`base/System/PushNotification/SMTPSetting/ConfigField render validator P
                   aria-describedby="port_help"
                   aria-invalid="true"
                   aria-required="true"
-                  class="ant-input ant-input-status-error css-dev-only-do-not-override-ywkr0o basic-input-wrapper css-1pd1cd5"
+                  class="ant-input ant-input-status-error basic-input-wrapper css-1pd1cd5"
                   id="port"
                   placeholder="请输入SMTP端口"
                   type="text"
@@ -1175,13 +1178,13 @@ exports[`base/System/PushNotification/SMTPSetting/ConfigField render validator P
         />
       </div>
       <div
-        class="ant-form-item has-required-style css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+        class="ant-form-item has-required-style css-1jlm9cy"
       >
         <div
-          class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+          class="ant-row ant-form-item-row"
         >
           <div
-            class="ant-col ant-form-item-label css-dev-only-do-not-override-txh9fw"
+            class="ant-col ant-form-item-label"
           >
             <label
               class="ant-form-item-required"
@@ -1192,7 +1195,7 @@ exports[`base/System/PushNotification/SMTPSetting/ConfigField render validator P
             </label>
           </div>
           <div
-            class="ant-col ant-form-item-control css-dev-only-do-not-override-txh9fw"
+            class="ant-col ant-form-item-control"
           >
             <div
               class="ant-form-item-control-input"
@@ -1202,7 +1205,7 @@ exports[`base/System/PushNotification/SMTPSetting/ConfigField render validator P
               >
                 <input
                   aria-required="true"
-                  class="ant-input css-dev-only-do-not-override-ywkr0o basic-input-wrapper css-1pd1cd5"
+                  class="ant-input basic-input-wrapper css-1pd1cd5"
                   id="username"
                   placeholder="请输入SMTP用户名"
                   type="text"
@@ -1214,13 +1217,13 @@ exports[`base/System/PushNotification/SMTPSetting/ConfigField render validator P
         </div>
       </div>
       <div
-        class="ant-form-item has-required-style css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+        class="ant-form-item has-required-style css-1jlm9cy"
       >
         <div
-          class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+          class="ant-row ant-form-item-row"
         >
           <div
-            class="ant-col ant-form-item-label css-dev-only-do-not-override-txh9fw"
+            class="ant-col ant-form-item-label"
           >
             <label
               class="ant-form-item-required"
@@ -1231,7 +1234,7 @@ exports[`base/System/PushNotification/SMTPSetting/ConfigField render validator P
             </label>
           </div>
           <div
-            class="ant-col ant-form-item-control css-dev-only-do-not-override-txh9fw"
+            class="ant-col ant-form-item-control"
           >
             <div
               class="ant-form-item-control-input"
@@ -1240,11 +1243,11 @@ exports[`base/System/PushNotification/SMTPSetting/ConfigField render validator P
                 class="ant-form-item-control-input-content"
               >
                 <span
-                  class="ant-input-affix-wrapper ant-input-password basic-input-wrapper css-1pd1cd5 css-dev-only-do-not-override-txh9fw"
+                  class="ant-input-affix-wrapper ant-input-password basic-input-wrapper css-1pd1cd5"
                 >
                   <input
                     aria-required="true"
-                    class="ant-input css-dev-only-do-not-override-txh9fw"
+                    class="ant-input"
                     id="password"
                     placeholder="请输入SMTP密码"
                     type="password"
@@ -1283,13 +1286,13 @@ exports[`base/System/PushNotification/SMTPSetting/ConfigField render validator P
         </div>
       </div>
       <div
-        class="ant-form-item has-required-style css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+        class="ant-form-item has-required-style css-1jlm9cy"
       >
         <div
-          class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+          class="ant-row ant-form-item-row"
         >
           <div
-            class="ant-col ant-form-item-label css-dev-only-do-not-override-txh9fw"
+            class="ant-col ant-form-item-label"
           >
             <label
               class="ant-form-item-required"
@@ -1300,7 +1303,7 @@ exports[`base/System/PushNotification/SMTPSetting/ConfigField render validator P
             </label>
           </div>
           <div
-            class="ant-col ant-form-item-control css-dev-only-do-not-override-txh9fw"
+            class="ant-col ant-form-item-control"
           >
             <div
               class="ant-form-item-control-input"
@@ -1309,11 +1312,11 @@ exports[`base/System/PushNotification/SMTPSetting/ConfigField render validator P
                 class="ant-form-item-control-input-content"
               >
                 <span
-                  class="ant-input-affix-wrapper ant-input-password basic-input-wrapper css-1pd1cd5 css-dev-only-do-not-override-txh9fw"
+                  class="ant-input-affix-wrapper ant-input-password basic-input-wrapper css-1pd1cd5"
                 >
                   <input
                     aria-required="true"
-                    class="ant-input css-dev-only-do-not-override-txh9fw"
+                    class="ant-input"
                     id="passwordConfirm"
                     placeholder="请输入确认SMTP密码"
                     type="password"
@@ -1360,16 +1363,16 @@ exports[`base/System/PushNotification/SMTPSetting/ConfigField render validator P
 <body>
   <div>
     <form
-      class="ant-form ant-form-horizontal css-dev-only-do-not-override-txh9fw"
+      class="ant-form ant-form-horizontal"
     >
       <div
-        class="ant-form-item has-label-tip css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+        class="ant-form-item has-label-tip css-1jlm9cy"
       >
         <div
-          class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+          class="ant-row ant-form-item-row"
         >
           <div
-            class="ant-col ant-form-item-label css-dev-only-do-not-override-txh9fw"
+            class="ant-col ant-form-item-label"
           >
             <label
               class=""
@@ -1391,7 +1394,7 @@ exports[`base/System/PushNotification/SMTPSetting/ConfigField render validator P
             </label>
           </div>
           <div
-            class="ant-col ant-form-item-control css-dev-only-do-not-override-txh9fw"
+            class="ant-col ant-form-item-control"
           >
             <div
               class="ant-form-item-control-input"
@@ -1401,7 +1404,7 @@ exports[`base/System/PushNotification/SMTPSetting/ConfigField render validator P
               >
                 <button
                   aria-checked="false"
-                  class="ant-switch basic-switch-wrapper css-g6dhbn css-dev-only-do-not-override-txh9fw"
+                  class="ant-switch basic-switch-wrapper css-g6dhbn"
                   id="isSkipVerify"
                   role="switch"
                   type="button"
@@ -1426,13 +1429,13 @@ exports[`base/System/PushNotification/SMTPSetting/ConfigField render validator P
         </div>
       </div>
       <div
-        class="ant-form-item has-required-style css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+        class="ant-form-item has-required-style css-1jlm9cy"
       >
         <div
-          class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+          class="ant-row ant-form-item-row"
         >
           <div
-            class="ant-col ant-form-item-label css-dev-only-do-not-override-txh9fw"
+            class="ant-col ant-form-item-label"
           >
             <label
               class="ant-form-item-required"
@@ -1443,7 +1446,7 @@ exports[`base/System/PushNotification/SMTPSetting/ConfigField render validator P
             </label>
           </div>
           <div
-            class="ant-col ant-form-item-control css-dev-only-do-not-override-txh9fw"
+            class="ant-col ant-form-item-control"
           >
             <div
               class="ant-form-item-control-input"
@@ -1453,7 +1456,7 @@ exports[`base/System/PushNotification/SMTPSetting/ConfigField render validator P
               >
                 <input
                   aria-required="true"
-                  class="ant-input css-dev-only-do-not-override-ywkr0o basic-input-wrapper css-1pd1cd5"
+                  class="ant-input basic-input-wrapper css-1pd1cd5"
                   id="host"
                   placeholder="请输入SMTP地址"
                   type="text"
@@ -1465,13 +1468,13 @@ exports[`base/System/PushNotification/SMTPSetting/ConfigField render validator P
         </div>
       </div>
       <div
-        class="ant-form-item has-required-style css-1jlm9cy css-dev-only-do-not-override-txh9fw ant-form-item-has-error"
+        class="ant-form-item has-required-style css-1jlm9cy ant-form-item-has-error"
       >
         <div
-          class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+          class="ant-row ant-form-item-row"
         >
           <div
-            class="ant-col ant-form-item-label css-dev-only-do-not-override-txh9fw"
+            class="ant-col ant-form-item-label"
           >
             <label
               class="ant-form-item-required"
@@ -1482,7 +1485,7 @@ exports[`base/System/PushNotification/SMTPSetting/ConfigField render validator P
             </label>
           </div>
           <div
-            class="ant-col ant-form-item-control css-dev-only-do-not-override-txh9fw"
+            class="ant-col ant-form-item-control"
           >
             <div
               class="ant-form-item-control-input"
@@ -1494,7 +1497,7 @@ exports[`base/System/PushNotification/SMTPSetting/ConfigField render validator P
                   aria-describedby="port_help"
                   aria-invalid="true"
                   aria-required="true"
-                  class="ant-input ant-input-status-error css-dev-only-do-not-override-ywkr0o basic-input-wrapper css-1pd1cd5"
+                  class="ant-input ant-input-status-error basic-input-wrapper css-1pd1cd5"
                   id="port"
                   placeholder="请输入SMTP端口"
                   type="text"
@@ -1517,13 +1520,13 @@ exports[`base/System/PushNotification/SMTPSetting/ConfigField render validator P
         />
       </div>
       <div
-        class="ant-form-item has-required-style css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+        class="ant-form-item has-required-style css-1jlm9cy"
       >
         <div
-          class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+          class="ant-row ant-form-item-row"
         >
           <div
-            class="ant-col ant-form-item-label css-dev-only-do-not-override-txh9fw"
+            class="ant-col ant-form-item-label"
           >
             <label
               class="ant-form-item-required"
@@ -1534,7 +1537,7 @@ exports[`base/System/PushNotification/SMTPSetting/ConfigField render validator P
             </label>
           </div>
           <div
-            class="ant-col ant-form-item-control css-dev-only-do-not-override-txh9fw"
+            class="ant-col ant-form-item-control"
           >
             <div
               class="ant-form-item-control-input"
@@ -1544,7 +1547,7 @@ exports[`base/System/PushNotification/SMTPSetting/ConfigField render validator P
               >
                 <input
                   aria-required="true"
-                  class="ant-input css-dev-only-do-not-override-ywkr0o basic-input-wrapper css-1pd1cd5"
+                  class="ant-input basic-input-wrapper css-1pd1cd5"
                   id="username"
                   placeholder="请输入SMTP用户名"
                   type="text"
@@ -1556,13 +1559,13 @@ exports[`base/System/PushNotification/SMTPSetting/ConfigField render validator P
         </div>
       </div>
       <div
-        class="ant-form-item has-required-style css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+        class="ant-form-item has-required-style css-1jlm9cy"
       >
         <div
-          class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+          class="ant-row ant-form-item-row"
         >
           <div
-            class="ant-col ant-form-item-label css-dev-only-do-not-override-txh9fw"
+            class="ant-col ant-form-item-label"
           >
             <label
               class="ant-form-item-required"
@@ -1573,7 +1576,7 @@ exports[`base/System/PushNotification/SMTPSetting/ConfigField render validator P
             </label>
           </div>
           <div
-            class="ant-col ant-form-item-control css-dev-only-do-not-override-txh9fw"
+            class="ant-col ant-form-item-control"
           >
             <div
               class="ant-form-item-control-input"
@@ -1582,11 +1585,11 @@ exports[`base/System/PushNotification/SMTPSetting/ConfigField render validator P
                 class="ant-form-item-control-input-content"
               >
                 <span
-                  class="ant-input-affix-wrapper ant-input-password basic-input-wrapper css-1pd1cd5 css-dev-only-do-not-override-txh9fw"
+                  class="ant-input-affix-wrapper ant-input-password basic-input-wrapper css-1pd1cd5"
                 >
                   <input
                     aria-required="true"
-                    class="ant-input css-dev-only-do-not-override-txh9fw"
+                    class="ant-input"
                     id="password"
                     placeholder="请输入SMTP密码"
                     type="password"
@@ -1625,13 +1628,13 @@ exports[`base/System/PushNotification/SMTPSetting/ConfigField render validator P
         </div>
       </div>
       <div
-        class="ant-form-item has-required-style css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+        class="ant-form-item has-required-style css-1jlm9cy"
       >
         <div
-          class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+          class="ant-row ant-form-item-row"
         >
           <div
-            class="ant-col ant-form-item-label css-dev-only-do-not-override-txh9fw"
+            class="ant-col ant-form-item-label"
           >
             <label
               class="ant-form-item-required"
@@ -1642,7 +1645,7 @@ exports[`base/System/PushNotification/SMTPSetting/ConfigField render validator P
             </label>
           </div>
           <div
-            class="ant-col ant-form-item-control css-dev-only-do-not-override-txh9fw"
+            class="ant-col ant-form-item-control"
           >
             <div
               class="ant-form-item-control-input"
@@ -1651,11 +1654,11 @@ exports[`base/System/PushNotification/SMTPSetting/ConfigField render validator P
                 class="ant-form-item-control-input-content"
               >
                 <span
-                  class="ant-input-affix-wrapper ant-input-password basic-input-wrapper css-1pd1cd5 css-dev-only-do-not-override-txh9fw"
+                  class="ant-input-affix-wrapper ant-input-password basic-input-wrapper css-1pd1cd5"
                 >
                   <input
                     aria-required="true"
-                    class="ant-input css-dev-only-do-not-override-txh9fw"
+                    class="ant-input"
                     id="passwordConfirm"
                     placeholder="请输入确认SMTP密码"
                     type="password"
@@ -1702,16 +1705,16 @@ exports[`base/System/PushNotification/SMTPSetting/ConfigField render validator P
 <body>
   <div>
     <form
-      class="ant-form ant-form-horizontal css-dev-only-do-not-override-txh9fw"
+      class="ant-form ant-form-horizontal"
     >
       <div
-        class="ant-form-item has-label-tip css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+        class="ant-form-item has-label-tip css-1jlm9cy"
       >
         <div
-          class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+          class="ant-row ant-form-item-row"
         >
           <div
-            class="ant-col ant-form-item-label css-dev-only-do-not-override-txh9fw"
+            class="ant-col ant-form-item-label"
           >
             <label
               class=""
@@ -1733,7 +1736,7 @@ exports[`base/System/PushNotification/SMTPSetting/ConfigField render validator P
             </label>
           </div>
           <div
-            class="ant-col ant-form-item-control css-dev-only-do-not-override-txh9fw"
+            class="ant-col ant-form-item-control"
           >
             <div
               class="ant-form-item-control-input"
@@ -1743,7 +1746,7 @@ exports[`base/System/PushNotification/SMTPSetting/ConfigField render validator P
               >
                 <button
                   aria-checked="false"
-                  class="ant-switch basic-switch-wrapper css-g6dhbn css-dev-only-do-not-override-txh9fw"
+                  class="ant-switch basic-switch-wrapper css-g6dhbn"
                   id="isSkipVerify"
                   role="switch"
                   type="button"
@@ -1768,13 +1771,13 @@ exports[`base/System/PushNotification/SMTPSetting/ConfigField render validator P
         </div>
       </div>
       <div
-        class="ant-form-item has-required-style css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+        class="ant-form-item has-required-style css-1jlm9cy"
       >
         <div
-          class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+          class="ant-row ant-form-item-row"
         >
           <div
-            class="ant-col ant-form-item-label css-dev-only-do-not-override-txh9fw"
+            class="ant-col ant-form-item-label"
           >
             <label
               class="ant-form-item-required"
@@ -1785,7 +1788,7 @@ exports[`base/System/PushNotification/SMTPSetting/ConfigField render validator P
             </label>
           </div>
           <div
-            class="ant-col ant-form-item-control css-dev-only-do-not-override-txh9fw"
+            class="ant-col ant-form-item-control"
           >
             <div
               class="ant-form-item-control-input"
@@ -1795,7 +1798,7 @@ exports[`base/System/PushNotification/SMTPSetting/ConfigField render validator P
               >
                 <input
                   aria-required="true"
-                  class="ant-input css-dev-only-do-not-override-ywkr0o basic-input-wrapper css-1pd1cd5"
+                  class="ant-input basic-input-wrapper css-1pd1cd5"
                   id="host"
                   placeholder="请输入SMTP地址"
                   type="text"
@@ -1807,13 +1810,13 @@ exports[`base/System/PushNotification/SMTPSetting/ConfigField render validator P
         </div>
       </div>
       <div
-        class="ant-form-item has-required-style css-1jlm9cy css-dev-only-do-not-override-txh9fw ant-form-item-has-error"
+        class="ant-form-item has-required-style css-1jlm9cy ant-form-item-has-error"
       >
         <div
-          class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+          class="ant-row ant-form-item-row"
         >
           <div
-            class="ant-col ant-form-item-label css-dev-only-do-not-override-txh9fw"
+            class="ant-col ant-form-item-label"
           >
             <label
               class="ant-form-item-required"
@@ -1824,7 +1827,7 @@ exports[`base/System/PushNotification/SMTPSetting/ConfigField render validator P
             </label>
           </div>
           <div
-            class="ant-col ant-form-item-control css-dev-only-do-not-override-txh9fw"
+            class="ant-col ant-form-item-control"
           >
             <div
               class="ant-form-item-control-input"
@@ -1836,7 +1839,7 @@ exports[`base/System/PushNotification/SMTPSetting/ConfigField render validator P
                   aria-describedby="port_help"
                   aria-invalid="true"
                   aria-required="true"
-                  class="ant-input ant-input-status-error css-dev-only-do-not-override-ywkr0o basic-input-wrapper css-1pd1cd5"
+                  class="ant-input ant-input-status-error basic-input-wrapper css-1pd1cd5"
                   id="port"
                   placeholder="请输入SMTP端口"
                   type="text"
@@ -1859,13 +1862,13 @@ exports[`base/System/PushNotification/SMTPSetting/ConfigField render validator P
         />
       </div>
       <div
-        class="ant-form-item has-required-style css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+        class="ant-form-item has-required-style css-1jlm9cy"
       >
         <div
-          class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+          class="ant-row ant-form-item-row"
         >
           <div
-            class="ant-col ant-form-item-label css-dev-only-do-not-override-txh9fw"
+            class="ant-col ant-form-item-label"
           >
             <label
               class="ant-form-item-required"
@@ -1876,7 +1879,7 @@ exports[`base/System/PushNotification/SMTPSetting/ConfigField render validator P
             </label>
           </div>
           <div
-            class="ant-col ant-form-item-control css-dev-only-do-not-override-txh9fw"
+            class="ant-col ant-form-item-control"
           >
             <div
               class="ant-form-item-control-input"
@@ -1886,7 +1889,7 @@ exports[`base/System/PushNotification/SMTPSetting/ConfigField render validator P
               >
                 <input
                   aria-required="true"
-                  class="ant-input css-dev-only-do-not-override-ywkr0o basic-input-wrapper css-1pd1cd5"
+                  class="ant-input basic-input-wrapper css-1pd1cd5"
                   id="username"
                   placeholder="请输入SMTP用户名"
                   type="text"
@@ -1898,13 +1901,13 @@ exports[`base/System/PushNotification/SMTPSetting/ConfigField render validator P
         </div>
       </div>
       <div
-        class="ant-form-item has-required-style css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+        class="ant-form-item has-required-style css-1jlm9cy"
       >
         <div
-          class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+          class="ant-row ant-form-item-row"
         >
           <div
-            class="ant-col ant-form-item-label css-dev-only-do-not-override-txh9fw"
+            class="ant-col ant-form-item-label"
           >
             <label
               class="ant-form-item-required"
@@ -1915,7 +1918,7 @@ exports[`base/System/PushNotification/SMTPSetting/ConfigField render validator P
             </label>
           </div>
           <div
-            class="ant-col ant-form-item-control css-dev-only-do-not-override-txh9fw"
+            class="ant-col ant-form-item-control"
           >
             <div
               class="ant-form-item-control-input"
@@ -1924,11 +1927,11 @@ exports[`base/System/PushNotification/SMTPSetting/ConfigField render validator P
                 class="ant-form-item-control-input-content"
               >
                 <span
-                  class="ant-input-affix-wrapper ant-input-password basic-input-wrapper css-1pd1cd5 css-dev-only-do-not-override-txh9fw"
+                  class="ant-input-affix-wrapper ant-input-password basic-input-wrapper css-1pd1cd5"
                 >
                   <input
                     aria-required="true"
-                    class="ant-input css-dev-only-do-not-override-txh9fw"
+                    class="ant-input"
                     id="password"
                     placeholder="请输入SMTP密码"
                     type="password"
@@ -1967,13 +1970,13 @@ exports[`base/System/PushNotification/SMTPSetting/ConfigField render validator P
         </div>
       </div>
       <div
-        class="ant-form-item has-required-style css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+        class="ant-form-item has-required-style css-1jlm9cy"
       >
         <div
-          class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+          class="ant-row ant-form-item-row"
         >
           <div
-            class="ant-col ant-form-item-label css-dev-only-do-not-override-txh9fw"
+            class="ant-col ant-form-item-label"
           >
             <label
               class="ant-form-item-required"
@@ -1984,7 +1987,7 @@ exports[`base/System/PushNotification/SMTPSetting/ConfigField render validator P
             </label>
           </div>
           <div
-            class="ant-col ant-form-item-control css-dev-only-do-not-override-txh9fw"
+            class="ant-col ant-form-item-control"
           >
             <div
               class="ant-form-item-control-input"
@@ -1993,11 +1996,11 @@ exports[`base/System/PushNotification/SMTPSetting/ConfigField render validator P
                 class="ant-form-item-control-input-content"
               >
                 <span
-                  class="ant-input-affix-wrapper ant-input-password basic-input-wrapper css-1pd1cd5 css-dev-only-do-not-override-txh9fw"
+                  class="ant-input-affix-wrapper ant-input-password basic-input-wrapper css-1pd1cd5"
                 >
                   <input
                     aria-required="true"
-                    class="ant-input css-dev-only-do-not-override-txh9fw"
+                    class="ant-input"
                     id="passwordConfirm"
                     placeholder="请输入确认SMTP密码"
                     type="password"
@@ -2044,16 +2047,16 @@ exports[`base/System/PushNotification/SMTPSetting/ConfigField render validator P
 <body>
   <div>
     <form
-      class="ant-form ant-form-horizontal css-dev-only-do-not-override-txh9fw"
+      class="ant-form ant-form-horizontal"
     >
       <div
-        class="ant-form-item has-label-tip css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+        class="ant-form-item has-label-tip css-1jlm9cy"
       >
         <div
-          class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+          class="ant-row ant-form-item-row"
         >
           <div
-            class="ant-col ant-form-item-label css-dev-only-do-not-override-txh9fw"
+            class="ant-col ant-form-item-label"
           >
             <label
               class=""
@@ -2075,7 +2078,7 @@ exports[`base/System/PushNotification/SMTPSetting/ConfigField render validator P
             </label>
           </div>
           <div
-            class="ant-col ant-form-item-control css-dev-only-do-not-override-txh9fw"
+            class="ant-col ant-form-item-control"
           >
             <div
               class="ant-form-item-control-input"
@@ -2085,7 +2088,7 @@ exports[`base/System/PushNotification/SMTPSetting/ConfigField render validator P
               >
                 <button
                   aria-checked="false"
-                  class="ant-switch basic-switch-wrapper css-g6dhbn css-dev-only-do-not-override-txh9fw"
+                  class="ant-switch basic-switch-wrapper css-g6dhbn"
                   id="isSkipVerify"
                   role="switch"
                   type="button"
@@ -2110,13 +2113,13 @@ exports[`base/System/PushNotification/SMTPSetting/ConfigField render validator P
         </div>
       </div>
       <div
-        class="ant-form-item has-required-style css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+        class="ant-form-item has-required-style css-1jlm9cy"
       >
         <div
-          class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+          class="ant-row ant-form-item-row"
         >
           <div
-            class="ant-col ant-form-item-label css-dev-only-do-not-override-txh9fw"
+            class="ant-col ant-form-item-label"
           >
             <label
               class="ant-form-item-required"
@@ -2127,7 +2130,7 @@ exports[`base/System/PushNotification/SMTPSetting/ConfigField render validator P
             </label>
           </div>
           <div
-            class="ant-col ant-form-item-control css-dev-only-do-not-override-txh9fw"
+            class="ant-col ant-form-item-control"
           >
             <div
               class="ant-form-item-control-input"
@@ -2137,7 +2140,7 @@ exports[`base/System/PushNotification/SMTPSetting/ConfigField render validator P
               >
                 <input
                   aria-required="true"
-                  class="ant-input css-dev-only-do-not-override-ywkr0o basic-input-wrapper css-1pd1cd5"
+                  class="ant-input basic-input-wrapper css-1pd1cd5"
                   id="host"
                   placeholder="请输入SMTP地址"
                   type="text"
@@ -2149,13 +2152,13 @@ exports[`base/System/PushNotification/SMTPSetting/ConfigField render validator P
         </div>
       </div>
       <div
-        class="ant-form-item has-required-style css-1jlm9cy css-dev-only-do-not-override-txh9fw ant-form-item-has-success"
+        class="ant-form-item has-required-style css-1jlm9cy ant-form-item-has-success"
       >
         <div
-          class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+          class="ant-row ant-form-item-row"
         >
           <div
-            class="ant-col ant-form-item-label css-dev-only-do-not-override-txh9fw"
+            class="ant-col ant-form-item-label"
           >
             <label
               class="ant-form-item-required"
@@ -2166,7 +2169,7 @@ exports[`base/System/PushNotification/SMTPSetting/ConfigField render validator P
             </label>
           </div>
           <div
-            class="ant-col ant-form-item-control css-dev-only-do-not-override-txh9fw"
+            class="ant-col ant-form-item-control"
           >
             <div
               class="ant-form-item-control-input"
@@ -2176,7 +2179,7 @@ exports[`base/System/PushNotification/SMTPSetting/ConfigField render validator P
               >
                 <input
                   aria-required="true"
-                  class="ant-input ant-input-status-success css-dev-only-do-not-override-ywkr0o basic-input-wrapper css-1pd1cd5"
+                  class="ant-input ant-input-status-success basic-input-wrapper css-1pd1cd5"
                   id="port"
                   placeholder="请输入SMTP端口"
                   type="text"
@@ -2199,13 +2202,13 @@ exports[`base/System/PushNotification/SMTPSetting/ConfigField render validator P
         />
       </div>
       <div
-        class="ant-form-item has-required-style css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+        class="ant-form-item has-required-style css-1jlm9cy"
       >
         <div
-          class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+          class="ant-row ant-form-item-row"
         >
           <div
-            class="ant-col ant-form-item-label css-dev-only-do-not-override-txh9fw"
+            class="ant-col ant-form-item-label"
           >
             <label
               class="ant-form-item-required"
@@ -2216,7 +2219,7 @@ exports[`base/System/PushNotification/SMTPSetting/ConfigField render validator P
             </label>
           </div>
           <div
-            class="ant-col ant-form-item-control css-dev-only-do-not-override-txh9fw"
+            class="ant-col ant-form-item-control"
           >
             <div
               class="ant-form-item-control-input"
@@ -2226,7 +2229,7 @@ exports[`base/System/PushNotification/SMTPSetting/ConfigField render validator P
               >
                 <input
                   aria-required="true"
-                  class="ant-input css-dev-only-do-not-override-ywkr0o basic-input-wrapper css-1pd1cd5"
+                  class="ant-input basic-input-wrapper css-1pd1cd5"
                   id="username"
                   placeholder="请输入SMTP用户名"
                   type="text"
@@ -2238,13 +2241,13 @@ exports[`base/System/PushNotification/SMTPSetting/ConfigField render validator P
         </div>
       </div>
       <div
-        class="ant-form-item has-required-style css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+        class="ant-form-item has-required-style css-1jlm9cy"
       >
         <div
-          class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+          class="ant-row ant-form-item-row"
         >
           <div
-            class="ant-col ant-form-item-label css-dev-only-do-not-override-txh9fw"
+            class="ant-col ant-form-item-label"
           >
             <label
               class="ant-form-item-required"
@@ -2255,7 +2258,7 @@ exports[`base/System/PushNotification/SMTPSetting/ConfigField render validator P
             </label>
           </div>
           <div
-            class="ant-col ant-form-item-control css-dev-only-do-not-override-txh9fw"
+            class="ant-col ant-form-item-control"
           >
             <div
               class="ant-form-item-control-input"
@@ -2264,11 +2267,11 @@ exports[`base/System/PushNotification/SMTPSetting/ConfigField render validator P
                 class="ant-form-item-control-input-content"
               >
                 <span
-                  class="ant-input-affix-wrapper ant-input-password basic-input-wrapper css-1pd1cd5 css-dev-only-do-not-override-txh9fw"
+                  class="ant-input-affix-wrapper ant-input-password basic-input-wrapper css-1pd1cd5"
                 >
                   <input
                     aria-required="true"
-                    class="ant-input css-dev-only-do-not-override-txh9fw"
+                    class="ant-input"
                     id="password"
                     placeholder="请输入SMTP密码"
                     type="password"
@@ -2307,13 +2310,13 @@ exports[`base/System/PushNotification/SMTPSetting/ConfigField render validator P
         </div>
       </div>
       <div
-        class="ant-form-item has-required-style css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+        class="ant-form-item has-required-style css-1jlm9cy"
       >
         <div
-          class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+          class="ant-row ant-form-item-row"
         >
           <div
-            class="ant-col ant-form-item-label css-dev-only-do-not-override-txh9fw"
+            class="ant-col ant-form-item-label"
           >
             <label
               class="ant-form-item-required"
@@ -2324,7 +2327,7 @@ exports[`base/System/PushNotification/SMTPSetting/ConfigField render validator P
             </label>
           </div>
           <div
-            class="ant-col ant-form-item-control css-dev-only-do-not-override-txh9fw"
+            class="ant-col ant-form-item-control"
           >
             <div
               class="ant-form-item-control-input"
@@ -2333,11 +2336,11 @@ exports[`base/System/PushNotification/SMTPSetting/ConfigField render validator P
                 class="ant-form-item-control-input-content"
               >
                 <span
-                  class="ant-input-affix-wrapper ant-input-password basic-input-wrapper css-1pd1cd5 css-dev-only-do-not-override-txh9fw"
+                  class="ant-input-affix-wrapper ant-input-password basic-input-wrapper css-1pd1cd5"
                 >
                   <input
                     aria-required="true"
-                    class="ant-input css-dev-only-do-not-override-txh9fw"
+                    class="ant-input"
                     id="passwordConfirm"
                     placeholder="请输入确认SMTP密码"
                     type="password"

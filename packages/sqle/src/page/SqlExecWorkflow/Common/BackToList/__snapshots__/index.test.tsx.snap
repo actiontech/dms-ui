@@ -9,7 +9,7 @@ exports[`test BackToList render snapshot when isAuditing is falsy 1`] = `
         href="/sqle/project/700300/exec-workflow"
       >
         <button
-          class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default basic-button-wrapper css-geipcv"
+          class="ant-btn ant-btn-default basic-button-wrapper css-geipcv"
           type="button"
         >
           <span
@@ -39,7 +39,7 @@ exports[`test BackToList render snapshot when isAuditing is falsy 1`] = `
       href="/sqle/project/700300/exec-workflow"
     >
       <button
-        class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default basic-button-wrapper css-geipcv"
+        class="ant-btn ant-btn-default basic-button-wrapper css-geipcv"
         type="button"
       >
         <span
@@ -126,7 +126,7 @@ exports[`test BackToList render snapshot when isAuditing is truthy 1`] = `
         href="/sqle/project/700300/exec-workflow"
       >
         <button
-          class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default basic-button-wrapper css-geipcv"
+          class="ant-btn ant-btn-default basic-button-wrapper css-geipcv"
           disabled=""
           type="button"
         >
@@ -157,7 +157,7 @@ exports[`test BackToList render snapshot when isAuditing is truthy 1`] = `
       href="/sqle/project/700300/exec-workflow"
     >
       <button
-        class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default basic-button-wrapper css-geipcv"
+        class="ant-btn ant-btn-default basic-button-wrapper css-geipcv"
         disabled=""
         type="button"
       >

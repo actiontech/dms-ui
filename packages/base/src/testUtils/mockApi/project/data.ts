@@ -1,12 +1,14 @@
 import {
-  IListProject,
-  IPreviewImportProjects,
+  IListProjectV2,
+  IPreviewImportProjectsV2,
   IProjectTips,
-  IDBService
+  IImportDBServiceV2,
+  IEnvironmentTag,
+  IBusinessTag
 } from '@actiontech/shared/lib/api/base/service/common';
-import { ListProjectProjectPriorityEnum } from '@actiontech/shared/lib/api/base/service/common.enum';
+import { ListProjectV2ProjectPriorityEnum } from '@actiontech/shared/lib/api/base/service/common.enum';
 
-export const mockProjectList: IListProject[] = [
+export const mockProjectList: IListProjectV2[] = [
   {
     uid: '100121',
     name: 'test_project_1',
@@ -17,7 +19,7 @@ export const mockProjectList: IListProject[] = [
       uid: '700101',
       name: 'admin'
     },
-    project_priority: ListProjectProjectPriorityEnum.high
+    project_priority: ListProjectV2ProjectPriorityEnum.high
   },
   {
     uid: '100122',
@@ -29,15 +31,11 @@ export const mockProjectList: IListProject[] = [
       uid: '100231',
       name: 'test_user1'
     },
-    business: [
-      {
-        id: 'business1',
-        name: 'business1',
-        is_used: true
-      }
-    ],
-    is_fixed_business: true,
-    project_priority: ListProjectProjectPriorityEnum.medium
+    business_tag: {
+      uid: '1',
+      name: 'business1'
+    },
+    project_priority: ListProjectV2ProjectPriorityEnum.medium
   },
   {
     uid: '100133',
@@ -49,41 +47,36 @@ export const mockProjectList: IListProject[] = [
       uid: '100231',
       name: 'test_user1'
     },
-    business: [
-      {
-        id: 'business1',
-        name: 'business1',
-        is_used: true
-      },
-      {
-        id: 'business2',
-        name: 'business2',
-        is_used: false
-      },
-      {
-        id: 'business3',
-        name: 'business3',
-        is_used: true
-      }
-    ],
-    is_fixed_business: true
+    business_tag: {
+      uid: '2',
+      name: 'business2'
+    }
   }
 ];
 
-export const mockPreviewImportProjects: IPreviewImportProjects[] = [
+export const mockPreviewImportProjects: IPreviewImportProjectsV2[] = [
   {
     name: 'project1',
-    business: ['business1', 'business2', 'business3'],
+    business_tag: {
+      uid: '1',
+      name: 'business1'
+    },
     desc: 'desc1'
   },
   {
     name: 'project2',
-    business: ['business1'],
+    business_tag: {
+      uid: '2',
+      name: 'business2'
+    },
     desc: ''
   },
   {
     name: 'project3',
-    business: ['']
+    business_tag: {
+      uid: '3',
+      name: 'business3'
+    }
   },
   {
     name: ''
@@ -97,7 +90,7 @@ export const mockProjectTips: IProjectTips[] = [
   }
 ];
 
-export const mockBatchImportDBCheckData: IDBService[] = [
+export const mockBatchImportDBCheckData: IImportDBServiceV2[] = [
   {
     name: 'mysql_1',
     db_type: 'MySQL',
@@ -105,7 +98,7 @@ export const mockBatchImportDBCheckData: IDBService[] = [
     port: '3306',
     user: 'root',
     password: '123456',
-    business: 'test',
+    environment_tag_name: 'environment-1',
     maintenance_times: [
       {
         maintenance_start_time: {
@@ -137,7 +130,7 @@ export const mockBatchImportDBCheckData: IDBService[] = [
     port: '1521',
     user: 'system',
     password: '123456',
-    business: 'test',
+    environment_tag_name: 'environment-2',
     maintenance_times: [],
     desc: 'oracle_1',
     sqle_config: {
@@ -166,3 +159,25 @@ export const mockDbServicesConnectionData = {
   failed_num: 1,
   failed_names: ['mysql_1']
 };
+
+export const mockEnvironmentTagsData: IEnvironmentTag[] = [
+  {
+    uid: '1',
+    name: 'environment-1'
+  },
+  {
+    uid: '2',
+    name: 'environment-2'
+  }
+];
+
+export const mockBusinessTagsData: IBusinessTag[] = [
+  {
+    uid: '1',
+    name: 'business-1'
+  },
+  {
+    uid: '2',
+    name: 'business-2'
+  }
+];

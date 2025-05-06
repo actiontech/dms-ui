@@ -3,7 +3,6 @@ import { cleanup, act, fireEvent, screen } from '@testing-library/react';
 import { mockUseCurrentProject } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentProject';
 import { mockUseCurrentUser } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentUser';
 import { mockUseDbServiceDriver } from '@actiontech/shared/lib/testUtil/mockHook/mockUseDbServiceDriver';
-import { mockUseProjectBusinessTips } from '@actiontech/shared/lib/testUtil/mockHook/mockUseProjectBusinessTips';
 import { mockProjectInfo } from '@actiontech/shared/lib/testUtil/mockHook/data';
 import instanceAuditPlan from '../../../../testUtils/mockApi/instanceAuditPlan';
 import { mockAuditPlanMetaData } from '../../../../testUtils/mockApi/instanceAuditPlan/data';
@@ -21,6 +20,7 @@ import {
   getAllBySelector,
   getBySelector
 } from '@actiontech/shared/lib/testUtil/customQuery';
+import project from '../../../../testUtils/mockApi/project';
 
 describe('test sqle/SqlManagementConf/Create', () => {
   let createInstanceAuditPlanSpy: jest.SpyInstance;
@@ -30,9 +30,8 @@ describe('test sqle/SqlManagementConf/Create', () => {
   let getProjectRuleTemplateTipSpy: jest.SpyInstance;
   let getInstanceSpy: jest.SpyInstance;
   let getGlobalRuleTemplateTipSpy: jest.SpyInstance;
-
+  let listEnvironmentTagsSpy: jest.SpyInstance;
   beforeEach(() => {
-    mockUseProjectBusinessTips();
     mockUseCurrentProject();
     mockUseCurrentUser();
     mockUseDbServiceDriver();
@@ -43,6 +42,7 @@ describe('test sqle/SqlManagementConf/Create', () => {
     getGlobalRuleTemplateTipSpy = rule_template.getRuleTemplateTips();
     getInstanceTipListSpy = instance.getInstanceTipList();
     getInstanceSpy = instance.getInstance();
+    listEnvironmentTagsSpy = project.listEnvironmentTags();
     getInstanceSpy.mockClear();
     getInstanceSpy.mockImplementation(() =>
       createSpySuccessResponse({
@@ -77,6 +77,7 @@ describe('test sqle/SqlManagementConf/Create', () => {
     expect(getDriversSpy).toHaveBeenCalledTimes(1);
     expect(getProjectRuleTemplateTipSpy).toHaveBeenCalledTimes(1);
     expect(getGlobalRuleTemplateTipSpy).toHaveBeenCalledTimes(1);
+    expect(listEnvironmentTagsSpy).toHaveBeenCalledTimes(1);
   });
 
   it('render create audit plan', async () => {
@@ -90,16 +91,16 @@ describe('test sqle/SqlManagementConf/Create', () => {
       }
     );
     await act(async () => jest.advanceTimersByTime(3000));
-    fireEvent.mouseDown(getBySelector('#businessScope'));
+    fireEvent.mouseDown(getBySelector('#environmentTag'));
     await act(async () => jest.advanceTimersByTime(0));
 
-    fireEvent.click(getBySelector('div[title="business1"]'));
+    fireEvent.click(getBySelector('div[title="environment-1"]'));
 
     await act(async () => jest.advanceTimersByTime(3000));
     expect(getInstanceTipListSpy).toHaveBeenCalledTimes(1);
     expect(getInstanceTipListSpy).toHaveBeenNthCalledWith(1, {
       project_name: mockProjectInfo.projectName,
-      filter_by_business: 'business1',
+      filter_by_environment_tag: '1',
       functional_module: 'create_audit_plan'
     });
 
@@ -111,7 +112,7 @@ describe('test sqle/SqlManagementConf/Create', () => {
     expect(getInstanceTipListSpy).toHaveBeenCalledTimes(2);
     expect(getInstanceTipListSpy).toHaveBeenNthCalledWith(2, {
       project_name: mockProjectInfo.projectName,
-      filter_by_business: 'business1',
+      filter_by_environment_tag: '1',
       filter_db_type: 'mysql',
       functional_module: 'create_audit_plan'
     });
@@ -325,7 +326,7 @@ describe('test sqle/SqlManagementConf/Create', () => {
       {
         routerProps: {
           initialEntries: [
-            `/sqle/project/700300/sql-management-conf/create?instance_id=${instanceId}&business=business2`
+            `/sqle/project/700300/sql-management-conf/create?instance_id=${instanceId}&environment_tag=environment-2`
           ]
         }
       }
@@ -342,7 +343,7 @@ describe('test sqle/SqlManagementConf/Create', () => {
     });
     expect(getAuditPlanMetaSpy).toHaveBeenCalledTimes(1);
     await act(async () => jest.advanceTimersByTime(3000));
-    expect(getBySelector('#businessScope')).toBeDisabled();
+    expect(getBySelector('#environmentTag')).toBeDisabled();
     expect(getBySelector('#instanceType')).toBeDisabled();
     expect(getBySelector('#instanceId')).toBeDisabled();
     fireEvent.click(screen.getByText('自定义'));
@@ -444,6 +445,6 @@ describe('test sqle/SqlManagementConf/Create', () => {
     await act(async () => jest.advanceTimersByTime(0));
     fireEvent.click(screen.getByText('重 置'));
     await act(async () => jest.advanceTimersByTime(0));
-    expect(screen.getByText('business2')).toBeInTheDocument();
+    expect(screen.getByText('environment-2')).toBeInTheDocument();
   });
 });

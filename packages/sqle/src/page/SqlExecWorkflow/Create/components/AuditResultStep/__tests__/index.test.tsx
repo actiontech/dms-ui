@@ -19,7 +19,7 @@ import EventEmitter from '../../../../../../utils/EventEmitter';
 import EmitterKey from '../../../../../../data/EmitterKey';
 import instance from '../../../../../../testUtils/mockApi/instance';
 import { mockUseDbServiceDriver } from '@actiontech/shared/lib/testUtil/mockHook/mockUseDbServiceDriver';
-import { InstanceTipResV1SupportedBackupStrategyEnum } from '@actiontech/shared/lib/api/sqle/service/common.enum';
+import { InstanceTipResV2SupportedBackupStrategyEnum } from '@actiontech/shared/lib/api/sqle/service/common.enum';
 
 jest.mock('react-redux', () => ({
   ...jest.requireActual('react-redux'),
@@ -84,10 +84,10 @@ describe('test AuditResultStep', () => {
             port: '33061',
             enable_backup: true,
             supported_backup_strategy: [
-              InstanceTipResV1SupportedBackupStrategyEnum.manual,
-              InstanceTipResV1SupportedBackupStrategyEnum.none,
-              InstanceTipResV1SupportedBackupStrategyEnum.original_row,
-              InstanceTipResV1SupportedBackupStrategyEnum.reverse_sql
+              InstanceTipResV2SupportedBackupStrategyEnum.manual,
+              InstanceTipResV2SupportedBackupStrategyEnum.none,
+              InstanceTipResV2SupportedBackupStrategyEnum.original_row,
+              InstanceTipResV2SupportedBackupStrategyEnum.reverse_sql
             ],
             backup_max_rows: 1000
           }

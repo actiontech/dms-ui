@@ -1,4 +1,4 @@
-import { IListGlobalDBService } from '@actiontech/shared/lib/api/base/service/common';
+import { IListGlobalDBServiceV2 } from '@actiontech/shared/lib/api/base/service/common';
 import {
   ActiontechTableActionsWithPermissions,
   PERMISSIONS
@@ -9,7 +9,7 @@ export const GlobalDataSourceListActions = (
   onNavigateUpdateDataSource: (uid: string, projectID: string) => void,
   onDeleteDataSource: (uid: string, name: string, projectID: string) => void,
   onTestConnection: (uid: string, name: string, projectID: string) => void
-): ActiontechTableActionsWithPermissions<IListGlobalDBService> => {
+): ActiontechTableActionsWithPermissions<IListGlobalDBServiceV2> => {
   return {
     buttons: [
       {

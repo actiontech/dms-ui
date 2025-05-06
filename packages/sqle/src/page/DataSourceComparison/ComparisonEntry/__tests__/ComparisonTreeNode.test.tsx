@@ -18,6 +18,10 @@ import dayjs from 'dayjs';
 import MockDate from 'mockdate';
 import ComparisonTreeNode from '../component/ComparisonTreeNode';
 import { createSpySuccessResponse } from '@actiontech/shared/lib/testUtil/mockApi';
+import {
+  UtilsConsoleErrorStringsEnum,
+  ignoreConsoleErrors
+} from '@actiontech/shared/lib/testUtil/common';
 
 describe('ComparisonTreeNode', () => {
   describe('ComparisonDetailDrawer', () => {
@@ -87,6 +91,8 @@ describe('ComparisonTreeNode', () => {
       jest.useRealTimers();
       MockDate.reset();
     });
+
+    ignoreConsoleErrors([UtilsConsoleErrorStringsEnum.UNKNOWN_EVENT_HANDLER]);
 
     it('should render the drawer when open is true', async () => {
       const { baseElement } = customRender();

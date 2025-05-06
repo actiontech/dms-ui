@@ -1,3 +1,7 @@
+import {
+  UtilsConsoleErrorStringsEnum,
+  ignoreConsoleErrors
+} from '@actiontech/shared/lib/testUtil/common';
 import { superRender } from '../../../../../testUtils/customRender';
 import RewrittenSqlCommonEditor from '../../../components/Common/RewrittenSqlCommonEditor';
 
@@ -7,6 +11,8 @@ describe('RewrittenSqlCommonEditor', () => {
     originalSql: 'SELECT * FROM table;',
     rewrittenSql: 'SELECT id, name FROM table WHERE active = true;'
   };
+
+  ignoreConsoleErrors([UtilsConsoleErrorStringsEnum.UNKNOWN_EVENT_HANDLER]);
 
   it('should render DiffViewOnlyEditor when showSqlDifference is true', () => {
     expect(

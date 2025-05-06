@@ -5,7 +5,7 @@ exports[`page/SqlManagement/AssignmentBatch close modal by click button 1`] = `
   <div />
   <div>
     <div
-      class="ant-modal-root css-dev-only-do-not-override-txh9fw"
+      class="ant-modal-root"
     >
       <div
         class="ant-modal-mask"
@@ -17,7 +17,7 @@ exports[`page/SqlManagement/AssignmentBatch close modal by click button 1`] = `
         <div
           aria-labelledby="test-id"
           aria-modal="true"
-          class="ant-modal css-dev-only-do-not-override-txh9fw basic-modal-wrapper css-vvpsbb"
+          class="ant-modal basic-modal-wrapper css-vvpsbb"
           role="dialog"
           style="width: 480px;"
         >
@@ -43,16 +43,16 @@ exports[`page/SqlManagement/AssignmentBatch close modal by click button 1`] = `
               class="ant-modal-body"
             >
               <form
-                class="ant-form ant-form-horizontal css-dev-only-do-not-override-txh9fw"
+                class="ant-form ant-form-horizontal"
               >
                 <div
-                  class="ant-form-item css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+                  class="ant-form-item css-1jlm9cy"
                 >
                   <div
-                    class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                    class="ant-row ant-form-item-row"
                   >
                     <div
-                      class="ant-col ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                      class="ant-col ant-form-item-control"
                     >
                       <div
                         class="ant-form-item-control-input"
@@ -62,7 +62,7 @@ exports[`page/SqlManagement/AssignmentBatch close modal by click button 1`] = `
                         >
                           <div
                             aria-required="true"
-                            class="ant-select ant-select-in-form-item basic-select-wrapper css-iy4o4x css-dev-only-do-not-override-v9sov3 ant-select-multiple ant-select-show-arrow ant-select-show-search"
+                            class="ant-select ant-select-in-form-item basic-select-wrapper css-iy4o4x ant-select-multiple ant-select-show-arrow ant-select-show-search"
                           >
                             <div
                               class="ant-select-selector"
@@ -149,14 +149,14 @@ exports[`page/SqlManagement/AssignmentBatch close modal by click button 1`] = `
               class="ant-modal-footer"
             >
               <div
-                class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+                class="ant-space ant-space-horizontal ant-space-align-center"
               >
                 <div
                   class="ant-space-item"
                   style="margin-right: 8px;"
                 >
                   <button
-                    class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default basic-button-wrapper css-geipcv"
+                    class="ant-btn ant-btn-default basic-button-wrapper css-geipcv"
                     type="button"
                   >
                     <span>
@@ -168,7 +168,7 @@ exports[`page/SqlManagement/AssignmentBatch close modal by click button 1`] = `
                   class="ant-space-item"
                 >
                   <button
-                    class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary basic-button-wrapper css-geipcv"
+                    class="ant-btn ant-btn-primary basic-button-wrapper css-geipcv"
                     type="button"
                   >
                     <span>
@@ -202,7 +202,7 @@ exports[`page/SqlManagement/AssignmentBatch update batch assign and submit chang
   <div />
   <div>
     <div
-      class="ant-modal-root css-dev-only-do-not-override-txh9fw"
+      class="ant-modal-root"
     >
       <div
         class="ant-modal-mask"
@@ -214,7 +214,7 @@ exports[`page/SqlManagement/AssignmentBatch update batch assign and submit chang
         <div
           aria-labelledby="test-id"
           aria-modal="true"
-          class="ant-modal css-dev-only-do-not-override-txh9fw basic-modal-wrapper css-vvpsbb"
+          class="ant-modal basic-modal-wrapper css-vvpsbb"
           role="dialog"
           style="width: 480px;"
         >
@@ -240,16 +240,16 @@ exports[`page/SqlManagement/AssignmentBatch update batch assign and submit chang
               class="ant-modal-body"
             >
               <form
-                class="ant-form ant-form-horizontal css-dev-only-do-not-override-txh9fw"
+                class="ant-form ant-form-horizontal"
               >
                 <div
-                  class="ant-form-item css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+                  class="ant-form-item css-1jlm9cy"
                 >
                   <div
-                    class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                    class="ant-row ant-form-item-row"
                   >
                     <div
-                      class="ant-col ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                      class="ant-col ant-form-item-control"
                     >
                       <div
                         class="ant-form-item-control-input"
@@ -259,7 +259,7 @@ exports[`page/SqlManagement/AssignmentBatch update batch assign and submit chang
                         >
                           <div
                             aria-required="true"
-                            class="ant-select ant-select-in-form-item basic-select-wrapper css-iy4o4x css-dev-only-do-not-override-v9sov3 ant-select-multiple ant-select-show-arrow ant-select-show-search"
+                            class="ant-select ant-select-in-form-item basic-select-wrapper css-iy4o4x ant-select-multiple ant-select-show-arrow ant-select-show-search"
                           >
                             <div
                               class="ant-select-selector"
@@ -346,14 +346,14 @@ exports[`page/SqlManagement/AssignmentBatch update batch assign and submit chang
               class="ant-modal-footer"
             >
               <div
-                class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+                class="ant-space ant-space-horizontal ant-space-align-center"
               >
                 <div
                   class="ant-space-item"
                   style="margin-right: 8px;"
                 >
                   <button
-                    class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default basic-button-wrapper css-geipcv"
+                    class="ant-btn ant-btn-default basic-button-wrapper css-geipcv"
                     type="button"
                   >
                     <span>
@@ -365,7 +365,7 @@ exports[`page/SqlManagement/AssignmentBatch update batch assign and submit chang
                   class="ant-space-item"
                 >
                   <button
-                    class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary basic-button-wrapper css-geipcv"
+                    class="ant-btn ant-btn-primary basic-button-wrapper css-geipcv"
                     type="button"
                   >
                     <span>

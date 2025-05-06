@@ -7,10 +7,10 @@ exports[`page/WorkflowTemplate/StepInfo render step info and change review node 
       class="css-1j4pcp2"
     >
       <div
-        class="ant-row ant-row-no-wrap workflow-step-container workflow-card-space css-dev-only-do-not-override-txh9fw"
+        class="ant-row ant-row-no-wrap workflow-step-container workflow-card-space"
       >
         <div
-          class="ant-col icon-wrapper css-dev-only-do-not-override-txh9fw"
+          class="ant-col icon-wrapper"
         >
           <span
             class="honour-icon"
@@ -30,13 +30,13 @@ exports[`page/WorkflowTemplate/StepInfo render step info and change review node 
           </span>
         </div>
         <div
-          class="ant-col step-box css-dev-only-do-not-override-txh9fw"
+          class="ant-col step-box"
         >
           <div
-            class="ant-row ant-row-no-wrap css-dev-only-do-not-override-txh9fw"
+            class="ant-row ant-row-no-wrap"
           >
             <div
-              class="ant-card ant-card-bordered step-card-style disable-step-card css-18lc8oi css-dev-only-do-not-override-txh9fw"
+              class="ant-card ant-card-bordered step-card-style disable-step-card css-18lc8oi"
             >
               <div
                 class="ant-card-body"
@@ -70,10 +70,10 @@ exports[`page/WorkflowTemplate/StepInfo render step info and change review node 
         </div>
       </div>
       <div
-        class="ant-row ant-row-no-wrap workflow-step-container workflow-card-space css-dev-only-do-not-override-txh9fw"
+        class="ant-row ant-row-no-wrap workflow-step-container workflow-card-space"
       >
         <div
-          class="ant-col icon-wrapper css-dev-only-do-not-override-txh9fw"
+          class="ant-col icon-wrapper"
         >
           <span
             class="add-file-icon"
@@ -93,13 +93,13 @@ exports[`page/WorkflowTemplate/StepInfo render step info and change review node 
           </span>
         </div>
         <div
-          class="ant-col step-box css-dev-only-do-not-override-txh9fw"
+          class="ant-col step-box"
         >
           <div
-            class="ant-row ant-row-no-wrap css-dev-only-do-not-override-txh9fw"
+            class="ant-row ant-row-no-wrap"
           >
             <div
-              class="ant-card ant-card-bordered step-card-style disable-step-card css-18lc8oi css-dev-only-do-not-override-txh9fw"
+              class="ant-card ant-card-bordered step-card-style disable-step-card css-18lc8oi"
             >
               <div
                 class="ant-card-body"
@@ -123,13 +123,13 @@ exports[`page/WorkflowTemplate/StepInfo render step info and change review node 
         aria-describedby="DndDescribedBy-0"
         aria-disabled="false"
         aria-roledescription="sortable"
-        class="ant-row ant-row-no-wrap workflow-step-container workflow-card-space css-dev-only-do-not-override-txh9fw"
+        class="ant-row ant-row-no-wrap workflow-step-container workflow-card-space"
         role="button"
         style="cursor: move;"
         tabindex="0"
       >
         <div
-          class="ant-col icon-wrapper css-dev-only-do-not-override-txh9fw"
+          class="ant-col icon-wrapper"
         >
           <span
             class="audit-icon"
@@ -149,13 +149,13 @@ exports[`page/WorkflowTemplate/StepInfo render step info and change review node 
           </span>
         </div>
         <div
-          class="ant-col step-box css-dev-only-do-not-override-txh9fw"
+          class="ant-col step-box"
         >
           <div
-            class="ant-row ant-row-no-wrap css-dev-only-do-not-override-txh9fw"
+            class="ant-row ant-row-no-wrap"
           >
             <div
-              class="ant-card ant-card-bordered step-card-style disable-step-card css-18lc8oi css-dev-only-do-not-override-txh9fw"
+              class="ant-card ant-card-bordered step-card-style disable-step-card css-18lc8oi"
             >
               <div
                 class="ant-card-body"
@@ -214,13 +214,13 @@ exports[`page/WorkflowTemplate/StepInfo render step info and change review node 
         aria-describedby="DndDescribedBy-0"
         aria-disabled="false"
         aria-roledescription="sortable"
-        class="ant-row ant-row-no-wrap workflow-step-container workflow-card-space css-dev-only-do-not-override-txh9fw"
+        class="ant-row ant-row-no-wrap workflow-step-container workflow-card-space"
         role="button"
         style="cursor: move;"
         tabindex="0"
       >
         <div
-          class="ant-col icon-wrapper css-dev-only-do-not-override-txh9fw"
+          class="ant-col icon-wrapper"
         >
           <span
             class="audit-icon"
@@ -240,13 +240,13 @@ exports[`page/WorkflowTemplate/StepInfo render step info and change review node 
           </span>
         </div>
         <div
-          class="ant-col step-box css-dev-only-do-not-override-txh9fw"
+          class="ant-col step-box"
         >
           <div
-            class="ant-row ant-row-no-wrap css-dev-only-do-not-override-txh9fw"
+            class="ant-row ant-row-no-wrap"
           >
             <div
-              class="ant-card ant-card-bordered ant-card-hoverable step-card-style  css-18lc8oi css-dev-only-do-not-override-txh9fw"
+              class="ant-card ant-card-bordered ant-card-hoverable step-card-style css-18lc8oi"
             >
               <div
                 class="ant-card-body"
@@ -278,13 +278,13 @@ exports[`page/WorkflowTemplate/StepInfo render step info and change review node 
                     class="operator-content"
                   >
                     <div
-                      class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center work-flow-auth-avatar-wrapper basic-tooltips-wrapper css-4jbtl9"
+                      class="ant-space ant-space-horizontal ant-space-align-center work-flow-auth-avatar-wrapper basic-tooltips-wrapper css-4jbtl9"
                     >
                       <div
                         class="ant-space-item"
                       >
                         <span
-                          class="ant-avatar ant-avatar-sm ant-avatar-circle work-flow-auth-avatar css-7njbce css-dev-only-do-not-override-txh9fw"
+                          class="ant-avatar ant-avatar-sm ant-avatar-circle work-flow-auth-avatar css-7njbce"
                         >
                           <span
                             class="ant-avatar-string"
@@ -298,7 +298,7 @@ exports[`page/WorkflowTemplate/StepInfo render step info and change review node 
                   </div>
                 </div>
                 <button
-                  class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-circle ant-btn-default ant-btn-sm ant-btn-icon-only basic-button-wrapper css-1kuwm0s"
+                  class="ant-btn ant-btn-circle ant-btn-default ant-btn-sm ant-btn-icon-only basic-button-wrapper css-1kuwm0s"
                   type="button"
                 >
                   <span
@@ -313,13 +313,14 @@ exports[`page/WorkflowTemplate/StepInfo render step info and change review node 
                         aria-hidden="true"
                         data-icon="close"
                         fill="currentColor"
+                        fill-rule="evenodd"
                         focusable="false"
                         height="1em"
                         viewBox="64 64 896 896"
                         width="1em"
                       >
                         <path
-                          d="M563.8 512l262.5-312.9c4.4-5.2.7-13.1-6.1-13.1h-79.8c-4.7 0-9.2 2.1-12.3 5.7L511.6 449.8 295.1 191.7c-3-3.6-7.5-5.7-12.3-5.7H203c-6.8 0-10.5 7.9-6.1 13.1L459.4 512 196.9 824.9A7.95 7.95 0 00203 838h79.8c4.7 0 9.2-2.1 12.3-5.7l216.5-258.1 216.5 258.1c3 3.6 7.5 5.7 12.3 5.7h79.8c6.8 0 10.5-7.9 6.1-13.1L563.8 512z"
+                          d="M799.86 166.31c.02 0 .04.02.08.06l57.69 57.7c.04.03.05.05.06.08a.12.12 0 010 .06c0 .03-.02.05-.06.09L569.93 512l287.7 287.7c.04.04.05.06.06.09a.12.12 0 010 .07c0 .02-.02.04-.06.08l-57.7 57.69c-.03.04-.05.05-.07.06a.12.12 0 01-.07 0c-.03 0-.05-.02-.09-.06L512 569.93l-287.7 287.7c-.04.04-.06.05-.09.06a.12.12 0 01-.07 0c-.02 0-.04-.02-.08-.06l-57.69-57.7c-.04-.03-.05-.05-.06-.07a.12.12 0 010-.07c0-.03.02-.05.06-.09L454.07 512l-287.7-287.7c-.04-.04-.05-.06-.06-.09a.12.12 0 010-.07c0-.02.02-.04.06-.08l57.7-57.69c.03-.04.05-.05.07-.06a.12.12 0 01.07 0c.03 0 .05.02.09.06L512 454.07l287.7-287.7c.04-.04.06-.05.09-.06a.12.12 0 01.07 0z"
                         />
                       </svg>
                     </span>
@@ -331,10 +332,10 @@ exports[`page/WorkflowTemplate/StepInfo render step info and change review node 
         </div>
       </div>
       <div
-        class="ant-row add-review-node-icon workflow-step-container css-dev-only-do-not-override-txh9fw"
+        class="ant-row add-review-node-icon workflow-step-container"
       >
         <button
-          class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-dashed basic-button-wrapper css-1o7grex"
+          class="ant-btn ant-btn-dashed basic-button-wrapper css-1o7grex"
           type="button"
         >
           <span
@@ -354,14 +355,11 @@ exports[`page/WorkflowTemplate/StepInfo render step info and change review node 
                 viewBox="64 64 896 896"
                 width="1em"
               >
-                <defs>
-                  <style />
-                </defs>
                 <path
                   d="M482 152h60q8 0 8 8v704q0 8-8 8h-60q-8 0-8-8V160q0-8 8-8z"
                 />
                 <path
-                  d="M176 474h672q8 0 8 8v60q0 8-8 8H176q-8 0-8-8v-60q0-8 8-8z"
+                  d="M192 474h672q8 0 8 8v60q0 8-8 8H160q-8 0-8-8v-60q0-8 8-8z"
                 />
               </svg>
             </span>
@@ -372,10 +370,10 @@ exports[`page/WorkflowTemplate/StepInfo render step info and change review node 
         </button>
       </div>
       <div
-        class="ant-row ant-row-no-wrap workflow-step-container workflow-card-space css-dev-only-do-not-override-txh9fw"
+        class="ant-row ant-row-no-wrap workflow-step-container workflow-card-space"
       >
         <div
-          class="ant-col icon-wrapper css-dev-only-do-not-override-txh9fw"
+          class="ant-col icon-wrapper"
         >
           <span
             class="send-plane-icon"
@@ -395,13 +393,13 @@ exports[`page/WorkflowTemplate/StepInfo render step info and change review node 
           </span>
         </div>
         <div
-          class="ant-col step-box css-dev-only-do-not-override-txh9fw"
+          class="ant-col step-box"
         >
           <div
-            class="ant-row ant-row-no-wrap css-dev-only-do-not-override-txh9fw"
+            class="ant-row ant-row-no-wrap"
           >
             <div
-              class="ant-card ant-card-bordered step-card-style disable-step-card css-18lc8oi css-dev-only-do-not-override-txh9fw"
+              class="ant-card ant-card-bordered step-card-style disable-step-card css-18lc8oi"
             >
               <div
                 class="ant-card-body"
@@ -467,7 +465,7 @@ exports[`page/WorkflowTemplate/StepInfo render step info and change review node 
       aria-live="assertive"
       id="DndLiveRegion-0"
       role="status"
-      style="position: fixed; width: 1px; height: 1px; margin: -1px; border: 0px; padding: 0px; overflow: hidden; clip-path: inset(100%); white-space: nowrap;"
+      style="position: fixed; top: 0px; left: 0px; width: 1px; height: 1px; margin: -1px; border: 0px; padding: 0px; overflow: hidden; clip-path: inset(100%); white-space: nowrap;"
     />
   </div>
 </body>
