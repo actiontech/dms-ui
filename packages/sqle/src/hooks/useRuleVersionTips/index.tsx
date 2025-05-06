@@ -2,33 +2,31 @@ import { BasicSelectProps } from '@actiontech/shared';
 import { SqleApi } from '@actiontech/shared/lib/api';
 import { IGetDriverRuleVersionTipsV1 } from '@actiontech/shared/lib/api/sqle/service/common';
 import { ResponseCode } from '@actiontech/shared/lib/enum';
-import { useBoolean } from 'ahooks';
+import { useRequest } from 'ahooks';
 import { useCallback, useState } from 'react';
 
 const useRuleVersionTips = () => {
-  const [loading, { setTrue, setFalse }] = useBoolean();
-
   const [ruleVersionTips, setRuleVersionTips] = useState<
     IGetDriverRuleVersionTipsV1[]
   >([]);
 
-  const updateRuleVersionTips = useCallback(() => {
-    setTrue();
-    SqleApi.RuleTemplateService.GetDriverRuleVersionTips()
-      .then((res) => {
-        if (res.data.code === ResponseCode.SUCCESS) {
-          setRuleVersionTips(res.data?.data ?? []);
-        } else {
-          setRuleVersionTips([]);
-        }
-      })
-      .catch(() => {
+  const {
+    loading,
+    run: updateRuleVersionTips,
+    runAsync: updateRuleVersionTipsAsync
+  } = useRequest(() => SqleApi.RuleTemplateService.GetDriverRuleVersionTips(), {
+    manual: true,
+    onSuccess: (res) => {
+      if (res.data.code === ResponseCode.SUCCESS) {
+        setRuleVersionTips(res.data?.data ?? []);
+      } else {
         setRuleVersionTips([]);
-      })
-      .finally(() => {
-        setFalse();
-      });
-  }, [setFalse, setTrue]);
+      }
+    },
+    onError: () => {
+      setRuleVersionTips([]);
+    }
+  });
 
   const generateRuleVersionOptions: (
     dbType: string
@@ -50,7 +48,8 @@ const useRuleVersionTips = () => {
     loading,
     ruleVersionTips,
     updateRuleVersionTips,
-    generateRuleVersionOptions
+    generateRuleVersionOptions,
+    updateRuleVersionTipsAsync
   };
 };
 
