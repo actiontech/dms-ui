@@ -65,11 +65,11 @@ describe('test HighPriorityConditions', () => {
   });
 
   it('should match snapshot', async () => {
-    const { container, getByLabelText } = customRender();
+    const { container, getByText } = customRender();
 
     expect(container).toMatchSnapshot();
 
-    fireEvent.click(getByLabelText('标记高优先级SQL'));
+    fireEvent.click(getByText('标记高优先级SQL'));
 
     await act(async () => jest.advanceTimersByTime(0));
 
@@ -83,9 +83,9 @@ describe('test HighPriorityConditions', () => {
   });
 
   it('should disable input fields when switch is not enabled', async () => {
-    const { getByLabelText, getByTestId } = customRender();
+    const { getByText, getByTestId } = customRender();
 
-    fireEvent.click(getByLabelText('标记高优先级SQL'));
+    fireEvent.click(getByText('标记高优先级SQL'));
 
     await act(async () => jest.advanceTimersByTime(0));
 
@@ -123,9 +123,9 @@ describe('test HighPriorityConditions', () => {
   });
 
   it('should clear input fields value when disabled switch', async () => {
-    const { getByLabelText, getByTestId } = customRender();
+    const { getByText, getByTestId } = customRender();
 
-    fireEvent.click(getByLabelText('标记高优先级SQL'));
+    fireEvent.click(getByText('标记高优先级SQL'));
 
     await act(async () => jest.advanceTimersByTime(0));
 
