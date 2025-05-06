@@ -4,7 +4,7 @@ import { useCallback, useMemo } from 'react';
 import { Spin, Typography } from 'antd';
 import ConfigExtraButtons from './components/ConfigExtraButtons';
 import ConfigField from './components/ConfigField';
-import { ConfigurationService } from '@actiontech/shared/lib/api';
+import { DmsApi } from '@actiontech/shared/lib/api';
 import { IGetSmsConfigurationReplyItem } from '@actiontech/shared/lib/api/base/service/common';
 import { ResponseCode } from '@actiontech/shared/lib/enum';
 import { FormFields } from './index.type';
@@ -46,7 +46,7 @@ const SMSSetting: React.FC = () => {
     refresh: refreshSmsInfo
   } = useRequest(
     () =>
-      ConfigurationService.GetSmsConfiguration().then(
+      DmsApi.ConfigurationService.GetSmsConfiguration().then(
         (res) => res.data.data ?? {}
       ),
     {
@@ -83,7 +83,7 @@ const SMSSetting: React.FC = () => {
 
   const onSubmit = (isCodingEnabled: boolean, values?: FormFields) => {
     startSubmit();
-    ConfigurationService.UpdateSmsConfiguration({
+    DmsApi.ConfigurationService.UpdateSmsConfiguration({
       update_sms_configuration: {
         enable_sms: isCodingEnabled,
         url: values?.url,

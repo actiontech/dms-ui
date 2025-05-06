@@ -1,52 +1,18 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`test SQLRenderer.Snippet render empty content 1`] = `
-<div>
-  <div
-    class="actiontech-sql-snippet-renderer-wrapper css-dz7fl9"
-  >
-    <span
-      class="empty-sql-placeholder"
-    >
-      -
-    </span>
-  </div>
-</div>
-`;
-
-exports[`test SQLRenderer.Snippet render empty content 2`] = `
-<div>
-  <div
-    class="actiontech-sql-snippet-renderer-wrapper css-dz7fl9"
-  >
-    <span
-      class="empty-sql-placeholder"
-    >
-      empty
-    </span>
-  </div>
-</div>
-`;
-
-exports[`test SQLRenderer.Snippet render snap 1`] = `
+exports[`test SQLRenderer.Snippet render snap when basic props are set 1`] = `
 <div>
   <div
     class="actiontech-sql-snippet-renderer-wrapper css-dz7fl9"
   >
     <div
-      class="ant-typography ant-typography-ellipsis ant-typography-ellipsis-multiple-line margin-bottom-0 css-dev-only-do-not-override-txh9fw"
+      class="ant-typography ant-typography-ellipsis ant-typography-ellipsis-multiple-line margin-bottom-0"
     >
       <span>
         <span
           class="hljs-keyword"
         >
-          CREATE
-        </span>
-         
-        <span
-          class="hljs-keyword"
-        >
-          TABLE
+          CREATE TABLE
         </span>
          IF 
         <span
@@ -72,9 +38,9 @@ exports[`test SQLRenderer.Snippet render snap 1`] = `
         <span
           class="hljs-keyword"
         >
-          PRIMARY
+          PRIMARY KEY
         </span>
-         KEY,
+        ,
       title 
         <span
           class="hljs-type"
@@ -91,13 +57,7 @@ exports[`test SQLRenderer.Snippet render snap 1`] = `
         <span
           class="hljs-keyword"
         >
-          NOT
-        </span>
-         
-        <span
-          class="hljs-keyword"
-        >
-          NULL
+          NOT NULL
         </span>
          
         <span
@@ -129,13 +89,7 @@ exports[`test SQLRenderer.Snippet render snap 1`] = `
         <span
           class="hljs-keyword"
         >
-          NOT
-        </span>
-         
-        <span
-          class="hljs-keyword"
-        >
-          NULL
+          NOT NULL
         </span>
          
         <span
@@ -207,109 +161,6 @@ exports[`test SQLRenderer.Snippet render snap 1`] = `
         </span>
         
     );
-      </span>
-    </div>
-  </div>
-</div>
-`;
-
-exports[`test SQLRenderer.Snippet render snap when cuttingLength is 200 1`] = `
-<div>
-  <div
-    class="actiontech-sql-snippet-renderer-wrapper css-dz7fl9"
-  >
-    <div
-      class="ant-typography ant-typography-ellipsis ant-typography-ellipsis-multiple-line margin-bottom-0 css-dev-only-do-not-override-txh9fw"
-    >
-      <span>
-        <span
-          class="hljs-keyword"
-        >
-          CREATE
-        </span>
-         
-        <span
-          class="hljs-keyword"
-        >
-          TABLE
-        </span>
-         IF 
-        <span
-          class="hljs-keyword"
-        >
-          NOT
-        </span>
-         
-        <span
-          class="hljs-keyword"
-        >
-          EXISTS
-        </span>
-        
-    task (
-      id 
-        <span
-          class="hljs-type"
-        >
-          BIGINT
-        </span>
-         UNSIGNED AUTO_INCREMENT 
-        <span
-          class="hljs-keyword"
-        >
-          PRIMARY
-        </span>
-         KEY,
-      title 
-        <span
-          class="hljs-type"
-        >
-          VARCHAR
-        </span>
-        (
-        <span
-          class="hljs-number"
-        >
-          255
-        </span>
-        ) 
-        <span
-          class="hljs-keyword"
-        >
-          NOT
-        </span>
-         
-        <span
-          class="hljs-keyword"
-        >
-          NULL
-        </span>
-         
-        <span
-          class="hljs-keyword"
-        >
-          DEFAULT
-        </span>
-         
-        <span
-          class="hljs-string"
-        >
-          ''
-        </span>
-        ,
-      description TEXT,
-      status ENUM(
-        <span
-          class="hljs-string"
-        >
-          'pending'
-        </span>
-        , 
-        <span
-          class="hljs-string"
-        >
-          'completed
-        </span>
       </span>
     </div>
   </div>
@@ -319,7 +170,7 @@ exports[`test SQLRenderer.Snippet render snap when cuttingLength is 200 1`] = `
 exports[`test SQLRenderer.Snippet render snap when loading is not undefined 1`] = `
 <div>
   <div
-    class="ant-spin-nested-loading css-dev-only-do-not-override-txh9fw"
+    class="ant-spin-nested-loading"
   >
     <div
       class="ant-spin-container"
@@ -328,19 +179,13 @@ exports[`test SQLRenderer.Snippet render snap when loading is not undefined 1`] 
         class="actiontech-sql-snippet-renderer-wrapper css-dz7fl9"
       >
         <div
-          class="ant-typography ant-typography-ellipsis ant-typography-ellipsis-multiple-line margin-bottom-0 css-dev-only-do-not-override-txh9fw"
+          class="ant-typography ant-typography-ellipsis ant-typography-ellipsis-multiple-line margin-bottom-0"
         >
           <span>
             <span
               class="hljs-keyword"
             >
-              CREATE
-            </span>
-             
-            <span
-              class="hljs-keyword"
-            >
-              TABLE
+              CREATE TABLE
             </span>
              IF 
             <span
@@ -366,9 +211,9 @@ exports[`test SQLRenderer.Snippet render snap when loading is not undefined 1`] 
             <span
               class="hljs-keyword"
             >
-              PRIMARY
+              PRIMARY KEY
             </span>
-             KEY,
+            ,
       title 
             <span
               class="hljs-type"
@@ -385,13 +230,7 @@ exports[`test SQLRenderer.Snippet render snap when loading is not undefined 1`] 
             <span
               class="hljs-keyword"
             >
-              NOT
-            </span>
-             
-            <span
-              class="hljs-keyword"
-            >
-              NULL
+              NOT NULL
             </span>
              
             <span
@@ -423,13 +262,7 @@ exports[`test SQLRenderer.Snippet render snap when loading is not undefined 1`] 
             <span
               class="hljs-keyword"
             >
-              NOT
-            </span>
-             
-            <span
-              class="hljs-keyword"
-            >
-              NULL
+              NOT NULL
             </span>
              
             <span
@@ -509,380 +342,16 @@ exports[`test SQLRenderer.Snippet render snap when loading is not undefined 1`] 
 </div>
 `;
 
-exports[`test SQLRenderer.Snippet render snap when loading is not undefined 2`] = `
-<div>
-  <div
-    class="ant-spin-nested-loading css-dev-only-do-not-override-txh9fw"
-  >
-    <div
-      class="ant-spin-container"
-    >
-      <div
-        class="actiontech-sql-snippet-renderer-wrapper css-dz7fl9"
-      >
-        <div
-          class="ant-typography ant-typography-ellipsis ant-typography-ellipsis-multiple-line margin-bottom-0 css-dev-only-do-not-override-txh9fw"
-        >
-          <span>
-            <span
-              class="hljs-keyword"
-            >
-              CREATE
-            </span>
-             
-            <span
-              class="hljs-keyword"
-            >
-              TABLE
-            </span>
-             IF 
-            <span
-              class="hljs-keyword"
-            >
-              NOT
-            </span>
-             
-            <span
-              class="hljs-keyword"
-            >
-              EXISTS
-            </span>
-            
-    task (
-      id 
-            <span
-              class="hljs-type"
-            >
-              BIGINT
-            </span>
-             UNSIGNED AUTO_INCREMENT 
-            <span
-              class="hljs-keyword"
-            >
-              PRIMARY
-            </span>
-             KEY,
-      title 
-            <span
-              class="hljs-type"
-            >
-              VARCHAR
-            </span>
-            (
-            <span
-              class="hljs-number"
-            >
-              255
-            </span>
-            ) 
-            <span
-              class="hljs-keyword"
-            >
-              NOT
-            </span>
-             
-            <span
-              class="hljs-keyword"
-            >
-              NULL
-            </span>
-             
-            <span
-              class="hljs-keyword"
-            >
-              DEFAULT
-            </span>
-             
-            <span
-              class="hljs-string"
-            >
-              ''
-            </span>
-            ,
-      description TEXT,
-      status ENUM(
-            <span
-              class="hljs-string"
-            >
-              'pending'
-            </span>
-            , 
-            <span
-              class="hljs-string"
-            >
-              'completed'
-            </span>
-            ) 
-            <span
-              class="hljs-keyword"
-            >
-              NOT
-            </span>
-             
-            <span
-              class="hljs-keyword"
-            >
-              NULL
-            </span>
-             
-            <span
-              class="hljs-keyword"
-            >
-              DEFAULT
-            </span>
-             
-            <span
-              class="hljs-string"
-            >
-              'pending'
-            </span>
-            ,
-      created_at 
-            <span
-              class="hljs-type"
-            >
-              TIMESTAMP
-            </span>
-             
-            <span
-              class="hljs-keyword"
-            >
-              DEFAULT
-            </span>
-             
-            <span
-              class="hljs-built_in"
-            >
-              CURRENT_TIMESTAMP
-            </span>
-            ,
-      updated_at 
-            <span
-              class="hljs-type"
-            >
-              TIMESTAMP
-            </span>
-             
-            <span
-              class="hljs-keyword"
-            >
-              DEFAULT
-            </span>
-             
-            <span
-              class="hljs-built_in"
-            >
-              CURRENT_TIMESTAMP
-            </span>
-             
-            <span
-              class="hljs-keyword"
-            >
-              ON
-            </span>
-             
-            <span
-              class="hljs-keyword"
-            >
-              UPDATE
-            </span>
-             
-            <span
-              class="hljs-built_in"
-            >
-              CURRENT_TIMESTAMP
-            </span>
-            
-    );
-          </span>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-`;
-
-exports[`test SQLRenderer.Snippet render snap when tooltip is equal false 1`] = `
+exports[`test SQLRenderer.Snippet render snap when sql is empty 1`] = `
 <div>
   <div
     class="actiontech-sql-snippet-renderer-wrapper css-dz7fl9"
   >
-    <div
-      class="ant-typography ant-typography-ellipsis ant-typography-ellipsis-multiple-line margin-bottom-0 css-dev-only-do-not-override-txh9fw"
+    <span
+      class="empty-sql-placeholder"
     >
-      <span>
-        <span
-          class="hljs-keyword"
-        >
-          CREATE
-        </span>
-         
-        <span
-          class="hljs-keyword"
-        >
-          TABLE
-        </span>
-         IF 
-        <span
-          class="hljs-keyword"
-        >
-          NOT
-        </span>
-         
-        <span
-          class="hljs-keyword"
-        >
-          EXISTS
-        </span>
-        
-    task (
-      id 
-        <span
-          class="hljs-type"
-        >
-          BIGINT
-        </span>
-         UNSIGNED AUTO_INCREMENT 
-        <span
-          class="hljs-keyword"
-        >
-          PRIMARY
-        </span>
-         KEY,
-      title 
-        <span
-          class="hljs-type"
-        >
-          VARCHAR
-        </span>
-        (
-        <span
-          class="hljs-number"
-        >
-          255
-        </span>
-        ) 
-        <span
-          class="hljs-keyword"
-        >
-          NOT
-        </span>
-         
-        <span
-          class="hljs-keyword"
-        >
-          NULL
-        </span>
-         
-        <span
-          class="hljs-keyword"
-        >
-          DEFAULT
-        </span>
-         
-        <span
-          class="hljs-string"
-        >
-          ''
-        </span>
-        ,
-      description TEXT,
-      status ENUM(
-        <span
-          class="hljs-string"
-        >
-          'pending'
-        </span>
-        , 
-        <span
-          class="hljs-string"
-        >
-          'completed'
-        </span>
-        ) 
-        <span
-          class="hljs-keyword"
-        >
-          NOT
-        </span>
-         
-        <span
-          class="hljs-keyword"
-        >
-          NULL
-        </span>
-         
-        <span
-          class="hljs-keyword"
-        >
-          DEFAULT
-        </span>
-         
-        <span
-          class="hljs-string"
-        >
-          'pending'
-        </span>
-        ,
-      created_at 
-        <span
-          class="hljs-type"
-        >
-          TIMESTAMP
-        </span>
-         
-        <span
-          class="hljs-keyword"
-        >
-          DEFAULT
-        </span>
-         
-        <span
-          class="hljs-built_in"
-        >
-          CURRENT_TIMESTAMP
-        </span>
-        ,
-      updated_at 
-        <span
-          class="hljs-type"
-        >
-          TIMESTAMP
-        </span>
-         
-        <span
-          class="hljs-keyword"
-        >
-          DEFAULT
-        </span>
-         
-        <span
-          class="hljs-built_in"
-        >
-          CURRENT_TIMESTAMP
-        </span>
-         
-        <span
-          class="hljs-keyword"
-        >
-          ON
-        </span>
-         
-        <span
-          class="hljs-keyword"
-        >
-          UPDATE
-        </span>
-         
-        <span
-          class="hljs-built_in"
-        >
-          CURRENT_TIMESTAMP
-        </span>
-        
-    );
-      </span>
-    </div>
+      empty
+    </span>
   </div>
 </div>
 `;

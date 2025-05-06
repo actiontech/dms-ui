@@ -1,4 +1,4 @@
-import { renderWithTheme } from '../../../../testUtil/customRender';
+import { superRender } from '../../../../testUtil/customRender';
 import { fireEvent, act, cleanup } from '@testing-library/react';
 
 import FilterButton from '../FilterButton';
@@ -32,7 +32,7 @@ describe('lib/ActiontechTable-FilterButton', () => {
       ]),
       updateAllSelectedFilterItem: jest.fn()
     };
-    const { baseElement } = renderWithTheme(<FilterButton {...params} />);
+    const { baseElement } = superRender(<FilterButton {...params} />);
     expect(baseElement).toMatchSnapshot();
   });
 
@@ -53,7 +53,7 @@ describe('lib/ActiontechTable-FilterButton', () => {
       updateAllSelectedFilterItem: jest.fn(),
       disabled: true
     };
-    const { baseElement } = renderWithTheme(<FilterButton {...params} />);
+    const { baseElement } = superRender(<FilterButton {...params} />);
     expect(baseElement).toMatchSnapshot();
   });
 
@@ -74,7 +74,7 @@ describe('lib/ActiontechTable-FilterButton', () => {
       ]),
       updateAllSelectedFilterItem: updateAllSelectedFilterItemFn
     };
-    const { baseElement } = renderWithTheme(<FilterButton {...params} />);
+    const { baseElement } = superRender(<FilterButton {...params} />);
     expect(baseElement).toMatchSnapshot();
     const filterBtn = getBySelector(
       '.actiontech-filter-button-namespace',

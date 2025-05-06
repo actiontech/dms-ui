@@ -29,6 +29,8 @@ import {
   ISetSQLELicenseV1Return,
   ICheckSQLELicenseV1Params,
   ICheckSQLELicenseV1Return,
+  IGetSSHPublicKeyReturn,
+  IGenSSHPublicKeyReturn,
   IGetSystemVariablesV1Return,
   IUpdateSystemVariablesV1Params,
   IUpdateSystemVariablesV1Return,
@@ -213,6 +215,22 @@ class ConfigurationService extends ServiceBase {
 
   public GetSQLELicenseInfoV1(options?: AxiosRequestConfig) {
     return this.get<any>('/v1/configurations/license/info', undefined, options);
+  }
+
+  public getSSHPublicKey(options?: AxiosRequestConfig) {
+    return this.get<IGetSSHPublicKeyReturn>(
+      '/v1/configurations/ssh_key',
+      undefined,
+      options
+    );
+  }
+
+  public genSSHPublicKey(options?: AxiosRequestConfig) {
+    return this.post<IGenSSHPublicKeyReturn>(
+      '/v1/configurations/ssh_key',
+      undefined,
+      options
+    );
   }
 
   public getSystemVariablesV1(options?: AxiosRequestConfig) {

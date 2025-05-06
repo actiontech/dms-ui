@@ -3,7 +3,7 @@
 exports[`lib/FormItemSubTitle should render FormItemBigTitle 1`] = `
 <div>
   <h1
-    class="ant-typography css-1eepp70 css-dev-only-do-not-override-txh9fw"
+    class="ant-typography css-1eepp70"
   >
     这是一个表单的二级标题
   </h1>
