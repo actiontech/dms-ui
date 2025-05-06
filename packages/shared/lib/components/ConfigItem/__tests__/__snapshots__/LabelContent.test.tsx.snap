@@ -20,19 +20,3 @@ exports[`lib/ConfigItem-LabelContent render title & tips for LabelContent 1`] = 
   </div>
 </body>
 `;
-
-exports[`lib/ConfigItem-LabelContent render title for LabelContent 1`] = `
-<body>
-  <div>
-    <div
-      class="config-item-label"
-    >
-      <div
-        class="title"
-      >
-        children title
-      </div>
-    </div>
-  </div>
-</body>
-`;

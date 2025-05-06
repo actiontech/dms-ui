@@ -44,4 +44,27 @@ i18n.use(initReactI18next).init({
   }
 });
 
+const ignoreReactConsoleErrors = () => {
+  const rules = [
+    'Warning: findDOMNode is deprecated and will be removed in the next major release. Instead, add a ref directly to the element you want to reference. Learn more about using refs safely here: https://reactjs.org/link/strict-mode-find-nod'
+  ];
+
+  const error = console.error;
+
+  beforeAll(() => {
+    console.error = (...arg) => {
+      if (typeof arg[0] === 'string' && rules.some((v) => arg[0].includes(v))) {
+        return;
+      }
+      error(...arg);
+    };
+  });
+
+  afterAll(() => {
+    console.error = error;
+  });
+};
+
+ignoreReactConsoleErrors();
+
 jest.setTimeout(60 * 1000);

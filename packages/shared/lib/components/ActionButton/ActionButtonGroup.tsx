@@ -7,6 +7,9 @@ const ActionButtonGroup = <T extends RoutePathValue>({
   actions,
   ...spaceProps
 }: ActionButtonGroupProps<T>) => {
+  if (actions.length === 0) {
+    return null;
+  }
   return (
     <Space {...spaceProps}>
       {actions.map(({ key, ...action }) => {

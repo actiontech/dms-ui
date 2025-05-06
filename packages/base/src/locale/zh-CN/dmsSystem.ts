@@ -15,7 +15,24 @@ export default {
     loginConnection: '登录配置',
     globalConfiguration: '全局配置',
     license: '许可证',
-    personalize: '个性化设置'
+    personalize: '个性化设置',
+    gitSSH: 'Git SSH配置'
+  },
+
+  gitSSH: {
+    title: 'Git SSH密钥配置',
+    description:
+      '生成用于Git SSH协议的密钥对，可用于配置GitHub、GitLab等代码托管平台的SSH认证。',
+    generate: '生成SSH密钥',
+    regenerate: '重新生成SSH密钥',
+    generateSuccess: 'SSH密钥对生成成功',
+    generateError: 'SSH密钥对生成失败',
+    publicKeyTitle: '公钥',
+    instructions: '使用说明',
+    step1: '1. 复制上方生成的公钥，前往Git代码托管平台的SSH密钥设置页面',
+    step2: '2. 在平台上添加新的SSH密钥',
+    step3:
+      '3. 在标题中输入描述性名称（如"DMS Key"），在密钥输入框中粘贴公钥，完成添加'
   },
 
   title: {
@@ -88,7 +105,8 @@ export default {
     ldapUserNameRdnKey: '用户名属性名',
     ldapUserNameRdnKeyTips: 'SQLE绑定的用户名在LDAP中对应的属性名',
     ldapUserEmailRdnKey: '用户邮箱属性名',
-    ldapUserEmailRdnKeyTips: 'SQLE绑定的用户邮箱在LDAP中对应的属性名'
+    ldapUserEmailRdnKeyTips: 'SQLE绑定的用户邮箱在LDAP中对应的属性名',
+    updatePassword: '是否修改连接用户密码'
   },
 
   oauth: {
@@ -229,13 +247,15 @@ export default {
     cbOperationLogsExpiredHours: 'CB工作台操作审计过期时间',
     urlAddressPrefix: 'URL地址前缀',
     urlAddressPrefixTips: '配置能访问SQLE的url地址信息',
-    urlAddressFormatTips: '格式为 http(s)://ip:port/sqle',
 
     smsSetting: {
-      title: '短信服务',
+      title: '是否启用短信服务',
       testSuccess: '当前短信服务验证通过',
       testing: '正在测试短信服务...',
-      smsType: '短信服务类型'
+      smsType: '短信服务类型',
+      urlTips: '短信服务接口地址',
+      tokenTips: '接口访问令牌',
+      configDocs: '短信服务配置文档'
     }
   },
 

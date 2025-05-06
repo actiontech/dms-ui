@@ -7,6 +7,10 @@ import { ModalName } from '../../../../data/ModalName';
 import { sqlDEVRecordListMockData } from '../../../../testUtils/mockApi/sqlDEVRecord/data';
 import rule_template from '../../../../testUtils/mockApi/rule_template/index';
 import { mockUseCurrentUser } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentUser';
+import {
+  UtilsConsoleErrorStringsEnum,
+  ignoreConsoleErrors
+} from '@actiontech/shared/lib/testUtil/common';
 
 jest.mock('react-redux', () => {
   return {
@@ -41,6 +45,8 @@ describe('sqle/PluginAudit/AuditResultDrawer', () => {
     jest.useRealTimers();
     cleanup();
   });
+
+  ignoreConsoleErrors([UtilsConsoleErrorStringsEnum.UNKNOWN_EVENT_HANDLER]);
 
   it('should match snap shot', async () => {
     const { baseElement } = superRender(<AuditResultDrawer />);

@@ -7,16 +7,16 @@ exports[`ReportStatistics/topList/DiffOrderReject render snap loading 1`] = `
       class="report-base-table-wrapper css-dyc61v"
     >
       <div
-        class="ant-table-wrapper report-base-table no-table-data-style css-dev-only-do-not-override-1ror0i4"
+        class="ant-table-wrapper report-base-table no-table-data-style"
       >
         <div
-          class="ant-spin-nested-loading css-dev-only-do-not-override-1ror0i4"
+          class="ant-spin-nested-loading"
         >
           <div>
             <div
               aria-busy="true"
               aria-live="polite"
-              class="ant-spin ant-spin-spinning css-dev-only-do-not-override-1ror0i4"
+              class="ant-spin ant-spin-spinning"
             >
               <span
                 class="anticon ant-spin-dot"
@@ -197,7 +197,7 @@ exports[`ReportStatistics/topList/DiffOrderReject render snap loading 1`] = `
                           colspan="3"
                         >
                           <div
-                            class="css-dev-only-do-not-override-1ror0i4 ant-empty is-icon-loading css-19kysfv"
+                            class="ant-empty is-icon-loading css-19kysfv"
                           >
                             <div
                               class="ant-empty-image"
@@ -205,7 +205,7 @@ exports[`ReportStatistics/topList/DiffOrderReject render snap loading 1`] = `
                               <div
                                 aria-busy="true"
                                 aria-live="polite"
-                                class="ant-spin ant-spin-spinning css-dev-only-do-not-override-1ror0i4"
+                                class="ant-spin ant-spin-spinning"
                               >
                                 <span
                                   class="ant-spin-dot ant-spin-dot-spin"
@@ -260,10 +260,10 @@ exports[`ReportStatistics/topList/DiffOrderReject render snap when api return da
       class="report-base-table-wrapper css-dyc61v"
     >
       <div
-        class="ant-table-wrapper report-base-table has-table-cont-style css-dev-only-do-not-override-1ror0i4"
+        class="ant-table-wrapper report-base-table has-table-cont-style"
       >
         <div
-          class="ant-spin-nested-loading css-dev-only-do-not-override-1ror0i4"
+          class="ant-spin-nested-loading"
         >
           <div
             class="ant-spin-container"
@@ -510,10 +510,10 @@ exports[`ReportStatistics/topList/DiffOrderReject render snap when api return em
       class="report-base-table-wrapper css-dyc61v"
     >
       <div
-        class="ant-table-wrapper report-base-table no-table-data-style css-dev-only-do-not-override-1ror0i4"
+        class="ant-table-wrapper report-base-table no-table-data-style"
       >
         <div
-          class="ant-spin-nested-loading css-dev-only-do-not-override-1ror0i4"
+          class="ant-spin-nested-loading"
         >
           <div
             class="ant-spin-container"
@@ -575,7 +575,7 @@ exports[`ReportStatistics/topList/DiffOrderReject render snap when api return em
                           colspan="3"
                         >
                           <div
-                            class="css-dev-only-do-not-override-1ror0i4 ant-empty is-icon-tips css-19kysfv"
+                            class="ant-empty is-icon-tips css-19kysfv"
                           >
                             <div
                               class="ant-empty-image"
@@ -629,7 +629,7 @@ exports[`ReportStatistics/topList/DiffOrderReject render snap when api return em
                               class="ant-empty-footer"
                             >
                               <button
-                                class="ant-btn css-dev-only-do-not-override-160aoq ant-btn-text ant-btn-sm basic-button-wrapper css-geipcv"
+                                class="ant-btn ant-btn-text ant-btn-sm basic-button-wrapper css-geipcv"
                                 type="button"
                               >
                                 <span>
@@ -666,10 +666,10 @@ exports[`ReportStatistics/topList/DiffOrderReject render snap when api return er
       class="report-base-table-wrapper css-dyc61v"
     >
       <div
-        class="ant-table-wrapper report-base-table no-table-data-style css-dev-only-do-not-override-1ror0i4"
+        class="ant-table-wrapper report-base-table no-table-data-style"
       >
         <div
-          class="ant-spin-nested-loading css-dev-only-do-not-override-1ror0i4"
+          class="ant-spin-nested-loading"
         >
           <div
             class="ant-spin-container"
@@ -731,7 +731,7 @@ exports[`ReportStatistics/topList/DiffOrderReject render snap when api return er
                           colspan="3"
                         >
                           <div
-                            class="css-dev-only-do-not-override-1ror0i4 ant-empty is-icon-tips css-19kysfv"
+                            class="ant-empty is-icon-tips css-19kysfv"
                           >
                             <div
                               class="ant-empty-image"
@@ -796,7 +796,7 @@ exports[`ReportStatistics/topList/DiffOrderReject render snap when api return er
                               class="ant-empty-footer"
                             >
                               <button
-                                class="ant-btn css-dev-only-do-not-override-160aoq ant-btn-text ant-btn-sm basic-button-wrapper css-geipcv"
+                                class="ant-btn ant-btn-text ant-btn-sm basic-button-wrapper css-geipcv"
                                 type="button"
                               >
                                 <span>

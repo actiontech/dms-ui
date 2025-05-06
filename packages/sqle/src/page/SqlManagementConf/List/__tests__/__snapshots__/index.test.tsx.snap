@@ -21,7 +21,7 @@ exports[`test sqle/SqlManagementConf/List render close task type filter field 1`
             href="/sqle/project/700300/sql-management-conf/create"
           >
             <button
-              class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary basic-button-wrapper css-geipcv"
+              class="ant-btn ant-btn-primary basic-button-wrapper css-geipcv"
               type="button"
             >
               <span>
@@ -32,238 +32,247 @@ exports[`test sqle/SqlManagementConf/List render close task type filter field 1`
         </div>
       </div>
       <div
-        class="ant-spin-nested-loading css-dev-only-do-not-override-txh9fw"
+        class="ant-spin-nested-loading"
       >
         <div
           class="ant-spin-container"
         >
           <div
-            class="ant-spin-nested-loading css-dev-only-do-not-override-1kh50jg"
+            class="ant-space ant-space-horizontal ant-space-align-center full-width-element flex-space-between actiontech-table-toolbar-namespace css-a7k93w"
+            style="flex-wrap: wrap; margin-bottom: -8px;"
           >
             <div
-              class="ant-spin-container"
+              class="ant-space-item"
+              style="margin-right: 8px; padding-bottom: 8px;"
             >
               <div
-                class="ant-space css-dev-only-do-not-override-1kh50jg ant-space-horizontal ant-space-align-center full-width-element flex-space-between actiontech-table-toolbar-namespace css-c38ntt"
-                style="flex-wrap: wrap; margin-bottom: -8px;"
+                class="ant-space ant-space-horizontal ant-space-align-center"
               >
                 <div
                   class="ant-space-item"
-                  style="margin-right: 8px; padding-bottom: 8px;"
+                  style="margin-right: 12px;"
                 >
-                  <div
-                    class="ant-space css-dev-only-do-not-override-1kh50jg ant-space-horizontal ant-space-align-center"
+                  <span
+                    class="ant-input-affix-wrapper basic-input-wrapper actiontech-table-search-input-namespace css-1f6svkh ant-input-affix-wrapper-sm"
                   >
-                    <div
-                      class="ant-space-item"
-                      style="margin-right: 12px;"
+                    <input
+                      class="ant-input ant-input-sm"
+                      id="actiontech-table-search-input"
+                      placeholder="输入关键字搜索"
+                      type="text"
+                      value=""
+                    />
+                    <span
+                      class="ant-input-suffix"
                     >
                       <span
-                        class="ant-input-affix-wrapper basic-input-wrapper actiontech-table-search-input-namespace css-1f6svkh ant-input-affix-wrapper-sm css-dev-only-do-not-override-mlhibv"
+                        class="ant-input-clear-icon ant-input-clear-icon-hidden ant-input-clear-icon-has-suffix"
+                        role="button"
+                        tabindex="-1"
                       >
-                        <input
-                          class="ant-input ant-input-sm css-dev-only-do-not-override-mlhibv"
-                          id="actiontech-table-search-input"
-                          placeholder="输入关键字搜索"
-                          type="text"
-                          value=""
-                        />
-                        <span
-                          class="ant-input-suffix"
+                        <svg
+                          fill="currentColor"
+                          height="14"
+                          viewBox="0 0 14 14"
+                          width="14"
+                          xmlns="http://www.w3.org/2000/svg"
                         >
-                          <svg
-                            class="custom-icon custom-icon-search"
-                            height="14"
-                            viewBox="0 0 14 14"
-                            width="14"
-                            xmlns="http://www.w3.org/2000/svg"
-                          >
-                            <path
-                              d="m10.518 9.693 2.499 2.498-.826.825-2.498-2.498a5.252 5.252 0 0 1-8.527-4.101 5.25 5.25 0 0 1 5.25-5.25 5.252 5.252 0 0 1 4.102 8.526m-1.17-.433a4.082 4.082 0 0 0-2.931-6.927 4.08 4.08 0 0 0-4.084 4.084 4.082 4.082 0 0 0 6.927 2.93z"
-                            />
-                          </svg>
-                        </span>
+                          <path
+                            d="m7 6.175 2.887-2.887.825.825L7.825 7l2.887 2.888-.825.824L7 7.825l-2.888 2.887-.824-.824L6.175 7 3.288 4.113l.824-.825z"
+                          />
+                        </svg>
                       </span>
-                    </div>
-                    <div
-                      class="ant-space-item"
-                    >
-                      <button
-                        class="ant-btn css-dev-only-do-not-override-czn7jp ant-btn-default ant-btn-sm ant-btn-two-chinese-chars actiontech-filter-button-namespace basic-button-wrapper css-geipcv"
-                        style="padding: 0px 6px 0px 10px;"
-                        type="button"
+                      <svg
+                        class="custom-icon custom-icon-search"
+                        height="14"
+                        viewBox="0 0 14 14"
+                        width="14"
+                        xmlns="http://www.w3.org/2000/svg"
                       >
-                        <div
-                          class="ant-space css-dev-only-do-not-override-czn7jp ant-space-horizontal ant-space-align-center css-1nt49ug"
-                        >
-                          <div
-                            class="ant-space-item"
-                            style="margin-right: 2px;"
-                          >
-                            筛选
-                          </div>
-                          <div
-                            class="ant-space-item"
-                          >
-                            <svg
-                              color="currrentColor"
-                              height="14"
-                              viewBox="0 0 16 16"
-                              width="14"
-                              xmlns="http://www.w3.org/2000/svg"
-                            >
-                              <path
-                                d="m8 8.781 3.3-3.3.943.943L8 10.667 3.757 6.424l.943-.943z"
-                                fill="currentColor"
-                              />
-                            </svg>
-                          </div>
-                        </div>
-                      </button>
-                    </div>
-                  </div>
+                        <path
+                          d="m10.518 9.693 2.499 2.498-.826.825-2.498-2.498a5.252 5.252 0 0 1-8.527-4.101 5.25 5.25 0 0 1 5.25-5.25 5.252 5.252 0 0 1 4.102 8.526m-1.17-.433a4.082 4.082 0 0 0-2.931-6.927 4.08 4.08 0 0 0-4.084 4.084 4.082 4.082 0 0 0 6.927 2.93z"
+                        />
+                      </svg>
+                    </span>
+                  </span>
                 </div>
                 <div
                   class="ant-space-item"
-                  style="padding-bottom: 8px;"
                 >
-                  <div
-                    class="ant-space css-dev-only-do-not-override-1kh50jg ant-space-horizontal ant-space-align-center"
+                  <button
+                    class="ant-btn ant-btn-default ant-btn-sm ant-btn-two-chinese-chars actiontech-filter-button-namespace basic-button-wrapper css-geipcv"
+                    style="padding: 0px 6px 0px 10px;"
+                    type="button"
                   >
                     <div
-                      class="ant-space-item"
-                      style="margin-right: 12px;"
+                      class="ant-space ant-space-horizontal ant-space-align-center css-1nt49ug"
                     >
-                      <button
-                        class="ant-btn css-dev-only-do-not-override-czn7jp ant-btn-default ant-btn-sm actiontech-table-actions-button actiontech-table-setting-namespace basic-button-wrapper css-geipcv"
-                        type="button"
+                      <div
+                        class="ant-space-item"
+                        style="margin-right: 2px;"
                       >
-                        <div
-                          class="ant-space css-dev-only-do-not-override-czn7jp ant-space-horizontal ant-space-align-center css-1nt49ug"
+                        筛选
+                      </div>
+                      <div
+                        class="ant-space-item"
+                      >
+                        <svg
+                          color="currentColor"
+                          height="14"
+                          viewBox="0 0 16 16"
+                          width="14"
+                          xmlns="http://www.w3.org/2000/svg"
                         >
-                          <div
-                            class="ant-space-item"
-                            style="margin-right: 5px;"
-                          >
-                            <svg
-                              fill="none"
-                              height="14"
-                              viewBox="0 0 14 14"
-                              width="14"
-                              xmlns="http://www.w3.org/2000/svg"
-                            >
-                              <path
-                                d="M2.917 1.167h8.166a.583.583 0 0 1 .584.583v11.167a.293.293 0 0 1-.447.247L7 10.518l-4.22 2.646a.291.291 0 0 1-.447-.247V1.75a.583.583 0 0 1 .584-.583M10.5 2.333h-7v9.002L7 9.141l3.5 2.194zM4.667 5.25h4.666v1.167H4.667z"
-                                fill="#292C33"
-                              />
-                            </svg>
-                          </div>
-                          <div
-                            class="ant-space-item"
-                            style="margin-right: 5px;"
-                          >
-                            <span>
-                              任务类型
-                            </span>
-                          </div>
-                          <div
-                            class="ant-space-item"
-                          >
-                            <svg
-                              color="currentColor"
-                              height="16"
-                              viewBox="0 0 16 16"
-                              width="16"
-                              xmlns="http://www.w3.org/2000/svg"
-                            >
-                              <path
-                                d="m8 8.781 3.3-3.3.943.943L8 10.667 3.757 6.424l.943-.943z"
-                                fill="currentColor"
-                              />
-                            </svg>
-                          </div>
-                        </div>
-                      </button>
+                          <path
+                            d="m8 8.781 3.3-3.3.943.943L8 10.667 3.757 6.424l.943-.943z"
+                            fill="currentColor"
+                          />
+                        </svg>
+                      </div>
                     </div>
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div
+              class="ant-space-item"
+              style="padding-bottom: 8px;"
+            >
+              <div
+                class="ant-space ant-space-horizontal ant-space-align-center"
+              >
+                <div
+                  class="ant-space-item"
+                  style="margin-right: 12px;"
+                >
+                  <button
+                    class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button actiontech-table-setting-namespace basic-button-wrapper css-geipcv"
+                    type="button"
+                  >
                     <div
-                      class="ant-space-item"
-                      style="margin-right: 12px;"
+                      class="ant-space ant-space-horizontal ant-space-align-center css-1nt49ug"
                     >
-                      <button
-                        class="ant-btn css-dev-only-do-not-override-czn7jp ant-btn-default ant-btn-sm actiontech-table-setting-namespace basic-button-wrapper css-geipcv"
-                        style="padding: 0px 6px 0px 8px;"
-                        type="button"
+                      <div
+                        class="ant-space-item"
+                        style="margin-right: 5px;"
                       >
-                        <div
-                          class="ant-space css-dev-only-do-not-override-czn7jp ant-space-horizontal ant-space-align-center css-1nt49ug"
+                        <svg
+                          fill="none"
+                          height="14"
+                          viewBox="0 0 14 14"
+                          width="14"
+                          xmlns="http://www.w3.org/2000/svg"
                         >
-                          <div
-                            class="ant-space-item"
-                            style="margin-right: 5px;"
-                          >
-                            <svg
-                              class="custom-icon custom-icon-setting"
-                              height="11"
-                              viewBox="0 0 13 11"
-                              width="13"
-                              xmlns="http://www.w3.org/2000/svg"
-                            >
-                              <path
-                                d="M.167 8.5H4.25v1.167H.167zm0-4.083h5.25v1.166H.167zm0-4.084h11.666V1.5H.167zM11.06 5.598l.674-.228.584 1.01-.535.47c.067.319.067.648 0 .967l.535.47-.584 1.01-.674-.228c-.24.216-.524.382-.837.484l-.14.697H8.917l-.14-.698a2.3 2.3 0 0 1-.837-.484l-.674.229-.583-1.01.534-.47a2.3 2.3 0 0 1 0-.967l-.534-.47.583-1.01.674.228c.24-.216.524-.382.837-.484l.14-.697h1.166l.14.697c.313.102.598.269.837.485zM9.5 8.5a1.167 1.167 0 1 0 0-2.333 1.167 1.167 0 0 0 0 2.333"
-                              />
-                            </svg>
-                          </div>
-                          <div
-                            class="ant-space-item"
-                            style="margin-right: 5px;"
-                          >
-                            表格设置
-                          </div>
-                          <div
-                            class="ant-space-item"
-                          >
-                            <svg
-                              class="custom-icon custom-icon-arrow-down"
-                              color="currentColor"
-                              height="14"
-                              viewBox="0 0 16 16"
-                              width="14"
-                              xmlns="http://www.w3.org/2000/svg"
-                            >
-                              <path
-                                d="m8 8.781 3.3-3.3.943.943L8 10.667 3.757 6.424l.943-.943z"
-                                fill="currentColor"
-                              />
-                            </svg>
-                          </div>
-                        </div>
-                      </button>
-                    </div>
-                    <div
-                      class="ant-space-item"
-                    >
-                      <button
-                        class="ant-btn css-dev-only-do-not-override-czn7jp ant-btn-default ant-btn-sm ant-btn-icon-only basic-button-wrapper css-geipcv"
-                        type="button"
+                          <path
+                            d="M2.917 1.167h8.166a.583.583 0 0 1 .584.583v11.167a.293.293 0 0 1-.447.247L7 10.518l-4.22 2.646a.291.291 0 0 1-.447-.247V1.75a.583.583 0 0 1 .584-.583M10.5 2.333h-7v9.002L7 9.141l3.5 2.194zM4.667 5.25h4.666v1.167H4.667z"
+                            fill="#292C33"
+                          />
+                        </svg>
+                      </div>
+                      <div
+                        class="ant-space-item"
+                        style="margin-right: 5px;"
                       >
-                        <span
-                          class="ant-btn-icon"
-                        >
-                          <svg
-                            class="custom-icon custom-icon-refresh"
-                            height="14"
-                            viewBox="0 0 14 14"
-                            width="14"
-                            xmlns="http://www.w3.org/2000/svg"
-                          >
-                            <path
-                              d="M3.187 2.586a5.833 5.833 0 0 1 8.59 7.762L9.918 7h1.75a4.667 4.667 0 0 0-7.899-3.367zm7.626 8.828a5.833 5.833 0 0 1-8.59-7.762L4.083 7h-1.75a4.667 4.667 0 0 0 7.899 3.367z"
-                            />
-                          </svg>
+                        <span>
+                          任务类型
                         </span>
-                      </button>
+                      </div>
+                      <div
+                        class="ant-space-item"
+                      >
+                        <svg
+                          color="currentColor"
+                          height="16"
+                          viewBox="0 0 16 16"
+                          width="16"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="m8 8.781 3.3-3.3.943.943L8 10.667 3.757 6.424l.943-.943z"
+                            fill="currentColor"
+                          />
+                        </svg>
+                      </div>
                     </div>
-                  </div>
+                  </button>
+                </div>
+                <div
+                  class="ant-space-item"
+                  style="margin-right: 12px;"
+                >
+                  <button
+                    class="ant-btn ant-btn-default ant-btn-sm actiontech-table-setting-namespace basic-button-wrapper css-geipcv"
+                    style="padding: 0px 6px 0px 8px;"
+                    type="button"
+                  >
+                    <div
+                      class="ant-space ant-space-horizontal ant-space-align-center css-1nt49ug"
+                    >
+                      <div
+                        class="ant-space-item"
+                        style="margin-right: 5px;"
+                      >
+                        <svg
+                          class="custom-icon custom-icon-setting"
+                          height="11"
+                          viewBox="0 0 13 11"
+                          width="13"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M.167 8.5H4.25v1.167H.167zm0-4.083h5.25v1.166H.167zm0-4.084h11.666V1.5H.167zM11.06 5.598l.674-.228.584 1.01-.535.47c.067.319.067.648 0 .967l.535.47-.584 1.01-.674-.228c-.24.216-.524.382-.837.484l-.14.697H8.917l-.14-.698a2.3 2.3 0 0 1-.837-.484l-.674.229-.583-1.01.534-.47a2.3 2.3 0 0 1 0-.967l-.534-.47.583-1.01.674.228c.24-.216.524-.382.837-.484l.14-.697h1.166l.14.697c.313.102.598.269.837.485zM9.5 8.5a1.167 1.167 0 1 0 0-2.333 1.167 1.167 0 0 0 0 2.333"
+                          />
+                        </svg>
+                      </div>
+                      <div
+                        class="ant-space-item"
+                        style="margin-right: 5px;"
+                      >
+                        表格设置
+                      </div>
+                      <div
+                        class="ant-space-item"
+                      >
+                        <svg
+                          class="custom-icon custom-icon-arrow-down"
+                          color="currentColor"
+                          height="14"
+                          viewBox="0 0 16 16"
+                          width="14"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="m8 8.781 3.3-3.3.943.943L8 10.667 3.757 6.424l.943-.943z"
+                            fill="currentColor"
+                          />
+                        </svg>
+                      </div>
+                    </div>
+                  </button>
+                </div>
+                <div
+                  class="ant-space-item"
+                >
+                  <button
+                    class="ant-btn ant-btn-default ant-btn-sm ant-btn-icon-only basic-button-wrapper css-geipcv"
+                    type="button"
+                  >
+                    <span
+                      class="ant-btn-icon"
+                    >
+                      <svg
+                        class="custom-icon custom-icon-refresh"
+                        height="14"
+                        viewBox="0 0 14 14"
+                        width="14"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M3.187 2.586a5.833 5.833 0 0 1 8.59 7.762L9.918 7h1.75a4.667 4.667 0 0 0-7.899-3.367zm7.626 8.828a5.833 5.833 0 0 1-8.59-7.762L4.083 7h-1.75a4.667 4.667 0 0 0 7.899 3.367z"
+                        />
+                      </svg>
+                    </span>
+                  </button>
                 </div>
               </div>
             </div>
@@ -283,7 +292,7 @@ exports[`test sqle/SqlManagementConf/List render close task type filter field 1`
                   全部数据源
                 </span>
                 <button
-                  class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default ant-btn-sm filter-btn basic-button-wrapper css-nxo19c"
+                  class="ant-btn ant-btn-default ant-btn-sm filter-btn basic-button-wrapper css-nxo19c"
                   type="button"
                 >
                   <span>
@@ -291,7 +300,7 @@ exports[`test sqle/SqlManagementConf/List render close task type filter field 1`
                   </span>
                 </button>
                 <button
-                  class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default ant-btn-sm filter-btn basic-button-wrapper css-nxo19c"
+                  class="ant-btn ant-btn-default ant-btn-sm filter-btn basic-button-wrapper css-nxo19c"
                   type="button"
                 >
                   <span>
@@ -299,7 +308,7 @@ exports[`test sqle/SqlManagementConf/List render close task type filter field 1`
                   </span>
                 </button>
                 <button
-                  class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default ant-btn-sm filter-btn basic-button-wrapper css-nxo19c"
+                  class="ant-btn ant-btn-default ant-btn-sm filter-btn basic-button-wrapper css-nxo19c"
                   type="button"
                 >
                   <span>
@@ -307,7 +316,7 @@ exports[`test sqle/SqlManagementConf/List render close task type filter field 1`
                   </span>
                 </button>
                 <button
-                  class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default ant-btn-sm filter-btn basic-button-wrapper css-nxo19c"
+                  class="ant-btn ant-btn-default ant-btn-sm filter-btn basic-button-wrapper css-nxo19c"
                   type="button"
                 >
                   <span>
@@ -324,7 +333,7 @@ exports[`test sqle/SqlManagementConf/List render close task type filter field 1`
                   全部任务类型
                 </span>
                 <button
-                  class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default ant-btn-sm filter-btn basic-button-wrapper css-nxo19c"
+                  class="ant-btn ant-btn-default ant-btn-sm filter-btn basic-button-wrapper css-nxo19c"
                   type="button"
                 >
                   <span>
@@ -332,7 +341,7 @@ exports[`test sqle/SqlManagementConf/List render close task type filter field 1`
                   </span>
                 </button>
                 <button
-                  class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default ant-btn-sm filter-btn basic-button-wrapper css-nxo19c"
+                  class="ant-btn ant-btn-default ant-btn-sm filter-btn basic-button-wrapper css-nxo19c"
                   type="button"
                 >
                   <span>
@@ -340,7 +349,7 @@ exports[`test sqle/SqlManagementConf/List render close task type filter field 1`
                   </span>
                 </button>
                 <button
-                  class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default ant-btn-sm filter-btn basic-button-wrapper css-nxo19c"
+                  class="ant-btn ant-btn-default ant-btn-sm filter-btn basic-button-wrapper css-nxo19c"
                   type="button"
                 >
                   <span>
@@ -348,7 +357,7 @@ exports[`test sqle/SqlManagementConf/List render close task type filter field 1`
                   </span>
                 </button>
                 <button
-                  class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default ant-btn-sm filter-btn basic-button-wrapper css-nxo19c"
+                  class="ant-btn ant-btn-default ant-btn-sm filter-btn basic-button-wrapper css-nxo19c"
                   type="button"
                 >
                   <span>
@@ -356,7 +365,7 @@ exports[`test sqle/SqlManagementConf/List render close task type filter field 1`
                   </span>
                 </button>
                 <button
-                  class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default ant-btn-sm filter-btn basic-button-wrapper css-nxo19c"
+                  class="ant-btn ant-btn-default ant-btn-sm filter-btn basic-button-wrapper css-nxo19c"
                   type="button"
                 >
                   <span>
@@ -364,7 +373,7 @@ exports[`test sqle/SqlManagementConf/List render close task type filter field 1`
                   </span>
                 </button>
                 <button
-                  class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default ant-btn-sm filter-btn basic-button-wrapper css-nxo19c"
+                  class="ant-btn ant-btn-default ant-btn-sm filter-btn basic-button-wrapper css-nxo19c"
                   type="button"
                 >
                   <span>
@@ -372,7 +381,7 @@ exports[`test sqle/SqlManagementConf/List render close task type filter field 1`
                   </span>
                 </button>
                 <button
-                  class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default ant-btn-sm filter-btn basic-button-wrapper css-nxo19c"
+                  class="ant-btn ant-btn-default ant-btn-sm filter-btn basic-button-wrapper css-nxo19c"
                   type="button"
                 >
                   <span>
@@ -380,7 +389,7 @@ exports[`test sqle/SqlManagementConf/List render close task type filter field 1`
                   </span>
                 </button>
                 <button
-                  class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default ant-btn-sm filter-btn basic-button-wrapper css-nxo19c"
+                  class="ant-btn ant-btn-default ant-btn-sm filter-btn basic-button-wrapper css-nxo19c"
                   type="button"
                 >
                   <span>
@@ -388,7 +397,7 @@ exports[`test sqle/SqlManagementConf/List render close task type filter field 1`
                   </span>
                 </button>
                 <button
-                  class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default ant-btn-sm filter-btn basic-button-wrapper css-nxo19c"
+                  class="ant-btn ant-btn-default ant-btn-sm filter-btn basic-button-wrapper css-nxo19c"
                   type="button"
                 >
                   <span>
@@ -399,10 +408,10 @@ exports[`test sqle/SqlManagementConf/List render close task type filter field 1`
             </section>
           </div>
           <div
-            class="ant-table-wrapper actiontech-table-namespace css-fxd6ka css-dev-only-do-not-override-bj9uhl"
+            class="ant-table-wrapper actiontech-table-namespace css-fxd6ka"
           >
             <div
-              class="ant-spin-nested-loading css-dev-only-do-not-override-bj9uhl"
+              class="ant-spin-nested-loading"
             >
               <div
                 class="ant-spin-container"
@@ -452,7 +461,7 @@ exports[`test sqle/SqlManagementConf/List render close task type filter field 1`
                               class="ant-table-cell"
                               scope="col"
                             >
-                              所属业务
+                              环境属性
                             </th>
                             <th
                               class="ant-table-cell"
@@ -576,7 +585,7 @@ exports[`test sqle/SqlManagementConf/List render close task type filter field 1`
                               class="ant-table-cell"
                             >
                               <div
-                                class="ant-space css-dev-only-do-not-override-bj9uhl ant-space-horizontal ant-space-align-center css-1nt49ug"
+                                class="ant-space ant-space-horizontal ant-space-align-center css-1nt49ug"
                               >
                                 <div
                                   class="ant-space-item"
@@ -612,7 +621,7 @@ exports[`test sqle/SqlManagementConf/List render close task type filter field 1`
                             <td
                               class="ant-table-cell"
                             >
-                              test
+                              environment-1
                             </td>
                             <td
                               class="ant-table-cell"
@@ -624,7 +633,7 @@ exports[`test sqle/SqlManagementConf/List render close task type filter field 1`
                                   href="/sqle/project/700300/sql-management-conf/1?active_audit_plan_id=1"
                                 >
                                   <span
-                                    class="ant-tag ant-tag-default pointer basic-tag-wrapper basic-default-tag-wrapper css-1mjwlcb css-dev-only-do-not-override-bj9uhl"
+                                    class="ant-tag ant-tag-default pointer basic-tag-wrapper basic-default-tag-wrapper css-1mjwlcb"
                                   >
                                     SQL文件
                                   </span>
@@ -671,7 +680,7 @@ exports[`test sqle/SqlManagementConf/List render close task type filter field 1`
                                 class="css-new95e"
                               >
                                 <button
-                                  class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                  class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
                                   type="button"
                                 >
                                   <span>
@@ -679,7 +688,7 @@ exports[`test sqle/SqlManagementConf/List render close task type filter field 1`
                                   </span>
                                 </button>
                                 <button
-                                  class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm ant-btn-icon-only actiontech-table-actions-button actiontech-table-actions-more-button basic-button-wrapper css-geipcv"
+                                  class="ant-btn ant-btn-default ant-btn-sm ant-btn-icon-only actiontech-table-actions-button actiontech-table-actions-more-button basic-button-wrapper css-geipcv"
                                   type="button"
                                 >
                                   <span
@@ -710,7 +719,7 @@ exports[`test sqle/SqlManagementConf/List render close task type filter field 1`
                               class="ant-table-cell"
                             >
                               <div
-                                class="ant-space css-dev-only-do-not-override-bj9uhl ant-space-horizontal ant-space-align-center css-1nt49ug"
+                                class="ant-space ant-space-horizontal ant-space-align-center css-1nt49ug"
                               >
                                 <div
                                   class="ant-space-item"
@@ -735,7 +744,7 @@ exports[`test sqle/SqlManagementConf/List render close task type filter field 1`
                             <td
                               class="ant-table-cell"
                             >
-                              test
+                              environment-1
                             </td>
                             <td
                               class="ant-table-cell"
@@ -747,7 +756,7 @@ exports[`test sqle/SqlManagementConf/List render close task type filter field 1`
                                   href="/sqle/project/700300/sql-management-conf/2?active_audit_plan_id=1"
                                 >
                                   <span
-                                    class="ant-tag ant-tag-default pointer basic-tag-wrapper basic-default-tag-wrapper css-1mjwlcb css-dev-only-do-not-override-bj9uhl"
+                                    class="ant-tag ant-tag-default pointer basic-tag-wrapper basic-default-tag-wrapper css-1mjwlcb"
                                   >
                                     SQL文件
                                   </span>
@@ -756,19 +765,19 @@ exports[`test sqle/SqlManagementConf/List render close task type filter field 1`
                                   href="/sqle/project/700300/sql-management-conf/2?active_audit_plan_id=2"
                                 >
                                   <span
-                                    class="ant-tag ant-tag-default pointer basic-tag-wrapper basic-default-tag-wrapper css-1mjwlcb css-dev-only-do-not-override-bj9uhl"
+                                    class="ant-tag ant-tag-default pointer basic-tag-wrapper basic-default-tag-wrapper css-1mjwlcb"
                                   >
                                     MySQL库表元数据
                                   </span>
                                 </a>
                                 <div
-                                  class="ant-space css-dev-only-do-not-override-bj9uhl ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
+                                  class="ant-space ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
                                 >
                                   <div
                                     class="ant-space-item"
                                   >
                                     <button
-                                      class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm ant-btn-icon-only table-row-scan-types-more-button basic-button-wrapper css-geipcv"
+                                      class="ant-btn ant-btn-default ant-btn-sm ant-btn-icon-only table-row-scan-types-more-button basic-button-wrapper css-geipcv"
                                       type="button"
                                     >
                                       <span
@@ -839,7 +848,7 @@ exports[`test sqle/SqlManagementConf/List render close task type filter field 1`
                                 class="css-new95e"
                               >
                                 <button
-                                  class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                  class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
                                   type="button"
                                 >
                                   <span>
@@ -847,7 +856,7 @@ exports[`test sqle/SqlManagementConf/List render close task type filter field 1`
                                   </span>
                                 </button>
                                 <button
-                                  class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm ant-btn-icon-only actiontech-table-actions-button actiontech-table-actions-more-button basic-button-wrapper css-geipcv"
+                                  class="ant-btn ant-btn-default ant-btn-sm ant-btn-icon-only actiontech-table-actions-button actiontech-table-actions-more-button basic-button-wrapper css-geipcv"
                                   type="button"
                                 >
                                   <span
@@ -878,7 +887,7 @@ exports[`test sqle/SqlManagementConf/List render close task type filter field 1`
                               class="ant-table-cell"
                             >
                               <div
-                                class="ant-space css-dev-only-do-not-override-bj9uhl ant-space-horizontal ant-space-align-center css-1nt49ug"
+                                class="ant-space ant-space-horizontal ant-space-align-center css-1nt49ug"
                               >
                                 <div
                                   class="ant-space-item"
@@ -903,7 +912,7 @@ exports[`test sqle/SqlManagementConf/List render close task type filter field 1`
                             <td
                               class="ant-table-cell"
                             >
-                              test
+                              environment-2
                             </td>
                             <td
                               class="ant-table-cell"
@@ -956,7 +965,7 @@ exports[`test sqle/SqlManagementConf/List render close task type filter field 1`
                                 class="css-new95e"
                               >
                                 <button
-                                  class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                  class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
                                   type="button"
                                 >
                                   <span>
@@ -964,7 +973,7 @@ exports[`test sqle/SqlManagementConf/List render close task type filter field 1`
                                   </span>
                                 </button>
                                 <button
-                                  class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm ant-btn-icon-only actiontech-table-actions-button actiontech-table-actions-more-button basic-button-wrapper css-geipcv"
+                                  class="ant-btn ant-btn-default ant-btn-sm ant-btn-icon-only actiontech-table-actions-button actiontech-table-actions-more-button basic-button-wrapper css-geipcv"
                                   type="button"
                                 >
                                   <span
@@ -993,7 +1002,7 @@ exports[`test sqle/SqlManagementConf/List render close task type filter field 1`
                   </div>
                 </div>
                 <ul
-                  class="ant-pagination ant-table-pagination ant-table-pagination-right actiontech-table-pagination actiontech-table-pagination-fixed css-dev-only-do-not-override-bj9uhl"
+                  class="ant-pagination ant-table-pagination ant-table-pagination-right actiontech-table-pagination actiontech-table-pagination-fixed"
                 >
                   <li
                     class="ant-pagination-total-text"
@@ -1005,7 +1014,7 @@ exports[`test sqle/SqlManagementConf/List render close task type filter field 1`
                   <li
                     aria-disabled="true"
                     class="ant-pagination-prev ant-pagination-disabled"
-                    title="Previous Page"
+                    title="上一页"
                   >
                     <button
                       class="ant-pagination-item-link"
@@ -1048,7 +1057,7 @@ exports[`test sqle/SqlManagementConf/List render close task type filter field 1`
                   <li
                     aria-disabled="true"
                     class="ant-pagination-next ant-pagination-disabled"
-                    title="Next Page"
+                    title="下一页"
                   >
                     <button
                       class="ant-pagination-item-link"
@@ -1081,8 +1090,8 @@ exports[`test sqle/SqlManagementConf/List render close task type filter field 1`
                     class="ant-pagination-options"
                   >
                     <div
-                      aria-label="Page Size"
-                      class="ant-select ant-pagination-options-size-changer css-dev-only-do-not-override-bj9uhl ant-select-single ant-select-show-arrow ant-select-show-search"
+                      aria-label="页码"
+                      class="ant-select ant-pagination-options-size-changer ant-select-single ant-select-show-arrow ant-select-show-search"
                     >
                       <div
                         class="ant-select-selector"
@@ -1096,7 +1105,7 @@ exports[`test sqle/SqlManagementConf/List render close task type filter field 1`
                             aria-controls="rc_select_TEST_OR_SSR_list"
                             aria-expanded="false"
                             aria-haspopup="listbox"
-                            aria-label="Page Size"
+                            aria-label="页码"
                             aria-owns="rc_select_TEST_OR_SSR_list"
                             autocomplete="off"
                             class="ant-select-selection-search-input"
@@ -1108,9 +1117,9 @@ exports[`test sqle/SqlManagementConf/List render close task type filter field 1`
                         </span>
                         <span
                           class="ant-select-selection-item"
-                          title="20 / page"
+                          title="20 条/页"
                         >
-                          20 / page
+                          20 条/页
                         </span>
                       </div>
                       <span
@@ -1171,240 +1180,249 @@ exports[`test sqle/SqlManagementConf/List render create button when project is a
         />
       </div>
       <div
-        class="ant-spin-nested-loading css-dev-only-do-not-override-txh9fw"
+        class="ant-spin-nested-loading"
       >
         <div
           class="ant-spin-container"
         >
           <div
-            class="ant-spin-nested-loading css-dev-only-do-not-override-1kh50jg"
+            class="ant-space ant-space-horizontal ant-space-align-center full-width-element flex-space-between actiontech-table-toolbar-namespace css-a7k93w"
+            style="flex-wrap: wrap; margin-bottom: -8px;"
           >
             <div
-              class="ant-spin-container"
+              class="ant-space-item"
+              style="margin-right: 8px; padding-bottom: 8px;"
             >
               <div
-                class="ant-space css-dev-only-do-not-override-1kh50jg ant-space-horizontal ant-space-align-center full-width-element flex-space-between actiontech-table-toolbar-namespace css-c38ntt"
-                style="flex-wrap: wrap; margin-bottom: -8px;"
+                class="ant-space ant-space-horizontal ant-space-align-center"
               >
                 <div
                   class="ant-space-item"
-                  style="margin-right: 8px; padding-bottom: 8px;"
+                  style="margin-right: 12px;"
                 >
-                  <div
-                    class="ant-space css-dev-only-do-not-override-1kh50jg ant-space-horizontal ant-space-align-center"
+                  <span
+                    class="ant-input-affix-wrapper basic-input-wrapper actiontech-table-search-input-namespace css-1f6svkh ant-input-affix-wrapper-sm"
                   >
-                    <div
-                      class="ant-space-item"
-                      style="margin-right: 12px;"
+                    <input
+                      class="ant-input ant-input-sm"
+                      id="actiontech-table-search-input"
+                      placeholder="输入关键字搜索"
+                      type="text"
+                      value=""
+                    />
+                    <span
+                      class="ant-input-suffix"
                     >
                       <span
-                        class="ant-input-affix-wrapper basic-input-wrapper actiontech-table-search-input-namespace css-1f6svkh ant-input-affix-wrapper-sm css-dev-only-do-not-override-mlhibv"
+                        class="ant-input-clear-icon ant-input-clear-icon-hidden ant-input-clear-icon-has-suffix"
+                        role="button"
+                        tabindex="-1"
                       >
-                        <input
-                          class="ant-input ant-input-sm css-dev-only-do-not-override-mlhibv"
-                          id="actiontech-table-search-input"
-                          placeholder="输入关键字搜索"
-                          type="text"
-                          value=""
-                        />
-                        <span
-                          class="ant-input-suffix"
+                        <svg
+                          fill="currentColor"
+                          height="14"
+                          viewBox="0 0 14 14"
+                          width="14"
+                          xmlns="http://www.w3.org/2000/svg"
                         >
-                          <svg
-                            class="custom-icon custom-icon-search"
-                            height="14"
-                            viewBox="0 0 14 14"
-                            width="14"
-                            xmlns="http://www.w3.org/2000/svg"
-                          >
-                            <path
-                              d="m10.518 9.693 2.499 2.498-.826.825-2.498-2.498a5.252 5.252 0 0 1-8.527-4.101 5.25 5.25 0 0 1 5.25-5.25 5.252 5.252 0 0 1 4.102 8.526m-1.17-.433a4.082 4.082 0 0 0-2.931-6.927 4.08 4.08 0 0 0-4.084 4.084 4.082 4.082 0 0 0 6.927 2.93z"
-                            />
-                          </svg>
-                        </span>
+                          <path
+                            d="m7 6.175 2.887-2.887.825.825L7.825 7l2.887 2.888-.825.824L7 7.825l-2.888 2.887-.824-.824L6.175 7 3.288 4.113l.824-.825z"
+                          />
+                        </svg>
                       </span>
-                    </div>
-                    <div
-                      class="ant-space-item"
-                    >
-                      <button
-                        class="ant-btn css-dev-only-do-not-override-czn7jp ant-btn-default ant-btn-sm ant-btn-two-chinese-chars actiontech-filter-button-namespace basic-button-wrapper css-geipcv"
-                        style="padding: 0px 6px 0px 10px;"
-                        type="button"
+                      <svg
+                        class="custom-icon custom-icon-search"
+                        height="14"
+                        viewBox="0 0 14 14"
+                        width="14"
+                        xmlns="http://www.w3.org/2000/svg"
                       >
-                        <div
-                          class="ant-space css-dev-only-do-not-override-czn7jp ant-space-horizontal ant-space-align-center css-1nt49ug"
-                        >
-                          <div
-                            class="ant-space-item"
-                            style="margin-right: 2px;"
-                          >
-                            筛选
-                          </div>
-                          <div
-                            class="ant-space-item"
-                          >
-                            <svg
-                              color="currrentColor"
-                              height="14"
-                              viewBox="0 0 16 16"
-                              width="14"
-                              xmlns="http://www.w3.org/2000/svg"
-                            >
-                              <path
-                                d="m8 8.781 3.3-3.3.943.943L8 10.667 3.757 6.424l.943-.943z"
-                                fill="currentColor"
-                              />
-                            </svg>
-                          </div>
-                        </div>
-                      </button>
-                    </div>
-                  </div>
+                        <path
+                          d="m10.518 9.693 2.499 2.498-.826.825-2.498-2.498a5.252 5.252 0 0 1-8.527-4.101 5.25 5.25 0 0 1 5.25-5.25 5.252 5.252 0 0 1 4.102 8.526m-1.17-.433a4.082 4.082 0 0 0-2.931-6.927 4.08 4.08 0 0 0-4.084 4.084 4.082 4.082 0 0 0 6.927 2.93z"
+                        />
+                      </svg>
+                    </span>
+                  </span>
                 </div>
                 <div
                   class="ant-space-item"
-                  style="padding-bottom: 8px;"
                 >
-                  <div
-                    class="ant-space css-dev-only-do-not-override-1kh50jg ant-space-horizontal ant-space-align-center"
+                  <button
+                    class="ant-btn ant-btn-default ant-btn-sm ant-btn-two-chinese-chars actiontech-filter-button-namespace basic-button-wrapper css-geipcv"
+                    style="padding: 0px 6px 0px 10px;"
+                    type="button"
                   >
                     <div
-                      class="ant-space-item"
-                      style="margin-right: 12px;"
+                      class="ant-space ant-space-horizontal ant-space-align-center css-1nt49ug"
                     >
-                      <button
-                        class="ant-btn css-dev-only-do-not-override-czn7jp ant-btn-default ant-btn-sm actiontech-table-actions-button actiontech-table-setting-namespace basic-button-wrapper css-geipcv"
-                        type="button"
+                      <div
+                        class="ant-space-item"
+                        style="margin-right: 2px;"
                       >
-                        <div
-                          class="ant-space css-dev-only-do-not-override-czn7jp ant-space-horizontal ant-space-align-center css-1nt49ug"
+                        筛选
+                      </div>
+                      <div
+                        class="ant-space-item"
+                      >
+                        <svg
+                          color="currentColor"
+                          height="14"
+                          viewBox="0 0 16 16"
+                          width="14"
+                          xmlns="http://www.w3.org/2000/svg"
                         >
-                          <div
-                            class="ant-space-item"
-                            style="margin-right: 5px;"
-                          >
-                            <svg
-                              fill="none"
-                              height="14"
-                              viewBox="0 0 14 14"
-                              width="14"
-                              xmlns="http://www.w3.org/2000/svg"
-                            >
-                              <path
-                                d="M2.917 1.167h8.166a.583.583 0 0 1 .584.583v11.167a.293.293 0 0 1-.447.247L7 10.518l-4.22 2.646a.291.291 0 0 1-.447-.247V1.75a.583.583 0 0 1 .584-.583M10.5 2.333h-7v9.002L7 9.141l3.5 2.194zM4.667 5.25h4.666v1.167H4.667z"
-                                fill="#292C33"
-                              />
-                            </svg>
-                          </div>
-                          <div
-                            class="ant-space-item"
-                            style="margin-right: 5px;"
-                          >
-                            <span>
-                              任务类型
-                            </span>
-                          </div>
-                          <div
-                            class="ant-space-item"
-                          >
-                            <svg
-                              color="currentColor"
-                              fill="none"
-                              height="16"
-                              viewBox="0 0 16 16"
-                              width="16"
-                              xmlns="http://www.w3.org/2000/svg"
-                            >
-                              <path
-                                d="m8 7.219-3.3 3.3-.942-.943L8 5.333l4.243 4.243-.943.943z"
-                                fill="currentColor"
-                              />
-                            </svg>
-                          </div>
-                        </div>
-                      </button>
+                          <path
+                            d="m8 8.781 3.3-3.3.943.943L8 10.667 3.757 6.424l.943-.943z"
+                            fill="currentColor"
+                          />
+                        </svg>
+                      </div>
                     </div>
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div
+              class="ant-space-item"
+              style="padding-bottom: 8px;"
+            >
+              <div
+                class="ant-space ant-space-horizontal ant-space-align-center"
+              >
+                <div
+                  class="ant-space-item"
+                  style="margin-right: 12px;"
+                >
+                  <button
+                    class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button actiontech-table-setting-namespace basic-button-wrapper css-geipcv"
+                    type="button"
+                  >
                     <div
-                      class="ant-space-item"
-                      style="margin-right: 12px;"
+                      class="ant-space ant-space-horizontal ant-space-align-center css-1nt49ug"
                     >
-                      <button
-                        class="ant-btn css-dev-only-do-not-override-czn7jp ant-btn-default ant-btn-sm actiontech-table-setting-namespace basic-button-wrapper css-geipcv"
-                        style="padding: 0px 6px 0px 8px;"
-                        type="button"
+                      <div
+                        class="ant-space-item"
+                        style="margin-right: 5px;"
                       >
-                        <div
-                          class="ant-space css-dev-only-do-not-override-czn7jp ant-space-horizontal ant-space-align-center css-1nt49ug"
+                        <svg
+                          fill="none"
+                          height="14"
+                          viewBox="0 0 14 14"
+                          width="14"
+                          xmlns="http://www.w3.org/2000/svg"
                         >
-                          <div
-                            class="ant-space-item"
-                            style="margin-right: 5px;"
-                          >
-                            <svg
-                              class="custom-icon custom-icon-setting"
-                              height="11"
-                              viewBox="0 0 13 11"
-                              width="13"
-                              xmlns="http://www.w3.org/2000/svg"
-                            >
-                              <path
-                                d="M.167 8.5H4.25v1.167H.167zm0-4.083h5.25v1.166H.167zm0-4.084h11.666V1.5H.167zM11.06 5.598l.674-.228.584 1.01-.535.47c.067.319.067.648 0 .967l.535.47-.584 1.01-.674-.228c-.24.216-.524.382-.837.484l-.14.697H8.917l-.14-.698a2.3 2.3 0 0 1-.837-.484l-.674.229-.583-1.01.534-.47a2.3 2.3 0 0 1 0-.967l-.534-.47.583-1.01.674.228c.24-.216.524-.382.837-.484l.14-.697h1.166l.14.697c.313.102.598.269.837.485zM9.5 8.5a1.167 1.167 0 1 0 0-2.333 1.167 1.167 0 0 0 0 2.333"
-                              />
-                            </svg>
-                          </div>
-                          <div
-                            class="ant-space-item"
-                            style="margin-right: 5px;"
-                          >
-                            表格设置
-                          </div>
-                          <div
-                            class="ant-space-item"
-                          >
-                            <svg
-                              class="custom-icon custom-icon-arrow-down"
-                              color="currentColor"
-                              height="14"
-                              viewBox="0 0 16 16"
-                              width="14"
-                              xmlns="http://www.w3.org/2000/svg"
-                            >
-                              <path
-                                d="m8 8.781 3.3-3.3.943.943L8 10.667 3.757 6.424l.943-.943z"
-                                fill="currentColor"
-                              />
-                            </svg>
-                          </div>
-                        </div>
-                      </button>
-                    </div>
-                    <div
-                      class="ant-space-item"
-                    >
-                      <button
-                        class="ant-btn css-dev-only-do-not-override-czn7jp ant-btn-default ant-btn-sm ant-btn-icon-only basic-button-wrapper css-geipcv"
-                        disabled=""
-                        type="button"
+                          <path
+                            d="M2.917 1.167h8.166a.583.583 0 0 1 .584.583v11.167a.293.293 0 0 1-.447.247L7 10.518l-4.22 2.646a.291.291 0 0 1-.447-.247V1.75a.583.583 0 0 1 .584-.583M10.5 2.333h-7v9.002L7 9.141l3.5 2.194zM4.667 5.25h4.666v1.167H4.667z"
+                            fill="#292C33"
+                          />
+                        </svg>
+                      </div>
+                      <div
+                        class="ant-space-item"
+                        style="margin-right: 5px;"
                       >
-                        <span
-                          class="ant-btn-icon"
-                        >
-                          <svg
-                            class="custom-icon custom-icon-refresh"
-                            height="14"
-                            viewBox="0 0 14 14"
-                            width="14"
-                            xmlns="http://www.w3.org/2000/svg"
-                          >
-                            <path
-                              d="M3.187 2.586a5.833 5.833 0 0 1 8.59 7.762L9.918 7h1.75a4.667 4.667 0 0 0-7.899-3.367zm7.626 8.828a5.833 5.833 0 0 1-8.59-7.762L4.083 7h-1.75a4.667 4.667 0 0 0 7.899 3.367z"
-                            />
-                          </svg>
+                        <span>
+                          任务类型
                         </span>
-                      </button>
+                      </div>
+                      <div
+                        class="ant-space-item"
+                      >
+                        <svg
+                          color="currentColor"
+                          fill="none"
+                          height="16"
+                          viewBox="0 0 16 16"
+                          width="16"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="m8 7.219-3.3 3.3-.942-.943L8 5.333l4.243 4.243-.943.943z"
+                            fill="currentColor"
+                          />
+                        </svg>
+                      </div>
                     </div>
-                  </div>
+                  </button>
+                </div>
+                <div
+                  class="ant-space-item"
+                  style="margin-right: 12px;"
+                >
+                  <button
+                    class="ant-btn ant-btn-default ant-btn-sm actiontech-table-setting-namespace basic-button-wrapper css-geipcv"
+                    style="padding: 0px 6px 0px 8px;"
+                    type="button"
+                  >
+                    <div
+                      class="ant-space ant-space-horizontal ant-space-align-center css-1nt49ug"
+                    >
+                      <div
+                        class="ant-space-item"
+                        style="margin-right: 5px;"
+                      >
+                        <svg
+                          class="custom-icon custom-icon-setting"
+                          height="11"
+                          viewBox="0 0 13 11"
+                          width="13"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M.167 8.5H4.25v1.167H.167zm0-4.083h5.25v1.166H.167zm0-4.084h11.666V1.5H.167zM11.06 5.598l.674-.228.584 1.01-.535.47c.067.319.067.648 0 .967l.535.47-.584 1.01-.674-.228c-.24.216-.524.382-.837.484l-.14.697H8.917l-.14-.698a2.3 2.3 0 0 1-.837-.484l-.674.229-.583-1.01.534-.47a2.3 2.3 0 0 1 0-.967l-.534-.47.583-1.01.674.228c.24-.216.524-.382.837-.484l.14-.697h1.166l.14.697c.313.102.598.269.837.485zM9.5 8.5a1.167 1.167 0 1 0 0-2.333 1.167 1.167 0 0 0 0 2.333"
+                          />
+                        </svg>
+                      </div>
+                      <div
+                        class="ant-space-item"
+                        style="margin-right: 5px;"
+                      >
+                        表格设置
+                      </div>
+                      <div
+                        class="ant-space-item"
+                      >
+                        <svg
+                          class="custom-icon custom-icon-arrow-down"
+                          color="currentColor"
+                          height="14"
+                          viewBox="0 0 16 16"
+                          width="14"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="m8 8.781 3.3-3.3.943.943L8 10.667 3.757 6.424l.943-.943z"
+                            fill="currentColor"
+                          />
+                        </svg>
+                      </div>
+                    </div>
+                  </button>
+                </div>
+                <div
+                  class="ant-space-item"
+                >
+                  <button
+                    class="ant-btn ant-btn-default ant-btn-sm ant-btn-icon-only basic-button-wrapper css-geipcv"
+                    disabled=""
+                    type="button"
+                  >
+                    <span
+                      class="ant-btn-icon"
+                    >
+                      <svg
+                        class="custom-icon custom-icon-refresh"
+                        height="14"
+                        viewBox="0 0 14 14"
+                        width="14"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M3.187 2.586a5.833 5.833 0 0 1 8.59 7.762L9.918 7h1.75a4.667 4.667 0 0 0-7.899-3.367zm7.626 8.828a5.833 5.833 0 0 1-8.59-7.762L4.083 7h-1.75a4.667 4.667 0 0 0 7.899 3.367z"
+                        />
+                      </svg>
+                    </span>
+                  </button>
                 </div>
               </div>
             </div>
@@ -1436,10 +1454,10 @@ exports[`test sqle/SqlManagementConf/List render create button when project is a
             </section>
           </div>
           <div
-            class="ant-table-wrapper actiontech-table-namespace css-fxd6ka css-dev-only-do-not-override-bj9uhl"
+            class="ant-table-wrapper actiontech-table-namespace css-fxd6ka"
           >
             <div
-              class="ant-spin-nested-loading css-dev-only-do-not-override-bj9uhl"
+              class="ant-spin-nested-loading"
             >
               <div
                 class="ant-spin-container"
@@ -1489,7 +1507,7 @@ exports[`test sqle/SqlManagementConf/List render create button when project is a
                               class="ant-table-cell"
                               scope="col"
                             >
-                              所属业务
+                              环境属性
                             </th>
                             <th
                               class="ant-table-cell"
@@ -1654,7 +1672,7 @@ exports[`test sqle/SqlManagementConf/List render filter list data by active stat
             href="/sqle/project/700300/sql-management-conf/create"
           >
             <button
-              class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary basic-button-wrapper css-geipcv"
+              class="ant-btn ant-btn-primary basic-button-wrapper css-geipcv"
               type="button"
             >
               <span>
@@ -1665,246 +1683,255 @@ exports[`test sqle/SqlManagementConf/List render filter list data by active stat
         </div>
       </div>
       <div
-        class="ant-spin-nested-loading css-dev-only-do-not-override-txh9fw"
+        class="ant-spin-nested-loading"
       >
         <div
           class="ant-spin-container"
         >
           <div
-            class="ant-spin-nested-loading css-dev-only-do-not-override-1kh50jg"
+            class="ant-space ant-space-horizontal ant-space-align-center full-width-element flex-space-between actiontech-table-toolbar-namespace css-a7k93w"
+            style="flex-wrap: wrap; margin-bottom: -8px;"
           >
             <div
-              class="ant-spin-container"
+              class="ant-space-item"
+              style="margin-right: 8px; padding-bottom: 8px;"
             >
               <div
-                class="ant-space css-dev-only-do-not-override-1kh50jg ant-space-horizontal ant-space-align-center full-width-element flex-space-between actiontech-table-toolbar-namespace css-c38ntt"
-                style="flex-wrap: wrap; margin-bottom: -8px;"
+                class="ant-space ant-space-horizontal ant-space-align-center"
               >
                 <div
                   class="ant-space-item"
-                  style="margin-right: 8px; padding-bottom: 8px;"
+                  style="margin-right: 12px;"
                 >
-                  <div
-                    class="ant-space css-dev-only-do-not-override-1kh50jg ant-space-horizontal ant-space-align-center"
+                  <span
+                    class="ant-input-affix-wrapper basic-input-wrapper actiontech-table-search-input-namespace css-1f6svkh ant-input-affix-wrapper-sm"
                   >
-                    <div
-                      class="ant-space-item"
-                      style="margin-right: 12px;"
+                    <input
+                      class="ant-input ant-input-sm"
+                      id="actiontech-table-search-input"
+                      placeholder="输入关键字搜索"
+                      type="text"
+                      value=""
+                    />
+                    <span
+                      class="ant-input-suffix"
                     >
                       <span
-                        class="ant-input-affix-wrapper basic-input-wrapper actiontech-table-search-input-namespace css-1f6svkh ant-input-affix-wrapper-sm css-dev-only-do-not-override-mlhibv"
+                        class="ant-input-clear-icon ant-input-clear-icon-hidden ant-input-clear-icon-has-suffix"
+                        role="button"
+                        tabindex="-1"
                       >
-                        <input
-                          class="ant-input ant-input-sm css-dev-only-do-not-override-mlhibv"
-                          id="actiontech-table-search-input"
-                          placeholder="输入关键字搜索"
-                          type="text"
-                          value=""
-                        />
-                        <span
-                          class="ant-input-suffix"
+                        <svg
+                          fill="currentColor"
+                          height="14"
+                          viewBox="0 0 14 14"
+                          width="14"
+                          xmlns="http://www.w3.org/2000/svg"
                         >
-                          <svg
-                            class="custom-icon custom-icon-search"
-                            height="14"
-                            viewBox="0 0 14 14"
-                            width="14"
-                            xmlns="http://www.w3.org/2000/svg"
-                          >
-                            <path
-                              d="m10.518 9.693 2.499 2.498-.826.825-2.498-2.498a5.252 5.252 0 0 1-8.527-4.101 5.25 5.25 0 0 1 5.25-5.25 5.252 5.252 0 0 1 4.102 8.526m-1.17-.433a4.082 4.082 0 0 0-2.931-6.927 4.08 4.08 0 0 0-4.084 4.084 4.082 4.082 0 0 0 6.927 2.93z"
-                            />
-                          </svg>
-                        </span>
+                          <path
+                            d="m7 6.175 2.887-2.887.825.825L7.825 7l2.887 2.888-.825.824L7 7.825l-2.888 2.887-.824-.824L6.175 7 3.288 4.113l.824-.825z"
+                          />
+                        </svg>
                       </span>
-                    </div>
-                    <div
-                      class="ant-space-item"
-                    >
-                      <button
-                        class="ant-btn css-dev-only-do-not-override-czn7jp ant-btn-default ant-btn-sm actiontech-filter-button-namespace basic-button-wrapper css-geipcv"
-                        style="padding: 0px 6px 0px 10px;"
-                        type="button"
+                      <svg
+                        class="custom-icon custom-icon-search"
+                        height="14"
+                        viewBox="0 0 14 14"
+                        width="14"
+                        xmlns="http://www.w3.org/2000/svg"
                       >
-                        <div
-                          class="ant-space css-dev-only-do-not-override-czn7jp ant-space-horizontal ant-space-align-center css-1nt49ug"
-                        >
-                          <div
-                            class="ant-space-item"
-                            style="margin-right: 2px;"
-                          >
-                            收起筛选
-                          </div>
-                          <div
-                            class="ant-space-item"
-                          >
-                            <svg
-                              color="currrentColor"
-                              fill="none"
-                              height="14"
-                              viewBox="0 0 16 16"
-                              width="14"
-                              xmlns="http://www.w3.org/2000/svg"
-                            >
-                              <path
-                                d="m8 7.219-3.3 3.3-.942-.943L8 5.333l4.243 4.243-.943.943z"
-                                fill="currentColor"
-                              />
-                            </svg>
-                          </div>
-                        </div>
-                      </button>
-                    </div>
-                  </div>
+                        <path
+                          d="m10.518 9.693 2.499 2.498-.826.825-2.498-2.498a5.252 5.252 0 0 1-8.527-4.101 5.25 5.25 0 0 1 5.25-5.25 5.252 5.252 0 0 1 4.102 8.526m-1.17-.433a4.082 4.082 0 0 0-2.931-6.927 4.08 4.08 0 0 0-4.084 4.084 4.082 4.082 0 0 0 6.927 2.93z"
+                        />
+                      </svg>
+                    </span>
+                  </span>
                 </div>
                 <div
                   class="ant-space-item"
-                  style="padding-bottom: 8px;"
                 >
-                  <div
-                    class="ant-space css-dev-only-do-not-override-1kh50jg ant-space-horizontal ant-space-align-center"
+                  <button
+                    class="ant-btn ant-btn-default ant-btn-sm actiontech-filter-button-namespace basic-button-wrapper css-geipcv"
+                    style="padding: 0px 6px 0px 10px;"
+                    type="button"
                   >
                     <div
-                      class="ant-space-item"
-                      style="margin-right: 12px;"
+                      class="ant-space ant-space-horizontal ant-space-align-center css-1nt49ug"
                     >
-                      <button
-                        class="ant-btn css-dev-only-do-not-override-czn7jp ant-btn-default ant-btn-sm actiontech-table-actions-button actiontech-table-setting-namespace basic-button-wrapper css-geipcv"
-                        type="button"
+                      <div
+                        class="ant-space-item"
+                        style="margin-right: 2px;"
                       >
-                        <div
-                          class="ant-space css-dev-only-do-not-override-czn7jp ant-space-horizontal ant-space-align-center css-1nt49ug"
+                        收起筛选
+                      </div>
+                      <div
+                        class="ant-space-item"
+                      >
+                        <svg
+                          color="currentColor"
+                          fill="none"
+                          height="14"
+                          viewBox="0 0 16 16"
+                          width="14"
+                          xmlns="http://www.w3.org/2000/svg"
                         >
-                          <div
-                            class="ant-space-item"
-                            style="margin-right: 5px;"
-                          >
-                            <svg
-                              fill="none"
-                              height="14"
-                              viewBox="0 0 14 14"
-                              width="14"
-                              xmlns="http://www.w3.org/2000/svg"
-                            >
-                              <path
-                                d="M2.917 1.167h8.166a.583.583 0 0 1 .584.583v11.167a.293.293 0 0 1-.447.247L7 10.518l-4.22 2.646a.291.291 0 0 1-.447-.247V1.75a.583.583 0 0 1 .584-.583M10.5 2.333h-7v9.002L7 9.141l3.5 2.194zM4.667 5.25h4.666v1.167H4.667z"
-                                fill="#292C33"
-                              />
-                            </svg>
-                          </div>
-                          <div
-                            class="ant-space-item"
-                            style="margin-right: 5px;"
-                          >
-                            <span>
-                              任务类型
-                            </span>
-                          </div>
-                          <div
-                            class="ant-space-item"
-                          >
-                            <svg
-                              color="currentColor"
-                              fill="none"
-                              height="16"
-                              viewBox="0 0 16 16"
-                              width="16"
-                              xmlns="http://www.w3.org/2000/svg"
-                            >
-                              <path
-                                d="m8 7.219-3.3 3.3-.942-.943L8 5.333l4.243 4.243-.943.943z"
-                                fill="currentColor"
-                              />
-                            </svg>
-                          </div>
-                        </div>
-                      </button>
+                          <path
+                            d="m8 7.219-3.3 3.3-.942-.943L8 5.333l4.243 4.243-.943.943z"
+                            fill="currentColor"
+                          />
+                        </svg>
+                      </div>
                     </div>
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div
+              class="ant-space-item"
+              style="padding-bottom: 8px;"
+            >
+              <div
+                class="ant-space ant-space-horizontal ant-space-align-center"
+              >
+                <div
+                  class="ant-space-item"
+                  style="margin-right: 12px;"
+                >
+                  <button
+                    class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button actiontech-table-setting-namespace basic-button-wrapper css-geipcv"
+                    type="button"
+                  >
                     <div
-                      class="ant-space-item"
-                      style="margin-right: 12px;"
+                      class="ant-space ant-space-horizontal ant-space-align-center css-1nt49ug"
                     >
-                      <button
-                        class="ant-btn css-dev-only-do-not-override-czn7jp ant-btn-default ant-btn-sm actiontech-table-setting-namespace basic-button-wrapper css-geipcv"
-                        style="padding: 0px 6px 0px 8px;"
-                        type="button"
+                      <div
+                        class="ant-space-item"
+                        style="margin-right: 5px;"
                       >
-                        <div
-                          class="ant-space css-dev-only-do-not-override-czn7jp ant-space-horizontal ant-space-align-center css-1nt49ug"
+                        <svg
+                          fill="none"
+                          height="14"
+                          viewBox="0 0 14 14"
+                          width="14"
+                          xmlns="http://www.w3.org/2000/svg"
                         >
-                          <div
-                            class="ant-space-item"
-                            style="margin-right: 5px;"
-                          >
-                            <svg
-                              class="custom-icon custom-icon-setting"
-                              height="11"
-                              viewBox="0 0 13 11"
-                              width="13"
-                              xmlns="http://www.w3.org/2000/svg"
-                            >
-                              <path
-                                d="M.167 8.5H4.25v1.167H.167zm0-4.083h5.25v1.166H.167zm0-4.084h11.666V1.5H.167zM11.06 5.598l.674-.228.584 1.01-.535.47c.067.319.067.648 0 .967l.535.47-.584 1.01-.674-.228c-.24.216-.524.382-.837.484l-.14.697H8.917l-.14-.698a2.3 2.3 0 0 1-.837-.484l-.674.229-.583-1.01.534-.47a2.3 2.3 0 0 1 0-.967l-.534-.47.583-1.01.674.228c.24-.216.524-.382.837-.484l.14-.697h1.166l.14.697c.313.102.598.269.837.485zM9.5 8.5a1.167 1.167 0 1 0 0-2.333 1.167 1.167 0 0 0 0 2.333"
-                              />
-                            </svg>
-                          </div>
-                          <div
-                            class="ant-space-item"
-                            style="margin-right: 5px;"
-                          >
-                            表格设置
-                          </div>
-                          <div
-                            class="ant-space-item"
-                          >
-                            <svg
-                              class="custom-icon custom-icon-arrow-down"
-                              color="currentColor"
-                              height="14"
-                              viewBox="0 0 16 16"
-                              width="14"
-                              xmlns="http://www.w3.org/2000/svg"
-                            >
-                              <path
-                                d="m8 8.781 3.3-3.3.943.943L8 10.667 3.757 6.424l.943-.943z"
-                                fill="currentColor"
-                              />
-                            </svg>
-                          </div>
-                        </div>
-                      </button>
-                    </div>
-                    <div
-                      class="ant-space-item"
-                    >
-                      <button
-                        class="ant-btn css-dev-only-do-not-override-czn7jp ant-btn-default ant-btn-sm ant-btn-icon-only basic-button-wrapper css-geipcv"
-                        type="button"
+                          <path
+                            d="M2.917 1.167h8.166a.583.583 0 0 1 .584.583v11.167a.293.293 0 0 1-.447.247L7 10.518l-4.22 2.646a.291.291 0 0 1-.447-.247V1.75a.583.583 0 0 1 .584-.583M10.5 2.333h-7v9.002L7 9.141l3.5 2.194zM4.667 5.25h4.666v1.167H4.667z"
+                            fill="#292C33"
+                          />
+                        </svg>
+                      </div>
+                      <div
+                        class="ant-space-item"
+                        style="margin-right: 5px;"
                       >
-                        <span
-                          class="ant-btn-icon"
-                        >
-                          <svg
-                            class="custom-icon custom-icon-refresh"
-                            height="14"
-                            viewBox="0 0 14 14"
-                            width="14"
-                            xmlns="http://www.w3.org/2000/svg"
-                          >
-                            <path
-                              d="M3.187 2.586a5.833 5.833 0 0 1 8.59 7.762L9.918 7h1.75a4.667 4.667 0 0 0-7.899-3.367zm7.626 8.828a5.833 5.833 0 0 1-8.59-7.762L4.083 7h-1.75a4.667 4.667 0 0 0 7.899 3.367z"
-                            />
-                          </svg>
+                        <span>
+                          任务类型
                         </span>
-                      </button>
+                      </div>
+                      <div
+                        class="ant-space-item"
+                      >
+                        <svg
+                          color="currentColor"
+                          fill="none"
+                          height="16"
+                          viewBox="0 0 16 16"
+                          width="16"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="m8 7.219-3.3 3.3-.942-.943L8 5.333l4.243 4.243-.943.943z"
+                            fill="currentColor"
+                          />
+                        </svg>
+                      </div>
                     </div>
-                  </div>
+                  </button>
+                </div>
+                <div
+                  class="ant-space-item"
+                  style="margin-right: 12px;"
+                >
+                  <button
+                    class="ant-btn ant-btn-default ant-btn-sm actiontech-table-setting-namespace basic-button-wrapper css-geipcv"
+                    style="padding: 0px 6px 0px 8px;"
+                    type="button"
+                  >
+                    <div
+                      class="ant-space ant-space-horizontal ant-space-align-center css-1nt49ug"
+                    >
+                      <div
+                        class="ant-space-item"
+                        style="margin-right: 5px;"
+                      >
+                        <svg
+                          class="custom-icon custom-icon-setting"
+                          height="11"
+                          viewBox="0 0 13 11"
+                          width="13"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M.167 8.5H4.25v1.167H.167zm0-4.083h5.25v1.166H.167zm0-4.084h11.666V1.5H.167zM11.06 5.598l.674-.228.584 1.01-.535.47c.067.319.067.648 0 .967l.535.47-.584 1.01-.674-.228c-.24.216-.524.382-.837.484l-.14.697H8.917l-.14-.698a2.3 2.3 0 0 1-.837-.484l-.674.229-.583-1.01.534-.47a2.3 2.3 0 0 1 0-.967l-.534-.47.583-1.01.674.228c.24-.216.524-.382.837-.484l.14-.697h1.166l.14.697c.313.102.598.269.837.485zM9.5 8.5a1.167 1.167 0 1 0 0-2.333 1.167 1.167 0 0 0 0 2.333"
+                          />
+                        </svg>
+                      </div>
+                      <div
+                        class="ant-space-item"
+                        style="margin-right: 5px;"
+                      >
+                        表格设置
+                      </div>
+                      <div
+                        class="ant-space-item"
+                      >
+                        <svg
+                          class="custom-icon custom-icon-arrow-down"
+                          color="currentColor"
+                          height="14"
+                          viewBox="0 0 16 16"
+                          width="14"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="m8 8.781 3.3-3.3.943.943L8 10.667 3.757 6.424l.943-.943z"
+                            fill="currentColor"
+                          />
+                        </svg>
+                      </div>
+                    </div>
+                  </button>
+                </div>
+                <div
+                  class="ant-space-item"
+                >
+                  <button
+                    class="ant-btn ant-btn-default ant-btn-sm ant-btn-icon-only basic-button-wrapper css-geipcv"
+                    type="button"
+                  >
+                    <span
+                      class="ant-btn-icon"
+                    >
+                      <svg
+                        class="custom-icon custom-icon-refresh"
+                        height="14"
+                        viewBox="0 0 14 14"
+                        width="14"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M3.187 2.586a5.833 5.833 0 0 1 8.59 7.762L9.918 7h1.75a4.667 4.667 0 0 0-7.899-3.367zm7.626 8.828a5.833 5.833 0 0 1-8.59-7.762L4.083 7h-1.75a4.667 4.667 0 0 0 7.899 3.367z"
+                        />
+                      </svg>
+                    </span>
+                  </button>
                 </div>
               </div>
             </div>
           </div>
           <div
-            class="ant-space css-dev-only-do-not-override-1kh50jg ant-space-horizontal ant-space-align-center actiontech-table-filter-container-namespace full-width-element css-de5ds5"
+            class="ant-space ant-space-horizontal ant-space-align-center actiontech-table-filter-container-namespace full-width-element css-tvjydu"
             style="flex-wrap: wrap; margin-bottom: -12px;"
           >
             <div
@@ -1912,7 +1939,7 @@ exports[`test sqle/SqlManagementConf/List render filter list data by active stat
               style="margin-right: 12px; padding-bottom: 12px;"
             >
               <div
-                class="ant-select ant-select-sm ant-select-borderless basic-select-wrapper custom-select-namespace css-pti5z8 css-dev-only-do-not-override-jx040l ant-select-single ant-select-allow-clear ant-select-show-arrow"
+                class="ant-select ant-select-sm ant-select-borderless basic-select-wrapper custom-select-namespace css-pti5z8 ant-select-single ant-select-allow-clear ant-select-show-arrow"
               >
                 <div
                   class="ant-select-selector"
@@ -1967,10 +1994,68 @@ exports[`test sqle/SqlManagementConf/List render filter list data by active stat
             </div>
             <div
               class="ant-space-item"
+              style="margin-right: 12px; padding-bottom: 12px;"
+            >
+              <div
+                class="ant-select ant-select-sm ant-select-borderless basic-select-wrapper custom-select-namespace css-pti5z8 ant-select-single ant-select-allow-clear ant-select-show-arrow"
+              >
+                <div
+                  class="ant-select-selector"
+                >
+                  <span
+                    class="ant-select-selection-search"
+                  >
+                    <input
+                      aria-activedescendant="rc_select_TEST_OR_SSR_list_0"
+                      aria-autocomplete="list"
+                      aria-controls="rc_select_TEST_OR_SSR_list"
+                      aria-expanded="false"
+                      aria-haspopup="listbox"
+                      aria-owns="rc_select_TEST_OR_SSR_list"
+                      autocomplete="off"
+                      class="ant-select-selection-search-input"
+                      id="rc_select_TEST_OR_SSR"
+                      readonly=""
+                      role="combobox"
+                      style="opacity: 0;"
+                      type="search"
+                      unselectable="on"
+                      value=""
+                    />
+                  </span>
+                  <span
+                    class="ant-select-selection-placeholder"
+                  >
+                    <span
+                      class="custom-select-placeholder css-qly0fu"
+                    >
+                      <span
+                        class="custom-select-placeholder-prefix"
+                      >
+                        环境属性
+                      </span>
+                      <span
+                        class="custom-select-placeholder-value"
+                      >
+                        请选择{{name}}
+                      </span>
+                    </span>
+                  </span>
+                </div>
+                <span
+                  aria-hidden="true"
+                  class="ant-select-arrow"
+                  style="user-select: none;"
+                  unselectable="on"
+                />
+              </div>
+            </div>
+            <div
+              class="ant-space-item"
               style="padding-bottom: 12px;"
             >
               <div
-                class="ant-select ant-select-sm ant-select-borderless basic-select-wrapper custom-select-namespace css-pti5z8 css-dev-only-do-not-override-jx040l ant-select-single ant-select-allow-clear ant-select-show-arrow"
+                class="ant-select ant-select-sm ant-select-borderless basic-select-wrapper custom-select-namespace css-pti5z8 ant-select-single ant-select-allow-clear ant-select-show-arrow"
               >
                 <div
                   class="ant-select-selector"
@@ -2039,7 +2124,7 @@ exports[`test sqle/SqlManagementConf/List render filter list data by active stat
                   全部数据源
                 </span>
                 <button
-                  class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default ant-btn-sm filter-btn basic-button-wrapper css-nxo19c"
+                  class="ant-btn ant-btn-default ant-btn-sm filter-btn basic-button-wrapper css-nxo19c"
                   type="button"
                 >
                   <span>
@@ -2047,7 +2132,7 @@ exports[`test sqle/SqlManagementConf/List render filter list data by active stat
                   </span>
                 </button>
                 <button
-                  class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default ant-btn-sm filter-btn basic-button-wrapper css-nxo19c"
+                  class="ant-btn ant-btn-default ant-btn-sm filter-btn basic-button-wrapper css-nxo19c"
                   type="button"
                 >
                   <span>
@@ -2055,7 +2140,7 @@ exports[`test sqle/SqlManagementConf/List render filter list data by active stat
                   </span>
                 </button>
                 <button
-                  class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default ant-btn-sm filter-btn basic-button-wrapper css-nxo19c"
+                  class="ant-btn ant-btn-default ant-btn-sm filter-btn basic-button-wrapper css-nxo19c"
                   type="button"
                 >
                   <span>
@@ -2063,7 +2148,7 @@ exports[`test sqle/SqlManagementConf/List render filter list data by active stat
                   </span>
                 </button>
                 <button
-                  class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default ant-btn-sm filter-btn basic-button-wrapper css-nxo19c"
+                  class="ant-btn ant-btn-default ant-btn-sm filter-btn basic-button-wrapper css-nxo19c"
                   type="button"
                 >
                   <span>
@@ -2080,7 +2165,7 @@ exports[`test sqle/SqlManagementConf/List render filter list data by active stat
                   全部任务类型
                 </span>
                 <button
-                  class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default ant-btn-sm filter-btn basic-button-wrapper css-nxo19c"
+                  class="ant-btn ant-btn-default ant-btn-sm filter-btn basic-button-wrapper css-nxo19c"
                   type="button"
                 >
                   <span>
@@ -2088,7 +2173,7 @@ exports[`test sqle/SqlManagementConf/List render filter list data by active stat
                   </span>
                 </button>
                 <button
-                  class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default ant-btn-sm filter-btn basic-button-wrapper css-nxo19c"
+                  class="ant-btn ant-btn-default ant-btn-sm filter-btn basic-button-wrapper css-nxo19c"
                   type="button"
                 >
                   <span>
@@ -2096,7 +2181,7 @@ exports[`test sqle/SqlManagementConf/List render filter list data by active stat
                   </span>
                 </button>
                 <button
-                  class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default ant-btn-sm filter-btn basic-button-wrapper css-nxo19c"
+                  class="ant-btn ant-btn-default ant-btn-sm filter-btn basic-button-wrapper css-nxo19c"
                   type="button"
                 >
                   <span>
@@ -2104,7 +2189,7 @@ exports[`test sqle/SqlManagementConf/List render filter list data by active stat
                   </span>
                 </button>
                 <button
-                  class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default ant-btn-sm filter-btn basic-button-wrapper css-nxo19c"
+                  class="ant-btn ant-btn-default ant-btn-sm filter-btn basic-button-wrapper css-nxo19c"
                   type="button"
                 >
                   <span>
@@ -2112,7 +2197,7 @@ exports[`test sqle/SqlManagementConf/List render filter list data by active stat
                   </span>
                 </button>
                 <button
-                  class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default ant-btn-sm filter-btn basic-button-wrapper css-nxo19c"
+                  class="ant-btn ant-btn-default ant-btn-sm filter-btn basic-button-wrapper css-nxo19c"
                   type="button"
                 >
                   <span>
@@ -2120,7 +2205,7 @@ exports[`test sqle/SqlManagementConf/List render filter list data by active stat
                   </span>
                 </button>
                 <button
-                  class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default ant-btn-sm filter-btn basic-button-wrapper css-nxo19c"
+                  class="ant-btn ant-btn-default ant-btn-sm filter-btn basic-button-wrapper css-nxo19c"
                   type="button"
                 >
                   <span>
@@ -2128,7 +2213,7 @@ exports[`test sqle/SqlManagementConf/List render filter list data by active stat
                   </span>
                 </button>
                 <button
-                  class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default ant-btn-sm filter-btn basic-button-wrapper css-nxo19c"
+                  class="ant-btn ant-btn-default ant-btn-sm filter-btn basic-button-wrapper css-nxo19c"
                   type="button"
                 >
                   <span>
@@ -2136,7 +2221,7 @@ exports[`test sqle/SqlManagementConf/List render filter list data by active stat
                   </span>
                 </button>
                 <button
-                  class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default ant-btn-sm filter-btn basic-button-wrapper css-nxo19c"
+                  class="ant-btn ant-btn-default ant-btn-sm filter-btn basic-button-wrapper css-nxo19c"
                   type="button"
                 >
                   <span>
@@ -2144,7 +2229,7 @@ exports[`test sqle/SqlManagementConf/List render filter list data by active stat
                   </span>
                 </button>
                 <button
-                  class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default ant-btn-sm filter-btn basic-button-wrapper css-nxo19c"
+                  class="ant-btn ant-btn-default ant-btn-sm filter-btn basic-button-wrapper css-nxo19c"
                   type="button"
                 >
                   <span>
@@ -2155,10 +2240,10 @@ exports[`test sqle/SqlManagementConf/List render filter list data by active stat
             </section>
           </div>
           <div
-            class="ant-table-wrapper actiontech-table-namespace css-fxd6ka css-dev-only-do-not-override-bj9uhl"
+            class="ant-table-wrapper actiontech-table-namespace css-fxd6ka"
           >
             <div
-              class="ant-spin-nested-loading css-dev-only-do-not-override-bj9uhl"
+              class="ant-spin-nested-loading"
             >
               <div
                 class="ant-spin-container"
@@ -2208,7 +2293,7 @@ exports[`test sqle/SqlManagementConf/List render filter list data by active stat
                               class="ant-table-cell"
                               scope="col"
                             >
-                              所属业务
+                              环境属性
                             </th>
                             <th
                               class="ant-table-cell"
@@ -2373,7 +2458,7 @@ exports[`test sqle/SqlManagementConf/List render init snap shot 1`] = `
             href="/sqle/project/700300/sql-management-conf/create"
           >
             <button
-              class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary basic-button-wrapper css-geipcv"
+              class="ant-btn ant-btn-primary basic-button-wrapper css-geipcv"
               type="button"
             >
               <span>
@@ -2384,239 +2469,248 @@ exports[`test sqle/SqlManagementConf/List render init snap shot 1`] = `
         </div>
       </div>
       <div
-        class="ant-spin-nested-loading css-dev-only-do-not-override-txh9fw"
+        class="ant-spin-nested-loading"
       >
         <div
           class="ant-spin-container"
         >
           <div
-            class="ant-spin-nested-loading css-dev-only-do-not-override-1kh50jg"
+            class="ant-space ant-space-horizontal ant-space-align-center full-width-element flex-space-between actiontech-table-toolbar-namespace css-a7k93w"
+            style="flex-wrap: wrap; margin-bottom: -8px;"
           >
             <div
-              class="ant-spin-container"
+              class="ant-space-item"
+              style="margin-right: 8px; padding-bottom: 8px;"
             >
               <div
-                class="ant-space css-dev-only-do-not-override-1kh50jg ant-space-horizontal ant-space-align-center full-width-element flex-space-between actiontech-table-toolbar-namespace css-c38ntt"
-                style="flex-wrap: wrap; margin-bottom: -8px;"
+                class="ant-space ant-space-horizontal ant-space-align-center"
               >
                 <div
                   class="ant-space-item"
-                  style="margin-right: 8px; padding-bottom: 8px;"
+                  style="margin-right: 12px;"
                 >
-                  <div
-                    class="ant-space css-dev-only-do-not-override-1kh50jg ant-space-horizontal ant-space-align-center"
+                  <span
+                    class="ant-input-affix-wrapper basic-input-wrapper actiontech-table-search-input-namespace css-1f6svkh ant-input-affix-wrapper-sm"
                   >
-                    <div
-                      class="ant-space-item"
-                      style="margin-right: 12px;"
+                    <input
+                      class="ant-input ant-input-sm"
+                      id="actiontech-table-search-input"
+                      placeholder="输入关键字搜索"
+                      type="text"
+                      value=""
+                    />
+                    <span
+                      class="ant-input-suffix"
                     >
                       <span
-                        class="ant-input-affix-wrapper basic-input-wrapper actiontech-table-search-input-namespace css-1f6svkh ant-input-affix-wrapper-sm css-dev-only-do-not-override-mlhibv"
+                        class="ant-input-clear-icon ant-input-clear-icon-hidden ant-input-clear-icon-has-suffix"
+                        role="button"
+                        tabindex="-1"
                       >
-                        <input
-                          class="ant-input ant-input-sm css-dev-only-do-not-override-mlhibv"
-                          id="actiontech-table-search-input"
-                          placeholder="输入关键字搜索"
-                          type="text"
-                          value=""
-                        />
-                        <span
-                          class="ant-input-suffix"
+                        <svg
+                          fill="currentColor"
+                          height="14"
+                          viewBox="0 0 14 14"
+                          width="14"
+                          xmlns="http://www.w3.org/2000/svg"
                         >
-                          <svg
-                            class="custom-icon custom-icon-search"
-                            height="14"
-                            viewBox="0 0 14 14"
-                            width="14"
-                            xmlns="http://www.w3.org/2000/svg"
-                          >
-                            <path
-                              d="m10.518 9.693 2.499 2.498-.826.825-2.498-2.498a5.252 5.252 0 0 1-8.527-4.101 5.25 5.25 0 0 1 5.25-5.25 5.252 5.252 0 0 1 4.102 8.526m-1.17-.433a4.082 4.082 0 0 0-2.931-6.927 4.08 4.08 0 0 0-4.084 4.084 4.082 4.082 0 0 0 6.927 2.93z"
-                            />
-                          </svg>
-                        </span>
+                          <path
+                            d="m7 6.175 2.887-2.887.825.825L7.825 7l2.887 2.888-.825.824L7 7.825l-2.888 2.887-.824-.824L6.175 7 3.288 4.113l.824-.825z"
+                          />
+                        </svg>
                       </span>
-                    </div>
-                    <div
-                      class="ant-space-item"
-                    >
-                      <button
-                        class="ant-btn css-dev-only-do-not-override-czn7jp ant-btn-default ant-btn-sm ant-btn-two-chinese-chars actiontech-filter-button-namespace basic-button-wrapper css-geipcv"
-                        style="padding: 0px 6px 0px 10px;"
-                        type="button"
+                      <svg
+                        class="custom-icon custom-icon-search"
+                        height="14"
+                        viewBox="0 0 14 14"
+                        width="14"
+                        xmlns="http://www.w3.org/2000/svg"
                       >
-                        <div
-                          class="ant-space css-dev-only-do-not-override-czn7jp ant-space-horizontal ant-space-align-center css-1nt49ug"
-                        >
-                          <div
-                            class="ant-space-item"
-                            style="margin-right: 2px;"
-                          >
-                            筛选
-                          </div>
-                          <div
-                            class="ant-space-item"
-                          >
-                            <svg
-                              color="currrentColor"
-                              height="14"
-                              viewBox="0 0 16 16"
-                              width="14"
-                              xmlns="http://www.w3.org/2000/svg"
-                            >
-                              <path
-                                d="m8 8.781 3.3-3.3.943.943L8 10.667 3.757 6.424l.943-.943z"
-                                fill="currentColor"
-                              />
-                            </svg>
-                          </div>
-                        </div>
-                      </button>
-                    </div>
-                  </div>
+                        <path
+                          d="m10.518 9.693 2.499 2.498-.826.825-2.498-2.498a5.252 5.252 0 0 1-8.527-4.101 5.25 5.25 0 0 1 5.25-5.25 5.252 5.252 0 0 1 4.102 8.526m-1.17-.433a4.082 4.082 0 0 0-2.931-6.927 4.08 4.08 0 0 0-4.084 4.084 4.082 4.082 0 0 0 6.927 2.93z"
+                        />
+                      </svg>
+                    </span>
+                  </span>
                 </div>
                 <div
                   class="ant-space-item"
-                  style="padding-bottom: 8px;"
                 >
-                  <div
-                    class="ant-space css-dev-only-do-not-override-1kh50jg ant-space-horizontal ant-space-align-center"
+                  <button
+                    class="ant-btn ant-btn-default ant-btn-sm ant-btn-two-chinese-chars actiontech-filter-button-namespace basic-button-wrapper css-geipcv"
+                    style="padding: 0px 6px 0px 10px;"
+                    type="button"
                   >
                     <div
-                      class="ant-space-item"
-                      style="margin-right: 12px;"
+                      class="ant-space ant-space-horizontal ant-space-align-center css-1nt49ug"
                     >
-                      <button
-                        class="ant-btn css-dev-only-do-not-override-czn7jp ant-btn-default ant-btn-sm actiontech-table-actions-button actiontech-table-setting-namespace basic-button-wrapper css-geipcv"
-                        type="button"
+                      <div
+                        class="ant-space-item"
+                        style="margin-right: 2px;"
                       >
-                        <div
-                          class="ant-space css-dev-only-do-not-override-czn7jp ant-space-horizontal ant-space-align-center css-1nt49ug"
+                        筛选
+                      </div>
+                      <div
+                        class="ant-space-item"
+                      >
+                        <svg
+                          color="currentColor"
+                          height="14"
+                          viewBox="0 0 16 16"
+                          width="14"
+                          xmlns="http://www.w3.org/2000/svg"
                         >
-                          <div
-                            class="ant-space-item"
-                            style="margin-right: 5px;"
-                          >
-                            <svg
-                              fill="none"
-                              height="14"
-                              viewBox="0 0 14 14"
-                              width="14"
-                              xmlns="http://www.w3.org/2000/svg"
-                            >
-                              <path
-                                d="M2.917 1.167h8.166a.583.583 0 0 1 .584.583v11.167a.293.293 0 0 1-.447.247L7 10.518l-4.22 2.646a.291.291 0 0 1-.447-.247V1.75a.583.583 0 0 1 .584-.583M10.5 2.333h-7v9.002L7 9.141l3.5 2.194zM4.667 5.25h4.666v1.167H4.667z"
-                                fill="#292C33"
-                              />
-                            </svg>
-                          </div>
-                          <div
-                            class="ant-space-item"
-                            style="margin-right: 5px;"
-                          >
-                            <span>
-                              任务类型
-                            </span>
-                          </div>
-                          <div
-                            class="ant-space-item"
-                          >
-                            <svg
-                              color="currentColor"
-                              fill="none"
-                              height="16"
-                              viewBox="0 0 16 16"
-                              width="16"
-                              xmlns="http://www.w3.org/2000/svg"
-                            >
-                              <path
-                                d="m8 7.219-3.3 3.3-.942-.943L8 5.333l4.243 4.243-.943.943z"
-                                fill="currentColor"
-                              />
-                            </svg>
-                          </div>
-                        </div>
-                      </button>
+                          <path
+                            d="m8 8.781 3.3-3.3.943.943L8 10.667 3.757 6.424l.943-.943z"
+                            fill="currentColor"
+                          />
+                        </svg>
+                      </div>
                     </div>
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div
+              class="ant-space-item"
+              style="padding-bottom: 8px;"
+            >
+              <div
+                class="ant-space ant-space-horizontal ant-space-align-center"
+              >
+                <div
+                  class="ant-space-item"
+                  style="margin-right: 12px;"
+                >
+                  <button
+                    class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button actiontech-table-setting-namespace basic-button-wrapper css-geipcv"
+                    type="button"
+                  >
                     <div
-                      class="ant-space-item"
-                      style="margin-right: 12px;"
+                      class="ant-space ant-space-horizontal ant-space-align-center css-1nt49ug"
                     >
-                      <button
-                        class="ant-btn css-dev-only-do-not-override-czn7jp ant-btn-default ant-btn-sm actiontech-table-setting-namespace basic-button-wrapper css-geipcv"
-                        style="padding: 0px 6px 0px 8px;"
-                        type="button"
+                      <div
+                        class="ant-space-item"
+                        style="margin-right: 5px;"
                       >
-                        <div
-                          class="ant-space css-dev-only-do-not-override-czn7jp ant-space-horizontal ant-space-align-center css-1nt49ug"
+                        <svg
+                          fill="none"
+                          height="14"
+                          viewBox="0 0 14 14"
+                          width="14"
+                          xmlns="http://www.w3.org/2000/svg"
                         >
-                          <div
-                            class="ant-space-item"
-                            style="margin-right: 5px;"
-                          >
-                            <svg
-                              class="custom-icon custom-icon-setting"
-                              height="11"
-                              viewBox="0 0 13 11"
-                              width="13"
-                              xmlns="http://www.w3.org/2000/svg"
-                            >
-                              <path
-                                d="M.167 8.5H4.25v1.167H.167zm0-4.083h5.25v1.166H.167zm0-4.084h11.666V1.5H.167zM11.06 5.598l.674-.228.584 1.01-.535.47c.067.319.067.648 0 .967l.535.47-.584 1.01-.674-.228c-.24.216-.524.382-.837.484l-.14.697H8.917l-.14-.698a2.3 2.3 0 0 1-.837-.484l-.674.229-.583-1.01.534-.47a2.3 2.3 0 0 1 0-.967l-.534-.47.583-1.01.674.228c.24-.216.524-.382.837-.484l.14-.697h1.166l.14.697c.313.102.598.269.837.485zM9.5 8.5a1.167 1.167 0 1 0 0-2.333 1.167 1.167 0 0 0 0 2.333"
-                              />
-                            </svg>
-                          </div>
-                          <div
-                            class="ant-space-item"
-                            style="margin-right: 5px;"
-                          >
-                            表格设置
-                          </div>
-                          <div
-                            class="ant-space-item"
-                          >
-                            <svg
-                              class="custom-icon custom-icon-arrow-down"
-                              color="currentColor"
-                              height="14"
-                              viewBox="0 0 16 16"
-                              width="14"
-                              xmlns="http://www.w3.org/2000/svg"
-                            >
-                              <path
-                                d="m8 8.781 3.3-3.3.943.943L8 10.667 3.757 6.424l.943-.943z"
-                                fill="currentColor"
-                              />
-                            </svg>
-                          </div>
-                        </div>
-                      </button>
-                    </div>
-                    <div
-                      class="ant-space-item"
-                    >
-                      <button
-                        class="ant-btn css-dev-only-do-not-override-czn7jp ant-btn-default ant-btn-sm ant-btn-icon-only basic-button-wrapper css-geipcv"
-                        type="button"
+                          <path
+                            d="M2.917 1.167h8.166a.583.583 0 0 1 .584.583v11.167a.293.293 0 0 1-.447.247L7 10.518l-4.22 2.646a.291.291 0 0 1-.447-.247V1.75a.583.583 0 0 1 .584-.583M10.5 2.333h-7v9.002L7 9.141l3.5 2.194zM4.667 5.25h4.666v1.167H4.667z"
+                            fill="#292C33"
+                          />
+                        </svg>
+                      </div>
+                      <div
+                        class="ant-space-item"
+                        style="margin-right: 5px;"
                       >
-                        <span
-                          class="ant-btn-icon"
-                        >
-                          <svg
-                            class="custom-icon custom-icon-refresh"
-                            height="14"
-                            viewBox="0 0 14 14"
-                            width="14"
-                            xmlns="http://www.w3.org/2000/svg"
-                          >
-                            <path
-                              d="M3.187 2.586a5.833 5.833 0 0 1 8.59 7.762L9.918 7h1.75a4.667 4.667 0 0 0-7.899-3.367zm7.626 8.828a5.833 5.833 0 0 1-8.59-7.762L4.083 7h-1.75a4.667 4.667 0 0 0 7.899 3.367z"
-                            />
-                          </svg>
+                        <span>
+                          任务类型
                         </span>
-                      </button>
+                      </div>
+                      <div
+                        class="ant-space-item"
+                      >
+                        <svg
+                          color="currentColor"
+                          fill="none"
+                          height="16"
+                          viewBox="0 0 16 16"
+                          width="16"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="m8 7.219-3.3 3.3-.942-.943L8 5.333l4.243 4.243-.943.943z"
+                            fill="currentColor"
+                          />
+                        </svg>
+                      </div>
                     </div>
-                  </div>
+                  </button>
+                </div>
+                <div
+                  class="ant-space-item"
+                  style="margin-right: 12px;"
+                >
+                  <button
+                    class="ant-btn ant-btn-default ant-btn-sm actiontech-table-setting-namespace basic-button-wrapper css-geipcv"
+                    style="padding: 0px 6px 0px 8px;"
+                    type="button"
+                  >
+                    <div
+                      class="ant-space ant-space-horizontal ant-space-align-center css-1nt49ug"
+                    >
+                      <div
+                        class="ant-space-item"
+                        style="margin-right: 5px;"
+                      >
+                        <svg
+                          class="custom-icon custom-icon-setting"
+                          height="11"
+                          viewBox="0 0 13 11"
+                          width="13"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M.167 8.5H4.25v1.167H.167zm0-4.083h5.25v1.166H.167zm0-4.084h11.666V1.5H.167zM11.06 5.598l.674-.228.584 1.01-.535.47c.067.319.067.648 0 .967l.535.47-.584 1.01-.674-.228c-.24.216-.524.382-.837.484l-.14.697H8.917l-.14-.698a2.3 2.3 0 0 1-.837-.484l-.674.229-.583-1.01.534-.47a2.3 2.3 0 0 1 0-.967l-.534-.47.583-1.01.674.228c.24-.216.524-.382.837-.484l.14-.697h1.166l.14.697c.313.102.598.269.837.485zM9.5 8.5a1.167 1.167 0 1 0 0-2.333 1.167 1.167 0 0 0 0 2.333"
+                          />
+                        </svg>
+                      </div>
+                      <div
+                        class="ant-space-item"
+                        style="margin-right: 5px;"
+                      >
+                        表格设置
+                      </div>
+                      <div
+                        class="ant-space-item"
+                      >
+                        <svg
+                          class="custom-icon custom-icon-arrow-down"
+                          color="currentColor"
+                          height="14"
+                          viewBox="0 0 16 16"
+                          width="14"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="m8 8.781 3.3-3.3.943.943L8 10.667 3.757 6.424l.943-.943z"
+                            fill="currentColor"
+                          />
+                        </svg>
+                      </div>
+                    </div>
+                  </button>
+                </div>
+                <div
+                  class="ant-space-item"
+                >
+                  <button
+                    class="ant-btn ant-btn-default ant-btn-sm ant-btn-icon-only basic-button-wrapper css-geipcv"
+                    type="button"
+                  >
+                    <span
+                      class="ant-btn-icon"
+                    >
+                      <svg
+                        class="custom-icon custom-icon-refresh"
+                        height="14"
+                        viewBox="0 0 14 14"
+                        width="14"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M3.187 2.586a5.833 5.833 0 0 1 8.59 7.762L9.918 7h1.75a4.667 4.667 0 0 0-7.899-3.367zm7.626 8.828a5.833 5.833 0 0 1-8.59-7.762L4.083 7h-1.75a4.667 4.667 0 0 0 7.899 3.367z"
+                        />
+                      </svg>
+                    </span>
+                  </button>
                 </div>
               </div>
             </div>
@@ -2636,7 +2730,7 @@ exports[`test sqle/SqlManagementConf/List render init snap shot 1`] = `
                   全部数据源
                 </span>
                 <button
-                  class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default ant-btn-sm filter-btn basic-button-wrapper css-nxo19c"
+                  class="ant-btn ant-btn-default ant-btn-sm filter-btn basic-button-wrapper css-nxo19c"
                   type="button"
                 >
                   <span>
@@ -2644,7 +2738,7 @@ exports[`test sqle/SqlManagementConf/List render init snap shot 1`] = `
                   </span>
                 </button>
                 <button
-                  class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default ant-btn-sm filter-btn basic-button-wrapper css-nxo19c"
+                  class="ant-btn ant-btn-default ant-btn-sm filter-btn basic-button-wrapper css-nxo19c"
                   type="button"
                 >
                   <span>
@@ -2652,7 +2746,7 @@ exports[`test sqle/SqlManagementConf/List render init snap shot 1`] = `
                   </span>
                 </button>
                 <button
-                  class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default ant-btn-sm filter-btn basic-button-wrapper css-nxo19c"
+                  class="ant-btn ant-btn-default ant-btn-sm filter-btn basic-button-wrapper css-nxo19c"
                   type="button"
                 >
                   <span>
@@ -2660,7 +2754,7 @@ exports[`test sqle/SqlManagementConf/List render init snap shot 1`] = `
                   </span>
                 </button>
                 <button
-                  class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default ant-btn-sm filter-btn basic-button-wrapper css-nxo19c"
+                  class="ant-btn ant-btn-default ant-btn-sm filter-btn basic-button-wrapper css-nxo19c"
                   type="button"
                 >
                   <span>
@@ -2677,7 +2771,7 @@ exports[`test sqle/SqlManagementConf/List render init snap shot 1`] = `
                   全部任务类型
                 </span>
                 <button
-                  class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default ant-btn-sm filter-btn basic-button-wrapper css-nxo19c"
+                  class="ant-btn ant-btn-default ant-btn-sm filter-btn basic-button-wrapper css-nxo19c"
                   type="button"
                 >
                   <span>
@@ -2685,7 +2779,7 @@ exports[`test sqle/SqlManagementConf/List render init snap shot 1`] = `
                   </span>
                 </button>
                 <button
-                  class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default ant-btn-sm filter-btn basic-button-wrapper css-nxo19c"
+                  class="ant-btn ant-btn-default ant-btn-sm filter-btn basic-button-wrapper css-nxo19c"
                   type="button"
                 >
                   <span>
@@ -2693,7 +2787,7 @@ exports[`test sqle/SqlManagementConf/List render init snap shot 1`] = `
                   </span>
                 </button>
                 <button
-                  class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default ant-btn-sm filter-btn basic-button-wrapper css-nxo19c"
+                  class="ant-btn ant-btn-default ant-btn-sm filter-btn basic-button-wrapper css-nxo19c"
                   type="button"
                 >
                   <span>
@@ -2701,7 +2795,7 @@ exports[`test sqle/SqlManagementConf/List render init snap shot 1`] = `
                   </span>
                 </button>
                 <button
-                  class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default ant-btn-sm filter-btn basic-button-wrapper css-nxo19c"
+                  class="ant-btn ant-btn-default ant-btn-sm filter-btn basic-button-wrapper css-nxo19c"
                   type="button"
                 >
                   <span>
@@ -2709,7 +2803,7 @@ exports[`test sqle/SqlManagementConf/List render init snap shot 1`] = `
                   </span>
                 </button>
                 <button
-                  class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default ant-btn-sm filter-btn basic-button-wrapper css-nxo19c"
+                  class="ant-btn ant-btn-default ant-btn-sm filter-btn basic-button-wrapper css-nxo19c"
                   type="button"
                 >
                   <span>
@@ -2717,7 +2811,7 @@ exports[`test sqle/SqlManagementConf/List render init snap shot 1`] = `
                   </span>
                 </button>
                 <button
-                  class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default ant-btn-sm filter-btn basic-button-wrapper css-nxo19c"
+                  class="ant-btn ant-btn-default ant-btn-sm filter-btn basic-button-wrapper css-nxo19c"
                   type="button"
                 >
                   <span>
@@ -2725,7 +2819,7 @@ exports[`test sqle/SqlManagementConf/List render init snap shot 1`] = `
                   </span>
                 </button>
                 <button
-                  class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default ant-btn-sm filter-btn basic-button-wrapper css-nxo19c"
+                  class="ant-btn ant-btn-default ant-btn-sm filter-btn basic-button-wrapper css-nxo19c"
                   type="button"
                 >
                   <span>
@@ -2733,7 +2827,7 @@ exports[`test sqle/SqlManagementConf/List render init snap shot 1`] = `
                   </span>
                 </button>
                 <button
-                  class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default ant-btn-sm filter-btn basic-button-wrapper css-nxo19c"
+                  class="ant-btn ant-btn-default ant-btn-sm filter-btn basic-button-wrapper css-nxo19c"
                   type="button"
                 >
                   <span>
@@ -2741,7 +2835,7 @@ exports[`test sqle/SqlManagementConf/List render init snap shot 1`] = `
                   </span>
                 </button>
                 <button
-                  class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default ant-btn-sm filter-btn basic-button-wrapper css-nxo19c"
+                  class="ant-btn ant-btn-default ant-btn-sm filter-btn basic-button-wrapper css-nxo19c"
                   type="button"
                 >
                   <span>
@@ -2752,10 +2846,10 @@ exports[`test sqle/SqlManagementConf/List render init snap shot 1`] = `
             </section>
           </div>
           <div
-            class="ant-table-wrapper actiontech-table-namespace css-fxd6ka css-dev-only-do-not-override-bj9uhl"
+            class="ant-table-wrapper actiontech-table-namespace css-fxd6ka"
           >
             <div
-              class="ant-spin-nested-loading css-dev-only-do-not-override-bj9uhl"
+              class="ant-spin-nested-loading"
             >
               <div
                 class="ant-spin-container"
@@ -2805,7 +2899,7 @@ exports[`test sqle/SqlManagementConf/List render init snap shot 1`] = `
                               class="ant-table-cell"
                               scope="col"
                             >
-                              所属业务
+                              环境属性
                             </th>
                             <th
                               class="ant-table-cell"
@@ -2929,7 +3023,7 @@ exports[`test sqle/SqlManagementConf/List render init snap shot 1`] = `
                               class="ant-table-cell"
                             >
                               <div
-                                class="ant-space css-dev-only-do-not-override-bj9uhl ant-space-horizontal ant-space-align-center css-1nt49ug"
+                                class="ant-space ant-space-horizontal ant-space-align-center css-1nt49ug"
                               >
                                 <div
                                   class="ant-space-item"
@@ -2965,7 +3059,7 @@ exports[`test sqle/SqlManagementConf/List render init snap shot 1`] = `
                             <td
                               class="ant-table-cell"
                             >
-                              test
+                              environment-1
                             </td>
                             <td
                               class="ant-table-cell"
@@ -2977,7 +3071,7 @@ exports[`test sqle/SqlManagementConf/List render init snap shot 1`] = `
                                   href="/sqle/project/700300/sql-management-conf/1?active_audit_plan_id=1"
                                 >
                                   <span
-                                    class="ant-tag ant-tag-default pointer basic-tag-wrapper basic-default-tag-wrapper css-1mjwlcb css-dev-only-do-not-override-bj9uhl"
+                                    class="ant-tag ant-tag-default pointer basic-tag-wrapper basic-default-tag-wrapper css-1mjwlcb"
                                   >
                                     SQL文件
                                   </span>
@@ -3024,7 +3118,7 @@ exports[`test sqle/SqlManagementConf/List render init snap shot 1`] = `
                                 class="css-new95e"
                               >
                                 <button
-                                  class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                  class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
                                   type="button"
                                 >
                                   <span>
@@ -3032,7 +3126,7 @@ exports[`test sqle/SqlManagementConf/List render init snap shot 1`] = `
                                   </span>
                                 </button>
                                 <button
-                                  class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm ant-btn-icon-only actiontech-table-actions-button actiontech-table-actions-more-button basic-button-wrapper css-geipcv"
+                                  class="ant-btn ant-btn-default ant-btn-sm ant-btn-icon-only actiontech-table-actions-button actiontech-table-actions-more-button basic-button-wrapper css-geipcv"
                                   type="button"
                                 >
                                   <span
@@ -3063,7 +3157,7 @@ exports[`test sqle/SqlManagementConf/List render init snap shot 1`] = `
                               class="ant-table-cell"
                             >
                               <div
-                                class="ant-space css-dev-only-do-not-override-bj9uhl ant-space-horizontal ant-space-align-center css-1nt49ug"
+                                class="ant-space ant-space-horizontal ant-space-align-center css-1nt49ug"
                               >
                                 <div
                                   class="ant-space-item"
@@ -3088,7 +3182,7 @@ exports[`test sqle/SqlManagementConf/List render init snap shot 1`] = `
                             <td
                               class="ant-table-cell"
                             >
-                              test
+                              environment-1
                             </td>
                             <td
                               class="ant-table-cell"
@@ -3100,7 +3194,7 @@ exports[`test sqle/SqlManagementConf/List render init snap shot 1`] = `
                                   href="/sqle/project/700300/sql-management-conf/2?active_audit_plan_id=1"
                                 >
                                   <span
-                                    class="ant-tag ant-tag-default pointer basic-tag-wrapper basic-default-tag-wrapper css-1mjwlcb css-dev-only-do-not-override-bj9uhl"
+                                    class="ant-tag ant-tag-default pointer basic-tag-wrapper basic-default-tag-wrapper css-1mjwlcb"
                                   >
                                     SQL文件
                                   </span>
@@ -3109,19 +3203,19 @@ exports[`test sqle/SqlManagementConf/List render init snap shot 1`] = `
                                   href="/sqle/project/700300/sql-management-conf/2?active_audit_plan_id=2"
                                 >
                                   <span
-                                    class="ant-tag ant-tag-default pointer basic-tag-wrapper basic-default-tag-wrapper css-1mjwlcb css-dev-only-do-not-override-bj9uhl"
+                                    class="ant-tag ant-tag-default pointer basic-tag-wrapper basic-default-tag-wrapper css-1mjwlcb"
                                   >
                                     MySQL库表元数据
                                   </span>
                                 </a>
                                 <div
-                                  class="ant-space css-dev-only-do-not-override-bj9uhl ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
+                                  class="ant-space ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
                                 >
                                   <div
                                     class="ant-space-item"
                                   >
                                     <button
-                                      class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm ant-btn-icon-only table-row-scan-types-more-button basic-button-wrapper css-geipcv"
+                                      class="ant-btn ant-btn-default ant-btn-sm ant-btn-icon-only table-row-scan-types-more-button basic-button-wrapper css-geipcv"
                                       type="button"
                                     >
                                       <span
@@ -3192,7 +3286,7 @@ exports[`test sqle/SqlManagementConf/List render init snap shot 1`] = `
                                 class="css-new95e"
                               >
                                 <button
-                                  class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                  class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
                                   type="button"
                                 >
                                   <span>
@@ -3200,7 +3294,7 @@ exports[`test sqle/SqlManagementConf/List render init snap shot 1`] = `
                                   </span>
                                 </button>
                                 <button
-                                  class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm ant-btn-icon-only actiontech-table-actions-button actiontech-table-actions-more-button basic-button-wrapper css-geipcv"
+                                  class="ant-btn ant-btn-default ant-btn-sm ant-btn-icon-only actiontech-table-actions-button actiontech-table-actions-more-button basic-button-wrapper css-geipcv"
                                   type="button"
                                 >
                                   <span
@@ -3231,7 +3325,7 @@ exports[`test sqle/SqlManagementConf/List render init snap shot 1`] = `
                               class="ant-table-cell"
                             >
                               <div
-                                class="ant-space css-dev-only-do-not-override-bj9uhl ant-space-horizontal ant-space-align-center css-1nt49ug"
+                                class="ant-space ant-space-horizontal ant-space-align-center css-1nt49ug"
                               >
                                 <div
                                   class="ant-space-item"
@@ -3256,7 +3350,7 @@ exports[`test sqle/SqlManagementConf/List render init snap shot 1`] = `
                             <td
                               class="ant-table-cell"
                             >
-                              test
+                              environment-2
                             </td>
                             <td
                               class="ant-table-cell"
@@ -3309,7 +3403,7 @@ exports[`test sqle/SqlManagementConf/List render init snap shot 1`] = `
                                 class="css-new95e"
                               >
                                 <button
-                                  class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                  class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
                                   type="button"
                                 >
                                   <span>
@@ -3317,7 +3411,7 @@ exports[`test sqle/SqlManagementConf/List render init snap shot 1`] = `
                                   </span>
                                 </button>
                                 <button
-                                  class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm ant-btn-icon-only actiontech-table-actions-button actiontech-table-actions-more-button basic-button-wrapper css-geipcv"
+                                  class="ant-btn ant-btn-default ant-btn-sm ant-btn-icon-only actiontech-table-actions-button actiontech-table-actions-more-button basic-button-wrapper css-geipcv"
                                   type="button"
                                 >
                                   <span
@@ -3346,7 +3440,7 @@ exports[`test sqle/SqlManagementConf/List render init snap shot 1`] = `
                   </div>
                 </div>
                 <ul
-                  class="ant-pagination ant-table-pagination ant-table-pagination-right actiontech-table-pagination actiontech-table-pagination-fixed css-dev-only-do-not-override-bj9uhl"
+                  class="ant-pagination ant-table-pagination ant-table-pagination-right actiontech-table-pagination actiontech-table-pagination-fixed"
                 >
                   <li
                     class="ant-pagination-total-text"
@@ -3358,7 +3452,7 @@ exports[`test sqle/SqlManagementConf/List render init snap shot 1`] = `
                   <li
                     aria-disabled="true"
                     class="ant-pagination-prev ant-pagination-disabled"
-                    title="Previous Page"
+                    title="上一页"
                   >
                     <button
                       class="ant-pagination-item-link"
@@ -3401,7 +3495,7 @@ exports[`test sqle/SqlManagementConf/List render init snap shot 1`] = `
                   <li
                     aria-disabled="true"
                     class="ant-pagination-next ant-pagination-disabled"
-                    title="Next Page"
+                    title="下一页"
                   >
                     <button
                       class="ant-pagination-item-link"
@@ -3434,8 +3528,8 @@ exports[`test sqle/SqlManagementConf/List render init snap shot 1`] = `
                     class="ant-pagination-options"
                   >
                     <div
-                      aria-label="Page Size"
-                      class="ant-select ant-pagination-options-size-changer css-dev-only-do-not-override-bj9uhl ant-select-single ant-select-show-arrow ant-select-show-search"
+                      aria-label="页码"
+                      class="ant-select ant-pagination-options-size-changer ant-select-single ant-select-show-arrow ant-select-show-search"
                     >
                       <div
                         class="ant-select-selector"
@@ -3449,7 +3543,7 @@ exports[`test sqle/SqlManagementConf/List render init snap shot 1`] = `
                             aria-controls="rc_select_TEST_OR_SSR_list"
                             aria-expanded="false"
                             aria-haspopup="listbox"
-                            aria-label="Page Size"
+                            aria-label="页码"
                             aria-owns="rc_select_TEST_OR_SSR_list"
                             autocomplete="off"
                             class="ant-select-selection-search-input"
@@ -3461,9 +3555,9 @@ exports[`test sqle/SqlManagementConf/List render init snap shot 1`] = `
                         </span>
                         <span
                           class="ant-select-selection-item"
-                          title="20 / page"
+                          title="20 条/页"
                         >
-                          20 / page
+                          20 条/页
                         </span>
                       </div>
                       <span
@@ -3526,7 +3620,7 @@ exports[`test sqle/SqlManagementConf/List render sql management conf list with a
             href="/sqle/project/700300/sql-management-conf/create"
           >
             <button
-              class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary basic-button-wrapper css-geipcv"
+              class="ant-btn ant-btn-primary basic-button-wrapper css-geipcv"
               type="button"
             >
               <span>
@@ -3537,239 +3631,248 @@ exports[`test sqle/SqlManagementConf/List render sql management conf list with a
         </div>
       </div>
       <div
-        class="ant-spin-nested-loading css-dev-only-do-not-override-txh9fw"
+        class="ant-spin-nested-loading"
       >
         <div
           class="ant-spin-container"
         >
           <div
-            class="ant-spin-nested-loading css-dev-only-do-not-override-1kh50jg"
+            class="ant-space ant-space-horizontal ant-space-align-center full-width-element flex-space-between actiontech-table-toolbar-namespace css-a7k93w"
+            style="flex-wrap: wrap; margin-bottom: -8px;"
           >
             <div
-              class="ant-spin-container"
+              class="ant-space-item"
+              style="margin-right: 8px; padding-bottom: 8px;"
             >
               <div
-                class="ant-space css-dev-only-do-not-override-1kh50jg ant-space-horizontal ant-space-align-center full-width-element flex-space-between actiontech-table-toolbar-namespace css-c38ntt"
-                style="flex-wrap: wrap; margin-bottom: -8px;"
+                class="ant-space ant-space-horizontal ant-space-align-center"
               >
                 <div
                   class="ant-space-item"
-                  style="margin-right: 8px; padding-bottom: 8px;"
+                  style="margin-right: 12px;"
                 >
-                  <div
-                    class="ant-space css-dev-only-do-not-override-1kh50jg ant-space-horizontal ant-space-align-center"
+                  <span
+                    class="ant-input-affix-wrapper basic-input-wrapper actiontech-table-search-input-namespace css-1f6svkh ant-input-affix-wrapper-sm"
                   >
-                    <div
-                      class="ant-space-item"
-                      style="margin-right: 12px;"
+                    <input
+                      class="ant-input ant-input-sm"
+                      id="actiontech-table-search-input"
+                      placeholder="输入关键字搜索"
+                      type="text"
+                      value=""
+                    />
+                    <span
+                      class="ant-input-suffix"
                     >
                       <span
-                        class="ant-input-affix-wrapper basic-input-wrapper actiontech-table-search-input-namespace css-1f6svkh ant-input-affix-wrapper-sm css-dev-only-do-not-override-mlhibv"
+                        class="ant-input-clear-icon ant-input-clear-icon-hidden ant-input-clear-icon-has-suffix"
+                        role="button"
+                        tabindex="-1"
                       >
-                        <input
-                          class="ant-input ant-input-sm css-dev-only-do-not-override-mlhibv"
-                          id="actiontech-table-search-input"
-                          placeholder="输入关键字搜索"
-                          type="text"
-                          value=""
-                        />
-                        <span
-                          class="ant-input-suffix"
+                        <svg
+                          fill="currentColor"
+                          height="14"
+                          viewBox="0 0 14 14"
+                          width="14"
+                          xmlns="http://www.w3.org/2000/svg"
                         >
-                          <svg
-                            class="custom-icon custom-icon-search"
-                            height="14"
-                            viewBox="0 0 14 14"
-                            width="14"
-                            xmlns="http://www.w3.org/2000/svg"
-                          >
-                            <path
-                              d="m10.518 9.693 2.499 2.498-.826.825-2.498-2.498a5.252 5.252 0 0 1-8.527-4.101 5.25 5.25 0 0 1 5.25-5.25 5.252 5.252 0 0 1 4.102 8.526m-1.17-.433a4.082 4.082 0 0 0-2.931-6.927 4.08 4.08 0 0 0-4.084 4.084 4.082 4.082 0 0 0 6.927 2.93z"
-                            />
-                          </svg>
-                        </span>
+                          <path
+                            d="m7 6.175 2.887-2.887.825.825L7.825 7l2.887 2.888-.825.824L7 7.825l-2.888 2.887-.824-.824L6.175 7 3.288 4.113l.824-.825z"
+                          />
+                        </svg>
                       </span>
-                    </div>
-                    <div
-                      class="ant-space-item"
-                    >
-                      <button
-                        class="ant-btn css-dev-only-do-not-override-czn7jp ant-btn-default ant-btn-sm ant-btn-two-chinese-chars actiontech-filter-button-namespace basic-button-wrapper css-geipcv"
-                        style="padding: 0px 6px 0px 10px;"
-                        type="button"
+                      <svg
+                        class="custom-icon custom-icon-search"
+                        height="14"
+                        viewBox="0 0 14 14"
+                        width="14"
+                        xmlns="http://www.w3.org/2000/svg"
                       >
-                        <div
-                          class="ant-space css-dev-only-do-not-override-czn7jp ant-space-horizontal ant-space-align-center css-1nt49ug"
-                        >
-                          <div
-                            class="ant-space-item"
-                            style="margin-right: 2px;"
-                          >
-                            筛选
-                          </div>
-                          <div
-                            class="ant-space-item"
-                          >
-                            <svg
-                              color="currrentColor"
-                              height="14"
-                              viewBox="0 0 16 16"
-                              width="14"
-                              xmlns="http://www.w3.org/2000/svg"
-                            >
-                              <path
-                                d="m8 8.781 3.3-3.3.943.943L8 10.667 3.757 6.424l.943-.943z"
-                                fill="currentColor"
-                              />
-                            </svg>
-                          </div>
-                        </div>
-                      </button>
-                    </div>
-                  </div>
+                        <path
+                          d="m10.518 9.693 2.499 2.498-.826.825-2.498-2.498a5.252 5.252 0 0 1-8.527-4.101 5.25 5.25 0 0 1 5.25-5.25 5.252 5.252 0 0 1 4.102 8.526m-1.17-.433a4.082 4.082 0 0 0-2.931-6.927 4.08 4.08 0 0 0-4.084 4.084 4.082 4.082 0 0 0 6.927 2.93z"
+                        />
+                      </svg>
+                    </span>
+                  </span>
                 </div>
                 <div
                   class="ant-space-item"
-                  style="padding-bottom: 8px;"
                 >
-                  <div
-                    class="ant-space css-dev-only-do-not-override-1kh50jg ant-space-horizontal ant-space-align-center"
+                  <button
+                    class="ant-btn ant-btn-default ant-btn-sm ant-btn-two-chinese-chars actiontech-filter-button-namespace basic-button-wrapper css-geipcv"
+                    style="padding: 0px 6px 0px 10px;"
+                    type="button"
                   >
                     <div
-                      class="ant-space-item"
-                      style="margin-right: 12px;"
+                      class="ant-space ant-space-horizontal ant-space-align-center css-1nt49ug"
                     >
-                      <button
-                        class="ant-btn css-dev-only-do-not-override-czn7jp ant-btn-default ant-btn-sm actiontech-table-actions-button actiontech-table-setting-namespace basic-button-wrapper css-geipcv"
-                        type="button"
+                      <div
+                        class="ant-space-item"
+                        style="margin-right: 2px;"
                       >
-                        <div
-                          class="ant-space css-dev-only-do-not-override-czn7jp ant-space-horizontal ant-space-align-center css-1nt49ug"
+                        筛选
+                      </div>
+                      <div
+                        class="ant-space-item"
+                      >
+                        <svg
+                          color="currentColor"
+                          height="14"
+                          viewBox="0 0 16 16"
+                          width="14"
+                          xmlns="http://www.w3.org/2000/svg"
                         >
-                          <div
-                            class="ant-space-item"
-                            style="margin-right: 5px;"
-                          >
-                            <svg
-                              fill="none"
-                              height="14"
-                              viewBox="0 0 14 14"
-                              width="14"
-                              xmlns="http://www.w3.org/2000/svg"
-                            >
-                              <path
-                                d="M2.917 1.167h8.166a.583.583 0 0 1 .584.583v11.167a.293.293 0 0 1-.447.247L7 10.518l-4.22 2.646a.291.291 0 0 1-.447-.247V1.75a.583.583 0 0 1 .584-.583M10.5 2.333h-7v9.002L7 9.141l3.5 2.194zM4.667 5.25h4.666v1.167H4.667z"
-                                fill="#292C33"
-                              />
-                            </svg>
-                          </div>
-                          <div
-                            class="ant-space-item"
-                            style="margin-right: 5px;"
-                          >
-                            <span>
-                              任务类型
-                            </span>
-                          </div>
-                          <div
-                            class="ant-space-item"
-                          >
-                            <svg
-                              color="currentColor"
-                              fill="none"
-                              height="16"
-                              viewBox="0 0 16 16"
-                              width="16"
-                              xmlns="http://www.w3.org/2000/svg"
-                            >
-                              <path
-                                d="m8 7.219-3.3 3.3-.942-.943L8 5.333l4.243 4.243-.943.943z"
-                                fill="currentColor"
-                              />
-                            </svg>
-                          </div>
-                        </div>
-                      </button>
+                          <path
+                            d="m8 8.781 3.3-3.3.943.943L8 10.667 3.757 6.424l.943-.943z"
+                            fill="currentColor"
+                          />
+                        </svg>
+                      </div>
                     </div>
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div
+              class="ant-space-item"
+              style="padding-bottom: 8px;"
+            >
+              <div
+                class="ant-space ant-space-horizontal ant-space-align-center"
+              >
+                <div
+                  class="ant-space-item"
+                  style="margin-right: 12px;"
+                >
+                  <button
+                    class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button actiontech-table-setting-namespace basic-button-wrapper css-geipcv"
+                    type="button"
+                  >
                     <div
-                      class="ant-space-item"
-                      style="margin-right: 12px;"
+                      class="ant-space ant-space-horizontal ant-space-align-center css-1nt49ug"
                     >
-                      <button
-                        class="ant-btn css-dev-only-do-not-override-czn7jp ant-btn-default ant-btn-sm actiontech-table-setting-namespace basic-button-wrapper css-geipcv"
-                        style="padding: 0px 6px 0px 8px;"
-                        type="button"
+                      <div
+                        class="ant-space-item"
+                        style="margin-right: 5px;"
                       >
-                        <div
-                          class="ant-space css-dev-only-do-not-override-czn7jp ant-space-horizontal ant-space-align-center css-1nt49ug"
+                        <svg
+                          fill="none"
+                          height="14"
+                          viewBox="0 0 14 14"
+                          width="14"
+                          xmlns="http://www.w3.org/2000/svg"
                         >
-                          <div
-                            class="ant-space-item"
-                            style="margin-right: 5px;"
-                          >
-                            <svg
-                              class="custom-icon custom-icon-setting"
-                              height="11"
-                              viewBox="0 0 13 11"
-                              width="13"
-                              xmlns="http://www.w3.org/2000/svg"
-                            >
-                              <path
-                                d="M.167 8.5H4.25v1.167H.167zm0-4.083h5.25v1.166H.167zm0-4.084h11.666V1.5H.167zM11.06 5.598l.674-.228.584 1.01-.535.47c.067.319.067.648 0 .967l.535.47-.584 1.01-.674-.228c-.24.216-.524.382-.837.484l-.14.697H8.917l-.14-.698a2.3 2.3 0 0 1-.837-.484l-.674.229-.583-1.01.534-.47a2.3 2.3 0 0 1 0-.967l-.534-.47.583-1.01.674.228c.24-.216.524-.382.837-.484l.14-.697h1.166l.14.697c.313.102.598.269.837.485zM9.5 8.5a1.167 1.167 0 1 0 0-2.333 1.167 1.167 0 0 0 0 2.333"
-                              />
-                            </svg>
-                          </div>
-                          <div
-                            class="ant-space-item"
-                            style="margin-right: 5px;"
-                          >
-                            表格设置
-                          </div>
-                          <div
-                            class="ant-space-item"
-                          >
-                            <svg
-                              class="custom-icon custom-icon-arrow-down"
-                              color="currentColor"
-                              height="14"
-                              viewBox="0 0 16 16"
-                              width="14"
-                              xmlns="http://www.w3.org/2000/svg"
-                            >
-                              <path
-                                d="m8 8.781 3.3-3.3.943.943L8 10.667 3.757 6.424l.943-.943z"
-                                fill="currentColor"
-                              />
-                            </svg>
-                          </div>
-                        </div>
-                      </button>
-                    </div>
-                    <div
-                      class="ant-space-item"
-                    >
-                      <button
-                        class="ant-btn css-dev-only-do-not-override-czn7jp ant-btn-default ant-btn-sm ant-btn-icon-only basic-button-wrapper css-geipcv"
-                        type="button"
+                          <path
+                            d="M2.917 1.167h8.166a.583.583 0 0 1 .584.583v11.167a.293.293 0 0 1-.447.247L7 10.518l-4.22 2.646a.291.291 0 0 1-.447-.247V1.75a.583.583 0 0 1 .584-.583M10.5 2.333h-7v9.002L7 9.141l3.5 2.194zM4.667 5.25h4.666v1.167H4.667z"
+                            fill="#292C33"
+                          />
+                        </svg>
+                      </div>
+                      <div
+                        class="ant-space-item"
+                        style="margin-right: 5px;"
                       >
-                        <span
-                          class="ant-btn-icon"
-                        >
-                          <svg
-                            class="custom-icon custom-icon-refresh"
-                            height="14"
-                            viewBox="0 0 14 14"
-                            width="14"
-                            xmlns="http://www.w3.org/2000/svg"
-                          >
-                            <path
-                              d="M3.187 2.586a5.833 5.833 0 0 1 8.59 7.762L9.918 7h1.75a4.667 4.667 0 0 0-7.899-3.367zm7.626 8.828a5.833 5.833 0 0 1-8.59-7.762L4.083 7h-1.75a4.667 4.667 0 0 0 7.899 3.367z"
-                            />
-                          </svg>
+                        <span>
+                          任务类型
                         </span>
-                      </button>
+                      </div>
+                      <div
+                        class="ant-space-item"
+                      >
+                        <svg
+                          color="currentColor"
+                          fill="none"
+                          height="16"
+                          viewBox="0 0 16 16"
+                          width="16"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="m8 7.219-3.3 3.3-.942-.943L8 5.333l4.243 4.243-.943.943z"
+                            fill="currentColor"
+                          />
+                        </svg>
+                      </div>
                     </div>
-                  </div>
+                  </button>
+                </div>
+                <div
+                  class="ant-space-item"
+                  style="margin-right: 12px;"
+                >
+                  <button
+                    class="ant-btn ant-btn-default ant-btn-sm actiontech-table-setting-namespace basic-button-wrapper css-geipcv"
+                    style="padding: 0px 6px 0px 8px;"
+                    type="button"
+                  >
+                    <div
+                      class="ant-space ant-space-horizontal ant-space-align-center css-1nt49ug"
+                    >
+                      <div
+                        class="ant-space-item"
+                        style="margin-right: 5px;"
+                      >
+                        <svg
+                          class="custom-icon custom-icon-setting"
+                          height="11"
+                          viewBox="0 0 13 11"
+                          width="13"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M.167 8.5H4.25v1.167H.167zm0-4.083h5.25v1.166H.167zm0-4.084h11.666V1.5H.167zM11.06 5.598l.674-.228.584 1.01-.535.47c.067.319.067.648 0 .967l.535.47-.584 1.01-.674-.228c-.24.216-.524.382-.837.484l-.14.697H8.917l-.14-.698a2.3 2.3 0 0 1-.837-.484l-.674.229-.583-1.01.534-.47a2.3 2.3 0 0 1 0-.967l-.534-.47.583-1.01.674.228c.24-.216.524-.382.837-.484l.14-.697h1.166l.14.697c.313.102.598.269.837.485zM9.5 8.5a1.167 1.167 0 1 0 0-2.333 1.167 1.167 0 0 0 0 2.333"
+                          />
+                        </svg>
+                      </div>
+                      <div
+                        class="ant-space-item"
+                        style="margin-right: 5px;"
+                      >
+                        表格设置
+                      </div>
+                      <div
+                        class="ant-space-item"
+                      >
+                        <svg
+                          class="custom-icon custom-icon-arrow-down"
+                          color="currentColor"
+                          height="14"
+                          viewBox="0 0 16 16"
+                          width="14"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="m8 8.781 3.3-3.3.943.943L8 10.667 3.757 6.424l.943-.943z"
+                            fill="currentColor"
+                          />
+                        </svg>
+                      </div>
+                    </div>
+                  </button>
+                </div>
+                <div
+                  class="ant-space-item"
+                >
+                  <button
+                    class="ant-btn ant-btn-default ant-btn-sm ant-btn-icon-only basic-button-wrapper css-geipcv"
+                    type="button"
+                  >
+                    <span
+                      class="ant-btn-icon"
+                    >
+                      <svg
+                        class="custom-icon custom-icon-refresh"
+                        height="14"
+                        viewBox="0 0 14 14"
+                        width="14"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M3.187 2.586a5.833 5.833 0 0 1 8.59 7.762L9.918 7h1.75a4.667 4.667 0 0 0-7.899-3.367zm7.626 8.828a5.833 5.833 0 0 1-8.59-7.762L4.083 7h-1.75a4.667 4.667 0 0 0 7.899 3.367z"
+                        />
+                      </svg>
+                    </span>
+                  </button>
                 </div>
               </div>
             </div>
@@ -3789,7 +3892,7 @@ exports[`test sqle/SqlManagementConf/List render sql management conf list with a
                   全部数据源
                 </span>
                 <button
-                  class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default ant-btn-sm filter-btn basic-button-wrapper css-nxo19c"
+                  class="ant-btn ant-btn-default ant-btn-sm filter-btn basic-button-wrapper css-nxo19c"
                   type="button"
                 >
                   <span>
@@ -3797,7 +3900,7 @@ exports[`test sqle/SqlManagementConf/List render sql management conf list with a
                   </span>
                 </button>
                 <button
-                  class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default ant-btn-sm filter-btn basic-button-wrapper css-nxo19c"
+                  class="ant-btn ant-btn-default ant-btn-sm filter-btn basic-button-wrapper css-nxo19c"
                   type="button"
                 >
                   <span>
@@ -3805,7 +3908,7 @@ exports[`test sqle/SqlManagementConf/List render sql management conf list with a
                   </span>
                 </button>
                 <button
-                  class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default ant-btn-sm filter-btn basic-button-wrapper css-nxo19c"
+                  class="ant-btn ant-btn-default ant-btn-sm filter-btn basic-button-wrapper css-nxo19c"
                   type="button"
                 >
                   <span>
@@ -3813,7 +3916,7 @@ exports[`test sqle/SqlManagementConf/List render sql management conf list with a
                   </span>
                 </button>
                 <button
-                  class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default ant-btn-sm filter-btn basic-button-wrapper css-nxo19c"
+                  class="ant-btn ant-btn-default ant-btn-sm filter-btn basic-button-wrapper css-nxo19c"
                   type="button"
                 >
                   <span>
@@ -3830,7 +3933,7 @@ exports[`test sqle/SqlManagementConf/List render sql management conf list with a
                   全部任务类型
                 </span>
                 <button
-                  class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default ant-btn-sm filter-btn basic-button-wrapper css-nxo19c"
+                  class="ant-btn ant-btn-default ant-btn-sm filter-btn basic-button-wrapper css-nxo19c"
                   type="button"
                 >
                   <span>
@@ -3838,7 +3941,7 @@ exports[`test sqle/SqlManagementConf/List render sql management conf list with a
                   </span>
                 </button>
                 <button
-                  class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default ant-btn-sm filter-btn basic-button-wrapper css-nxo19c"
+                  class="ant-btn ant-btn-default ant-btn-sm filter-btn basic-button-wrapper css-nxo19c"
                   type="button"
                 >
                   <span>
@@ -3846,7 +3949,7 @@ exports[`test sqle/SqlManagementConf/List render sql management conf list with a
                   </span>
                 </button>
                 <button
-                  class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default ant-btn-sm filter-btn basic-button-wrapper css-nxo19c"
+                  class="ant-btn ant-btn-default ant-btn-sm filter-btn basic-button-wrapper css-nxo19c"
                   type="button"
                 >
                   <span>
@@ -3854,7 +3957,7 @@ exports[`test sqle/SqlManagementConf/List render sql management conf list with a
                   </span>
                 </button>
                 <button
-                  class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default ant-btn-sm filter-btn basic-button-wrapper css-nxo19c"
+                  class="ant-btn ant-btn-default ant-btn-sm filter-btn basic-button-wrapper css-nxo19c"
                   type="button"
                 >
                   <span>
@@ -3862,7 +3965,7 @@ exports[`test sqle/SqlManagementConf/List render sql management conf list with a
                   </span>
                 </button>
                 <button
-                  class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default ant-btn-sm filter-btn basic-button-wrapper css-nxo19c"
+                  class="ant-btn ant-btn-default ant-btn-sm filter-btn basic-button-wrapper css-nxo19c"
                   type="button"
                 >
                   <span>
@@ -3870,7 +3973,7 @@ exports[`test sqle/SqlManagementConf/List render sql management conf list with a
                   </span>
                 </button>
                 <button
-                  class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default ant-btn-sm filter-btn basic-button-wrapper css-nxo19c"
+                  class="ant-btn ant-btn-default ant-btn-sm filter-btn basic-button-wrapper css-nxo19c"
                   type="button"
                 >
                   <span>
@@ -3878,7 +3981,7 @@ exports[`test sqle/SqlManagementConf/List render sql management conf list with a
                   </span>
                 </button>
                 <button
-                  class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default ant-btn-sm filter-btn basic-button-wrapper css-nxo19c"
+                  class="ant-btn ant-btn-default ant-btn-sm filter-btn basic-button-wrapper css-nxo19c"
                   type="button"
                 >
                   <span>
@@ -3886,7 +3989,7 @@ exports[`test sqle/SqlManagementConf/List render sql management conf list with a
                   </span>
                 </button>
                 <button
-                  class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default ant-btn-sm filter-btn basic-button-wrapper css-nxo19c"
+                  class="ant-btn ant-btn-default ant-btn-sm filter-btn basic-button-wrapper css-nxo19c"
                   type="button"
                 >
                   <span>
@@ -3894,7 +3997,7 @@ exports[`test sqle/SqlManagementConf/List render sql management conf list with a
                   </span>
                 </button>
                 <button
-                  class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default ant-btn-sm filter-btn basic-button-wrapper css-nxo19c"
+                  class="ant-btn ant-btn-default ant-btn-sm filter-btn basic-button-wrapper css-nxo19c"
                   type="button"
                 >
                   <span>
@@ -3905,10 +4008,10 @@ exports[`test sqle/SqlManagementConf/List render sql management conf list with a
             </section>
           </div>
           <div
-            class="ant-table-wrapper actiontech-table-namespace css-fxd6ka css-dev-only-do-not-override-bj9uhl"
+            class="ant-table-wrapper actiontech-table-namespace css-fxd6ka"
           >
             <div
-              class="ant-spin-nested-loading css-dev-only-do-not-override-bj9uhl"
+              class="ant-spin-nested-loading"
             >
               <div
                 class="ant-spin-container"
@@ -3958,7 +4061,7 @@ exports[`test sqle/SqlManagementConf/List render sql management conf list with a
                               class="ant-table-cell"
                               scope="col"
                             >
-                              所属业务
+                              环境属性
                             </th>
                             <th
                               class="ant-table-cell"
@@ -4082,7 +4185,7 @@ exports[`test sqle/SqlManagementConf/List render sql management conf list with a
                               class="ant-table-cell"
                             >
                               <div
-                                class="ant-space css-dev-only-do-not-override-bj9uhl ant-space-horizontal ant-space-align-center css-1nt49ug"
+                                class="ant-space ant-space-horizontal ant-space-align-center css-1nt49ug"
                               >
                                 <div
                                   class="ant-space-item"
@@ -4098,7 +4201,7 @@ exports[`test sqle/SqlManagementConf/List render sql management conf list with a
                                   class="ant-space-item"
                                 >
                                   <div
-                                    class="ant-space css-dev-only-do-not-override-bj9uhl ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
+                                    class="ant-space ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
                                   >
                                     <div
                                       class="ant-space-item"
@@ -4138,7 +4241,7 @@ exports[`test sqle/SqlManagementConf/List render sql management conf list with a
                             <td
                               class="ant-table-cell"
                             >
-                              test
+                              environment-1
                             </td>
                             <td
                               class="ant-table-cell"
@@ -4150,7 +4253,7 @@ exports[`test sqle/SqlManagementConf/List render sql management conf list with a
                                   href="/sqle/project/700300/sql-management-conf/1?active_audit_plan_id=1"
                                 >
                                   <span
-                                    class="ant-tag ant-tag-default pointer basic-tag-wrapper basic-default-tag-wrapper css-1mjwlcb css-dev-only-do-not-override-bj9uhl"
+                                    class="ant-tag ant-tag-default pointer basic-tag-wrapper basic-default-tag-wrapper css-1mjwlcb"
                                   >
                                     SQL文件
                                   </span>
@@ -4197,7 +4300,7 @@ exports[`test sqle/SqlManagementConf/List render sql management conf list with a
                                 class="css-new95e"
                               >
                                 <button
-                                  class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                  class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
                                   type="button"
                                 >
                                   <span>
@@ -4205,7 +4308,7 @@ exports[`test sqle/SqlManagementConf/List render sql management conf list with a
                                   </span>
                                 </button>
                                 <button
-                                  class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm ant-btn-icon-only actiontech-table-actions-button actiontech-table-actions-more-button basic-button-wrapper css-geipcv"
+                                  class="ant-btn ant-btn-default ant-btn-sm ant-btn-icon-only actiontech-table-actions-button actiontech-table-actions-more-button basic-button-wrapper css-geipcv"
                                   type="button"
                                 >
                                   <span
@@ -4234,7 +4337,7 @@ exports[`test sqle/SqlManagementConf/List render sql management conf list with a
                   </div>
                 </div>
                 <ul
-                  class="ant-pagination ant-table-pagination ant-table-pagination-right actiontech-table-pagination actiontech-table-pagination-fixed css-dev-only-do-not-override-bj9uhl"
+                  class="ant-pagination ant-table-pagination ant-table-pagination-right actiontech-table-pagination actiontech-table-pagination-fixed"
                 >
                   <li
                     class="ant-pagination-total-text"
@@ -4246,7 +4349,7 @@ exports[`test sqle/SqlManagementConf/List render sql management conf list with a
                   <li
                     aria-disabled="true"
                     class="ant-pagination-prev ant-pagination-disabled"
-                    title="Previous Page"
+                    title="上一页"
                   >
                     <button
                       class="ant-pagination-item-link"
@@ -4289,7 +4392,7 @@ exports[`test sqle/SqlManagementConf/List render sql management conf list with a
                   <li
                     aria-disabled="true"
                     class="ant-pagination-next ant-pagination-disabled"
-                    title="Next Page"
+                    title="下一页"
                   >
                     <button
                       class="ant-pagination-item-link"
@@ -4322,8 +4425,8 @@ exports[`test sqle/SqlManagementConf/List render sql management conf list with a
                     class="ant-pagination-options"
                   >
                     <div
-                      aria-label="Page Size"
-                      class="ant-select ant-pagination-options-size-changer css-dev-only-do-not-override-bj9uhl ant-select-single ant-select-show-arrow ant-select-show-search"
+                      aria-label="页码"
+                      class="ant-select ant-pagination-options-size-changer ant-select-single ant-select-show-arrow ant-select-show-search"
                     >
                       <div
                         class="ant-select-selector"
@@ -4337,7 +4440,7 @@ exports[`test sqle/SqlManagementConf/List render sql management conf list with a
                             aria-controls="rc_select_TEST_OR_SSR_list"
                             aria-expanded="false"
                             aria-haspopup="listbox"
-                            aria-label="Page Size"
+                            aria-label="页码"
                             aria-owns="rc_select_TEST_OR_SSR_list"
                             autocomplete="off"
                             class="ant-select-selection-search-input"
@@ -4349,9 +4452,9 @@ exports[`test sqle/SqlManagementConf/List render sql management conf list with a
                         </span>
                         <span
                           class="ant-select-selection-item"
-                          title="20 / page"
+                          title="20 条/页"
                         >
-                          20 / page
+                          20 条/页
                         </span>
                       </div>
                       <span

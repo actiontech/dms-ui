@@ -4,10 +4,10 @@ exports[`base/System/GlobalSetting/UrlAddressPrefixTips render snap when field s
 <body>
   <div>
     <div
-      class="ant-row ant-row-space-between ant-row-middle css-19fu9ar css-dev-only-do-not-override-txh9fw"
+      class="ant-row ant-row-space-between ant-row-middle css-19fu9ar"
     >
       <div
-        class="ant-col ant-col-11 config-item-label css-dev-only-do-not-override-txh9fw"
+        class="ant-col ant-col-11 config-item-label"
       >
         <div
           class="config-item-label"
@@ -20,30 +20,30 @@ exports[`base/System/GlobalSetting/UrlAddressPrefixTips render snap when field s
           <div
             class="tips"
           >
-            配置能访问SQLE的url地址信息, 格式为 http(s)://ip:port/sqle 
+            配置能访问SQLE的url地址信息
           </div>
         </div>
       </div>
       <div
-        class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center config-item-filed"
+        class="ant-space ant-space-horizontal ant-space-align-center config-item-filed"
       >
         <div
           class="ant-space-item"
         >
           <div
-            class="ant-spin-nested-loading css-dev-only-do-not-override-txh9fw"
+            class="ant-spin-nested-loading"
           >
             <div
               class="ant-spin-container"
             >
               <span
-                class="ant-input-group-wrapper basic-input-wrapper css-1pd1cd5 css-dev-only-do-not-override-ywkr0o"
+                class="ant-input-group-wrapper basic-input-wrapper css-1pd1cd5"
               >
                 <span
-                  class="ant-input-wrapper ant-input-group css-dev-only-do-not-override-ywkr0o"
+                  class="ant-input-wrapper ant-input-group"
                 >
                   <input
-                    class="ant-input css-dev-only-do-not-override-ywkr0o"
+                    class="ant-input"
                     id="editInput"
                     placeholder="请输入{{name}}"
                     type="text"
@@ -89,10 +89,10 @@ exports[`base/System/GlobalSetting/UrlAddressPrefixTips render snap when has url
 <body>
   <div>
     <div
-      class="ant-row ant-row-space-between ant-row-middle css-19fu9ar css-dev-only-do-not-override-txh9fw"
+      class="ant-row ant-row-space-between ant-row-middle css-19fu9ar"
     >
       <div
-        class="ant-col ant-col-11 config-item-label css-dev-only-do-not-override-txh9fw"
+        class="ant-col ant-col-11 config-item-label"
       >
         <div
           class="config-item-label"
@@ -105,12 +105,12 @@ exports[`base/System/GlobalSetting/UrlAddressPrefixTips render snap when has url
           <div
             class="tips"
           >
-            配置能访问SQLE的url地址信息, 格式为 http(s)://ip:port/sqle 
+            配置能访问SQLE的url地址信息
           </div>
         </div>
       </div>
       <div
-        class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center config-item-filed"
+        class="ant-space ant-space-horizontal ant-space-align-center config-item-filed"
       >
         <div
           class="ant-space-item"
@@ -122,7 +122,7 @@ exports[`base/System/GlobalSetting/UrlAddressPrefixTips render snap when has url
           class="ant-space-item"
         >
           <button
-            class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default ant-btn-icon-only config-item-filed-edit-button basic-button-wrapper css-geipcv"
+            class="ant-btn ant-btn-default ant-btn-icon-only config-item-filed-edit-button basic-button-wrapper css-geipcv"
             hidden=""
             type="button"
           >
@@ -153,10 +153,10 @@ exports[`base/System/GlobalSetting/UrlAddressPrefixTips render snap when no url 
 <body>
   <div>
     <div
-      class="ant-row ant-row-space-between ant-row-middle css-19fu9ar css-dev-only-do-not-override-txh9fw"
+      class="ant-row ant-row-space-between ant-row-middle css-19fu9ar"
     >
       <div
-        class="ant-col ant-col-11 config-item-label css-dev-only-do-not-override-txh9fw"
+        class="ant-col ant-col-11 config-item-label"
       >
         <div
           class="config-item-label"
@@ -169,12 +169,12 @@ exports[`base/System/GlobalSetting/UrlAddressPrefixTips render snap when no url 
           <div
             class="tips"
           >
-            配置能访问SQLE的url地址信息, 格式为 http(s)://ip:port/sqle 
+            配置能访问SQLE的url地址信息
           </div>
         </div>
       </div>
       <div
-        class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center config-item-filed"
+        class="ant-space ant-space-horizontal ant-space-align-center config-item-filed"
       >
         <div
           class="ant-space-item"
@@ -186,7 +186,7 @@ exports[`base/System/GlobalSetting/UrlAddressPrefixTips render snap when no url 
           class="ant-space-item"
         >
           <button
-            class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default ant-btn-icon-only config-item-filed-edit-button basic-button-wrapper css-geipcv"
+            class="ant-btn ant-btn-default ant-btn-icon-only config-item-filed-edit-button basic-button-wrapper css-geipcv"
             hidden=""
             type="button"
           >

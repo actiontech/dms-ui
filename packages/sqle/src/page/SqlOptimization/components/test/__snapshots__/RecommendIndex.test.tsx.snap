@@ -7,14 +7,14 @@ exports[`sqle/SqlOptimization/RecommendIndex render snap shot 1`] = `
       class="css-1m486f3"
     >
       <div
-        class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+        class="ant-space ant-space-horizontal ant-space-align-center"
       >
         <div
           class="ant-space-item"
           style="margin-right: 8px;"
         >
           <span
-            class="ant-typography css-dev-only-do-not-override-txh9fw"
+            class="ant-typography"
           >
             暂无需要优化的索引
           </span>
@@ -50,7 +50,7 @@ exports[`sqle/SqlOptimization/RecommendIndex render snap shot when recommendatio
         class="actiontech-sql-snippet-renderer-wrapper css-dz7fl9"
       >
         <div
-          class="ant-typography ant-typography-ellipsis ant-typography-single-line ant-typography-ellipsis-single-line margin-bottom-0 css-dev-only-do-not-override-txh9fw"
+          class="ant-typography ant-typography-ellipsis ant-typography-single-line ant-typography-ellipsis-single-line margin-bottom-0"
         >
           <span>
             <span
@@ -103,14 +103,14 @@ exports[`sqle/SqlOptimization/RecommendIndex render snap shot when recommendatio
       class="css-1m486f3"
     >
       <div
-        class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+        class="ant-space ant-space-horizontal ant-space-align-center"
       >
         <div
           class="ant-space-item"
           style="margin-right: 8px;"
         >
           <span
-            class="ant-typography css-dev-only-do-not-override-txh9fw"
+            class="ant-typography"
           >
             暂无需要优化的索引
           </span>

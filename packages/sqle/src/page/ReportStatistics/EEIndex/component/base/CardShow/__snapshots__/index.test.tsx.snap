@@ -4,7 +4,7 @@ exports[`ReportStatistics/CardShow render snap when has default val 1`] = `
 <body>
   <div>
     <div
-      class="ant-card ant-card-hoverable css-16wnzq6 css-dev-only-do-not-override-13rucla"
+      class="ant-card ant-card-hoverable css-16wnzq6"
     >
       <div
         class="ant-card-body"
@@ -45,7 +45,7 @@ exports[`ReportStatistics/CardShow render snap when has default val 2`] = `
 <body>
   <div>
     <div
-      class="ant-card ant-card-hoverable css-16wnzq6 css-dev-only-do-not-override-13rucla"
+      class="ant-card ant-card-hoverable css-16wnzq6"
     >
       <div
         class="ant-card-body"
@@ -84,7 +84,7 @@ exports[`ReportStatistics/CardShow render snap when has extraIcon val 1`] = `
 <body>
   <div>
     <div
-      class="ant-card ant-card-hoverable css-16wnzq6 css-dev-only-do-not-override-13rucla"
+      class="ant-card ant-card-hoverable css-16wnzq6"
     >
       <div
         class="ant-card-body"

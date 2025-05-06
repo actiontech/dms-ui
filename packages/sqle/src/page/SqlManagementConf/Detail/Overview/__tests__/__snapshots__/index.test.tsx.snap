@@ -3,16 +3,16 @@
 exports[`test Overview render abnormal status audit plan 1`] = `
 <div>
   <div
-    class="ant-spin-nested-loading css-dev-only-do-not-override-txh9fw"
+    class="ant-spin-nested-loading"
   >
     <div
       class="ant-spin-container"
     >
       <div
-        class="ant-table-wrapper actiontech-table-namespace table-row-cursor css-fxd6ka css-dev-only-do-not-override-bj9uhl"
+        class="ant-table-wrapper actiontech-table-namespace table-row-cursor css-fxd6ka"
       >
         <div
-          class="ant-spin-nested-loading css-dev-only-do-not-override-bj9uhl"
+          class="ant-spin-nested-loading"
         >
           <div
             class="ant-spin-container"
@@ -186,7 +186,7 @@ exports[`test Overview render abnormal status audit plan 1`] = `
                           class="ant-table-cell"
                         >
                           <a
-                            class="ant-typography css-dev-only-do-not-override-bj9uhl"
+                            class="ant-typography"
                           >
                             库表元数据
                           </a>
@@ -208,7 +208,7 @@ exports[`test Overview render abnormal status audit plan 1`] = `
                             class="css-10kos8e"
                           >
                             <div
-                              class="ant-space css-dev-only-do-not-override-bj9uhl ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
+                              class="ant-space ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
                             >
                               <div
                                 class="ant-space-item"
@@ -259,14 +259,14 @@ exports[`test Overview render abnormal status audit plan 1`] = `
                             class="css-new95e"
                           >
                             <div
-                              class="ant-space css-dev-only-do-not-override-bj9uhl ant-space-horizontal ant-space-align-center"
+                              class="ant-space ant-space-horizontal ant-space-align-center"
                             >
                               <div
                                 class="ant-space-item"
                                 style="margin-right: 8px;"
                               >
                                 <button
-                                  class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                  class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
                                   disabled=""
                                   type="button"
                                 >
@@ -280,7 +280,7 @@ exports[`test Overview render abnormal status audit plan 1`] = `
                                 style="margin-right: 8px;"
                               >
                                 <button
-                                  class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                  class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
                                   type="button"
                                 >
                                   <span>
@@ -292,7 +292,7 @@ exports[`test Overview render abnormal status audit plan 1`] = `
                                 class="ant-space-item"
                               >
                                 <button
-                                  class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm ant-btn-dangerous actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                  class="ant-btn ant-btn-default ant-btn-sm ant-btn-dangerous actiontech-table-actions-button basic-button-wrapper css-geipcv"
                                   type="button"
                                 >
                                   <span>
@@ -312,7 +312,7 @@ exports[`test Overview render abnormal status audit plan 1`] = `
                           class="ant-table-cell"
                         >
                           <a
-                            class="ant-typography css-dev-only-do-not-override-bj9uhl"
+                            class="ant-typography"
                           >
                             慢日志
                           </a>
@@ -358,7 +358,7 @@ exports[`test Overview render abnormal status audit plan 1`] = `
                             class="css-1sg2lsz"
                           >
                             <div
-                              class="ant-space css-dev-only-do-not-override-bj9uhl ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
+                              class="ant-space ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
                             >
                               <div
                                 class="ant-space-item"
@@ -381,10 +381,10 @@ exports[`test Overview render abnormal status audit plan 1`] = `
                               </div>
                             </div>
                             <span
-                              class="ant-typography css-dev-only-do-not-override-bj9uhl"
+                              class="ant-typography"
                             >
                               <div
-                                aria-label="Copy"
+                                aria-label="复制"
                                 class="ant-typography-copy"
                                 role="button"
                                 style="border: 0px; background: transparent; padding: 0px; line-height: inherit; display: inline-block;"
@@ -436,14 +436,14 @@ exports[`test Overview render abnormal status audit plan 1`] = `
                             class="css-new95e"
                           >
                             <div
-                              class="ant-space css-dev-only-do-not-override-bj9uhl ant-space-horizontal ant-space-align-center"
+                              class="ant-space ant-space-horizontal ant-space-align-center"
                             >
                               <div
                                 class="ant-space-item"
                                 style="margin-right: 8px;"
                               >
                                 <button
-                                  class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                  class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
                                   disabled=""
                                   type="button"
                                 >
@@ -457,7 +457,7 @@ exports[`test Overview render abnormal status audit plan 1`] = `
                                 style="margin-right: 8px;"
                               >
                                 <button
-                                  class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                  class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
                                   disabled=""
                                   type="button"
                                 >
@@ -470,7 +470,7 @@ exports[`test Overview render abnormal status audit plan 1`] = `
                                 class="ant-space-item"
                               >
                                 <button
-                                  class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm ant-btn-dangerous actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                  class="ant-btn ant-btn-default ant-btn-sm ant-btn-dangerous actiontech-table-actions-button basic-button-wrapper css-geipcv"
                                   type="button"
                                 >
                                   <span>
@@ -498,16 +498,16 @@ exports[`test Overview render abnormal status audit plan 1`] = `
 exports[`test Overview should match snapshot when hasOpPermission is equal false 1`] = `
 <div>
   <div
-    class="ant-spin-nested-loading css-dev-only-do-not-override-txh9fw"
+    class="ant-spin-nested-loading"
   >
     <div
       class="ant-spin-container"
     >
       <div
-        class="ant-table-wrapper actiontech-table-namespace table-row-cursor css-fxd6ka css-dev-only-do-not-override-bj9uhl"
+        class="ant-table-wrapper actiontech-table-namespace table-row-cursor css-fxd6ka"
       >
         <div
-          class="ant-spin-nested-loading css-dev-only-do-not-override-bj9uhl"
+          class="ant-spin-nested-loading"
         >
           <div
             class="ant-spin-container"

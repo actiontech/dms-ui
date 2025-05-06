@@ -32,7 +32,7 @@ import { useRequest } from 'ahooks';
 import instance from '@actiontech/shared/lib/api/sqle/service/instance';
 import { ResponseCode } from '@actiontech/shared/lib/enum';
 import useDatabaseType from '../../../../../../hooks/useDatabaseType';
-import { getInstanceTipListV1FunctionalModuleEnum } from '@actiontech/shared/lib/api/sqle/service/instance/index.enum';
+import { getInstanceTipListV2FunctionalModuleEnum } from '@actiontech/shared/lib/api/sqle/service/instance/index.enum';
 
 const NodeModal: React.FC<PipelineNodeModalProps> = ({
   visible,
@@ -126,7 +126,7 @@ const NodeModal: React.FC<PipelineNodeModalProps> = ({
       updateInstanceList({
         project_name: projectName,
         functional_module:
-          getInstanceTipListV1FunctionalModuleEnum.create_pipeline
+          getInstanceTipListV2FunctionalModuleEnum.create_pipeline
       });
     }
   }, [projectName, auditMethod, updateInstanceList]);

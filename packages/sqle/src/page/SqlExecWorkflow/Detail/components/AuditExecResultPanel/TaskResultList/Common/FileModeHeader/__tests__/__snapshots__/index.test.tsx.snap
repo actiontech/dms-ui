@@ -33,13 +33,13 @@ exports[`test FileModeHeader should render the header with title and extra butto
           />
         </svg>
         <span
-          class="ant-typography file-mode-title-text css-dev-only-do-not-override-txh9fw"
+          class="ant-typography file-mode-title-text"
         >
           文件信息概览
         </span>
       </div>
       <button
-        class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary basic-button-wrapper css-geipcv"
+        class="ant-btn ant-btn-primary basic-button-wrapper css-geipcv"
         type="button"
       >
         <span>
@@ -84,13 +84,13 @@ exports[`test FileModeHeader should render the header with title and extra butto
           />
         </svg>
         <span
-          class="ant-typography file-mode-title-text css-dev-only-do-not-override-txh9fw"
+          class="ant-typography file-mode-title-text"
         >
           文件信息概览
         </span>
       </div>
       <button
-        class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary basic-button-wrapper css-geipcv"
+        class="ant-btn ant-btn-primary basic-button-wrapper css-geipcv"
         type="button"
       >
         <span>
@@ -101,7 +101,7 @@ exports[`test FileModeHeader should render the header with title and extra butto
   </div>
   <div>
     <div
-      class="ant-modal-root css-dev-only-do-not-override-txh9fw"
+      class="ant-modal-root"
     >
       <div
         class="ant-modal-mask"
@@ -113,7 +113,7 @@ exports[`test FileModeHeader should render the header with title and extra butto
         <div
           aria-labelledby="test-id"
           aria-modal="true"
-          class="ant-modal css-dev-only-do-not-override-txh9fw basic-modal-wrapper css-vvpsbb ant-zoom-appear ant-zoom-appear-prepare ant-zoom"
+          class="ant-modal basic-modal-wrapper css-vvpsbb ant-zoom-appear ant-zoom-appear-prepare ant-zoom"
           role="dialog"
           style="width: 960px; transform-origin: NaNpx NaNpx;"
         >
@@ -160,7 +160,7 @@ exports[`test FileModeHeader should render the header with title and extra butto
               class="ant-modal-body"
             >
               <div
-                class="ant-alert ant-alert-info ant-alert-no-icon css-dev-only-do-not-override-txh9fw"
+                class="ant-alert ant-alert-info ant-alert-no-icon"
                 data-show="true"
                 role="alert"
                 style="margin-bottom: 12px;"
@@ -187,10 +187,10 @@ exports[`test FileModeHeader should render the header with title and extra butto
                     style="max-height: 600px; overflow: auto;"
                   >
                     <div
-                      class="ant-table-wrapper actiontech-table-namespace clear-padding-bottom css-fxd6ka css-dev-only-do-not-override-bj9uhl"
+                      class="ant-table-wrapper actiontech-table-namespace clear-padding-bottom css-fxd6ka"
                     >
                       <div
-                        class="ant-spin-nested-loading css-dev-only-do-not-override-bj9uhl"
+                        class="ant-spin-nested-loading"
                       >
                         <div
                           class="ant-spin-container"
@@ -315,21 +315,21 @@ exports[`test FileModeHeader should render the header with title and extra butto
                 aria-live="assertive"
                 id="DndLiveRegion-0"
                 role="status"
-                style="position: fixed; width: 1px; height: 1px; margin: -1px; border: 0px; padding: 0px; overflow: hidden; clip-path: inset(100%); white-space: nowrap;"
+                style="position: fixed; top: 0px; left: 0px; width: 1px; height: 1px; margin: -1px; border: 0px; padding: 0px; overflow: hidden; clip-path: inset(100%); white-space: nowrap;"
               />
             </div>
             <div
               class="ant-modal-footer"
             >
               <div
-                class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+                class="ant-space ant-space-horizontal ant-space-align-center"
               >
                 <div
                   class="ant-space-item"
                   style="margin-right: 8px;"
                 >
                   <button
-                    class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default basic-button-wrapper css-geipcv"
+                    class="ant-btn ant-btn-default basic-button-wrapper css-geipcv"
                     type="button"
                   >
                     <span>
@@ -342,7 +342,7 @@ exports[`test FileModeHeader should render the header with title and extra butto
                   style="margin-right: 8px;"
                 >
                   <button
-                    class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default basic-button-wrapper css-geipcv"
+                    class="ant-btn ant-btn-default basic-button-wrapper css-geipcv"
                     type="button"
                   >
                     <span>
@@ -354,7 +354,7 @@ exports[`test FileModeHeader should render the header with title and extra butto
                   class="ant-space-item"
                 >
                   <button
-                    class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary basic-button-wrapper css-geipcv"
+                    class="ant-btn ant-btn-primary basic-button-wrapper css-geipcv"
                     type="button"
                   >
                     <span>

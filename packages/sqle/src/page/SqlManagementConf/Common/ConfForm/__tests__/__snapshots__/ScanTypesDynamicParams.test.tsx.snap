@@ -5,7 +5,7 @@ exports[`test SqlManagementConf/ScanTypesDynamicParams render defaultValue is de
   <div />
   <div>
     <form
-      class="ant-form ant-form-horizontal css-dev-only-do-not-override-txh9fw"
+      class="ant-form ant-form-horizontal"
     >
       <section
         class="has-border css-1114g56"
@@ -14,18 +14,18 @@ exports[`test SqlManagementConf/ScanTypesDynamicParams render defaultValue is de
           class="css-bspaai"
         >
           <h1
-            class="ant-typography css-1eepp70 css-dev-only-do-not-override-txh9fw"
+            class="ant-typography css-1eepp70"
           >
             编辑扫描详情·MySQL库表元数据
           </h1>
           <div
-            class="ant-form-item has-label-tip css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+            class="ant-form-item has-label-tip css-1jlm9cy"
           >
             <div
-              class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+              class="ant-row ant-form-item-row"
             >
               <div
-                class="ant-col ant-col-11 ant-form-item-label css-dev-only-do-not-override-txh9fw"
+                class="ant-col ant-col-11 ant-form-item-label"
               >
                 <label
                   class=""
@@ -47,7 +47,7 @@ exports[`test SqlManagementConf/ScanTypesDynamicParams render defaultValue is de
                 </label>
               </div>
               <div
-                class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control"
               >
                 <div
                   class="ant-form-item-control-input"
@@ -56,7 +56,7 @@ exports[`test SqlManagementConf/ScanTypesDynamicParams render defaultValue is de
                     class="ant-form-item-control-input-content"
                   >
                     <input
-                      class="ant-input css-dev-only-do-not-override-ywkr0o basic-input-wrapper css-1pd1cd5"
+                      class="ant-input basic-input-wrapper css-1pd1cd5"
                       id="mysql_schema_meta_collect_interval_minute"
                       placeholder="请输入{{name}}"
                       type="text"
@@ -68,13 +68,13 @@ exports[`test SqlManagementConf/ScanTypesDynamicParams render defaultValue is de
             </div>
           </div>
           <div
-            class="ant-form-item  css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+            class="ant-form-item css-1jlm9cy"
           >
             <div
-              class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+              class="ant-row ant-form-item-row"
             >
               <div
-                class="ant-col ant-col-11 ant-form-item-label css-dev-only-do-not-override-txh9fw"
+                class="ant-col ant-col-11 ant-form-item-label"
               >
                 <label
                   class=""
@@ -95,7 +95,7 @@ exports[`test SqlManagementConf/ScanTypesDynamicParams render defaultValue is de
                 </label>
               </div>
               <div
-                class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control"
               >
                 <div
                   class="ant-form-item-control-input"
@@ -105,7 +105,7 @@ exports[`test SqlManagementConf/ScanTypesDynamicParams render defaultValue is de
                   >
                     <button
                       aria-checked="false"
-                      class="ant-switch basic-switch-wrapper css-g6dhbn css-dev-only-do-not-override-txh9fw"
+                      class="ant-switch basic-switch-wrapper css-g6dhbn"
                       id="mysql_schema_meta_collect_view"
                       role="switch"
                       type="button"
@@ -130,13 +130,13 @@ exports[`test SqlManagementConf/ScanTypesDynamicParams render defaultValue is de
             </div>
           </div>
           <div
-            class="ant-form-item has-label-tip has-required-style css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+            class="ant-form-item has-label-tip has-required-style css-1jlm9cy"
           >
             <div
-              class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+              class="ant-row ant-form-item-row"
             >
               <div
-                class="ant-col ant-col-11 ant-form-item-label css-dev-only-do-not-override-txh9fw"
+                class="ant-col ant-col-11 ant-form-item-label"
               >
                 <label
                   class="ant-form-item-required"
@@ -158,7 +158,7 @@ exports[`test SqlManagementConf/ScanTypesDynamicParams render defaultValue is de
                 </label>
               </div>
               <div
-                class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control"
               >
                 <div
                   class="ant-form-item-control-input"
@@ -168,7 +168,7 @@ exports[`test SqlManagementConf/ScanTypesDynamicParams render defaultValue is de
                   >
                     <div
                       aria-required="true"
-                      class="ant-select ant-select-in-form-item basic-select-wrapper css-iy4o4x css-dev-only-do-not-override-v9sov3 ant-select-single ant-select-allow-clear ant-select-show-arrow"
+                      class="ant-select ant-select-in-form-item basic-select-wrapper css-iy4o4x ant-select-single ant-select-allow-clear ant-select-show-arrow"
                     >
                       <div
                         class="ant-select-selector"
@@ -242,18 +242,18 @@ exports[`test SqlManagementConf/ScanTypesDynamicParams render defaultValue is de
           class="css-bspaai"
         >
           <h1
-            class="ant-typography css-1eepp70 css-dev-only-do-not-override-txh9fw"
+            class="ant-typography css-1eepp70"
           >
             编辑扫描详情·阿里RDS MySQL慢日志
           </h1>
           <div
-            class="ant-form-item  css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+            class="ant-form-item css-1jlm9cy"
           >
             <div
-              class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+              class="ant-row ant-form-item-row"
             >
               <div
-                class="ant-col ant-col-11 ant-form-item-label css-dev-only-do-not-override-txh9fw"
+                class="ant-col ant-col-11 ant-form-item-label"
               >
                 <label
                   class=""
@@ -274,7 +274,7 @@ exports[`test SqlManagementConf/ScanTypesDynamicParams render defaultValue is de
                 </label>
               </div>
               <div
-                class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control"
               >
                 <div
                   class="ant-form-item-control-input"
@@ -283,7 +283,7 @@ exports[`test SqlManagementConf/ScanTypesDynamicParams render defaultValue is de
                     class="ant-form-item-control-input-content"
                   >
                     <input
-                      class="ant-input css-dev-only-do-not-override-ywkr0o basic-input-wrapper css-1pd1cd5"
+                      class="ant-input basic-input-wrapper css-1pd1cd5"
                       id="ali_rds_mysql_slow_log_db_instance_id"
                       placeholder="请输入{{name}}"
                       type="text"
@@ -295,13 +295,13 @@ exports[`test SqlManagementConf/ScanTypesDynamicParams render defaultValue is de
             </div>
           </div>
           <div
-            class="ant-form-item  css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+            class="ant-form-item css-1jlm9cy"
           >
             <div
-              class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+              class="ant-row ant-form-item-row"
             >
               <div
-                class="ant-col ant-col-11 ant-form-item-label css-dev-only-do-not-override-txh9fw"
+                class="ant-col ant-col-11 ant-form-item-label"
               >
                 <label
                   class=""
@@ -322,7 +322,7 @@ exports[`test SqlManagementConf/ScanTypesDynamicParams render defaultValue is de
                 </label>
               </div>
               <div
-                class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control"
               >
                 <div
                   class="ant-form-item-control-input"
@@ -331,7 +331,7 @@ exports[`test SqlManagementConf/ScanTypesDynamicParams render defaultValue is de
                     class="ant-form-item-control-input-content"
                   >
                     <input
-                      class="ant-input css-dev-only-do-not-override-txh9fw ant-input-password basic-input-wrapper css-1pd1cd5"
+                      class="ant-input ant-input-password basic-input-wrapper css-1pd1cd5"
                       id="ali_rds_mysql_slow_log_access_key_id"
                       placeholder="请输入{{name}}"
                       type="password"
@@ -343,13 +343,13 @@ exports[`test SqlManagementConf/ScanTypesDynamicParams render defaultValue is de
             </div>
           </div>
           <div
-            class="ant-form-item  css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+            class="ant-form-item css-1jlm9cy"
           >
             <div
-              class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+              class="ant-row ant-form-item-row"
             >
               <div
-                class="ant-col ant-col-11 ant-form-item-label css-dev-only-do-not-override-txh9fw"
+                class="ant-col ant-col-11 ant-form-item-label"
               >
                 <label
                   class=""
@@ -370,7 +370,7 @@ exports[`test SqlManagementConf/ScanTypesDynamicParams render defaultValue is de
                 </label>
               </div>
               <div
-                class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control"
               >
                 <div
                   class="ant-form-item-control-input"
@@ -379,7 +379,7 @@ exports[`test SqlManagementConf/ScanTypesDynamicParams render defaultValue is de
                     class="ant-form-item-control-input-content"
                   >
                     <input
-                      class="ant-input css-dev-only-do-not-override-txh9fw ant-input-password basic-input-wrapper css-1pd1cd5"
+                      class="ant-input ant-input-password basic-input-wrapper css-1pd1cd5"
                       id="ali_rds_mysql_slow_log_access_key_secret"
                       placeholder="请输入{{name}}"
                       type="password"
@@ -391,13 +391,13 @@ exports[`test SqlManagementConf/ScanTypesDynamicParams render defaultValue is de
             </div>
           </div>
           <div
-            class="ant-form-item has-label-tip css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+            class="ant-form-item has-label-tip css-1jlm9cy"
           >
             <div
-              class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+              class="ant-row ant-form-item-row"
             >
               <div
-                class="ant-col ant-col-11 ant-form-item-label css-dev-only-do-not-override-txh9fw"
+                class="ant-col ant-col-11 ant-form-item-label"
               >
                 <label
                   class=""
@@ -419,7 +419,7 @@ exports[`test SqlManagementConf/ScanTypesDynamicParams render defaultValue is de
                 </label>
               </div>
               <div
-                class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control"
               >
                 <div
                   class="ant-form-item-control-input"
@@ -428,7 +428,7 @@ exports[`test SqlManagementConf/ScanTypesDynamicParams render defaultValue is de
                     class="ant-form-item-control-input-content"
                   >
                     <input
-                      class="ant-input css-dev-only-do-not-override-ywkr0o basic-input-wrapper css-1pd1cd5"
+                      class="ant-input basic-input-wrapper css-1pd1cd5"
                       id="ali_rds_mysql_slow_log_first_sqls_scrapped_in_last_period_hours"
                       placeholder="请输入{{name}}"
                       type="text"
@@ -440,13 +440,13 @@ exports[`test SqlManagementConf/ScanTypesDynamicParams render defaultValue is de
             </div>
           </div>
           <div
-            class="ant-form-item has-label-tip css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+            class="ant-form-item has-label-tip css-1jlm9cy"
           >
             <div
-              class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+              class="ant-row ant-form-item-row"
             >
               <div
-                class="ant-col ant-col-11 ant-form-item-label css-dev-only-do-not-override-txh9fw"
+                class="ant-col ant-col-11 ant-form-item-label"
               >
                 <label
                   class=""
@@ -468,7 +468,7 @@ exports[`test SqlManagementConf/ScanTypesDynamicParams render defaultValue is de
                 </label>
               </div>
               <div
-                class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control"
               >
                 <div
                   class="ant-form-item-control-input"
@@ -477,7 +477,7 @@ exports[`test SqlManagementConf/ScanTypesDynamicParams render defaultValue is de
                     class="ant-form-item-control-input-content"
                   >
                     <input
-                      class="ant-input css-dev-only-do-not-override-ywkr0o basic-input-wrapper css-1pd1cd5"
+                      class="ant-input basic-input-wrapper css-1pd1cd5"
                       id="ali_rds_mysql_slow_log_audit_sqls_scrapped_in_last_period_minute"
                       placeholder="请输入{{name}}"
                       type="text"
@@ -489,13 +489,13 @@ exports[`test SqlManagementConf/ScanTypesDynamicParams render defaultValue is de
             </div>
           </div>
           <div
-            class="ant-form-item  css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+            class="ant-form-item css-1jlm9cy"
           >
             <div
-              class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+              class="ant-row ant-form-item-row"
             >
               <div
-                class="ant-col ant-col-11 ant-form-item-label css-dev-only-do-not-override-txh9fw"
+                class="ant-col ant-col-11 ant-form-item-label"
               >
                 <label
                   class=""
@@ -516,7 +516,7 @@ exports[`test SqlManagementConf/ScanTypesDynamicParams render defaultValue is de
                 </label>
               </div>
               <div
-                class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control"
               >
                 <div
                   class="ant-form-item-control-input"
@@ -525,7 +525,7 @@ exports[`test SqlManagementConf/ScanTypesDynamicParams render defaultValue is de
                     class="ant-form-item-control-input-content"
                   >
                     <input
-                      class="ant-input css-dev-only-do-not-override-ywkr0o basic-input-wrapper css-1pd1cd5"
+                      class="ant-input basic-input-wrapper css-1pd1cd5"
                       id="ali_rds_mysql_slow_log_rds_path"
                       placeholder="请输入{{name}}"
                       type="text"
@@ -537,13 +537,13 @@ exports[`test SqlManagementConf/ScanTypesDynamicParams render defaultValue is de
             </div>
           </div>
           <div
-            class="ant-form-item has-required-style css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+            class="ant-form-item has-required-style css-1jlm9cy"
           >
             <div
-              class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+              class="ant-row ant-form-item-row"
             >
               <div
-                class="ant-col ant-col-11 ant-form-item-label css-dev-only-do-not-override-txh9fw"
+                class="ant-col ant-col-11 ant-form-item-label"
               >
                 <label
                   class=""
@@ -554,7 +554,7 @@ exports[`test SqlManagementConf/ScanTypesDynamicParams render defaultValue is de
                 </label>
               </div>
               <div
-                class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control"
               >
                 <div
                   class="ant-form-item-control-input"
@@ -564,7 +564,7 @@ exports[`test SqlManagementConf/ScanTypesDynamicParams render defaultValue is de
                   >
                     <button
                       aria-checked="false"
-                      class="ant-switch basic-switch-wrapper css-g6dhbn css-dev-only-do-not-override-txh9fw"
+                      class="ant-switch basic-switch-wrapper css-g6dhbn"
                       id="ali_rds_mysql_slow_log_markHighPrioritySql"
                       role="switch"
                       type="button"
@@ -589,15 +589,15 @@ exports[`test SqlManagementConf/ScanTypesDynamicParams render defaultValue is de
             </div>
           </div>
           <div
-            class="ant-row css-dev-only-do-not-override-txh9fw"
+            class="ant-row"
             style="margin-left: -6px; margin-right: -6px;"
           >
             <div
-              class="ant-col ant-col-5 ant-col-offset-9 css-dev-only-do-not-override-txh9fw"
+              class="ant-col ant-col-5 ant-col-offset-9"
               style="padding-left: 6px; padding-right: 6px;"
             >
               <span
-                class="ant-tag ant-tag-blue ant-tag-borderless basic-tag-wrapper basic-default-tag-wrapper css-9plkpp css-dev-only-do-not-override-txh9fw"
+                class="ant-tag ant-tag-blue ant-tag-borderless basic-tag-wrapper basic-default-tag-wrapper css-9plkpp"
               >
                 <svg
                   height="16"
@@ -612,7 +612,7 @@ exports[`test SqlManagementConf/ScanTypesDynamicParams render defaultValue is de
                 </svg>
                 <span>
                   <div
-                    class="ant-typography ant-typography-ellipsis ant-typography-single-line ant-typography-ellipsis-single-line basic-typography-ellipsis css-wgj5gs css-dev-only-do-not-override-txh9fw"
+                    class="ant-typography ant-typography-ellipsis ant-typography-single-line ant-typography-ellipsis-single-line basic-typography-ellipsis css-wgj5gs"
                   >
                     平均查询时间
                   </div>
@@ -620,17 +620,17 @@ exports[`test SqlManagementConf/ScanTypesDynamicParams render defaultValue is de
               </span>
             </div>
             <div
-              class="ant-col ant-col-3 css-dev-only-do-not-override-txh9fw"
+              class="ant-col ant-col-3"
               style="padding-left: 6px; padding-right: 6px;"
             >
               <div
-                class="ant-form-item css-15d6abf css-dev-only-do-not-override-txh9fw"
+                class="ant-form-item css-15d6abf"
               >
                 <div
-                  class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                  class="ant-row ant-form-item-row"
                 >
                   <div
-                    class="ant-col ant-col-24 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                    class="ant-col ant-col-24 ant-form-item-control"
                   >
                     <div
                       class="ant-form-item-control-input"
@@ -639,7 +639,7 @@ exports[`test SqlManagementConf/ScanTypesDynamicParams render defaultValue is de
                         class="ant-form-item-control-input-content"
                       >
                         <div
-                          class="ant-select ant-select-in-form-item basic-select-wrapper css-iy4o4x css-dev-only-do-not-override-v9sov3 ant-select-single ant-select-show-arrow ant-select-disabled"
+                          class="ant-select ant-select-in-form-item basic-select-wrapper css-iy4o4x ant-select-single ant-select-show-arrow ant-select-disabled"
                           data-testid="query_time_avg_operator"
                         >
                           <div
@@ -708,17 +708,17 @@ exports[`test SqlManagementConf/ScanTypesDynamicParams render defaultValue is de
               </div>
             </div>
             <div
-              class="ant-col ant-col-5 css-dev-only-do-not-override-txh9fw"
+              class="ant-col ant-col-5"
               style="padding-left: 6px; padding-right: 6px;"
             >
               <div
-                class="ant-form-item css-15d6abf css-dev-only-do-not-override-txh9fw"
+                class="ant-form-item css-15d6abf"
               >
                 <div
-                  class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                  class="ant-row ant-form-item-row"
                 >
                   <div
-                    class="ant-col ant-col-24 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                    class="ant-col ant-col-24 ant-form-item-control"
                   >
                     <div
                       class="ant-form-item-control-input"
@@ -727,7 +727,7 @@ exports[`test SqlManagementConf/ScanTypesDynamicParams render defaultValue is de
                         class="ant-form-item-control-input-content"
                       >
                         <input
-                          class="ant-input ant-input-disabled css-dev-only-do-not-override-ywkr0o basic-input-wrapper css-1pd1cd5"
+                          class="ant-input ant-input-disabled basic-input-wrapper css-1pd1cd5"
                           data-testid="query_time_avg_value"
                           disabled=""
                           id="ali_rds_mysql_slow_log_prioritySqlConditions_query_time_avg_value"
@@ -742,18 +742,18 @@ exports[`test SqlManagementConf/ScanTypesDynamicParams render defaultValue is de
               </div>
             </div>
             <div
-              class="ant-divider css-dev-only-do-not-override-txh9fw ant-divider-vertical"
+              class="ant-divider ant-divider-vertical"
               role="separator"
               style="height: 36px; margin-left: 6px; margin-right: 12px;"
             />
             <div
-              class="ant-form-item css-15d6abf css-dev-only-do-not-override-txh9fw"
+              class="ant-form-item css-15d6abf"
             >
               <div
-                class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                class="ant-row ant-form-item-row"
               >
                 <div
-                  class="ant-col ant-col-24 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                  class="ant-col ant-col-24 ant-form-item-control"
                 >
                   <div
                     class="ant-form-item-control-input"
@@ -763,7 +763,7 @@ exports[`test SqlManagementConf/ScanTypesDynamicParams render defaultValue is de
                     >
                       <button
                         aria-checked="true"
-                        class="ant-switch ant-switch-small basic-switch-wrapper css-g6dhbn css-dev-only-do-not-override-txh9fw ant-switch-checked"
+                        class="ant-switch ant-switch-small basic-switch-wrapper css-g6dhbn ant-switch-checked"
                         data-testid="query_time_avg_switch"
                         id="ali_rds_mysql_slow_log_prioritySqlConditions_query_time_avg_checked"
                         role="switch"
@@ -790,15 +790,15 @@ exports[`test SqlManagementConf/ScanTypesDynamicParams render defaultValue is de
             </div>
           </div>
           <div
-            class="ant-row css-dev-only-do-not-override-txh9fw"
+            class="ant-row"
             style="margin-left: -6px; margin-right: -6px;"
           >
             <div
-              class="ant-col ant-col-5 ant-col-offset-9 css-dev-only-do-not-override-txh9fw"
+              class="ant-col ant-col-5 ant-col-offset-9"
               style="padding-left: 6px; padding-right: 6px;"
             >
               <span
-                class="ant-tag ant-tag-blue ant-tag-borderless basic-tag-wrapper basic-default-tag-wrapper css-9plkpp css-dev-only-do-not-override-txh9fw"
+                class="ant-tag ant-tag-blue ant-tag-borderless basic-tag-wrapper basic-default-tag-wrapper css-9plkpp"
               >
                 <svg
                   height="16"
@@ -813,7 +813,7 @@ exports[`test SqlManagementConf/ScanTypesDynamicParams render defaultValue is de
                 </svg>
                 <span>
                   <div
-                    class="ant-typography ant-typography-ellipsis ant-typography-single-line ant-typography-ellipsis-single-line basic-typography-ellipsis css-wgj5gs css-dev-only-do-not-override-txh9fw"
+                    class="ant-typography ant-typography-ellipsis ant-typography-single-line ant-typography-ellipsis-single-line basic-typography-ellipsis css-wgj5gs"
                   >
                     平均扫描行数
                   </div>
@@ -821,17 +821,17 @@ exports[`test SqlManagementConf/ScanTypesDynamicParams render defaultValue is de
               </span>
             </div>
             <div
-              class="ant-col ant-col-3 css-dev-only-do-not-override-txh9fw"
+              class="ant-col ant-col-3"
               style="padding-left: 6px; padding-right: 6px;"
             >
               <div
-                class="ant-form-item css-15d6abf css-dev-only-do-not-override-txh9fw"
+                class="ant-form-item css-15d6abf"
               >
                 <div
-                  class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                  class="ant-row ant-form-item-row"
                 >
                   <div
-                    class="ant-col ant-col-24 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                    class="ant-col ant-col-24 ant-form-item-control"
                   >
                     <div
                       class="ant-form-item-control-input"
@@ -840,7 +840,7 @@ exports[`test SqlManagementConf/ScanTypesDynamicParams render defaultValue is de
                         class="ant-form-item-control-input-content"
                       >
                         <div
-                          class="ant-select ant-select-in-form-item basic-select-wrapper css-iy4o4x css-dev-only-do-not-override-v9sov3 ant-select-single ant-select-show-arrow ant-select-disabled"
+                          class="ant-select ant-select-in-form-item basic-select-wrapper css-iy4o4x ant-select-single ant-select-show-arrow ant-select-disabled"
                           data-testid="row_examined_avg_operator"
                         >
                           <div
@@ -909,17 +909,17 @@ exports[`test SqlManagementConf/ScanTypesDynamicParams render defaultValue is de
               </div>
             </div>
             <div
-              class="ant-col ant-col-5 css-dev-only-do-not-override-txh9fw"
+              class="ant-col ant-col-5"
               style="padding-left: 6px; padding-right: 6px;"
             >
               <div
-                class="ant-form-item css-15d6abf css-dev-only-do-not-override-txh9fw"
+                class="ant-form-item css-15d6abf"
               >
                 <div
-                  class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                  class="ant-row ant-form-item-row"
                 >
                   <div
-                    class="ant-col ant-col-24 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                    class="ant-col ant-col-24 ant-form-item-control"
                   >
                     <div
                       class="ant-form-item-control-input"
@@ -928,7 +928,7 @@ exports[`test SqlManagementConf/ScanTypesDynamicParams render defaultValue is de
                         class="ant-form-item-control-input-content"
                       >
                         <input
-                          class="ant-input ant-input-disabled css-dev-only-do-not-override-ywkr0o basic-input-wrapper css-1pd1cd5"
+                          class="ant-input ant-input-disabled basic-input-wrapper css-1pd1cd5"
                           data-testid="row_examined_avg_value"
                           disabled=""
                           id="ali_rds_mysql_slow_log_prioritySqlConditions_row_examined_avg_value"
@@ -943,18 +943,18 @@ exports[`test SqlManagementConf/ScanTypesDynamicParams render defaultValue is de
               </div>
             </div>
             <div
-              class="ant-divider css-dev-only-do-not-override-txh9fw ant-divider-vertical"
+              class="ant-divider ant-divider-vertical"
               role="separator"
               style="height: 36px; margin-left: 6px; margin-right: 12px;"
             />
             <div
-              class="ant-form-item css-15d6abf css-dev-only-do-not-override-txh9fw"
+              class="ant-form-item css-15d6abf"
             >
               <div
-                class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                class="ant-row ant-form-item-row"
               >
                 <div
-                  class="ant-col ant-col-24 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                  class="ant-col ant-col-24 ant-form-item-control"
                 >
                   <div
                     class="ant-form-item-control-input"
@@ -964,7 +964,7 @@ exports[`test SqlManagementConf/ScanTypesDynamicParams render defaultValue is de
                     >
                       <button
                         aria-checked="true"
-                        class="ant-switch ant-switch-small basic-switch-wrapper css-g6dhbn css-dev-only-do-not-override-txh9fw ant-switch-checked"
+                        class="ant-switch ant-switch-small basic-switch-wrapper css-g6dhbn ant-switch-checked"
                         data-testid="row_examined_avg_switch"
                         id="ali_rds_mysql_slow_log_prioritySqlConditions_row_examined_avg_checked"
                         role="switch"
@@ -991,15 +991,15 @@ exports[`test SqlManagementConf/ScanTypesDynamicParams render defaultValue is de
             </div>
           </div>
           <div
-            class="ant-row css-dev-only-do-not-override-txh9fw"
+            class="ant-row"
             style="margin-left: -6px; margin-right: -6px;"
           >
             <div
-              class="ant-col ant-col-5 ant-col-offset-9 css-dev-only-do-not-override-txh9fw"
+              class="ant-col ant-col-5 ant-col-offset-9"
               style="padding-left: 6px; padding-right: 6px;"
             >
               <span
-                class="ant-tag ant-tag-blue ant-tag-borderless basic-tag-wrapper basic-default-tag-wrapper css-9plkpp css-dev-only-do-not-override-txh9fw"
+                class="ant-tag ant-tag-blue ant-tag-borderless basic-tag-wrapper basic-default-tag-wrapper css-9plkpp"
               >
                 <svg
                   height="16"
@@ -1014,7 +1014,7 @@ exports[`test SqlManagementConf/ScanTypesDynamicParams render defaultValue is de
                 </svg>
                 <span>
                   <div
-                    class="ant-typography ant-typography-ellipsis ant-typography-single-line ant-typography-ellipsis-single-line basic-typography-ellipsis css-wgj5gs css-dev-only-do-not-override-txh9fw"
+                    class="ant-typography ant-typography-ellipsis ant-typography-single-line ant-typography-ellipsis-single-line basic-typography-ellipsis css-wgj5gs"
                   >
                     告警级别
                   </div>
@@ -1022,17 +1022,17 @@ exports[`test SqlManagementConf/ScanTypesDynamicParams render defaultValue is de
               </span>
             </div>
             <div
-              class="ant-col ant-col-3 css-dev-only-do-not-override-txh9fw"
+              class="ant-col ant-col-3"
               style="padding-left: 6px; padding-right: 6px;"
             >
               <div
-                class="ant-form-item css-15d6abf css-dev-only-do-not-override-txh9fw"
+                class="ant-form-item css-15d6abf"
               >
                 <div
-                  class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                  class="ant-row ant-form-item-row"
                 >
                   <div
-                    class="ant-col ant-col-24 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                    class="ant-col ant-col-24 ant-form-item-control"
                   >
                     <div
                       class="ant-form-item-control-input"
@@ -1041,7 +1041,7 @@ exports[`test SqlManagementConf/ScanTypesDynamicParams render defaultValue is de
                         class="ant-form-item-control-input-content"
                       >
                         <div
-                          class="ant-select ant-select-in-form-item basic-select-wrapper css-iy4o4x css-dev-only-do-not-override-v9sov3 ant-select-single ant-select-show-arrow ant-select-disabled"
+                          class="ant-select ant-select-in-form-item basic-select-wrapper css-iy4o4x ant-select-single ant-select-show-arrow ant-select-disabled"
                           data-testid="audit_level_operator"
                         >
                           <div
@@ -1110,17 +1110,17 @@ exports[`test SqlManagementConf/ScanTypesDynamicParams render defaultValue is de
               </div>
             </div>
             <div
-              class="ant-col ant-col-5 css-dev-only-do-not-override-txh9fw"
+              class="ant-col ant-col-5"
               style="padding-left: 6px; padding-right: 6px;"
             >
               <div
-                class="ant-form-item css-15d6abf css-dev-only-do-not-override-txh9fw"
+                class="ant-form-item css-15d6abf"
               >
                 <div
-                  class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                  class="ant-row ant-form-item-row"
                 >
                   <div
-                    class="ant-col ant-col-24 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                    class="ant-col ant-col-24 ant-form-item-control"
                   >
                     <div
                       class="ant-form-item-control-input"
@@ -1129,7 +1129,7 @@ exports[`test SqlManagementConf/ScanTypesDynamicParams render defaultValue is de
                         class="ant-form-item-control-input-content"
                       >
                         <div
-                          class="ant-select ant-select-in-form-item basic-select-wrapper css-iy4o4x css-dev-only-do-not-override-v9sov3 ant-select-single ant-select-show-arrow ant-select-disabled"
+                          class="ant-select ant-select-in-form-item basic-select-wrapper css-iy4o4x ant-select-single ant-select-show-arrow ant-select-disabled"
                           data-testid="audit_level_value"
                         >
                           <div
@@ -1198,18 +1198,18 @@ exports[`test SqlManagementConf/ScanTypesDynamicParams render defaultValue is de
               </div>
             </div>
             <div
-              class="ant-divider css-dev-only-do-not-override-txh9fw ant-divider-vertical"
+              class="ant-divider ant-divider-vertical"
               role="separator"
               style="height: 36px; margin-left: 6px; margin-right: 12px;"
             />
             <div
-              class="ant-form-item css-15d6abf css-dev-only-do-not-override-txh9fw"
+              class="ant-form-item css-15d6abf"
             >
               <div
-                class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                class="ant-row ant-form-item-row"
               >
                 <div
-                  class="ant-col ant-col-24 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                  class="ant-col ant-col-24 ant-form-item-control"
                 >
                   <div
                     class="ant-form-item-control-input"
@@ -1219,7 +1219,7 @@ exports[`test SqlManagementConf/ScanTypesDynamicParams render defaultValue is de
                     >
                       <button
                         aria-checked="true"
-                        class="ant-switch ant-switch-small basic-switch-wrapper css-g6dhbn css-dev-only-do-not-override-txh9fw ant-switch-checked"
+                        class="ant-switch ant-switch-small basic-switch-wrapper css-g6dhbn ant-switch-checked"
                         data-testid="audit_level_switch"
                         id="ali_rds_mysql_slow_log_prioritySqlConditions_audit_level_checked"
                         role="switch"
@@ -1246,13 +1246,13 @@ exports[`test SqlManagementConf/ScanTypesDynamicParams render defaultValue is de
             </div>
           </div>
           <div
-            class="ant-form-item has-label-tip has-required-style css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+            class="ant-form-item has-label-tip has-required-style css-1jlm9cy"
           >
             <div
-              class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+              class="ant-row ant-form-item-row"
             >
               <div
-                class="ant-col ant-col-11 ant-form-item-label css-dev-only-do-not-override-txh9fw"
+                class="ant-col ant-col-11 ant-form-item-label"
               >
                 <label
                   class="ant-form-item-required"
@@ -1274,7 +1274,7 @@ exports[`test SqlManagementConf/ScanTypesDynamicParams render defaultValue is de
                 </label>
               </div>
               <div
-                class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control"
               >
                 <div
                   class="ant-form-item-control-input"
@@ -1284,7 +1284,7 @@ exports[`test SqlManagementConf/ScanTypesDynamicParams render defaultValue is de
                   >
                     <div
                       aria-required="true"
-                      class="ant-select ant-select-in-form-item basic-select-wrapper css-iy4o4x css-dev-only-do-not-override-v9sov3 ant-select-single ant-select-allow-clear ant-select-show-arrow"
+                      class="ant-select ant-select-in-form-item basic-select-wrapper css-iy4o4x ant-select-single ant-select-allow-clear ant-select-show-arrow"
                     >
                       <div
                         class="ant-select-selector"
@@ -1361,7 +1361,7 @@ exports[`test SqlManagementConf/ScanTypesDynamicParams render init snap shot 1`]
   <div />
   <div>
     <form
-      class="ant-form ant-form-horizontal css-dev-only-do-not-override-txh9fw"
+      class="ant-form ant-form-horizontal"
     >
       <section
         class="has-border css-1114g56"
@@ -1370,18 +1370,18 @@ exports[`test SqlManagementConf/ScanTypesDynamicParams render init snap shot 1`]
           class="css-bspaai"
         >
           <h1
-            class="ant-typography css-1eepp70 css-dev-only-do-not-override-txh9fw"
+            class="ant-typography css-1eepp70"
           >
             编辑扫描详情·MySQL库表元数据
           </h1>
           <div
-            class="ant-form-item has-label-tip css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+            class="ant-form-item has-label-tip css-1jlm9cy"
           >
             <div
-              class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+              class="ant-row ant-form-item-row"
             >
               <div
-                class="ant-col ant-col-11 ant-form-item-label css-dev-only-do-not-override-txh9fw"
+                class="ant-col ant-col-11 ant-form-item-label"
               >
                 <label
                   class=""
@@ -1403,7 +1403,7 @@ exports[`test SqlManagementConf/ScanTypesDynamicParams render init snap shot 1`]
                 </label>
               </div>
               <div
-                class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control"
               >
                 <div
                   class="ant-form-item-control-input"
@@ -1412,7 +1412,7 @@ exports[`test SqlManagementConf/ScanTypesDynamicParams render init snap shot 1`]
                     class="ant-form-item-control-input-content"
                   >
                     <input
-                      class="ant-input css-dev-only-do-not-override-ywkr0o basic-input-wrapper css-1pd1cd5"
+                      class="ant-input basic-input-wrapper css-1pd1cd5"
                       id="mysql_schema_meta_collect_interval_minute"
                       placeholder="请输入{{name}}"
                       type="text"
@@ -1424,13 +1424,13 @@ exports[`test SqlManagementConf/ScanTypesDynamicParams render init snap shot 1`]
             </div>
           </div>
           <div
-            class="ant-form-item  css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+            class="ant-form-item css-1jlm9cy"
           >
             <div
-              class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+              class="ant-row ant-form-item-row"
             >
               <div
-                class="ant-col ant-col-11 ant-form-item-label css-dev-only-do-not-override-txh9fw"
+                class="ant-col ant-col-11 ant-form-item-label"
               >
                 <label
                   class=""
@@ -1451,7 +1451,7 @@ exports[`test SqlManagementConf/ScanTypesDynamicParams render init snap shot 1`]
                 </label>
               </div>
               <div
-                class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control"
               >
                 <div
                   class="ant-form-item-control-input"
@@ -1461,7 +1461,7 @@ exports[`test SqlManagementConf/ScanTypesDynamicParams render init snap shot 1`]
                   >
                     <button
                       aria-checked="false"
-                      class="ant-switch basic-switch-wrapper css-g6dhbn css-dev-only-do-not-override-txh9fw"
+                      class="ant-switch basic-switch-wrapper css-g6dhbn"
                       id="mysql_schema_meta_collect_view"
                       role="switch"
                       type="button"
@@ -1486,13 +1486,13 @@ exports[`test SqlManagementConf/ScanTypesDynamicParams render init snap shot 1`]
             </div>
           </div>
           <div
-            class="ant-form-item has-label-tip has-required-style css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+            class="ant-form-item has-label-tip has-required-style css-1jlm9cy"
           >
             <div
-              class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+              class="ant-row ant-form-item-row"
             >
               <div
-                class="ant-col ant-col-11 ant-form-item-label css-dev-only-do-not-override-txh9fw"
+                class="ant-col ant-col-11 ant-form-item-label"
               >
                 <label
                   class="ant-form-item-required"
@@ -1514,7 +1514,7 @@ exports[`test SqlManagementConf/ScanTypesDynamicParams render init snap shot 1`]
                 </label>
               </div>
               <div
-                class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control"
               >
                 <div
                   class="ant-form-item-control-input"
@@ -1524,7 +1524,7 @@ exports[`test SqlManagementConf/ScanTypesDynamicParams render init snap shot 1`]
                   >
                     <div
                       aria-required="true"
-                      class="ant-select ant-select-in-form-item basic-select-wrapper css-iy4o4x css-dev-only-do-not-override-v9sov3 ant-select-single ant-select-allow-clear ant-select-show-arrow"
+                      class="ant-select ant-select-in-form-item basic-select-wrapper css-iy4o4x ant-select-single ant-select-allow-clear ant-select-show-arrow"
                     >
                       <div
                         class="ant-select-selector"
@@ -1598,18 +1598,18 @@ exports[`test SqlManagementConf/ScanTypesDynamicParams render init snap shot 1`]
           class="css-bspaai"
         >
           <h1
-            class="ant-typography css-1eepp70 css-dev-only-do-not-override-txh9fw"
+            class="ant-typography css-1eepp70"
           >
             编辑扫描详情·阿里RDS MySQL慢日志
           </h1>
           <div
-            class="ant-form-item  css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+            class="ant-form-item css-1jlm9cy"
           >
             <div
-              class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+              class="ant-row ant-form-item-row"
             >
               <div
-                class="ant-col ant-col-11 ant-form-item-label css-dev-only-do-not-override-txh9fw"
+                class="ant-col ant-col-11 ant-form-item-label"
               >
                 <label
                   class=""
@@ -1630,7 +1630,7 @@ exports[`test SqlManagementConf/ScanTypesDynamicParams render init snap shot 1`]
                 </label>
               </div>
               <div
-                class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control"
               >
                 <div
                   class="ant-form-item-control-input"
@@ -1639,7 +1639,7 @@ exports[`test SqlManagementConf/ScanTypesDynamicParams render init snap shot 1`]
                     class="ant-form-item-control-input-content"
                   >
                     <input
-                      class="ant-input css-dev-only-do-not-override-ywkr0o basic-input-wrapper css-1pd1cd5"
+                      class="ant-input basic-input-wrapper css-1pd1cd5"
                       id="ali_rds_mysql_slow_log_db_instance_id"
                       placeholder="请输入{{name}}"
                       type="text"
@@ -1651,13 +1651,13 @@ exports[`test SqlManagementConf/ScanTypesDynamicParams render init snap shot 1`]
             </div>
           </div>
           <div
-            class="ant-form-item  css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+            class="ant-form-item css-1jlm9cy"
           >
             <div
-              class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+              class="ant-row ant-form-item-row"
             >
               <div
-                class="ant-col ant-col-11 ant-form-item-label css-dev-only-do-not-override-txh9fw"
+                class="ant-col ant-col-11 ant-form-item-label"
               >
                 <label
                   class=""
@@ -1678,7 +1678,7 @@ exports[`test SqlManagementConf/ScanTypesDynamicParams render init snap shot 1`]
                 </label>
               </div>
               <div
-                class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control"
               >
                 <div
                   class="ant-form-item-control-input"
@@ -1687,10 +1687,10 @@ exports[`test SqlManagementConf/ScanTypesDynamicParams render init snap shot 1`]
                     class="ant-form-item-control-input-content"
                   >
                     <span
-                      class="ant-input-affix-wrapper ant-input-password basic-input-wrapper css-1pd1cd5 css-dev-only-do-not-override-txh9fw"
+                      class="ant-input-affix-wrapper ant-input-password basic-input-wrapper css-1pd1cd5"
                     >
                       <input
-                        class="ant-input css-dev-only-do-not-override-txh9fw"
+                        class="ant-input"
                         id="ali_rds_mysql_slow_log_access_key_id"
                         placeholder="请输入{{name}}"
                         type="password"
@@ -1729,13 +1729,13 @@ exports[`test SqlManagementConf/ScanTypesDynamicParams render init snap shot 1`]
             </div>
           </div>
           <div
-            class="ant-form-item  css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+            class="ant-form-item css-1jlm9cy"
           >
             <div
-              class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+              class="ant-row ant-form-item-row"
             >
               <div
-                class="ant-col ant-col-11 ant-form-item-label css-dev-only-do-not-override-txh9fw"
+                class="ant-col ant-col-11 ant-form-item-label"
               >
                 <label
                   class=""
@@ -1756,7 +1756,7 @@ exports[`test SqlManagementConf/ScanTypesDynamicParams render init snap shot 1`]
                 </label>
               </div>
               <div
-                class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control"
               >
                 <div
                   class="ant-form-item-control-input"
@@ -1765,10 +1765,10 @@ exports[`test SqlManagementConf/ScanTypesDynamicParams render init snap shot 1`]
                     class="ant-form-item-control-input-content"
                   >
                     <span
-                      class="ant-input-affix-wrapper ant-input-password basic-input-wrapper css-1pd1cd5 css-dev-only-do-not-override-txh9fw"
+                      class="ant-input-affix-wrapper ant-input-password basic-input-wrapper css-1pd1cd5"
                     >
                       <input
-                        class="ant-input css-dev-only-do-not-override-txh9fw"
+                        class="ant-input"
                         id="ali_rds_mysql_slow_log_access_key_secret"
                         placeholder="请输入{{name}}"
                         type="password"
@@ -1807,13 +1807,13 @@ exports[`test SqlManagementConf/ScanTypesDynamicParams render init snap shot 1`]
             </div>
           </div>
           <div
-            class="ant-form-item has-label-tip css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+            class="ant-form-item has-label-tip css-1jlm9cy"
           >
             <div
-              class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+              class="ant-row ant-form-item-row"
             >
               <div
-                class="ant-col ant-col-11 ant-form-item-label css-dev-only-do-not-override-txh9fw"
+                class="ant-col ant-col-11 ant-form-item-label"
               >
                 <label
                   class=""
@@ -1835,7 +1835,7 @@ exports[`test SqlManagementConf/ScanTypesDynamicParams render init snap shot 1`]
                 </label>
               </div>
               <div
-                class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control"
               >
                 <div
                   class="ant-form-item-control-input"
@@ -1844,7 +1844,7 @@ exports[`test SqlManagementConf/ScanTypesDynamicParams render init snap shot 1`]
                     class="ant-form-item-control-input-content"
                   >
                     <input
-                      class="ant-input css-dev-only-do-not-override-ywkr0o basic-input-wrapper css-1pd1cd5"
+                      class="ant-input basic-input-wrapper css-1pd1cd5"
                       id="ali_rds_mysql_slow_log_first_sqls_scrapped_in_last_period_hours"
                       placeholder="请输入{{name}}"
                       type="text"
@@ -1856,13 +1856,13 @@ exports[`test SqlManagementConf/ScanTypesDynamicParams render init snap shot 1`]
             </div>
           </div>
           <div
-            class="ant-form-item has-label-tip css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+            class="ant-form-item has-label-tip css-1jlm9cy"
           >
             <div
-              class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+              class="ant-row ant-form-item-row"
             >
               <div
-                class="ant-col ant-col-11 ant-form-item-label css-dev-only-do-not-override-txh9fw"
+                class="ant-col ant-col-11 ant-form-item-label"
               >
                 <label
                   class=""
@@ -1884,7 +1884,7 @@ exports[`test SqlManagementConf/ScanTypesDynamicParams render init snap shot 1`]
                 </label>
               </div>
               <div
-                class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control"
               >
                 <div
                   class="ant-form-item-control-input"
@@ -1893,7 +1893,7 @@ exports[`test SqlManagementConf/ScanTypesDynamicParams render init snap shot 1`]
                     class="ant-form-item-control-input-content"
                   >
                     <input
-                      class="ant-input css-dev-only-do-not-override-ywkr0o basic-input-wrapper css-1pd1cd5"
+                      class="ant-input basic-input-wrapper css-1pd1cd5"
                       id="ali_rds_mysql_slow_log_audit_sqls_scrapped_in_last_period_minute"
                       placeholder="请输入{{name}}"
                       type="text"
@@ -1905,13 +1905,13 @@ exports[`test SqlManagementConf/ScanTypesDynamicParams render init snap shot 1`]
             </div>
           </div>
           <div
-            class="ant-form-item  css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+            class="ant-form-item css-1jlm9cy"
           >
             <div
-              class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+              class="ant-row ant-form-item-row"
             >
               <div
-                class="ant-col ant-col-11 ant-form-item-label css-dev-only-do-not-override-txh9fw"
+                class="ant-col ant-col-11 ant-form-item-label"
               >
                 <label
                   class=""
@@ -1932,7 +1932,7 @@ exports[`test SqlManagementConf/ScanTypesDynamicParams render init snap shot 1`]
                 </label>
               </div>
               <div
-                class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control"
               >
                 <div
                   class="ant-form-item-control-input"
@@ -1941,7 +1941,7 @@ exports[`test SqlManagementConf/ScanTypesDynamicParams render init snap shot 1`]
                     class="ant-form-item-control-input-content"
                   >
                     <input
-                      class="ant-input css-dev-only-do-not-override-ywkr0o basic-input-wrapper css-1pd1cd5"
+                      class="ant-input basic-input-wrapper css-1pd1cd5"
                       id="ali_rds_mysql_slow_log_rds_path"
                       placeholder="请输入{{name}}"
                       type="text"
@@ -1953,13 +1953,13 @@ exports[`test SqlManagementConf/ScanTypesDynamicParams render init snap shot 1`]
             </div>
           </div>
           <div
-            class="ant-form-item has-required-style css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+            class="ant-form-item has-required-style css-1jlm9cy"
           >
             <div
-              class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+              class="ant-row ant-form-item-row"
             >
               <div
-                class="ant-col ant-col-11 ant-form-item-label css-dev-only-do-not-override-txh9fw"
+                class="ant-col ant-col-11 ant-form-item-label"
               >
                 <label
                   class=""
@@ -1970,7 +1970,7 @@ exports[`test SqlManagementConf/ScanTypesDynamicParams render init snap shot 1`]
                 </label>
               </div>
               <div
-                class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control"
               >
                 <div
                   class="ant-form-item-control-input"
@@ -1980,7 +1980,7 @@ exports[`test SqlManagementConf/ScanTypesDynamicParams render init snap shot 1`]
                   >
                     <button
                       aria-checked="false"
-                      class="ant-switch basic-switch-wrapper css-g6dhbn css-dev-only-do-not-override-txh9fw"
+                      class="ant-switch basic-switch-wrapper css-g6dhbn"
                       id="ali_rds_mysql_slow_log_markHighPrioritySql"
                       role="switch"
                       type="button"
@@ -2005,15 +2005,15 @@ exports[`test SqlManagementConf/ScanTypesDynamicParams render init snap shot 1`]
             </div>
           </div>
           <div
-            class="ant-row css-dev-only-do-not-override-txh9fw"
+            class="ant-row"
             style="margin-left: -6px; margin-right: -6px;"
           >
             <div
-              class="ant-col ant-col-5 ant-col-offset-9 css-dev-only-do-not-override-txh9fw"
+              class="ant-col ant-col-5 ant-col-offset-9"
               style="padding-left: 6px; padding-right: 6px;"
             >
               <span
-                class="ant-tag ant-tag-blue ant-tag-borderless basic-tag-wrapper basic-default-tag-wrapper css-9plkpp css-dev-only-do-not-override-txh9fw"
+                class="ant-tag ant-tag-blue ant-tag-borderless basic-tag-wrapper basic-default-tag-wrapper css-9plkpp"
               >
                 <svg
                   height="16"
@@ -2028,7 +2028,7 @@ exports[`test SqlManagementConf/ScanTypesDynamicParams render init snap shot 1`]
                 </svg>
                 <span>
                   <div
-                    class="ant-typography ant-typography-ellipsis ant-typography-single-line ant-typography-ellipsis-single-line basic-typography-ellipsis css-wgj5gs css-dev-only-do-not-override-txh9fw"
+                    class="ant-typography ant-typography-ellipsis ant-typography-single-line ant-typography-ellipsis-single-line basic-typography-ellipsis css-wgj5gs"
                   >
                     平均查询时间
                   </div>
@@ -2036,17 +2036,17 @@ exports[`test SqlManagementConf/ScanTypesDynamicParams render init snap shot 1`]
               </span>
             </div>
             <div
-              class="ant-col ant-col-3 css-dev-only-do-not-override-txh9fw"
+              class="ant-col ant-col-3"
               style="padding-left: 6px; padding-right: 6px;"
             >
               <div
-                class="ant-form-item css-15d6abf css-dev-only-do-not-override-txh9fw"
+                class="ant-form-item css-15d6abf"
               >
                 <div
-                  class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                  class="ant-row ant-form-item-row"
                 >
                   <div
-                    class="ant-col ant-col-24 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                    class="ant-col ant-col-24 ant-form-item-control"
                   >
                     <div
                       class="ant-form-item-control-input"
@@ -2055,7 +2055,7 @@ exports[`test SqlManagementConf/ScanTypesDynamicParams render init snap shot 1`]
                         class="ant-form-item-control-input-content"
                       >
                         <div
-                          class="ant-select ant-select-in-form-item basic-select-wrapper css-iy4o4x css-dev-only-do-not-override-v9sov3 ant-select-single ant-select-show-arrow ant-select-disabled"
+                          class="ant-select ant-select-in-form-item basic-select-wrapper css-iy4o4x ant-select-single ant-select-show-arrow ant-select-disabled"
                           data-testid="query_time_avg_operator"
                         >
                           <div
@@ -2124,17 +2124,17 @@ exports[`test SqlManagementConf/ScanTypesDynamicParams render init snap shot 1`]
               </div>
             </div>
             <div
-              class="ant-col ant-col-5 css-dev-only-do-not-override-txh9fw"
+              class="ant-col ant-col-5"
               style="padding-left: 6px; padding-right: 6px;"
             >
               <div
-                class="ant-form-item css-15d6abf css-dev-only-do-not-override-txh9fw"
+                class="ant-form-item css-15d6abf"
               >
                 <div
-                  class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                  class="ant-row ant-form-item-row"
                 >
                   <div
-                    class="ant-col ant-col-24 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                    class="ant-col ant-col-24 ant-form-item-control"
                   >
                     <div
                       class="ant-form-item-control-input"
@@ -2143,7 +2143,7 @@ exports[`test SqlManagementConf/ScanTypesDynamicParams render init snap shot 1`]
                         class="ant-form-item-control-input-content"
                       >
                         <input
-                          class="ant-input ant-input-disabled css-dev-only-do-not-override-ywkr0o basic-input-wrapper css-1pd1cd5"
+                          class="ant-input ant-input-disabled basic-input-wrapper css-1pd1cd5"
                           data-testid="query_time_avg_value"
                           disabled=""
                           id="ali_rds_mysql_slow_log_prioritySqlConditions_query_time_avg_value"
@@ -2158,18 +2158,18 @@ exports[`test SqlManagementConf/ScanTypesDynamicParams render init snap shot 1`]
               </div>
             </div>
             <div
-              class="ant-divider css-dev-only-do-not-override-txh9fw ant-divider-vertical"
+              class="ant-divider ant-divider-vertical"
               role="separator"
               style="height: 36px; margin-left: 6px; margin-right: 12px;"
             />
             <div
-              class="ant-form-item css-15d6abf css-dev-only-do-not-override-txh9fw"
+              class="ant-form-item css-15d6abf"
             >
               <div
-                class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                class="ant-row ant-form-item-row"
               >
                 <div
-                  class="ant-col ant-col-24 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                  class="ant-col ant-col-24 ant-form-item-control"
                 >
                   <div
                     class="ant-form-item-control-input"
@@ -2179,7 +2179,7 @@ exports[`test SqlManagementConf/ScanTypesDynamicParams render init snap shot 1`]
                     >
                       <button
                         aria-checked="true"
-                        class="ant-switch ant-switch-small basic-switch-wrapper css-g6dhbn css-dev-only-do-not-override-txh9fw ant-switch-checked"
+                        class="ant-switch ant-switch-small basic-switch-wrapper css-g6dhbn ant-switch-checked"
                         data-testid="query_time_avg_switch"
                         id="ali_rds_mysql_slow_log_prioritySqlConditions_query_time_avg_checked"
                         role="switch"
@@ -2206,15 +2206,15 @@ exports[`test SqlManagementConf/ScanTypesDynamicParams render init snap shot 1`]
             </div>
           </div>
           <div
-            class="ant-row css-dev-only-do-not-override-txh9fw"
+            class="ant-row"
             style="margin-left: -6px; margin-right: -6px;"
           >
             <div
-              class="ant-col ant-col-5 ant-col-offset-9 css-dev-only-do-not-override-txh9fw"
+              class="ant-col ant-col-5 ant-col-offset-9"
               style="padding-left: 6px; padding-right: 6px;"
             >
               <span
-                class="ant-tag ant-tag-blue ant-tag-borderless basic-tag-wrapper basic-default-tag-wrapper css-9plkpp css-dev-only-do-not-override-txh9fw"
+                class="ant-tag ant-tag-blue ant-tag-borderless basic-tag-wrapper basic-default-tag-wrapper css-9plkpp"
               >
                 <svg
                   height="16"
@@ -2229,7 +2229,7 @@ exports[`test SqlManagementConf/ScanTypesDynamicParams render init snap shot 1`]
                 </svg>
                 <span>
                   <div
-                    class="ant-typography ant-typography-ellipsis ant-typography-single-line ant-typography-ellipsis-single-line basic-typography-ellipsis css-wgj5gs css-dev-only-do-not-override-txh9fw"
+                    class="ant-typography ant-typography-ellipsis ant-typography-single-line ant-typography-ellipsis-single-line basic-typography-ellipsis css-wgj5gs"
                   >
                     平均扫描行数
                   </div>
@@ -2237,17 +2237,17 @@ exports[`test SqlManagementConf/ScanTypesDynamicParams render init snap shot 1`]
               </span>
             </div>
             <div
-              class="ant-col ant-col-3 css-dev-only-do-not-override-txh9fw"
+              class="ant-col ant-col-3"
               style="padding-left: 6px; padding-right: 6px;"
             >
               <div
-                class="ant-form-item css-15d6abf css-dev-only-do-not-override-txh9fw"
+                class="ant-form-item css-15d6abf"
               >
                 <div
-                  class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                  class="ant-row ant-form-item-row"
                 >
                   <div
-                    class="ant-col ant-col-24 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                    class="ant-col ant-col-24 ant-form-item-control"
                   >
                     <div
                       class="ant-form-item-control-input"
@@ -2256,7 +2256,7 @@ exports[`test SqlManagementConf/ScanTypesDynamicParams render init snap shot 1`]
                         class="ant-form-item-control-input-content"
                       >
                         <div
-                          class="ant-select ant-select-in-form-item basic-select-wrapper css-iy4o4x css-dev-only-do-not-override-v9sov3 ant-select-single ant-select-show-arrow ant-select-disabled"
+                          class="ant-select ant-select-in-form-item basic-select-wrapper css-iy4o4x ant-select-single ant-select-show-arrow ant-select-disabled"
                           data-testid="row_examined_avg_operator"
                         >
                           <div
@@ -2325,17 +2325,17 @@ exports[`test SqlManagementConf/ScanTypesDynamicParams render init snap shot 1`]
               </div>
             </div>
             <div
-              class="ant-col ant-col-5 css-dev-only-do-not-override-txh9fw"
+              class="ant-col ant-col-5"
               style="padding-left: 6px; padding-right: 6px;"
             >
               <div
-                class="ant-form-item css-15d6abf css-dev-only-do-not-override-txh9fw"
+                class="ant-form-item css-15d6abf"
               >
                 <div
-                  class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                  class="ant-row ant-form-item-row"
                 >
                   <div
-                    class="ant-col ant-col-24 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                    class="ant-col ant-col-24 ant-form-item-control"
                   >
                     <div
                       class="ant-form-item-control-input"
@@ -2344,7 +2344,7 @@ exports[`test SqlManagementConf/ScanTypesDynamicParams render init snap shot 1`]
                         class="ant-form-item-control-input-content"
                       >
                         <input
-                          class="ant-input ant-input-disabled css-dev-only-do-not-override-ywkr0o basic-input-wrapper css-1pd1cd5"
+                          class="ant-input ant-input-disabled basic-input-wrapper css-1pd1cd5"
                           data-testid="row_examined_avg_value"
                           disabled=""
                           id="ali_rds_mysql_slow_log_prioritySqlConditions_row_examined_avg_value"
@@ -2359,18 +2359,18 @@ exports[`test SqlManagementConf/ScanTypesDynamicParams render init snap shot 1`]
               </div>
             </div>
             <div
-              class="ant-divider css-dev-only-do-not-override-txh9fw ant-divider-vertical"
+              class="ant-divider ant-divider-vertical"
               role="separator"
               style="height: 36px; margin-left: 6px; margin-right: 12px;"
             />
             <div
-              class="ant-form-item css-15d6abf css-dev-only-do-not-override-txh9fw"
+              class="ant-form-item css-15d6abf"
             >
               <div
-                class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                class="ant-row ant-form-item-row"
               >
                 <div
-                  class="ant-col ant-col-24 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                  class="ant-col ant-col-24 ant-form-item-control"
                 >
                   <div
                     class="ant-form-item-control-input"
@@ -2380,7 +2380,7 @@ exports[`test SqlManagementConf/ScanTypesDynamicParams render init snap shot 1`]
                     >
                       <button
                         aria-checked="true"
-                        class="ant-switch ant-switch-small basic-switch-wrapper css-g6dhbn css-dev-only-do-not-override-txh9fw ant-switch-checked"
+                        class="ant-switch ant-switch-small basic-switch-wrapper css-g6dhbn ant-switch-checked"
                         data-testid="row_examined_avg_switch"
                         id="ali_rds_mysql_slow_log_prioritySqlConditions_row_examined_avg_checked"
                         role="switch"
@@ -2407,15 +2407,15 @@ exports[`test SqlManagementConf/ScanTypesDynamicParams render init snap shot 1`]
             </div>
           </div>
           <div
-            class="ant-row css-dev-only-do-not-override-txh9fw"
+            class="ant-row"
             style="margin-left: -6px; margin-right: -6px;"
           >
             <div
-              class="ant-col ant-col-5 ant-col-offset-9 css-dev-only-do-not-override-txh9fw"
+              class="ant-col ant-col-5 ant-col-offset-9"
               style="padding-left: 6px; padding-right: 6px;"
             >
               <span
-                class="ant-tag ant-tag-blue ant-tag-borderless basic-tag-wrapper basic-default-tag-wrapper css-9plkpp css-dev-only-do-not-override-txh9fw"
+                class="ant-tag ant-tag-blue ant-tag-borderless basic-tag-wrapper basic-default-tag-wrapper css-9plkpp"
               >
                 <svg
                   height="16"
@@ -2430,7 +2430,7 @@ exports[`test SqlManagementConf/ScanTypesDynamicParams render init snap shot 1`]
                 </svg>
                 <span>
                   <div
-                    class="ant-typography ant-typography-ellipsis ant-typography-single-line ant-typography-ellipsis-single-line basic-typography-ellipsis css-wgj5gs css-dev-only-do-not-override-txh9fw"
+                    class="ant-typography ant-typography-ellipsis ant-typography-single-line ant-typography-ellipsis-single-line basic-typography-ellipsis css-wgj5gs"
                   >
                     告警级别
                   </div>
@@ -2438,17 +2438,17 @@ exports[`test SqlManagementConf/ScanTypesDynamicParams render init snap shot 1`]
               </span>
             </div>
             <div
-              class="ant-col ant-col-3 css-dev-only-do-not-override-txh9fw"
+              class="ant-col ant-col-3"
               style="padding-left: 6px; padding-right: 6px;"
             >
               <div
-                class="ant-form-item css-15d6abf css-dev-only-do-not-override-txh9fw"
+                class="ant-form-item css-15d6abf"
               >
                 <div
-                  class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                  class="ant-row ant-form-item-row"
                 >
                   <div
-                    class="ant-col ant-col-24 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                    class="ant-col ant-col-24 ant-form-item-control"
                   >
                     <div
                       class="ant-form-item-control-input"
@@ -2457,7 +2457,7 @@ exports[`test SqlManagementConf/ScanTypesDynamicParams render init snap shot 1`]
                         class="ant-form-item-control-input-content"
                       >
                         <div
-                          class="ant-select ant-select-in-form-item basic-select-wrapper css-iy4o4x css-dev-only-do-not-override-v9sov3 ant-select-single ant-select-show-arrow ant-select-disabled"
+                          class="ant-select ant-select-in-form-item basic-select-wrapper css-iy4o4x ant-select-single ant-select-show-arrow ant-select-disabled"
                           data-testid="audit_level_operator"
                         >
                           <div
@@ -2526,17 +2526,17 @@ exports[`test SqlManagementConf/ScanTypesDynamicParams render init snap shot 1`]
               </div>
             </div>
             <div
-              class="ant-col ant-col-5 css-dev-only-do-not-override-txh9fw"
+              class="ant-col ant-col-5"
               style="padding-left: 6px; padding-right: 6px;"
             >
               <div
-                class="ant-form-item css-15d6abf css-dev-only-do-not-override-txh9fw"
+                class="ant-form-item css-15d6abf"
               >
                 <div
-                  class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                  class="ant-row ant-form-item-row"
                 >
                   <div
-                    class="ant-col ant-col-24 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                    class="ant-col ant-col-24 ant-form-item-control"
                   >
                     <div
                       class="ant-form-item-control-input"
@@ -2545,7 +2545,7 @@ exports[`test SqlManagementConf/ScanTypesDynamicParams render init snap shot 1`]
                         class="ant-form-item-control-input-content"
                       >
                         <div
-                          class="ant-select ant-select-in-form-item basic-select-wrapper css-iy4o4x css-dev-only-do-not-override-v9sov3 ant-select-single ant-select-show-arrow ant-select-disabled"
+                          class="ant-select ant-select-in-form-item basic-select-wrapper css-iy4o4x ant-select-single ant-select-show-arrow ant-select-disabled"
                           data-testid="audit_level_value"
                         >
                           <div
@@ -2614,18 +2614,18 @@ exports[`test SqlManagementConf/ScanTypesDynamicParams render init snap shot 1`]
               </div>
             </div>
             <div
-              class="ant-divider css-dev-only-do-not-override-txh9fw ant-divider-vertical"
+              class="ant-divider ant-divider-vertical"
               role="separator"
               style="height: 36px; margin-left: 6px; margin-right: 12px;"
             />
             <div
-              class="ant-form-item css-15d6abf css-dev-only-do-not-override-txh9fw"
+              class="ant-form-item css-15d6abf"
             >
               <div
-                class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                class="ant-row ant-form-item-row"
               >
                 <div
-                  class="ant-col ant-col-24 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                  class="ant-col ant-col-24 ant-form-item-control"
                 >
                   <div
                     class="ant-form-item-control-input"
@@ -2635,7 +2635,7 @@ exports[`test SqlManagementConf/ScanTypesDynamicParams render init snap shot 1`]
                     >
                       <button
                         aria-checked="true"
-                        class="ant-switch ant-switch-small basic-switch-wrapper css-g6dhbn css-dev-only-do-not-override-txh9fw ant-switch-checked"
+                        class="ant-switch ant-switch-small basic-switch-wrapper css-g6dhbn ant-switch-checked"
                         data-testid="audit_level_switch"
                         id="ali_rds_mysql_slow_log_prioritySqlConditions_audit_level_checked"
                         role="switch"
@@ -2662,13 +2662,13 @@ exports[`test SqlManagementConf/ScanTypesDynamicParams render init snap shot 1`]
             </div>
           </div>
           <div
-            class="ant-form-item has-label-tip has-required-style css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+            class="ant-form-item has-label-tip has-required-style css-1jlm9cy"
           >
             <div
-              class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+              class="ant-row ant-form-item-row"
             >
               <div
-                class="ant-col ant-col-11 ant-form-item-label css-dev-only-do-not-override-txh9fw"
+                class="ant-col ant-col-11 ant-form-item-label"
               >
                 <label
                   class="ant-form-item-required"
@@ -2690,7 +2690,7 @@ exports[`test SqlManagementConf/ScanTypesDynamicParams render init snap shot 1`]
                 </label>
               </div>
               <div
-                class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control"
               >
                 <div
                   class="ant-form-item-control-input"
@@ -2700,7 +2700,7 @@ exports[`test SqlManagementConf/ScanTypesDynamicParams render init snap shot 1`]
                   >
                     <div
                       aria-required="true"
-                      class="ant-select ant-select-in-form-item basic-select-wrapper css-iy4o4x css-dev-only-do-not-override-v9sov3 ant-select-single ant-select-allow-clear ant-select-show-arrow"
+                      class="ant-select ant-select-in-form-item basic-select-wrapper css-iy4o4x ant-select-single ant-select-allow-clear ant-select-show-arrow"
                     >
                       <div
                         class="ant-select-selector"
@@ -2777,7 +2777,7 @@ exports[`test SqlManagementConf/ScanTypesDynamicParams render param key is empty
   <div />
   <div>
     <form
-      class="ant-form ant-form-horizontal css-dev-only-do-not-override-txh9fw"
+      class="ant-form ant-form-horizontal"
     />
   </div>
 </body>
@@ -2788,7 +2788,7 @@ exports[`test SqlManagementConf/ScanTypesDynamicParams render submitLoading is t
   <div />
   <div>
     <form
-      class="ant-form ant-form-horizontal css-dev-only-do-not-override-txh9fw"
+      class="ant-form ant-form-horizontal"
     >
       <section
         class="has-border css-1114g56"
@@ -2797,18 +2797,18 @@ exports[`test SqlManagementConf/ScanTypesDynamicParams render submitLoading is t
           class="css-bspaai"
         >
           <h1
-            class="ant-typography css-1eepp70 css-dev-only-do-not-override-txh9fw"
+            class="ant-typography css-1eepp70"
           >
             编辑扫描详情·MySQL库表元数据
           </h1>
           <div
-            class="ant-form-item has-label-tip css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+            class="ant-form-item has-label-tip css-1jlm9cy"
           >
             <div
-              class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+              class="ant-row ant-form-item-row"
             >
               <div
-                class="ant-col ant-col-11 ant-form-item-label css-dev-only-do-not-override-txh9fw"
+                class="ant-col ant-col-11 ant-form-item-label"
               >
                 <label
                   class=""
@@ -2830,7 +2830,7 @@ exports[`test SqlManagementConf/ScanTypesDynamicParams render submitLoading is t
                 </label>
               </div>
               <div
-                class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control"
               >
                 <div
                   class="ant-form-item-control-input"
@@ -2839,7 +2839,7 @@ exports[`test SqlManagementConf/ScanTypesDynamicParams render submitLoading is t
                     class="ant-form-item-control-input-content"
                   >
                     <input
-                      class="ant-input ant-input-disabled css-dev-only-do-not-override-ywkr0o basic-input-wrapper css-1pd1cd5"
+                      class="ant-input ant-input-disabled basic-input-wrapper css-1pd1cd5"
                       disabled=""
                       id="mysql_schema_meta_collect_interval_minute"
                       placeholder="请输入{{name}}"
@@ -2852,13 +2852,13 @@ exports[`test SqlManagementConf/ScanTypesDynamicParams render submitLoading is t
             </div>
           </div>
           <div
-            class="ant-form-item  css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+            class="ant-form-item css-1jlm9cy"
           >
             <div
-              class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+              class="ant-row ant-form-item-row"
             >
               <div
-                class="ant-col ant-col-11 ant-form-item-label css-dev-only-do-not-override-txh9fw"
+                class="ant-col ant-col-11 ant-form-item-label"
               >
                 <label
                   class=""
@@ -2879,7 +2879,7 @@ exports[`test SqlManagementConf/ScanTypesDynamicParams render submitLoading is t
                 </label>
               </div>
               <div
-                class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control"
               >
                 <div
                   class="ant-form-item-control-input"
@@ -2889,7 +2889,7 @@ exports[`test SqlManagementConf/ScanTypesDynamicParams render submitLoading is t
                   >
                     <button
                       aria-checked="false"
-                      class="ant-switch basic-switch-wrapper css-g6dhbn css-dev-only-do-not-override-txh9fw ant-switch-disabled"
+                      class="ant-switch basic-switch-wrapper css-g6dhbn ant-switch-disabled"
                       disabled=""
                       id="mysql_schema_meta_collect_view"
                       role="switch"
@@ -2915,13 +2915,13 @@ exports[`test SqlManagementConf/ScanTypesDynamicParams render submitLoading is t
             </div>
           </div>
           <div
-            class="ant-form-item has-label-tip has-required-style css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+            class="ant-form-item has-label-tip has-required-style css-1jlm9cy"
           >
             <div
-              class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+              class="ant-row ant-form-item-row"
             >
               <div
-                class="ant-col ant-col-11 ant-form-item-label css-dev-only-do-not-override-txh9fw"
+                class="ant-col ant-col-11 ant-form-item-label"
               >
                 <label
                   class="ant-form-item-required"
@@ -2943,7 +2943,7 @@ exports[`test SqlManagementConf/ScanTypesDynamicParams render submitLoading is t
                 </label>
               </div>
               <div
-                class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control"
               >
                 <div
                   class="ant-form-item-control-input"
@@ -2953,7 +2953,7 @@ exports[`test SqlManagementConf/ScanTypesDynamicParams render submitLoading is t
                   >
                     <div
                       aria-required="true"
-                      class="ant-select ant-select-in-form-item basic-select-wrapper css-iy4o4x css-dev-only-do-not-override-v9sov3 ant-select-single ant-select-allow-clear ant-select-show-arrow ant-select-disabled"
+                      class="ant-select ant-select-in-form-item basic-select-wrapper css-iy4o4x ant-select-single ant-select-allow-clear ant-select-show-arrow ant-select-disabled"
                     >
                       <div
                         class="ant-select-selector"
@@ -3028,18 +3028,18 @@ exports[`test SqlManagementConf/ScanTypesDynamicParams render submitLoading is t
           class="css-bspaai"
         >
           <h1
-            class="ant-typography css-1eepp70 css-dev-only-do-not-override-txh9fw"
+            class="ant-typography css-1eepp70"
           >
             编辑扫描详情·阿里RDS MySQL慢日志
           </h1>
           <div
-            class="ant-form-item  css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+            class="ant-form-item css-1jlm9cy"
           >
             <div
-              class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+              class="ant-row ant-form-item-row"
             >
               <div
-                class="ant-col ant-col-11 ant-form-item-label css-dev-only-do-not-override-txh9fw"
+                class="ant-col ant-col-11 ant-form-item-label"
               >
                 <label
                   class=""
@@ -3060,7 +3060,7 @@ exports[`test SqlManagementConf/ScanTypesDynamicParams render submitLoading is t
                 </label>
               </div>
               <div
-                class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control"
               >
                 <div
                   class="ant-form-item-control-input"
@@ -3069,7 +3069,7 @@ exports[`test SqlManagementConf/ScanTypesDynamicParams render submitLoading is t
                     class="ant-form-item-control-input-content"
                   >
                     <input
-                      class="ant-input ant-input-disabled css-dev-only-do-not-override-ywkr0o basic-input-wrapper css-1pd1cd5"
+                      class="ant-input ant-input-disabled basic-input-wrapper css-1pd1cd5"
                       disabled=""
                       id="ali_rds_mysql_slow_log_db_instance_id"
                       placeholder="请输入{{name}}"
@@ -3082,13 +3082,13 @@ exports[`test SqlManagementConf/ScanTypesDynamicParams render submitLoading is t
             </div>
           </div>
           <div
-            class="ant-form-item  css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+            class="ant-form-item css-1jlm9cy"
           >
             <div
-              class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+              class="ant-row ant-form-item-row"
             >
               <div
-                class="ant-col ant-col-11 ant-form-item-label css-dev-only-do-not-override-txh9fw"
+                class="ant-col ant-col-11 ant-form-item-label"
               >
                 <label
                   class=""
@@ -3109,7 +3109,7 @@ exports[`test SqlManagementConf/ScanTypesDynamicParams render submitLoading is t
                 </label>
               </div>
               <div
-                class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control"
               >
                 <div
                   class="ant-form-item-control-input"
@@ -3118,10 +3118,10 @@ exports[`test SqlManagementConf/ScanTypesDynamicParams render submitLoading is t
                     class="ant-form-item-control-input-content"
                   >
                     <span
-                      class="ant-input-affix-wrapper ant-input-affix-wrapper-disabled ant-input-password basic-input-wrapper css-1pd1cd5 css-dev-only-do-not-override-txh9fw"
+                      class="ant-input-affix-wrapper ant-input-affix-wrapper-disabled ant-input-password basic-input-wrapper css-1pd1cd5"
                     >
                       <input
-                        class="ant-input ant-input-disabled css-dev-only-do-not-override-txh9fw"
+                        class="ant-input ant-input-disabled"
                         disabled=""
                         id="ali_rds_mysql_slow_log_access_key_id"
                         placeholder="请输入{{name}}"
@@ -3161,13 +3161,13 @@ exports[`test SqlManagementConf/ScanTypesDynamicParams render submitLoading is t
             </div>
           </div>
           <div
-            class="ant-form-item  css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+            class="ant-form-item css-1jlm9cy"
           >
             <div
-              class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+              class="ant-row ant-form-item-row"
             >
               <div
-                class="ant-col ant-col-11 ant-form-item-label css-dev-only-do-not-override-txh9fw"
+                class="ant-col ant-col-11 ant-form-item-label"
               >
                 <label
                   class=""
@@ -3188,7 +3188,7 @@ exports[`test SqlManagementConf/ScanTypesDynamicParams render submitLoading is t
                 </label>
               </div>
               <div
-                class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control"
               >
                 <div
                   class="ant-form-item-control-input"
@@ -3197,10 +3197,10 @@ exports[`test SqlManagementConf/ScanTypesDynamicParams render submitLoading is t
                     class="ant-form-item-control-input-content"
                   >
                     <span
-                      class="ant-input-affix-wrapper ant-input-affix-wrapper-disabled ant-input-password basic-input-wrapper css-1pd1cd5 css-dev-only-do-not-override-txh9fw"
+                      class="ant-input-affix-wrapper ant-input-affix-wrapper-disabled ant-input-password basic-input-wrapper css-1pd1cd5"
                     >
                       <input
-                        class="ant-input ant-input-disabled css-dev-only-do-not-override-txh9fw"
+                        class="ant-input ant-input-disabled"
                         disabled=""
                         id="ali_rds_mysql_slow_log_access_key_secret"
                         placeholder="请输入{{name}}"
@@ -3240,13 +3240,13 @@ exports[`test SqlManagementConf/ScanTypesDynamicParams render submitLoading is t
             </div>
           </div>
           <div
-            class="ant-form-item has-label-tip css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+            class="ant-form-item has-label-tip css-1jlm9cy"
           >
             <div
-              class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+              class="ant-row ant-form-item-row"
             >
               <div
-                class="ant-col ant-col-11 ant-form-item-label css-dev-only-do-not-override-txh9fw"
+                class="ant-col ant-col-11 ant-form-item-label"
               >
                 <label
                   class=""
@@ -3268,7 +3268,7 @@ exports[`test SqlManagementConf/ScanTypesDynamicParams render submitLoading is t
                 </label>
               </div>
               <div
-                class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control"
               >
                 <div
                   class="ant-form-item-control-input"
@@ -3277,7 +3277,7 @@ exports[`test SqlManagementConf/ScanTypesDynamicParams render submitLoading is t
                     class="ant-form-item-control-input-content"
                   >
                     <input
-                      class="ant-input ant-input-disabled css-dev-only-do-not-override-ywkr0o basic-input-wrapper css-1pd1cd5"
+                      class="ant-input ant-input-disabled basic-input-wrapper css-1pd1cd5"
                       disabled=""
                       id="ali_rds_mysql_slow_log_first_sqls_scrapped_in_last_period_hours"
                       placeholder="请输入{{name}}"
@@ -3290,13 +3290,13 @@ exports[`test SqlManagementConf/ScanTypesDynamicParams render submitLoading is t
             </div>
           </div>
           <div
-            class="ant-form-item has-label-tip css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+            class="ant-form-item has-label-tip css-1jlm9cy"
           >
             <div
-              class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+              class="ant-row ant-form-item-row"
             >
               <div
-                class="ant-col ant-col-11 ant-form-item-label css-dev-only-do-not-override-txh9fw"
+                class="ant-col ant-col-11 ant-form-item-label"
               >
                 <label
                   class=""
@@ -3318,7 +3318,7 @@ exports[`test SqlManagementConf/ScanTypesDynamicParams render submitLoading is t
                 </label>
               </div>
               <div
-                class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control"
               >
                 <div
                   class="ant-form-item-control-input"
@@ -3327,7 +3327,7 @@ exports[`test SqlManagementConf/ScanTypesDynamicParams render submitLoading is t
                     class="ant-form-item-control-input-content"
                   >
                     <input
-                      class="ant-input ant-input-disabled css-dev-only-do-not-override-ywkr0o basic-input-wrapper css-1pd1cd5"
+                      class="ant-input ant-input-disabled basic-input-wrapper css-1pd1cd5"
                       disabled=""
                       id="ali_rds_mysql_slow_log_audit_sqls_scrapped_in_last_period_minute"
                       placeholder="请输入{{name}}"
@@ -3340,13 +3340,13 @@ exports[`test SqlManagementConf/ScanTypesDynamicParams render submitLoading is t
             </div>
           </div>
           <div
-            class="ant-form-item  css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+            class="ant-form-item css-1jlm9cy"
           >
             <div
-              class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+              class="ant-row ant-form-item-row"
             >
               <div
-                class="ant-col ant-col-11 ant-form-item-label css-dev-only-do-not-override-txh9fw"
+                class="ant-col ant-col-11 ant-form-item-label"
               >
                 <label
                   class=""
@@ -3367,7 +3367,7 @@ exports[`test SqlManagementConf/ScanTypesDynamicParams render submitLoading is t
                 </label>
               </div>
               <div
-                class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control"
               >
                 <div
                   class="ant-form-item-control-input"
@@ -3376,7 +3376,7 @@ exports[`test SqlManagementConf/ScanTypesDynamicParams render submitLoading is t
                     class="ant-form-item-control-input-content"
                   >
                     <input
-                      class="ant-input ant-input-disabled css-dev-only-do-not-override-ywkr0o basic-input-wrapper css-1pd1cd5"
+                      class="ant-input ant-input-disabled basic-input-wrapper css-1pd1cd5"
                       disabled=""
                       id="ali_rds_mysql_slow_log_rds_path"
                       placeholder="请输入{{name}}"
@@ -3389,13 +3389,13 @@ exports[`test SqlManagementConf/ScanTypesDynamicParams render submitLoading is t
             </div>
           </div>
           <div
-            class="ant-form-item has-required-style css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+            class="ant-form-item has-required-style css-1jlm9cy"
           >
             <div
-              class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+              class="ant-row ant-form-item-row"
             >
               <div
-                class="ant-col ant-col-11 ant-form-item-label css-dev-only-do-not-override-txh9fw"
+                class="ant-col ant-col-11 ant-form-item-label"
               >
                 <label
                   class=""
@@ -3406,7 +3406,7 @@ exports[`test SqlManagementConf/ScanTypesDynamicParams render submitLoading is t
                 </label>
               </div>
               <div
-                class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control"
               >
                 <div
                   class="ant-form-item-control-input"
@@ -3416,7 +3416,7 @@ exports[`test SqlManagementConf/ScanTypesDynamicParams render submitLoading is t
                   >
                     <button
                       aria-checked="false"
-                      class="ant-switch basic-switch-wrapper css-g6dhbn css-dev-only-do-not-override-txh9fw ant-switch-disabled"
+                      class="ant-switch basic-switch-wrapper css-g6dhbn ant-switch-disabled"
                       disabled=""
                       id="ali_rds_mysql_slow_log_markHighPrioritySql"
                       role="switch"
@@ -3442,15 +3442,15 @@ exports[`test SqlManagementConf/ScanTypesDynamicParams render submitLoading is t
             </div>
           </div>
           <div
-            class="ant-row css-dev-only-do-not-override-txh9fw"
+            class="ant-row"
             style="margin-left: -6px; margin-right: -6px;"
           >
             <div
-              class="ant-col ant-col-5 ant-col-offset-9 css-dev-only-do-not-override-txh9fw"
+              class="ant-col ant-col-5 ant-col-offset-9"
               style="padding-left: 6px; padding-right: 6px;"
             >
               <span
-                class="ant-tag ant-tag-blue ant-tag-borderless basic-tag-wrapper basic-default-tag-wrapper css-9plkpp css-dev-only-do-not-override-txh9fw"
+                class="ant-tag ant-tag-blue ant-tag-borderless basic-tag-wrapper basic-default-tag-wrapper css-9plkpp"
               >
                 <svg
                   height="16"
@@ -3465,7 +3465,7 @@ exports[`test SqlManagementConf/ScanTypesDynamicParams render submitLoading is t
                 </svg>
                 <span>
                   <div
-                    class="ant-typography ant-typography-ellipsis ant-typography-single-line ant-typography-ellipsis-single-line basic-typography-ellipsis css-wgj5gs css-dev-only-do-not-override-txh9fw"
+                    class="ant-typography ant-typography-ellipsis ant-typography-single-line ant-typography-ellipsis-single-line basic-typography-ellipsis css-wgj5gs"
                   >
                     平均查询时间
                   </div>
@@ -3473,17 +3473,17 @@ exports[`test SqlManagementConf/ScanTypesDynamicParams render submitLoading is t
               </span>
             </div>
             <div
-              class="ant-col ant-col-3 css-dev-only-do-not-override-txh9fw"
+              class="ant-col ant-col-3"
               style="padding-left: 6px; padding-right: 6px;"
             >
               <div
-                class="ant-form-item css-15d6abf css-dev-only-do-not-override-txh9fw"
+                class="ant-form-item css-15d6abf"
               >
                 <div
-                  class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                  class="ant-row ant-form-item-row"
                 >
                   <div
-                    class="ant-col ant-col-24 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                    class="ant-col ant-col-24 ant-form-item-control"
                   >
                     <div
                       class="ant-form-item-control-input"
@@ -3492,7 +3492,7 @@ exports[`test SqlManagementConf/ScanTypesDynamicParams render submitLoading is t
                         class="ant-form-item-control-input-content"
                       >
                         <div
-                          class="ant-select ant-select-in-form-item basic-select-wrapper css-iy4o4x css-dev-only-do-not-override-v9sov3 ant-select-single ant-select-show-arrow ant-select-disabled"
+                          class="ant-select ant-select-in-form-item basic-select-wrapper css-iy4o4x ant-select-single ant-select-show-arrow ant-select-disabled"
                           data-testid="query_time_avg_operator"
                         >
                           <div
@@ -3561,17 +3561,17 @@ exports[`test SqlManagementConf/ScanTypesDynamicParams render submitLoading is t
               </div>
             </div>
             <div
-              class="ant-col ant-col-5 css-dev-only-do-not-override-txh9fw"
+              class="ant-col ant-col-5"
               style="padding-left: 6px; padding-right: 6px;"
             >
               <div
-                class="ant-form-item css-15d6abf css-dev-only-do-not-override-txh9fw"
+                class="ant-form-item css-15d6abf"
               >
                 <div
-                  class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                  class="ant-row ant-form-item-row"
                 >
                   <div
-                    class="ant-col ant-col-24 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                    class="ant-col ant-col-24 ant-form-item-control"
                   >
                     <div
                       class="ant-form-item-control-input"
@@ -3580,7 +3580,7 @@ exports[`test SqlManagementConf/ScanTypesDynamicParams render submitLoading is t
                         class="ant-form-item-control-input-content"
                       >
                         <input
-                          class="ant-input ant-input-disabled css-dev-only-do-not-override-ywkr0o basic-input-wrapper css-1pd1cd5"
+                          class="ant-input ant-input-disabled basic-input-wrapper css-1pd1cd5"
                           data-testid="query_time_avg_value"
                           disabled=""
                           id="ali_rds_mysql_slow_log_prioritySqlConditions_query_time_avg_value"
@@ -3595,18 +3595,18 @@ exports[`test SqlManagementConf/ScanTypesDynamicParams render submitLoading is t
               </div>
             </div>
             <div
-              class="ant-divider css-dev-only-do-not-override-txh9fw ant-divider-vertical"
+              class="ant-divider ant-divider-vertical"
               role="separator"
               style="height: 36px; margin-left: 6px; margin-right: 12px;"
             />
             <div
-              class="ant-form-item css-15d6abf css-dev-only-do-not-override-txh9fw"
+              class="ant-form-item css-15d6abf"
             >
               <div
-                class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                class="ant-row ant-form-item-row"
               >
                 <div
-                  class="ant-col ant-col-24 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                  class="ant-col ant-col-24 ant-form-item-control"
                 >
                   <div
                     class="ant-form-item-control-input"
@@ -3616,7 +3616,7 @@ exports[`test SqlManagementConf/ScanTypesDynamicParams render submitLoading is t
                     >
                       <button
                         aria-checked="true"
-                        class="ant-switch ant-switch-small basic-switch-wrapper css-g6dhbn css-dev-only-do-not-override-txh9fw ant-switch-checked ant-switch-disabled"
+                        class="ant-switch ant-switch-small basic-switch-wrapper css-g6dhbn ant-switch-checked ant-switch-disabled"
                         data-testid="query_time_avg_switch"
                         disabled=""
                         id="ali_rds_mysql_slow_log_prioritySqlConditions_query_time_avg_checked"
@@ -3644,15 +3644,15 @@ exports[`test SqlManagementConf/ScanTypesDynamicParams render submitLoading is t
             </div>
           </div>
           <div
-            class="ant-row css-dev-only-do-not-override-txh9fw"
+            class="ant-row"
             style="margin-left: -6px; margin-right: -6px;"
           >
             <div
-              class="ant-col ant-col-5 ant-col-offset-9 css-dev-only-do-not-override-txh9fw"
+              class="ant-col ant-col-5 ant-col-offset-9"
               style="padding-left: 6px; padding-right: 6px;"
             >
               <span
-                class="ant-tag ant-tag-blue ant-tag-borderless basic-tag-wrapper basic-default-tag-wrapper css-9plkpp css-dev-only-do-not-override-txh9fw"
+                class="ant-tag ant-tag-blue ant-tag-borderless basic-tag-wrapper basic-default-tag-wrapper css-9plkpp"
               >
                 <svg
                   height="16"
@@ -3667,7 +3667,7 @@ exports[`test SqlManagementConf/ScanTypesDynamicParams render submitLoading is t
                 </svg>
                 <span>
                   <div
-                    class="ant-typography ant-typography-ellipsis ant-typography-single-line ant-typography-ellipsis-single-line basic-typography-ellipsis css-wgj5gs css-dev-only-do-not-override-txh9fw"
+                    class="ant-typography ant-typography-ellipsis ant-typography-single-line ant-typography-ellipsis-single-line basic-typography-ellipsis css-wgj5gs"
                   >
                     平均扫描行数
                   </div>
@@ -3675,17 +3675,17 @@ exports[`test SqlManagementConf/ScanTypesDynamicParams render submitLoading is t
               </span>
             </div>
             <div
-              class="ant-col ant-col-3 css-dev-only-do-not-override-txh9fw"
+              class="ant-col ant-col-3"
               style="padding-left: 6px; padding-right: 6px;"
             >
               <div
-                class="ant-form-item css-15d6abf css-dev-only-do-not-override-txh9fw"
+                class="ant-form-item css-15d6abf"
               >
                 <div
-                  class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                  class="ant-row ant-form-item-row"
                 >
                   <div
-                    class="ant-col ant-col-24 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                    class="ant-col ant-col-24 ant-form-item-control"
                   >
                     <div
                       class="ant-form-item-control-input"
@@ -3694,7 +3694,7 @@ exports[`test SqlManagementConf/ScanTypesDynamicParams render submitLoading is t
                         class="ant-form-item-control-input-content"
                       >
                         <div
-                          class="ant-select ant-select-in-form-item basic-select-wrapper css-iy4o4x css-dev-only-do-not-override-v9sov3 ant-select-single ant-select-show-arrow ant-select-disabled"
+                          class="ant-select ant-select-in-form-item basic-select-wrapper css-iy4o4x ant-select-single ant-select-show-arrow ant-select-disabled"
                           data-testid="row_examined_avg_operator"
                         >
                           <div
@@ -3763,17 +3763,17 @@ exports[`test SqlManagementConf/ScanTypesDynamicParams render submitLoading is t
               </div>
             </div>
             <div
-              class="ant-col ant-col-5 css-dev-only-do-not-override-txh9fw"
+              class="ant-col ant-col-5"
               style="padding-left: 6px; padding-right: 6px;"
             >
               <div
-                class="ant-form-item css-15d6abf css-dev-only-do-not-override-txh9fw"
+                class="ant-form-item css-15d6abf"
               >
                 <div
-                  class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                  class="ant-row ant-form-item-row"
                 >
                   <div
-                    class="ant-col ant-col-24 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                    class="ant-col ant-col-24 ant-form-item-control"
                   >
                     <div
                       class="ant-form-item-control-input"
@@ -3782,7 +3782,7 @@ exports[`test SqlManagementConf/ScanTypesDynamicParams render submitLoading is t
                         class="ant-form-item-control-input-content"
                       >
                         <input
-                          class="ant-input ant-input-disabled css-dev-only-do-not-override-ywkr0o basic-input-wrapper css-1pd1cd5"
+                          class="ant-input ant-input-disabled basic-input-wrapper css-1pd1cd5"
                           data-testid="row_examined_avg_value"
                           disabled=""
                           id="ali_rds_mysql_slow_log_prioritySqlConditions_row_examined_avg_value"
@@ -3797,18 +3797,18 @@ exports[`test SqlManagementConf/ScanTypesDynamicParams render submitLoading is t
               </div>
             </div>
             <div
-              class="ant-divider css-dev-only-do-not-override-txh9fw ant-divider-vertical"
+              class="ant-divider ant-divider-vertical"
               role="separator"
               style="height: 36px; margin-left: 6px; margin-right: 12px;"
             />
             <div
-              class="ant-form-item css-15d6abf css-dev-only-do-not-override-txh9fw"
+              class="ant-form-item css-15d6abf"
             >
               <div
-                class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                class="ant-row ant-form-item-row"
               >
                 <div
-                  class="ant-col ant-col-24 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                  class="ant-col ant-col-24 ant-form-item-control"
                 >
                   <div
                     class="ant-form-item-control-input"
@@ -3818,7 +3818,7 @@ exports[`test SqlManagementConf/ScanTypesDynamicParams render submitLoading is t
                     >
                       <button
                         aria-checked="true"
-                        class="ant-switch ant-switch-small basic-switch-wrapper css-g6dhbn css-dev-only-do-not-override-txh9fw ant-switch-checked ant-switch-disabled"
+                        class="ant-switch ant-switch-small basic-switch-wrapper css-g6dhbn ant-switch-checked ant-switch-disabled"
                         data-testid="row_examined_avg_switch"
                         disabled=""
                         id="ali_rds_mysql_slow_log_prioritySqlConditions_row_examined_avg_checked"
@@ -3846,15 +3846,15 @@ exports[`test SqlManagementConf/ScanTypesDynamicParams render submitLoading is t
             </div>
           </div>
           <div
-            class="ant-row css-dev-only-do-not-override-txh9fw"
+            class="ant-row"
             style="margin-left: -6px; margin-right: -6px;"
           >
             <div
-              class="ant-col ant-col-5 ant-col-offset-9 css-dev-only-do-not-override-txh9fw"
+              class="ant-col ant-col-5 ant-col-offset-9"
               style="padding-left: 6px; padding-right: 6px;"
             >
               <span
-                class="ant-tag ant-tag-blue ant-tag-borderless basic-tag-wrapper basic-default-tag-wrapper css-9plkpp css-dev-only-do-not-override-txh9fw"
+                class="ant-tag ant-tag-blue ant-tag-borderless basic-tag-wrapper basic-default-tag-wrapper css-9plkpp"
               >
                 <svg
                   height="16"
@@ -3869,7 +3869,7 @@ exports[`test SqlManagementConf/ScanTypesDynamicParams render submitLoading is t
                 </svg>
                 <span>
                   <div
-                    class="ant-typography ant-typography-ellipsis ant-typography-single-line ant-typography-ellipsis-single-line basic-typography-ellipsis css-wgj5gs css-dev-only-do-not-override-txh9fw"
+                    class="ant-typography ant-typography-ellipsis ant-typography-single-line ant-typography-ellipsis-single-line basic-typography-ellipsis css-wgj5gs"
                   >
                     告警级别
                   </div>
@@ -3877,17 +3877,17 @@ exports[`test SqlManagementConf/ScanTypesDynamicParams render submitLoading is t
               </span>
             </div>
             <div
-              class="ant-col ant-col-3 css-dev-only-do-not-override-txh9fw"
+              class="ant-col ant-col-3"
               style="padding-left: 6px; padding-right: 6px;"
             >
               <div
-                class="ant-form-item css-15d6abf css-dev-only-do-not-override-txh9fw"
+                class="ant-form-item css-15d6abf"
               >
                 <div
-                  class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                  class="ant-row ant-form-item-row"
                 >
                   <div
-                    class="ant-col ant-col-24 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                    class="ant-col ant-col-24 ant-form-item-control"
                   >
                     <div
                       class="ant-form-item-control-input"
@@ -3896,7 +3896,7 @@ exports[`test SqlManagementConf/ScanTypesDynamicParams render submitLoading is t
                         class="ant-form-item-control-input-content"
                       >
                         <div
-                          class="ant-select ant-select-in-form-item basic-select-wrapper css-iy4o4x css-dev-only-do-not-override-v9sov3 ant-select-single ant-select-show-arrow ant-select-disabled"
+                          class="ant-select ant-select-in-form-item basic-select-wrapper css-iy4o4x ant-select-single ant-select-show-arrow ant-select-disabled"
                           data-testid="audit_level_operator"
                         >
                           <div
@@ -3965,17 +3965,17 @@ exports[`test SqlManagementConf/ScanTypesDynamicParams render submitLoading is t
               </div>
             </div>
             <div
-              class="ant-col ant-col-5 css-dev-only-do-not-override-txh9fw"
+              class="ant-col ant-col-5"
               style="padding-left: 6px; padding-right: 6px;"
             >
               <div
-                class="ant-form-item css-15d6abf css-dev-only-do-not-override-txh9fw"
+                class="ant-form-item css-15d6abf"
               >
                 <div
-                  class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                  class="ant-row ant-form-item-row"
                 >
                   <div
-                    class="ant-col ant-col-24 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                    class="ant-col ant-col-24 ant-form-item-control"
                   >
                     <div
                       class="ant-form-item-control-input"
@@ -3984,7 +3984,7 @@ exports[`test SqlManagementConf/ScanTypesDynamicParams render submitLoading is t
                         class="ant-form-item-control-input-content"
                       >
                         <div
-                          class="ant-select ant-select-in-form-item basic-select-wrapper css-iy4o4x css-dev-only-do-not-override-v9sov3 ant-select-single ant-select-show-arrow ant-select-disabled"
+                          class="ant-select ant-select-in-form-item basic-select-wrapper css-iy4o4x ant-select-single ant-select-show-arrow ant-select-disabled"
                           data-testid="audit_level_value"
                         >
                           <div
@@ -4053,18 +4053,18 @@ exports[`test SqlManagementConf/ScanTypesDynamicParams render submitLoading is t
               </div>
             </div>
             <div
-              class="ant-divider css-dev-only-do-not-override-txh9fw ant-divider-vertical"
+              class="ant-divider ant-divider-vertical"
               role="separator"
               style="height: 36px; margin-left: 6px; margin-right: 12px;"
             />
             <div
-              class="ant-form-item css-15d6abf css-dev-only-do-not-override-txh9fw"
+              class="ant-form-item css-15d6abf"
             >
               <div
-                class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                class="ant-row ant-form-item-row"
               >
                 <div
-                  class="ant-col ant-col-24 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                  class="ant-col ant-col-24 ant-form-item-control"
                 >
                   <div
                     class="ant-form-item-control-input"
@@ -4074,7 +4074,7 @@ exports[`test SqlManagementConf/ScanTypesDynamicParams render submitLoading is t
                     >
                       <button
                         aria-checked="true"
-                        class="ant-switch ant-switch-small basic-switch-wrapper css-g6dhbn css-dev-only-do-not-override-txh9fw ant-switch-checked ant-switch-disabled"
+                        class="ant-switch ant-switch-small basic-switch-wrapper css-g6dhbn ant-switch-checked ant-switch-disabled"
                         data-testid="audit_level_switch"
                         disabled=""
                         id="ali_rds_mysql_slow_log_prioritySqlConditions_audit_level_checked"
@@ -4102,13 +4102,13 @@ exports[`test SqlManagementConf/ScanTypesDynamicParams render submitLoading is t
             </div>
           </div>
           <div
-            class="ant-form-item has-label-tip has-required-style css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+            class="ant-form-item has-label-tip has-required-style css-1jlm9cy"
           >
             <div
-              class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+              class="ant-row ant-form-item-row"
             >
               <div
-                class="ant-col ant-col-11 ant-form-item-label css-dev-only-do-not-override-txh9fw"
+                class="ant-col ant-col-11 ant-form-item-label"
               >
                 <label
                   class="ant-form-item-required"
@@ -4130,7 +4130,7 @@ exports[`test SqlManagementConf/ScanTypesDynamicParams render submitLoading is t
                 </label>
               </div>
               <div
-                class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control"
               >
                 <div
                   class="ant-form-item-control-input"
@@ -4140,7 +4140,7 @@ exports[`test SqlManagementConf/ScanTypesDynamicParams render submitLoading is t
                   >
                     <div
                       aria-required="true"
-                      class="ant-select ant-select-in-form-item basic-select-wrapper css-iy4o4x css-dev-only-do-not-override-v9sov3 ant-select-single ant-select-allow-clear ant-select-show-arrow ant-select-disabled"
+                      class="ant-select ant-select-in-form-item basic-select-wrapper css-iy4o4x ant-select-single ant-select-allow-clear ant-select-show-arrow ant-select-disabled"
                     >
                       <div
                         class="ant-select-selector"

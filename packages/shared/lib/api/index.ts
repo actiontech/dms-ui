@@ -1,2 +1,2 @@
-export * from './base';
-export * from './sqle';
+export * as DmsApi from './base';
+export * as SqleApi from './sqle';

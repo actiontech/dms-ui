@@ -3,7 +3,7 @@
 exports[`test SubmitWorkflowButton handles button click 1`] = `
 <div>
   <button
-    class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary basic-button-wrapper css-geipcv"
+    class="ant-btn ant-btn-primary basic-button-wrapper css-geipcv"
     type="button"
   >
     <span>

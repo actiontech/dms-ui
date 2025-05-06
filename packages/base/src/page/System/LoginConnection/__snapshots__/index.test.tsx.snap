@@ -7,10 +7,10 @@ exports[`base/System/LoginConnection render snap 1`] = `
       class="system-form-wrapper"
     >
       <div
-        class="ant-row ant-row-space-between ant-row-middle config-title-wrapper has-border css-dev-only-do-not-override-txh9fw"
+        class="ant-row ant-row-space-between ant-row-middle config-title-wrapper has-border"
       >
         <div
-          class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+          class="ant-space ant-space-horizontal ant-space-align-center"
         >
           <div
             class="ant-space-item"
@@ -23,13 +23,13 @@ exports[`base/System/LoginConnection render snap 1`] = `
         class="config-form-wrapper"
       >
         <div
-          class="ant-spin-nested-loading css-dev-only-do-not-override-txh9fw"
+          class="ant-spin-nested-loading"
         >
           <div>
             <div
               aria-busy="true"
               aria-live="polite"
-              class="ant-spin ant-spin-spinning css-dev-only-do-not-override-txh9fw"
+              class="ant-spin ant-spin-spinning"
             >
               <span
                 class="ant-spin-dot ant-spin-dot-spin"
@@ -53,19 +53,19 @@ exports[`base/System/LoginConnection render snap 1`] = `
             class="ant-spin-container ant-spin-blur"
           >
             <form
-              class="ant-form ant-form-horizontal css-dev-only-do-not-override-txh9fw"
+              class="ant-form ant-form-horizontal"
             >
               <div
                 class="switch-field-wrapper"
               >
                 <div
-                  class="ant-form-item  css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+                  class="ant-form-item css-1jlm9cy"
                 >
                   <div
-                    class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                    class="ant-row ant-form-item-row"
                   >
                     <div
-                      class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left css-dev-only-do-not-override-txh9fw"
+                      class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left"
                     >
                       <label
                         class="ant-form-item-no-colon"
@@ -75,7 +75,7 @@ exports[`base/System/LoginConnection render snap 1`] = `
                       </label>
                     </div>
                     <div
-                      class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                      class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control"
                     >
                       <div
                         class="ant-form-item-control-input"
@@ -84,27 +84,27 @@ exports[`base/System/LoginConnection render snap 1`] = `
                           class="ant-form-item-control-input-content"
                         >
                           <div
-                            class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+                            class="ant-space ant-space-horizontal ant-space-align-center"
                           >
                             <div
                               class="ant-space-item"
                               style="margin-right: 12px;"
                             >
                               <div
-                                class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+                                class="ant-space ant-space-horizontal ant-space-align-center"
                                 hidden=""
                               >
                                 <div
                                   class="ant-space-item"
                                 >
                                   <div
-                                    class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
+                                    class="ant-space ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
                                   >
                                     <div
                                       class="ant-space-item"
                                     >
                                       <button
-                                        class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-text ant-btn-icon-only system-config-button basic-button-wrapper css-geipcv"
+                                        class="ant-btn ant-btn-text ant-btn-icon-only system-config-button basic-button-wrapper css-geipcv"
                                         type="button"
                                       >
                                         <span
@@ -133,13 +133,13 @@ exports[`base/System/LoginConnection render snap 1`] = `
                               class="ant-space-item"
                             >
                               <div
-                                class="ant-form-item css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+                                class="ant-form-item css-1jlm9cy"
                               >
                                 <div
-                                  class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                                  class="ant-row ant-form-item-row"
                                 >
                                   <div
-                                    class="ant-col ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                                    class="ant-col ant-form-item-control"
                                   >
                                     <div
                                       class="ant-form-item-control-input"
@@ -149,7 +149,7 @@ exports[`base/System/LoginConnection render snap 1`] = `
                                       >
                                         <button
                                           aria-checked="false"
-                                          class="ant-switch basic-switch-wrapper system-config-switch css-g6dhbn css-dev-only-do-not-override-txh9fw"
+                                          class="ant-switch basic-switch-wrapper system-config-switch css-g6dhbn"
                                           id="enable_ldap"
                                           role="switch"
                                           type="button"
@@ -186,16 +186,16 @@ exports[`base/System/LoginConnection render snap 1`] = `
                 hidden=""
               >
                 <div
-                  class="ant-form-item css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+                  class="ant-form-item has-required-style css-1jlm9cy"
                 >
                   <div
-                    class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                    class="ant-row ant-form-item-row"
                   >
                     <div
-                      class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left css-dev-only-do-not-override-txh9fw"
+                      class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left"
                     >
                       <label
-                        class="ant-form-item-no-colon"
+                        class="ant-form-item-required ant-form-item-no-colon"
                         for="enable_ssl"
                         title="是否启用SSL"
                       >
@@ -203,7 +203,7 @@ exports[`base/System/LoginConnection render snap 1`] = `
                       </label>
                     </div>
                     <div
-                      class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                      class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control"
                     >
                       <div
                         class="ant-form-item-control-input"
@@ -213,7 +213,8 @@ exports[`base/System/LoginConnection render snap 1`] = `
                         >
                           <button
                             aria-checked="false"
-                            class="ant-switch basic-switch-wrapper css-g6dhbn css-dev-only-do-not-override-txh9fw"
+                            aria-required="true"
+                            class="ant-switch basic-switch-wrapper css-g6dhbn"
                             id="enable_ssl"
                             role="switch"
                             type="button"
@@ -238,16 +239,16 @@ exports[`base/System/LoginConnection render snap 1`] = `
                   </div>
                 </div>
                 <div
-                  class="ant-form-item css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+                  class="ant-form-item has-required-style css-1jlm9cy"
                 >
                   <div
-                    class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                    class="ant-row ant-form-item-row"
                   >
                     <div
-                      class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left css-dev-only-do-not-override-txh9fw"
+                      class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left"
                     >
                       <label
-                        class="ant-form-item-no-colon"
+                        class="ant-form-item-required ant-form-item-no-colon"
                         for="ldap_server_host"
                         title="LDAP服务器地址"
                       >
@@ -255,7 +256,7 @@ exports[`base/System/LoginConnection render snap 1`] = `
                       </label>
                     </div>
                     <div
-                      class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                      class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control"
                     >
                       <div
                         class="ant-form-item-control-input"
@@ -264,7 +265,8 @@ exports[`base/System/LoginConnection render snap 1`] = `
                           class="ant-form-item-control-input-content"
                         >
                           <input
-                            class="ant-input css-dev-only-do-not-override-ywkr0o basic-input-wrapper css-1pd1cd5"
+                            aria-required="true"
+                            class="ant-input basic-input-wrapper css-1pd1cd5"
                             id="ldap_server_host"
                             placeholder="请输入LDAP服务器地址"
                             type="text"
@@ -276,16 +278,16 @@ exports[`base/System/LoginConnection render snap 1`] = `
                   </div>
                 </div>
                 <div
-                  class="ant-form-item css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+                  class="ant-form-item has-required-style css-1jlm9cy"
                 >
                   <div
-                    class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                    class="ant-row ant-form-item-row"
                   >
                     <div
-                      class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left css-dev-only-do-not-override-txh9fw"
+                      class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left"
                     >
                       <label
-                        class="ant-form-item-no-colon"
+                        class="ant-form-item-required ant-form-item-no-colon"
                         for="ldap_server_port"
                         title="LDAP服务器端口"
                       >
@@ -293,7 +295,7 @@ exports[`base/System/LoginConnection render snap 1`] = `
                       </label>
                     </div>
                     <div
-                      class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                      class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control"
                     >
                       <div
                         class="ant-form-item-control-input"
@@ -302,7 +304,8 @@ exports[`base/System/LoginConnection render snap 1`] = `
                           class="ant-form-item-control-input-content"
                         >
                           <input
-                            class="ant-input css-dev-only-do-not-override-ywkr0o basic-input-wrapper css-1pd1cd5"
+                            aria-required="true"
+                            class="ant-input basic-input-wrapper css-1pd1cd5"
                             id="ldap_server_port"
                             placeholder="请输入LDAP服务器端口"
                             type="text"
@@ -314,16 +317,16 @@ exports[`base/System/LoginConnection render snap 1`] = `
                   </div>
                 </div>
                 <div
-                  class="ant-form-item has-label-tip css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+                  class="ant-form-item has-label-tip has-required-style css-1jlm9cy"
                 >
                   <div
-                    class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                    class="ant-row ant-form-item-row"
                   >
                     <div
-                      class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left css-dev-only-do-not-override-txh9fw"
+                      class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left"
                     >
                       <label
-                        class="ant-form-item-no-colon"
+                        class="ant-form-item-required ant-form-item-no-colon"
                         for="ldap_connect_dn"
                         title=""
                       >
@@ -342,7 +345,7 @@ exports[`base/System/LoginConnection render snap 1`] = `
                       </label>
                     </div>
                     <div
-                      class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                      class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control"
                     >
                       <div
                         class="ant-form-item-control-input"
@@ -351,7 +354,8 @@ exports[`base/System/LoginConnection render snap 1`] = `
                           class="ant-form-item-control-input-content"
                         >
                           <input
-                            class="ant-input css-dev-only-do-not-override-ywkr0o basic-input-wrapper css-1pd1cd5"
+                            aria-required="true"
+                            class="ant-input basic-input-wrapper css-1pd1cd5"
                             id="ldap_connect_dn"
                             placeholder="请输入连接用户DN"
                             type="text"
@@ -363,13 +367,65 @@ exports[`base/System/LoginConnection render snap 1`] = `
                   </div>
                 </div>
                 <div
-                  class="ant-form-item css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+                  class="ant-form-item css-1jlm9cy"
                 >
                   <div
-                    class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                    class="ant-row ant-form-item-row"
                   >
                     <div
-                      class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left css-dev-only-do-not-override-txh9fw"
+                      class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left"
+                    >
+                      <label
+                        class="ant-form-item-no-colon"
+                        for="update_password"
+                        title="是否修改连接用户密码"
+                      >
+                        是否修改连接用户密码
+                      </label>
+                    </div>
+                    <div
+                      class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control"
+                    >
+                      <div
+                        class="ant-form-item-control-input"
+                      >
+                        <div
+                          class="ant-form-item-control-input-content"
+                        >
+                          <button
+                            aria-checked="false"
+                            class="ant-switch basic-switch-wrapper css-g6dhbn"
+                            id="update_password"
+                            role="switch"
+                            type="button"
+                          >
+                            <div
+                              class="ant-switch-handle"
+                            />
+                            <span
+                              class="ant-switch-inner"
+                            >
+                              <span
+                                class="ant-switch-inner-checked"
+                              />
+                              <span
+                                class="ant-switch-inner-unchecked"
+                              />
+                            </span>
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="ant-form-item has-required-style css-1jlm9cy ant-form-item-hidden"
+                >
+                  <div
+                    class="ant-row ant-form-item-row"
+                  >
+                    <div
+                      class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left"
                     >
                       <label
                         class="ant-form-item-no-colon"
@@ -380,7 +436,7 @@ exports[`base/System/LoginConnection render snap 1`] = `
                       </label>
                     </div>
                     <div
-                      class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                      class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control"
                     >
                       <div
                         class="ant-form-item-control-input"
@@ -389,10 +445,10 @@ exports[`base/System/LoginConnection render snap 1`] = `
                           class="ant-form-item-control-input-content"
                         >
                           <span
-                            class="ant-input-affix-wrapper ant-input-password basic-input-wrapper css-1pd1cd5 css-dev-only-do-not-override-txh9fw"
+                            class="ant-input-affix-wrapper ant-input-password basic-input-wrapper css-1pd1cd5"
                           >
                             <input
-                              class="ant-input css-dev-only-do-not-override-txh9fw"
+                              class="ant-input"
                               id="ldap_connect_pwd"
                               placeholder="请输入连接用户密码"
                               type="password"
@@ -431,16 +487,16 @@ exports[`base/System/LoginConnection render snap 1`] = `
                   </div>
                 </div>
                 <div
-                  class="ant-form-item has-label-tip css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+                  class="ant-form-item has-label-tip has-required-style css-1jlm9cy"
                 >
                   <div
-                    class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                    class="ant-row ant-form-item-row"
                   >
                     <div
-                      class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left css-dev-only-do-not-override-txh9fw"
+                      class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left"
                     >
                       <label
-                        class="ant-form-item-no-colon"
+                        class="ant-form-item-required ant-form-item-no-colon"
                         for="ldap_search_base_dn"
                         title=""
                       >
@@ -459,7 +515,7 @@ exports[`base/System/LoginConnection render snap 1`] = `
                       </label>
                     </div>
                     <div
-                      class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                      class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control"
                     >
                       <div
                         class="ant-form-item-control-input"
@@ -468,7 +524,8 @@ exports[`base/System/LoginConnection render snap 1`] = `
                           class="ant-form-item-control-input-content"
                         >
                           <input
-                            class="ant-input css-dev-only-do-not-override-ywkr0o basic-input-wrapper css-1pd1cd5"
+                            aria-required="true"
+                            class="ant-input basic-input-wrapper css-1pd1cd5"
                             id="ldap_search_base_dn"
                             placeholder="请输入查询根DN"
                             type="text"
@@ -480,16 +537,16 @@ exports[`base/System/LoginConnection render snap 1`] = `
                   </div>
                 </div>
                 <div
-                  class="ant-form-item has-label-tip css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+                  class="ant-form-item has-label-tip has-required-style css-1jlm9cy"
                 >
                   <div
-                    class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                    class="ant-row ant-form-item-row"
                   >
                     <div
-                      class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left css-dev-only-do-not-override-txh9fw"
+                      class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left"
                     >
                       <label
-                        class="ant-form-item-no-colon"
+                        class="ant-form-item-required ant-form-item-no-colon"
                         for="ldap_user_name_rdn_key"
                         title=""
                       >
@@ -508,7 +565,7 @@ exports[`base/System/LoginConnection render snap 1`] = `
                       </label>
                     </div>
                     <div
-                      class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                      class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control"
                     >
                       <div
                         class="ant-form-item-control-input"
@@ -517,9 +574,10 @@ exports[`base/System/LoginConnection render snap 1`] = `
                           class="ant-form-item-control-input-content"
                         >
                           <input
-                            class="ant-input css-dev-only-do-not-override-ywkr0o basic-input-wrapper css-1pd1cd5"
+                            aria-required="true"
+                            class="ant-input basic-input-wrapper css-1pd1cd5"
                             id="ldap_user_name_rdn_key"
-                            placeholder="请输入{{name}}"
+                            placeholder="请输入用户名属性名"
                             type="text"
                             value=""
                           />
@@ -529,13 +587,13 @@ exports[`base/System/LoginConnection render snap 1`] = `
                   </div>
                 </div>
                 <div
-                  class="ant-form-item has-label-tip css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+                  class="ant-form-item has-label-tip css-1jlm9cy"
                 >
                   <div
-                    class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                    class="ant-row ant-form-item-row"
                   >
                     <div
-                      class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left css-dev-only-do-not-override-txh9fw"
+                      class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left"
                     >
                       <label
                         class="ant-form-item-no-colon"
@@ -557,7 +615,7 @@ exports[`base/System/LoginConnection render snap 1`] = `
                       </label>
                     </div>
                     <div
-                      class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                      class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control"
                     >
                       <div
                         class="ant-form-item-control-input"
@@ -566,7 +624,7 @@ exports[`base/System/LoginConnection render snap 1`] = `
                           class="ant-form-item-control-input-content"
                         >
                           <input
-                            class="ant-input css-dev-only-do-not-override-ywkr0o basic-input-wrapper css-1pd1cd5"
+                            class="ant-input basic-input-wrapper css-1pd1cd5"
                             id="ldap_user_email_rdn_key"
                             placeholder="请输入用户邮箱属性名"
                             type="text"
@@ -578,13 +636,13 @@ exports[`base/System/LoginConnection render snap 1`] = `
                   </div>
                 </div>
                 <div
-                  class="ant-form-item css-15d6abf css-dev-only-do-not-override-txh9fw"
+                  class="ant-form-item css-15d6abf"
                 >
                   <div
-                    class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                    class="ant-row ant-form-item-row"
                   >
                     <div
-                      class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left css-dev-only-do-not-override-txh9fw"
+                      class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left"
                     >
                       <label
                         class="ant-form-item-no-colon"
@@ -594,7 +652,7 @@ exports[`base/System/LoginConnection render snap 1`] = `
                       </label>
                     </div>
                     <div
-                      class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                      class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control"
                     >
                       <div
                         class="ant-form-item-control-input"
@@ -603,14 +661,14 @@ exports[`base/System/LoginConnection render snap 1`] = `
                           class="ant-form-item-control-input-content"
                         >
                           <div
-                            class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+                            class="ant-space ant-space-horizontal ant-space-align-center"
                           >
                             <div
                               class="ant-space-item"
                               style="margin-right: 12px;"
                             >
                               <button
-                                class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default basic-button-wrapper css-geipcv"
+                                class="ant-btn ant-btn-default basic-button-wrapper css-geipcv"
                                 type="button"
                               >
                                 <span>
@@ -622,7 +680,7 @@ exports[`base/System/LoginConnection render snap 1`] = `
                               class="ant-space-item"
                             >
                               <button
-                                class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary basic-button-wrapper css-geipcv"
+                                class="ant-btn ant-btn-primary basic-button-wrapper css-geipcv"
                                 type="submit"
                               >
                                 <span>
@@ -646,13 +704,13 @@ exports[`base/System/LoginConnection render snap 1`] = `
         class="config-form-wrapper"
       >
         <div
-          class="ant-spin-nested-loading css-dev-only-do-not-override-txh9fw"
+          class="ant-spin-nested-loading"
         >
           <div>
             <div
               aria-busy="true"
               aria-live="polite"
-              class="ant-spin ant-spin-spinning css-dev-only-do-not-override-txh9fw"
+              class="ant-spin ant-spin-spinning"
             >
               <span
                 class="ant-spin-dot ant-spin-dot-spin"
@@ -676,19 +734,19 @@ exports[`base/System/LoginConnection render snap 1`] = `
             class="ant-spin-container ant-spin-blur"
           >
             <form
-              class="ant-form ant-form-horizontal css-dev-only-do-not-override-txh9fw"
+              class="ant-form ant-form-horizontal"
             >
               <div
                 class="switch-field-wrapper"
               >
                 <div
-                  class="ant-form-item  css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+                  class="ant-form-item css-1jlm9cy"
                 >
                   <div
-                    class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                    class="ant-row ant-form-item-row"
                   >
                     <div
-                      class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left css-dev-only-do-not-override-txh9fw"
+                      class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left"
                     >
                       <label
                         class="ant-form-item-no-colon"
@@ -698,7 +756,7 @@ exports[`base/System/LoginConnection render snap 1`] = `
                       </label>
                     </div>
                     <div
-                      class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                      class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control"
                     >
                       <div
                         class="ant-form-item-control-input"
@@ -707,27 +765,27 @@ exports[`base/System/LoginConnection render snap 1`] = `
                           class="ant-form-item-control-input-content"
                         >
                           <div
-                            class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+                            class="ant-space ant-space-horizontal ant-space-align-center"
                           >
                             <div
                               class="ant-space-item"
                               style="margin-right: 12px;"
                             >
                               <div
-                                class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+                                class="ant-space ant-space-horizontal ant-space-align-center"
                                 hidden=""
                               >
                                 <div
                                   class="ant-space-item"
                                 >
                                   <div
-                                    class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
+                                    class="ant-space ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
                                   >
                                     <div
                                       class="ant-space-item"
                                     >
                                       <button
-                                        class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-text ant-btn-icon-only system-config-button basic-button-wrapper css-geipcv"
+                                        class="ant-btn ant-btn-text ant-btn-icon-only system-config-button basic-button-wrapper css-geipcv"
                                         type="button"
                                       >
                                         <span
@@ -756,13 +814,13 @@ exports[`base/System/LoginConnection render snap 1`] = `
                               class="ant-space-item"
                             >
                               <div
-                                class="ant-form-item css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+                                class="ant-form-item css-1jlm9cy"
                               >
                                 <div
-                                  class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                                  class="ant-row ant-form-item-row"
                                 >
                                   <div
-                                    class="ant-col ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                                    class="ant-col ant-form-item-control"
                                   >
                                     <div
                                       class="ant-form-item-control-input"
@@ -772,7 +830,7 @@ exports[`base/System/LoginConnection render snap 1`] = `
                                       >
                                         <button
                                           aria-checked="false"
-                                          class="ant-switch basic-switch-wrapper system-config-switch css-g6dhbn css-dev-only-do-not-override-txh9fw"
+                                          class="ant-switch basic-switch-wrapper system-config-switch css-g6dhbn"
                                           id="enable"
                                           role="switch"
                                           type="button"
@@ -809,13 +867,13 @@ exports[`base/System/LoginConnection render snap 1`] = `
                 hidden=""
               >
                 <div
-                  class="ant-form-item has-label-tip has-required-style css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+                  class="ant-form-item has-label-tip has-required-style css-1jlm9cy"
                 >
                   <div
-                    class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                    class="ant-row ant-form-item-row"
                   >
                     <div
-                      class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left css-dev-only-do-not-override-txh9fw"
+                      class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left"
                     >
                       <label
                         class="ant-form-item-required ant-form-item-no-colon"
@@ -837,7 +895,7 @@ exports[`base/System/LoginConnection render snap 1`] = `
                       </label>
                     </div>
                     <div
-                      class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                      class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control"
                     >
                       <div
                         class="ant-form-item-control-input"
@@ -847,7 +905,7 @@ exports[`base/System/LoginConnection render snap 1`] = `
                         >
                           <input
                             aria-required="true"
-                            class="ant-input css-dev-only-do-not-override-ywkr0o basic-input-wrapper css-1pd1cd5"
+                            class="ant-input basic-input-wrapper css-1pd1cd5"
                             id="clientId"
                             placeholder="请输入应用 ID"
                             type="text"
@@ -859,13 +917,13 @@ exports[`base/System/LoginConnection render snap 1`] = `
                   </div>
                 </div>
                 <div
-                  class="ant-form-item has-label-tip css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+                  class="ant-form-item has-label-tip css-1jlm9cy"
                 >
                   <div
-                    class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                    class="ant-row ant-form-item-row"
                   >
                     <div
-                      class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left css-dev-only-do-not-override-txh9fw"
+                      class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left"
                     >
                       <label
                         class="ant-form-item-no-colon"
@@ -887,7 +945,7 @@ exports[`base/System/LoginConnection render snap 1`] = `
                       </label>
                     </div>
                     <div
-                      class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                      class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control"
                     >
                       <div
                         class="ant-form-item-control-input"
@@ -896,7 +954,7 @@ exports[`base/System/LoginConnection render snap 1`] = `
                           class="ant-form-item-control-input-content"
                         >
                           <input
-                            class="ant-input css-dev-only-do-not-override-ywkr0o basic-input-wrapper css-1pd1cd5"
+                            class="ant-input basic-input-wrapper css-1pd1cd5"
                             id="clientSecret"
                             placeholder="请输入应用密钥"
                             type="text"
@@ -908,13 +966,13 @@ exports[`base/System/LoginConnection render snap 1`] = `
                   </div>
                 </div>
                 <div
-                  class="ant-form-item has-label-tip has-required-style css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+                  class="ant-form-item has-label-tip has-required-style css-1jlm9cy"
                 >
                   <div
-                    class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                    class="ant-row ant-form-item-row"
                   >
                     <div
-                      class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left css-dev-only-do-not-override-txh9fw"
+                      class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left"
                     >
                       <label
                         class="ant-form-item-required ant-form-item-no-colon"
@@ -936,7 +994,7 @@ exports[`base/System/LoginConnection render snap 1`] = `
                       </label>
                     </div>
                     <div
-                      class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                      class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control"
                     >
                       <div
                         class="ant-form-item-control-input"
@@ -946,7 +1004,7 @@ exports[`base/System/LoginConnection render snap 1`] = `
                         >
                           <input
                             aria-required="true"
-                            class="ant-input css-dev-only-do-not-override-ywkr0o basic-input-wrapper css-1pd1cd5"
+                            class="ant-input basic-input-wrapper css-1pd1cd5"
                             id="clientHost"
                             placeholder="请输入外部访问SQLE的地址"
                             type="text"
@@ -958,13 +1016,13 @@ exports[`base/System/LoginConnection render snap 1`] = `
                   </div>
                 </div>
                 <div
-                  class="ant-form-item has-label-tip has-required-style css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+                  class="ant-form-item has-label-tip has-required-style css-1jlm9cy"
                 >
                   <div
-                    class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                    class="ant-row ant-form-item-row"
                   >
                     <div
-                      class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left css-dev-only-do-not-override-txh9fw"
+                      class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left"
                     >
                       <label
                         class="ant-form-item-required ant-form-item-no-colon"
@@ -986,7 +1044,7 @@ exports[`base/System/LoginConnection render snap 1`] = `
                       </label>
                     </div>
                     <div
-                      class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                      class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control"
                     >
                       <div
                         class="ant-form-item-control-input"
@@ -996,7 +1054,7 @@ exports[`base/System/LoginConnection render snap 1`] = `
                         >
                           <input
                             aria-required="true"
-                            class="ant-input css-dev-only-do-not-override-ywkr0o basic-input-wrapper css-1pd1cd5"
+                            class="ant-input basic-input-wrapper css-1pd1cd5"
                             id="serverAuthUrl"
                             placeholder="请输入OAuth2.0登录授权页面地址"
                             type="text"
@@ -1008,13 +1066,13 @@ exports[`base/System/LoginConnection render snap 1`] = `
                   </div>
                 </div>
                 <div
-                  class="ant-form-item has-label-tip has-required-style css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+                  class="ant-form-item has-label-tip has-required-style css-1jlm9cy"
                 >
                   <div
-                    class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                    class="ant-row ant-form-item-row"
                   >
                     <div
-                      class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left css-dev-only-do-not-override-txh9fw"
+                      class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left"
                     >
                       <label
                         class="ant-form-item-required ant-form-item-no-colon"
@@ -1036,7 +1094,7 @@ exports[`base/System/LoginConnection render snap 1`] = `
                       </label>
                     </div>
                     <div
-                      class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                      class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control"
                     >
                       <div
                         class="ant-form-item-control-input"
@@ -1046,7 +1104,7 @@ exports[`base/System/LoginConnection render snap 1`] = `
                         >
                           <input
                             aria-required="true"
-                            class="ant-input css-dev-only-do-not-override-ywkr0o basic-input-wrapper css-1pd1cd5"
+                            class="ant-input basic-input-wrapper css-1pd1cd5"
                             id="serverTokenUrl"
                             placeholder="请输入OAuth2.0 access_token 获取地址"
                             type="text"
@@ -1058,13 +1116,13 @@ exports[`base/System/LoginConnection render snap 1`] = `
                   </div>
                 </div>
                 <div
-                  class="ant-form-item has-label-tip has-required-style css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+                  class="ant-form-item has-label-tip has-required-style css-1jlm9cy"
                 >
                   <div
-                    class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                    class="ant-row ant-form-item-row"
                   >
                     <div
-                      class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left css-dev-only-do-not-override-txh9fw"
+                      class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left"
                     >
                       <label
                         class="ant-form-item-required ant-form-item-no-colon"
@@ -1086,7 +1144,7 @@ exports[`base/System/LoginConnection render snap 1`] = `
                       </label>
                     </div>
                     <div
-                      class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                      class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control"
                     >
                       <div
                         class="ant-form-item-control-input"
@@ -1096,7 +1154,7 @@ exports[`base/System/LoginConnection render snap 1`] = `
                         >
                           <input
                             aria-required="true"
-                            class="ant-input css-dev-only-do-not-override-ywkr0o basic-input-wrapper css-1pd1cd5"
+                            class="ant-input basic-input-wrapper css-1pd1cd5"
                             id="serverUserIdUrl"
                             placeholder="请输入OAuth2.0 user id 获取地址"
                             type="text"
@@ -1108,13 +1166,13 @@ exports[`base/System/LoginConnection render snap 1`] = `
                   </div>
                 </div>
                 <div
-                  class="ant-form-item has-label-tip css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+                  class="ant-form-item has-label-tip css-1jlm9cy"
                 >
                   <div
-                    class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                    class="ant-row ant-form-item-row"
                   >
                     <div
-                      class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left css-dev-only-do-not-override-txh9fw"
+                      class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left"
                     >
                       <label
                         class="ant-form-item-no-colon"
@@ -1136,7 +1194,7 @@ exports[`base/System/LoginConnection render snap 1`] = `
                       </label>
                     </div>
                     <div
-                      class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                      class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control"
                     >
                       <div
                         class="ant-form-item-control-input"
@@ -1145,7 +1203,7 @@ exports[`base/System/LoginConnection render snap 1`] = `
                           class="ant-form-item-control-input-content"
                         >
                           <input
-                            class="ant-input css-dev-only-do-not-override-ywkr0o basic-input-wrapper css-1pd1cd5"
+                            class="ant-input basic-input-wrapper css-1pd1cd5"
                             id="serverLayoutUrl"
                             placeholder="请输入注销跳转地址"
                             type="text"
@@ -1157,13 +1215,13 @@ exports[`base/System/LoginConnection render snap 1`] = `
                   </div>
                 </div>
                 <div
-                  class="ant-form-item has-label-tip css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+                  class="ant-form-item has-label-tip css-1jlm9cy"
                 >
                   <div
-                    class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                    class="ant-row ant-form-item-row"
                   >
                     <div
-                      class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left css-dev-only-do-not-override-txh9fw"
+                      class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left"
                     >
                       <label
                         class="ant-form-item-no-colon"
@@ -1185,7 +1243,7 @@ exports[`base/System/LoginConnection render snap 1`] = `
                       </label>
                     </div>
                     <div
-                      class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                      class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control"
                     >
                       <div
                         class="ant-form-item-control-input"
@@ -1194,7 +1252,7 @@ exports[`base/System/LoginConnection render snap 1`] = `
                           class="ant-form-item-control-input-content"
                         >
                           <input
-                            class="ant-input css-dev-only-do-not-override-ywkr0o basic-input-wrapper css-1pd1cd5"
+                            class="ant-input basic-input-wrapper css-1pd1cd5"
                             id="scopes"
                             placeholder="请输入请求资源范围"
                             type="text"
@@ -1206,13 +1264,13 @@ exports[`base/System/LoginConnection render snap 1`] = `
                   </div>
                 </div>
                 <div
-                  class="ant-form-item has-label-tip has-required-style css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+                  class="ant-form-item has-label-tip has-required-style css-1jlm9cy"
                 >
                   <div
-                    class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                    class="ant-row ant-form-item-row"
                   >
                     <div
-                      class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left css-dev-only-do-not-override-txh9fw"
+                      class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left"
                     >
                       <label
                         class="ant-form-item-required ant-form-item-no-colon"
@@ -1234,7 +1292,7 @@ exports[`base/System/LoginConnection render snap 1`] = `
                       </label>
                     </div>
                     <div
-                      class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                      class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control"
                     >
                       <div
                         class="ant-form-item-control-input"
@@ -1244,7 +1302,7 @@ exports[`base/System/LoginConnection render snap 1`] = `
                         >
                           <input
                             aria-required="true"
-                            class="ant-input css-dev-only-do-not-override-ywkr0o basic-input-wrapper css-1pd1cd5"
+                            class="ant-input basic-input-wrapper css-1pd1cd5"
                             id="accessTokenKeyName"
                             placeholder="请输入access_token Key名称"
                             type="text"
@@ -1256,13 +1314,13 @@ exports[`base/System/LoginConnection render snap 1`] = `
                   </div>
                 </div>
                 <div
-                  class="ant-form-item has-label-tip has-required-style css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+                  class="ant-form-item has-label-tip has-required-style css-1jlm9cy"
                 >
                   <div
-                    class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                    class="ant-row ant-form-item-row"
                   >
                     <div
-                      class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left css-dev-only-do-not-override-txh9fw"
+                      class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left"
                     >
                       <label
                         class="ant-form-item-required ant-form-item-no-colon"
@@ -1284,7 +1342,7 @@ exports[`base/System/LoginConnection render snap 1`] = `
                       </label>
                     </div>
                     <div
-                      class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                      class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control"
                     >
                       <div
                         class="ant-form-item-control-input"
@@ -1294,7 +1352,7 @@ exports[`base/System/LoginConnection render snap 1`] = `
                         >
                           <input
                             aria-required="true"
-                            class="ant-input css-dev-only-do-not-override-ywkr0o basic-input-wrapper css-1pd1cd5"
+                            class="ant-input basic-input-wrapper css-1pd1cd5"
                             id="userIdKeyName"
                             placeholder="请输入用户UID的JSON路径"
                             type="text"
@@ -1306,13 +1364,13 @@ exports[`base/System/LoginConnection render snap 1`] = `
                   </div>
                 </div>
                 <div
-                  class="ant-form-item has-label-tip css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+                  class="ant-form-item has-label-tip css-1jlm9cy"
                 >
                   <div
-                    class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                    class="ant-row ant-form-item-row"
                   >
                     <div
-                      class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left css-dev-only-do-not-override-txh9fw"
+                      class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left"
                     >
                       <label
                         class="ant-form-item-no-colon"
@@ -1334,7 +1392,7 @@ exports[`base/System/LoginConnection render snap 1`] = `
                       </label>
                     </div>
                     <div
-                      class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                      class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control"
                     >
                       <div
                         class="ant-form-item-control-input"
@@ -1343,7 +1401,7 @@ exports[`base/System/LoginConnection render snap 1`] = `
                           class="ant-form-item-control-input-content"
                         >
                           <input
-                            class="ant-input css-dev-only-do-not-override-ywkr0o basic-input-wrapper css-1pd1cd5"
+                            class="ant-input basic-input-wrapper css-1pd1cd5"
                             id="userEmailTag"
                             placeholder="请输入用户邮箱的JSON路径"
                             type="text"
@@ -1355,13 +1413,13 @@ exports[`base/System/LoginConnection render snap 1`] = `
                   </div>
                 </div>
                 <div
-                  class="ant-form-item has-label-tip css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+                  class="ant-form-item has-label-tip css-1jlm9cy"
                 >
                   <div
-                    class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                    class="ant-row ant-form-item-row"
                   >
                     <div
-                      class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left css-dev-only-do-not-override-txh9fw"
+                      class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left"
                     >
                       <label
                         class="ant-form-item-no-colon"
@@ -1383,7 +1441,7 @@ exports[`base/System/LoginConnection render snap 1`] = `
                       </label>
                     </div>
                     <div
-                      class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                      class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control"
                     >
                       <div
                         class="ant-form-item-control-input"
@@ -1392,7 +1450,7 @@ exports[`base/System/LoginConnection render snap 1`] = `
                           class="ant-form-item-control-input-content"
                         >
                           <input
-                            class="ant-input css-dev-only-do-not-override-ywkr0o basic-input-wrapper css-1pd1cd5"
+                            class="ant-input basic-input-wrapper css-1pd1cd5"
                             id="userWechatTag"
                             placeholder="请输入用户微信ID的JSON路径"
                             type="text"
@@ -1404,13 +1462,13 @@ exports[`base/System/LoginConnection render snap 1`] = `
                   </div>
                 </div>
                 <div
-                  class="ant-form-item has-label-tip css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+                  class="ant-form-item has-label-tip css-1jlm9cy"
                 >
                   <div
-                    class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                    class="ant-row ant-form-item-row"
                   >
                     <div
-                      class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left css-dev-only-do-not-override-txh9fw"
+                      class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left"
                     >
                       <label
                         class="ant-form-item-no-colon"
@@ -1432,7 +1490,7 @@ exports[`base/System/LoginConnection render snap 1`] = `
                       </label>
                     </div>
                     <div
-                      class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                      class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control"
                     >
                       <div
                         class="ant-form-item-control-input"
@@ -1441,7 +1499,7 @@ exports[`base/System/LoginConnection render snap 1`] = `
                           class="ant-form-item-control-input-content"
                         >
                           <input
-                            class="ant-input css-dev-only-do-not-override-ywkr0o basic-input-wrapper css-1pd1cd5"
+                            class="ant-input basic-input-wrapper css-1pd1cd5"
                             id="oauth2ButtonText"
                             placeholder="请输入OAuth2.0 跳转按钮文字"
                             type="text"
@@ -1453,13 +1511,13 @@ exports[`base/System/LoginConnection render snap 1`] = `
                   </div>
                 </div>
                 <div
-                  class="ant-form-item has-label-tip css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+                  class="ant-form-item has-label-tip css-1jlm9cy"
                 >
                   <div
-                    class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                    class="ant-row ant-form-item-row"
                   >
                     <div
-                      class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left css-dev-only-do-not-override-txh9fw"
+                      class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left"
                     >
                       <label
                         class="ant-form-item-no-colon"
@@ -1481,7 +1539,7 @@ exports[`base/System/LoginConnection render snap 1`] = `
                       </label>
                     </div>
                     <div
-                      class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                      class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control"
                     >
                       <div
                         class="ant-form-item-control-input"
@@ -1490,7 +1548,7 @@ exports[`base/System/LoginConnection render snap 1`] = `
                           class="ant-form-item-control-input-content"
                         >
                           <input
-                            class="ant-input css-dev-only-do-not-override-ywkr0o basic-input-wrapper css-1pd1cd5"
+                            class="ant-input basic-input-wrapper css-1pd1cd5"
                             id="loginPermissionQueryGJsonExpression"
                             placeholder="请输入登录权限查询GJSON表达式"
                             type="text"
@@ -1502,13 +1560,13 @@ exports[`base/System/LoginConnection render snap 1`] = `
                   </div>
                 </div>
                 <div
-                  class="ant-form-item has-label-tip css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+                  class="ant-form-item has-label-tip css-1jlm9cy"
                 >
                   <div
-                    class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                    class="ant-row ant-form-item-row"
                   >
                     <div
-                      class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left css-dev-only-do-not-override-txh9fw"
+                      class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left"
                     >
                       <label
                         class="ant-form-item-no-colon"
@@ -1530,7 +1588,7 @@ exports[`base/System/LoginConnection render snap 1`] = `
                       </label>
                     </div>
                     <div
-                      class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                      class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control"
                     >
                       <div
                         class="ant-form-item-control-input"
@@ -1540,7 +1598,7 @@ exports[`base/System/LoginConnection render snap 1`] = `
                         >
                           <button
                             aria-checked="false"
-                            class="ant-switch basic-switch-wrapper css-g6dhbn css-dev-only-do-not-override-txh9fw"
+                            class="ant-switch basic-switch-wrapper css-g6dhbn"
                             id="autoCreateUser"
                             role="switch"
                             type="button"
@@ -1565,13 +1623,13 @@ exports[`base/System/LoginConnection render snap 1`] = `
                   </div>
                 </div>
                 <div
-                  class="ant-form-item has-label-tip css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+                  class="ant-form-item has-label-tip css-1jlm9cy"
                 >
                   <div
-                    class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                    class="ant-row ant-form-item-row"
                   >
                     <div
-                      class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left css-dev-only-do-not-override-txh9fw"
+                      class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left"
                     >
                       <label
                         class="ant-form-item-no-colon"
@@ -1593,7 +1651,7 @@ exports[`base/System/LoginConnection render snap 1`] = `
                       </label>
                     </div>
                     <div
-                      class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                      class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control"
                     >
                       <div
                         class="ant-form-item-control-input"
@@ -1603,7 +1661,7 @@ exports[`base/System/LoginConnection render snap 1`] = `
                         >
                           <button
                             aria-checked="false"
-                            class="ant-switch basic-switch-wrapper css-g6dhbn css-dev-only-do-not-override-txh9fw"
+                            class="ant-switch basic-switch-wrapper css-g6dhbn"
                             id="skipCheckState"
                             role="switch"
                             type="button"
@@ -1628,13 +1686,13 @@ exports[`base/System/LoginConnection render snap 1`] = `
                   </div>
                 </div>
                 <div
-                  class="ant-form-item css-15d6abf css-dev-only-do-not-override-txh9fw"
+                  class="ant-form-item css-15d6abf"
                 >
                   <div
-                    class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                    class="ant-row ant-form-item-row"
                   >
                     <div
-                      class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left css-dev-only-do-not-override-txh9fw"
+                      class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left"
                     >
                       <label
                         class="ant-form-item-no-colon"
@@ -1644,7 +1702,7 @@ exports[`base/System/LoginConnection render snap 1`] = `
                       </label>
                     </div>
                     <div
-                      class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                      class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control"
                     >
                       <div
                         class="ant-form-item-control-input"
@@ -1653,14 +1711,14 @@ exports[`base/System/LoginConnection render snap 1`] = `
                           class="ant-form-item-control-input-content"
                         >
                           <div
-                            class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+                            class="ant-space ant-space-horizontal ant-space-align-center"
                           >
                             <div
                               class="ant-space-item"
                               style="margin-right: 12px;"
                             >
                               <button
-                                class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default basic-button-wrapper css-geipcv"
+                                class="ant-btn ant-btn-default basic-button-wrapper css-geipcv"
                                 type="button"
                               >
                                 <span>
@@ -1672,7 +1730,7 @@ exports[`base/System/LoginConnection render snap 1`] = `
                               class="ant-space-item"
                             >
                               <button
-                                class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary basic-button-wrapper css-geipcv"
+                                class="ant-btn ant-btn-primary basic-button-wrapper css-geipcv"
                                 type="submit"
                               >
                                 <span>
@@ -1693,13 +1751,428 @@ exports[`base/System/LoginConnection render snap 1`] = `
         </div>
       </div>
       <div
-        class="ant-spin-nested-loading css-dev-only-do-not-override-txh9fw"
+        class="config-form-wrapper"
+      >
+        <div
+          class="ant-spin-nested-loading"
+        >
+          <div>
+            <div
+              aria-busy="true"
+              aria-live="polite"
+              class="ant-spin ant-spin-spinning"
+            >
+              <span
+                class="ant-spin-dot ant-spin-dot-spin"
+              >
+                <i
+                  class="ant-spin-dot-item"
+                />
+                <i
+                  class="ant-spin-dot-item"
+                />
+                <i
+                  class="ant-spin-dot-item"
+                />
+                <i
+                  class="ant-spin-dot-item"
+                />
+              </span>
+            </div>
+          </div>
+          <div
+            class="ant-spin-container ant-spin-blur"
+          >
+            <section
+              class="css-zupqof"
+            >
+              <form
+                class="ant-form ant-form-horizontal"
+              >
+                <div
+                  class="switch-field-wrapper"
+                >
+                  <div
+                    class="ant-form-item has-label-tip css-1jlm9cy"
+                  >
+                    <div
+                      class="ant-row ant-form-item-row"
+                    >
+                      <div
+                        class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left"
+                      >
+                        <label
+                          class="ant-form-item-no-colon"
+                          title=""
+                        >
+                          <div
+                            class="label-cont-custom"
+                          >
+                            <div>
+                              是否启用短信服务
+                            </div>
+                            <div
+                              class="tip-content-box"
+                            >
+                              <a
+                                class="ant-typography"
+                                href="https://actiontech.github.io/sqle-docs/docs/user-manual/sys-configuration/MFA"
+                                rel="noreferrer"
+                                style="font-size: 12px;"
+                                target="_blank"
+                              >
+                                短信服务配置文档
+                              </a>
+                            </div>
+                          </div>
+                        </label>
+                      </div>
+                      <div
+                        class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control"
+                      >
+                        <div
+                          class="ant-form-item-control-input"
+                        >
+                          <div
+                            class="ant-form-item-control-input-content"
+                          >
+                            <div
+                              class="ant-space ant-space-horizontal ant-space-align-center"
+                            >
+                              <div
+                                class="ant-space-item"
+                                style="margin-right: 12px;"
+                              >
+                                <div
+                                  class="ant-space ant-space-horizontal ant-space-align-center"
+                                  hidden=""
+                                >
+                                  <div
+                                    class="ant-space-item"
+                                    style="margin-right: 12px;"
+                                  >
+                                    <div
+                                      class="ant-space ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
+                                    >
+                                      <div
+                                        class="ant-space-item"
+                                      >
+                                        <button
+                                          class="ant-btn ant-btn-text ant-btn-icon-only system-config-button basic-button-wrapper css-geipcv"
+                                          type="button"
+                                        >
+                                          <span
+                                            class="ant-btn-icon"
+                                          >
+                                            <svg
+                                              height="16"
+                                              viewBox="0 0 17 16"
+                                              width="16"
+                                              xmlns="http://www.w3.org/2000/svg"
+                                            >
+                                              <path
+                                                d="M9.334 6.667H14l-6 8.666v-6H3.334l6-8.666z"
+                                              />
+                                            </svg>
+                                          </span>
+                                        </button>
+                                      </div>
+                                    </div>
+                                  </div>
+                                  <div
+                                    class="ant-space-item"
+                                  >
+                                    <div
+                                      class="ant-space ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
+                                    >
+                                      <div
+                                        class="ant-space-item"
+                                      >
+                                        <button
+                                          class="ant-btn ant-btn-text ant-btn-icon-only modify-coding-configuration basic-button-wrapper css-11ugcfo"
+                                          type="button"
+                                        >
+                                          <span
+                                            class="ant-btn-icon"
+                                          >
+                                            <svg
+                                              color="#292c33"
+                                              height="16"
+                                              viewBox="0 0 16 16"
+                                              width="16"
+                                              xmlns="http://www.w3.org/2000/svg"
+                                            >
+                                              <path
+                                                d="M6.162 12.667H14V14H2v-2.829l6.6-6.6 2.828 2.83zm3.38-9.038 1.415-1.414a.667.667 0 0 1 .942 0L13.785 4.1a.667.667 0 0 1 0 .942l-1.414 1.414z"
+                                                fill="currentColor"
+                                              />
+                                            </svg>
+                                          </span>
+                                        </button>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                              <div
+                                class="ant-space-item"
+                              >
+                                <div
+                                  class="ant-form-item css-1jlm9cy"
+                                >
+                                  <div
+                                    class="ant-row ant-form-item-row"
+                                  >
+                                    <div
+                                      class="ant-col ant-form-item-control"
+                                    >
+                                      <div
+                                        class="ant-form-item-control-input"
+                                      >
+                                        <div
+                                          class="ant-form-item-control-input-content"
+                                        >
+                                          <button
+                                            aria-checked="false"
+                                            class="ant-switch basic-switch-wrapper system-config-switch css-g6dhbn"
+                                            id="enabled"
+                                            role="switch"
+                                            type="button"
+                                          >
+                                            <div
+                                              class="ant-switch-handle"
+                                            />
+                                            <span
+                                              class="ant-switch-inner"
+                                            >
+                                              <span
+                                                class="ant-switch-inner-checked"
+                                              />
+                                              <span
+                                                class="ant-switch-inner-unchecked"
+                                              />
+                                            </span>
+                                          </button>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="config-field-wrapper"
+                  hidden=""
+                >
+                  <div
+                    class="ant-form-item has-required-style has-label-tip css-1jlm9cy"
+                  >
+                    <div
+                      class="ant-row ant-form-item-row"
+                    >
+                      <div
+                        class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left"
+                      >
+                        <label
+                          class="ant-form-item-required ant-form-item-no-colon"
+                          for="url"
+                          title=""
+                        >
+                          <div
+                            class="label-cont-custom"
+                          >
+                            <div>
+                              url
+                            </div>
+                            <div
+                              class="tip-content-box"
+                            >
+                              短信服务接口地址
+                            </div>
+                          </div>
+                        </label>
+                      </div>
+                      <div
+                        class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control"
+                      >
+                        <div
+                          class="ant-form-item-control-input"
+                        >
+                          <div
+                            class="ant-form-item-control-input-content"
+                          >
+                            <input
+                              aria-required="true"
+                              class="ant-input basic-input-wrapper css-1pd1cd5"
+                              id="url"
+                              placeholder="请输入url"
+                              type="text"
+                              value=""
+                            />
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    class="ant-form-item has-required-style has-label-tip css-1jlm9cy"
+                  >
+                    <div
+                      class="ant-row ant-form-item-row"
+                    >
+                      <div
+                        class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left"
+                      >
+                        <label
+                          class="ant-form-item-required ant-form-item-no-colon"
+                          for="token"
+                          title=""
+                        >
+                          <div
+                            class="label-cont-custom"
+                          >
+                            <div>
+                              token
+                            </div>
+                            <div
+                              class="tip-content-box"
+                            >
+                              接口访问令牌
+                            </div>
+                          </div>
+                        </label>
+                      </div>
+                      <div
+                        class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control"
+                      >
+                        <div
+                          class="ant-form-item-control-input"
+                        >
+                          <div
+                            class="ant-form-item-control-input-content"
+                          >
+                            <span
+                              class="ant-input-affix-wrapper ant-input-password basic-input-wrapper css-1pd1cd5"
+                            >
+                              <input
+                                aria-required="true"
+                                class="ant-input"
+                                id="token"
+                                placeholder="请输入token"
+                                type="password"
+                              />
+                              <span
+                                class="ant-input-suffix"
+                              >
+                                <span
+                                  aria-label="eye-invisible"
+                                  class="anticon anticon-eye-invisible ant-input-password-icon"
+                                  role="img"
+                                  tabindex="-1"
+                                >
+                                  <svg
+                                    aria-hidden="true"
+                                    data-icon="eye-invisible"
+                                    fill="currentColor"
+                                    focusable="false"
+                                    height="1em"
+                                    viewBox="64 64 896 896"
+                                    width="1em"
+                                  >
+                                    <path
+                                      d="M942.2 486.2Q889.47 375.11 816.7 305l-50.88 50.88C807.31 395.53 843.45 447.4 874.7 512 791.5 684.2 673.4 766 512 766q-72.67 0-133.87-22.38L323 798.75Q408 838 512 838q288.3 0 430.2-300.3a60.29 60.29 0 000-51.5zm-63.57-320.64L836 122.88a8 8 0 00-11.32 0L715.31 232.2Q624.86 186 512 186q-288.3 0-430.2 300.3a60.3 60.3 0 000 51.5q56.69 119.4 136.5 191.41L112.48 835a8 8 0 000 11.31L155.17 889a8 8 0 0011.31 0l712.15-712.12a8 8 0 000-11.32zM149.3 512C232.6 339.8 350.7 258 512 258c54.54 0 104.13 9.36 149.12 28.39l-70.3 70.3a176 176 0 00-238.13 238.13l-83.42 83.42C223.1 637.49 183.3 582.28 149.3 512zm246.7 0a112.11 112.11 0 01146.2-106.69L401.31 546.2A112 112 0 01396 512z"
+                                    />
+                                    <path
+                                      d="M508 624c-3.46 0-6.87-.16-10.25-.47l-52.82 52.82a176.09 176.09 0 00227.42-227.42l-52.82 52.82c.31 3.38.47 6.79.47 10.25a111.94 111.94 0 01-112 112z"
+                                    />
+                                  </svg>
+                                </span>
+                              </span>
+                            </span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    class="ant-form-item css-15d6abf"
+                  >
+                    <div
+                      class="ant-row ant-form-item-row"
+                    >
+                      <div
+                        class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left"
+                      >
+                        <label
+                          class="ant-form-item-no-colon"
+                          title=" "
+                        >
+                           
+                        </label>
+                      </div>
+                      <div
+                        class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control"
+                      >
+                        <div
+                          class="ant-form-item-control-input"
+                        >
+                          <div
+                            class="ant-form-item-control-input-content"
+                          >
+                            <div
+                              class="ant-space ant-space-horizontal ant-space-align-center"
+                            >
+                              <div
+                                class="ant-space-item"
+                                style="margin-right: 12px;"
+                              >
+                                <button
+                                  class="ant-btn ant-btn-default basic-button-wrapper css-geipcv"
+                                  type="button"
+                                >
+                                  <span>
+                                    取 消
+                                  </span>
+                                </button>
+                              </div>
+                              <div
+                                class="ant-space-item"
+                              >
+                                <button
+                                  class="ant-btn ant-btn-primary basic-button-wrapper css-geipcv"
+                                  type="submit"
+                                >
+                                  <span>
+                                    提 交
+                                  </span>
+                                </button>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </form>
+            </section>
+          </div>
+        </div>
+      </div>
+      <div
+        class="ant-spin-nested-loading"
       >
         <div>
           <div
             aria-busy="true"
             aria-live="polite"
-            class="ant-spin ant-spin-spinning css-dev-only-do-not-override-txh9fw"
+            class="ant-spin ant-spin-spinning"
           >
             <span
               class="ant-spin-dot ant-spin-dot-spin"
@@ -1723,10 +2196,10 @@ exports[`base/System/LoginConnection render snap 1`] = `
           class="ant-spin-container ant-spin-blur"
         >
           <div
-            class="ant-row ant-row-space-between ant-row-middle css-19fu9ar css-dev-only-do-not-override-txh9fw"
+            class="ant-row ant-row-space-between ant-row-middle css-19fu9ar"
           >
             <div
-              class="ant-col ant-col-11 config-item-label css-dev-only-do-not-override-txh9fw"
+              class="ant-col ant-col-11 config-item-label"
             >
               <div
                 class="config-item-label"
@@ -1744,7 +2217,7 @@ exports[`base/System/LoginConnection render snap 1`] = `
               </div>
             </div>
             <div
-              class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center config-item-filed"
+              class="ant-space ant-space-horizontal ant-space-align-center config-item-filed"
             >
               <div
                 class="ant-space-item"
@@ -1756,7 +2229,7 @@ exports[`base/System/LoginConnection render snap 1`] = `
                 class="ant-space-item"
               >
                 <button
-                  class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default ant-btn-icon-only config-item-filed-edit-button basic-button-wrapper css-geipcv"
+                  class="ant-btn ant-btn-default ant-btn-icon-only config-item-filed-edit-button basic-button-wrapper css-geipcv"
                   hidden=""
                   type="button"
                 >
@@ -1780,10 +2253,10 @@ exports[`base/System/LoginConnection render snap 1`] = `
             </div>
           </div>
           <div
-            class="ant-row ant-row-space-between ant-row-middle css-19fu9ar css-dev-only-do-not-override-txh9fw"
+            class="ant-row ant-row-space-between ant-row-middle css-19fu9ar"
           >
             <div
-              class="ant-col ant-col-11 config-item-label css-dev-only-do-not-override-txh9fw"
+              class="ant-col ant-col-11 config-item-label"
             >
               <div
                 class="config-item-label"
@@ -1801,20 +2274,20 @@ exports[`base/System/LoginConnection render snap 1`] = `
               </div>
             </div>
             <div
-              class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center config-item-filed"
+              class="ant-space ant-space-horizontal ant-space-align-center config-item-filed"
             >
               <div
                 class="ant-space-item"
               >
                 <div
-                  class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
+                  class="ant-space ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
                 >
                   <div
                     class="ant-space-item"
                   >
                     <button
                       aria-checked="false"
-                      class="ant-switch basic-switch-wrapper css-g6dhbn css-dev-only-do-not-override-txh9fw ant-switch-disabled"
+                      class="ant-switch basic-switch-wrapper css-g6dhbn ant-switch-disabled"
                       data-testid="password-disabled-login-switch-disabled-mode"
                       disabled=""
                       role="switch"
@@ -1853,10 +2326,10 @@ exports[`base/System/LoginConnection render snap 2`] = `
       class="system-form-wrapper"
     >
       <div
-        class="ant-row ant-row-space-between ant-row-middle config-title-wrapper has-border css-dev-only-do-not-override-txh9fw"
+        class="ant-row ant-row-space-between ant-row-middle config-title-wrapper has-border"
       >
         <div
-          class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+          class="ant-space ant-space-horizontal ant-space-align-center"
         >
           <div
             class="ant-space-item"
@@ -1869,25 +2342,25 @@ exports[`base/System/LoginConnection render snap 2`] = `
         class="config-form-wrapper"
       >
         <div
-          class="ant-spin-nested-loading css-dev-only-do-not-override-txh9fw"
+          class="ant-spin-nested-loading"
         >
           <div
             class="ant-spin-container"
           >
             <form
-              class="ant-form ant-form-horizontal css-dev-only-do-not-override-txh9fw"
+              class="ant-form ant-form-horizontal"
             >
               <div
                 class="switch-field-wrapper"
               >
                 <div
-                  class="ant-form-item  css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+                  class="ant-form-item css-1jlm9cy"
                 >
                   <div
-                    class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                    class="ant-row ant-form-item-row"
                   >
                     <div
-                      class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left css-dev-only-do-not-override-txh9fw"
+                      class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left"
                     >
                       <label
                         class="ant-form-item-no-colon"
@@ -1897,7 +2370,7 @@ exports[`base/System/LoginConnection render snap 2`] = `
                       </label>
                     </div>
                     <div
-                      class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                      class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control"
                     >
                       <div
                         class="ant-form-item-control-input"
@@ -1906,27 +2379,27 @@ exports[`base/System/LoginConnection render snap 2`] = `
                           class="ant-form-item-control-input-content"
                         >
                           <div
-                            class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+                            class="ant-space ant-space-horizontal ant-space-align-center"
                           >
                             <div
                               class="ant-space-item"
                               style="margin-right: 12px;"
                             >
                               <div
-                                class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+                                class="ant-space ant-space-horizontal ant-space-align-center"
                                 hidden=""
                               >
                                 <div
                                   class="ant-space-item"
                                 >
                                   <div
-                                    class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
+                                    class="ant-space ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
                                   >
                                     <div
                                       class="ant-space-item"
                                     >
                                       <button
-                                        class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-text ant-btn-icon-only system-config-button basic-button-wrapper css-geipcv"
+                                        class="ant-btn ant-btn-text ant-btn-icon-only system-config-button basic-button-wrapper css-geipcv"
                                         type="button"
                                       >
                                         <span
@@ -1955,13 +2428,13 @@ exports[`base/System/LoginConnection render snap 2`] = `
                               class="ant-space-item"
                             >
                               <div
-                                class="ant-form-item css-1jlm9cy css-dev-only-do-not-override-txh9fw ant-form-item-has-success"
+                                class="ant-form-item css-1jlm9cy ant-form-item-has-success"
                               >
                                 <div
-                                  class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                                  class="ant-row ant-form-item-row"
                                 >
                                   <div
-                                    class="ant-col ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                                    class="ant-col ant-form-item-control"
                                   >
                                     <div
                                       class="ant-form-item-control-input"
@@ -1971,7 +2444,7 @@ exports[`base/System/LoginConnection render snap 2`] = `
                                       >
                                         <button
                                           aria-checked="false"
-                                          class="ant-switch basic-switch-wrapper system-config-switch css-g6dhbn css-dev-only-do-not-override-txh9fw"
+                                          class="ant-switch basic-switch-wrapper system-config-switch css-g6dhbn"
                                           id="enable_ldap"
                                           role="switch"
                                           type="button"
@@ -2008,16 +2481,16 @@ exports[`base/System/LoginConnection render snap 2`] = `
                 hidden=""
               >
                 <div
-                  class="ant-form-item css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+                  class="ant-form-item has-required-style css-1jlm9cy"
                 >
                   <div
-                    class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                    class="ant-row ant-form-item-row"
                   >
                     <div
-                      class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left css-dev-only-do-not-override-txh9fw"
+                      class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left"
                     >
                       <label
-                        class="ant-form-item-no-colon"
+                        class="ant-form-item-required ant-form-item-no-colon"
                         for="enable_ssl"
                         title="是否启用SSL"
                       >
@@ -2025,7 +2498,7 @@ exports[`base/System/LoginConnection render snap 2`] = `
                       </label>
                     </div>
                     <div
-                      class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                      class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control"
                     >
                       <div
                         class="ant-form-item-control-input"
@@ -2035,7 +2508,8 @@ exports[`base/System/LoginConnection render snap 2`] = `
                         >
                           <button
                             aria-checked="false"
-                            class="ant-switch basic-switch-wrapper css-g6dhbn css-dev-only-do-not-override-txh9fw"
+                            aria-required="true"
+                            class="ant-switch basic-switch-wrapper css-g6dhbn"
                             id="enable_ssl"
                             role="switch"
                             type="button"
@@ -2060,16 +2534,16 @@ exports[`base/System/LoginConnection render snap 2`] = `
                   </div>
                 </div>
                 <div
-                  class="ant-form-item css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+                  class="ant-form-item has-required-style css-1jlm9cy"
                 >
                   <div
-                    class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                    class="ant-row ant-form-item-row"
                   >
                     <div
-                      class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left css-dev-only-do-not-override-txh9fw"
+                      class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left"
                     >
                       <label
-                        class="ant-form-item-no-colon"
+                        class="ant-form-item-required ant-form-item-no-colon"
                         for="ldap_server_host"
                         title="LDAP服务器地址"
                       >
@@ -2077,7 +2551,7 @@ exports[`base/System/LoginConnection render snap 2`] = `
                       </label>
                     </div>
                     <div
-                      class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                      class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control"
                     >
                       <div
                         class="ant-form-item-control-input"
@@ -2086,7 +2560,8 @@ exports[`base/System/LoginConnection render snap 2`] = `
                           class="ant-form-item-control-input-content"
                         >
                           <input
-                            class="ant-input css-dev-only-do-not-override-ywkr0o basic-input-wrapper css-1pd1cd5"
+                            aria-required="true"
+                            class="ant-input basic-input-wrapper css-1pd1cd5"
                             id="ldap_server_host"
                             placeholder="请输入LDAP服务器地址"
                             type="text"
@@ -2098,16 +2573,16 @@ exports[`base/System/LoginConnection render snap 2`] = `
                   </div>
                 </div>
                 <div
-                  class="ant-form-item css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+                  class="ant-form-item has-required-style css-1jlm9cy"
                 >
                   <div
-                    class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                    class="ant-row ant-form-item-row"
                   >
                     <div
-                      class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left css-dev-only-do-not-override-txh9fw"
+                      class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left"
                     >
                       <label
-                        class="ant-form-item-no-colon"
+                        class="ant-form-item-required ant-form-item-no-colon"
                         for="ldap_server_port"
                         title="LDAP服务器端口"
                       >
@@ -2115,7 +2590,7 @@ exports[`base/System/LoginConnection render snap 2`] = `
                       </label>
                     </div>
                     <div
-                      class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                      class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control"
                     >
                       <div
                         class="ant-form-item-control-input"
@@ -2124,7 +2599,8 @@ exports[`base/System/LoginConnection render snap 2`] = `
                           class="ant-form-item-control-input-content"
                         >
                           <input
-                            class="ant-input css-dev-only-do-not-override-ywkr0o basic-input-wrapper css-1pd1cd5"
+                            aria-required="true"
+                            class="ant-input basic-input-wrapper css-1pd1cd5"
                             id="ldap_server_port"
                             placeholder="请输入LDAP服务器端口"
                             type="text"
@@ -2136,16 +2612,16 @@ exports[`base/System/LoginConnection render snap 2`] = `
                   </div>
                 </div>
                 <div
-                  class="ant-form-item has-label-tip css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+                  class="ant-form-item has-label-tip has-required-style css-1jlm9cy"
                 >
                   <div
-                    class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                    class="ant-row ant-form-item-row"
                   >
                     <div
-                      class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left css-dev-only-do-not-override-txh9fw"
+                      class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left"
                     >
                       <label
-                        class="ant-form-item-no-colon"
+                        class="ant-form-item-required ant-form-item-no-colon"
                         for="ldap_connect_dn"
                         title=""
                       >
@@ -2164,7 +2640,7 @@ exports[`base/System/LoginConnection render snap 2`] = `
                       </label>
                     </div>
                     <div
-                      class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                      class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control"
                     >
                       <div
                         class="ant-form-item-control-input"
@@ -2173,7 +2649,8 @@ exports[`base/System/LoginConnection render snap 2`] = `
                           class="ant-form-item-control-input-content"
                         >
                           <input
-                            class="ant-input css-dev-only-do-not-override-ywkr0o basic-input-wrapper css-1pd1cd5"
+                            aria-required="true"
+                            class="ant-input basic-input-wrapper css-1pd1cd5"
                             id="ldap_connect_dn"
                             placeholder="请输入连接用户DN"
                             type="text"
@@ -2185,13 +2662,65 @@ exports[`base/System/LoginConnection render snap 2`] = `
                   </div>
                 </div>
                 <div
-                  class="ant-form-item css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+                  class="ant-form-item css-1jlm9cy"
                 >
                   <div
-                    class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                    class="ant-row ant-form-item-row"
                   >
                     <div
-                      class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left css-dev-only-do-not-override-txh9fw"
+                      class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left"
+                    >
+                      <label
+                        class="ant-form-item-no-colon"
+                        for="update_password"
+                        title="是否修改连接用户密码"
+                      >
+                        是否修改连接用户密码
+                      </label>
+                    </div>
+                    <div
+                      class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control"
+                    >
+                      <div
+                        class="ant-form-item-control-input"
+                      >
+                        <div
+                          class="ant-form-item-control-input-content"
+                        >
+                          <button
+                            aria-checked="false"
+                            class="ant-switch basic-switch-wrapper css-g6dhbn"
+                            id="update_password"
+                            role="switch"
+                            type="button"
+                          >
+                            <div
+                              class="ant-switch-handle"
+                            />
+                            <span
+                              class="ant-switch-inner"
+                            >
+                              <span
+                                class="ant-switch-inner-checked"
+                              />
+                              <span
+                                class="ant-switch-inner-unchecked"
+                              />
+                            </span>
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="ant-form-item has-required-style css-1jlm9cy ant-form-item-hidden"
+                >
+                  <div
+                    class="ant-row ant-form-item-row"
+                  >
+                    <div
+                      class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left"
                     >
                       <label
                         class="ant-form-item-no-colon"
@@ -2202,7 +2731,7 @@ exports[`base/System/LoginConnection render snap 2`] = `
                       </label>
                     </div>
                     <div
-                      class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                      class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control"
                     >
                       <div
                         class="ant-form-item-control-input"
@@ -2211,10 +2740,10 @@ exports[`base/System/LoginConnection render snap 2`] = `
                           class="ant-form-item-control-input-content"
                         >
                           <span
-                            class="ant-input-affix-wrapper ant-input-password basic-input-wrapper css-1pd1cd5 css-dev-only-do-not-override-txh9fw"
+                            class="ant-input-affix-wrapper ant-input-password basic-input-wrapper css-1pd1cd5"
                           >
                             <input
-                              class="ant-input css-dev-only-do-not-override-txh9fw"
+                              class="ant-input"
                               id="ldap_connect_pwd"
                               placeholder="请输入连接用户密码"
                               type="password"
@@ -2253,16 +2782,16 @@ exports[`base/System/LoginConnection render snap 2`] = `
                   </div>
                 </div>
                 <div
-                  class="ant-form-item has-label-tip css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+                  class="ant-form-item has-label-tip has-required-style css-1jlm9cy"
                 >
                   <div
-                    class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                    class="ant-row ant-form-item-row"
                   >
                     <div
-                      class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left css-dev-only-do-not-override-txh9fw"
+                      class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left"
                     >
                       <label
-                        class="ant-form-item-no-colon"
+                        class="ant-form-item-required ant-form-item-no-colon"
                         for="ldap_search_base_dn"
                         title=""
                       >
@@ -2281,7 +2810,7 @@ exports[`base/System/LoginConnection render snap 2`] = `
                       </label>
                     </div>
                     <div
-                      class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                      class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control"
                     >
                       <div
                         class="ant-form-item-control-input"
@@ -2290,7 +2819,8 @@ exports[`base/System/LoginConnection render snap 2`] = `
                           class="ant-form-item-control-input-content"
                         >
                           <input
-                            class="ant-input css-dev-only-do-not-override-ywkr0o basic-input-wrapper css-1pd1cd5"
+                            aria-required="true"
+                            class="ant-input basic-input-wrapper css-1pd1cd5"
                             id="ldap_search_base_dn"
                             placeholder="请输入查询根DN"
                             type="text"
@@ -2302,16 +2832,16 @@ exports[`base/System/LoginConnection render snap 2`] = `
                   </div>
                 </div>
                 <div
-                  class="ant-form-item has-label-tip css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+                  class="ant-form-item has-label-tip has-required-style css-1jlm9cy"
                 >
                   <div
-                    class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                    class="ant-row ant-form-item-row"
                   >
                     <div
-                      class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left css-dev-only-do-not-override-txh9fw"
+                      class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left"
                     >
                       <label
-                        class="ant-form-item-no-colon"
+                        class="ant-form-item-required ant-form-item-no-colon"
                         for="ldap_user_name_rdn_key"
                         title=""
                       >
@@ -2330,7 +2860,7 @@ exports[`base/System/LoginConnection render snap 2`] = `
                       </label>
                     </div>
                     <div
-                      class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                      class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control"
                     >
                       <div
                         class="ant-form-item-control-input"
@@ -2339,9 +2869,10 @@ exports[`base/System/LoginConnection render snap 2`] = `
                           class="ant-form-item-control-input-content"
                         >
                           <input
-                            class="ant-input css-dev-only-do-not-override-ywkr0o basic-input-wrapper css-1pd1cd5"
+                            aria-required="true"
+                            class="ant-input basic-input-wrapper css-1pd1cd5"
                             id="ldap_user_name_rdn_key"
-                            placeholder="请输入{{name}}"
+                            placeholder="请输入用户名属性名"
                             type="text"
                             value=""
                           />
@@ -2351,13 +2882,13 @@ exports[`base/System/LoginConnection render snap 2`] = `
                   </div>
                 </div>
                 <div
-                  class="ant-form-item has-label-tip css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+                  class="ant-form-item has-label-tip css-1jlm9cy"
                 >
                   <div
-                    class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                    class="ant-row ant-form-item-row"
                   >
                     <div
-                      class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left css-dev-only-do-not-override-txh9fw"
+                      class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left"
                     >
                       <label
                         class="ant-form-item-no-colon"
@@ -2379,7 +2910,7 @@ exports[`base/System/LoginConnection render snap 2`] = `
                       </label>
                     </div>
                     <div
-                      class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                      class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control"
                     >
                       <div
                         class="ant-form-item-control-input"
@@ -2388,7 +2919,7 @@ exports[`base/System/LoginConnection render snap 2`] = `
                           class="ant-form-item-control-input-content"
                         >
                           <input
-                            class="ant-input css-dev-only-do-not-override-ywkr0o basic-input-wrapper css-1pd1cd5"
+                            class="ant-input basic-input-wrapper css-1pd1cd5"
                             id="ldap_user_email_rdn_key"
                             placeholder="请输入用户邮箱属性名"
                             type="text"
@@ -2400,13 +2931,13 @@ exports[`base/System/LoginConnection render snap 2`] = `
                   </div>
                 </div>
                 <div
-                  class="ant-form-item css-15d6abf css-dev-only-do-not-override-txh9fw"
+                  class="ant-form-item css-15d6abf"
                 >
                   <div
-                    class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                    class="ant-row ant-form-item-row"
                   >
                     <div
-                      class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left css-dev-only-do-not-override-txh9fw"
+                      class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left"
                     >
                       <label
                         class="ant-form-item-no-colon"
@@ -2416,7 +2947,7 @@ exports[`base/System/LoginConnection render snap 2`] = `
                       </label>
                     </div>
                     <div
-                      class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                      class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control"
                     >
                       <div
                         class="ant-form-item-control-input"
@@ -2425,14 +2956,14 @@ exports[`base/System/LoginConnection render snap 2`] = `
                           class="ant-form-item-control-input-content"
                         >
                           <div
-                            class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+                            class="ant-space ant-space-horizontal ant-space-align-center"
                           >
                             <div
                               class="ant-space-item"
                               style="margin-right: 12px;"
                             >
                               <button
-                                class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default basic-button-wrapper css-geipcv"
+                                class="ant-btn ant-btn-default basic-button-wrapper css-geipcv"
                                 type="button"
                               >
                                 <span>
@@ -2444,7 +2975,7 @@ exports[`base/System/LoginConnection render snap 2`] = `
                               class="ant-space-item"
                             >
                               <button
-                                class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary basic-button-wrapper css-geipcv"
+                                class="ant-btn ant-btn-primary basic-button-wrapper css-geipcv"
                                 type="submit"
                               >
                                 <span>
@@ -2468,25 +2999,25 @@ exports[`base/System/LoginConnection render snap 2`] = `
         class="config-form-wrapper"
       >
         <div
-          class="ant-spin-nested-loading css-dev-only-do-not-override-txh9fw"
+          class="ant-spin-nested-loading"
         >
           <div
             class="ant-spin-container"
           >
             <form
-              class="ant-form ant-form-horizontal css-dev-only-do-not-override-txh9fw"
+              class="ant-form ant-form-horizontal"
             >
               <div
                 class="switch-field-wrapper"
               >
                 <div
-                  class="ant-form-item  css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+                  class="ant-form-item css-1jlm9cy"
                 >
                   <div
-                    class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                    class="ant-row ant-form-item-row"
                   >
                     <div
-                      class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left css-dev-only-do-not-override-txh9fw"
+                      class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left"
                     >
                       <label
                         class="ant-form-item-no-colon"
@@ -2496,7 +3027,7 @@ exports[`base/System/LoginConnection render snap 2`] = `
                       </label>
                     </div>
                     <div
-                      class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                      class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control"
                     >
                       <div
                         class="ant-form-item-control-input"
@@ -2505,27 +3036,27 @@ exports[`base/System/LoginConnection render snap 2`] = `
                           class="ant-form-item-control-input-content"
                         >
                           <div
-                            class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+                            class="ant-space ant-space-horizontal ant-space-align-center"
                           >
                             <div
                               class="ant-space-item"
                               style="margin-right: 12px;"
                             >
                               <div
-                                class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+                                class="ant-space ant-space-horizontal ant-space-align-center"
                                 hidden=""
                               >
                                 <div
                                   class="ant-space-item"
                                 >
                                   <div
-                                    class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
+                                    class="ant-space ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
                                   >
                                     <div
                                       class="ant-space-item"
                                     >
                                       <button
-                                        class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-text ant-btn-icon-only system-config-button basic-button-wrapper css-geipcv"
+                                        class="ant-btn ant-btn-text ant-btn-icon-only system-config-button basic-button-wrapper css-geipcv"
                                         type="button"
                                       >
                                         <span
@@ -2554,13 +3085,13 @@ exports[`base/System/LoginConnection render snap 2`] = `
                               class="ant-space-item"
                             >
                               <div
-                                class="ant-form-item css-1jlm9cy css-dev-only-do-not-override-txh9fw ant-form-item-has-success"
+                                class="ant-form-item css-1jlm9cy ant-form-item-has-success"
                               >
                                 <div
-                                  class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                                  class="ant-row ant-form-item-row"
                                 >
                                   <div
-                                    class="ant-col ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                                    class="ant-col ant-form-item-control"
                                   >
                                     <div
                                       class="ant-form-item-control-input"
@@ -2570,7 +3101,7 @@ exports[`base/System/LoginConnection render snap 2`] = `
                                       >
                                         <button
                                           aria-checked="false"
-                                          class="ant-switch basic-switch-wrapper system-config-switch css-g6dhbn css-dev-only-do-not-override-txh9fw"
+                                          class="ant-switch basic-switch-wrapper system-config-switch css-g6dhbn"
                                           id="enable"
                                           role="switch"
                                           type="button"
@@ -2607,13 +3138,13 @@ exports[`base/System/LoginConnection render snap 2`] = `
                 hidden=""
               >
                 <div
-                  class="ant-form-item has-label-tip has-required-style css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+                  class="ant-form-item has-label-tip has-required-style css-1jlm9cy"
                 >
                   <div
-                    class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                    class="ant-row ant-form-item-row"
                   >
                     <div
-                      class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left css-dev-only-do-not-override-txh9fw"
+                      class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left"
                     >
                       <label
                         class="ant-form-item-required ant-form-item-no-colon"
@@ -2635,7 +3166,7 @@ exports[`base/System/LoginConnection render snap 2`] = `
                       </label>
                     </div>
                     <div
-                      class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                      class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control"
                     >
                       <div
                         class="ant-form-item-control-input"
@@ -2645,7 +3176,7 @@ exports[`base/System/LoginConnection render snap 2`] = `
                         >
                           <input
                             aria-required="true"
-                            class="ant-input css-dev-only-do-not-override-ywkr0o basic-input-wrapper css-1pd1cd5"
+                            class="ant-input basic-input-wrapper css-1pd1cd5"
                             id="clientId"
                             placeholder="请输入应用 ID"
                             type="text"
@@ -2657,13 +3188,13 @@ exports[`base/System/LoginConnection render snap 2`] = `
                   </div>
                 </div>
                 <div
-                  class="ant-form-item has-label-tip css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+                  class="ant-form-item has-label-tip css-1jlm9cy"
                 >
                   <div
-                    class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                    class="ant-row ant-form-item-row"
                   >
                     <div
-                      class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left css-dev-only-do-not-override-txh9fw"
+                      class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left"
                     >
                       <label
                         class="ant-form-item-no-colon"
@@ -2685,7 +3216,7 @@ exports[`base/System/LoginConnection render snap 2`] = `
                       </label>
                     </div>
                     <div
-                      class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                      class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control"
                     >
                       <div
                         class="ant-form-item-control-input"
@@ -2694,7 +3225,7 @@ exports[`base/System/LoginConnection render snap 2`] = `
                           class="ant-form-item-control-input-content"
                         >
                           <input
-                            class="ant-input css-dev-only-do-not-override-ywkr0o basic-input-wrapper css-1pd1cd5"
+                            class="ant-input basic-input-wrapper css-1pd1cd5"
                             id="clientSecret"
                             placeholder="请输入应用密钥"
                             type="text"
@@ -2706,13 +3237,13 @@ exports[`base/System/LoginConnection render snap 2`] = `
                   </div>
                 </div>
                 <div
-                  class="ant-form-item has-label-tip has-required-style css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+                  class="ant-form-item has-label-tip has-required-style css-1jlm9cy"
                 >
                   <div
-                    class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                    class="ant-row ant-form-item-row"
                   >
                     <div
-                      class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left css-dev-only-do-not-override-txh9fw"
+                      class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left"
                     >
                       <label
                         class="ant-form-item-required ant-form-item-no-colon"
@@ -2734,7 +3265,7 @@ exports[`base/System/LoginConnection render snap 2`] = `
                       </label>
                     </div>
                     <div
-                      class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                      class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control"
                     >
                       <div
                         class="ant-form-item-control-input"
@@ -2744,7 +3275,7 @@ exports[`base/System/LoginConnection render snap 2`] = `
                         >
                           <input
                             aria-required="true"
-                            class="ant-input css-dev-only-do-not-override-ywkr0o basic-input-wrapper css-1pd1cd5"
+                            class="ant-input basic-input-wrapper css-1pd1cd5"
                             id="clientHost"
                             placeholder="请输入外部访问SQLE的地址"
                             type="text"
@@ -2756,13 +3287,13 @@ exports[`base/System/LoginConnection render snap 2`] = `
                   </div>
                 </div>
                 <div
-                  class="ant-form-item has-label-tip has-required-style css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+                  class="ant-form-item has-label-tip has-required-style css-1jlm9cy"
                 >
                   <div
-                    class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                    class="ant-row ant-form-item-row"
                   >
                     <div
-                      class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left css-dev-only-do-not-override-txh9fw"
+                      class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left"
                     >
                       <label
                         class="ant-form-item-required ant-form-item-no-colon"
@@ -2784,7 +3315,7 @@ exports[`base/System/LoginConnection render snap 2`] = `
                       </label>
                     </div>
                     <div
-                      class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                      class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control"
                     >
                       <div
                         class="ant-form-item-control-input"
@@ -2794,7 +3325,7 @@ exports[`base/System/LoginConnection render snap 2`] = `
                         >
                           <input
                             aria-required="true"
-                            class="ant-input css-dev-only-do-not-override-ywkr0o basic-input-wrapper css-1pd1cd5"
+                            class="ant-input basic-input-wrapper css-1pd1cd5"
                             id="serverAuthUrl"
                             placeholder="请输入OAuth2.0登录授权页面地址"
                             type="text"
@@ -2806,13 +3337,13 @@ exports[`base/System/LoginConnection render snap 2`] = `
                   </div>
                 </div>
                 <div
-                  class="ant-form-item has-label-tip has-required-style css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+                  class="ant-form-item has-label-tip has-required-style css-1jlm9cy"
                 >
                   <div
-                    class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                    class="ant-row ant-form-item-row"
                   >
                     <div
-                      class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left css-dev-only-do-not-override-txh9fw"
+                      class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left"
                     >
                       <label
                         class="ant-form-item-required ant-form-item-no-colon"
@@ -2834,7 +3365,7 @@ exports[`base/System/LoginConnection render snap 2`] = `
                       </label>
                     </div>
                     <div
-                      class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                      class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control"
                     >
                       <div
                         class="ant-form-item-control-input"
@@ -2844,7 +3375,7 @@ exports[`base/System/LoginConnection render snap 2`] = `
                         >
                           <input
                             aria-required="true"
-                            class="ant-input css-dev-only-do-not-override-ywkr0o basic-input-wrapper css-1pd1cd5"
+                            class="ant-input basic-input-wrapper css-1pd1cd5"
                             id="serverTokenUrl"
                             placeholder="请输入OAuth2.0 access_token 获取地址"
                             type="text"
@@ -2856,13 +3387,13 @@ exports[`base/System/LoginConnection render snap 2`] = `
                   </div>
                 </div>
                 <div
-                  class="ant-form-item has-label-tip has-required-style css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+                  class="ant-form-item has-label-tip has-required-style css-1jlm9cy"
                 >
                   <div
-                    class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                    class="ant-row ant-form-item-row"
                   >
                     <div
-                      class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left css-dev-only-do-not-override-txh9fw"
+                      class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left"
                     >
                       <label
                         class="ant-form-item-required ant-form-item-no-colon"
@@ -2884,7 +3415,7 @@ exports[`base/System/LoginConnection render snap 2`] = `
                       </label>
                     </div>
                     <div
-                      class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                      class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control"
                     >
                       <div
                         class="ant-form-item-control-input"
@@ -2894,7 +3425,7 @@ exports[`base/System/LoginConnection render snap 2`] = `
                         >
                           <input
                             aria-required="true"
-                            class="ant-input css-dev-only-do-not-override-ywkr0o basic-input-wrapper css-1pd1cd5"
+                            class="ant-input basic-input-wrapper css-1pd1cd5"
                             id="serverUserIdUrl"
                             placeholder="请输入OAuth2.0 user id 获取地址"
                             type="text"
@@ -2906,13 +3437,13 @@ exports[`base/System/LoginConnection render snap 2`] = `
                   </div>
                 </div>
                 <div
-                  class="ant-form-item has-label-tip css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+                  class="ant-form-item has-label-tip css-1jlm9cy"
                 >
                   <div
-                    class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                    class="ant-row ant-form-item-row"
                   >
                     <div
-                      class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left css-dev-only-do-not-override-txh9fw"
+                      class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left"
                     >
                       <label
                         class="ant-form-item-no-colon"
@@ -2934,7 +3465,7 @@ exports[`base/System/LoginConnection render snap 2`] = `
                       </label>
                     </div>
                     <div
-                      class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                      class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control"
                     >
                       <div
                         class="ant-form-item-control-input"
@@ -2943,7 +3474,7 @@ exports[`base/System/LoginConnection render snap 2`] = `
                           class="ant-form-item-control-input-content"
                         >
                           <input
-                            class="ant-input css-dev-only-do-not-override-ywkr0o basic-input-wrapper css-1pd1cd5"
+                            class="ant-input basic-input-wrapper css-1pd1cd5"
                             id="serverLayoutUrl"
                             placeholder="请输入注销跳转地址"
                             type="text"
@@ -2955,13 +3486,13 @@ exports[`base/System/LoginConnection render snap 2`] = `
                   </div>
                 </div>
                 <div
-                  class="ant-form-item has-label-tip css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+                  class="ant-form-item has-label-tip css-1jlm9cy"
                 >
                   <div
-                    class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                    class="ant-row ant-form-item-row"
                   >
                     <div
-                      class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left css-dev-only-do-not-override-txh9fw"
+                      class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left"
                     >
                       <label
                         class="ant-form-item-no-colon"
@@ -2983,7 +3514,7 @@ exports[`base/System/LoginConnection render snap 2`] = `
                       </label>
                     </div>
                     <div
-                      class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                      class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control"
                     >
                       <div
                         class="ant-form-item-control-input"
@@ -2992,7 +3523,7 @@ exports[`base/System/LoginConnection render snap 2`] = `
                           class="ant-form-item-control-input-content"
                         >
                           <input
-                            class="ant-input css-dev-only-do-not-override-ywkr0o basic-input-wrapper css-1pd1cd5"
+                            class="ant-input basic-input-wrapper css-1pd1cd5"
                             id="scopes"
                             placeholder="请输入请求资源范围"
                             type="text"
@@ -3004,13 +3535,13 @@ exports[`base/System/LoginConnection render snap 2`] = `
                   </div>
                 </div>
                 <div
-                  class="ant-form-item has-label-tip has-required-style css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+                  class="ant-form-item has-label-tip has-required-style css-1jlm9cy"
                 >
                   <div
-                    class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                    class="ant-row ant-form-item-row"
                   >
                     <div
-                      class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left css-dev-only-do-not-override-txh9fw"
+                      class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left"
                     >
                       <label
                         class="ant-form-item-required ant-form-item-no-colon"
@@ -3032,7 +3563,7 @@ exports[`base/System/LoginConnection render snap 2`] = `
                       </label>
                     </div>
                     <div
-                      class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                      class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control"
                     >
                       <div
                         class="ant-form-item-control-input"
@@ -3042,7 +3573,7 @@ exports[`base/System/LoginConnection render snap 2`] = `
                         >
                           <input
                             aria-required="true"
-                            class="ant-input css-dev-only-do-not-override-ywkr0o basic-input-wrapper css-1pd1cd5"
+                            class="ant-input basic-input-wrapper css-1pd1cd5"
                             id="accessTokenKeyName"
                             placeholder="请输入access_token Key名称"
                             type="text"
@@ -3054,13 +3585,13 @@ exports[`base/System/LoginConnection render snap 2`] = `
                   </div>
                 </div>
                 <div
-                  class="ant-form-item has-label-tip has-required-style css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+                  class="ant-form-item has-label-tip has-required-style css-1jlm9cy"
                 >
                   <div
-                    class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                    class="ant-row ant-form-item-row"
                   >
                     <div
-                      class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left css-dev-only-do-not-override-txh9fw"
+                      class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left"
                     >
                       <label
                         class="ant-form-item-required ant-form-item-no-colon"
@@ -3082,7 +3613,7 @@ exports[`base/System/LoginConnection render snap 2`] = `
                       </label>
                     </div>
                     <div
-                      class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                      class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control"
                     >
                       <div
                         class="ant-form-item-control-input"
@@ -3092,7 +3623,7 @@ exports[`base/System/LoginConnection render snap 2`] = `
                         >
                           <input
                             aria-required="true"
-                            class="ant-input css-dev-only-do-not-override-ywkr0o basic-input-wrapper css-1pd1cd5"
+                            class="ant-input basic-input-wrapper css-1pd1cd5"
                             id="userIdKeyName"
                             placeholder="请输入用户UID的JSON路径"
                             type="text"
@@ -3104,13 +3635,13 @@ exports[`base/System/LoginConnection render snap 2`] = `
                   </div>
                 </div>
                 <div
-                  class="ant-form-item has-label-tip css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+                  class="ant-form-item has-label-tip css-1jlm9cy"
                 >
                   <div
-                    class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                    class="ant-row ant-form-item-row"
                   >
                     <div
-                      class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left css-dev-only-do-not-override-txh9fw"
+                      class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left"
                     >
                       <label
                         class="ant-form-item-no-colon"
@@ -3132,7 +3663,7 @@ exports[`base/System/LoginConnection render snap 2`] = `
                       </label>
                     </div>
                     <div
-                      class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                      class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control"
                     >
                       <div
                         class="ant-form-item-control-input"
@@ -3141,7 +3672,7 @@ exports[`base/System/LoginConnection render snap 2`] = `
                           class="ant-form-item-control-input-content"
                         >
                           <input
-                            class="ant-input css-dev-only-do-not-override-ywkr0o basic-input-wrapper css-1pd1cd5"
+                            class="ant-input basic-input-wrapper css-1pd1cd5"
                             id="userEmailTag"
                             placeholder="请输入用户邮箱的JSON路径"
                             type="text"
@@ -3153,13 +3684,13 @@ exports[`base/System/LoginConnection render snap 2`] = `
                   </div>
                 </div>
                 <div
-                  class="ant-form-item has-label-tip css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+                  class="ant-form-item has-label-tip css-1jlm9cy"
                 >
                   <div
-                    class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                    class="ant-row ant-form-item-row"
                   >
                     <div
-                      class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left css-dev-only-do-not-override-txh9fw"
+                      class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left"
                     >
                       <label
                         class="ant-form-item-no-colon"
@@ -3181,7 +3712,7 @@ exports[`base/System/LoginConnection render snap 2`] = `
                       </label>
                     </div>
                     <div
-                      class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                      class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control"
                     >
                       <div
                         class="ant-form-item-control-input"
@@ -3190,7 +3721,7 @@ exports[`base/System/LoginConnection render snap 2`] = `
                           class="ant-form-item-control-input-content"
                         >
                           <input
-                            class="ant-input css-dev-only-do-not-override-ywkr0o basic-input-wrapper css-1pd1cd5"
+                            class="ant-input basic-input-wrapper css-1pd1cd5"
                             id="userWechatTag"
                             placeholder="请输入用户微信ID的JSON路径"
                             type="text"
@@ -3202,13 +3733,13 @@ exports[`base/System/LoginConnection render snap 2`] = `
                   </div>
                 </div>
                 <div
-                  class="ant-form-item has-label-tip css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+                  class="ant-form-item has-label-tip css-1jlm9cy"
                 >
                   <div
-                    class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                    class="ant-row ant-form-item-row"
                   >
                     <div
-                      class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left css-dev-only-do-not-override-txh9fw"
+                      class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left"
                     >
                       <label
                         class="ant-form-item-no-colon"
@@ -3230,7 +3761,7 @@ exports[`base/System/LoginConnection render snap 2`] = `
                       </label>
                     </div>
                     <div
-                      class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                      class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control"
                     >
                       <div
                         class="ant-form-item-control-input"
@@ -3239,7 +3770,7 @@ exports[`base/System/LoginConnection render snap 2`] = `
                           class="ant-form-item-control-input-content"
                         >
                           <input
-                            class="ant-input css-dev-only-do-not-override-ywkr0o basic-input-wrapper css-1pd1cd5"
+                            class="ant-input basic-input-wrapper css-1pd1cd5"
                             id="oauth2ButtonText"
                             placeholder="请输入OAuth2.0 跳转按钮文字"
                             type="text"
@@ -3251,13 +3782,13 @@ exports[`base/System/LoginConnection render snap 2`] = `
                   </div>
                 </div>
                 <div
-                  class="ant-form-item has-label-tip css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+                  class="ant-form-item has-label-tip css-1jlm9cy"
                 >
                   <div
-                    class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                    class="ant-row ant-form-item-row"
                   >
                     <div
-                      class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left css-dev-only-do-not-override-txh9fw"
+                      class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left"
                     >
                       <label
                         class="ant-form-item-no-colon"
@@ -3279,7 +3810,7 @@ exports[`base/System/LoginConnection render snap 2`] = `
                       </label>
                     </div>
                     <div
-                      class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                      class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control"
                     >
                       <div
                         class="ant-form-item-control-input"
@@ -3288,7 +3819,7 @@ exports[`base/System/LoginConnection render snap 2`] = `
                           class="ant-form-item-control-input-content"
                         >
                           <input
-                            class="ant-input css-dev-only-do-not-override-ywkr0o basic-input-wrapper css-1pd1cd5"
+                            class="ant-input basic-input-wrapper css-1pd1cd5"
                             id="loginPermissionQueryGJsonExpression"
                             placeholder="请输入登录权限查询GJSON表达式"
                             type="text"
@@ -3300,13 +3831,13 @@ exports[`base/System/LoginConnection render snap 2`] = `
                   </div>
                 </div>
                 <div
-                  class="ant-form-item has-label-tip css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+                  class="ant-form-item has-label-tip css-1jlm9cy"
                 >
                   <div
-                    class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                    class="ant-row ant-form-item-row"
                   >
                     <div
-                      class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left css-dev-only-do-not-override-txh9fw"
+                      class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left"
                     >
                       <label
                         class="ant-form-item-no-colon"
@@ -3328,7 +3859,7 @@ exports[`base/System/LoginConnection render snap 2`] = `
                       </label>
                     </div>
                     <div
-                      class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                      class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control"
                     >
                       <div
                         class="ant-form-item-control-input"
@@ -3338,7 +3869,7 @@ exports[`base/System/LoginConnection render snap 2`] = `
                         >
                           <button
                             aria-checked="false"
-                            class="ant-switch basic-switch-wrapper css-g6dhbn css-dev-only-do-not-override-txh9fw"
+                            class="ant-switch basic-switch-wrapper css-g6dhbn"
                             id="autoCreateUser"
                             role="switch"
                             type="button"
@@ -3363,13 +3894,13 @@ exports[`base/System/LoginConnection render snap 2`] = `
                   </div>
                 </div>
                 <div
-                  class="ant-form-item has-label-tip css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+                  class="ant-form-item has-label-tip css-1jlm9cy"
                 >
                   <div
-                    class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                    class="ant-row ant-form-item-row"
                   >
                     <div
-                      class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left css-dev-only-do-not-override-txh9fw"
+                      class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left"
                     >
                       <label
                         class="ant-form-item-no-colon"
@@ -3391,7 +3922,7 @@ exports[`base/System/LoginConnection render snap 2`] = `
                       </label>
                     </div>
                     <div
-                      class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                      class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control"
                     >
                       <div
                         class="ant-form-item-control-input"
@@ -3401,7 +3932,7 @@ exports[`base/System/LoginConnection render snap 2`] = `
                         >
                           <button
                             aria-checked="false"
-                            class="ant-switch basic-switch-wrapper css-g6dhbn css-dev-only-do-not-override-txh9fw"
+                            class="ant-switch basic-switch-wrapper css-g6dhbn"
                             id="skipCheckState"
                             role="switch"
                             type="button"
@@ -3426,13 +3957,13 @@ exports[`base/System/LoginConnection render snap 2`] = `
                   </div>
                 </div>
                 <div
-                  class="ant-form-item css-15d6abf css-dev-only-do-not-override-txh9fw"
+                  class="ant-form-item css-15d6abf"
                 >
                   <div
-                    class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                    class="ant-row ant-form-item-row"
                   >
                     <div
-                      class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left css-dev-only-do-not-override-txh9fw"
+                      class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left"
                     >
                       <label
                         class="ant-form-item-no-colon"
@@ -3442,7 +3973,7 @@ exports[`base/System/LoginConnection render snap 2`] = `
                       </label>
                     </div>
                     <div
-                      class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                      class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control"
                     >
                       <div
                         class="ant-form-item-control-input"
@@ -3451,14 +3982,14 @@ exports[`base/System/LoginConnection render snap 2`] = `
                           class="ant-form-item-control-input-content"
                         >
                           <div
-                            class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+                            class="ant-space ant-space-horizontal ant-space-align-center"
                           >
                             <div
                               class="ant-space-item"
                               style="margin-right: 12px;"
                             >
                               <button
-                                class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default basic-button-wrapper css-geipcv"
+                                class="ant-btn ant-btn-default basic-button-wrapper css-geipcv"
                                 type="button"
                               >
                                 <span>
@@ -3470,7 +4001,7 @@ exports[`base/System/LoginConnection render snap 2`] = `
                               class="ant-space-item"
                             >
                               <button
-                                class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary basic-button-wrapper css-geipcv"
+                                class="ant-btn ant-btn-primary basic-button-wrapper css-geipcv"
                                 type="submit"
                               >
                                 <span>
@@ -3491,16 +4022,473 @@ exports[`base/System/LoginConnection render snap 2`] = `
         </div>
       </div>
       <div
-        class="ant-spin-nested-loading css-dev-only-do-not-override-txh9fw"
+        class="config-form-wrapper"
+      >
+        <div
+          class="ant-spin-nested-loading"
+        >
+          <div
+            class="ant-spin-container"
+          >
+            <section
+              class="css-zupqof"
+            >
+              <form
+                class="ant-form ant-form-horizontal"
+              >
+                <div
+                  class="switch-field-wrapper"
+                >
+                  <div
+                    class="ant-form-item has-label-tip css-1jlm9cy"
+                  >
+                    <div
+                      class="ant-row ant-form-item-row"
+                    >
+                      <div
+                        class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left"
+                      >
+                        <label
+                          class="ant-form-item-no-colon"
+                          title=""
+                        >
+                          <div
+                            class="label-cont-custom"
+                          >
+                            <div>
+                              是否启用短信服务
+                            </div>
+                            <div
+                              class="tip-content-box"
+                            >
+                              <a
+                                class="ant-typography"
+                                href="https://actiontech.github.io/sqle-docs/docs/user-manual/sys-configuration/MFA"
+                                rel="noreferrer"
+                                style="font-size: 12px;"
+                                target="_blank"
+                              >
+                                短信服务配置文档
+                              </a>
+                            </div>
+                          </div>
+                        </label>
+                      </div>
+                      <div
+                        class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control"
+                      >
+                        <div
+                          class="ant-form-item-control-input"
+                        >
+                          <div
+                            class="ant-form-item-control-input-content"
+                          >
+                            <div
+                              class="ant-space ant-space-horizontal ant-space-align-center"
+                            >
+                              <div
+                                class="ant-space-item"
+                                style="margin-right: 12px;"
+                              >
+                                <div
+                                  class="ant-space ant-space-horizontal ant-space-align-center"
+                                  hidden=""
+                                >
+                                  <div
+                                    class="ant-space-item"
+                                    style="margin-right: 12px;"
+                                  >
+                                    <div
+                                      class="ant-space ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
+                                    >
+                                      <div
+                                        class="ant-space-item"
+                                      >
+                                        <button
+                                          class="ant-btn ant-btn-text ant-btn-icon-only system-config-button basic-button-wrapper css-geipcv"
+                                          type="button"
+                                        >
+                                          <span
+                                            class="ant-btn-icon"
+                                          >
+                                            <svg
+                                              height="16"
+                                              viewBox="0 0 17 16"
+                                              width="16"
+                                              xmlns="http://www.w3.org/2000/svg"
+                                            >
+                                              <path
+                                                d="M9.334 6.667H14l-6 8.666v-6H3.334l6-8.666z"
+                                              />
+                                            </svg>
+                                          </span>
+                                        </button>
+                                      </div>
+                                    </div>
+                                  </div>
+                                  <div
+                                    class="ant-space-item"
+                                  >
+                                    <div
+                                      class="ant-space ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
+                                    >
+                                      <div
+                                        class="ant-space-item"
+                                      >
+                                        <button
+                                          class="ant-btn ant-btn-text ant-btn-icon-only modify-coding-configuration basic-button-wrapper css-11ugcfo"
+                                          type="button"
+                                        >
+                                          <span
+                                            class="ant-btn-icon"
+                                          >
+                                            <svg
+                                              color="#292c33"
+                                              height="16"
+                                              viewBox="0 0 16 16"
+                                              width="16"
+                                              xmlns="http://www.w3.org/2000/svg"
+                                            >
+                                              <path
+                                                d="M6.162 12.667H14V14H2v-2.829l6.6-6.6 2.828 2.83zm3.38-9.038 1.415-1.414a.667.667 0 0 1 .942 0L13.785 4.1a.667.667 0 0 1 0 .942l-1.414 1.414z"
+                                                fill="currentColor"
+                                              />
+                                            </svg>
+                                          </span>
+                                        </button>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                              <div
+                                class="ant-space-item"
+                              >
+                                <div
+                                  class="ant-form-item css-1jlm9cy ant-form-item-has-success"
+                                >
+                                  <div
+                                    class="ant-row ant-form-item-row"
+                                  >
+                                    <div
+                                      class="ant-col ant-form-item-control"
+                                    >
+                                      <div
+                                        class="ant-form-item-control-input"
+                                      >
+                                        <div
+                                          class="ant-form-item-control-input-content"
+                                        >
+                                          <button
+                                            aria-checked="true"
+                                            class="ant-switch basic-switch-wrapper system-config-switch css-g6dhbn ant-switch-checked"
+                                            id="enabled"
+                                            role="switch"
+                                            type="button"
+                                          >
+                                            <div
+                                              class="ant-switch-handle"
+                                            />
+                                            <span
+                                              class="ant-switch-inner"
+                                            >
+                                              <span
+                                                class="ant-switch-inner-checked"
+                                              />
+                                              <span
+                                                class="ant-switch-inner-unchecked"
+                                              />
+                                            </span>
+                                          </button>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="config-field-wrapper"
+                  hidden=""
+                >
+                  <div
+                    class="ant-form-item has-required-style has-label-tip css-1jlm9cy"
+                  >
+                    <div
+                      class="ant-row ant-form-item-row"
+                    >
+                      <div
+                        class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left"
+                      >
+                        <label
+                          class="ant-form-item-required ant-form-item-no-colon"
+                          for="url"
+                          title=""
+                        >
+                          <div
+                            class="label-cont-custom"
+                          >
+                            <div>
+                              url
+                            </div>
+                            <div
+                              class="tip-content-box"
+                            >
+                              短信服务接口地址
+                            </div>
+                          </div>
+                        </label>
+                      </div>
+                      <div
+                        class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control"
+                      >
+                        <div
+                          class="ant-form-item-control-input"
+                        >
+                          <div
+                            class="ant-form-item-control-input-content"
+                          >
+                            <input
+                              aria-required="true"
+                              class="ant-input basic-input-wrapper css-1pd1cd5"
+                              id="url"
+                              placeholder="请输入url"
+                              type="text"
+                              value=""
+                            />
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    class="ant-form-item has-required-style has-label-tip css-1jlm9cy"
+                  >
+                    <div
+                      class="ant-row ant-form-item-row"
+                    >
+                      <div
+                        class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left"
+                      >
+                        <label
+                          class="ant-form-item-required ant-form-item-no-colon"
+                          for="token"
+                          title=""
+                        >
+                          <div
+                            class="label-cont-custom"
+                          >
+                            <div>
+                              token
+                            </div>
+                            <div
+                              class="tip-content-box"
+                            >
+                              接口访问令牌
+                            </div>
+                          </div>
+                        </label>
+                      </div>
+                      <div
+                        class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control"
+                      >
+                        <div
+                          class="ant-form-item-control-input"
+                        >
+                          <div
+                            class="ant-form-item-control-input-content"
+                          >
+                            <span
+                              class="ant-input-affix-wrapper ant-input-password basic-input-wrapper css-1pd1cd5"
+                            >
+                              <input
+                                aria-required="true"
+                                class="ant-input"
+                                id="token"
+                                placeholder="请输入token"
+                                type="password"
+                              />
+                              <span
+                                class="ant-input-suffix"
+                              >
+                                <span
+                                  aria-label="eye-invisible"
+                                  class="anticon anticon-eye-invisible ant-input-password-icon"
+                                  role="img"
+                                  tabindex="-1"
+                                >
+                                  <svg
+                                    aria-hidden="true"
+                                    data-icon="eye-invisible"
+                                    fill="currentColor"
+                                    focusable="false"
+                                    height="1em"
+                                    viewBox="64 64 896 896"
+                                    width="1em"
+                                  >
+                                    <path
+                                      d="M942.2 486.2Q889.47 375.11 816.7 305l-50.88 50.88C807.31 395.53 843.45 447.4 874.7 512 791.5 684.2 673.4 766 512 766q-72.67 0-133.87-22.38L323 798.75Q408 838 512 838q288.3 0 430.2-300.3a60.29 60.29 0 000-51.5zm-63.57-320.64L836 122.88a8 8 0 00-11.32 0L715.31 232.2Q624.86 186 512 186q-288.3 0-430.2 300.3a60.3 60.3 0 000 51.5q56.69 119.4 136.5 191.41L112.48 835a8 8 0 000 11.31L155.17 889a8 8 0 0011.31 0l712.15-712.12a8 8 0 000-11.32zM149.3 512C232.6 339.8 350.7 258 512 258c54.54 0 104.13 9.36 149.12 28.39l-70.3 70.3a176 176 0 00-238.13 238.13l-83.42 83.42C223.1 637.49 183.3 582.28 149.3 512zm246.7 0a112.11 112.11 0 01146.2-106.69L401.31 546.2A112 112 0 01396 512z"
+                                    />
+                                    <path
+                                      d="M508 624c-3.46 0-6.87-.16-10.25-.47l-52.82 52.82a176.09 176.09 0 00227.42-227.42l-52.82 52.82c.31 3.38.47 6.79.47 10.25a111.94 111.94 0 01-112 112z"
+                                    />
+                                  </svg>
+                                </span>
+                              </span>
+                            </span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    class="ant-form-item css-15d6abf"
+                  >
+                    <div
+                      class="ant-row ant-form-item-row"
+                    >
+                      <div
+                        class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left"
+                      >
+                        <label
+                          class="ant-form-item-no-colon"
+                          title=" "
+                        >
+                           
+                        </label>
+                      </div>
+                      <div
+                        class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control"
+                      >
+                        <div
+                          class="ant-form-item-control-input"
+                        >
+                          <div
+                            class="ant-form-item-control-input-content"
+                          >
+                            <div
+                              class="ant-space ant-space-horizontal ant-space-align-center"
+                            >
+                              <div
+                                class="ant-space-item"
+                                style="margin-right: 12px;"
+                              >
+                                <button
+                                  class="ant-btn ant-btn-default basic-button-wrapper css-geipcv"
+                                  type="button"
+                                >
+                                  <span>
+                                    取 消
+                                  </span>
+                                </button>
+                              </div>
+                              <div
+                                class="ant-space-item"
+                              >
+                                <button
+                                  class="ant-btn ant-btn-primary basic-button-wrapper css-geipcv"
+                                  type="submit"
+                                >
+                                  <span>
+                                    提 交
+                                  </span>
+                                </button>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </form>
+              <div
+                class="ant-descriptions system-config-view-wrapper css-cs8tvb"
+              >
+                <div
+                  class="ant-descriptions-view"
+                >
+                  <table>
+                    <tbody>
+                      <tr
+                        class="ant-descriptions-row"
+                      >
+                        <td
+                          class="ant-descriptions-item"
+                          colspan="3"
+                        >
+                          <div
+                            class="ant-descriptions-item-container"
+                          >
+                            <span
+                              class="ant-descriptions-item-label"
+                            >
+                              短信服务类型
+                            </span>
+                            <span
+                              class="ant-descriptions-item-content"
+                            >
+                              <div
+                                class="ant-typography"
+                              >
+                                webhook
+                              </div>
+                            </span>
+                          </div>
+                        </td>
+                      </tr>
+                      <tr
+                        class="ant-descriptions-row"
+                      >
+                        <td
+                          class="ant-descriptions-item"
+                          colspan="3"
+                        >
+                          <div
+                            class="ant-descriptions-item-container"
+                          >
+                            <span
+                              class="ant-descriptions-item-label"
+                            >
+                              url
+                            </span>
+                            <span
+                              class="ant-descriptions-item-content"
+                            >
+                              <div
+                                class="ant-typography"
+                              >
+                                absc1
+                              </div>
+                            </span>
+                          </div>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </section>
+          </div>
+        </div>
+      </div>
+      <div
+        class="ant-spin-nested-loading"
       >
         <div
           class="ant-spin-container"
         >
           <div
-            class="ant-row ant-row-space-between ant-row-middle css-19fu9ar css-dev-only-do-not-override-txh9fw"
+            class="ant-row ant-row-space-between ant-row-middle css-19fu9ar"
           >
             <div
-              class="ant-col ant-col-11 config-item-label css-dev-only-do-not-override-txh9fw"
+              class="ant-col ant-col-11 config-item-label"
             >
               <div
                 class="config-item-label"
@@ -3518,7 +4506,7 @@ exports[`base/System/LoginConnection render snap 2`] = `
               </div>
             </div>
             <div
-              class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center config-item-filed"
+              class="ant-space ant-space-horizontal ant-space-align-center config-item-filed"
             >
               <div
                 class="ant-space-item"
@@ -3530,7 +4518,7 @@ exports[`base/System/LoginConnection render snap 2`] = `
                 class="ant-space-item"
               >
                 <button
-                  class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default ant-btn-icon-only config-item-filed-edit-button basic-button-wrapper css-geipcv"
+                  class="ant-btn ant-btn-default ant-btn-icon-only config-item-filed-edit-button basic-button-wrapper css-geipcv"
                   hidden=""
                   type="button"
                 >
@@ -3554,10 +4542,10 @@ exports[`base/System/LoginConnection render snap 2`] = `
             </div>
           </div>
           <div
-            class="ant-row ant-row-space-between ant-row-middle css-19fu9ar css-dev-only-do-not-override-txh9fw"
+            class="ant-row ant-row-space-between ant-row-middle css-19fu9ar"
           >
             <div
-              class="ant-col ant-col-11 config-item-label css-dev-only-do-not-override-txh9fw"
+              class="ant-col ant-col-11 config-item-label"
             >
               <div
                 class="config-item-label"
@@ -3575,20 +4563,20 @@ exports[`base/System/LoginConnection render snap 2`] = `
               </div>
             </div>
             <div
-              class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center config-item-filed"
+              class="ant-space ant-space-horizontal ant-space-align-center config-item-filed"
             >
               <div
                 class="ant-space-item"
               >
                 <div
-                  class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
+                  class="ant-space ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
                 >
                   <div
                     class="ant-space-item"
                   >
                     <button
                       aria-checked="false"
-                      class="ant-switch basic-switch-wrapper css-g6dhbn css-dev-only-do-not-override-txh9fw ant-switch-disabled"
+                      class="ant-switch basic-switch-wrapper css-g6dhbn ant-switch-disabled"
                       data-testid="password-disabled-login-switch-disabled-mode"
                       disabled=""
                       role="switch"

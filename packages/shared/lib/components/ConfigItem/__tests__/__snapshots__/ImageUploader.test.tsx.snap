@@ -1,45 +1,10 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`lib/ConfigItem-ImageUploader render loading is false 1`] = `
-<body>
-  <div>
-    <span
-      class="ant-upload-wrapper css-dev-only-do-not-override-txh9fw ant-upload-picture-card-wrapper"
-    >
-      <div
-        class="ant-upload ant-upload-select"
-      >
-        <span
-          class="ant-upload"
-          role="button"
-          tabindex="0"
-        >
-          <input
-            accept="image/*"
-            data-testid="upload-logo"
-            style="display: none;"
-            type="file"
-          />
-          <div
-            class="upload-content-wrapper"
-          >
-            <img
-              alt="logo"
-              src="http://mock.com?temp=1612148800"
-            />
-          </div>
-        </span>
-      </div>
-    </span>
-  </div>
-</body>
-`;
-
 exports[`lib/ConfigItem-ImageUploader render loading is true 1`] = `
 <body>
   <div>
     <span
-      class="ant-upload-wrapper css-dev-only-do-not-override-txh9fw ant-upload-picture-card-wrapper"
+      class="ant-upload-wrapper ant-upload-picture-card-wrapper"
     >
       <div
         class="ant-upload ant-upload-select ant-upload-disabled"
@@ -50,7 +15,7 @@ exports[`lib/ConfigItem-ImageUploader render loading is true 1`] = `
         >
           <input
             accept="image/*"
-            data-testid="upload-logo"
+            disabled=""
             style="display: none;"
             type="file"
           />
@@ -84,7 +49,7 @@ exports[`lib/ConfigItem-ImageUploader render mask ui 1`] = `
 <body>
   <div>
     <span
-      class="ant-upload-wrapper css-dev-only-do-not-override-txh9fw ant-upload-picture-card-wrapper"
+      class="ant-upload-wrapper ant-upload-picture-card-wrapper"
     >
       <div
         class="ant-upload ant-upload-select"
@@ -96,7 +61,6 @@ exports[`lib/ConfigItem-ImageUploader render mask ui 1`] = `
         >
           <input
             accept="image/*"
-            data-testid="upload-logo"
             style="display: none;"
             type="file"
           />
@@ -111,7 +75,7 @@ exports[`lib/ConfigItem-ImageUploader render mask ui 1`] = `
               class="mask"
             >
               <div
-                class="ant-space css-dev-only-do-not-override-txh9fw ant-space-vertical ant-space-align-center"
+                class="ant-space ant-space-vertical ant-space-align-center"
               >
                 <div
                   class="ant-space-item"
@@ -144,41 +108,6 @@ exports[`lib/ConfigItem-ImageUploader render mask ui 1`] = `
                 </div>
               </div>
             </div>
-          </div>
-        </span>
-      </div>
-    </span>
-  </div>
-</body>
-`;
-
-exports[`lib/ConfigItem-ImageUploader render mask ui 2`] = `
-<body>
-  <div>
-    <span
-      class="ant-upload-wrapper css-dev-only-do-not-override-txh9fw ant-upload-picture-card-wrapper"
-    >
-      <div
-        class="ant-upload ant-upload-select"
-      >
-        <span
-          class="ant-upload"
-          role="button"
-          tabindex="0"
-        >
-          <input
-            accept="image/*"
-            data-testid="upload-logo"
-            style="display: none;"
-            type="file"
-          />
-          <div
-            class="upload-content-wrapper"
-          >
-            <img
-              alt="logo"
-              src="http://mock.com?temp=1612148800"
-            />
           </div>
         </span>
       </div>

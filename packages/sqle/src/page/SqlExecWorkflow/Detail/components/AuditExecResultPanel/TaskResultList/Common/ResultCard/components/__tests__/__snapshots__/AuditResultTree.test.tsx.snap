@@ -4,7 +4,7 @@ exports[`sqle/ExecWorkflow/AuditDetail/AuditResultTree render tree snap when rul
 <body>
   <div>
     <div
-      class="ant-tree ant-tree-icon-hide ant-tree-unselectable css-ks72ok css-dev-only-do-not-override-txh9fw ant-tree-show-line"
+      class="ant-tree ant-tree-icon-hide ant-tree-unselectable css-ks72ok ant-tree-show-line"
       role="tree"
     >
       <div>
@@ -96,7 +96,7 @@ exports[`sqle/ExecWorkflow/AuditDetail/AuditResultTree render tree snap when rul
 <body>
   <div>
     <div
-      class="ant-tree ant-tree-icon-hide ant-tree-unselectable css-ks72ok css-dev-only-do-not-override-txh9fw ant-tree-show-line"
+      class="ant-tree ant-tree-icon-hide ant-tree-unselectable css-ks72ok ant-tree-show-line"
       role="tree"
     >
       <div>
@@ -226,7 +226,7 @@ exports[`sqle/ExecWorkflow/AuditDetail/AuditResultTree render tree snap when rul
 <body>
   <div>
     <div
-      class="ant-tree ant-tree-icon-hide ant-tree-unselectable css-ks72ok css-dev-only-do-not-override-txh9fw ant-tree-show-line"
+      class="ant-tree ant-tree-icon-hide ant-tree-unselectable css-ks72ok ant-tree-show-line"
       role="tree"
     >
       <div>
@@ -333,7 +333,7 @@ exports[`sqle/ExecWorkflow/AuditDetail/AuditResultTree render tree snap when rul
                     class="ant-tree-title"
                   >
                     <div
-                      class=" css-1v03opz"
+                      class="css-1v03opz"
                     >
                       <div
                         class="css-1avyf41"
@@ -363,7 +363,7 @@ exports[`sqle/ExecWorkflow/AuditDetail/AuditResultTree render tree snap when rul
                         class="annotation-wrapper"
                       >
                         <a
-                          class="ant-typography css-dev-only-do-not-override-txh9fw"
+                          class="ant-typography"
                           href="/sqle/rule/knowledge/ddl_check_column_without_default/MySQL"
                           rel="noopener noreferrer"
                           target="_blank"
@@ -403,7 +403,7 @@ exports[`sqle/ExecWorkflow/AuditDetail/AuditResultTree render tree snap when rul
                     class="ant-tree-title"
                   >
                     <div
-                      class=" css-1v03opz"
+                      class="css-1v03opz"
                     >
                       <div
                         class="css-1avyf41"
@@ -433,7 +433,7 @@ exports[`sqle/ExecWorkflow/AuditDetail/AuditResultTree render tree snap when rul
                         class="annotation-wrapper"
                       >
                         <a
-                          class="ant-typography css-dev-only-do-not-override-txh9fw"
+                          class="ant-typography"
                           href="/sqle/rule/knowledge/ddl_check_pk_without_bigint_unsigned/MySQL"
                           rel="noopener noreferrer"
                           target="_blank"
@@ -473,7 +473,7 @@ exports[`sqle/ExecWorkflow/AuditDetail/AuditResultTree render tree snap when rul
                     class="ant-tree-title"
                   >
                     <div
-                      class=" css-1v03opz"
+                      class="css-1v03opz"
                     >
                       <div
                         class="css-1avyf41"
@@ -503,7 +503,7 @@ exports[`sqle/ExecWorkflow/AuditDetail/AuditResultTree render tree snap when rul
                         class="annotation-wrapper"
                       >
                         <a
-                          class="ant-typography css-dev-only-do-not-override-txh9fw"
+                          class="ant-typography"
                           href="/sqle/rule/knowledge/ddl_check_table_without_if_not_exists/MySQL"
                           rel="noopener noreferrer"
                           target="_blank"
@@ -528,7 +528,7 @@ exports[`sqle/ExecWorkflow/AuditDetail/AuditResultTree render tree snap when rul
 <body>
   <div>
     <div
-      class="ant-tree ant-tree-icon-hide ant-tree-unselectable css-ks72ok css-dev-only-do-not-override-txh9fw ant-tree-show-line"
+      class="ant-tree ant-tree-icon-hide ant-tree-unselectable css-ks72ok ant-tree-show-line"
       role="tree"
     >
       <div>
@@ -620,7 +620,7 @@ exports[`sqle/ExecWorkflow/AuditDetail/AuditResultTree render tree snap when rul
 <body>
   <div>
     <div
-      class="ant-tree ant-tree-icon-hide ant-tree-unselectable css-ks72ok css-dev-only-do-not-override-txh9fw ant-tree-show-line"
+      class="ant-tree ant-tree-icon-hide ant-tree-unselectable css-ks72ok ant-tree-show-line"
       role="tree"
     >
       <div>
@@ -727,7 +727,7 @@ exports[`sqle/ExecWorkflow/AuditDetail/AuditResultTree render tree snap when rul
                     class="ant-tree-title"
                   >
                     <div
-                      class=" css-1v03opz"
+                      class="css-1v03opz"
                     >
                       <div
                         class="css-1avyf41"
@@ -770,7 +770,7 @@ exports[`sqle/ExecWorkflow/AuditDetail/AuditResultTree render tree snap when rul
 <body>
   <div>
     <div
-      class="ant-tree ant-tree-icon-hide ant-tree-unselectable css-ks72ok css-dev-only-do-not-override-txh9fw ant-tree-show-line"
+      class="ant-tree ant-tree-icon-hide ant-tree-unselectable css-ks72ok ant-tree-show-line"
       role="tree"
     >
       <div>
@@ -877,7 +877,7 @@ exports[`sqle/ExecWorkflow/AuditDetail/AuditResultTree render tree snap when rul
                     class="ant-tree-title"
                   >
                     <div
-                      class=" css-1v03opz"
+                      class="css-1v03opz"
                     >
                       <div
                         class="css-1avyf41"
@@ -920,7 +920,7 @@ exports[`sqle/ExecWorkflow/AuditDetail/AuditResultTree render tree snap with rul
 <body>
   <div>
     <div
-      class="ant-tree ant-tree-icon-hide ant-tree-unselectable css-ks72ok css-dev-only-do-not-override-txh9fw ant-tree-show-line"
+      class="ant-tree ant-tree-icon-hide ant-tree-unselectable css-ks72ok ant-tree-show-line"
       role="tree"
     >
       <div>
@@ -1012,7 +1012,7 @@ exports[`sqle/ExecWorkflow/AuditDetail/AuditResultTree render tree snap with rul
 <body>
   <div>
     <div
-      class="ant-tree ant-tree-icon-hide ant-tree-unselectable css-ks72ok css-dev-only-do-not-override-txh9fw ant-tree-show-line"
+      class="ant-tree ant-tree-icon-hide ant-tree-unselectable css-ks72ok ant-tree-show-line"
       role="tree"
     >
       <div>
@@ -1142,7 +1142,7 @@ exports[`sqle/ExecWorkflow/AuditDetail/AuditResultTree render tree snap with rul
 <body>
   <div>
     <div
-      class="ant-tree ant-tree-icon-hide ant-tree-unselectable css-ks72ok css-dev-only-do-not-override-txh9fw ant-tree-show-line"
+      class="ant-tree ant-tree-icon-hide ant-tree-unselectable css-ks72ok ant-tree-show-line"
       role="tree"
     >
       <div>
@@ -1249,7 +1249,7 @@ exports[`sqle/ExecWorkflow/AuditDetail/AuditResultTree render tree snap with rul
                     class="ant-tree-title"
                   >
                     <div
-                      class=" css-1v03opz"
+                      class="css-1v03opz"
                     >
                       <div
                         class="css-1avyf41"
@@ -1307,7 +1307,7 @@ exports[`sqle/ExecWorkflow/AuditDetail/AuditResultTree render tree snap with rul
                     class="ant-tree-title"
                   >
                     <div
-                      class=" css-1v03opz"
+                      class="css-1v03opz"
                     >
                       <div
                         class="css-1avyf41"
@@ -1337,7 +1337,7 @@ exports[`sqle/ExecWorkflow/AuditDetail/AuditResultTree render tree snap with rul
                         class="annotation-wrapper"
                       >
                         <a
-                          class="ant-typography css-dev-only-do-not-override-txh9fw"
+                          class="ant-typography"
                           href="/sqle/rule/knowledge/ddl_check_pk_without_bigint_unsigned/MySQL"
                           rel="noopener noreferrer"
                           target="_blank"
@@ -1377,7 +1377,7 @@ exports[`sqle/ExecWorkflow/AuditDetail/AuditResultTree render tree snap with rul
                     class="ant-tree-title"
                   >
                     <div
-                      class=" css-1v03opz"
+                      class="css-1v03opz"
                     >
                       <div
                         class="css-1avyf41"
@@ -1407,7 +1407,7 @@ exports[`sqle/ExecWorkflow/AuditDetail/AuditResultTree render tree snap with rul
                         class="annotation-wrapper"
                       >
                         <a
-                          class="ant-typography css-dev-only-do-not-override-txh9fw"
+                          class="ant-typography"
                           href="/sqle/rule/knowledge/ddl_check_table_without_if_not_exists/MySQL"
                           rel="noopener noreferrer"
                           target="_blank"
@@ -1432,7 +1432,7 @@ exports[`sqle/ExecWorkflow/AuditDetail/AuditResultTree render tree when auditRes
 <body>
   <div>
     <div
-      class="ant-tree ant-tree-icon-hide ant-tree-unselectable css-ks72ok css-dev-only-do-not-override-txh9fw ant-tree-show-line"
+      class="ant-tree ant-tree-icon-hide ant-tree-unselectable css-ks72ok ant-tree-show-line"
       role="tree"
     >
       <div>

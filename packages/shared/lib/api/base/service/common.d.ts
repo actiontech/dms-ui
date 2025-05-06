@@ -5,11 +5,14 @@ import {
   GetUserAuthenticationTypeEnum,
   GetUserStatEnum,
   ListDBServiceLastConnectionTestStatusEnum,
+  ListDBServiceV2LastConnectionTestStatusEnum,
   ListDataExportWorkflowStatusEnum,
   ListGlobalDBServiceLastConnectionTestStatusEnum,
+  ListGlobalDBServiceV2LastConnectionTestStatusEnum,
   ListMemberRoleWithOpRangeOpRangeTypeEnum,
   ListOpPermissionRangeTypeEnum,
-  ListProjectProjectPriorityEnum,
+  ListProjectV1ProjectPriorityEnum,
+  ListProjectV2ProjectPriorityEnum,
   ListRoleStatEnum,
   ListUserAuthenticationTypeEnum,
   ListUserStatEnum,
@@ -18,10 +21,12 @@ import {
   OpPermissionItemOpPermissionTypeEnum,
   OpPermissionItemRangeTypeEnum,
   OperationOperationTypeEnum,
-  ProjectProjectPriorityEnum,
+  ProjectV1ProjectPriorityEnum,
+  ProjectV2ProjectPriorityEnum,
   SQLQueryConfigAllowQueryWhenLessThanAuditLevelEnum,
   TestFeishuConfigurationAccountTypeEnum,
   UpdateProjectProjectPriorityEnum,
+  UpdateProjectV2ProjectPriorityEnum,
   WorkflowRecordStatusEnum,
   WorkflowStepStateEnum
 } from './common.enum';
@@ -46,6 +51,10 @@ export interface IAddDBServiceReply {
 
 export interface IAddDBServiceReq {
   db_service?: IDBService;
+}
+
+export interface IAddDBServiceReqV2 {
+  db_service?: IDBServiceV2;
 }
 
 export interface IAddDBServiceSyncTaskReply {
@@ -128,8 +137,22 @@ export interface IAddProjectReply {
   message?: string;
 }
 
+export interface IAddProjectReplyV2 {
+  code?: number;
+
+  data?: {
+    uid?: string;
+  };
+
+  message?: string;
+}
+
 export interface IAddProjectReq {
-  project?: IProject;
+  project?: IProjectV1;
+}
+
+export interface IAddProjectReqV2 {
+  project?: IProjectV2;
 }
 
 export interface IAddRoleReply {
@@ -290,6 +313,18 @@ export interface IBusinessForUpdate {
   name?: string;
 }
 
+export interface IBusinessTag {
+  name?: string;
+
+  uid?: string;
+}
+
+export interface IBusinessTagCommon {
+  name?: string;
+
+  uid?: string;
+}
+
 export interface ICBOperationLog {
   audit_result?: IAuditSQLResult[];
 
@@ -416,6 +451,14 @@ export interface IComponentNameWithVersion {
   version?: string;
 }
 
+export interface ICreateBusinessTagReq {
+  business_tag?: IBusinessTag;
+}
+
+export interface ICreateEnvironmentTagReq {
+  environment_name?: string;
+}
+
 export interface IDBService {
   additional_params?: IAdditionalParam[];
 
@@ -484,6 +527,36 @@ export interface IDBServiceSyncTaskTip {
   params?: IParams;
 
   service_source_name?: string;
+}
+
+export interface IDBServiceV2 {
+  additional_params?: IAdditionalParam[];
+
+  backup_max_rows?: number;
+
+  db_type: string;
+
+  desc?: string;
+
+  enable_backup?: boolean;
+
+  environment_tag_uid: string;
+
+  host: string;
+
+  is_enable_masking?: boolean;
+
+  maintenance_times: IMaintenanceTime[];
+
+  name: string;
+
+  password: string;
+
+  port: string;
+
+  sqle_config?: ISQLEConfig;
+
+  user: string;
 }
 
 export interface IDBServicesConnectionItem {
@@ -572,6 +645,12 @@ export interface IDelSessionReply {
   };
 
   message?: string;
+}
+
+export interface IEnvironmentTag {
+  name?: string;
+
+  uid?: string;
 }
 
 export interface IFeishuConfigurationResData {
@@ -994,6 +1073,36 @@ export interface IImportDBService {
   user?: string;
 }
 
+export interface IImportDBServiceV2 {
+  additional_params?: IAdditionalParam[];
+
+  db_type?: string;
+
+  desc?: string;
+
+  environment_tag_name: string;
+
+  host?: string;
+
+  is_enable_masking?: boolean;
+
+  maintenance_times?: IMaintenanceTime[];
+
+  name?: string;
+
+  password?: string;
+
+  port?: string;
+
+  project_uid?: string;
+
+  source?: string;
+
+  sqle_config?: ISQLEConfig;
+
+  user?: string;
+}
+
 export interface IImportDBServicesCheckReply {
   code?: number;
 
@@ -1002,12 +1111,28 @@ export interface IImportDBServicesCheckReply {
   message?: string;
 }
 
+export interface IImportDBServicesCheckReplyV2 {
+  code?: number;
+
+  data?: IImportDBServiceV2[];
+
+  message?: string;
+}
+
 export interface IImportDBServicesOfOneProjectReq {
   db_services?: IImportDBService[];
 }
 
+export interface IImportDBServicesOfOneProjectReqV2 {
+  db_services?: IImportDBServiceV2[];
+}
+
 export interface IImportDBServicesOfProjectsReq {
   db_services?: IImportDBService[];
+}
+
+export interface IImportDBServicesOfProjectsReqV2 {
+  db_services?: IImportDBServiceV2[];
 }
 
 export interface IImportProjects {
@@ -1020,6 +1145,18 @@ export interface IImportProjects {
 
 export interface IImportProjectsReq {
   projects?: IImportProjects[];
+}
+
+export interface IImportProjectsReqV2 {
+  projects?: IImportProjectsV2[];
+}
+
+export interface IImportProjectsV2 {
+  business_tag?: IBusinessTag;
+
+  desc?: string;
+
+  name?: string;
 }
 
 export interface ILDAPConfiguration {
@@ -1084,6 +1221,16 @@ export interface ILicenseUsageItem {
   resource_type_desc?: string;
 
   used?: number;
+}
+
+export interface IListBusinessTagsReply {
+  code?: number;
+
+  data?: IBusinessTag[];
+
+  message?: string;
+
+  total_nums?: number;
 }
 
 export interface IListCBOperationLogsReply {
@@ -1168,6 +1315,16 @@ export interface IListDBServiceReply {
   total_nums?: number;
 }
 
+export interface IListDBServiceReplyV2 {
+  code?: number;
+
+  data?: IListDBServiceV2[];
+
+  message?: string;
+
+  total_nums?: number;
+}
+
 export interface IListDBServiceSyncTask {
   additional_params?: IParams;
 
@@ -1226,6 +1383,52 @@ export interface IListDBServiceTipsReply {
   message?: string;
 }
 
+export interface IListDBServiceV2 {
+  additional_params?: IAdditionalParam[];
+
+  audit_plan_types?: IAuditPlanTypes[];
+
+  backup_max_rows?: number;
+
+  db_type?: string;
+
+  desc?: string;
+
+  enable_backup?: boolean;
+
+  environment_tag?: IEnvironmentTag;
+
+  host?: string;
+
+  instance_audit_plan_id?: number;
+
+  is_enable_masking?: boolean;
+
+  last_connection_test_error_message?: string;
+
+  last_connection_test_status?: ListDBServiceV2LastConnectionTestStatusEnum;
+
+  last_connection_test_time?: string;
+
+  maintenance_times?: IMaintenanceTime[];
+
+  name?: string;
+
+  password?: string;
+
+  port?: string;
+
+  project_uid?: string;
+
+  source?: string;
+
+  sqle_config?: ISQLEConfig;
+
+  uid?: string;
+
+  user?: string;
+}
+
 export interface IListDataExportTaskSQL {
   audit_level?: string;
 
@@ -1282,6 +1485,16 @@ export interface IListDataExportWorkflowsReply {
   total_nums?: number;
 }
 
+export interface IListEnvironmentTagsReply {
+  code?: number;
+
+  data?: IEnvironmentTag[];
+
+  message?: string;
+
+  total_nums?: number;
+}
+
 export interface IListGlobalDBService {
   backup_max_rows?: number;
 
@@ -1326,10 +1539,60 @@ export interface IListGlobalDBServiceTips {
   db_type?: string[];
 }
 
+export interface IListGlobalDBServiceV2 {
+  backup_max_rows?: number;
+
+  db_type?: string;
+
+  desc?: string;
+
+  enable_backup?: boolean;
+
+  environment_tag: IEnvironmentTag;
+
+  host?: string;
+
+  is_enable_audit?: boolean;
+
+  is_enable_masking?: boolean;
+
+  last_connection_test_error_message?: string;
+
+  last_connection_test_status?: ListGlobalDBServiceV2LastConnectionTestStatusEnum;
+
+  last_connection_test_time?: string;
+
+  maintenance_times?: IMaintenanceTime[];
+
+  name?: string;
+
+  port?: string;
+
+  project_name?: string;
+
+  project_uid?: string;
+
+  source?: string;
+
+  uid?: string;
+
+  unfinished_workflow_num?: number;
+}
+
 export interface IListGlobalDBServicesReply {
   code?: number;
 
   data?: IListGlobalDBService[];
+
+  message?: string;
+
+  total_nums?: number;
+}
+
+export interface IListGlobalDBServicesReplyV2 {
+  code?: number;
+
+  data?: IListGlobalDBServiceV2[];
 
   message?: string;
 
@@ -1464,7 +1727,27 @@ export interface IListOpPermissionReply {
   total_nums?: number;
 }
 
-export interface IListProject {
+export interface IListProjectReply {
+  code?: number;
+
+  data?: IListProjectV1[];
+
+  message?: string;
+
+  total_nums?: number;
+}
+
+export interface IListProjectReplyV2 {
+  code?: number;
+
+  data?: IListProjectV2[];
+
+  message?: string;
+
+  total_nums?: number;
+}
+
+export interface IListProjectV1 {
   archived?: boolean;
 
   business?: IBusiness[];
@@ -1479,19 +1762,27 @@ export interface IListProject {
 
   name?: string;
 
-  project_priority?: ListProjectProjectPriorityEnum;
+  project_priority?: ListProjectV1ProjectPriorityEnum;
 
   uid?: string;
 }
 
-export interface IListProjectReply {
-  code?: number;
+export interface IListProjectV2 {
+  archived?: boolean;
 
-  data?: IListProject[];
+  business_tag?: IBusinessTagCommon;
 
-  message?: string;
+  create_time?: string;
 
-  total_nums?: number;
+  create_user?: IUidWithName;
+
+  desc?: string;
+
+  name?: string;
+
+  project_priority?: ListProjectV2ProjectPriorityEnum;
+
+  uid?: string;
 }
 
 export interface IListRole {
@@ -1740,7 +2031,29 @@ export interface IPreviewImportProjectsReply {
   message?: string;
 }
 
-export interface IProject {
+export interface IPreviewImportProjectsReplyV2 {
+  code?: number;
+
+  data?: IPreviewImportProjectsV2[];
+
+  message?: string;
+}
+
+export interface IPreviewImportProjectsV2 {
+  business_tag?: IBusinessTag;
+
+  desc?: string;
+
+  name?: string;
+}
+
+export interface IProjectTips {
+  business?: string[];
+
+  is_fixed_business?: boolean;
+}
+
+export interface IProjectV1 {
   business?: string[];
 
   desc?: string;
@@ -1749,13 +2062,17 @@ export interface IProject {
 
   name?: string;
 
-  project_priority?: ProjectProjectPriorityEnum;
+  project_priority?: ProjectV1ProjectPriorityEnum;
 }
 
-export interface IProjectTips {
-  business?: string[];
+export interface IProjectV2 {
+  business_tag?: IBusinessTag;
 
-  is_fixed_business?: boolean;
+  desc?: string;
+
+  name?: string;
+
+  project_priority?: ProjectV2ProjectPriorityEnum;
 }
 
 export interface IRegisterDMSPluginReply {
@@ -1784,6 +2101,96 @@ export interface IRejectDataExportWorkflowPayload {
 
 export interface IRejectDataExportWorkflowReq {
   payload?: IRejectDataExportWorkflowPayload;
+}
+
+export interface IResourceBusiness {
+  business_tag?: IBusinessTag;
+
+  project?: IResourceProject[];
+}
+
+export interface IResourceDBService {
+  db_service_name?: string;
+
+  db_service_uid?: string;
+}
+
+export interface IResourceListData {
+  audit_score?: number;
+
+  business_tag?: IBusinessTag;
+
+  environment_tag?: IEnvironmentTag;
+
+  high_priority_sql_count?: number;
+
+  pending_workflow_count?: number;
+
+  project?: IResourceProject;
+
+  resource_name?: string;
+
+  resource_type?: string;
+
+  resource_uid?: string;
+}
+
+export interface IResourceOverviewResourceListResV1 {
+  code?: number;
+
+  data?: IResourceListData[];
+
+  message?: string;
+
+  total_nums?: number;
+}
+
+export interface IResourceOverviewResourceTypeDistributionResV1 {
+  code?: number;
+
+  data?: IResourceTypeDistributionData[];
+
+  message?: string;
+
+  total_nums?: number;
+}
+
+export interface IResourceOverviewStatisticsResV1 {
+  code?: number;
+
+  data?: {
+    business_total_number?: number;
+
+    db_service_total_number?: number;
+
+    project_total_number?: number;
+  };
+
+  message?: string;
+}
+
+export interface IResourceOverviewTopologyResV1 {
+  code?: number;
+
+  data?: IResourceBusiness[];
+
+  message?: string;
+
+  total_nums?: number;
+}
+
+export interface IResourceProject {
+  db_service?: IResourceDBService[];
+
+  project_name?: string;
+
+  project_uid?: string;
+}
+
+export interface IResourceTypeDistributionData {
+  count?: number;
+
+  resource_type?: string;
 }
 
 export interface IRole {
@@ -1978,6 +2385,10 @@ export interface IUidWithName {
   uid?: string;
 }
 
+export interface IUpdateBusinessTagReq {
+  business_tag?: IBusinessTag;
+}
+
 export interface IUpdateCompanyNotice {
   notice_str?: string;
 }
@@ -2048,8 +2459,44 @@ export interface IUpdateDBServiceReq {
   db_service?: IUpdateDBService;
 }
 
+export interface IUpdateDBServiceReqV2 {
+  db_service?: IUpdateDBServiceV2;
+}
+
 export interface IUpdateDBServiceSyncTaskReq {
   db_service_sync_task?: IDBServiceSyncTask;
+}
+
+export interface IUpdateDBServiceV2 {
+  additional_params?: IAdditionalParam[];
+
+  backup_max_rows?: number;
+
+  db_type: string;
+
+  desc?: string;
+
+  enable_backup?: boolean;
+
+  environment_tag_uid: string;
+
+  host: string;
+
+  is_enable_masking?: boolean;
+
+  maintenance_times: IMaintenanceTime[];
+
+  password?: string;
+
+  port: string;
+
+  sqle_config?: ISQLEConfig;
+
+  user: string;
+}
+
+export interface IUpdateEnvironmentTagReq {
+  environment_name?: string;
 }
 
 export interface IUpdateFeishuConfiguration {
@@ -2106,6 +2553,18 @@ export interface IUpdateProject {
 
 export interface IUpdateProjectReq {
   project?: IUpdateProject;
+}
+
+export interface IUpdateProjectReqV2 {
+  project?: IUpdateProjectV2;
+}
+
+export interface IUpdateProjectV2 {
+  business_tag?: IBusinessTag;
+
+  desc?: string;
+
+  project_priority?: UpdateProjectV2ProjectPriorityEnum;
 }
 
 export interface IUpdateRole {

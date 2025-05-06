@@ -16,6 +16,10 @@ import { ModalName } from 'sqle/src/data/ModalName';
 import { useDispatch, useSelector } from 'react-redux';
 import { mockUseCurrentProject } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentProject';
 import { mockUseCurrentUser } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentUser';
+import {
+  UtilsConsoleErrorStringsEnum,
+  ignoreConsoleErrors
+} from '@actiontech/shared/lib/testUtil/common';
 
 jest.mock('react-redux', () => {
   return {
@@ -54,6 +58,8 @@ describe('test DataExport/Common/AuditResultList', () => {
     jest.clearAllMocks();
     jest.clearAllTimers();
   });
+
+  ignoreConsoleErrors([UtilsConsoleErrorStringsEnum.UNKNOWN_EVENT_HANDLER]);
 
   it('should match snapshot', async () => {
     const { baseElement } = superRender(

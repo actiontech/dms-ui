@@ -7,7 +7,7 @@ exports[`page/SqlManagement/SQLStatistics render statics data 1`] = `
       class="css-wl13ms"
     >
       <div
-        class="ant-card ant-card-bordered card-wrapper css-dev-only-do-not-override-txh9fw"
+        class="ant-card ant-card-bordered card-wrapper"
       >
         <div
           class="ant-card-body"
@@ -70,7 +70,7 @@ exports[`page/SqlManagement/SQLStatistics render when has error message 1`] = `
       class="css-wl13ms"
     >
       <div
-        class="ant-card ant-card-bordered card-wrapper css-dev-only-do-not-override-txh9fw"
+        class="ant-card ant-card-bordered card-wrapper"
       >
         <div
           class="ant-card-body"
@@ -133,7 +133,7 @@ exports[`page/SqlManagement/SQLStatistics render when still loading 1`] = `
       class="css-wl13ms"
     >
       <div
-        class="ant-card ant-card-bordered card-wrapper css-dev-only-do-not-override-txh9fw"
+        class="ant-card ant-card-bordered card-wrapper"
       >
         <div
           class="ant-card-body"

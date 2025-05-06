@@ -1,13 +1,14 @@
-import { renderWithTheme } from '../../testUtil/customRender';
+import { screen } from '@testing-library/react';
+import { superRender } from '../../testUtil/customRender';
 import BasicTable from './BasicTable';
 import { BasicTableProps } from './BasicTable.types';
 
 describe('lib/BasicTable', () => {
   const customRender = (params: BasicTableProps) => {
-    return renderWithTheme(<BasicTable {...params} />);
+    return superRender(<BasicTable {...params} />);
   };
 
-  it('render error for table', () => {
+  it('should render error message when errorMessage is provided', () => {
     const { container } = customRender({
       loading: false,
       errorMessage: '表格错误信息'
@@ -15,14 +16,14 @@ describe('lib/BasicTable', () => {
     expect(container).toMatchSnapshot();
   });
 
-  it('render no pagination for table', () => {
+  it('should render table without pagination', () => {
     const { container } = customRender({
       pagination: false
     });
-    expect(container).toMatchSnapshot();
+    expect(container.querySelector('.ant-pagination')).not.toBeInTheDocument();
   });
 
-  it('render custom pagination for table', () => {
+  it('should render table with custom pagination', () => {
     const { container } = customRender({
       rowKey: 'demo',
       columns: [
@@ -36,13 +37,18 @@ describe('lib/BasicTable', () => {
         }
       ],
       pagination: {
-        total: 1
+        total: 100,
+        current: 1,
+        pageSize: 20
       }
     });
-    expect(container).toMatchSnapshot();
+    expect(screen.getByText('共 100 条数据')).toBeInTheDocument();
+    expect(
+      container.querySelector('.actiontech-table-pagination')
+    ).toBeInTheDocument();
   });
 
-  it('render fixed pagination for table', () => {
+  it('should render table with fixed pagination', () => {
     const { container } = customRender({
       rowKey: 'demo',
       columns: [
@@ -60,6 +66,15 @@ describe('lib/BasicTable', () => {
       },
       isPaginationFixed: true
     });
-    expect(container).toMatchSnapshot();
+    expect(
+      container.querySelector('.actiontech-table-pagination-fixed')
+    ).toBeInTheDocument();
+  });
+
+  it('should render table with custom className', () => {
+    const { container } = customRender({
+      className: 'custom-table-class'
+    });
+    expect(container.querySelector('.custom-table-class')).toBeInTheDocument();
   });
 });
