@@ -13,7 +13,7 @@ import dmsMenu from './dmsMenu';
 import dmsAccount from './dmsAccount';
 import dmsDataExport from './dmsDataExport';
 import dmsGlobalDataSource from './dmsGlobalDataSource';
-
+import resourceOverview from './resourceOverview';
 // eslint-disable-next-line import/no-anonymous-default-export
 export default {
   translation: {
@@ -30,6 +30,7 @@ export default {
     dmsMenu,
     dmsAccount,
     dmsDataExport,
-    dmsGlobalDataSource
+    dmsGlobalDataSource,
+    resourceOverview
   }
 };

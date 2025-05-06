@@ -1,4 +1,5 @@
 import project from '../../../testUtils/mockApi/project';
+import { mockPreviewImportProjects } from '../../../testUtils/mockApi/project/data';
 import { superRender } from '../../../testUtils/customRender';
 import ProjectImport from '.';
 import { act, cleanup, fireEvent, screen } from '@testing-library/react';
@@ -150,25 +151,7 @@ describe('base/Project/Import', () => {
     await act(async () => jest.advanceTimersByTime(3000));
     expect(importProjectsSpy).toHaveBeenCalledTimes(1);
     expect(importProjectsSpy).toHaveBeenCalledWith({
-      projects: [
-        {
-          name: 'project1',
-          business: ['business1', 'business2', 'business3'],
-          desc: 'desc1'
-        },
-        {
-          name: 'project2',
-          business: ['business1'],
-          desc: ''
-        },
-        {
-          name: 'project3',
-          business: []
-        },
-        {
-          name: ''
-        }
-      ]
+      projects: mockPreviewImportProjects
     });
     expect(screen.getByText('导入项目及业务成功')).toBeInTheDocument();
     expect(baseElement).toMatchSnapshot();

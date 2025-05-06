@@ -16,7 +16,7 @@ exports[`base/Project/Import render delete file 1`] = `
             href="/project"
           >
             <button
-              class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default basic-button-wrapper css-geipcv"
+              class="ant-btn ant-btn-default basic-button-wrapper css-geipcv"
               type="button"
             >
               <span
@@ -44,7 +44,7 @@ exports[`base/Project/Import render delete file 1`] = `
           class="extra"
         >
           <button
-            class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary basic-button-wrapper css-geipcv"
+            class="ant-btn ant-btn-primary basic-button-wrapper css-geipcv"
             type="button"
           >
             <span>
@@ -57,10 +57,10 @@ exports[`base/Project/Import render delete file 1`] = `
         class="fix-header-padding css-bspaai"
       >
         <form
-          class="ant-form ant-form-horizontal css-dev-only-do-not-override-txh9fw hasTopHeader css-19jfn7e"
+          class="ant-form ant-form-horizontal hasTopHeader css-19jfn7e"
         >
           <h3
-            class="ant-typography css-p50odb css-dev-only-do-not-override-txh9fw"
+            class="ant-typography css-p50odb"
           >
             <span
               class="anticon title-icon"
@@ -91,13 +91,13 @@ exports[`base/Project/Import render delete file 1`] = `
             </span>
           </h3>
           <div
-            class="ant-form-item has-required-style css-1jlm9cy css-dev-only-do-not-override-txh9fw ant-form-item-has-success"
+            class="ant-form-item has-required-style css-1jlm9cy ant-form-item-has-success"
           >
             <div
-              class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+              class="ant-row ant-form-item-row"
             >
               <div
-                class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left css-dev-only-do-not-override-txh9fw"
+                class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left"
               >
                 <label
                   class="ant-form-item-required ant-form-item-no-colon"
@@ -108,7 +108,7 @@ exports[`base/Project/Import render delete file 1`] = `
                 </label>
               </div>
               <div
-                class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control"
               >
                 <div
                   class="ant-form-item-control-input"
@@ -120,7 +120,7 @@ exports[`base/Project/Import render delete file 1`] = `
                       class="css-18zq7vp"
                     >
                       <span
-                        class="ant-upload-wrapper css-dev-only-do-not-override-txh9fw"
+                        class="ant-upload-wrapper"
                       >
                         <div
                           class="ant-upload ant-upload-select"
@@ -138,7 +138,7 @@ exports[`base/Project/Import render delete file 1`] = `
                               type="file"
                             />
                             <button
-                              class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default basic-button-wrapper css-geipcv"
+                              class="ant-btn ant-btn-default basic-button-wrapper css-geipcv"
                               type="button"
                             >
                               <span>
@@ -189,8 +189,8 @@ exports[`base/Project/Import render delete file 1`] = `
                                 class="ant-upload-list-item-actions"
                               >
                                 <button
-                                  class="ant-btn css-dev-only-do-not-override-txh9fw ant-btn-text ant-btn-sm ant-btn-icon-only ant-upload-list-item-action"
-                                  title="Remove file"
+                                  class="ant-btn ant-btn-text ant-btn-sm ant-btn-icon-only ant-upload-list-item-action"
+                                  title="删除文件"
                                   type="button"
                                 >
                                   <span
@@ -224,7 +224,7 @@ exports[`base/Project/Import render delete file 1`] = `
                         </div>
                       </span>
                       <button
-                        class="ant-btn css-dev-only-do-not-override-txh9fw ant-btn-link"
+                        class="ant-btn ant-btn-link"
                         type="button"
                       >
                         <span>
@@ -260,7 +260,7 @@ exports[`base/Project/Import render return to list page 1`] = `
             href="/project"
           >
             <button
-              class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default basic-button-wrapper css-geipcv"
+              class="ant-btn ant-btn-default basic-button-wrapper css-geipcv"
               type="button"
             >
               <span
@@ -288,7 +288,7 @@ exports[`base/Project/Import render return to list page 1`] = `
           class="extra"
         >
           <button
-            class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary basic-button-wrapper css-geipcv"
+            class="ant-btn ant-btn-primary basic-button-wrapper css-geipcv"
             type="button"
           >
             <span>
@@ -301,10 +301,10 @@ exports[`base/Project/Import render return to list page 1`] = `
         class="fix-header-padding css-bspaai"
       >
         <form
-          class="ant-form ant-form-horizontal css-dev-only-do-not-override-txh9fw hasTopHeader css-19jfn7e"
+          class="ant-form ant-form-horizontal hasTopHeader css-19jfn7e"
         >
           <h3
-            class="ant-typography css-p50odb css-dev-only-do-not-override-txh9fw"
+            class="ant-typography css-p50odb"
           >
             <span
               class="anticon title-icon"
@@ -335,13 +335,13 @@ exports[`base/Project/Import render return to list page 1`] = `
             </span>
           </h3>
           <div
-            class="ant-form-item has-required-style css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+            class="ant-form-item has-required-style css-1jlm9cy"
           >
             <div
-              class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+              class="ant-row ant-form-item-row"
             >
               <div
-                class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left css-dev-only-do-not-override-txh9fw"
+                class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left"
               >
                 <label
                   class="ant-form-item-required ant-form-item-no-colon"
@@ -352,7 +352,7 @@ exports[`base/Project/Import render return to list page 1`] = `
                 </label>
               </div>
               <div
-                class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control"
               >
                 <div
                   class="ant-form-item-control-input"
@@ -364,7 +364,7 @@ exports[`base/Project/Import render return to list page 1`] = `
                       class="css-18zq7vp"
                     >
                       <span
-                        class="ant-upload-wrapper css-dev-only-do-not-override-txh9fw"
+                        class="ant-upload-wrapper"
                       >
                         <div
                           class="ant-upload ant-upload-select"
@@ -382,7 +382,7 @@ exports[`base/Project/Import render return to list page 1`] = `
                               type="file"
                             />
                             <button
-                              class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default basic-button-wrapper css-geipcv"
+                              class="ant-btn ant-btn-default basic-button-wrapper css-geipcv"
                               type="button"
                             >
                               <span>
@@ -396,7 +396,7 @@ exports[`base/Project/Import render return to list page 1`] = `
                         />
                       </span>
                       <button
-                        class="ant-btn css-dev-only-do-not-override-txh9fw ant-btn-link"
+                        class="ant-btn ant-btn-link"
                         type="button"
                       >
                         <span>
@@ -432,7 +432,7 @@ exports[`base/Project/Import render upload file 1`] = `
             href="/project"
           >
             <button
-              class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default basic-button-wrapper css-geipcv"
+              class="ant-btn ant-btn-default basic-button-wrapper css-geipcv"
               type="button"
             >
               <span
@@ -460,7 +460,7 @@ exports[`base/Project/Import render upload file 1`] = `
           class="extra"
         >
           <button
-            class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary basic-button-wrapper css-geipcv"
+            class="ant-btn ant-btn-primary basic-button-wrapper css-geipcv"
             type="button"
           >
             <span>
@@ -473,10 +473,10 @@ exports[`base/Project/Import render upload file 1`] = `
         class="fix-header-padding css-bspaai"
       >
         <form
-          class="ant-form ant-form-horizontal css-dev-only-do-not-override-txh9fw hasTopHeader css-19jfn7e"
+          class="ant-form ant-form-horizontal hasTopHeader css-19jfn7e"
         >
           <h3
-            class="ant-typography css-p50odb css-dev-only-do-not-override-txh9fw"
+            class="ant-typography css-p50odb"
           >
             <span
               class="anticon title-icon"
@@ -507,13 +507,13 @@ exports[`base/Project/Import render upload file 1`] = `
             </span>
           </h3>
           <div
-            class="ant-form-item has-required-style css-1jlm9cy css-dev-only-do-not-override-txh9fw ant-form-item-has-success"
+            class="ant-form-item has-required-style css-1jlm9cy ant-form-item-has-success"
           >
             <div
-              class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+              class="ant-row ant-form-item-row"
             >
               <div
-                class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left css-dev-only-do-not-override-txh9fw"
+                class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left"
               >
                 <label
                   class="ant-form-item-required ant-form-item-no-colon"
@@ -524,7 +524,7 @@ exports[`base/Project/Import render upload file 1`] = `
                 </label>
               </div>
               <div
-                class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control"
               >
                 <div
                   class="ant-form-item-control-input"
@@ -536,7 +536,7 @@ exports[`base/Project/Import render upload file 1`] = `
                       class="css-18zq7vp"
                     >
                       <span
-                        class="ant-upload-wrapper css-dev-only-do-not-override-txh9fw"
+                        class="ant-upload-wrapper"
                       >
                         <div
                           class="ant-upload ant-upload-select"
@@ -554,7 +554,7 @@ exports[`base/Project/Import render upload file 1`] = `
                               type="file"
                             />
                             <button
-                              class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default basic-button-wrapper css-geipcv"
+                              class="ant-btn ant-btn-default basic-button-wrapper css-geipcv"
                               type="button"
                             >
                               <span>
@@ -605,8 +605,8 @@ exports[`base/Project/Import render upload file 1`] = `
                                 class="ant-upload-list-item-actions"
                               >
                                 <button
-                                  class="ant-btn css-dev-only-do-not-override-txh9fw ant-btn-text ant-btn-sm ant-btn-icon-only ant-upload-list-item-action"
-                                  title="Remove file"
+                                  class="ant-btn ant-btn-text ant-btn-sm ant-btn-icon-only ant-upload-list-item-action"
+                                  title="删除文件"
                                   type="button"
                                 >
                                   <span
@@ -640,7 +640,7 @@ exports[`base/Project/Import render upload file 1`] = `
                         </div>
                       </span>
                       <button
-                        class="ant-btn css-dev-only-do-not-override-txh9fw ant-btn-link"
+                        class="ant-btn ant-btn-link"
                         type="button"
                       >
                         <span>
@@ -654,10 +654,10 @@ exports[`base/Project/Import render upload file 1`] = `
             </div>
           </div>
           <div
-            class="ant-table-wrapper actiontech-table-namespace css-fxd6ka css-dev-only-do-not-override-bj9uhl"
+            class="ant-table-wrapper actiontech-table-namespace css-fxd6ka"
           >
             <div
-              class="ant-spin-nested-loading css-dev-only-do-not-override-bj9uhl"
+              class="ant-spin-nested-loading"
             >
               <div
                 class="ant-spin-container"
@@ -696,7 +696,7 @@ exports[`base/Project/Import render upload file 1`] = `
                               class="ant-table-cell ellipsis-column-width"
                               scope="col"
                             >
-                              业务
+                              所属业务
                             </th>
                           </tr>
                         </thead>
@@ -750,11 +750,11 @@ exports[`base/Project/Import render upload file 1`] = `
                             >
                               <div
                                 aria-label="desc1"
-                                class="ant-typography ant-typography-ellipsis ant-typography-single-line basic-typography-ellipsis css-wgj5gs css-dev-only-do-not-override-bj9uhl"
+                                class="ant-typography ant-typography-ellipsis ant-typography-single-line basic-typography-ellipsis css-wgj5gs"
                               >
                                 desc1
                                 <div
-                                  aria-label="Copy"
+                                  aria-label="复制"
                                   class="ant-typography-copy"
                                   role="button"
                                   style="border: 0px; background: transparent; padding: 0px; line-height: inherit; display: inline-block;"
@@ -796,7 +796,7 @@ exports[`base/Project/Import render upload file 1`] = `
                                     ...
                                   </span>
                                   <div
-                                    aria-label="Copy"
+                                    aria-label="复制"
                                     class="ant-typography-copy"
                                     role="button"
                                     style="border: 0px; background: transparent; padding: 0px; line-height: inherit; display: inline-block;"
@@ -828,41 +828,11 @@ exports[`base/Project/Import render upload file 1`] = `
                             <td
                               class="ant-table-cell ellipsis-column-width"
                             >
-                              <div
-                                class="ant-space css-dev-only-do-not-override-bj9uhl ant-space-horizontal ant-space-align-center"
-                                style="flex-wrap: wrap; margin-bottom: -8px;"
+                              <span
+                                class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-1wks1o6"
                               >
-                                <div
-                                  class="ant-space-item"
-                                  style="margin-right: 8px; padding-bottom: 8px;"
-                                >
-                                  <span
-                                    class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-1mjwlcb css-dev-only-do-not-override-bj9uhl"
-                                  >
-                                    business1
-                                  </span>
-                                </div>
-                                <div
-                                  class="ant-space-item"
-                                  style="margin-right: 8px; padding-bottom: 8px;"
-                                >
-                                  <span
-                                    class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-1mjwlcb css-dev-only-do-not-override-bj9uhl"
-                                  >
-                                    business2
-                                  </span>
-                                </div>
-                                <div
-                                  class="ant-space-item"
-                                  style="padding-bottom: 8px;"
-                                >
-                                  <span
-                                    class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-1mjwlcb css-dev-only-do-not-override-bj9uhl"
-                                  >
-                                    business3
-                                  </span>
-                                </div>
-                              </div>
+                                business1
+                              </span>
                             </td>
                           </tr>
                           <tr
@@ -882,21 +852,11 @@ exports[`base/Project/Import render upload file 1`] = `
                             <td
                               class="ant-table-cell ellipsis-column-width"
                             >
-                              <div
-                                class="ant-space css-dev-only-do-not-override-bj9uhl ant-space-horizontal ant-space-align-center"
-                                style="flex-wrap: wrap; margin-bottom: -8px;"
+                              <span
+                                class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-1wks1o6"
                               >
-                                <div
-                                  class="ant-space-item"
-                                  style="padding-bottom: 8px;"
-                                >
-                                  <span
-                                    class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-1mjwlcb css-dev-only-do-not-override-bj9uhl"
-                                  >
-                                    business1
-                                  </span>
-                                </div>
-                              </div>
+                                business2
+                              </span>
                             </td>
                           </tr>
                           <tr
@@ -916,7 +876,11 @@ exports[`base/Project/Import render upload file 1`] = `
                             <td
                               class="ant-table-cell ellipsis-column-width"
                             >
-                              -
+                              <span
+                                class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-1wks1o6"
+                              >
+                                business3
+                              </span>
                             </td>
                           </tr>
                           <tr
@@ -970,7 +934,7 @@ exports[`base/Project/Import render upload file 2`] = `
             href="/project"
           >
             <button
-              class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default basic-button-wrapper css-geipcv"
+              class="ant-btn ant-btn-default basic-button-wrapper css-geipcv"
               type="button"
             >
               <span
@@ -1002,7 +966,7 @@ exports[`base/Project/Import render upload file 2`] = `
         class="basic-result-wrapper css-7vto1s"
       >
         <div
-          class="ant-result ant-result-success css-dev-only-do-not-override-txh9fw"
+          class="ant-result ant-result-success"
         >
           <div
             class="ant-result-icon"
@@ -1419,7 +1383,7 @@ exports[`base/Project/Import render upload file 2`] = `
             class="ant-result-extra"
           >
             <button
-              class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary basic-button-wrapper css-geipcv"
+              class="ant-btn ant-btn-primary basic-button-wrapper css-geipcv"
               type="button"
             >
               <span>

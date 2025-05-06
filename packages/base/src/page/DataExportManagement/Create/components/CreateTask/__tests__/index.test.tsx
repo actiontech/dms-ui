@@ -18,7 +18,10 @@ import { CreateDataExportPageEnum } from '../../../../../../store/dataExport';
 import dbServices from '../../../../../../testUtils/mockApi/dbServices';
 
 describe('test base/DataExport/Create/CreateExportTask', () => {
-  ignoreConsoleErrors([UtilsConsoleErrorStringsEnum.INVALID_CSS_VALUE]);
+  ignoreConsoleErrors([
+    UtilsConsoleErrorStringsEnum.INVALID_CSS_VALUE,
+    UtilsConsoleErrorStringsEnum.UNKNOWN_EVENT_HANDLER
+  ]);
 
   const customRender = (
     mockCreateExportTaskForm?: Parameters<

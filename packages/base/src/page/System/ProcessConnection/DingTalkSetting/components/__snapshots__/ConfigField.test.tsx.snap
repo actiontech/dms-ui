@@ -4,16 +4,16 @@ exports[`base/System/ProcessConnection/DingTalkSetting/ConfigField render snap 1
 <body>
   <div>
     <form
-      class="ant-form ant-form-horizontal css-dev-only-do-not-override-txh9fw"
+      class="ant-form ant-form-horizontal"
     >
       <div
-        class="ant-form-item has-required-style css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+        class="ant-form-item has-required-style css-1jlm9cy"
       >
         <div
-          class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+          class="ant-row ant-form-item-row"
         >
           <div
-            class="ant-col ant-form-item-label css-dev-only-do-not-override-txh9fw"
+            class="ant-col ant-form-item-label"
           >
             <label
               class="ant-form-item-required"
@@ -24,7 +24,7 @@ exports[`base/System/ProcessConnection/DingTalkSetting/ConfigField render snap 1
             </label>
           </div>
           <div
-            class="ant-col ant-form-item-control css-dev-only-do-not-override-txh9fw"
+            class="ant-col ant-form-item-control"
           >
             <div
               class="ant-form-item-control-input"
@@ -34,7 +34,7 @@ exports[`base/System/ProcessConnection/DingTalkSetting/ConfigField render snap 1
               >
                 <input
                   aria-required="true"
-                  class="ant-input css-dev-only-do-not-override-ywkr0o basic-input-wrapper css-1pd1cd5"
+                  class="ant-input basic-input-wrapper css-1pd1cd5"
                   id="appKey"
                   placeholder="请输入AppKey"
                   type="text"
@@ -46,13 +46,13 @@ exports[`base/System/ProcessConnection/DingTalkSetting/ConfigField render snap 1
         </div>
       </div>
       <div
-        class="ant-form-item has-required-style css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+        class="ant-form-item has-required-style css-1jlm9cy"
       >
         <div
-          class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+          class="ant-row ant-form-item-row"
         >
           <div
-            class="ant-col ant-form-item-label css-dev-only-do-not-override-txh9fw"
+            class="ant-col ant-form-item-label"
           >
             <label
               class="ant-form-item-required"
@@ -63,7 +63,7 @@ exports[`base/System/ProcessConnection/DingTalkSetting/ConfigField render snap 1
             </label>
           </div>
           <div
-            class="ant-col ant-form-item-control css-dev-only-do-not-override-txh9fw"
+            class="ant-col ant-form-item-control"
           >
             <div
               class="ant-form-item-control-input"
@@ -72,11 +72,11 @@ exports[`base/System/ProcessConnection/DingTalkSetting/ConfigField render snap 1
                 class="ant-form-item-control-input-content"
               >
                 <span
-                  class="ant-input-affix-wrapper ant-input-password basic-input-wrapper css-1pd1cd5 css-dev-only-do-not-override-txh9fw"
+                  class="ant-input-affix-wrapper ant-input-password basic-input-wrapper css-1pd1cd5"
                 >
                   <input
                     aria-required="true"
-                    class="ant-input css-dev-only-do-not-override-txh9fw"
+                    class="ant-input"
                     id="appSecret"
                     placeholder="请输入AppSecret"
                     type="password"

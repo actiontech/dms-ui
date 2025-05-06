@@ -4,20 +4,20 @@ exports[`base/System/ProcessConnection/WechatAuditSetting/ConfigExtraButtons ren
 <body>
   <div>
     <div
-      class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+      class="ant-space ant-space-horizontal ant-space-align-center"
     >
       <div
         class="ant-space-item"
         style="margin-right: 12px;"
       >
         <div
-          class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
+          class="ant-space ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
         >
           <div
             class="ant-space-item"
           >
             <button
-              class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-text ant-btn-icon-only ant-btn-loading system-config-button basic-button-wrapper css-geipcv"
+              class="ant-btn ant-btn-text ant-btn-icon-only ant-btn-loading system-config-button basic-button-wrapper css-geipcv"
               disabled=""
               type="button"
             >
@@ -52,13 +52,13 @@ exports[`base/System/ProcessConnection/WechatAuditSetting/ConfigExtraButtons ren
         class="ant-space-item"
       >
         <div
-          class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
+          class="ant-space ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
         >
           <div
             class="ant-space-item"
           >
             <button
-              class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-text ant-btn-icon-only system-config-button basic-button-wrapper css-geipcv"
+              class="ant-btn ant-btn-text ant-btn-icon-only system-config-button basic-button-wrapper css-geipcv"
               type="button"
             >
               <span
@@ -85,7 +85,7 @@ exports[`base/System/ProcessConnection/WechatAuditSetting/ConfigExtraButtons ren
   </div>
   <div>
     <div
-      class="ant-popover ant-popover-hidden css-dev-only-do-not-override-txh9fw css-dev-only-do-not-override-txh9fw ant-popover-placement-bottomRight"
+      class="ant-popover ant-popover-hidden ant-popover-placement-bottomRight"
       style="--arrow-x: 0px; --arrow-y: 0px; left: 0px; top: 0px; box-sizing: border-box; pointer-events: none;"
     >
       <div
@@ -103,24 +103,24 @@ exports[`base/System/ProcessConnection/WechatAuditSetting/ConfigExtraButtons ren
             class="ant-popover-inner-content"
           >
             <div
-              class="ant-space css-dev-only-do-not-override-txh9fw ant-space-vertical full-width-element"
+              class="ant-space ant-space-vertical full-width-element"
             >
               <div
                 class="ant-space-item"
                 style="margin-bottom: 16px;"
               >
                 <form
-                  class="ant-form ant-form-horizontal css-dev-only-do-not-override-txh9fw"
+                  class="ant-form ant-form-horizontal"
                 >
                   <div
-                    class="ant-form-item css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+                    class="ant-form-item css-1jlm9cy"
                     style="margin-bottom: 0px;"
                   >
                     <div
-                      class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                      class="ant-row ant-form-item-row"
                     >
                       <div
-                        class="ant-col ant-col-24 ant-form-item-label css-dev-only-do-not-override-txh9fw"
+                        class="ant-col ant-col-24 ant-form-item-label"
                       >
                         <label
                           class="ant-form-item-required ant-form-item-no-colon"
@@ -131,7 +131,7 @@ exports[`base/System/ProcessConnection/WechatAuditSetting/ConfigExtraButtons ren
                         </label>
                       </div>
                       <div
-                        class="ant-col ant-col-24 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                        class="ant-col ant-col-24 ant-form-item-control"
                       >
                         <div
                           class="ant-form-item-control-input"
@@ -141,7 +141,7 @@ exports[`base/System/ProcessConnection/WechatAuditSetting/ConfigExtraButtons ren
                           >
                             <input
                               aria-required="true"
-                              class="ant-input css-dev-only-do-not-override-ywkr0o basic-input-wrapper css-1pd1cd5"
+                              class="ant-input basic-input-wrapper css-1pd1cd5"
                               id="wechatUserID"
                               placeholder="请输入企业微信用户ID"
                               type="text"
@@ -158,21 +158,21 @@ exports[`base/System/ProcessConnection/WechatAuditSetting/ConfigExtraButtons ren
                 class="ant-space-item"
               >
                 <div
-                  class="ant-row css-dev-only-do-not-override-txh9fw"
+                  class="ant-row"
                 >
                   <div
-                    class="ant-col ant-col-24 css-dev-only-do-not-override-txh9fw"
+                    class="ant-col ant-col-24"
                     style="text-align: right;"
                   >
                     <div
-                      class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+                      class="ant-space ant-space-horizontal ant-space-align-center"
                     >
                       <div
                         class="ant-space-item"
                         style="margin-right: 12px;"
                       >
                         <button
-                          class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default ant-btn-sm basic-button-wrapper css-geipcv"
+                          class="ant-btn ant-btn-default ant-btn-sm basic-button-wrapper css-geipcv"
                           type="button"
                         >
                           <span>
@@ -184,7 +184,7 @@ exports[`base/System/ProcessConnection/WechatAuditSetting/ConfigExtraButtons ren
                         class="ant-space-item"
                       >
                         <button
-                          class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary ant-btn-sm basic-button-wrapper css-geipcv"
+                          class="ant-btn ant-btn-primary ant-btn-sm basic-button-wrapper css-geipcv"
                           type="button"
                         >
                           <span>
@@ -203,11 +203,11 @@ exports[`base/System/ProcessConnection/WechatAuditSetting/ConfigExtraButtons ren
     </div>
   </div>
   <div
-    class="ant-message ant-message-top css-dev-only-do-not-override-txh9fw"
+    class="ant-message ant-message-top"
     style="left: 50%; transform: translateX(-50%); top: 8px;"
   >
     <div
-      class="ant-message-notice ant-message-notice-success css-dev-only-do-not-override-txh9fw"
+      class="ant-message-notice ant-message-notice-success"
     >
       <div
         class="ant-message-notice-content"
@@ -248,20 +248,20 @@ exports[`base/System/ProcessConnection/WechatAuditSetting/ConfigExtraButtons ren
 <body>
   <div>
     <div
-      class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+      class="ant-space ant-space-horizontal ant-space-align-center"
     >
       <div
         class="ant-space-item"
         style="margin-right: 12px;"
       >
         <div
-          class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center ant-popover-open basic-tooltips-wrapper css-4jbtl9"
+          class="ant-space ant-space-horizontal ant-space-align-center ant-popover-open basic-tooltips-wrapper css-4jbtl9"
         >
           <div
             class="ant-space-item"
           >
             <button
-              class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-text ant-btn-icon-only system-config-button basic-button-wrapper css-geipcv"
+              class="ant-btn ant-btn-text ant-btn-icon-only system-config-button basic-button-wrapper css-geipcv"
               type="button"
             >
               <span
@@ -286,13 +286,13 @@ exports[`base/System/ProcessConnection/WechatAuditSetting/ConfigExtraButtons ren
         class="ant-space-item"
       >
         <div
-          class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
+          class="ant-space ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
         >
           <div
             class="ant-space-item"
           >
             <button
-              class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-text ant-btn-icon-only system-config-button basic-button-wrapper css-geipcv"
+              class="ant-btn ant-btn-text ant-btn-icon-only system-config-button basic-button-wrapper css-geipcv"
               type="button"
             >
               <span
@@ -319,7 +319,7 @@ exports[`base/System/ProcessConnection/WechatAuditSetting/ConfigExtraButtons ren
   </div>
   <div>
     <div
-      class="ant-popover css-dev-only-do-not-override-txh9fw css-dev-only-do-not-override-txh9fw ant-popover-placement-bottomRight"
+      class="ant-popover ant-popover-placement-bottomRight"
       style="--arrow-x: 0px; --arrow-y: 0px; left: -1000vw; top: -1000vh; box-sizing: border-box;"
     >
       <div
@@ -337,24 +337,24 @@ exports[`base/System/ProcessConnection/WechatAuditSetting/ConfigExtraButtons ren
             class="ant-popover-inner-content"
           >
             <div
-              class="ant-space css-dev-only-do-not-override-txh9fw ant-space-vertical full-width-element"
+              class="ant-space ant-space-vertical full-width-element"
             >
               <div
                 class="ant-space-item"
                 style="margin-bottom: 16px;"
               >
                 <form
-                  class="ant-form ant-form-horizontal css-dev-only-do-not-override-txh9fw"
+                  class="ant-form ant-form-horizontal"
                 >
                   <div
-                    class="ant-form-item css-1jlm9cy css-dev-only-do-not-override-txh9fw ant-form-item-has-success"
+                    class="ant-form-item css-1jlm9cy ant-form-item-has-success"
                     style="margin-bottom: 0px;"
                   >
                     <div
-                      class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                      class="ant-row ant-form-item-row"
                     >
                       <div
-                        class="ant-col ant-col-24 ant-form-item-label css-dev-only-do-not-override-txh9fw"
+                        class="ant-col ant-col-24 ant-form-item-label"
                       >
                         <label
                           class="ant-form-item-required ant-form-item-no-colon"
@@ -365,7 +365,7 @@ exports[`base/System/ProcessConnection/WechatAuditSetting/ConfigExtraButtons ren
                         </label>
                       </div>
                       <div
-                        class="ant-col ant-col-24 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                        class="ant-col ant-col-24 ant-form-item-control"
                       >
                         <div
                           class="ant-form-item-control-input"
@@ -375,7 +375,7 @@ exports[`base/System/ProcessConnection/WechatAuditSetting/ConfigExtraButtons ren
                           >
                             <input
                               aria-required="true"
-                              class="ant-input ant-input-status-success css-dev-only-do-not-override-ywkr0o basic-input-wrapper css-1pd1cd5"
+                              class="ant-input ant-input-status-success basic-input-wrapper css-1pd1cd5"
                               id="wechatUserID"
                               placeholder="请输入企业微信用户ID"
                               type="text"
@@ -392,21 +392,21 @@ exports[`base/System/ProcessConnection/WechatAuditSetting/ConfigExtraButtons ren
                 class="ant-space-item"
               >
                 <div
-                  class="ant-row css-dev-only-do-not-override-txh9fw"
+                  class="ant-row"
                 >
                   <div
-                    class="ant-col ant-col-24 css-dev-only-do-not-override-txh9fw"
+                    class="ant-col ant-col-24"
                     style="text-align: right;"
                   >
                     <div
-                      class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+                      class="ant-space ant-space-horizontal ant-space-align-center"
                     >
                       <div
                         class="ant-space-item"
                         style="margin-right: 12px;"
                       >
                         <button
-                          class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default ant-btn-sm basic-button-wrapper css-geipcv"
+                          class="ant-btn ant-btn-default ant-btn-sm basic-button-wrapper css-geipcv"
                           type="button"
                         >
                           <span>
@@ -418,7 +418,7 @@ exports[`base/System/ProcessConnection/WechatAuditSetting/ConfigExtraButtons ren
                         class="ant-space-item"
                       >
                         <button
-                          class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary ant-btn-sm basic-button-wrapper css-geipcv"
+                          class="ant-btn ant-btn-primary ant-btn-sm basic-button-wrapper css-geipcv"
                           type="button"
                         >
                           <span>
@@ -443,7 +443,7 @@ exports[`base/System/ProcessConnection/WechatAuditSetting/ConfigExtraButtons ren
 <body>
   <div>
     <div
-      class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+      class="ant-space ant-space-horizontal ant-space-align-center"
       hidden=""
     >
       <div
@@ -451,13 +451,13 @@ exports[`base/System/ProcessConnection/WechatAuditSetting/ConfigExtraButtons ren
         style="margin-right: 12px;"
       >
         <div
-          class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
+          class="ant-space ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
         >
           <div
             class="ant-space-item"
           >
             <button
-              class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-text ant-btn-icon-only system-config-button basic-button-wrapper css-geipcv"
+              class="ant-btn ant-btn-text ant-btn-icon-only system-config-button basic-button-wrapper css-geipcv"
               type="button"
             >
               <span
@@ -482,13 +482,13 @@ exports[`base/System/ProcessConnection/WechatAuditSetting/ConfigExtraButtons ren
         class="ant-space-item"
       >
         <div
-          class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
+          class="ant-space ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
         >
           <div
             class="ant-space-item"
           >
             <button
-              class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-text ant-btn-icon-only system-config-button basic-button-wrapper css-geipcv"
+              class="ant-btn ant-btn-text ant-btn-icon-only system-config-button basic-button-wrapper css-geipcv"
               type="button"
             >
               <span
@@ -520,7 +520,7 @@ exports[`base/System/ProcessConnection/WechatAuditSetting/ConfigExtraButtons ren
 <body>
   <div>
     <div
-      class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+      class="ant-space ant-space-horizontal ant-space-align-center"
       hidden=""
     >
       <div
@@ -528,13 +528,13 @@ exports[`base/System/ProcessConnection/WechatAuditSetting/ConfigExtraButtons ren
         style="margin-right: 12px;"
       >
         <div
-          class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
+          class="ant-space ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
         >
           <div
             class="ant-space-item"
           >
             <button
-              class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-text ant-btn-icon-only system-config-button basic-button-wrapper css-geipcv"
+              class="ant-btn ant-btn-text ant-btn-icon-only system-config-button basic-button-wrapper css-geipcv"
               type="button"
             >
               <span
@@ -559,13 +559,13 @@ exports[`base/System/ProcessConnection/WechatAuditSetting/ConfigExtraButtons ren
         class="ant-space-item"
       >
         <div
-          class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
+          class="ant-space ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
         >
           <div
             class="ant-space-item"
           >
             <button
-              class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-text ant-btn-icon-only system-config-button basic-button-wrapper css-geipcv"
+              class="ant-btn ant-btn-text ant-btn-icon-only system-config-button basic-button-wrapper css-geipcv"
               type="button"
             >
               <span

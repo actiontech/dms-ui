@@ -4,10 +4,10 @@ exports[`sqle/RuleTemplate/List/CommonTable render common rule template list 1`]
 <body>
   <div>
     <div
-      class="ant-table-wrapper actiontech-table-namespace css-fxd6ka css-dev-only-do-not-override-bj9uhl"
+      class="ant-table-wrapper actiontech-table-namespace css-fxd6ka"
     >
       <div
-        class="ant-spin-nested-loading css-dev-only-do-not-override-bj9uhl"
+        class="ant-spin-nested-loading"
       >
         <div
           class="ant-spin-container"
@@ -97,7 +97,7 @@ exports[`sqle/RuleTemplate/List/CommonTable render common rule template list 1`]
                           href="/sqle/rule-manager/global-detail/default_template/MySQL"
                         >
                           <div
-                            class="ant-space css-dev-only-do-not-override-bj9uhl ant-space-horizontal ant-space-align-center"
+                            class="ant-space ant-space-horizontal ant-space-align-center"
                           >
                             <div
                               class="ant-space-item"
@@ -128,11 +128,11 @@ exports[`sqle/RuleTemplate/List/CommonTable render common rule template list 1`]
                       >
                         <div
                           aria-label="test desc"
-                          class="ant-typography ant-typography-ellipsis ant-typography-single-line basic-typography-ellipsis css-wgj5gs css-dev-only-do-not-override-bj9uhl"
+                          class="ant-typography ant-typography-ellipsis ant-typography-single-line basic-typography-ellipsis css-wgj5gs"
                         >
                           test desc
                           <div
-                            aria-label="Copy"
+                            aria-label="复制"
                             class="ant-typography-copy"
                             role="button"
                             style="border: 0px; background: transparent; padding: 0px; line-height: inherit; display: inline-block;"
@@ -174,7 +174,7 @@ exports[`sqle/RuleTemplate/List/CommonTable render common rule template list 1`]
                               ...
                             </span>
                             <div
-                              aria-label="Copy"
+                              aria-label="复制"
                               class="ant-typography-copy"
                               role="button"
                               style="border: 0px; background: transparent; padding: 0px; line-height: inherit; display: inline-block;"
@@ -231,7 +231,7 @@ exports[`sqle/RuleTemplate/List/CommonTable render common rule template list 1`]
                           href="/sqle/rule-manager/global-detail/global_test/MySQL"
                         >
                           <div
-                            class="ant-space css-dev-only-do-not-override-bj9uhl ant-space-horizontal ant-space-align-center"
+                            class="ant-space ant-space-horizontal ant-space-align-center"
                           >
                             <div
                               class="ant-space-item"
@@ -303,7 +303,7 @@ exports[`sqle/RuleTemplate/List/CommonTable render common rule template list 1`]
             </div>
           </div>
           <ul
-            class="ant-pagination ant-table-pagination ant-table-pagination-right actiontech-table-pagination actiontech-table-pagination-fixed css-dev-only-do-not-override-bj9uhl"
+            class="ant-pagination ant-table-pagination ant-table-pagination-right actiontech-table-pagination actiontech-table-pagination-fixed"
           >
             <li
               class="ant-pagination-total-text"
@@ -315,7 +315,7 @@ exports[`sqle/RuleTemplate/List/CommonTable render common rule template list 1`]
             <li
               aria-disabled="true"
               class="ant-pagination-prev ant-pagination-disabled"
-              title="Previous Page"
+              title="上一页"
             >
               <button
                 class="ant-pagination-item-link"
@@ -358,7 +358,7 @@ exports[`sqle/RuleTemplate/List/CommonTable render common rule template list 1`]
             <li
               aria-disabled="true"
               class="ant-pagination-next ant-pagination-disabled"
-              title="Next Page"
+              title="下一页"
             >
               <button
                 class="ant-pagination-item-link"
@@ -391,8 +391,8 @@ exports[`sqle/RuleTemplate/List/CommonTable render common rule template list 1`]
               class="ant-pagination-options"
             >
               <div
-                aria-label="Page Size"
-                class="ant-select ant-pagination-options-size-changer css-dev-only-do-not-override-bj9uhl ant-select-single ant-select-show-arrow ant-select-show-search"
+                aria-label="页码"
+                class="ant-select ant-pagination-options-size-changer ant-select-single ant-select-show-arrow ant-select-show-search"
               >
                 <div
                   class="ant-select-selector"
@@ -406,7 +406,7 @@ exports[`sqle/RuleTemplate/List/CommonTable render common rule template list 1`]
                       aria-controls="rc_select_TEST_OR_SSR_list"
                       aria-expanded="false"
                       aria-haspopup="listbox"
-                      aria-label="Page Size"
+                      aria-label="页码"
                       aria-owns="rc_select_TEST_OR_SSR_list"
                       autocomplete="off"
                       class="ant-select-selection-search-input"
@@ -418,9 +418,9 @@ exports[`sqle/RuleTemplate/List/CommonTable render common rule template list 1`]
                   </span>
                   <span
                     class="ant-select-selection-item"
-                    title="20 / page"
+                    title="20 条/页"
                   >
-                    20 / page
+                    20 条/页
                   </span>
                 </div>
                 <span
@@ -463,10 +463,10 @@ exports[`sqle/RuleTemplate/List/CommonTable should render empty tips when reques
 <body>
   <div>
     <div
-      class="ant-table-wrapper actiontech-table-namespace css-fxd6ka css-dev-only-do-not-override-bj9uhl"
+      class="ant-table-wrapper actiontech-table-namespace css-fxd6ka"
     >
       <div
-        class="ant-spin-nested-loading css-dev-only-do-not-override-bj9uhl"
+        class="ant-spin-nested-loading"
       >
         <div
           class="ant-spin-container"

@@ -7,7 +7,7 @@ exports[`ExecPlanCostChart filter sql execute plan cost 1`] = `
       class="css-1pqpq6o"
     >
       <div
-        class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center filter-wrapper"
+        class="ant-space ant-space-horizontal ant-space-align-center filter-wrapper"
       >
         <div
           class="ant-space-item"
@@ -21,14 +21,14 @@ exports[`ExecPlanCostChart filter sql execute plan cost 1`] = `
           class="ant-space-item"
         >
           <div
-            class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+            class="ant-space ant-space-horizontal ant-space-align-center"
           >
             <div
               class="ant-space-item"
               style="margin-right: 8px;"
             >
               <div
-                class="ant-segmented basic-segmented-wrapper css-192b3m1 css-dev-only-do-not-override-txh9fw"
+                class="ant-segmented basic-segmented-wrapper css-192b3m1"
               >
                 <div
                   class="ant-segmented-group"
@@ -86,14 +86,14 @@ exports[`ExecPlanCostChart filter sql execute plan cost 1`] = `
                 class="css-1y8q0oh"
               >
                 <div
-                  class="ant-picker ant-picker-range ant-picker-small css-dev-only-do-not-override-1xo6ltj basic-range-picker-wrapper css-w7y1zu"
+                  class="ant-picker ant-picker-range ant-picker-small basic-range-picker-wrapper css-w7y1zu"
                 >
                   <div
                     class="ant-picker-input ant-picker-input-active"
                   >
                     <input
                       autocomplete="off"
-                      placeholder="Start date"
+                      placeholder="开始日期"
                       readonly=""
                       size="21"
                       value=""
@@ -119,7 +119,7 @@ exports[`ExecPlanCostChart filter sql execute plan cost 1`] = `
                   >
                     <input
                       autocomplete="off"
-                      placeholder="End date"
+                      placeholder="结束日期"
                       readonly=""
                       size="21"
                       value=""
@@ -139,7 +139,7 @@ exports[`ExecPlanCostChart filter sql execute plan cost 1`] = `
         class="chart-wrapper"
       >
         <div
-          class="ant-spin-nested-loading css-dev-only-do-not-override-txh9fw"
+          class="ant-spin-nested-loading"
         >
           <div
             class="ant-spin-container"
@@ -252,7 +252,7 @@ exports[`ExecPlanCostChart refresh sql execute plan cost 1`] = `
       class="css-1pqpq6o"
     >
       <div
-        class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center filter-wrapper"
+        class="ant-space ant-space-horizontal ant-space-align-center filter-wrapper"
       >
         <div
           class="ant-space-item"
@@ -266,14 +266,14 @@ exports[`ExecPlanCostChart refresh sql execute plan cost 1`] = `
           class="ant-space-item"
         >
           <div
-            class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+            class="ant-space ant-space-horizontal ant-space-align-center"
           >
             <div
               class="ant-space-item"
               style="margin-right: 8px;"
             >
               <div
-                class="ant-segmented basic-segmented-wrapper css-192b3m1 css-dev-only-do-not-override-txh9fw"
+                class="ant-segmented basic-segmented-wrapper css-192b3m1"
               >
                 <div
                   class="ant-segmented-group"
@@ -331,14 +331,14 @@ exports[`ExecPlanCostChart refresh sql execute plan cost 1`] = `
                 class="css-1y8q0oh"
               >
                 <div
-                  class="ant-picker ant-picker-range ant-picker-small css-dev-only-do-not-override-1xo6ltj basic-range-picker-wrapper css-w7y1zu"
+                  class="ant-picker ant-picker-range ant-picker-small basic-range-picker-wrapper css-w7y1zu"
                 >
                   <div
                     class="ant-picker-input ant-picker-input-active"
                   >
                     <input
                       autocomplete="off"
-                      placeholder="Start date"
+                      placeholder="开始日期"
                       readonly=""
                       size="21"
                       value=""
@@ -364,7 +364,7 @@ exports[`ExecPlanCostChart refresh sql execute plan cost 1`] = `
                   >
                     <input
                       autocomplete="off"
-                      placeholder="End date"
+                      placeholder="结束日期"
                       readonly=""
                       size="21"
                       value=""
@@ -384,7 +384,7 @@ exports[`ExecPlanCostChart refresh sql execute plan cost 1`] = `
         class="chart-wrapper"
       >
         <div
-          class="ant-spin-nested-loading css-dev-only-do-not-override-txh9fw"
+          class="ant-spin-nested-loading"
         >
           <div
             class="ant-spin-container"
@@ -396,7 +396,7 @@ exports[`ExecPlanCostChart refresh sql execute plan cost 1`] = `
                 class="icon-center-wrapper MuiBox-root css-0"
               >
                 <div
-                  class="css-dev-only-do-not-override-txh9fw ant-empty is-icon-tips css-19kysfv"
+                  class="ant-empty is-icon-tips css-19kysfv"
                 >
                   <div
                     class="ant-empty-image"
@@ -450,7 +450,7 @@ exports[`ExecPlanCostChart refresh sql execute plan cost 1`] = `
                     class="ant-empty-footer"
                   >
                     <button
-                      class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-text ant-btn-sm basic-button-wrapper css-geipcv"
+                      class="ant-btn ant-btn-text ant-btn-sm basic-button-wrapper css-geipcv"
                       type="button"
                     >
                       <span>
@@ -476,7 +476,7 @@ exports[`ExecPlanCostChart render chart when data is not empty 1`] = `
       class="css-1pqpq6o"
     >
       <div
-        class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center filter-wrapper"
+        class="ant-space ant-space-horizontal ant-space-align-center filter-wrapper"
       >
         <div
           class="ant-space-item"
@@ -490,14 +490,14 @@ exports[`ExecPlanCostChart render chart when data is not empty 1`] = `
           class="ant-space-item"
         >
           <div
-            class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+            class="ant-space ant-space-horizontal ant-space-align-center"
           >
             <div
               class="ant-space-item"
               style="margin-right: 8px;"
             >
               <div
-                class="ant-segmented basic-segmented-wrapper css-192b3m1 css-dev-only-do-not-override-txh9fw"
+                class="ant-segmented basic-segmented-wrapper css-192b3m1"
               >
                 <div
                   class="ant-segmented-group"
@@ -555,14 +555,14 @@ exports[`ExecPlanCostChart render chart when data is not empty 1`] = `
                 class="css-1y8q0oh"
               >
                 <div
-                  class="ant-picker ant-picker-range ant-picker-small css-dev-only-do-not-override-1xo6ltj basic-range-picker-wrapper css-w7y1zu"
+                  class="ant-picker ant-picker-range ant-picker-small basic-range-picker-wrapper css-w7y1zu"
                 >
                   <div
                     class="ant-picker-input ant-picker-input-active"
                   >
                     <input
                       autocomplete="off"
-                      placeholder="Start date"
+                      placeholder="开始日期"
                       readonly=""
                       size="21"
                       value=""
@@ -588,7 +588,7 @@ exports[`ExecPlanCostChart render chart when data is not empty 1`] = `
                   >
                     <input
                       autocomplete="off"
-                      placeholder="End date"
+                      placeholder="结束日期"
                       readonly=""
                       size="21"
                       value=""
@@ -608,7 +608,7 @@ exports[`ExecPlanCostChart render chart when data is not empty 1`] = `
         class="chart-wrapper"
       >
         <div
-          class="ant-spin-nested-loading css-dev-only-do-not-override-txh9fw"
+          class="ant-spin-nested-loading"
         >
           <div
             class="ant-spin-container"
@@ -721,7 +721,7 @@ exports[`ExecPlanCostChart render error message 1`] = `
       class="css-1pqpq6o"
     >
       <div
-        class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center filter-wrapper"
+        class="ant-space ant-space-horizontal ant-space-align-center filter-wrapper"
       >
         <div
           class="ant-space-item"
@@ -735,14 +735,14 @@ exports[`ExecPlanCostChart render error message 1`] = `
           class="ant-space-item"
         >
           <div
-            class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+            class="ant-space ant-space-horizontal ant-space-align-center"
           >
             <div
               class="ant-space-item"
               style="margin-right: 8px;"
             >
               <div
-                class="ant-segmented basic-segmented-wrapper css-192b3m1 css-dev-only-do-not-override-txh9fw"
+                class="ant-segmented basic-segmented-wrapper css-192b3m1"
               >
                 <div
                   class="ant-segmented-group"
@@ -800,14 +800,14 @@ exports[`ExecPlanCostChart render error message 1`] = `
                 class="css-1y8q0oh"
               >
                 <div
-                  class="ant-picker ant-picker-range ant-picker-small css-dev-only-do-not-override-1xo6ltj basic-range-picker-wrapper css-w7y1zu"
+                  class="ant-picker ant-picker-range ant-picker-small basic-range-picker-wrapper css-w7y1zu"
                 >
                   <div
                     class="ant-picker-input ant-picker-input-active"
                   >
                     <input
                       autocomplete="off"
-                      placeholder="Start date"
+                      placeholder="开始日期"
                       readonly=""
                       size="21"
                       value=""
@@ -833,7 +833,7 @@ exports[`ExecPlanCostChart render error message 1`] = `
                   >
                     <input
                       autocomplete="off"
-                      placeholder="End date"
+                      placeholder="结束日期"
                       readonly=""
                       size="21"
                       value=""
@@ -853,13 +853,13 @@ exports[`ExecPlanCostChart render error message 1`] = `
         class="chart-wrapper"
       >
         <div
-          class="ant-spin-nested-loading css-dev-only-do-not-override-txh9fw"
+          class="ant-spin-nested-loading"
         >
           <div>
             <div
               aria-busy="true"
               aria-live="polite"
-              class="ant-spin ant-spin-spinning css-dev-only-do-not-override-txh9fw"
+              class="ant-spin ant-spin-spinning"
             >
               <span
                 class="ant-spin-dot ant-spin-dot-spin"
@@ -889,7 +889,7 @@ exports[`ExecPlanCostChart render error message 1`] = `
                 class="icon-center-wrapper MuiBox-root css-0"
               >
                 <div
-                  class="css-dev-only-do-not-override-txh9fw ant-empty is-icon-tips css-19kysfv"
+                  class="ant-empty is-icon-tips css-19kysfv"
                 >
                   <div
                     class="ant-empty-image"
@@ -954,7 +954,7 @@ exports[`ExecPlanCostChart render error message 1`] = `
                     class="ant-empty-footer"
                   >
                     <button
-                      class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-text ant-btn-sm basic-button-wrapper css-geipcv"
+                      class="ant-btn ant-btn-text ant-btn-sm basic-button-wrapper css-geipcv"
                       type="button"
                     >
                       <span>
@@ -980,7 +980,7 @@ exports[`ExecPlanCostChart render init snap shot 1`] = `
       class="css-1pqpq6o"
     >
       <div
-        class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center filter-wrapper"
+        class="ant-space ant-space-horizontal ant-space-align-center filter-wrapper"
       >
         <div
           class="ant-space-item"
@@ -994,14 +994,14 @@ exports[`ExecPlanCostChart render init snap shot 1`] = `
           class="ant-space-item"
         >
           <div
-            class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+            class="ant-space ant-space-horizontal ant-space-align-center"
           >
             <div
               class="ant-space-item"
               style="margin-right: 8px;"
             >
               <div
-                class="ant-segmented basic-segmented-wrapper css-192b3m1 css-dev-only-do-not-override-txh9fw"
+                class="ant-segmented basic-segmented-wrapper css-192b3m1"
               >
                 <div
                   class="ant-segmented-group"
@@ -1059,14 +1059,14 @@ exports[`ExecPlanCostChart render init snap shot 1`] = `
                 class="css-1y8q0oh"
               >
                 <div
-                  class="ant-picker ant-picker-range ant-picker-small css-dev-only-do-not-override-1xo6ltj basic-range-picker-wrapper css-w7y1zu"
+                  class="ant-picker ant-picker-range ant-picker-small basic-range-picker-wrapper css-w7y1zu"
                 >
                   <div
                     class="ant-picker-input ant-picker-input-active"
                   >
                     <input
                       autocomplete="off"
-                      placeholder="Start date"
+                      placeholder="开始日期"
                       readonly=""
                       size="21"
                       value=""
@@ -1092,7 +1092,7 @@ exports[`ExecPlanCostChart render init snap shot 1`] = `
                   >
                     <input
                       autocomplete="off"
-                      placeholder="End date"
+                      placeholder="结束日期"
                       readonly=""
                       size="21"
                       value=""
@@ -1112,13 +1112,13 @@ exports[`ExecPlanCostChart render init snap shot 1`] = `
         class="chart-wrapper"
       >
         <div
-          class="ant-spin-nested-loading css-dev-only-do-not-override-txh9fw"
+          class="ant-spin-nested-loading"
         >
           <div>
             <div
               aria-busy="true"
               aria-live="polite"
-              class="ant-spin ant-spin-spinning css-dev-only-do-not-override-txh9fw"
+              class="ant-spin ant-spin-spinning"
             >
               <span
                 class="ant-spin-dot ant-spin-dot-spin"
@@ -1148,7 +1148,7 @@ exports[`ExecPlanCostChart render init snap shot 1`] = `
                 class="icon-center-wrapper MuiBox-root css-0"
               >
                 <div
-                  class="css-dev-only-do-not-override-txh9fw ant-empty is-icon-tips css-19kysfv"
+                  class="ant-empty is-icon-tips css-19kysfv"
                 >
                   <div
                     class="ant-empty-image"
@@ -1202,7 +1202,7 @@ exports[`ExecPlanCostChart render init snap shot 1`] = `
                     class="ant-empty-footer"
                   >
                     <button
-                      class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-text ant-btn-sm basic-button-wrapper css-geipcv"
+                      class="ant-btn ant-btn-text ant-btn-sm basic-button-wrapper css-geipcv"
                       type="button"
                     >
                       <span>

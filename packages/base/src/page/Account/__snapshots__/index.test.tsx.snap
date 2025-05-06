@@ -24,7 +24,7 @@ exports[`test base/page/Account should match snapshot 1`] = `
         >
           账户基本信息
           <button
-            class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary basic-button-wrapper css-geipcv"
+            class="ant-btn ant-btn-primary basic-button-wrapper css-geipcv"
             type="button"
           >
             <span>
@@ -33,16 +33,16 @@ exports[`test base/page/Account should match snapshot 1`] = `
           </button>
         </div>
         <div
-          class="ant-spin-nested-loading css-dev-only-do-not-override-txh9fw"
+          class="ant-spin-nested-loading"
         >
           <div
             class="ant-spin-container"
           >
             <div
-              class="ant-row ant-row-space-between ant-row-middle css-19fu9ar css-dev-only-do-not-override-txh9fw"
+              class="ant-row ant-row-space-between ant-row-middle css-19fu9ar"
             >
               <div
-                class="ant-col ant-col-11 config-item-label css-dev-only-do-not-override-txh9fw"
+                class="ant-col ant-col-11 config-item-label"
               >
                 <div
                   class="config-item-label"
@@ -55,7 +55,7 @@ exports[`test base/page/Account should match snapshot 1`] = `
                 </div>
               </div>
               <div
-                class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center config-item-filed"
+                class="ant-space ant-space-horizontal ant-space-align-center config-item-filed"
               >
                 <div
                   class="ant-space-item"
@@ -67,7 +67,7 @@ exports[`test base/page/Account should match snapshot 1`] = `
                   class="ant-space-item"
                 >
                   <button
-                    class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default ant-btn-icon-only config-item-filed-edit-button basic-button-wrapper css-geipcv"
+                    class="ant-btn ant-btn-default ant-btn-icon-only config-item-filed-edit-button basic-button-wrapper css-geipcv"
                     hidden=""
                     type="button"
                   >
@@ -91,10 +91,10 @@ exports[`test base/page/Account should match snapshot 1`] = `
               </div>
             </div>
             <div
-              class="ant-row ant-row-space-between ant-row-middle css-19fu9ar css-dev-only-do-not-override-txh9fw"
+              class="ant-row ant-row-space-between ant-row-middle css-19fu9ar"
             >
               <div
-                class="ant-col ant-col-11 config-item-label css-dev-only-do-not-override-txh9fw"
+                class="ant-col ant-col-11 config-item-label"
               >
                 <div
                   class="config-item-label"
@@ -107,7 +107,7 @@ exports[`test base/page/Account should match snapshot 1`] = `
                 </div>
               </div>
               <div
-                class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center config-item-filed"
+                class="ant-space ant-space-horizontal ant-space-align-center config-item-filed"
               >
                 <div
                   class="ant-space-item"
@@ -119,7 +119,7 @@ exports[`test base/page/Account should match snapshot 1`] = `
                   class="ant-space-item"
                 >
                   <button
-                    class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default ant-btn-icon-only config-item-filed-edit-button basic-button-wrapper css-geipcv"
+                    class="ant-btn ant-btn-default ant-btn-icon-only config-item-filed-edit-button basic-button-wrapper css-geipcv"
                     hidden=""
                     type="button"
                   >
@@ -143,10 +143,10 @@ exports[`test base/page/Account should match snapshot 1`] = `
               </div>
             </div>
             <div
-              class="ant-row ant-row-space-between ant-row-middle css-19fu9ar css-dev-only-do-not-override-txh9fw"
+              class="ant-row ant-row-space-between ant-row-middle css-19fu9ar"
             >
               <div
-                class="ant-col ant-col-11 config-item-label css-dev-only-do-not-override-txh9fw"
+                class="ant-col ant-col-11 config-item-label"
               >
                 <div
                   class="config-item-label"
@@ -159,7 +159,7 @@ exports[`test base/page/Account should match snapshot 1`] = `
                 </div>
               </div>
               <div
-                class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center config-item-filed"
+                class="ant-space ant-space-horizontal ant-space-align-center config-item-filed"
               >
                 <div
                   class="ant-space-item"
@@ -171,7 +171,7 @@ exports[`test base/page/Account should match snapshot 1`] = `
                   class="ant-space-item"
                 >
                   <button
-                    class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default ant-btn-icon-only config-item-filed-edit-button basic-button-wrapper css-geipcv"
+                    class="ant-btn ant-btn-default ant-btn-icon-only config-item-filed-edit-button basic-button-wrapper css-geipcv"
                     hidden=""
                     type="button"
                   >
@@ -195,10 +195,10 @@ exports[`test base/page/Account should match snapshot 1`] = `
               </div>
             </div>
             <div
-              class="ant-row ant-row-space-between ant-row-middle css-19fu9ar css-dev-only-do-not-override-txh9fw"
+              class="ant-row ant-row-space-between ant-row-middle css-19fu9ar"
             >
               <div
-                class="ant-col ant-col-11 config-item-label css-dev-only-do-not-override-txh9fw"
+                class="ant-col ant-col-11 config-item-label"
               >
                 <div
                   class="config-item-label"
@@ -211,7 +211,7 @@ exports[`test base/page/Account should match snapshot 1`] = `
                 </div>
               </div>
               <div
-                class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center config-item-filed"
+                class="ant-space ant-space-horizontal ant-space-align-center config-item-filed"
               >
                 <div
                   class="ant-space-item"
@@ -223,7 +223,7 @@ exports[`test base/page/Account should match snapshot 1`] = `
                   class="ant-space-item"
                 >
                   <button
-                    class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default ant-btn-icon-only config-item-filed-edit-button basic-button-wrapper css-geipcv"
+                    class="ant-btn ant-btn-default ant-btn-icon-only config-item-filed-edit-button basic-button-wrapper css-geipcv"
                     hidden=""
                     type="button"
                   >
@@ -247,7 +247,7 @@ exports[`test base/page/Account should match snapshot 1`] = `
               </div>
             </div>
             <div
-              class="ant-row clear-padding-top css-nsnt4h css-dev-only-do-not-override-txh9fw"
+              class="ant-row clear-padding-top css-nsnt4h"
             >
               <div
                 class="label-content"
@@ -267,7 +267,7 @@ exports[`test base/page/Account should match snapshot 1`] = `
                   </div>
                 </div>
                 <button
-                  class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary basic-button-wrapper css-geipcv"
+                  class="ant-btn ant-btn-primary basic-button-wrapper css-geipcv"
                   type="button"
                 >
                   <span>
@@ -290,7 +290,7 @@ exports[`test base/page/Account should match snapshot 1`] = `
                     class="css-1sg2lsz"
                   >
                     <div
-                      class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
+                      class="ant-space ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
                     >
                       <div
                         class="ant-space-item"
@@ -313,10 +313,10 @@ exports[`test base/page/Account should match snapshot 1`] = `
                       </div>
                     </div>
                     <span
-                      class="ant-typography css-dev-only-do-not-override-txh9fw"
+                      class="ant-typography"
                     >
                       <div
-                        aria-label="Copy"
+                        aria-label="复制"
                         class="ant-typography-copy"
                         role="button"
                         style="border: 0px; background: transparent; padding: 0px; line-height: inherit; display: inline-block;"
@@ -363,7 +363,7 @@ exports[`test base/page/Account should match snapshot 1`] = `
             </div>
             <div>
               <div
-                class="ant-spin-nested-loading css-dev-only-do-not-override-txh9fw"
+                class="ant-spin-nested-loading"
               >
                 <div
                   class="ant-spin-container"
@@ -372,19 +372,19 @@ exports[`test base/page/Account should match snapshot 1`] = `
                     class="css-zupqof"
                   >
                     <form
-                      class="ant-form ant-form-horizontal css-dev-only-do-not-override-txh9fw"
+                      class="ant-form ant-form-horizontal"
                     >
                       <div
                         class="switch-field-wrapper"
                       >
                         <div
-                          class="ant-form-item  css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+                          class="ant-form-item css-1jlm9cy"
                         >
                           <div
-                            class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                            class="ant-row ant-form-item-row"
                           >
                             <div
-                              class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left css-dev-only-do-not-override-txh9fw"
+                              class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left"
                             >
                               <label
                                 class="ant-form-item-no-colon"
@@ -394,7 +394,7 @@ exports[`test base/page/Account should match snapshot 1`] = `
                               </label>
                             </div>
                             <div
-                              class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                              class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control"
                             >
                               <div
                                 class="ant-form-item-control-input"
@@ -403,19 +403,19 @@ exports[`test base/page/Account should match snapshot 1`] = `
                                   class="ant-form-item-control-input-content"
                                 >
                                   <div
-                                    class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+                                    class="ant-space ant-space-horizontal ant-space-align-center"
                                   >
                                     <div
                                       class="ant-space-item"
                                     >
                                       <div
-                                        class="ant-form-item css-1jlm9cy css-dev-only-do-not-override-txh9fw ant-form-item-has-success"
+                                        class="ant-form-item css-1jlm9cy ant-form-item-has-success"
                                       >
                                         <div
-                                          class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                                          class="ant-row ant-form-item-row"
                                         >
                                           <div
-                                            class="ant-col ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                                            class="ant-col ant-form-item-control"
                                           >
                                             <div
                                               class="ant-form-item-control-input"
@@ -425,7 +425,7 @@ exports[`test base/page/Account should match snapshot 1`] = `
                                               >
                                                 <button
                                                   aria-checked="false"
-                                                  class="ant-switch basic-switch-wrapper system-config-switch css-g6dhbn css-dev-only-do-not-override-txh9fw"
+                                                  class="ant-switch basic-switch-wrapper system-config-switch css-g6dhbn"
                                                   id="enabled"
                                                   role="switch"
                                                   type="button"
@@ -462,13 +462,13 @@ exports[`test base/page/Account should match snapshot 1`] = `
                         hidden=""
                       >
                         <div
-                          class="ant-form-item css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+                          class="ant-form-item css-1jlm9cy"
                         >
                           <div
-                            class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                            class="ant-row ant-form-item-row"
                           >
                             <div
-                              class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left css-dev-only-do-not-override-txh9fw"
+                              class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left"
                             >
                               <label
                                 class="ant-form-item-no-colon"
@@ -478,7 +478,7 @@ exports[`test base/page/Account should match snapshot 1`] = `
                               </label>
                             </div>
                             <div
-                              class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                              class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control"
                             >
                               <div
                                 class="ant-form-item-control-input"
@@ -493,13 +493,13 @@ exports[`test base/page/Account should match snapshot 1`] = `
                           </div>
                         </div>
                         <div
-                          class="ant-form-item css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+                          class="ant-form-item css-1jlm9cy"
                         >
                           <div
-                            class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                            class="ant-row ant-form-item-row"
                           >
                             <div
-                              class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left css-dev-only-do-not-override-txh9fw"
+                              class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left"
                             >
                               <label
                                 class="ant-form-item-required ant-form-item-no-colon"
@@ -510,7 +510,7 @@ exports[`test base/page/Account should match snapshot 1`] = `
                               </label>
                             </div>
                             <div
-                              class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                              class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control"
                             >
                               <div
                                 class="ant-form-item-control-input"
@@ -519,7 +519,7 @@ exports[`test base/page/Account should match snapshot 1`] = `
                                   class="ant-form-item-control-input-content"
                                 >
                                   <div
-                                    class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center css-jxd35n"
+                                    class="ant-space ant-space-horizontal ant-space-align-center css-jxd35n"
                                   >
                                     <div
                                       class="ant-space-item"
@@ -527,7 +527,7 @@ exports[`test base/page/Account should match snapshot 1`] = `
                                     >
                                       <input
                                         aria-required="true"
-                                        class="ant-input css-dev-only-do-not-override-ywkr0o basic-input-wrapper css-1pd1cd5"
+                                        class="ant-input basic-input-wrapper css-1pd1cd5"
                                         id="code"
                                         placeholder="请输入验证码"
                                         type="text"
@@ -538,7 +538,7 @@ exports[`test base/page/Account should match snapshot 1`] = `
                                       class="ant-space-item"
                                     >
                                       <button
-                                        class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default basic-button-wrapper css-geipcv"
+                                        class="ant-btn ant-btn-default basic-button-wrapper css-geipcv"
                                         type="button"
                                       >
                                         <span>
@@ -553,13 +553,13 @@ exports[`test base/page/Account should match snapshot 1`] = `
                           </div>
                         </div>
                         <div
-                          class="ant-form-item css-15d6abf css-dev-only-do-not-override-txh9fw"
+                          class="ant-form-item css-15d6abf"
                         >
                           <div
-                            class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                            class="ant-row ant-form-item-row"
                           >
                             <div
-                              class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left css-dev-only-do-not-override-txh9fw"
+                              class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left"
                             >
                               <label
                                 class="ant-form-item-no-colon"
@@ -569,7 +569,7 @@ exports[`test base/page/Account should match snapshot 1`] = `
                               </label>
                             </div>
                             <div
-                              class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                              class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control"
                             >
                               <div
                                 class="ant-form-item-control-input"
@@ -578,14 +578,14 @@ exports[`test base/page/Account should match snapshot 1`] = `
                                   class="ant-form-item-control-input-content"
                                 >
                                   <div
-                                    class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+                                    class="ant-space ant-space-horizontal ant-space-align-center"
                                   >
                                     <div
                                       class="ant-space-item"
                                       style="margin-right: 12px;"
                                     >
                                       <button
-                                        class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default basic-button-wrapper css-geipcv"
+                                        class="ant-btn ant-btn-default basic-button-wrapper css-geipcv"
                                         type="button"
                                       >
                                         <span>
@@ -597,7 +597,7 @@ exports[`test base/page/Account should match snapshot 1`] = `
                                       class="ant-space-item"
                                     >
                                       <button
-                                        class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary basic-button-wrapper css-geipcv"
+                                        class="ant-btn ant-btn-primary basic-button-wrapper css-geipcv"
                                         type="submit"
                                       >
                                         <span>
@@ -649,7 +649,7 @@ exports[`test base/page/Account should match snapshot 2`] = `
         >
           账户基本信息
           <button
-            class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary basic-button-wrapper css-geipcv"
+            class="ant-btn ant-btn-primary basic-button-wrapper css-geipcv"
             type="button"
           >
             <span>
@@ -658,16 +658,16 @@ exports[`test base/page/Account should match snapshot 2`] = `
           </button>
         </div>
         <div
-          class="ant-spin-nested-loading css-dev-only-do-not-override-txh9fw"
+          class="ant-spin-nested-loading"
         >
           <div
             class="ant-spin-container"
           >
             <div
-              class="ant-row ant-row-space-between ant-row-middle css-19fu9ar css-dev-only-do-not-override-txh9fw"
+              class="ant-row ant-row-space-between ant-row-middle css-19fu9ar"
             >
               <div
-                class="ant-col ant-col-11 config-item-label css-dev-only-do-not-override-txh9fw"
+                class="ant-col ant-col-11 config-item-label"
               >
                 <div
                   class="config-item-label"
@@ -680,7 +680,7 @@ exports[`test base/page/Account should match snapshot 2`] = `
                 </div>
               </div>
               <div
-                class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center config-item-filed"
+                class="ant-space ant-space-horizontal ant-space-align-center config-item-filed"
               >
                 <div
                   class="ant-space-item"
@@ -692,7 +692,7 @@ exports[`test base/page/Account should match snapshot 2`] = `
                   class="ant-space-item"
                 >
                   <button
-                    class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default ant-btn-icon-only config-item-filed-edit-button basic-button-wrapper css-geipcv"
+                    class="ant-btn ant-btn-default ant-btn-icon-only config-item-filed-edit-button basic-button-wrapper css-geipcv"
                     hidden=""
                     type="button"
                   >
@@ -716,10 +716,10 @@ exports[`test base/page/Account should match snapshot 2`] = `
               </div>
             </div>
             <div
-              class="ant-row ant-row-space-between ant-row-middle css-19fu9ar css-dev-only-do-not-override-txh9fw"
+              class="ant-row ant-row-space-between ant-row-middle css-19fu9ar"
             >
               <div
-                class="ant-col ant-col-11 config-item-label css-dev-only-do-not-override-txh9fw"
+                class="ant-col ant-col-11 config-item-label"
               >
                 <div
                   class="config-item-label"
@@ -732,7 +732,7 @@ exports[`test base/page/Account should match snapshot 2`] = `
                 </div>
               </div>
               <div
-                class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center config-item-filed"
+                class="ant-space ant-space-horizontal ant-space-align-center config-item-filed"
               >
                 <div
                   class="ant-space-item"
@@ -744,7 +744,7 @@ exports[`test base/page/Account should match snapshot 2`] = `
                   class="ant-space-item"
                 >
                   <button
-                    class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default ant-btn-icon-only config-item-filed-edit-button basic-button-wrapper css-geipcv"
+                    class="ant-btn ant-btn-default ant-btn-icon-only config-item-filed-edit-button basic-button-wrapper css-geipcv"
                     hidden=""
                     type="button"
                   >
@@ -768,10 +768,10 @@ exports[`test base/page/Account should match snapshot 2`] = `
               </div>
             </div>
             <div
-              class="ant-row ant-row-space-between ant-row-middle css-19fu9ar css-dev-only-do-not-override-txh9fw"
+              class="ant-row ant-row-space-between ant-row-middle css-19fu9ar"
             >
               <div
-                class="ant-col ant-col-11 config-item-label css-dev-only-do-not-override-txh9fw"
+                class="ant-col ant-col-11 config-item-label"
               >
                 <div
                   class="config-item-label"
@@ -784,7 +784,7 @@ exports[`test base/page/Account should match snapshot 2`] = `
                 </div>
               </div>
               <div
-                class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center config-item-filed"
+                class="ant-space ant-space-horizontal ant-space-align-center config-item-filed"
               >
                 <div
                   class="ant-space-item"
@@ -796,7 +796,7 @@ exports[`test base/page/Account should match snapshot 2`] = `
                   class="ant-space-item"
                 >
                   <button
-                    class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default ant-btn-icon-only config-item-filed-edit-button basic-button-wrapper css-geipcv"
+                    class="ant-btn ant-btn-default ant-btn-icon-only config-item-filed-edit-button basic-button-wrapper css-geipcv"
                     hidden=""
                     type="button"
                   >
@@ -820,10 +820,10 @@ exports[`test base/page/Account should match snapshot 2`] = `
               </div>
             </div>
             <div
-              class="ant-row ant-row-space-between ant-row-middle css-19fu9ar css-dev-only-do-not-override-txh9fw"
+              class="ant-row ant-row-space-between ant-row-middle css-19fu9ar"
             >
               <div
-                class="ant-col ant-col-11 config-item-label css-dev-only-do-not-override-txh9fw"
+                class="ant-col ant-col-11 config-item-label"
               >
                 <div
                   class="config-item-label"
@@ -836,7 +836,7 @@ exports[`test base/page/Account should match snapshot 2`] = `
                 </div>
               </div>
               <div
-                class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center config-item-filed"
+                class="ant-space ant-space-horizontal ant-space-align-center config-item-filed"
               >
                 <div
                   class="ant-space-item"
@@ -848,7 +848,7 @@ exports[`test base/page/Account should match snapshot 2`] = `
                   class="ant-space-item"
                 >
                   <button
-                    class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default ant-btn-icon-only config-item-filed-edit-button basic-button-wrapper css-geipcv"
+                    class="ant-btn ant-btn-default ant-btn-icon-only config-item-filed-edit-button basic-button-wrapper css-geipcv"
                     hidden=""
                     type="button"
                   >
@@ -872,7 +872,7 @@ exports[`test base/page/Account should match snapshot 2`] = `
               </div>
             </div>
             <div
-              class="ant-row clear-padding-top css-nsnt4h css-dev-only-do-not-override-txh9fw"
+              class="ant-row clear-padding-top css-nsnt4h"
             >
               <div
                 class="label-content"
@@ -892,7 +892,7 @@ exports[`test base/page/Account should match snapshot 2`] = `
                   </div>
                 </div>
                 <button
-                  class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary basic-button-wrapper css-geipcv"
+                  class="ant-btn ant-btn-primary basic-button-wrapper css-geipcv"
                   type="button"
                 >
                   <span>
@@ -915,7 +915,7 @@ exports[`test base/page/Account should match snapshot 2`] = `
                     class="css-1sg2lsz"
                   >
                     <div
-                      class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
+                      class="ant-space ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
                     >
                       <div
                         class="ant-space-item"
@@ -938,10 +938,10 @@ exports[`test base/page/Account should match snapshot 2`] = `
                       </div>
                     </div>
                     <span
-                      class="ant-typography css-dev-only-do-not-override-txh9fw"
+                      class="ant-typography"
                     >
                       <div
-                        aria-label="Copy"
+                        aria-label="复制"
                         class="ant-typography-copy"
                         role="button"
                         style="border: 0px; background: transparent; padding: 0px; line-height: inherit; display: inline-block;"
@@ -988,7 +988,7 @@ exports[`test base/page/Account should match snapshot 2`] = `
             </div>
             <div>
               <div
-                class="ant-spin-nested-loading css-dev-only-do-not-override-txh9fw"
+                class="ant-spin-nested-loading"
               >
                 <div
                   class="ant-spin-container"
@@ -997,19 +997,19 @@ exports[`test base/page/Account should match snapshot 2`] = `
                     class="css-zupqof"
                   >
                     <form
-                      class="ant-form ant-form-horizontal css-dev-only-do-not-override-txh9fw"
+                      class="ant-form ant-form-horizontal"
                     >
                       <div
                         class="switch-field-wrapper"
                       >
                         <div
-                          class="ant-form-item  css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+                          class="ant-form-item css-1jlm9cy"
                         >
                           <div
-                            class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                            class="ant-row ant-form-item-row"
                           >
                             <div
-                              class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left css-dev-only-do-not-override-txh9fw"
+                              class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left"
                             >
                               <label
                                 class="ant-form-item-no-colon"
@@ -1019,7 +1019,7 @@ exports[`test base/page/Account should match snapshot 2`] = `
                               </label>
                             </div>
                             <div
-                              class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                              class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control"
                             >
                               <div
                                 class="ant-form-item-control-input"
@@ -1028,19 +1028,19 @@ exports[`test base/page/Account should match snapshot 2`] = `
                                   class="ant-form-item-control-input-content"
                                 >
                                   <div
-                                    class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+                                    class="ant-space ant-space-horizontal ant-space-align-center"
                                   >
                                     <div
                                       class="ant-space-item"
                                     >
                                       <div
-                                        class="ant-form-item css-1jlm9cy css-dev-only-do-not-override-txh9fw ant-form-item-has-success"
+                                        class="ant-form-item css-1jlm9cy ant-form-item-has-success"
                                       >
                                         <div
-                                          class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                                          class="ant-row ant-form-item-row"
                                         >
                                           <div
-                                            class="ant-col ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                                            class="ant-col ant-form-item-control"
                                           >
                                             <div
                                               class="ant-form-item-control-input"
@@ -1050,7 +1050,7 @@ exports[`test base/page/Account should match snapshot 2`] = `
                                               >
                                                 <button
                                                   aria-checked="false"
-                                                  class="ant-switch basic-switch-wrapper system-config-switch css-g6dhbn css-dev-only-do-not-override-txh9fw"
+                                                  class="ant-switch basic-switch-wrapper system-config-switch css-g6dhbn"
                                                   id="enabled"
                                                   role="switch"
                                                   type="button"
@@ -1087,13 +1087,13 @@ exports[`test base/page/Account should match snapshot 2`] = `
                         hidden=""
                       >
                         <div
-                          class="ant-form-item css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+                          class="ant-form-item css-1jlm9cy"
                         >
                           <div
-                            class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                            class="ant-row ant-form-item-row"
                           >
                             <div
-                              class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left css-dev-only-do-not-override-txh9fw"
+                              class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left"
                             >
                               <label
                                 class="ant-form-item-no-colon"
@@ -1103,7 +1103,7 @@ exports[`test base/page/Account should match snapshot 2`] = `
                               </label>
                             </div>
                             <div
-                              class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                              class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control"
                             >
                               <div
                                 class="ant-form-item-control-input"
@@ -1118,13 +1118,13 @@ exports[`test base/page/Account should match snapshot 2`] = `
                           </div>
                         </div>
                         <div
-                          class="ant-form-item css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+                          class="ant-form-item css-1jlm9cy"
                         >
                           <div
-                            class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                            class="ant-row ant-form-item-row"
                           >
                             <div
-                              class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left css-dev-only-do-not-override-txh9fw"
+                              class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left"
                             >
                               <label
                                 class="ant-form-item-required ant-form-item-no-colon"
@@ -1135,7 +1135,7 @@ exports[`test base/page/Account should match snapshot 2`] = `
                               </label>
                             </div>
                             <div
-                              class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                              class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control"
                             >
                               <div
                                 class="ant-form-item-control-input"
@@ -1144,7 +1144,7 @@ exports[`test base/page/Account should match snapshot 2`] = `
                                   class="ant-form-item-control-input-content"
                                 >
                                   <div
-                                    class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center css-jxd35n"
+                                    class="ant-space ant-space-horizontal ant-space-align-center css-jxd35n"
                                   >
                                     <div
                                       class="ant-space-item"
@@ -1152,7 +1152,7 @@ exports[`test base/page/Account should match snapshot 2`] = `
                                     >
                                       <input
                                         aria-required="true"
-                                        class="ant-input css-dev-only-do-not-override-ywkr0o basic-input-wrapper css-1pd1cd5"
+                                        class="ant-input basic-input-wrapper css-1pd1cd5"
                                         id="code"
                                         placeholder="请输入验证码"
                                         type="text"
@@ -1163,7 +1163,7 @@ exports[`test base/page/Account should match snapshot 2`] = `
                                       class="ant-space-item"
                                     >
                                       <button
-                                        class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default basic-button-wrapper css-geipcv"
+                                        class="ant-btn ant-btn-default basic-button-wrapper css-geipcv"
                                         type="button"
                                       >
                                         <span>
@@ -1178,13 +1178,13 @@ exports[`test base/page/Account should match snapshot 2`] = `
                           </div>
                         </div>
                         <div
-                          class="ant-form-item css-15d6abf css-dev-only-do-not-override-txh9fw"
+                          class="ant-form-item css-15d6abf"
                         >
                           <div
-                            class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                            class="ant-row ant-form-item-row"
                           >
                             <div
-                              class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left css-dev-only-do-not-override-txh9fw"
+                              class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left"
                             >
                               <label
                                 class="ant-form-item-no-colon"
@@ -1194,7 +1194,7 @@ exports[`test base/page/Account should match snapshot 2`] = `
                               </label>
                             </div>
                             <div
-                              class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                              class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control"
                             >
                               <div
                                 class="ant-form-item-control-input"
@@ -1203,14 +1203,14 @@ exports[`test base/page/Account should match snapshot 2`] = `
                                   class="ant-form-item-control-input-content"
                                 >
                                   <div
-                                    class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+                                    class="ant-space ant-space-horizontal ant-space-align-center"
                                   >
                                     <div
                                       class="ant-space-item"
                                       style="margin-right: 12px;"
                                     >
                                       <button
-                                        class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default basic-button-wrapper css-geipcv"
+                                        class="ant-btn ant-btn-default basic-button-wrapper css-geipcv"
                                         type="button"
                                       >
                                         <span>
@@ -1222,7 +1222,7 @@ exports[`test base/page/Account should match snapshot 2`] = `
                                       class="ant-space-item"
                                     >
                                       <button
-                                        class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary basic-button-wrapper css-geipcv"
+                                        class="ant-btn ant-btn-primary basic-button-wrapper css-geipcv"
                                         type="submit"
                                       >
                                         <span>
@@ -1249,7 +1249,7 @@ exports[`test base/page/Account should match snapshot 2`] = `
   </div>
   <div>
     <div
-      class="ant-drawer ant-drawer-right css-dev-only-do-not-override-txh9fw ant-drawer-open"
+      class="ant-drawer ant-drawer-right ant-drawer-open"
       tabindex="-1"
     >
       <div
@@ -1295,34 +1295,36 @@ exports[`test base/page/Account should match snapshot 2`] = `
                 <span
                   aria-label="close"
                   class="anticon anticon-close"
+                  data-testid="basic-drawer-close-icon"
                   role="img"
                 >
                   <svg
                     aria-hidden="true"
                     data-icon="close"
                     fill="currentColor"
+                    fill-rule="evenodd"
                     focusable="false"
                     height="1em"
                     viewBox="64 64 896 896"
                     width="1em"
                   >
                     <path
-                      d="M563.8 512l262.5-312.9c4.4-5.2.7-13.1-6.1-13.1h-79.8c-4.7 0-9.2 2.1-12.3 5.7L511.6 449.8 295.1 191.7c-3-3.6-7.5-5.7-12.3-5.7H203c-6.8 0-10.5 7.9-6.1 13.1L459.4 512 196.9 824.9A7.95 7.95 0 00203 838h79.8c4.7 0 9.2-2.1 12.3-5.7l216.5-258.1 216.5 258.1c3 3.6 7.5 5.7 12.3 5.7h79.8c6.8 0 10.5-7.9 6.1-13.1L563.8 512z"
+                      d="M799.86 166.31c.02 0 .04.02.08.06l57.69 57.7c.04.03.05.05.06.08a.12.12 0 010 .06c0 .03-.02.05-.06.09L569.93 512l287.7 287.7c.04.04.05.06.06.09a.12.12 0 010 .07c0 .02-.02.04-.06.08l-57.7 57.69c-.03.04-.05.05-.07.06a.12.12 0 01-.07 0c-.03 0-.05-.02-.09-.06L512 569.93l-287.7 287.7c-.04.04-.06.05-.09.06a.12.12 0 01-.07 0c-.02 0-.04-.02-.08-.06l-57.69-57.7c-.04-.03-.05-.05-.06-.07a.12.12 0 010-.07c0-.03.02-.05.06-.09L454.07 512l-287.7-287.7c-.04-.04-.05-.06-.06-.09a.12.12 0 010-.07c0-.02.02-.04.06-.08l57.7-57.69c.03-.04.05-.05.07-.06a.12.12 0 01.07 0c.03 0 .05.02.09.06L512 454.07l287.7-287.7c.04-.04.06-.05.09-.06a.12.12 0 01.07 0z"
                     />
                   </svg>
                 </span>
               </div>
               <form
-                class="ant-form ant-form-vertical css-dev-only-do-not-override-txh9fw"
+                class="ant-form ant-form-vertical"
               >
                 <div
-                  class="ant-form-item css-dev-only-do-not-override-txh9fw"
+                  class="ant-form-item"
                 >
                   <div
-                    class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                    class="ant-row ant-form-item-row"
                   >
                     <div
-                      class="ant-col ant-form-item-label css-dev-only-do-not-override-txh9fw"
+                      class="ant-col ant-form-item-label"
                     >
                       <label
                         class="ant-form-item-required"
@@ -1333,7 +1335,7 @@ exports[`test base/page/Account should match snapshot 2`] = `
                       </label>
                     </div>
                     <div
-                      class="ant-col ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                      class="ant-col ant-form-item-control"
                     >
                       <div
                         class="ant-form-item-control-input"
@@ -1342,11 +1344,11 @@ exports[`test base/page/Account should match snapshot 2`] = `
                           class="ant-form-item-control-input-content"
                         >
                           <span
-                            class="ant-input-affix-wrapper ant-input-password basic-input-wrapper css-1pd1cd5 css-dev-only-do-not-override-txh9fw"
+                            class="ant-input-affix-wrapper ant-input-password basic-input-wrapper css-1pd1cd5"
                           >
                             <input
                               aria-required="true"
-                              class="ant-input css-dev-only-do-not-override-txh9fw"
+                              class="ant-input"
                               id="oldPassword"
                               placeholder="请输入旧密码"
                               type="password"
@@ -1386,13 +1388,13 @@ exports[`test base/page/Account should match snapshot 2`] = `
                   </div>
                 </div>
                 <div
-                  class="ant-form-item css-dev-only-do-not-override-txh9fw"
+                  class="ant-form-item"
                 >
                   <div
-                    class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                    class="ant-row ant-form-item-row"
                   >
                     <div
-                      class="ant-col ant-form-item-label css-dev-only-do-not-override-txh9fw"
+                      class="ant-col ant-form-item-label"
                     >
                       <label
                         class="ant-form-item-required"
@@ -1403,7 +1405,7 @@ exports[`test base/page/Account should match snapshot 2`] = `
                       </label>
                     </div>
                     <div
-                      class="ant-col ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                      class="ant-col ant-form-item-control"
                     >
                       <div
                         class="ant-form-item-control-input"
@@ -1412,11 +1414,11 @@ exports[`test base/page/Account should match snapshot 2`] = `
                           class="ant-form-item-control-input-content"
                         >
                           <span
-                            class="ant-input-affix-wrapper ant-input-password basic-input-wrapper css-1pd1cd5 css-dev-only-do-not-override-txh9fw"
+                            class="ant-input-affix-wrapper ant-input-password basic-input-wrapper css-1pd1cd5"
                           >
                             <input
                               aria-required="true"
-                              class="ant-input css-dev-only-do-not-override-txh9fw"
+                              class="ant-input"
                               id="newPassword"
                               placeholder="请选择新密码"
                               type="password"
@@ -1456,13 +1458,13 @@ exports[`test base/page/Account should match snapshot 2`] = `
                   </div>
                 </div>
                 <div
-                  class="ant-form-item css-dev-only-do-not-override-txh9fw"
+                  class="ant-form-item"
                 >
                   <div
-                    class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                    class="ant-row ant-form-item-row"
                   >
                     <div
-                      class="ant-col ant-form-item-label css-dev-only-do-not-override-txh9fw"
+                      class="ant-col ant-form-item-label"
                     >
                       <label
                         class="ant-form-item-required"
@@ -1473,7 +1475,7 @@ exports[`test base/page/Account should match snapshot 2`] = `
                       </label>
                     </div>
                     <div
-                      class="ant-col ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                      class="ant-col ant-form-item-control"
                     >
                       <div
                         class="ant-form-item-control-input"
@@ -1482,11 +1484,11 @@ exports[`test base/page/Account should match snapshot 2`] = `
                           class="ant-form-item-control-input-content"
                         >
                           <span
-                            class="ant-input-affix-wrapper ant-input-password basic-input-wrapper css-1pd1cd5 css-dev-only-do-not-override-txh9fw"
+                            class="ant-input-affix-wrapper ant-input-password basic-input-wrapper css-1pd1cd5"
                           >
                             <input
                               aria-required="true"
-                              class="ant-input css-dev-only-do-not-override-txh9fw"
+                              class="ant-input"
                               id="newPasswordConfirm"
                               placeholder="请选择确认新密码"
                               type="password"
@@ -1531,14 +1533,14 @@ exports[`test base/page/Account should match snapshot 2`] = `
               class="ant-drawer-footer"
             >
               <div
-                class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+                class="ant-space ant-space-horizontal ant-space-align-center"
               >
                 <div
                   class="ant-space-item"
                   style="margin-right: 8px;"
                 >
                   <button
-                    class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default basic-button-wrapper css-geipcv"
+                    class="ant-btn ant-btn-default basic-button-wrapper css-geipcv"
                     type="button"
                   >
                     <span>
@@ -1550,7 +1552,7 @@ exports[`test base/page/Account should match snapshot 2`] = `
                   class="ant-space-item"
                 >
                   <button
-                    class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary basic-button-wrapper css-geipcv"
+                    class="ant-btn ant-btn-primary basic-button-wrapper css-geipcv"
                     type="button"
                   >
                     <span>
@@ -1598,7 +1600,7 @@ exports[`test base/page/Account should match snapshot when "getUserInfoLoading" 
         >
           账户基本信息
           <button
-            class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary basic-button-wrapper css-geipcv"
+            class="ant-btn ant-btn-primary basic-button-wrapper css-geipcv"
             type="button"
           >
             <span>
@@ -1607,13 +1609,13 @@ exports[`test base/page/Account should match snapshot when "getUserInfoLoading" 
           </button>
         </div>
         <div
-          class="ant-spin-nested-loading css-dev-only-do-not-override-txh9fw"
+          class="ant-spin-nested-loading"
         >
           <div>
             <div
               aria-busy="true"
               aria-live="polite"
-              class="ant-spin ant-spin-spinning css-dev-only-do-not-override-txh9fw"
+              class="ant-spin ant-spin-spinning"
             >
               <span
                 class="ant-spin-dot ant-spin-dot-spin"
@@ -1637,10 +1639,10 @@ exports[`test base/page/Account should match snapshot when "getUserInfoLoading" 
             class="ant-spin-container ant-spin-blur"
           >
             <div
-              class="ant-row ant-row-space-between ant-row-middle css-19fu9ar css-dev-only-do-not-override-txh9fw"
+              class="ant-row ant-row-space-between ant-row-middle css-19fu9ar"
             >
               <div
-                class="ant-col ant-col-11 config-item-label css-dev-only-do-not-override-txh9fw"
+                class="ant-col ant-col-11 config-item-label"
               >
                 <div
                   class="config-item-label"
@@ -1653,7 +1655,7 @@ exports[`test base/page/Account should match snapshot when "getUserInfoLoading" 
                 </div>
               </div>
               <div
-                class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center config-item-filed"
+                class="ant-space ant-space-horizontal ant-space-align-center config-item-filed"
               >
                 <div
                   class="ant-space-item"
@@ -1665,7 +1667,7 @@ exports[`test base/page/Account should match snapshot when "getUserInfoLoading" 
                   class="ant-space-item"
                 >
                   <button
-                    class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default ant-btn-icon-only config-item-filed-edit-button basic-button-wrapper css-geipcv"
+                    class="ant-btn ant-btn-default ant-btn-icon-only config-item-filed-edit-button basic-button-wrapper css-geipcv"
                     hidden=""
                     type="button"
                   >
@@ -1689,10 +1691,10 @@ exports[`test base/page/Account should match snapshot when "getUserInfoLoading" 
               </div>
             </div>
             <div
-              class="ant-row ant-row-space-between ant-row-middle css-19fu9ar css-dev-only-do-not-override-txh9fw"
+              class="ant-row ant-row-space-between ant-row-middle css-19fu9ar"
             >
               <div
-                class="ant-col ant-col-11 config-item-label css-dev-only-do-not-override-txh9fw"
+                class="ant-col ant-col-11 config-item-label"
               >
                 <div
                   class="config-item-label"
@@ -1705,7 +1707,7 @@ exports[`test base/page/Account should match snapshot when "getUserInfoLoading" 
                 </div>
               </div>
               <div
-                class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center config-item-filed"
+                class="ant-space ant-space-horizontal ant-space-align-center config-item-filed"
               >
                 <div
                   class="ant-space-item"
@@ -1717,7 +1719,7 @@ exports[`test base/page/Account should match snapshot when "getUserInfoLoading" 
                   class="ant-space-item"
                 >
                   <button
-                    class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default ant-btn-icon-only config-item-filed-edit-button basic-button-wrapper css-geipcv"
+                    class="ant-btn ant-btn-default ant-btn-icon-only config-item-filed-edit-button basic-button-wrapper css-geipcv"
                     hidden=""
                     type="button"
                   >
@@ -1741,10 +1743,10 @@ exports[`test base/page/Account should match snapshot when "getUserInfoLoading" 
               </div>
             </div>
             <div
-              class="ant-row ant-row-space-between ant-row-middle css-19fu9ar css-dev-only-do-not-override-txh9fw"
+              class="ant-row ant-row-space-between ant-row-middle css-19fu9ar"
             >
               <div
-                class="ant-col ant-col-11 config-item-label css-dev-only-do-not-override-txh9fw"
+                class="ant-col ant-col-11 config-item-label"
               >
                 <div
                   class="config-item-label"
@@ -1757,7 +1759,7 @@ exports[`test base/page/Account should match snapshot when "getUserInfoLoading" 
                 </div>
               </div>
               <div
-                class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center config-item-filed"
+                class="ant-space ant-space-horizontal ant-space-align-center config-item-filed"
               >
                 <div
                   class="ant-space-item"
@@ -1769,7 +1771,7 @@ exports[`test base/page/Account should match snapshot when "getUserInfoLoading" 
                   class="ant-space-item"
                 >
                   <button
-                    class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default ant-btn-icon-only config-item-filed-edit-button basic-button-wrapper css-geipcv"
+                    class="ant-btn ant-btn-default ant-btn-icon-only config-item-filed-edit-button basic-button-wrapper css-geipcv"
                     hidden=""
                     type="button"
                   >
@@ -1793,10 +1795,10 @@ exports[`test base/page/Account should match snapshot when "getUserInfoLoading" 
               </div>
             </div>
             <div
-              class="ant-row ant-row-space-between ant-row-middle css-19fu9ar css-dev-only-do-not-override-txh9fw"
+              class="ant-row ant-row-space-between ant-row-middle css-19fu9ar"
             >
               <div
-                class="ant-col ant-col-11 config-item-label css-dev-only-do-not-override-txh9fw"
+                class="ant-col ant-col-11 config-item-label"
               >
                 <div
                   class="config-item-label"
@@ -1809,7 +1811,7 @@ exports[`test base/page/Account should match snapshot when "getUserInfoLoading" 
                 </div>
               </div>
               <div
-                class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center config-item-filed"
+                class="ant-space ant-space-horizontal ant-space-align-center config-item-filed"
               >
                 <div
                   class="ant-space-item"
@@ -1821,7 +1823,7 @@ exports[`test base/page/Account should match snapshot when "getUserInfoLoading" 
                   class="ant-space-item"
                 >
                   <button
-                    class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default ant-btn-icon-only config-item-filed-edit-button basic-button-wrapper css-geipcv"
+                    class="ant-btn ant-btn-default ant-btn-icon-only config-item-filed-edit-button basic-button-wrapper css-geipcv"
                     hidden=""
                     type="button"
                   >
@@ -1845,7 +1847,7 @@ exports[`test base/page/Account should match snapshot when "getUserInfoLoading" 
               </div>
             </div>
             <div
-              class="ant-row clear-padding-top css-nsnt4h css-dev-only-do-not-override-txh9fw"
+              class="ant-row clear-padding-top css-nsnt4h"
             >
               <div
                 class="label-content"
@@ -1865,7 +1867,7 @@ exports[`test base/page/Account should match snapshot when "getUserInfoLoading" 
                   </div>
                 </div>
                 <button
-                  class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary basic-button-wrapper css-geipcv"
+                  class="ant-btn ant-btn-primary basic-button-wrapper css-geipcv"
                   type="button"
                 >
                   <span>
@@ -1888,7 +1890,7 @@ exports[`test base/page/Account should match snapshot when "getUserInfoLoading" 
                     class="css-1sg2lsz"
                   >
                     <div
-                      class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
+                      class="ant-space ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
                     >
                       <div
                         class="ant-space-item"
@@ -1911,10 +1913,10 @@ exports[`test base/page/Account should match snapshot when "getUserInfoLoading" 
                       </div>
                     </div>
                     <span
-                      class="ant-typography css-dev-only-do-not-override-txh9fw"
+                      class="ant-typography"
                     >
                       <div
-                        aria-label="Copy"
+                        aria-label="复制"
                         class="ant-typography-copy"
                         role="button"
                         style="border: 0px; background: transparent; padding: 0px; line-height: inherit; display: inline-block;"
@@ -1961,13 +1963,13 @@ exports[`test base/page/Account should match snapshot when "getUserInfoLoading" 
             </div>
             <div>
               <div
-                class="ant-spin-nested-loading css-dev-only-do-not-override-txh9fw"
+                class="ant-spin-nested-loading"
               >
                 <div>
                   <div
                     aria-busy="true"
                     aria-live="polite"
-                    class="ant-spin ant-spin-spinning css-dev-only-do-not-override-txh9fw"
+                    class="ant-spin ant-spin-spinning"
                   >
                     <span
                       class="ant-spin-dot ant-spin-dot-spin"
@@ -1994,19 +1996,19 @@ exports[`test base/page/Account should match snapshot when "getUserInfoLoading" 
                     class="css-zupqof"
                   >
                     <form
-                      class="ant-form ant-form-horizontal css-dev-only-do-not-override-txh9fw"
+                      class="ant-form ant-form-horizontal"
                     >
                       <div
                         class="switch-field-wrapper"
                       >
                         <div
-                          class="ant-form-item  css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+                          class="ant-form-item css-1jlm9cy"
                         >
                           <div
-                            class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                            class="ant-row ant-form-item-row"
                           >
                             <div
-                              class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left css-dev-only-do-not-override-txh9fw"
+                              class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left"
                             >
                               <label
                                 class="ant-form-item-no-colon"
@@ -2016,7 +2018,7 @@ exports[`test base/page/Account should match snapshot when "getUserInfoLoading" 
                               </label>
                             </div>
                             <div
-                              class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                              class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control"
                             >
                               <div
                                 class="ant-form-item-control-input"
@@ -2025,19 +2027,19 @@ exports[`test base/page/Account should match snapshot when "getUserInfoLoading" 
                                   class="ant-form-item-control-input-content"
                                 >
                                   <div
-                                    class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+                                    class="ant-space ant-space-horizontal ant-space-align-center"
                                   >
                                     <div
                                       class="ant-space-item"
                                     >
                                       <div
-                                        class="ant-form-item css-1jlm9cy css-dev-only-do-not-override-txh9fw ant-form-item-has-success"
+                                        class="ant-form-item css-1jlm9cy ant-form-item-has-success"
                                       >
                                         <div
-                                          class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                                          class="ant-row ant-form-item-row"
                                         >
                                           <div
-                                            class="ant-col ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                                            class="ant-col ant-form-item-control"
                                           >
                                             <div
                                               class="ant-form-item-control-input"
@@ -2047,7 +2049,7 @@ exports[`test base/page/Account should match snapshot when "getUserInfoLoading" 
                                               >
                                                 <button
                                                   aria-checked="false"
-                                                  class="ant-switch basic-switch-wrapper system-config-switch css-g6dhbn css-dev-only-do-not-override-txh9fw"
+                                                  class="ant-switch basic-switch-wrapper system-config-switch css-g6dhbn"
                                                   id="enabled"
                                                   role="switch"
                                                   type="button"
@@ -2084,13 +2086,13 @@ exports[`test base/page/Account should match snapshot when "getUserInfoLoading" 
                         hidden=""
                       >
                         <div
-                          class="ant-form-item css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+                          class="ant-form-item css-1jlm9cy"
                         >
                           <div
-                            class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                            class="ant-row ant-form-item-row"
                           >
                             <div
-                              class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left css-dev-only-do-not-override-txh9fw"
+                              class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left"
                             >
                               <label
                                 class="ant-form-item-no-colon"
@@ -2100,7 +2102,7 @@ exports[`test base/page/Account should match snapshot when "getUserInfoLoading" 
                               </label>
                             </div>
                             <div
-                              class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                              class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control"
                             >
                               <div
                                 class="ant-form-item-control-input"
@@ -2115,13 +2117,13 @@ exports[`test base/page/Account should match snapshot when "getUserInfoLoading" 
                           </div>
                         </div>
                         <div
-                          class="ant-form-item css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+                          class="ant-form-item css-1jlm9cy"
                         >
                           <div
-                            class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                            class="ant-row ant-form-item-row"
                           >
                             <div
-                              class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left css-dev-only-do-not-override-txh9fw"
+                              class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left"
                             >
                               <label
                                 class="ant-form-item-required ant-form-item-no-colon"
@@ -2132,7 +2134,7 @@ exports[`test base/page/Account should match snapshot when "getUserInfoLoading" 
                               </label>
                             </div>
                             <div
-                              class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                              class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control"
                             >
                               <div
                                 class="ant-form-item-control-input"
@@ -2141,7 +2143,7 @@ exports[`test base/page/Account should match snapshot when "getUserInfoLoading" 
                                   class="ant-form-item-control-input-content"
                                 >
                                   <div
-                                    class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center css-jxd35n"
+                                    class="ant-space ant-space-horizontal ant-space-align-center css-jxd35n"
                                   >
                                     <div
                                       class="ant-space-item"
@@ -2149,7 +2151,7 @@ exports[`test base/page/Account should match snapshot when "getUserInfoLoading" 
                                     >
                                       <input
                                         aria-required="true"
-                                        class="ant-input css-dev-only-do-not-override-ywkr0o basic-input-wrapper css-1pd1cd5"
+                                        class="ant-input basic-input-wrapper css-1pd1cd5"
                                         id="code"
                                         placeholder="请输入验证码"
                                         type="text"
@@ -2160,7 +2162,7 @@ exports[`test base/page/Account should match snapshot when "getUserInfoLoading" 
                                       class="ant-space-item"
                                     >
                                       <button
-                                        class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default basic-button-wrapper css-geipcv"
+                                        class="ant-btn ant-btn-default basic-button-wrapper css-geipcv"
                                         type="button"
                                       >
                                         <span>
@@ -2175,13 +2177,13 @@ exports[`test base/page/Account should match snapshot when "getUserInfoLoading" 
                           </div>
                         </div>
                         <div
-                          class="ant-form-item css-15d6abf css-dev-only-do-not-override-txh9fw"
+                          class="ant-form-item css-15d6abf"
                         >
                           <div
-                            class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                            class="ant-row ant-form-item-row"
                           >
                             <div
-                              class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left css-dev-only-do-not-override-txh9fw"
+                              class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left"
                             >
                               <label
                                 class="ant-form-item-no-colon"
@@ -2191,7 +2193,7 @@ exports[`test base/page/Account should match snapshot when "getUserInfoLoading" 
                               </label>
                             </div>
                             <div
-                              class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                              class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control"
                             >
                               <div
                                 class="ant-form-item-control-input"
@@ -2200,14 +2202,14 @@ exports[`test base/page/Account should match snapshot when "getUserInfoLoading" 
                                   class="ant-form-item-control-input-content"
                                 >
                                   <div
-                                    class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+                                    class="ant-space ant-space-horizontal ant-space-align-center"
                                   >
                                     <div
                                       class="ant-space-item"
                                       style="margin-right: 12px;"
                                     >
                                       <button
-                                        class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default basic-button-wrapper css-geipcv"
+                                        class="ant-btn ant-btn-default basic-button-wrapper css-geipcv"
                                         type="button"
                                       >
                                         <span>
@@ -2219,7 +2221,7 @@ exports[`test base/page/Account should match snapshot when "getUserInfoLoading" 
                                       class="ant-space-item"
                                     >
                                       <button
-                                        class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary basic-button-wrapper css-geipcv"
+                                        class="ant-btn ant-btn-primary basic-button-wrapper css-geipcv"
                                         type="submit"
                                       >
                                         <span>

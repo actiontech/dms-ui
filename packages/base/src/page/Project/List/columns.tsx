@@ -1,22 +1,17 @@
 import { t } from '../../../locale';
 import { formatTime } from '@actiontech/shared/lib/utils/Common';
-import { IListProject } from '@actiontech/shared/lib/api/base/service/common';
+import { IListProjectV2 } from '@actiontech/shared/lib/api/base/service/common';
 import { ActiontechTableColumn } from '@actiontech/shared/lib/components/ActiontechTable';
 import { TableColumnWithIconStyleWrapper } from '@actiontech/shared/lib/styleWrapper/element';
 import { FlagFilled, LockOutlined } from '@actiontech/icons';
-import {
-  BasicTag,
-  BasicToolTip,
-  BasicTypographyEllipsis,
-  TypedLink
-} from '@actiontech/shared';
-import { Space } from 'antd';
+import { BasicTypographyEllipsis, TypedLink } from '@actiontech/shared';
 import { ProjectPriorityDictionary } from 'sqle/src/page/GlobalDashboard/index.data';
 import { ROUTE_PATHS } from '@actiontech/shared/lib/data/routePaths';
+import { ProjectListBusinessTagStyleWrapper } from './style';
 
 export const ProjectListTableColumnFactory =
-  (): ActiontechTableColumn<IListProject> => {
-    const columns: ActiontechTableColumn<IListProject> = [
+  (): ActiontechTableColumn<IListProjectV2> => {
+    const columns: ActiontechTableColumn<IListProjectV2> = [
       {
         dataIndex: 'name',
         title: () => t('dmsProject.projectForm.name'),
@@ -32,31 +27,16 @@ export const ProjectListTableColumnFactory =
         }
       },
       {
-        dataIndex: 'business',
+        dataIndex: 'business_tag',
         title: () => t('dmsProject.projectForm.business'),
         render: (business) => {
-          if (!business || !business.length) {
+          if (!business) {
             return '-';
           }
           return (
-            <BasicToolTip
-              title={
-                business.length > 1 ? (
-                  <Space wrap>
-                    {business.map((v) => (
-                      <BasicTag key={v.id}>{v.name}</BasicTag>
-                    ))}
-                  </Space>
-                ) : null
-              }
-            >
-              <Space>
-                <BasicTag style={{ marginRight: 0 }}>
-                  {business[0].name}
-                </BasicTag>
-                {business.length > 1 ? '...' : null}
-              </Space>
-            </BasicToolTip>
+            <ProjectListBusinessTagStyleWrapper>
+              {business.name}
+            </ProjectListBusinessTagStyleWrapper>
           );
         }
       },

@@ -10,7 +10,7 @@ exports[`ReportStatistics/WorkOrderState render chart snap 1`] = `
         class="icon-center-wrapper MuiBox-root css-0"
       >
         <div
-          class="css-dev-only-do-not-override-txh9fw ant-empty is-icon-loading css-19kysfv"
+          class="ant-empty is-icon-loading css-19kysfv"
         >
           <div
             class="ant-empty-image"
@@ -18,7 +18,7 @@ exports[`ReportStatistics/WorkOrderState render chart snap 1`] = `
             <div
               aria-busy="true"
               aria-live="polite"
-              class="ant-spin ant-spin-spinning css-dev-only-do-not-override-txh9fw"
+              class="ant-spin ant-spin-spinning"
             >
               <span
                 class="ant-spin-dot ant-spin-dot-spin"
@@ -148,11 +148,11 @@ exports[`ReportStatistics/WorkOrderState render chart snap 2`] = `
               class="legend-wrapper"
             >
               <div
-                class="ant-row css-dev-only-do-not-override-txh9fw"
+                class="ant-row"
                 style="margin-left: -10px; margin-right: -10px;"
               >
                 <div
-                  class="ant-col css-dev-only-do-not-override-txh9fw"
+                  class="ant-col"
                   style="padding-left: 10px; padding-right: 10px; width: 16.666666666666668%;"
                 >
                   <div
@@ -185,7 +185,7 @@ exports[`ReportStatistics/WorkOrderState render chart snap 2`] = `
                   </div>
                 </div>
                 <div
-                  class="ant-col css-dev-only-do-not-override-txh9fw"
+                  class="ant-col"
                   style="padding-left: 10px; padding-right: 10px; width: 16.666666666666668%;"
                 >
                   <div
@@ -218,7 +218,7 @@ exports[`ReportStatistics/WorkOrderState render chart snap 2`] = `
                   </div>
                 </div>
                 <div
-                  class="ant-col css-dev-only-do-not-override-txh9fw"
+                  class="ant-col"
                   style="padding-left: 10px; padding-right: 10px; width: 16.666666666666668%;"
                 >
                   <div
@@ -251,7 +251,7 @@ exports[`ReportStatistics/WorkOrderState render chart snap 2`] = `
                   </div>
                 </div>
                 <div
-                  class="ant-col css-dev-only-do-not-override-txh9fw"
+                  class="ant-col"
                   style="padding-left: 10px; padding-right: 10px; width: 16.666666666666668%;"
                 >
                   <div
@@ -284,7 +284,7 @@ exports[`ReportStatistics/WorkOrderState render chart snap 2`] = `
                   </div>
                 </div>
                 <div
-                  class="ant-col css-dev-only-do-not-override-txh9fw"
+                  class="ant-col"
                   style="padding-left: 10px; padding-right: 10px; width: 16.666666666666668%;"
                 >
                   <div
@@ -317,7 +317,7 @@ exports[`ReportStatistics/WorkOrderState render chart snap 2`] = `
                   </div>
                 </div>
                 <div
-                  class="ant-col css-dev-only-do-not-override-txh9fw"
+                  class="ant-col"
                   style="padding-left: 10px; padding-right: 10px; width: 16.666666666666668%;"
                 >
                   <div
@@ -369,7 +369,7 @@ exports[`ReportStatistics/WorkOrderState render chart snap when api return empty
         class="icon-center-wrapper MuiBox-root css-0"
       >
         <div
-          class="css-dev-only-do-not-override-txh9fw ant-empty is-icon-tips css-19kysfv"
+          class="ant-empty is-icon-tips css-19kysfv"
         >
           <div
             class="ant-empty-image"
@@ -423,7 +423,7 @@ exports[`ReportStatistics/WorkOrderState render chart snap when api return empty
             class="ant-empty-footer"
           >
             <button
-              class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-text ant-btn-sm basic-button-wrapper css-geipcv"
+              class="ant-btn ant-btn-text ant-btn-sm basic-button-wrapper css-geipcv"
               type="button"
             >
               <span>

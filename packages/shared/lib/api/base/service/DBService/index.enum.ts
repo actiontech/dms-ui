@@ -27,3 +27,23 @@ export enum ListDBServiceTipsFunctionalModuleEnum {
 
   'create_export_task' = 'create_export_task'
 }
+
+export enum ListGlobalDBServicesV2OrderByEnum {
+  'name' = 'name'
+}
+
+export enum ListGlobalDBServicesV2FilterLastConnectionTestStatusEnum {
+  'connect_success' = 'connect_success',
+
+  'connect_failed' = 'connect_failed'
+}
+
+export enum ListDBServicesV2OrderByEnum {
+  'name' = 'name'
+}
+
+export enum ListDBServicesV2FilterLastConnectionTestStatusEnum {
+  'connect_success' = 'connect_success',
+
+  'connect_failed' = 'connect_failed'
+}

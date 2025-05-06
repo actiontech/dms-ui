@@ -192,7 +192,7 @@ describe('test SqlManagementIssuePush', () => {
     );
     await act(async () => jest.advanceTimersByTime(0));
 
-    fireEvent.click(screen.getByText('取 消'));
+    fireEvent.click(screen.getAllByText('取 消')[0]);
     await act(async () => jest.advanceTimersByTime(0));
     expect(
       getBySelector('input[placeholder="请输入时间"]', baseElement)

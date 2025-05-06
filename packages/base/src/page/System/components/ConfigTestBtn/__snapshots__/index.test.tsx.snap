@@ -4,13 +4,13 @@ exports[`base/System/components/ConfigTestBtn render snap when Popover cont show
 <body>
   <div>
     <div
-      class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center ant-popover-open basic-tooltips-wrapper css-4jbtl9"
+      class="ant-space ant-space-horizontal ant-space-align-center ant-popover-open basic-tooltips-wrapper css-4jbtl9"
     >
       <div
         class="ant-space-item"
       >
         <button
-          class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-text ant-btn-icon-only system-config-button basic-button-wrapper css-geipcv"
+          class="ant-btn ant-btn-text ant-btn-icon-only system-config-button basic-button-wrapper css-geipcv"
           type="button"
         >
           <span
@@ -33,7 +33,7 @@ exports[`base/System/components/ConfigTestBtn render snap when Popover cont show
   </div>
   <div>
     <div
-      class="ant-popover ant-zoom-big-appear ant-zoom-big-appear-prepare ant-zoom-big css-dev-only-do-not-override-txh9fw css-dev-only-do-not-override-txh9fw ant-popover-placement-bottomRight"
+      class="ant-popover ant-zoom-big-appear ant-zoom-big-appear-prepare ant-zoom-big ant-popover-placement-bottomRight"
       style="--arrow-x: 0px; --arrow-y: 0px; left: -1000vw; top: -1000vh; box-sizing: border-box;"
     >
       <div
@@ -65,13 +65,13 @@ exports[`base/System/components/ConfigTestBtn render snap when btn hover 1`] = `
 <body>
   <div>
     <div
-      class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center ant-tooltip-open basic-tooltips-wrapper css-4jbtl9"
+      class="ant-space ant-space-horizontal ant-space-align-center ant-tooltip-open basic-tooltips-wrapper css-4jbtl9"
     >
       <div
         class="ant-space-item"
       >
         <button
-          class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-text ant-btn-icon-only system-config-button basic-button-wrapper css-geipcv"
+          class="ant-btn ant-btn-text ant-btn-icon-only system-config-button basic-button-wrapper css-geipcv"
           type="button"
         >
           <span
@@ -94,7 +94,7 @@ exports[`base/System/components/ConfigTestBtn render snap when btn hover 1`] = `
   </div>
   <div>
     <div
-      class="ant-tooltip ant-zoom-big-fast-appear ant-zoom-big-fast-appear-prepare ant-zoom-big-fast css-dev-only-do-not-override-txh9fw ant-tooltip-placement-top"
+      class="ant-tooltip ant-zoom-big-fast-appear ant-zoom-big-fast-appear-prepare ant-zoom-big-fast ant-tooltip-placement-top"
       style="--arrow-x: 0px; --arrow-y: 0px; left: -1000vw; top: -1000vh; box-sizing: border-box;"
     >
       <div
@@ -122,13 +122,13 @@ exports[`base/System/components/ConfigTestBtn render snap when btn is default 1`
 <body>
   <div>
     <div
-      class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
+      class="ant-space ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
     >
       <div
         class="ant-space-item"
       >
         <button
-          class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-text ant-btn-icon-only system-config-button basic-button-wrapper css-geipcv"
+          class="ant-btn ant-btn-text ant-btn-icon-only system-config-button basic-button-wrapper css-geipcv"
           type="button"
         >
           <span
@@ -156,13 +156,13 @@ exports[`base/System/components/ConfigTestBtn render snap when btn is loading 1`
 <body>
   <div>
     <div
-      class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
+      class="ant-space ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
     >
       <div
         class="ant-space-item"
       >
         <button
-          class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-text ant-btn-icon-only ant-btn-loading system-config-button basic-button-wrapper css-geipcv"
+          class="ant-btn ant-btn-text ant-btn-icon-only ant-btn-loading system-config-button basic-button-wrapper css-geipcv"
           disabled=""
           type="button"
         >

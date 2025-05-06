@@ -5,7 +5,7 @@ exports[`SqlAnalyze/useSQLExecPlan render generateSQLExecPlanContent when filter
   <div />
   <div>
     <div
-      class="ant-space css-dev-only-do-not-override-txh9fw ant-space-vertical full-width-element"
+      class="ant-space ant-space-vertical full-width-element"
     >
       <div
         class="ant-space-item"
@@ -28,19 +28,13 @@ exports[`SqlAnalyze/useSQLExecPlan render generateSQLExecPlanContent when filter
             class="actiontech-sql-snippet-renderer-wrapper css-dz7fl9"
           >
             <div
-              class="ant-typography ant-typography-ellipsis ant-typography-ellipsis-multiple-line margin-bottom-0 css-dev-only-do-not-override-txh9fw"
+              class="ant-typography ant-typography-ellipsis ant-typography-ellipsis-multiple-line margin-bottom-0"
             >
               <span>
                 <span
                   class="hljs-keyword"
                 >
-                  CREATE
-                </span>
-                 
-                <span
-                  class="hljs-keyword"
-                >
-                  TABLE
+                  CREATE TABLE
                 </span>
                  IF 
                 <span
@@ -64,9 +58,9 @@ exports[`SqlAnalyze/useSQLExecPlan render generateSQLExecPlanContent when filter
                 <span
                   class="hljs-keyword"
                 >
-                  PRIMARY
+                  PRIMARY KEY
                 </span>
-                 KEY,  title 
+                ,  title 
                 <span
                   class="hljs-type"
                 >
@@ -82,13 +76,7 @@ exports[`SqlAnalyze/useSQLExecPlan render generateSQLExecPlanContent when filter
                 <span
                   class="hljs-keyword"
                 >
-                  NOT
-                </span>
-                 
-                <span
-                  class="hljs-keyword"
-                >
-                  NULL
+                  NOT NULL
                 </span>
                  
                 <span
@@ -118,13 +106,7 @@ exports[`SqlAnalyze/useSQLExecPlan render generateSQLExecPlanContent when filter
                 <span
                   class="hljs-keyword"
                 >
-                  NOT
-                </span>
-                 
-                <span
-                  class="hljs-keyword"
-                >
-                  NULL
+                  NOT NULL
                 </span>
                  
                 <span
@@ -229,7 +211,7 @@ exports[`SqlAnalyze/useSQLExecPlan render generateSQLExecPlanContent when filter
           class="css-1pqpq6o"
         >
           <div
-            class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center filter-wrapper"
+            class="ant-space ant-space-horizontal ant-space-align-center filter-wrapper"
           >
             <div
               class="ant-space-item"
@@ -243,14 +225,14 @@ exports[`SqlAnalyze/useSQLExecPlan render generateSQLExecPlanContent when filter
               class="ant-space-item"
             >
               <div
-                class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+                class="ant-space ant-space-horizontal ant-space-align-center"
               >
                 <div
                   class="ant-space-item"
                   style="margin-right: 8px;"
                 >
                   <div
-                    class="ant-segmented basic-segmented-wrapper css-192b3m1 css-dev-only-do-not-override-txh9fw"
+                    class="ant-segmented basic-segmented-wrapper css-192b3m1"
                   >
                     <div
                       class="ant-segmented-group"
@@ -308,14 +290,14 @@ exports[`SqlAnalyze/useSQLExecPlan render generateSQLExecPlanContent when filter
                     class="css-1y8q0oh"
                   >
                     <div
-                      class="ant-picker ant-picker-range ant-picker-small css-dev-only-do-not-override-1xo6ltj basic-range-picker-wrapper css-w7y1zu"
+                      class="ant-picker ant-picker-range ant-picker-small basic-range-picker-wrapper css-w7y1zu"
                     >
                       <div
                         class="ant-picker-input ant-picker-input-active"
                       >
                         <input
                           autocomplete="off"
-                          placeholder="Start date"
+                          placeholder="开始日期"
                           readonly=""
                           size="21"
                           value=""
@@ -341,7 +323,7 @@ exports[`SqlAnalyze/useSQLExecPlan render generateSQLExecPlanContent when filter
                       >
                         <input
                           autocomplete="off"
-                          placeholder="End date"
+                          placeholder="结束日期"
                           readonly=""
                           size="21"
                           value=""
@@ -361,7 +343,7 @@ exports[`SqlAnalyze/useSQLExecPlan render generateSQLExecPlanContent when filter
             class="chart-wrapper"
           >
             <div
-              class="ant-spin-nested-loading css-dev-only-do-not-override-txh9fw"
+              class="ant-spin-nested-loading"
             >
               <div
                 class="ant-spin-container"
@@ -374,6 +356,7 @@ exports[`SqlAnalyze/useSQLExecPlan render generateSQLExecPlanContent when filter
                   >
                     <div
                       data-custom-params="{"data":[{"y":1.2,"x":"2025-01-06T09:22:53.713Z","info":[{"id":"1","select_id":"1","table":"test_table","partitions":"a,b,c","type":"const","possible_keys":"a,b,c","key":"key_name","key_len":"231","ref":"abc","rows":"100","filtered":"100","select_type":"SIMPLE"}]},{"y":3.2,"x":"2025-01-07T09:32:53.713Z","info":[{"id":"2","select_id":"1","table":"test_table","partitions":"a,b,c","type":"const","possible_keys":"a,b,c","key":"key_name","key_len":"231","ref":"abc","rows":"100","filtered":"100","select_type":"SIMPLE"}]},{"y":2.2,"x":"2025-01-07T09:42:53.713Z","info":[{"id":"3","select_id":"1","table":"test_table","partitions":"a,b,c","type":"const","possible_keys":"a,b,c","key":"key_name","key_len":"231","ref":"abc","rows":"100","filtered":"100","select_type":"SIMPLE"}]},{"y":5.2,"x":"2025-01-07T09:52:53.713Z","info":[{"id":"4","select_id":"1","table":"test_table","partitions":"a,b,c","type":"const","possible_keys":"a,b,c","key":"key_name","key_len":"231","ref":"abc","rows":"100","filtered":"100","select_type":"SIMPLE"}]}],"xField":"x","yField":"y","xAxis":{"nice":true},"point":{"style":{"fill":"#FFFFFF","stroke":"#4583ff"},"size":5},"slider":{"start":0,"end":1},"appendPadding":20,"annotations":[{"type":"line","start":["","min"],"end":["","max"],"style":{"stroke":"#FAAFB9","lineWidth":2},"animate":false},{"type":"line","start":["","min"],"end":["","max"],"style":{"stroke":"#FAAFB9","lineWidth":2},"animate":false}],"tooltip":{"fields":["created_time","cost","id"]},"theme":"light"}"
+                      data-testid="mock-antd-plots"
                     />
                   </div>
                 </div>
@@ -1140,7 +1123,7 @@ exports[`SqlAnalyze/useSQLExecPlan render generateSQLExecPlanContent when select
   <div />
   <div>
     <div
-      class="ant-space css-dev-only-do-not-override-txh9fw ant-space-vertical full-width-element"
+      class="ant-space ant-space-vertical full-width-element"
     >
       <div
         class="ant-space-item"
@@ -1163,19 +1146,13 @@ exports[`SqlAnalyze/useSQLExecPlan render generateSQLExecPlanContent when select
             class="actiontech-sql-snippet-renderer-wrapper css-dz7fl9"
           >
             <div
-              class="ant-typography ant-typography-ellipsis ant-typography-ellipsis-multiple-line margin-bottom-0 css-dev-only-do-not-override-txh9fw"
+              class="ant-typography ant-typography-ellipsis ant-typography-ellipsis-multiple-line margin-bottom-0"
             >
               <span>
                 <span
                   class="hljs-keyword"
                 >
-                  CREATE
-                </span>
-                 
-                <span
-                  class="hljs-keyword"
-                >
-                  TABLE
+                  CREATE TABLE
                 </span>
                  IF 
                 <span
@@ -1199,9 +1176,9 @@ exports[`SqlAnalyze/useSQLExecPlan render generateSQLExecPlanContent when select
                 <span
                   class="hljs-keyword"
                 >
-                  PRIMARY
+                  PRIMARY KEY
                 </span>
-                 KEY,  title 
+                ,  title 
                 <span
                   class="hljs-type"
                 >
@@ -1217,13 +1194,7 @@ exports[`SqlAnalyze/useSQLExecPlan render generateSQLExecPlanContent when select
                 <span
                   class="hljs-keyword"
                 >
-                  NOT
-                </span>
-                 
-                <span
-                  class="hljs-keyword"
-                >
-                  NULL
+                  NOT NULL
                 </span>
                  
                 <span
@@ -1253,13 +1224,7 @@ exports[`SqlAnalyze/useSQLExecPlan render generateSQLExecPlanContent when select
                 <span
                   class="hljs-keyword"
                 >
-                  NOT
-                </span>
-                 
-                <span
-                  class="hljs-keyword"
-                >
-                  NULL
+                  NOT NULL
                 </span>
                  
                 <span
@@ -1364,7 +1329,7 @@ exports[`SqlAnalyze/useSQLExecPlan render generateSQLExecPlanContent when select
           class="css-1pqpq6o"
         >
           <div
-            class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center filter-wrapper"
+            class="ant-space ant-space-horizontal ant-space-align-center filter-wrapper"
           >
             <div
               class="ant-space-item"
@@ -1378,14 +1343,14 @@ exports[`SqlAnalyze/useSQLExecPlan render generateSQLExecPlanContent when select
               class="ant-space-item"
             >
               <div
-                class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+                class="ant-space ant-space-horizontal ant-space-align-center"
               >
                 <div
                   class="ant-space-item"
                   style="margin-right: 8px;"
                 >
                   <div
-                    class="ant-segmented basic-segmented-wrapper css-192b3m1 css-dev-only-do-not-override-txh9fw"
+                    class="ant-segmented basic-segmented-wrapper css-192b3m1"
                   >
                     <div
                       class="ant-segmented-group"
@@ -1443,14 +1408,14 @@ exports[`SqlAnalyze/useSQLExecPlan render generateSQLExecPlanContent when select
                     class="css-1y8q0oh"
                   >
                     <div
-                      class="ant-picker ant-picker-range ant-picker-small css-dev-only-do-not-override-1xo6ltj basic-range-picker-wrapper css-w7y1zu"
+                      class="ant-picker ant-picker-range ant-picker-small basic-range-picker-wrapper css-w7y1zu"
                     >
                       <div
                         class="ant-picker-input ant-picker-input-active"
                       >
                         <input
                           autocomplete="off"
-                          placeholder="Start date"
+                          placeholder="开始日期"
                           readonly=""
                           size="21"
                           value=""
@@ -1476,7 +1441,7 @@ exports[`SqlAnalyze/useSQLExecPlan render generateSQLExecPlanContent when select
                       >
                         <input
                           autocomplete="off"
-                          placeholder="End date"
+                          placeholder="结束日期"
                           readonly=""
                           size="21"
                           value=""
@@ -1496,7 +1461,7 @@ exports[`SqlAnalyze/useSQLExecPlan render generateSQLExecPlanContent when select
             class="chart-wrapper"
           >
             <div
-              class="ant-spin-nested-loading css-dev-only-do-not-override-txh9fw"
+              class="ant-spin-nested-loading"
             >
               <div
                 class="ant-spin-container"
@@ -1509,6 +1474,7 @@ exports[`SqlAnalyze/useSQLExecPlan render generateSQLExecPlanContent when select
                   >
                     <div
                       data-custom-params="{"data":[{"y":1.2,"x":"2025-01-06T09:22:53.713Z","info":[{"id":"1","select_id":"1","table":"test_table","partitions":"a,b,c","type":"const","possible_keys":"a,b,c","key":"key_name","key_len":"231","ref":"abc","rows":"100","filtered":"100","select_type":"SIMPLE"}]},{"y":3.2,"x":"2025-01-07T09:32:53.713Z","info":[{"id":"2","select_id":"1","table":"test_table","partitions":"a,b,c","type":"const","possible_keys":"a,b,c","key":"key_name","key_len":"231","ref":"abc","rows":"100","filtered":"100","select_type":"SIMPLE"}]},{"y":2.2,"x":"2025-01-07T09:42:53.713Z","info":[{"id":"3","select_id":"1","table":"test_table","partitions":"a,b,c","type":"const","possible_keys":"a,b,c","key":"key_name","key_len":"231","ref":"abc","rows":"100","filtered":"100","select_type":"SIMPLE"}]},{"y":5.2,"x":"2025-01-07T09:52:53.713Z","info":[{"id":"4","select_id":"1","table":"test_table","partitions":"a,b,c","type":"const","possible_keys":"a,b,c","key":"key_name","key_len":"231","ref":"abc","rows":"100","filtered":"100","select_type":"SIMPLE"}]}],"xField":"x","yField":"y","xAxis":{"nice":true},"point":{"style":{"fill":"#FFFFFF","stroke":"#4583ff"},"size":5},"slider":{"start":0,"end":1},"appendPadding":20,"annotations":[{"type":"line","start":["2025-01-06T09:22:53.713Z","min"],"end":["2025-01-06T09:22:53.713Z","max"],"style":{"stroke":"#FAAFB9","lineWidth":2},"animate":false},{"type":"line","start":["2025-01-07T09:32:53.713Z","min"],"end":["2025-01-07T09:32:53.713Z","max"],"style":{"stroke":"#FAAFB9","lineWidth":2},"animate":false}],"tooltip":{"fields":["created_time","cost","id"]},"theme":"light"}"
+                      data-testid="mock-antd-plots"
                     />
                   </div>
                 </div>
@@ -1521,7 +1487,7 @@ exports[`SqlAnalyze/useSQLExecPlan render generateSQLExecPlanContent when select
             class="history-exec-plan-wrapper"
           >
             <div
-              class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center header-title full-width-element"
+              class="ant-space ant-space-horizontal ant-space-align-center header-title full-width-element"
             >
               <div
                 class="ant-space-item"
@@ -1534,7 +1500,7 @@ exports[`SqlAnalyze/useSQLExecPlan render generateSQLExecPlanContent when select
                 style="margin-right: 8px;"
               >
                 <span
-                  class="ant-typography ant-typography-secondary css-dev-only-do-not-override-txh9fw"
+                  class="ant-typography ant-typography-secondary"
                 >
                   2025-01-06T09:22:53.713Z
                 </span>
@@ -1543,7 +1509,7 @@ exports[`SqlAnalyze/useSQLExecPlan render generateSQLExecPlanContent when select
                 class="ant-space-item"
               >
                 <span
-                  class="ant-typography ant-typography-secondary css-dev-only-do-not-override-txh9fw"
+                  class="ant-typography ant-typography-secondary"
                 >
                   代价
                   ：
@@ -1552,10 +1518,10 @@ exports[`SqlAnalyze/useSQLExecPlan render generateSQLExecPlanContent when select
               </div>
             </div>
             <div
-              class="ant-table-wrapper actiontech-table-namespace css-fxd6ka css-dev-only-do-not-override-bj9uhl"
+              class="ant-table-wrapper actiontech-table-namespace css-fxd6ka"
             >
               <div
-                class="ant-spin-nested-loading css-dev-only-do-not-override-bj9uhl"
+                class="ant-spin-nested-loading"
               >
                 <div
                   class="ant-spin-container"
@@ -1847,7 +1813,7 @@ exports[`SqlAnalyze/useSQLExecPlan render generateSQLExecPlanContent when select
             class="history-exec-plan-wrapper"
           >
             <div
-              class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center header-title full-width-element"
+              class="ant-space ant-space-horizontal ant-space-align-center header-title full-width-element"
             >
               <div
                 class="ant-space-item"
@@ -1860,7 +1826,7 @@ exports[`SqlAnalyze/useSQLExecPlan render generateSQLExecPlanContent when select
                 style="margin-right: 8px;"
               >
                 <span
-                  class="ant-typography ant-typography-secondary css-dev-only-do-not-override-txh9fw"
+                  class="ant-typography ant-typography-secondary"
                 >
                   2025-01-07T09:32:53.713Z
                 </span>
@@ -1869,7 +1835,7 @@ exports[`SqlAnalyze/useSQLExecPlan render generateSQLExecPlanContent when select
                 class="ant-space-item"
               >
                 <span
-                  class="ant-typography ant-typography-secondary css-dev-only-do-not-override-txh9fw"
+                  class="ant-typography ant-typography-secondary"
                 >
                   代价
                   ：
@@ -1878,10 +1844,10 @@ exports[`SqlAnalyze/useSQLExecPlan render generateSQLExecPlanContent when select
               </div>
             </div>
             <div
-              class="ant-table-wrapper actiontech-table-namespace css-fxd6ka css-dev-only-do-not-override-bj9uhl"
+              class="ant-table-wrapper actiontech-table-namespace css-fxd6ka"
             >
               <div
-                class="ant-spin-nested-loading css-dev-only-do-not-override-bj9uhl"
+                class="ant-spin-nested-loading"
               >
                 <div
                   class="ant-spin-container"
@@ -2301,7 +2267,7 @@ exports[`SqlAnalyze/useSQLExecPlan render generateSQLExecPlanContent when showEx
   <div />
   <div>
     <div
-      class="ant-space css-dev-only-do-not-override-txh9fw ant-space-vertical full-width-element"
+      class="ant-space ant-space-vertical full-width-element"
     >
       <div
         class="ant-space-item"
@@ -2324,19 +2290,13 @@ exports[`SqlAnalyze/useSQLExecPlan render generateSQLExecPlanContent when showEx
             class="actiontech-sql-snippet-renderer-wrapper css-dz7fl9"
           >
             <div
-              class="ant-typography ant-typography-ellipsis ant-typography-ellipsis-multiple-line margin-bottom-0 css-dev-only-do-not-override-txh9fw"
+              class="ant-typography ant-typography-ellipsis ant-typography-ellipsis-multiple-line margin-bottom-0"
             >
               <span>
                 <span
                   class="hljs-keyword"
                 >
-                  CREATE
-                </span>
-                 
-                <span
-                  class="hljs-keyword"
-                >
-                  TABLE
+                  CREATE TABLE
                 </span>
                  IF 
                 <span
@@ -2360,9 +2320,9 @@ exports[`SqlAnalyze/useSQLExecPlan render generateSQLExecPlanContent when showEx
                 <span
                   class="hljs-keyword"
                 >
-                  PRIMARY
+                  PRIMARY KEY
                 </span>
-                 KEY,  title 
+                ,  title 
                 <span
                   class="hljs-type"
                 >
@@ -2378,13 +2338,7 @@ exports[`SqlAnalyze/useSQLExecPlan render generateSQLExecPlanContent when showEx
                 <span
                   class="hljs-keyword"
                 >
-                  NOT
-                </span>
-                 
-                <span
-                  class="hljs-keyword"
-                >
-                  NULL
+                  NOT NULL
                 </span>
                  
                 <span
@@ -2414,13 +2368,7 @@ exports[`SqlAnalyze/useSQLExecPlan render generateSQLExecPlanContent when showEx
                 <span
                   class="hljs-keyword"
                 >
-                  NOT
-                </span>
-                 
-                <span
-                  class="hljs-keyword"
-                >
-                  NULL
+                  NOT NULL
                 </span>
                  
                 <span
@@ -2525,7 +2473,7 @@ exports[`SqlAnalyze/useSQLExecPlan render generateSQLExecPlanContent when showEx
           class="css-1pqpq6o"
         >
           <div
-            class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center filter-wrapper"
+            class="ant-space ant-space-horizontal ant-space-align-center filter-wrapper"
           >
             <div
               class="ant-space-item"
@@ -2539,14 +2487,14 @@ exports[`SqlAnalyze/useSQLExecPlan render generateSQLExecPlanContent when showEx
               class="ant-space-item"
             >
               <div
-                class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+                class="ant-space ant-space-horizontal ant-space-align-center"
               >
                 <div
                   class="ant-space-item"
                   style="margin-right: 8px;"
                 >
                   <div
-                    class="ant-segmented basic-segmented-wrapper css-192b3m1 css-dev-only-do-not-override-txh9fw"
+                    class="ant-segmented basic-segmented-wrapper css-192b3m1"
                   >
                     <div
                       class="ant-segmented-group"
@@ -2604,14 +2552,14 @@ exports[`SqlAnalyze/useSQLExecPlan render generateSQLExecPlanContent when showEx
                     class="css-1y8q0oh"
                   >
                     <div
-                      class="ant-picker ant-picker-range ant-picker-small css-dev-only-do-not-override-1xo6ltj basic-range-picker-wrapper css-w7y1zu"
+                      class="ant-picker ant-picker-range ant-picker-small basic-range-picker-wrapper css-w7y1zu"
                     >
                       <div
                         class="ant-picker-input ant-picker-input-active"
                       >
                         <input
                           autocomplete="off"
-                          placeholder="Start date"
+                          placeholder="开始日期"
                           readonly=""
                           size="21"
                           value=""
@@ -2637,7 +2585,7 @@ exports[`SqlAnalyze/useSQLExecPlan render generateSQLExecPlanContent when showEx
                       >
                         <input
                           autocomplete="off"
-                          placeholder="End date"
+                          placeholder="结束日期"
                           readonly=""
                           size="21"
                           value=""
@@ -2657,7 +2605,7 @@ exports[`SqlAnalyze/useSQLExecPlan render generateSQLExecPlanContent when showEx
             class="chart-wrapper"
           >
             <div
-              class="ant-spin-nested-loading css-dev-only-do-not-override-txh9fw"
+              class="ant-spin-nested-loading"
             >
               <div
                 class="ant-spin-container"
@@ -2670,6 +2618,7 @@ exports[`SqlAnalyze/useSQLExecPlan render generateSQLExecPlanContent when showEx
                   >
                     <div
                       data-custom-params="{"data":[{"y":1.2,"x":"2025-01-06T09:22:53.713Z","info":[{"id":"1","select_id":"1","table":"test_table","partitions":"a,b,c","type":"const","possible_keys":"a,b,c","key":"key_name","key_len":"231","ref":"abc","rows":"100","filtered":"100","select_type":"SIMPLE"}]},{"y":3.2,"x":"2025-01-07T09:32:53.713Z","info":[{"id":"2","select_id":"1","table":"test_table","partitions":"a,b,c","type":"const","possible_keys":"a,b,c","key":"key_name","key_len":"231","ref":"abc","rows":"100","filtered":"100","select_type":"SIMPLE"}]},{"y":2.2,"x":"2025-01-07T09:42:53.713Z","info":[{"id":"3","select_id":"1","table":"test_table","partitions":"a,b,c","type":"const","possible_keys":"a,b,c","key":"key_name","key_len":"231","ref":"abc","rows":"100","filtered":"100","select_type":"SIMPLE"}]},{"y":5.2,"x":"2025-01-07T09:52:53.713Z","info":[{"id":"4","select_id":"1","table":"test_table","partitions":"a,b,c","type":"const","possible_keys":"a,b,c","key":"key_name","key_len":"231","ref":"abc","rows":"100","filtered":"100","select_type":"SIMPLE"}]}],"xField":"x","yField":"y","xAxis":{"nice":true},"point":{"style":{"fill":"#FFFFFF","stroke":"#4583ff"},"size":5},"slider":{"start":0,"end":1},"appendPadding":20,"annotations":[{"type":"line","start":["","min"],"end":["","max"],"style":{"stroke":"#FAAFB9","lineWidth":2},"animate":false},{"type":"line","start":["","min"],"end":["","max"],"style":{"stroke":"#FAAFB9","lineWidth":2},"animate":false}],"tooltip":{"fields":["created_time","cost","id"]},"theme":"light"}"
+                      data-testid="mock-antd-plots"
                     />
                   </div>
                 </div>

@@ -21,10 +21,10 @@ import { getFileFromUploadChangeEvent } from '@actiontech/shared/lib/utils/Commo
 import { ActiontechTable } from '@actiontech/shared/lib/components/ActiontechTable';
 import { useBoolean } from 'ahooks';
 import FileUpload from './FileUpload';
-import Project from '@actiontech/shared/lib/api/base/service/Project';
+import { DmsApi } from '@actiontech/shared/lib/api';
 import { ResponseCode } from '@actiontech/shared/lib/enum';
 import { useState } from 'react';
-import { IPreviewImportProjects } from '@actiontech/shared/lib/api/base/service/common';
+import { IPreviewImportProjectsV2 } from '@actiontech/shared/lib/api/base/service/common';
 import { importProjectListColumn } from './column';
 import { ImportProjectUploadFileWrapper } from '../style';
 import { LeftArrowOutlined, OverviewOutlined } from '@actiontech/icons';
@@ -47,24 +47,14 @@ const ImportProject = () => {
     useBoolean(false);
 
   const [importProjects, setImportProjects] = useState<
-    IPreviewImportProjects[]
+    IPreviewImportProjectsV2[]
   >([]);
 
   const onSubmit = async () => {
     await selectFileForm.validateFields();
     setImportPending();
-    const projects = importProjects.map((project) => {
-      // 判断是否全为'' 因为后端会把文件中的空列解析为[''] 所以加此判断
-      if (project?.business?.every((i) => i === '')) {
-        return {
-          ...project,
-          business: []
-        };
-      }
-      return project;
-    });
-    Project.ImportProjects({
-      projects: projects
+    DmsApi.ProjectService.ImportProjectsV2({
+      projects: importProjects
     })
       .then((res) => {
         if (res.data.code === ResponseCode.SUCCESS) {
@@ -164,7 +154,9 @@ const ImportProject = () => {
                 }}
                 accept=".csv"
                 customRequest={(option) => {
-                  Project.PreviewImportProjects({ projects_file: option.file })
+                  DmsApi.ProjectService.PreviewImportProjectsV2({
+                    projects_file: option.file
+                  })
                     .then((res) => {
                       if (res.data.code === ResponseCode.SUCCESS) {
                         option?.onSuccess?.(option.file);

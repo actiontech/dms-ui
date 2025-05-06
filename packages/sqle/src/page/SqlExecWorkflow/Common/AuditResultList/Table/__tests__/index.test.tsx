@@ -19,7 +19,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { ModalName } from '../../../../../../data/ModalName';
 import {
   AuditTaskSQLResV2BackupStrategyEnum,
-  InstanceTipResV1SupportedBackupStrategyEnum
+  InstanceTipResV2SupportedBackupStrategyEnum
 } from '@actiontech/shared/lib/api/sqle/service/common.enum';
 import EventEmitter from '../../../../../../utils/EventEmitter';
 import EmitterKey from '../../../../../../data/EmitterKey';
@@ -357,8 +357,8 @@ describe('sqle/ExecWorkflow/Common/AuditResultList/List', () => {
       auditLevelFilterValue: getAuditTaskSQLsV2FilterAuditLevelEnum.normal,
       allowSwitchBackupPolicy: true,
       supportedBackupPolicies: [
-        InstanceTipResV1SupportedBackupStrategyEnum.reverse_sql,
-        InstanceTipResV1SupportedBackupStrategyEnum.original_row
+        InstanceTipResV2SupportedBackupStrategyEnum.reverse_sql,
+        InstanceTipResV2SupportedBackupStrategyEnum.original_row
       ]
     });
 
@@ -395,7 +395,7 @@ describe('sqle/ExecWorkflow/Common/AuditResultList/List', () => {
       auditLevelFilterValue: getAuditTaskSQLsV2FilterAuditLevelEnum.normal,
       allowSwitchBackupPolicy: true,
       supportedBackupPolicies: [
-        InstanceTipResV1SupportedBackupStrategyEnum.reverse_sql
+        InstanceTipResV2SupportedBackupStrategyEnum.reverse_sql
       ]
     });
 
@@ -419,7 +419,7 @@ describe('sqle/ExecWorkflow/Common/AuditResultList/List', () => {
       auditLevelFilterValue: null,
       allowSwitchBackupPolicy: true,
       supportedBackupPolicies: [
-        InstanceTipResV1SupportedBackupStrategyEnum.reverse_sql
+        InstanceTipResV2SupportedBackupStrategyEnum.reverse_sql
       ],
       updateTaskRecordCount: updateTaskRecordCountSpy,
       updateTaskAuditRuleExceptionStatus: updateTaskAuditRuleExceptionStatusSpy
@@ -449,7 +449,7 @@ describe('sqle/ExecWorkflow/Common/AuditResultList/List', () => {
       auditLevelFilterValue: null,
       allowSwitchBackupPolicy: true,
       supportedBackupPolicies: [
-        InstanceTipResV1SupportedBackupStrategyEnum.reverse_sql
+        InstanceTipResV2SupportedBackupStrategyEnum.reverse_sql
       ],
       updateTaskRecordCount: updateTaskRecordCountSpy,
       updateTaskAuditRuleExceptionStatus: updateTaskAuditRuleExceptionStatusSpy

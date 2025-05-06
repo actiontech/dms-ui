@@ -1,24 +1,25 @@
 import { timeAddZero } from '@actiontech/shared/lib/utils/Common';
 import { Tag } from 'antd';
 import { t } from '../../../locale';
-import { IListGlobalDBService } from '@actiontech/shared/lib/api/base/service/common';
+import { IListGlobalDBServiceV2 } from '@actiontech/shared/lib/api/base/service/common';
 import {
   ActiontechTableColumn,
   PageInfoWithoutIndexAndSize
 } from '@actiontech/shared/lib/components/ActiontechTable';
-import { IListGlobalDBServicesParams } from '@actiontech/shared/lib/api/base/service/DBService/index.d';
+import { IListGlobalDBServicesV2Params } from '@actiontech/shared/lib/api/base/service/DBService/index.d';
 import { BasicTypographyEllipsis, DatabaseTypeLogo } from '@actiontech/shared';
 import ConnectionResultColumn from '../../DataSource/components/List/ConnectionResultColumn';
-import { ListDBServiceLastConnectionTestStatusEnum } from '@actiontech/shared/lib/api/base/service/common.enum';
+import { ListDBServiceV2LastConnectionTestStatusEnum } from '@actiontech/shared/lib/api/base/service/common.enum';
+import { ServiceEnvironmentTagStyleWrapper } from '../../DataSource/components/List/style';
 
 export type GLobalDataSourceListParamType = PageInfoWithoutIndexAndSize<
-  IListGlobalDBServicesParams & { page_index: number }
+  IListGlobalDBServicesV2Params & { page_index: number }
 >;
 
 export const GlobalDataSourceColumns = (
   getLogoUrlByDbType: (dbType: string) => string
 ): ActiontechTableColumn<
-  IListGlobalDBService,
+  IListGlobalDBServiceV2,
   GLobalDataSourceListParamType,
   'address'
 > => {
@@ -34,8 +35,20 @@ export const GlobalDataSourceColumns = (
       filterKey: 'filter_by_project_uid'
     },
     {
-      dataIndex: 'business',
-      title: t('dmsGlobalDataSource.list.business')
+      dataIndex: 'environment_tag',
+      title: t('dmsGlobalDataSource.list.environmentAttribute'),
+      render: (environment) => {
+        if (!environment?.name) {
+          return '-';
+        }
+        return (
+          <ServiceEnvironmentTagStyleWrapper>
+            {environment?.name}
+          </ServiceEnvironmentTagStyleWrapper>
+        );
+      },
+      filterCustomType: 'select',
+      filterKey: 'filter_by_environment_tag_uid'
     },
     {
       dataIndex: 'address',
@@ -59,7 +72,7 @@ export const GlobalDataSourceColumns = (
         return (
           <ConnectionResultColumn
             connectionStatus={
-              status as ListDBServiceLastConnectionTestStatusEnum | undefined
+              status as ListDBServiceV2LastConnectionTestStatusEnum | undefined
             }
             connectionErrorMessage={record.last_connection_test_error_message}
             connectionTestTime={record.last_connection_test_time}
@@ -98,7 +111,7 @@ export const GlobalDataSourceColumns = (
     {
       dataIndex: 'maintenance_times',
       title: t('dmsGlobalDataSource.list.maintenanceTime'),
-      render(value: IListGlobalDBService['maintenance_times']) {
+      render(value: IListGlobalDBServiceV2['maintenance_times']) {
         return value?.map((time, i) => (
           <Tag key={i}>
             {timeAddZero(time.maintenance_start_time?.hour ?? 0)}:
@@ -116,7 +129,7 @@ export const GlobalDataSourceColumns = (
     {
       dataIndex: 'is_enable_audit',
       title: t('dmsGlobalDataSource.list.workbenchQueryAudit'),
-      render: (value: IListGlobalDBService['is_enable_audit']) => {
+      render: (value: IListGlobalDBServiceV2['is_enable_audit']) => {
         return value ? t('common.opened') : t('common.notOpen');
       }
     }

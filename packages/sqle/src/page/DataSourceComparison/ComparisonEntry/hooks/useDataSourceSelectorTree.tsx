@@ -15,7 +15,7 @@ import {
   DatabaseComparisonFromFields,
   SelectedInstanceInfo
 } from '../index.type';
-import { getInstanceTipListV1FunctionalModuleEnum } from '@actiontech/shared/lib/api/sqle/service/instance/index.enum';
+import { getInstanceTipListV2FunctionalModuleEnum } from '@actiontech/shared/lib/api/sqle/service/instance/index.enum';
 import { FormValidatorRule } from '@actiontech/shared/lib/types/common.type';
 import { useTranslation } from 'react-i18next';
 
@@ -218,7 +218,7 @@ const useDataSourceSelectorTree = () => {
       {
         project_name: projectName,
         functional_module:
-          getInstanceTipListV1FunctionalModuleEnum.create_workflow
+          getInstanceTipListV2FunctionalModuleEnum.create_workflow
       },
       {
         onSuccess: (data) => {

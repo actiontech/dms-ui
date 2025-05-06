@@ -15,7 +15,7 @@ exports[`slqe/Whitelist should render white list 1`] = `
         class="extra"
       >
         <button
-          class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary basic-button-wrapper css-geipcv"
+          class="ant-btn ant-btn-primary basic-button-wrapper css-geipcv"
           type="button"
         >
           <span
@@ -44,138 +44,147 @@ exports[`slqe/Whitelist should render white list 1`] = `
       </div>
     </div>
     <div
-      class="ant-spin-nested-loading css-dev-only-do-not-override-txh9fw"
+      class="ant-spin-nested-loading"
     >
       <div
         class="ant-spin-container"
       >
         <div
-          class="ant-spin-nested-loading css-dev-only-do-not-override-1kh50jg"
+          class="ant-space ant-space-horizontal ant-space-align-center full-width-element flex-space-between actiontech-table-toolbar-namespace css-a7k93w"
+          style="flex-wrap: wrap; margin-bottom: -8px;"
         >
           <div
-            class="ant-spin-container"
+            class="ant-space-item"
+            style="margin-right: 8px; padding-bottom: 8px;"
           >
             <div
-              class="ant-space css-dev-only-do-not-override-1kh50jg ant-space-horizontal ant-space-align-center full-width-element flex-space-between actiontech-table-toolbar-namespace css-c38ntt"
-              style="flex-wrap: wrap; margin-bottom: -8px;"
+              class="ant-space ant-space-horizontal ant-space-align-center"
             >
               <div
                 class="ant-space-item"
-                style="margin-right: 8px; padding-bottom: 8px;"
+                style="margin-right: 12px;"
               >
-                <div
-                  class="ant-space css-dev-only-do-not-override-1kh50jg ant-space-horizontal ant-space-align-center"
+                <span
+                  class="ant-input-affix-wrapper basic-input-wrapper actiontech-table-search-input-namespace css-1f6svkh ant-input-affix-wrapper-sm"
                 >
-                  <div
-                    class="ant-space-item"
-                    style="margin-right: 12px;"
+                  <input
+                    class="ant-input ant-input-sm"
+                    id="actiontech-table-search-input"
+                    placeholder="输入关键字搜索"
+                    type="text"
+                    value=""
+                  />
+                  <span
+                    class="ant-input-suffix"
                   >
                     <span
-                      class="ant-input-affix-wrapper basic-input-wrapper actiontech-table-search-input-namespace css-1f6svkh ant-input-affix-wrapper-sm css-dev-only-do-not-override-mlhibv"
+                      class="ant-input-clear-icon ant-input-clear-icon-hidden ant-input-clear-icon-has-suffix"
+                      role="button"
+                      tabindex="-1"
                     >
-                      <input
-                        class="ant-input ant-input-sm css-dev-only-do-not-override-mlhibv"
-                        id="actiontech-table-search-input"
-                        placeholder="输入关键字搜索"
-                        type="text"
-                        value=""
-                      />
-                      <span
-                        class="ant-input-suffix"
+                      <svg
+                        fill="currentColor"
+                        height="14"
+                        viewBox="0 0 14 14"
+                        width="14"
+                        xmlns="http://www.w3.org/2000/svg"
                       >
-                        <svg
-                          class="custom-icon custom-icon-search"
-                          height="14"
-                          viewBox="0 0 14 14"
-                          width="14"
-                          xmlns="http://www.w3.org/2000/svg"
-                        >
-                          <path
-                            d="m10.518 9.693 2.499 2.498-.826.825-2.498-2.498a5.252 5.252 0 0 1-8.527-4.101 5.25 5.25 0 0 1 5.25-5.25 5.252 5.252 0 0 1 4.102 8.526m-1.17-.433a4.082 4.082 0 0 0-2.931-6.927 4.08 4.08 0 0 0-4.084 4.084 4.082 4.082 0 0 0 6.927 2.93z"
-                          />
-                        </svg>
-                      </span>
+                        <path
+                          d="m7 6.175 2.887-2.887.825.825L7.825 7l2.887 2.888-.825.824L7 7.825l-2.888 2.887-.824-.824L6.175 7 3.288 4.113l.824-.825z"
+                        />
+                      </svg>
                     </span>
-                  </div>
-                  <div
-                    class="ant-space-item"
-                  >
-                    <button
-                      class="ant-btn css-dev-only-do-not-override-czn7jp ant-btn-default ant-btn-sm ant-btn-two-chinese-chars actiontech-filter-button-namespace basic-button-wrapper css-geipcv"
-                      style="padding: 0px 6px 0px 10px;"
-                      type="button"
+                    <svg
+                      class="custom-icon custom-icon-search"
+                      height="14"
+                      viewBox="0 0 14 14"
+                      width="14"
+                      xmlns="http://www.w3.org/2000/svg"
                     >
-                      <div
-                        class="ant-space css-dev-only-do-not-override-czn7jp ant-space-horizontal ant-space-align-center css-1nt49ug"
-                      >
-                        <div
-                          class="ant-space-item"
-                          style="margin-right: 2px;"
-                        >
-                          筛选
-                        </div>
-                        <div
-                          class="ant-space-item"
-                        >
-                          <svg
-                            color="currrentColor"
-                            height="14"
-                            viewBox="0 0 16 16"
-                            width="14"
-                            xmlns="http://www.w3.org/2000/svg"
-                          >
-                            <path
-                              d="m8 8.781 3.3-3.3.943.943L8 10.667 3.757 6.424l.943-.943z"
-                              fill="currentColor"
-                            />
-                          </svg>
-                        </div>
-                      </div>
-                    </button>
-                  </div>
-                </div>
+                      <path
+                        d="m10.518 9.693 2.499 2.498-.826.825-2.498-2.498a5.252 5.252 0 0 1-8.527-4.101 5.25 5.25 0 0 1 5.25-5.25 5.252 5.252 0 0 1 4.102 8.526m-1.17-.433a4.082 4.082 0 0 0-2.931-6.927 4.08 4.08 0 0 0-4.084 4.084 4.082 4.082 0 0 0 6.927 2.93z"
+                      />
+                    </svg>
+                  </span>
+                </span>
               </div>
               <div
                 class="ant-space-item"
-                style="padding-bottom: 8px;"
               >
-                <div
-                  class="ant-space css-dev-only-do-not-override-1kh50jg ant-space-horizontal ant-space-align-center"
+                <button
+                  class="ant-btn ant-btn-default ant-btn-sm ant-btn-two-chinese-chars actiontech-filter-button-namespace basic-button-wrapper css-geipcv"
+                  style="padding: 0px 6px 0px 10px;"
+                  type="button"
                 >
                   <div
-                    class="ant-space-item"
+                    class="ant-space ant-space-horizontal ant-space-align-center css-1nt49ug"
                   >
-                    <button
-                      class="ant-btn css-dev-only-do-not-override-czn7jp ant-btn-default ant-btn-sm ant-btn-icon-only basic-button-wrapper css-geipcv"
-                      type="button"
+                    <div
+                      class="ant-space-item"
+                      style="margin-right: 2px;"
                     >
-                      <span
-                        class="ant-btn-icon"
+                      筛选
+                    </div>
+                    <div
+                      class="ant-space-item"
+                    >
+                      <svg
+                        color="currentColor"
+                        height="14"
+                        viewBox="0 0 16 16"
+                        width="14"
+                        xmlns="http://www.w3.org/2000/svg"
                       >
-                        <svg
-                          class="custom-icon custom-icon-refresh"
-                          height="14"
-                          viewBox="0 0 14 14"
-                          width="14"
-                          xmlns="http://www.w3.org/2000/svg"
-                        >
-                          <path
-                            d="M3.187 2.586a5.833 5.833 0 0 1 8.59 7.762L9.918 7h1.75a4.667 4.667 0 0 0-7.899-3.367zm7.626 8.828a5.833 5.833 0 0 1-8.59-7.762L4.083 7h-1.75a4.667 4.667 0 0 0 7.899 3.367z"
-                          />
-                        </svg>
-                      </span>
-                    </button>
+                        <path
+                          d="m8 8.781 3.3-3.3.943.943L8 10.667 3.757 6.424l.943-.943z"
+                          fill="currentColor"
+                        />
+                      </svg>
+                    </div>
                   </div>
-                </div>
+                </button>
+              </div>
+            </div>
+          </div>
+          <div
+            class="ant-space-item"
+            style="padding-bottom: 8px;"
+          >
+            <div
+              class="ant-space ant-space-horizontal ant-space-align-center"
+            >
+              <div
+                class="ant-space-item"
+              >
+                <button
+                  class="ant-btn ant-btn-default ant-btn-sm ant-btn-icon-only basic-button-wrapper css-geipcv"
+                  type="button"
+                >
+                  <span
+                    class="ant-btn-icon"
+                  >
+                    <svg
+                      class="custom-icon custom-icon-refresh"
+                      height="14"
+                      viewBox="0 0 14 14"
+                      width="14"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M3.187 2.586a5.833 5.833 0 0 1 8.59 7.762L9.918 7h1.75a4.667 4.667 0 0 0-7.899-3.367zm7.626 8.828a5.833 5.833 0 0 1-8.59-7.762L4.083 7h-1.75a4.667 4.667 0 0 0 7.899 3.367z"
+                      />
+                    </svg>
+                  </span>
+                </button>
               </div>
             </div>
           </div>
         </div>
         <div
-          class="ant-table-wrapper actiontech-table-namespace css-fxd6ka css-dev-only-do-not-override-bj9uhl"
+          class="ant-table-wrapper actiontech-table-namespace css-fxd6ka"
         >
           <div
-            class="ant-spin-nested-loading css-dev-only-do-not-override-bj9uhl"
+            class="ant-spin-nested-loading"
           >
             <div
               class="ant-spin-container"
@@ -259,7 +268,7 @@ exports[`slqe/Whitelist should render white list 1`] = `
                               class="actiontech-sql-snippet-renderer-wrapper css-dz7fl9"
                             >
                               <div
-                                class="ant-typography ant-typography-ellipsis ant-typography-ellipsis-multiple-line margin-bottom-0 css-dev-only-do-not-override-bj9uhl"
+                                class="ant-typography ant-typography-ellipsis ant-typography-ellipsis-multiple-line margin-bottom-0"
                               >
                                 <span>
                                   <span
@@ -306,11 +315,11 @@ exports[`slqe/Whitelist should render white list 1`] = `
                           >
                             <div
                               aria-label="test1"
-                              class="ant-typography ant-typography-ellipsis ant-typography-single-line basic-typography-ellipsis css-wgj5gs css-dev-only-do-not-override-bj9uhl"
+                              class="ant-typography ant-typography-ellipsis ant-typography-single-line basic-typography-ellipsis css-wgj5gs"
                             >
                               test1
                               <div
-                                aria-label="Copy"
+                                aria-label="复制"
                                 class="ant-typography-copy"
                                 role="button"
                                 style="border: 0px; background: transparent; padding: 0px; line-height: inherit; display: inline-block;"
@@ -352,7 +361,7 @@ exports[`slqe/Whitelist should render white list 1`] = `
                                   ...
                                 </span>
                                 <div
-                                  aria-label="Copy"
+                                  aria-label="复制"
                                   class="ant-typography-copy"
                                   role="button"
                                   style="border: 0px; background: transparent; padding: 0px; line-height: inherit; display: inline-block;"
@@ -404,14 +413,14 @@ exports[`slqe/Whitelist should render white list 1`] = `
                               class="css-new95e"
                             >
                               <div
-                                class="ant-space css-dev-only-do-not-override-bj9uhl ant-space-horizontal ant-space-align-center"
+                                class="ant-space ant-space-horizontal ant-space-align-center"
                               >
                                 <div
                                   class="ant-space-item"
                                   style="margin-right: 8px;"
                                 >
                                   <button
-                                    class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                    class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
                                     type="button"
                                   >
                                     <span>
@@ -423,7 +432,7 @@ exports[`slqe/Whitelist should render white list 1`] = `
                                   class="ant-space-item"
                                 >
                                   <button
-                                    class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm ant-btn-dangerous actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                    class="ant-btn ant-btn-default ant-btn-sm ant-btn-dangerous actiontech-table-actions-button basic-button-wrapper css-geipcv"
                                     type="button"
                                   >
                                     <span>
@@ -446,7 +455,7 @@ exports[`slqe/Whitelist should render white list 1`] = `
                               class="actiontech-sql-snippet-renderer-wrapper css-dz7fl9"
                             >
                               <div
-                                class="ant-typography ant-typography-ellipsis ant-typography-ellipsis-multiple-line margin-bottom-0 css-dev-only-do-not-override-bj9uhl"
+                                class="ant-typography ant-typography-ellipsis ant-typography-ellipsis-multiple-line margin-bottom-0"
                               >
                                 <span>
                                   <span
@@ -493,11 +502,11 @@ exports[`slqe/Whitelist should render white list 1`] = `
                           >
                             <div
                               aria-label="test2"
-                              class="ant-typography ant-typography-ellipsis ant-typography-single-line basic-typography-ellipsis css-wgj5gs css-dev-only-do-not-override-bj9uhl"
+                              class="ant-typography ant-typography-ellipsis ant-typography-single-line basic-typography-ellipsis css-wgj5gs"
                             >
                               test2
                               <div
-                                aria-label="Copy"
+                                aria-label="复制"
                                 class="ant-typography-copy"
                                 role="button"
                                 style="border: 0px; background: transparent; padding: 0px; line-height: inherit; display: inline-block;"
@@ -539,7 +548,7 @@ exports[`slqe/Whitelist should render white list 1`] = `
                                   ...
                                 </span>
                                 <div
-                                  aria-label="Copy"
+                                  aria-label="复制"
                                   class="ant-typography-copy"
                                   role="button"
                                   style="border: 0px; background: transparent; padding: 0px; line-height: inherit; display: inline-block;"
@@ -591,14 +600,14 @@ exports[`slqe/Whitelist should render white list 1`] = `
                               class="css-new95e"
                             >
                               <div
-                                class="ant-space css-dev-only-do-not-override-bj9uhl ant-space-horizontal ant-space-align-center"
+                                class="ant-space ant-space-horizontal ant-space-align-center"
                               >
                                 <div
                                   class="ant-space-item"
                                   style="margin-right: 8px;"
                                 >
                                   <button
-                                    class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                    class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
                                     type="button"
                                   >
                                     <span>
@@ -610,7 +619,7 @@ exports[`slqe/Whitelist should render white list 1`] = `
                                   class="ant-space-item"
                                 >
                                   <button
-                                    class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm ant-btn-dangerous actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                    class="ant-btn ant-btn-default ant-btn-sm ant-btn-dangerous actiontech-table-actions-button basic-button-wrapper css-geipcv"
                                     type="button"
                                   >
                                     <span>
@@ -633,7 +642,7 @@ exports[`slqe/Whitelist should render white list 1`] = `
                               class="actiontech-sql-snippet-renderer-wrapper css-dz7fl9"
                             >
                               <div
-                                class="ant-typography ant-typography-ellipsis ant-typography-ellipsis-multiple-line margin-bottom-0 css-dev-only-do-not-override-bj9uhl"
+                                class="ant-typography ant-typography-ellipsis ant-typography-ellipsis-multiple-line margin-bottom-0"
                               >
                                 <span>
                                   <span
@@ -680,11 +689,11 @@ exports[`slqe/Whitelist should render white list 1`] = `
                           >
                             <div
                               aria-label="test3"
-                              class="ant-typography ant-typography-ellipsis ant-typography-single-line basic-typography-ellipsis css-wgj5gs css-dev-only-do-not-override-bj9uhl"
+                              class="ant-typography ant-typography-ellipsis ant-typography-single-line basic-typography-ellipsis css-wgj5gs"
                             >
                               test3
                               <div
-                                aria-label="Copy"
+                                aria-label="复制"
                                 class="ant-typography-copy"
                                 role="button"
                                 style="border: 0px; background: transparent; padding: 0px; line-height: inherit; display: inline-block;"
@@ -726,7 +735,7 @@ exports[`slqe/Whitelist should render white list 1`] = `
                                   ...
                                 </span>
                                 <div
-                                  aria-label="Copy"
+                                  aria-label="复制"
                                   class="ant-typography-copy"
                                   role="button"
                                   style="border: 0px; background: transparent; padding: 0px; line-height: inherit; display: inline-block;"
@@ -778,14 +787,14 @@ exports[`slqe/Whitelist should render white list 1`] = `
                               class="css-new95e"
                             >
                               <div
-                                class="ant-space css-dev-only-do-not-override-bj9uhl ant-space-horizontal ant-space-align-center"
+                                class="ant-space ant-space-horizontal ant-space-align-center"
                               >
                                 <div
                                   class="ant-space-item"
                                   style="margin-right: 8px;"
                                 >
                                   <button
-                                    class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                    class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
                                     type="button"
                                   >
                                     <span>
@@ -797,7 +806,7 @@ exports[`slqe/Whitelist should render white list 1`] = `
                                   class="ant-space-item"
                                 >
                                   <button
-                                    class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm ant-btn-dangerous actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                    class="ant-btn ant-btn-default ant-btn-sm ant-btn-dangerous actiontech-table-actions-button basic-button-wrapper css-geipcv"
                                     type="button"
                                   >
                                     <span>
@@ -821,11 +830,11 @@ exports[`slqe/Whitelist should render white list 1`] = `
                           >
                             <div
                               aria-label="test4"
-                              class="ant-typography ant-typography-ellipsis ant-typography-single-line basic-typography-ellipsis css-wgj5gs css-dev-only-do-not-override-bj9uhl"
+                              class="ant-typography ant-typography-ellipsis ant-typography-single-line basic-typography-ellipsis css-wgj5gs"
                             >
                               test4
                               <div
-                                aria-label="Copy"
+                                aria-label="复制"
                                 class="ant-typography-copy"
                                 role="button"
                                 style="border: 0px; background: transparent; padding: 0px; line-height: inherit; display: inline-block;"
@@ -867,7 +876,7 @@ exports[`slqe/Whitelist should render white list 1`] = `
                                   ...
                                 </span>
                                 <div
-                                  aria-label="Copy"
+                                  aria-label="复制"
                                   class="ant-typography-copy"
                                   role="button"
                                   style="border: 0px; background: transparent; padding: 0px; line-height: inherit; display: inline-block;"
@@ -915,14 +924,14 @@ exports[`slqe/Whitelist should render white list 1`] = `
                               class="css-new95e"
                             >
                               <div
-                                class="ant-space css-dev-only-do-not-override-bj9uhl ant-space-horizontal ant-space-align-center"
+                                class="ant-space ant-space-horizontal ant-space-align-center"
                               >
                                 <div
                                   class="ant-space-item"
                                   style="margin-right: 8px;"
                                 >
                                   <button
-                                    class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                    class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
                                     type="button"
                                   >
                                     <span>
@@ -934,7 +943,7 @@ exports[`slqe/Whitelist should render white list 1`] = `
                                   class="ant-space-item"
                                 >
                                   <button
-                                    class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm ant-btn-dangerous actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                    class="ant-btn ant-btn-default ant-btn-sm ant-btn-dangerous actiontech-table-actions-button basic-button-wrapper css-geipcv"
                                     type="button"
                                   >
                                     <span>
@@ -952,7 +961,7 @@ exports[`slqe/Whitelist should render white list 1`] = `
                 </div>
               </div>
               <ul
-                class="ant-pagination ant-table-pagination ant-table-pagination-right actiontech-table-pagination actiontech-table-pagination-fixed css-dev-only-do-not-override-bj9uhl"
+                class="ant-pagination ant-table-pagination ant-table-pagination-right actiontech-table-pagination actiontech-table-pagination-fixed"
               >
                 <li
                   class="ant-pagination-total-text"
@@ -964,7 +973,7 @@ exports[`slqe/Whitelist should render white list 1`] = `
                 <li
                   aria-disabled="true"
                   class="ant-pagination-prev ant-pagination-disabled"
-                  title="Previous Page"
+                  title="上一页"
                 >
                   <button
                     class="ant-pagination-item-link"
@@ -1007,7 +1016,7 @@ exports[`slqe/Whitelist should render white list 1`] = `
                 <li
                   aria-disabled="true"
                   class="ant-pagination-next ant-pagination-disabled"
-                  title="Next Page"
+                  title="下一页"
                 >
                   <button
                     class="ant-pagination-item-link"
@@ -1040,8 +1049,8 @@ exports[`slqe/Whitelist should render white list 1`] = `
                   class="ant-pagination-options"
                 >
                   <div
-                    aria-label="Page Size"
-                    class="ant-select ant-pagination-options-size-changer css-dev-only-do-not-override-bj9uhl ant-select-single ant-select-show-arrow ant-select-show-search"
+                    aria-label="页码"
+                    class="ant-select ant-pagination-options-size-changer ant-select-single ant-select-show-arrow ant-select-show-search"
                   >
                     <div
                       class="ant-select-selector"
@@ -1055,7 +1064,7 @@ exports[`slqe/Whitelist should render white list 1`] = `
                           aria-controls="rc_select_TEST_OR_SSR_list"
                           aria-expanded="false"
                           aria-haspopup="listbox"
-                          aria-label="Page Size"
+                          aria-label="页码"
                           aria-owns="rc_select_TEST_OR_SSR_list"
                           autocomplete="off"
                           class="ant-select-selection-search-input"
@@ -1067,9 +1076,9 @@ exports[`slqe/Whitelist should render white list 1`] = `
                       </span>
                       <span
                         class="ant-select-selection-item"
-                        title="20 / page"
+                        title="20 条/页"
                       >
-                        20 / page
+                        20 条/页
                       </span>
                     </div>
                     <span

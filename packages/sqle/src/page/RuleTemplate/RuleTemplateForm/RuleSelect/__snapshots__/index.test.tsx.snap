@@ -5,10 +5,10 @@ exports[`sqle/RuleTemplate/RuleSelect should match snap shot 1`] = `
   <div />
   <div>
     <div
-      class="ant-row flex-space-between css-156vlto css-dev-only-do-not-override-txh9fw"
+      class="ant-row flex-space-between css-156vlto"
     >
       <div
-        class="ant-segmented basic-segmented-wrapper css-15kylv5 css-dev-only-do-not-override-txh9fw"
+        class="ant-segmented basic-segmented-wrapper css-15kylv5"
       >
         <div
           class="ant-segmented-group"
@@ -45,7 +45,7 @@ exports[`sqle/RuleTemplate/RuleSelect should match snap shot 1`] = `
         </div>
       </div>
       <button
-        class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default ant-btn-dangerous basic-button-wrapper css-geipcv"
+        class="ant-btn ant-btn-default ant-btn-dangerous basic-button-wrapper css-geipcv"
         type="button"
       >
         <span>
@@ -54,27 +54,27 @@ exports[`sqle/RuleTemplate/RuleSelect should match snap shot 1`] = `
       </button>
     </div>
     <div
-      class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center full-width-element css-de5ds5"
+      class="ant-space ant-space-horizontal ant-space-align-center full-width-element css-tvjydu"
     >
       <div
         class="ant-space-item"
       >
         <form
-          class="ant-form ant-form-horizontal css-dev-only-do-not-override-txh9fw"
+          class="ant-form ant-form-horizontal"
         >
           <div
-            class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+            class="ant-space ant-space-horizontal ant-space-align-center"
           >
             <div
               class="ant-space-item"
               style="margin-right: 12px;"
             >
               <span
-                class="ant-input-affix-wrapper basic-input-wrapper custom-search-input css-1iw1ud7 ant-input-affix-wrapper-sm css-dev-only-do-not-override-ywkr0o"
+                class="ant-input-affix-wrapper basic-input-wrapper custom-search-input css-1iw1ud7 ant-input-affix-wrapper-sm"
                 style="width: 210px;"
               >
                 <input
-                  class="ant-input ant-input-sm css-dev-only-do-not-override-ywkr0o"
+                  class="ant-input ant-input-sm"
                   id="fuzzy_keyword"
                   placeholder="请输入规则关键词搜索"
                   type="text"
@@ -119,7 +119,7 @@ exports[`sqle/RuleTemplate/RuleSelect should match snap shot 1`] = `
               style="margin-right: 12px;"
             >
               <div
-                class="ant-select ant-select-sm basic-select-wrapper custom-select-namespace css-pti5z8 css-dev-only-do-not-override-v9sov3 ant-select-single ant-select-allow-clear ant-select-show-arrow ant-select-loading"
+                class="ant-select ant-select-sm basic-select-wrapper custom-select-namespace css-pti5z8 ant-select-single ant-select-allow-clear ant-select-show-arrow ant-select-loading"
               >
                 <div
                   class="ant-select-selector"
@@ -177,7 +177,7 @@ exports[`sqle/RuleTemplate/RuleSelect should match snap shot 1`] = `
               style="margin-right: 12px;"
             >
               <div
-                class="ant-select ant-select-sm ant-select-borderless basic-select-wrapper custom-select-namespace css-pti5z8 css-dev-only-do-not-override-v9sov3 ant-select-single ant-select-allow-clear ant-select-show-arrow ant-select-loading"
+                class="ant-select ant-select-sm ant-select-borderless basic-select-wrapper custom-select-namespace css-pti5z8 ant-select-single ant-select-allow-clear ant-select-show-arrow ant-select-loading"
               >
                 <div
                   class="ant-select-selector"
@@ -235,7 +235,7 @@ exports[`sqle/RuleTemplate/RuleSelect should match snap shot 1`] = `
               style="margin-right: 12px;"
             >
               <div
-                class="ant-select ant-select-sm ant-select-borderless basic-select-wrapper custom-select-namespace css-pti5z8 css-dev-only-do-not-override-v9sov3 ant-select-single ant-select-allow-clear ant-select-show-arrow ant-select-loading"
+                class="ant-select ant-select-sm ant-select-borderless basic-select-wrapper custom-select-namespace css-pti5z8 ant-select-single ant-select-allow-clear ant-select-show-arrow ant-select-loading"
               >
                 <div
                   class="ant-select-selector"
@@ -293,7 +293,7 @@ exports[`sqle/RuleTemplate/RuleSelect should match snap shot 1`] = `
               style="margin-right: 12px;"
             >
               <div
-                class="ant-select ant-select-sm ant-select-borderless basic-select-wrapper custom-select-namespace css-pti5z8 css-dev-only-do-not-override-v9sov3 ant-select-single ant-select-allow-clear ant-select-show-arrow ant-select-loading"
+                class="ant-select ant-select-sm ant-select-borderless basic-select-wrapper custom-select-namespace css-pti5z8 ant-select-single ant-select-allow-clear ant-select-show-arrow ant-select-loading"
               >
                 <div
                   class="ant-select-selector"
@@ -350,14 +350,14 @@ exports[`sqle/RuleTemplate/RuleSelect should match snap shot 1`] = `
               class="ant-space-item"
             >
               <div
-                class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center css-1nt49ug"
+                class="ant-space ant-space-horizontal ant-space-align-center css-1nt49ug"
               >
                 <div
                   class="ant-space-item"
                   style="margin-right: 4px;"
                 >
                   <div
-                    class="ant-select ant-select-sm ant-select-borderless basic-select-wrapper custom-select-namespace css-pti5z8 css-dev-only-do-not-override-v9sov3 ant-select-single ant-select-allow-clear ant-select-show-arrow ant-select-loading"
+                    class="ant-select ant-select-sm ant-select-borderless basic-select-wrapper custom-select-namespace css-pti5z8 ant-select-single ant-select-allow-clear ant-select-show-arrow ant-select-loading"
                   >
                     <div
                       class="ant-select-selector"
@@ -414,7 +414,7 @@ exports[`sqle/RuleTemplate/RuleSelect should match snap shot 1`] = `
                   class="ant-space-item"
                 >
                   <div
-                    class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
+                    class="ant-space ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
                   >
                     <div
                       class="ant-space-item"
@@ -440,13 +440,13 @@ exports[`sqle/RuleTemplate/RuleSelect should match snap shot 1`] = `
       </div>
     </div>
     <div
-      class="ant-spin-nested-loading css-dev-only-do-not-override-txh9fw"
+      class="ant-spin-nested-loading"
     >
       <div>
         <div
           aria-busy="true"
           aria-live="polite"
-          class="ant-spin ant-spin-spinning css-dev-only-do-not-override-txh9fw"
+          class="ant-spin ant-spin-spinning"
         >
           <span
             class="ant-spin-dot ant-spin-dot-spin"
@@ -510,17 +510,17 @@ exports[`sqle/RuleTemplate/RuleSelect should match snap shot 1`] = `
                     class="level-content"
                   >
                     <span
-                      class="ant-typography level-content-desc css-dev-only-do-not-override-txh9fw"
+                      class="ant-typography level-content-desc"
                     >
                       绑定的变量个数不建议超过阈值
                     </span>
                     <div
-                      class="ant-typography ant-typography-ellipsis ant-typography-single-line ant-typography-ellipsis-single-line level-content-annotation css-dev-only-do-not-override-txh9fw"
+                      class="ant-typography ant-typography-ellipsis ant-typography-single-line ant-typography-ellipsis-single-line level-content-annotation"
                     >
                       因为过度使用绑定变量会增加查询的复杂度，从而降低查询性能。过度使用绑定变量还会增加维护成本。默认阈值:100
                     </div>
                     <div
-                      class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center level-content-params"
+                      class="ant-space ant-space-horizontal ant-space-align-center level-content-params"
                       style="flex-wrap: wrap; margin-bottom: -8px;"
                     >
                       <div
@@ -528,7 +528,7 @@ exports[`sqle/RuleTemplate/RuleSelect should match snap shot 1`] = `
                         style="margin-right: 8px; padding-bottom: 8px;"
                       >
                         <div
-                          class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center rule-param-tag css-x5diec"
+                          class="ant-space ant-space-horizontal ant-space-align-center rule-param-tag css-x5diec"
                         >
                           <div
                             class="ant-space-item"
@@ -549,7 +549,7 @@ exports[`sqle/RuleTemplate/RuleSelect should match snap shot 1`] = `
                         style="margin-right: 8px; padding-bottom: 8px;"
                       >
                         <div
-                          class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center rule-category-audit_accuracy rule-category-tag-wrap css-x5diec"
+                          class="ant-space ant-space-horizontal ant-space-align-center rule-category-audit_accuracy rule-category-tag-wrap css-x5diec"
                         >
                           <div
                             class="ant-space-item"
@@ -567,7 +567,7 @@ exports[`sqle/RuleTemplate/RuleSelect should match snap shot 1`] = `
                         style="margin-right: 8px; padding-bottom: 8px;"
                       >
                         <div
-                          class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center rule-category-sql rule-category-tag-wrap css-x5diec"
+                          class="ant-space ant-space-horizontal ant-space-align-center rule-category-sql rule-category-tag-wrap css-x5diec"
                         >
                           <div
                             class="ant-space-item"
@@ -585,7 +585,7 @@ exports[`sqle/RuleTemplate/RuleSelect should match snap shot 1`] = `
                         style="margin-right: 8px; padding-bottom: 8px;"
                       >
                         <div
-                          class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center rule-category-operand rule-category-tag-wrap css-x5diec"
+                          class="ant-space ant-space-horizontal ant-space-align-center rule-category-operand rule-category-tag-wrap css-x5diec"
                         >
                           <div
                             class="ant-space-item"
@@ -703,7 +703,7 @@ exports[`sqle/RuleTemplate/RuleSelect should match snap shot 1`] = `
                         style="margin-right: 8px; padding-bottom: 8px;"
                       >
                         <div
-                          class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center rule-category-audit_purpose rule-category-tag-wrap css-x5diec"
+                          class="ant-space ant-space-horizontal ant-space-align-center rule-category-audit_purpose rule-category-tag-wrap css-x5diec"
                         >
                           <div
                             class="ant-space-item"
@@ -721,7 +721,7 @@ exports[`sqle/RuleTemplate/RuleSelect should match snap shot 1`] = `
                         style="margin-right: 8px; padding-bottom: 8px;"
                       >
                         <div
-                          class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center rule-category-performance_cost rule-category-tag-wrap css-x5diec"
+                          class="ant-space ant-space-horizontal ant-space-align-center rule-category-performance_cost rule-category-tag-wrap css-x5diec"
                         >
                           <div
                             class="ant-space-item"
@@ -748,20 +748,20 @@ exports[`sqle/RuleTemplate/RuleSelect should match snap shot 1`] = `
                     class="action-wrapper"
                   >
                     <div
-                      class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+                      class="ant-space ant-space-horizontal ant-space-align-center"
                     >
                       <div
                         class="ant-space-item"
                         style="margin-right: 10px;"
                       >
                         <div
-                          class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
+                          class="ant-space ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
                         >
                           <div
                             class="ant-space-item"
                           >
                             <button
-                              class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-circle ant-btn-default ant-btn-icon-only action-circle-btn edit-rule-item basic-button-wrapper css-geipcv"
+                              class="ant-btn ant-btn-circle ant-btn-default ant-btn-icon-only action-circle-btn edit-rule-item basic-button-wrapper css-geipcv"
                               type="button"
                             >
                               <span
@@ -788,13 +788,13 @@ exports[`sqle/RuleTemplate/RuleSelect should match snap shot 1`] = `
                         class="ant-space-item"
                       >
                         <div
-                          class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
+                          class="ant-space ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
                         >
                           <div
                             class="ant-space-item"
                           >
                             <button
-                              class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-circle ant-btn-default ant-btn-icon-only ant-btn-dangerous action-circle-btn disabled-rule-item basic-button-wrapper css-geipcv"
+                              class="ant-btn ant-btn-circle ant-btn-default ant-btn-icon-only ant-btn-dangerous action-circle-btn disabled-rule-item basic-button-wrapper css-geipcv"
                               type="button"
                             >
                               <span
@@ -848,17 +848,17 @@ exports[`sqle/RuleTemplate/RuleSelect should match snap shot 1`] = `
                     class="level-content"
                   >
                     <span
-                      class="ant-typography level-content-desc css-dev-only-do-not-override-txh9fw"
+                      class="ant-typography level-content-desc"
                     >
                       test desc2
                     </span>
                     <div
-                      class="ant-typography ant-typography-ellipsis ant-typography-single-line ant-typography-ellipsis-single-line level-content-annotation css-dev-only-do-not-override-txh9fw"
+                      class="ant-typography ant-typography-ellipsis ant-typography-single-line ant-typography-ellipsis-single-line level-content-annotation"
                     >
                       test rule2
                     </div>
                     <div
-                      class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center level-content-params"
+                      class="ant-space ant-space-horizontal ant-space-align-center level-content-params"
                       style="flex-wrap: wrap; margin-bottom: -8px;"
                     >
                       <div
@@ -866,7 +866,7 @@ exports[`sqle/RuleTemplate/RuleSelect should match snap shot 1`] = `
                         style="margin-right: 8px; padding-bottom: 8px;"
                       >
                         <div
-                          class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center rule-category-audit_accuracy rule-category-tag-wrap css-x5diec"
+                          class="ant-space ant-space-horizontal ant-space-align-center rule-category-audit_accuracy rule-category-tag-wrap css-x5diec"
                         >
                           <div
                             class="ant-space-item"
@@ -884,7 +884,7 @@ exports[`sqle/RuleTemplate/RuleSelect should match snap shot 1`] = `
                         style="margin-right: 8px; padding-bottom: 8px;"
                       >
                         <div
-                          class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center rule-category-sql rule-category-tag-wrap css-x5diec"
+                          class="ant-space ant-space-horizontal ant-space-align-center rule-category-sql rule-category-tag-wrap css-x5diec"
                         >
                           <div
                             class="ant-space-item"
@@ -902,7 +902,7 @@ exports[`sqle/RuleTemplate/RuleSelect should match snap shot 1`] = `
                         style="margin-right: 8px; padding-bottom: 8px;"
                       >
                         <div
-                          class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center rule-category-operand rule-category-tag-wrap css-x5diec"
+                          class="ant-space ant-space-horizontal ant-space-align-center rule-category-operand rule-category-tag-wrap css-x5diec"
                         >
                           <div
                             class="ant-space-item"
@@ -930,7 +930,7 @@ exports[`sqle/RuleTemplate/RuleSelect should match snap shot 1`] = `
                         style="margin-right: 8px; padding-bottom: 8px;"
                       >
                         <div
-                          class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center rule-category-audit_purpose rule-category-tag-wrap css-x5diec"
+                          class="ant-space ant-space-horizontal ant-space-align-center rule-category-audit_purpose rule-category-tag-wrap css-x5diec"
                         >
                           <div
                             class="ant-space-item"
@@ -957,20 +957,20 @@ exports[`sqle/RuleTemplate/RuleSelect should match snap shot 1`] = `
                     class="action-wrapper"
                   >
                     <div
-                      class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+                      class="ant-space ant-space-horizontal ant-space-align-center"
                     >
                       <div
                         class="ant-space-item"
                         style="margin-right: 10px;"
                       >
                         <div
-                          class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
+                          class="ant-space ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
                         >
                           <div
                             class="ant-space-item"
                           >
                             <button
-                              class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-circle ant-btn-default ant-btn-icon-only action-circle-btn edit-rule-item basic-button-wrapper css-geipcv"
+                              class="ant-btn ant-btn-circle ant-btn-default ant-btn-icon-only action-circle-btn edit-rule-item basic-button-wrapper css-geipcv"
                               type="button"
                             >
                               <span
@@ -997,13 +997,13 @@ exports[`sqle/RuleTemplate/RuleSelect should match snap shot 1`] = `
                         class="ant-space-item"
                       >
                         <div
-                          class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
+                          class="ant-space ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
                         >
                           <div
                             class="ant-space-item"
                           >
                             <button
-                              class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-circle ant-btn-default ant-btn-icon-only ant-btn-dangerous action-circle-btn disabled-rule-item basic-button-wrapper css-geipcv"
+                              class="ant-btn ant-btn-circle ant-btn-default ant-btn-icon-only ant-btn-dangerous action-circle-btn disabled-rule-item basic-button-wrapper css-geipcv"
                               type="button"
                             >
                               <span
@@ -1057,17 +1057,17 @@ exports[`sqle/RuleTemplate/RuleSelect should match snap shot 1`] = `
                     class="level-content"
                   >
                     <span
-                      class="ant-typography level-content-desc css-dev-only-do-not-override-txh9fw"
+                      class="ant-typography level-content-desc"
                     >
                       test desc3
                     </span>
                     <div
-                      class="ant-typography ant-typography-ellipsis ant-typography-single-line ant-typography-ellipsis-single-line level-content-annotation css-dev-only-do-not-override-txh9fw"
+                      class="ant-typography ant-typography-ellipsis ant-typography-single-line ant-typography-ellipsis-single-line level-content-annotation"
                     >
                       test rule3
                     </div>
                     <div
-                      class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center level-content-params"
+                      class="ant-space ant-space-horizontal ant-space-align-center level-content-params"
                       style="flex-wrap: wrap; margin-bottom: -8px;"
                     >
                       <div
@@ -1075,7 +1075,7 @@ exports[`sqle/RuleTemplate/RuleSelect should match snap shot 1`] = `
                         style="margin-right: 8px; padding-bottom: 8px;"
                       >
                         <div
-                          class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center rule-category-audit_accuracy rule-category-tag-wrap css-x5diec"
+                          class="ant-space ant-space-horizontal ant-space-align-center rule-category-audit_accuracy rule-category-tag-wrap css-x5diec"
                         >
                           <div
                             class="ant-space-item"
@@ -1093,7 +1093,7 @@ exports[`sqle/RuleTemplate/RuleSelect should match snap shot 1`] = `
                         style="margin-right: 8px; padding-bottom: 8px;"
                       >
                         <div
-                          class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center rule-category-sql rule-category-tag-wrap css-x5diec"
+                          class="ant-space ant-space-horizontal ant-space-align-center rule-category-sql rule-category-tag-wrap css-x5diec"
                         >
                           <div
                             class="ant-space-item"
@@ -1111,7 +1111,7 @@ exports[`sqle/RuleTemplate/RuleSelect should match snap shot 1`] = `
                         style="margin-right: 8px; padding-bottom: 8px;"
                       >
                         <div
-                          class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center rule-category-operand rule-category-tag-wrap css-x5diec"
+                          class="ant-space ant-space-horizontal ant-space-align-center rule-category-operand rule-category-tag-wrap css-x5diec"
                         >
                           <div
                             class="ant-space-item"
@@ -1139,7 +1139,7 @@ exports[`sqle/RuleTemplate/RuleSelect should match snap shot 1`] = `
                         style="margin-right: 8px; padding-bottom: 8px;"
                       >
                         <div
-                          class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center rule-category-audit_purpose rule-category-tag-wrap css-x5diec"
+                          class="ant-space ant-space-horizontal ant-space-align-center rule-category-audit_purpose rule-category-tag-wrap css-x5diec"
                         >
                           <div
                             class="ant-space-item"
@@ -1166,20 +1166,20 @@ exports[`sqle/RuleTemplate/RuleSelect should match snap shot 1`] = `
                     class="action-wrapper"
                   >
                     <div
-                      class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+                      class="ant-space ant-space-horizontal ant-space-align-center"
                     >
                       <div
                         class="ant-space-item"
                         style="margin-right: 10px;"
                       >
                         <div
-                          class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
+                          class="ant-space ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
                         >
                           <div
                             class="ant-space-item"
                           >
                             <button
-                              class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-circle ant-btn-default ant-btn-icon-only action-circle-btn edit-rule-item basic-button-wrapper css-geipcv"
+                              class="ant-btn ant-btn-circle ant-btn-default ant-btn-icon-only action-circle-btn edit-rule-item basic-button-wrapper css-geipcv"
                               type="button"
                             >
                               <span
@@ -1206,13 +1206,13 @@ exports[`sqle/RuleTemplate/RuleSelect should match snap shot 1`] = `
                         class="ant-space-item"
                       >
                         <div
-                          class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
+                          class="ant-space ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
                         >
                           <div
                             class="ant-space-item"
                           >
                             <button
-                              class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-circle ant-btn-default ant-btn-icon-only ant-btn-dangerous action-circle-btn disabled-rule-item basic-button-wrapper css-geipcv"
+                              class="ant-btn ant-btn-circle ant-btn-default ant-btn-icon-only ant-btn-dangerous action-circle-btn disabled-rule-item basic-button-wrapper css-geipcv"
                               type="button"
                             >
                               <span
@@ -1267,17 +1267,17 @@ exports[`sqle/RuleTemplate/RuleSelect should match snap shot 1`] = `
                     class="level-content"
                   >
                     <span
-                      class="ant-typography level-content-desc css-dev-only-do-not-override-txh9fw"
+                      class="ant-typography level-content-desc"
                     >
                       test desc4
                     </span>
                     <div
-                      class="ant-typography ant-typography-ellipsis ant-typography-single-line ant-typography-ellipsis-single-line level-content-annotation css-dev-only-do-not-override-txh9fw"
+                      class="ant-typography ant-typography-ellipsis ant-typography-single-line ant-typography-ellipsis-single-line level-content-annotation"
                     >
                       test rule4
                     </div>
                     <div
-                      class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center level-content-params"
+                      class="ant-space ant-space-horizontal ant-space-align-center level-content-params"
                       style="flex-wrap: wrap; margin-bottom: -8px;"
                     >
                       <div
@@ -1285,7 +1285,7 @@ exports[`sqle/RuleTemplate/RuleSelect should match snap shot 1`] = `
                         style="margin-right: 8px; padding-bottom: 8px;"
                       >
                         <div
-                          class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center rule-category-audit_accuracy rule-category-tag-wrap css-x5diec"
+                          class="ant-space ant-space-horizontal ant-space-align-center rule-category-audit_accuracy rule-category-tag-wrap css-x5diec"
                         >
                           <div
                             class="ant-space-item"
@@ -1303,7 +1303,7 @@ exports[`sqle/RuleTemplate/RuleSelect should match snap shot 1`] = `
                         style="margin-right: 8px; padding-bottom: 8px;"
                       >
                         <div
-                          class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center rule-category-sql rule-category-tag-wrap css-x5diec"
+                          class="ant-space ant-space-horizontal ant-space-align-center rule-category-sql rule-category-tag-wrap css-x5diec"
                         >
                           <div
                             class="ant-space-item"
@@ -1321,7 +1321,7 @@ exports[`sqle/RuleTemplate/RuleSelect should match snap shot 1`] = `
                         style="margin-right: 8px; padding-bottom: 8px;"
                       >
                         <div
-                          class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center rule-category-operand rule-category-tag-wrap css-x5diec"
+                          class="ant-space ant-space-horizontal ant-space-align-center rule-category-operand rule-category-tag-wrap css-x5diec"
                         >
                           <div
                             class="ant-space-item"
@@ -1349,7 +1349,7 @@ exports[`sqle/RuleTemplate/RuleSelect should match snap shot 1`] = `
                         style="margin-right: 8px; padding-bottom: 8px;"
                       >
                         <div
-                          class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center rule-category-audit_purpose rule-category-tag-wrap css-x5diec"
+                          class="ant-space ant-space-horizontal ant-space-align-center rule-category-audit_purpose rule-category-tag-wrap css-x5diec"
                         >
                           <div
                             class="ant-space-item"
@@ -1376,20 +1376,20 @@ exports[`sqle/RuleTemplate/RuleSelect should match snap shot 1`] = `
                     class="action-wrapper"
                   >
                     <div
-                      class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+                      class="ant-space ant-space-horizontal ant-space-align-center"
                     >
                       <div
                         class="ant-space-item"
                         style="margin-right: 10px;"
                       >
                         <div
-                          class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
+                          class="ant-space ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
                         >
                           <div
                             class="ant-space-item"
                           >
                             <button
-                              class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-circle ant-btn-default ant-btn-icon-only action-circle-btn edit-rule-item basic-button-wrapper css-geipcv"
+                              class="ant-btn ant-btn-circle ant-btn-default ant-btn-icon-only action-circle-btn edit-rule-item basic-button-wrapper css-geipcv"
                               type="button"
                             >
                               <span
@@ -1416,13 +1416,13 @@ exports[`sqle/RuleTemplate/RuleSelect should match snap shot 1`] = `
                         class="ant-space-item"
                       >
                         <div
-                          class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
+                          class="ant-space ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
                         >
                           <div
                             class="ant-space-item"
                           >
                             <button
-                              class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-circle ant-btn-default ant-btn-icon-only ant-btn-dangerous action-circle-btn disabled-rule-item basic-button-wrapper css-geipcv"
+                              class="ant-btn ant-btn-circle ant-btn-default ant-btn-icon-only ant-btn-dangerous action-circle-btn disabled-rule-item basic-button-wrapper css-geipcv"
                               type="button"
                             >
                               <span

@@ -3,25 +3,24 @@ import { Select } from 'antd';
 import { useMemo, useState, useCallback } from 'react';
 import { ResponseCode } from '../../data/common';
 import { instanceListDefaultKey } from '../../data/common';
-import { IGetInstanceTipListV1Params } from '@actiontech/shared/lib/api/sqle/service/instance/index.d';
-import { IInstanceTipResV1 } from '@actiontech/shared/lib/api/sqle/service/common';
+import { IGetInstanceTipListV2Params } from '@actiontech/shared/lib/api/sqle/service/instance/index.d';
+import { IInstanceTipResV2 } from '@actiontech/shared/lib/api/sqle/service/common';
 import { DatabaseTypeLogo } from '@actiontech/shared';
-import instance from '@actiontech/shared/lib/api/sqle/service/instance';
 import useDatabaseType from '../useDatabaseType';
+import { SqleApi } from '@actiontech/shared/lib/api';
 
 const useInstance = () => {
-  const [instanceList, setInstanceList] = useState<IInstanceTipResV1[]>([]);
+  const [instanceList, setInstanceList] = useState<IInstanceTipResV2[]>([]);
   const [loading, { setTrue, setFalse }] = useBoolean();
   const { getLogoUrlByDbType } = useDatabaseType();
 
   const updateInstanceList = useCallback(
     (
-      params: IGetInstanceTipListV1Params,
-      options?: { onSuccess?: (data: IInstanceTipResV1[]) => void }
+      params: IGetInstanceTipListV2Params,
+      options?: { onSuccess?: (data: IInstanceTipResV2[]) => void }
     ) => {
       setTrue();
-      instance
-        .getInstanceTipListV1(params)
+      SqleApi.InstanceService.getInstanceTipListV2(params)
         .then((res) => {
           if (res.data.code === ResponseCode.SUCCESS) {
             options?.onSuccess?.(res.data.data ?? []);
@@ -42,7 +41,7 @@ const useInstance = () => {
 
   const generateInstanceSelectOption = useCallback(
     (instance_type: string = instanceListDefaultKey) => {
-      let filterInstanceList: IInstanceTipResV1[] = [];
+      let filterInstanceList: IInstanceTipResV2[] = [];
       if (instance_type !== instanceListDefaultKey) {
         filterInstanceList = instanceList.filter(
           (i) => i.instance_type === instance_type

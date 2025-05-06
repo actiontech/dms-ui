@@ -105,7 +105,8 @@ export default {
     ldapUserNameRdnKey: '用户名属性名',
     ldapUserNameRdnKeyTips: 'SQLE绑定的用户名在LDAP中对应的属性名',
     ldapUserEmailRdnKey: '用户邮箱属性名',
-    ldapUserEmailRdnKeyTips: 'SQLE绑定的用户邮箱在LDAP中对应的属性名'
+    ldapUserEmailRdnKeyTips: 'SQLE绑定的用户邮箱在LDAP中对应的属性名',
+    updatePassword: '是否修改连接用户密码'
   },
 
   oauth: {
@@ -246,13 +247,15 @@ export default {
     cbOperationLogsExpiredHours: 'CB工作台操作审计过期时间',
     urlAddressPrefix: 'URL地址前缀',
     urlAddressPrefixTips: '配置能访问SQLE的url地址信息',
-    urlAddressFormatTips: '格式为 http(s)://ip:port/sqle',
 
     smsSetting: {
-      title: '短信服务',
+      title: '是否启用短信服务',
       testSuccess: '当前短信服务验证通过',
       testing: '正在测试短信服务...',
-      smsType: '短信服务类型'
+      smsType: '短信服务类型',
+      urlTips: '短信服务接口地址',
+      tokenTips: '接口访问令牌',
+      configDocs: '短信服务配置文档'
     }
   },
 

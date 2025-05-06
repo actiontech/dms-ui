@@ -27,6 +27,7 @@ import {
   AuditPlanTypeResBaseActiveStatusEnum,
   AuditPlanTypeResBaseLastCollectionStatusEnum
 } from '@actiontech/shared/lib/api/sqle/service/common.enum';
+import project from '../../../../testUtils/mockApi/project';
 
 jest.mock('react-redux', () => {
   return {
@@ -46,6 +47,7 @@ describe('test sqle/SqlManagementConf/List', () => {
   let getAuditPlanTypesSpy: jest.SpyInstance;
   let updateInstanceAuditPlanStatus: jest.SpyInstance;
   let getInstanceTipListSpy: jest.SpyInstance;
+  let listEnvironmentTagsSpy: jest.SpyInstance;
   const navigateSpy = jest.fn();
 
   beforeEach(() => {
@@ -55,6 +57,7 @@ describe('test sqle/SqlManagementConf/List', () => {
     updateInstanceAuditPlanStatus =
       instanceAuditPlan.updateInstanceAuditPlanStatus();
     getInstanceTipListSpy = instance.getInstanceTipList();
+    listEnvironmentTagsSpy = project.listEnvironmentTags();
     mockUseCurrentProject();
     mockUseCurrentUser();
     mockUseDbServiceDriver();
@@ -79,6 +82,7 @@ describe('test sqle/SqlManagementConf/List', () => {
     expect(getInstanceAuditPlansSpy).toHaveBeenCalled();
     expect(getAuditPlanTypesSpy).toHaveBeenCalled();
     expect(getInstanceTipListSpy).toHaveBeenCalled();
+    expect(listEnvironmentTagsSpy).toHaveBeenCalled();
   });
 
   it('render sql management conf list with audit plan active status', async () => {
@@ -224,11 +228,11 @@ describe('test sqle/SqlManagementConf/List', () => {
     );
     expect(filterContainer).toBeVisible();
     expect(getAllBySelector('.ant-space-item', filterContainer)).toHaveLength(
-      2
+      3
     );
     const taskStatusTarget = getAllBySelector(
       '.ant-select-selection-search-input'
-    )[1];
+    )[2];
     fireEvent.mouseDown(taskStatusTarget);
     await act(async () => jest.advanceTimersByTime(100));
     fireEvent.click(screen.getByText('停用'));

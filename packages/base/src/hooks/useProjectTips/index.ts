@@ -1,28 +1,35 @@
 import { useState, useMemo, useCallback } from 'react';
-import Project from '@actiontech/shared/lib/api/base/service/Project';
+import { DmsApi } from '@actiontech/shared/lib/api';
 import { ResponseCode } from '@actiontech/shared/lib/enum';
 import { useBoolean } from 'ahooks';
-import { IListProject } from '@actiontech/shared/lib/api/base/service/common';
+import { IListProjectV2 } from '@actiontech/shared/lib/api/base/service/common';
+import { IListProjectsV2Params } from '@actiontech/shared/lib/api/base/service/Project/index.d';
 
 const useProjectTips = () => {
-  const [projectList, setProjectList] = useState<IListProject[]>([]);
+  const [projectList, setProjectList] = useState<IListProjectV2[]>([]);
   const [loading, { setTrue, setFalse }] = useBoolean();
 
-  const updateProjects = useCallback(() => {
-    setTrue();
-    Project.ListProjects({ page_size: 9999 })
-      .then((res) => {
-        if (res.data.code === ResponseCode.SUCCESS) {
-          setProjectList(res.data.data ?? []);
-        }
+  const updateProjects = useCallback(
+    (params?: Omit<IListProjectsV2Params, 'page_size'>) => {
+      setTrue();
+      DmsApi.ProjectService.ListProjectsV2({
+        ...(params ?? {}),
+        page_size: 9999
       })
-      .catch(() => {
-        setProjectList([]);
-      })
-      .finally(() => {
-        setFalse();
-      });
-  }, [setFalse, setTrue]);
+        .then((res) => {
+          if (res.data.code === ResponseCode.SUCCESS) {
+            setProjectList(res.data.data ?? []);
+          }
+        })
+        .catch(() => {
+          setProjectList([]);
+        })
+        .finally(() => {
+          setFalse();
+        });
+    },
+    [setFalse, setTrue]
+  );
 
   const projectIDOptions = useMemo(() => {
     return projectList.map((project) => {

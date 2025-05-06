@@ -1,3 +1,7 @@
+import {
+  UtilsConsoleErrorStringsEnum,
+  ignoreConsoleErrors
+} from '@actiontech/shared/lib/testUtil/common';
 import { markdownPreviewOptions } from '../markdownPreviewOptions';
 import { superRender } from '@actiontech/shared/lib/testUtil/customRender';
 import React from 'react';
@@ -25,6 +29,8 @@ describe('markdownPreviewOptions', () => {
   const customRender = (props: CodeMethodProps) => {
     return superRender(React.createElement(codeMethod, props));
   };
+
+  ignoreConsoleErrors([UtilsConsoleErrorStringsEnum.UNKNOWN_EVENT_HANDLER]);
 
   it('should handle label code blocks correctly', () => {
     const props = {

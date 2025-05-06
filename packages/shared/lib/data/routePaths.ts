@@ -116,7 +116,8 @@ export const ROUTE_PATHS = {
         path: ':projectID/cloud-beaver',
         query: OPEN_CLOUD_BEAVER_URL_PARAM_NAME
       }
-    }
+    },
+    RESOURCE_OVERVIEW: '/resource-overview'
   },
   SQLE: {
     PREFIX: '/sqle',
@@ -227,7 +228,7 @@ export const ROUTE_PATHS = {
       create: {
         prefix: '/sqle/project/:projectID/sql-management-conf',
         path: 'create',
-        query: 'instance_id&business'
+        query: 'instance_id&environment_tag'
       },
       update: {
         prefix: '/sqle/project/:projectID/sql-management-conf',

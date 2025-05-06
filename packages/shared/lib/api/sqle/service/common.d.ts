@@ -95,6 +95,7 @@ import {
   DirectAuditFileReqV2SqlTypeEnum,
   DirectAuditReqV2SqlTypeEnum,
   GetWorkflowTasksItemV2StatusEnum,
+  InstanceTipResV2SupportedBackupStrategyEnum,
   UpdateWorkflowScheduleReqV2NotifyTypeEnum,
   WorkflowRecordResV2StatusEnum,
   WorkflowResV2ExecModeEnum,
@@ -2186,6 +2187,8 @@ export interface IInstanceAuditPlanDetailResV1 {
 
   business?: string;
 
+  environment?: string;
+
   instance_id?: string;
 
   instance_name?: string;
@@ -2222,11 +2225,11 @@ export interface IInstanceAuditPlanResV1 {
 
   audit_plan_types?: IAuditPlanTypeResBase[];
 
-  business?: string;
-
   create_time?: string;
 
   creator?: string;
+
+  environment?: string;
 
   instance_audit_plan_id?: number;
 
@@ -4237,10 +4240,36 @@ export interface IGetDriversRes {
   message?: string;
 }
 
+export interface IGetInstanceAuditPlanDetailRes {
+  code?: number;
+
+  data?: IInstanceAuditPlanDetailRes;
+
+  message?: string;
+}
+
+export interface IGetInstanceAuditPlansRes {
+  code?: number;
+
+  data?: IInstanceAuditPlanResV1[];
+
+  message?: string;
+
+  total_nums?: number;
+}
+
 export interface IGetInstanceResV2 {
   code?: number;
 
   data?: IInstanceResV2;
+
+  message?: string;
+}
+
+export interface IGetInstanceTipsResV2 {
+  code?: number;
+
+  data?: IInstanceTipResV2[];
 
   message?: string;
 }
@@ -4293,6 +4322,18 @@ export interface IGetWorkflowTasksResV2 {
   message?: string;
 }
 
+export interface IInstanceAuditPlanDetailRes {
+  audit_plans?: IAuditPlanRes[];
+
+  environment?: string;
+
+  instance_id?: string;
+
+  instance_name?: string;
+
+  instance_type?: string;
+}
+
 export interface IInstanceResV2 {
   additional_params?: IInstanceAdditionalParamResV1[];
 
@@ -4315,6 +4356,26 @@ export interface IInstanceResV2 {
   source?: string;
 
   sql_query_config?: ISQLQueryConfigResV1;
+}
+
+export interface IInstanceTipResV2 {
+  backup_max_rows?: number;
+
+  enable_backup?: boolean;
+
+  host?: string;
+
+  instance_id?: string;
+
+  instance_name?: string;
+
+  instance_type?: string;
+
+  port?: string;
+
+  supported_backup_strategy?: InstanceTipResV2SupportedBackupStrategyEnum[];
+
+  workflow_template_id?: number;
 }
 
 export interface IPartialSyncAuditPlanSQLsReqV2 {

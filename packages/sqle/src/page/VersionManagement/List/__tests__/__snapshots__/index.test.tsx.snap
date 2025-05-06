@@ -18,7 +18,7 @@ exports[`sqle/VersionManagement/List render filter item 1`] = `
           href="/sqle/project/700300/version-management/create"
         >
           <button
-            class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary basic-button-wrapper css-geipcv"
+            class="ant-btn ant-btn-primary basic-button-wrapper css-geipcv"
             type="button"
           >
             <span
@@ -48,13 +48,13 @@ exports[`sqle/VersionManagement/List render filter item 1`] = `
       </div>
     </div>
     <div
-      class="ant-spin-nested-loading css-dev-only-do-not-override-1kh50jg"
+      class="ant-spin-nested-loading"
     >
       <div
         class="ant-spin-container"
       >
         <div
-          class="ant-space css-dev-only-do-not-override-1kh50jg ant-space-horizontal ant-space-align-center full-width-element flex-space-between actiontech-table-toolbar-namespace css-c38ntt"
+          class="ant-space ant-space-horizontal ant-space-align-center full-width-element flex-space-between actiontech-table-toolbar-namespace css-a7k93w"
           style="flex-wrap: wrap; margin-bottom: -8px;"
         >
           <div
@@ -62,17 +62,17 @@ exports[`sqle/VersionManagement/List render filter item 1`] = `
             style="margin-right: 8px; padding-bottom: 8px;"
           >
             <div
-              class="ant-space css-dev-only-do-not-override-1kh50jg ant-space-horizontal ant-space-align-center"
+              class="ant-space ant-space-horizontal ant-space-align-center"
             >
               <div
                 class="ant-space-item"
                 style="margin-right: 12px;"
               >
                 <span
-                  class="ant-input-affix-wrapper basic-input-wrapper actiontech-table-search-input-namespace css-1f6svkh ant-input-affix-wrapper-sm css-dev-only-do-not-override-mlhibv"
+                  class="ant-input-affix-wrapper basic-input-wrapper actiontech-table-search-input-namespace css-1f6svkh ant-input-affix-wrapper-sm"
                 >
                   <input
-                    class="ant-input ant-input-sm css-dev-only-do-not-override-mlhibv"
+                    class="ant-input ant-input-sm"
                     id="actiontech-table-search-input"
                     placeholder="输入关键字搜索"
                     type="text"
@@ -81,6 +81,23 @@ exports[`sqle/VersionManagement/List render filter item 1`] = `
                   <span
                     class="ant-input-suffix"
                   >
+                    <span
+                      class="ant-input-clear-icon ant-input-clear-icon-hidden ant-input-clear-icon-has-suffix"
+                      role="button"
+                      tabindex="-1"
+                    >
+                      <svg
+                        fill="currentColor"
+                        height="14"
+                        viewBox="0 0 14 14"
+                        width="14"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="m7 6.175 2.887-2.887.825.825L7.825 7l2.887 2.888-.825.824L7 7.825l-2.888 2.887-.824-.824L6.175 7 3.288 4.113l.824-.825z"
+                        />
+                      </svg>
+                    </span>
                     <svg
                       class="custom-icon custom-icon-search"
                       height="14"
@@ -99,12 +116,12 @@ exports[`sqle/VersionManagement/List render filter item 1`] = `
                 class="ant-space-item"
               >
                 <button
-                  class="ant-btn css-dev-only-do-not-override-czn7jp ant-btn-default ant-btn-sm actiontech-filter-button-namespace basic-button-wrapper css-geipcv"
+                  class="ant-btn ant-btn-default ant-btn-sm actiontech-filter-button-namespace basic-button-wrapper css-geipcv"
                   style="padding: 0px 6px 0px 10px;"
                   type="button"
                 >
                   <div
-                    class="ant-space css-dev-only-do-not-override-czn7jp ant-space-horizontal ant-space-align-center css-1nt49ug"
+                    class="ant-space ant-space-horizontal ant-space-align-center css-1nt49ug"
                   >
                     <div
                       class="ant-space-item"
@@ -116,7 +133,7 @@ exports[`sqle/VersionManagement/List render filter item 1`] = `
                       class="ant-space-item"
                     >
                       <svg
-                        color="currrentColor"
+                        color="currentColor"
                         fill="none"
                         height="14"
                         viewBox="0 0 16 16"
@@ -139,13 +156,13 @@ exports[`sqle/VersionManagement/List render filter item 1`] = `
             style="padding-bottom: 8px;"
           >
             <div
-              class="ant-space css-dev-only-do-not-override-1kh50jg ant-space-horizontal ant-space-align-center"
+              class="ant-space ant-space-horizontal ant-space-align-center"
             >
               <div
                 class="ant-space-item"
               >
                 <button
-                  class="ant-btn css-dev-only-do-not-override-czn7jp ant-btn-default ant-btn-sm ant-btn-icon-only basic-button-wrapper css-geipcv"
+                  class="ant-btn ant-btn-default ant-btn-sm ant-btn-icon-only basic-button-wrapper css-geipcv"
                   type="button"
                 >
                   <span
@@ -171,7 +188,7 @@ exports[`sqle/VersionManagement/List render filter item 1`] = `
       </div>
     </div>
     <div
-      class="ant-space css-dev-only-do-not-override-1kh50jg ant-space-horizontal ant-space-align-center actiontech-table-filter-container-namespace full-width-element css-de5ds5"
+      class="ant-space ant-space-horizontal ant-space-align-center actiontech-table-filter-container-namespace full-width-element css-tvjydu"
       style="flex-wrap: wrap; margin-bottom: -12px;"
     >
       <div
@@ -182,7 +199,7 @@ exports[`sqle/VersionManagement/List render filter item 1`] = `
           class="css-1y8q0oh"
         >
           <div
-            class="ant-picker ant-picker-range ant-picker-small css-dev-only-do-not-override-1q11hvz basic-range-picker-wrapper custom-picker-prefix css-1o244th"
+            class="ant-picker ant-picker-range ant-picker-small basic-range-picker-wrapper custom-picker-prefix css-1o244th"
             style="min-width: 320px;"
           >
             <div
@@ -246,7 +263,7 @@ exports[`sqle/VersionManagement/List render filter item 1`] = `
           class="css-1y8q0oh"
         >
           <div
-            class="ant-picker ant-picker-range ant-picker-small css-dev-only-do-not-override-1q11hvz basic-range-picker-wrapper custom-picker-prefix css-1o244th"
+            class="ant-picker ant-picker-range ant-picker-small basic-range-picker-wrapper custom-picker-prefix css-1o244th"
             style="min-width: 320px;"
           >
             <div
@@ -304,10 +321,10 @@ exports[`sqle/VersionManagement/List render filter item 1`] = `
       </div>
     </div>
     <div
-      class="ant-table-wrapper actiontech-table-namespace css-fxd6ka css-dev-only-do-not-override-bj9uhl"
+      class="ant-table-wrapper actiontech-table-namespace css-fxd6ka"
     >
       <div
-        class="ant-spin-nested-loading css-dev-only-do-not-override-bj9uhl"
+        class="ant-spin-nested-loading"
       >
         <div
           class="ant-spin-container"
@@ -398,11 +415,11 @@ exports[`sqle/VersionManagement/List render filter item 1`] = `
                       >
                         <div
                           aria-label="now unzip supposing awful solicit enroll mobilize kookily junior dilate hence ferociously smart unless lest alienated modulo onto monster roasted interesting below miscalculate at department bump except dividend skeleton casement precedent soliloquy bind amid overconfidently because unnecessarily aboard however tragic toothbrush regarding vast quicker shyly expostulate uh-huh lumpy with please dish hateful unruly radiant hole weekly yum blah geez modulo gymnast even ick livid sleepily ha inasmuch lest ravioli unfortunately procurement intelligent onto between husband object instead hm tepid quirkily offset starboard luck besides minus linear executor meadow colour under austere shush far innocently gallivant illiterate waist nearly fisherman quaver whoa telescope kindly kowtow now really what limply contradict nab customise lazy times ocelot spellcheck subtract political cumbersome loftily apropos demonstrate busily before selfishly aw amidst busily instead vice intrepid yak scenario where linseed uselessly slowly intently which but ew incidentally of pace lyre reconstitute like so round advocate minus the proper doorpost busily between achieve irk gifted precious yum eke until suddenly fidget pfft even slump out fooey um amused furiously anti yuppify to since"
-                          class="ant-typography ant-typography-ellipsis ant-typography-single-line basic-typography-ellipsis css-wgj5gs css-dev-only-do-not-override-bj9uhl"
+                          class="ant-typography ant-typography-ellipsis ant-typography-single-line basic-typography-ellipsis css-wgj5gs"
                         >
                           now unzip supposing awful solicit enroll mobilize kookily junior dilate hence ferociously smart unless lest alienated modulo onto monster roasted interesting below miscalculate at department bump except dividend skeleton casement precedent soliloquy bind amid overconfidently because unnecessarily aboard however tragic toothbrush regarding vast quicker shyly expostulate uh-huh lumpy with please dish hateful unruly radiant hole weekly yum blah geez modulo gymnast even ick livid sleepily ha inasmuch lest ravioli unfortunately procurement intelligent onto between husband object instead hm tepid quirkily offset starboard luck besides minus linear executor meadow colour under austere shush far innocently gallivant illiterate waist nearly fisherman quaver whoa telescope kindly kowtow now really what limply contradict nab customise lazy times ocelot spellcheck subtract political cumbersome loftily apropos demonstrate busily before selfishly aw amidst busily instead vice intrepid yak scenario where linseed uselessly slowly intently which but ew incidentally of pace lyre reconstitute like so round advocate minus the proper doorpost busily between achieve irk gifted precious yum eke until suddenly fidget pfft even slump out fooey um amused furiously anti yuppify to since
                           <div
-                            aria-label="Copy"
+                            aria-label="复制"
                             class="ant-typography-copy"
                             role="button"
                             style="border: 0px; background: transparent; padding: 0px; line-height: inherit; display: inline-block;"
@@ -444,7 +461,7 @@ exports[`sqle/VersionManagement/List render filter item 1`] = `
                               ...
                             </span>
                             <div
-                              aria-label="Copy"
+                              aria-label="复制"
                               class="ant-typography-copy"
                               role="button"
                               style="border: 0px; background: transparent; padding: 0px; line-height: inherit; display: inline-block;"
@@ -496,14 +513,14 @@ exports[`sqle/VersionManagement/List render filter item 1`] = `
                           class="css-new95e"
                         >
                           <div
-                            class="ant-space css-dev-only-do-not-override-bj9uhl ant-space-horizontal ant-space-align-center"
+                            class="ant-space ant-space-horizontal ant-space-align-center"
                           >
                             <div
                               class="ant-space-item"
                               style="margin-right: 8px;"
                             >
                               <button
-                                class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
                                 type="button"
                               >
                                 <span>
@@ -516,7 +533,7 @@ exports[`sqle/VersionManagement/List render filter item 1`] = `
                               style="margin-right: 8px;"
                             >
                               <button
-                                class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
                                 type="button"
                               >
                                 <span>
@@ -528,7 +545,7 @@ exports[`sqle/VersionManagement/List render filter item 1`] = `
                               class="ant-space-item"
                             >
                               <button
-                                class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm ant-btn-dangerous actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                class="ant-btn ant-btn-default ant-btn-sm ant-btn-dangerous actiontech-table-actions-button basic-button-wrapper css-geipcv"
                                 type="button"
                               >
                                 <span>
@@ -558,11 +575,11 @@ exports[`sqle/VersionManagement/List render filter item 1`] = `
                       >
                         <div
                           aria-label="wordy dally chilly outlying next restaurant toward scuffle for or minor safely yuck gee numb fabricate hence psst that er agitated only reluctantly the beneath atop sometimes scram loudly disposer whoa apparatus oh stoop versus ferociously ew owlishly failing obvious drat interestingly elver even inhibit squeaky fun mmm miscalculate mortally ambitious supposing fill huzzah how instance ah upwardly overvalue failing"
-                          class="ant-typography ant-typography-ellipsis ant-typography-single-line basic-typography-ellipsis css-wgj5gs css-dev-only-do-not-override-bj9uhl"
+                          class="ant-typography ant-typography-ellipsis ant-typography-single-line basic-typography-ellipsis css-wgj5gs"
                         >
                           wordy dally chilly outlying next restaurant toward scuffle for or minor safely yuck gee numb fabricate hence psst that er agitated only reluctantly the beneath atop sometimes scram loudly disposer whoa apparatus oh stoop versus ferociously ew owlishly failing obvious drat interestingly elver even inhibit squeaky fun mmm miscalculate mortally ambitious supposing fill huzzah how instance ah upwardly overvalue failing
                           <div
-                            aria-label="Copy"
+                            aria-label="复制"
                             class="ant-typography-copy"
                             role="button"
                             style="border: 0px; background: transparent; padding: 0px; line-height: inherit; display: inline-block;"
@@ -604,7 +621,7 @@ exports[`sqle/VersionManagement/List render filter item 1`] = `
                               ...
                             </span>
                             <div
-                              aria-label="Copy"
+                              aria-label="复制"
                               class="ant-typography-copy"
                               role="button"
                               style="border: 0px; background: transparent; padding: 0px; line-height: inherit; display: inline-block;"
@@ -656,7 +673,7 @@ exports[`sqle/VersionManagement/List render filter item 1`] = `
                           class="css-new95e"
                         >
                           <button
-                            class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm ant-btn-dangerous actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                            class="ant-btn ant-btn-default ant-btn-sm ant-btn-dangerous actiontech-table-actions-button basic-button-wrapper css-geipcv"
                             type="button"
                           >
                             <span>
@@ -684,11 +701,11 @@ exports[`sqle/VersionManagement/List render filter item 1`] = `
                       >
                         <div
                           aria-label="er haul without thigh think edible zebra on rotating too fairly hmph lest except woot rare coaxingly chap adjudge gerbil in lively home justly elevation pigpen optimistic super commonly mmm outside even democratize psst politely ah decision lest contractor yawningly construe nimble towards collectivization dial boo desk supposing huzzah afore indeed tensely without broken an vet manage um on accidentally"
-                          class="ant-typography ant-typography-ellipsis ant-typography-single-line basic-typography-ellipsis css-wgj5gs css-dev-only-do-not-override-bj9uhl"
+                          class="ant-typography ant-typography-ellipsis ant-typography-single-line basic-typography-ellipsis css-wgj5gs"
                         >
                           er haul without thigh think edible zebra on rotating too fairly hmph lest except woot rare coaxingly chap adjudge gerbil in lively home justly elevation pigpen optimistic super commonly mmm outside even democratize psst politely ah decision lest contractor yawningly construe nimble towards collectivization dial boo desk supposing huzzah afore indeed tensely without broken an vet manage um on accidentally
                           <div
-                            aria-label="Copy"
+                            aria-label="复制"
                             class="ant-typography-copy"
                             role="button"
                             style="border: 0px; background: transparent; padding: 0px; line-height: inherit; display: inline-block;"
@@ -730,7 +747,7 @@ exports[`sqle/VersionManagement/List render filter item 1`] = `
                               ...
                             </span>
                             <div
-                              aria-label="Copy"
+                              aria-label="复制"
                               class="ant-typography-copy"
                               role="button"
                               style="border: 0px; background: transparent; padding: 0px; line-height: inherit; display: inline-block;"
@@ -801,11 +818,11 @@ exports[`sqle/VersionManagement/List render filter item 1`] = `
                       >
                         <div
                           aria-label="gah ha aside ambitious er preregister even mosh midst hypothesize correctly meanwhile on interviewer times far um penalise horde phooey underachieve unnaturally ha in psst even along sadly whimsical which that although colorfully drat wolf merit gift extroverted squeaky provided essence yippee ring yum drat yieldingly furthermore warmhearted hastily greedily flimsy institute esteemed an notwithstanding than caring aware though plagiarise geez dearly blah and synthesise usefully seal pave into underachieve sans father immediate provided quickly loosely yum calmly hmph where whoever exterior whoever pleased burdensome huddle swear excitable uselessly zowie fooey lotion candid multicolored traditionalism ugly till entwine chubby mmm aside slink inexperienced because indeed kaleidoscopic greatly meanwhile forgery chairperson frank rosin wordy gah limply noteworthy below yeast relative yum a whether leading vibraphone pro across disapprove yum once mmm amid perfectly however light fooey adviser considering optimistic interestingly pertain in vice swathe indeed questioningly fake record finally boohoo hm since comb acidly transparency providence helpfully precious opposite if whose once how instead impassioned whoever inventory round when victoriously brr throughout if geez sternly provided inferior birdcage dispose"
-                          class="ant-typography ant-typography-ellipsis ant-typography-single-line basic-typography-ellipsis css-wgj5gs css-dev-only-do-not-override-bj9uhl"
+                          class="ant-typography ant-typography-ellipsis ant-typography-single-line basic-typography-ellipsis css-wgj5gs"
                         >
                           gah ha aside ambitious er preregister even mosh midst hypothesize correctly meanwhile on interviewer times far um penalise horde phooey underachieve unnaturally ha in psst even along sadly whimsical which that although colorfully drat wolf merit gift extroverted squeaky provided essence yippee ring yum drat yieldingly furthermore warmhearted hastily greedily flimsy institute esteemed an notwithstanding than caring aware though plagiarise geez dearly blah and synthesise usefully seal pave into underachieve sans father immediate provided quickly loosely yum calmly hmph where whoever exterior whoever pleased burdensome huddle swear excitable uselessly zowie fooey lotion candid multicolored traditionalism ugly till entwine chubby mmm aside slink inexperienced because indeed kaleidoscopic greatly meanwhile forgery chairperson frank rosin wordy gah limply noteworthy below yeast relative yum a whether leading vibraphone pro across disapprove yum once mmm amid perfectly however light fooey adviser considering optimistic interestingly pertain in vice swathe indeed questioningly fake record finally boohoo hm since comb acidly transparency providence helpfully precious opposite if whose once how instead impassioned whoever inventory round when victoriously brr throughout if geez sternly provided inferior birdcage dispose
                           <div
-                            aria-label="Copy"
+                            aria-label="复制"
                             class="ant-typography-copy"
                             role="button"
                             style="border: 0px; background: transparent; padding: 0px; line-height: inherit; display: inline-block;"
@@ -847,7 +864,7 @@ exports[`sqle/VersionManagement/List render filter item 1`] = `
                               ...
                             </span>
                             <div
-                              aria-label="Copy"
+                              aria-label="复制"
                               class="ant-typography-copy"
                               role="button"
                               style="border: 0px; background: transparent; padding: 0px; line-height: inherit; display: inline-block;"
@@ -906,7 +923,7 @@ exports[`sqle/VersionManagement/List render filter item 1`] = `
             </div>
           </div>
           <ul
-            class="ant-pagination ant-table-pagination ant-table-pagination-right actiontech-table-pagination actiontech-table-pagination-fixed css-dev-only-do-not-override-bj9uhl"
+            class="ant-pagination ant-table-pagination ant-table-pagination-right actiontech-table-pagination actiontech-table-pagination-fixed"
           >
             <li
               class="ant-pagination-total-text"
@@ -918,7 +935,7 @@ exports[`sqle/VersionManagement/List render filter item 1`] = `
             <li
               aria-disabled="true"
               class="ant-pagination-prev ant-pagination-disabled"
-              title="Previous Page"
+              title="上一页"
             >
               <button
                 class="ant-pagination-item-link"
@@ -961,7 +978,7 @@ exports[`sqle/VersionManagement/List render filter item 1`] = `
             <li
               aria-disabled="true"
               class="ant-pagination-next ant-pagination-disabled"
-              title="Next Page"
+              title="下一页"
             >
               <button
                 class="ant-pagination-item-link"
@@ -994,8 +1011,8 @@ exports[`sqle/VersionManagement/List render filter item 1`] = `
               class="ant-pagination-options"
             >
               <div
-                aria-label="Page Size"
-                class="ant-select ant-pagination-options-size-changer css-dev-only-do-not-override-bj9uhl ant-select-single ant-select-show-arrow ant-select-show-search"
+                aria-label="页码"
+                class="ant-select ant-pagination-options-size-changer ant-select-single ant-select-show-arrow ant-select-show-search"
               >
                 <div
                   class="ant-select-selector"
@@ -1009,7 +1026,7 @@ exports[`sqle/VersionManagement/List render filter item 1`] = `
                       aria-controls="rc_select_TEST_OR_SSR_list"
                       aria-expanded="false"
                       aria-haspopup="listbox"
-                      aria-label="Page Size"
+                      aria-label="页码"
                       aria-owns="rc_select_TEST_OR_SSR_list"
                       autocomplete="off"
                       class="ant-select-selection-search-input"
@@ -1021,9 +1038,9 @@ exports[`sqle/VersionManagement/List render filter item 1`] = `
                   </span>
                   <span
                     class="ant-select-selection-item"
-                    title="20 / page"
+                    title="20 条/页"
                   >
-                    20 / page
+                    20 条/页
                   </span>
                 </div>
                 <span
@@ -1080,7 +1097,7 @@ exports[`sqle/VersionManagement/List render init snap 1`] = `
           href="/sqle/project/700300/version-management/create"
         >
           <button
-            class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary basic-button-wrapper css-geipcv"
+            class="ant-btn ant-btn-primary basic-button-wrapper css-geipcv"
             type="button"
           >
             <span
@@ -1110,13 +1127,13 @@ exports[`sqle/VersionManagement/List render init snap 1`] = `
       </div>
     </div>
     <div
-      class="ant-spin-nested-loading css-dev-only-do-not-override-1kh50jg"
+      class="ant-spin-nested-loading"
     >
       <div
         class="ant-spin-container"
       >
         <div
-          class="ant-space css-dev-only-do-not-override-1kh50jg ant-space-horizontal ant-space-align-center full-width-element flex-space-between actiontech-table-toolbar-namespace css-c38ntt"
+          class="ant-space ant-space-horizontal ant-space-align-center full-width-element flex-space-between actiontech-table-toolbar-namespace css-a7k93w"
           style="flex-wrap: wrap; margin-bottom: -8px;"
         >
           <div
@@ -1124,17 +1141,17 @@ exports[`sqle/VersionManagement/List render init snap 1`] = `
             style="margin-right: 8px; padding-bottom: 8px;"
           >
             <div
-              class="ant-space css-dev-only-do-not-override-1kh50jg ant-space-horizontal ant-space-align-center"
+              class="ant-space ant-space-horizontal ant-space-align-center"
             >
               <div
                 class="ant-space-item"
                 style="margin-right: 12px;"
               >
                 <span
-                  class="ant-input-affix-wrapper basic-input-wrapper actiontech-table-search-input-namespace css-1f6svkh ant-input-affix-wrapper-sm css-dev-only-do-not-override-mlhibv"
+                  class="ant-input-affix-wrapper basic-input-wrapper actiontech-table-search-input-namespace css-1f6svkh ant-input-affix-wrapper-sm"
                 >
                   <input
-                    class="ant-input ant-input-sm css-dev-only-do-not-override-mlhibv"
+                    class="ant-input ant-input-sm"
                     id="actiontech-table-search-input"
                     placeholder="输入关键字搜索"
                     type="text"
@@ -1143,6 +1160,23 @@ exports[`sqle/VersionManagement/List render init snap 1`] = `
                   <span
                     class="ant-input-suffix"
                   >
+                    <span
+                      class="ant-input-clear-icon ant-input-clear-icon-hidden ant-input-clear-icon-has-suffix"
+                      role="button"
+                      tabindex="-1"
+                    >
+                      <svg
+                        fill="currentColor"
+                        height="14"
+                        viewBox="0 0 14 14"
+                        width="14"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="m7 6.175 2.887-2.887.825.825L7.825 7l2.887 2.888-.825.824L7 7.825l-2.888 2.887-.824-.824L6.175 7 3.288 4.113l.824-.825z"
+                        />
+                      </svg>
+                    </span>
                     <svg
                       class="custom-icon custom-icon-search"
                       height="14"
@@ -1161,12 +1195,12 @@ exports[`sqle/VersionManagement/List render init snap 1`] = `
                 class="ant-space-item"
               >
                 <button
-                  class="ant-btn css-dev-only-do-not-override-czn7jp ant-btn-default ant-btn-sm ant-btn-two-chinese-chars actiontech-filter-button-namespace basic-button-wrapper css-geipcv"
+                  class="ant-btn ant-btn-default ant-btn-sm ant-btn-two-chinese-chars actiontech-filter-button-namespace basic-button-wrapper css-geipcv"
                   style="padding: 0px 6px 0px 10px;"
                   type="button"
                 >
                   <div
-                    class="ant-space css-dev-only-do-not-override-czn7jp ant-space-horizontal ant-space-align-center css-1nt49ug"
+                    class="ant-space ant-space-horizontal ant-space-align-center css-1nt49ug"
                   >
                     <div
                       class="ant-space-item"
@@ -1178,7 +1212,7 @@ exports[`sqle/VersionManagement/List render init snap 1`] = `
                       class="ant-space-item"
                     >
                       <svg
-                        color="currrentColor"
+                        color="currentColor"
                         height="14"
                         viewBox="0 0 16 16"
                         width="14"
@@ -1200,13 +1234,13 @@ exports[`sqle/VersionManagement/List render init snap 1`] = `
             style="padding-bottom: 8px;"
           >
             <div
-              class="ant-space css-dev-only-do-not-override-1kh50jg ant-space-horizontal ant-space-align-center"
+              class="ant-space ant-space-horizontal ant-space-align-center"
             >
               <div
                 class="ant-space-item"
               >
                 <button
-                  class="ant-btn css-dev-only-do-not-override-czn7jp ant-btn-default ant-btn-sm ant-btn-icon-only basic-button-wrapper css-geipcv"
+                  class="ant-btn ant-btn-default ant-btn-sm ant-btn-icon-only basic-button-wrapper css-geipcv"
                   type="button"
                 >
                   <span
@@ -1232,10 +1266,10 @@ exports[`sqle/VersionManagement/List render init snap 1`] = `
       </div>
     </div>
     <div
-      class="ant-table-wrapper actiontech-table-namespace css-fxd6ka css-dev-only-do-not-override-bj9uhl"
+      class="ant-table-wrapper actiontech-table-namespace css-fxd6ka"
     >
       <div
-        class="ant-spin-nested-loading css-dev-only-do-not-override-bj9uhl"
+        class="ant-spin-nested-loading"
       >
         <div
           class="ant-spin-container"
@@ -1326,11 +1360,11 @@ exports[`sqle/VersionManagement/List render init snap 1`] = `
                       >
                         <div
                           aria-label="now unzip supposing awful solicit enroll mobilize kookily junior dilate hence ferociously smart unless lest alienated modulo onto monster roasted interesting below miscalculate at department bump except dividend skeleton casement precedent soliloquy bind amid overconfidently because unnecessarily aboard however tragic toothbrush regarding vast quicker shyly expostulate uh-huh lumpy with please dish hateful unruly radiant hole weekly yum blah geez modulo gymnast even ick livid sleepily ha inasmuch lest ravioli unfortunately procurement intelligent onto between husband object instead hm tepid quirkily offset starboard luck besides minus linear executor meadow colour under austere shush far innocently gallivant illiterate waist nearly fisherman quaver whoa telescope kindly kowtow now really what limply contradict nab customise lazy times ocelot spellcheck subtract political cumbersome loftily apropos demonstrate busily before selfishly aw amidst busily instead vice intrepid yak scenario where linseed uselessly slowly intently which but ew incidentally of pace lyre reconstitute like so round advocate minus the proper doorpost busily between achieve irk gifted precious yum eke until suddenly fidget pfft even slump out fooey um amused furiously anti yuppify to since"
-                          class="ant-typography ant-typography-ellipsis ant-typography-single-line basic-typography-ellipsis css-wgj5gs css-dev-only-do-not-override-bj9uhl"
+                          class="ant-typography ant-typography-ellipsis ant-typography-single-line basic-typography-ellipsis css-wgj5gs"
                         >
                           now unzip supposing awful solicit enroll mobilize kookily junior dilate hence ferociously smart unless lest alienated modulo onto monster roasted interesting below miscalculate at department bump except dividend skeleton casement precedent soliloquy bind amid overconfidently because unnecessarily aboard however tragic toothbrush regarding vast quicker shyly expostulate uh-huh lumpy with please dish hateful unruly radiant hole weekly yum blah geez modulo gymnast even ick livid sleepily ha inasmuch lest ravioli unfortunately procurement intelligent onto between husband object instead hm tepid quirkily offset starboard luck besides minus linear executor meadow colour under austere shush far innocently gallivant illiterate waist nearly fisherman quaver whoa telescope kindly kowtow now really what limply contradict nab customise lazy times ocelot spellcheck subtract political cumbersome loftily apropos demonstrate busily before selfishly aw amidst busily instead vice intrepid yak scenario where linseed uselessly slowly intently which but ew incidentally of pace lyre reconstitute like so round advocate minus the proper doorpost busily between achieve irk gifted precious yum eke until suddenly fidget pfft even slump out fooey um amused furiously anti yuppify to since
                           <div
-                            aria-label="Copy"
+                            aria-label="复制"
                             class="ant-typography-copy"
                             role="button"
                             style="border: 0px; background: transparent; padding: 0px; line-height: inherit; display: inline-block;"
@@ -1372,7 +1406,7 @@ exports[`sqle/VersionManagement/List render init snap 1`] = `
                               ...
                             </span>
                             <div
-                              aria-label="Copy"
+                              aria-label="复制"
                               class="ant-typography-copy"
                               role="button"
                               style="border: 0px; background: transparent; padding: 0px; line-height: inherit; display: inline-block;"
@@ -1424,14 +1458,14 @@ exports[`sqle/VersionManagement/List render init snap 1`] = `
                           class="css-new95e"
                         >
                           <div
-                            class="ant-space css-dev-only-do-not-override-bj9uhl ant-space-horizontal ant-space-align-center"
+                            class="ant-space ant-space-horizontal ant-space-align-center"
                           >
                             <div
                               class="ant-space-item"
                               style="margin-right: 8px;"
                             >
                               <button
-                                class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
                                 type="button"
                               >
                                 <span>
@@ -1444,7 +1478,7 @@ exports[`sqle/VersionManagement/List render init snap 1`] = `
                               style="margin-right: 8px;"
                             >
                               <button
-                                class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
                                 type="button"
                               >
                                 <span>
@@ -1456,7 +1490,7 @@ exports[`sqle/VersionManagement/List render init snap 1`] = `
                               class="ant-space-item"
                             >
                               <button
-                                class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm ant-btn-dangerous actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                class="ant-btn ant-btn-default ant-btn-sm ant-btn-dangerous actiontech-table-actions-button basic-button-wrapper css-geipcv"
                                 type="button"
                               >
                                 <span>
@@ -1486,11 +1520,11 @@ exports[`sqle/VersionManagement/List render init snap 1`] = `
                       >
                         <div
                           aria-label="wordy dally chilly outlying next restaurant toward scuffle for or minor safely yuck gee numb fabricate hence psst that er agitated only reluctantly the beneath atop sometimes scram loudly disposer whoa apparatus oh stoop versus ferociously ew owlishly failing obvious drat interestingly elver even inhibit squeaky fun mmm miscalculate mortally ambitious supposing fill huzzah how instance ah upwardly overvalue failing"
-                          class="ant-typography ant-typography-ellipsis ant-typography-single-line basic-typography-ellipsis css-wgj5gs css-dev-only-do-not-override-bj9uhl"
+                          class="ant-typography ant-typography-ellipsis ant-typography-single-line basic-typography-ellipsis css-wgj5gs"
                         >
                           wordy dally chilly outlying next restaurant toward scuffle for or minor safely yuck gee numb fabricate hence psst that er agitated only reluctantly the beneath atop sometimes scram loudly disposer whoa apparatus oh stoop versus ferociously ew owlishly failing obvious drat interestingly elver even inhibit squeaky fun mmm miscalculate mortally ambitious supposing fill huzzah how instance ah upwardly overvalue failing
                           <div
-                            aria-label="Copy"
+                            aria-label="复制"
                             class="ant-typography-copy"
                             role="button"
                             style="border: 0px; background: transparent; padding: 0px; line-height: inherit; display: inline-block;"
@@ -1532,7 +1566,7 @@ exports[`sqle/VersionManagement/List render init snap 1`] = `
                               ...
                             </span>
                             <div
-                              aria-label="Copy"
+                              aria-label="复制"
                               class="ant-typography-copy"
                               role="button"
                               style="border: 0px; background: transparent; padding: 0px; line-height: inherit; display: inline-block;"
@@ -1584,7 +1618,7 @@ exports[`sqle/VersionManagement/List render init snap 1`] = `
                           class="css-new95e"
                         >
                           <button
-                            class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm ant-btn-dangerous actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                            class="ant-btn ant-btn-default ant-btn-sm ant-btn-dangerous actiontech-table-actions-button basic-button-wrapper css-geipcv"
                             type="button"
                           >
                             <span>
@@ -1612,11 +1646,11 @@ exports[`sqle/VersionManagement/List render init snap 1`] = `
                       >
                         <div
                           aria-label="er haul without thigh think edible zebra on rotating too fairly hmph lest except woot rare coaxingly chap adjudge gerbil in lively home justly elevation pigpen optimistic super commonly mmm outside even democratize psst politely ah decision lest contractor yawningly construe nimble towards collectivization dial boo desk supposing huzzah afore indeed tensely without broken an vet manage um on accidentally"
-                          class="ant-typography ant-typography-ellipsis ant-typography-single-line basic-typography-ellipsis css-wgj5gs css-dev-only-do-not-override-bj9uhl"
+                          class="ant-typography ant-typography-ellipsis ant-typography-single-line basic-typography-ellipsis css-wgj5gs"
                         >
                           er haul without thigh think edible zebra on rotating too fairly hmph lest except woot rare coaxingly chap adjudge gerbil in lively home justly elevation pigpen optimistic super commonly mmm outside even democratize psst politely ah decision lest contractor yawningly construe nimble towards collectivization dial boo desk supposing huzzah afore indeed tensely without broken an vet manage um on accidentally
                           <div
-                            aria-label="Copy"
+                            aria-label="复制"
                             class="ant-typography-copy"
                             role="button"
                             style="border: 0px; background: transparent; padding: 0px; line-height: inherit; display: inline-block;"
@@ -1658,7 +1692,7 @@ exports[`sqle/VersionManagement/List render init snap 1`] = `
                               ...
                             </span>
                             <div
-                              aria-label="Copy"
+                              aria-label="复制"
                               class="ant-typography-copy"
                               role="button"
                               style="border: 0px; background: transparent; padding: 0px; line-height: inherit; display: inline-block;"
@@ -1729,11 +1763,11 @@ exports[`sqle/VersionManagement/List render init snap 1`] = `
                       >
                         <div
                           aria-label="gah ha aside ambitious er preregister even mosh midst hypothesize correctly meanwhile on interviewer times far um penalise horde phooey underachieve unnaturally ha in psst even along sadly whimsical which that although colorfully drat wolf merit gift extroverted squeaky provided essence yippee ring yum drat yieldingly furthermore warmhearted hastily greedily flimsy institute esteemed an notwithstanding than caring aware though plagiarise geez dearly blah and synthesise usefully seal pave into underachieve sans father immediate provided quickly loosely yum calmly hmph where whoever exterior whoever pleased burdensome huddle swear excitable uselessly zowie fooey lotion candid multicolored traditionalism ugly till entwine chubby mmm aside slink inexperienced because indeed kaleidoscopic greatly meanwhile forgery chairperson frank rosin wordy gah limply noteworthy below yeast relative yum a whether leading vibraphone pro across disapprove yum once mmm amid perfectly however light fooey adviser considering optimistic interestingly pertain in vice swathe indeed questioningly fake record finally boohoo hm since comb acidly transparency providence helpfully precious opposite if whose once how instead impassioned whoever inventory round when victoriously brr throughout if geez sternly provided inferior birdcage dispose"
-                          class="ant-typography ant-typography-ellipsis ant-typography-single-line basic-typography-ellipsis css-wgj5gs css-dev-only-do-not-override-bj9uhl"
+                          class="ant-typography ant-typography-ellipsis ant-typography-single-line basic-typography-ellipsis css-wgj5gs"
                         >
                           gah ha aside ambitious er preregister even mosh midst hypothesize correctly meanwhile on interviewer times far um penalise horde phooey underachieve unnaturally ha in psst even along sadly whimsical which that although colorfully drat wolf merit gift extroverted squeaky provided essence yippee ring yum drat yieldingly furthermore warmhearted hastily greedily flimsy institute esteemed an notwithstanding than caring aware though plagiarise geez dearly blah and synthesise usefully seal pave into underachieve sans father immediate provided quickly loosely yum calmly hmph where whoever exterior whoever pleased burdensome huddle swear excitable uselessly zowie fooey lotion candid multicolored traditionalism ugly till entwine chubby mmm aside slink inexperienced because indeed kaleidoscopic greatly meanwhile forgery chairperson frank rosin wordy gah limply noteworthy below yeast relative yum a whether leading vibraphone pro across disapprove yum once mmm amid perfectly however light fooey adviser considering optimistic interestingly pertain in vice swathe indeed questioningly fake record finally boohoo hm since comb acidly transparency providence helpfully precious opposite if whose once how instead impassioned whoever inventory round when victoriously brr throughout if geez sternly provided inferior birdcage dispose
                           <div
-                            aria-label="Copy"
+                            aria-label="复制"
                             class="ant-typography-copy"
                             role="button"
                             style="border: 0px; background: transparent; padding: 0px; line-height: inherit; display: inline-block;"
@@ -1775,7 +1809,7 @@ exports[`sqle/VersionManagement/List render init snap 1`] = `
                               ...
                             </span>
                             <div
-                              aria-label="Copy"
+                              aria-label="复制"
                               class="ant-typography-copy"
                               role="button"
                               style="border: 0px; background: transparent; padding: 0px; line-height: inherit; display: inline-block;"
@@ -1834,7 +1868,7 @@ exports[`sqle/VersionManagement/List render init snap 1`] = `
             </div>
           </div>
           <ul
-            class="ant-pagination ant-table-pagination ant-table-pagination-right actiontech-table-pagination actiontech-table-pagination-fixed css-dev-only-do-not-override-bj9uhl"
+            class="ant-pagination ant-table-pagination ant-table-pagination-right actiontech-table-pagination actiontech-table-pagination-fixed"
           >
             <li
               class="ant-pagination-total-text"
@@ -1846,7 +1880,7 @@ exports[`sqle/VersionManagement/List render init snap 1`] = `
             <li
               aria-disabled="true"
               class="ant-pagination-prev ant-pagination-disabled"
-              title="Previous Page"
+              title="上一页"
             >
               <button
                 class="ant-pagination-item-link"
@@ -1889,7 +1923,7 @@ exports[`sqle/VersionManagement/List render init snap 1`] = `
             <li
               aria-disabled="true"
               class="ant-pagination-next ant-pagination-disabled"
-              title="Next Page"
+              title="下一页"
             >
               <button
                 class="ant-pagination-item-link"
@@ -1922,8 +1956,8 @@ exports[`sqle/VersionManagement/List render init snap 1`] = `
               class="ant-pagination-options"
             >
               <div
-                aria-label="Page Size"
-                class="ant-select ant-pagination-options-size-changer css-dev-only-do-not-override-bj9uhl ant-select-single ant-select-show-arrow ant-select-show-search"
+                aria-label="页码"
+                class="ant-select ant-pagination-options-size-changer ant-select-single ant-select-show-arrow ant-select-show-search"
               >
                 <div
                   class="ant-select-selector"
@@ -1937,7 +1971,7 @@ exports[`sqle/VersionManagement/List render init snap 1`] = `
                       aria-controls="rc_select_TEST_OR_SSR_list"
                       aria-expanded="false"
                       aria-haspopup="listbox"
-                      aria-label="Page Size"
+                      aria-label="页码"
                       aria-owns="rc_select_TEST_OR_SSR_list"
                       autocomplete="off"
                       class="ant-select-selection-search-input"
@@ -1949,9 +1983,9 @@ exports[`sqle/VersionManagement/List render init snap 1`] = `
                   </span>
                   <span
                     class="ant-select-selection-item"
-                    title="20 / page"
+                    title="20 条/页"
                   >
-                    20 / page
+                    20 条/页
                   </span>
                 </div>
                 <span

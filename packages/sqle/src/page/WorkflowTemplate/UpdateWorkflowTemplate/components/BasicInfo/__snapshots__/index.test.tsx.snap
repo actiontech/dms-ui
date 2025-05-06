@@ -25,16 +25,16 @@ exports[`page/WorkflowTemplate/BasicInfo render basic info 1`] = `
         class="step-info-wrapper"
       >
         <form
-          class="ant-form ant-form-vertical ant-form-hide-required-mark css-dev-only-do-not-override-txh9fw"
+          class="ant-form ant-form-vertical ant-form-hide-required-mark"
         >
           <div
-            class="ant-form-item css-dev-only-do-not-override-txh9fw ant-form-item-has-success"
+            class="ant-form-item ant-form-item-has-success"
           >
             <div
-              class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+              class="ant-row ant-form-item-row"
             >
               <div
-                class="ant-col ant-form-item-label css-dev-only-do-not-override-txh9fw"
+                class="ant-col ant-form-item-label"
               >
                 <label
                   class="ant-form-item-required"
@@ -45,7 +45,7 @@ exports[`page/WorkflowTemplate/BasicInfo render basic info 1`] = `
                 </label>
               </div>
               <div
-                class="ant-col ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                class="ant-col ant-form-item-control"
               >
                 <div
                   class="ant-form-item-control-input"
@@ -55,7 +55,7 @@ exports[`page/WorkflowTemplate/BasicInfo render basic info 1`] = `
                   >
                     <div
                       aria-required="true"
-                      class="ant-select ant-select-in-form-item ant-select-status-success basic-select-wrapper css-iy4o4x css-dev-only-do-not-override-v9sov3 ant-select-single ant-select-show-arrow"
+                      class="ant-select ant-select-in-form-item ant-select-status-success basic-select-wrapper css-iy4o4x ant-select-single ant-select-show-arrow"
                     >
                       <div
                         class="ant-select-selector"
@@ -125,7 +125,7 @@ exports[`page/WorkflowTemplate/BasicInfo render basic info 1`] = `
             class="css-1uvv7g7"
           >
             <button
-              class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary basic-button-wrapper css-geipcv"
+              class="ant-btn ant-btn-primary basic-button-wrapper css-geipcv"
               type="button"
             >
               <span>
@@ -164,16 +164,16 @@ exports[`page/WorkflowTemplate/BasicInfo render basic info without default data 
         class="step-info-wrapper"
       >
         <form
-          class="ant-form ant-form-vertical ant-form-hide-required-mark css-dev-only-do-not-override-txh9fw"
+          class="ant-form ant-form-vertical ant-form-hide-required-mark"
         >
           <div
-            class="ant-form-item css-dev-only-do-not-override-txh9fw ant-form-item-has-success"
+            class="ant-form-item ant-form-item-has-success"
           >
             <div
-              class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+              class="ant-row ant-form-item-row"
             >
               <div
-                class="ant-col ant-form-item-label css-dev-only-do-not-override-txh9fw"
+                class="ant-col ant-form-item-label"
               >
                 <label
                   class="ant-form-item-required"
@@ -184,7 +184,7 @@ exports[`page/WorkflowTemplate/BasicInfo render basic info without default data 
                 </label>
               </div>
               <div
-                class="ant-col ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                class="ant-col ant-form-item-control"
               >
                 <div
                   class="ant-form-item-control-input"
@@ -194,7 +194,7 @@ exports[`page/WorkflowTemplate/BasicInfo render basic info without default data 
                   >
                     <div
                       aria-required="true"
-                      class="ant-select ant-select-in-form-item ant-select-status-success basic-select-wrapper css-iy4o4x css-dev-only-do-not-override-v9sov3 ant-select-single ant-select-show-arrow"
+                      class="ant-select ant-select-in-form-item ant-select-status-success basic-select-wrapper css-iy4o4x ant-select-single ant-select-show-arrow"
                     >
                       <div
                         class="ant-select-selector"
@@ -264,7 +264,7 @@ exports[`page/WorkflowTemplate/BasicInfo render basic info without default data 
             class="css-1uvv7g7"
           >
             <button
-              class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary basic-button-wrapper css-geipcv"
+              class="ant-btn ant-btn-primary basic-button-wrapper css-geipcv"
               type="button"
             >
               <span>

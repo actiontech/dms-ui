@@ -3,16 +3,16 @@
 exports[`test base/DataExport/Create/BaseInfoForm/BaseInfoFormItem should match snapshot with slot 1`] = `
 <div>
   <form
-    class="ant-form ant-form-horizontal css-dev-only-do-not-override-txh9fw"
+    class="ant-form ant-form-horizontal"
   >
     <div
-      class="ant-form-item css-15d6abf css-dev-only-do-not-override-txh9fw"
+      class="ant-form-item css-15d6abf"
     >
       <div
-        class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+        class="ant-row ant-form-item-row"
       >
         <div
-          class="ant-col ant-form-item-label css-dev-only-do-not-override-txh9fw"
+          class="ant-col ant-form-item-label"
         >
           <label
             class="ant-form-item-required"
@@ -21,7 +21,7 @@ exports[`test base/DataExport/Create/BaseInfoForm/BaseInfoFormItem should match 
           />
         </div>
         <div
-          class="ant-col ant-form-item-control css-dev-only-do-not-override-txh9fw"
+          class="ant-col ant-form-item-control"
         >
           <div
             class="ant-form-item-control-input"
@@ -31,7 +31,7 @@ exports[`test base/DataExport/Create/BaseInfoForm/BaseInfoFormItem should match 
             >
               <input
                 aria-required="true"
-                class="ant-input css-dev-only-do-not-override-ywkr0o basic-input-wrapper workflow-name-input-wrapper css-opeiev"
+                class="ant-input basic-input-wrapper workflow-name-input-wrapper css-opeiev"
                 id="workflow_subject"
                 placeholder="请输入数据导出工单名称"
                 type="text"
@@ -46,13 +46,13 @@ exports[`test base/DataExport/Create/BaseInfoForm/BaseInfoFormItem should match 
       slot
     </span>
     <div
-      class="ant-form-item workflow-base-info-desc-form-item css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+      class="ant-form-item workflow-base-info-desc-form-item css-1jlm9cy"
     >
       <div
-        class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+        class="ant-row ant-form-item-row"
       >
         <div
-          class="ant-col ant-form-item-label css-dev-only-do-not-override-txh9fw"
+          class="ant-col ant-form-item-label"
         >
           <label
             class=""
@@ -63,7 +63,7 @@ exports[`test base/DataExport/Create/BaseInfoForm/BaseInfoFormItem should match 
           </label>
         </div>
         <div
-          class="ant-col ant-form-item-control css-dev-only-do-not-override-txh9fw"
+          class="ant-col ant-form-item-control"
         >
           <div
             class="ant-form-item-control-input"
@@ -72,11 +72,11 @@ exports[`test base/DataExport/Create/BaseInfoForm/BaseInfoFormItem should match 
               class="ant-form-item-control-input-content"
             >
               <span
-                class="ant-input-affix-wrapper basic-input-wrapper css-1pd1cd5 ant-input-textarea-affix-wrapper ant-input-textarea-show-count css-dev-only-do-not-override-txh9fw ant-input-show-count"
+                class="ant-input-affix-wrapper basic-input-wrapper css-1pd1cd5 ant-input-textarea-affix-wrapper ant-input-textarea-show-count ant-input-show-count"
                 data-count="0 / 3000"
               >
                 <textarea
-                  class="ant-input css-dev-only-do-not-override-txh9fw"
+                  class="ant-input"
                   id="desc"
                   placeholder="点击添加数据导出描述"
                   style="overflow-y: hidden; resize: none;"

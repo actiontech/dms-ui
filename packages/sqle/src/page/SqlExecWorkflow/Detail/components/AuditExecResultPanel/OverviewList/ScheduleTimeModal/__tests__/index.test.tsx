@@ -220,7 +220,7 @@ describe('sqle/ExecWorkflow/AuditDetail/ScheduleTimeModal', () => {
     await act(async () => jest.advanceTimersByTime(300));
     fireEvent.click(screen.getAllByText('06')[2]);
     await act(async () => jest.advanceTimersByTime(300));
-    fireEvent.click(screen.getByText('OK'));
+    fireEvent.click(screen.getByText('确 定'));
     await act(async () => jest.advanceTimersByTime(300));
 
     const submitBtn = screen.getAllByText('定时上线')[1];
@@ -284,7 +284,7 @@ describe('sqle/ExecWorkflow/AuditDetail/ScheduleTimeModal', () => {
     await act(async () => jest.advanceTimersByTime(300));
     fireEvent.click(screen.getAllByText('06')[2]);
     await act(async () => jest.advanceTimersByTime(300));
-    fireEvent.click(screen.getByText('OK'));
+    fireEvent.click(screen.getByText('确 定'));
     await act(async () => jest.advanceTimersByTime(300));
 
     fireEvent.click(getBySelector('#notification_confirmation'));

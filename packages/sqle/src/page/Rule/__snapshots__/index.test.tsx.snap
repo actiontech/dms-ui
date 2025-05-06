@@ -19,7 +19,7 @@ exports[`sqle/Rule filter list based on project name 1`] = `
         />
       </div>
       <div
-        class="ant-spin-nested-loading css-dev-only-do-not-override-txh9fw"
+        class="ant-spin-nested-loading"
       >
         <div
           class="ant-spin-container"
@@ -28,16 +28,16 @@ exports[`sqle/Rule filter list based on project name 1`] = `
             class="flex-space-between flex-align-center css-igjo2q"
           >
             <div
-              class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center full-width-element css-q5egdc"
+              class="ant-space ant-space-horizontal ant-space-align-center full-width-element css-1bmc52o"
             >
               <div
                 class="ant-space-item"
               >
                 <form
-                  class="ant-form ant-form-horizontal css-dev-only-do-not-override-txh9fw"
+                  class="ant-form ant-form-horizontal"
                 >
                   <div
-                    class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+                    class="ant-space ant-space-horizontal ant-space-align-center"
                     style="flex-wrap: wrap; margin-bottom: -12px;"
                   >
                     <div
@@ -45,18 +45,18 @@ exports[`sqle/Rule filter list based on project name 1`] = `
                       style="margin-right: 12px; padding-bottom: 12px;"
                     >
                       <div
-                        class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+                        class="ant-space ant-space-horizontal ant-space-align-center"
                       >
                         <div
                           class="ant-space-item"
                           style="margin-right: 12px;"
                         >
                           <span
-                            class="ant-input-affix-wrapper basic-input-wrapper custom-search-input css-1iw1ud7 ant-input-affix-wrapper-sm css-dev-only-do-not-override-ywkr0o"
+                            class="ant-input-affix-wrapper basic-input-wrapper custom-search-input css-1iw1ud7 ant-input-affix-wrapper-sm"
                             style="width: 210px;"
                           >
                             <input
-                              class="ant-input ant-input-sm css-dev-only-do-not-override-ywkr0o"
+                              class="ant-input ant-input-sm"
                               id="fuzzy_keyword"
                               placeholder="请输入规则关键词搜索"
                               type="text"
@@ -101,7 +101,7 @@ exports[`sqle/Rule filter list based on project name 1`] = `
                           style="margin-right: 12px;"
                         >
                           <div
-                            class="ant-select ant-select-sm basic-select-wrapper custom-select-namespace css-pti5z8 css-dev-only-do-not-override-v9sov3 ant-select-single ant-select-allow-clear ant-select-show-arrow"
+                            class="ant-select ant-select-sm basic-select-wrapper custom-select-namespace css-pti5z8 ant-select-single ant-select-allow-clear ant-select-show-arrow"
                           >
                             <div
                               class="ant-select-selector"
@@ -159,7 +159,7 @@ exports[`sqle/Rule filter list based on project name 1`] = `
                           style="margin-right: 12px;"
                         >
                           <div
-                            class="ant-select ant-select-sm ant-select-borderless basic-select-wrapper custom-select-namespace css-pti5z8 css-dev-only-do-not-override-v9sov3 ant-select-single ant-select-allow-clear ant-select-show-arrow"
+                            class="ant-select ant-select-sm ant-select-borderless basic-select-wrapper custom-select-namespace css-pti5z8 ant-select-single ant-select-allow-clear ant-select-show-arrow"
                           >
                             <div
                               class="ant-select-selector"
@@ -217,7 +217,7 @@ exports[`sqle/Rule filter list based on project name 1`] = `
                           style="margin-right: 12px;"
                         >
                           <div
-                            class="ant-select ant-select-sm ant-select-borderless basic-select-wrapper custom-select-namespace css-pti5z8 css-dev-only-do-not-override-v9sov3 ant-select-single ant-select-allow-clear ant-select-show-arrow"
+                            class="ant-select ant-select-sm ant-select-borderless basic-select-wrapper custom-select-namespace css-pti5z8 ant-select-single ant-select-allow-clear ant-select-show-arrow"
                           >
                             <div
                               class="ant-select-selector"
@@ -275,7 +275,7 @@ exports[`sqle/Rule filter list based on project name 1`] = `
                           style="margin-right: 12px;"
                         >
                           <div
-                            class="ant-select ant-select-sm ant-select-borderless basic-select-wrapper custom-select-namespace css-pti5z8 css-dev-only-do-not-override-v9sov3 ant-select-single ant-select-allow-clear ant-select-show-arrow"
+                            class="ant-select ant-select-sm ant-select-borderless basic-select-wrapper custom-select-namespace css-pti5z8 ant-select-single ant-select-allow-clear ant-select-show-arrow"
                           >
                             <div
                               class="ant-select-selector"
@@ -332,14 +332,14 @@ exports[`sqle/Rule filter list based on project name 1`] = `
                           class="ant-space-item"
                         >
                           <div
-                            class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center css-1nt49ug"
+                            class="ant-space ant-space-horizontal ant-space-align-center css-1nt49ug"
                           >
                             <div
                               class="ant-space-item"
                               style="margin-right: 4px;"
                             >
                               <div
-                                class="ant-select ant-select-sm ant-select-borderless basic-select-wrapper custom-select-namespace css-pti5z8 css-dev-only-do-not-override-v9sov3 ant-select-single ant-select-allow-clear ant-select-show-arrow"
+                                class="ant-select ant-select-sm ant-select-borderless basic-select-wrapper custom-select-namespace css-pti5z8 ant-select-single ant-select-allow-clear ant-select-show-arrow"
                               >
                                 <div
                                   class="ant-select-selector"
@@ -396,7 +396,7 @@ exports[`sqle/Rule filter list based on project name 1`] = `
                               class="ant-space-item"
                             >
                               <div
-                                class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
+                                class="ant-space ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
                               >
                                 <div
                                   class="ant-space-item"
@@ -424,7 +424,7 @@ exports[`sqle/Rule filter list based on project name 1`] = `
                       style="margin-right: 12px; padding-bottom: 12px;"
                     >
                       <div
-                        class="ant-select ant-select-sm ant-select-borderless basic-select-wrapper custom-select-namespace css-pti5z8 css-dev-only-do-not-override-v9sov3 ant-select-focused ant-select-single ant-select-allow-clear ant-select-show-arrow"
+                        class="ant-select ant-select-sm ant-select-borderless basic-select-wrapper custom-select-namespace css-pti5z8 ant-select-focused ant-select-single ant-select-allow-clear ant-select-show-arrow"
                       >
                         <span
                           aria-live="polite"
@@ -506,7 +506,7 @@ exports[`sqle/Rule filter list based on project name 1`] = `
                       style="margin-right: 12px; padding-bottom: 12px;"
                     >
                       <div
-                        class="ant-select ant-select-sm ant-select-borderless basic-select-wrapper custom-select-namespace css-pti5z8 css-dev-only-do-not-override-v9sov3 ant-select-single ant-select-allow-clear ant-select-show-arrow"
+                        class="ant-select ant-select-sm ant-select-borderless basic-select-wrapper custom-select-namespace css-pti5z8 ant-select-single ant-select-allow-clear ant-select-show-arrow"
                       >
                         <div
                           class="ant-select-selector"
@@ -582,7 +582,7 @@ exports[`sqle/Rule filter list based on project name 1`] = `
                       style="margin-right: 12px; padding-bottom: 12px;"
                     >
                       <div
-                        class="ant-select ant-select-sm ant-select-borderless basic-select-wrapper custom-select-namespace css-pti5z8 css-dev-only-do-not-override-v9sov3 ant-select-single ant-select-show-arrow ant-select-disabled"
+                        class="ant-select ant-select-sm ant-select-borderless basic-select-wrapper custom-select-namespace css-pti5z8 ant-select-single ant-select-show-arrow ant-select-disabled"
                       >
                         <div
                           class="ant-select-selector"
@@ -641,7 +641,7 @@ exports[`sqle/Rule filter list based on project name 1`] = `
                       style="padding-bottom: 12px;"
                     >
                       <div
-                        class="ant-select ant-select-sm ant-select-borderless basic-select-wrapper custom-select-namespace css-pti5z8 css-dev-only-do-not-override-v9sov3 ant-select-single ant-select-show-arrow ant-select-disabled"
+                        class="ant-select ant-select-sm ant-select-borderless basic-select-wrapper custom-select-namespace css-pti5z8 ant-select-single ant-select-show-arrow ant-select-disabled"
                       >
                         <div
                           class="ant-select-selector"
@@ -700,7 +700,7 @@ exports[`sqle/Rule filter list based on project name 1`] = `
               </div>
             </div>
             <div
-              class="ant-segmented basic-segmented-wrapper css-15kylv5 css-dev-only-do-not-override-txh9fw"
+              class="ant-segmented basic-segmented-wrapper css-15kylv5"
             >
               <div
                 class="ant-segmented-group"
@@ -751,7 +751,7 @@ exports[`sqle/Rule filter list based on project name 1`] = `
                   style="height: auto; overflow: auto;"
                 >
                   <div
-                    class=" css-11zqvuw"
+                    class="css-11zqvuw"
                     style="cursor: pointer;"
                   >
                     <div
@@ -778,17 +778,17 @@ exports[`sqle/Rule filter list based on project name 1`] = `
                       class="level-content"
                     >
                       <span
-                        class="ant-typography level-content-desc css-dev-only-do-not-override-txh9fw"
+                        class="ant-typography level-content-desc"
                       >
                         绑定的变量个数不建议超过阈值
                       </span>
                       <div
-                        class="ant-typography ant-typography-ellipsis ant-typography-single-line ant-typography-ellipsis-single-line level-content-annotation css-dev-only-do-not-override-txh9fw"
+                        class="ant-typography ant-typography-ellipsis ant-typography-single-line ant-typography-ellipsis-single-line level-content-annotation"
                       >
                         因为过度使用绑定变量会增加查询的复杂度，从而降低查询性能。过度使用绑定变量还会增加维护成本。默认阈值:100
                       </div>
                       <div
-                        class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center level-content-params"
+                        class="ant-space ant-space-horizontal ant-space-align-center level-content-params"
                         style="flex-wrap: wrap; margin-bottom: -8px;"
                       >
                         <div
@@ -796,7 +796,7 @@ exports[`sqle/Rule filter list based on project name 1`] = `
                           style="margin-right: 8px; padding-bottom: 8px;"
                         >
                           <div
-                            class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center rule-param-tag css-x5diec"
+                            class="ant-space ant-space-horizontal ant-space-align-center rule-param-tag css-x5diec"
                           >
                             <div
                               class="ant-space-item"
@@ -817,7 +817,7 @@ exports[`sqle/Rule filter list based on project name 1`] = `
                           style="margin-right: 8px; padding-bottom: 8px;"
                         >
                           <div
-                            class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center rule-category-audit_accuracy rule-category-tag-wrap css-x5diec"
+                            class="ant-space ant-space-horizontal ant-space-align-center rule-category-audit_accuracy rule-category-tag-wrap css-x5diec"
                           >
                             <div
                               class="ant-space-item"
@@ -835,7 +835,7 @@ exports[`sqle/Rule filter list based on project name 1`] = `
                           style="margin-right: 8px; padding-bottom: 8px;"
                         >
                           <div
-                            class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center rule-category-sql rule-category-tag-wrap css-x5diec"
+                            class="ant-space ant-space-horizontal ant-space-align-center rule-category-sql rule-category-tag-wrap css-x5diec"
                           >
                             <div
                               class="ant-space-item"
@@ -853,7 +853,7 @@ exports[`sqle/Rule filter list based on project name 1`] = `
                           style="margin-right: 8px; padding-bottom: 8px;"
                         >
                           <div
-                            class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center rule-category-operand rule-category-tag-wrap css-x5diec"
+                            class="ant-space ant-space-horizontal ant-space-align-center rule-category-operand rule-category-tag-wrap css-x5diec"
                           >
                             <div
                               class="ant-space-item"
@@ -881,7 +881,7 @@ exports[`sqle/Rule filter list based on project name 1`] = `
                           style="margin-right: 8px; padding-bottom: 8px;"
                         >
                           <div
-                            class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center rule-category-audit_purpose rule-category-tag-wrap css-x5diec"
+                            class="ant-space ant-space-horizontal ant-space-align-center rule-category-audit_purpose rule-category-tag-wrap css-x5diec"
                           >
                             <div
                               class="ant-space-item"
@@ -899,7 +899,7 @@ exports[`sqle/Rule filter list based on project name 1`] = `
                           style="margin-right: 8px; padding-bottom: 8px;"
                         >
                           <div
-                            class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center rule-audit-tag css-x5diec"
+                            class="ant-space ant-space-horizontal ant-space-align-center rule-audit-tag css-x5diec"
                           >
                             <div
                               class="ant-space-item"
@@ -913,7 +913,7 @@ exports[`sqle/Rule filter list based on project name 1`] = `
                           style="padding-bottom: 8px;"
                         >
                           <div
-                            class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center rule-rewrite-tag css-x5diec"
+                            class="ant-space ant-space-horizontal ant-space-align-center rule-rewrite-tag css-x5diec"
                           >
                             <div
                               class="ant-space-item"
@@ -940,15 +940,15 @@ exports[`sqle/Rule filter list based on project name 1`] = `
   </div>
   <div>
     <div
-      class="ant-select-dropdown ant-select-dropdown-hidden custom-select-popup-wrapper css-dev-only-do-not-override-v9sov3 ant-select-dropdown-placement-bottomLeft"
+      class="ant-select-dropdown ant-select-dropdown-hidden custom-select-popup-wrapper ant-select-dropdown-placement-bottomLeft"
       style="--arrow-x: 0px; --arrow-y: 0px; left: 0px; top: 0px; box-sizing: border-box; padding: 0px; min-width: 0; pointer-events: none;"
     >
       <div>
         <span
-          class="ant-input-affix-wrapper ant-input-affix-wrapper-focused basic-input-wrapper custom-select-popup-search-input css-d0jdfn ant-input-affix-wrapper-borderless css-dev-only-do-not-override-6svbnr"
+          class="ant-input-affix-wrapper ant-input-affix-wrapper-focused basic-input-wrapper custom-select-popup-search-input css-d0jdfn ant-input-affix-wrapper-borderless"
         >
           <input
-            class="ant-input ant-input-borderless css-dev-only-do-not-override-6svbnr"
+            class="ant-input ant-input-borderless"
             placeholder="搜索"
             type="text"
             value=""
@@ -1064,7 +1064,7 @@ exports[`sqle/Rule filter list based on project name 2`] = `
         />
       </div>
       <div
-        class="ant-spin-nested-loading css-dev-only-do-not-override-txh9fw"
+        class="ant-spin-nested-loading"
       >
         <div
           class="ant-spin-container"
@@ -1073,16 +1073,16 @@ exports[`sqle/Rule filter list based on project name 2`] = `
             class="flex-space-between flex-align-center css-igjo2q"
           >
             <div
-              class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center full-width-element css-q5egdc"
+              class="ant-space ant-space-horizontal ant-space-align-center full-width-element css-1bmc52o"
             >
               <div
                 class="ant-space-item"
               >
                 <form
-                  class="ant-form ant-form-horizontal css-dev-only-do-not-override-txh9fw"
+                  class="ant-form ant-form-horizontal"
                 >
                   <div
-                    class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+                    class="ant-space ant-space-horizontal ant-space-align-center"
                     style="flex-wrap: wrap; margin-bottom: -12px;"
                   >
                     <div
@@ -1090,18 +1090,18 @@ exports[`sqle/Rule filter list based on project name 2`] = `
                       style="margin-right: 12px; padding-bottom: 12px;"
                     >
                       <div
-                        class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+                        class="ant-space ant-space-horizontal ant-space-align-center"
                       >
                         <div
                           class="ant-space-item"
                           style="margin-right: 12px;"
                         >
                           <span
-                            class="ant-input-affix-wrapper basic-input-wrapper custom-search-input css-1iw1ud7 ant-input-affix-wrapper-sm css-dev-only-do-not-override-ywkr0o"
+                            class="ant-input-affix-wrapper basic-input-wrapper custom-search-input css-1iw1ud7 ant-input-affix-wrapper-sm"
                             style="width: 210px;"
                           >
                             <input
-                              class="ant-input ant-input-sm css-dev-only-do-not-override-ywkr0o"
+                              class="ant-input ant-input-sm"
                               id="fuzzy_keyword"
                               placeholder="请输入规则关键词搜索"
                               type="text"
@@ -1146,7 +1146,7 @@ exports[`sqle/Rule filter list based on project name 2`] = `
                           style="margin-right: 12px;"
                         >
                           <div
-                            class="ant-select ant-select-sm basic-select-wrapper custom-select-namespace css-pti5z8 css-dev-only-do-not-override-v9sov3 ant-select-single ant-select-allow-clear ant-select-show-arrow"
+                            class="ant-select ant-select-sm basic-select-wrapper custom-select-namespace css-pti5z8 ant-select-single ant-select-allow-clear ant-select-show-arrow"
                           >
                             <div
                               class="ant-select-selector"
@@ -1204,7 +1204,7 @@ exports[`sqle/Rule filter list based on project name 2`] = `
                           style="margin-right: 12px;"
                         >
                           <div
-                            class="ant-select ant-select-sm ant-select-borderless basic-select-wrapper custom-select-namespace css-pti5z8 css-dev-only-do-not-override-v9sov3 ant-select-single ant-select-allow-clear ant-select-show-arrow"
+                            class="ant-select ant-select-sm ant-select-borderless basic-select-wrapper custom-select-namespace css-pti5z8 ant-select-single ant-select-allow-clear ant-select-show-arrow"
                           >
                             <div
                               class="ant-select-selector"
@@ -1262,7 +1262,7 @@ exports[`sqle/Rule filter list based on project name 2`] = `
                           style="margin-right: 12px;"
                         >
                           <div
-                            class="ant-select ant-select-sm ant-select-borderless basic-select-wrapper custom-select-namespace css-pti5z8 css-dev-only-do-not-override-v9sov3 ant-select-single ant-select-allow-clear ant-select-show-arrow"
+                            class="ant-select ant-select-sm ant-select-borderless basic-select-wrapper custom-select-namespace css-pti5z8 ant-select-single ant-select-allow-clear ant-select-show-arrow"
                           >
                             <div
                               class="ant-select-selector"
@@ -1320,7 +1320,7 @@ exports[`sqle/Rule filter list based on project name 2`] = `
                           style="margin-right: 12px;"
                         >
                           <div
-                            class="ant-select ant-select-sm ant-select-borderless basic-select-wrapper custom-select-namespace css-pti5z8 css-dev-only-do-not-override-v9sov3 ant-select-single ant-select-allow-clear ant-select-show-arrow"
+                            class="ant-select ant-select-sm ant-select-borderless basic-select-wrapper custom-select-namespace css-pti5z8 ant-select-single ant-select-allow-clear ant-select-show-arrow"
                           >
                             <div
                               class="ant-select-selector"
@@ -1377,14 +1377,14 @@ exports[`sqle/Rule filter list based on project name 2`] = `
                           class="ant-space-item"
                         >
                           <div
-                            class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center css-1nt49ug"
+                            class="ant-space ant-space-horizontal ant-space-align-center css-1nt49ug"
                           >
                             <div
                               class="ant-space-item"
                               style="margin-right: 4px;"
                             >
                               <div
-                                class="ant-select ant-select-sm ant-select-borderless basic-select-wrapper custom-select-namespace css-pti5z8 css-dev-only-do-not-override-v9sov3 ant-select-single ant-select-allow-clear ant-select-show-arrow"
+                                class="ant-select ant-select-sm ant-select-borderless basic-select-wrapper custom-select-namespace css-pti5z8 ant-select-single ant-select-allow-clear ant-select-show-arrow"
                               >
                                 <div
                                   class="ant-select-selector"
@@ -1441,7 +1441,7 @@ exports[`sqle/Rule filter list based on project name 2`] = `
                               class="ant-space-item"
                             >
                               <div
-                                class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
+                                class="ant-space ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
                               >
                                 <div
                                   class="ant-space-item"
@@ -1469,7 +1469,7 @@ exports[`sqle/Rule filter list based on project name 2`] = `
                       style="margin-right: 12px; padding-bottom: 12px;"
                     >
                       <div
-                        class="ant-select ant-select-sm ant-select-borderless basic-select-wrapper custom-select-namespace css-pti5z8 css-dev-only-do-not-override-v9sov3 ant-select-focused ant-select-single ant-select-allow-clear ant-select-show-arrow"
+                        class="ant-select ant-select-sm ant-select-borderless basic-select-wrapper custom-select-namespace css-pti5z8 ant-select-focused ant-select-single ant-select-allow-clear ant-select-show-arrow"
                       >
                         <span
                           aria-live="polite"
@@ -1551,7 +1551,7 @@ exports[`sqle/Rule filter list based on project name 2`] = `
                       style="margin-right: 12px; padding-bottom: 12px;"
                     >
                       <div
-                        class="ant-select ant-select-sm ant-select-borderless basic-select-wrapper custom-select-namespace css-pti5z8 css-dev-only-do-not-override-v9sov3 ant-select-single ant-select-allow-clear ant-select-show-arrow"
+                        class="ant-select ant-select-sm ant-select-borderless basic-select-wrapper custom-select-namespace css-pti5z8 ant-select-single ant-select-allow-clear ant-select-show-arrow"
                       >
                         <div
                           class="ant-select-selector"
@@ -1609,7 +1609,7 @@ exports[`sqle/Rule filter list based on project name 2`] = `
                       style="margin-right: 12px; padding-bottom: 12px;"
                     >
                       <div
-                        class="ant-select ant-select-sm ant-select-borderless basic-select-wrapper custom-select-namespace css-pti5z8 css-dev-only-do-not-override-v9sov3 ant-select-single ant-select-show-arrow"
+                        class="ant-select ant-select-sm ant-select-borderless basic-select-wrapper custom-select-namespace css-pti5z8 ant-select-single ant-select-show-arrow"
                       >
                         <div
                           class="ant-select-selector"
@@ -1667,7 +1667,7 @@ exports[`sqle/Rule filter list based on project name 2`] = `
                       style="padding-bottom: 12px;"
                     >
                       <div
-                        class="ant-select ant-select-sm ant-select-borderless basic-select-wrapper custom-select-namespace css-pti5z8 css-dev-only-do-not-override-v9sov3 ant-select-single ant-select-show-arrow"
+                        class="ant-select ant-select-sm ant-select-borderless basic-select-wrapper custom-select-namespace css-pti5z8 ant-select-single ant-select-show-arrow"
                       >
                         <div
                           class="ant-select-selector"
@@ -1726,7 +1726,7 @@ exports[`sqle/Rule filter list based on project name 2`] = `
             </div>
           </div>
           <div
-            class="css-dev-only-do-not-override-txh9fw ant-empty is-icon-tips css-19kysfv"
+            class="ant-empty is-icon-tips css-19kysfv"
           >
             <div
               class="ant-empty-image"
@@ -1800,15 +1800,15 @@ exports[`sqle/Rule filter list based on project name 2`] = `
   </div>
   <div>
     <div
-      class="ant-select-dropdown ant-select-dropdown-hidden custom-select-popup-wrapper css-dev-only-do-not-override-v9sov3 ant-select-dropdown-placement-bottomLeft"
+      class="ant-select-dropdown ant-select-dropdown-hidden custom-select-popup-wrapper ant-select-dropdown-placement-bottomLeft"
       style="--arrow-x: 0px; --arrow-y: 0px; left: 0px; top: 0px; box-sizing: border-box; padding: 0px; min-width: 0; pointer-events: none;"
     >
       <div>
         <span
-          class="ant-input-affix-wrapper ant-input-affix-wrapper-focused basic-input-wrapper custom-select-popup-search-input css-d0jdfn ant-input-affix-wrapper-borderless css-dev-only-do-not-override-6svbnr"
+          class="ant-input-affix-wrapper ant-input-affix-wrapper-focused basic-input-wrapper custom-select-popup-search-input css-d0jdfn ant-input-affix-wrapper-borderless"
         >
           <input
-            class="ant-input ant-input-borderless css-dev-only-do-not-override-6svbnr"
+            class="ant-input ant-input-borderless"
             placeholder="搜索"
             type="text"
             value=""
@@ -1924,7 +1924,7 @@ exports[`sqle/Rule request return no data 1`] = `
         />
       </div>
       <div
-        class="ant-spin-nested-loading css-dev-only-do-not-override-txh9fw"
+        class="ant-spin-nested-loading"
       >
         <div
           class="ant-spin-container"
@@ -1933,16 +1933,16 @@ exports[`sqle/Rule request return no data 1`] = `
             class="flex-space-between flex-align-center css-igjo2q"
           >
             <div
-              class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center full-width-element css-q5egdc"
+              class="ant-space ant-space-horizontal ant-space-align-center full-width-element css-1bmc52o"
             >
               <div
                 class="ant-space-item"
               >
                 <form
-                  class="ant-form ant-form-horizontal css-dev-only-do-not-override-txh9fw"
+                  class="ant-form ant-form-horizontal"
                 >
                   <div
-                    class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+                    class="ant-space ant-space-horizontal ant-space-align-center"
                     style="flex-wrap: wrap; margin-bottom: -12px;"
                   >
                     <div
@@ -1950,18 +1950,18 @@ exports[`sqle/Rule request return no data 1`] = `
                       style="margin-right: 12px; padding-bottom: 12px;"
                     >
                       <div
-                        class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+                        class="ant-space ant-space-horizontal ant-space-align-center"
                       >
                         <div
                           class="ant-space-item"
                           style="margin-right: 12px;"
                         >
                           <span
-                            class="ant-input-affix-wrapper basic-input-wrapper custom-search-input css-1iw1ud7 ant-input-affix-wrapper-sm css-dev-only-do-not-override-ywkr0o"
+                            class="ant-input-affix-wrapper basic-input-wrapper custom-search-input css-1iw1ud7 ant-input-affix-wrapper-sm"
                             style="width: 210px;"
                           >
                             <input
-                              class="ant-input ant-input-sm css-dev-only-do-not-override-ywkr0o"
+                              class="ant-input ant-input-sm"
                               id="fuzzy_keyword"
                               placeholder="请输入规则关键词搜索"
                               type="text"
@@ -2006,7 +2006,7 @@ exports[`sqle/Rule request return no data 1`] = `
                           style="margin-right: 12px;"
                         >
                           <div
-                            class="ant-select ant-select-sm basic-select-wrapper custom-select-namespace css-pti5z8 css-dev-only-do-not-override-v9sov3 ant-select-single ant-select-allow-clear ant-select-show-arrow"
+                            class="ant-select ant-select-sm basic-select-wrapper custom-select-namespace css-pti5z8 ant-select-single ant-select-allow-clear ant-select-show-arrow"
                           >
                             <div
                               class="ant-select-selector"
@@ -2064,7 +2064,7 @@ exports[`sqle/Rule request return no data 1`] = `
                           style="margin-right: 12px;"
                         >
                           <div
-                            class="ant-select ant-select-sm ant-select-borderless basic-select-wrapper custom-select-namespace css-pti5z8 css-dev-only-do-not-override-v9sov3 ant-select-single ant-select-allow-clear ant-select-show-arrow"
+                            class="ant-select ant-select-sm ant-select-borderless basic-select-wrapper custom-select-namespace css-pti5z8 ant-select-single ant-select-allow-clear ant-select-show-arrow"
                           >
                             <div
                               class="ant-select-selector"
@@ -2122,7 +2122,7 @@ exports[`sqle/Rule request return no data 1`] = `
                           style="margin-right: 12px;"
                         >
                           <div
-                            class="ant-select ant-select-sm ant-select-borderless basic-select-wrapper custom-select-namespace css-pti5z8 css-dev-only-do-not-override-v9sov3 ant-select-single ant-select-allow-clear ant-select-show-arrow"
+                            class="ant-select ant-select-sm ant-select-borderless basic-select-wrapper custom-select-namespace css-pti5z8 ant-select-single ant-select-allow-clear ant-select-show-arrow"
                           >
                             <div
                               class="ant-select-selector"
@@ -2180,7 +2180,7 @@ exports[`sqle/Rule request return no data 1`] = `
                           style="margin-right: 12px;"
                         >
                           <div
-                            class="ant-select ant-select-sm ant-select-borderless basic-select-wrapper custom-select-namespace css-pti5z8 css-dev-only-do-not-override-v9sov3 ant-select-single ant-select-allow-clear ant-select-show-arrow"
+                            class="ant-select ant-select-sm ant-select-borderless basic-select-wrapper custom-select-namespace css-pti5z8 ant-select-single ant-select-allow-clear ant-select-show-arrow"
                           >
                             <div
                               class="ant-select-selector"
@@ -2237,14 +2237,14 @@ exports[`sqle/Rule request return no data 1`] = `
                           class="ant-space-item"
                         >
                           <div
-                            class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center css-1nt49ug"
+                            class="ant-space ant-space-horizontal ant-space-align-center css-1nt49ug"
                           >
                             <div
                               class="ant-space-item"
                               style="margin-right: 4px;"
                             >
                               <div
-                                class="ant-select ant-select-sm ant-select-borderless basic-select-wrapper custom-select-namespace css-pti5z8 css-dev-only-do-not-override-v9sov3 ant-select-single ant-select-allow-clear ant-select-show-arrow"
+                                class="ant-select ant-select-sm ant-select-borderless basic-select-wrapper custom-select-namespace css-pti5z8 ant-select-single ant-select-allow-clear ant-select-show-arrow"
                               >
                                 <div
                                   class="ant-select-selector"
@@ -2301,7 +2301,7 @@ exports[`sqle/Rule request return no data 1`] = `
                               class="ant-space-item"
                             >
                               <div
-                                class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
+                                class="ant-space ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
                               >
                                 <div
                                   class="ant-space-item"
@@ -2329,7 +2329,7 @@ exports[`sqle/Rule request return no data 1`] = `
                       style="margin-right: 12px; padding-bottom: 12px;"
                     >
                       <div
-                        class="ant-select ant-select-sm ant-select-borderless basic-select-wrapper custom-select-namespace css-pti5z8 css-dev-only-do-not-override-v9sov3 ant-select-single ant-select-allow-clear ant-select-show-arrow"
+                        class="ant-select ant-select-sm ant-select-borderless basic-select-wrapper custom-select-namespace css-pti5z8 ant-select-single ant-select-allow-clear ant-select-show-arrow"
                       >
                         <div
                           class="ant-select-selector"
@@ -2387,7 +2387,7 @@ exports[`sqle/Rule request return no data 1`] = `
                       style="margin-right: 12px; padding-bottom: 12px;"
                     >
                       <div
-                        class="ant-select ant-select-sm ant-select-borderless basic-select-wrapper custom-select-namespace css-pti5z8 css-dev-only-do-not-override-v9sov3 ant-select-single ant-select-allow-clear ant-select-show-arrow"
+                        class="ant-select ant-select-sm ant-select-borderless basic-select-wrapper custom-select-namespace css-pti5z8 ant-select-single ant-select-allow-clear ant-select-show-arrow"
                       >
                         <div
                           class="ant-select-selector"
@@ -2445,7 +2445,7 @@ exports[`sqle/Rule request return no data 1`] = `
                       style="margin-right: 12px; padding-bottom: 12px;"
                     >
                       <div
-                        class="ant-select ant-select-sm ant-select-borderless basic-select-wrapper custom-select-namespace css-pti5z8 css-dev-only-do-not-override-v9sov3 ant-select-single ant-select-show-arrow"
+                        class="ant-select ant-select-sm ant-select-borderless basic-select-wrapper custom-select-namespace css-pti5z8 ant-select-single ant-select-show-arrow"
                       >
                         <div
                           class="ant-select-selector"
@@ -2503,7 +2503,7 @@ exports[`sqle/Rule request return no data 1`] = `
                       style="padding-bottom: 12px;"
                     >
                       <div
-                        class="ant-select ant-select-sm ant-select-borderless basic-select-wrapper custom-select-namespace css-pti5z8 css-dev-only-do-not-override-v9sov3 ant-select-single ant-select-show-arrow"
+                        class="ant-select ant-select-sm ant-select-borderless basic-select-wrapper custom-select-namespace css-pti5z8 ant-select-single ant-select-show-arrow"
                       >
                         <div
                           class="ant-select-selector"
@@ -2568,7 +2568,7 @@ exports[`sqle/Rule request return no data 1`] = `
               class="css-1br6ibb"
             >
               <div
-                class="css-dev-only-do-not-override-txh9fw ant-empty is-icon-tips css-19kysfv"
+                class="ant-empty is-icon-tips css-19kysfv"
               >
                 <div
                   class="ant-empty-image"
@@ -2650,7 +2650,7 @@ exports[`sqle/Rule should hide empty list tips 1`] = `
         />
       </div>
       <div
-        class="ant-spin-nested-loading css-dev-only-do-not-override-txh9fw"
+        class="ant-spin-nested-loading"
       >
         <div
           class="ant-spin-container"
@@ -2659,16 +2659,16 @@ exports[`sqle/Rule should hide empty list tips 1`] = `
             class="flex-space-between flex-align-center css-igjo2q"
           >
             <div
-              class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center full-width-element css-q5egdc"
+              class="ant-space ant-space-horizontal ant-space-align-center full-width-element css-1bmc52o"
             >
               <div
                 class="ant-space-item"
               >
                 <form
-                  class="ant-form ant-form-horizontal css-dev-only-do-not-override-txh9fw"
+                  class="ant-form ant-form-horizontal"
                 >
                   <div
-                    class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+                    class="ant-space ant-space-horizontal ant-space-align-center"
                     style="flex-wrap: wrap; margin-bottom: -12px;"
                   >
                     <div
@@ -2676,18 +2676,18 @@ exports[`sqle/Rule should hide empty list tips 1`] = `
                       style="margin-right: 12px; padding-bottom: 12px;"
                     >
                       <div
-                        class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+                        class="ant-space ant-space-horizontal ant-space-align-center"
                       >
                         <div
                           class="ant-space-item"
                           style="margin-right: 12px;"
                         >
                           <span
-                            class="ant-input-affix-wrapper basic-input-wrapper custom-search-input css-1iw1ud7 ant-input-affix-wrapper-sm css-dev-only-do-not-override-ywkr0o"
+                            class="ant-input-affix-wrapper basic-input-wrapper custom-search-input css-1iw1ud7 ant-input-affix-wrapper-sm"
                             style="width: 210px;"
                           >
                             <input
-                              class="ant-input ant-input-sm css-dev-only-do-not-override-ywkr0o"
+                              class="ant-input ant-input-sm"
                               id="fuzzy_keyword"
                               placeholder="请输入规则关键词搜索"
                               type="text"
@@ -2732,7 +2732,7 @@ exports[`sqle/Rule should hide empty list tips 1`] = `
                           style="margin-right: 12px;"
                         >
                           <div
-                            class="ant-select ant-select-sm basic-select-wrapper custom-select-namespace css-pti5z8 css-dev-only-do-not-override-v9sov3 ant-select-single ant-select-allow-clear ant-select-show-arrow"
+                            class="ant-select ant-select-sm basic-select-wrapper custom-select-namespace css-pti5z8 ant-select-single ant-select-allow-clear ant-select-show-arrow"
                           >
                             <div
                               class="ant-select-selector"
@@ -2790,7 +2790,7 @@ exports[`sqle/Rule should hide empty list tips 1`] = `
                           style="margin-right: 12px;"
                         >
                           <div
-                            class="ant-select ant-select-sm ant-select-borderless basic-select-wrapper custom-select-namespace css-pti5z8 css-dev-only-do-not-override-v9sov3 ant-select-single ant-select-allow-clear ant-select-show-arrow"
+                            class="ant-select ant-select-sm ant-select-borderless basic-select-wrapper custom-select-namespace css-pti5z8 ant-select-single ant-select-allow-clear ant-select-show-arrow"
                           >
                             <div
                               class="ant-select-selector"
@@ -2848,7 +2848,7 @@ exports[`sqle/Rule should hide empty list tips 1`] = `
                           style="margin-right: 12px;"
                         >
                           <div
-                            class="ant-select ant-select-sm ant-select-borderless basic-select-wrapper custom-select-namespace css-pti5z8 css-dev-only-do-not-override-v9sov3 ant-select-single ant-select-allow-clear ant-select-show-arrow"
+                            class="ant-select ant-select-sm ant-select-borderless basic-select-wrapper custom-select-namespace css-pti5z8 ant-select-single ant-select-allow-clear ant-select-show-arrow"
                           >
                             <div
                               class="ant-select-selector"
@@ -2906,7 +2906,7 @@ exports[`sqle/Rule should hide empty list tips 1`] = `
                           style="margin-right: 12px;"
                         >
                           <div
-                            class="ant-select ant-select-sm ant-select-borderless basic-select-wrapper custom-select-namespace css-pti5z8 css-dev-only-do-not-override-v9sov3 ant-select-single ant-select-allow-clear ant-select-show-arrow"
+                            class="ant-select ant-select-sm ant-select-borderless basic-select-wrapper custom-select-namespace css-pti5z8 ant-select-single ant-select-allow-clear ant-select-show-arrow"
                           >
                             <div
                               class="ant-select-selector"
@@ -2963,14 +2963,14 @@ exports[`sqle/Rule should hide empty list tips 1`] = `
                           class="ant-space-item"
                         >
                           <div
-                            class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center css-1nt49ug"
+                            class="ant-space ant-space-horizontal ant-space-align-center css-1nt49ug"
                           >
                             <div
                               class="ant-space-item"
                               style="margin-right: 4px;"
                             >
                               <div
-                                class="ant-select ant-select-sm ant-select-borderless basic-select-wrapper custom-select-namespace css-pti5z8 css-dev-only-do-not-override-v9sov3 ant-select-single ant-select-allow-clear ant-select-show-arrow"
+                                class="ant-select ant-select-sm ant-select-borderless basic-select-wrapper custom-select-namespace css-pti5z8 ant-select-single ant-select-allow-clear ant-select-show-arrow"
                               >
                                 <div
                                   class="ant-select-selector"
@@ -3027,7 +3027,7 @@ exports[`sqle/Rule should hide empty list tips 1`] = `
                               class="ant-space-item"
                             >
                               <div
-                                class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
+                                class="ant-space ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
                               >
                                 <div
                                   class="ant-space-item"
@@ -3055,7 +3055,7 @@ exports[`sqle/Rule should hide empty list tips 1`] = `
                       style="margin-right: 12px; padding-bottom: 12px;"
                     >
                       <div
-                        class="ant-select ant-select-sm ant-select-borderless basic-select-wrapper custom-select-namespace css-pti5z8 css-dev-only-do-not-override-v9sov3 ant-select-focused ant-select-single ant-select-allow-clear ant-select-show-arrow"
+                        class="ant-select ant-select-sm ant-select-borderless basic-select-wrapper custom-select-namespace css-pti5z8 ant-select-focused ant-select-single ant-select-allow-clear ant-select-show-arrow"
                       >
                         <span
                           aria-live="polite"
@@ -3137,7 +3137,7 @@ exports[`sqle/Rule should hide empty list tips 1`] = `
                       style="margin-right: 12px; padding-bottom: 12px;"
                     >
                       <div
-                        class="ant-select ant-select-sm ant-select-borderless basic-select-wrapper custom-select-namespace css-pti5z8 css-dev-only-do-not-override-v9sov3 ant-select-single ant-select-allow-clear ant-select-show-arrow"
+                        class="ant-select ant-select-sm ant-select-borderless basic-select-wrapper custom-select-namespace css-pti5z8 ant-select-single ant-select-allow-clear ant-select-show-arrow"
                       >
                         <div
                           class="ant-select-selector"
@@ -3195,7 +3195,7 @@ exports[`sqle/Rule should hide empty list tips 1`] = `
                       style="margin-right: 12px; padding-bottom: 12px;"
                     >
                       <div
-                        class="ant-select ant-select-sm ant-select-borderless basic-select-wrapper custom-select-namespace css-pti5z8 css-dev-only-do-not-override-v9sov3 ant-select-single ant-select-show-arrow"
+                        class="ant-select ant-select-sm ant-select-borderless basic-select-wrapper custom-select-namespace css-pti5z8 ant-select-single ant-select-show-arrow"
                       >
                         <div
                           class="ant-select-selector"
@@ -3253,7 +3253,7 @@ exports[`sqle/Rule should hide empty list tips 1`] = `
                       style="padding-bottom: 12px;"
                     >
                       <div
-                        class="ant-select ant-select-sm ant-select-borderless basic-select-wrapper custom-select-namespace css-pti5z8 css-dev-only-do-not-override-v9sov3 ant-select-single ant-select-show-arrow"
+                        class="ant-select ant-select-sm ant-select-borderless basic-select-wrapper custom-select-namespace css-pti5z8 ant-select-single ant-select-show-arrow"
                       >
                         <div
                           class="ant-select-selector"
@@ -3312,7 +3312,7 @@ exports[`sqle/Rule should hide empty list tips 1`] = `
             </div>
           </div>
           <div
-            class="css-dev-only-do-not-override-txh9fw ant-empty is-icon-tips css-19kysfv"
+            class="ant-empty is-icon-tips css-19kysfv"
           >
             <div
               class="ant-empty-image"
@@ -3378,15 +3378,15 @@ exports[`sqle/Rule should hide empty list tips 1`] = `
   </div>
   <div>
     <div
-      class="ant-select-dropdown ant-select-dropdown-hidden custom-select-popup-wrapper css-dev-only-do-not-override-v9sov3 ant-select-dropdown-placement-bottomLeft"
+      class="ant-select-dropdown ant-select-dropdown-hidden custom-select-popup-wrapper ant-select-dropdown-placement-bottomLeft"
       style="--arrow-x: 0px; --arrow-y: 0px; left: 0px; top: 0px; box-sizing: border-box; padding: 0px; min-width: 0; pointer-events: none;"
     >
       <div>
         <span
-          class="ant-input-affix-wrapper ant-input-affix-wrapper-focused basic-input-wrapper custom-select-popup-search-input css-d0jdfn ant-input-affix-wrapper-borderless css-dev-only-do-not-override-6svbnr"
+          class="ant-input-affix-wrapper ant-input-affix-wrapper-focused basic-input-wrapper custom-select-popup-search-input css-d0jdfn ant-input-affix-wrapper-borderless"
         >
           <input
-            class="ant-input ant-input-borderless css-dev-only-do-not-override-6svbnr"
+            class="ant-input ant-input-borderless"
             placeholder="搜索"
             type="text"
             value=""
@@ -3502,7 +3502,7 @@ exports[`sqle/Rule should match snap shot 1`] = `
         />
       </div>
       <div
-        class="ant-spin-nested-loading css-dev-only-do-not-override-txh9fw"
+        class="ant-spin-nested-loading"
       >
         <div
           class="ant-spin-container"
@@ -3511,16 +3511,16 @@ exports[`sqle/Rule should match snap shot 1`] = `
             class="flex-space-between flex-align-center css-igjo2q"
           >
             <div
-              class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center full-width-element css-q5egdc"
+              class="ant-space ant-space-horizontal ant-space-align-center full-width-element css-1bmc52o"
             >
               <div
                 class="ant-space-item"
               >
                 <form
-                  class="ant-form ant-form-horizontal css-dev-only-do-not-override-txh9fw"
+                  class="ant-form ant-form-horizontal"
                 >
                   <div
-                    class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+                    class="ant-space ant-space-horizontal ant-space-align-center"
                     style="flex-wrap: wrap; margin-bottom: -12px;"
                   >
                     <div
@@ -3528,18 +3528,18 @@ exports[`sqle/Rule should match snap shot 1`] = `
                       style="margin-right: 12px; padding-bottom: 12px;"
                     >
                       <div
-                        class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+                        class="ant-space ant-space-horizontal ant-space-align-center"
                       >
                         <div
                           class="ant-space-item"
                           style="margin-right: 12px;"
                         >
                           <span
-                            class="ant-input-affix-wrapper basic-input-wrapper custom-search-input css-1iw1ud7 ant-input-affix-wrapper-sm css-dev-only-do-not-override-ywkr0o"
+                            class="ant-input-affix-wrapper basic-input-wrapper custom-search-input css-1iw1ud7 ant-input-affix-wrapper-sm"
                             style="width: 210px;"
                           >
                             <input
-                              class="ant-input ant-input-sm css-dev-only-do-not-override-ywkr0o"
+                              class="ant-input ant-input-sm"
                               id="fuzzy_keyword"
                               placeholder="请输入规则关键词搜索"
                               type="text"
@@ -3584,7 +3584,7 @@ exports[`sqle/Rule should match snap shot 1`] = `
                           style="margin-right: 12px;"
                         >
                           <div
-                            class="ant-select ant-select-sm basic-select-wrapper custom-select-namespace css-pti5z8 css-dev-only-do-not-override-v9sov3 ant-select-single ant-select-allow-clear ant-select-show-arrow"
+                            class="ant-select ant-select-sm basic-select-wrapper custom-select-namespace css-pti5z8 ant-select-single ant-select-allow-clear ant-select-show-arrow"
                           >
                             <div
                               class="ant-select-selector"
@@ -3642,7 +3642,7 @@ exports[`sqle/Rule should match snap shot 1`] = `
                           style="margin-right: 12px;"
                         >
                           <div
-                            class="ant-select ant-select-sm ant-select-borderless basic-select-wrapper custom-select-namespace css-pti5z8 css-dev-only-do-not-override-v9sov3 ant-select-single ant-select-allow-clear ant-select-show-arrow"
+                            class="ant-select ant-select-sm ant-select-borderless basic-select-wrapper custom-select-namespace css-pti5z8 ant-select-single ant-select-allow-clear ant-select-show-arrow"
                           >
                             <div
                               class="ant-select-selector"
@@ -3700,7 +3700,7 @@ exports[`sqle/Rule should match snap shot 1`] = `
                           style="margin-right: 12px;"
                         >
                           <div
-                            class="ant-select ant-select-sm ant-select-borderless basic-select-wrapper custom-select-namespace css-pti5z8 css-dev-only-do-not-override-v9sov3 ant-select-single ant-select-allow-clear ant-select-show-arrow"
+                            class="ant-select ant-select-sm ant-select-borderless basic-select-wrapper custom-select-namespace css-pti5z8 ant-select-single ant-select-allow-clear ant-select-show-arrow"
                           >
                             <div
                               class="ant-select-selector"
@@ -3758,7 +3758,7 @@ exports[`sqle/Rule should match snap shot 1`] = `
                           style="margin-right: 12px;"
                         >
                           <div
-                            class="ant-select ant-select-sm ant-select-borderless basic-select-wrapper custom-select-namespace css-pti5z8 css-dev-only-do-not-override-v9sov3 ant-select-single ant-select-allow-clear ant-select-show-arrow"
+                            class="ant-select ant-select-sm ant-select-borderless basic-select-wrapper custom-select-namespace css-pti5z8 ant-select-single ant-select-allow-clear ant-select-show-arrow"
                           >
                             <div
                               class="ant-select-selector"
@@ -3815,14 +3815,14 @@ exports[`sqle/Rule should match snap shot 1`] = `
                           class="ant-space-item"
                         >
                           <div
-                            class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center css-1nt49ug"
+                            class="ant-space ant-space-horizontal ant-space-align-center css-1nt49ug"
                           >
                             <div
                               class="ant-space-item"
                               style="margin-right: 4px;"
                             >
                               <div
-                                class="ant-select ant-select-sm ant-select-borderless basic-select-wrapper custom-select-namespace css-pti5z8 css-dev-only-do-not-override-v9sov3 ant-select-single ant-select-allow-clear ant-select-show-arrow"
+                                class="ant-select ant-select-sm ant-select-borderless basic-select-wrapper custom-select-namespace css-pti5z8 ant-select-single ant-select-allow-clear ant-select-show-arrow"
                               >
                                 <div
                                   class="ant-select-selector"
@@ -3879,7 +3879,7 @@ exports[`sqle/Rule should match snap shot 1`] = `
                               class="ant-space-item"
                             >
                               <div
-                                class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
+                                class="ant-space ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
                               >
                                 <div
                                   class="ant-space-item"
@@ -3907,7 +3907,7 @@ exports[`sqle/Rule should match snap shot 1`] = `
                       style="margin-right: 12px; padding-bottom: 12px;"
                     >
                       <div
-                        class="ant-select ant-select-sm ant-select-borderless basic-select-wrapper custom-select-namespace css-pti5z8 css-dev-only-do-not-override-v9sov3 ant-select-single ant-select-allow-clear ant-select-show-arrow"
+                        class="ant-select ant-select-sm ant-select-borderless basic-select-wrapper custom-select-namespace css-pti5z8 ant-select-single ant-select-allow-clear ant-select-show-arrow"
                       >
                         <div
                           class="ant-select-selector"
@@ -3965,7 +3965,7 @@ exports[`sqle/Rule should match snap shot 1`] = `
                       style="margin-right: 12px; padding-bottom: 12px;"
                     >
                       <div
-                        class="ant-select ant-select-sm ant-select-borderless basic-select-wrapper custom-select-namespace css-pti5z8 css-dev-only-do-not-override-v9sov3 ant-select-single ant-select-allow-clear ant-select-show-arrow"
+                        class="ant-select ant-select-sm ant-select-borderless basic-select-wrapper custom-select-namespace css-pti5z8 ant-select-single ant-select-allow-clear ant-select-show-arrow"
                       >
                         <div
                           class="ant-select-selector"
@@ -4023,7 +4023,7 @@ exports[`sqle/Rule should match snap shot 1`] = `
                       style="margin-right: 12px; padding-bottom: 12px;"
                     >
                       <div
-                        class="ant-select ant-select-sm ant-select-borderless basic-select-wrapper custom-select-namespace css-pti5z8 css-dev-only-do-not-override-v9sov3 ant-select-single ant-select-show-arrow"
+                        class="ant-select ant-select-sm ant-select-borderless basic-select-wrapper custom-select-namespace css-pti5z8 ant-select-single ant-select-show-arrow"
                       >
                         <div
                           class="ant-select-selector"
@@ -4081,7 +4081,7 @@ exports[`sqle/Rule should match snap shot 1`] = `
                       style="padding-bottom: 12px;"
                     >
                       <div
-                        class="ant-select ant-select-sm ant-select-borderless basic-select-wrapper custom-select-namespace css-pti5z8 css-dev-only-do-not-override-v9sov3 ant-select-single ant-select-show-arrow"
+                        class="ant-select ant-select-sm ant-select-borderless basic-select-wrapper custom-select-namespace css-pti5z8 ant-select-single ant-select-show-arrow"
                       >
                         <div
                           class="ant-select-selector"
@@ -4153,7 +4153,7 @@ exports[`sqle/Rule should match snap shot 1`] = `
                   style="height: auto; overflow: auto;"
                 >
                   <div
-                    class=" css-11zqvuw"
+                    class="css-11zqvuw"
                     style="cursor: pointer;"
                   >
                     <div
@@ -4180,17 +4180,17 @@ exports[`sqle/Rule should match snap shot 1`] = `
                       class="level-content"
                     >
                       <span
-                        class="ant-typography level-content-desc css-dev-only-do-not-override-txh9fw"
+                        class="ant-typography level-content-desc"
                       >
                         绑定的变量个数不建议超过阈值
                       </span>
                       <div
-                        class="ant-typography ant-typography-ellipsis ant-typography-single-line ant-typography-ellipsis-single-line level-content-annotation css-dev-only-do-not-override-txh9fw"
+                        class="ant-typography ant-typography-ellipsis ant-typography-single-line ant-typography-ellipsis-single-line level-content-annotation"
                       >
                         因为过度使用绑定变量会增加查询的复杂度，从而降低查询性能。过度使用绑定变量还会增加维护成本。默认阈值:100
                       </div>
                       <div
-                        class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center level-content-params"
+                        class="ant-space ant-space-horizontal ant-space-align-center level-content-params"
                         style="flex-wrap: wrap; margin-bottom: -8px;"
                       >
                         <div
@@ -4198,7 +4198,7 @@ exports[`sqle/Rule should match snap shot 1`] = `
                           style="margin-right: 8px; padding-bottom: 8px;"
                         >
                           <div
-                            class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center rule-param-tag css-x5diec"
+                            class="ant-space ant-space-horizontal ant-space-align-center rule-param-tag css-x5diec"
                           >
                             <div
                               class="ant-space-item"
@@ -4219,7 +4219,7 @@ exports[`sqle/Rule should match snap shot 1`] = `
                           style="margin-right: 8px; padding-bottom: 8px;"
                         >
                           <div
-                            class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center rule-category-audit_accuracy rule-category-tag-wrap css-x5diec"
+                            class="ant-space ant-space-horizontal ant-space-align-center rule-category-audit_accuracy rule-category-tag-wrap css-x5diec"
                           >
                             <div
                               class="ant-space-item"
@@ -4237,7 +4237,7 @@ exports[`sqle/Rule should match snap shot 1`] = `
                           style="margin-right: 8px; padding-bottom: 8px;"
                         >
                           <div
-                            class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center rule-category-sql rule-category-tag-wrap css-x5diec"
+                            class="ant-space ant-space-horizontal ant-space-align-center rule-category-sql rule-category-tag-wrap css-x5diec"
                           >
                             <div
                               class="ant-space-item"
@@ -4255,7 +4255,7 @@ exports[`sqle/Rule should match snap shot 1`] = `
                           style="margin-right: 8px; padding-bottom: 8px;"
                         >
                           <div
-                            class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center rule-category-operand rule-category-tag-wrap css-x5diec"
+                            class="ant-space ant-space-horizontal ant-space-align-center rule-category-operand rule-category-tag-wrap css-x5diec"
                           >
                             <div
                               class="ant-space-item"
@@ -4283,7 +4283,7 @@ exports[`sqle/Rule should match snap shot 1`] = `
                           style="margin-right: 8px; padding-bottom: 8px;"
                         >
                           <div
-                            class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center rule-category-audit_purpose rule-category-tag-wrap css-x5diec"
+                            class="ant-space ant-space-horizontal ant-space-align-center rule-category-audit_purpose rule-category-tag-wrap css-x5diec"
                           >
                             <div
                               class="ant-space-item"
@@ -4301,7 +4301,7 @@ exports[`sqle/Rule should match snap shot 1`] = `
                           style="margin-right: 8px; padding-bottom: 8px;"
                         >
                           <div
-                            class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center rule-category-performance_cost rule-category-tag-wrap css-x5diec"
+                            class="ant-space ant-space-horizontal ant-space-align-center rule-category-performance_cost rule-category-tag-wrap css-x5diec"
                           >
                             <div
                               class="ant-space-item"
@@ -4326,7 +4326,7 @@ exports[`sqle/Rule should match snap shot 1`] = `
                     </div>
                   </div>
                   <div
-                    class=" css-11zqvuw"
+                    class="css-11zqvuw"
                     style="cursor: pointer;"
                   >
                     <div
@@ -4353,17 +4353,17 @@ exports[`sqle/Rule should match snap shot 1`] = `
                       class="level-content"
                     >
                       <span
-                        class="ant-typography level-content-desc css-dev-only-do-not-override-txh9fw"
+                        class="ant-typography level-content-desc"
                       >
                         绑定的变量个数不建议超过阈值
                       </span>
                       <div
-                        class="ant-typography ant-typography-ellipsis ant-typography-single-line ant-typography-ellipsis-single-line level-content-annotation css-dev-only-do-not-override-txh9fw"
+                        class="ant-typography ant-typography-ellipsis ant-typography-single-line ant-typography-ellipsis-single-line level-content-annotation"
                       >
                         因为过度使用绑定变量会增加查询的复杂度，从而降低查询性能。过度使用绑定变量还会增加维护成本。默认阈值:100
                       </div>
                       <div
-                        class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center level-content-params"
+                        class="ant-space ant-space-horizontal ant-space-align-center level-content-params"
                         style="flex-wrap: wrap; margin-bottom: -8px;"
                       >
                         <div
@@ -4371,7 +4371,7 @@ exports[`sqle/Rule should match snap shot 1`] = `
                           style="margin-right: 8px; padding-bottom: 8px;"
                         >
                           <div
-                            class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center rule-param-tag css-x5diec"
+                            class="ant-space ant-space-horizontal ant-space-align-center rule-param-tag css-x5diec"
                           >
                             <div
                               class="ant-space-item"
@@ -4392,7 +4392,7 @@ exports[`sqle/Rule should match snap shot 1`] = `
                           style="margin-right: 8px; padding-bottom: 8px;"
                         >
                           <div
-                            class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center rule-category-audit_accuracy rule-category-tag-wrap css-x5diec"
+                            class="ant-space ant-space-horizontal ant-space-align-center rule-category-audit_accuracy rule-category-tag-wrap css-x5diec"
                           >
                             <div
                               class="ant-space-item"
@@ -4410,7 +4410,7 @@ exports[`sqle/Rule should match snap shot 1`] = `
                           style="margin-right: 8px; padding-bottom: 8px;"
                         >
                           <div
-                            class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center rule-category-sql rule-category-tag-wrap css-x5diec"
+                            class="ant-space ant-space-horizontal ant-space-align-center rule-category-sql rule-category-tag-wrap css-x5diec"
                           >
                             <div
                               class="ant-space-item"
@@ -4428,7 +4428,7 @@ exports[`sqle/Rule should match snap shot 1`] = `
                           style="margin-right: 8px; padding-bottom: 8px;"
                         >
                           <div
-                            class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center rule-category-operand rule-category-tag-wrap css-x5diec"
+                            class="ant-space ant-space-horizontal ant-space-align-center rule-category-operand rule-category-tag-wrap css-x5diec"
                           >
                             <div
                               class="ant-space-item"
@@ -4456,7 +4456,7 @@ exports[`sqle/Rule should match snap shot 1`] = `
                           style="margin-right: 8px; padding-bottom: 8px;"
                         >
                           <div
-                            class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center rule-category-audit_purpose rule-category-tag-wrap css-x5diec"
+                            class="ant-space ant-space-horizontal ant-space-align-center rule-category-audit_purpose rule-category-tag-wrap css-x5diec"
                           >
                             <div
                               class="ant-space-item"
@@ -4474,7 +4474,7 @@ exports[`sqle/Rule should match snap shot 1`] = `
                           style="margin-right: 8px; padding-bottom: 8px;"
                         >
                           <div
-                            class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center rule-audit-tag css-x5diec"
+                            class="ant-space ant-space-horizontal ant-space-align-center rule-audit-tag css-x5diec"
                           >
                             <div
                               class="ant-space-item"
@@ -4488,7 +4488,7 @@ exports[`sqle/Rule should match snap shot 1`] = `
                           style="padding-bottom: 8px;"
                         >
                           <div
-                            class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center rule-rewrite-tag css-x5diec"
+                            class="ant-space ant-space-horizontal ant-space-align-center rule-rewrite-tag css-x5diec"
                           >
                             <div
                               class="ant-space-item"

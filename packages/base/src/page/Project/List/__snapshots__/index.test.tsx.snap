@@ -3,16 +3,16 @@
 exports[`test base/project/list should be get data from the request to render the table 1`] = `
 <div>
   <div
-    class="ant-table-wrapper actiontech-table-namespace css-fxd6ka css-dev-only-do-not-override-bj9uhl"
+    class="ant-table-wrapper actiontech-table-namespace css-fxd6ka"
   >
     <div
-      class="ant-spin-nested-loading css-dev-only-do-not-override-bj9uhl"
+      class="ant-spin-nested-loading"
     >
       <div>
         <div
           aria-busy="true"
           aria-live="polite"
-          class="ant-spin ant-spin-spinning css-dev-only-do-not-override-bj9uhl"
+          class="ant-spin ant-spin-spinning"
         >
           <span
             class="ant-spin-dot ant-spin-dot-spin"
@@ -74,7 +74,7 @@ exports[`test base/project/list should be get data from the request to render th
                       class="ant-table-cell"
                       scope="col"
                     >
-                      可用业务
+                      所属业务
                     </th>
                     <th
                       class="ant-table-cell ellipsis-column-width ant-table-cell-ellipsis"
@@ -226,10 +226,10 @@ exports[`test base/project/list should be get data from the request to render th
 exports[`test base/project/list should be get data from the request to render the table 2`] = `
 <div>
   <div
-    class="ant-table-wrapper actiontech-table-namespace css-fxd6ka css-dev-only-do-not-override-bj9uhl"
+    class="ant-table-wrapper actiontech-table-namespace css-fxd6ka"
   >
     <div
-      class="ant-spin-nested-loading css-dev-only-do-not-override-bj9uhl"
+      class="ant-spin-nested-loading"
     >
       <div
         class="ant-spin-container"
@@ -273,7 +273,7 @@ exports[`test base/project/list should be get data from the request to render th
                       class="ant-table-cell"
                       scope="col"
                     >
-                      可用业务
+                      所属业务
                     </th>
                     <th
                       class="ant-table-cell ellipsis-column-width ant-table-cell-ellipsis"
@@ -421,11 +421,11 @@ exports[`test base/project/list should be get data from the request to render th
                     >
                       <div
                         aria-label="test project 1 desc"
-                        class="ant-typography ant-typography-ellipsis ant-typography-single-line basic-typography-ellipsis css-wgj5gs css-dev-only-do-not-override-bj9uhl"
+                        class="ant-typography ant-typography-ellipsis ant-typography-single-line basic-typography-ellipsis css-wgj5gs"
                       >
                         test project 1 desc
                         <div
-                          aria-label="Copy"
+                          aria-label="复制"
                           class="ant-typography-copy"
                           role="button"
                           style="border: 0px; background: transparent; padding: 0px; line-height: inherit; display: inline-block;"
@@ -467,7 +467,7 @@ exports[`test base/project/list should be get data from the request to render th
                             ...
                           </span>
                           <div
-                            aria-label="Copy"
+                            aria-label="复制"
                             class="ant-typography-copy"
                             role="button"
                             style="border: 0px; background: transparent; padding: 0px; line-height: inherit; display: inline-block;"
@@ -542,14 +542,14 @@ exports[`test base/project/list should be get data from the request to render th
                         class="css-new95e"
                       >
                         <div
-                          class="ant-space css-dev-only-do-not-override-bj9uhl ant-space-horizontal ant-space-align-center"
+                          class="ant-space ant-space-horizontal ant-space-align-center"
                         >
                           <div
                             class="ant-space-item"
                             style="margin-right: 8px;"
                           >
                             <button
-                              class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                              class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
                               disabled=""
                               type="button"
                             >
@@ -563,7 +563,7 @@ exports[`test base/project/list should be get data from the request to render th
                             style="margin-right: 8px;"
                           >
                             <button
-                              class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm ant-btn-dangerous actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                              class="ant-btn ant-btn-default ant-btn-sm ant-btn-dangerous actiontech-table-actions-button basic-button-wrapper css-geipcv"
                               disabled=""
                               type="button"
                             >
@@ -576,7 +576,7 @@ exports[`test base/project/list should be get data from the request to render th
                             class="ant-space-item"
                           >
                             <button
-                              class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                              class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
                               type="button"
                             >
                               <span>
@@ -604,31 +604,22 @@ exports[`test base/project/list should be get data from the request to render th
                     <td
                       class="ant-table-cell"
                     >
-                      <div
-                        class="ant-space css-dev-only-do-not-override-bj9uhl ant-space-horizontal ant-space-align-center"
+                      <span
+                        class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-1wks1o6"
                       >
-                        <div
-                          class="ant-space-item"
-                        >
-                          <span
-                            class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-1mjwlcb css-dev-only-do-not-override-bj9uhl"
-                            style="margin-right: 0px;"
-                          >
-                            business1
-                          </span>
-                        </div>
-                      </div>
+                        business1
+                      </span>
                     </td>
                     <td
                       class="ant-table-cell ellipsis-column-width ant-table-cell-ellipsis"
                     >
                       <div
                         aria-label="test project 2 desc"
-                        class="ant-typography ant-typography-ellipsis ant-typography-single-line basic-typography-ellipsis css-wgj5gs css-dev-only-do-not-override-bj9uhl"
+                        class="ant-typography ant-typography-ellipsis ant-typography-single-line basic-typography-ellipsis css-wgj5gs"
                       >
                         test project 2 desc
                         <div
-                          aria-label="Copy"
+                          aria-label="复制"
                           class="ant-typography-copy"
                           role="button"
                           style="border: 0px; background: transparent; padding: 0px; line-height: inherit; display: inline-block;"
@@ -670,7 +661,7 @@ exports[`test base/project/list should be get data from the request to render th
                             ...
                           </span>
                           <div
-                            aria-label="Copy"
+                            aria-label="复制"
                             class="ant-typography-copy"
                             role="button"
                             style="border: 0px; background: transparent; padding: 0px; line-height: inherit; display: inline-block;"
@@ -746,14 +737,14 @@ exports[`test base/project/list should be get data from the request to render th
                         class="css-new95e"
                       >
                         <div
-                          class="ant-space css-dev-only-do-not-override-bj9uhl ant-space-horizontal ant-space-align-center"
+                          class="ant-space ant-space-horizontal ant-space-align-center"
                         >
                           <div
                             class="ant-space-item"
                             style="margin-right: 8px;"
                           >
                             <button
-                              class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                              class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
                               type="button"
                             >
                               <span>
@@ -766,7 +757,7 @@ exports[`test base/project/list should be get data from the request to render th
                             style="margin-right: 8px;"
                           >
                             <button
-                              class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm ant-btn-dangerous actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                              class="ant-btn ant-btn-default ant-btn-sm ant-btn-dangerous actiontech-table-actions-button basic-button-wrapper css-geipcv"
                               type="button"
                             >
                               <span>
@@ -778,7 +769,7 @@ exports[`test base/project/list should be get data from the request to render th
                             class="ant-space-item"
                           >
                             <button
-                              class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                              class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
                               type="button"
                             >
                               <span>
@@ -806,45 +797,22 @@ exports[`test base/project/list should be get data from the request to render th
                     <td
                       class="ant-table-cell"
                     >
-                      <div
-                        class="ant-space css-dev-only-do-not-override-bj9uhl ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
+                      <span
+                        class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-1wks1o6"
                       >
-                        <div
-                          class="ant-space-item"
-                        >
-                          <div
-                            class="ant-space css-dev-only-do-not-override-bj9uhl ant-space-horizontal ant-space-align-center"
-                          >
-                            <div
-                              class="ant-space-item"
-                              style="margin-right: 8px;"
-                            >
-                              <span
-                                class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-1mjwlcb css-dev-only-do-not-override-bj9uhl"
-                                style="margin-right: 0px;"
-                              >
-                                business1
-                              </span>
-                            </div>
-                            <div
-                              class="ant-space-item"
-                            >
-                              ...
-                            </div>
-                          </div>
-                        </div>
-                      </div>
+                        business2
+                      </span>
                     </td>
                     <td
                       class="ant-table-cell ellipsis-column-width ant-table-cell-ellipsis"
                     >
                       <div
                         aria-label="test project 3 desc"
-                        class="ant-typography ant-typography-ellipsis ant-typography-single-line basic-typography-ellipsis css-wgj5gs css-dev-only-do-not-override-bj9uhl"
+                        class="ant-typography ant-typography-ellipsis ant-typography-single-line basic-typography-ellipsis css-wgj5gs"
                       >
                         test project 3 desc
                         <div
-                          aria-label="Copy"
+                          aria-label="复制"
                           class="ant-typography-copy"
                           role="button"
                           style="border: 0px; background: transparent; padding: 0px; line-height: inherit; display: inline-block;"
@@ -886,7 +854,7 @@ exports[`test base/project/list should be get data from the request to render th
                             ...
                           </span>
                           <div
-                            aria-label="Copy"
+                            aria-label="复制"
                             class="ant-typography-copy"
                             role="button"
                             style="border: 0px; background: transparent; padding: 0px; line-height: inherit; display: inline-block;"
@@ -961,14 +929,14 @@ exports[`test base/project/list should be get data from the request to render th
                         class="css-new95e"
                       >
                         <div
-                          class="ant-space css-dev-only-do-not-override-bj9uhl ant-space-horizontal ant-space-align-center"
+                          class="ant-space ant-space-horizontal ant-space-align-center"
                         >
                           <div
                             class="ant-space-item"
                             style="margin-right: 8px;"
                           >
                             <button
-                              class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                              class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
                               disabled=""
                               type="button"
                             >
@@ -982,7 +950,7 @@ exports[`test base/project/list should be get data from the request to render th
                             style="margin-right: 8px;"
                           >
                             <button
-                              class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm ant-btn-dangerous actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                              class="ant-btn ant-btn-default ant-btn-sm ant-btn-dangerous actiontech-table-actions-button basic-button-wrapper css-geipcv"
                               disabled=""
                               type="button"
                             >
@@ -995,7 +963,7 @@ exports[`test base/project/list should be get data from the request to render th
                             class="ant-space-item"
                           >
                             <button
-                              class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                              class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
                               type="button"
                             >
                               <span>
@@ -1013,7 +981,7 @@ exports[`test base/project/list should be get data from the request to render th
           </div>
         </div>
         <ul
-          class="ant-pagination ant-table-pagination ant-table-pagination-right actiontech-table-pagination actiontech-table-pagination-fixed css-dev-only-do-not-override-bj9uhl"
+          class="ant-pagination ant-table-pagination ant-table-pagination-right actiontech-table-pagination actiontech-table-pagination-fixed"
         >
           <li
             class="ant-pagination-total-text"
@@ -1025,7 +993,7 @@ exports[`test base/project/list should be get data from the request to render th
           <li
             aria-disabled="true"
             class="ant-pagination-prev ant-pagination-disabled"
-            title="Previous Page"
+            title="上一页"
           >
             <button
               class="ant-pagination-item-link"
@@ -1068,7 +1036,7 @@ exports[`test base/project/list should be get data from the request to render th
           <li
             aria-disabled="true"
             class="ant-pagination-next ant-pagination-disabled"
-            title="Next Page"
+            title="下一页"
           >
             <button
               class="ant-pagination-item-link"
@@ -1101,8 +1069,8 @@ exports[`test base/project/list should be get data from the request to render th
             class="ant-pagination-options"
           >
             <div
-              aria-label="Page Size"
-              class="ant-select ant-pagination-options-size-changer css-dev-only-do-not-override-bj9uhl ant-select-single ant-select-show-arrow ant-select-show-search"
+              aria-label="页码"
+              class="ant-select ant-pagination-options-size-changer ant-select-single ant-select-show-arrow ant-select-show-search"
             >
               <div
                 class="ant-select-selector"
@@ -1116,7 +1084,7 @@ exports[`test base/project/list should be get data from the request to render th
                     aria-controls="rc_select_TEST_OR_SSR_list"
                     aria-expanded="false"
                     aria-haspopup="listbox"
-                    aria-label="Page Size"
+                    aria-label="页码"
                     aria-owns="rc_select_TEST_OR_SSR_list"
                     autocomplete="off"
                     class="ant-select-selection-search-input"
@@ -1128,9 +1096,9 @@ exports[`test base/project/list should be get data from the request to render th
                 </span>
                 <span
                   class="ant-select-selection-item"
-                  title="20 / page"
+                  title="20 条/页"
                 >
-                  20 / page
+                  20 条/页
                 </span>
               </div>
               <span

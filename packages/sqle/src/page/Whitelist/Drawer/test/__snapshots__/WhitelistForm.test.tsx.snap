@@ -5,16 +5,16 @@ exports[`sqle/Whitelist/WhitelistForm should match snapshot 1`] = `
   <div />
   <div>
     <form
-      class="ant-form ant-form-vertical css-dev-only-do-not-override-txh9fw"
+      class="ant-form ant-form-vertical"
     >
       <div
-        class="ant-form-item css-dev-only-do-not-override-txh9fw"
+        class="ant-form-item"
       >
         <div
-          class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+          class="ant-row ant-form-item-row"
         >
           <div
-            class="ant-col ant-col-24 ant-form-item-label css-dev-only-do-not-override-txh9fw"
+            class="ant-col ant-col-24 ant-form-item-label"
           >
             <label
               class=""
@@ -25,7 +25,7 @@ exports[`sqle/Whitelist/WhitelistForm should match snapshot 1`] = `
             </label>
           </div>
           <div
-            class="ant-col ant-col-24 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+            class="ant-col ant-col-24 ant-form-item-control"
           >
             <div
               class="ant-form-item-control-input"
@@ -34,11 +34,11 @@ exports[`sqle/Whitelist/WhitelistForm should match snapshot 1`] = `
                 class="ant-form-item-control-input-content"
               >
                 <div
-                  class="ant-radio-group ant-radio-group-outline css-dev-only-do-not-override-txh9fw"
+                  class="ant-radio-group ant-radio-group-outline"
                   id="matchType"
                 >
                   <label
-                    class="ant-radio-wrapper ant-radio-wrapper-checked ant-radio-wrapper-in-form-item css-dev-only-do-not-override-txh9fw"
+                    class="ant-radio-wrapper ant-radio-wrapper-checked ant-radio-wrapper-in-form-item"
                   >
                     <span
                       class="ant-radio ant-radio-checked"
@@ -58,7 +58,7 @@ exports[`sqle/Whitelist/WhitelistForm should match snapshot 1`] = `
                     </span>
                   </label>
                   <label
-                    class="ant-radio-wrapper ant-radio-wrapper-in-form-item css-dev-only-do-not-override-txh9fw"
+                    class="ant-radio-wrapper ant-radio-wrapper-in-form-item"
                   >
                     <span
                       class="ant-radio"
@@ -83,13 +83,13 @@ exports[`sqle/Whitelist/WhitelistForm should match snapshot 1`] = `
         </div>
       </div>
       <div
-        class="ant-form-item css-dev-only-do-not-override-txh9fw"
+        class="ant-form-item"
       >
         <div
-          class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+          class="ant-row ant-form-item-row"
         >
           <div
-            class="ant-col ant-col-24 ant-form-item-label css-dev-only-do-not-override-txh9fw"
+            class="ant-col ant-col-24 ant-form-item-label"
           >
             <label
               class=""
@@ -100,7 +100,7 @@ exports[`sqle/Whitelist/WhitelistForm should match snapshot 1`] = `
             </label>
           </div>
           <div
-            class="ant-col ant-col-24 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+            class="ant-col ant-col-24 ant-form-item-control"
           >
             <div
               class="ant-form-item-control-input"
@@ -109,7 +109,7 @@ exports[`sqle/Whitelist/WhitelistForm should match snapshot 1`] = `
                 class="ant-form-item-control-input-content"
               >
                 <textarea
-                  class="ant-input css-dev-only-do-not-override-txh9fw basic-input-wrapper textarea-no-resize css-1pd1cd5"
+                  class="ant-input basic-input-wrapper textarea-no-resize css-1pd1cd5"
                   id="desc"
                   placeholder="请输入{{name}}"
                   style="resize: none; height: -70px; min-height: -14px; max-height: -70px;"
@@ -120,13 +120,13 @@ exports[`sqle/Whitelist/WhitelistForm should match snapshot 1`] = `
         </div>
       </div>
       <div
-        class="ant-form-item css-dev-only-do-not-override-txh9fw"
+        class="ant-form-item"
       >
         <div
-          class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+          class="ant-row ant-form-item-row"
         >
           <div
-            class="ant-col ant-col-24 ant-form-item-label css-dev-only-do-not-override-txh9fw"
+            class="ant-col ant-col-24 ant-form-item-label"
           >
             <label
               class="ant-form-item-required"
@@ -137,7 +137,7 @@ exports[`sqle/Whitelist/WhitelistForm should match snapshot 1`] = `
             </label>
           </div>
           <div
-            class="ant-col ant-col-24 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+            class="ant-col ant-col-24 ant-form-item-control"
           >
             <div
               class="ant-form-item-control-input"

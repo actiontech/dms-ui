@@ -80,6 +80,16 @@ export const PERMISSION_MANIFEST: Record<
     type: 'page',
     moduleSupport: [SystemModuleSupported.knowledge]
   },
+  [PERMISSIONS.PAGES.BASE.RESOURCE_OVERVIEW]: {
+    id: PERMISSIONS.PAGES.BASE.RESOURCE_OVERVIEW,
+    type: 'page',
+    role: [
+      SystemRole.admin,
+      SystemRole.globalManager,
+      SystemRole.globalViewing,
+      SystemRole.certainProjectManager
+    ]
+  },
   // action
 
   //cloud beaver
@@ -865,6 +875,25 @@ export const PERMISSION_MANIFEST: Record<
     type: 'action',
     projectManager: true,
     role: [SystemRole.admin, SystemRole.globalManager]
+  },
+  [PERMISSIONS.ACTIONS.BASE.PROJECT_MANAGER.GLOBAL_RESOURCE_OVERVIEW]: {
+    id: PERMISSIONS.ACTIONS.BASE.PROJECT_MANAGER.GLOBAL_RESOURCE_OVERVIEW,
+    type: 'action',
+    role: [
+      SystemRole.admin,
+      SystemRole.globalManager,
+      SystemRole.globalViewing,
+      SystemRole.certainProjectManager
+    ]
+  },
+  [PERMISSIONS.ACTIONS.BASE.RESOURCE_OVERVIEW.EXPORT]: {
+    id: PERMISSIONS.ACTIONS.BASE.RESOURCE_OVERVIEW.EXPORT,
+    type: 'action',
+    role: [
+      SystemRole.admin,
+      SystemRole.globalManager,
+      SystemRole.certainProjectManager
+    ]
   },
 
   // 版本管理

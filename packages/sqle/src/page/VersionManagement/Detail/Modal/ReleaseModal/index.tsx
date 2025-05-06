@@ -23,7 +23,7 @@ import { DrawerFormLayout } from '@actiontech/shared/lib/data/common';
 import { RingPieFilled } from '@actiontech/icons';
 import useInstance from '../../../../../hooks/useInstance';
 import { useCurrentProject } from '@actiontech/shared/lib/features';
-import { getInstanceTipListV1FunctionalModuleEnum } from '@actiontech/shared/lib/api/sqle/service/instance/index.enum';
+import { getInstanceTipListV2FunctionalModuleEnum } from '@actiontech/shared/lib/api/sqle/service/instance/index.enum';
 import { ReleaseModalFormStyleWrapper } from '../../style';
 import DataSourceField from './DataSourceField';
 import { ReleaseWorkflowFormType } from '../../index.type';
@@ -177,7 +177,7 @@ const ReleaseModal: React.FC = () => {
     updateInstanceList({
       project_name: projectName,
       functional_module:
-        getInstanceTipListV1FunctionalModuleEnum.create_workflow
+        getInstanceTipListV2FunctionalModuleEnum.create_workflow
     });
   }, [updateInstanceList, projectName]);
 
