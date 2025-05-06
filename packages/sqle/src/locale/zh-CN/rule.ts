@@ -13,6 +13,8 @@ export default {
   disableRules: '模板{{name}}禁用的规则',
   globalRuleTemplate: '全局规则模板',
   projectRuleTemplate: '项目规则模板',
+  noDbType: '暂无数据库类型',
+  ruleCount: '{{count}}条规则',
   form: {
     project: '项目',
     ruleTemplate: '规则模板',
@@ -21,6 +23,12 @@ export default {
       '当未选择项目时, 当前规则模板为全局规则模板, 选择后为项目下的规则模板',
     fuzzy_text_placeholder: '请输入规则关键词搜索',
     ruleVersion: '规则版本'
+  },
+  filter: {
+    pleaseSelect: '请选择',
+    reset: '重置',
+    search: '搜索',
+    filterCondition: '筛选条件'
   },
   ruleLevelIcon: {
     normal: '普通',

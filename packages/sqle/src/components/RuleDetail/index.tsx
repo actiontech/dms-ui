@@ -4,13 +4,14 @@ import { useMemo } from 'react';
 import { useBack } from '@actiontech/shared/lib/hooks';
 import { useCurrentProject } from '@actiontech/shared/lib/features';
 import rule_template from '@actiontech/shared/lib/api/sqle/service/rule_template';
-import { Spin } from 'antd';
+import { Space, Spin } from 'antd';
 import {
   PageHeader,
   BasicButton,
   BasicResult,
   EmptyBox,
-  useTypedParams
+  useTypedParams,
+  BasicTag
 } from '@actiontech/shared';
 import { RuleStatus, RuleList } from '../RuleList';
 import useRuleList from '../RuleList/useRuleList';
@@ -27,6 +28,7 @@ import {
 import useThemeStyleData from '../../hooks/useThemeStyleData';
 import { ROUTE_PATHS } from '@actiontech/shared/lib/data/routePaths';
 import { RuleFilter, useRuleFilterForm } from '../RuleList';
+import { RuleStatusEnum } from '../RuleList/index.type';
 
 const RuleDetail = () => {
   const { t } = useTranslation();
@@ -131,6 +133,10 @@ const RuleDetail = () => {
     return globalTemplateRules;
   }, [projectRuleData, globalTemplateRules, projectName]);
 
+  const templateRulesWithStatus = useMemo(() => {
+    return getCurrentStatusRules(allRules, ruleData, templateName);
+  }, [allRules, getCurrentStatusRules, ruleData, templateName]);
+
   return (
     <RuleTemplateDetailStyleWrapper>
       <PageHeader
@@ -186,6 +192,21 @@ const RuleDetail = () => {
                 <RuleStatus
                   currentRuleStatus={ruleStatus}
                   ruleStatusChange={setRuleStatus}
+                  options={{
+                    renderLabel(label, status) {
+                      return (
+                        <Space>
+                          <span>{label}</span>
+                          <span>
+                            {status === RuleStatusEnum.disabled
+                              ? (allRules ?? []).length -
+                                (ruleData ?? []).length
+                              : (ruleData ?? []).length}
+                          </span>
+                        </Space>
+                      );
+                    }
+                  }}
                 />
               </section>
             </section>
@@ -193,7 +214,7 @@ const RuleDetail = () => {
           <RuleFilter form={form} />
           <RuleList
             pageHeaderHeight={122}
-            rules={getCurrentStatusRules(allRules, ruleData, templateName)}
+            rules={templateRulesWithStatus}
             enableCheckDetail
             tags={tags}
           />

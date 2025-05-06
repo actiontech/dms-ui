@@ -176,9 +176,26 @@ exports[`sqle/RuleTemplate/RuleTemplateDetail should match snap shot 1`] = `
                       />
                       <div
                         class="ant-segmented-item-label"
-                        title="已启用"
                       >
-                        已启用
+                        <div
+                          class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+                        >
+                          <div
+                            class="ant-space-item"
+                            style="margin-right: 8px;"
+                          >
+                            <span>
+                              已启用
+                            </span>
+                          </div>
+                          <div
+                            class="ant-space-item"
+                          >
+                            <span>
+                              1
+                            </span>
+                          </div>
+                        </div>
                       </div>
                     </label>
                     <label
@@ -190,9 +207,26 @@ exports[`sqle/RuleTemplate/RuleTemplateDetail should match snap shot 1`] = `
                       />
                       <div
                         class="ant-segmented-item-label"
-                        title="已禁用"
                       >
-                        已禁用
+                        <div
+                          class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+                        >
+                          <div
+                            class="ant-space-item"
+                            style="margin-right: 8px;"
+                          >
+                            <span>
+                              已禁用
+                            </span>
+                          </div>
+                          <div
+                            class="ant-space-item"
+                          >
+                            <span>
+                              -1
+                            </span>
+                          </div>
+                        </div>
                       </div>
                     </label>
                   </div>
@@ -201,7 +235,7 @@ exports[`sqle/RuleTemplate/RuleTemplateDetail should match snap shot 1`] = `
             </section>
           </section>
           <div
-            class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center full-width-element css-de5ds5"
+            class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center full-width-element flex-space-between css-de5ds5"
           >
             <div
               class="ant-space-item"

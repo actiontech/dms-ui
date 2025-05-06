@@ -4,6 +4,7 @@ import { mockUseDbServiceDriver } from '@actiontech/shared/lib/testUtil/mockHook
 import Rule from '.';
 import rule_template from '../../testUtils/mockApi/rule_template';
 import {
+  getAllBySelector,
   getBySelector,
   queryBySelector
 } from '@actiontech/shared/lib/testUtil/customQuery';
@@ -92,7 +93,6 @@ describe('sqle/Rule', () => {
         });
       })
     });
-    // useSearchParamsMock.mockReturnValue([new URLSearchParams()]);
     getRuleVersionTipsSpy = rule_template.mockGetDriverRuleVersionTips();
     getAllRulesSpy = rule_template.getRuleList();
     getGlobalTemplateListSpy = rule_template.getRuleTemplateTips();
@@ -121,7 +121,7 @@ describe('sqle/Rule', () => {
     cleanup();
   });
 
-  it('should match snap shot', async () => {
+  it('should render Rule component correctly and match snapshot', async () => {
     const { baseElement } = superRender(<Rule />);
     await act(async () => jest.advanceTimersByTime(3000));
     expect(getGlobalTemplateListSpy).toHaveBeenCalledTimes(1);
@@ -131,13 +131,13 @@ describe('sqle/Rule', () => {
     expect(getAllRulesSpy).toHaveBeenCalledTimes(1);
     expect(getAllRulesSpy).toHaveBeenNthCalledWith(1, {
       filter_db_type: 'MySQL',
-      filter_rule_version: undefined,
+      filter_rule_version: 1,
       fuzzy_keyword_rule: undefined,
       tags: undefined
     });
     expect(getCategoryStatisticsSpy).toHaveBeenCalledTimes(1);
     expect(screen.getByText('查看规则')).toBeInTheDocument();
-    expect(screen.getByText('MySQL')).toBeInTheDocument();
+    expect(screen.getAllByText('MySQL')[0]).toBeInTheDocument();
     const scrollList = getBySelector(
       '.infinite-scroll-component ',
       baseElement
@@ -151,7 +151,29 @@ describe('sqle/Rule', () => {
     ).toBeInTheDocument();
   });
 
-  it('request return no data', async () => {
+  it('should toggle filter visibility when clicking the toggle button', async () => {
+    const { baseElement } = superRender(<Rule />);
+    await act(async () => jest.advanceTimersByTime(3000));
+
+    // 筛选条件最初应该是隐藏的
+    const filterContainer = getBySelector(
+      '.rule-list-filter-wrapper',
+      baseElement
+    );
+    expect(filterContainer).toHaveAttribute('hidden');
+
+    fireEvent.click(screen.getByText('筛选条件'));
+    await act(async () => jest.advanceTimersByTime(300));
+    expect(filterContainer).not.toHaveAttribute('hidden');
+
+    fireEvent.click(screen.getByText('筛选条件'));
+    await act(async () => jest.advanceTimersByTime(300));
+    expect(filterContainer).toHaveAttribute('hidden');
+
+    expect(filterContainer).toBeInTheDocument();
+  });
+
+  it('should show empty state when request returns no data', async () => {
     getAllRulesSpy.mockClear();
     getAllRulesSpy.mockImplementation(() => createSpySuccessResponse({}));
     const { baseElement } = superRender(<Rule />);
@@ -159,7 +181,7 @@ describe('sqle/Rule', () => {
     expect(baseElement).toMatchSnapshot();
   });
 
-  it('filter list based on rule name', async () => {
+  it('should filter list based on rule name correctly', async () => {
     const { baseElement } = superRender(<Rule />);
     await act(async () => jest.advanceTimersByTime(3000));
     expect(getGlobalTemplateListSpy).toHaveBeenCalledTimes(1);
@@ -185,7 +207,8 @@ describe('sqle/Rule', () => {
     expect(getAllRulesSpy).toHaveBeenCalledTimes(2);
     expect(getAllRulesSpy).toHaveBeenNthCalledWith(2, {
       filter_db_type: 'MySQL',
-      fuzzy_keyword_rule: 'test'
+      fuzzy_keyword_rule: 'test',
+      filter_rule_version: 1
     });
 
     fireEvent.mouseDown(getBySelector('#filter_rule_version', baseElement));
@@ -236,7 +259,7 @@ describe('sqle/Rule', () => {
     });
   });
 
-  it('filter list based on project name', async () => {
+  it('should filter list based on project name correctly', async () => {
     mockUsePermission(
       {
         moduleFeatureSupport: {
@@ -326,7 +349,7 @@ describe('sqle/Rule', () => {
     expect(screen.queryByText('已禁用')).not.toBeInTheDocument();
   });
 
-  it('filter list based on template name', async () => {
+  it('should filter list based on template name correctly', async () => {
     const { baseElement } = superRender(<Rule />);
     await act(async () => jest.advanceTimersByTime(3000));
     expect(getGlobalTemplateListSpy).toHaveBeenCalledTimes(1);
@@ -357,7 +380,7 @@ describe('sqle/Rule', () => {
     expect(screen.queryByText('已禁用')).not.toBeInTheDocument();
   });
 
-  it('filter list based on database type', async () => {
+  it('should filter list based on database type correctly', async () => {
     const { baseElement } = superRender(<Rule />);
     await act(async () => jest.advanceTimersByTime(3000));
     expect(getGlobalTemplateListSpy).toHaveBeenCalledTimes(1);
@@ -374,7 +397,7 @@ describe('sqle/Rule', () => {
     });
   });
 
-  it('filter list by rule category', async () => {
+  it('should filter list by rule category correctly', async () => {
     superRender(<Rule />);
     await act(async () => jest.advanceTimersByTime(3000));
     expect(getGlobalTemplateListSpy).toHaveBeenCalledTimes(1);
@@ -387,7 +410,8 @@ describe('sqle/Rule', () => {
     await act(async () => jest.advanceTimersByTime(3000));
     expect(getAllRulesSpy).toHaveBeenNthCalledWith(2, {
       tags: 'column',
-      filter_db_type: 'MySQL'
+      filter_db_type: 'MySQL',
+      filter_rule_version: 1
     });
 
     fireEvent.mouseDown(getBySelector('#audit_purpose'));
@@ -396,7 +420,8 @@ describe('sqle/Rule', () => {
     await act(async () => jest.advanceTimersByTime(3000));
     expect(getAllRulesSpy).toHaveBeenNthCalledWith(3, {
       tags: 'column,correction',
-      filter_db_type: 'MySQL'
+      filter_db_type: 'MySQL',
+      filter_rule_version: 1
     });
 
     fireEvent.mouseDown(getBySelector('#sql'));
@@ -405,7 +430,8 @@ describe('sqle/Rule', () => {
     await act(async () => jest.advanceTimersByTime(3000));
     expect(getAllRulesSpy).toHaveBeenNthCalledWith(4, {
       tags: 'column,correction,dcl',
-      filter_db_type: 'MySQL'
+      filter_db_type: 'MySQL',
+      filter_rule_version: 1
     });
 
     fireEvent.mouseDown(getBySelector('#audit_accuracy'));
@@ -414,7 +440,8 @@ describe('sqle/Rule', () => {
     await act(async () => jest.advanceTimersByTime(3000));
     expect(getAllRulesSpy).toHaveBeenNthCalledWith(5, {
       tags: 'column,correction,offline,dcl',
-      filter_db_type: 'MySQL'
+      filter_db_type: 'MySQL',
+      filter_rule_version: 1
     });
 
     fireEvent.mouseDown(getBySelector('#performance_cost'));
@@ -423,11 +450,12 @@ describe('sqle/Rule', () => {
     await act(async () => jest.advanceTimersByTime(3000));
     expect(getAllRulesSpy).toHaveBeenNthCalledWith(6, {
       tags: 'column,correction,offline,dcl,high',
-      filter_db_type: 'MySQL'
+      filter_db_type: 'MySQL',
+      filter_rule_version: 1
     });
   });
 
-  it('should hide empty list tips', async () => {
+  it('should hide empty list tips for archived projects', async () => {
     mockUsePermission(
       {
         moduleFeatureSupport: {
@@ -473,7 +501,7 @@ describe('sqle/Rule', () => {
     expect(baseElement).toMatchSnapshot();
   });
 
-  it('request with url params', async () => {
+  it('should handle URL parameters correctly and load appropriate project data', async () => {
     superRender(<Rule />, undefined, {
       routerProps: { initialEntries: ['/rule?projectID=1'] }
     });
@@ -487,7 +515,7 @@ describe('sqle/Rule', () => {
       rule_template_name: 'default_MySQL',
       fuzzy_keyword_rule: undefined
     });
-    expect(getAllRulesSpy).toHaveBeenCalledTimes(2);
+    expect(getAllRulesSpy).toHaveBeenCalledTimes(3);
     expect(screen.getByText('default')).toBeInTheDocument();
     expect(screen.getByText('default_MySQL')).toBeInTheDocument();
   });

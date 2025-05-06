@@ -6,7 +6,7 @@ import { RuleFilterCustomInputStyleWrapper } from '../../style';
 const CustomSearchInput: React.FC<
   {
     onChange?: (string?: string) => void;
-  } & InputProps
+  } & Omit<InputProps, 'onChange'>
 > = ({ onChange, ...otherProps }) => {
   const [value, setValue] = useState<string>('');
 
