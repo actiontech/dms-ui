@@ -140,7 +140,7 @@ describe('AvailabilityZoneSelector', () => {
     expect(
       screen.getByText('切换可用区将重新加载数据，是否确认？')
     ).toBeInTheDocument();
-    const okButton = screen.getByText('OK');
+    const okButton = screen.getByText('确 定');
     fireEvent.click(okButton);
 
     await act(async () => jest.advanceTimersByTime(0));
@@ -173,7 +173,7 @@ describe('AvailabilityZoneSelector', () => {
     expect(
       screen.queryByText('切换可用区将重新加载数据，是否确认？')
     ).not.toBeInTheDocument();
-    expect(screen.queryByText('OK')).not.toBeInTheDocument();
+    expect(screen.queryByText('确 定')).not.toBeInTheDocument();
 
     expect(
       mockUseRecentlySelectedZoneData.updateRecentlySelectedZone
