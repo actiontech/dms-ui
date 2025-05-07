@@ -244,6 +244,11 @@ export const PERMISSIONS = {
       SQL_AUDIT: {
         CREATE: 'action:create_sql_audit'
       }
+    },
+    PROVISION: {
+      DATABASE_ROLE: {
+        CREATE: 'action:create_db_auth_role'
+      }
     }
   }
 } as const;

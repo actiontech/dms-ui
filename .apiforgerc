@@ -17,6 +17,15 @@
       "swaggerOutput": "",
       "plugin": "simple-cleaner, ./scripts/api/plugin.js",
       "template": "complex"
+    },
+    "provision-ui": {
+      "project": "provision-ui",
+      "output": "packages/shared/lib/api/provision/service",
+      "branch": "main",
+      "swaggerPath": "",
+      "swaggerOutput": "",
+      "plugin": "./scripts/api/plugin.js",
+      "template": "complex"
     }
   },
   "mocks": {

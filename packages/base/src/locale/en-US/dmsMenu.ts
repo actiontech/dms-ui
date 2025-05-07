@@ -27,6 +27,8 @@ export default {
   dataExportManagement: 'Data export',
   sqlManagementConf: 'Configuration',
   pushRuleConfiguration: 'Notification',
+  monitorSourceConfig: '监控源配置',
+  diagnosisList: '巡检列表',
   pipelineConfiguration: 'CI/CD pipeline',
   versionManagement: 'Version management',
 
