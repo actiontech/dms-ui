@@ -59,7 +59,7 @@ exports[`test base/page/project should match snapshot 1`] = `
                 href="/availability-zone"
               >
                 <button
-                  class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default basic-button-wrapper css-geipcv"
+                  class="ant-btn ant-btn-default basic-button-wrapper css-geipcv"
                   type="button"
                 >
                   <span>
@@ -429,7 +429,7 @@ exports[`test base/page/project should match snapshot 2`] = `
                 href="/availability-zone"
               >
                 <button
-                  class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default basic-button-wrapper css-geipcv"
+                  class="ant-btn ant-btn-default basic-button-wrapper css-geipcv"
                   type="button"
                 >
                   <span>
