@@ -7,7 +7,13 @@ import { InfoCircleOutlined } from '@actiontech/icons';
 import { BasicToolTip } from '@actiontech/shared';
 import { RuleFilterCommonFieldSelectStyleWrapper } from '../../style';
 
-const RuleFilterCommonFields = () => {
+type Props = {
+  withoutFuzzyKeywordFilterItem?: boolean;
+};
+
+const RuleFilterCommonFields: React.FC<Props> = ({
+  withoutFuzzyKeywordFilterItem = false
+}) => {
   const { t } = useTranslation();
 
   const {
@@ -21,12 +27,14 @@ const RuleFilterCommonFields = () => {
 
   return (
     <Space size={12}>
-      <Form.Item noStyle name="fuzzy_keyword">
-        <CustomSearchInput
-          placeholder={t('rule.form.fuzzy_text_placeholder')}
-          allowClear
-        />
-      </Form.Item>
+      {!withoutFuzzyKeywordFilterItem && (
+        <Form.Item noStyle name="fuzzy_keyword">
+          <CustomSearchInput
+            placeholder={t('rule.form.fuzzy_text_placeholder')}
+            allowClear
+          />
+        </Form.Item>
+      )}
       <Form.Item noStyle name="operand">
         <CustomSelect
           prefix={t('rule.category.operand')}

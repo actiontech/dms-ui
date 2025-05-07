@@ -179,24 +179,16 @@ describe('sqle/GlobalRuleTemplate/CreateRuleTemplate', () => {
     await act(async () => jest.advanceTimersByTime(100));
     expect(screen.getByText('暂无更多规则')).toBeInTheDocument();
     expect(screen.getByText('禁用全部规则').parentElement).toBeDisabled();
-    fireEvent.click(
-      getBySelector(
-        'div[title="已禁用"]',
-        getBySelector('.basic-segmented-wrapper')
-      )
-    );
+    fireEvent.click(screen.getByText('已禁用'));
     await act(async () => jest.advanceTimersByTime(100));
     fireEvent.click(screen.getByText('启用所有规则'));
     await act(async () => jest.advanceTimersByTime(100));
     expect(screen.getByText('暂无更多规则')).toBeInTheDocument();
     expect(screen.getByText('启用所有规则').parentElement).toBeDisabled();
     await act(async () => jest.advanceTimersByTime(100));
-    fireEvent.click(
-      getBySelector(
-        'div[title="已启用"]',
-        getBySelector('.basic-segmented-wrapper')
-      )
-    );
+
+    fireEvent.click(screen.getByText('已启用'));
+
     await act(async () => jest.advanceTimersByTime(100));
     expect(screen.getByText('禁用全部规则').parentElement).not.toBeDisabled();
     fireEvent.click(screen.getByText('提 交'));
@@ -299,12 +291,8 @@ describe('sqle/GlobalRuleTemplate/CreateRuleTemplate', () => {
     await act(async () => jest.advanceTimersByTime(100));
     expect(screen.getByText('暂无更多规则')).toBeInTheDocument();
 
-    fireEvent.click(
-      getBySelector(
-        'div[title="已禁用"]',
-        getBySelector('.basic-segmented-wrapper')
-      )
-    );
+    fireEvent.click(screen.getByText('已禁用'));
+
     await act(async () => jest.advanceTimersByTime(100));
     const ruleItem = getBySelector('.infinite-scroll-component').children[0];
     fireEvent.mouseEnter(ruleItem);
