@@ -13,8 +13,16 @@ exports[`base/router-sqle-ee render route sqle index page 1`] = `
 exports[`base/router-sqle-ee render sqle global router render sqle router when version is ce render route custom-create 1`] = `
 <body>
   <div>
-    <div>
-      createCustomRule
+    <div
+      data-test-parent-id="availabilityZoneWrapper"
+    >
+      <div
+        data-test-parent-id="ruleManager"
+      >
+        <div>
+          createCustomRule
+        </div>
+      </div>
     </div>
   </div>
 </body>
@@ -23,8 +31,16 @@ exports[`base/router-sqle-ee render sqle global router render sqle router when v
 exports[`base/router-sqle-ee render sqle global router render sqle router when version is ce render route custom-update 1`] = `
 <body>
   <div>
-    <div>
-      updateCustomRule
+    <div
+      data-test-parent-id="availabilityZoneWrapper"
+    >
+      <div
+        data-test-parent-id="ruleManager"
+      >
+        <div>
+          updateCustomRule
+        </div>
+      </div>
     </div>
   </div>
 </body>
@@ -33,8 +49,16 @@ exports[`base/router-sqle-ee render sqle global router render sqle router when v
 exports[`base/router-sqle-ee render sqle global router render sqle router when version is ce render route global-create 1`] = `
 <body>
   <div>
-    <div>
-      globalRuleTemplateCreate
+    <div
+      data-test-parent-id="availabilityZoneWrapper"
+    >
+      <div
+        data-test-parent-id="ruleManager"
+      >
+        <div>
+          globalRuleTemplateCreate
+        </div>
+      </div>
     </div>
   </div>
 </body>
@@ -43,8 +67,12 @@ exports[`base/router-sqle-ee render sqle global router render sqle router when v
 exports[`base/router-sqle-ee render sqle global router render sqle router when version is ce render route global-detail 1`] = `
 <body>
   <div>
-    <div>
-      globalRuleTemplateDetail
+    <div
+      data-test-parent-id="availabilityZoneWrapper"
+    >
+      <div>
+        globalRuleTemplateDetail
+      </div>
     </div>
   </div>
 </body>
@@ -53,8 +81,16 @@ exports[`base/router-sqle-ee render sqle global router render sqle router when v
 exports[`base/router-sqle-ee render sqle global router render sqle router when version is ce render route global-import 1`] = `
 <body>
   <div>
-    <div>
-      globalRuleTemplateImport
+    <div
+      data-test-parent-id="availabilityZoneWrapper"
+    >
+      <div
+        data-test-parent-id="ruleManager"
+      >
+        <div>
+          globalRuleTemplateImport
+        </div>
+      </div>
     </div>
   </div>
 </body>
@@ -63,8 +99,16 @@ exports[`base/router-sqle-ee render sqle global router render sqle router when v
 exports[`base/router-sqle-ee render sqle global router render sqle router when version is ce render route global-update 1`] = `
 <body>
   <div>
-    <div>
-      globalRuleTemplateUpdate
+    <div
+      data-test-parent-id="availabilityZoneWrapper"
+    >
+      <div
+        data-test-parent-id="ruleManager"
+      >
+        <div>
+          globalRuleTemplateUpdate
+        </div>
+      </div>
     </div>
   </div>
 </body>
@@ -73,8 +117,12 @@ exports[`base/router-sqle-ee render sqle global router render sqle router when v
 exports[`base/router-sqle-ee render sqle global router render sqle router when version is ce render route reportStatistics 1`] = `
 <body>
   <div>
-    <div>
-      reportStatistics
+    <div
+      data-test-parent-id="availabilityZoneWrapper"
+    >
+      <div>
+        reportStatistics
+      </div>
     </div>
   </div>
 </body>
@@ -83,8 +131,12 @@ exports[`base/router-sqle-ee render sqle global router render sqle router when v
 exports[`base/router-sqle-ee render sqle global router render sqle router when version is ce render route rule 1`] = `
 <body>
   <div>
-    <div>
-      rule
+    <div
+      data-test-parent-id="availabilityZoneWrapper"
+    >
+      <div>
+        rule
+      </div>
     </div>
   </div>
 </body>
@@ -93,8 +145,16 @@ exports[`base/router-sqle-ee render sqle global router render sqle router when v
 exports[`base/router-sqle-ee render sqle global router render sqle router when version is ce render route ruleManager 1`] = `
 <body>
   <div>
-    <div>
-      ruleTemplateManagement
+    <div
+      data-test-parent-id="availabilityZoneWrapper"
+    >
+      <div
+        data-test-parent-id="ruleManager"
+      >
+        <div>
+          ruleTemplateManagement
+        </div>
+      </div>
     </div>
   </div>
 </body>
@@ -103,8 +163,16 @@ exports[`base/router-sqle-ee render sqle global router render sqle router when v
 exports[`base/router-sqle-ee render sqle global router render sqle router when version is ee render route knowledge 1`] = `
 <body>
   <div>
-    <div>
-      knowledgeIndex
+    <div
+      data-test-parent-id="availabilityZoneWrapper"
+    >
+      <div
+        data-test-parent-id="knowledge"
+      >
+        <div>
+          knowledgeIndex
+        </div>
+      </div>
     </div>
   </div>
 </body>
@@ -113,8 +181,16 @@ exports[`base/router-sqle-ee render sqle global router render sqle router when v
 exports[`base/router-sqle-ee render sqle global router render sqle router when version is ee render route knowledge refined 1`] = `
 <body>
   <div>
-    <div>
-      knowledgeRefinedResults
+    <div
+      data-test-parent-id="availabilityZoneWrapper"
+    >
+      <div
+        data-test-parent-id="knowledge"
+      >
+        <div>
+          knowledgeRefinedResults
+        </div>
+      </div>
     </div>
   </div>
 </body>
@@ -123,8 +199,12 @@ exports[`base/router-sqle-ee render sqle global router render sqle router when v
 exports[`base/router-sqle-ee render sqle global router render sqle router when version is ee render route ruleKnowledge 1`] = `
 <body>
   <div>
-    <div>
-      ruleKnowledge
+    <div
+      data-test-parent-id="availabilityZoneWrapper"
+    >
+      <div>
+        ruleKnowledge
+      </div>
     </div>
   </div>
 </body>
@@ -133,8 +213,16 @@ exports[`base/router-sqle-ee render sqle global router render sqle router when v
 exports[`base/router-sqle-ee render sqle project detail router render sqle project detail router when version is ce render DataSourceComparison 1`] = `
 <body>
   <div>
-    <div>
-      dataSourceComparison
+    <div
+      data-test-parent-id="availabilityZoneWrapper"
+    >
+      <div
+        data-test-parent-id="sqleProjectDetail"
+      >
+        <div>
+          dataSourceComparison
+        </div>
+      </div>
     </div>
   </div>
 </body>
@@ -143,8 +231,16 @@ exports[`base/router-sqle-ee render sqle project detail router render sqle proje
 exports[`base/router-sqle-ee render sqle project detail router render sqle project detail router when version is ce render operationRecord 1`] = `
 <body>
   <div>
-    <div>
-      operationRecord
+    <div
+      data-test-parent-id="availabilityZoneWrapper"
+    >
+      <div
+        data-test-parent-id="sqleProjectDetail"
+      >
+        <div>
+          operationRecord
+        </div>
+      </div>
     </div>
   </div>
 </body>
@@ -153,8 +249,16 @@ exports[`base/router-sqle-ee render sqle project detail router render sqle proje
 exports[`base/router-sqle-ee render sqle project detail router render sqle project detail router when version is ce render route dashboard 1`] = `
 <body>
   <div>
-    <div>
-      dashboard
+    <div
+      data-test-parent-id="availabilityZoneWrapper"
+    >
+      <div
+        data-test-parent-id="sqleProjectDetail"
+      >
+        <div>
+          dashboard
+        </div>
+      </div>
     </div>
   </div>
 </body>
@@ -164,10 +268,18 @@ exports[`base/router-sqle-ee render sqle project detail router render sqle proje
 <body>
   <div>
     <div
-      data-test-parent-id="pluginAudit"
+      data-test-parent-id="availabilityZoneWrapper"
     >
-      <div>
-        pluginAuditList
+      <div
+        data-test-parent-id="sqleProjectDetail"
+      >
+        <div
+          data-test-parent-id="pluginAudit"
+        >
+          <div>
+            pluginAuditList
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -178,10 +290,18 @@ exports[`base/router-sqle-ee render sqle project detail router render sqle proje
 <body>
   <div>
     <div
-      data-test-parent-id="progress"
+      data-test-parent-id="availabilityZoneWrapper"
     >
-      <div>
-        progressDetail
+      <div
+        data-test-parent-id="sqleProjectDetail"
+      >
+        <div
+          data-test-parent-id="progress"
+        >
+          <div>
+            progressDetail
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -192,10 +312,18 @@ exports[`base/router-sqle-ee render sqle project detail router render sqle proje
 <body>
   <div>
     <div
-      data-test-parent-id="progress"
+      data-test-parent-id="availabilityZoneWrapper"
     >
-      <div>
-        progressUpdate
+      <div
+        data-test-parent-id="sqleProjectDetail"
+      >
+        <div
+          data-test-parent-id="progress"
+        >
+          <div>
+            progressUpdate
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -205,8 +333,16 @@ exports[`base/router-sqle-ee render sqle project detail router render sqle proje
 exports[`base/router-sqle-ee render sqle project detail router render sqle project detail router when version is ce render route projectOverview 1`] = `
 <body>
   <div>
-    <div>
-      projectOverview
+    <div
+      data-test-parent-id="availabilityZoneWrapper"
+    >
+      <div
+        data-test-parent-id="sqleProjectDetail"
+      >
+        <div>
+          projectOverview
+        </div>
+      </div>
     </div>
   </div>
 </body>
@@ -216,10 +352,18 @@ exports[`base/router-sqle-ee render sqle project detail router render sqle proje
 <body>
   <div>
     <div
-      data-test-parent-id="ruleTemplate"
+      data-test-parent-id="availabilityZoneWrapper"
     >
-      <div>
-        ruleTemplate
+      <div
+        data-test-parent-id="sqleProjectDetail"
+      >
+        <div
+          data-test-parent-id="ruleTemplate"
+        >
+          <div>
+            ruleTemplate
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -230,10 +374,18 @@ exports[`base/router-sqle-ee render sqle project detail router render sqle proje
 <body>
   <div>
     <div
-      data-test-parent-id="ruleTemplate"
+      data-test-parent-id="availabilityZoneWrapper"
     >
-      <div>
-        ruleTemplateCreate
+      <div
+        data-test-parent-id="sqleProjectDetail"
+      >
+        <div
+          data-test-parent-id="ruleTemplate"
+        >
+          <div>
+            ruleTemplateCreate
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -244,10 +396,18 @@ exports[`base/router-sqle-ee render sqle project detail router render sqle proje
 <body>
   <div>
     <div
-      data-test-parent-id="ruleTemplate"
+      data-test-parent-id="availabilityZoneWrapper"
     >
-      <div>
-        ruleTemplateImport
+      <div
+        data-test-parent-id="sqleProjectDetail"
+      >
+        <div
+          data-test-parent-id="ruleTemplate"
+        >
+          <div>
+            ruleTemplateImport
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -258,10 +418,18 @@ exports[`base/router-sqle-ee render sqle project detail router render sqle proje
 <body>
   <div>
     <div
-      data-test-parent-id="ruleTemplate"
+      data-test-parent-id="availabilityZoneWrapper"
     >
-      <div>
-        ruleTemplate
+      <div
+        data-test-parent-id="sqleProjectDetail"
+      >
+        <div
+          data-test-parent-id="ruleTemplate"
+        >
+          <div>
+            ruleTemplate
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -272,10 +440,18 @@ exports[`base/router-sqle-ee render sqle project detail router render sqle proje
 <body>
   <div>
     <div
-      data-test-parent-id="ruleTemplate"
+      data-test-parent-id="availabilityZoneWrapper"
     >
-      <div>
-        ruleTemplateDetail
+      <div
+        data-test-parent-id="sqleProjectDetail"
+      >
+        <div
+          data-test-parent-id="ruleTemplate"
+        >
+          <div>
+            ruleTemplateDetail
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -286,10 +462,18 @@ exports[`base/router-sqle-ee render sqle project detail router render sqle proje
 <body>
   <div>
     <div
-      data-test-parent-id="ruleTemplate"
+      data-test-parent-id="availabilityZoneWrapper"
     >
-      <div>
-        ruleTemplateUpdate
+      <div
+        data-test-parent-id="sqleProjectDetail"
+      >
+        <div
+          data-test-parent-id="ruleTemplate"
+        >
+          <div>
+            ruleTemplateUpdate
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -300,10 +484,18 @@ exports[`base/router-sqle-ee render sqle project detail router render sqle proje
 <body>
   <div>
     <div
-      data-test-parent-id="sqlAudit"
+      data-test-parent-id="availabilityZoneWrapper"
     >
-      <div>
-        sqlAuditCreate
+      <div
+        data-test-parent-id="sqleProjectDetail"
+      >
+        <div
+          data-test-parent-id="sqlAudit"
+        >
+          <div>
+            sqlAuditCreate
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -314,10 +506,18 @@ exports[`base/router-sqle-ee render sqle project detail router render sqle proje
 <body>
   <div>
     <div
-      data-test-parent-id="sqlAudit"
+      data-test-parent-id="availabilityZoneWrapper"
     >
-      <div>
-        sqlAuditDetail
+      <div
+        data-test-parent-id="sqleProjectDetail"
+      >
+        <div
+          data-test-parent-id="sqlAudit"
+        >
+          <div>
+            sqlAuditDetail
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -328,10 +528,18 @@ exports[`base/router-sqle-ee render sqle project detail router render sqle proje
 <body>
   <div>
     <div
-      data-test-parent-id="sqlAudit"
+      data-test-parent-id="availabilityZoneWrapper"
     >
-      <div>
-        sqlAuditList
+      <div
+        data-test-parent-id="sqleProjectDetail"
+      >
+        <div
+          data-test-parent-id="sqlAudit"
+        >
+          <div>
+            sqlAuditList
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -342,10 +550,18 @@ exports[`base/router-sqle-ee render sqle project detail router render sqle proje
 <body>
   <div>
     <div
-      data-test-parent-id="sqlManagement"
+      data-test-parent-id="availabilityZoneWrapper"
     >
-      <div>
-        SqlManagement
+      <div
+        data-test-parent-id="sqleProjectDetail"
+      >
+        <div
+          data-test-parent-id="sqlManagement"
+        >
+          <div>
+            SqlManagement
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -356,10 +572,18 @@ exports[`base/router-sqle-ee render sqle project detail router render sqle proje
 <body>
   <div>
     <div
-      data-test-parent-id="sqlManagementConf"
+      data-test-parent-id="availabilityZoneWrapper"
     >
-      <div>
-        SqlManagementConfAnalyze
+      <div
+        data-test-parent-id="sqleProjectDetail"
+      >
+        <div
+          data-test-parent-id="sqlManagementConf"
+        >
+          <div>
+            SqlManagementConfAnalyze
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -370,10 +594,18 @@ exports[`base/router-sqle-ee render sqle project detail router render sqle proje
 <body>
   <div>
     <div
-      data-test-parent-id="sqlManagementConf"
+      data-test-parent-id="availabilityZoneWrapper"
     >
-      <div>
-        SqlManagementConfDetail
+      <div
+        data-test-parent-id="sqleProjectDetail"
+      >
+        <div
+          data-test-parent-id="sqlManagementConf"
+        >
+          <div>
+            SqlManagementConfDetail
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -384,10 +616,18 @@ exports[`base/router-sqle-ee render sqle project detail router render sqle proje
 <body>
   <div>
     <div
-      data-test-parent-id="sqlManagementConf"
+      data-test-parent-id="availabilityZoneWrapper"
     >
-      <div>
-        CreateSqlManagementConf
+      <div
+        data-test-parent-id="sqleProjectDetail"
+      >
+        <div
+          data-test-parent-id="sqlManagementConf"
+        >
+          <div>
+            CreateSqlManagementConf
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -398,10 +638,18 @@ exports[`base/router-sqle-ee render sqle project detail router render sqle proje
 <body>
   <div>
     <div
-      data-test-parent-id="sqlManagementConf"
+      data-test-parent-id="availabilityZoneWrapper"
     >
-      <div>
-        SqlManagementConfList
+      <div
+        data-test-parent-id="sqleProjectDetail"
+      >
+        <div
+          data-test-parent-id="sqlManagementConf"
+        >
+          <div>
+            SqlManagementConfList
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -412,10 +660,18 @@ exports[`base/router-sqle-ee render sqle project detail router render sqle proje
 <body>
   <div>
     <div
-      data-test-parent-id="sqlManagementConf"
+      data-test-parent-id="availabilityZoneWrapper"
     >
-      <div>
-        UpdateSqlManagementConf
+      <div
+        data-test-parent-id="sqleProjectDetail"
+      >
+        <div
+          data-test-parent-id="sqlManagementConf"
+        >
+          <div>
+            UpdateSqlManagementConf
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -426,10 +682,18 @@ exports[`base/router-sqle-ee render sqle project detail router render sqle proje
 <body>
   <div>
     <div
-      data-test-parent-id="sqlOptimization"
+      data-test-parent-id="availabilityZoneWrapper"
     >
-      <div>
-        sqlOptimizationList
+      <div
+        data-test-parent-id="sqleProjectDetail"
+      >
+        <div
+          data-test-parent-id="sqlOptimization"
+        >
+          <div>
+            sqlOptimizationList
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -440,10 +704,18 @@ exports[`base/router-sqle-ee render sqle project detail router render sqle proje
 <body>
   <div>
     <div
-      data-test-parent-id="sqlOptimization"
+      data-test-parent-id="availabilityZoneWrapper"
     >
-      <div>
-        sqlOptimizationCreate
+      <div
+        data-test-parent-id="sqleProjectDetail"
+      >
+        <div
+          data-test-parent-id="sqlOptimization"
+        >
+          <div>
+            sqlOptimizationCreate
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -454,10 +726,18 @@ exports[`base/router-sqle-ee render sqle project detail router render sqle proje
 <body>
   <div>
     <div
-      data-test-parent-id="sqlOptimization"
+      data-test-parent-id="availabilityZoneWrapper"
     >
-      <div>
-        sqlOptimizationDetail
+      <div
+        data-test-parent-id="sqleProjectDetail"
+      >
+        <div
+          data-test-parent-id="sqlOptimization"
+        >
+          <div>
+            sqlOptimizationDetail
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -468,10 +748,18 @@ exports[`base/router-sqle-ee render sqle project detail router render sqle proje
 <body>
   <div>
     <div
-      data-test-parent-id="sqlOptimization"
+      data-test-parent-id="availabilityZoneWrapper"
     >
-      <div>
-        sqlOptimizationOverview
+      <div
+        data-test-parent-id="sqleProjectDetail"
+      >
+        <div
+          data-test-parent-id="sqlOptimization"
+        >
+          <div>
+            sqlOptimizationOverview
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -482,10 +770,18 @@ exports[`base/router-sqle-ee render sqle project detail router render sqle proje
 <body>
   <div>
     <div
-      data-test-parent-id="sqlExecWorkflow"
+      data-test-parent-id="availabilityZoneWrapper"
     >
-      <div>
-        workflowSqlFileStatementOverview
+      <div
+        data-test-parent-id="sqleProjectDetail"
+      >
+        <div
+          data-test-parent-id="sqlExecWorkflow"
+        >
+          <div>
+            workflowSqlFileStatementOverview
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -496,10 +792,18 @@ exports[`base/router-sqle-ee render sqle project detail router render sqle proje
 <body>
   <div>
     <div
-      data-test-parent-id="sqlExecWorkflow"
+      data-test-parent-id="availabilityZoneWrapper"
     >
-      <div>
-        createSqlExecWorkflow
+      <div
+        data-test-parent-id="sqleProjectDetail"
+      >
+        <div
+          data-test-parent-id="sqlExecWorkflow"
+        >
+          <div>
+            createSqlExecWorkflow
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -510,10 +814,18 @@ exports[`base/router-sqle-ee render sqle project detail router render sqle proje
 <body>
   <div>
     <div
-      data-test-parent-id="sqlExecWorkflow"
+      data-test-parent-id="availabilityZoneWrapper"
     >
-      <div>
-        sqlExecWorkflowList
+      <div
+        data-test-parent-id="sqleProjectDetail"
+      >
+        <div
+          data-test-parent-id="sqlExecWorkflow"
+        >
+          <div>
+            sqlExecWorkflowList
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -524,10 +836,18 @@ exports[`base/router-sqle-ee render sqle project detail router render sqle proje
 <body>
   <div>
     <div
-      data-test-parent-id="sqlExecWorkflow"
+      data-test-parent-id="availabilityZoneWrapper"
     >
-      <div>
-        workflowDetail
+      <div
+        data-test-parent-id="sqleProjectDetail"
+      >
+        <div
+          data-test-parent-id="sqlExecWorkflow"
+        >
+          <div>
+            workflowDetail
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -537,8 +857,16 @@ exports[`base/router-sqle-ee render sqle project detail router render sqle proje
 exports[`base/router-sqle-ee render sqle project detail router render sqle project detail router when version is ce render sqlManagementException 1`] = `
 <body>
   <div>
-    <div>
-      sqlManagementException
+    <div
+      data-test-parent-id="availabilityZoneWrapper"
+    >
+      <div
+        data-test-parent-id="sqleProjectDetail"
+      >
+        <div>
+          sqlManagementException
+        </div>
+      </div>
     </div>
   </div>
 </body>
@@ -547,8 +875,16 @@ exports[`base/router-sqle-ee render sqle project detail router render sqle proje
 exports[`base/router-sqle-ee render sqle project detail router render sqle project detail router when version is ce render whitelist 1`] = `
 <body>
   <div>
-    <div>
-      Whitelist
+    <div
+      data-test-parent-id="availabilityZoneWrapper"
+    >
+      <div
+        data-test-parent-id="sqleProjectDetail"
+      >
+        <div>
+          Whitelist
+        </div>
+      </div>
     </div>
   </div>
 </body>
@@ -558,10 +894,18 @@ exports[`base/router-sqle-ee render sqle project detail router render sqle proje
 <body>
   <div>
     <div
-      data-test-parent-id="sqlManagement"
+      data-test-parent-id="availabilityZoneWrapper"
     >
-      <div>
-        SqlManagementAnalyze
+      <div
+        data-test-parent-id="sqleProjectDetail"
+      >
+        <div
+          data-test-parent-id="sqlManagement"
+        >
+          <div>
+            SqlManagementAnalyze
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -572,849 +916,20 @@ exports[`base/router-sqle-ee render sqle project detail router render sqle proje
 <body>
   <div>
     <div
-      data-test-parent-id="sqlExecWorkflow"
+      data-test-parent-id="availabilityZoneWrapper"
     >
-      <div>
-        workflowAnalyze
+      <div
+        data-test-parent-id="sqleProjectDetail"
+      >
+        <div
+          data-test-parent-id="sqlExecWorkflow"
+        >
+          <div>
+            workflowAnalyze
+          </div>
+        </div>
       </div>
     </div>
   </div>
 </body>
-`;
-
-exports[`base/router-sqle-ee render sqle route data snap 1`] = `
-[
-  {
-    "element": <div>
-      home
-    </div>,
-    "key": "home",
-    "path": "/",
-  },
-  {
-    "element": <div>
-      userCenter
-    </div>,
-    "key": "userCenter",
-    "path": "/user-center",
-  },
-  {
-    "element": <div>
-      system
-    </div>,
-    "key": "system",
-    "path": "/system",
-  },
-  {
-    "element": <div>
-      account
-    </div>,
-    "key": "account",
-    "path": "/account",
-  },
-  {
-    "element": <div>
-      dataSourceManagement
-    </div>,
-    "key": "dataSourceManagement",
-    "path": "/data-source-management",
-  },
-  {
-    "element": <div>
-      transit
-    </div>,
-    "key": "transit",
-    "path": "/transit",
-  },
-  {
-    "children": [
-      {
-        "element": <div>
-          globalBatchImportDataSource
-        </div>,
-        "key": "globalBatchImportDataSource",
-        "path": "batch-import",
-      },
-      {
-        "element": <div>
-          globalDataSourceCreate
-        </div>,
-        "key": "globalDataSourceCreate",
-        "path": "create",
-      },
-    ],
-    "key": "globalDataSource",
-    "path": "/global-data-source",
-    "permission": "page:global_data_source",
-  },
-  {
-    "children": [
-      {
-        "element": <div>
-          syncDataSourceCreate
-        </div>,
-        "key": "syncDataSourceCreate",
-        "path": "create",
-      },
-      {
-        "element": <div>
-          syncDataSourceUpdate
-        </div>,
-        "key": "syncDataSourceUpdate",
-        "path": "update/:taskId",
-      },
-    ],
-    "key": "syncDataSource",
-    "path": "/sync-data-source",
-    "permission": "page:sync_data_source",
-  },
-  {
-    "children": [
-      {
-        "element": <div>
-          projectList
-        </div>,
-        "key": "projectList",
-        "path": "",
-      },
-      {
-        "element": <div>
-          projectImport
-        </div>,
-        "key": "projectImport",
-        "path": "import",
-      },
-      {
-        "element": <div>
-          projectBatchImportDataSource
-        </div>,
-        "key": "projectBatchImportDataSource",
-        "path": "batch-import",
-      },
-    ],
-    "key": "project",
-    "path": "/project",
-  },
-  {
-    "element": <div>
-      resourceOverview
-    </div>,
-    "key": "resourceOverview",
-    "path": "/resource-overview",
-  },
-  {
-    "children": [
-      {
-        "element": <div>
-          member
-        </div>,
-        "key": "member",
-        "path": ":projectID/member",
-      },
-      {
-        "children": [
-          {
-            "element": <div>
-              dataSourceList
-            </div>,
-            "key": "dataSourceList",
-            "path": "",
-          },
-          {
-            "element": <div>
-              dataSourceCreate
-            </div>,
-            "key": "dataSourceCreate",
-            "path": "create",
-          },
-          {
-            "element": <div>
-              dataSourceUpdate
-            </div>,
-            "key": "dataSourceUpdate",
-            "path": "update/:dbServiceUid",
-          },
-          {
-            "element": <div>
-              batchImportDataSource
-            </div>,
-            "key": "batchImportDataSource",
-            "path": "batch-import",
-          },
-        ],
-        "element": <div
-          data-test-parent-id="dataSource"
-        >
-          <Outlet />
-        </div>,
-        "key": "dataSource",
-        "path": ":projectID/db-services",
-      },
-      {
-        "children": [
-          {
-            "element": <div>
-              dataExportManagement
-            </div>,
-            "key": "dataExportManagement",
-            "path": "",
-          },
-          {
-            "element": <div>
-              CreateExportTask
-            </div>,
-            "key": "CreateExportTask",
-            "path": "create",
-          },
-          {
-            "element": <div>
-              ExportTaskDetail
-            </div>,
-            "key": "ExportTaskDetail",
-            "path": ":workflowID",
-          },
-        ],
-        "element": <div
-          data-test-parent-id="dataExportManagement"
-        >
-          <Outlet />
-        </div>,
-        "key": "dataExportManagement",
-        "path": ":projectID/data/export",
-      },
-      {
-        "element": <div>
-          cloudBeaver
-        </div>,
-        "key": "cloudBeaver",
-        "path": ":projectID/cloud-beaver",
-      },
-      {
-        "element": <div>
-          dataMaskRuleOverview
-        </div>,
-        "key": "dataMaskRuleOverview",
-        "path": ":projectID/data-mask-rule-overview",
-      },
-    ],
-    "element": <UNDEFINED />,
-    "key": "projectDetail",
-    "path": "/project/*",
-  },
-  {
-    "element": <div>
-      reportStatistics
-    </div>,
-    "key": "reportStatistics",
-    "path": "/sqle/report-statistics",
-  },
-  {
-    "element": <div>
-      rule
-    </div>,
-    "key": "rule",
-    "path": "/sqle/rule",
-  },
-  {
-    "element": <div>
-      globalRuleTemplateDetail
-    </div>,
-    "key": "globalRuleTemplateDetail",
-    "path": "/sqle/rule-manager/global-detail/:templateName/:dbType",
-  },
-  {
-    "children": [
-      {
-        "element": <div>
-          ruleTemplateManagement
-        </div>,
-        "key": "ruleTemplateManagement",
-        "path": "",
-      },
-      {
-        "element": <div>
-          globalRuleTemplateCreate
-        </div>,
-        "key": "globalRuleTemplateCreate",
-        "path": "global-create",
-      },
-      {
-        "element": <div>
-          globalRuleTemplateImport
-        </div>,
-        "key": "globalRuleTemplateImport",
-        "path": "global-import",
-      },
-      {
-        "element": <div>
-          globalRuleTemplateUpdate
-        </div>,
-        "key": "globalRuleTemplateUpdate",
-        "path": "global-update/:templateName",
-      },
-      {
-        "element": <div>
-          createCustomRule
-        </div>,
-        "key": "createCustomRule",
-        "path": "custom-create",
-      },
-      {
-        "element": <div>
-          updateCustomRule
-        </div>,
-        "key": "updateCustomRule",
-        "path": "custom-update/:ruleID",
-      },
-    ],
-    "key": "ruleManager",
-    "path": "/sqle/rule-manager",
-    "permission": "page:rule_management",
-  },
-  {
-    "children": [
-      {
-        "element": <div>
-          knowledgeIndex
-        </div>,
-        "key": "knowledgeIndex",
-        "path": "",
-      },
-      {
-        "element": <div>
-          knowledgeRefinedResults
-        </div>,
-        "key": "knowledgeRefinedResults",
-        "path": "refined",
-      },
-    ],
-    "key": "knowledge",
-    "path": "/sqle/knowledge",
-    "permission": "page:knowledge",
-  },
-  {
-    "element": <div>
-      ruleKnowledge
-    </div>,
-    "key": "ruleKnowledge",
-    "path": "/sqle/rule/knowledge/:ruleName/:dbType",
-  },
-  {
-    "element": <div>
-      globalDashboard
-    </div>,
-    "key": "globalDashboard",
-    "path": "/sqle/global-dashboard",
-  },
-  {
-    "children": [
-      {
-        "element": <div>
-          projectOverview
-        </div>,
-        "key": "projectOverview",
-        "path": ":projectID/overview",
-      },
-      {
-        "children": [
-          {
-            "element": <div>
-              sqlExecWorkflowList
-            </div>,
-            "key": "sqlExecWorkflowList",
-            "path": "",
-          },
-          {
-            "element": <div>
-              createSqlExecWorkflow
-            </div>,
-            "key": "createSqlExecWorkflow",
-            "path": "create",
-          },
-          {
-            "element": <div>
-              workflowAnalyze
-            </div>,
-            "key": "workflowAnalyze",
-            "path": ":taskId/:sqlNum/analyze",
-          },
-          {
-            "element": <div>
-              workflowDetail
-            </div>,
-            "key": "workflowDetail",
-            "path": ":workflowId",
-          },
-          {
-            "element": <div>
-              workflowSqlFileStatementOverview
-            </div>,
-            "key": "workflowSqlFileStatementOverview",
-            "path": ":taskId/files/:fileId/sqls",
-          },
-        ],
-        "element": <div
-          data-test-parent-id="sqlExecWorkflow"
-        >
-          <Outlet />
-        </div>,
-        "key": "sqlExecWorkflow",
-        "path": ":projectID/exec-workflow",
-      },
-      {
-        "children": [
-          {
-            "element": <div>
-              sqlAuditList
-            </div>,
-            "key": "sqlAuditList",
-            "path": "",
-          },
-          {
-            "element": <div>
-              sqlAuditCreate
-            </div>,
-            "key": "sqlAuditCreate",
-            "path": "create",
-          },
-          {
-            "element": <div>
-              sqlAuditDetail
-            </div>,
-            "key": "sqlAuditDetail",
-            "path": "detail/:sql_audit_record_id",
-          },
-        ],
-        "element": <div
-          data-test-parent-id="sqlAudit"
-        >
-          <Outlet />
-        </div>,
-        "key": "sqlAudit",
-        "path": ":projectID/sql-audit",
-      },
-      {
-        "children": [
-          {
-            "element": <div>
-              SqlManagementConfList
-            </div>,
-            "key": "SqlManagementConfList",
-            "path": "",
-          },
-          {
-            "element": <div>
-              CreateSqlManagementConf
-            </div>,
-            "key": "CreateSqlManagementConf",
-            "path": "create",
-          },
-          {
-            "element": <div>
-              UpdateSqlManagementConf
-            </div>,
-            "key": "UpdateSqlManagementConf",
-            "path": "update/:id",
-          },
-          {
-            "element": <div>
-              SqlManagementConfDetail
-            </div>,
-            "key": "SqlManagementConfDetail",
-            "path": ":id",
-          },
-          {
-            "element": <div>
-              SqlManagementConfAnalyze
-            </div>,
-            "key": "SqlManagementConfAnalyze",
-            "path": ":instanceAuditPlanId/analyze/:id",
-          },
-        ],
-        "element": <div
-          data-test-parent-id="sqlManagementConf"
-        >
-          <Outlet />
-        </div>,
-        "key": "sqlManagementConf",
-        "path": ":projectID/sql-management-conf",
-      },
-      {
-        "children": [
-          {
-            "element": <div>
-              SqlManagement
-            </div>,
-            "key": "SqlManagement",
-            "path": "",
-          },
-          {
-            "element": <div>
-              SqlManagementAnalyze
-            </div>,
-            "key": "SqlManagementAnalyze",
-            "path": ":sqlManageId/analyze",
-          },
-        ],
-        "element": <div
-          data-test-parent-id="sqlManagement"
-        >
-          <Outlet />
-        </div>,
-        "key": "sqlManagement",
-        "path": ":projectID/sql-management",
-      },
-      {
-        "element": <div>
-          dashboard
-        </div>,
-        "key": "dashboard",
-        "path": ":projectID/dashboard",
-      },
-      {
-        "children": [
-          {
-            "element": <div>
-              ruleTemplate
-            </div>,
-            "key": "ruleTemplate",
-            "path": "",
-          },
-          {
-            "element": <div>
-              ruleTemplate
-            </div>,
-            "key": "ruleTemplate",
-            "path": "list",
-          },
-          {
-            "element": <div>
-              ruleTemplateCreate
-            </div>,
-            "key": "ruleTemplateCreate",
-            "path": "create",
-          },
-          {
-            "element": <div>
-              ruleTemplateImport
-            </div>,
-            "key": "ruleTemplateImport",
-            "path": "import",
-          },
-          {
-            "element": <div>
-              ruleTemplateDetail
-            </div>,
-            "key": "ruleTemplateDetail",
-            "path": "detail/:templateName/:dbType",
-          },
-          {
-            "element": <div>
-              ruleTemplateUpdate
-            </div>,
-            "key": "ruleTemplateUpdate",
-            "path": "update/:templateName",
-          },
-        ],
-        "element": <div
-          data-test-parent-id="ruleTemplate"
-        >
-          <Outlet />
-        </div>,
-        "key": "ruleTemplate",
-        "path": ":projectID/rule/template",
-      },
-      {
-        "children": [
-          {
-            "element": <div>
-              progressDetail
-            </div>,
-            "key": "progressDetail",
-            "path": "",
-          },
-          {
-            "element": <div>
-              progressUpdate
-            </div>,
-            "key": "progressUpdate",
-            "path": "update/:workflowName",
-          },
-        ],
-        "element": <div
-          data-test-parent-id="progress"
-        >
-          <Outlet />
-        </div>,
-        "key": "progress",
-        "path": ":projectID/progress",
-      },
-      {
-        "element": <div>
-          Whitelist
-        </div>,
-        "key": "Whitelist",
-        "path": ":projectID/whitelist",
-      },
-      {
-        "element": <div>
-          sqlManagementException
-        </div>,
-        "key": "sqlManagementException",
-        "path": ":projectID/sql-management-exception",
-      },
-      {
-        "element": <div>
-          operationRecord
-        </div>,
-        "key": "operationRecord",
-        "path": ":projectID/operation-record",
-      },
-      {
-        "children": [
-          {
-            "element": <div>
-              pluginAuditList
-            </div>,
-            "key": "pluginAuditList",
-            "path": "",
-          },
-        ],
-        "element": <div
-          data-test-parent-id="pluginAudit"
-        >
-          <Outlet />
-        </div>,
-        "key": "pluginAudit",
-        "path": ":projectID/plugin-audit",
-      },
-      {
-        "children": [
-          {
-            "element": <div>
-              sqlOptimizationList
-            </div>,
-            "key": "sqlOptimizationList",
-            "path": "",
-          },
-          {
-            "element": <div>
-              sqlOptimizationCreate
-            </div>,
-            "key": "sqlOptimizationCreate",
-            "path": "create",
-          },
-          {
-            "element": <div>
-              sqlOptimizationOverview
-            </div>,
-            "key": "sqlOptimizationOverview",
-            "path": "overview/:optimizationId",
-          },
-          {
-            "element": <div>
-              sqlOptimizationDetail
-            </div>,
-            "key": "sqlOptimizationDetail",
-            "path": "detail/:dbType/:optimizationId/:number",
-          },
-        ],
-        "element": <div
-          data-test-parent-id="sqlOptimization"
-        >
-          <Outlet />
-        </div>,
-        "key": "sqlOptimization",
-        "path": ":projectID/sql-optimization",
-      },
-      {
-        "element": <div>
-          pushRuleConfiguration
-        </div>,
-        "key": "pushRuleConfiguration",
-        "path": ":projectID/push-rule",
-      },
-      {
-        "children": [
-          {
-            "element": <div>
-              pipelineConfigurationList
-            </div>,
-            "key": "pipelineConfigurationList",
-            "path": "",
-          },
-          {
-            "element": <div>
-              sqlOptimizationCreate
-            </div>,
-            "key": "sqlOptimizationCreate",
-            "path": "create",
-          },
-          {
-            "element": <div>
-              sqlOptimizationCreate
-            </div>,
-            "key": "sqlOptimizationCreate",
-            "path": "update/:id",
-          },
-        ],
-        "element": <div
-          data-test-parent-id="pipelineConfiguration"
-        >
-          <Outlet />
-        </div>,
-        "key": "pipelineConfiguration",
-        "path": ":projectID/pipeline-configuration",
-      },
-      {
-        "children": [
-          {
-            "element": <div>
-              VersionManagementList
-            </div>,
-            "key": "VersionManagementList",
-            "path": "",
-          },
-          {
-            "element": <div>
-              versionManagementCreation
-            </div>,
-            "key": "versionManagementCreation",
-            "path": "create",
-          },
-          {
-            "element": <div>
-              versionManagementCreation
-            </div>,
-            "key": "versionManagementCreation",
-            "path": "update/:versionId",
-          },
-          {
-            "element": <div>
-              versionManagementDetail
-            </div>,
-            "key": "versionManagementDetail",
-            "path": "detail/:versionId",
-          },
-        ],
-        "element": <div
-          data-test-parent-id="versionManagement"
-        >
-          <Outlet />
-        </div>,
-        "key": "versionManagement",
-        "path": ":projectID/version-management",
-      },
-      {
-        "element": <div>
-          dataSourceComparison
-        </div>,
-        "key": "dataSourceComparison",
-        "path": ":projectID/data-source-comparison",
-      },
-      {
-        "element": <div>
-          projectRedirect
-        </div>,
-        "key": "projectRedirect",
-        "path": "*",
-      },
-    ],
-    "element": <UNDEFINED />,
-    "key": "sqleProjectDetail",
-    "path": "/sqle/project/*",
-  },
-  {
-    "children": [
-      {
-        "children": [
-          {
-            "element": <div>
-              databaseAccountList
-            </div>,
-            "key": "databaseAccountList",
-            "path": "",
-          },
-          {
-            "element": <div>
-              createDatabaseAccount
-            </div>,
-            "key": "createDatabaseAccount",
-            "path": "create",
-          },
-          {
-            "element": <div>
-              updateDatabaseAccount
-            </div>,
-            "key": "updateDatabaseAccount",
-            "path": "update/:id",
-          },
-        ],
-        "element": <div
-          data-test-parent-id="databaseAccount"
-        >
-          <Outlet />
-        </div>,
-        "key": "databaseAccount",
-        "path": ":projectID/database-account",
-      },
-      {
-        "element": <div>
-          databaseAccountPassword
-        </div>,
-        "key": "databaseAccountPassword",
-        "path": ":projectID/database-account-password",
-      },
-      {
-        "children": [
-          {
-            "element": <div>
-              databaseRoleList
-            </div>,
-            "key": "databaseRoleList",
-            "path": "",
-          },
-          {
-            "element": <div>
-              createRole
-            </div>,
-            "key": "createRole",
-            "path": "create/:db_service_id",
-          },
-          {
-            "element": <div>
-              updateRole
-            </div>,
-            "key": "updateRole",
-            "path": "update/:db_service_id/:role_id",
-          },
-        ],
-        "element": <div
-          data-test-parent-id="databaseRole"
-        >
-          <Outlet />
-        </div>,
-        "key": "databaseRole",
-        "path": ":projectID/database-role",
-      },
-      {
-        "element": <div>
-          null
-        </div>,
-        "key": "null",
-        "path": "*",
-      },
-    ],
-    "element": <UNDEFINED />,
-    "key": "provision",
-    "path": "provision/project/*",
-  },
-  {
-    "element": <div>
-      null
-    </div>,
-    "key": "null",
-    "path": "*",
-  },
-]
 `;

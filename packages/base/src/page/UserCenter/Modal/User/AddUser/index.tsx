@@ -13,6 +13,7 @@ import { IUserFormFields } from '../UserForm/index.type';
 import EventEmitter from '../../../../../utils/EventEmitter';
 import { BasicDrawer, BasicButton } from '@actiontech/shared';
 import User from '@actiontech/shared/lib/api/base/service/User';
+import dayjs from 'dayjs';
 
 const AddUser = () => {
   const [form] = Form.useForm<IUserFormFields>();
@@ -49,7 +50,8 @@ const AddUser = () => {
         email: values.email ?? '',
         phone: values.phone ?? '',
         wxid: values.wxid ?? '',
-        op_permission_uids: values.opPermissionUids ?? []
+        op_permission_uids: values.opPermissionUids ?? [],
+        uid: dayjs().format('YYYYMMDDHHmmssSSS')
       }
     })
       .then((res) => {

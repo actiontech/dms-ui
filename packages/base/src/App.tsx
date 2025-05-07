@@ -1,4 +1,11 @@
-import { ReactNode, Suspense, useEffect, useMemo, useState } from 'react';
+import {
+  ReactNode,
+  Suspense,
+  useCallback,
+  useEffect,
+  useMemo,
+  useState
+} from 'react';
 import { RouteObject, useLocation, useRoutes } from 'react-router-dom';
 import { AuthRouterConfig, unAuthRouterConfig } from './router/router';
 import { IReduxState } from './store';
@@ -43,7 +50,9 @@ import { updateModuleFeatureSupport } from './store/permission';
 import { ROUTE_PATHS } from '@actiontech/shared/lib/data/routePaths';
 import useSyncDmsCloudBeaverChannel from './hooks/useSyncDmsCloudBeaverChannel';
 import { getSystemModuleStatusModuleNameEnum } from '@actiontech/shared/lib/api/sqle/service/system/index.enum';
-
+import EventEmitter from './utils/EventEmitter';
+import EmitterKey from './data/EmitterKey';
+import useRecentlySelectedZone from './hooks/useRecentlySelectedZone';
 import './index.less';
 
 dayjs.extend(updateLocale);
@@ -185,37 +194,51 @@ function App() {
     elements
   ]);
 
+  const getInitialData = useCallback(() => {
+    getUserBySession({});
+    updateDriverList();
+    fetchModuleSupportStatus().then((response) => {
+      if (response) {
+        dispatch(
+          updateModuleFeatureSupport({
+            sqlOptimization:
+              !!response?.[
+                getSystemModuleStatusModuleNameEnum.sql_optimization
+              ],
+            knowledge:
+              !!response?.[getSystemModuleStatusModuleNameEnum.knowledge_base]
+          })
+        );
+      }
+    });
+  }, [dispatch, fetchModuleSupportStatus, getUserBySession, updateDriverList]);
+
   useEffect(() => {
     if (token) {
-      getUserBySession({});
-      updateDriverList();
-      fetchModuleSupportStatus().then((response) => {
-        if (response) {
-          dispatch(
-            updateModuleFeatureSupport({
-              sqlOptimization:
-                !!response?.[
-                  getSystemModuleStatusModuleNameEnum.sql_optimization
-                ],
-              knowledge:
-                !!response?.[getSystemModuleStatusModuleNameEnum.knowledge_base]
-            })
-          );
-        }
-      });
+      getInitialData();
     }
-  }, [
-    getUserBySession,
-    token,
-    updateDriverList,
-    fetchModuleSupportStatus,
-    dispatch
-  ]);
+  }, [token, getInitialData]);
 
   useEffect(() => {
     i18n.changeLanguage(currentLanguage);
   }, [currentLanguage]);
 
+  // #if [ee]
+  useEffect(() => {
+    const { unsubscribe } = EventEmitter.subscribe(
+      EmitterKey.DMS_Reload_Initial_Data,
+      getInitialData
+    );
+
+    return unsubscribe;
+  }, [getInitialData]);
+
+  const { initializeAvailabilityZone } = useRecentlySelectedZone();
+
+  useEffect(() => {
+    initializeAvailabilityZone();
+  }, [initializeAvailabilityZone]);
+  // #endif
   useSyncDmsCloudBeaverChannel();
 
   return (

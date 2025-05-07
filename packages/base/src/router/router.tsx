@@ -1,7 +1,11 @@
 import { Navigate, RouteObject } from 'react-router-dom';
 import { RouterConfigItem } from '@actiontech/shared/lib/types/common.type';
 import { lazy } from 'react';
-import { BaseGlobalRouterConfig, BaseProjectRouterConfig } from './router.base';
+import {
+  BaseNoZoneRequiredRouterConfig,
+  BaseGlobalRouterConfig,
+  BaseProjectRouterConfig
+} from './router.base';
 import { ROUTE_PATHS } from '@actiontech/shared/lib/data/routePaths';
 
 // #if [sqle]
@@ -16,8 +20,13 @@ import { AuthRouterConfig as ProvisionAuthRouterConfig } from 'provision/src/rou
 // #endif
 
 const ProjectDetail = lazy(() => import('../page/Project/Detail'));
+// #if [ee]
+const AvailabilityZoneWrapper = lazy(
+  () => import('../page/AvailabilityZone/AvailabilityZoneWrapper')
+);
+// #endif
 
-export const AuthRouterConfig: RouterConfigItem[] = [
+export const originalRoutes: RouterConfigItem[] = [
   ...BaseGlobalRouterConfig,
   {
     key: 'projectDetail',
@@ -42,9 +51,21 @@ export const AuthRouterConfig: RouterConfigItem[] = [
     key: 'provision',
     element: <ProjectDetail />,
     children: ProvisionAuthRouterConfig
-  },
+  }
   // #endif
+];
 
+export const AuthRouterConfig: RouterConfigItem[] = [
+  ...BaseNoZoneRequiredRouterConfig,
+  // #if [ee]
+  {
+    key: 'availabilityZoneWrapper',
+    element: <AvailabilityZoneWrapper />,
+    children: originalRoutes
+  },
+  // #else
+  ...originalRoutes,
+  // #endif
   {
     path: '*',
     key: 'null',

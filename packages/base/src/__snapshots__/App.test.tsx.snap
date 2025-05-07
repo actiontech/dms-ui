@@ -6,27 +6,11 @@ exports[`App render App when "checkPageAction" is false 1`] = `
     class="css-m36rcd"
   >
     <div
-      class="dms-layout-side css-13z0syi"
+      class="dms-layout-side css-1mju0nn"
     >
       <div
         class="dms-layout-side-start"
       >
-        <div>
-          <div
-            class="title"
-          >
-            <span
-              class="label label-primary"
-            >
-              Action
-            </span>
-            <span
-              class="label label-base"
-            >
-              DMS
-            </span>
-          </div>
-        </div>
         <div
           class="ant-spin-nested-loading css-dev-only-do-not-override-1thf7qv"
         >
@@ -152,6 +136,28 @@ exports[`App render App when "checkPageAction" is false 1`] = `
           <div
             class="ant-spin-container ant-spin-blur"
           >
+            <div
+              class="css-hndaa8"
+            >
+              <div
+                class="title-wrapper"
+              >
+                <div
+                  class="title"
+                >
+                  <span
+                    class="label label-primary"
+                  >
+                    Action
+                  </span>
+                  <span
+                    class="label label-base"
+                  >
+                    DMS
+                  </span>
+                </div>
+              </div>
+            </div>
             <div
               class="css-22avtw"
             >
@@ -2035,27 +2041,11 @@ exports[`App render App when token is existed 1`] = `
     class="css-m36rcd"
   >
     <div
-      class="dms-layout-side css-13z0syi"
+      class="dms-layout-side css-1mju0nn"
     >
       <div
         class="dms-layout-side-start"
       >
-        <div>
-          <div
-            class="title"
-          >
-            <span
-              class="label label-primary"
-            >
-              Action
-            </span>
-            <span
-              class="label label-base"
-            >
-              DMS
-            </span>
-          </div>
-        </div>
         <div
           class="ant-spin-nested-loading css-dev-only-do-not-override-1thf7qv"
         >
@@ -2181,6 +2171,28 @@ exports[`App render App when token is existed 1`] = `
           <div
             class="ant-spin-container ant-spin-blur"
           >
+            <div
+              class="css-hndaa8"
+            >
+              <div
+                class="title-wrapper"
+              >
+                <div
+                  class="title"
+                >
+                  <span
+                    class="label label-primary"
+                  >
+                    Action
+                  </span>
+                  <span
+                    class="label label-base"
+                  >
+                    DMS
+                  </span>
+                </div>
+              </div>
+            </div>
             <div
               class="css-22avtw"
             >

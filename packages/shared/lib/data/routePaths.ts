@@ -117,7 +117,8 @@ export const ROUTE_PATHS = {
         query: OPEN_CLOUD_BEAVER_URL_PARAM_NAME
       }
     },
-    RESOURCE_OVERVIEW: '/resource-overview'
+    RESOURCE_OVERVIEW: '/resource-overview',
+    AVAILABILITY_ZONE: '/availability-zone'
   },
   SQLE: {
     PREFIX: '/sqle',

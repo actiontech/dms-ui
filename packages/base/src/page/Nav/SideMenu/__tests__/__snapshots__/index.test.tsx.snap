@@ -4,27 +4,11 @@ exports[`test Base/Nav/SideMenu/index mount and unmount component 1`] = `
 <body>
   <div>
     <div
-      class="dms-layout-side css-13z0syi"
+      class="dms-layout-side css-1mju0nn"
     >
       <div
         class="dms-layout-side-start"
       >
-        <div>
-          <div
-            class="title"
-          >
-            <span
-              class="label label-primary"
-            >
-              Action
-            </span>
-            <span
-              class="label label-base"
-            >
-              DMS
-            </span>
-          </div>
-        </div>
         <div
           class="ant-spin-nested-loading css-dev-only-do-not-override-txh9fw"
         >
@@ -55,6 +39,28 @@ exports[`test Base/Nav/SideMenu/index mount and unmount component 1`] = `
           <div
             class="ant-spin-container ant-spin-blur"
           >
+            <div
+              class="css-hndaa8"
+            >
+              <div
+                class="title-wrapper"
+              >
+                <div
+                  class="title"
+                >
+                  <span
+                    class="label label-primary"
+                  >
+                    Action
+                  </span>
+                  <span
+                    class="label label-base"
+                  >
+                    DMS
+                  </span>
+                </div>
+              </div>
+            </div>
             <div
               class="css-22avtw"
             >
@@ -1292,33 +1298,60 @@ exports[`test Base/Nav/SideMenu/index mount and unmount component 2`] = `
 <body>
   <div>
     <div
-      class="dms-layout-side css-13z0syi"
+      class="dms-layout-side css-1mju0nn"
     >
       <div
         class="dms-layout-side-start"
       >
-        <div>
-          <div
-            class="title"
-          >
-            <span
-              class="label label-primary"
-            >
-              Action
-            </span>
-            <span
-              class="label label-base"
-            >
-              DMS
-            </span>
-          </div>
-        </div>
         <div
           class="ant-spin-nested-loading css-dev-only-do-not-override-txh9fw"
         >
           <div
             class="ant-spin-container"
           >
+            <div
+              class="css-hndaa8"
+            >
+              <div
+                class="title-wrapper"
+              >
+                <div
+                  class="title"
+                >
+                  <span
+                    class="label label-primary"
+                  >
+                    Action
+                  </span>
+                  <span
+                    class="label label-base"
+                  >
+                    DMS
+                  </span>
+                </div>
+              </div>
+              <div
+                class="ant-dropdown-trigger css-me3d58"
+              >
+                <svg
+                  height="16"
+                  viewBox="0 0 1024 1024"
+                  width="16"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M512 938.667c-53.333 0-384-257.259-384-469.334s171.925-384 384-384 384 171.926 384 384-330.667 469.334-384 469.334m0-352c64.8 0 117.333-52.534 117.333-117.334S576.8 352 512 352s-117.333 52.533-117.333 117.333S447.2 586.667 512 586.667"
+                    fill="#4583FF"
+                  />
+                </svg>
+                <div
+                  class="text"
+                  title="请选择"
+                >
+                  请选择
+                </div>
+              </div>
+            </div>
             <div
               class="css-22avtw"
             >
@@ -2578,33 +2611,60 @@ exports[`test Base/Nav/SideMenu/index mount and unmount component 3`] = `
 <body>
   <div>
     <div
-      class="dms-layout-side css-13z0syi"
+      class="dms-layout-side css-1mju0nn"
     >
       <div
         class="dms-layout-side-start"
       >
-        <div>
-          <div
-            class="title"
-          >
-            <span
-              class="label label-primary"
-            >
-              Action
-            </span>
-            <span
-              class="label label-base"
-            >
-              DMS
-            </span>
-          </div>
-        </div>
         <div
           class="ant-spin-nested-loading css-dev-only-do-not-override-txh9fw"
         >
           <div
             class="ant-spin-container"
           >
+            <div
+              class="css-hndaa8"
+            >
+              <div
+                class="title-wrapper"
+              >
+                <div
+                  class="title"
+                >
+                  <span
+                    class="label label-primary"
+                  >
+                    Action
+                  </span>
+                  <span
+                    class="label label-base"
+                  >
+                    DMS
+                  </span>
+                </div>
+              </div>
+              <div
+                class="ant-dropdown-trigger css-me3d58"
+              >
+                <svg
+                  height="16"
+                  viewBox="0 0 1024 1024"
+                  width="16"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M512 938.667c-53.333 0-384-257.259-384-469.334s171.925-384 384-384 384 171.926 384 384-330.667 469.334-384 469.334m0-352c64.8 0 117.333-52.534 117.333-117.334S576.8 352 512 352s-117.333 52.533-117.333 117.333S447.2 586.667 512 586.667"
+                    fill="#4583FF"
+                  />
+                </svg>
+                <div
+                  class="text"
+                  title="请选择"
+                >
+                  请选择
+                </div>
+              </div>
+            </div>
             <div
               class="css-22avtw"
             >
@@ -4098,27 +4158,11 @@ exports[`test Base/Nav/SideMenu/index mount and unmount component 3`] = `
 exports[`test Base/Nav/SideMenu/index should match snapshot when checkPagePermission return value is equal false 1`] = `
 <div>
   <div
-    class="dms-layout-side css-13z0syi"
+    class="dms-layout-side css-1mju0nn"
   >
     <div
       class="dms-layout-side-start"
     >
-      <div>
-        <div
-          class="title"
-        >
-          <span
-            class="label label-primary"
-          >
-            Action
-          </span>
-          <span
-            class="label label-base"
-          >
-            DMS
-          </span>
-        </div>
-      </div>
       <div
         class="ant-spin-nested-loading css-dev-only-do-not-override-txh9fw"
       >
@@ -4149,6 +4193,28 @@ exports[`test Base/Nav/SideMenu/index should match snapshot when checkPagePermis
         <div
           class="ant-spin-container ant-spin-blur"
         >
+          <div
+            class="css-hndaa8"
+          >
+            <div
+              class="title-wrapper"
+            >
+              <div
+                class="title"
+              >
+                <span
+                  class="label label-primary"
+                >
+                  Action
+                </span>
+                <span
+                  class="label label-base"
+                >
+                  DMS
+                </span>
+              </div>
+            </div>
+          </div>
           <div
             class="css-22avtw"
           >
@@ -5194,33 +5260,60 @@ exports[`test Base/Nav/SideMenu/index should match snapshot when checkPagePermis
 exports[`test Base/Nav/SideMenu/index should match snapshot when checkPagePermission return value is equal false 2`] = `
 <div>
   <div
-    class="dms-layout-side css-13z0syi"
+    class="dms-layout-side css-1mju0nn"
   >
     <div
       class="dms-layout-side-start"
     >
-      <div>
-        <div
-          class="title"
-        >
-          <span
-            class="label label-primary"
-          >
-            Action
-          </span>
-          <span
-            class="label label-base"
-          >
-            DMS
-          </span>
-        </div>
-      </div>
       <div
         class="ant-spin-nested-loading css-dev-only-do-not-override-txh9fw"
       >
         <div
           class="ant-spin-container"
         >
+          <div
+            class="css-hndaa8"
+          >
+            <div
+              class="title-wrapper"
+            >
+              <div
+                class="title"
+              >
+                <span
+                  class="label label-primary"
+                >
+                  Action
+                </span>
+                <span
+                  class="label label-base"
+                >
+                  DMS
+                </span>
+              </div>
+            </div>
+            <div
+              class="ant-dropdown-trigger css-me3d58"
+            >
+              <svg
+                height="16"
+                viewBox="0 0 1024 1024"
+                width="16"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M512 938.667c-53.333 0-384-257.259-384-469.334s171.925-384 384-384 384 171.926 384 384-330.667 469.334-384 469.334m0-352c64.8 0 117.333-52.534 117.333-117.334S576.8 352 512 352s-117.333 52.533-117.333 117.333S447.2 586.667 512 586.667"
+                  fill="#4583FF"
+                />
+              </svg>
+              <div
+                class="text"
+                title="请选择"
+              >
+                请选择
+              </div>
+            </div>
+          </div>
           <div
             class="css-22avtw"
           >
