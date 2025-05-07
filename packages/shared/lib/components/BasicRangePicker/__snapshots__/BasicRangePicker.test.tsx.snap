@@ -1,434 +1,55 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`lib/BasicRangePicker render diff size range date 1`] = `
-<body>
-  <div>
+exports[`lib/BasicRangePicker should match snapshot 1`] = `
+<div>
+  <div
+    class="css-1y8q0oh"
+  >
     <div
-      class="css-1y8q0oh"
+      class="ant-picker ant-picker-range basic-range-picker-wrapper css-w7y1zu"
     >
       <div
-        class="ant-picker ant-picker-range ant-picker-small css-dev-only-do-not-override-1xo6ltj basic-range-picker-wrapper custom-date-range css-w7y1zu"
+        class="ant-picker-input ant-picker-input-active"
       >
-        <div
-          class="ant-picker-input ant-picker-input-active"
-        >
-          <input
-            autocomplete="off"
-            placeholder="Start date"
-            readonly=""
-            size="12"
-            value=""
-          />
-        </div>
-        <div
-          class="ant-picker-range-separator"
-        >
-          <svg
-            fill="currentColor"
-            height="14"
-            viewBox="0 0 14 14"
-            width="14"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M7.684 7 4.796 4.112l.825-.824L9.334 7 5.62 10.712l-.825-.825z"
-            />
-          </svg>
-        </div>
-        <div
-          class="ant-picker-input"
-        >
-          <input
-            autocomplete="off"
-            placeholder="End date"
-            readonly=""
-            size="12"
-            value=""
-          />
-        </div>
-        <div
-          class="ant-picker-active-bar"
-          style="left: 0px; width: 0px; position: absolute;"
+        <input
+          autocomplete="off"
+          placeholder="开始日期"
+          readonly=""
+          size="12"
+          value=""
         />
       </div>
-    </div>
-  </div>
-</body>
-`;
-
-exports[`lib/BasicRangePicker render diff size range date 2`] = `
-<body>
-  <div>
-    <div
-      class="css-1y8q0oh"
-    >
       <div
-        class="ant-picker ant-picker-range ant-picker-small css-dev-only-do-not-override-1xo6ltj basic-range-picker-wrapper custom-date-range css-w7y1zu"
+        class="ant-picker-range-separator"
       >
-        <div
-          class="ant-picker-input ant-picker-input-active"
+        <svg
+          fill="currentColor"
+          height="14"
+          viewBox="0 0 14 14"
+          width="14"
+          xmlns="http://www.w3.org/2000/svg"
         >
-          <input
-            autocomplete="off"
-            placeholder="Start date"
-            readonly=""
-            size="12"
-            value=""
+          <path
+            d="M7.684 7 4.796 4.112l.825-.824L9.334 7 5.62 10.712l-.825-.825z"
           />
-        </div>
-        <div
-          class="ant-picker-range-separator"
-        >
-          <svg
-            fill="currentColor"
-            height="14"
-            viewBox="0 0 14 14"
-            width="14"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M7.684 7 4.796 4.112l.825-.824L9.334 7 5.62 10.712l-.825-.825z"
-            />
-          </svg>
-        </div>
-        <div
-          class="ant-picker-input"
-        >
-          <input
-            autocomplete="off"
-            placeholder="End date"
-            readonly=""
-            size="12"
-            value=""
-          />
-        </div>
-        <div
-          class="ant-picker-active-bar"
-          style="left: 0px; width: 0px; position: absolute;"
-        />
+        </svg>
       </div>
-    </div>
-  </div>
-  <div>
-    <div
-      class="css-1y8q0oh"
-    >
       <div
-        class="ant-picker ant-picker-range ant-picker-middle css-dev-only-do-not-override-1xo6ltj basic-range-picker-wrapper css-w7y1zu"
+        class="ant-picker-input"
       >
-        <div
-          class="ant-picker-input ant-picker-input-active"
-        >
-          <input
-            autocomplete="off"
-            placeholder="Start date"
-            readonly=""
-            size="12"
-            value=""
-          />
-        </div>
-        <div
-          class="ant-picker-range-separator"
-        >
-          <svg
-            fill="currentColor"
-            height="14"
-            viewBox="0 0 14 14"
-            width="14"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M7.684 7 4.796 4.112l.825-.824L9.334 7 5.62 10.712l-.825-.825z"
-            />
-          </svg>
-        </div>
-        <div
-          class="ant-picker-input"
-        >
-          <input
-            autocomplete="off"
-            placeholder="End date"
-            readonly=""
-            size="12"
-            value=""
-          />
-        </div>
-        <div
-          class="ant-picker-active-bar"
-          style="left: 0px; width: 0px; position: absolute;"
+        <input
+          autocomplete="off"
+          placeholder="结束日期"
+          readonly=""
+          size="12"
+          value=""
         />
       </div>
-    </div>
-  </div>
-</body>
-`;
-
-exports[`lib/BasicRangePicker render diff size range date 3`] = `
-<body>
-  <div>
-    <div
-      class="css-1y8q0oh"
-    >
       <div
-        class="ant-picker ant-picker-range ant-picker-small css-dev-only-do-not-override-1xo6ltj basic-range-picker-wrapper custom-date-range css-w7y1zu"
-      >
-        <div
-          class="ant-picker-input ant-picker-input-active"
-        >
-          <input
-            autocomplete="off"
-            placeholder="Start date"
-            readonly=""
-            size="12"
-            value=""
-          />
-        </div>
-        <div
-          class="ant-picker-range-separator"
-        >
-          <svg
-            fill="currentColor"
-            height="14"
-            viewBox="0 0 14 14"
-            width="14"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M7.684 7 4.796 4.112l.825-.824L9.334 7 5.62 10.712l-.825-.825z"
-            />
-          </svg>
-        </div>
-        <div
-          class="ant-picker-input"
-        >
-          <input
-            autocomplete="off"
-            placeholder="End date"
-            readonly=""
-            size="12"
-            value=""
-          />
-        </div>
-        <div
-          class="ant-picker-active-bar"
-          style="left: 0px; width: 0px; position: absolute;"
-        />
-      </div>
+        class="ant-picker-active-bar"
+        style="left: 0px; width: 0px; position: absolute;"
+      />
     </div>
   </div>
-  <div>
-    <div
-      class="css-1y8q0oh"
-    >
-      <div
-        class="ant-picker ant-picker-range ant-picker-middle css-dev-only-do-not-override-1xo6ltj basic-range-picker-wrapper css-w7y1zu"
-      >
-        <div
-          class="ant-picker-input ant-picker-input-active"
-        >
-          <input
-            autocomplete="off"
-            placeholder="Start date"
-            readonly=""
-            size="12"
-            value=""
-          />
-        </div>
-        <div
-          class="ant-picker-range-separator"
-        >
-          <svg
-            fill="currentColor"
-            height="14"
-            viewBox="0 0 14 14"
-            width="14"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M7.684 7 4.796 4.112l.825-.824L9.334 7 5.62 10.712l-.825-.825z"
-            />
-          </svg>
-        </div>
-        <div
-          class="ant-picker-input"
-        >
-          <input
-            autocomplete="off"
-            placeholder="End date"
-            readonly=""
-            size="12"
-            value=""
-          />
-        </div>
-        <div
-          class="ant-picker-active-bar"
-          style="left: 0px; width: 0px; position: absolute;"
-        />
-      </div>
-    </div>
-  </div>
-  <div>
-    <div
-      class="css-1y8q0oh"
-    >
-      <div
-        class="ant-picker ant-picker-range ant-picker-large css-dev-only-do-not-override-1xo6ltj basic-range-picker-wrapper css-w7y1zu"
-      >
-        <div
-          class="ant-picker-input ant-picker-input-active"
-        >
-          <input
-            autocomplete="off"
-            placeholder="Start date"
-            readonly=""
-            size="12"
-            value=""
-          />
-        </div>
-        <div
-          class="ant-picker-range-separator"
-        >
-          <svg
-            fill="currentColor"
-            height="14"
-            viewBox="0 0 14 14"
-            width="14"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M7.684 7 4.796 4.112l.825-.824L9.334 7 5.62 10.712l-.825-.825z"
-            />
-          </svg>
-        </div>
-        <div
-          class="ant-picker-input"
-        >
-          <input
-            autocomplete="off"
-            placeholder="End date"
-            readonly=""
-            size="12"
-            value=""
-          />
-        </div>
-        <div
-          class="ant-picker-active-bar"
-          style="left: 0px; width: 0px; position: absolute;"
-        />
-      </div>
-    </div>
-  </div>
-</body>
-`;
-
-exports[`lib/BasicRangePicker render no supper icon 1`] = `
-<body>
-  <div>
-    <div
-      class="css-1di7b8j"
-    >
-      <div
-        class="ant-picker ant-picker-range css-dev-only-do-not-override-1xo6ltj basic-range-picker-wrapper custom-date-range css-w7y1zu"
-      >
-        <div
-          class="ant-picker-input ant-picker-input-active"
-        >
-          <input
-            autocomplete="off"
-            placeholder="Start date"
-            readonly=""
-            size="12"
-            value=""
-          />
-        </div>
-        <div
-          class="ant-picker-range-separator"
-        >
-          <svg
-            fill="currentColor"
-            height="14"
-            viewBox="0 0 14 14"
-            width="14"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M7.684 7 4.796 4.112l.825-.824L9.334 7 5.62 10.712l-.825-.825z"
-            />
-          </svg>
-        </div>
-        <div
-          class="ant-picker-input"
-        >
-          <input
-            autocomplete="off"
-            placeholder="End date"
-            readonly=""
-            size="12"
-            value=""
-          />
-        </div>
-        <div
-          class="ant-picker-active-bar"
-          style="left: 0px; width: 0px; position: absolute;"
-        />
-      </div>
-    </div>
-  </div>
-</body>
-`;
-
-exports[`lib/BasicRangePicker render none prefix icon 1`] = `
-<body>
-  <div>
-    <div
-      class="css-1y8q0oh"
-    >
-      <div
-        class="ant-picker ant-picker-range css-dev-only-do-not-override-1xo6ltj basic-range-picker-wrapper custom-date-range css-w7y1zu"
-      >
-        <div
-          class="ant-picker-input ant-picker-input-active"
-        >
-          <input
-            autocomplete="off"
-            placeholder="Start date"
-            readonly=""
-            size="12"
-            value=""
-          />
-        </div>
-        <div
-          class="ant-picker-range-separator"
-        >
-          <svg
-            fill="currentColor"
-            height="14"
-            viewBox="0 0 14 14"
-            width="14"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M7.684 7 4.796 4.112l.825-.824L9.334 7 5.62 10.712l-.825-.825z"
-            />
-          </svg>
-        </div>
-        <div
-          class="ant-picker-input"
-        >
-          <input
-            autocomplete="off"
-            placeholder="End date"
-            readonly=""
-            size="12"
-            value=""
-          />
-        </div>
-        <div
-          class="ant-picker-active-bar"
-          style="left: 0px; width: 0px; position: absolute;"
-        />
-      </div>
-    </div>
-  </div>
-</body>
+</div>
 `;

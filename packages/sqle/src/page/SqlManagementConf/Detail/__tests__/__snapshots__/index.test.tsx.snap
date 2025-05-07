@@ -17,7 +17,7 @@ exports[`test SqlManagementConf/Detail/index.tsx should display error message wh
         href="/sqle/project/700300/sql-management-conf"
       >
         <button
-          class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default basic-button-wrapper css-geipcv"
+          class="ant-btn ant-btn-default basic-button-wrapper css-geipcv"
           type="button"
         >
           <span
@@ -43,7 +43,7 @@ exports[`test SqlManagementConf/Detail/index.tsx should display error message wh
     </div>
   </div>
   <div
-    class="ant-result ant-result-error css-dev-only-do-not-override-txh9fw"
+    class="ant-result ant-result-error"
   >
     <div
       class="ant-result-icon"
@@ -57,13 +57,14 @@ exports[`test SqlManagementConf/Detail/index.tsx should display error message wh
           aria-hidden="true"
           data-icon="close-circle"
           fill="currentColor"
+          fill-rule="evenodd"
           focusable="false"
           height="1em"
           viewBox="64 64 896 896"
           width="1em"
         >
           <path
-            d="M512 64C264.6 64 64 264.6 64 512s200.6 448 448 448 448-200.6 448-448S759.4 64 512 64zm165.4 618.2l-66-.3L512 563.4l-99.3 118.4-66.1.3c-4.4 0-8-3.5-8-8 0-1.9.7-3.7 1.9-5.2l130.1-155L340.5 359a8.32 8.32 0 01-1.9-5.2c0-4.4 3.6-8 8-8l66.1.3L512 464.6l99.3-118.4 66-.3c4.4 0 8 3.5 8 8 0 1.9-.7 3.7-1.9 5.2L553.5 514l130 155c1.2 1.5 1.9 3.3 1.9 5.2 0 4.4-3.6 8-8 8z"
+            d="M512 64c247.4 0 448 200.6 448 448S759.4 960 512 960 64 759.4 64 512 264.6 64 512 64zm127.98 274.82h-.04l-.08.06L512 466.75 384.14 338.88c-.04-.05-.06-.06-.08-.06a.12.12 0 00-.07 0c-.03 0-.05.01-.09.05l-45.02 45.02a.2.2 0 00-.05.09.12.12 0 000 .07v.02a.27.27 0 00.06.06L466.75 512 338.88 639.86c-.05.04-.06.06-.06.08a.12.12 0 000 .07c0 .03.01.05.05.09l45.02 45.02a.2.2 0 00.09.05.12.12 0 00.07 0c.02 0 .04-.01.08-.05L512 557.25l127.86 127.87c.04.04.06.05.08.05a.12.12 0 00.07 0c.03 0 .05-.01.09-.05l45.02-45.02a.2.2 0 00.05-.09.12.12 0 000-.07v-.02a.27.27 0 00-.05-.06L557.25 512l127.87-127.86c.04-.04.05-.06.05-.08a.12.12 0 000-.07c0-.03-.01-.05-.05-.09l-45.02-45.02a.2.2 0 00-.09-.05.12.12 0 00-.07 0z"
           />
         </svg>
       </span>
@@ -99,7 +100,7 @@ exports[`test SqlManagementConf/Detail/index.tsx should match snapshot 1`] = `
         href="/sqle/project/700300/sql-management-conf"
       >
         <button
-          class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default basic-button-wrapper css-geipcv"
+          class="ant-btn ant-btn-default basic-button-wrapper css-geipcv"
           type="button"
         >
           <span
@@ -128,10 +129,10 @@ exports[`test SqlManagementConf/Detail/index.tsx should match snapshot 1`] = `
     class="segmented-tabs-wrapper"
   >
     <div
-      class="ant-row segmented-row-wrapper flex-space-between css-156vlto css-dev-only-do-not-override-txh9fw"
+      class="ant-row segmented-row-wrapper flex-space-between css-156vlto"
     >
       <div
-        class="ant-segmented basic-segmented-wrapper css-192b3m1 css-dev-only-do-not-override-txh9fw"
+        class="ant-segmented basic-segmented-wrapper css-192b3m1"
       >
         <div
           class="ant-segmented-group"
@@ -154,7 +155,7 @@ exports[`test SqlManagementConf/Detail/index.tsx should match snapshot 1`] = `
         </div>
       </div>
       <div
-        class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+        class="ant-space ant-space-horizontal ant-space-align-center"
       >
         <div
           class="ant-space-item"
@@ -164,7 +165,7 @@ exports[`test SqlManagementConf/Detail/index.tsx should match snapshot 1`] = `
           class="ant-space-item"
         >
           <button
-            class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default ant-btn-sm ant-btn-icon-only basic-button-wrapper css-geipcv"
+            class="ant-btn ant-btn-default ant-btn-sm ant-btn-icon-only basic-button-wrapper css-geipcv"
             type="button"
           >
             <span
@@ -190,16 +191,16 @@ exports[`test SqlManagementConf/Detail/index.tsx should match snapshot 1`] = `
       class="lazy-load-wrapper segmented-item-content lazy-load-wrapper-show css-952l0m"
     >
       <div
-        class="ant-spin-nested-loading css-dev-only-do-not-override-txh9fw"
+        class="ant-spin-nested-loading"
       >
         <div
           class="ant-spin-container"
         >
           <div
-            class="ant-table-wrapper actiontech-table-namespace table-row-cursor css-fxd6ka css-dev-only-do-not-override-bj9uhl"
+            class="ant-table-wrapper actiontech-table-namespace table-row-cursor css-fxd6ka"
           >
             <div
-              class="ant-spin-nested-loading css-dev-only-do-not-override-bj9uhl"
+              class="ant-spin-nested-loading"
             >
               <div
                 class="ant-spin-container"
@@ -410,7 +411,7 @@ exports[`test SqlManagementConf/Detail/index.tsx should match snapshot 2`] = `
         href="/sqle/project/700300/sql-management-conf"
       >
         <button
-          class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default basic-button-wrapper css-geipcv"
+          class="ant-btn ant-btn-default basic-button-wrapper css-geipcv"
           type="button"
         >
           <span
@@ -439,10 +440,10 @@ exports[`test SqlManagementConf/Detail/index.tsx should match snapshot 2`] = `
     class="segmented-tabs-wrapper"
   >
     <div
-      class="ant-row segmented-row-wrapper flex-space-between css-156vlto css-dev-only-do-not-override-txh9fw"
+      class="ant-row segmented-row-wrapper flex-space-between css-156vlto"
     >
       <div
-        class="ant-segmented basic-segmented-wrapper css-192b3m1 css-dev-only-do-not-override-txh9fw"
+        class="ant-segmented basic-segmented-wrapper css-192b3m1"
       >
         <div
           class="ant-segmented-group"
@@ -507,7 +508,7 @@ exports[`test SqlManagementConf/Detail/index.tsx should match snapshot 2`] = `
         </div>
       </div>
       <div
-        class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+        class="ant-space ant-space-horizontal ant-space-align-center"
       >
         <div
           class="ant-space-item"
@@ -517,7 +518,7 @@ exports[`test SqlManagementConf/Detail/index.tsx should match snapshot 2`] = `
           class="ant-space-item"
         >
           <button
-            class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default ant-btn-sm ant-btn-icon-only basic-button-wrapper css-geipcv"
+            class="ant-btn ant-btn-default ant-btn-sm ant-btn-icon-only basic-button-wrapper css-geipcv"
             type="button"
           >
             <span
@@ -543,16 +544,16 @@ exports[`test SqlManagementConf/Detail/index.tsx should match snapshot 2`] = `
       class="lazy-load-wrapper segmented-item-content lazy-load-wrapper-show css-952l0m"
     >
       <div
-        class="ant-spin-nested-loading css-dev-only-do-not-override-txh9fw"
+        class="ant-spin-nested-loading"
       >
         <div
           class="ant-spin-container"
         >
           <div
-            class="ant-table-wrapper actiontech-table-namespace table-row-cursor css-fxd6ka css-dev-only-do-not-override-bj9uhl"
+            class="ant-table-wrapper actiontech-table-namespace table-row-cursor css-fxd6ka"
           >
             <div
-              class="ant-spin-nested-loading css-dev-only-do-not-override-bj9uhl"
+              class="ant-spin-nested-loading"
             >
               <div
                 class="ant-spin-container"
@@ -726,7 +727,7 @@ exports[`test SqlManagementConf/Detail/index.tsx should match snapshot 2`] = `
                               class="ant-table-cell"
                             >
                               <a
-                                class="ant-typography css-dev-only-do-not-override-bj9uhl"
+                                class="ant-typography"
                               >
                                 库表元数据
                               </a>
@@ -791,14 +792,14 @@ exports[`test SqlManagementConf/Detail/index.tsx should match snapshot 2`] = `
                                 class="css-new95e"
                               >
                                 <div
-                                  class="ant-space css-dev-only-do-not-override-bj9uhl ant-space-horizontal ant-space-align-center"
+                                  class="ant-space ant-space-horizontal ant-space-align-center"
                                 >
                                   <div
                                     class="ant-space-item"
                                     style="margin-right: 8px;"
                                   >
                                     <button
-                                      class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                      class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
                                       disabled=""
                                       type="button"
                                     >
@@ -812,7 +813,7 @@ exports[`test SqlManagementConf/Detail/index.tsx should match snapshot 2`] = `
                                     style="margin-right: 8px;"
                                   >
                                     <button
-                                      class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                      class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
                                       type="button"
                                     >
                                       <span>
@@ -824,7 +825,7 @@ exports[`test SqlManagementConf/Detail/index.tsx should match snapshot 2`] = `
                                     class="ant-space-item"
                                   >
                                     <button
-                                      class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm ant-btn-dangerous actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                      class="ant-btn ant-btn-default ant-btn-sm ant-btn-dangerous actiontech-table-actions-button basic-button-wrapper css-geipcv"
                                       type="button"
                                     >
                                       <span>
@@ -844,7 +845,7 @@ exports[`test SqlManagementConf/Detail/index.tsx should match snapshot 2`] = `
                               class="ant-table-cell"
                             >
                               <a
-                                class="ant-typography css-dev-only-do-not-override-bj9uhl"
+                                class="ant-typography"
                               >
                                 慢日志
                               </a>
@@ -896,7 +897,7 @@ exports[`test SqlManagementConf/Detail/index.tsx should match snapshot 2`] = `
                                 class="css-1sg2lsz"
                               >
                                 <div
-                                  class="ant-space css-dev-only-do-not-override-bj9uhl ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
+                                  class="ant-space ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
                                 >
                                   <div
                                     class="ant-space-item"
@@ -919,10 +920,10 @@ exports[`test SqlManagementConf/Detail/index.tsx should match snapshot 2`] = `
                                   </div>
                                 </div>
                                 <span
-                                  class="ant-typography css-dev-only-do-not-override-bj9uhl"
+                                  class="ant-typography"
                                 >
                                   <div
-                                    aria-label="Copy"
+                                    aria-label="复制"
                                     class="ant-typography-copy"
                                     role="button"
                                     style="border: 0px; background: transparent; padding: 0px; line-height: inherit; display: inline-block;"
@@ -974,14 +975,14 @@ exports[`test SqlManagementConf/Detail/index.tsx should match snapshot 2`] = `
                                 class="css-new95e"
                               >
                                 <div
-                                  class="ant-space css-dev-only-do-not-override-bj9uhl ant-space-horizontal ant-space-align-center"
+                                  class="ant-space ant-space-horizontal ant-space-align-center"
                                 >
                                   <div
                                     class="ant-space-item"
                                     style="margin-right: 8px;"
                                   >
                                     <button
-                                      class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                      class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
                                       type="button"
                                     >
                                       <span>
@@ -994,7 +995,7 @@ exports[`test SqlManagementConf/Detail/index.tsx should match snapshot 2`] = `
                                     style="margin-right: 8px;"
                                   >
                                     <button
-                                      class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                      class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
                                       disabled=""
                                       type="button"
                                     >
@@ -1007,7 +1008,7 @@ exports[`test SqlManagementConf/Detail/index.tsx should match snapshot 2`] = `
                                     class="ant-space-item"
                                   >
                                     <button
-                                      class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm ant-btn-dangerous actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                      class="ant-btn ant-btn-default ant-btn-sm ant-btn-dangerous actiontech-table-actions-button basic-button-wrapper css-geipcv"
                                       type="button"
                                     >
                                       <span>
@@ -1027,7 +1028,7 @@ exports[`test SqlManagementConf/Detail/index.tsx should match snapshot 2`] = `
                               class="ant-table-cell"
                             >
                               <a
-                                class="ant-typography css-dev-only-do-not-override-bj9uhl"
+                                class="ant-typography"
                               >
                                 processlist 列表
                               </a>
@@ -1092,14 +1093,14 @@ exports[`test SqlManagementConf/Detail/index.tsx should match snapshot 2`] = `
                                 class="css-new95e"
                               >
                                 <div
-                                  class="ant-space css-dev-only-do-not-override-bj9uhl ant-space-horizontal ant-space-align-center"
+                                  class="ant-space ant-space-horizontal ant-space-align-center"
                                 >
                                   <div
                                     class="ant-space-item"
                                     style="margin-right: 8px;"
                                   >
                                     <button
-                                      class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                      class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
                                       disabled=""
                                       type="button"
                                     >
@@ -1113,7 +1114,7 @@ exports[`test SqlManagementConf/Detail/index.tsx should match snapshot 2`] = `
                                     style="margin-right: 8px;"
                                   >
                                     <button
-                                      class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                      class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
                                       type="button"
                                     >
                                       <span>
@@ -1125,7 +1126,7 @@ exports[`test SqlManagementConf/Detail/index.tsx should match snapshot 2`] = `
                                     class="ant-space-item"
                                   >
                                     <button
-                                      class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm ant-btn-dangerous actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                      class="ant-btn ant-btn-default ant-btn-sm ant-btn-dangerous actiontech-table-actions-button basic-button-wrapper css-geipcv"
                                       type="button"
                                     >
                                       <span>
@@ -1145,7 +1146,7 @@ exports[`test SqlManagementConf/Detail/index.tsx should match snapshot 2`] = `
                               class="ant-table-cell"
                             >
                               <a
-                                class="ant-typography css-dev-only-do-not-override-bj9uhl"
+                                class="ant-typography"
                               >
                                 自定义
                               </a>
@@ -1210,14 +1211,14 @@ exports[`test SqlManagementConf/Detail/index.tsx should match snapshot 2`] = `
                                 class="css-new95e"
                               >
                                 <div
-                                  class="ant-space css-dev-only-do-not-override-bj9uhl ant-space-horizontal ant-space-align-center"
+                                  class="ant-space ant-space-horizontal ant-space-align-center"
                                 >
                                   <div
                                     class="ant-space-item"
                                     style="margin-right: 8px;"
                                   >
                                     <button
-                                      class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                      class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
                                       disabled=""
                                       type="button"
                                     >
@@ -1231,7 +1232,7 @@ exports[`test SqlManagementConf/Detail/index.tsx should match snapshot 2`] = `
                                     style="margin-right: 8px;"
                                   >
                                     <button
-                                      class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                      class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
                                       type="button"
                                     >
                                       <span>
@@ -1243,7 +1244,7 @@ exports[`test SqlManagementConf/Detail/index.tsx should match snapshot 2`] = `
                                     class="ant-space-item"
                                   >
                                     <button
-                                      class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm ant-btn-dangerous actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                      class="ant-btn ant-btn-default ant-btn-sm ant-btn-dangerous actiontech-table-actions-button basic-button-wrapper css-geipcv"
                                       type="button"
                                     >
                                       <span>

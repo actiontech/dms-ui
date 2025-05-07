@@ -101,9 +101,9 @@ describe('KnowledgeSearchResults', () => {
     superRender(<KnowledgeSearchResults />);
     expect(getKnowledgeBaseListSpy).toHaveBeenCalledTimes(1);
     await act(async () => jest.advanceTimersByTime(3000));
-    fireEvent.mouseDown(getBySelector('span[title="20 / page"]'));
+    fireEvent.mouseDown(getBySelector('span[title="20 条/页"]'));
     await act(async () => jest.advanceTimersByTime(0));
-    fireEvent.click(getBySelector('div[title="10 / page"]'));
+    fireEvent.click(getBySelector('div[title="10 条/页"]'));
     await act(async () => jest.advanceTimersByTime(0));
     expect(getKnowledgeBaseListSpy).toHaveBeenCalledTimes(2);
     expect(getKnowledgeBaseListSpy).toHaveBeenNthCalledWith(

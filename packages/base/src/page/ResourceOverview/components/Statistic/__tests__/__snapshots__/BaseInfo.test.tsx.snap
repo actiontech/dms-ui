@@ -3,20 +3,20 @@
 exports[`base/page/ResourceOverview/Statictis/BaseInfo render init snap 1`] = `
 <div>
   <div
-    class="ant-spin-nested-loading css-dev-only-do-not-override-txh9fw"
+    class="ant-spin-nested-loading"
   >
     <div
       class="ant-spin-container"
     >
       <div
-        class="ant-space css-dev-only-do-not-override-txh9fw ant-space-vertical statistic-card-wrapper full-width-element"
+        class="ant-space ant-space-vertical statistic-card-wrapper full-width-element"
       >
         <div
           class="ant-space-item"
           style="margin-bottom: 24px;"
         >
           <div
-            class="ant-card ant-card-bordered ant-card-hoverable statistic-card css-dev-only-do-not-override-txh9fw"
+            class="ant-card ant-card-bordered ant-card-hoverable statistic-card"
           >
             <div
               class="ant-card-body"
@@ -41,13 +41,13 @@ exports[`base/page/ResourceOverview/Statictis/BaseInfo render init snap 1`] = `
                   </svg>
                 </div>
                 <div
-                  class="ant-statistic css-dev-only-do-not-override-txh9fw"
+                  class="ant-statistic"
                 >
                   <div
                     class="ant-statistic-title"
                   >
                     <div
-                      class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+                      class="ant-space ant-space-horizontal ant-space-align-center"
                     >
                       <div
                         class="ant-space-item"
@@ -79,7 +79,7 @@ exports[`base/page/ResourceOverview/Statictis/BaseInfo render init snap 1`] = `
           style="margin-bottom: 24px;"
         >
           <div
-            class="ant-card ant-card-bordered ant-card-hoverable statistic-card css-dev-only-do-not-override-txh9fw"
+            class="ant-card ant-card-bordered ant-card-hoverable statistic-card"
           >
             <div
               class="ant-card-body"
@@ -103,13 +103,13 @@ exports[`base/page/ResourceOverview/Statictis/BaseInfo render init snap 1`] = `
                   </svg>
                 </div>
                 <div
-                  class="ant-statistic css-dev-only-do-not-override-txh9fw"
+                  class="ant-statistic"
                 >
                   <div
                     class="ant-statistic-title"
                   >
                     <div
-                      class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+                      class="ant-space ant-space-horizontal ant-space-align-center"
                     >
                       <div
                         class="ant-space-item"
@@ -140,7 +140,7 @@ exports[`base/page/ResourceOverview/Statictis/BaseInfo render init snap 1`] = `
           class="ant-space-item"
         >
           <div
-            class="ant-card ant-card-bordered ant-card-hoverable statistic-card css-dev-only-do-not-override-txh9fw"
+            class="ant-card ant-card-bordered ant-card-hoverable statistic-card"
           >
             <div
               class="ant-card-body"
@@ -165,13 +165,13 @@ exports[`base/page/ResourceOverview/Statictis/BaseInfo render init snap 1`] = `
                   </svg>
                 </div>
                 <div
-                  class="ant-statistic css-dev-only-do-not-override-txh9fw"
+                  class="ant-statistic"
                 >
                   <div
                     class="ant-statistic-title"
                   >
                     <div
-                      class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+                      class="ant-space ant-space-horizontal ant-space-align-center"
                     >
                       <div
                         class="ant-space-item"

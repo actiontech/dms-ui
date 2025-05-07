@@ -26,7 +26,7 @@ const UserCenter: React.FC = () => {
 
   const [activePage, setActivePage] = useState(UserCenterListEnum.user_list);
 
-  const onRefreshTable = (tab: UserCenterListEnum) => {
+  const onRefreshTable = () => {
     eventEmitter.emit(EmitterKey.DMS_Refresh_User_Center_List);
   };
 
@@ -83,7 +83,7 @@ const UserCenter: React.FC = () => {
             {t('dmsUserCenter.pageTitle')}
             <TableRefreshButton
               refresh={() => {
-                onRefreshTable(activePage);
+                onRefreshTable();
               }}
             />
           </Space>

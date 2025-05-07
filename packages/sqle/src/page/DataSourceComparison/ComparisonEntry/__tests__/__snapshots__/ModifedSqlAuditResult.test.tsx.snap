@@ -3,17 +3,17 @@
 exports[`ModifiedSqlAuditResult index should render without crashing when no dataSource is provided 1`] = `
 <div>
   <div
-    class="ant-segmented basic-segmented-wrapper css-192b3m1 ant-segmented-block css-dev-only-do-not-override-txh9fw"
+    class="ant-segmented basic-segmented-wrapper css-192b3m1 ant-segmented-block"
   >
     <div
       class="ant-segmented-group"
     />
   </div>
   <div
-    class="ant-list ant-list-vertical css-dev-only-do-not-override-txh9fw"
+    class="ant-list ant-list-vertical"
   >
     <div
-      class="ant-spin-nested-loading css-dev-only-do-not-override-txh9fw"
+      class="ant-spin-nested-loading"
     >
       <div
         class="ant-spin-container"
@@ -22,7 +22,7 @@ exports[`ModifiedSqlAuditResult index should render without crashing when no dat
           class="ant-list-empty-text"
         >
           <div
-            class="css-dev-only-do-not-override-txh9fw ant-empty ant-empty-normal"
+            class="ant-empty ant-empty-normal"
           >
             <div
               class="ant-empty-image"
@@ -63,7 +63,7 @@ exports[`ModifiedSqlAuditResult index should render without crashing when no dat
             <div
               class="ant-empty-description"
             >
-              No data
+              暂无数据
             </div>
           </div>
         </div>
@@ -76,7 +76,7 @@ exports[`ModifiedSqlAuditResult index should render without crashing when no dat
 exports[`ModifiedSqlAuditResult index should set the activeTabKey to the first schema_name in dataSource on initial render if dataSource is provided 1`] = `
 <div>
   <div
-    class="ant-segmented basic-segmented-wrapper css-192b3m1 ant-segmented-block css-dev-only-do-not-override-txh9fw"
+    class="ant-segmented basic-segmented-wrapper css-192b3m1 ant-segmented-block"
   >
     <div
       class="ant-segmented-group"
@@ -93,7 +93,7 @@ exports[`ModifiedSqlAuditResult index should set the activeTabKey to the first s
           title="MySQL-Test-01.schema_name1"
         >
           <div
-            class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+            class="ant-space ant-space-horizontal ant-space-align-center"
             data-testid="schema_name1"
           >
             <div
@@ -137,7 +137,7 @@ exports[`ModifiedSqlAuditResult index should set the activeTabKey to the first s
           title="MySQL-Test-01.schema_name2"
         >
           <div
-            class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+            class="ant-space ant-space-horizontal ant-space-align-center"
             data-testid="schema_name2"
           >
             <div
@@ -181,7 +181,7 @@ exports[`ModifiedSqlAuditResult index should set the activeTabKey to the first s
           title="MySQL-Test-01.schema_name3"
         >
           <div
-            class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+            class="ant-space ant-space-horizontal ant-space-align-center"
             data-testid="schema_name3"
           >
             <div
@@ -216,10 +216,10 @@ exports[`ModifiedSqlAuditResult index should set the activeTabKey to the first s
     </div>
   </div>
   <div
-    class="ant-list ant-list-vertical css-dev-only-do-not-override-txh9fw"
+    class="ant-list ant-list-vertical"
   >
     <div
-      class="ant-spin-nested-loading css-dev-only-do-not-override-txh9fw"
+      class="ant-spin-nested-loading"
     >
       <div
         class="ant-spin-container"
@@ -231,7 +231,7 @@ exports[`ModifiedSqlAuditResult index should set the activeTabKey to the first s
             class="ant-list-item ant-list-item-no-flex"
           >
             <div
-              class="ant-card ant-card-bordered css-dqueji css-dev-only-do-not-override-txh9fw"
+              class="ant-card ant-card-bordered css-dqueji"
             >
               <div
                 class="ant-card-body"
@@ -273,7 +273,7 @@ exports[`ModifiedSqlAuditResult index should set the activeTabKey to the first s
                   </pre>
                 </div>
                 <div
-                  class="ant-collapse ant-collapse-icon-position-start css-vh3t0y css-dev-only-do-not-override-txh9fw"
+                  class="ant-collapse ant-collapse-icon-position-start css-vh3t0y"
                 >
                   <div
                     class="ant-collapse-item ant-collapse-item-active"
@@ -356,7 +356,7 @@ exports[`ModifiedSqlAuditResult index should set the activeTabKey to the first s
             class="ant-list-item ant-list-item-no-flex"
           >
             <div
-              class="ant-card ant-card-bordered css-dqueji css-dev-only-do-not-override-txh9fw"
+              class="ant-card ant-card-bordered css-dqueji"
             >
               <div
                 class="ant-card-body"
@@ -409,7 +409,7 @@ exports[`ModifiedSqlAuditResult index should set the activeTabKey to the first s
                   </pre>
                 </div>
                 <div
-                  class="ant-collapse ant-collapse-icon-position-start css-vh3t0y css-dev-only-do-not-override-txh9fw"
+                  class="ant-collapse ant-collapse-icon-position-start css-vh3t0y"
                 >
                   <div
                     class="ant-collapse-item ant-collapse-item-active"
@@ -458,7 +458,7 @@ exports[`ModifiedSqlAuditResult index should set the activeTabKey to the first s
                         class="ant-collapse-content-box"
                       >
                         <div
-                          class="ant-spin-nested-loading css-dev-only-do-not-override-txh9fw"
+                          class="ant-spin-nested-loading"
                         >
                           <div
                             class="ant-spin-container"
@@ -502,7 +502,7 @@ exports[`ModifiedSqlAuditResult index should set the activeTabKey to the first s
                                   class="annotation-wrapper"
                                 >
                                   <a
-                                    class="ant-typography css-dev-only-do-not-override-txh9fw"
+                                    class="ant-typography"
                                     href="/sqle/rule/knowledge/ddl_disable_drop_statement/MySQL"
                                     rel="noopener noreferrer"
                                     target="_blank"
@@ -525,7 +525,7 @@ exports[`ModifiedSqlAuditResult index should set the activeTabKey to the first s
             class="ant-list-item ant-list-item-no-flex"
           >
             <div
-              class="ant-card ant-card-bordered css-dqueji css-dev-only-do-not-override-txh9fw"
+              class="ant-card ant-card-bordered css-dqueji"
             >
               <div
                 class="ant-card-body"
@@ -578,7 +578,7 @@ exports[`ModifiedSqlAuditResult index should set the activeTabKey to the first s
                   </pre>
                 </div>
                 <div
-                  class="ant-collapse ant-collapse-icon-position-start css-vh3t0y css-dev-only-do-not-override-txh9fw"
+                  class="ant-collapse ant-collapse-icon-position-start css-vh3t0y"
                 >
                   <div
                     class="ant-collapse-item"
@@ -634,7 +634,7 @@ exports[`ModifiedSqlAuditResult index should set the activeTabKey to the first s
 exports[`ModifiedSqlAuditResult index should update the activeTabKey and re-render the component when a new tab is selected 1`] = `
 <div>
   <div
-    class="ant-segmented basic-segmented-wrapper css-192b3m1 ant-segmented-block css-dev-only-do-not-override-txh9fw"
+    class="ant-segmented basic-segmented-wrapper css-192b3m1 ant-segmented-block"
   >
     <div
       class="ant-segmented-group"
@@ -651,7 +651,7 @@ exports[`ModifiedSqlAuditResult index should update the activeTabKey and re-rend
           title="MySQL-Test-01.schema_name1"
         >
           <div
-            class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+            class="ant-space ant-space-horizontal ant-space-align-center"
             data-testid="schema_name1"
           >
             <div
@@ -695,7 +695,7 @@ exports[`ModifiedSqlAuditResult index should update the activeTabKey and re-rend
           title="MySQL-Test-01.schema_name2"
         >
           <div
-            class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+            class="ant-space ant-space-horizontal ant-space-align-center"
             data-testid="schema_name2"
           >
             <div
@@ -739,7 +739,7 @@ exports[`ModifiedSqlAuditResult index should update the activeTabKey and re-rend
           title="MySQL-Test-01.schema_name3"
         >
           <div
-            class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+            class="ant-space ant-space-horizontal ant-space-align-center"
             data-testid="schema_name3"
           >
             <div
@@ -774,10 +774,10 @@ exports[`ModifiedSqlAuditResult index should update the activeTabKey and re-rend
     </div>
   </div>
   <div
-    class="ant-list ant-list-vertical css-dev-only-do-not-override-txh9fw"
+    class="ant-list ant-list-vertical"
   >
     <div
-      class="ant-spin-nested-loading css-dev-only-do-not-override-txh9fw"
+      class="ant-spin-nested-loading"
     >
       <div
         class="ant-spin-container"
@@ -789,7 +789,7 @@ exports[`ModifiedSqlAuditResult index should update the activeTabKey and re-rend
             class="ant-list-item ant-list-item-no-flex"
           >
             <div
-              class="ant-card ant-card-bordered css-dqueji css-dev-only-do-not-override-txh9fw"
+              class="ant-card ant-card-bordered css-dqueji"
             >
               <div
                 class="ant-card-body"
@@ -831,7 +831,7 @@ exports[`ModifiedSqlAuditResult index should update the activeTabKey and re-rend
                   </pre>
                 </div>
                 <div
-                  class="ant-collapse ant-collapse-icon-position-start css-vh3t0y css-dev-only-do-not-override-txh9fw"
+                  class="ant-collapse ant-collapse-icon-position-start css-vh3t0y"
                 >
                   <div
                     class="ant-collapse-item ant-collapse-item-active"
@@ -914,7 +914,7 @@ exports[`ModifiedSqlAuditResult index should update the activeTabKey and re-rend
             class="ant-list-item ant-list-item-no-flex"
           >
             <div
-              class="ant-card ant-card-bordered css-dqueji css-dev-only-do-not-override-txh9fw"
+              class="ant-card ant-card-bordered css-dqueji"
             >
               <div
                 class="ant-card-body"
@@ -967,7 +967,7 @@ exports[`ModifiedSqlAuditResult index should update the activeTabKey and re-rend
                   </pre>
                 </div>
                 <div
-                  class="ant-collapse ant-collapse-icon-position-start css-vh3t0y css-dev-only-do-not-override-txh9fw"
+                  class="ant-collapse ant-collapse-icon-position-start css-vh3t0y"
                 >
                   <div
                     class="ant-collapse-item ant-collapse-item-active"
@@ -1016,7 +1016,7 @@ exports[`ModifiedSqlAuditResult index should update the activeTabKey and re-rend
                         class="ant-collapse-content-box"
                       >
                         <div
-                          class="ant-spin-nested-loading css-dev-only-do-not-override-txh9fw"
+                          class="ant-spin-nested-loading"
                         >
                           <div
                             class="ant-spin-container"
@@ -1060,7 +1060,7 @@ exports[`ModifiedSqlAuditResult index should update the activeTabKey and re-rend
                                   class="annotation-wrapper"
                                 >
                                   <a
-                                    class="ant-typography css-dev-only-do-not-override-txh9fw"
+                                    class="ant-typography"
                                     href="/sqle/rule/knowledge/ddl_disable_drop_statement/MySQL"
                                     rel="noopener noreferrer"
                                     target="_blank"
@@ -1083,7 +1083,7 @@ exports[`ModifiedSqlAuditResult index should update the activeTabKey and re-rend
             class="ant-list-item ant-list-item-no-flex"
           >
             <div
-              class="ant-card ant-card-bordered css-dqueji css-dev-only-do-not-override-txh9fw"
+              class="ant-card ant-card-bordered css-dqueji"
             >
               <div
                 class="ant-card-body"
@@ -1136,7 +1136,7 @@ exports[`ModifiedSqlAuditResult index should update the activeTabKey and re-rend
                   </pre>
                 </div>
                 <div
-                  class="ant-collapse ant-collapse-icon-position-start css-vh3t0y css-dev-only-do-not-override-txh9fw"
+                  class="ant-collapse ant-collapse-icon-position-start css-vh3t0y"
                 >
                   <div
                     class="ant-collapse-item"
@@ -1192,10 +1192,10 @@ exports[`ModifiedSqlAuditResult index should update the activeTabKey and re-rend
 exports[`ModifiedSqlAuditResult list should render the correct number of list items based on the dataSource length 1`] = `
 <div>
   <div
-    class="ant-list ant-list-vertical css-dev-only-do-not-override-txh9fw"
+    class="ant-list ant-list-vertical"
   >
     <div
-      class="ant-spin-nested-loading css-dev-only-do-not-override-txh9fw"
+      class="ant-spin-nested-loading"
     >
       <div
         class="ant-spin-container"
@@ -1207,7 +1207,7 @@ exports[`ModifiedSqlAuditResult list should render the correct number of list it
             class="ant-list-item ant-list-item-no-flex"
           >
             <div
-              class="ant-card ant-card-bordered css-dqueji css-dev-only-do-not-override-txh9fw"
+              class="ant-card ant-card-bordered css-dqueji"
             >
               <div
                 class="ant-card-body"
@@ -1249,7 +1249,7 @@ exports[`ModifiedSqlAuditResult list should render the correct number of list it
                   </pre>
                 </div>
                 <div
-                  class="ant-collapse ant-collapse-icon-position-start css-vh3t0y css-dev-only-do-not-override-txh9fw"
+                  class="ant-collapse ant-collapse-icon-position-start css-vh3t0y"
                 >
                   <div
                     class="ant-collapse-item ant-collapse-item-active"
@@ -1332,7 +1332,7 @@ exports[`ModifiedSqlAuditResult list should render the correct number of list it
             class="ant-list-item ant-list-item-no-flex"
           >
             <div
-              class="ant-card ant-card-bordered css-dqueji css-dev-only-do-not-override-txh9fw"
+              class="ant-card ant-card-bordered css-dqueji"
             >
               <div
                 class="ant-card-body"
@@ -1385,7 +1385,7 @@ exports[`ModifiedSqlAuditResult list should render the correct number of list it
                   </pre>
                 </div>
                 <div
-                  class="ant-collapse ant-collapse-icon-position-start css-vh3t0y css-dev-only-do-not-override-txh9fw"
+                  class="ant-collapse ant-collapse-icon-position-start css-vh3t0y"
                 >
                   <div
                     class="ant-collapse-item ant-collapse-item-active"
@@ -1434,7 +1434,7 @@ exports[`ModifiedSqlAuditResult list should render the correct number of list it
                         class="ant-collapse-content-box"
                       >
                         <div
-                          class="ant-spin-nested-loading css-dev-only-do-not-override-txh9fw"
+                          class="ant-spin-nested-loading"
                         >
                           <div
                             class="ant-spin-container"
@@ -1478,7 +1478,7 @@ exports[`ModifiedSqlAuditResult list should render the correct number of list it
                                   class="annotation-wrapper"
                                 >
                                   <a
-                                    class="ant-typography css-dev-only-do-not-override-txh9fw"
+                                    class="ant-typography"
                                     href="/sqle/rule/knowledge/ddl_disable_drop_statement/MySQL"
                                     rel="noopener noreferrer"
                                     target="_blank"
@@ -1501,7 +1501,7 @@ exports[`ModifiedSqlAuditResult list should render the correct number of list it
             class="ant-list-item ant-list-item-no-flex"
           >
             <div
-              class="ant-card ant-card-bordered css-dqueji css-dev-only-do-not-override-txh9fw"
+              class="ant-card ant-card-bordered css-dqueji"
             >
               <div
                 class="ant-card-body"
@@ -1554,7 +1554,7 @@ exports[`ModifiedSqlAuditResult list should render the correct number of list it
                   </pre>
                 </div>
                 <div
-                  class="ant-collapse ant-collapse-icon-position-start css-vh3t0y css-dev-only-do-not-override-txh9fw"
+                  class="ant-collapse ant-collapse-icon-position-start css-vh3t0y"
                 >
                   <div
                     class="ant-collapse-item"
@@ -1610,10 +1610,10 @@ exports[`ModifiedSqlAuditResult list should render the correct number of list it
 exports[`ModifiedSqlAuditResult list should render without crashing when no dataSource is provided 1`] = `
 <div>
   <div
-    class="ant-list ant-list-vertical css-dev-only-do-not-override-txh9fw"
+    class="ant-list ant-list-vertical"
   >
     <div
-      class="ant-spin-nested-loading css-dev-only-do-not-override-txh9fw"
+      class="ant-spin-nested-loading"
     >
       <div
         class="ant-spin-container"
@@ -1622,7 +1622,7 @@ exports[`ModifiedSqlAuditResult list should render without crashing when no data
           class="ant-list-empty-text"
         >
           <div
-            class="css-dev-only-do-not-override-txh9fw ant-empty ant-empty-normal"
+            class="ant-empty ant-empty-normal"
           >
             <div
               class="ant-empty-image"
@@ -1663,7 +1663,7 @@ exports[`ModifiedSqlAuditResult list should render without crashing when no data
             <div
               class="ant-empty-description"
             >
-              No data
+              暂无数据
             </div>
           </div>
         </div>

@@ -6,6 +6,14 @@ export const OverviewStyleWrapper = styled('section')`
   background-color: ${({ theme }) =>
     theme.sharedTheme.uiToken.colorFillTertiary};
 
+  .item-wrapper {
+    & .ant-card {
+      .ant-card-body {
+        padding: 20px;
+      }
+    }
+  }
+
   .marginTop20 {
     margin-top: 20px;
   }

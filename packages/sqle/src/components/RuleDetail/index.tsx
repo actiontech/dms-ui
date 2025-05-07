@@ -10,8 +10,7 @@ import {
   BasicButton,
   BasicResult,
   EmptyBox,
-  useTypedParams,
-  BasicTag
+  useTypedParams
 } from '@actiontech/shared';
 import { RuleStatus, RuleList } from '../RuleList';
 import useRuleList from '../RuleList/useRuleList';

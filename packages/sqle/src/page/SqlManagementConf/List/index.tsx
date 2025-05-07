@@ -88,7 +88,11 @@ const List: React.FC = () => {
   ] = useBoolean(true);
 
   const onChangeTaskTypeShow = () => {
-    taskTypeShowStatus ? setTaskTypeHide() : setTaskTypeShow();
+    if (taskTypeShowStatus) {
+      setTaskTypeHide();
+    } else {
+      setTaskTypeShow();
+    }
   };
 
   const tableSetting = useMemo<ColumnsSettingProps>(

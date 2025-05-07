@@ -3,13 +3,13 @@
 exports[`TableWrapper should render TableWrapper with loading 1`] = `
 <div>
   <div
-    class="ant-spin-nested-loading css-dev-only-do-not-override-txh9fw"
+    class="ant-spin-nested-loading"
   >
     <div>
       <div
         aria-busy="true"
         aria-live="polite"
-        class="ant-spin ant-spin-spinning css-dev-only-do-not-override-txh9fw"
+        class="ant-spin ant-spin-spinning"
       >
         <span
           class="ant-spin-dot ant-spin-dot-spin"

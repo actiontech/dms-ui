@@ -1,0 +1,23 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`lib/BasicInput/Input should match snapshot 1`] = `
+<div>
+  <input
+    class="ant-input basic-input-wrapper css-1pd1cd5"
+    placeholder="请输入{{name}}"
+    type="text"
+    value=""
+  />
+</div>
+`;
+
+exports[`lib/BasicInput/Input should render basic input with default props 1`] = `
+<div>
+  <input
+    class="ant-input basic-input-wrapper css-1pd1cd5"
+    placeholder="请输入{{name}}"
+    type="text"
+    value=""
+  />
+</div>
+`;

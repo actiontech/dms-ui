@@ -5,16 +5,16 @@ exports[`test SqlBackupSwitcher render default checked when isSameSqlForAll is f
   <div />
   <div>
     <form
-      class="ant-form ant-form-horizontal css-dev-only-do-not-override-txh9fw"
+      class="ant-form ant-form-horizontal"
     >
       <div
-        class="ant-form-item has-label-tip css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+        class="ant-form-item has-label-tip css-1jlm9cy"
       >
         <div
-          class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+          class="ant-row ant-form-item-row"
         >
           <div
-            class="ant-col ant-col-22 ant-form-item-label css-dev-only-do-not-override-txh9fw"
+            class="ant-col ant-col-22 ant-form-item-label"
           >
             <label
               class=""
@@ -36,7 +36,7 @@ exports[`test SqlBackupSwitcher render default checked when isSameSqlForAll is f
             </label>
           </div>
           <div
-            class="ant-col ant-col-2 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+            class="ant-col ant-col-2 ant-form-item-control"
           >
             <div
               class="ant-form-item-control-input"
@@ -46,7 +46,7 @@ exports[`test SqlBackupSwitcher render default checked when isSameSqlForAll is f
               >
                 <button
                   aria-checked="true"
-                  class="ant-switch basic-switch-wrapper backup-switcher css-g6dhbn css-dev-only-do-not-override-txh9fw ant-switch-checked"
+                  class="ant-switch basic-switch-wrapper backup-switcher css-g6dhbn ant-switch-checked"
                   role="switch"
                   type="button"
                 >
@@ -70,13 +70,13 @@ exports[`test SqlBackupSwitcher render default checked when isSameSqlForAll is f
         </div>
       </div>
       <div
-        class="ant-form-item has-label-tip css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+        class="ant-form-item has-label-tip css-1jlm9cy"
       >
         <div
-          class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+          class="ant-row ant-form-item-row"
         >
           <div
-            class="ant-col ant-col-14 ant-form-item-label css-dev-only-do-not-override-txh9fw"
+            class="ant-col ant-col-14 ant-form-item-label"
           >
             <label
               class=""
@@ -88,7 +88,7 @@ exports[`test SqlBackupSwitcher render default checked when isSameSqlForAll is f
               >
                 <div>
                   <div
-                    class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
+                    class="ant-space ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
                   >
                     <div
                       class="ant-space-item"
@@ -122,7 +122,7 @@ exports[`test SqlBackupSwitcher render default checked when isSameSqlForAll is f
             </label>
           </div>
           <div
-            class="ant-col ant-col-10 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+            class="ant-col ant-col-10 ant-form-item-control"
           >
             <div
               class="ant-form-item-control-input"
@@ -131,7 +131,7 @@ exports[`test SqlBackupSwitcher render default checked when isSameSqlForAll is f
                 class="ant-form-item-control-input-content"
               >
                 <div
-                  class="ant-input-number ant-input-number-lg ant-input-number-in-form-item css-dev-only-do-not-override-ezmdel basic-inputNumber-wrapper css-1fd5hnt ant-input-number-disabled"
+                  class="ant-input-number ant-input-number-lg ant-input-number-in-form-item basic-inputNumber-wrapper css-1fd5hnt ant-input-number-disabled"
                 >
                   <div
                     class="ant-input-number-handler-wrap"
@@ -222,16 +222,16 @@ exports[`test SqlBackupSwitcher render default checked when isSameSqlForAll is t
   <div />
   <div>
     <form
-      class="ant-form ant-form-horizontal css-dev-only-do-not-override-txh9fw"
+      class="ant-form ant-form-horizontal"
     >
       <div
-        class="ant-form-item has-label-tip css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+        class="ant-form-item has-label-tip css-1jlm9cy"
       >
         <div
-          class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+          class="ant-row ant-form-item-row"
         >
           <div
-            class="ant-col ant-col-22 ant-form-item-label css-dev-only-do-not-override-txh9fw"
+            class="ant-col ant-col-22 ant-form-item-label"
           >
             <label
               class=""
@@ -253,7 +253,7 @@ exports[`test SqlBackupSwitcher render default checked when isSameSqlForAll is t
             </label>
           </div>
           <div
-            class="ant-col ant-col-2 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+            class="ant-col ant-col-2 ant-form-item-control"
           >
             <div
               class="ant-form-item-control-input"
@@ -263,7 +263,7 @@ exports[`test SqlBackupSwitcher render default checked when isSameSqlForAll is t
               >
                 <button
                   aria-checked="true"
-                  class="ant-switch basic-switch-wrapper backup-switcher css-g6dhbn css-dev-only-do-not-override-txh9fw ant-switch-checked"
+                  class="ant-switch basic-switch-wrapper backup-switcher css-g6dhbn ant-switch-checked"
                   role="switch"
                   type="button"
                 >
@@ -287,13 +287,13 @@ exports[`test SqlBackupSwitcher render default checked when isSameSqlForAll is t
         </div>
       </div>
       <div
-        class="ant-form-item has-label-tip css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+        class="ant-form-item has-label-tip css-1jlm9cy"
       >
         <div
-          class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+          class="ant-row ant-form-item-row"
         >
           <div
-            class="ant-col ant-col-14 ant-form-item-label css-dev-only-do-not-override-txh9fw"
+            class="ant-col ant-col-14 ant-form-item-label"
           >
             <label
               class=""
@@ -305,7 +305,7 @@ exports[`test SqlBackupSwitcher render default checked when isSameSqlForAll is t
               >
                 <div>
                   <div
-                    class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
+                    class="ant-space ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
                   >
                     <div
                       class="ant-space-item"
@@ -339,7 +339,7 @@ exports[`test SqlBackupSwitcher render default checked when isSameSqlForAll is t
             </label>
           </div>
           <div
-            class="ant-col ant-col-10 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+            class="ant-col ant-col-10 ant-form-item-control"
           >
             <div
               class="ant-form-item-control-input"
@@ -348,7 +348,7 @@ exports[`test SqlBackupSwitcher render default checked when isSameSqlForAll is t
                 class="ant-form-item-control-input-content"
               >
                 <div
-                  class="ant-input-number ant-input-number-lg ant-input-number-in-form-item css-dev-only-do-not-override-ezmdel basic-inputNumber-wrapper css-1fd5hnt ant-input-number-disabled"
+                  class="ant-input-number ant-input-number-lg ant-input-number-in-form-item basic-inputNumber-wrapper css-1fd5hnt ant-input-number-disabled"
                 >
                   <div
                     class="ant-input-number-handler-wrap"
@@ -439,7 +439,7 @@ exports[`test SqlBackupSwitcher render init snap 1`] = `
   <div />
   <div>
     <form
-      class="ant-form ant-form-horizontal css-dev-only-do-not-override-txh9fw"
+      class="ant-form ant-form-horizontal"
     />
   </div>
 </body>
@@ -450,16 +450,16 @@ exports[`test SqlBackupSwitcher render snap when database allow backup but not e
   <div />
   <div>
     <form
-      class="ant-form ant-form-horizontal css-dev-only-do-not-override-txh9fw"
+      class="ant-form ant-form-horizontal"
     >
       <div
-        class="ant-form-item has-label-tip css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+        class="ant-form-item has-label-tip css-1jlm9cy"
       >
         <div
-          class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+          class="ant-row ant-form-item-row"
         >
           <div
-            class="ant-col ant-col-22 ant-form-item-label css-dev-only-do-not-override-txh9fw"
+            class="ant-col ant-col-22 ant-form-item-label"
           >
             <label
               class=""
@@ -481,7 +481,7 @@ exports[`test SqlBackupSwitcher render snap when database allow backup but not e
             </label>
           </div>
           <div
-            class="ant-col ant-col-2 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+            class="ant-col ant-col-2 ant-form-item-control"
           >
             <div
               class="ant-form-item-control-input"
@@ -491,7 +491,7 @@ exports[`test SqlBackupSwitcher render snap when database allow backup but not e
               >
                 <button
                   aria-checked="false"
-                  class="ant-switch basic-switch-wrapper backup-switcher css-g6dhbn css-dev-only-do-not-override-txh9fw"
+                  class="ant-switch basic-switch-wrapper backup-switcher css-g6dhbn"
                   role="switch"
                   type="button"
                 >
@@ -524,7 +524,7 @@ exports[`test SqlBackupSwitcher render snap when database is not allow backup 1`
   <div />
   <div>
     <form
-      class="ant-form ant-form-horizontal css-dev-only-do-not-override-txh9fw"
+      class="ant-form ant-form-horizontal"
     />
   </div>
 </body>
@@ -535,16 +535,16 @@ exports[`test SqlBackupSwitcher render switch when isAtRejectStep is true 1`] = 
   <div />
   <div>
     <form
-      class="ant-form ant-form-horizontal css-dev-only-do-not-override-txh9fw"
+      class="ant-form ant-form-horizontal"
     >
       <div
-        class="ant-form-item has-label-tip css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+        class="ant-form-item has-label-tip css-1jlm9cy"
       >
         <div
-          class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+          class="ant-row ant-form-item-row"
         >
           <div
-            class="ant-col ant-col-22 ant-form-item-label css-dev-only-do-not-override-txh9fw"
+            class="ant-col ant-col-22 ant-form-item-label"
           >
             <label
               class=""
@@ -566,7 +566,7 @@ exports[`test SqlBackupSwitcher render switch when isAtRejectStep is true 1`] = 
             </label>
           </div>
           <div
-            class="ant-col ant-col-2 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+            class="ant-col ant-col-2 ant-form-item-control"
           >
             <div
               class="ant-form-item-control-input"
@@ -576,7 +576,7 @@ exports[`test SqlBackupSwitcher render switch when isAtRejectStep is true 1`] = 
               >
                 <button
                   aria-checked="true"
-                  class="ant-switch basic-switch-wrapper backup-switcher css-g6dhbn css-dev-only-do-not-override-txh9fw ant-switch-checked ant-switch-disabled"
+                  class="ant-switch basic-switch-wrapper backup-switcher css-g6dhbn ant-switch-checked ant-switch-disabled"
                   disabled=""
                   role="switch"
                   type="button"
@@ -601,13 +601,13 @@ exports[`test SqlBackupSwitcher render switch when isAtRejectStep is true 1`] = 
         </div>
       </div>
       <div
-        class="ant-form-item has-label-tip css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+        class="ant-form-item has-label-tip css-1jlm9cy"
       >
         <div
-          class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+          class="ant-row ant-form-item-row"
         >
           <div
-            class="ant-col ant-col-14 ant-form-item-label css-dev-only-do-not-override-txh9fw"
+            class="ant-col ant-col-14 ant-form-item-label"
           >
             <label
               class=""
@@ -619,7 +619,7 @@ exports[`test SqlBackupSwitcher render switch when isAtRejectStep is true 1`] = 
               >
                 <div>
                   <div
-                    class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
+                    class="ant-space ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
                   >
                     <div
                       class="ant-space-item"
@@ -653,7 +653,7 @@ exports[`test SqlBackupSwitcher render switch when isAtRejectStep is true 1`] = 
             </label>
           </div>
           <div
-            class="ant-col ant-col-10 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+            class="ant-col ant-col-10 ant-form-item-control"
           >
             <div
               class="ant-form-item-control-input"
@@ -662,7 +662,7 @@ exports[`test SqlBackupSwitcher render switch when isAtRejectStep is true 1`] = 
                 class="ant-form-item-control-input-content"
               >
                 <div
-                  class="ant-input-number ant-input-number-lg ant-input-number-in-form-item css-dev-only-do-not-override-ezmdel basic-inputNumber-wrapper css-1fd5hnt ant-input-number-disabled"
+                  class="ant-input-number ant-input-number-lg ant-input-number-in-form-item basic-inputNumber-wrapper css-1fd5hnt ant-input-number-disabled"
                 >
                   <div
                     class="ant-input-number-handler-wrap"

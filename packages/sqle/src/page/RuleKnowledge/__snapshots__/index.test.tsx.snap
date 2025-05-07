@@ -18,7 +18,7 @@ exports[`page/RuleKnowledge render markdown with custom code block 1`] = `
           class="extra"
         >
           <button
-            class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary basic-button-wrapper css-geipcv"
+            class="ant-btn ant-btn-primary basic-button-wrapper css-geipcv"
             type="button"
           >
             <span>
@@ -31,26 +31,26 @@ exports[`page/RuleKnowledge render markdown with custom code block 1`] = `
         class="css-1ie1bey"
       >
         <div
-          class="ant-card ant-card-bordered rule-knowledge-info-card css-dev-only-do-not-override-txh9fw"
+          class="ant-card ant-card-bordered rule-knowledge-info-card"
         >
           <div
             class="ant-card-body"
           >
             <div
-              class="ant-spin-nested-loading css-dev-only-do-not-override-txh9fw"
+              class="ant-spin-nested-loading"
             >
               <div
                 class="ant-spin-container"
               >
                 <div
-                  class="ant-space css-dev-only-do-not-override-txh9fw ant-space-vertical"
+                  class="ant-space ant-space-vertical"
                 >
                   <div
                     class="ant-space-item"
                     style="margin-bottom: 8px;"
                   >
                     <h4
-                      class="ant-typography css-dev-only-do-not-override-txh9fw"
+                      class="ant-typography"
                     >
                       绑定的变量个数不建议超过阈值
                     </h4>
@@ -59,7 +59,7 @@ exports[`page/RuleKnowledge render markdown with custom code block 1`] = `
                     class="ant-space-item"
                   >
                     <span
-                      class="ant-typography ant-typography-secondary css-dev-only-do-not-override-txh9fw"
+                      class="ant-typography ant-typography-secondary"
                     >
                       因为过度使用绑定变量会增加查询的复杂度，从而降低查询性能。过度使用绑定变量还会增加维护成本。默认阈值:100
                     </span>
@@ -70,10 +70,10 @@ exports[`page/RuleKnowledge render markdown with custom code block 1`] = `
           </div>
         </div>
         <div
-          class=" css-1yb442y"
+          class="css-1yb442y"
         >
           <div
-            class="ant-spin-nested-loading css-dev-only-do-not-override-txh9fw"
+            class="ant-spin-nested-loading"
           >
             <div
               class="ant-spin-container"
@@ -108,7 +108,7 @@ exports[`page/RuleKnowledge render markdown with custom code block 1`] = `
 
                 </div>
                 <h2
-                  class="ant-typography graph-title css-dev-only-do-not-override-txh9fw"
+                  class="ant-typography graph-title"
                   id="header-0"
                 >
                   关联的语法节点
@@ -117,13 +117,13 @@ exports[`page/RuleKnowledge render markdown with custom code block 1`] = `
                   class="css-1c94q4z"
                 >
                   <div
-                    class="ant-spin-nested-loading css-dev-only-do-not-override-txh9fw"
+                    class="ant-spin-nested-loading"
                   >
                     <div>
                       <div
                         aria-busy="true"
                         aria-live="polite"
-                        class="ant-spin ant-spin-spinning ant-spin-show-text css-dev-only-do-not-override-txh9fw"
+                        class="ant-spin ant-spin-spinning ant-spin-show-text"
                       >
                         <span
                           class="ant-spin-dot ant-spin-dot-spin"
@@ -159,7 +159,7 @@ exports[`page/RuleKnowledge render markdown with custom code block 1`] = `
                   class=""
                 >
                   <div
-                    class="css-dev-only-do-not-override-txh9fw ant-anchor-wrapper"
+                    class="ant-anchor-wrapper"
                     style="max-height: 100vh;"
                   >
                     <div
@@ -211,7 +211,7 @@ exports[`page/RuleKnowledge request rule info and custom rule knowledge 1`] = `
           class="extra"
         >
           <button
-            class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary basic-button-wrapper css-geipcv"
+            class="ant-btn ant-btn-primary basic-button-wrapper css-geipcv"
             type="button"
           >
             <span>
@@ -224,26 +224,26 @@ exports[`page/RuleKnowledge request rule info and custom rule knowledge 1`] = `
         class="css-1ie1bey"
       >
         <div
-          class="ant-card ant-card-bordered rule-knowledge-info-card css-dev-only-do-not-override-txh9fw"
+          class="ant-card ant-card-bordered rule-knowledge-info-card"
         >
           <div
             class="ant-card-body"
           >
             <div
-              class="ant-spin-nested-loading css-dev-only-do-not-override-txh9fw"
+              class="ant-spin-nested-loading"
             >
               <div
                 class="ant-spin-container"
               >
                 <div
-                  class="ant-space css-dev-only-do-not-override-txh9fw ant-space-vertical"
+                  class="ant-space ant-space-vertical"
                 >
                   <div
                     class="ant-space-item"
                     style="margin-bottom: 8px;"
                   >
                     <h4
-                      class="ant-typography css-dev-only-do-not-override-txh9fw"
+                      class="ant-typography"
                     >
                       绑定的变量个数不建议超过阈值
                     </h4>
@@ -252,7 +252,7 @@ exports[`page/RuleKnowledge request rule info and custom rule knowledge 1`] = `
                     class="ant-space-item"
                   >
                     <span
-                      class="ant-typography ant-typography-secondary css-dev-only-do-not-override-txh9fw"
+                      class="ant-typography ant-typography-secondary"
                     >
                       因为过度使用绑定变量会增加查询的复杂度，从而降低查询性能。过度使用绑定变量还会增加维护成本。默认阈值:100
                     </span>
@@ -263,10 +263,10 @@ exports[`page/RuleKnowledge request rule info and custom rule knowledge 1`] = `
           </div>
         </div>
         <div
-          class=" css-1yb442y"
+          class="css-1yb442y"
         >
           <div
-            class="ant-spin-nested-loading css-dev-only-do-not-override-txh9fw"
+            class="ant-spin-nested-loading"
           >
             <div
               class="ant-spin-container"
@@ -282,7 +282,7 @@ exports[`page/RuleKnowledge request rule info and custom rule knowledge 1`] = `
                   123
                 </div>
                 <h2
-                  class="ant-typography graph-title css-dev-only-do-not-override-txh9fw"
+                  class="ant-typography graph-title"
                   id="header-0"
                 >
                   关联的语法节点
@@ -291,13 +291,13 @@ exports[`page/RuleKnowledge request rule info and custom rule knowledge 1`] = `
                   class="css-1c94q4z"
                 >
                   <div
-                    class="ant-spin-nested-loading css-dev-only-do-not-override-txh9fw"
+                    class="ant-spin-nested-loading"
                   >
                     <div>
                       <div
                         aria-busy="true"
                         aria-live="polite"
-                        class="ant-spin ant-spin-spinning ant-spin-show-text css-dev-only-do-not-override-txh9fw"
+                        class="ant-spin ant-spin-spinning ant-spin-show-text"
                       >
                         <span
                           class="ant-spin-dot ant-spin-dot-spin"
@@ -333,7 +333,7 @@ exports[`page/RuleKnowledge request rule info and custom rule knowledge 1`] = `
                   class=""
                 >
                   <div
-                    class="css-dev-only-do-not-override-txh9fw ant-anchor-wrapper"
+                    class="ant-anchor-wrapper"
                     style="max-height: 100vh;"
                   >
                     <div
@@ -385,7 +385,7 @@ exports[`page/RuleKnowledge request rule info and not custom rule knowledge 1`] 
           class="extra"
         >
           <button
-            class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary basic-button-wrapper css-geipcv"
+            class="ant-btn ant-btn-primary basic-button-wrapper css-geipcv"
             type="button"
           >
             <span>
@@ -398,26 +398,26 @@ exports[`page/RuleKnowledge request rule info and not custom rule knowledge 1`] 
         class="css-1ie1bey"
       >
         <div
-          class="ant-card ant-card-bordered rule-knowledge-info-card css-dev-only-do-not-override-txh9fw"
+          class="ant-card ant-card-bordered rule-knowledge-info-card"
         >
           <div
             class="ant-card-body"
           >
             <div
-              class="ant-spin-nested-loading css-dev-only-do-not-override-txh9fw"
+              class="ant-spin-nested-loading"
             >
               <div
                 class="ant-spin-container"
               >
                 <div
-                  class="ant-space css-dev-only-do-not-override-txh9fw ant-space-vertical"
+                  class="ant-space ant-space-vertical"
                 >
                   <div
                     class="ant-space-item"
                     style="margin-bottom: 8px;"
                   >
                     <h4
-                      class="ant-typography css-dev-only-do-not-override-txh9fw"
+                      class="ant-typography"
                     >
                       绑定的变量个数不建议超过阈值
                     </h4>
@@ -426,7 +426,7 @@ exports[`page/RuleKnowledge request rule info and not custom rule knowledge 1`] 
                     class="ant-space-item"
                   >
                     <span
-                      class="ant-typography ant-typography-secondary css-dev-only-do-not-override-txh9fw"
+                      class="ant-typography ant-typography-secondary"
                     >
                       因为过度使用绑定变量会增加查询的复杂度，从而降低查询性能。过度使用绑定变量还会增加维护成本。默认阈值:100
                     </span>
@@ -437,10 +437,10 @@ exports[`page/RuleKnowledge request rule info and not custom rule knowledge 1`] 
           </div>
         </div>
         <div
-          class=" css-1yb442y"
+          class="css-1yb442y"
         >
           <div
-            class="ant-spin-nested-loading css-dev-only-do-not-override-txh9fw"
+            class="ant-spin-nested-loading"
           >
             <div
               class="ant-spin-container"
@@ -456,7 +456,7 @@ exports[`page/RuleKnowledge request rule info and not custom rule knowledge 1`] 
                   123
                 </div>
                 <h2
-                  class="ant-typography graph-title css-dev-only-do-not-override-txh9fw"
+                  class="ant-typography graph-title"
                   id="header-0"
                 >
                   关联的语法节点
@@ -465,13 +465,13 @@ exports[`page/RuleKnowledge request rule info and not custom rule knowledge 1`] 
                   class="css-1c94q4z"
                 >
                   <div
-                    class="ant-spin-nested-loading css-dev-only-do-not-override-txh9fw"
+                    class="ant-spin-nested-loading"
                   >
                     <div>
                       <div
                         aria-busy="true"
                         aria-live="polite"
-                        class="ant-spin ant-spin-spinning ant-spin-show-text css-dev-only-do-not-override-txh9fw"
+                        class="ant-spin ant-spin-spinning ant-spin-show-text"
                       >
                         <span
                           class="ant-spin-dot ant-spin-dot-spin"
@@ -507,7 +507,7 @@ exports[`page/RuleKnowledge request rule info and not custom rule knowledge 1`] 
                   class=""
                 >
                   <div
-                    class="css-dev-only-do-not-override-txh9fw ant-anchor-wrapper"
+                    class="ant-anchor-wrapper"
                     style="max-height: 100vh;"
                   >
                     <div
@@ -559,7 +559,7 @@ exports[`page/RuleKnowledge update rule knowledge and refresh 1`] = `
           class="extra"
         >
           <button
-            class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary basic-button-wrapper css-geipcv"
+            class="ant-btn ant-btn-primary basic-button-wrapper css-geipcv"
             type="button"
           >
             <span>
@@ -572,26 +572,26 @@ exports[`page/RuleKnowledge update rule knowledge and refresh 1`] = `
         class="css-1ie1bey"
       >
         <div
-          class="ant-card ant-card-bordered rule-knowledge-info-card css-dev-only-do-not-override-txh9fw"
+          class="ant-card ant-card-bordered rule-knowledge-info-card"
         >
           <div
             class="ant-card-body"
           >
             <div
-              class="ant-spin-nested-loading css-dev-only-do-not-override-txh9fw"
+              class="ant-spin-nested-loading"
             >
               <div
                 class="ant-spin-container"
               >
                 <div
-                  class="ant-space css-dev-only-do-not-override-txh9fw ant-space-vertical"
+                  class="ant-space ant-space-vertical"
                 >
                   <div
                     class="ant-space-item"
                     style="margin-bottom: 8px;"
                   >
                     <h4
-                      class="ant-typography css-dev-only-do-not-override-txh9fw"
+                      class="ant-typography"
                     >
                       绑定的变量个数不建议超过阈值
                     </h4>
@@ -600,7 +600,7 @@ exports[`page/RuleKnowledge update rule knowledge and refresh 1`] = `
                     class="ant-space-item"
                   >
                     <span
-                      class="ant-typography ant-typography-secondary css-dev-only-do-not-override-txh9fw"
+                      class="ant-typography ant-typography-secondary"
                     >
                       因为过度使用绑定变量会增加查询的复杂度，从而降低查询性能。过度使用绑定变量还会增加维护成本。默认阈值:100
                     </span>
@@ -611,10 +611,10 @@ exports[`page/RuleKnowledge update rule knowledge and refresh 1`] = `
           </div>
         </div>
         <div
-          class=" css-1yb442y"
+          class="css-1yb442y"
         >
           <div
-            class="ant-spin-nested-loading css-dev-only-do-not-override-txh9fw"
+            class="ant-spin-nested-loading"
           >
             <div
               class="ant-spin-container"
@@ -630,7 +630,7 @@ exports[`page/RuleKnowledge update rule knowledge and refresh 1`] = `
                   123
                 </div>
                 <h2
-                  class="ant-typography graph-title css-dev-only-do-not-override-txh9fw"
+                  class="ant-typography graph-title"
                   id="header-0"
                 >
                   关联的语法节点
@@ -639,13 +639,13 @@ exports[`page/RuleKnowledge update rule knowledge and refresh 1`] = `
                   class="css-1c94q4z"
                 >
                   <div
-                    class="ant-spin-nested-loading css-dev-only-do-not-override-txh9fw"
+                    class="ant-spin-nested-loading"
                   >
                     <div>
                       <div
                         aria-busy="true"
                         aria-live="polite"
-                        class="ant-spin ant-spin-spinning ant-spin-show-text css-dev-only-do-not-override-txh9fw"
+                        class="ant-spin ant-spin-spinning ant-spin-show-text"
                       >
                         <span
                           class="ant-spin-dot ant-spin-dot-spin"
@@ -681,7 +681,7 @@ exports[`page/RuleKnowledge update rule knowledge and refresh 1`] = `
                   class=""
                 >
                   <div
-                    class="css-dev-only-do-not-override-txh9fw ant-anchor-wrapper"
+                    class="ant-anchor-wrapper"
                     style="max-height: 100vh;"
                   >
                     <div

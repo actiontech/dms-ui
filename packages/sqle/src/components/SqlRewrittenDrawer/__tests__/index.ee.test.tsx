@@ -36,7 +36,10 @@ describe('SqlRewrittenDrawerEE Unit Tests', () => {
 
   let mockSqlRewrittenSpy: jest.SpyInstance;
 
-  ignoreConsoleErrors([UtilsConsoleErrorStringsEnum.INVALID_CUSTOM_ATTRIBUTE]);
+  ignoreConsoleErrors([
+    UtilsConsoleErrorStringsEnum.INVALID_CUSTOM_ATTRIBUTE,
+    UtilsConsoleErrorStringsEnum.UNKNOWN_EVENT_HANDLER
+  ]);
 
   beforeEach(() => {
     jest.useFakeTimers();

@@ -67,8 +67,8 @@ describe('base/System/components/ConfigSwitch', () => {
       popoverVisible: true
     });
     expect(screen.getByText('是否确认关闭当前配置？')).toBeInTheDocument();
-    expect(screen.getByText('OK')).toBeInTheDocument();
-    fireEvent.click(screen.getByText('OK'));
+    expect(screen.getByText('确 定')).toBeInTheDocument();
+    fireEvent.click(screen.getByText('确 定'));
     await act(async () => jest.advanceTimersByTime(500));
     expect(onConfirmFn).toHaveBeenCalled();
   });

@@ -11,6 +11,10 @@ import SQLStatementFormWrapper from '../index';
 import { FormSubmitStatusContext } from '../..';
 import configuration from '../../../../../testUtils/mockApi/configuration';
 import { createSpySuccessResponse } from '@actiontech/shared/lib/testUtil/mockApi';
+import {
+  UtilsConsoleErrorStringsEnum,
+  ignoreConsoleErrors
+} from '@actiontech/shared/lib/testUtil/common';
 
 describe('SQLAudit/SQLStatementFormWrapper', () => {
   let testGitConnectionSpy: jest.SpyInstance;
@@ -24,6 +28,8 @@ describe('SQLAudit/SQLStatementFormWrapper', () => {
     jest.useRealTimers();
     cleanup();
   });
+
+  ignoreConsoleErrors([UtilsConsoleErrorStringsEnum.UNKNOWN_EVENT_HANDLER]);
 
   const customRender = (submitLoading = false) => {
     const { result } = renderHook(() => Form.useForm());

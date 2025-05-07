@@ -7,7 +7,7 @@ exports[`base/System/GlobalSetting/SMSSetting render edit sms configuration 1`] 
       class="config-form-wrapper"
     >
       <div
-        class="ant-spin-nested-loading css-dev-only-do-not-override-txh9fw"
+        class="ant-spin-nested-loading"
       >
         <div
           class="ant-spin-container"
@@ -16,19 +16,19 @@ exports[`base/System/GlobalSetting/SMSSetting render edit sms configuration 1`] 
             class="css-zupqof"
           >
             <form
-              class="ant-form ant-form-horizontal css-dev-only-do-not-override-txh9fw"
+              class="ant-form ant-form-horizontal"
             >
               <div
                 class="switch-field-wrapper"
               >
                 <div
-                  class="ant-form-item has-label-tip css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+                  class="ant-form-item has-label-tip css-1jlm9cy"
                 >
                   <div
-                    class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                    class="ant-row ant-form-item-row"
                   >
                     <div
-                      class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left css-dev-only-do-not-override-txh9fw"
+                      class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left"
                     >
                       <label
                         class="ant-form-item-no-colon"
@@ -44,7 +44,7 @@ exports[`base/System/GlobalSetting/SMSSetting render edit sms configuration 1`] 
                             class="tip-content-box"
                           >
                             <a
-                              class="ant-typography css-dev-only-do-not-override-txh9fw"
+                              class="ant-typography"
                               href="https://actiontech.github.io/sqle-docs/docs/user-manual/sys-configuration/MFA"
                               rel="noreferrer"
                               style="font-size: 12px;"
@@ -57,7 +57,7 @@ exports[`base/System/GlobalSetting/SMSSetting render edit sms configuration 1`] 
                       </label>
                     </div>
                     <div
-                      class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                      class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control"
                     >
                       <div
                         class="ant-form-item-control-input"
@@ -66,27 +66,27 @@ exports[`base/System/GlobalSetting/SMSSetting render edit sms configuration 1`] 
                           class="ant-form-item-control-input-content"
                         >
                           <div
-                            class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+                            class="ant-space ant-space-horizontal ant-space-align-center"
                           >
                             <div
                               class="ant-space-item"
                               style="margin-right: 12px;"
                             >
                               <div
-                                class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+                                class="ant-space ant-space-horizontal ant-space-align-center"
                               >
                                 <div
                                   class="ant-space-item"
                                   style="margin-right: 12px;"
                                 >
                                   <div
-                                    class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
+                                    class="ant-space ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
                                   >
                                     <div
                                       class="ant-space-item"
                                     >
                                       <button
-                                        class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-text ant-btn-icon-only system-config-button basic-button-wrapper css-geipcv"
+                                        class="ant-btn ant-btn-text ant-btn-icon-only system-config-button basic-button-wrapper css-geipcv"
                                         type="button"
                                       >
                                         <span
@@ -111,13 +111,13 @@ exports[`base/System/GlobalSetting/SMSSetting render edit sms configuration 1`] 
                                   class="ant-space-item"
                                 >
                                   <div
-                                    class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
+                                    class="ant-space ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
                                   >
                                     <div
                                       class="ant-space-item"
                                     >
                                       <button
-                                        class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-text ant-btn-icon-only modify-coding-configuration basic-button-wrapper css-11ugcfo"
+                                        class="ant-btn ant-btn-text ant-btn-icon-only modify-coding-configuration basic-button-wrapper css-11ugcfo"
                                         type="button"
                                       >
                                         <span
@@ -146,13 +146,13 @@ exports[`base/System/GlobalSetting/SMSSetting render edit sms configuration 1`] 
                               class="ant-space-item"
                             >
                               <div
-                                class="ant-form-item css-1jlm9cy css-dev-only-do-not-override-txh9fw ant-form-item-has-success"
+                                class="ant-form-item css-1jlm9cy ant-form-item-has-success"
                               >
                                 <div
-                                  class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                                  class="ant-row ant-form-item-row"
                                 >
                                   <div
-                                    class="ant-col ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                                    class="ant-col ant-form-item-control"
                                   >
                                     <div
                                       class="ant-form-item-control-input"
@@ -162,7 +162,7 @@ exports[`base/System/GlobalSetting/SMSSetting render edit sms configuration 1`] 
                                       >
                                         <button
                                           aria-checked="true"
-                                          class="ant-switch basic-switch-wrapper system-config-switch css-g6dhbn css-dev-only-do-not-override-txh9fw ant-switch-checked"
+                                          class="ant-switch basic-switch-wrapper system-config-switch css-g6dhbn ant-switch-checked"
                                           id="enabled"
                                           role="switch"
                                           type="button"
@@ -198,13 +198,13 @@ exports[`base/System/GlobalSetting/SMSSetting render edit sms configuration 1`] 
                 class="config-field-wrapper"
               >
                 <div
-                  class="ant-form-item has-required-style has-label-tip css-1jlm9cy css-dev-only-do-not-override-txh9fw ant-form-item-has-success"
+                  class="ant-form-item has-required-style has-label-tip css-1jlm9cy ant-form-item-has-success"
                 >
                   <div
-                    class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                    class="ant-row ant-form-item-row"
                   >
                     <div
-                      class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left css-dev-only-do-not-override-txh9fw"
+                      class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left"
                     >
                       <label
                         class="ant-form-item-required ant-form-item-no-colon"
@@ -226,7 +226,7 @@ exports[`base/System/GlobalSetting/SMSSetting render edit sms configuration 1`] 
                       </label>
                     </div>
                     <div
-                      class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                      class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control"
                     >
                       <div
                         class="ant-form-item-control-input"
@@ -236,7 +236,7 @@ exports[`base/System/GlobalSetting/SMSSetting render edit sms configuration 1`] 
                         >
                           <input
                             aria-required="true"
-                            class="ant-input ant-input-status-success css-dev-only-do-not-override-ywkr0o basic-input-wrapper css-1pd1cd5"
+                            class="ant-input ant-input-status-success basic-input-wrapper css-1pd1cd5"
                             id="url"
                             placeholder="请输入url"
                             type="text"
@@ -248,13 +248,13 @@ exports[`base/System/GlobalSetting/SMSSetting render edit sms configuration 1`] 
                   </div>
                 </div>
                 <div
-                  class="ant-form-item has-required-style has-label-tip css-1jlm9cy css-dev-only-do-not-override-txh9fw ant-form-item-has-success"
+                  class="ant-form-item has-required-style has-label-tip css-1jlm9cy ant-form-item-has-success"
                 >
                   <div
-                    class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                    class="ant-row ant-form-item-row"
                   >
                     <div
-                      class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left css-dev-only-do-not-override-txh9fw"
+                      class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left"
                     >
                       <label
                         class="ant-form-item-required ant-form-item-no-colon"
@@ -276,7 +276,7 @@ exports[`base/System/GlobalSetting/SMSSetting render edit sms configuration 1`] 
                       </label>
                     </div>
                     <div
-                      class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                      class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control"
                     >
                       <div
                         class="ant-form-item-control-input"
@@ -285,11 +285,11 @@ exports[`base/System/GlobalSetting/SMSSetting render edit sms configuration 1`] 
                           class="ant-form-item-control-input-content"
                         >
                           <span
-                            class="ant-input-affix-wrapper ant-input-password basic-input-wrapper css-1pd1cd5 css-dev-only-do-not-override-txh9fw"
+                            class="ant-input-affix-wrapper ant-input-password basic-input-wrapper css-1pd1cd5 ant-input-affix-wrapper-status-success"
                           >
                             <input
                               aria-required="true"
-                              class="ant-input css-dev-only-do-not-override-txh9fw"
+                              class="ant-input"
                               id="token"
                               placeholder="请输入token"
                               type="password"
@@ -329,13 +329,13 @@ exports[`base/System/GlobalSetting/SMSSetting render edit sms configuration 1`] 
                   </div>
                 </div>
                 <div
-                  class="ant-form-item css-15d6abf css-dev-only-do-not-override-txh9fw"
+                  class="ant-form-item css-15d6abf"
                 >
                   <div
-                    class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                    class="ant-row ant-form-item-row"
                   >
                     <div
-                      class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left css-dev-only-do-not-override-txh9fw"
+                      class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left"
                     >
                       <label
                         class="ant-form-item-no-colon"
@@ -345,7 +345,7 @@ exports[`base/System/GlobalSetting/SMSSetting render edit sms configuration 1`] 
                       </label>
                     </div>
                     <div
-                      class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                      class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control"
                     >
                       <div
                         class="ant-form-item-control-input"
@@ -354,14 +354,14 @@ exports[`base/System/GlobalSetting/SMSSetting render edit sms configuration 1`] 
                           class="ant-form-item-control-input-content"
                         >
                           <div
-                            class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+                            class="ant-space ant-space-horizontal ant-space-align-center"
                           >
                             <div
                               class="ant-space-item"
                               style="margin-right: 12px;"
                             >
                               <button
-                                class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default basic-button-wrapper css-geipcv"
+                                class="ant-btn ant-btn-default basic-button-wrapper css-geipcv"
                                 type="button"
                               >
                                 <span>
@@ -373,7 +373,7 @@ exports[`base/System/GlobalSetting/SMSSetting render edit sms configuration 1`] 
                               class="ant-space-item"
                             >
                               <button
-                                class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary basic-button-wrapper css-geipcv"
+                                class="ant-btn ant-btn-primary basic-button-wrapper css-geipcv"
                                 type="submit"
                               >
                                 <span>
@@ -404,7 +404,7 @@ exports[`base/System/GlobalSetting/SMSSetting render init snap 1`] = `
       class="config-form-wrapper"
     >
       <div
-        class="ant-spin-nested-loading css-dev-only-do-not-override-txh9fw"
+        class="ant-spin-nested-loading"
       >
         <div
           class="ant-spin-container"
@@ -413,19 +413,19 @@ exports[`base/System/GlobalSetting/SMSSetting render init snap 1`] = `
             class="css-zupqof"
           >
             <form
-              class="ant-form ant-form-horizontal css-dev-only-do-not-override-txh9fw"
+              class="ant-form ant-form-horizontal"
             >
               <div
                 class="switch-field-wrapper"
               >
                 <div
-                  class="ant-form-item has-label-tip css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+                  class="ant-form-item has-label-tip css-1jlm9cy"
                 >
                   <div
-                    class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                    class="ant-row ant-form-item-row"
                   >
                     <div
-                      class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left css-dev-only-do-not-override-txh9fw"
+                      class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left"
                     >
                       <label
                         class="ant-form-item-no-colon"
@@ -441,7 +441,7 @@ exports[`base/System/GlobalSetting/SMSSetting render init snap 1`] = `
                             class="tip-content-box"
                           >
                             <a
-                              class="ant-typography css-dev-only-do-not-override-txh9fw"
+                              class="ant-typography"
                               href="https://actiontech.github.io/sqle-docs/docs/user-manual/sys-configuration/MFA"
                               rel="noreferrer"
                               style="font-size: 12px;"
@@ -454,7 +454,7 @@ exports[`base/System/GlobalSetting/SMSSetting render init snap 1`] = `
                       </label>
                     </div>
                     <div
-                      class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                      class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control"
                     >
                       <div
                         class="ant-form-item-control-input"
@@ -463,14 +463,14 @@ exports[`base/System/GlobalSetting/SMSSetting render init snap 1`] = `
                           class="ant-form-item-control-input-content"
                         >
                           <div
-                            class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+                            class="ant-space ant-space-horizontal ant-space-align-center"
                           >
                             <div
                               class="ant-space-item"
                               style="margin-right: 12px;"
                             >
                               <div
-                                class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+                                class="ant-space ant-space-horizontal ant-space-align-center"
                                 hidden=""
                               >
                                 <div
@@ -478,13 +478,13 @@ exports[`base/System/GlobalSetting/SMSSetting render init snap 1`] = `
                                   style="margin-right: 12px;"
                                 >
                                   <div
-                                    class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
+                                    class="ant-space ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
                                   >
                                     <div
                                       class="ant-space-item"
                                     >
                                       <button
-                                        class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-text ant-btn-icon-only system-config-button basic-button-wrapper css-geipcv"
+                                        class="ant-btn ant-btn-text ant-btn-icon-only system-config-button basic-button-wrapper css-geipcv"
                                         type="button"
                                       >
                                         <span
@@ -509,13 +509,13 @@ exports[`base/System/GlobalSetting/SMSSetting render init snap 1`] = `
                                   class="ant-space-item"
                                 >
                                   <div
-                                    class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
+                                    class="ant-space ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
                                   >
                                     <div
                                       class="ant-space-item"
                                     >
                                       <button
-                                        class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-text ant-btn-icon-only modify-coding-configuration basic-button-wrapper css-11ugcfo"
+                                        class="ant-btn ant-btn-text ant-btn-icon-only modify-coding-configuration basic-button-wrapper css-11ugcfo"
                                         type="button"
                                       >
                                         <span
@@ -544,13 +544,13 @@ exports[`base/System/GlobalSetting/SMSSetting render init snap 1`] = `
                               class="ant-space-item"
                             >
                               <div
-                                class="ant-form-item css-1jlm9cy css-dev-only-do-not-override-txh9fw ant-form-item-has-success"
+                                class="ant-form-item css-1jlm9cy ant-form-item-has-success"
                               >
                                 <div
-                                  class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                                  class="ant-row ant-form-item-row"
                                 >
                                   <div
-                                    class="ant-col ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                                    class="ant-col ant-form-item-control"
                                   >
                                     <div
                                       class="ant-form-item-control-input"
@@ -560,7 +560,7 @@ exports[`base/System/GlobalSetting/SMSSetting render init snap 1`] = `
                                       >
                                         <button
                                           aria-checked="true"
-                                          class="ant-switch basic-switch-wrapper system-config-switch css-g6dhbn css-dev-only-do-not-override-txh9fw ant-switch-checked"
+                                          class="ant-switch basic-switch-wrapper system-config-switch css-g6dhbn ant-switch-checked"
                                           id="enabled"
                                           role="switch"
                                           type="button"
@@ -597,13 +597,13 @@ exports[`base/System/GlobalSetting/SMSSetting render init snap 1`] = `
                 hidden=""
               >
                 <div
-                  class="ant-form-item has-required-style has-label-tip css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+                  class="ant-form-item has-required-style has-label-tip css-1jlm9cy"
                 >
                   <div
-                    class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                    class="ant-row ant-form-item-row"
                   >
                     <div
-                      class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left css-dev-only-do-not-override-txh9fw"
+                      class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left"
                     >
                       <label
                         class="ant-form-item-required ant-form-item-no-colon"
@@ -625,7 +625,7 @@ exports[`base/System/GlobalSetting/SMSSetting render init snap 1`] = `
                       </label>
                     </div>
                     <div
-                      class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                      class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control"
                     >
                       <div
                         class="ant-form-item-control-input"
@@ -635,7 +635,7 @@ exports[`base/System/GlobalSetting/SMSSetting render init snap 1`] = `
                         >
                           <input
                             aria-required="true"
-                            class="ant-input css-dev-only-do-not-override-ywkr0o basic-input-wrapper css-1pd1cd5"
+                            class="ant-input basic-input-wrapper css-1pd1cd5"
                             id="url"
                             placeholder="请输入url"
                             type="text"
@@ -647,13 +647,13 @@ exports[`base/System/GlobalSetting/SMSSetting render init snap 1`] = `
                   </div>
                 </div>
                 <div
-                  class="ant-form-item has-required-style has-label-tip css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+                  class="ant-form-item has-required-style has-label-tip css-1jlm9cy"
                 >
                   <div
-                    class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                    class="ant-row ant-form-item-row"
                   >
                     <div
-                      class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left css-dev-only-do-not-override-txh9fw"
+                      class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left"
                     >
                       <label
                         class="ant-form-item-required ant-form-item-no-colon"
@@ -675,7 +675,7 @@ exports[`base/System/GlobalSetting/SMSSetting render init snap 1`] = `
                       </label>
                     </div>
                     <div
-                      class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                      class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control"
                     >
                       <div
                         class="ant-form-item-control-input"
@@ -684,11 +684,11 @@ exports[`base/System/GlobalSetting/SMSSetting render init snap 1`] = `
                           class="ant-form-item-control-input-content"
                         >
                           <span
-                            class="ant-input-affix-wrapper ant-input-password basic-input-wrapper css-1pd1cd5 css-dev-only-do-not-override-txh9fw"
+                            class="ant-input-affix-wrapper ant-input-password basic-input-wrapper css-1pd1cd5"
                           >
                             <input
                               aria-required="true"
-                              class="ant-input css-dev-only-do-not-override-txh9fw"
+                              class="ant-input"
                               id="token"
                               placeholder="请输入token"
                               type="password"
@@ -727,13 +727,13 @@ exports[`base/System/GlobalSetting/SMSSetting render init snap 1`] = `
                   </div>
                 </div>
                 <div
-                  class="ant-form-item css-15d6abf css-dev-only-do-not-override-txh9fw"
+                  class="ant-form-item css-15d6abf"
                 >
                   <div
-                    class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                    class="ant-row ant-form-item-row"
                   >
                     <div
-                      class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left css-dev-only-do-not-override-txh9fw"
+                      class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left"
                     >
                       <label
                         class="ant-form-item-no-colon"
@@ -743,7 +743,7 @@ exports[`base/System/GlobalSetting/SMSSetting render init snap 1`] = `
                       </label>
                     </div>
                     <div
-                      class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                      class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control"
                     >
                       <div
                         class="ant-form-item-control-input"
@@ -752,14 +752,14 @@ exports[`base/System/GlobalSetting/SMSSetting render init snap 1`] = `
                           class="ant-form-item-control-input-content"
                         >
                           <div
-                            class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+                            class="ant-space ant-space-horizontal ant-space-align-center"
                           >
                             <div
                               class="ant-space-item"
                               style="margin-right: 12px;"
                             >
                               <button
-                                class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default basic-button-wrapper css-geipcv"
+                                class="ant-btn ant-btn-default basic-button-wrapper css-geipcv"
                                 type="button"
                               >
                                 <span>
@@ -771,7 +771,7 @@ exports[`base/System/GlobalSetting/SMSSetting render init snap 1`] = `
                               class="ant-space-item"
                             >
                               <button
-                                class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary basic-button-wrapper css-geipcv"
+                                class="ant-btn ant-btn-primary basic-button-wrapper css-geipcv"
                                 type="submit"
                               >
                                 <span>
@@ -788,7 +788,7 @@ exports[`base/System/GlobalSetting/SMSSetting render init snap 1`] = `
               </div>
             </form>
             <div
-              class="ant-descriptions system-config-view-wrapper css-cs8tvb css-dev-only-do-not-override-txh9fw"
+              class="ant-descriptions system-config-view-wrapper css-cs8tvb"
             >
               <div
                 class="ant-descriptions-view"
@@ -814,7 +814,7 @@ exports[`base/System/GlobalSetting/SMSSetting render init snap 1`] = `
                             class="ant-descriptions-item-content"
                           >
                             <div
-                              class="ant-typography css-dev-only-do-not-override-txh9fw"
+                              class="ant-typography"
                             >
                               webhook
                             </div>
@@ -841,7 +841,7 @@ exports[`base/System/GlobalSetting/SMSSetting render init snap 1`] = `
                             class="ant-descriptions-item-content"
                           >
                             <div
-                              class="ant-typography css-dev-only-do-not-override-txh9fw"
+                              class="ant-typography"
                             >
                               absc1
                             </div>
@@ -868,7 +868,7 @@ exports[`base/System/GlobalSetting/SMSSetting render test sms connection 1`] = `
       class="config-form-wrapper"
     >
       <div
-        class="ant-spin-nested-loading css-dev-only-do-not-override-txh9fw"
+        class="ant-spin-nested-loading"
       >
         <div
           class="ant-spin-container"
@@ -877,19 +877,19 @@ exports[`base/System/GlobalSetting/SMSSetting render test sms connection 1`] = `
             class="css-zupqof"
           >
             <form
-              class="ant-form ant-form-horizontal css-dev-only-do-not-override-txh9fw"
+              class="ant-form ant-form-horizontal"
             >
               <div
                 class="switch-field-wrapper"
               >
                 <div
-                  class="ant-form-item has-label-tip css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+                  class="ant-form-item has-label-tip css-1jlm9cy"
                 >
                   <div
-                    class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                    class="ant-row ant-form-item-row"
                   >
                     <div
-                      class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left css-dev-only-do-not-override-txh9fw"
+                      class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left"
                     >
                       <label
                         class="ant-form-item-no-colon"
@@ -905,7 +905,7 @@ exports[`base/System/GlobalSetting/SMSSetting render test sms connection 1`] = `
                             class="tip-content-box"
                           >
                             <a
-                              class="ant-typography css-dev-only-do-not-override-txh9fw"
+                              class="ant-typography"
                               href="https://actiontech.github.io/sqle-docs/docs/user-manual/sys-configuration/MFA"
                               rel="noreferrer"
                               style="font-size: 12px;"
@@ -918,7 +918,7 @@ exports[`base/System/GlobalSetting/SMSSetting render test sms connection 1`] = `
                       </label>
                     </div>
                     <div
-                      class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                      class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control"
                     >
                       <div
                         class="ant-form-item-control-input"
@@ -927,27 +927,27 @@ exports[`base/System/GlobalSetting/SMSSetting render test sms connection 1`] = `
                           class="ant-form-item-control-input-content"
                         >
                           <div
-                            class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+                            class="ant-space ant-space-horizontal ant-space-align-center"
                           >
                             <div
                               class="ant-space-item"
                               style="margin-right: 12px;"
                             >
                               <div
-                                class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+                                class="ant-space ant-space-horizontal ant-space-align-center"
                               >
                                 <div
                                   class="ant-space-item"
                                   style="margin-right: 12px;"
                                 >
                                   <div
-                                    class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center ant-popover-open basic-tooltips-wrapper css-4jbtl9"
+                                    class="ant-space ant-space-horizontal ant-space-align-center ant-popover-open basic-tooltips-wrapper css-4jbtl9"
                                   >
                                     <div
                                       class="ant-space-item"
                                     >
                                       <button
-                                        class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-text ant-btn-icon-only system-config-button basic-button-wrapper css-geipcv"
+                                        class="ant-btn ant-btn-text ant-btn-icon-only system-config-button basic-button-wrapper css-geipcv"
                                         type="button"
                                       >
                                         <span
@@ -972,13 +972,13 @@ exports[`base/System/GlobalSetting/SMSSetting render test sms connection 1`] = `
                                   class="ant-space-item"
                                 >
                                   <div
-                                    class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
+                                    class="ant-space ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
                                   >
                                     <div
                                       class="ant-space-item"
                                     >
                                       <button
-                                        class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-text ant-btn-icon-only modify-coding-configuration basic-button-wrapper css-11ugcfo"
+                                        class="ant-btn ant-btn-text ant-btn-icon-only modify-coding-configuration basic-button-wrapper css-11ugcfo"
                                         type="button"
                                       >
                                         <span
@@ -1007,13 +1007,13 @@ exports[`base/System/GlobalSetting/SMSSetting render test sms connection 1`] = `
                               class="ant-space-item"
                             >
                               <div
-                                class="ant-form-item css-1jlm9cy css-dev-only-do-not-override-txh9fw ant-form-item-has-success"
+                                class="ant-form-item css-1jlm9cy ant-form-item-has-success"
                               >
                                 <div
-                                  class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                                  class="ant-row ant-form-item-row"
                                 >
                                   <div
-                                    class="ant-col ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                                    class="ant-col ant-form-item-control"
                                   >
                                     <div
                                       class="ant-form-item-control-input"
@@ -1023,7 +1023,7 @@ exports[`base/System/GlobalSetting/SMSSetting render test sms connection 1`] = `
                                       >
                                         <button
                                           aria-checked="true"
-                                          class="ant-switch basic-switch-wrapper system-config-switch css-g6dhbn css-dev-only-do-not-override-txh9fw ant-switch-checked"
+                                          class="ant-switch basic-switch-wrapper system-config-switch css-g6dhbn ant-switch-checked"
                                           id="enabled"
                                           role="switch"
                                           type="button"
@@ -1060,13 +1060,13 @@ exports[`base/System/GlobalSetting/SMSSetting render test sms connection 1`] = `
                 hidden=""
               >
                 <div
-                  class="ant-form-item has-required-style has-label-tip css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+                  class="ant-form-item has-required-style has-label-tip css-1jlm9cy"
                 >
                   <div
-                    class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                    class="ant-row ant-form-item-row"
                   >
                     <div
-                      class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left css-dev-only-do-not-override-txh9fw"
+                      class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left"
                     >
                       <label
                         class="ant-form-item-required ant-form-item-no-colon"
@@ -1088,7 +1088,7 @@ exports[`base/System/GlobalSetting/SMSSetting render test sms connection 1`] = `
                       </label>
                     </div>
                     <div
-                      class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                      class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control"
                     >
                       <div
                         class="ant-form-item-control-input"
@@ -1098,7 +1098,7 @@ exports[`base/System/GlobalSetting/SMSSetting render test sms connection 1`] = `
                         >
                           <input
                             aria-required="true"
-                            class="ant-input css-dev-only-do-not-override-ywkr0o basic-input-wrapper css-1pd1cd5"
+                            class="ant-input basic-input-wrapper css-1pd1cd5"
                             id="url"
                             placeholder="请输入url"
                             type="text"
@@ -1110,13 +1110,13 @@ exports[`base/System/GlobalSetting/SMSSetting render test sms connection 1`] = `
                   </div>
                 </div>
                 <div
-                  class="ant-form-item has-required-style has-label-tip css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+                  class="ant-form-item has-required-style has-label-tip css-1jlm9cy"
                 >
                   <div
-                    class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                    class="ant-row ant-form-item-row"
                   >
                     <div
-                      class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left css-dev-only-do-not-override-txh9fw"
+                      class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left"
                     >
                       <label
                         class="ant-form-item-required ant-form-item-no-colon"
@@ -1138,7 +1138,7 @@ exports[`base/System/GlobalSetting/SMSSetting render test sms connection 1`] = `
                       </label>
                     </div>
                     <div
-                      class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                      class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control"
                     >
                       <div
                         class="ant-form-item-control-input"
@@ -1147,11 +1147,11 @@ exports[`base/System/GlobalSetting/SMSSetting render test sms connection 1`] = `
                           class="ant-form-item-control-input-content"
                         >
                           <span
-                            class="ant-input-affix-wrapper ant-input-password basic-input-wrapper css-1pd1cd5 css-dev-only-do-not-override-txh9fw"
+                            class="ant-input-affix-wrapper ant-input-password basic-input-wrapper css-1pd1cd5"
                           >
                             <input
                               aria-required="true"
-                              class="ant-input css-dev-only-do-not-override-txh9fw"
+                              class="ant-input"
                               id="token"
                               placeholder="请输入token"
                               type="password"
@@ -1190,13 +1190,13 @@ exports[`base/System/GlobalSetting/SMSSetting render test sms connection 1`] = `
                   </div>
                 </div>
                 <div
-                  class="ant-form-item css-15d6abf css-dev-only-do-not-override-txh9fw"
+                  class="ant-form-item css-15d6abf"
                 >
                   <div
-                    class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                    class="ant-row ant-form-item-row"
                   >
                     <div
-                      class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left css-dev-only-do-not-override-txh9fw"
+                      class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left"
                     >
                       <label
                         class="ant-form-item-no-colon"
@@ -1206,7 +1206,7 @@ exports[`base/System/GlobalSetting/SMSSetting render test sms connection 1`] = `
                       </label>
                     </div>
                     <div
-                      class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                      class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control"
                     >
                       <div
                         class="ant-form-item-control-input"
@@ -1215,14 +1215,14 @@ exports[`base/System/GlobalSetting/SMSSetting render test sms connection 1`] = `
                           class="ant-form-item-control-input-content"
                         >
                           <div
-                            class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+                            class="ant-space ant-space-horizontal ant-space-align-center"
                           >
                             <div
                               class="ant-space-item"
                               style="margin-right: 12px;"
                             >
                               <button
-                                class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default basic-button-wrapper css-geipcv"
+                                class="ant-btn ant-btn-default basic-button-wrapper css-geipcv"
                                 type="button"
                               >
                                 <span>
@@ -1234,7 +1234,7 @@ exports[`base/System/GlobalSetting/SMSSetting render test sms connection 1`] = `
                               class="ant-space-item"
                             >
                               <button
-                                class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary basic-button-wrapper css-geipcv"
+                                class="ant-btn ant-btn-primary basic-button-wrapper css-geipcv"
                                 type="submit"
                               >
                                 <span>
@@ -1251,7 +1251,7 @@ exports[`base/System/GlobalSetting/SMSSetting render test sms connection 1`] = `
               </div>
             </form>
             <div
-              class="ant-descriptions system-config-view-wrapper css-cs8tvb css-dev-only-do-not-override-txh9fw"
+              class="ant-descriptions system-config-view-wrapper css-cs8tvb"
             >
               <div
                 class="ant-descriptions-view"
@@ -1277,7 +1277,7 @@ exports[`base/System/GlobalSetting/SMSSetting render test sms connection 1`] = `
                             class="ant-descriptions-item-content"
                           >
                             <div
-                              class="ant-typography css-dev-only-do-not-override-txh9fw"
+                              class="ant-typography"
                             >
                               webhook
                             </div>
@@ -1304,7 +1304,7 @@ exports[`base/System/GlobalSetting/SMSSetting render test sms connection 1`] = `
                             class="ant-descriptions-item-content"
                           >
                             <div
-                              class="ant-typography css-dev-only-do-not-override-txh9fw"
+                              class="ant-typography"
                             >
                               absc1
                             </div>
@@ -1323,7 +1323,7 @@ exports[`base/System/GlobalSetting/SMSSetting render test sms connection 1`] = `
   </div>
   <div>
     <div
-      class="ant-popover ant-zoom-big-appear ant-zoom-big-appear-prepare ant-zoom-big css-dev-only-do-not-override-txh9fw css-dev-only-do-not-override-txh9fw ant-popover-placement-bottomRight"
+      class="ant-popover ant-zoom-big-appear ant-zoom-big-appear-prepare ant-zoom-big ant-popover-placement-bottomRight"
       style="--arrow-x: 0px; --arrow-y: 0px; left: -1000vw; top: -1000vh; box-sizing: border-box;"
     >
       <div
@@ -1341,24 +1341,24 @@ exports[`base/System/GlobalSetting/SMSSetting render test sms connection 1`] = `
             class="ant-popover-inner-content"
           >
             <div
-              class="ant-space css-dev-only-do-not-override-txh9fw ant-space-vertical full-width-element"
+              class="ant-space ant-space-vertical full-width-element"
             >
               <div
                 class="ant-space-item"
                 style="margin-bottom: 16px;"
               >
                 <form
-                  class="ant-form ant-form-horizontal css-dev-only-do-not-override-txh9fw"
+                  class="ant-form ant-form-horizontal"
                 >
                   <div
-                    class="ant-form-item css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+                    class="ant-form-item css-1jlm9cy"
                     style="margin-bottom: 0px;"
                   >
                     <div
-                      class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                      class="ant-row ant-form-item-row"
                     >
                       <div
-                        class="ant-col ant-col-24 ant-form-item-label css-dev-only-do-not-override-txh9fw"
+                        class="ant-col ant-col-24 ant-form-item-label"
                       >
                         <label
                           class="ant-form-item-required ant-form-item-no-colon"
@@ -1369,7 +1369,7 @@ exports[`base/System/GlobalSetting/SMSSetting render test sms connection 1`] = `
                         </label>
                       </div>
                       <div
-                        class="ant-col ant-col-24 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                        class="ant-col ant-col-24 ant-form-item-control"
                       >
                         <div
                           class="ant-form-item-control-input"
@@ -1379,7 +1379,7 @@ exports[`base/System/GlobalSetting/SMSSetting render test sms connection 1`] = `
                           >
                             <input
                               aria-required="true"
-                              class="ant-input css-dev-only-do-not-override-ywkr0o basic-input-wrapper css-1pd1cd5"
+                              class="ant-input basic-input-wrapper css-1pd1cd5"
                               id="phone"
                               placeholder="请输入手机号"
                               type="text"
@@ -1396,21 +1396,21 @@ exports[`base/System/GlobalSetting/SMSSetting render test sms connection 1`] = `
                 class="ant-space-item"
               >
                 <div
-                  class="ant-row css-dev-only-do-not-override-txh9fw"
+                  class="ant-row"
                 >
                   <div
-                    class="ant-col ant-col-24 css-dev-only-do-not-override-txh9fw"
+                    class="ant-col ant-col-24"
                     style="text-align: right;"
                   >
                     <div
-                      class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+                      class="ant-space ant-space-horizontal ant-space-align-center"
                     >
                       <div
                         class="ant-space-item"
                         style="margin-right: 12px;"
                       >
                         <button
-                          class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default ant-btn-sm basic-button-wrapper css-geipcv"
+                          class="ant-btn ant-btn-default ant-btn-sm basic-button-wrapper css-geipcv"
                           type="button"
                         >
                           <span>
@@ -1422,7 +1422,7 @@ exports[`base/System/GlobalSetting/SMSSetting render test sms connection 1`] = `
                         class="ant-space-item"
                       >
                         <button
-                          class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary ant-btn-sm basic-button-wrapper css-geipcv"
+                          class="ant-btn ant-btn-primary ant-btn-sm basic-button-wrapper css-geipcv"
                           type="button"
                         >
                           <span>

@@ -6,7 +6,7 @@ import { createHtmlPlugin } from 'vite-plugin-html';
 import * as path from 'path';
 
 // https://vitejs.dev/config/
-export default defineConfig((config) => {
+export default defineConfig(() => {
   const buildTypes = process.env.buildType?.split(',') ?? [];
   /*
    * ee and ce mode used to support sqle

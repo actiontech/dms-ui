@@ -7,10 +7,10 @@ exports[`sqle/ExecWorkflow/Common/AuditResultList ce render init snap 1`] = `
       class="css-avbjmz"
     >
       <div
-        class="ant-row ant-row-space-between css-156vlto css-dev-only-do-not-override-txh9fw"
+        class="ant-row ant-row-space-between css-156vlto"
       >
         <div
-          class="ant-segmented basic-segmented-wrapper css-192b3m1 css-dev-only-do-not-override-txh9fw"
+          class="ant-segmented basic-segmented-wrapper css-192b3m1"
         >
           <div
             class="ant-segmented-group"
@@ -92,7 +92,7 @@ exports[`sqle/ExecWorkflow/Common/AuditResultList ce render init snap 1`] = `
           </div>
         </div>
         <div
-          class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+          class="ant-space ant-space-horizontal ant-space-align-center"
         >
           <div
             class="ant-space-item"
@@ -109,7 +109,7 @@ exports[`sqle/ExecWorkflow/Common/AuditResultList ce render init snap 1`] = `
             style="margin-right: 4px;"
           >
             <div
-              class="ant-divider css-dev-only-do-not-override-txh9fw ant-divider-vertical"
+              class="ant-divider ant-divider-vertical"
               role="separator"
               style="height: 28px;"
             />
@@ -118,7 +118,7 @@ exports[`sqle/ExecWorkflow/Common/AuditResultList ce render init snap 1`] = `
             class="ant-space-item"
           >
             <button
-              class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default ant-btn-sm basic-button-wrapper css-geipcv"
+              class="ant-btn ant-btn-default ant-btn-sm basic-button-wrapper css-geipcv"
               type="button"
             >
               <span
@@ -136,7 +136,7 @@ exports[`sqle/ExecWorkflow/Common/AuditResultList ce render init snap 1`] = `
                 </svg>
               </span>
               <div
-                class="ant-space css-dev-only-do-not-override-674gwq ant-space-horizontal ant-space-align-center"
+                class="ant-space ant-space-horizontal ant-space-align-center"
               >
                 <div
                   class="ant-space-item"
@@ -202,7 +202,7 @@ exports[`sqle/ExecWorkflow/Common/AuditResultList ce render init snap 1`] = `
           </div>
         </div>
         <div
-          class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center audit-result-info"
+          class="ant-space ant-space-horizontal ant-space-align-center audit-result-info"
         >
           <div
             class="ant-space-item"
@@ -264,10 +264,10 @@ exports[`sqle/ExecWorkflow/Common/AuditResultList ce render init snap 1`] = `
         </div>
       </div>
       <div
-        class="ant-table-wrapper actiontech-table-namespace css-fxd6ka css-dev-only-do-not-override-bj9uhl"
+        class="ant-table-wrapper actiontech-table-namespace css-fxd6ka"
       >
         <div
-          class="ant-spin-nested-loading css-dev-only-do-not-override-bj9uhl"
+          class="ant-spin-nested-loading"
         >
           <div
             class="ant-spin-container"

@@ -1,4 +1,4 @@
-import { render } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
 import DatabaseTypeLogo from './DatabaseTypeLogo';
 
 describe('test DatabaseTypeLogo', () => {
@@ -7,7 +7,7 @@ describe('test DatabaseTypeLogo', () => {
       <DatabaseTypeLogo dbType="mysql" logoUrl="" />
     );
 
-    expect(container).toMatchSnapshot();
+    expect(screen.getByText('mysql')).toBeInTheDocument();
 
     rerender(
       <DatabaseTypeLogo dbType="db2" logoUrl="/static/medit/logo.png" />

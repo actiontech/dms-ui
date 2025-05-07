@@ -3,16 +3,16 @@
 exports[`test OverviewList matches the snapshot and displays loading state 1`] = `
 <div>
   <div
-    class="ant-table-wrapper actiontech-table-namespace table-row-cursor css-fxd6ka css-dev-only-do-not-override-bj9uhl"
+    class="ant-table-wrapper actiontech-table-namespace table-row-cursor css-fxd6ka"
   >
     <div
-      class="ant-spin-nested-loading css-dev-only-do-not-override-bj9uhl"
+      class="ant-spin-nested-loading"
     >
       <div>
         <div
           aria-busy="true"
           aria-live="polite"
-          class="ant-spin ant-spin-spinning css-dev-only-do-not-override-bj9uhl"
+          class="ant-spin ant-spin-spinning"
         >
           <span
             class="ant-spin-dot ant-spin-dot-spin"
@@ -314,14 +314,14 @@ exports[`test OverviewList matches the snapshot and displays loading state 1`] =
                         class="css-new95e"
                       >
                         <div
-                          class="ant-space css-dev-only-do-not-override-bj9uhl ant-space-horizontal ant-space-align-center"
+                          class="ant-space ant-space-horizontal ant-space-align-center"
                         >
                           <div
                             class="ant-space-item"
                             style="margin-right: 8px;"
                           >
                             <button
-                              class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm ant-btn-dangerous actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                              class="ant-btn ant-btn-default ant-btn-sm ant-btn-dangerous actiontech-table-actions-button basic-button-wrapper css-geipcv"
                               disabled=""
                               hidden=""
                               type="button"
@@ -336,7 +336,7 @@ exports[`test OverviewList matches the snapshot and displays loading state 1`] =
                             style="margin-right: 8px;"
                           >
                             <button
-                              class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                              class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
                               disabled=""
                               type="button"
                             >
@@ -350,7 +350,7 @@ exports[`test OverviewList matches the snapshot and displays loading state 1`] =
                             style="margin-right: 8px;"
                           >
                             <button
-                              class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                              class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
                               disabled=""
                               type="button"
                             >
@@ -363,7 +363,7 @@ exports[`test OverviewList matches the snapshot and displays loading state 1`] =
                             class="ant-space-item"
                           >
                             <button
-                              class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                              class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
                               disabled=""
                               hidden=""
                               type="button"
@@ -461,14 +461,14 @@ exports[`test OverviewList matches the snapshot and displays loading state 1`] =
                         class="css-new95e"
                       >
                         <div
-                          class="ant-space css-dev-only-do-not-override-bj9uhl ant-space-horizontal ant-space-align-center"
+                          class="ant-space ant-space-horizontal ant-space-align-center"
                         >
                           <div
                             class="ant-space-item"
                             style="margin-right: 8px;"
                           >
                             <button
-                              class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm ant-btn-dangerous actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                              class="ant-btn ant-btn-default ant-btn-sm ant-btn-dangerous actiontech-table-actions-button basic-button-wrapper css-geipcv"
                               disabled=""
                               hidden=""
                               type="button"
@@ -483,7 +483,7 @@ exports[`test OverviewList matches the snapshot and displays loading state 1`] =
                             style="margin-right: 8px;"
                           >
                             <button
-                              class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                              class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
                               disabled=""
                               type="button"
                             >
@@ -497,7 +497,7 @@ exports[`test OverviewList matches the snapshot and displays loading state 1`] =
                             style="margin-right: 8px;"
                           >
                             <button
-                              class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                              class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
                               disabled=""
                               type="button"
                             >
@@ -510,7 +510,7 @@ exports[`test OverviewList matches the snapshot and displays loading state 1`] =
                             class="ant-space-item"
                           >
                             <button
-                              class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                              class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
                               disabled=""
                               hidden=""
                               type="button"
@@ -538,10 +538,10 @@ exports[`test OverviewList matches the snapshot and displays loading state 1`] =
 exports[`test OverviewList matches the snapshot and shows error message in the overview table 1`] = `
 <div>
   <div
-    class="ant-table-wrapper actiontech-table-namespace table-row-cursor css-fxd6ka css-dev-only-do-not-override-bj9uhl"
+    class="ant-table-wrapper actiontech-table-namespace table-row-cursor css-fxd6ka"
   >
     <div
-      class="ant-spin-nested-loading css-dev-only-do-not-override-bj9uhl"
+      class="ant-spin-nested-loading"
     >
       <div
         class="ant-spin-container"
@@ -768,10 +768,10 @@ exports[`test OverviewList matches the snapshot and shows error message in the o
 exports[`test OverviewList matches the snapshot for the default task result setup 1`] = `
 <div>
   <div
-    class="ant-table-wrapper actiontech-table-namespace table-row-cursor css-fxd6ka css-dev-only-do-not-override-bj9uhl"
+    class="ant-table-wrapper actiontech-table-namespace table-row-cursor css-fxd6ka"
   >
     <div
-      class="ant-spin-nested-loading css-dev-only-do-not-override-bj9uhl"
+      class="ant-spin-nested-loading"
     >
       <div
         class="ant-spin-container"
@@ -1055,14 +1055,14 @@ exports[`test OverviewList matches the snapshot for the default task result setu
                         class="css-new95e"
                       >
                         <div
-                          class="ant-space css-dev-only-do-not-override-bj9uhl ant-space-horizontal ant-space-align-center"
+                          class="ant-space ant-space-horizontal ant-space-align-center"
                         >
                           <div
                             class="ant-space-item"
                             style="margin-right: 8px;"
                           >
                             <button
-                              class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm ant-btn-dangerous actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                              class="ant-btn ant-btn-default ant-btn-sm ant-btn-dangerous actiontech-table-actions-button basic-button-wrapper css-geipcv"
                               disabled=""
                               hidden=""
                               type="button"
@@ -1077,7 +1077,7 @@ exports[`test OverviewList matches the snapshot for the default task result setu
                             style="margin-right: 8px;"
                           >
                             <button
-                              class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                              class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
                               disabled=""
                               type="button"
                             >
@@ -1091,7 +1091,7 @@ exports[`test OverviewList matches the snapshot for the default task result setu
                             style="margin-right: 8px;"
                           >
                             <button
-                              class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                              class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
                               disabled=""
                               type="button"
                             >
@@ -1104,7 +1104,7 @@ exports[`test OverviewList matches the snapshot for the default task result setu
                             class="ant-space-item"
                           >
                             <button
-                              class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                              class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
                               disabled=""
                               hidden=""
                               type="button"
@@ -1202,14 +1202,14 @@ exports[`test OverviewList matches the snapshot for the default task result setu
                         class="css-new95e"
                       >
                         <div
-                          class="ant-space css-dev-only-do-not-override-bj9uhl ant-space-horizontal ant-space-align-center"
+                          class="ant-space ant-space-horizontal ant-space-align-center"
                         >
                           <div
                             class="ant-space-item"
                             style="margin-right: 8px;"
                           >
                             <button
-                              class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm ant-btn-dangerous actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                              class="ant-btn ant-btn-default ant-btn-sm ant-btn-dangerous actiontech-table-actions-button basic-button-wrapper css-geipcv"
                               disabled=""
                               hidden=""
                               type="button"
@@ -1224,7 +1224,7 @@ exports[`test OverviewList matches the snapshot for the default task result setu
                             style="margin-right: 8px;"
                           >
                             <button
-                              class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                              class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
                               disabled=""
                               type="button"
                             >
@@ -1238,7 +1238,7 @@ exports[`test OverviewList matches the snapshot for the default task result setu
                             style="margin-right: 8px;"
                           >
                             <button
-                              class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                              class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
                               disabled=""
                               type="button"
                             >
@@ -1251,7 +1251,7 @@ exports[`test OverviewList matches the snapshot for the default task result setu
                             class="ant-space-item"
                           >
                             <button
-                              class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                              class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
                               disabled=""
                               hidden=""
                               type="button"

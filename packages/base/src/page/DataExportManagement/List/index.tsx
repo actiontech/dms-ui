@@ -41,6 +41,7 @@ import {
   DataExportManagementTableToolbarActions,
   DataExportManagementCreateAction
 } from './actions';
+import { IListDataExportWorkflowWithExtraParams } from './index.type';
 
 const ExportWorkflowList: React.FC = () => {
   const { t } = useTranslation();
@@ -75,7 +76,7 @@ const ExportWorkflowList: React.FC = () => {
     setSearchKeyword,
     refreshBySearchKeyword
   } = useTableRequestParams<
-    IListDataExportWorkflow,
+    IListDataExportWorkflowWithExtraParams,
     ExportWorkflowListFilterParamType
   >();
 
@@ -84,11 +85,10 @@ const ExportWorkflowList: React.FC = () => {
   }, [projectID]);
 
   const { filterButtonMeta, filterContainerMeta, updateAllSelectedFilterItem } =
-    useTableFilterContainer(
-      columns,
-      updateTableFilterInfo,
-      ExportWorkflowExtraFilterMeta()
-    );
+    useTableFilterContainer<
+      IListDataExportWorkflowWithExtraParams,
+      ExportWorkflowListFilterParamType
+    >(columns, updateTableFilterInfo, ExportWorkflowExtraFilterMeta());
 
   const tableSetting: ColumnsSettingProps = {
     tableName: 'export_workflow_list',
@@ -97,9 +97,7 @@ const ExportWorkflowList: React.FC = () => {
 
   const filterCustomProps = useMemo(() => {
     return new Map<
-      keyof (IListDataExportWorkflow & {
-        db_service_uid?: string;
-      }),
+      keyof IListDataExportWorkflowWithExtraParams,
       FilterCustomProps
     >([
       [

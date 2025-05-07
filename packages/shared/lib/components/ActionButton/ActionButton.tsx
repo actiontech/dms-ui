@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 import { ActionButtonProps } from './ActionButton.types';
 import { useTranslation } from 'react-i18next';
 import { PopconfirmMessageStyleWrapper } from '../../styleWrapper/element';

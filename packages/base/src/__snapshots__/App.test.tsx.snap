@@ -12,13 +12,13 @@ exports[`App render App when "checkPageAction" is false 1`] = `
         class="dms-layout-side-start"
       >
         <div
-          class="ant-spin-nested-loading css-dev-only-do-not-override-1thf7qv"
+          class="ant-spin-nested-loading"
         >
           <div>
             <div
               aria-busy="true"
               aria-live="polite"
-              class="ant-spin ant-spin-spinning css-dev-only-do-not-override-1thf7qv"
+              class="ant-spin ant-spin-spinning"
             >
               <span
                 class="custom-icon-spin-dot ant-spin-dot css-u3jcp4"
@@ -162,14 +162,14 @@ exports[`App render App when "checkPageAction" is false 1`] = `
               class="css-22avtw"
             >
               <div
-                class="ant-space css-dev-only-do-not-override-1thf7qv ant-space-horizontal ant-space-align-center action-space-wrapper"
+                class="ant-space ant-space-horizontal ant-space-align-center action-space-wrapper"
               >
                 <div
                   class="ant-space-item"
                   style="margin-right: 8px;"
                 >
                   <div
-                    class="ant-space css-dev-only-do-not-override-1thf7qv ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
+                    class="ant-space ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
                   >
                     <div
                       class="ant-space-item"
@@ -202,7 +202,7 @@ exports[`App render App when "checkPageAction" is false 1`] = `
                   class="ant-space-item"
                 >
                   <div
-                    class="ant-space css-dev-only-do-not-override-1thf7qv ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
+                    class="ant-space ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
                   >
                     <div
                       class="ant-space-item"
@@ -229,7 +229,7 @@ exports[`App render App when "checkPageAction" is false 1`] = `
               </div>
             </div>
             <div
-              class="ant-select ant-select-lg ant-select-borderless basic-select-wrapper custom-select-namespace custom-project-selector css-wk9fc9 css-dev-only-do-not-override-is2hm8 ant-select-single ant-select-show-arrow"
+              class="ant-select ant-select-lg ant-select-borderless basic-select-wrapper custom-select-namespace custom-project-selector css-wk9fc9 ant-select-single ant-select-show-arrow"
               searchinputref="[object Object]"
             >
               <div
@@ -308,7 +308,7 @@ exports[`App render App when "checkPageAction" is false 1`] = `
           </div>
         </div>
         <ul
-          class="ant-menu ant-menu-root ant-menu-inline ant-menu-light custom-menu css-dev-only-do-not-override-1thf7qv"
+          class="ant-menu ant-menu-root ant-menu-inline ant-menu-light custom-menu"
           data-menu-list="true"
           role="menu"
           tabindex="0"
@@ -322,7 +322,7 @@ exports[`App render App when "checkPageAction" is false 1`] = `
         class="dms-layout-side-end"
       >
         <span
-          class="ant-avatar ant-avatar-circle action-avatar css-1wq79dc css-dev-only-do-not-override-1thf7qv"
+          class="ant-avatar ant-avatar-circle action-avatar css-1wq79dc"
         >
           <span
             class="ant-avatar-string"
@@ -352,10 +352,10 @@ exports[`App render App when "checkPageAction" is false 1`] = `
         class="css-1wil037"
       >
         <div
-          class="ant-row ant-row-no-wrap ant-row-middle step-container css-dev-only-do-not-override-1thf7qv"
+          class="ant-row ant-row-no-wrap ant-row-middle step-container"
         >
           <div
-            class="ant-col icon-wrapper css-dev-only-do-not-override-1thf7qv"
+            class="ant-col icon-wrapper"
             style="flex: 0 0 40px; min-width: 0;"
           >
             <span
@@ -376,7 +376,7 @@ exports[`App render App when "checkPageAction" is false 1`] = `
             </span>
           </div>
           <div
-            class="ant-col step-box css-dev-only-do-not-override-1thf7qv"
+            class="ant-col step-box"
             style="flex-basis: auto; min-width: 0;"
           >
             <div
@@ -398,10 +398,10 @@ exports[`App render App when "checkPageAction" is false 1`] = `
               </div>
             </div>
             <div
-              class="ant-row ant-row-no-wrap css-dev-only-do-not-override-1thf7qv"
+              class="ant-row ant-row-no-wrap"
             >
               <div
-                class="ant-col ant-col-8 content-wrapper css-dev-only-do-not-override-1thf7qv"
+                class="ant-col ant-col-8 content-wrapper"
               >
                 <div
                   class="sub-title"
@@ -414,7 +414,7 @@ exports[`App render App when "checkPageAction" is false 1`] = `
                   管理数据源相关操作
                 </div>
                 <div
-                  class="ant-space css-dev-only-do-not-override-1thf7qv ant-space-horizontal ant-space-align-center actions"
+                  class="ant-space ant-space-horizontal ant-space-align-center actions"
                   style="flex-wrap: wrap; margin-bottom: -8px;"
                 >
                   <div
@@ -422,11 +422,11 @@ exports[`App render App when "checkPageAction" is false 1`] = `
                     style="margin-right: 8px; padding-bottom: 8px;"
                   >
                     <button
-                      class="ant-btn css-dev-only-do-not-override-eo1pvk ant-btn-default ant-btn-sm guidance-button-wrapper css-aj0zfl"
+                      class="ant-btn ant-btn-default ant-btn-sm guidance-button-wrapper css-1jtuni2"
                       type="button"
                     >
                       <div
-                        class="ant-space css-dev-only-do-not-override-eo1pvk ant-space-horizontal ant-space-align-center"
+                        class="ant-space ant-space-horizontal ant-space-align-center"
                       >
                         <div
                           class="ant-space-item"
@@ -441,11 +441,11 @@ exports[`App render App when "checkPageAction" is false 1`] = `
                     style="padding-bottom: 8px;"
                   >
                     <button
-                      class="ant-btn css-dev-only-do-not-override-eo1pvk ant-btn-default ant-btn-sm guidance-button-wrapper css-aj0zfl"
+                      class="ant-btn ant-btn-default ant-btn-sm guidance-button-wrapper css-1jtuni2"
                       type="button"
                     >
                       <div
-                        class="ant-space css-dev-only-do-not-override-eo1pvk ant-space-horizontal ant-space-align-center"
+                        class="ant-space ant-space-horizontal ant-space-align-center"
                       >
                         <div
                           class="ant-space-item"
@@ -458,7 +458,7 @@ exports[`App render App when "checkPageAction" is false 1`] = `
                 </div>
               </div>
               <div
-                class="ant-col ant-col-8 content-wrapper css-dev-only-do-not-override-1thf7qv"
+                class="ant-col ant-col-8 content-wrapper"
               >
                 <div
                   class="sub-title"
@@ -471,7 +471,7 @@ exports[`App render App when "checkPageAction" is false 1`] = `
                   管理外部数据源相关操作
                 </div>
                 <div
-                  class="ant-space css-dev-only-do-not-override-1thf7qv ant-space-horizontal ant-space-align-center actions"
+                  class="ant-space ant-space-horizontal ant-space-align-center actions"
                   style="flex-wrap: wrap; margin-bottom: -8px;"
                 >
                   <div
@@ -479,11 +479,11 @@ exports[`App render App when "checkPageAction" is false 1`] = `
                     style="margin-right: 8px; padding-bottom: 8px;"
                   >
                     <button
-                      class="ant-btn css-dev-only-do-not-override-eo1pvk ant-btn-default ant-btn-sm guidance-button-wrapper css-aj0zfl"
+                      class="ant-btn ant-btn-default ant-btn-sm guidance-button-wrapper css-1jtuni2"
                       type="button"
                     >
                       <div
-                        class="ant-space css-dev-only-do-not-override-eo1pvk ant-space-horizontal ant-space-align-center"
+                        class="ant-space ant-space-horizontal ant-space-align-center"
                       >
                         <div
                           class="ant-space-item"
@@ -498,11 +498,11 @@ exports[`App render App when "checkPageAction" is false 1`] = `
                     style="padding-bottom: 8px;"
                   >
                     <button
-                      class="ant-btn css-dev-only-do-not-override-eo1pvk ant-btn-default ant-btn-sm guidance-button-wrapper css-aj0zfl"
+                      class="ant-btn ant-btn-default ant-btn-sm guidance-button-wrapper css-1jtuni2"
                       type="button"
                     >
                       <div
-                        class="ant-space css-dev-only-do-not-override-eo1pvk ant-space-horizontal ant-space-align-center"
+                        class="ant-space ant-space-horizontal ant-space-align-center"
                       >
                         <div
                           class="ant-space-item"
@@ -518,10 +518,10 @@ exports[`App render App when "checkPageAction" is false 1`] = `
           </div>
         </div>
         <div
-          class="ant-row ant-row-no-wrap ant-row-middle step-container css-dev-only-do-not-override-1thf7qv"
+          class="ant-row ant-row-no-wrap ant-row-middle step-container"
         >
           <div
-            class="ant-col icon-wrapper css-dev-only-do-not-override-1thf7qv"
+            class="ant-col icon-wrapper"
             style="flex: 0 0 40px; min-width: 0;"
           >
             <span
@@ -546,7 +546,7 @@ exports[`App render App when "checkPageAction" is false 1`] = `
             </span>
           </div>
           <div
-            class="ant-col step-box css-dev-only-do-not-override-1thf7qv"
+            class="ant-col step-box"
             style="flex-basis: auto; min-width: 0;"
           >
             <div
@@ -568,10 +568,10 @@ exports[`App render App when "checkPageAction" is false 1`] = `
               </div>
             </div>
             <div
-              class="ant-row ant-row-no-wrap css-dev-only-do-not-override-1thf7qv"
+              class="ant-row ant-row-no-wrap"
             >
               <div
-                class="ant-col ant-col-8 content-wrapper css-dev-only-do-not-override-1thf7qv"
+                class="ant-col ant-col-8 content-wrapper"
               >
                 <div
                   class="sub-title"
@@ -584,7 +584,7 @@ exports[`App render App when "checkPageAction" is false 1`] = `
                   为项目添加成员/成员组，并配置相应的数据源操作权限
                 </div>
                 <div
-                  class="ant-space css-dev-only-do-not-override-1thf7qv ant-space-horizontal ant-space-align-center actions"
+                  class="ant-space ant-space-horizontal ant-space-align-center actions"
                   style="flex-wrap: wrap; margin-bottom: -8px;"
                 >
                   <div
@@ -592,11 +592,11 @@ exports[`App render App when "checkPageAction" is false 1`] = `
                     style="padding-bottom: 8px;"
                   >
                     <button
-                      class="ant-btn css-dev-only-do-not-override-eo1pvk ant-btn-default ant-btn-sm guidance-button-wrapper css-aj0zfl"
+                      class="ant-btn ant-btn-default ant-btn-sm guidance-button-wrapper css-1jtuni2"
                       type="button"
                     >
                       <div
-                        class="ant-space css-dev-only-do-not-override-eo1pvk ant-space-horizontal ant-space-align-center"
+                        class="ant-space ant-space-horizontal ant-space-align-center"
                       >
                         <div
                           class="ant-space-item"
@@ -612,10 +612,10 @@ exports[`App render App when "checkPageAction" is false 1`] = `
           </div>
         </div>
         <div
-          class="ant-row ant-row-no-wrap ant-row-middle step-container css-dev-only-do-not-override-1thf7qv"
+          class="ant-row ant-row-no-wrap ant-row-middle step-container"
         >
           <div
-            class="ant-col icon-wrapper css-dev-only-do-not-override-1thf7qv"
+            class="ant-col icon-wrapper"
             style="flex: 0 0 40px; min-width: 0;"
           >
             <span
@@ -640,7 +640,7 @@ exports[`App render App when "checkPageAction" is false 1`] = `
             </span>
           </div>
           <div
-            class="ant-col step-box css-dev-only-do-not-override-1thf7qv"
+            class="ant-col step-box"
             style="flex-basis: auto; min-width: 0;"
           >
             <div
@@ -662,10 +662,10 @@ exports[`App render App when "checkPageAction" is false 1`] = `
               </div>
             </div>
             <div
-              class="ant-row ant-row-no-wrap css-dev-only-do-not-override-1thf7qv"
+              class="ant-row ant-row-no-wrap"
             >
               <div
-                class="ant-col ant-col-8 content-wrapper css-dev-only-do-not-override-1thf7qv"
+                class="ant-col ant-col-8 content-wrapper"
               >
                 <div
                   class="sub-title"
@@ -678,7 +678,7 @@ exports[`App render App when "checkPageAction" is false 1`] = `
                   查看平台支持的审核规则，并自定义审核规则模板，监察已生成的SQL，或使用SQL审核改善SQL质量
                 </div>
                 <div
-                  class="ant-space css-dev-only-do-not-override-1thf7qv ant-space-horizontal ant-space-align-center actions"
+                  class="ant-space ant-space-horizontal ant-space-align-center actions"
                   style="flex-wrap: wrap; margin-bottom: -8px;"
                 >
                   <div
@@ -686,11 +686,11 @@ exports[`App render App when "checkPageAction" is false 1`] = `
                     style="margin-right: 8px; padding-bottom: 8px;"
                   >
                     <button
-                      class="ant-btn css-dev-only-do-not-override-eo1pvk ant-btn-default ant-btn-sm guidance-button-wrapper css-aj0zfl"
+                      class="ant-btn ant-btn-default ant-btn-sm guidance-button-wrapper css-1jtuni2"
                       type="button"
                     >
                       <div
-                        class="ant-space css-dev-only-do-not-override-eo1pvk ant-space-horizontal ant-space-align-center"
+                        class="ant-space ant-space-horizontal ant-space-align-center"
                       >
                         <div
                           class="ant-space-item"
@@ -705,11 +705,11 @@ exports[`App render App when "checkPageAction" is false 1`] = `
                     style="margin-right: 8px; padding-bottom: 8px;"
                   >
                     <button
-                      class="ant-btn css-dev-only-do-not-override-eo1pvk ant-btn-default ant-btn-sm guidance-button-wrapper css-aj0zfl"
+                      class="ant-btn ant-btn-default ant-btn-sm guidance-button-wrapper css-1jtuni2"
                       type="button"
                     >
                       <div
-                        class="ant-space css-dev-only-do-not-override-eo1pvk ant-space-horizontal ant-space-align-center"
+                        class="ant-space ant-space-horizontal ant-space-align-center"
                       >
                         <div
                           class="ant-space-item"
@@ -724,11 +724,11 @@ exports[`App render App when "checkPageAction" is false 1`] = `
                     style="margin-right: 8px; padding-bottom: 8px;"
                   >
                     <button
-                      class="ant-btn css-dev-only-do-not-override-eo1pvk ant-btn-default ant-btn-sm guidance-button-wrapper css-aj0zfl"
+                      class="ant-btn ant-btn-default ant-btn-sm guidance-button-wrapper css-1jtuni2"
                       type="button"
                     >
                       <div
-                        class="ant-space css-dev-only-do-not-override-eo1pvk ant-space-horizontal ant-space-align-center"
+                        class="ant-space ant-space-horizontal ant-space-align-center"
                       >
                         <div
                           class="ant-space-item"
@@ -743,11 +743,11 @@ exports[`App render App when "checkPageAction" is false 1`] = `
                     style="padding-bottom: 8px;"
                   >
                     <button
-                      class="ant-btn css-dev-only-do-not-override-eo1pvk ant-btn-default ant-btn-sm guidance-button-wrapper css-aj0zfl"
+                      class="ant-btn ant-btn-default ant-btn-sm guidance-button-wrapper css-1jtuni2"
                       type="button"
                     >
                       <div
-                        class="ant-space css-dev-only-do-not-override-eo1pvk ant-space-horizontal ant-space-align-center"
+                        class="ant-space ant-space-horizontal ant-space-align-center"
                       >
                         <div
                           class="ant-space-item"
@@ -760,7 +760,7 @@ exports[`App render App when "checkPageAction" is false 1`] = `
                 </div>
               </div>
               <div
-                class="ant-col ant-col-8 content-wrapper css-dev-only-do-not-override-1thf7qv"
+                class="ant-col ant-col-8 content-wrapper"
               >
                 <div
                   class="sub-title"
@@ -773,7 +773,7 @@ exports[`App render App when "checkPageAction" is false 1`] = `
                   根据实际业务流转变更流程模板
                 </div>
                 <div
-                  class="ant-space css-dev-only-do-not-override-1thf7qv ant-space-horizontal ant-space-align-center actions"
+                  class="ant-space ant-space-horizontal ant-space-align-center actions"
                   style="flex-wrap: wrap; margin-bottom: -8px;"
                 >
                   <div
@@ -781,11 +781,11 @@ exports[`App render App when "checkPageAction" is false 1`] = `
                     style="padding-bottom: 8px;"
                   >
                     <button
-                      class="ant-btn css-dev-only-do-not-override-eo1pvk ant-btn-default ant-btn-sm guidance-button-wrapper css-aj0zfl"
+                      class="ant-btn ant-btn-default ant-btn-sm guidance-button-wrapper css-1jtuni2"
                       type="button"
                     >
                       <div
-                        class="ant-space css-dev-only-do-not-override-eo1pvk ant-space-horizontal ant-space-align-center"
+                        class="ant-space ant-space-horizontal ant-space-align-center"
                       >
                         <div
                           class="ant-space-item"
@@ -801,10 +801,10 @@ exports[`App render App when "checkPageAction" is false 1`] = `
           </div>
         </div>
         <div
-          class="ant-row ant-row-no-wrap ant-row-middle step-container css-dev-only-do-not-override-1thf7qv"
+          class="ant-row ant-row-no-wrap ant-row-middle step-container"
         >
           <div
-            class="ant-col icon-wrapper css-dev-only-do-not-override-1thf7qv"
+            class="ant-col icon-wrapper"
             style="flex: 0 0 40px; min-width: 0;"
           >
             <span
@@ -830,7 +830,7 @@ exports[`App render App when "checkPageAction" is false 1`] = `
             </span>
           </div>
           <div
-            class="ant-col step-box css-dev-only-do-not-override-1thf7qv"
+            class="ant-col step-box"
             style="flex-basis: auto; min-width: 0;"
           >
             <div
@@ -852,10 +852,10 @@ exports[`App render App when "checkPageAction" is false 1`] = `
               </div>
             </div>
             <div
-              class="ant-row ant-row-no-wrap css-dev-only-do-not-override-1thf7qv"
+              class="ant-row ant-row-no-wrap"
             >
               <div
-                class="ant-col ant-col-8 content-wrapper css-dev-only-do-not-override-1thf7qv"
+                class="ant-col ant-col-8 content-wrapper"
               >
                 <div
                   class="sub-title"
@@ -868,7 +868,7 @@ exports[`App render App when "checkPageAction" is false 1`] = `
                   使用在线的数据编辑器（CloudBeaver）进行SQL查询和编辑
                 </div>
                 <div
-                  class="ant-space css-dev-only-do-not-override-1thf7qv ant-space-horizontal ant-space-align-center actions"
+                  class="ant-space ant-space-horizontal ant-space-align-center actions"
                   style="flex-wrap: wrap; margin-bottom: -8px;"
                 >
                   <div
@@ -876,11 +876,11 @@ exports[`App render App when "checkPageAction" is false 1`] = `
                     style="padding-bottom: 8px;"
                   >
                     <button
-                      class="ant-btn css-dev-only-do-not-override-eo1pvk ant-btn-default ant-btn-sm guidance-button-wrapper css-aj0zfl"
+                      class="ant-btn ant-btn-default ant-btn-sm guidance-button-wrapper css-1jtuni2"
                       type="button"
                     >
                       <div
-                        class="ant-space css-dev-only-do-not-override-eo1pvk ant-space-horizontal ant-space-align-center"
+                        class="ant-space ant-space-horizontal ant-space-align-center"
                       >
                         <div
                           class="ant-space-item"
@@ -893,7 +893,7 @@ exports[`App render App when "checkPageAction" is false 1`] = `
                 </div>
               </div>
               <div
-                class="ant-col ant-col-8 content-wrapper css-dev-only-do-not-override-1thf7qv"
+                class="ant-col ant-col-8 content-wrapper"
               >
                 <div
                   class="sub-title"
@@ -906,7 +906,7 @@ exports[`App render App when "checkPageAction" is false 1`] = `
                   在线提起SQL变更申请，经由审批流程完成上线
                 </div>
                 <div
-                  class="ant-space css-dev-only-do-not-override-1thf7qv ant-space-horizontal ant-space-align-center actions"
+                  class="ant-space ant-space-horizontal ant-space-align-center actions"
                   style="flex-wrap: wrap; margin-bottom: -8px;"
                 >
                   <div
@@ -914,11 +914,11 @@ exports[`App render App when "checkPageAction" is false 1`] = `
                     style="padding-bottom: 8px;"
                   >
                     <button
-                      class="ant-btn css-dev-only-do-not-override-eo1pvk ant-btn-default ant-btn-sm guidance-button-wrapper css-aj0zfl"
+                      class="ant-btn ant-btn-default ant-btn-sm guidance-button-wrapper css-1jtuni2"
                       type="button"
                     >
                       <div
-                        class="ant-space css-dev-only-do-not-override-eo1pvk ant-space-horizontal ant-space-align-center"
+                        class="ant-space ant-space-horizontal ant-space-align-center"
                       >
                         <div
                           class="ant-space-item"
@@ -931,7 +931,7 @@ exports[`App render App when "checkPageAction" is false 1`] = `
                 </div>
               </div>
               <div
-                class="ant-col ant-col-8 content-wrapper css-dev-only-do-not-override-1thf7qv"
+                class="ant-col ant-col-8 content-wrapper"
               >
                 <div
                   class="sub-title"
@@ -944,7 +944,7 @@ exports[`App render App when "checkPageAction" is false 1`] = `
                   发起数据导出工单，审核通过后获取数据集。
                 </div>
                 <div
-                  class="ant-space css-dev-only-do-not-override-1thf7qv ant-space-horizontal ant-space-align-center actions"
+                  class="ant-space ant-space-horizontal ant-space-align-center actions"
                   style="flex-wrap: wrap; margin-bottom: -8px;"
                 >
                   <div
@@ -952,11 +952,11 @@ exports[`App render App when "checkPageAction" is false 1`] = `
                     style="padding-bottom: 8px;"
                   >
                     <button
-                      class="ant-btn css-dev-only-do-not-override-eo1pvk ant-btn-default ant-btn-sm guidance-button-wrapper css-aj0zfl"
+                      class="ant-btn ant-btn-default ant-btn-sm guidance-button-wrapper css-1jtuni2"
                       type="button"
                     >
                       <div
-                        class="ant-space css-dev-only-do-not-override-eo1pvk ant-space-horizontal ant-space-align-center"
+                        class="ant-space ant-space-horizontal ant-space-align-center"
                       >
                         <div
                           class="ant-space-item"
@@ -972,10 +972,10 @@ exports[`App render App when "checkPageAction" is false 1`] = `
           </div>
         </div>
         <div
-          class="ant-row ant-row-no-wrap ant-row-middle step-container css-dev-only-do-not-override-1thf7qv"
+          class="ant-row ant-row-no-wrap ant-row-middle step-container"
         >
           <div
-            class="ant-col icon-wrapper css-dev-only-do-not-override-1thf7qv"
+            class="ant-col icon-wrapper"
             style="flex: 0 0 40px; min-width: 0;"
           >
             <span
@@ -999,7 +999,7 @@ exports[`App render App when "checkPageAction" is false 1`] = `
             </span>
           </div>
           <div
-            class="ant-col step-box css-dev-only-do-not-override-1thf7qv"
+            class="ant-col step-box"
             style="flex-basis: auto; min-width: 0;"
           >
             <div
@@ -1021,10 +1021,10 @@ exports[`App render App when "checkPageAction" is false 1`] = `
               </div>
             </div>
             <div
-              class="ant-row ant-row-no-wrap css-dev-only-do-not-override-1thf7qv"
+              class="ant-row ant-row-no-wrap"
             >
               <div
-                class="ant-col ant-col-8 content-wrapper css-dev-only-do-not-override-1thf7qv"
+                class="ant-col ant-col-8 content-wrapper"
               >
                 <div
                   class="sub-title"
@@ -1037,7 +1037,7 @@ exports[`App render App when "checkPageAction" is false 1`] = `
                   审计平台内用户操作
                 </div>
                 <div
-                  class="ant-space css-dev-only-do-not-override-1thf7qv ant-space-horizontal ant-space-align-center actions"
+                  class="ant-space ant-space-horizontal ant-space-align-center actions"
                   style="flex-wrap: wrap; margin-bottom: -8px;"
                 >
                   <div
@@ -1045,11 +1045,11 @@ exports[`App render App when "checkPageAction" is false 1`] = `
                     style="padding-bottom: 8px;"
                   >
                     <button
-                      class="ant-btn css-dev-only-do-not-override-eo1pvk ant-btn-default ant-btn-sm guidance-button-wrapper css-aj0zfl"
+                      class="ant-btn ant-btn-default ant-btn-sm guidance-button-wrapper css-1jtuni2"
                       type="button"
                     >
                       <div
-                        class="ant-space css-dev-only-do-not-override-eo1pvk ant-space-horizontal ant-space-align-center"
+                        class="ant-space ant-space-horizontal ant-space-align-center"
                       >
                         <div
                           class="ant-space-item"
@@ -1088,13 +1088,13 @@ exports[`App render App when token is existed 1`] = `
         class="dms-layout-side-start"
       >
         <div
-          class="ant-spin-nested-loading css-dev-only-do-not-override-1thf7qv"
+          class="ant-spin-nested-loading"
         >
           <div>
             <div
               aria-busy="true"
               aria-live="polite"
-              class="ant-spin ant-spin-spinning css-dev-only-do-not-override-1thf7qv"
+              class="ant-spin ant-spin-spinning"
             >
               <span
                 class="custom-icon-spin-dot ant-spin-dot css-u3jcp4"
@@ -1238,14 +1238,14 @@ exports[`App render App when token is existed 1`] = `
               class="css-22avtw"
             >
               <div
-                class="ant-space css-dev-only-do-not-override-1thf7qv ant-space-horizontal ant-space-align-center action-space-wrapper"
+                class="ant-space ant-space-horizontal ant-space-align-center action-space-wrapper"
               >
                 <div
                   class="ant-space-item"
                   style="margin-right: 8px;"
                 >
                   <div
-                    class="ant-space css-dev-only-do-not-override-1thf7qv ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
+                    class="ant-space ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
                   >
                     <div
                       class="ant-space-item"
@@ -1279,7 +1279,7 @@ exports[`App render App when token is existed 1`] = `
                   style="margin-right: 8px;"
                 >
                   <div
-                    class="ant-space css-dev-only-do-not-override-1thf7qv ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
+                    class="ant-space ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
                   >
                     <div
                       class="ant-space-item"
@@ -1308,7 +1308,7 @@ exports[`App render App when token is existed 1`] = `
                   style="margin-right: 8px;"
                 >
                   <div
-                    class="ant-space css-dev-only-do-not-override-1thf7qv ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
+                    class="ant-space ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
                   >
                     <div
                       class="ant-space-item"
@@ -1336,7 +1336,7 @@ exports[`App render App when token is existed 1`] = `
                   class="ant-space-item"
                 >
                   <div
-                    class="ant-space css-dev-only-do-not-override-1thf7qv ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
+                    class="ant-space ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
                   >
                     <div
                       class="ant-space-item"
@@ -1382,7 +1382,7 @@ exports[`App render App when token is existed 1`] = `
               </div>
             </div>
             <div
-              class="ant-select ant-select-lg ant-select-borderless basic-select-wrapper custom-select-namespace custom-project-selector css-wk9fc9 css-dev-only-do-not-override-is2hm8 ant-select-single ant-select-show-arrow"
+              class="ant-select ant-select-lg ant-select-borderless basic-select-wrapper custom-select-namespace custom-project-selector css-wk9fc9 ant-select-single ant-select-show-arrow"
               searchinputref="[object Object]"
             >
               <div
@@ -1461,7 +1461,7 @@ exports[`App render App when token is existed 1`] = `
           </div>
         </div>
         <ul
-          class="ant-menu ant-menu-root ant-menu-inline ant-menu-light custom-menu css-dev-only-do-not-override-1thf7qv"
+          class="ant-menu ant-menu-root ant-menu-inline ant-menu-light custom-menu"
           data-menu-list="true"
           role="menu"
           tabindex="0"
@@ -1475,7 +1475,7 @@ exports[`App render App when token is existed 1`] = `
         class="dms-layout-side-end"
       >
         <span
-          class="ant-avatar ant-avatar-circle action-avatar css-1wq79dc css-dev-only-do-not-override-1thf7qv"
+          class="ant-avatar ant-avatar-circle action-avatar css-1wq79dc"
         >
           <span
             class="ant-avatar-string"
@@ -1529,10 +1529,10 @@ exports[`App render App when token is existed 1`] = `
         class="css-1wil037"
       >
         <div
-          class="ant-row ant-row-no-wrap ant-row-middle step-container css-dev-only-do-not-override-1thf7qv"
+          class="ant-row ant-row-no-wrap ant-row-middle step-container"
         >
           <div
-            class="ant-col icon-wrapper css-dev-only-do-not-override-1thf7qv"
+            class="ant-col icon-wrapper"
             style="flex: 0 0 40px; min-width: 0;"
           >
             <span
@@ -1553,7 +1553,7 @@ exports[`App render App when token is existed 1`] = `
             </span>
           </div>
           <div
-            class="ant-col step-box css-dev-only-do-not-override-1thf7qv"
+            class="ant-col step-box"
             style="flex-basis: auto; min-width: 0;"
           >
             <div
@@ -1575,10 +1575,10 @@ exports[`App render App when token is existed 1`] = `
               </div>
             </div>
             <div
-              class="ant-row ant-row-no-wrap css-dev-only-do-not-override-1thf7qv"
+              class="ant-row ant-row-no-wrap"
             >
               <div
-                class="ant-col ant-col-8 content-wrapper css-dev-only-do-not-override-1thf7qv"
+                class="ant-col ant-col-8 content-wrapper"
               >
                 <div
                   class="sub-title"
@@ -1591,7 +1591,7 @@ exports[`App render App when token is existed 1`] = `
                   管理数据源相关操作
                 </div>
                 <div
-                  class="ant-space css-dev-only-do-not-override-1thf7qv ant-space-horizontal ant-space-align-center actions"
+                  class="ant-space ant-space-horizontal ant-space-align-center actions"
                   style="flex-wrap: wrap; margin-bottom: -8px;"
                 >
                   <div
@@ -1599,11 +1599,11 @@ exports[`App render App when token is existed 1`] = `
                     style="margin-right: 8px; padding-bottom: 8px;"
                   >
                     <button
-                      class="ant-btn css-dev-only-do-not-override-eo1pvk ant-btn-default ant-btn-sm guidance-button-wrapper css-aj0zfl"
+                      class="ant-btn ant-btn-default ant-btn-sm guidance-button-wrapper css-1jtuni2"
                       type="button"
                     >
                       <div
-                        class="ant-space css-dev-only-do-not-override-eo1pvk ant-space-horizontal ant-space-align-center"
+                        class="ant-space ant-space-horizontal ant-space-align-center"
                       >
                         <div
                           class="ant-space-item"
@@ -1618,11 +1618,11 @@ exports[`App render App when token is existed 1`] = `
                     style="padding-bottom: 8px;"
                   >
                     <button
-                      class="ant-btn css-dev-only-do-not-override-eo1pvk ant-btn-default ant-btn-sm guidance-button-wrapper css-aj0zfl"
+                      class="ant-btn ant-btn-default ant-btn-sm guidance-button-wrapper css-1jtuni2"
                       type="button"
                     >
                       <div
-                        class="ant-space css-dev-only-do-not-override-eo1pvk ant-space-horizontal ant-space-align-center"
+                        class="ant-space ant-space-horizontal ant-space-align-center"
                       >
                         <div
                           class="ant-space-item"
@@ -1635,7 +1635,7 @@ exports[`App render App when token is existed 1`] = `
                 </div>
               </div>
               <div
-                class="ant-col ant-col-8 content-wrapper css-dev-only-do-not-override-1thf7qv"
+                class="ant-col ant-col-8 content-wrapper"
               >
                 <div
                   class="sub-title"
@@ -1648,7 +1648,7 @@ exports[`App render App when token is existed 1`] = `
                   管理外部数据源相关操作
                 </div>
                 <div
-                  class="ant-space css-dev-only-do-not-override-1thf7qv ant-space-horizontal ant-space-align-center actions"
+                  class="ant-space ant-space-horizontal ant-space-align-center actions"
                   style="flex-wrap: wrap; margin-bottom: -8px;"
                 >
                   <div
@@ -1656,11 +1656,11 @@ exports[`App render App when token is existed 1`] = `
                     style="margin-right: 8px; padding-bottom: 8px;"
                   >
                     <button
-                      class="ant-btn css-dev-only-do-not-override-eo1pvk ant-btn-default ant-btn-sm guidance-button-wrapper css-aj0zfl"
+                      class="ant-btn ant-btn-default ant-btn-sm guidance-button-wrapper css-1jtuni2"
                       type="button"
                     >
                       <div
-                        class="ant-space css-dev-only-do-not-override-eo1pvk ant-space-horizontal ant-space-align-center"
+                        class="ant-space ant-space-horizontal ant-space-align-center"
                       >
                         <div
                           class="ant-space-item"
@@ -1675,11 +1675,11 @@ exports[`App render App when token is existed 1`] = `
                     style="padding-bottom: 8px;"
                   >
                     <button
-                      class="ant-btn css-dev-only-do-not-override-eo1pvk ant-btn-default ant-btn-sm guidance-button-wrapper css-aj0zfl"
+                      class="ant-btn ant-btn-default ant-btn-sm guidance-button-wrapper css-1jtuni2"
                       type="button"
                     >
                       <div
-                        class="ant-space css-dev-only-do-not-override-eo1pvk ant-space-horizontal ant-space-align-center"
+                        class="ant-space ant-space-horizontal ant-space-align-center"
                       >
                         <div
                           class="ant-space-item"
@@ -1695,10 +1695,10 @@ exports[`App render App when token is existed 1`] = `
           </div>
         </div>
         <div
-          class="ant-row ant-row-no-wrap ant-row-middle step-container css-dev-only-do-not-override-1thf7qv"
+          class="ant-row ant-row-no-wrap ant-row-middle step-container"
         >
           <div
-            class="ant-col icon-wrapper css-dev-only-do-not-override-1thf7qv"
+            class="ant-col icon-wrapper"
             style="flex: 0 0 40px; min-width: 0;"
           >
             <span
@@ -1723,7 +1723,7 @@ exports[`App render App when token is existed 1`] = `
             </span>
           </div>
           <div
-            class="ant-col step-box css-dev-only-do-not-override-1thf7qv"
+            class="ant-col step-box"
             style="flex-basis: auto; min-width: 0;"
           >
             <div
@@ -1745,10 +1745,10 @@ exports[`App render App when token is existed 1`] = `
               </div>
             </div>
             <div
-              class="ant-row ant-row-no-wrap css-dev-only-do-not-override-1thf7qv"
+              class="ant-row ant-row-no-wrap"
             >
               <div
-                class="ant-col ant-col-8 content-wrapper css-dev-only-do-not-override-1thf7qv"
+                class="ant-col ant-col-8 content-wrapper"
               >
                 <div
                   class="sub-title"
@@ -1761,7 +1761,7 @@ exports[`App render App when token is existed 1`] = `
                   为项目添加成员/成员组，并配置相应的数据源操作权限
                 </div>
                 <div
-                  class="ant-space css-dev-only-do-not-override-1thf7qv ant-space-horizontal ant-space-align-center actions"
+                  class="ant-space ant-space-horizontal ant-space-align-center actions"
                   style="flex-wrap: wrap; margin-bottom: -8px;"
                 >
                   <div
@@ -1769,11 +1769,11 @@ exports[`App render App when token is existed 1`] = `
                     style="padding-bottom: 8px;"
                   >
                     <button
-                      class="ant-btn css-dev-only-do-not-override-eo1pvk ant-btn-default ant-btn-sm guidance-button-wrapper css-aj0zfl"
+                      class="ant-btn ant-btn-default ant-btn-sm guidance-button-wrapper css-1jtuni2"
                       type="button"
                     >
                       <div
-                        class="ant-space css-dev-only-do-not-override-eo1pvk ant-space-horizontal ant-space-align-center"
+                        class="ant-space ant-space-horizontal ant-space-align-center"
                       >
                         <div
                           class="ant-space-item"
@@ -1789,10 +1789,10 @@ exports[`App render App when token is existed 1`] = `
           </div>
         </div>
         <div
-          class="ant-row ant-row-no-wrap ant-row-middle step-container css-dev-only-do-not-override-1thf7qv"
+          class="ant-row ant-row-no-wrap ant-row-middle step-container"
         >
           <div
-            class="ant-col icon-wrapper css-dev-only-do-not-override-1thf7qv"
+            class="ant-col icon-wrapper"
             style="flex: 0 0 40px; min-width: 0;"
           >
             <span
@@ -1817,7 +1817,7 @@ exports[`App render App when token is existed 1`] = `
             </span>
           </div>
           <div
-            class="ant-col step-box css-dev-only-do-not-override-1thf7qv"
+            class="ant-col step-box"
             style="flex-basis: auto; min-width: 0;"
           >
             <div
@@ -1839,10 +1839,10 @@ exports[`App render App when token is existed 1`] = `
               </div>
             </div>
             <div
-              class="ant-row ant-row-no-wrap css-dev-only-do-not-override-1thf7qv"
+              class="ant-row ant-row-no-wrap"
             >
               <div
-                class="ant-col ant-col-8 content-wrapper css-dev-only-do-not-override-1thf7qv"
+                class="ant-col ant-col-8 content-wrapper"
               >
                 <div
                   class="sub-title"
@@ -1855,7 +1855,7 @@ exports[`App render App when token is existed 1`] = `
                   查看平台支持的审核规则，并自定义审核规则模板，监察已生成的SQL，或使用SQL审核改善SQL质量
                 </div>
                 <div
-                  class="ant-space css-dev-only-do-not-override-1thf7qv ant-space-horizontal ant-space-align-center actions"
+                  class="ant-space ant-space-horizontal ant-space-align-center actions"
                   style="flex-wrap: wrap; margin-bottom: -8px;"
                 >
                   <div
@@ -1863,11 +1863,11 @@ exports[`App render App when token is existed 1`] = `
                     style="margin-right: 8px; padding-bottom: 8px;"
                   >
                     <button
-                      class="ant-btn css-dev-only-do-not-override-eo1pvk ant-btn-default ant-btn-sm guidance-button-wrapper css-aj0zfl"
+                      class="ant-btn ant-btn-default ant-btn-sm guidance-button-wrapper css-1jtuni2"
                       type="button"
                     >
                       <div
-                        class="ant-space css-dev-only-do-not-override-eo1pvk ant-space-horizontal ant-space-align-center"
+                        class="ant-space ant-space-horizontal ant-space-align-center"
                       >
                         <div
                           class="ant-space-item"
@@ -1882,11 +1882,11 @@ exports[`App render App when token is existed 1`] = `
                     style="margin-right: 8px; padding-bottom: 8px;"
                   >
                     <button
-                      class="ant-btn css-dev-only-do-not-override-eo1pvk ant-btn-default ant-btn-sm guidance-button-wrapper css-aj0zfl"
+                      class="ant-btn ant-btn-default ant-btn-sm guidance-button-wrapper css-1jtuni2"
                       type="button"
                     >
                       <div
-                        class="ant-space css-dev-only-do-not-override-eo1pvk ant-space-horizontal ant-space-align-center"
+                        class="ant-space ant-space-horizontal ant-space-align-center"
                       >
                         <div
                           class="ant-space-item"
@@ -1901,11 +1901,11 @@ exports[`App render App when token is existed 1`] = `
                     style="margin-right: 8px; padding-bottom: 8px;"
                   >
                     <button
-                      class="ant-btn css-dev-only-do-not-override-eo1pvk ant-btn-default ant-btn-sm guidance-button-wrapper css-aj0zfl"
+                      class="ant-btn ant-btn-default ant-btn-sm guidance-button-wrapper css-1jtuni2"
                       type="button"
                     >
                       <div
-                        class="ant-space css-dev-only-do-not-override-eo1pvk ant-space-horizontal ant-space-align-center"
+                        class="ant-space ant-space-horizontal ant-space-align-center"
                       >
                         <div
                           class="ant-space-item"
@@ -1920,11 +1920,11 @@ exports[`App render App when token is existed 1`] = `
                     style="padding-bottom: 8px;"
                   >
                     <button
-                      class="ant-btn css-dev-only-do-not-override-eo1pvk ant-btn-default ant-btn-sm guidance-button-wrapper css-aj0zfl"
+                      class="ant-btn ant-btn-default ant-btn-sm guidance-button-wrapper css-1jtuni2"
                       type="button"
                     >
                       <div
-                        class="ant-space css-dev-only-do-not-override-eo1pvk ant-space-horizontal ant-space-align-center"
+                        class="ant-space ant-space-horizontal ant-space-align-center"
                       >
                         <div
                           class="ant-space-item"
@@ -1937,7 +1937,7 @@ exports[`App render App when token is existed 1`] = `
                 </div>
               </div>
               <div
-                class="ant-col ant-col-8 content-wrapper css-dev-only-do-not-override-1thf7qv"
+                class="ant-col ant-col-8 content-wrapper"
               >
                 <div
                   class="sub-title"
@@ -1950,7 +1950,7 @@ exports[`App render App when token is existed 1`] = `
                   根据实际业务流转变更流程模板
                 </div>
                 <div
-                  class="ant-space css-dev-only-do-not-override-1thf7qv ant-space-horizontal ant-space-align-center actions"
+                  class="ant-space ant-space-horizontal ant-space-align-center actions"
                   style="flex-wrap: wrap; margin-bottom: -8px;"
                 >
                   <div
@@ -1958,11 +1958,11 @@ exports[`App render App when token is existed 1`] = `
                     style="padding-bottom: 8px;"
                   >
                     <button
-                      class="ant-btn css-dev-only-do-not-override-eo1pvk ant-btn-default ant-btn-sm guidance-button-wrapper css-aj0zfl"
+                      class="ant-btn ant-btn-default ant-btn-sm guidance-button-wrapper css-1jtuni2"
                       type="button"
                     >
                       <div
-                        class="ant-space css-dev-only-do-not-override-eo1pvk ant-space-horizontal ant-space-align-center"
+                        class="ant-space ant-space-horizontal ant-space-align-center"
                       >
                         <div
                           class="ant-space-item"
@@ -1978,10 +1978,10 @@ exports[`App render App when token is existed 1`] = `
           </div>
         </div>
         <div
-          class="ant-row ant-row-no-wrap ant-row-middle step-container css-dev-only-do-not-override-1thf7qv"
+          class="ant-row ant-row-no-wrap ant-row-middle step-container"
         >
           <div
-            class="ant-col icon-wrapper css-dev-only-do-not-override-1thf7qv"
+            class="ant-col icon-wrapper"
             style="flex: 0 0 40px; min-width: 0;"
           >
             <span
@@ -2007,7 +2007,7 @@ exports[`App render App when token is existed 1`] = `
             </span>
           </div>
           <div
-            class="ant-col step-box css-dev-only-do-not-override-1thf7qv"
+            class="ant-col step-box"
             style="flex-basis: auto; min-width: 0;"
           >
             <div
@@ -2029,10 +2029,10 @@ exports[`App render App when token is existed 1`] = `
               </div>
             </div>
             <div
-              class="ant-row ant-row-no-wrap css-dev-only-do-not-override-1thf7qv"
+              class="ant-row ant-row-no-wrap"
             >
               <div
-                class="ant-col ant-col-8 content-wrapper css-dev-only-do-not-override-1thf7qv"
+                class="ant-col ant-col-8 content-wrapper"
               >
                 <div
                   class="sub-title"
@@ -2045,7 +2045,7 @@ exports[`App render App when token is existed 1`] = `
                   使用在线的数据编辑器（CloudBeaver）进行SQL查询和编辑
                 </div>
                 <div
-                  class="ant-space css-dev-only-do-not-override-1thf7qv ant-space-horizontal ant-space-align-center actions"
+                  class="ant-space ant-space-horizontal ant-space-align-center actions"
                   style="flex-wrap: wrap; margin-bottom: -8px;"
                 >
                   <div
@@ -2053,11 +2053,11 @@ exports[`App render App when token is existed 1`] = `
                     style="padding-bottom: 8px;"
                   >
                     <button
-                      class="ant-btn css-dev-only-do-not-override-eo1pvk ant-btn-default ant-btn-sm guidance-button-wrapper css-aj0zfl"
+                      class="ant-btn ant-btn-default ant-btn-sm guidance-button-wrapper css-1jtuni2"
                       type="button"
                     >
                       <div
-                        class="ant-space css-dev-only-do-not-override-eo1pvk ant-space-horizontal ant-space-align-center"
+                        class="ant-space ant-space-horizontal ant-space-align-center"
                       >
                         <div
                           class="ant-space-item"
@@ -2070,7 +2070,7 @@ exports[`App render App when token is existed 1`] = `
                 </div>
               </div>
               <div
-                class="ant-col ant-col-8 content-wrapper css-dev-only-do-not-override-1thf7qv"
+                class="ant-col ant-col-8 content-wrapper"
               >
                 <div
                   class="sub-title"
@@ -2083,7 +2083,7 @@ exports[`App render App when token is existed 1`] = `
                   在线提起SQL变更申请，经由审批流程完成上线
                 </div>
                 <div
-                  class="ant-space css-dev-only-do-not-override-1thf7qv ant-space-horizontal ant-space-align-center actions"
+                  class="ant-space ant-space-horizontal ant-space-align-center actions"
                   style="flex-wrap: wrap; margin-bottom: -8px;"
                 >
                   <div
@@ -2091,11 +2091,11 @@ exports[`App render App when token is existed 1`] = `
                     style="padding-bottom: 8px;"
                   >
                     <button
-                      class="ant-btn css-dev-only-do-not-override-eo1pvk ant-btn-default ant-btn-sm guidance-button-wrapper css-aj0zfl"
+                      class="ant-btn ant-btn-default ant-btn-sm guidance-button-wrapper css-1jtuni2"
                       type="button"
                     >
                       <div
-                        class="ant-space css-dev-only-do-not-override-eo1pvk ant-space-horizontal ant-space-align-center"
+                        class="ant-space ant-space-horizontal ant-space-align-center"
                       >
                         <div
                           class="ant-space-item"
@@ -2108,7 +2108,7 @@ exports[`App render App when token is existed 1`] = `
                 </div>
               </div>
               <div
-                class="ant-col ant-col-8 content-wrapper css-dev-only-do-not-override-1thf7qv"
+                class="ant-col ant-col-8 content-wrapper"
               >
                 <div
                   class="sub-title"
@@ -2121,7 +2121,7 @@ exports[`App render App when token is existed 1`] = `
                   发起数据导出工单，审核通过后获取数据集。
                 </div>
                 <div
-                  class="ant-space css-dev-only-do-not-override-1thf7qv ant-space-horizontal ant-space-align-center actions"
+                  class="ant-space ant-space-horizontal ant-space-align-center actions"
                   style="flex-wrap: wrap; margin-bottom: -8px;"
                 >
                   <div
@@ -2129,11 +2129,11 @@ exports[`App render App when token is existed 1`] = `
                     style="padding-bottom: 8px;"
                   >
                     <button
-                      class="ant-btn css-dev-only-do-not-override-eo1pvk ant-btn-default ant-btn-sm guidance-button-wrapper css-aj0zfl"
+                      class="ant-btn ant-btn-default ant-btn-sm guidance-button-wrapper css-1jtuni2"
                       type="button"
                     >
                       <div
-                        class="ant-space css-dev-only-do-not-override-eo1pvk ant-space-horizontal ant-space-align-center"
+                        class="ant-space ant-space-horizontal ant-space-align-center"
                       >
                         <div
                           class="ant-space-item"
@@ -2149,10 +2149,10 @@ exports[`App render App when token is existed 1`] = `
           </div>
         </div>
         <div
-          class="ant-row ant-row-no-wrap ant-row-middle step-container css-dev-only-do-not-override-1thf7qv"
+          class="ant-row ant-row-no-wrap ant-row-middle step-container"
         >
           <div
-            class="ant-col icon-wrapper css-dev-only-do-not-override-1thf7qv"
+            class="ant-col icon-wrapper"
             style="flex: 0 0 40px; min-width: 0;"
           >
             <span
@@ -2176,7 +2176,7 @@ exports[`App render App when token is existed 1`] = `
             </span>
           </div>
           <div
-            class="ant-col step-box css-dev-only-do-not-override-1thf7qv"
+            class="ant-col step-box"
             style="flex-basis: auto; min-width: 0;"
           >
             <div
@@ -2198,10 +2198,10 @@ exports[`App render App when token is existed 1`] = `
               </div>
             </div>
             <div
-              class="ant-row ant-row-no-wrap css-dev-only-do-not-override-1thf7qv"
+              class="ant-row ant-row-no-wrap"
             >
               <div
-                class="ant-col ant-col-8 content-wrapper css-dev-only-do-not-override-1thf7qv"
+                class="ant-col ant-col-8 content-wrapper"
               >
                 <div
                   class="sub-title"
@@ -2214,7 +2214,7 @@ exports[`App render App when token is existed 1`] = `
                   审计平台内用户操作
                 </div>
                 <div
-                  class="ant-space css-dev-only-do-not-override-1thf7qv ant-space-horizontal ant-space-align-center actions"
+                  class="ant-space ant-space-horizontal ant-space-align-center actions"
                   style="flex-wrap: wrap; margin-bottom: -8px;"
                 >
                   <div
@@ -2222,11 +2222,11 @@ exports[`App render App when token is existed 1`] = `
                     style="padding-bottom: 8px;"
                   >
                     <button
-                      class="ant-btn css-dev-only-do-not-override-eo1pvk ant-btn-default ant-btn-sm guidance-button-wrapper css-aj0zfl"
+                      class="ant-btn ant-btn-default ant-btn-sm guidance-button-wrapper css-1jtuni2"
                       type="button"
                     >
                       <div
-                        class="ant-space css-dev-only-do-not-override-eo1pvk ant-space-horizontal ant-space-align-center"
+                        class="ant-space ant-space-horizontal ant-space-align-center"
                       >
                         <div
                           class="ant-space-item"
@@ -2298,16 +2298,16 @@ exports[`App render App when token is not existed 1`] = `
           </div>
         </div>
         <form
-          class="ant-form ant-form-horizontal css-dev-only-do-not-override-1thf7qv"
+          class="ant-form ant-form-horizontal"
         >
           <div
-            class="ant-form-item css-dev-only-do-not-override-1thf7qv"
+            class="ant-form-item"
           >
             <div
-              class="ant-row ant-form-item-row css-dev-only-do-not-override-1thf7qv"
+              class="ant-row ant-form-item-row"
             >
               <div
-                class="ant-col ant-form-item-control css-dev-only-do-not-override-1thf7qv"
+                class="ant-col ant-form-item-control"
               >
                 <div
                   class="ant-form-item-control-input"
@@ -2316,7 +2316,7 @@ exports[`App render App when token is not existed 1`] = `
                     class="ant-form-item-control-input-content"
                   >
                     <span
-                      class="ant-input-affix-wrapper ant-input-affix-wrapper-focused basic-input-wrapper login-form-field css-1pd1cd5 css-dev-only-do-not-override-1qauwux"
+                      class="ant-input-affix-wrapper ant-input-affix-wrapper-focused basic-input-wrapper login-form-field css-1pd1cd5"
                     >
                       <span
                         class="ant-input-prefix"
@@ -2339,7 +2339,7 @@ exports[`App render App when token is not existed 1`] = `
                       </span>
                       <input
                         aria-required="true"
-                        class="ant-input css-dev-only-do-not-override-1qauwux"
+                        class="ant-input"
                         id="username"
                         placeholder="用户名"
                         type="text"
@@ -2352,13 +2352,13 @@ exports[`App render App when token is not existed 1`] = `
             </div>
           </div>
           <div
-            class="ant-form-item css-dev-only-do-not-override-1thf7qv"
+            class="ant-form-item"
           >
             <div
-              class="ant-row ant-form-item-row css-dev-only-do-not-override-1thf7qv"
+              class="ant-row ant-form-item-row"
             >
               <div
-                class="ant-col ant-form-item-control css-dev-only-do-not-override-1thf7qv"
+                class="ant-col ant-form-item-control"
               >
                 <div
                   class="ant-form-item-control-input"
@@ -2367,7 +2367,7 @@ exports[`App render App when token is not existed 1`] = `
                     class="ant-form-item-control-input-content"
                   >
                     <span
-                      class="ant-input-affix-wrapper ant-input-password basic-input-wrapper login-form-field css-1pd1cd5 css-dev-only-do-not-override-txh9fw"
+                      class="ant-input-affix-wrapper ant-input-password basic-input-wrapper login-form-field css-1pd1cd5"
                     >
                       <span
                         class="ant-input-prefix"
@@ -2391,7 +2391,7 @@ exports[`App render App when token is not existed 1`] = `
                       </span>
                       <input
                         aria-required="true"
-                        class="ant-input css-dev-only-do-not-override-txh9fw"
+                        class="ant-input"
                         id="password"
                         placeholder="密码"
                         type="password"
@@ -2431,13 +2431,13 @@ exports[`App render App when token is not existed 1`] = `
             </div>
           </div>
           <div
-            class="ant-form-item css-dev-only-do-not-override-1thf7qv"
+            class="ant-form-item"
           >
             <div
-              class="ant-row ant-form-item-row css-dev-only-do-not-override-1thf7qv"
+              class="ant-row ant-form-item-row"
             >
               <div
-                class="ant-col ant-form-item-control css-dev-only-do-not-override-1thf7qv"
+                class="ant-col ant-form-item-control"
               >
                 <div
                   class="ant-form-item-control-input"
@@ -2446,10 +2446,10 @@ exports[`App render App when token is not existed 1`] = `
                     class="ant-form-item-control-input-content"
                   >
                     <label
-                      class="ant-checkbox-wrapper ant-checkbox-wrapper-checked ant-checkbox-wrapper-in-form-item css-dev-only-do-not-override-1thf7qv"
+                      class="ant-checkbox-wrapper ant-checkbox-wrapper-checked ant-checkbox-wrapper-in-form-item"
                     >
                       <span
-                        class="ant-checkbox css-dev-only-do-not-override-1thf7qv ant-checkbox-checked"
+                        class="ant-checkbox ant-checkbox-checked"
                       >
                         <input
                           checked=""
@@ -2463,7 +2463,7 @@ exports[`App render App when token is not existed 1`] = `
                       </span>
                       <span>
                         <div
-                          class="ant-space css-dev-only-do-not-override-1thf7qv ant-space-horizontal ant-space-align-center"
+                          class="ant-space ant-space-horizontal ant-space-align-center"
                         >
                           <div
                             class="ant-space-item"
@@ -2475,7 +2475,7 @@ exports[`App render App when token is not existed 1`] = `
                             class="ant-space-item"
                           >
                             <a
-                              class="ant-typography css-dev-only-do-not-override-1thf7qv"
+                              class="ant-typography"
                               href="/user-agreement.html"
                               rel="noopener noreferrer"
                               target="_blank"
@@ -2492,7 +2492,7 @@ exports[`App render App when token is not existed 1`] = `
             </div>
           </div>
           <button
-            class="ant-btn css-dev-only-do-not-override-4mxe6b ant-btn-primary login-btn basic-button-wrapper css-geipcv"
+            class="ant-btn ant-btn-primary login-btn basic-button-wrapper css-geipcv"
             type="submit"
           >
             <span>

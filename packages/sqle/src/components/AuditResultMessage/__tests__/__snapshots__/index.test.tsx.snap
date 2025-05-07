@@ -38,7 +38,7 @@ exports[`sqle/components/AuditResultMessage render snap when current result is d
       class="has-delete-rule-wrapper css-1v03opz"
     >
       <span
-        class="ant-tag ant-tag-volcano message-rule-disabled css-dev-only-do-not-override-txh9fw"
+        class="ant-tag ant-tag-volcano message-rule-disabled"
       >
         该规则已删除
       </span>
@@ -76,7 +76,7 @@ exports[`sqle/components/AuditResultMessage render snap when current result is d
       class="has-delete-rule-wrapper css-1v03opz"
     >
       <span
-        class="ant-tag ant-tag-volcano message-rule-disabled css-dev-only-do-not-override-txh9fw"
+        class="ant-tag ant-tag-volcano message-rule-disabled"
       >
         该规则已删除
       </span>
@@ -116,7 +116,7 @@ exports[`sqle/components/AuditResultMessage render snap when has diff level rend
 <body>
   <div>
     <div
-      class=" css-1v03opz"
+      class="css-1v03opz"
     >
       <div
         class="css-1avyf41"
@@ -151,7 +151,7 @@ exports[`sqle/components/AuditResultMessage render snap when has diff level rend
 <body>
   <div>
     <div
-      class=" css-1v03opz"
+      class="css-1v03opz"
     >
       <div
         class="css-1avyf41"
@@ -186,7 +186,7 @@ exports[`sqle/components/AuditResultMessage render snap when has diff level rend
 <body>
   <div>
     <div
-      class=" css-1v03opz"
+      class="css-1v03opz"
     >
       <div
         class="css-1avyf41"
@@ -219,7 +219,7 @@ exports[`sqle/components/AuditResultMessage render snap when has diff level rend
 <body>
   <div>
     <div
-      class=" css-1v03opz"
+      class="css-1v03opz"
     >
       <div
         class="css-1avyf41"
@@ -252,7 +252,7 @@ exports[`sqle/components/AuditResultMessage render snap when has diff level rend
 <body>
   <div>
     <div
-      class=" css-1v03opz"
+      class="css-1v03opz"
     >
       <div
         class="css-1avyf41"
@@ -287,7 +287,7 @@ exports[`sqle/components/AuditResultMessage render snap when has diff level rend
 <body>
   <div>
     <div
-      class=" css-1v03opz"
+      class="css-1v03opz"
     >
       <div
         class="css-1avyf41"
@@ -320,7 +320,7 @@ exports[`sqle/components/AuditResultMessage render snap when has diff level rend
 <body>
   <div>
     <div
-      class=" css-1v03opz"
+      class="css-1v03opz"
     >
       <div
         class="css-1avyf41"
@@ -354,7 +354,7 @@ exports[`sqle/components/AuditResultMessage render snap when has more link 1`] =
 <body>
   <div>
     <div
-      class=" css-1v03opz"
+      class="css-1v03opz"
     >
       <div
         class="css-1avyf41"
@@ -383,7 +383,7 @@ exports[`sqle/components/AuditResultMessage render snap when has more link 1`] =
       >
         annotation text
         <a
-          class="ant-typography css-dev-only-do-not-override-txh9fw"
+          class="ant-typography"
           href="this is a link"
           rel="noopener noreferrer"
           target="_blank"
@@ -400,7 +400,7 @@ exports[`sqle/components/AuditResultMessage render snap when showAnnotation 1`] 
 <body>
   <div>
     <div
-      class=" css-1v03opz"
+      class="css-1v03opz"
     >
       <div
         class="css-1avyf41"

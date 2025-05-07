@@ -4,16 +4,16 @@ exports[`base/System/LoginConnection/LDAPSetting/ConfigField render snap 1`] = `
 <body>
   <div>
     <form
-      class="ant-form ant-form-horizontal css-dev-only-do-not-override-txh9fw"
+      class="ant-form ant-form-horizontal"
     >
       <div
-        class="ant-form-item has-required-style css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+        class="ant-form-item has-required-style css-1jlm9cy"
       >
         <div
-          class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+          class="ant-row ant-form-item-row"
         >
           <div
-            class="ant-col ant-form-item-label css-dev-only-do-not-override-txh9fw"
+            class="ant-col ant-form-item-label"
           >
             <label
               class="ant-form-item-required"
@@ -24,7 +24,7 @@ exports[`base/System/LoginConnection/LDAPSetting/ConfigField render snap 1`] = `
             </label>
           </div>
           <div
-            class="ant-col ant-form-item-control css-dev-only-do-not-override-txh9fw"
+            class="ant-col ant-form-item-control"
           >
             <div
               class="ant-form-item-control-input"
@@ -35,7 +35,7 @@ exports[`base/System/LoginConnection/LDAPSetting/ConfigField render snap 1`] = `
                 <button
                   aria-checked="false"
                   aria-required="true"
-                  class="ant-switch basic-switch-wrapper css-g6dhbn css-dev-only-do-not-override-txh9fw"
+                  class="ant-switch basic-switch-wrapper css-g6dhbn"
                   id="enable_ssl"
                   role="switch"
                   type="button"
@@ -60,13 +60,13 @@ exports[`base/System/LoginConnection/LDAPSetting/ConfigField render snap 1`] = `
         </div>
       </div>
       <div
-        class="ant-form-item has-required-style css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+        class="ant-form-item has-required-style css-1jlm9cy"
       >
         <div
-          class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+          class="ant-row ant-form-item-row"
         >
           <div
-            class="ant-col ant-form-item-label css-dev-only-do-not-override-txh9fw"
+            class="ant-col ant-form-item-label"
           >
             <label
               class="ant-form-item-required"
@@ -77,7 +77,7 @@ exports[`base/System/LoginConnection/LDAPSetting/ConfigField render snap 1`] = `
             </label>
           </div>
           <div
-            class="ant-col ant-form-item-control css-dev-only-do-not-override-txh9fw"
+            class="ant-col ant-form-item-control"
           >
             <div
               class="ant-form-item-control-input"
@@ -87,7 +87,7 @@ exports[`base/System/LoginConnection/LDAPSetting/ConfigField render snap 1`] = `
               >
                 <input
                   aria-required="true"
-                  class="ant-input css-dev-only-do-not-override-ywkr0o basic-input-wrapper css-1pd1cd5"
+                  class="ant-input basic-input-wrapper css-1pd1cd5"
                   id="ldap_server_host"
                   placeholder="请输入LDAP服务器地址"
                   type="text"
@@ -99,13 +99,13 @@ exports[`base/System/LoginConnection/LDAPSetting/ConfigField render snap 1`] = `
         </div>
       </div>
       <div
-        class="ant-form-item has-required-style css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+        class="ant-form-item has-required-style css-1jlm9cy"
       >
         <div
-          class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+          class="ant-row ant-form-item-row"
         >
           <div
-            class="ant-col ant-form-item-label css-dev-only-do-not-override-txh9fw"
+            class="ant-col ant-form-item-label"
           >
             <label
               class="ant-form-item-required"
@@ -116,7 +116,7 @@ exports[`base/System/LoginConnection/LDAPSetting/ConfigField render snap 1`] = `
             </label>
           </div>
           <div
-            class="ant-col ant-form-item-control css-dev-only-do-not-override-txh9fw"
+            class="ant-col ant-form-item-control"
           >
             <div
               class="ant-form-item-control-input"
@@ -126,7 +126,7 @@ exports[`base/System/LoginConnection/LDAPSetting/ConfigField render snap 1`] = `
               >
                 <input
                   aria-required="true"
-                  class="ant-input css-dev-only-do-not-override-ywkr0o basic-input-wrapper css-1pd1cd5"
+                  class="ant-input basic-input-wrapper css-1pd1cd5"
                   id="ldap_server_port"
                   placeholder="请输入LDAP服务器端口"
                   type="text"
@@ -138,13 +138,13 @@ exports[`base/System/LoginConnection/LDAPSetting/ConfigField render snap 1`] = `
         </div>
       </div>
       <div
-        class="ant-form-item has-label-tip has-required-style css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+        class="ant-form-item has-label-tip has-required-style css-1jlm9cy"
       >
         <div
-          class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+          class="ant-row ant-form-item-row"
         >
           <div
-            class="ant-col ant-form-item-label css-dev-only-do-not-override-txh9fw"
+            class="ant-col ant-form-item-label"
           >
             <label
               class="ant-form-item-required"
@@ -166,7 +166,7 @@ exports[`base/System/LoginConnection/LDAPSetting/ConfigField render snap 1`] = `
             </label>
           </div>
           <div
-            class="ant-col ant-form-item-control css-dev-only-do-not-override-txh9fw"
+            class="ant-col ant-form-item-control"
           >
             <div
               class="ant-form-item-control-input"
@@ -176,7 +176,7 @@ exports[`base/System/LoginConnection/LDAPSetting/ConfigField render snap 1`] = `
               >
                 <input
                   aria-required="true"
-                  class="ant-input css-dev-only-do-not-override-ywkr0o basic-input-wrapper css-1pd1cd5"
+                  class="ant-input basic-input-wrapper css-1pd1cd5"
                   id="ldap_connect_dn"
                   placeholder="请输入连接用户DN"
                   type="text"
@@ -188,13 +188,13 @@ exports[`base/System/LoginConnection/LDAPSetting/ConfigField render snap 1`] = `
         </div>
       </div>
       <div
-        class="ant-form-item css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+        class="ant-form-item css-1jlm9cy"
       >
         <div
-          class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+          class="ant-row ant-form-item-row"
         >
           <div
-            class="ant-col ant-form-item-label css-dev-only-do-not-override-txh9fw"
+            class="ant-col ant-form-item-label"
           >
             <label
               class=""
@@ -205,7 +205,7 @@ exports[`base/System/LoginConnection/LDAPSetting/ConfigField render snap 1`] = `
             </label>
           </div>
           <div
-            class="ant-col ant-form-item-control css-dev-only-do-not-override-txh9fw"
+            class="ant-col ant-form-item-control"
           >
             <div
               class="ant-form-item-control-input"
@@ -215,7 +215,7 @@ exports[`base/System/LoginConnection/LDAPSetting/ConfigField render snap 1`] = `
               >
                 <button
                   aria-checked="false"
-                  class="ant-switch basic-switch-wrapper css-g6dhbn css-dev-only-do-not-override-txh9fw"
+                  class="ant-switch basic-switch-wrapper css-g6dhbn"
                   id="update_password"
                   role="switch"
                   type="button"
@@ -240,13 +240,13 @@ exports[`base/System/LoginConnection/LDAPSetting/ConfigField render snap 1`] = `
         </div>
       </div>
       <div
-        class="ant-form-item has-required-style css-1jlm9cy css-dev-only-do-not-override-txh9fw ant-form-item-hidden"
+        class="ant-form-item has-required-style css-1jlm9cy ant-form-item-hidden"
       >
         <div
-          class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+          class="ant-row ant-form-item-row"
         >
           <div
-            class="ant-col ant-form-item-label css-dev-only-do-not-override-txh9fw"
+            class="ant-col ant-form-item-label"
           >
             <label
               class=""
@@ -257,7 +257,7 @@ exports[`base/System/LoginConnection/LDAPSetting/ConfigField render snap 1`] = `
             </label>
           </div>
           <div
-            class="ant-col ant-form-item-control css-dev-only-do-not-override-txh9fw"
+            class="ant-col ant-form-item-control"
           >
             <div
               class="ant-form-item-control-input"
@@ -266,10 +266,10 @@ exports[`base/System/LoginConnection/LDAPSetting/ConfigField render snap 1`] = `
                 class="ant-form-item-control-input-content"
               >
                 <span
-                  class="ant-input-affix-wrapper ant-input-password basic-input-wrapper css-1pd1cd5 css-dev-only-do-not-override-txh9fw"
+                  class="ant-input-affix-wrapper ant-input-password basic-input-wrapper css-1pd1cd5"
                 >
                   <input
-                    class="ant-input css-dev-only-do-not-override-txh9fw"
+                    class="ant-input"
                     id="ldap_connect_pwd"
                     placeholder="请输入连接用户密码"
                     type="password"
@@ -309,13 +309,13 @@ exports[`base/System/LoginConnection/LDAPSetting/ConfigField render snap 1`] = `
         </div>
       </div>
       <div
-        class="ant-form-item has-label-tip has-required-style css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+        class="ant-form-item has-label-tip has-required-style css-1jlm9cy"
       >
         <div
-          class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+          class="ant-row ant-form-item-row"
         >
           <div
-            class="ant-col ant-form-item-label css-dev-only-do-not-override-txh9fw"
+            class="ant-col ant-form-item-label"
           >
             <label
               class="ant-form-item-required"
@@ -337,7 +337,7 @@ exports[`base/System/LoginConnection/LDAPSetting/ConfigField render snap 1`] = `
             </label>
           </div>
           <div
-            class="ant-col ant-form-item-control css-dev-only-do-not-override-txh9fw"
+            class="ant-col ant-form-item-control"
           >
             <div
               class="ant-form-item-control-input"
@@ -347,7 +347,7 @@ exports[`base/System/LoginConnection/LDAPSetting/ConfigField render snap 1`] = `
               >
                 <input
                   aria-required="true"
-                  class="ant-input css-dev-only-do-not-override-ywkr0o basic-input-wrapper css-1pd1cd5"
+                  class="ant-input basic-input-wrapper css-1pd1cd5"
                   id="ldap_search_base_dn"
                   placeholder="请输入查询根DN"
                   type="text"
@@ -359,13 +359,13 @@ exports[`base/System/LoginConnection/LDAPSetting/ConfigField render snap 1`] = `
         </div>
       </div>
       <div
-        class="ant-form-item has-label-tip has-required-style css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+        class="ant-form-item has-label-tip has-required-style css-1jlm9cy"
       >
         <div
-          class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+          class="ant-row ant-form-item-row"
         >
           <div
-            class="ant-col ant-form-item-label css-dev-only-do-not-override-txh9fw"
+            class="ant-col ant-form-item-label"
           >
             <label
               class="ant-form-item-required"
@@ -387,7 +387,7 @@ exports[`base/System/LoginConnection/LDAPSetting/ConfigField render snap 1`] = `
             </label>
           </div>
           <div
-            class="ant-col ant-form-item-control css-dev-only-do-not-override-txh9fw"
+            class="ant-col ant-form-item-control"
           >
             <div
               class="ant-form-item-control-input"
@@ -397,7 +397,7 @@ exports[`base/System/LoginConnection/LDAPSetting/ConfigField render snap 1`] = `
               >
                 <input
                   aria-required="true"
-                  class="ant-input css-dev-only-do-not-override-ywkr0o basic-input-wrapper css-1pd1cd5"
+                  class="ant-input basic-input-wrapper css-1pd1cd5"
                   id="ldap_user_name_rdn_key"
                   placeholder="请输入用户名属性名"
                   type="text"
@@ -409,13 +409,13 @@ exports[`base/System/LoginConnection/LDAPSetting/ConfigField render snap 1`] = `
         </div>
       </div>
       <div
-        class="ant-form-item has-label-tip css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+        class="ant-form-item has-label-tip css-1jlm9cy"
       >
         <div
-          class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+          class="ant-row ant-form-item-row"
         >
           <div
-            class="ant-col ant-form-item-label css-dev-only-do-not-override-txh9fw"
+            class="ant-col ant-form-item-label"
           >
             <label
               class=""
@@ -437,7 +437,7 @@ exports[`base/System/LoginConnection/LDAPSetting/ConfigField render snap 1`] = `
             </label>
           </div>
           <div
-            class="ant-col ant-form-item-control css-dev-only-do-not-override-txh9fw"
+            class="ant-col ant-form-item-control"
           >
             <div
               class="ant-form-item-control-input"
@@ -446,7 +446,7 @@ exports[`base/System/LoginConnection/LDAPSetting/ConfigField render snap 1`] = `
                 class="ant-form-item-control-input-content"
               >
                 <input
-                  class="ant-input css-dev-only-do-not-override-ywkr0o basic-input-wrapper css-1pd1cd5"
+                  class="ant-input basic-input-wrapper css-1pd1cd5"
                   id="ldap_user_email_rdn_key"
                   placeholder="请输入用户邮箱属性名"
                   type="text"

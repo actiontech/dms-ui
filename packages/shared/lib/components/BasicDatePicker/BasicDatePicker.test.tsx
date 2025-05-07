@@ -1,6 +1,6 @@
 import { fireEvent, act, cleanup } from '@testing-library/react';
 import { getBySelector } from '../../testUtil/customQuery';
-import { renderWithTheme } from '../../testUtil/customRender';
+import { superRender } from '../../testUtil/customRender';
 import {
   ignoreConsoleErrors,
   UtilsConsoleErrorStringsEnum
@@ -29,65 +29,112 @@ describe('lib/BasicDatePicker', () => {
   });
 
   const customRender = (params: BasicDatePickerProps) => {
-    return renderWithTheme(<BasicDatePicker {...params} />);
+    return superRender(<BasicDatePicker {...params} />);
   };
 
-  it('render diff size date picker', () => {
-    const { container: largeContainer } = customRender({
-      size: 'large'
-    });
-    expect(largeContainer).toMatchSnapshot();
-
-    const { container: smallContainer } = customRender({
-      size: 'small'
-    });
-    expect(smallContainer).toMatchSnapshot();
-
-    const { container: middleContainer } = customRender({
-      size: 'middle'
-    });
-    expect(middleContainer).toMatchSnapshot();
-  });
-
-  it('render params hideSuperIcon val', () => {
-    const { container } = customRender({
-      hideSuperIcon: false
-    });
+  it('should match snapshot', () => {
+    const { container } = customRender({});
     expect(container).toMatchSnapshot();
   });
 
-  it('render open date picker when hideSuperIcon true', async () => {
-    const onOpenChangeFn = jest.fn();
-    const { container, baseElement, unmount } = customRender({
-      size: 'middle',
-      onOpenChange: onOpenChangeFn
+  describe('render with different props', () => {
+    it('should render with different sizes', () => {
+      const { container: largeContainer } = customRender({
+        size: 'large'
+      });
+      expect(getBySelector('.ant-picker', largeContainer)).toHaveClass(
+        'ant-picker-large'
+      );
+
+      const { container: smallContainer } = customRender({
+        size: 'small'
+      });
+      expect(getBySelector('.ant-picker', smallContainer)).toHaveClass(
+        'ant-picker-small'
+      );
+
+      const { container: middleContainer } = customRender({
+        size: 'middle'
+      });
+      expect(getBySelector('.ant-picker', middleContainer)).toHaveClass(
+        'ant-picker-middle'
+      );
     });
 
-    const dateInputEle = getBySelector('.ant-picker-input input', baseElement);
-    await act(async () => {
-      fireEvent.mouseDown(dateInputEle);
-      await jest.advanceTimersByTime(300);
+    it('should render with custom className', () => {
+      const { container } = customRender({
+        className: 'custom-date-picker'
+      });
+      expect(container.firstChild).toHaveClass('custom-date-picker');
     });
-    expect(onOpenChangeFn).toHaveBeenCalledTimes(1);
-    expect(container).toMatchSnapshot();
-    unmount();
+
+    it('should render with hideSuperIcon prop', () => {
+      const { container: container1 } = customRender({
+        hideSuperIcon: true
+      });
+      expect(container1.firstChild).toHaveClass('basic-date-picker-wrapper');
+
+      const { container: container2 } = customRender({
+        hideSuperIcon: false
+      });
+      expect(container2.firstChild).toHaveClass('basic-date-picker-wrapper');
+    });
   });
 
-  it('render open date picker when hideSuperIcon false', async () => {
-    const onOpenChangeFn = jest.fn();
-    const { container, baseElement, unmount } = customRender({
-      size: 'middle',
-      hideSuperIcon: false,
-      onOpenChange: onOpenChangeFn
+  describe('interaction and functionality', () => {
+    it('should handle date picker open state correctly', async () => {
+      const onOpenChangeFn = jest.fn();
+      const { baseElement, unmount } = customRender({
+        onOpenChange: onOpenChangeFn
+      });
+
+      const dateInputEle = getBySelector(
+        '.ant-picker-input input',
+        baseElement
+      );
+      await act(async () => {
+        fireEvent.mouseDown(dateInputEle);
+        await jest.advanceTimersByTime(300);
+      });
+      expect(onOpenChangeFn).toHaveBeenCalledWith(true);
+
+      await act(async () => {
+        fireEvent.mouseDown(document.body);
+        await jest.advanceTimersByTime(300);
+      });
+      expect(onOpenChangeFn).toHaveBeenCalledWith(false);
+      unmount();
     });
 
-    const dateInputEle = getBySelector('.ant-picker-input input', baseElement);
-    await act(async () => {
-      fireEvent.mouseDown(dateInputEle);
-      await jest.advanceTimersByTime(300);
+    it('should handle date selection correctly', async () => {
+      const onChangeFn = jest.fn();
+      const { baseElement } = customRender({
+        onChange: onChangeFn,
+        format: 'YYYY-MM-DD'
+      });
+
+      const dateInputEle = getBySelector(
+        '.ant-picker-input input',
+        baseElement
+      );
+      await act(async () => {
+        fireEvent.mouseDown(dateInputEle);
+        await jest.advanceTimersByTime(300);
+      });
+
+      const dateCell = getBySelector(
+        '.ant-picker-cell-in-view[title="2023-12-15"]',
+        baseElement
+      );
+      await act(async () => {
+        fireEvent.click(dateCell);
+        await jest.advanceTimersByTime(300);
+      });
+
+      expect(onChangeFn).toHaveBeenCalled();
+      const [date, dateString] = onChangeFn.mock.calls[0];
+      expect(dateString).toBe('2023-12-15');
+      expect(date.format('YYYY-MM-DD')).toBe('2023-12-15');
     });
-    expect(onOpenChangeFn).toHaveBeenCalledTimes(1);
-    expect(container).toMatchSnapshot();
-    unmount();
   });
 });

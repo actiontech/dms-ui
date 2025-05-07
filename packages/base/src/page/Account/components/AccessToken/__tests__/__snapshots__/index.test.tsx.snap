@@ -3,7 +3,7 @@
 exports[`test AccessToken should match snapshot 1`] = `
 <div>
   <div
-    class="ant-row  css-nsnt4h css-dev-only-do-not-override-txh9fw"
+    class="ant-row css-nsnt4h"
   >
     <div
       class="label-content"
@@ -23,7 +23,7 @@ exports[`test AccessToken should match snapshot 1`] = `
         </div>
       </div>
       <button
-        class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary basic-button-wrapper css-geipcv"
+        class="ant-btn ant-btn-primary basic-button-wrapper css-geipcv"
         type="button"
       >
         <span>
@@ -38,7 +38,7 @@ exports[`test AccessToken should match snapshot 1`] = `
 exports[`test AccessToken should match snapshot 2`] = `
 <div>
   <div
-    class="ant-row  css-nsnt4h css-dev-only-do-not-override-txh9fw"
+    class="ant-row css-nsnt4h"
   >
     <div
       class="label-content"
@@ -58,7 +58,7 @@ exports[`test AccessToken should match snapshot 2`] = `
         </div>
       </div>
       <button
-        class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary basic-button-wrapper css-geipcv"
+        class="ant-btn ant-btn-primary basic-button-wrapper css-geipcv"
         type="button"
       >
         <span>
@@ -73,7 +73,7 @@ exports[`test AccessToken should match snapshot 2`] = `
 exports[`test AccessToken should match snapshot 3`] = `
 <div>
   <div
-    class="ant-row clear-padding-top css-nsnt4h css-dev-only-do-not-override-txh9fw"
+    class="ant-row clear-padding-top css-nsnt4h"
   >
     <div
       class="label-content"
@@ -93,7 +93,7 @@ exports[`test AccessToken should match snapshot 3`] = `
         </div>
       </div>
       <button
-        class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary basic-button-wrapper css-geipcv"
+        class="ant-btn ant-btn-primary basic-button-wrapper css-geipcv"
         type="button"
       >
         <span>
@@ -116,7 +116,7 @@ exports[`test AccessToken should match snapshot 3`] = `
           class="css-1sg2lsz"
         >
           <div
-            class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
+            class="ant-space ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
           >
             <div
               class="ant-space-item"
@@ -139,10 +139,10 @@ exports[`test AccessToken should match snapshot 3`] = `
             </div>
           </div>
           <span
-            class="ant-typography css-dev-only-do-not-override-txh9fw"
+            class="ant-typography"
           >
             <div
-              aria-label="Copy"
+              aria-label="复制"
               class="ant-typography-copy"
               role="button"
               style="border: 0px; background: transparent; padding: 0px; line-height: inherit; display: inline-block;"
@@ -193,7 +193,7 @@ exports[`test AccessToken should match snapshot 3`] = `
 exports[`test AccessToken should match snapshot 4`] = `
 <div>
   <div
-    class="ant-row clear-padding-top css-nsnt4h css-dev-only-do-not-override-txh9fw"
+    class="ant-row clear-padding-top css-nsnt4h"
   >
     <div
       class="label-content"
@@ -213,7 +213,7 @@ exports[`test AccessToken should match snapshot 4`] = `
         </div>
       </div>
       <button
-        class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary basic-button-wrapper css-geipcv"
+        class="ant-btn ant-btn-primary basic-button-wrapper css-geipcv"
         type="button"
       >
         <span>
@@ -236,7 +236,7 @@ exports[`test AccessToken should match snapshot 4`] = `
           class="css-1sg2lsz"
         >
           <div
-            class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
+            class="ant-space ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
           >
             <div
               class="ant-space-item"
@@ -259,10 +259,10 @@ exports[`test AccessToken should match snapshot 4`] = `
             </div>
           </div>
           <span
-            class="ant-typography css-dev-only-do-not-override-txh9fw"
+            class="ant-typography"
           >
             <div
-              aria-label="Copy"
+              aria-label="复制"
               class="ant-typography-copy"
               role="button"
               style="border: 0px; background: transparent; padding: 0px; line-height: inherit; display: inline-block;"
@@ -313,7 +313,7 @@ exports[`test AccessToken should match snapshot 4`] = `
 exports[`test AccessToken should match snapshot 5`] = `
 <div>
   <div
-    class="ant-row clear-padding-top css-nsnt4h css-dev-only-do-not-override-txh9fw"
+    class="ant-row clear-padding-top css-nsnt4h"
   >
     <div
       class="label-content"
@@ -333,7 +333,7 @@ exports[`test AccessToken should match snapshot 5`] = `
         </div>
       </div>
       <button
-        class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary basic-button-wrapper css-geipcv"
+        class="ant-btn ant-btn-primary basic-button-wrapper css-geipcv"
         type="button"
       >
         <span>
@@ -356,7 +356,7 @@ exports[`test AccessToken should match snapshot 5`] = `
           class="css-1sg2lsz"
         >
           <div
-            class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
+            class="ant-space ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
           >
             <div
               class="ant-space-item"
@@ -379,10 +379,10 @@ exports[`test AccessToken should match snapshot 5`] = `
             </div>
           </div>
           <span
-            class="ant-typography css-dev-only-do-not-override-txh9fw"
+            class="ant-typography"
           >
             <div
-              aria-label="Copy"
+              aria-label="复制"
               class="ant-typography-copy"
               role="button"
               style="border: 0px; background: transparent; padding: 0px; line-height: inherit; display: inline-block;"

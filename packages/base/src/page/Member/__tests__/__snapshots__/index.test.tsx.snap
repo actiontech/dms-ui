@@ -13,7 +13,7 @@ exports[`base/Member should render member list when it first entered the member 
           class="title"
         >
           <div
-            class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+            class="ant-space ant-space-horizontal ant-space-align-center"
           >
             <div
               class="ant-space-item"
@@ -25,7 +25,7 @@ exports[`base/Member should render member list when it first entered the member 
               class="ant-space-item"
             >
               <button
-                class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default ant-btn-sm ant-btn-icon-only basic-button-wrapper css-geipcv"
+                class="ant-btn ant-btn-default ant-btn-sm ant-btn-icon-only basic-button-wrapper css-geipcv"
                 type="button"
               >
                 <span
@@ -55,10 +55,10 @@ exports[`base/Member should render member list when it first entered the member 
         class="segmented-tabs-wrapper"
       >
         <div
-          class="ant-row segmented-row-wrapper css-156vlto css-dev-only-do-not-override-txh9fw"
+          class="ant-row segmented-row-wrapper css-156vlto"
         >
           <div
-            class="ant-segmented basic-segmented-wrapper css-192b3m1 css-dev-only-do-not-override-txh9fw"
+            class="ant-segmented basic-segmented-wrapper css-192b3m1"
           >
             <div
               class="ant-segmented-group"
@@ -99,10 +99,10 @@ exports[`base/Member should render member list when it first entered the member 
           class="lazy-load-wrapper segmented-item-content lazy-load-wrapper-show css-952l0m"
         >
           <div
-            class="ant-table-wrapper actiontech-table-namespace css-fxd6ka css-dev-only-do-not-override-bj9uhl"
+            class="ant-table-wrapper actiontech-table-namespace css-fxd6ka"
           >
             <div
-              class="ant-spin-nested-loading css-dev-only-do-not-override-bj9uhl"
+              class="ant-spin-nested-loading"
             >
               <div
                 class="ant-spin-container"
@@ -148,7 +148,7 @@ exports[`base/Member should render member list when it first entered the member 
                               scope="col"
                             >
                               <div
-                                class="ant-space css-dev-only-do-not-override-bj9uhl ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
+                                class="ant-space ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
                               >
                                 <div
                                   class="ant-space-item"
@@ -268,19 +268,19 @@ exports[`base/Member should render member list when it first entered the member 
                               class="ant-table-cell ellipsis-column-width"
                             >
                               <div
-                                class="ant-space css-dev-only-do-not-override-bj9uhl ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-17el097"
+                                class="ant-space ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-17el097"
                               >
                                 <div
                                   class="ant-space-item"
                                 >
                                   <div
-                                    class="ant-space css-dev-only-do-not-override-bj9uhl ant-space-vertical"
+                                    class="ant-space ant-space-vertical"
                                   >
                                     <div
                                       class="ant-space-item"
                                     >
                                       <span
-                                        class="ant-typography ant-typography-ellipsis ant-typography-single-line ant-typography-ellipsis-single-line css-dev-only-do-not-override-bj9uhl"
+                                        class="ant-typography ant-typography-ellipsis ant-typography-single-line ant-typography-ellipsis-single-line"
                                       >
                                         Role1: [ Range1,Range2 ]
                                       </span>
@@ -369,19 +369,19 @@ exports[`base/Member should render member list when it first entered the member 
                               class="ant-table-cell ellipsis-column-width"
                             >
                               <div
-                                class="ant-space css-dev-only-do-not-override-bj9uhl ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-17el097"
+                                class="ant-space ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-17el097"
                               >
                                 <div
                                   class="ant-space-item"
                                 >
                                   <div
-                                    class="ant-space css-dev-only-do-not-override-bj9uhl ant-space-vertical"
+                                    class="ant-space ant-space-vertical"
                                   >
                                     <div
                                       class="ant-space-item"
                                     >
                                       <span
-                                        class="ant-typography ant-typography-ellipsis ant-typography-single-line ant-typography-ellipsis-single-line css-dev-only-do-not-override-bj9uhl"
+                                        class="ant-typography ant-typography-ellipsis ant-typography-single-line ant-typography-ellipsis-single-line"
                                       >
                                         test role 1: [ mysql-1 ]
                                       </span>
@@ -435,7 +435,7 @@ exports[`base/Member should render member list when it first entered the member 
                   </div>
                 </div>
                 <ul
-                  class="ant-pagination ant-table-pagination ant-table-pagination-right actiontech-table-pagination actiontech-table-pagination-fixed css-dev-only-do-not-override-bj9uhl"
+                  class="ant-pagination ant-table-pagination ant-table-pagination-right actiontech-table-pagination actiontech-table-pagination-fixed"
                 >
                   <li
                     class="ant-pagination-total-text"
@@ -447,7 +447,7 @@ exports[`base/Member should render member list when it first entered the member 
                   <li
                     aria-disabled="true"
                     class="ant-pagination-prev ant-pagination-disabled"
-                    title="Previous Page"
+                    title="上一页"
                   >
                     <button
                       class="ant-pagination-item-link"
@@ -490,7 +490,7 @@ exports[`base/Member should render member list when it first entered the member 
                   <li
                     aria-disabled="true"
                     class="ant-pagination-next ant-pagination-disabled"
-                    title="Next Page"
+                    title="下一页"
                   >
                     <button
                       class="ant-pagination-item-link"
@@ -523,8 +523,8 @@ exports[`base/Member should render member list when it first entered the member 
                     class="ant-pagination-options"
                   >
                     <div
-                      aria-label="Page Size"
-                      class="ant-select ant-pagination-options-size-changer css-dev-only-do-not-override-bj9uhl ant-select-single ant-select-show-arrow ant-select-show-search"
+                      aria-label="页码"
+                      class="ant-select ant-pagination-options-size-changer ant-select-single ant-select-show-arrow ant-select-show-search"
                     >
                       <div
                         class="ant-select-selector"
@@ -538,7 +538,7 @@ exports[`base/Member should render member list when it first entered the member 
                             aria-controls="rc_select_TEST_OR_SSR_list"
                             aria-expanded="false"
                             aria-haspopup="listbox"
-                            aria-label="Page Size"
+                            aria-label="页码"
                             aria-owns="rc_select_TEST_OR_SSR_list"
                             autocomplete="off"
                             class="ant-select-selection-search-input"
@@ -550,9 +550,9 @@ exports[`base/Member should render member list when it first entered the member 
                         </span>
                         <span
                           class="ant-select-selection-item"
-                          title="20 / page"
+                          title="20 条/页"
                         >
-                          20 / page
+                          20 条/页
                         </span>
                       </div>
                       <span
@@ -607,7 +607,7 @@ exports[`base/Member should update content when change segmented value 1`] = `
           class="title"
         >
           <div
-            class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+            class="ant-space ant-space-horizontal ant-space-align-center"
           >
             <div
               class="ant-space-item"
@@ -619,7 +619,7 @@ exports[`base/Member should update content when change segmented value 1`] = `
               class="ant-space-item"
             >
               <button
-                class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default ant-btn-sm ant-btn-icon-only basic-button-wrapper css-geipcv"
+                class="ant-btn ant-btn-default ant-btn-sm ant-btn-icon-only basic-button-wrapper css-geipcv"
                 type="button"
               >
                 <span
@@ -649,10 +649,10 @@ exports[`base/Member should update content when change segmented value 1`] = `
         class="segmented-tabs-wrapper"
       >
         <div
-          class="ant-row segmented-row-wrapper css-156vlto css-dev-only-do-not-override-txh9fw"
+          class="ant-row segmented-row-wrapper css-156vlto"
         >
           <div
-            class="ant-segmented basic-segmented-wrapper css-192b3m1 css-dev-only-do-not-override-txh9fw"
+            class="ant-segmented basic-segmented-wrapper css-192b3m1"
           >
             <div
               class="ant-segmented-group"
@@ -693,16 +693,16 @@ exports[`base/Member should update content when change segmented value 1`] = `
           class="lazy-load-wrapper segmented-item-content lazy-load-wrapper-hidden css-952l0m"
         >
           <div
-            class="ant-table-wrapper actiontech-table-namespace css-fxd6ka css-dev-only-do-not-override-bj9uhl"
+            class="ant-table-wrapper actiontech-table-namespace css-fxd6ka"
           >
             <div
-              class="ant-spin-nested-loading css-dev-only-do-not-override-bj9uhl"
+              class="ant-spin-nested-loading"
             >
               <div>
                 <div
                   aria-busy="true"
                   aria-live="polite"
-                  class="ant-spin ant-spin-spinning css-dev-only-do-not-override-bj9uhl"
+                  class="ant-spin ant-spin-spinning"
                 >
                   <span
                     class="ant-spin-dot ant-spin-dot-spin"
@@ -766,7 +766,7 @@ exports[`base/Member should update content when change segmented value 1`] = `
                               scope="col"
                             >
                               <div
-                                class="ant-space css-dev-only-do-not-override-bj9uhl ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
+                                class="ant-space ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
                               >
                                 <div
                                   class="ant-space-item"
@@ -828,7 +828,7 @@ exports[`base/Member should update content when change segmented value 1`] = `
                               colspan="4"
                             >
                               <div
-                                class="css-dev-only-do-not-override-bj9uhl ant-empty ant-empty-normal"
+                                class="ant-empty ant-empty-normal"
                               >
                                 <div
                                   class="ant-empty-image"
@@ -869,7 +869,7 @@ exports[`base/Member should update content when change segmented value 1`] = `
                                 <div
                                   class="ant-empty-description"
                                 >
-                                  No data
+                                  暂无数据
                                 </div>
                               </div>
                             </td>
@@ -887,10 +887,10 @@ exports[`base/Member should update content when change segmented value 1`] = `
           class="lazy-load-wrapper segmented-item-content lazy-load-wrapper-show css-952l0m"
         >
           <div
-            class="ant-table-wrapper actiontech-table-namespace css-fxd6ka css-dev-only-do-not-override-bj9uhl"
+            class="ant-table-wrapper actiontech-table-namespace css-fxd6ka"
           >
             <div
-              class="ant-spin-nested-loading css-dev-only-do-not-override-bj9uhl"
+              class="ant-spin-nested-loading"
             >
               <div
                 class="ant-spin-container"
@@ -938,7 +938,7 @@ exports[`base/Member should update content when change segmented value 1`] = `
                               scope="col"
                             >
                               <div
-                                class="ant-space css-dev-only-do-not-override-bj9uhl ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
+                                class="ant-space ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
                               >
                                 <div
                                   class="ant-space-item"
@@ -1056,7 +1056,7 @@ exports[`base/Member should update content when change segmented value 1`] = `
                               class="ant-table-cell"
                             >
                               <span
-                                class="ant-typography ant-typography-ellipsis ant-typography-single-line ant-typography-ellipsis-single-line css-dev-only-do-not-override-bj9uhl"
+                                class="ant-typography ant-typography-ellipsis ant-typography-single-line ant-typography-ellipsis-single-line"
                               >
                                 test1、test2
                               </span>
@@ -1065,19 +1065,19 @@ exports[`base/Member should update content when change segmented value 1`] = `
                               class="ant-table-cell ellipsis-column-width"
                             >
                               <div
-                                class="ant-space css-dev-only-do-not-override-bj9uhl ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-17el097"
+                                class="ant-space ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-17el097"
                               >
                                 <div
                                   class="ant-space-item"
                                 >
                                   <div
-                                    class="ant-space css-dev-only-do-not-override-bj9uhl ant-space-vertical"
+                                    class="ant-space ant-space-vertical"
                                   >
                                     <div
                                       class="ant-space-item"
                                     >
                                       <span
-                                        class="ant-typography ant-typography-ellipsis ant-typography-single-line ant-typography-ellipsis-single-line css-dev-only-do-not-override-bj9uhl"
+                                        class="ant-typography ant-typography-ellipsis ant-typography-single-line ant-typography-ellipsis-single-line"
                                       >
                                         Role1: [ Range1,Range2 ]
                                       </span>
@@ -1138,7 +1138,7 @@ exports[`base/Member should update content when change segmented value 1`] = `
                               class="ant-table-cell"
                             >
                               <span
-                                class="ant-typography ant-typography-ellipsis ant-typography-single-line ant-typography-ellipsis-single-line css-dev-only-do-not-override-bj9uhl"
+                                class="ant-typography ant-typography-ellipsis ant-typography-single-line ant-typography-ellipsis-single-line"
                               >
                                 test3、test4
                               </span>
@@ -1147,19 +1147,19 @@ exports[`base/Member should update content when change segmented value 1`] = `
                               class="ant-table-cell ellipsis-column-width"
                             >
                               <div
-                                class="ant-space css-dev-only-do-not-override-bj9uhl ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-17el097"
+                                class="ant-space ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-17el097"
                               >
                                 <div
                                   class="ant-space-item"
                                 >
                                   <div
-                                    class="ant-space css-dev-only-do-not-override-bj9uhl ant-space-vertical"
+                                    class="ant-space ant-space-vertical"
                                   >
                                     <div
                                       class="ant-space-item"
                                     >
                                       <span
-                                        class="ant-typography ant-typography-ellipsis ant-typography-single-line ant-typography-ellipsis-single-line css-dev-only-do-not-override-bj9uhl"
+                                        class="ant-typography ant-typography-ellipsis ant-typography-single-line ant-typography-ellipsis-single-line"
                                       >
                                         Role2: [ Range1,Range2 ]
                                       </span>
@@ -1195,7 +1195,7 @@ exports[`base/Member should update content when change segmented value 1`] = `
                               class="ant-table-cell"
                             >
                               <span
-                                class="ant-typography ant-typography-ellipsis ant-typography-single-line ant-typography-ellipsis-single-line css-dev-only-do-not-override-bj9uhl"
+                                class="ant-typography ant-typography-ellipsis ant-typography-single-line ant-typography-ellipsis-single-line"
                               >
                                 test、test666
                               </span>
@@ -1204,19 +1204,19 @@ exports[`base/Member should update content when change segmented value 1`] = `
                               class="ant-table-cell ellipsis-column-width"
                             >
                               <div
-                                class="ant-space css-dev-only-do-not-override-bj9uhl ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-17el097"
+                                class="ant-space ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-17el097"
                               >
                                 <div
                                   class="ant-space-item"
                                 >
                                   <div
-                                    class="ant-space css-dev-only-do-not-override-bj9uhl ant-space-vertical"
+                                    class="ant-space ant-space-vertical"
                                   >
                                     <div
                                       class="ant-space-item"
                                     >
                                       <span
-                                        class="ant-typography ant-typography-ellipsis ant-typography-single-line ant-typography-ellipsis-single-line css-dev-only-do-not-override-bj9uhl"
+                                        class="ant-typography ant-typography-ellipsis ant-typography-single-line ant-typography-ellipsis-single-line"
                                       >
                                         test role 1: [ mysql-1 ]
                                       </span>
@@ -1280,19 +1280,19 @@ exports[`base/Member should update content when change segmented value 1`] = `
                               class="ant-table-cell ellipsis-column-width"
                             >
                               <div
-                                class="ant-space css-dev-only-do-not-override-bj9uhl ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-17el097"
+                                class="ant-space ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-17el097"
                               >
                                 <div
                                   class="ant-space-item"
                                 >
                                   <div
-                                    class="ant-space css-dev-only-do-not-override-bj9uhl ant-space-vertical"
+                                    class="ant-space ant-space-vertical"
                                   >
                                     <div
                                       class="ant-space-item"
                                     >
                                       <span
-                                        class="ant-typography ant-typography-ellipsis ant-typography-single-line ant-typography-ellipsis-single-line css-dev-only-do-not-override-bj9uhl"
+                                        class="ant-typography ant-typography-ellipsis ant-typography-single-line ant-typography-ellipsis-single-line"
                                       >
                                         Role12: [ Range14,Range25 ]
                                       </span>
@@ -1321,7 +1321,7 @@ exports[`base/Member should update content when change segmented value 1`] = `
                   </div>
                 </div>
                 <ul
-                  class="ant-pagination ant-table-pagination ant-table-pagination-right actiontech-table-pagination actiontech-table-pagination-fixed css-dev-only-do-not-override-bj9uhl"
+                  class="ant-pagination ant-table-pagination ant-table-pagination-right actiontech-table-pagination actiontech-table-pagination-fixed"
                 >
                   <li
                     class="ant-pagination-total-text"
@@ -1333,7 +1333,7 @@ exports[`base/Member should update content when change segmented value 1`] = `
                   <li
                     aria-disabled="true"
                     class="ant-pagination-prev ant-pagination-disabled"
-                    title="Previous Page"
+                    title="上一页"
                   >
                     <button
                       class="ant-pagination-item-link"
@@ -1376,7 +1376,7 @@ exports[`base/Member should update content when change segmented value 1`] = `
                   <li
                     aria-disabled="true"
                     class="ant-pagination-next ant-pagination-disabled"
-                    title="Next Page"
+                    title="下一页"
                   >
                     <button
                       class="ant-pagination-item-link"
@@ -1409,8 +1409,8 @@ exports[`base/Member should update content when change segmented value 1`] = `
                     class="ant-pagination-options"
                   >
                     <div
-                      aria-label="Page Size"
-                      class="ant-select ant-pagination-options-size-changer css-dev-only-do-not-override-bj9uhl ant-select-single ant-select-show-arrow ant-select-show-search"
+                      aria-label="页码"
+                      class="ant-select ant-pagination-options-size-changer ant-select-single ant-select-show-arrow ant-select-show-search"
                     >
                       <div
                         class="ant-select-selector"
@@ -1424,7 +1424,7 @@ exports[`base/Member should update content when change segmented value 1`] = `
                             aria-controls="rc_select_TEST_OR_SSR_list"
                             aria-expanded="false"
                             aria-haspopup="listbox"
-                            aria-label="Page Size"
+                            aria-label="页码"
                             aria-owns="rc_select_TEST_OR_SSR_list"
                             autocomplete="off"
                             class="ant-select-selection-search-input"
@@ -1436,9 +1436,9 @@ exports[`base/Member should update content when change segmented value 1`] = `
                         </span>
                         <span
                           class="ant-select-selection-item"
-                          title="20 / page"
+                          title="20 条/页"
                         >
-                          20 / page
+                          20 条/页
                         </span>
                       </div>
                       <span

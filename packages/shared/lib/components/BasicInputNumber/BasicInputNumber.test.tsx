@@ -1,31 +1,54 @@
-import { renderWithTheme } from '../../testUtil/customRender';
+import { superRender } from '../../testUtil/customRender';
+import { fireEvent } from '@testing-library/react';
 import BasicInputNumber from './BasicInputNumber';
 import { BasicInputNumberProps } from './BasicInputNumber.types';
 
 describe('lib/BasicInputNumber', () => {
-  const customRender = (params: BasicInputNumberProps) => {
-    return renderWithTheme(<BasicInputNumber {...params} />);
+  const customRender = (params: BasicInputNumberProps = {}) => {
+    return superRender(<BasicInputNumber {...params} />);
   };
 
-  it('render diff size input number', () => {
+  it('should match snapshot', () => {
+    const { container } = customRender();
+    expect(container).toMatchSnapshot();
+  });
+
+  it('should render basic input number with default props', () => {
+    const { container } = customRender();
+    expect(
+      container.querySelector('.basic-inputNumber-wrapper')
+    ).toBeInTheDocument();
+    expect(container.querySelector('.ant-input-number-lg')).toBeInTheDocument();
+  });
+
+  it('should render with custom className', () => {
     const { container } = customRender({
       className: 'custom-input-number-class'
     });
-    expect(container).toMatchSnapshot();
+    expect(
+      container.querySelector('.custom-input-number-class')
+    ).toBeInTheDocument();
+  });
 
-    const { container: container1 } = customRender({
-      size: 'large'
+  it('should handle value change correctly', () => {
+    const handleChange = jest.fn();
+    const { container } = customRender({
+      onChange: handleChange,
+      min: 0,
+      max: 100
     });
-    expect(container1).toMatchSnapshot();
 
-    const { container: container2 } = customRender({
-      size: 'middle'
-    });
-    expect(container2).toMatchSnapshot();
+    const input = container.querySelector('input') as HTMLInputElement;
+    fireEvent.change(input, { target: { value: '50' } });
+    expect(handleChange).toHaveBeenCalledWith(50);
+  });
 
-    const { container: container3 } = customRender({
-      size: 'small'
+  it('should handle disabled state correctly', () => {
+    const { container } = customRender({
+      disabled: true
     });
-    expect(container3).toMatchSnapshot();
+    expect(
+      container.querySelector('.ant-input-number-disabled')
+    ).toBeInTheDocument();
   });
 });

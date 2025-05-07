@@ -13,7 +13,7 @@ exports[`sqle/SqlExecWorkflow/Create/CreatedResult render snap 1`] = `
           href="/sqle/project/700300/exec-workflow"
         >
           <button
-            class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default basic-button-wrapper css-geipcv"
+            class="ant-btn ant-btn-default basic-button-wrapper css-geipcv"
             type="button"
           >
             <span
@@ -45,7 +45,7 @@ exports[`sqle/SqlExecWorkflow/Create/CreatedResult render snap 1`] = `
       class="basic-result-wrapper css-7vto1s"
     >
       <div
-        class="ant-result ant-result-success css-dev-only-do-not-override-txh9fw"
+        class="ant-result ant-result-success"
       >
         <div
           class="ant-result-icon"
@@ -459,7 +459,7 @@ exports[`sqle/SqlExecWorkflow/Create/CreatedResult render snap 1`] = `
             href="/sqle/project/700300/exec-workflow/1234"
           >
             <button
-              class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary basic-button-wrapper css-geipcv"
+              class="ant-btn ant-btn-primary basic-button-wrapper css-geipcv"
               type="button"
             >
               <span>
