@@ -119,7 +119,9 @@ export const PERMISSIONS = {
         ARCHIVE: 'action:project_manager_archive',
         UNARCHIVE: 'action:project_manager_unarchive',
         GLOBAL_RESOURCE_OVERVIEW:
-          'action:project_manager_global_resource_overview'
+          'action:project_manager_global_resource_overview',
+        CONFIGURE_AVAILABILITY_ZONE:
+          'action:project_manager_configure_avalability_zone'
       },
       HOME: {
         ALL_OPERATIONS: 'action:home_all_operations'
@@ -129,6 +131,11 @@ export const PERMISSIONS = {
       },
       RESOURCE_OVERVIEW: {
         EXPORT: 'action:resource_overview_export'
+      },
+      AVAILABILITY_ZONE: {
+        CREATE: 'action:availability_zone_create',
+        EDIT: 'action:availability_zone_edit',
+        DELETE: 'action:availability_zone_delete'
       }
     },
     SQLE: {

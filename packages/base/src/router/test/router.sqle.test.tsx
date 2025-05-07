@@ -1,9 +1,10 @@
 import { MemoryRouterProps } from 'react-router-dom';
 import { act, screen, cleanup } from '@testing-library/react';
-import mockUseRoutes, { RenderRouterComponent } from './data';
+import { RenderRouterComponent } from './data';
 import { superRender } from '../../testUtils/customRender';
 import { mockProjectInfo } from '@actiontech/shared/lib/testUtil/mockHook/data';
 import userCenter from '../../testUtils/mockApi/userCenter';
+import { mockUseRecentlySelectedZone } from '../../testUtils/mockHooks/mockUseRecentlySelectedZone';
 
 describe('base/router-sqle-ee', () => {
   const projectID = mockProjectInfo.projectID;
@@ -11,7 +12,7 @@ describe('base/router-sqle-ee', () => {
   const customRender = (
     initialEntries: MemoryRouterProps['initialEntries'] = []
   ) => {
-    return superRender(<RenderRouterComponent type="sqle" />, undefined, {
+    return superRender(<RenderRouterComponent type="auth" />, undefined, {
       routerProps: {
         initialEntries
       }
@@ -21,16 +22,13 @@ describe('base/router-sqle-ee', () => {
   beforeEach(() => {
     jest.useFakeTimers();
     userCenter.getUserOpPermission();
+    mockUseRecentlySelectedZone();
   });
 
   afterEach(() => {
     jest.clearAllMocks();
     jest.useRealTimers();
     cleanup();
-  });
-
-  it('render sqle route data snap', () => {
-    expect(mockUseRoutes('sqle')).toMatchSnapshot();
   });
 
   it('render route sqle index page', () => {

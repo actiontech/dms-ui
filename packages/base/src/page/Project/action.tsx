@@ -16,7 +16,8 @@ export const ProjectManagementPageHeaderActions = (
   | 'import'
   | 'export'
   | 'create'
-  | 'global_resource_overview',
+  | 'global_resource_overview'
+  | 'configure_availability_zone',
   ReactNode
 > => {
   return {
@@ -81,6 +82,21 @@ export const ProjectManagementPageHeaderActions = (
           text={t('dmsProject.resourceOverview')}
           link={{
             to: ROUTE_PATHS.BASE.RESOURCE_OVERVIEW
+          }}
+        />
+      </PermissionControl>
+    ),
+    configure_availability_zone: (
+      <PermissionControl
+        permission={
+          PERMISSIONS.ACTIONS.BASE.PROJECT_MANAGER.CONFIGURE_AVAILABILITY_ZONE
+        }
+      >
+        <ActionButton
+          actionType="navigate-link"
+          text={t('dmsProject.availabilityZone')}
+          link={{
+            to: ROUTE_PATHS.BASE.AVAILABILITY_ZONE
           }}
         />
       </PermissionControl>
