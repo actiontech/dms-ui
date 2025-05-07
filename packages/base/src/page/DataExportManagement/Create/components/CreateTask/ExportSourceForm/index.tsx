@@ -8,6 +8,7 @@ import {
   formItemLayout
 } from '@actiontech/shared/lib/components/CustomForm/style';
 import { ExportSourceFormStyleWrapper } from './style';
+import { BasicToolTip } from '@actiontech/shared';
 
 const ExportSourceForm: React.FC<
   Pick<CreateExportTaskFormEntryProps, 'sourceForm' | 'baseForm'>
@@ -24,7 +25,12 @@ const ExportSourceForm: React.FC<
       <FormAreaLineStyleWrapper className="has-border">
         <FormAreaBlockStyleWrapper>
           <FormItemSubTitle>
-            {t('dmsDataExport.create.form.source.title')}
+            <BasicToolTip
+              title={t('dmsDataExport.create.form.source.titleTips')}
+              suffixIcon
+            >
+              {t('dmsDataExport.create.form.source.title')}
+            </BasicToolTip>
           </FormItemSubTitle>
           <ExportTaskFormItem sourceForm={sourceForm} baseForm={baseForm} />
         </FormAreaBlockStyleWrapper>

@@ -131,3 +131,47 @@ exports[`sqle/components/RuleStatus should match snap shot when has ruleStatusCh
   </div>
 </body>
 `;
+
+exports[`sqle/components/RuleStatus should render custom label when options.renderLabel is provided 1`] = `
+<body>
+  <div>
+    <div
+      class="ant-segmented basic-segmented-wrapper css-15kylv5"
+    >
+      <div
+        class="ant-segmented-group"
+      >
+        <label
+          class="enabled-rule ant-segmented-item ant-segmented-item-selected"
+        >
+          <input
+            checked=""
+            class="ant-segmented-item-input"
+            type="radio"
+          />
+          <div
+            class="ant-segmented-item-label"
+            title="enabled - 已启用"
+          >
+            enabled - 已启用
+          </div>
+        </label>
+        <label
+          class="disabled-rule ant-segmented-item"
+        >
+          <input
+            class="ant-segmented-item-input"
+            type="radio"
+          />
+          <div
+            class="ant-segmented-item-label"
+            title="disabled - 已禁用"
+          >
+            disabled - 已禁用
+          </div>
+        </label>
+      </div>
+    </div>
+  </div>
+</body>
+`;

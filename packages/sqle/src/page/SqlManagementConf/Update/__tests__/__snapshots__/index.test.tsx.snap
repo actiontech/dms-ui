@@ -1447,7 +1447,7 @@ exports[`test sqle/SqlManagementConf/Update render init snap shot 1`] = `
                     </div>
                   </div>
                   <div
-                    class="ant-form-item has-required-style css-1jlm9cy"
+                    class="ant-form-item has-label-tip css-1jlm9cy"
                   >
                     <div
                       class="ant-row ant-form-item-row"
@@ -1458,9 +1458,20 @@ exports[`test sqle/SqlManagementConf/Update render init snap shot 1`] = `
                         <label
                           class="ant-form-item-no-colon"
                           for="ali_rds_mysql_slow_log_markHighPrioritySql"
-                          title="标记高优先级SQL"
+                          title=""
                         >
-                          标记高优先级SQL
+                          <div
+                            class="label-cont-custom"
+                          >
+                            <div>
+                              标记高优先级SQL
+                            </div>
+                            <div
+                              class="tip-content-box"
+                            >
+                              请设置筛选条件，符合以下任意一个已启用条件的SQL，都将被标记为高优先级
+                            </div>
+                          </div>
                         </label>
                       </div>
                       <div
@@ -3577,7 +3588,7 @@ exports[`test sqle/SqlManagementConf/Update render update audit plan 1`] = `
                     </div>
                   </div>
                   <div
-                    class="ant-form-item has-required-style css-1jlm9cy"
+                    class="ant-form-item has-label-tip css-1jlm9cy"
                   >
                     <div
                       class="ant-row ant-form-item-row"
@@ -3588,9 +3599,20 @@ exports[`test sqle/SqlManagementConf/Update render update audit plan 1`] = `
                         <label
                           class="ant-form-item-no-colon"
                           for="ali_rds_mysql_slow_log_markHighPrioritySql"
-                          title="标记高优先级SQL"
+                          title=""
                         >
-                          标记高优先级SQL
+                          <div
+                            class="label-cont-custom"
+                          >
+                            <div>
+                              标记高优先级SQL
+                            </div>
+                            <div
+                              class="tip-content-box"
+                            >
+                              请设置筛选条件，符合以下任意一个已启用条件的SQL，都将被标记为高优先级
+                            </div>
+                          </div>
                         </label>
                       </div>
                       <div
@@ -5821,7 +5843,7 @@ exports[`test sqle/SqlManagementConf/Update should not update the password field
                     </div>
                   </div>
                   <div
-                    class="ant-form-item has-required-style css-1jlm9cy"
+                    class="ant-form-item has-label-tip css-1jlm9cy"
                   >
                     <div
                       class="ant-row ant-form-item-row"
@@ -5832,9 +5854,20 @@ exports[`test sqle/SqlManagementConf/Update should not update the password field
                         <label
                           class="ant-form-item-no-colon"
                           for="ali_rds_mysql_slow_log_markHighPrioritySql"
-                          title="标记高优先级SQL"
+                          title=""
                         >
-                          标记高优先级SQL
+                          <div
+                            class="label-cont-custom"
+                          >
+                            <div>
+                              标记高优先级SQL
+                            </div>
+                            <div
+                              class="tip-content-box"
+                            >
+                              请设置筛选条件，符合以下任意一个已启用条件的SQL，都将被标记为高优先级
+                            </div>
+                          </div>
                         </label>
                       </div>
                       <div

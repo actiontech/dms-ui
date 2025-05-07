@@ -49,19 +49,19 @@ const ignoreReactConsoleErrors = () => {
     'Warning: findDOMNode is deprecated and will be removed in the next major release. Instead, add a ref directly to the element you want to reference. Learn more about using refs safely here: https://reactjs.org/link/strict-mode-find-nod'
   ];
 
-  const error = console.error;
+  const originalError = console.error;
 
   beforeAll(() => {
     console.error = (...arg) => {
       if (typeof arg[0] === 'string' && rules.some((v) => arg[0].includes(v))) {
         return;
       }
-      error(...arg);
+      originalError(...arg);
     };
   });
 
   afterAll(() => {
-    console.error = error;
+    console.error = originalError;
   });
 };
 

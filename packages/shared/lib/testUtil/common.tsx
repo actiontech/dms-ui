@@ -2,7 +2,7 @@
 export const ignoreConsoleErrors = (
   params: Array<UtilsConsoleErrorStringsEnum>
 ) => {
-  const error = console.error;
+  const originalError = console.error;
 
   beforeAll(() => {
     console.error = (...arg) => {
@@ -12,12 +12,13 @@ export const ignoreConsoleErrors = (
       ) {
         return;
       }
-      error(...arg);
+      originalError(...arg);
     };
   });
 
   afterAll(() => {
-    console.error = error;
+    // 恢复原始的 console.error
+    console.error = originalError;
   });
 };
 

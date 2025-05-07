@@ -6,7 +6,7 @@ exports[`test HighPriorityConditions should match snapshot 1`] = `
     class="ant-form ant-form-horizontal"
   >
     <div
-      class="ant-form-item has-required-style css-1jlm9cy"
+      class="ant-form-item has-label-tip css-1jlm9cy"
     >
       <div
         class="ant-row ant-form-item-row"
@@ -17,9 +17,20 @@ exports[`test HighPriorityConditions should match snapshot 1`] = `
           <label
             class=""
             for="prefixPath_markHighPrioritySql"
-            title="标记高优先级SQL"
+            title=""
           >
-            标记高优先级SQL
+            <div
+              class="label-cont-custom"
+            >
+              <div>
+                标记高优先级SQL
+              </div>
+              <div
+                class="tip-content-box"
+              >
+                请设置筛选条件，符合以下任意一个已启用条件的SQL，都将被标记为高优先级
+              </div>
+            </div>
           </label>
         </div>
         <div
@@ -67,7 +78,7 @@ exports[`test HighPriorityConditions should match snapshot 2`] = `
     class="ant-form ant-form-horizontal"
   >
     <div
-      class="ant-form-item has-required-style css-1jlm9cy ant-form-item-has-success"
+      class="ant-form-item has-label-tip css-1jlm9cy ant-form-item-has-success"
     >
       <div
         class="ant-row ant-form-item-row"
@@ -78,9 +89,20 @@ exports[`test HighPriorityConditions should match snapshot 2`] = `
           <label
             class=""
             for="prefixPath_markHighPrioritySql"
-            title="标记高优先级SQL"
+            title=""
           >
-            标记高优先级SQL
+            <div
+              class="label-cont-custom"
+            >
+              <div>
+                标记高优先级SQL
+              </div>
+              <div
+                class="tip-content-box"
+              >
+                请设置筛选条件，符合以下任意一个已启用条件的SQL，都将被标记为高优先级
+              </div>
+            </div>
           </label>
         </div>
         <div
@@ -532,7 +554,7 @@ exports[`test HighPriorityConditions should match snapshot when submitLoading is
     class="ant-form ant-form-horizontal"
   >
     <div
-      class="ant-form-item has-required-style css-1jlm9cy"
+      class="ant-form-item has-label-tip css-1jlm9cy"
     >
       <div
         class="ant-row ant-form-item-row"
@@ -543,9 +565,20 @@ exports[`test HighPriorityConditions should match snapshot when submitLoading is
           <label
             class=""
             for="prefixPath_markHighPrioritySql"
-            title="标记高优先级SQL"
+            title=""
           >
-            标记高优先级SQL
+            <div
+              class="label-cont-custom"
+            >
+              <div>
+                标记高优先级SQL
+              </div>
+              <div
+                class="tip-content-box"
+              >
+                请设置筛选条件，符合以下任意一个已启用条件的SQL，都将被标记为高优先级
+              </div>
+            </div>
           </label>
         </div>
         <div

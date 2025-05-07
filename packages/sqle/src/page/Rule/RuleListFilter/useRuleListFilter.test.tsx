@@ -1,15 +1,15 @@
 import { cleanup, act } from '@testing-library/react';
-import { renderHooksWithTheme } from '../../../../testUtils/customRender';
-import rule_template from '../../../../testUtils/mockApi/rule_template';
 import { Form } from 'antd';
-import { RuleListFilterForm } from '../../index.type';
-import useRuleListFilter from '../useRuleListFilter';
 import {
   createSpySuccessResponse,
   createSpyFailResponse
 } from '@actiontech/shared/lib/testUtil/mockApi';
 import { mockUseCurrentUser } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentUser';
 import { mockProjectInfo } from '@actiontech/shared/lib/testUtil/mockHook/data';
+import rule_template from '../../../testUtils/mockApi/rule_template';
+import { renderHooksWithTheme } from '../../../testUtils/customRender';
+import { RuleListFilterForm } from '../index.type';
+import useRuleListFilter from './hooks';
 
 describe('sqle/Rule/hooks/useRuleListFilter', () => {
   let getRuleListSpy: jest.SpyInstance;

@@ -537,7 +537,7 @@ exports[`test SqlManagementConf/ScanTypesDynamicParams render defaultValue is de
             </div>
           </div>
           <div
-            class="ant-form-item has-required-style css-1jlm9cy"
+            class="ant-form-item has-label-tip css-1jlm9cy"
           >
             <div
               class="ant-row ant-form-item-row"
@@ -548,9 +548,20 @@ exports[`test SqlManagementConf/ScanTypesDynamicParams render defaultValue is de
                 <label
                   class=""
                   for="ali_rds_mysql_slow_log_markHighPrioritySql"
-                  title="标记高优先级SQL"
+                  title=""
                 >
-                  标记高优先级SQL
+                  <div
+                    class="label-cont-custom"
+                  >
+                    <div>
+                      标记高优先级SQL
+                    </div>
+                    <div
+                      class="tip-content-box"
+                    >
+                      请设置筛选条件，符合以下任意一个已启用条件的SQL，都将被标记为高优先级
+                    </div>
+                  </div>
                 </label>
               </div>
               <div
@@ -1953,7 +1964,7 @@ exports[`test SqlManagementConf/ScanTypesDynamicParams render init snap shot 1`]
             </div>
           </div>
           <div
-            class="ant-form-item has-required-style css-1jlm9cy"
+            class="ant-form-item has-label-tip css-1jlm9cy"
           >
             <div
               class="ant-row ant-form-item-row"
@@ -1964,9 +1975,20 @@ exports[`test SqlManagementConf/ScanTypesDynamicParams render init snap shot 1`]
                 <label
                   class=""
                   for="ali_rds_mysql_slow_log_markHighPrioritySql"
-                  title="标记高优先级SQL"
+                  title=""
                 >
-                  标记高优先级SQL
+                  <div
+                    class="label-cont-custom"
+                  >
+                    <div>
+                      标记高优先级SQL
+                    </div>
+                    <div
+                      class="tip-content-box"
+                    >
+                      请设置筛选条件，符合以下任意一个已启用条件的SQL，都将被标记为高优先级
+                    </div>
+                  </div>
                 </label>
               </div>
               <div
@@ -3389,7 +3411,7 @@ exports[`test SqlManagementConf/ScanTypesDynamicParams render submitLoading is t
             </div>
           </div>
           <div
-            class="ant-form-item has-required-style css-1jlm9cy"
+            class="ant-form-item has-label-tip css-1jlm9cy"
           >
             <div
               class="ant-row ant-form-item-row"
@@ -3400,9 +3422,20 @@ exports[`test SqlManagementConf/ScanTypesDynamicParams render submitLoading is t
                 <label
                   class=""
                   for="ali_rds_mysql_slow_log_markHighPrioritySql"
-                  title="标记高优先级SQL"
+                  title=""
                 >
-                  标记高优先级SQL
+                  <div
+                    class="label-cont-custom"
+                  >
+                    <div>
+                      标记高优先级SQL
+                    </div>
+                    <div
+                      class="tip-content-box"
+                    >
+                      请设置筛选条件，符合以下任意一个已启用条件的SQL，都将被标记为高优先级
+                    </div>
+                  </div>
                 </label>
               </div>
               <div
