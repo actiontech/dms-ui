@@ -23,3 +23,4 @@ export { default as SessionService } from './service/Session';
 export { default as UserService } from './service/User';
 export { default as UserGroupService } from './service/UserGroup';
 export { default as WebhookService } from './service/Webhook';
+export { default as GatewayService } from './service/Gateway';

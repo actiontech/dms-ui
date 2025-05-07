@@ -4,6 +4,11 @@ exports[`usePermission should match snapshot 1`] = `
 {
   "ACTIONS": {
     "BASE": {
+      "AVAILABILITY_ZONE": {
+        "CREATE": "action:availability_zone_create",
+        "DELETE": "action:availability_zone_delete",
+        "EDIT": "action:availability_zone_edit",
+      },
       "CLOUD_BEAVER": {
         "CREATE_WHITE_LIST": "action:cb_create_white_list",
         "EXPORT": "action:export_cb_operation_log",
@@ -52,6 +57,7 @@ exports[`usePermission should match snapshot 1`] = `
       "PROJECT_MANAGER": {
         "ARCHIVE": "action:project_manager_archive",
         "BATCH_IMPORT_DATA_SOURCE": "action:project_manager_batch_import_data_source",
+        "CONFIGURE_AVAILABILITY_ZONE": "action:project_manager_configure_avalability_zone",
         "CREATE": "action:project_manager_create",
         "DELETE": "action:project_manager_delete",
         "EDIT": "action:project_manager_edit",
@@ -321,6 +327,30 @@ exports[`usePermission should match snapshot 2`] = `
   "action:approve_workflow": {
     "id": "action:approve_workflow",
     "projectArchived": false,
+    "type": "action",
+  },
+  "action:availability_zone_create": {
+    "id": "action:availability_zone_create",
+    "role": [
+      "admin",
+      "globalManager",
+    ],
+    "type": "action",
+  },
+  "action:availability_zone_delete": {
+    "id": "action:availability_zone_delete",
+    "role": [
+      "admin",
+      "globalManager",
+    ],
+    "type": "action",
+  },
+  "action:availability_zone_edit": {
+    "id": "action:availability_zone_edit",
+    "role": [
+      "admin",
+      "globalManager",
+    ],
     "type": "action",
   },
   "action:batch_close_workflow": {
@@ -1018,6 +1048,15 @@ exports[`usePermission should match snapshot 2`] = `
     "role": [
       "admin",
       "globalManager",
+    ],
+    "type": "action",
+  },
+  "action:project_manager_configure_avalability_zone": {
+    "id": "action:project_manager_configure_avalability_zone",
+    "role": [
+      "admin",
+      "globalManager",
+      "globalViewing",
     ],
     "type": "action",
   },
