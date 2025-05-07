@@ -4,10 +4,10 @@ exports[`test database monitor table can not delete by no id and no status data 
 <body>
   <div>
     <div
-      class="ant-table-wrapper actiontech-table-namespace css-fxd6ka css-dev-only-do-not-override-bj9uhl"
+      class="ant-table-wrapper actiontech-table-namespace css-fxd6ka css-dev-only-do-not-override-txh9fw"
     >
       <div
-        class="ant-spin-nested-loading css-dev-only-do-not-override-bj9uhl"
+        class="ant-spin-nested-loading css-dev-only-do-not-override-txh9fw"
       >
         <div
           class="ant-spin-container"
@@ -203,14 +203,14 @@ exports[`test database monitor table can not delete by no id and no status data 
                           class="css-new95e"
                         >
                           <div
-                            class="ant-space css-dev-only-do-not-override-bj9uhl ant-space-horizontal ant-space-align-center"
+                            class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
                           >
                             <div
                               class="ant-space-item"
                               style="margin-right: 8px;"
                             >
                               <button
-                                class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                class="ant-btn css-dev-only-do-not-override-txh9fw ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
                                 type="button"
                               >
                                 <span>
@@ -222,7 +222,7 @@ exports[`test database monitor table can not delete by no id and no status data 
                               class="ant-space-item"
                             >
                               <button
-                                class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm ant-btn-dangerous actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                class="ant-btn css-dev-only-do-not-override-txh9fw ant-btn-default ant-btn-sm ant-btn-dangerous actiontech-table-actions-button basic-button-wrapper css-geipcv"
                                 type="button"
                               >
                                 <span>
@@ -240,7 +240,7 @@ exports[`test database monitor table can not delete by no id and no status data 
             </div>
           </div>
           <ul
-            class="ant-pagination ant-table-pagination ant-table-pagination-right actiontech-table-pagination actiontech-table-pagination-fixed css-dev-only-do-not-override-bj9uhl"
+            class="ant-pagination ant-table-pagination ant-table-pagination-right actiontech-table-pagination actiontech-table-pagination-fixed css-dev-only-do-not-override-txh9fw"
           >
             <li
               class="ant-pagination-total-text"
@@ -329,7 +329,7 @@ exports[`test database monitor table can not delete by no id and no status data 
             >
               <div
                 aria-label="页码"
-                class="ant-select ant-pagination-options-size-changer css-dev-only-do-not-override-bj9uhl ant-select-single ant-select-show-arrow ant-select-show-search"
+                class="ant-select ant-pagination-options-size-changer css-dev-only-do-not-override-txh9fw ant-select-single ant-select-show-arrow ant-select-show-search"
               >
                 <div
                   class="ant-select-selector"
@@ -400,10 +400,10 @@ exports[`test database monitor table delete database monitor failed 1`] = `
 <body>
   <div>
     <div
-      class="ant-table-wrapper actiontech-table-namespace css-fxd6ka css-dev-only-do-not-override-bj9uhl"
+      class="ant-table-wrapper actiontech-table-namespace css-fxd6ka css-dev-only-do-not-override-txh9fw"
     >
       <div
-        class="ant-spin-nested-loading css-dev-only-do-not-override-bj9uhl"
+        class="ant-spin-nested-loading css-dev-only-do-not-override-txh9fw"
       >
         <div
           class="ant-spin-container"
@@ -597,14 +597,14 @@ exports[`test database monitor table delete database monitor failed 1`] = `
                           class="css-new95e"
                         >
                           <div
-                            class="ant-space css-dev-only-do-not-override-bj9uhl ant-space-horizontal ant-space-align-center"
+                            class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
                           >
                             <div
                               class="ant-space-item"
                               style="margin-right: 8px;"
                             >
                               <button
-                                class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                class="ant-btn css-dev-only-do-not-override-txh9fw ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
                                 type="button"
                               >
                                 <span>
@@ -616,7 +616,7 @@ exports[`test database monitor table delete database monitor failed 1`] = `
                               class="ant-space-item"
                             >
                               <button
-                                class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm ant-btn-dangerous actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                class="ant-btn css-dev-only-do-not-override-txh9fw ant-btn-default ant-btn-sm ant-btn-dangerous actiontech-table-actions-button basic-button-wrapper css-geipcv"
                                 type="button"
                               >
                                 <span>
@@ -634,7 +634,7 @@ exports[`test database monitor table delete database monitor failed 1`] = `
             </div>
           </div>
           <ul
-            class="ant-pagination ant-table-pagination ant-table-pagination-right actiontech-table-pagination actiontech-table-pagination-fixed css-dev-only-do-not-override-bj9uhl"
+            class="ant-pagination ant-table-pagination ant-table-pagination-right actiontech-table-pagination actiontech-table-pagination-fixed css-dev-only-do-not-override-txh9fw"
           >
             <li
               class="ant-pagination-total-text"
@@ -723,7 +723,7 @@ exports[`test database monitor table delete database monitor failed 1`] = `
             >
               <div
                 aria-label="页码"
-                class="ant-select ant-pagination-options-size-changer css-dev-only-do-not-override-bj9uhl ant-select-single ant-select-show-arrow ant-select-show-search"
+                class="ant-select ant-pagination-options-size-changer css-dev-only-do-not-override-txh9fw ant-select-single ant-select-show-arrow ant-select-show-search"
               >
                 <div
                   class="ant-select-selector"
@@ -794,10 +794,10 @@ exports[`test database monitor table render without permission 1`] = `
 <body>
   <div>
     <div
-      class="ant-table-wrapper actiontech-table-namespace css-fxd6ka css-dev-only-do-not-override-bj9uhl"
+      class="ant-table-wrapper actiontech-table-namespace css-fxd6ka css-dev-only-do-not-override-txh9fw"
     >
       <div
-        class="ant-spin-nested-loading css-dev-only-do-not-override-bj9uhl"
+        class="ant-spin-nested-loading css-dev-only-do-not-override-txh9fw"
       >
         <div
           class="ant-spin-container"
@@ -1082,7 +1082,7 @@ exports[`test database monitor table render without permission 1`] = `
             </div>
           </div>
           <ul
-            class="ant-pagination ant-table-pagination ant-table-pagination-right actiontech-table-pagination actiontech-table-pagination-fixed css-dev-only-do-not-override-bj9uhl"
+            class="ant-pagination ant-table-pagination ant-table-pagination-right actiontech-table-pagination actiontech-table-pagination-fixed css-dev-only-do-not-override-txh9fw"
           >
             <li
               class="ant-pagination-total-text"
@@ -1171,7 +1171,7 @@ exports[`test database monitor table render without permission 1`] = `
             >
               <div
                 aria-label="页码"
-                class="ant-select ant-pagination-options-size-changer css-dev-only-do-not-override-bj9uhl ant-select-single ant-select-show-arrow ant-select-show-search"
+                class="ant-select ant-pagination-options-size-changer css-dev-only-do-not-override-txh9fw ant-select-single ant-select-show-arrow ant-select-show-search"
               >
                 <div
                   class="ant-select-selector"
@@ -1242,10 +1242,10 @@ exports[`test database monitor table should open model when click edit button 1`
 <body>
   <div>
     <div
-      class="ant-table-wrapper actiontech-table-namespace css-fxd6ka css-dev-only-do-not-override-bj9uhl"
+      class="ant-table-wrapper actiontech-table-namespace css-fxd6ka css-dev-only-do-not-override-txh9fw"
     >
       <div
-        class="ant-spin-nested-loading css-dev-only-do-not-override-bj9uhl"
+        class="ant-spin-nested-loading css-dev-only-do-not-override-txh9fw"
       >
         <div
           class="ant-spin-container"
@@ -1441,14 +1441,14 @@ exports[`test database monitor table should open model when click edit button 1`
                           class="css-new95e"
                         >
                           <div
-                            class="ant-space css-dev-only-do-not-override-bj9uhl ant-space-horizontal ant-space-align-center"
+                            class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
                           >
                             <div
                               class="ant-space-item"
                               style="margin-right: 8px;"
                             >
                               <button
-                                class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                class="ant-btn css-dev-only-do-not-override-txh9fw ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
                                 type="button"
                               >
                                 <span>
@@ -1460,7 +1460,7 @@ exports[`test database monitor table should open model when click edit button 1`
                               class="ant-space-item"
                             >
                               <button
-                                class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm ant-btn-dangerous actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                class="ant-btn css-dev-only-do-not-override-txh9fw ant-btn-default ant-btn-sm ant-btn-dangerous actiontech-table-actions-button basic-button-wrapper css-geipcv"
                                 type="button"
                               >
                                 <span>
@@ -1518,14 +1518,14 @@ exports[`test database monitor table should open model when click edit button 1`
                           class="css-new95e"
                         >
                           <div
-                            class="ant-space css-dev-only-do-not-override-bj9uhl ant-space-horizontal ant-space-align-center"
+                            class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
                           >
                             <div
                               class="ant-space-item"
                               style="margin-right: 8px;"
                             >
                               <button
-                                class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                class="ant-btn css-dev-only-do-not-override-txh9fw ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
                                 type="button"
                               >
                                 <span>
@@ -1537,7 +1537,7 @@ exports[`test database monitor table should open model when click edit button 1`
                               class="ant-space-item"
                             >
                               <button
-                                class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm ant-btn-dangerous actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                class="ant-btn css-dev-only-do-not-override-txh9fw ant-btn-default ant-btn-sm ant-btn-dangerous actiontech-table-actions-button basic-button-wrapper css-geipcv"
                                 type="button"
                               >
                                 <span>
@@ -1595,14 +1595,14 @@ exports[`test database monitor table should open model when click edit button 1`
                           class="css-new95e"
                         >
                           <div
-                            class="ant-space css-dev-only-do-not-override-bj9uhl ant-space-horizontal ant-space-align-center"
+                            class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
                           >
                             <div
                               class="ant-space-item"
                               style="margin-right: 8px;"
                             >
                               <button
-                                class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                class="ant-btn css-dev-only-do-not-override-txh9fw ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
                                 type="button"
                               >
                                 <span>
@@ -1614,7 +1614,7 @@ exports[`test database monitor table should open model when click edit button 1`
                               class="ant-space-item"
                             >
                               <button
-                                class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm ant-btn-dangerous actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                class="ant-btn css-dev-only-do-not-override-txh9fw ant-btn-default ant-btn-sm ant-btn-dangerous actiontech-table-actions-button basic-button-wrapper css-geipcv"
                                 type="button"
                               >
                                 <span>
@@ -1632,7 +1632,7 @@ exports[`test database monitor table should open model when click edit button 1`
             </div>
           </div>
           <ul
-            class="ant-pagination ant-table-pagination ant-table-pagination-right actiontech-table-pagination actiontech-table-pagination-fixed css-dev-only-do-not-override-bj9uhl"
+            class="ant-pagination ant-table-pagination ant-table-pagination-right actiontech-table-pagination actiontech-table-pagination-fixed css-dev-only-do-not-override-txh9fw"
           >
             <li
               class="ant-pagination-total-text"
@@ -1721,7 +1721,7 @@ exports[`test database monitor table should open model when click edit button 1`
             >
               <div
                 aria-label="页码"
-                class="ant-select ant-pagination-options-size-changer css-dev-only-do-not-override-bj9uhl ant-select-single ant-select-show-arrow ant-select-show-search"
+                class="ant-select ant-pagination-options-size-changer css-dev-only-do-not-override-txh9fw ant-select-single ant-select-show-arrow ant-select-show-search"
               >
                 <div
                   class="ant-select-selector"
@@ -1792,10 +1792,10 @@ exports[`test database monitor table should open query popover when click delete
 <body>
   <div>
     <div
-      class="ant-table-wrapper actiontech-table-namespace css-fxd6ka css-dev-only-do-not-override-bj9uhl"
+      class="ant-table-wrapper actiontech-table-namespace css-fxd6ka css-dev-only-do-not-override-txh9fw"
     >
       <div
-        class="ant-spin-nested-loading css-dev-only-do-not-override-bj9uhl"
+        class="ant-spin-nested-loading css-dev-only-do-not-override-txh9fw"
       >
         <div
           class="ant-spin-container"
@@ -1991,14 +1991,14 @@ exports[`test database monitor table should open query popover when click delete
                           class="css-new95e"
                         >
                           <div
-                            class="ant-space css-dev-only-do-not-override-bj9uhl ant-space-horizontal ant-space-align-center"
+                            class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
                           >
                             <div
                               class="ant-space-item"
                               style="margin-right: 8px;"
                             >
                               <button
-                                class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                class="ant-btn css-dev-only-do-not-override-txh9fw ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
                                 type="button"
                               >
                                 <span>
@@ -2010,7 +2010,7 @@ exports[`test database monitor table should open query popover when click delete
                               class="ant-space-item"
                             >
                               <button
-                                class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm ant-btn-dangerous actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                class="ant-btn css-dev-only-do-not-override-txh9fw ant-btn-default ant-btn-sm ant-btn-dangerous actiontech-table-actions-button basic-button-wrapper css-geipcv"
                                 type="button"
                               >
                                 <span>
@@ -2068,14 +2068,14 @@ exports[`test database monitor table should open query popover when click delete
                           class="css-new95e"
                         >
                           <div
-                            class="ant-space css-dev-only-do-not-override-bj9uhl ant-space-horizontal ant-space-align-center"
+                            class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
                           >
                             <div
                               class="ant-space-item"
                               style="margin-right: 8px;"
                             >
                               <button
-                                class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                class="ant-btn css-dev-only-do-not-override-txh9fw ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
                                 type="button"
                               >
                                 <span>
@@ -2087,7 +2087,7 @@ exports[`test database monitor table should open query popover when click delete
                               class="ant-space-item"
                             >
                               <button
-                                class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm ant-btn-dangerous actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                class="ant-btn css-dev-only-do-not-override-txh9fw ant-btn-default ant-btn-sm ant-btn-dangerous actiontech-table-actions-button basic-button-wrapper css-geipcv"
                                 type="button"
                               >
                                 <span>
@@ -2145,14 +2145,14 @@ exports[`test database monitor table should open query popover when click delete
                           class="css-new95e"
                         >
                           <div
-                            class="ant-space css-dev-only-do-not-override-bj9uhl ant-space-horizontal ant-space-align-center"
+                            class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
                           >
                             <div
                               class="ant-space-item"
                               style="margin-right: 8px;"
                             >
                               <button
-                                class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                class="ant-btn css-dev-only-do-not-override-txh9fw ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
                                 type="button"
                               >
                                 <span>
@@ -2164,7 +2164,7 @@ exports[`test database monitor table should open query popover when click delete
                               class="ant-space-item"
                             >
                               <button
-                                class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm ant-btn-dangerous actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                class="ant-btn css-dev-only-do-not-override-txh9fw ant-btn-default ant-btn-sm ant-btn-dangerous actiontech-table-actions-button basic-button-wrapper css-geipcv"
                                 type="button"
                               >
                                 <span>
@@ -2182,7 +2182,7 @@ exports[`test database monitor table should open query popover when click delete
             </div>
           </div>
           <ul
-            class="ant-pagination ant-table-pagination ant-table-pagination-right actiontech-table-pagination actiontech-table-pagination-fixed css-dev-only-do-not-override-bj9uhl"
+            class="ant-pagination ant-table-pagination ant-table-pagination-right actiontech-table-pagination actiontech-table-pagination-fixed css-dev-only-do-not-override-txh9fw"
           >
             <li
               class="ant-pagination-total-text"
@@ -2271,7 +2271,7 @@ exports[`test database monitor table should open query popover when click delete
             >
               <div
                 aria-label="页码"
-                class="ant-select ant-pagination-options-size-changer css-dev-only-do-not-override-bj9uhl ant-select-single ant-select-show-arrow ant-select-show-search"
+                class="ant-select ant-pagination-options-size-changer css-dev-only-do-not-override-txh9fw ant-select-single ant-select-show-arrow ant-select-show-search"
               >
                 <div
                   class="ant-select-selector"
@@ -2342,10 +2342,10 @@ exports[`test database monitor table should refresh table when change pagination
 <body>
   <div>
     <div
-      class="ant-table-wrapper actiontech-table-namespace css-fxd6ka css-dev-only-do-not-override-bj9uhl"
+      class="ant-table-wrapper actiontech-table-namespace css-fxd6ka css-dev-only-do-not-override-txh9fw"
     >
       <div
-        class="ant-spin-nested-loading css-dev-only-do-not-override-bj9uhl"
+        class="ant-spin-nested-loading css-dev-only-do-not-override-txh9fw"
       >
         <div
           class="ant-spin-container"
@@ -2541,14 +2541,14 @@ exports[`test database monitor table should refresh table when change pagination
                           class="css-new95e"
                         >
                           <div
-                            class="ant-space css-dev-only-do-not-override-bj9uhl ant-space-horizontal ant-space-align-center"
+                            class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
                           >
                             <div
                               class="ant-space-item"
                               style="margin-right: 8px;"
                             >
                               <button
-                                class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                class="ant-btn css-dev-only-do-not-override-txh9fw ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
                                 type="button"
                               >
                                 <span>
@@ -2560,7 +2560,7 @@ exports[`test database monitor table should refresh table when change pagination
                               class="ant-space-item"
                             >
                               <button
-                                class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm ant-btn-dangerous actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                class="ant-btn css-dev-only-do-not-override-txh9fw ant-btn-default ant-btn-sm ant-btn-dangerous actiontech-table-actions-button basic-button-wrapper css-geipcv"
                                 type="button"
                               >
                                 <span>
@@ -2618,14 +2618,14 @@ exports[`test database monitor table should refresh table when change pagination
                           class="css-new95e"
                         >
                           <div
-                            class="ant-space css-dev-only-do-not-override-bj9uhl ant-space-horizontal ant-space-align-center"
+                            class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
                           >
                             <div
                               class="ant-space-item"
                               style="margin-right: 8px;"
                             >
                               <button
-                                class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                class="ant-btn css-dev-only-do-not-override-txh9fw ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
                                 type="button"
                               >
                                 <span>
@@ -2637,7 +2637,7 @@ exports[`test database monitor table should refresh table when change pagination
                               class="ant-space-item"
                             >
                               <button
-                                class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm ant-btn-dangerous actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                class="ant-btn css-dev-only-do-not-override-txh9fw ant-btn-default ant-btn-sm ant-btn-dangerous actiontech-table-actions-button basic-button-wrapper css-geipcv"
                                 type="button"
                               >
                                 <span>
@@ -2695,14 +2695,14 @@ exports[`test database monitor table should refresh table when change pagination
                           class="css-new95e"
                         >
                           <div
-                            class="ant-space css-dev-only-do-not-override-bj9uhl ant-space-horizontal ant-space-align-center"
+                            class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
                           >
                             <div
                               class="ant-space-item"
                               style="margin-right: 8px;"
                             >
                               <button
-                                class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                class="ant-btn css-dev-only-do-not-override-txh9fw ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
                                 type="button"
                               >
                                 <span>
@@ -2714,7 +2714,7 @@ exports[`test database monitor table should refresh table when change pagination
                               class="ant-space-item"
                             >
                               <button
-                                class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm ant-btn-dangerous actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                class="ant-btn css-dev-only-do-not-override-txh9fw ant-btn-default ant-btn-sm ant-btn-dangerous actiontech-table-actions-button basic-button-wrapper css-geipcv"
                                 type="button"
                               >
                                 <span>
@@ -2732,7 +2732,7 @@ exports[`test database monitor table should refresh table when change pagination
             </div>
           </div>
           <ul
-            class="ant-pagination ant-table-pagination ant-table-pagination-right actiontech-table-pagination actiontech-table-pagination-fixed css-dev-only-do-not-override-bj9uhl"
+            class="ant-pagination ant-table-pagination ant-table-pagination-right actiontech-table-pagination actiontech-table-pagination-fixed css-dev-only-do-not-override-txh9fw"
           >
             <li
               class="ant-pagination-total-text"
@@ -2821,7 +2821,7 @@ exports[`test database monitor table should refresh table when change pagination
             >
               <div
                 aria-label="页码"
-                class="ant-select ant-pagination-options-size-changer css-dev-only-do-not-override-bj9uhl ant-select-single ant-select-show-arrow ant-select-show-search"
+                class="ant-select ant-pagination-options-size-changer css-dev-only-do-not-override-txh9fw ant-select-single ant-select-show-arrow ant-select-show-search"
               >
                 <div
                   class="ant-select-selector"
@@ -2892,10 +2892,10 @@ exports[`test database monitor table should render normal table 1`] = `
 <body>
   <div>
     <div
-      class="ant-table-wrapper actiontech-table-namespace css-fxd6ka css-dev-only-do-not-override-bj9uhl"
+      class="ant-table-wrapper actiontech-table-namespace css-fxd6ka css-dev-only-do-not-override-txh9fw"
     >
       <div
-        class="ant-spin-nested-loading css-dev-only-do-not-override-bj9uhl"
+        class="ant-spin-nested-loading css-dev-only-do-not-override-txh9fw"
       >
         <div
           class="ant-spin-container"
@@ -3091,14 +3091,14 @@ exports[`test database monitor table should render normal table 1`] = `
                           class="css-new95e"
                         >
                           <div
-                            class="ant-space css-dev-only-do-not-override-bj9uhl ant-space-horizontal ant-space-align-center"
+                            class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
                           >
                             <div
                               class="ant-space-item"
                               style="margin-right: 8px;"
                             >
                               <button
-                                class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                class="ant-btn css-dev-only-do-not-override-txh9fw ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
                                 type="button"
                               >
                                 <span>
@@ -3110,7 +3110,7 @@ exports[`test database monitor table should render normal table 1`] = `
                               class="ant-space-item"
                             >
                               <button
-                                class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm ant-btn-dangerous actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                class="ant-btn css-dev-only-do-not-override-txh9fw ant-btn-default ant-btn-sm ant-btn-dangerous actiontech-table-actions-button basic-button-wrapper css-geipcv"
                                 type="button"
                               >
                                 <span>
@@ -3168,14 +3168,14 @@ exports[`test database monitor table should render normal table 1`] = `
                           class="css-new95e"
                         >
                           <div
-                            class="ant-space css-dev-only-do-not-override-bj9uhl ant-space-horizontal ant-space-align-center"
+                            class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
                           >
                             <div
                               class="ant-space-item"
                               style="margin-right: 8px;"
                             >
                               <button
-                                class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                class="ant-btn css-dev-only-do-not-override-txh9fw ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
                                 type="button"
                               >
                                 <span>
@@ -3187,7 +3187,7 @@ exports[`test database monitor table should render normal table 1`] = `
                               class="ant-space-item"
                             >
                               <button
-                                class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm ant-btn-dangerous actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                class="ant-btn css-dev-only-do-not-override-txh9fw ant-btn-default ant-btn-sm ant-btn-dangerous actiontech-table-actions-button basic-button-wrapper css-geipcv"
                                 type="button"
                               >
                                 <span>
@@ -3245,14 +3245,14 @@ exports[`test database monitor table should render normal table 1`] = `
                           class="css-new95e"
                         >
                           <div
-                            class="ant-space css-dev-only-do-not-override-bj9uhl ant-space-horizontal ant-space-align-center"
+                            class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
                           >
                             <div
                               class="ant-space-item"
                               style="margin-right: 8px;"
                             >
                               <button
-                                class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                class="ant-btn css-dev-only-do-not-override-txh9fw ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
                                 type="button"
                               >
                                 <span>
@@ -3264,7 +3264,7 @@ exports[`test database monitor table should render normal table 1`] = `
                               class="ant-space-item"
                             >
                               <button
-                                class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm ant-btn-dangerous actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                class="ant-btn css-dev-only-do-not-override-txh9fw ant-btn-default ant-btn-sm ant-btn-dangerous actiontech-table-actions-button basic-button-wrapper css-geipcv"
                                 type="button"
                               >
                                 <span>
@@ -3282,7 +3282,7 @@ exports[`test database monitor table should render normal table 1`] = `
             </div>
           </div>
           <ul
-            class="ant-pagination ant-table-pagination ant-table-pagination-right actiontech-table-pagination actiontech-table-pagination-fixed css-dev-only-do-not-override-bj9uhl"
+            class="ant-pagination ant-table-pagination ant-table-pagination-right actiontech-table-pagination actiontech-table-pagination-fixed css-dev-only-do-not-override-txh9fw"
           >
             <li
               class="ant-pagination-total-text"
@@ -3371,7 +3371,7 @@ exports[`test database monitor table should render normal table 1`] = `
             >
               <div
                 aria-label="页码"
-                class="ant-select ant-pagination-options-size-changer css-dev-only-do-not-override-bj9uhl ant-select-single ant-select-show-arrow ant-select-show-search"
+                class="ant-select ant-pagination-options-size-changer css-dev-only-do-not-override-txh9fw ant-select-single ant-select-show-arrow ant-select-show-search"
               >
                 <div
                   class="ant-select-selector"
@@ -3442,10 +3442,10 @@ exports[`test database monitor table should render table when api return null 1`
 <body>
   <div>
     <div
-      class="ant-table-wrapper actiontech-table-namespace css-fxd6ka css-dev-only-do-not-override-bj9uhl"
+      class="ant-table-wrapper actiontech-table-namespace css-fxd6ka css-dev-only-do-not-override-txh9fw"
     >
       <div
-        class="ant-spin-nested-loading css-dev-only-do-not-override-bj9uhl"
+        class="ant-spin-nested-loading css-dev-only-do-not-override-txh9fw"
       >
         <div
           class="ant-spin-container"

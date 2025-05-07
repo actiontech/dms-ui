@@ -19,33 +19,33 @@ exports[`provision/components/TableTagsCell render tags when data source length 
       class="css-bwn97z"
     >
       <span
-        class="ant-tag ant-tag-default pointer basic-tag-wrapper basic-default-tag-wrapper css-1mjwlcb css-dev-only-do-not-override-txh9fw"
+        class="ant-tag ant-tag-default pointer basic-tag-wrapper basic-default-tag-wrapper css-1mjwlcb"
       >
         123
       </span>
       <span
-        class="ant-tag ant-tag-default pointer basic-tag-wrapper basic-default-tag-wrapper css-1mjwlcb css-dev-only-do-not-override-txh9fw"
+        class="ant-tag ant-tag-default pointer basic-tag-wrapper basic-default-tag-wrapper css-1mjwlcb"
       >
         234
       </span>
       <span
-        class="ant-tag ant-tag-default pointer basic-tag-wrapper basic-default-tag-wrapper css-1mjwlcb css-dev-only-do-not-override-txh9fw"
+        class="ant-tag ant-tag-default pointer basic-tag-wrapper basic-default-tag-wrapper css-1mjwlcb"
       >
         a
       </span>
       <span
-        class="ant-tag ant-tag-default pointer basic-tag-wrapper basic-default-tag-wrapper css-1mjwlcb css-dev-only-do-not-override-txh9fw"
+        class="ant-tag ant-tag-default pointer basic-tag-wrapper basic-default-tag-wrapper css-1mjwlcb"
       >
         b
       </span>
       <div
-        class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
+        class="ant-space ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
       >
         <div
           class="ant-space-item"
         >
           <button
-            class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default ant-btn-sm ant-btn-icon-only table-row-scan-types-more-button basic-button-wrapper css-geipcv"
+            class="ant-btn ant-btn-default ant-btn-sm ant-btn-icon-only table-row-scan-types-more-button basic-button-wrapper css-geipcv"
             type="button"
           >
             <span
@@ -78,12 +78,12 @@ exports[`provision/components/TableTagsCell render tags when has data source 1`]
       class="css-bwn97z"
     >
       <span
-        class="ant-tag ant-tag-default pointer basic-tag-wrapper basic-default-tag-wrapper css-1mjwlcb css-dev-only-do-not-override-txh9fw"
+        class="ant-tag ant-tag-default pointer basic-tag-wrapper basic-default-tag-wrapper css-1mjwlcb"
       >
         123
       </span>
       <span
-        class="ant-tag ant-tag-default pointer basic-tag-wrapper basic-default-tag-wrapper css-1mjwlcb css-dev-only-do-not-override-txh9fw"
+        class="ant-tag ant-tag-default pointer basic-tag-wrapper basic-default-tag-wrapper css-1mjwlcb"
       >
         234
       </span>
@@ -99,27 +99,27 @@ exports[`provision/components/TableTagsCell render tags when has tagLimit param 
       class="css-bwn97z"
     >
       <span
-        class="ant-tag ant-tag-default pointer basic-tag-wrapper basic-default-tag-wrapper css-1mjwlcb css-dev-only-do-not-override-txh9fw"
+        class="ant-tag ant-tag-default pointer basic-tag-wrapper basic-default-tag-wrapper css-1mjwlcb"
       >
         123
       </span>
       <span
-        class="ant-tag ant-tag-default pointer basic-tag-wrapper basic-default-tag-wrapper css-1mjwlcb css-dev-only-do-not-override-txh9fw"
+        class="ant-tag ant-tag-default pointer basic-tag-wrapper basic-default-tag-wrapper css-1mjwlcb"
       >
         234
       </span>
       <span
-        class="ant-tag ant-tag-default pointer basic-tag-wrapper basic-default-tag-wrapper css-1mjwlcb css-dev-only-do-not-override-txh9fw"
+        class="ant-tag ant-tag-default pointer basic-tag-wrapper basic-default-tag-wrapper css-1mjwlcb"
       >
         a
       </span>
       <span
-        class="ant-tag ant-tag-default pointer basic-tag-wrapper basic-default-tag-wrapper css-1mjwlcb css-dev-only-do-not-override-txh9fw"
+        class="ant-tag ant-tag-default pointer basic-tag-wrapper basic-default-tag-wrapper css-1mjwlcb"
       >
         b
       </span>
       <span
-        class="ant-tag ant-tag-default pointer basic-tag-wrapper basic-default-tag-wrapper css-1mjwlcb css-dev-only-do-not-override-txh9fw"
+        class="ant-tag ant-tag-default pointer basic-tag-wrapper basic-default-tag-wrapper css-1mjwlcb"
       >
         c
       </span>

@@ -13,13 +13,14 @@ exports[`provision/CreateRole render create role 1`] = `
           class="title"
         >
           <button
-            class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default basic-button-wrapper css-geipcv"
+            class="ant-btn ant-btn-default basic-button-wrapper css-geipcv"
             type="button"
           >
             <span
               class="ant-btn-icon"
             >
               <svg
+                data-testid="left-arrow-icon"
                 height="16"
                 viewBox="0 0 16 16"
                 width="16"
@@ -40,14 +41,14 @@ exports[`provision/CreateRole render create role 1`] = `
           class="extra"
         >
           <div
-            class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+            class="ant-space ant-space-horizontal ant-space-align-center"
           >
             <div
               class="ant-space-item"
               style="margin-right: 8px;"
             >
               <button
-                class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default basic-button-wrapper css-geipcv"
+                class="ant-btn ant-btn-default basic-button-wrapper css-geipcv"
                 type="button"
               >
                 <span>
@@ -59,7 +60,7 @@ exports[`provision/CreateRole render create role 1`] = `
               class="ant-space-item"
             >
               <button
-                class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary basic-button-wrapper css-geipcv"
+                class="ant-btn ant-btn-primary basic-button-wrapper css-geipcv"
                 type="button"
               >
                 <span>
@@ -74,24 +75,24 @@ exports[`provision/CreateRole render create role 1`] = `
         class="lazy-load-wrapper lazy-load-wrapper-show css-952l0m"
       >
         <form
-          class="ant-form ant-form-horizontal css-dev-only-do-not-override-txh9fw hasTopHeader css-19jfn7e"
+          class="ant-form ant-form-horizontal hasTopHeader css-19jfn7e"
         >
           <section
             class="css-bspaai"
           >
             <h3
-              class="ant-typography css-p50odb css-dev-only-do-not-override-txh9fw"
+              class="ant-typography css-p50odb"
             >
               创建角色
             </h3>
             <div
-              class="ant-form-item has-required-style css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+              class="ant-form-item has-required-style css-1jlm9cy"
             >
               <div
-                class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                class="ant-row ant-form-item-row"
               >
                 <div
-                  class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left css-dev-only-do-not-override-txh9fw"
+                  class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left"
                 >
                   <label
                     class="ant-form-item-required ant-form-item-no-colon"
@@ -102,7 +103,7 @@ exports[`provision/CreateRole render create role 1`] = `
                   </label>
                 </div>
                 <div
-                  class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                  class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control"
                 >
                   <div
                     class="ant-form-item-control-input"
@@ -112,7 +113,7 @@ exports[`provision/CreateRole render create role 1`] = `
                     >
                       <div
                         aria-required="true"
-                        class="ant-select ant-select-in-form-item basic-select-wrapper css-iy4o4x css-dev-only-do-not-override-v9sov3 ant-select-single ant-select-show-arrow ant-select-disabled"
+                        class="ant-select ant-select-in-form-item basic-select-wrapper css-iy4o4x ant-select-single ant-select-show-arrow ant-select-disabled"
                       >
                         <div
                           class="ant-select-selector"
@@ -180,13 +181,13 @@ exports[`provision/CreateRole render create role 1`] = `
               </div>
             </div>
             <div
-              class="ant-form-item css-1jlm9cy css-dev-only-do-not-override-txh9fw ant-form-item-hidden"
+              class="ant-form-item css-1jlm9cy ant-form-item-hidden"
             >
               <div
-                class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                class="ant-row ant-form-item-row"
               >
                 <div
-                  class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                  class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control"
                 >
                   <div
                     class="ant-form-item-control-input"
@@ -195,7 +196,7 @@ exports[`provision/CreateRole render create role 1`] = `
                       class="ant-form-item-control-input-content"
                     >
                       <input
-                        class="ant-input css-dev-only-do-not-override-ywkr0o basic-input-wrapper css-1pd1cd5"
+                        class="ant-input basic-input-wrapper css-1pd1cd5"
                         id="dbType"
                         placeholder="请输入{{name}}"
                         type="text"
@@ -207,13 +208,13 @@ exports[`provision/CreateRole render create role 1`] = `
               </div>
             </div>
             <div
-              class="ant-form-item has-required-style css-1jlm9cy css-dev-only-do-not-override-txh9fw ant-form-item-has-success"
+              class="ant-form-item has-required-style css-1jlm9cy ant-form-item-has-success"
             >
               <div
-                class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                class="ant-row ant-form-item-row"
               >
                 <div
-                  class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left css-dev-only-do-not-override-txh9fw"
+                  class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left"
                 >
                   <label
                     class="ant-form-item-required ant-form-item-no-colon"
@@ -224,7 +225,7 @@ exports[`provision/CreateRole render create role 1`] = `
                   </label>
                 </div>
                 <div
-                  class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                  class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control"
                 >
                   <div
                     class="ant-form-item-control-input"
@@ -234,7 +235,7 @@ exports[`provision/CreateRole render create role 1`] = `
                     >
                       <input
                         aria-required="true"
-                        class="ant-input ant-input-status-success css-dev-only-do-not-override-ywkr0o basic-input-wrapper css-1pd1cd5"
+                        class="ant-input ant-input-status-success basic-input-wrapper css-1pd1cd5"
                         id="roleName"
                         placeholder="请输入{{name}}"
                         type="text"
@@ -246,13 +247,13 @@ exports[`provision/CreateRole render create role 1`] = `
               </div>
             </div>
             <div
-              class="ant-form-item has-label-tip css-1jlm9cy css-dev-only-do-not-override-txh9fw ant-form-item-has-success"
+              class="ant-form-item has-label-tip css-1jlm9cy ant-form-item-has-success"
             >
               <div
-                class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                class="ant-row ant-form-item-row"
               >
                 <div
-                  class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left css-dev-only-do-not-override-txh9fw"
+                  class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left"
                 >
                   <label
                     class="ant-form-item-no-colon"
@@ -274,7 +275,7 @@ exports[`provision/CreateRole render create role 1`] = `
                   </label>
                 </div>
                 <div
-                  class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                  class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control"
                 >
                   <div
                     class="ant-form-item-control-input"
@@ -283,7 +284,7 @@ exports[`provision/CreateRole render create role 1`] = `
                       class="ant-form-item-control-input-content"
                     >
                       <div
-                        class="ant-select ant-select-in-form-item ant-select-status-success basic-select-wrapper css-iy4o4x css-dev-only-do-not-override-v9sov3 ant-select-multiple ant-select-allow-clear ant-select-show-arrow ant-select-show-search"
+                        class="ant-select ant-select-in-form-item ant-select-status-success basic-select-wrapper css-iy4o4x ant-select-multiple ant-select-allow-clear ant-select-show-arrow ant-select-show-search"
                       >
                         <div
                           class="ant-select-selector"
@@ -319,13 +320,14 @@ exports[`provision/CreateRole render create role 1`] = `
                                       aria-hidden="true"
                                       data-icon="close"
                                       fill="currentColor"
+                                      fill-rule="evenodd"
                                       focusable="false"
                                       height="1em"
                                       viewBox="64 64 896 896"
                                       width="1em"
                                     >
                                       <path
-                                        d="M563.8 512l262.5-312.9c4.4-5.2.7-13.1-6.1-13.1h-79.8c-4.7 0-9.2 2.1-12.3 5.7L511.6 449.8 295.1 191.7c-3-3.6-7.5-5.7-12.3-5.7H203c-6.8 0-10.5 7.9-6.1 13.1L459.4 512 196.9 824.9A7.95 7.95 0 00203 838h79.8c4.7 0 9.2-2.1 12.3-5.7l216.5-258.1 216.5 258.1c3 3.6 7.5 5.7 12.3 5.7h79.8c6.8 0 10.5-7.9 6.1-13.1L563.8 512z"
+                                        d="M799.86 166.31c.02 0 .04.02.08.06l57.69 57.7c.04.03.05.05.06.08a.12.12 0 010 .06c0 .03-.02.05-.06.09L569.93 512l287.7 287.7c.04.04.05.06.06.09a.12.12 0 010 .07c0 .02-.02.04-.06.08l-57.7 57.69c-.03.04-.05.05-.07.06a.12.12 0 01-.07 0c-.03 0-.05-.02-.09-.06L512 569.93l-287.7 287.7c-.04.04-.06.05-.09.06a.12.12 0 01-.07 0c-.02 0-.04-.02-.08-.06l-57.69-57.7c-.04-.03-.05-.05-.06-.07a.12.12 0 010-.07c0-.03.02-.05.06-.09L454.07 512l-287.7-287.7c-.04-.04-.05-.06-.06-.09a.12.12 0 010-.07c0-.02.02-.04.06-.08l57.7-57.69c.03-.04.05-.05.07-.06a.12.12 0 01.07 0c.03 0 .05.02.09.06L512 454.07l287.7-287.7c.04-.04.06-.05.09-.06a.12.12 0 01.07 0z"
                                       />
                                     </svg>
                                   </span>
@@ -418,13 +420,13 @@ exports[`provision/CreateRole render create role 1`] = `
               </div>
             </div>
             <div
-              class="ant-form-item has-label-tip css-1jlm9cy css-dev-only-do-not-override-txh9fw ant-form-item-has-success"
+              class="ant-form-item has-label-tip css-1jlm9cy ant-form-item-has-success"
             >
               <div
-                class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                class="ant-row ant-form-item-row"
               >
                 <div
-                  class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left css-dev-only-do-not-override-txh9fw"
+                  class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left"
                 >
                   <label
                     class="ant-form-item-no-colon"
@@ -446,7 +448,7 @@ exports[`provision/CreateRole render create role 1`] = `
                   </label>
                 </div>
                 <div
-                  class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                  class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control"
                 >
                   <div
                     class="ant-form-item-control-input"
@@ -455,7 +457,7 @@ exports[`provision/CreateRole render create role 1`] = `
                       class="ant-form-item-control-input-content"
                     >
                       <div
-                        class="ant-select ant-select-in-form-item ant-select-status-success basic-select-wrapper css-iy4o4x css-dev-only-do-not-override-v9sov3 ant-select-multiple ant-select-show-arrow ant-select-open ant-select-show-search"
+                        class="ant-select ant-select-in-form-item ant-select-status-success basic-select-wrapper css-iy4o4x ant-select-multiple ant-select-show-arrow ant-select-open ant-select-show-search"
                       >
                         <div
                           class="ant-select-selector"
@@ -491,13 +493,14 @@ exports[`provision/CreateRole render create role 1`] = `
                                       aria-hidden="true"
                                       data-icon="close"
                                       fill="currentColor"
+                                      fill-rule="evenodd"
                                       focusable="false"
                                       height="1em"
                                       viewBox="64 64 896 896"
                                       width="1em"
                                     >
                                       <path
-                                        d="M563.8 512l262.5-312.9c4.4-5.2.7-13.1-6.1-13.1h-79.8c-4.7 0-9.2 2.1-12.3 5.7L511.6 449.8 295.1 191.7c-3-3.6-7.5-5.7-12.3-5.7H203c-6.8 0-10.5 7.9-6.1 13.1L459.4 512 196.9 824.9A7.95 7.95 0 00203 838h79.8c4.7 0 9.2-2.1 12.3-5.7l216.5-258.1 216.5 258.1c3 3.6 7.5 5.7 12.3 5.7h79.8c6.8 0 10.5-7.9 6.1-13.1L563.8 512z"
+                                        d="M799.86 166.31c.02 0 .04.02.08.06l57.69 57.7c.04.03.05.05.06.08a.12.12 0 010 .06c0 .03-.02.05-.06.09L569.93 512l287.7 287.7c.04.04.05.06.06.09a.12.12 0 010 .07c0 .02-.02.04-.06.08l-57.7 57.69c-.03.04-.05.05-.07.06a.12.12 0 01-.07 0c-.03 0-.05-.02-.09-.06L512 569.93l-287.7 287.7c-.04.04-.06.05-.09.06a.12.12 0 01-.07 0c-.02 0-.04-.02-.08-.06l-57.69-57.7c-.04-.03-.05-.05-.06-.07a.12.12 0 010-.07c0-.03.02-.05.06-.09L454.07 512l-287.7-287.7c-.04-.04-.05-.06-.06-.09a.12.12 0 010-.07c0-.02.02-.04.06-.08l57.7-57.69c.03-.04.05-.05.07-.06a.12.12 0 01.07 0c.03 0 .05.02.09.06L512 454.07l287.7-287.7c.04-.04.06-.05.09-.06a.12.12 0 01.07 0z"
                                       />
                                     </svg>
                                   </span>
@@ -570,13 +573,13 @@ exports[`provision/CreateRole render create role 1`] = `
               </div>
             </div>
             <div
-              class="ant-form-item css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+              class="ant-form-item css-1jlm9cy"
             >
               <div
-                class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                class="ant-row ant-form-item-row"
               >
                 <div
-                  class="ant-col ant-col-24 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                  class="ant-col ant-col-24 ant-form-item-control"
                 >
                   <div
                     class="ant-form-item-control-input"
@@ -596,14 +599,14 @@ exports[`provision/CreateRole render create role 1`] = `
                             对象权限概览
                           </span>
                           <div
-                            class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+                            class="ant-space ant-space-horizontal ant-space-align-center"
                           >
                             <div
                               class="ant-space-item"
                               style="margin-right: 8px;"
                             >
                               <button
-                                class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default ant-btn-dangerous basic-button-wrapper css-geipcv"
+                                class="ant-btn ant-btn-default ant-btn-dangerous basic-button-wrapper css-geipcv"
                                 disabled=""
                                 type="button"
                               >
@@ -616,7 +619,7 @@ exports[`provision/CreateRole render create role 1`] = `
                               class="ant-space-item"
                             >
                               <button
-                                class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary basic-button-wrapper css-geipcv"
+                                class="ant-btn ant-btn-primary basic-button-wrapper css-geipcv"
                                 type="button"
                               >
                                 <span>
@@ -627,10 +630,10 @@ exports[`provision/CreateRole render create role 1`] = `
                           </div>
                         </section>
                         <div
-                          class="ant-table-wrapper actiontech-table-namespace css-fxd6ka css-dev-only-do-not-override-bj9uhl"
+                          class="ant-table-wrapper actiontech-table-namespace css-fxd6ka"
                         >
                           <div
-                            class="ant-spin-nested-loading css-dev-only-do-not-override-bj9uhl"
+                            class="ant-spin-nested-loading"
                           >
                             <div
                               class="ant-spin-container"
@@ -750,7 +753,7 @@ exports[`provision/CreateRole render create role 1`] = `
   </div>
   <div>
     <div
-      class="ant-select-dropdown ant-select-dropdown-hidden css-dev-only-do-not-override-v9sov3 ant-select-dropdown-placement-bottomLeft"
+      class="ant-select-dropdown ant-select-dropdown-hidden ant-select-dropdown-placement-bottomLeft"
       style="--arrow-x: 0px; --arrow-y: 0px; left: 0px; top: 0px; box-sizing: border-box; min-width: 0; width: 0px; pointer-events: none;"
     >
       <div>
@@ -851,22 +854,13 @@ exports[`provision/CreateRole render create role 1`] = `
               </div>
             </div>
           </div>
-          <div
-            class="rc-virtual-list-scrollbar"
-            style="width: 8px; top: 0px; bottom: 0px; right: 0px; position: absolute; display: none;"
-          >
-            <div
-              class="rc-virtual-list-scrollbar-thumb"
-              style="width: 100%; height: 128px; top: 0px; left: 0px; position: absolute; background: rgba(0, 0, 0, 0.5); border-radius: 99px; cursor: pointer; user-select: none;"
-            />
-          </div>
         </div>
       </div>
     </div>
   </div>
   <div>
     <div
-      class="ant-select-dropdown ant-slide-up-appear ant-slide-up-appear-prepare ant-slide-up css-dev-only-do-not-override-v9sov3 ant-select-dropdown-placement-bottomLeft"
+      class="ant-select-dropdown ant-slide-up-appear ant-slide-up-appear-prepare ant-slide-up ant-select-dropdown-placement-bottomLeft"
       style="--arrow-x: 0px; --arrow-y: 0px; left: -1000vw; top: -1000vh; box-sizing: border-box; min-width: 0; width: 0px;"
     >
       <div>
@@ -1042,22 +1036,13 @@ exports[`provision/CreateRole render create role 1`] = `
               </div>
             </div>
           </div>
-          <div
-            class="rc-virtual-list-scrollbar"
-            style="width: 8px; top: 0px; bottom: 0px; right: 0px; position: absolute; display: none;"
-          >
-            <div
-              class="rc-virtual-list-scrollbar-thumb"
-              style="width: 100%; height: 128px; top: 0px; left: 0px; position: absolute; background: rgba(0, 0, 0, 0.5); border-radius: 99px; cursor: pointer; user-select: none;"
-            />
-          </div>
         </div>
       </div>
     </div>
   </div>
   <div>
     <div
-      class="ant-drawer ant-drawer-right css-dev-only-do-not-override-txh9fw ant-drawer-open"
+      class="ant-drawer ant-drawer-right ant-drawer-open"
       tabindex="-1"
     >
       <div
@@ -1103,34 +1088,36 @@ exports[`provision/CreateRole render create role 1`] = `
                 <span
                   aria-label="close"
                   class="anticon anticon-close"
+                  data-testid="basic-drawer-close-icon"
                   role="img"
                 >
                   <svg
                     aria-hidden="true"
                     data-icon="close"
                     fill="currentColor"
+                    fill-rule="evenodd"
                     focusable="false"
                     height="1em"
                     viewBox="64 64 896 896"
                     width="1em"
                   >
                     <path
-                      d="M563.8 512l262.5-312.9c4.4-5.2.7-13.1-6.1-13.1h-79.8c-4.7 0-9.2 2.1-12.3 5.7L511.6 449.8 295.1 191.7c-3-3.6-7.5-5.7-12.3-5.7H203c-6.8 0-10.5 7.9-6.1 13.1L459.4 512 196.9 824.9A7.95 7.95 0 00203 838h79.8c4.7 0 9.2-2.1 12.3-5.7l216.5-258.1 216.5 258.1c3 3.6 7.5 5.7 12.3 5.7h79.8c6.8 0 10.5-7.9 6.1-13.1L563.8 512z"
+                      d="M799.86 166.31c.02 0 .04.02.08.06l57.69 57.7c.04.03.05.05.06.08a.12.12 0 010 .06c0 .03-.02.05-.06.09L569.93 512l287.7 287.7c.04.04.05.06.06.09a.12.12 0 010 .07c0 .02-.02.04-.06.08l-57.7 57.69c-.03.04-.05.05-.07.06a.12.12 0 01-.07 0c-.03 0-.05-.02-.09-.06L512 569.93l-287.7 287.7c-.04.04-.06.05-.09.06a.12.12 0 01-.07 0c-.02 0-.04-.02-.08-.06l-57.69-57.7c-.04-.03-.05-.05-.06-.07a.12.12 0 010-.07c0-.03.02-.05.06-.09L454.07 512l-287.7-287.7c-.04-.04-.05-.06-.06-.09a.12.12 0 010-.07c0-.02.02-.04.06-.08l57.7-57.69c.03-.04.05-.05.07-.06a.12.12 0 01.07 0c.03 0 .05.02.09.06L512 454.07l287.7-287.7c.04-.04.06-.05.09-.06a.12.12 0 01.07 0z"
                     />
                   </svg>
                 </span>
               </div>
               <form
-                class="ant-form ant-form-vertical css-dev-only-do-not-override-txh9fw"
+                class="ant-form ant-form-vertical"
               >
                 <div
-                  class="ant-form-item css-dev-only-do-not-override-txh9fw"
+                  class="ant-form-item"
                 >
                   <div
-                    class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                    class="ant-row ant-form-item-row"
                   >
                     <div
-                      class="ant-col ant-form-item-label css-dev-only-do-not-override-txh9fw"
+                      class="ant-col ant-form-item-label"
                     >
                       <label
                         class="ant-form-item-required"
@@ -1141,7 +1128,7 @@ exports[`provision/CreateRole render create role 1`] = `
                       </label>
                     </div>
                     <div
-                      class="ant-col ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                      class="ant-col ant-form-item-control"
                     >
                       <div
                         class="ant-form-item-control-input"
@@ -1151,7 +1138,7 @@ exports[`provision/CreateRole render create role 1`] = `
                         >
                           <div
                             aria-required="true"
-                            class="ant-select ant-select-in-form-item basic-select-wrapper css-iy4o4x css-dev-only-do-not-override-v9sov3 ant-select-multiple ant-select-show-arrow ant-select-show-search"
+                            class="ant-select ant-select-in-form-item basic-select-wrapper css-iy4o4x ant-select-multiple ant-select-show-arrow ant-select-show-search"
                           >
                             <div
                               class="ant-select-selector"
@@ -1233,20 +1220,20 @@ exports[`provision/CreateRole render create role 1`] = `
                   </div>
                 </div>
                 <div
-                  class="ant-form-item database-form-item css-dev-only-do-not-override-txh9fw"
+                  class="ant-form-item database-form-item"
                 >
                   <div
-                    class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                    class="ant-row ant-form-item-row"
                   >
                     <div
-                      class="ant-col ant-form-item-label css-dev-only-do-not-override-txh9fw"
+                      class="ant-col ant-form-item-label"
                     >
                       <label
                         class=""
                         title=""
                       >
                         <div
-                          class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
+                          class="ant-space ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
                         >
                           <div
                             class="ant-space-item"
@@ -1284,7 +1271,7 @@ exports[`provision/CreateRole render create role 1`] = `
                       </label>
                     </div>
                     <div
-                      class="ant-col ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                      class="ant-col ant-form-item-control"
                     >
                       <div
                         class="ant-form-item-control-input"
@@ -1293,15 +1280,15 @@ exports[`provision/CreateRole render create role 1`] = `
                           class="ant-form-item-control-input-content"
                         >
                           <div
-                            class="ant-row ant-row-no-wrap css-dev-only-do-not-override-txh9fw"
+                            class="ant-row ant-row-no-wrap"
                           >
                             <div
-                              class="ant-col css-dev-only-do-not-override-txh9fw"
+                              class="ant-col"
                               style="flex: 0 0 180px; min-width: 0; margin-right: 12px;"
                             >
                               <div
                                 aria-required="true"
-                                class="ant-select ant-select-in-form-item basic-select-wrapper css-iy4o4x css-dev-only-do-not-override-v9sov3 ant-select-single ant-select-allow-clear ant-select-show-arrow ant-select-show-search"
+                                class="ant-select ant-select-in-form-item basic-select-wrapper css-iy4o4x ant-select-single ant-select-allow-clear ant-select-show-arrow ant-select-show-search"
                                 data-testid="database-form-item-database-0"
                               >
                                 <div
@@ -1361,11 +1348,11 @@ exports[`provision/CreateRole render create role 1`] = `
                               </div>
                             </div>
                             <div
-                              class="ant-col css-dev-only-do-not-override-txh9fw"
+                              class="ant-col"
                               style="flex: 1 1 auto; min-width: 0;"
                             >
                               <div
-                                class="ant-select ant-select-in-form-item basic-select-wrapper css-iy4o4x css-dev-only-do-not-override-v9sov3 ant-select-multiple ant-select-show-arrow ant-select-show-search"
+                                class="ant-select ant-select-in-form-item basic-select-wrapper css-iy4o4x ant-select-multiple ant-select-show-arrow ant-select-show-search"
                                 data-testid="database-form-item-schema-0"
                               >
                                 <div
@@ -1443,7 +1430,7 @@ exports[`provision/CreateRole render create role 1`] = `
                               </div>
                             </div>
                             <div
-                              class="ant-col css-dev-only-do-not-override-txh9fw"
+                              class="ant-col"
                               style="flex: 0 0 48px; min-width: 0;"
                             />
                           </div>
@@ -1453,13 +1440,13 @@ exports[`provision/CreateRole render create role 1`] = `
                   </div>
                 </div>
                 <div
-                  class="ant-form-item css-dev-only-do-not-override-txh9fw"
+                  class="ant-form-item"
                 >
                   <div
-                    class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                    class="ant-row ant-form-item-row"
                   >
                     <div
-                      class="ant-col ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                      class="ant-col ant-form-item-control"
                     >
                       <div
                         class="ant-form-item-control-input"
@@ -1468,7 +1455,7 @@ exports[`provision/CreateRole render create role 1`] = `
                           class="ant-form-item-control-input-content"
                         >
                           <button
-                            class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default form-list-add add-object-button basic-button-wrapper css-1719g3l"
+                            class="ant-btn ant-btn-default form-list-add add-object-button basic-button-wrapper css-1719g3l"
                             type="button"
                           >
                             <span
@@ -1501,14 +1488,14 @@ exports[`provision/CreateRole render create role 1`] = `
               class="ant-drawer-footer"
             >
               <div
-                class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+                class="ant-space ant-space-horizontal ant-space-align-center"
               >
                 <div
                   class="ant-space-item"
                   style="margin-right: 8px;"
                 >
                   <button
-                    class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default basic-button-wrapper css-geipcv"
+                    class="ant-btn ant-btn-default basic-button-wrapper css-geipcv"
                     type="button"
                   >
                     <span>
@@ -1520,7 +1507,7 @@ exports[`provision/CreateRole render create role 1`] = `
                   class="ant-space-item"
                 >
                   <button
-                    class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary object-privileges-modal-submit basic-button-wrapper css-geipcv"
+                    class="ant-btn ant-btn-primary object-privileges-modal-submit basic-button-wrapper css-geipcv"
                     type="button"
                   >
                     <span>
@@ -1631,7 +1618,7 @@ exports[`provision/CreateRole render create role 2`] = `
             class="css-bwn97z"
           >
             <span
-              class="ant-tag ant-tag-default pointer basic-tag-wrapper basic-default-tag-wrapper css-1mjwlcb css-dev-only-do-not-override-bj9uhl"
+              class="ant-tag ant-tag-default pointer basic-tag-wrapper basic-default-tag-wrapper css-1mjwlcb"
             >
               database-1.table-1
             </span>
@@ -1644,7 +1631,7 @@ exports[`provision/CreateRole render create role 2`] = `
             class="css-bwn97z"
           >
             <span
-              class="ant-tag ant-tag-default pointer basic-tag-wrapper basic-default-tag-wrapper css-1mjwlcb css-dev-only-do-not-override-bj9uhl"
+              class="ant-tag ant-tag-default pointer basic-tag-wrapper basic-default-tag-wrapper css-1mjwlcb"
             >
               ALL
             </span>
@@ -1658,14 +1645,14 @@ exports[`provision/CreateRole render create role 2`] = `
             class="css-new95e"
           >
             <div
-              class="ant-space css-dev-only-do-not-override-bj9uhl ant-space-horizontal ant-space-align-center"
+              class="ant-space ant-space-horizontal ant-space-align-center"
             >
               <div
                 class="ant-space-item"
                 style="margin-right: 8px;"
               >
                 <button
-                  class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                  class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
                   type="button"
                 >
                   <span>
@@ -1677,7 +1664,7 @@ exports[`provision/CreateRole render create role 2`] = `
                 class="ant-space-item"
               >
                 <button
-                  class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm ant-btn-dangerous actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                  class="ant-btn ant-btn-default ant-btn-sm ant-btn-dangerous actiontech-table-actions-button basic-button-wrapper css-geipcv"
                   type="button"
                 >
                   <span>
@@ -1706,13 +1693,14 @@ exports[`provision/CreateRole render init snap 1`] = `
         class="title"
       >
         <button
-          class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default basic-button-wrapper css-geipcv"
+          class="ant-btn ant-btn-default basic-button-wrapper css-geipcv"
           type="button"
         >
           <span
             class="ant-btn-icon"
           >
             <svg
+              data-testid="left-arrow-icon"
               height="16"
               viewBox="0 0 16 16"
               width="16"
@@ -1733,14 +1721,14 @@ exports[`provision/CreateRole render init snap 1`] = `
         class="extra"
       >
         <div
-          class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+          class="ant-space ant-space-horizontal ant-space-align-center"
         >
           <div
             class="ant-space-item"
             style="margin-right: 8px;"
           >
             <button
-              class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default basic-button-wrapper css-geipcv"
+              class="ant-btn ant-btn-default basic-button-wrapper css-geipcv"
               type="button"
             >
               <span>
@@ -1752,7 +1740,7 @@ exports[`provision/CreateRole render init snap 1`] = `
             class="ant-space-item"
           >
             <button
-              class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary basic-button-wrapper css-geipcv"
+              class="ant-btn ant-btn-primary basic-button-wrapper css-geipcv"
               type="button"
             >
               <span>
@@ -1767,24 +1755,24 @@ exports[`provision/CreateRole render init snap 1`] = `
       class="lazy-load-wrapper lazy-load-wrapper-show css-952l0m"
     >
       <form
-        class="ant-form ant-form-horizontal css-dev-only-do-not-override-txh9fw hasTopHeader css-19jfn7e"
+        class="ant-form ant-form-horizontal hasTopHeader css-19jfn7e"
       >
         <section
           class="css-bspaai"
         >
           <h3
-            class="ant-typography css-p50odb css-dev-only-do-not-override-txh9fw"
+            class="ant-typography css-p50odb"
           >
             创建角色
           </h3>
           <div
-            class="ant-form-item has-required-style css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+            class="ant-form-item has-required-style css-1jlm9cy"
           >
             <div
-              class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+              class="ant-row ant-form-item-row"
             >
               <div
-                class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left css-dev-only-do-not-override-txh9fw"
+                class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left"
               >
                 <label
                   class="ant-form-item-required ant-form-item-no-colon"
@@ -1795,7 +1783,7 @@ exports[`provision/CreateRole render init snap 1`] = `
                 </label>
               </div>
               <div
-                class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control"
               >
                 <div
                   class="ant-form-item-control-input"
@@ -1805,7 +1793,7 @@ exports[`provision/CreateRole render init snap 1`] = `
                   >
                     <div
                       aria-required="true"
-                      class="ant-select ant-select-in-form-item basic-select-wrapper css-iy4o4x css-dev-only-do-not-override-v9sov3 ant-select-single ant-select-show-arrow ant-select-disabled"
+                      class="ant-select ant-select-in-form-item basic-select-wrapper css-iy4o4x ant-select-single ant-select-show-arrow ant-select-disabled"
                     >
                       <div
                         class="ant-select-selector"
@@ -1873,13 +1861,13 @@ exports[`provision/CreateRole render init snap 1`] = `
             </div>
           </div>
           <div
-            class="ant-form-item css-1jlm9cy css-dev-only-do-not-override-txh9fw ant-form-item-hidden"
+            class="ant-form-item css-1jlm9cy ant-form-item-hidden"
           >
             <div
-              class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+              class="ant-row ant-form-item-row"
             >
               <div
-                class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control"
               >
                 <div
                   class="ant-form-item-control-input"
@@ -1888,7 +1876,7 @@ exports[`provision/CreateRole render init snap 1`] = `
                     class="ant-form-item-control-input-content"
                   >
                     <input
-                      class="ant-input css-dev-only-do-not-override-ywkr0o basic-input-wrapper css-1pd1cd5"
+                      class="ant-input basic-input-wrapper css-1pd1cd5"
                       id="dbType"
                       placeholder="请输入{{name}}"
                       type="text"
@@ -1900,13 +1888,13 @@ exports[`provision/CreateRole render init snap 1`] = `
             </div>
           </div>
           <div
-            class="ant-form-item has-required-style css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+            class="ant-form-item has-required-style css-1jlm9cy"
           >
             <div
-              class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+              class="ant-row ant-form-item-row"
             >
               <div
-                class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left css-dev-only-do-not-override-txh9fw"
+                class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left"
               >
                 <label
                   class="ant-form-item-required ant-form-item-no-colon"
@@ -1917,7 +1905,7 @@ exports[`provision/CreateRole render init snap 1`] = `
                 </label>
               </div>
               <div
-                class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control"
               >
                 <div
                   class="ant-form-item-control-input"
@@ -1927,7 +1915,7 @@ exports[`provision/CreateRole render init snap 1`] = `
                   >
                     <input
                       aria-required="true"
-                      class="ant-input css-dev-only-do-not-override-ywkr0o basic-input-wrapper css-1pd1cd5"
+                      class="ant-input basic-input-wrapper css-1pd1cd5"
                       id="roleName"
                       placeholder="请输入{{name}}"
                       type="text"
@@ -1939,13 +1927,13 @@ exports[`provision/CreateRole render init snap 1`] = `
             </div>
           </div>
           <div
-            class="ant-form-item has-label-tip css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+            class="ant-form-item has-label-tip css-1jlm9cy"
           >
             <div
-              class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+              class="ant-row ant-form-item-row"
             >
               <div
-                class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left css-dev-only-do-not-override-txh9fw"
+                class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left"
               >
                 <label
                   class="ant-form-item-no-colon"
@@ -1967,7 +1955,7 @@ exports[`provision/CreateRole render init snap 1`] = `
                 </label>
               </div>
               <div
-                class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control"
               >
                 <div
                   class="ant-form-item-control-input"
@@ -1976,7 +1964,7 @@ exports[`provision/CreateRole render init snap 1`] = `
                     class="ant-form-item-control-input-content"
                   >
                     <div
-                      class="ant-select ant-select-in-form-item basic-select-wrapper css-iy4o4x css-dev-only-do-not-override-v9sov3 ant-select-multiple ant-select-allow-clear ant-select-show-arrow ant-select-show-search"
+                      class="ant-select ant-select-in-form-item basic-select-wrapper css-iy4o4x ant-select-multiple ant-select-allow-clear ant-select-show-arrow ant-select-show-search"
                     >
                       <div
                         class="ant-select-selector"
@@ -2057,13 +2045,13 @@ exports[`provision/CreateRole render init snap 1`] = `
             </div>
           </div>
           <div
-            class="ant-form-item has-label-tip css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+            class="ant-form-item has-label-tip css-1jlm9cy"
           >
             <div
-              class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+              class="ant-row ant-form-item-row"
             >
               <div
-                class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left css-dev-only-do-not-override-txh9fw"
+                class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left"
               >
                 <label
                   class="ant-form-item-no-colon"
@@ -2085,7 +2073,7 @@ exports[`provision/CreateRole render init snap 1`] = `
                 </label>
               </div>
               <div
-                class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control"
               >
                 <div
                   class="ant-form-item-control-input"
@@ -2094,7 +2082,7 @@ exports[`provision/CreateRole render init snap 1`] = `
                     class="ant-form-item-control-input-content"
                   >
                     <div
-                      class="ant-select ant-select-in-form-item basic-select-wrapper css-iy4o4x css-dev-only-do-not-override-v9sov3 ant-select-multiple ant-select-show-arrow ant-select-loading ant-select-show-search"
+                      class="ant-select ant-select-in-form-item basic-select-wrapper css-iy4o4x ant-select-multiple ant-select-show-arrow ant-select-loading ant-select-show-search"
                     >
                       <div
                         class="ant-select-selector"
@@ -2175,13 +2163,13 @@ exports[`provision/CreateRole render init snap 1`] = `
             </div>
           </div>
           <div
-            class="ant-form-item css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+            class="ant-form-item css-1jlm9cy"
           >
             <div
-              class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+              class="ant-row ant-form-item-row"
             >
               <div
-                class="ant-col ant-col-24 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                class="ant-col ant-col-24 ant-form-item-control"
               >
                 <div
                   class="ant-form-item-control-input"
@@ -2201,14 +2189,14 @@ exports[`provision/CreateRole render init snap 1`] = `
                           对象权限概览
                         </span>
                         <div
-                          class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+                          class="ant-space ant-space-horizontal ant-space-align-center"
                         >
                           <div
                             class="ant-space-item"
                             style="margin-right: 8px;"
                           >
                             <button
-                              class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default ant-btn-dangerous basic-button-wrapper css-geipcv"
+                              class="ant-btn ant-btn-default ant-btn-dangerous basic-button-wrapper css-geipcv"
                               disabled=""
                               type="button"
                             >
@@ -2221,7 +2209,7 @@ exports[`provision/CreateRole render init snap 1`] = `
                             class="ant-space-item"
                           >
                             <button
-                              class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary basic-button-wrapper css-geipcv"
+                              class="ant-btn ant-btn-primary basic-button-wrapper css-geipcv"
                               type="button"
                             >
                               <span>
@@ -2232,10 +2220,10 @@ exports[`provision/CreateRole render init snap 1`] = `
                         </div>
                       </section>
                       <div
-                        class="ant-table-wrapper actiontech-table-namespace css-fxd6ka css-dev-only-do-not-override-bj9uhl"
+                        class="ant-table-wrapper actiontech-table-namespace css-fxd6ka"
                       >
                         <div
-                          class="ant-spin-nested-loading css-dev-only-do-not-override-bj9uhl"
+                          class="ant-spin-nested-loading"
                         >
                           <div
                             class="ant-spin-container"

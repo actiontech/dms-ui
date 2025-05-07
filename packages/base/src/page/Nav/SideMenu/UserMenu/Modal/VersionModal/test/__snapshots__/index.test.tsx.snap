@@ -129,7 +129,7 @@ exports[`base/Nav/SideMenu/UserMenu/VersionModal-ee render snap when open is tru
                           style="margin-bottom: 8px;"
                         >
                           <article
-                            class="ant-typography css-dev-only-do-not-override-txh9fw"
+                            class="ant-typography"
                           >
                             PROVISION: 
                             -
@@ -383,7 +383,7 @@ exports[`base/Nav/SideMenu/UserMenu/VersionModal-ee render snap when open is tru
                           style="margin-bottom: 8px;"
                         >
                           <article
-                            class="ant-typography css-dev-only-do-not-override-txh9fw"
+                            class="ant-typography"
                           >
                             PROVISION: 
                             -

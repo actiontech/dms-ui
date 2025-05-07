@@ -52,11 +52,7 @@ exports[`test base/home/CEDefaultScene should match snapshot when role is admin 
           </div>
         </div>
         <div
-<<<<<<< HEAD
-          class="ant-row ant-row-no-wrap"
-=======
-          class="ant-row css-dev-only-do-not-override-txh9fw"
->>>>>>> 3ed57341dae3a5998f1b17c8ee6f1a792c4695b5
+          class="ant-row"
         >
           <div
             class="ant-col ant-col-8 content-wrapper"
@@ -207,11 +203,7 @@ exports[`test base/home/CEDefaultScene should match snapshot when role is admin 
           </div>
         </div>
         <div
-<<<<<<< HEAD
-          class="ant-row ant-row-no-wrap"
-=======
-          class="ant-row css-dev-only-do-not-override-txh9fw"
->>>>>>> 3ed57341dae3a5998f1b17c8ee6f1a792c4695b5
+          class="ant-row"
         >
           <div
             class="ant-col ant-col-8 content-wrapper"
@@ -305,11 +297,7 @@ exports[`test base/home/CEDefaultScene should match snapshot when role is admin 
           </div>
         </div>
         <div
-<<<<<<< HEAD
-          class="ant-row ant-row-no-wrap"
-=======
-          class="ant-row css-dev-only-do-not-override-txh9fw"
->>>>>>> 3ed57341dae3a5998f1b17c8ee6f1a792c4695b5
+          class="ant-row"
         >
           <div
             class="ant-col ant-col-8 content-wrapper"
@@ -420,7 +408,7 @@ exports[`test base/home/CEDefaultScene should match snapshot when role is admin 
               兼顾账号发现及管理，监控数据源账号安全
             </div>
             <div
-              class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center actions"
+              class="ant-space ant-space-horizontal ant-space-align-center actions"
               style="flex-wrap: wrap; margin-bottom: -8px;"
             >
               <div
@@ -428,11 +416,11 @@ exports[`test base/home/CEDefaultScene should match snapshot when role is admin 
                 style="margin-right: 8px; padding-bottom: 8px;"
               >
                 <button
-                  class="ant-btn css-dev-only-do-not-override-qzvrju ant-btn-default ant-btn-sm guidance-button-wrapper css-aj0zfl"
+                  class="ant-btn ant-btn-default ant-btn-sm guidance-button-wrapper css-1jtuni2"
                   type="button"
                 >
                   <div
-                    class="ant-space css-dev-only-do-not-override-qzvrju ant-space-horizontal ant-space-align-center"
+                    class="ant-space ant-space-horizontal ant-space-align-center"
                   >
                     <div
                       class="ant-space-item"
@@ -447,11 +435,11 @@ exports[`test base/home/CEDefaultScene should match snapshot when role is admin 
                 style="padding-bottom: 8px;"
               >
                 <button
-                  class="ant-btn css-dev-only-do-not-override-qzvrju ant-btn-default ant-btn-sm guidance-button-wrapper css-aj0zfl"
+                  class="ant-btn ant-btn-default ant-btn-sm guidance-button-wrapper css-1jtuni2"
                   type="button"
                 >
                   <div
-                    class="ant-space css-dev-only-do-not-override-qzvrju ant-space-horizontal ant-space-align-center"
+                    class="ant-space ant-space-horizontal ant-space-align-center"
                   >
                     <div
                       class="ant-space-item"
@@ -464,7 +452,7 @@ exports[`test base/home/CEDefaultScene should match snapshot when role is admin 
             </div>
           </div>
           <div
-            class="ant-col ant-col-8 content-wrapper css-dev-only-do-not-override-txh9fw"
+            class="ant-col ant-col-8 content-wrapper"
           >
             <div
               class="sub-title"
@@ -556,11 +544,7 @@ exports[`test base/home/CEDefaultScene should match snapshot when role is admin 
           </div>
         </div>
         <div
-<<<<<<< HEAD
-          class="ant-row ant-row-no-wrap"
-=======
-          class="ant-row css-dev-only-do-not-override-txh9fw"
->>>>>>> 3ed57341dae3a5998f1b17c8ee6f1a792c4695b5
+          class="ant-row"
         >
           <div
             class="ant-col ant-col-8 content-wrapper"
@@ -677,7 +661,7 @@ exports[`test base/home/CEDefaultScene should match snapshot when role is admin 
             </div>
           </div>
           <div
-            class="ant-col ant-col-8 content-wrapper css-dev-only-do-not-override-txh9fw"
+            class="ant-col ant-col-8 content-wrapper"
           >
             <div
               class="sub-title"
@@ -690,7 +674,7 @@ exports[`test base/home/CEDefaultScene should match snapshot when role is admin 
               开启脱敏，保障敏感数据安全
             </div>
             <div
-              class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center actions"
+              class="ant-space ant-space-horizontal ant-space-align-center actions"
               style="flex-wrap: wrap; margin-bottom: -8px;"
             >
               <div
@@ -698,11 +682,11 @@ exports[`test base/home/CEDefaultScene should match snapshot when role is admin 
                 style="padding-bottom: 8px;"
               >
                 <button
-                  class="ant-btn css-dev-only-do-not-override-qzvrju ant-btn-default ant-btn-sm guidance-button-wrapper css-aj0zfl"
+                  class="ant-btn ant-btn-default ant-btn-sm guidance-button-wrapper css-1jtuni2"
                   type="button"
                 >
                   <div
-                    class="ant-space css-dev-only-do-not-override-qzvrju ant-space-horizontal ant-space-align-center"
+                    class="ant-space ant-space-horizontal ant-space-align-center"
                   >
                     <div
                       class="ant-space-item"
@@ -767,11 +751,7 @@ exports[`test base/home/CEDefaultScene should match snapshot when role is admin 
           </div>
         </div>
         <div
-<<<<<<< HEAD
-          class="ant-row ant-row-no-wrap"
-=======
-          class="ant-row css-dev-only-do-not-override-txh9fw"
->>>>>>> 3ed57341dae3a5998f1b17c8ee6f1a792c4695b5
+          class="ant-row"
         >
           <div
             class="ant-col ant-col-8 content-wrapper"
@@ -875,11 +855,7 @@ exports[`test base/home/CEDefaultScene should match snapshot when role is not ad
           </div>
         </div>
         <div
-<<<<<<< HEAD
-          class="ant-row ant-row-no-wrap"
-=======
-          class="ant-row css-dev-only-do-not-override-txh9fw"
->>>>>>> 3ed57341dae3a5998f1b17c8ee6f1a792c4695b5
+          class="ant-row"
         >
           <div
             class="ant-col ant-col-8 content-wrapper"

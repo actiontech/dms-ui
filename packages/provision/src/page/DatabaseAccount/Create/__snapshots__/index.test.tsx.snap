@@ -30,7 +30,7 @@ exports[`provision/DatabaseAccount/Create create account 1`] = `
             href="/provision/project/700300/database-account"
           >
             <button
-              class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default basic-button-wrapper css-geipcv"
+              class="ant-btn ant-btn-default basic-button-wrapper css-geipcv"
               type="button"
             >
               <span
@@ -58,14 +58,14 @@ exports[`provision/DatabaseAccount/Create create account 1`] = `
           class="extra"
         >
           <div
-            class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+            class="ant-space ant-space-horizontal ant-space-align-center"
           >
             <div
               class="ant-space-item"
               style="margin-right: 8px;"
             >
               <button
-                class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default basic-button-wrapper css-geipcv"
+                class="ant-btn ant-btn-default basic-button-wrapper css-geipcv"
                 type="button"
               >
                 <span>
@@ -77,7 +77,7 @@ exports[`provision/DatabaseAccount/Create create account 1`] = `
               class="ant-space-item"
             >
               <button
-                class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary create-account-submit basic-button-wrapper css-geipcv"
+                class="ant-btn ant-btn-primary create-account-submit basic-button-wrapper css-geipcv"
                 type="button"
               >
                 <span>
@@ -89,13 +89,13 @@ exports[`provision/DatabaseAccount/Create create account 1`] = `
         </div>
       </div>
       <form
-        class="ant-form ant-form-horizontal css-dev-only-do-not-override-txh9fw hasTopHeader clearPaddingBottom css-19jfn7e"
+        class="ant-form ant-form-horizontal hasTopHeader clearPaddingBottom css-19jfn7e"
       >
         <section
           class="css-bv423q"
         >
           <h3
-            class="ant-typography css-p50odb css-dev-only-do-not-override-txh9fw"
+            class="ant-typography css-p50odb"
           >
             <span
               class="anticon title-icon"
@@ -120,18 +120,18 @@ exports[`provision/DatabaseAccount/Create create account 1`] = `
             创建数据库账号
           </h3>
           <h1
-            class="ant-typography css-1eepp70 css-dev-only-do-not-override-txh9fw"
+            class="ant-typography css-1eepp70"
           >
             账户基本信息
           </h1>
           <div
-            class="ant-form-item has-required-style css-1jlm9cy css-dev-only-do-not-override-txh9fw ant-form-item-has-success"
+            class="ant-form-item has-required-style css-1jlm9cy ant-form-item-has-success"
           >
             <div
-              class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+              class="ant-row ant-form-item-row"
             >
               <div
-                class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left css-dev-only-do-not-override-txh9fw"
+                class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left"
               >
                 <label
                   class="ant-form-item-required ant-form-item-no-colon"
@@ -142,7 +142,7 @@ exports[`provision/DatabaseAccount/Create create account 1`] = `
                 </label>
               </div>
               <div
-                class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control"
               >
                 <div
                   class="ant-form-item-control-input"
@@ -152,7 +152,7 @@ exports[`provision/DatabaseAccount/Create create account 1`] = `
                   >
                     <div
                       aria-required="true"
-                      class="ant-select ant-select-in-form-item ant-select-status-success basic-select-wrapper css-iy4o4x css-dev-only-do-not-override-v9sov3 ant-select-single ant-select-show-arrow ant-select-show-search"
+                      class="ant-select ant-select-in-form-item ant-select-status-success basic-select-wrapper css-iy4o4x ant-select-single ant-select-show-arrow ant-select-show-search"
                     >
                       <div
                         class="ant-select-selector"
@@ -216,13 +216,13 @@ exports[`provision/DatabaseAccount/Create create account 1`] = `
             </div>
           </div>
           <div
-            class="ant-form-item has-required-style css-1jlm9cy css-dev-only-do-not-override-txh9fw ant-form-item-has-success"
+            class="ant-form-item has-required-style css-1jlm9cy ant-form-item-has-success"
           >
             <div
-              class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+              class="ant-row ant-form-item-row"
             >
               <div
-                class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left css-dev-only-do-not-override-txh9fw"
+                class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left"
               >
                 <label
                   class="ant-form-item-required ant-form-item-no-colon"
@@ -233,7 +233,7 @@ exports[`provision/DatabaseAccount/Create create account 1`] = `
                 </label>
               </div>
               <div
-                class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control"
               >
                 <div
                   class="ant-form-item-control-input"
@@ -242,7 +242,7 @@ exports[`provision/DatabaseAccount/Create create account 1`] = `
                     class="ant-form-item-control-input-content"
                   >
                     <div
-                      class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center css-af3nlx"
+                      class="ant-space ant-space-horizontal ant-space-align-center css-af3nlx"
                     >
                       <div
                         class="ant-space-item"
@@ -250,7 +250,7 @@ exports[`provision/DatabaseAccount/Create create account 1`] = `
                       >
                         <div
                           aria-required="true"
-                          class="ant-select ant-select-in-form-item ant-select-status-success basic-select-wrapper css-iy4o4x css-dev-only-do-not-override-v9sov3 ant-select-single ant-select-allow-clear ant-select-show-arrow ant-select-show-search"
+                          class="ant-select ant-select-in-form-item ant-select-status-success basic-select-wrapper css-iy4o4x ant-select-single ant-select-allow-clear ant-select-show-arrow ant-select-show-search"
                         >
                           <div
                             class="ant-select-selector"
@@ -331,13 +331,13 @@ exports[`provision/DatabaseAccount/Create create account 1`] = `
                         class="ant-space-item"
                       >
                         <div
-                          class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center ant-tooltip-open basic-tooltips-wrapper css-4jbtl9"
+                          class="ant-space ant-space-horizontal ant-space-align-center ant-tooltip-open basic-tooltips-wrapper css-4jbtl9"
                         >
                           <div
                             class="ant-space-item"
                           >
                             <button
-                              class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default ant-btn-icon-only basic-button-wrapper css-iieact"
+                              class="ant-btn ant-btn-default ant-btn-icon-only basic-button-wrapper css-iieact"
                               style="margin-left: 12px;"
                               type="button"
                             >
@@ -372,13 +372,13 @@ exports[`provision/DatabaseAccount/Create create account 1`] = `
             </div>
           </div>
           <div
-            class="ant-form-item css-1jlm9cy css-dev-only-do-not-override-txh9fw ant-form-item-hidden"
+            class="ant-form-item css-1jlm9cy ant-form-item-hidden"
           >
             <div
-              class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+              class="ant-row ant-form-item-row"
             >
               <div
-                class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control"
               >
                 <div
                   class="ant-form-item-control-input"
@@ -387,7 +387,7 @@ exports[`provision/DatabaseAccount/Create create account 1`] = `
                     class="ant-form-item-control-input-content"
                   >
                     <input
-                      class="ant-input css-dev-only-do-not-override-ywkr0o basic-input-wrapper css-1pd1cd5"
+                      class="ant-input basic-input-wrapper css-1pd1cd5"
                       id="dbType"
                       placeholder="请输入{{name}}"
                       type="text"
@@ -399,13 +399,13 @@ exports[`provision/DatabaseAccount/Create create account 1`] = `
             </div>
           </div>
           <div
-            class="ant-form-item has-required-style has-label-tip css-1jlm9cy css-dev-only-do-not-override-txh9fw ant-form-item-has-success"
+            class="ant-form-item has-required-style has-label-tip css-1jlm9cy ant-form-item-has-success"
           >
             <div
-              class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+              class="ant-row ant-form-item-row"
             >
               <div
-                class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left css-dev-only-do-not-override-txh9fw"
+                class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left"
               >
                 <label
                   class="ant-form-item-required ant-form-item-no-colon"
@@ -427,7 +427,7 @@ exports[`provision/DatabaseAccount/Create create account 1`] = `
                 </label>
               </div>
               <div
-                class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control"
               >
                 <div
                   class="ant-form-item-control-input"
@@ -437,7 +437,7 @@ exports[`provision/DatabaseAccount/Create create account 1`] = `
                   >
                     <input
                       aria-required="true"
-                      class="ant-input ant-input-status-success css-dev-only-do-not-override-ywkr0o basic-input-wrapper css-1pd1cd5"
+                      class="ant-input ant-input-status-success basic-input-wrapper css-1pd1cd5"
                       id="username"
                       placeholder="请输入{{name}}"
                       type="text"
@@ -449,13 +449,13 @@ exports[`provision/DatabaseAccount/Create create account 1`] = `
             </div>
           </div>
           <div
-            class="ant-form-item has-required-style has-label-tip css-1jlm9cy css-dev-only-do-not-override-txh9fw ant-form-item-has-success"
+            class="ant-form-item has-required-style has-label-tip css-1jlm9cy ant-form-item-has-success"
           >
             <div
-              class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+              class="ant-row ant-form-item-row"
             >
               <div
-                class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left css-dev-only-do-not-override-txh9fw"
+                class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left"
               >
                 <label
                   class="ant-form-item-required ant-form-item-no-colon"
@@ -477,7 +477,7 @@ exports[`provision/DatabaseAccount/Create create account 1`] = `
                 </label>
               </div>
               <div
-                class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control"
               >
                 <div
                   class="ant-form-item-control-input"
@@ -486,11 +486,11 @@ exports[`provision/DatabaseAccount/Create create account 1`] = `
                     class="ant-form-item-control-input-content"
                   >
                     <span
-                      class="ant-input-affix-wrapper ant-input-affix-wrapper-focused ant-input-password basic-input-wrapper action-password-input css-1x7fd4z css-dev-only-do-not-override-txh9fw"
+                      class="ant-input-affix-wrapper ant-input-affix-wrapper-focused ant-input-password basic-input-wrapper action-password-input css-1x7fd4z ant-input-affix-wrapper-status-success"
                     >
                       <input
                         aria-required="true"
-                        class="ant-input css-dev-only-do-not-override-txh9fw"
+                        class="ant-input"
                         id="password"
                         placeholder="请输入{{name}}"
                         type="password"
@@ -523,13 +523,13 @@ exports[`provision/DatabaseAccount/Create create account 1`] = `
                           </svg>
                         </span>
                         <div
-                          class="ant-space css-dev-only-do-not-override-ywkr0o ant-space-horizontal ant-space-align-center ant-tooltip-open basic-tooltips-wrapper css-4jbtl9"
+                          class="ant-space ant-space-horizontal ant-space-align-center ant-tooltip-open basic-tooltips-wrapper css-4jbtl9"
                         >
                           <div
                             class="ant-space-item"
                           >
                             <button
-                              class="ant-btn css-dev-only-do-not-override-hcs8ws ant-btn-primary ant-btn-sm basic-button-wrapper css-geipcv"
+                              class="ant-btn ant-btn-primary ant-btn-sm basic-button-wrapper css-geipcv"
                               type="button"
                             >
                               <span>
@@ -546,13 +546,13 @@ exports[`provision/DatabaseAccount/Create create account 1`] = `
             </div>
           </div>
           <div
-            class="ant-form-item has-required-style has-label-tip css-1jlm9cy css-dev-only-do-not-override-txh9fw ant-form-item-has-success"
+            class="ant-form-item has-required-style has-label-tip css-1jlm9cy ant-form-item-has-success"
           >
             <div
-              class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+              class="ant-row ant-form-item-row"
             >
               <div
-                class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left css-dev-only-do-not-override-txh9fw"
+                class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left"
               >
                 <label
                   class="ant-form-item-required ant-form-item-no-colon"
@@ -574,7 +574,7 @@ exports[`provision/DatabaseAccount/Create create account 1`] = `
                 </label>
               </div>
               <div
-                class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control"
               >
                 <div
                   class="ant-form-item-control-input"
@@ -583,11 +583,11 @@ exports[`provision/DatabaseAccount/Create create account 1`] = `
                     class="ant-form-item-control-input-content"
                   >
                     <span
-                      class="ant-input-affix-wrapper ant-input-password basic-input-wrapper css-1pd1cd5 css-dev-only-do-not-override-txh9fw"
+                      class="ant-input-affix-wrapper ant-input-password basic-input-wrapper css-1pd1cd5 ant-input-affix-wrapper-status-success"
                     >
                       <input
                         aria-required="true"
-                        class="ant-input css-dev-only-do-not-override-txh9fw"
+                        class="ant-input"
                         id="confirm_password"
                         placeholder="请输入{{name}}"
                         type="password"
@@ -627,13 +627,13 @@ exports[`provision/DatabaseAccount/Create create account 1`] = `
             </div>
           </div>
           <div
-            class="ant-form-item  css-1jlm9cy css-dev-only-do-not-override-txh9fw ant-form-item-has-success"
+            class="ant-form-item css-1jlm9cy ant-form-item-has-success"
           >
             <div
-              class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+              class="ant-row ant-form-item-row"
             >
               <div
-                class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left css-dev-only-do-not-override-txh9fw"
+                class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left"
               >
                 <label
                   class="ant-form-item-no-colon"
@@ -654,7 +654,7 @@ exports[`provision/DatabaseAccount/Create create account 1`] = `
                 </label>
               </div>
               <div
-                class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control"
               >
                 <div
                   class="ant-form-item-control-input"
@@ -663,7 +663,7 @@ exports[`provision/DatabaseAccount/Create create account 1`] = `
                     class="ant-form-item-control-input-content"
                   >
                     <input
-                      class="ant-input ant-input-status-success css-dev-only-do-not-override-ywkr0o basic-input-wrapper css-1pd1cd5"
+                      class="ant-input ant-input-status-success basic-input-wrapper css-1pd1cd5"
                       id="additionalParams_hostname"
                       placeholder="请输入{{name}}"
                       type="text"
@@ -675,13 +675,13 @@ exports[`provision/DatabaseAccount/Create create account 1`] = `
             </div>
           </div>
           <div
-            class="ant-form-item has-required-style has-label-tip css-1jlm9cy css-dev-only-do-not-override-txh9fw ant-form-item-has-success"
+            class="ant-form-item has-required-style has-label-tip css-1jlm9cy ant-form-item-has-success"
           >
             <div
-              class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+              class="ant-row ant-form-item-row"
             >
               <div
-                class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left css-dev-only-do-not-override-txh9fw"
+                class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left"
               >
                 <label
                   class="ant-form-item-required ant-form-item-no-colon"
@@ -703,7 +703,7 @@ exports[`provision/DatabaseAccount/Create create account 1`] = `
                 </label>
               </div>
               <div
-                class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control"
               >
                 <div
                   class="ant-form-item-control-input"
@@ -713,7 +713,7 @@ exports[`provision/DatabaseAccount/Create create account 1`] = `
                   >
                     <div
                       aria-required="true"
-                      class="ant-select ant-select-in-form-item ant-select-status-success basic-select-wrapper css-iy4o4x css-dev-only-do-not-override-v9sov3 ant-select-single ant-select-show-arrow"
+                      class="ant-select ant-select-in-form-item ant-select-status-success basic-select-wrapper css-iy4o4x ant-select-single ant-select-show-arrow"
                     >
                       <div
                         class="ant-select-selector"
@@ -780,13 +780,13 @@ exports[`provision/DatabaseAccount/Create create account 1`] = `
             </div>
           </div>
           <div
-            class="ant-form-item has-required-style has-label-tip css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+            class="ant-form-item has-required-style has-label-tip css-1jlm9cy"
           >
             <div
-              class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+              class="ant-row ant-form-item-row"
             >
               <div
-                class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left css-dev-only-do-not-override-txh9fw"
+                class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left"
               >
                 <label
                   class="ant-form-item-required ant-form-item-no-colon"
@@ -808,7 +808,7 @@ exports[`provision/DatabaseAccount/Create create account 1`] = `
                 </label>
               </div>
               <div
-                class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control"
               >
                 <div
                   class="ant-form-item-control-input"
@@ -817,7 +817,7 @@ exports[`provision/DatabaseAccount/Create create account 1`] = `
                     class="ant-form-item-control-input-content"
                   >
                     <div
-                      class="ant-input-number ant-input-number-lg ant-input-number-in-form-item css-dev-only-do-not-override-ezmdel basic-inputNumber-wrapper css-1fd5hnt"
+                      class="ant-input-number ant-input-number-lg ant-input-number-in-form-item basic-inputNumber-wrapper css-1fd5hnt"
                     >
                       <div
                         class="ant-input-number-handler-wrap"
@@ -898,13 +898,13 @@ exports[`provision/DatabaseAccount/Create create account 1`] = `
             </div>
           </div>
           <div
-            class="ant-form-item has-required-style has-label-tip css-1jlm9cy css-dev-only-do-not-override-txh9fw ant-form-item-has-success"
+            class="ant-form-item has-required-style has-label-tip css-1jlm9cy ant-form-item-has-success"
           >
             <div
-              class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+              class="ant-row ant-form-item-row"
             >
               <div
-                class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left css-dev-only-do-not-override-txh9fw"
+                class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left"
               >
                 <label
                   class="ant-form-item-required ant-form-item-no-colon"
@@ -926,7 +926,7 @@ exports[`provision/DatabaseAccount/Create create account 1`] = `
                 </label>
               </div>
               <div
-                class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control"
               >
                 <div
                   class="ant-form-item-control-input"
@@ -936,11 +936,11 @@ exports[`provision/DatabaseAccount/Create create account 1`] = `
                   >
                     <div
                       aria-required="true"
-                      class="ant-radio-group ant-radio-group-outline css-dev-only-do-not-override-txh9fw"
+                      class="ant-radio-group ant-radio-group-outline"
                       id="password_expiration_policy"
                     >
                       <label
-                        class="ant-radio-wrapper ant-radio-wrapper-checked ant-radio-wrapper-in-form-item css-dev-only-do-not-override-txh9fw"
+                        class="ant-radio-wrapper ant-radio-wrapper-checked ant-radio-wrapper-in-form-item"
                       >
                         <span
                           class="ant-radio ant-radio-checked"
@@ -959,7 +959,7 @@ exports[`provision/DatabaseAccount/Create create account 1`] = `
                         </span>
                       </label>
                       <label
-                        class="ant-radio-wrapper ant-radio-wrapper-in-form-item css-dev-only-do-not-override-txh9fw"
+                        class="ant-radio-wrapper ant-radio-wrapper-in-form-item"
                       >
                         <span
                           class="ant-radio"
@@ -985,13 +985,13 @@ exports[`provision/DatabaseAccount/Create create account 1`] = `
             </div>
           </div>
           <div
-            class="ant-form-item has-label-tip css-1jlm9cy css-dev-only-do-not-override-txh9fw ant-form-item-has-success"
+            class="ant-form-item has-label-tip css-1jlm9cy ant-form-item-has-success"
           >
             <div
-              class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+              class="ant-row ant-form-item-row"
             >
               <div
-                class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left css-dev-only-do-not-override-txh9fw"
+                class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left"
               >
                 <label
                   class="ant-form-item-no-colon"
@@ -1013,7 +1013,7 @@ exports[`provision/DatabaseAccount/Create create account 1`] = `
                 </label>
               </div>
               <div
-                class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control"
               >
                 <div
                   class="ant-form-item-control-input"
@@ -1022,7 +1022,7 @@ exports[`provision/DatabaseAccount/Create create account 1`] = `
                     class="ant-form-item-control-input-content"
                   >
                     <textarea
-                      class="ant-input css-dev-only-do-not-override-txh9fw basic-input-wrapper css-1pd1cd5"
+                      class="ant-input ant-input-status-success basic-input-wrapper css-1pd1cd5"
                       id="explanation"
                       placeholder="点击添加账户说明（选填）"
                       style="resize: none; height: -70px; min-height: -6px; max-height: -70px;"
@@ -1035,18 +1035,18 @@ exports[`provision/DatabaseAccount/Create create account 1`] = `
             </div>
           </div>
           <h1
-            class="ant-typography css-1eepp70 css-dev-only-do-not-override-txh9fw"
+            class="ant-typography css-1eepp70"
           >
             数据权限
           </h1>
           <div
-            class="ant-form-item has-label-tip css-1jlm9cy css-dev-only-do-not-override-txh9fw ant-form-item-has-success"
+            class="ant-form-item has-label-tip css-1jlm9cy ant-form-item-has-success"
           >
             <div
-              class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+              class="ant-row ant-form-item-row"
             >
               <div
-                class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left css-dev-only-do-not-override-txh9fw"
+                class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left"
               >
                 <label
                   class="ant-form-item-no-colon"
@@ -1068,7 +1068,7 @@ exports[`provision/DatabaseAccount/Create create account 1`] = `
                 </label>
               </div>
               <div
-                class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control"
               >
                 <div
                   class="ant-form-item-control-input"
@@ -1077,7 +1077,7 @@ exports[`provision/DatabaseAccount/Create create account 1`] = `
                     class="ant-form-item-control-input-content"
                   >
                     <div
-                      class="ant-select ant-select-in-form-item ant-select-status-success basic-select-wrapper css-iy4o4x css-dev-only-do-not-override-v9sov3 ant-select-multiple ant-select-allow-clear ant-select-show-arrow ant-select-show-search"
+                      class="ant-select ant-select-in-form-item ant-select-status-success basic-select-wrapper css-iy4o4x ant-select-multiple ant-select-allow-clear ant-select-show-arrow ant-select-show-search"
                     >
                       <div
                         class="ant-select-selector"
@@ -1113,13 +1113,14 @@ exports[`provision/DatabaseAccount/Create create account 1`] = `
                                     aria-hidden="true"
                                     data-icon="close"
                                     fill="currentColor"
+                                    fill-rule="evenodd"
                                     focusable="false"
                                     height="1em"
                                     viewBox="64 64 896 896"
                                     width="1em"
                                   >
                                     <path
-                                      d="M563.8 512l262.5-312.9c4.4-5.2.7-13.1-6.1-13.1h-79.8c-4.7 0-9.2 2.1-12.3 5.7L511.6 449.8 295.1 191.7c-3-3.6-7.5-5.7-12.3-5.7H203c-6.8 0-10.5 7.9-6.1 13.1L459.4 512 196.9 824.9A7.95 7.95 0 00203 838h79.8c4.7 0 9.2-2.1 12.3-5.7l216.5-258.1 216.5 258.1c3 3.6 7.5 5.7 12.3 5.7h79.8c6.8 0 10.5-7.9 6.1-13.1L563.8 512z"
+                                      d="M799.86 166.31c.02 0 .04.02.08.06l57.69 57.7c.04.03.05.05.06.08a.12.12 0 010 .06c0 .03-.02.05-.06.09L569.93 512l287.7 287.7c.04.04.05.06.06.09a.12.12 0 010 .07c0 .02-.02.04-.06.08l-57.7 57.69c-.03.04-.05.05-.07.06a.12.12 0 01-.07 0c-.03 0-.05-.02-.09-.06L512 569.93l-287.7 287.7c-.04.04-.06.05-.09.06a.12.12 0 01-.07 0c-.02 0-.04-.02-.08-.06l-57.69-57.7c-.04-.03-.05-.05-.06-.07a.12.12 0 010-.07c0-.03.02-.05.06-.09L454.07 512l-287.7-287.7c-.04-.04-.05-.06-.06-.09a.12.12 0 010-.07c0-.02.02-.04.06-.08l57.7-57.69c.03-.04.05-.05.07-.06a.12.12 0 01.07 0c.03 0 .05.02.09.06L512 454.07l287.7-287.7c.04-.04.06-.05.09-.06a.12.12 0 01.07 0z"
                                     />
                                   </svg>
                                 </span>
@@ -1212,13 +1213,13 @@ exports[`provision/DatabaseAccount/Create create account 1`] = `
             </div>
           </div>
           <div
-            class="ant-form-item has-label-tip css-1jlm9cy css-dev-only-do-not-override-txh9fw ant-form-item-has-success"
+            class="ant-form-item has-label-tip css-1jlm9cy ant-form-item-has-success"
           >
             <div
-              class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+              class="ant-row ant-form-item-row"
             >
               <div
-                class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left css-dev-only-do-not-override-txh9fw"
+                class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left"
               >
                 <label
                   class="ant-form-item-no-colon"
@@ -1240,7 +1241,7 @@ exports[`provision/DatabaseAccount/Create create account 1`] = `
                 </label>
               </div>
               <div
-                class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control"
               >
                 <div
                   class="ant-form-item-control-input"
@@ -1249,7 +1250,7 @@ exports[`provision/DatabaseAccount/Create create account 1`] = `
                     class="ant-form-item-control-input-content"
                   >
                     <div
-                      class="ant-select ant-select-in-form-item ant-select-status-success basic-select-wrapper css-iy4o4x css-dev-only-do-not-override-v9sov3 ant-select-multiple ant-select-show-arrow ant-select-open ant-select-show-search"
+                      class="ant-select ant-select-in-form-item ant-select-status-success basic-select-wrapper css-iy4o4x ant-select-multiple ant-select-show-arrow ant-select-open ant-select-show-search"
                     >
                       <div
                         class="ant-select-selector"
@@ -1285,13 +1286,14 @@ exports[`provision/DatabaseAccount/Create create account 1`] = `
                                     aria-hidden="true"
                                     data-icon="close"
                                     fill="currentColor"
+                                    fill-rule="evenodd"
                                     focusable="false"
                                     height="1em"
                                     viewBox="64 64 896 896"
                                     width="1em"
                                   >
                                     <path
-                                      d="M563.8 512l262.5-312.9c4.4-5.2.7-13.1-6.1-13.1h-79.8c-4.7 0-9.2 2.1-12.3 5.7L511.6 449.8 295.1 191.7c-3-3.6-7.5-5.7-12.3-5.7H203c-6.8 0-10.5 7.9-6.1 13.1L459.4 512 196.9 824.9A7.95 7.95 0 00203 838h79.8c4.7 0 9.2-2.1 12.3-5.7l216.5-258.1 216.5 258.1c3 3.6 7.5 5.7 12.3 5.7h79.8c6.8 0 10.5-7.9 6.1-13.1L563.8 512z"
+                                      d="M799.86 166.31c.02 0 .04.02.08.06l57.69 57.7c.04.03.05.05.06.08a.12.12 0 010 .06c0 .03-.02.05-.06.09L569.93 512l287.7 287.7c.04.04.05.06.06.09a.12.12 0 010 .07c0 .02-.02.04-.06.08l-57.7 57.69c-.03.04-.05.05-.07.06a.12.12 0 01-.07 0c-.03 0-.05-.02-.09-.06L512 569.93l-287.7 287.7c-.04.04-.06.05-.09.06a.12.12 0 01-.07 0c-.02 0-.04-.02-.08-.06l-57.69-57.7c-.04-.03-.05-.05-.06-.07a.12.12 0 010-.07c0-.03.02-.05.06-.09L454.07 512l-287.7-287.7c-.04-.04-.05-.06-.06-.09a.12.12 0 010-.07c0-.02.02-.04.06-.08l57.7-57.69c.03-.04.05-.05.07-.06a.12.12 0 01.07 0c.03 0 .05.02.09.06L512 454.07l287.7-287.7c.04-.04.06-.05.09-.06a.12.12 0 01.07 0z"
                                     />
                                   </svg>
                                 </span>
@@ -1364,13 +1366,13 @@ exports[`provision/DatabaseAccount/Create create account 1`] = `
             </div>
           </div>
           <div
-            class="ant-form-item css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+            class="ant-form-item css-1jlm9cy"
           >
             <div
-              class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+              class="ant-row ant-form-item-row"
             >
               <div
-                class="ant-col ant-col-24 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                class="ant-col ant-col-24 ant-form-item-control"
               >
                 <div
                   class="ant-form-item-control-input"
@@ -1390,14 +1392,14 @@ exports[`provision/DatabaseAccount/Create create account 1`] = `
                           对象权限概览
                         </span>
                         <div
-                          class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+                          class="ant-space ant-space-horizontal ant-space-align-center"
                         >
                           <div
                             class="ant-space-item"
                             style="margin-right: 8px;"
                           >
                             <button
-                              class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default ant-btn-dangerous basic-button-wrapper css-geipcv"
+                              class="ant-btn ant-btn-default ant-btn-dangerous basic-button-wrapper css-geipcv"
                               disabled=""
                               type="button"
                             >
@@ -1410,7 +1412,7 @@ exports[`provision/DatabaseAccount/Create create account 1`] = `
                             class="ant-space-item"
                           >
                             <button
-                              class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary basic-button-wrapper css-geipcv"
+                              class="ant-btn ant-btn-primary basic-button-wrapper css-geipcv"
                               type="button"
                             >
                               <span>
@@ -1421,10 +1423,10 @@ exports[`provision/DatabaseAccount/Create create account 1`] = `
                         </div>
                       </section>
                       <div
-                        class="ant-table-wrapper actiontech-table-namespace css-fxd6ka css-dev-only-do-not-override-bj9uhl"
+                        class="ant-table-wrapper actiontech-table-namespace css-fxd6ka"
                       >
                         <div
-                          class="ant-spin-nested-loading css-dev-only-do-not-override-bj9uhl"
+                          class="ant-spin-nested-loading"
                         >
                           <div
                             class="ant-spin-container"
@@ -1543,7 +1545,7 @@ exports[`provision/DatabaseAccount/Create create account 1`] = `
   </div>
   <div>
     <div
-      class="ant-select-dropdown ant-select-dropdown-hidden css-dev-only-do-not-override-v9sov3 ant-select-dropdown-placement-bottomLeft"
+      class="ant-select-dropdown ant-select-dropdown-hidden ant-select-dropdown-placement-bottomLeft"
       style="--arrow-x: 0px; --arrow-y: 0px; left: 0px; top: 0px; box-sizing: border-box; min-width: 0; width: 0px; pointer-events: none;"
     >
       <div>
@@ -1619,22 +1621,13 @@ exports[`provision/DatabaseAccount/Create create account 1`] = `
               </div>
             </div>
           </div>
-          <div
-            class="rc-virtual-list-scrollbar"
-            style="width: 8px; top: 0px; bottom: 0px; right: 0px; position: absolute; display: none;"
-          >
-            <div
-              class="rc-virtual-list-scrollbar-thumb"
-              style="width: 100%; height: 128px; top: 0px; left: 0px; position: absolute; background: rgba(0, 0, 0, 0.5); border-radius: 99px; cursor: pointer; user-select: none;"
-            />
-          </div>
         </div>
       </div>
     </div>
   </div>
   <div>
     <div
-      class="ant-select-dropdown ant-select-dropdown-hidden css-dev-only-do-not-override-v9sov3 ant-select-dropdown-placement-bottomLeft"
+      class="ant-select-dropdown ant-select-dropdown-hidden ant-select-dropdown-placement-bottomLeft"
       style="--arrow-x: 0px; --arrow-y: 0px; left: 0px; top: 0px; box-sizing: border-box; min-width: 0; width: 0px; pointer-events: none;"
     >
       <div>
@@ -1678,7 +1671,7 @@ exports[`provision/DatabaseAccount/Create create account 1`] = `
             >
               <div
                 class="rc-virtual-list-holder-inner"
-                style="display: flex; flex-direction: column; transform: translateY(0px); position: absolute; left: 0px; right: 0px; top: 0px;"
+                style="display: flex; flex-direction: column; transform: translateY(0px); margin-left: 0px; position: absolute; left: 0px; right: 0px; top: 0px;"
               >
                 <div
                   class="ant-select-item ant-select-item-group"
@@ -1887,12 +1880,12 @@ exports[`provision/DatabaseAccount/Create create account 1`] = `
             </div>
           </div>
           <div
-            class="rc-virtual-list-scrollbar rc-virtual-list-scrollbar-show"
-            style="width: 8px; top: 0px; bottom: 0px; right: 0px; position: absolute; display: none;"
+            class="rc-virtual-list-scrollbar rc-virtual-list-scrollbar-vertical"
+            style="position: absolute; width: 8px; top: 0px; bottom: 0px; right: 0px; visibility: hidden;"
           >
             <div
               class="rc-virtual-list-scrollbar-thumb"
-              style="width: 100%; height: 121px; top: 0px; left: 0px; position: absolute; background: rgba(0, 0, 0, 0.5); border-radius: 99px; cursor: pointer; user-select: none;"
+              style="position: absolute; background: rgba(0, 0, 0, 0.5); border-radius: 99px; cursor: pointer; user-select: none; width: 100%; height: 130px; top: 0px;"
             />
           </div>
         </div>
@@ -1901,7 +1894,7 @@ exports[`provision/DatabaseAccount/Create create account 1`] = `
   </div>
   <div>
     <div
-      class="ant-tooltip css-dev-only-do-not-override-txh9fw ant-tooltip-placement-top"
+      class="ant-tooltip ant-tooltip-placement-top"
       style="--arrow-x: 0px; --arrow-y: 0px; left: -1000vw; top: -1000vh; box-sizing: border-box;"
     >
       <div
@@ -1923,7 +1916,7 @@ exports[`provision/DatabaseAccount/Create create account 1`] = `
   </div>
   <div>
     <div
-      class="ant-tooltip css-dev-only-do-not-override-ywkr0o ant-tooltip-placement-topRight"
+      class="ant-tooltip ant-tooltip-placement-topRight"
       style="--arrow-x: 0px; --arrow-y: 0px; left: -1000vw; top: -1000vh; box-sizing: border-box;"
     >
       <div
@@ -1938,7 +1931,7 @@ exports[`provision/DatabaseAccount/Create create account 1`] = `
             class="css-19kgj31"
           >
             <div
-              class="ant-space css-dev-only-do-not-override-ywkr0o ant-space-horizontal ant-space-align-center"
+              class="ant-space ant-space-horizontal ant-space-align-center"
             >
               <div
                 class="ant-space-item"
@@ -1978,7 +1971,7 @@ exports[`provision/DatabaseAccount/Create create account 1`] = `
   </div>
   <div>
     <div
-      class="ant-select-dropdown ant-select-dropdown-hidden css-dev-only-do-not-override-v9sov3 ant-select-dropdown-placement-bottomLeft"
+      class="ant-select-dropdown ant-select-dropdown-hidden ant-select-dropdown-placement-bottomLeft"
       style="--arrow-x: 0px; --arrow-y: 0px; left: 0px; top: 0px; box-sizing: border-box; min-width: 0; width: 0px; pointer-events: none;"
     >
       <div>
@@ -2113,22 +2106,13 @@ exports[`provision/DatabaseAccount/Create create account 1`] = `
               </div>
             </div>
           </div>
-          <div
-            class="rc-virtual-list-scrollbar"
-            style="width: 8px; top: 0px; bottom: 0px; right: 0px; position: absolute; display: none;"
-          >
-            <div
-              class="rc-virtual-list-scrollbar-thumb"
-              style="width: 100%; height: 128px; top: 0px; left: 0px; position: absolute; background: rgba(0, 0, 0, 0.5); border-radius: 99px; cursor: pointer; user-select: none;"
-            />
-          </div>
         </div>
       </div>
     </div>
   </div>
   <div>
     <div
-      class="ant-select-dropdown ant-select-dropdown-hidden css-dev-only-do-not-override-v9sov3 ant-select-dropdown-placement-bottomLeft"
+      class="ant-select-dropdown ant-select-dropdown-hidden ant-select-dropdown-placement-bottomLeft"
       style="--arrow-x: 0px; --arrow-y: 0px; left: 0px; top: 0px; box-sizing: border-box; min-width: 0; width: 0px; pointer-events: none;"
     >
       <div>
@@ -2229,22 +2213,13 @@ exports[`provision/DatabaseAccount/Create create account 1`] = `
               </div>
             </div>
           </div>
-          <div
-            class="rc-virtual-list-scrollbar"
-            style="width: 8px; top: 0px; bottom: 0px; right: 0px; position: absolute; display: none;"
-          >
-            <div
-              class="rc-virtual-list-scrollbar-thumb"
-              style="width: 100%; height: 128px; top: 0px; left: 0px; position: absolute; background: rgba(0, 0, 0, 0.5); border-radius: 99px; cursor: pointer; user-select: none;"
-            />
-          </div>
         </div>
       </div>
     </div>
   </div>
   <div>
     <div
-      class="ant-select-dropdown css-dev-only-do-not-override-v9sov3 ant-select-dropdown-placement-bottomLeft"
+      class="ant-select-dropdown ant-select-dropdown-placement-bottomLeft"
       style="--arrow-x: 0px; --arrow-y: 0px; left: -1000vw; top: -1000vh; box-sizing: border-box; min-width: 0; width: 0px;"
     >
       <div>
@@ -2420,22 +2395,13 @@ exports[`provision/DatabaseAccount/Create create account 1`] = `
               </div>
             </div>
           </div>
-          <div
-            class="rc-virtual-list-scrollbar"
-            style="width: 8px; top: 0px; bottom: 0px; right: 0px; position: absolute; display: none;"
-          >
-            <div
-              class="rc-virtual-list-scrollbar-thumb"
-              style="width: 100%; height: 128px; top: 0px; left: 0px; position: absolute; background: rgba(0, 0, 0, 0.5); border-radius: 99px; cursor: pointer; user-select: none;"
-            />
-          </div>
         </div>
       </div>
     </div>
   </div>
   <div>
     <div
-      class="ant-drawer ant-drawer-right css-dev-only-do-not-override-txh9fw ant-drawer-open"
+      class="ant-drawer ant-drawer-right ant-drawer-open"
       tabindex="-1"
     >
       <div
@@ -2481,34 +2447,36 @@ exports[`provision/DatabaseAccount/Create create account 1`] = `
                 <span
                   aria-label="close"
                   class="anticon anticon-close"
+                  data-testid="basic-drawer-close-icon"
                   role="img"
                 >
                   <svg
                     aria-hidden="true"
                     data-icon="close"
                     fill="currentColor"
+                    fill-rule="evenodd"
                     focusable="false"
                     height="1em"
                     viewBox="64 64 896 896"
                     width="1em"
                   >
                     <path
-                      d="M563.8 512l262.5-312.9c4.4-5.2.7-13.1-6.1-13.1h-79.8c-4.7 0-9.2 2.1-12.3 5.7L511.6 449.8 295.1 191.7c-3-3.6-7.5-5.7-12.3-5.7H203c-6.8 0-10.5 7.9-6.1 13.1L459.4 512 196.9 824.9A7.95 7.95 0 00203 838h79.8c4.7 0 9.2-2.1 12.3-5.7l216.5-258.1 216.5 258.1c3 3.6 7.5 5.7 12.3 5.7h79.8c6.8 0 10.5-7.9 6.1-13.1L563.8 512z"
+                      d="M799.86 166.31c.02 0 .04.02.08.06l57.69 57.7c.04.03.05.05.06.08a.12.12 0 010 .06c0 .03-.02.05-.06.09L569.93 512l287.7 287.7c.04.04.05.06.06.09a.12.12 0 010 .07c0 .02-.02.04-.06.08l-57.7 57.69c-.03.04-.05.05-.07.06a.12.12 0 01-.07 0c-.03 0-.05-.02-.09-.06L512 569.93l-287.7 287.7c-.04.04-.06.05-.09.06a.12.12 0 01-.07 0c-.02 0-.04-.02-.08-.06l-57.69-57.7c-.04-.03-.05-.05-.06-.07a.12.12 0 010-.07c0-.03.02-.05.06-.09L454.07 512l-287.7-287.7c-.04-.04-.05-.06-.06-.09a.12.12 0 010-.07c0-.02.02-.04.06-.08l57.7-57.69c.03-.04.05-.05.07-.06a.12.12 0 01.07 0c.03 0 .05.02.09.06L512 454.07l287.7-287.7c.04-.04.06-.05.09-.06a.12.12 0 01.07 0z"
                     />
                   </svg>
                 </span>
               </div>
               <form
-                class="ant-form ant-form-vertical css-dev-only-do-not-override-txh9fw"
+                class="ant-form ant-form-vertical"
               >
                 <div
-                  class="ant-form-item css-dev-only-do-not-override-txh9fw"
+                  class="ant-form-item"
                 >
                   <div
-                    class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                    class="ant-row ant-form-item-row"
                   >
                     <div
-                      class="ant-col ant-form-item-label css-dev-only-do-not-override-txh9fw"
+                      class="ant-col ant-form-item-label"
                     >
                       <label
                         class="ant-form-item-required"
@@ -2519,7 +2487,7 @@ exports[`provision/DatabaseAccount/Create create account 1`] = `
                       </label>
                     </div>
                     <div
-                      class="ant-col ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                      class="ant-col ant-form-item-control"
                     >
                       <div
                         class="ant-form-item-control-input"
@@ -2529,7 +2497,7 @@ exports[`provision/DatabaseAccount/Create create account 1`] = `
                         >
                           <div
                             aria-required="true"
-                            class="ant-select ant-select-in-form-item basic-select-wrapper css-iy4o4x css-dev-only-do-not-override-v9sov3 ant-select-multiple ant-select-show-arrow ant-select-show-search"
+                            class="ant-select ant-select-in-form-item basic-select-wrapper css-iy4o4x ant-select-multiple ant-select-show-arrow ant-select-show-search"
                           >
                             <div
                               class="ant-select-selector"
@@ -2611,20 +2579,20 @@ exports[`provision/DatabaseAccount/Create create account 1`] = `
                   </div>
                 </div>
                 <div
-                  class="ant-form-item database-form-item css-dev-only-do-not-override-txh9fw"
+                  class="ant-form-item database-form-item"
                 >
                   <div
-                    class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                    class="ant-row ant-form-item-row"
                   >
                     <div
-                      class="ant-col ant-form-item-label css-dev-only-do-not-override-txh9fw"
+                      class="ant-col ant-form-item-label"
                     >
                       <label
                         class=""
                         title=""
                       >
                         <div
-                          class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
+                          class="ant-space ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
                         >
                           <div
                             class="ant-space-item"
@@ -2662,7 +2630,7 @@ exports[`provision/DatabaseAccount/Create create account 1`] = `
                       </label>
                     </div>
                     <div
-                      class="ant-col ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                      class="ant-col ant-form-item-control"
                     >
                       <div
                         class="ant-form-item-control-input"
@@ -2671,14 +2639,14 @@ exports[`provision/DatabaseAccount/Create create account 1`] = `
                           class="ant-form-item-control-input-content"
                         >
                           <div
-                            class="ant-row ant-row-no-wrap css-dev-only-do-not-override-txh9fw"
+                            class="ant-row ant-row-no-wrap"
                           >
                             <div
-                              class="ant-col css-dev-only-do-not-override-txh9fw"
+                              class="ant-col"
                               style="flex: 0 0 180px; min-width: 0; margin-right: 12px;"
                             >
                               <div
-                                class="ant-select ant-select-in-form-item basic-select-wrapper css-iy4o4x css-dev-only-do-not-override-v9sov3 ant-select-single ant-select-allow-clear ant-select-show-arrow ant-select-show-search"
+                                class="ant-select ant-select-in-form-item basic-select-wrapper css-iy4o4x ant-select-single ant-select-allow-clear ant-select-show-arrow ant-select-show-search"
                                 data-testid="database-form-item-database-0"
                               >
                                 <div
@@ -2737,11 +2705,11 @@ exports[`provision/DatabaseAccount/Create create account 1`] = `
                               </div>
                             </div>
                             <div
-                              class="ant-col css-dev-only-do-not-override-txh9fw"
+                              class="ant-col"
                               style="flex: 1 1 auto; min-width: 0;"
                             >
                               <div
-                                class="ant-select ant-select-in-form-item basic-select-wrapper css-iy4o4x css-dev-only-do-not-override-v9sov3 ant-select-multiple ant-select-show-arrow ant-select-show-search"
+                                class="ant-select ant-select-in-form-item basic-select-wrapper css-iy4o4x ant-select-multiple ant-select-show-arrow ant-select-show-search"
                                 data-testid="database-form-item-schema-0"
                               >
                                 <div
@@ -2819,7 +2787,7 @@ exports[`provision/DatabaseAccount/Create create account 1`] = `
                               </div>
                             </div>
                             <div
-                              class="ant-col css-dev-only-do-not-override-txh9fw"
+                              class="ant-col"
                               style="flex: 0 0 48px; min-width: 0;"
                             />
                           </div>
@@ -2829,13 +2797,13 @@ exports[`provision/DatabaseAccount/Create create account 1`] = `
                   </div>
                 </div>
                 <div
-                  class="ant-form-item css-dev-only-do-not-override-txh9fw"
+                  class="ant-form-item"
                 >
                   <div
-                    class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                    class="ant-row ant-form-item-row"
                   >
                     <div
-                      class="ant-col ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                      class="ant-col ant-form-item-control"
                     >
                       <div
                         class="ant-form-item-control-input"
@@ -2844,7 +2812,7 @@ exports[`provision/DatabaseAccount/Create create account 1`] = `
                           class="ant-form-item-control-input-content"
                         >
                           <button
-                            class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default form-list-add add-object-button basic-button-wrapper css-1719g3l"
+                            class="ant-btn ant-btn-default form-list-add add-object-button basic-button-wrapper css-1719g3l"
                             type="button"
                           >
                             <span
@@ -2877,14 +2845,14 @@ exports[`provision/DatabaseAccount/Create create account 1`] = `
               class="ant-drawer-footer"
             >
               <div
-                class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+                class="ant-space ant-space-horizontal ant-space-align-center"
               >
                 <div
                   class="ant-space-item"
                   style="margin-right: 8px;"
                 >
                   <button
-                    class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default basic-button-wrapper css-geipcv"
+                    class="ant-btn ant-btn-default basic-button-wrapper css-geipcv"
                     type="button"
                   >
                     <span>
@@ -2896,7 +2864,7 @@ exports[`provision/DatabaseAccount/Create create account 1`] = `
                   class="ant-space-item"
                 >
                   <button
-                    class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary object-privileges-modal-submit basic-button-wrapper css-geipcv"
+                    class="ant-btn ant-btn-primary object-privileges-modal-submit basic-button-wrapper css-geipcv"
                     type="button"
                   >
                     <span>
@@ -3007,7 +2975,7 @@ exports[`provision/DatabaseAccount/Create create account 2`] = `
             class="css-bwn97z"
           >
             <span
-              class="ant-tag ant-tag-default pointer basic-tag-wrapper basic-default-tag-wrapper css-1mjwlcb css-dev-only-do-not-override-bj9uhl"
+              class="ant-tag ant-tag-default pointer basic-tag-wrapper basic-default-tag-wrapper css-1mjwlcb"
             >
               database-1.table-1
             </span>
@@ -3020,7 +2988,7 @@ exports[`provision/DatabaseAccount/Create create account 2`] = `
             class="css-bwn97z"
           >
             <span
-              class="ant-tag ant-tag-default pointer basic-tag-wrapper basic-default-tag-wrapper css-1mjwlcb css-dev-only-do-not-override-bj9uhl"
+              class="ant-tag ant-tag-default pointer basic-tag-wrapper basic-default-tag-wrapper css-1mjwlcb"
             >
               ALL
             </span>
@@ -3034,14 +3002,14 @@ exports[`provision/DatabaseAccount/Create create account 2`] = `
             class="css-new95e"
           >
             <div
-              class="ant-space css-dev-only-do-not-override-bj9uhl ant-space-horizontal ant-space-align-center"
+              class="ant-space ant-space-horizontal ant-space-align-center"
             >
               <div
                 class="ant-space-item"
                 style="margin-right: 8px;"
               >
                 <button
-                  class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                  class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
                   type="button"
                 >
                   <span>
@@ -3053,7 +3021,7 @@ exports[`provision/DatabaseAccount/Create create account 2`] = `
                 class="ant-space-item"
               >
                 <button
-                  class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm ant-btn-dangerous actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                  class="ant-btn ant-btn-default ant-btn-sm ant-btn-dangerous actiontech-table-actions-button basic-button-wrapper css-geipcv"
                   type="button"
                 >
                   <span>
@@ -3100,7 +3068,7 @@ exports[`provision/DatabaseAccount/Create create account 3`] = `
             href="/provision/project/700300/database-account"
           >
             <button
-              class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default basic-button-wrapper css-geipcv"
+              class="ant-btn ant-btn-default basic-button-wrapper css-geipcv"
               type="button"
             >
               <span
@@ -3128,14 +3096,14 @@ exports[`provision/DatabaseAccount/Create create account 3`] = `
           class="extra"
         >
           <div
-            class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+            class="ant-space ant-space-horizontal ant-space-align-center"
           >
             <div
               class="ant-space-item"
               style="margin-right: 8px;"
             >
               <button
-                class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default basic-button-wrapper css-geipcv"
+                class="ant-btn ant-btn-default basic-button-wrapper css-geipcv"
                 type="button"
               >
                 <span>
@@ -3147,7 +3115,7 @@ exports[`provision/DatabaseAccount/Create create account 3`] = `
               class="ant-space-item"
             >
               <button
-                class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary create-account-submit basic-button-wrapper css-geipcv"
+                class="ant-btn ant-btn-primary create-account-submit basic-button-wrapper css-geipcv"
                 type="button"
               >
                 <span>
@@ -3159,13 +3127,13 @@ exports[`provision/DatabaseAccount/Create create account 3`] = `
         </div>
       </div>
       <form
-        class="ant-form ant-form-horizontal css-dev-only-do-not-override-txh9fw hasTopHeader clearPaddingBottom css-19jfn7e"
+        class="ant-form ant-form-horizontal hasTopHeader clearPaddingBottom css-19jfn7e"
       >
         <section
           class="css-bv423q"
         >
           <h3
-            class="ant-typography css-p50odb css-dev-only-do-not-override-txh9fw"
+            class="ant-typography css-p50odb"
           >
             <span
               class="anticon title-icon"
@@ -3190,18 +3158,18 @@ exports[`provision/DatabaseAccount/Create create account 3`] = `
             创建数据库账号
           </h3>
           <h1
-            class="ant-typography css-1eepp70 css-dev-only-do-not-override-txh9fw"
+            class="ant-typography css-1eepp70"
           >
             账户基本信息
           </h1>
           <div
-            class="ant-form-item has-required-style css-1jlm9cy css-dev-only-do-not-override-txh9fw ant-form-item-has-success"
+            class="ant-form-item has-required-style css-1jlm9cy ant-form-item-has-success"
           >
             <div
-              class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+              class="ant-row ant-form-item-row"
             >
               <div
-                class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left css-dev-only-do-not-override-txh9fw"
+                class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left"
               >
                 <label
                   class="ant-form-item-required ant-form-item-no-colon"
@@ -3212,7 +3180,7 @@ exports[`provision/DatabaseAccount/Create create account 3`] = `
                 </label>
               </div>
               <div
-                class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control"
               >
                 <div
                   class="ant-form-item-control-input"
@@ -3222,7 +3190,7 @@ exports[`provision/DatabaseAccount/Create create account 3`] = `
                   >
                     <div
                       aria-required="true"
-                      class="ant-select ant-select-in-form-item ant-select-status-success basic-select-wrapper css-iy4o4x css-dev-only-do-not-override-v9sov3 ant-select-single ant-select-show-arrow ant-select-show-search"
+                      class="ant-select ant-select-in-form-item ant-select-status-success basic-select-wrapper css-iy4o4x ant-select-single ant-select-show-arrow ant-select-show-search"
                     >
                       <div
                         class="ant-select-selector"
@@ -3286,13 +3254,13 @@ exports[`provision/DatabaseAccount/Create create account 3`] = `
             </div>
           </div>
           <div
-            class="ant-form-item has-required-style css-1jlm9cy css-dev-only-do-not-override-txh9fw ant-form-item-has-success"
+            class="ant-form-item has-required-style css-1jlm9cy ant-form-item-has-success"
           >
             <div
-              class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+              class="ant-row ant-form-item-row"
             >
               <div
-                class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left css-dev-only-do-not-override-txh9fw"
+                class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left"
               >
                 <label
                   class="ant-form-item-required ant-form-item-no-colon"
@@ -3303,7 +3271,7 @@ exports[`provision/DatabaseAccount/Create create account 3`] = `
                 </label>
               </div>
               <div
-                class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control"
               >
                 <div
                   class="ant-form-item-control-input"
@@ -3312,7 +3280,7 @@ exports[`provision/DatabaseAccount/Create create account 3`] = `
                     class="ant-form-item-control-input-content"
                   >
                     <div
-                      class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center css-af3nlx"
+                      class="ant-space ant-space-horizontal ant-space-align-center css-af3nlx"
                     >
                       <div
                         class="ant-space-item"
@@ -3320,7 +3288,7 @@ exports[`provision/DatabaseAccount/Create create account 3`] = `
                       >
                         <div
                           aria-required="true"
-                          class="ant-select ant-select-in-form-item ant-select-status-success basic-select-wrapper css-iy4o4x css-dev-only-do-not-override-v9sov3 ant-select-single ant-select-allow-clear ant-select-show-arrow ant-select-show-search"
+                          class="ant-select ant-select-in-form-item ant-select-status-success basic-select-wrapper css-iy4o4x ant-select-single ant-select-allow-clear ant-select-show-arrow ant-select-show-search"
                         >
                           <div
                             class="ant-select-selector"
@@ -3401,13 +3369,13 @@ exports[`provision/DatabaseAccount/Create create account 3`] = `
                         class="ant-space-item"
                       >
                         <div
-                          class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center ant-tooltip-open basic-tooltips-wrapper css-4jbtl9"
+                          class="ant-space ant-space-horizontal ant-space-align-center ant-tooltip-open basic-tooltips-wrapper css-4jbtl9"
                         >
                           <div
                             class="ant-space-item"
                           >
                             <button
-                              class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default ant-btn-icon-only basic-button-wrapper css-iieact"
+                              class="ant-btn ant-btn-default ant-btn-icon-only basic-button-wrapper css-iieact"
                               style="margin-left: 12px;"
                               type="button"
                             >
@@ -3442,13 +3410,13 @@ exports[`provision/DatabaseAccount/Create create account 3`] = `
             </div>
           </div>
           <div
-            class="ant-form-item css-1jlm9cy css-dev-only-do-not-override-txh9fw ant-form-item-hidden"
+            class="ant-form-item css-1jlm9cy ant-form-item-hidden"
           >
             <div
-              class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+              class="ant-row ant-form-item-row"
             >
               <div
-                class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control"
               >
                 <div
                   class="ant-form-item-control-input"
@@ -3457,7 +3425,7 @@ exports[`provision/DatabaseAccount/Create create account 3`] = `
                     class="ant-form-item-control-input-content"
                   >
                     <input
-                      class="ant-input css-dev-only-do-not-override-ywkr0o basic-input-wrapper css-1pd1cd5"
+                      class="ant-input basic-input-wrapper css-1pd1cd5"
                       id="dbType"
                       placeholder="请输入{{name}}"
                       type="text"
@@ -3469,13 +3437,13 @@ exports[`provision/DatabaseAccount/Create create account 3`] = `
             </div>
           </div>
           <div
-            class="ant-form-item has-required-style has-label-tip css-1jlm9cy css-dev-only-do-not-override-txh9fw ant-form-item-has-success"
+            class="ant-form-item has-required-style has-label-tip css-1jlm9cy ant-form-item-has-success"
           >
             <div
-              class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+              class="ant-row ant-form-item-row"
             >
               <div
-                class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left css-dev-only-do-not-override-txh9fw"
+                class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left"
               >
                 <label
                   class="ant-form-item-required ant-form-item-no-colon"
@@ -3497,7 +3465,7 @@ exports[`provision/DatabaseAccount/Create create account 3`] = `
                 </label>
               </div>
               <div
-                class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control"
               >
                 <div
                   class="ant-form-item-control-input"
@@ -3507,7 +3475,7 @@ exports[`provision/DatabaseAccount/Create create account 3`] = `
                   >
                     <input
                       aria-required="true"
-                      class="ant-input ant-input-status-success css-dev-only-do-not-override-ywkr0o basic-input-wrapper css-1pd1cd5"
+                      class="ant-input ant-input-status-success basic-input-wrapper css-1pd1cd5"
                       id="username"
                       placeholder="请输入{{name}}"
                       type="text"
@@ -3519,13 +3487,13 @@ exports[`provision/DatabaseAccount/Create create account 3`] = `
             </div>
           </div>
           <div
-            class="ant-form-item has-required-style has-label-tip css-1jlm9cy css-dev-only-do-not-override-txh9fw ant-form-item-has-success"
+            class="ant-form-item has-required-style has-label-tip css-1jlm9cy ant-form-item-has-success"
           >
             <div
-              class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+              class="ant-row ant-form-item-row"
             >
               <div
-                class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left css-dev-only-do-not-override-txh9fw"
+                class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left"
               >
                 <label
                   class="ant-form-item-required ant-form-item-no-colon"
@@ -3547,7 +3515,7 @@ exports[`provision/DatabaseAccount/Create create account 3`] = `
                 </label>
               </div>
               <div
-                class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control"
               >
                 <div
                   class="ant-form-item-control-input"
@@ -3556,11 +3524,11 @@ exports[`provision/DatabaseAccount/Create create account 3`] = `
                     class="ant-form-item-control-input-content"
                   >
                     <span
-                      class="ant-input-affix-wrapper ant-input-password basic-input-wrapper action-password-input css-1x7fd4z css-dev-only-do-not-override-txh9fw"
+                      class="ant-input-affix-wrapper ant-input-password basic-input-wrapper action-password-input css-1x7fd4z ant-input-affix-wrapper-status-success"
                     >
                       <input
                         aria-required="true"
-                        class="ant-input css-dev-only-do-not-override-txh9fw"
+                        class="ant-input"
                         id="password"
                         placeholder="请输入{{name}}"
                         type="password"
@@ -3593,13 +3561,13 @@ exports[`provision/DatabaseAccount/Create create account 3`] = `
                           </svg>
                         </span>
                         <div
-                          class="ant-space css-dev-only-do-not-override-ywkr0o ant-space-horizontal ant-space-align-center ant-tooltip-open basic-tooltips-wrapper css-4jbtl9"
+                          class="ant-space ant-space-horizontal ant-space-align-center ant-tooltip-open basic-tooltips-wrapper css-4jbtl9"
                         >
                           <div
                             class="ant-space-item"
                           >
                             <button
-                              class="ant-btn css-dev-only-do-not-override-hcs8ws ant-btn-primary ant-btn-sm basic-button-wrapper css-geipcv"
+                              class="ant-btn ant-btn-primary ant-btn-sm basic-button-wrapper css-geipcv"
                               type="button"
                             >
                               <span>
@@ -3616,13 +3584,13 @@ exports[`provision/DatabaseAccount/Create create account 3`] = `
             </div>
           </div>
           <div
-            class="ant-form-item has-required-style has-label-tip css-1jlm9cy css-dev-only-do-not-override-txh9fw ant-form-item-has-success"
+            class="ant-form-item has-required-style has-label-tip css-1jlm9cy ant-form-item-has-success"
           >
             <div
-              class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+              class="ant-row ant-form-item-row"
             >
               <div
-                class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left css-dev-only-do-not-override-txh9fw"
+                class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left"
               >
                 <label
                   class="ant-form-item-required ant-form-item-no-colon"
@@ -3644,7 +3612,7 @@ exports[`provision/DatabaseAccount/Create create account 3`] = `
                 </label>
               </div>
               <div
-                class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control"
               >
                 <div
                   class="ant-form-item-control-input"
@@ -3653,11 +3621,11 @@ exports[`provision/DatabaseAccount/Create create account 3`] = `
                     class="ant-form-item-control-input-content"
                   >
                     <span
-                      class="ant-input-affix-wrapper ant-input-password basic-input-wrapper css-1pd1cd5 css-dev-only-do-not-override-txh9fw"
+                      class="ant-input-affix-wrapper ant-input-password basic-input-wrapper css-1pd1cd5 ant-input-affix-wrapper-status-success"
                     >
                       <input
                         aria-required="true"
-                        class="ant-input css-dev-only-do-not-override-txh9fw"
+                        class="ant-input"
                         id="confirm_password"
                         placeholder="请输入{{name}}"
                         type="password"
@@ -3697,13 +3665,13 @@ exports[`provision/DatabaseAccount/Create create account 3`] = `
             </div>
           </div>
           <div
-            class="ant-form-item  css-1jlm9cy css-dev-only-do-not-override-txh9fw ant-form-item-has-success"
+            class="ant-form-item css-1jlm9cy ant-form-item-has-success"
           >
             <div
-              class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+              class="ant-row ant-form-item-row"
             >
               <div
-                class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left css-dev-only-do-not-override-txh9fw"
+                class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left"
               >
                 <label
                   class="ant-form-item-no-colon"
@@ -3724,7 +3692,7 @@ exports[`provision/DatabaseAccount/Create create account 3`] = `
                 </label>
               </div>
               <div
-                class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control"
               >
                 <div
                   class="ant-form-item-control-input"
@@ -3733,7 +3701,7 @@ exports[`provision/DatabaseAccount/Create create account 3`] = `
                     class="ant-form-item-control-input-content"
                   >
                     <input
-                      class="ant-input ant-input-status-success css-dev-only-do-not-override-ywkr0o basic-input-wrapper css-1pd1cd5"
+                      class="ant-input ant-input-status-success basic-input-wrapper css-1pd1cd5"
                       id="additionalParams_hostname"
                       placeholder="请输入{{name}}"
                       type="text"
@@ -3745,13 +3713,13 @@ exports[`provision/DatabaseAccount/Create create account 3`] = `
             </div>
           </div>
           <div
-            class="ant-form-item has-required-style has-label-tip css-1jlm9cy css-dev-only-do-not-override-txh9fw ant-form-item-has-success"
+            class="ant-form-item has-required-style has-label-tip css-1jlm9cy ant-form-item-has-success"
           >
             <div
-              class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+              class="ant-row ant-form-item-row"
             >
               <div
-                class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left css-dev-only-do-not-override-txh9fw"
+                class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left"
               >
                 <label
                   class="ant-form-item-required ant-form-item-no-colon"
@@ -3773,7 +3741,7 @@ exports[`provision/DatabaseAccount/Create create account 3`] = `
                 </label>
               </div>
               <div
-                class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control"
               >
                 <div
                   class="ant-form-item-control-input"
@@ -3783,7 +3751,7 @@ exports[`provision/DatabaseAccount/Create create account 3`] = `
                   >
                     <div
                       aria-required="true"
-                      class="ant-select ant-select-in-form-item ant-select-status-success basic-select-wrapper css-iy4o4x css-dev-only-do-not-override-v9sov3 ant-select-single ant-select-show-arrow"
+                      class="ant-select ant-select-in-form-item ant-select-status-success basic-select-wrapper css-iy4o4x ant-select-single ant-select-show-arrow"
                     >
                       <div
                         class="ant-select-selector"
@@ -3850,13 +3818,13 @@ exports[`provision/DatabaseAccount/Create create account 3`] = `
             </div>
           </div>
           <div
-            class="ant-form-item has-required-style has-label-tip css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+            class="ant-form-item has-required-style has-label-tip css-1jlm9cy"
           >
             <div
-              class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+              class="ant-row ant-form-item-row"
             >
               <div
-                class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left css-dev-only-do-not-override-txh9fw"
+                class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left"
               >
                 <label
                   class="ant-form-item-required ant-form-item-no-colon"
@@ -3878,7 +3846,7 @@ exports[`provision/DatabaseAccount/Create create account 3`] = `
                 </label>
               </div>
               <div
-                class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control"
               >
                 <div
                   class="ant-form-item-control-input"
@@ -3887,7 +3855,7 @@ exports[`provision/DatabaseAccount/Create create account 3`] = `
                     class="ant-form-item-control-input-content"
                   >
                     <div
-                      class="ant-input-number ant-input-number-lg ant-input-number-in-form-item css-dev-only-do-not-override-ezmdel basic-inputNumber-wrapper css-1fd5hnt"
+                      class="ant-input-number ant-input-number-lg ant-input-number-in-form-item basic-inputNumber-wrapper css-1fd5hnt"
                     >
                       <div
                         class="ant-input-number-handler-wrap"
@@ -3968,13 +3936,13 @@ exports[`provision/DatabaseAccount/Create create account 3`] = `
             </div>
           </div>
           <div
-            class="ant-form-item has-required-style has-label-tip css-1jlm9cy css-dev-only-do-not-override-txh9fw ant-form-item-has-success"
+            class="ant-form-item has-required-style has-label-tip css-1jlm9cy ant-form-item-has-success"
           >
             <div
-              class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+              class="ant-row ant-form-item-row"
             >
               <div
-                class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left css-dev-only-do-not-override-txh9fw"
+                class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left"
               >
                 <label
                   class="ant-form-item-required ant-form-item-no-colon"
@@ -3996,7 +3964,7 @@ exports[`provision/DatabaseAccount/Create create account 3`] = `
                 </label>
               </div>
               <div
-                class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control"
               >
                 <div
                   class="ant-form-item-control-input"
@@ -4006,11 +3974,11 @@ exports[`provision/DatabaseAccount/Create create account 3`] = `
                   >
                     <div
                       aria-required="true"
-                      class="ant-radio-group ant-radio-group-outline css-dev-only-do-not-override-txh9fw"
+                      class="ant-radio-group ant-radio-group-outline"
                       id="password_expiration_policy"
                     >
                       <label
-                        class="ant-radio-wrapper ant-radio-wrapper-checked ant-radio-wrapper-in-form-item css-dev-only-do-not-override-txh9fw"
+                        class="ant-radio-wrapper ant-radio-wrapper-checked ant-radio-wrapper-in-form-item"
                       >
                         <span
                           class="ant-radio ant-radio-checked"
@@ -4029,7 +3997,7 @@ exports[`provision/DatabaseAccount/Create create account 3`] = `
                         </span>
                       </label>
                       <label
-                        class="ant-radio-wrapper ant-radio-wrapper-in-form-item css-dev-only-do-not-override-txh9fw"
+                        class="ant-radio-wrapper ant-radio-wrapper-in-form-item"
                       >
                         <span
                           class="ant-radio"
@@ -4055,13 +4023,13 @@ exports[`provision/DatabaseAccount/Create create account 3`] = `
             </div>
           </div>
           <div
-            class="ant-form-item has-label-tip css-1jlm9cy css-dev-only-do-not-override-txh9fw ant-form-item-has-success"
+            class="ant-form-item has-label-tip css-1jlm9cy ant-form-item-has-success"
           >
             <div
-              class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+              class="ant-row ant-form-item-row"
             >
               <div
-                class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left css-dev-only-do-not-override-txh9fw"
+                class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left"
               >
                 <label
                   class="ant-form-item-no-colon"
@@ -4083,7 +4051,7 @@ exports[`provision/DatabaseAccount/Create create account 3`] = `
                 </label>
               </div>
               <div
-                class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control"
               >
                 <div
                   class="ant-form-item-control-input"
@@ -4092,7 +4060,7 @@ exports[`provision/DatabaseAccount/Create create account 3`] = `
                     class="ant-form-item-control-input-content"
                   >
                     <textarea
-                      class="ant-input css-dev-only-do-not-override-txh9fw basic-input-wrapper css-1pd1cd5"
+                      class="ant-input ant-input-status-success basic-input-wrapper css-1pd1cd5"
                       id="explanation"
                       placeholder="点击添加账户说明（选填）"
                       style="resize: none; height: -70px; min-height: -6px; max-height: -70px;"
@@ -4105,18 +4073,18 @@ exports[`provision/DatabaseAccount/Create create account 3`] = `
             </div>
           </div>
           <h1
-            class="ant-typography css-1eepp70 css-dev-only-do-not-override-txh9fw"
+            class="ant-typography css-1eepp70"
           >
             数据权限
           </h1>
           <div
-            class="ant-form-item has-label-tip css-1jlm9cy css-dev-only-do-not-override-txh9fw ant-form-item-has-success"
+            class="ant-form-item has-label-tip css-1jlm9cy ant-form-item-has-success"
           >
             <div
-              class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+              class="ant-row ant-form-item-row"
             >
               <div
-                class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left css-dev-only-do-not-override-txh9fw"
+                class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left"
               >
                 <label
                   class="ant-form-item-no-colon"
@@ -4138,7 +4106,7 @@ exports[`provision/DatabaseAccount/Create create account 3`] = `
                 </label>
               </div>
               <div
-                class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control"
               >
                 <div
                   class="ant-form-item-control-input"
@@ -4147,7 +4115,7 @@ exports[`provision/DatabaseAccount/Create create account 3`] = `
                     class="ant-form-item-control-input-content"
                   >
                     <div
-                      class="ant-select ant-select-in-form-item ant-select-status-success basic-select-wrapper css-iy4o4x css-dev-only-do-not-override-v9sov3 ant-select-multiple ant-select-allow-clear ant-select-show-arrow ant-select-show-search"
+                      class="ant-select ant-select-in-form-item ant-select-status-success basic-select-wrapper css-iy4o4x ant-select-multiple ant-select-allow-clear ant-select-show-arrow ant-select-show-search"
                     >
                       <div
                         class="ant-select-selector"
@@ -4183,13 +4151,14 @@ exports[`provision/DatabaseAccount/Create create account 3`] = `
                                     aria-hidden="true"
                                     data-icon="close"
                                     fill="currentColor"
+                                    fill-rule="evenodd"
                                     focusable="false"
                                     height="1em"
                                     viewBox="64 64 896 896"
                                     width="1em"
                                   >
                                     <path
-                                      d="M563.8 512l262.5-312.9c4.4-5.2.7-13.1-6.1-13.1h-79.8c-4.7 0-9.2 2.1-12.3 5.7L511.6 449.8 295.1 191.7c-3-3.6-7.5-5.7-12.3-5.7H203c-6.8 0-10.5 7.9-6.1 13.1L459.4 512 196.9 824.9A7.95 7.95 0 00203 838h79.8c4.7 0 9.2-2.1 12.3-5.7l216.5-258.1 216.5 258.1c3 3.6 7.5 5.7 12.3 5.7h79.8c6.8 0 10.5-7.9 6.1-13.1L563.8 512z"
+                                      d="M799.86 166.31c.02 0 .04.02.08.06l57.69 57.7c.04.03.05.05.06.08a.12.12 0 010 .06c0 .03-.02.05-.06.09L569.93 512l287.7 287.7c.04.04.05.06.06.09a.12.12 0 010 .07c0 .02-.02.04-.06.08l-57.7 57.69c-.03.04-.05.05-.07.06a.12.12 0 01-.07 0c-.03 0-.05-.02-.09-.06L512 569.93l-287.7 287.7c-.04.04-.06.05-.09.06a.12.12 0 01-.07 0c-.02 0-.04-.02-.08-.06l-57.69-57.7c-.04-.03-.05-.05-.06-.07a.12.12 0 010-.07c0-.03.02-.05.06-.09L454.07 512l-287.7-287.7c-.04-.04-.05-.06-.06-.09a.12.12 0 010-.07c0-.02.02-.04.06-.08l57.7-57.69c.03-.04.05-.05.07-.06a.12.12 0 01.07 0c.03 0 .05.02.09.06L512 454.07l287.7-287.7c.04-.04.06-.05.09-.06a.12.12 0 01.07 0z"
                                     />
                                   </svg>
                                 </span>
@@ -4282,13 +4251,13 @@ exports[`provision/DatabaseAccount/Create create account 3`] = `
             </div>
           </div>
           <div
-            class="ant-form-item has-label-tip css-1jlm9cy css-dev-only-do-not-override-txh9fw ant-form-item-has-success"
+            class="ant-form-item has-label-tip css-1jlm9cy ant-form-item-has-success"
           >
             <div
-              class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+              class="ant-row ant-form-item-row"
             >
               <div
-                class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left css-dev-only-do-not-override-txh9fw"
+                class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left"
               >
                 <label
                   class="ant-form-item-no-colon"
@@ -4310,7 +4279,7 @@ exports[`provision/DatabaseAccount/Create create account 3`] = `
                 </label>
               </div>
               <div
-                class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control"
               >
                 <div
                   class="ant-form-item-control-input"
@@ -4319,7 +4288,7 @@ exports[`provision/DatabaseAccount/Create create account 3`] = `
                     class="ant-form-item-control-input-content"
                   >
                     <div
-                      class="ant-select ant-select-in-form-item ant-select-status-success basic-select-wrapper css-iy4o4x css-dev-only-do-not-override-v9sov3 ant-select-multiple ant-select-show-arrow ant-select-show-search"
+                      class="ant-select ant-select-in-form-item ant-select-status-success basic-select-wrapper css-iy4o4x ant-select-multiple ant-select-show-arrow ant-select-show-search"
                     >
                       <div
                         class="ant-select-selector"
@@ -4355,13 +4324,14 @@ exports[`provision/DatabaseAccount/Create create account 3`] = `
                                     aria-hidden="true"
                                     data-icon="close"
                                     fill="currentColor"
+                                    fill-rule="evenodd"
                                     focusable="false"
                                     height="1em"
                                     viewBox="64 64 896 896"
                                     width="1em"
                                   >
                                     <path
-                                      d="M563.8 512l262.5-312.9c4.4-5.2.7-13.1-6.1-13.1h-79.8c-4.7 0-9.2 2.1-12.3 5.7L511.6 449.8 295.1 191.7c-3-3.6-7.5-5.7-12.3-5.7H203c-6.8 0-10.5 7.9-6.1 13.1L459.4 512 196.9 824.9A7.95 7.95 0 00203 838h79.8c4.7 0 9.2-2.1 12.3-5.7l216.5-258.1 216.5 258.1c3 3.6 7.5 5.7 12.3 5.7h79.8c6.8 0 10.5-7.9 6.1-13.1L563.8 512z"
+                                      d="M799.86 166.31c.02 0 .04.02.08.06l57.69 57.7c.04.03.05.05.06.08a.12.12 0 010 .06c0 .03-.02.05-.06.09L569.93 512l287.7 287.7c.04.04.05.06.06.09a.12.12 0 010 .07c0 .02-.02.04-.06.08l-57.7 57.69c-.03.04-.05.05-.07.06a.12.12 0 01-.07 0c-.03 0-.05-.02-.09-.06L512 569.93l-287.7 287.7c-.04.04-.06.05-.09.06a.12.12 0 01-.07 0c-.02 0-.04-.02-.08-.06l-57.69-57.7c-.04-.03-.05-.05-.06-.07a.12.12 0 010-.07c0-.03.02-.05.06-.09L454.07 512l-287.7-287.7c-.04-.04-.05-.06-.06-.09a.12.12 0 010-.07c0-.02.02-.04.06-.08l57.7-57.69c.03-.04.05-.05.07-.06a.12.12 0 01.07 0c.03 0 .05.02.09.06L512 454.07l287.7-287.7c.04-.04.06-.05.09-.06a.12.12 0 01.07 0z"
                                     />
                                   </svg>
                                 </span>
@@ -4436,13 +4406,13 @@ exports[`provision/DatabaseAccount/Create create account 3`] = `
             </div>
           </div>
           <div
-            class="ant-form-item css-1jlm9cy css-dev-only-do-not-override-txh9fw ant-form-item-has-success"
+            class="ant-form-item css-1jlm9cy ant-form-item-has-success"
           >
             <div
-              class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+              class="ant-row ant-form-item-row"
             >
               <div
-                class="ant-col ant-col-24 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                class="ant-col ant-col-24 ant-form-item-control"
               >
                 <div
                   class="ant-form-item-control-input"
@@ -4462,14 +4432,14 @@ exports[`provision/DatabaseAccount/Create create account 3`] = `
                           对象权限概览
                         </span>
                         <div
-                          class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+                          class="ant-space ant-space-horizontal ant-space-align-center"
                         >
                           <div
                             class="ant-space-item"
                             style="margin-right: 8px;"
                           >
                             <button
-                              class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default ant-btn-dangerous basic-button-wrapper css-geipcv"
+                              class="ant-btn ant-btn-default ant-btn-dangerous basic-button-wrapper css-geipcv"
                               type="button"
                             >
                               <span>
@@ -4481,7 +4451,7 @@ exports[`provision/DatabaseAccount/Create create account 3`] = `
                             class="ant-space-item"
                           >
                             <button
-                              class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary basic-button-wrapper css-geipcv"
+                              class="ant-btn ant-btn-primary basic-button-wrapper css-geipcv"
                               type="button"
                             >
                               <span>
@@ -4492,10 +4462,10 @@ exports[`provision/DatabaseAccount/Create create account 3`] = `
                         </div>
                       </section>
                       <div
-                        class="ant-table-wrapper actiontech-table-namespace css-fxd6ka css-dev-only-do-not-override-bj9uhl"
+                        class="ant-table-wrapper actiontech-table-namespace css-fxd6ka"
                       >
                         <div
-                          class="ant-spin-nested-loading css-dev-only-do-not-override-bj9uhl"
+                          class="ant-spin-nested-loading"
                         >
                           <div
                             class="ant-spin-container"
@@ -4592,7 +4562,7 @@ exports[`provision/DatabaseAccount/Create create account 3`] = `
                                             class="css-bwn97z"
                                           >
                                             <span
-                                              class="ant-tag ant-tag-default pointer basic-tag-wrapper basic-default-tag-wrapper css-1mjwlcb css-dev-only-do-not-override-bj9uhl"
+                                              class="ant-tag ant-tag-default pointer basic-tag-wrapper basic-default-tag-wrapper css-1mjwlcb"
                                             >
                                               database-1.table-1
                                             </span>
@@ -4605,7 +4575,7 @@ exports[`provision/DatabaseAccount/Create create account 3`] = `
                                             class="css-bwn97z"
                                           >
                                             <span
-                                              class="ant-tag ant-tag-default pointer basic-tag-wrapper basic-default-tag-wrapper css-1mjwlcb css-dev-only-do-not-override-bj9uhl"
+                                              class="ant-tag ant-tag-default pointer basic-tag-wrapper basic-default-tag-wrapper css-1mjwlcb"
                                             >
                                               ALL
                                             </span>
@@ -4619,14 +4589,14 @@ exports[`provision/DatabaseAccount/Create create account 3`] = `
                                             class="css-new95e"
                                           >
                                             <div
-                                              class="ant-space css-dev-only-do-not-override-bj9uhl ant-space-horizontal ant-space-align-center"
+                                              class="ant-space ant-space-horizontal ant-space-align-center"
                                             >
                                               <div
                                                 class="ant-space-item"
                                                 style="margin-right: 8px;"
                                               >
                                                 <button
-                                                  class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                                  class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
                                                   type="button"
                                                 >
                                                   <span>
@@ -4638,7 +4608,7 @@ exports[`provision/DatabaseAccount/Create create account 3`] = `
                                                 class="ant-space-item"
                                               >
                                                 <button
-                                                  class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm ant-btn-dangerous actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                                  class="ant-btn ant-btn-default ant-btn-sm ant-btn-dangerous actiontech-table-actions-button basic-button-wrapper css-geipcv"
                                                   type="button"
                                                 >
                                                   <span>
@@ -4670,7 +4640,7 @@ exports[`provision/DatabaseAccount/Create create account 3`] = `
   </div>
   <div>
     <div
-      class="ant-select-dropdown ant-select-dropdown-hidden css-dev-only-do-not-override-v9sov3 ant-select-dropdown-placement-bottomLeft"
+      class="ant-select-dropdown ant-select-dropdown-hidden ant-select-dropdown-placement-bottomLeft"
       style="--arrow-x: 0px; --arrow-y: 0px; left: 0px; top: 0px; box-sizing: border-box; min-width: 0; width: 0px; pointer-events: none;"
     >
       <div>
@@ -4746,22 +4716,13 @@ exports[`provision/DatabaseAccount/Create create account 3`] = `
               </div>
             </div>
           </div>
-          <div
-            class="rc-virtual-list-scrollbar"
-            style="width: 8px; top: 0px; bottom: 0px; right: 0px; position: absolute; display: none;"
-          >
-            <div
-              class="rc-virtual-list-scrollbar-thumb"
-              style="width: 100%; height: 128px; top: 0px; left: 0px; position: absolute; background: rgba(0, 0, 0, 0.5); border-radius: 99px; cursor: pointer; user-select: none;"
-            />
-          </div>
         </div>
       </div>
     </div>
   </div>
   <div>
     <div
-      class="ant-select-dropdown ant-select-dropdown-hidden css-dev-only-do-not-override-v9sov3 ant-select-dropdown-placement-bottomLeft"
+      class="ant-select-dropdown ant-select-dropdown-hidden ant-select-dropdown-placement-bottomLeft"
       style="--arrow-x: 0px; --arrow-y: 0px; left: 0px; top: 0px; box-sizing: border-box; min-width: 0; width: 0px; pointer-events: none;"
     >
       <div>
@@ -4805,7 +4766,7 @@ exports[`provision/DatabaseAccount/Create create account 3`] = `
             >
               <div
                 class="rc-virtual-list-holder-inner"
-                style="display: flex; flex-direction: column; transform: translateY(0px); position: absolute; left: 0px; right: 0px; top: 0px;"
+                style="display: flex; flex-direction: column; transform: translateY(0px); margin-left: 0px; position: absolute; left: 0px; right: 0px; top: 0px;"
               >
                 <div
                   class="ant-select-item ant-select-item-group"
@@ -5014,12 +4975,12 @@ exports[`provision/DatabaseAccount/Create create account 3`] = `
             </div>
           </div>
           <div
-            class="rc-virtual-list-scrollbar rc-virtual-list-scrollbar-show"
-            style="width: 8px; top: 0px; bottom: 0px; right: 0px; position: absolute; display: none;"
+            class="rc-virtual-list-scrollbar rc-virtual-list-scrollbar-vertical"
+            style="position: absolute; width: 8px; top: 0px; bottom: 0px; right: 0px; visibility: hidden;"
           >
             <div
               class="rc-virtual-list-scrollbar-thumb"
-              style="width: 100%; height: 121px; top: 0px; left: 0px; position: absolute; background: rgba(0, 0, 0, 0.5); border-radius: 99px; cursor: pointer; user-select: none;"
+              style="position: absolute; background: rgba(0, 0, 0, 0.5); border-radius: 99px; cursor: pointer; user-select: none; width: 100%; height: 130px; top: 0px;"
             />
           </div>
         </div>
@@ -5028,7 +4989,7 @@ exports[`provision/DatabaseAccount/Create create account 3`] = `
   </div>
   <div>
     <div
-      class="ant-tooltip css-dev-only-do-not-override-txh9fw ant-tooltip-placement-top"
+      class="ant-tooltip ant-tooltip-placement-top"
       style="--arrow-x: 0px; --arrow-y: 0px; left: -1000vw; top: -1000vh; box-sizing: border-box;"
     >
       <div
@@ -5050,7 +5011,7 @@ exports[`provision/DatabaseAccount/Create create account 3`] = `
   </div>
   <div>
     <div
-      class="ant-tooltip css-dev-only-do-not-override-ywkr0o ant-tooltip-placement-topRight"
+      class="ant-tooltip ant-tooltip-placement-topRight"
       style="--arrow-x: 0px; --arrow-y: 0px; left: -1000vw; top: -1000vh; box-sizing: border-box;"
     >
       <div
@@ -5065,7 +5026,7 @@ exports[`provision/DatabaseAccount/Create create account 3`] = `
             class="css-19kgj31"
           >
             <div
-              class="ant-space css-dev-only-do-not-override-ywkr0o ant-space-horizontal ant-space-align-center"
+              class="ant-space ant-space-horizontal ant-space-align-center"
             >
               <div
                 class="ant-space-item"
@@ -5105,7 +5066,7 @@ exports[`provision/DatabaseAccount/Create create account 3`] = `
   </div>
   <div>
     <div
-      class="ant-select-dropdown ant-select-dropdown-hidden css-dev-only-do-not-override-v9sov3 ant-select-dropdown-placement-bottomLeft"
+      class="ant-select-dropdown ant-select-dropdown-hidden ant-select-dropdown-placement-bottomLeft"
       style="--arrow-x: 0px; --arrow-y: 0px; left: 0px; top: 0px; box-sizing: border-box; min-width: 0; width: 0px; pointer-events: none;"
     >
       <div>
@@ -5240,22 +5201,13 @@ exports[`provision/DatabaseAccount/Create create account 3`] = `
               </div>
             </div>
           </div>
-          <div
-            class="rc-virtual-list-scrollbar"
-            style="width: 8px; top: 0px; bottom: 0px; right: 0px; position: absolute; display: none;"
-          >
-            <div
-              class="rc-virtual-list-scrollbar-thumb"
-              style="width: 100%; height: 128px; top: 0px; left: 0px; position: absolute; background: rgba(0, 0, 0, 0.5); border-radius: 99px; cursor: pointer; user-select: none;"
-            />
-          </div>
         </div>
       </div>
     </div>
   </div>
   <div>
     <div
-      class="ant-select-dropdown ant-select-dropdown-hidden css-dev-only-do-not-override-v9sov3 ant-select-dropdown-placement-bottomLeft"
+      class="ant-select-dropdown ant-select-dropdown-hidden ant-select-dropdown-placement-bottomLeft"
       style="--arrow-x: 0px; --arrow-y: 0px; left: 0px; top: 0px; box-sizing: border-box; min-width: 0; width: 0px; pointer-events: none;"
     >
       <div>
@@ -5356,22 +5308,13 @@ exports[`provision/DatabaseAccount/Create create account 3`] = `
               </div>
             </div>
           </div>
-          <div
-            class="rc-virtual-list-scrollbar"
-            style="width: 8px; top: 0px; bottom: 0px; right: 0px; position: absolute; display: none;"
-          >
-            <div
-              class="rc-virtual-list-scrollbar-thumb"
-              style="width: 100%; height: 128px; top: 0px; left: 0px; position: absolute; background: rgba(0, 0, 0, 0.5); border-radius: 99px; cursor: pointer; user-select: none;"
-            />
-          </div>
         </div>
       </div>
     </div>
   </div>
   <div>
     <div
-      class="ant-select-dropdown ant-select-dropdown-hidden css-dev-only-do-not-override-v9sov3 ant-select-dropdown-placement-bottomLeft"
+      class="ant-select-dropdown ant-select-dropdown-hidden ant-select-dropdown-placement-bottomLeft"
       style="--arrow-x: 0px; --arrow-y: 0px; left: 0px; top: 0px; box-sizing: border-box; min-width: 0; width: 0px; pointer-events: none;"
     >
       <div>
@@ -5547,22 +5490,13 @@ exports[`provision/DatabaseAccount/Create create account 3`] = `
               </div>
             </div>
           </div>
-          <div
-            class="rc-virtual-list-scrollbar"
-            style="width: 8px; top: 0px; bottom: 0px; right: 0px; position: absolute; display: none;"
-          >
-            <div
-              class="rc-virtual-list-scrollbar-thumb"
-              style="width: 100%; height: 128px; top: 0px; left: 0px; position: absolute; background: rgba(0, 0, 0, 0.5); border-radius: 99px; cursor: pointer; user-select: none;"
-            />
-          </div>
         </div>
       </div>
     </div>
   </div>
   <div>
     <div
-      class="ant-drawer ant-drawer-right css-dev-only-do-not-override-txh9fw"
+      class="ant-drawer ant-drawer-right"
       tabindex="-1"
     >
       <div
@@ -5605,34 +5539,36 @@ exports[`provision/DatabaseAccount/Create create account 3`] = `
                 <span
                   aria-label="close"
                   class="anticon anticon-close"
+                  data-testid="basic-drawer-close-icon"
                   role="img"
                 >
                   <svg
                     aria-hidden="true"
                     data-icon="close"
                     fill="currentColor"
+                    fill-rule="evenodd"
                     focusable="false"
                     height="1em"
                     viewBox="64 64 896 896"
                     width="1em"
                   >
                     <path
-                      d="M563.8 512l262.5-312.9c4.4-5.2.7-13.1-6.1-13.1h-79.8c-4.7 0-9.2 2.1-12.3 5.7L511.6 449.8 295.1 191.7c-3-3.6-7.5-5.7-12.3-5.7H203c-6.8 0-10.5 7.9-6.1 13.1L459.4 512 196.9 824.9A7.95 7.95 0 00203 838h79.8c4.7 0 9.2-2.1 12.3-5.7l216.5-258.1 216.5 258.1c3 3.6 7.5 5.7 12.3 5.7h79.8c6.8 0 10.5-7.9 6.1-13.1L563.8 512z"
+                      d="M799.86 166.31c.02 0 .04.02.08.06l57.69 57.7c.04.03.05.05.06.08a.12.12 0 010 .06c0 .03-.02.05-.06.09L569.93 512l287.7 287.7c.04.04.05.06.06.09a.12.12 0 010 .07c0 .02-.02.04-.06.08l-57.7 57.69c-.03.04-.05.05-.07.06a.12.12 0 01-.07 0c-.03 0-.05-.02-.09-.06L512 569.93l-287.7 287.7c-.04.04-.06.05-.09.06a.12.12 0 01-.07 0c-.02 0-.04-.02-.08-.06l-57.69-57.7c-.04-.03-.05-.05-.06-.07a.12.12 0 010-.07c0-.03.02-.05.06-.09L454.07 512l-287.7-287.7c-.04-.04-.05-.06-.06-.09a.12.12 0 010-.07c0-.02.02-.04.06-.08l57.7-57.69c.03-.04.05-.05.07-.06a.12.12 0 01.07 0c.03 0 .05.02.09.06L512 454.07l287.7-287.7c.04-.04.06-.05.09-.06a.12.12 0 01.07 0z"
                     />
                   </svg>
                 </span>
               </div>
               <form
-                class="ant-form ant-form-vertical css-dev-only-do-not-override-txh9fw"
+                class="ant-form ant-form-vertical"
               >
                 <div
-                  class="ant-form-item css-dev-only-do-not-override-txh9fw"
+                  class="ant-form-item"
                 >
                   <div
-                    class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                    class="ant-row ant-form-item-row"
                   >
                     <div
-                      class="ant-col ant-form-item-label css-dev-only-do-not-override-txh9fw"
+                      class="ant-col ant-form-item-label"
                     >
                       <label
                         class="ant-form-item-required"
@@ -5643,7 +5579,7 @@ exports[`provision/DatabaseAccount/Create create account 3`] = `
                       </label>
                     </div>
                     <div
-                      class="ant-col ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                      class="ant-col ant-form-item-control"
                     >
                       <div
                         class="ant-form-item-control-input"
@@ -5653,7 +5589,7 @@ exports[`provision/DatabaseAccount/Create create account 3`] = `
                         >
                           <div
                             aria-required="true"
-                            class="ant-select ant-select-in-form-item basic-select-wrapper css-iy4o4x css-dev-only-do-not-override-v9sov3 ant-select-multiple ant-select-show-arrow ant-select-show-search"
+                            class="ant-select ant-select-in-form-item basic-select-wrapper css-iy4o4x ant-select-multiple ant-select-show-arrow ant-select-show-search"
                           >
                             <div
                               class="ant-select-selector"
@@ -5735,20 +5671,20 @@ exports[`provision/DatabaseAccount/Create create account 3`] = `
                   </div>
                 </div>
                 <div
-                  class="ant-form-item database-form-item css-dev-only-do-not-override-txh9fw"
+                  class="ant-form-item database-form-item"
                 >
                   <div
-                    class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                    class="ant-row ant-form-item-row"
                   >
                     <div
-                      class="ant-col ant-form-item-label css-dev-only-do-not-override-txh9fw"
+                      class="ant-col ant-form-item-label"
                     >
                       <label
                         class=""
                         title=""
                       >
                         <div
-                          class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
+                          class="ant-space ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
                         >
                           <div
                             class="ant-space-item"
@@ -5786,7 +5722,7 @@ exports[`provision/DatabaseAccount/Create create account 3`] = `
                       </label>
                     </div>
                     <div
-                      class="ant-col ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                      class="ant-col ant-form-item-control"
                     >
                       <div
                         class="ant-form-item-control-input"
@@ -5795,14 +5731,14 @@ exports[`provision/DatabaseAccount/Create create account 3`] = `
                           class="ant-form-item-control-input-content"
                         >
                           <div
-                            class="ant-row ant-row-no-wrap css-dev-only-do-not-override-txh9fw"
+                            class="ant-row ant-row-no-wrap"
                           >
                             <div
-                              class="ant-col css-dev-only-do-not-override-txh9fw"
+                              class="ant-col"
                               style="flex: 0 0 180px; min-width: 0; margin-right: 12px;"
                             >
                               <div
-                                class="ant-select ant-select-in-form-item basic-select-wrapper css-iy4o4x css-dev-only-do-not-override-v9sov3 ant-select-single ant-select-allow-clear ant-select-show-arrow ant-select-show-search"
+                                class="ant-select ant-select-in-form-item basic-select-wrapper css-iy4o4x ant-select-single ant-select-allow-clear ant-select-show-arrow ant-select-show-search"
                                 data-testid="database-form-item-database-0"
                               >
                                 <div
@@ -5861,11 +5797,11 @@ exports[`provision/DatabaseAccount/Create create account 3`] = `
                               </div>
                             </div>
                             <div
-                              class="ant-col css-dev-only-do-not-override-txh9fw"
+                              class="ant-col"
                               style="flex: 1 1 auto; min-width: 0;"
                             >
                               <div
-                                class="ant-select ant-select-in-form-item basic-select-wrapper css-iy4o4x css-dev-only-do-not-override-v9sov3 ant-select-multiple ant-select-show-arrow ant-select-show-search"
+                                class="ant-select ant-select-in-form-item basic-select-wrapper css-iy4o4x ant-select-multiple ant-select-show-arrow ant-select-show-search"
                                 data-testid="database-form-item-schema-0"
                               >
                                 <div
@@ -5943,7 +5879,7 @@ exports[`provision/DatabaseAccount/Create create account 3`] = `
                               </div>
                             </div>
                             <div
-                              class="ant-col css-dev-only-do-not-override-txh9fw"
+                              class="ant-col"
                               style="flex: 0 0 48px; min-width: 0;"
                             />
                           </div>
@@ -5953,13 +5889,13 @@ exports[`provision/DatabaseAccount/Create create account 3`] = `
                   </div>
                 </div>
                 <div
-                  class="ant-form-item css-dev-only-do-not-override-txh9fw"
+                  class="ant-form-item"
                 >
                   <div
-                    class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                    class="ant-row ant-form-item-row"
                   >
                     <div
-                      class="ant-col ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                      class="ant-col ant-form-item-control"
                     >
                       <div
                         class="ant-form-item-control-input"
@@ -5968,7 +5904,7 @@ exports[`provision/DatabaseAccount/Create create account 3`] = `
                           class="ant-form-item-control-input-content"
                         >
                           <button
-                            class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default form-list-add add-object-button basic-button-wrapper css-1719g3l"
+                            class="ant-btn ant-btn-default form-list-add add-object-button basic-button-wrapper css-1719g3l"
                             type="button"
                           >
                             <span
@@ -6001,14 +5937,14 @@ exports[`provision/DatabaseAccount/Create create account 3`] = `
               class="ant-drawer-footer"
             >
               <div
-                class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+                class="ant-space ant-space-horizontal ant-space-align-center"
               >
                 <div
                   class="ant-space-item"
                   style="margin-right: 8px;"
                 >
                   <button
-                    class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default basic-button-wrapper css-geipcv"
+                    class="ant-btn ant-btn-default basic-button-wrapper css-geipcv"
                     type="button"
                   >
                     <span>
@@ -6020,7 +5956,7 @@ exports[`provision/DatabaseAccount/Create create account 3`] = `
                   class="ant-space-item"
                 >
                   <button
-                    class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary object-privileges-modal-submit basic-button-wrapper css-geipcv"
+                    class="ant-btn ant-btn-primary object-privileges-modal-submit basic-button-wrapper css-geipcv"
                     type="button"
                   >
                     <span>
@@ -6043,7 +5979,7 @@ exports[`provision/DatabaseAccount/Create create account 3`] = `
   </div>
   <div>
     <div
-      class="ant-modal-root css-dev-only-do-not-override-txh9fw"
+      class="ant-modal-root"
     >
       <div
         class="ant-modal-mask"
@@ -6055,7 +5991,7 @@ exports[`provision/DatabaseAccount/Create create account 3`] = `
         <div
           aria-labelledby="test-id"
           aria-modal="true"
-          class="ant-modal css-dev-only-do-not-override-txh9fw basic-modal-wrapper css-vvpsbb"
+          class="ant-modal basic-modal-wrapper css-vvpsbb"
           role="dialog"
           style="width: 960px;"
         >
@@ -6081,13 +6017,13 @@ exports[`provision/DatabaseAccount/Create create account 3`] = `
               class="ant-modal-body"
             >
               <div
-                class="ant-spin-nested-loading css-dev-only-do-not-override-txh9fw"
+                class="ant-spin-nested-loading"
               >
                 <div>
                   <div
                     aria-busy="true"
                     aria-live="polite"
-                    class="ant-spin ant-spin-spinning css-dev-only-do-not-override-txh9fw"
+                    class="ant-spin ant-spin-spinning"
                   >
                     <span
                       class="ant-spin-dot ant-spin-dot-spin"
@@ -6128,7 +6064,7 @@ exports[`provision/DatabaseAccount/Create create account 3`] = `
               class="ant-modal-footer"
             >
               <button
-                class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default close-preview-button basic-button-wrapper css-geipcv"
+                class="ant-btn ant-btn-default close-preview-button basic-button-wrapper css-geipcv"
                 disabled=""
                 type="button"
               >
@@ -6137,7 +6073,7 @@ exports[`provision/DatabaseAccount/Create create account 3`] = `
                 </span>
               </button>
               <button
-                class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary submit-preview-button basic-button-wrapper css-geipcv"
+                class="ant-btn ant-btn-primary submit-preview-button basic-button-wrapper css-geipcv"
                 disabled=""
                 type="button"
               >
@@ -6173,7 +6109,7 @@ exports[`provision/DatabaseAccount/Create render init snap 1`] = `
             href="/provision/project/700300/database-account"
           >
             <button
-              class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default basic-button-wrapper css-geipcv"
+              class="ant-btn ant-btn-default basic-button-wrapper css-geipcv"
               type="button"
             >
               <span
@@ -6201,14 +6137,14 @@ exports[`provision/DatabaseAccount/Create render init snap 1`] = `
           class="extra"
         >
           <div
-            class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+            class="ant-space ant-space-horizontal ant-space-align-center"
           >
             <div
               class="ant-space-item"
               style="margin-right: 8px;"
             >
               <button
-                class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default basic-button-wrapper css-geipcv"
+                class="ant-btn ant-btn-default basic-button-wrapper css-geipcv"
                 type="button"
               >
                 <span>
@@ -6220,7 +6156,7 @@ exports[`provision/DatabaseAccount/Create render init snap 1`] = `
               class="ant-space-item"
             >
               <button
-                class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary create-account-submit basic-button-wrapper css-geipcv"
+                class="ant-btn ant-btn-primary create-account-submit basic-button-wrapper css-geipcv"
                 type="button"
               >
                 <span>
@@ -6232,13 +6168,13 @@ exports[`provision/DatabaseAccount/Create render init snap 1`] = `
         </div>
       </div>
       <form
-        class="ant-form ant-form-horizontal css-dev-only-do-not-override-txh9fw hasTopHeader clearPaddingBottom css-19jfn7e"
+        class="ant-form ant-form-horizontal hasTopHeader clearPaddingBottom css-19jfn7e"
       >
         <section
           class="css-bv423q"
         >
           <h3
-            class="ant-typography css-p50odb css-dev-only-do-not-override-txh9fw"
+            class="ant-typography css-p50odb"
           >
             <span
               class="anticon title-icon"
@@ -6263,18 +6199,18 @@ exports[`provision/DatabaseAccount/Create render init snap 1`] = `
             创建数据库账号
           </h3>
           <h1
-            class="ant-typography css-1eepp70 css-dev-only-do-not-override-txh9fw"
+            class="ant-typography css-1eepp70"
           >
             账户基本信息
           </h1>
           <div
-            class="ant-form-item has-required-style css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+            class="ant-form-item has-required-style css-1jlm9cy"
           >
             <div
-              class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+              class="ant-row ant-form-item-row"
             >
               <div
-                class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left css-dev-only-do-not-override-txh9fw"
+                class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left"
               >
                 <label
                   class="ant-form-item-required ant-form-item-no-colon"
@@ -6285,7 +6221,7 @@ exports[`provision/DatabaseAccount/Create render init snap 1`] = `
                 </label>
               </div>
               <div
-                class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control"
               >
                 <div
                   class="ant-form-item-control-input"
@@ -6295,7 +6231,7 @@ exports[`provision/DatabaseAccount/Create render init snap 1`] = `
                   >
                     <div
                       aria-required="true"
-                      class="ant-select ant-select-in-form-item basic-select-wrapper css-iy4o4x css-dev-only-do-not-override-v9sov3 ant-select-single ant-select-show-arrow ant-select-show-search"
+                      class="ant-select ant-select-in-form-item basic-select-wrapper css-iy4o4x ant-select-single ant-select-show-arrow ant-select-show-search"
                     >
                       <div
                         class="ant-select-selector"
@@ -6358,13 +6294,13 @@ exports[`provision/DatabaseAccount/Create render init snap 1`] = `
             </div>
           </div>
           <div
-            class="ant-form-item has-required-style css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+            class="ant-form-item has-required-style css-1jlm9cy"
           >
             <div
-              class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+              class="ant-row ant-form-item-row"
             >
               <div
-                class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left css-dev-only-do-not-override-txh9fw"
+                class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left"
               >
                 <label
                   class="ant-form-item-required ant-form-item-no-colon"
@@ -6375,7 +6311,7 @@ exports[`provision/DatabaseAccount/Create render init snap 1`] = `
                 </label>
               </div>
               <div
-                class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control"
               >
                 <div
                   class="ant-form-item-control-input"
@@ -6384,7 +6320,7 @@ exports[`provision/DatabaseAccount/Create render init snap 1`] = `
                     class="ant-form-item-control-input-content"
                   >
                     <div
-                      class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center css-af3nlx"
+                      class="ant-space ant-space-horizontal ant-space-align-center css-af3nlx"
                     >
                       <div
                         class="ant-space-item"
@@ -6392,7 +6328,7 @@ exports[`provision/DatabaseAccount/Create render init snap 1`] = `
                       >
                         <div
                           aria-required="true"
-                          class="ant-select ant-select-in-form-item basic-select-wrapper css-iy4o4x css-dev-only-do-not-override-v9sov3 ant-select-single ant-select-allow-clear ant-select-show-arrow ant-select-show-search"
+                          class="ant-select ant-select-in-form-item basic-select-wrapper css-iy4o4x ant-select-single ant-select-allow-clear ant-select-show-arrow ant-select-show-search"
                         >
                           <div
                             class="ant-select-selector"
@@ -6454,13 +6390,13 @@ exports[`provision/DatabaseAccount/Create render init snap 1`] = `
                         class="ant-space-item"
                       >
                         <div
-                          class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
+                          class="ant-space ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
                         >
                           <div
                             class="ant-space-item"
                           >
                             <button
-                              class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default ant-btn-icon-only basic-button-wrapper css-iieact"
+                              class="ant-btn ant-btn-default ant-btn-icon-only basic-button-wrapper css-iieact"
                               disabled=""
                               style="margin-left: 12px;"
                               type="button"
@@ -6496,13 +6432,13 @@ exports[`provision/DatabaseAccount/Create render init snap 1`] = `
             </div>
           </div>
           <div
-            class="ant-form-item css-1jlm9cy css-dev-only-do-not-override-txh9fw ant-form-item-hidden"
+            class="ant-form-item css-1jlm9cy ant-form-item-hidden"
           >
             <div
-              class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+              class="ant-row ant-form-item-row"
             >
               <div
-                class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control"
               >
                 <div
                   class="ant-form-item-control-input"
@@ -6511,7 +6447,7 @@ exports[`provision/DatabaseAccount/Create render init snap 1`] = `
                     class="ant-form-item-control-input-content"
                   >
                     <input
-                      class="ant-input css-dev-only-do-not-override-ywkr0o basic-input-wrapper css-1pd1cd5"
+                      class="ant-input basic-input-wrapper css-1pd1cd5"
                       id="dbType"
                       placeholder="请输入{{name}}"
                       type="text"
@@ -6523,13 +6459,13 @@ exports[`provision/DatabaseAccount/Create render init snap 1`] = `
             </div>
           </div>
           <div
-            class="ant-form-item has-required-style has-label-tip css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+            class="ant-form-item has-required-style has-label-tip css-1jlm9cy"
           >
             <div
-              class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+              class="ant-row ant-form-item-row"
             >
               <div
-                class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left css-dev-only-do-not-override-txh9fw"
+                class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left"
               >
                 <label
                   class="ant-form-item-required ant-form-item-no-colon"
@@ -6551,7 +6487,7 @@ exports[`provision/DatabaseAccount/Create render init snap 1`] = `
                 </label>
               </div>
               <div
-                class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control"
               >
                 <div
                   class="ant-form-item-control-input"
@@ -6561,7 +6497,7 @@ exports[`provision/DatabaseAccount/Create render init snap 1`] = `
                   >
                     <input
                       aria-required="true"
-                      class="ant-input css-dev-only-do-not-override-ywkr0o basic-input-wrapper css-1pd1cd5"
+                      class="ant-input basic-input-wrapper css-1pd1cd5"
                       id="username"
                       placeholder="请输入{{name}}"
                       type="text"
@@ -6573,13 +6509,13 @@ exports[`provision/DatabaseAccount/Create render init snap 1`] = `
             </div>
           </div>
           <div
-            class="ant-form-item has-required-style has-label-tip css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+            class="ant-form-item has-required-style has-label-tip css-1jlm9cy"
           >
             <div
-              class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+              class="ant-row ant-form-item-row"
             >
               <div
-                class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left css-dev-only-do-not-override-txh9fw"
+                class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left"
               >
                 <label
                   class="ant-form-item-required ant-form-item-no-colon"
@@ -6601,7 +6537,7 @@ exports[`provision/DatabaseAccount/Create render init snap 1`] = `
                 </label>
               </div>
               <div
-                class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control"
               >
                 <div
                   class="ant-form-item-control-input"
@@ -6610,11 +6546,11 @@ exports[`provision/DatabaseAccount/Create render init snap 1`] = `
                     class="ant-form-item-control-input-content"
                   >
                     <span
-                      class="ant-input-affix-wrapper ant-input-password basic-input-wrapper action-password-input css-1x7fd4z css-dev-only-do-not-override-txh9fw"
+                      class="ant-input-affix-wrapper ant-input-password basic-input-wrapper action-password-input css-1x7fd4z"
                     >
                       <input
                         aria-required="true"
-                        class="ant-input css-dev-only-do-not-override-txh9fw"
+                        class="ant-input"
                         id="password"
                         placeholder="请输入{{name}}"
                         type="password"
@@ -6646,13 +6582,13 @@ exports[`provision/DatabaseAccount/Create render init snap 1`] = `
                           </svg>
                         </span>
                         <div
-                          class="ant-space css-dev-only-do-not-override-ywkr0o ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
+                          class="ant-space ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
                         >
                           <div
                             class="ant-space-item"
                           >
                             <button
-                              class="ant-btn css-dev-only-do-not-override-hcs8ws ant-btn-primary ant-btn-sm basic-button-wrapper css-geipcv"
+                              class="ant-btn ant-btn-primary ant-btn-sm basic-button-wrapper css-geipcv"
                               type="button"
                             >
                               <span>
@@ -6669,13 +6605,13 @@ exports[`provision/DatabaseAccount/Create render init snap 1`] = `
             </div>
           </div>
           <div
-            class="ant-form-item has-required-style has-label-tip css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+            class="ant-form-item has-required-style has-label-tip css-1jlm9cy"
           >
             <div
-              class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+              class="ant-row ant-form-item-row"
             >
               <div
-                class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left css-dev-only-do-not-override-txh9fw"
+                class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left"
               >
                 <label
                   class="ant-form-item-required ant-form-item-no-colon"
@@ -6697,7 +6633,7 @@ exports[`provision/DatabaseAccount/Create render init snap 1`] = `
                 </label>
               </div>
               <div
-                class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control"
               >
                 <div
                   class="ant-form-item-control-input"
@@ -6706,11 +6642,11 @@ exports[`provision/DatabaseAccount/Create render init snap 1`] = `
                     class="ant-form-item-control-input-content"
                   >
                     <span
-                      class="ant-input-affix-wrapper ant-input-password basic-input-wrapper css-1pd1cd5 css-dev-only-do-not-override-txh9fw"
+                      class="ant-input-affix-wrapper ant-input-password basic-input-wrapper css-1pd1cd5"
                     >
                       <input
                         aria-required="true"
-                        class="ant-input css-dev-only-do-not-override-txh9fw"
+                        class="ant-input"
                         id="confirm_password"
                         placeholder="请输入{{name}}"
                         type="password"
@@ -6749,13 +6685,13 @@ exports[`provision/DatabaseAccount/Create render init snap 1`] = `
             </div>
           </div>
           <div
-            class="ant-form-item has-required-style has-label-tip css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+            class="ant-form-item has-required-style has-label-tip css-1jlm9cy"
           >
             <div
-              class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+              class="ant-row ant-form-item-row"
             >
               <div
-                class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left css-dev-only-do-not-override-txh9fw"
+                class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left"
               >
                 <label
                   class="ant-form-item-required ant-form-item-no-colon"
@@ -6777,7 +6713,7 @@ exports[`provision/DatabaseAccount/Create render init snap 1`] = `
                 </label>
               </div>
               <div
-                class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control"
               >
                 <div
                   class="ant-form-item-control-input"
@@ -6787,7 +6723,7 @@ exports[`provision/DatabaseAccount/Create render init snap 1`] = `
                   >
                     <div
                       aria-required="true"
-                      class="ant-select ant-select-in-form-item basic-select-wrapper css-iy4o4x css-dev-only-do-not-override-v9sov3 ant-select-single ant-select-show-arrow"
+                      class="ant-select ant-select-in-form-item basic-select-wrapper css-iy4o4x ant-select-single ant-select-show-arrow"
                     >
                       <div
                         class="ant-select-selector"
@@ -6853,13 +6789,13 @@ exports[`provision/DatabaseAccount/Create render init snap 1`] = `
             </div>
           </div>
           <div
-            class="ant-form-item has-required-style has-label-tip css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+            class="ant-form-item has-required-style has-label-tip css-1jlm9cy"
           >
             <div
-              class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+              class="ant-row ant-form-item-row"
             >
               <div
-                class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left css-dev-only-do-not-override-txh9fw"
+                class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left"
               >
                 <label
                   class="ant-form-item-required ant-form-item-no-colon"
@@ -6881,7 +6817,7 @@ exports[`provision/DatabaseAccount/Create render init snap 1`] = `
                 </label>
               </div>
               <div
-                class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control"
               >
                 <div
                   class="ant-form-item-control-input"
@@ -6890,7 +6826,7 @@ exports[`provision/DatabaseAccount/Create render init snap 1`] = `
                     class="ant-form-item-control-input-content"
                   >
                     <div
-                      class="ant-input-number ant-input-number-lg ant-input-number-in-form-item css-dev-only-do-not-override-ezmdel basic-inputNumber-wrapper css-1fd5hnt"
+                      class="ant-input-number ant-input-number-lg ant-input-number-in-form-item basic-inputNumber-wrapper css-1fd5hnt"
                     >
                       <div
                         class="ant-input-number-handler-wrap"
@@ -6970,13 +6906,13 @@ exports[`provision/DatabaseAccount/Create render init snap 1`] = `
             </div>
           </div>
           <div
-            class="ant-form-item has-required-style has-label-tip css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+            class="ant-form-item has-required-style has-label-tip css-1jlm9cy"
           >
             <div
-              class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+              class="ant-row ant-form-item-row"
             >
               <div
-                class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left css-dev-only-do-not-override-txh9fw"
+                class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left"
               >
                 <label
                   class="ant-form-item-required ant-form-item-no-colon"
@@ -6998,7 +6934,7 @@ exports[`provision/DatabaseAccount/Create render init snap 1`] = `
                 </label>
               </div>
               <div
-                class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control"
               >
                 <div
                   class="ant-form-item-control-input"
@@ -7008,11 +6944,11 @@ exports[`provision/DatabaseAccount/Create render init snap 1`] = `
                   >
                     <div
                       aria-required="true"
-                      class="ant-radio-group ant-radio-group-outline css-dev-only-do-not-override-txh9fw"
+                      class="ant-radio-group ant-radio-group-outline"
                       id="password_expiration_policy"
                     >
                       <label
-                        class="ant-radio-wrapper ant-radio-wrapper-in-form-item css-dev-only-do-not-override-txh9fw"
+                        class="ant-radio-wrapper ant-radio-wrapper-in-form-item"
                       >
                         <span
                           class="ant-radio"
@@ -7031,7 +6967,7 @@ exports[`provision/DatabaseAccount/Create render init snap 1`] = `
                         </span>
                       </label>
                       <label
-                        class="ant-radio-wrapper ant-radio-wrapper-checked ant-radio-wrapper-in-form-item css-dev-only-do-not-override-txh9fw"
+                        class="ant-radio-wrapper ant-radio-wrapper-checked ant-radio-wrapper-in-form-item"
                       >
                         <span
                           class="ant-radio ant-radio-checked"
@@ -7057,13 +6993,13 @@ exports[`provision/DatabaseAccount/Create render init snap 1`] = `
             </div>
           </div>
           <div
-            class="ant-form-item has-label-tip css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+            class="ant-form-item has-label-tip css-1jlm9cy"
           >
             <div
-              class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+              class="ant-row ant-form-item-row"
             >
               <div
-                class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left css-dev-only-do-not-override-txh9fw"
+                class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left"
               >
                 <label
                   class="ant-form-item-no-colon"
@@ -7085,7 +7021,7 @@ exports[`provision/DatabaseAccount/Create render init snap 1`] = `
                 </label>
               </div>
               <div
-                class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control"
               >
                 <div
                   class="ant-form-item-control-input"
@@ -7094,7 +7030,7 @@ exports[`provision/DatabaseAccount/Create render init snap 1`] = `
                     class="ant-form-item-control-input-content"
                   >
                     <textarea
-                      class="ant-input css-dev-only-do-not-override-txh9fw basic-input-wrapper css-1pd1cd5"
+                      class="ant-input basic-input-wrapper css-1pd1cd5"
                       id="explanation"
                       placeholder="点击添加账户说明（选填）"
                       style="resize: none; height: -70px; min-height: -6px; max-height: -70px;"
@@ -7105,18 +7041,18 @@ exports[`provision/DatabaseAccount/Create render init snap 1`] = `
             </div>
           </div>
           <h1
-            class="ant-typography css-1eepp70 css-dev-only-do-not-override-txh9fw"
+            class="ant-typography css-1eepp70"
           >
             数据权限
           </h1>
           <div
-            class="ant-form-item has-label-tip css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+            class="ant-form-item has-label-tip css-1jlm9cy"
           >
             <div
-              class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+              class="ant-row ant-form-item-row"
             >
               <div
-                class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left css-dev-only-do-not-override-txh9fw"
+                class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left"
               >
                 <label
                   class="ant-form-item-no-colon"
@@ -7138,7 +7074,7 @@ exports[`provision/DatabaseAccount/Create render init snap 1`] = `
                 </label>
               </div>
               <div
-                class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control"
               >
                 <div
                   class="ant-form-item-control-input"
@@ -7147,7 +7083,7 @@ exports[`provision/DatabaseAccount/Create render init snap 1`] = `
                     class="ant-form-item-control-input-content"
                   >
                     <div
-                      class="ant-select ant-select-in-form-item basic-select-wrapper css-iy4o4x css-dev-only-do-not-override-v9sov3 ant-select-multiple ant-select-allow-clear ant-select-show-arrow ant-select-disabled ant-select-show-search"
+                      class="ant-select ant-select-in-form-item basic-select-wrapper css-iy4o4x ant-select-multiple ant-select-allow-clear ant-select-show-arrow ant-select-disabled ant-select-show-search"
                     >
                       <div
                         class="ant-select-selector"
@@ -7229,13 +7165,13 @@ exports[`provision/DatabaseAccount/Create render init snap 1`] = `
             </div>
           </div>
           <div
-            class="ant-form-item has-label-tip css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+            class="ant-form-item has-label-tip css-1jlm9cy"
           >
             <div
-              class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+              class="ant-row ant-form-item-row"
             >
               <div
-                class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left css-dev-only-do-not-override-txh9fw"
+                class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left"
               >
                 <label
                   class="ant-form-item-no-colon"
@@ -7257,7 +7193,7 @@ exports[`provision/DatabaseAccount/Create render init snap 1`] = `
                 </label>
               </div>
               <div
-                class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control"
               >
                 <div
                   class="ant-form-item-control-input"
@@ -7266,7 +7202,7 @@ exports[`provision/DatabaseAccount/Create render init snap 1`] = `
                     class="ant-form-item-control-input-content"
                   >
                     <div
-                      class="ant-select ant-select-in-form-item basic-select-wrapper css-iy4o4x css-dev-only-do-not-override-v9sov3 ant-select-multiple ant-select-show-arrow ant-select-show-search"
+                      class="ant-select ant-select-in-form-item basic-select-wrapper css-iy4o4x ant-select-multiple ant-select-show-arrow ant-select-show-search"
                     >
                       <div
                         class="ant-select-selector"
@@ -7347,13 +7283,13 @@ exports[`provision/DatabaseAccount/Create render init snap 1`] = `
             </div>
           </div>
           <div
-            class="ant-form-item css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+            class="ant-form-item css-1jlm9cy"
           >
             <div
-              class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+              class="ant-row ant-form-item-row"
             >
               <div
-                class="ant-col ant-col-24 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                class="ant-col ant-col-24 ant-form-item-control"
               >
                 <div
                   class="ant-form-item-control-input"
@@ -7373,14 +7309,14 @@ exports[`provision/DatabaseAccount/Create render init snap 1`] = `
                           对象权限概览
                         </span>
                         <div
-                          class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+                          class="ant-space ant-space-horizontal ant-space-align-center"
                         >
                           <div
                             class="ant-space-item"
                             style="margin-right: 8px;"
                           >
                             <button
-                              class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default ant-btn-dangerous basic-button-wrapper css-geipcv"
+                              class="ant-btn ant-btn-default ant-btn-dangerous basic-button-wrapper css-geipcv"
                               disabled=""
                               type="button"
                             >
@@ -7393,7 +7329,7 @@ exports[`provision/DatabaseAccount/Create render init snap 1`] = `
                             class="ant-space-item"
                           >
                             <button
-                              class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary basic-button-wrapper css-geipcv"
+                              class="ant-btn ant-btn-primary basic-button-wrapper css-geipcv"
                               disabled=""
                               type="button"
                             >
@@ -7405,10 +7341,10 @@ exports[`provision/DatabaseAccount/Create render init snap 1`] = `
                         </div>
                       </section>
                       <div
-                        class="ant-table-wrapper actiontech-table-namespace css-fxd6ka css-dev-only-do-not-override-bj9uhl"
+                        class="ant-table-wrapper actiontech-table-namespace css-fxd6ka"
                       >
                         <div
-                          class="ant-spin-nested-loading css-dev-only-do-not-override-bj9uhl"
+                          class="ant-spin-nested-loading"
                         >
                           <div
                             class="ant-spin-container"
@@ -7574,7 +7510,7 @@ exports[`provision/DatabaseAccount/Create render quick create role when database
             href="/provision/project/700300/database-account"
           >
             <button
-              class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default basic-button-wrapper css-geipcv"
+              class="ant-btn ant-btn-default basic-button-wrapper css-geipcv"
               type="button"
             >
               <span
@@ -7602,14 +7538,14 @@ exports[`provision/DatabaseAccount/Create render quick create role when database
           class="extra"
         >
           <div
-            class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+            class="ant-space ant-space-horizontal ant-space-align-center"
           >
             <div
               class="ant-space-item"
               style="margin-right: 8px;"
             >
               <button
-                class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default basic-button-wrapper css-geipcv"
+                class="ant-btn ant-btn-default basic-button-wrapper css-geipcv"
                 type="button"
               >
                 <span>
@@ -7621,7 +7557,7 @@ exports[`provision/DatabaseAccount/Create render quick create role when database
               class="ant-space-item"
             >
               <button
-                class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary create-account-submit basic-button-wrapper css-geipcv"
+                class="ant-btn ant-btn-primary create-account-submit basic-button-wrapper css-geipcv"
                 type="button"
               >
                 <span>
@@ -7633,13 +7569,13 @@ exports[`provision/DatabaseAccount/Create render quick create role when database
         </div>
       </div>
       <form
-        class="ant-form ant-form-horizontal css-dev-only-do-not-override-txh9fw hasTopHeader clearPaddingBottom css-19jfn7e"
+        class="ant-form ant-form-horizontal hasTopHeader clearPaddingBottom css-19jfn7e"
       >
         <section
           class="css-bv423q"
         >
           <h3
-            class="ant-typography css-p50odb css-dev-only-do-not-override-txh9fw"
+            class="ant-typography css-p50odb"
           >
             <span
               class="anticon title-icon"
@@ -7664,18 +7600,18 @@ exports[`provision/DatabaseAccount/Create render quick create role when database
             创建数据库账号
           </h3>
           <h1
-            class="ant-typography css-1eepp70 css-dev-only-do-not-override-txh9fw"
+            class="ant-typography css-1eepp70"
           >
             账户基本信息
           </h1>
           <div
-            class="ant-form-item has-required-style css-1jlm9cy css-dev-only-do-not-override-txh9fw ant-form-item-has-success"
+            class="ant-form-item has-required-style css-1jlm9cy ant-form-item-has-success"
           >
             <div
-              class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+              class="ant-row ant-form-item-row"
             >
               <div
-                class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left css-dev-only-do-not-override-txh9fw"
+                class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left"
               >
                 <label
                   class="ant-form-item-required ant-form-item-no-colon"
@@ -7686,7 +7622,7 @@ exports[`provision/DatabaseAccount/Create render quick create role when database
                 </label>
               </div>
               <div
-                class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control"
               >
                 <div
                   class="ant-form-item-control-input"
@@ -7696,7 +7632,7 @@ exports[`provision/DatabaseAccount/Create render quick create role when database
                   >
                     <div
                       aria-required="true"
-                      class="ant-select ant-select-in-form-item ant-select-status-success basic-select-wrapper css-iy4o4x css-dev-only-do-not-override-v9sov3 ant-select-single ant-select-show-arrow ant-select-show-search"
+                      class="ant-select ant-select-in-form-item ant-select-status-success basic-select-wrapper css-iy4o4x ant-select-single ant-select-show-arrow ant-select-show-search"
                     >
                       <div
                         class="ant-select-selector"
@@ -7760,13 +7696,13 @@ exports[`provision/DatabaseAccount/Create render quick create role when database
             </div>
           </div>
           <div
-            class="ant-form-item has-required-style css-1jlm9cy css-dev-only-do-not-override-txh9fw ant-form-item-has-success"
+            class="ant-form-item has-required-style css-1jlm9cy ant-form-item-has-success"
           >
             <div
-              class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+              class="ant-row ant-form-item-row"
             >
               <div
-                class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left css-dev-only-do-not-override-txh9fw"
+                class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left"
               >
                 <label
                   class="ant-form-item-required ant-form-item-no-colon"
@@ -7777,7 +7713,7 @@ exports[`provision/DatabaseAccount/Create render quick create role when database
                 </label>
               </div>
               <div
-                class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control"
               >
                 <div
                   class="ant-form-item-control-input"
@@ -7786,7 +7722,7 @@ exports[`provision/DatabaseAccount/Create render quick create role when database
                     class="ant-form-item-control-input-content"
                   >
                     <div
-                      class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center css-af3nlx"
+                      class="ant-space ant-space-horizontal ant-space-align-center css-af3nlx"
                     >
                       <div
                         class="ant-space-item"
@@ -7794,7 +7730,7 @@ exports[`provision/DatabaseAccount/Create render quick create role when database
                       >
                         <div
                           aria-required="true"
-                          class="ant-select ant-select-in-form-item ant-select-status-success basic-select-wrapper css-iy4o4x css-dev-only-do-not-override-v9sov3 ant-select-single ant-select-allow-clear ant-select-show-arrow ant-select-show-search"
+                          class="ant-select ant-select-in-form-item ant-select-status-success basic-select-wrapper css-iy4o4x ant-select-single ant-select-allow-clear ant-select-show-arrow ant-select-show-search"
                         >
                           <div
                             class="ant-select-selector"
@@ -7875,13 +7811,13 @@ exports[`provision/DatabaseAccount/Create render quick create role when database
                         class="ant-space-item"
                       >
                         <div
-                          class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
+                          class="ant-space ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
                         >
                           <div
                             class="ant-space-item"
                           >
                             <button
-                              class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default ant-btn-icon-only basic-button-wrapper css-iieact"
+                              class="ant-btn ant-btn-default ant-btn-icon-only basic-button-wrapper css-iieact"
                               style="margin-left: 12px;"
                               type="button"
                             >
@@ -7916,13 +7852,13 @@ exports[`provision/DatabaseAccount/Create render quick create role when database
             </div>
           </div>
           <div
-            class="ant-form-item css-1jlm9cy css-dev-only-do-not-override-txh9fw ant-form-item-hidden"
+            class="ant-form-item css-1jlm9cy ant-form-item-hidden"
           >
             <div
-              class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+              class="ant-row ant-form-item-row"
             >
               <div
-                class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control"
               >
                 <div
                   class="ant-form-item-control-input"
@@ -7931,7 +7867,7 @@ exports[`provision/DatabaseAccount/Create render quick create role when database
                     class="ant-form-item-control-input-content"
                   >
                     <input
-                      class="ant-input css-dev-only-do-not-override-ywkr0o basic-input-wrapper css-1pd1cd5"
+                      class="ant-input basic-input-wrapper css-1pd1cd5"
                       id="dbType"
                       placeholder="请输入{{name}}"
                       type="text"
@@ -7943,13 +7879,13 @@ exports[`provision/DatabaseAccount/Create render quick create role when database
             </div>
           </div>
           <div
-            class="ant-form-item has-required-style has-label-tip css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+            class="ant-form-item has-required-style has-label-tip css-1jlm9cy"
           >
             <div
-              class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+              class="ant-row ant-form-item-row"
             >
               <div
-                class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left css-dev-only-do-not-override-txh9fw"
+                class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left"
               >
                 <label
                   class="ant-form-item-required ant-form-item-no-colon"
@@ -7971,7 +7907,7 @@ exports[`provision/DatabaseAccount/Create render quick create role when database
                 </label>
               </div>
               <div
-                class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control"
               >
                 <div
                   class="ant-form-item-control-input"
@@ -7981,7 +7917,7 @@ exports[`provision/DatabaseAccount/Create render quick create role when database
                   >
                     <input
                       aria-required="true"
-                      class="ant-input css-dev-only-do-not-override-ywkr0o basic-input-wrapper css-1pd1cd5"
+                      class="ant-input basic-input-wrapper css-1pd1cd5"
                       id="username"
                       placeholder="请输入{{name}}"
                       type="text"
@@ -7993,13 +7929,13 @@ exports[`provision/DatabaseAccount/Create render quick create role when database
             </div>
           </div>
           <div
-            class="ant-form-item has-required-style has-label-tip css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+            class="ant-form-item has-required-style has-label-tip css-1jlm9cy"
           >
             <div
-              class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+              class="ant-row ant-form-item-row"
             >
               <div
-                class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left css-dev-only-do-not-override-txh9fw"
+                class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left"
               >
                 <label
                   class="ant-form-item-required ant-form-item-no-colon"
@@ -8021,7 +7957,7 @@ exports[`provision/DatabaseAccount/Create render quick create role when database
                 </label>
               </div>
               <div
-                class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control"
               >
                 <div
                   class="ant-form-item-control-input"
@@ -8030,11 +7966,11 @@ exports[`provision/DatabaseAccount/Create render quick create role when database
                     class="ant-form-item-control-input-content"
                   >
                     <span
-                      class="ant-input-affix-wrapper ant-input-password basic-input-wrapper action-password-input css-1x7fd4z css-dev-only-do-not-override-txh9fw"
+                      class="ant-input-affix-wrapper ant-input-password basic-input-wrapper action-password-input css-1x7fd4z"
                     >
                       <input
                         aria-required="true"
-                        class="ant-input css-dev-only-do-not-override-txh9fw"
+                        class="ant-input"
                         id="password"
                         placeholder="请输入{{name}}"
                         type="password"
@@ -8066,13 +8002,13 @@ exports[`provision/DatabaseAccount/Create render quick create role when database
                           </svg>
                         </span>
                         <div
-                          class="ant-space css-dev-only-do-not-override-ywkr0o ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
+                          class="ant-space ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
                         >
                           <div
                             class="ant-space-item"
                           >
                             <button
-                              class="ant-btn css-dev-only-do-not-override-hcs8ws ant-btn-primary ant-btn-sm basic-button-wrapper css-geipcv"
+                              class="ant-btn ant-btn-primary ant-btn-sm basic-button-wrapper css-geipcv"
                               type="button"
                             >
                               <span>
@@ -8089,13 +8025,13 @@ exports[`provision/DatabaseAccount/Create render quick create role when database
             </div>
           </div>
           <div
-            class="ant-form-item has-required-style has-label-tip css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+            class="ant-form-item has-required-style has-label-tip css-1jlm9cy"
           >
             <div
-              class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+              class="ant-row ant-form-item-row"
             >
               <div
-                class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left css-dev-only-do-not-override-txh9fw"
+                class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left"
               >
                 <label
                   class="ant-form-item-required ant-form-item-no-colon"
@@ -8117,7 +8053,7 @@ exports[`provision/DatabaseAccount/Create render quick create role when database
                 </label>
               </div>
               <div
-                class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control"
               >
                 <div
                   class="ant-form-item-control-input"
@@ -8126,11 +8062,11 @@ exports[`provision/DatabaseAccount/Create render quick create role when database
                     class="ant-form-item-control-input-content"
                   >
                     <span
-                      class="ant-input-affix-wrapper ant-input-password basic-input-wrapper css-1pd1cd5 css-dev-only-do-not-override-txh9fw"
+                      class="ant-input-affix-wrapper ant-input-password basic-input-wrapper css-1pd1cd5"
                     >
                       <input
                         aria-required="true"
-                        class="ant-input css-dev-only-do-not-override-txh9fw"
+                        class="ant-input"
                         id="confirm_password"
                         placeholder="请输入{{name}}"
                         type="password"
@@ -8169,13 +8105,13 @@ exports[`provision/DatabaseAccount/Create render quick create role when database
             </div>
           </div>
           <div
-            class="ant-form-item has-required-style has-label-tip css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+            class="ant-form-item has-required-style has-label-tip css-1jlm9cy"
           >
             <div
-              class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+              class="ant-row ant-form-item-row"
             >
               <div
-                class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left css-dev-only-do-not-override-txh9fw"
+                class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left"
               >
                 <label
                   class="ant-form-item-required ant-form-item-no-colon"
@@ -8197,7 +8133,7 @@ exports[`provision/DatabaseAccount/Create render quick create role when database
                 </label>
               </div>
               <div
-                class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control"
               >
                 <div
                   class="ant-form-item-control-input"
@@ -8207,7 +8143,7 @@ exports[`provision/DatabaseAccount/Create render quick create role when database
                   >
                     <div
                       aria-required="true"
-                      class="ant-select ant-select-in-form-item basic-select-wrapper css-iy4o4x css-dev-only-do-not-override-v9sov3 ant-select-single ant-select-show-arrow"
+                      class="ant-select ant-select-in-form-item basic-select-wrapper css-iy4o4x ant-select-single ant-select-show-arrow"
                     >
                       <div
                         class="ant-select-selector"
@@ -8273,13 +8209,13 @@ exports[`provision/DatabaseAccount/Create render quick create role when database
             </div>
           </div>
           <div
-            class="ant-form-item has-required-style has-label-tip css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+            class="ant-form-item has-required-style has-label-tip css-1jlm9cy"
           >
             <div
-              class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+              class="ant-row ant-form-item-row"
             >
               <div
-                class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left css-dev-only-do-not-override-txh9fw"
+                class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left"
               >
                 <label
                   class="ant-form-item-required ant-form-item-no-colon"
@@ -8301,7 +8237,7 @@ exports[`provision/DatabaseAccount/Create render quick create role when database
                 </label>
               </div>
               <div
-                class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control"
               >
                 <div
                   class="ant-form-item-control-input"
@@ -8310,7 +8246,7 @@ exports[`provision/DatabaseAccount/Create render quick create role when database
                     class="ant-form-item-control-input-content"
                   >
                     <div
-                      class="ant-input-number ant-input-number-lg ant-input-number-in-form-item css-dev-only-do-not-override-ezmdel basic-inputNumber-wrapper css-1fd5hnt"
+                      class="ant-input-number ant-input-number-lg ant-input-number-in-form-item basic-inputNumber-wrapper css-1fd5hnt"
                     >
                       <div
                         class="ant-input-number-handler-wrap"
@@ -8390,13 +8326,13 @@ exports[`provision/DatabaseAccount/Create render quick create role when database
             </div>
           </div>
           <div
-            class="ant-form-item has-required-style has-label-tip css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+            class="ant-form-item has-required-style has-label-tip css-1jlm9cy"
           >
             <div
-              class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+              class="ant-row ant-form-item-row"
             >
               <div
-                class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left css-dev-only-do-not-override-txh9fw"
+                class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left"
               >
                 <label
                   class="ant-form-item-required ant-form-item-no-colon"
@@ -8418,7 +8354,7 @@ exports[`provision/DatabaseAccount/Create render quick create role when database
                 </label>
               </div>
               <div
-                class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control"
               >
                 <div
                   class="ant-form-item-control-input"
@@ -8428,11 +8364,11 @@ exports[`provision/DatabaseAccount/Create render quick create role when database
                   >
                     <div
                       aria-required="true"
-                      class="ant-radio-group ant-radio-group-outline css-dev-only-do-not-override-txh9fw"
+                      class="ant-radio-group ant-radio-group-outline"
                       id="password_expiration_policy"
                     >
                       <label
-                        class="ant-radio-wrapper ant-radio-wrapper-in-form-item css-dev-only-do-not-override-txh9fw"
+                        class="ant-radio-wrapper ant-radio-wrapper-in-form-item"
                       >
                         <span
                           class="ant-radio"
@@ -8451,7 +8387,7 @@ exports[`provision/DatabaseAccount/Create render quick create role when database
                         </span>
                       </label>
                       <label
-                        class="ant-radio-wrapper ant-radio-wrapper-checked ant-radio-wrapper-in-form-item css-dev-only-do-not-override-txh9fw"
+                        class="ant-radio-wrapper ant-radio-wrapper-checked ant-radio-wrapper-in-form-item"
                       >
                         <span
                           class="ant-radio ant-radio-checked"
@@ -8477,13 +8413,13 @@ exports[`provision/DatabaseAccount/Create render quick create role when database
             </div>
           </div>
           <div
-            class="ant-form-item has-label-tip css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+            class="ant-form-item has-label-tip css-1jlm9cy"
           >
             <div
-              class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+              class="ant-row ant-form-item-row"
             >
               <div
-                class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left css-dev-only-do-not-override-txh9fw"
+                class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left"
               >
                 <label
                   class="ant-form-item-no-colon"
@@ -8505,7 +8441,7 @@ exports[`provision/DatabaseAccount/Create render quick create role when database
                 </label>
               </div>
               <div
-                class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control"
               >
                 <div
                   class="ant-form-item-control-input"
@@ -8514,7 +8450,7 @@ exports[`provision/DatabaseAccount/Create render quick create role when database
                     class="ant-form-item-control-input-content"
                   >
                     <textarea
-                      class="ant-input css-dev-only-do-not-override-txh9fw basic-input-wrapper css-1pd1cd5"
+                      class="ant-input basic-input-wrapper css-1pd1cd5"
                       id="explanation"
                       placeholder="点击添加账户说明（选填）"
                       style="resize: none; height: -70px; min-height: -6px; max-height: -70px;"
@@ -8525,18 +8461,18 @@ exports[`provision/DatabaseAccount/Create render quick create role when database
             </div>
           </div>
           <h1
-            class="ant-typography css-1eepp70 css-dev-only-do-not-override-txh9fw"
+            class="ant-typography css-1eepp70"
           >
             数据权限
           </h1>
           <div
-            class="ant-form-item has-label-tip css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+            class="ant-form-item has-label-tip css-1jlm9cy"
           >
             <div
-              class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+              class="ant-row ant-form-item-row"
             >
               <div
-                class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left css-dev-only-do-not-override-txh9fw"
+                class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left"
               >
                 <label
                   class="ant-form-item-no-colon"
@@ -8558,7 +8494,7 @@ exports[`provision/DatabaseAccount/Create render quick create role when database
                 </label>
               </div>
               <div
-                class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control"
               >
                 <div
                   class="ant-form-item-control-input"
@@ -8568,7 +8504,7 @@ exports[`provision/DatabaseAccount/Create render quick create role when database
                   >
                     <div
                       aria-describedby="dbRoles_extra"
-                      class="ant-select ant-select-in-form-item basic-select-wrapper css-iy4o4x css-dev-only-do-not-override-v9sov3 ant-select-multiple ant-select-allow-clear ant-select-show-arrow ant-select-loading ant-select-show-search"
+                      class="ant-select ant-select-in-form-item basic-select-wrapper css-iy4o4x ant-select-multiple ant-select-allow-clear ant-select-show-arrow ant-select-loading ant-select-show-search"
                     >
                       <div
                         class="ant-select-selector"
@@ -8661,13 +8597,13 @@ exports[`provision/DatabaseAccount/Create render quick create role when database
             </div>
           </div>
           <div
-            class="ant-form-item has-label-tip css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+            class="ant-form-item has-label-tip css-1jlm9cy"
           >
             <div
-              class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+              class="ant-row ant-form-item-row"
             >
               <div
-                class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left css-dev-only-do-not-override-txh9fw"
+                class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left"
               >
                 <label
                   class="ant-form-item-no-colon"
@@ -8689,7 +8625,7 @@ exports[`provision/DatabaseAccount/Create render quick create role when database
                 </label>
               </div>
               <div
-                class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control"
               >
                 <div
                   class="ant-form-item-control-input"
@@ -8698,7 +8634,7 @@ exports[`provision/DatabaseAccount/Create render quick create role when database
                     class="ant-form-item-control-input-content"
                   >
                     <div
-                      class="ant-select ant-select-in-form-item basic-select-wrapper css-iy4o4x css-dev-only-do-not-override-v9sov3 ant-select-multiple ant-select-show-arrow ant-select-loading ant-select-show-search"
+                      class="ant-select ant-select-in-form-item basic-select-wrapper css-iy4o4x ant-select-multiple ant-select-show-arrow ant-select-loading ant-select-show-search"
                     >
                       <div
                         class="ant-select-selector"
@@ -8779,13 +8715,13 @@ exports[`provision/DatabaseAccount/Create render quick create role when database
             </div>
           </div>
           <div
-            class="ant-form-item css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+            class="ant-form-item css-1jlm9cy"
           >
             <div
-              class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+              class="ant-row ant-form-item-row"
             >
               <div
-                class="ant-col ant-col-24 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                class="ant-col ant-col-24 ant-form-item-control"
               >
                 <div
                   class="ant-form-item-control-input"
@@ -8805,14 +8741,14 @@ exports[`provision/DatabaseAccount/Create render quick create role when database
                           对象权限概览
                         </span>
                         <div
-                          class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+                          class="ant-space ant-space-horizontal ant-space-align-center"
                         >
                           <div
                             class="ant-space-item"
                             style="margin-right: 8px;"
                           >
                             <button
-                              class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default ant-btn-dangerous basic-button-wrapper css-geipcv"
+                              class="ant-btn ant-btn-default ant-btn-dangerous basic-button-wrapper css-geipcv"
                               disabled=""
                               type="button"
                             >
@@ -8825,7 +8761,7 @@ exports[`provision/DatabaseAccount/Create render quick create role when database
                             class="ant-space-item"
                           >
                             <button
-                              class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary basic-button-wrapper css-geipcv"
+                              class="ant-btn ant-btn-primary basic-button-wrapper css-geipcv"
                               type="button"
                             >
                               <span>
@@ -8836,10 +8772,10 @@ exports[`provision/DatabaseAccount/Create render quick create role when database
                         </div>
                       </section>
                       <div
-                        class="ant-table-wrapper actiontech-table-namespace css-fxd6ka css-dev-only-do-not-override-bj9uhl"
+                        class="ant-table-wrapper actiontech-table-namespace css-fxd6ka"
                       >
                         <div
-                          class="ant-spin-nested-loading css-dev-only-do-not-override-bj9uhl"
+                          class="ant-spin-nested-loading"
                         >
                           <div
                             class="ant-spin-container"
@@ -8958,7 +8894,7 @@ exports[`provision/DatabaseAccount/Create render quick create role when database
   </div>
   <div>
     <div
-      class="ant-select-dropdown ant-select-dropdown-hidden css-dev-only-do-not-override-v9sov3 ant-select-dropdown-placement-bottomLeft"
+      class="ant-select-dropdown ant-select-dropdown-hidden ant-select-dropdown-placement-bottomLeft"
       style="--arrow-x: 0px; --arrow-y: 0px; left: 0px; top: 0px; box-sizing: border-box; min-width: 0; width: 0px; pointer-events: none;"
     >
       <div>
@@ -9034,22 +8970,13 @@ exports[`provision/DatabaseAccount/Create render quick create role when database
               </div>
             </div>
           </div>
-          <div
-            class="rc-virtual-list-scrollbar"
-            style="width: 8px; top: 0px; bottom: 0px; right: 0px; position: absolute; display: none;"
-          >
-            <div
-              class="rc-virtual-list-scrollbar-thumb"
-              style="width: 100%; height: 128px; top: 0px; left: 0px; position: absolute; background: rgba(0, 0, 0, 0.5); border-radius: 99px; cursor: pointer; user-select: none;"
-            />
-          </div>
         </div>
       </div>
     </div>
   </div>
   <div>
     <div
-      class="ant-select-dropdown ant-select-dropdown-hidden css-dev-only-do-not-override-v9sov3 ant-select-dropdown-placement-bottomLeft"
+      class="ant-select-dropdown ant-select-dropdown-hidden ant-select-dropdown-placement-bottomLeft"
       style="--arrow-x: 0px; --arrow-y: 0px; left: 0px; top: 0px; box-sizing: border-box; min-width: 0; width: 0px; pointer-events: none;"
     >
       <div>
@@ -9120,15 +9047,6 @@ exports[`provision/DatabaseAccount/Create render quick create role when database
                 </div>
               </div>
             </div>
-          </div>
-          <div
-            class="rc-virtual-list-scrollbar"
-            style="width: 8px; top: 0px; bottom: 0px; right: 0px; position: absolute; display: none;"
-          >
-            <div
-              class="rc-virtual-list-scrollbar-thumb"
-              style="width: 100%; height: 128px; top: 0px; left: 0px; position: absolute; background: rgba(0, 0, 0, 0.5); border-radius: 99px; cursor: pointer; user-select: none;"
-            />
           </div>
         </div>
       </div>
