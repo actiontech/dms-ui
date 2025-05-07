@@ -153,7 +153,7 @@ exports[`App render App when "checkPageAction" is false 1`] = `
                   <span
                     class="label label-base"
                   >
-                    SQLE
+                    DMS
                   </span>
                 </div>
               </div>
@@ -312,6 +312,7 @@ exports[`App render App when "checkPageAction" is false 1`] = `
           data-menu-list="true"
           role="menu"
           tabindex="0"
+<<<<<<< HEAD
         />
         <div
           aria-hidden="true"
@@ -357,6 +358,1171 @@ exports[`App render App when "checkPageAction" is false 1`] = `
           <div
             class="ant-col icon-wrapper"
             style="flex: 0 0 40px; min-width: 0;"
+=======
+        >
+          <li
+            class="ant-menu-item"
+            data-menu-id="rc-menu-uuid-test-sqle/project/projectID/overview"
+            role="menuitem"
+            structkey="project-overview"
+            style="padding-left: 24px;"
+            tabindex="-1"
+            to="/sqle/project//overview"
+>>>>>>> 3ed57341dae3a5998f1b17c8ee6f1a792c4695b5
+          >
+            <svg
+              class="ant-menu-item-icon"
+              height="18"
+              viewBox="0 0 18 18"
+              width="18"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="m9.385.982 6.578 3.946a.375.375 0 0 1 0 .644L9 9.75 2.036 5.572a.375.375 0 0 1 0-.644L8.613.982a.75.75 0 0 1 .772 0"
+                fill="#C3C6CD"
+              />
+              <path
+                d="m15.062 7.875.901.54a.375.375 0 0 1 0 .644L9 13.238 2.036 9.059a.375.375 0 0 1 0-.643l.901-.541L9 11.512zm0 3.525.901.54a.376.376 0 0 1 0 .644l-6.577 3.947a.75.75 0 0 1-.773 0l-6.577-3.947a.374.374 0 0 1 0-.643l.901-.541L9 15.037z"
+                fill="#8A8F99"
+              />
+            </svg>
+            <span
+              class="ant-menu-title-content"
+            >
+              <a
+                href="/sqle/project//overview"
+              >
+                项目概览
+              </a>
+            </span>
+<<<<<<< HEAD
+          </div>
+          <div
+            class="ant-col step-box"
+            style="flex-basis: auto; min-width: 0;"
+=======
+          </li>
+          <li
+            class="ant-menu-item-divider"
+          />
+          <li
+            class="ant-menu-item-group"
+            role="presentation"
+>>>>>>> 3ed57341dae3a5998f1b17c8ee6f1a792c4695b5
+          >
+            <div
+              class="ant-menu-item-group-title"
+              role="presentation"
+              title="SQL开发"
+            >
+              SQL开发
+            </div>
+<<<<<<< HEAD
+            <div
+              class="ant-row ant-row-no-wrap"
+            >
+              <div
+                class="ant-col ant-col-8 content-wrapper"
+=======
+            <ul
+              class="ant-menu-item-group-list"
+              role="group"
+            >
+              <li
+                class="ant-menu-item"
+                data-menu-id="rc-menu-uuid-test-project/projectID/cloud-beaver"
+                role="menuitem"
+                structkey="cloud-beaver"
+                style="padding-left: 24px;"
+                tabindex="-1"
+                to="/project//cloud-beaver"
+>>>>>>> 3ed57341dae3a5998f1b17c8ee6f1a792c4695b5
+              >
+                <svg
+                  class="ant-menu-item-icon"
+                  height="18"
+                  viewBox="0 0 18 18"
+                  width="18"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+<<<<<<< HEAD
+                  管理数据源相关操作
+                </div>
+                <div
+                  class="ant-space ant-space-horizontal ant-space-align-center actions"
+                  style="flex-wrap: wrap; margin-bottom: -8px;"
+=======
+                  <path
+                    d="M7.5 12.2c0-.11.09-.2.2-.2h2.6c.11 0 .2.09.2.2v2.182a1 1 0 0 0 .553.894l.836.419a.2.2 0 0 1 .111.179v.426a.2.2 0 0 1-.2.2H6.2a.2.2 0 0 1-.2-.2v-.426a.2.2 0 0 1 .11-.18l.837-.418a1 1 0 0 0 .553-.894z"
+                    fill="#8A8F99"
+                  />
+                  <path
+                    clip-rule="evenodd"
+                    d="M2.5 2.25a1 1 0 0 0-1 1v9.25a1 1 0 0 0 1 1h13a1 1 0 0 0 1-1V3.25a1 1 0 0 0-1-1zm1 8.25a.5.5 0 0 0-.5.5v.5a.5.5 0 0 0 .5.5h11a.5.5 0 0 0 .5-.5V11a.5.5 0 0 0-.5-.5z"
+                    fill="#C3C6CD"
+                    fill-rule="evenodd"
+                  />
+                </svg>
+                <span
+                  class="ant-menu-title-content"
+>>>>>>> 3ed57341dae3a5998f1b17c8ee6f1a792c4695b5
+                >
+                  <a
+                    href="/project//cloud-beaver"
+                  >
+<<<<<<< HEAD
+                    <button
+                      class="ant-btn ant-btn-default ant-btn-sm guidance-button-wrapper css-1jtuni2"
+                      type="button"
+                    >
+                      <div
+                        class="ant-space ant-space-horizontal ant-space-align-center"
+                      >
+                        <div
+                          class="ant-space-item"
+                        >
+                          查看列表
+                        </div>
+                      </div>
+                    </button>
+                  </div>
+                  <div
+                    class="ant-space-item"
+                    style="padding-bottom: 8px;"
+                  >
+                    <button
+                      class="ant-btn ant-btn-default ant-btn-sm guidance-button-wrapper css-1jtuni2"
+                      type="button"
+                    >
+                      <div
+                        class="ant-space ant-space-horizontal ant-space-align-center"
+                      >
+                        <div
+                          class="ant-space-item"
+                        >
+                          添加数据源
+                        </div>
+                      </div>
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="ant-col ant-col-8 content-wrapper"
+=======
+                    SQL工作台
+                  </a>
+                </span>
+              </li>
+              <li
+                class="ant-menu-item"
+                data-menu-id="rc-menu-uuid-test-project/projectID/data/export"
+                role="menuitem"
+                structkey="data-export"
+                style="padding-left: 24px;"
+                tabindex="-1"
+                to="/project//data/export"
+              >
+                <svg
+                  class="ant-menu-item-icon"
+                  height="18"
+                  viewBox="0 0 1024 1024"
+                  width="18"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M123.029 955.658c-31.485 0-57.1-25.614-57.1-57.1V268.756c0-31.486 25.615-57.1 57.1-57.1h133.239c21.52 0 39.59 12.514 47.16 32.657 7.571 20.144 2.215 41.463-13.979 55.636l-17.79 15.573h-101.89v534.544h564.956V725.165l13.544-9.68c9.813-7.014 21.243-10.722 33.055-10.722 31.568 0 57.249 25.648 57.249 57.174v136.621c0 31.486-25.615 57.1-57.1 57.1zm500.691-473.45c-32.409.269-61.09 1.4-85.313 3.368-7.186.593-12.466.883-17.126 1.14-13.028.719-18.975 1.046-45.112 7.686-34.745 8.832-67.818 23.13-98.3 42.493-6.053 3.85-13.11 8.163-20.582 12.729-31.807 19.435-75.334 46.03-94.562 69.499-5.64 7.36-13.463 11.413-22.038 11.413-2.153 0-4.354-.256-6.545-.762-12.154-2.653-19.742-12.39-19.742-25.4v-1.547l.31-1.516c12.921-63.498 29.397-117.625 48.967-160.875 19.82-43.838 46.006-82.8 77.827-115.801 32.407-33.632 73.855-58.428 123.192-73.696 44.649-13.76 98.132-21.271 159.038-22.342V61.96L958.47 355.34 623.72 648.706z"
+                    fill="#C3C6CD"
+                  />
+                </svg>
+                <span
+                  class="ant-menu-title-content"
+                >
+                  <a
+                    href="/project//data/export"
+                  >
+                    数据导出
+                  </a>
+                </span>
+              </li>
+              <li
+                class="ant-menu-item"
+                data-menu-id="rc-menu-uuid-test-sqle/project/projectID/sql-audit"
+                role="menuitem"
+                structkey="sql-audit"
+                style="padding-left: 24px;"
+                tabindex="-1"
+                to="/sqle/project//sql-audit"
+>>>>>>> 3ed57341dae3a5998f1b17c8ee6f1a792c4695b5
+              >
+                <svg
+                  class="ant-menu-item-icon"
+                  height="18"
+                  viewBox="0 0 1024 1024"
+                  width="18"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M910.423 893.2 790.027 772.662c31.305-42.579 49.833-95.127 49.833-151.932 0-141.624-115.086-256.85-256.54-256.85S326.785 479.106 326.785 620.73 441.866 877.58 583.32 877.58c56.737 0 109.222-18.55 151.75-49.893l120.397 120.538c7.59 7.593 17.532 11.393 27.479 11.393s19.888-3.8 27.478-11.394c15.174-15.198 15.174-39.832-.001-55.024M583.32 814.359c-106.638 0-193.39-86.863-193.39-193.629s86.752-193.628 193.39-193.628 193.395 86.861 193.395 193.628-86.758 193.629-193.395 193.629"
+                    fill="#C3C6CD"
+                  />
+                  <path
+                    d="M251.215 631.364c0-181.288 146.78-328.252 327.844-328.252 110.88 0 208.904 55.113 268.236 139.473V124.164c0-32.988-26.736-59.78-59.715-59.78H161.91c-32.977 0-59.714 26.763-59.714 59.779v775.672c0 32.99 26.735 59.782 59.715 59.782h417.148c-181.063 0-327.844-146.964-327.844-328.253m-29.803-447.616c0-16.481 13.344-29.841 29.804-29.841h447.06c16.46 0 29.804 13.36 29.804 29.84s-13.343 29.842-29.804 29.842h-447.06c-16.46 0-29.804-13.361-29.804-29.841"
+                    fill="#C3C6CD"
+                  />
+                </svg>
+                <span
+                  class="ant-menu-title-content"
+                >
+<<<<<<< HEAD
+                  管理外部数据源相关操作
+                </div>
+                <div
+                  class="ant-space ant-space-horizontal ant-space-align-center actions"
+                  style="flex-wrap: wrap; margin-bottom: -8px;"
+=======
+                  <a
+                    href="/sqle/project//sql-audit"
+                  >
+                    快捷审核
+                  </a>
+                </span>
+              </li>
+              <li
+                class="ant-menu-item"
+                data-menu-id="rc-menu-uuid-test-sqle/project/projectID/plugin-audit"
+                role="menuitem"
+                structkey="plugin-audit"
+                style="padding-left: 24px;"
+                tabindex="-1"
+                to="/sqle/project//plugin-audit"
+              >
+                <svg
+                  class="ant-menu-item-icon"
+                  height="18"
+                  viewBox="0 0 1024 1024"
+                  width="18"
+                  xmlns="http://www.w3.org/2000/svg"
+>>>>>>> 3ed57341dae3a5998f1b17c8ee6f1a792c4695b5
+                >
+                  <path
+                    d="M953.6 960H70.4V64h883.2zm-819.2-64h755.2V128H134.4z"
+                    fill="#C3C6CD"
+                  />
+                  <path
+                    d="M96 320h832v64H96zM192 192h64v64h-64zM320 192h64v64h-64zM550.784 417.28l59.776 22.848L473.216 798.72l-59.776-22.912zM358.4 793.6 211.2 640l147.2-153.6 51.2 51.2L300.8 640l108.8 102.4zM665.6 793.6l-51.2-51.2L723.2 640 614.4 537.6l51.2-51.2L812.8 640z"
+                    fill="#C3C6CD"
+                  />
+                </svg>
+                <span
+                  class="ant-menu-title-content"
+                >
+                  <a
+                    href="/sqle/project//plugin-audit"
+                  >
+<<<<<<< HEAD
+                    <button
+                      class="ant-btn ant-btn-default ant-btn-sm guidance-button-wrapper css-1jtuni2"
+                      type="button"
+                    >
+                      <div
+                        class="ant-space ant-space-horizontal ant-space-align-center"
+                      >
+                        <div
+                          class="ant-space-item"
+                        >
+                          查看列表
+                        </div>
+                      </div>
+                    </button>
+                  </div>
+                  <div
+                    class="ant-space-item"
+                    style="padding-bottom: 8px;"
+                  >
+                    <button
+                      class="ant-btn ant-btn-default ant-btn-sm guidance-button-wrapper css-1jtuni2"
+                      type="button"
+                    >
+                      <div
+                        class="ant-space ant-space-horizontal ant-space-align-center"
+                      >
+                        <div
+                          class="ant-space-item"
+                        >
+                          新建同步任务
+                        </div>
+                      </div>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="ant-row ant-row-no-wrap ant-row-middle step-container"
+        >
+          <div
+            class="ant-col icon-wrapper"
+            style="flex: 0 0 40px; min-width: 0;"
+=======
+                    IDE审核
+                  </a>
+                </span>
+              </li>
+              <li
+                class="ant-menu-item"
+                data-menu-id="rc-menu-uuid-test-sqle/project/projectID/data-source-comparison"
+                role="menuitem"
+                structkey="data-source-comparison"
+                style="padding-left: 24px;"
+                tabindex="-1"
+                to="/sqle/project//data-source-comparison"
+              >
+                <svg
+                  class="ant-menu-item-icon"
+                  height="18"
+                  viewBox="0 0 1024 1024"
+                  width="18"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M146.286 73.143h731.428a73.143 73.143 0 0 1 73.143 73.143v731.428a73.143 73.143 0 0 1-73.143 73.143H146.286a73.143 73.143 0 0 1-73.143-73.143V146.286a73.143 73.143 0 0 1 73.143-73.143m36.571 229.412 127.269 418.89h74.35l130.45-418.89h-67.913L349.184 634.04h-1.097l-95.708-331.484zm413.916 279.26H529.92c.366 25.82 4.79 48.201 13.349 67.182q12.836 28.47 34.23 46.628c14.263 12.142 31.013 21.138 50.286 26.99 19.237 5.851 39.753 8.814 61.477 8.814a213.2 213.2 0 0 0 55.625-7.315c18.176-4.9 34.377-12.617 48.64-23.186 14.263-10.57 25.783-24.137 34.523-40.777s13.093-36.681 13.093-60.16c0-10.972-1.5-21.906-4.535-32.841a108.43 108.43 0 0 0-37.157-56.32 107.8 107.8 0 0 0-32.621-17.591c-5.01-1.573-13.312-4.023-24.869-7.314a11538 11538 0 0 1-68.462-19.968l-16.822-5.01a79.36 79.36 0 0 1-32.915-19.054c-8.375-8.412-12.58-20.042-12.58-34.926 0-10.533 2.23-19.383 6.692-26.405 4.462-7.021 10.094-12.617 16.823-16.713 6.802-4.096 14.263-7.022 22.492-8.777a114.5 114.5 0 0 1 24.064-2.67c23.186 0 42.24 5.596 57.234 16.75 14.958 11.118 23.332 30.208 25.124 57.198h66.853c0-21.943-3.95-41.18-11.776-57.783a123.1 123.1 0 0 0-31.817-41.984 134.8 134.8 0 0 0-46.519-25.49 183.3 183.3 0 0 0-56.466-8.522c-17.116 0-34.012 2.45-50.835 7.315-16.713 4.9-31.707 12.434-44.873 22.6-13.202 10.168-23.808 23.004-31.817 38.437q-12.069 23.151-12.068 54.858c0 10.971 1.353 21.723 4.022 32.256 2.67 10.605 7.242 20.553 13.642 29.952 6.436 9.362 15.067 17.883 25.965 25.49 10.862 7.643 24.503 13.787 40.887 18.505a3085 3085 0 0 0 66.56 19.054c18.03 4.9 33.792 10.093 47.36 15.543 7.826 3.145 15.031 8.52 21.65 16.128 6.583 7.643 9.875 19.492 9.875 35.51 0 7.827-1.427 15.543-4.28 23.187a51.8 51.8 0 0 1-13.896 20.224c-6.4 5.851-14.775 10.679-25.125 14.372-10.35 3.73-22.82 5.596-37.449 5.596-13.531 0-26.112-1.683-37.669-5.01a85.7 85.7 0 0 1-30.756-15.836 73.14 73.14 0 0 1-20.846-27.867c-5.01-11.338-7.497-25.015-7.497-41.07z"
+                    fill="#C3C6CD"
+                  />
+                </svg>
+                <span
+                  class="ant-menu-title-content"
+                >
+                  <a
+                    href="/sqle/project//data-source-comparison"
+                  >
+                    结构对比
+                  </a>
+                </span>
+              </li>
+            </ul>
+          </li>
+          <li
+            class="ant-menu-item-group"
+            role="presentation"
+>>>>>>> 3ed57341dae3a5998f1b17c8ee6f1a792c4695b5
+          >
+            <div
+              class="ant-menu-item-group-title"
+              role="presentation"
+              title="SQL上线"
+            >
+              SQL上线
+            </div>
+            <ul
+              class="ant-menu-item-group-list"
+              role="group"
+            >
+              <li
+                class="ant-menu-item"
+                data-menu-id="rc-menu-uuid-test-sqle/project/projectID/exec-workflow"
+                role="menuitem"
+                structkey="exec-workflow"
+                style="padding-left: 24px;"
+                tabindex="-1"
+                to="/sqle/project//exec-workflow"
+              >
+<<<<<<< HEAD
+                <path
+                  d="M9 7.5a3 3 0 1 0 0-6 3 3 0 0 0 0 6M4.125 9.75a1.875 1.875 0 1 0 0-3.75 1.875 1.875 0 0 0 0 3.75M15.75 7.875a1.875 1.875 0 1 1-3.75 0 1.875 1.875 0 0 1 3.75 0M9 8.25A3.75 3.75 0 0 1 12.75 12v4.5h-7.5V12A3.75 3.75 0 0 1 9 8.25M3.75 12c0-.52.075-1.022.216-1.496l-.127.011a2.625 2.625 0 0 0-2.339 2.61V16.5h2.25zm12.75 4.5v-3.375a2.626 2.626 0 0 0-2.466-2.62c.14.473.216.975.216 1.495v4.5z"
+                  fill="currentColor"
+                />
+                <path
+                  d="M4.125 9.75a1.875 1.875 0 1 0 0-3.75 1.875 1.875 0 0 0 0 3.75M15.75 7.875a1.875 1.875 0 1 1-3.75 0 1.875 1.875 0 0 1 3.75 0M3.75 12c0-.52.075-1.022.216-1.496l-.127.011a2.625 2.625 0 0 0-2.339 2.61V16.5h2.25zm12.75 4.5v-3.375a2.626 2.626 0 0 0-2.466-2.62c.14.473.216.975.216 1.495v4.5z"
+                  fill="currentColor"
+                />
+              </svg>
+            </span>
+          </div>
+          <div
+            class="ant-col step-box"
+            style="flex-basis: auto; min-width: 0;"
+=======
+                <svg
+                  class="ant-menu-item-icon"
+                  height="18"
+                  viewBox="0 0 24 28"
+                  width="18"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M4 3.333v5.334h16V3.333h2.675c.732 0 1.325.594 1.325 1.325v21.35c0 .732-.593 1.325-1.325 1.325H1.325A1.325 1.325 0 0 1 0 26.01V4.658c0-.732.593-1.325 1.325-1.325zm4 17.334H5.333v2.666H8zm0-4H5.333v2.666H8zm0-4H5.333v2.666H8zm9.333-12V6H6.667V.667z"
+                    fill="#C3C6CD"
+                  />
+                </svg>
+                <span
+                  class="ant-menu-title-content"
+                >
+                  <a
+                    href="/sqle/project//exec-workflow"
+                  >
+                    SQL工单
+                  </a>
+                </span>
+              </li>
+              <li
+                class="ant-menu-item"
+                data-menu-id="rc-menu-uuid-test-sqle/project/projectID/version-management"
+                role="menuitem"
+                structkey="version-management"
+                style="padding-left: 24px;"
+                tabindex="-1"
+                to="/sqle/project//version-management"
+              >
+                <svg
+                  class="ant-menu-item-icon"
+                  height="18"
+                  viewBox="0 0 1024 1024"
+                  width="18"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M527.1 887.6H220.8v-751h361.6v187.1c0 19.9 16.1 36 36 36h187.4v88.6c0 19.9 16.1 36 36 36s36-16.1 36-36V323.6c0-9.6-3.8-18.7-10.6-25.5l-223.3-223c-.6-.6-1.2-1.1-1.8-1.6l-.4-.4-1.8-1.5s-.1-.1-.2-.1l-1.8-1.2-.6-.3c-.6-.4-1.3-.8-2-1.1-.1 0-.2-.1-.2-.1-.6-.3-1.2-.6-1.9-.9l-.6-.3c-.7-.3-1.4-.6-2.1-.8-.1 0-.1 0-.2-.1-.7-.2-1.4-.5-2.1-.7-.2-.1-.4-.1-.6-.2-.7-.2-1.5-.4-2.3-.5-.7-.1-1.5-.3-2.3-.4-.2 0-.4-.1-.6-.1-.7-.1-1.4-.2-2.2-.2H202.1c-29.4 0-53.3 23.9-53.3 53.3v788.4c0 29.4 23.9 53.3 53.3 53.3h325c19.9 0 36-16.1 36-36s-16.1-36-36-36m127.4-599.9V187.5l100.2 100.2z"
+                    fill="#8A8F99"
+                  />
+                  <path
+                    d="M768.1 547c-105.5 0-191 85.5-191 191s85.5 191 191 191 191-85.5 191-191-85.5-191-191-191M885 816.5c-4.1 0-8.2-.7-12.3-2.2l-115.9-42.2c-14.3-4.8-24.6-18.3-24.6-34.1V613.7c0-19.9 16.1-36 36-36s36 16.1 36 36v99.1l93.1 33.9c18.7 6.8 28.3 27.5 21.5 46.1-5.3 14.7-19.1 23.7-33.8 23.7"
+                    fill="#8A8F99"
+                  />
+                </svg>
+                <span
+                  class="ant-menu-title-content"
+                >
+                  <a
+                    href="/sqle/project//version-management"
+                  >
+                    版本管理
+                  </a>
+                </span>
+              </li>
+            </ul>
+          </li>
+          <li
+            class="ant-menu-item-group"
+            role="presentation"
+>>>>>>> 3ed57341dae3a5998f1b17c8ee6f1a792c4695b5
+          >
+            <div
+              class="ant-menu-item-group-title"
+              role="presentation"
+              title="CI/CD集成"
+            >
+              CI/CD集成
+            </div>
+            <ul
+              class="ant-menu-item-group-list"
+              role="group"
+            >
+              <li
+                class="ant-menu-item"
+                data-menu-id="rc-menu-uuid-test-sqle/project/projectID/pipeline-configuration"
+                role="menuitem"
+                structkey="pipeline-configuration"
+                style="padding-left: 24px;"
+                tabindex="-1"
+                to="/sqle/project//pipeline-configuration"
+              >
+                <svg
+                  class="ant-menu-item-icon"
+                  height="18"
+                  viewBox="0 0 1024 1024"
+                  width="18"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M591.36 113.792a107.52 107.52 0 0 1 95.616 56.192l124.864.64h1.792c18.88.128 179.264 5.504 176.576 167.232-2.88 171.648-175.168 179.2-175.168 179.2l-.96 74.432-114.432-87.68c-.832 60.544-46.528 109.312-105.856 109.312H444.16c-59.84 0-105.856-49.728-105.856-111.04v1.536h-73.6c-26.368 0-152.32-13.12-151.936 106.24.384 119.424 118.656 117.44 118.656 117.44l3.84-75.776 111.04 89.28a105.6 105.6 0 0 1 99.2-65.728h145.92c59.776 0 108.288 46.4 108.224 107.648 0 61.376-45.952 111.04-105.856 111.04H444.16c-59.84 0-105.856-49.664-105.856-111.04v-.512l-105.216 80.64-.96-74.496S59.776 780.8 56.96 609.152c-2.688-161.664 157.696-167.04 176.576-167.104h1.792l121.024-.768a105.98 105.98 0 0 1 89.152-46.912h145.92c50.048 0 92.16 32.512 104.64 79.04l115.84-93.184 3.84 75.776s118.336 1.92 118.72-117.44-125.568-106.24-151.936-106.24h-83.264c-5.12 56.256-49.088 100.16-105.408 100.16H444.16c-59.84 0-105.856-49.728-105.856-111.04 0-61.248 47.296-107.648 107.136-107.648zm-18.688 612.736h-111.68c-35.264 0-64.768 28.8-64.768 60.672v1.024c0 29.696 30.4 59.2 64.768 59.2h111.552c35.264 0 67.584-29.568 67.584-59.2V787.2c0-32.192-32.256-60.672-67.456-60.672m0-280.64h-111.68c-35.264 0-64.768 28.8-64.768 60.672v1.024c0 29.632 30.4 59.2 64.768 59.2h111.552c35.264 0 67.584-29.568 67.584-59.2v-1.024c0-32.128-32.256-60.672-67.456-60.672m0-280.704h-111.68c-35.264 0-64.768 28.8-64.768 60.8v.96c0 29.632 30.4 59.2 64.768 59.2h111.552c35.264 0 67.584-29.568 67.584-59.2v-1.024c0-32.128-32.256-60.736-67.456-60.736"
+                    fill="#C3C6CD"
+                  />
+                </svg>
+                <span
+                  class="ant-menu-title-content"
+                >
+                  <a
+                    href="/sqle/project//pipeline-configuration"
+                  >
+                    流水线配置
+                  </a>
+                </span>
+              </li>
+            </ul>
+          </li>
+          <li
+            class="ant-menu-item-group"
+            role="presentation"
+          >
+            <div
+<<<<<<< HEAD
+              class="ant-row ant-row-no-wrap"
+            >
+              <div
+                class="ant-col ant-col-8 content-wrapper"
+=======
+              class="ant-menu-item-group-title"
+              role="presentation"
+              title="SQL管控"
+            >
+              SQL管控
+            </div>
+            <ul
+              class="ant-menu-item-group-list"
+              role="group"
+            >
+              <li
+                class="ant-menu-item"
+                data-menu-id="rc-menu-uuid-test-sqle/project/projectID/sql-management"
+                role="menuitem"
+                structkey="sql-management"
+                style="padding-left: 24px;"
+                tabindex="-1"
+                to="/sqle/project//sql-management"
+>>>>>>> 3ed57341dae3a5998f1b17c8ee6f1a792c4695b5
+              >
+                <svg
+                  class="ant-menu-item-icon"
+                  height="18"
+                  viewBox="0 0 1024 1024"
+                  width="18"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M511.985 85.33C276.344 85.33 85.33 276.345 85.33 511.986c0 180.816 112.508 335.478 271.522 397.599a42.665 42.665 0 0 1-31.06 79.485C135.164 914.62 0 729.152 0 511.985 0 229.24 229.241 0 511.985 0c217.167 0 402.633 135.164 477.084 325.793a506 506 0 0 1 15.616 46.59 42.665 42.665 0 0 1-82.088 23.21A426.825 426.825 0 0 0 511.985 85.332"
+                    fill="#C3C6CD"
+                  />
+                  <path
+                    d="M511.985 255.992a255.992 255.992 0 0 0-95.187 493.724 42.665 42.665 0 0 1-31.743 79.187 341.409 341.409 0 0 1 126.93-658.241c120.743 0 226.852 62.718 287.48 157.222a42.665 42.665 0 1 1-71.85 46.078 255.78 255.78 0 0 0-215.63-117.97"
+                    fill="#C3C6CD"
+                  />
+                  <path
+                    d="M511.985 426.654a85.33 85.33 0 0 0-28.458 165.798 42.665 42.665 0 1 1-28.415 80.467 170.704 170.704 0 1 1 170.661-288.12 42.665 42.665 0 1 1-56.915 63.572 84.86 84.86 0 0 0-56.873-21.717m282.445 135.25a31.444 31.444 0 0 0 0 44.03l50.26 50.26a31.4 31.4 0 0 0 44.03 0l118.482-118.482A188.581 188.581 0 0 1 757.61 787.305l-217.167 217.167a66.643 66.643 0 1 1-94.29-94.29l217.166-217.168a188.581 188.581 0 0 1 249.593-249.592z"
+                    fill="#C3C6CD"
+                  />
+                </svg>
+                <span
+                  class="ant-menu-title-content"
+                >
+<<<<<<< HEAD
+                  为项目添加成员/成员组，并配置相应的数据源操作权限
+                </div>
+                <div
+                  class="ant-space ant-space-horizontal ant-space-align-center actions"
+                  style="flex-wrap: wrap; margin-bottom: -8px;"
+=======
+                  <a
+                    href="/sqle/project//sql-management"
+                  >
+                    SQL管控
+                  </a>
+                </span>
+              </li>
+              <li
+                class="ant-menu-item"
+                data-menu-id="rc-menu-uuid-test-sqle/project/projectID/sql-management-conf"
+                role="menuitem"
+                structkey="sql-management-conf"
+                style="padding-left: 24px;"
+                tabindex="-1"
+                to="/sqle/project//sql-management-conf"
+              >
+                <svg
+                  class="ant-menu-item-icon"
+                  height="18"
+                  viewBox="0 0 18 18"
+                  width="18"
+                  xmlns="http://www.w3.org/2000/svg"
+>>>>>>> 3ed57341dae3a5998f1b17c8ee6f1a792c4695b5
+                >
+                  <path
+                    d="M15.75 11.25v3.755a.745.745 0 0 1-.745.745H2.995a.745.745 0 0 1-.745-.745V11.25zm0-4.5H2.25V2.995c0-.411.334-.745.745-.745h12.01c.411 0 .745.334.745.745z"
+                    fill="#C3C6CD"
+                  />
+                  <path
+                    d="M1.5 8.25h15v1.5h-15z"
+                    fill="#8A8F99"
+                  />
+                </svg>
+                <span
+                  class="ant-menu-title-content"
+                >
+                  <a
+                    href="/sqle/project//sql-management-conf"
+                  >
+<<<<<<< HEAD
+                    <button
+                      class="ant-btn ant-btn-default ant-btn-sm guidance-button-wrapper css-1jtuni2"
+                      type="button"
+                    >
+                      <div
+                        class="ant-space ant-space-horizontal ant-space-align-center"
+                      >
+                        <div
+                          class="ant-space-item"
+                        >
+                          查看成员
+                        </div>
+                      </div>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="ant-row ant-row-no-wrap ant-row-middle step-container"
+        >
+          <div
+            class="ant-col icon-wrapper"
+            style="flex: 0 0 40px; min-width: 0;"
+=======
+                    SQL管控配置
+                  </a>
+                </span>
+              </li>
+            </ul>
+          </li>
+          <li
+            class="ant-menu-item-divider"
+          />
+          <li
+            class="ant-menu-item-group"
+            role="presentation"
+>>>>>>> 3ed57341dae3a5998f1b17c8ee6f1a792c4695b5
+          >
+            <div
+              class="ant-menu-item-group-title"
+              role="presentation"
+              title="数据安全"
+            >
+              数据安全
+            </div>
+            <ul
+              class="ant-menu-item-group-list"
+              role="group"
+            >
+              <li
+                class="ant-menu-item"
+                data-menu-id="rc-menu-uuid-test-provision/project/projectID/database-role"
+                role="menuitem"
+                structkey="database-role"
+                style="padding-left: 24px;"
+                tabindex="-1"
+                to="/provision/project//database-role"
+              >
+<<<<<<< HEAD
+                <path
+                  d="M13.5 6H15a.75.75 0 0 1 .75.75v9a.75.75 0 0 1-.75.75H3a.75.75 0 0 1-.75-.75v-9A.75.75 0 0 1 3 6h1.5v-.75a4.5 4.5 0 0 1 9 0zM12 6v-.75a3 3 0 0 0-6 0V6zm-3.75 4.5V12h1.5v-1.5zm-3 0V12h1.5v-1.5zm6 0V12h1.5v-1.5z"
+                  fill="currentColor"
+                />
+                <path
+                  d="M12 6v-.75a3 3 0 1 0-6 0V6H4.5v-.75a4.5 4.5 0 0 1 9 0V6z"
+                  fill="currentColor"
+                />
+              </svg>
+            </span>
+          </div>
+          <div
+            class="ant-col step-box"
+            style="flex-basis: auto; min-width: 0;"
+=======
+                <svg
+                  class="icon ant-menu-item-icon"
+                  height="16"
+                  version="1.1"
+                  viewBox="0 0 1024 1024"
+                  width="16"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M171.236533 1023.998926A123.224231 123.224231 0 0 1 47.498876 900.263417v-687.431425a123.225305 123.225305 0 0 1 123.737657-123.737657h34.092302V219.430259c0 68.743143 54.994514 123.737657 123.737657 124.286528h322.821019a123.225305 123.225305 0 0 0 123.737657-123.737657V89.090039h20.896841a123.225305 123.225305 0 0 1 123.737657 123.737656v386.063637c-40.69594-26.946238-89.088965-47.843079-144.083479-47.843079-13.748629 0-34.09445 0-54.994514 6.59612H253.728304c-20.344748 0-34.09445 13.748629-34.094451 34.099821s13.197609 34.093376 34.094451 34.093376h350.317203c-27.497257 27.497257-47.847375 68.743143-61.597079 109.989028H253.728304c-20.344748 0-34.09445 13.197609-34.094451 34.094451 0 20.350118 13.198683 34.098747 34.094451 34.098747h281.572986c6.60149 109.989028 82.491771 199.63116 179.282116 219.978056z m411.931466-229.566651c0-108.44553 88.222156-196.669834 196.66339-196.669834s196.669834 88.222156 196.669835 196.66339-88.221082 196.669834-196.669835 196.669834-196.66339-88.221082-196.66339-196.66339z m58.896762 93.769943H839.871005a73.389749 73.389749 0 0 1-11.784078-11.148204 72.461717 72.461717 0 0 1-9.022537-13.513398 70.324235 70.324235 0 0 1-7.806644-32.237312 69.525096 69.525096 0 0 1 13.296428-41.053619 115.257546 115.257546 0 0 0-41.156734-17.758287l-24.355481 18.605761-24.354406-18.605761c-53.666912 11.424251-92.623866 60.087951-92.623866 115.709746z m188.549551-61.922534a54.9204 54.9204 0 1 0 54.9204-54.915029 54.983773 54.983773 0 0 0-54.9204 54.915029zM698.85519 713.569932c0 32.72281 27.00424 59.344666 60.19214 59.344666s60.200733-26.620782 60.200733-59.344666-27.00424-59.344666-60.198585-59.344666-60.194288 26.621856-60.194288 59.344666z m173.495876 140.796697L848.571309 829.926293a5.61653 5.61653 0 0 1 0.250268-7.778716 5.254554 5.254554 0 0 1 7.564968-0.255639l19.455384 19.99781 37.659427-37.808728a5.424264 5.424264 0 0 1 7.81631 0.094522 5.800203 5.800203 0 0 1-0.092374 8.035429l-39.543418 39.69272a5.202997 5.202997 0 0 1-0.620837 0.508055 5.901169 5.901169 0 0 1-1.142855 1.693874 5.619752 5.619752 0 0 1-4.013955 1.742209 4.910838 4.910838 0 0 1-3.553161-1.4812zM329.07401 281.57406a61.612116 61.612116 0 0 1-62.143801-61.59493V89.090039h123.737657C397.266134 41.24696 438.513093 0.001074 486.907192 0.001074c54.994514 0 96.790345 41.245886 103.389686 89.090039h123.737657v130.888017a61.489667 61.489667 0 0 1-61.596004 61.59493z"
+                    fill="#C3C6CD"
+                  />
+                </svg>
+                <span
+                  class="ant-menu-title-content"
+                >
+                  <a
+                    href="/provision/project//database-role"
+                  >
+                    角色管理
+                  </a>
+                </span>
+              </li>
+              <li
+                class="ant-menu-item"
+                data-menu-id="rc-menu-uuid-test-provision/project/projectID/database-account"
+                role="menuitem"
+                structkey="account-management"
+                style="padding-left: 24px;"
+                tabindex="-1"
+                to="/provision/project//database-account"
+              >
+                <svg
+                  class="ant-menu-item-icon"
+                  height="18"
+                  viewBox="0 0 18 18"
+                  width="18"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M9.494 10.5h3.256v3h3v-3h1.5v-3H9.494z"
+                    fill="#8A8F99"
+                  />
+                  <path
+                    clip-rule="evenodd"
+                    d="M5.25 13.5a4.5 4.5 0 1 0 0-9 4.5 4.5 0 0 0 0 9m0-3a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3"
+                    fill="#C3C6CD"
+                    fill-rule="evenodd"
+                  />
+                </svg>
+                <span
+                  class="ant-menu-title-content"
+                >
+                  <a
+                    href="/provision/project//database-account"
+                  >
+                    账号管理
+                  </a>
+                </span>
+              </li>
+              <li
+                class="ant-menu-item"
+                data-menu-id="rc-menu-uuid-test-provision/project/projectID/database-account-password"
+                role="menuitem"
+                structkey="password-management"
+                style="padding-left: 24px;"
+                tabindex="-1"
+                to="/provision/project//database-account-password"
+              >
+                <svg
+                  class="ant-menu-item-icon"
+                  height="18"
+                  viewBox="0 0 18 18"
+                  width="18"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M2.837 2.12 9 .75l6.163 1.37a.75.75 0 0 1 .587.732v7.49a4.5 4.5 0 0 1-2.004 3.744L9 17.25l-4.746-3.164a4.5 4.5 0 0 1-2.004-3.744v-7.49a.75.75 0 0 1 .587-.733M9.75 7.5V3.75L6 9h2.25v3.75L12 7.5z"
+                    fill="#C3C6CD"
+                  />
+                </svg>
+                <span
+                  class="ant-menu-title-content"
+                >
+                  <a
+                    href="/provision/project//database-account-password"
+                  >
+                    账号密码管理
+                  </a>
+                </span>
+              </li>
+              <li
+                class="ant-menu-item"
+                data-menu-id="rc-menu-uuid-test-project/projectID/data-mask-rule-overview"
+                role="menuitem"
+                structkey="data-mask-rule"
+                style="padding-left: 24px;"
+                tabindex="-1"
+                to="/project//data-mask-rule-overview"
+              >
+                <svg
+                  class="ant-menu-item-icon"
+                  fill="none"
+                  height="18"
+                  viewBox="0 0 15 15"
+                  width="18"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    clip-rule="evenodd"
+                    d="M14.765 6.076a.5.5 0 0 1 .159.689 9.5 9.5 0 0 1-1.554 1.898l1.201 1.201a.5.5 0 0 1-.707.707l-1.263-1.263a8.5 8.5 0 0 1-2.667 1.343l.449 1.677a.5.5 0 0 1-.966.258l-.458-1.709Q8.25 11 7.5 11q-.75 0-1.46-.123l-.457 1.71a.5.5 0 1 1-.966-.26l.45-1.676a8.5 8.5 0 0 1-2.668-1.343l-1.263 1.263a.5.5 0 1 1-.707-.707l1.2-1.201A9.5 9.5 0 0 1 .077 6.765a.5.5 0 0 1 .848-.53 8.4 8.4 0 0 0 1.77 2.034A7.46 7.46 0 0 0 7.5 9.999c2.808 0 5.156-1.493 6.576-3.764a.5.5 0 0 1 .689-.16"
+                    fill="#C3C6CD"
+                    fill-rule="evenodd"
+                  />
+                </svg>
+                <span
+                  class="ant-menu-title-content"
+                >
+                  <a
+                    href="/project//data-mask-rule-overview"
+                  >
+                    脱敏规则
+                  </a>
+                </span>
+              </li>
+            </ul>
+          </li>
+          <li
+            class="ant-menu-item-divider"
+          />
+          <li
+            class="ant-menu-item-group"
+            role="presentation"
+>>>>>>> 3ed57341dae3a5998f1b17c8ee6f1a792c4695b5
+          >
+            <div
+              class="ant-menu-item-group-title"
+              role="presentation"
+              title="项目配置"
+            >
+              项目配置
+            </div>
+            <ul
+              class="ant-menu-item-group-list"
+              role="group"
+            >
+              <li
+                class="ant-menu-item"
+                data-menu-id="rc-menu-uuid-test-project/projectID/db-services"
+                role="menuitem"
+                structkey="instance"
+                style="padding-left: 24px;"
+                tabindex="-1"
+                to="/project//db-services"
+              >
+                <svg
+                  class="ant-menu-item-icon"
+                  height="18"
+                  viewBox="0 0 18 18"
+                  width="18"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M15.75 7.125v2.25c0 1.864-3.023 3.375-6.75 3.375s-6.75-1.511-6.75-3.375v-2.25C2.25 8.989 5.273 10.5 9 10.5s6.75-1.511 6.75-3.375m-13.5 3.75c0 1.864 3.023 3.375 6.75 3.375s6.75-1.511 6.75-3.375v2.25c0 1.864-3.023 3.375-6.75 3.375s-6.75-1.511-6.75-3.375zM9 9C5.273 9 2.25 7.489 2.25 5.625S5.273 2.25 9 2.25s6.75 1.511 6.75 3.375S12.727 9 9 9"
+                    fill="#C3C6CD"
+                  />
+                </svg>
+                <span
+                  class="ant-menu-title-content"
+                >
+<<<<<<< HEAD
+                  数据安全规则管理
+                </div>
+              </div>
+            </div>
+            <div
+              class="ant-row ant-row-no-wrap"
+            >
+              <div
+                class="ant-col ant-col-8 content-wrapper"
+=======
+                  <a
+                    href="/project//db-services"
+                  >
+                    数据源
+                  </a>
+                </span>
+              </li>
+              <li
+                class="ant-menu-item"
+                data-menu-id="rc-menu-uuid-test-sqle/project/projectID/rule/template"
+                role="menuitem"
+                structkey="rule-template"
+                style="padding-left: 24px;"
+                tabindex="-1"
+                to="/sqle/project//rule/template"
+>>>>>>> 3ed57341dae3a5998f1b17c8ee6f1a792c4695b5
+              >
+                <svg
+                  class="ant-menu-item-icon"
+                  fill="none"
+                  height="18"
+                  viewBox="0 0 18 19"
+                  width="18"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M15 17H3a.75.75 0 0 1-.75-.75V2.75A.75.75 0 0 1 3 2h12a.75.75 0 0 1 .75.75v13.5A.75.75 0 0 1 15 17M6 5.75v1.5h6v-1.5zm0 3v1.5h6v-1.5zm0 3v1.5h3.75v-1.5z"
+                    fill="#C3C6CD"
+                  />
+                </svg>
+                <span
+                  class="ant-menu-title-content"
+                >
+<<<<<<< HEAD
+                  查看平台支持的审核规则，并自定义审核规则模板，监察已生成的SQL，或使用SQL审核改善SQL质量
+                </div>
+                <div
+                  class="ant-space ant-space-horizontal ant-space-align-center actions"
+                  style="flex-wrap: wrap; margin-bottom: -8px;"
+=======
+                  <a
+                    href="/sqle/project//rule/template"
+                  >
+                    审核规则模板
+                  </a>
+                </span>
+              </li>
+              <li
+                class="ant-menu-item"
+                data-menu-id="rc-menu-uuid-test-sqle/project/projectID/progress"
+                role="menuitem"
+                structkey="workflow-template"
+                style="padding-left: 24px;"
+                tabindex="-1"
+                to="/sqle/project//progress"
+              >
+                <svg
+                  class="ant-menu-item-icon"
+                  fill="none"
+                  height="18"
+                  viewBox="0 0 18 18"
+                  width="18"
+                  xmlns="http://www.w3.org/2000/svg"
+>>>>>>> 3ed57341dae3a5998f1b17c8ee6f1a792c4695b5
+                >
+                  <path
+                    d="M5.477 5.221a4 4 0 0 1-.46-1.458 7.3 7.3 0 0 0-3.304 5.711c.461-.2.956-.308 1.459-.32A5.84 5.84 0 0 1 5.477 5.22m9.315 3.932c.502.013.997.122 1.459.321a7.3 7.3 0 0 0-3.305-5.711 4 4 0 0 1-.46 1.458 5.84 5.84 0 0 1 2.306 3.918zm-3.516 6.091a5.84 5.84 0 0 1-4.552 0c-.263.438-.61.82-1.021 1.123a7.24 7.24 0 0 0 6.565 0 3.9 3.9 0 0 1-.992-1.123M9 5.856A2.553 2.553 0 1 0 9 .75a2.553 2.553 0 0 0 0 5.106m-5.697 4.749a2.553 2.553 0 1 0 2.553 2.553 2.553 2.553 0 0 0-2.553-2.56zm11.394 0a2.553 2.553 0 1 0 2.553 2.553 2.547 2.547 0 0 0-2.553-2.56z"
+                    fill="#C3C6CD"
+                  />
+                  <path
+                    d="M5.477 5.222a4 4 0 0 1-.46-1.46 7.3 7.3 0 0 0-3.304 5.712c.461-.2.956-.308 1.459-.32a5.84 5.84 0 0 1 2.305-3.932m9.315 3.931c.502.013.997.122 1.459.321a7.3 7.3 0 0 0-3.305-5.711 4 4 0 0 1-.46 1.459 5.84 5.84 0 0 1 2.306 3.917zm-3.516 6.091a5.84 5.84 0 0 1-4.552 0c-.263.438-.61.82-1.021 1.123a7.24 7.24 0 0 0 6.565 0 3.9 3.9 0 0 1-.992-1.123"
+                    fill="#8A8F99"
+                  />
+                </svg>
+                <span
+                  class="ant-menu-title-content"
+                >
+                  <a
+                    href="/sqle/project//progress"
+                  >
+<<<<<<< HEAD
+                    <button
+                      class="ant-btn ant-btn-default ant-btn-sm guidance-button-wrapper css-1jtuni2"
+                      type="button"
+                    >
+                      <div
+                        class="ant-space ant-space-horizontal ant-space-align-center"
+                      >
+                        <div
+                          class="ant-space-item"
+                        >
+                          查看审核规则
+                        </div>
+                      </div>
+                    </button>
+                  </div>
+                  <div
+                    class="ant-space-item"
+                    style="margin-right: 8px; padding-bottom: 8px;"
+                  >
+                    <button
+                      class="ant-btn ant-btn-default ant-btn-sm guidance-button-wrapper css-1jtuni2"
+                      type="button"
+                    >
+                      <div
+                        class="ant-space ant-space-horizontal ant-space-align-center"
+                      >
+                        <div
+                          class="ant-space-item"
+                        >
+                          查看规则模板
+                        </div>
+                      </div>
+                    </button>
+                  </div>
+=======
+                    审批流程模板
+                  </a>
+                </span>
+              </li>
+              <li
+                class="ant-menu-item"
+                data-menu-id="rc-menu-uuid-test-project/projectID/member"
+                role="menuitem"
+                structkey="member"
+                style="padding-left: 24px;"
+                tabindex="-1"
+                to="/project//member"
+              >
+                <svg
+                  class="ant-menu-item-icon"
+                  height="18"
+                  viewBox="0 0 18 18"
+                  width="18"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M9 7.5a3 3 0 1 0 0-6 3 3 0 0 0 0 6M4.125 9.75a1.875 1.875 0 1 0 0-3.75 1.875 1.875 0 0 0 0 3.75M15.75 7.875a1.875 1.875 0 1 1-3.75 0 1.875 1.875 0 0 1 3.75 0M9 8.25A3.75 3.75 0 0 1 12.75 12v4.5h-7.5V12A3.75 3.75 0 0 1 9 8.25M3.75 12c0-.52.075-1.022.216-1.496l-.127.011a2.625 2.625 0 0 0-2.339 2.61V16.5h2.25zm12.75 4.5v-3.375a2.626 2.626 0 0 0-2.466-2.62c.14.473.216.975.216 1.495v4.5z"
+                    fill="#C3C6CD"
+                  />
+                  <path
+                    d="M4.125 9.75a1.875 1.875 0 1 0 0-3.75 1.875 1.875 0 0 0 0 3.75M15.75 7.875a1.875 1.875 0 1 1-3.75 0 1.875 1.875 0 0 1 3.75 0M3.75 12c0-.52.075-1.022.216-1.496l-.127.011a2.625 2.625 0 0 0-2.339 2.61V16.5h2.25zm12.75 4.5v-3.375a2.626 2.626 0 0 0-2.466-2.62c.14.473.216.975.216 1.495v4.5z"
+                    fill="#8A8F99"
+                  />
+                </svg>
+                <span
+                  class="ant-menu-title-content"
+                >
+                  <a
+                    href="/project//member"
+                  >
+                    成员与权限
+                  </a>
+                </span>
+              </li>
+              <li
+                class="ant-menu-item"
+                data-menu-id="rc-menu-uuid-test-sqle/project/projectID/push-rule"
+                role="menuitem"
+                structkey="push-rule-configuration"
+                style="padding-left: 24px;"
+                tabindex="-1"
+                to="/sqle/project//push-rule"
+              >
+                <svg
+                  class="ant-menu-item-icon"
+                  height="18"
+                  viewBox="0 0 16 16"
+                  width="18"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M6.636 1.473a6.7 6.7 0 0 1 2.727-.001 2.66 2.66 0 0 0 2.436 2.258c.399.03.8-.03 1.172-.176a6.7 6.7 0 0 1 1.362 2.363 2.66 2.66 0 0 0-1 2.083c0 .843.39 1.594 1.001 2.083a6.7 6.7 0 0 1-1.364 2.362 2.664 2.664 0 0 0-3.606 2.08c-.9.19-1.828.19-2.728.003a2.66 2.66 0 0 0-2.435-2.26c-.4-.03-.8.03-1.173.177a6.7 6.7 0 0 1-1.362-2.364 2.66 2.66 0 0 0 .737-3.237 2.7 2.7 0 0 0-.738-.927 6.7 6.7 0 0 1 1.364-2.362 2.66 2.66 0 0 0 3.173-.98c.225-.33.374-.706.434-1.101M8 10a2 2 0 1 0 0-4 2 2 0 0 0 0 4"
+                    fill="#C3C6CD"
+                  />
+                </svg>
+                <span
+                  class="ant-menu-title-content"
+                >
+                  <a
+                    href="/sqle/project//push-rule"
+                  >
+                    推送规则
+                  </a>
+                </span>
+              </li>
+              <li
+                class="ant-menu-item"
+                data-menu-id="rc-menu-uuid-test-sqle/project/projectID/whitelist"
+                role="menuitem"
+                structkey="whitelist"
+                style="padding-left: 24px;"
+                tabindex="-1"
+                to="/sqle/project//whitelist"
+              >
+                <svg
+                  class="ant-menu-item-icon"
+                  height="18"
+                  viewBox="0 0 18 18"
+                  width="18"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <g
+                    clip-rule="evenodd"
+                    fill-rule="evenodd"
+                  >
+                    <path
+                      d="M15.75 5.25 12 1.5H2.995a.745.745 0 0 0-.745.744v13.512a.75.75 0 0 0 .745.744h6.607a4.5 4.5 0 0 1 6.148-6.148zm-5.159-.402L13.243 7.5l-2.652 2.652-1.06-1.061L11.12 7.5l-1.59-1.591zm-3.182 5.304L4.757 7.5 7.41 4.848l1.06 1.061L6.88 7.5l1.59 1.591z"
+                      fill="#C3C6CD"
+                    />
+                    <path
+                      d="M13.5 17.25a3 3 0 1 0 0-6 3 3 0 0 0 0 6m-2.25-3 1.875 1.875L15.75 13.5l-.75-.75-1.875 1.875L12 13.5z"
+                      fill="#8A8F99"
+                    />
+                  </g>
+                </svg>
+                <span
+                  class="ant-menu-title-content"
+                >
+                  <a
+                    href="/sqle/project//whitelist"
+                  >
+                    审核SQL例外
+                  </a>
+                </span>
+              </li>
+              <li
+                class="ant-menu-item"
+                data-menu-id="rc-menu-uuid-test-sqle/project/projectID/sql-management-exception"
+                role="menuitem"
+                structkey="sql-management-exception"
+                style="padding-left: 24px;"
+                tabindex="-1"
+                to="/sqle/project//sql-management-exception"
+              >
+                <svg
+                  class="ant-menu-item-icon"
+                  height="18"
+                  viewBox="0 0 1024 1024"
+                  width="18"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M497.18 880H168.131V144h515.564l124.436 124.436v227.761c29.641 11.254 56.685 27.769 80 48.409V235.299l-80-80L796.832 144l-80-80H108.131c-11.046 0-20 8.955-20 20v856c0 11.046 8.954 20 20 20h470.211a261.35 261.35 0 0 1-81.162-80"
+                    fill="#C3C6CD"
+                  />
+                  <path
+                    d="M258.131 259.255h460v80h-460zm457.738 220.076c.756 0 1.508.022 2.262.029V472h-460v80h277.457c46.743-44.995 110.277-72.669 180.281-72.669M258.131 684.745v80h198.976a263 263 0 0 1-1.239-25.414c0-18.726 1.997-36.983 5.759-54.586zm613.301-100.978c-41.553-41.553-96.8-64.437-155.563-64.437s-114.011 22.884-155.563 64.437c-41.553 41.552-64.437 96.799-64.437 155.564s22.884 114.011 64.437 155.563 96.8 64.437 155.563 64.437 114.011-22.884 155.563-64.437 64.437-96.8 64.437-155.563c0-58.765-22.884-114.012-64.437-155.564M715.869 879.331c-77.196 0-140-62.804-140-140 0-24.08 6.112-46.758 16.864-66.568l189.703 189.704c-19.809 10.752-42.488 16.864-66.567 16.864m123.136-73.433L649.301 616.195c19.809-10.752 42.488-16.864 66.567-16.864 77.196 0 140 62.804 140 140 .001 24.08-6.111 46.758-16.863 66.567"
+                    fill="#8A8F99"
+                  />
+                </svg>
+                <span
+                  class="ant-menu-title-content"
+                >
+                  <a
+                    href="/sqle/project//sql-management-exception"
+                  >
+                    管控SQL例外
+                  </a>
+                </span>
+              </li>
+            </ul>
+          </li>
+          <li
+            class="ant-menu-item-divider"
+          />
+        </ul>
+        <div
+          aria-hidden="true"
+          style="display: none;"
+        />
+      </div>
+      <div
+        class="dms-layout-side-end"
+      >
+        <span
+          class="ant-avatar ant-avatar-circle action-avatar css-1wq79dc css-dev-only-do-not-override-1thf7qv"
+        >
+          <span
+            class="ant-avatar-string"
+            style="transform: scale(1) translateX(-50%);"
+          >
+            A
+          </span>
+        </span>
+      </div>
+    </div>
+    <div
+      class="dms-layout-content"
+    >
+      <div
+        class="actiontech-page-header-namespace css-1xspr0w"
+      >
+        <div
+          class="title"
+        >
+          用户引导
+        </div>
+        <div
+          class="extra"
+        />
+      </div>
+      <section
+        class="css-1wil037"
+      >
+        <div
+          class="ant-row ant-row-no-wrap ant-row-middle step-container css-dev-only-do-not-override-1thf7qv"
+        >
+          <div
+            class="ant-col icon-wrapper css-dev-only-do-not-override-1thf7qv"
+            style="flex: 0 0 40px; min-width: 0;"
           >
             <span
               class="step-icon css-u3jcp4"
@@ -376,7 +1542,7 @@ exports[`App render App when "checkPageAction" is false 1`] = `
             </span>
           </div>
           <div
-            class="ant-col step-box"
+            class="ant-col step-box css-dev-only-do-not-override-1thf7qv"
             style="flex-basis: auto; min-width: 0;"
           >
             <div
@@ -398,10 +1564,10 @@ exports[`App render App when "checkPageAction" is false 1`] = `
               </div>
             </div>
             <div
-              class="ant-row ant-row-no-wrap"
+              class="ant-row css-dev-only-do-not-override-1thf7qv"
             >
               <div
-                class="ant-col ant-col-8 content-wrapper"
+                class="ant-col ant-col-8 content-wrapper css-dev-only-do-not-override-1thf7qv"
               >
                 <div
                   class="sub-title"
@@ -414,9 +1580,10 @@ exports[`App render App when "checkPageAction" is false 1`] = `
                   管理数据源相关操作
                 </div>
                 <div
-                  class="ant-space ant-space-horizontal ant-space-align-center actions"
+                  class="ant-space css-dev-only-do-not-override-1thf7qv ant-space-horizontal ant-space-align-center actions"
                   style="flex-wrap: wrap; margin-bottom: -8px;"
                 >
+>>>>>>> 3ed57341dae3a5998f1b17c8ee6f1a792c4695b5
                   <div
                     class="ant-space-item"
                     style="margin-right: 8px; padding-bottom: 8px;"
@@ -479,11 +1646,11 @@ exports[`App render App when "checkPageAction" is false 1`] = `
                     style="margin-right: 8px; padding-bottom: 8px;"
                   >
                     <button
-                      class="ant-btn ant-btn-default ant-btn-sm guidance-button-wrapper css-1jtuni2"
+                      class="ant-btn css-dev-only-do-not-override-eo1pvk ant-btn-default ant-btn-sm guidance-button-wrapper css-aj0zfl"
                       type="button"
                     >
                       <div
-                        class="ant-space ant-space-horizontal ant-space-align-center"
+                        class="ant-space css-dev-only-do-not-override-eo1pvk ant-space-horizontal ant-space-align-center"
                       >
                         <div
                           class="ant-space-item"
@@ -568,7 +1735,11 @@ exports[`App render App when "checkPageAction" is false 1`] = `
               </div>
             </div>
             <div
+<<<<<<< HEAD
               class="ant-row ant-row-no-wrap"
+=======
+              class="ant-row css-dev-only-do-not-override-1thf7qv"
+>>>>>>> 3ed57341dae3a5998f1b17c8ee6f1a792c4695b5
             >
               <div
                 class="ant-col ant-col-8 content-wrapper"
@@ -608,14 +1779,18 @@ exports[`App render App when "checkPageAction" is false 1`] = `
                   </div>
                 </div>
               </div>
+<<<<<<< HEAD
+              <div
+                class="ant-col ant-col-8 content-wrapper"
+=======
             </div>
           </div>
         </div>
         <div
-          class="ant-row ant-row-no-wrap ant-row-middle step-container"
+          class="ant-row ant-row-no-wrap ant-row-middle step-container css-dev-only-do-not-override-1thf7qv"
         >
           <div
-            class="ant-col icon-wrapper"
+            class="ant-col icon-wrapper css-dev-only-do-not-override-1thf7qv"
             style="flex: 0 0 40px; min-width: 0;"
           >
             <span
@@ -627,6 +1802,7 @@ exports[`App render App when "checkPageAction" is false 1`] = `
                 viewBox="0 0 18 18"
                 width="24"
                 xmlns="http://www.w3.org/2000/svg"
+>>>>>>> 3ed57341dae3a5998f1b17c8ee6f1a792c4695b5
               >
                 <path
                   d="M13.5 6H15a.75.75 0 0 1 .75.75v9a.75.75 0 0 1-.75.75H3a.75.75 0 0 1-.75-.75v-9A.75.75 0 0 1 3 6h1.5v-.75a4.5 4.5 0 0 1 9 0zM12 6v-.75a3 3 0 0 0-6 0V6zm-3.75 4.5V12h1.5v-1.5zm-3 0V12h1.5v-1.5zm6 0V12h1.5v-1.5z"
@@ -640,7 +1816,7 @@ exports[`App render App when "checkPageAction" is false 1`] = `
             </span>
           </div>
           <div
-            class="ant-col step-box"
+            class="ant-col step-box css-dev-only-do-not-override-1thf7qv"
             style="flex-basis: auto; min-width: 0;"
           >
             <div
@@ -662,10 +1838,10 @@ exports[`App render App when "checkPageAction" is false 1`] = `
               </div>
             </div>
             <div
-              class="ant-row ant-row-no-wrap"
+              class="ant-row css-dev-only-do-not-override-1thf7qv"
             >
               <div
-                class="ant-col ant-col-8 content-wrapper"
+                class="ant-col ant-col-8 content-wrapper css-dev-only-do-not-override-1thf7qv"
               >
                 <div
                   class="sub-title"
@@ -686,11 +1862,11 @@ exports[`App render App when "checkPageAction" is false 1`] = `
                     style="margin-right: 8px; padding-bottom: 8px;"
                   >
                     <button
-                      class="ant-btn ant-btn-default ant-btn-sm guidance-button-wrapper css-1jtuni2"
+                      class="ant-btn css-dev-only-do-not-override-eo1pvk ant-btn-default ant-btn-sm guidance-button-wrapper css-aj0zfl"
                       type="button"
                     >
                       <div
-                        class="ant-space ant-space-horizontal ant-space-align-center"
+                        class="ant-space css-dev-only-do-not-override-eo1pvk ant-space-horizontal ant-space-align-center"
                       >
                         <div
                           class="ant-space-item"
@@ -705,11 +1881,11 @@ exports[`App render App when "checkPageAction" is false 1`] = `
                     style="margin-right: 8px; padding-bottom: 8px;"
                   >
                     <button
-                      class="ant-btn ant-btn-default ant-btn-sm guidance-button-wrapper css-1jtuni2"
+                      class="ant-btn css-dev-only-do-not-override-eo1pvk ant-btn-default ant-btn-sm guidance-button-wrapper css-aj0zfl"
                       type="button"
                     >
                       <div
-                        class="ant-space ant-space-horizontal ant-space-align-center"
+                        class="ant-space css-dev-only-do-not-override-eo1pvk ant-space-horizontal ant-space-align-center"
                       >
                         <div
                           class="ant-space-item"
@@ -724,11 +1900,11 @@ exports[`App render App when "checkPageAction" is false 1`] = `
                     style="margin-right: 8px; padding-bottom: 8px;"
                   >
                     <button
-                      class="ant-btn ant-btn-default ant-btn-sm guidance-button-wrapper css-1jtuni2"
+                      class="ant-btn css-dev-only-do-not-override-eo1pvk ant-btn-default ant-btn-sm guidance-button-wrapper css-aj0zfl"
                       type="button"
                     >
                       <div
-                        class="ant-space ant-space-horizontal ant-space-align-center"
+                        class="ant-space css-dev-only-do-not-override-eo1pvk ant-space-horizontal ant-space-align-center"
                       >
                         <div
                           class="ant-space-item"
@@ -765,17 +1941,36 @@ exports[`App render App when "checkPageAction" is false 1`] = `
                 <div
                   class="sub-title"
                 >
-                  审批流程
+                  数据源账号管理
                 </div>
                 <div
                   class="desc"
                 >
-                  根据实际业务流转变更流程模板
+                  兼顾账号发现及管理，监控数据源账号安全
                 </div>
                 <div
                   class="ant-space ant-space-horizontal ant-space-align-center actions"
                   style="flex-wrap: wrap; margin-bottom: -8px;"
                 >
+                  <div
+                    class="ant-space-item"
+                    style="margin-right: 8px; padding-bottom: 8px;"
+                  >
+                    <button
+                      class="ant-btn css-dev-only-do-not-override-eo1pvk ant-btn-default ant-btn-sm guidance-button-wrapper css-aj0zfl"
+                      type="button"
+                    >
+                      <div
+                        class="ant-space css-dev-only-do-not-override-eo1pvk ant-space-horizontal ant-space-align-center"
+                      >
+                        <div
+                          class="ant-space-item"
+                        >
+                          账号列表
+                        </div>
+                      </div>
+                    </button>
+                  </div>
                   <div
                     class="ant-space-item"
                     style="padding-bottom: 8px;"
@@ -786,6 +1981,44 @@ exports[`App render App when "checkPageAction" is false 1`] = `
                     >
                       <div
                         class="ant-space ant-space-horizontal ant-space-align-center"
+                      >
+                        <div
+                          class="ant-space-item"
+                        >
+                          临期列表
+                        </div>
+                      </div>
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="ant-col ant-col-8 content-wrapper css-dev-only-do-not-override-1thf7qv"
+              >
+                <div
+                  class="sub-title"
+                >
+                  审批流程
+                </div>
+                <div
+                  class="desc"
+                >
+                  根据实际业务流转变更流程模板
+                </div>
+                <div
+                  class="ant-space css-dev-only-do-not-override-1thf7qv ant-space-horizontal ant-space-align-center actions"
+                  style="flex-wrap: wrap; margin-bottom: -8px;"
+                >
+                  <div
+                    class="ant-space-item"
+                    style="padding-bottom: 8px;"
+                  >
+                    <button
+                      class="ant-btn css-dev-only-do-not-override-eo1pvk ant-btn-default ant-btn-sm guidance-button-wrapper css-aj0zfl"
+                      type="button"
+                    >
+                      <div
+                        class="ant-space css-dev-only-do-not-override-eo1pvk ant-space-horizontal ant-space-align-center"
                       >
                         <div
                           class="ant-space-item"
@@ -852,7 +2085,11 @@ exports[`App render App when "checkPageAction" is false 1`] = `
               </div>
             </div>
             <div
+<<<<<<< HEAD
               class="ant-row ant-row-no-wrap"
+=======
+              class="ant-row css-dev-only-do-not-override-1thf7qv"
+>>>>>>> 3ed57341dae3a5998f1b17c8ee6f1a792c4695b5
             >
               <div
                 class="ant-col ant-col-8 content-wrapper"
@@ -892,8 +2129,48 @@ exports[`App render App when "checkPageAction" is false 1`] = `
                   </div>
                 </div>
               </div>
+<<<<<<< HEAD
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </section>
+</div>
+`;
+
+exports[`App render App when "isDriverInfoFetched" is equal false 1`] = `<div />`;
+
+exports[`App render App when "isFeatureSupportFetched" is equal false 1`] = `<div />`;
+
+exports[`App render App when "isUserInfoFetched" is equal false 1`] = `<div />`;
+
+exports[`App render App when token is existed 1`] = `
+<div>
+  <section
+    class="css-m36rcd"
+  >
+    <div
+      class="dms-layout-side css-1mju0nn"
+    >
+      <div
+        class="dms-layout-side-start"
+      >
+        <div
+          class="ant-spin-nested-loading"
+        >
+          <div>
+            <div
+              aria-busy="true"
+              aria-live="polite"
+              class="ant-spin ant-spin-spinning"
+            >
+              <span
+                class="custom-icon-spin-dot ant-spin-dot css-u3jcp4"
+=======
               <div
-                class="ant-col ant-col-8 content-wrapper"
+                class="ant-col ant-col-8 content-wrapper css-dev-only-do-not-override-1thf7qv"
+>>>>>>> 3ed57341dae3a5998f1b17c8ee6f1a792c4695b5
               >
                 <div
                   class="sub-title"
@@ -906,7 +2183,7 @@ exports[`App render App when "checkPageAction" is false 1`] = `
                   在线提起SQL变更申请，经由审批流程完成上线
                 </div>
                 <div
-                  class="ant-space ant-space-horizontal ant-space-align-center actions"
+                  class="ant-space css-dev-only-do-not-override-1thf7qv ant-space-horizontal ant-space-align-center actions"
                   style="flex-wrap: wrap; margin-bottom: -8px;"
                 >
                   <div
@@ -914,11 +2191,11 @@ exports[`App render App when "checkPageAction" is false 1`] = `
                     style="padding-bottom: 8px;"
                   >
                     <button
-                      class="ant-btn ant-btn-default ant-btn-sm guidance-button-wrapper css-1jtuni2"
+                      class="ant-btn css-dev-only-do-not-override-eo1pvk ant-btn-default ant-btn-sm guidance-button-wrapper css-aj0zfl"
                       type="button"
                     >
                       <div
-                        class="ant-space ant-space-horizontal ant-space-align-center"
+                        class="ant-space css-dev-only-do-not-override-eo1pvk ant-space-horizontal ant-space-align-center"
                       >
                         <div
                           class="ant-space-item"
@@ -931,7 +2208,7 @@ exports[`App render App when "checkPageAction" is false 1`] = `
                 </div>
               </div>
               <div
-                class="ant-col ant-col-8 content-wrapper"
+                class="ant-col ant-col-8 content-wrapper css-dev-only-do-not-override-1thf7qv"
               >
                 <div
                   class="sub-title"
@@ -944,7 +2221,7 @@ exports[`App render App when "checkPageAction" is false 1`] = `
                   发起数据导出工单，审核通过后获取数据集。
                 </div>
                 <div
-                  class="ant-space ant-space-horizontal ant-space-align-center actions"
+                  class="ant-space css-dev-only-do-not-override-1thf7qv ant-space-horizontal ant-space-align-center actions"
                   style="flex-wrap: wrap; margin-bottom: -8px;"
                 >
                   <div
@@ -952,11 +2229,11 @@ exports[`App render App when "checkPageAction" is false 1`] = `
                     style="padding-bottom: 8px;"
                   >
                     <button
-                      class="ant-btn ant-btn-default ant-btn-sm guidance-button-wrapper css-1jtuni2"
+                      class="ant-btn css-dev-only-do-not-override-eo1pvk ant-btn-default ant-btn-sm guidance-button-wrapper css-aj0zfl"
                       type="button"
                     >
                       <div
-                        class="ant-space ant-space-horizontal ant-space-align-center"
+                        class="ant-space css-dev-only-do-not-override-eo1pvk ant-space-horizontal ant-space-align-center"
                       >
                         <div
                           class="ant-space-item"
@@ -968,14 +2245,52 @@ exports[`App render App when "checkPageAction" is false 1`] = `
                   </div>
                 </div>
               </div>
+              <div
+                class="ant-col ant-col-8 content-wrapper css-dev-only-do-not-override-1thf7qv"
+              >
+                <div
+                  class="sub-title"
+                >
+                  数据脱敏
+                </div>
+                <div
+                  class="desc"
+                >
+                  开启脱敏，保障敏感数据安全
+                </div>
+                <div
+                  class="ant-space css-dev-only-do-not-override-1thf7qv ant-space-horizontal ant-space-align-center actions"
+                  style="flex-wrap: wrap; margin-bottom: -8px;"
+                >
+                  <div
+                    class="ant-space-item"
+                    style="padding-bottom: 8px;"
+                  >
+                    <button
+                      class="ant-btn css-dev-only-do-not-override-eo1pvk ant-btn-default ant-btn-sm guidance-button-wrapper css-aj0zfl"
+                      type="button"
+                    >
+                      <div
+                        class="ant-space css-dev-only-do-not-override-eo1pvk ant-space-horizontal ant-space-align-center"
+                      >
+                        <div
+                          class="ant-space-item"
+                        >
+                          查看脱敏规则
+                        </div>
+                      </div>
+                    </button>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
         <div
-          class="ant-row ant-row-no-wrap ant-row-middle step-container"
+          class="ant-row ant-row-no-wrap ant-row-middle step-container css-dev-only-do-not-override-1thf7qv"
         >
           <div
-            class="ant-col icon-wrapper"
+            class="ant-col icon-wrapper css-dev-only-do-not-override-1thf7qv"
             style="flex: 0 0 40px; min-width: 0;"
           >
             <span
@@ -999,7 +2314,7 @@ exports[`App render App when "checkPageAction" is false 1`] = `
             </span>
           </div>
           <div
-            class="ant-col step-box"
+            class="ant-col step-box css-dev-only-do-not-override-1thf7qv"
             style="flex-basis: auto; min-width: 0;"
           >
             <div
@@ -1021,10 +2336,10 @@ exports[`App render App when "checkPageAction" is false 1`] = `
               </div>
             </div>
             <div
-              class="ant-row ant-row-no-wrap"
+              class="ant-row css-dev-only-do-not-override-1thf7qv"
             >
               <div
-                class="ant-col ant-col-8 content-wrapper"
+                class="ant-col ant-col-8 content-wrapper css-dev-only-do-not-override-1thf7qv"
               >
                 <div
                   class="sub-title"
@@ -1037,7 +2352,7 @@ exports[`App render App when "checkPageAction" is false 1`] = `
                   审计平台内用户操作
                 </div>
                 <div
-                  class="ant-space ant-space-horizontal ant-space-align-center actions"
+                  class="ant-space css-dev-only-do-not-override-1thf7qv ant-space-horizontal ant-space-align-center actions"
                   style="flex-wrap: wrap; margin-bottom: -8px;"
                 >
                   <div
@@ -1045,11 +2360,11 @@ exports[`App render App when "checkPageAction" is false 1`] = `
                     style="padding-bottom: 8px;"
                   >
                     <button
-                      class="ant-btn ant-btn-default ant-btn-sm guidance-button-wrapper css-1jtuni2"
+                      class="ant-btn css-dev-only-do-not-override-eo1pvk ant-btn-default ant-btn-sm guidance-button-wrapper css-aj0zfl"
                       type="button"
                     >
                       <div
-                        class="ant-space ant-space-horizontal ant-space-align-center"
+                        class="ant-space css-dev-only-do-not-override-eo1pvk ant-space-horizontal ant-space-align-center"
                       >
                         <div
                           class="ant-space-item"
@@ -1088,13 +2403,13 @@ exports[`App render App when token is existed 1`] = `
         class="dms-layout-side-start"
       >
         <div
-          class="ant-spin-nested-loading"
+          class="ant-spin-nested-loading css-dev-only-do-not-override-1thf7qv"
         >
           <div>
             <div
               aria-busy="true"
               aria-live="polite"
-              class="ant-spin ant-spin-spinning"
+              class="ant-spin ant-spin-spinning css-dev-only-do-not-override-1thf7qv"
             >
               <span
                 class="custom-icon-spin-dot ant-spin-dot css-u3jcp4"
@@ -1229,7 +2544,7 @@ exports[`App render App when token is existed 1`] = `
                   <span
                     class="label label-base"
                   >
-                    SQLE
+                    DMS
                   </span>
                 </div>
               </div>
@@ -1382,7 +2697,11 @@ exports[`App render App when token is existed 1`] = `
               </div>
             </div>
             <div
+<<<<<<< HEAD
               class="ant-select ant-select-lg ant-select-borderless basic-select-wrapper custom-select-namespace custom-project-selector css-wk9fc9 ant-select-single ant-select-show-arrow"
+              searchinputref="[object Object]"
+=======
+              class="ant-select ant-select-lg ant-select-borderless basic-select-wrapper custom-select-namespace custom-project-selector css-wk9fc9 css-dev-only-do-not-override-is2hm8 ant-select-single ant-select-show-arrow"
               searchinputref="[object Object]"
             >
               <div
@@ -1461,11 +2780,976 @@ exports[`App render App when token is existed 1`] = `
           </div>
         </div>
         <ul
+          class="ant-menu ant-menu-root ant-menu-inline ant-menu-light custom-menu css-dev-only-do-not-override-1thf7qv"
+          data-menu-list="true"
+          role="menu"
+          tabindex="0"
+        >
+          <li
+            class="ant-menu-item"
+            data-menu-id="rc-menu-uuid-test-sqle/project/projectID/overview"
+            role="menuitem"
+            structkey="project-overview"
+            style="padding-left: 24px;"
+            tabindex="-1"
+            to="/sqle/project//overview"
+          >
+            <svg
+              class="ant-menu-item-icon"
+              height="18"
+              viewBox="0 0 18 18"
+              width="18"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="m9.385.982 6.578 3.946a.375.375 0 0 1 0 .644L9 9.75 2.036 5.572a.375.375 0 0 1 0-.644L8.613.982a.75.75 0 0 1 .772 0"
+                fill="#C3C6CD"
+              />
+              <path
+                d="m15.062 7.875.901.54a.375.375 0 0 1 0 .644L9 13.238 2.036 9.059a.375.375 0 0 1 0-.643l.901-.541L9 11.512zm0 3.525.901.54a.376.376 0 0 1 0 .644l-6.577 3.947a.75.75 0 0 1-.773 0l-6.577-3.947a.374.374 0 0 1 0-.643l.901-.541L9 15.037z"
+                fill="#8A8F99"
+              />
+            </svg>
+            <span
+              class="ant-menu-title-content"
+            >
+              <a
+                href="/sqle/project//overview"
+              >
+                项目概览
+              </a>
+            </span>
+          </li>
+          <li
+            class="ant-menu-item-divider"
+          />
+          <li
+            class="ant-menu-item-group"
+            role="presentation"
+          >
+            <div
+              class="ant-menu-item-group-title"
+              role="presentation"
+              title="SQL开发"
+            >
+              SQL开发
+            </div>
+            <ul
+              class="ant-menu-item-group-list"
+              role="group"
+            >
+              <li
+                class="ant-menu-item"
+                data-menu-id="rc-menu-uuid-test-project/projectID/cloud-beaver"
+                role="menuitem"
+                structkey="cloud-beaver"
+                style="padding-left: 24px;"
+                tabindex="-1"
+                to="/project//cloud-beaver"
+              >
+                <svg
+                  class="ant-menu-item-icon"
+                  height="18"
+                  viewBox="0 0 18 18"
+                  width="18"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M7.5 12.2c0-.11.09-.2.2-.2h2.6c.11 0 .2.09.2.2v2.182a1 1 0 0 0 .553.894l.836.419a.2.2 0 0 1 .111.179v.426a.2.2 0 0 1-.2.2H6.2a.2.2 0 0 1-.2-.2v-.426a.2.2 0 0 1 .11-.18l.837-.418a1 1 0 0 0 .553-.894z"
+                    fill="#8A8F99"
+                  />
+                  <path
+                    clip-rule="evenodd"
+                    d="M2.5 2.25a1 1 0 0 0-1 1v9.25a1 1 0 0 0 1 1h13a1 1 0 0 0 1-1V3.25a1 1 0 0 0-1-1zm1 8.25a.5.5 0 0 0-.5.5v.5a.5.5 0 0 0 .5.5h11a.5.5 0 0 0 .5-.5V11a.5.5 0 0 0-.5-.5z"
+                    fill="#C3C6CD"
+                    fill-rule="evenodd"
+                  />
+                </svg>
+                <span
+                  class="ant-menu-title-content"
+                >
+                  <a
+                    href="/project//cloud-beaver"
+                  >
+                    SQL工作台
+                  </a>
+                </span>
+              </li>
+              <li
+                class="ant-menu-item"
+                data-menu-id="rc-menu-uuid-test-project/projectID/data/export"
+                role="menuitem"
+                structkey="data-export"
+                style="padding-left: 24px;"
+                tabindex="-1"
+                to="/project//data/export"
+              >
+                <svg
+                  class="ant-menu-item-icon"
+                  height="18"
+                  viewBox="0 0 1024 1024"
+                  width="18"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M123.029 955.658c-31.485 0-57.1-25.614-57.1-57.1V268.756c0-31.486 25.615-57.1 57.1-57.1h133.239c21.52 0 39.59 12.514 47.16 32.657 7.571 20.144 2.215 41.463-13.979 55.636l-17.79 15.573h-101.89v534.544h564.956V725.165l13.544-9.68c9.813-7.014 21.243-10.722 33.055-10.722 31.568 0 57.249 25.648 57.249 57.174v136.621c0 31.486-25.615 57.1-57.1 57.1zm500.691-473.45c-32.409.269-61.09 1.4-85.313 3.368-7.186.593-12.466.883-17.126 1.14-13.028.719-18.975 1.046-45.112 7.686-34.745 8.832-67.818 23.13-98.3 42.493-6.053 3.85-13.11 8.163-20.582 12.729-31.807 19.435-75.334 46.03-94.562 69.499-5.64 7.36-13.463 11.413-22.038 11.413-2.153 0-4.354-.256-6.545-.762-12.154-2.653-19.742-12.39-19.742-25.4v-1.547l.31-1.516c12.921-63.498 29.397-117.625 48.967-160.875 19.82-43.838 46.006-82.8 77.827-115.801 32.407-33.632 73.855-58.428 123.192-73.696 44.649-13.76 98.132-21.271 159.038-22.342V61.96L958.47 355.34 623.72 648.706z"
+                    fill="#C3C6CD"
+                  />
+                </svg>
+                <span
+                  class="ant-menu-title-content"
+                >
+                  <a
+                    href="/project//data/export"
+                  >
+                    数据导出
+                  </a>
+                </span>
+              </li>
+              <li
+                class="ant-menu-item"
+                data-menu-id="rc-menu-uuid-test-sqle/project/projectID/sql-audit"
+                role="menuitem"
+                structkey="sql-audit"
+                style="padding-left: 24px;"
+                tabindex="-1"
+                to="/sqle/project//sql-audit"
+              >
+                <svg
+                  class="ant-menu-item-icon"
+                  height="18"
+                  viewBox="0 0 1024 1024"
+                  width="18"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M910.423 893.2 790.027 772.662c31.305-42.579 49.833-95.127 49.833-151.932 0-141.624-115.086-256.85-256.54-256.85S326.785 479.106 326.785 620.73 441.866 877.58 583.32 877.58c56.737 0 109.222-18.55 151.75-49.893l120.397 120.538c7.59 7.593 17.532 11.393 27.479 11.393s19.888-3.8 27.478-11.394c15.174-15.198 15.174-39.832-.001-55.024M583.32 814.359c-106.638 0-193.39-86.863-193.39-193.629s86.752-193.628 193.39-193.628 193.395 86.861 193.395 193.628-86.758 193.629-193.395 193.629"
+                    fill="#C3C6CD"
+                  />
+                  <path
+                    d="M251.215 631.364c0-181.288 146.78-328.252 327.844-328.252 110.88 0 208.904 55.113 268.236 139.473V124.164c0-32.988-26.736-59.78-59.715-59.78H161.91c-32.977 0-59.714 26.763-59.714 59.779v775.672c0 32.99 26.735 59.782 59.715 59.782h417.148c-181.063 0-327.844-146.964-327.844-328.253m-29.803-447.616c0-16.481 13.344-29.841 29.804-29.841h447.06c16.46 0 29.804 13.36 29.804 29.84s-13.343 29.842-29.804 29.842h-447.06c-16.46 0-29.804-13.361-29.804-29.841"
+                    fill="#C3C6CD"
+                  />
+                </svg>
+                <span
+                  class="ant-menu-title-content"
+                >
+                  <a
+                    href="/sqle/project//sql-audit"
+                  >
+                    快捷审核
+                  </a>
+                </span>
+              </li>
+              <li
+                class="ant-menu-item"
+                data-menu-id="rc-menu-uuid-test-sqle/project/projectID/plugin-audit"
+                role="menuitem"
+                structkey="plugin-audit"
+                style="padding-left: 24px;"
+                tabindex="-1"
+                to="/sqle/project//plugin-audit"
+              >
+                <svg
+                  class="ant-menu-item-icon"
+                  height="18"
+                  viewBox="0 0 1024 1024"
+                  width="18"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M953.6 960H70.4V64h883.2zm-819.2-64h755.2V128H134.4z"
+                    fill="#C3C6CD"
+                  />
+                  <path
+                    d="M96 320h832v64H96zM192 192h64v64h-64zM320 192h64v64h-64zM550.784 417.28l59.776 22.848L473.216 798.72l-59.776-22.912zM358.4 793.6 211.2 640l147.2-153.6 51.2 51.2L300.8 640l108.8 102.4zM665.6 793.6l-51.2-51.2L723.2 640 614.4 537.6l51.2-51.2L812.8 640z"
+                    fill="#C3C6CD"
+                  />
+                </svg>
+                <span
+                  class="ant-menu-title-content"
+                >
+                  <a
+                    href="/sqle/project//plugin-audit"
+                  >
+                    IDE审核
+                  </a>
+                </span>
+              </li>
+              <li
+                class="ant-menu-item"
+                data-menu-id="rc-menu-uuid-test-sqle/project/projectID/sql-optimization"
+                permission="page:sql_optimization"
+                role="menuitem"
+                structkey="sql-optimization"
+                style="padding-left: 24px;"
+                tabindex="-1"
+                to="/sqle/project//sql-optimization"
+              >
+                <svg
+                  class="ant-menu-item-icon"
+                  height="18"
+                  viewBox="0 0 1024 1024"
+                  width="18"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M823.685 375.036c-.096-.198-.198-.493-.198-.691-1.578-7.32-5.142-14.238-10.777-19.878-5.634-5.635-12.558-9.192-19.878-10.777-.198-.101-.492-.198-.69-.198-2.67-.492-5.34-.791-8.011-.791H621.969c-22.248 0-40.543 18.192-40.543 40.541 0 22.248 18.193 40.543 40.543 40.543h64.273l-159.89 159.788-114.506-114.5c-15.721-15.726-41.531-15.726-57.252 0l-143.277 143.18c-15.726 15.72-15.726 41.526 0 57.252 15.721 15.721 41.528 15.721 57.247 0L383.172 554.9 497.18 669.01c.198.198.299.396.397.497 7.913 7.908 18.293 11.863 28.674 11.766a40.77 40.77 0 0 0 28.679-11.766c.193-.198.294-.396.391-.497l188.072-188.073v64.273c0 22.248 18.198 40.543 40.543 40.543 22.248 0 40.543-18.193 40.543-40.543V383.142c-.002-2.67-.296-5.436-.794-8.106m0 0"
+                    fill="#C3C6CD"
+                  />
+                  <path
+                    d="M899.111 124.889V899.11H124.889V124.889zM947.74 27.63H76.259c-26.857 0-48.63 21.772-48.63 48.63v871.48c0 26.857 21.773 48.63 48.63 48.63H947.74c26.857 0 48.63-21.772 48.63-48.63V76.26c0-26.858-21.772-48.63-48.63-48.63"
+                    fill="#C3C6CD"
+                  />
+                </svg>
+                <span
+                  class="ant-menu-title-content"
+                >
+                  <a
+                    href="/sqle/project//sql-optimization"
+                  >
+                    智能调优
+                  </a>
+                </span>
+              </li>
+              <li
+                class="ant-menu-item"
+                data-menu-id="rc-menu-uuid-test-sqle/project/projectID/data-source-comparison"
+                role="menuitem"
+                structkey="data-source-comparison"
+                style="padding-left: 24px;"
+                tabindex="-1"
+                to="/sqle/project//data-source-comparison"
+              >
+                <svg
+                  class="ant-menu-item-icon"
+                  height="18"
+                  viewBox="0 0 1024 1024"
+                  width="18"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M146.286 73.143h731.428a73.143 73.143 0 0 1 73.143 73.143v731.428a73.143 73.143 0 0 1-73.143 73.143H146.286a73.143 73.143 0 0 1-73.143-73.143V146.286a73.143 73.143 0 0 1 73.143-73.143m36.571 229.412 127.269 418.89h74.35l130.45-418.89h-67.913L349.184 634.04h-1.097l-95.708-331.484zm413.916 279.26H529.92c.366 25.82 4.79 48.201 13.349 67.182q12.836 28.47 34.23 46.628c14.263 12.142 31.013 21.138 50.286 26.99 19.237 5.851 39.753 8.814 61.477 8.814a213.2 213.2 0 0 0 55.625-7.315c18.176-4.9 34.377-12.617 48.64-23.186 14.263-10.57 25.783-24.137 34.523-40.777s13.093-36.681 13.093-60.16c0-10.972-1.5-21.906-4.535-32.841a108.43 108.43 0 0 0-37.157-56.32 107.8 107.8 0 0 0-32.621-17.591c-5.01-1.573-13.312-4.023-24.869-7.314a11538 11538 0 0 1-68.462-19.968l-16.822-5.01a79.36 79.36 0 0 1-32.915-19.054c-8.375-8.412-12.58-20.042-12.58-34.926 0-10.533 2.23-19.383 6.692-26.405 4.462-7.021 10.094-12.617 16.823-16.713 6.802-4.096 14.263-7.022 22.492-8.777a114.5 114.5 0 0 1 24.064-2.67c23.186 0 42.24 5.596 57.234 16.75 14.958 11.118 23.332 30.208 25.124 57.198h66.853c0-21.943-3.95-41.18-11.776-57.783a123.1 123.1 0 0 0-31.817-41.984 134.8 134.8 0 0 0-46.519-25.49 183.3 183.3 0 0 0-56.466-8.522c-17.116 0-34.012 2.45-50.835 7.315-16.713 4.9-31.707 12.434-44.873 22.6-13.202 10.168-23.808 23.004-31.817 38.437q-12.069 23.151-12.068 54.858c0 10.971 1.353 21.723 4.022 32.256 2.67 10.605 7.242 20.553 13.642 29.952 6.436 9.362 15.067 17.883 25.965 25.49 10.862 7.643 24.503 13.787 40.887 18.505a3085 3085 0 0 0 66.56 19.054c18.03 4.9 33.792 10.093 47.36 15.543 7.826 3.145 15.031 8.52 21.65 16.128 6.583 7.643 9.875 19.492 9.875 35.51 0 7.827-1.427 15.543-4.28 23.187a51.8 51.8 0 0 1-13.896 20.224c-6.4 5.851-14.775 10.679-25.125 14.372-10.35 3.73-22.82 5.596-37.449 5.596-13.531 0-26.112-1.683-37.669-5.01a85.7 85.7 0 0 1-30.756-15.836 73.14 73.14 0 0 1-20.846-27.867c-5.01-11.338-7.497-25.015-7.497-41.07z"
+                    fill="#C3C6CD"
+                  />
+                </svg>
+                <span
+                  class="ant-menu-title-content"
+                >
+                  <a
+                    href="/sqle/project//data-source-comparison"
+                  >
+                    结构对比
+                  </a>
+                </span>
+              </li>
+            </ul>
+          </li>
+          <li
+            class="ant-menu-item-group"
+            role="presentation"
+          >
+            <div
+              class="ant-menu-item-group-title"
+              role="presentation"
+              title="SQL上线"
+            >
+              SQL上线
+            </div>
+            <ul
+              class="ant-menu-item-group-list"
+              role="group"
+            >
+              <li
+                class="ant-menu-item"
+                data-menu-id="rc-menu-uuid-test-sqle/project/projectID/exec-workflow"
+                role="menuitem"
+                structkey="exec-workflow"
+                style="padding-left: 24px;"
+                tabindex="-1"
+                to="/sqle/project//exec-workflow"
+              >
+                <svg
+                  class="ant-menu-item-icon"
+                  height="18"
+                  viewBox="0 0 24 28"
+                  width="18"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M4 3.333v5.334h16V3.333h2.675c.732 0 1.325.594 1.325 1.325v21.35c0 .732-.593 1.325-1.325 1.325H1.325A1.325 1.325 0 0 1 0 26.01V4.658c0-.732.593-1.325 1.325-1.325zm4 17.334H5.333v2.666H8zm0-4H5.333v2.666H8zm0-4H5.333v2.666H8zm9.333-12V6H6.667V.667z"
+                    fill="#C3C6CD"
+                  />
+                </svg>
+                <span
+                  class="ant-menu-title-content"
+                >
+                  <a
+                    href="/sqle/project//exec-workflow"
+                  >
+                    SQL工单
+                  </a>
+                </span>
+              </li>
+              <li
+                class="ant-menu-item"
+                data-menu-id="rc-menu-uuid-test-sqle/project/projectID/version-management"
+                role="menuitem"
+                structkey="version-management"
+                style="padding-left: 24px;"
+                tabindex="-1"
+                to="/sqle/project//version-management"
+              >
+                <svg
+                  class="ant-menu-item-icon"
+                  height="18"
+                  viewBox="0 0 1024 1024"
+                  width="18"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M527.1 887.6H220.8v-751h361.6v187.1c0 19.9 16.1 36 36 36h187.4v88.6c0 19.9 16.1 36 36 36s36-16.1 36-36V323.6c0-9.6-3.8-18.7-10.6-25.5l-223.3-223c-.6-.6-1.2-1.1-1.8-1.6l-.4-.4-1.8-1.5s-.1-.1-.2-.1l-1.8-1.2-.6-.3c-.6-.4-1.3-.8-2-1.1-.1 0-.2-.1-.2-.1-.6-.3-1.2-.6-1.9-.9l-.6-.3c-.7-.3-1.4-.6-2.1-.8-.1 0-.1 0-.2-.1-.7-.2-1.4-.5-2.1-.7-.2-.1-.4-.1-.6-.2-.7-.2-1.5-.4-2.3-.5-.7-.1-1.5-.3-2.3-.4-.2 0-.4-.1-.6-.1-.7-.1-1.4-.2-2.2-.2H202.1c-29.4 0-53.3 23.9-53.3 53.3v788.4c0 29.4 23.9 53.3 53.3 53.3h325c19.9 0 36-16.1 36-36s-16.1-36-36-36m127.4-599.9V187.5l100.2 100.2z"
+                    fill="#8A8F99"
+                  />
+                  <path
+                    d="M768.1 547c-105.5 0-191 85.5-191 191s85.5 191 191 191 191-85.5 191-191-85.5-191-191-191M885 816.5c-4.1 0-8.2-.7-12.3-2.2l-115.9-42.2c-14.3-4.8-24.6-18.3-24.6-34.1V613.7c0-19.9 16.1-36 36-36s36 16.1 36 36v99.1l93.1 33.9c18.7 6.8 28.3 27.5 21.5 46.1-5.3 14.7-19.1 23.7-33.8 23.7"
+                    fill="#8A8F99"
+                  />
+                </svg>
+                <span
+                  class="ant-menu-title-content"
+                >
+                  <a
+                    href="/sqle/project//version-management"
+                  >
+                    版本管理
+                  </a>
+                </span>
+              </li>
+            </ul>
+          </li>
+          <li
+            class="ant-menu-item-group"
+            role="presentation"
+          >
+            <div
+              class="ant-menu-item-group-title"
+              role="presentation"
+              title="CI/CD集成"
+            >
+              CI/CD集成
+            </div>
+            <ul
+              class="ant-menu-item-group-list"
+              role="group"
+            >
+              <li
+                class="ant-menu-item"
+                data-menu-id="rc-menu-uuid-test-sqle/project/projectID/pipeline-configuration"
+                role="menuitem"
+                structkey="pipeline-configuration"
+                style="padding-left: 24px;"
+                tabindex="-1"
+                to="/sqle/project//pipeline-configuration"
+              >
+                <svg
+                  class="ant-menu-item-icon"
+                  height="18"
+                  viewBox="0 0 1024 1024"
+                  width="18"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M591.36 113.792a107.52 107.52 0 0 1 95.616 56.192l124.864.64h1.792c18.88.128 179.264 5.504 176.576 167.232-2.88 171.648-175.168 179.2-175.168 179.2l-.96 74.432-114.432-87.68c-.832 60.544-46.528 109.312-105.856 109.312H444.16c-59.84 0-105.856-49.728-105.856-111.04v1.536h-73.6c-26.368 0-152.32-13.12-151.936 106.24.384 119.424 118.656 117.44 118.656 117.44l3.84-75.776 111.04 89.28a105.6 105.6 0 0 1 99.2-65.728h145.92c59.776 0 108.288 46.4 108.224 107.648 0 61.376-45.952 111.04-105.856 111.04H444.16c-59.84 0-105.856-49.664-105.856-111.04v-.512l-105.216 80.64-.96-74.496S59.776 780.8 56.96 609.152c-2.688-161.664 157.696-167.04 176.576-167.104h1.792l121.024-.768a105.98 105.98 0 0 1 89.152-46.912h145.92c50.048 0 92.16 32.512 104.64 79.04l115.84-93.184 3.84 75.776s118.336 1.92 118.72-117.44-125.568-106.24-151.936-106.24h-83.264c-5.12 56.256-49.088 100.16-105.408 100.16H444.16c-59.84 0-105.856-49.728-105.856-111.04 0-61.248 47.296-107.648 107.136-107.648zm-18.688 612.736h-111.68c-35.264 0-64.768 28.8-64.768 60.672v1.024c0 29.696 30.4 59.2 64.768 59.2h111.552c35.264 0 67.584-29.568 67.584-59.2V787.2c0-32.192-32.256-60.672-67.456-60.672m0-280.64h-111.68c-35.264 0-64.768 28.8-64.768 60.672v1.024c0 29.632 30.4 59.2 64.768 59.2h111.552c35.264 0 67.584-29.568 67.584-59.2v-1.024c0-32.128-32.256-60.672-67.456-60.672m0-280.704h-111.68c-35.264 0-64.768 28.8-64.768 60.8v.96c0 29.632 30.4 59.2 64.768 59.2h111.552c35.264 0 67.584-29.568 67.584-59.2v-1.024c0-32.128-32.256-60.736-67.456-60.736"
+                    fill="#C3C6CD"
+                  />
+                </svg>
+                <span
+                  class="ant-menu-title-content"
+                >
+                  <a
+                    href="/sqle/project//pipeline-configuration"
+                  >
+                    流水线配置
+                  </a>
+                </span>
+              </li>
+            </ul>
+          </li>
+          <li
+            class="ant-menu-item-group"
+            role="presentation"
+          >
+            <div
+              class="ant-menu-item-group-title"
+              role="presentation"
+              title="SQL管控"
+            >
+              SQL管控
+            </div>
+            <ul
+              class="ant-menu-item-group-list"
+              role="group"
+            >
+              <li
+                class="ant-menu-item"
+                data-menu-id="rc-menu-uuid-test-sqle/project/projectID/sql-management"
+                role="menuitem"
+                structkey="sql-management"
+                style="padding-left: 24px;"
+                tabindex="-1"
+                to="/sqle/project//sql-management"
+              >
+                <svg
+                  class="ant-menu-item-icon"
+                  height="18"
+                  viewBox="0 0 1024 1024"
+                  width="18"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M511.985 85.33C276.344 85.33 85.33 276.345 85.33 511.986c0 180.816 112.508 335.478 271.522 397.599a42.665 42.665 0 0 1-31.06 79.485C135.164 914.62 0 729.152 0 511.985 0 229.24 229.241 0 511.985 0c217.167 0 402.633 135.164 477.084 325.793a506 506 0 0 1 15.616 46.59 42.665 42.665 0 0 1-82.088 23.21A426.825 426.825 0 0 0 511.985 85.332"
+                    fill="#C3C6CD"
+                  />
+                  <path
+                    d="M511.985 255.992a255.992 255.992 0 0 0-95.187 493.724 42.665 42.665 0 0 1-31.743 79.187 341.409 341.409 0 0 1 126.93-658.241c120.743 0 226.852 62.718 287.48 157.222a42.665 42.665 0 1 1-71.85 46.078 255.78 255.78 0 0 0-215.63-117.97"
+                    fill="#C3C6CD"
+                  />
+                  <path
+                    d="M511.985 426.654a85.33 85.33 0 0 0-28.458 165.798 42.665 42.665 0 1 1-28.415 80.467 170.704 170.704 0 1 1 170.661-288.12 42.665 42.665 0 1 1-56.915 63.572 84.86 84.86 0 0 0-56.873-21.717m282.445 135.25a31.444 31.444 0 0 0 0 44.03l50.26 50.26a31.4 31.4 0 0 0 44.03 0l118.482-118.482A188.581 188.581 0 0 1 757.61 787.305l-217.167 217.167a66.643 66.643 0 1 1-94.29-94.29l217.166-217.168a188.581 188.581 0 0 1 249.593-249.592z"
+                    fill="#C3C6CD"
+                  />
+                </svg>
+                <span
+                  class="ant-menu-title-content"
+                >
+                  <a
+                    href="/sqle/project//sql-management"
+                  >
+                    SQL管控
+                  </a>
+                </span>
+              </li>
+              <li
+                class="ant-menu-item"
+                data-menu-id="rc-menu-uuid-test-sqle/project/projectID/sql-management-conf"
+                role="menuitem"
+                structkey="sql-management-conf"
+                style="padding-left: 24px;"
+                tabindex="-1"
+                to="/sqle/project//sql-management-conf"
+              >
+                <svg
+                  class="ant-menu-item-icon"
+                  height="18"
+                  viewBox="0 0 18 18"
+                  width="18"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M15.75 11.25v3.755a.745.745 0 0 1-.745.745H2.995a.745.745 0 0 1-.745-.745V11.25zm0-4.5H2.25V2.995c0-.411.334-.745.745-.745h12.01c.411 0 .745.334.745.745z"
+                    fill="#C3C6CD"
+                  />
+                  <path
+                    d="M1.5 8.25h15v1.5h-15z"
+                    fill="#8A8F99"
+                  />
+                </svg>
+                <span
+                  class="ant-menu-title-content"
+                >
+                  <a
+                    href="/sqle/project//sql-management-conf"
+                  >
+                    SQL管控配置
+                  </a>
+                </span>
+              </li>
+            </ul>
+          </li>
+          <li
+            class="ant-menu-item-divider"
+          />
+          <li
+            class="ant-menu-item-group"
+            role="presentation"
+          >
+            <div
+              class="ant-menu-item-group-title"
+              role="presentation"
+              title="数据安全"
+            >
+              数据安全
+            </div>
+            <ul
+              class="ant-menu-item-group-list"
+              role="group"
+            >
+              <li
+                class="ant-menu-item"
+                data-menu-id="rc-menu-uuid-test-provision/project/projectID/database-role"
+                role="menuitem"
+                structkey="database-role"
+                style="padding-left: 24px;"
+                tabindex="-1"
+                to="/provision/project//database-role"
+              >
+                <svg
+                  class="icon ant-menu-item-icon"
+                  height="16"
+                  version="1.1"
+                  viewBox="0 0 1024 1024"
+                  width="16"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M171.236533 1023.998926A123.224231 123.224231 0 0 1 47.498876 900.263417v-687.431425a123.225305 123.225305 0 0 1 123.737657-123.737657h34.092302V219.430259c0 68.743143 54.994514 123.737657 123.737657 124.286528h322.821019a123.225305 123.225305 0 0 0 123.737657-123.737657V89.090039h20.896841a123.225305 123.225305 0 0 1 123.737657 123.737656v386.063637c-40.69594-26.946238-89.088965-47.843079-144.083479-47.843079-13.748629 0-34.09445 0-54.994514 6.59612H253.728304c-20.344748 0-34.09445 13.748629-34.094451 34.099821s13.197609 34.093376 34.094451 34.093376h350.317203c-27.497257 27.497257-47.847375 68.743143-61.597079 109.989028H253.728304c-20.344748 0-34.09445 13.197609-34.094451 34.094451 0 20.350118 13.198683 34.098747 34.094451 34.098747h281.572986c6.60149 109.989028 82.491771 199.63116 179.282116 219.978056z m411.931466-229.566651c0-108.44553 88.222156-196.669834 196.66339-196.669834s196.669834 88.222156 196.669835 196.66339-88.221082 196.669834-196.669835 196.669834-196.66339-88.221082-196.66339-196.66339z m58.896762 93.769943H839.871005a73.389749 73.389749 0 0 1-11.784078-11.148204 72.461717 72.461717 0 0 1-9.022537-13.513398 70.324235 70.324235 0 0 1-7.806644-32.237312 69.525096 69.525096 0 0 1 13.296428-41.053619 115.257546 115.257546 0 0 0-41.156734-17.758287l-24.355481 18.605761-24.354406-18.605761c-53.666912 11.424251-92.623866 60.087951-92.623866 115.709746z m188.549551-61.922534a54.9204 54.9204 0 1 0 54.9204-54.915029 54.983773 54.983773 0 0 0-54.9204 54.915029zM698.85519 713.569932c0 32.72281 27.00424 59.344666 60.19214 59.344666s60.200733-26.620782 60.200733-59.344666-27.00424-59.344666-60.198585-59.344666-60.194288 26.621856-60.194288 59.344666z m173.495876 140.796697L848.571309 829.926293a5.61653 5.61653 0 0 1 0.250268-7.778716 5.254554 5.254554 0 0 1 7.564968-0.255639l19.455384 19.99781 37.659427-37.808728a5.424264 5.424264 0 0 1 7.81631 0.094522 5.800203 5.800203 0 0 1-0.092374 8.035429l-39.543418 39.69272a5.202997 5.202997 0 0 1-0.620837 0.508055 5.901169 5.901169 0 0 1-1.142855 1.693874 5.619752 5.619752 0 0 1-4.013955 1.742209 4.910838 4.910838 0 0 1-3.553161-1.4812zM329.07401 281.57406a61.612116 61.612116 0 0 1-62.143801-61.59493V89.090039h123.737657C397.266134 41.24696 438.513093 0.001074 486.907192 0.001074c54.994514 0 96.790345 41.245886 103.389686 89.090039h123.737657v130.888017a61.489667 61.489667 0 0 1-61.596004 61.59493z"
+                    fill="#C3C6CD"
+                  />
+                </svg>
+                <span
+                  class="ant-menu-title-content"
+                >
+                  <a
+                    href="/provision/project//database-role"
+                  >
+                    角色管理
+                  </a>
+                </span>
+              </li>
+              <li
+                class="ant-menu-item"
+                data-menu-id="rc-menu-uuid-test-provision/project/projectID/database-account"
+                role="menuitem"
+                structkey="account-management"
+                style="padding-left: 24px;"
+                tabindex="-1"
+                to="/provision/project//database-account"
+              >
+                <svg
+                  class="ant-menu-item-icon"
+                  height="18"
+                  viewBox="0 0 18 18"
+                  width="18"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M9.494 10.5h3.256v3h3v-3h1.5v-3H9.494z"
+                    fill="#8A8F99"
+                  />
+                  <path
+                    clip-rule="evenodd"
+                    d="M5.25 13.5a4.5 4.5 0 1 0 0-9 4.5 4.5 0 0 0 0 9m0-3a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3"
+                    fill="#C3C6CD"
+                    fill-rule="evenodd"
+                  />
+                </svg>
+                <span
+                  class="ant-menu-title-content"
+                >
+                  <a
+                    href="/provision/project//database-account"
+                  >
+                    账号管理
+                  </a>
+                </span>
+              </li>
+              <li
+                class="ant-menu-item"
+                data-menu-id="rc-menu-uuid-test-provision/project/projectID/database-account-password"
+                role="menuitem"
+                structkey="password-management"
+                style="padding-left: 24px;"
+                tabindex="-1"
+                to="/provision/project//database-account-password"
+              >
+                <svg
+                  class="ant-menu-item-icon"
+                  height="18"
+                  viewBox="0 0 18 18"
+                  width="18"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M2.837 2.12 9 .75l6.163 1.37a.75.75 0 0 1 .587.732v7.49a4.5 4.5 0 0 1-2.004 3.744L9 17.25l-4.746-3.164a4.5 4.5 0 0 1-2.004-3.744v-7.49a.75.75 0 0 1 .587-.733M9.75 7.5V3.75L6 9h2.25v3.75L12 7.5z"
+                    fill="#C3C6CD"
+                  />
+                </svg>
+                <span
+                  class="ant-menu-title-content"
+                >
+                  <a
+                    href="/provision/project//database-account-password"
+                  >
+                    账号密码管理
+                  </a>
+                </span>
+              </li>
+              <li
+                class="ant-menu-item"
+                data-menu-id="rc-menu-uuid-test-project/projectID/data-mask-rule-overview"
+                role="menuitem"
+                structkey="data-mask-rule"
+                style="padding-left: 24px;"
+                tabindex="-1"
+                to="/project//data-mask-rule-overview"
+              >
+                <svg
+                  class="ant-menu-item-icon"
+                  fill="none"
+                  height="18"
+                  viewBox="0 0 15 15"
+                  width="18"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    clip-rule="evenodd"
+                    d="M14.765 6.076a.5.5 0 0 1 .159.689 9.5 9.5 0 0 1-1.554 1.898l1.201 1.201a.5.5 0 0 1-.707.707l-1.263-1.263a8.5 8.5 0 0 1-2.667 1.343l.449 1.677a.5.5 0 0 1-.966.258l-.458-1.709Q8.25 11 7.5 11q-.75 0-1.46-.123l-.457 1.71a.5.5 0 1 1-.966-.26l.45-1.676a8.5 8.5 0 0 1-2.668-1.343l-1.263 1.263a.5.5 0 1 1-.707-.707l1.2-1.201A9.5 9.5 0 0 1 .077 6.765a.5.5 0 0 1 .848-.53 8.4 8.4 0 0 0 1.77 2.034A7.46 7.46 0 0 0 7.5 9.999c2.808 0 5.156-1.493 6.576-3.764a.5.5 0 0 1 .689-.16"
+                    fill="#C3C6CD"
+                    fill-rule="evenodd"
+                  />
+                </svg>
+                <span
+                  class="ant-menu-title-content"
+                >
+                  <a
+                    href="/project//data-mask-rule-overview"
+                  >
+                    脱敏规则
+                  </a>
+                </span>
+              </li>
+            </ul>
+          </li>
+          <li
+            class="ant-menu-item-divider"
+          />
+          <li
+            class="ant-menu-item-group"
+            role="presentation"
+          >
+            <div
+              class="ant-menu-item-group-title"
+              role="presentation"
+              title="项目配置"
+>>>>>>> 3ed57341dae3a5998f1b17c8ee6f1a792c4695b5
+            >
+              项目配置
+            </div>
+            <ul
+              class="ant-menu-item-group-list"
+              role="group"
+            >
+              <li
+                class="ant-menu-item"
+                data-menu-id="rc-menu-uuid-test-project/projectID/db-services"
+                role="menuitem"
+                structkey="instance"
+                style="padding-left: 24px;"
+                tabindex="-1"
+                to="/project//db-services"
+              >
+                <svg
+                  class="ant-menu-item-icon"
+                  height="18"
+                  viewBox="0 0 18 18"
+                  width="18"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M15.75 7.125v2.25c0 1.864-3.023 3.375-6.75 3.375s-6.75-1.511-6.75-3.375v-2.25C2.25 8.989 5.273 10.5 9 10.5s6.75-1.511 6.75-3.375m-13.5 3.75c0 1.864 3.023 3.375 6.75 3.375s6.75-1.511 6.75-3.375v2.25c0 1.864-3.023 3.375-6.75 3.375s-6.75-1.511-6.75-3.375zM9 9C5.273 9 2.25 7.489 2.25 5.625S5.273 2.25 9 2.25s6.75 1.511 6.75 3.375S12.727 9 9 9"
+                    fill="#C3C6CD"
+                  />
+                </svg>
+                <span
+                  class="ant-menu-title-content"
+                >
+                  <a
+                    href="/project//db-services"
+                  >
+                    数据源
+                  </a>
+                </span>
+              </li>
+              <li
+                class="ant-menu-item"
+                data-menu-id="rc-menu-uuid-test-sqle/project/projectID/rule/template"
+                role="menuitem"
+                structkey="rule-template"
+                style="padding-left: 24px;"
+                tabindex="-1"
+                to="/sqle/project//rule/template"
+              >
+                <svg
+                  class="ant-menu-item-icon"
+                  fill="none"
+                  height="18"
+                  viewBox="0 0 18 19"
+                  width="18"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M15 17H3a.75.75 0 0 1-.75-.75V2.75A.75.75 0 0 1 3 2h12a.75.75 0 0 1 .75.75v13.5A.75.75 0 0 1 15 17M6 5.75v1.5h6v-1.5zm0 3v1.5h6v-1.5zm0 3v1.5h3.75v-1.5z"
+                    fill="#C3C6CD"
+                  />
+                </svg>
+                <span
+                  class="ant-menu-title-content"
+                >
+                  <a
+                    href="/sqle/project//rule/template"
+                  >
+                    审核规则模板
+                  </a>
+                </span>
+              </li>
+              <li
+                class="ant-menu-item"
+                data-menu-id="rc-menu-uuid-test-sqle/project/projectID/progress"
+                role="menuitem"
+                structkey="workflow-template"
+                style="padding-left: 24px;"
+                tabindex="-1"
+                to="/sqle/project//progress"
+              >
+                <svg
+                  class="ant-menu-item-icon"
+                  fill="none"
+                  height="18"
+                  viewBox="0 0 18 18"
+                  width="18"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M5.477 5.221a4 4 0 0 1-.46-1.458 7.3 7.3 0 0 0-3.304 5.711c.461-.2.956-.308 1.459-.32A5.84 5.84 0 0 1 5.477 5.22m9.315 3.932c.502.013.997.122 1.459.321a7.3 7.3 0 0 0-3.305-5.711 4 4 0 0 1-.46 1.458 5.84 5.84 0 0 1 2.306 3.918zm-3.516 6.091a5.84 5.84 0 0 1-4.552 0c-.263.438-.61.82-1.021 1.123a7.24 7.24 0 0 0 6.565 0 3.9 3.9 0 0 1-.992-1.123M9 5.856A2.553 2.553 0 1 0 9 .75a2.553 2.553 0 0 0 0 5.106m-5.697 4.749a2.553 2.553 0 1 0 2.553 2.553 2.553 2.553 0 0 0-2.553-2.56zm11.394 0a2.553 2.553 0 1 0 2.553 2.553 2.547 2.547 0 0 0-2.553-2.56z"
+                    fill="#C3C6CD"
+                  />
+                  <path
+                    d="M5.477 5.222a4 4 0 0 1-.46-1.46 7.3 7.3 0 0 0-3.304 5.712c.461-.2.956-.308 1.459-.32a5.84 5.84 0 0 1 2.305-3.932m9.315 3.931c.502.013.997.122 1.459.321a7.3 7.3 0 0 0-3.305-5.711 4 4 0 0 1-.46 1.459 5.84 5.84 0 0 1 2.306 3.917zm-3.516 6.091a5.84 5.84 0 0 1-4.552 0c-.263.438-.61.82-1.021 1.123a7.24 7.24 0 0 0 6.565 0 3.9 3.9 0 0 1-.992-1.123"
+                    fill="#8A8F99"
+                  />
+                </svg>
+                <span
+                  class="ant-menu-title-content"
+                >
+                  <a
+                    href="/sqle/project//progress"
+                  >
+                    审批流程模板
+                  </a>
+                </span>
+              </li>
+              <li
+                class="ant-menu-item"
+                data-menu-id="rc-menu-uuid-test-project/projectID/member"
+                role="menuitem"
+                structkey="member"
+                style="padding-left: 24px;"
+                tabindex="-1"
+                to="/project//member"
+              >
+                <svg
+                  class="ant-menu-item-icon"
+                  height="18"
+                  viewBox="0 0 18 18"
+                  width="18"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M9 7.5a3 3 0 1 0 0-6 3 3 0 0 0 0 6M4.125 9.75a1.875 1.875 0 1 0 0-3.75 1.875 1.875 0 0 0 0 3.75M15.75 7.875a1.875 1.875 0 1 1-3.75 0 1.875 1.875 0 0 1 3.75 0M9 8.25A3.75 3.75 0 0 1 12.75 12v4.5h-7.5V12A3.75 3.75 0 0 1 9 8.25M3.75 12c0-.52.075-1.022.216-1.496l-.127.011a2.625 2.625 0 0 0-2.339 2.61V16.5h2.25zm12.75 4.5v-3.375a2.626 2.626 0 0 0-2.466-2.62c.14.473.216.975.216 1.495v4.5z"
+                    fill="#C3C6CD"
+                  />
+                  <path
+                    d="M4.125 9.75a1.875 1.875 0 1 0 0-3.75 1.875 1.875 0 0 0 0 3.75M15.75 7.875a1.875 1.875 0 1 1-3.75 0 1.875 1.875 0 0 1 3.75 0M3.75 12c0-.52.075-1.022.216-1.496l-.127.011a2.625 2.625 0 0 0-2.339 2.61V16.5h2.25zm12.75 4.5v-3.375a2.626 2.626 0 0 0-2.466-2.62c.14.473.216.975.216 1.495v4.5z"
+                    fill="#8A8F99"
+                  />
+                </svg>
+                <span
+                  class="ant-menu-title-content"
+                >
+                  <a
+                    href="/project//member"
+                  >
+                    成员与权限
+                  </a>
+                </span>
+              </li>
+              <li
+                class="ant-menu-item"
+                data-menu-id="rc-menu-uuid-test-sqle/project/projectID/push-rule"
+                role="menuitem"
+                structkey="push-rule-configuration"
+                style="padding-left: 24px;"
+                tabindex="-1"
+                to="/sqle/project//push-rule"
+              >
+                <svg
+                  class="ant-menu-item-icon"
+                  height="18"
+                  viewBox="0 0 16 16"
+                  width="18"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M6.636 1.473a6.7 6.7 0 0 1 2.727-.001 2.66 2.66 0 0 0 2.436 2.258c.399.03.8-.03 1.172-.176a6.7 6.7 0 0 1 1.362 2.363 2.66 2.66 0 0 0-1 2.083c0 .843.39 1.594 1.001 2.083a6.7 6.7 0 0 1-1.364 2.362 2.664 2.664 0 0 0-3.606 2.08c-.9.19-1.828.19-2.728.003a2.66 2.66 0 0 0-2.435-2.26c-.4-.03-.8.03-1.173.177a6.7 6.7 0 0 1-1.362-2.364 2.66 2.66 0 0 0 .737-3.237 2.7 2.7 0 0 0-.738-.927 6.7 6.7 0 0 1 1.364-2.362 2.66 2.66 0 0 0 3.173-.98c.225-.33.374-.706.434-1.101M8 10a2 2 0 1 0 0-4 2 2 0 0 0 0 4"
+                    fill="#C3C6CD"
+                  />
+                </svg>
+                <span
+                  class="ant-menu-title-content"
+                >
+                  <a
+                    href="/sqle/project//push-rule"
+                  >
+                    推送规则
+                  </a>
+                </span>
+              </li>
+              <li
+                class="ant-menu-item"
+                data-menu-id="rc-menu-uuid-test-sqle/project/projectID/whitelist"
+                role="menuitem"
+                structkey="whitelist"
+                style="padding-left: 24px;"
+                tabindex="-1"
+                to="/sqle/project//whitelist"
+              >
+                <svg
+                  class="ant-menu-item-icon"
+                  height="18"
+                  viewBox="0 0 18 18"
+                  width="18"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <g
+                    clip-rule="evenodd"
+                    fill-rule="evenodd"
+                  >
+                    <path
+                      d="M15.75 5.25 12 1.5H2.995a.745.745 0 0 0-.745.744v13.512a.75.75 0 0 0 .745.744h6.607a4.5 4.5 0 0 1 6.148-6.148zm-5.159-.402L13.243 7.5l-2.652 2.652-1.06-1.061L11.12 7.5l-1.59-1.591zm-3.182 5.304L4.757 7.5 7.41 4.848l1.06 1.061L6.88 7.5l1.59 1.591z"
+                      fill="#C3C6CD"
+                    />
+                    <path
+                      d="M13.5 17.25a3 3 0 1 0 0-6 3 3 0 0 0 0 6m-2.25-3 1.875 1.875L15.75 13.5l-.75-.75-1.875 1.875L12 13.5z"
+                      fill="#8A8F99"
+                    />
+                  </g>
+                </svg>
+                <span
+                  class="ant-menu-title-content"
+                >
+                  <a
+                    href="/sqle/project//whitelist"
+                  >
+                    审核SQL例外
+                  </a>
+                </span>
+              </li>
+              <li
+                class="ant-menu-item"
+                data-menu-id="rc-menu-uuid-test-sqle/project/projectID/sql-management-exception"
+                role="menuitem"
+                structkey="sql-management-exception"
+                style="padding-left: 24px;"
+                tabindex="-1"
+                to="/sqle/project//sql-management-exception"
+              >
+                <svg
+                  class="ant-menu-item-icon"
+                  height="18"
+                  viewBox="0 0 1024 1024"
+                  width="18"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M497.18 880H168.131V144h515.564l124.436 124.436v227.761c29.641 11.254 56.685 27.769 80 48.409V235.299l-80-80L796.832 144l-80-80H108.131c-11.046 0-20 8.955-20 20v856c0 11.046 8.954 20 20 20h470.211a261.35 261.35 0 0 1-81.162-80"
+                    fill="#C3C6CD"
+                  />
+                  <path
+                    d="M258.131 259.255h460v80h-460zm457.738 220.076c.756 0 1.508.022 2.262.029V472h-460v80h277.457c46.743-44.995 110.277-72.669 180.281-72.669M258.131 684.745v80h198.976a263 263 0 0 1-1.239-25.414c0-18.726 1.997-36.983 5.759-54.586zm613.301-100.978c-41.553-41.553-96.8-64.437-155.563-64.437s-114.011 22.884-155.563 64.437c-41.553 41.552-64.437 96.799-64.437 155.564s22.884 114.011 64.437 155.563 96.8 64.437 155.563 64.437 114.011-22.884 155.563-64.437 64.437-96.8 64.437-155.563c0-58.765-22.884-114.012-64.437-155.564M715.869 879.331c-77.196 0-140-62.804-140-140 0-24.08 6.112-46.758 16.864-66.568l189.703 189.704c-19.809 10.752-42.488 16.864-66.567 16.864m123.136-73.433L649.301 616.195c19.809-10.752 42.488-16.864 66.567-16.864 77.196 0 140 62.804 140 140 .001 24.08-6.111 46.758-16.863 66.567"
+                    fill="#8A8F99"
+                  />
+                </svg>
+                <span
+                  class="ant-menu-title-content"
+                >
+                  <a
+                    href="/sqle/project//sql-management-exception"
+                  >
+                    管控SQL例外
+                  </a>
+                </span>
+              </li>
+            </ul>
+          </li>
+          <li
+            class="ant-menu-item-divider"
+          />
+          <li
+            class="ant-menu-item-group"
+            role="presentation"
+          >
+            <div
+              class="ant-menu-item-group-title"
+              role="presentation"
+              title="操作与审计"
+            >
+              操作与审计
+            </div>
+<<<<<<< HEAD
+          </div>
+        </div>
+        <ul
           class="ant-menu ant-menu-root ant-menu-inline ant-menu-light custom-menu"
           data-menu-list="true"
           role="menu"
           tabindex="0"
         />
+=======
+            <ul
+              class="ant-menu-item-group-list"
+              role="group"
+            >
+              <li
+                class="ant-menu-item"
+                data-menu-id="rc-menu-uuid-test-sqle/project/projectID/operation-record"
+                permission="page:operation_record"
+                role="menuitem"
+                structkey="sqle-log"
+                style="padding-left: 24px;"
+                tabindex="-1"
+                to="/sqle/project//operation-record"
+              >
+                <svg
+                  class="ant-menu-item-icon"
+                  height="18"
+                  viewBox="0 0 18 18"
+                  width="18"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M3 1.5h11.25a.75.75 0 0 1 .75.75v6a3.75 3.75 0 0 0-6 3c.007.517.119 1.028.33 1.5A2.25 2.25 0 0 0 7.5 15v1.5H3a.75.75 0 0 1-.75-.75V2.25A.75.75 0 0 1 3 1.5M6 9h2.25V7.5H6zm0-3h5.25V4.5H6z"
+                    fill="#C3C6CD"
+                  />
+                  <path
+                    d="M11.298 9.529A2.25 2.25 0 0 1 12.75 9a2.25 2.25 0 0 1 .75 4.373v.877h2.25a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-.75.75h-6A.75.75 0 0 1 9 16.5V15a.75.75 0 0 1 .75-.75H12v-.877a2.25 2.25 0 0 1-.702-3.844m.828 1.304a.75.75 0 1 0 1.248.834.75.75 0 0 0-1.248-.834"
+                    fill="#8A8F99"
+                  />
+                </svg>
+                <span
+                  class="ant-menu-title-content"
+                >
+                  <a
+                    href="/sqle/project//operation-record"
+                  >
+                    SQLE操作记录
+                  </a>
+                </span>
+              </li>
+            </ul>
+          </li>
+        </ul>
+>>>>>>> 3ed57341dae3a5998f1b17c8ee6f1a792c4695b5
         <div
           aria-hidden="true"
           style="display: none;"
@@ -1575,7 +3859,11 @@ exports[`App render App when token is existed 1`] = `
               </div>
             </div>
             <div
+<<<<<<< HEAD
               class="ant-row ant-row-no-wrap"
+=======
+              class="ant-row css-dev-only-do-not-override-1thf7qv"
+>>>>>>> 3ed57341dae3a5998f1b17c8ee6f1a792c4695b5
             >
               <div
                 class="ant-col ant-col-8 content-wrapper"
@@ -1745,7 +4033,11 @@ exports[`App render App when token is existed 1`] = `
               </div>
             </div>
             <div
+<<<<<<< HEAD
               class="ant-row ant-row-no-wrap"
+=======
+              class="ant-row css-dev-only-do-not-override-1thf7qv"
+>>>>>>> 3ed57341dae3a5998f1b17c8ee6f1a792c4695b5
             >
               <div
                 class="ant-col ant-col-8 content-wrapper"
@@ -1839,7 +4131,11 @@ exports[`App render App when token is existed 1`] = `
               </div>
             </div>
             <div
+<<<<<<< HEAD
               class="ant-row ant-row-no-wrap"
+=======
+              class="ant-row css-dev-only-do-not-override-1thf7qv"
+>>>>>>> 3ed57341dae3a5998f1b17c8ee6f1a792c4695b5
             >
               <div
                 class="ant-col ant-col-8 content-wrapper"
@@ -1942,6 +4238,63 @@ exports[`App render App when token is existed 1`] = `
                 <div
                   class="sub-title"
                 >
+                  数据源账号管理
+                </div>
+                <div
+                  class="desc"
+                >
+                  兼顾账号发现及管理，监控数据源账号安全
+                </div>
+                <div
+                  class="ant-space css-dev-only-do-not-override-1thf7qv ant-space-horizontal ant-space-align-center actions"
+                  style="flex-wrap: wrap; margin-bottom: -8px;"
+                >
+                  <div
+                    class="ant-space-item"
+                    style="margin-right: 8px; padding-bottom: 8px;"
+                  >
+                    <button
+                      class="ant-btn css-dev-only-do-not-override-eo1pvk ant-btn-default ant-btn-sm guidance-button-wrapper css-aj0zfl"
+                      type="button"
+                    >
+                      <div
+                        class="ant-space css-dev-only-do-not-override-eo1pvk ant-space-horizontal ant-space-align-center"
+                      >
+                        <div
+                          class="ant-space-item"
+                        >
+                          账号列表
+                        </div>
+                      </div>
+                    </button>
+                  </div>
+                  <div
+                    class="ant-space-item"
+                    style="padding-bottom: 8px;"
+                  >
+                    <button
+                      class="ant-btn css-dev-only-do-not-override-eo1pvk ant-btn-default ant-btn-sm guidance-button-wrapper css-aj0zfl"
+                      type="button"
+                    >
+                      <div
+                        class="ant-space css-dev-only-do-not-override-eo1pvk ant-space-horizontal ant-space-align-center"
+                      >
+                        <div
+                          class="ant-space-item"
+                        >
+                          临期列表
+                        </div>
+                      </div>
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="ant-col ant-col-8 content-wrapper css-dev-only-do-not-override-1thf7qv"
+              >
+                <div
+                  class="sub-title"
+                >
                   审批流程
                 </div>
                 <div
@@ -2029,7 +4382,11 @@ exports[`App render App when token is existed 1`] = `
               </div>
             </div>
             <div
+<<<<<<< HEAD
               class="ant-row ant-row-no-wrap"
+=======
+              class="ant-row css-dev-only-do-not-override-1thf7qv"
+>>>>>>> 3ed57341dae3a5998f1b17c8ee6f1a792c4695b5
             >
               <div
                 class="ant-col ant-col-8 content-wrapper"
@@ -2145,6 +4502,44 @@ exports[`App render App when token is existed 1`] = `
                   </div>
                 </div>
               </div>
+              <div
+                class="ant-col ant-col-8 content-wrapper css-dev-only-do-not-override-1thf7qv"
+              >
+                <div
+                  class="sub-title"
+                >
+                  数据脱敏
+                </div>
+                <div
+                  class="desc"
+                >
+                  开启脱敏，保障敏感数据安全
+                </div>
+                <div
+                  class="ant-space css-dev-only-do-not-override-1thf7qv ant-space-horizontal ant-space-align-center actions"
+                  style="flex-wrap: wrap; margin-bottom: -8px;"
+                >
+                  <div
+                    class="ant-space-item"
+                    style="padding-bottom: 8px;"
+                  >
+                    <button
+                      class="ant-btn css-dev-only-do-not-override-eo1pvk ant-btn-default ant-btn-sm guidance-button-wrapper css-aj0zfl"
+                      type="button"
+                    >
+                      <div
+                        class="ant-space css-dev-only-do-not-override-eo1pvk ant-space-horizontal ant-space-align-center"
+                      >
+                        <div
+                          class="ant-space-item"
+                        >
+                          查看脱敏规则
+                        </div>
+                      </div>
+                    </button>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -2198,7 +4593,11 @@ exports[`App render App when token is existed 1`] = `
               </div>
             </div>
             <div
+<<<<<<< HEAD
               class="ant-row ant-row-no-wrap"
+=======
+              class="ant-row css-dev-only-do-not-override-1thf7qv"
+>>>>>>> 3ed57341dae3a5998f1b17c8ee6f1a792c4695b5
             >
               <div
                 class="ant-col ant-col-8 content-wrapper"
@@ -2293,7 +4692,7 @@ exports[`App render App when token is not existed 1`] = `
             <span
               class="label label-base"
             >
-              SQLE
+              DMS
             </span>
           </div>
         </div>

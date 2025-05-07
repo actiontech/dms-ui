@@ -3,6 +3,8 @@ import { PERMISSIONS } from '@actiontech/shared/lib/features';
 import { ROUTE_PATHS } from '@actiontech/shared/lib/data/routePaths';
 import { RouterConfigItem } from '@actiontech/shared/lib/types/common.type';
 import React from 'react';
+import { PROJECT_ROUTER_PARAM } from '@actiontech/shared/lib/data/common';
+
 // #if [ee]
 const Project = React.lazy(() => import('../page/Project'));
 const ImportProject = React.lazy(() => import('../page/Project/ImportProject'));
@@ -65,6 +67,9 @@ const ExportTaskManagement = React.lazy(
 );
 const DataSourceManagement = React.lazy(
   () => import('../page/DataSourceManagement')
+);
+const DataMaskRuleOverview = React.lazy(
+  () => import('../page/DataMaskRuleOverview')
 );
 
 const Transit = React.lazy(() => import('../page/Transit'));
@@ -247,5 +252,12 @@ export const BaseProjectRouterConfig: RouterConfigItem[] = [
     path: ROUTE_PATHS.BASE.CLOUD_BEAVER.index.path,
     key: 'cloudBeaver',
     element: <CloudBeaver />
+  },
+  // #if [dms]
+  {
+    path: `${PROJECT_ROUTER_PARAM}/data-mask-rule-overview`,
+    key: 'dataMaskRuleOverview',
+    element: <DataMaskRuleOverview />
   }
+  // #endif
 ];

@@ -1294,7 +1294,7 @@ exports[`base/page/SyncDataSource-ce render index page 1`] = `
                       class="title"
                     >
                       Action 
-                      SQLE
+                      DMS
                     </div>
                     <p
                       class="cont-tip"
@@ -1393,7 +1393,7 @@ exports[`base/page/SyncDataSource-ce render index page 1`] = `
                       class="title"
                     >
                       Action 
-                      SQLE
+                      DMS
                     </div>
                     <p
                       class="cont-tip"

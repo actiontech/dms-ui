@@ -15,6 +15,10 @@ import {
 } from 'sqle/src/router/config';
 // #endif
 
+// #if [provision]
+import { AuthRouterConfig as ProvisionAuthRouterConfig } from 'provision/src/router/router';
+// #endif
+
 const ProjectDetail = lazy(() => import('../page/Project/Detail'));
 // #if [ee]
 const AvailabilityZoneWrapper = lazy(
@@ -38,6 +42,15 @@ export const originalRoutes: RouterConfigItem[] = [
     path: ROUTE_PATHS.BASE.SQLE_PROJECT_DETAIL,
     element: <ProjectDetail />,
     children: SQLEProjectDetailRouterConfig
+  },
+  // #endif
+
+  // #if [provision]
+  {
+    path: 'provision/project/*',
+    key: 'provision',
+    element: <ProjectDetail />,
+    children: ProvisionAuthRouterConfig
   }
   // #endif
 ];
