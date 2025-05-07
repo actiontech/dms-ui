@@ -3,12 +3,14 @@
 exports[`test base/Nav/SideMenu/index.ce should match snapshot 1`] = `
 <div>
   <div
-    class="dms-layout-side css-13z0syi"
+    class="dms-layout-side css-1mju0nn"
   >
     <div
       class="dms-layout-side-start"
     >
-      <div>
+      <div
+        class="title-wrapper"
+      >
         <div
           class="title"
         >
@@ -179,12 +181,14 @@ exports[`test base/Nav/SideMenu/index.ce should match snapshot 1`] = `
 exports[`test base/Nav/SideMenu/index.ce should match snapshot 2`] = `
 <div>
   <div
-    class="dms-layout-side css-13z0syi"
+    class="dms-layout-side css-1mju0nn"
   >
     <div
       class="dms-layout-side-start"
     >
-      <div>
+      <div
+        class="title-wrapper"
+      >
         <div
           class="title"
         >

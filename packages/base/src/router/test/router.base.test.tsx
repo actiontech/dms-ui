@@ -6,6 +6,7 @@ import { superRender } from '../../testUtils/customRender';
 import { mockProjectInfo } from '@actiontech/shared/lib/testUtil/mockHook/data';
 import { DataSourceManagerSegmentedKey } from '../../page/DataSourceManagement/index.type';
 import userCenter from '../../testUtils/mockApi/userCenter';
+import { mockUseRecentlySelectedZone } from '../../testUtils/mockHooks/mockUseRecentlySelectedZone';
 
 describe('base/router-base-ee', () => {
   const projectID = mockProjectInfo.projectID;
@@ -13,7 +14,7 @@ describe('base/router-base-ee', () => {
   const customRender = (
     initialEntries: MemoryRouterProps['initialEntries'] = []
   ) => {
-    return superRender(<RenderRouterComponent type="base" />, undefined, {
+    return superRender(<RenderRouterComponent type="auth" />, undefined, {
       routerProps: {
         initialEntries
       }
@@ -23,6 +24,7 @@ describe('base/router-base-ee', () => {
   beforeEach(() => {
     jest.useFakeTimers();
     userCenter.getUserOpPermission();
+    mockUseRecentlySelectedZone();
   });
 
   afterEach(() => {
@@ -32,7 +34,7 @@ describe('base/router-base-ee', () => {
   });
 
   it('render base route data snap', () => {
-    expect(mockUseRoutes('base')).toMatchSnapshot();
+    expect(mockUseRoutes('auth')).toMatchSnapshot();
   });
 
   describe('render base router when version is ce', () => {
@@ -179,6 +181,15 @@ describe('base/router-base-ee', () => {
         expect(
           screen.getByText('projectBatchImportDataSource')
         ).toBeInTheDocument();
+        expect(baseElement).toMatchSnapshot();
+      });
+    });
+
+    describe('render route availabilityZone', () => {
+      it('render router availabilityZone', async () => {
+        const { baseElement } = customRender(['/availability-zone']);
+
+        expect(screen.getByText('availabilityZone')).toBeInTheDocument();
         expect(baseElement).toMatchSnapshot();
       });
     });

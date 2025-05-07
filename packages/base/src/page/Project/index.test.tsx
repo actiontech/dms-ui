@@ -189,4 +189,22 @@ describe('test base/page/project', () => {
     await act(async () => jest.advanceTimersByTime(3000));
     expect(screen.queryByText('批量导入数据源')).not.toBeInTheDocument();
   });
+
+  it('should render configure availability zone button', () => {
+    superRender(<Project />);
+    expect(screen.getByText('配置可用区')).toBeInTheDocument();
+
+    cleanup();
+    jest.clearAllMocks();
+    mockUseCurrentUser({
+      userRoles: {
+        ...mockCurrentUserReturn.userRoles,
+        [SystemRole.admin]: false,
+        [SystemRole.globalManager]: false,
+        [SystemRole.globalViewing]: false
+      }
+    });
+    superRender(<Project />);
+    expect(screen.queryByText('配置可用区')).not.toBeInTheDocument();
+  });
 });

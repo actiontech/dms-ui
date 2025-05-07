@@ -99,6 +99,16 @@ export interface IAddDataExportWorkflowReq {
   data_export_workflow?: IDataExportWorkflow;
 }
 
+export interface IAddGatewayReply {
+  code?: number;
+
+  message?: string;
+}
+
+export interface IAddGatewayReq {
+  add_gateway?: IGateway;
+}
+
 export interface IAddMemberGroupReply {
   code?: number;
 
@@ -647,6 +657,12 @@ export interface IDelSessionReply {
   message?: string;
 }
 
+export interface IDeleteGatewayReply {
+  code?: number;
+
+  message?: string;
+}
+
 export interface IEnvironmentTag {
   name?: string;
 
@@ -665,6 +681,16 @@ export interface IFileHeader {
   Header?: IMIMEHeader;
 
   Size?: number;
+}
+
+export interface IGateway {
+  gateway_address?: string;
+
+  gateway_desc?: string;
+
+  gateway_id?: string;
+
+  gateway_name?: string;
 }
 
 export interface IGenAccessToken {
@@ -783,6 +809,22 @@ export interface IGetFeishuConfigurationReply {
   code?: number;
 
   data?: IFeishuConfigurationResData;
+
+  message?: string;
+}
+
+export interface IGetGatewayReply {
+  code?: number;
+
+  data?: IGateway;
+
+  message?: string;
+}
+
+export interface IGetGatewayTipsReply {
+  code?: number;
+
+  data?: IUidWithName[];
 
   message?: string;
 }
@@ -1493,6 +1535,16 @@ export interface IListEnvironmentTagsReply {
   message?: string;
 
   total_nums?: number;
+}
+
+export interface IListGatewaysReply {
+  code?: number;
+
+  data?: IGateway[];
+
+  message?: string;
+
+  total?: number;
 }
 
 export interface IListGlobalDBService {
@@ -2511,6 +2563,24 @@ export interface IUpdateFeishuConfigurationReq {
   update_feishu_configuration?: IUpdateFeishuConfiguration;
 }
 
+export interface IUpdateGateway {
+  gateway_address?: string;
+
+  gateway_desc?: string;
+
+  gateway_name?: string;
+}
+
+export interface IUpdateGatewayReply {
+  code?: number;
+
+  message?: string;
+}
+
+export interface IUpdateGatewayReq {
+  update_gateway?: IUpdateGateway;
+}
+
 export interface IUpdateLDAPConfigurationReq {
   ldap?: ILDAPConfiguration;
 }
@@ -2647,6 +2717,10 @@ export interface IUpdateUserReq {
   user?: IUpdateUser;
 }
 
+export interface IUpdateUserReqV2 {
+  user?: IUpdateUser;
+}
+
 export interface IUpdateWeChatConfiguration {
   agent_id?: number;
 
@@ -2681,6 +2755,8 @@ export interface IUser {
   password?: string;
 
   phone?: string;
+
+  uid?: string;
 
   user_group_uids?: string[];
 

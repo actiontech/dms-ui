@@ -11,6 +11,7 @@ const ProjectTitle: React.FC = () => {
       onClick={() => {
         navigate(ROUTE_PATHS.BASE.HOME);
       }}
+      className="title-wrapper"
     >
       {renderWebTitle()}
     </div>
