@@ -129,7 +129,9 @@ const SqlExecuteMode: React.FC<SqlExecuteModeProps> = ({
   );
 
   const loadMore = () => {
-    next && next();
+    if (next) {
+      next();
+    }
   };
 
   const onUpdateDescription = (number: number, index: number) => {

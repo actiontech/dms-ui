@@ -31,13 +31,13 @@ exports[`page/Home/DBAPanel render filter status with statics number id not 0 1`
         class="css-eydntv"
       >
         <div
-          class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+          class="ant-space ant-space-horizontal ant-space-align-center"
         >
           <div
             class="ant-space-item"
           >
             <div
-              class="ant-segmented basic-segmented-wrapper css-192b3m1 css-dev-only-do-not-override-txh9fw"
+              class="ant-segmented basic-segmented-wrapper css-192b3m1"
             >
               <div
                 class="ant-segmented-group"
@@ -54,7 +54,7 @@ exports[`page/Home/DBAPanel render filter status with statics number id not 0 1`
                     class="ant-segmented-item-label"
                   >
                     <div
-                      class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+                      class="ant-space ant-space-horizontal ant-space-align-center"
                     >
                       <div
                         class="ant-space-item"
@@ -87,7 +87,7 @@ exports[`page/Home/DBAPanel render filter status with statics number id not 0 1`
                     class="ant-segmented-item-label"
                   >
                     <div
-                      class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+                      class="ant-space ant-space-horizontal ant-space-align-center"
                     >
                       <div
                         class="ant-space-item"
@@ -114,7 +114,7 @@ exports[`page/Home/DBAPanel render filter status with statics number id not 0 1`
           </div>
         </div>
         <div
-          class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+          class="ant-space ant-space-horizontal ant-space-align-center"
         >
           <div
             class="ant-space-item"
@@ -130,7 +130,7 @@ exports[`page/Home/DBAPanel render filter status with statics number id not 0 1`
             class="ant-space-item"
           >
             <button
-              class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default ant-btn-sm ant-btn-icon-only btn-icon-no-border basic-button-wrapper css-geipcv"
+              class="ant-btn ant-btn-default ant-btn-sm ant-btn-icon-only btn-icon-no-border basic-button-wrapper css-geipcv"
               disabled=""
               type="button"
             >
@@ -154,16 +154,16 @@ exports[`page/Home/DBAPanel render filter status with statics number id not 0 1`
         </div>
       </div>
       <div
-        class="ant-table-wrapper actiontech-table-namespace css-fxd6ka css-dev-only-do-not-override-bj9uhl"
+        class="ant-table-wrapper actiontech-table-namespace css-fxd6ka"
       >
         <div
-          class="ant-spin-nested-loading css-dev-only-do-not-override-bj9uhl"
+          class="ant-spin-nested-loading"
         >
           <div>
             <div
               aria-busy="true"
               aria-live="polite"
-              class="ant-spin ant-spin-spinning css-dev-only-do-not-override-bj9uhl"
+              class="ant-spin ant-spin-spinning"
             >
               <span
                 class="ant-spin-dot ant-spin-dot-spin"
@@ -327,13 +327,13 @@ exports[`page/Home/DBAPanel render normal table 1`] = `
         class="css-eydntv"
       >
         <div
-          class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+          class="ant-space ant-space-horizontal ant-space-align-center"
         >
           <div
             class="ant-space-item"
           >
             <div
-              class="ant-segmented basic-segmented-wrapper css-192b3m1 css-dev-only-do-not-override-txh9fw"
+              class="ant-segmented basic-segmented-wrapper css-192b3m1"
             >
               <div
                 class="ant-segmented-group"
@@ -372,7 +372,7 @@ exports[`page/Home/DBAPanel render normal table 1`] = `
           </div>
         </div>
         <div
-          class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+          class="ant-space ant-space-horizontal ant-space-align-center"
         >
           <div
             class="ant-space-item"
@@ -388,7 +388,7 @@ exports[`page/Home/DBAPanel render normal table 1`] = `
             class="ant-space-item"
           >
             <button
-              class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default ant-btn-sm ant-btn-icon-only btn-icon-no-border basic-button-wrapper css-geipcv"
+              class="ant-btn ant-btn-default ant-btn-sm ant-btn-icon-only btn-icon-no-border basic-button-wrapper css-geipcv"
               disabled=""
               type="button"
             >
@@ -412,16 +412,16 @@ exports[`page/Home/DBAPanel render normal table 1`] = `
         </div>
       </div>
       <div
-        class="ant-table-wrapper actiontech-table-namespace css-fxd6ka css-dev-only-do-not-override-bj9uhl"
+        class="ant-table-wrapper actiontech-table-namespace css-fxd6ka"
       >
         <div
-          class="ant-spin-nested-loading css-dev-only-do-not-override-bj9uhl"
+          class="ant-spin-nested-loading"
         >
           <div>
             <div
               aria-busy="true"
               aria-live="polite"
-              class="ant-spin ant-spin-spinning css-dev-only-do-not-override-bj9uhl"
+              class="ant-spin ant-spin-spinning"
             >
               <span
                 class="ant-spin-dot ant-spin-dot-spin"
@@ -585,13 +585,13 @@ exports[`page/Home/DBAPanel render table with return error 1`] = `
         class="css-eydntv"
       >
         <div
-          class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+          class="ant-space ant-space-horizontal ant-space-align-center"
         >
           <div
             class="ant-space-item"
           >
             <div
-              class="ant-segmented basic-segmented-wrapper css-192b3m1 css-dev-only-do-not-override-txh9fw"
+              class="ant-segmented basic-segmented-wrapper css-192b3m1"
             >
               <div
                 class="ant-segmented-group"
@@ -630,7 +630,7 @@ exports[`page/Home/DBAPanel render table with return error 1`] = `
           </div>
         </div>
         <div
-          class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+          class="ant-space ant-space-horizontal ant-space-align-center"
         >
           <div
             class="ant-space-item"
@@ -646,7 +646,7 @@ exports[`page/Home/DBAPanel render table with return error 1`] = `
             class="ant-space-item"
           >
             <button
-              class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default ant-btn-sm ant-btn-icon-only btn-icon-no-border basic-button-wrapper css-geipcv"
+              class="ant-btn ant-btn-default ant-btn-sm ant-btn-icon-only btn-icon-no-border basic-button-wrapper css-geipcv"
               disabled=""
               type="button"
             >
@@ -670,16 +670,16 @@ exports[`page/Home/DBAPanel render table with return error 1`] = `
         </div>
       </div>
       <div
-        class="ant-table-wrapper actiontech-table-namespace css-fxd6ka css-dev-only-do-not-override-bj9uhl"
+        class="ant-table-wrapper actiontech-table-namespace css-fxd6ka"
       >
         <div
-          class="ant-spin-nested-loading css-dev-only-do-not-override-bj9uhl"
+          class="ant-spin-nested-loading"
         >
           <div>
             <div
               aria-busy="true"
               aria-live="polite"
-              class="ant-spin ant-spin-spinning css-dev-only-do-not-override-bj9uhl"
+              class="ant-spin ant-spin-spinning"
             >
               <span
                 class="ant-spin-dot ant-spin-dot-spin"
@@ -843,13 +843,13 @@ exports[`page/Home/DBAPanel send request when click diff filter status 1`] = `
         class="css-eydntv"
       >
         <div
-          class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+          class="ant-space ant-space-horizontal ant-space-align-center"
         >
           <div
             class="ant-space-item"
           >
             <div
-              class="ant-segmented basic-segmented-wrapper css-192b3m1 css-dev-only-do-not-override-txh9fw"
+              class="ant-segmented basic-segmented-wrapper css-192b3m1"
             >
               <div
                 class="ant-segmented-group"
@@ -888,7 +888,7 @@ exports[`page/Home/DBAPanel send request when click diff filter status 1`] = `
           </div>
         </div>
         <div
-          class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+          class="ant-space ant-space-horizontal ant-space-align-center"
         >
           <div
             class="ant-space-item"
@@ -904,7 +904,7 @@ exports[`page/Home/DBAPanel send request when click diff filter status 1`] = `
             class="ant-space-item"
           >
             <button
-              class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default ant-btn-sm ant-btn-icon-only btn-icon-no-border basic-button-wrapper css-geipcv"
+              class="ant-btn ant-btn-default ant-btn-sm ant-btn-icon-only btn-icon-no-border basic-button-wrapper css-geipcv"
               disabled=""
               type="button"
             >
@@ -928,16 +928,16 @@ exports[`page/Home/DBAPanel send request when click diff filter status 1`] = `
         </div>
       </div>
       <div
-        class="ant-table-wrapper actiontech-table-namespace css-fxd6ka css-dev-only-do-not-override-bj9uhl"
+        class="ant-table-wrapper actiontech-table-namespace css-fxd6ka"
       >
         <div
-          class="ant-spin-nested-loading css-dev-only-do-not-override-bj9uhl"
+          class="ant-spin-nested-loading"
         >
           <div>
             <div
               aria-busy="true"
               aria-live="polite"
-              class="ant-spin ant-spin-spinning css-dev-only-do-not-override-bj9uhl"
+              class="ant-spin ant-spin-spinning"
             >
               <span
                 class="ant-spin-dot ant-spin-dot-spin"

@@ -1,7 +1,6 @@
-import { fireEvent, screen } from '@testing-library/react';
+import { act, fireEvent, screen } from '@testing-library/react';
 import ActionButton from '../ActionButton';
 import { superRender } from '../../../testUtil/customRender';
-import { act } from 'react-dom/test-utils';
 
 describe('ActionButton', () => {
   beforeEach(() => {
@@ -10,6 +9,11 @@ describe('ActionButton', () => {
 
   afterEach(() => {
     jest.useRealTimers();
+  });
+
+  it('should match snapshot', () => {
+    const { container } = superRender(<ActionButton text="Click me" />);
+    expect(container).toMatchSnapshot();
   });
 
   it('renders a basic button', () => {
@@ -30,22 +34,49 @@ describe('ActionButton', () => {
     expect(linkButton.closest('a')).toHaveAttribute('href', '/');
   });
 
-  it('renders a confirm button', () => {
-    const { container } = superRender(
-      <ActionButton
-        actionType="confirm"
-        text="Delete"
-        confirm={{ title: 'Are you sure?' }}
-      />
-    );
-    const button = screen.getByText('Delete');
-    expect(button).toBeInTheDocument();
-    expect(container).toMatchSnapshot();
+  describe('确认按钮', () => {
+    it('should handle confirm dialog interactions correctly', async () => {
+      const onConfirm = jest.fn();
+      superRender(
+        <ActionButton
+          actionType="confirm"
+          text="Delete"
+          confirm={{
+            title: 'Are you sure?',
+            onConfirm
+          }}
+        />
+      );
+
+      const button = screen.getByText('Delete');
+      fireEvent.click(button);
+
+      expect(screen.getByText('Are you sure?')).toBeInTheDocument();
+
+      fireEvent.click(screen.getByText('确 认'));
+      expect(onConfirm).toHaveBeenCalled();
+    });
+
+    it('should render ReactNode title correctly', () => {
+      const titleNode = <div data-testid="custom-title">Custom Title</div>;
+      superRender(
+        <ActionButton
+          actionType="confirm"
+          text="Delete"
+          confirm={{ title: titleNode }}
+        />
+      );
+
+      const button = screen.getByText('Delete');
+      fireEvent.click(button);
+
+      expect(screen.getByTestId('custom-title')).toBeInTheDocument();
+    });
   });
 
   it('renders a tooltip button', async () => {
     const title = 'More information';
-    const { baseElement } = superRender(
+    superRender(
       <ActionButton actionType="tooltip" text="Info" tooltip={{ title }} />
     );
     const button = screen.getByText('Info');
@@ -53,6 +84,18 @@ describe('ActionButton', () => {
     fireEvent.mouseOver(button.closest('button')!);
     await act(async () => jest.advanceTimersByTime(300));
     expect(screen.getByText(title)).toBeInTheDocument();
-    expect(baseElement).toMatchSnapshot();
+  });
+
+  it('should pass additional props to BasicButton', () => {
+    superRender(
+      <ActionButton
+        text="Test"
+        className="custom-class"
+        data-testid="custom-button"
+      />
+    );
+
+    const button = screen.getByTestId('custom-button');
+    expect(button).toHaveClass('custom-class');
   });
 });

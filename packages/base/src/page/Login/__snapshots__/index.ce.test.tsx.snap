@@ -52,16 +52,16 @@ exports[`page/Login-ce render login page snap 1`] = `
             </div>
           </div>
           <form
-            class="ant-form ant-form-horizontal css-dev-only-do-not-override-txh9fw"
+            class="ant-form ant-form-horizontal"
           >
             <div
-              class="ant-form-item css-dev-only-do-not-override-txh9fw"
+              class="ant-form-item"
             >
               <div
-                class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                class="ant-row ant-form-item-row"
               >
                 <div
-                  class="ant-col ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                  class="ant-col ant-form-item-control"
                 >
                   <div
                     class="ant-form-item-control-input"
@@ -70,7 +70,7 @@ exports[`page/Login-ce render login page snap 1`] = `
                       class="ant-form-item-control-input-content"
                     >
                       <span
-                        class="ant-input-affix-wrapper ant-input-affix-wrapper-focused basic-input-wrapper login-form-field css-1pd1cd5 css-dev-only-do-not-override-ywkr0o"
+                        class="ant-input-affix-wrapper ant-input-affix-wrapper-focused basic-input-wrapper login-form-field css-1pd1cd5"
                       >
                         <span
                           class="ant-input-prefix"
@@ -93,7 +93,7 @@ exports[`page/Login-ce render login page snap 1`] = `
                         </span>
                         <input
                           aria-required="true"
-                          class="ant-input css-dev-only-do-not-override-ywkr0o"
+                          class="ant-input"
                           id="username"
                           placeholder="用户名"
                           type="text"
@@ -106,13 +106,13 @@ exports[`page/Login-ce render login page snap 1`] = `
               </div>
             </div>
             <div
-              class="ant-form-item css-dev-only-do-not-override-txh9fw"
+              class="ant-form-item"
             >
               <div
-                class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                class="ant-row ant-form-item-row"
               >
                 <div
-                  class="ant-col ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                  class="ant-col ant-form-item-control"
                 >
                   <div
                     class="ant-form-item-control-input"
@@ -121,7 +121,7 @@ exports[`page/Login-ce render login page snap 1`] = `
                       class="ant-form-item-control-input-content"
                     >
                       <span
-                        class="ant-input-affix-wrapper ant-input-password basic-input-wrapper login-form-field css-1pd1cd5 css-dev-only-do-not-override-txh9fw"
+                        class="ant-input-affix-wrapper ant-input-password basic-input-wrapper login-form-field css-1pd1cd5"
                       >
                         <span
                           class="ant-input-prefix"
@@ -145,7 +145,7 @@ exports[`page/Login-ce render login page snap 1`] = `
                         </span>
                         <input
                           aria-required="true"
-                          class="ant-input css-dev-only-do-not-override-txh9fw"
+                          class="ant-input"
                           id="password"
                           placeholder="密码"
                           type="password"
@@ -185,7 +185,7 @@ exports[`page/Login-ce render login page snap 1`] = `
               </div>
             </div>
             <button
-              class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary login-btn basic-button-wrapper css-geipcv"
+              class="ant-btn ant-btn-primary login-btn basic-button-wrapper css-geipcv"
               type="submit"
             >
               <span>
@@ -252,16 +252,16 @@ exports[`page/Login-ce render login when api return fail 1`] = `
             </div>
           </div>
           <form
-            class="ant-form ant-form-horizontal css-dev-only-do-not-override-txh9fw"
+            class="ant-form ant-form-horizontal"
           >
             <div
-              class="ant-form-item css-dev-only-do-not-override-txh9fw ant-form-item-has-success"
+              class="ant-form-item ant-form-item-has-success"
             >
               <div
-                class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                class="ant-row ant-form-item-row"
               >
                 <div
-                  class="ant-col ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                  class="ant-col ant-form-item-control"
                 >
                   <div
                     class="ant-form-item-control-input"
@@ -270,7 +270,7 @@ exports[`page/Login-ce render login when api return fail 1`] = `
                       class="ant-form-item-control-input-content"
                     >
                       <span
-                        class="ant-input-affix-wrapper ant-input-affix-wrapper-focused basic-input-wrapper login-form-field css-1pd1cd5 ant-input-affix-wrapper-status-success css-dev-only-do-not-override-ywkr0o"
+                        class="ant-input-affix-wrapper ant-input-affix-wrapper-focused basic-input-wrapper login-form-field css-1pd1cd5 ant-input-affix-wrapper-status-success"
                       >
                         <span
                           class="ant-input-prefix"
@@ -293,7 +293,7 @@ exports[`page/Login-ce render login when api return fail 1`] = `
                         </span>
                         <input
                           aria-required="true"
-                          class="ant-input css-dev-only-do-not-override-ywkr0o"
+                          class="ant-input"
                           id="username"
                           placeholder="用户名"
                           type="text"
@@ -306,13 +306,13 @@ exports[`page/Login-ce render login when api return fail 1`] = `
               </div>
             </div>
             <div
-              class="ant-form-item css-dev-only-do-not-override-txh9fw ant-form-item-has-success"
+              class="ant-form-item ant-form-item-has-success"
             >
               <div
-                class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                class="ant-row ant-form-item-row"
               >
                 <div
-                  class="ant-col ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                  class="ant-col ant-form-item-control"
                 >
                   <div
                     class="ant-form-item-control-input"
@@ -321,7 +321,7 @@ exports[`page/Login-ce render login when api return fail 1`] = `
                       class="ant-form-item-control-input-content"
                     >
                       <span
-                        class="ant-input-affix-wrapper ant-input-password basic-input-wrapper login-form-field css-1pd1cd5 css-dev-only-do-not-override-txh9fw"
+                        class="ant-input-affix-wrapper ant-input-password basic-input-wrapper login-form-field css-1pd1cd5 ant-input-affix-wrapper-status-success"
                       >
                         <span
                           class="ant-input-prefix"
@@ -345,7 +345,7 @@ exports[`page/Login-ce render login when api return fail 1`] = `
                         </span>
                         <input
                           aria-required="true"
-                          class="ant-input css-dev-only-do-not-override-txh9fw"
+                          class="ant-input"
                           id="password"
                           placeholder="密码"
                           type="password"
@@ -385,7 +385,7 @@ exports[`page/Login-ce render login when api return fail 1`] = `
               </div>
             </div>
             <button
-              class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary ant-btn-loading login-btn basic-button-wrapper css-geipcv"
+              class="ant-btn ant-btn-primary ant-btn-loading login-btn basic-button-wrapper css-geipcv"
               type="submit"
             >
               <span
@@ -475,16 +475,16 @@ exports[`page/Login-ce render login when api return success 1`] = `
             </div>
           </div>
           <form
-            class="ant-form ant-form-horizontal css-dev-only-do-not-override-txh9fw"
+            class="ant-form ant-form-horizontal"
           >
             <div
-              class="ant-form-item css-dev-only-do-not-override-txh9fw ant-form-item-has-success"
+              class="ant-form-item ant-form-item-has-success"
             >
               <div
-                class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                class="ant-row ant-form-item-row"
               >
                 <div
-                  class="ant-col ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                  class="ant-col ant-form-item-control"
                 >
                   <div
                     class="ant-form-item-control-input"
@@ -493,7 +493,7 @@ exports[`page/Login-ce render login when api return success 1`] = `
                       class="ant-form-item-control-input-content"
                     >
                       <span
-                        class="ant-input-affix-wrapper ant-input-affix-wrapper-focused basic-input-wrapper login-form-field css-1pd1cd5 ant-input-affix-wrapper-status-success css-dev-only-do-not-override-ywkr0o"
+                        class="ant-input-affix-wrapper ant-input-affix-wrapper-focused basic-input-wrapper login-form-field css-1pd1cd5 ant-input-affix-wrapper-status-success"
                       >
                         <span
                           class="ant-input-prefix"
@@ -516,7 +516,7 @@ exports[`page/Login-ce render login when api return success 1`] = `
                         </span>
                         <input
                           aria-required="true"
-                          class="ant-input css-dev-only-do-not-override-ywkr0o"
+                          class="ant-input"
                           id="username"
                           placeholder="用户名"
                           type="text"
@@ -529,13 +529,13 @@ exports[`page/Login-ce render login when api return success 1`] = `
               </div>
             </div>
             <div
-              class="ant-form-item css-dev-only-do-not-override-txh9fw ant-form-item-has-success"
+              class="ant-form-item ant-form-item-has-success"
             >
               <div
-                class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                class="ant-row ant-form-item-row"
               >
                 <div
-                  class="ant-col ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                  class="ant-col ant-form-item-control"
                 >
                   <div
                     class="ant-form-item-control-input"
@@ -544,7 +544,7 @@ exports[`page/Login-ce render login when api return success 1`] = `
                       class="ant-form-item-control-input-content"
                     >
                       <span
-                        class="ant-input-affix-wrapper ant-input-password basic-input-wrapper login-form-field css-1pd1cd5 css-dev-only-do-not-override-txh9fw"
+                        class="ant-input-affix-wrapper ant-input-password basic-input-wrapper login-form-field css-1pd1cd5 ant-input-affix-wrapper-status-success"
                       >
                         <span
                           class="ant-input-prefix"
@@ -568,7 +568,7 @@ exports[`page/Login-ce render login when api return success 1`] = `
                         </span>
                         <input
                           aria-required="true"
-                          class="ant-input css-dev-only-do-not-override-txh9fw"
+                          class="ant-input"
                           id="password"
                           placeholder="密码"
                           type="password"
@@ -608,7 +608,7 @@ exports[`page/Login-ce render login when api return success 1`] = `
               </div>
             </div>
             <button
-              class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary ant-btn-loading login-btn basic-button-wrapper css-geipcv"
+              class="ant-btn ant-btn-primary ant-btn-loading login-btn basic-button-wrapper css-geipcv"
               type="submit"
             >
               <span
@@ -698,16 +698,16 @@ exports[`page/Login-ce render login when api return success 2`] = `
             </div>
           </div>
           <form
-            class="ant-form ant-form-horizontal css-dev-only-do-not-override-txh9fw"
+            class="ant-form ant-form-horizontal"
           >
             <div
-              class="ant-form-item css-dev-only-do-not-override-txh9fw ant-form-item-has-success"
+              class="ant-form-item ant-form-item-has-success"
             >
               <div
-                class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                class="ant-row ant-form-item-row"
               >
                 <div
-                  class="ant-col ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                  class="ant-col ant-form-item-control"
                 >
                   <div
                     class="ant-form-item-control-input"
@@ -716,7 +716,7 @@ exports[`page/Login-ce render login when api return success 2`] = `
                       class="ant-form-item-control-input-content"
                     >
                       <span
-                        class="ant-input-affix-wrapper ant-input-affix-wrapper-focused basic-input-wrapper login-form-field css-1pd1cd5 ant-input-affix-wrapper-status-success css-dev-only-do-not-override-ywkr0o"
+                        class="ant-input-affix-wrapper ant-input-affix-wrapper-focused basic-input-wrapper login-form-field css-1pd1cd5 ant-input-affix-wrapper-status-success"
                       >
                         <span
                           class="ant-input-prefix"
@@ -739,7 +739,7 @@ exports[`page/Login-ce render login when api return success 2`] = `
                         </span>
                         <input
                           aria-required="true"
-                          class="ant-input css-dev-only-do-not-override-ywkr0o"
+                          class="ant-input"
                           id="username"
                           placeholder="用户名"
                           type="text"
@@ -752,13 +752,13 @@ exports[`page/Login-ce render login when api return success 2`] = `
               </div>
             </div>
             <div
-              class="ant-form-item css-dev-only-do-not-override-txh9fw ant-form-item-has-success"
+              class="ant-form-item ant-form-item-has-success"
             >
               <div
-                class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                class="ant-row ant-form-item-row"
               >
                 <div
-                  class="ant-col ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                  class="ant-col ant-form-item-control"
                 >
                   <div
                     class="ant-form-item-control-input"
@@ -767,7 +767,7 @@ exports[`page/Login-ce render login when api return success 2`] = `
                       class="ant-form-item-control-input-content"
                     >
                       <span
-                        class="ant-input-affix-wrapper ant-input-password basic-input-wrapper login-form-field css-1pd1cd5 css-dev-only-do-not-override-txh9fw"
+                        class="ant-input-affix-wrapper ant-input-password basic-input-wrapper login-form-field css-1pd1cd5 ant-input-affix-wrapper-status-success"
                       >
                         <span
                           class="ant-input-prefix"
@@ -791,7 +791,7 @@ exports[`page/Login-ce render login when api return success 2`] = `
                         </span>
                         <input
                           aria-required="true"
-                          class="ant-input css-dev-only-do-not-override-txh9fw"
+                          class="ant-input"
                           id="password"
                           placeholder="密码"
                           type="password"
@@ -831,7 +831,7 @@ exports[`page/Login-ce render login when api return success 2`] = `
               </div>
             </div>
             <button
-              class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary login-btn basic-button-wrapper css-geipcv"
+              class="ant-btn ant-btn-primary login-btn basic-button-wrapper css-geipcv"
               type="submit"
             >
               <span>

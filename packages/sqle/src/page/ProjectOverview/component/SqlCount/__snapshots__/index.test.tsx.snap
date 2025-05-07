@@ -4,7 +4,7 @@ exports[`page/ProjectOverview/SqlCount render no data and refresh list 1`] = `
 <body>
   <div>
     <div
-      class="ant-card ant-card-hoverable css-121p60i css-dev-only-do-not-override-txh9fw"
+      class="ant-card ant-card-hoverable css-121p60i"
     >
       <div
         class="ant-card-body"
@@ -35,7 +35,7 @@ exports[`page/ProjectOverview/SqlCount render no data and refresh list 1`] = `
               class="icon-center-wrapper MuiBox-root css-0"
             >
               <div
-                class="css-dev-only-do-not-override-txh9fw ant-empty is-icon-tips css-19kysfv"
+                class="ant-empty is-icon-tips css-19kysfv"
               >
                 <div
                   class="ant-empty-image"
@@ -89,7 +89,7 @@ exports[`page/ProjectOverview/SqlCount render no data and refresh list 1`] = `
                   class="ant-empty-footer"
                 >
                   <button
-                    class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-text ant-btn-sm basic-button-wrapper css-geipcv"
+                    class="ant-btn ant-btn-text ant-btn-sm basic-button-wrapper css-geipcv"
                     type="button"
                   >
                     <span>
@@ -111,7 +111,7 @@ exports[`page/ProjectOverview/SqlCount render sql count 1`] = `
 <body>
   <div>
     <div
-      class="ant-card ant-card-hoverable css-121p60i css-dev-only-do-not-override-txh9fw"
+      class="ant-card ant-card-hoverable css-121p60i"
     >
       <div
         class="ant-card-body"
@@ -203,7 +203,7 @@ exports[`page/ProjectOverview/SqlCount render sql count when risk SQL rate is 0%
 <body>
   <div>
     <div
-      class="ant-card ant-card-hoverable css-121p60i css-dev-only-do-not-override-txh9fw"
+      class="ant-card ant-card-hoverable css-121p60i"
     >
       <div
         class="ant-card-body"
@@ -295,7 +295,7 @@ exports[`page/ProjectOverview/SqlCount render sql count when risk sql count is 0
 <body>
   <div>
     <div
-      class="ant-card ant-card-hoverable css-121p60i css-dev-only-do-not-override-txh9fw"
+      class="ant-card ant-card-hoverable css-121p60i"
     >
       <div
         class="ant-card-body"
@@ -387,7 +387,7 @@ exports[`page/ProjectOverview/SqlCount render sql count when total sql count is 
 <body>
   <div>
     <div
-      class="ant-card ant-card-hoverable css-121p60i css-dev-only-do-not-override-txh9fw"
+      class="ant-card ant-card-hoverable css-121p60i"
     >
       <div
         class="ant-card-body"
@@ -418,7 +418,7 @@ exports[`page/ProjectOverview/SqlCount render sql count when total sql count is 
               class="icon-center-wrapper MuiBox-root css-0"
             >
               <div
-                class="css-dev-only-do-not-override-txh9fw ant-empty is-icon-tips css-19kysfv"
+                class="ant-empty is-icon-tips css-19kysfv"
               >
                 <div
                   class="ant-empty-image"
@@ -472,7 +472,7 @@ exports[`page/ProjectOverview/SqlCount render sql count when total sql count is 
                   class="ant-empty-footer"
                 >
                   <button
-                    class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-text ant-btn-sm basic-button-wrapper css-geipcv"
+                    class="ant-btn ant-btn-text ant-btn-sm basic-button-wrapper css-geipcv"
                     type="button"
                   >
                     <span>

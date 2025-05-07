@@ -1,13 +1,17 @@
 import { act, cleanup, fireEvent, screen } from '@testing-library/react';
-import CBSqlOperationAuditDetailDrawer from '../CBSqlOperationAuditDetailDrawer';
-import { superRender } from '../../../../testUtils/customRender';
+import CBSqlOperationAuditDetailDrawer from './CBSqlOperationAuditDetailDrawer';
+import { superRender } from '../../../testUtils/customRender';
 import { useDispatch, useSelector } from 'react-redux';
 import { getBySelector } from '@actiontech/shared/lib/testUtil/customQuery';
-import { ModalName } from '../../../../data/ModalName';
+import { ModalName } from '../../../data/ModalName';
 import rule_template from 'sqle/src/testUtils/mockApi/rule_template/index';
-import { listCBOperationLogsMockData } from '../../../../testUtils/mockApi/cloudBeaver/data';
+import { listCBOperationLogsMockData } from '../../../testUtils/mockApi/cloudBeaver/data';
 import { mockUseCurrentProject } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentProject';
 import { mockUseCurrentUser } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentUser';
+import {
+  UtilsConsoleErrorStringsEnum,
+  ignoreConsoleErrors
+} from '@actiontech/shared/lib/testUtil/common';
 
 jest.mock('react-redux', () => {
   return {
@@ -43,6 +47,8 @@ describe('base/CloudBeaver/CBSqlOperationAuditDetailDrawer', () => {
     jest.useRealTimers();
     cleanup();
   });
+
+  ignoreConsoleErrors([UtilsConsoleErrorStringsEnum.UNKNOWN_EVENT_HANDLER]);
 
   it('should match snap shot', async () => {
     const { baseElement } = superRender(<CBSqlOperationAuditDetailDrawer />);

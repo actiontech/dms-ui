@@ -5,16 +5,16 @@ exports[`test FileUpload should display a success message when uploadCheckStatus
   <div />
   <div>
     <form
-      class="ant-form ant-form-horizontal css-dev-only-do-not-override-txh9fw"
+      class="ant-form ant-form-horizontal"
     >
       <div
-        class="ant-form-item css-dev-only-do-not-override-txh9fw"
+        class="ant-form-item"
       >
         <div
-          class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+          class="ant-row ant-form-item-row"
         >
           <div
-            class="ant-col ant-form-item-control css-dev-only-do-not-override-txh9fw"
+            class="ant-col ant-form-item-control"
           >
             <div
               class="ant-form-item-control-input"
@@ -38,7 +38,7 @@ exports[`test FileUpload should display a success message when uploadCheckStatus
           class="flex-display"
         >
           <span
-            class="ant-upload-wrapper css-dev-only-do-not-override-txh9fw"
+            class="ant-upload-wrapper"
           >
             <div
               class="ant-upload ant-upload-select"
@@ -54,7 +54,7 @@ exports[`test FileUpload should display a success message when uploadCheckStatus
                   type="file"
                 />
                 <button
-                  class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default basic-button-wrapper css-geipcv"
+                  class="ant-btn ant-btn-default basic-button-wrapper css-geipcv"
                   type="button"
                 >
                   <span>
@@ -68,7 +68,7 @@ exports[`test FileUpload should display a success message when uploadCheckStatus
             />
           </span>
           <button
-            class="ant-btn css-dev-only-do-not-override-txh9fw ant-btn-link"
+            class="ant-btn ant-btn-link"
             type="button"
           >
             <span>
@@ -77,7 +77,7 @@ exports[`test FileUpload should display a success message when uploadCheckStatus
           </button>
         </div>
         <div
-          class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-start css-1nec0wd"
+          class="ant-space ant-space-horizontal ant-space-align-start css-1nec0wd"
         >
           <div
             class="ant-space-item"
@@ -104,7 +104,7 @@ exports[`test FileUpload should display a success message when uploadCheckStatus
             class="ant-space-item"
           >
             <span
-              class="ant-typography ant-typography-success css-dev-only-do-not-override-txh9fw"
+              class="ant-typography ant-typography-success"
             >
               <pre>
                 校验通过
@@ -123,16 +123,16 @@ exports[`test FileUpload should display an error message when uploadCheckStatus.
   <div />
   <div>
     <form
-      class="ant-form ant-form-horizontal css-dev-only-do-not-override-txh9fw"
+      class="ant-form ant-form-horizontal"
     >
       <div
-        class="ant-form-item css-dev-only-do-not-override-txh9fw"
+        class="ant-form-item"
       >
         <div
-          class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+          class="ant-row ant-form-item-row"
         >
           <div
-            class="ant-col ant-form-item-control css-dev-only-do-not-override-txh9fw"
+            class="ant-col ant-form-item-control"
           >
             <div
               class="ant-form-item-control-input"
@@ -156,7 +156,7 @@ exports[`test FileUpload should display an error message when uploadCheckStatus.
           class="flex-display"
         >
           <span
-            class="ant-upload-wrapper css-dev-only-do-not-override-txh9fw"
+            class="ant-upload-wrapper"
           >
             <div
               class="ant-upload ant-upload-select"
@@ -172,7 +172,7 @@ exports[`test FileUpload should display an error message when uploadCheckStatus.
                   type="file"
                 />
                 <button
-                  class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default basic-button-wrapper css-geipcv"
+                  class="ant-btn ant-btn-default basic-button-wrapper css-geipcv"
                   type="button"
                 >
                   <span>
@@ -186,7 +186,7 @@ exports[`test FileUpload should display an error message when uploadCheckStatus.
             />
           </span>
           <button
-            class="ant-btn css-dev-only-do-not-override-txh9fw ant-btn-link"
+            class="ant-btn ant-btn-link"
             type="button"
           >
             <span>
@@ -195,7 +195,7 @@ exports[`test FileUpload should display an error message when uploadCheckStatus.
           </button>
         </div>
         <div
-          class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-start css-1nec0wd"
+          class="ant-space ant-space-horizontal ant-space-align-start css-1nec0wd"
         >
           <div
             class="ant-space-item"
@@ -222,7 +222,7 @@ exports[`test FileUpload should display an error message when uploadCheckStatus.
             class="ant-space-item"
           >
             <span
-              class="ant-typography ant-typography-danger css-dev-only-do-not-override-txh9fw"
+              class="ant-typography ant-typography-danger"
             >
               <pre>
                 error message
@@ -241,16 +241,16 @@ exports[`test FileUpload should render the DownloadTemplateModal component when 
   <div />
   <div>
     <form
-      class="ant-form ant-form-horizontal css-dev-only-do-not-override-txh9fw"
+      class="ant-form ant-form-horizontal"
     >
       <div
-        class="ant-form-item css-dev-only-do-not-override-txh9fw"
+        class="ant-form-item"
       >
         <div
-          class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+          class="ant-row ant-form-item-row"
         >
           <div
-            class="ant-col ant-form-item-control css-dev-only-do-not-override-txh9fw"
+            class="ant-col ant-form-item-control"
           >
             <div
               class="ant-form-item-control-input"
@@ -274,7 +274,7 @@ exports[`test FileUpload should render the DownloadTemplateModal component when 
           class="flex-display"
         >
           <span
-            class="ant-upload-wrapper css-dev-only-do-not-override-txh9fw"
+            class="ant-upload-wrapper"
           >
             <div
               class="ant-upload ant-upload-select"
@@ -290,7 +290,7 @@ exports[`test FileUpload should render the DownloadTemplateModal component when 
                   type="file"
                 />
                 <button
-                  class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default basic-button-wrapper css-geipcv"
+                  class="ant-btn ant-btn-default basic-button-wrapper css-geipcv"
                   type="button"
                 >
                   <span>
@@ -304,7 +304,7 @@ exports[`test FileUpload should render the DownloadTemplateModal component when 
             />
           </span>
           <button
-            class="ant-btn css-dev-only-do-not-override-txh9fw ant-btn-link"
+            class="ant-btn ant-btn-link"
             type="button"
           >
             <span>
@@ -313,7 +313,7 @@ exports[`test FileUpload should render the DownloadTemplateModal component when 
           </button>
         </div>
         <div
-          class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-start css-1nec0wd"
+          class="ant-space ant-space-horizontal ant-space-align-start css-1nec0wd"
         >
           <div
             class="ant-space-item"
@@ -340,7 +340,7 @@ exports[`test FileUpload should render the DownloadTemplateModal component when 
             class="ant-space-item"
           >
             <span
-              class="ant-typography ant-typography-danger css-dev-only-do-not-override-txh9fw"
+              class="ant-typography ant-typography-danger"
             >
               <pre>
                 error message
@@ -353,7 +353,7 @@ exports[`test FileUpload should render the DownloadTemplateModal component when 
   </div>
   <div>
     <div
-      class="ant-modal-root css-dev-only-do-not-override-txh9fw"
+      class="ant-modal-root"
     >
       <div
         class="ant-modal-mask"
@@ -365,7 +365,7 @@ exports[`test FileUpload should render the DownloadTemplateModal component when 
         <div
           aria-labelledby="test-id"
           aria-modal="true"
-          class="ant-modal css-dev-only-do-not-override-txh9fw basic-modal-wrapper css-vvpsbb"
+          class="ant-modal basic-modal-wrapper css-vvpsbb"
           role="dialog"
           style="width: 480px; transform-origin: NaNpx NaNpx;"
         >
@@ -412,16 +412,16 @@ exports[`test FileUpload should render the DownloadTemplateModal component when 
               class="ant-modal-body"
             >
               <form
-                class="ant-form ant-form-horizontal css-dev-only-do-not-override-txh9fw"
+                class="ant-form ant-form-horizontal"
               >
                 <div
-                  class="ant-form-item has-required-style css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+                  class="ant-form-item has-required-style css-1jlm9cy"
                 >
                   <div
-                    class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                    class="ant-row ant-form-item-row"
                   >
                     <div
-                      class="ant-col ant-form-item-label css-dev-only-do-not-override-txh9fw"
+                      class="ant-col ant-form-item-label"
                     >
                       <label
                         class="ant-form-item-required"
@@ -432,7 +432,7 @@ exports[`test FileUpload should render the DownloadTemplateModal component when 
                       </label>
                     </div>
                     <div
-                      class="ant-col ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                      class="ant-col ant-form-item-control"
                     >
                       <div
                         class="ant-form-item-control-input"
@@ -442,7 +442,7 @@ exports[`test FileUpload should render the DownloadTemplateModal component when 
                         >
                           <div
                             aria-required="true"
-                            class="ant-select ant-select-in-form-item basic-select-wrapper css-iy4o4x css-dev-only-do-not-override-v9sov3 ant-select-single ant-select-show-arrow"
+                            class="ant-select ant-select-in-form-item basic-select-wrapper css-iy4o4x ant-select-single ant-select-show-arrow"
                           >
                             <div
                               class="ant-select-selector"
@@ -513,7 +513,7 @@ exports[`test FileUpload should render the DownloadTemplateModal component when 
               class="ant-modal-footer"
             >
               <button
-                class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default basic-button-wrapper css-geipcv"
+                class="ant-btn ant-btn-default basic-button-wrapper css-geipcv"
                 type="button"
               >
                 <span>
@@ -521,7 +521,7 @@ exports[`test FileUpload should render the DownloadTemplateModal component when 
                 </span>
               </button>
               <button
-                class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary basic-button-wrapper css-geipcv"
+                class="ant-btn ant-btn-primary basic-button-wrapper css-geipcv"
                 type="button"
               >
                 <span>
@@ -547,16 +547,16 @@ exports[`test FileUpload should render the DownloadTemplateModal component when 
   <div />
   <div>
     <form
-      class="ant-form ant-form-horizontal css-dev-only-do-not-override-txh9fw"
+      class="ant-form ant-form-horizontal"
     >
       <div
-        class="ant-form-item css-dev-only-do-not-override-txh9fw"
+        class="ant-form-item"
       >
         <div
-          class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+          class="ant-row ant-form-item-row"
         >
           <div
-            class="ant-col ant-form-item-control css-dev-only-do-not-override-txh9fw"
+            class="ant-col ant-form-item-control"
           >
             <div
               class="ant-form-item-control-input"
@@ -580,7 +580,7 @@ exports[`test FileUpload should render the DownloadTemplateModal component when 
           class="flex-display"
         >
           <span
-            class="ant-upload-wrapper css-dev-only-do-not-override-txh9fw"
+            class="ant-upload-wrapper"
           >
             <div
               class="ant-upload ant-upload-select"
@@ -596,7 +596,7 @@ exports[`test FileUpload should render the DownloadTemplateModal component when 
                   type="file"
                 />
                 <button
-                  class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default basic-button-wrapper css-geipcv"
+                  class="ant-btn ant-btn-default basic-button-wrapper css-geipcv"
                   type="button"
                 >
                   <span>
@@ -610,7 +610,7 @@ exports[`test FileUpload should render the DownloadTemplateModal component when 
             />
           </span>
           <button
-            class="ant-btn css-dev-only-do-not-override-txh9fw ant-btn-link"
+            class="ant-btn ant-btn-link"
             type="button"
           >
             <span>
@@ -619,7 +619,7 @@ exports[`test FileUpload should render the DownloadTemplateModal component when 
           </button>
         </div>
         <div
-          class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-start css-1nec0wd"
+          class="ant-space ant-space-horizontal ant-space-align-start css-1nec0wd"
         >
           <div
             class="ant-space-item"
@@ -646,7 +646,7 @@ exports[`test FileUpload should render the DownloadTemplateModal component when 
             class="ant-space-item"
           >
             <span
-              class="ant-typography ant-typography-danger css-dev-only-do-not-override-txh9fw"
+              class="ant-typography ant-typography-danger"
             >
               <pre>
                 error message
@@ -659,7 +659,7 @@ exports[`test FileUpload should render the DownloadTemplateModal component when 
   </div>
   <div>
     <div
-      class="ant-modal-root css-dev-only-do-not-override-txh9fw"
+      class="ant-modal-root"
     >
       <div
         class="ant-modal-wrap"
@@ -669,7 +669,7 @@ exports[`test FileUpload should render the DownloadTemplateModal component when 
         <div
           aria-labelledby="test-id"
           aria-modal="true"
-          class="ant-modal css-dev-only-do-not-override-txh9fw basic-modal-wrapper css-vvpsbb"
+          class="ant-modal basic-modal-wrapper css-vvpsbb"
           role="dialog"
           style="width: 480px; transform-origin: NaNpx NaNpx; display: none;"
         >
@@ -716,16 +716,16 @@ exports[`test FileUpload should render the DownloadTemplateModal component when 
               class="ant-modal-body"
             >
               <form
-                class="ant-form ant-form-horizontal css-dev-only-do-not-override-txh9fw"
+                class="ant-form ant-form-horizontal"
               >
                 <div
-                  class="ant-form-item has-required-style css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+                  class="ant-form-item has-required-style css-1jlm9cy"
                 >
                   <div
-                    class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                    class="ant-row ant-form-item-row"
                   >
                     <div
-                      class="ant-col ant-form-item-label css-dev-only-do-not-override-txh9fw"
+                      class="ant-col ant-form-item-label"
                     >
                       <label
                         class="ant-form-item-required"
@@ -736,7 +736,7 @@ exports[`test FileUpload should render the DownloadTemplateModal component when 
                       </label>
                     </div>
                     <div
-                      class="ant-col ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                      class="ant-col ant-form-item-control"
                     >
                       <div
                         class="ant-form-item-control-input"
@@ -746,7 +746,7 @@ exports[`test FileUpload should render the DownloadTemplateModal component when 
                         >
                           <div
                             aria-required="true"
-                            class="ant-select ant-select-in-form-item basic-select-wrapper css-iy4o4x css-dev-only-do-not-override-v9sov3 ant-select-single ant-select-show-arrow"
+                            class="ant-select ant-select-in-form-item basic-select-wrapper css-iy4o4x ant-select-single ant-select-show-arrow"
                           >
                             <div
                               class="ant-select-selector"
@@ -817,7 +817,7 @@ exports[`test FileUpload should render the DownloadTemplateModal component when 
               class="ant-modal-footer"
             >
               <button
-                class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default basic-button-wrapper css-geipcv"
+                class="ant-btn ant-btn-default basic-button-wrapper css-geipcv"
                 disabled=""
                 type="button"
               >
@@ -826,7 +826,7 @@ exports[`test FileUpload should render the DownloadTemplateModal component when 
                 </span>
               </button>
               <button
-                class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary basic-button-wrapper css-geipcv"
+                class="ant-btn ant-btn-primary basic-button-wrapper css-geipcv"
                 disabled=""
                 type="button"
               >

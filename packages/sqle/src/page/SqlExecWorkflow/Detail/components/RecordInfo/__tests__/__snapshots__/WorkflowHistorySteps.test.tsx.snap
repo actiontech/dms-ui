@@ -92,7 +92,7 @@ exports[`sqle/SqlExecWorkflow/Detail/WorkflowHistorySteps render when list is ar
           工单进度
         </div>
         <div
-          class="ant-steps ant-steps-vertical css-1epey7k css-dev-only-do-not-override-txh9fw"
+          class="ant-steps ant-steps-vertical css-1epey7k"
         />
       </div>
     </div>

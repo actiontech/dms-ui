@@ -5,7 +5,7 @@ exports[`provision/DatabaseAccount/AccountDiscoveryModal render AccountTableFiel
   <div />
   <div>
     <div
-      class="ant-drawer ant-drawer-right css-dev-only-do-not-override-txh9fw ant-drawer-open"
+      class="ant-drawer ant-drawer-right ant-drawer-open"
       tabindex="-1"
     >
       <div
@@ -51,34 +51,36 @@ exports[`provision/DatabaseAccount/AccountDiscoveryModal render AccountTableFiel
                 <span
                   aria-label="close"
                   class="anticon anticon-close"
+                  data-testid="basic-drawer-close-icon"
                   role="img"
                 >
                   <svg
                     aria-hidden="true"
                     data-icon="close"
                     fill="currentColor"
+                    fill-rule="evenodd"
                     focusable="false"
                     height="1em"
                     viewBox="64 64 896 896"
                     width="1em"
                   >
                     <path
-                      d="M563.8 512l262.5-312.9c4.4-5.2.7-13.1-6.1-13.1h-79.8c-4.7 0-9.2 2.1-12.3 5.7L511.6 449.8 295.1 191.7c-3-3.6-7.5-5.7-12.3-5.7H203c-6.8 0-10.5 7.9-6.1 13.1L459.4 512 196.9 824.9A7.95 7.95 0 00203 838h79.8c4.7 0 9.2-2.1 12.3-5.7l216.5-258.1 216.5 258.1c3 3.6 7.5 5.7 12.3 5.7h79.8c6.8 0 10.5-7.9 6.1-13.1L563.8 512z"
+                      d="M799.86 166.31c.02 0 .04.02.08.06l57.69 57.7c.04.03.05.05.06.08a.12.12 0 010 .06c0 .03-.02.05-.06.09L569.93 512l287.7 287.7c.04.04.05.06.06.09a.12.12 0 010 .07c0 .02-.02.04-.06.08l-57.7 57.69c-.03.04-.05.05-.07.06a.12.12 0 01-.07 0c-.03 0-.05-.02-.09-.06L512 569.93l-287.7 287.7c-.04.04-.06.05-.09.06a.12.12 0 01-.07 0c-.02 0-.04-.02-.08-.06l-57.69-57.7c-.04-.03-.05-.05-.06-.07a.12.12 0 010-.07c0-.03.02-.05.06-.09L454.07 512l-287.7-287.7c-.04-.04-.05-.06-.06-.09a.12.12 0 010-.07c0-.02.02-.04.06-.08l57.7-57.69c.03-.04.05-.05.07-.06a.12.12 0 01.07 0c.03 0 .05.02.09.06L512 454.07l287.7-287.7c.04-.04.06-.05.09-.06a.12.12 0 01.07 0z"
                     />
                   </svg>
                 </span>
               </div>
               <form
-                class="ant-form ant-form-vertical css-dev-only-do-not-override-txh9fw"
+                class="ant-form ant-form-vertical"
               >
                 <div
-                  class="ant-form-item css-dev-only-do-not-override-txh9fw ant-form-item-has-success"
+                  class="ant-form-item ant-form-item-has-success"
                 >
                   <div
-                    class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                    class="ant-row ant-form-item-row"
                   >
                     <div
-                      class="ant-col ant-form-item-label css-dev-only-do-not-override-txh9fw"
+                      class="ant-col ant-form-item-label"
                     >
                       <label
                         class="ant-form-item-required"
@@ -89,7 +91,7 @@ exports[`provision/DatabaseAccount/AccountDiscoveryModal render AccountTableFiel
                       </label>
                     </div>
                     <div
-                      class="ant-col ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                      class="ant-col ant-form-item-control"
                     >
                       <div
                         class="ant-form-item-control-input"
@@ -99,7 +101,7 @@ exports[`provision/DatabaseAccount/AccountDiscoveryModal render AccountTableFiel
                         >
                           <div
                             aria-required="true"
-                            class="ant-select ant-select-in-form-item ant-select-status-success basic-select-wrapper css-iy4o4x css-dev-only-do-not-override-v9sov3 ant-select-single ant-select-show-arrow"
+                            class="ant-select ant-select-in-form-item ant-select-status-success basic-select-wrapper css-iy4o4x ant-select-single ant-select-show-arrow"
                           >
                             <div
                               class="ant-select-selector"
@@ -166,13 +168,13 @@ exports[`provision/DatabaseAccount/AccountDiscoveryModal render AccountTableFiel
                   </div>
                 </div>
                 <div
-                  class="ant-form-item css-dev-only-do-not-override-txh9fw ant-form-item-has-success"
+                  class="ant-form-item ant-form-item-has-success"
                 >
                   <div
-                    class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                    class="ant-row ant-form-item-row"
                   >
                     <div
-                      class="ant-col ant-form-item-label css-dev-only-do-not-override-txh9fw"
+                      class="ant-col ant-form-item-label"
                     >
                       <label
                         class="ant-form-item-required"
@@ -183,7 +185,7 @@ exports[`provision/DatabaseAccount/AccountDiscoveryModal render AccountTableFiel
                       </label>
                     </div>
                     <div
-                      class="ant-col ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                      class="ant-col ant-form-item-control"
                     >
                       <div
                         class="ant-form-item-control-input"
@@ -193,7 +195,7 @@ exports[`provision/DatabaseAccount/AccountDiscoveryModal render AccountTableFiel
                         >
                           <div
                             aria-required="true"
-                            class="ant-select ant-select-in-form-item ant-select-status-success basic-select-wrapper data-service-select css-iy4o4x css-dev-only-do-not-override-v9sov3 ant-select-single ant-select-show-arrow"
+                            class="ant-select ant-select-in-form-item ant-select-status-success basic-select-wrapper data-service-select css-iy4o4x ant-select-single ant-select-show-arrow"
                           >
                             <div
                               class="ant-select-selector"
@@ -260,13 +262,13 @@ exports[`provision/DatabaseAccount/AccountDiscoveryModal render AccountTableFiel
                   </div>
                 </div>
                 <div
-                  class="ant-form-item css-dev-only-do-not-override-txh9fw"
+                  class="ant-form-item"
                 >
                   <div
-                    class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                    class="ant-row ant-form-item-row"
                   >
                     <div
-                      class="ant-col ant-form-item-label css-dev-only-do-not-override-txh9fw"
+                      class="ant-col ant-form-item-label"
                     >
                       <label
                         class="ant-form-item-required"
@@ -274,7 +276,7 @@ exports[`provision/DatabaseAccount/AccountDiscoveryModal render AccountTableFiel
                         title=""
                       >
                         <div
-                          class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
+                          class="ant-space ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
                         >
                           <div
                             class="ant-space-item"
@@ -312,7 +314,7 @@ exports[`provision/DatabaseAccount/AccountDiscoveryModal render AccountTableFiel
                       </label>
                     </div>
                     <div
-                      class="ant-col ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                      class="ant-col ant-form-item-control"
                     >
                       <div
                         class="ant-form-item-control-input"
@@ -324,14 +326,14 @@ exports[`provision/DatabaseAccount/AccountDiscoveryModal render AccountTableFiel
                             class="flex-space-between"
                           >
                             <input
-                              class="ant-input ant-input-sm css-dev-only-do-not-override-ywkr0o basic-input-wrapper css-1pd1cd5"
+                              class="ant-input ant-input-sm basic-input-wrapper css-1pd1cd5"
                               placeholder="输入账号名进行搜索"
                               style="width: 300px;"
                               type="text"
                               value=""
                             />
                             <button
-                              class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default ant-btn-sm ant-btn-icon-only basic-button-wrapper css-geipcv"
+                              class="ant-btn ant-btn-default ant-btn-sm ant-btn-icon-only basic-button-wrapper css-geipcv"
                               type="button"
                             >
                               <span
@@ -352,10 +354,10 @@ exports[`provision/DatabaseAccount/AccountDiscoveryModal render AccountTableFiel
                             </button>
                           </div>
                           <div
-                            class="ant-table-wrapper actiontech-table-namespace css-18y1mv6 css-dev-only-do-not-override-bj9uhl"
+                            class="ant-table-wrapper actiontech-table-namespace css-18y1mv6"
                           >
                             <div
-                              class="ant-spin-nested-loading css-dev-only-do-not-override-bj9uhl"
+                              class="ant-spin-nested-loading"
                             >
                               <div
                                 class="ant-spin-container"
@@ -391,10 +393,10 @@ exports[`provision/DatabaseAccount/AccountDiscoveryModal render AccountTableFiel
                                                 class="ant-table-selection"
                                               >
                                                 <label
-                                                  class="ant-checkbox-wrapper ant-checkbox-wrapper-in-form-item css-dev-only-do-not-override-bj9uhl"
+                                                  class="ant-checkbox-wrapper ant-checkbox-wrapper-in-form-item"
                                                 >
                                                   <span
-                                                    class="ant-checkbox css-dev-only-do-not-override-bj9uhl"
+                                                    class="ant-checkbox"
                                                   >
                                                     <input
                                                       aria-label="Select all"
@@ -500,10 +502,10 @@ exports[`provision/DatabaseAccount/AccountDiscoveryModal render AccountTableFiel
                                               style="position: sticky; left: 0px;"
                                             >
                                               <label
-                                                class="ant-checkbox-wrapper ant-checkbox-wrapper-in-form-item css-dev-only-do-not-override-bj9uhl"
+                                                class="ant-checkbox-wrapper ant-checkbox-wrapper-in-form-item"
                                               >
                                                 <span
-                                                  class="ant-checkbox css-dev-only-do-not-override-bj9uhl"
+                                                  class="ant-checkbox"
                                                 >
                                                   <input
                                                     class="ant-checkbox-input"
@@ -564,14 +566,14 @@ exports[`provision/DatabaseAccount/AccountDiscoveryModal render AccountTableFiel
               class="ant-drawer-footer"
             >
               <div
-                class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+                class="ant-space ant-space-horizontal ant-space-align-center"
               >
                 <div
                   class="ant-space-item"
                   style="margin-right: 8px;"
                 >
                   <button
-                    class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default basic-button-wrapper css-geipcv"
+                    class="ant-btn ant-btn-default basic-button-wrapper css-geipcv"
                     type="button"
                   >
                     <span>
@@ -583,7 +585,7 @@ exports[`provision/DatabaseAccount/AccountDiscoveryModal render AccountTableFiel
                   class="ant-space-item"
                 >
                   <button
-                    class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary basic-button-wrapper css-geipcv"
+                    class="ant-btn ant-btn-primary basic-button-wrapper css-geipcv"
                     type="button"
                   >
                     <span>
@@ -606,7 +608,7 @@ exports[`provision/DatabaseAccount/AccountDiscoveryModal render AccountTableFiel
   </div>
   <div>
     <div
-      class="ant-select-dropdown ant-select-dropdown-hidden css-dev-only-do-not-override-v9sov3 ant-select-dropdown-placement-bottomLeft"
+      class="ant-select-dropdown ant-select-dropdown-hidden ant-select-dropdown-placement-bottomLeft"
       style="--arrow-x: 0px; --arrow-y: 0px; left: 0px; top: 0px; box-sizing: border-box; min-width: 0; width: 0px; pointer-events: none;"
     >
       <div>
@@ -682,22 +684,13 @@ exports[`provision/DatabaseAccount/AccountDiscoveryModal render AccountTableFiel
               </div>
             </div>
           </div>
-          <div
-            class="rc-virtual-list-scrollbar"
-            style="width: 8px; top: 0px; bottom: 0px; right: 0px; position: absolute; display: none;"
-          >
-            <div
-              class="rc-virtual-list-scrollbar-thumb"
-              style="width: 100%; height: 128px; top: 0px; left: 0px; position: absolute; background: rgba(0, 0, 0, 0.5); border-radius: 99px; cursor: pointer; user-select: none;"
-            />
-          </div>
         </div>
       </div>
     </div>
   </div>
   <div>
     <div
-      class="ant-select-dropdown ant-select-dropdown-hidden css-dev-only-do-not-override-v9sov3 ant-select-dropdown-placement-bottomLeft"
+      class="ant-select-dropdown ant-select-dropdown-hidden ant-select-dropdown-placement-bottomLeft"
       style="--arrow-x: 0px; --arrow-y: 0px; left: 0px; top: 0px; box-sizing: border-box; min-width: 0; width: 0px; pointer-events: none;"
     >
       <div>
@@ -741,7 +734,7 @@ exports[`provision/DatabaseAccount/AccountDiscoveryModal render AccountTableFiel
             >
               <div
                 class="rc-virtual-list-holder-inner"
-                style="display: flex; flex-direction: column; transform: translateY(0px); position: absolute; left: 0px; right: 0px; top: 0px;"
+                style="display: flex; flex-direction: column; transform: translateY(0px); margin-left: 0px; position: absolute; left: 0px; right: 0px; top: 0px;"
               >
                 <div
                   class="ant-select-item ant-select-item-group"
@@ -950,12 +943,12 @@ exports[`provision/DatabaseAccount/AccountDiscoveryModal render AccountTableFiel
             </div>
           </div>
           <div
-            class="rc-virtual-list-scrollbar rc-virtual-list-scrollbar-show"
-            style="width: 8px; top: 0px; bottom: 0px; right: 0px; position: absolute; display: none;"
+            class="rc-virtual-list-scrollbar rc-virtual-list-scrollbar-vertical"
+            style="position: absolute; width: 8px; top: 0px; bottom: 0px; right: 0px; visibility: hidden;"
           >
             <div
               class="rc-virtual-list-scrollbar-thumb"
-              style="width: 100%; height: 121px; top: 0px; left: 0px; position: absolute; background: rgba(0, 0, 0, 0.5); border-radius: 99px; cursor: pointer; user-select: none;"
+              style="position: absolute; background: rgba(0, 0, 0, 0.5); border-radius: 99px; cursor: pointer; user-select: none; width: 100%; height: 130px; top: 0px;"
             />
           </div>
         </div>
@@ -970,7 +963,7 @@ exports[`provision/DatabaseAccount/AccountDiscoveryModal render init snap 1`] = 
   <div />
   <div>
     <div
-      class="ant-drawer ant-drawer-right css-dev-only-do-not-override-txh9fw ant-drawer-open"
+      class="ant-drawer ant-drawer-right ant-drawer-open"
       tabindex="-1"
     >
       <div
@@ -1016,34 +1009,36 @@ exports[`provision/DatabaseAccount/AccountDiscoveryModal render init snap 1`] = 
                 <span
                   aria-label="close"
                   class="anticon anticon-close"
+                  data-testid="basic-drawer-close-icon"
                   role="img"
                 >
                   <svg
                     aria-hidden="true"
                     data-icon="close"
                     fill="currentColor"
+                    fill-rule="evenodd"
                     focusable="false"
                     height="1em"
                     viewBox="64 64 896 896"
                     width="1em"
                   >
                     <path
-                      d="M563.8 512l262.5-312.9c4.4-5.2.7-13.1-6.1-13.1h-79.8c-4.7 0-9.2 2.1-12.3 5.7L511.6 449.8 295.1 191.7c-3-3.6-7.5-5.7-12.3-5.7H203c-6.8 0-10.5 7.9-6.1 13.1L459.4 512 196.9 824.9A7.95 7.95 0 00203 838h79.8c4.7 0 9.2-2.1 12.3-5.7l216.5-258.1 216.5 258.1c3 3.6 7.5 5.7 12.3 5.7h79.8c6.8 0 10.5-7.9 6.1-13.1L563.8 512z"
+                      d="M799.86 166.31c.02 0 .04.02.08.06l57.69 57.7c.04.03.05.05.06.08a.12.12 0 010 .06c0 .03-.02.05-.06.09L569.93 512l287.7 287.7c.04.04.05.06.06.09a.12.12 0 010 .07c0 .02-.02.04-.06.08l-57.7 57.69c-.03.04-.05.05-.07.06a.12.12 0 01-.07 0c-.03 0-.05-.02-.09-.06L512 569.93l-287.7 287.7c-.04.04-.06.05-.09.06a.12.12 0 01-.07 0c-.02 0-.04-.02-.08-.06l-57.69-57.7c-.04-.03-.05-.05-.06-.07a.12.12 0 010-.07c0-.03.02-.05.06-.09L454.07 512l-287.7-287.7c-.04-.04-.05-.06-.06-.09a.12.12 0 010-.07c0-.02.02-.04.06-.08l57.7-57.69c.03-.04.05-.05.07-.06a.12.12 0 01.07 0c.03 0 .05.02.09.06L512 454.07l287.7-287.7c.04-.04.06-.05.09-.06a.12.12 0 01.07 0z"
                     />
                   </svg>
                 </span>
               </div>
               <form
-                class="ant-form ant-form-vertical css-dev-only-do-not-override-txh9fw"
+                class="ant-form ant-form-vertical"
               >
                 <div
-                  class="ant-form-item css-dev-only-do-not-override-txh9fw"
+                  class="ant-form-item"
                 >
                   <div
-                    class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                    class="ant-row ant-form-item-row"
                   >
                     <div
-                      class="ant-col ant-form-item-label css-dev-only-do-not-override-txh9fw"
+                      class="ant-col ant-form-item-label"
                     >
                       <label
                         class="ant-form-item-required"
@@ -1054,7 +1049,7 @@ exports[`provision/DatabaseAccount/AccountDiscoveryModal render init snap 1`] = 
                       </label>
                     </div>
                     <div
-                      class="ant-col ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                      class="ant-col ant-form-item-control"
                     >
                       <div
                         class="ant-form-item-control-input"
@@ -1064,7 +1059,7 @@ exports[`provision/DatabaseAccount/AccountDiscoveryModal render init snap 1`] = 
                         >
                           <div
                             aria-required="true"
-                            class="ant-select ant-select-in-form-item basic-select-wrapper css-iy4o4x css-dev-only-do-not-override-v9sov3 ant-select-single ant-select-show-arrow"
+                            class="ant-select ant-select-in-form-item basic-select-wrapper css-iy4o4x ant-select-single ant-select-show-arrow"
                           >
                             <div
                               class="ant-select-selector"
@@ -1130,13 +1125,13 @@ exports[`provision/DatabaseAccount/AccountDiscoveryModal render init snap 1`] = 
                   </div>
                 </div>
                 <div
-                  class="ant-form-item css-dev-only-do-not-override-txh9fw"
+                  class="ant-form-item"
                 >
                   <div
-                    class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                    class="ant-row ant-form-item-row"
                   >
                     <div
-                      class="ant-col ant-form-item-label css-dev-only-do-not-override-txh9fw"
+                      class="ant-col ant-form-item-label"
                     >
                       <label
                         class="ant-form-item-required"
@@ -1147,7 +1142,7 @@ exports[`provision/DatabaseAccount/AccountDiscoveryModal render init snap 1`] = 
                       </label>
                     </div>
                     <div
-                      class="ant-col ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                      class="ant-col ant-form-item-control"
                     >
                       <div
                         class="ant-form-item-control-input"
@@ -1157,7 +1152,7 @@ exports[`provision/DatabaseAccount/AccountDiscoveryModal render init snap 1`] = 
                         >
                           <div
                             aria-required="true"
-                            class="ant-select ant-select-in-form-item basic-select-wrapper data-service-select css-iy4o4x css-dev-only-do-not-override-v9sov3 ant-select-single ant-select-show-arrow"
+                            class="ant-select ant-select-in-form-item basic-select-wrapper data-service-select css-iy4o4x ant-select-single ant-select-show-arrow"
                           >
                             <div
                               class="ant-select-selector"
@@ -1223,13 +1218,13 @@ exports[`provision/DatabaseAccount/AccountDiscoveryModal render init snap 1`] = 
                   </div>
                 </div>
                 <div
-                  class="ant-form-item css-dev-only-do-not-override-txh9fw"
+                  class="ant-form-item"
                 >
                   <div
-                    class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                    class="ant-row ant-form-item-row"
                   >
                     <div
-                      class="ant-col ant-form-item-label css-dev-only-do-not-override-txh9fw"
+                      class="ant-col ant-form-item-label"
                     >
                       <label
                         class="ant-form-item-required"
@@ -1237,7 +1232,7 @@ exports[`provision/DatabaseAccount/AccountDiscoveryModal render init snap 1`] = 
                         title=""
                       >
                         <div
-                          class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
+                          class="ant-space ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
                         >
                           <div
                             class="ant-space-item"
@@ -1275,7 +1270,7 @@ exports[`provision/DatabaseAccount/AccountDiscoveryModal render init snap 1`] = 
                       </label>
                     </div>
                     <div
-                      class="ant-col ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                      class="ant-col ant-form-item-control"
                     >
                       <div
                         class="ant-form-item-control-input"
@@ -1288,14 +1283,14 @@ exports[`provision/DatabaseAccount/AccountDiscoveryModal render init snap 1`] = 
                             hidden=""
                           >
                             <input
-                              class="ant-input ant-input-sm css-dev-only-do-not-override-ywkr0o basic-input-wrapper css-1pd1cd5"
+                              class="ant-input ant-input-sm basic-input-wrapper css-1pd1cd5"
                               placeholder="输入账号名进行搜索"
                               style="width: 300px;"
                               type="text"
                               value=""
                             />
                             <button
-                              class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default ant-btn-sm ant-btn-icon-only basic-button-wrapper css-geipcv"
+                              class="ant-btn ant-btn-default ant-btn-sm ant-btn-icon-only basic-button-wrapper css-geipcv"
                               type="button"
                             >
                               <span
@@ -1316,10 +1311,10 @@ exports[`provision/DatabaseAccount/AccountDiscoveryModal render init snap 1`] = 
                             </button>
                           </div>
                           <div
-                            class="ant-table-wrapper actiontech-table-namespace css-18y1mv6 css-dev-only-do-not-override-bj9uhl"
+                            class="ant-table-wrapper actiontech-table-namespace css-18y1mv6"
                           >
                             <div
-                              class="ant-spin-nested-loading css-dev-only-do-not-override-bj9uhl"
+                              class="ant-spin-nested-loading"
                             >
                               <div
                                 class="ant-spin-container"
@@ -1350,10 +1345,10 @@ exports[`provision/DatabaseAccount/AccountDiscoveryModal render init snap 1`] = 
                                                 class="ant-table-selection"
                                               >
                                                 <label
-                                                  class="ant-checkbox-wrapper ant-checkbox-wrapper-disabled ant-checkbox-wrapper-in-form-item css-dev-only-do-not-override-bj9uhl"
+                                                  class="ant-checkbox-wrapper ant-checkbox-wrapper-disabled ant-checkbox-wrapper-in-form-item"
                                                 >
                                                   <span
-                                                    class="ant-checkbox css-dev-only-do-not-override-bj9uhl ant-checkbox-disabled"
+                                                    class="ant-checkbox ant-checkbox-disabled"
                                                   >
                                                     <input
                                                       aria-label="Select all"
@@ -1483,14 +1478,14 @@ exports[`provision/DatabaseAccount/AccountDiscoveryModal render init snap 1`] = 
               class="ant-drawer-footer"
             >
               <div
-                class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+                class="ant-space ant-space-horizontal ant-space-align-center"
               >
                 <div
                   class="ant-space-item"
                   style="margin-right: 8px;"
                 >
                   <button
-                    class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default basic-button-wrapper css-geipcv"
+                    class="ant-btn ant-btn-default basic-button-wrapper css-geipcv"
                     type="button"
                   >
                     <span>
@@ -1502,7 +1497,7 @@ exports[`provision/DatabaseAccount/AccountDiscoveryModal render init snap 1`] = 
                   class="ant-space-item"
                 >
                   <button
-                    class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary basic-button-wrapper css-geipcv"
+                    class="ant-btn ant-btn-primary basic-button-wrapper css-geipcv"
                     type="button"
                   >
                     <span>
@@ -1531,7 +1526,7 @@ exports[`provision/DatabaseAccount/AccountDiscoveryModal render sync account 1`]
   <div />
   <div>
     <div
-      class="ant-drawer ant-drawer-right css-dev-only-do-not-override-txh9fw"
+      class="ant-drawer ant-drawer-right"
       tabindex="-1"
     >
       <div
@@ -1574,34 +1569,36 @@ exports[`provision/DatabaseAccount/AccountDiscoveryModal render sync account 1`]
                 <span
                   aria-label="close"
                   class="anticon anticon-close"
+                  data-testid="basic-drawer-close-icon"
                   role="img"
                 >
                   <svg
                     aria-hidden="true"
                     data-icon="close"
                     fill="currentColor"
+                    fill-rule="evenodd"
                     focusable="false"
                     height="1em"
                     viewBox="64 64 896 896"
                     width="1em"
                   >
                     <path
-                      d="M563.8 512l262.5-312.9c4.4-5.2.7-13.1-6.1-13.1h-79.8c-4.7 0-9.2 2.1-12.3 5.7L511.6 449.8 295.1 191.7c-3-3.6-7.5-5.7-12.3-5.7H203c-6.8 0-10.5 7.9-6.1 13.1L459.4 512 196.9 824.9A7.95 7.95 0 00203 838h79.8c4.7 0 9.2-2.1 12.3-5.7l216.5-258.1 216.5 258.1c3 3.6 7.5 5.7 12.3 5.7h79.8c6.8 0 10.5-7.9 6.1-13.1L563.8 512z"
+                      d="M799.86 166.31c.02 0 .04.02.08.06l57.69 57.7c.04.03.05.05.06.08a.12.12 0 010 .06c0 .03-.02.05-.06.09L569.93 512l287.7 287.7c.04.04.05.06.06.09a.12.12 0 010 .07c0 .02-.02.04-.06.08l-57.7 57.69c-.03.04-.05.05-.07.06a.12.12 0 01-.07 0c-.03 0-.05-.02-.09-.06L512 569.93l-287.7 287.7c-.04.04-.06.05-.09.06a.12.12 0 01-.07 0c-.02 0-.04-.02-.08-.06l-57.69-57.7c-.04-.03-.05-.05-.06-.07a.12.12 0 010-.07c0-.03.02-.05.06-.09L454.07 512l-287.7-287.7c-.04-.04-.05-.06-.06-.09a.12.12 0 010-.07c0-.02.02-.04.06-.08l57.7-57.69c.03-.04.05-.05.07-.06a.12.12 0 01.07 0c.03 0 .05.02.09.06L512 454.07l287.7-287.7c.04-.04.06-.05.09-.06a.12.12 0 01.07 0z"
                     />
                   </svg>
                 </span>
               </div>
               <form
-                class="ant-form ant-form-vertical css-dev-only-do-not-override-txh9fw"
+                class="ant-form ant-form-vertical"
               >
                 <div
-                  class="ant-form-item css-dev-only-do-not-override-txh9fw"
+                  class="ant-form-item"
                 >
                   <div
-                    class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                    class="ant-row ant-form-item-row"
                   >
                     <div
-                      class="ant-col ant-form-item-label css-dev-only-do-not-override-txh9fw"
+                      class="ant-col ant-form-item-label"
                     >
                       <label
                         class="ant-form-item-required"
@@ -1612,7 +1609,7 @@ exports[`provision/DatabaseAccount/AccountDiscoveryModal render sync account 1`]
                       </label>
                     </div>
                     <div
-                      class="ant-col ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                      class="ant-col ant-form-item-control"
                     >
                       <div
                         class="ant-form-item-control-input"
@@ -1622,7 +1619,7 @@ exports[`provision/DatabaseAccount/AccountDiscoveryModal render sync account 1`]
                         >
                           <div
                             aria-required="true"
-                            class="ant-select ant-select-in-form-item basic-select-wrapper css-iy4o4x css-dev-only-do-not-override-v9sov3 ant-select-single ant-select-show-arrow"
+                            class="ant-select ant-select-in-form-item basic-select-wrapper css-iy4o4x ant-select-single ant-select-show-arrow"
                           >
                             <div
                               class="ant-select-selector"
@@ -1688,13 +1685,13 @@ exports[`provision/DatabaseAccount/AccountDiscoveryModal render sync account 1`]
                   </div>
                 </div>
                 <div
-                  class="ant-form-item css-dev-only-do-not-override-txh9fw"
+                  class="ant-form-item"
                 >
                   <div
-                    class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                    class="ant-row ant-form-item-row"
                   >
                     <div
-                      class="ant-col ant-form-item-label css-dev-only-do-not-override-txh9fw"
+                      class="ant-col ant-form-item-label"
                     >
                       <label
                         class="ant-form-item-required"
@@ -1705,7 +1702,7 @@ exports[`provision/DatabaseAccount/AccountDiscoveryModal render sync account 1`]
                       </label>
                     </div>
                     <div
-                      class="ant-col ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                      class="ant-col ant-form-item-control"
                     >
                       <div
                         class="ant-form-item-control-input"
@@ -1715,7 +1712,7 @@ exports[`provision/DatabaseAccount/AccountDiscoveryModal render sync account 1`]
                         >
                           <div
                             aria-required="true"
-                            class="ant-select ant-select-in-form-item basic-select-wrapper data-service-select css-iy4o4x css-dev-only-do-not-override-v9sov3 ant-select-single ant-select-show-arrow"
+                            class="ant-select ant-select-in-form-item basic-select-wrapper data-service-select css-iy4o4x ant-select-single ant-select-show-arrow"
                           >
                             <div
                               class="ant-select-selector"
@@ -1781,13 +1778,13 @@ exports[`provision/DatabaseAccount/AccountDiscoveryModal render sync account 1`]
                   </div>
                 </div>
                 <div
-                  class="ant-form-item css-dev-only-do-not-override-txh9fw"
+                  class="ant-form-item"
                 >
                   <div
-                    class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                    class="ant-row ant-form-item-row"
                   >
                     <div
-                      class="ant-col ant-form-item-label css-dev-only-do-not-override-txh9fw"
+                      class="ant-col ant-form-item-label"
                     >
                       <label
                         class="ant-form-item-required"
@@ -1795,7 +1792,7 @@ exports[`provision/DatabaseAccount/AccountDiscoveryModal render sync account 1`]
                         title=""
                       >
                         <div
-                          class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
+                          class="ant-space ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
                         >
                           <div
                             class="ant-space-item"
@@ -1833,7 +1830,7 @@ exports[`provision/DatabaseAccount/AccountDiscoveryModal render sync account 1`]
                       </label>
                     </div>
                     <div
-                      class="ant-col ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                      class="ant-col ant-form-item-control"
                     >
                       <div
                         class="ant-form-item-control-input"
@@ -1846,14 +1843,14 @@ exports[`provision/DatabaseAccount/AccountDiscoveryModal render sync account 1`]
                             hidden=""
                           >
                             <input
-                              class="ant-input ant-input-sm css-dev-only-do-not-override-ywkr0o basic-input-wrapper css-1pd1cd5"
+                              class="ant-input ant-input-sm basic-input-wrapper css-1pd1cd5"
                               placeholder="输入账号名进行搜索"
                               style="width: 300px;"
                               type="text"
                               value=""
                             />
                             <button
-                              class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default ant-btn-sm ant-btn-icon-only basic-button-wrapper css-geipcv"
+                              class="ant-btn ant-btn-default ant-btn-sm ant-btn-icon-only basic-button-wrapper css-geipcv"
                               type="button"
                             >
                               <span
@@ -1874,10 +1871,10 @@ exports[`provision/DatabaseAccount/AccountDiscoveryModal render sync account 1`]
                             </button>
                           </div>
                           <div
-                            class="ant-table-wrapper actiontech-table-namespace css-18y1mv6 css-dev-only-do-not-override-bj9uhl"
+                            class="ant-table-wrapper actiontech-table-namespace css-18y1mv6"
                           >
                             <div
-                              class="ant-spin-nested-loading css-dev-only-do-not-override-bj9uhl"
+                              class="ant-spin-nested-loading"
                             >
                               <div
                                 class="ant-spin-container"
@@ -1908,10 +1905,10 @@ exports[`provision/DatabaseAccount/AccountDiscoveryModal render sync account 1`]
                                                 class="ant-table-selection"
                                               >
                                                 <label
-                                                  class="ant-checkbox-wrapper ant-checkbox-wrapper-disabled ant-checkbox-wrapper-in-form-item css-dev-only-do-not-override-bj9uhl"
+                                                  class="ant-checkbox-wrapper ant-checkbox-wrapper-disabled ant-checkbox-wrapper-in-form-item"
                                                 >
                                                   <span
-                                                    class="ant-checkbox css-dev-only-do-not-override-bj9uhl ant-checkbox-disabled"
+                                                    class="ant-checkbox ant-checkbox-disabled"
                                                   >
                                                     <input
                                                       aria-label="Select all"
@@ -2041,14 +2038,14 @@ exports[`provision/DatabaseAccount/AccountDiscoveryModal render sync account 1`]
               class="ant-drawer-footer"
             >
               <div
-                class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+                class="ant-space ant-space-horizontal ant-space-align-center"
               >
                 <div
                   class="ant-space-item"
                   style="margin-right: 8px;"
                 >
                   <button
-                    class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default basic-button-wrapper css-geipcv"
+                    class="ant-btn ant-btn-default basic-button-wrapper css-geipcv"
                     type="button"
                   >
                     <span>
@@ -2060,7 +2057,7 @@ exports[`provision/DatabaseAccount/AccountDiscoveryModal render sync account 1`]
                   class="ant-space-item"
                 >
                   <button
-                    class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary basic-button-wrapper css-geipcv"
+                    class="ant-btn ant-btn-primary basic-button-wrapper css-geipcv"
                     type="button"
                   >
                     <span>
@@ -2082,11 +2079,11 @@ exports[`provision/DatabaseAccount/AccountDiscoveryModal render sync account 1`]
     </div>
   </div>
   <div
-    class="ant-message ant-message-top css-dev-only-do-not-override-txh9fw"
+    class="ant-message ant-message-top"
     style="left: 50%; transform: translateX(-50%); top: 8px;"
   >
     <div
-      class="ant-message-notice ant-message-notice-success css-dev-only-do-not-override-txh9fw"
+      class="ant-message-notice ant-message-notice-success"
     >
       <div
         class="ant-message-notice-content"

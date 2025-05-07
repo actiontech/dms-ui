@@ -29,7 +29,7 @@ exports[`sqle/VersionManagement/Create render create version 1`] = `
           href="/sqle/project/700300/version-management"
         >
           <button
-            class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default basic-button-wrapper css-geipcv"
+            class="ant-btn ant-btn-default basic-button-wrapper css-geipcv"
             type="button"
           >
             <span
@@ -57,7 +57,7 @@ exports[`sqle/VersionManagement/Create render create version 1`] = `
         class="extra"
       >
         <div
-          class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+          class="ant-space ant-space-horizontal ant-space-align-center"
           hidden=""
         >
           <div
@@ -65,7 +65,7 @@ exports[`sqle/VersionManagement/Create render create version 1`] = `
             style="margin-right: 8px;"
           >
             <button
-              class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default basic-button-wrapper css-geipcv"
+              class="ant-btn ant-btn-default basic-button-wrapper css-geipcv"
               type="button"
             >
               <span>
@@ -77,7 +77,7 @@ exports[`sqle/VersionManagement/Create render create version 1`] = `
             class="ant-space-item"
           >
             <button
-              class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary basic-button-wrapper css-geipcv"
+              class="ant-btn ant-btn-primary basic-button-wrapper css-geipcv"
               type="button"
             >
               <span>
@@ -92,7 +92,7 @@ exports[`sqle/VersionManagement/Create render create version 1`] = `
       class="basic-result-wrapper css-7vto1s"
     >
       <div
-        class="ant-result ant-result-info css-dev-only-do-not-override-txh9fw"
+        class="ant-result ant-result-info"
       >
         <div
           class="ant-result-icon"
@@ -498,7 +498,7 @@ exports[`sqle/VersionManagement/Create render create version 1`] = `
           class="ant-result-extra"
         >
           <button
-            class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary basic-button-wrapper css-geipcv"
+            class="ant-btn ant-btn-primary basic-button-wrapper css-geipcv"
             type="button"
           >
             <span>
@@ -509,7 +509,7 @@ exports[`sqle/VersionManagement/Create render create version 1`] = `
             href="/sqle/project/700300/version-management/detail/1"
           >
             <button
-              class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary basic-button-wrapper css-geipcv"
+              class="ant-btn ant-btn-primary basic-button-wrapper css-geipcv"
               type="button"
             >
               <span>
@@ -537,7 +537,7 @@ exports[`sqle/VersionManagement/Create render init snap shot 1`] = `
           href="/sqle/project/700300/version-management"
         >
           <button
-            class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default basic-button-wrapper css-geipcv"
+            class="ant-btn ant-btn-default basic-button-wrapper css-geipcv"
             type="button"
           >
             <span
@@ -565,14 +565,14 @@ exports[`sqle/VersionManagement/Create render init snap shot 1`] = `
         class="extra"
       >
         <div
-          class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+          class="ant-space ant-space-horizontal ant-space-align-center"
         >
           <div
             class="ant-space-item"
             style="margin-right: 8px;"
           >
             <button
-              class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default basic-button-wrapper css-geipcv"
+              class="ant-btn ant-btn-default basic-button-wrapper css-geipcv"
               type="button"
             >
               <span>
@@ -584,7 +584,7 @@ exports[`sqle/VersionManagement/Create render init snap shot 1`] = `
             class="ant-space-item"
           >
             <button
-              class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary basic-button-wrapper css-geipcv"
+              class="ant-btn ant-btn-primary basic-button-wrapper css-geipcv"
               type="button"
             >
               <span>
@@ -596,7 +596,7 @@ exports[`sqle/VersionManagement/Create render init snap shot 1`] = `
       </div>
     </div>
     <form
-      class="ant-form ant-form-horizontal css-dev-only-do-not-override-txh9fw hasTopHeader css-19jfn7e"
+      class="ant-form ant-form-horizontal hasTopHeader css-19jfn7e"
     >
       <section
         class="css-1114g56"
@@ -605,7 +605,7 @@ exports[`sqle/VersionManagement/Create render init snap shot 1`] = `
           class="css-1godb0r"
         >
           <h3
-            class="ant-typography css-p50odb css-dev-only-do-not-override-txh9fw"
+            class="ant-typography css-p50odb"
           >
             <svg
               class="title-icon"
@@ -622,18 +622,18 @@ exports[`sqle/VersionManagement/Create render init snap shot 1`] = `
             创建版本
           </h3>
           <h1
-            class="ant-typography css-1eepp70 css-dev-only-do-not-override-txh9fw"
+            class="ant-typography css-1eepp70"
           >
             版本基础信息
           </h1>
           <div
-            class="ant-form-item has-required-style has-label-tip css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+            class="ant-form-item has-required-style has-label-tip css-1jlm9cy"
           >
             <div
-              class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+              class="ant-row ant-form-item-row"
             >
               <div
-                class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left css-dev-only-do-not-override-txh9fw"
+                class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left"
               >
                 <label
                   class="ant-form-item-required ant-form-item-no-colon"
@@ -655,7 +655,7 @@ exports[`sqle/VersionManagement/Create render init snap shot 1`] = `
                 </label>
               </div>
               <div
-                class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control"
               >
                 <div
                   class="ant-form-item-control-input"
@@ -665,7 +665,7 @@ exports[`sqle/VersionManagement/Create render init snap shot 1`] = `
                   >
                     <input
                       aria-required="true"
-                      class="ant-input css-dev-only-do-not-override-ywkr0o basic-input-wrapper css-1pd1cd5"
+                      class="ant-input basic-input-wrapper css-1pd1cd5"
                       id="version"
                       placeholder="请输入{{name}}"
                       type="text"
@@ -677,13 +677,13 @@ exports[`sqle/VersionManagement/Create render init snap shot 1`] = `
             </div>
           </div>
           <div
-            class="ant-form-item has-label-tip css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+            class="ant-form-item has-label-tip css-1jlm9cy"
           >
             <div
-              class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+              class="ant-row ant-form-item-row"
             >
               <div
-                class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left css-dev-only-do-not-override-txh9fw"
+                class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left"
               >
                 <label
                   class="ant-form-item-no-colon"
@@ -705,7 +705,7 @@ exports[`sqle/VersionManagement/Create render init snap shot 1`] = `
                 </label>
               </div>
               <div
-                class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control"
               >
                 <div
                   class="ant-form-item-control-input"
@@ -714,7 +714,7 @@ exports[`sqle/VersionManagement/Create render init snap shot 1`] = `
                     class="ant-form-item-control-input-content"
                   >
                     <textarea
-                      class="ant-input css-dev-only-do-not-override-txh9fw basic-input-wrapper css-1pd1cd5"
+                      class="ant-input basic-input-wrapper css-1pd1cd5"
                       id="desc"
                       placeholder="请输入{{name}}"
                       style="resize: none; height: 2px; min-height: -30px;"
@@ -728,26 +728,26 @@ exports[`sqle/VersionManagement/Create render init snap shot 1`] = `
             class="css-ldche2"
           >
             <h1
-              class="ant-typography css-1eepp70 css-dev-only-do-not-override-txh9fw"
+              class="ant-typography css-1eepp70"
             >
               部署阶段配置
             </h1>
             <div
-              class="ant-row css-dev-only-do-not-override-txh9fw"
+              class="ant-row"
               style="margin-left: -3px; margin-right: -3px;"
             >
               <div
-                class="ant-col ant-col-1 css-dev-only-do-not-override-txh9fw"
+                class="ant-col ant-col-1"
                 style="padding-left: 3px; padding-right: 3px;"
               >
                 <div
-                  class="ant-form-item css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+                  class="ant-form-item css-1jlm9cy"
                 >
                   <div
-                    class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                    class="ant-row ant-form-item-row"
                   >
                     <div
-                      class="ant-col ant-col-24 ant-form-item-label ant-form-item-label-left css-dev-only-do-not-override-txh9fw"
+                      class="ant-col ant-col-24 ant-form-item-label ant-form-item-label-left"
                     >
                       <label
                         class="ant-form-item-no-colon"
@@ -757,7 +757,7 @@ exports[`sqle/VersionManagement/Create render init snap shot 1`] = `
                       </label>
                     </div>
                     <div
-                      class="ant-col ant-col-24 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                      class="ant-col ant-col-24 ant-form-item-control"
                     >
                       <div
                         class="ant-form-item-control-input"
@@ -766,7 +766,7 @@ exports[`sqle/VersionManagement/Create render init snap shot 1`] = `
                           class="ant-form-item-control-input-content"
                         >
                           <button
-                            class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default ant-btn-icon-only delete-stage-btn basic-button-wrapper css-geipcv"
+                            class="ant-btn ant-btn-default ant-btn-icon-only delete-stage-btn basic-button-wrapper css-geipcv"
                             type="button"
                           >
                             <span
@@ -792,17 +792,17 @@ exports[`sqle/VersionManagement/Create render init snap shot 1`] = `
                 </div>
               </div>
               <div
-                class="ant-col ant-col-3 css-dev-only-do-not-override-txh9fw"
+                class="ant-col ant-col-3"
                 style="padding-left: 3px; padding-right: 3px;"
               >
                 <div
-                  class="ant-form-item has-required-style css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+                  class="ant-form-item has-required-style css-1jlm9cy"
                 >
                   <div
-                    class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                    class="ant-row ant-form-item-row"
                   >
                     <div
-                      class="ant-col ant-col-24 ant-form-item-label ant-form-item-label-left css-dev-only-do-not-override-txh9fw"
+                      class="ant-col ant-col-24 ant-form-item-label ant-form-item-label-left"
                     >
                       <label
                         class="ant-form-item-required ant-form-item-no-colon"
@@ -813,7 +813,7 @@ exports[`sqle/VersionManagement/Create render init snap shot 1`] = `
                       </label>
                     </div>
                     <div
-                      class="ant-col ant-col-24 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                      class="ant-col ant-col-24 ant-form-item-control"
                     >
                       <div
                         class="ant-form-item-control-input"
@@ -823,7 +823,7 @@ exports[`sqle/VersionManagement/Create render init snap shot 1`] = `
                         >
                           <input
                             aria-required="true"
-                            class="ant-input css-dev-only-do-not-override-ywkr0o basic-input-wrapper css-1pd1cd5"
+                            class="ant-input basic-input-wrapper css-1pd1cd5"
                             id="stages_0_name"
                             placeholder="请输入{{name}}"
                             type="text"
@@ -870,25 +870,25 @@ exports[`sqle/VersionManagement/Create render init snap shot 1`] = `
                 </div>
               </div>
               <div
-                class="ant-col ant-col-20 css-dev-only-do-not-override-txh9fw"
+                class="ant-col ant-col-20"
                 style="padding-left: 3px; padding-right: 3px;"
               >
                 <div
-                  class="ant-row ant-row-no-wrap css-dev-only-do-not-override-txh9fw"
+                  class="ant-row ant-row-no-wrap"
                   style="margin-left: -3px; margin-right: -3px;"
                 >
                   <div
-                    class="ant-col ant-col-8 instance-col css-dev-only-do-not-override-txh9fw"
+                    class="ant-col ant-col-8 instance-col"
                     style="padding-left: 3px; padding-right: 3px;"
                   >
                     <div
-                      class="ant-form-item has-required-style css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+                      class="ant-form-item has-required-style css-1jlm9cy"
                     >
                       <div
-                        class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                        class="ant-row ant-form-item-row"
                       >
                         <div
-                          class="ant-col ant-col-24 ant-form-item-label ant-form-item-label-left css-dev-only-do-not-override-txh9fw"
+                          class="ant-col ant-col-24 ant-form-item-label ant-form-item-label-left"
                         >
                           <label
                             class="ant-form-item-required ant-form-item-no-colon"
@@ -899,7 +899,7 @@ exports[`sqle/VersionManagement/Create render init snap shot 1`] = `
                           </label>
                         </div>
                         <div
-                          class="ant-col ant-col-24 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                          class="ant-col ant-col-24 ant-form-item-control"
                         >
                           <div
                             class="ant-form-item-control-input"
@@ -909,7 +909,7 @@ exports[`sqle/VersionManagement/Create render init snap shot 1`] = `
                             >
                               <div
                                 aria-required="true"
-                                class="ant-select ant-select-in-form-item basic-select-wrapper css-iy4o4x css-dev-only-do-not-override-v9sov3 ant-select-single ant-select-show-arrow ant-select-loading"
+                                class="ant-select ant-select-in-form-item basic-select-wrapper css-iy4o4x ant-select-single ant-select-show-arrow ant-select-loading"
                               >
                                 <div
                                   class="ant-select-selector"
@@ -1010,17 +1010,17 @@ exports[`sqle/VersionManagement/Create render init snap shot 1`] = `
                     </div>
                   </div>
                   <div
-                    class="ant-col css-dev-only-do-not-override-txh9fw"
+                    class="ant-col"
                     style="padding-left: 3px; padding-right: 3px;"
                   >
                     <div
-                      class="ant-form-item css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+                      class="ant-form-item css-1jlm9cy"
                     >
                       <div
-                        class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                        class="ant-row ant-form-item-row"
                       >
                         <div
-                          class="ant-col ant-col-24 ant-form-item-label ant-form-item-label-left css-dev-only-do-not-override-txh9fw"
+                          class="ant-col ant-col-24 ant-form-item-label ant-form-item-label-left"
                         >
                           <label
                             class="ant-form-item-no-colon"
@@ -1030,7 +1030,7 @@ exports[`sqle/VersionManagement/Create render init snap shot 1`] = `
                           </label>
                         </div>
                         <div
-                          class="ant-col ant-col-24 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                          class="ant-col ant-col-24 ant-form-item-control"
                         >
                           <div
                             class="ant-form-item-control-input"
@@ -1039,7 +1039,7 @@ exports[`sqle/VersionManagement/Create render init snap shot 1`] = `
                               class="ant-form-item-control-input-content"
                             >
                               <button
-                                class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default ant-btn-icon-only add-instance-btn basic-button-wrapper css-geipcv"
+                                class="ant-btn ant-btn-default ant-btn-icon-only add-instance-btn basic-button-wrapper css-geipcv"
                                 type="button"
                               >
                                 <span
@@ -1068,21 +1068,21 @@ exports[`sqle/VersionManagement/Create render init snap shot 1`] = `
               </div>
             </div>
             <div
-              class="ant-row css-dev-only-do-not-override-txh9fw"
+              class="ant-row"
               style="margin-left: -3px; margin-right: -3px;"
             >
               <div
-                class="ant-col ant-col-1 css-dev-only-do-not-override-txh9fw"
+                class="ant-col ant-col-1"
                 style="padding-left: 3px; padding-right: 3px;"
               >
                 <div
-                  class="ant-form-item css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+                  class="ant-form-item css-1jlm9cy"
                 >
                   <div
-                    class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                    class="ant-row ant-form-item-row"
                   >
                     <div
-                      class="ant-col ant-col-24 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                      class="ant-col ant-col-24 ant-form-item-control"
                     >
                       <div
                         class="ant-form-item-control-input"
@@ -1091,7 +1091,7 @@ exports[`sqle/VersionManagement/Create render init snap shot 1`] = `
                           class="ant-form-item-control-input-content"
                         >
                           <button
-                            class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default ant-btn-icon-only delete-stage-btn basic-button-wrapper css-geipcv"
+                            class="ant-btn ant-btn-default ant-btn-icon-only delete-stage-btn basic-button-wrapper css-geipcv"
                             type="button"
                           >
                             <span
@@ -1117,17 +1117,17 @@ exports[`sqle/VersionManagement/Create render init snap shot 1`] = `
                 </div>
               </div>
               <div
-                class="ant-col ant-col-3 css-dev-only-do-not-override-txh9fw"
+                class="ant-col ant-col-3"
                 style="padding-left: 3px; padding-right: 3px;"
               >
                 <div
-                  class="ant-form-item has-required-style css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+                  class="ant-form-item has-required-style css-1jlm9cy"
                 >
                   <div
-                    class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                    class="ant-row ant-form-item-row"
                   >
                     <div
-                      class="ant-col ant-col-24 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                      class="ant-col ant-col-24 ant-form-item-control"
                     >
                       <div
                         class="ant-form-item-control-input"
@@ -1137,7 +1137,7 @@ exports[`sqle/VersionManagement/Create render init snap shot 1`] = `
                         >
                           <input
                             aria-required="true"
-                            class="ant-input css-dev-only-do-not-override-ywkr0o basic-input-wrapper css-1pd1cd5"
+                            class="ant-input basic-input-wrapper css-1pd1cd5"
                             id="stages_1_name"
                             placeholder="请输入{{name}}"
                             type="text"
@@ -1184,25 +1184,25 @@ exports[`sqle/VersionManagement/Create render init snap shot 1`] = `
                 </div>
               </div>
               <div
-                class="ant-col ant-col-20 css-dev-only-do-not-override-txh9fw"
+                class="ant-col ant-col-20"
                 style="padding-left: 3px; padding-right: 3px;"
               >
                 <div
-                  class="ant-row ant-row-no-wrap css-dev-only-do-not-override-txh9fw"
+                  class="ant-row ant-row-no-wrap"
                   style="margin-left: -3px; margin-right: -3px;"
                 >
                   <div
-                    class="ant-col ant-col-8 instance-col css-dev-only-do-not-override-txh9fw"
+                    class="ant-col ant-col-8 instance-col"
                     style="padding-left: 3px; padding-right: 3px;"
                   >
                     <div
-                      class="ant-form-item has-required-style css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+                      class="ant-form-item has-required-style css-1jlm9cy"
                     >
                       <div
-                        class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                        class="ant-row ant-form-item-row"
                       >
                         <div
-                          class="ant-col ant-col-24 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                          class="ant-col ant-col-24 ant-form-item-control"
                         >
                           <div
                             class="ant-form-item-control-input"
@@ -1212,7 +1212,7 @@ exports[`sqle/VersionManagement/Create render init snap shot 1`] = `
                             >
                               <div
                                 aria-required="true"
-                                class="ant-select ant-select-in-form-item basic-select-wrapper css-iy4o4x css-dev-only-do-not-override-v9sov3 ant-select-single ant-select-show-arrow ant-select-loading"
+                                class="ant-select ant-select-in-form-item basic-select-wrapper css-iy4o4x ant-select-single ant-select-show-arrow ant-select-loading"
                               >
                                 <div
                                   class="ant-select-selector"
@@ -1316,21 +1316,21 @@ exports[`sqle/VersionManagement/Create render init snap shot 1`] = `
               </div>
             </div>
             <div
-              class="ant-row css-dev-only-do-not-override-txh9fw"
+              class="ant-row"
               style="margin-left: -3px; margin-right: -3px;"
             >
               <div
-                class="ant-col ant-col-1 css-dev-only-do-not-override-txh9fw"
+                class="ant-col ant-col-1"
                 style="padding-left: 3px; padding-right: 3px;"
               >
                 <div
-                  class="ant-form-item css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+                  class="ant-form-item css-1jlm9cy"
                 >
                   <div
-                    class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                    class="ant-row ant-form-item-row"
                   >
                     <div
-                      class="ant-col ant-col-24 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                      class="ant-col ant-col-24 ant-form-item-control"
                     >
                       <div
                         class="ant-form-item-control-input"
@@ -1339,7 +1339,7 @@ exports[`sqle/VersionManagement/Create render init snap shot 1`] = `
                           class="ant-form-item-control-input-content"
                         >
                           <button
-                            class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default ant-btn-icon-only delete-stage-btn basic-button-wrapper css-geipcv"
+                            class="ant-btn ant-btn-default ant-btn-icon-only delete-stage-btn basic-button-wrapper css-geipcv"
                             type="button"
                           >
                             <span
@@ -1365,17 +1365,17 @@ exports[`sqle/VersionManagement/Create render init snap shot 1`] = `
                 </div>
               </div>
               <div
-                class="ant-col ant-col-3 css-dev-only-do-not-override-txh9fw"
+                class="ant-col ant-col-3"
                 style="padding-left: 3px; padding-right: 3px;"
               >
                 <div
-                  class="ant-form-item has-required-style css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+                  class="ant-form-item has-required-style css-1jlm9cy"
                 >
                   <div
-                    class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                    class="ant-row ant-form-item-row"
                   >
                     <div
-                      class="ant-col ant-col-24 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                      class="ant-col ant-col-24 ant-form-item-control"
                     >
                       <div
                         class="ant-form-item-control-input"
@@ -1385,7 +1385,7 @@ exports[`sqle/VersionManagement/Create render init snap shot 1`] = `
                         >
                           <input
                             aria-required="true"
-                            class="ant-input css-dev-only-do-not-override-ywkr0o basic-input-wrapper css-1pd1cd5"
+                            class="ant-input basic-input-wrapper css-1pd1cd5"
                             id="stages_2_name"
                             placeholder="请输入{{name}}"
                             type="text"
@@ -1398,25 +1398,25 @@ exports[`sqle/VersionManagement/Create render init snap shot 1`] = `
                 </div>
               </div>
               <div
-                class="ant-col ant-col-20 css-dev-only-do-not-override-txh9fw"
+                class="ant-col ant-col-20"
                 style="padding-left: 3px; padding-right: 3px;"
               >
                 <div
-                  class="ant-row ant-row-no-wrap css-dev-only-do-not-override-txh9fw"
+                  class="ant-row ant-row-no-wrap"
                   style="margin-left: -3px; margin-right: -3px;"
                 >
                   <div
-                    class="ant-col ant-col-8 instance-col css-dev-only-do-not-override-txh9fw"
+                    class="ant-col ant-col-8 instance-col"
                     style="padding-left: 3px; padding-right: 3px;"
                   >
                     <div
-                      class="ant-form-item has-required-style css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+                      class="ant-form-item has-required-style css-1jlm9cy"
                     >
                       <div
-                        class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                        class="ant-row ant-form-item-row"
                       >
                         <div
-                          class="ant-col ant-col-24 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                          class="ant-col ant-col-24 ant-form-item-control"
                         >
                           <div
                             class="ant-form-item-control-input"
@@ -1426,7 +1426,7 @@ exports[`sqle/VersionManagement/Create render init snap shot 1`] = `
                             >
                               <div
                                 aria-required="true"
-                                class="ant-select ant-select-in-form-item basic-select-wrapper css-iy4o4x css-dev-only-do-not-override-v9sov3 ant-select-single ant-select-show-arrow ant-select-loading"
+                                class="ant-select ant-select-in-form-item basic-select-wrapper css-iy4o4x ant-select-single ant-select-show-arrow ant-select-loading"
                               >
                                 <div
                                   class="ant-select-selector"
@@ -1496,13 +1496,13 @@ exports[`sqle/VersionManagement/Create render init snap shot 1`] = `
               </div>
             </div>
             <div
-              class="ant-row css-dev-only-do-not-override-txh9fw"
+              class="ant-row"
             >
               <div
-                class="ant-col ant-col-3 css-dev-only-do-not-override-txh9fw"
+                class="ant-col ant-col-3"
               >
                 <button
-                  class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default add-stage-btn basic-button-wrapper css-1719g3l"
+                  class="ant-btn ant-btn-default add-stage-btn basic-button-wrapper css-1719g3l"
                   type="button"
                 >
                   <span

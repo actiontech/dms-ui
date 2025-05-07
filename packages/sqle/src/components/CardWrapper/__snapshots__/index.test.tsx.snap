@@ -4,7 +4,7 @@ exports[`sqle/components/CardWrapper render snap when click more link 1`] = `
 <body>
   <div>
     <div
-      class="ant-card ant-card-hoverable css-121p60i css-dev-only-do-not-override-txh9fw"
+      class="ant-card ant-card-hoverable css-121p60i"
     >
       <div
         class="ant-card-body"
@@ -75,7 +75,7 @@ exports[`sqle/components/CardWrapper render snap when click more link 1`] = `
   </div>
   <div>
     <div
-      class="ant-tooltip ant-zoom-big-fast-appear ant-zoom-big-fast-appear-prepare ant-zoom-big-fast css-dev-only-do-not-override-txh9fw ant-tooltip-placement-top"
+      class="ant-tooltip ant-zoom-big-fast-appear ant-zoom-big-fast-appear-prepare ant-zoom-big-fast ant-tooltip-placement-top"
       style="--arrow-x: 0px; --arrow-y: 0px; left: -1000vw; top: -1000vh; box-sizing: border-box;"
     >
       <div
@@ -101,13 +101,13 @@ exports[`sqle/components/CardWrapper render snap when enabledLoading is true 1`]
 <body>
   <div>
     <div
-      class="ant-card ant-card-loading ant-card-hoverable css-121p60i css-dev-only-do-not-override-txh9fw"
+      class="ant-card ant-card-loading ant-card-hoverable css-121p60i"
     >
       <div
         class="ant-card-body"
       >
         <div
-          class="ant-skeleton ant-skeleton-active css-dev-only-do-not-override-txh9fw"
+          class="ant-skeleton ant-skeleton-active"
         >
           <div
             class="ant-skeleton-content"

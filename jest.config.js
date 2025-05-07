@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-var-requires */
 process.env.TZ = 'Asia/Shanghai';
 
 const path = require('path');

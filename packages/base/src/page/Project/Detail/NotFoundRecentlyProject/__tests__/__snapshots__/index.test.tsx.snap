@@ -5,7 +5,7 @@ exports[`test base/page/project/detail/notFoundRecentlyProject should execute "n
   <div />
   <div>
     <div
-      class="ant-modal-root css-dev-only-do-not-override-txh9fw"
+      class="ant-modal-root"
     >
       <div
         class="ant-modal-wrap"
@@ -15,7 +15,7 @@ exports[`test base/page/project/detail/notFoundRecentlyProject should execute "n
         <div
           aria-labelledby="test-id"
           aria-modal="true"
-          class="ant-modal css-dev-only-do-not-override-txh9fw basic-modal-wrapper css-vvpsbb"
+          class="ant-modal basic-modal-wrapper css-vvpsbb"
           role="dialog"
           style="width: 480px; display: none;"
         >
@@ -70,7 +70,7 @@ exports[`test base/page/project/detail/notFoundRecentlyProject should execute "n
                    暂无最近打开的项目, 请选择一个项目!
                 </span>
                 <div
-                  class="ant-select ant-select-lg ant-select-borderless basic-select-wrapper custom-select-namespace custom-project-selector css-wk9fc9 css-dev-only-do-not-override-v9sov3 ant-select-single ant-select-show-arrow"
+                  class="ant-select ant-select-lg ant-select-borderless basic-select-wrapper custom-select-namespace custom-project-selector css-wk9fc9 ant-select-single ant-select-show-arrow"
                   searchinputref="[object Object]"
                 >
                   <div
@@ -128,14 +128,14 @@ exports[`test base/page/project/detail/notFoundRecentlyProject should execute "n
               class="ant-modal-footer"
             >
               <div
-                class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+                class="ant-space ant-space-horizontal ant-space-align-center"
               >
                 <div
                   class="ant-space-item"
                   style="margin-right: 8px;"
                 >
                   <button
-                    class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default basic-button-wrapper css-geipcv"
+                    class="ant-btn ant-btn-default basic-button-wrapper css-geipcv"
                     type="button"
                   >
                     <span>
@@ -147,7 +147,7 @@ exports[`test base/page/project/detail/notFoundRecentlyProject should execute "n
                   class="ant-space-item"
                 >
                   <button
-                    class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary basic-button-wrapper css-geipcv"
+                    class="ant-btn ant-btn-primary basic-button-wrapper css-geipcv"
                     disabled=""
                     type="button"
                   >
@@ -176,7 +176,7 @@ exports[`test base/page/project/detail/notFoundRecentlyProject should match snap
   <div />
   <div>
     <div
-      class="ant-modal-root css-dev-only-do-not-override-txh9fw"
+      class="ant-modal-root"
     >
       <div
         class="ant-modal-mask"
@@ -188,7 +188,7 @@ exports[`test base/page/project/detail/notFoundRecentlyProject should match snap
         <div
           aria-labelledby="test-id"
           aria-modal="true"
-          class="ant-modal css-dev-only-do-not-override-txh9fw basic-modal-wrapper css-vvpsbb ant-zoom-appear ant-zoom-appear-prepare ant-zoom"
+          class="ant-modal basic-modal-wrapper css-vvpsbb ant-zoom-appear ant-zoom-appear-prepare ant-zoom"
           role="dialog"
           style="width: 480px;"
         >
@@ -243,7 +243,7 @@ exports[`test base/page/project/detail/notFoundRecentlyProject should match snap
                    暂无最近打开的项目, 请选择一个项目!
                 </span>
                 <div
-                  class="ant-select ant-select-lg ant-select-borderless basic-select-wrapper custom-select-namespace custom-project-selector css-wk9fc9 css-dev-only-do-not-override-v9sov3 ant-select-single ant-select-show-arrow"
+                  class="ant-select ant-select-lg ant-select-borderless basic-select-wrapper custom-select-namespace custom-project-selector css-wk9fc9 ant-select-single ant-select-show-arrow"
                   searchinputref="[object Object]"
                 >
                   <div
@@ -301,14 +301,14 @@ exports[`test base/page/project/detail/notFoundRecentlyProject should match snap
               class="ant-modal-footer"
             >
               <div
-                class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+                class="ant-space ant-space-horizontal ant-space-align-center"
               >
                 <div
                   class="ant-space-item"
                   style="margin-right: 8px;"
                 >
                   <button
-                    class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default basic-button-wrapper css-geipcv"
+                    class="ant-btn ant-btn-default basic-button-wrapper css-geipcv"
                     type="button"
                   >
                     <span>
@@ -320,7 +320,7 @@ exports[`test base/page/project/detail/notFoundRecentlyProject should match snap
                   class="ant-space-item"
                 >
                   <button
-                    class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary basic-button-wrapper css-geipcv"
+                    class="ant-btn ant-btn-primary basic-button-wrapper css-geipcv"
                     disabled=""
                     type="button"
                   >
@@ -349,7 +349,7 @@ exports[`test base/page/project/detail/notFoundRecentlyProject should match snap
   <div />
   <div>
     <div
-      class="ant-modal-root css-dev-only-do-not-override-txh9fw"
+      class="ant-modal-root"
     >
       <div
         class="ant-modal-mask"
@@ -361,7 +361,7 @@ exports[`test base/page/project/detail/notFoundRecentlyProject should match snap
         <div
           aria-labelledby="test-id"
           aria-modal="true"
-          class="ant-modal css-dev-only-do-not-override-txh9fw basic-modal-wrapper css-vvpsbb ant-zoom-appear ant-zoom-appear-prepare ant-zoom"
+          class="ant-modal basic-modal-wrapper css-vvpsbb ant-zoom-appear ant-zoom-appear-prepare ant-zoom"
           role="dialog"
           style="width: 480px;"
         >
@@ -416,7 +416,7 @@ exports[`test base/page/project/detail/notFoundRecentlyProject should match snap
                    暂无最近打开的项目, 请选择一个项目!
                 </span>
                 <div
-                  class="ant-select ant-select-lg ant-select-borderless basic-select-wrapper custom-select-namespace custom-project-selector css-wk9fc9 css-dev-only-do-not-override-v9sov3 ant-select-single ant-select-show-arrow"
+                  class="ant-select ant-select-lg ant-select-borderless basic-select-wrapper custom-select-namespace custom-project-selector css-wk9fc9 ant-select-single ant-select-show-arrow"
                   searchinputref="[object Object]"
                 >
                   <div
@@ -474,14 +474,14 @@ exports[`test base/page/project/detail/notFoundRecentlyProject should match snap
               class="ant-modal-footer"
             >
               <div
-                class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+                class="ant-space ant-space-horizontal ant-space-align-center"
               >
                 <div
                   class="ant-space-item"
                   style="margin-right: 8px;"
                 >
                   <button
-                    class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default basic-button-wrapper css-geipcv"
+                    class="ant-btn ant-btn-default basic-button-wrapper css-geipcv"
                     type="button"
                   >
                     <span>
@@ -493,7 +493,7 @@ exports[`test base/page/project/detail/notFoundRecentlyProject should match snap
                   class="ant-space-item"
                 >
                   <button
-                    class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary basic-button-wrapper css-geipcv"
+                    class="ant-btn ant-btn-primary basic-button-wrapper css-geipcv"
                     disabled=""
                     type="button"
                   >

@@ -1,19 +1,21 @@
-import { renderWithTheme } from '../../../testUtil/customRender';
+import { screen } from '@testing-library/dom';
+import { superRender } from '../../../testUtil/customRender';
 
 import CustomOptionLabel, { ICustomOptionLabel } from '../CustomOptionLabel';
 
 describe('lib/CustomOptionLabel', () => {
   const customRender = (params: ICustomOptionLabel) => {
-    return renderWithTheme(<CustomOptionLabel {...params} />);
+    return superRender(<CustomOptionLabel {...params} />);
   };
 
   it('render ui when has prefix', () => {
-    const { container } = customRender({
+    customRender({
       prefix: 'prefix string',
       label: 'label string'
     });
 
-    expect(container).toMatchSnapshot();
+    expect(screen.getByText('prefix string')).toBeInTheDocument();
+    expect(screen.getByText('label string')).toBeInTheDocument();
   });
 
   it('render ui when no prefix', () => {

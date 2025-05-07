@@ -11,7 +11,7 @@ exports[`page/DataMaskRuleOverview render empty overview list 1`] = `
           class="title"
         >
           <div
-            class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+            class="ant-space ant-space-horizontal ant-space-align-center"
           >
             <div
               class="ant-space-item"
@@ -23,7 +23,7 @@ exports[`page/DataMaskRuleOverview render empty overview list 1`] = `
               class="ant-space-item"
             >
               <button
-                class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default ant-btn-sm ant-btn-icon-only basic-button-wrapper css-geipcv"
+                class="ant-btn ant-btn-default ant-btn-sm ant-btn-icon-only basic-button-wrapper css-geipcv"
                 type="button"
               >
                 <span
@@ -50,10 +50,10 @@ exports[`page/DataMaskRuleOverview render empty overview list 1`] = `
         />
       </div>
       <div
-        class="ant-table-wrapper actiontech-table-namespace css-fxd6ka css-dev-only-do-not-override-bj9uhl"
+        class="ant-table-wrapper actiontech-table-namespace css-fxd6ka"
       >
         <div
-          class="ant-spin-nested-loading css-dev-only-do-not-override-bj9uhl"
+          class="ant-spin-nested-loading"
         >
           <div
             class="ant-spin-container"
@@ -108,7 +108,7 @@ exports[`page/DataMaskRuleOverview render empty overview list 1`] = `
                           scope="col"
                         >
                           <div
-                            class="ant-space css-dev-only-do-not-override-bj9uhl ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
+                            class="ant-space ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
                           >
                             <div
                               class="ant-space-item"
@@ -243,7 +243,7 @@ exports[`page/DataMaskRuleOverview render overview list snap 1`] = `
           class="title"
         >
           <div
-            class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+            class="ant-space ant-space-horizontal ant-space-align-center"
           >
             <div
               class="ant-space-item"
@@ -255,7 +255,7 @@ exports[`page/DataMaskRuleOverview render overview list snap 1`] = `
               class="ant-space-item"
             >
               <button
-                class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default ant-btn-sm ant-btn-icon-only basic-button-wrapper css-geipcv"
+                class="ant-btn ant-btn-default ant-btn-sm ant-btn-icon-only basic-button-wrapper css-geipcv"
                 type="button"
               >
                 <span
@@ -282,10 +282,10 @@ exports[`page/DataMaskRuleOverview render overview list snap 1`] = `
         />
       </div>
       <div
-        class="ant-table-wrapper actiontech-table-namespace css-fxd6ka css-dev-only-do-not-override-bj9uhl"
+        class="ant-table-wrapper actiontech-table-namespace css-fxd6ka"
       >
         <div
-          class="ant-spin-nested-loading css-dev-only-do-not-override-bj9uhl"
+          class="ant-spin-nested-loading"
         >
           <div
             class="ant-spin-container"
@@ -340,7 +340,7 @@ exports[`page/DataMaskRuleOverview render overview list snap 1`] = `
                           scope="col"
                         >
                           <div
-                            class="ant-space css-dev-only-do-not-override-bj9uhl ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
+                            class="ant-space ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
                           >
                             <div
                               class="ant-space-item"
@@ -461,14 +461,14 @@ exports[`page/DataMaskRuleOverview render overview list snap 1`] = `
                           class="ant-table-cell"
                         >
                           <div
-                            class="ant-space css-dev-only-do-not-override-bj9uhl ant-space-horizontal ant-space-align-center"
+                            class="ant-space ant-space-horizontal ant-space-align-center"
                           >
                             <div
                               class="ant-space-item"
                               style="margin-right: 8px;"
                             >
                               <span
-                                class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-1mjwlcb css-dev-only-do-not-override-bj9uhl"
+                                class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-1mjwlcb"
                                 style="margin-right: 0px;"
                               >
                                 电话
@@ -508,14 +508,14 @@ exports[`page/DataMaskRuleOverview render overview list snap 1`] = `
                           class="ant-table-cell"
                         >
                           <div
-                            class="ant-space css-dev-only-do-not-override-bj9uhl ant-space-horizontal ant-space-align-center"
+                            class="ant-space ant-space-horizontal ant-space-align-center"
                           >
                             <div
                               class="ant-space-item"
                               style="margin-right: 8px;"
                             >
                               <span
-                                class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-1mjwlcb css-dev-only-do-not-override-bj9uhl"
+                                class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-1mjwlcb"
                                 style="margin-right: 0px;"
                               >
                                 passport
@@ -551,13 +551,13 @@ exports[`page/DataMaskRuleOverview render overview list snap 1`] = `
                           class="ant-table-cell"
                         >
                           <div
-                            class="ant-space css-dev-only-do-not-override-bj9uhl ant-space-horizontal ant-space-align-center"
+                            class="ant-space ant-space-horizontal ant-space-align-center"
                           >
                             <div
                               class="ant-space-item"
                             >
                               <span
-                                class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-1mjwlcb css-dev-only-do-not-override-bj9uhl"
+                                class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-1mjwlcb"
                                 style="margin-right: 0px;"
                               >
                                 SSN
@@ -603,7 +603,7 @@ exports[`page/DataMaskRuleOverview render overview list snap 1`] = `
               </div>
             </div>
             <ul
-              class="ant-pagination ant-table-pagination ant-table-pagination-right actiontech-table-pagination actiontech-table-pagination-fixed css-dev-only-do-not-override-bj9uhl"
+              class="ant-pagination ant-table-pagination ant-table-pagination-right actiontech-table-pagination actiontech-table-pagination-fixed"
             >
               <li
                 class="ant-pagination-total-text"
@@ -615,7 +615,7 @@ exports[`page/DataMaskRuleOverview render overview list snap 1`] = `
               <li
                 aria-disabled="true"
                 class="ant-pagination-prev ant-pagination-disabled"
-                title="Previous Page"
+                title="上一页"
               >
                 <button
                   class="ant-pagination-item-link"
@@ -658,7 +658,7 @@ exports[`page/DataMaskRuleOverview render overview list snap 1`] = `
               <li
                 aria-disabled="true"
                 class="ant-pagination-next ant-pagination-disabled"
-                title="Next Page"
+                title="下一页"
               >
                 <button
                   class="ant-pagination-item-link"
@@ -691,8 +691,8 @@ exports[`page/DataMaskRuleOverview render overview list snap 1`] = `
                 class="ant-pagination-options"
               >
                 <div
-                  aria-label="Page Size"
-                  class="ant-select ant-pagination-options-size-changer css-dev-only-do-not-override-bj9uhl ant-select-single ant-select-show-arrow ant-select-show-search"
+                  aria-label="页码"
+                  class="ant-select ant-pagination-options-size-changer ant-select-single ant-select-show-arrow ant-select-show-search"
                 >
                   <div
                     class="ant-select-selector"
@@ -706,7 +706,7 @@ exports[`page/DataMaskRuleOverview render overview list snap 1`] = `
                         aria-controls="rc_select_TEST_OR_SSR_list"
                         aria-expanded="false"
                         aria-haspopup="listbox"
-                        aria-label="Page Size"
+                        aria-label="页码"
                         aria-owns="rc_select_TEST_OR_SSR_list"
                         autocomplete="off"
                         class="ant-select-selection-search-input"
@@ -718,9 +718,9 @@ exports[`page/DataMaskRuleOverview render overview list snap 1`] = `
                     </span>
                     <span
                       class="ant-select-selection-item"
-                      title="20 / page"
+                      title="20 条/页"
                     >
-                      20 / page
+                      20 条/页
                     </span>
                   </div>
                   <span

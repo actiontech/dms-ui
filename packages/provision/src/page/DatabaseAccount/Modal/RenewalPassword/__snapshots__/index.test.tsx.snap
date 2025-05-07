@@ -5,7 +5,7 @@ exports[`provision/DatabaseAccount/RenewalPasswordModal render init snap 1`] = `
   <div />
   <div>
     <div
-      class="ant-modal-root css-dev-only-do-not-override-txh9fw"
+      class="ant-modal-root"
     >
       <div
         class="ant-modal-mask"
@@ -17,7 +17,7 @@ exports[`provision/DatabaseAccount/RenewalPasswordModal render init snap 1`] = `
         <div
           aria-labelledby="test-id"
           aria-modal="true"
-          class="ant-modal css-dev-only-do-not-override-txh9fw basic-modal-wrapper css-vvpsbb"
+          class="ant-modal basic-modal-wrapper css-vvpsbb"
           role="dialog"
           style="width: 480px;"
         >
@@ -64,16 +64,16 @@ exports[`provision/DatabaseAccount/RenewalPasswordModal render init snap 1`] = `
               class="ant-modal-body"
             >
               <form
-                class="ant-form ant-form-vertical css-dev-only-do-not-override-txh9fw"
+                class="ant-form ant-form-vertical"
               >
                 <div
-                  class="ant-form-item css-dev-only-do-not-override-txh9fw"
+                  class="ant-form-item"
                 >
                   <div
-                    class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                    class="ant-row ant-form-item-row"
                   >
                     <div
-                      class="ant-col ant-form-item-label css-dev-only-do-not-override-txh9fw"
+                      class="ant-col ant-form-item-label"
                     >
                       <label
                         class="ant-form-item-required"
@@ -84,7 +84,7 @@ exports[`provision/DatabaseAccount/RenewalPasswordModal render init snap 1`] = `
                       </label>
                     </div>
                     <div
-                      class="ant-col ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                      class="ant-col ant-form-item-control"
                     >
                       <div
                         class="ant-form-item-control-input"
@@ -93,7 +93,7 @@ exports[`provision/DatabaseAccount/RenewalPasswordModal render init snap 1`] = `
                           class="ant-form-item-control-input-content"
                         >
                           <div
-                            class="ant-input-number ant-input-number-lg ant-input-number-in-form-item css-dev-only-do-not-override-ezmdel basic-inputNumber-wrapper css-1fd5hnt"
+                            class="ant-input-number ant-input-number-lg ant-input-number-in-form-item basic-inputNumber-wrapper css-1fd5hnt"
                           >
                             <div
                               class="ant-input-number-handler-wrap"
@@ -179,14 +179,14 @@ exports[`provision/DatabaseAccount/RenewalPasswordModal render init snap 1`] = `
               class="ant-modal-footer"
             >
               <div
-                class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+                class="ant-space ant-space-horizontal ant-space-align-center"
               >
                 <div
                   class="ant-space-item"
                   style="margin-right: 8px;"
                 >
                   <button
-                    class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default basic-button-wrapper css-geipcv"
+                    class="ant-btn ant-btn-default basic-button-wrapper css-geipcv"
                     type="button"
                   >
                     <span>
@@ -198,7 +198,7 @@ exports[`provision/DatabaseAccount/RenewalPasswordModal render init snap 1`] = `
                   class="ant-space-item"
                 >
                   <button
-                    class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary basic-button-wrapper css-geipcv"
+                    class="ant-btn ant-btn-primary basic-button-wrapper css-geipcv"
                     type="button"
                   >
                     <span>

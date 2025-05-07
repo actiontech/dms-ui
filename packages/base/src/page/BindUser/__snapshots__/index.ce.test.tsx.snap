@@ -52,16 +52,16 @@ exports[`page/BindUser-ce render bind user form item render form item error when
             </div>
           </div>
           <form
-            class="ant-form ant-form-horizontal css-dev-only-do-not-override-txh9fw"
+            class="ant-form ant-form-horizontal"
           >
             <div
-              class="ant-form-item css-dev-only-do-not-override-txh9fw ant-form-item-has-error"
+              class="ant-form-item ant-form-item-has-error"
             >
               <div
-                class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                class="ant-row ant-form-item-row"
               >
                 <div
-                  class="ant-col ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                  class="ant-col ant-form-item-control"
                 >
                   <div
                     class="ant-form-item-control-input"
@@ -70,7 +70,7 @@ exports[`page/BindUser-ce render bind user form item render form item error when
                       class="ant-form-item-control-input-content"
                     >
                       <span
-                        class="ant-input-affix-wrapper ant-input-affix-wrapper-focused basic-input-wrapper login-form-field css-1pd1cd5 ant-input-affix-wrapper-status-error css-dev-only-do-not-override-ywkr0o"
+                        class="ant-input-affix-wrapper ant-input-affix-wrapper-focused basic-input-wrapper login-form-field css-1pd1cd5 ant-input-affix-wrapper-status-error"
                       >
                         <span
                           class="ant-input-prefix"
@@ -95,7 +95,7 @@ exports[`page/BindUser-ce render bind user form item render form item error when
                           aria-describedby="username_help"
                           aria-invalid="true"
                           aria-required="true"
-                          class="ant-input css-dev-only-do-not-override-ywkr0o"
+                          class="ant-input"
                           id="username"
                           placeholder="绑定的DMS用户名"
                           type="text"
@@ -119,13 +119,13 @@ exports[`page/BindUser-ce render bind user form item render form item error when
               />
             </div>
             <div
-              class="ant-form-item css-dev-only-do-not-override-txh9fw ant-form-item-has-error"
+              class="ant-form-item ant-form-item-has-error"
             >
               <div
-                class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                class="ant-row ant-form-item-row"
               >
                 <div
-                  class="ant-col ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                  class="ant-col ant-form-item-control"
                 >
                   <div
                     class="ant-form-item-control-input"
@@ -134,7 +134,7 @@ exports[`page/BindUser-ce render bind user form item render form item error when
                       class="ant-form-item-control-input-content"
                     >
                       <span
-                        class="ant-input-affix-wrapper ant-input-password basic-input-wrapper login-form-field css-1pd1cd5 css-dev-only-do-not-override-txh9fw"
+                        class="ant-input-affix-wrapper ant-input-password basic-input-wrapper login-form-field css-1pd1cd5 ant-input-affix-wrapper-status-error"
                       >
                         <span
                           class="ant-input-prefix"
@@ -160,7 +160,7 @@ exports[`page/BindUser-ce render bind user form item render form item error when
                           aria-describedby="password_help"
                           aria-invalid="true"
                           aria-required="true"
-                          class="ant-input css-dev-only-do-not-override-txh9fw"
+                          class="ant-input"
                           id="password"
                           placeholder="密码"
                           type="password"
@@ -210,12 +210,12 @@ exports[`page/BindUser-ce render bind user form item render form item error when
               />
             </div>
             <span
-              class="ant-typography ant-typography-secondary css-dev-only-do-not-override-txh9fw"
+              class="ant-typography ant-typography-secondary"
             >
               如果用户名不存在，会自动创建
             </span>
             <button
-              class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary ant-btn-block login-btn basic-button-wrapper css-geipcv"
+              class="ant-btn ant-btn-primary ant-btn-block login-btn basic-button-wrapper css-geipcv"
               type="submit"
             >
               <span>
@@ -282,16 +282,16 @@ exports[`page/BindUser-ce render bind user form item render oauth2_token params 
             </div>
           </div>
           <form
-            class="ant-form ant-form-horizontal css-dev-only-do-not-override-txh9fw"
+            class="ant-form ant-form-horizontal"
           >
             <div
-              class="ant-form-item css-dev-only-do-not-override-txh9fw ant-form-item-has-success"
+              class="ant-form-item ant-form-item-has-success"
             >
               <div
-                class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                class="ant-row ant-form-item-row"
               >
                 <div
-                  class="ant-col ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                  class="ant-col ant-form-item-control"
                 >
                   <div
                     class="ant-form-item-control-input"
@@ -300,7 +300,7 @@ exports[`page/BindUser-ce render bind user form item render oauth2_token params 
                       class="ant-form-item-control-input-content"
                     >
                       <span
-                        class="ant-input-affix-wrapper ant-input-affix-wrapper-focused basic-input-wrapper login-form-field css-1pd1cd5 ant-input-affix-wrapper-status-success css-dev-only-do-not-override-ywkr0o"
+                        class="ant-input-affix-wrapper ant-input-affix-wrapper-focused basic-input-wrapper login-form-field css-1pd1cd5 ant-input-affix-wrapper-status-success"
                       >
                         <span
                           class="ant-input-prefix"
@@ -323,7 +323,7 @@ exports[`page/BindUser-ce render bind user form item render oauth2_token params 
                         </span>
                         <input
                           aria-required="true"
-                          class="ant-input css-dev-only-do-not-override-ywkr0o"
+                          class="ant-input"
                           id="username"
                           placeholder="绑定的DMS用户名"
                           type="text"
@@ -336,13 +336,13 @@ exports[`page/BindUser-ce render bind user form item render oauth2_token params 
               </div>
             </div>
             <div
-              class="ant-form-item css-dev-only-do-not-override-txh9fw ant-form-item-has-success"
+              class="ant-form-item ant-form-item-has-success"
             >
               <div
-                class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                class="ant-row ant-form-item-row"
               >
                 <div
-                  class="ant-col ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                  class="ant-col ant-form-item-control"
                 >
                   <div
                     class="ant-form-item-control-input"
@@ -351,7 +351,7 @@ exports[`page/BindUser-ce render bind user form item render oauth2_token params 
                       class="ant-form-item-control-input-content"
                     >
                       <span
-                        class="ant-input-affix-wrapper ant-input-password basic-input-wrapper login-form-field css-1pd1cd5 css-dev-only-do-not-override-txh9fw"
+                        class="ant-input-affix-wrapper ant-input-password basic-input-wrapper login-form-field css-1pd1cd5 ant-input-affix-wrapper-status-success"
                       >
                         <span
                           class="ant-input-prefix"
@@ -375,10 +375,11 @@ exports[`page/BindUser-ce render bind user form item render oauth2_token params 
                         </span>
                         <input
                           aria-required="true"
-                          class="ant-input css-dev-only-do-not-override-txh9fw"
+                          class="ant-input"
                           id="password"
                           placeholder="密码"
                           type="password"
+                          value="oauth2_admin"
                         />
                         <span
                           class="ant-input-suffix"
@@ -414,12 +415,12 @@ exports[`page/BindUser-ce render bind user form item render oauth2_token params 
               </div>
             </div>
             <span
-              class="ant-typography ant-typography-secondary css-dev-only-do-not-override-txh9fw"
+              class="ant-typography ant-typography-secondary"
             >
               如果用户名不存在，会自动创建
             </span>
             <button
-              class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary ant-btn-block login-btn basic-button-wrapper css-geipcv"
+              class="ant-btn ant-btn-primary ant-btn-block login-btn basic-button-wrapper css-geipcv"
               type="submit"
             >
               <span>
@@ -486,16 +487,16 @@ exports[`page/BindUser-ce render bind user ui snap 1`] = `
             </div>
           </div>
           <form
-            class="ant-form ant-form-horizontal css-dev-only-do-not-override-txh9fw"
+            class="ant-form ant-form-horizontal"
           >
             <div
-              class="ant-form-item css-dev-only-do-not-override-txh9fw"
+              class="ant-form-item"
             >
               <div
-                class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                class="ant-row ant-form-item-row"
               >
                 <div
-                  class="ant-col ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                  class="ant-col ant-form-item-control"
                 >
                   <div
                     class="ant-form-item-control-input"
@@ -504,7 +505,7 @@ exports[`page/BindUser-ce render bind user ui snap 1`] = `
                       class="ant-form-item-control-input-content"
                     >
                       <span
-                        class="ant-input-affix-wrapper ant-input-affix-wrapper-focused basic-input-wrapper login-form-field css-1pd1cd5 css-dev-only-do-not-override-ywkr0o"
+                        class="ant-input-affix-wrapper ant-input-affix-wrapper-focused basic-input-wrapper login-form-field css-1pd1cd5"
                       >
                         <span
                           class="ant-input-prefix"
@@ -527,7 +528,7 @@ exports[`page/BindUser-ce render bind user ui snap 1`] = `
                         </span>
                         <input
                           aria-required="true"
-                          class="ant-input css-dev-only-do-not-override-ywkr0o"
+                          class="ant-input"
                           id="username"
                           placeholder="绑定的DMS用户名"
                           type="text"
@@ -540,13 +541,13 @@ exports[`page/BindUser-ce render bind user ui snap 1`] = `
               </div>
             </div>
             <div
-              class="ant-form-item css-dev-only-do-not-override-txh9fw"
+              class="ant-form-item"
             >
               <div
-                class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                class="ant-row ant-form-item-row"
               >
                 <div
-                  class="ant-col ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                  class="ant-col ant-form-item-control"
                 >
                   <div
                     class="ant-form-item-control-input"
@@ -555,7 +556,7 @@ exports[`page/BindUser-ce render bind user ui snap 1`] = `
                       class="ant-form-item-control-input-content"
                     >
                       <span
-                        class="ant-input-affix-wrapper ant-input-password basic-input-wrapper login-form-field css-1pd1cd5 css-dev-only-do-not-override-txh9fw"
+                        class="ant-input-affix-wrapper ant-input-password basic-input-wrapper login-form-field css-1pd1cd5"
                       >
                         <span
                           class="ant-input-prefix"
@@ -579,7 +580,7 @@ exports[`page/BindUser-ce render bind user ui snap 1`] = `
                         </span>
                         <input
                           aria-required="true"
-                          class="ant-input css-dev-only-do-not-override-txh9fw"
+                          class="ant-input"
                           id="password"
                           placeholder="密码"
                           type="password"
@@ -619,12 +620,12 @@ exports[`page/BindUser-ce render bind user ui snap 1`] = `
               </div>
             </div>
             <span
-              class="ant-typography ant-typography-secondary css-dev-only-do-not-override-txh9fw"
+              class="ant-typography ant-typography-secondary"
             >
               如果用户名不存在，会自动创建
             </span>
             <button
-              class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary ant-btn-block login-btn basic-button-wrapper css-geipcv"
+              class="ant-btn ant-btn-primary ant-btn-block login-btn basic-button-wrapper css-geipcv"
               type="submit"
             >
               <span>

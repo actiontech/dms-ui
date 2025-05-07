@@ -10,7 +10,7 @@ exports[`sqle/ExecWorkflow/AuditDetail/SqlMode render associated rollback workfl
         class="result-card-header"
       >
         <div
-          class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+          class="ant-space ant-space-horizontal ant-space-align-center"
         >
           <div
             class="ant-space-item"
@@ -30,14 +30,14 @@ exports[`sqle/ExecWorkflow/AuditDetail/SqlMode render associated rollback workfl
               class="result-card-status-wrap"
             >
               <span
-                class="ant-tag ant-tag-default ant-tag-borderless basic-tag-wrapper basic-large-tag-wrapper css-1mjwlcb css-dev-only-do-not-override-txh9fw"
+                class="ant-tag ant-tag-default ant-tag-borderless basic-tag-wrapper basic-large-tag-wrapper css-1mjwlcb"
               />
               <div
-                class="ant-divider css-dev-only-do-not-override-txh9fw ant-divider-vertical result-card-status-divider"
+                class="ant-divider ant-divider-vertical result-card-status-divider"
                 role="separator"
               />
               <span
-                class="ant-tag ant-tag-green ant-tag-borderless basic-tag-wrapper basic-large-tag-wrapper css-13qu6j1 css-dev-only-do-not-override-txh9fw"
+                class="ant-tag ant-tag-green ant-tag-borderless basic-tag-wrapper basic-large-tag-wrapper css-13qu6j1"
               >
                 <svg
                   height="16"
@@ -58,14 +58,14 @@ exports[`sqle/ExecWorkflow/AuditDetail/SqlMode render associated rollback workfl
           </div>
         </div>
         <div
-          class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+          class="ant-space ant-space-horizontal ant-space-align-center"
         >
           <div
             class="ant-space-item"
             style="margin-right: 8px;"
           >
             <button
-              class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default ant-dropdown-trigger basic-button-wrapper css-geipcv"
+              class="ant-btn ant-btn-default ant-dropdown-trigger basic-button-wrapper css-geipcv"
               type="button"
             >
               <span>
@@ -90,7 +90,7 @@ exports[`sqle/ExecWorkflow/AuditDetail/SqlMode render associated rollback workfl
             style="margin-right: 8px;"
           >
             <button
-              class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default ant-btn-sm basic-button-wrapper css-geipcv"
+              class="ant-btn ant-btn-default ant-btn-sm basic-button-wrapper css-geipcv"
               type="button"
             >
               <span>
@@ -102,7 +102,7 @@ exports[`sqle/ExecWorkflow/AuditDetail/SqlMode render associated rollback workfl
             class="ant-space-item"
           >
             <button
-              class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default ant-btn-sm basic-button-wrapper css-geipcv"
+              class="ant-btn ant-btn-default ant-btn-sm basic-button-wrapper css-geipcv"
               type="button"
             >
               <span>
@@ -122,10 +122,10 @@ exports[`sqle/ExecWorkflow/AuditDetail/SqlMode render associated rollback workfl
             class="segmented-tabs-wrapper"
           >
             <div
-              class="ant-row segmented-row-wrapper css-156vlto css-dev-only-do-not-override-txh9fw"
+              class="ant-row segmented-row-wrapper css-156vlto"
             >
               <div
-                class="ant-segmented basic-segmented-wrapper css-192b3m1 css-dev-only-do-not-override-txh9fw"
+                class="ant-segmented basic-segmented-wrapper css-192b3m1"
               >
                 <div
                   class="ant-segmented-group"
@@ -176,26 +176,26 @@ exports[`sqle/ExecWorkflow/AuditDetail/SqlMode render associated rollback workfl
                 </div>
               </div>
               <div
-                class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+                class="ant-space ant-space-horizontal ant-space-align-center"
               >
                 <div
                   class="ant-space-item"
                   style="margin-right: 0px;"
                 >
                   <div
-                    class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
+                    class="ant-space ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
                   >
                     <div
                       class="ant-space-item"
                     >
                       <div
-                        class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+                        class="ant-space ant-space-horizontal ant-space-align-center"
                       >
                         <div
                           class="ant-space-item"
                         >
                           <span
-                            class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-1mjwlcb css-dev-only-do-not-override-txh9fw"
+                            class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-1mjwlcb"
                           >
                             <svg
                               color="#4583FF"
@@ -227,7 +227,7 @@ exports[`sqle/ExecWorkflow/AuditDetail/SqlMode render associated rollback workfl
                   class="ant-space-item"
                 >
                   <span
-                    class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-1mjwlcb css-dev-only-do-not-override-txh9fw"
+                    class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-1mjwlcb"
                   >
                     <svg
                       height="18"
@@ -277,7 +277,7 @@ exports[`sqle/ExecWorkflow/AuditDetail/SqlMode render associated rollback workfl
           </div>
         </div>
         <div
-          class="ant-tree ant-tree-icon-hide ant-tree-unselectable css-ks72ok css-dev-only-do-not-override-txh9fw ant-tree-show-line"
+          class="ant-tree ant-tree-icon-hide ant-tree-unselectable css-ks72ok ant-tree-show-line"
           role="tree"
         >
           <div>
@@ -366,7 +366,7 @@ exports[`sqle/ExecWorkflow/AuditDetail/SqlMode render associated rollback workfl
         class="result-card-footer"
       >
         <div
-          class="ant-spin-nested-loading css-dev-only-do-not-override-txh9fw"
+          class="ant-spin-nested-loading"
         >
           <div
             class="ant-spin-container"
@@ -386,7 +386,7 @@ exports[`sqle/ExecWorkflow/AuditDetail/SqlMode render associated rollback workfl
                 />
               </svg>
               <input
-                class="ant-input css-dev-only-do-not-override-ywkr0o basic-input-wrapper result-describe-input css-1pd1cd5"
+                class="ant-input basic-input-wrapper result-describe-input css-1pd1cd5"
                 placeholder="添加说明"
                 type="text"
                 value=""
@@ -410,7 +410,7 @@ exports[`sqle/ExecWorkflow/AuditDetail/SqlMode render backup strategy tip 1`] = 
         class="result-card-header"
       >
         <div
-          class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+          class="ant-space ant-space-horizontal ant-space-align-center"
         >
           <div
             class="ant-space-item"
@@ -430,14 +430,14 @@ exports[`sqle/ExecWorkflow/AuditDetail/SqlMode render backup strategy tip 1`] = 
               class="result-card-status-wrap"
             >
               <span
-                class="ant-tag ant-tag-default ant-tag-borderless basic-tag-wrapper basic-large-tag-wrapper css-1mjwlcb css-dev-only-do-not-override-txh9fw"
+                class="ant-tag ant-tag-default ant-tag-borderless basic-tag-wrapper basic-large-tag-wrapper css-1mjwlcb"
               />
               <div
-                class="ant-divider css-dev-only-do-not-override-txh9fw ant-divider-vertical result-card-status-divider"
+                class="ant-divider ant-divider-vertical result-card-status-divider"
                 role="separator"
               />
               <span
-                class="ant-tag ant-tag-green ant-tag-borderless basic-tag-wrapper basic-large-tag-wrapper css-13qu6j1 css-dev-only-do-not-override-txh9fw"
+                class="ant-tag ant-tag-green ant-tag-borderless basic-tag-wrapper basic-large-tag-wrapper css-13qu6j1"
               >
                 <svg
                   height="16"
@@ -458,7 +458,7 @@ exports[`sqle/ExecWorkflow/AuditDetail/SqlMode render backup strategy tip 1`] = 
           </div>
         </div>
         <div
-          class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+          class="ant-space ant-space-horizontal ant-space-align-center"
         >
           <div
             class="ant-space-item"
@@ -469,7 +469,7 @@ exports[`sqle/ExecWorkflow/AuditDetail/SqlMode render backup strategy tip 1`] = 
             style="margin-right: 8px;"
           >
             <button
-              class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default ant-btn-sm basic-button-wrapper css-geipcv"
+              class="ant-btn ant-btn-default ant-btn-sm basic-button-wrapper css-geipcv"
               type="button"
             >
               <span>
@@ -481,7 +481,7 @@ exports[`sqle/ExecWorkflow/AuditDetail/SqlMode render backup strategy tip 1`] = 
             class="ant-space-item"
           >
             <button
-              class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default ant-btn-sm basic-button-wrapper css-geipcv"
+              class="ant-btn ant-btn-default ant-btn-sm basic-button-wrapper css-geipcv"
               type="button"
             >
               <span>
@@ -501,10 +501,10 @@ exports[`sqle/ExecWorkflow/AuditDetail/SqlMode render backup strategy tip 1`] = 
             class="segmented-tabs-wrapper"
           >
             <div
-              class="ant-row segmented-row-wrapper css-156vlto css-dev-only-do-not-override-txh9fw"
+              class="ant-row segmented-row-wrapper css-156vlto"
             >
               <div
-                class="ant-segmented basic-segmented-wrapper css-192b3m1 css-dev-only-do-not-override-txh9fw"
+                class="ant-segmented basic-segmented-wrapper css-192b3m1"
               >
                 <div
                   class="ant-segmented-group"
@@ -555,26 +555,26 @@ exports[`sqle/ExecWorkflow/AuditDetail/SqlMode render backup strategy tip 1`] = 
                 </div>
               </div>
               <div
-                class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+                class="ant-space ant-space-horizontal ant-space-align-center"
               >
                 <div
                   class="ant-space-item"
                   style="margin-right: 0px;"
                 >
                   <div
-                    class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
+                    class="ant-space ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
                   >
                     <div
                       class="ant-space-item"
                     >
                       <div
-                        class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+                        class="ant-space ant-space-horizontal ant-space-align-center"
                       >
                         <div
                           class="ant-space-item"
                         >
                           <span
-                            class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-1mjwlcb css-dev-only-do-not-override-txh9fw"
+                            class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-1mjwlcb"
                           >
                             <svg
                               color="#4583FF"
@@ -606,7 +606,7 @@ exports[`sqle/ExecWorkflow/AuditDetail/SqlMode render backup strategy tip 1`] = 
                   class="ant-space-item"
                 >
                   <span
-                    class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-1mjwlcb css-dev-only-do-not-override-txh9fw"
+                    class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-1mjwlcb"
                   >
                     <svg
                       height="18"
@@ -657,14 +657,14 @@ exports[`sqle/ExecWorkflow/AuditDetail/SqlMode render backup strategy tip 1`] = 
               class="lazy-load-wrapper segmented-item-content lazy-load-wrapper-show css-952l0m"
             >
               <div
-                class="ant-space css-dev-only-do-not-override-txh9fw ant-space-vertical rollback-sql-container"
+                class="ant-space ant-space-vertical rollback-sql-container"
               >
                 <div
                   class="ant-space-item"
                   style="margin-bottom: 8px;"
                 >
                   <div
-                    class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center backup-conflict-tips"
+                    class="ant-space ant-space-horizontal ant-space-align-center backup-conflict-tips"
                   >
                     <div
                       class="ant-space-item"
@@ -695,7 +695,7 @@ exports[`sqle/ExecWorkflow/AuditDetail/SqlMode render backup strategy tip 1`] = 
                   style="margin-bottom: 8px;"
                 >
                   <div
-                    class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+                    class="ant-space ant-space-horizontal ant-space-align-center"
                   >
                     <div
                       class="ant-space-item"
@@ -733,7 +733,7 @@ exports[`sqle/ExecWorkflow/AuditDetail/SqlMode render backup strategy tip 1`] = 
           </div>
         </div>
         <div
-          class="ant-tree ant-tree-icon-hide ant-tree-unselectable css-ks72ok css-dev-only-do-not-override-txh9fw ant-tree-show-line"
+          class="ant-tree ant-tree-icon-hide ant-tree-unselectable css-ks72ok ant-tree-show-line"
           role="tree"
         >
           <div>
@@ -822,7 +822,7 @@ exports[`sqle/ExecWorkflow/AuditDetail/SqlMode render backup strategy tip 1`] = 
         class="result-card-footer"
       >
         <div
-          class="ant-spin-nested-loading css-dev-only-do-not-override-txh9fw"
+          class="ant-spin-nested-loading"
         >
           <div
             class="ant-spin-container"
@@ -842,7 +842,7 @@ exports[`sqle/ExecWorkflow/AuditDetail/SqlMode render backup strategy tip 1`] = 
                 />
               </svg>
               <input
-                class="ant-input css-dev-only-do-not-override-ywkr0o basic-input-wrapper result-describe-input css-1pd1cd5"
+                class="ant-input basic-input-wrapper result-describe-input css-1pd1cd5"
                 placeholder="添加说明"
                 type="text"
                 value=""
@@ -866,7 +866,7 @@ exports[`sqle/ExecWorkflow/AuditDetail/SqlMode render change exec_sql & rollback
         class="result-card-header"
       >
         <div
-          class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+          class="ant-space ant-space-horizontal ant-space-align-center"
         >
           <div
             class="ant-space-item"
@@ -886,14 +886,14 @@ exports[`sqle/ExecWorkflow/AuditDetail/SqlMode render change exec_sql & rollback
               class="result-card-status-wrap"
             >
               <span
-                class="ant-tag ant-tag-default ant-tag-borderless basic-tag-wrapper basic-large-tag-wrapper css-1mjwlcb css-dev-only-do-not-override-txh9fw"
+                class="ant-tag ant-tag-default ant-tag-borderless basic-tag-wrapper basic-large-tag-wrapper css-1mjwlcb"
               />
               <div
-                class="ant-divider css-dev-only-do-not-override-txh9fw ant-divider-vertical result-card-status-divider"
+                class="ant-divider ant-divider-vertical result-card-status-divider"
                 role="separator"
               />
               <span
-                class="ant-tag ant-tag-green ant-tag-borderless basic-tag-wrapper basic-large-tag-wrapper css-13qu6j1 css-dev-only-do-not-override-txh9fw"
+                class="ant-tag ant-tag-green ant-tag-borderless basic-tag-wrapper basic-large-tag-wrapper css-13qu6j1"
               >
                 <svg
                   height="16"
@@ -914,7 +914,7 @@ exports[`sqle/ExecWorkflow/AuditDetail/SqlMode render change exec_sql & rollback
           </div>
         </div>
         <div
-          class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+          class="ant-space ant-space-horizontal ant-space-align-center"
         >
           <div
             class="ant-space-item"
@@ -925,7 +925,7 @@ exports[`sqle/ExecWorkflow/AuditDetail/SqlMode render change exec_sql & rollback
             style="margin-right: 8px;"
           >
             <button
-              class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default ant-btn-sm basic-button-wrapper css-geipcv"
+              class="ant-btn ant-btn-default ant-btn-sm basic-button-wrapper css-geipcv"
               type="button"
             >
               <span>
@@ -937,7 +937,7 @@ exports[`sqle/ExecWorkflow/AuditDetail/SqlMode render change exec_sql & rollback
             class="ant-space-item"
           >
             <button
-              class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default ant-btn-sm basic-button-wrapper css-geipcv"
+              class="ant-btn ant-btn-default ant-btn-sm basic-button-wrapper css-geipcv"
               type="button"
             >
               <span>
@@ -957,10 +957,10 @@ exports[`sqle/ExecWorkflow/AuditDetail/SqlMode render change exec_sql & rollback
             class="segmented-tabs-wrapper"
           >
             <div
-              class="ant-row segmented-row-wrapper css-156vlto css-dev-only-do-not-override-txh9fw"
+              class="ant-row segmented-row-wrapper css-156vlto"
             >
               <div
-                class="ant-segmented basic-segmented-wrapper css-192b3m1 css-dev-only-do-not-override-txh9fw"
+                class="ant-segmented basic-segmented-wrapper css-192b3m1"
               >
                 <div
                   class="ant-segmented-group"
@@ -1011,26 +1011,26 @@ exports[`sqle/ExecWorkflow/AuditDetail/SqlMode render change exec_sql & rollback
                 </div>
               </div>
               <div
-                class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+                class="ant-space ant-space-horizontal ant-space-align-center"
               >
                 <div
                   class="ant-space-item"
                   style="margin-right: 0px;"
                 >
                   <div
-                    class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
+                    class="ant-space ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
                   >
                     <div
                       class="ant-space-item"
                     >
                       <div
-                        class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+                        class="ant-space ant-space-horizontal ant-space-align-center"
                       >
                         <div
                           class="ant-space-item"
                         >
                           <span
-                            class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-1mjwlcb css-dev-only-do-not-override-txh9fw"
+                            class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-1mjwlcb"
                           >
                             <svg
                               color="#4583FF"
@@ -1062,7 +1062,7 @@ exports[`sqle/ExecWorkflow/AuditDetail/SqlMode render change exec_sql & rollback
                   class="ant-space-item"
                 >
                   <span
-                    class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-1mjwlcb css-dev-only-do-not-override-txh9fw"
+                    class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-1mjwlcb"
                   >
                     <svg
                       height="18"
@@ -1112,7 +1112,7 @@ exports[`sqle/ExecWorkflow/AuditDetail/SqlMode render change exec_sql & rollback
           </div>
         </div>
         <div
-          class="ant-tree ant-tree-icon-hide ant-tree-unselectable css-ks72ok css-dev-only-do-not-override-txh9fw ant-tree-show-line"
+          class="ant-tree ant-tree-icon-hide ant-tree-unselectable css-ks72ok ant-tree-show-line"
           role="tree"
         >
           <div>
@@ -1201,7 +1201,7 @@ exports[`sqle/ExecWorkflow/AuditDetail/SqlMode render change exec_sql & rollback
         class="result-card-footer"
       >
         <div
-          class="ant-spin-nested-loading css-dev-only-do-not-override-txh9fw"
+          class="ant-spin-nested-loading"
         >
           <div
             class="ant-spin-container"
@@ -1221,7 +1221,7 @@ exports[`sqle/ExecWorkflow/AuditDetail/SqlMode render change exec_sql & rollback
                 />
               </svg>
               <input
-                class="ant-input css-dev-only-do-not-override-ywkr0o basic-input-wrapper result-describe-input css-1pd1cd5"
+                class="ant-input basic-input-wrapper result-describe-input css-1pd1cd5"
                 placeholder="添加说明"
                 type="text"
                 value=""
@@ -1245,7 +1245,7 @@ exports[`sqle/ExecWorkflow/AuditDetail/SqlMode render change exec_sql & rollback
         class="result-card-header"
       >
         <div
-          class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+          class="ant-space ant-space-horizontal ant-space-align-center"
         >
           <div
             class="ant-space-item"
@@ -1265,14 +1265,14 @@ exports[`sqle/ExecWorkflow/AuditDetail/SqlMode render change exec_sql & rollback
               class="result-card-status-wrap"
             >
               <span
-                class="ant-tag ant-tag-default ant-tag-borderless basic-tag-wrapper basic-large-tag-wrapper css-1mjwlcb css-dev-only-do-not-override-txh9fw"
+                class="ant-tag ant-tag-default ant-tag-borderless basic-tag-wrapper basic-large-tag-wrapper css-1mjwlcb"
               />
               <div
-                class="ant-divider css-dev-only-do-not-override-txh9fw ant-divider-vertical result-card-status-divider"
+                class="ant-divider ant-divider-vertical result-card-status-divider"
                 role="separator"
               />
               <span
-                class="ant-tag ant-tag-green ant-tag-borderless basic-tag-wrapper basic-large-tag-wrapper css-13qu6j1 css-dev-only-do-not-override-txh9fw"
+                class="ant-tag ant-tag-green ant-tag-borderless basic-tag-wrapper basic-large-tag-wrapper css-13qu6j1"
               >
                 <svg
                   height="16"
@@ -1293,7 +1293,7 @@ exports[`sqle/ExecWorkflow/AuditDetail/SqlMode render change exec_sql & rollback
           </div>
         </div>
         <div
-          class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+          class="ant-space ant-space-horizontal ant-space-align-center"
         >
           <div
             class="ant-space-item"
@@ -1304,7 +1304,7 @@ exports[`sqle/ExecWorkflow/AuditDetail/SqlMode render change exec_sql & rollback
             style="margin-right: 8px;"
           >
             <button
-              class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default ant-btn-sm basic-button-wrapper css-geipcv"
+              class="ant-btn ant-btn-default ant-btn-sm basic-button-wrapper css-geipcv"
               type="button"
             >
               <span>
@@ -1316,7 +1316,7 @@ exports[`sqle/ExecWorkflow/AuditDetail/SqlMode render change exec_sql & rollback
             class="ant-space-item"
           >
             <button
-              class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default ant-btn-sm basic-button-wrapper css-geipcv"
+              class="ant-btn ant-btn-default ant-btn-sm basic-button-wrapper css-geipcv"
               type="button"
             >
               <span>
@@ -1336,10 +1336,10 @@ exports[`sqle/ExecWorkflow/AuditDetail/SqlMode render change exec_sql & rollback
             class="segmented-tabs-wrapper"
           >
             <div
-              class="ant-row segmented-row-wrapper css-156vlto css-dev-only-do-not-override-txh9fw"
+              class="ant-row segmented-row-wrapper css-156vlto"
             >
               <div
-                class="ant-segmented basic-segmented-wrapper css-192b3m1 css-dev-only-do-not-override-txh9fw"
+                class="ant-segmented basic-segmented-wrapper css-192b3m1"
               >
                 <div
                   class="ant-segmented-group"
@@ -1390,26 +1390,26 @@ exports[`sqle/ExecWorkflow/AuditDetail/SqlMode render change exec_sql & rollback
                 </div>
               </div>
               <div
-                class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+                class="ant-space ant-space-horizontal ant-space-align-center"
               >
                 <div
                   class="ant-space-item"
                   style="margin-right: 0px;"
                 >
                   <div
-                    class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
+                    class="ant-space ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
                   >
                     <div
                       class="ant-space-item"
                     >
                       <div
-                        class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+                        class="ant-space ant-space-horizontal ant-space-align-center"
                       >
                         <div
                           class="ant-space-item"
                         >
                           <span
-                            class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-1mjwlcb css-dev-only-do-not-override-txh9fw"
+                            class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-1mjwlcb"
                           >
                             <svg
                               color="#4583FF"
@@ -1441,7 +1441,7 @@ exports[`sqle/ExecWorkflow/AuditDetail/SqlMode render change exec_sql & rollback
                   class="ant-space-item"
                 >
                   <span
-                    class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-1mjwlcb css-dev-only-do-not-override-txh9fw"
+                    class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-1mjwlcb"
                   >
                     <svg
                       height="18"
@@ -1492,7 +1492,7 @@ exports[`sqle/ExecWorkflow/AuditDetail/SqlMode render change exec_sql & rollback
               class="lazy-load-wrapper segmented-item-content lazy-load-wrapper-show css-952l0m"
             >
               <div
-                class="ant-space css-dev-only-do-not-override-txh9fw ant-space-vertical rollback-sql-container"
+                class="ant-space ant-space-vertical rollback-sql-container"
               >
                 <div
                   class="ant-space-item"
@@ -1503,14 +1503,14 @@ exports[`sqle/ExecWorkflow/AuditDetail/SqlMode render change exec_sql & rollback
                   style="margin-bottom: 8px;"
                 >
                   <div
-                    class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+                    class="ant-space ant-space-horizontal ant-space-align-center"
                   >
                     <div
                       class="ant-space-item"
                       style="margin-right: 8px;"
                     >
                       <span
-                        class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-1mjwlcb css-dev-only-do-not-override-txh9fw"
+                        class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-1mjwlcb"
                       >
                         基于反向SQL回滚
                       </span>
@@ -1519,7 +1519,7 @@ exports[`sqle/ExecWorkflow/AuditDetail/SqlMode render change exec_sql & rollback
                       class="ant-space-item"
                     >
                       <div
-                        class="ant-divider css-dev-only-do-not-override-txh9fw ant-divider-vertical result-card-status-divider"
+                        class="ant-divider ant-divider-vertical result-card-status-divider"
                         role="separator"
                       />
                       回滚语句将在上线阶段自动生成
@@ -1553,7 +1553,7 @@ exports[`sqle/ExecWorkflow/AuditDetail/SqlMode render change exec_sql & rollback
           </div>
         </div>
         <div
-          class="ant-tree ant-tree-icon-hide ant-tree-unselectable css-ks72ok css-dev-only-do-not-override-txh9fw ant-tree-show-line"
+          class="ant-tree ant-tree-icon-hide ant-tree-unselectable css-ks72ok ant-tree-show-line"
           role="tree"
         >
           <div>
@@ -1642,7 +1642,7 @@ exports[`sqle/ExecWorkflow/AuditDetail/SqlMode render change exec_sql & rollback
         class="result-card-footer"
       >
         <div
-          class="ant-spin-nested-loading css-dev-only-do-not-override-txh9fw"
+          class="ant-spin-nested-loading"
         >
           <div
             class="ant-spin-container"
@@ -1662,7 +1662,7 @@ exports[`sqle/ExecWorkflow/AuditDetail/SqlMode render change exec_sql & rollback
                 />
               </svg>
               <input
-                class="ant-input css-dev-only-do-not-override-ywkr0o basic-input-wrapper result-describe-input css-1pd1cd5"
+                class="ant-input basic-input-wrapper result-describe-input css-1pd1cd5"
                 placeholder="添加说明"
                 type="text"
                 value=""
@@ -1686,7 +1686,7 @@ exports[`sqle/ExecWorkflow/AuditDetail/SqlMode render change exec_sql & rollback
         class="result-card-header"
       >
         <div
-          class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+          class="ant-space ant-space-horizontal ant-space-align-center"
         >
           <div
             class="ant-space-item"
@@ -1706,14 +1706,14 @@ exports[`sqle/ExecWorkflow/AuditDetail/SqlMode render change exec_sql & rollback
               class="result-card-status-wrap"
             >
               <span
-                class="ant-tag ant-tag-default ant-tag-borderless basic-tag-wrapper basic-large-tag-wrapper css-1mjwlcb css-dev-only-do-not-override-txh9fw"
+                class="ant-tag ant-tag-default ant-tag-borderless basic-tag-wrapper basic-large-tag-wrapper css-1mjwlcb"
               />
               <div
-                class="ant-divider css-dev-only-do-not-override-txh9fw ant-divider-vertical result-card-status-divider"
+                class="ant-divider ant-divider-vertical result-card-status-divider"
                 role="separator"
               />
               <span
-                class="ant-tag ant-tag-green ant-tag-borderless basic-tag-wrapper basic-large-tag-wrapper css-13qu6j1 css-dev-only-do-not-override-txh9fw"
+                class="ant-tag ant-tag-green ant-tag-borderless basic-tag-wrapper basic-large-tag-wrapper css-13qu6j1"
               >
                 <svg
                   height="16"
@@ -1734,7 +1734,7 @@ exports[`sqle/ExecWorkflow/AuditDetail/SqlMode render change exec_sql & rollback
           </div>
         </div>
         <div
-          class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+          class="ant-space ant-space-horizontal ant-space-align-center"
         >
           <div
             class="ant-space-item"
@@ -1745,7 +1745,7 @@ exports[`sqle/ExecWorkflow/AuditDetail/SqlMode render change exec_sql & rollback
             style="margin-right: 8px;"
           >
             <button
-              class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default ant-btn-sm basic-button-wrapper css-geipcv"
+              class="ant-btn ant-btn-default ant-btn-sm basic-button-wrapper css-geipcv"
               type="button"
             >
               <span>
@@ -1757,7 +1757,7 @@ exports[`sqle/ExecWorkflow/AuditDetail/SqlMode render change exec_sql & rollback
             class="ant-space-item"
           >
             <button
-              class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default ant-btn-sm basic-button-wrapper css-geipcv"
+              class="ant-btn ant-btn-default ant-btn-sm basic-button-wrapper css-geipcv"
               type="button"
             >
               <span>
@@ -1777,10 +1777,10 @@ exports[`sqle/ExecWorkflow/AuditDetail/SqlMode render change exec_sql & rollback
             class="segmented-tabs-wrapper"
           >
             <div
-              class="ant-row segmented-row-wrapper css-156vlto css-dev-only-do-not-override-txh9fw"
+              class="ant-row segmented-row-wrapper css-156vlto"
             >
               <div
-                class="ant-segmented basic-segmented-wrapper css-192b3m1 css-dev-only-do-not-override-txh9fw"
+                class="ant-segmented basic-segmented-wrapper css-192b3m1"
               >
                 <div
                   class="ant-segmented-group"
@@ -1831,26 +1831,26 @@ exports[`sqle/ExecWorkflow/AuditDetail/SqlMode render change exec_sql & rollback
                 </div>
               </div>
               <div
-                class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+                class="ant-space ant-space-horizontal ant-space-align-center"
               >
                 <div
                   class="ant-space-item"
                   style="margin-right: 0px;"
                 >
                   <div
-                    class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
+                    class="ant-space ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
                   >
                     <div
                       class="ant-space-item"
                     >
                       <div
-                        class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+                        class="ant-space ant-space-horizontal ant-space-align-center"
                       >
                         <div
                           class="ant-space-item"
                         >
                           <span
-                            class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-1mjwlcb css-dev-only-do-not-override-txh9fw"
+                            class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-1mjwlcb"
                           >
                             <svg
                               color="#4583FF"
@@ -1882,7 +1882,7 @@ exports[`sqle/ExecWorkflow/AuditDetail/SqlMode render change exec_sql & rollback
                   class="ant-space-item"
                 >
                   <span
-                    class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-1mjwlcb css-dev-only-do-not-override-txh9fw"
+                    class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-1mjwlcb"
                   >
                     <svg
                       height="18"
@@ -1933,7 +1933,7 @@ exports[`sqle/ExecWorkflow/AuditDetail/SqlMode render change exec_sql & rollback
               class="lazy-load-wrapper segmented-item-content lazy-load-wrapper-hidden css-952l0m"
             >
               <div
-                class="ant-space css-dev-only-do-not-override-txh9fw ant-space-vertical rollback-sql-container"
+                class="ant-space ant-space-vertical rollback-sql-container"
               >
                 <div
                   class="ant-space-item"
@@ -1944,14 +1944,14 @@ exports[`sqle/ExecWorkflow/AuditDetail/SqlMode render change exec_sql & rollback
                   style="margin-bottom: 8px;"
                 >
                   <div
-                    class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+                    class="ant-space ant-space-horizontal ant-space-align-center"
                   >
                     <div
                       class="ant-space-item"
                       style="margin-right: 8px;"
                     >
                       <span
-                        class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-1mjwlcb css-dev-only-do-not-override-txh9fw"
+                        class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-1mjwlcb"
                       >
                         基于反向SQL回滚
                       </span>
@@ -1960,7 +1960,7 @@ exports[`sqle/ExecWorkflow/AuditDetail/SqlMode render change exec_sql & rollback
                       class="ant-space-item"
                     >
                       <div
-                        class="ant-divider css-dev-only-do-not-override-txh9fw ant-divider-vertical result-card-status-divider"
+                        class="ant-divider ant-divider-vertical result-card-status-divider"
                         role="separator"
                       />
                       回滚语句将在上线阶段自动生成
@@ -1994,7 +1994,7 @@ exports[`sqle/ExecWorkflow/AuditDetail/SqlMode render change exec_sql & rollback
           </div>
         </div>
         <div
-          class="ant-tree ant-tree-icon-hide ant-tree-unselectable css-ks72ok css-dev-only-do-not-override-txh9fw ant-tree-show-line"
+          class="ant-tree ant-tree-icon-hide ant-tree-unselectable css-ks72ok ant-tree-show-line"
           role="tree"
         >
           <div>
@@ -2083,7 +2083,7 @@ exports[`sqle/ExecWorkflow/AuditDetail/SqlMode render change exec_sql & rollback
         class="result-card-footer"
       >
         <div
-          class="ant-spin-nested-loading css-dev-only-do-not-override-txh9fw"
+          class="ant-spin-nested-loading"
         >
           <div
             class="ant-spin-container"
@@ -2103,7 +2103,7 @@ exports[`sqle/ExecWorkflow/AuditDetail/SqlMode render change exec_sql & rollback
                 />
               </svg>
               <input
-                class="ant-input css-dev-only-do-not-override-ywkr0o basic-input-wrapper result-describe-input css-1pd1cd5"
+                class="ant-input basic-input-wrapper result-describe-input css-1pd1cd5"
                 placeholder="添加说明"
                 type="text"
                 value=""
@@ -2127,7 +2127,7 @@ exports[`sqle/ExecWorkflow/AuditDetail/SqlMode render change exec_sql & rollback
         class="result-card-header"
       >
         <div
-          class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+          class="ant-space ant-space-horizontal ant-space-align-center"
         >
           <div
             class="ant-space-item"
@@ -2147,14 +2147,14 @@ exports[`sqle/ExecWorkflow/AuditDetail/SqlMode render change exec_sql & rollback
               class="result-card-status-wrap"
             >
               <span
-                class="ant-tag ant-tag-default ant-tag-borderless basic-tag-wrapper basic-large-tag-wrapper css-1mjwlcb css-dev-only-do-not-override-txh9fw"
+                class="ant-tag ant-tag-default ant-tag-borderless basic-tag-wrapper basic-large-tag-wrapper css-1mjwlcb"
               />
               <div
-                class="ant-divider css-dev-only-do-not-override-txh9fw ant-divider-vertical result-card-status-divider"
+                class="ant-divider ant-divider-vertical result-card-status-divider"
                 role="separator"
               />
               <span
-                class="ant-tag ant-tag-green ant-tag-borderless basic-tag-wrapper basic-large-tag-wrapper css-13qu6j1 css-dev-only-do-not-override-txh9fw"
+                class="ant-tag ant-tag-green ant-tag-borderless basic-tag-wrapper basic-large-tag-wrapper css-13qu6j1"
               >
                 <svg
                   height="16"
@@ -2175,7 +2175,7 @@ exports[`sqle/ExecWorkflow/AuditDetail/SqlMode render change exec_sql & rollback
           </div>
         </div>
         <div
-          class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+          class="ant-space ant-space-horizontal ant-space-align-center"
         >
           <div
             class="ant-space-item"
@@ -2186,7 +2186,7 @@ exports[`sqle/ExecWorkflow/AuditDetail/SqlMode render change exec_sql & rollback
             style="margin-right: 8px;"
           >
             <button
-              class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default ant-btn-sm basic-button-wrapper css-geipcv"
+              class="ant-btn ant-btn-default ant-btn-sm basic-button-wrapper css-geipcv"
               type="button"
             >
               <span>
@@ -2198,7 +2198,7 @@ exports[`sqle/ExecWorkflow/AuditDetail/SqlMode render change exec_sql & rollback
             class="ant-space-item"
           >
             <button
-              class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default ant-btn-sm basic-button-wrapper css-geipcv"
+              class="ant-btn ant-btn-default ant-btn-sm basic-button-wrapper css-geipcv"
               type="button"
             >
               <span>
@@ -2218,10 +2218,10 @@ exports[`sqle/ExecWorkflow/AuditDetail/SqlMode render change exec_sql & rollback
             class="segmented-tabs-wrapper"
           >
             <div
-              class="ant-row segmented-row-wrapper css-156vlto css-dev-only-do-not-override-txh9fw"
+              class="ant-row segmented-row-wrapper css-156vlto"
             >
               <div
-                class="ant-segmented basic-segmented-wrapper css-192b3m1 css-dev-only-do-not-override-txh9fw"
+                class="ant-segmented basic-segmented-wrapper css-192b3m1"
               >
                 <div
                   class="ant-segmented-group"
@@ -2272,26 +2272,26 @@ exports[`sqle/ExecWorkflow/AuditDetail/SqlMode render change exec_sql & rollback
                 </div>
               </div>
               <div
-                class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+                class="ant-space ant-space-horizontal ant-space-align-center"
               >
                 <div
                   class="ant-space-item"
                   style="margin-right: 0px;"
                 >
                   <div
-                    class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
+                    class="ant-space ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
                   >
                     <div
                       class="ant-space-item"
                     >
                       <div
-                        class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+                        class="ant-space ant-space-horizontal ant-space-align-center"
                       >
                         <div
                           class="ant-space-item"
                         >
                           <span
-                            class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-1mjwlcb css-dev-only-do-not-override-txh9fw"
+                            class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-1mjwlcb"
                           >
                             <svg
                               color="#4583FF"
@@ -2323,7 +2323,7 @@ exports[`sqle/ExecWorkflow/AuditDetail/SqlMode render change exec_sql & rollback
                   class="ant-space-item"
                 >
                   <span
-                    class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-1mjwlcb css-dev-only-do-not-override-txh9fw"
+                    class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-1mjwlcb"
                   >
                     <svg
                       height="18"
@@ -2374,7 +2374,7 @@ exports[`sqle/ExecWorkflow/AuditDetail/SqlMode render change exec_sql & rollback
               class="lazy-load-wrapper segmented-item-content lazy-load-wrapper-hidden css-952l0m"
             >
               <div
-                class="ant-space css-dev-only-do-not-override-txh9fw ant-space-vertical rollback-sql-container"
+                class="ant-space ant-space-vertical rollback-sql-container"
               >
                 <div
                   class="ant-space-item"
@@ -2385,14 +2385,14 @@ exports[`sqle/ExecWorkflow/AuditDetail/SqlMode render change exec_sql & rollback
                   style="margin-bottom: 8px;"
                 >
                   <div
-                    class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+                    class="ant-space ant-space-horizontal ant-space-align-center"
                   >
                     <div
                       class="ant-space-item"
                       style="margin-right: 8px;"
                     >
                       <span
-                        class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-1mjwlcb css-dev-only-do-not-override-txh9fw"
+                        class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-1mjwlcb"
                       >
                         基于反向SQL回滚
                       </span>
@@ -2401,7 +2401,7 @@ exports[`sqle/ExecWorkflow/AuditDetail/SqlMode render change exec_sql & rollback
                       class="ant-space-item"
                     >
                       <div
-                        class="ant-divider css-dev-only-do-not-override-txh9fw ant-divider-vertical result-card-status-divider"
+                        class="ant-divider ant-divider-vertical result-card-status-divider"
                         role="separator"
                       />
                       回滚语句将在上线阶段自动生成
@@ -2440,7 +2440,7 @@ exports[`sqle/ExecWorkflow/AuditDetail/SqlMode render change exec_sql & rollback
           </div>
         </div>
         <div
-          class="ant-tree ant-tree-icon-hide ant-tree-unselectable css-ks72ok css-dev-only-do-not-override-txh9fw ant-tree-show-line"
+          class="ant-tree ant-tree-icon-hide ant-tree-unselectable css-ks72ok ant-tree-show-line"
           role="tree"
         >
           <div>
@@ -2529,7 +2529,7 @@ exports[`sqle/ExecWorkflow/AuditDetail/SqlMode render change exec_sql & rollback
         class="result-card-footer"
       >
         <div
-          class="ant-spin-nested-loading css-dev-only-do-not-override-txh9fw"
+          class="ant-spin-nested-loading"
         >
           <div
             class="ant-spin-container"
@@ -2549,7 +2549,7 @@ exports[`sqle/ExecWorkflow/AuditDetail/SqlMode render change exec_sql & rollback
                 />
               </svg>
               <input
-                class="ant-input css-dev-only-do-not-override-ywkr0o basic-input-wrapper result-describe-input css-1pd1cd5"
+                class="ant-input basic-input-wrapper result-describe-input css-1pd1cd5"
                 placeholder="添加说明"
                 type="text"
                 value=""
@@ -2573,7 +2573,7 @@ exports[`sqle/ExecWorkflow/AuditDetail/SqlMode render click add desc 1`] = `
         class="result-card-header"
       >
         <div
-          class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+          class="ant-space ant-space-horizontal ant-space-align-center"
         >
           <div
             class="ant-space-item"
@@ -2593,14 +2593,14 @@ exports[`sqle/ExecWorkflow/AuditDetail/SqlMode render click add desc 1`] = `
               class="result-card-status-wrap"
             >
               <span
-                class="ant-tag ant-tag-default ant-tag-borderless basic-tag-wrapper basic-large-tag-wrapper css-1mjwlcb css-dev-only-do-not-override-txh9fw"
+                class="ant-tag ant-tag-default ant-tag-borderless basic-tag-wrapper basic-large-tag-wrapper css-1mjwlcb"
               />
               <div
-                class="ant-divider css-dev-only-do-not-override-txh9fw ant-divider-vertical result-card-status-divider"
+                class="ant-divider ant-divider-vertical result-card-status-divider"
                 role="separator"
               />
               <span
-                class="ant-tag ant-tag-green ant-tag-borderless basic-tag-wrapper basic-large-tag-wrapper css-13qu6j1 css-dev-only-do-not-override-txh9fw"
+                class="ant-tag ant-tag-green ant-tag-borderless basic-tag-wrapper basic-large-tag-wrapper css-13qu6j1"
               >
                 <svg
                   height="16"
@@ -2621,7 +2621,7 @@ exports[`sqle/ExecWorkflow/AuditDetail/SqlMode render click add desc 1`] = `
           </div>
         </div>
         <div
-          class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+          class="ant-space ant-space-horizontal ant-space-align-center"
         >
           <div
             class="ant-space-item"
@@ -2632,7 +2632,7 @@ exports[`sqle/ExecWorkflow/AuditDetail/SqlMode render click add desc 1`] = `
             style="margin-right: 8px;"
           >
             <button
-              class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default ant-btn-sm basic-button-wrapper css-geipcv"
+              class="ant-btn ant-btn-default ant-btn-sm basic-button-wrapper css-geipcv"
               type="button"
             >
               <span>
@@ -2644,7 +2644,7 @@ exports[`sqle/ExecWorkflow/AuditDetail/SqlMode render click add desc 1`] = `
             class="ant-space-item"
           >
             <button
-              class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default ant-btn-sm basic-button-wrapper css-geipcv"
+              class="ant-btn ant-btn-default ant-btn-sm basic-button-wrapper css-geipcv"
               type="button"
             >
               <span>
@@ -2664,10 +2664,10 @@ exports[`sqle/ExecWorkflow/AuditDetail/SqlMode render click add desc 1`] = `
             class="segmented-tabs-wrapper"
           >
             <div
-              class="ant-row segmented-row-wrapper css-156vlto css-dev-only-do-not-override-txh9fw"
+              class="ant-row segmented-row-wrapper css-156vlto"
             >
               <div
-                class="ant-segmented basic-segmented-wrapper css-192b3m1 css-dev-only-do-not-override-txh9fw"
+                class="ant-segmented basic-segmented-wrapper css-192b3m1"
               >
                 <div
                   class="ant-segmented-group"
@@ -2718,26 +2718,26 @@ exports[`sqle/ExecWorkflow/AuditDetail/SqlMode render click add desc 1`] = `
                 </div>
               </div>
               <div
-                class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+                class="ant-space ant-space-horizontal ant-space-align-center"
               >
                 <div
                   class="ant-space-item"
                   style="margin-right: 0px;"
                 >
                   <div
-                    class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
+                    class="ant-space ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
                   >
                     <div
                       class="ant-space-item"
                     >
                       <div
-                        class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+                        class="ant-space ant-space-horizontal ant-space-align-center"
                       >
                         <div
                           class="ant-space-item"
                         >
                           <span
-                            class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-1mjwlcb css-dev-only-do-not-override-txh9fw"
+                            class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-1mjwlcb"
                           >
                             <svg
                               color="#4583FF"
@@ -2769,7 +2769,7 @@ exports[`sqle/ExecWorkflow/AuditDetail/SqlMode render click add desc 1`] = `
                   class="ant-space-item"
                 >
                   <span
-                    class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-1mjwlcb css-dev-only-do-not-override-txh9fw"
+                    class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-1mjwlcb"
                   >
                     <svg
                       height="18"
@@ -2810,7 +2810,7 @@ exports[`sqle/ExecWorkflow/AuditDetail/SqlMode render click add desc 1`] = `
           </div>
         </div>
         <div
-          class="ant-tree ant-tree-icon-hide ant-tree-unselectable css-ks72ok css-dev-only-do-not-override-txh9fw ant-tree-show-line"
+          class="ant-tree ant-tree-icon-hide ant-tree-unselectable css-ks72ok ant-tree-show-line"
           role="tree"
         >
           <div>
@@ -2899,7 +2899,7 @@ exports[`sqle/ExecWorkflow/AuditDetail/SqlMode render click add desc 1`] = `
         class="result-card-footer"
       >
         <div
-          class="ant-spin-nested-loading css-dev-only-do-not-override-txh9fw"
+          class="ant-spin-nested-loading"
         >
           <div
             class="ant-spin-container"
@@ -2919,7 +2919,7 @@ exports[`sqle/ExecWorkflow/AuditDetail/SqlMode render click add desc 1`] = `
                 />
               </svg>
               <input
-                class="ant-input css-dev-only-do-not-override-ywkr0o basic-input-wrapper result-describe-input css-1pd1cd5"
+                class="ant-input basic-input-wrapper result-describe-input css-1pd1cd5"
                 placeholder="添加说明"
                 type="text"
                 value="into desc params"
@@ -2943,7 +2943,7 @@ exports[`sqle/ExecWorkflow/AuditDetail/SqlMode render click add desc 2`] = `
         class="result-card-header"
       >
         <div
-          class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+          class="ant-space ant-space-horizontal ant-space-align-center"
         >
           <div
             class="ant-space-item"
@@ -2963,14 +2963,14 @@ exports[`sqle/ExecWorkflow/AuditDetail/SqlMode render click add desc 2`] = `
               class="result-card-status-wrap"
             >
               <span
-                class="ant-tag ant-tag-default ant-tag-borderless basic-tag-wrapper basic-large-tag-wrapper css-1mjwlcb css-dev-only-do-not-override-txh9fw"
+                class="ant-tag ant-tag-default ant-tag-borderless basic-tag-wrapper basic-large-tag-wrapper css-1mjwlcb"
               />
               <div
-                class="ant-divider css-dev-only-do-not-override-txh9fw ant-divider-vertical result-card-status-divider"
+                class="ant-divider ant-divider-vertical result-card-status-divider"
                 role="separator"
               />
               <span
-                class="ant-tag ant-tag-green ant-tag-borderless basic-tag-wrapper basic-large-tag-wrapper css-13qu6j1 css-dev-only-do-not-override-txh9fw"
+                class="ant-tag ant-tag-green ant-tag-borderless basic-tag-wrapper basic-large-tag-wrapper css-13qu6j1"
               >
                 <svg
                   height="16"
@@ -2991,7 +2991,7 @@ exports[`sqle/ExecWorkflow/AuditDetail/SqlMode render click add desc 2`] = `
           </div>
         </div>
         <div
-          class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+          class="ant-space ant-space-horizontal ant-space-align-center"
         >
           <div
             class="ant-space-item"
@@ -3002,7 +3002,7 @@ exports[`sqle/ExecWorkflow/AuditDetail/SqlMode render click add desc 2`] = `
             style="margin-right: 8px;"
           >
             <button
-              class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default ant-btn-sm basic-button-wrapper css-geipcv"
+              class="ant-btn ant-btn-default ant-btn-sm basic-button-wrapper css-geipcv"
               type="button"
             >
               <span>
@@ -3014,7 +3014,7 @@ exports[`sqle/ExecWorkflow/AuditDetail/SqlMode render click add desc 2`] = `
             class="ant-space-item"
           >
             <button
-              class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default ant-btn-sm basic-button-wrapper css-geipcv"
+              class="ant-btn ant-btn-default ant-btn-sm basic-button-wrapper css-geipcv"
               type="button"
             >
               <span>
@@ -3034,10 +3034,10 @@ exports[`sqle/ExecWorkflow/AuditDetail/SqlMode render click add desc 2`] = `
             class="segmented-tabs-wrapper"
           >
             <div
-              class="ant-row segmented-row-wrapper css-156vlto css-dev-only-do-not-override-txh9fw"
+              class="ant-row segmented-row-wrapper css-156vlto"
             >
               <div
-                class="ant-segmented basic-segmented-wrapper css-192b3m1 css-dev-only-do-not-override-txh9fw"
+                class="ant-segmented basic-segmented-wrapper css-192b3m1"
               >
                 <div
                   class="ant-segmented-group"
@@ -3088,26 +3088,26 @@ exports[`sqle/ExecWorkflow/AuditDetail/SqlMode render click add desc 2`] = `
                 </div>
               </div>
               <div
-                class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+                class="ant-space ant-space-horizontal ant-space-align-center"
               >
                 <div
                   class="ant-space-item"
                   style="margin-right: 0px;"
                 >
                   <div
-                    class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
+                    class="ant-space ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
                   >
                     <div
                       class="ant-space-item"
                     >
                       <div
-                        class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+                        class="ant-space ant-space-horizontal ant-space-align-center"
                       >
                         <div
                           class="ant-space-item"
                         >
                           <span
-                            class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-1mjwlcb css-dev-only-do-not-override-txh9fw"
+                            class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-1mjwlcb"
                           >
                             <svg
                               color="#4583FF"
@@ -3139,7 +3139,7 @@ exports[`sqle/ExecWorkflow/AuditDetail/SqlMode render click add desc 2`] = `
                   class="ant-space-item"
                 >
                   <span
-                    class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-1mjwlcb css-dev-only-do-not-override-txh9fw"
+                    class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-1mjwlcb"
                   >
                     <svg
                       height="18"
@@ -3180,7 +3180,7 @@ exports[`sqle/ExecWorkflow/AuditDetail/SqlMode render click add desc 2`] = `
           </div>
         </div>
         <div
-          class="ant-tree ant-tree-icon-hide ant-tree-unselectable css-ks72ok css-dev-only-do-not-override-txh9fw ant-tree-show-line"
+          class="ant-tree ant-tree-icon-hide ant-tree-unselectable css-ks72ok ant-tree-show-line"
           role="tree"
         >
           <div>
@@ -3269,13 +3269,13 @@ exports[`sqle/ExecWorkflow/AuditDetail/SqlMode render click add desc 2`] = `
         class="result-card-footer"
       >
         <div
-          class="ant-spin-nested-loading css-dev-only-do-not-override-txh9fw"
+          class="ant-spin-nested-loading"
         >
           <div>
             <div
               aria-busy="true"
               aria-live="polite"
-              class="ant-spin ant-spin-spinning css-dev-only-do-not-override-txh9fw"
+              class="ant-spin ant-spin-spinning"
             >
               <span
                 class="ant-spin-dot ant-spin-dot-spin"
@@ -3313,7 +3313,7 @@ exports[`sqle/ExecWorkflow/AuditDetail/SqlMode render click add desc 2`] = `
                 />
               </svg>
               <input
-                class="ant-input css-dev-only-do-not-override-ywkr0o basic-input-wrapper result-describe-input css-1pd1cd5"
+                class="ant-input basic-input-wrapper result-describe-input css-1pd1cd5"
                 placeholder="添加说明"
                 type="text"
                 value="desc text"
@@ -3337,7 +3337,7 @@ exports[`sqle/ExecWorkflow/AuditDetail/SqlMode render click icon arrow when has 
         class="result-card-header"
       >
         <div
-          class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+          class="ant-space ant-space-horizontal ant-space-align-center"
         >
           <div
             class="ant-space-item"
@@ -3357,20 +3357,20 @@ exports[`sqle/ExecWorkflow/AuditDetail/SqlMode render click icon arrow when has 
               class="result-card-status-wrap"
             >
               <span
-                class="ant-tag ant-tag-default ant-tag-borderless basic-tag-wrapper basic-large-tag-wrapper css-1mjwlcb css-dev-only-do-not-override-txh9fw"
+                class="ant-tag ant-tag-default ant-tag-borderless basic-tag-wrapper basic-large-tag-wrapper css-1mjwlcb"
               />
               <div
-                class="ant-divider css-dev-only-do-not-override-txh9fw ant-divider-vertical result-card-status-divider"
+                class="ant-divider ant-divider-vertical result-card-status-divider"
                 role="separator"
               />
               <div
-                class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+                class="ant-space ant-space-horizontal ant-space-align-center"
               />
             </div>
           </div>
         </div>
         <div
-          class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+          class="ant-space ant-space-horizontal ant-space-align-center"
         >
           <div
             class="ant-space-item"
@@ -3381,7 +3381,7 @@ exports[`sqle/ExecWorkflow/AuditDetail/SqlMode render click icon arrow when has 
             style="margin-right: 8px;"
           >
             <button
-              class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default ant-btn-sm basic-button-wrapper css-geipcv"
+              class="ant-btn ant-btn-default ant-btn-sm basic-button-wrapper css-geipcv"
               type="button"
             >
               <span>
@@ -3393,7 +3393,7 @@ exports[`sqle/ExecWorkflow/AuditDetail/SqlMode render click icon arrow when has 
             class="ant-space-item"
           >
             <button
-              class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default ant-btn-sm basic-button-wrapper css-geipcv"
+              class="ant-btn ant-btn-default ant-btn-sm basic-button-wrapper css-geipcv"
               type="button"
             >
               <span>
@@ -3413,10 +3413,10 @@ exports[`sqle/ExecWorkflow/AuditDetail/SqlMode render click icon arrow when has 
             class="segmented-tabs-wrapper"
           >
             <div
-              class="ant-row segmented-row-wrapper css-156vlto css-dev-only-do-not-override-txh9fw"
+              class="ant-row segmented-row-wrapper css-156vlto"
             >
               <div
-                class="ant-segmented basic-segmented-wrapper css-192b3m1 css-dev-only-do-not-override-txh9fw"
+                class="ant-segmented basic-segmented-wrapper css-192b3m1"
               >
                 <div
                   class="ant-segmented-group"
@@ -3467,26 +3467,26 @@ exports[`sqle/ExecWorkflow/AuditDetail/SqlMode render click icon arrow when has 
                 </div>
               </div>
               <div
-                class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+                class="ant-space ant-space-horizontal ant-space-align-center"
               >
                 <div
                   class="ant-space-item"
                   style="margin-right: 0px;"
                 >
                   <div
-                    class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
+                    class="ant-space ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
                   >
                     <div
                       class="ant-space-item"
                     >
                       <div
-                        class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+                        class="ant-space ant-space-horizontal ant-space-align-center"
                       >
                         <div
                           class="ant-space-item"
                         >
                           <span
-                            class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-1mjwlcb css-dev-only-do-not-override-txh9fw"
+                            class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-1mjwlcb"
                           >
                             <svg
                               color="#4583FF"
@@ -3518,7 +3518,7 @@ exports[`sqle/ExecWorkflow/AuditDetail/SqlMode render click icon arrow when has 
                   class="ant-space-item"
                 >
                   <span
-                    class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-1mjwlcb css-dev-only-do-not-override-txh9fw"
+                    class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-1mjwlcb"
                   >
                     <svg
                       height="18"
@@ -3559,7 +3559,7 @@ exports[`sqle/ExecWorkflow/AuditDetail/SqlMode render click icon arrow when has 
           </div>
         </div>
         <div
-          class="ant-tree ant-tree-icon-hide ant-tree-unselectable css-ks72ok css-dev-only-do-not-override-txh9fw ant-tree-show-line"
+          class="ant-tree ant-tree-icon-hide ant-tree-unselectable css-ks72ok ant-tree-show-line"
           role="tree"
         >
           <div>
@@ -3686,7 +3686,7 @@ exports[`sqle/ExecWorkflow/AuditDetail/SqlMode render click icon arrow when has 
         class="result-card-footer"
       >
         <div
-          class="ant-spin-nested-loading css-dev-only-do-not-override-txh9fw"
+          class="ant-spin-nested-loading"
         >
           <div
             class="ant-spin-container"
@@ -3706,7 +3706,7 @@ exports[`sqle/ExecWorkflow/AuditDetail/SqlMode render click icon arrow when has 
                 />
               </svg>
               <input
-                class="ant-input css-dev-only-do-not-override-ywkr0o basic-input-wrapper result-describe-input css-1pd1cd5"
+                class="ant-input basic-input-wrapper result-describe-input css-1pd1cd5"
                 placeholder="添加说明"
                 type="text"
                 value=""
@@ -3730,7 +3730,7 @@ exports[`sqle/ExecWorkflow/AuditDetail/SqlMode render click icon arrow when no c
         class="result-card-header"
       >
         <div
-          class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+          class="ant-space ant-space-horizontal ant-space-align-center"
         >
           <div
             class="ant-space-item"
@@ -3750,14 +3750,14 @@ exports[`sqle/ExecWorkflow/AuditDetail/SqlMode render click icon arrow when no c
               class="result-card-status-wrap"
             >
               <span
-                class="ant-tag ant-tag-default ant-tag-borderless basic-tag-wrapper basic-large-tag-wrapper css-1mjwlcb css-dev-only-do-not-override-txh9fw"
+                class="ant-tag ant-tag-default ant-tag-borderless basic-tag-wrapper basic-large-tag-wrapper css-1mjwlcb"
               />
               <div
-                class="ant-divider css-dev-only-do-not-override-txh9fw ant-divider-vertical result-card-status-divider"
+                class="ant-divider ant-divider-vertical result-card-status-divider"
                 role="separator"
               />
               <span
-                class="ant-tag ant-tag-green ant-tag-borderless basic-tag-wrapper basic-large-tag-wrapper css-13qu6j1 css-dev-only-do-not-override-txh9fw"
+                class="ant-tag ant-tag-green ant-tag-borderless basic-tag-wrapper basic-large-tag-wrapper css-13qu6j1"
               >
                 <svg
                   height="16"
@@ -3778,7 +3778,7 @@ exports[`sqle/ExecWorkflow/AuditDetail/SqlMode render click icon arrow when no c
           </div>
         </div>
         <div
-          class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+          class="ant-space ant-space-horizontal ant-space-align-center"
         >
           <div
             class="ant-space-item"
@@ -3789,7 +3789,7 @@ exports[`sqle/ExecWorkflow/AuditDetail/SqlMode render click icon arrow when no c
             style="margin-right: 8px;"
           >
             <button
-              class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default ant-btn-sm basic-button-wrapper css-geipcv"
+              class="ant-btn ant-btn-default ant-btn-sm basic-button-wrapper css-geipcv"
               type="button"
             >
               <span>
@@ -3801,7 +3801,7 @@ exports[`sqle/ExecWorkflow/AuditDetail/SqlMode render click icon arrow when no c
             class="ant-space-item"
           >
             <button
-              class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default ant-btn-sm basic-button-wrapper css-geipcv"
+              class="ant-btn ant-btn-default ant-btn-sm basic-button-wrapper css-geipcv"
               type="button"
             >
               <span>
@@ -3821,10 +3821,10 @@ exports[`sqle/ExecWorkflow/AuditDetail/SqlMode render click icon arrow when no c
             class="segmented-tabs-wrapper"
           >
             <div
-              class="ant-row segmented-row-wrapper css-156vlto css-dev-only-do-not-override-txh9fw"
+              class="ant-row segmented-row-wrapper css-156vlto"
             >
               <div
-                class="ant-segmented basic-segmented-wrapper css-192b3m1 css-dev-only-do-not-override-txh9fw"
+                class="ant-segmented basic-segmented-wrapper css-192b3m1"
               >
                 <div
                   class="ant-segmented-group"
@@ -3875,26 +3875,26 @@ exports[`sqle/ExecWorkflow/AuditDetail/SqlMode render click icon arrow when no c
                 </div>
               </div>
               <div
-                class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+                class="ant-space ant-space-horizontal ant-space-align-center"
               >
                 <div
                   class="ant-space-item"
                   style="margin-right: 0px;"
                 >
                   <div
-                    class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
+                    class="ant-space ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
                   >
                     <div
                       class="ant-space-item"
                     >
                       <div
-                        class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+                        class="ant-space ant-space-horizontal ant-space-align-center"
                       >
                         <div
                           class="ant-space-item"
                         >
                           <span
-                            class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-1mjwlcb css-dev-only-do-not-override-txh9fw"
+                            class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-1mjwlcb"
                           >
                             <svg
                               color="#4583FF"
@@ -3926,7 +3926,7 @@ exports[`sqle/ExecWorkflow/AuditDetail/SqlMode render click icon arrow when no c
                   class="ant-space-item"
                 >
                   <span
-                    class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-1mjwlcb css-dev-only-do-not-override-txh9fw"
+                    class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-1mjwlcb"
                   >
                     <svg
                       height="18"
@@ -3967,7 +3967,7 @@ exports[`sqle/ExecWorkflow/AuditDetail/SqlMode render click icon arrow when no c
           </div>
         </div>
         <div
-          class="ant-tree ant-tree-icon-hide ant-tree-unselectable css-ks72ok css-dev-only-do-not-override-txh9fw ant-tree-show-line"
+          class="ant-tree ant-tree-icon-hide ant-tree-unselectable css-ks72ok ant-tree-show-line"
           role="tree"
         >
           <div>
@@ -4087,7 +4087,7 @@ exports[`sqle/ExecWorkflow/AuditDetail/SqlMode render click icon arrow when no c
         class="result-card-footer"
       >
         <div
-          class="ant-spin-nested-loading css-dev-only-do-not-override-txh9fw"
+          class="ant-spin-nested-loading"
         >
           <div
             class="ant-spin-container"
@@ -4107,7 +4107,7 @@ exports[`sqle/ExecWorkflow/AuditDetail/SqlMode render click icon arrow when no c
                 />
               </svg>
               <input
-                class="ant-input css-dev-only-do-not-override-ywkr0o basic-input-wrapper result-describe-input css-1pd1cd5"
+                class="ant-input basic-input-wrapper result-describe-input css-1pd1cd5"
                 placeholder="添加说明"
                 type="text"
                 value=""
@@ -4131,7 +4131,7 @@ exports[`sqle/ExecWorkflow/AuditDetail/SqlMode render has backup conflict 1`] = 
         class="result-card-header"
       >
         <div
-          class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+          class="ant-space ant-space-horizontal ant-space-align-center"
         >
           <div
             class="ant-space-item"
@@ -4151,14 +4151,14 @@ exports[`sqle/ExecWorkflow/AuditDetail/SqlMode render has backup conflict 1`] = 
               class="result-card-status-wrap"
             >
               <span
-                class="ant-tag ant-tag-default ant-tag-borderless basic-tag-wrapper basic-large-tag-wrapper css-1mjwlcb css-dev-only-do-not-override-txh9fw"
+                class="ant-tag ant-tag-default ant-tag-borderless basic-tag-wrapper basic-large-tag-wrapper css-1mjwlcb"
               />
               <div
-                class="ant-divider css-dev-only-do-not-override-txh9fw ant-divider-vertical result-card-status-divider"
+                class="ant-divider ant-divider-vertical result-card-status-divider"
                 role="separator"
               />
               <span
-                class="ant-tag ant-tag-green ant-tag-borderless basic-tag-wrapper basic-large-tag-wrapper css-13qu6j1 css-dev-only-do-not-override-txh9fw"
+                class="ant-tag ant-tag-green ant-tag-borderless basic-tag-wrapper basic-large-tag-wrapper css-13qu6j1"
               >
                 <svg
                   height="16"
@@ -4179,7 +4179,7 @@ exports[`sqle/ExecWorkflow/AuditDetail/SqlMode render has backup conflict 1`] = 
           </div>
         </div>
         <div
-          class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+          class="ant-space ant-space-horizontal ant-space-align-center"
         >
           <div
             class="ant-space-item"
@@ -4190,7 +4190,7 @@ exports[`sqle/ExecWorkflow/AuditDetail/SqlMode render has backup conflict 1`] = 
             style="margin-right: 8px;"
           >
             <button
-              class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default ant-btn-sm basic-button-wrapper css-geipcv"
+              class="ant-btn ant-btn-default ant-btn-sm basic-button-wrapper css-geipcv"
               type="button"
             >
               <span>
@@ -4202,7 +4202,7 @@ exports[`sqle/ExecWorkflow/AuditDetail/SqlMode render has backup conflict 1`] = 
             class="ant-space-item"
           >
             <button
-              class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default ant-btn-sm basic-button-wrapper css-geipcv"
+              class="ant-btn ant-btn-default ant-btn-sm basic-button-wrapper css-geipcv"
               type="button"
             >
               <span>
@@ -4222,10 +4222,10 @@ exports[`sqle/ExecWorkflow/AuditDetail/SqlMode render has backup conflict 1`] = 
             class="segmented-tabs-wrapper"
           >
             <div
-              class="ant-row segmented-row-wrapper css-156vlto css-dev-only-do-not-override-txh9fw"
+              class="ant-row segmented-row-wrapper css-156vlto"
             >
               <div
-                class="ant-segmented basic-segmented-wrapper css-192b3m1 css-dev-only-do-not-override-txh9fw"
+                class="ant-segmented basic-segmented-wrapper css-192b3m1"
               >
                 <div
                   class="ant-segmented-group"
@@ -4276,26 +4276,26 @@ exports[`sqle/ExecWorkflow/AuditDetail/SqlMode render has backup conflict 1`] = 
                 </div>
               </div>
               <div
-                class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+                class="ant-space ant-space-horizontal ant-space-align-center"
               >
                 <div
                   class="ant-space-item"
                   style="margin-right: 0px;"
                 >
                   <div
-                    class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
+                    class="ant-space ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
                   >
                     <div
                       class="ant-space-item"
                     >
                       <div
-                        class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+                        class="ant-space ant-space-horizontal ant-space-align-center"
                       >
                         <div
                           class="ant-space-item"
                         >
                           <span
-                            class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-1mjwlcb css-dev-only-do-not-override-txh9fw"
+                            class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-1mjwlcb"
                           >
                             <svg
                               color="#4583FF"
@@ -4327,7 +4327,7 @@ exports[`sqle/ExecWorkflow/AuditDetail/SqlMode render has backup conflict 1`] = 
                   class="ant-space-item"
                 >
                   <span
-                    class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-1mjwlcb css-dev-only-do-not-override-txh9fw"
+                    class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-1mjwlcb"
                   >
                     <svg
                       height="18"
@@ -4378,7 +4378,7 @@ exports[`sqle/ExecWorkflow/AuditDetail/SqlMode render has backup conflict 1`] = 
               class="lazy-load-wrapper segmented-item-content lazy-load-wrapper-show css-952l0m"
             >
               <div
-                class="ant-space css-dev-only-do-not-override-txh9fw ant-space-vertical rollback-sql-container"
+                class="ant-space ant-space-vertical rollback-sql-container"
               >
                 <div
                   class="ant-space-item"
@@ -4389,14 +4389,14 @@ exports[`sqle/ExecWorkflow/AuditDetail/SqlMode render has backup conflict 1`] = 
                   style="margin-bottom: 8px;"
                 >
                   <div
-                    class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+                    class="ant-space ant-space-horizontal ant-space-align-center"
                   >
                     <div
                       class="ant-space-item"
                       style="margin-right: 8px;"
                     >
                       <div
-                        class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center backup-conflict-tips"
+                        class="ant-space ant-space-horizontal ant-space-align-center backup-conflict-tips"
                       >
                         <div
                           class="ant-space-item"
@@ -4454,7 +4454,7 @@ exports[`sqle/ExecWorkflow/AuditDetail/SqlMode render has backup conflict 1`] = 
           </div>
         </div>
         <div
-          class="ant-tree ant-tree-icon-hide ant-tree-unselectable css-ks72ok css-dev-only-do-not-override-txh9fw ant-tree-show-line"
+          class="ant-tree ant-tree-icon-hide ant-tree-unselectable css-ks72ok ant-tree-show-line"
           role="tree"
         >
           <div>
@@ -4543,7 +4543,7 @@ exports[`sqle/ExecWorkflow/AuditDetail/SqlMode render has backup conflict 1`] = 
         class="result-card-footer"
       >
         <div
-          class="ant-spin-nested-loading css-dev-only-do-not-override-txh9fw"
+          class="ant-spin-nested-loading"
         >
           <div
             class="ant-spin-container"
@@ -4563,7 +4563,7 @@ exports[`sqle/ExecWorkflow/AuditDetail/SqlMode render has backup conflict 1`] = 
                 />
               </svg>
               <input
-                class="ant-input css-dev-only-do-not-override-ywkr0o basic-input-wrapper result-describe-input css-1pd1cd5"
+                class="ant-input basic-input-wrapper result-describe-input css-1pd1cd5"
                 placeholder="添加说明"
                 type="text"
                 value=""
@@ -4587,7 +4587,7 @@ exports[`sqle/ExecWorkflow/AuditDetail/SqlMode render no sql execution result 1`
         class="result-card-header"
       >
         <div
-          class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+          class="ant-space ant-space-horizontal ant-space-align-center"
         >
           <div
             class="ant-space-item"
@@ -4607,14 +4607,14 @@ exports[`sqle/ExecWorkflow/AuditDetail/SqlMode render no sql execution result 1`
               class="result-card-status-wrap"
             >
               <span
-                class="ant-tag ant-tag-default ant-tag-borderless basic-tag-wrapper basic-large-tag-wrapper css-1mjwlcb css-dev-only-do-not-override-txh9fw"
+                class="ant-tag ant-tag-default ant-tag-borderless basic-tag-wrapper basic-large-tag-wrapper css-1mjwlcb"
               />
               <div
-                class="ant-divider css-dev-only-do-not-override-txh9fw ant-divider-vertical result-card-status-divider"
+                class="ant-divider ant-divider-vertical result-card-status-divider"
                 role="separator"
               />
               <span
-                class="ant-tag ant-tag-green ant-tag-borderless basic-tag-wrapper basic-large-tag-wrapper css-13qu6j1 css-dev-only-do-not-override-txh9fw"
+                class="ant-tag ant-tag-green ant-tag-borderless basic-tag-wrapper basic-large-tag-wrapper css-13qu6j1"
               >
                 <svg
                   height="16"
@@ -4635,14 +4635,14 @@ exports[`sqle/ExecWorkflow/AuditDetail/SqlMode render no sql execution result 1`
           </div>
         </div>
         <div
-          class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+          class="ant-space ant-space-horizontal ant-space-align-center"
         >
           <div
             class="ant-space-item"
             style="margin-right: 8px;"
           >
             <button
-              class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default ant-dropdown-trigger basic-button-wrapper css-geipcv"
+              class="ant-btn ant-btn-default ant-dropdown-trigger basic-button-wrapper css-geipcv"
               type="button"
             >
               <span>
@@ -4667,7 +4667,7 @@ exports[`sqle/ExecWorkflow/AuditDetail/SqlMode render no sql execution result 1`
             style="margin-right: 8px;"
           >
             <button
-              class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default ant-btn-sm basic-button-wrapper css-geipcv"
+              class="ant-btn ant-btn-default ant-btn-sm basic-button-wrapper css-geipcv"
               type="button"
             >
               <span>
@@ -4679,7 +4679,7 @@ exports[`sqle/ExecWorkflow/AuditDetail/SqlMode render no sql execution result 1`
             class="ant-space-item"
           >
             <button
-              class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default ant-btn-sm basic-button-wrapper css-geipcv"
+              class="ant-btn ant-btn-default ant-btn-sm basic-button-wrapper css-geipcv"
               type="button"
             >
               <span>
@@ -4699,10 +4699,10 @@ exports[`sqle/ExecWorkflow/AuditDetail/SqlMode render no sql execution result 1`
             class="segmented-tabs-wrapper"
           >
             <div
-              class="ant-row segmented-row-wrapper css-156vlto css-dev-only-do-not-override-txh9fw"
+              class="ant-row segmented-row-wrapper css-156vlto"
             >
               <div
-                class="ant-segmented basic-segmented-wrapper css-192b3m1 css-dev-only-do-not-override-txh9fw"
+                class="ant-segmented basic-segmented-wrapper css-192b3m1"
               >
                 <div
                   class="ant-segmented-group"
@@ -4753,26 +4753,26 @@ exports[`sqle/ExecWorkflow/AuditDetail/SqlMode render no sql execution result 1`
                 </div>
               </div>
               <div
-                class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+                class="ant-space ant-space-horizontal ant-space-align-center"
               >
                 <div
                   class="ant-space-item"
                   style="margin-right: 0px;"
                 >
                   <div
-                    class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
+                    class="ant-space ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
                   >
                     <div
                       class="ant-space-item"
                     >
                       <div
-                        class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+                        class="ant-space ant-space-horizontal ant-space-align-center"
                       >
                         <div
                           class="ant-space-item"
                         >
                           <span
-                            class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-1mjwlcb css-dev-only-do-not-override-txh9fw"
+                            class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-1mjwlcb"
                           >
                             <svg
                               color="#4583FF"
@@ -4804,7 +4804,7 @@ exports[`sqle/ExecWorkflow/AuditDetail/SqlMode render no sql execution result 1`
                   class="ant-space-item"
                 >
                   <span
-                    class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-1mjwlcb css-dev-only-do-not-override-txh9fw"
+                    class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-1mjwlcb"
                   >
                     <svg
                       height="18"
@@ -4855,14 +4855,14 @@ exports[`sqle/ExecWorkflow/AuditDetail/SqlMode render no sql execution result 1`
               class="lazy-load-wrapper segmented-item-content lazy-load-wrapper-show css-952l0m"
             >
               <div
-                class="ant-space css-dev-only-do-not-override-txh9fw ant-space-vertical rollback-sql-container"
+                class="ant-space ant-space-vertical rollback-sql-container"
               >
                 <div
                   class="ant-space-item"
                   style="margin-bottom: 8px;"
                 >
                   <div
-                    class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center backup-conflict-tips"
+                    class="ant-space ant-space-horizontal ant-space-align-center backup-conflict-tips"
                   >
                     <div
                       class="ant-space-item"
@@ -4893,14 +4893,14 @@ exports[`sqle/ExecWorkflow/AuditDetail/SqlMode render no sql execution result 1`
                   style="margin-bottom: 8px;"
                 >
                   <div
-                    class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+                    class="ant-space ant-space-horizontal ant-space-align-center"
                   >
                     <div
                       class="ant-space-item"
                       style="margin-right: 8px;"
                     >
                       <span
-                        class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-1mjwlcb css-dev-only-do-not-override-txh9fw"
+                        class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-1mjwlcb"
                       >
                         基于反向SQL回滚
                       </span>
@@ -4909,7 +4909,7 @@ exports[`sqle/ExecWorkflow/AuditDetail/SqlMode render no sql execution result 1`
                       class="ant-space-item"
                     >
                       <div
-                        class="ant-divider css-dev-only-do-not-override-txh9fw ant-divider-vertical result-card-status-divider"
+                        class="ant-divider ant-divider-vertical result-card-status-divider"
                         role="separator"
                       />
                       回滚语句将在上线阶段自动生成
@@ -4943,7 +4943,7 @@ exports[`sqle/ExecWorkflow/AuditDetail/SqlMode render no sql execution result 1`
           </div>
         </div>
         <div
-          class="ant-tree ant-tree-icon-hide ant-tree-unselectable css-ks72ok css-dev-only-do-not-override-txh9fw ant-tree-show-line"
+          class="ant-tree ant-tree-icon-hide ant-tree-unselectable css-ks72ok ant-tree-show-line"
           role="tree"
         >
           <div>
@@ -5032,7 +5032,7 @@ exports[`sqle/ExecWorkflow/AuditDetail/SqlMode render no sql execution result 1`
         class="result-card-footer"
       >
         <div
-          class="ant-spin-nested-loading css-dev-only-do-not-override-txh9fw"
+          class="ant-spin-nested-loading"
         >
           <div
             class="ant-spin-container"
@@ -5052,7 +5052,7 @@ exports[`sqle/ExecWorkflow/AuditDetail/SqlMode render no sql execution result 1`
                 />
               </svg>
               <input
-                class="ant-input css-dev-only-do-not-override-ywkr0o basic-input-wrapper result-describe-input css-1pd1cd5"
+                class="ant-input basic-input-wrapper result-describe-input css-1pd1cd5"
                 placeholder="添加说明"
                 type="text"
                 value=""
@@ -5076,7 +5076,7 @@ exports[`sqle/ExecWorkflow/AuditDetail/SqlMode render no sql execution result an
         class="result-card-header"
       >
         <div
-          class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+          class="ant-space ant-space-horizontal ant-space-align-center"
         >
           <div
             class="ant-space-item"
@@ -5096,14 +5096,14 @@ exports[`sqle/ExecWorkflow/AuditDetail/SqlMode render no sql execution result an
               class="result-card-status-wrap"
             >
               <span
-                class="ant-tag ant-tag-default ant-tag-borderless basic-tag-wrapper basic-large-tag-wrapper css-1mjwlcb css-dev-only-do-not-override-txh9fw"
+                class="ant-tag ant-tag-default ant-tag-borderless basic-tag-wrapper basic-large-tag-wrapper css-1mjwlcb"
               />
               <div
-                class="ant-divider css-dev-only-do-not-override-txh9fw ant-divider-vertical result-card-status-divider"
+                class="ant-divider ant-divider-vertical result-card-status-divider"
                 role="separator"
               />
               <span
-                class="ant-tag ant-tag-green ant-tag-borderless basic-tag-wrapper basic-large-tag-wrapper css-13qu6j1 css-dev-only-do-not-override-txh9fw"
+                class="ant-tag ant-tag-green ant-tag-borderless basic-tag-wrapper basic-large-tag-wrapper css-13qu6j1"
               >
                 <svg
                   height="16"
@@ -5124,14 +5124,14 @@ exports[`sqle/ExecWorkflow/AuditDetail/SqlMode render no sql execution result an
           </div>
         </div>
         <div
-          class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+          class="ant-space ant-space-horizontal ant-space-align-center"
         >
           <div
             class="ant-space-item"
             style="margin-right: 8px;"
           >
             <button
-              class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default ant-dropdown-trigger basic-button-wrapper css-geipcv"
+              class="ant-btn ant-btn-default ant-dropdown-trigger basic-button-wrapper css-geipcv"
               type="button"
             >
               <span>
@@ -5156,7 +5156,7 @@ exports[`sqle/ExecWorkflow/AuditDetail/SqlMode render no sql execution result an
             style="margin-right: 8px;"
           >
             <button
-              class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default ant-btn-sm basic-button-wrapper css-geipcv"
+              class="ant-btn ant-btn-default ant-btn-sm basic-button-wrapper css-geipcv"
               type="button"
             >
               <span>
@@ -5168,7 +5168,7 @@ exports[`sqle/ExecWorkflow/AuditDetail/SqlMode render no sql execution result an
             class="ant-space-item"
           >
             <button
-              class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default ant-btn-sm basic-button-wrapper css-geipcv"
+              class="ant-btn ant-btn-default ant-btn-sm basic-button-wrapper css-geipcv"
               type="button"
             >
               <span>
@@ -5188,10 +5188,10 @@ exports[`sqle/ExecWorkflow/AuditDetail/SqlMode render no sql execution result an
             class="segmented-tabs-wrapper"
           >
             <div
-              class="ant-row segmented-row-wrapper css-156vlto css-dev-only-do-not-override-txh9fw"
+              class="ant-row segmented-row-wrapper css-156vlto"
             >
               <div
-                class="ant-segmented basic-segmented-wrapper css-192b3m1 css-dev-only-do-not-override-txh9fw"
+                class="ant-segmented basic-segmented-wrapper css-192b3m1"
               >
                 <div
                   class="ant-segmented-group"
@@ -5242,26 +5242,26 @@ exports[`sqle/ExecWorkflow/AuditDetail/SqlMode render no sql execution result an
                 </div>
               </div>
               <div
-                class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+                class="ant-space ant-space-horizontal ant-space-align-center"
               >
                 <div
                   class="ant-space-item"
                   style="margin-right: 0px;"
                 >
                   <div
-                    class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
+                    class="ant-space ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
                   >
                     <div
                       class="ant-space-item"
                     >
                       <div
-                        class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+                        class="ant-space ant-space-horizontal ant-space-align-center"
                       >
                         <div
                           class="ant-space-item"
                         >
                           <span
-                            class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-1mjwlcb css-dev-only-do-not-override-txh9fw"
+                            class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-1mjwlcb"
                           >
                             <svg
                               color="#4583FF"
@@ -5293,7 +5293,7 @@ exports[`sqle/ExecWorkflow/AuditDetail/SqlMode render no sql execution result an
                   class="ant-space-item"
                 >
                   <span
-                    class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-1mjwlcb css-dev-only-do-not-override-txh9fw"
+                    class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-1mjwlcb"
                   >
                     <svg
                       height="18"
@@ -5344,14 +5344,14 @@ exports[`sqle/ExecWorkflow/AuditDetail/SqlMode render no sql execution result an
               class="lazy-load-wrapper segmented-item-content lazy-load-wrapper-show css-952l0m"
             >
               <div
-                class="ant-space css-dev-only-do-not-override-txh9fw ant-space-vertical rollback-sql-container"
+                class="ant-space ant-space-vertical rollback-sql-container"
               >
                 <div
                   class="ant-space-item"
                   style="margin-bottom: 8px;"
                 >
                   <div
-                    class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center backup-conflict-tips"
+                    class="ant-space ant-space-horizontal ant-space-align-center backup-conflict-tips"
                   >
                     <div
                       class="ant-space-item"
@@ -5382,14 +5382,14 @@ exports[`sqle/ExecWorkflow/AuditDetail/SqlMode render no sql execution result an
                   style="margin-bottom: 8px;"
                 >
                   <div
-                    class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+                    class="ant-space ant-space-horizontal ant-space-align-center"
                   >
                     <div
                       class="ant-space-item"
                       style="margin-right: 8px;"
                     >
                       <span
-                        class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-1mjwlcb css-dev-only-do-not-override-txh9fw"
+                        class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-1mjwlcb"
                       >
                         基于反向SQL回滚
                       </span>
@@ -5398,7 +5398,7 @@ exports[`sqle/ExecWorkflow/AuditDetail/SqlMode render no sql execution result an
                       class="ant-space-item"
                     >
                       <div
-                        class="ant-divider css-dev-only-do-not-override-txh9fw ant-divider-vertical result-card-status-divider"
+                        class="ant-divider ant-divider-vertical result-card-status-divider"
                         role="separator"
                       />
                     </div>
@@ -5431,7 +5431,7 @@ exports[`sqle/ExecWorkflow/AuditDetail/SqlMode render no sql execution result an
           </div>
         </div>
         <div
-          class="ant-tree ant-tree-icon-hide ant-tree-unselectable css-ks72ok css-dev-only-do-not-override-txh9fw ant-tree-show-line"
+          class="ant-tree ant-tree-icon-hide ant-tree-unselectable css-ks72ok ant-tree-show-line"
           role="tree"
         >
           <div>
@@ -5520,7 +5520,7 @@ exports[`sqle/ExecWorkflow/AuditDetail/SqlMode render no sql execution result an
         class="result-card-footer"
       >
         <div
-          class="ant-spin-nested-loading css-dev-only-do-not-override-txh9fw"
+          class="ant-spin-nested-loading"
         >
           <div
             class="ant-spin-container"
@@ -5540,7 +5540,7 @@ exports[`sqle/ExecWorkflow/AuditDetail/SqlMode render no sql execution result an
                 />
               </svg>
               <input
-                class="ant-input css-dev-only-do-not-override-ywkr0o basic-input-wrapper result-describe-input css-1pd1cd5"
+                class="ant-input basic-input-wrapper result-describe-input css-1pd1cd5"
                 placeholder="添加说明"
                 type="text"
                 value=""
@@ -5564,7 +5564,7 @@ exports[`sqle/ExecWorkflow/AuditDetail/SqlMode render snap when data is empty 1`
         class="result-card-header"
       >
         <div
-          class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+          class="ant-space ant-space-horizontal ant-space-align-center"
         >
           <div
             class="ant-space-item"
@@ -5584,14 +5584,14 @@ exports[`sqle/ExecWorkflow/AuditDetail/SqlMode render snap when data is empty 1`
               class="result-card-status-wrap"
             >
               <span
-                class="ant-tag ant-tag-default ant-tag-borderless basic-tag-wrapper basic-large-tag-wrapper css-1mjwlcb css-dev-only-do-not-override-txh9fw"
+                class="ant-tag ant-tag-default ant-tag-borderless basic-tag-wrapper basic-large-tag-wrapper css-1mjwlcb"
               />
               <div
-                class="ant-divider css-dev-only-do-not-override-txh9fw ant-divider-vertical result-card-status-divider"
+                class="ant-divider ant-divider-vertical result-card-status-divider"
                 role="separator"
               />
               <span
-                class="ant-tag ant-tag-green ant-tag-borderless basic-tag-wrapper basic-large-tag-wrapper css-13qu6j1 css-dev-only-do-not-override-txh9fw"
+                class="ant-tag ant-tag-green ant-tag-borderless basic-tag-wrapper basic-large-tag-wrapper css-13qu6j1"
               >
                 <svg
                   height="16"
@@ -5612,7 +5612,7 @@ exports[`sqle/ExecWorkflow/AuditDetail/SqlMode render snap when data is empty 1`
           </div>
         </div>
         <div
-          class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+          class="ant-space ant-space-horizontal ant-space-align-center"
         >
           <div
             class="ant-space-item"
@@ -5623,7 +5623,7 @@ exports[`sqle/ExecWorkflow/AuditDetail/SqlMode render snap when data is empty 1`
             style="margin-right: 8px;"
           >
             <button
-              class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default ant-btn-sm basic-button-wrapper css-geipcv"
+              class="ant-btn ant-btn-default ant-btn-sm basic-button-wrapper css-geipcv"
               type="button"
             >
               <span>
@@ -5635,7 +5635,7 @@ exports[`sqle/ExecWorkflow/AuditDetail/SqlMode render snap when data is empty 1`
             class="ant-space-item"
           >
             <button
-              class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default ant-btn-sm basic-button-wrapper css-geipcv"
+              class="ant-btn ant-btn-default ant-btn-sm basic-button-wrapper css-geipcv"
               type="button"
             >
               <span>
@@ -5655,10 +5655,10 @@ exports[`sqle/ExecWorkflow/AuditDetail/SqlMode render snap when data is empty 1`
             class="segmented-tabs-wrapper"
           >
             <div
-              class="ant-row segmented-row-wrapper css-156vlto css-dev-only-do-not-override-txh9fw"
+              class="ant-row segmented-row-wrapper css-156vlto"
             >
               <div
-                class="ant-segmented basic-segmented-wrapper css-192b3m1 css-dev-only-do-not-override-txh9fw"
+                class="ant-segmented basic-segmented-wrapper css-192b3m1"
               >
                 <div
                   class="ant-segmented-group"
@@ -5709,26 +5709,26 @@ exports[`sqle/ExecWorkflow/AuditDetail/SqlMode render snap when data is empty 1`
                 </div>
               </div>
               <div
-                class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+                class="ant-space ant-space-horizontal ant-space-align-center"
               >
                 <div
                   class="ant-space-item"
                   style="margin-right: 0px;"
                 >
                   <div
-                    class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
+                    class="ant-space ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
                   >
                     <div
                       class="ant-space-item"
                     >
                       <div
-                        class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+                        class="ant-space ant-space-horizontal ant-space-align-center"
                       >
                         <div
                           class="ant-space-item"
                         >
                           <span
-                            class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-1mjwlcb css-dev-only-do-not-override-txh9fw"
+                            class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-1mjwlcb"
                           >
                             <svg
                               color="#4583FF"
@@ -5760,7 +5760,7 @@ exports[`sqle/ExecWorkflow/AuditDetail/SqlMode render snap when data is empty 1`
                   class="ant-space-item"
                 >
                   <span
-                    class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-1mjwlcb css-dev-only-do-not-override-txh9fw"
+                    class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-1mjwlcb"
                   >
                     <svg
                       height="18"
@@ -5801,7 +5801,7 @@ exports[`sqle/ExecWorkflow/AuditDetail/SqlMode render snap when data is empty 1`
           </div>
         </div>
         <div
-          class="ant-tree ant-tree-icon-hide ant-tree-unselectable css-ks72ok css-dev-only-do-not-override-txh9fw ant-tree-show-line"
+          class="ant-tree ant-tree-icon-hide ant-tree-unselectable css-ks72ok ant-tree-show-line"
           role="tree"
         >
           <div>
@@ -5890,7 +5890,7 @@ exports[`sqle/ExecWorkflow/AuditDetail/SqlMode render snap when data is empty 1`
         class="result-card-footer"
       >
         <div
-          class="ant-spin-nested-loading css-dev-only-do-not-override-txh9fw"
+          class="ant-spin-nested-loading"
         >
           <div
             class="ant-spin-container"
@@ -5910,7 +5910,7 @@ exports[`sqle/ExecWorkflow/AuditDetail/SqlMode render snap when data is empty 1`
                 />
               </svg>
               <input
-                class="ant-input css-dev-only-do-not-override-ywkr0o basic-input-wrapper result-describe-input css-1pd1cd5"
+                class="ant-input basic-input-wrapper result-describe-input css-1pd1cd5"
                 placeholder="添加说明"
                 type="text"
                 value=""
@@ -5934,7 +5934,7 @@ exports[`sqle/ExecWorkflow/AuditDetail/SqlMode render sql execution result 1`] =
         class="result-card-header"
       >
         <div
-          class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+          class="ant-space ant-space-horizontal ant-space-align-center"
         >
           <div
             class="ant-space-item"
@@ -5954,14 +5954,14 @@ exports[`sqle/ExecWorkflow/AuditDetail/SqlMode render sql execution result 1`] =
               class="result-card-status-wrap"
             >
               <span
-                class="ant-tag ant-tag-default ant-tag-borderless basic-tag-wrapper basic-large-tag-wrapper css-1mjwlcb css-dev-only-do-not-override-txh9fw"
+                class="ant-tag ant-tag-default ant-tag-borderless basic-tag-wrapper basic-large-tag-wrapper css-1mjwlcb"
               />
               <div
-                class="ant-divider css-dev-only-do-not-override-txh9fw ant-divider-vertical result-card-status-divider"
+                class="ant-divider ant-divider-vertical result-card-status-divider"
                 role="separator"
               />
               <span
-                class="ant-tag ant-tag-green ant-tag-borderless basic-tag-wrapper basic-large-tag-wrapper css-13qu6j1 css-dev-only-do-not-override-txh9fw"
+                class="ant-tag ant-tag-green ant-tag-borderless basic-tag-wrapper basic-large-tag-wrapper css-13qu6j1"
               >
                 <svg
                   height="16"
@@ -5982,14 +5982,14 @@ exports[`sqle/ExecWorkflow/AuditDetail/SqlMode render sql execution result 1`] =
           </div>
         </div>
         <div
-          class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+          class="ant-space ant-space-horizontal ant-space-align-center"
         >
           <div
             class="ant-space-item"
             style="margin-right: 8px;"
           >
             <button
-              class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default ant-dropdown-trigger basic-button-wrapper css-geipcv"
+              class="ant-btn ant-btn-default ant-dropdown-trigger basic-button-wrapper css-geipcv"
               type="button"
             >
               <span>
@@ -6014,7 +6014,7 @@ exports[`sqle/ExecWorkflow/AuditDetail/SqlMode render sql execution result 1`] =
             style="margin-right: 8px;"
           >
             <button
-              class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default ant-btn-sm basic-button-wrapper css-geipcv"
+              class="ant-btn ant-btn-default ant-btn-sm basic-button-wrapper css-geipcv"
               type="button"
             >
               <span>
@@ -6026,7 +6026,7 @@ exports[`sqle/ExecWorkflow/AuditDetail/SqlMode render sql execution result 1`] =
             class="ant-space-item"
           >
             <button
-              class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default ant-btn-sm basic-button-wrapper css-geipcv"
+              class="ant-btn ant-btn-default ant-btn-sm basic-button-wrapper css-geipcv"
               type="button"
             >
               <span>
@@ -6046,10 +6046,10 @@ exports[`sqle/ExecWorkflow/AuditDetail/SqlMode render sql execution result 1`] =
             class="segmented-tabs-wrapper"
           >
             <div
-              class="ant-row segmented-row-wrapper css-156vlto css-dev-only-do-not-override-txh9fw"
+              class="ant-row segmented-row-wrapper css-156vlto"
             >
               <div
-                class="ant-segmented basic-segmented-wrapper css-192b3m1 css-dev-only-do-not-override-txh9fw"
+                class="ant-segmented basic-segmented-wrapper css-192b3m1"
               >
                 <div
                   class="ant-segmented-group"
@@ -6100,26 +6100,26 @@ exports[`sqle/ExecWorkflow/AuditDetail/SqlMode render sql execution result 1`] =
                 </div>
               </div>
               <div
-                class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+                class="ant-space ant-space-horizontal ant-space-align-center"
               >
                 <div
                   class="ant-space-item"
                   style="margin-right: 0px;"
                 >
                   <div
-                    class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
+                    class="ant-space ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
                   >
                     <div
                       class="ant-space-item"
                     >
                       <div
-                        class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+                        class="ant-space ant-space-horizontal ant-space-align-center"
                       >
                         <div
                           class="ant-space-item"
                         >
                           <span
-                            class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-1mjwlcb css-dev-only-do-not-override-txh9fw"
+                            class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-1mjwlcb"
                           >
                             <svg
                               color="#4583FF"
@@ -6151,7 +6151,7 @@ exports[`sqle/ExecWorkflow/AuditDetail/SqlMode render sql execution result 1`] =
                   class="ant-space-item"
                 >
                   <span
-                    class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-1mjwlcb css-dev-only-do-not-override-txh9fw"
+                    class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-1mjwlcb"
                   >
                     <svg
                       height="18"
@@ -6202,14 +6202,14 @@ exports[`sqle/ExecWorkflow/AuditDetail/SqlMode render sql execution result 1`] =
               class="lazy-load-wrapper segmented-item-content lazy-load-wrapper-show css-952l0m"
             >
               <div
-                class="ant-space css-dev-only-do-not-override-txh9fw ant-space-vertical rollback-sql-container"
+                class="ant-space ant-space-vertical rollback-sql-container"
               >
                 <div
                   class="ant-space-item"
                   style="margin-bottom: 8px;"
                 >
                   <div
-                    class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center backup-conflict-tips"
+                    class="ant-space ant-space-horizontal ant-space-align-center backup-conflict-tips"
                   >
                     <div
                       class="ant-space-item"
@@ -6240,14 +6240,14 @@ exports[`sqle/ExecWorkflow/AuditDetail/SqlMode render sql execution result 1`] =
                   style="margin-bottom: 8px;"
                 >
                   <div
-                    class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+                    class="ant-space ant-space-horizontal ant-space-align-center"
                   >
                     <div
                       class="ant-space-item"
                       style="margin-right: 8px;"
                     >
                       <span
-                        class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-1mjwlcb css-dev-only-do-not-override-txh9fw"
+                        class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-1mjwlcb"
                       >
                         基于反向SQL回滚
                       </span>
@@ -6256,7 +6256,7 @@ exports[`sqle/ExecWorkflow/AuditDetail/SqlMode render sql execution result 1`] =
                       class="ant-space-item"
                     >
                       <div
-                        class="ant-divider css-dev-only-do-not-override-txh9fw ant-divider-vertical result-card-status-divider"
+                        class="ant-divider ant-divider-vertical result-card-status-divider"
                         role="separator"
                       />
                       备份成功
@@ -6290,7 +6290,7 @@ exports[`sqle/ExecWorkflow/AuditDetail/SqlMode render sql execution result 1`] =
           </div>
         </div>
         <div
-          class="ant-tree ant-tree-icon-hide ant-tree-unselectable css-ks72ok css-dev-only-do-not-override-txh9fw ant-tree-show-line"
+          class="ant-tree ant-tree-icon-hide ant-tree-unselectable css-ks72ok ant-tree-show-line"
           role="tree"
         >
           <div>
@@ -6379,7 +6379,7 @@ exports[`sqle/ExecWorkflow/AuditDetail/SqlMode render sql execution result 1`] =
         class="result-card-footer"
       >
         <div
-          class="ant-spin-nested-loading css-dev-only-do-not-override-txh9fw"
+          class="ant-spin-nested-loading"
         >
           <div
             class="ant-spin-container"
@@ -6399,7 +6399,7 @@ exports[`sqle/ExecWorkflow/AuditDetail/SqlMode render sql execution result 1`] =
                 />
               </svg>
               <input
-                class="ant-input css-dev-only-do-not-override-ywkr0o basic-input-wrapper result-describe-input css-1pd1cd5"
+                class="ant-input basic-input-wrapper result-describe-input css-1pd1cd5"
                 placeholder="添加说明"
                 type="text"
                 value=""

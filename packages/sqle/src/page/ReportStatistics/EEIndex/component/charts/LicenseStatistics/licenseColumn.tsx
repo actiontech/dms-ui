@@ -49,11 +49,13 @@ const renderTooltipCustomContent = (
       value: data.value
     }
   ];
-  data.limit &&
+  if (data.limit) {
     listData.push({
       label: i18n.t('reportStatistics.licenseStatistics.proportion') as string,
       value: floatToNumberPercent(data.value, data.limit)
     });
+  }
+
   return (
     <ChartTooltip
       sharedTheme={sharedTheme}

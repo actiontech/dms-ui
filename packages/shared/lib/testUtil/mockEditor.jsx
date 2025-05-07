@@ -1,7 +1,7 @@
 import { cloneDeep, isObject } from 'lodash';
 
 const mockEditor = (props) => {
-  const { onMount, onChange, value, commands, ...otherProps } = props;
+  const { onChange, value, commands, ...otherProps } = props;
 
   const cloneProps = cloneDeep(otherProps);
 

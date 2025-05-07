@@ -1,8 +1,7 @@
 import { useTranslation } from 'react-i18next';
-import { ConfigProvider, Space, Row, Col } from 'antd';
+import { Space, Row, Col } from 'antd';
 import { PageHeader, EmptyBox } from '@actiontech/shared';
 import { SyncOutlined } from '@ant-design/icons';
-import useThemeStyleData from '../../hooks/useThemeStyleData';
 import { OverviewStyleWrapper } from './style';
 import ProjectScore from './component/ProjectScore';
 import SqlCount from './component/SqlCount';
@@ -21,7 +20,6 @@ import {
 
 const Overview = () => {
   const { t } = useTranslation();
-  const { sqleTheme } = useThemeStyleData();
   const { projectID } = useCurrentProject();
 
   const { moduleFeatureSupport } = usePermission();
@@ -35,17 +33,7 @@ const Overview = () => {
   }, [onRefreshPage, projectID]);
 
   return (
-    <ConfigProvider
-      theme={{
-        token: {
-          padding: 20,
-          paddingLG: 20,
-          paddingSM: 20,
-          paddingXS: 20,
-          colorBgContainer: sqleTheme.reportStatistics.bgColor
-        }
-      }}
-    >
+    <>
       <PageHeader
         fixed
         title={
@@ -131,7 +119,7 @@ const Overview = () => {
           </Col>
         </Row>
       </OverviewStyleWrapper>
-    </ConfigProvider>
+    </>
   );
 };
 

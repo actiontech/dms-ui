@@ -4,10 +4,10 @@ exports[`page/SyncDataSource/SyncTaskList render list action when no permission 
 <body>
   <div>
     <div
-      class="ant-table-wrapper actiontech-table-namespace css-fxd6ka css-dev-only-do-not-override-bj9uhl"
+      class="ant-table-wrapper actiontech-table-namespace css-fxd6ka"
     >
       <div
-        class="ant-spin-nested-loading css-dev-only-do-not-override-bj9uhl"
+        class="ant-spin-nested-loading"
       >
         <div
           class="ant-spin-container"
@@ -197,13 +197,13 @@ exports[`page/SyncDataSource/SyncTaskList render list action when no permission 
                         class="ant-table-cell"
                       >
                         <div
-                          class="ant-space css-dev-only-do-not-override-bj9uhl ant-space-horizontal ant-space-align-center"
+                          class="ant-space ant-space-horizontal ant-space-align-center"
                         >
                           <div
                             class="ant-space-item"
                           >
                             <span
-                              class="ant-tag ant-tag-green basic-tag-wrapper basic-default-tag-wrapper css-13qu6j1 css-dev-only-do-not-override-bj9uhl"
+                              class="ant-tag ant-tag-green basic-tag-wrapper basic-default-tag-wrapper css-13qu6j1"
                             >
                               成功
                             </span>
@@ -223,7 +223,7 @@ exports[`page/SyncDataSource/SyncTaskList render list action when no permission 
                           class="css-new95e"
                         >
                           <div
-                            class="ant-space css-dev-only-do-not-override-bj9uhl ant-space-horizontal ant-space-align-center"
+                            class="ant-space ant-space-horizontal ant-space-align-center"
                           >
                             <div
                               class="ant-space-item"
@@ -233,7 +233,7 @@ exports[`page/SyncDataSource/SyncTaskList render list action when no permission 
                                 href="/sync-data-source/update/0002"
                               >
                                 <button
-                                  class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                  class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
                                   type="button"
                                 >
                                   <span>
@@ -247,7 +247,7 @@ exports[`page/SyncDataSource/SyncTaskList render list action when no permission 
                               style="margin-right: 8px;"
                             >
                               <button
-                                class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
                                 type="button"
                               >
                                 <span>
@@ -259,7 +259,7 @@ exports[`page/SyncDataSource/SyncTaskList render list action when no permission 
                               class="ant-space-item"
                             >
                               <button
-                                class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm ant-btn-dangerous actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                class="ant-btn ant-btn-default ant-btn-sm ant-btn-dangerous actiontech-table-actions-button basic-button-wrapper css-geipcv"
                                 type="button"
                               >
                                 <span>
@@ -311,13 +311,13 @@ exports[`page/SyncDataSource/SyncTaskList render list action when no permission 
                         class="ant-table-cell"
                       >
                         <div
-                          class="ant-space css-dev-only-do-not-override-bj9uhl ant-space-horizontal ant-space-align-center"
+                          class="ant-space ant-space-horizontal ant-space-align-center"
                         >
                           <div
                             class="ant-space-item"
                           >
                             <span
-                              class="ant-tag ant-tag-green basic-tag-wrapper basic-default-tag-wrapper css-13qu6j1 css-dev-only-do-not-override-bj9uhl"
+                              class="ant-tag ant-tag-green basic-tag-wrapper basic-default-tag-wrapper css-13qu6j1"
                             >
                               成功
                             </span>
@@ -337,7 +337,7 @@ exports[`page/SyncDataSource/SyncTaskList render list action when no permission 
                           class="css-new95e"
                         >
                           <div
-                            class="ant-space css-dev-only-do-not-override-bj9uhl ant-space-horizontal ant-space-align-center"
+                            class="ant-space ant-space-horizontal ant-space-align-center"
                           >
                             <div
                               class="ant-space-item"
@@ -347,7 +347,7 @@ exports[`page/SyncDataSource/SyncTaskList render list action when no permission 
                                 href="/sync-data-source/update/1234"
                               >
                                 <button
-                                  class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                  class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
                                   type="button"
                                 >
                                   <span>
@@ -361,7 +361,7 @@ exports[`page/SyncDataSource/SyncTaskList render list action when no permission 
                               style="margin-right: 8px;"
                             >
                               <button
-                                class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
                                 type="button"
                               >
                                 <span>
@@ -373,7 +373,7 @@ exports[`page/SyncDataSource/SyncTaskList render list action when no permission 
                               class="ant-space-item"
                             >
                               <button
-                                class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm ant-btn-dangerous actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                class="ant-btn ant-btn-default ant-btn-sm ant-btn-dangerous actiontech-table-actions-button basic-button-wrapper css-geipcv"
                                 type="button"
                               >
                                 <span>
@@ -401,16 +401,16 @@ exports[`page/SyncDataSource/SyncTaskList render list snap 1`] = `
 <body>
   <div>
     <div
-      class="ant-table-wrapper actiontech-table-namespace css-fxd6ka css-dev-only-do-not-override-bj9uhl"
+      class="ant-table-wrapper actiontech-table-namespace css-fxd6ka"
     >
       <div
-        class="ant-spin-nested-loading css-dev-only-do-not-override-bj9uhl"
+        class="ant-spin-nested-loading"
       >
         <div>
           <div
             aria-busy="true"
             aria-live="polite"
-            class="ant-spin ant-spin-spinning css-dev-only-do-not-override-bj9uhl"
+            class="ant-spin ant-spin-spinning"
           >
             <span
               class="ant-spin-dot ant-spin-dot-spin"
@@ -607,10 +607,10 @@ exports[`page/SyncDataSource/SyncTaskList render list snap 2`] = `
 <body>
   <div>
     <div
-      class="ant-table-wrapper actiontech-table-namespace css-fxd6ka css-dev-only-do-not-override-bj9uhl"
+      class="ant-table-wrapper actiontech-table-namespace css-fxd6ka"
     >
       <div
-        class="ant-spin-nested-loading css-dev-only-do-not-override-bj9uhl"
+        class="ant-spin-nested-loading"
       >
         <div
           class="ant-spin-container"
@@ -800,13 +800,13 @@ exports[`page/SyncDataSource/SyncTaskList render list snap 2`] = `
                         class="ant-table-cell"
                       >
                         <div
-                          class="ant-space css-dev-only-do-not-override-bj9uhl ant-space-horizontal ant-space-align-center"
+                          class="ant-space ant-space-horizontal ant-space-align-center"
                         >
                           <div
                             class="ant-space-item"
                           >
                             <span
-                              class="ant-tag ant-tag-green basic-tag-wrapper basic-default-tag-wrapper css-13qu6j1 css-dev-only-do-not-override-bj9uhl"
+                              class="ant-tag ant-tag-green basic-tag-wrapper basic-default-tag-wrapper css-13qu6j1"
                             >
                               成功
                             </span>
@@ -826,7 +826,7 @@ exports[`page/SyncDataSource/SyncTaskList render list snap 2`] = `
                           class="css-new95e"
                         >
                           <div
-                            class="ant-space css-dev-only-do-not-override-bj9uhl ant-space-horizontal ant-space-align-center"
+                            class="ant-space ant-space-horizontal ant-space-align-center"
                           >
                             <div
                               class="ant-space-item"
@@ -836,7 +836,7 @@ exports[`page/SyncDataSource/SyncTaskList render list snap 2`] = `
                                 href="/sync-data-source/update/0002"
                               >
                                 <button
-                                  class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                  class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
                                   type="button"
                                 >
                                   <span>
@@ -850,7 +850,7 @@ exports[`page/SyncDataSource/SyncTaskList render list snap 2`] = `
                               style="margin-right: 8px;"
                             >
                               <button
-                                class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
                                 type="button"
                               >
                                 <span>
@@ -862,7 +862,7 @@ exports[`page/SyncDataSource/SyncTaskList render list snap 2`] = `
                               class="ant-space-item"
                             >
                               <button
-                                class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm ant-btn-dangerous actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                class="ant-btn ant-btn-default ant-btn-sm ant-btn-dangerous actiontech-table-actions-button basic-button-wrapper css-geipcv"
                                 type="button"
                               >
                                 <span>
@@ -914,13 +914,13 @@ exports[`page/SyncDataSource/SyncTaskList render list snap 2`] = `
                         class="ant-table-cell"
                       >
                         <div
-                          class="ant-space css-dev-only-do-not-override-bj9uhl ant-space-horizontal ant-space-align-center"
+                          class="ant-space ant-space-horizontal ant-space-align-center"
                         >
                           <div
                             class="ant-space-item"
                           >
                             <span
-                              class="ant-tag ant-tag-green basic-tag-wrapper basic-default-tag-wrapper css-13qu6j1 css-dev-only-do-not-override-bj9uhl"
+                              class="ant-tag ant-tag-green basic-tag-wrapper basic-default-tag-wrapper css-13qu6j1"
                             >
                               成功
                             </span>
@@ -940,7 +940,7 @@ exports[`page/SyncDataSource/SyncTaskList render list snap 2`] = `
                           class="css-new95e"
                         >
                           <div
-                            class="ant-space css-dev-only-do-not-override-bj9uhl ant-space-horizontal ant-space-align-center"
+                            class="ant-space ant-space-horizontal ant-space-align-center"
                           >
                             <div
                               class="ant-space-item"
@@ -950,7 +950,7 @@ exports[`page/SyncDataSource/SyncTaskList render list snap 2`] = `
                                 href="/sync-data-source/update/1234"
                               >
                                 <button
-                                  class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                  class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
                                   type="button"
                                 >
                                   <span>
@@ -964,7 +964,7 @@ exports[`page/SyncDataSource/SyncTaskList render list snap 2`] = `
                               style="margin-right: 8px;"
                             >
                               <button
-                                class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
                                 type="button"
                               >
                                 <span>
@@ -976,7 +976,7 @@ exports[`page/SyncDataSource/SyncTaskList render list snap 2`] = `
                               class="ant-space-item"
                             >
                               <button
-                                class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm ant-btn-dangerous actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                class="ant-btn ant-btn-default ant-btn-sm ant-btn-dangerous actiontech-table-actions-button basic-button-wrapper css-geipcv"
                                 type="button"
                               >
                                 <span>
@@ -1003,10 +1003,10 @@ exports[`page/SyncDataSource/SyncTaskList render list snap 2`] = `
 exports[`page/SyncDataSource/SyncTaskList should not render action column when user no operation permissions 1`] = `
 <div>
   <div
-    class="ant-table-wrapper actiontech-table-namespace css-fxd6ka css-dev-only-do-not-override-bj9uhl"
+    class="ant-table-wrapper actiontech-table-namespace css-fxd6ka"
   >
     <div
-      class="ant-spin-nested-loading css-dev-only-do-not-override-bj9uhl"
+      class="ant-spin-nested-loading"
     >
       <div
         class="ant-spin-container"
@@ -1196,13 +1196,13 @@ exports[`page/SyncDataSource/SyncTaskList should not render action column when u
                       class="ant-table-cell"
                     >
                       <div
-                        class="ant-space css-dev-only-do-not-override-bj9uhl ant-space-horizontal ant-space-align-center"
+                        class="ant-space ant-space-horizontal ant-space-align-center"
                       >
                         <div
                           class="ant-space-item"
                         >
                           <span
-                            class="ant-tag ant-tag-green basic-tag-wrapper basic-default-tag-wrapper css-13qu6j1 css-dev-only-do-not-override-bj9uhl"
+                            class="ant-tag ant-tag-green basic-tag-wrapper basic-default-tag-wrapper css-13qu6j1"
                           >
                             成功
                           </span>
@@ -1263,13 +1263,13 @@ exports[`page/SyncDataSource/SyncTaskList should not render action column when u
                       class="ant-table-cell"
                     >
                       <div
-                        class="ant-space css-dev-only-do-not-override-bj9uhl ant-space-horizontal ant-space-align-center"
+                        class="ant-space ant-space-horizontal ant-space-align-center"
                       >
                         <div
                           class="ant-space-item"
                         >
                           <span
-                            class="ant-tag ant-tag-green basic-tag-wrapper basic-default-tag-wrapper css-13qu6j1 css-dev-only-do-not-override-bj9uhl"
+                            class="ant-tag ant-tag-green basic-tag-wrapper basic-default-tag-wrapper css-13qu6j1"
                           >
                             成功
                           </span>

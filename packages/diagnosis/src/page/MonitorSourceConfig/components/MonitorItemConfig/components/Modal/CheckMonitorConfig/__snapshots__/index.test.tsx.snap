@@ -64,10 +64,10 @@ exports[`test check monitor config modal render empty table when request return 
               class="ant-modal-body"
             >
               <div
-                class="ant-table-wrapper actiontech-table-namespace monitor-item-routine-table css-fxd6ka css-dev-only-do-not-override-bj9uhl"
+                class="ant-table-wrapper actiontech-table-namespace monitor-item-routine-table css-fxd6ka css-dev-only-do-not-override-txh9fw"
               >
                 <div
-                  class="ant-spin-nested-loading css-dev-only-do-not-override-bj9uhl"
+                  class="ant-spin-nested-loading css-dev-only-do-not-override-txh9fw"
                 >
                   <div
                     class="ant-spin-container"
@@ -230,10 +230,10 @@ exports[`test check monitor config modal should close model when click close ico
               class="ant-modal-body"
             >
               <div
-                class="ant-table-wrapper actiontech-table-namespace monitor-item-routine-table css-fxd6ka css-dev-only-do-not-override-bj9uhl"
+                class="ant-table-wrapper actiontech-table-namespace monitor-item-routine-table css-fxd6ka css-dev-only-do-not-override-txh9fw"
               >
                 <div
-                  class="ant-spin-nested-loading css-dev-only-do-not-override-bj9uhl"
+                  class="ant-spin-nested-loading css-dev-only-do-not-override-txh9fw"
                 >
                   <div
                     class="ant-spin-container"
@@ -318,7 +318,7 @@ exports[`test check monitor config modal should close model when click close ico
                       </div>
                     </div>
                     <ul
-                      class="ant-pagination ant-table-pagination ant-table-pagination-right actiontech-table-pagination css-dev-only-do-not-override-bj9uhl"
+                      class="ant-pagination ant-table-pagination ant-table-pagination-right actiontech-table-pagination css-dev-only-do-not-override-txh9fw"
                     >
                       <li
                         class="ant-pagination-total-text"
@@ -407,7 +407,7 @@ exports[`test check monitor config modal should close model when click close ico
                       >
                         <div
                           aria-label="页码"
-                          class="ant-select ant-pagination-options-size-changer css-dev-only-do-not-override-bj9uhl ant-select-single ant-select-show-arrow ant-select-show-search"
+                          class="ant-select ant-pagination-options-size-changer css-dev-only-do-not-override-txh9fw ant-select-single ant-select-show-arrow ant-select-show-search"
                         >
                           <div
                             class="ant-select-selector"
@@ -548,10 +548,10 @@ exports[`test check monitor config modal should match snapshot when modal state 
               class="ant-modal-body"
             >
               <div
-                class="ant-table-wrapper actiontech-table-namespace monitor-item-routine-table css-fxd6ka css-dev-only-do-not-override-bj9uhl"
+                class="ant-table-wrapper actiontech-table-namespace monitor-item-routine-table css-fxd6ka css-dev-only-do-not-override-txh9fw"
               >
                 <div
-                  class="ant-spin-nested-loading css-dev-only-do-not-override-bj9uhl"
+                  class="ant-spin-nested-loading css-dev-only-do-not-override-txh9fw"
                 >
                   <div
                     class="ant-spin-container"
@@ -636,7 +636,7 @@ exports[`test check monitor config modal should match snapshot when modal state 
                       </div>
                     </div>
                     <ul
-                      class="ant-pagination ant-table-pagination ant-table-pagination-right actiontech-table-pagination css-dev-only-do-not-override-bj9uhl"
+                      class="ant-pagination ant-table-pagination ant-table-pagination-right actiontech-table-pagination css-dev-only-do-not-override-txh9fw"
                     >
                       <li
                         class="ant-pagination-total-text"
@@ -725,7 +725,7 @@ exports[`test check monitor config modal should match snapshot when modal state 
                       >
                         <div
                           aria-label="页码"
-                          class="ant-select ant-pagination-options-size-changer css-dev-only-do-not-override-bj9uhl ant-select-single ant-select-show-arrow ant-select-show-search"
+                          class="ant-select ant-pagination-options-size-changer css-dev-only-do-not-override-txh9fw ant-select-single ant-select-show-arrow ant-select-show-search"
                         >
                           <div
                             class="ant-select-selector"
@@ -866,10 +866,10 @@ exports[`test check monitor config modal should refresh table when change pagina
               class="ant-modal-body"
             >
               <div
-                class="ant-table-wrapper actiontech-table-namespace monitor-item-routine-table css-fxd6ka css-dev-only-do-not-override-bj9uhl"
+                class="ant-table-wrapper actiontech-table-namespace monitor-item-routine-table css-fxd6ka css-dev-only-do-not-override-txh9fw"
               >
                 <div
-                  class="ant-spin-nested-loading css-dev-only-do-not-override-bj9uhl"
+                  class="ant-spin-nested-loading css-dev-only-do-not-override-txh9fw"
                 >
                   <div
                     class="ant-spin-container"
@@ -954,7 +954,7 @@ exports[`test check monitor config modal should refresh table when change pagina
                       </div>
                     </div>
                     <ul
-                      class="ant-pagination ant-table-pagination ant-table-pagination-right actiontech-table-pagination css-dev-only-do-not-override-bj9uhl"
+                      class="ant-pagination ant-table-pagination ant-table-pagination-right actiontech-table-pagination css-dev-only-do-not-override-txh9fw"
                     >
                       <li
                         class="ant-pagination-total-text"
@@ -1043,7 +1043,7 @@ exports[`test check monitor config modal should refresh table when change pagina
                       >
                         <div
                           aria-label="页码"
-                          class="ant-select ant-pagination-options-size-changer css-dev-only-do-not-override-bj9uhl ant-select-single ant-select-show-arrow ant-select-show-search"
+                          class="ant-select ant-pagination-options-size-changer css-dev-only-do-not-override-txh9fw ant-select-single ant-select-show-arrow ant-select-show-search"
                         >
                           <div
                             class="ant-select-selector"
@@ -1184,10 +1184,10 @@ exports[`test check monitor config modal should render normal table 1`] = `
               class="ant-modal-body"
             >
               <div
-                class="ant-table-wrapper actiontech-table-namespace monitor-item-routine-table css-fxd6ka css-dev-only-do-not-override-bj9uhl"
+                class="ant-table-wrapper actiontech-table-namespace monitor-item-routine-table css-fxd6ka css-dev-only-do-not-override-txh9fw"
               >
                 <div
-                  class="ant-spin-nested-loading css-dev-only-do-not-override-bj9uhl"
+                  class="ant-spin-nested-loading css-dev-only-do-not-override-txh9fw"
                 >
                   <div
                     class="ant-spin-container"
@@ -1272,7 +1272,7 @@ exports[`test check monitor config modal should render normal table 1`] = `
                       </div>
                     </div>
                     <ul
-                      class="ant-pagination ant-table-pagination ant-table-pagination-right actiontech-table-pagination css-dev-only-do-not-override-bj9uhl"
+                      class="ant-pagination ant-table-pagination ant-table-pagination-right actiontech-table-pagination css-dev-only-do-not-override-txh9fw"
                     >
                       <li
                         class="ant-pagination-total-text"
@@ -1361,7 +1361,7 @@ exports[`test check monitor config modal should render normal table 1`] = `
                       >
                         <div
                           aria-label="页码"
-                          class="ant-select ant-pagination-options-size-changer css-dev-only-do-not-override-bj9uhl ant-select-single ant-select-show-arrow ant-select-show-search"
+                          class="ant-select ant-pagination-options-size-changer css-dev-only-do-not-override-txh9fw ant-select-single ant-select-show-arrow ant-select-show-search"
                         >
                           <div
                             class="ant-select-selector"

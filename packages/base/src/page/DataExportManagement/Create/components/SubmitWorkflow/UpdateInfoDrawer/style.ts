@@ -1,6 +1,5 @@
 import { FormStyleWrapper } from '@actiontech/shared/lib/components/CustomForm/style';
 import { styled } from '@mui/material/styles';
-import { Form } from 'antd';
 
 export const UpdateTaskInfoFormTitleStyleWrapper = styled('div')`
   color: ${({ theme }) =>
@@ -11,7 +10,7 @@ export const UpdateTaskInfoFormTitleStyleWrapper = styled('div')`
   margin-bottom: 24px;
 `;
 
-export const UpdateBseInfoFormStyleWrapper = styled(Form)`
+export const UpdateBseInfoFormStyleWrapper = styled(FormStyleWrapper)`
   padding: 24px 24px 0 !important;
 
   .ant-input.basic-input-wrapper.workflow-name-input-wrapper {

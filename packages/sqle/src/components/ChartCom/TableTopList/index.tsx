@@ -1,7 +1,7 @@
 import { useTranslation } from 'react-i18next';
 import classNames from 'classnames';
 import { ReactNode } from 'react';
-import { Table, ConfigProvider, TableProps } from 'antd';
+import { Table, TableProps } from 'antd';
 import Icon from '@ant-design/icons/lib/components/Icon';
 import useThemeStyleData from '../../../hooks/useThemeStyleData';
 import { TableTopListStyleWrapper } from './style';
@@ -34,59 +34,48 @@ const TableTopList = <T extends Record<string, any>>(
   const dataLength = dataSource?.length ?? 0;
 
   return (
-    <ConfigProvider
-      theme={{
-        token: {
-          colorFillQuaternary:
-            sqleTheme.reportStatistics.TableTopList.colorFillQuaternary
-        }
-      }}
-    >
-      <TableTopListStyleWrapper className="report-base-table-wrapper">
-        <Table
-          className={classNames('report-base-table', {
-            'has-table-cont-style':
-              typeof hideTop3Style === 'boolean'
-                ? !hideTop3Style
-                : !!dataLength,
-            'no-table-data-style': !dataLength
-          })}
-          rowKey={rowKey}
-          dataSource={dataSource}
-          loading={{
-            spinning: apiLoading,
-            indicator: (
-              <Icon
-                component={() => <SpinIndicator />}
-                style={{
-                  color: sqleTheme.reportStatistics.loadingColor
-                }}
-              />
-            )
-          }}
-          pagination={false}
-          locale={{
-            emptyText: () => (
-              <BasicEmpty
-                loading={apiLoading}
-                emptyCont={emptyCont}
-                errorInfo={errorCont}
-                dataLength={dataLength}
-                onRefresh={onRefresh}
-              />
-            )
-          }}
-          columns={columns}
-          scroll={scroll}
-        />
-        <div
-          hidden={dataLength === 0 || dataLength === 10}
-          className="data-bottom-tip"
-        >
-          {t('reportStatistics.tableTopList.noMoreData')}
-        </div>
-      </TableTopListStyleWrapper>
-    </ConfigProvider>
+    <TableTopListStyleWrapper className="report-base-table-wrapper">
+      <Table
+        className={classNames('report-base-table', {
+          'has-table-cont-style':
+            typeof hideTop3Style === 'boolean' ? !hideTop3Style : !!dataLength,
+          'no-table-data-style': !dataLength
+        })}
+        rowKey={rowKey}
+        dataSource={dataSource}
+        loading={{
+          spinning: apiLoading,
+          indicator: (
+            <Icon
+              component={() => <SpinIndicator />}
+              style={{
+                color: sqleTheme.reportStatistics.loadingColor
+              }}
+            />
+          )
+        }}
+        pagination={false}
+        locale={{
+          emptyText: () => (
+            <BasicEmpty
+              loading={apiLoading}
+              emptyCont={emptyCont}
+              errorInfo={errorCont}
+              dataLength={dataLength}
+              onRefresh={onRefresh}
+            />
+          )
+        }}
+        columns={columns}
+        scroll={scroll}
+      />
+      <div
+        hidden={dataLength === 0 || dataLength === 10}
+        className="data-bottom-tip"
+      >
+        {t('reportStatistics.tableTopList.noMoreData')}
+      </div>
+    </TableTopListStyleWrapper>
   );
 };
 

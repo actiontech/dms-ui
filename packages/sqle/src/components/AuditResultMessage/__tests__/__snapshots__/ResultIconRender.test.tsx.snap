@@ -4,7 +4,7 @@ exports[`sqle/components/AuditResultMessage/ResultIconRender render auditing tag
 <body>
   <div>
     <span
-      class="ant-tag ant-tag-geekblue basic-tag-wrapper basic-small-tag-wrapper css-sdwkac css-dev-only-do-not-override-txh9fw"
+      class="ant-tag ant-tag-geekblue basic-tag-wrapper basic-small-tag-wrapper css-sdwkac"
     >
       审核中
     </span>
@@ -16,7 +16,7 @@ exports[`sqle/components/AuditResultMessage/ResultIconRender render icon when ha
 <body>
   <div>
     <div
-      class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+      class="ant-space ant-space-horizontal ant-space-align-center"
     >
       <div
         class="ant-space-item"
@@ -91,7 +91,7 @@ exports[`sqle/components/AuditResultMessage/ResultIconRender render icon when ha
 <body>
   <div>
     <div
-      class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+      class="ant-space ant-space-horizontal ant-space-align-center"
     >
       <div
         class="ant-space-item"
@@ -166,7 +166,7 @@ exports[`sqle/components/AuditResultMessage/ResultIconRender render normal icon 
 <body>
   <div>
     <div
-      class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+      class="ant-space ant-space-horizontal ant-space-align-center"
     >
       <div
         class="ant-space-item"
@@ -192,7 +192,7 @@ exports[`sqle/components/AuditResultMessage/ResultIconRender render normal icon 
 <body>
   <div>
     <div
-      class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+      class="ant-space ant-space-horizontal ant-space-align-center"
     >
       <div
         class="ant-space-item"
@@ -218,7 +218,7 @@ exports[`sqle/components/AuditResultMessage/ResultIconRender should render excep
 <body>
   <div>
     <div
-      class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+      class="ant-space ant-space-horizontal ant-space-align-center"
     >
       <div
         class="ant-space-item"
