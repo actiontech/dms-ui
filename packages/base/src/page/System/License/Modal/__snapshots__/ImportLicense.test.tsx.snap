@@ -5,7 +5,7 @@ exports[`base/System/License/ImportLicenseModal render snap when change license 
   <div />
   <div>
     <div
-      class="ant-modal-root css-dev-only-do-not-override-txh9fw"
+      class="ant-modal-root"
     >
       <div
         class="ant-modal-mask"
@@ -17,7 +17,7 @@ exports[`base/System/License/ImportLicenseModal render snap when change license 
         <div
           aria-labelledby="test-id"
           aria-modal="true"
-          class="ant-modal css-dev-only-do-not-override-txh9fw basic-modal-wrapper css-vvpsbb"
+          class="ant-modal basic-modal-wrapper css-vvpsbb"
           role="dialog"
           style="width: 1000px;"
         >
@@ -43,16 +43,16 @@ exports[`base/System/License/ImportLicenseModal render snap when change license 
               class="ant-modal-body"
             >
               <form
-                class="ant-form ant-form-horizontal css-dev-only-do-not-override-txh9fw"
+                class="ant-form ant-form-horizontal"
               >
                 <div
-                  class="ant-form-item css-dev-only-do-not-override-txh9fw ant-form-item-has-success"
+                  class="ant-form-item ant-form-item-has-success"
                 >
                   <div
-                    class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                    class="ant-row ant-form-item-row"
                   >
                     <div
-                      class="ant-col ant-form-item-label css-dev-only-do-not-override-txh9fw"
+                      class="ant-col ant-form-item-label"
                     >
                       <label
                         class="ant-form-item-required"
@@ -63,7 +63,7 @@ exports[`base/System/License/ImportLicenseModal render snap when change license 
                       </label>
                     </div>
                     <div
-                      class="ant-col ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                      class="ant-col ant-form-item-control"
                     >
                       <div
                         class="ant-form-item-control-input"
@@ -72,7 +72,7 @@ exports[`base/System/License/ImportLicenseModal render snap when change license 
                           class="ant-form-item-control-input-content"
                         >
                           <span
-                            class="ant-upload-wrapper css-dev-only-do-not-override-txh9fw"
+                            class="ant-upload-wrapper"
                           >
                             <div
                               class="ant-upload ant-upload-select"
@@ -90,7 +90,7 @@ exports[`base/System/License/ImportLicenseModal render snap when change license 
                                   type="file"
                                 />
                                 <button
-                                  class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default basic-button-wrapper css-geipcv"
+                                  class="ant-btn ant-btn-default basic-button-wrapper css-geipcv"
                                   type="button"
                                 >
                                   <span>
@@ -141,8 +141,8 @@ exports[`base/System/License/ImportLicenseModal render snap when change license 
                                     class="ant-upload-list-item-actions"
                                   >
                                     <button
-                                      class="ant-btn css-dev-only-do-not-override-txh9fw ant-btn-text ant-btn-sm ant-btn-icon-only ant-upload-list-item-action"
-                                      title="Remove file"
+                                      class="ant-btn ant-btn-text ant-btn-sm ant-btn-icon-only ant-upload-list-item-action"
+                                      title="删除文件"
                                       type="button"
                                     >
                                       <span
@@ -182,16 +182,16 @@ exports[`base/System/License/ImportLicenseModal render snap when change license 
                 </div>
               </form>
               <div
-                class="ant-table-wrapper actiontech-table-namespace css-fxd6ka css-dev-only-do-not-override-bj9uhl"
+                class="ant-table-wrapper actiontech-table-namespace css-fxd6ka"
               >
                 <div
-                  class="ant-spin-nested-loading css-dev-only-do-not-override-bj9uhl"
+                  class="ant-spin-nested-loading"
                 >
                   <div>
                     <div
                       aria-busy="true"
                       aria-live="polite"
-                      class="ant-spin ant-spin-spinning css-dev-only-do-not-override-bj9uhl"
+                      class="ant-spin ant-spin-spinning"
                     >
                       <span
                         class="ant-spin-dot ant-spin-dot-spin"
@@ -299,7 +299,7 @@ exports[`base/System/License/ImportLicenseModal render snap when change license 
               class="ant-modal-footer"
             >
               <button
-                class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default basic-button-wrapper css-geipcv"
+                class="ant-btn ant-btn-default basic-button-wrapper css-geipcv"
                 type="button"
               >
                 <span>
@@ -307,7 +307,7 @@ exports[`base/System/License/ImportLicenseModal render snap when change license 
                 </span>
               </button>
               <button
-                class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary basic-button-wrapper css-geipcv"
+                class="ant-btn ant-btn-primary basic-button-wrapper css-geipcv"
                 type="button"
               >
                 <span>
@@ -333,7 +333,7 @@ exports[`base/System/License/ImportLicenseModal render snap when change license 
   <div />
   <div>
     <div
-      class="ant-modal-root css-dev-only-do-not-override-txh9fw"
+      class="ant-modal-root"
     >
       <div
         class="ant-modal-mask"
@@ -345,7 +345,7 @@ exports[`base/System/License/ImportLicenseModal render snap when change license 
         <div
           aria-labelledby="test-id"
           aria-modal="true"
-          class="ant-modal css-dev-only-do-not-override-txh9fw basic-modal-wrapper css-vvpsbb"
+          class="ant-modal basic-modal-wrapper css-vvpsbb"
           role="dialog"
           style="width: 1000px;"
         >
@@ -371,16 +371,16 @@ exports[`base/System/License/ImportLicenseModal render snap when change license 
               class="ant-modal-body"
             >
               <form
-                class="ant-form ant-form-horizontal css-dev-only-do-not-override-txh9fw"
+                class="ant-form ant-form-horizontal"
               >
                 <div
-                  class="ant-form-item css-dev-only-do-not-override-txh9fw ant-form-item-has-success"
+                  class="ant-form-item ant-form-item-has-success"
                 >
                   <div
-                    class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                    class="ant-row ant-form-item-row"
                   >
                     <div
-                      class="ant-col ant-form-item-label css-dev-only-do-not-override-txh9fw"
+                      class="ant-col ant-form-item-label"
                     >
                       <label
                         class="ant-form-item-required"
@@ -391,7 +391,7 @@ exports[`base/System/License/ImportLicenseModal render snap when change license 
                       </label>
                     </div>
                     <div
-                      class="ant-col ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                      class="ant-col ant-form-item-control"
                     >
                       <div
                         class="ant-form-item-control-input"
@@ -400,7 +400,7 @@ exports[`base/System/License/ImportLicenseModal render snap when change license 
                           class="ant-form-item-control-input-content"
                         >
                           <span
-                            class="ant-upload-wrapper css-dev-only-do-not-override-txh9fw"
+                            class="ant-upload-wrapper"
                           >
                             <div
                               class="ant-upload ant-upload-select"
@@ -418,7 +418,7 @@ exports[`base/System/License/ImportLicenseModal render snap when change license 
                                   type="file"
                                 />
                                 <button
-                                  class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default basic-button-wrapper css-geipcv"
+                                  class="ant-btn ant-btn-default basic-button-wrapper css-geipcv"
                                   type="button"
                                 >
                                   <span>
@@ -469,8 +469,8 @@ exports[`base/System/License/ImportLicenseModal render snap when change license 
                                     class="ant-upload-list-item-actions"
                                   >
                                     <button
-                                      class="ant-btn css-dev-only-do-not-override-txh9fw ant-btn-text ant-btn-sm ant-btn-icon-only ant-upload-list-item-action"
-                                      title="Remove file"
+                                      class="ant-btn ant-btn-text ant-btn-sm ant-btn-icon-only ant-upload-list-item-action"
+                                      title="删除文件"
                                       type="button"
                                     >
                                       <span
@@ -510,10 +510,10 @@ exports[`base/System/License/ImportLicenseModal render snap when change license 
                 </div>
               </form>
               <div
-                class="ant-table-wrapper actiontech-table-namespace css-fxd6ka css-dev-only-do-not-override-bj9uhl"
+                class="ant-table-wrapper actiontech-table-namespace css-fxd6ka"
               >
                 <div
-                  class="ant-spin-nested-loading css-dev-only-do-not-override-bj9uhl"
+                  class="ant-spin-nested-loading"
                 >
                   <div
                     class="ant-spin-container"
@@ -603,7 +603,7 @@ exports[`base/System/License/ImportLicenseModal render snap when change license 
               class="ant-modal-footer"
             >
               <button
-                class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default basic-button-wrapper css-geipcv"
+                class="ant-btn ant-btn-default basic-button-wrapper css-geipcv"
                 disabled=""
                 type="button"
               >
@@ -612,7 +612,7 @@ exports[`base/System/License/ImportLicenseModal render snap when change license 
                 </span>
               </button>
               <button
-                class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary ant-btn-loading basic-button-wrapper css-geipcv"
+                class="ant-btn ant-btn-primary ant-btn-loading basic-button-wrapper css-geipcv"
                 type="button"
               >
                 <span
@@ -661,7 +661,7 @@ exports[`base/System/License/ImportLicenseModal render snap when change license 
   <div />
   <div>
     <div
-      class="ant-modal-root css-dev-only-do-not-override-txh9fw"
+      class="ant-modal-root"
     >
       <div
         class="ant-modal-mask"
@@ -673,7 +673,7 @@ exports[`base/System/License/ImportLicenseModal render snap when change license 
         <div
           aria-labelledby="test-id"
           aria-modal="true"
-          class="ant-modal css-dev-only-do-not-override-txh9fw basic-modal-wrapper css-vvpsbb"
+          class="ant-modal basic-modal-wrapper css-vvpsbb"
           role="dialog"
           style="width: 1000px;"
         >
@@ -699,16 +699,16 @@ exports[`base/System/License/ImportLicenseModal render snap when change license 
               class="ant-modal-body"
             >
               <form
-                class="ant-form ant-form-horizontal css-dev-only-do-not-override-txh9fw"
+                class="ant-form ant-form-horizontal"
               >
                 <div
-                  class="ant-form-item css-dev-only-do-not-override-txh9fw"
+                  class="ant-form-item"
                 >
                   <div
-                    class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                    class="ant-row ant-form-item-row"
                   >
                     <div
-                      class="ant-col ant-form-item-label css-dev-only-do-not-override-txh9fw"
+                      class="ant-col ant-form-item-label"
                     >
                       <label
                         class="ant-form-item-required"
@@ -719,7 +719,7 @@ exports[`base/System/License/ImportLicenseModal render snap when change license 
                       </label>
                     </div>
                     <div
-                      class="ant-col ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                      class="ant-col ant-form-item-control"
                     >
                       <div
                         class="ant-form-item-control-input"
@@ -728,7 +728,7 @@ exports[`base/System/License/ImportLicenseModal render snap when change license 
                           class="ant-form-item-control-input-content"
                         >
                           <span
-                            class="ant-upload-wrapper css-dev-only-do-not-override-txh9fw"
+                            class="ant-upload-wrapper"
                           >
                             <div
                               class="ant-upload ant-upload-select"
@@ -746,7 +746,7 @@ exports[`base/System/License/ImportLicenseModal render snap when change license 
                                   type="file"
                                 />
                                 <button
-                                  class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default basic-button-wrapper css-geipcv"
+                                  class="ant-btn ant-btn-default basic-button-wrapper css-geipcv"
                                   type="button"
                                 >
                                   <span>
@@ -766,10 +766,10 @@ exports[`base/System/License/ImportLicenseModal render snap when change license 
                 </div>
               </form>
               <div
-                class="ant-table-wrapper actiontech-table-namespace css-fxd6ka css-dev-only-do-not-override-bj9uhl"
+                class="ant-table-wrapper actiontech-table-namespace css-fxd6ka"
               >
                 <div
-                  class="ant-spin-nested-loading css-dev-only-do-not-override-bj9uhl"
+                  class="ant-spin-nested-loading"
                 >
                   <div
                     class="ant-spin-container"
@@ -859,7 +859,7 @@ exports[`base/System/License/ImportLicenseModal render snap when change license 
               class="ant-modal-footer"
             >
               <button
-                class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default basic-button-wrapper css-geipcv"
+                class="ant-btn ant-btn-default basic-button-wrapper css-geipcv"
                 type="button"
               >
                 <span>
@@ -867,7 +867,7 @@ exports[`base/System/License/ImportLicenseModal render snap when change license 
                 </span>
               </button>
               <button
-                class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary basic-button-wrapper css-geipcv"
+                class="ant-btn ant-btn-primary basic-button-wrapper css-geipcv"
                 type="button"
               >
                 <span>
@@ -886,11 +886,11 @@ exports[`base/System/License/ImportLicenseModal render snap when change license 
     </div>
   </div>
   <div
-    class="ant-message ant-message-top css-dev-only-do-not-override-txh9fw"
+    class="ant-message ant-message-top"
     style="left: 50%; transform: translateX(-50%); top: 8px;"
   >
     <div
-      class="ant-message-notice ant-message-notice-success css-dev-only-do-not-override-txh9fw"
+      class="ant-message-notice ant-message-notice-success"
     >
       <div
         class="ant-message-notice-content"
@@ -932,7 +932,7 @@ exports[`base/System/License/ImportLicenseModal render snap when change license 
   <div />
   <div>
     <div
-      class="ant-modal-root css-dev-only-do-not-override-txh9fw"
+      class="ant-modal-root"
     >
       <div
         class="ant-modal-mask"
@@ -944,7 +944,7 @@ exports[`base/System/License/ImportLicenseModal render snap when change license 
         <div
           aria-labelledby="test-id"
           aria-modal="true"
-          class="ant-modal css-dev-only-do-not-override-txh9fw basic-modal-wrapper css-vvpsbb"
+          class="ant-modal basic-modal-wrapper css-vvpsbb"
           role="dialog"
           style="width: 1000px;"
         >
@@ -970,16 +970,16 @@ exports[`base/System/License/ImportLicenseModal render snap when change license 
               class="ant-modal-body"
             >
               <form
-                class="ant-form ant-form-horizontal css-dev-only-do-not-override-txh9fw"
+                class="ant-form ant-form-horizontal"
               >
                 <div
-                  class="ant-form-item css-dev-only-do-not-override-txh9fw ant-form-item-has-success"
+                  class="ant-form-item ant-form-item-has-success"
                 >
                   <div
-                    class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                    class="ant-row ant-form-item-row"
                   >
                     <div
-                      class="ant-col ant-form-item-label css-dev-only-do-not-override-txh9fw"
+                      class="ant-col ant-form-item-label"
                     >
                       <label
                         class="ant-form-item-required"
@@ -990,7 +990,7 @@ exports[`base/System/License/ImportLicenseModal render snap when change license 
                       </label>
                     </div>
                     <div
-                      class="ant-col ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                      class="ant-col ant-form-item-control"
                     >
                       <div
                         class="ant-form-item-control-input"
@@ -999,7 +999,7 @@ exports[`base/System/License/ImportLicenseModal render snap when change license 
                           class="ant-form-item-control-input-content"
                         >
                           <span
-                            class="ant-upload-wrapper css-dev-only-do-not-override-txh9fw"
+                            class="ant-upload-wrapper"
                           >
                             <div
                               class="ant-upload ant-upload-select"
@@ -1017,7 +1017,7 @@ exports[`base/System/License/ImportLicenseModal render snap when change license 
                                   type="file"
                                 />
                                 <button
-                                  class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default basic-button-wrapper css-geipcv"
+                                  class="ant-btn ant-btn-default basic-button-wrapper css-geipcv"
                                   type="button"
                                 >
                                   <span>
@@ -1068,8 +1068,8 @@ exports[`base/System/License/ImportLicenseModal render snap when change license 
                                     class="ant-upload-list-item-actions"
                                   >
                                     <button
-                                      class="ant-btn css-dev-only-do-not-override-txh9fw ant-btn-text ant-btn-sm ant-btn-icon-only ant-upload-list-item-action"
-                                      title="Remove file"
+                                      class="ant-btn ant-btn-text ant-btn-sm ant-btn-icon-only ant-upload-list-item-action"
+                                      title="删除文件"
                                       type="button"
                                     >
                                       <span
@@ -1109,16 +1109,16 @@ exports[`base/System/License/ImportLicenseModal render snap when change license 
                 </div>
               </form>
               <div
-                class="ant-table-wrapper actiontech-table-namespace css-fxd6ka css-dev-only-do-not-override-bj9uhl"
+                class="ant-table-wrapper actiontech-table-namespace css-fxd6ka"
               >
                 <div
-                  class="ant-spin-nested-loading css-dev-only-do-not-override-bj9uhl"
+                  class="ant-spin-nested-loading"
                 >
                   <div>
                     <div
                       aria-busy="true"
                       aria-live="polite"
-                      class="ant-spin ant-spin-spinning css-dev-only-do-not-override-bj9uhl"
+                      class="ant-spin ant-spin-spinning"
                     >
                       <span
                         class="ant-spin-dot ant-spin-dot-spin"
@@ -1226,7 +1226,7 @@ exports[`base/System/License/ImportLicenseModal render snap when change license 
               class="ant-modal-footer"
             >
               <button
-                class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default basic-button-wrapper css-geipcv"
+                class="ant-btn ant-btn-default basic-button-wrapper css-geipcv"
                 type="button"
               >
                 <span>
@@ -1234,7 +1234,7 @@ exports[`base/System/License/ImportLicenseModal render snap when change license 
                 </span>
               </button>
               <button
-                class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary basic-button-wrapper css-geipcv"
+                class="ant-btn ant-btn-primary basic-button-wrapper css-geipcv"
                 type="button"
               >
                 <span>
@@ -1260,7 +1260,7 @@ exports[`base/System/License/ImportLicenseModal render snap when change license 
   <div />
   <div>
     <div
-      class="ant-modal-root css-dev-only-do-not-override-txh9fw"
+      class="ant-modal-root"
     >
       <div
         class="ant-modal-mask"
@@ -1272,7 +1272,7 @@ exports[`base/System/License/ImportLicenseModal render snap when change license 
         <div
           aria-labelledby="test-id"
           aria-modal="true"
-          class="ant-modal css-dev-only-do-not-override-txh9fw basic-modal-wrapper css-vvpsbb"
+          class="ant-modal basic-modal-wrapper css-vvpsbb"
           role="dialog"
           style="width: 1000px;"
         >
@@ -1298,16 +1298,16 @@ exports[`base/System/License/ImportLicenseModal render snap when change license 
               class="ant-modal-body"
             >
               <form
-                class="ant-form ant-form-horizontal css-dev-only-do-not-override-txh9fw"
+                class="ant-form ant-form-horizontal"
               >
                 <div
-                  class="ant-form-item css-dev-only-do-not-override-txh9fw ant-form-item-has-success"
+                  class="ant-form-item ant-form-item-has-success"
                 >
                   <div
-                    class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                    class="ant-row ant-form-item-row"
                   >
                     <div
-                      class="ant-col ant-form-item-label css-dev-only-do-not-override-txh9fw"
+                      class="ant-col ant-form-item-label"
                     >
                       <label
                         class="ant-form-item-required"
@@ -1318,7 +1318,7 @@ exports[`base/System/License/ImportLicenseModal render snap when change license 
                       </label>
                     </div>
                     <div
-                      class="ant-col ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                      class="ant-col ant-form-item-control"
                     >
                       <div
                         class="ant-form-item-control-input"
@@ -1327,7 +1327,7 @@ exports[`base/System/License/ImportLicenseModal render snap when change license 
                           class="ant-form-item-control-input-content"
                         >
                           <span
-                            class="ant-upload-wrapper css-dev-only-do-not-override-txh9fw"
+                            class="ant-upload-wrapper"
                           >
                             <div
                               class="ant-upload ant-upload-select"
@@ -1345,7 +1345,7 @@ exports[`base/System/License/ImportLicenseModal render snap when change license 
                                   type="file"
                                 />
                                 <button
-                                  class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default basic-button-wrapper css-geipcv"
+                                  class="ant-btn ant-btn-default basic-button-wrapper css-geipcv"
                                   type="button"
                                 >
                                   <span>
@@ -1396,8 +1396,8 @@ exports[`base/System/License/ImportLicenseModal render snap when change license 
                                     class="ant-upload-list-item-actions"
                                   >
                                     <button
-                                      class="ant-btn css-dev-only-do-not-override-txh9fw ant-btn-text ant-btn-sm ant-btn-icon-only ant-upload-list-item-action"
-                                      title="Remove file"
+                                      class="ant-btn ant-btn-text ant-btn-sm ant-btn-icon-only ant-upload-list-item-action"
+                                      title="删除文件"
                                       type="button"
                                     >
                                       <span
@@ -1437,10 +1437,10 @@ exports[`base/System/License/ImportLicenseModal render snap when change license 
                 </div>
               </form>
               <div
-                class="ant-table-wrapper actiontech-table-namespace css-fxd6ka css-dev-only-do-not-override-bj9uhl"
+                class="ant-table-wrapper actiontech-table-namespace css-fxd6ka"
               >
                 <div
-                  class="ant-spin-nested-loading css-dev-only-do-not-override-bj9uhl"
+                  class="ant-spin-nested-loading"
                 >
                   <div
                     class="ant-spin-container"
@@ -1530,7 +1530,7 @@ exports[`base/System/License/ImportLicenseModal render snap when change license 
               class="ant-modal-footer"
             >
               <button
-                class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default basic-button-wrapper css-geipcv"
+                class="ant-btn ant-btn-default basic-button-wrapper css-geipcv"
                 type="button"
               >
                 <span>
@@ -1538,7 +1538,7 @@ exports[`base/System/License/ImportLicenseModal render snap when change license 
                 </span>
               </button>
               <button
-                class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary basic-button-wrapper css-geipcv"
+                class="ant-btn ant-btn-primary basic-button-wrapper css-geipcv"
                 type="button"
               >
                 <span>
@@ -1564,7 +1564,7 @@ exports[`base/System/License/ImportLicenseModal render snap when closed modal 1`
   <div />
   <div>
     <div
-      class="ant-modal-root css-dev-only-do-not-override-txh9fw"
+      class="ant-modal-root"
     >
       <div
         class="ant-modal-mask"
@@ -1576,7 +1576,7 @@ exports[`base/System/License/ImportLicenseModal render snap when closed modal 1`
         <div
           aria-labelledby="test-id"
           aria-modal="true"
-          class="ant-modal css-dev-only-do-not-override-txh9fw basic-modal-wrapper css-vvpsbb"
+          class="ant-modal basic-modal-wrapper css-vvpsbb"
           role="dialog"
           style="width: 1000px;"
         >
@@ -1602,16 +1602,16 @@ exports[`base/System/License/ImportLicenseModal render snap when closed modal 1`
               class="ant-modal-body"
             >
               <form
-                class="ant-form ant-form-horizontal css-dev-only-do-not-override-txh9fw"
+                class="ant-form ant-form-horizontal"
               >
                 <div
-                  class="ant-form-item css-dev-only-do-not-override-txh9fw"
+                  class="ant-form-item"
                 >
                   <div
-                    class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                    class="ant-row ant-form-item-row"
                   >
                     <div
-                      class="ant-col ant-form-item-label css-dev-only-do-not-override-txh9fw"
+                      class="ant-col ant-form-item-label"
                     >
                       <label
                         class="ant-form-item-required"
@@ -1622,7 +1622,7 @@ exports[`base/System/License/ImportLicenseModal render snap when closed modal 1`
                       </label>
                     </div>
                     <div
-                      class="ant-col ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                      class="ant-col ant-form-item-control"
                     >
                       <div
                         class="ant-form-item-control-input"
@@ -1631,7 +1631,7 @@ exports[`base/System/License/ImportLicenseModal render snap when closed modal 1`
                           class="ant-form-item-control-input-content"
                         >
                           <span
-                            class="ant-upload-wrapper css-dev-only-do-not-override-txh9fw"
+                            class="ant-upload-wrapper"
                           >
                             <div
                               class="ant-upload ant-upload-select"
@@ -1649,7 +1649,7 @@ exports[`base/System/License/ImportLicenseModal render snap when closed modal 1`
                                   type="file"
                                 />
                                 <button
-                                  class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default basic-button-wrapper css-geipcv"
+                                  class="ant-btn ant-btn-default basic-button-wrapper css-geipcv"
                                   type="button"
                                 >
                                   <span>
@@ -1669,10 +1669,10 @@ exports[`base/System/License/ImportLicenseModal render snap when closed modal 1`
                 </div>
               </form>
               <div
-                class="ant-table-wrapper actiontech-table-namespace css-fxd6ka css-dev-only-do-not-override-bj9uhl"
+                class="ant-table-wrapper actiontech-table-namespace css-fxd6ka"
               >
                 <div
-                  class="ant-spin-nested-loading css-dev-only-do-not-override-bj9uhl"
+                  class="ant-spin-nested-loading"
                 >
                   <div
                     class="ant-spin-container"
@@ -1762,7 +1762,7 @@ exports[`base/System/License/ImportLicenseModal render snap when closed modal 1`
               class="ant-modal-footer"
             >
               <button
-                class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default basic-button-wrapper css-geipcv"
+                class="ant-btn ant-btn-default basic-button-wrapper css-geipcv"
                 type="button"
               >
                 <span>
@@ -1770,7 +1770,7 @@ exports[`base/System/License/ImportLicenseModal render snap when closed modal 1`
                 </span>
               </button>
               <button
-                class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary basic-button-wrapper css-geipcv"
+                class="ant-btn ant-btn-primary basic-button-wrapper css-geipcv"
                 type="button"
               >
                 <span>

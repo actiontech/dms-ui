@@ -4,10 +4,10 @@ exports[`sqle/ExecWorkflow/Common/AuditResultList render snap when add note 1`] 
 <body>
   <div>
     <div
-      class="ant-table-wrapper actiontech-table-namespace css-fxd6ka css-dev-only-do-not-override-bj9uhl"
+      class="ant-table-wrapper actiontech-table-namespace css-fxd6ka"
     >
       <div
-        class="ant-spin-nested-loading css-dev-only-do-not-override-bj9uhl"
+        class="ant-spin-nested-loading"
       >
         <div
           class="ant-spin-container"
@@ -143,7 +143,7 @@ exports[`sqle/ExecWorkflow/Common/AuditResultList render snap when add note 1`] 
                           class="actiontech-sql-snippet-renderer-wrapper css-dz7fl9"
                         >
                           <div
-                            class="ant-typography ant-typography-ellipsis ant-typography-single-line ant-typography-ellipsis-single-line margin-bottom-0 css-dev-only-do-not-override-bj9uhl"
+                            class="ant-typography ant-typography-ellipsis ant-typography-single-line ant-typography-ellipsis-single-line margin-bottom-0"
                           >
                             <span>
                               <span
@@ -190,7 +190,7 @@ exports[`sqle/ExecWorkflow/Common/AuditResultList render snap when add note 1`] 
                       >
                         <div>
                           <div
-                            class="ant-space css-dev-only-do-not-override-bj9uhl ant-space-horizontal ant-space-align-center"
+                            class="ant-space ant-space-horizontal ant-space-align-center"
                           >
                             <div
                               class="ant-space-item"
@@ -214,10 +214,10 @@ exports[`sqle/ExecWorkflow/Common/AuditResultList render snap when add note 1`] 
                         class="ant-table-cell audit-result-describe-column"
                       >
                         <div
-                          class="ant-typography ant-typography-edit-content css-1am9q1l ant-typography-div css-dev-only-do-not-override-bj9uhl"
+                          class="ant-typography ant-typography-edit-content css-1am9q1l ant-typography-div"
                         >
                           <textarea
-                            class="ant-input css-dev-only-do-not-override-bj9uhl"
+                            class="ant-input"
                             rows="1"
                             style="resize: none; height: 2px;"
                           >
@@ -252,14 +252,14 @@ exports[`sqle/ExecWorkflow/Common/AuditResultList render snap when add note 1`] 
                           class="css-new95e"
                         >
                           <div
-                            class="ant-space css-dev-only-do-not-override-bj9uhl ant-space-horizontal ant-space-align-center"
+                            class="ant-space ant-space-horizontal ant-space-align-center"
                           >
                             <div
                               class="ant-space-item"
                               style="margin-right: 8px;"
                             >
                               <button
-                                class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
                                 type="button"
                               >
                                 <span>
@@ -271,7 +271,7 @@ exports[`sqle/ExecWorkflow/Common/AuditResultList render snap when add note 1`] 
                               class="ant-space-item"
                             >
                               <button
-                                class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
                                 type="button"
                               >
                                 <span
@@ -304,7 +304,7 @@ exports[`sqle/ExecWorkflow/Common/AuditResultList render snap when add note 1`] 
             </div>
           </div>
           <ul
-            class="ant-pagination ant-table-pagination ant-table-pagination-right actiontech-table-pagination actiontech-table-pagination-fixed css-dev-only-do-not-override-bj9uhl"
+            class="ant-pagination ant-table-pagination ant-table-pagination-right actiontech-table-pagination actiontech-table-pagination-fixed"
           >
             <li
               class="ant-pagination-total-text"
@@ -316,7 +316,7 @@ exports[`sqle/ExecWorkflow/Common/AuditResultList render snap when add note 1`] 
             <li
               aria-disabled="true"
               class="ant-pagination-prev ant-pagination-disabled"
-              title="Previous Page"
+              title="上一页"
             >
               <button
                 class="ant-pagination-item-link"
@@ -359,7 +359,7 @@ exports[`sqle/ExecWorkflow/Common/AuditResultList render snap when add note 1`] 
             <li
               aria-disabled="true"
               class="ant-pagination-next ant-pagination-disabled"
-              title="Next Page"
+              title="下一页"
             >
               <button
                 class="ant-pagination-item-link"
@@ -392,8 +392,8 @@ exports[`sqle/ExecWorkflow/Common/AuditResultList render snap when add note 1`] 
               class="ant-pagination-options"
             >
               <div
-                aria-label="Page Size"
-                class="ant-select ant-pagination-options-size-changer css-dev-only-do-not-override-bj9uhl ant-select-single ant-select-show-arrow ant-select-show-search"
+                aria-label="页码"
+                class="ant-select ant-pagination-options-size-changer ant-select-single ant-select-show-arrow ant-select-show-search"
               >
                 <div
                   class="ant-select-selector"
@@ -407,7 +407,7 @@ exports[`sqle/ExecWorkflow/Common/AuditResultList render snap when add note 1`] 
                       aria-controls="rc_select_TEST_OR_SSR_list"
                       aria-expanded="false"
                       aria-haspopup="listbox"
-                      aria-label="Page Size"
+                      aria-label="页码"
                       aria-owns="rc_select_TEST_OR_SSR_list"
                       autocomplete="off"
                       class="ant-select-selection-search-input"
@@ -419,9 +419,9 @@ exports[`sqle/ExecWorkflow/Common/AuditResultList render snap when add note 1`] 
                   </span>
                   <span
                     class="ant-select-selection-item"
-                    title="20 / page"
+                    title="20 条/页"
                   >
-                    20 / page
+                    20 条/页
                   </span>
                 </div>
                 <span
@@ -459,7 +459,7 @@ exports[`sqle/ExecWorkflow/Common/AuditResultList render snap when add note 1`] 
   </div>
   <textarea
     aria-hidden="true"
-    style="letter-spacing:normal;line-height:1.6153846153846154;padding-top:4.5px;padding-bottom:4.5px;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Arial,'Noto Sans',sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol','Noto Color Emoji';font-weight:;font-size:13px;font-variant:;text-rendering:auto;text-transform:none;width:100%;text-indent:0;padding-left:11px;padding-right:11px;border-width:1px;box-sizing:border-box;word-break:;white-space:pre-wrap;
+    style="letter-spacing:normal;line-height:1.5714285714285714;padding-top:4px;padding-bottom:4px;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Arial,'Noto Sans',sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol','Noto Color Emoji';font-weight:;font-size:14px;font-variant:;text-rendering:auto;text-transform:none;width:100%;text-indent:0;padding-left:11px;padding-right:11px;border-width:1px;box-sizing:border-box;word-break:;white-space:pre-wrap;
   min-height:0 !important;
   max-height:none !important;
   height:0 !important;
@@ -480,10 +480,10 @@ exports[`sqle/ExecWorkflow/Common/AuditResultList render snap when add note 2`] 
 <body>
   <div>
     <div
-      class="ant-table-wrapper actiontech-table-namespace css-fxd6ka css-dev-only-do-not-override-bj9uhl"
+      class="ant-table-wrapper actiontech-table-namespace css-fxd6ka"
     >
       <div
-        class="ant-spin-nested-loading css-dev-only-do-not-override-bj9uhl"
+        class="ant-spin-nested-loading"
       >
         <div
           class="ant-spin-container"
@@ -619,7 +619,7 @@ exports[`sqle/ExecWorkflow/Common/AuditResultList render snap when add note 2`] 
                           class="actiontech-sql-snippet-renderer-wrapper css-dz7fl9"
                         >
                           <div
-                            class="ant-typography ant-typography-ellipsis ant-typography-single-line ant-typography-ellipsis-single-line margin-bottom-0 css-dev-only-do-not-override-bj9uhl"
+                            class="ant-typography ant-typography-ellipsis ant-typography-single-line ant-typography-ellipsis-single-line margin-bottom-0"
                           >
                             <span>
                               <span
@@ -666,7 +666,7 @@ exports[`sqle/ExecWorkflow/Common/AuditResultList render snap when add note 2`] 
                       >
                         <div>
                           <div
-                            class="ant-space css-dev-only-do-not-override-bj9uhl ant-space-horizontal ant-space-align-center"
+                            class="ant-space ant-space-horizontal ant-space-align-center"
                           >
                             <div
                               class="ant-space-item"
@@ -690,10 +690,10 @@ exports[`sqle/ExecWorkflow/Common/AuditResultList render snap when add note 2`] 
                         class="ant-table-cell audit-result-describe-column"
                       >
                         <div
-                          class="ant-typography ant-typography-edit-content css-1am9q1l ant-typography-div css-dev-only-do-not-override-bj9uhl"
+                          class="ant-typography ant-typography-edit-content css-1am9q1l ant-typography-div"
                         >
                           <textarea
-                            class="ant-input css-dev-only-do-not-override-bj9uhl"
+                            class="ant-input"
                             rows="1"
                             style="resize: none; height: 2px;"
                           >
@@ -728,14 +728,14 @@ exports[`sqle/ExecWorkflow/Common/AuditResultList render snap when add note 2`] 
                           class="css-new95e"
                         >
                           <div
-                            class="ant-space css-dev-only-do-not-override-bj9uhl ant-space-horizontal ant-space-align-center"
+                            class="ant-space ant-space-horizontal ant-space-align-center"
                           >
                             <div
                               class="ant-space-item"
                               style="margin-right: 8px;"
                             >
                               <button
-                                class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
                                 type="button"
                               >
                                 <span>
@@ -747,7 +747,7 @@ exports[`sqle/ExecWorkflow/Common/AuditResultList render snap when add note 2`] 
                               class="ant-space-item"
                             >
                               <button
-                                class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
                                 type="button"
                               >
                                 <span
@@ -780,7 +780,7 @@ exports[`sqle/ExecWorkflow/Common/AuditResultList render snap when add note 2`] 
             </div>
           </div>
           <ul
-            class="ant-pagination ant-table-pagination ant-table-pagination-right actiontech-table-pagination actiontech-table-pagination-fixed css-dev-only-do-not-override-bj9uhl"
+            class="ant-pagination ant-table-pagination ant-table-pagination-right actiontech-table-pagination actiontech-table-pagination-fixed"
           >
             <li
               class="ant-pagination-total-text"
@@ -792,7 +792,7 @@ exports[`sqle/ExecWorkflow/Common/AuditResultList render snap when add note 2`] 
             <li
               aria-disabled="true"
               class="ant-pagination-prev ant-pagination-disabled"
-              title="Previous Page"
+              title="上一页"
             >
               <button
                 class="ant-pagination-item-link"
@@ -835,7 +835,7 @@ exports[`sqle/ExecWorkflow/Common/AuditResultList render snap when add note 2`] 
             <li
               aria-disabled="true"
               class="ant-pagination-next ant-pagination-disabled"
-              title="Next Page"
+              title="下一页"
             >
               <button
                 class="ant-pagination-item-link"
@@ -868,8 +868,8 @@ exports[`sqle/ExecWorkflow/Common/AuditResultList render snap when add note 2`] 
               class="ant-pagination-options"
             >
               <div
-                aria-label="Page Size"
-                class="ant-select ant-pagination-options-size-changer css-dev-only-do-not-override-bj9uhl ant-select-single ant-select-show-arrow ant-select-show-search"
+                aria-label="页码"
+                class="ant-select ant-pagination-options-size-changer ant-select-single ant-select-show-arrow ant-select-show-search"
               >
                 <div
                   class="ant-select-selector"
@@ -883,7 +883,7 @@ exports[`sqle/ExecWorkflow/Common/AuditResultList render snap when add note 2`] 
                       aria-controls="rc_select_TEST_OR_SSR_list"
                       aria-expanded="false"
                       aria-haspopup="listbox"
-                      aria-label="Page Size"
+                      aria-label="页码"
                       aria-owns="rc_select_TEST_OR_SSR_list"
                       autocomplete="off"
                       class="ant-select-selection-search-input"
@@ -895,9 +895,9 @@ exports[`sqle/ExecWorkflow/Common/AuditResultList render snap when add note 2`] 
                   </span>
                   <span
                     class="ant-select-selection-item"
-                    title="20 / page"
+                    title="20 条/页"
                   >
-                    20 / page
+                    20 条/页
                   </span>
                 </div>
                 <span
@@ -935,7 +935,7 @@ exports[`sqle/ExecWorkflow/Common/AuditResultList render snap when add note 2`] 
   </div>
   <textarea
     aria-hidden="true"
-    style="letter-spacing:normal;line-height:1.6153846153846154;padding-top:4.5px;padding-bottom:4.5px;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Arial,'Noto Sans',sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol','Noto Color Emoji';font-weight:;font-size:13px;font-variant:;text-rendering:auto;text-transform:none;width:100%;text-indent:0;padding-left:11px;padding-right:11px;border-width:1px;box-sizing:border-box;word-break:;white-space:pre-wrap;
+    style="letter-spacing:normal;line-height:1.5714285714285714;padding-top:4px;padding-bottom:4px;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Arial,'Noto Sans',sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol','Noto Color Emoji';font-weight:;font-size:14px;font-variant:;text-rendering:auto;text-transform:none;width:100%;text-indent:0;padding-left:11px;padding-right:11px;border-width:1px;box-sizing:border-box;word-break:;white-space:pre-wrap;
   min-height:0 !important;
   max-height:none !important;
   height:0 !important;
@@ -956,10 +956,10 @@ exports[`sqle/ExecWorkflow/Common/AuditResultList render snap when data is empty
 <body>
   <div>
     <div
-      class="ant-table-wrapper actiontech-table-namespace css-fxd6ka css-dev-only-do-not-override-bj9uhl"
+      class="ant-table-wrapper actiontech-table-namespace css-fxd6ka"
     >
       <div
-        class="ant-spin-nested-loading css-dev-only-do-not-override-bj9uhl"
+        class="ant-spin-nested-loading"
       >
         <div
           class="ant-spin-container"
@@ -1108,10 +1108,10 @@ exports[`sqle/ExecWorkflow/Common/AuditResultList render snap when get table err
 <body>
   <div>
     <div
-      class="ant-table-wrapper actiontech-table-namespace css-fxd6ka css-dev-only-do-not-override-bj9uhl"
+      class="ant-table-wrapper actiontech-table-namespace css-fxd6ka"
     >
       <div
-        class="ant-spin-nested-loading css-dev-only-do-not-override-bj9uhl"
+        class="ant-spin-nested-loading"
       >
         <div
           class="ant-spin-container"

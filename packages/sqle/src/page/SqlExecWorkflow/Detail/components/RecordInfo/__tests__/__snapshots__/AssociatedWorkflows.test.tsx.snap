@@ -12,7 +12,7 @@ exports[`sqle/SqlExecWorkflow/Detail/AssociatedWorkflows render associated stage
         关联工单信息
       </div>
       <ul
-        class="ant-timeline css-dev-only-do-not-override-txh9fw"
+        class="ant-timeline"
       >
         <li
           class="ant-timeline-item"
@@ -27,14 +27,14 @@ exports[`sqle/SqlExecWorkflow/Detail/AssociatedWorkflows render associated stage
             class="ant-timeline-item-content"
           >
             <div
-              class="ant-space css-dev-only-do-not-override-txh9fw ant-space-vertical associated-workflows-wrap-item"
+              class="ant-space ant-space-vertical associated-workflows-wrap-item"
             >
               <div
                 class="ant-space-item"
                 style="margin-bottom: 8px;"
               >
                 <div
-                  class="ant-typography ant-typography-ellipsis ant-typography-single-line ant-typography-ellipsis-single-line css-dev-only-do-not-override-txh9fw"
+                  class="ant-typography ant-typography-ellipsis ant-typography-single-line ant-typography-ellipsis-single-line"
                   title="v-12-dev-3"
                 >
                   <a
@@ -49,7 +49,7 @@ exports[`sqle/SqlExecWorkflow/Detail/AssociatedWorkflows render associated stage
                 class="ant-space-item"
               >
                 <div
-                  class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+                  class="ant-space ant-space-horizontal ant-space-align-center"
                 >
                   <div
                     class="ant-space-item"
@@ -121,14 +121,14 @@ exports[`sqle/SqlExecWorkflow/Detail/AssociatedWorkflows render associated stage
             class="ant-timeline-item-content"
           >
             <div
-              class="ant-space css-dev-only-do-not-override-txh9fw ant-space-vertical associated-workflows-wrap-item associated-workflows-wrap-item-highlight"
+              class="ant-space ant-space-vertical associated-workflows-wrap-item associated-workflows-wrap-item-highlight"
             >
               <div
                 class="ant-space-item"
                 style="margin-bottom: 8px;"
               >
                 <div
-                  class="ant-typography ant-typography-ellipsis ant-typography-single-line ant-typography-ellipsis-single-line css-dev-only-do-not-override-txh9fw"
+                  class="ant-typography ant-typography-ellipsis ant-typography-single-line ant-typography-ellipsis-single-line"
                   title="workflow_name"
                 >
                   workflow_name
@@ -138,7 +138,7 @@ exports[`sqle/SqlExecWorkflow/Detail/AssociatedWorkflows render associated stage
                 class="ant-space-item"
               >
                 <div
-                  class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+                  class="ant-space ant-space-horizontal ant-space-align-center"
                 >
                   <div
                     class="ant-space-item"
@@ -198,14 +198,14 @@ exports[`sqle/SqlExecWorkflow/Detail/AssociatedWorkflows render associated stage
             class="ant-timeline-item-content"
           >
             <div
-              class="ant-space css-dev-only-do-not-override-txh9fw ant-space-vertical associated-workflows-wrap-item"
+              class="ant-space ant-space-vertical associated-workflows-wrap-item"
             >
               <div
                 class="ant-space-item"
                 style="margin-bottom: 8px;"
               >
                 <div
-                  class="ant-typography ant-typography-ellipsis ant-typography-single-line ant-typography-ellipsis-single-line css-dev-only-do-not-override-txh9fw"
+                  class="ant-typography ant-typography-ellipsis ant-typography-single-line ant-typography-ellipsis-single-line"
                   title="v-12-dev-3_生产"
                 >
                   <a
@@ -220,7 +220,7 @@ exports[`sqle/SqlExecWorkflow/Detail/AssociatedWorkflows render associated stage
                 class="ant-space-item"
               >
                 <div
-                  class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+                  class="ant-space ant-space-horizontal ant-space-align-center"
                 >
                   <div
                     class="ant-space-item"
@@ -279,7 +279,7 @@ exports[`sqle/SqlExecWorkflow/Detail/AssociatedWorkflows render init snap 1`] = 
         关联工单信息
       </div>
       <ul
-        class="ant-timeline css-dev-only-do-not-override-txh9fw"
+        class="ant-timeline"
       />
     </section>
   </div>

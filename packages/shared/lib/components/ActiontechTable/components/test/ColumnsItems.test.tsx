@@ -1,5 +1,5 @@
 import { getBySelector } from '../../../../testUtil/customQuery';
-import { renderWithTheme } from '../../../../testUtil/customRender';
+import { superRender } from '../../../../testUtil/customRender';
 import { fireEvent, act, cleanup } from '@testing-library/react';
 
 import ColumnsItems, { IColumnsItems, typeFixed } from '../ColumnsItems';
@@ -27,7 +27,7 @@ describe('lib/ActiontechTable-ColumnsItems', () => {
   });
 
   const customRender = (params: IColumnsItems<Record<string, any>>) => {
-    return renderWithTheme(<ColumnsItems {...params} />);
+    return superRender(<ColumnsItems {...params} />);
   };
 
   it('render column item left | right', () => {

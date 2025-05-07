@@ -5,17 +5,17 @@ exports[`SQLAudit/SQLStatementFormWrapper should render SQL upload type by defau
   <div />
   <div>
     <form
-      class="ant-form ant-form-horizontal css-dev-only-do-not-override-txh9fw"
+      class="ant-form ant-form-horizontal"
     >
       <div
-        class="ant-form-item has-required-style css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+        class="ant-form-item has-required-style css-1jlm9cy"
         style="margin-bottom: 16px;"
       >
         <div
-          class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+          class="ant-row ant-form-item-row"
         >
           <div
-            class="ant-col ant-col-24 ant-form-item-label css-dev-only-do-not-override-txh9fw"
+            class="ant-col ant-col-24 ant-form-item-label"
           >
             <label
               class="ant-form-item-required"
@@ -51,7 +51,7 @@ exports[`SQLAudit/SQLStatementFormWrapper should render SQL upload type by defau
             </label>
           </div>
           <div
-            class="ant-col ant-col-24 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+            class="ant-col ant-col-24 ant-form-item-control"
           >
             <div
               class="ant-form-item-control-input"
@@ -61,12 +61,12 @@ exports[`SQLAudit/SQLStatementFormWrapper should render SQL upload type by defau
               >
                 <div
                   aria-required="true"
-                  class="ant-row actiontech-mode-switcher css-dev-only-do-not-override-txh9fw"
+                  class="ant-row actiontech-mode-switcher"
                   id="uploadType"
                   style="margin: -5px -5px -5px -5px;"
                 >
                   <div
-                    class="ant-col ant-col-8 css-dev-only-do-not-override-txh9fw"
+                    class="ant-col ant-col-8"
                     style="padding: 5px 5px 5px 5px;"
                   >
                     <div
@@ -122,7 +122,7 @@ exports[`SQLAudit/SQLStatementFormWrapper should render SQL upload type by defau
                     </div>
                   </div>
                   <div
-                    class="ant-col ant-col-8 css-dev-only-do-not-override-txh9fw"
+                    class="ant-col ant-col-8"
                     style="padding: 5px 5px 5px 5px;"
                   >
                     <div
@@ -179,7 +179,7 @@ exports[`SQLAudit/SQLStatementFormWrapper should render SQL upload type by defau
                     </div>
                   </div>
                   <div
-                    class="ant-col ant-col-8 css-dev-only-do-not-override-txh9fw"
+                    class="ant-col ant-col-8"
                     style="padding: 5px 5px 5px 5px;"
                   >
                     <div
@@ -236,7 +236,7 @@ exports[`SQLAudit/SQLStatementFormWrapper should render SQL upload type by defau
                     </div>
                   </div>
                   <div
-                    class="ant-col ant-col-8 css-dev-only-do-not-override-txh9fw"
+                    class="ant-col ant-col-8"
                     style="padding: 5px 5px 5px 5px;"
                   >
                     <div
@@ -293,7 +293,7 @@ exports[`SQLAudit/SQLStatementFormWrapper should render SQL upload type by defau
                     </div>
                   </div>
                   <div
-                    class="ant-col ant-col-8 css-dev-only-do-not-override-txh9fw"
+                    class="ant-col ant-col-8"
                     style="padding: 5px 5px 5px 5px;"
                   >
                     <div
@@ -364,13 +364,13 @@ exports[`SQLAudit/SQLStatementFormWrapper should render SQL upload type by defau
         </div>
       </div>
       <div
-        class="ant-form-item css-15d6abf css-dev-only-do-not-override-txh9fw"
+        class="ant-form-item css-15d6abf"
       >
         <div
-          class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+          class="ant-row ant-form-item-row"
         >
           <div
-            class="ant-col ant-form-item-label css-dev-only-do-not-override-txh9fw"
+            class="ant-col ant-form-item-label"
           >
             <label
               class="ant-form-item-required"
@@ -379,7 +379,7 @@ exports[`SQLAudit/SQLStatementFormWrapper should render SQL upload type by defau
             />
           </div>
           <div
-            class="ant-col ant-form-item-control css-dev-only-do-not-override-txh9fw"
+            class="ant-col ant-form-item-control"
           >
             <div
               class="ant-form-item-control-input"

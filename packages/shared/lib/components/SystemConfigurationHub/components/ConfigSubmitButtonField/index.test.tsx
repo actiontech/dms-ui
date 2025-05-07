@@ -1,11 +1,11 @@
 import { cleanup, fireEvent, act, screen } from '@testing-library/react';
 import ConfigSubmitButtonField from '.';
-import { renderWithTheme } from '../../../../testUtil/customRender';
+import { superRender } from '../../../../testUtil/customRender';
 
 describe('base/System/components/ConfigSubmitButtonField', () => {
   const handleClickCancelFn = jest.fn();
   const customRender = (submitLoading: boolean) => {
-    return renderWithTheme(
+    return superRender(
       <ConfigSubmitButtonField
         submitLoading={submitLoading}
         handleClickCancel={handleClickCancelFn}
@@ -23,8 +23,10 @@ describe('base/System/components/ConfigSubmitButtonField', () => {
   });
 
   it('render snap when submit is true', () => {
-    const { baseElement } = customRender(true);
-    expect(baseElement).toMatchSnapshot();
+    customRender(true);
+
+    expect(screen.getByText('取 消').closest('button')).toBeDisabled();
+    expect(screen.getByText('提 交').closest('button')).toBeDisabled();
   });
 
   it('render snap when submit is false', () => {

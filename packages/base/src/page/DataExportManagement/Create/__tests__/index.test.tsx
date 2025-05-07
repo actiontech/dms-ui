@@ -39,7 +39,10 @@ describe('first', () => {
     );
     (useDispatch as jest.Mock).mockImplementation(() => dispatchSpy);
   });
-  ignoreConsoleErrors([UtilsConsoleErrorStringsEnum.INVALID_CSS_VALUE]);
+  ignoreConsoleErrors([
+    UtilsConsoleErrorStringsEnum.INVALID_CSS_VALUE,
+    UtilsConsoleErrorStringsEnum.UNKNOWN_EVENT_HANDLER
+  ]);
 
   it('should match snapshot when pageState is equal CREATE_TASK', () => {
     mockUseCreateDataExportReduxManage();

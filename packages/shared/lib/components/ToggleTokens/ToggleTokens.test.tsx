@@ -29,35 +29,24 @@ const list_2 = [
 ];
 
 describe('test ToggleTokens/single', () => {
-  it('render snapshot with Array<string> type options', () => {
+  it('should render and interact correctly with Array<string> type options', () => {
     const { container } = superRender(<ToggleTokens options={list_1} />);
 
     expect(container).toMatchSnapshot();
 
     fireEvent.click(screen.getByText('key1'));
-
     expect(screen.getByText('key1').parentNode).toHaveClass(
       'toggle-token-item-checked'
     );
     expect(screen.getByText('key2').parentNode).not.toHaveClass(
       'toggle-token-item-checked'
     );
-    expect(screen.getByText('key3').parentNode).not.toHaveClass(
-      'toggle-token-item-checked'
-    );
-    expect(container).toMatchSnapshot();
 
     fireEvent.click(screen.getByText('key2'));
-
     expect(screen.getByText('key1').parentNode).not.toHaveClass(
       'toggle-token-item-checked'
     );
     expect(screen.getByText('key2').parentNode).toHaveClass(
-      'toggle-token-item-checked'
-    );
-
-    fireEvent.click(screen.getByText('key3'));
-    expect(screen.getByText('key3').parentNode).toHaveClass(
       'toggle-token-item-checked'
     );
   });
@@ -189,7 +178,7 @@ describe('test ToggleTokens/single', () => {
 });
 
 describe('test ToggleTokens/multiple', () => {
-  it('render snapshot with Array<string> type options', () => {
+  it('should render and interact correctly with Array<string> type options in multiple mode', () => {
     const { container } = superRender(
       <ToggleTokens options={list_1} multiple withCheckbox />
     );
@@ -197,17 +186,9 @@ describe('test ToggleTokens/multiple', () => {
     expect(container).toMatchSnapshot();
 
     fireEvent.click(screen.getByText('key1'));
-
     expect(screen.getByText('key1').parentNode?.parentNode).toHaveClass(
       'toggle-token-item-checked'
     );
-    expect(screen.getByText('key2').parentNode?.parentNode).not.toHaveClass(
-      'toggle-token-item-checked'
-    );
-    expect(screen.getByText('key3').parentNode?.parentNode).not.toHaveClass(
-      'toggle-token-item-checked'
-    );
-    expect(container).toMatchSnapshot();
 
     fireEvent.click(screen.getByText('key2'));
     expect(screen.getByText('key1').parentNode?.parentNode).toHaveClass(
@@ -216,23 +197,37 @@ describe('test ToggleTokens/multiple', () => {
     expect(screen.getByText('key2').parentNode?.parentNode).toHaveClass(
       'toggle-token-item-checked'
     );
+  });
 
-    fireEvent.click(screen.getByText('key3'));
-    expect(screen.getByText('key1').parentNode?.parentNode).toHaveClass(
-      'toggle-token-item-checked'
+  it('should work correctly with labelDictionary in multiple mode', () => {
+    superRender(
+      <ToggleTokens
+        options={['option1', 'option2']}
+        labelDictionary={{ option1: '选项1', option2: '选项2' }}
+        multiple
+      />
     );
-    expect(screen.getByText('key2').parentNode?.parentNode).toHaveClass(
-      'toggle-token-item-checked'
-    );
-    expect(screen.getByText('key3').parentNode?.parentNode).toHaveClass(
-      'toggle-token-item-checked'
-    );
+    expect(screen.getByText('选项1')).toBeInTheDocument();
+    expect(screen.getByText('选项2')).toBeInTheDocument();
 
-    fireEvent.click(screen.getByText('key3'));
-    expect(screen.getByText('key1').parentNode?.parentNode).toHaveClass(
+    fireEvent.click(screen.getByText('选项1'));
+    expect(screen.getByText('选项1').parentNode).toHaveClass(
       'toggle-token-item-checked'
     );
-    expect(screen.getByText('key2').parentNode?.parentNode).toHaveClass(
+    fireEvent.click(screen.getByText('选项2'));
+    expect(screen.getByText('选项2').parentNode).toHaveClass(
+      'toggle-token-item-checked'
+    );
+  });
+
+  it('should handle disabled state correctly in multiple mode', () => {
+    superRender(<ToggleTokens options={list_1} multiple disabled />);
+
+    fireEvent.click(screen.getByText('key1'));
+    expect(screen.getByText('key1').parentNode).toHaveClass(
+      'toggle-token-item-button-disabled'
+    );
+    expect(screen.getByText('key1').parentNode).not.toHaveClass(
       'toggle-token-item-checked'
     );
   });

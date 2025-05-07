@@ -13,7 +13,7 @@ exports[`sqle/SqlOptimization/Create configure git repository 1`] = `
           href="/sqle/project/700300/sql-optimization"
         >
           <button
-            class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default basic-button-wrapper css-geipcv"
+            class="ant-btn ant-btn-default basic-button-wrapper css-geipcv"
             type="button"
           >
             <span
@@ -41,7 +41,7 @@ exports[`sqle/SqlOptimization/Create configure git repository 1`] = `
         class="extra"
       >
         <button
-          class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default basic-button-wrapper css-geipcv"
+          class="ant-btn ant-btn-default basic-button-wrapper css-geipcv"
           type="button"
         >
           <span>
@@ -51,7 +51,7 @@ exports[`sqle/SqlOptimization/Create configure git repository 1`] = `
       </div>
     </div>
     <form
-      class="ant-form ant-form-vertical css-dev-only-do-not-override-txh9fw hasTopHeader clearPaddingBottom css-19jfn7e"
+      class="ant-form ant-form-vertical hasTopHeader clearPaddingBottom css-19jfn7e"
     >
       <section
         class="css-1114g56"
@@ -60,7 +60,7 @@ exports[`sqle/SqlOptimization/Create configure git repository 1`] = `
           class="css-bspaai"
         >
           <h3
-            class="ant-typography css-p50odb css-dev-only-do-not-override-txh9fw"
+            class="ant-typography css-p50odb"
           >
             <span
               class="anticon title-icon"
@@ -87,13 +87,13 @@ exports[`sqle/SqlOptimization/Create configure git repository 1`] = `
             </span>
           </h3>
           <div
-            class="ant-form-item css-15d6abf css-dev-only-do-not-override-txh9fw ant-form-item-has-success"
+            class="ant-form-item css-15d6abf ant-form-item-has-success"
           >
             <div
-              class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+              class="ant-row ant-form-item-row"
             >
               <div
-                class="ant-col ant-form-item-label ant-form-item-label-left css-dev-only-do-not-override-txh9fw"
+                class="ant-col ant-form-item-label ant-form-item-label-left"
               >
                 <label
                   class="ant-form-item-required ant-form-item-no-colon"
@@ -102,7 +102,7 @@ exports[`sqle/SqlOptimization/Create configure git repository 1`] = `
                 />
               </div>
               <div
-                class="ant-col ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                class="ant-col ant-form-item-control"
               >
                 <div
                   class="ant-form-item-control-input"
@@ -112,7 +112,7 @@ exports[`sqle/SqlOptimization/Create configure git repository 1`] = `
                   >
                     <input
                       aria-required="true"
-                      class="ant-input ant-input-status-success css-dev-only-do-not-override-ywkr0o basic-input-wrapper workflow-name-input-wrapper css-opeiev"
+                      class="ant-input ant-input-status-success basic-input-wrapper workflow-name-input-wrapper css-opeiev"
                       id="optimizationName"
                       placeholder="请输入智能调优名称"
                       type="text"
@@ -127,26 +127,26 @@ exports[`sqle/SqlOptimization/Create configure git repository 1`] = `
       </section>
     </form>
     <form
-      class="ant-form ant-form-horizontal css-dev-only-do-not-override-txh9fw css-hpr9p4"
+      class="ant-form ant-form-horizontal css-hpr9p4"
     >
       <section
         class="css-bspaai"
       >
         <h1
-          class="ant-typography css-1eepp70 css-dev-only-do-not-override-txh9fw"
+          class="ant-typography css-1eepp70"
         >
           输入SQL
         </h1>
         <div>
           <div
-            class="ant-form-item has-required-style css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+            class="ant-form-item has-required-style css-1jlm9cy"
             style="margin-bottom: 16px;"
           >
             <div
-              class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+              class="ant-row ant-form-item-row"
             >
               <div
-                class="ant-col ant-form-item-label ant-form-item-label-left css-dev-only-do-not-override-txh9fw"
+                class="ant-col ant-form-item-label ant-form-item-label-left"
               >
                 <label
                   class="ant-form-item-required ant-form-item-no-colon"
@@ -156,7 +156,7 @@ exports[`sqle/SqlOptimization/Create configure git repository 1`] = `
                 </label>
               </div>
               <div
-                class="ant-col ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                class="ant-col ant-form-item-control"
               >
                 <div
                   class="ant-form-item-control-input"
@@ -169,20 +169,20 @@ exports[`sqle/SqlOptimization/Create configure git repository 1`] = `
             </div>
           </div>
           <div
-            class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-start"
+            class="ant-space ant-space-horizontal ant-space-align-start"
           >
             <div
               class="ant-space-item"
               style="margin-right: 12px;"
             >
               <div
-                class="ant-form-item css-15d6abf css-dev-only-do-not-override-txh9fw ant-form-item-has-success"
+                class="ant-form-item css-15d6abf ant-form-item-has-success"
               >
                 <div
-                  class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                  class="ant-row ant-form-item-row"
                 >
                   <div
-                    class="ant-col ant-form-item-label ant-form-item-label-left css-dev-only-do-not-override-txh9fw"
+                    class="ant-col ant-form-item-label ant-form-item-label-left"
                   >
                     <label
                       class="ant-form-item-required ant-form-item-no-colon"
@@ -191,7 +191,7 @@ exports[`sqle/SqlOptimization/Create configure git repository 1`] = `
                     />
                   </div>
                   <div
-                    class="ant-col ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                    class="ant-col ant-form-item-control"
                   >
                     <div
                       class="ant-form-item-control-input"
@@ -201,7 +201,7 @@ exports[`sqle/SqlOptimization/Create configure git repository 1`] = `
                       >
                         <div
                           aria-required="true"
-                          class="ant-select ant-select-in-form-item ant-select-status-success basic-select-wrapper custom-select-namespace data-source-row-select css-pti5z8 css-dev-only-do-not-override-v9sov3 ant-select-single ant-select-show-arrow"
+                          class="ant-select ant-select-in-form-item ant-select-status-success basic-select-wrapper custom-select-namespace data-source-row-select css-pti5z8 ant-select-single ant-select-show-arrow"
                         >
                           <div
                             class="ant-select-selector"
@@ -300,13 +300,13 @@ exports[`sqle/SqlOptimization/Create configure git repository 1`] = `
               style="margin-right: 12px;"
             >
               <div
-                class="ant-form-item css-15d6abf css-dev-only-do-not-override-txh9fw ant-form-item-has-success"
+                class="ant-form-item css-15d6abf ant-form-item-has-success"
               >
                 <div
-                  class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                  class="ant-row ant-form-item-row"
                 >
                   <div
-                    class="ant-col ant-form-item-label ant-form-item-label-left css-dev-only-do-not-override-txh9fw"
+                    class="ant-col ant-form-item-label ant-form-item-label-left"
                   >
                     <label
                       class="ant-form-item-required ant-form-item-no-colon"
@@ -315,7 +315,7 @@ exports[`sqle/SqlOptimization/Create configure git repository 1`] = `
                     />
                   </div>
                   <div
-                    class="ant-col ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                    class="ant-col ant-form-item-control"
                   >
                     <div
                       class="ant-form-item-control-input"
@@ -325,7 +325,7 @@ exports[`sqle/SqlOptimization/Create configure git repository 1`] = `
                       >
                         <div
                           aria-required="true"
-                          class="ant-select ant-select-in-form-item ant-select-status-success basic-select-wrapper custom-select-namespace data-source-row-select css-pti5z8 css-dev-only-do-not-override-v9sov3 ant-select-focused ant-select-single ant-select-allow-clear ant-select-show-arrow"
+                          class="ant-select ant-select-in-form-item ant-select-status-success basic-select-wrapper custom-select-namespace data-source-row-select css-pti5z8 ant-select-focused ant-select-single ant-select-allow-clear ant-select-show-arrow"
                         >
                           <span
                             aria-live="polite"
@@ -447,13 +447,13 @@ exports[`sqle/SqlOptimization/Create configure git repository 1`] = `
               class="ant-space-item"
             >
               <div
-                class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
+                class="ant-space ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
               >
                 <div
                   class="ant-space-item"
                 >
                   <button
-                    class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default ant-btn-icon-only basic-button-wrapper css-geipcv"
+                    class="ant-btn ant-btn-default ant-btn-icon-only basic-button-wrapper css-geipcv"
                     style="width: 36px; height: 36px;"
                     type="button"
                   >
@@ -479,7 +479,7 @@ exports[`sqle/SqlOptimization/Create configure git repository 1`] = `
             </div>
           </div>
           <div
-            class="ant-alert ant-alert-warning css-dev-only-do-not-override-txh9fw"
+            class="ant-alert ant-alert-warning"
             data-show="true"
             role="alert"
             style="margin-bottom: 16px;"
@@ -515,14 +515,14 @@ exports[`sqle/SqlOptimization/Create configure git repository 1`] = `
           </div>
         </div>
         <div
-          class="ant-form-item has-required-style css-1jlm9cy css-dev-only-do-not-override-txh9fw ant-form-item-has-success"
+          class="ant-form-item has-required-style css-1jlm9cy ant-form-item-has-success"
           style="margin-bottom: 16px;"
         >
           <div
-            class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+            class="ant-row ant-form-item-row"
           >
             <div
-              class="ant-col ant-col-24 ant-form-item-label ant-form-item-label-left css-dev-only-do-not-override-txh9fw"
+              class="ant-col ant-col-24 ant-form-item-label ant-form-item-label-left"
             >
               <label
                 class="ant-form-item-required ant-form-item-no-colon"
@@ -558,7 +558,7 @@ exports[`sqle/SqlOptimization/Create configure git repository 1`] = `
               </label>
             </div>
             <div
-              class="ant-col ant-col-24 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+              class="ant-col ant-col-24 ant-form-item-control"
             >
               <div
                 class="ant-form-item-control-input"
@@ -568,12 +568,12 @@ exports[`sqle/SqlOptimization/Create configure git repository 1`] = `
                 >
                   <div
                     aria-required="true"
-                    class="ant-row actiontech-mode-switcher css-dev-only-do-not-override-txh9fw"
+                    class="ant-row actiontech-mode-switcher"
                     id="uploadType"
                     style="margin: -5px -5px -5px -5px;"
                   >
                     <div
-                      class="ant-col ant-col-8 css-dev-only-do-not-override-txh9fw"
+                      class="ant-col ant-col-8"
                       style="padding: 5px 5px 5px 5px;"
                     >
                       <div
@@ -630,7 +630,7 @@ exports[`sqle/SqlOptimization/Create configure git repository 1`] = `
                       </div>
                     </div>
                     <div
-                      class="ant-col ant-col-8 css-dev-only-do-not-override-txh9fw"
+                      class="ant-col ant-col-8"
                       style="padding: 5px 5px 5px 5px;"
                     >
                       <div
@@ -687,7 +687,7 @@ exports[`sqle/SqlOptimization/Create configure git repository 1`] = `
                       </div>
                     </div>
                     <div
-                      class="ant-col ant-col-8 css-dev-only-do-not-override-txh9fw"
+                      class="ant-col ant-col-8"
                       style="padding: 5px 5px 5px 5px;"
                     >
                       <div
@@ -744,7 +744,7 @@ exports[`sqle/SqlOptimization/Create configure git repository 1`] = `
                       </div>
                     </div>
                     <div
-                      class="ant-col ant-col-8 css-dev-only-do-not-override-txh9fw"
+                      class="ant-col ant-col-8"
                       style="padding: 5px 5px 5px 5px;"
                     >
                       <div
@@ -801,7 +801,7 @@ exports[`sqle/SqlOptimization/Create configure git repository 1`] = `
                       </div>
                     </div>
                     <div
-                      class="ant-col ant-col-8 css-dev-only-do-not-override-txh9fw"
+                      class="ant-col ant-col-8"
                       style="padding: 5px 5px 5px 5px;"
                     >
                       <div
@@ -871,13 +871,13 @@ exports[`sqle/SqlOptimization/Create configure git repository 1`] = `
           </div>
         </div>
         <div
-          class="ant-form-item css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+          class="ant-form-item css-1jlm9cy"
         >
           <div
-            class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+            class="ant-row ant-form-item-row"
           >
             <div
-              class="ant-col ant-col-24 ant-form-item-label ant-form-item-label-left css-dev-only-do-not-override-txh9fw"
+              class="ant-col ant-col-24 ant-form-item-label ant-form-item-label-left"
             >
               <label
                 class="ant-form-item-required ant-form-item-no-colon"
@@ -888,7 +888,7 @@ exports[`sqle/SqlOptimization/Create configure git repository 1`] = `
               </label>
             </div>
             <div
-              class="ant-col ant-col-24 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+              class="ant-col ant-col-24 ant-form-item-control"
             >
               <div
                 class="ant-form-item-control-input"
@@ -898,7 +898,7 @@ exports[`sqle/SqlOptimization/Create configure git repository 1`] = `
                 >
                   <input
                     aria-required="true"
-                    class="ant-input css-dev-only-do-not-override-ywkr0o basic-input-wrapper css-1pd1cd5"
+                    class="ant-input basic-input-wrapper css-1pd1cd5"
                     id="gitHttpUrl"
                     placeholder="请输入GIT地址"
                     type="text"
@@ -910,13 +910,13 @@ exports[`sqle/SqlOptimization/Create configure git repository 1`] = `
           </div>
         </div>
         <div
-          class="ant-form-item css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+          class="ant-form-item css-1jlm9cy"
         >
           <div
-            class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+            class="ant-row ant-form-item-row"
           >
             <div
-              class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left css-dev-only-do-not-override-txh9fw"
+              class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left"
             >
               <label
                 class="ant-form-item-no-colon"
@@ -927,7 +927,7 @@ exports[`sqle/SqlOptimization/Create configure git repository 1`] = `
               </label>
             </div>
             <div
-              class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+              class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control"
             >
               <div
                 class="ant-form-item-control-input"
@@ -936,7 +936,7 @@ exports[`sqle/SqlOptimization/Create configure git repository 1`] = `
                   class="ant-form-item-control-input-content"
                 >
                   <input
-                    class="ant-input css-dev-only-do-not-override-ywkr0o basic-input-wrapper css-1pd1cd5"
+                    class="ant-input basic-input-wrapper css-1pd1cd5"
                     id="gitUserName"
                     placeholder="请输入用户名"
                     type="text"
@@ -948,13 +948,13 @@ exports[`sqle/SqlOptimization/Create configure git repository 1`] = `
           </div>
         </div>
         <div
-          class="ant-form-item css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+          class="ant-form-item css-1jlm9cy"
         >
           <div
-            class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+            class="ant-row ant-form-item-row"
           >
             <div
-              class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left css-dev-only-do-not-override-txh9fw"
+              class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left"
             >
               <label
                 class="ant-form-item-no-colon"
@@ -965,7 +965,7 @@ exports[`sqle/SqlOptimization/Create configure git repository 1`] = `
               </label>
             </div>
             <div
-              class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+              class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control"
             >
               <div
                 class="ant-form-item-control-input"
@@ -974,10 +974,10 @@ exports[`sqle/SqlOptimization/Create configure git repository 1`] = `
                   class="ant-form-item-control-input-content"
                 >
                   <span
-                    class="ant-input-affix-wrapper ant-input-password basic-input-wrapper css-1pd1cd5 css-dev-only-do-not-override-txh9fw"
+                    class="ant-input-affix-wrapper ant-input-password basic-input-wrapper css-1pd1cd5"
                   >
                     <input
-                      class="ant-input css-dev-only-do-not-override-txh9fw"
+                      class="ant-input"
                       id="gitUserPassword"
                       placeholder="请输入密码"
                       type="password"
@@ -1016,14 +1016,14 @@ exports[`sqle/SqlOptimization/Create configure git repository 1`] = `
           </div>
         </div>
         <div
-          class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+          class="ant-space ant-space-horizontal ant-space-align-center"
         >
           <div
             class="ant-space-item"
             style="margin-right: 12px;"
           >
             <button
-              class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary create-optimization-button basic-button-wrapper css-geipcv"
+              class="ant-btn ant-btn-primary create-optimization-button basic-button-wrapper css-geipcv"
               type="button"
             >
               <span>
@@ -1035,7 +1035,7 @@ exports[`sqle/SqlOptimization/Create configure git repository 1`] = `
             class="ant-space-item"
           >
             <div
-              class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+              class="ant-space ant-space-horizontal ant-space-align-center"
               hidden=""
             >
               <div
@@ -1043,7 +1043,7 @@ exports[`sqle/SqlOptimization/Create configure git repository 1`] = `
                 style="margin-right: 8px;"
               >
                 <button
-                  class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default basic-button-wrapper css-geipcv"
+                  class="ant-btn ant-btn-default basic-button-wrapper css-geipcv"
                   type="button"
                 >
                   <span>
@@ -1055,7 +1055,7 @@ exports[`sqle/SqlOptimization/Create configure git repository 1`] = `
                 class="ant-space-item"
               >
                 <div
-                  class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
+                  class="ant-space ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
                 >
                   <div
                     class="ant-space-item"
@@ -1082,15 +1082,15 @@ exports[`sqle/SqlOptimization/Create configure git repository 1`] = `
   </div>
   <div>
     <div
-      class="ant-select-dropdown ant-select-dropdown-hidden custom-select-popup-wrapper css-dev-only-do-not-override-v9sov3 ant-select-dropdown-placement-bottomLeft"
+      class="ant-select-dropdown ant-select-dropdown-hidden custom-select-popup-wrapper ant-select-dropdown-placement-bottomLeft"
       style="--arrow-x: 0px; --arrow-y: 0px; left: 0px; top: 0px; box-sizing: border-box; padding: 0px; min-width: 0; pointer-events: none;"
     >
       <div>
         <span
-          class="ant-input-affix-wrapper basic-input-wrapper custom-select-popup-search-input css-d0jdfn ant-input-affix-wrapper-borderless ant-input-affix-wrapper-status-success css-dev-only-do-not-override-6svbnr"
+          class="ant-input-affix-wrapper basic-input-wrapper custom-select-popup-search-input css-d0jdfn ant-input-affix-wrapper-borderless ant-input-affix-wrapper-status-success"
         >
           <input
-            class="ant-input ant-input-borderless css-dev-only-do-not-override-6svbnr"
+            class="ant-input ant-input-borderless"
             placeholder="搜索"
             type="text"
             value=""
@@ -1282,15 +1282,15 @@ exports[`sqle/SqlOptimization/Create configure git repository 1`] = `
   </div>
   <div>
     <div
-      class="ant-select-dropdown ant-select-dropdown-hidden custom-select-popup-wrapper css-dev-only-do-not-override-v9sov3 ant-select-dropdown-placement-bottomLeft"
+      class="ant-select-dropdown ant-select-dropdown-hidden custom-select-popup-wrapper ant-select-dropdown-placement-bottomLeft"
       style="--arrow-x: 0px; --arrow-y: 0px; left: 0px; top: 0px; box-sizing: border-box; padding: 0px; min-width: 0; pointer-events: none;"
     >
       <div>
         <span
-          class="ant-input-affix-wrapper ant-input-affix-wrapper-focused basic-input-wrapper custom-select-popup-search-input css-d0jdfn ant-input-affix-wrapper-borderless ant-input-affix-wrapper-status-success css-dev-only-do-not-override-6svbnr"
+          class="ant-input-affix-wrapper ant-input-affix-wrapper-focused basic-input-wrapper custom-select-popup-search-input css-d0jdfn ant-input-affix-wrapper-borderless ant-input-affix-wrapper-status-success"
         >
           <input
-            class="ant-input ant-input-borderless css-dev-only-do-not-override-6svbnr"
+            class="ant-input ant-input-borderless"
             placeholder="搜索"
             type="text"
             value=""
@@ -1454,7 +1454,7 @@ exports[`sqle/SqlOptimization/Create enter default content to create sql optimiz
           href="/sqle/project/700300/sql-optimization"
         >
           <button
-            class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default basic-button-wrapper css-geipcv"
+            class="ant-btn ant-btn-default basic-button-wrapper css-geipcv"
             type="button"
           >
             <span
@@ -1482,7 +1482,7 @@ exports[`sqle/SqlOptimization/Create enter default content to create sql optimiz
         class="extra"
       >
         <button
-          class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default basic-button-wrapper css-geipcv"
+          class="ant-btn ant-btn-default basic-button-wrapper css-geipcv"
           type="button"
         >
           <span>
@@ -1492,7 +1492,7 @@ exports[`sqle/SqlOptimization/Create enter default content to create sql optimiz
       </div>
     </div>
     <form
-      class="ant-form ant-form-vertical css-dev-only-do-not-override-txh9fw hasTopHeader clearPaddingBottom css-19jfn7e"
+      class="ant-form ant-form-vertical hasTopHeader clearPaddingBottom css-19jfn7e"
     >
       <section
         class="css-1114g56"
@@ -1501,7 +1501,7 @@ exports[`sqle/SqlOptimization/Create enter default content to create sql optimiz
           class="css-bspaai"
         >
           <h3
-            class="ant-typography css-p50odb css-dev-only-do-not-override-txh9fw"
+            class="ant-typography css-p50odb"
           >
             <span
               class="anticon title-icon"
@@ -1528,13 +1528,13 @@ exports[`sqle/SqlOptimization/Create enter default content to create sql optimiz
             </span>
           </h3>
           <div
-            class="ant-form-item css-15d6abf css-dev-only-do-not-override-txh9fw ant-form-item-has-success"
+            class="ant-form-item css-15d6abf ant-form-item-has-success"
           >
             <div
-              class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+              class="ant-row ant-form-item-row"
             >
               <div
-                class="ant-col ant-form-item-label ant-form-item-label-left css-dev-only-do-not-override-txh9fw"
+                class="ant-col ant-form-item-label ant-form-item-label-left"
               >
                 <label
                   class="ant-form-item-required ant-form-item-no-colon"
@@ -1543,7 +1543,7 @@ exports[`sqle/SqlOptimization/Create enter default content to create sql optimiz
                 />
               </div>
               <div
-                class="ant-col ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                class="ant-col ant-form-item-control"
               >
                 <div
                   class="ant-form-item-control-input"
@@ -1553,7 +1553,7 @@ exports[`sqle/SqlOptimization/Create enter default content to create sql optimiz
                   >
                     <input
                       aria-required="true"
-                      class="ant-input ant-input-status-success css-dev-only-do-not-override-ywkr0o basic-input-wrapper workflow-name-input-wrapper css-opeiev"
+                      class="ant-input ant-input-status-success basic-input-wrapper workflow-name-input-wrapper css-opeiev"
                       id="optimizationName"
                       placeholder="请输入智能调优名称"
                       type="text"
@@ -1568,26 +1568,26 @@ exports[`sqle/SqlOptimization/Create enter default content to create sql optimiz
       </section>
     </form>
     <form
-      class="ant-form ant-form-horizontal css-dev-only-do-not-override-txh9fw css-hpr9p4"
+      class="ant-form ant-form-horizontal css-hpr9p4"
     >
       <section
         class="css-bspaai"
       >
         <h1
-          class="ant-typography css-1eepp70 css-dev-only-do-not-override-txh9fw"
+          class="ant-typography css-1eepp70"
         >
           输入SQL
         </h1>
         <div>
           <div
-            class="ant-form-item has-required-style css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+            class="ant-form-item has-required-style css-1jlm9cy"
             style="margin-bottom: 16px;"
           >
             <div
-              class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+              class="ant-row ant-form-item-row"
             >
               <div
-                class="ant-col ant-form-item-label ant-form-item-label-left css-dev-only-do-not-override-txh9fw"
+                class="ant-col ant-form-item-label ant-form-item-label-left"
               >
                 <label
                   class="ant-form-item-required ant-form-item-no-colon"
@@ -1597,7 +1597,7 @@ exports[`sqle/SqlOptimization/Create enter default content to create sql optimiz
                 </label>
               </div>
               <div
-                class="ant-col ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                class="ant-col ant-form-item-control"
               >
                 <div
                   class="ant-form-item-control-input"
@@ -1610,20 +1610,20 @@ exports[`sqle/SqlOptimization/Create enter default content to create sql optimiz
             </div>
           </div>
           <div
-            class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-start"
+            class="ant-space ant-space-horizontal ant-space-align-start"
           >
             <div
               class="ant-space-item"
               style="margin-right: 12px;"
             >
               <div
-                class="ant-form-item css-15d6abf css-dev-only-do-not-override-txh9fw ant-form-item-has-success"
+                class="ant-form-item css-15d6abf ant-form-item-has-success"
               >
                 <div
-                  class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                  class="ant-row ant-form-item-row"
                 >
                   <div
-                    class="ant-col ant-form-item-label ant-form-item-label-left css-dev-only-do-not-override-txh9fw"
+                    class="ant-col ant-form-item-label ant-form-item-label-left"
                   >
                     <label
                       class="ant-form-item-required ant-form-item-no-colon"
@@ -1632,7 +1632,7 @@ exports[`sqle/SqlOptimization/Create enter default content to create sql optimiz
                     />
                   </div>
                   <div
-                    class="ant-col ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                    class="ant-col ant-form-item-control"
                   >
                     <div
                       class="ant-form-item-control-input"
@@ -1642,7 +1642,7 @@ exports[`sqle/SqlOptimization/Create enter default content to create sql optimiz
                       >
                         <div
                           aria-required="true"
-                          class="ant-select ant-select-in-form-item ant-select-status-success basic-select-wrapper custom-select-namespace data-source-row-select css-pti5z8 css-dev-only-do-not-override-v9sov3 ant-select-single ant-select-show-arrow"
+                          class="ant-select ant-select-in-form-item ant-select-status-success basic-select-wrapper custom-select-namespace data-source-row-select css-pti5z8 ant-select-single ant-select-show-arrow"
                         >
                           <div
                             class="ant-select-selector"
@@ -1741,13 +1741,13 @@ exports[`sqle/SqlOptimization/Create enter default content to create sql optimiz
               style="margin-right: 12px;"
             >
               <div
-                class="ant-form-item css-15d6abf css-dev-only-do-not-override-txh9fw ant-form-item-has-success"
+                class="ant-form-item css-15d6abf ant-form-item-has-success"
               >
                 <div
-                  class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                  class="ant-row ant-form-item-row"
                 >
                   <div
-                    class="ant-col ant-form-item-label ant-form-item-label-left css-dev-only-do-not-override-txh9fw"
+                    class="ant-col ant-form-item-label ant-form-item-label-left"
                   >
                     <label
                       class="ant-form-item-required ant-form-item-no-colon"
@@ -1756,7 +1756,7 @@ exports[`sqle/SqlOptimization/Create enter default content to create sql optimiz
                     />
                   </div>
                   <div
-                    class="ant-col ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                    class="ant-col ant-form-item-control"
                   >
                     <div
                       class="ant-form-item-control-input"
@@ -1766,7 +1766,7 @@ exports[`sqle/SqlOptimization/Create enter default content to create sql optimiz
                       >
                         <div
                           aria-required="true"
-                          class="ant-select ant-select-in-form-item ant-select-status-success basic-select-wrapper custom-select-namespace data-source-row-select css-pti5z8 css-dev-only-do-not-override-v9sov3 ant-select-focused ant-select-single ant-select-allow-clear ant-select-show-arrow"
+                          class="ant-select ant-select-in-form-item ant-select-status-success basic-select-wrapper custom-select-namespace data-source-row-select css-pti5z8 ant-select-focused ant-select-single ant-select-allow-clear ant-select-show-arrow"
                         >
                           <span
                             aria-live="polite"
@@ -1888,13 +1888,13 @@ exports[`sqle/SqlOptimization/Create enter default content to create sql optimiz
               class="ant-space-item"
             >
               <div
-                class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center ant-tooltip-open basic-tooltips-wrapper css-4jbtl9"
+                class="ant-space ant-space-horizontal ant-space-align-center ant-tooltip-open basic-tooltips-wrapper css-4jbtl9"
               >
                 <div
                   class="ant-space-item"
                 >
                   <button
-                    class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default ant-btn-icon-only basic-button-wrapper css-geipcv"
+                    class="ant-btn ant-btn-default ant-btn-icon-only basic-button-wrapper css-geipcv"
                     style="width: 36px; height: 36px;"
                     type="button"
                   >
@@ -1920,7 +1920,7 @@ exports[`sqle/SqlOptimization/Create enter default content to create sql optimiz
             </div>
           </div>
           <div
-            class="ant-alert ant-alert-warning css-dev-only-do-not-override-txh9fw"
+            class="ant-alert ant-alert-warning"
             data-show="true"
             role="alert"
             style="margin-bottom: 16px;"
@@ -1956,14 +1956,14 @@ exports[`sqle/SqlOptimization/Create enter default content to create sql optimiz
           </div>
         </div>
         <div
-          class="ant-form-item has-required-style css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+          class="ant-form-item has-required-style css-1jlm9cy"
           style="margin-bottom: 16px;"
         >
           <div
-            class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+            class="ant-row ant-form-item-row"
           >
             <div
-              class="ant-col ant-col-24 ant-form-item-label ant-form-item-label-left css-dev-only-do-not-override-txh9fw"
+              class="ant-col ant-col-24 ant-form-item-label ant-form-item-label-left"
             >
               <label
                 class="ant-form-item-required ant-form-item-no-colon"
@@ -1999,7 +1999,7 @@ exports[`sqle/SqlOptimization/Create enter default content to create sql optimiz
               </label>
             </div>
             <div
-              class="ant-col ant-col-24 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+              class="ant-col ant-col-24 ant-form-item-control"
             >
               <div
                 class="ant-form-item-control-input"
@@ -2009,12 +2009,12 @@ exports[`sqle/SqlOptimization/Create enter default content to create sql optimiz
                 >
                   <div
                     aria-required="true"
-                    class="ant-row actiontech-mode-switcher css-dev-only-do-not-override-txh9fw"
+                    class="ant-row actiontech-mode-switcher"
                     id="uploadType"
                     style="margin: -5px -5px -5px -5px;"
                   >
                     <div
-                      class="ant-col ant-col-8 css-dev-only-do-not-override-txh9fw"
+                      class="ant-col ant-col-8"
                       style="padding: 5px 5px 5px 5px;"
                     >
                       <div
@@ -2070,7 +2070,7 @@ exports[`sqle/SqlOptimization/Create enter default content to create sql optimiz
                       </div>
                     </div>
                     <div
-                      class="ant-col ant-col-8 css-dev-only-do-not-override-txh9fw"
+                      class="ant-col ant-col-8"
                       style="padding: 5px 5px 5px 5px;"
                     >
                       <div
@@ -2127,7 +2127,7 @@ exports[`sqle/SqlOptimization/Create enter default content to create sql optimiz
                       </div>
                     </div>
                     <div
-                      class="ant-col ant-col-8 css-dev-only-do-not-override-txh9fw"
+                      class="ant-col ant-col-8"
                       style="padding: 5px 5px 5px 5px;"
                     >
                       <div
@@ -2184,7 +2184,7 @@ exports[`sqle/SqlOptimization/Create enter default content to create sql optimiz
                       </div>
                     </div>
                     <div
-                      class="ant-col ant-col-8 css-dev-only-do-not-override-txh9fw"
+                      class="ant-col ant-col-8"
                       style="padding: 5px 5px 5px 5px;"
                     >
                       <div
@@ -2241,7 +2241,7 @@ exports[`sqle/SqlOptimization/Create enter default content to create sql optimiz
                       </div>
                     </div>
                     <div
-                      class="ant-col ant-col-8 css-dev-only-do-not-override-txh9fw"
+                      class="ant-col ant-col-8"
                       style="padding: 5px 5px 5px 5px;"
                     >
                       <div
@@ -2312,13 +2312,13 @@ exports[`sqle/SqlOptimization/Create enter default content to create sql optimiz
           </div>
         </div>
         <div
-          class="ant-form-item css-15d6abf css-dev-only-do-not-override-txh9fw"
+          class="ant-form-item css-15d6abf"
         >
           <div
-            class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+            class="ant-row ant-form-item-row"
           >
             <div
-              class="ant-col ant-form-item-label ant-form-item-label-left css-dev-only-do-not-override-txh9fw"
+              class="ant-col ant-form-item-label ant-form-item-label-left"
             >
               <label
                 class="ant-form-item-required ant-form-item-no-colon"
@@ -2327,7 +2327,7 @@ exports[`sqle/SqlOptimization/Create enter default content to create sql optimiz
               />
             </div>
             <div
-              class="ant-col ant-form-item-control css-dev-only-do-not-override-txh9fw"
+              class="ant-col ant-form-item-control"
             >
               <div
                 class="ant-form-item-control-input"
@@ -2355,14 +2355,14 @@ exports[`sqle/SqlOptimization/Create enter default content to create sql optimiz
           </div>
         </div>
         <div
-          class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+          class="ant-space ant-space-horizontal ant-space-align-center"
         >
           <div
             class="ant-space-item"
             style="margin-right: 12px;"
           >
             <button
-              class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary create-optimization-button basic-button-wrapper css-geipcv"
+              class="ant-btn ant-btn-primary create-optimization-button basic-button-wrapper css-geipcv"
               type="button"
             >
               <span>
@@ -2374,14 +2374,14 @@ exports[`sqle/SqlOptimization/Create enter default content to create sql optimiz
             class="ant-space-item"
           >
             <div
-              class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+              class="ant-space ant-space-horizontal ant-space-align-center"
             >
               <div
                 class="ant-space-item"
                 style="margin-right: 8px;"
               >
                 <button
-                  class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default basic-button-wrapper css-geipcv"
+                  class="ant-btn ant-btn-default basic-button-wrapper css-geipcv"
                   type="button"
                 >
                   <span>
@@ -2393,7 +2393,7 @@ exports[`sqle/SqlOptimization/Create enter default content to create sql optimiz
                 class="ant-space-item"
               >
                 <div
-                  class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
+                  class="ant-space ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
                 >
                   <div
                     class="ant-space-item"
@@ -2420,15 +2420,15 @@ exports[`sqle/SqlOptimization/Create enter default content to create sql optimiz
   </div>
   <div>
     <div
-      class="ant-select-dropdown ant-select-dropdown-hidden custom-select-popup-wrapper css-dev-only-do-not-override-v9sov3 ant-select-dropdown-placement-bottomLeft"
+      class="ant-select-dropdown ant-select-dropdown-hidden custom-select-popup-wrapper ant-select-dropdown-placement-bottomLeft"
       style="--arrow-x: 0px; --arrow-y: 0px; left: 0px; top: 0px; box-sizing: border-box; padding: 0px; min-width: 0; pointer-events: none;"
     >
       <div>
         <span
-          class="ant-input-affix-wrapper basic-input-wrapper custom-select-popup-search-input css-d0jdfn ant-input-affix-wrapper-borderless ant-input-affix-wrapper-status-success css-dev-only-do-not-override-6svbnr"
+          class="ant-input-affix-wrapper basic-input-wrapper custom-select-popup-search-input css-d0jdfn ant-input-affix-wrapper-borderless ant-input-affix-wrapper-status-success"
         >
           <input
-            class="ant-input ant-input-borderless css-dev-only-do-not-override-6svbnr"
+            class="ant-input ant-input-borderless"
             placeholder="搜索"
             type="text"
             value=""
@@ -2620,15 +2620,15 @@ exports[`sqle/SqlOptimization/Create enter default content to create sql optimiz
   </div>
   <div>
     <div
-      class="ant-select-dropdown ant-select-dropdown-hidden custom-select-popup-wrapper css-dev-only-do-not-override-v9sov3 ant-select-dropdown-placement-bottomLeft"
+      class="ant-select-dropdown ant-select-dropdown-hidden custom-select-popup-wrapper ant-select-dropdown-placement-bottomLeft"
       style="--arrow-x: 0px; --arrow-y: 0px; left: 0px; top: 0px; box-sizing: border-box; padding: 0px; min-width: 0; pointer-events: none;"
     >
       <div>
         <span
-          class="ant-input-affix-wrapper ant-input-affix-wrapper-focused basic-input-wrapper custom-select-popup-search-input css-d0jdfn ant-input-affix-wrapper-borderless ant-input-affix-wrapper-status-success css-dev-only-do-not-override-6svbnr"
+          class="ant-input-affix-wrapper ant-input-affix-wrapper-focused basic-input-wrapper custom-select-popup-search-input css-d0jdfn ant-input-affix-wrapper-borderless ant-input-affix-wrapper-status-success"
         >
           <input
-            class="ant-input ant-input-borderless css-dev-only-do-not-override-6svbnr"
+            class="ant-input ant-input-borderless"
             placeholder="搜索"
             type="text"
             value=""
@@ -2778,7 +2778,7 @@ exports[`sqle/SqlOptimization/Create enter default content to create sql optimiz
   </div>
   <div>
     <div
-      class="ant-tooltip ant-zoom-big-fast-appear ant-zoom-big-fast-appear-prepare ant-zoom-big-fast css-dev-only-do-not-override-txh9fw ant-tooltip-placement-top"
+      class="ant-tooltip ant-zoom-big-fast-appear ant-zoom-big-fast-appear-prepare ant-zoom-big-fast ant-tooltip-placement-top"
       style="--arrow-x: 0px; --arrow-y: 0px; left: -1000vw; top: -1000vh; box-sizing: border-box;"
     >
       <div
@@ -2821,7 +2821,7 @@ exports[`sqle/SqlOptimization/Create upload sql file 1`] = `
           href="/sqle/project/700300/sql-optimization"
         >
           <button
-            class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default basic-button-wrapper css-geipcv"
+            class="ant-btn ant-btn-default basic-button-wrapper css-geipcv"
             type="button"
           >
             <span
@@ -2849,7 +2849,7 @@ exports[`sqle/SqlOptimization/Create upload sql file 1`] = `
         class="extra"
       >
         <button
-          class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default basic-button-wrapper css-geipcv"
+          class="ant-btn ant-btn-default basic-button-wrapper css-geipcv"
           type="button"
         >
           <span>
@@ -2859,7 +2859,7 @@ exports[`sqle/SqlOptimization/Create upload sql file 1`] = `
       </div>
     </div>
     <form
-      class="ant-form ant-form-vertical css-dev-only-do-not-override-txh9fw hasTopHeader clearPaddingBottom css-19jfn7e"
+      class="ant-form ant-form-vertical hasTopHeader clearPaddingBottom css-19jfn7e"
     >
       <section
         class="css-1114g56"
@@ -2868,7 +2868,7 @@ exports[`sqle/SqlOptimization/Create upload sql file 1`] = `
           class="css-bspaai"
         >
           <h3
-            class="ant-typography css-p50odb css-dev-only-do-not-override-txh9fw"
+            class="ant-typography css-p50odb"
           >
             <span
               class="anticon title-icon"
@@ -2895,13 +2895,13 @@ exports[`sqle/SqlOptimization/Create upload sql file 1`] = `
             </span>
           </h3>
           <div
-            class="ant-form-item css-15d6abf css-dev-only-do-not-override-txh9fw ant-form-item-has-success"
+            class="ant-form-item css-15d6abf ant-form-item-has-success"
           >
             <div
-              class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+              class="ant-row ant-form-item-row"
             >
               <div
-                class="ant-col ant-form-item-label ant-form-item-label-left css-dev-only-do-not-override-txh9fw"
+                class="ant-col ant-form-item-label ant-form-item-label-left"
               >
                 <label
                   class="ant-form-item-required ant-form-item-no-colon"
@@ -2910,7 +2910,7 @@ exports[`sqle/SqlOptimization/Create upload sql file 1`] = `
                 />
               </div>
               <div
-                class="ant-col ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                class="ant-col ant-form-item-control"
               >
                 <div
                   class="ant-form-item-control-input"
@@ -2920,7 +2920,7 @@ exports[`sqle/SqlOptimization/Create upload sql file 1`] = `
                   >
                     <input
                       aria-required="true"
-                      class="ant-input ant-input-status-success css-dev-only-do-not-override-ywkr0o basic-input-wrapper workflow-name-input-wrapper css-opeiev"
+                      class="ant-input ant-input-status-success basic-input-wrapper workflow-name-input-wrapper css-opeiev"
                       id="optimizationName"
                       placeholder="请输入智能调优名称"
                       type="text"
@@ -2935,26 +2935,26 @@ exports[`sqle/SqlOptimization/Create upload sql file 1`] = `
       </section>
     </form>
     <form
-      class="ant-form ant-form-horizontal css-dev-only-do-not-override-txh9fw css-hpr9p4"
+      class="ant-form ant-form-horizontal css-hpr9p4"
     >
       <section
         class="css-bspaai"
       >
         <h1
-          class="ant-typography css-1eepp70 css-dev-only-do-not-override-txh9fw"
+          class="ant-typography css-1eepp70"
         >
           输入SQL
         </h1>
         <div>
           <div
-            class="ant-form-item has-required-style css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+            class="ant-form-item has-required-style css-1jlm9cy"
             style="margin-bottom: 16px;"
           >
             <div
-              class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+              class="ant-row ant-form-item-row"
             >
               <div
-                class="ant-col ant-form-item-label ant-form-item-label-left css-dev-only-do-not-override-txh9fw"
+                class="ant-col ant-form-item-label ant-form-item-label-left"
               >
                 <label
                   class="ant-form-item-required ant-form-item-no-colon"
@@ -2964,7 +2964,7 @@ exports[`sqle/SqlOptimization/Create upload sql file 1`] = `
                 </label>
               </div>
               <div
-                class="ant-col ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                class="ant-col ant-form-item-control"
               >
                 <div
                   class="ant-form-item-control-input"
@@ -2977,20 +2977,20 @@ exports[`sqle/SqlOptimization/Create upload sql file 1`] = `
             </div>
           </div>
           <div
-            class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-start"
+            class="ant-space ant-space-horizontal ant-space-align-start"
           >
             <div
               class="ant-space-item"
               style="margin-right: 12px;"
             >
               <div
-                class="ant-form-item css-15d6abf css-dev-only-do-not-override-txh9fw ant-form-item-has-success"
+                class="ant-form-item css-15d6abf ant-form-item-has-success"
               >
                 <div
-                  class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                  class="ant-row ant-form-item-row"
                 >
                   <div
-                    class="ant-col ant-form-item-label ant-form-item-label-left css-dev-only-do-not-override-txh9fw"
+                    class="ant-col ant-form-item-label ant-form-item-label-left"
                   >
                     <label
                       class="ant-form-item-required ant-form-item-no-colon"
@@ -2999,7 +2999,7 @@ exports[`sqle/SqlOptimization/Create upload sql file 1`] = `
                     />
                   </div>
                   <div
-                    class="ant-col ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                    class="ant-col ant-form-item-control"
                   >
                     <div
                       class="ant-form-item-control-input"
@@ -3009,7 +3009,7 @@ exports[`sqle/SqlOptimization/Create upload sql file 1`] = `
                       >
                         <div
                           aria-required="true"
-                          class="ant-select ant-select-in-form-item ant-select-status-success basic-select-wrapper custom-select-namespace data-source-row-select css-pti5z8 css-dev-only-do-not-override-v9sov3 ant-select-single ant-select-show-arrow"
+                          class="ant-select ant-select-in-form-item ant-select-status-success basic-select-wrapper custom-select-namespace data-source-row-select css-pti5z8 ant-select-single ant-select-show-arrow"
                         >
                           <div
                             class="ant-select-selector"
@@ -3108,13 +3108,13 @@ exports[`sqle/SqlOptimization/Create upload sql file 1`] = `
               style="margin-right: 12px;"
             >
               <div
-                class="ant-form-item css-15d6abf css-dev-only-do-not-override-txh9fw ant-form-item-has-success"
+                class="ant-form-item css-15d6abf ant-form-item-has-success"
               >
                 <div
-                  class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                  class="ant-row ant-form-item-row"
                 >
                   <div
-                    class="ant-col ant-form-item-label ant-form-item-label-left css-dev-only-do-not-override-txh9fw"
+                    class="ant-col ant-form-item-label ant-form-item-label-left"
                   >
                     <label
                       class="ant-form-item-required ant-form-item-no-colon"
@@ -3123,7 +3123,7 @@ exports[`sqle/SqlOptimization/Create upload sql file 1`] = `
                     />
                   </div>
                   <div
-                    class="ant-col ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                    class="ant-col ant-form-item-control"
                   >
                     <div
                       class="ant-form-item-control-input"
@@ -3133,7 +3133,7 @@ exports[`sqle/SqlOptimization/Create upload sql file 1`] = `
                       >
                         <div
                           aria-required="true"
-                          class="ant-select ant-select-in-form-item ant-select-status-success basic-select-wrapper custom-select-namespace data-source-row-select css-pti5z8 css-dev-only-do-not-override-v9sov3 ant-select-focused ant-select-single ant-select-allow-clear ant-select-show-arrow"
+                          class="ant-select ant-select-in-form-item ant-select-status-success basic-select-wrapper custom-select-namespace data-source-row-select css-pti5z8 ant-select-focused ant-select-single ant-select-allow-clear ant-select-show-arrow"
                         >
                           <span
                             aria-live="polite"
@@ -3255,13 +3255,13 @@ exports[`sqle/SqlOptimization/Create upload sql file 1`] = `
               class="ant-space-item"
             >
               <div
-                class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
+                class="ant-space ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
               >
                 <div
                   class="ant-space-item"
                 >
                   <button
-                    class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default ant-btn-icon-only basic-button-wrapper css-geipcv"
+                    class="ant-btn ant-btn-default ant-btn-icon-only basic-button-wrapper css-geipcv"
                     style="width: 36px; height: 36px;"
                     type="button"
                   >
@@ -3287,7 +3287,7 @@ exports[`sqle/SqlOptimization/Create upload sql file 1`] = `
             </div>
           </div>
           <div
-            class="ant-alert ant-alert-warning css-dev-only-do-not-override-txh9fw"
+            class="ant-alert ant-alert-warning"
             data-show="true"
             role="alert"
             style="margin-bottom: 16px;"
@@ -3323,14 +3323,14 @@ exports[`sqle/SqlOptimization/Create upload sql file 1`] = `
           </div>
         </div>
         <div
-          class="ant-form-item has-required-style css-1jlm9cy css-dev-only-do-not-override-txh9fw ant-form-item-has-success"
+          class="ant-form-item has-required-style css-1jlm9cy ant-form-item-has-success"
           style="margin-bottom: 16px;"
         >
           <div
-            class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+            class="ant-row ant-form-item-row"
           >
             <div
-              class="ant-col ant-col-24 ant-form-item-label ant-form-item-label-left css-dev-only-do-not-override-txh9fw"
+              class="ant-col ant-col-24 ant-form-item-label ant-form-item-label-left"
             >
               <label
                 class="ant-form-item-required ant-form-item-no-colon"
@@ -3366,7 +3366,7 @@ exports[`sqle/SqlOptimization/Create upload sql file 1`] = `
               </label>
             </div>
             <div
-              class="ant-col ant-col-24 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+              class="ant-col ant-col-24 ant-form-item-control"
             >
               <div
                 class="ant-form-item-control-input"
@@ -3376,12 +3376,12 @@ exports[`sqle/SqlOptimization/Create upload sql file 1`] = `
                 >
                   <div
                     aria-required="true"
-                    class="ant-row actiontech-mode-switcher css-dev-only-do-not-override-txh9fw"
+                    class="ant-row actiontech-mode-switcher"
                     id="uploadType"
                     style="margin: -5px -5px -5px -5px;"
                   >
                     <div
-                      class="ant-col ant-col-8 css-dev-only-do-not-override-txh9fw"
+                      class="ant-col ant-col-8"
                       style="padding: 5px 5px 5px 5px;"
                     >
                       <div
@@ -3438,7 +3438,7 @@ exports[`sqle/SqlOptimization/Create upload sql file 1`] = `
                       </div>
                     </div>
                     <div
-                      class="ant-col ant-col-8 css-dev-only-do-not-override-txh9fw"
+                      class="ant-col ant-col-8"
                       style="padding: 5px 5px 5px 5px;"
                     >
                       <div
@@ -3494,7 +3494,7 @@ exports[`sqle/SqlOptimization/Create upload sql file 1`] = `
                       </div>
                     </div>
                     <div
-                      class="ant-col ant-col-8 css-dev-only-do-not-override-txh9fw"
+                      class="ant-col ant-col-8"
                       style="padding: 5px 5px 5px 5px;"
                     >
                       <div
@@ -3551,7 +3551,7 @@ exports[`sqle/SqlOptimization/Create upload sql file 1`] = `
                       </div>
                     </div>
                     <div
-                      class="ant-col ant-col-8 css-dev-only-do-not-override-txh9fw"
+                      class="ant-col ant-col-8"
                       style="padding: 5px 5px 5px 5px;"
                     >
                       <div
@@ -3608,7 +3608,7 @@ exports[`sqle/SqlOptimization/Create upload sql file 1`] = `
                       </div>
                     </div>
                     <div
-                      class="ant-col ant-col-8 css-dev-only-do-not-override-txh9fw"
+                      class="ant-col ant-col-8"
                       style="padding: 5px 5px 5px 5px;"
                     >
                       <div
@@ -3679,13 +3679,13 @@ exports[`sqle/SqlOptimization/Create upload sql file 1`] = `
           </div>
         </div>
         <div
-          class="ant-form-item css-15d6abf css-dev-only-do-not-override-txh9fw"
+          class="ant-form-item css-15d6abf"
         >
           <div
-            class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+            class="ant-row ant-form-item-row"
           >
             <div
-              class="ant-col ant-form-item-label ant-form-item-label-left css-dev-only-do-not-override-txh9fw"
+              class="ant-col ant-form-item-label ant-form-item-label-left"
             >
               <label
                 class="ant-form-item-required ant-form-item-no-colon"
@@ -3694,7 +3694,7 @@ exports[`sqle/SqlOptimization/Create upload sql file 1`] = `
               />
             </div>
             <div
-              class="ant-col ant-form-item-control css-dev-only-do-not-override-txh9fw"
+              class="ant-col ant-form-item-control"
             >
               <div
                 class="ant-form-item-control-input"
@@ -3703,10 +3703,10 @@ exports[`sqle/SqlOptimization/Create upload sql file 1`] = `
                   class="ant-form-item-control-input-content"
                 >
                   <span
-                    class="ant-upload-wrapper css-1c6xfw5 css-dev-only-do-not-override-txh9fw"
+                    class="ant-upload-wrapper css-1c6xfw5"
                   >
                     <div
-                      class="css-dev-only-do-not-override-txh9fw ant-upload ant-upload-drag"
+                      class="ant-upload ant-upload-drag"
                     >
                       <span
                         class="ant-upload ant-upload-btn"
@@ -3753,14 +3753,14 @@ exports[`sqle/SqlOptimization/Create upload sql file 1`] = `
           </div>
         </div>
         <div
-          class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+          class="ant-space ant-space-horizontal ant-space-align-center"
         >
           <div
             class="ant-space-item"
             style="margin-right: 12px;"
           >
             <button
-              class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary create-optimization-button basic-button-wrapper css-geipcv"
+              class="ant-btn ant-btn-primary create-optimization-button basic-button-wrapper css-geipcv"
               type="button"
             >
               <span>
@@ -3772,7 +3772,7 @@ exports[`sqle/SqlOptimization/Create upload sql file 1`] = `
             class="ant-space-item"
           >
             <div
-              class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+              class="ant-space ant-space-horizontal ant-space-align-center"
               hidden=""
             >
               <div
@@ -3780,7 +3780,7 @@ exports[`sqle/SqlOptimization/Create upload sql file 1`] = `
                 style="margin-right: 8px;"
               >
                 <button
-                  class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default basic-button-wrapper css-geipcv"
+                  class="ant-btn ant-btn-default basic-button-wrapper css-geipcv"
                   type="button"
                 >
                   <span>
@@ -3792,7 +3792,7 @@ exports[`sqle/SqlOptimization/Create upload sql file 1`] = `
                 class="ant-space-item"
               >
                 <div
-                  class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
+                  class="ant-space ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
                 >
                   <div
                     class="ant-space-item"
@@ -3819,15 +3819,15 @@ exports[`sqle/SqlOptimization/Create upload sql file 1`] = `
   </div>
   <div>
     <div
-      class="ant-select-dropdown ant-select-dropdown-hidden custom-select-popup-wrapper css-dev-only-do-not-override-v9sov3 ant-select-dropdown-placement-bottomLeft"
+      class="ant-select-dropdown ant-select-dropdown-hidden custom-select-popup-wrapper ant-select-dropdown-placement-bottomLeft"
       style="--arrow-x: 0px; --arrow-y: 0px; left: 0px; top: 0px; box-sizing: border-box; padding: 0px; min-width: 0; pointer-events: none;"
     >
       <div>
         <span
-          class="ant-input-affix-wrapper basic-input-wrapper custom-select-popup-search-input css-d0jdfn ant-input-affix-wrapper-borderless ant-input-affix-wrapper-status-success css-dev-only-do-not-override-6svbnr"
+          class="ant-input-affix-wrapper basic-input-wrapper custom-select-popup-search-input css-d0jdfn ant-input-affix-wrapper-borderless ant-input-affix-wrapper-status-success"
         >
           <input
-            class="ant-input ant-input-borderless css-dev-only-do-not-override-6svbnr"
+            class="ant-input ant-input-borderless"
             placeholder="搜索"
             type="text"
             value=""
@@ -4019,15 +4019,15 @@ exports[`sqle/SqlOptimization/Create upload sql file 1`] = `
   </div>
   <div>
     <div
-      class="ant-select-dropdown ant-select-dropdown-hidden custom-select-popup-wrapper css-dev-only-do-not-override-v9sov3 ant-select-dropdown-placement-bottomLeft"
+      class="ant-select-dropdown ant-select-dropdown-hidden custom-select-popup-wrapper ant-select-dropdown-placement-bottomLeft"
       style="--arrow-x: 0px; --arrow-y: 0px; left: 0px; top: 0px; box-sizing: border-box; padding: 0px; min-width: 0; pointer-events: none;"
     >
       <div>
         <span
-          class="ant-input-affix-wrapper ant-input-affix-wrapper-focused basic-input-wrapper custom-select-popup-search-input css-d0jdfn ant-input-affix-wrapper-borderless ant-input-affix-wrapper-status-success css-dev-only-do-not-override-6svbnr"
+          class="ant-input-affix-wrapper ant-input-affix-wrapper-focused basic-input-wrapper custom-select-popup-search-input css-d0jdfn ant-input-affix-wrapper-borderless ant-input-affix-wrapper-status-success"
         >
           <input
-            class="ant-input ant-input-borderless css-dev-only-do-not-override-6svbnr"
+            class="ant-input ant-input-borderless"
             placeholder="搜索"
             type="text"
             value=""
@@ -4191,7 +4191,7 @@ exports[`sqle/SqlOptimization/Create upload xml file 1`] = `
           href="/sqle/project/700300/sql-optimization"
         >
           <button
-            class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default basic-button-wrapper css-geipcv"
+            class="ant-btn ant-btn-default basic-button-wrapper css-geipcv"
             type="button"
           >
             <span
@@ -4219,7 +4219,7 @@ exports[`sqle/SqlOptimization/Create upload xml file 1`] = `
         class="extra"
       >
         <button
-          class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default basic-button-wrapper css-geipcv"
+          class="ant-btn ant-btn-default basic-button-wrapper css-geipcv"
           type="button"
         >
           <span>
@@ -4229,7 +4229,7 @@ exports[`sqle/SqlOptimization/Create upload xml file 1`] = `
       </div>
     </div>
     <form
-      class="ant-form ant-form-vertical css-dev-only-do-not-override-txh9fw hasTopHeader clearPaddingBottom css-19jfn7e"
+      class="ant-form ant-form-vertical hasTopHeader clearPaddingBottom css-19jfn7e"
     >
       <section
         class="css-1114g56"
@@ -4238,7 +4238,7 @@ exports[`sqle/SqlOptimization/Create upload xml file 1`] = `
           class="css-bspaai"
         >
           <h3
-            class="ant-typography css-p50odb css-dev-only-do-not-override-txh9fw"
+            class="ant-typography css-p50odb"
           >
             <span
               class="anticon title-icon"
@@ -4265,13 +4265,13 @@ exports[`sqle/SqlOptimization/Create upload xml file 1`] = `
             </span>
           </h3>
           <div
-            class="ant-form-item css-15d6abf css-dev-only-do-not-override-txh9fw ant-form-item-has-success"
+            class="ant-form-item css-15d6abf ant-form-item-has-success"
           >
             <div
-              class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+              class="ant-row ant-form-item-row"
             >
               <div
-                class="ant-col ant-form-item-label ant-form-item-label-left css-dev-only-do-not-override-txh9fw"
+                class="ant-col ant-form-item-label ant-form-item-label-left"
               >
                 <label
                   class="ant-form-item-required ant-form-item-no-colon"
@@ -4280,7 +4280,7 @@ exports[`sqle/SqlOptimization/Create upload xml file 1`] = `
                 />
               </div>
               <div
-                class="ant-col ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                class="ant-col ant-form-item-control"
               >
                 <div
                   class="ant-form-item-control-input"
@@ -4290,7 +4290,7 @@ exports[`sqle/SqlOptimization/Create upload xml file 1`] = `
                   >
                     <input
                       aria-required="true"
-                      class="ant-input ant-input-status-success css-dev-only-do-not-override-ywkr0o basic-input-wrapper workflow-name-input-wrapper css-opeiev"
+                      class="ant-input ant-input-status-success basic-input-wrapper workflow-name-input-wrapper css-opeiev"
                       id="optimizationName"
                       placeholder="请输入智能调优名称"
                       type="text"
@@ -4305,26 +4305,26 @@ exports[`sqle/SqlOptimization/Create upload xml file 1`] = `
       </section>
     </form>
     <form
-      class="ant-form ant-form-horizontal css-dev-only-do-not-override-txh9fw css-hpr9p4"
+      class="ant-form ant-form-horizontal css-hpr9p4"
     >
       <section
         class="css-bspaai"
       >
         <h1
-          class="ant-typography css-1eepp70 css-dev-only-do-not-override-txh9fw"
+          class="ant-typography css-1eepp70"
         >
           输入SQL
         </h1>
         <div>
           <div
-            class="ant-form-item has-required-style css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+            class="ant-form-item has-required-style css-1jlm9cy"
             style="margin-bottom: 16px;"
           >
             <div
-              class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+              class="ant-row ant-form-item-row"
             >
               <div
-                class="ant-col ant-form-item-label ant-form-item-label-left css-dev-only-do-not-override-txh9fw"
+                class="ant-col ant-form-item-label ant-form-item-label-left"
               >
                 <label
                   class="ant-form-item-required ant-form-item-no-colon"
@@ -4334,7 +4334,7 @@ exports[`sqle/SqlOptimization/Create upload xml file 1`] = `
                 </label>
               </div>
               <div
-                class="ant-col ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                class="ant-col ant-form-item-control"
               >
                 <div
                   class="ant-form-item-control-input"
@@ -4347,20 +4347,20 @@ exports[`sqle/SqlOptimization/Create upload xml file 1`] = `
             </div>
           </div>
           <div
-            class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-start"
+            class="ant-space ant-space-horizontal ant-space-align-start"
           >
             <div
               class="ant-space-item"
               style="margin-right: 12px;"
             >
               <div
-                class="ant-form-item css-15d6abf css-dev-only-do-not-override-txh9fw ant-form-item-has-success"
+                class="ant-form-item css-15d6abf ant-form-item-has-success"
               >
                 <div
-                  class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                  class="ant-row ant-form-item-row"
                 >
                   <div
-                    class="ant-col ant-form-item-label ant-form-item-label-left css-dev-only-do-not-override-txh9fw"
+                    class="ant-col ant-form-item-label ant-form-item-label-left"
                   >
                     <label
                       class="ant-form-item-required ant-form-item-no-colon"
@@ -4369,7 +4369,7 @@ exports[`sqle/SqlOptimization/Create upload xml file 1`] = `
                     />
                   </div>
                   <div
-                    class="ant-col ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                    class="ant-col ant-form-item-control"
                   >
                     <div
                       class="ant-form-item-control-input"
@@ -4379,7 +4379,7 @@ exports[`sqle/SqlOptimization/Create upload xml file 1`] = `
                       >
                         <div
                           aria-required="true"
-                          class="ant-select ant-select-in-form-item ant-select-status-success basic-select-wrapper custom-select-namespace data-source-row-select css-pti5z8 css-dev-only-do-not-override-v9sov3 ant-select-single ant-select-show-arrow"
+                          class="ant-select ant-select-in-form-item ant-select-status-success basic-select-wrapper custom-select-namespace data-source-row-select css-pti5z8 ant-select-single ant-select-show-arrow"
                         >
                           <div
                             class="ant-select-selector"
@@ -4478,13 +4478,13 @@ exports[`sqle/SqlOptimization/Create upload xml file 1`] = `
               style="margin-right: 12px;"
             >
               <div
-                class="ant-form-item css-15d6abf css-dev-only-do-not-override-txh9fw ant-form-item-has-success"
+                class="ant-form-item css-15d6abf ant-form-item-has-success"
               >
                 <div
-                  class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                  class="ant-row ant-form-item-row"
                 >
                   <div
-                    class="ant-col ant-form-item-label ant-form-item-label-left css-dev-only-do-not-override-txh9fw"
+                    class="ant-col ant-form-item-label ant-form-item-label-left"
                   >
                     <label
                       class="ant-form-item-required ant-form-item-no-colon"
@@ -4493,7 +4493,7 @@ exports[`sqle/SqlOptimization/Create upload xml file 1`] = `
                     />
                   </div>
                   <div
-                    class="ant-col ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                    class="ant-col ant-form-item-control"
                   >
                     <div
                       class="ant-form-item-control-input"
@@ -4503,7 +4503,7 @@ exports[`sqle/SqlOptimization/Create upload xml file 1`] = `
                       >
                         <div
                           aria-required="true"
-                          class="ant-select ant-select-in-form-item ant-select-status-success basic-select-wrapper custom-select-namespace data-source-row-select css-pti5z8 css-dev-only-do-not-override-v9sov3 ant-select-focused ant-select-single ant-select-allow-clear ant-select-show-arrow"
+                          class="ant-select ant-select-in-form-item ant-select-status-success basic-select-wrapper custom-select-namespace data-source-row-select css-pti5z8 ant-select-focused ant-select-single ant-select-allow-clear ant-select-show-arrow"
                         >
                           <span
                             aria-live="polite"
@@ -4625,13 +4625,13 @@ exports[`sqle/SqlOptimization/Create upload xml file 1`] = `
               class="ant-space-item"
             >
               <div
-                class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
+                class="ant-space ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
               >
                 <div
                   class="ant-space-item"
                 >
                   <button
-                    class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default ant-btn-icon-only basic-button-wrapper css-geipcv"
+                    class="ant-btn ant-btn-default ant-btn-icon-only basic-button-wrapper css-geipcv"
                     style="width: 36px; height: 36px;"
                     type="button"
                   >
@@ -4657,7 +4657,7 @@ exports[`sqle/SqlOptimization/Create upload xml file 1`] = `
             </div>
           </div>
           <div
-            class="ant-alert ant-alert-warning css-dev-only-do-not-override-txh9fw"
+            class="ant-alert ant-alert-warning"
             data-show="true"
             role="alert"
             style="margin-bottom: 16px;"
@@ -4693,14 +4693,14 @@ exports[`sqle/SqlOptimization/Create upload xml file 1`] = `
           </div>
         </div>
         <div
-          class="ant-form-item has-required-style css-1jlm9cy css-dev-only-do-not-override-txh9fw ant-form-item-has-success"
+          class="ant-form-item has-required-style css-1jlm9cy ant-form-item-has-success"
           style="margin-bottom: 16px;"
         >
           <div
-            class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+            class="ant-row ant-form-item-row"
           >
             <div
-              class="ant-col ant-col-24 ant-form-item-label ant-form-item-label-left css-dev-only-do-not-override-txh9fw"
+              class="ant-col ant-col-24 ant-form-item-label ant-form-item-label-left"
             >
               <label
                 class="ant-form-item-required ant-form-item-no-colon"
@@ -4736,7 +4736,7 @@ exports[`sqle/SqlOptimization/Create upload xml file 1`] = `
               </label>
             </div>
             <div
-              class="ant-col ant-col-24 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+              class="ant-col ant-col-24 ant-form-item-control"
             >
               <div
                 class="ant-form-item-control-input"
@@ -4746,12 +4746,12 @@ exports[`sqle/SqlOptimization/Create upload xml file 1`] = `
                 >
                   <div
                     aria-required="true"
-                    class="ant-row actiontech-mode-switcher css-dev-only-do-not-override-txh9fw"
+                    class="ant-row actiontech-mode-switcher"
                     id="uploadType"
                     style="margin: -5px -5px -5px -5px;"
                   >
                     <div
-                      class="ant-col ant-col-8 css-dev-only-do-not-override-txh9fw"
+                      class="ant-col ant-col-8"
                       style="padding: 5px 5px 5px 5px;"
                     >
                       <div
@@ -4808,7 +4808,7 @@ exports[`sqle/SqlOptimization/Create upload xml file 1`] = `
                       </div>
                     </div>
                     <div
-                      class="ant-col ant-col-8 css-dev-only-do-not-override-txh9fw"
+                      class="ant-col ant-col-8"
                       style="padding: 5px 5px 5px 5px;"
                     >
                       <div
@@ -4865,7 +4865,7 @@ exports[`sqle/SqlOptimization/Create upload xml file 1`] = `
                       </div>
                     </div>
                     <div
-                      class="ant-col ant-col-8 css-dev-only-do-not-override-txh9fw"
+                      class="ant-col ant-col-8"
                       style="padding: 5px 5px 5px 5px;"
                     >
                       <div
@@ -4921,7 +4921,7 @@ exports[`sqle/SqlOptimization/Create upload xml file 1`] = `
                       </div>
                     </div>
                     <div
-                      class="ant-col ant-col-8 css-dev-only-do-not-override-txh9fw"
+                      class="ant-col ant-col-8"
                       style="padding: 5px 5px 5px 5px;"
                     >
                       <div
@@ -4978,7 +4978,7 @@ exports[`sqle/SqlOptimization/Create upload xml file 1`] = `
                       </div>
                     </div>
                     <div
-                      class="ant-col ant-col-8 css-dev-only-do-not-override-txh9fw"
+                      class="ant-col ant-col-8"
                       style="padding: 5px 5px 5px 5px;"
                     >
                       <div
@@ -5049,13 +5049,13 @@ exports[`sqle/SqlOptimization/Create upload xml file 1`] = `
           </div>
         </div>
         <div
-          class="ant-form-item css-15d6abf css-dev-only-do-not-override-txh9fw"
+          class="ant-form-item css-15d6abf"
         >
           <div
-            class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+            class="ant-row ant-form-item-row"
           >
             <div
-              class="ant-col ant-form-item-label ant-form-item-label-left css-dev-only-do-not-override-txh9fw"
+              class="ant-col ant-form-item-label ant-form-item-label-left"
             >
               <label
                 class="ant-form-item-required ant-form-item-no-colon"
@@ -5064,7 +5064,7 @@ exports[`sqle/SqlOptimization/Create upload xml file 1`] = `
               />
             </div>
             <div
-              class="ant-col ant-form-item-control css-dev-only-do-not-override-txh9fw"
+              class="ant-col ant-form-item-control"
             >
               <div
                 class="ant-form-item-control-input"
@@ -5073,10 +5073,10 @@ exports[`sqle/SqlOptimization/Create upload xml file 1`] = `
                   class="ant-form-item-control-input-content"
                 >
                   <span
-                    class="ant-upload-wrapper css-1c6xfw5 css-dev-only-do-not-override-txh9fw"
+                    class="ant-upload-wrapper css-1c6xfw5"
                   >
                     <div
-                      class="css-dev-only-do-not-override-txh9fw ant-upload ant-upload-drag"
+                      class="ant-upload ant-upload-drag"
                     >
                       <span
                         class="ant-upload ant-upload-btn"
@@ -5123,14 +5123,14 @@ exports[`sqle/SqlOptimization/Create upload xml file 1`] = `
           </div>
         </div>
         <div
-          class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+          class="ant-space ant-space-horizontal ant-space-align-center"
         >
           <div
             class="ant-space-item"
             style="margin-right: 12px;"
           >
             <button
-              class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary create-optimization-button basic-button-wrapper css-geipcv"
+              class="ant-btn ant-btn-primary create-optimization-button basic-button-wrapper css-geipcv"
               type="button"
             >
               <span>
@@ -5142,7 +5142,7 @@ exports[`sqle/SqlOptimization/Create upload xml file 1`] = `
             class="ant-space-item"
           >
             <div
-              class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+              class="ant-space ant-space-horizontal ant-space-align-center"
               hidden=""
             >
               <div
@@ -5150,7 +5150,7 @@ exports[`sqle/SqlOptimization/Create upload xml file 1`] = `
                 style="margin-right: 8px;"
               >
                 <button
-                  class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default basic-button-wrapper css-geipcv"
+                  class="ant-btn ant-btn-default basic-button-wrapper css-geipcv"
                   type="button"
                 >
                   <span>
@@ -5162,7 +5162,7 @@ exports[`sqle/SqlOptimization/Create upload xml file 1`] = `
                 class="ant-space-item"
               >
                 <div
-                  class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
+                  class="ant-space ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
                 >
                   <div
                     class="ant-space-item"
@@ -5189,15 +5189,15 @@ exports[`sqle/SqlOptimization/Create upload xml file 1`] = `
   </div>
   <div>
     <div
-      class="ant-select-dropdown ant-select-dropdown-hidden custom-select-popup-wrapper css-dev-only-do-not-override-v9sov3 ant-select-dropdown-placement-bottomLeft"
+      class="ant-select-dropdown ant-select-dropdown-hidden custom-select-popup-wrapper ant-select-dropdown-placement-bottomLeft"
       style="--arrow-x: 0px; --arrow-y: 0px; left: 0px; top: 0px; box-sizing: border-box; padding: 0px; min-width: 0; pointer-events: none;"
     >
       <div>
         <span
-          class="ant-input-affix-wrapper basic-input-wrapper custom-select-popup-search-input css-d0jdfn ant-input-affix-wrapper-borderless ant-input-affix-wrapper-status-success css-dev-only-do-not-override-6svbnr"
+          class="ant-input-affix-wrapper basic-input-wrapper custom-select-popup-search-input css-d0jdfn ant-input-affix-wrapper-borderless ant-input-affix-wrapper-status-success"
         >
           <input
-            class="ant-input ant-input-borderless css-dev-only-do-not-override-6svbnr"
+            class="ant-input ant-input-borderless"
             placeholder="搜索"
             type="text"
             value=""
@@ -5389,15 +5389,15 @@ exports[`sqle/SqlOptimization/Create upload xml file 1`] = `
   </div>
   <div>
     <div
-      class="ant-select-dropdown ant-select-dropdown-hidden custom-select-popup-wrapper css-dev-only-do-not-override-v9sov3 ant-select-dropdown-placement-bottomLeft"
+      class="ant-select-dropdown ant-select-dropdown-hidden custom-select-popup-wrapper ant-select-dropdown-placement-bottomLeft"
       style="--arrow-x: 0px; --arrow-y: 0px; left: 0px; top: 0px; box-sizing: border-box; padding: 0px; min-width: 0; pointer-events: none;"
     >
       <div>
         <span
-          class="ant-input-affix-wrapper ant-input-affix-wrapper-focused basic-input-wrapper custom-select-popup-search-input css-d0jdfn ant-input-affix-wrapper-borderless ant-input-affix-wrapper-status-success css-dev-only-do-not-override-6svbnr"
+          class="ant-input-affix-wrapper ant-input-affix-wrapper-focused basic-input-wrapper custom-select-popup-search-input css-d0jdfn ant-input-affix-wrapper-borderless ant-input-affix-wrapper-status-success"
         >
           <input
-            class="ant-input ant-input-borderless css-dev-only-do-not-override-6svbnr"
+            class="ant-input ant-input-borderless"
             placeholder="搜索"
             type="text"
             value=""
@@ -5561,7 +5561,7 @@ exports[`sqle/SqlOptimization/Create upload zip file 1`] = `
           href="/sqle/project/700300/sql-optimization"
         >
           <button
-            class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default basic-button-wrapper css-geipcv"
+            class="ant-btn ant-btn-default basic-button-wrapper css-geipcv"
             type="button"
           >
             <span
@@ -5589,7 +5589,7 @@ exports[`sqle/SqlOptimization/Create upload zip file 1`] = `
         class="extra"
       >
         <button
-          class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default basic-button-wrapper css-geipcv"
+          class="ant-btn ant-btn-default basic-button-wrapper css-geipcv"
           type="button"
         >
           <span>
@@ -5599,7 +5599,7 @@ exports[`sqle/SqlOptimization/Create upload zip file 1`] = `
       </div>
     </div>
     <form
-      class="ant-form ant-form-vertical css-dev-only-do-not-override-txh9fw hasTopHeader clearPaddingBottom css-19jfn7e"
+      class="ant-form ant-form-vertical hasTopHeader clearPaddingBottom css-19jfn7e"
     >
       <section
         class="css-1114g56"
@@ -5608,7 +5608,7 @@ exports[`sqle/SqlOptimization/Create upload zip file 1`] = `
           class="css-bspaai"
         >
           <h3
-            class="ant-typography css-p50odb css-dev-only-do-not-override-txh9fw"
+            class="ant-typography css-p50odb"
           >
             <span
               class="anticon title-icon"
@@ -5635,13 +5635,13 @@ exports[`sqle/SqlOptimization/Create upload zip file 1`] = `
             </span>
           </h3>
           <div
-            class="ant-form-item css-15d6abf css-dev-only-do-not-override-txh9fw ant-form-item-has-success"
+            class="ant-form-item css-15d6abf ant-form-item-has-success"
           >
             <div
-              class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+              class="ant-row ant-form-item-row"
             >
               <div
-                class="ant-col ant-form-item-label ant-form-item-label-left css-dev-only-do-not-override-txh9fw"
+                class="ant-col ant-form-item-label ant-form-item-label-left"
               >
                 <label
                   class="ant-form-item-required ant-form-item-no-colon"
@@ -5650,7 +5650,7 @@ exports[`sqle/SqlOptimization/Create upload zip file 1`] = `
                 />
               </div>
               <div
-                class="ant-col ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                class="ant-col ant-form-item-control"
               >
                 <div
                   class="ant-form-item-control-input"
@@ -5660,7 +5660,7 @@ exports[`sqle/SqlOptimization/Create upload zip file 1`] = `
                   >
                     <input
                       aria-required="true"
-                      class="ant-input ant-input-status-success css-dev-only-do-not-override-ywkr0o basic-input-wrapper workflow-name-input-wrapper css-opeiev"
+                      class="ant-input ant-input-status-success basic-input-wrapper workflow-name-input-wrapper css-opeiev"
                       id="optimizationName"
                       placeholder="请输入智能调优名称"
                       type="text"
@@ -5675,26 +5675,26 @@ exports[`sqle/SqlOptimization/Create upload zip file 1`] = `
       </section>
     </form>
     <form
-      class="ant-form ant-form-horizontal css-dev-only-do-not-override-txh9fw css-hpr9p4"
+      class="ant-form ant-form-horizontal css-hpr9p4"
     >
       <section
         class="css-bspaai"
       >
         <h1
-          class="ant-typography css-1eepp70 css-dev-only-do-not-override-txh9fw"
+          class="ant-typography css-1eepp70"
         >
           输入SQL
         </h1>
         <div>
           <div
-            class="ant-form-item has-required-style css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+            class="ant-form-item has-required-style css-1jlm9cy"
             style="margin-bottom: 16px;"
           >
             <div
-              class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+              class="ant-row ant-form-item-row"
             >
               <div
-                class="ant-col ant-form-item-label ant-form-item-label-left css-dev-only-do-not-override-txh9fw"
+                class="ant-col ant-form-item-label ant-form-item-label-left"
               >
                 <label
                   class="ant-form-item-required ant-form-item-no-colon"
@@ -5704,7 +5704,7 @@ exports[`sqle/SqlOptimization/Create upload zip file 1`] = `
                 </label>
               </div>
               <div
-                class="ant-col ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                class="ant-col ant-form-item-control"
               >
                 <div
                   class="ant-form-item-control-input"
@@ -5717,20 +5717,20 @@ exports[`sqle/SqlOptimization/Create upload zip file 1`] = `
             </div>
           </div>
           <div
-            class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-start"
+            class="ant-space ant-space-horizontal ant-space-align-start"
           >
             <div
               class="ant-space-item"
               style="margin-right: 12px;"
             >
               <div
-                class="ant-form-item css-15d6abf css-dev-only-do-not-override-txh9fw ant-form-item-has-success"
+                class="ant-form-item css-15d6abf ant-form-item-has-success"
               >
                 <div
-                  class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                  class="ant-row ant-form-item-row"
                 >
                   <div
-                    class="ant-col ant-form-item-label ant-form-item-label-left css-dev-only-do-not-override-txh9fw"
+                    class="ant-col ant-form-item-label ant-form-item-label-left"
                   >
                     <label
                       class="ant-form-item-required ant-form-item-no-colon"
@@ -5739,7 +5739,7 @@ exports[`sqle/SqlOptimization/Create upload zip file 1`] = `
                     />
                   </div>
                   <div
-                    class="ant-col ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                    class="ant-col ant-form-item-control"
                   >
                     <div
                       class="ant-form-item-control-input"
@@ -5749,7 +5749,7 @@ exports[`sqle/SqlOptimization/Create upload zip file 1`] = `
                       >
                         <div
                           aria-required="true"
-                          class="ant-select ant-select-in-form-item ant-select-status-success basic-select-wrapper custom-select-namespace data-source-row-select css-pti5z8 css-dev-only-do-not-override-v9sov3 ant-select-single ant-select-show-arrow"
+                          class="ant-select ant-select-in-form-item ant-select-status-success basic-select-wrapper custom-select-namespace data-source-row-select css-pti5z8 ant-select-single ant-select-show-arrow"
                         >
                           <div
                             class="ant-select-selector"
@@ -5848,13 +5848,13 @@ exports[`sqle/SqlOptimization/Create upload zip file 1`] = `
               style="margin-right: 12px;"
             >
               <div
-                class="ant-form-item css-15d6abf css-dev-only-do-not-override-txh9fw ant-form-item-has-success"
+                class="ant-form-item css-15d6abf ant-form-item-has-success"
               >
                 <div
-                  class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                  class="ant-row ant-form-item-row"
                 >
                   <div
-                    class="ant-col ant-form-item-label ant-form-item-label-left css-dev-only-do-not-override-txh9fw"
+                    class="ant-col ant-form-item-label ant-form-item-label-left"
                   >
                     <label
                       class="ant-form-item-required ant-form-item-no-colon"
@@ -5863,7 +5863,7 @@ exports[`sqle/SqlOptimization/Create upload zip file 1`] = `
                     />
                   </div>
                   <div
-                    class="ant-col ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                    class="ant-col ant-form-item-control"
                   >
                     <div
                       class="ant-form-item-control-input"
@@ -5873,7 +5873,7 @@ exports[`sqle/SqlOptimization/Create upload zip file 1`] = `
                       >
                         <div
                           aria-required="true"
-                          class="ant-select ant-select-in-form-item ant-select-status-success basic-select-wrapper custom-select-namespace data-source-row-select css-pti5z8 css-dev-only-do-not-override-v9sov3 ant-select-focused ant-select-single ant-select-allow-clear ant-select-show-arrow"
+                          class="ant-select ant-select-in-form-item ant-select-status-success basic-select-wrapper custom-select-namespace data-source-row-select css-pti5z8 ant-select-focused ant-select-single ant-select-allow-clear ant-select-show-arrow"
                         >
                           <span
                             aria-live="polite"
@@ -5995,13 +5995,13 @@ exports[`sqle/SqlOptimization/Create upload zip file 1`] = `
               class="ant-space-item"
             >
               <div
-                class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
+                class="ant-space ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
               >
                 <div
                   class="ant-space-item"
                 >
                   <button
-                    class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default ant-btn-icon-only basic-button-wrapper css-geipcv"
+                    class="ant-btn ant-btn-default ant-btn-icon-only basic-button-wrapper css-geipcv"
                     style="width: 36px; height: 36px;"
                     type="button"
                   >
@@ -6027,7 +6027,7 @@ exports[`sqle/SqlOptimization/Create upload zip file 1`] = `
             </div>
           </div>
           <div
-            class="ant-alert ant-alert-warning css-dev-only-do-not-override-txh9fw"
+            class="ant-alert ant-alert-warning"
             data-show="true"
             role="alert"
             style="margin-bottom: 16px;"
@@ -6063,14 +6063,14 @@ exports[`sqle/SqlOptimization/Create upload zip file 1`] = `
           </div>
         </div>
         <div
-          class="ant-form-item has-required-style css-1jlm9cy css-dev-only-do-not-override-txh9fw ant-form-item-has-success"
+          class="ant-form-item has-required-style css-1jlm9cy ant-form-item-has-success"
           style="margin-bottom: 16px;"
         >
           <div
-            class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+            class="ant-row ant-form-item-row"
           >
             <div
-              class="ant-col ant-col-24 ant-form-item-label ant-form-item-label-left css-dev-only-do-not-override-txh9fw"
+              class="ant-col ant-col-24 ant-form-item-label ant-form-item-label-left"
             >
               <label
                 class="ant-form-item-required ant-form-item-no-colon"
@@ -6106,7 +6106,7 @@ exports[`sqle/SqlOptimization/Create upload zip file 1`] = `
               </label>
             </div>
             <div
-              class="ant-col ant-col-24 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+              class="ant-col ant-col-24 ant-form-item-control"
             >
               <div
                 class="ant-form-item-control-input"
@@ -6116,12 +6116,12 @@ exports[`sqle/SqlOptimization/Create upload zip file 1`] = `
                 >
                   <div
                     aria-required="true"
-                    class="ant-row actiontech-mode-switcher css-dev-only-do-not-override-txh9fw"
+                    class="ant-row actiontech-mode-switcher"
                     id="uploadType"
                     style="margin: -5px -5px -5px -5px;"
                   >
                     <div
-                      class="ant-col ant-col-8 css-dev-only-do-not-override-txh9fw"
+                      class="ant-col ant-col-8"
                       style="padding: 5px 5px 5px 5px;"
                     >
                       <div
@@ -6178,7 +6178,7 @@ exports[`sqle/SqlOptimization/Create upload zip file 1`] = `
                       </div>
                     </div>
                     <div
-                      class="ant-col ant-col-8 css-dev-only-do-not-override-txh9fw"
+                      class="ant-col ant-col-8"
                       style="padding: 5px 5px 5px 5px;"
                     >
                       <div
@@ -6235,7 +6235,7 @@ exports[`sqle/SqlOptimization/Create upload zip file 1`] = `
                       </div>
                     </div>
                     <div
-                      class="ant-col ant-col-8 css-dev-only-do-not-override-txh9fw"
+                      class="ant-col ant-col-8"
                       style="padding: 5px 5px 5px 5px;"
                     >
                       <div
@@ -6292,7 +6292,7 @@ exports[`sqle/SqlOptimization/Create upload zip file 1`] = `
                       </div>
                     </div>
                     <div
-                      class="ant-col ant-col-8 css-dev-only-do-not-override-txh9fw"
+                      class="ant-col ant-col-8"
                       style="padding: 5px 5px 5px 5px;"
                     >
                       <div
@@ -6348,7 +6348,7 @@ exports[`sqle/SqlOptimization/Create upload zip file 1`] = `
                       </div>
                     </div>
                     <div
-                      class="ant-col ant-col-8 css-dev-only-do-not-override-txh9fw"
+                      class="ant-col ant-col-8"
                       style="padding: 5px 5px 5px 5px;"
                     >
                       <div
@@ -6419,13 +6419,13 @@ exports[`sqle/SqlOptimization/Create upload zip file 1`] = `
           </div>
         </div>
         <div
-          class="ant-form-item css-15d6abf css-dev-only-do-not-override-txh9fw"
+          class="ant-form-item css-15d6abf"
         >
           <div
-            class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+            class="ant-row ant-form-item-row"
           >
             <div
-              class="ant-col ant-form-item-label ant-form-item-label-left css-dev-only-do-not-override-txh9fw"
+              class="ant-col ant-form-item-label ant-form-item-label-left"
             >
               <label
                 class="ant-form-item-no-colon"
@@ -6433,7 +6433,7 @@ exports[`sqle/SqlOptimization/Create upload zip file 1`] = `
               />
             </div>
             <div
-              class="ant-col ant-form-item-control css-dev-only-do-not-override-txh9fw"
+              class="ant-col ant-form-item-control"
             >
               <div
                 class="ant-form-item-control-input"
@@ -6442,13 +6442,13 @@ exports[`sqle/SqlOptimization/Create upload zip file 1`] = `
                   class="ant-form-item-control-input-content"
                 >
                   <div
-                    class="ant-form-item css-15d6abf css-dev-only-do-not-override-txh9fw"
+                    class="ant-form-item css-15d6abf"
                   >
                     <div
-                      class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                      class="ant-row ant-form-item-row"
                     >
                       <div
-                        class="ant-col ant-form-item-label ant-form-item-label-left css-dev-only-do-not-override-txh9fw"
+                        class="ant-col ant-form-item-label ant-form-item-label-left"
                       >
                         <label
                           class="ant-form-item-required ant-form-item-no-colon"
@@ -6457,7 +6457,7 @@ exports[`sqle/SqlOptimization/Create upload zip file 1`] = `
                         />
                       </div>
                       <div
-                        class="ant-col ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                        class="ant-col ant-form-item-control"
                       >
                         <div
                           class="ant-form-item-control-input"
@@ -6466,10 +6466,10 @@ exports[`sqle/SqlOptimization/Create upload zip file 1`] = `
                             class="ant-form-item-control-input-content"
                           >
                             <span
-                              class="ant-upload-wrapper css-1c6xfw5 css-dev-only-do-not-override-txh9fw"
+                              class="ant-upload-wrapper css-1c6xfw5"
                             >
                               <div
-                                class="css-dev-only-do-not-override-txh9fw ant-upload ant-upload-drag"
+                                class="ant-upload ant-upload-drag"
                               >
                                 <span
                                   class="ant-upload ant-upload-btn"
@@ -6521,14 +6521,14 @@ exports[`sqle/SqlOptimization/Create upload zip file 1`] = `
           </div>
         </div>
         <div
-          class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+          class="ant-space ant-space-horizontal ant-space-align-center"
         >
           <div
             class="ant-space-item"
             style="margin-right: 12px;"
           >
             <button
-              class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary create-optimization-button basic-button-wrapper css-geipcv"
+              class="ant-btn ant-btn-primary create-optimization-button basic-button-wrapper css-geipcv"
               type="button"
             >
               <span>
@@ -6540,7 +6540,7 @@ exports[`sqle/SqlOptimization/Create upload zip file 1`] = `
             class="ant-space-item"
           >
             <div
-              class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+              class="ant-space ant-space-horizontal ant-space-align-center"
               hidden=""
             >
               <div
@@ -6548,7 +6548,7 @@ exports[`sqle/SqlOptimization/Create upload zip file 1`] = `
                 style="margin-right: 8px;"
               >
                 <button
-                  class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default basic-button-wrapper css-geipcv"
+                  class="ant-btn ant-btn-default basic-button-wrapper css-geipcv"
                   type="button"
                 >
                   <span>
@@ -6560,7 +6560,7 @@ exports[`sqle/SqlOptimization/Create upload zip file 1`] = `
                 class="ant-space-item"
               >
                 <div
-                  class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
+                  class="ant-space ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
                 >
                   <div
                     class="ant-space-item"
@@ -6587,15 +6587,15 @@ exports[`sqle/SqlOptimization/Create upload zip file 1`] = `
   </div>
   <div>
     <div
-      class="ant-select-dropdown ant-select-dropdown-hidden custom-select-popup-wrapper css-dev-only-do-not-override-v9sov3 ant-select-dropdown-placement-bottomLeft"
+      class="ant-select-dropdown ant-select-dropdown-hidden custom-select-popup-wrapper ant-select-dropdown-placement-bottomLeft"
       style="--arrow-x: 0px; --arrow-y: 0px; left: 0px; top: 0px; box-sizing: border-box; padding: 0px; min-width: 0; pointer-events: none;"
     >
       <div>
         <span
-          class="ant-input-affix-wrapper basic-input-wrapper custom-select-popup-search-input css-d0jdfn ant-input-affix-wrapper-borderless ant-input-affix-wrapper-status-success css-dev-only-do-not-override-6svbnr"
+          class="ant-input-affix-wrapper basic-input-wrapper custom-select-popup-search-input css-d0jdfn ant-input-affix-wrapper-borderless ant-input-affix-wrapper-status-success"
         >
           <input
-            class="ant-input ant-input-borderless css-dev-only-do-not-override-6svbnr"
+            class="ant-input ant-input-borderless"
             placeholder="搜索"
             type="text"
             value=""
@@ -6787,15 +6787,15 @@ exports[`sqle/SqlOptimization/Create upload zip file 1`] = `
   </div>
   <div>
     <div
-      class="ant-select-dropdown ant-select-dropdown-hidden custom-select-popup-wrapper css-dev-only-do-not-override-v9sov3 ant-select-dropdown-placement-bottomLeft"
+      class="ant-select-dropdown ant-select-dropdown-hidden custom-select-popup-wrapper ant-select-dropdown-placement-bottomLeft"
       style="--arrow-x: 0px; --arrow-y: 0px; left: 0px; top: 0px; box-sizing: border-box; padding: 0px; min-width: 0; pointer-events: none;"
     >
       <div>
         <span
-          class="ant-input-affix-wrapper ant-input-affix-wrapper-focused basic-input-wrapper custom-select-popup-search-input css-d0jdfn ant-input-affix-wrapper-borderless ant-input-affix-wrapper-status-success css-dev-only-do-not-override-6svbnr"
+          class="ant-input-affix-wrapper ant-input-affix-wrapper-focused basic-input-wrapper custom-select-popup-search-input css-d0jdfn ant-input-affix-wrapper-borderless ant-input-affix-wrapper-status-success"
         >
           <input
-            class="ant-input ant-input-borderless css-dev-only-do-not-override-6svbnr"
+            class="ant-input ant-input-borderless"
             placeholder="搜索"
             type="text"
             value=""

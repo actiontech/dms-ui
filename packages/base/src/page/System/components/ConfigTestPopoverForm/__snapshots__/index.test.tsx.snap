@@ -4,7 +4,7 @@ exports[`base/System/components/ConfigTestPopoverForm render snap 1`] = `
 <body>
   <div>
     <div
-      class="ant-space css-dev-only-do-not-override-txh9fw ant-space-vertical full-width-element"
+      class="ant-space ant-space-vertical full-width-element"
     >
       <div
         class="ant-space-item"
@@ -18,21 +18,21 @@ exports[`base/System/components/ConfigTestPopoverForm render snap 1`] = `
         class="ant-space-item"
       >
         <div
-          class="ant-row css-dev-only-do-not-override-txh9fw"
+          class="ant-row"
         >
           <div
-            class="ant-col ant-col-24 css-dev-only-do-not-override-txh9fw"
+            class="ant-col ant-col-24"
             style="text-align: right;"
           >
             <div
-              class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+              class="ant-space ant-space-horizontal ant-space-align-center"
             >
               <div
                 class="ant-space-item"
                 style="margin-right: 12px;"
               >
                 <button
-                  class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default ant-btn-sm basic-button-wrapper css-geipcv"
+                  class="ant-btn ant-btn-default ant-btn-sm basic-button-wrapper css-geipcv"
                   type="button"
                 >
                   <span>
@@ -44,7 +44,7 @@ exports[`base/System/components/ConfigTestPopoverForm render snap 1`] = `
                 class="ant-space-item"
               >
                 <button
-                  class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary ant-btn-sm basic-button-wrapper css-geipcv"
+                  class="ant-btn ant-btn-primary ant-btn-sm basic-button-wrapper css-geipcv"
                   type="button"
                 >
                   <span>

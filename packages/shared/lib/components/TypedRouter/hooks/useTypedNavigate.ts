@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 import { To, useNavigate as useRouterNavigate } from 'react-router-dom';
 import {
   getFormatPathValues,
@@ -25,19 +26,36 @@ const useTypedNavigate = () => {
           const values = getFormatPathValues(options);
           if ('params' in options && 'queries' in options) {
             const { params, queries, ...otherOptions } = options;
-            otherOptions && Object.keys(otherOptions).length > 0
-              ? innerNavigate(parse2ReactRouterPath(to, values), otherOptions)
-              : innerNavigate(parse2ReactRouterPath(to, values));
+
+            if (otherOptions && Object.keys(otherOptions).length > 0) {
+              innerNavigate(parse2ReactRouterPath(to, values), otherOptions);
+            } else {
+              innerNavigate(parse2ReactRouterPath(to, values));
+            }
+
+            // otherOptions && Object.keys(otherOptions).length > 0
+            //   ? innerNavigate(parse2ReactRouterPath(to, values), otherOptions)
+            //   : innerNavigate(parse2ReactRouterPath(to, values));
           } else if ('params' in options) {
             const { params, ...otherOptions } = options;
-            otherOptions && Object.keys(otherOptions).length > 0
-              ? innerNavigate(parse2ReactRouterPath(to, values), otherOptions)
-              : innerNavigate(parse2ReactRouterPath(to, values));
+            if (otherOptions && Object.keys(otherOptions).length > 0) {
+              innerNavigate(parse2ReactRouterPath(to, values), otherOptions);
+            } else {
+              innerNavigate(parse2ReactRouterPath(to, values));
+            }
+            // otherOptions && Object.keys(otherOptions).length > 0
+            //   ? innerNavigate(parse2ReactRouterPath(to, values), otherOptions)
+            //   : innerNavigate(parse2ReactRouterPath(to, values));
           } else if ('queries' in options) {
             const { queries, ...otherOptions } = options;
-            otherOptions && Object.keys(otherOptions).length > 0
-              ? innerNavigate(parse2ReactRouterPath(to, values), otherOptions)
-              : innerNavigate(parse2ReactRouterPath(to, values));
+            if (otherOptions && Object.keys(otherOptions).length > 0) {
+              innerNavigate(parse2ReactRouterPath(to, values), otherOptions);
+            } else {
+              innerNavigate(parse2ReactRouterPath(to, values));
+            }
+            // otherOptions && Object.keys(otherOptions).length > 0
+            //   ? innerNavigate(parse2ReactRouterPath(to, values), otherOptions)
+            //   : innerNavigate(parse2ReactRouterPath(to, values));
           } else {
             innerNavigate(parse2ReactRouterPath(to, values), options);
           }
@@ -45,7 +63,12 @@ const useTypedNavigate = () => {
           innerNavigate(parse2ReactRouterPath(to));
         }
       } else {
-        options ? innerNavigate(to, options) : innerNavigate(to);
+        if (options) {
+          innerNavigate(to, options);
+        } else {
+          innerNavigate(to);
+        }
+        // options ? innerNavigate(to, options) : innerNavigate(to);
       }
     },
     [innerNavigate]

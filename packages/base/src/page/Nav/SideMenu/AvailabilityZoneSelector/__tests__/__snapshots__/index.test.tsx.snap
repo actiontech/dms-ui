@@ -27,7 +27,7 @@ exports[`AvailabilityZoneSelector opens dropdown when clicked and displays zones
   </div>
   <div>
     <div
-      class="ant-dropdown css-dev-only-do-not-override-txh9fw ant-dropdown-placement-bottomRight"
+      class="ant-dropdown ant-dropdown-placement-bottomRight"
       style="--arrow-x: 0px; --arrow-y: 0px; left: -1000vw; top: -1000vh; box-sizing: border-box;"
     >
       <div
@@ -37,7 +37,7 @@ exports[`AvailabilityZoneSelector opens dropdown when clicked and displays zones
           class="search-container"
         >
           <input
-            class="ant-input ant-input-borderless css-dev-only-do-not-override-txh9fw"
+            class="ant-input ant-input-borderless"
             placeholder="搜索"
             type="text"
             value=""

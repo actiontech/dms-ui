@@ -24,7 +24,7 @@ const useTableSettings = <
     const data = LocalStorageWrapper.getOrDefault(tableName, '{}');
     try {
       return JSON.parse(data)[username];
-    } catch (error) {
+    } catch {
       return {};
     }
   });

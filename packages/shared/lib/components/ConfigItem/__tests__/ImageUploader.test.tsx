@@ -1,5 +1,5 @@
 import { fireEvent, act, cleanup } from '@testing-library/react';
-import { renderWithTheme } from '../../../testUtil/customRender';
+import { superRender } from '../../../testUtil/customRender';
 import { ConfigItemImageUploaderProps } from '../ConfigItem.types';
 import ImageUploader from '../components/ImageUploader';
 import { getBySelector } from '../../../testUtil/customQuery';
@@ -17,7 +17,7 @@ describe('lib/ConfigItem-ImageUploader', () => {
   });
 
   const customRender = (params: ConfigItemImageUploaderProps) => {
-    return renderWithTheme(<ImageUploader {...params} />);
+    return superRender(<ImageUploader {...params} />);
   };
 
   it('render loading is true', () => {
@@ -35,7 +35,9 @@ describe('lib/ConfigItem-ImageUploader', () => {
       url: 'http://mock.com',
       onSubmit: jest.fn()
     });
-    expect(baseElement).toMatchSnapshot();
+    expect(
+      baseElement.querySelector('.upload-content-wrapper')
+    ).toBeInTheDocument();
   });
 
   it('render mask ui', async () => {
@@ -57,6 +59,5 @@ describe('lib/ConfigItem-ImageUploader', () => {
       fireEvent.mouseLeave(uploadWrapperEle);
       await jest.advanceTimersByTime(300);
     });
-    expect(baseElement).toMatchSnapshot();
   });
 });

@@ -4,10 +4,10 @@ exports[`page/RuleUnderstand render content data 1`] = `
 <body>
   <div>
     <div
-      class=" css-1yb442y"
+      class="css-1yb442y"
     >
       <div
-        class="ant-spin-nested-loading css-dev-only-do-not-override-txh9fw"
+        class="ant-spin-nested-loading"
       >
         <div
           class="ant-spin-container"
@@ -42,7 +42,7 @@ exports[`page/RuleUnderstand render content data 1`] = `
 
             </div>
             <h2
-              class="ant-typography graph-title css-dev-only-do-not-override-txh9fw"
+              class="ant-typography graph-title"
               id="header-0"
             >
               关联的语法节点
@@ -51,13 +51,13 @@ exports[`page/RuleUnderstand render content data 1`] = `
               class="css-1c94q4z"
             >
               <div
-                class="ant-spin-nested-loading css-dev-only-do-not-override-txh9fw"
+                class="ant-spin-nested-loading"
               >
                 <div>
                   <div
                     aria-busy="true"
                     aria-live="polite"
-                    class="ant-spin ant-spin-spinning ant-spin-show-text css-dev-only-do-not-override-txh9fw"
+                    class="ant-spin ant-spin-spinning ant-spin-show-text"
                   >
                     <span
                       class="ant-spin-dot ant-spin-dot-spin"
@@ -93,7 +93,7 @@ exports[`page/RuleUnderstand render content data 1`] = `
               class=""
             >
               <div
-                class="css-dev-only-do-not-override-txh9fw ant-anchor-wrapper"
+                class="ant-anchor-wrapper"
                 style="max-height: 100vh;"
               >
                 <div
@@ -129,16 +129,16 @@ exports[`page/RuleUnderstand render empty data 1`] = `
 <body>
   <div>
     <div
-      class=" css-1yb442y"
+      class="css-1yb442y"
     >
       <div
-        class="ant-spin-nested-loading css-dev-only-do-not-override-txh9fw"
+        class="ant-spin-nested-loading"
       >
         <div>
           <div
             aria-busy="true"
             aria-live="polite"
-            class="ant-spin ant-spin-spinning css-dev-only-do-not-override-txh9fw"
+            class="ant-spin ant-spin-spinning"
           >
             <span
               class="ant-spin-dot ant-spin-dot-spin"
@@ -162,7 +162,7 @@ exports[`page/RuleUnderstand render empty data 1`] = `
           class="ant-spin-container ant-spin-blur"
         >
           <div
-            class="css-dev-only-do-not-override-txh9fw ant-empty ant-empty-normal"
+            class="ant-empty ant-empty-normal"
           >
             <div
               class="ant-empty-image"
@@ -204,7 +204,7 @@ exports[`page/RuleUnderstand render empty data 1`] = `
               class="ant-empty-description"
             >
               <span
-                class="ant-typography ant-typography-secondary css-dev-only-do-not-override-txh9fw"
+                class="ant-typography ant-typography-secondary"
               >
                 暂无数据, 请编辑
               </span>

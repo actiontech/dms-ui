@@ -1,10 +1,10 @@
-import { renderWithTheme } from '../../../../testUtil/customRender';
+import { superRender } from '../../../../testUtil/customRender';
 import FormItemBigTitle from '../FormItemBigTitle';
 import { FormItemBigTitleProps } from '../FormItemTitle.types';
 
 describe('lib/FormItemBigTitle', () => {
   const customRender = (params: FormItemBigTitleProps) => {
-    return renderWithTheme(<FormItemBigTitle {...params} />);
+    return superRender(<FormItemBigTitle {...params} />);
   };
 
   it('should render FormItemBigTitle', () => {

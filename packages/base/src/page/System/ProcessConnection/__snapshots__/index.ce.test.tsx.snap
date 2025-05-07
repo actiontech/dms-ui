@@ -7,10 +7,10 @@ exports[`base/System/ProcessConnection ce should match snap shots 1`] = `
       class="system-form-wrapper"
     >
       <div
-        class="ant-row ant-row-space-between ant-row-middle config-title-wrapper has-border css-dev-only-do-not-override-txh9fw"
+        class="ant-row ant-row-space-between ant-row-middle config-title-wrapper has-border"
       >
         <div
-          class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+          class="ant-space ant-space-horizontal ant-space-align-center"
         >
           <div
             class="ant-space-item"
@@ -35,12 +35,12 @@ exports[`base/System/ProcessConnection ce should match snap shots 1`] = `
             class="left"
           >
             <div
-              class="ant-typography paragraph css-dev-only-do-not-override-txh9fw"
+              class="ant-typography paragraph"
             >
               如果您使用钉钉、飞书、企业微信作为协作平台，并且希望在这些外部平台上进行工单审批，您可以启用流程对接功能。通过将工单审批集成到团队的协作平台中，审批过程将变得更加便捷、高效和可追溯，同时提升数据安全和团队协作的效率。
             </div>
             <div
-              class="ant-space css-dev-only-do-not-override-txh9fw ant-space-vertical full-width-element version-comparison-wrap css-11wj1aa"
+              class="ant-space ant-space-vertical full-width-element version-comparison-wrap css-11wj1aa"
             >
               <div
                 class="ant-space-item"
@@ -50,34 +50,34 @@ exports[`base/System/ProcessConnection ce should match snap shots 1`] = `
                   class="content-wrap"
                 >
                   <div
-                    class="ant-card ant-card-bordered ant-card-hoverable version-card css-13zv8cx css-dev-only-do-not-override-txh9fw"
+                    class="ant-card ant-card-bordered ant-card-hoverable version-card css-13zv8cx"
                     color="green"
                   >
                     <div
                       class="ant-card-body"
                     >
                       <div
-                        class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center version-tag-wrap"
+                        class="ant-space ant-space-horizontal ant-space-align-center version-tag-wrap"
                       >
                         <div
                           class="ant-space-item"
                         >
                           <span
-                            class="ant-tag ant-tag-green basic-tag-wrapper basic-large-tag-wrapper css-13qu6j1 css-dev-only-do-not-override-txh9fw"
+                            class="ant-tag ant-tag-green basic-tag-wrapper basic-large-tag-wrapper css-13qu6j1"
                           >
                             社区版
                           </span>
                         </div>
                       </div>
                       <div
-                        class="ant-space css-dev-only-do-not-override-txh9fw ant-space-vertical ant-space-align-center version-item"
+                        class="ant-space ant-space-vertical ant-space-align-center version-item"
                       >
                         <div
                           class="ant-space-item"
                           style="margin-bottom: 16px;"
                         >
                           <h4
-                            class="ant-typography css-dev-only-do-not-override-txh9fw"
+                            class="ant-typography"
                           >
                             免费
                           </h4>
@@ -87,7 +87,7 @@ exports[`base/System/ProcessConnection ce should match snap shots 1`] = `
                           style="margin-bottom: 16px;"
                         >
                           <span
-                            class="ant-typography term-wrap css-dev-only-do-not-override-txh9fw"
+                            class="ant-typography term-wrap"
                           >
                             永久
                           </span>
@@ -97,7 +97,7 @@ exports[`base/System/ProcessConnection ce should match snap shots 1`] = `
                           style="margin-bottom: 16px;"
                         >
                           <a
-                            class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary apply-button basic-button-wrapper css-geipcv"
+                            class="ant-btn ant-btn-primary apply-button basic-button-wrapper css-geipcv"
                             href="https://actiontech.github.io/sqle-docs/docs/deploy-manual/intro"
                             target="_blank"
                           >
@@ -111,7 +111,7 @@ exports[`base/System/ProcessConnection ce should match snap shots 1`] = `
                           style="margin-bottom: 16px;"
                         >
                           <span
-                            class="ant-typography version-subTitle-wrap css-dev-only-do-not-override-txh9fw"
+                            class="ant-typography version-subTitle-wrap"
                           >
                             适用于MySQL基础审核场景
                           </span>
@@ -121,7 +121,7 @@ exports[`base/System/ProcessConnection ce should match snap shots 1`] = `
                           style="margin-bottom: 16px;"
                         >
                           <div
-                            class="ant-divider css-dev-only-do-not-override-txh9fw ant-divider-horizontal"
+                            class="ant-divider ant-divider-horizontal"
                             role="separator"
                           />
                         </div>
@@ -129,14 +129,14 @@ exports[`base/System/ProcessConnection ce should match snap shots 1`] = `
                           class="ant-space-item"
                         >
                           <div
-                            class="ant-space css-dev-only-do-not-override-txh9fw ant-space-vertical content-list"
+                            class="ant-space ant-space-vertical content-list"
                           >
                             <div
                               class="ant-space-item"
                               style="margin-bottom: 8px;"
                             >
                               <div
-                                class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-start full-width-element version-desc-wrap"
+                                class="ant-space ant-space-horizontal ant-space-align-start full-width-element version-desc-wrap"
                               >
                                 <div
                                   class="ant-space-item"
@@ -158,7 +158,7 @@ exports[`base/System/ProcessConnection ce should match snap shots 1`] = `
                                   class="ant-space-item"
                                 >
                                   <span
-                                    class="ant-typography css-dev-only-do-not-override-txh9fw"
+                                    class="ant-typography"
                                   >
                                     支持纳管MySQL数据源
                                   </span>
@@ -170,7 +170,7 @@ exports[`base/System/ProcessConnection ce should match snap shots 1`] = `
                               style="margin-bottom: 8px;"
                             >
                               <div
-                                class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-start full-width-element version-desc-wrap"
+                                class="ant-space ant-space-horizontal ant-space-align-start full-width-element version-desc-wrap"
                               >
                                 <div
                                   class="ant-space-item"
@@ -192,7 +192,7 @@ exports[`base/System/ProcessConnection ce should match snap shots 1`] = `
                                   class="ant-space-item"
                                 >
                                   <span
-                                    class="ant-typography css-dev-only-do-not-override-txh9fw"
+                                    class="ant-typography"
                                   >
                                     提供专业SQL审核能力
                                   </span>
@@ -204,7 +204,7 @@ exports[`base/System/ProcessConnection ce should match snap shots 1`] = `
                               style="margin-bottom: 8px;"
                             >
                               <div
-                                class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-start full-width-element version-desc-wrap"
+                                class="ant-space ant-space-horizontal ant-space-align-start full-width-element version-desc-wrap"
                               >
                                 <div
                                   class="ant-space-item"
@@ -226,7 +226,7 @@ exports[`base/System/ProcessConnection ce should match snap shots 1`] = `
                                   class="ant-space-item"
                                 >
                                   <span
-                                    class="ant-typography css-dev-only-do-not-override-txh9fw"
+                                    class="ant-typography"
                                   >
                                     集成CloudBeaver在线查询
                                   </span>
@@ -238,7 +238,7 @@ exports[`base/System/ProcessConnection ce should match snap shots 1`] = `
                               style="margin-bottom: 8px;"
                             >
                               <div
-                                class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-start full-width-element version-desc-wrap"
+                                class="ant-space ant-space-horizontal ant-space-align-start full-width-element version-desc-wrap"
                               >
                                 <div
                                   class="ant-space-item"
@@ -260,7 +260,7 @@ exports[`base/System/ProcessConnection ce should match snap shots 1`] = `
                                   class="ant-space-item"
                                 >
                                   <span
-                                    class="ant-typography css-dev-only-do-not-override-txh9fw"
+                                    class="ant-typography"
                                   >
                                     支持IDE工具审核
                                   </span>
@@ -272,7 +272,7 @@ exports[`base/System/ProcessConnection ce should match snap shots 1`] = `
                               style="margin-bottom: 8px;"
                             >
                               <div
-                                class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-start full-width-element version-desc-wrap"
+                                class="ant-space ant-space-horizontal ant-space-align-start full-width-element version-desc-wrap"
                               >
                                 <div
                                   class="ant-space-item"
@@ -294,7 +294,7 @@ exports[`base/System/ProcessConnection ce should match snap shots 1`] = `
                                   class="ant-space-item"
                                 >
                                   <span
-                                    class="ant-typography css-dev-only-do-not-override-txh9fw"
+                                    class="ant-typography"
                                   >
                                     支持多方式采集MySQL数据
                                   </span>
@@ -305,7 +305,7 @@ exports[`base/System/ProcessConnection ce should match snap shots 1`] = `
                               class="ant-space-item"
                             >
                               <div
-                                class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-start full-width-element version-desc-wrap"
+                                class="ant-space ant-space-horizontal ant-space-align-start full-width-element version-desc-wrap"
                               >
                                 <div
                                   class="ant-space-item"
@@ -327,7 +327,7 @@ exports[`base/System/ProcessConnection ce should match snap shots 1`] = `
                                   class="ant-space-item"
                                 >
                                   <span
-                                    class="ant-typography css-dev-only-do-not-override-txh9fw"
+                                    class="ant-typography"
                                   >
                                     无实例限制
                                   </span>
@@ -340,34 +340,34 @@ exports[`base/System/ProcessConnection ce should match snap shots 1`] = `
                     </div>
                   </div>
                   <div
-                    class="ant-card ant-card-bordered ant-card-hoverable version-card css-1npclps css-dev-only-do-not-override-txh9fw"
+                    class="ant-card ant-card-bordered ant-card-hoverable version-card css-1npclps"
                     color="blue"
                   >
                     <div
                       class="ant-card-body"
                     >
                       <div
-                        class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center version-tag-wrap"
+                        class="ant-space ant-space-horizontal ant-space-align-center version-tag-wrap"
                       >
                         <div
                           class="ant-space-item"
                         >
                           <span
-                            class="ant-tag ant-tag-blue basic-tag-wrapper basic-large-tag-wrapper css-1q0n2j9 css-dev-only-do-not-override-txh9fw"
+                            class="ant-tag ant-tag-blue basic-tag-wrapper basic-large-tag-wrapper css-1q0n2j9"
                           >
                             专业版
                           </span>
                         </div>
                       </div>
                       <div
-                        class="ant-space css-dev-only-do-not-override-txh9fw ant-space-vertical ant-space-align-center version-item"
+                        class="ant-space ant-space-vertical ant-space-align-center version-item"
                       >
                         <div
                           class="ant-space-item"
                           style="margin-bottom: 16px;"
                         >
                           <h4
-                            class="ant-typography css-dev-only-do-not-override-txh9fw"
+                            class="ant-typography"
                           >
                             免费
                           </h4>
@@ -377,7 +377,7 @@ exports[`base/System/ProcessConnection ce should match snap shots 1`] = `
                           style="margin-bottom: 16px;"
                         >
                           <span
-                            class="ant-typography term-wrap css-dev-only-do-not-override-txh9fw"
+                            class="ant-typography term-wrap"
                           >
                             永久
                           </span>
@@ -387,7 +387,7 @@ exports[`base/System/ProcessConnection ce should match snap shots 1`] = `
                           style="margin-bottom: 16px;"
                         >
                           <a
-                            class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary apply-button basic-button-wrapper css-geipcv"
+                            class="ant-btn ant-btn-primary apply-button basic-button-wrapper css-geipcv"
                             href="https://www.actionsky.com/sqle?question=true"
                             target="_blank"
                           >
@@ -401,7 +401,7 @@ exports[`base/System/ProcessConnection ce should match snap shots 1`] = `
                           style="margin-bottom: 16px;"
                         >
                           <span
-                            class="ant-typography version-subTitle-wrap css-dev-only-do-not-override-txh9fw"
+                            class="ant-typography version-subTitle-wrap"
                           >
                             适用于多种数据源类型体验场景
                           </span>
@@ -411,7 +411,7 @@ exports[`base/System/ProcessConnection ce should match snap shots 1`] = `
                           style="margin-bottom: 16px;"
                         >
                           <div
-                            class="ant-divider css-dev-only-do-not-override-txh9fw ant-divider-horizontal"
+                            class="ant-divider ant-divider-horizontal"
                             role="separator"
                           />
                         </div>
@@ -419,14 +419,14 @@ exports[`base/System/ProcessConnection ce should match snap shots 1`] = `
                           class="ant-space-item"
                         >
                           <div
-                            class="ant-space css-dev-only-do-not-override-txh9fw ant-space-vertical content-list"
+                            class="ant-space ant-space-vertical content-list"
                           >
                             <div
                               class="ant-space-item"
                               style="margin-bottom: 8px;"
                             >
                               <div
-                                class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-start full-width-element version-desc-wrap"
+                                class="ant-space ant-space-horizontal ant-space-align-start full-width-element version-desc-wrap"
                               >
                                 <div
                                   class="ant-space-item"
@@ -448,7 +448,7 @@ exports[`base/System/ProcessConnection ce should match snap shots 1`] = `
                                   class="ant-space-item"
                                 >
                                   <span
-                                    class="ant-typography css-dev-only-do-not-override-txh9fw"
+                                    class="ant-typography"
                                   >
                                     支持纳管10多种主流数据源
                                   </span>
@@ -460,7 +460,7 @@ exports[`base/System/ProcessConnection ce should match snap shots 1`] = `
                               style="margin-bottom: 8px;"
                             >
                               <div
-                                class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-start full-width-element version-desc-wrap"
+                                class="ant-space ant-space-horizontal ant-space-align-start full-width-element version-desc-wrap"
                               >
                                 <div
                                   class="ant-space-item"
@@ -482,7 +482,7 @@ exports[`base/System/ProcessConnection ce should match snap shots 1`] = `
                                   class="ant-space-item"
                                 >
                                   <span
-                                    class="ant-typography css-dev-only-do-not-override-txh9fw"
+                                    class="ant-typography"
                                   >
                                     提供专业SQL审核能力
                                   </span>
@@ -494,7 +494,7 @@ exports[`base/System/ProcessConnection ce should match snap shots 1`] = `
                               style="margin-bottom: 8px;"
                             >
                               <div
-                                class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-start full-width-element version-desc-wrap"
+                                class="ant-space ant-space-horizontal ant-space-align-start full-width-element version-desc-wrap"
                               >
                                 <div
                                   class="ant-space-item"
@@ -516,7 +516,7 @@ exports[`base/System/ProcessConnection ce should match snap shots 1`] = `
                                   class="ant-space-item"
                                 >
                                   <span
-                                    class="ant-typography css-dev-only-do-not-override-txh9fw"
+                                    class="ant-typography"
                                   >
                                     集成CloudBeaver在线查询
                                   </span>
@@ -528,7 +528,7 @@ exports[`base/System/ProcessConnection ce should match snap shots 1`] = `
                               style="margin-bottom: 8px;"
                             >
                               <div
-                                class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-start full-width-element version-desc-wrap"
+                                class="ant-space ant-space-horizontal ant-space-align-start full-width-element version-desc-wrap"
                               >
                                 <div
                                   class="ant-space-item"
@@ -550,7 +550,7 @@ exports[`base/System/ProcessConnection ce should match snap shots 1`] = `
                                   class="ant-space-item"
                                 >
                                   <span
-                                    class="ant-typography css-dev-only-do-not-override-txh9fw"
+                                    class="ant-typography"
                                   >
                                     支持IDE工具审核
                                   </span>
@@ -562,7 +562,7 @@ exports[`base/System/ProcessConnection ce should match snap shots 1`] = `
                               style="margin-bottom: 8px;"
                             >
                               <div
-                                class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-start full-width-element version-desc-wrap"
+                                class="ant-space ant-space-horizontal ant-space-align-start full-width-element version-desc-wrap"
                               >
                                 <div
                                   class="ant-space-item"
@@ -584,7 +584,7 @@ exports[`base/System/ProcessConnection ce should match snap shots 1`] = `
                                   class="ant-space-item"
                                 >
                                   <span
-                                    class="ant-typography css-dev-only-do-not-override-txh9fw"
+                                    class="ant-typography"
                                   >
                                     支持多方式采集各数据源数据
                                   </span>
@@ -595,7 +595,7 @@ exports[`base/System/ProcessConnection ce should match snap shots 1`] = `
                               class="ant-space-item"
                             >
                               <div
-                                class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-start full-width-element version-desc-wrap"
+                                class="ant-space ant-space-horizontal ant-space-align-start full-width-element version-desc-wrap"
                               >
                                 <div
                                   class="ant-space-item"
@@ -617,7 +617,7 @@ exports[`base/System/ProcessConnection ce should match snap shots 1`] = `
                                   class="ant-space-item"
                                 >
                                   <span
-                                    class="ant-typography css-dev-only-do-not-override-txh9fw"
+                                    class="ant-typography"
                                   >
                                     最大实例个数20
                                   </span>
@@ -630,34 +630,34 @@ exports[`base/System/ProcessConnection ce should match snap shots 1`] = `
                     </div>
                   </div>
                   <div
-                    class="ant-card ant-card-bordered ant-card-hoverable version-card css-1gci04r css-dev-only-do-not-override-txh9fw"
+                    class="ant-card ant-card-bordered ant-card-hoverable version-card css-1gci04r"
                     color="orange"
                   >
                     <div
                       class="ant-card-body"
                     >
                       <div
-                        class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center version-tag-wrap"
+                        class="ant-space ant-space-horizontal ant-space-align-center version-tag-wrap"
                       >
                         <div
                           class="ant-space-item"
                         >
                           <span
-                            class="ant-tag ant-tag-orange basic-tag-wrapper basic-large-tag-wrapper css-17gmaof css-dev-only-do-not-override-txh9fw"
+                            class="ant-tag ant-tag-orange basic-tag-wrapper basic-large-tag-wrapper css-17gmaof"
                           >
                             企业版
                           </span>
                         </div>
                       </div>
                       <div
-                        class="ant-space css-dev-only-do-not-override-txh9fw ant-space-vertical ant-space-align-center version-item"
+                        class="ant-space ant-space-vertical ant-space-align-center version-item"
                       >
                         <div
                           class="ant-space-item"
                           style="margin-bottom: 16px;"
                         >
                           <h4
-                            class="ant-typography css-dev-only-do-not-override-txh9fw"
+                            class="ant-typography"
                           >
                             定制
                           </h4>
@@ -667,7 +667,7 @@ exports[`base/System/ProcessConnection ce should match snap shots 1`] = `
                           style="margin-bottom: 16px;"
                         >
                           <span
-                            class="ant-typography term-wrap css-dev-only-do-not-override-txh9fw"
+                            class="ant-typography term-wrap"
                           />
                         </div>
                         <div
@@ -675,7 +675,7 @@ exports[`base/System/ProcessConnection ce should match snap shots 1`] = `
                           style="margin-bottom: 16px;"
                         >
                           <a
-                            class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary apply-button basic-button-wrapper css-geipcv"
+                            class="ant-btn ant-btn-primary apply-button basic-button-wrapper css-geipcv"
                             href="https://actiontech.github.io/sqle-docs/docs/support/commercial-support/"
                             target="_blank"
                           >
@@ -689,7 +689,7 @@ exports[`base/System/ProcessConnection ce should match snap shots 1`] = `
                           style="margin-bottom: 16px;"
                         >
                           <span
-                            class="ant-typography version-subTitle-wrap css-dev-only-do-not-override-txh9fw"
+                            class="ant-typography version-subTitle-wrap"
                           >
                             适用于私有云用户定制场景
                           </span>
@@ -699,7 +699,7 @@ exports[`base/System/ProcessConnection ce should match snap shots 1`] = `
                           style="margin-bottom: 16px;"
                         >
                           <div
-                            class="ant-divider css-dev-only-do-not-override-txh9fw ant-divider-horizontal"
+                            class="ant-divider ant-divider-horizontal"
                             role="separator"
                           />
                         </div>
@@ -707,14 +707,14 @@ exports[`base/System/ProcessConnection ce should match snap shots 1`] = `
                           class="ant-space-item"
                         >
                           <div
-                            class="ant-space css-dev-only-do-not-override-txh9fw ant-space-vertical content-list"
+                            class="ant-space ant-space-vertical content-list"
                           >
                             <div
                               class="ant-space-item"
                               style="margin-bottom: 8px;"
                             >
                               <div
-                                class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-start full-width-element version-desc-wrap"
+                                class="ant-space ant-space-horizontal ant-space-align-start full-width-element version-desc-wrap"
                               >
                                 <div
                                   class="ant-space-item"
@@ -736,7 +736,7 @@ exports[`base/System/ProcessConnection ce should match snap shots 1`] = `
                                   class="ant-space-item"
                                 >
                                   <span
-                                    class="ant-typography css-dev-only-do-not-override-txh9fw"
+                                    class="ant-typography"
                                   >
                                     支持纳管10多种主流数据源
                                   </span>
@@ -748,7 +748,7 @@ exports[`base/System/ProcessConnection ce should match snap shots 1`] = `
                               style="margin-bottom: 8px;"
                             >
                               <div
-                                class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-start full-width-element version-desc-wrap"
+                                class="ant-space ant-space-horizontal ant-space-align-start full-width-element version-desc-wrap"
                               >
                                 <div
                                   class="ant-space-item"
@@ -770,7 +770,7 @@ exports[`base/System/ProcessConnection ce should match snap shots 1`] = `
                                   class="ant-space-item"
                                 >
                                   <span
-                                    class="ant-typography css-dev-only-do-not-override-txh9fw"
+                                    class="ant-typography"
                                   >
                                     提供专业SQL审核能力
                                   </span>
@@ -782,7 +782,7 @@ exports[`base/System/ProcessConnection ce should match snap shots 1`] = `
                               style="margin-bottom: 8px;"
                             >
                               <div
-                                class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-start full-width-element version-desc-wrap"
+                                class="ant-space ant-space-horizontal ant-space-align-start full-width-element version-desc-wrap"
                               >
                                 <div
                                   class="ant-space-item"
@@ -804,7 +804,7 @@ exports[`base/System/ProcessConnection ce should match snap shots 1`] = `
                                   class="ant-space-item"
                                 >
                                   <span
-                                    class="ant-typography css-dev-only-do-not-override-txh9fw"
+                                    class="ant-typography"
                                   >
                                     集成CloudBeaver在线查询
                                   </span>
@@ -816,7 +816,7 @@ exports[`base/System/ProcessConnection ce should match snap shots 1`] = `
                               style="margin-bottom: 8px;"
                             >
                               <div
-                                class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-start full-width-element version-desc-wrap"
+                                class="ant-space ant-space-horizontal ant-space-align-start full-width-element version-desc-wrap"
                               >
                                 <div
                                   class="ant-space-item"
@@ -838,7 +838,7 @@ exports[`base/System/ProcessConnection ce should match snap shots 1`] = `
                                   class="ant-space-item"
                                 >
                                   <span
-                                    class="ant-typography css-dev-only-do-not-override-txh9fw"
+                                    class="ant-typography"
                                   >
                                     支持IDE工具审核
                                   </span>
@@ -850,7 +850,7 @@ exports[`base/System/ProcessConnection ce should match snap shots 1`] = `
                               style="margin-bottom: 8px;"
                             >
                               <div
-                                class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-start full-width-element version-desc-wrap"
+                                class="ant-space ant-space-horizontal ant-space-align-start full-width-element version-desc-wrap"
                               >
                                 <div
                                   class="ant-space-item"
@@ -872,7 +872,7 @@ exports[`base/System/ProcessConnection ce should match snap shots 1`] = `
                                   class="ant-space-item"
                                 >
                                   <span
-                                    class="ant-typography css-dev-only-do-not-override-txh9fw"
+                                    class="ant-typography"
                                   >
                                     支持多方式采集各数据源数据
                                   </span>
@@ -884,7 +884,7 @@ exports[`base/System/ProcessConnection ce should match snap shots 1`] = `
                               style="margin-bottom: 8px;"
                             >
                               <div
-                                class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-start full-width-element version-desc-wrap"
+                                class="ant-space ant-space-horizontal ant-space-align-start full-width-element version-desc-wrap"
                               >
                                 <div
                                   class="ant-space-item"
@@ -906,7 +906,7 @@ exports[`base/System/ProcessConnection ce should match snap shots 1`] = `
                                   class="ant-space-item"
                                 >
                                   <span
-                                    class="ant-typography css-dev-only-do-not-override-txh9fw"
+                                    class="ant-typography"
                                   >
                                     无实例限制
                                   </span>
@@ -918,7 +918,7 @@ exports[`base/System/ProcessConnection ce should match snap shots 1`] = `
                               style="margin-bottom: 8px;"
                             >
                               <div
-                                class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-start full-width-element version-desc-wrap"
+                                class="ant-space ant-space-horizontal ant-space-align-start full-width-element version-desc-wrap"
                               >
                                 <div
                                   class="ant-space-item"
@@ -940,7 +940,7 @@ exports[`base/System/ProcessConnection ce should match snap shots 1`] = `
                                   class="ant-space-item"
                                 >
                                   <span
-                                    class="ant-typography css-dev-only-do-not-override-txh9fw"
+                                    class="ant-typography"
                                   >
                                     提供SQL问题下钻能力
                                   </span>
@@ -952,7 +952,7 @@ exports[`base/System/ProcessConnection ce should match snap shots 1`] = `
                               style="margin-bottom: 8px;"
                             >
                               <div
-                                class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-start full-width-element version-desc-wrap"
+                                class="ant-space ant-space-horizontal ant-space-align-start full-width-element version-desc-wrap"
                               >
                                 <div
                                   class="ant-space-item"
@@ -974,7 +974,7 @@ exports[`base/System/ProcessConnection ce should match snap shots 1`] = `
                                   class="ant-space-item"
                                 >
                                   <span
-                                    class="ant-typography css-dev-only-do-not-override-txh9fw"
+                                    class="ant-typography"
                                   >
                                     支持 SQL 变更的版本化管理
                                   </span>
@@ -986,7 +986,7 @@ exports[`base/System/ProcessConnection ce should match snap shots 1`] = `
                               style="margin-bottom: 8px;"
                             >
                               <div
-                                class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-start full-width-element version-desc-wrap"
+                                class="ant-space ant-space-horizontal ant-space-align-start full-width-element version-desc-wrap"
                               >
                                 <div
                                   class="ant-space-item"
@@ -1008,7 +1008,7 @@ exports[`base/System/ProcessConnection ce should match snap shots 1`] = `
                                   class="ant-space-item"
                                 >
                                   <span
-                                    class="ant-typography css-dev-only-do-not-override-txh9fw"
+                                    class="ant-typography"
                                   >
                                     支持备份恢复
                                   </span>
@@ -1020,7 +1020,7 @@ exports[`base/System/ProcessConnection ce should match snap shots 1`] = `
                               style="margin-bottom: 8px;"
                             >
                               <div
-                                class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-start full-width-element version-desc-wrap"
+                                class="ant-space ant-space-horizontal ant-space-align-start full-width-element version-desc-wrap"
                               >
                                 <div
                                   class="ant-space-item"
@@ -1042,7 +1042,7 @@ exports[`base/System/ProcessConnection ce should match snap shots 1`] = `
                                   class="ant-space-item"
                                 >
                                   <span
-                                    class="ant-typography css-dev-only-do-not-override-txh9fw"
+                                    class="ant-typography"
                                   >
                                     支持结构对比
                                   </span>
@@ -1054,7 +1054,7 @@ exports[`base/System/ProcessConnection ce should match snap shots 1`] = `
                               style="margin-bottom: 8px;"
                             >
                               <div
-                                class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-start full-width-element version-desc-wrap"
+                                class="ant-space ant-space-horizontal ant-space-align-start full-width-element version-desc-wrap"
                               >
                                 <div
                                   class="ant-space-item"
@@ -1076,7 +1076,7 @@ exports[`base/System/ProcessConnection ce should match snap shots 1`] = `
                                   class="ant-space-item"
                                 >
                                   <span
-                                    class="ant-typography css-dev-only-do-not-override-txh9fw"
+                                    class="ant-typography"
                                   >
                                     SQL合规重写
                                   </span>
@@ -1088,7 +1088,7 @@ exports[`base/System/ProcessConnection ce should match snap shots 1`] = `
                               style="margin-bottom: 8px;"
                             >
                               <div
-                                class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-start full-width-element version-desc-wrap"
+                                class="ant-space ant-space-horizontal ant-space-align-start full-width-element version-desc-wrap"
                               >
                                 <div
                                   class="ant-space-item"
@@ -1110,7 +1110,7 @@ exports[`base/System/ProcessConnection ce should match snap shots 1`] = `
                                   class="ant-space-item"
                                 >
                                   <span
-                                    class="ant-typography css-dev-only-do-not-override-txh9fw"
+                                    class="ant-typography"
                                   >
                                     SQL智能优化
                                   </span>
@@ -1122,7 +1122,7 @@ exports[`base/System/ProcessConnection ce should match snap shots 1`] = `
                               style="margin-bottom: 8px;"
                             >
                               <div
-                                class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-start full-width-element version-desc-wrap"
+                                class="ant-space ant-space-horizontal ant-space-align-start full-width-element version-desc-wrap"
                               >
                                 <div
                                   class="ant-space-item"
@@ -1144,7 +1144,7 @@ exports[`base/System/ProcessConnection ce should match snap shots 1`] = `
                                   class="ant-space-item"
                                 >
                                   <span
-                                    class="ant-typography css-dev-only-do-not-override-txh9fw"
+                                    class="ant-typography"
                                   >
                                     支持版本控制
                                   </span>
@@ -1156,7 +1156,7 @@ exports[`base/System/ProcessConnection ce should match snap shots 1`] = `
                               style="margin-bottom: 8px;"
                             >
                               <div
-                                class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-start full-width-element version-desc-wrap"
+                                class="ant-space ant-space-horizontal ant-space-align-start full-width-element version-desc-wrap"
                               >
                                 <div
                                   class="ant-space-item"
@@ -1178,7 +1178,7 @@ exports[`base/System/ProcessConnection ce should match snap shots 1`] = `
                                   class="ant-space-item"
                                 >
                                   <span
-                                    class="ant-typography css-dev-only-do-not-override-txh9fw"
+                                    class="ant-typography"
                                   >
                                     多维度智能统计
                                   </span>
@@ -1189,7 +1189,7 @@ exports[`base/System/ProcessConnection ce should match snap shots 1`] = `
                               class="ant-space-item"
                             >
                               <div
-                                class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-start full-width-element version-desc-wrap"
+                                class="ant-space ant-space-horizontal ant-space-align-start full-width-element version-desc-wrap"
                               >
                                 <div
                                   class="ant-space-item"
@@ -1211,7 +1211,7 @@ exports[`base/System/ProcessConnection ce should match snap shots 1`] = `
                                   class="ant-space-item"
                                 >
                                   <span
-                                    class="ant-typography css-dev-only-do-not-override-txh9fw"
+                                    class="ant-typography"
                                   >
                                     个性化定制
                                   </span>
@@ -1230,12 +1230,12 @@ exports[`base/System/ProcessConnection ce should match snap shots 1`] = `
               >
                 <div>
                   <span
-                    class="ant-typography css-dev-only-do-not-override-txh9fw"
+                    class="ant-typography"
                   >
                     各版本完整功能对比请参考：
                   </span>
                   <a
-                    class="ant-typography css-dev-only-do-not-override-txh9fw"
+                    class="ant-typography"
                     href="https://actiontech.github.io/sqle-docs/docs/support/compare"
                     rel="noopener noreferrer"
                     target="_blank"
@@ -1250,7 +1250,7 @@ exports[`base/System/ProcessConnection ce should match snap shots 1`] = `
             class="right"
           >
             <div
-              class="ant-card ant-card-bordered ant-card-hoverable ce-card-info css-dev-only-do-not-override-txh9fw"
+              class="ant-card ant-card-bordered ant-card-hoverable ce-card-info"
             >
               <div
                 class="ant-card-body"
@@ -1305,7 +1305,7 @@ exports[`base/System/ProcessConnection ce should match snap shots 1`] = `
                     流程对接为企业版功能。如您想使用该功能，可以通过以下链接联系我们。
                   </p>
                   <div
-                    class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center button-group-wrapper"
+                    class="ant-space ant-space-horizontal ant-space-align-center button-group-wrapper"
                   >
                     <div
                       class="ant-space-item"
@@ -1317,7 +1317,7 @@ exports[`base/System/ProcessConnection ce should match snap shots 1`] = `
                         target="_blank"
                       >
                         <button
-                          class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary basic-button-wrapper css-geipcv"
+                          class="ant-btn ant-btn-primary basic-button-wrapper css-geipcv"
                           type="button"
                         >
                           <span>
@@ -1335,7 +1335,7 @@ exports[`base/System/ProcessConnection ce should match snap shots 1`] = `
                         target="_blank"
                       >
                         <button
-                          class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary basic-button-wrapper css-geipcv"
+                          class="ant-btn ant-btn-primary basic-button-wrapper css-geipcv"
                           type="button"
                         >
                           <span>
@@ -1349,7 +1349,7 @@ exports[`base/System/ProcessConnection ce should match snap shots 1`] = `
               </div>
             </div>
             <div
-              class="ant-card ant-card-bordered ant-card-hoverable ce-card-info css-dev-only-do-not-override-txh9fw"
+              class="ant-card ant-card-bordered ant-card-hoverable ce-card-info"
             >
               <div
                 class="ant-card-body"
@@ -1412,7 +1412,7 @@ exports[`base/System/ProcessConnection ce should match snap shots 1`] = `
                       target="_blank"
                     >
                       <button
-                        class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary basic-button-wrapper css-geipcv"
+                        class="ant-btn ant-btn-primary basic-button-wrapper css-geipcv"
                         type="button"
                       >
                         <span>

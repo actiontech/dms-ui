@@ -13,7 +13,7 @@ exports[`sqle/VersionManagement/Detail render init snap 1`] = `
           class="title"
         >
           <div
-            class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+            class="ant-space ant-space-horizontal ant-space-align-center"
           >
             <div
               class="ant-space-item"
@@ -25,7 +25,7 @@ exports[`sqle/VersionManagement/Detail render init snap 1`] = `
               class="ant-space-item"
             >
               <button
-                class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default ant-btn-sm ant-btn-icon-only btn-icon-no-border basic-button-wrapper css-geipcv"
+                class="ant-btn ant-btn-default ant-btn-sm ant-btn-icon-only btn-icon-no-border basic-button-wrapper css-geipcv"
                 type="button"
               >
                 <span
@@ -54,7 +54,7 @@ exports[`sqle/VersionManagement/Detail render init snap 1`] = `
             href="/sqle/project/700300/version-management"
           >
             <button
-              class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default basic-button-wrapper css-geipcv"
+              class="ant-btn ant-btn-default basic-button-wrapper css-geipcv"
               type="button"
             >
               <span
@@ -80,7 +80,7 @@ exports[`sqle/VersionManagement/Detail render init snap 1`] = `
         </div>
       </div>
       <div
-        class="ant-spin-nested-loading flow-wrapper css-dev-only-do-not-override-txh9fw"
+        class="ant-spin-nested-loading flow-wrapper"
       >
         <div
           class="ant-spin-container"
@@ -217,19 +217,19 @@ exports[`sqle/VersionManagement/Detail render init snap 1`] = `
                       class="css-1epqoyd"
                     >
                       <div
-                        class="ant-space css-dev-only-do-not-override-txh9fw ant-space-vertical"
+                        class="ant-space ant-space-vertical"
                       >
                         <div
                           class="ant-space-item"
                         >
                           <div
-                            class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
+                            class="ant-space ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
                           >
                             <div
                               class="ant-space-item"
                             >
                               <button
-                                class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary basic-button-wrapper css-geipcv"
+                                class="ant-btn ant-btn-primary basic-button-wrapper css-geipcv"
                                 disabled=""
                                 type="button"
                               >
@@ -262,19 +262,19 @@ exports[`sqle/VersionManagement/Detail render init snap 1`] = `
                       class="css-17x6wdd"
                     >
                       <div
-                        class="ant-space css-dev-only-do-not-override-txh9fw ant-space-vertical"
+                        class="ant-space ant-space-vertical"
                       >
                         <div
                           class="ant-space-item"
                         >
                           <div
-                            class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
+                            class="ant-space ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
                           >
                             <div
                               class="ant-space-item"
                             >
                               <button
-                                class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary basic-button-wrapper css-geipcv"
+                                class="ant-btn ant-btn-primary basic-button-wrapper css-geipcv"
                                 disabled=""
                                 type="button"
                               >
@@ -378,20 +378,20 @@ exports[`sqle/VersionManagement/Detail render init snap 1`] = `
                         class="css-1e6vd6y"
                       >
                         <div
-                          class="ant-space css-dev-only-do-not-override-txh9fw ant-space-vertical"
+                          class="ant-space ant-space-vertical"
                         >
                           <div
                             class="ant-space-item"
                             style="margin-bottom: 8px;"
                           >
                             <div
-                              class="ant-card ant-card-bordered ant-card-hoverable css-dev-only-do-not-override-txh9fw"
+                              class="ant-card ant-card-bordered ant-card-hoverable"
                             >
                               <div
                                 class="ant-card-body"
                               >
                                 <div
-                                  class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center card-header"
+                                  class="ant-space ant-space-horizontal ant-space-align-center card-header"
                                 >
                                   <div
                                     class="ant-space-item"
@@ -431,14 +431,14 @@ exports[`sqle/VersionManagement/Detail render init snap 1`] = `
                                   </div>
                                 </div>
                                 <div
-                                  class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center card-content-item"
+                                  class="ant-space ant-space-horizontal ant-space-align-center card-content-item"
                                 >
                                   <div
                                     class="ant-space-item"
                                     style="margin-right: 8px;"
                                   >
                                     <span
-                                      class="ant-typography ant-typography-secondary css-dev-only-do-not-override-txh9fw"
+                                      class="ant-typography ant-typography-secondary"
                                     >
                                       工单描述
                                     </span>
@@ -448,11 +448,11 @@ exports[`sqle/VersionManagement/Detail render init snap 1`] = `
                                   >
                                     <div
                                       aria-label="drat quinoa however notwithstanding courteous obediently above gee consequently although plus aha by bludgeon so barring incidentally over heavy ah boohoo nor pricey duh pro knavishly ick delirious geez yippee challenge unto emergent fiercely advocate under blindly motionless extremely as from ack dicker assist suckle travel repentant worthless lest now boss given with blissfully venture behest circa free who ultimately eek muted woot inasmuch rewrite pish gosh while naughty furthermore below yowza blindly oof behind when twin worriedly boo scent boring um experienced till convince fooey ugh barring jealous reprove circa limply given save between stint coarse courageously if importance hepatitis fatally in furthermore ew geez between zowie whereas entire drat lovingly ick out or nor creaking although before duh minus unimpressively overplay summary loudly popularize couch long-term forceful intrepid perky duh marvelous shabby yowza eyeliner hm strategy see cleverly dress with smoggy dishonor under unfortunately ordinary conservative starch diligently well-off overwork through scowl yowza adrenalin tedious filthy hopeful legislature numeracy fooey furlough excepting analyse but while broadly till mmm"
-                                      class="ant-typography ant-typography-ellipsis ant-typography-single-line basic-typography-ellipsis css-wgj5gs css-dev-only-do-not-override-txh9fw"
+                                      class="ant-typography ant-typography-ellipsis ant-typography-single-line basic-typography-ellipsis css-wgj5gs"
                                     >
                                       drat quinoa however notwithstanding courteous obediently above gee consequently although plus aha by bludgeon so barring incidentally over heavy ah boohoo nor pricey duh pro knavishly ick delirious geez yippee challenge unto emergent fiercely advocate under blindly motionless extremely as from ack dicker assist suckle travel repentant worthless lest now boss given with blissfully venture behest circa free who ultimately eek muted woot inasmuch rewrite pish gosh while naughty furthermore below yowza blindly oof behind when twin worriedly boo scent boring um experienced till convince fooey ugh barring jealous reprove circa limply given save between stint coarse courageously if importance hepatitis fatally in furthermore ew geez between zowie whereas entire drat lovingly ick out or nor creaking although before duh minus unimpressively overplay summary loudly popularize couch long-term forceful intrepid perky duh marvelous shabby yowza eyeliner hm strategy see cleverly dress with smoggy dishonor under unfortunately ordinary conservative starch diligently well-off overwork through scowl yowza adrenalin tedious filthy hopeful legislature numeracy fooey furlough excepting analyse but while broadly till mmm
                                       <div
-                                        aria-label="Copy"
+                                        aria-label="复制"
                                         class="ant-typography-copy"
                                         role="button"
                                         style="border: 0px; background: transparent; padding: 0px; line-height: inherit; display: inline-block;"
@@ -494,7 +494,7 @@ exports[`sqle/VersionManagement/Detail render init snap 1`] = `
                                           ...
                                         </span>
                                         <div
-                                          aria-label="Copy"
+                                          aria-label="复制"
                                           class="ant-typography-copy"
                                           role="button"
                                           style="border: 0px; background: transparent; padding: 0px; line-height: inherit; display: inline-block;"
@@ -525,7 +525,7 @@ exports[`sqle/VersionManagement/Detail render init snap 1`] = `
                                   </div>
                                 </div>
                                 <div
-                                  class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center card-action-wrap"
+                                  class="ant-space ant-space-horizontal ant-space-align-center card-action-wrap"
                                   hidden=""
                                 >
                                   <div
@@ -533,7 +533,7 @@ exports[`sqle/VersionManagement/Detail render init snap 1`] = `
                                     style="margin-right: 8px;"
                                   >
                                     <button
-                                      class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default ant-btn-sm basic-button-wrapper css-geipcv"
+                                      class="ant-btn ant-btn-default ant-btn-sm basic-button-wrapper css-geipcv"
                                       type="button"
                                     >
                                       <span>
@@ -545,7 +545,7 @@ exports[`sqle/VersionManagement/Detail render init snap 1`] = `
                                     class="ant-space-item"
                                   >
                                     <button
-                                      class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default ant-btn-sm basic-button-wrapper css-geipcv"
+                                      class="ant-btn ant-btn-default ant-btn-sm basic-button-wrapper css-geipcv"
                                       type="button"
                                     >
                                       <span>
@@ -562,13 +562,13 @@ exports[`sqle/VersionManagement/Detail render init snap 1`] = `
                             style="margin-bottom: 8px;"
                           >
                             <div
-                              class="ant-card ant-card-bordered ant-card-hoverable css-dev-only-do-not-override-txh9fw"
+                              class="ant-card ant-card-bordered ant-card-hoverable"
                             >
                               <div
                                 class="ant-card-body"
                               >
                                 <div
-                                  class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center card-header"
+                                  class="ant-space ant-space-horizontal ant-space-align-center card-header"
                                 >
                                   <div
                                     class="ant-space-item"
@@ -608,14 +608,14 @@ exports[`sqle/VersionManagement/Detail render init snap 1`] = `
                                   </div>
                                 </div>
                                 <div
-                                  class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center card-content-item"
+                                  class="ant-space ant-space-horizontal ant-space-align-center card-content-item"
                                 >
                                   <div
                                     class="ant-space-item"
                                     style="margin-right: 8px;"
                                   >
                                     <span
-                                      class="ant-typography ant-typography-secondary css-dev-only-do-not-override-txh9fw"
+                                      class="ant-typography ant-typography-secondary"
                                     >
                                       工单描述
                                     </span>
@@ -625,11 +625,11 @@ exports[`sqle/VersionManagement/Detail render init snap 1`] = `
                                   >
                                     <div
                                       aria-label="pulp enroll than duh lustrous despite for toe with er pantyhose accentuate ugh during er drat cutlet amid whether abnegate delightfully before hope uh-huh scorpion aboard near raw yet co-producer cruelty sinful purse interviewer anenst apud huzzah abscond solemnly generously usually sleet the incidentally toward until anti quizzically flimsy finally behind and futon vol unless humble sorrowful astride afore intensely blah modulo state too paltry kissingly at outsource blossom yum mealy boohoo about concerning tromp import quizzically slowly velocity hm gadzooks snow insidious geez failing um veto chromakey geez discrete linseed rare bah gadzooks happy gleefully eek window chops yippee midst eke second yahoo handsome till despite likewise obvious redound enormously except putrid surprise only beside brr surprisingly experience ferociously even dredger after incidentally requite er sonata instead pfft mad upwardly meh pish solace offensively as finally considering if er yearly in shyly kissingly circa for alongside better display"
-                                      class="ant-typography ant-typography-ellipsis ant-typography-single-line basic-typography-ellipsis css-wgj5gs css-dev-only-do-not-override-txh9fw"
+                                      class="ant-typography ant-typography-ellipsis ant-typography-single-line basic-typography-ellipsis css-wgj5gs"
                                     >
                                       pulp enroll than duh lustrous despite for toe with er pantyhose accentuate ugh during er drat cutlet amid whether abnegate delightfully before hope uh-huh scorpion aboard near raw yet co-producer cruelty sinful purse interviewer anenst apud huzzah abscond solemnly generously usually sleet the incidentally toward until anti quizzically flimsy finally behind and futon vol unless humble sorrowful astride afore intensely blah modulo state too paltry kissingly at outsource blossom yum mealy boohoo about concerning tromp import quizzically slowly velocity hm gadzooks snow insidious geez failing um veto chromakey geez discrete linseed rare bah gadzooks happy gleefully eek window chops yippee midst eke second yahoo handsome till despite likewise obvious redound enormously except putrid surprise only beside brr surprisingly experience ferociously even dredger after incidentally requite er sonata instead pfft mad upwardly meh pish solace offensively as finally considering if er yearly in shyly kissingly circa for alongside better display
                                       <div
-                                        aria-label="Copy"
+                                        aria-label="复制"
                                         class="ant-typography-copy"
                                         role="button"
                                         style="border: 0px; background: transparent; padding: 0px; line-height: inherit; display: inline-block;"
@@ -671,7 +671,7 @@ exports[`sqle/VersionManagement/Detail render init snap 1`] = `
                                           ...
                                         </span>
                                         <div
-                                          aria-label="Copy"
+                                          aria-label="复制"
                                           class="ant-typography-copy"
                                           role="button"
                                           style="border: 0px; background: transparent; padding: 0px; line-height: inherit; display: inline-block;"
@@ -702,7 +702,7 @@ exports[`sqle/VersionManagement/Detail render init snap 1`] = `
                                   </div>
                                 </div>
                                 <div
-                                  class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center card-action-wrap"
+                                  class="ant-space ant-space-horizontal ant-space-align-center card-action-wrap"
                                   hidden=""
                                 >
                                   <div
@@ -710,7 +710,7 @@ exports[`sqle/VersionManagement/Detail render init snap 1`] = `
                                     style="margin-right: 8px;"
                                   >
                                     <button
-                                      class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default ant-btn-sm basic-button-wrapper css-geipcv"
+                                      class="ant-btn ant-btn-default ant-btn-sm basic-button-wrapper css-geipcv"
                                       type="button"
                                     >
                                       <span>
@@ -722,7 +722,7 @@ exports[`sqle/VersionManagement/Detail render init snap 1`] = `
                                     class="ant-space-item"
                                   >
                                     <button
-                                      class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default ant-btn-sm basic-button-wrapper css-geipcv"
+                                      class="ant-btn ant-btn-default ant-btn-sm basic-button-wrapper css-geipcv"
                                       type="button"
                                     >
                                       <span>
@@ -738,14 +738,14 @@ exports[`sqle/VersionManagement/Detail render init snap 1`] = `
                             class="ant-space-item"
                           >
                             <div
-                              class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center bottom-action-wrap"
+                              class="ant-space ant-space-horizontal ant-space-align-center bottom-action-wrap"
                             >
                               <div
                                 class="ant-space-item"
                                 style="margin-right: 8px;"
                               >
                                 <button
-                                  class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary basic-button-wrapper css-geipcv"
+                                  class="ant-btn ant-btn-primary basic-button-wrapper css-geipcv"
                                   type="button"
                                 >
                                   <span>
@@ -757,7 +757,7 @@ exports[`sqle/VersionManagement/Detail render init snap 1`] = `
                                 class="ant-space-item"
                               >
                                 <button
-                                  class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary basic-button-wrapper css-geipcv"
+                                  class="ant-btn ant-btn-primary basic-button-wrapper css-geipcv"
                                   type="button"
                                 >
                                   <span>
@@ -796,14 +796,14 @@ exports[`sqle/VersionManagement/Detail render init snap 1`] = `
                           data-nodeid="53_workflowNode"
                         />
                         <div
-                          class="ant-space css-dev-only-do-not-override-txh9fw ant-space-vertical"
+                          class="ant-space ant-space-vertical"
                         >
                           <div
                             class="ant-space-item"
                             style="margin-bottom: 8px;"
                           >
                             <div
-                              class="ant-card ant-card-bordered empty-card css-dev-only-do-not-override-txh9fw"
+                              class="ant-card ant-card-bordered empty-card"
                             >
                               <div
                                 class="ant-card-body"
@@ -815,7 +815,7 @@ exports[`sqle/VersionManagement/Detail render init snap 1`] = `
                             style="margin-bottom: 8px;"
                           >
                             <div
-                              class="ant-card ant-card-bordered empty-card css-dev-only-do-not-override-txh9fw"
+                              class="ant-card ant-card-bordered empty-card"
                             >
                               <div
                                 class="ant-card-body"
@@ -826,7 +826,7 @@ exports[`sqle/VersionManagement/Detail render init snap 1`] = `
                             class="ant-space-item"
                           >
                             <div
-                              class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center bottom-action-wrap"
+                              class="ant-space ant-space-horizontal ant-space-align-center bottom-action-wrap"
                               hidden=""
                             >
                               <div
@@ -834,7 +834,7 @@ exports[`sqle/VersionManagement/Detail render init snap 1`] = `
                                 style="margin-right: 8px;"
                               >
                                 <button
-                                  class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary basic-button-wrapper css-geipcv"
+                                  class="ant-btn ant-btn-primary basic-button-wrapper css-geipcv"
                                   type="button"
                                 >
                                   <span>
@@ -846,7 +846,7 @@ exports[`sqle/VersionManagement/Detail render init snap 1`] = `
                                 class="ant-space-item"
                               >
                                 <button
-                                  class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary basic-button-wrapper css-geipcv"
+                                  class="ant-btn ant-btn-primary basic-button-wrapper css-geipcv"
                                   type="button"
                                 >
                                   <span>
@@ -885,14 +885,14 @@ exports[`sqle/VersionManagement/Detail render init snap 1`] = `
                           data-nodeid="34_workflowNode"
                         />
                         <div
-                          class="ant-space css-dev-only-do-not-override-txh9fw ant-space-vertical"
+                          class="ant-space ant-space-vertical"
                         >
                           <div
                             class="ant-space-item"
                             style="margin-bottom: 8px;"
                           >
                             <div
-                              class="ant-card ant-card-bordered empty-card css-dev-only-do-not-override-txh9fw"
+                              class="ant-card ant-card-bordered empty-card"
                             >
                               <div
                                 class="ant-card-body"
@@ -904,7 +904,7 @@ exports[`sqle/VersionManagement/Detail render init snap 1`] = `
                             style="margin-bottom: 8px;"
                           >
                             <div
-                              class="ant-card ant-card-bordered empty-card css-dev-only-do-not-override-txh9fw"
+                              class="ant-card ant-card-bordered empty-card"
                             >
                               <div
                                 class="ant-card-body"
@@ -915,7 +915,7 @@ exports[`sqle/VersionManagement/Detail render init snap 1`] = `
                             class="ant-space-item"
                           >
                             <div
-                              class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center bottom-action-wrap"
+                              class="ant-space ant-space-horizontal ant-space-align-center bottom-action-wrap"
                               hidden=""
                             >
                               <div
@@ -923,7 +923,7 @@ exports[`sqle/VersionManagement/Detail render init snap 1`] = `
                                 style="margin-right: 8px;"
                               >
                                 <button
-                                  class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary basic-button-wrapper css-geipcv"
+                                  class="ant-btn ant-btn-primary basic-button-wrapper css-geipcv"
                                   type="button"
                                 >
                                   <span>
@@ -935,7 +935,7 @@ exports[`sqle/VersionManagement/Detail render init snap 1`] = `
                                 class="ant-space-item"
                               >
                                 <button
-                                  class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary basic-button-wrapper css-geipcv"
+                                  class="ant-btn ant-btn-primary basic-button-wrapper css-geipcv"
                                   type="button"
                                 >
                                   <span>
@@ -961,13 +961,13 @@ exports[`sqle/VersionManagement/Detail render init snap 1`] = `
                         class="css-1diyz6t"
                       >
                         <div
-                          class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
+                          class="ant-space ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
                         >
                           <div
                             class="ant-space-item"
                           >
                             <button
-                              class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary basic-button-wrapper css-geipcv"
+                              class="ant-btn ant-btn-primary basic-button-wrapper css-geipcv"
                               disabled=""
                               type="button"
                             >
@@ -1014,13 +1014,13 @@ exports[`sqle/VersionManagement/Detail render init snap 1`] = `
                         class="css-1diyz6t"
                       >
                         <div
-                          class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
+                          class="ant-space ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
                         >
                           <div
                             class="ant-space-item"
                           >
                             <button
-                              class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary basic-button-wrapper css-geipcv"
+                              class="ant-btn ant-btn-primary basic-button-wrapper css-geipcv"
                               disabled=""
                               type="button"
                             >
@@ -1067,13 +1067,13 @@ exports[`sqle/VersionManagement/Detail render init snap 1`] = `
                         class="css-1diyz6t"
                       >
                         <div
-                          class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
+                          class="ant-space ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
                         >
                           <div
                             class="ant-space-item"
                           >
                             <button
-                              class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary basic-button-wrapper css-geipcv"
+                              class="ant-btn ant-btn-primary basic-button-wrapper css-geipcv"
                               disabled=""
                               type="button"
                             >
@@ -1223,7 +1223,7 @@ exports[`sqle/VersionManagement/Detail render offline executed 1`] = `
           class="title"
         >
           <div
-            class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+            class="ant-space ant-space-horizontal ant-space-align-center"
           >
             <div
               class="ant-space-item"
@@ -1235,7 +1235,7 @@ exports[`sqle/VersionManagement/Detail render offline executed 1`] = `
               class="ant-space-item"
             >
               <button
-                class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default ant-btn-sm ant-btn-icon-only btn-icon-no-border basic-button-wrapper css-geipcv"
+                class="ant-btn ant-btn-default ant-btn-sm ant-btn-icon-only btn-icon-no-border basic-button-wrapper css-geipcv"
                 type="button"
               >
                 <span
@@ -1264,7 +1264,7 @@ exports[`sqle/VersionManagement/Detail render offline executed 1`] = `
             href="/sqle/project/700300/version-management"
           >
             <button
-              class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default basic-button-wrapper css-geipcv"
+              class="ant-btn ant-btn-default basic-button-wrapper css-geipcv"
               type="button"
             >
               <span
@@ -1290,7 +1290,7 @@ exports[`sqle/VersionManagement/Detail render offline executed 1`] = `
         </div>
       </div>
       <div
-        class="ant-spin-nested-loading flow-wrapper css-dev-only-do-not-override-txh9fw"
+        class="ant-spin-nested-loading flow-wrapper"
       >
         <div
           class="ant-spin-container"
@@ -1375,19 +1375,19 @@ exports[`sqle/VersionManagement/Detail render offline executed 1`] = `
                       class="css-1epqoyd"
                     >
                       <div
-                        class="ant-space css-dev-only-do-not-override-txh9fw ant-space-vertical"
+                        class="ant-space ant-space-vertical"
                       >
                         <div
                           class="ant-space-item"
                         >
                           <div
-                            class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
+                            class="ant-space ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
                           >
                             <div
                               class="ant-space-item"
                             >
                               <button
-                                class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary basic-button-wrapper css-geipcv"
+                                class="ant-btn ant-btn-primary basic-button-wrapper css-geipcv"
                                 disabled=""
                                 type="button"
                               >
@@ -1468,20 +1468,20 @@ exports[`sqle/VersionManagement/Detail render offline executed 1`] = `
                         class="css-1e6vd6y"
                       >
                         <div
-                          class="ant-space css-dev-only-do-not-override-txh9fw ant-space-vertical"
+                          class="ant-space ant-space-vertical"
                         >
                           <div
                             class="ant-space-item"
                             style="margin-bottom: 8px;"
                           >
                             <div
-                              class="ant-card ant-card-bordered ant-card-hoverable css-dev-only-do-not-override-txh9fw"
+                              class="ant-card ant-card-bordered ant-card-hoverable"
                             >
                               <div
                                 class="ant-card-body"
                               >
                                 <div
-                                  class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center card-header"
+                                  class="ant-space ant-space-horizontal ant-space-align-center card-header"
                                 >
                                   <div
                                     class="ant-space-item"
@@ -1521,14 +1521,14 @@ exports[`sqle/VersionManagement/Detail render offline executed 1`] = `
                                   </div>
                                 </div>
                                 <div
-                                  class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center card-content-item"
+                                  class="ant-space ant-space-horizontal ant-space-align-center card-content-item"
                                 >
                                   <div
                                     class="ant-space-item"
                                     style="margin-right: 8px;"
                                   >
                                     <span
-                                      class="ant-typography ant-typography-secondary css-dev-only-do-not-override-txh9fw"
+                                      class="ant-typography ant-typography-secondary"
                                     >
                                       工单描述
                                     </span>
@@ -1540,14 +1540,14 @@ exports[`sqle/VersionManagement/Detail render offline executed 1`] = `
                                   </div>
                                 </div>
                                 <div
-                                  class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center card-action-wrap"
+                                  class="ant-space ant-space-horizontal ant-space-align-center card-action-wrap"
                                 >
                                   <div
                                     class="ant-space-item"
                                     style="margin-right: 8px;"
                                   >
                                     <button
-                                      class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default ant-btn-sm basic-button-wrapper css-geipcv"
+                                      class="ant-btn ant-btn-default ant-btn-sm basic-button-wrapper css-geipcv"
                                       type="button"
                                     >
                                       <span>
@@ -1559,7 +1559,7 @@ exports[`sqle/VersionManagement/Detail render offline executed 1`] = `
                                     class="ant-space-item"
                                   >
                                     <button
-                                      class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default ant-btn-sm basic-button-wrapper css-geipcv"
+                                      class="ant-btn ant-btn-default ant-btn-sm basic-button-wrapper css-geipcv"
                                       type="button"
                                     >
                                       <span>
@@ -1575,14 +1575,14 @@ exports[`sqle/VersionManagement/Detail render offline executed 1`] = `
                             class="ant-space-item"
                           >
                             <div
-                              class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center bottom-action-wrap"
+                              class="ant-space ant-space-horizontal ant-space-align-center bottom-action-wrap"
                             >
                               <div
                                 class="ant-space-item"
                                 style="margin-right: 8px;"
                               >
                                 <button
-                                  class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary basic-button-wrapper css-geipcv"
+                                  class="ant-btn ant-btn-primary basic-button-wrapper css-geipcv"
                                   type="button"
                                 >
                                   <span>
@@ -1594,7 +1594,7 @@ exports[`sqle/VersionManagement/Detail render offline executed 1`] = `
                                 class="ant-space-item"
                               >
                                 <button
-                                  class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary basic-button-wrapper css-geipcv"
+                                  class="ant-btn ant-btn-primary basic-button-wrapper css-geipcv"
                                   type="button"
                                 >
                                   <span>
@@ -1633,14 +1633,14 @@ exports[`sqle/VersionManagement/Detail render offline executed 1`] = `
                           data-nodeid="78_workflowNode"
                         />
                         <div
-                          class="ant-space css-dev-only-do-not-override-txh9fw ant-space-vertical"
+                          class="ant-space ant-space-vertical"
                         >
                           <div
                             class="ant-space-item"
                             style="margin-bottom: 8px;"
                           >
                             <div
-                              class="ant-card ant-card-bordered empty-card css-dev-only-do-not-override-txh9fw"
+                              class="ant-card ant-card-bordered empty-card"
                             >
                               <div
                                 class="ant-card-body"
@@ -1651,7 +1651,7 @@ exports[`sqle/VersionManagement/Detail render offline executed 1`] = `
                             class="ant-space-item"
                           >
                             <div
-                              class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center bottom-action-wrap"
+                              class="ant-space ant-space-horizontal ant-space-align-center bottom-action-wrap"
                               hidden=""
                             >
                               <div
@@ -1659,7 +1659,7 @@ exports[`sqle/VersionManagement/Detail render offline executed 1`] = `
                                 style="margin-right: 8px;"
                               >
                                 <button
-                                  class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary basic-button-wrapper css-geipcv"
+                                  class="ant-btn ant-btn-primary basic-button-wrapper css-geipcv"
                                   type="button"
                                 >
                                   <span>
@@ -1671,7 +1671,7 @@ exports[`sqle/VersionManagement/Detail render offline executed 1`] = `
                                 class="ant-space-item"
                               >
                                 <button
-                                  class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary basic-button-wrapper css-geipcv"
+                                  class="ant-btn ant-btn-primary basic-button-wrapper css-geipcv"
                                   type="button"
                                 >
                                   <span>
@@ -1697,13 +1697,13 @@ exports[`sqle/VersionManagement/Detail render offline executed 1`] = `
                         class="css-1diyz6t"
                       >
                         <div
-                          class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
+                          class="ant-space ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
                         >
                           <div
                             class="ant-space-item"
                           >
                             <button
-                              class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary basic-button-wrapper css-geipcv"
+                              class="ant-btn ant-btn-primary basic-button-wrapper css-geipcv"
                               disabled=""
                               type="button"
                             >
@@ -1866,7 +1866,7 @@ exports[`sqle/VersionManagement/Detail render version detail when no work order 
           class="title"
         >
           <div
-            class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+            class="ant-space ant-space-horizontal ant-space-align-center"
           >
             <div
               class="ant-space-item"
@@ -1878,7 +1878,7 @@ exports[`sqle/VersionManagement/Detail render version detail when no work order 
               class="ant-space-item"
             >
               <button
-                class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default ant-btn-sm ant-btn-icon-only btn-icon-no-border basic-button-wrapper css-geipcv"
+                class="ant-btn ant-btn-default ant-btn-sm ant-btn-icon-only btn-icon-no-border basic-button-wrapper css-geipcv"
                 type="button"
               >
                 <span
@@ -1907,7 +1907,7 @@ exports[`sqle/VersionManagement/Detail render version detail when no work order 
             href="/sqle/project/700300/version-management"
           >
             <button
-              class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default basic-button-wrapper css-geipcv"
+              class="ant-btn ant-btn-default basic-button-wrapper css-geipcv"
               type="button"
             >
               <span
@@ -1933,7 +1933,7 @@ exports[`sqle/VersionManagement/Detail render version detail when no work order 
         </div>
       </div>
       <div
-        class="ant-spin-nested-loading flow-wrapper css-dev-only-do-not-override-txh9fw"
+        class="ant-spin-nested-loading flow-wrapper"
       >
         <div
           class="ant-spin-container"
@@ -2018,7 +2018,7 @@ exports[`sqle/VersionManagement/Detail render version detail when no work order 
                       class="css-1epqoyd"
                     >
                       <div
-                        class="ant-space css-dev-only-do-not-override-txh9fw ant-space-vertical"
+                        class="ant-space ant-space-vertical"
                       >
                         <div
                           class="ant-space-item"
@@ -2077,14 +2077,14 @@ exports[`sqle/VersionManagement/Detail render version detail when no work order 
                         class="css-1e6vd6y"
                       >
                         <div
-                          class="ant-space css-dev-only-do-not-override-txh9fw ant-space-vertical"
+                          class="ant-space ant-space-vertical"
                         >
                           <div
                             class="ant-space-item"
                             style="margin-bottom: 8px;"
                           >
                             <div
-                              class="ant-card ant-card-bordered empty-card css-dev-only-do-not-override-txh9fw"
+                              class="ant-card ant-card-bordered empty-card"
                             >
                               <div
                                 class="ant-card-body"
@@ -2095,14 +2095,14 @@ exports[`sqle/VersionManagement/Detail render version detail when no work order 
                             class="ant-space-item"
                           >
                             <div
-                              class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center bottom-action-wrap"
+                              class="ant-space ant-space-horizontal ant-space-align-center bottom-action-wrap"
                             >
                               <div
                                 class="ant-space-item"
                                 style="margin-right: 8px;"
                               >
                                 <button
-                                  class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary basic-button-wrapper css-geipcv"
+                                  class="ant-btn ant-btn-primary basic-button-wrapper css-geipcv"
                                   type="button"
                                 >
                                   <span>
@@ -2114,7 +2114,7 @@ exports[`sqle/VersionManagement/Detail render version detail when no work order 
                                 class="ant-space-item"
                               >
                                 <button
-                                  class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary basic-button-wrapper css-geipcv"
+                                  class="ant-btn ant-btn-primary basic-button-wrapper css-geipcv"
                                   type="button"
                                 >
                                   <span>
@@ -2153,14 +2153,14 @@ exports[`sqle/VersionManagement/Detail render version detail when no work order 
                           data-nodeid="78_workflowNode"
                         />
                         <div
-                          class="ant-space css-dev-only-do-not-override-txh9fw ant-space-vertical"
+                          class="ant-space ant-space-vertical"
                         >
                           <div
                             class="ant-space-item"
                             style="margin-bottom: 8px;"
                           >
                             <div
-                              class="ant-card ant-card-bordered empty-card css-dev-only-do-not-override-txh9fw"
+                              class="ant-card ant-card-bordered empty-card"
                             >
                               <div
                                 class="ant-card-body"
@@ -2171,7 +2171,7 @@ exports[`sqle/VersionManagement/Detail render version detail when no work order 
                             class="ant-space-item"
                           >
                             <div
-                              class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center bottom-action-wrap"
+                              class="ant-space ant-space-horizontal ant-space-align-center bottom-action-wrap"
                               hidden=""
                             >
                               <div
@@ -2179,7 +2179,7 @@ exports[`sqle/VersionManagement/Detail render version detail when no work order 
                                 style="margin-right: 8px;"
                               >
                                 <button
-                                  class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary basic-button-wrapper css-geipcv"
+                                  class="ant-btn ant-btn-primary basic-button-wrapper css-geipcv"
                                   type="button"
                                 >
                                   <span>
@@ -2191,7 +2191,7 @@ exports[`sqle/VersionManagement/Detail render version detail when no work order 
                                 class="ant-space-item"
                               >
                                 <button
-                                  class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary basic-button-wrapper css-geipcv"
+                                  class="ant-btn ant-btn-primary basic-button-wrapper css-geipcv"
                                   type="button"
                                 >
                                   <span>
@@ -2337,13 +2337,13 @@ exports[`sqle/VersionManagement/Detail render workflow order retry 1`] = `
 <body>
   <div>
     <div
-      class="ant-spin-nested-loading css-dev-only-do-not-override-txh9fw"
+      class="ant-spin-nested-loading"
     >
       <div>
         <div
           aria-busy="true"
           aria-live="polite"
-          class="ant-spin ant-spin-spinning css-dev-only-do-not-override-txh9fw"
+          class="ant-spin ant-spin-spinning"
         >
           <span
             class="ant-spin-dot ant-spin-dot-spin"
@@ -2367,7 +2367,7 @@ exports[`sqle/VersionManagement/Detail render workflow order retry 1`] = `
         class="ant-spin-container ant-spin-blur"
       >
         <div
-          class="ant-spin-nested-loading css-dev-only-do-not-override-txh9fw"
+          class="ant-spin-nested-loading"
         >
           <div
             class="ant-spin-container"
@@ -2382,7 +2382,7 @@ exports[`sqle/VersionManagement/Detail render workflow order retry 1`] = `
                   class="title"
                 >
                   <button
-                    class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default basic-button-wrapper css-geipcv"
+                    class="ant-btn ant-btn-default basic-button-wrapper css-geipcv"
                     type="button"
                   >
                     <span
@@ -2410,7 +2410,7 @@ exports[`sqle/VersionManagement/Detail render workflow order retry 1`] = `
                 />
               </div>
               <form
-                class="ant-form ant-form-horizontal css-dev-only-do-not-override-txh9fw hasTopHeader clearPaddingBottom css-re75ti"
+                class="ant-form ant-form-horizontal hasTopHeader clearPaddingBottom css-re75ti"
               >
                 <section
                   class="has-border css-1114g56"
@@ -2419,7 +2419,7 @@ exports[`sqle/VersionManagement/Detail render workflow order retry 1`] = `
                     class="css-bspaai"
                   >
                     <h3
-                      class="ant-typography css-p50odb css-dev-only-do-not-override-txh9fw"
+                      class="ant-typography css-p50odb"
                     >
                       <span
                         class="anticon title-icon"
@@ -2446,7 +2446,7 @@ exports[`sqle/VersionManagement/Detail render workflow order retry 1`] = `
                       </span>
                     </h3>
                     <div
-                      class="css-dev-only-do-not-override-txh9fw ant-empty ant-empty-normal"
+                      class="ant-empty ant-empty-normal"
                     >
                       <div
                         class="ant-empty-image"

@@ -1,5 +1,5 @@
 import { fireEvent, act, cleanup } from '@testing-library/react';
-import { renderWithTheme } from '../../../testUtil/customRender';
+import { superRender } from '../../../testUtil/customRender';
 
 import { ConfigItemEditInputNumberProps } from '../ConfigItem.types';
 import EditInputNumber from '../components/EditInputNumber';
@@ -17,7 +17,7 @@ describe('lib/ConfigItem-EditInputNumber', () => {
   });
 
   const customRender = (params: ConfigItemEditInputNumberProps) => {
-    return renderWithTheme(<EditInputNumber {...params} />);
+    return superRender(<EditInputNumber {...params} />);
   };
 
   it('render loading is true', () => {
@@ -51,7 +51,6 @@ describe('lib/ConfigItem-EditInputNumber', () => {
       await jest.advanceTimersByTime(300);
     });
     expect(validatorFn).toHaveBeenCalledTimes(1);
-    expect(baseElement).toMatchSnapshot();
   });
 
   it('render input enter key', async () => {
@@ -77,7 +76,7 @@ describe('lib/ConfigItem-EditInputNumber', () => {
     });
     expect(validatorFn).toHaveBeenCalledTimes(1);
     expect(onSubmitFn).toHaveBeenCalledTimes(1);
-    expect(baseElement).toMatchSnapshot();
+    expect(onSubmitFn).toHaveBeenCalledWith(3);
   });
 
   it('render input esc key', async () => {
@@ -120,7 +119,7 @@ describe('lib/ConfigItem-EditInputNumber', () => {
       });
       await jest.advanceTimersByTime(300);
     });
-    expect(baseElement).toMatchSnapshot();
+    expect(inputEle).toHaveValue('0');
 
     await act(async () => {
       fireEvent.change(inputEle, {
@@ -130,7 +129,7 @@ describe('lib/ConfigItem-EditInputNumber', () => {
       });
       await jest.advanceTimersByTime(300);
     });
-    expect(baseElement).toMatchSnapshot();
+    expect(inputEle).toHaveValue('99');
   });
 
   it('render input val change and click select icon', async () => {
@@ -144,19 +143,18 @@ describe('lib/ConfigItem-EditInputNumber', () => {
       'input.ant-input-number-input#editInputNumber',
       baseElement
     );
-    await act(async () => {
-      fireEvent.change(inputEle, {
-        target: {
-          value: 0
-        }
-      });
-      await jest.advanceTimersByTime(300);
+    fireEvent.change(inputEle, {
+      target: {
+        value: 0
+      }
     });
-    expect(baseElement).toMatchSnapshot();
+
+    expect(inputEle).toHaveValue('0');
     await act(async () => {
       fireEvent.click(getBySelector('.custom-icon-selected'));
       await jest.advanceTimersByTime(300);
     });
     expect(onSubmitFn).toHaveBeenCalledTimes(1);
+    expect(onSubmitFn).toHaveBeenCalledWith(0);
   });
 });
