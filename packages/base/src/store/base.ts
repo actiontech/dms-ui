@@ -8,6 +8,7 @@ import nav from './nav';
 import dataExport from './dataExport';
 import permission from './permission';
 import cloudBeaver from './cloudBeaver';
+import availabilityZone from './availabilityZone';
 
 export const baseStoreData = {
   user,
@@ -19,5 +20,6 @@ export const baseStoreData = {
   nav,
   dataExport,
   permission,
-  cloudBeaver
+  cloudBeaver,
+  availabilityZone
 };
