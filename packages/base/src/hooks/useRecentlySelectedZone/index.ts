@@ -143,7 +143,11 @@ const useRecentlySelectedZone = () => {
     setRecentlySelectedZoneRecord([]);
     setAvailabilityZone(undefined);
     setStorageRecentlySelectedZoneRecord([]);
-  }, [setAvailabilityZone, setRecentlySelectedZoneRecord, setStorageRecentlySelectedZoneRecord]);
+  }, [
+    setAvailabilityZone,
+    setRecentlySelectedZoneRecord,
+    setStorageRecentlySelectedZoneRecord
+  ]);
 
   return {
     availabilityZone,
