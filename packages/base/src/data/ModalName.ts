@@ -28,5 +28,8 @@ export enum ModalName {
   //data export
   DMS_UPDATE_EXPORT_TASK_INFO = 'DMS_UPDATE_EXPORT_TASK_INFO',
 
-  Cloud_Beaver_Sql_Operation_Audit_Detail = 'Cloud_Beaver_Sql_Operation_Audit_Detail'
+  Cloud_Beaver_Sql_Operation_Audit_Detail = 'Cloud_Beaver_Sql_Operation_Audit_Detail',
+
+  DMS_Create_Availability_zone = 'DMS_Create_Availability_zone',
+  DMS_Update_Availability_zone = 'DMS_Update_Availability_zone'
 }

@@ -1,4 +1,3 @@
-/* eslint-disable no-console */
 import chalk from 'chalk';
 
 function stringify(arg: unknown): string {
@@ -11,7 +10,7 @@ function stringify(arg: unknown): string {
   } else if (typeof arg === 'object') {
     try {
       return JSON.stringify(arg, null, 2);
-    } catch (error) {
+    } catch {
       return '[Circular]';
     }
   } else {

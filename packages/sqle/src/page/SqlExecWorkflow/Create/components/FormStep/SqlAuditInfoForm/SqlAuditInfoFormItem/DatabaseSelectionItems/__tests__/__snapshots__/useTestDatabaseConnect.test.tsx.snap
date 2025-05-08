@@ -5,7 +5,7 @@ exports[`test useTestDatabaseConnect should render test database connect info co
 exports[`test useTestDatabaseConnect should render test database connect info correctly with connect succeed  1`] = `
 <div>
   <div
-    class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-start css-1nec0wd"
+    class="ant-space ant-space-horizontal ant-space-align-start css-1nec0wd"
   >
     <div
       class="ant-space-item"
@@ -32,7 +32,7 @@ exports[`test useTestDatabaseConnect should render test database connect info co
       class="ant-space-item"
     >
       <span
-        class="ant-typography ant-typography-success css-dev-only-do-not-override-txh9fw"
+        class="ant-typography ant-typography-success"
       >
         <pre>
           数据源连通性测试成功

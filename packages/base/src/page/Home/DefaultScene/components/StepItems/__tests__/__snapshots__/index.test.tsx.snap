@@ -3,10 +3,10 @@
 exports[`test base/Home/StepItems should match snapshot 1`] = `
 <div>
   <div
-    class="ant-row ant-row-no-wrap ant-row-middle step-container css-dev-only-do-not-override-txh9fw"
+    class="ant-row ant-row-no-wrap ant-row-middle step-container"
   >
     <div
-      class="ant-col icon-wrapper css-dev-only-do-not-override-txh9fw"
+      class="ant-col icon-wrapper"
       style="flex: 0 0 40px; min-width: 0;"
     >
       <span
@@ -26,7 +26,7 @@ exports[`test base/Home/StepItems should match snapshot 1`] = `
       </span>
     </div>
     <div
-      class="ant-col step-box css-dev-only-do-not-override-txh9fw"
+      class="ant-col step-box"
       style="flex-basis: auto; min-width: 0;"
     >
       <div
@@ -48,10 +48,10 @@ exports[`test base/Home/StepItems should match snapshot 1`] = `
         </div>
       </div>
       <div
-        class="ant-row css-dev-only-do-not-override-txh9fw"
+        class="ant-row"
       >
         <div
-          class="ant-col ant-col-8 content-wrapper css-dev-only-do-not-override-txh9fw"
+          class="ant-col ant-col-8 content-wrapper"
         >
           <div
             class="sub-title"
@@ -64,7 +64,7 @@ exports[`test base/Home/StepItems should match snapshot 1`] = `
             管理数据源相关操作
           </div>
           <div
-            class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center actions"
+            class="ant-space ant-space-horizontal ant-space-align-center actions"
             style="flex-wrap: wrap; margin-bottom: -8px;"
           >
             <div
@@ -72,11 +72,11 @@ exports[`test base/Home/StepItems should match snapshot 1`] = `
               style="margin-right: 8px; padding-bottom: 8px;"
             >
               <button
-                class="ant-btn css-dev-only-do-not-override-qzvrju ant-btn-default ant-btn-sm guidance-button-wrapper css-aj0zfl"
+                class="ant-btn ant-btn-default ant-btn-sm guidance-button-wrapper css-1jtuni2"
                 type="button"
               >
                 <div
-                  class="ant-space css-dev-only-do-not-override-qzvrju ant-space-horizontal ant-space-align-center"
+                  class="ant-space ant-space-horizontal ant-space-align-center"
                 >
                   <div
                     class="ant-space-item"
@@ -91,11 +91,11 @@ exports[`test base/Home/StepItems should match snapshot 1`] = `
               style="padding-bottom: 8px;"
             >
               <button
-                class="ant-btn css-dev-only-do-not-override-qzvrju ant-btn-default ant-btn-sm guidance-button-wrapper css-aj0zfl"
+                class="ant-btn ant-btn-default ant-btn-sm guidance-button-wrapper css-1jtuni2"
                 type="button"
               >
                 <div
-                  class="ant-space css-dev-only-do-not-override-qzvrju ant-space-horizontal ant-space-align-center"
+                  class="ant-space ant-space-horizontal ant-space-align-center"
                 >
                   <div
                     class="ant-space-item"
@@ -108,7 +108,7 @@ exports[`test base/Home/StepItems should match snapshot 1`] = `
           </div>
         </div>
         <div
-          class="ant-col ant-col-8 content-wrapper css-dev-only-do-not-override-txh9fw"
+          class="ant-col ant-col-8 content-wrapper"
         >
           <div
             class="sub-title"
@@ -121,7 +121,7 @@ exports[`test base/Home/StepItems should match snapshot 1`] = `
             管理外部数据源相关操作
           </div>
           <div
-            class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center actions"
+            class="ant-space ant-space-horizontal ant-space-align-center actions"
             style="flex-wrap: wrap; margin-bottom: -8px;"
           >
             <div
@@ -129,11 +129,11 @@ exports[`test base/Home/StepItems should match snapshot 1`] = `
               style="margin-right: 8px; padding-bottom: 8px;"
             >
               <button
-                class="ant-btn css-dev-only-do-not-override-qzvrju ant-btn-default ant-btn-sm guidance-button-wrapper css-aj0zfl"
+                class="ant-btn ant-btn-default ant-btn-sm guidance-button-wrapper css-1jtuni2"
                 type="button"
               >
                 <div
-                  class="ant-space css-dev-only-do-not-override-qzvrju ant-space-horizontal ant-space-align-center"
+                  class="ant-space ant-space-horizontal ant-space-align-center"
                 >
                   <div
                     class="ant-space-item"
@@ -148,11 +148,11 @@ exports[`test base/Home/StepItems should match snapshot 1`] = `
               style="padding-bottom: 8px;"
             >
               <button
-                class="ant-btn css-dev-only-do-not-override-qzvrju ant-btn-default ant-btn-sm guidance-button-wrapper css-aj0zfl"
+                class="ant-btn ant-btn-default ant-btn-sm guidance-button-wrapper css-1jtuni2"
                 type="button"
               >
                 <div
-                  class="ant-space css-dev-only-do-not-override-qzvrju ant-space-horizontal ant-space-align-center"
+                  class="ant-space ant-space-horizontal ant-space-align-center"
                 >
                   <div
                     class="ant-space-item"
@@ -168,10 +168,10 @@ exports[`test base/Home/StepItems should match snapshot 1`] = `
     </div>
   </div>
   <div
-    class="ant-row ant-row-no-wrap ant-row-middle step-container css-dev-only-do-not-override-txh9fw"
+    class="ant-row ant-row-no-wrap ant-row-middle step-container"
   >
     <div
-      class="ant-col icon-wrapper css-dev-only-do-not-override-txh9fw"
+      class="ant-col icon-wrapper"
       style="flex: 0 0 40px; min-width: 0;"
     >
       <span
@@ -195,7 +195,7 @@ exports[`test base/Home/StepItems should match snapshot 1`] = `
       </span>
     </div>
     <div
-      class="ant-col step-box css-dev-only-do-not-override-txh9fw"
+      class="ant-col step-box"
       style="flex-basis: auto; min-width: 0;"
     >
       <div
@@ -217,10 +217,10 @@ exports[`test base/Home/StepItems should match snapshot 1`] = `
         </div>
       </div>
       <div
-        class="ant-row css-dev-only-do-not-override-txh9fw"
+        class="ant-row"
       >
         <div
-          class="ant-col ant-col-8 content-wrapper css-dev-only-do-not-override-txh9fw"
+          class="ant-col ant-col-8 content-wrapper"
         >
           <div
             class="sub-title"
@@ -233,7 +233,7 @@ exports[`test base/Home/StepItems should match snapshot 1`] = `
             为项目添加成员/成员组，并配置相应的数据源操作权限
           </div>
           <div
-            class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center actions"
+            class="ant-space ant-space-horizontal ant-space-align-center actions"
             style="flex-wrap: wrap; margin-bottom: -8px;"
           >
             <div
@@ -241,11 +241,11 @@ exports[`test base/Home/StepItems should match snapshot 1`] = `
               style="padding-bottom: 8px;"
             >
               <button
-                class="ant-btn css-dev-only-do-not-override-qzvrju ant-btn-default ant-btn-sm guidance-button-wrapper css-aj0zfl"
+                class="ant-btn ant-btn-default ant-btn-sm guidance-button-wrapper css-1jtuni2"
                 type="button"
               >
                 <div
-                  class="ant-space css-dev-only-do-not-override-qzvrju ant-space-horizontal ant-space-align-center"
+                  class="ant-space ant-space-horizontal ant-space-align-center"
                 >
                   <div
                     class="ant-space-item"
@@ -261,10 +261,10 @@ exports[`test base/Home/StepItems should match snapshot 1`] = `
     </div>
   </div>
   <div
-    class="ant-row ant-row-no-wrap ant-row-middle step-container css-dev-only-do-not-override-txh9fw"
+    class="ant-row ant-row-no-wrap ant-row-middle step-container"
   >
     <div
-      class="ant-col icon-wrapper css-dev-only-do-not-override-txh9fw"
+      class="ant-col icon-wrapper"
       style="flex: 0 0 40px; min-width: 0;"
     >
       <span
@@ -288,7 +288,7 @@ exports[`test base/Home/StepItems should match snapshot 1`] = `
       </span>
     </div>
     <div
-      class="ant-col step-box css-dev-only-do-not-override-txh9fw"
+      class="ant-col step-box"
       style="flex-basis: auto; min-width: 0;"
     >
       <div
@@ -310,10 +310,10 @@ exports[`test base/Home/StepItems should match snapshot 1`] = `
         </div>
       </div>
       <div
-        class="ant-row css-dev-only-do-not-override-txh9fw"
+        class="ant-row"
       >
         <div
-          class="ant-col ant-col-8 content-wrapper css-dev-only-do-not-override-txh9fw"
+          class="ant-col ant-col-8 content-wrapper"
         >
           <div
             class="sub-title"
@@ -326,7 +326,7 @@ exports[`test base/Home/StepItems should match snapshot 1`] = `
             查看平台支持的审核规则，并自定义审核规则模板，监察已生成的SQL，或使用SQL审核改善SQL质量
           </div>
           <div
-            class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center actions"
+            class="ant-space ant-space-horizontal ant-space-align-center actions"
             style="flex-wrap: wrap; margin-bottom: -8px;"
           >
             <div
@@ -334,11 +334,11 @@ exports[`test base/Home/StepItems should match snapshot 1`] = `
               style="margin-right: 8px; padding-bottom: 8px;"
             >
               <button
-                class="ant-btn css-dev-only-do-not-override-qzvrju ant-btn-default ant-btn-sm guidance-button-wrapper css-aj0zfl"
+                class="ant-btn ant-btn-default ant-btn-sm guidance-button-wrapper css-1jtuni2"
                 type="button"
               >
                 <div
-                  class="ant-space css-dev-only-do-not-override-qzvrju ant-space-horizontal ant-space-align-center"
+                  class="ant-space ant-space-horizontal ant-space-align-center"
                 >
                   <div
                     class="ant-space-item"
@@ -353,11 +353,11 @@ exports[`test base/Home/StepItems should match snapshot 1`] = `
               style="margin-right: 8px; padding-bottom: 8px;"
             >
               <button
-                class="ant-btn css-dev-only-do-not-override-qzvrju ant-btn-default ant-btn-sm guidance-button-wrapper css-aj0zfl"
+                class="ant-btn ant-btn-default ant-btn-sm guidance-button-wrapper css-1jtuni2"
                 type="button"
               >
                 <div
-                  class="ant-space css-dev-only-do-not-override-qzvrju ant-space-horizontal ant-space-align-center"
+                  class="ant-space ant-space-horizontal ant-space-align-center"
                 >
                   <div
                     class="ant-space-item"
@@ -372,11 +372,11 @@ exports[`test base/Home/StepItems should match snapshot 1`] = `
               style="margin-right: 8px; padding-bottom: 8px;"
             >
               <button
-                class="ant-btn css-dev-only-do-not-override-qzvrju ant-btn-default ant-btn-sm guidance-button-wrapper css-aj0zfl"
+                class="ant-btn ant-btn-default ant-btn-sm guidance-button-wrapper css-1jtuni2"
                 type="button"
               >
                 <div
-                  class="ant-space css-dev-only-do-not-override-qzvrju ant-space-horizontal ant-space-align-center"
+                  class="ant-space ant-space-horizontal ant-space-align-center"
                 >
                   <div
                     class="ant-space-item"
@@ -391,11 +391,11 @@ exports[`test base/Home/StepItems should match snapshot 1`] = `
               style="padding-bottom: 8px;"
             >
               <button
-                class="ant-btn css-dev-only-do-not-override-qzvrju ant-btn-default ant-btn-sm guidance-button-wrapper css-aj0zfl"
+                class="ant-btn ant-btn-default ant-btn-sm guidance-button-wrapper css-1jtuni2"
                 type="button"
               >
                 <div
-                  class="ant-space css-dev-only-do-not-override-qzvrju ant-space-horizontal ant-space-align-center"
+                  class="ant-space ant-space-horizontal ant-space-align-center"
                 >
                   <div
                     class="ant-space-item"
@@ -408,7 +408,7 @@ exports[`test base/Home/StepItems should match snapshot 1`] = `
           </div>
         </div>
         <div
-          class="ant-col ant-col-8 content-wrapper css-dev-only-do-not-override-txh9fw"
+          class="ant-col ant-col-8 content-wrapper"
         >
           <div
             class="sub-title"
@@ -421,7 +421,7 @@ exports[`test base/Home/StepItems should match snapshot 1`] = `
             兼顾账号发现及管理，监控数据源账号安全
           </div>
           <div
-            class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center actions"
+            class="ant-space ant-space-horizontal ant-space-align-center actions"
             style="flex-wrap: wrap; margin-bottom: -8px;"
           >
             <div
@@ -429,11 +429,11 @@ exports[`test base/Home/StepItems should match snapshot 1`] = `
               style="margin-right: 8px; padding-bottom: 8px;"
             >
               <button
-                class="ant-btn css-dev-only-do-not-override-qzvrju ant-btn-default ant-btn-sm guidance-button-wrapper css-aj0zfl"
+                class="ant-btn ant-btn-default ant-btn-sm guidance-button-wrapper css-1jtuni2"
                 type="button"
               >
                 <div
-                  class="ant-space css-dev-only-do-not-override-qzvrju ant-space-horizontal ant-space-align-center"
+                  class="ant-space ant-space-horizontal ant-space-align-center"
                 >
                   <div
                     class="ant-space-item"
@@ -448,11 +448,11 @@ exports[`test base/Home/StepItems should match snapshot 1`] = `
               style="padding-bottom: 8px;"
             >
               <button
-                class="ant-btn css-dev-only-do-not-override-qzvrju ant-btn-default ant-btn-sm guidance-button-wrapper css-aj0zfl"
+                class="ant-btn ant-btn-default ant-btn-sm guidance-button-wrapper css-1jtuni2"
                 type="button"
               >
                 <div
-                  class="ant-space css-dev-only-do-not-override-qzvrju ant-space-horizontal ant-space-align-center"
+                  class="ant-space ant-space-horizontal ant-space-align-center"
                 >
                   <div
                     class="ant-space-item"
@@ -465,7 +465,7 @@ exports[`test base/Home/StepItems should match snapshot 1`] = `
           </div>
         </div>
         <div
-          class="ant-col ant-col-8 content-wrapper css-dev-only-do-not-override-txh9fw"
+          class="ant-col ant-col-8 content-wrapper"
         >
           <div
             class="sub-title"
@@ -478,7 +478,7 @@ exports[`test base/Home/StepItems should match snapshot 1`] = `
             根据实际业务流转变更流程模板
           </div>
           <div
-            class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center actions"
+            class="ant-space ant-space-horizontal ant-space-align-center actions"
             style="flex-wrap: wrap; margin-bottom: -8px;"
           >
             <div
@@ -486,11 +486,11 @@ exports[`test base/Home/StepItems should match snapshot 1`] = `
               style="padding-bottom: 8px;"
             >
               <button
-                class="ant-btn css-dev-only-do-not-override-qzvrju ant-btn-default ant-btn-sm guidance-button-wrapper css-aj0zfl"
+                class="ant-btn ant-btn-default ant-btn-sm guidance-button-wrapper css-1jtuni2"
                 type="button"
               >
                 <div
-                  class="ant-space css-dev-only-do-not-override-qzvrju ant-space-horizontal ant-space-align-center"
+                  class="ant-space ant-space-horizontal ant-space-align-center"
                 >
                   <div
                     class="ant-space-item"
@@ -506,10 +506,10 @@ exports[`test base/Home/StepItems should match snapshot 1`] = `
     </div>
   </div>
   <div
-    class="ant-row ant-row-no-wrap ant-row-middle step-container css-dev-only-do-not-override-txh9fw"
+    class="ant-row ant-row-no-wrap ant-row-middle step-container"
   >
     <div
-      class="ant-col icon-wrapper css-dev-only-do-not-override-txh9fw"
+      class="ant-col icon-wrapper"
       style="flex: 0 0 40px; min-width: 0;"
     >
       <span
@@ -534,7 +534,7 @@ exports[`test base/Home/StepItems should match snapshot 1`] = `
       </span>
     </div>
     <div
-      class="ant-col step-box css-dev-only-do-not-override-txh9fw"
+      class="ant-col step-box"
       style="flex-basis: auto; min-width: 0;"
     >
       <div
@@ -556,10 +556,10 @@ exports[`test base/Home/StepItems should match snapshot 1`] = `
         </div>
       </div>
       <div
-        class="ant-row css-dev-only-do-not-override-txh9fw"
+        class="ant-row"
       >
         <div
-          class="ant-col ant-col-8 content-wrapper css-dev-only-do-not-override-txh9fw"
+          class="ant-col ant-col-8 content-wrapper"
         >
           <div
             class="sub-title"
@@ -572,7 +572,7 @@ exports[`test base/Home/StepItems should match snapshot 1`] = `
             使用在线的数据编辑器（CloudBeaver）进行SQL查询和编辑
           </div>
           <div
-            class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center actions"
+            class="ant-space ant-space-horizontal ant-space-align-center actions"
             style="flex-wrap: wrap; margin-bottom: -8px;"
           >
             <div
@@ -580,11 +580,11 @@ exports[`test base/Home/StepItems should match snapshot 1`] = `
               style="padding-bottom: 8px;"
             >
               <button
-                class="ant-btn css-dev-only-do-not-override-qzvrju ant-btn-default ant-btn-sm guidance-button-wrapper css-aj0zfl"
+                class="ant-btn ant-btn-default ant-btn-sm guidance-button-wrapper css-1jtuni2"
                 type="button"
               >
                 <div
-                  class="ant-space css-dev-only-do-not-override-qzvrju ant-space-horizontal ant-space-align-center"
+                  class="ant-space ant-space-horizontal ant-space-align-center"
                 >
                   <div
                     class="ant-space-item"
@@ -597,7 +597,7 @@ exports[`test base/Home/StepItems should match snapshot 1`] = `
           </div>
         </div>
         <div
-          class="ant-col ant-col-8 content-wrapper css-dev-only-do-not-override-txh9fw"
+          class="ant-col ant-col-8 content-wrapper"
         >
           <div
             class="sub-title"
@@ -610,7 +610,7 @@ exports[`test base/Home/StepItems should match snapshot 1`] = `
             在线提起SQL变更申请，经由审批流程完成上线
           </div>
           <div
-            class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center actions"
+            class="ant-space ant-space-horizontal ant-space-align-center actions"
             style="flex-wrap: wrap; margin-bottom: -8px;"
           >
             <div
@@ -618,11 +618,11 @@ exports[`test base/Home/StepItems should match snapshot 1`] = `
               style="padding-bottom: 8px;"
             >
               <button
-                class="ant-btn css-dev-only-do-not-override-qzvrju ant-btn-default ant-btn-sm guidance-button-wrapper css-aj0zfl"
+                class="ant-btn ant-btn-default ant-btn-sm guidance-button-wrapper css-1jtuni2"
                 type="button"
               >
                 <div
-                  class="ant-space css-dev-only-do-not-override-qzvrju ant-space-horizontal ant-space-align-center"
+                  class="ant-space ant-space-horizontal ant-space-align-center"
                 >
                   <div
                     class="ant-space-item"
@@ -635,7 +635,7 @@ exports[`test base/Home/StepItems should match snapshot 1`] = `
           </div>
         </div>
         <div
-          class="ant-col ant-col-8 content-wrapper css-dev-only-do-not-override-txh9fw"
+          class="ant-col ant-col-8 content-wrapper"
         >
           <div
             class="sub-title"
@@ -648,7 +648,7 @@ exports[`test base/Home/StepItems should match snapshot 1`] = `
             发起数据导出工单，审核通过后获取数据集。
           </div>
           <div
-            class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center actions"
+            class="ant-space ant-space-horizontal ant-space-align-center actions"
             style="flex-wrap: wrap; margin-bottom: -8px;"
           >
             <div
@@ -656,11 +656,11 @@ exports[`test base/Home/StepItems should match snapshot 1`] = `
               style="padding-bottom: 8px;"
             >
               <button
-                class="ant-btn css-dev-only-do-not-override-qzvrju ant-btn-default ant-btn-sm guidance-button-wrapper css-aj0zfl"
+                class="ant-btn ant-btn-default ant-btn-sm guidance-button-wrapper css-1jtuni2"
                 type="button"
               >
                 <div
-                  class="ant-space css-dev-only-do-not-override-qzvrju ant-space-horizontal ant-space-align-center"
+                  class="ant-space ant-space-horizontal ant-space-align-center"
                 >
                   <div
                     class="ant-space-item"
@@ -673,7 +673,7 @@ exports[`test base/Home/StepItems should match snapshot 1`] = `
           </div>
         </div>
         <div
-          class="ant-col ant-col-8 content-wrapper css-dev-only-do-not-override-txh9fw"
+          class="ant-col ant-col-8 content-wrapper"
         >
           <div
             class="sub-title"
@@ -686,7 +686,7 @@ exports[`test base/Home/StepItems should match snapshot 1`] = `
             开启脱敏，保障敏感数据安全
           </div>
           <div
-            class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center actions"
+            class="ant-space ant-space-horizontal ant-space-align-center actions"
             style="flex-wrap: wrap; margin-bottom: -8px;"
           >
             <div
@@ -694,11 +694,11 @@ exports[`test base/Home/StepItems should match snapshot 1`] = `
               style="padding-bottom: 8px;"
             >
               <button
-                class="ant-btn css-dev-only-do-not-override-qzvrju ant-btn-default ant-btn-sm guidance-button-wrapper css-aj0zfl"
+                class="ant-btn ant-btn-default ant-btn-sm guidance-button-wrapper css-1jtuni2"
                 type="button"
               >
                 <div
-                  class="ant-space css-dev-only-do-not-override-qzvrju ant-space-horizontal ant-space-align-center"
+                  class="ant-space ant-space-horizontal ant-space-align-center"
                 >
                   <div
                     class="ant-space-item"
@@ -714,10 +714,10 @@ exports[`test base/Home/StepItems should match snapshot 1`] = `
     </div>
   </div>
   <div
-    class="ant-row ant-row-no-wrap ant-row-middle step-container css-dev-only-do-not-override-txh9fw"
+    class="ant-row ant-row-no-wrap ant-row-middle step-container"
   >
     <div
-      class="ant-col icon-wrapper css-dev-only-do-not-override-txh9fw"
+      class="ant-col icon-wrapper"
       style="flex: 0 0 40px; min-width: 0;"
     >
       <span
@@ -740,7 +740,7 @@ exports[`test base/Home/StepItems should match snapshot 1`] = `
       </span>
     </div>
     <div
-      class="ant-col step-box css-dev-only-do-not-override-txh9fw"
+      class="ant-col step-box"
       style="flex-basis: auto; min-width: 0;"
     >
       <div
@@ -762,10 +762,10 @@ exports[`test base/Home/StepItems should match snapshot 1`] = `
         </div>
       </div>
       <div
-        class="ant-row css-dev-only-do-not-override-txh9fw"
+        class="ant-row"
       >
         <div
-          class="ant-col ant-col-8 content-wrapper css-dev-only-do-not-override-txh9fw"
+          class="ant-col ant-col-8 content-wrapper"
         >
           <div
             class="sub-title"
@@ -778,7 +778,7 @@ exports[`test base/Home/StepItems should match snapshot 1`] = `
             审计平台内用户操作
           </div>
           <div
-            class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center actions"
+            class="ant-space ant-space-horizontal ant-space-align-center actions"
             style="flex-wrap: wrap; margin-bottom: -8px;"
           >
             <div
@@ -786,11 +786,11 @@ exports[`test base/Home/StepItems should match snapshot 1`] = `
               style="padding-bottom: 8px;"
             >
               <button
-                class="ant-btn css-dev-only-do-not-override-qzvrju ant-btn-default ant-btn-sm guidance-button-wrapper css-aj0zfl"
+                class="ant-btn ant-btn-default ant-btn-sm guidance-button-wrapper css-1jtuni2"
                 type="button"
               >
                 <div
-                  class="ant-space css-dev-only-do-not-override-qzvrju ant-space-horizontal ant-space-align-center"
+                  class="ant-space ant-space-horizontal ant-space-align-center"
                 >
                   <div
                     class="ant-space-item"
@@ -811,10 +811,10 @@ exports[`test base/Home/StepItems should match snapshot 1`] = `
 exports[`test base/Home/StepItems should match snapshot 2`] = `
 <div>
   <div
-    class="ant-row ant-row-no-wrap ant-row-middle step-container css-dev-only-do-not-override-txh9fw"
+    class="ant-row ant-row-no-wrap ant-row-middle step-container"
   >
     <div
-      class="ant-col icon-wrapper css-dev-only-do-not-override-txh9fw"
+      class="ant-col icon-wrapper"
       style="flex: 0 0 40px; min-width: 0;"
     >
       <span
@@ -839,7 +839,7 @@ exports[`test base/Home/StepItems should match snapshot 2`] = `
       </span>
     </div>
     <div
-      class="ant-col step-box css-dev-only-do-not-override-txh9fw"
+      class="ant-col step-box"
       style="flex-basis: auto; min-width: 0;"
     >
       <div
@@ -861,10 +861,10 @@ exports[`test base/Home/StepItems should match snapshot 2`] = `
         </div>
       </div>
       <div
-        class="ant-row css-dev-only-do-not-override-txh9fw"
+        class="ant-row"
       >
         <div
-          class="ant-col ant-col-8 content-wrapper css-dev-only-do-not-override-txh9fw"
+          class="ant-col ant-col-8 content-wrapper"
         >
           <div
             class="sub-title"
@@ -877,7 +877,7 @@ exports[`test base/Home/StepItems should match snapshot 2`] = `
             使用在线的数据编辑器（CloudBeaver）进行SQL查询和编辑
           </div>
           <div
-            class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center actions"
+            class="ant-space ant-space-horizontal ant-space-align-center actions"
             style="flex-wrap: wrap; margin-bottom: -8px;"
           >
             <div
@@ -885,11 +885,11 @@ exports[`test base/Home/StepItems should match snapshot 2`] = `
               style="padding-bottom: 8px;"
             >
               <button
-                class="ant-btn css-dev-only-do-not-override-qzvrju ant-btn-default ant-btn-sm guidance-button-wrapper css-aj0zfl"
+                class="ant-btn ant-btn-default ant-btn-sm guidance-button-wrapper css-1jtuni2"
                 type="button"
               >
                 <div
-                  class="ant-space css-dev-only-do-not-override-qzvrju ant-space-horizontal ant-space-align-center"
+                  class="ant-space ant-space-horizontal ant-space-align-center"
                 >
                   <div
                     class="ant-space-item"
@@ -902,7 +902,7 @@ exports[`test base/Home/StepItems should match snapshot 2`] = `
           </div>
         </div>
         <div
-          class="ant-col ant-col-8 content-wrapper css-dev-only-do-not-override-txh9fw"
+          class="ant-col ant-col-8 content-wrapper"
         >
           <div
             class="sub-title"
@@ -915,7 +915,7 @@ exports[`test base/Home/StepItems should match snapshot 2`] = `
             在线提起SQL变更申请，经由审批流程完成上线
           </div>
           <div
-            class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center actions"
+            class="ant-space ant-space-horizontal ant-space-align-center actions"
             style="flex-wrap: wrap; margin-bottom: -8px;"
           >
             <div
@@ -923,11 +923,11 @@ exports[`test base/Home/StepItems should match snapshot 2`] = `
               style="padding-bottom: 8px;"
             >
               <button
-                class="ant-btn css-dev-only-do-not-override-qzvrju ant-btn-default ant-btn-sm guidance-button-wrapper css-aj0zfl"
+                class="ant-btn ant-btn-default ant-btn-sm guidance-button-wrapper css-1jtuni2"
                 type="button"
               >
                 <div
-                  class="ant-space css-dev-only-do-not-override-qzvrju ant-space-horizontal ant-space-align-center"
+                  class="ant-space ant-space-horizontal ant-space-align-center"
                 >
                   <div
                     class="ant-space-item"
@@ -940,7 +940,7 @@ exports[`test base/Home/StepItems should match snapshot 2`] = `
           </div>
         </div>
         <div
-          class="ant-col ant-col-8 content-wrapper css-dev-only-do-not-override-txh9fw"
+          class="ant-col ant-col-8 content-wrapper"
         >
           <div
             class="sub-title"
@@ -953,7 +953,7 @@ exports[`test base/Home/StepItems should match snapshot 2`] = `
             发起数据导出工单，审核通过后获取数据集。
           </div>
           <div
-            class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center actions"
+            class="ant-space ant-space-horizontal ant-space-align-center actions"
             style="flex-wrap: wrap; margin-bottom: -8px;"
           >
             <div
@@ -961,11 +961,11 @@ exports[`test base/Home/StepItems should match snapshot 2`] = `
               style="padding-bottom: 8px;"
             >
               <button
-                class="ant-btn css-dev-only-do-not-override-qzvrju ant-btn-default ant-btn-sm guidance-button-wrapper css-aj0zfl"
+                class="ant-btn ant-btn-default ant-btn-sm guidance-button-wrapper css-1jtuni2"
                 type="button"
               >
                 <div
-                  class="ant-space css-dev-only-do-not-override-qzvrju ant-space-horizontal ant-space-align-center"
+                  class="ant-space ant-space-horizontal ant-space-align-center"
                 >
                   <div
                     class="ant-space-item"

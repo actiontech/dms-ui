@@ -1,12 +1,12 @@
 import sms from '../../../../testUtils/mockApi/sms';
 import { cleanup, fireEvent, act, screen } from '@testing-library/react';
-import { superRender } from '@actiontech/shared/lib/testUtil/customRender';
 import { getBySelector } from '@actiontech/shared/lib/testUtil/customQuery';
 import PersonalSMS from '..';
 import { createSpySuccessResponse } from '@actiontech/shared/lib/testUtil/mockApi';
 import { mockUseCurrentUser } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentUser';
 import { mockUserInfo } from '@actiontech/shared/lib/testUtil/mockHook/data';
 import account from '../../../../testUtils/mockApi/account';
+import { superRender } from '../../../../testUtils/customRender';
 
 describe('base/System/GlobalSetting/PersonalSMS', () => {
   let updateCurrentUserSpy: jest.SpyInstance;

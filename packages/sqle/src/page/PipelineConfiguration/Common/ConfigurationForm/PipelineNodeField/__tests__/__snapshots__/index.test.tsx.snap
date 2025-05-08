@@ -7,10 +7,10 @@ exports[`sqle/PipelineConfiguration/PipelineNodeField render add offline node  1
       class="css-xsucw9"
     >
       <h1
-        class="ant-typography css-1eepp70 css-dev-only-do-not-override-txh9fw"
+        class="ant-typography css-1eepp70"
       >
         <div
-          class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center sub-title"
+          class="ant-space ant-space-horizontal ant-space-align-center sub-title"
         >
           <div
             class="ant-space-item"
@@ -22,7 +22,7 @@ exports[`sqle/PipelineConfiguration/PipelineNodeField render add offline node  1
             class="ant-space-item"
           >
             <button
-              class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary basic-button-wrapper css-geipcv"
+              class="ant-btn ant-btn-primary basic-button-wrapper css-geipcv"
               type="button"
             >
               <span>
@@ -33,10 +33,10 @@ exports[`sqle/PipelineConfiguration/PipelineNodeField render add offline node  1
         </div>
       </h1>
       <div
-        class="ant-table-wrapper actiontech-table-namespace css-fxd6ka css-dev-only-do-not-override-bj9uhl"
+        class="ant-table-wrapper actiontech-table-namespace css-fxd6ka"
       >
         <div
-          class="ant-spin-nested-loading css-dev-only-do-not-override-bj9uhl"
+          class="ant-spin-nested-loading"
         >
           <div
             class="ant-spin-container"
@@ -153,7 +153,7 @@ exports[`sqle/PipelineConfiguration/PipelineNodeField render add offline node  1
                           style="text-align: center;"
                         >
                           <button
-                            class="ant-btn css-dev-only-do-not-override-bj9uhl ant-btn-text ant-btn-sm ant-btn-icon-only"
+                            class="ant-btn ant-btn-text ant-btn-sm ant-btn-icon-only"
                             style="cursor: move;"
                             type="button"
                           >
@@ -191,14 +191,14 @@ exports[`sqle/PipelineConfiguration/PipelineNodeField render add offline node  1
                             class="css-new95e"
                           >
                             <div
-                              class="ant-space css-dev-only-do-not-override-bj9uhl ant-space-horizontal ant-space-align-center"
+                              class="ant-space ant-space-horizontal ant-space-align-center"
                             >
                               <div
                                 class="ant-space-item"
                                 style="margin-right: 8px;"
                               >
                                 <button
-                                  class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                  class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
                                   type="button"
                                 >
                                   <span>
@@ -210,7 +210,7 @@ exports[`sqle/PipelineConfiguration/PipelineNodeField render add offline node  1
                                 class="ant-space-item"
                               >
                                 <button
-                                  class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm ant-btn-dangerous actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                  class="ant-btn ant-btn-default ant-btn-sm ant-btn-dangerous actiontech-table-actions-button basic-button-wrapper css-geipcv"
                                   type="button"
                                 >
                                   <span>
@@ -245,13 +245,13 @@ exports[`sqle/PipelineConfiguration/PipelineNodeField render add offline node  1
         aria-live="assertive"
         id="DndLiveRegion-3"
         role="status"
-        style="position: fixed; width: 1px; height: 1px; margin: -1px; border: 0px; padding: 0px; overflow: hidden; clip-path: inset(100%); white-space: nowrap;"
+        style="position: fixed; top: 0px; left: 0px; width: 1px; height: 1px; margin: -1px; border: 0px; padding: 0px; overflow: hidden; clip-path: inset(100%); white-space: nowrap;"
       />
     </section>
   </div>
   <div>
     <div
-      class="ant-drawer ant-drawer-right css-dev-only-do-not-override-txh9fw ant-drawer-open"
+      class="ant-drawer ant-drawer-right ant-drawer-open"
       tabindex="-1"
     >
       <div
@@ -297,34 +297,36 @@ exports[`sqle/PipelineConfiguration/PipelineNodeField render add offline node  1
                 <span
                   aria-label="close"
                   class="anticon anticon-close"
+                  data-testid="basic-drawer-close-icon"
                   role="img"
                 >
                   <svg
                     aria-hidden="true"
                     data-icon="close"
                     fill="currentColor"
+                    fill-rule="evenodd"
                     focusable="false"
                     height="1em"
                     viewBox="64 64 896 896"
                     width="1em"
                   >
                     <path
-                      d="M563.8 512l262.5-312.9c4.4-5.2.7-13.1-6.1-13.1h-79.8c-4.7 0-9.2 2.1-12.3 5.7L511.6 449.8 295.1 191.7c-3-3.6-7.5-5.7-12.3-5.7H203c-6.8 0-10.5 7.9-6.1 13.1L459.4 512 196.9 824.9A7.95 7.95 0 00203 838h79.8c4.7 0 9.2-2.1 12.3-5.7l216.5-258.1 216.5 258.1c3 3.6 7.5 5.7 12.3 5.7h79.8c6.8 0 10.5-7.9 6.1-13.1L563.8 512z"
+                      d="M799.86 166.31c.02 0 .04.02.08.06l57.69 57.7c.04.03.05.05.06.08a.12.12 0 010 .06c0 .03-.02.05-.06.09L569.93 512l287.7 287.7c.04.04.05.06.06.09a.12.12 0 010 .07c0 .02-.02.04-.06.08l-57.7 57.69c-.03.04-.05.05-.07.06a.12.12 0 01-.07 0c-.03 0-.05-.02-.09-.06L512 569.93l-287.7 287.7c-.04.04-.06.05-.09.06a.12.12 0 01-.07 0c-.02 0-.04-.02-.08-.06l-57.69-57.7c-.04-.03-.05-.05-.06-.07a.12.12 0 010-.07c0-.03.02-.05.06-.09L454.07 512l-287.7-287.7c-.04-.04-.05-.06-.06-.09a.12.12 0 010-.07c0-.02.02-.04.06-.08l57.7-57.69c.03-.04.05-.05.07-.06a.12.12 0 01.07 0c.03 0 .05.02.09.06L512 454.07l287.7-287.7c.04-.04.06-.05.09-.06a.12.12 0 01.07 0z"
                     />
                   </svg>
                 </span>
               </div>
               <form
-                class="ant-form ant-form-vertical css-dev-only-do-not-override-txh9fw"
+                class="ant-form ant-form-vertical"
               >
                 <div
-                  class="ant-form-item css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+                  class="ant-form-item css-1jlm9cy"
                 >
                   <div
-                    class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                    class="ant-row ant-form-item-row"
                   >
                     <div
-                      class="ant-col ant-form-item-label css-dev-only-do-not-override-txh9fw"
+                      class="ant-col ant-form-item-label"
                     >
                       <label
                         class="ant-form-item-required"
@@ -335,7 +337,7 @@ exports[`sqle/PipelineConfiguration/PipelineNodeField render add offline node  1
                       </label>
                     </div>
                     <div
-                      class="ant-col ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                      class="ant-col ant-form-item-control"
                     >
                       <div
                         class="ant-form-item-control-input"
@@ -345,7 +347,7 @@ exports[`sqle/PipelineConfiguration/PipelineNodeField render add offline node  1
                         >
                           <input
                             aria-required="true"
-                            class="ant-input css-dev-only-do-not-override-ywkr0o basic-input-wrapper css-1pd1cd5"
+                            class="ant-input basic-input-wrapper css-1pd1cd5"
                             id="name"
                             placeholder="请输入{{name}}"
                             type="text"
@@ -357,13 +359,13 @@ exports[`sqle/PipelineConfiguration/PipelineNodeField render add offline node  1
                   </div>
                 </div>
                 <div
-                  class="ant-form-item css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+                  class="ant-form-item css-1jlm9cy"
                 >
                   <div
-                    class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                    class="ant-row ant-form-item-row"
                   >
                     <div
-                      class="ant-col ant-form-item-label css-dev-only-do-not-override-txh9fw"
+                      class="ant-col ant-form-item-label"
                     >
                       <label
                         class="ant-form-item-required"
@@ -374,7 +376,7 @@ exports[`sqle/PipelineConfiguration/PipelineNodeField render add offline node  1
                       </label>
                     </div>
                     <div
-                      class="ant-col ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                      class="ant-col ant-form-item-control"
                     >
                       <div
                         class="ant-form-item-control-input"
@@ -384,7 +386,7 @@ exports[`sqle/PipelineConfiguration/PipelineNodeField render add offline node  1
                         >
                           <div
                             aria-required="true"
-                            class="ant-select ant-select-in-form-item basic-select-wrapper css-iy4o4x css-dev-only-do-not-override-v9sov3 ant-select-single ant-select-show-arrow"
+                            class="ant-select ant-select-in-form-item basic-select-wrapper css-iy4o4x ant-select-single ant-select-show-arrow"
                           >
                             <div
                               class="ant-select-selector"
@@ -451,13 +453,13 @@ exports[`sqle/PipelineConfiguration/PipelineNodeField render add offline node  1
                   </div>
                 </div>
                 <div
-                  class="ant-form-item has-required-style has-label-tip css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+                  class="ant-form-item has-required-style has-label-tip css-1jlm9cy"
                 >
                   <div
-                    class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                    class="ant-row ant-form-item-row"
                   >
                     <div
-                      class="ant-col ant-form-item-label css-dev-only-do-not-override-txh9fw"
+                      class="ant-col ant-form-item-label"
                     >
                       <label
                         class="ant-form-item-required"
@@ -479,7 +481,7 @@ exports[`sqle/PipelineConfiguration/PipelineNodeField render add offline node  1
                       </label>
                     </div>
                     <div
-                      class="ant-col ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                      class="ant-col ant-form-item-control"
                     >
                       <div
                         class="ant-form-item-control-input"
@@ -489,7 +491,7 @@ exports[`sqle/PipelineConfiguration/PipelineNodeField render add offline node  1
                         >
                           <div
                             aria-required="true"
-                            class="ant-select ant-select-in-form-item basic-select-wrapper css-iy4o4x css-dev-only-do-not-override-v9sov3 ant-select-single ant-select-show-arrow"
+                            class="ant-select ant-select-in-form-item basic-select-wrapper css-iy4o4x ant-select-single ant-select-show-arrow"
                           >
                             <div
                               class="ant-select-selector"
@@ -555,13 +557,13 @@ exports[`sqle/PipelineConfiguration/PipelineNodeField render add offline node  1
                   </div>
                 </div>
                 <div
-                  class="ant-form-item has-required-style has-label-tip css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+                  class="ant-form-item has-required-style has-label-tip css-1jlm9cy"
                 >
                   <div
-                    class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                    class="ant-row ant-form-item-row"
                   >
                     <div
-                      class="ant-col ant-form-item-label css-dev-only-do-not-override-txh9fw"
+                      class="ant-col ant-form-item-label"
                     >
                       <label
                         class="ant-form-item-required"
@@ -583,7 +585,7 @@ exports[`sqle/PipelineConfiguration/PipelineNodeField render add offline node  1
                       </label>
                     </div>
                     <div
-                      class="ant-col ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                      class="ant-col ant-form-item-control"
                     >
                       <div
                         class="ant-form-item-control-input"
@@ -593,7 +595,7 @@ exports[`sqle/PipelineConfiguration/PipelineNodeField render add offline node  1
                         >
                           <input
                             aria-required="true"
-                            class="ant-input css-dev-only-do-not-override-ywkr0o basic-input-wrapper css-1pd1cd5"
+                            class="ant-input basic-input-wrapper css-1pd1cd5"
                             id="object_path"
                             placeholder="请输入{{name}}"
                             type="text"
@@ -605,13 +607,13 @@ exports[`sqle/PipelineConfiguration/PipelineNodeField render add offline node  1
                   </div>
                 </div>
                 <div
-                  class="ant-form-item has-required-style has-label-tip css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+                  class="ant-form-item has-required-style has-label-tip css-1jlm9cy"
                 >
                   <div
-                    class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                    class="ant-row ant-form-item-row"
                   >
                     <div
-                      class="ant-col ant-form-item-label css-dev-only-do-not-override-txh9fw"
+                      class="ant-col ant-form-item-label"
                     >
                       <label
                         class=""
@@ -633,7 +635,7 @@ exports[`sqle/PipelineConfiguration/PipelineNodeField render add offline node  1
                       </label>
                     </div>
                     <div
-                      class="ant-col ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                      class="ant-col ant-form-item-control"
                     >
                       <div
                         class="ant-form-item-control-input"
@@ -642,7 +644,7 @@ exports[`sqle/PipelineConfiguration/PipelineNodeField render add offline node  1
                           class="ant-form-item-control-input-content"
                         >
                           <div
-                            class="ant-select ant-select-in-form-item basic-select-wrapper css-iy4o4x css-dev-only-do-not-override-v9sov3 ant-select-single ant-select-show-arrow"
+                            class="ant-select ant-select-in-form-item basic-select-wrapper css-iy4o4x ant-select-single ant-select-show-arrow"
                           >
                             <div
                               class="ant-select-selector"
@@ -708,13 +710,13 @@ exports[`sqle/PipelineConfiguration/PipelineNodeField render add offline node  1
                   </div>
                 </div>
                 <div
-                  class="ant-form-item has-required-style css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+                  class="ant-form-item has-required-style css-1jlm9cy"
                 >
                   <div
-                    class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                    class="ant-row ant-form-item-row"
                   >
                     <div
-                      class="ant-col ant-form-item-label css-dev-only-do-not-override-txh9fw"
+                      class="ant-col ant-form-item-label"
                     >
                       <label
                         class="ant-form-item-required"
@@ -725,7 +727,7 @@ exports[`sqle/PipelineConfiguration/PipelineNodeField render add offline node  1
                       </label>
                     </div>
                     <div
-                      class="ant-col ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                      class="ant-col ant-form-item-control"
                     >
                       <div
                         class="ant-form-item-control-input"
@@ -735,7 +737,7 @@ exports[`sqle/PipelineConfiguration/PipelineNodeField render add offline node  1
                         >
                           <div
                             aria-required="true"
-                            class="ant-select ant-select-in-form-item basic-select-wrapper css-iy4o4x css-dev-only-do-not-override-v9sov3 ant-select-single ant-select-allow-clear ant-select-show-arrow"
+                            class="ant-select ant-select-in-form-item basic-select-wrapper css-iy4o4x ant-select-single ant-select-allow-clear ant-select-show-arrow"
                           >
                             <div
                               class="ant-select-selector"
@@ -801,13 +803,13 @@ exports[`sqle/PipelineConfiguration/PipelineNodeField render add offline node  1
                   </div>
                 </div>
                 <div
-                  class="ant-form-item has-required-style has-label-tip css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+                  class="ant-form-item has-required-style has-label-tip css-1jlm9cy"
                 >
                   <div
-                    class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                    class="ant-row ant-form-item-row"
                   >
                     <div
-                      class="ant-col ant-form-item-label css-dev-only-do-not-override-txh9fw"
+                      class="ant-col ant-form-item-label"
                     >
                       <label
                         class="ant-form-item-required"
@@ -829,7 +831,7 @@ exports[`sqle/PipelineConfiguration/PipelineNodeField render add offline node  1
                       </label>
                     </div>
                     <div
-                      class="ant-col ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                      class="ant-col ant-form-item-control"
                     >
                       <div
                         class="ant-form-item-control-input"
@@ -839,7 +841,7 @@ exports[`sqle/PipelineConfiguration/PipelineNodeField render add offline node  1
                         >
                           <div
                             aria-required="true"
-                            class="ant-select ant-select-in-form-item basic-select-wrapper css-iy4o4x css-dev-only-do-not-override-v9sov3 ant-select-single ant-select-show-arrow"
+                            class="ant-select ant-select-in-form-item basic-select-wrapper css-iy4o4x ant-select-single ant-select-show-arrow"
                           >
                             <div
                               class="ant-select-selector"
@@ -910,14 +912,14 @@ exports[`sqle/PipelineConfiguration/PipelineNodeField render add offline node  1
               class="ant-drawer-footer"
             >
               <div
-                class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+                class="ant-space ant-space-horizontal ant-space-align-center"
               >
                 <div
                   class="ant-space-item"
                   style="margin-right: 8px;"
                 >
                   <button
-                    class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default basic-button-wrapper css-geipcv"
+                    class="ant-btn ant-btn-default basic-button-wrapper css-geipcv"
                     type="button"
                   >
                     <span>
@@ -929,7 +931,7 @@ exports[`sqle/PipelineConfiguration/PipelineNodeField render add offline node  1
                   class="ant-space-item"
                 >
                   <button
-                    class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary basic-button-wrapper css-geipcv"
+                    class="ant-btn ant-btn-primary basic-button-wrapper css-geipcv"
                     type="button"
                   >
                     <span>
@@ -960,10 +962,10 @@ exports[`sqle/PipelineConfiguration/PipelineNodeField render add online node  1`
       class="css-xsucw9"
     >
       <h1
-        class="ant-typography css-1eepp70 css-dev-only-do-not-override-txh9fw"
+        class="ant-typography css-1eepp70"
       >
         <div
-          class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center sub-title"
+          class="ant-space ant-space-horizontal ant-space-align-center sub-title"
         >
           <div
             class="ant-space-item"
@@ -975,7 +977,7 @@ exports[`sqle/PipelineConfiguration/PipelineNodeField render add online node  1`
             class="ant-space-item"
           >
             <button
-              class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary basic-button-wrapper css-geipcv"
+              class="ant-btn ant-btn-primary basic-button-wrapper css-geipcv"
               type="button"
             >
               <span>
@@ -986,10 +988,10 @@ exports[`sqle/PipelineConfiguration/PipelineNodeField render add online node  1`
         </div>
       </h1>
       <div
-        class="ant-table-wrapper actiontech-table-namespace css-fxd6ka css-dev-only-do-not-override-bj9uhl"
+        class="ant-table-wrapper actiontech-table-namespace css-fxd6ka"
       >
         <div
-          class="ant-spin-nested-loading css-dev-only-do-not-override-bj9uhl"
+          class="ant-spin-nested-loading"
         >
           <div
             class="ant-spin-container"
@@ -1106,7 +1108,7 @@ exports[`sqle/PipelineConfiguration/PipelineNodeField render add online node  1`
                           style="text-align: center;"
                         >
                           <button
-                            class="ant-btn css-dev-only-do-not-override-bj9uhl ant-btn-text ant-btn-sm ant-btn-icon-only"
+                            class="ant-btn ant-btn-text ant-btn-sm ant-btn-icon-only"
                             style="cursor: move;"
                             type="button"
                           >
@@ -1144,14 +1146,14 @@ exports[`sqle/PipelineConfiguration/PipelineNodeField render add online node  1`
                             class="css-new95e"
                           >
                             <div
-                              class="ant-space css-dev-only-do-not-override-bj9uhl ant-space-horizontal ant-space-align-center"
+                              class="ant-space ant-space-horizontal ant-space-align-center"
                             >
                               <div
                                 class="ant-space-item"
                                 style="margin-right: 8px;"
                               >
                                 <button
-                                  class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                  class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
                                   type="button"
                                 >
                                   <span>
@@ -1163,7 +1165,7 @@ exports[`sqle/PipelineConfiguration/PipelineNodeField render add online node  1`
                                 class="ant-space-item"
                               >
                                 <button
-                                  class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm ant-btn-dangerous actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                  class="ant-btn ant-btn-default ant-btn-sm ant-btn-dangerous actiontech-table-actions-button basic-button-wrapper css-geipcv"
                                   type="button"
                                 >
                                   <span>
@@ -1198,13 +1200,13 @@ exports[`sqle/PipelineConfiguration/PipelineNodeField render add online node  1`
         aria-live="assertive"
         id="DndLiveRegion-4"
         role="status"
-        style="position: fixed; width: 1px; height: 1px; margin: -1px; border: 0px; padding: 0px; overflow: hidden; clip-path: inset(100%); white-space: nowrap;"
+        style="position: fixed; top: 0px; left: 0px; width: 1px; height: 1px; margin: -1px; border: 0px; padding: 0px; overflow: hidden; clip-path: inset(100%); white-space: nowrap;"
       />
     </section>
   </div>
   <div>
     <div
-      class="ant-drawer ant-drawer-right css-dev-only-do-not-override-txh9fw ant-drawer-open"
+      class="ant-drawer ant-drawer-right ant-drawer-open"
       tabindex="-1"
     >
       <div
@@ -1250,34 +1252,36 @@ exports[`sqle/PipelineConfiguration/PipelineNodeField render add online node  1`
                 <span
                   aria-label="close"
                   class="anticon anticon-close"
+                  data-testid="basic-drawer-close-icon"
                   role="img"
                 >
                   <svg
                     aria-hidden="true"
                     data-icon="close"
                     fill="currentColor"
+                    fill-rule="evenodd"
                     focusable="false"
                     height="1em"
                     viewBox="64 64 896 896"
                     width="1em"
                   >
                     <path
-                      d="M563.8 512l262.5-312.9c4.4-5.2.7-13.1-6.1-13.1h-79.8c-4.7 0-9.2 2.1-12.3 5.7L511.6 449.8 295.1 191.7c-3-3.6-7.5-5.7-12.3-5.7H203c-6.8 0-10.5 7.9-6.1 13.1L459.4 512 196.9 824.9A7.95 7.95 0 00203 838h79.8c4.7 0 9.2-2.1 12.3-5.7l216.5-258.1 216.5 258.1c3 3.6 7.5 5.7 12.3 5.7h79.8c6.8 0 10.5-7.9 6.1-13.1L563.8 512z"
+                      d="M799.86 166.31c.02 0 .04.02.08.06l57.69 57.7c.04.03.05.05.06.08a.12.12 0 010 .06c0 .03-.02.05-.06.09L569.93 512l287.7 287.7c.04.04.05.06.06.09a.12.12 0 010 .07c0 .02-.02.04-.06.08l-57.7 57.69c-.03.04-.05.05-.07.06a.12.12 0 01-.07 0c-.03 0-.05-.02-.09-.06L512 569.93l-287.7 287.7c-.04.04-.06.05-.09.06a.12.12 0 01-.07 0c-.02 0-.04-.02-.08-.06l-57.69-57.7c-.04-.03-.05-.05-.06-.07a.12.12 0 010-.07c0-.03.02-.05.06-.09L454.07 512l-287.7-287.7c-.04-.04-.05-.06-.06-.09a.12.12 0 010-.07c0-.02.02-.04.06-.08l57.7-57.69c.03-.04.05-.05.07-.06a.12.12 0 01.07 0c.03 0 .05.02.09.06L512 454.07l287.7-287.7c.04-.04.06-.05.09-.06a.12.12 0 01.07 0z"
                     />
                   </svg>
                 </span>
               </div>
               <form
-                class="ant-form ant-form-vertical css-dev-only-do-not-override-txh9fw"
+                class="ant-form ant-form-vertical"
               >
                 <div
-                  class="ant-form-item css-1jlm9cy css-dev-only-do-not-override-txh9fw ant-form-item-has-success"
+                  class="ant-form-item css-1jlm9cy ant-form-item-has-success"
                 >
                   <div
-                    class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                    class="ant-row ant-form-item-row"
                   >
                     <div
-                      class="ant-col ant-form-item-label css-dev-only-do-not-override-txh9fw"
+                      class="ant-col ant-form-item-label"
                     >
                       <label
                         class="ant-form-item-required"
@@ -1288,7 +1292,7 @@ exports[`sqle/PipelineConfiguration/PipelineNodeField render add online node  1`
                       </label>
                     </div>
                     <div
-                      class="ant-col ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                      class="ant-col ant-form-item-control"
                     >
                       <div
                         class="ant-form-item-control-input"
@@ -1298,7 +1302,7 @@ exports[`sqle/PipelineConfiguration/PipelineNodeField render add online node  1`
                         >
                           <input
                             aria-required="true"
-                            class="ant-input ant-input-status-success css-dev-only-do-not-override-ywkr0o basic-input-wrapper css-1pd1cd5"
+                            class="ant-input ant-input-status-success basic-input-wrapper css-1pd1cd5"
                             id="name"
                             placeholder="请输入{{name}}"
                             type="text"
@@ -1310,13 +1314,13 @@ exports[`sqle/PipelineConfiguration/PipelineNodeField render add online node  1`
                   </div>
                 </div>
                 <div
-                  class="ant-form-item css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+                  class="ant-form-item css-1jlm9cy"
                 >
                   <div
-                    class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                    class="ant-row ant-form-item-row"
                   >
                     <div
-                      class="ant-col ant-form-item-label css-dev-only-do-not-override-txh9fw"
+                      class="ant-col ant-form-item-label"
                     >
                       <label
                         class="ant-form-item-required"
@@ -1327,7 +1331,7 @@ exports[`sqle/PipelineConfiguration/PipelineNodeField render add online node  1`
                       </label>
                     </div>
                     <div
-                      class="ant-col ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                      class="ant-col ant-form-item-control"
                     >
                       <div
                         class="ant-form-item-control-input"
@@ -1337,7 +1341,7 @@ exports[`sqle/PipelineConfiguration/PipelineNodeField render add online node  1`
                         >
                           <div
                             aria-required="true"
-                            class="ant-select ant-select-in-form-item basic-select-wrapper css-iy4o4x css-dev-only-do-not-override-v9sov3 ant-select-single ant-select-show-arrow"
+                            class="ant-select ant-select-in-form-item basic-select-wrapper css-iy4o4x ant-select-single ant-select-show-arrow"
                           >
                             <div
                               class="ant-select-selector"
@@ -1404,13 +1408,13 @@ exports[`sqle/PipelineConfiguration/PipelineNodeField render add online node  1`
                   </div>
                 </div>
                 <div
-                  class="ant-form-item has-required-style has-label-tip css-1jlm9cy css-dev-only-do-not-override-txh9fw ant-form-item-has-success"
+                  class="ant-form-item has-required-style has-label-tip css-1jlm9cy ant-form-item-has-success"
                 >
                   <div
-                    class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                    class="ant-row ant-form-item-row"
                   >
                     <div
-                      class="ant-col ant-form-item-label css-dev-only-do-not-override-txh9fw"
+                      class="ant-col ant-form-item-label"
                     >
                       <label
                         class="ant-form-item-required"
@@ -1432,7 +1436,7 @@ exports[`sqle/PipelineConfiguration/PipelineNodeField render add online node  1`
                       </label>
                     </div>
                     <div
-                      class="ant-col ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                      class="ant-col ant-form-item-control"
                     >
                       <div
                         class="ant-form-item-control-input"
@@ -1442,7 +1446,7 @@ exports[`sqle/PipelineConfiguration/PipelineNodeField render add online node  1`
                         >
                           <div
                             aria-required="true"
-                            class="ant-select ant-select-in-form-item ant-select-status-success basic-select-wrapper css-iy4o4x css-dev-only-do-not-override-v9sov3 ant-select-single ant-select-show-arrow"
+                            class="ant-select ant-select-in-form-item ant-select-status-success basic-select-wrapper css-iy4o4x ant-select-single ant-select-show-arrow"
                           >
                             <div
                               class="ant-select-selector"
@@ -1509,13 +1513,13 @@ exports[`sqle/PipelineConfiguration/PipelineNodeField render add online node  1`
                   </div>
                 </div>
                 <div
-                  class="ant-form-item has-required-style has-label-tip css-1jlm9cy css-dev-only-do-not-override-txh9fw ant-form-item-has-success"
+                  class="ant-form-item has-required-style has-label-tip css-1jlm9cy ant-form-item-has-success"
                 >
                   <div
-                    class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                    class="ant-row ant-form-item-row"
                   >
                     <div
-                      class="ant-col ant-form-item-label css-dev-only-do-not-override-txh9fw"
+                      class="ant-col ant-form-item-label"
                     >
                       <label
                         class="ant-form-item-required"
@@ -1537,7 +1541,7 @@ exports[`sqle/PipelineConfiguration/PipelineNodeField render add online node  1`
                       </label>
                     </div>
                     <div
-                      class="ant-col ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                      class="ant-col ant-form-item-control"
                     >
                       <div
                         class="ant-form-item-control-input"
@@ -1547,7 +1551,7 @@ exports[`sqle/PipelineConfiguration/PipelineNodeField render add online node  1`
                         >
                           <input
                             aria-required="true"
-                            class="ant-input ant-input-status-success css-dev-only-do-not-override-ywkr0o basic-input-wrapper css-1pd1cd5"
+                            class="ant-input ant-input-status-success basic-input-wrapper css-1pd1cd5"
                             id="object_path"
                             placeholder="请输入{{name}}"
                             type="text"
@@ -1559,13 +1563,13 @@ exports[`sqle/PipelineConfiguration/PipelineNodeField render add online node  1`
                   </div>
                 </div>
                 <div
-                  class="ant-form-item has-required-style has-label-tip css-1jlm9cy css-dev-only-do-not-override-txh9fw ant-form-item-has-success"
+                  class="ant-form-item has-required-style has-label-tip css-1jlm9cy ant-form-item-has-success"
                 >
                   <div
-                    class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                    class="ant-row ant-form-item-row"
                   >
                     <div
-                      class="ant-col ant-form-item-label css-dev-only-do-not-override-txh9fw"
+                      class="ant-col ant-form-item-label"
                     >
                       <label
                         class=""
@@ -1587,7 +1591,7 @@ exports[`sqle/PipelineConfiguration/PipelineNodeField render add online node  1`
                       </label>
                     </div>
                     <div
-                      class="ant-col ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                      class="ant-col ant-form-item-control"
                     >
                       <div
                         class="ant-form-item-control-input"
@@ -1596,7 +1600,7 @@ exports[`sqle/PipelineConfiguration/PipelineNodeField render add online node  1`
                           class="ant-form-item-control-input-content"
                         >
                           <div
-                            class="ant-select ant-select-in-form-item ant-select-status-success basic-select-wrapper css-iy4o4x css-dev-only-do-not-override-v9sov3 ant-select-single ant-select-show-arrow"
+                            class="ant-select ant-select-in-form-item ant-select-status-success basic-select-wrapper css-iy4o4x ant-select-single ant-select-show-arrow"
                           >
                             <div
                               class="ant-select-selector"
@@ -1662,13 +1666,13 @@ exports[`sqle/PipelineConfiguration/PipelineNodeField render add online node  1`
                   </div>
                 </div>
                 <div
-                  class="ant-form-item has-required-style has-label-tip css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+                  class="ant-form-item has-required-style has-label-tip css-1jlm9cy"
                 >
                   <div
-                    class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                    class="ant-row ant-form-item-row"
                   >
                     <div
-                      class="ant-col ant-form-item-label css-dev-only-do-not-override-txh9fw"
+                      class="ant-col ant-form-item-label"
                     >
                       <label
                         class="ant-form-item-required"
@@ -1690,7 +1694,7 @@ exports[`sqle/PipelineConfiguration/PipelineNodeField render add online node  1`
                       </label>
                     </div>
                     <div
-                      class="ant-col ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                      class="ant-col ant-form-item-control"
                     >
                       <div
                         class="ant-form-item-control-input"
@@ -1700,7 +1704,7 @@ exports[`sqle/PipelineConfiguration/PipelineNodeField render add online node  1`
                         >
                           <div
                             aria-required="true"
-                            class="ant-select ant-select-in-form-item basic-select-wrapper css-iy4o4x css-dev-only-do-not-override-v9sov3 ant-select-single ant-select-show-arrow"
+                            class="ant-select ant-select-in-form-item basic-select-wrapper css-iy4o4x ant-select-single ant-select-show-arrow"
                           >
                             <div
                               class="ant-select-selector"
@@ -1766,13 +1770,13 @@ exports[`sqle/PipelineConfiguration/PipelineNodeField render add online node  1`
                   </div>
                 </div>
                 <div
-                  class="ant-form-item has-required-style has-label-tip css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+                  class="ant-form-item has-required-style has-label-tip css-1jlm9cy"
                 >
                   <div
-                    class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                    class="ant-row ant-form-item-row"
                   >
                     <div
-                      class="ant-col ant-form-item-label css-dev-only-do-not-override-txh9fw"
+                      class="ant-col ant-form-item-label"
                     >
                       <label
                         class="ant-form-item-required"
@@ -1794,7 +1798,7 @@ exports[`sqle/PipelineConfiguration/PipelineNodeField render add online node  1`
                       </label>
                     </div>
                     <div
-                      class="ant-col ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                      class="ant-col ant-form-item-control"
                     >
                       <div
                         class="ant-form-item-control-input"
@@ -1804,7 +1808,7 @@ exports[`sqle/PipelineConfiguration/PipelineNodeField render add online node  1`
                         >
                           <div
                             aria-required="true"
-                            class="ant-select ant-select-in-form-item basic-select-wrapper css-iy4o4x css-dev-only-do-not-override-v9sov3 ant-select-single ant-select-show-arrow"
+                            class="ant-select ant-select-in-form-item basic-select-wrapper css-iy4o4x ant-select-single ant-select-show-arrow"
                           >
                             <div
                               class="ant-select-selector"
@@ -1875,14 +1879,14 @@ exports[`sqle/PipelineConfiguration/PipelineNodeField render add online node  1`
               class="ant-drawer-footer"
             >
               <div
-                class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+                class="ant-space ant-space-horizontal ant-space-align-center"
               >
                 <div
                   class="ant-space-item"
                   style="margin-right: 8px;"
                 >
                   <button
-                    class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default basic-button-wrapper css-geipcv"
+                    class="ant-btn ant-btn-default basic-button-wrapper css-geipcv"
                     type="button"
                   >
                     <span>
@@ -1894,7 +1898,7 @@ exports[`sqle/PipelineConfiguration/PipelineNodeField render add online node  1`
                   class="ant-space-item"
                 >
                   <button
-                    class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary basic-button-wrapper css-geipcv"
+                    class="ant-btn ant-btn-primary basic-button-wrapper css-geipcv"
                     type="button"
                   >
                     <span>
@@ -1917,7 +1921,7 @@ exports[`sqle/PipelineConfiguration/PipelineNodeField render add online node  1`
   </div>
   <div>
     <div
-      class="ant-select-dropdown ant-select-dropdown-hidden css-dev-only-do-not-override-v9sov3 ant-select-dropdown-placement-bottomLeft"
+      class="ant-select-dropdown ant-select-dropdown-hidden ant-select-dropdown-placement-bottomLeft"
       style="--arrow-x: 0px; --arrow-y: 0px; left: 0px; top: 0px; box-sizing: border-box; min-width: 0; width: 0px; pointer-events: none;"
     >
       <div>
@@ -1993,22 +1997,13 @@ exports[`sqle/PipelineConfiguration/PipelineNodeField render add online node  1`
               </div>
             </div>
           </div>
-          <div
-            class="rc-virtual-list-scrollbar"
-            style="width: 8px; top: 0px; bottom: 0px; right: 0px; position: absolute; display: none;"
-          >
-            <div
-              class="rc-virtual-list-scrollbar-thumb"
-              style="width: 100%; height: 128px; top: 0px; left: 0px; position: absolute; background: rgba(0, 0, 0, 0.5); border-radius: 99px; cursor: pointer; user-select: none;"
-            />
-          </div>
         </div>
       </div>
     </div>
   </div>
   <div>
     <div
-      class="ant-select-dropdown ant-select-dropdown-hidden css-dev-only-do-not-override-v9sov3 ant-select-dropdown-placement-bottomLeft"
+      class="ant-select-dropdown ant-select-dropdown-hidden ant-select-dropdown-placement-bottomLeft"
       style="--arrow-x: 0px; --arrow-y: 0px; left: 0px; top: 0px; box-sizing: border-box; min-width: 0; width: 0px; pointer-events: none;"
     >
       <div>
@@ -2084,15 +2079,6 @@ exports[`sqle/PipelineConfiguration/PipelineNodeField render add online node  1`
               </div>
             </div>
           </div>
-          <div
-            class="rc-virtual-list-scrollbar"
-            style="width: 8px; top: 0px; bottom: 0px; right: 0px; position: absolute; display: none;"
-          >
-            <div
-              class="rc-virtual-list-scrollbar-thumb"
-              style="width: 100%; height: 128px; top: 0px; left: 0px; position: absolute; background: rgba(0, 0, 0, 0.5); border-radius: 99px; cursor: pointer; user-select: none;"
-            />
-          </div>
         </div>
       </div>
     </div>
@@ -2107,10 +2093,10 @@ exports[`sqle/PipelineConfiguration/PipelineNodeField render field when value is
       class="css-xsucw9"
     >
       <h1
-        class="ant-typography css-1eepp70 css-dev-only-do-not-override-txh9fw"
+        class="ant-typography css-1eepp70"
       >
         <div
-          class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center sub-title"
+          class="ant-space ant-space-horizontal ant-space-align-center sub-title"
         >
           <div
             class="ant-space-item"
@@ -2122,7 +2108,7 @@ exports[`sqle/PipelineConfiguration/PipelineNodeField render field when value is
             class="ant-space-item"
           >
             <button
-              class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary basic-button-wrapper css-geipcv"
+              class="ant-btn ant-btn-primary basic-button-wrapper css-geipcv"
               type="button"
             >
               <span>
@@ -2133,10 +2119,10 @@ exports[`sqle/PipelineConfiguration/PipelineNodeField render field when value is
         </div>
       </h1>
       <div
-        class="ant-table-wrapper actiontech-table-namespace css-fxd6ka css-dev-only-do-not-override-bj9uhl"
+        class="ant-table-wrapper actiontech-table-namespace css-fxd6ka"
       >
         <div
-          class="ant-spin-nested-loading css-dev-only-do-not-override-bj9uhl"
+          class="ant-spin-nested-loading"
         >
           <div
             class="ant-spin-container"
@@ -2252,7 +2238,7 @@ exports[`sqle/PipelineConfiguration/PipelineNodeField render field when value is
                           style="text-align: center;"
                         >
                           <button
-                            class="ant-btn css-dev-only-do-not-override-bj9uhl ant-btn-text ant-btn-sm ant-btn-icon-only"
+                            class="ant-btn ant-btn-text ant-btn-sm ant-btn-icon-only"
                             style="cursor: move;"
                             type="button"
                           >
@@ -2290,14 +2276,14 @@ exports[`sqle/PipelineConfiguration/PipelineNodeField render field when value is
                             class="css-new95e"
                           >
                             <div
-                              class="ant-space css-dev-only-do-not-override-bj9uhl ant-space-horizontal ant-space-align-center"
+                              class="ant-space ant-space-horizontal ant-space-align-center"
                             >
                               <div
                                 class="ant-space-item"
                                 style="margin-right: 8px;"
                               >
                                 <button
-                                  class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                  class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
                                   type="button"
                                 >
                                   <span>
@@ -2309,7 +2295,7 @@ exports[`sqle/PipelineConfiguration/PipelineNodeField render field when value is
                                 class="ant-space-item"
                               >
                                 <button
-                                  class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm ant-btn-dangerous actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                  class="ant-btn ant-btn-default ant-btn-sm ant-btn-dangerous actiontech-table-actions-button basic-button-wrapper css-geipcv"
                                   type="button"
                                 >
                                   <span>
@@ -2344,7 +2330,7 @@ exports[`sqle/PipelineConfiguration/PipelineNodeField render field when value is
         aria-live="assertive"
         id="DndLiveRegion-1"
         role="status"
-        style="position: fixed; width: 1px; height: 1px; margin: -1px; border: 0px; padding: 0px; overflow: hidden; clip-path: inset(100%); white-space: nowrap;"
+        style="position: fixed; top: 0px; left: 0px; width: 1px; height: 1px; margin: -1px; border: 0px; padding: 0px; overflow: hidden; clip-path: inset(100%); white-space: nowrap;"
       />
     </section>
   </div>
@@ -2358,10 +2344,10 @@ exports[`sqle/PipelineConfiguration/PipelineNodeField render init snap shot 1`] 
       class="css-xsucw9"
     >
       <h1
-        class="ant-typography css-1eepp70 css-dev-only-do-not-override-txh9fw"
+        class="ant-typography css-1eepp70"
       >
         <div
-          class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center sub-title"
+          class="ant-space ant-space-horizontal ant-space-align-center sub-title"
         >
           <div
             class="ant-space-item"
@@ -2373,7 +2359,7 @@ exports[`sqle/PipelineConfiguration/PipelineNodeField render init snap shot 1`] 
             class="ant-space-item"
           >
             <button
-              class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary basic-button-wrapper css-geipcv"
+              class="ant-btn ant-btn-primary basic-button-wrapper css-geipcv"
               type="button"
             >
               <span>
@@ -2384,10 +2370,10 @@ exports[`sqle/PipelineConfiguration/PipelineNodeField render init snap shot 1`] 
         </div>
       </h1>
       <div
-        class="ant-table-wrapper actiontech-table-namespace css-fxd6ka css-dev-only-do-not-override-bj9uhl"
+        class="ant-table-wrapper actiontech-table-namespace css-fxd6ka"
       >
         <div
-          class="ant-spin-nested-loading css-dev-only-do-not-override-bj9uhl"
+          class="ant-spin-nested-loading"
         >
           <div
             class="ant-spin-container"
@@ -2532,7 +2518,7 @@ exports[`sqle/PipelineConfiguration/PipelineNodeField render init snap shot 1`] 
         aria-live="assertive"
         id="DndLiveRegion-0"
         role="status"
-        style="position: fixed; width: 1px; height: 1px; margin: -1px; border: 0px; padding: 0px; overflow: hidden; clip-path: inset(100%); white-space: nowrap;"
+        style="position: fixed; top: 0px; left: 0px; width: 1px; height: 1px; margin: -1px; border: 0px; padding: 0px; overflow: hidden; clip-path: inset(100%); white-space: nowrap;"
       />
     </section>
   </div>
@@ -2546,10 +2532,10 @@ exports[`sqle/PipelineConfiguration/PipelineNodeField render update node  1`] = 
       class="css-xsucw9"
     >
       <h1
-        class="ant-typography css-1eepp70 css-dev-only-do-not-override-txh9fw"
+        class="ant-typography css-1eepp70"
       >
         <div
-          class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center sub-title"
+          class="ant-space ant-space-horizontal ant-space-align-center sub-title"
         >
           <div
             class="ant-space-item"
@@ -2561,7 +2547,7 @@ exports[`sqle/PipelineConfiguration/PipelineNodeField render update node  1`] = 
             class="ant-space-item"
           >
             <button
-              class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary basic-button-wrapper css-geipcv"
+              class="ant-btn ant-btn-primary basic-button-wrapper css-geipcv"
               type="button"
             >
               <span>
@@ -2572,10 +2558,10 @@ exports[`sqle/PipelineConfiguration/PipelineNodeField render update node  1`] = 
         </div>
       </h1>
       <div
-        class="ant-table-wrapper actiontech-table-namespace css-fxd6ka css-dev-only-do-not-override-bj9uhl"
+        class="ant-table-wrapper actiontech-table-namespace css-fxd6ka"
       >
         <div
-          class="ant-spin-nested-loading css-dev-only-do-not-override-bj9uhl"
+          class="ant-spin-nested-loading"
         >
           <div
             class="ant-spin-container"
@@ -2692,7 +2678,7 @@ exports[`sqle/PipelineConfiguration/PipelineNodeField render update node  1`] = 
                           style="text-align: center;"
                         >
                           <button
-                            class="ant-btn css-dev-only-do-not-override-bj9uhl ant-btn-text ant-btn-sm ant-btn-icon-only"
+                            class="ant-btn ant-btn-text ant-btn-sm ant-btn-icon-only"
                             style="cursor: move;"
                             type="button"
                           >
@@ -2730,14 +2716,14 @@ exports[`sqle/PipelineConfiguration/PipelineNodeField render update node  1`] = 
                             class="css-new95e"
                           >
                             <div
-                              class="ant-space css-dev-only-do-not-override-bj9uhl ant-space-horizontal ant-space-align-center"
+                              class="ant-space ant-space-horizontal ant-space-align-center"
                             >
                               <div
                                 class="ant-space-item"
                                 style="margin-right: 8px;"
                               >
                                 <button
-                                  class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                  class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
                                   type="button"
                                 >
                                   <span>
@@ -2749,7 +2735,7 @@ exports[`sqle/PipelineConfiguration/PipelineNodeField render update node  1`] = 
                                 class="ant-space-item"
                               >
                                 <button
-                                  class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm ant-btn-dangerous actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                  class="ant-btn ant-btn-default ant-btn-sm ant-btn-dangerous actiontech-table-actions-button basic-button-wrapper css-geipcv"
                                   type="button"
                                 >
                                   <span>
@@ -2784,13 +2770,13 @@ exports[`sqle/PipelineConfiguration/PipelineNodeField render update node  1`] = 
         aria-live="assertive"
         id="DndLiveRegion-2"
         role="status"
-        style="position: fixed; width: 1px; height: 1px; margin: -1px; border: 0px; padding: 0px; overflow: hidden; clip-path: inset(100%); white-space: nowrap;"
+        style="position: fixed; top: 0px; left: 0px; width: 1px; height: 1px; margin: -1px; border: 0px; padding: 0px; overflow: hidden; clip-path: inset(100%); white-space: nowrap;"
       />
     </section>
   </div>
   <div>
     <div
-      class="ant-drawer ant-drawer-right css-dev-only-do-not-override-txh9fw ant-drawer-open"
+      class="ant-drawer ant-drawer-right ant-drawer-open"
       tabindex="-1"
     >
       <div
@@ -2836,34 +2822,36 @@ exports[`sqle/PipelineConfiguration/PipelineNodeField render update node  1`] = 
                 <span
                   aria-label="close"
                   class="anticon anticon-close"
+                  data-testid="basic-drawer-close-icon"
                   role="img"
                 >
                   <svg
                     aria-hidden="true"
                     data-icon="close"
                     fill="currentColor"
+                    fill-rule="evenodd"
                     focusable="false"
                     height="1em"
                     viewBox="64 64 896 896"
                     width="1em"
                   >
                     <path
-                      d="M563.8 512l262.5-312.9c4.4-5.2.7-13.1-6.1-13.1h-79.8c-4.7 0-9.2 2.1-12.3 5.7L511.6 449.8 295.1 191.7c-3-3.6-7.5-5.7-12.3-5.7H203c-6.8 0-10.5 7.9-6.1 13.1L459.4 512 196.9 824.9A7.95 7.95 0 00203 838h79.8c4.7 0 9.2-2.1 12.3-5.7l216.5-258.1 216.5 258.1c3 3.6 7.5 5.7 12.3 5.7h79.8c6.8 0 10.5-7.9 6.1-13.1L563.8 512z"
+                      d="M799.86 166.31c.02 0 .04.02.08.06l57.69 57.7c.04.03.05.05.06.08a.12.12 0 010 .06c0 .03-.02.05-.06.09L569.93 512l287.7 287.7c.04.04.05.06.06.09a.12.12 0 010 .07c0 .02-.02.04-.06.08l-57.7 57.69c-.03.04-.05.05-.07.06a.12.12 0 01-.07 0c-.03 0-.05-.02-.09-.06L512 569.93l-287.7 287.7c-.04.04-.06.05-.09.06a.12.12 0 01-.07 0c-.02 0-.04-.02-.08-.06l-57.69-57.7c-.04-.03-.05-.05-.06-.07a.12.12 0 010-.07c0-.03.02-.05.06-.09L454.07 512l-287.7-287.7c-.04-.04-.05-.06-.06-.09a.12.12 0 010-.07c0-.02.02-.04.06-.08l57.7-57.69c.03-.04.05-.05.07-.06a.12.12 0 01.07 0c.03 0 .05.02.09.06L512 454.07l287.7-287.7c.04-.04.06-.05.09-.06a.12.12 0 01.07 0z"
                     />
                   </svg>
                 </span>
               </div>
               <form
-                class="ant-form ant-form-vertical css-dev-only-do-not-override-txh9fw"
+                class="ant-form ant-form-vertical"
               >
                 <div
-                  class="ant-form-item css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+                  class="ant-form-item css-1jlm9cy"
                 >
                   <div
-                    class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                    class="ant-row ant-form-item-row"
                   >
                     <div
-                      class="ant-col ant-form-item-label css-dev-only-do-not-override-txh9fw"
+                      class="ant-col ant-form-item-label"
                     >
                       <label
                         class="ant-form-item-required"
@@ -2874,7 +2862,7 @@ exports[`sqle/PipelineConfiguration/PipelineNodeField render update node  1`] = 
                       </label>
                     </div>
                     <div
-                      class="ant-col ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                      class="ant-col ant-form-item-control"
                     >
                       <div
                         class="ant-form-item-control-input"
@@ -2884,7 +2872,7 @@ exports[`sqle/PipelineConfiguration/PipelineNodeField render update node  1`] = 
                         >
                           <input
                             aria-required="true"
-                            class="ant-input css-dev-only-do-not-override-ywkr0o basic-input-wrapper css-1pd1cd5"
+                            class="ant-input basic-input-wrapper css-1pd1cd5"
                             id="name"
                             placeholder="请输入{{name}}"
                             type="text"
@@ -2896,13 +2884,13 @@ exports[`sqle/PipelineConfiguration/PipelineNodeField render update node  1`] = 
                   </div>
                 </div>
                 <div
-                  class="ant-form-item css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+                  class="ant-form-item css-1jlm9cy"
                 >
                   <div
-                    class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                    class="ant-row ant-form-item-row"
                   >
                     <div
-                      class="ant-col ant-form-item-label css-dev-only-do-not-override-txh9fw"
+                      class="ant-col ant-form-item-label"
                     >
                       <label
                         class="ant-form-item-required"
@@ -2913,7 +2901,7 @@ exports[`sqle/PipelineConfiguration/PipelineNodeField render update node  1`] = 
                       </label>
                     </div>
                     <div
-                      class="ant-col ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                      class="ant-col ant-form-item-control"
                     >
                       <div
                         class="ant-form-item-control-input"
@@ -2923,7 +2911,7 @@ exports[`sqle/PipelineConfiguration/PipelineNodeField render update node  1`] = 
                         >
                           <div
                             aria-required="true"
-                            class="ant-select ant-select-in-form-item basic-select-wrapper css-iy4o4x css-dev-only-do-not-override-v9sov3 ant-select-single ant-select-show-arrow"
+                            class="ant-select ant-select-in-form-item basic-select-wrapper css-iy4o4x ant-select-single ant-select-show-arrow"
                           >
                             <div
                               class="ant-select-selector"
@@ -2990,13 +2978,13 @@ exports[`sqle/PipelineConfiguration/PipelineNodeField render update node  1`] = 
                   </div>
                 </div>
                 <div
-                  class="ant-form-item has-required-style has-label-tip css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+                  class="ant-form-item has-required-style has-label-tip css-1jlm9cy"
                 >
                   <div
-                    class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                    class="ant-row ant-form-item-row"
                   >
                     <div
-                      class="ant-col ant-form-item-label css-dev-only-do-not-override-txh9fw"
+                      class="ant-col ant-form-item-label"
                     >
                       <label
                         class="ant-form-item-required"
@@ -3018,7 +3006,7 @@ exports[`sqle/PipelineConfiguration/PipelineNodeField render update node  1`] = 
                       </label>
                     </div>
                     <div
-                      class="ant-col ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                      class="ant-col ant-form-item-control"
                     >
                       <div
                         class="ant-form-item-control-input"
@@ -3028,7 +3016,7 @@ exports[`sqle/PipelineConfiguration/PipelineNodeField render update node  1`] = 
                         >
                           <div
                             aria-required="true"
-                            class="ant-select ant-select-in-form-item basic-select-wrapper css-iy4o4x css-dev-only-do-not-override-v9sov3 ant-select-single ant-select-show-arrow"
+                            class="ant-select ant-select-in-form-item basic-select-wrapper css-iy4o4x ant-select-single ant-select-show-arrow"
                           >
                             <div
                               class="ant-select-selector"
@@ -3095,13 +3083,13 @@ exports[`sqle/PipelineConfiguration/PipelineNodeField render update node  1`] = 
                   </div>
                 </div>
                 <div
-                  class="ant-form-item has-required-style has-label-tip css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+                  class="ant-form-item has-required-style has-label-tip css-1jlm9cy"
                 >
                   <div
-                    class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                    class="ant-row ant-form-item-row"
                   >
                     <div
-                      class="ant-col ant-form-item-label css-dev-only-do-not-override-txh9fw"
+                      class="ant-col ant-form-item-label"
                     >
                       <label
                         class="ant-form-item-required"
@@ -3123,7 +3111,7 @@ exports[`sqle/PipelineConfiguration/PipelineNodeField render update node  1`] = 
                       </label>
                     </div>
                     <div
-                      class="ant-col ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                      class="ant-col ant-form-item-control"
                     >
                       <div
                         class="ant-form-item-control-input"
@@ -3133,7 +3121,7 @@ exports[`sqle/PipelineConfiguration/PipelineNodeField render update node  1`] = 
                         >
                           <input
                             aria-required="true"
-                            class="ant-input css-dev-only-do-not-override-ywkr0o basic-input-wrapper css-1pd1cd5"
+                            class="ant-input basic-input-wrapper css-1pd1cd5"
                             id="object_path"
                             placeholder="请输入{{name}}"
                             type="text"
@@ -3145,13 +3133,13 @@ exports[`sqle/PipelineConfiguration/PipelineNodeField render update node  1`] = 
                   </div>
                 </div>
                 <div
-                  class="ant-form-item has-required-style has-label-tip css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+                  class="ant-form-item has-required-style has-label-tip css-1jlm9cy"
                 >
                   <div
-                    class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                    class="ant-row ant-form-item-row"
                   >
                     <div
-                      class="ant-col ant-form-item-label css-dev-only-do-not-override-txh9fw"
+                      class="ant-col ant-form-item-label"
                     >
                       <label
                         class=""
@@ -3173,7 +3161,7 @@ exports[`sqle/PipelineConfiguration/PipelineNodeField render update node  1`] = 
                       </label>
                     </div>
                     <div
-                      class="ant-col ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                      class="ant-col ant-form-item-control"
                     >
                       <div
                         class="ant-form-item-control-input"
@@ -3182,7 +3170,7 @@ exports[`sqle/PipelineConfiguration/PipelineNodeField render update node  1`] = 
                           class="ant-form-item-control-input-content"
                         >
                           <div
-                            class="ant-select ant-select-in-form-item basic-select-wrapper css-iy4o4x css-dev-only-do-not-override-v9sov3 ant-select-single ant-select-show-arrow"
+                            class="ant-select ant-select-in-form-item basic-select-wrapper css-iy4o4x ant-select-single ant-select-show-arrow"
                           >
                             <div
                               class="ant-select-selector"
@@ -3248,13 +3236,13 @@ exports[`sqle/PipelineConfiguration/PipelineNodeField render update node  1`] = 
                   </div>
                 </div>
                 <div
-                  class="ant-form-item has-required-style css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+                  class="ant-form-item has-required-style css-1jlm9cy"
                 >
                   <div
-                    class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                    class="ant-row ant-form-item-row"
                   >
                     <div
-                      class="ant-col ant-form-item-label css-dev-only-do-not-override-txh9fw"
+                      class="ant-col ant-form-item-label"
                     >
                       <label
                         class="ant-form-item-required"
@@ -3265,7 +3253,7 @@ exports[`sqle/PipelineConfiguration/PipelineNodeField render update node  1`] = 
                       </label>
                     </div>
                     <div
-                      class="ant-col ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                      class="ant-col ant-form-item-control"
                     >
                       <div
                         class="ant-form-item-control-input"
@@ -3275,7 +3263,7 @@ exports[`sqle/PipelineConfiguration/PipelineNodeField render update node  1`] = 
                         >
                           <div
                             aria-required="true"
-                            class="ant-select ant-select-in-form-item basic-select-wrapper css-iy4o4x css-dev-only-do-not-override-v9sov3 ant-select-single ant-select-allow-clear ant-select-show-arrow"
+                            class="ant-select ant-select-in-form-item basic-select-wrapper css-iy4o4x ant-select-single ant-select-allow-clear ant-select-show-arrow"
                           >
                             <div
                               class="ant-select-selector"
@@ -3371,13 +3359,13 @@ exports[`sqle/PipelineConfiguration/PipelineNodeField render update node  1`] = 
                   </div>
                 </div>
                 <div
-                  class="ant-form-item has-required-style has-label-tip css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+                  class="ant-form-item has-required-style has-label-tip css-1jlm9cy"
                 >
                   <div
-                    class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                    class="ant-row ant-form-item-row"
                   >
                     <div
-                      class="ant-col ant-form-item-label css-dev-only-do-not-override-txh9fw"
+                      class="ant-col ant-form-item-label"
                     >
                       <label
                         class="ant-form-item-required"
@@ -3399,7 +3387,7 @@ exports[`sqle/PipelineConfiguration/PipelineNodeField render update node  1`] = 
                       </label>
                     </div>
                     <div
-                      class="ant-col ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                      class="ant-col ant-form-item-control"
                     >
                       <div
                         class="ant-form-item-control-input"
@@ -3409,7 +3397,7 @@ exports[`sqle/PipelineConfiguration/PipelineNodeField render update node  1`] = 
                         >
                           <div
                             aria-required="true"
-                            class="ant-select ant-select-in-form-item basic-select-wrapper css-iy4o4x css-dev-only-do-not-override-v9sov3 ant-select-single ant-select-show-arrow"
+                            class="ant-select ant-select-in-form-item basic-select-wrapper css-iy4o4x ant-select-single ant-select-show-arrow"
                           >
                             <div
                               class="ant-select-selector"
@@ -3481,14 +3469,14 @@ exports[`sqle/PipelineConfiguration/PipelineNodeField render update node  1`] = 
               class="ant-drawer-footer"
             >
               <div
-                class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+                class="ant-space ant-space-horizontal ant-space-align-center"
               >
                 <div
                   class="ant-space-item"
                   style="margin-right: 8px;"
                 >
                   <button
-                    class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default basic-button-wrapper css-geipcv"
+                    class="ant-btn ant-btn-default basic-button-wrapper css-geipcv"
                     type="button"
                   >
                     <span>
@@ -3500,7 +3488,7 @@ exports[`sqle/PipelineConfiguration/PipelineNodeField render update node  1`] = 
                   class="ant-space-item"
                 >
                   <button
-                    class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary basic-button-wrapper css-geipcv"
+                    class="ant-btn ant-btn-primary basic-button-wrapper css-geipcv"
                     type="button"
                   >
                     <span>

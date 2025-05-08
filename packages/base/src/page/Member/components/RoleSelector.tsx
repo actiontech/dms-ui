@@ -40,6 +40,7 @@ const RoleSelector: React.FC<{ projectID: string }> = ({ projectID }) => {
                 <Form.Item
                   label={index === 0 ? t('dmsMember.roleSelector.role') : ''}
                   {...field}
+                  key={field.key}
                   name={[field.name, 'role_uid']}
                   rules={[{ required: true }]}
                 >
@@ -63,6 +64,7 @@ const RoleSelector: React.FC<{ projectID: string }> = ({ projectID }) => {
               <Col span={12} offset={1}>
                 <Form.Item
                   {...field}
+                  key={field.key}
                   name={[field.name, 'range_uids']}
                   label={index === 0 ? t('dmsMember.roleSelector.opRange') : ''}
                   rules={[{ required: true }]}

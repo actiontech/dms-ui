@@ -15,14 +15,22 @@ import EventEmitter from '../../../utils/EventEmitter';
 import EmitterKey from '../../../data/EmitterKey';
 import { useDispatch } from 'react-redux';
 import { updateBindProjects } from '../../../store/user';
+import { updateAvailabilityZoneTips } from '../../../store/availabilityZone';
 import { FlagFilled, LockOutlined } from '@actiontech/icons';
 import QuickActions from './QuickActions';
 import { CustomSelectProps, useTypedNavigate } from '@actiontech/shared';
 import { ROUTE_PATHS } from '@actiontech/shared/lib/data/routePaths';
+import AvailabilityZoneSelector from './AvailabilityZoneSelector';
+import { ProjectTitleStyleWrapper } from './style';
+import { ResponseCode } from '@actiontech/shared/lib/enum';
+import { EmptyBox } from '@actiontech/shared';
+import useRecentlySelectedZone from '../../../hooks/useRecentlySelectedZone';
 
 const SideMenu: React.FC = () => {
   const navigate = useTypedNavigate();
   const dispatch = useDispatch();
+
+  const { verifyRecentlySelectedZoneRecord } = useRecentlySelectedZone();
 
   const [systemModuleRedDotsLoading, setSystemModuleRedDotsLoading] =
     useState(false);
@@ -56,6 +64,28 @@ const SideMenu: React.FC = () => {
           updateBindProjects({
             bindProjects: newBindProjects
           })
+        );
+      }
+    }
+  );
+
+  const {
+    data: zoneTips,
+    loading: getZoneTipsLoading,
+    refresh: refreshZoneTips
+  } = useRequest(
+    () =>
+      DmsApi.GatewayService.GetGatewayTips().then((res) => {
+        if (res.data.code === ResponseCode.SUCCESS) {
+          return res.data.data;
+        }
+        return [];
+      }),
+    {
+      onSuccess: (res) => {
+        verifyRecentlySelectedZoneRecord(res ?? []);
+        dispatch(
+          updateAvailabilityZoneTips({ availabilityZoneTips: res ?? [] })
         );
       }
     }
@@ -120,6 +150,15 @@ const SideMenu: React.FC = () => {
 
   useEffect(() => {
     const { unsubscribe } = EventEmitter.subscribe(
+      EmitterKey.Refresh_Availability_Zone_Selector,
+      refreshZoneTips
+    );
+
+    return unsubscribe;
+  }, [refreshZoneTips]);
+
+  useEffect(() => {
+    const { unsubscribe } = EventEmitter.subscribe(
       EmitterKey.DMS_Sync_Project_Archived_Status,
       refreshProjectList
     );
@@ -130,8 +169,19 @@ const SideMenu: React.FC = () => {
   return (
     <SideMenuStyleWrapper className="dms-layout-side">
       <div className="dms-layout-side-start">
-        <ProjectTitle />
-        <Spin spinning={getProjectListLoading || systemModuleRedDotsLoading}>
+        <Spin
+          spinning={
+            getProjectListLoading ||
+            systemModuleRedDotsLoading ||
+            getZoneTipsLoading
+          }
+        >
+          <ProjectTitleStyleWrapper>
+            <ProjectTitle />
+            <EmptyBox if={!!zoneTips?.length}>
+              <AvailabilityZoneSelector zoneTips={zoneTips} />
+            </EmptyBox>
+          </ProjectTitleStyleWrapper>
           {/* #if [sqle] */}
           <QuickActions
             setSystemModuleRedDotsLoading={setSystemModuleRedDotsLoading}

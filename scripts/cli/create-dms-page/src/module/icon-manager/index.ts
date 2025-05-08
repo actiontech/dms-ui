@@ -78,7 +78,7 @@ export class IconManager implements IIconManager {
           return `Icon file ${iconName} already exists in ${typeDirectoryName}`;
         }
       }
-    } catch (error) {
+    } catch {
       throw new Error(`Failed to validate icon name: ${iconName}`);
     }
 

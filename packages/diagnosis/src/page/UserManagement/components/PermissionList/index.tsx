@@ -80,7 +80,12 @@ const PermissionList: React.FC = () => {
   }, [refresh]);
 
   const { filterButtonMeta, filterContainerMeta, updateAllSelectedFilterItem } =
-    useTableFilterContainer(
+    useTableFilterContainer<
+      IViewScope & {
+        role_id?: string;
+      },
+      IV1ListExistingScopesParams
+    >(
       PermissionListColumns,
       updateTableFilterInfo,
       ExtraFilterMeta(!!permissionRoleId)

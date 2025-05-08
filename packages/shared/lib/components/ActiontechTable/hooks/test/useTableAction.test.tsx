@@ -322,7 +322,7 @@ describe('lib/ActiontechTable-hooks-useTableAction', () => {
               key: 'delete-btn2',
               text: <span>函数moreButtons</span>,
               icon: <></>,
-              onClick: (record) => {
+              onClick: () => {
                 jest.fn();
               }
             }

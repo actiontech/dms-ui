@@ -7,7 +7,7 @@ exports[`OverallRewrittenSuggestion should render execution order explanation se
       class="css-1wsdew2"
     >
       <div
-        class=" css-10u1fz5"
+        class="css-10u1fz5"
       >
         <div
           class="title-wrapper"
@@ -104,7 +104,7 @@ exports[`OverallRewrittenSuggestion should render execution order explanation se
           class="action-items-wrapper"
         >
           <button
-            class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default basic-button-wrapper css-geipcv"
+            class="ant-btn ant-btn-default basic-button-wrapper css-geipcv"
             type="button"
           >
             <span>
@@ -133,7 +133,7 @@ exports[`OverallRewrittenSuggestion should render execution order explanation se
             class="sql-indicator"
           />
           <span
-            class="ant-typography ant-typography-secondary subtitle-item-text css-dev-only-do-not-override-txh9fw"
+            class="ant-typography ant-typography-secondary subtitle-item-text"
           >
             原始SQL
           </span>
@@ -145,7 +145,7 @@ exports[`OverallRewrittenSuggestion should render execution order explanation se
             class="sql-indicator"
           />
           <span
-            class="ant-typography ant-typography-secondary subtitle-item-text css-dev-only-do-not-override-txh9fw"
+            class="ant-typography ant-typography-secondary subtitle-item-text"
           >
             重写后SQL
           </span>
@@ -269,7 +269,7 @@ LIMIT 1000 OFFSET 500;
               class="sql-indicator"
             />
             <span
-              class="ant-typography ant-typography-secondary subtitle-item-text css-dev-only-do-not-override-txh9fw"
+              class="ant-typography ant-typography-secondary subtitle-item-text"
             >
               原始SQL
             </span>
@@ -317,7 +317,7 @@ LIMIT 1000 OFFSET 500;
               class="sql-indicator"
             />
             <span
-              class="ant-typography ant-typography-secondary subtitle-item-text css-dev-only-do-not-override-txh9fw"
+              class="ant-typography ant-typography-secondary subtitle-item-text"
             >
               重写后SQL
             </span>
@@ -361,7 +361,7 @@ LIMIT 1000 OFFSET 500;
       class="css-1wsdew2"
     >
       <div
-        class=" css-10u1fz5"
+        class="css-10u1fz5"
       >
         <div
           class="title-wrapper"
@@ -386,7 +386,7 @@ LIMIT 1000 OFFSET 500;
         </div>
       </div>
       <div
-        class="ant-alert ant-alert-warning ant-alert-no-icon css-1jrzg49 css-dev-only-do-not-override-txh9fw"
+        class="ant-alert ant-alert-warning ant-alert-no-icon css-1jrzg49"
         data-show="true"
         role="alert"
       >

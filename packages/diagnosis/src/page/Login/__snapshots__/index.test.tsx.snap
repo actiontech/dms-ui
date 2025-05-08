@@ -70,7 +70,7 @@ exports[`diagnosis/login not return token when login page 1`] = `
                       class="ant-form-item-control-input-content"
                     >
                       <span
-                        class="ant-input-affix-wrapper ant-input-affix-wrapper-focused basic-input-wrapper login-form-field css-1pd1cd5 css-dev-only-do-not-override-ywkr0o"
+                        class="ant-input-affix-wrapper ant-input-affix-wrapper-focused basic-input-wrapper login-form-field css-1pd1cd5 css-dev-only-do-not-override-txh9fw"
                       >
                         <span
                           class="ant-input-prefix"
@@ -94,7 +94,7 @@ exports[`diagnosis/login not return token when login page 1`] = `
                         </span>
                         <input
                           aria-required="true"
-                          class="ant-input css-dev-only-do-not-override-ywkr0o"
+                          class="ant-input css-dev-only-do-not-override-txh9fw"
                           id="username"
                           placeholder="用户名"
                           type="text"
@@ -247,7 +247,7 @@ exports[`diagnosis/login not return token when login page 1`] = `
               </div>
             </div>
             <button
-              class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary login-btn basic-button-wrapper css-geipcv"
+              class="ant-btn css-dev-only-do-not-override-txh9fw ant-btn-primary login-btn basic-button-wrapper css-geipcv"
               type="submit"
             >
               <span>
@@ -332,7 +332,7 @@ exports[`diagnosis/login not return user id when login 1`] = `
                       class="ant-form-item-control-input-content"
                     >
                       <span
-                        class="ant-input-affix-wrapper ant-input-affix-wrapper-focused basic-input-wrapper login-form-field css-1pd1cd5 css-dev-only-do-not-override-ywkr0o"
+                        class="ant-input-affix-wrapper ant-input-affix-wrapper-focused basic-input-wrapper login-form-field css-1pd1cd5 css-dev-only-do-not-override-txh9fw"
                       >
                         <span
                           class="ant-input-prefix"
@@ -356,7 +356,7 @@ exports[`diagnosis/login not return user id when login 1`] = `
                         </span>
                         <input
                           aria-required="true"
-                          class="ant-input css-dev-only-do-not-override-ywkr0o"
+                          class="ant-input css-dev-only-do-not-override-txh9fw"
                           id="username"
                           placeholder="用户名"
                           type="text"
@@ -509,7 +509,7 @@ exports[`diagnosis/login not return user id when login 1`] = `
               </div>
             </div>
             <button
-              class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary login-btn basic-button-wrapper css-geipcv"
+              class="ant-btn css-dev-only-do-not-override-txh9fw ant-btn-primary login-btn basic-button-wrapper css-geipcv"
               type="submit"
             >
               <span>
@@ -594,7 +594,7 @@ exports[`diagnosis/login render login page 1`] = `
                       class="ant-form-item-control-input-content"
                     >
                       <span
-                        class="ant-input-affix-wrapper ant-input-affix-wrapper-focused basic-input-wrapper login-form-field css-1pd1cd5 css-dev-only-do-not-override-ywkr0o"
+                        class="ant-input-affix-wrapper ant-input-affix-wrapper-focused basic-input-wrapper login-form-field css-1pd1cd5 css-dev-only-do-not-override-txh9fw"
                       >
                         <span
                           class="ant-input-prefix"
@@ -618,7 +618,7 @@ exports[`diagnosis/login render login page 1`] = `
                         </span>
                         <input
                           aria-required="true"
-                          class="ant-input css-dev-only-do-not-override-ywkr0o"
+                          class="ant-input css-dev-only-do-not-override-txh9fw"
                           id="username"
                           placeholder="用户名"
                           type="text"
@@ -771,7 +771,7 @@ exports[`diagnosis/login render login page 1`] = `
               </div>
             </div>
             <button
-              class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary login-btn basic-button-wrapper css-geipcv"
+              class="ant-btn css-dev-only-do-not-override-txh9fw ant-btn-primary login-btn basic-button-wrapper css-geipcv"
               type="submit"
             >
               <span>
@@ -856,7 +856,7 @@ exports[`diagnosis/login show tip when not check user agreement 1`] = `
                       class="ant-form-item-control-input-content"
                     >
                       <span
-                        class="ant-input-affix-wrapper ant-input-affix-wrapper-focused basic-input-wrapper login-form-field css-1pd1cd5 css-dev-only-do-not-override-ywkr0o"
+                        class="ant-input-affix-wrapper ant-input-affix-wrapper-focused basic-input-wrapper login-form-field css-1pd1cd5 css-dev-only-do-not-override-txh9fw"
                       >
                         <span
                           class="ant-input-prefix"
@@ -880,7 +880,7 @@ exports[`diagnosis/login show tip when not check user agreement 1`] = `
                         </span>
                         <input
                           aria-required="true"
-                          class="ant-input css-dev-only-do-not-override-ywkr0o"
+                          class="ant-input css-dev-only-do-not-override-txh9fw"
                           id="username"
                           placeholder="用户名"
                           type="text"
@@ -1033,7 +1033,7 @@ exports[`diagnosis/login show tip when not check user agreement 1`] = `
               </div>
             </div>
             <button
-              class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary login-btn basic-button-wrapper css-geipcv"
+              class="ant-btn css-dev-only-do-not-override-txh9fw ant-btn-primary login-btn basic-button-wrapper css-geipcv"
               type="submit"
             >
               <span>
@@ -1118,7 +1118,7 @@ exports[`diagnosis/login submit user info from login page 1`] = `
                       class="ant-form-item-control-input-content"
                     >
                       <span
-                        class="ant-input-affix-wrapper ant-input-affix-wrapper-focused basic-input-wrapper login-form-field css-1pd1cd5 css-dev-only-do-not-override-ywkr0o"
+                        class="ant-input-affix-wrapper ant-input-affix-wrapper-focused basic-input-wrapper login-form-field css-1pd1cd5 css-dev-only-do-not-override-txh9fw"
                       >
                         <span
                           class="ant-input-prefix"
@@ -1142,7 +1142,7 @@ exports[`diagnosis/login submit user info from login page 1`] = `
                         </span>
                         <input
                           aria-required="true"
-                          class="ant-input css-dev-only-do-not-override-ywkr0o"
+                          class="ant-input css-dev-only-do-not-override-txh9fw"
                           id="username"
                           placeholder="用户名"
                           type="text"
@@ -1295,7 +1295,7 @@ exports[`diagnosis/login submit user info from login page 1`] = `
               </div>
             </div>
             <button
-              class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary login-btn basic-button-wrapper css-geipcv"
+              class="ant-btn css-dev-only-do-not-override-txh9fw ant-btn-primary login-btn basic-button-wrapper css-geipcv"
               type="submit"
             >
               <span>

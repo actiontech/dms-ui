@@ -6,7 +6,7 @@ exports[`test ExportRuleTemplate should match snapshot 1`] = `
   <div />
   <div>
     <div
-      class="ant-modal-root css-dev-only-do-not-override-txh9fw"
+      class="ant-modal-root"
     >
       <div
         class="ant-modal-mask"
@@ -18,7 +18,7 @@ exports[`test ExportRuleTemplate should match snapshot 1`] = `
         <div
           aria-labelledby="test-id"
           aria-modal="true"
-          class="ant-modal css-dev-only-do-not-override-txh9fw basic-modal-wrapper css-vvpsbb ant-zoom-appear ant-zoom-appear-prepare ant-zoom"
+          class="ant-modal basic-modal-wrapper css-vvpsbb ant-zoom-appear ant-zoom-appear-prepare ant-zoom"
           role="dialog"
           style="width: 480px;"
         >
@@ -65,16 +65,16 @@ exports[`test ExportRuleTemplate should match snapshot 1`] = `
               class="ant-modal-body"
             >
               <form
-                class="ant-form ant-form-horizontal css-dev-only-do-not-override-txh9fw"
+                class="ant-form ant-form-horizontal"
               >
                 <div
-                  class="ant-form-item has-required-style css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+                  class="ant-form-item has-required-style css-1jlm9cy"
                 >
                   <div
-                    class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                    class="ant-row ant-form-item-row"
                   >
                     <div
-                      class="ant-col ant-form-item-label css-dev-only-do-not-override-txh9fw"
+                      class="ant-col ant-form-item-label"
                     >
                       <label
                         class="ant-form-item-required"
@@ -85,7 +85,7 @@ exports[`test ExportRuleTemplate should match snapshot 1`] = `
                       </label>
                     </div>
                     <div
-                      class="ant-col ant-col-push-1 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                      class="ant-col ant-col-push-1 ant-form-item-control"
                     >
                       <div
                         class="ant-form-item-control-input"
@@ -95,11 +95,11 @@ exports[`test ExportRuleTemplate should match snapshot 1`] = `
                         >
                           <div
                             aria-required="true"
-                            class="ant-radio-group ant-radio-group-outline css-dev-only-do-not-override-txh9fw"
+                            class="ant-radio-group ant-radio-group-outline"
                             id="exportFileType"
                           >
                             <label
-                              class="ant-radio-wrapper ant-radio-wrapper-checked ant-radio-wrapper-in-form-item css-dev-only-do-not-override-txh9fw"
+                              class="ant-radio-wrapper ant-radio-wrapper-checked ant-radio-wrapper-in-form-item"
                             >
                               <span
                                 class="ant-radio ant-radio-checked"
@@ -119,7 +119,7 @@ exports[`test ExportRuleTemplate should match snapshot 1`] = `
                               </span>
                             </label>
                             <label
-                              class="ant-radio-wrapper ant-radio-wrapper-in-form-item css-dev-only-do-not-override-txh9fw"
+                              class="ant-radio-wrapper ant-radio-wrapper-in-form-item"
                             >
                               <span
                                 class="ant-radio"
@@ -149,7 +149,7 @@ exports[`test ExportRuleTemplate should match snapshot 1`] = `
               class="ant-modal-footer"
             >
               <button
-                class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default basic-button-wrapper css-geipcv"
+                class="ant-btn ant-btn-default basic-button-wrapper css-geipcv"
                 type="button"
               >
                 <span>
@@ -157,7 +157,7 @@ exports[`test ExportRuleTemplate should match snapshot 1`] = `
                 </span>
               </button>
               <button
-                class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary basic-button-wrapper css-geipcv"
+                class="ant-btn ant-btn-primary basic-button-wrapper css-geipcv"
                 type="button"
               >
                 <span>

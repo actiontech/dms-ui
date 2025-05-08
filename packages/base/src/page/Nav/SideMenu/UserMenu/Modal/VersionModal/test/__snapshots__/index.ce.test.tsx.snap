@@ -11,7 +11,7 @@ exports[`base/Nav/SideMenu/UserMenu/VersionModal-ce render snap when open is tru
   <div />
   <div>
     <div
-      class="ant-modal-root css-dev-only-do-not-override-txh9fw"
+      class="ant-modal-root"
     >
       <div
         class="ant-modal-mask"
@@ -22,7 +22,7 @@ exports[`base/Nav/SideMenu/UserMenu/VersionModal-ce render snap when open is tru
       >
         <div
           aria-modal="true"
-          class="ant-modal css-dev-only-do-not-override-txh9fw version-modal basic-modal-wrapper css-vvpsbb ant-zoom-appear ant-zoom-appear-prepare ant-zoom"
+          class="ant-modal version-modal basic-modal-wrapper css-vvpsbb ant-zoom-appear ant-zoom-appear-prepare ant-zoom"
           role="dialog"
           style="width: 720px;"
         >
@@ -59,20 +59,20 @@ exports[`base/Nav/SideMenu/UserMenu/VersionModal-ce render snap when open is tru
               class="ant-modal-body"
             >
               <div
-                class="ant-space css-dev-only-do-not-override-txh9fw ant-space-vertical"
+                class="ant-space ant-space-vertical"
               >
                 <div
                   class="ant-space-item"
                   style="margin-bottom: 24px;"
                 >
                   <div
-                    class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+                    class="ant-space ant-space-horizontal ant-space-align-center"
                   >
                     <div
                       class="ant-space-item"
                     >
                       <h2
-                        class="ant-typography css-dev-only-do-not-override-txh9fw"
+                        class="ant-typography"
                       >
                         DMS
                       </h2>
@@ -84,14 +84,14 @@ exports[`base/Nav/SideMenu/UserMenu/VersionModal-ce render snap when open is tru
                   style="margin-bottom: 24px;"
                 >
                   <div
-                    class="ant-space css-dev-only-do-not-override-txh9fw ant-space-vertical ant-space-align-start"
+                    class="ant-space ant-space-vertical ant-space-align-start"
                   >
                     <div
                       class="ant-space-item"
                       style="margin-bottom: 8px;"
                     >
                       <h5
-                        class="ant-typography css-dev-only-do-not-override-txh9fw"
+                        class="ant-typography"
                       >
                         版本信息
                       </h5>
@@ -100,14 +100,14 @@ exports[`base/Nav/SideMenu/UserMenu/VersionModal-ce render snap when open is tru
                       class="ant-space-item"
                     >
                       <div
-                        class="ant-space css-dev-only-do-not-override-txh9fw ant-space-vertical"
+                        class="ant-space ant-space-vertical"
                       >
                         <div
                           class="ant-space-item"
                           style="margin-bottom: 8px;"
                         >
                           <article
-                            class="ant-typography css-dev-only-do-not-override-txh9fw"
+                            class="ant-typography"
                           >
                             UI: 
                             feature/add-make-command   ba9c9c5
@@ -118,7 +118,7 @@ exports[`base/Nav/SideMenu/UserMenu/VersionModal-ce render snap when open is tru
                           style="margin-bottom: 8px;"
                         >
                           <article
-                            class="ant-typography css-dev-only-do-not-override-txh9fw"
+                            class="ant-typography"
                           >
                             DMS: 
                             -
@@ -129,7 +129,7 @@ exports[`base/Nav/SideMenu/UserMenu/VersionModal-ce render snap when open is tru
                           style="margin-bottom: 8px;"
                         >
                           <article
-                            class="ant-typography css-dev-only-do-not-override-txh9fw"
+                            class="ant-typography"
                           >
                             PROVISION: 
                             -
@@ -139,7 +139,7 @@ exports[`base/Nav/SideMenu/UserMenu/VersionModal-ce render snap when open is tru
                           class="ant-space-item"
                         >
                           <article
-                            class="ant-typography css-dev-only-do-not-override-txh9fw"
+                            class="ant-typography"
                           >
                             SQLE: 
                             -
@@ -154,14 +154,14 @@ exports[`base/Nav/SideMenu/UserMenu/VersionModal-ce render snap when open is tru
                   style="margin-bottom: 24px;"
                 >
                   <div
-                    class="ant-space css-dev-only-do-not-override-txh9fw ant-space-vertical ant-space-align-start"
+                    class="ant-space ant-space-vertical ant-space-align-start"
                   >
                     <div
                       class="ant-space-item"
                       style="margin-bottom: 8px;"
                     >
                       <h5
-                        class="ant-typography css-dev-only-do-not-override-txh9fw"
+                        class="ant-typography"
                       >
                         产品简介
                       </h5>
@@ -170,7 +170,7 @@ exports[`base/Nav/SideMenu/UserMenu/VersionModal-ce render snap when open is tru
                       class="ant-space-item"
                     >
                       <span
-                        class="ant-typography css-dev-only-do-not-override-txh9fw"
+                        class="ant-typography"
                       >
                         DMS是由爱可生自主研发的全面支持多元数据库的SQL质量管理与权限安全管理平台。SQL审核功能广泛应用于开发、测试、上线发布和生产运行阶段的SQL质量治理，帮助企业实现全生命周期的SQL质量管控，促进内部开发规范的快速落地。同时，数据访问控制策略功能致力于提供细粒度的数据库权限控制，确保数据的安全性和一致性。我们的目标是为您提供高效而安全的SQL管理和权限管理解决方案。
                       </span>
@@ -181,14 +181,14 @@ exports[`base/Nav/SideMenu/UserMenu/VersionModal-ce render snap when open is tru
                   class="ant-space-item"
                 >
                   <div
-                    class="ant-space css-dev-only-do-not-override-txh9fw ant-space-vertical ant-space-align-start full-width-element css-ac649q"
+                    class="ant-space ant-space-vertical ant-space-align-start full-width-element css-ac649q"
                   >
                     <div
                       class="ant-space-item"
                       style="margin-bottom: 8px;"
                     >
                       <h5
-                        class="ant-typography css-dev-only-do-not-override-txh9fw"
+                        class="ant-typography"
                       >
                         功能特点
                       </h5>
@@ -197,7 +197,7 @@ exports[`base/Nav/SideMenu/UserMenu/VersionModal-ce render snap when open is tru
                       class="ant-space-item"
                     >
                       <span
-                        class="ant-typography whitespace-pre-line css-dev-only-do-not-override-txh9fw"
+                        class="ant-typography whitespace-pre-line"
                       >
                         1. 满足主流商业及开源数据库使用场景，支持十余种数据源类型。
 2. 提供运维专家团队多年的技术沉淀，并支持规则知识库的自主沉淀。
@@ -214,14 +214,14 @@ exports[`base/Nav/SideMenu/UserMenu/VersionModal-ce render snap when open is tru
               class="ant-modal-footer"
             >
               <div
-                class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+                class="ant-space ant-space-horizontal ant-space-align-center"
               >
                 <div
                   class="ant-space-item"
                   style="margin-right: 8px;"
                 >
                   <button
-                    class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary basic-button-wrapper css-geipcv"
+                    class="ant-btn ant-btn-primary basic-button-wrapper css-geipcv"
                     type="button"
                   >
                     <a
@@ -237,7 +237,7 @@ exports[`base/Nav/SideMenu/UserMenu/VersionModal-ce render snap when open is tru
                   class="ant-space-item"
                 >
                   <button
-                    class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary basic-button-wrapper css-geipcv"
+                    class="ant-btn ant-btn-primary basic-button-wrapper css-geipcv"
                     type="button"
                   >
                     <span>
@@ -265,7 +265,7 @@ exports[`base/Nav/SideMenu/UserMenu/VersionModal-ce render snap when open is tru
   <div />
   <div>
     <div
-      class="ant-modal-root css-dev-only-do-not-override-txh9fw"
+      class="ant-modal-root"
     >
       <div
         class="ant-modal-mask"
@@ -276,7 +276,7 @@ exports[`base/Nav/SideMenu/UserMenu/VersionModal-ce render snap when open is tru
       >
         <div
           aria-modal="true"
-          class="ant-modal css-dev-only-do-not-override-txh9fw version-modal basic-modal-wrapper css-vvpsbb ant-zoom-appear ant-zoom-appear-prepare ant-zoom"
+          class="ant-modal version-modal basic-modal-wrapper css-vvpsbb ant-zoom-appear ant-zoom-appear-prepare ant-zoom"
           role="dialog"
           style="width: 720px;"
         >
@@ -313,20 +313,20 @@ exports[`base/Nav/SideMenu/UserMenu/VersionModal-ce render snap when open is tru
               class="ant-modal-body"
             >
               <div
-                class="ant-space css-dev-only-do-not-override-txh9fw ant-space-vertical"
+                class="ant-space ant-space-vertical"
               >
                 <div
                   class="ant-space-item"
                   style="margin-bottom: 24px;"
                 >
                   <div
-                    class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+                    class="ant-space ant-space-horizontal ant-space-align-center"
                   >
                     <div
                       class="ant-space-item"
                     >
                       <h2
-                        class="ant-typography css-dev-only-do-not-override-txh9fw"
+                        class="ant-typography"
                       >
                         DMS
                       </h2>
@@ -338,14 +338,14 @@ exports[`base/Nav/SideMenu/UserMenu/VersionModal-ce render snap when open is tru
                   style="margin-bottom: 24px;"
                 >
                   <div
-                    class="ant-space css-dev-only-do-not-override-txh9fw ant-space-vertical ant-space-align-start"
+                    class="ant-space ant-space-vertical ant-space-align-start"
                   >
                     <div
                       class="ant-space-item"
                       style="margin-bottom: 8px;"
                     >
                       <h5
-                        class="ant-typography css-dev-only-do-not-override-txh9fw"
+                        class="ant-typography"
                       >
                         版本信息
                       </h5>
@@ -354,14 +354,14 @@ exports[`base/Nav/SideMenu/UserMenu/VersionModal-ce render snap when open is tru
                       class="ant-space-item"
                     >
                       <div
-                        class="ant-space css-dev-only-do-not-override-txh9fw ant-space-vertical"
+                        class="ant-space ant-space-vertical"
                       >
                         <div
                           class="ant-space-item"
                           style="margin-bottom: 8px;"
                         >
                           <article
-                            class="ant-typography css-dev-only-do-not-override-txh9fw"
+                            class="ant-typography"
                           >
                             UI: 
                             feature/add-make-command   ba9c9c5
@@ -372,7 +372,7 @@ exports[`base/Nav/SideMenu/UserMenu/VersionModal-ce render snap when open is tru
                           style="margin-bottom: 8px;"
                         >
                           <article
-                            class="ant-typography css-dev-only-do-not-override-txh9fw"
+                            class="ant-typography"
                           >
                             DMS: 
                             -
@@ -383,7 +383,7 @@ exports[`base/Nav/SideMenu/UserMenu/VersionModal-ce render snap when open is tru
                           style="margin-bottom: 8px;"
                         >
                           <article
-                            class="ant-typography css-dev-only-do-not-override-txh9fw"
+                            class="ant-typography"
                           >
                             PROVISION: 
                             -
@@ -393,7 +393,7 @@ exports[`base/Nav/SideMenu/UserMenu/VersionModal-ce render snap when open is tru
                           class="ant-space-item"
                         >
                           <article
-                            class="ant-typography css-dev-only-do-not-override-txh9fw"
+                            class="ant-typography"
                           >
                             SQLE: 
                             -
@@ -408,14 +408,14 @@ exports[`base/Nav/SideMenu/UserMenu/VersionModal-ce render snap when open is tru
                   style="margin-bottom: 24px;"
                 >
                   <div
-                    class="ant-space css-dev-only-do-not-override-txh9fw ant-space-vertical ant-space-align-start"
+                    class="ant-space ant-space-vertical ant-space-align-start"
                   >
                     <div
                       class="ant-space-item"
                       style="margin-bottom: 8px;"
                     >
                       <h5
-                        class="ant-typography css-dev-only-do-not-override-txh9fw"
+                        class="ant-typography"
                       >
                         产品简介
                       </h5>
@@ -424,7 +424,7 @@ exports[`base/Nav/SideMenu/UserMenu/VersionModal-ce render snap when open is tru
                       class="ant-space-item"
                     >
                       <span
-                        class="ant-typography css-dev-only-do-not-override-txh9fw"
+                        class="ant-typography"
                       >
                         DMS是由爱可生自主研发的全面支持多元数据库的SQL质量管理与权限安全管理平台。SQL审核功能广泛应用于开发、测试、上线发布和生产运行阶段的SQL质量治理，帮助企业实现全生命周期的SQL质量管控，促进内部开发规范的快速落地。同时，数据访问控制策略功能致力于提供细粒度的数据库权限控制，确保数据的安全性和一致性。我们的目标是为您提供高效而安全的SQL管理和权限管理解决方案。
                       </span>
@@ -435,14 +435,14 @@ exports[`base/Nav/SideMenu/UserMenu/VersionModal-ce render snap when open is tru
                   class="ant-space-item"
                 >
                   <div
-                    class="ant-space css-dev-only-do-not-override-txh9fw ant-space-vertical ant-space-align-start full-width-element css-ac649q"
+                    class="ant-space ant-space-vertical ant-space-align-start full-width-element css-ac649q"
                   >
                     <div
                       class="ant-space-item"
                       style="margin-bottom: 8px;"
                     >
                       <h5
-                        class="ant-typography css-dev-only-do-not-override-txh9fw"
+                        class="ant-typography"
                       >
                         功能特点
                       </h5>
@@ -451,7 +451,7 @@ exports[`base/Nav/SideMenu/UserMenu/VersionModal-ce render snap when open is tru
                       class="ant-space-item"
                     >
                       <span
-                        class="ant-typography whitespace-pre-line css-dev-only-do-not-override-txh9fw"
+                        class="ant-typography whitespace-pre-line"
                       >
                         1. 满足主流商业及开源数据库使用场景，支持十余种数据源类型。
 2. 提供运维专家团队多年的技术沉淀，并支持规则知识库的自主沉淀。
@@ -468,14 +468,14 @@ exports[`base/Nav/SideMenu/UserMenu/VersionModal-ce render snap when open is tru
               class="ant-modal-footer"
             >
               <div
-                class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+                class="ant-space ant-space-horizontal ant-space-align-center"
               >
                 <div
                   class="ant-space-item"
                   style="margin-right: 8px;"
                 >
                   <button
-                    class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary basic-button-wrapper css-geipcv"
+                    class="ant-btn ant-btn-primary basic-button-wrapper css-geipcv"
                     type="button"
                   >
                     <a
@@ -491,7 +491,7 @@ exports[`base/Nav/SideMenu/UserMenu/VersionModal-ce render snap when open is tru
                   class="ant-space-item"
                 >
                   <button
-                    class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary basic-button-wrapper css-geipcv"
+                    class="ant-btn ant-btn-primary basic-button-wrapper css-geipcv"
                     type="button"
                   >
                     <span>

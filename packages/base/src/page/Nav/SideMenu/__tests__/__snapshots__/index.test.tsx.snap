@@ -4,35 +4,19 @@ exports[`test Base/Nav/SideMenu/index mount and unmount component 1`] = `
 <body>
   <div>
     <div
-      class="dms-layout-side css-13z0syi"
+      class="dms-layout-side css-1mju0nn"
     >
       <div
         class="dms-layout-side-start"
       >
-        <div>
-          <div
-            class="title"
-          >
-            <span
-              class="label label-primary"
-            >
-              Action
-            </span>
-            <span
-              class="label label-base"
-            >
-              DMS
-            </span>
-          </div>
-        </div>
         <div
-          class="ant-spin-nested-loading css-dev-only-do-not-override-txh9fw"
+          class="ant-spin-nested-loading"
         >
           <div>
             <div
               aria-busy="true"
               aria-live="polite"
-              class="ant-spin ant-spin-spinning css-dev-only-do-not-override-txh9fw"
+              class="ant-spin ant-spin-spinning"
             >
               <span
                 class="ant-spin-dot ant-spin-dot-spin"
@@ -56,17 +40,39 @@ exports[`test Base/Nav/SideMenu/index mount and unmount component 1`] = `
             class="ant-spin-container ant-spin-blur"
           >
             <div
+              class="css-hndaa8"
+            >
+              <div
+                class="title-wrapper"
+              >
+                <div
+                  class="title"
+                >
+                  <span
+                    class="label label-primary"
+                  >
+                    Action
+                  </span>
+                  <span
+                    class="label label-base"
+                  >
+                    DMS
+                  </span>
+                </div>
+              </div>
+            </div>
+            <div
               class="css-22avtw"
             >
               <div
-                class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center action-space-wrapper"
+                class="ant-space ant-space-horizontal ant-space-align-center action-space-wrapper"
               >
                 <div
                   class="ant-space-item"
                   style="margin-right: 8px;"
                 >
                   <div
-                    class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
+                    class="ant-space ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
                   >
                     <div
                       class="ant-space-item"
@@ -100,7 +106,7 @@ exports[`test Base/Nav/SideMenu/index mount and unmount component 1`] = `
                   style="margin-right: 8px;"
                 >
                   <div
-                    class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
+                    class="ant-space ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
                   >
                     <div
                       class="ant-space-item"
@@ -129,7 +135,7 @@ exports[`test Base/Nav/SideMenu/index mount and unmount component 1`] = `
                   style="margin-right: 8px;"
                 >
                   <div
-                    class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
+                    class="ant-space ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
                   >
                     <div
                       class="ant-space-item"
@@ -157,7 +163,7 @@ exports[`test Base/Nav/SideMenu/index mount and unmount component 1`] = `
                   class="ant-space-item"
                 >
                   <div
-                    class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
+                    class="ant-space ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
                   >
                     <div
                       class="ant-space-item"
@@ -203,7 +209,7 @@ exports[`test Base/Nav/SideMenu/index mount and unmount component 1`] = `
               </div>
             </div>
             <div
-              class="ant-select ant-select-lg ant-select-borderless basic-select-wrapper custom-select-namespace custom-project-selector css-wk9fc9 css-dev-only-do-not-override-v9sov3 ant-select-single ant-select-show-arrow"
+              class="ant-select ant-select-lg ant-select-borderless basic-select-wrapper custom-select-namespace custom-project-selector css-wk9fc9 ant-select-single ant-select-show-arrow"
               searchinputref="[object Object]"
             >
               <div
@@ -282,7 +288,7 @@ exports[`test Base/Nav/SideMenu/index mount and unmount component 1`] = `
           </div>
         </div>
         <ul
-          class="ant-menu ant-menu-root ant-menu-inline ant-menu-light custom-menu css-dev-only-do-not-override-txh9fw"
+          class="ant-menu ant-menu-root ant-menu-inline ant-menu-light custom-menu"
           data-menu-list="true"
           role="menu"
           tabindex="0"
@@ -1249,7 +1255,7 @@ exports[`test Base/Nav/SideMenu/index mount and unmount component 1`] = `
         class="dms-layout-side-end"
       >
         <span
-          class="ant-avatar ant-avatar-circle action-avatar css-1wq79dc css-dev-only-do-not-override-txh9fw"
+          class="ant-avatar ant-avatar-circle action-avatar css-1wq79dc"
         >
           <span
             class="ant-avatar-string"
@@ -1292,45 +1298,72 @@ exports[`test Base/Nav/SideMenu/index mount and unmount component 2`] = `
 <body>
   <div>
     <div
-      class="dms-layout-side css-13z0syi"
+      class="dms-layout-side css-1mju0nn"
     >
       <div
         class="dms-layout-side-start"
       >
-        <div>
-          <div
-            class="title"
-          >
-            <span
-              class="label label-primary"
-            >
-              Action
-            </span>
-            <span
-              class="label label-base"
-            >
-              DMS
-            </span>
-          </div>
-        </div>
         <div
-          class="ant-spin-nested-loading css-dev-only-do-not-override-txh9fw"
+          class="ant-spin-nested-loading"
         >
           <div
             class="ant-spin-container"
           >
             <div
+              class="css-hndaa8"
+            >
+              <div
+                class="title-wrapper"
+              >
+                <div
+                  class="title"
+                >
+                  <span
+                    class="label label-primary"
+                  >
+                    Action
+                  </span>
+                  <span
+                    class="label label-base"
+                  >
+                    DMS
+                  </span>
+                </div>
+              </div>
+              <div
+                class="ant-dropdown-trigger css-me3d58"
+              >
+                <svg
+                  height="16"
+                  viewBox="0 0 1024 1024"
+                  width="16"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M512 938.667c-53.333 0-384-257.259-384-469.334s171.925-384 384-384 384 171.926 384 384-330.667 469.334-384 469.334m0-352c64.8 0 117.333-52.534 117.333-117.334S576.8 352 512 352s-117.333 52.533-117.333 117.333S447.2 586.667 512 586.667"
+                    fill="#4583FF"
+                  />
+                </svg>
+                <div
+                  class="text"
+                  title="请选择"
+                >
+                  请选择
+                </div>
+              </div>
+            </div>
+            <div
               class="css-22avtw"
             >
               <div
-                class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center action-space-wrapper"
+                class="ant-space ant-space-horizontal ant-space-align-center action-space-wrapper"
               >
                 <div
                   class="ant-space-item"
                   style="margin-right: 8px;"
                 >
                   <div
-                    class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
+                    class="ant-space ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
                   >
                     <div
                       class="ant-space-item"
@@ -1387,7 +1420,7 @@ exports[`test Base/Nav/SideMenu/index mount and unmount component 2`] = `
                   style="margin-right: 8px;"
                 >
                   <div
-                    class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
+                    class="ant-space ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
                   >
                     <div
                       class="ant-space-item"
@@ -1416,7 +1449,7 @@ exports[`test Base/Nav/SideMenu/index mount and unmount component 2`] = `
                   style="margin-right: 8px;"
                 >
                   <div
-                    class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
+                    class="ant-space ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
                   >
                     <div
                       class="ant-space-item"
@@ -1444,7 +1477,7 @@ exports[`test Base/Nav/SideMenu/index mount and unmount component 2`] = `
                   class="ant-space-item"
                 >
                   <div
-                    class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
+                    class="ant-space ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
                   >
                     <div
                       class="ant-space-item"
@@ -1490,7 +1523,7 @@ exports[`test Base/Nav/SideMenu/index mount and unmount component 2`] = `
               </div>
             </div>
             <div
-              class="ant-select ant-select-lg ant-select-borderless basic-select-wrapper custom-select-namespace custom-project-selector css-wk9fc9 css-dev-only-do-not-override-v9sov3 ant-select-single ant-select-show-arrow"
+              class="ant-select ant-select-lg ant-select-borderless basic-select-wrapper custom-select-namespace custom-project-selector css-wk9fc9 ant-select-single ant-select-show-arrow"
               searchinputref="[object Object]"
             >
               <div
@@ -1568,7 +1601,7 @@ exports[`test Base/Nav/SideMenu/index mount and unmount component 2`] = `
           </div>
         </div>
         <ul
-          class="ant-menu ant-menu-root ant-menu-inline ant-menu-light custom-menu css-dev-only-do-not-override-txh9fw"
+          class="ant-menu ant-menu-root ant-menu-inline ant-menu-light custom-menu"
           data-menu-list="true"
           role="menu"
           tabindex="0"
@@ -2535,7 +2568,7 @@ exports[`test Base/Nav/SideMenu/index mount and unmount component 2`] = `
         class="dms-layout-side-end"
       >
         <span
-          class="ant-avatar ant-avatar-circle action-avatar css-1wq79dc css-dev-only-do-not-override-txh9fw"
+          class="ant-avatar ant-avatar-circle action-avatar css-1wq79dc"
         >
           <span
             class="ant-avatar-string"
@@ -2578,45 +2611,72 @@ exports[`test Base/Nav/SideMenu/index mount and unmount component 3`] = `
 <body>
   <div>
     <div
-      class="dms-layout-side css-13z0syi"
+      class="dms-layout-side css-1mju0nn"
     >
       <div
         class="dms-layout-side-start"
       >
-        <div>
-          <div
-            class="title"
-          >
-            <span
-              class="label label-primary"
-            >
-              Action
-            </span>
-            <span
-              class="label label-base"
-            >
-              DMS
-            </span>
-          </div>
-        </div>
         <div
-          class="ant-spin-nested-loading css-dev-only-do-not-override-txh9fw"
+          class="ant-spin-nested-loading"
         >
           <div
             class="ant-spin-container"
           >
             <div
+              class="css-hndaa8"
+            >
+              <div
+                class="title-wrapper"
+              >
+                <div
+                  class="title"
+                >
+                  <span
+                    class="label label-primary"
+                  >
+                    Action
+                  </span>
+                  <span
+                    class="label label-base"
+                  >
+                    DMS
+                  </span>
+                </div>
+              </div>
+              <div
+                class="ant-dropdown-trigger css-me3d58"
+              >
+                <svg
+                  height="16"
+                  viewBox="0 0 1024 1024"
+                  width="16"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M512 938.667c-53.333 0-384-257.259-384-469.334s171.925-384 384-384 384 171.926 384 384-330.667 469.334-384 469.334m0-352c64.8 0 117.333-52.534 117.333-117.334S576.8 352 512 352s-117.333 52.533-117.333 117.333S447.2 586.667 512 586.667"
+                    fill="#4583FF"
+                  />
+                </svg>
+                <div
+                  class="text"
+                  title="请选择"
+                >
+                  请选择
+                </div>
+              </div>
+            </div>
+            <div
               class="css-22avtw"
             >
               <div
-                class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center action-space-wrapper"
+                class="ant-space ant-space-horizontal ant-space-align-center action-space-wrapper"
               >
                 <div
                   class="ant-space-item"
                   style="margin-right: 8px;"
                 >
                   <div
-                    class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
+                    class="ant-space ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
                   >
                     <div
                       class="ant-space-item"
@@ -2673,7 +2733,7 @@ exports[`test Base/Nav/SideMenu/index mount and unmount component 3`] = `
                   style="margin-right: 8px;"
                 >
                   <div
-                    class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
+                    class="ant-space ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
                   >
                     <div
                       class="ant-space-item"
@@ -2702,7 +2762,7 @@ exports[`test Base/Nav/SideMenu/index mount and unmount component 3`] = `
                   style="margin-right: 8px;"
                 >
                   <div
-                    class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
+                    class="ant-space ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
                   >
                     <div
                       class="ant-space-item"
@@ -2730,7 +2790,7 @@ exports[`test Base/Nav/SideMenu/index mount and unmount component 3`] = `
                   class="ant-space-item"
                 >
                   <div
-                    class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
+                    class="ant-space ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
                   >
                     <div
                       class="ant-space-item"
@@ -2776,7 +2836,7 @@ exports[`test Base/Nav/SideMenu/index mount and unmount component 3`] = `
               </div>
             </div>
             <div
-              class="ant-select ant-select-lg ant-select-borderless basic-select-wrapper custom-select-namespace custom-project-selector css-wk9fc9 css-dev-only-do-not-override-v9sov3 ant-select-single ant-select-show-arrow ant-select-open"
+              class="ant-select ant-select-lg ant-select-borderless basic-select-wrapper custom-select-namespace custom-project-selector css-wk9fc9 ant-select-single ant-select-show-arrow ant-select-open"
               searchinputref="[object Object]"
             >
               <div
@@ -2854,7 +2914,7 @@ exports[`test Base/Nav/SideMenu/index mount and unmount component 3`] = `
           </div>
         </div>
         <ul
-          class="ant-menu ant-menu-root ant-menu-inline ant-menu-light custom-menu css-dev-only-do-not-override-txh9fw"
+          class="ant-menu ant-menu-root ant-menu-inline ant-menu-light custom-menu"
           data-menu-list="true"
           role="menu"
           tabindex="0"
@@ -3821,7 +3881,7 @@ exports[`test Base/Nav/SideMenu/index mount and unmount component 3`] = `
         class="dms-layout-side-end"
       >
         <span
-          class="ant-avatar ant-avatar-circle action-avatar css-1wq79dc css-dev-only-do-not-override-txh9fw"
+          class="ant-avatar ant-avatar-circle action-avatar css-1wq79dc"
         >
           <span
             class="ant-avatar-string"
@@ -3859,7 +3919,7 @@ exports[`test Base/Nav/SideMenu/index mount and unmount component 3`] = `
   </div>
   <div>
     <div
-      class="ant-select-dropdown ant-slide-up-appear ant-slide-up-appear-prepare ant-slide-up custom-select-popup-wrapper css-dev-only-do-not-override-v9sov3 ant-select-dropdown-placement-bottomLeft"
+      class="ant-select-dropdown ant-slide-up-appear ant-slide-up-appear-prepare ant-slide-up custom-select-popup-wrapper ant-select-dropdown-placement-bottomLeft"
       style="--arrow-x: 0px; --arrow-y: 0px; left: -1000vw; top: -1000vh; box-sizing: border-box; padding: 0px; width: 240px; min-width: 0;"
     >
       <div>
@@ -3867,10 +3927,10 @@ exports[`test Base/Nav/SideMenu/index mount and unmount component 3`] = `
           class="css-h34pqn"
         >
           <span
-            class="ant-input-affix-wrapper basic-input-wrapper custom-select-popup-search-input css-d0jdfn ant-input-affix-wrapper-borderless css-dev-only-do-not-override-6svbnr"
+            class="ant-input-affix-wrapper basic-input-wrapper custom-select-popup-search-input css-d0jdfn ant-input-affix-wrapper-borderless"
           >
             <input
-              class="ant-input ant-input-borderless css-dev-only-do-not-override-6svbnr"
+              class="ant-input ant-input-borderless"
               placeholder="搜索"
               type="text"
               value=""
@@ -3967,15 +4027,6 @@ exports[`test Base/Nav/SideMenu/index mount and unmount component 3`] = `
                     </div>
                   </div>
                 </div>
-              </div>
-              <div
-                class="rc-virtual-list-scrollbar"
-                style="width: 8px; top: 0px; bottom: 0px; right: 0px; position: absolute; display: none;"
-              >
-                <div
-                  class="rc-virtual-list-scrollbar-thumb"
-                  style="width: 100%; height: 128px; top: 0px; left: 0px; position: absolute; background: rgba(0, 0, 0, 0.5); border-radius: 99px; cursor: pointer; user-select: none;"
-                />
               </div>
             </div>
           </div>
@@ -4079,7 +4130,7 @@ exports[`test Base/Nav/SideMenu/index mount and unmount component 3`] = `
               href="/project"
             >
               <button
-                class="ant-btn css-dev-only-do-not-override-1yfaqef ant-btn-primary basic-button-wrapper css-geipcv"
+                class="ant-btn ant-btn-primary basic-button-wrapper css-geipcv"
                 type="button"
               >
                 <span>
@@ -4098,35 +4149,19 @@ exports[`test Base/Nav/SideMenu/index mount and unmount component 3`] = `
 exports[`test Base/Nav/SideMenu/index should match snapshot when checkPagePermission return value is equal false 1`] = `
 <div>
   <div
-    class="dms-layout-side css-13z0syi"
+    class="dms-layout-side css-1mju0nn"
   >
     <div
       class="dms-layout-side-start"
     >
-      <div>
-        <div
-          class="title"
-        >
-          <span
-            class="label label-primary"
-          >
-            Action
-          </span>
-          <span
-            class="label label-base"
-          >
-            DMS
-          </span>
-        </div>
-      </div>
       <div
-        class="ant-spin-nested-loading css-dev-only-do-not-override-txh9fw"
+        class="ant-spin-nested-loading"
       >
         <div>
           <div
             aria-busy="true"
             aria-live="polite"
-            class="ant-spin ant-spin-spinning css-dev-only-do-not-override-txh9fw"
+            class="ant-spin ant-spin-spinning"
           >
             <span
               class="ant-spin-dot ant-spin-dot-spin"
@@ -4150,17 +4185,39 @@ exports[`test Base/Nav/SideMenu/index should match snapshot when checkPagePermis
           class="ant-spin-container ant-spin-blur"
         >
           <div
+            class="css-hndaa8"
+          >
+            <div
+              class="title-wrapper"
+            >
+              <div
+                class="title"
+              >
+                <span
+                  class="label label-primary"
+                >
+                  Action
+                </span>
+                <span
+                  class="label label-base"
+                >
+                  DMS
+                </span>
+              </div>
+            </div>
+          </div>
+          <div
             class="css-22avtw"
           >
             <div
-              class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center action-space-wrapper"
+              class="ant-space ant-space-horizontal ant-space-align-center action-space-wrapper"
             >
               <div
                 class="ant-space-item"
                 style="margin-right: 8px;"
               >
                 <div
-                  class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
+                  class="ant-space ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
                 >
                   <div
                     class="ant-space-item"
@@ -4193,7 +4250,7 @@ exports[`test Base/Nav/SideMenu/index should match snapshot when checkPagePermis
                 class="ant-space-item"
               >
                 <div
-                  class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
+                  class="ant-space ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
                 >
                   <div
                     class="ant-space-item"
@@ -4220,7 +4277,7 @@ exports[`test Base/Nav/SideMenu/index should match snapshot when checkPagePermis
             </div>
           </div>
           <div
-            class="ant-select ant-select-lg ant-select-borderless basic-select-wrapper custom-select-namespace custom-project-selector css-wk9fc9 css-dev-only-do-not-override-v9sov3 ant-select-single ant-select-show-arrow"
+            class="ant-select ant-select-lg ant-select-borderless basic-select-wrapper custom-select-namespace custom-project-selector css-wk9fc9 ant-select-single ant-select-show-arrow"
             searchinputref="[object Object]"
           >
             <div
@@ -4299,7 +4356,7 @@ exports[`test Base/Nav/SideMenu/index should match snapshot when checkPagePermis
         </div>
       </div>
       <ul
-        class="ant-menu ant-menu-root ant-menu-inline ant-menu-light custom-menu css-dev-only-do-not-override-txh9fw"
+        class="ant-menu ant-menu-root ant-menu-inline ant-menu-light custom-menu"
         data-menu-list="true"
         role="menu"
         tabindex="0"
@@ -5177,7 +5234,7 @@ exports[`test Base/Nav/SideMenu/index should match snapshot when checkPagePermis
       class="dms-layout-side-end"
     >
       <span
-        class="ant-avatar ant-avatar-circle action-avatar css-1wq79dc css-dev-only-do-not-override-txh9fw"
+        class="ant-avatar ant-avatar-circle action-avatar css-1wq79dc"
       >
         <span
           class="ant-avatar-string"
@@ -5194,45 +5251,72 @@ exports[`test Base/Nav/SideMenu/index should match snapshot when checkPagePermis
 exports[`test Base/Nav/SideMenu/index should match snapshot when checkPagePermission return value is equal false 2`] = `
 <div>
   <div
-    class="dms-layout-side css-13z0syi"
+    class="dms-layout-side css-1mju0nn"
   >
     <div
       class="dms-layout-side-start"
     >
-      <div>
-        <div
-          class="title"
-        >
-          <span
-            class="label label-primary"
-          >
-            Action
-          </span>
-          <span
-            class="label label-base"
-          >
-            DMS
-          </span>
-        </div>
-      </div>
       <div
-        class="ant-spin-nested-loading css-dev-only-do-not-override-txh9fw"
+        class="ant-spin-nested-loading"
       >
         <div
           class="ant-spin-container"
         >
           <div
+            class="css-hndaa8"
+          >
+            <div
+              class="title-wrapper"
+            >
+              <div
+                class="title"
+              >
+                <span
+                  class="label label-primary"
+                >
+                  Action
+                </span>
+                <span
+                  class="label label-base"
+                >
+                  DMS
+                </span>
+              </div>
+            </div>
+            <div
+              class="ant-dropdown-trigger css-me3d58"
+            >
+              <svg
+                height="16"
+                viewBox="0 0 1024 1024"
+                width="16"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M512 938.667c-53.333 0-384-257.259-384-469.334s171.925-384 384-384 384 171.926 384 384-330.667 469.334-384 469.334m0-352c64.8 0 117.333-52.534 117.333-117.334S576.8 352 512 352s-117.333 52.533-117.333 117.333S447.2 586.667 512 586.667"
+                  fill="#4583FF"
+                />
+              </svg>
+              <div
+                class="text"
+                title="请选择"
+              >
+                请选择
+              </div>
+            </div>
+          </div>
+          <div
             class="css-22avtw"
           >
             <div
-              class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center action-space-wrapper"
+              class="ant-space ant-space-horizontal ant-space-align-center action-space-wrapper"
             >
               <div
                 class="ant-space-item"
                 style="margin-right: 8px;"
               >
                 <div
-                  class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
+                  class="ant-space ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
                 >
                   <div
                     class="ant-space-item"
@@ -5288,7 +5372,7 @@ exports[`test Base/Nav/SideMenu/index should match snapshot when checkPagePermis
                 class="ant-space-item"
               >
                 <div
-                  class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
+                  class="ant-space ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
                 >
                   <div
                     class="ant-space-item"
@@ -5315,7 +5399,7 @@ exports[`test Base/Nav/SideMenu/index should match snapshot when checkPagePermis
             </div>
           </div>
           <div
-            class="ant-select ant-select-lg ant-select-borderless basic-select-wrapper custom-select-namespace custom-project-selector css-wk9fc9 css-dev-only-do-not-override-v9sov3 ant-select-single ant-select-show-arrow"
+            class="ant-select ant-select-lg ant-select-borderless basic-select-wrapper custom-select-namespace custom-project-selector css-wk9fc9 ant-select-single ant-select-show-arrow"
             searchinputref="[object Object]"
           >
             <div
@@ -5393,7 +5477,7 @@ exports[`test Base/Nav/SideMenu/index should match snapshot when checkPagePermis
         </div>
       </div>
       <ul
-        class="ant-menu ant-menu-root ant-menu-inline ant-menu-light custom-menu css-dev-only-do-not-override-txh9fw"
+        class="ant-menu ant-menu-root ant-menu-inline ant-menu-light custom-menu"
         data-menu-list="true"
         role="menu"
         tabindex="0"
@@ -6271,7 +6355,7 @@ exports[`test Base/Nav/SideMenu/index should match snapshot when checkPagePermis
       class="dms-layout-side-end"
     >
       <span
-        class="ant-avatar ant-avatar-circle action-avatar css-1wq79dc css-dev-only-do-not-override-txh9fw"
+        class="ant-avatar ant-avatar-circle action-avatar css-1wq79dc"
       >
         <span
           class="ant-avatar-string"

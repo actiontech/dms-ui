@@ -40,7 +40,6 @@ const SyncRecoil = () => {
 export default SyncRecoil;
 
 export function getRecoil<T>(atom: RecoilValue<T>): T {
-  // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
   return SyncRecoilStore.get!(atom);
 }
 
@@ -48,6 +47,5 @@ export function setRecoil<T>(
   atom: RecoilState<T>,
   valOrUpdater: T | ((curVal: T) => T)
 ) {
-  // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
   SyncRecoilStore.set!(atom, valOrUpdater);
 }

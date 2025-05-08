@@ -5,7 +5,7 @@ exports[`page/DataSource/DataSourceForm CE render business field when getProject
   <div />
   <div>
     <form
-      class="ant-form ant-form-horizontal css-dev-only-do-not-override-txh9fw hasTopHeader css-19jfn7e"
+      class="ant-form ant-form-horizontal hasTopHeader css-19jfn7e"
     >
       <section
         class="has-border css-1114g56"
@@ -14,7 +14,7 @@ exports[`page/DataSource/DataSourceForm CE render business field when getProject
           class="css-bspaai"
         >
           <h3
-            class="ant-typography css-p50odb css-dev-only-do-not-override-txh9fw"
+            class="ant-typography css-p50odb"
           >
             <span
               class="anticon title-icon"
@@ -41,13 +41,13 @@ exports[`page/DataSource/DataSourceForm CE render business field when getProject
             </span>
           </h3>
           <div
-            class="ant-form-item css-15d6abf css-dev-only-do-not-override-txh9fw"
+            class="ant-form-item css-15d6abf"
           >
             <div
-              class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+              class="ant-row ant-form-item-row"
             >
               <div
-                class="ant-col ant-col-0 ant-form-item-label ant-form-item-label-left css-dev-only-do-not-override-txh9fw"
+                class="ant-col ant-col-0 ant-form-item-label ant-form-item-label-left"
               >
                 <label
                   class="ant-form-item-required ant-form-item-no-colon"
@@ -56,7 +56,7 @@ exports[`page/DataSource/DataSourceForm CE render business field when getProject
                 />
               </div>
               <div
-                class="ant-col ant-col-24 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                class="ant-col ant-col-24 ant-form-item-control"
               >
                 <div
                   class="ant-form-item-control-input"
@@ -66,7 +66,7 @@ exports[`page/DataSource/DataSourceForm CE render business field when getProject
                   >
                     <input
                       aria-required="true"
-                      class="ant-input css-dev-only-do-not-override-ywkr0o basic-input-wrapper css-opeiev"
+                      class="ant-input basic-input-wrapper css-opeiev"
                       id="name"
                       placeholder="请输入数据源名称"
                       type="text"
@@ -78,18 +78,18 @@ exports[`page/DataSource/DataSourceForm CE render business field when getProject
             </div>
           </div>
           <h1
-            class="ant-typography css-1eepp70 css-dev-only-do-not-override-txh9fw"
+            class="ant-typography css-1eepp70"
           >
             基础配置
           </h1>
           <div
-            class="ant-form-item has-required-style css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+            class="ant-form-item has-required-style css-1jlm9cy"
           >
             <div
-              class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+              class="ant-row ant-form-item-row"
             >
               <div
-                class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left css-dev-only-do-not-override-txh9fw"
+                class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left"
               >
                 <label
                   class="ant-form-item-required ant-form-item-no-colon"
@@ -100,7 +100,7 @@ exports[`page/DataSource/DataSourceForm CE render business field when getProject
                 </label>
               </div>
               <div
-                class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control"
               >
                 <div
                   class="ant-form-item-control-input"
@@ -110,7 +110,7 @@ exports[`page/DataSource/DataSourceForm CE render business field when getProject
                   >
                     <div
                       aria-required="true"
-                      class="ant-select ant-select-in-form-item basic-select-wrapper css-iy4o4x css-dev-only-do-not-override-v9sov3 ant-select-single ant-select-show-arrow ant-select-disabled"
+                      class="ant-select ant-select-in-form-item basic-select-wrapper css-iy4o4x ant-select-single ant-select-show-arrow ant-select-disabled"
                     >
                       <div
                         class="ant-select-selector"
@@ -178,13 +178,13 @@ exports[`page/DataSource/DataSourceForm CE render business field when getProject
             </div>
           </div>
           <div
-            class="ant-form-item css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+            class="ant-form-item css-1jlm9cy"
           >
             <div
-              class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+              class="ant-row ant-form-item-row"
             >
               <div
-                class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left css-dev-only-do-not-override-txh9fw"
+                class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left"
               >
                 <label
                   class="ant-form-item-no-colon"
@@ -195,7 +195,7 @@ exports[`page/DataSource/DataSourceForm CE render business field when getProject
                 </label>
               </div>
               <div
-                class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control"
               >
                 <div
                   class="ant-form-item-control-input"
@@ -204,7 +204,7 @@ exports[`page/DataSource/DataSourceForm CE render business field when getProject
                     class="ant-form-item-control-input-content"
                   >
                     <textarea
-                      class="ant-input css-dev-only-do-not-override-txh9fw basic-input-wrapper css-1pd1cd5"
+                      class="ant-input basic-input-wrapper css-1pd1cd5"
                       id="describe"
                       placeholder="请输入数据源描述"
                     />
@@ -214,13 +214,13 @@ exports[`page/DataSource/DataSourceForm CE render business field when getProject
             </div>
           </div>
           <div
-            class="ant-form-item has-required-style css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+            class="ant-form-item has-required-style css-1jlm9cy"
           >
             <div
-              class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+              class="ant-row ant-form-item-row"
             >
               <div
-                class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left css-dev-only-do-not-override-txh9fw"
+                class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left"
               >
                 <label
                   class="ant-form-item-required ant-form-item-no-colon"
@@ -231,7 +231,7 @@ exports[`page/DataSource/DataSourceForm CE render business field when getProject
                 </label>
               </div>
               <div
-                class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control"
               >
                 <div
                   class="ant-form-item-control-input"
@@ -241,7 +241,7 @@ exports[`page/DataSource/DataSourceForm CE render business field when getProject
                   >
                     <div
                       aria-required="true"
-                      class="ant-select ant-select-in-form-item basic-select-wrapper css-iy4o4x css-dev-only-do-not-override-v9sov3 ant-select-single ant-select-allow-clear ant-select-show-arrow ant-select-show-search"
+                      class="ant-select ant-select-in-form-item basic-select-wrapper css-iy4o4x ant-select-single ant-select-allow-clear ant-select-show-arrow ant-select-show-search"
                     >
                       <div
                         class="ant-select-selector"
@@ -304,13 +304,13 @@ exports[`page/DataSource/DataSourceForm CE render business field when getProject
             </div>
           </div>
           <div
-            class="ant-form-item has-required-style css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+            class="ant-form-item has-required-style css-1jlm9cy"
           >
             <div
-              class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+              class="ant-row ant-form-item-row"
             >
               <div
-                class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left css-dev-only-do-not-override-txh9fw"
+                class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left"
               >
                 <label
                   class="ant-form-item-required ant-form-item-no-colon"
@@ -321,7 +321,7 @@ exports[`page/DataSource/DataSourceForm CE render business field when getProject
                 </label>
               </div>
               <div
-                class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control"
               >
                 <div
                   class="ant-form-item-control-input"
@@ -331,7 +331,7 @@ exports[`page/DataSource/DataSourceForm CE render business field when getProject
                   >
                     <input
                       aria-required="true"
-                      class="ant-input css-dev-only-do-not-override-ywkr0o basic-input-wrapper css-1pd1cd5"
+                      class="ant-input basic-input-wrapper css-1pd1cd5"
                       id="ip"
                       placeholder="请输入数据源IP或域名"
                       type="text"
@@ -343,13 +343,13 @@ exports[`page/DataSource/DataSourceForm CE render business field when getProject
             </div>
           </div>
           <div
-            class="ant-form-item has-required-style css-1jlm9cy css-dev-only-do-not-override-txh9fw ant-form-item-has-success"
+            class="ant-form-item has-required-style css-1jlm9cy ant-form-item-has-success"
           >
             <div
-              class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+              class="ant-row ant-form-item-row"
             >
               <div
-                class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left css-dev-only-do-not-override-txh9fw"
+                class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left"
               >
                 <label
                   class="ant-form-item-required ant-form-item-no-colon"
@@ -360,7 +360,7 @@ exports[`page/DataSource/DataSourceForm CE render business field when getProject
                 </label>
               </div>
               <div
-                class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control"
               >
                 <div
                   class="ant-form-item-control-input"
@@ -370,7 +370,7 @@ exports[`page/DataSource/DataSourceForm CE render business field when getProject
                   >
                     <input
                       aria-required="true"
-                      class="ant-input ant-input-status-success css-dev-only-do-not-override-ywkr0o basic-input-wrapper css-1pd1cd5"
+                      class="ant-input ant-input-status-success basic-input-wrapper css-1pd1cd5"
                       id="port"
                       placeholder="请输入数据源端口"
                       type="text"
@@ -382,13 +382,13 @@ exports[`page/DataSource/DataSourceForm CE render business field when getProject
             </div>
           </div>
           <div
-            class="ant-form-item has-required-style css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+            class="ant-form-item has-required-style css-1jlm9cy"
           >
             <div
-              class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+              class="ant-row ant-form-item-row"
             >
               <div
-                class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left css-dev-only-do-not-override-txh9fw"
+                class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left"
               >
                 <label
                   class="ant-form-item-required ant-form-item-no-colon"
@@ -399,7 +399,7 @@ exports[`page/DataSource/DataSourceForm CE render business field when getProject
                 </label>
               </div>
               <div
-                class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control"
               >
                 <div
                   class="ant-form-item-control-input"
@@ -409,7 +409,7 @@ exports[`page/DataSource/DataSourceForm CE render business field when getProject
                   >
                     <input
                       aria-required="true"
-                      class="ant-input css-dev-only-do-not-override-ywkr0o basic-input-wrapper css-1pd1cd5"
+                      class="ant-input basic-input-wrapper css-1pd1cd5"
                       id="user"
                       placeholder="请输入连接用户"
                       type="text"
@@ -421,13 +421,13 @@ exports[`page/DataSource/DataSourceForm CE render business field when getProject
             </div>
           </div>
           <div
-            class="ant-form-item has-required-style css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+            class="ant-form-item has-required-style css-1jlm9cy"
           >
             <div
-              class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+              class="ant-row ant-form-item-row"
             >
               <div
-                class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left css-dev-only-do-not-override-txh9fw"
+                class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left"
               >
                 <label
                   class="ant-form-item-required ant-form-item-no-colon"
@@ -438,7 +438,7 @@ exports[`page/DataSource/DataSourceForm CE render business field when getProject
                 </label>
               </div>
               <div
-                class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control"
               >
                 <div
                   class="ant-form-item-control-input"
@@ -447,11 +447,11 @@ exports[`page/DataSource/DataSourceForm CE render business field when getProject
                     class="ant-form-item-control-input-content"
                   >
                     <span
-                      class="ant-input-affix-wrapper ant-input-password basic-input-wrapper css-1pd1cd5 css-dev-only-do-not-override-txh9fw"
+                      class="ant-input-affix-wrapper ant-input-password basic-input-wrapper css-1pd1cd5"
                     >
                       <input
                         aria-required="true"
-                        class="ant-input css-dev-only-do-not-override-txh9fw"
+                        class="ant-input"
                         id="password"
                         placeholder="请输入密码"
                         type="password"
@@ -490,13 +490,13 @@ exports[`page/DataSource/DataSourceForm CE render business field when getProject
             </div>
           </div>
           <div
-            class="ant-form-item css-15d6abf css-dev-only-do-not-override-txh9fw"
+            class="ant-form-item css-15d6abf"
           >
             <div
-              class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+              class="ant-row ant-form-item-row"
             >
               <div
-                class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left css-dev-only-do-not-override-txh9fw"
+                class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left"
               >
                 <label
                   class="ant-form-item-no-colon"
@@ -504,7 +504,7 @@ exports[`page/DataSource/DataSourceForm CE render business field when getProject
                 />
               </div>
               <div
-                class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control"
               >
                 <div
                   class="ant-form-item-control-input"
@@ -513,14 +513,14 @@ exports[`page/DataSource/DataSourceForm CE render business field when getProject
                     class="ant-form-item-control-input-content"
                   >
                     <div
-                      class="ant-space css-dev-only-do-not-override-txh9fw ant-space-vertical"
+                      class="ant-space ant-space-vertical"
                     >
                       <div
                         class="ant-space-item"
                         style="margin-bottom: 8px;"
                       >
                         <button
-                          class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default basic-button-wrapper css-geipcv"
+                          class="ant-btn ant-btn-default basic-button-wrapper css-geipcv"
                           type="button"
                         >
                           <span>
@@ -538,13 +538,13 @@ exports[`page/DataSource/DataSourceForm CE render business field when getProject
             </div>
           </div>
           <div
-            class="ant-form-item has-required-style css-1jlm9cy css-dev-only-do-not-override-txh9fw ant-form-item-has-success"
+            class="ant-form-item has-required-style css-1jlm9cy ant-form-item-has-success"
           >
             <div
-              class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+              class="ant-row ant-form-item-row"
             >
               <div
-                class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left css-dev-only-do-not-override-txh9fw"
+                class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left"
               >
                 <label
                   class="ant-form-item-required ant-form-item-no-colon"
@@ -555,7 +555,7 @@ exports[`page/DataSource/DataSourceForm CE render business field when getProject
                 </label>
               </div>
               <div
-                class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control"
               >
                 <div
                   class="ant-form-item-control-input"
@@ -593,13 +593,13 @@ exports[`page/DataSource/DataSourceForm CE render business field when getProject
             </div>
           </div>
           <div
-            class="ant-form-item has-label-tip css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+            class="ant-form-item has-label-tip css-1jlm9cy"
           >
             <div
-              class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+              class="ant-row ant-form-item-row"
             >
               <div
-                class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left css-dev-only-do-not-override-txh9fw"
+                class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left"
               >
                 <label
                   class="ant-form-item-no-colon"
@@ -621,7 +621,7 @@ exports[`page/DataSource/DataSourceForm CE render business field when getProject
                 </label>
               </div>
               <div
-                class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control"
               >
                 <div
                   class="ant-form-item-control-input"
@@ -630,7 +630,7 @@ exports[`page/DataSource/DataSourceForm CE render business field when getProject
                     class="ant-form-item-control-input-content"
                   >
                     <div
-                      class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center full-width-element"
+                      class="ant-space ant-space-horizontal ant-space-align-center full-width-element"
                     >
                       <div
                         class="ant-space-item"
@@ -641,7 +641,7 @@ exports[`page/DataSource/DataSourceForm CE render business field when getProject
                         style="margin-right: 8px;"
                       >
                         <span
-                          class="ant-typography ant-typography-secondary css-dev-only-do-not-override-txh9fw"
+                          class="ant-typography ant-typography-secondary"
                         >
                           请选择时间段
                         </span>
@@ -650,7 +650,7 @@ exports[`page/DataSource/DataSourceForm CE render business field when getProject
                         class="ant-space-item"
                       >
                         <button
-                          class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default basic-button-wrapper css-geipcv"
+                          class="ant-btn ant-btn-default basic-button-wrapper css-geipcv"
                           type="button"
                         >
                           <span>
@@ -673,18 +673,18 @@ exports[`page/DataSource/DataSourceForm CE render business field when getProject
           class="css-bspaai"
         >
           <h1
-            class="ant-typography css-1eepp70 css-dev-only-do-not-override-txh9fw"
+            class="ant-typography css-1eepp70"
           >
             SQL审核配置
           </h1>
           <div
-            class="ant-form-item css-1jlm9cy css-dev-only-do-not-override-txh9fw ant-form-item-has-success"
+            class="ant-form-item css-1jlm9cy ant-form-item-has-success"
           >
             <div
-              class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+              class="ant-row ant-form-item-row"
             >
               <div
-                class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left css-dev-only-do-not-override-txh9fw"
+                class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left"
               >
                 <label
                   class="ant-form-item-no-colon"
@@ -695,7 +695,7 @@ exports[`page/DataSource/DataSourceForm CE render business field when getProject
                 </label>
               </div>
               <div
-                class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control"
               >
                 <div
                   class="ant-form-item-control-input"
@@ -705,7 +705,7 @@ exports[`page/DataSource/DataSourceForm CE render business field when getProject
                   >
                     <button
                       aria-checked="false"
-                      class="ant-switch basic-switch-wrapper css-g6dhbn css-dev-only-do-not-override-txh9fw"
+                      class="ant-switch basic-switch-wrapper css-g6dhbn"
                       role="switch"
                       type="button"
                     >
@@ -729,13 +729,13 @@ exports[`page/DataSource/DataSourceForm CE render business field when getProject
             </div>
           </div>
           <div
-            class="ant-form-item css-1jlm9cy css-dev-only-do-not-override-txh9fw ant-form-item-hidden"
+            class="ant-form-item css-1jlm9cy ant-form-item-hidden"
           >
             <div
-              class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+              class="ant-row ant-form-item-row"
             >
               <div
-                class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control"
               >
                 <div
                   class="ant-form-item-control-input"
@@ -744,7 +744,7 @@ exports[`page/DataSource/DataSourceForm CE render business field when getProject
                     class="ant-form-item-control-input-content"
                   >
                     <input
-                      class="ant-input css-dev-only-do-not-override-ywkr0o basic-input-wrapper css-1pd1cd5"
+                      class="ant-input basic-input-wrapper css-1pd1cd5"
                       id="ruleTemplateId"
                       placeholder="请输入{{name}}"
                       type="text"
@@ -756,13 +756,13 @@ exports[`page/DataSource/DataSourceForm CE render business field when getProject
             </div>
           </div>
           <div
-            class="ant-form-item has-required-style css-1jlm9cy css-dev-only-do-not-override-txh9fw ant-form-item-hidden"
+            class="ant-form-item has-required-style css-1jlm9cy ant-form-item-hidden"
           >
             <div
-              class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+              class="ant-row ant-form-item-row"
             >
               <div
-                class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left css-dev-only-do-not-override-txh9fw"
+                class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left"
               >
                 <label
                   class="ant-form-item-no-colon"
@@ -773,7 +773,7 @@ exports[`page/DataSource/DataSourceForm CE render business field when getProject
                 </label>
               </div>
               <div
-                class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control"
               >
                 <div
                   class="ant-form-item-control-input"
@@ -782,7 +782,7 @@ exports[`page/DataSource/DataSourceForm CE render business field when getProject
                     class="ant-form-item-control-input-content"
                   >
                     <div
-                      class="ant-select ant-select-in-form-item basic-select-wrapper css-iy4o4x css-dev-only-do-not-override-v9sov3 ant-select-single ant-select-allow-clear ant-select-show-arrow ant-select-show-search"
+                      class="ant-select ant-select-in-form-item basic-select-wrapper css-iy4o4x ant-select-single ant-select-allow-clear ant-select-show-arrow ant-select-show-search"
                     >
                       <div
                         class="ant-select-selector"
@@ -844,13 +844,13 @@ exports[`page/DataSource/DataSourceForm CE render business field when getProject
             </div>
           </div>
           <div
-            class="ant-form-item css-1jlm9cy css-dev-only-do-not-override-txh9fw ant-form-item-has-success"
+            class="ant-form-item css-1jlm9cy ant-form-item-has-success"
           >
             <div
-              class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+              class="ant-row ant-form-item-row"
             >
               <div
-                class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left css-dev-only-do-not-override-txh9fw"
+                class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left"
               >
                 <label
                   class="ant-form-item-no-colon"
@@ -861,7 +861,7 @@ exports[`page/DataSource/DataSourceForm CE render business field when getProject
                 </label>
               </div>
               <div
-                class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control"
               >
                 <div
                   class="ant-form-item-control-input"
@@ -871,7 +871,7 @@ exports[`page/DataSource/DataSourceForm CE render business field when getProject
                   >
                     <button
                       aria-checked="false"
-                      class="ant-switch basic-switch-wrapper css-g6dhbn css-dev-only-do-not-override-txh9fw"
+                      class="ant-switch basic-switch-wrapper css-g6dhbn"
                       id="needAuditForSqlQuery"
                       role="switch"
                       type="button"
@@ -896,13 +896,13 @@ exports[`page/DataSource/DataSourceForm CE render business field when getProject
             </div>
           </div>
           <div
-            class="ant-form-item css-1jlm9cy css-dev-only-do-not-override-txh9fw ant-form-item-hidden"
+            class="ant-form-item css-1jlm9cy ant-form-item-hidden"
           >
             <div
-              class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+              class="ant-row ant-form-item-row"
             >
               <div
-                class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left css-dev-only-do-not-override-txh9fw"
+                class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left"
               >
                 <label
                   class="ant-form-item-no-colon"
@@ -913,7 +913,7 @@ exports[`page/DataSource/DataSourceForm CE render business field when getProject
                 </label>
               </div>
               <div
-                class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control"
               >
                 <div
                   class="ant-form-item-control-input"
@@ -922,7 +922,7 @@ exports[`page/DataSource/DataSourceForm CE render business field when getProject
                     class="ant-form-item-control-input-content"
                   >
                     <div
-                      class="ant-select ant-select-in-form-item basic-select-wrapper css-iy4o4x css-dev-only-do-not-override-v9sov3 ant-select-single ant-select-show-arrow"
+                      class="ant-select ant-select-in-form-item basic-select-wrapper css-iy4o4x ant-select-single ant-select-show-arrow"
                     >
                       <div
                         class="ant-select-selector"
@@ -995,18 +995,18 @@ exports[`page/DataSource/DataSourceForm CE render business field when getProject
           class="css-bspaai"
         >
           <h1
-            class="ant-typography css-1eepp70 css-dev-only-do-not-override-txh9fw"
+            class="ant-typography css-1eepp70"
           >
             数据脱敏配置
           </h1>
           <div
-            class="ant-form-item has-label-tip css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+            class="ant-form-item has-label-tip css-1jlm9cy"
           >
             <div
-              class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+              class="ant-row ant-form-item-row"
             >
               <div
-                class="ant-col ant-col-12 ant-form-item-label ant-form-item-label-left css-dev-only-do-not-override-txh9fw"
+                class="ant-col ant-col-12 ant-form-item-label ant-form-item-label-left"
               >
                 <label
                   class="ant-form-item-no-colon"
@@ -1023,7 +1023,7 @@ exports[`page/DataSource/DataSourceForm CE render business field when getProject
                       class="tip-content-box"
                     >
                       <div
-                        class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+                        class="ant-space ant-space-horizontal ant-space-align-center"
                       >
                         <div
                           class="ant-space-item"
@@ -1047,7 +1047,7 @@ exports[`page/DataSource/DataSourceForm CE render business field when getProject
                 </label>
               </div>
               <div
-                class="ant-col ant-col-11 ant-col-push-1 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                class="ant-col ant-col-11 ant-col-push-1 ant-form-item-control"
               >
                 <div
                   class="ant-form-item-control-input"
@@ -1057,7 +1057,7 @@ exports[`page/DataSource/DataSourceForm CE render business field when getProject
                   >
                     <button
                       aria-checked="false"
-                      class="ant-switch basic-switch-wrapper css-g6dhbn css-dev-only-do-not-override-txh9fw"
+                      class="ant-switch basic-switch-wrapper css-g6dhbn"
                       id="is_enable_masking"
                       role="switch"
                       type="button"

@@ -16,7 +16,7 @@ import dataMaskRuleOverview from './dataMaskRuleOverview';
 import dmsGlobalDataSource from './dmsGlobalDataSource';
 import resourceOverview from './resourceOverview';
 import provisionMember from './provisionMember';
-
+import availabilityZone from './availabilityZone';
 // eslint-disable-next-line import/no-anonymous-default-export
 export default {
   translation: {
@@ -36,6 +36,7 @@ export default {
     dataMaskRuleOverview,
     dmsGlobalDataSource,
     resourceOverview,
-    provisionMember
+    provisionMember,
+    availabilityZone
   }
 };

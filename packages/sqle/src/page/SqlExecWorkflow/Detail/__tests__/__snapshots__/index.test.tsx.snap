@@ -4,7 +4,7 @@ exports[`sqle/ExecWorkflow/Detail render current workflow status is wait for exe
 <body>
   <div>
     <div
-      class="ant-spin-nested-loading css-dev-only-do-not-override-txh9fw"
+      class="ant-spin-nested-loading"
     >
       <div
         class="ant-spin-container"
@@ -25,7 +25,7 @@ exports[`sqle/ExecWorkflow/Detail render current workflow status is wait for exe
                   href="/sqle/project/700300/exec-workflow"
                 >
                   <button
-                    class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default basic-button-wrapper css-geipcv"
+                    class="ant-btn ant-btn-default basic-button-wrapper css-geipcv"
                     type="button"
                   >
                     <span
@@ -57,7 +57,7 @@ exports[`sqle/ExecWorkflow/Detail render current workflow status is wait for exe
                 >
                   <div>
                     <button
-                      class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default ant-btn-dangerous basic-button-wrapper css-geipcv"
+                      class="ant-btn ant-btn-default ant-btn-dangerous basic-button-wrapper css-geipcv"
                       type="button"
                     >
                       <span>
@@ -65,12 +65,12 @@ exports[`sqle/ExecWorkflow/Detail render current workflow status is wait for exe
                       </span>
                     </button>
                     <div
-                      class="ant-divider css-dev-only-do-not-override-txh9fw ant-divider-vertical workflow-detail-page-header-divider"
+                      class="ant-divider ant-divider-vertical workflow-detail-page-header-divider"
                       role="separator"
                     />
                   </div>
                   <button
-                    class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default basic-button-wrapper css-geipcv"
+                    class="ant-btn ant-btn-default basic-button-wrapper css-geipcv"
                     hidden=""
                     type="button"
                   >
@@ -79,7 +79,7 @@ exports[`sqle/ExecWorkflow/Detail render current workflow status is wait for exe
                     </span>
                   </button>
                   <button
-                    class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default basic-button-wrapper css-geipcv"
+                    class="ant-btn ant-btn-default basic-button-wrapper css-geipcv"
                     hidden=""
                     type="button"
                   >
@@ -88,7 +88,7 @@ exports[`sqle/ExecWorkflow/Detail render current workflow status is wait for exe
                     </span>
                   </button>
                   <button
-                    class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default basic-button-wrapper css-geipcv"
+                    class="ant-btn ant-btn-default basic-button-wrapper css-geipcv"
                     type="button"
                   >
                     <span>
@@ -96,7 +96,7 @@ exports[`sqle/ExecWorkflow/Detail render current workflow status is wait for exe
                     </span>
                   </button>
                   <button
-                    class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default basic-button-wrapper css-geipcv"
+                    class="ant-btn ant-btn-default basic-button-wrapper css-geipcv"
                     type="button"
                   >
                     <span>
@@ -104,7 +104,7 @@ exports[`sqle/ExecWorkflow/Detail render current workflow status is wait for exe
                     </span>
                   </button>
                   <button
-                    class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary basic-button-wrapper css-geipcv"
+                    class="ant-btn ant-btn-primary basic-button-wrapper css-geipcv"
                     hidden=""
                     type="button"
                   >
@@ -113,13 +113,13 @@ exports[`sqle/ExecWorkflow/Detail render current workflow status is wait for exe
                     </span>
                   </button>
                   <div
-                    class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
+                    class="ant-space ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
                   >
                     <div
                       class="ant-space-item"
                     >
                       <button
-                        class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary basic-button-wrapper css-geipcv"
+                        class="ant-btn ant-btn-primary basic-button-wrapper css-geipcv"
                         confirm="[object Object]"
                         disabled=""
                         type="button"
@@ -131,13 +131,13 @@ exports[`sqle/ExecWorkflow/Detail render current workflow status is wait for exe
                     </div>
                   </div>
                   <div
-                    class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
+                    class="ant-space ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
                   >
                     <div
                       class="ant-space-item"
                     >
                       <button
-                        class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary basic-button-wrapper css-geipcv"
+                        class="ant-btn ant-btn-primary basic-button-wrapper css-geipcv"
                         confirm="[object Object]"
                         disabled=""
                         type="button"
@@ -149,7 +149,7 @@ exports[`sqle/ExecWorkflow/Detail render current workflow status is wait for exe
                     </div>
                   </div>
                   <div
-                    class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+                    class="ant-space ant-space-horizontal ant-space-align-center"
                     hidden=""
                   >
                     <div
@@ -157,7 +157,7 @@ exports[`sqle/ExecWorkflow/Detail render current workflow status is wait for exe
                       style="margin-right: 0px;"
                     >
                       <button
-                        class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default ant-btn-dangerous basic-button-wrapper css-geipcv"
+                        class="ant-btn ant-btn-default ant-btn-dangerous basic-button-wrapper css-geipcv"
                         type="button"
                       >
                         <span>
@@ -170,7 +170,7 @@ exports[`sqle/ExecWorkflow/Detail render current workflow status is wait for exe
                       style="margin-right: 0px;"
                     >
                       <div
-                        class="ant-divider css-dev-only-do-not-override-txh9fw ant-divider-vertical workflow-detail-page-header-divider"
+                        class="ant-divider ant-divider-vertical workflow-detail-page-header-divider"
                         role="separator"
                       />
                     </div>
@@ -178,7 +178,7 @@ exports[`sqle/ExecWorkflow/Detail render current workflow status is wait for exe
                       class="ant-space-item"
                     >
                       <button
-                        class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default basic-button-wrapper css-geipcv"
+                        class="ant-btn ant-btn-default basic-button-wrapper css-geipcv"
                         type="button"
                       >
                         <span>
@@ -188,7 +188,7 @@ exports[`sqle/ExecWorkflow/Detail render current workflow status is wait for exe
                     </div>
                   </div>
                   <div
-                    class="ant-divider css-dev-only-do-not-override-txh9fw ant-divider-vertical workflow-detail-page-header-divider"
+                    class="ant-divider ant-divider-vertical workflow-detail-page-header-divider"
                     role="separator"
                   />
                   <div
@@ -276,7 +276,7 @@ exports[`sqle/ExecWorkflow/Detail render current workflow status is wait for exe
                 </span>
               </div>
               <div
-                class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center workflow-base-info-title"
+                class="ant-space ant-space-horizontal ant-space-align-center workflow-base-info-title"
               >
                 <div
                   class="ant-space-item"
@@ -303,10 +303,10 @@ exports[`sqle/ExecWorkflow/Detail render current workflow status is wait for exe
                 审核结果
               </div>
               <div
-                class="ant-row ant-row-space-between css-156vlto css-dev-only-do-not-override-txh9fw"
+                class="ant-row ant-row-space-between css-156vlto"
               >
                 <div
-                  class="ant-segmented basic-segmented-wrapper css-192b3m1 css-dev-only-do-not-override-txh9fw"
+                  class="ant-segmented basic-segmented-wrapper css-192b3m1"
                 >
                   <div
                     class="ant-segmented-group"
@@ -332,11 +332,11 @@ exports[`sqle/ExecWorkflow/Detail render current workflow status is wait for exe
                   hidden=""
                 >
                   <button
-                    class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default ant-btn-sm basic-button-wrapper css-geipcv"
+                    class="ant-btn ant-btn-default ant-btn-sm basic-button-wrapper css-geipcv"
                     type="button"
                   >
                     <div
-                      class="ant-space css-dev-only-do-not-override-674gwq ant-space-horizontal ant-space-align-center"
+                      class="ant-space ant-space-horizontal ant-space-align-center"
                     >
                       <div
                         class="ant-space-item"
@@ -389,10 +389,10 @@ exports[`sqle/ExecWorkflow/Detail render current workflow status is wait for exe
                 </div>
               </div>
               <div
-                class="ant-table-wrapper actiontech-table-namespace table-row-cursor css-fxd6ka css-dev-only-do-not-override-bj9uhl"
+                class="ant-table-wrapper actiontech-table-namespace table-row-cursor css-fxd6ka"
               >
                 <div
-                  class="ant-spin-nested-loading css-dev-only-do-not-override-bj9uhl"
+                  class="ant-spin-nested-loading"
                 >
                   <div
                     class="ant-spin-container"
@@ -670,14 +670,14 @@ exports[`sqle/ExecWorkflow/Detail render current workflow status is wait for exe
                                     class="css-new95e"
                                   >
                                     <div
-                                      class="ant-space css-dev-only-do-not-override-bj9uhl ant-space-horizontal ant-space-align-center"
+                                      class="ant-space ant-space-horizontal ant-space-align-center"
                                     >
                                       <div
                                         class="ant-space-item"
                                         style="margin-right: 8px;"
                                       >
                                         <button
-                                          class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm ant-btn-dangerous actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                          class="ant-btn ant-btn-default ant-btn-sm ant-btn-dangerous actiontech-table-actions-button basic-button-wrapper css-geipcv"
                                           disabled=""
                                           hidden=""
                                           type="button"
@@ -692,7 +692,7 @@ exports[`sqle/ExecWorkflow/Detail render current workflow status is wait for exe
                                         style="margin-right: 8px;"
                                       >
                                         <button
-                                          class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                          class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
                                           disabled=""
                                           hidden=""
                                           type="button"
@@ -707,7 +707,7 @@ exports[`sqle/ExecWorkflow/Detail render current workflow status is wait for exe
                                         style="margin-right: 8px;"
                                       >
                                         <button
-                                          class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                          class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
                                           disabled=""
                                           hidden=""
                                           type="button"
@@ -721,7 +721,7 @@ exports[`sqle/ExecWorkflow/Detail render current workflow status is wait for exe
                                         class="ant-space-item"
                                       >
                                         <button
-                                          class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                          class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
                                           disabled=""
                                           hidden=""
                                           type="button"
@@ -756,7 +756,7 @@ exports[`sqle/ExecWorkflow/Detail render snap detail 1`] = `
 <body>
   <div>
     <div
-      class="ant-spin-nested-loading css-dev-only-do-not-override-txh9fw"
+      class="ant-spin-nested-loading"
     >
       <div
         class="ant-spin-container"
@@ -777,7 +777,7 @@ exports[`sqle/ExecWorkflow/Detail render snap detail 1`] = `
                   href="/sqle/project/700300/exec-workflow"
                 >
                   <button
-                    class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default basic-button-wrapper css-geipcv"
+                    class="ant-btn ant-btn-default basic-button-wrapper css-geipcv"
                     type="button"
                   >
                     <span
@@ -811,7 +811,7 @@ exports[`sqle/ExecWorkflow/Detail render snap detail 1`] = `
                     hidden=""
                   >
                     <button
-                      class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default ant-btn-dangerous basic-button-wrapper css-geipcv"
+                      class="ant-btn ant-btn-default ant-btn-dangerous basic-button-wrapper css-geipcv"
                       type="button"
                     >
                       <span>
@@ -819,12 +819,12 @@ exports[`sqle/ExecWorkflow/Detail render snap detail 1`] = `
                       </span>
                     </button>
                     <div
-                      class="ant-divider css-dev-only-do-not-override-txh9fw ant-divider-vertical workflow-detail-page-header-divider"
+                      class="ant-divider ant-divider-vertical workflow-detail-page-header-divider"
                       role="separator"
                     />
                   </div>
                   <button
-                    class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default basic-button-wrapper css-geipcv"
+                    class="ant-btn ant-btn-default basic-button-wrapper css-geipcv"
                     hidden=""
                     type="button"
                   >
@@ -833,7 +833,7 @@ exports[`sqle/ExecWorkflow/Detail render snap detail 1`] = `
                     </span>
                   </button>
                   <button
-                    class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default basic-button-wrapper css-geipcv"
+                    class="ant-btn ant-btn-default basic-button-wrapper css-geipcv"
                     hidden=""
                     type="button"
                   >
@@ -842,7 +842,7 @@ exports[`sqle/ExecWorkflow/Detail render snap detail 1`] = `
                     </span>
                   </button>
                   <button
-                    class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default basic-button-wrapper css-geipcv"
+                    class="ant-btn ant-btn-default basic-button-wrapper css-geipcv"
                     type="button"
                   >
                     <span>
@@ -850,7 +850,7 @@ exports[`sqle/ExecWorkflow/Detail render snap detail 1`] = `
                     </span>
                   </button>
                   <button
-                    class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default basic-button-wrapper css-geipcv"
+                    class="ant-btn ant-btn-default basic-button-wrapper css-geipcv"
                     hidden=""
                     type="button"
                   >
@@ -859,7 +859,7 @@ exports[`sqle/ExecWorkflow/Detail render snap detail 1`] = `
                     </span>
                   </button>
                   <button
-                    class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary basic-button-wrapper css-geipcv"
+                    class="ant-btn ant-btn-primary basic-button-wrapper css-geipcv"
                     hidden=""
                     type="button"
                   >
@@ -868,7 +868,7 @@ exports[`sqle/ExecWorkflow/Detail render snap detail 1`] = `
                     </span>
                   </button>
                   <button
-                    class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary basic-button-wrapper css-geipcv"
+                    class="ant-btn ant-btn-primary basic-button-wrapper css-geipcv"
                     confirm="[object Object]"
                     disabled=""
                     hidden=""
@@ -879,7 +879,7 @@ exports[`sqle/ExecWorkflow/Detail render snap detail 1`] = `
                     </span>
                   </button>
                   <button
-                    class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary basic-button-wrapper css-geipcv"
+                    class="ant-btn ant-btn-primary basic-button-wrapper css-geipcv"
                     confirm="[object Object]"
                     disabled=""
                     hidden=""
@@ -890,7 +890,7 @@ exports[`sqle/ExecWorkflow/Detail render snap detail 1`] = `
                     </span>
                   </button>
                   <div
-                    class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+                    class="ant-space ant-space-horizontal ant-space-align-center"
                     hidden=""
                   >
                     <div
@@ -898,7 +898,7 @@ exports[`sqle/ExecWorkflow/Detail render snap detail 1`] = `
                       style="margin-right: 0px;"
                     >
                       <button
-                        class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default ant-btn-dangerous basic-button-wrapper css-geipcv"
+                        class="ant-btn ant-btn-default ant-btn-dangerous basic-button-wrapper css-geipcv"
                         type="button"
                       >
                         <span>
@@ -911,7 +911,7 @@ exports[`sqle/ExecWorkflow/Detail render snap detail 1`] = `
                       style="margin-right: 0px;"
                     >
                       <div
-                        class="ant-divider css-dev-only-do-not-override-txh9fw ant-divider-vertical workflow-detail-page-header-divider"
+                        class="ant-divider ant-divider-vertical workflow-detail-page-header-divider"
                         role="separator"
                       />
                     </div>
@@ -919,7 +919,7 @@ exports[`sqle/ExecWorkflow/Detail render snap detail 1`] = `
                       class="ant-space-item"
                     >
                       <button
-                        class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default basic-button-wrapper css-geipcv"
+                        class="ant-btn ant-btn-default basic-button-wrapper css-geipcv"
                         type="button"
                       >
                         <span>
@@ -940,7 +940,7 @@ exports[`sqle/ExecWorkflow/Detail render snap detail 1`] = `
               class="clearPaddingTop css-ahxq8i"
             >
               <div
-                class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center workflow-base-info-title"
+                class="ant-space ant-space-horizontal ant-space-align-center workflow-base-info-title"
               >
                 <div
                   class="ant-space-item"
@@ -965,10 +965,10 @@ exports[`sqle/ExecWorkflow/Detail render snap detail 1`] = `
                 审核结果
               </div>
               <div
-                class="ant-row ant-row-space-between css-156vlto css-dev-only-do-not-override-txh9fw"
+                class="ant-row ant-row-space-between css-156vlto"
               >
                 <div
-                  class="ant-segmented basic-segmented-wrapper css-192b3m1 css-dev-only-do-not-override-txh9fw"
+                  class="ant-segmented basic-segmented-wrapper css-192b3m1"
                 >
                   <div
                     class="ant-segmented-group"
@@ -994,11 +994,11 @@ exports[`sqle/ExecWorkflow/Detail render snap detail 1`] = `
                   hidden=""
                 >
                   <button
-                    class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default ant-btn-sm basic-button-wrapper css-geipcv"
+                    class="ant-btn ant-btn-default ant-btn-sm basic-button-wrapper css-geipcv"
                     type="button"
                   >
                     <div
-                      class="ant-space css-dev-only-do-not-override-674gwq ant-space-horizontal ant-space-align-center"
+                      class="ant-space ant-space-horizontal ant-space-align-center"
                     >
                       <div
                         class="ant-space-item"
@@ -1051,16 +1051,16 @@ exports[`sqle/ExecWorkflow/Detail render snap detail 1`] = `
                 </div>
               </div>
               <div
-                class="ant-table-wrapper actiontech-table-namespace table-row-cursor css-fxd6ka css-dev-only-do-not-override-bj9uhl"
+                class="ant-table-wrapper actiontech-table-namespace table-row-cursor css-fxd6ka"
               >
                 <div
-                  class="ant-spin-nested-loading css-dev-only-do-not-override-bj9uhl"
+                  class="ant-spin-nested-loading"
                 >
                   <div>
                     <div
                       aria-busy="true"
                       aria-live="polite"
-                      class="ant-spin ant-spin-spinning css-dev-only-do-not-override-bj9uhl"
+                      class="ant-spin ant-spin-spinning"
                     >
                       <span
                         class="ant-spin-dot ant-spin-dot-spin"
@@ -1312,7 +1312,7 @@ exports[`sqle/ExecWorkflow/Detail render snap detail 2`] = `
 <body>
   <div>
     <div
-      class="ant-spin-nested-loading css-dev-only-do-not-override-txh9fw"
+      class="ant-spin-nested-loading"
     >
       <div
         class="ant-spin-container"
@@ -1333,7 +1333,7 @@ exports[`sqle/ExecWorkflow/Detail render snap detail 2`] = `
                   href="/sqle/project/700300/exec-workflow"
                 >
                   <button
-                    class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default basic-button-wrapper css-geipcv"
+                    class="ant-btn ant-btn-default basic-button-wrapper css-geipcv"
                     type="button"
                   >
                     <span
@@ -1367,7 +1367,7 @@ exports[`sqle/ExecWorkflow/Detail render snap detail 2`] = `
                     hidden=""
                   >
                     <button
-                      class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default ant-btn-dangerous basic-button-wrapper css-geipcv"
+                      class="ant-btn ant-btn-default ant-btn-dangerous basic-button-wrapper css-geipcv"
                       type="button"
                     >
                       <span>
@@ -1375,12 +1375,12 @@ exports[`sqle/ExecWorkflow/Detail render snap detail 2`] = `
                       </span>
                     </button>
                     <div
-                      class="ant-divider css-dev-only-do-not-override-txh9fw ant-divider-vertical workflow-detail-page-header-divider"
+                      class="ant-divider ant-divider-vertical workflow-detail-page-header-divider"
                       role="separator"
                     />
                   </div>
                   <button
-                    class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default basic-button-wrapper css-geipcv"
+                    class="ant-btn ant-btn-default basic-button-wrapper css-geipcv"
                     hidden=""
                     type="button"
                   >
@@ -1389,7 +1389,7 @@ exports[`sqle/ExecWorkflow/Detail render snap detail 2`] = `
                     </span>
                   </button>
                   <button
-                    class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default basic-button-wrapper css-geipcv"
+                    class="ant-btn ant-btn-default basic-button-wrapper css-geipcv"
                     type="button"
                   >
                     <span>
@@ -1397,7 +1397,7 @@ exports[`sqle/ExecWorkflow/Detail render snap detail 2`] = `
                     </span>
                   </button>
                   <button
-                    class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default basic-button-wrapper css-geipcv"
+                    class="ant-btn ant-btn-default basic-button-wrapper css-geipcv"
                     type="button"
                   >
                     <span>
@@ -1405,7 +1405,7 @@ exports[`sqle/ExecWorkflow/Detail render snap detail 2`] = `
                     </span>
                   </button>
                   <button
-                    class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default basic-button-wrapper css-geipcv"
+                    class="ant-btn ant-btn-default basic-button-wrapper css-geipcv"
                     hidden=""
                     type="button"
                   >
@@ -1414,7 +1414,7 @@ exports[`sqle/ExecWorkflow/Detail render snap detail 2`] = `
                     </span>
                   </button>
                   <button
-                    class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary basic-button-wrapper css-geipcv"
+                    class="ant-btn ant-btn-primary basic-button-wrapper css-geipcv"
                     hidden=""
                     type="button"
                   >
@@ -1423,13 +1423,13 @@ exports[`sqle/ExecWorkflow/Detail render snap detail 2`] = `
                     </span>
                   </button>
                   <div
-                    class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
+                    class="ant-space ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
                   >
                     <div
                       class="ant-space-item"
                     >
                       <button
-                        class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary basic-button-wrapper css-geipcv"
+                        class="ant-btn ant-btn-primary basic-button-wrapper css-geipcv"
                         confirm="[object Object]"
                         disabled=""
                         hidden=""
@@ -1442,13 +1442,13 @@ exports[`sqle/ExecWorkflow/Detail render snap detail 2`] = `
                     </div>
                   </div>
                   <div
-                    class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
+                    class="ant-space ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
                   >
                     <div
                       class="ant-space-item"
                     >
                       <button
-                        class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary basic-button-wrapper css-geipcv"
+                        class="ant-btn ant-btn-primary basic-button-wrapper css-geipcv"
                         confirm="[object Object]"
                         disabled=""
                         hidden=""
@@ -1461,7 +1461,7 @@ exports[`sqle/ExecWorkflow/Detail render snap detail 2`] = `
                     </div>
                   </div>
                   <div
-                    class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+                    class="ant-space ant-space-horizontal ant-space-align-center"
                     hidden=""
                   >
                     <div
@@ -1469,7 +1469,7 @@ exports[`sqle/ExecWorkflow/Detail render snap detail 2`] = `
                       style="margin-right: 0px;"
                     >
                       <button
-                        class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default ant-btn-dangerous basic-button-wrapper css-geipcv"
+                        class="ant-btn ant-btn-default ant-btn-dangerous basic-button-wrapper css-geipcv"
                         type="button"
                       >
                         <span>
@@ -1482,7 +1482,7 @@ exports[`sqle/ExecWorkflow/Detail render snap detail 2`] = `
                       style="margin-right: 0px;"
                     >
                       <div
-                        class="ant-divider css-dev-only-do-not-override-txh9fw ant-divider-vertical workflow-detail-page-header-divider"
+                        class="ant-divider ant-divider-vertical workflow-detail-page-header-divider"
                         role="separator"
                       />
                     </div>
@@ -1490,7 +1490,7 @@ exports[`sqle/ExecWorkflow/Detail render snap detail 2`] = `
                       class="ant-space-item"
                     >
                       <button
-                        class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default basic-button-wrapper css-geipcv"
+                        class="ant-btn ant-btn-default basic-button-wrapper css-geipcv"
                         type="button"
                       >
                         <span>
@@ -1584,7 +1584,7 @@ exports[`sqle/ExecWorkflow/Detail render snap detail 2`] = `
                 </span>
               </div>
               <div
-                class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center workflow-base-info-title"
+                class="ant-space ant-space-horizontal ant-space-align-center workflow-base-info-title"
               >
                 <div
                   class="ant-space-item"
@@ -1599,7 +1599,7 @@ exports[`sqle/ExecWorkflow/Detail render snap detail 2`] = `
                     href="/sqle/project/700300/version-management/detail/1"
                   >
                     <span
-                      class="ant-tag ant-tag-orange basic-tag-wrapper basic-large-tag-wrapper css-17gmaof css-dev-only-do-not-override-txh9fw"
+                      class="ant-tag ant-tag-orange basic-tag-wrapper basic-large-tag-wrapper css-17gmaof"
                     >
                       版本
                       ：
@@ -1623,10 +1623,10 @@ exports[`sqle/ExecWorkflow/Detail render snap detail 2`] = `
                 审核结果
               </div>
               <div
-                class="ant-row ant-row-space-between css-156vlto css-dev-only-do-not-override-txh9fw"
+                class="ant-row ant-row-space-between css-156vlto"
               >
                 <div
-                  class="ant-segmented basic-segmented-wrapper css-192b3m1 css-dev-only-do-not-override-txh9fw"
+                  class="ant-segmented basic-segmented-wrapper css-192b3m1"
                 >
                   <div
                     class="ant-segmented-group"
@@ -1652,19 +1652,19 @@ exports[`sqle/ExecWorkflow/Detail render snap detail 2`] = `
                   hidden=""
                 >
                   <div
-                    class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center audit-result-actions-wrap"
+                    class="ant-space ant-space-horizontal ant-space-align-center audit-result-actions-wrap"
                   >
                     <div
                       class="ant-space-item"
                       style="margin-right: 12px;"
                     >
                       <button
-                        class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default ant-btn-sm ant-btn-two-chinese-chars actiontech-filter-button-namespace basic-button-wrapper css-geipcv"
+                        class="ant-btn ant-btn-default ant-btn-sm ant-btn-two-chinese-chars actiontech-filter-button-namespace basic-button-wrapper css-geipcv"
                         style="padding: 0px 6px 0px 10px;"
                         type="button"
                       >
                         <div
-                          class="ant-space css-dev-only-do-not-override-674gwq ant-space-horizontal ant-space-align-center css-1nt49ug"
+                          class="ant-space ant-space-horizontal ant-space-align-center css-1nt49ug"
                         >
                           <div
                             class="ant-space-item"
@@ -1676,7 +1676,7 @@ exports[`sqle/ExecWorkflow/Detail render snap detail 2`] = `
                             class="ant-space-item"
                           >
                             <svg
-                              color="currrentColor"
+                              color="currentColor"
                               height="14"
                               viewBox="0 0 16 16"
                               width="14"
@@ -1696,7 +1696,7 @@ exports[`sqle/ExecWorkflow/Detail render snap detail 2`] = `
                       style="margin-right: 12px;"
                     >
                       <div
-                        class="ant-divider css-dev-only-do-not-override-txh9fw ant-divider-vertical audit-result-actions-divider"
+                        class="ant-divider ant-divider-vertical audit-result-actions-divider"
                         role="separator"
                       />
                     </div>
@@ -1714,7 +1714,7 @@ exports[`sqle/ExecWorkflow/Detail render snap detail 2`] = `
                       class="ant-space-item"
                     >
                       <button
-                        class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default ant-btn-sm basic-button-wrapper css-geipcv"
+                        class="ant-btn ant-btn-default ant-btn-sm basic-button-wrapper css-geipcv"
                         type="button"
                       >
                         <span
@@ -1732,7 +1732,7 @@ exports[`sqle/ExecWorkflow/Detail render snap detail 2`] = `
                           </svg>
                         </span>
                         <div
-                          class="ant-space css-dev-only-do-not-override-674gwq ant-space-horizontal ant-space-align-center"
+                          class="ant-space ant-space-horizontal ant-space-align-center"
                         >
                           <div
                             class="ant-space-item"
@@ -1765,11 +1765,11 @@ exports[`sqle/ExecWorkflow/Detail render snap detail 2`] = `
                     </div>
                   </div>
                   <button
-                    class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default ant-btn-sm basic-button-wrapper css-geipcv"
+                    class="ant-btn ant-btn-default ant-btn-sm basic-button-wrapper css-geipcv"
                     type="button"
                   >
                     <div
-                      class="ant-space css-dev-only-do-not-override-674gwq ant-space-horizontal ant-space-align-center"
+                      class="ant-space ant-space-horizontal ant-space-align-center"
                     >
                       <div
                         class="ant-space-item"
@@ -1822,10 +1822,10 @@ exports[`sqle/ExecWorkflow/Detail render snap detail 2`] = `
                 </div>
               </div>
               <div
-                class="ant-table-wrapper actiontech-table-namespace table-row-cursor css-fxd6ka css-dev-only-do-not-override-bj9uhl"
+                class="ant-table-wrapper actiontech-table-namespace table-row-cursor css-fxd6ka"
               >
                 <div
-                  class="ant-spin-nested-loading css-dev-only-do-not-override-bj9uhl"
+                  class="ant-spin-nested-loading"
                 >
                   <div
                     class="ant-spin-container"
@@ -2103,14 +2103,14 @@ exports[`sqle/ExecWorkflow/Detail render snap detail 2`] = `
                                     class="css-new95e"
                                   >
                                     <div
-                                      class="ant-space css-dev-only-do-not-override-bj9uhl ant-space-horizontal ant-space-align-center"
+                                      class="ant-space ant-space-horizontal ant-space-align-center"
                                     >
                                       <div
                                         class="ant-space-item"
                                         style="margin-right: 8px;"
                                       >
                                         <button
-                                          class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm ant-btn-dangerous actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                          class="ant-btn ant-btn-default ant-btn-sm ant-btn-dangerous actiontech-table-actions-button basic-button-wrapper css-geipcv"
                                           disabled=""
                                           hidden=""
                                           type="button"
@@ -2125,7 +2125,7 @@ exports[`sqle/ExecWorkflow/Detail render snap detail 2`] = `
                                         style="margin-right: 8px;"
                                       >
                                         <button
-                                          class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                          class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
                                           disabled=""
                                           hidden=""
                                           type="button"
@@ -2140,7 +2140,7 @@ exports[`sqle/ExecWorkflow/Detail render snap detail 2`] = `
                                         style="margin-right: 8px;"
                                       >
                                         <button
-                                          class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                          class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
                                           disabled=""
                                           hidden=""
                                           type="button"
@@ -2154,7 +2154,7 @@ exports[`sqle/ExecWorkflow/Detail render snap detail 2`] = `
                                         class="ant-space-item"
                                       >
                                         <button
-                                          class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                          class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
                                           disabled=""
                                           hidden=""
                                           type="button"
@@ -2189,7 +2189,7 @@ exports[`sqle/ExecWorkflow/Detail render snap detail 3`] = `
 <body>
   <div>
     <div
-      class="ant-spin-nested-loading css-dev-only-do-not-override-txh9fw"
+      class="ant-spin-nested-loading"
     >
       <div
         class="ant-spin-container"
@@ -2210,7 +2210,7 @@ exports[`sqle/ExecWorkflow/Detail render snap detail 3`] = `
                   href="/sqle/project/700300/exec-workflow"
                 >
                   <button
-                    class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default basic-button-wrapper css-geipcv"
+                    class="ant-btn ant-btn-default basic-button-wrapper css-geipcv"
                     type="button"
                   >
                     <span
@@ -2244,7 +2244,7 @@ exports[`sqle/ExecWorkflow/Detail render snap detail 3`] = `
                     hidden=""
                   >
                     <button
-                      class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default ant-btn-dangerous basic-button-wrapper css-geipcv"
+                      class="ant-btn ant-btn-default ant-btn-dangerous basic-button-wrapper css-geipcv"
                       type="button"
                     >
                       <span>
@@ -2252,12 +2252,12 @@ exports[`sqle/ExecWorkflow/Detail render snap detail 3`] = `
                       </span>
                     </button>
                     <div
-                      class="ant-divider css-dev-only-do-not-override-txh9fw ant-divider-vertical workflow-detail-page-header-divider"
+                      class="ant-divider ant-divider-vertical workflow-detail-page-header-divider"
                       role="separator"
                     />
                   </div>
                   <button
-                    class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default basic-button-wrapper css-geipcv"
+                    class="ant-btn ant-btn-default basic-button-wrapper css-geipcv"
                     hidden=""
                     type="button"
                   >
@@ -2266,7 +2266,7 @@ exports[`sqle/ExecWorkflow/Detail render snap detail 3`] = `
                     </span>
                   </button>
                   <button
-                    class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default basic-button-wrapper css-geipcv"
+                    class="ant-btn ant-btn-default basic-button-wrapper css-geipcv"
                     type="button"
                   >
                     <span>
@@ -2274,7 +2274,7 @@ exports[`sqle/ExecWorkflow/Detail render snap detail 3`] = `
                     </span>
                   </button>
                   <button
-                    class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default basic-button-wrapper css-geipcv"
+                    class="ant-btn ant-btn-default basic-button-wrapper css-geipcv"
                     type="button"
                   >
                     <span>
@@ -2282,7 +2282,7 @@ exports[`sqle/ExecWorkflow/Detail render snap detail 3`] = `
                     </span>
                   </button>
                   <button
-                    class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default basic-button-wrapper css-geipcv"
+                    class="ant-btn ant-btn-default basic-button-wrapper css-geipcv"
                     hidden=""
                     type="button"
                   >
@@ -2291,7 +2291,7 @@ exports[`sqle/ExecWorkflow/Detail render snap detail 3`] = `
                     </span>
                   </button>
                   <button
-                    class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary basic-button-wrapper css-geipcv"
+                    class="ant-btn ant-btn-primary basic-button-wrapper css-geipcv"
                     hidden=""
                     type="button"
                   >
@@ -2300,13 +2300,13 @@ exports[`sqle/ExecWorkflow/Detail render snap detail 3`] = `
                     </span>
                   </button>
                   <div
-                    class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
+                    class="ant-space ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
                   >
                     <div
                       class="ant-space-item"
                     >
                       <button
-                        class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary basic-button-wrapper css-geipcv"
+                        class="ant-btn ant-btn-primary basic-button-wrapper css-geipcv"
                         confirm="[object Object]"
                         disabled=""
                         hidden=""
@@ -2319,13 +2319,13 @@ exports[`sqle/ExecWorkflow/Detail render snap detail 3`] = `
                     </div>
                   </div>
                   <div
-                    class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
+                    class="ant-space ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
                   >
                     <div
                       class="ant-space-item"
                     >
                       <button
-                        class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary basic-button-wrapper css-geipcv"
+                        class="ant-btn ant-btn-primary basic-button-wrapper css-geipcv"
                         confirm="[object Object]"
                         disabled=""
                         hidden=""
@@ -2338,7 +2338,7 @@ exports[`sqle/ExecWorkflow/Detail render snap detail 3`] = `
                     </div>
                   </div>
                   <div
-                    class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+                    class="ant-space ant-space-horizontal ant-space-align-center"
                     hidden=""
                   >
                     <div
@@ -2346,7 +2346,7 @@ exports[`sqle/ExecWorkflow/Detail render snap detail 3`] = `
                       style="margin-right: 0px;"
                     >
                       <button
-                        class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default ant-btn-dangerous basic-button-wrapper css-geipcv"
+                        class="ant-btn ant-btn-default ant-btn-dangerous basic-button-wrapper css-geipcv"
                         type="button"
                       >
                         <span>
@@ -2359,7 +2359,7 @@ exports[`sqle/ExecWorkflow/Detail render snap detail 3`] = `
                       style="margin-right: 0px;"
                     >
                       <div
-                        class="ant-divider css-dev-only-do-not-override-txh9fw ant-divider-vertical workflow-detail-page-header-divider"
+                        class="ant-divider ant-divider-vertical workflow-detail-page-header-divider"
                         role="separator"
                       />
                     </div>
@@ -2367,7 +2367,7 @@ exports[`sqle/ExecWorkflow/Detail render snap detail 3`] = `
                       class="ant-space-item"
                     >
                       <button
-                        class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default basic-button-wrapper css-geipcv"
+                        class="ant-btn ant-btn-default basic-button-wrapper css-geipcv"
                         type="button"
                       >
                         <span>
@@ -2461,7 +2461,7 @@ exports[`sqle/ExecWorkflow/Detail render snap detail 3`] = `
                 </span>
               </div>
               <div
-                class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center workflow-base-info-title"
+                class="ant-space ant-space-horizontal ant-space-align-center workflow-base-info-title"
               >
                 <div
                   class="ant-space-item"
@@ -2476,7 +2476,7 @@ exports[`sqle/ExecWorkflow/Detail render snap detail 3`] = `
                     href="/sqle/project/700300/version-management/detail/1"
                   >
                     <span
-                      class="ant-tag ant-tag-orange basic-tag-wrapper basic-large-tag-wrapper css-17gmaof css-dev-only-do-not-override-txh9fw"
+                      class="ant-tag ant-tag-orange basic-tag-wrapper basic-large-tag-wrapper css-17gmaof"
                     >
                       版本
                       ：
@@ -2500,10 +2500,10 @@ exports[`sqle/ExecWorkflow/Detail render snap detail 3`] = `
                 审核结果
               </div>
               <div
-                class="ant-row ant-row-space-between css-156vlto css-dev-only-do-not-override-txh9fw"
+                class="ant-row ant-row-space-between css-156vlto"
               >
                 <div
-                  class="ant-segmented basic-segmented-wrapper css-192b3m1 css-dev-only-do-not-override-txh9fw"
+                  class="ant-segmented basic-segmented-wrapper css-192b3m1"
                 >
                   <div
                     class="ant-segmented-group"
@@ -2577,19 +2577,19 @@ exports[`sqle/ExecWorkflow/Detail render snap detail 3`] = `
                   hidden=""
                 >
                   <div
-                    class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center audit-result-actions-wrap"
+                    class="ant-space ant-space-horizontal ant-space-align-center audit-result-actions-wrap"
                   >
                     <div
                       class="ant-space-item"
                       style="margin-right: 12px;"
                     >
                       <button
-                        class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default ant-btn-sm ant-btn-two-chinese-chars actiontech-filter-button-namespace basic-button-wrapper css-geipcv"
+                        class="ant-btn ant-btn-default ant-btn-sm ant-btn-two-chinese-chars actiontech-filter-button-namespace basic-button-wrapper css-geipcv"
                         style="padding: 0px 6px 0px 10px;"
                         type="button"
                       >
                         <div
-                          class="ant-space css-dev-only-do-not-override-674gwq ant-space-horizontal ant-space-align-center css-1nt49ug"
+                          class="ant-space ant-space-horizontal ant-space-align-center css-1nt49ug"
                         >
                           <div
                             class="ant-space-item"
@@ -2601,7 +2601,7 @@ exports[`sqle/ExecWorkflow/Detail render snap detail 3`] = `
                             class="ant-space-item"
                           >
                             <svg
-                              color="currrentColor"
+                              color="currentColor"
                               height="14"
                               viewBox="0 0 16 16"
                               width="14"
@@ -2621,7 +2621,7 @@ exports[`sqle/ExecWorkflow/Detail render snap detail 3`] = `
                       style="margin-right: 12px;"
                     >
                       <div
-                        class="ant-divider css-dev-only-do-not-override-txh9fw ant-divider-vertical audit-result-actions-divider"
+                        class="ant-divider ant-divider-vertical audit-result-actions-divider"
                         role="separator"
                       />
                     </div>
@@ -2639,7 +2639,7 @@ exports[`sqle/ExecWorkflow/Detail render snap detail 3`] = `
                       class="ant-space-item"
                     >
                       <button
-                        class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default ant-btn-sm basic-button-wrapper css-geipcv"
+                        class="ant-btn ant-btn-default ant-btn-sm basic-button-wrapper css-geipcv"
                         type="button"
                       >
                         <span
@@ -2657,7 +2657,7 @@ exports[`sqle/ExecWorkflow/Detail render snap detail 3`] = `
                           </svg>
                         </span>
                         <div
-                          class="ant-space css-dev-only-do-not-override-674gwq ant-space-horizontal ant-space-align-center"
+                          class="ant-space ant-space-horizontal ant-space-align-center"
                         >
                           <div
                             class="ant-space-item"
@@ -2690,11 +2690,11 @@ exports[`sqle/ExecWorkflow/Detail render snap detail 3`] = `
                     </div>
                   </div>
                   <button
-                    class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default ant-btn-sm basic-button-wrapper css-geipcv"
+                    class="ant-btn ant-btn-default ant-btn-sm basic-button-wrapper css-geipcv"
                     type="button"
                   >
                     <div
-                      class="ant-space css-dev-only-do-not-override-674gwq ant-space-horizontal ant-space-align-center"
+                      class="ant-space ant-space-horizontal ant-space-align-center"
                     >
                       <div
                         class="ant-space-item"
@@ -2747,10 +2747,10 @@ exports[`sqle/ExecWorkflow/Detail render snap detail 3`] = `
                 </div>
               </div>
               <div
-                class="ant-table-wrapper actiontech-table-namespace table-row-cursor css-fxd6ka css-dev-only-do-not-override-bj9uhl"
+                class="ant-table-wrapper actiontech-table-namespace table-row-cursor css-fxd6ka"
               >
                 <div
-                  class="ant-spin-nested-loading css-dev-only-do-not-override-bj9uhl"
+                  class="ant-spin-nested-loading"
                 >
                   <div
                     class="ant-spin-container"
@@ -3028,14 +3028,14 @@ exports[`sqle/ExecWorkflow/Detail render snap detail 3`] = `
                                     class="css-new95e"
                                   >
                                     <div
-                                      class="ant-space css-dev-only-do-not-override-bj9uhl ant-space-horizontal ant-space-align-center"
+                                      class="ant-space ant-space-horizontal ant-space-align-center"
                                     >
                                       <div
                                         class="ant-space-item"
                                         style="margin-right: 8px;"
                                       >
                                         <button
-                                          class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm ant-btn-dangerous actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                          class="ant-btn ant-btn-default ant-btn-sm ant-btn-dangerous actiontech-table-actions-button basic-button-wrapper css-geipcv"
                                           disabled=""
                                           hidden=""
                                           type="button"
@@ -3050,7 +3050,7 @@ exports[`sqle/ExecWorkflow/Detail render snap detail 3`] = `
                                         style="margin-right: 8px;"
                                       >
                                         <button
-                                          class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                          class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
                                           disabled=""
                                           hidden=""
                                           type="button"
@@ -3065,7 +3065,7 @@ exports[`sqle/ExecWorkflow/Detail render snap detail 3`] = `
                                         style="margin-right: 8px;"
                                       >
                                         <button
-                                          class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                          class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
                                           disabled=""
                                           hidden=""
                                           type="button"
@@ -3079,7 +3079,7 @@ exports[`sqle/ExecWorkflow/Detail render snap detail 3`] = `
                                         class="ant-space-item"
                                       >
                                         <button
-                                          class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                          class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
                                           disabled=""
                                           hidden=""
                                           type="button"
@@ -3114,7 +3114,7 @@ exports[`sqle/ExecWorkflow/Detail render snap detail when have multiple states 1
 <body>
   <div>
     <div
-      class="ant-spin-nested-loading css-dev-only-do-not-override-txh9fw"
+      class="ant-spin-nested-loading"
     >
       <div
         class="ant-spin-container"
@@ -3135,7 +3135,7 @@ exports[`sqle/ExecWorkflow/Detail render snap detail when have multiple states 1
                   href="/sqle/project/700300/exec-workflow"
                 >
                   <button
-                    class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default basic-button-wrapper css-geipcv"
+                    class="ant-btn ant-btn-default basic-button-wrapper css-geipcv"
                     type="button"
                   >
                     <span
@@ -3167,7 +3167,7 @@ exports[`sqle/ExecWorkflow/Detail render snap detail when have multiple states 1
                 >
                   <div>
                     <button
-                      class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default ant-btn-dangerous basic-button-wrapper css-geipcv"
+                      class="ant-btn ant-btn-default ant-btn-dangerous basic-button-wrapper css-geipcv"
                       type="button"
                     >
                       <span>
@@ -3175,12 +3175,12 @@ exports[`sqle/ExecWorkflow/Detail render snap detail when have multiple states 1
                       </span>
                     </button>
                     <div
-                      class="ant-divider css-dev-only-do-not-override-txh9fw ant-divider-vertical workflow-detail-page-header-divider"
+                      class="ant-divider ant-divider-vertical workflow-detail-page-header-divider"
                       role="separator"
                     />
                   </div>
                   <button
-                    class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default basic-button-wrapper css-geipcv"
+                    class="ant-btn ant-btn-default basic-button-wrapper css-geipcv"
                     hidden=""
                     type="button"
                   >
@@ -3189,7 +3189,7 @@ exports[`sqle/ExecWorkflow/Detail render snap detail when have multiple states 1
                     </span>
                   </button>
                   <button
-                    class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default basic-button-wrapper css-geipcv"
+                    class="ant-btn ant-btn-default basic-button-wrapper css-geipcv"
                     hidden=""
                     type="button"
                   >
@@ -3198,7 +3198,7 @@ exports[`sqle/ExecWorkflow/Detail render snap detail when have multiple states 1
                     </span>
                   </button>
                   <button
-                    class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default basic-button-wrapper css-geipcv"
+                    class="ant-btn ant-btn-default basic-button-wrapper css-geipcv"
                     type="button"
                   >
                     <span>
@@ -3206,7 +3206,7 @@ exports[`sqle/ExecWorkflow/Detail render snap detail when have multiple states 1
                     </span>
                   </button>
                   <button
-                    class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default basic-button-wrapper css-geipcv"
+                    class="ant-btn ant-btn-default basic-button-wrapper css-geipcv"
                     hidden=""
                     type="button"
                   >
@@ -3215,7 +3215,7 @@ exports[`sqle/ExecWorkflow/Detail render snap detail when have multiple states 1
                     </span>
                   </button>
                   <button
-                    class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary basic-button-wrapper css-geipcv"
+                    class="ant-btn ant-btn-primary basic-button-wrapper css-geipcv"
                     hidden=""
                     type="button"
                   >
@@ -3224,7 +3224,7 @@ exports[`sqle/ExecWorkflow/Detail render snap detail when have multiple states 1
                     </span>
                   </button>
                   <button
-                    class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary basic-button-wrapper css-geipcv"
+                    class="ant-btn ant-btn-primary basic-button-wrapper css-geipcv"
                     confirm="[object Object]"
                     disabled=""
                     hidden=""
@@ -3235,7 +3235,7 @@ exports[`sqle/ExecWorkflow/Detail render snap detail when have multiple states 1
                     </span>
                   </button>
                   <button
-                    class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary basic-button-wrapper css-geipcv"
+                    class="ant-btn ant-btn-primary basic-button-wrapper css-geipcv"
                     confirm="[object Object]"
                     disabled=""
                     hidden=""
@@ -3246,7 +3246,7 @@ exports[`sqle/ExecWorkflow/Detail render snap detail when have multiple states 1
                     </span>
                   </button>
                   <div
-                    class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+                    class="ant-space ant-space-horizontal ant-space-align-center"
                     hidden=""
                   >
                     <div
@@ -3254,7 +3254,7 @@ exports[`sqle/ExecWorkflow/Detail render snap detail when have multiple states 1
                       style="margin-right: 0px;"
                     >
                       <button
-                        class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default ant-btn-dangerous basic-button-wrapper css-geipcv"
+                        class="ant-btn ant-btn-default ant-btn-dangerous basic-button-wrapper css-geipcv"
                         type="button"
                       >
                         <span>
@@ -3267,7 +3267,7 @@ exports[`sqle/ExecWorkflow/Detail render snap detail when have multiple states 1
                       style="margin-right: 0px;"
                     >
                       <div
-                        class="ant-divider css-dev-only-do-not-override-txh9fw ant-divider-vertical workflow-detail-page-header-divider"
+                        class="ant-divider ant-divider-vertical workflow-detail-page-header-divider"
                         role="separator"
                       />
                     </div>
@@ -3275,7 +3275,7 @@ exports[`sqle/ExecWorkflow/Detail render snap detail when have multiple states 1
                       class="ant-space-item"
                     >
                       <button
-                        class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default basic-button-wrapper css-geipcv"
+                        class="ant-btn ant-btn-default basic-button-wrapper css-geipcv"
                         type="button"
                       >
                         <span>
@@ -3370,7 +3370,7 @@ exports[`sqle/ExecWorkflow/Detail render snap detail when have multiple states 1
                 </span>
               </div>
               <div
-                class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center workflow-base-info-title"
+                class="ant-space ant-space-horizontal ant-space-align-center workflow-base-info-title"
               >
                 <div
                   class="ant-space-item"
@@ -3403,10 +3403,10 @@ exports[`sqle/ExecWorkflow/Detail render snap detail when have multiple states 1
                 />
               </svg>
               <div
-                class="ant-row ant-row-no-wrap ant-row-middle full-width-element css-dev-only-do-not-override-txh9fw"
+                class="ant-row ant-row-no-wrap ant-row-middle full-width-element"
               >
                 <div
-                  class="ant-col ant-col-sm-20 ant-col-xxl-22 css-dev-only-do-not-override-txh9fw"
+                  class="ant-col ant-col-sm-20 ant-col-xxl-22"
                 >
                   <div
                     class="reject-workflow-reason-content"
@@ -3417,11 +3417,11 @@ exports[`sqle/ExecWorkflow/Detail render snap detail when have multiple states 1
                       admin驳回了当前工单，驳回原因为: 
                       <div
                         aria-label="1"
-                        class="ant-typography ant-typography-ellipsis ant-typography-single-line reject-workflow-reason-content-text-reason basic-typography-ellipsis css-wgj5gs css-dev-only-do-not-override-txh9fw"
+                        class="ant-typography ant-typography-ellipsis ant-typography-single-line reject-workflow-reason-content-text-reason basic-typography-ellipsis css-wgj5gs"
                       >
                         1
                         <div
-                          aria-label="Copy"
+                          aria-label="复制"
                           class="ant-typography-copy"
                           role="button"
                           style="border: 0px; background: transparent; padding: 0px; line-height: inherit; display: inline-block;"
@@ -3463,7 +3463,7 @@ exports[`sqle/ExecWorkflow/Detail render snap detail when have multiple states 1
                             ...
                           </span>
                           <div
-                            aria-label="Copy"
+                            aria-label="复制"
                             class="ant-typography-copy"
                             role="button"
                             style="border: 0px; background: transparent; padding: 0px; line-height: inherit; display: inline-block;"
@@ -3500,10 +3500,10 @@ exports[`sqle/ExecWorkflow/Detail render snap detail when have multiple states 1
                   </div>
                 </div>
                 <div
-                  class="ant-col ant-col-sm-4 ant-col-xxl-2 css-dev-only-do-not-override-txh9fw"
+                  class="ant-col ant-col-sm-4 ant-col-xxl-2"
                 >
                   <button
-                    class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary basic-button-wrapper css-geipcv"
+                    class="ant-btn ant-btn-primary basic-button-wrapper css-geipcv"
                     type="button"
                   >
                     <span>
@@ -3522,10 +3522,10 @@ exports[`sqle/ExecWorkflow/Detail render snap detail when have multiple states 1
                 审核结果
               </div>
               <div
-                class="ant-row ant-row-space-between css-156vlto css-dev-only-do-not-override-txh9fw"
+                class="ant-row ant-row-space-between css-156vlto"
               >
                 <div
-                  class="ant-segmented basic-segmented-wrapper css-192b3m1 css-dev-only-do-not-override-txh9fw"
+                  class="ant-segmented basic-segmented-wrapper css-192b3m1"
                 >
                   <div
                     class="ant-segmented-group"
@@ -3575,11 +3575,11 @@ exports[`sqle/ExecWorkflow/Detail render snap detail when have multiple states 1
                   hidden=""
                 >
                   <button
-                    class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default ant-btn-sm basic-button-wrapper css-geipcv"
+                    class="ant-btn ant-btn-default ant-btn-sm basic-button-wrapper css-geipcv"
                     type="button"
                   >
                     <div
-                      class="ant-space css-dev-only-do-not-override-674gwq ant-space-horizontal ant-space-align-center"
+                      class="ant-space ant-space-horizontal ant-space-align-center"
                     >
                       <div
                         class="ant-space-item"
@@ -3632,10 +3632,10 @@ exports[`sqle/ExecWorkflow/Detail render snap detail when have multiple states 1
                 </div>
               </div>
               <div
-                class="ant-table-wrapper actiontech-table-namespace table-row-cursor css-fxd6ka css-dev-only-do-not-override-bj9uhl"
+                class="ant-table-wrapper actiontech-table-namespace table-row-cursor css-fxd6ka"
               >
                 <div
-                  class="ant-spin-nested-loading css-dev-only-do-not-override-bj9uhl"
+                  class="ant-spin-nested-loading"
                 >
                   <div
                     class="ant-spin-container"
@@ -3919,14 +3919,14 @@ exports[`sqle/ExecWorkflow/Detail render snap detail when have multiple states 1
                                     class="css-new95e"
                                   >
                                     <div
-                                      class="ant-space css-dev-only-do-not-override-bj9uhl ant-space-horizontal ant-space-align-center"
+                                      class="ant-space ant-space-horizontal ant-space-align-center"
                                     >
                                       <div
                                         class="ant-space-item"
                                         style="margin-right: 8px;"
                                       >
                                         <button
-                                          class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm ant-btn-dangerous actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                          class="ant-btn ant-btn-default ant-btn-sm ant-btn-dangerous actiontech-table-actions-button basic-button-wrapper css-geipcv"
                                           disabled=""
                                           hidden=""
                                           type="button"
@@ -3941,7 +3941,7 @@ exports[`sqle/ExecWorkflow/Detail render snap detail when have multiple states 1
                                         style="margin-right: 8px;"
                                       >
                                         <button
-                                          class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                          class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
                                           disabled=""
                                           hidden=""
                                           type="button"
@@ -3956,7 +3956,7 @@ exports[`sqle/ExecWorkflow/Detail render snap detail when have multiple states 1
                                         style="margin-right: 8px;"
                                       >
                                         <button
-                                          class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                          class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
                                           disabled=""
                                           hidden=""
                                           type="button"
@@ -3970,7 +3970,7 @@ exports[`sqle/ExecWorkflow/Detail render snap detail when have multiple states 1
                                         class="ant-space-item"
                                       >
                                         <button
-                                          class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                          class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
                                           disabled=""
                                           hidden=""
                                           type="button"
@@ -4068,14 +4068,14 @@ exports[`sqle/ExecWorkflow/Detail render snap detail when have multiple states 1
                                     class="css-new95e"
                                   >
                                     <div
-                                      class="ant-space css-dev-only-do-not-override-bj9uhl ant-space-horizontal ant-space-align-center"
+                                      class="ant-space ant-space-horizontal ant-space-align-center"
                                     >
                                       <div
                                         class="ant-space-item"
                                         style="margin-right: 8px;"
                                       >
                                         <button
-                                          class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm ant-btn-dangerous actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                          class="ant-btn ant-btn-default ant-btn-sm ant-btn-dangerous actiontech-table-actions-button basic-button-wrapper css-geipcv"
                                           disabled=""
                                           type="button"
                                         >
@@ -4089,7 +4089,7 @@ exports[`sqle/ExecWorkflow/Detail render snap detail when have multiple states 1
                                         style="margin-right: 8px;"
                                       >
                                         <button
-                                          class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                          class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
                                           disabled=""
                                           hidden=""
                                           type="button"
@@ -4104,7 +4104,7 @@ exports[`sqle/ExecWorkflow/Detail render snap detail when have multiple states 1
                                         style="margin-right: 8px;"
                                       >
                                         <button
-                                          class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                          class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
                                           disabled=""
                                           hidden=""
                                           type="button"
@@ -4118,7 +4118,7 @@ exports[`sqle/ExecWorkflow/Detail render snap detail when have multiple states 1
                                         class="ant-space-item"
                                       >
                                         <button
-                                          class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                          class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
                                           disabled=""
                                           hidden=""
                                           type="button"
@@ -4210,14 +4210,14 @@ exports[`sqle/ExecWorkflow/Detail render snap detail when have multiple states 1
                                     class="css-new95e"
                                   >
                                     <div
-                                      class="ant-space css-dev-only-do-not-override-bj9uhl ant-space-horizontal ant-space-align-center"
+                                      class="ant-space ant-space-horizontal ant-space-align-center"
                                     >
                                       <div
                                         class="ant-space-item"
                                         style="margin-right: 8px;"
                                       >
                                         <button
-                                          class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm ant-btn-dangerous actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                          class="ant-btn ant-btn-default ant-btn-sm ant-btn-dangerous actiontech-table-actions-button basic-button-wrapper css-geipcv"
                                           disabled=""
                                           hidden=""
                                           type="button"
@@ -4232,7 +4232,7 @@ exports[`sqle/ExecWorkflow/Detail render snap detail when have multiple states 1
                                         style="margin-right: 8px;"
                                       >
                                         <button
-                                          class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                          class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
                                           disabled=""
                                           hidden=""
                                           type="button"
@@ -4247,7 +4247,7 @@ exports[`sqle/ExecWorkflow/Detail render snap detail when have multiple states 1
                                         style="margin-right: 8px;"
                                       >
                                         <button
-                                          class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                          class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
                                           disabled=""
                                           hidden=""
                                           type="button"
@@ -4261,7 +4261,7 @@ exports[`sqle/ExecWorkflow/Detail render snap detail when have multiple states 1
                                         class="ant-space-item"
                                       >
                                         <button
-                                          class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                          class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
                                           disabled=""
                                           hidden=""
                                           type="button"
@@ -4328,14 +4328,14 @@ exports[`sqle/ExecWorkflow/Detail render snap detail when have multiple states 1
                     创建人
                   </div>
                   <div
-                    class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center workflow-steps-basic-info-item-value"
+                    class="ant-space ant-space-horizontal ant-space-align-center workflow-steps-basic-info-item-value"
                   >
                     <div
                       class="ant-space-item"
                       style="margin-right: 8px;"
                     >
                       <span
-                        class="ant-avatar ant-avatar-circle action-avatar css-1wq79dc css-dev-only-do-not-override-txh9fw"
+                        class="ant-avatar ant-avatar-circle action-avatar css-1wq79dc"
                         style="width: 20px; height: 20px; line-height: 20px; font-size: 18px;"
                       >
                         <span
@@ -4364,7 +4364,7 @@ exports[`sqle/ExecWorkflow/Detail render snap detail when have multiple states 1
                     创建时间
                   </div>
                   <div
-                    class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center workflow-steps-basic-info-item-value"
+                    class="ant-space ant-space-horizontal ant-space-align-center workflow-steps-basic-info-item-value"
                   >
                     <div
                       class="ant-space-item"
@@ -4438,7 +4438,7 @@ exports[`sqle/ExecWorkflow/Detail render snap detail when have multiple states 1
                   工单进度
                 </div>
                 <div
-                  class="ant-steps ant-steps-vertical css-1epey7k css-dev-only-do-not-override-txh9fw"
+                  class="ant-steps ant-steps-vertical css-1epey7k"
                 >
                   <div
                     class="ant-steps-item ant-steps-item-finish prev-rejected-step ant-steps-item-custom"
@@ -4488,7 +4488,7 @@ exports[`sqle/ExecWorkflow/Detail render snap detail when have multiple states 1
                               class="step-info"
                             >
                               <div
-                                class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+                                class="ant-space ant-space-horizontal ant-space-align-center"
                               >
                                 <div
                                   class="ant-space-item"
@@ -4503,7 +4503,7 @@ exports[`sqle/ExecWorkflow/Detail render snap detail when have multiple states 1
                                   style="margin-right: 8px;"
                                 >
                                   <div
-                                    class="ant-divider css-dev-only-do-not-override-txh9fw ant-divider-vertical"
+                                    class="ant-divider ant-divider-vertical"
                                     role="separator"
                                   />
                                 </div>
@@ -4568,7 +4568,7 @@ exports[`sqle/ExecWorkflow/Detail render snap detail when have multiple states 1
                               class="step-info"
                             >
                               <div
-                                class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+                                class="ant-space ant-space-horizontal ant-space-align-center"
                               >
                                 <div
                                   class="ant-space-item"
@@ -4583,7 +4583,7 @@ exports[`sqle/ExecWorkflow/Detail render snap detail when have multiple states 1
                                   style="margin-right: 8px;"
                                 >
                                   <div
-                                    class="ant-divider css-dev-only-do-not-override-txh9fw ant-divider-vertical"
+                                    class="ant-divider ant-divider-vertical"
                                     role="separator"
                                   />
                                 </div>

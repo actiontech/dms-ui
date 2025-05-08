@@ -7,10 +7,10 @@ exports[`base/System/GitSSHConfig should match snapshot when get ssh public key 
       class="system-form-wrapper"
     >
       <div
-        class="ant-row ant-row-space-between ant-row-middle config-title-wrapper has-border css-dev-only-do-not-override-txh9fw"
+        class="ant-row ant-row-space-between ant-row-middle config-title-wrapper has-border"
       >
         <div
-          class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+          class="ant-space ant-space-horizontal ant-space-align-center"
         >
           <div
             class="ant-space-item"
@@ -20,7 +20,7 @@ exports[`base/System/GitSSHConfig should match snapshot when get ssh public key 
         </div>
       </div>
       <div
-        class="ant-spin-nested-loading css-dev-only-do-not-override-txh9fw"
+        class="ant-spin-nested-loading"
       >
         <div
           class="ant-spin-container"
@@ -29,14 +29,14 @@ exports[`base/System/GitSSHConfig should match snapshot when get ssh public key 
             class="css-1scia9f"
           >
             <div
-              class="ant-space css-dev-only-do-not-override-txh9fw ant-space-vertical full-width-element"
+              class="ant-space ant-space-vertical full-width-element"
             >
               <div
                 class="ant-space-item"
                 style="margin-bottom: 16px;"
               >
                 <div
-                  class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
+                  class="ant-space ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
                 >
                   <div
                     class="ant-space-item"
@@ -76,7 +76,7 @@ exports[`base/System/GitSSHConfig should match snapshot when get ssh public key 
                 class="ant-space-item"
               >
                 <div
-                  class="ant-space css-dev-only-do-not-override-txh9fw ant-space-vertical full-width-element"
+                  class="ant-space ant-space-vertical full-width-element"
                 >
                   <div
                     class="ant-space-item"
@@ -86,14 +86,14 @@ exports[`base/System/GitSSHConfig should match snapshot when get ssh public key 
                       class="key-header"
                     >
                       <span
-                        class="ant-typography css-dev-only-do-not-override-txh9fw"
+                        class="ant-typography"
                       >
                         <strong>
                           公钥
                         </strong>
                       </span>
                       <button
-                        class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default basic-button-wrapper css-geipcv"
+                        class="ant-btn ant-btn-default basic-button-wrapper css-geipcv"
                         type="button"
                       >
                         <span>
@@ -106,13 +106,13 @@ exports[`base/System/GitSSHConfig should match snapshot when get ssh public key 
                     class="ant-space-item"
                   >
                     <div
-                      class="ant-card ant-card-bordered css-dev-only-do-not-override-txh9fw"
+                      class="ant-card ant-card-bordered"
                     >
                       <div
                         class="ant-card-body"
                       >
                         <div
-                          class="ant-typography css-dev-only-do-not-override-txh9fw"
+                          class="ant-typography"
                         >
                           ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQDzBOtcopZ1IdU51augExmKzRRYsJdNDnxVf5mlCRch2hMq4y02F4q4T71WFoLg22FptnxmY+LkOPgYyIvl6MdfBS6RQarc3aC2rO5bCbzuMf2f6+2hbYH3ACXJWAn4xX8b0ZK25t1u8jrXmAJPVXIMLEcLL4Wo7IqCQ1PwrkIeXuMfznHzVoAEv5o+jbUkj++I46AEmqrmDsgWCt83JK7ctBzhEXJWhF5rSyqGxXBptVPVMEO4ShJi2rKdk+ZbBGIAGu0db72hlvdqzUeU2Ng+J0dcIDsS/4pmEtQ+6uJFgslqF2Vt708tcOPTG4qdfFaK453PyceZ/F/f/BN+bPDJCh+oPQ3zdsKHmh0rXefICPMWe73QRLAyW/JeWcsnFlgoBmlwB4++Isc6xYx0dHFM/ws10vTJDif3CAi0VE1vKdSZvVxTFq5bZKhTX3zfA24yZzAl9BCOrQzWh20NWJ3Lgwk2JWL3NVsChKNk4aTCHNz1OyW/nojrd5tCyyqF06OqG1/xc5RmRkCH9gXqFA0Ngf3IdxJdpL9q3G60CBAi7Gfs6+gLIlMc6sgnlZdnyCj3Gmh7yRrmMZUDAmZnyvrYw3+4qQcVBi5gw64wuya2K6Hz6lrgxT9AlcUTNdHn1W6TimZtO3JUDclMUbA6euN/NOFsY4VpYPVNoMND3Lwesw==
                         </div>
@@ -123,7 +123,7 @@ exports[`base/System/GitSSHConfig should match snapshot when get ssh public key 
               </div>
             </div>
             <div
-              class="ant-alert ant-alert-success ant-alert-no-icon css-dev-only-do-not-override-txh9fw"
+              class="ant-alert ant-alert-success ant-alert-no-icon"
               data-show="true"
               role="alert"
             >
@@ -134,14 +134,14 @@ exports[`base/System/GitSSHConfig should match snapshot when get ssh public key 
                   class="ant-alert-message"
                 >
                   <div
-                    class="ant-space css-dev-only-do-not-override-txh9fw ant-space-vertical"
+                    class="ant-space ant-space-vertical"
                   >
                     <div
                       class="ant-space-item"
                       style="margin-bottom: 8px;"
                     >
                       <span
-                        class="ant-typography css-dev-only-do-not-override-txh9fw"
+                        class="ant-typography"
                       >
                         <strong>
                           使用说明
@@ -153,7 +153,7 @@ exports[`base/System/GitSSHConfig should match snapshot when get ssh public key 
                       style="margin-bottom: 8px;"
                     >
                       <span
-                        class="ant-typography css-dev-only-do-not-override-txh9fw"
+                        class="ant-typography"
                       >
                         1. 复制上方生成的公钥，前往Git代码托管平台的SSH密钥设置页面
                       </span>
@@ -163,7 +163,7 @@ exports[`base/System/GitSSHConfig should match snapshot when get ssh public key 
                       style="margin-bottom: 8px;"
                     >
                       <span
-                        class="ant-typography css-dev-only-do-not-override-txh9fw"
+                        class="ant-typography"
                       >
                         2. 在平台上添加新的SSH密钥
                       </span>
@@ -172,7 +172,7 @@ exports[`base/System/GitSSHConfig should match snapshot when get ssh public key 
                       class="ant-space-item"
                     >
                       <span
-                        class="ant-typography css-dev-only-do-not-override-txh9fw"
+                        class="ant-typography"
                       >
                         3. 在标题中输入描述性名称（如"DMS Key"），在密钥输入框中粘贴公钥，完成添加
                       </span>

@@ -18,7 +18,7 @@ exports[`test PushRuleConfiguration/ce should match snapshot 1`] = `
       />
     </div>
     <div
-      class="ant-spin-nested-loading css-dev-only-do-not-override-txh9fw"
+      class="ant-spin-nested-loading"
     >
       <div
         class="ant-spin-container"
@@ -35,26 +35,26 @@ exports[`test PushRuleConfiguration/ce should match snapshot 1`] = `
             class="css-zupqof"
           >
             <form
-              class="ant-form ant-form-horizontal css-dev-only-do-not-override-txh9fw"
+              class="ant-form ant-form-horizontal"
             >
               <div
                 class="switch-field-wrapper"
               >
                 <div
-                  class="ant-form-item has-label-tip css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+                  class="ant-form-item has-label-tip css-1jlm9cy"
                 >
                   <div
-                    class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                    class="ant-row ant-form-item-row"
                   >
                     <div
-                      class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left css-dev-only-do-not-override-txh9fw"
+                      class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left"
                     >
                       <label
                         class="ant-form-item-no-colon"
                         title=""
                       >
                         <div
-                          class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
+                          class="ant-space ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
                         >
                           <div
                             class="ant-space-item"
@@ -84,7 +84,7 @@ exports[`test PushRuleConfiguration/ce should match snapshot 1`] = `
                       </label>
                     </div>
                     <div
-                      class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                      class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control"
                     >
                       <div
                         class="ant-form-item-control-input"
@@ -93,14 +93,14 @@ exports[`test PushRuleConfiguration/ce should match snapshot 1`] = `
                           class="ant-form-item-control-input-content"
                         >
                           <div
-                            class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+                            class="ant-space ant-space-horizontal ant-space-align-center"
                           >
                             <div
                               class="ant-space-item"
                             >
                               <button
                                 aria-checked="true"
-                                class="ant-switch basic-switch-wrapper css-g6dhbn css-dev-only-do-not-override-txh9fw ant-switch-checked"
+                                class="ant-switch basic-switch-wrapper css-g6dhbn ant-switch-checked"
                                 data-testid="config-switch"
                                 role="switch"
                                 type="button"
@@ -133,7 +133,7 @@ exports[`test PushRuleConfiguration/ce should match snapshot 1`] = `
               />
             </form>
             <div
-              class="ant-descriptions system-config-view-wrapper css-cs8tvb css-dev-only-do-not-override-txh9fw"
+              class="ant-descriptions system-config-view-wrapper css-cs8tvb"
             >
               <div
                 class="ant-descriptions-view"
@@ -204,7 +204,7 @@ exports[`test PushRuleConfiguration/ce should match snapshot 1`] = `
                           <span
                             class="ant-descriptions-item-content"
                           >
-                            1-01-01 08:05:43
+                            0001-01-01 08:05:43
                           </span>
                         </div>
                       </td>
@@ -229,12 +229,12 @@ exports[`test PushRuleConfiguration/ce should match snapshot 1`] = `
                 class="left"
               >
                 <div
-                  class="ant-typography paragraph css-dev-only-do-not-override-txh9fw"
+                  class="ant-typography paragraph"
                 >
                   如果您已配置高优先级SQL标准，并想及时跟进这些潜在的问题SQL，避免引发更大的事故时，可以开启SQL管控推送能力，平台将及时暴露您关注的问题SQL。
                 </div>
                 <div
-                  class="ant-space css-dev-only-do-not-override-txh9fw ant-space-vertical full-width-element version-comparison-wrap css-11wj1aa"
+                  class="ant-space ant-space-vertical full-width-element version-comparison-wrap css-11wj1aa"
                 >
                   <div
                     class="ant-space-item"
@@ -244,34 +244,34 @@ exports[`test PushRuleConfiguration/ce should match snapshot 1`] = `
                       class="content-wrap"
                     >
                       <div
-                        class="ant-card ant-card-bordered ant-card-hoverable version-card css-13zv8cx css-dev-only-do-not-override-txh9fw"
+                        class="ant-card ant-card-bordered ant-card-hoverable version-card css-13zv8cx"
                         color="green"
                       >
                         <div
                           class="ant-card-body"
                         >
                           <div
-                            class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center version-tag-wrap"
+                            class="ant-space ant-space-horizontal ant-space-align-center version-tag-wrap"
                           >
                             <div
                               class="ant-space-item"
                             >
                               <span
-                                class="ant-tag ant-tag-green basic-tag-wrapper basic-large-tag-wrapper css-13qu6j1 css-dev-only-do-not-override-txh9fw"
+                                class="ant-tag ant-tag-green basic-tag-wrapper basic-large-tag-wrapper css-13qu6j1"
                               >
                                 社区版
                               </span>
                             </div>
                           </div>
                           <div
-                            class="ant-space css-dev-only-do-not-override-txh9fw ant-space-vertical ant-space-align-center version-item"
+                            class="ant-space ant-space-vertical ant-space-align-center version-item"
                           >
                             <div
                               class="ant-space-item"
                               style="margin-bottom: 16px;"
                             >
                               <h4
-                                class="ant-typography css-dev-only-do-not-override-txh9fw"
+                                class="ant-typography"
                               >
                                 免费
                               </h4>
@@ -281,7 +281,7 @@ exports[`test PushRuleConfiguration/ce should match snapshot 1`] = `
                               style="margin-bottom: 16px;"
                             >
                               <span
-                                class="ant-typography term-wrap css-dev-only-do-not-override-txh9fw"
+                                class="ant-typography term-wrap"
                               >
                                 永久
                               </span>
@@ -291,7 +291,7 @@ exports[`test PushRuleConfiguration/ce should match snapshot 1`] = `
                               style="margin-bottom: 16px;"
                             >
                               <a
-                                class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary apply-button basic-button-wrapper css-geipcv"
+                                class="ant-btn ant-btn-primary apply-button basic-button-wrapper css-geipcv"
                                 href="https://actiontech.github.io/sqle-docs/docs/deploy-manual/intro"
                                 target="_blank"
                               >
@@ -305,7 +305,7 @@ exports[`test PushRuleConfiguration/ce should match snapshot 1`] = `
                               style="margin-bottom: 16px;"
                             >
                               <span
-                                class="ant-typography version-subTitle-wrap css-dev-only-do-not-override-txh9fw"
+                                class="ant-typography version-subTitle-wrap"
                               >
                                 适用于MySQL基础审核场景
                               </span>
@@ -315,7 +315,7 @@ exports[`test PushRuleConfiguration/ce should match snapshot 1`] = `
                               style="margin-bottom: 16px;"
                             >
                               <div
-                                class="ant-divider css-dev-only-do-not-override-txh9fw ant-divider-horizontal"
+                                class="ant-divider ant-divider-horizontal"
                                 role="separator"
                               />
                             </div>
@@ -323,14 +323,14 @@ exports[`test PushRuleConfiguration/ce should match snapshot 1`] = `
                               class="ant-space-item"
                             >
                               <div
-                                class="ant-space css-dev-only-do-not-override-txh9fw ant-space-vertical content-list"
+                                class="ant-space ant-space-vertical content-list"
                               >
                                 <div
                                   class="ant-space-item"
                                   style="margin-bottom: 8px;"
                                 >
                                   <div
-                                    class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-start full-width-element version-desc-wrap"
+                                    class="ant-space ant-space-horizontal ant-space-align-start full-width-element version-desc-wrap"
                                   >
                                     <div
                                       class="ant-space-item"
@@ -352,7 +352,7 @@ exports[`test PushRuleConfiguration/ce should match snapshot 1`] = `
                                       class="ant-space-item"
                                     >
                                       <span
-                                        class="ant-typography css-dev-only-do-not-override-txh9fw"
+                                        class="ant-typography"
                                       >
                                         支持纳管MySQL数据源
                                       </span>
@@ -364,7 +364,7 @@ exports[`test PushRuleConfiguration/ce should match snapshot 1`] = `
                                   style="margin-bottom: 8px;"
                                 >
                                   <div
-                                    class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-start full-width-element version-desc-wrap"
+                                    class="ant-space ant-space-horizontal ant-space-align-start full-width-element version-desc-wrap"
                                   >
                                     <div
                                       class="ant-space-item"
@@ -386,7 +386,7 @@ exports[`test PushRuleConfiguration/ce should match snapshot 1`] = `
                                       class="ant-space-item"
                                     >
                                       <span
-                                        class="ant-typography css-dev-only-do-not-override-txh9fw"
+                                        class="ant-typography"
                                       >
                                         提供专业SQL审核能力
                                       </span>
@@ -398,7 +398,7 @@ exports[`test PushRuleConfiguration/ce should match snapshot 1`] = `
                                   style="margin-bottom: 8px;"
                                 >
                                   <div
-                                    class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-start full-width-element version-desc-wrap"
+                                    class="ant-space ant-space-horizontal ant-space-align-start full-width-element version-desc-wrap"
                                   >
                                     <div
                                       class="ant-space-item"
@@ -420,7 +420,7 @@ exports[`test PushRuleConfiguration/ce should match snapshot 1`] = `
                                       class="ant-space-item"
                                     >
                                       <span
-                                        class="ant-typography css-dev-only-do-not-override-txh9fw"
+                                        class="ant-typography"
                                       >
                                         集成CloudBeaver在线查询
                                       </span>
@@ -432,7 +432,7 @@ exports[`test PushRuleConfiguration/ce should match snapshot 1`] = `
                                   style="margin-bottom: 8px;"
                                 >
                                   <div
-                                    class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-start full-width-element version-desc-wrap"
+                                    class="ant-space ant-space-horizontal ant-space-align-start full-width-element version-desc-wrap"
                                   >
                                     <div
                                       class="ant-space-item"
@@ -454,7 +454,7 @@ exports[`test PushRuleConfiguration/ce should match snapshot 1`] = `
                                       class="ant-space-item"
                                     >
                                       <span
-                                        class="ant-typography css-dev-only-do-not-override-txh9fw"
+                                        class="ant-typography"
                                       >
                                         支持IDE工具审核
                                       </span>
@@ -466,7 +466,7 @@ exports[`test PushRuleConfiguration/ce should match snapshot 1`] = `
                                   style="margin-bottom: 8px;"
                                 >
                                   <div
-                                    class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-start full-width-element version-desc-wrap"
+                                    class="ant-space ant-space-horizontal ant-space-align-start full-width-element version-desc-wrap"
                                   >
                                     <div
                                       class="ant-space-item"
@@ -488,7 +488,7 @@ exports[`test PushRuleConfiguration/ce should match snapshot 1`] = `
                                       class="ant-space-item"
                                     >
                                       <span
-                                        class="ant-typography css-dev-only-do-not-override-txh9fw"
+                                        class="ant-typography"
                                       >
                                         支持多方式采集MySQL数据
                                       </span>
@@ -499,7 +499,7 @@ exports[`test PushRuleConfiguration/ce should match snapshot 1`] = `
                                   class="ant-space-item"
                                 >
                                   <div
-                                    class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-start full-width-element version-desc-wrap"
+                                    class="ant-space ant-space-horizontal ant-space-align-start full-width-element version-desc-wrap"
                                   >
                                     <div
                                       class="ant-space-item"
@@ -521,7 +521,7 @@ exports[`test PushRuleConfiguration/ce should match snapshot 1`] = `
                                       class="ant-space-item"
                                     >
                                       <span
-                                        class="ant-typography css-dev-only-do-not-override-txh9fw"
+                                        class="ant-typography"
                                       >
                                         无实例限制
                                       </span>
@@ -534,34 +534,34 @@ exports[`test PushRuleConfiguration/ce should match snapshot 1`] = `
                         </div>
                       </div>
                       <div
-                        class="ant-card ant-card-bordered ant-card-hoverable version-card css-1npclps css-dev-only-do-not-override-txh9fw"
+                        class="ant-card ant-card-bordered ant-card-hoverable version-card css-1npclps"
                         color="blue"
                       >
                         <div
                           class="ant-card-body"
                         >
                           <div
-                            class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center version-tag-wrap"
+                            class="ant-space ant-space-horizontal ant-space-align-center version-tag-wrap"
                           >
                             <div
                               class="ant-space-item"
                             >
                               <span
-                                class="ant-tag ant-tag-blue basic-tag-wrapper basic-large-tag-wrapper css-1q0n2j9 css-dev-only-do-not-override-txh9fw"
+                                class="ant-tag ant-tag-blue basic-tag-wrapper basic-large-tag-wrapper css-1q0n2j9"
                               >
                                 专业版
                               </span>
                             </div>
                           </div>
                           <div
-                            class="ant-space css-dev-only-do-not-override-txh9fw ant-space-vertical ant-space-align-center version-item"
+                            class="ant-space ant-space-vertical ant-space-align-center version-item"
                           >
                             <div
                               class="ant-space-item"
                               style="margin-bottom: 16px;"
                             >
                               <h4
-                                class="ant-typography css-dev-only-do-not-override-txh9fw"
+                                class="ant-typography"
                               >
                                 免费
                               </h4>
@@ -571,7 +571,7 @@ exports[`test PushRuleConfiguration/ce should match snapshot 1`] = `
                               style="margin-bottom: 16px;"
                             >
                               <span
-                                class="ant-typography term-wrap css-dev-only-do-not-override-txh9fw"
+                                class="ant-typography term-wrap"
                               >
                                 永久
                               </span>
@@ -581,7 +581,7 @@ exports[`test PushRuleConfiguration/ce should match snapshot 1`] = `
                               style="margin-bottom: 16px;"
                             >
                               <a
-                                class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary apply-button basic-button-wrapper css-geipcv"
+                                class="ant-btn ant-btn-primary apply-button basic-button-wrapper css-geipcv"
                                 href="https://www.actionsky.com/sqle?question=true"
                                 target="_blank"
                               >
@@ -595,7 +595,7 @@ exports[`test PushRuleConfiguration/ce should match snapshot 1`] = `
                               style="margin-bottom: 16px;"
                             >
                               <span
-                                class="ant-typography version-subTitle-wrap css-dev-only-do-not-override-txh9fw"
+                                class="ant-typography version-subTitle-wrap"
                               >
                                 适用于多种数据源类型体验场景
                               </span>
@@ -605,7 +605,7 @@ exports[`test PushRuleConfiguration/ce should match snapshot 1`] = `
                               style="margin-bottom: 16px;"
                             >
                               <div
-                                class="ant-divider css-dev-only-do-not-override-txh9fw ant-divider-horizontal"
+                                class="ant-divider ant-divider-horizontal"
                                 role="separator"
                               />
                             </div>
@@ -613,14 +613,14 @@ exports[`test PushRuleConfiguration/ce should match snapshot 1`] = `
                               class="ant-space-item"
                             >
                               <div
-                                class="ant-space css-dev-only-do-not-override-txh9fw ant-space-vertical content-list"
+                                class="ant-space ant-space-vertical content-list"
                               >
                                 <div
                                   class="ant-space-item"
                                   style="margin-bottom: 8px;"
                                 >
                                   <div
-                                    class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-start full-width-element version-desc-wrap"
+                                    class="ant-space ant-space-horizontal ant-space-align-start full-width-element version-desc-wrap"
                                   >
                                     <div
                                       class="ant-space-item"
@@ -642,7 +642,7 @@ exports[`test PushRuleConfiguration/ce should match snapshot 1`] = `
                                       class="ant-space-item"
                                     >
                                       <span
-                                        class="ant-typography css-dev-only-do-not-override-txh9fw"
+                                        class="ant-typography"
                                       >
                                         支持纳管10多种主流数据源
                                       </span>
@@ -654,7 +654,7 @@ exports[`test PushRuleConfiguration/ce should match snapshot 1`] = `
                                   style="margin-bottom: 8px;"
                                 >
                                   <div
-                                    class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-start full-width-element version-desc-wrap"
+                                    class="ant-space ant-space-horizontal ant-space-align-start full-width-element version-desc-wrap"
                                   >
                                     <div
                                       class="ant-space-item"
@@ -676,7 +676,7 @@ exports[`test PushRuleConfiguration/ce should match snapshot 1`] = `
                                       class="ant-space-item"
                                     >
                                       <span
-                                        class="ant-typography css-dev-only-do-not-override-txh9fw"
+                                        class="ant-typography"
                                       >
                                         提供专业SQL审核能力
                                       </span>
@@ -688,7 +688,7 @@ exports[`test PushRuleConfiguration/ce should match snapshot 1`] = `
                                   style="margin-bottom: 8px;"
                                 >
                                   <div
-                                    class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-start full-width-element version-desc-wrap"
+                                    class="ant-space ant-space-horizontal ant-space-align-start full-width-element version-desc-wrap"
                                   >
                                     <div
                                       class="ant-space-item"
@@ -710,7 +710,7 @@ exports[`test PushRuleConfiguration/ce should match snapshot 1`] = `
                                       class="ant-space-item"
                                     >
                                       <span
-                                        class="ant-typography css-dev-only-do-not-override-txh9fw"
+                                        class="ant-typography"
                                       >
                                         集成CloudBeaver在线查询
                                       </span>
@@ -722,7 +722,7 @@ exports[`test PushRuleConfiguration/ce should match snapshot 1`] = `
                                   style="margin-bottom: 8px;"
                                 >
                                   <div
-                                    class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-start full-width-element version-desc-wrap"
+                                    class="ant-space ant-space-horizontal ant-space-align-start full-width-element version-desc-wrap"
                                   >
                                     <div
                                       class="ant-space-item"
@@ -744,7 +744,7 @@ exports[`test PushRuleConfiguration/ce should match snapshot 1`] = `
                                       class="ant-space-item"
                                     >
                                       <span
-                                        class="ant-typography css-dev-only-do-not-override-txh9fw"
+                                        class="ant-typography"
                                       >
                                         支持IDE工具审核
                                       </span>
@@ -756,7 +756,7 @@ exports[`test PushRuleConfiguration/ce should match snapshot 1`] = `
                                   style="margin-bottom: 8px;"
                                 >
                                   <div
-                                    class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-start full-width-element version-desc-wrap"
+                                    class="ant-space ant-space-horizontal ant-space-align-start full-width-element version-desc-wrap"
                                   >
                                     <div
                                       class="ant-space-item"
@@ -778,7 +778,7 @@ exports[`test PushRuleConfiguration/ce should match snapshot 1`] = `
                                       class="ant-space-item"
                                     >
                                       <span
-                                        class="ant-typography css-dev-only-do-not-override-txh9fw"
+                                        class="ant-typography"
                                       >
                                         支持多方式采集各数据源数据
                                       </span>
@@ -789,7 +789,7 @@ exports[`test PushRuleConfiguration/ce should match snapshot 1`] = `
                                   class="ant-space-item"
                                 >
                                   <div
-                                    class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-start full-width-element version-desc-wrap"
+                                    class="ant-space ant-space-horizontal ant-space-align-start full-width-element version-desc-wrap"
                                   >
                                     <div
                                       class="ant-space-item"
@@ -811,7 +811,7 @@ exports[`test PushRuleConfiguration/ce should match snapshot 1`] = `
                                       class="ant-space-item"
                                     >
                                       <span
-                                        class="ant-typography css-dev-only-do-not-override-txh9fw"
+                                        class="ant-typography"
                                       >
                                         最大实例个数20
                                       </span>
@@ -824,34 +824,34 @@ exports[`test PushRuleConfiguration/ce should match snapshot 1`] = `
                         </div>
                       </div>
                       <div
-                        class="ant-card ant-card-bordered ant-card-hoverable version-card css-1gci04r css-dev-only-do-not-override-txh9fw"
+                        class="ant-card ant-card-bordered ant-card-hoverable version-card css-1gci04r"
                         color="orange"
                       >
                         <div
                           class="ant-card-body"
                         >
                           <div
-                            class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center version-tag-wrap"
+                            class="ant-space ant-space-horizontal ant-space-align-center version-tag-wrap"
                           >
                             <div
                               class="ant-space-item"
                             >
                               <span
-                                class="ant-tag ant-tag-orange basic-tag-wrapper basic-large-tag-wrapper css-17gmaof css-dev-only-do-not-override-txh9fw"
+                                class="ant-tag ant-tag-orange basic-tag-wrapper basic-large-tag-wrapper css-17gmaof"
                               >
                                 企业版
                               </span>
                             </div>
                           </div>
                           <div
-                            class="ant-space css-dev-only-do-not-override-txh9fw ant-space-vertical ant-space-align-center version-item"
+                            class="ant-space ant-space-vertical ant-space-align-center version-item"
                           >
                             <div
                               class="ant-space-item"
                               style="margin-bottom: 16px;"
                             >
                               <h4
-                                class="ant-typography css-dev-only-do-not-override-txh9fw"
+                                class="ant-typography"
                               >
                                 定制
                               </h4>
@@ -861,7 +861,7 @@ exports[`test PushRuleConfiguration/ce should match snapshot 1`] = `
                               style="margin-bottom: 16px;"
                             >
                               <span
-                                class="ant-typography term-wrap css-dev-only-do-not-override-txh9fw"
+                                class="ant-typography term-wrap"
                               />
                             </div>
                             <div
@@ -869,7 +869,7 @@ exports[`test PushRuleConfiguration/ce should match snapshot 1`] = `
                               style="margin-bottom: 16px;"
                             >
                               <a
-                                class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary apply-button basic-button-wrapper css-geipcv"
+                                class="ant-btn ant-btn-primary apply-button basic-button-wrapper css-geipcv"
                                 href="https://actiontech.github.io/sqle-docs/docs/support/commercial-support/"
                                 target="_blank"
                               >
@@ -883,7 +883,7 @@ exports[`test PushRuleConfiguration/ce should match snapshot 1`] = `
                               style="margin-bottom: 16px;"
                             >
                               <span
-                                class="ant-typography version-subTitle-wrap css-dev-only-do-not-override-txh9fw"
+                                class="ant-typography version-subTitle-wrap"
                               >
                                 适用于私有云用户定制场景
                               </span>
@@ -893,7 +893,7 @@ exports[`test PushRuleConfiguration/ce should match snapshot 1`] = `
                               style="margin-bottom: 16px;"
                             >
                               <div
-                                class="ant-divider css-dev-only-do-not-override-txh9fw ant-divider-horizontal"
+                                class="ant-divider ant-divider-horizontal"
                                 role="separator"
                               />
                             </div>
@@ -901,14 +901,14 @@ exports[`test PushRuleConfiguration/ce should match snapshot 1`] = `
                               class="ant-space-item"
                             >
                               <div
-                                class="ant-space css-dev-only-do-not-override-txh9fw ant-space-vertical content-list"
+                                class="ant-space ant-space-vertical content-list"
                               >
                                 <div
                                   class="ant-space-item"
                                   style="margin-bottom: 8px;"
                                 >
                                   <div
-                                    class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-start full-width-element version-desc-wrap"
+                                    class="ant-space ant-space-horizontal ant-space-align-start full-width-element version-desc-wrap"
                                   >
                                     <div
                                       class="ant-space-item"
@@ -930,7 +930,7 @@ exports[`test PushRuleConfiguration/ce should match snapshot 1`] = `
                                       class="ant-space-item"
                                     >
                                       <span
-                                        class="ant-typography css-dev-only-do-not-override-txh9fw"
+                                        class="ant-typography"
                                       >
                                         支持纳管10多种主流数据源
                                       </span>
@@ -942,7 +942,7 @@ exports[`test PushRuleConfiguration/ce should match snapshot 1`] = `
                                   style="margin-bottom: 8px;"
                                 >
                                   <div
-                                    class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-start full-width-element version-desc-wrap"
+                                    class="ant-space ant-space-horizontal ant-space-align-start full-width-element version-desc-wrap"
                                   >
                                     <div
                                       class="ant-space-item"
@@ -964,7 +964,7 @@ exports[`test PushRuleConfiguration/ce should match snapshot 1`] = `
                                       class="ant-space-item"
                                     >
                                       <span
-                                        class="ant-typography css-dev-only-do-not-override-txh9fw"
+                                        class="ant-typography"
                                       >
                                         提供专业SQL审核能力
                                       </span>
@@ -976,7 +976,7 @@ exports[`test PushRuleConfiguration/ce should match snapshot 1`] = `
                                   style="margin-bottom: 8px;"
                                 >
                                   <div
-                                    class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-start full-width-element version-desc-wrap"
+                                    class="ant-space ant-space-horizontal ant-space-align-start full-width-element version-desc-wrap"
                                   >
                                     <div
                                       class="ant-space-item"
@@ -998,7 +998,7 @@ exports[`test PushRuleConfiguration/ce should match snapshot 1`] = `
                                       class="ant-space-item"
                                     >
                                       <span
-                                        class="ant-typography css-dev-only-do-not-override-txh9fw"
+                                        class="ant-typography"
                                       >
                                         集成CloudBeaver在线查询
                                       </span>
@@ -1010,7 +1010,7 @@ exports[`test PushRuleConfiguration/ce should match snapshot 1`] = `
                                   style="margin-bottom: 8px;"
                                 >
                                   <div
-                                    class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-start full-width-element version-desc-wrap"
+                                    class="ant-space ant-space-horizontal ant-space-align-start full-width-element version-desc-wrap"
                                   >
                                     <div
                                       class="ant-space-item"
@@ -1032,7 +1032,7 @@ exports[`test PushRuleConfiguration/ce should match snapshot 1`] = `
                                       class="ant-space-item"
                                     >
                                       <span
-                                        class="ant-typography css-dev-only-do-not-override-txh9fw"
+                                        class="ant-typography"
                                       >
                                         支持IDE工具审核
                                       </span>
@@ -1044,7 +1044,7 @@ exports[`test PushRuleConfiguration/ce should match snapshot 1`] = `
                                   style="margin-bottom: 8px;"
                                 >
                                   <div
-                                    class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-start full-width-element version-desc-wrap"
+                                    class="ant-space ant-space-horizontal ant-space-align-start full-width-element version-desc-wrap"
                                   >
                                     <div
                                       class="ant-space-item"
@@ -1066,7 +1066,7 @@ exports[`test PushRuleConfiguration/ce should match snapshot 1`] = `
                                       class="ant-space-item"
                                     >
                                       <span
-                                        class="ant-typography css-dev-only-do-not-override-txh9fw"
+                                        class="ant-typography"
                                       >
                                         支持多方式采集各数据源数据
                                       </span>
@@ -1078,7 +1078,7 @@ exports[`test PushRuleConfiguration/ce should match snapshot 1`] = `
                                   style="margin-bottom: 8px;"
                                 >
                                   <div
-                                    class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-start full-width-element version-desc-wrap"
+                                    class="ant-space ant-space-horizontal ant-space-align-start full-width-element version-desc-wrap"
                                   >
                                     <div
                                       class="ant-space-item"
@@ -1100,7 +1100,7 @@ exports[`test PushRuleConfiguration/ce should match snapshot 1`] = `
                                       class="ant-space-item"
                                     >
                                       <span
-                                        class="ant-typography css-dev-only-do-not-override-txh9fw"
+                                        class="ant-typography"
                                       >
                                         无实例限制
                                       </span>
@@ -1112,7 +1112,7 @@ exports[`test PushRuleConfiguration/ce should match snapshot 1`] = `
                                   style="margin-bottom: 8px;"
                                 >
                                   <div
-                                    class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-start full-width-element version-desc-wrap"
+                                    class="ant-space ant-space-horizontal ant-space-align-start full-width-element version-desc-wrap"
                                   >
                                     <div
                                       class="ant-space-item"
@@ -1134,7 +1134,7 @@ exports[`test PushRuleConfiguration/ce should match snapshot 1`] = `
                                       class="ant-space-item"
                                     >
                                       <span
-                                        class="ant-typography css-dev-only-do-not-override-txh9fw"
+                                        class="ant-typography"
                                       >
                                         提供SQL问题下钻能力
                                       </span>
@@ -1146,7 +1146,7 @@ exports[`test PushRuleConfiguration/ce should match snapshot 1`] = `
                                   style="margin-bottom: 8px;"
                                 >
                                   <div
-                                    class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-start full-width-element version-desc-wrap"
+                                    class="ant-space ant-space-horizontal ant-space-align-start full-width-element version-desc-wrap"
                                   >
                                     <div
                                       class="ant-space-item"
@@ -1168,7 +1168,7 @@ exports[`test PushRuleConfiguration/ce should match snapshot 1`] = `
                                       class="ant-space-item"
                                     >
                                       <span
-                                        class="ant-typography css-dev-only-do-not-override-txh9fw"
+                                        class="ant-typography"
                                       >
                                         支持 SQL 变更的版本化管理
                                       </span>
@@ -1180,7 +1180,7 @@ exports[`test PushRuleConfiguration/ce should match snapshot 1`] = `
                                   style="margin-bottom: 8px;"
                                 >
                                   <div
-                                    class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-start full-width-element version-desc-wrap"
+                                    class="ant-space ant-space-horizontal ant-space-align-start full-width-element version-desc-wrap"
                                   >
                                     <div
                                       class="ant-space-item"
@@ -1202,7 +1202,7 @@ exports[`test PushRuleConfiguration/ce should match snapshot 1`] = `
                                       class="ant-space-item"
                                     >
                                       <span
-                                        class="ant-typography css-dev-only-do-not-override-txh9fw"
+                                        class="ant-typography"
                                       >
                                         支持备份恢复
                                       </span>
@@ -1214,7 +1214,7 @@ exports[`test PushRuleConfiguration/ce should match snapshot 1`] = `
                                   style="margin-bottom: 8px;"
                                 >
                                   <div
-                                    class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-start full-width-element version-desc-wrap"
+                                    class="ant-space ant-space-horizontal ant-space-align-start full-width-element version-desc-wrap"
                                   >
                                     <div
                                       class="ant-space-item"
@@ -1236,7 +1236,7 @@ exports[`test PushRuleConfiguration/ce should match snapshot 1`] = `
                                       class="ant-space-item"
                                     >
                                       <span
-                                        class="ant-typography css-dev-only-do-not-override-txh9fw"
+                                        class="ant-typography"
                                       >
                                         支持结构对比
                                       </span>
@@ -1248,7 +1248,7 @@ exports[`test PushRuleConfiguration/ce should match snapshot 1`] = `
                                   style="margin-bottom: 8px;"
                                 >
                                   <div
-                                    class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-start full-width-element version-desc-wrap"
+                                    class="ant-space ant-space-horizontal ant-space-align-start full-width-element version-desc-wrap"
                                   >
                                     <div
                                       class="ant-space-item"
@@ -1270,7 +1270,7 @@ exports[`test PushRuleConfiguration/ce should match snapshot 1`] = `
                                       class="ant-space-item"
                                     >
                                       <span
-                                        class="ant-typography css-dev-only-do-not-override-txh9fw"
+                                        class="ant-typography"
                                       >
                                         SQL合规重写
                                       </span>
@@ -1282,7 +1282,7 @@ exports[`test PushRuleConfiguration/ce should match snapshot 1`] = `
                                   style="margin-bottom: 8px;"
                                 >
                                   <div
-                                    class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-start full-width-element version-desc-wrap"
+                                    class="ant-space ant-space-horizontal ant-space-align-start full-width-element version-desc-wrap"
                                   >
                                     <div
                                       class="ant-space-item"
@@ -1304,7 +1304,7 @@ exports[`test PushRuleConfiguration/ce should match snapshot 1`] = `
                                       class="ant-space-item"
                                     >
                                       <span
-                                        class="ant-typography css-dev-only-do-not-override-txh9fw"
+                                        class="ant-typography"
                                       >
                                         SQL智能优化
                                       </span>
@@ -1316,7 +1316,7 @@ exports[`test PushRuleConfiguration/ce should match snapshot 1`] = `
                                   style="margin-bottom: 8px;"
                                 >
                                   <div
-                                    class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-start full-width-element version-desc-wrap"
+                                    class="ant-space ant-space-horizontal ant-space-align-start full-width-element version-desc-wrap"
                                   >
                                     <div
                                       class="ant-space-item"
@@ -1338,7 +1338,7 @@ exports[`test PushRuleConfiguration/ce should match snapshot 1`] = `
                                       class="ant-space-item"
                                     >
                                       <span
-                                        class="ant-typography css-dev-only-do-not-override-txh9fw"
+                                        class="ant-typography"
                                       >
                                         支持版本控制
                                       </span>
@@ -1350,7 +1350,7 @@ exports[`test PushRuleConfiguration/ce should match snapshot 1`] = `
                                   style="margin-bottom: 8px;"
                                 >
                                   <div
-                                    class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-start full-width-element version-desc-wrap"
+                                    class="ant-space ant-space-horizontal ant-space-align-start full-width-element version-desc-wrap"
                                   >
                                     <div
                                       class="ant-space-item"
@@ -1372,7 +1372,7 @@ exports[`test PushRuleConfiguration/ce should match snapshot 1`] = `
                                       class="ant-space-item"
                                     >
                                       <span
-                                        class="ant-typography css-dev-only-do-not-override-txh9fw"
+                                        class="ant-typography"
                                       >
                                         多维度智能统计
                                       </span>
@@ -1383,7 +1383,7 @@ exports[`test PushRuleConfiguration/ce should match snapshot 1`] = `
                                   class="ant-space-item"
                                 >
                                   <div
-                                    class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-start full-width-element version-desc-wrap"
+                                    class="ant-space ant-space-horizontal ant-space-align-start full-width-element version-desc-wrap"
                                   >
                                     <div
                                       class="ant-space-item"
@@ -1405,7 +1405,7 @@ exports[`test PushRuleConfiguration/ce should match snapshot 1`] = `
                                       class="ant-space-item"
                                     >
                                       <span
-                                        class="ant-typography css-dev-only-do-not-override-txh9fw"
+                                        class="ant-typography"
                                       >
                                         个性化定制
                                       </span>
@@ -1424,12 +1424,12 @@ exports[`test PushRuleConfiguration/ce should match snapshot 1`] = `
                   >
                     <div>
                       <span
-                        class="ant-typography css-dev-only-do-not-override-txh9fw"
+                        class="ant-typography"
                       >
                         各版本完整功能对比请参考：
                       </span>
                       <a
-                        class="ant-typography css-dev-only-do-not-override-txh9fw"
+                        class="ant-typography"
                         href="https://actiontech.github.io/sqle-docs/docs/support/compare"
                         rel="noopener noreferrer"
                         target="_blank"
@@ -1444,7 +1444,7 @@ exports[`test PushRuleConfiguration/ce should match snapshot 1`] = `
                 class="right"
               >
                 <div
-                  class="ant-card ant-card-bordered ant-card-hoverable ce-card-info css-dev-only-do-not-override-txh9fw"
+                  class="ant-card ant-card-bordered ant-card-hoverable ce-card-info"
                 >
                   <div
                     class="ant-card-body"
@@ -1499,7 +1499,7 @@ exports[`test PushRuleConfiguration/ce should match snapshot 1`] = `
                         SQL管控问题推送为企业版功能。如您想使用该功能，可以通过以下链接联系我们。
                       </p>
                       <div
-                        class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center button-group-wrapper"
+                        class="ant-space ant-space-horizontal ant-space-align-center button-group-wrapper"
                       >
                         <div
                           class="ant-space-item"
@@ -1511,7 +1511,7 @@ exports[`test PushRuleConfiguration/ce should match snapshot 1`] = `
                             target="_blank"
                           >
                             <button
-                              class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary basic-button-wrapper css-geipcv"
+                              class="ant-btn ant-btn-primary basic-button-wrapper css-geipcv"
                               type="button"
                             >
                               <span>
@@ -1529,7 +1529,7 @@ exports[`test PushRuleConfiguration/ce should match snapshot 1`] = `
                             target="_blank"
                           >
                             <button
-                              class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary basic-button-wrapper css-geipcv"
+                              class="ant-btn ant-btn-primary basic-button-wrapper css-geipcv"
                               type="button"
                             >
                               <span>
@@ -1543,7 +1543,7 @@ exports[`test PushRuleConfiguration/ce should match snapshot 1`] = `
                   </div>
                 </div>
                 <div
-                  class="ant-card ant-card-bordered ant-card-hoverable ce-card-info css-dev-only-do-not-override-txh9fw"
+                  class="ant-card ant-card-bordered ant-card-hoverable ce-card-info"
                 >
                   <div
                     class="ant-card-body"
@@ -1606,7 +1606,7 @@ exports[`test PushRuleConfiguration/ce should match snapshot 1`] = `
                           target="_blank"
                         >
                           <button
-                            class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary basic-button-wrapper css-geipcv"
+                            class="ant-btn ant-btn-primary basic-button-wrapper css-geipcv"
                             type="button"
                           >
                             <span>

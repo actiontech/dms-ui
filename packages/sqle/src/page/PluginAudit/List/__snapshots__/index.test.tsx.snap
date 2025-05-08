@@ -4,192 +4,201 @@ exports[`sqle/PluginAudit/List click sql fingerprint and open ide audit result 1
 <body>
   <div>
     <div
-      class="ant-spin-nested-loading css-dev-only-do-not-override-txh9fw"
+      class="ant-spin-nested-loading"
     >
       <div
         class="ant-spin-container"
       >
         <div
-          class="ant-spin-nested-loading css-dev-only-do-not-override-1kh50jg"
+          class="ant-space ant-space-horizontal ant-space-align-center full-width-element flex-space-between actiontech-table-toolbar-namespace css-a7k93w"
+          style="flex-wrap: wrap; margin-bottom: -8px;"
         >
           <div
-            class="ant-spin-container"
+            class="ant-space-item"
+            style="margin-right: 8px; padding-bottom: 8px;"
           >
             <div
-              class="ant-space css-dev-only-do-not-override-1kh50jg ant-space-horizontal ant-space-align-center full-width-element flex-space-between actiontech-table-toolbar-namespace css-c38ntt"
-              style="flex-wrap: wrap; margin-bottom: -8px;"
+              class="ant-space ant-space-horizontal ant-space-align-center"
             >
               <div
                 class="ant-space-item"
-                style="margin-right: 8px; padding-bottom: 8px;"
+                style="margin-right: 12px;"
               >
-                <div
-                  class="ant-space css-dev-only-do-not-override-1kh50jg ant-space-horizontal ant-space-align-center"
+                <span
+                  class="ant-input-affix-wrapper basic-input-wrapper actiontech-table-search-input-namespace css-1f6svkh ant-input-affix-wrapper-sm"
                 >
-                  <div
-                    class="ant-space-item"
-                    style="margin-right: 12px;"
+                  <input
+                    class="ant-input ant-input-sm"
+                    id="actiontech-table-search-input"
+                    placeholder="输入关键字搜索"
+                    type="text"
+                    value=""
+                  />
+                  <span
+                    class="ant-input-suffix"
                   >
                     <span
-                      class="ant-input-affix-wrapper basic-input-wrapper actiontech-table-search-input-namespace css-1f6svkh ant-input-affix-wrapper-sm css-dev-only-do-not-override-mlhibv"
+                      class="ant-input-clear-icon ant-input-clear-icon-hidden ant-input-clear-icon-has-suffix"
+                      role="button"
+                      tabindex="-1"
                     >
-                      <input
-                        class="ant-input ant-input-sm css-dev-only-do-not-override-mlhibv"
-                        id="actiontech-table-search-input"
-                        placeholder="输入关键字搜索"
-                        type="text"
-                        value=""
-                      />
-                      <span
-                        class="ant-input-suffix"
+                      <svg
+                        fill="currentColor"
+                        height="14"
+                        viewBox="0 0 14 14"
+                        width="14"
+                        xmlns="http://www.w3.org/2000/svg"
                       >
-                        <svg
-                          class="custom-icon custom-icon-search"
-                          height="14"
-                          viewBox="0 0 14 14"
-                          width="14"
-                          xmlns="http://www.w3.org/2000/svg"
-                        >
-                          <path
-                            d="m10.518 9.693 2.499 2.498-.826.825-2.498-2.498a5.252 5.252 0 0 1-8.527-4.101 5.25 5.25 0 0 1 5.25-5.25 5.252 5.252 0 0 1 4.102 8.526m-1.17-.433a4.082 4.082 0 0 0-2.931-6.927 4.08 4.08 0 0 0-4.084 4.084 4.082 4.082 0 0 0 6.927 2.93z"
-                          />
-                        </svg>
-                      </span>
+                        <path
+                          d="m7 6.175 2.887-2.887.825.825L7.825 7l2.887 2.888-.825.824L7 7.825l-2.888 2.887-.824-.824L6.175 7 3.288 4.113l.824-.825z"
+                        />
+                      </svg>
                     </span>
-                  </div>
-                  <div
-                    class="ant-space-item"
-                  >
-                    <button
-                      class="ant-btn css-dev-only-do-not-override-czn7jp ant-btn-default ant-btn-sm ant-btn-two-chinese-chars actiontech-filter-button-namespace basic-button-wrapper css-geipcv"
-                      style="padding: 0px 6px 0px 10px;"
-                      type="button"
+                    <svg
+                      class="custom-icon custom-icon-search"
+                      height="14"
+                      viewBox="0 0 14 14"
+                      width="14"
+                      xmlns="http://www.w3.org/2000/svg"
                     >
-                      <div
-                        class="ant-space css-dev-only-do-not-override-czn7jp ant-space-horizontal ant-space-align-center css-1nt49ug"
-                      >
-                        <div
-                          class="ant-space-item"
-                          style="margin-right: 2px;"
-                        >
-                          筛选
-                        </div>
-                        <div
-                          class="ant-space-item"
-                        >
-                          <svg
-                            color="currrentColor"
-                            height="14"
-                            viewBox="0 0 16 16"
-                            width="14"
-                            xmlns="http://www.w3.org/2000/svg"
-                          >
-                            <path
-                              d="m8 8.781 3.3-3.3.943.943L8 10.667 3.757 6.424l.943-.943z"
-                              fill="currentColor"
-                            />
-                          </svg>
-                        </div>
-                      </div>
-                    </button>
-                  </div>
-                </div>
+                      <path
+                        d="m10.518 9.693 2.499 2.498-.826.825-2.498-2.498a5.252 5.252 0 0 1-8.527-4.101 5.25 5.25 0 0 1 5.25-5.25 5.252 5.252 0 0 1 4.102 8.526m-1.17-.433a4.082 4.082 0 0 0-2.931-6.927 4.08 4.08 0 0 0-4.084 4.084 4.082 4.082 0 0 0 6.927 2.93z"
+                      />
+                    </svg>
+                  </span>
+                </span>
               </div>
               <div
                 class="ant-space-item"
-                style="padding-bottom: 8px;"
               >
-                <div
-                  class="ant-space css-dev-only-do-not-override-1kh50jg ant-space-horizontal ant-space-align-center"
+                <button
+                  class="ant-btn ant-btn-default ant-btn-sm ant-btn-two-chinese-chars actiontech-filter-button-namespace basic-button-wrapper css-geipcv"
+                  style="padding: 0px 6px 0px 10px;"
+                  type="button"
                 >
                   <div
-                    class="ant-space-item"
-                    style="margin-right: 12px;"
+                    class="ant-space ant-space-horizontal ant-space-align-center css-1nt49ug"
                   >
-                    <button
-                      class="ant-btn css-dev-only-do-not-override-czn7jp ant-btn-default ant-btn-sm actiontech-table-setting-namespace basic-button-wrapper css-geipcv"
-                      style="padding: 0px 6px 0px 8px;"
-                      type="button"
+                    <div
+                      class="ant-space-item"
+                      style="margin-right: 2px;"
                     >
-                      <div
-                        class="ant-space css-dev-only-do-not-override-czn7jp ant-space-horizontal ant-space-align-center css-1nt49ug"
+                      筛选
+                    </div>
+                    <div
+                      class="ant-space-item"
+                    >
+                      <svg
+                        color="currentColor"
+                        height="14"
+                        viewBox="0 0 16 16"
+                        width="14"
+                        xmlns="http://www.w3.org/2000/svg"
                       >
-                        <div
-                          class="ant-space-item"
-                          style="margin-right: 5px;"
-                        >
-                          <svg
-                            class="custom-icon custom-icon-setting"
-                            height="11"
-                            viewBox="0 0 13 11"
-                            width="13"
-                            xmlns="http://www.w3.org/2000/svg"
-                          >
-                            <path
-                              d="M.167 8.5H4.25v1.167H.167zm0-4.083h5.25v1.166H.167zm0-4.084h11.666V1.5H.167zM11.06 5.598l.674-.228.584 1.01-.535.47c.067.319.067.648 0 .967l.535.47-.584 1.01-.674-.228c-.24.216-.524.382-.837.484l-.14.697H8.917l-.14-.698a2.3 2.3 0 0 1-.837-.484l-.674.229-.583-1.01.534-.47a2.3 2.3 0 0 1 0-.967l-.534-.47.583-1.01.674.228c.24-.216.524-.382.837-.484l.14-.697h1.166l.14.697c.313.102.598.269.837.485zM9.5 8.5a1.167 1.167 0 1 0 0-2.333 1.167 1.167 0 0 0 0 2.333"
-                            />
-                          </svg>
-                        </div>
-                        <div
-                          class="ant-space-item"
-                          style="margin-right: 5px;"
-                        >
-                          表格设置
-                        </div>
-                        <div
-                          class="ant-space-item"
-                        >
-                          <svg
-                            class="custom-icon custom-icon-arrow-down"
-                            color="currentColor"
-                            height="14"
-                            viewBox="0 0 16 16"
-                            width="14"
-                            xmlns="http://www.w3.org/2000/svg"
-                          >
-                            <path
-                              d="m8 8.781 3.3-3.3.943.943L8 10.667 3.757 6.424l.943-.943z"
-                              fill="currentColor"
-                            />
-                          </svg>
-                        </div>
-                      </div>
-                    </button>
+                        <path
+                          d="m8 8.781 3.3-3.3.943.943L8 10.667 3.757 6.424l.943-.943z"
+                          fill="currentColor"
+                        />
+                      </svg>
+                    </div>
                   </div>
+                </button>
+              </div>
+            </div>
+          </div>
+          <div
+            class="ant-space-item"
+            style="padding-bottom: 8px;"
+          >
+            <div
+              class="ant-space ant-space-horizontal ant-space-align-center"
+            >
+              <div
+                class="ant-space-item"
+                style="margin-right: 12px;"
+              >
+                <button
+                  class="ant-btn ant-btn-default ant-btn-sm actiontech-table-setting-namespace basic-button-wrapper css-geipcv"
+                  style="padding: 0px 6px 0px 8px;"
+                  type="button"
+                >
                   <div
-                    class="ant-space-item"
+                    class="ant-space ant-space-horizontal ant-space-align-center css-1nt49ug"
                   >
-                    <button
-                      class="ant-btn css-dev-only-do-not-override-czn7jp ant-btn-default ant-btn-sm ant-btn-icon-only basic-button-wrapper css-geipcv"
-                      type="button"
+                    <div
+                      class="ant-space-item"
+                      style="margin-right: 5px;"
                     >
-                      <span
-                        class="ant-btn-icon"
+                      <svg
+                        class="custom-icon custom-icon-setting"
+                        height="11"
+                        viewBox="0 0 13 11"
+                        width="13"
+                        xmlns="http://www.w3.org/2000/svg"
                       >
-                        <svg
-                          class="custom-icon custom-icon-refresh"
-                          height="14"
-                          viewBox="0 0 14 14"
-                          width="14"
-                          xmlns="http://www.w3.org/2000/svg"
-                        >
-                          <path
-                            d="M3.187 2.586a5.833 5.833 0 0 1 8.59 7.762L9.918 7h1.75a4.667 4.667 0 0 0-7.899-3.367zm7.626 8.828a5.833 5.833 0 0 1-8.59-7.762L4.083 7h-1.75a4.667 4.667 0 0 0 7.899 3.367z"
-                          />
-                        </svg>
-                      </span>
-                    </button>
+                        <path
+                          d="M.167 8.5H4.25v1.167H.167zm0-4.083h5.25v1.166H.167zm0-4.084h11.666V1.5H.167zM11.06 5.598l.674-.228.584 1.01-.535.47c.067.319.067.648 0 .967l.535.47-.584 1.01-.674-.228c-.24.216-.524.382-.837.484l-.14.697H8.917l-.14-.698a2.3 2.3 0 0 1-.837-.484l-.674.229-.583-1.01.534-.47a2.3 2.3 0 0 1 0-.967l-.534-.47.583-1.01.674.228c.24-.216.524-.382.837-.484l.14-.697h1.166l.14.697c.313.102.598.269.837.485zM9.5 8.5a1.167 1.167 0 1 0 0-2.333 1.167 1.167 0 0 0 0 2.333"
+                        />
+                      </svg>
+                    </div>
+                    <div
+                      class="ant-space-item"
+                      style="margin-right: 5px;"
+                    >
+                      表格设置
+                    </div>
+                    <div
+                      class="ant-space-item"
+                    >
+                      <svg
+                        class="custom-icon custom-icon-arrow-down"
+                        color="currentColor"
+                        height="14"
+                        viewBox="0 0 16 16"
+                        width="14"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="m8 8.781 3.3-3.3.943.943L8 10.667 3.757 6.424l.943-.943z"
+                          fill="currentColor"
+                        />
+                      </svg>
+                    </div>
                   </div>
-                </div>
+                </button>
+              </div>
+              <div
+                class="ant-space-item"
+              >
+                <button
+                  class="ant-btn ant-btn-default ant-btn-sm ant-btn-icon-only basic-button-wrapper css-geipcv"
+                  type="button"
+                >
+                  <span
+                    class="ant-btn-icon"
+                  >
+                    <svg
+                      class="custom-icon custom-icon-refresh"
+                      height="14"
+                      viewBox="0 0 14 14"
+                      width="14"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M3.187 2.586a5.833 5.833 0 0 1 8.59 7.762L9.918 7h1.75a4.667 4.667 0 0 0-7.899-3.367zm7.626 8.828a5.833 5.833 0 0 1-8.59-7.762L4.083 7h-1.75a4.667 4.667 0 0 0 7.899 3.367z"
+                      />
+                    </svg>
+                  </span>
+                </button>
               </div>
             </div>
           </div>
         </div>
         <div
-          class="ant-table-wrapper actiontech-table-namespace table-row-cursor css-fxd6ka css-dev-only-do-not-override-bj9uhl"
+          class="ant-table-wrapper actiontech-table-namespace table-row-cursor css-fxd6ka"
         >
           <div
-            class="ant-spin-nested-loading css-dev-only-do-not-override-bj9uhl"
+            class="ant-spin-nested-loading"
           >
             <div
               class="ant-spin-container"
@@ -303,7 +312,7 @@ exports[`sqle/PluginAudit/List click sql fingerprint and open ide audit result 1
                               class="actiontech-sql-snippet-renderer-wrapper css-dz7fl9"
                             >
                               <div
-                                class="ant-typography ant-typography-ellipsis ant-typography-ellipsis-multiple-line margin-bottom-0 css-dev-only-do-not-override-bj9uhl"
+                                class="ant-typography ant-typography-ellipsis ant-typography-ellipsis-multiple-line margin-bottom-0"
                               >
                                 <span>
                                   <span
@@ -352,7 +361,7 @@ exports[`sqle/PluginAudit/List click sql fingerprint and open ide audit result 1
                               class="actiontech-sql-snippet-renderer-wrapper css-dz7fl9"
                             >
                               <div
-                                class="ant-typography ant-typography-ellipsis ant-typography-ellipsis-multiple-line margin-bottom-0 css-dev-only-do-not-override-bj9uhl"
+                                class="ant-typography ant-typography-ellipsis ant-typography-ellipsis-multiple-line margin-bottom-0"
                               >
                                 <span>
                                   <span
@@ -411,7 +420,7 @@ exports[`sqle/PluginAudit/List click sql fingerprint and open ide audit result 1
                               class="audit-result-wrapper"
                             >
                               <div
-                                class="ant-space css-dev-only-do-not-override-bj9uhl ant-space-horizontal ant-space-align-center"
+                                class="ant-space ant-space-horizontal ant-space-align-center"
                               >
                                 <div
                                   class="ant-space-item"
@@ -451,13 +460,13 @@ exports[`sqle/PluginAudit/List click sql fingerprint and open ide audit result 1
                             class="ant-table-cell"
                           >
                             <div
-                              class="ant-space css-dev-only-do-not-override-bj9uhl ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
+                              class="ant-space ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
                             >
                               <div
                                 class="ant-space-item"
                               >
                                 <span
-                                  class="ant-avatar ant-avatar-circle action-avatar css-1wq79dc css-dev-only-do-not-override-bj9uhl"
+                                  class="ant-avatar ant-avatar-circle action-avatar css-1wq79dc"
                                 >
                                   <span
                                     class="ant-avatar-string"
@@ -477,7 +486,7 @@ exports[`sqle/PluginAudit/List click sql fingerprint and open ide audit result 1
                               class="css-new95e"
                             >
                               <button
-                                class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
                                 type="button"
                               >
                                 <span>
@@ -493,7 +502,7 @@ exports[`sqle/PluginAudit/List click sql fingerprint and open ide audit result 1
                 </div>
               </div>
               <ul
-                class="ant-pagination ant-table-pagination ant-table-pagination-right actiontech-table-pagination actiontech-table-pagination-fixed css-dev-only-do-not-override-bj9uhl"
+                class="ant-pagination ant-table-pagination ant-table-pagination-right actiontech-table-pagination actiontech-table-pagination-fixed"
               >
                 <li
                   class="ant-pagination-total-text"
@@ -505,7 +514,7 @@ exports[`sqle/PluginAudit/List click sql fingerprint and open ide audit result 1
                 <li
                   aria-disabled="true"
                   class="ant-pagination-prev ant-pagination-disabled"
-                  title="Previous Page"
+                  title="上一页"
                 >
                   <button
                     class="ant-pagination-item-link"
@@ -548,7 +557,7 @@ exports[`sqle/PluginAudit/List click sql fingerprint and open ide audit result 1
                 <li
                   aria-disabled="true"
                   class="ant-pagination-next ant-pagination-disabled"
-                  title="Next Page"
+                  title="下一页"
                 >
                   <button
                     class="ant-pagination-item-link"
@@ -581,8 +590,8 @@ exports[`sqle/PluginAudit/List click sql fingerprint and open ide audit result 1
                   class="ant-pagination-options"
                 >
                   <div
-                    aria-label="Page Size"
-                    class="ant-select ant-pagination-options-size-changer css-dev-only-do-not-override-bj9uhl ant-select-single ant-select-show-arrow ant-select-show-search"
+                    aria-label="页码"
+                    class="ant-select ant-pagination-options-size-changer ant-select-single ant-select-show-arrow ant-select-show-search"
                   >
                     <div
                       class="ant-select-selector"
@@ -596,7 +605,7 @@ exports[`sqle/PluginAudit/List click sql fingerprint and open ide audit result 1
                           aria-controls="rc_select_TEST_OR_SSR_list"
                           aria-expanded="false"
                           aria-haspopup="listbox"
-                          aria-label="Page Size"
+                          aria-label="页码"
                           aria-owns="rc_select_TEST_OR_SSR_list"
                           autocomplete="off"
                           class="ant-select-selection-search-input"
@@ -608,9 +617,9 @@ exports[`sqle/PluginAudit/List click sql fingerprint and open ide audit result 1
                       </span>
                       <span
                         class="ant-select-selection-item"
-                        title="20 / page"
+                        title="20 条/页"
                       >
-                        20 / page
+                        20 条/页
                       </span>
                     </div>
                     <span
@@ -655,192 +664,201 @@ exports[`sqle/PluginAudit/List render empty prompt when request failed 1`] = `
 <body>
   <div>
     <div
-      class="ant-spin-nested-loading css-dev-only-do-not-override-txh9fw"
+      class="ant-spin-nested-loading"
     >
       <div
         class="ant-spin-container"
       >
         <div
-          class="ant-spin-nested-loading css-dev-only-do-not-override-1kh50jg"
+          class="ant-space ant-space-horizontal ant-space-align-center full-width-element flex-space-between actiontech-table-toolbar-namespace css-a7k93w"
+          style="flex-wrap: wrap; margin-bottom: -8px;"
         >
           <div
-            class="ant-spin-container"
+            class="ant-space-item"
+            style="margin-right: 8px; padding-bottom: 8px;"
           >
             <div
-              class="ant-space css-dev-only-do-not-override-1kh50jg ant-space-horizontal ant-space-align-center full-width-element flex-space-between actiontech-table-toolbar-namespace css-c38ntt"
-              style="flex-wrap: wrap; margin-bottom: -8px;"
+              class="ant-space ant-space-horizontal ant-space-align-center"
             >
               <div
                 class="ant-space-item"
-                style="margin-right: 8px; padding-bottom: 8px;"
+                style="margin-right: 12px;"
               >
-                <div
-                  class="ant-space css-dev-only-do-not-override-1kh50jg ant-space-horizontal ant-space-align-center"
+                <span
+                  class="ant-input-affix-wrapper basic-input-wrapper actiontech-table-search-input-namespace css-1f6svkh ant-input-affix-wrapper-sm"
                 >
-                  <div
-                    class="ant-space-item"
-                    style="margin-right: 12px;"
+                  <input
+                    class="ant-input ant-input-sm"
+                    id="actiontech-table-search-input"
+                    placeholder="输入关键字搜索"
+                    type="text"
+                    value=""
+                  />
+                  <span
+                    class="ant-input-suffix"
                   >
                     <span
-                      class="ant-input-affix-wrapper basic-input-wrapper actiontech-table-search-input-namespace css-1f6svkh ant-input-affix-wrapper-sm css-dev-only-do-not-override-mlhibv"
+                      class="ant-input-clear-icon ant-input-clear-icon-hidden ant-input-clear-icon-has-suffix"
+                      role="button"
+                      tabindex="-1"
                     >
-                      <input
-                        class="ant-input ant-input-sm css-dev-only-do-not-override-mlhibv"
-                        id="actiontech-table-search-input"
-                        placeholder="输入关键字搜索"
-                        type="text"
-                        value=""
-                      />
-                      <span
-                        class="ant-input-suffix"
+                      <svg
+                        fill="currentColor"
+                        height="14"
+                        viewBox="0 0 14 14"
+                        width="14"
+                        xmlns="http://www.w3.org/2000/svg"
                       >
-                        <svg
-                          class="custom-icon custom-icon-search"
-                          height="14"
-                          viewBox="0 0 14 14"
-                          width="14"
-                          xmlns="http://www.w3.org/2000/svg"
-                        >
-                          <path
-                            d="m10.518 9.693 2.499 2.498-.826.825-2.498-2.498a5.252 5.252 0 0 1-8.527-4.101 5.25 5.25 0 0 1 5.25-5.25 5.252 5.252 0 0 1 4.102 8.526m-1.17-.433a4.082 4.082 0 0 0-2.931-6.927 4.08 4.08 0 0 0-4.084 4.084 4.082 4.082 0 0 0 6.927 2.93z"
-                          />
-                        </svg>
-                      </span>
+                        <path
+                          d="m7 6.175 2.887-2.887.825.825L7.825 7l2.887 2.888-.825.824L7 7.825l-2.888 2.887-.824-.824L6.175 7 3.288 4.113l.824-.825z"
+                        />
+                      </svg>
                     </span>
-                  </div>
-                  <div
-                    class="ant-space-item"
-                  >
-                    <button
-                      class="ant-btn css-dev-only-do-not-override-czn7jp ant-btn-default ant-btn-sm ant-btn-two-chinese-chars actiontech-filter-button-namespace basic-button-wrapper css-geipcv"
-                      style="padding: 0px 6px 0px 10px;"
-                      type="button"
+                    <svg
+                      class="custom-icon custom-icon-search"
+                      height="14"
+                      viewBox="0 0 14 14"
+                      width="14"
+                      xmlns="http://www.w3.org/2000/svg"
                     >
-                      <div
-                        class="ant-space css-dev-only-do-not-override-czn7jp ant-space-horizontal ant-space-align-center css-1nt49ug"
-                      >
-                        <div
-                          class="ant-space-item"
-                          style="margin-right: 2px;"
-                        >
-                          筛选
-                        </div>
-                        <div
-                          class="ant-space-item"
-                        >
-                          <svg
-                            color="currrentColor"
-                            height="14"
-                            viewBox="0 0 16 16"
-                            width="14"
-                            xmlns="http://www.w3.org/2000/svg"
-                          >
-                            <path
-                              d="m8 8.781 3.3-3.3.943.943L8 10.667 3.757 6.424l.943-.943z"
-                              fill="currentColor"
-                            />
-                          </svg>
-                        </div>
-                      </div>
-                    </button>
-                  </div>
-                </div>
+                      <path
+                        d="m10.518 9.693 2.499 2.498-.826.825-2.498-2.498a5.252 5.252 0 0 1-8.527-4.101 5.25 5.25 0 0 1 5.25-5.25 5.252 5.252 0 0 1 4.102 8.526m-1.17-.433a4.082 4.082 0 0 0-2.931-6.927 4.08 4.08 0 0 0-4.084 4.084 4.082 4.082 0 0 0 6.927 2.93z"
+                      />
+                    </svg>
+                  </span>
+                </span>
               </div>
               <div
                 class="ant-space-item"
-                style="padding-bottom: 8px;"
               >
-                <div
-                  class="ant-space css-dev-only-do-not-override-1kh50jg ant-space-horizontal ant-space-align-center"
+                <button
+                  class="ant-btn ant-btn-default ant-btn-sm ant-btn-two-chinese-chars actiontech-filter-button-namespace basic-button-wrapper css-geipcv"
+                  style="padding: 0px 6px 0px 10px;"
+                  type="button"
                 >
                   <div
-                    class="ant-space-item"
-                    style="margin-right: 12px;"
+                    class="ant-space ant-space-horizontal ant-space-align-center css-1nt49ug"
                   >
-                    <button
-                      class="ant-btn css-dev-only-do-not-override-czn7jp ant-btn-default ant-btn-sm actiontech-table-setting-namespace basic-button-wrapper css-geipcv"
-                      style="padding: 0px 6px 0px 8px;"
-                      type="button"
+                    <div
+                      class="ant-space-item"
+                      style="margin-right: 2px;"
                     >
-                      <div
-                        class="ant-space css-dev-only-do-not-override-czn7jp ant-space-horizontal ant-space-align-center css-1nt49ug"
+                      筛选
+                    </div>
+                    <div
+                      class="ant-space-item"
+                    >
+                      <svg
+                        color="currentColor"
+                        height="14"
+                        viewBox="0 0 16 16"
+                        width="14"
+                        xmlns="http://www.w3.org/2000/svg"
                       >
-                        <div
-                          class="ant-space-item"
-                          style="margin-right: 5px;"
-                        >
-                          <svg
-                            class="custom-icon custom-icon-setting"
-                            height="11"
-                            viewBox="0 0 13 11"
-                            width="13"
-                            xmlns="http://www.w3.org/2000/svg"
-                          >
-                            <path
-                              d="M.167 8.5H4.25v1.167H.167zm0-4.083h5.25v1.166H.167zm0-4.084h11.666V1.5H.167zM11.06 5.598l.674-.228.584 1.01-.535.47c.067.319.067.648 0 .967l.535.47-.584 1.01-.674-.228c-.24.216-.524.382-.837.484l-.14.697H8.917l-.14-.698a2.3 2.3 0 0 1-.837-.484l-.674.229-.583-1.01.534-.47a2.3 2.3 0 0 1 0-.967l-.534-.47.583-1.01.674.228c.24-.216.524-.382.837-.484l.14-.697h1.166l.14.697c.313.102.598.269.837.485zM9.5 8.5a1.167 1.167 0 1 0 0-2.333 1.167 1.167 0 0 0 0 2.333"
-                            />
-                          </svg>
-                        </div>
-                        <div
-                          class="ant-space-item"
-                          style="margin-right: 5px;"
-                        >
-                          表格设置
-                        </div>
-                        <div
-                          class="ant-space-item"
-                        >
-                          <svg
-                            class="custom-icon custom-icon-arrow-down"
-                            color="currentColor"
-                            height="14"
-                            viewBox="0 0 16 16"
-                            width="14"
-                            xmlns="http://www.w3.org/2000/svg"
-                          >
-                            <path
-                              d="m8 8.781 3.3-3.3.943.943L8 10.667 3.757 6.424l.943-.943z"
-                              fill="currentColor"
-                            />
-                          </svg>
-                        </div>
-                      </div>
-                    </button>
+                        <path
+                          d="m8 8.781 3.3-3.3.943.943L8 10.667 3.757 6.424l.943-.943z"
+                          fill="currentColor"
+                        />
+                      </svg>
+                    </div>
                   </div>
+                </button>
+              </div>
+            </div>
+          </div>
+          <div
+            class="ant-space-item"
+            style="padding-bottom: 8px;"
+          >
+            <div
+              class="ant-space ant-space-horizontal ant-space-align-center"
+            >
+              <div
+                class="ant-space-item"
+                style="margin-right: 12px;"
+              >
+                <button
+                  class="ant-btn ant-btn-default ant-btn-sm actiontech-table-setting-namespace basic-button-wrapper css-geipcv"
+                  style="padding: 0px 6px 0px 8px;"
+                  type="button"
+                >
                   <div
-                    class="ant-space-item"
+                    class="ant-space ant-space-horizontal ant-space-align-center css-1nt49ug"
                   >
-                    <button
-                      class="ant-btn css-dev-only-do-not-override-czn7jp ant-btn-default ant-btn-sm ant-btn-icon-only basic-button-wrapper css-geipcv"
-                      type="button"
+                    <div
+                      class="ant-space-item"
+                      style="margin-right: 5px;"
                     >
-                      <span
-                        class="ant-btn-icon"
+                      <svg
+                        class="custom-icon custom-icon-setting"
+                        height="11"
+                        viewBox="0 0 13 11"
+                        width="13"
+                        xmlns="http://www.w3.org/2000/svg"
                       >
-                        <svg
-                          class="custom-icon custom-icon-refresh"
-                          height="14"
-                          viewBox="0 0 14 14"
-                          width="14"
-                          xmlns="http://www.w3.org/2000/svg"
-                        >
-                          <path
-                            d="M3.187 2.586a5.833 5.833 0 0 1 8.59 7.762L9.918 7h1.75a4.667 4.667 0 0 0-7.899-3.367zm7.626 8.828a5.833 5.833 0 0 1-8.59-7.762L4.083 7h-1.75a4.667 4.667 0 0 0 7.899 3.367z"
-                          />
-                        </svg>
-                      </span>
-                    </button>
+                        <path
+                          d="M.167 8.5H4.25v1.167H.167zm0-4.083h5.25v1.166H.167zm0-4.084h11.666V1.5H.167zM11.06 5.598l.674-.228.584 1.01-.535.47c.067.319.067.648 0 .967l.535.47-.584 1.01-.674-.228c-.24.216-.524.382-.837.484l-.14.697H8.917l-.14-.698a2.3 2.3 0 0 1-.837-.484l-.674.229-.583-1.01.534-.47a2.3 2.3 0 0 1 0-.967l-.534-.47.583-1.01.674.228c.24-.216.524-.382.837-.484l.14-.697h1.166l.14.697c.313.102.598.269.837.485zM9.5 8.5a1.167 1.167 0 1 0 0-2.333 1.167 1.167 0 0 0 0 2.333"
+                        />
+                      </svg>
+                    </div>
+                    <div
+                      class="ant-space-item"
+                      style="margin-right: 5px;"
+                    >
+                      表格设置
+                    </div>
+                    <div
+                      class="ant-space-item"
+                    >
+                      <svg
+                        class="custom-icon custom-icon-arrow-down"
+                        color="currentColor"
+                        height="14"
+                        viewBox="0 0 16 16"
+                        width="14"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="m8 8.781 3.3-3.3.943.943L8 10.667 3.757 6.424l.943-.943z"
+                          fill="currentColor"
+                        />
+                      </svg>
+                    </div>
                   </div>
-                </div>
+                </button>
+              </div>
+              <div
+                class="ant-space-item"
+              >
+                <button
+                  class="ant-btn ant-btn-default ant-btn-sm ant-btn-icon-only basic-button-wrapper css-geipcv"
+                  type="button"
+                >
+                  <span
+                    class="ant-btn-icon"
+                  >
+                    <svg
+                      class="custom-icon custom-icon-refresh"
+                      height="14"
+                      viewBox="0 0 14 14"
+                      width="14"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M3.187 2.586a5.833 5.833 0 0 1 8.59 7.762L9.918 7h1.75a4.667 4.667 0 0 0-7.899-3.367zm7.626 8.828a5.833 5.833 0 0 1-8.59-7.762L4.083 7h-1.75a4.667 4.667 0 0 0 7.899 3.367z"
+                      />
+                    </svg>
+                  </span>
+                </button>
               </div>
             </div>
           </div>
         </div>
         <div
-          class="ant-table-wrapper actiontech-table-namespace table-row-cursor css-fxd6ka css-dev-only-do-not-override-bj9uhl"
+          class="ant-table-wrapper actiontech-table-namespace table-row-cursor css-fxd6ka"
         >
           <div
-            class="ant-spin-nested-loading css-dev-only-do-not-override-bj9uhl"
+            class="ant-spin-nested-loading"
           >
             <div
               class="ant-spin-container"
@@ -951,7 +969,7 @@ exports[`sqle/PluginAudit/List render empty prompt when request failed 1`] = `
                             colspan="10"
                           >
                             <div
-                              class="css-dev-only-do-not-override-bj9uhl ant-empty ant-empty-normal"
+                              class="ant-empty ant-empty-normal"
                             >
                               <div
                                 class="ant-empty-image"
@@ -992,7 +1010,7 @@ exports[`sqle/PluginAudit/List render empty prompt when request failed 1`] = `
                               <div
                                 class="ant-empty-description"
                               >
-                                No data
+                                暂无数据
                               </div>
                             </div>
                           </td>
@@ -1015,14 +1033,14 @@ exports[`sqle/PluginAudit/List render empty prompt when request return empty 1`]
 <body>
   <div>
     <div
-      class="ant-space css-dev-only-do-not-override-txh9fw ant-space-vertical ant-space-align-center css-mv7mes"
+      class="ant-space ant-space-vertical ant-space-align-center css-mv7mes"
     >
       <div
         class="ant-space-item"
         style="margin-bottom: 8px;"
       >
         <h3
-          class="ant-typography css-dev-only-do-not-override-txh9fw"
+          class="ant-typography"
         >
           暂未生成审核记录
         </h3>
@@ -1032,7 +1050,7 @@ exports[`sqle/PluginAudit/List render empty prompt when request return empty 1`]
         style="margin-bottom: 8px;"
       >
         <span
-          class="ant-typography ant-typography-secondary css-dev-only-do-not-override-txh9fw"
+          class="ant-typography ant-typography-secondary"
         >
           通过查看IDE审核记录，支持复盘在IDE中审核的SQL，并获取相关统计信息
         </span>
@@ -1044,7 +1062,7 @@ exports[`sqle/PluginAudit/List render empty prompt when request return empty 1`]
           class="step-wrap"
         >
           <div
-            class="ant-steps ant-steps-horizontal css-dev-only-do-not-override-txh9fw ant-steps-label-horizontal"
+            class="ant-steps ant-steps-horizontal ant-steps-label-horizontal"
           >
             <div
               class="ant-steps-item ant-steps-item-wait ant-steps-item-active"
@@ -1111,7 +1129,7 @@ exports[`sqle/PluginAudit/List render empty prompt when request return empty 1`]
             target="_blank"
           >
             <button
-              class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary basic-button-wrapper css-geipcv"
+              class="ant-btn ant-btn-primary basic-button-wrapper css-geipcv"
               type="button"
             >
               <span>
@@ -1130,192 +1148,201 @@ exports[`sqle/PluginAudit/List render table data 1`] = `
 <body>
   <div>
     <div
-      class="ant-spin-nested-loading css-dev-only-do-not-override-txh9fw"
+      class="ant-spin-nested-loading"
     >
       <div
         class="ant-spin-container"
       >
         <div
-          class="ant-spin-nested-loading css-dev-only-do-not-override-1kh50jg"
+          class="ant-space ant-space-horizontal ant-space-align-center full-width-element flex-space-between actiontech-table-toolbar-namespace css-a7k93w"
+          style="flex-wrap: wrap; margin-bottom: -8px;"
         >
           <div
-            class="ant-spin-container"
+            class="ant-space-item"
+            style="margin-right: 8px; padding-bottom: 8px;"
           >
             <div
-              class="ant-space css-dev-only-do-not-override-1kh50jg ant-space-horizontal ant-space-align-center full-width-element flex-space-between actiontech-table-toolbar-namespace css-c38ntt"
-              style="flex-wrap: wrap; margin-bottom: -8px;"
+              class="ant-space ant-space-horizontal ant-space-align-center"
             >
               <div
                 class="ant-space-item"
-                style="margin-right: 8px; padding-bottom: 8px;"
+                style="margin-right: 12px;"
               >
-                <div
-                  class="ant-space css-dev-only-do-not-override-1kh50jg ant-space-horizontal ant-space-align-center"
+                <span
+                  class="ant-input-affix-wrapper basic-input-wrapper actiontech-table-search-input-namespace css-1f6svkh ant-input-affix-wrapper-sm"
                 >
-                  <div
-                    class="ant-space-item"
-                    style="margin-right: 12px;"
+                  <input
+                    class="ant-input ant-input-sm"
+                    id="actiontech-table-search-input"
+                    placeholder="输入关键字搜索"
+                    type="text"
+                    value=""
+                  />
+                  <span
+                    class="ant-input-suffix"
                   >
                     <span
-                      class="ant-input-affix-wrapper basic-input-wrapper actiontech-table-search-input-namespace css-1f6svkh ant-input-affix-wrapper-sm css-dev-only-do-not-override-mlhibv"
+                      class="ant-input-clear-icon ant-input-clear-icon-hidden ant-input-clear-icon-has-suffix"
+                      role="button"
+                      tabindex="-1"
                     >
-                      <input
-                        class="ant-input ant-input-sm css-dev-only-do-not-override-mlhibv"
-                        id="actiontech-table-search-input"
-                        placeholder="输入关键字搜索"
-                        type="text"
-                        value=""
-                      />
-                      <span
-                        class="ant-input-suffix"
+                      <svg
+                        fill="currentColor"
+                        height="14"
+                        viewBox="0 0 14 14"
+                        width="14"
+                        xmlns="http://www.w3.org/2000/svg"
                       >
-                        <svg
-                          class="custom-icon custom-icon-search"
-                          height="14"
-                          viewBox="0 0 14 14"
-                          width="14"
-                          xmlns="http://www.w3.org/2000/svg"
-                        >
-                          <path
-                            d="m10.518 9.693 2.499 2.498-.826.825-2.498-2.498a5.252 5.252 0 0 1-8.527-4.101 5.25 5.25 0 0 1 5.25-5.25 5.252 5.252 0 0 1 4.102 8.526m-1.17-.433a4.082 4.082 0 0 0-2.931-6.927 4.08 4.08 0 0 0-4.084 4.084 4.082 4.082 0 0 0 6.927 2.93z"
-                          />
-                        </svg>
-                      </span>
+                        <path
+                          d="m7 6.175 2.887-2.887.825.825L7.825 7l2.887 2.888-.825.824L7 7.825l-2.888 2.887-.824-.824L6.175 7 3.288 4.113l.824-.825z"
+                        />
+                      </svg>
                     </span>
-                  </div>
-                  <div
-                    class="ant-space-item"
-                  >
-                    <button
-                      class="ant-btn css-dev-only-do-not-override-czn7jp ant-btn-default ant-btn-sm ant-btn-two-chinese-chars actiontech-filter-button-namespace basic-button-wrapper css-geipcv"
-                      style="padding: 0px 6px 0px 10px;"
-                      type="button"
+                    <svg
+                      class="custom-icon custom-icon-search"
+                      height="14"
+                      viewBox="0 0 14 14"
+                      width="14"
+                      xmlns="http://www.w3.org/2000/svg"
                     >
-                      <div
-                        class="ant-space css-dev-only-do-not-override-czn7jp ant-space-horizontal ant-space-align-center css-1nt49ug"
-                      >
-                        <div
-                          class="ant-space-item"
-                          style="margin-right: 2px;"
-                        >
-                          筛选
-                        </div>
-                        <div
-                          class="ant-space-item"
-                        >
-                          <svg
-                            color="currrentColor"
-                            height="14"
-                            viewBox="0 0 16 16"
-                            width="14"
-                            xmlns="http://www.w3.org/2000/svg"
-                          >
-                            <path
-                              d="m8 8.781 3.3-3.3.943.943L8 10.667 3.757 6.424l.943-.943z"
-                              fill="currentColor"
-                            />
-                          </svg>
-                        </div>
-                      </div>
-                    </button>
-                  </div>
-                </div>
+                      <path
+                        d="m10.518 9.693 2.499 2.498-.826.825-2.498-2.498a5.252 5.252 0 0 1-8.527-4.101 5.25 5.25 0 0 1 5.25-5.25 5.252 5.252 0 0 1 4.102 8.526m-1.17-.433a4.082 4.082 0 0 0-2.931-6.927 4.08 4.08 0 0 0-4.084 4.084 4.082 4.082 0 0 0 6.927 2.93z"
+                      />
+                    </svg>
+                  </span>
+                </span>
               </div>
               <div
                 class="ant-space-item"
-                style="padding-bottom: 8px;"
               >
-                <div
-                  class="ant-space css-dev-only-do-not-override-1kh50jg ant-space-horizontal ant-space-align-center"
+                <button
+                  class="ant-btn ant-btn-default ant-btn-sm ant-btn-two-chinese-chars actiontech-filter-button-namespace basic-button-wrapper css-geipcv"
+                  style="padding: 0px 6px 0px 10px;"
+                  type="button"
                 >
                   <div
-                    class="ant-space-item"
-                    style="margin-right: 12px;"
+                    class="ant-space ant-space-horizontal ant-space-align-center css-1nt49ug"
                   >
-                    <button
-                      class="ant-btn css-dev-only-do-not-override-czn7jp ant-btn-default ant-btn-sm actiontech-table-setting-namespace basic-button-wrapper css-geipcv"
-                      style="padding: 0px 6px 0px 8px;"
-                      type="button"
+                    <div
+                      class="ant-space-item"
+                      style="margin-right: 2px;"
                     >
-                      <div
-                        class="ant-space css-dev-only-do-not-override-czn7jp ant-space-horizontal ant-space-align-center css-1nt49ug"
+                      筛选
+                    </div>
+                    <div
+                      class="ant-space-item"
+                    >
+                      <svg
+                        color="currentColor"
+                        height="14"
+                        viewBox="0 0 16 16"
+                        width="14"
+                        xmlns="http://www.w3.org/2000/svg"
                       >
-                        <div
-                          class="ant-space-item"
-                          style="margin-right: 5px;"
-                        >
-                          <svg
-                            class="custom-icon custom-icon-setting"
-                            height="11"
-                            viewBox="0 0 13 11"
-                            width="13"
-                            xmlns="http://www.w3.org/2000/svg"
-                          >
-                            <path
-                              d="M.167 8.5H4.25v1.167H.167zm0-4.083h5.25v1.166H.167zm0-4.084h11.666V1.5H.167zM11.06 5.598l.674-.228.584 1.01-.535.47c.067.319.067.648 0 .967l.535.47-.584 1.01-.674-.228c-.24.216-.524.382-.837.484l-.14.697H8.917l-.14-.698a2.3 2.3 0 0 1-.837-.484l-.674.229-.583-1.01.534-.47a2.3 2.3 0 0 1 0-.967l-.534-.47.583-1.01.674.228c.24-.216.524-.382.837-.484l.14-.697h1.166l.14.697c.313.102.598.269.837.485zM9.5 8.5a1.167 1.167 0 1 0 0-2.333 1.167 1.167 0 0 0 0 2.333"
-                            />
-                          </svg>
-                        </div>
-                        <div
-                          class="ant-space-item"
-                          style="margin-right: 5px;"
-                        >
-                          表格设置
-                        </div>
-                        <div
-                          class="ant-space-item"
-                        >
-                          <svg
-                            class="custom-icon custom-icon-arrow-down"
-                            color="currentColor"
-                            height="14"
-                            viewBox="0 0 16 16"
-                            width="14"
-                            xmlns="http://www.w3.org/2000/svg"
-                          >
-                            <path
-                              d="m8 8.781 3.3-3.3.943.943L8 10.667 3.757 6.424l.943-.943z"
-                              fill="currentColor"
-                            />
-                          </svg>
-                        </div>
-                      </div>
-                    </button>
+                        <path
+                          d="m8 8.781 3.3-3.3.943.943L8 10.667 3.757 6.424l.943-.943z"
+                          fill="currentColor"
+                        />
+                      </svg>
+                    </div>
                   </div>
+                </button>
+              </div>
+            </div>
+          </div>
+          <div
+            class="ant-space-item"
+            style="padding-bottom: 8px;"
+          >
+            <div
+              class="ant-space ant-space-horizontal ant-space-align-center"
+            >
+              <div
+                class="ant-space-item"
+                style="margin-right: 12px;"
+              >
+                <button
+                  class="ant-btn ant-btn-default ant-btn-sm actiontech-table-setting-namespace basic-button-wrapper css-geipcv"
+                  style="padding: 0px 6px 0px 8px;"
+                  type="button"
+                >
                   <div
-                    class="ant-space-item"
+                    class="ant-space ant-space-horizontal ant-space-align-center css-1nt49ug"
                   >
-                    <button
-                      class="ant-btn css-dev-only-do-not-override-czn7jp ant-btn-default ant-btn-sm ant-btn-icon-only basic-button-wrapper css-geipcv"
-                      type="button"
+                    <div
+                      class="ant-space-item"
+                      style="margin-right: 5px;"
                     >
-                      <span
-                        class="ant-btn-icon"
+                      <svg
+                        class="custom-icon custom-icon-setting"
+                        height="11"
+                        viewBox="0 0 13 11"
+                        width="13"
+                        xmlns="http://www.w3.org/2000/svg"
                       >
-                        <svg
-                          class="custom-icon custom-icon-refresh"
-                          height="14"
-                          viewBox="0 0 14 14"
-                          width="14"
-                          xmlns="http://www.w3.org/2000/svg"
-                        >
-                          <path
-                            d="M3.187 2.586a5.833 5.833 0 0 1 8.59 7.762L9.918 7h1.75a4.667 4.667 0 0 0-7.899-3.367zm7.626 8.828a5.833 5.833 0 0 1-8.59-7.762L4.083 7h-1.75a4.667 4.667 0 0 0 7.899 3.367z"
-                          />
-                        </svg>
-                      </span>
-                    </button>
+                        <path
+                          d="M.167 8.5H4.25v1.167H.167zm0-4.083h5.25v1.166H.167zm0-4.084h11.666V1.5H.167zM11.06 5.598l.674-.228.584 1.01-.535.47c.067.319.067.648 0 .967l.535.47-.584 1.01-.674-.228c-.24.216-.524.382-.837.484l-.14.697H8.917l-.14-.698a2.3 2.3 0 0 1-.837-.484l-.674.229-.583-1.01.534-.47a2.3 2.3 0 0 1 0-.967l-.534-.47.583-1.01.674.228c.24-.216.524-.382.837-.484l.14-.697h1.166l.14.697c.313.102.598.269.837.485zM9.5 8.5a1.167 1.167 0 1 0 0-2.333 1.167 1.167 0 0 0 0 2.333"
+                        />
+                      </svg>
+                    </div>
+                    <div
+                      class="ant-space-item"
+                      style="margin-right: 5px;"
+                    >
+                      表格设置
+                    </div>
+                    <div
+                      class="ant-space-item"
+                    >
+                      <svg
+                        class="custom-icon custom-icon-arrow-down"
+                        color="currentColor"
+                        height="14"
+                        viewBox="0 0 16 16"
+                        width="14"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="m8 8.781 3.3-3.3.943.943L8 10.667 3.757 6.424l.943-.943z"
+                          fill="currentColor"
+                        />
+                      </svg>
+                    </div>
                   </div>
-                </div>
+                </button>
+              </div>
+              <div
+                class="ant-space-item"
+              >
+                <button
+                  class="ant-btn ant-btn-default ant-btn-sm ant-btn-icon-only basic-button-wrapper css-geipcv"
+                  type="button"
+                >
+                  <span
+                    class="ant-btn-icon"
+                  >
+                    <svg
+                      class="custom-icon custom-icon-refresh"
+                      height="14"
+                      viewBox="0 0 14 14"
+                      width="14"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M3.187 2.586a5.833 5.833 0 0 1 8.59 7.762L9.918 7h1.75a4.667 4.667 0 0 0-7.899-3.367zm7.626 8.828a5.833 5.833 0 0 1-8.59-7.762L4.083 7h-1.75a4.667 4.667 0 0 0 7.899 3.367z"
+                      />
+                    </svg>
+                  </span>
+                </button>
               </div>
             </div>
           </div>
         </div>
         <div
-          class="ant-table-wrapper actiontech-table-namespace table-row-cursor css-fxd6ka css-dev-only-do-not-override-bj9uhl"
+          class="ant-table-wrapper actiontech-table-namespace table-row-cursor css-fxd6ka"
         >
           <div
-            class="ant-spin-nested-loading css-dev-only-do-not-override-bj9uhl"
+            class="ant-spin-nested-loading"
           >
             <div
               class="ant-spin-container"
@@ -1429,7 +1456,7 @@ exports[`sqle/PluginAudit/List render table data 1`] = `
                               class="actiontech-sql-snippet-renderer-wrapper css-dz7fl9"
                             >
                               <div
-                                class="ant-typography ant-typography-ellipsis ant-typography-ellipsis-multiple-line margin-bottom-0 css-dev-only-do-not-override-bj9uhl"
+                                class="ant-typography ant-typography-ellipsis ant-typography-ellipsis-multiple-line margin-bottom-0"
                               >
                                 <span>
                                   <span
@@ -1478,7 +1505,7 @@ exports[`sqle/PluginAudit/List render table data 1`] = `
                               class="actiontech-sql-snippet-renderer-wrapper css-dz7fl9"
                             >
                               <div
-                                class="ant-typography ant-typography-ellipsis ant-typography-ellipsis-multiple-line margin-bottom-0 css-dev-only-do-not-override-bj9uhl"
+                                class="ant-typography ant-typography-ellipsis ant-typography-ellipsis-multiple-line margin-bottom-0"
                               >
                                 <span>
                                   <span
@@ -1537,7 +1564,7 @@ exports[`sqle/PluginAudit/List render table data 1`] = `
                               class="audit-result-wrapper"
                             >
                               <div
-                                class="ant-space css-dev-only-do-not-override-bj9uhl ant-space-horizontal ant-space-align-center"
+                                class="ant-space ant-space-horizontal ant-space-align-center"
                               >
                                 <div
                                   class="ant-space-item"
@@ -1577,13 +1604,13 @@ exports[`sqle/PluginAudit/List render table data 1`] = `
                             class="ant-table-cell"
                           >
                             <div
-                              class="ant-space css-dev-only-do-not-override-bj9uhl ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
+                              class="ant-space ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
                             >
                               <div
                                 class="ant-space-item"
                               >
                                 <span
-                                  class="ant-avatar ant-avatar-circle action-avatar css-1wq79dc css-dev-only-do-not-override-bj9uhl"
+                                  class="ant-avatar ant-avatar-circle action-avatar css-1wq79dc"
                                 >
                                   <span
                                     class="ant-avatar-string"
@@ -1603,7 +1630,7 @@ exports[`sqle/PluginAudit/List render table data 1`] = `
                               class="css-new95e"
                             >
                               <button
-                                class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
                                 type="button"
                               >
                                 <span>
@@ -1624,7 +1651,7 @@ exports[`sqle/PluginAudit/List render table data 1`] = `
                               class="actiontech-sql-snippet-renderer-wrapper css-dz7fl9"
                             >
                               <div
-                                class="ant-typography ant-typography-ellipsis ant-typography-ellipsis-multiple-line margin-bottom-0 css-dev-only-do-not-override-bj9uhl"
+                                class="ant-typography ant-typography-ellipsis ant-typography-ellipsis-multiple-line margin-bottom-0"
                               >
                                 <span>
                                   <span
@@ -1673,7 +1700,7 @@ exports[`sqle/PluginAudit/List render table data 1`] = `
                               class="actiontech-sql-snippet-renderer-wrapper css-dz7fl9"
                             >
                               <div
-                                class="ant-typography ant-typography-ellipsis ant-typography-ellipsis-multiple-line margin-bottom-0 css-dev-only-do-not-override-bj9uhl"
+                                class="ant-typography ant-typography-ellipsis ant-typography-ellipsis-multiple-line margin-bottom-0"
                               >
                                 <span>
                                   <span
@@ -1732,7 +1759,7 @@ exports[`sqle/PluginAudit/List render table data 1`] = `
                               class="audit-result-wrapper"
                             >
                               <div
-                                class="ant-space css-dev-only-do-not-override-bj9uhl ant-space-horizontal ant-space-align-center"
+                                class="ant-space ant-space-horizontal ant-space-align-center"
                               >
                                 <div
                                   class="ant-space-item"
@@ -1771,13 +1798,13 @@ exports[`sqle/PluginAudit/List render table data 1`] = `
                             class="ant-table-cell"
                           >
                             <div
-                              class="ant-space css-dev-only-do-not-override-bj9uhl ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
+                              class="ant-space ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
                             >
                               <div
                                 class="ant-space-item"
                               >
                                 <span
-                                  class="ant-avatar ant-avatar-circle action-avatar css-1wq79dc css-dev-only-do-not-override-bj9uhl"
+                                  class="ant-avatar ant-avatar-circle action-avatar css-1wq79dc"
                                 >
                                   <span
                                     class="ant-avatar-string"
@@ -1797,7 +1824,7 @@ exports[`sqle/PluginAudit/List render table data 1`] = `
                               class="css-new95e"
                             >
                               <button
-                                class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
                                 type="button"
                               >
                                 <span>
@@ -1832,7 +1859,7 @@ exports[`sqle/PluginAudit/List render table data 1`] = `
                               class="audit-result-wrapper"
                             >
                               <div
-                                class="ant-space css-dev-only-do-not-override-bj9uhl ant-space-horizontal ant-space-align-center"
+                                class="ant-space ant-space-horizontal ant-space-align-center"
                               >
                                 <div
                                   class="ant-space-item"
@@ -1880,7 +1907,7 @@ exports[`sqle/PluginAudit/List render table data 1`] = `
                               class="css-new95e"
                             >
                               <button
-                                class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
                                 type="button"
                               >
                                 <span>
@@ -1896,7 +1923,7 @@ exports[`sqle/PluginAudit/List render table data 1`] = `
                 </div>
               </div>
               <ul
-                class="ant-pagination ant-table-pagination ant-table-pagination-right actiontech-table-pagination actiontech-table-pagination-fixed css-dev-only-do-not-override-bj9uhl"
+                class="ant-pagination ant-table-pagination ant-table-pagination-right actiontech-table-pagination actiontech-table-pagination-fixed"
               >
                 <li
                   class="ant-pagination-total-text"
@@ -1908,7 +1935,7 @@ exports[`sqle/PluginAudit/List render table data 1`] = `
                 <li
                   aria-disabled="true"
                   class="ant-pagination-prev ant-pagination-disabled"
-                  title="Previous Page"
+                  title="上一页"
                 >
                   <button
                     class="ant-pagination-item-link"
@@ -1951,7 +1978,7 @@ exports[`sqle/PluginAudit/List render table data 1`] = `
                 <li
                   aria-disabled="true"
                   class="ant-pagination-next ant-pagination-disabled"
-                  title="Next Page"
+                  title="下一页"
                 >
                   <button
                     class="ant-pagination-item-link"
@@ -1984,8 +2011,8 @@ exports[`sqle/PluginAudit/List render table data 1`] = `
                   class="ant-pagination-options"
                 >
                   <div
-                    aria-label="Page Size"
-                    class="ant-select ant-pagination-options-size-changer css-dev-only-do-not-override-bj9uhl ant-select-single ant-select-show-arrow ant-select-show-search"
+                    aria-label="页码"
+                    class="ant-select ant-pagination-options-size-changer ant-select-single ant-select-show-arrow ant-select-show-search"
                   >
                     <div
                       class="ant-select-selector"
@@ -1999,7 +2026,7 @@ exports[`sqle/PluginAudit/List render table data 1`] = `
                           aria-controls="rc_select_TEST_OR_SSR_list"
                           aria-expanded="false"
                           aria-haspopup="listbox"
-                          aria-label="Page Size"
+                          aria-label="页码"
                           aria-owns="rc_select_TEST_OR_SSR_list"
                           autocomplete="off"
                           class="ant-select-selection-search-input"
@@ -2011,9 +2038,9 @@ exports[`sqle/PluginAudit/List render table data 1`] = `
                       </span>
                       <span
                         class="ant-select-selection-item"
-                        title="20 / page"
+                        title="20 条/页"
                       >
-                        20 / page
+                        20 条/页
                       </span>
                     </div>
                     <span
@@ -2058,14 +2085,14 @@ exports[`sqle/PluginAudit/List should hidden user book when current language is 
 <body>
   <div>
     <div
-      class="ant-space css-dev-only-do-not-override-txh9fw ant-space-vertical ant-space-align-center css-mv7mes"
+      class="ant-space ant-space-vertical ant-space-align-center css-mv7mes"
     >
       <div
         class="ant-space-item"
         style="margin-bottom: 8px;"
       >
         <h3
-          class="ant-typography css-dev-only-do-not-override-txh9fw"
+          class="ant-typography"
         >
           暂未生成审核记录
         </h3>
@@ -2075,7 +2102,7 @@ exports[`sqle/PluginAudit/List should hidden user book when current language is 
         style="margin-bottom: 8px;"
       >
         <span
-          class="ant-typography ant-typography-secondary css-dev-only-do-not-override-txh9fw"
+          class="ant-typography ant-typography-secondary"
         >
           通过查看IDE审核记录，支持复盘在IDE中审核的SQL，并获取相关统计信息
         </span>
@@ -2087,7 +2114,7 @@ exports[`sqle/PluginAudit/List should hidden user book when current language is 
           class="step-wrap"
         >
           <div
-            class="ant-steps ant-steps-horizontal css-dev-only-do-not-override-txh9fw ant-steps-label-horizontal"
+            class="ant-steps ant-steps-horizontal ant-steps-label-horizontal"
           >
             <div
               class="ant-steps-item ant-steps-item-wait ant-steps-item-active"

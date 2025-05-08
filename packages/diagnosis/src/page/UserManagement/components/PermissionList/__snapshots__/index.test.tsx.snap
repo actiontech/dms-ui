@@ -4,13 +4,13 @@ exports[`diagnosis/test user table render empty table when api return error 1`] 
 <body>
   <div>
     <div
-      class="ant-spin-nested-loading css-dev-only-do-not-override-1kh50jg"
+      class="ant-spin-nested-loading css-dev-only-do-not-override-txh9fw"
     >
       <div
         class="ant-spin-container"
       >
         <div
-          class="ant-space css-dev-only-do-not-override-1kh50jg ant-space-horizontal ant-space-align-center full-width-element flex-space-between actiontech-table-toolbar-namespace css-c38ntt"
+          class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center full-width-element flex-space-between actiontech-table-toolbar-namespace css-a7k93w"
           style="flex-wrap: wrap; margin-bottom: -8px;"
         >
           <div
@@ -18,7 +18,7 @@ exports[`diagnosis/test user table render empty table when api return error 1`] 
             style="margin-right: 8px; padding-bottom: 8px;"
           >
             <div
-              class="ant-space css-dev-only-do-not-override-1kh50jg ant-space-horizontal ant-space-align-center"
+              class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
             >
               <div
                 class="ant-space-item"
@@ -38,12 +38,12 @@ exports[`diagnosis/test user table render empty table when api return error 1`] 
                 class="ant-space-item"
               >
                 <button
-                  class="ant-btn css-dev-only-do-not-override-czn7jp ant-btn-default ant-btn-sm ant-btn-two-chinese-chars actiontech-filter-button-namespace basic-button-wrapper css-geipcv"
+                  class="ant-btn css-dev-only-do-not-override-txh9fw ant-btn-default ant-btn-sm ant-btn-two-chinese-chars actiontech-filter-button-namespace basic-button-wrapper css-geipcv"
                   style="padding: 0px 6px 0px 10px;"
                   type="button"
                 >
                   <div
-                    class="ant-space css-dev-only-do-not-override-czn7jp ant-space-horizontal ant-space-align-center css-1nt49ug"
+                    class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center css-1nt49ug"
                   >
                     <div
                       class="ant-space-item"
@@ -55,7 +55,7 @@ exports[`diagnosis/test user table render empty table when api return error 1`] 
                       class="ant-space-item"
                     >
                       <svg
-                        color="currrentColor"
+                        color="currentColor"
                         height="14"
                         viewBox="0 0 16 16"
                         width="14"
@@ -77,17 +77,17 @@ exports[`diagnosis/test user table render empty table when api return error 1`] 
             style="padding-bottom: 8px;"
           >
             <div
-              class="ant-space css-dev-only-do-not-override-1kh50jg ant-space-horizontal ant-space-align-center"
+              class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
             />
           </div>
         </div>
       </div>
     </div>
     <div
-      class="ant-table-wrapper actiontech-table-namespace css-fxd6ka css-dev-only-do-not-override-bj9uhl"
+      class="ant-table-wrapper actiontech-table-namespace css-fxd6ka css-dev-only-do-not-override-txh9fw"
     >
       <div
-        class="ant-spin-nested-loading css-dev-only-do-not-override-bj9uhl"
+        class="ant-spin-nested-loading css-dev-only-do-not-override-txh9fw"
       >
         <div
           class="ant-spin-container"
@@ -164,13 +164,13 @@ exports[`diagnosis/test user table should clear filter when click filter button 
 <body>
   <div>
     <div
-      class="ant-spin-nested-loading css-dev-only-do-not-override-1kh50jg"
+      class="ant-spin-nested-loading css-dev-only-do-not-override-txh9fw"
     >
       <div
         class="ant-spin-container"
       >
         <div
-          class="ant-space css-dev-only-do-not-override-1kh50jg ant-space-horizontal ant-space-align-center full-width-element flex-space-between actiontech-table-toolbar-namespace css-c38ntt"
+          class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center full-width-element flex-space-between actiontech-table-toolbar-namespace css-a7k93w"
           style="flex-wrap: wrap; margin-bottom: -8px;"
         >
           <div
@@ -178,7 +178,7 @@ exports[`diagnosis/test user table should clear filter when click filter button 
             style="margin-right: 8px; padding-bottom: 8px;"
           >
             <div
-              class="ant-space css-dev-only-do-not-override-1kh50jg ant-space-horizontal ant-space-align-center"
+              class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
             >
               <div
                 class="ant-space-item"
@@ -213,12 +213,12 @@ exports[`diagnosis/test user table should clear filter when click filter button 
                 class="ant-space-item"
               >
                 <button
-                  class="ant-btn css-dev-only-do-not-override-czn7jp ant-btn-default ant-btn-sm ant-btn-two-chinese-chars actiontech-filter-button-namespace basic-button-wrapper css-geipcv"
+                  class="ant-btn css-dev-only-do-not-override-txh9fw ant-btn-default ant-btn-sm ant-btn-two-chinese-chars actiontech-filter-button-namespace basic-button-wrapper css-geipcv"
                   style="padding: 0px 6px 0px 10px;"
                   type="button"
                 >
                   <div
-                    class="ant-space css-dev-only-do-not-override-czn7jp ant-space-horizontal ant-space-align-center css-1nt49ug"
+                    class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center css-1nt49ug"
                   >
                     <div
                       class="ant-space-item"
@@ -230,7 +230,7 @@ exports[`diagnosis/test user table should clear filter when click filter button 
                       class="ant-space-item"
                     >
                       <svg
-                        color="currrentColor"
+                        color="currentColor"
                         height="14"
                         viewBox="0 0 16 16"
                         width="14"
@@ -252,17 +252,17 @@ exports[`diagnosis/test user table should clear filter when click filter button 
             style="padding-bottom: 8px;"
           >
             <div
-              class="ant-space css-dev-only-do-not-override-1kh50jg ant-space-horizontal ant-space-align-center"
+              class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
             />
           </div>
         </div>
       </div>
     </div>
     <div
-      class="ant-table-wrapper actiontech-table-namespace css-fxd6ka css-dev-only-do-not-override-bj9uhl"
+      class="ant-table-wrapper actiontech-table-namespace css-fxd6ka css-dev-only-do-not-override-txh9fw"
     >
       <div
-        class="ant-spin-nested-loading css-dev-only-do-not-override-bj9uhl"
+        class="ant-spin-nested-loading css-dev-only-do-not-override-txh9fw"
       >
         <div
           class="ant-spin-container"
@@ -347,7 +347,7 @@ exports[`diagnosis/test user table should clear filter when click filter button 
             </div>
           </div>
           <ul
-            class="ant-pagination ant-table-pagination ant-table-pagination-right actiontech-table-pagination actiontech-table-pagination-fixed css-dev-only-do-not-override-bj9uhl"
+            class="ant-pagination ant-table-pagination ant-table-pagination-right actiontech-table-pagination actiontech-table-pagination-fixed css-dev-only-do-not-override-txh9fw"
           >
             <li
               class="ant-pagination-total-text"
@@ -436,7 +436,7 @@ exports[`diagnosis/test user table should clear filter when click filter button 
             >
               <div
                 aria-label="页码"
-                class="ant-select ant-pagination-options-size-changer css-dev-only-do-not-override-bj9uhl ant-select-single ant-select-show-arrow ant-select-show-search"
+                class="ant-select ant-pagination-options-size-changer css-dev-only-do-not-override-txh9fw ant-select-single ant-select-show-arrow ant-select-show-search"
               >
                 <div
                   class="ant-select-selector"
@@ -507,13 +507,13 @@ exports[`diagnosis/test user table should render filter result when has default 
 <body>
   <div>
     <div
-      class="ant-spin-nested-loading css-dev-only-do-not-override-1kh50jg"
+      class="ant-spin-nested-loading css-dev-only-do-not-override-txh9fw"
     >
       <div
         class="ant-spin-container"
       >
         <div
-          class="ant-space css-dev-only-do-not-override-1kh50jg ant-space-horizontal ant-space-align-center full-width-element flex-space-between actiontech-table-toolbar-namespace css-c38ntt"
+          class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center full-width-element flex-space-between actiontech-table-toolbar-namespace css-a7k93w"
           style="flex-wrap: wrap; margin-bottom: -8px;"
         >
           <div
@@ -521,7 +521,7 @@ exports[`diagnosis/test user table should render filter result when has default 
             style="margin-right: 8px; padding-bottom: 8px;"
           >
             <div
-              class="ant-space css-dev-only-do-not-override-1kh50jg ant-space-horizontal ant-space-align-center"
+              class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
             >
               <div
                 class="ant-space-item"
@@ -556,12 +556,12 @@ exports[`diagnosis/test user table should render filter result when has default 
                 class="ant-space-item"
               >
                 <button
-                  class="ant-btn css-dev-only-do-not-override-czn7jp ant-btn-default ant-btn-sm actiontech-filter-button-namespace basic-button-wrapper css-geipcv"
+                  class="ant-btn css-dev-only-do-not-override-txh9fw ant-btn-default ant-btn-sm actiontech-filter-button-namespace basic-button-wrapper css-geipcv"
                   style="padding: 0px 6px 0px 10px;"
                   type="button"
                 >
                   <div
-                    class="ant-space css-dev-only-do-not-override-czn7jp ant-space-horizontal ant-space-align-center css-1nt49ug"
+                    class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center css-1nt49ug"
                   >
                     <div
                       class="ant-space-item"
@@ -573,7 +573,7 @@ exports[`diagnosis/test user table should render filter result when has default 
                       class="ant-space-item"
                     >
                       <svg
-                        color="currrentColor"
+                        color="currentColor"
                         fill="none"
                         height="14"
                         viewBox="0 0 16 16"
@@ -596,14 +596,14 @@ exports[`diagnosis/test user table should render filter result when has default 
             style="padding-bottom: 8px;"
           >
             <div
-              class="ant-space css-dev-only-do-not-override-1kh50jg ant-space-horizontal ant-space-align-center"
+              class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
             />
           </div>
         </div>
       </div>
     </div>
     <div
-      class="ant-space css-dev-only-do-not-override-1kh50jg ant-space-horizontal ant-space-align-center actiontech-table-filter-container-namespace full-width-element css-de5ds5"
+      class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center actiontech-table-filter-container-namespace full-width-element css-tvjydu"
       style="flex-wrap: wrap; margin-bottom: -12px;"
     >
       <div
@@ -611,7 +611,7 @@ exports[`diagnosis/test user table should render filter result when has default 
         style="padding-bottom: 12px;"
       >
         <div
-          class="ant-select ant-select-sm ant-select-borderless basic-select-wrapper custom-select-namespace css-pti5z8 css-dev-only-do-not-override-jx040l ant-select-single ant-select-allow-clear ant-select-show-arrow"
+          class="ant-select ant-select-sm ant-select-borderless basic-select-wrapper custom-select-namespace css-pti5z8 css-dev-only-do-not-override-txh9fw ant-select-single ant-select-allow-clear ant-select-show-arrow"
         >
           <div
             class="ant-select-selector"
@@ -684,10 +684,10 @@ exports[`diagnosis/test user table should render filter result when has default 
       </div>
     </div>
     <div
-      class="ant-table-wrapper actiontech-table-namespace css-fxd6ka css-dev-only-do-not-override-bj9uhl"
+      class="ant-table-wrapper actiontech-table-namespace css-fxd6ka css-dev-only-do-not-override-txh9fw"
     >
       <div
-        class="ant-spin-nested-loading css-dev-only-do-not-override-bj9uhl"
+        class="ant-spin-nested-loading css-dev-only-do-not-override-txh9fw"
       >
         <div
           class="ant-spin-container"
@@ -772,7 +772,7 @@ exports[`diagnosis/test user table should render filter result when has default 
             </div>
           </div>
           <ul
-            class="ant-pagination ant-table-pagination ant-table-pagination-right actiontech-table-pagination actiontech-table-pagination-fixed css-dev-only-do-not-override-bj9uhl"
+            class="ant-pagination ant-table-pagination ant-table-pagination-right actiontech-table-pagination actiontech-table-pagination-fixed css-dev-only-do-not-override-txh9fw"
           >
             <li
               class="ant-pagination-total-text"
@@ -861,7 +861,7 @@ exports[`diagnosis/test user table should render filter result when has default 
             >
               <div
                 aria-label="页码"
-                class="ant-select ant-pagination-options-size-changer css-dev-only-do-not-override-bj9uhl ant-select-single ant-select-show-arrow ant-select-show-search"
+                class="ant-select ant-pagination-options-size-changer css-dev-only-do-not-override-txh9fw ant-select-single ant-select-show-arrow ant-select-show-search"
               >
                 <div
                   class="ant-select-selector"
@@ -932,13 +932,13 @@ exports[`diagnosis/test user table should render normal table 1`] = `
 <body>
   <div>
     <div
-      class="ant-spin-nested-loading css-dev-only-do-not-override-1kh50jg"
+      class="ant-spin-nested-loading css-dev-only-do-not-override-txh9fw"
     >
       <div
         class="ant-spin-container"
       >
         <div
-          class="ant-space css-dev-only-do-not-override-1kh50jg ant-space-horizontal ant-space-align-center full-width-element flex-space-between actiontech-table-toolbar-namespace css-c38ntt"
+          class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center full-width-element flex-space-between actiontech-table-toolbar-namespace css-a7k93w"
           style="flex-wrap: wrap; margin-bottom: -8px;"
         >
           <div
@@ -946,7 +946,7 @@ exports[`diagnosis/test user table should render normal table 1`] = `
             style="margin-right: 8px; padding-bottom: 8px;"
           >
             <div
-              class="ant-space css-dev-only-do-not-override-1kh50jg ant-space-horizontal ant-space-align-center"
+              class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
             >
               <div
                 class="ant-space-item"
@@ -981,12 +981,12 @@ exports[`diagnosis/test user table should render normal table 1`] = `
                 class="ant-space-item"
               >
                 <button
-                  class="ant-btn css-dev-only-do-not-override-czn7jp ant-btn-default ant-btn-sm ant-btn-two-chinese-chars actiontech-filter-button-namespace basic-button-wrapper css-geipcv"
+                  class="ant-btn css-dev-only-do-not-override-txh9fw ant-btn-default ant-btn-sm ant-btn-two-chinese-chars actiontech-filter-button-namespace basic-button-wrapper css-geipcv"
                   style="padding: 0px 6px 0px 10px;"
                   type="button"
                 >
                   <div
-                    class="ant-space css-dev-only-do-not-override-czn7jp ant-space-horizontal ant-space-align-center css-1nt49ug"
+                    class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center css-1nt49ug"
                   >
                     <div
                       class="ant-space-item"
@@ -998,7 +998,7 @@ exports[`diagnosis/test user table should render normal table 1`] = `
                       class="ant-space-item"
                     >
                       <svg
-                        color="currrentColor"
+                        color="currentColor"
                         height="14"
                         viewBox="0 0 16 16"
                         width="14"
@@ -1020,17 +1020,17 @@ exports[`diagnosis/test user table should render normal table 1`] = `
             style="padding-bottom: 8px;"
           >
             <div
-              class="ant-space css-dev-only-do-not-override-1kh50jg ant-space-horizontal ant-space-align-center"
+              class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
             />
           </div>
         </div>
       </div>
     </div>
     <div
-      class="ant-table-wrapper actiontech-table-namespace css-fxd6ka css-dev-only-do-not-override-bj9uhl"
+      class="ant-table-wrapper actiontech-table-namespace css-fxd6ka css-dev-only-do-not-override-txh9fw"
     >
       <div
-        class="ant-spin-nested-loading css-dev-only-do-not-override-bj9uhl"
+        class="ant-spin-nested-loading css-dev-only-do-not-override-txh9fw"
       >
         <div
           class="ant-spin-container"
@@ -1115,7 +1115,7 @@ exports[`diagnosis/test user table should render normal table 1`] = `
             </div>
           </div>
           <ul
-            class="ant-pagination ant-table-pagination ant-table-pagination-right actiontech-table-pagination actiontech-table-pagination-fixed css-dev-only-do-not-override-bj9uhl"
+            class="ant-pagination ant-table-pagination ant-table-pagination-right actiontech-table-pagination actiontech-table-pagination-fixed css-dev-only-do-not-override-txh9fw"
           >
             <li
               class="ant-pagination-total-text"
@@ -1204,7 +1204,7 @@ exports[`diagnosis/test user table should render normal table 1`] = `
             >
               <div
                 aria-label="页码"
-                class="ant-select ant-pagination-options-size-changer css-dev-only-do-not-override-bj9uhl ant-select-single ant-select-show-arrow ant-select-show-search"
+                class="ant-select ant-pagination-options-size-changer css-dev-only-do-not-override-txh9fw ant-select-single ant-select-show-arrow ant-select-show-search"
               >
                 <div
                   class="ant-select-selector"
@@ -1275,13 +1275,13 @@ exports[`diagnosis/test user table should render table when api return null 1`] 
 <body>
   <div>
     <div
-      class="ant-spin-nested-loading css-dev-only-do-not-override-1kh50jg"
+      class="ant-spin-nested-loading css-dev-only-do-not-override-txh9fw"
     >
       <div
         class="ant-spin-container"
       >
         <div
-          class="ant-space css-dev-only-do-not-override-1kh50jg ant-space-horizontal ant-space-align-center full-width-element flex-space-between actiontech-table-toolbar-namespace css-c38ntt"
+          class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center full-width-element flex-space-between actiontech-table-toolbar-namespace css-a7k93w"
           style="flex-wrap: wrap; margin-bottom: -8px;"
         >
           <div
@@ -1289,7 +1289,7 @@ exports[`diagnosis/test user table should render table when api return null 1`] 
             style="margin-right: 8px; padding-bottom: 8px;"
           >
             <div
-              class="ant-space css-dev-only-do-not-override-1kh50jg ant-space-horizontal ant-space-align-center"
+              class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
             >
               <div
                 class="ant-space-item"
@@ -1309,12 +1309,12 @@ exports[`diagnosis/test user table should render table when api return null 1`] 
                 class="ant-space-item"
               >
                 <button
-                  class="ant-btn css-dev-only-do-not-override-czn7jp ant-btn-default ant-btn-sm ant-btn-two-chinese-chars actiontech-filter-button-namespace basic-button-wrapper css-geipcv"
+                  class="ant-btn css-dev-only-do-not-override-txh9fw ant-btn-default ant-btn-sm ant-btn-two-chinese-chars actiontech-filter-button-namespace basic-button-wrapper css-geipcv"
                   style="padding: 0px 6px 0px 10px;"
                   type="button"
                 >
                   <div
-                    class="ant-space css-dev-only-do-not-override-czn7jp ant-space-horizontal ant-space-align-center css-1nt49ug"
+                    class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center css-1nt49ug"
                   >
                     <div
                       class="ant-space-item"
@@ -1326,7 +1326,7 @@ exports[`diagnosis/test user table should render table when api return null 1`] 
                       class="ant-space-item"
                     >
                       <svg
-                        color="currrentColor"
+                        color="currentColor"
                         height="14"
                         viewBox="0 0 16 16"
                         width="14"
@@ -1348,17 +1348,17 @@ exports[`diagnosis/test user table should render table when api return null 1`] 
             style="padding-bottom: 8px;"
           >
             <div
-              class="ant-space css-dev-only-do-not-override-1kh50jg ant-space-horizontal ant-space-align-center"
+              class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
             />
           </div>
         </div>
       </div>
     </div>
     <div
-      class="ant-table-wrapper actiontech-table-namespace css-fxd6ka css-dev-only-do-not-override-bj9uhl"
+      class="ant-table-wrapper actiontech-table-namespace css-fxd6ka css-dev-only-do-not-override-txh9fw"
     >
       <div
-        class="ant-spin-nested-loading css-dev-only-do-not-override-bj9uhl"
+        class="ant-spin-nested-loading css-dev-only-do-not-override-txh9fw"
       >
         <div
           class="ant-spin-container"
@@ -1435,13 +1435,13 @@ exports[`diagnosis/test user table show filter result when change filter type 1`
 <body>
   <div>
     <div
-      class="ant-spin-nested-loading css-dev-only-do-not-override-1kh50jg"
+      class="ant-spin-nested-loading css-dev-only-do-not-override-txh9fw"
     >
       <div
         class="ant-spin-container"
       >
         <div
-          class="ant-space css-dev-only-do-not-override-1kh50jg ant-space-horizontal ant-space-align-center full-width-element flex-space-between actiontech-table-toolbar-namespace css-c38ntt"
+          class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center full-width-element flex-space-between actiontech-table-toolbar-namespace css-a7k93w"
           style="flex-wrap: wrap; margin-bottom: -8px;"
         >
           <div
@@ -1449,7 +1449,7 @@ exports[`diagnosis/test user table show filter result when change filter type 1`
             style="margin-right: 8px; padding-bottom: 8px;"
           >
             <div
-              class="ant-space css-dev-only-do-not-override-1kh50jg ant-space-horizontal ant-space-align-center"
+              class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
             >
               <div
                 class="ant-space-item"
@@ -1484,12 +1484,12 @@ exports[`diagnosis/test user table show filter result when change filter type 1`
                 class="ant-space-item"
               >
                 <button
-                  class="ant-btn css-dev-only-do-not-override-czn7jp ant-btn-default ant-btn-sm ant-btn-two-chinese-chars actiontech-filter-button-namespace basic-button-wrapper css-geipcv"
+                  class="ant-btn css-dev-only-do-not-override-txh9fw ant-btn-default ant-btn-sm ant-btn-two-chinese-chars actiontech-filter-button-namespace basic-button-wrapper css-geipcv"
                   style="padding: 0px 6px 0px 10px;"
                   type="button"
                 >
                   <div
-                    class="ant-space css-dev-only-do-not-override-czn7jp ant-space-horizontal ant-space-align-center css-1nt49ug"
+                    class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center css-1nt49ug"
                   >
                     <div
                       class="ant-space-item"
@@ -1501,7 +1501,7 @@ exports[`diagnosis/test user table show filter result when change filter type 1`
                       class="ant-space-item"
                     >
                       <svg
-                        color="currrentColor"
+                        color="currentColor"
                         height="14"
                         viewBox="0 0 16 16"
                         width="14"
@@ -1523,17 +1523,17 @@ exports[`diagnosis/test user table show filter result when change filter type 1`
             style="padding-bottom: 8px;"
           >
             <div
-              class="ant-space css-dev-only-do-not-override-1kh50jg ant-space-horizontal ant-space-align-center"
+              class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
             />
           </div>
         </div>
       </div>
     </div>
     <div
-      class="ant-table-wrapper actiontech-table-namespace css-fxd6ka css-dev-only-do-not-override-bj9uhl"
+      class="ant-table-wrapper actiontech-table-namespace css-fxd6ka css-dev-only-do-not-override-txh9fw"
     >
       <div
-        class="ant-spin-nested-loading css-dev-only-do-not-override-bj9uhl"
+        class="ant-spin-nested-loading css-dev-only-do-not-override-txh9fw"
       >
         <div
           class="ant-spin-container"
@@ -1618,7 +1618,7 @@ exports[`diagnosis/test user table show filter result when change filter type 1`
             </div>
           </div>
           <ul
-            class="ant-pagination ant-table-pagination ant-table-pagination-right actiontech-table-pagination actiontech-table-pagination-fixed css-dev-only-do-not-override-bj9uhl"
+            class="ant-pagination ant-table-pagination ant-table-pagination-right actiontech-table-pagination actiontech-table-pagination-fixed css-dev-only-do-not-override-txh9fw"
           >
             <li
               class="ant-pagination-total-text"
@@ -1707,7 +1707,7 @@ exports[`diagnosis/test user table show filter result when change filter type 1`
             >
               <div
                 aria-label="页码"
-                class="ant-select ant-pagination-options-size-changer css-dev-only-do-not-override-bj9uhl ant-select-single ant-select-show-arrow ant-select-show-search"
+                class="ant-select ant-pagination-options-size-changer css-dev-only-do-not-override-txh9fw ant-select-single ant-select-show-arrow ant-select-show-search"
               >
                 <div
                   class="ant-select-selector"

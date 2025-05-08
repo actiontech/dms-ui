@@ -30,7 +30,10 @@ describe('OverallRewrittenSuggestion', () => {
       SqlRewrittenMockDataWithLogic.rewritten_sql_logic_desc!
   };
 
-  ignoreConsoleErrors([UtilsConsoleErrorStringsEnum.INVALID_CUSTOM_ATTRIBUTE]);
+  ignoreConsoleErrors([
+    UtilsConsoleErrorStringsEnum.INVALID_CUSTOM_ATTRIBUTE,
+    UtilsConsoleErrorStringsEnum.UNKNOWN_EVENT_HANDLER
+  ]);
 
   beforeEach(() => {
     mockUseCurrentUser();

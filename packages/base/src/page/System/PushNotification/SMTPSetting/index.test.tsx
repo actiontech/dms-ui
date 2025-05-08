@@ -62,8 +62,8 @@ describe('base/System/PushNotification/SMTPSetting', () => {
       await act(async () => jest.advanceTimersByTime(500));
       expect(baseElement).toMatchSnapshot();
 
-      expect(screen.getByText('取 消')).toBeInTheDocument();
-      fireEvent.click(screen.getByText('取 消'));
+      expect(screen.getAllByText('取 消')[1]).toBeInTheDocument();
+      fireEvent.click(screen.getAllByText('取 消')[1]);
       await act(async () => jest.advanceTimersByTime(500));
       expect(baseElement).toMatchSnapshot();
     });
@@ -79,15 +79,15 @@ describe('base/System/PushNotification/SMTPSetting', () => {
       fireEvent.click(switchEle[0]);
       await act(async () => jest.advanceTimersByTime(500));
       expect(screen.getByText('是否确认关闭当前配置？')).toBeInTheDocument();
-      expect(screen.getByText('Cancel')).toBeInTheDocument();
-      expect(screen.getByText('OK')).toBeInTheDocument();
+      expect(screen.getAllByText('取 消')[0]).toBeInTheDocument();
+      expect(screen.getByText('确 定')).toBeInTheDocument();
 
-      fireEvent.click(screen.getByText('Cancel'));
+      fireEvent.click(screen.getAllByText('取 消')[0]);
       await act(async () => jest.advanceTimersByTime(500));
 
       fireEvent.click(switchEle[0]);
       await act(async () => jest.advanceTimersByTime(500));
-      fireEvent.click(screen.getByText('OK'));
+      fireEvent.click(screen.getByText('确 定'));
       await act(async () => jest.advanceTimersByTime(500));
       expect(baseElement).toMatchSnapshot();
     });

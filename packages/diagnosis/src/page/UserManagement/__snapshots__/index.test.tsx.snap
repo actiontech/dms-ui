@@ -23,7 +23,7 @@ exports[`test user management render without permission 1`] = `
               class="ant-space-item"
             >
               <button
-                class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default ant-btn-sm ant-btn-icon-only basic-button-wrapper css-geipcv"
+                class="ant-btn css-dev-only-do-not-override-txh9fw ant-btn-default ant-btn-sm ant-btn-icon-only basic-button-wrapper css-geipcv"
                 type="button"
               >
                 <span
@@ -111,10 +111,10 @@ exports[`test user management render without permission 1`] = `
           class="lazy-load-wrapper segmented-item-content lazy-load-wrapper-show css-952l0m"
         >
           <div
-            class="ant-table-wrapper actiontech-table-namespace css-fxd6ka css-dev-only-do-not-override-bj9uhl"
+            class="ant-table-wrapper actiontech-table-namespace css-fxd6ka css-dev-only-do-not-override-txh9fw"
           >
             <div
-              class="ant-spin-nested-loading css-dev-only-do-not-override-bj9uhl"
+              class="ant-spin-nested-loading css-dev-only-do-not-override-txh9fw"
             >
               <div
                 class="ant-spin-container"
@@ -252,7 +252,7 @@ exports[`test user management render without permission 1`] = `
                   </div>
                 </div>
                 <ul
-                  class="ant-pagination ant-table-pagination ant-table-pagination-right actiontech-table-pagination actiontech-table-pagination-fixed css-dev-only-do-not-override-bj9uhl"
+                  class="ant-pagination ant-table-pagination ant-table-pagination-right actiontech-table-pagination actiontech-table-pagination-fixed css-dev-only-do-not-override-txh9fw"
                 >
                   <li
                     class="ant-pagination-total-text"
@@ -341,7 +341,7 @@ exports[`test user management render without permission 1`] = `
                   >
                     <div
                       aria-label="页码"
-                      class="ant-select ant-pagination-options-size-changer css-dev-only-do-not-override-bj9uhl ant-select-single ant-select-show-arrow ant-select-show-search"
+                      class="ant-select ant-pagination-options-size-changer css-dev-only-do-not-override-txh9fw ant-select-single ant-select-show-arrow ant-select-show-search"
                     >
                       <div
                         class="ant-select-selector"
@@ -434,7 +434,7 @@ exports[`test user management should open add role model when click add button 1
               class="ant-space-item"
             >
               <button
-                class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default ant-btn-sm ant-btn-icon-only basic-button-wrapper css-geipcv"
+                class="ant-btn css-dev-only-do-not-override-txh9fw ant-btn-default ant-btn-sm ant-btn-icon-only basic-button-wrapper css-geipcv"
                 type="button"
               >
                 <span
@@ -460,7 +460,7 @@ exports[`test user management should open add role model when click add button 1
           class="extra"
         >
           <button
-            class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary basic-button-wrapper css-geipcv"
+            class="ant-btn css-dev-only-do-not-override-txh9fw ant-btn-primary basic-button-wrapper css-geipcv"
             type="button"
           >
             <span
@@ -550,10 +550,10 @@ exports[`test user management should open add role model when click add button 1
           class="lazy-load-wrapper segmented-item-content lazy-load-wrapper-show css-952l0m"
         >
           <div
-            class="ant-table-wrapper actiontech-table-namespace css-fxd6ka css-dev-only-do-not-override-bj9uhl"
+            class="ant-table-wrapper actiontech-table-namespace css-fxd6ka css-dev-only-do-not-override-txh9fw"
           >
             <div
-              class="ant-spin-nested-loading css-dev-only-do-not-override-bj9uhl"
+              class="ant-spin-nested-loading css-dev-only-do-not-override-txh9fw"
             >
               <div
                 class="ant-spin-container"
@@ -675,7 +675,7 @@ exports[`test user management should open add role model when click add button 1
                               class="ant-table-cell"
                             >
                               <div
-                                class="ant-space css-dev-only-do-not-override-bj9uhl ant-space-horizontal ant-space-align-center"
+                                class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
                                 style="flex-wrap: wrap; margin-bottom: -8px;"
                               >
                                 <div
@@ -683,7 +683,7 @@ exports[`test user management should open add role model when click add button 1
                                   style="margin-right: 8px; padding-bottom: 8px;"
                                 >
                                   <span
-                                    class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-1mjwlcb css-dev-only-do-not-override-bj9uhl"
+                                    class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-1mjwlcb css-dev-only-do-not-override-txh9fw"
                                   >
                                     更新任何用户的密码
                                   </span>
@@ -693,7 +693,7 @@ exports[`test user management should open add role model when click add button 1
                                   style="margin-right: 8px; padding-bottom: 8px;"
                                 >
                                   <span
-                                    class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-1mjwlcb css-dev-only-do-not-override-bj9uhl"
+                                    class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-1mjwlcb css-dev-only-do-not-override-txh9fw"
                                   >
                                     访问操作权限列表
                                   </span>
@@ -703,7 +703,7 @@ exports[`test user management should open add role model when click add button 1
                                   style="margin-right: 8px; padding-bottom: 8px;"
                                 >
                                   <span
-                                    class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-1mjwlcb css-dev-only-do-not-override-bj9uhl"
+                                    class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-1mjwlcb css-dev-only-do-not-override-txh9fw"
                                   >
                                     添加服务器
                                   </span>
@@ -765,7 +765,7 @@ exports[`test user management should open add role model when click add button 1
                               class="ant-table-cell"
                             >
                               <div
-                                class="ant-space css-dev-only-do-not-override-bj9uhl ant-space-horizontal ant-space-align-center"
+                                class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
                                 style="flex-wrap: wrap; margin-bottom: -8px;"
                               >
                                 <div
@@ -773,7 +773,7 @@ exports[`test user management should open add role model when click add button 1
                                   style="margin-right: 8px; padding-bottom: 8px;"
                                 >
                                   <span
-                                    class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-1mjwlcb css-dev-only-do-not-override-bj9uhl"
+                                    class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-1mjwlcb css-dev-only-do-not-override-txh9fw"
                                   >
                                     更新任何用户的密码
                                   </span>
@@ -783,7 +783,7 @@ exports[`test user management should open add role model when click add button 1
                                   style="padding-bottom: 8px;"
                                 >
                                   <span
-                                    class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-1mjwlcb css-dev-only-do-not-override-bj9uhl"
+                                    class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-1mjwlcb css-dev-only-do-not-override-txh9fw"
                                   >
                                     访问操作权限列表
                                   </span>
@@ -798,14 +798,14 @@ exports[`test user management should open add role model when click add button 1
                                 class="css-new95e"
                               >
                                 <div
-                                  class="ant-space css-dev-only-do-not-override-bj9uhl ant-space-horizontal ant-space-align-center"
+                                  class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
                                 >
                                   <div
                                     class="ant-space-item"
                                     style="margin-right: 8px;"
                                   >
                                     <button
-                                      class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                      class="ant-btn css-dev-only-do-not-override-txh9fw ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
                                       type="button"
                                     >
                                       <span>
@@ -817,7 +817,7 @@ exports[`test user management should open add role model when click add button 1
                                     class="ant-space-item"
                                   >
                                     <button
-                                      class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm ant-btn-dangerous actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                      class="ant-btn css-dev-only-do-not-override-txh9fw ant-btn-default ant-btn-sm ant-btn-dangerous actiontech-table-actions-button basic-button-wrapper css-geipcv"
                                       type="button"
                                     >
                                       <span>
@@ -835,7 +835,7 @@ exports[`test user management should open add role model when click add button 1
                   </div>
                 </div>
                 <ul
-                  class="ant-pagination ant-table-pagination ant-table-pagination-right actiontech-table-pagination actiontech-table-pagination-fixed css-dev-only-do-not-override-bj9uhl"
+                  class="ant-pagination ant-table-pagination ant-table-pagination-right actiontech-table-pagination actiontech-table-pagination-fixed css-dev-only-do-not-override-txh9fw"
                 >
                   <li
                     class="ant-pagination-total-text"
@@ -924,7 +924,7 @@ exports[`test user management should open add role model when click add button 1
                   >
                     <div
                       aria-label="页码"
-                      class="ant-select ant-pagination-options-size-changer css-dev-only-do-not-override-bj9uhl ant-select-single ant-select-show-arrow ant-select-show-search"
+                      class="ant-select ant-pagination-options-size-changer css-dev-only-do-not-override-txh9fw ant-select-single ant-select-show-arrow ant-select-show-search"
                     >
                       <div
                         class="ant-select-selector"
@@ -1017,7 +1017,7 @@ exports[`test user management should open add user model when click add button 1
               class="ant-space-item"
             >
               <button
-                class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default ant-btn-sm ant-btn-icon-only basic-button-wrapper css-geipcv"
+                class="ant-btn css-dev-only-do-not-override-txh9fw ant-btn-default ant-btn-sm ant-btn-icon-only basic-button-wrapper css-geipcv"
                 type="button"
               >
                 <span
@@ -1043,7 +1043,7 @@ exports[`test user management should open add user model when click add button 1
           class="extra"
         >
           <button
-            class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary basic-button-wrapper css-geipcv"
+            class="ant-btn css-dev-only-do-not-override-txh9fw ant-btn-primary basic-button-wrapper css-geipcv"
             type="button"
           >
             <span
@@ -1133,10 +1133,10 @@ exports[`test user management should open add user model when click add button 1
           class="lazy-load-wrapper segmented-item-content lazy-load-wrapper-show css-952l0m"
         >
           <div
-            class="ant-table-wrapper actiontech-table-namespace css-fxd6ka css-dev-only-do-not-override-bj9uhl"
+            class="ant-table-wrapper actiontech-table-namespace css-fxd6ka css-dev-only-do-not-override-txh9fw"
           >
             <div
-              class="ant-spin-nested-loading css-dev-only-do-not-override-bj9uhl"
+              class="ant-spin-nested-loading css-dev-only-do-not-override-txh9fw"
             >
               <div
                 class="ant-spin-container"
@@ -1244,7 +1244,7 @@ exports[`test user management should open add user model when click add button 1
                                 class="css-new95e"
                               >
                                 <button
-                                  class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                  class="ant-btn css-dev-only-do-not-override-txh9fw ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
                                   type="button"
                                 >
                                   <span>
@@ -1276,14 +1276,14 @@ exports[`test user management should open add user model when click add button 1
                                 class="css-new95e"
                               >
                                 <div
-                                  class="ant-space css-dev-only-do-not-override-bj9uhl ant-space-horizontal ant-space-align-center"
+                                  class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
                                 >
                                   <div
                                     class="ant-space-item"
                                     style="margin-right: 8px;"
                                   >
                                     <button
-                                      class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                      class="ant-btn css-dev-only-do-not-override-txh9fw ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
                                       type="button"
                                     >
                                       <span>
@@ -1295,7 +1295,7 @@ exports[`test user management should open add user model when click add button 1
                                     class="ant-space-item"
                                   >
                                     <button
-                                      class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm ant-btn-dangerous actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                      class="ant-btn css-dev-only-do-not-override-txh9fw ant-btn-default ant-btn-sm ant-btn-dangerous actiontech-table-actions-button basic-button-wrapper css-geipcv"
                                       type="button"
                                     >
                                       <span>
@@ -1313,7 +1313,7 @@ exports[`test user management should open add user model when click add button 1
                   </div>
                 </div>
                 <ul
-                  class="ant-pagination ant-table-pagination ant-table-pagination-right actiontech-table-pagination actiontech-table-pagination-fixed css-dev-only-do-not-override-bj9uhl"
+                  class="ant-pagination ant-table-pagination ant-table-pagination-right actiontech-table-pagination actiontech-table-pagination-fixed css-dev-only-do-not-override-txh9fw"
                 >
                   <li
                     class="ant-pagination-total-text"
@@ -1402,7 +1402,7 @@ exports[`test user management should open add user model when click add button 1
                   >
                     <div
                       aria-label="页码"
-                      class="ant-select ant-pagination-options-size-changer css-dev-only-do-not-override-bj9uhl ant-select-single ant-select-show-arrow ant-select-show-search"
+                      class="ant-select ant-pagination-options-size-changer css-dev-only-do-not-override-txh9fw ant-select-single ant-select-show-arrow ant-select-show-search"
                     >
                       <div
                         class="ant-select-selector"
@@ -1495,7 +1495,7 @@ exports[`test user management should render normal user list table 1`] = `
               class="ant-space-item"
             >
               <button
-                class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default ant-btn-sm ant-btn-icon-only basic-button-wrapper css-geipcv"
+                class="ant-btn css-dev-only-do-not-override-txh9fw ant-btn-default ant-btn-sm ant-btn-icon-only basic-button-wrapper css-geipcv"
                 type="button"
               >
                 <span
@@ -1521,7 +1521,7 @@ exports[`test user management should render normal user list table 1`] = `
           class="extra"
         >
           <button
-            class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary basic-button-wrapper css-geipcv"
+            class="ant-btn css-dev-only-do-not-override-txh9fw ant-btn-primary basic-button-wrapper css-geipcv"
             type="button"
           >
             <span
@@ -1611,10 +1611,10 @@ exports[`test user management should render normal user list table 1`] = `
           class="lazy-load-wrapper segmented-item-content lazy-load-wrapper-show css-952l0m"
         >
           <div
-            class="ant-table-wrapper actiontech-table-namespace css-fxd6ka css-dev-only-do-not-override-bj9uhl"
+            class="ant-table-wrapper actiontech-table-namespace css-fxd6ka css-dev-only-do-not-override-txh9fw"
           >
             <div
-              class="ant-spin-nested-loading css-dev-only-do-not-override-bj9uhl"
+              class="ant-spin-nested-loading css-dev-only-do-not-override-txh9fw"
             >
               <div
                 class="ant-spin-container"
@@ -1722,7 +1722,7 @@ exports[`test user management should render normal user list table 1`] = `
                                 class="css-new95e"
                               >
                                 <button
-                                  class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                  class="ant-btn css-dev-only-do-not-override-txh9fw ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
                                   type="button"
                                 >
                                   <span>
@@ -1754,14 +1754,14 @@ exports[`test user management should render normal user list table 1`] = `
                                 class="css-new95e"
                               >
                                 <div
-                                  class="ant-space css-dev-only-do-not-override-bj9uhl ant-space-horizontal ant-space-align-center"
+                                  class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
                                 >
                                   <div
                                     class="ant-space-item"
                                     style="margin-right: 8px;"
                                   >
                                     <button
-                                      class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                      class="ant-btn css-dev-only-do-not-override-txh9fw ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
                                       type="button"
                                     >
                                       <span>
@@ -1773,7 +1773,7 @@ exports[`test user management should render normal user list table 1`] = `
                                     class="ant-space-item"
                                   >
                                     <button
-                                      class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm ant-btn-dangerous actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                      class="ant-btn css-dev-only-do-not-override-txh9fw ant-btn-default ant-btn-sm ant-btn-dangerous actiontech-table-actions-button basic-button-wrapper css-geipcv"
                                       type="button"
                                     >
                                       <span>
@@ -1791,7 +1791,7 @@ exports[`test user management should render normal user list table 1`] = `
                   </div>
                 </div>
                 <ul
-                  class="ant-pagination ant-table-pagination ant-table-pagination-right actiontech-table-pagination actiontech-table-pagination-fixed css-dev-only-do-not-override-bj9uhl"
+                  class="ant-pagination ant-table-pagination ant-table-pagination-right actiontech-table-pagination actiontech-table-pagination-fixed css-dev-only-do-not-override-txh9fw"
                 >
                   <li
                     class="ant-pagination-total-text"
@@ -1880,7 +1880,7 @@ exports[`test user management should render normal user list table 1`] = `
                   >
                     <div
                       aria-label="页码"
-                      class="ant-select ant-pagination-options-size-changer css-dev-only-do-not-override-bj9uhl ant-select-single ant-select-show-arrow ant-select-show-search"
+                      class="ant-select ant-pagination-options-size-changer css-dev-only-do-not-override-txh9fw ant-select-single ant-select-show-arrow ant-select-show-search"
                     >
                       <div
                         class="ant-select-selector"
@@ -1973,7 +1973,7 @@ exports[`test user management should render user list table for default 1`] = `
               class="ant-space-item"
             >
               <button
-                class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default ant-btn-sm ant-btn-icon-only basic-button-wrapper css-geipcv"
+                class="ant-btn css-dev-only-do-not-override-txh9fw ant-btn-default ant-btn-sm ant-btn-icon-only basic-button-wrapper css-geipcv"
                 type="button"
               >
                 <span
@@ -1999,7 +1999,7 @@ exports[`test user management should render user list table for default 1`] = `
           class="extra"
         >
           <button
-            class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary basic-button-wrapper css-geipcv"
+            class="ant-btn css-dev-only-do-not-override-txh9fw ant-btn-primary basic-button-wrapper css-geipcv"
             type="button"
           >
             <span
@@ -2089,10 +2089,10 @@ exports[`test user management should render user list table for default 1`] = `
           class="lazy-load-wrapper segmented-item-content lazy-load-wrapper-show css-952l0m"
         >
           <div
-            class="ant-table-wrapper actiontech-table-namespace css-fxd6ka css-dev-only-do-not-override-bj9uhl"
+            class="ant-table-wrapper actiontech-table-namespace css-fxd6ka css-dev-only-do-not-override-txh9fw"
           >
             <div
-              class="ant-spin-nested-loading css-dev-only-do-not-override-bj9uhl"
+              class="ant-spin-nested-loading css-dev-only-do-not-override-txh9fw"
             >
               <div
                 class="ant-spin-container"
@@ -2200,7 +2200,7 @@ exports[`test user management should render user list table for default 1`] = `
                                 class="css-new95e"
                               >
                                 <button
-                                  class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                  class="ant-btn css-dev-only-do-not-override-txh9fw ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
                                   type="button"
                                 >
                                   <span>
@@ -2232,14 +2232,14 @@ exports[`test user management should render user list table for default 1`] = `
                                 class="css-new95e"
                               >
                                 <div
-                                  class="ant-space css-dev-only-do-not-override-bj9uhl ant-space-horizontal ant-space-align-center"
+                                  class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
                                 >
                                   <div
                                     class="ant-space-item"
                                     style="margin-right: 8px;"
                                   >
                                     <button
-                                      class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                      class="ant-btn css-dev-only-do-not-override-txh9fw ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
                                       type="button"
                                     >
                                       <span>
@@ -2251,7 +2251,7 @@ exports[`test user management should render user list table for default 1`] = `
                                     class="ant-space-item"
                                   >
                                     <button
-                                      class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm ant-btn-dangerous actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                      class="ant-btn css-dev-only-do-not-override-txh9fw ant-btn-default ant-btn-sm ant-btn-dangerous actiontech-table-actions-button basic-button-wrapper css-geipcv"
                                       type="button"
                                     >
                                       <span>
@@ -2269,7 +2269,7 @@ exports[`test user management should render user list table for default 1`] = `
                   </div>
                 </div>
                 <ul
-                  class="ant-pagination ant-table-pagination ant-table-pagination-right actiontech-table-pagination actiontech-table-pagination-fixed css-dev-only-do-not-override-bj9uhl"
+                  class="ant-pagination ant-table-pagination ant-table-pagination-right actiontech-table-pagination actiontech-table-pagination-fixed css-dev-only-do-not-override-txh9fw"
                 >
                   <li
                     class="ant-pagination-total-text"
@@ -2358,7 +2358,7 @@ exports[`test user management should render user list table for default 1`] = `
                   >
                     <div
                       aria-label="页码"
-                      class="ant-select ant-pagination-options-size-changer css-dev-only-do-not-override-bj9uhl ant-select-single ant-select-show-arrow ant-select-show-search"
+                      class="ant-select ant-pagination-options-size-changer css-dev-only-do-not-override-txh9fw ant-select-single ant-select-show-arrow ant-select-show-search"
                     >
                       <div
                         class="ant-select-selector"
@@ -2451,7 +2451,7 @@ exports[`test user management should reset select permission id 1`] = `
               class="ant-space-item"
             >
               <button
-                class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default ant-btn-sm ant-btn-icon-only basic-button-wrapper css-geipcv"
+                class="ant-btn css-dev-only-do-not-override-txh9fw ant-btn-default ant-btn-sm ant-btn-icon-only basic-button-wrapper css-geipcv"
                 type="button"
               >
                 <span
@@ -2477,7 +2477,7 @@ exports[`test user management should reset select permission id 1`] = `
           class="extra"
         >
           <button
-            class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary basic-button-wrapper css-geipcv"
+            class="ant-btn css-dev-only-do-not-override-txh9fw ant-btn-primary basic-button-wrapper css-geipcv"
             type="button"
           >
             <span
@@ -2567,10 +2567,10 @@ exports[`test user management should reset select permission id 1`] = `
           class="lazy-load-wrapper segmented-item-content lazy-load-wrapper-show css-952l0m"
         >
           <div
-            class="ant-table-wrapper actiontech-table-namespace css-fxd6ka css-dev-only-do-not-override-bj9uhl"
+            class="ant-table-wrapper actiontech-table-namespace css-fxd6ka css-dev-only-do-not-override-txh9fw"
           >
             <div
-              class="ant-spin-nested-loading css-dev-only-do-not-override-bj9uhl"
+              class="ant-spin-nested-loading css-dev-only-do-not-override-txh9fw"
             >
               <div
                 class="ant-spin-container"
@@ -2678,7 +2678,7 @@ exports[`test user management should reset select permission id 1`] = `
                                 class="css-new95e"
                               >
                                 <button
-                                  class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                  class="ant-btn css-dev-only-do-not-override-txh9fw ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
                                   type="button"
                                 >
                                   <span>
@@ -2710,14 +2710,14 @@ exports[`test user management should reset select permission id 1`] = `
                                 class="css-new95e"
                               >
                                 <div
-                                  class="ant-space css-dev-only-do-not-override-bj9uhl ant-space-horizontal ant-space-align-center"
+                                  class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
                                 >
                                   <div
                                     class="ant-space-item"
                                     style="margin-right: 8px;"
                                   >
                                     <button
-                                      class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                      class="ant-btn css-dev-only-do-not-override-txh9fw ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
                                       type="button"
                                     >
                                       <span>
@@ -2729,7 +2729,7 @@ exports[`test user management should reset select permission id 1`] = `
                                     class="ant-space-item"
                                   >
                                     <button
-                                      class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm ant-btn-dangerous actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                      class="ant-btn css-dev-only-do-not-override-txh9fw ant-btn-default ant-btn-sm ant-btn-dangerous actiontech-table-actions-button basic-button-wrapper css-geipcv"
                                       type="button"
                                     >
                                       <span>
@@ -2747,7 +2747,7 @@ exports[`test user management should reset select permission id 1`] = `
                   </div>
                 </div>
                 <ul
-                  class="ant-pagination ant-table-pagination ant-table-pagination-right actiontech-table-pagination actiontech-table-pagination-fixed css-dev-only-do-not-override-bj9uhl"
+                  class="ant-pagination ant-table-pagination ant-table-pagination-right actiontech-table-pagination actiontech-table-pagination-fixed css-dev-only-do-not-override-txh9fw"
                 >
                   <li
                     class="ant-pagination-total-text"
@@ -2836,7 +2836,7 @@ exports[`test user management should reset select permission id 1`] = `
                   >
                     <div
                       aria-label="页码"
-                      class="ant-select ant-pagination-options-size-changer css-dev-only-do-not-override-bj9uhl ant-select-single ant-select-show-arrow ant-select-show-search"
+                      class="ant-select ant-pagination-options-size-changer css-dev-only-do-not-override-txh9fw ant-select-single ant-select-show-arrow ant-select-show-search"
                     >
                       <div
                         class="ant-select-selector"
@@ -2929,7 +2929,7 @@ exports[`test user management should send request when click refresh button 1`] 
               class="ant-space-item"
             >
               <button
-                class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default ant-btn-sm ant-btn-icon-only basic-button-wrapper css-geipcv"
+                class="ant-btn css-dev-only-do-not-override-txh9fw ant-btn-default ant-btn-sm ant-btn-icon-only basic-button-wrapper css-geipcv"
                 type="button"
               >
                 <span
@@ -2955,7 +2955,7 @@ exports[`test user management should send request when click refresh button 1`] 
           class="extra"
         >
           <button
-            class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary basic-button-wrapper css-geipcv"
+            class="ant-btn css-dev-only-do-not-override-txh9fw ant-btn-primary basic-button-wrapper css-geipcv"
             type="button"
           >
             <span
@@ -3045,16 +3045,16 @@ exports[`test user management should send request when click refresh button 1`] 
           class="lazy-load-wrapper segmented-item-content lazy-load-wrapper-show css-952l0m"
         >
           <div
-            class="ant-table-wrapper actiontech-table-namespace css-fxd6ka css-dev-only-do-not-override-bj9uhl"
+            class="ant-table-wrapper actiontech-table-namespace css-fxd6ka css-dev-only-do-not-override-txh9fw"
           >
             <div
-              class="ant-spin-nested-loading css-dev-only-do-not-override-bj9uhl"
+              class="ant-spin-nested-loading css-dev-only-do-not-override-txh9fw"
             >
               <div>
                 <div
                   aria-busy="true"
                   aria-live="polite"
-                  class="ant-spin ant-spin-spinning css-dev-only-do-not-override-bj9uhl"
+                  class="ant-spin ant-spin-spinning css-dev-only-do-not-override-txh9fw"
                 >
                   <span
                     class="ant-spin-dot ant-spin-dot-spin"

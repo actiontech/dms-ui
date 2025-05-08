@@ -18,6 +18,10 @@ import { BlacklistResV1TypeEnum } from '@actiontech/shared/lib/api/sqle/service/
 import { mockUseDbServiceDriver } from '@actiontech/shared/lib/testUtil/mockHook/mockUseDbServiceDriver';
 import instance from '../../../../testUtils/mockApi/instance';
 import { instanceTipsMockData } from '../../../../testUtils/mockApi/instance/data';
+import {
+  UtilsConsoleErrorStringsEnum,
+  ignoreConsoleErrors
+} from '@actiontech/shared/lib/testUtil/common';
 
 jest.mock('react-redux', () => {
   return {
@@ -44,6 +48,8 @@ describe('slqe/SqlManagementException/UpdateSqlManagementException', () => {
     jest.useRealTimers();
     cleanup();
   });
+
+  ignoreConsoleErrors([UtilsConsoleErrorStringsEnum.UNKNOWN_EVENT_HANDLER]);
 
   const customRender = (selectRow?: IBlacklistResV1) => {
     return superRender(<UpdateSqlManagementException />, undefined, {

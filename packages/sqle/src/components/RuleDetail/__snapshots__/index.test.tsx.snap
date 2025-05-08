@@ -13,7 +13,7 @@ exports[`sqle/components/RuleDetail render error snap 1`] = `
           class="title"
         >
           <button
-            class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default basic-button-wrapper css-geipcv"
+            class="ant-btn ant-btn-default basic-button-wrapper css-geipcv"
             type="button"
           >
             <span
@@ -41,7 +41,7 @@ exports[`sqle/components/RuleDetail render error snap 1`] = `
         />
       </div>
       <div
-        class="ant-spin-nested-loading css-dev-only-do-not-override-txh9fw"
+        class="ant-spin-nested-loading"
       >
         <div
           class="ant-spin-container"
@@ -71,7 +71,7 @@ exports[`sqle/components/RuleDetail render error snap 1`] = `
                     class="custom-tag-item"
                   >
                     <div
-                      class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center project-name-space css-hww1k7"
+                      class="ant-space ant-space-horizontal ant-space-align-center project-name-space css-hww1k7"
                     >
                       <div
                         class="ant-space-item"
@@ -105,7 +105,7 @@ exports[`sqle/components/RuleDetail render error snap 1`] = `
                     class="custom-tag-item"
                   >
                     <div
-                      class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center database-type-space css-hww1k7"
+                      class="ant-space ant-space-horizontal ant-space-align-center database-type-space css-hww1k7"
                     >
                       <div
                         class="ant-space-item"
@@ -137,7 +137,7 @@ exports[`sqle/components/RuleDetail render error snap 1`] = `
                   </div>
                 </section>
                 <div
-                  class="ant-segmented basic-segmented-wrapper css-15kylv5 css-dev-only-do-not-override-txh9fw"
+                  class="ant-segmented basic-segmented-wrapper css-15kylv5"
                 >
                   <div
                     class="ant-segmented-group"
@@ -152,9 +152,26 @@ exports[`sqle/components/RuleDetail render error snap 1`] = `
                       />
                       <div
                         class="ant-segmented-item-label"
-                        title="已启用"
                       >
-                        已启用
+                        <div
+                          class="ant-space ant-space-horizontal ant-space-align-center"
+                        >
+                          <div
+                            class="ant-space-item"
+                            style="margin-right: 8px;"
+                          >
+                            <span>
+                              已启用
+                            </span>
+                          </div>
+                          <div
+                            class="ant-space-item"
+                          >
+                            <span>
+                              0
+                            </span>
+                          </div>
+                        </div>
                       </div>
                     </label>
                     <label
@@ -166,9 +183,26 @@ exports[`sqle/components/RuleDetail render error snap 1`] = `
                       />
                       <div
                         class="ant-segmented-item-label"
-                        title="已禁用"
                       >
-                        已禁用
+                        <div
+                          class="ant-space ant-space-horizontal ant-space-align-center"
+                        >
+                          <div
+                            class="ant-space-item"
+                            style="margin-right: 8px;"
+                          >
+                            <span>
+                              已禁用
+                            </span>
+                          </div>
+                          <div
+                            class="ant-space-item"
+                          >
+                            <span>
+                              2
+                            </span>
+                          </div>
+                        </div>
                       </div>
                     </label>
                   </div>
@@ -177,27 +211,27 @@ exports[`sqle/components/RuleDetail render error snap 1`] = `
             </section>
           </section>
           <div
-            class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center full-width-element css-de5ds5"
+            class="ant-space ant-space-horizontal ant-space-align-center full-width-element flex-space-between css-tvjydu"
           >
             <div
               class="ant-space-item"
             >
               <form
-                class="ant-form ant-form-horizontal css-dev-only-do-not-override-txh9fw"
+                class="ant-form ant-form-horizontal"
               >
                 <div
-                  class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+                  class="ant-space ant-space-horizontal ant-space-align-center"
                 >
                   <div
                     class="ant-space-item"
                     style="margin-right: 12px;"
                   >
                     <span
-                      class="ant-input-affix-wrapper basic-input-wrapper custom-search-input css-1iw1ud7 ant-input-affix-wrapper-sm css-dev-only-do-not-override-ywkr0o"
+                      class="ant-input-affix-wrapper basic-input-wrapper custom-search-input css-1iw1ud7 ant-input-affix-wrapper-sm"
                       style="width: 210px;"
                     >
                       <input
-                        class="ant-input ant-input-sm css-dev-only-do-not-override-ywkr0o"
+                        class="ant-input ant-input-sm"
                         id="fuzzy_keyword"
                         placeholder="请输入规则关键词搜索"
                         type="text"
@@ -242,7 +276,7 @@ exports[`sqle/components/RuleDetail render error snap 1`] = `
                     style="margin-right: 12px;"
                   >
                     <div
-                      class="ant-select ant-select-sm basic-select-wrapper custom-select-namespace css-pti5z8 css-dev-only-do-not-override-v9sov3 ant-select-single ant-select-allow-clear ant-select-show-arrow"
+                      class="ant-select ant-select-sm basic-select-wrapper custom-select-namespace css-pti5z8 ant-select-single ant-select-allow-clear ant-select-show-arrow"
                     >
                       <div
                         class="ant-select-selector"
@@ -300,7 +334,7 @@ exports[`sqle/components/RuleDetail render error snap 1`] = `
                     style="margin-right: 12px;"
                   >
                     <div
-                      class="ant-select ant-select-sm ant-select-borderless basic-select-wrapper custom-select-namespace css-pti5z8 css-dev-only-do-not-override-v9sov3 ant-select-single ant-select-allow-clear ant-select-show-arrow"
+                      class="ant-select ant-select-sm ant-select-borderless basic-select-wrapper custom-select-namespace css-pti5z8 ant-select-single ant-select-allow-clear ant-select-show-arrow"
                     >
                       <div
                         class="ant-select-selector"
@@ -358,7 +392,7 @@ exports[`sqle/components/RuleDetail render error snap 1`] = `
                     style="margin-right: 12px;"
                   >
                     <div
-                      class="ant-select ant-select-sm ant-select-borderless basic-select-wrapper custom-select-namespace css-pti5z8 css-dev-only-do-not-override-v9sov3 ant-select-single ant-select-allow-clear ant-select-show-arrow"
+                      class="ant-select ant-select-sm ant-select-borderless basic-select-wrapper custom-select-namespace css-pti5z8 ant-select-single ant-select-allow-clear ant-select-show-arrow"
                     >
                       <div
                         class="ant-select-selector"
@@ -416,7 +450,7 @@ exports[`sqle/components/RuleDetail render error snap 1`] = `
                     style="margin-right: 12px;"
                   >
                     <div
-                      class="ant-select ant-select-sm ant-select-borderless basic-select-wrapper custom-select-namespace css-pti5z8 css-dev-only-do-not-override-v9sov3 ant-select-single ant-select-allow-clear ant-select-show-arrow"
+                      class="ant-select ant-select-sm ant-select-borderless basic-select-wrapper custom-select-namespace css-pti5z8 ant-select-single ant-select-allow-clear ant-select-show-arrow"
                     >
                       <div
                         class="ant-select-selector"
@@ -473,14 +507,14 @@ exports[`sqle/components/RuleDetail render error snap 1`] = `
                     class="ant-space-item"
                   >
                     <div
-                      class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center css-1nt49ug"
+                      class="ant-space ant-space-horizontal ant-space-align-center css-1nt49ug"
                     >
                       <div
                         class="ant-space-item"
                         style="margin-right: 4px;"
                       >
                         <div
-                          class="ant-select ant-select-sm ant-select-borderless basic-select-wrapper custom-select-namespace css-pti5z8 css-dev-only-do-not-override-v9sov3 ant-select-single ant-select-allow-clear ant-select-show-arrow"
+                          class="ant-select ant-select-sm ant-select-borderless basic-select-wrapper custom-select-namespace css-pti5z8 ant-select-single ant-select-allow-clear ant-select-show-arrow"
                         >
                           <div
                             class="ant-select-selector"
@@ -537,7 +571,7 @@ exports[`sqle/components/RuleDetail render error snap 1`] = `
                         class="ant-space-item"
                       >
                         <div
-                          class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
+                          class="ant-space ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
                         >
                           <div
                             class="ant-space-item"
@@ -569,7 +603,7 @@ exports[`sqle/components/RuleDetail render error snap 1`] = `
               class="css-1br6ibb"
             >
               <div
-                class="css-dev-only-do-not-override-txh9fw ant-empty is-icon-tips css-19kysfv"
+                class="ant-empty is-icon-tips css-19kysfv"
               >
                 <div
                   class="ant-empty-image"
@@ -645,7 +679,7 @@ exports[`sqle/components/RuleDetail render project rule template when projectNam
           class="title"
         >
           <button
-            class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default basic-button-wrapper css-geipcv"
+            class="ant-btn ant-btn-default basic-button-wrapper css-geipcv"
             type="button"
           >
             <span
@@ -673,13 +707,13 @@ exports[`sqle/components/RuleDetail render project rule template when projectNam
         />
       </div>
       <div
-        class="ant-spin-nested-loading css-dev-only-do-not-override-txh9fw"
+        class="ant-spin-nested-loading"
       >
         <div>
           <div
             aria-busy="true"
             aria-live="polite"
-            class="ant-spin ant-spin-spinning css-dev-only-do-not-override-txh9fw"
+            class="ant-spin ant-spin-spinning"
           >
             <span
               class="ant-spin-dot ant-spin-dot-spin"
@@ -727,7 +761,7 @@ exports[`sqle/components/RuleDetail render project rule template when projectNam
                     class="custom-tag-item"
                   >
                     <div
-                      class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center project-name-space css-hww1k7"
+                      class="ant-space ant-space-horizontal ant-space-align-center project-name-space css-hww1k7"
                     >
                       <div
                         class="ant-space-item"
@@ -761,7 +795,7 @@ exports[`sqle/components/RuleDetail render project rule template when projectNam
                     class="custom-tag-item"
                   >
                     <div
-                      class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center database-type-space css-hww1k7"
+                      class="ant-space ant-space-horizontal ant-space-align-center database-type-space css-hww1k7"
                     >
                       <div
                         class="ant-space-item"
@@ -793,7 +827,7 @@ exports[`sqle/components/RuleDetail render project rule template when projectNam
                   </div>
                 </section>
                 <div
-                  class="ant-segmented basic-segmented-wrapper css-15kylv5 css-dev-only-do-not-override-txh9fw"
+                  class="ant-segmented basic-segmented-wrapper css-15kylv5"
                 >
                   <div
                     class="ant-segmented-group"
@@ -808,9 +842,26 @@ exports[`sqle/components/RuleDetail render project rule template when projectNam
                       />
                       <div
                         class="ant-segmented-item-label"
-                        title="已启用"
                       >
-                        已启用
+                        <div
+                          class="ant-space ant-space-horizontal ant-space-align-center"
+                        >
+                          <div
+                            class="ant-space-item"
+                            style="margin-right: 8px;"
+                          >
+                            <span>
+                              已启用
+                            </span>
+                          </div>
+                          <div
+                            class="ant-space-item"
+                          >
+                            <span>
+                              0
+                            </span>
+                          </div>
+                        </div>
                       </div>
                     </label>
                     <label
@@ -822,9 +873,26 @@ exports[`sqle/components/RuleDetail render project rule template when projectNam
                       />
                       <div
                         class="ant-segmented-item-label"
-                        title="已禁用"
                       >
-                        已禁用
+                        <div
+                          class="ant-space ant-space-horizontal ant-space-align-center"
+                        >
+                          <div
+                            class="ant-space-item"
+                            style="margin-right: 8px;"
+                          >
+                            <span>
+                              已禁用
+                            </span>
+                          </div>
+                          <div
+                            class="ant-space-item"
+                          >
+                            <span>
+                              0
+                            </span>
+                          </div>
+                        </div>
                       </div>
                     </label>
                   </div>
@@ -833,27 +901,27 @@ exports[`sqle/components/RuleDetail render project rule template when projectNam
             </section>
           </section>
           <div
-            class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center full-width-element css-de5ds5"
+            class="ant-space ant-space-horizontal ant-space-align-center full-width-element flex-space-between css-tvjydu"
           >
             <div
               class="ant-space-item"
             >
               <form
-                class="ant-form ant-form-horizontal css-dev-only-do-not-override-txh9fw"
+                class="ant-form ant-form-horizontal"
               >
                 <div
-                  class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+                  class="ant-space ant-space-horizontal ant-space-align-center"
                 >
                   <div
                     class="ant-space-item"
                     style="margin-right: 12px;"
                   >
                     <span
-                      class="ant-input-affix-wrapper basic-input-wrapper custom-search-input css-1iw1ud7 ant-input-affix-wrapper-sm css-dev-only-do-not-override-ywkr0o"
+                      class="ant-input-affix-wrapper basic-input-wrapper custom-search-input css-1iw1ud7 ant-input-affix-wrapper-sm"
                       style="width: 210px;"
                     >
                       <input
-                        class="ant-input ant-input-sm css-dev-only-do-not-override-ywkr0o"
+                        class="ant-input ant-input-sm"
                         id="fuzzy_keyword"
                         placeholder="请输入规则关键词搜索"
                         type="text"
@@ -898,7 +966,7 @@ exports[`sqle/components/RuleDetail render project rule template when projectNam
                     style="margin-right: 12px;"
                   >
                     <div
-                      class="ant-select ant-select-sm basic-select-wrapper custom-select-namespace css-pti5z8 css-dev-only-do-not-override-v9sov3 ant-select-single ant-select-allow-clear ant-select-show-arrow ant-select-loading"
+                      class="ant-select ant-select-sm basic-select-wrapper custom-select-namespace css-pti5z8 ant-select-single ant-select-allow-clear ant-select-show-arrow ant-select-loading"
                     >
                       <div
                         class="ant-select-selector"
@@ -956,7 +1024,7 @@ exports[`sqle/components/RuleDetail render project rule template when projectNam
                     style="margin-right: 12px;"
                   >
                     <div
-                      class="ant-select ant-select-sm ant-select-borderless basic-select-wrapper custom-select-namespace css-pti5z8 css-dev-only-do-not-override-v9sov3 ant-select-single ant-select-allow-clear ant-select-show-arrow ant-select-loading"
+                      class="ant-select ant-select-sm ant-select-borderless basic-select-wrapper custom-select-namespace css-pti5z8 ant-select-single ant-select-allow-clear ant-select-show-arrow ant-select-loading"
                     >
                       <div
                         class="ant-select-selector"
@@ -1014,7 +1082,7 @@ exports[`sqle/components/RuleDetail render project rule template when projectNam
                     style="margin-right: 12px;"
                   >
                     <div
-                      class="ant-select ant-select-sm ant-select-borderless basic-select-wrapper custom-select-namespace css-pti5z8 css-dev-only-do-not-override-v9sov3 ant-select-single ant-select-allow-clear ant-select-show-arrow ant-select-loading"
+                      class="ant-select ant-select-sm ant-select-borderless basic-select-wrapper custom-select-namespace css-pti5z8 ant-select-single ant-select-allow-clear ant-select-show-arrow ant-select-loading"
                     >
                       <div
                         class="ant-select-selector"
@@ -1072,7 +1140,7 @@ exports[`sqle/components/RuleDetail render project rule template when projectNam
                     style="margin-right: 12px;"
                   >
                     <div
-                      class="ant-select ant-select-sm ant-select-borderless basic-select-wrapper custom-select-namespace css-pti5z8 css-dev-only-do-not-override-v9sov3 ant-select-single ant-select-allow-clear ant-select-show-arrow ant-select-loading"
+                      class="ant-select ant-select-sm ant-select-borderless basic-select-wrapper custom-select-namespace css-pti5z8 ant-select-single ant-select-allow-clear ant-select-show-arrow ant-select-loading"
                     >
                       <div
                         class="ant-select-selector"
@@ -1129,14 +1197,14 @@ exports[`sqle/components/RuleDetail render project rule template when projectNam
                     class="ant-space-item"
                   >
                     <div
-                      class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center css-1nt49ug"
+                      class="ant-space ant-space-horizontal ant-space-align-center css-1nt49ug"
                     >
                       <div
                         class="ant-space-item"
                         style="margin-right: 4px;"
                       >
                         <div
-                          class="ant-select ant-select-sm ant-select-borderless basic-select-wrapper custom-select-namespace css-pti5z8 css-dev-only-do-not-override-v9sov3 ant-select-single ant-select-allow-clear ant-select-show-arrow ant-select-loading"
+                          class="ant-select ant-select-sm ant-select-borderless basic-select-wrapper custom-select-namespace css-pti5z8 ant-select-single ant-select-allow-clear ant-select-show-arrow ant-select-loading"
                         >
                           <div
                             class="ant-select-selector"
@@ -1193,7 +1261,7 @@ exports[`sqle/components/RuleDetail render project rule template when projectNam
                         class="ant-space-item"
                       >
                         <div
-                          class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
+                          class="ant-space ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
                         >
                           <div
                             class="ant-space-item"
@@ -1225,7 +1293,7 @@ exports[`sqle/components/RuleDetail render project rule template when projectNam
               class="css-1br6ibb"
             >
               <div
-                class="css-dev-only-do-not-override-txh9fw ant-empty is-icon-tips css-19kysfv"
+                class="ant-empty is-icon-tips css-19kysfv"
               >
                 <div
                   class="ant-empty-image"
@@ -1301,7 +1369,7 @@ exports[`sqle/components/RuleDetail render project rule template when projectNam
           class="title"
         >
           <button
-            class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default basic-button-wrapper css-geipcv"
+            class="ant-btn ant-btn-default basic-button-wrapper css-geipcv"
             type="button"
           >
             <span
@@ -1329,7 +1397,7 @@ exports[`sqle/components/RuleDetail render project rule template when projectNam
         />
       </div>
       <div
-        class="ant-spin-nested-loading css-dev-only-do-not-override-txh9fw"
+        class="ant-spin-nested-loading"
       >
         <div
           class="ant-spin-container"
@@ -1359,7 +1427,7 @@ exports[`sqle/components/RuleDetail render project rule template when projectNam
                     class="custom-tag-item"
                   >
                     <div
-                      class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center project-name-space css-hww1k7"
+                      class="ant-space ant-space-horizontal ant-space-align-center project-name-space css-hww1k7"
                     >
                       <div
                         class="ant-space-item"
@@ -1393,7 +1461,7 @@ exports[`sqle/components/RuleDetail render project rule template when projectNam
                     class="custom-tag-item"
                   >
                     <div
-                      class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center database-type-space css-hww1k7"
+                      class="ant-space ant-space-horizontal ant-space-align-center database-type-space css-hww1k7"
                     >
                       <div
                         class="ant-space-item"
@@ -1425,7 +1493,7 @@ exports[`sqle/components/RuleDetail render project rule template when projectNam
                   </div>
                 </section>
                 <div
-                  class="ant-segmented basic-segmented-wrapper css-15kylv5 css-dev-only-do-not-override-txh9fw"
+                  class="ant-segmented basic-segmented-wrapper css-15kylv5"
                 >
                   <div
                     class="ant-segmented-group"
@@ -1440,9 +1508,26 @@ exports[`sqle/components/RuleDetail render project rule template when projectNam
                       />
                       <div
                         class="ant-segmented-item-label"
-                        title="已启用"
                       >
-                        已启用
+                        <div
+                          class="ant-space ant-space-horizontal ant-space-align-center"
+                        >
+                          <div
+                            class="ant-space-item"
+                            style="margin-right: 8px;"
+                          >
+                            <span>
+                              已启用
+                            </span>
+                          </div>
+                          <div
+                            class="ant-space-item"
+                          >
+                            <span>
+                              1
+                            </span>
+                          </div>
+                        </div>
                       </div>
                     </label>
                     <label
@@ -1454,9 +1539,26 @@ exports[`sqle/components/RuleDetail render project rule template when projectNam
                       />
                       <div
                         class="ant-segmented-item-label"
-                        title="已禁用"
                       >
-                        已禁用
+                        <div
+                          class="ant-space ant-space-horizontal ant-space-align-center"
+                        >
+                          <div
+                            class="ant-space-item"
+                            style="margin-right: 8px;"
+                          >
+                            <span>
+                              已禁用
+                            </span>
+                          </div>
+                          <div
+                            class="ant-space-item"
+                          >
+                            <span>
+                              1
+                            </span>
+                          </div>
+                        </div>
                       </div>
                     </label>
                   </div>
@@ -1465,27 +1567,27 @@ exports[`sqle/components/RuleDetail render project rule template when projectNam
             </section>
           </section>
           <div
-            class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center full-width-element css-de5ds5"
+            class="ant-space ant-space-horizontal ant-space-align-center full-width-element flex-space-between css-tvjydu"
           >
             <div
               class="ant-space-item"
             >
               <form
-                class="ant-form ant-form-horizontal css-dev-only-do-not-override-txh9fw"
+                class="ant-form ant-form-horizontal"
               >
                 <div
-                  class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+                  class="ant-space ant-space-horizontal ant-space-align-center"
                 >
                   <div
                     class="ant-space-item"
                     style="margin-right: 12px;"
                   >
                     <span
-                      class="ant-input-affix-wrapper basic-input-wrapper custom-search-input css-1iw1ud7 ant-input-affix-wrapper-sm css-dev-only-do-not-override-ywkr0o"
+                      class="ant-input-affix-wrapper basic-input-wrapper custom-search-input css-1iw1ud7 ant-input-affix-wrapper-sm"
                       style="width: 210px;"
                     >
                       <input
-                        class="ant-input ant-input-sm css-dev-only-do-not-override-ywkr0o"
+                        class="ant-input ant-input-sm"
                         id="fuzzy_keyword"
                         placeholder="请输入规则关键词搜索"
                         type="text"
@@ -1530,7 +1632,7 @@ exports[`sqle/components/RuleDetail render project rule template when projectNam
                     style="margin-right: 12px;"
                   >
                     <div
-                      class="ant-select ant-select-sm basic-select-wrapper custom-select-namespace css-pti5z8 css-dev-only-do-not-override-v9sov3 ant-select-single ant-select-allow-clear ant-select-show-arrow"
+                      class="ant-select ant-select-sm basic-select-wrapper custom-select-namespace css-pti5z8 ant-select-single ant-select-allow-clear ant-select-show-arrow"
                     >
                       <div
                         class="ant-select-selector"
@@ -1588,7 +1690,7 @@ exports[`sqle/components/RuleDetail render project rule template when projectNam
                     style="margin-right: 12px;"
                   >
                     <div
-                      class="ant-select ant-select-sm ant-select-borderless basic-select-wrapper custom-select-namespace css-pti5z8 css-dev-only-do-not-override-v9sov3 ant-select-single ant-select-allow-clear ant-select-show-arrow"
+                      class="ant-select ant-select-sm ant-select-borderless basic-select-wrapper custom-select-namespace css-pti5z8 ant-select-single ant-select-allow-clear ant-select-show-arrow"
                     >
                       <div
                         class="ant-select-selector"
@@ -1646,7 +1748,7 @@ exports[`sqle/components/RuleDetail render project rule template when projectNam
                     style="margin-right: 12px;"
                   >
                     <div
-                      class="ant-select ant-select-sm ant-select-borderless basic-select-wrapper custom-select-namespace css-pti5z8 css-dev-only-do-not-override-v9sov3 ant-select-single ant-select-allow-clear ant-select-show-arrow"
+                      class="ant-select ant-select-sm ant-select-borderless basic-select-wrapper custom-select-namespace css-pti5z8 ant-select-single ant-select-allow-clear ant-select-show-arrow"
                     >
                       <div
                         class="ant-select-selector"
@@ -1704,7 +1806,7 @@ exports[`sqle/components/RuleDetail render project rule template when projectNam
                     style="margin-right: 12px;"
                   >
                     <div
-                      class="ant-select ant-select-sm ant-select-borderless basic-select-wrapper custom-select-namespace css-pti5z8 css-dev-only-do-not-override-v9sov3 ant-select-single ant-select-allow-clear ant-select-show-arrow"
+                      class="ant-select ant-select-sm ant-select-borderless basic-select-wrapper custom-select-namespace css-pti5z8 ant-select-single ant-select-allow-clear ant-select-show-arrow"
                     >
                       <div
                         class="ant-select-selector"
@@ -1761,14 +1863,14 @@ exports[`sqle/components/RuleDetail render project rule template when projectNam
                     class="ant-space-item"
                   >
                     <div
-                      class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center css-1nt49ug"
+                      class="ant-space ant-space-horizontal ant-space-align-center css-1nt49ug"
                     >
                       <div
                         class="ant-space-item"
                         style="margin-right: 4px;"
                       >
                         <div
-                          class="ant-select ant-select-sm ant-select-borderless basic-select-wrapper custom-select-namespace css-pti5z8 css-dev-only-do-not-override-v9sov3 ant-select-single ant-select-allow-clear ant-select-show-arrow"
+                          class="ant-select ant-select-sm ant-select-borderless basic-select-wrapper custom-select-namespace css-pti5z8 ant-select-single ant-select-allow-clear ant-select-show-arrow"
                         >
                           <div
                             class="ant-select-selector"
@@ -1825,7 +1927,7 @@ exports[`sqle/components/RuleDetail render project rule template when projectNam
                         class="ant-space-item"
                       >
                         <div
-                          class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
+                          class="ant-space ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
                         >
                           <div
                             class="ant-space-item"
@@ -1864,7 +1966,7 @@ exports[`sqle/components/RuleDetail render project rule template when projectNam
                   style="height: auto; overflow: auto;"
                 >
                   <div
-                    class=" css-11zqvuw"
+                    class="css-11zqvuw"
                     style="cursor: pointer;"
                   >
                     <div
@@ -1891,17 +1993,17 @@ exports[`sqle/components/RuleDetail render project rule template when projectNam
                       class="level-content"
                     >
                       <span
-                        class="ant-typography level-content-desc css-dev-only-do-not-override-txh9fw"
+                        class="ant-typography level-content-desc"
                       >
                         绑定的变量个数不建议超过阈值
                       </span>
                       <div
-                        class="ant-typography ant-typography-ellipsis ant-typography-single-line ant-typography-ellipsis-single-line level-content-annotation css-dev-only-do-not-override-txh9fw"
+                        class="ant-typography ant-typography-ellipsis ant-typography-single-line ant-typography-ellipsis-single-line level-content-annotation"
                       >
                         因为过度使用绑定变量会增加查询的复杂度，从而降低查询性能。过度使用绑定变量还会增加维护成本。默认阈值:100
                       </div>
                       <div
-                        class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center level-content-params"
+                        class="ant-space ant-space-horizontal ant-space-align-center level-content-params"
                         style="flex-wrap: wrap; margin-bottom: -8px;"
                       >
                         <div
@@ -1909,7 +2011,7 @@ exports[`sqle/components/RuleDetail render project rule template when projectNam
                           style="margin-right: 8px; padding-bottom: 8px;"
                         >
                           <div
-                            class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center rule-param-tag css-x5diec"
+                            class="ant-space ant-space-horizontal ant-space-align-center rule-param-tag css-x5diec"
                           >
                             <div
                               class="ant-space-item"
@@ -1930,7 +2032,7 @@ exports[`sqle/components/RuleDetail render project rule template when projectNam
                           style="margin-right: 8px; padding-bottom: 8px;"
                         >
                           <div
-                            class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center rule-category-audit_accuracy rule-category-tag-wrap css-x5diec"
+                            class="ant-space ant-space-horizontal ant-space-align-center rule-category-audit_accuracy rule-category-tag-wrap css-x5diec"
                           >
                             <div
                               class="ant-space-item"
@@ -1948,7 +2050,7 @@ exports[`sqle/components/RuleDetail render project rule template when projectNam
                           style="margin-right: 8px; padding-bottom: 8px;"
                         >
                           <div
-                            class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center rule-category-sql rule-category-tag-wrap css-x5diec"
+                            class="ant-space ant-space-horizontal ant-space-align-center rule-category-sql rule-category-tag-wrap css-x5diec"
                           >
                             <div
                               class="ant-space-item"
@@ -1966,7 +2068,7 @@ exports[`sqle/components/RuleDetail render project rule template when projectNam
                           style="margin-right: 8px; padding-bottom: 8px;"
                         >
                           <div
-                            class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center rule-category-operand rule-category-tag-wrap css-x5diec"
+                            class="ant-space ant-space-horizontal ant-space-align-center rule-category-operand rule-category-tag-wrap css-x5diec"
                           >
                             <div
                               class="ant-space-item"
@@ -1994,7 +2096,7 @@ exports[`sqle/components/RuleDetail render project rule template when projectNam
                           style="margin-right: 8px; padding-bottom: 8px;"
                         >
                           <div
-                            class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center rule-category-audit_purpose rule-category-tag-wrap css-x5diec"
+                            class="ant-space ant-space-horizontal ant-space-align-center rule-category-audit_purpose rule-category-tag-wrap css-x5diec"
                           >
                             <div
                               class="ant-space-item"
@@ -2012,7 +2114,7 @@ exports[`sqle/components/RuleDetail render project rule template when projectNam
                           style="margin-right: 8px; padding-bottom: 8px;"
                         >
                           <div
-                            class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center rule-category-performance_cost rule-category-tag-wrap css-x5diec"
+                            class="ant-space ant-space-horizontal ant-space-align-center rule-category-performance_cost rule-category-tag-wrap css-x5diec"
                           >
                             <div
                               class="ant-space-item"
@@ -2065,7 +2167,7 @@ exports[`sqle/components/RuleDetail render snap when route params is undefined 1
           class="title"
         >
           <button
-            class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default basic-button-wrapper css-geipcv"
+            class="ant-btn ant-btn-default basic-button-wrapper css-geipcv"
             type="button"
           >
             <span
@@ -2093,7 +2195,7 @@ exports[`sqle/components/RuleDetail render snap when route params is undefined 1
         />
       </div>
       <div
-        class="ant-spin-nested-loading css-dev-only-do-not-override-txh9fw"
+        class="ant-spin-nested-loading"
       >
         <div
           class="ant-spin-container"
@@ -2121,7 +2223,7 @@ exports[`sqle/components/RuleDetail render snap when route params is undefined 1
                     class="custom-tag-item"
                   >
                     <div
-                      class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center project-name-space css-hww1k7"
+                      class="ant-space ant-space-horizontal ant-space-align-center project-name-space css-hww1k7"
                     >
                       <div
                         class="ant-space-item"
@@ -2155,7 +2257,7 @@ exports[`sqle/components/RuleDetail render snap when route params is undefined 1
                     class="custom-tag-item"
                   >
                     <div
-                      class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center database-type-space css-hww1k7"
+                      class="ant-space ant-space-horizontal ant-space-align-center database-type-space css-hww1k7"
                     >
                       <div
                         class="ant-space-item"
@@ -2187,7 +2289,7 @@ exports[`sqle/components/RuleDetail render snap when route params is undefined 1
                   </div>
                 </section>
                 <div
-                  class="ant-segmented basic-segmented-wrapper css-15kylv5 css-dev-only-do-not-override-txh9fw"
+                  class="ant-segmented basic-segmented-wrapper css-15kylv5"
                 >
                   <div
                     class="ant-segmented-group"
@@ -2202,9 +2304,26 @@ exports[`sqle/components/RuleDetail render snap when route params is undefined 1
                       />
                       <div
                         class="ant-segmented-item-label"
-                        title="已启用"
                       >
-                        已启用
+                        <div
+                          class="ant-space ant-space-horizontal ant-space-align-center"
+                        >
+                          <div
+                            class="ant-space-item"
+                            style="margin-right: 8px;"
+                          >
+                            <span>
+                              已启用
+                            </span>
+                          </div>
+                          <div
+                            class="ant-space-item"
+                          >
+                            <span>
+                              0
+                            </span>
+                          </div>
+                        </div>
                       </div>
                     </label>
                     <label
@@ -2216,9 +2335,26 @@ exports[`sqle/components/RuleDetail render snap when route params is undefined 1
                       />
                       <div
                         class="ant-segmented-item-label"
-                        title="已禁用"
                       >
-                        已禁用
+                        <div
+                          class="ant-space ant-space-horizontal ant-space-align-center"
+                        >
+                          <div
+                            class="ant-space-item"
+                            style="margin-right: 8px;"
+                          >
+                            <span>
+                              已禁用
+                            </span>
+                          </div>
+                          <div
+                            class="ant-space-item"
+                          >
+                            <span>
+                              0
+                            </span>
+                          </div>
+                        </div>
                       </div>
                     </label>
                   </div>
@@ -2227,27 +2363,27 @@ exports[`sqle/components/RuleDetail render snap when route params is undefined 1
             </section>
           </section>
           <div
-            class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center full-width-element css-de5ds5"
+            class="ant-space ant-space-horizontal ant-space-align-center full-width-element flex-space-between css-tvjydu"
           >
             <div
               class="ant-space-item"
             >
               <form
-                class="ant-form ant-form-horizontal css-dev-only-do-not-override-txh9fw"
+                class="ant-form ant-form-horizontal"
               >
                 <div
-                  class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+                  class="ant-space ant-space-horizontal ant-space-align-center"
                 >
                   <div
                     class="ant-space-item"
                     style="margin-right: 12px;"
                   >
                     <span
-                      class="ant-input-affix-wrapper basic-input-wrapper custom-search-input css-1iw1ud7 ant-input-affix-wrapper-sm css-dev-only-do-not-override-ywkr0o"
+                      class="ant-input-affix-wrapper basic-input-wrapper custom-search-input css-1iw1ud7 ant-input-affix-wrapper-sm"
                       style="width: 210px;"
                     >
                       <input
-                        class="ant-input ant-input-sm css-dev-only-do-not-override-ywkr0o"
+                        class="ant-input ant-input-sm"
                         id="fuzzy_keyword"
                         placeholder="请输入规则关键词搜索"
                         type="text"
@@ -2292,7 +2428,7 @@ exports[`sqle/components/RuleDetail render snap when route params is undefined 1
                     style="margin-right: 12px;"
                   >
                     <div
-                      class="ant-select ant-select-sm basic-select-wrapper custom-select-namespace css-pti5z8 css-dev-only-do-not-override-v9sov3 ant-select-single ant-select-allow-clear ant-select-show-arrow"
+                      class="ant-select ant-select-sm basic-select-wrapper custom-select-namespace css-pti5z8 ant-select-single ant-select-allow-clear ant-select-show-arrow"
                     >
                       <div
                         class="ant-select-selector"
@@ -2350,7 +2486,7 @@ exports[`sqle/components/RuleDetail render snap when route params is undefined 1
                     style="margin-right: 12px;"
                   >
                     <div
-                      class="ant-select ant-select-sm ant-select-borderless basic-select-wrapper custom-select-namespace css-pti5z8 css-dev-only-do-not-override-v9sov3 ant-select-single ant-select-allow-clear ant-select-show-arrow"
+                      class="ant-select ant-select-sm ant-select-borderless basic-select-wrapper custom-select-namespace css-pti5z8 ant-select-single ant-select-allow-clear ant-select-show-arrow"
                     >
                       <div
                         class="ant-select-selector"
@@ -2408,7 +2544,7 @@ exports[`sqle/components/RuleDetail render snap when route params is undefined 1
                     style="margin-right: 12px;"
                   >
                     <div
-                      class="ant-select ant-select-sm ant-select-borderless basic-select-wrapper custom-select-namespace css-pti5z8 css-dev-only-do-not-override-v9sov3 ant-select-single ant-select-allow-clear ant-select-show-arrow"
+                      class="ant-select ant-select-sm ant-select-borderless basic-select-wrapper custom-select-namespace css-pti5z8 ant-select-single ant-select-allow-clear ant-select-show-arrow"
                     >
                       <div
                         class="ant-select-selector"
@@ -2466,7 +2602,7 @@ exports[`sqle/components/RuleDetail render snap when route params is undefined 1
                     style="margin-right: 12px;"
                   >
                     <div
-                      class="ant-select ant-select-sm ant-select-borderless basic-select-wrapper custom-select-namespace css-pti5z8 css-dev-only-do-not-override-v9sov3 ant-select-single ant-select-allow-clear ant-select-show-arrow"
+                      class="ant-select ant-select-sm ant-select-borderless basic-select-wrapper custom-select-namespace css-pti5z8 ant-select-single ant-select-allow-clear ant-select-show-arrow"
                     >
                       <div
                         class="ant-select-selector"
@@ -2523,14 +2659,14 @@ exports[`sqle/components/RuleDetail render snap when route params is undefined 1
                     class="ant-space-item"
                   >
                     <div
-                      class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center css-1nt49ug"
+                      class="ant-space ant-space-horizontal ant-space-align-center css-1nt49ug"
                     >
                       <div
                         class="ant-space-item"
                         style="margin-right: 4px;"
                       >
                         <div
-                          class="ant-select ant-select-sm ant-select-borderless basic-select-wrapper custom-select-namespace css-pti5z8 css-dev-only-do-not-override-v9sov3 ant-select-single ant-select-allow-clear ant-select-show-arrow"
+                          class="ant-select ant-select-sm ant-select-borderless basic-select-wrapper custom-select-namespace css-pti5z8 ant-select-single ant-select-allow-clear ant-select-show-arrow"
                         >
                           <div
                             class="ant-select-selector"
@@ -2587,7 +2723,7 @@ exports[`sqle/components/RuleDetail render snap when route params is undefined 1
                         class="ant-space-item"
                       >
                         <div
-                          class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
+                          class="ant-space ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
                         >
                           <div
                             class="ant-space-item"
@@ -2619,7 +2755,7 @@ exports[`sqle/components/RuleDetail render snap when route params is undefined 1
               class="css-1br6ibb"
             >
               <div
-                class="css-dev-only-do-not-override-txh9fw ant-empty is-icon-tips css-19kysfv"
+                class="ant-empty is-icon-tips css-19kysfv"
               >
                 <div
                   class="ant-empty-image"

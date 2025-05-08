@@ -13,7 +13,7 @@ exports[`base/DataSource/BatchImportDataSource render check api return csv file 
           href="/project/700300/db-services"
         >
           <button
-            class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default basic-button-wrapper css-geipcv"
+            class="ant-btn ant-btn-default basic-button-wrapper css-geipcv"
             type="button"
           >
             <span
@@ -41,7 +41,7 @@ exports[`base/DataSource/BatchImportDataSource render check api return csv file 
         class="extra"
       >
         <button
-          class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary basic-button-wrapper css-geipcv"
+          class="ant-btn ant-btn-primary basic-button-wrapper css-geipcv"
           disabled=""
           type="button"
         >
@@ -55,10 +55,10 @@ exports[`base/DataSource/BatchImportDataSource render check api return csv file 
       class="fix-header-padding css-bspaai"
     >
       <form
-        class="ant-form ant-form-horizontal css-dev-only-do-not-override-txh9fw hasTopHeader css-19jfn7e"
+        class="ant-form ant-form-horizontal hasTopHeader css-19jfn7e"
       >
         <h3
-          class="ant-typography css-p50odb css-dev-only-do-not-override-txh9fw"
+          class="ant-typography css-p50odb"
         >
           <span
             class="anticon title-icon"
@@ -89,13 +89,13 @@ exports[`base/DataSource/BatchImportDataSource render check api return csv file 
           </span>
         </h3>
         <div
-          class="ant-form-item has-required-style css-1jlm9cy css-dev-only-do-not-override-txh9fw ant-form-item-has-success"
+          class="ant-form-item has-required-style css-1jlm9cy ant-form-item-has-success"
         >
           <div
-            class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+            class="ant-row ant-form-item-row"
           >
             <div
-              class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left css-dev-only-do-not-override-txh9fw"
+              class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left"
             >
               <label
                 class="ant-form-item-required ant-form-item-no-colon"
@@ -106,7 +106,7 @@ exports[`base/DataSource/BatchImportDataSource render check api return csv file 
               </label>
             </div>
             <div
-              class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+              class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control"
             >
               <div
                 class="ant-form-item-control-input"
@@ -115,7 +115,7 @@ exports[`base/DataSource/BatchImportDataSource render check api return csv file 
                   class="ant-form-item-control-input-content"
                 >
                   <div
-                    class="ant-space css-dev-only-do-not-override-txh9fw ant-space-vertical"
+                    class="ant-space ant-space-vertical"
                   >
                     <div
                       class="ant-space-item"
@@ -125,7 +125,7 @@ exports[`base/DataSource/BatchImportDataSource render check api return csv file 
                         class="css-18zq7vp"
                       >
                         <span
-                          class="ant-upload-wrapper css-dev-only-do-not-override-txh9fw"
+                          class="ant-upload-wrapper"
                         >
                           <div
                             class="ant-upload ant-upload-select"
@@ -143,7 +143,7 @@ exports[`base/DataSource/BatchImportDataSource render check api return csv file 
                                 type="file"
                               />
                               <button
-                                class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default basic-button-wrapper css-geipcv"
+                                class="ant-btn ant-btn-default basic-button-wrapper css-geipcv"
                                 type="button"
                               >
                                 <span>
@@ -194,8 +194,8 @@ exports[`base/DataSource/BatchImportDataSource render check api return csv file 
                                   class="ant-upload-list-item-actions"
                                 >
                                   <button
-                                    class="ant-btn css-dev-only-do-not-override-txh9fw ant-btn-text ant-btn-sm ant-btn-icon-only ant-upload-list-item-action"
-                                    title="Remove file"
+                                    class="ant-btn ant-btn-text ant-btn-sm ant-btn-icon-only ant-upload-list-item-action"
+                                    title="删除文件"
                                     type="button"
                                   >
                                     <span
@@ -229,7 +229,7 @@ exports[`base/DataSource/BatchImportDataSource render check api return csv file 
                           </div>
                         </span>
                         <button
-                          class="ant-btn css-dev-only-do-not-override-txh9fw ant-btn-link"
+                          class="ant-btn ant-btn-link"
                           type="button"
                         >
                           <span>
@@ -246,7 +246,7 @@ exports[`base/DataSource/BatchImportDataSource render check api return csv file 
                       class="ant-space-item"
                     >
                       <div
-                        class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-start css-1nec0wd"
+                        class="ant-space ant-space-horizontal ant-space-align-start css-1nec0wd"
                       >
                         <div
                           class="ant-space-item"
@@ -273,7 +273,7 @@ exports[`base/DataSource/BatchImportDataSource render check api return csv file 
                           class="ant-space-item"
                         >
                           <span
-                            class="ant-typography ant-typography-danger css-dev-only-do-not-override-txh9fw"
+                            class="ant-typography ant-typography-danger"
                           >
                             <pre>
                               当前导入信息存在校验失败，请结合下载文件中的提示进行修改，并重新导入
@@ -307,7 +307,7 @@ exports[`base/DataSource/BatchImportDataSource render delete file 1`] = `
           href="/project/700300/db-services"
         >
           <button
-            class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default basic-button-wrapper css-geipcv"
+            class="ant-btn ant-btn-default basic-button-wrapper css-geipcv"
             type="button"
           >
             <span
@@ -335,7 +335,7 @@ exports[`base/DataSource/BatchImportDataSource render delete file 1`] = `
         class="extra"
       >
         <button
-          class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary basic-button-wrapper css-geipcv"
+          class="ant-btn ant-btn-primary basic-button-wrapper css-geipcv"
           disabled=""
           type="button"
         >
@@ -349,10 +349,10 @@ exports[`base/DataSource/BatchImportDataSource render delete file 1`] = `
       class="fix-header-padding css-bspaai"
     >
       <form
-        class="ant-form ant-form-horizontal css-dev-only-do-not-override-txh9fw hasTopHeader css-19jfn7e"
+        class="ant-form ant-form-horizontal hasTopHeader css-19jfn7e"
       >
         <h3
-          class="ant-typography css-p50odb css-dev-only-do-not-override-txh9fw"
+          class="ant-typography css-p50odb"
         >
           <span
             class="anticon title-icon"
@@ -383,13 +383,13 @@ exports[`base/DataSource/BatchImportDataSource render delete file 1`] = `
           </span>
         </h3>
         <div
-          class="ant-form-item has-required-style css-1jlm9cy css-dev-only-do-not-override-txh9fw ant-form-item-has-success"
+          class="ant-form-item has-required-style css-1jlm9cy ant-form-item-has-success"
         >
           <div
-            class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+            class="ant-row ant-form-item-row"
           >
             <div
-              class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left css-dev-only-do-not-override-txh9fw"
+              class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left"
             >
               <label
                 class="ant-form-item-required ant-form-item-no-colon"
@@ -400,7 +400,7 @@ exports[`base/DataSource/BatchImportDataSource render delete file 1`] = `
               </label>
             </div>
             <div
-              class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+              class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control"
             >
               <div
                 class="ant-form-item-control-input"
@@ -409,7 +409,7 @@ exports[`base/DataSource/BatchImportDataSource render delete file 1`] = `
                   class="ant-form-item-control-input-content"
                 >
                   <div
-                    class="ant-space css-dev-only-do-not-override-txh9fw ant-space-vertical"
+                    class="ant-space ant-space-vertical"
                   >
                     <div
                       class="ant-space-item"
@@ -419,7 +419,7 @@ exports[`base/DataSource/BatchImportDataSource render delete file 1`] = `
                         class="css-18zq7vp"
                       >
                         <span
-                          class="ant-upload-wrapper css-dev-only-do-not-override-txh9fw"
+                          class="ant-upload-wrapper"
                         >
                           <div
                             class="ant-upload ant-upload-select"
@@ -437,7 +437,7 @@ exports[`base/DataSource/BatchImportDataSource render delete file 1`] = `
                                 type="file"
                               />
                               <button
-                                class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default basic-button-wrapper css-geipcv"
+                                class="ant-btn ant-btn-default basic-button-wrapper css-geipcv"
                                 type="button"
                               >
                                 <span>
@@ -488,8 +488,8 @@ exports[`base/DataSource/BatchImportDataSource render delete file 1`] = `
                                   class="ant-upload-list-item-actions"
                                 >
                                   <button
-                                    class="ant-btn css-dev-only-do-not-override-txh9fw ant-btn-text ant-btn-sm ant-btn-icon-only ant-upload-list-item-action"
-                                    title="Remove file"
+                                    class="ant-btn ant-btn-text ant-btn-sm ant-btn-icon-only ant-upload-list-item-action"
+                                    title="删除文件"
                                     type="button"
                                   >
                                     <span
@@ -523,7 +523,7 @@ exports[`base/DataSource/BatchImportDataSource render delete file 1`] = `
                           </div>
                         </span>
                         <button
-                          class="ant-btn css-dev-only-do-not-override-txh9fw ant-btn-link"
+                          class="ant-btn ant-btn-link"
                           type="button"
                         >
                           <span>
@@ -564,7 +564,7 @@ exports[`base/DataSource/BatchImportDataSource render init snap 1`] = `
           href="/project/700300/db-services"
         >
           <button
-            class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default basic-button-wrapper css-geipcv"
+            class="ant-btn ant-btn-default basic-button-wrapper css-geipcv"
             type="button"
           >
             <span
@@ -592,7 +592,7 @@ exports[`base/DataSource/BatchImportDataSource render init snap 1`] = `
         class="extra"
       >
         <button
-          class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary basic-button-wrapper css-geipcv"
+          class="ant-btn ant-btn-primary basic-button-wrapper css-geipcv"
           disabled=""
           type="button"
         >
@@ -606,10 +606,10 @@ exports[`base/DataSource/BatchImportDataSource render init snap 1`] = `
       class="fix-header-padding css-bspaai"
     >
       <form
-        class="ant-form ant-form-horizontal css-dev-only-do-not-override-txh9fw hasTopHeader css-19jfn7e"
+        class="ant-form ant-form-horizontal hasTopHeader css-19jfn7e"
       >
         <h3
-          class="ant-typography css-p50odb css-dev-only-do-not-override-txh9fw"
+          class="ant-typography css-p50odb"
         >
           <span
             class="anticon title-icon"
@@ -640,13 +640,13 @@ exports[`base/DataSource/BatchImportDataSource render init snap 1`] = `
           </span>
         </h3>
         <div
-          class="ant-form-item has-required-style css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+          class="ant-form-item has-required-style css-1jlm9cy"
         >
           <div
-            class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+            class="ant-row ant-form-item-row"
           >
             <div
-              class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left css-dev-only-do-not-override-txh9fw"
+              class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left"
             >
               <label
                 class="ant-form-item-required ant-form-item-no-colon"
@@ -657,7 +657,7 @@ exports[`base/DataSource/BatchImportDataSource render init snap 1`] = `
               </label>
             </div>
             <div
-              class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+              class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control"
             >
               <div
                 class="ant-form-item-control-input"
@@ -666,7 +666,7 @@ exports[`base/DataSource/BatchImportDataSource render init snap 1`] = `
                   class="ant-form-item-control-input-content"
                 >
                   <div
-                    class="ant-space css-dev-only-do-not-override-txh9fw ant-space-vertical"
+                    class="ant-space ant-space-vertical"
                   >
                     <div
                       class="ant-space-item"
@@ -676,7 +676,7 @@ exports[`base/DataSource/BatchImportDataSource render init snap 1`] = `
                         class="css-18zq7vp"
                       >
                         <span
-                          class="ant-upload-wrapper css-dev-only-do-not-override-txh9fw"
+                          class="ant-upload-wrapper"
                         >
                           <div
                             class="ant-upload ant-upload-select"
@@ -694,7 +694,7 @@ exports[`base/DataSource/BatchImportDataSource render init snap 1`] = `
                                 type="file"
                               />
                               <button
-                                class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default basic-button-wrapper css-geipcv"
+                                class="ant-btn ant-btn-default basic-button-wrapper css-geipcv"
                                 type="button"
                               >
                                 <span>
@@ -708,7 +708,7 @@ exports[`base/DataSource/BatchImportDataSource render init snap 1`] = `
                           />
                         </span>
                         <button
-                          class="ant-btn css-dev-only-do-not-override-txh9fw ant-btn-link"
+                          class="ant-btn ant-btn-link"
                           type="button"
                         >
                           <span>
@@ -749,7 +749,7 @@ exports[`base/DataSource/BatchImportDataSource render upload file 1`] = `
           href="/project/700300/db-services"
         >
           <button
-            class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default basic-button-wrapper css-geipcv"
+            class="ant-btn ant-btn-default basic-button-wrapper css-geipcv"
             type="button"
           >
             <span
@@ -781,7 +781,7 @@ exports[`base/DataSource/BatchImportDataSource render upload file 1`] = `
       class="basic-result-wrapper css-7vto1s"
     >
       <div
-        class="ant-result ant-result-success css-dev-only-do-not-override-txh9fw"
+        class="ant-result ant-result-success"
       >
         <div
           class="ant-result-icon"
@@ -1187,7 +1187,7 @@ exports[`base/DataSource/BatchImportDataSource render upload file 1`] = `
           class="ant-result-extra"
         >
           <button
-            class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary basic-button-wrapper css-geipcv"
+            class="ant-btn ant-btn-primary basic-button-wrapper css-geipcv"
             type="button"
           >
             <span>
