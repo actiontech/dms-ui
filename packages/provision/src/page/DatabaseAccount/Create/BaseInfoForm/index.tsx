@@ -21,9 +21,6 @@ import EventEmitter from '../../../../utils/EventEmitter';
 import { CreateAccountFormType } from '../../index.type';
 import InputPassword from '../../../../components/PasswordWithGenerate';
 import Password from '../../../../utils/Password';
-import useSecurityPolicy, {
-  NORMAL_POLICY_VALUE
-} from '../../../../hooks/useSecurityPolicy';
 import ServiceFiled from './ServiceField';
 import { IDBAccountMeta } from '@actiontech/shared/lib/api/provision/service/common';
 import useServiceEnvironment from '../../../../hooks/useServiceEnvironment';
@@ -34,7 +31,6 @@ import AutoCreatedFormItemByApi from '../../../../../../sqle/src/components/Back
 import { filterOptionByLabel } from '@actiontech/shared/lib/components/BasicSelect/utils';
 import { passwordExpirationPolicyOptions } from './index.data';
 import { AddDBAccountPasswordExpirationPolicyEnum } from '@actiontech/shared/lib/api/provision/service/common.enum';
-
 type Props = {
   mode: 'create' | 'update';
   dbAccountMeta: IDBAccountMeta[];
@@ -58,15 +54,8 @@ const BaseInfoForm: React.FC<Props> = ({ mode, dbAccountMeta }) => {
     updateEnvironmentList,
     loading: environmentLoading
   } = useServiceEnvironment();
-  const policy = Form.useWatch('policy', form);
 
   const isUpdate = mode === 'update';
-
-  const {
-    updateSecurityPolicyList,
-    securityPolicyOptions,
-    securityPolicyList
-  } = useSecurityPolicy();
 
   const {
     serviceOptions,
@@ -118,20 +107,6 @@ const BaseInfoForm: React.FC<Props> = ({ mode, dbAccountMeta }) => {
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [isUpdate]);
-
-  useEffect(() => {
-    updateSecurityPolicyList();
-  }, [updateSecurityPolicyList]);
-
-  useEffect(() => {
-    if (policy !== NORMAL_POLICY_VALUE) {
-      const value = securityPolicyList.find(
-        (i) => i.uid === policy
-      )?.password_expiration_period;
-      form.setFieldValue('effective_time_day', value);
-    }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [policy]);
 
   const generatePassword = () => {
     const password = Password.generateMySQLPassword(16);
@@ -260,19 +235,6 @@ const BaseInfoForm: React.FC<Props> = ({ mode, dbAccountMeta }) => {
         />
       </EmptyBox>
 
-      <FormItemLabel
-        label={
-          <CustomLabelContent
-            title={t('databaseAccount.create.form.policy')}
-            tips={t('databaseAccount.create.form.policyTips')}
-          />
-        }
-        name="policy"
-        rules={[{ required: true }]}
-        className="has-required-style has-label-tip"
-      >
-        <BasicSelect options={securityPolicyOptions()} disabled={isUpdate} />
-      </FormItemLabel>
       <EmptyBox if={!isUpdate}>
         <FormItemLabel
           label={
@@ -299,13 +261,9 @@ const BaseInfoForm: React.FC<Props> = ({ mode, dbAccountMeta }) => {
               }
             }
           ]}
+          initialValue={30}
         >
-          <BasicInputNumber
-            disabled={
-              (policy !== undefined && policy !== NORMAL_POLICY_VALUE) ||
-              isUpdate
-            }
-          />
+          <BasicInputNumber disabled={isUpdate} />
         </FormItemLabel>
       </EmptyBox>
 

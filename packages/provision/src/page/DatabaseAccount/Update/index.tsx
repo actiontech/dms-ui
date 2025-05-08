@@ -22,7 +22,6 @@ import { ResponseCode } from '@actiontech/shared/lib/enum';
 import { useBoolean, useRequest } from 'ahooks';
 import { useParams } from 'react-router-dom';
 import { useEffect } from 'react';
-import { NORMAL_POLICY_VALUE } from '../../../hooks/useSecurityPolicy';
 import { LeftArrowOutlined, BriefcaseFilled } from '@actiontech/icons';
 import Icon from '@ant-design/icons';
 import DbAccountService from '@actiontech/shared/lib/api/provision/service/service';
@@ -120,7 +119,6 @@ const UpdateDatabaseAccount = () => {
               username: data?.account_info?.user,
               password: data?.account_info?.password,
               confirm_password: data?.account_info?.password,
-              policy: data?.password_security_policy || NORMAL_POLICY_VALUE,
               explanation: data?.account_info?.explanation,
               dbServiceID: data?.db_service?.uid,
               password_expiration_policy: data?.account_info
