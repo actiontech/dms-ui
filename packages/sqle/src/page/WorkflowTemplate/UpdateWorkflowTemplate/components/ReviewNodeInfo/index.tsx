@@ -5,7 +5,12 @@ import {
 } from '../../style';
 import { useTranslation } from 'react-i18next';
 import { Divider, Form, Typography } from 'antd';
-import { BasicInput, BasicSelect, BasicSwitch } from '@actiontech/shared';
+import {
+  BasicInput,
+  BasicSelect,
+  BasicSwitch,
+  filterOptionByLabel
+} from '@actiontech/shared';
 import {
   ReviewAndExecUserTypeEnum,
   NodeTypeEnum,
@@ -188,6 +193,7 @@ const ReviewAndExecNodeInfo: React.FC<ReviewAndExecNodeInfoProps> = (props) => {
               placeholder={t('common.form.placeholder.select')}
               data-testid="exec-user-select"
               size="middle"
+              filterOption={filterOptionByLabel}
             >
               {props.generateUsernameSelectOption()}
             </BasicSelect>
