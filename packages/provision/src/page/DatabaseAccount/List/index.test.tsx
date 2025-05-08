@@ -24,9 +24,13 @@ import EventEmitter from '../../../utils/EventEmitter';
 import user from '../../../testUtil/mockApi/user';
 import {
   OpPermissionItemRangeTypeEnum,
-  OpPermissionItemOpPermissionTypeEnum
+  OpPermissionItemOpPermissionTypeEnum,
+  ListMemberRoleWithOpRangeOpRangeTypeEnum
 } from '@actiontech/shared/lib/api/base/service/common.enum';
 import { mockUsePermission } from '@actiontech/shared/lib/testUtil/mockHook/mockUsePermission';
+import { MemberGroupService } from '@actiontech/shared/lib/api/base';
+import { IListMemberGroup } from '@actiontech/shared/lib/api/base/service/common';
+import { paramsSerializer } from '@actiontech/shared';
 
 jest.mock('react-redux', () => ({
   ...jest.requireActual('react-redux'),
@@ -46,8 +50,90 @@ let authGetAccountStaticsSpy: jest.SpyInstance;
 let authUpdateDBAccountSpy: jest.SpyInstance;
 let authDelDBAccountSpy: jest.SpyInstance;
 let authListServicesSpy: jest.SpyInstance;
+let authListMemberGroupSpy: jest.SpyInstance;
 const dispatchSpy = jest.fn();
 const navigateSpy = jest.fn();
+
+const memberGroupList: IListMemberGroup[] = [
+  {
+    is_project_admin: true,
+    name: 'member-group1',
+    role_with_op_ranges: [
+      {
+        op_range_type: ListMemberRoleWithOpRangeOpRangeTypeEnum.db_service,
+        range_uids: [
+          { uid: '701', name: 'Range1' },
+          { uid: '702', name: 'Range2' }
+        ],
+        role_uid: { uid: '5001', name: 'Role1' }
+      }
+    ],
+    uid: '10029384',
+    users: [
+      {
+        uid: '100283',
+        name: 'test1'
+      },
+      {
+        uid: '102393',
+        name: 'test2'
+      }
+    ]
+  },
+  {
+    name: 'member-group2',
+
+    role_with_op_ranges: [
+      {
+        op_range_type: ListMemberRoleWithOpRangeOpRangeTypeEnum.db_service,
+        range_uids: [
+          { uid: '701', name: 'Range1' },
+          { uid: '702', name: 'Range2' }
+        ],
+        role_uid: { uid: '5002', name: 'Role2' }
+      }
+    ],
+    uid: '10039482',
+    users: [
+      { uid: '138291', name: 'test3' },
+      { uid: '138214', name: 'test4' }
+    ]
+  },
+  {
+    is_project_admin: false,
+    name: 'member-group3',
+
+    role_with_op_ranges: [
+      {
+        op_range_type: ListMemberRoleWithOpRangeOpRangeTypeEnum.db_service,
+        range_uids: [{ uid: '123123', name: 'mysql-1' }],
+        role_uid: { uid: '1001', name: 'test role 1' }
+      }
+    ],
+    uid: '10039483',
+    users: [
+      {
+        uid: '11132422',
+        name: 'test'
+      },
+      { uid: '1647895752866795520', name: 'test666' }
+    ]
+  },
+  {
+    name: 'member-group9',
+    role_with_op_ranges: [
+      {
+        op_range_type: ListMemberRoleWithOpRangeOpRangeTypeEnum.db_service,
+        range_uids: [
+          { uid: '70121', name: 'Range14' },
+          { uid: '70211', name: 'Range25' }
+        ],
+        role_uid: { uid: '5005', name: 'Role12' }
+      }
+    ],
+    uid: '10029385'
+  }
+];
 
 describe('provision/DatabaseAccount/List-1', () => {
   beforeEach(() => {
@@ -59,6 +145,7 @@ describe('provision/DatabaseAccount/List-1', () => {
     passwordSecurityPolicy.mockAllApi();
     auth.mockAllApi();
     user.mockAllApi();
+
     mockUseCurrentUser();
     mockUseDbServiceDriver();
     mockUseCurrentProject();
@@ -73,7 +160,7 @@ describe('provision/DatabaseAccount/List-1', () => {
     cleanup();
   });
 
-  test('render table moreButtons', async () => {
+  it('render table moreButtons', async () => {
     mockUsePermission(
       {
         userOperationPermissions: {
@@ -117,6 +204,11 @@ describe('provision/DatabaseAccount/List-2', () => {
     passwordSecurityPolicy.mockAllApi();
     auth.mockAllApi();
     user.mockAllApi();
+    authListMemberGroupSpy = jest
+      .spyOn(MemberGroupService, 'ListMemberGroups')
+      .mockImplementation(() =>
+        createSpySuccessResponse({ data: memberGroupList })
+      );
     mockUseCurrentUser();
     mockUseDbServiceDriver();
     mockUseCurrentProject();
@@ -175,20 +267,25 @@ describe('provision/DatabaseAccount/List-2', () => {
     const { baseElement } = superRender(<DatabaseAccountList />);
     await act(async () => jest.advanceTimersByTime(3000));
     expect(authListDBAccountSpy).toHaveBeenCalledTimes(1);
+    expect(authListMemberGroupSpy).toHaveBeenCalledTimes(1);
     fireEvent.click(screen.getByText('test1'));
     await act(async () => jest.advanceTimersByTime(3000));
     expect(authListDBAccountSpy).toHaveBeenCalledTimes(2);
     await act(async () => jest.advanceTimersByTime(3000));
-    fireEvent.click(getBySelector('.ant-avatar'));
+    fireEvent.click(getAllBySelector('.ant-tag')[0]);
     expect(authListDBAccountSpy).toHaveBeenCalledTimes(3);
-    expect(authListDBAccountSpy).toHaveBeenCalledWith({
-      page_index: 1,
-      page_size: 20,
-      filter_by_db_service: '1793883708181188608',
-      filter_by_user: '1767103833235787776',
-      fuzzy_keyword: '',
-      project_uid: mockProjectInfo.projectID
-    });
+    expect(authListDBAccountSpy).toHaveBeenNthCalledWith(
+      3,
+      {
+        page_index: 1,
+        page_size: 20,
+        filter_by_db_service: '1793883708181188608',
+        filter_by_users: '1767103833235787776',
+        fuzzy_keyword: '',
+        project_uid: mockProjectInfo.projectID
+      },
+      { paramsSerializer }
+    );
     expect(baseElement).toMatchSnapshot();
   });
 
@@ -210,12 +307,16 @@ describe('provision/DatabaseAccount/List-2', () => {
       await jest.advanceTimersByTime(300);
     });
     await act(async () => jest.advanceTimersByTime(3000));
-    expect(authListDBAccountSpy).toHaveBeenCalledWith({
-      page_index: 1,
-      page_size: 20,
-      fuzzy_keyword: searchText,
-      project_uid: mockProjectInfo.projectID
-    });
+    expect(authListDBAccountSpy).toHaveBeenNthCalledWith(
+      2,
+      {
+        page_index: 1,
+        page_size: 20,
+        fuzzy_keyword: searchText,
+        project_uid: mockProjectInfo.projectID
+      },
+      { paramsSerializer }
+    );
   });
 
   it('render emit "Refresh_Account_Management_List_Table" event', async () => {
@@ -236,13 +337,17 @@ describe('provision/DatabaseAccount/List-2', () => {
     );
     await act(async () => jest.advanceTimersByTime(3000));
     expect(authListDBAccountSpy).toHaveBeenCalledTimes(3);
-    expect(authListDBAccountSpy).toHaveBeenNthCalledWith(3, {
-      page_index: 1,
-      page_size: 20,
-      filter_by_db_service: '1793883708181188608',
-      fuzzy_keyword: '',
-      project_uid: mockProjectInfo.projectID
-    });
+    expect(authListDBAccountSpy).toHaveBeenNthCalledWith(
+      3,
+      {
+        page_index: 1,
+        page_size: 20,
+        filter_by_db_service: '1793883708181188608',
+        fuzzy_keyword: '',
+        project_uid: mockProjectInfo.projectID
+      },
+      { paramsSerializer }
+    );
   });
 
   it('render account discovery', async () => {
@@ -579,5 +684,31 @@ describe('provision/DatabaseAccount/List-2', () => {
     expect(authListServicesSpy).toHaveBeenCalled();
     expect(screen.queryByText('账号发现')).not.toBeInTheDocument();
     expect(screen.queryByText('创建账号')).not.toBeInTheDocument();
+  });
+
+  it('render url query', async () => {
+    const user_uid = '1767103833235787776';
+    const group_uid = '1767103833235787773';
+
+    superRender(<DatabaseAccountList />, undefined, {
+      routerProps: {
+        initialEntries: [
+          `/provision/project/123/database-account?user_uid=${user_uid}&group_uid=${group_uid}`
+        ]
+      }
+    });
+    await act(async () => jest.advanceTimersByTime(3000));
+    expect(authListDBAccountSpy).toHaveBeenCalled();
+    expect(authListDBAccountSpy).toHaveBeenCalledWith(
+      {
+        page_index: 1,
+        page_size: 20,
+        filter_by_users: user_uid,
+        filter_by_user_group: group_uid,
+        project_uid: mockProjectInfo.projectID,
+        fuzzy_keyword: ''
+      },
+      { paramsSerializer }
+    );
   });
 });

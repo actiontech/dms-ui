@@ -13,6 +13,8 @@ import { accountNameRender } from 'provision/src/page/DatabaseAccount/index.util
 import { useTranslation } from 'react-i18next';
 import { CheckMemberGroupAuthErrorMessageStyleWrapper } from './style';
 import { ROUTE_PATHS } from '@actiontech/shared/lib/data/routePaths';
+import { IListDBAccount } from '@actiontech/shared/lib/api/provision/service/common';
+import { ResponseCode } from '@actiontech/shared/lib/enum';
 
 interface ICheckMemberGroupParams {
   userUids: string[];
@@ -21,6 +23,7 @@ interface ICheckMemberGroupParams {
 }
 
 interface IUserAuthInfo {
+  accountUid: string;
   serviceName: string;
   accountInfo: string;
   authType: 'direct' | 'group';
@@ -47,42 +50,53 @@ const useCheckMemberGroupAuth = () => {
     const { userUids, memberGroupUid, memberGroupName } = params;
 
     startLoading();
-    const [dbAccountListWithFilterUsers, dbAccountListWithFilterUserGroup] =
-      await Promise.all([
-        ProvisionApi.DbAccountService.AuthListDBAccount(
-          {
-            page_size: 9999,
-            page_index: 1,
-            project_uid: projectID,
-            filter_by_users: userUids
-          },
-          {
-            paramsSerializer
-          }
-        ).then((res) => res.data.data),
-        ProvisionApi.DbAccountService.AuthListDBAccount({
+    let dbAccountListWithFilterUsers: IListDBAccount[] = [];
+    let dbAccountListWithFilterUserGroup: IListDBAccount[] = [];
+
+    const [usersResponse, groupResponse] = await Promise.all([
+      ProvisionApi.DbAccountService.AuthListDBAccount(
+        {
           page_size: 9999,
           page_index: 1,
           project_uid: projectID,
-          filter_by_user_group: memberGroupUid
-        }).then((res) => res.data.data)
-      ]).finally(() => {
-        endLoading();
-      });
+          filter_by_users: userUids
+        },
+        {
+          paramsSerializer
+        }
+      ),
+      ProvisionApi.DbAccountService.AuthListDBAccount({
+        page_size: 9999,
+        page_index: 1,
+        project_uid: projectID,
+        filter_by_user_group: memberGroupUid
+      })
+    ]).finally(() => {
+      endLoading();
+    });
+
+    if (
+      usersResponse.data.code !== ResponseCode.SUCCESS ||
+      groupResponse.data.code !== ResponseCode.SUCCESS
+    ) {
+      return false;
+    }
+
+    dbAccountListWithFilterUsers = usersResponse.data.data || [];
+    dbAccountListWithFilterUserGroup = groupResponse.data.data || [];
 
     const authConflicts: IAuthConflictInfo[] = [];
     const userAuthMap = new Map<string, Map<string, IUserAuthInfo[]>>();
     const groupAuthMap = new Map<string, IUserAuthInfo[]>();
 
-    // 收集用户当前的授权信息（包括直接授权和通过成员组获得的授权）
     dbAccountListWithFilterUsers?.forEach((account) => {
       if (!account.db_service?.uid || !account.db_account_uid) return;
 
       const serviceUid = account.db_service.uid;
       const serviceName = account.db_service.name!;
+      const accountUid = account.db_account_uid!;
       const accountInfo = accountNameRender(account.account_info!);
 
-      // 处理直接授权
       account.auth_users?.forEach((user) => {
         if (userUids.includes(user.uid!)) {
           if (!userAuthMap.has(user.uid!)) {
@@ -93,6 +107,7 @@ const useCheckMemberGroupAuth = () => {
             serviceMap.set(serviceUid, []);
           }
           serviceMap.get(serviceUid)!.push({
+            accountUid,
             serviceName,
             accountInfo,
             authType: 'direct'
@@ -111,6 +126,7 @@ const useCheckMemberGroupAuth = () => {
               serviceMap.set(serviceUid, []);
             }
             serviceMap.get(serviceUid)!.push({
+              accountUid,
               serviceName,
               accountInfo,
               authType: 'group',
@@ -121,18 +137,19 @@ const useCheckMemberGroupAuth = () => {
       });
     });
 
-    // 收集目标成员组的授权信息
     dbAccountListWithFilterUserGroup?.forEach((account) => {
       if (!account.db_service?.uid || !account.db_account_uid) return;
 
       const serviceUid = account.db_service.uid;
       const serviceName = account.db_service.name!;
+      const accountUid = account.db_account_uid!;
       const accountInfo = accountNameRender(account.account_info!);
 
       if (!groupAuthMap.has(serviceUid)) {
         groupAuthMap.set(serviceUid, []);
       }
       groupAuthMap.get(serviceUid)!.push({
+        accountUid,
         serviceName,
         accountInfo,
         authType: 'group',
@@ -178,7 +195,6 @@ const useCheckMemberGroupAuth = () => {
       }
     });
 
-    // 如果存在冲突，显示提示信息
     if (authConflicts.length > 0) {
       modal.error({
         title: t('provisionMember.checkMemberGroupAuth.errorTitle'),
@@ -238,8 +254,12 @@ const useCheckMemberGroupAuth = () => {
                         )}
                       </div>
                       <Space wrap>
-                        {directAuths.map((auth, authIndex) => (
-                          <BasicTag size="large" key={authIndex} color="blue">
+                        {directAuths.map((auth) => (
+                          <BasicTag
+                            size="large"
+                            key={auth.accountUid}
+                            color="blue"
+                          >
                             {auth.serviceName} / {auth.accountInfo}
                           </BasicTag>
                         ))}
@@ -255,8 +275,12 @@ const useCheckMemberGroupAuth = () => {
                         )}
                       </div>
                       <Space wrap>
-                        {groupAuths.map((auth, authIndex) => (
-                          <BasicTag size="large" key={authIndex} color="blue">
+                        {groupAuths.map((auth) => (
+                          <BasicTag
+                            size="large"
+                            key={auth.accountUid}
+                            color="blue"
+                          >
                             {auth.serviceName} / {auth.accountInfo}
                             {`（${t(
                               'provisionMember.checkMemberGroupAuth.throughGroup',
@@ -304,8 +328,12 @@ const useCheckMemberGroupAuth = () => {
                         )}
                       </Typography.Text>
                       <Space direction="vertical">
-                        {conflict.currentAuths.map((auth, authIndex) => (
-                          <BasicTag size="large" key={authIndex} color="blue">
+                        {conflict.currentAuths.map((auth) => (
+                          <BasicTag
+                            size="large"
+                            key={auth.accountUid}
+                            color="blue"
+                          >
                             {auth.serviceName} / {auth.accountInfo}
                             {`（${t(
                               'provisionMember.checkMemberGroupAuth.throughGroup',
@@ -320,8 +348,12 @@ const useCheckMemberGroupAuth = () => {
                             )}）`}
                           </BasicTag>
                         ))}
-                        {conflict.conflictAuths.map((auth, authIndex) => (
-                          <BasicTag size="large" key={authIndex} color="blue">
+                        {conflict.conflictAuths.map((auth) => (
+                          <BasicTag
+                            size="large"
+                            key={auth.accountUid}
+                            color="blue"
+                          >
                             {auth.serviceName} / {auth.accountInfo}
                             {`（${t(
                               'provisionMember.checkMemberGroupAuth.throughGroup',

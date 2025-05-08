@@ -128,9 +128,11 @@ const AccountAuthorizeModal = () => {
   };
 
   useEffect(() => {
-    getUsersAndSetDefaultValues();
-    getMembersAndSetDefaultValues();
-  }, [getUsersAndSetDefaultValues, getMembersAndSetDefaultValues]);
+    if (visible) {
+      getUsersAndSetDefaultValues();
+      getMembersAndSetDefaultValues();
+    }
+  }, [getUsersAndSetDefaultValues, getMembersAndSetDefaultValues, visible]);
 
   return (
     <BasicModal

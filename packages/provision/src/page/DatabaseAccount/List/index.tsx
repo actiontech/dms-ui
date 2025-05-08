@@ -192,13 +192,13 @@ const DatabaseAccountList = () => {
   const onUpdateFilter = useCallback(
     (key: keyof DatabaseAccountListFilterParamType, value?: string) => {
       updateAllSelectedFilterItem(true);
-      updateTableFilterInfo({
-        ...tableFilterInfo,
+      updateTableFilterInfo((values) => ({
+        ...values,
         [key]: value
-      });
+      }));
     },
     // eslint-disable-next-line react-hooks/exhaustive-deps
-    [tableFilterInfo]
+    []
   );
 
   const onSetLockedStatus = useCallback(
@@ -364,7 +364,8 @@ const DatabaseAccountList = () => {
     if (queries?.group_uid) {
       onUpdateFilter('filter_by_user_group', queries.group_uid);
     }
-  }, [extractQueries, onUpdateFilter]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   useEffect(() => {
     initModalStatus({

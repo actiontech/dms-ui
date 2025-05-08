@@ -1,0 +1,1675 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`useCheckMemberGroupAuth should handle different auth conflict scenarios: multiple-services-conflict 1`] = `
+<body>
+  <div>
+    <div>
+      error
+    </div>
+    <button>
+      点击
+    </button>
+  </div>
+  <div>
+    <div
+      class="ant-modal-root"
+    >
+      <div
+        class="ant-modal-mask"
+      />
+      <div
+        class="ant-modal-wrap"
+        tabindex="-1"
+      >
+        <div
+          aria-modal="true"
+          class="ant-modal ant-modal-confirm ant-modal-confirm-error"
+          role="dialog"
+          style="width: 600px;"
+        >
+          <div
+            aria-hidden="true"
+            style="width: 0px; height: 0px; overflow: hidden; outline: none;"
+            tabindex="0"
+          />
+          <div
+            class="ant-modal-content"
+          >
+            <div
+              class="ant-modal-body"
+            >
+              <div
+                class="ant-modal-confirm-body-wrapper"
+              >
+                <div
+                  class="ant-modal-confirm-body"
+                >
+                  <span
+                    aria-label="close-circle"
+                    class="anticon anticon-close-circle"
+                    role="img"
+                  >
+                    <svg
+                      aria-hidden="true"
+                      data-icon="close-circle"
+                      fill="currentColor"
+                      fill-rule="evenodd"
+                      focusable="false"
+                      height="1em"
+                      viewBox="64 64 896 896"
+                      width="1em"
+                    >
+                      <path
+                        d="M512 64c247.4 0 448 200.6 448 448S759.4 960 512 960 64 759.4 64 512 264.6 64 512 64zm127.98 274.82h-.04l-.08.06L512 466.75 384.14 338.88c-.04-.05-.06-.06-.08-.06a.12.12 0 00-.07 0c-.03 0-.05.01-.09.05l-45.02 45.02a.2.2 0 00-.05.09.12.12 0 000 .07v.02a.27.27 0 00.06.06L466.75 512 338.88 639.86c-.05.04-.06.06-.06.08a.12.12 0 000 .07c0 .03.01.05.05.09l45.02 45.02a.2.2 0 00.09.05.12.12 0 00.07 0c.02 0 .04-.01.08-.05L512 557.25l127.86 127.87c.04.04.06.05.08.05a.12.12 0 00.07 0c.03 0 .05-.01.09-.05l45.02-45.02a.2.2 0 00.05-.09.12.12 0 000-.07v-.02a.27.27 0 00-.05-.06L557.25 512l127.87-127.86c.04-.04.05-.06.05-.08a.12.12 0 000-.07c0-.03-.01-.05-.05-.09l-45.02-45.02a.2.2 0 00-.09-.05.12.12 0 00-.07 0z"
+                      />
+                    </svg>
+                  </span>
+                  <span
+                    class="ant-modal-confirm-title"
+                  >
+                    成员组授权检查失败
+                  </span>
+                  <div
+                    class="ant-modal-confirm-content"
+                  >
+                    <div
+                      class="css-hjqyn1"
+                    >
+                      <div
+                        class="ant-alert ant-alert-warning ant-alert-no-icon auth-conflict-alert"
+                        data-show="true"
+                        role="alert"
+                      >
+                        <div
+                          class="ant-alert-content"
+                        >
+                          <div
+                            class="ant-alert-message"
+                          >
+                            根据安全要求，同一用户在同一数据源上只能使用一个账号。请检查并解决以下冲突后再继续操作。
+                          </div>
+                        </div>
+                      </div>
+                      <div
+                        class="auth-conflict-user"
+                      >
+                        <span
+                          class="ant-typography"
+                        >
+                          检测到成员 
+                        </span>
+                        <div
+                          class="ant-space ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
+                        >
+                          <div
+                            class="ant-space-item"
+                          >
+                            <a
+                              href="/provision/project/700300/database-account?user_uid=user1"
+                              target="_blank"
+                            >
+                              User 1
+                            </a>
+                          </div>
+                        </div>
+                        <span
+                          class="ant-typography"
+                        >
+                           存在权限冲突，该用户当前权限：
+                        </span>
+                        <div
+                          class="auth-conflict-section"
+                        >
+                          <div
+                            class="auth-conflict-title"
+                          >
+                            直接授权：
+                          </div>
+                          <div
+                            class="ant-space ant-space-horizontal ant-space-align-center"
+                            style="flex-wrap: wrap; margin-bottom: -8px;"
+                          >
+                            <div
+                              class="ant-space-item"
+                              style="padding-bottom: 8px;"
+                            >
+                              <span
+                                class="ant-tag ant-tag-blue basic-tag-wrapper basic-large-tag-wrapper css-1q0n2j9"
+                              >
+                                Oracle-prod
+                                 / 
+                                -
+                              </span>
+                            </div>
+                          </div>
+                        </div>
+                        <div
+                          class="auth-conflict-section"
+                        >
+                          <div
+                            class="auth-conflict-title"
+                          >
+                            冲突说明：
+                          </div>
+                          <div
+                            class="auth-conflict-content"
+                          >
+                            <span
+                              class="ant-typography"
+                            >
+                              将该用户加入组 
+                            </span>
+                            <div
+                              class="ant-space ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
+                            >
+                              <div
+                                class="ant-space-item"
+                              >
+                                <a
+                                  href="/provision/project/700300/database-account?group_uid=group1"
+                                  target="_blank"
+                                >
+                                  Test Group
+                                </a>
+                              </div>
+                            </div>
+                            <span
+                              class="ant-typography"
+                            >
+                               后，该用户将同时拥有以下账号：
+                            </span>
+                            <div
+                              class="ant-space ant-space-vertical"
+                            >
+                              <div
+                                class="ant-space-item"
+                                style="margin-bottom: 8px;"
+                              >
+                                <span
+                                  class="ant-tag ant-tag-blue basic-tag-wrapper basic-large-tag-wrapper css-1q0n2j9"
+                                >
+                                  Oracle-prod
+                                   / 
+                                  -
+                                  （通过 直接授权 获得）
+                                </span>
+                              </div>
+                              <div
+                                class="ant-space-item"
+                              >
+                                <span
+                                  class="ant-tag ant-tag-blue basic-tag-wrapper basic-large-tag-wrapper css-1q0n2j9"
+                                >
+                                  Oracle-prod
+                                   / 
+                                  -
+                                  （通过 Test Group 获得）
+                                </span>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="ant-modal-confirm-btns"
+                >
+                  <button
+                    class="ant-btn ant-btn-primary"
+                    type="button"
+                  >
+                    <span>
+                      关 闭
+                    </span>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            aria-hidden="true"
+            style="width: 0px; height: 0px; overflow: hidden; outline: none;"
+            tabindex="0"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+  <div>
+    <div
+      class="ant-modal-root"
+    >
+      <div
+        class="ant-modal-mask"
+      />
+      <div
+        class="ant-modal-wrap"
+        tabindex="-1"
+      >
+        <div
+          aria-modal="true"
+          class="ant-modal ant-modal-confirm ant-modal-confirm-error"
+          role="dialog"
+          style="width: 600px;"
+        >
+          <div
+            aria-hidden="true"
+            style="width: 0px; height: 0px; overflow: hidden; outline: none;"
+            tabindex="0"
+          />
+          <div
+            class="ant-modal-content"
+          >
+            <div
+              class="ant-modal-body"
+            >
+              <div
+                class="ant-modal-confirm-body-wrapper"
+              >
+                <div
+                  class="ant-modal-confirm-body"
+                >
+                  <span
+                    aria-label="close-circle"
+                    class="anticon anticon-close-circle"
+                    role="img"
+                  >
+                    <svg
+                      aria-hidden="true"
+                      data-icon="close-circle"
+                      fill="currentColor"
+                      fill-rule="evenodd"
+                      focusable="false"
+                      height="1em"
+                      viewBox="64 64 896 896"
+                      width="1em"
+                    >
+                      <path
+                        d="M512 64c247.4 0 448 200.6 448 448S759.4 960 512 960 64 759.4 64 512 264.6 64 512 64zm127.98 274.82h-.04l-.08.06L512 466.75 384.14 338.88c-.04-.05-.06-.06-.08-.06a.12.12 0 00-.07 0c-.03 0-.05.01-.09.05l-45.02 45.02a.2.2 0 00-.05.09.12.12 0 000 .07v.02a.27.27 0 00.06.06L466.75 512 338.88 639.86c-.05.04-.06.06-.06.08a.12.12 0 000 .07c0 .03.01.05.05.09l45.02 45.02a.2.2 0 00.09.05.12.12 0 00.07 0c.02 0 .04-.01.08-.05L512 557.25l127.86 127.87c.04.04.06.05.08.05a.12.12 0 00.07 0c.03 0 .05-.01.09-.05l45.02-45.02a.2.2 0 00.05-.09.12.12 0 000-.07v-.02a.27.27 0 00-.05-.06L557.25 512l127.87-127.86c.04-.04.05-.06.05-.08a.12.12 0 000-.07c0-.03-.01-.05-.05-.09l-45.02-45.02a.2.2 0 00-.09-.05.12.12 0 00-.07 0z"
+                      />
+                    </svg>
+                  </span>
+                  <span
+                    class="ant-modal-confirm-title"
+                  >
+                    成员组授权检查失败
+                  </span>
+                  <div
+                    class="ant-modal-confirm-content"
+                  >
+                    <div
+                      class="css-hjqyn1"
+                    >
+                      <div
+                        class="ant-alert ant-alert-warning ant-alert-no-icon auth-conflict-alert"
+                        data-show="true"
+                        role="alert"
+                      >
+                        <div
+                          class="ant-alert-content"
+                        >
+                          <div
+                            class="ant-alert-message"
+                          >
+                            根据安全要求，同一用户在同一数据源上只能使用一个账号。请检查并解决以下冲突后再继续操作。
+                          </div>
+                        </div>
+                      </div>
+                      <div
+                        class="auth-conflict-user"
+                      >
+                        <span
+                          class="ant-typography"
+                        >
+                          检测到成员 
+                        </span>
+                        <div
+                          class="ant-space ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
+                        >
+                          <div
+                            class="ant-space-item"
+                          >
+                            <a
+                              href="/provision/project/700300/database-account?user_uid=user1"
+                              target="_blank"
+                            >
+                              User 1
+                            </a>
+                          </div>
+                        </div>
+                        <span
+                          class="ant-typography"
+                        >
+                           存在权限冲突，该用户当前权限：
+                        </span>
+                        <div
+                          class="auth-conflict-section"
+                        >
+                          <div
+                            class="auth-conflict-title"
+                          >
+                            直接授权：
+                          </div>
+                          <div
+                            class="ant-space ant-space-horizontal ant-space-align-center"
+                            style="flex-wrap: wrap; margin-bottom: -8px;"
+                          >
+                            <div
+                              class="ant-space-item"
+                              style="padding-bottom: 8px;"
+                            >
+                              <span
+                                class="ant-tag ant-tag-blue basic-tag-wrapper basic-large-tag-wrapper css-1q0n2j9"
+                              >
+                                Oracle-prod
+                                 / 
+                                -
+                              </span>
+                            </div>
+                          </div>
+                        </div>
+                        <div
+                          class="auth-conflict-section"
+                        >
+                          <div
+                            class="auth-conflict-title"
+                          >
+                            冲突说明：
+                          </div>
+                          <div
+                            class="auth-conflict-content"
+                          >
+                            <span
+                              class="ant-typography"
+                            >
+                              将该用户加入组 
+                            </span>
+                            <div
+                              class="ant-space ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
+                            >
+                              <div
+                                class="ant-space-item"
+                              >
+                                <a
+                                  href="/provision/project/700300/database-account?group_uid=group1"
+                                  target="_blank"
+                                >
+                                  Test Group
+                                </a>
+                              </div>
+                            </div>
+                            <span
+                              class="ant-typography"
+                            >
+                               后，该用户将同时拥有以下账号：
+                            </span>
+                            <div
+                              class="ant-space ant-space-vertical"
+                            >
+                              <div
+                                class="ant-space-item"
+                                style="margin-bottom: 8px;"
+                              >
+                                <span
+                                  class="ant-tag ant-tag-blue basic-tag-wrapper basic-large-tag-wrapper css-1q0n2j9"
+                                >
+                                  Oracle-prod
+                                   / 
+                                  -
+                                  （通过 直接授权 获得）
+                                </span>
+                              </div>
+                              <div
+                                class="ant-space-item"
+                              >
+                                <span
+                                  class="ant-tag ant-tag-blue basic-tag-wrapper basic-large-tag-wrapper css-1q0n2j9"
+                                >
+                                  Oracle-prod
+                                   / 
+                                  -
+                                  （通过 Test Group 获得）
+                                </span>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div
+                          class="ant-divider ant-divider-horizontal auth-conflict-divider"
+                          role="separator"
+                        />
+                      </div>
+                      <div
+                        class="auth-conflict-user"
+                      >
+                        <span
+                          class="ant-typography"
+                        >
+                          检测到成员 
+                        </span>
+                        <div
+                          class="ant-space ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
+                        >
+                          <div
+                            class="ant-space-item"
+                          >
+                            <a
+                              href="/provision/project/700300/database-account?user_uid=user2"
+                              target="_blank"
+                            >
+                              User 2
+                            </a>
+                          </div>
+                        </div>
+                        <span
+                          class="ant-typography"
+                        >
+                           存在权限冲突，该用户当前权限：
+                        </span>
+                        <div
+                          class="auth-conflict-section"
+                        >
+                          <div
+                            class="auth-conflict-title"
+                          >
+                            直接授权：
+                          </div>
+                          <div
+                            class="ant-space ant-space-horizontal ant-space-align-center"
+                            style="flex-wrap: wrap; margin-bottom: -8px;"
+                          >
+                            <div
+                              class="ant-space-item"
+                              style="padding-bottom: 8px;"
+                            >
+                              <span
+                                class="ant-tag ant-tag-blue basic-tag-wrapper basic-large-tag-wrapper css-1q0n2j9"
+                              >
+                                Oracle-prod
+                                 / 
+                                -
+                              </span>
+                            </div>
+                          </div>
+                        </div>
+                        <div
+                          class="auth-conflict-section"
+                        >
+                          <div
+                            class="auth-conflict-title"
+                          >
+                            冲突说明：
+                          </div>
+                          <div
+                            class="auth-conflict-content"
+                          >
+                            <span
+                              class="ant-typography"
+                            >
+                              将该用户加入组 
+                            </span>
+                            <div
+                              class="ant-space ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
+                            >
+                              <div
+                                class="ant-space-item"
+                              >
+                                <a
+                                  href="/provision/project/700300/database-account?group_uid=group1"
+                                  target="_blank"
+                                >
+                                  Test Group
+                                </a>
+                              </div>
+                            </div>
+                            <span
+                              class="ant-typography"
+                            >
+                               后，该用户将同时拥有以下账号：
+                            </span>
+                            <div
+                              class="ant-space ant-space-vertical"
+                            >
+                              <div
+                                class="ant-space-item"
+                                style="margin-bottom: 8px;"
+                              >
+                                <span
+                                  class="ant-tag ant-tag-blue basic-tag-wrapper basic-large-tag-wrapper css-1q0n2j9"
+                                >
+                                  Oracle-prod
+                                   / 
+                                  -
+                                  （通过 直接授权 获得）
+                                </span>
+                              </div>
+                              <div
+                                class="ant-space-item"
+                              >
+                                <span
+                                  class="ant-tag ant-tag-blue basic-tag-wrapper basic-large-tag-wrapper css-1q0n2j9"
+                                >
+                                  Oracle-prod
+                                   / 
+                                  -
+                                  （通过 Test Group 获得）
+                                </span>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="ant-modal-confirm-btns"
+                >
+                  <button
+                    class="ant-btn ant-btn-primary"
+                    type="button"
+                  >
+                    <span>
+                      关 闭
+                    </span>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            aria-hidden="true"
+            style="width: 0px; height: 0px; overflow: hidden; outline: none;"
+            tabindex="0"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+  <div>
+    <div
+      class="ant-modal-root"
+    >
+      <div
+        class="ant-modal-mask"
+      />
+      <div
+        class="ant-modal-wrap"
+        tabindex="-1"
+      >
+        <div
+          aria-modal="true"
+          class="ant-modal ant-modal-confirm ant-modal-confirm-error ant-zoom-appear ant-zoom-appear-prepare ant-zoom"
+          role="dialog"
+          style="width: 600px;"
+        >
+          <div
+            aria-hidden="true"
+            style="width: 0px; height: 0px; overflow: hidden; outline: none;"
+            tabindex="0"
+          />
+          <div
+            class="ant-modal-content"
+          >
+            <div
+              class="ant-modal-body"
+            >
+              <div
+                class="ant-modal-confirm-body-wrapper"
+              >
+                <div
+                  class="ant-modal-confirm-body"
+                >
+                  <span
+                    aria-label="close-circle"
+                    class="anticon anticon-close-circle"
+                    role="img"
+                  >
+                    <svg
+                      aria-hidden="true"
+                      data-icon="close-circle"
+                      fill="currentColor"
+                      fill-rule="evenodd"
+                      focusable="false"
+                      height="1em"
+                      viewBox="64 64 896 896"
+                      width="1em"
+                    >
+                      <path
+                        d="M512 64c247.4 0 448 200.6 448 448S759.4 960 512 960 64 759.4 64 512 264.6 64 512 64zm127.98 274.82h-.04l-.08.06L512 466.75 384.14 338.88c-.04-.05-.06-.06-.08-.06a.12.12 0 00-.07 0c-.03 0-.05.01-.09.05l-45.02 45.02a.2.2 0 00-.05.09.12.12 0 000 .07v.02a.27.27 0 00.06.06L466.75 512 338.88 639.86c-.05.04-.06.06-.06.08a.12.12 0 000 .07c0 .03.01.05.05.09l45.02 45.02a.2.2 0 00.09.05.12.12 0 00.07 0c.02 0 .04-.01.08-.05L512 557.25l127.86 127.87c.04.04.06.05.08.05a.12.12 0 00.07 0c.03 0 .05-.01.09-.05l45.02-45.02a.2.2 0 00.05-.09.12.12 0 000-.07v-.02a.27.27 0 00-.05-.06L557.25 512l127.87-127.86c.04-.04.05-.06.05-.08a.12.12 0 000-.07c0-.03-.01-.05-.05-.09l-45.02-45.02a.2.2 0 00-.09-.05.12.12 0 00-.07 0z"
+                      />
+                    </svg>
+                  </span>
+                  <span
+                    class="ant-modal-confirm-title"
+                  >
+                    成员组授权检查失败
+                  </span>
+                  <div
+                    class="ant-modal-confirm-content"
+                  >
+                    <div
+                      class="css-hjqyn1"
+                    >
+                      <div
+                        class="ant-alert ant-alert-warning ant-alert-no-icon auth-conflict-alert"
+                        data-show="true"
+                        role="alert"
+                      >
+                        <div
+                          class="ant-alert-content"
+                        >
+                          <div
+                            class="ant-alert-message"
+                          >
+                            根据安全要求，同一用户在同一数据源上只能使用一个账号。请检查并解决以下冲突后再继续操作。
+                          </div>
+                        </div>
+                      </div>
+                      <div
+                        class="auth-conflict-user"
+                      >
+                        <span
+                          class="ant-typography"
+                        >
+                          检测到成员 
+                        </span>
+                        <div
+                          class="ant-space ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
+                        >
+                          <div
+                            class="ant-space-item"
+                          >
+                            <a
+                              href="/provision/project/700300/database-account?user_uid=user1"
+                              target="_blank"
+                            >
+                              User 1
+                            </a>
+                          </div>
+                        </div>
+                        <span
+                          class="ant-typography"
+                        >
+                           存在权限冲突，该用户当前权限：
+                        </span>
+                        <div
+                          class="auth-conflict-section"
+                        >
+                          <div
+                            class="auth-conflict-title"
+                          >
+                            直接授权：
+                          </div>
+                          <div
+                            class="ant-space ant-space-horizontal ant-space-align-center"
+                            style="flex-wrap: wrap; margin-bottom: -8px;"
+                          >
+                            <div
+                              class="ant-space-item"
+                              style="margin-right: 8px; padding-bottom: 8px;"
+                            >
+                              <span
+                                class="ant-tag ant-tag-blue basic-tag-wrapper basic-large-tag-wrapper css-1q0n2j9"
+                              >
+                                Oracle-prod
+                                 / 
+                                -
+                              </span>
+                            </div>
+                            <div
+                              class="ant-space-item"
+                              style="padding-bottom: 8px;"
+                            >
+                              <span
+                                class="ant-tag ant-tag-blue basic-tag-wrapper basic-large-tag-wrapper css-1q0n2j9"
+                              >
+                                MySQL-prod
+                                 / 
+                                -
+                              </span>
+                            </div>
+                          </div>
+                        </div>
+                        <div
+                          class="auth-conflict-section"
+                        >
+                          <div
+                            class="auth-conflict-title"
+                          >
+                            冲突说明：
+                          </div>
+                          <div
+                            class="auth-conflict-content"
+                          >
+                            <span
+                              class="ant-typography"
+                            >
+                              将该用户加入组 
+                            </span>
+                            <div
+                              class="ant-space ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
+                            >
+                              <div
+                                class="ant-space-item"
+                              >
+                                <a
+                                  href="/provision/project/700300/database-account?group_uid=group1"
+                                  target="_blank"
+                                >
+                                  Test Group
+                                </a>
+                              </div>
+                            </div>
+                            <span
+                              class="ant-typography"
+                            >
+                               后，该用户将同时拥有以下账号：
+                            </span>
+                            <div
+                              class="ant-space ant-space-vertical"
+                            >
+                              <div
+                                class="ant-space-item"
+                                style="margin-bottom: 8px;"
+                              >
+                                <span
+                                  class="ant-tag ant-tag-blue basic-tag-wrapper basic-large-tag-wrapper css-1q0n2j9"
+                                >
+                                  Oracle-prod
+                                   / 
+                                  -
+                                  （通过 直接授权 获得）
+                                </span>
+                              </div>
+                              <div
+                                class="ant-space-item"
+                                style="margin-bottom: 8px;"
+                              >
+                                <span
+                                  class="ant-tag ant-tag-blue basic-tag-wrapper basic-large-tag-wrapper css-1q0n2j9"
+                                >
+                                  MySQL-prod
+                                   / 
+                                  -
+                                  （通过 直接授权 获得）
+                                </span>
+                              </div>
+                              <div
+                                class="ant-space-item"
+                              >
+                                <span
+                                  class="ant-tag ant-tag-blue basic-tag-wrapper basic-large-tag-wrapper css-1q0n2j9"
+                                >
+                                  Oracle-prod
+                                   / 
+                                  -
+                                  （通过 Test Group 获得）
+                                </span>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="ant-modal-confirm-btns"
+                >
+                  <button
+                    class="ant-btn ant-btn-primary"
+                    type="button"
+                  >
+                    <span>
+                      关 闭
+                    </span>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            aria-hidden="true"
+            style="width: 0px; height: 0px; overflow: hidden; outline: none;"
+            tabindex="0"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`useCheckMemberGroupAuth should handle different auth conflict scenarios: multiple-users-conflict 1`] = `
+<body>
+  <div>
+    <div>
+      error
+    </div>
+    <button>
+      点击
+    </button>
+  </div>
+  <div>
+    <div
+      class="ant-modal-root"
+    >
+      <div
+        class="ant-modal-mask"
+      />
+      <div
+        class="ant-modal-wrap"
+        tabindex="-1"
+      >
+        <div
+          aria-modal="true"
+          class="ant-modal ant-modal-confirm ant-modal-confirm-error"
+          role="dialog"
+          style="width: 600px;"
+        >
+          <div
+            aria-hidden="true"
+            style="width: 0px; height: 0px; overflow: hidden; outline: none;"
+            tabindex="0"
+          />
+          <div
+            class="ant-modal-content"
+          >
+            <div
+              class="ant-modal-body"
+            >
+              <div
+                class="ant-modal-confirm-body-wrapper"
+              >
+                <div
+                  class="ant-modal-confirm-body"
+                >
+                  <span
+                    aria-label="close-circle"
+                    class="anticon anticon-close-circle"
+                    role="img"
+                  >
+                    <svg
+                      aria-hidden="true"
+                      data-icon="close-circle"
+                      fill="currentColor"
+                      fill-rule="evenodd"
+                      focusable="false"
+                      height="1em"
+                      viewBox="64 64 896 896"
+                      width="1em"
+                    >
+                      <path
+                        d="M512 64c247.4 0 448 200.6 448 448S759.4 960 512 960 64 759.4 64 512 264.6 64 512 64zm127.98 274.82h-.04l-.08.06L512 466.75 384.14 338.88c-.04-.05-.06-.06-.08-.06a.12.12 0 00-.07 0c-.03 0-.05.01-.09.05l-45.02 45.02a.2.2 0 00-.05.09.12.12 0 000 .07v.02a.27.27 0 00.06.06L466.75 512 338.88 639.86c-.05.04-.06.06-.06.08a.12.12 0 000 .07c0 .03.01.05.05.09l45.02 45.02a.2.2 0 00.09.05.12.12 0 00.07 0c.02 0 .04-.01.08-.05L512 557.25l127.86 127.87c.04.04.06.05.08.05a.12.12 0 00.07 0c.03 0 .05-.01.09-.05l45.02-45.02a.2.2 0 00.05-.09.12.12 0 000-.07v-.02a.27.27 0 00-.05-.06L557.25 512l127.87-127.86c.04-.04.05-.06.05-.08a.12.12 0 000-.07c0-.03-.01-.05-.05-.09l-45.02-45.02a.2.2 0 00-.09-.05.12.12 0 00-.07 0z"
+                      />
+                    </svg>
+                  </span>
+                  <span
+                    class="ant-modal-confirm-title"
+                  >
+                    成员组授权检查失败
+                  </span>
+                  <div
+                    class="ant-modal-confirm-content"
+                  >
+                    <div
+                      class="css-hjqyn1"
+                    >
+                      <div
+                        class="ant-alert ant-alert-warning ant-alert-no-icon auth-conflict-alert"
+                        data-show="true"
+                        role="alert"
+                      >
+                        <div
+                          class="ant-alert-content"
+                        >
+                          <div
+                            class="ant-alert-message"
+                          >
+                            根据安全要求，同一用户在同一数据源上只能使用一个账号。请检查并解决以下冲突后再继续操作。
+                          </div>
+                        </div>
+                      </div>
+                      <div
+                        class="auth-conflict-user"
+                      >
+                        <span
+                          class="ant-typography"
+                        >
+                          检测到成员 
+                        </span>
+                        <div
+                          class="ant-space ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
+                        >
+                          <div
+                            class="ant-space-item"
+                          >
+                            <a
+                              href="/provision/project/700300/database-account?user_uid=user1"
+                              target="_blank"
+                            >
+                              User 1
+                            </a>
+                          </div>
+                        </div>
+                        <span
+                          class="ant-typography"
+                        >
+                           存在权限冲突，该用户当前权限：
+                        </span>
+                        <div
+                          class="auth-conflict-section"
+                        >
+                          <div
+                            class="auth-conflict-title"
+                          >
+                            直接授权：
+                          </div>
+                          <div
+                            class="ant-space ant-space-horizontal ant-space-align-center"
+                            style="flex-wrap: wrap; margin-bottom: -8px;"
+                          >
+                            <div
+                              class="ant-space-item"
+                              style="padding-bottom: 8px;"
+                            >
+                              <span
+                                class="ant-tag ant-tag-blue basic-tag-wrapper basic-large-tag-wrapper css-1q0n2j9"
+                              >
+                                Oracle-prod
+                                 / 
+                                -
+                              </span>
+                            </div>
+                          </div>
+                        </div>
+                        <div
+                          class="auth-conflict-section"
+                        >
+                          <div
+                            class="auth-conflict-title"
+                          >
+                            冲突说明：
+                          </div>
+                          <div
+                            class="auth-conflict-content"
+                          >
+                            <span
+                              class="ant-typography"
+                            >
+                              将该用户加入组 
+                            </span>
+                            <div
+                              class="ant-space ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
+                            >
+                              <div
+                                class="ant-space-item"
+                              >
+                                <a
+                                  href="/provision/project/700300/database-account?group_uid=group1"
+                                  target="_blank"
+                                >
+                                  Test Group
+                                </a>
+                              </div>
+                            </div>
+                            <span
+                              class="ant-typography"
+                            >
+                               后，该用户将同时拥有以下账号：
+                            </span>
+                            <div
+                              class="ant-space ant-space-vertical"
+                            >
+                              <div
+                                class="ant-space-item"
+                                style="margin-bottom: 8px;"
+                              >
+                                <span
+                                  class="ant-tag ant-tag-blue basic-tag-wrapper basic-large-tag-wrapper css-1q0n2j9"
+                                >
+                                  Oracle-prod
+                                   / 
+                                  -
+                                  （通过 直接授权 获得）
+                                </span>
+                              </div>
+                              <div
+                                class="ant-space-item"
+                              >
+                                <span
+                                  class="ant-tag ant-tag-blue basic-tag-wrapper basic-large-tag-wrapper css-1q0n2j9"
+                                >
+                                  Oracle-prod
+                                   / 
+                                  -
+                                  （通过 Test Group 获得）
+                                </span>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="ant-modal-confirm-btns"
+                >
+                  <button
+                    class="ant-btn ant-btn-primary"
+                    type="button"
+                  >
+                    <span>
+                      关 闭
+                    </span>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            aria-hidden="true"
+            style="width: 0px; height: 0px; overflow: hidden; outline: none;"
+            tabindex="0"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+  <div>
+    <div
+      class="ant-modal-root"
+    >
+      <div
+        class="ant-modal-mask"
+      />
+      <div
+        class="ant-modal-wrap"
+        tabindex="-1"
+      >
+        <div
+          aria-modal="true"
+          class="ant-modal ant-modal-confirm ant-modal-confirm-error ant-zoom-appear ant-zoom-appear-prepare ant-zoom"
+          role="dialog"
+          style="width: 600px;"
+        >
+          <div
+            aria-hidden="true"
+            style="width: 0px; height: 0px; overflow: hidden; outline: none;"
+            tabindex="0"
+          />
+          <div
+            class="ant-modal-content"
+          >
+            <div
+              class="ant-modal-body"
+            >
+              <div
+                class="ant-modal-confirm-body-wrapper"
+              >
+                <div
+                  class="ant-modal-confirm-body"
+                >
+                  <span
+                    aria-label="close-circle"
+                    class="anticon anticon-close-circle"
+                    role="img"
+                  >
+                    <svg
+                      aria-hidden="true"
+                      data-icon="close-circle"
+                      fill="currentColor"
+                      fill-rule="evenodd"
+                      focusable="false"
+                      height="1em"
+                      viewBox="64 64 896 896"
+                      width="1em"
+                    >
+                      <path
+                        d="M512 64c247.4 0 448 200.6 448 448S759.4 960 512 960 64 759.4 64 512 264.6 64 512 64zm127.98 274.82h-.04l-.08.06L512 466.75 384.14 338.88c-.04-.05-.06-.06-.08-.06a.12.12 0 00-.07 0c-.03 0-.05.01-.09.05l-45.02 45.02a.2.2 0 00-.05.09.12.12 0 000 .07v.02a.27.27 0 00.06.06L466.75 512 338.88 639.86c-.05.04-.06.06-.06.08a.12.12 0 000 .07c0 .03.01.05.05.09l45.02 45.02a.2.2 0 00.09.05.12.12 0 00.07 0c.02 0 .04-.01.08-.05L512 557.25l127.86 127.87c.04.04.06.05.08.05a.12.12 0 00.07 0c.03 0 .05-.01.09-.05l45.02-45.02a.2.2 0 00.05-.09.12.12 0 000-.07v-.02a.27.27 0 00-.05-.06L557.25 512l127.87-127.86c.04-.04.05-.06.05-.08a.12.12 0 000-.07c0-.03-.01-.05-.05-.09l-45.02-45.02a.2.2 0 00-.09-.05.12.12 0 00-.07 0z"
+                      />
+                    </svg>
+                  </span>
+                  <span
+                    class="ant-modal-confirm-title"
+                  >
+                    成员组授权检查失败
+                  </span>
+                  <div
+                    class="ant-modal-confirm-content"
+                  >
+                    <div
+                      class="css-hjqyn1"
+                    >
+                      <div
+                        class="ant-alert ant-alert-warning ant-alert-no-icon auth-conflict-alert"
+                        data-show="true"
+                        role="alert"
+                      >
+                        <div
+                          class="ant-alert-content"
+                        >
+                          <div
+                            class="ant-alert-message"
+                          >
+                            根据安全要求，同一用户在同一数据源上只能使用一个账号。请检查并解决以下冲突后再继续操作。
+                          </div>
+                        </div>
+                      </div>
+                      <div
+                        class="auth-conflict-user"
+                      >
+                        <span
+                          class="ant-typography"
+                        >
+                          检测到成员 
+                        </span>
+                        <div
+                          class="ant-space ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
+                        >
+                          <div
+                            class="ant-space-item"
+                          >
+                            <a
+                              href="/provision/project/700300/database-account?user_uid=user1"
+                              target="_blank"
+                            >
+                              User 1
+                            </a>
+                          </div>
+                        </div>
+                        <span
+                          class="ant-typography"
+                        >
+                           存在权限冲突，该用户当前权限：
+                        </span>
+                        <div
+                          class="auth-conflict-section"
+                        >
+                          <div
+                            class="auth-conflict-title"
+                          >
+                            直接授权：
+                          </div>
+                          <div
+                            class="ant-space ant-space-horizontal ant-space-align-center"
+                            style="flex-wrap: wrap; margin-bottom: -8px;"
+                          >
+                            <div
+                              class="ant-space-item"
+                              style="padding-bottom: 8px;"
+                            >
+                              <span
+                                class="ant-tag ant-tag-blue basic-tag-wrapper basic-large-tag-wrapper css-1q0n2j9"
+                              >
+                                Oracle-prod
+                                 / 
+                                -
+                              </span>
+                            </div>
+                          </div>
+                        </div>
+                        <div
+                          class="auth-conflict-section"
+                        >
+                          <div
+                            class="auth-conflict-title"
+                          >
+                            冲突说明：
+                          </div>
+                          <div
+                            class="auth-conflict-content"
+                          >
+                            <span
+                              class="ant-typography"
+                            >
+                              将该用户加入组 
+                            </span>
+                            <div
+                              class="ant-space ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
+                            >
+                              <div
+                                class="ant-space-item"
+                              >
+                                <a
+                                  href="/provision/project/700300/database-account?group_uid=group1"
+                                  target="_blank"
+                                >
+                                  Test Group
+                                </a>
+                              </div>
+                            </div>
+                            <span
+                              class="ant-typography"
+                            >
+                               后，该用户将同时拥有以下账号：
+                            </span>
+                            <div
+                              class="ant-space ant-space-vertical"
+                            >
+                              <div
+                                class="ant-space-item"
+                                style="margin-bottom: 8px;"
+                              >
+                                <span
+                                  class="ant-tag ant-tag-blue basic-tag-wrapper basic-large-tag-wrapper css-1q0n2j9"
+                                >
+                                  Oracle-prod
+                                   / 
+                                  -
+                                  （通过 直接授权 获得）
+                                </span>
+                              </div>
+                              <div
+                                class="ant-space-item"
+                              >
+                                <span
+                                  class="ant-tag ant-tag-blue basic-tag-wrapper basic-large-tag-wrapper css-1q0n2j9"
+                                >
+                                  Oracle-prod
+                                   / 
+                                  -
+                                  （通过 Test Group 获得）
+                                </span>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div
+                          class="ant-divider ant-divider-horizontal auth-conflict-divider"
+                          role="separator"
+                        />
+                      </div>
+                      <div
+                        class="auth-conflict-user"
+                      >
+                        <span
+                          class="ant-typography"
+                        >
+                          检测到成员 
+                        </span>
+                        <div
+                          class="ant-space ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
+                        >
+                          <div
+                            class="ant-space-item"
+                          >
+                            <a
+                              href="/provision/project/700300/database-account?user_uid=user2"
+                              target="_blank"
+                            >
+                              User 2
+                            </a>
+                          </div>
+                        </div>
+                        <span
+                          class="ant-typography"
+                        >
+                           存在权限冲突，该用户当前权限：
+                        </span>
+                        <div
+                          class="auth-conflict-section"
+                        >
+                          <div
+                            class="auth-conflict-title"
+                          >
+                            直接授权：
+                          </div>
+                          <div
+                            class="ant-space ant-space-horizontal ant-space-align-center"
+                            style="flex-wrap: wrap; margin-bottom: -8px;"
+                          >
+                            <div
+                              class="ant-space-item"
+                              style="padding-bottom: 8px;"
+                            >
+                              <span
+                                class="ant-tag ant-tag-blue basic-tag-wrapper basic-large-tag-wrapper css-1q0n2j9"
+                              >
+                                Oracle-prod
+                                 / 
+                                -
+                              </span>
+                            </div>
+                          </div>
+                        </div>
+                        <div
+                          class="auth-conflict-section"
+                        >
+                          <div
+                            class="auth-conflict-title"
+                          >
+                            冲突说明：
+                          </div>
+                          <div
+                            class="auth-conflict-content"
+                          >
+                            <span
+                              class="ant-typography"
+                            >
+                              将该用户加入组 
+                            </span>
+                            <div
+                              class="ant-space ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
+                            >
+                              <div
+                                class="ant-space-item"
+                              >
+                                <a
+                                  href="/provision/project/700300/database-account?group_uid=group1"
+                                  target="_blank"
+                                >
+                                  Test Group
+                                </a>
+                              </div>
+                            </div>
+                            <span
+                              class="ant-typography"
+                            >
+                               后，该用户将同时拥有以下账号：
+                            </span>
+                            <div
+                              class="ant-space ant-space-vertical"
+                            >
+                              <div
+                                class="ant-space-item"
+                                style="margin-bottom: 8px;"
+                              >
+                                <span
+                                  class="ant-tag ant-tag-blue basic-tag-wrapper basic-large-tag-wrapper css-1q0n2j9"
+                                >
+                                  Oracle-prod
+                                   / 
+                                  -
+                                  （通过 直接授权 获得）
+                                </span>
+                              </div>
+                              <div
+                                class="ant-space-item"
+                              >
+                                <span
+                                  class="ant-tag ant-tag-blue basic-tag-wrapper basic-large-tag-wrapper css-1q0n2j9"
+                                >
+                                  Oracle-prod
+                                   / 
+                                  -
+                                  （通过 Test Group 获得）
+                                </span>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="ant-modal-confirm-btns"
+                >
+                  <button
+                    class="ant-btn ant-btn-primary"
+                    type="button"
+                  >
+                    <span>
+                      关 闭
+                    </span>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            aria-hidden="true"
+            style="width: 0px; height: 0px; overflow: hidden; outline: none;"
+            tabindex="0"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`useCheckMemberGroupAuth should handle different auth conflict scenarios: single-user-conflict 1`] = `
+<body>
+  <div>
+    <div>
+      error
+    </div>
+    <button>
+      点击
+    </button>
+  </div>
+  <div>
+    <div
+      class="ant-modal-root"
+    >
+      <div
+        class="ant-modal-mask"
+      />
+      <div
+        class="ant-modal-wrap"
+        tabindex="-1"
+      >
+        <div
+          aria-modal="true"
+          class="ant-modal ant-modal-confirm ant-modal-confirm-error ant-zoom-appear ant-zoom-appear-prepare ant-zoom"
+          role="dialog"
+          style="width: 600px;"
+        >
+          <div
+            aria-hidden="true"
+            style="width: 0px; height: 0px; overflow: hidden; outline: none;"
+            tabindex="0"
+          />
+          <div
+            class="ant-modal-content"
+          >
+            <div
+              class="ant-modal-body"
+            >
+              <div
+                class="ant-modal-confirm-body-wrapper"
+              >
+                <div
+                  class="ant-modal-confirm-body"
+                >
+                  <span
+                    aria-label="close-circle"
+                    class="anticon anticon-close-circle"
+                    role="img"
+                  >
+                    <svg
+                      aria-hidden="true"
+                      data-icon="close-circle"
+                      fill="currentColor"
+                      fill-rule="evenodd"
+                      focusable="false"
+                      height="1em"
+                      viewBox="64 64 896 896"
+                      width="1em"
+                    >
+                      <path
+                        d="M512 64c247.4 0 448 200.6 448 448S759.4 960 512 960 64 759.4 64 512 264.6 64 512 64zm127.98 274.82h-.04l-.08.06L512 466.75 384.14 338.88c-.04-.05-.06-.06-.08-.06a.12.12 0 00-.07 0c-.03 0-.05.01-.09.05l-45.02 45.02a.2.2 0 00-.05.09.12.12 0 000 .07v.02a.27.27 0 00.06.06L466.75 512 338.88 639.86c-.05.04-.06.06-.06.08a.12.12 0 000 .07c0 .03.01.05.05.09l45.02 45.02a.2.2 0 00.09.05.12.12 0 00.07 0c.02 0 .04-.01.08-.05L512 557.25l127.86 127.87c.04.04.06.05.08.05a.12.12 0 00.07 0c.03 0 .05-.01.09-.05l45.02-45.02a.2.2 0 00.05-.09.12.12 0 000-.07v-.02a.27.27 0 00-.05-.06L557.25 512l127.87-127.86c.04-.04.05-.06.05-.08a.12.12 0 000-.07c0-.03-.01-.05-.05-.09l-45.02-45.02a.2.2 0 00-.09-.05.12.12 0 00-.07 0z"
+                      />
+                    </svg>
+                  </span>
+                  <span
+                    class="ant-modal-confirm-title"
+                  >
+                    成员组授权检查失败
+                  </span>
+                  <div
+                    class="ant-modal-confirm-content"
+                  >
+                    <div
+                      class="css-hjqyn1"
+                    >
+                      <div
+                        class="ant-alert ant-alert-warning ant-alert-no-icon auth-conflict-alert"
+                        data-show="true"
+                        role="alert"
+                      >
+                        <div
+                          class="ant-alert-content"
+                        >
+                          <div
+                            class="ant-alert-message"
+                          >
+                            根据安全要求，同一用户在同一数据源上只能使用一个账号。请检查并解决以下冲突后再继续操作。
+                          </div>
+                        </div>
+                      </div>
+                      <div
+                        class="auth-conflict-user"
+                      >
+                        <span
+                          class="ant-typography"
+                        >
+                          检测到成员 
+                        </span>
+                        <div
+                          class="ant-space ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
+                        >
+                          <div
+                            class="ant-space-item"
+                          >
+                            <a
+                              href="/provision/project/700300/database-account?user_uid=user1"
+                              target="_blank"
+                            >
+                              User 1
+                            </a>
+                          </div>
+                        </div>
+                        <span
+                          class="ant-typography"
+                        >
+                           存在权限冲突，该用户当前权限：
+                        </span>
+                        <div
+                          class="auth-conflict-section"
+                        >
+                          <div
+                            class="auth-conflict-title"
+                          >
+                            直接授权：
+                          </div>
+                          <div
+                            class="ant-space ant-space-horizontal ant-space-align-center"
+                            style="flex-wrap: wrap; margin-bottom: -8px;"
+                          >
+                            <div
+                              class="ant-space-item"
+                              style="padding-bottom: 8px;"
+                            >
+                              <span
+                                class="ant-tag ant-tag-blue basic-tag-wrapper basic-large-tag-wrapper css-1q0n2j9"
+                              >
+                                Oracle-prod
+                                 / 
+                                -
+                              </span>
+                            </div>
+                          </div>
+                        </div>
+                        <div
+                          class="auth-conflict-section"
+                        >
+                          <div
+                            class="auth-conflict-title"
+                          >
+                            冲突说明：
+                          </div>
+                          <div
+                            class="auth-conflict-content"
+                          >
+                            <span
+                              class="ant-typography"
+                            >
+                              将该用户加入组 
+                            </span>
+                            <div
+                              class="ant-space ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
+                            >
+                              <div
+                                class="ant-space-item"
+                              >
+                                <a
+                                  href="/provision/project/700300/database-account?group_uid=group1"
+                                  target="_blank"
+                                >
+                                  Test Group
+                                </a>
+                              </div>
+                            </div>
+                            <span
+                              class="ant-typography"
+                            >
+                               后，该用户将同时拥有以下账号：
+                            </span>
+                            <div
+                              class="ant-space ant-space-vertical"
+                            >
+                              <div
+                                class="ant-space-item"
+                                style="margin-bottom: 8px;"
+                              >
+                                <span
+                                  class="ant-tag ant-tag-blue basic-tag-wrapper basic-large-tag-wrapper css-1q0n2j9"
+                                >
+                                  Oracle-prod
+                                   / 
+                                  -
+                                  （通过 直接授权 获得）
+                                </span>
+                              </div>
+                              <div
+                                class="ant-space-item"
+                              >
+                                <span
+                                  class="ant-tag ant-tag-blue basic-tag-wrapper basic-large-tag-wrapper css-1q0n2j9"
+                                >
+                                  Oracle-prod
+                                   / 
+                                  -
+                                  （通过 Test Group 获得）
+                                </span>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="ant-modal-confirm-btns"
+                >
+                  <button
+                    class="ant-btn ant-btn-primary"
+                    type="button"
+                  >
+                    <span>
+                      关 闭
+                    </span>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            aria-hidden="true"
+            style="width: 0px; height: 0px; overflow: hidden; outline: none;"
+            tabindex="0"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+`;

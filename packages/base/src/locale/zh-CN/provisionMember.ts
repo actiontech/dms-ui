@@ -19,7 +19,7 @@ export default {
     securityAlert: '安全提示',
     securityAlertDesc:
       '根据安全要求，同一用户在同一数据源上只能使用一个账号。请检查并解决以下冲突后再继续操作。',
-    viewCurrentUserAuthDetail: '查看当前用户授权详情',
-    viewCurrentGroupAuthDetail: '查看当前成员组授权详情'
+    viewCurrentUserAuthDetail: '查看该用户授权详情',
+    viewCurrentGroupAuthDetail: '查看该成员组授权详情'
   }
 };

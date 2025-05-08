@@ -695,6 +695,33 @@ exports[`provision/DatabaseAccount/DatabaseAccount render init snap 1`] = `
                             >
                               <div
                                 class="ant-space-item"
+                                style="margin-right: 0px;"
+                              >
+                                <span
+                                  class="ant-tag ant-tag-blue basic-tag-wrapper basic-small-tag-wrapper css-11a5f5v"
+                                >
+                                  <svg
+                                    color="currentColor"
+                                    height="16"
+                                    viewBox="0 0 16 16"
+                                    width="16"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                  >
+                                    <path
+                                      d="M2.522 1.884 8 .667l5.478 1.217a.67.67 0 0 1 .522.65v6.659a4 4 0 0 1-1.781 3.328L8 15.333l-4.219-2.812A4 4 0 0 1 2 9.193V2.535a.67.67 0 0 1 .522-.65M8 7.334A1.667 1.667 0 1 0 8 4a1.667 1.667 0 0 0 0 3.333m-2.982 3.333h5.964a3 3 0 0 0-5.964 0"
+                                      fill="currentColor"
+                                    />
+                                  </svg>
+                                  <div
+                                    class="name-ellipsis"
+                                  >
+                                    t3
+                                  </div>
+                                </span>
+                              </div>
+                              <div
+                                class="ant-space-item"
+                                style="margin-right: 0px;"
                               >
                                 <div
                                   class="ant-space ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
@@ -703,14 +730,66 @@ exports[`provision/DatabaseAccount/DatabaseAccount render init snap 1`] = `
                                     class="ant-space-item"
                                   >
                                     <span
-                                      class="ant-avatar ant-avatar-sm ant-avatar-circle action-avatar css-1wq79dc"
+                                      class="ant-tag ant-tag-cyan basic-tag-wrapper basic-small-tag-wrapper css-1f6h6yv"
                                     >
-                                      <span
-                                        class="ant-avatar-string"
-                                        style="transform: scale(1) translateX(-50%);"
+                                      <svg
+                                        color="currentColor"
+                                        height="16"
+                                        viewBox="0 0 18 18"
+                                        width="16"
+                                        xmlns="http://www.w3.org/2000/svg"
                                       >
-                                        T
-                                      </span>
+                                        <path
+                                          d="M9 7.5a3 3 0 1 0 0-6 3 3 0 0 0 0 6M4.125 9.75a1.875 1.875 0 1 0 0-3.75 1.875 1.875 0 0 0 0 3.75M15.75 7.875a1.875 1.875 0 1 1-3.75 0 1.875 1.875 0 0 1 3.75 0M9 8.25A3.75 3.75 0 0 1 12.75 12v4.5h-7.5V12A3.75 3.75 0 0 1 9 8.25M3.75 12c0-.52.075-1.022.216-1.496l-.127.011a2.625 2.625 0 0 0-2.339 2.61V16.5h2.25zm12.75 4.5v-3.375a2.626 2.626 0 0 0-2.466-2.62c.14.473.216.975.216 1.495v4.5z"
+                                          fill="currentColor"
+                                        />
+                                        <path
+                                          d="M4.125 9.75a1.875 1.875 0 1 0 0-3.75 1.875 1.875 0 0 0 0 3.75M15.75 7.875a1.875 1.875 0 1 1-3.75 0 1.875 1.875 0 0 1 3.75 0M3.75 12c0-.52.075-1.022.216-1.496l-.127.011a2.625 2.625 0 0 0-2.339 2.61V16.5h2.25zm12.75 4.5v-3.375a2.626 2.626 0 0 0-2.466-2.62c.14.473.216.975.216 1.495v4.5z"
+                                          fill="currentColor"
+                                        />
+                                      </svg>
+                                      <div
+                                        class="name-ellipsis"
+                                      >
+                                        g1
+                                      </div>
+                                    </span>
+                                  </div>
+                                </div>
+                              </div>
+                              <div
+                                class="ant-space-item"
+                              >
+                                <div
+                                  class="ant-space ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
+                                >
+                                  <div
+                                    class="ant-space-item"
+                                  >
+                                    <span
+                                      class="ant-tag ant-tag-cyan basic-tag-wrapper basic-small-tag-wrapper css-1f6h6yv"
+                                    >
+                                      <svg
+                                        color="currentColor"
+                                        height="16"
+                                        viewBox="0 0 18 18"
+                                        width="16"
+                                        xmlns="http://www.w3.org/2000/svg"
+                                      >
+                                        <path
+                                          d="M9 7.5a3 3 0 1 0 0-6 3 3 0 0 0 0 6M4.125 9.75a1.875 1.875 0 1 0 0-3.75 1.875 1.875 0 0 0 0 3.75M15.75 7.875a1.875 1.875 0 1 1-3.75 0 1.875 1.875 0 0 1 3.75 0M9 8.25A3.75 3.75 0 0 1 12.75 12v4.5h-7.5V12A3.75 3.75 0 0 1 9 8.25M3.75 12c0-.52.075-1.022.216-1.496l-.127.011a2.625 2.625 0 0 0-2.339 2.61V16.5h2.25zm12.75 4.5v-3.375a2.626 2.626 0 0 0-2.466-2.62c.14.473.216.975.216 1.495v4.5z"
+                                          fill="currentColor"
+                                        />
+                                        <path
+                                          d="M4.125 9.75a1.875 1.875 0 1 0 0-3.75 1.875 1.875 0 0 0 0 3.75M15.75 7.875a1.875 1.875 0 1 1-3.75 0 1.875 1.875 0 0 1 3.75 0M3.75 12c0-.52.075-1.022.216-1.496l-.127.011a2.625 2.625 0 0 0-2.339 2.61V16.5h2.25zm12.75 4.5v-3.375a2.626 2.626 0 0 0-2.466-2.62c.14.473.216.975.216 1.495v4.5z"
+                                          fill="currentColor"
+                                        />
+                                      </svg>
+                                      <div
+                                        class="name-ellipsis"
+                                      >
+                                        g2
+                                      </div>
                                     </span>
                                   </div>
                                 </div>
