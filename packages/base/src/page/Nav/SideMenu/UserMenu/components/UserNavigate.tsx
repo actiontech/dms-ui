@@ -28,6 +28,7 @@ import User from '@actiontech/shared/lib/api/base/service/User';
 import { updateLanguage as updateReduxLanguage } from '../../../../../../../base/src/store/user';
 import { Radio } from 'antd';
 import { ROUTE_PATHS } from '@actiontech/shared/lib/data/routePaths';
+import useRecentlySelectedZone from '../../../../../hooks/useRecentlySelectedZone';
 
 type Props = {
   username: string;
@@ -48,12 +49,19 @@ const UserNavigate: React.FC<Props> = ({
     useBoolean(false);
   const [open, setOpen] = useState(false);
 
+  //# if [ee]
+  const { clearRecentlySelectedZone } = useRecentlySelectedZone();
+  //# endif
+
   const logout = () => {
     startLogout();
     Session.DelSession()
       .then((res) => {
         if (res.data.code === ResponseCode.SUCCESS) {
           clearUserInfo();
+          //# if [ee]
+          clearRecentlySelectedZone();
+          //# endif
           if (res.data.data?.location) {
             window.location.href = res.data.data?.location;
           } else {

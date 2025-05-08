@@ -14,6 +14,8 @@ import {
 import { mockUseUserInfo } from '@actiontech/shared/lib/testUtil/mockHook/mockUseUserInfo';
 import account from '../../../../../../testUtils/mockApi/account';
 import { createSpySuccessResponse } from '@actiontech/shared/lib/testUtil/mockApi';
+import { mockUseRecentlySelectedZone } from '../../../../../../testUtils/mockHooks/mockUseRecentlySelectedZone';
+import { mockUseRecentlySelectedZoneData } from '../../../../../../testUtils/mockHooks/data';
 
 jest.mock('react-redux', () => {
   return {
@@ -56,6 +58,7 @@ describe('base/page/Nav/SideMenu/UserNavigate-ee', () => {
     requestDelSession = dms.delSession();
     requestUpdateCurrentUser = account.updateCurrentUser();
     mockUseUserInfo({ clearUserInfo: mockClearUserInfo });
+    mockUseRecentlySelectedZone();
   });
 
   afterEach(() => {
@@ -94,6 +97,11 @@ describe('base/page/Nav/SideMenu/UserNavigate-ee', () => {
   });
 
   it('render snap when click logout btn', async () => {
+    const mockClearRecentlySelectedZone = jest.fn();
+    mockUseRecentlySelectedZone({
+      ...mockUseRecentlySelectedZoneData,
+      clearRecentlySelectedZone: mockClearRecentlySelectedZone
+    });
     const { baseElement } = customRender();
 
     await act(async () => jest.advanceTimersByTime(3300));
@@ -116,6 +124,7 @@ describe('base/page/Nav/SideMenu/UserNavigate-ee', () => {
     expect(requestDelSession).toHaveBeenCalledTimes(1);
     expect(mockClearUserInfo).toHaveBeenCalledTimes(1);
     expect(navigateSpy).toHaveBeenCalledWith('/login', { replace: true });
+    expect(mockClearRecentlySelectedZone).toHaveBeenCalledTimes(1);
   });
 
   it('render logout btn when delete session return a location', async () => {
