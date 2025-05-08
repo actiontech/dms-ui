@@ -4,7 +4,9 @@ import {
   BasicButton,
   EmptyBox,
   TypedLink,
-  useTypedNavigate
+  useTypedNavigate,
+  paramsSerializer,
+  useTypedQuery
 } from '@actiontech/shared';
 import { Space, message, Spin } from 'antd';
 import {
@@ -29,7 +31,6 @@ import { IListDBAccount } from '@actiontech/shared/lib/api/provision/service/com
 import { useMemo, useEffect, useState, useCallback } from 'react';
 import {
   DatabaseAccountListColumns,
-  DatabaseAccountListFilterParamType,
   DatabaseAccountListActions
 } from './column';
 import {
@@ -51,11 +52,15 @@ import { ResponseCode } from '@actiontech/shared/lib/enum';
 import AccountStatistics from '../components/AccountStatistics';
 import { OpPermissionItemOpPermissionTypeEnum } from '@actiontech/shared/lib/api/base/service/common.enum';
 import { ROUTE_PATHS } from '@actiontech/shared/lib/data/routePaths';
+import { DatabaseAccountListFilterParamType } from './index.type';
+import useMemberGroup from '../hooks/useMemberGroup';
 
 const DatabaseAccountList = () => {
   const { t } = useTranslation();
 
   const navigate = useTypedNavigate();
+
+  const extractQueries = useTypedQuery();
 
   const [messageApi, contextHolder] = message.useMessage();
 
@@ -66,6 +71,8 @@ const DatabaseAccountList = () => {
   const [selectedRowKeys, setSelectedRowKeys] = useState<React.Key[]>([]);
 
   const { updateUserList, userIDOptions } = useProvisionUser();
+
+  const { updateMemberGroupList, memberIDOptions } = useMemberGroup();
 
   const { updateServiceList, serviceOptions } = useServiceOptions();
 
@@ -106,7 +113,7 @@ const DatabaseAccountList = () => {
         fuzzy_keyword: searchKeyword
       };
       return handleTableRequestError(
-        dbAccountService.AuthListDBAccount(params)
+        dbAccountService.AuthListDBAccount(params, { paramsSerializer })
       );
     },
     {
@@ -162,7 +169,14 @@ const DatabaseAccountList = () => {
         'auth_users',
         {
           options: userIDOptions,
-          value: tableFilterInfo.filter_by_user
+          value: tableFilterInfo.filter_by_users
+        }
+      ],
+      [
+        'auth_user_groups',
+        {
+          options: memberIDOptions,
+          value: tableFilterInfo.filter_by_user_group
         }
       ],
       [
@@ -173,7 +187,7 @@ const DatabaseAccountList = () => {
         }
       ]
     ]);
-  }, [userIDOptions, serviceOptions, tableFilterInfo]);
+  }, [userIDOptions, serviceOptions, memberIDOptions, tableFilterInfo]);
 
   const onUpdateFilter = useCallback(
     (key: keyof DatabaseAccountListFilterParamType, value?: string) => {
@@ -335,7 +349,22 @@ const DatabaseAccountList = () => {
   useEffect(() => {
     updateUserList();
     updateServiceList();
-  }, [updateUserList, updateServiceList]);
+    updateMemberGroupList();
+  }, [updateUserList, updateServiceList, updateMemberGroupList]);
+
+  useEffect(() => {
+    const queries = extractQueries(
+      ROUTE_PATHS.PROVISION.DATABASE_ACCOUNT.index
+    );
+
+    if (queries?.user_uid) {
+      onUpdateFilter('filter_by_users', queries.user_uid);
+    }
+
+    if (queries?.group_uid) {
+      onUpdateFilter('filter_by_user_group', queries.group_uid);
+    }
+  }, [extractQueries, onUpdateFilter]);
 
   useEffect(() => {
     initModalStatus({

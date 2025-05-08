@@ -13,6 +13,7 @@ import {
   ListDBAccountStatusEnum,
   ListDBServiceLastConnectionTestStatusEnum,
   ListDBServiceV2LastConnectionTestStatusEnum,
+  ListMemberRoleWithOpRangeOpRangeTypeEnum,
   ListProjectV1ProjectPriorityEnum,
   ListProjectV2ProjectPriorityEnum,
   ListServiceDbTypeEnum,
@@ -216,6 +217,14 @@ export interface IAuthGetAccountStaticsReply {
   data?: IAccountStatics;
 
   message?: string;
+}
+
+export interface IAuthUserGroups {
+  auth_users?: IUidWithName[];
+
+  name?: string;
+
+  uid?: string;
 }
 
 export interface IBatchUpdateDBAccountPassword {
@@ -478,6 +487,8 @@ export interface IGetDBAccountReply {
   data?: {
     account_info?: IAccountDetail;
 
+    auth_group_users?: string[];
+
     auth_users?: string[];
 
     data_permissions?: IDBAccountDataPermission[];
@@ -516,6 +527,26 @@ export interface IGetDataPermissionsInDataPermissionTemplateReply {
   code?: number;
 
   data?: IGetDataPermissionsInDataPermissionTemplate[];
+
+  message?: string;
+}
+
+export interface IGetMemberGroup {
+  is_project_admin?: boolean;
+
+  name?: string;
+
+  role_with_op_ranges?: IListMemberRoleWithOpRange[];
+
+  uid?: string;
+
+  users?: IUidWithName[];
+}
+
+export interface IGetMemberGroupReply {
+  code?: number;
+
+  data?: IGetMemberGroup;
 
   message?: string;
 }
@@ -650,6 +681,8 @@ export interface IListAuthorizationEventsReply {
 
 export interface IListDBAccount {
   account_info?: IAccountInfo;
+
+  auth_user_groups?: IAuthUserGroups[];
 
   auth_users?: IUidWithName[];
 
@@ -968,6 +1001,14 @@ export interface IListInternalUserReply {
   total_nums?: number;
 }
 
+export interface IListMemberRoleWithOpRange {
+  op_range_type?: ListMemberRoleWithOpRangeOpRangeTypeEnum;
+
+  range_uids?: IUidWithName[];
+
+  role_uid?: IUidWithName;
+}
+
 export interface IListMembersForInternalItem {
   is_admin?: boolean;
 
@@ -1224,6 +1265,10 @@ export interface IPermissionInfo {
   grants?: string[];
 }
 
+export interface IPermissionUserGroups {
+  permission_user_group_uids?: string[];
+}
+
 export interface IPermissionUsers {
   permission_user_uids?: string[];
 }
@@ -1348,6 +1393,8 @@ export interface IUpdateDBAccount {
   lock?: boolean;
 
   password_config?: IPasswordConfig;
+
+  permission_user_groups?: IPermissionUserGroups;
 
   permission_users?: IPermissionUsers;
 

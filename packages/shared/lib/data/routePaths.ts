@@ -400,7 +400,8 @@ export const ROUTE_PATHS = {
     DATABASE_ACCOUNT: {
       index: {
         prefix: '/provision/project',
-        path: ':projectID/database-account'
+        path: ':projectID/database-account',
+        query: 'user_uid&group_uid'
       },
       create: {
         prefix: '/provision/project/:projectID/database-account',

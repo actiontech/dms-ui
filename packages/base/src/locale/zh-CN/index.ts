@@ -15,6 +15,8 @@ import dmsDataExport from './dmsDataExport';
 import dataMaskRuleOverview from './dataMaskRuleOverview';
 import dmsGlobalDataSource from './dmsGlobalDataSource';
 import resourceOverview from './resourceOverview';
+import provisionMember from './provisionMember';
+
 // eslint-disable-next-line import/no-anonymous-default-export
 export default {
   translation: {
@@ -33,6 +35,7 @@ export default {
     dmsDataExport,
     dataMaskRuleOverview,
     dmsGlobalDataSource,
-    resourceOverview
+    resourceOverview,
+    provisionMember
   }
 };
