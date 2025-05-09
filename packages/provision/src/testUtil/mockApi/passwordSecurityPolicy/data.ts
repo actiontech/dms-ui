@@ -1,6 +1,4 @@
-import { IPasswordSecurityPolicy } from '@actiontech/shared/lib/api/provision/service/common';
-
-export const passwordSecurityPolicyMockData: IPasswordSecurityPolicy[] = [
+export const passwordSecurityPolicyMockData = [
   {
     uid: '1234',
     name: 'test1',

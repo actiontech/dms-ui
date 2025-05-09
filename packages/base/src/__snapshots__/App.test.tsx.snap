@@ -873,7 +873,7 @@ exports[`App render App when "checkPageAction" is false 1`] = `
                   <a
                     href="/provision/project//database-account-password"
                   >
-                    账号密码管理
+                    临期密码
                   </a>
                 </span>
               </li>
@@ -3021,7 +3021,7 @@ exports[`App render App when token is existed 1`] = `
                   <a
                     href="/provision/project//database-account-password"
                   >
-                    账号密码管理
+                    临期密码
                   </a>
                 </span>
               </li>

@@ -33,8 +33,6 @@ export interface IAuthListDBAccountParams {
 
   filter_by_user_group?: string;
 
-  filter_by_policy?: string;
-
   filter_by_expired_time_from?: string;
 
   filter_by_expired_time_to?: string;
