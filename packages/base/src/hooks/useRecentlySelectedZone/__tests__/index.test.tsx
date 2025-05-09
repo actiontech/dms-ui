@@ -314,4 +314,31 @@ describe('useRecentlySelectedZone', () => {
       consoleSpy.mockRestore();
     });
   });
+
+  describe('clearRecentlySelectedZone', () => {
+    it('should clear all zone related data', () => {
+      const { result } = renderHook(() => useRecentlySelectedZone());
+
+      act(() => {
+        result.current.clearRecentlySelectedZone();
+      });
+
+      expect(dispatchSpy).toHaveBeenCalledWith(
+        updateMemorizedAvailabilityZone({
+          memorizedAvailabilityZone: undefined
+        })
+      );
+
+      expect(dispatchSpy).toHaveBeenCalledWith(
+        updateRecentlySelectedZoneRecord({
+          recentlySelectedZoneRecord: []
+        })
+      );
+
+      expect(LocalStorageWrapper.set).toHaveBeenCalledWith(
+        StorageKey.DMS_AVAILABILITY_ZONE,
+        JSON.stringify([])
+      );
+    });
+  });
 });
