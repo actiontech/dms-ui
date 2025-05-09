@@ -1,0 +1,143 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ComparisonOverview should superRender all comparison result cards 1`] = `
+<div>
+  <div
+    class="css-25fr8k"
+  >
+    <div
+      class="ant-row"
+      style="margin-left: -8px; margin-right: -8px;"
+    >
+      <div
+        class="ant-col ant-col-6"
+        style="padding-left: 8px; padding-right: 8px;"
+      >
+        <div
+          class="ant-card ant-card-bordered card-comparison-not-exist-mode css-wpolr5"
+        >
+          <div
+            class="ant-card-body"
+          >
+            <h4
+              class="ant-typography card-title"
+            >
+              缺失对象
+            </h4>
+            <div
+              class="stat-number"
+            >
+              2
+            </div>
+            <div
+              class="card-footer"
+            >
+              <span
+                class="ant-typography suggestion"
+              >
+                需要及时处理
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="ant-col ant-col-6"
+        style="padding-left: 8px; padding-right: 8px;"
+      >
+        <div
+          class="ant-card ant-card-bordered card-base-not-exist-mode css-wpolr5"
+        >
+          <div
+            class="ant-card-body"
+          >
+            <h4
+              class="ant-typography card-title"
+            >
+              新增对象
+            </h4>
+            <div
+              class="stat-number"
+            >
+              0
+            </div>
+            <div
+              class="card-footer"
+            >
+              <span
+                class="ant-typography suggestion"
+              >
+                需要及时处理
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="ant-col ant-col-6"
+        style="padding-left: 8px; padding-right: 8px;"
+      >
+        <div
+          class="ant-card ant-card-bordered card-inconsistent-mode css-wpolr5"
+        >
+          <div
+            class="ant-card-body"
+          >
+            <h4
+              class="ant-typography card-title"
+            >
+              定义差异
+            </h4>
+            <div
+              class="stat-number"
+            >
+              0
+            </div>
+            <div
+              class="card-footer"
+            >
+              <span
+                class="ant-typography suggestion"
+              >
+                建议检查确认
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="ant-col ant-col-6"
+        style="padding-left: 8px; padding-right: 8px;"
+      >
+        <div
+          class="ant-card ant-card-bordered card-same-mode css-wpolr5"
+        >
+          <div
+            class="ant-card-body"
+          >
+            <h4
+              class="ant-typography card-title"
+            >
+              一致对象
+            </h4>
+            <div
+              class="stat-number"
+            >
+              2
+            </div>
+            <div
+              class="card-footer"
+            >
+              <span
+                class="ant-typography suggestion"
+              >
+                无需处理
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
