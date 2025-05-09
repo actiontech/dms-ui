@@ -9,7 +9,7 @@ import {
 } from '@actiontech/icons';
 import { BasicToolTip } from '@actiontech/shared';
 import { useTranslation } from 'react-i18next';
-import { Key, useCallback, useState } from 'react';
+import { useCallback, useState } from 'react';
 import {
   TREE_PARENT_NODE_KEY,
   generateClassNamesByComparisonResult,
@@ -45,7 +45,6 @@ const useComparisonResultTree = (comparisonResults: ISchemaObject[]) => {
       setTrue: openComparisonDetailDrawer
     }
   ] = useBoolean();
-  const [treeExpandedKeys, setTreeExpandedKeys] = useState<Key[]>([]);
 
   const resetStateAndCloseComparisonDetailDrawer = () => {
     setSelectedObjectNodeKey(undefined);
@@ -93,7 +92,12 @@ const useComparisonResultTree = (comparisonResults: ISchemaObject[]) => {
                       obj.object_name!
                     ),
                     title: (
-                      <ComparisonTreeNodeTitleStyleWrapper>
+                      <ComparisonTreeNodeTitleStyleWrapper
+                        className={generateClassNamesByComparisonResult(
+                          'baseline',
+                          obj.comparison_result
+                        )}
+                      >
                         <div className="name-container">
                           {getObjectTypeIcon(diff.object_type!)}
                           {renderComparisonResultObjectName(
@@ -183,6 +187,7 @@ const useComparisonResultTree = (comparisonResults: ISchemaObject[]) => {
                       title: (
                         <ComparisonTreeNodeTitleStyleWrapper
                           className={generateClassNamesByComparisonResult(
+                            'comparison',
                             obj.comparison_result
                           )}
                         >
@@ -326,9 +331,7 @@ const useComparisonResultTree = (comparisonResults: ISchemaObject[]) => {
     comparisonDetailDrawerOpen,
     selectedObjectNodeKey,
     generateGetComparisonDetailParams,
-    generateModifiedSqlParams,
-    treeExpandedKeys,
-    setTreeExpandedKeys
+    generateModifiedSqlParams
   };
 };
 

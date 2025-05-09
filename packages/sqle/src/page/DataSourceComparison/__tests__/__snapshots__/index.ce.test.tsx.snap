@@ -2,7 +2,9 @@
 
 exports[`DataSourceComparison ce should match snapshot 1`] = `
 <div>
-  <section>
+  <section
+    class="css-s55w19"
+  >
     <div
       class="actiontech-page-header-namespace css-1xspr0w"
     >
