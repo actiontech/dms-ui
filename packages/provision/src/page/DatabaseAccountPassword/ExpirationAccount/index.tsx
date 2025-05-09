@@ -34,7 +34,6 @@ import EventEmitter from '~/utils/EventEmitter';
 import ModifyPasswordModal from '../../DatabaseAccount/Modal/ModifyPassword';
 import RenewalPasswordModal from '../../DatabaseAccount/Modal/RenewalPassword';
 import { useSetRecoilState } from 'recoil';
-import useSecurityPolicy from '~/hooks/useSecurityPolicy';
 import dayjs from 'dayjs';
 import { OpPermissionItemOpPermissionTypeEnum } from '@actiontech/shared/lib/api/base/service/common.enum';
 
@@ -44,8 +43,6 @@ const ExpirationAccountList = () => {
   const { username } = useCurrentUser();
 
   const { updateServiceList, serviceOptions } = useServiceOptions();
-
-  const { updateSecurityPolicyList } = useSecurityPolicy();
 
   const { toggleModal, initModalStatus } = useModalStatus(
     DatabaseAccountModalStatus
@@ -141,8 +138,7 @@ const ExpirationAccountList = () => {
 
   useEffect(() => {
     updateServiceList();
-    updateSecurityPolicyList();
-  }, [updateServiceList, updateSecurityPolicyList]);
+  }, [updateServiceList]);
 
   useEffect(() => {
     initModalStatus({

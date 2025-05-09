@@ -21,7 +21,6 @@ import { useBoolean, useRequest } from 'ahooks';
 import { useEffect, useState } from 'react';
 import { IAuthAddDBAccountParams } from '@actiontech/shared/lib/api/provision/service/db_account/index.d';
 import PreviewModal from './PreviewModal';
-import { NORMAL_POLICY_VALUE } from '../../../hooks/useSecurityPolicy';
 import { LeftArrowOutlined, BriefcaseFilled } from '@actiontech/icons';
 import Icon from '@ant-design/icons';
 import DbAccountService from '@actiontech/shared/lib/api/provision/service/service';
@@ -107,9 +106,7 @@ const CreateDatabaseAccount = () => {
           values.systemPrivileges ?? [],
           values.objectPrivileges ?? [],
           values.dbServiceID
-        ),
-        password_security_policy:
-          values.policy === NORMAL_POLICY_VALUE ? undefined : values.policy
+        )
       }
     });
   };

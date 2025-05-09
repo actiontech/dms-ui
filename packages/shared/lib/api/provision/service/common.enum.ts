@@ -98,6 +98,16 @@ export enum ListDBServiceV2LastConnectionTestStatusEnum {
   'connect_failed' = 'connect_failed'
 }
 
+export enum ListMemberRoleWithOpRangeOpRangeTypeEnum {
+  'unknown' = 'unknown',
+
+  'global' = 'global',
+
+  'project' = 'project',
+
+  'db_service' = 'db_service'
+}
+
 export enum ListProjectV1ProjectPriorityEnum {
   'high' = 'high',
 
