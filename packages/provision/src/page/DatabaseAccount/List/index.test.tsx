@@ -147,6 +147,11 @@ describe('provision/DatabaseAccount/List-1', () => {
     authDelDBAccountSpy = dbAccountService.authDelDBAccount();
     authListServicesSpy = auth.listServices();
     passwordSecurityPolicy.mockAllApi();
+    authListMemberGroupSpy = jest
+      .spyOn(MemberGroupService, 'ListMemberGroups')
+      .mockImplementation(() =>
+        createSpySuccessResponse({ data: memberGroupList })
+      );
     auth.mockAllApi();
     user.mockAllApi();
 

@@ -262,13 +262,7 @@ const DatabaseAccountDetailModal = () => {
                 <AuthDisplay
                   type={AuthType.GROUP}
                   maxDisplayCount={5}
-                  renderTooltip={false}
-                  authUserGroups={
-                    data?.auth_group_users?.map((group) => ({
-                      uid: group,
-                      name: group
-                    })) ?? []
-                  }
+                  authUserGroups={data?.auth_group_users ?? []}
                 />
               </EmptyBox>
             </AccountInfoItem>

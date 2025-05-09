@@ -196,7 +196,7 @@ describe('provision/DatabaseAccount/AccountAuthorizeModal', () => {
     );
   });
 
-  it.only('render no auth users', async () => {
+  it('render no auth users', async () => {
     const eventEmitterSpy = jest.spyOn(EventEmitter, 'emit');
     customRender(true, {
       ...mockDatabaseAccountInfo,

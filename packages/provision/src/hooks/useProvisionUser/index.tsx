@@ -21,12 +21,15 @@ const useProvisionUser = () => {
         namespace_uid: projectID
       }).then((res) => res.data.data),
     {
-      manual: true
+      manual: true,
+      onError: () => {
+        return [];
+      }
     }
   );
 
   const userOptions = useMemo(() => {
-    return userList?.map((user) => {
+    return (userList ?? []).map((user) => {
       return {
         value: user.user_uid,
         label: user.name
@@ -36,7 +39,7 @@ const useProvisionUser = () => {
 
   const generateOption = useCallback(
     (isValueId = false) => {
-      return userList?.map((user) => {
+      return (userList ?? []).map((user) => {
         return {
           value: isValueId ? user.user_uid : user.name,
           text: user.name,
@@ -62,7 +65,7 @@ const useProvisionUser = () => {
 
   return {
     loading,
-    userList,
+    userList: userList ?? [],
     userOptions,
     userNameOptions,
     userIDOptions,

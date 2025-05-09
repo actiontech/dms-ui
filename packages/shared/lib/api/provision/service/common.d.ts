@@ -93,8 +93,6 @@ export interface IAddDBAccount {
   explanation?: string;
 
   password_expiration_policy: AddDBAccountPasswordExpirationPolicyEnum;
-
-  password_security_policy?: string;
 }
 
 export interface IAddDBAccountReply {
@@ -167,22 +165,6 @@ export interface IAddDataPermissionTemplateReply {
   message?: string;
 }
 
-export interface IAddPasswordSecurityPolicy {
-  name: string;
-
-  password_expiration_period: number;
-}
-
-export interface IAddPasswordSecurityPolicyReply {
-  code?: number;
-
-  data?: {
-    uid?: string;
-  };
-
-  message?: string;
-}
-
 export interface IAddServiceReply {
   code?: number;
 
@@ -229,8 +211,6 @@ export interface IAuthUserGroups {
 
 export interface IBatchUpdateDBAccountPassword {
   password_expiration_policy?: BatchUpdateDBAccountPasswordPasswordExpirationPolicyEnum;
-
-  password_security_policy?: string;
 
   passwords?: IBatchUpdatePassword[];
 
@@ -487,7 +467,7 @@ export interface IGetDBAccountReply {
   data?: {
     account_info?: IAccountDetail;
 
-    auth_group_users?: string[];
+    auth_group_users?: IAuthUserGroups[];
 
     auth_users?: string[];
 
@@ -500,8 +480,6 @@ export interface IGetDBAccountReply {
     db_service?: IUidWithName;
 
     password_managed?: boolean;
-
-    password_security_policy?: string;
 
     status?: StatusEnum;
   };
@@ -1037,16 +1015,6 @@ export interface IListOperationsReply {
   total_nums?: number;
 }
 
-export interface IListPasswordSecurityPolicysReply {
-  code?: number;
-
-  data?: IPasswordSecurityPolicy[];
-
-  message?: string;
-
-  total_nums?: number;
-}
-
 export interface IListProjectReply {
   code?: number;
 
@@ -1247,18 +1215,6 @@ export interface IPasswordConfig {
   password_expiration_policy?: PasswordConfigPasswordExpirationPolicyEnum;
 
   password_expired_day?: number;
-
-  password_security_policy?: string;
-}
-
-export interface IPasswordSecurityPolicy {
-  is_default?: boolean;
-
-  name?: string;
-
-  password_expiration_period?: number;
-
-  uid?: string;
 }
 
 export interface IPermissionInfo {
@@ -1279,8 +1235,6 @@ export interface IPlatformManaged {
   password_expiration_policy?: PlatformManagedPasswordExpirationPolicyEnum;
 
   password_expired_day?: number;
-
-  password_security_policy?: string;
 
   platform_managed?: boolean;
 }
@@ -1433,12 +1387,6 @@ export interface IUpdateDataPermissionTemplateReply {
   code?: number;
 
   message?: string;
-}
-
-export interface IUpdatePasswordSecurityPolicy {
-  name?: string;
-
-  password_expiration_period?: number;
 }
 
 export interface IUpdateService {

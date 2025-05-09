@@ -1,4 +1,3 @@
-import { Space } from 'antd';
 import { UserShieldFilled } from '@actiontech/icons';
 import { DatabaseAccountListTagStyleWrapper } from '../List/style';
 import MemberGroupAvatar from './MemberGroupAvatar';
