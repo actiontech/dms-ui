@@ -31,15 +31,12 @@ jest.mock('react-redux', () => ({
 
 let authListDBAccountSpy: jest.SpyInstance;
 let authListServicesSpy: jest.SpyInstance;
-let authListPasswordSecurityPoliciesSpy: jest.SpyInstance;
 const checkDbServicePermissionSpy = jest.fn();
 
 describe('provision/DatabaseAccountPassword/ExpirationAccount-1', () => {
   beforeEach(() => {
     authListDBAccountSpy = dbAccountService.authListDBAccount();
     authListServicesSpy = auth.listServices();
-    authListPasswordSecurityPoliciesSpy =
-      passwordSecurityPolicy.authListPasswordSecurityPolicies();
     auth.mockAllApi();
     user.mockAllApi();
     mockUseCurrentUser();
@@ -89,8 +86,6 @@ describe('provision/DatabaseAccountPassword/ExpirationAccount-2', () => {
   beforeEach(() => {
     authListDBAccountSpy = dbAccountService.authListDBAccount();
     authListServicesSpy = auth.listServices();
-    authListPasswordSecurityPoliciesSpy =
-      passwordSecurityPolicy.authListPasswordSecurityPolicies();
     auth.mockAllApi();
     user.mockAllApi();
     mockUseCurrentUser();
@@ -136,7 +131,6 @@ describe('provision/DatabaseAccountPassword/ExpirationAccount-2', () => {
     await act(async () => jest.advanceTimersByTime(3000));
     expect(authListDBAccountSpy).toHaveBeenCalledTimes(1);
     expect(authListServicesSpy).toHaveBeenCalledTimes(1);
-    expect(authListPasswordSecurityPoliciesSpy).toHaveBeenCalledTimes(1);
     expect(baseElement).toMatchSnapshot();
   });
 

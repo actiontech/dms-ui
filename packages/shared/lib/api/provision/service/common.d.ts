@@ -13,6 +13,7 @@ import {
   ListDBAccountStatusEnum,
   ListDBServiceLastConnectionTestStatusEnum,
   ListDBServiceV2LastConnectionTestStatusEnum,
+  ListMemberRoleWithOpRangeOpRangeTypeEnum,
   ListProjectV1ProjectPriorityEnum,
   ListProjectV2ProjectPriorityEnum,
   ListServiceDbTypeEnum,
@@ -92,8 +93,6 @@ export interface IAddDBAccount {
   explanation?: string;
 
   password_expiration_policy: AddDBAccountPasswordExpirationPolicyEnum;
-
-  password_security_policy?: string;
 }
 
 export interface IAddDBAccountReply {
@@ -166,22 +165,6 @@ export interface IAddDataPermissionTemplateReply {
   message?: string;
 }
 
-export interface IAddPasswordSecurityPolicy {
-  name: string;
-
-  password_expiration_period: number;
-}
-
-export interface IAddPasswordSecurityPolicyReply {
-  code?: number;
-
-  data?: {
-    uid?: string;
-  };
-
-  message?: string;
-}
-
 export interface IAddServiceReply {
   code?: number;
 
@@ -221,8 +204,6 @@ export interface IAuthGetAccountStaticsReply {
 export interface IBatchUpdateDBAccountPassword {
   password_expiration_policy?: BatchUpdateDBAccountPasswordPasswordExpirationPolicyEnum;
 
-  password_security_policy?: string;
-
   passwords?: IBatchUpdatePassword[];
 
   renewal_effective_time_day?: number;
@@ -260,6 +241,18 @@ export interface ICopyDataPermissionTemplateReply {
   };
 
   message?: string;
+}
+
+export interface ICustomDBPasswordRule {
+  min_length?: number;
+
+  require_digit?: boolean;
+
+  require_lowercase?: boolean;
+
+  require_special?: boolean;
+
+  require_uppercase?: boolean;
 }
 
 export interface IDBAccount {
@@ -462,6 +455,14 @@ export interface IGenericResp {
   message?: string;
 }
 
+export interface IGetCustomDBPasswordRuleReply {
+  code?: number;
+
+  data?: ICustomDBPasswordRule;
+
+  message?: string;
+}
+
 export interface IGetDBAccountMetaReply {
   code?: number;
 
@@ -478,6 +479,8 @@ export interface IGetDBAccountReply {
   data?: {
     account_info?: IAccountDetail;
 
+    auth_group_users?: string[];
+
     auth_users?: string[];
 
     data_permissions?: IDBAccountDataPermission[];
@@ -489,8 +492,6 @@ export interface IGetDBAccountReply {
     db_service?: IUidWithName;
 
     password_managed?: boolean;
-
-    password_security_policy?: string;
 
     status?: StatusEnum;
   };
@@ -516,6 +517,26 @@ export interface IGetDataPermissionsInDataPermissionTemplateReply {
   code?: number;
 
   data?: IGetDataPermissionsInDataPermissionTemplate[];
+
+  message?: string;
+}
+
+export interface IGetMemberGroup {
+  is_project_admin?: boolean;
+
+  name?: string;
+
+  role_with_op_ranges?: IListMemberRoleWithOpRange[];
+
+  uid?: string;
+
+  users?: IUidWithName[];
+}
+
+export interface IGetMemberGroupReply {
+  code?: number;
+
+  data?: IGetMemberGroup;
 
   message?: string;
 }
@@ -650,6 +671,8 @@ export interface IListAuthorizationEventsReply {
 
 export interface IListDBAccount {
   account_info?: IAccountInfo;
+
+  auth_user_groups?: IUidWithName[];
 
   auth_users?: IUidWithName[];
 
@@ -968,6 +991,14 @@ export interface IListInternalUserReply {
   total_nums?: number;
 }
 
+export interface IListMemberRoleWithOpRange {
+  op_range_type?: ListMemberRoleWithOpRangeOpRangeTypeEnum;
+
+  range_uids?: IUidWithName[];
+
+  role_uid?: IUidWithName;
+}
+
 export interface IListMembersForInternalItem {
   is_admin?: boolean;
 
@@ -990,16 +1021,6 @@ export interface IListOperationsReply {
   code?: number;
 
   data?: IOperation[];
-
-  message?: string;
-
-  total_nums?: number;
-}
-
-export interface IListPasswordSecurityPolicysReply {
-  code?: number;
-
-  data?: IPasswordSecurityPolicy[];
 
   message?: string;
 
@@ -1206,22 +1227,14 @@ export interface IPasswordConfig {
   password_expiration_policy?: PasswordConfigPasswordExpirationPolicyEnum;
 
   password_expired_day?: number;
-
-  password_security_policy?: string;
-}
-
-export interface IPasswordSecurityPolicy {
-  is_default?: boolean;
-
-  name?: string;
-
-  password_expiration_period?: number;
-
-  uid?: string;
 }
 
 export interface IPermissionInfo {
   grants?: string[];
+}
+
+export interface IPermissionUserGroups {
+  permission_user_group_uids?: string[];
 }
 
 export interface IPermissionUsers {
@@ -1234,8 +1247,6 @@ export interface IPlatformManaged {
   password_expiration_policy?: PlatformManagedPasswordExpirationPolicyEnum;
 
   password_expired_day?: number;
-
-  password_security_policy?: string;
 
   platform_managed?: boolean;
 }
@@ -1338,6 +1349,12 @@ export interface IUidWithName {
   uid?: string;
 }
 
+export interface IUpdateCustomDBPasswordRuleReply {
+  code?: number;
+
+  message?: string;
+}
+
 export interface IUpdateDBAccount {
   data_permissions?: IDataPermission[];
 
@@ -1348,6 +1365,8 @@ export interface IUpdateDBAccount {
   lock?: boolean;
 
   password_config?: IPasswordConfig;
+
+  permission_user_groups?: IPermissionUserGroups;
 
   permission_users?: IPermissionUsers;
 
@@ -1386,12 +1405,6 @@ export interface IUpdateDataPermissionTemplateReply {
   code?: number;
 
   message?: string;
-}
-
-export interface IUpdatePasswordSecurityPolicy {
-  name?: string;
-
-  password_expiration_period?: number;
 }
 
 export interface IUpdateService {

@@ -16,7 +16,6 @@ import {
 } from '../../../../store/databaseAccount';
 import { ModifyPasswordFormType } from '../../index.type';
 import dbAccountService from '@actiontech/shared/lib/api/provision/service/db_account/';
-import { NORMAL_POLICY_VALUE } from '../../../../hooks/useSecurityPolicy';
 import { useRecoilState } from 'recoil';
 import EventEmitter from '../../../../utils/EventEmitter';
 import { EventEmitterKey, ModalName } from '../../../../data/enum';
@@ -62,8 +61,8 @@ const ManagePasswordModal: React.FC = () => {
             platform_managed: true,
             password_expired_day: values.effective_time_day,
             manage_password: values.password,
-            password_security_policy:
-              values.policy === NORMAL_POLICY_VALUE ? '' : values.policy,
+            // password_security_policy:
+            //   values.policy === NORMAL_POLICY_VALUE ? '' : values.policy,
             password_expiration_policy:
               values.password_expiration_policy as unknown as PlatformManagedPasswordExpirationPolicyEnum
           }

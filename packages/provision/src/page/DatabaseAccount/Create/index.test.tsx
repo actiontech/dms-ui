@@ -24,7 +24,6 @@ import { ListServiceDbTypeEnum } from '@actiontech/shared/lib/api/provision/serv
 describe('provision/DatabaseAccount/Create', () => {
   let authListServicesSpy: jest.SpyInstance;
   let authListEnvironmentTagsSpy: jest.SpyInstance;
-  let authListPasswordSecurityPoliciesSpy: jest.SpyInstance;
   let authListDatabasesSpy: jest.SpyInstance;
   let authListTableSpy: jest.SpyInstance;
   let authGetStatementSpy: jest.SpyInstance;
@@ -38,8 +37,6 @@ describe('provision/DatabaseAccount/Create', () => {
     authListEnvironmentTagsSpy = auth.authListEnvironmentTags();
     authListDatabasesSpy = auth.listDataBases();
     authListTableSpy = auth.listTables();
-    authListPasswordSecurityPoliciesSpy =
-      passwordSecurityPolicy.authListPasswordSecurityPolicies();
     authGetStatementSpy = dbAccountService.authGetStatement();
     authAddDBAccountSpy = dbAccountService.authAddDBAccount();
     authGetDBAccountMetaSpy = service.authGetDBAccountMeta();
@@ -64,7 +61,6 @@ describe('provision/DatabaseAccount/Create', () => {
   it('render init snap', async () => {
     const { baseElement } = superRender(<CreateDatabaseAccount />);
     await act(async () => jest.advanceTimersByTime(3000));
-    expect(authListPasswordSecurityPoliciesSpy).toHaveBeenCalled();
     expect(authListEnvironmentTagsSpy).toHaveBeenCalled();
     expect(baseElement).toMatchSnapshot();
     await act(async () => {
@@ -144,21 +140,6 @@ describe('provision/DatabaseAccount/Create', () => {
     });
     await act(async () => jest.advanceTimersByTime(100));
 
-    fireEvent.mouseDown(getBySelector('#policy', baseElement));
-    await act(async () => jest.advanceTimersByTime(100));
-    expect(screen.getByText('中')).toBeInTheDocument();
-    fireEvent.click(screen.getByText('中'));
-    await act(async () => jest.advanceTimersByTime(100));
-    expect(getBySelector('#effective_time_day')).toHaveValue('30');
-    expect(getBySelector('#effective_time_day')).toHaveAttribute('disabled');
-    fireEvent.mouseDown(getBySelector('#policy', baseElement));
-    await act(async () => jest.advanceTimersByTime(100));
-    expect(screen.getByText('无')).toBeInTheDocument();
-    fireEvent.click(screen.getByText('无'));
-    await act(async () => jest.advanceTimersByTime(100));
-    expect(getBySelector('#effective_time_day')).not.toHaveAttribute(
-      'disabled'
-    );
     fireEvent.input(getBySelector('#explanation'), {
       target: { value: 'desc test' }
     });

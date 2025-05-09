@@ -11,7 +11,6 @@ import {
 } from '../../../../store/databaseAccount';
 import { ModifyPasswordFormType } from '../../index.type';
 import dbAccountService from '@actiontech/shared/lib/api/provision/service/db_account/';
-import { NORMAL_POLICY_VALUE } from '../../../../hooks/useSecurityPolicy';
 import { useRecoilState } from 'recoil';
 import EventEmitter from '../../../../utils/EventEmitter';
 import { EventEmitterKey, ModalName } from '../../../../data/enum';
@@ -54,8 +53,6 @@ const ModifyPasswordModal: React.FC = () => {
         db_account_uid: selectData?.db_account_uid ?? '',
         db_account: {
           password_config: {
-            password_security_policy:
-              values.policy === NORMAL_POLICY_VALUE ? '' : values.policy,
             db_account_password: values.password,
             password_expired_day: values.effective_time_day,
             password_expiration_policy: values.password_expiration_policy

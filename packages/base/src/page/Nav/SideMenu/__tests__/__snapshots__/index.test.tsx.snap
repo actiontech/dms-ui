@@ -889,7 +889,7 @@ exports[`test Base/Nav/SideMenu/index mount and unmount component 1`] = `
                   <a
                     href="/provision/project/100121/database-account-password"
                   >
-                    账号密码管理
+                    临期密码
                   </a>
                 </span>
               </li>
@@ -2202,7 +2202,7 @@ exports[`test Base/Nav/SideMenu/index mount and unmount component 2`] = `
                   <a
                     href="/provision/project/100121/database-account-password"
                   >
-                    账号密码管理
+                    临期密码
                   </a>
                 </span>
               </li>
@@ -3515,7 +3515,7 @@ exports[`test Base/Nav/SideMenu/index mount and unmount component 3`] = `
                   <a
                     href="/provision/project/100121/database-account-password"
                   >
-                    账号密码管理
+                    临期密码
                   </a>
                 </span>
               </li>
@@ -4921,7 +4921,7 @@ exports[`test Base/Nav/SideMenu/index should match snapshot when checkPagePermis
                 <a
                   href="/provision/project/100121/database-account-password"
                 >
-                  账号密码管理
+                  临期密码
                 </a>
               </span>
             </li>
@@ -6042,7 +6042,7 @@ exports[`test Base/Nav/SideMenu/index should match snapshot when checkPagePermis
                 <a
                   href="/provision/project/100121/database-account-password"
                 >
-                  账号密码管理
+                  临期密码
                 </a>
               </span>
             </li>
