@@ -750,7 +750,7 @@ exports[`test base/Nav/SideMenu/index.ce should match snapshot when checkPagePer
                 <a
                   href="/provision/project/700300/database-account-password"
                 >
-                  账号密码管理
+                  临期密码
                 </a>
               </span>
             </li>
@@ -1826,7 +1826,7 @@ exports[`test base/Nav/SideMenu/index.ce should match snapshot when checkPagePer
                 <a
                   href="/provision/project/700300/database-account-password"
                 >
-                  账号密码管理
+                  临期密码
                 </a>
               </span>
             </li>
@@ -2980,7 +2980,7 @@ exports[`test base/Nav/SideMenu/index.ce should match snapshot when checkPagePer
                 <a
                   href="/provision/project/700300/database-account-password"
                 >
-                  账号密码管理
+                  临期密码
                 </a>
               </span>
             </li>
@@ -4210,7 +4210,7 @@ exports[`test base/Nav/SideMenu/index.ce should match snapshot when checkPagePer
                 <a
                   href="/provision/project/700300/database-account-password"
                 >
-                  账号密码管理
+                  临期密码
                 </a>
               </span>
             </li>

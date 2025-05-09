@@ -15,18 +15,14 @@ import BatchModifyPasswordModal from '.';
 import { mockProjectInfo } from '@actiontech/shared/lib/testUtil/mockHook/data';
 import { mockUseCurrentProject } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentProject';
 import { IListDBAccount } from '@actiontech/shared/lib/api/provision/service/common';
-import passwordSecurityPolicy from '../../../../testUtil/mockApi/passwordSecurityPolicy';
 import Password from '../../../../utils/Password';
 
 describe('provision/DatabaseAccount/BatchModifyPasswordModal', () => {
   let authBatchUpdateDBAccountPasswordSpy: jest.SpyInstance;
-  let authListPasswordSecurityPoliciesSpy: jest.SpyInstance;
 
   beforeEach(() => {
     authBatchUpdateDBAccountPasswordSpy =
       dbAccountService.authBatchUpdateDBAccountPassword();
-    authListPasswordSecurityPoliciesSpy =
-      passwordSecurityPolicy.authListPasswordSecurityPolicies();
     auth.mockAllApi();
     mockUseCurrentProject();
 
@@ -57,7 +53,6 @@ describe('provision/DatabaseAccount/BatchModifyPasswordModal', () => {
   it('render init snap', async () => {
     const { baseElement } = customRender();
     await act(async () => jest.advanceTimersByTime(3000));
-    expect(authListPasswordSecurityPoliciesSpy).toHaveBeenCalled();
     expect(baseElement).toMatchSnapshot();
     expect(screen.getByText('批量修改密码')).toBeInTheDocument();
   });
@@ -70,21 +65,7 @@ describe('provision/DatabaseAccount/BatchModifyPasswordModal', () => {
     customRender(true);
     await act(async () => jest.advanceTimersByTime(3000));
 
-    fireEvent.mouseDown(getBySelector('#policy'));
-    await act(async () => jest.advanceTimersByTime(100));
-    expect(screen.getByText('中')).toBeInTheDocument();
-    fireEvent.click(screen.getByText('中'));
-    await act(async () => jest.advanceTimersByTime(100));
     expect(getBySelector('#effective_time_day')).toHaveValue('30');
-    expect(getBySelector('#effective_time_day')).toHaveAttribute('disabled');
-    fireEvent.mouseDown(getBySelector('#policy'));
-    await act(async () => jest.advanceTimersByTime(100));
-    expect(screen.getByText('无')).toBeInTheDocument();
-    fireEvent.click(screen.getByText('无'));
-    await act(async () => jest.advanceTimersByTime(100));
-    expect(getBySelector('#effective_time_day')).not.toHaveAttribute(
-      'disabled'
-    );
 
     fireEvent.click(screen.getByText('批量生成密码'));
     await act(async () => jest.advanceTimersByTime(100));
@@ -95,7 +76,6 @@ describe('provision/DatabaseAccount/BatchModifyPasswordModal', () => {
     expect(authBatchUpdateDBAccountPasswordSpy).toHaveBeenNthCalledWith(1, {
       project_uid: mockProjectInfo.projectID,
       db_account_password: {
-        password_security_policy: '',
         passwords: [
           {
             db_account_password: '123456',
@@ -127,13 +107,7 @@ describe('provision/DatabaseAccount/BatchModifyPasswordModal', () => {
     customRender(true);
     await act(async () => jest.advanceTimersByTime(3000));
 
-    fireEvent.mouseDown(getBySelector('#policy'));
-    await act(async () => jest.advanceTimersByTime(100));
-    expect(screen.getByText('中')).toBeInTheDocument();
-    fireEvent.click(screen.getByText('中'));
-    await act(async () => jest.advanceTimersByTime(100));
     expect(getBySelector('#effective_time_day')).toHaveValue('30');
-    expect(getBySelector('#effective_time_day')).toHaveAttribute('disabled');
 
     fireEvent.click(screen.getByText('批量生成密码'));
     await act(async () => jest.advanceTimersByTime(100));
@@ -144,7 +118,6 @@ describe('provision/DatabaseAccount/BatchModifyPasswordModal', () => {
     expect(authBatchUpdateDBAccountPasswordSpy).toHaveBeenNthCalledWith(1, {
       project_uid: mockProjectInfo.projectID,
       db_account_password: {
-        password_security_policy: '12345',
         passwords: [
           {
             db_account_password: '123456',
@@ -180,13 +153,7 @@ describe('provision/DatabaseAccount/BatchModifyPasswordModal', () => {
     customRender(true);
     await act(async () => jest.advanceTimersByTime(3000));
 
-    fireEvent.mouseDown(getBySelector('#policy'));
-    await act(async () => jest.advanceTimersByTime(100));
-    expect(screen.getByText('中')).toBeInTheDocument();
-    fireEvent.click(screen.getByText('中'));
-    await act(async () => jest.advanceTimersByTime(100));
     expect(getBySelector('#effective_time_day')).toHaveValue('30');
-    expect(getBySelector('#effective_time_day')).toHaveAttribute('disabled');
 
     fireEvent.click(screen.getByText('批量生成密码'));
     await act(async () => jest.advanceTimersByTime(100));

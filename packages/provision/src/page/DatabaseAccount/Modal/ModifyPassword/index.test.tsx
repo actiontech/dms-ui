@@ -19,14 +19,11 @@ import passwordSecurityPolicy from '../../../../testUtil/mockApi/passwordSecurit
 import Password from '../../../../utils/Password';
 
 describe('provision/DatabaseAccount/ModifyPasswordModal', () => {
-  let authListPasswordSecurityPoliciesSpy: jest.SpyInstance;
   let authUpdateDBAccountSpy: jest.SpyInstance;
 
   const mockDatabaseAccountInfo = dbAccountMockData[0];
 
   beforeEach(() => {
-    authListPasswordSecurityPoliciesSpy =
-      passwordSecurityPolicy.authListPasswordSecurityPolicies();
     authUpdateDBAccountSpy = dbAccountService.authUpdateDBAccount();
     auth.mockAllApi();
     mockUseCurrentProject();
@@ -58,7 +55,6 @@ describe('provision/DatabaseAccount/ModifyPasswordModal', () => {
   it('render init snap', async () => {
     const { baseElement } = customRender();
     await act(async () => jest.advanceTimersByTime(3000));
-    expect(authListPasswordSecurityPoliciesSpy).toHaveBeenCalled();
     expect(baseElement).toMatchSnapshot();
     expect(screen.getByText('修改密码')).toBeInTheDocument();
   });
@@ -71,21 +67,7 @@ describe('provision/DatabaseAccount/ModifyPasswordModal', () => {
     customRender(true);
     await act(async () => jest.advanceTimersByTime(3000));
 
-    fireEvent.mouseDown(getBySelector('#policy'));
-    await act(async () => jest.advanceTimersByTime(100));
-    expect(screen.getByText('中')).toBeInTheDocument();
-    fireEvent.click(screen.getByText('中'));
-    await act(async () => jest.advanceTimersByTime(100));
     expect(getBySelector('#effective_time_day')).toHaveValue('30');
-    expect(getBySelector('#effective_time_day')).toHaveAttribute('disabled');
-    fireEvent.mouseDown(getBySelector('#policy'));
-    await act(async () => jest.advanceTimersByTime(100));
-    expect(screen.getByText('无')).toBeInTheDocument();
-    fireEvent.click(screen.getByText('无'));
-    await act(async () => jest.advanceTimersByTime(100));
-    expect(getBySelector('#effective_time_day')).not.toHaveAttribute(
-      'disabled'
-    );
 
     expect(getBySelector('#password')).not.toHaveValue();
     expect(getBySelector('#confirm_password')).not.toHaveValue();
@@ -104,7 +86,6 @@ describe('provision/DatabaseAccount/ModifyPasswordModal', () => {
         password_config: {
           password_expired_day: 30,
           db_account_password: '123456',
-          password_security_policy: '',
           password_expiration_policy: 'expiration_lock'
         }
       }
@@ -126,13 +107,7 @@ describe('provision/DatabaseAccount/ModifyPasswordModal', () => {
     customRender(true);
     await act(async () => jest.advanceTimersByTime(3000));
 
-    fireEvent.mouseDown(getBySelector('#policy'));
-    await act(async () => jest.advanceTimersByTime(100));
-    expect(screen.getByText('中')).toBeInTheDocument();
-    fireEvent.click(screen.getByText('中'));
-    await act(async () => jest.advanceTimersByTime(100));
     expect(getBySelector('#effective_time_day')).toHaveValue('30');
-    expect(getBySelector('#effective_time_day')).toHaveAttribute('disabled');
 
     expect(getBySelector('#password')).not.toHaveValue();
     expect(getBySelector('#confirm_password')).not.toHaveValue();
@@ -154,7 +129,6 @@ describe('provision/DatabaseAccount/ModifyPasswordModal', () => {
         password_config: {
           password_expired_day: 30,
           db_account_password: 'abc',
-          password_security_policy: '12345',
           password_expiration_policy: 'expiration_available'
         }
       }
@@ -175,13 +149,7 @@ describe('provision/DatabaseAccount/ModifyPasswordModal', () => {
     customRender(true);
     await act(async () => jest.advanceTimersByTime(3000));
 
-    fireEvent.mouseDown(getBySelector('#policy'));
-    await act(async () => jest.advanceTimersByTime(100));
-    expect(screen.getByText('中')).toBeInTheDocument();
-    fireEvent.click(screen.getByText('中'));
-    await act(async () => jest.advanceTimersByTime(100));
     expect(getBySelector('#effective_time_day')).toHaveValue('30');
-    expect(getBySelector('#effective_time_day')).toHaveAttribute('disabled');
 
     fireEvent.input(getBySelector('#password'), {
       target: { value: '123456' }
