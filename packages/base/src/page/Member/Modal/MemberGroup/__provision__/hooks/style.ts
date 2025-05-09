@@ -35,30 +35,6 @@ export const CheckMemberGroupAuthErrorMessageStyleWrapper = styled('div')`
     color: ${({ theme }) => theme.sharedTheme.uiToken.colorText};
   }
 
-  .auth-conflict-content {
-    background-color: ${({ theme }) => theme.sharedTheme.uiToken.colorBgBase};
-    padding: 12px;
-    border-radius: 4px;
-    border: 1px solid
-      ${({ theme }) => theme.sharedTheme.uiToken.colorBorderSecondary};
-  }
-
-  .auth-conflict-list {
-    margin: 0;
-    padding: 0;
-    list-style: none;
-
-    li {
-      margin-bottom: 4px;
-      font-size: 13px;
-      line-height: 1.5;
-
-      &:last-child {
-        margin-bottom: 0;
-      }
-    }
-  }
-
   .auth-conflict-divider {
     margin: 16px 0;
   }

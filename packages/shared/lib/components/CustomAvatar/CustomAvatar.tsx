@@ -16,7 +16,6 @@ const CustomAvatar: React.FC<CustomAvatarProps> = (props) => {
     noTips,
     size = 'default',
     toolTipsWrapperClassName,
-    className,
     ...otherProp
   } = props;
 
@@ -35,7 +34,7 @@ const CustomAvatar: React.FC<CustomAvatarProps> = (props) => {
       ) : (
         <CustomAvatarStyleWrapper
           size={size}
-          className={classNames('action-avatar', className)}
+          className="action-avatar"
           {...otherProp}
         >
           {NameFirstLetter}

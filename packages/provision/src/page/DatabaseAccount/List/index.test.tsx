@@ -31,6 +31,10 @@ import { mockUsePermission } from '@actiontech/shared/lib/testUtil/mockHook/mock
 import { MemberGroupService } from '@actiontech/shared/lib/api/base';
 import { IListMemberGroup } from '@actiontech/shared/lib/api/base/service/common';
 import { paramsSerializer } from '@actiontech/shared';
+import {
+  ignoreConsoleErrors,
+  UtilsConsoleErrorStringsEnum
+} from '@actiontech/shared/lib/testUtil/common';
 
 jest.mock('react-redux', () => ({
   ...jest.requireActual('react-redux'),
@@ -155,6 +159,8 @@ describe('provision/DatabaseAccount/List-1', () => {
     (useNavigate as jest.Mock).mockImplementation(() => navigateSpy);
   });
 
+  ignoreConsoleErrors([UtilsConsoleErrorStringsEnum.UNKNOWN_EVENT_HANDLER]);
+
   afterEach(() => {
     jest.useRealTimers();
     cleanup();
@@ -194,6 +200,7 @@ describe('provision/DatabaseAccount/List-1', () => {
 
 describe('provision/DatabaseAccount/List-2', () => {
   const checkDbServicePermissionSpy = jest.fn();
+  ignoreConsoleErrors([UtilsConsoleErrorStringsEnum.UNKNOWN_EVENT_HANDLER]);
 
   beforeEach(() => {
     authListDBAccountSpy = dbAccountService.authListDBAccount();

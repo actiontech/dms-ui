@@ -10,9 +10,15 @@ type Props = {
   name: string;
   onClick?: () => void;
   authUsers?: IUidWithName[];
+  renderTooltip?: boolean;
 };
 
-const MemberGroupAvatar: React.FC<Props> = ({ name, onClick, authUsers }) => {
+const MemberGroupAvatar: React.FC<Props> = ({
+  name,
+  onClick,
+  authUsers,
+  renderTooltip = true
+}) => {
   const tooltipContent = useMemo(() => {
     if (!authUsers) return name;
 
@@ -43,8 +49,8 @@ const MemberGroupAvatar: React.FC<Props> = ({ name, onClick, authUsers }) => {
     );
   }, [authUsers, name]);
 
-  return (
-    <BasicToolTip title={tooltipContent} placement="top">
+  const renderContent = () => {
+    return (
       <DatabaseAccountListTagStyleWrapper
         color="cyan"
         size="small"
@@ -53,7 +59,19 @@ const MemberGroupAvatar: React.FC<Props> = ({ name, onClick, authUsers }) => {
         <MemberFilled color="currentColor" />
         <div className="name-ellipsis">{name}</div>
       </DatabaseAccountListTagStyleWrapper>
-    </BasicToolTip>
+    );
+  };
+
+  return (
+    <>
+      {renderTooltip ? (
+        <BasicToolTip title={tooltipContent} placement="top">
+          {renderContent()}
+        </BasicToolTip>
+      ) : (
+        renderContent()
+      )}
+    </>
   );
 };
 

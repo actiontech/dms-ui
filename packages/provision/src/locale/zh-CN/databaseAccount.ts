@@ -171,6 +171,7 @@ export default {
     copyAll: '全文复制',
     authInfo: '授权信息',
     authUser: '授权成员',
+    authUserGroup: '授权成员组',
     role: '角色',
     roleInfo: '角色信息',
     privilege: '权限',

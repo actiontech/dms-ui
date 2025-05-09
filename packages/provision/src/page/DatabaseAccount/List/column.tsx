@@ -15,10 +15,8 @@ import {
   ListDBAccountStatusEnum
 } from '@actiontech/shared/lib/api/provision/service/common.enum';
 import { accountNameRender } from '../index.utils';
-import MemberGroupAvatar from '../components/MemberGroupAvatar';
-import { DatabaseAccountListTagStyleWrapper } from './style';
-import { UserShieldFilled } from '@actiontech/icons';
 import { DatabaseAccountListFilterParamType } from './index.type';
+import AuthDisplay, { AuthType } from '../components/AuthDisplay';
 
 export const DatabaseAccountListColumns = (
   onUpdateFilter: (
@@ -126,53 +124,20 @@ export const DatabaseAccountListColumns = (
         if (!value || (!auth_users?.length && !auth_user_groups?.length)) {
           return '-';
         }
-
-        const MAX_DISPLAY_COUNT = 6;
-        const totalCount =
-          (auth_users?.length || 0) + (auth_user_groups?.length || 0);
-        const displayUsers = auth_users?.slice(0, MAX_DISPLAY_COUNT) || [];
-        const displayGroups =
-          auth_user_groups?.slice(0, MAX_DISPLAY_COUNT - displayUsers.length) ||
-          [];
-        const remainingCount =
-          totalCount - (displayUsers.length + displayGroups.length);
-
         return (
           <Space size={0}>
-            {displayUsers.map((item) => {
-              return (
-                <DatabaseAccountListTagStyleWrapper
-                  onClick={() => onUpdateFilter('filter_by_users', item?.uid!)}
-                  key={item.uid}
-                  size="small"
-                  color="blue"
-                >
-                  <UserShieldFilled color="currentColor" />
-                  <div className="name-ellipsis">{item.name}</div>
-                </DatabaseAccountListTagStyleWrapper>
-              );
-            })}
-
-            {displayGroups.map((i) => {
-              return (
-                <MemberGroupAvatar
-                  key={i.uid}
-                  onClick={() => onUpdateFilter('filter_by_user_group', i.uid!)}
-                  name={i.name ?? ''}
-                  authUsers={i.auth_users}
-                />
-              );
-            })}
-
-            {remainingCount > 0 && (
-              <DatabaseAccountListTagStyleWrapper
-                size="small"
-                color="default"
-                className="more-tag"
-              >
-                +{remainingCount}
-              </DatabaseAccountListTagStyleWrapper>
-            )}
+            <AuthDisplay
+              type={AuthType.USER}
+              authUsers={auth_users || []}
+              onUserClick={(uid) => onUpdateFilter('filter_by_users', uid)}
+            />
+            <AuthDisplay
+              type={AuthType.GROUP}
+              authUserGroups={auth_user_groups || []}
+              onGroupClick={(uid) =>
+                onUpdateFilter('filter_by_user_group', uid)
+              }
+            />
           </Space>
         );
       }

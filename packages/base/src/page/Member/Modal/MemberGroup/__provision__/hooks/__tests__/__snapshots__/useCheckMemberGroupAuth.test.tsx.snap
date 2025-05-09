@@ -23,9 +23,9 @@ exports[`useCheckMemberGroupAuth should handle different auth conflict scenarios
       >
         <div
           aria-modal="true"
-          class="ant-modal ant-modal-confirm ant-modal-confirm-error"
+          class="ant-modal ant-modal-confirm ant-modal-confirm-error check-member-group-auth-error-modal"
           role="dialog"
-          style="width: 600px;"
+          style="width: 640px;"
         >
           <div
             aria-hidden="true"
@@ -73,7 +73,7 @@ exports[`useCheckMemberGroupAuth should handle different auth conflict scenarios
                     class="ant-modal-confirm-content"
                   >
                     <div
-                      class="css-hjqyn1"
+                      class="css-b314dh"
                     >
                       <div
                         class="ant-alert ant-alert-warning ant-alert-no-icon auth-conflict-alert"
@@ -250,9 +250,9 @@ exports[`useCheckMemberGroupAuth should handle different auth conflict scenarios
       >
         <div
           aria-modal="true"
-          class="ant-modal ant-modal-confirm ant-modal-confirm-error"
+          class="ant-modal ant-modal-confirm ant-modal-confirm-error check-member-group-auth-error-modal"
           role="dialog"
-          style="width: 600px;"
+          style="width: 640px;"
         >
           <div
             aria-hidden="true"
@@ -300,7 +300,7 @@ exports[`useCheckMemberGroupAuth should handle different auth conflict scenarios
                     class="ant-modal-confirm-content"
                   >
                     <div
-                      class="css-hjqyn1"
+                      class="css-b314dh"
                     >
                       <div
                         class="ant-alert ant-alert-warning ant-alert-no-icon auth-conflict-alert"
@@ -436,10 +436,6 @@ exports[`useCheckMemberGroupAuth should handle different auth conflict scenarios
                             </div>
                           </div>
                         </div>
-                        <div
-                          class="ant-divider ant-divider-horizontal auth-conflict-divider"
-                          role="separator"
-                        />
                       </div>
                       <div
                         class="auth-conflict-user"
@@ -601,9 +597,9 @@ exports[`useCheckMemberGroupAuth should handle different auth conflict scenarios
       >
         <div
           aria-modal="true"
-          class="ant-modal ant-modal-confirm ant-modal-confirm-error ant-zoom-appear ant-zoom-appear-prepare ant-zoom"
+          class="ant-modal ant-modal-confirm ant-modal-confirm-error check-member-group-auth-error-modal ant-zoom-appear ant-zoom-appear-prepare ant-zoom"
           role="dialog"
-          style="width: 600px;"
+          style="width: 640px;"
         >
           <div
             aria-hidden="true"
@@ -651,7 +647,7 @@ exports[`useCheckMemberGroupAuth should handle different auth conflict scenarios
                     class="ant-modal-confirm-content"
                   >
                     <div
-                      class="css-hjqyn1"
+                      class="css-b314dh"
                     >
                       <div
                         class="ant-alert ant-alert-warning ant-alert-no-icon auth-conflict-alert"
@@ -866,9 +862,9 @@ exports[`useCheckMemberGroupAuth should handle different auth conflict scenarios
       >
         <div
           aria-modal="true"
-          class="ant-modal ant-modal-confirm ant-modal-confirm-error"
+          class="ant-modal ant-modal-confirm ant-modal-confirm-error check-member-group-auth-error-modal"
           role="dialog"
-          style="width: 600px;"
+          style="width: 640px;"
         >
           <div
             aria-hidden="true"
@@ -916,7 +912,7 @@ exports[`useCheckMemberGroupAuth should handle different auth conflict scenarios
                     class="ant-modal-confirm-content"
                   >
                     <div
-                      class="css-hjqyn1"
+                      class="css-b314dh"
                     >
                       <div
                         class="ant-alert ant-alert-warning ant-alert-no-icon auth-conflict-alert"
@@ -1093,9 +1089,9 @@ exports[`useCheckMemberGroupAuth should handle different auth conflict scenarios
       >
         <div
           aria-modal="true"
-          class="ant-modal ant-modal-confirm ant-modal-confirm-error ant-zoom-appear ant-zoom-appear-prepare ant-zoom"
+          class="ant-modal ant-modal-confirm ant-modal-confirm-error check-member-group-auth-error-modal ant-zoom-appear ant-zoom-appear-prepare ant-zoom"
           role="dialog"
-          style="width: 600px;"
+          style="width: 640px;"
         >
           <div
             aria-hidden="true"
@@ -1143,7 +1139,7 @@ exports[`useCheckMemberGroupAuth should handle different auth conflict scenarios
                     class="ant-modal-confirm-content"
                   >
                     <div
-                      class="css-hjqyn1"
+                      class="css-b314dh"
                     >
                       <div
                         class="ant-alert ant-alert-warning ant-alert-no-icon auth-conflict-alert"
@@ -1279,10 +1275,6 @@ exports[`useCheckMemberGroupAuth should handle different auth conflict scenarios
                             </div>
                           </div>
                         </div>
-                        <div
-                          class="ant-divider ant-divider-horizontal auth-conflict-divider"
-                          role="separator"
-                        />
                       </div>
                       <div
                         class="auth-conflict-user"
@@ -1457,9 +1449,9 @@ exports[`useCheckMemberGroupAuth should handle different auth conflict scenarios
       >
         <div
           aria-modal="true"
-          class="ant-modal ant-modal-confirm ant-modal-confirm-error ant-zoom-appear ant-zoom-appear-prepare ant-zoom"
+          class="ant-modal ant-modal-confirm ant-modal-confirm-error check-member-group-auth-error-modal ant-zoom-appear ant-zoom-appear-prepare ant-zoom"
           role="dialog"
-          style="width: 600px;"
+          style="width: 640px;"
         >
           <div
             aria-hidden="true"
@@ -1507,7 +1499,7 @@ exports[`useCheckMemberGroupAuth should handle different auth conflict scenarios
                     class="ant-modal-confirm-content"
                   >
                     <div
-                      class="css-hjqyn1"
+                      class="css-b314dh"
                     >
                       <div
                         class="ant-alert ant-alert-warning ant-alert-no-icon auth-conflict-alert"

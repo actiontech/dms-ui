@@ -721,7 +721,6 @@ exports[`provision/DatabaseAccount/DatabaseAccount render init snap 1`] = `
                               </div>
                               <div
                                 class="ant-space-item"
-                                style="margin-right: 0px;"
                               >
                                 <div
                                   class="ant-space ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
@@ -756,10 +755,6 @@ exports[`provision/DatabaseAccount/DatabaseAccount render init snap 1`] = `
                                     </span>
                                   </div>
                                 </div>
-                              </div>
-                              <div
-                                class="ant-space-item"
-                              >
                                 <div
                                   class="ant-space ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
                                 >

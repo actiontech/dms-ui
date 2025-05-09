@@ -755,7 +755,6 @@ exports[`provision/DatabaseAccount/List-1 render table moreButtons 1`] = `
                               </div>
                               <div
                                 class="ant-space-item"
-                                style="margin-right: 0px;"
                               >
                                 <div
                                   class="ant-space ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
@@ -790,10 +789,6 @@ exports[`provision/DatabaseAccount/List-1 render table moreButtons 1`] = `
                                     </span>
                                   </div>
                                 </div>
-                              </div>
-                              <div
-                                class="ant-space-item"
-                              >
                                 <div
                                   class="ant-space ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
                                 >
@@ -2263,7 +2258,6 @@ exports[`provision/DatabaseAccount/List-2 render create and discovery button 1`]
                               </div>
                               <div
                                 class="ant-space-item"
-                                style="margin-right: 0px;"
                               >
                                 <div
                                   class="ant-space ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
@@ -2298,10 +2292,6 @@ exports[`provision/DatabaseAccount/List-2 render create and discovery button 1`]
                                     </span>
                                   </div>
                                 </div>
-                              </div>
-                              <div
-                                class="ant-space-item"
-                              >
                                 <div
                                   class="ant-space ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
                                 >
@@ -3620,7 +3610,6 @@ exports[`provision/DatabaseAccount/List-2 render init snap 1`] = `
                               </div>
                               <div
                                 class="ant-space-item"
-                                style="margin-right: 0px;"
                               >
                                 <div
                                   class="ant-space ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
@@ -3655,10 +3644,6 @@ exports[`provision/DatabaseAccount/List-2 render init snap 1`] = `
                                     </span>
                                   </div>
                                 </div>
-                              </div>
-                              <div
-                                class="ant-space-item"
-                              >
                                 <div
                                   class="ant-space ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
                                 >
@@ -5800,7 +5785,6 @@ exports[`provision/DatabaseAccount/List-2 render update table filter 1`] = `
                               </div>
                               <div
                                 class="ant-space-item"
-                                style="margin-right: 0px;"
                               >
                                 <div
                                   class="ant-space ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
@@ -5835,10 +5819,6 @@ exports[`provision/DatabaseAccount/List-2 render update table filter 1`] = `
                                     </span>
                                   </div>
                                 </div>
-                              </div>
-                              <div
-                                class="ant-space-item"
-                              >
                                 <div
                                   class="ant-space ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
                                 >

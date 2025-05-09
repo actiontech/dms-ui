@@ -360,6 +360,7 @@ const ObjectPrivilegesModal: React.FC<ObjectPrivilegesModalProps> = ({
                     <Col flex={'180px'} style={{ marginRight: '12px' }}>
                       <Form.Item
                         {...field}
+                        key={field.key}
                         name={[field.name, 'database']}
                         noStyle
                         rules={[
@@ -395,6 +396,7 @@ const ObjectPrivilegesModal: React.FC<ObjectPrivilegesModalProps> = ({
                     <Col flex={1}>
                       <Form.Item
                         {...field}
+                        key={field.key}
                         name={[field.name, 'tables']}
                         noStyle
                       >

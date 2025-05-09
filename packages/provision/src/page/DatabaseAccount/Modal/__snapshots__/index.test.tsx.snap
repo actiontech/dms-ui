@@ -275,6 +275,26 @@ exports[`provision/DatabaseAccount/DatabaseAccountModal render account detail mo
                           </div>
                         </div>
                       </div>
+                      <div
+                        class="css-13u4jk2"
+                      >
+                        <div
+                          class="audit-info-item-label"
+                        >
+                          授权成员组
+                        </div>
+                        <div
+                          class="ant-space ant-space-horizontal ant-space-align-center audit-info-item-value"
+                          style="flex-wrap: wrap; margin-bottom: -8px;"
+                        >
+                          <div
+                            class="ant-space-item"
+                            style="padding-bottom: 8px;"
+                          >
+                            -
+                          </div>
+                        </div>
+                      </div>
                     </div>
                   </div>
                 </div>

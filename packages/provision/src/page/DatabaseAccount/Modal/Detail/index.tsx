@@ -5,8 +5,7 @@ import {
   EmptyBox,
   BasicToolTip,
   BasicTypographyEllipsis,
-  SensitiveDisplay,
-  CustomAvatar
+  SensitiveDisplay
 } from '@actiontech/shared';
 import useModalStatus from '../../../../hooks/useModalStatus';
 import { useTranslation } from 'react-i18next';
@@ -26,6 +25,7 @@ import AccountInfoItem from '../../components/AccountInfoItem';
 import json2md, { DataObject } from 'json2md';
 import { accountDetailCustomConfig } from './accountDetailCustomConfig';
 import { IDBAccountDataPermission } from '@actiontech/shared/lib/api/provision/service/common';
+import AuthDisplay, { AuthType } from '../../components/AuthDisplay';
 
 const DatabaseAccountDetailModal = () => {
   const { t } = useTranslation();
@@ -244,18 +244,32 @@ const DatabaseAccountDetailModal = () => {
           <div className="audit-card">
             <AccountInfoItem label={t('databaseAccount.detail.authUser')}>
               <EmptyBox if={!!data?.auth_users?.length} defaultNode="-">
-                <div className="flex-display">
-                  {data?.auth_users?.map((user, index) => {
-                    return (
-                      <CustomAvatar
-                        style={{ display: 'inline-block', marginRight: 12 }}
-                        key={index}
-                        size="small"
-                        name={user ?? ''}
-                      />
-                    );
-                  })}
-                </div>
+                <AuthDisplay
+                  type={AuthType.USER}
+                  maxDisplayCount={5}
+                  authUsers={
+                    data?.auth_users?.map((user) => ({
+                      uid: user,
+                      name: user
+                    })) ?? []
+                  }
+                />
+              </EmptyBox>
+            </AccountInfoItem>
+
+            <AccountInfoItem label={t('databaseAccount.detail.authUserGroup')}>
+              <EmptyBox if={!!data?.auth_group_users?.length} defaultNode="-">
+                <AuthDisplay
+                  type={AuthType.GROUP}
+                  maxDisplayCount={5}
+                  renderTooltip={false}
+                  authUserGroups={
+                    data?.auth_group_users?.map((group) => ({
+                      uid: group,
+                      name: group
+                    })) ?? []
+                  }
+                />
               </EmptyBox>
             </AccountInfoItem>
           </div>

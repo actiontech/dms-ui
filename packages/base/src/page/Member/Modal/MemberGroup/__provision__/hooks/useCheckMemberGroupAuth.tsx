@@ -8,13 +8,14 @@ import {
 import { ProvisionApi } from '@actiontech/shared/lib/api';
 import { useCurrentProject } from '@actiontech/shared/lib/features';
 import { useBoolean } from 'ahooks';
-import { Modal, Typography, Alert, Divider, Space } from 'antd';
+import { Modal, Typography, Alert, Space } from 'antd';
 import { accountNameRender } from 'provision/src/page/DatabaseAccount/index.utils';
 import { useTranslation } from 'react-i18next';
 import { CheckMemberGroupAuthErrorMessageStyleWrapper } from './style';
 import { ROUTE_PATHS } from '@actiontech/shared/lib/data/routePaths';
 import { IListDBAccount } from '@actiontech/shared/lib/api/provision/service/common';
 import { ResponseCode } from '@actiontech/shared/lib/enum';
+import './index.less';
 
 interface ICheckMemberGroupParams {
   userUids: string[];
@@ -197,6 +198,8 @@ const useCheckMemberGroupAuth = () => {
 
     if (authConflicts.length > 0) {
       modal.error({
+        className: 'check-member-group-auth-error-modal',
+        width: 640,
         title: t('provisionMember.checkMemberGroupAuth.errorTitle'),
         content: (
           <CheckMemberGroupAuthErrorMessageStyleWrapper>
@@ -207,7 +210,7 @@ const useCheckMemberGroupAuth = () => {
                 'provisionMember.checkMemberGroupAuth.securityAlertDesc'
               )}
             />
-            {authConflicts.map((conflict, conflictIndex) => {
+            {authConflicts.map((conflict) => {
               const directAuths = conflict.currentAuths.filter(
                 (auth) => auth.authType === 'direct'
               );
@@ -366,16 +369,12 @@ const useCheckMemberGroupAuth = () => {
                       </Space>
                     </div>
                   </div>
-                  {conflictIndex < authConflicts.length - 1 && (
-                    <Divider className="auth-conflict-divider" />
-                  )}
                 </div>
               );
             })}
           </CheckMemberGroupAuthErrorMessageStyleWrapper>
         ),
-        okText: t('common.close'),
-        width: 600
+        okText: t('common.close')
       });
 
       return false;
