@@ -10,7 +10,9 @@ exports[`useComparisonResultTree should assemble baseline tree data correctly 1`
             "children": [
               {
                 "key": "0_TREE_NODE_KEY_SEPARATOR_TABLE_TREE_NODE_KEY_SEPARATOR_task",
-                "title": <Styled(div)>
+                "title": <Styled(div)
+                  className="object-comparison-result-pass"
+                >
                   <div
                     className="name-container"
                   >
@@ -58,7 +60,9 @@ exports[`useComparisonResultTree should assemble baseline tree data correctly 1`
             "children": [
               {
                 "key": "1_TREE_NODE_KEY_SEPARATOR_TABLE_TREE_NODE_KEY_SEPARATOR_task",
-                "title": <Styled(div)>
+                "title": <Styled(div)
+                  className="object-comparison-result-pass"
+                >
                   <div
                     className="name-container"
                   >
@@ -106,7 +110,9 @@ exports[`useComparisonResultTree should assemble baseline tree data correctly 1`
             "children": [
               {
                 "key": "2_TREE_NODE_KEY_SEPARATOR_TABLE_TREE_NODE_KEY_SEPARATOR_task",
-                "title": <Styled(div)>
+                "title": <Styled(div)
+                  className="baseline-missing-comparison missing-comparison"
+                >
                   <div
                     className="name-container"
                   >
@@ -121,7 +127,9 @@ exports[`useComparisonResultTree should assemble baseline tree data correctly 1`
               },
               {
                 "key": "2_TREE_NODE_KEY_SEPARATOR_TABLE_TREE_NODE_KEY_SEPARATOR_task_copy",
-                "title": <Styled(div)>
+                "title": <Styled(div)
+                  className="baseline-missing-comparison missing-comparison"
+                >
                   <div
                     className="name-container"
                   >
@@ -326,7 +334,7 @@ exports[`useComparisonResultTree should assemble comparison tree data correctly 
               {
                 "key": "2_TREE_NODE_KEY_SEPARATOR_TABLE_TREE_NODE_KEY_SEPARATOR_task",
                 "title": <Styled(div)
-                  className="object-comparison-result-diff"
+                  className="comparison-missing-comparison missing-comparison"
                 >
                   <div
                     className="name-container"
@@ -335,7 +343,15 @@ exports[`useComparisonResultTree should assemble comparison tree data correctly 
                     <React.Fragment>
                       <span
                         className="content"
-                      />
+                        title="task"
+                      >
+                        task
+                      </span>
+                      <span
+                        className="status-tag tag-missing"
+                      >
+                        缺失
+                      </span>
                     </React.Fragment>
                   </div>
                   <BasicToolTip
@@ -352,7 +368,7 @@ exports[`useComparisonResultTree should assemble comparison tree data correctly 
               {
                 "key": "2_TREE_NODE_KEY_SEPARATOR_TABLE_TREE_NODE_KEY_SEPARATOR_task_copy",
                 "title": <Styled(div)
-                  className="object-comparison-result-diff"
+                  className="comparison-missing-comparison missing-comparison"
                 >
                   <div
                     className="name-container"
@@ -361,7 +377,15 @@ exports[`useComparisonResultTree should assemble comparison tree data correctly 
                     <React.Fragment>
                       <span
                         className="content"
-                      />
+                        title="task_copy"
+                      >
+                        task_copy
+                      </span>
+                      <span
+                        className="status-tag tag-missing"
+                      >
+                        缺失
+                      </span>
                     </React.Fragment>
                   </div>
                   <BasicToolTip

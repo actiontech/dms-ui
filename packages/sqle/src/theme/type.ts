@@ -303,6 +303,80 @@ export type IconTheme = {
 
 export type DataSourceComparisonTheme = {
   comparisonResultDiffBackgroundColor: string;
+  comparisonEntry: {
+    card: {
+      boxShadow: string;
+      borderColor: string;
+    };
+    timeInfo: {
+      color: string;
+    };
+    overview: {
+      card: {
+        hoverBoxShadow: string;
+        suggestion: {
+          color: string;
+        };
+        mode: {
+          same: {
+            borderColor: string;
+            color: string;
+            selectedBgColor: string;
+          };
+          inconsistent: {
+            borderColor: string;
+            color: string;
+            selectedBgColor: string;
+          };
+          baseNotExist: {
+            borderColor: string;
+            color: string;
+            selectedBgColor: string;
+          };
+          comparisonNotExist: {
+            borderColor: string;
+            color: string;
+            selectedBgColor: string;
+          };
+        };
+      };
+    };
+    treeNode: {
+      title: {
+        bgColor: string;
+      };
+      node: {
+        inconsistent: {
+          color: string;
+          baselineBgColor: string;
+          comparisonBgColor: string;
+        };
+        missing: {
+          color: string;
+          baselineBgColor: string;
+          comparisonBgColor: string;
+        };
+        new: {
+          color: string;
+          bgColor: string;
+        };
+        tag: {
+          inconsistent: {
+            color: string;
+            bgColor: string;
+          };
+          missing: {
+            color: string;
+            bgColor: string;
+          };
+          new: {
+            color: string;
+            bgColor: string;
+          };
+        };
+      };
+    };
+  };
 };
 
 export type KnowledgeTheme = {

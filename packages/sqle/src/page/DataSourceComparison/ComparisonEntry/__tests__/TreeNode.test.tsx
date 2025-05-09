@@ -18,7 +18,9 @@ import {
   getComparisonResultSchemaName,
   getObjectTypeIcon,
   parseTreeNodeKey,
-  renderComparisonResultObjectName
+  renderComparisonResultObjectName,
+  getFirstMatchNodeKey,
+  generateAllMatchStatusExpandedKeys
 } from '../utils/TreeNode';
 import { TreeProps } from 'antd';
 
@@ -71,7 +73,7 @@ describe('TreeNode Utils', () => {
       expect(result).toEqual(<span className="content">test</span>);
     });
 
-    it('should render object name for comparison when result is same', () => {
+    it('should render object name with title for comparison when result is same', () => {
       const result = renderComparisonResultObjectName(
         ObjectDiffResultComparisonResultEnum.same,
         'test',
@@ -86,7 +88,7 @@ describe('TreeNode Utils', () => {
       );
     });
 
-    it('should render object name for comparison when result is inconsistent', () => {
+    it('should render object name with title and inconsistent tag for comparison when result is inconsistent', () => {
       const result = renderComparisonResultObjectName(
         ObjectDiffResultComparisonResultEnum.inconsistent,
         'test',
@@ -97,11 +99,12 @@ describe('TreeNode Utils', () => {
           <span title="test" className="content">
             test
           </span>
+          <span className="status-tag tag-inconsistent">结构差异</span>
         </>
       );
     });
 
-    it('should render object name for comparison when result is base not exist', () => {
+    it('should render object name with title and new tag for comparison when result is base not exist', () => {
       const result = renderComparisonResultObjectName(
         ObjectDiffResultComparisonResultEnum.base_not_exist,
         'test',
@@ -112,11 +115,12 @@ describe('TreeNode Utils', () => {
           <span title="test" className="content">
             test
           </span>
+          <span className="status-tag tag-new">新增</span>
         </>
       );
     });
 
-    it('should render object name for comparison when result is comparison not exist', () => {
+    it('should render object name with title and missing tag for comparison when result is comparison not exist', () => {
       const result = renderComparisonResultObjectName(
         ObjectDiffResultComparisonResultEnum.comparison_not_exist,
         'test',
@@ -124,7 +128,10 @@ describe('TreeNode Utils', () => {
       );
       expect(result).toEqual(
         <>
-          <span className="content"></span>
+          <span title="test" className="content">
+            test
+          </span>
+          <span className="status-tag tag-missing">缺失</span>
         </>
       );
     });
@@ -306,20 +313,65 @@ describe('TreeNode Utils', () => {
   });
 
   describe('generateClassNamesByComparisonResult', () => {
-    it('should return diff class when result is not same', () => {
+    it('should return pass class when result is same or undefined', () => {
       expect(
         generateClassNamesByComparisonResult(
-          ObjectDiffResultComparisonResultEnum.inconsistent
-        )
-      ).toBe('object-comparison-result-diff');
-    });
-
-    it('should return pass class when result is same', () => {
-      expect(
-        generateClassNamesByComparisonResult(
+          'baseline',
           ObjectDiffResultComparisonResultEnum.same
         )
       ).toBe('object-comparison-result-pass');
+
+      expect(generateClassNamesByComparisonResult('baseline', undefined)).toBe(
+        'object-comparison-result-pass'
+      );
+    });
+
+    it('should return inconsistent class when result is inconsistent', () => {
+      expect(
+        generateClassNamesByComparisonResult(
+          'baseline',
+          ObjectDiffResultComparisonResultEnum.inconsistent
+        )
+      ).toBe('baseline-inconsistent inconsistent');
+
+      expect(
+        generateClassNamesByComparisonResult(
+          'comparison',
+          ObjectDiffResultComparisonResultEnum.inconsistent
+        )
+      ).toBe('comparison-inconsistent inconsistent');
+    });
+
+    it('should return missing class when result is comparison_not_exist', () => {
+      expect(
+        generateClassNamesByComparisonResult(
+          'baseline',
+          ObjectDiffResultComparisonResultEnum.comparison_not_exist
+        )
+      ).toBe('baseline-missing-comparison missing-comparison');
+
+      expect(
+        generateClassNamesByComparisonResult(
+          'comparison',
+          ObjectDiffResultComparisonResultEnum.comparison_not_exist
+        )
+      ).toBe('comparison-missing-comparison missing-comparison');
+    });
+
+    it('should return new class when result is base_not_exist and source is comparison', () => {
+      expect(
+        generateClassNamesByComparisonResult(
+          'comparison',
+          ObjectDiffResultComparisonResultEnum.base_not_exist
+        )
+      ).toBe('new-comparison');
+
+      expect(
+        generateClassNamesByComparisonResult(
+          'baseline',
+          ObjectDiffResultComparisonResultEnum.base_not_exist
+        )
+      ).toBe('');
     });
   });
 
@@ -361,6 +413,84 @@ describe('TreeNode Utils', () => {
 
     it('should return empty array when tree data is empty', () => {
       expect(generateTreeDefaultExpandedKeys([])).toEqual([]);
+    });
+  });
+
+  describe('getFirstMatchNodeKey', () => {
+    const mockComparisonResults: ISchemaObject[] = [
+      {
+        base_schema_name: 'schema1',
+        comparison_schema_name: 'schema1',
+        comparison_result: SchemaObjectComparisonResultEnum.same,
+        database_diff_objects: [
+          {
+            object_type: DatabaseDiffObjectObjectTypeEnum.TABLE,
+            objects_diff_result: [
+              {
+                object_name: 'table1',
+                comparison_result:
+                  ObjectDiffResultComparisonResultEnum.inconsistent
+              }
+            ]
+          }
+        ]
+      }
+    ];
+
+    it('should return first matching node key', () => {
+      const result = getFirstMatchNodeKey(
+        mockComparisonResults,
+        ObjectDiffResultComparisonResultEnum.inconsistent
+      );
+      expect(result).toBe(
+        '0_TREE_NODE_KEY_SEPARATOR_TABLE_TREE_NODE_KEY_SEPARATOR_table1'
+      );
+    });
+
+    it('should return undefined when no match found', () => {
+      const result = getFirstMatchNodeKey(
+        mockComparisonResults,
+        ObjectDiffResultComparisonResultEnum.same
+      );
+      expect(result).toBeUndefined();
+    });
+  });
+
+  describe('generateAllMatchStatusExpandedKeys', () => {
+    const mockComparisonResults: ISchemaObject[] = [
+      {
+        base_schema_name: 'schema1',
+        comparison_schema_name: 'schema1',
+        comparison_result: SchemaObjectComparisonResultEnum.same,
+        database_diff_objects: [
+          {
+            object_type: DatabaseDiffObjectObjectTypeEnum.TABLE,
+            objects_diff_result: [
+              {
+                object_name: 'table1',
+                comparison_result:
+                  ObjectDiffResultComparisonResultEnum.inconsistent
+              }
+            ]
+          }
+        ]
+      }
+    ];
+
+    it('should generate expanded keys for matching status', () => {
+      const result = generateAllMatchStatusExpandedKeys(
+        ObjectDiffResultComparisonResultEnum.inconsistent,
+        mockComparisonResults
+      );
+      expect(result).toEqual(['0_TREE_NODE_KEY_SEPARATOR_TABLE']);
+    });
+
+    it('should return empty array when no match found', () => {
+      const result = generateAllMatchStatusExpandedKeys(
+        ObjectDiffResultComparisonResultEnum.same,
+        mockComparisonResults
+      );
+      expect(result).toEqual([]);
     });
   });
 });

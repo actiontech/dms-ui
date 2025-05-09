@@ -1,7 +1,9 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`DataSourceComparison ce should match snapshot 1`] = `
-<section>
+<Styled(section)
+  className="has-min-height"
+>
   <PageHeader
     title="结构对比"
   />
@@ -17,5 +19,5 @@ exports[`DataSourceComparison ce should match snapshot 1`] = `
   >
     <ComparisonEntry />
   </EnterpriseFeatureDisplay>
-</section>
+</Styled(section)>
 `;
