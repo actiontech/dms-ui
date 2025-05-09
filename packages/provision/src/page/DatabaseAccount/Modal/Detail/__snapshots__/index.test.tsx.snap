@@ -376,29 +376,47 @@ exports[`provision/DatabaseAccount/DatabaseAccountDetailModal render click copy 
                             class="ant-space-item"
                             style="padding-bottom: 8px;"
                           >
-                            <div
-                              class="flex-display"
+                            <span
+                              class="ant-tag ant-tag-blue basic-tag-wrapper basic-small-tag-wrapper css-11a5f5v"
                             >
-                              <div
-                                class="ant-space ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
+                              <svg
+                                color="currentColor"
+                                height="16"
+                                viewBox="0 0 16 16"
+                                width="16"
+                                xmlns="http://www.w3.org/2000/svg"
                               >
-                                <div
-                                  class="ant-space-item"
-                                >
-                                  <span
-                                    class="ant-avatar ant-avatar-sm ant-avatar-circle action-avatar css-1wq79dc"
-                                    style="display: inline-block; margin-right: 12px;"
-                                  >
-                                    <span
-                                      class="ant-avatar-string"
-                                      style="transform: scale(1) translateX(-50%);"
-                                    >
-                                      T
-                                    </span>
-                                  </span>
-                                </div>
+                                <path
+                                  d="M2.522 1.884 8 .667l5.478 1.217a.67.67 0 0 1 .522.65v6.659a4 4 0 0 1-1.781 3.328L8 15.333l-4.219-2.812A4 4 0 0 1 2 9.193V2.535a.67.67 0 0 1 .522-.65M8 7.334A1.667 1.667 0 1 0 8 4a1.667 1.667 0 0 0 0 3.333m-2.982 3.333h5.964a3 3 0 0 0-5.964 0"
+                                  fill="currentColor"
+                                />
+                              </svg>
+                              <div
+                                class="name-ellipsis"
+                              >
+                                t3
                               </div>
-                            </div>
+                            </span>
+                          </div>
+                        </div>
+                      </div>
+                      <div
+                        class="css-13u4jk2"
+                      >
+                        <div
+                          class="audit-info-item-label"
+                        >
+                          授权成员组
+                        </div>
+                        <div
+                          class="ant-space ant-space-horizontal ant-space-align-center audit-info-item-value"
+                          style="flex-wrap: wrap; margin-bottom: -8px;"
+                        >
+                          <div
+                            class="ant-space-item"
+                            style="padding-bottom: 8px;"
+                          >
+                            -
                           </div>
                         </div>
                       </div>
@@ -830,29 +848,47 @@ exports[`provision/DatabaseAccount/DatabaseAccountDetailModal render init snap 1
                             class="ant-space-item"
                             style="padding-bottom: 8px;"
                           >
-                            <div
-                              class="flex-display"
+                            <span
+                              class="ant-tag ant-tag-blue basic-tag-wrapper basic-small-tag-wrapper css-11a5f5v"
                             >
-                              <div
-                                class="ant-space ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
+                              <svg
+                                color="currentColor"
+                                height="16"
+                                viewBox="0 0 16 16"
+                                width="16"
+                                xmlns="http://www.w3.org/2000/svg"
                               >
-                                <div
-                                  class="ant-space-item"
-                                >
-                                  <span
-                                    class="ant-avatar ant-avatar-sm ant-avatar-circle action-avatar css-1wq79dc"
-                                    style="display: inline-block; margin-right: 12px;"
-                                  >
-                                    <span
-                                      class="ant-avatar-string"
-                                      style="transform: scale(1) translateX(-50%);"
-                                    >
-                                      T
-                                    </span>
-                                  </span>
-                                </div>
+                                <path
+                                  d="M2.522 1.884 8 .667l5.478 1.217a.67.67 0 0 1 .522.65v6.659a4 4 0 0 1-1.781 3.328L8 15.333l-4.219-2.812A4 4 0 0 1 2 9.193V2.535a.67.67 0 0 1 .522-.65M8 7.334A1.667 1.667 0 1 0 8 4a1.667 1.667 0 0 0 0 3.333m-2.982 3.333h5.964a3 3 0 0 0-5.964 0"
+                                  fill="currentColor"
+                                />
+                              </svg>
+                              <div
+                                class="name-ellipsis"
+                              >
+                                t3
                               </div>
-                            </div>
+                            </span>
+                          </div>
+                        </div>
+                      </div>
+                      <div
+                        class="css-13u4jk2"
+                      >
+                        <div
+                          class="audit-info-item-label"
+                        >
+                          授权成员组
+                        </div>
+                        <div
+                          class="ant-space ant-space-horizontal ant-space-align-center audit-info-item-value"
+                          style="flex-wrap: wrap; margin-bottom: -8px;"
+                        >
+                          <div
+                            class="ant-space-item"
+                            style="padding-bottom: 8px;"
+                          >
+                            -
                           </div>
                         </div>
                       </div>

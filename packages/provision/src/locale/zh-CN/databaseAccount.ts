@@ -40,12 +40,16 @@ export default {
       lock: '自动锁定',
       status: '账号状态',
       statusTips:
-        '用于标识账号当前的可用状态，禁用或已锁定状态意味着账户无法登录，也无法使用任何功能',
+        '账号当前状态说明：\n' +
+        '可用：正常使用\n' +
+        '已锁定：密码过期被锁（可以通过续用或改密恢复）\n' +
+        '禁用：被管理员关闭（需联系管理员启用）',
       deposit: '托管密码',
       depositTips:
         '用于标识账号是否由平台管理密码，如果未托管，就无法授权并用于SQL工作台',
       workbench: '是否用于SQL工作台',
-      auth: '账号授权'
+      auth: '账号授权',
+      authUserGroup: '成员组授权'
     },
     action: {
       view: '查看',
@@ -167,6 +171,7 @@ export default {
     copyAll: '全文复制',
     authInfo: '授权信息',
     authUser: '授权成员',
+    authUserGroup: '授权成员组',
     role: '角色',
     roleInfo: '角色信息',
     privilege: '权限',
@@ -176,6 +181,7 @@ export default {
     title: '账号授权',
     currentAccount: '当前账号',
     selectUser: '授权成员',
+    selectUserGroup: '授权成员组',
     successTip: '授权成功'
   },
   modifyPassword: {

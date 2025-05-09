@@ -1,5 +1,12 @@
 import { BasicButton, BasicModal, BasicSelect } from '@actiontech/shared';
-import { Space, message, Form, Typography } from 'antd';
+import {
+  Space,
+  message,
+  Form,
+  Typography,
+  Radio,
+  RadioChangeEvent
+} from 'antd';
 import { useTranslation } from 'react-i18next';
 import useModalStatus from '../../../../hooks/useModalStatus';
 import {
@@ -11,21 +18,38 @@ import { EventEmitterKey, ModalName } from '../../../../data/enum';
 import { useBoolean } from 'ahooks';
 import { useRecoilState } from 'recoil';
 import useProvisionUser from '../../../../hooks/useProvisionUser';
-import { useEffect } from 'react';
+import { useCallback, useEffect } from 'react';
 import dbAccountService from '@actiontech/shared/lib/api/provision/service/db_account/';
 import { useCurrentProject } from '@actiontech/shared/lib/features';
 import { ResponseCode } from '@actiontech/shared/lib/enum';
 import { filterOptionByLabel } from '@actiontech/shared/lib/components/BasicSelect/utils';
 import { accountNameRender } from '../../index.utils';
+import { AuthorizeType } from './index.enum';
+import { AuthorizeFormFields } from './index.type';
+import useMemberGroup from '../../hooks/useMemberGroup';
 
 const AccountAuthorizeModal = () => {
   const { t } = useTranslation();
 
   const { projectID } = useCurrentProject();
 
-  const [form] = Form.useForm<{ userId: string[] }>();
+  const [form] = Form.useForm<AuthorizeFormFields>();
 
-  const { updateUserList, userIDOptions } = useProvisionUser();
+  const selectedAuthorizeType = Form.useWatch('authorizeType', form);
+
+  const {
+    updateUserListAsync,
+    updateUserList,
+    userIDOptions,
+    loading: getUserListLoading
+  } = useProvisionUser();
+
+  const {
+    updateMemberGroupListAsync,
+    updateMemberGroupList,
+    memberIDOptions,
+    loading: getMemberGroupLoading
+  } = useMemberGroup();
 
   const [messageApi, contextHolder] = message.useMessage();
 
@@ -51,6 +75,9 @@ const AccountAuthorizeModal = () => {
         db_account: {
           permission_users: {
             permission_user_uids: values.userId ?? []
+          },
+          permission_user_groups: {
+            permission_user_group_uids: values.memberGroupUid ?? []
           }
         }
       })
@@ -74,18 +101,38 @@ const AccountAuthorizeModal = () => {
     updateSelectData({});
   };
 
-  useEffect(() => {
-    updateUserList();
-  }, [updateUserList]);
+  const getMembersAndSetDefaultValues = useCallback(() => {
+    updateMemberGroupListAsync().then(() => {
+      form.setFieldValue(
+        'memberGroupUid',
+        selectData?.auth_user_groups?.map((v) => v.uid) ?? []
+      );
+    });
+  }, [updateMemberGroupListAsync, form, selectData?.auth_user_groups]);
 
-  useEffect(() => {
-    if (selectData?.auth_users?.length) {
+  const getUsersAndSetDefaultValues = useCallback(() => {
+    updateUserListAsync().then(() => {
       form.setFieldValue(
         'userId',
-        selectData.auth_users.map((v) => v.uid)
+        selectData?.auth_users?.map((v) => v.uid) ?? []
       );
+    });
+  }, [updateUserListAsync, form, selectData?.auth_users]);
+
+  const onChangeAuthorizeType = (e: RadioChangeEvent) => {
+    if (e.target.value === AuthorizeType.USER) {
+      updateUserList();
+    } else {
+      updateMemberGroupList();
     }
-  }, [selectData, form]);
+  };
+
+  useEffect(() => {
+    if (visible) {
+      getUsersAndSetDefaultValues();
+      getMembersAndSetDefaultValues();
+    }
+  }, [getUsersAndSetDefaultValues, getMembersAndSetDefaultValues, visible]);
 
   return (
     <BasicModal
@@ -115,13 +162,41 @@ const AccountAuthorizeModal = () => {
             {accountNameRender(selectData?.account_info)}
           </Typography.Text>
         </Form.Item>
+
+        <Form.Item name="authorizeType" initialValue={AuthorizeType.USER}>
+          <Radio.Group onChange={onChangeAuthorizeType}>
+            <Radio value={AuthorizeType.USER}>
+              {t('databaseAccount.authorize.selectUser')}
+            </Radio>
+            <Radio value={AuthorizeType.USER_GROUP}>
+              {t('databaseAccount.authorize.selectUserGroup')}
+            </Radio>
+          </Radio.Group>
+        </Form.Item>
+
         <Form.Item
+          hidden={selectedAuthorizeType !== AuthorizeType.USER}
           name="userId"
-          label={t('databaseAccount.authorize.selectUser')}
         >
           <BasicSelect
+            loading={getUserListLoading}
             mode="multiple"
             options={userIDOptions}
+            showSearch
+            optionFilterProp="label"
+            filterOption={filterOptionByLabel}
+            allowClear
+          />
+        </Form.Item>
+
+        <Form.Item
+          hidden={selectedAuthorizeType !== AuthorizeType.USER_GROUP}
+          name="memberGroupUid"
+        >
+          <BasicSelect
+            loading={getMemberGroupLoading}
+            mode="multiple"
+            options={memberIDOptions}
             showSearch
             optionFilterProp="label"
             filterOption={filterOptionByLabel}

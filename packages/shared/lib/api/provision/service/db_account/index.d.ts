@@ -29,7 +29,9 @@ export interface IAuthListDBAccountParams {
 
   filter_by_db_service?: string;
 
-  filter_by_user?: string;
+  filter_by_users?: string[];
+
+  filter_by_user_group?: string;
 
   filter_by_expired_time_from?: string;
 

@@ -20,6 +20,10 @@ import service from '../../../testUtil/mockApi/service';
 import dbRole from '../../../testUtil/mockApi/dbRole';
 import { createSpySuccessResponse } from '@actiontech/shared/lib/testUtil/mockApi';
 import { ListServiceDbTypeEnum } from '@actiontech/shared/lib/api/provision/service/common.enum';
+import {
+  ignoreConsoleErrors,
+  UtilsConsoleErrorStringsEnum
+} from '@actiontech/shared/lib/testUtil/common';
 
 describe('provision/DatabaseAccount/Create', () => {
   let authListServicesSpy: jest.SpyInstance;
@@ -31,6 +35,7 @@ describe('provision/DatabaseAccount/Create', () => {
   let authGetDBAccountMetaSpy: jest.SpyInstance;
   let authListDBRoleTipsSpy: jest.SpyInstance;
   let authListOperationsSpy: jest.SpyInstance;
+  ignoreConsoleErrors([UtilsConsoleErrorStringsEnum.UNKNOWN_EVENT_HANDLER]);
 
   beforeEach(() => {
     authListServicesSpy = auth.listServices();

@@ -33,6 +33,40 @@ export const dbAccountMockData: IListDBAccount[] = [
         name: 't3'
       }
     ],
+    auth_user_groups: [
+      {
+        uid: '1267103833235787773',
+        name: 'g1',
+        auth_users: [
+          {
+            uid: '17671038332343787776',
+            name: 'demo_user'
+          }
+        ]
+      },
+      {
+        uid: '1267103833235787774',
+        name: 'g2',
+        auth_users: [
+          {
+            uid: '17671038332343787777',
+            name: 'demo_user2'
+          },
+          {
+            uid: '17671038332343787778',
+            name: 'demo_user3'
+          },
+          {
+            uid: '17671038332343787779',
+            name: 'demo_user4'
+          },
+          {
+            uid: '17671038332343787780',
+            name: 'demo_user5'
+          }
+        ]
+      }
+    ],
     remaining_days: '89天2小时'
   },
   {

@@ -15,6 +15,7 @@ import dmsDataExport from './dmsDataExport';
 import dataMaskRuleOverview from './dataMaskRuleOverview';
 import dmsGlobalDataSource from './dmsGlobalDataSource';
 import resourceOverview from './resourceOverview';
+import provisionMember from './provisionMember';
 import availabilityZone from './availabilityZone';
 // eslint-disable-next-line import/no-anonymous-default-export
 export default {
@@ -35,6 +36,7 @@ export default {
     dataMaskRuleOverview,
     dmsGlobalDataSource,
     resourceOverview,
+    provisionMember,
     availabilityZone
   }
 };

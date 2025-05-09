@@ -201,6 +201,14 @@ export interface IAuthGetAccountStaticsReply {
   message?: string;
 }
 
+export interface IAuthUserGroups {
+  auth_users?: IUidWithName[];
+
+  name?: string;
+
+  uid?: string;
+}
+
 export interface IBatchUpdateDBAccountPassword {
   password_expiration_policy?: BatchUpdateDBAccountPasswordPasswordExpirationPolicyEnum;
 
@@ -241,18 +249,6 @@ export interface ICopyDataPermissionTemplateReply {
   };
 
   message?: string;
-}
-
-export interface ICustomDBPasswordRule {
-  min_length?: number;
-
-  require_digit?: boolean;
-
-  require_lowercase?: boolean;
-
-  require_special?: boolean;
-
-  require_uppercase?: boolean;
 }
 
 export interface IDBAccount {
@@ -455,14 +451,6 @@ export interface IGenericResp {
   message?: string;
 }
 
-export interface IGetCustomDBPasswordRuleReply {
-  code?: number;
-
-  data?: ICustomDBPasswordRule;
-
-  message?: string;
-}
-
 export interface IGetDBAccountMetaReply {
   code?: number;
 
@@ -479,7 +467,7 @@ export interface IGetDBAccountReply {
   data?: {
     account_info?: IAccountDetail;
 
-    auth_group_users?: string[];
+    auth_group_users?: IAuthUserGroups[];
 
     auth_users?: string[];
 
@@ -672,7 +660,7 @@ export interface IListAuthorizationEventsReply {
 export interface IListDBAccount {
   account_info?: IAccountInfo;
 
-  auth_user_groups?: IUidWithName[];
+  auth_user_groups?: IAuthUserGroups[];
 
   auth_users?: IUidWithName[];
 
@@ -1347,12 +1335,6 @@ export interface IUidWithName {
   name?: string;
 
   uid?: string;
-}
-
-export interface IUpdateCustomDBPasswordRuleReply {
-  code?: number;
-
-  message?: string;
 }
 
 export interface IUpdateDBAccount {

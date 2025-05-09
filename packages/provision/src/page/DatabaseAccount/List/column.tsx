@@ -1,13 +1,11 @@
 import {
   ActiontechTableColumn,
-  PageInfoWithoutIndexAndSize,
   ActiontechTableActionMeta,
   InlineActiontechTableMoreActionsButtonMeta
 } from '@actiontech/shared/lib/components/ActiontechTable';
-import { IAuthListDBAccountParams } from '@actiontech/shared/lib/api/provision/service/db_account/index.d';
 import { IListDBAccount } from '@actiontech/shared/lib/api/provision/service/common';
 import { t } from '../../../locale';
-import { CustomAvatar, BasicToolTip } from '@actiontech/shared';
+import { BasicToolTip } from '@actiontech/shared';
 import { Space, Typography } from 'antd';
 import { DBAccountStatusDictionary } from '../index.data';
 import { formatTime } from '@actiontech/shared/lib/utils/Common';
@@ -17,13 +15,8 @@ import {
   ListDBAccountStatusEnum
 } from '@actiontech/shared/lib/api/provision/service/common.enum';
 import { accountNameRender } from '../index.utils';
-
-export type DatabaseAccountListFilterParamType = PageInfoWithoutIndexAndSize<
-  IAuthListDBAccountParams & {
-    page_index: number;
-  },
-  'project_uid'
->;
+import { DatabaseAccountListFilterParamType } from './index.type';
+import AuthDisplay, { AuthType } from '../components/AuthDisplay';
 
 export const DatabaseAccountListColumns = (
   onUpdateFilter: (
@@ -48,7 +41,7 @@ export const DatabaseAccountListColumns = (
       render: (value) => {
         return (
           <Typography.Link
-            onClick={() => onUpdateFilter('filter_by_db_service', value?.uid)}
+            onClick={() => onUpdateFilter('filter_by_db_service', value?.uid!)}
           >
             {value?.name || '-'}
           </Typography.Link>
@@ -87,7 +80,11 @@ export const DatabaseAccountListColumns = (
       title: () => (
         <BasicToolTip
           suffixIcon
-          title={t('databaseAccount.list.column.statusTips')}
+          title={
+            <span className="whitespace-pre-line">
+              {t('databaseAccount.list.column.statusTips')}
+            </span>
+          }
         >
           {t('databaseAccount.list.column.status')}
         </BasicToolTip>
@@ -120,27 +117,37 @@ export const DatabaseAccountListColumns = (
       dataIndex: 'auth_users',
       className: 'ellipsis-column-width',
       title: t('databaseAccount.list.column.auth'),
-      filterKey: 'filter_by_user',
+      filterKey: 'filter_by_users',
       filterCustomType: 'select',
-      render: (value) => {
-        if (!value || !value.length) {
+      render: (value, record) => {
+        const { auth_users, auth_user_groups } = record;
+        if (!value || (!auth_users?.length && !auth_user_groups?.length)) {
           return '-';
         }
         return (
-          <Space>
-            {value.map((i) => {
-              return (
-                <CustomAvatar
-                  onClick={() => onUpdateFilter('filter_by_user', i?.uid)}
-                  key={i.uid}
-                  size="small"
-                  name={i.name}
-                />
-              );
-            })}
+          <Space size={0}>
+            <AuthDisplay
+              type={AuthType.USER}
+              authUsers={auth_users || []}
+              onUserClick={(uid) => onUpdateFilter('filter_by_users', uid)}
+            />
+            <AuthDisplay
+              type={AuthType.GROUP}
+              authUserGroups={auth_user_groups || []}
+              onGroupClick={(uid) =>
+                onUpdateFilter('filter_by_user_group', uid)
+              }
+            />
           </Space>
         );
       }
+    },
+    {
+      dataIndex: 'auth_user_groups',
+      show: false,
+      title: t('databaseAccount.list.column.authUserGroup'),
+      filterKey: 'filter_by_user_group',
+      filterCustomType: 'select'
     },
     {
       dataIndex: 'explanation',

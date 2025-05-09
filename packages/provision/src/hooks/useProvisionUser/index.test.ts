@@ -14,10 +14,6 @@ describe('provision/hooks/useProvisionUser', () => {
     value: i.user_uid,
     label: i.name
   }));
-  const mockUserNameOptions = userList.map((i) => ({
-    value: i.name,
-    label: i.name
-  }));
 
   beforeEach(() => {
     jest.useFakeTimers();
