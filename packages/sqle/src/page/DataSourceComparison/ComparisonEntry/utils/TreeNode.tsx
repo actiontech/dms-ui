@@ -10,6 +10,7 @@ import {
   SchemaObjectComparisonResultEnum
 } from '@actiontech/shared/lib/api/sqle/service/common.enum';
 import { TreeProps } from 'antd';
+import { t } from '../../../../locale';
 
 const TREE_NODE_KEY_SEPARATOR = '_TREE_NODE_KEY_SEPARATOR_';
 
@@ -63,6 +64,9 @@ export const renderComparisonResultObjectName = (
           <span title={objectName} className="content">
             {objectName}
           </span>
+          <span className="status-tag tag-inconsistent">
+            {t('dataSourceComparison.entry.structureDifference')}
+          </span>
         </>
       );
     }
@@ -73,6 +77,9 @@ export const renderComparisonResultObjectName = (
           <span title={objectName} className="content">
             {objectName}
           </span>
+          <span className="status-tag tag-new">
+            {t('dataSourceComparison.entry.newObject')}
+          </span>
         </>
       );
     }
@@ -80,7 +87,12 @@ export const renderComparisonResultObjectName = (
     if (result === ObjectDiffResultComparisonResultEnum.comparison_not_exist) {
       return (
         <>
-          <span className="content"></span>
+          <span title={objectName} className="content">
+            {objectName}
+          </span>
+          <span className="status-tag tag-missing">
+            {t('dataSourceComparison.entry.missingObject')}
+          </span>
         </>
       );
     }
@@ -211,6 +223,27 @@ export const generateTreeDefaultExpandedKeys = (
   return expandedKeys;
 };
 
+export const generateAllMatchStatusExpandedKeys = (
+  type: ObjectDiffResultComparisonResultEnum,
+  comparisonResults: ISchemaObject[]
+): string[] => {
+  return comparisonResults
+    .map((schema, index) => {
+      return schema.database_diff_objects?.map((diff) => {
+        if (
+          diff.objects_diff_result?.some(
+            (obj) => obj.comparison_result === type
+          )
+        ) {
+          return generateTreeNodeKey(index.toString(), diff.object_type!);
+        }
+        return null;
+      });
+    })
+    .flat()
+    .filter(Boolean) as string[];
+};
+
 export const getComparisonResultWithSchemaNodeKey = (
   targetKey: string,
   comparisonResults: ISchemaObject[]
@@ -250,10 +283,47 @@ export const filterSchemasInDatabase = (
 };
 
 export const generateClassNamesByComparisonResult = (
+  source: 'baseline' | 'comparison',
   result?: ObjectDiffResultComparisonResultEnum
 ): string => {
-  if (result !== ObjectDiffResultComparisonResultEnum.same) {
-    return 'object-comparison-result-diff';
+  if (!result || result === ObjectDiffResultComparisonResultEnum.same) {
+    return 'object-comparison-result-pass';
   }
-  return 'object-comparison-result-pass';
+
+  // 结构差异
+  if (result === ObjectDiffResultComparisonResultEnum.inconsistent) {
+    return `${source}-inconsistent inconsistent`;
+  }
+
+  // 缺失对象（在对比环境中不存在）
+  if (result === ObjectDiffResultComparisonResultEnum.comparison_not_exist) {
+    return `${source}-missing-comparison missing-comparison`;
+  }
+
+  // 新增对象（在基准环境中不存在）
+  if (result === ObjectDiffResultComparisonResultEnum.base_not_exist) {
+    return source === 'comparison' ? 'new-comparison' : '';
+  }
+  return '';
+};
+
+export const getFirstMatchNodeKey = (
+  comparisonResults: ISchemaObject[],
+  comparisonResult: ObjectDiffResultComparisonResultEnum
+) => {
+  for (let i = 0; i < comparisonResults.length; i++) {
+    const result = comparisonResults[i];
+    for (const diff of result.database_diff_objects ?? []) {
+      for (const obj of diff.objects_diff_result ?? []) {
+        if (obj.comparison_result === comparisonResult) {
+          return generateTreeNodeKey(
+            i.toString(),
+            diff.object_type!,
+            obj.object_name!
+          );
+        }
+      }
+    }
+  }
+  return undefined;
 };

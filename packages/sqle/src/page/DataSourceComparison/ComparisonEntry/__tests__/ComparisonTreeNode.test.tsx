@@ -232,6 +232,7 @@ describe('ComparisonTreeNode', () => {
 
   describe('ComparisonTreeNode', () => {
     const comparisonObjectTreeOnCheckSpy = jest.fn();
+    const setTreeExpandedKeysSpy = jest.fn();
     const customRender = () => {
       return superRender(
         <ComparisonTreeNode
@@ -248,6 +249,8 @@ describe('ComparisonTreeNode', () => {
           }}
           comparisonObjectCheckKeys={[]}
           comparisonObjectTreeOnCheck={comparisonObjectTreeOnCheckSpy}
+          setTreeExpandedKeys={setTreeExpandedKeysSpy}
+          treeExpandedKeys={[]}
         />
       );
     };
@@ -263,6 +266,8 @@ describe('ComparisonTreeNode', () => {
 
     it('should render the baseline and comparison trees', () => {
       const { container } = customRender();
+      expect(setTreeExpandedKeysSpy).toHaveBeenCalledTimes(1);
+      expect(setTreeExpandedKeysSpy.mock.calls[0][0]).toMatchSnapshot();
 
       expect(container).toMatchSnapshot();
     });
