@@ -139,6 +139,16 @@ const useRecentlySelectedZone = () => {
     }
   }, [setAvailabilityZone, setRecentlySelectedZoneRecord]);
 
+  const clearRecentlySelectedZone = useCallback(() => {
+    setRecentlySelectedZoneRecord([]);
+    setAvailabilityZone(undefined);
+    setStorageRecentlySelectedZoneRecord([]);
+  }, [
+    setAvailabilityZone,
+    setRecentlySelectedZoneRecord,
+    setStorageRecentlySelectedZoneRecord
+  ]);
+
   return {
     availabilityZone,
     setAvailabilityZone,
@@ -147,7 +157,8 @@ const useRecentlySelectedZone = () => {
     updateRecentlySelectedZone,
     initializeAvailabilityZone,
     verifyRecentlySelectedZoneRecord,
-    availabilityZoneOptions
+    availabilityZoneOptions,
+    clearRecentlySelectedZone
   };
 };
 

@@ -43,7 +43,7 @@ export const AvailabilityZoneTableActions = (
     },
     {
       text: t('common.delete'),
-      buttonProps: (record) => ({
+      buttonProps: () => ({
         danger: true
       }),
       key: 'deleteAvailabilityZone',
