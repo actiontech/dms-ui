@@ -9,6 +9,7 @@ import {
   BatchUpdateDBAccountPasswordPasswordExpirationPolicyEnum,
   PasswordConfigPasswordExpirationPolicyEnum
 } from '@actiontech/shared/lib/api/provision/service/common.enum';
+import { ICustomDBPasswordRule } from '@actiontech/shared/lib/api/provision/service/common.d';
 
 export type ExpendedDBAccountBody = IDBAccountBody & { id?: string };
 
@@ -115,4 +116,10 @@ export type BatchModifyPasswordFormType = {
   effective_time_day: number;
   passwords: ModifyPasswordItemType[];
   password_expiration_policy: BatchUpdateDBAccountPasswordPasswordExpirationPolicyEnum;
+};
+
+export type PasswordRule = {
+  key: keyof ICustomDBPasswordRule;
+  label: string;
+  validate: (value: string) => boolean;
 };

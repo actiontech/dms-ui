@@ -202,5 +202,12 @@ export default {
   manageAccount: {
     successTip: '托管密码成功',
     passwordTip: '请输入正确的连接密码，连接成功后您将收到“托管成功”的提示'
+  },
+  passwordRule: {
+    requireUppercase: '包含大写字母',
+    requireLowercase: '包含小写字母',
+    requireDigit: '包含数字',
+    requireSpecial: '包含特殊字符',
+    minLength: '长度至少{{minLength}}个字符'
   }
 };

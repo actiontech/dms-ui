@@ -1,3 +1,7 @@
+import { ICustomDBPasswordRule } from '@actiontech/shared/lib/api/provision/service/common.d';
+
+export type CharType = keyof Omit<ICustomDBPasswordRule, 'min_length'>;
+
 class Password {
   private capitalLetter = [
     'A',
@@ -165,6 +169,25 @@ class Password {
     return this.shuffle<string>(result.split('')).join('');
   }
 
+  public generateDBPasswordByCustomCharType(
+    length: number,
+    charType: Array<CharType>
+  ): string {
+    const digits = this.randomNumberSumEqualTarget(charType.length, length);
+    let result = '';
+    const characterSetReflected: Record<CharType, string[]> = {
+      require_uppercase: this.capitalLetter,
+      require_lowercase: this.lowercaseLetter,
+      require_digit: this.number,
+      require_special: this.specialChar
+    };
+    const characterSet = charType.map((type) => characterSetReflected[type]);
+    digits.forEach((e, i) => {
+      result += this.randomString(e, characterSet[i] ?? [], true);
+    });
+    return this.shuffle<string>(result.split('')).join('');
+  }
+
   public generateGUID(): string {
     return (
       this.s4() +
@@ -202,6 +225,22 @@ class Password {
 
   public generateOBClusterId(): string {
     return `ob-cluster-${this.generateMysqlInstanceId()}`;
+  }
+
+  public hasCapitalLetter(value: string): boolean {
+    return this.capitalLetter.some((letter) => value?.includes(letter));
+  }
+
+  public hasLowercaseLetter(value: string): boolean {
+    return this.lowercaseLetter.some((letter) => value?.includes(letter));
+  }
+
+  public hasNumber(value: string): boolean {
+    return this.number.some((num) => value?.includes(num));
+  }
+
+  public hasSpecialChar(value: string): boolean {
+    return this.specialChar.some((char) => value?.includes(char));
   }
 }
 

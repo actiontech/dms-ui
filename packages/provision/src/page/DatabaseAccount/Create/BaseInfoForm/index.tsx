@@ -19,8 +19,6 @@ import { useEffect } from 'react';
 import { EventEmitterKey } from '../../../../data/enum';
 import EventEmitter from '../../../../utils/EventEmitter';
 import { CreateAccountFormType } from '../../index.type';
-import InputPassword from '../../../../components/PasswordWithGenerate';
-import Password from '../../../../utils/Password';
 import ServiceFiled from './ServiceField';
 import { IDBAccountMeta } from '@actiontech/shared/lib/api/provision/service/common';
 import useServiceEnvironment from '../../../../hooks/useServiceEnvironment';
@@ -31,6 +29,8 @@ import AutoCreatedFormItemByApi from '../../../../../../sqle/src/components/Back
 import { filterOptionByLabel } from '@actiontech/shared/lib/components/BasicSelect/utils';
 import { passwordExpirationPolicyOptions } from './index.data';
 import { AddDBAccountPasswordExpirationPolicyEnum } from '@actiontech/shared/lib/api/provision/service/common.enum';
+import PasswordField from '../../components/PasswordField';
+
 type Props = {
   mode: 'create' | 'update';
   dbAccountMeta: IDBAccountMeta[];
@@ -108,15 +108,6 @@ const BaseInfoForm: React.FC<Props> = ({ mode, dbAccountMeta }) => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [isUpdate]);
 
-  const generatePassword = () => {
-    const password = Password.generateMySQLPassword(16);
-    form.setFieldsValue({
-      password,
-      confirm_password: password
-    });
-    return password;
-  };
-
   useEffect(() => {
     if (selectedDBServiceID) {
       form.setFieldValue(
@@ -184,48 +175,7 @@ const BaseInfoForm: React.FC<Props> = ({ mode, dbAccountMeta }) => {
         <BasicInput disabled={isUpdate} />
       </FormItemLabel>
 
-      <FormItemLabel
-        name="password"
-        label={
-          <CustomLabelContent
-            title={t('databaseAccount.create.form.password')}
-            tips={t('databaseAccount.create.form.passwordTips')}
-          />
-        }
-        rules={[{ required: true }]}
-        className="has-required-style has-label-tip"
-      >
-        <InputPassword
-          disabled={isUpdate}
-          clickGeneratePassword={generatePassword}
-        />
-      </FormItemLabel>
-      <FormItemLabel
-        name="confirm_password"
-        label={
-          <CustomLabelContent
-            title={t('databaseAccount.create.form.confirmPassword')}
-            tips={t('databaseAccount.create.form.confirmPasswordTips')}
-          />
-        }
-        rules={[
-          { required: true },
-          ({ getFieldValue }) => ({
-            validator(_, value) {
-              if (!value || getFieldValue('password') === value) {
-                return Promise.resolve();
-              }
-              return Promise.reject(
-                new Error(t('databaseAccount.create.form.passwordError'))
-              );
-            }
-          })
-        ]}
-        dependencies={['password']}
-        className="has-required-style has-label-tip"
-      >
-        <BasicInput.Password disabled={isUpdate} />
-      </FormItemLabel>
+      <PasswordField disabled={isUpdate} />
 
       <EmptyBox if={!!selectedDBServiceID}>
         <AutoCreatedFormItemByApi

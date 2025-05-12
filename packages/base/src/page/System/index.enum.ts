@@ -5,5 +5,6 @@ export enum SystemSegmentedKeyEnum {
   GlobalConfiguration = 'global_configuration',
   License = 'license',
   PersonalizeSetting = 'personalize',
-  GitSSHConfig = 'git_ssh_config'
+  GitSSHConfig = 'git_ssh_config',
+  DatabaseAccountPasswordPolicy = 'database_account_password_policy'
 }

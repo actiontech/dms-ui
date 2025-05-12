@@ -105,7 +105,7 @@ const ManagePasswordModal: React.FC = () => {
     >
       {contextHolder}
       <Form layout="vertical" form={form}>
-        <PasswordPolicyField visible={visible} />
+        <PasswordPolicyField />
         <Form.Item
           name="password"
           label={

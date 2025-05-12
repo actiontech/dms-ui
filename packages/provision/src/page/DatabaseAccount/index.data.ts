@@ -1,5 +1,7 @@
 import { ListDBAccountStatusEnum } from '@actiontech/shared/lib/api/provision/service/common.enum';
 import { t } from '../../locale';
+import Password from '../../utils/Password';
+import { PasswordRule } from './index.type';
 
 export const DBAccountStatusDictionary: Record<
   ListDBAccountStatusEnum,
@@ -33,5 +35,28 @@ export const DBAccountPasswordManagedOptions = [
   {
     label: t('databaseAccount.list.unmanaged'),
     value: 'false'
+  }
+];
+
+export const defaultRules: PasswordRule[] = [
+  {
+    key: 'require_uppercase',
+    label: t('databaseAccount.passwordRule.requireUppercase'),
+    validate: (v) => Password.hasCapitalLetter(v)
+  },
+  {
+    key: 'require_lowercase',
+    label: t('databaseAccount.passwordRule.requireLowercase'),
+    validate: (v) => Password.hasLowercaseLetter(v)
+  },
+  {
+    key: 'require_digit',
+    label: t('databaseAccount.passwordRule.requireDigit'),
+    validate: (v) => Password.hasNumber(v)
+  },
+  {
+    key: 'require_special',
+    label: t('databaseAccount.passwordRule.requireSpecial'),
+    validate: (v) => Password.hasSpecialChar(v)
   }
 ];

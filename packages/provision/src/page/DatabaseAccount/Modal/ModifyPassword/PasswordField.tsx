@@ -5,6 +5,9 @@ import { BasicInput } from '@actiontech/shared';
 import { useTranslation } from 'react-i18next';
 import { ModifyPasswordFormType } from '../../index.type';
 
+/**
+ * @deprecated
+ */
 const PasswordField = () => {
   const { t } = useTranslation();
 

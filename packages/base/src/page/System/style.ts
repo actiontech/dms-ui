@@ -1,4 +1,5 @@
 import { styled } from '@mui/material/styles';
+import { Form } from 'antd';
 
 export const SystemStyleWrapper = styled('section')`
   .segmented-wrapper {
@@ -80,4 +81,23 @@ export const SystemStyleWrapper = styled('section')`
       }
     }
   }
+`;
+
+export const DatabaseAccountPasswordPolicyFormStyleWrapper = styled(Form)`
+  &.ant-form.ant-form-horizontal {
+    padding: 24px 0;
+
+    .ant-checkbox-group {
+      width: 100%;
+
+      .ant-checkbox-wrapper {
+        width: 100%;
+      }
+    }
+  }
+`;
+
+export const DatabaseAccountPasswordPolicyDetailStyleWrapper = styled('ul')`
+  padding: 0;
+  list-style: none;
 `;
