@@ -4,6 +4,10 @@ import { fireEvent, act, cleanup, screen } from '@testing-library/react';
 import { AuditResultDrawerProps } from '../index.type';
 import { superRender } from '../../../../../../testUtils/customRender';
 import { mockUseCurrentUser } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentUser';
+import {
+  ignoreConsoleErrors,
+  UtilsConsoleErrorStringsEnum
+} from '@actiontech/shared/lib/testUtil/common';
 
 describe('sqle/ExecWorkflow/Common/AuditResultList/AuditResultDrawer', () => {
   const onCloseFn = jest.fn();
@@ -25,6 +29,7 @@ describe('sqle/ExecWorkflow/Common/AuditResultList/AuditResultDrawer', () => {
       />
     );
   };
+  ignoreConsoleErrors([UtilsConsoleErrorStringsEnum.UNKNOWN_EVENT_HANDLER]);
 
   beforeEach(() => {
     mockUseCurrentUser();

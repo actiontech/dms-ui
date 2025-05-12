@@ -31,13 +31,13 @@ const DraggableCard = (step: DraggableCardProps) => {
   };
   return (
     <Row
-      key={step.rowKey}
       className={`workflow-step-container workflow-card-space`}
       wrap={false}
       ref={setNodeRef}
       style={style}
       {...attributes}
       {...listeners}
+      key={step.rowKey}
     >
       <Col key={`${step.rowKey}-icon`} className="icon-wrapper">
         {step.icon}
@@ -46,6 +46,7 @@ const DraggableCard = (step: DraggableCardProps) => {
         <Row key={`${step.rowKey}-box-wrapper`} wrap={false}>
           <StepCard
             {...step}
+            key={`${step.rowKey}-step-card`}
             close={step?.removeReviewNode}
             click={step.clickReviewNode}
           />
