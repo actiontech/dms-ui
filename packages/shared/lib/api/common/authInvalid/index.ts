@@ -89,6 +89,7 @@ class AuthManager {
             request.reject('Token refresh failed')
           );
           this.failedRequestsQueue.length = 0;
+          this.redirectToLogin();
 
           const errorMessage = getErrorMessage(res.data.message ?? '');
           eventEmitter.emit<[NotificationInstanceKeyType, ArgsProps]>(
@@ -119,9 +120,7 @@ class AuthManager {
           }
         );
 
-        if (error.response?.status === 401) {
-          this.redirectToLogin();
-        }
+        this.redirectToLogin();
         return Promise.reject(error);
       })
       .finally(() => {
