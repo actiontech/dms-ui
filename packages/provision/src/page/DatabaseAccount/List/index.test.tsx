@@ -7,7 +7,6 @@ import {
 } from '@actiontech/shared/lib/testUtil/customQuery';
 import { useNavigate } from 'react-router-dom';
 import dbAccountService from '../../../testUtil/mockApi/dbAccountService';
-import passwordSecurityPolicy from '../../../testUtil/mockApi/passwordSecurityPolicy';
 import { dbAccountMockData } from '../../../testUtil/mockApi/dbAccountService/data';
 import { mockProjectInfo } from '@actiontech/shared/lib/testUtil/mockHook/data';
 import { mockUseCurrentProject } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentProject';
@@ -146,7 +145,6 @@ describe('provision/DatabaseAccount/List-1', () => {
     authUpdateDBAccountSpy = dbAccountService.authUpdateDBAccount();
     authDelDBAccountSpy = dbAccountService.authDelDBAccount();
     authListServicesSpy = auth.listServices();
-    passwordSecurityPolicy.mockAllApi();
     authListMemberGroupSpy = jest
       .spyOn(MemberGroupService, 'ListMemberGroups')
       .mockImplementation(() =>
@@ -213,7 +211,6 @@ describe('provision/DatabaseAccount/List-2', () => {
     authUpdateDBAccountSpy = dbAccountService.authUpdateDBAccount();
     authDelDBAccountSpy = dbAccountService.authDelDBAccount();
     authListServicesSpy = auth.listServices();
-    passwordSecurityPolicy.mockAllApi();
     auth.mockAllApi();
     user.mockAllApi();
     authListMemberGroupSpy = jest

@@ -13,17 +13,13 @@ import {
   PasswordFieldExtraStyleWrapper,
   PasswordFieldStyleWrapper
 } from './style';
-
-interface PasswordFieldProps {
-  disabled?: boolean;
-  showLabelTips?: boolean;
-}
+import { AccountPassword, PasswordFieldProps } from '../index.type';
 
 const PasswordField: React.FC<PasswordFieldProps> = ({
   disabled,
   showLabelTips = true
 }) => {
-  const form = Form.useFormInstance();
+  const form = Form.useFormInstance<AccountPassword>();
   const password = Form.useWatch('password', form);
   const { t } = useTranslation();
   const { getCustomPasswordRule, passwordRules, generatePasswordByRule } =

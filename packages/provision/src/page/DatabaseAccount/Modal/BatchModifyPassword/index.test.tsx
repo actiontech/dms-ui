@@ -16,17 +16,26 @@ import { mockProjectInfo } from '@actiontech/shared/lib/testUtil/mockHook/data';
 import { mockUseCurrentProject } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentProject';
 import { IListDBAccount } from '@actiontech/shared/lib/api/provision/service/common';
 import Password from '../../../../utils/Password';
+import customDBPasswordRule from '../../../../testUtil/mockApi/customDBPasswordRule';
+import { mockGeneratedDBPasswordByCustomRule } from '../../../../testUtil/mockApi/customDBPasswordRule/data';
 
 describe('provision/DatabaseAccount/BatchModifyPasswordModal', () => {
   let authBatchUpdateDBAccountPasswordSpy: jest.SpyInstance;
+  let authGetCustomDBPasswordRuleSpy: jest.SpyInstance;
 
   beforeEach(() => {
     authBatchUpdateDBAccountPasswordSpy =
       dbAccountService.authBatchUpdateDBAccountPassword();
+    authGetCustomDBPasswordRuleSpy =
+      customDBPasswordRule.authGetCustomDBPasswordRule();
     auth.mockAllApi();
     mockUseCurrentProject();
 
     jest.useFakeTimers();
+
+    jest
+      .spyOn(Password, 'generateDBPasswordByCustomCharType')
+      .mockReturnValue(mockGeneratedDBPasswordByCustomRule);
   });
 
   afterEach(() => {
@@ -55,11 +64,10 @@ describe('provision/DatabaseAccount/BatchModifyPasswordModal', () => {
     await act(async () => jest.advanceTimersByTime(3000));
     expect(baseElement).toMatchSnapshot();
     expect(screen.getByText('批量修改密码')).toBeInTheDocument();
+    expect(authGetCustomDBPasswordRuleSpy).toHaveBeenCalledTimes(1);
   });
 
   it('render batch modify password', async () => {
-    const generateMySQLPassword = jest.spyOn(Password, 'generateMySQLPassword');
-    generateMySQLPassword.mockReturnValue('123456');
     document.execCommand = jest.fn();
     const eventEmitterSpy = jest.spyOn(EventEmitter, 'emit');
     customRender(true);
@@ -78,53 +86,11 @@ describe('provision/DatabaseAccount/BatchModifyPasswordModal', () => {
       db_account_password: {
         passwords: [
           {
-            db_account_password: '123456',
+            db_account_password: mockGeneratedDBPasswordByCustomRule,
             db_account_uid: '1795004057392254976'
           },
           {
-            db_account_password: '123456',
-            db_account_uid: '1794998179528183808'
-          }
-        ],
-        renewal_effective_time_day: 30,
-        password_expiration_policy: 'expiration_lock'
-      }
-    });
-    await act(async () => jest.advanceTimersByTime(3000));
-    expect(screen.getByText('批量修改密码成功')).toBeInTheDocument();
-    expect(eventEmitterSpy).toHaveBeenCalledTimes(1);
-    expect(eventEmitterSpy).toHaveBeenNthCalledWith(
-      1,
-      EventEmitterKey.Refresh_Account_Management_List_Table
-    );
-  });
-
-  it('render batch modify password with policy', async () => {
-    const generateMySQLPassword = jest.spyOn(Password, 'generateMySQLPassword');
-    generateMySQLPassword.mockReturnValue('123456');
-    document.execCommand = jest.fn();
-    const eventEmitterSpy = jest.spyOn(EventEmitter, 'emit');
-    customRender(true);
-    await act(async () => jest.advanceTimersByTime(3000));
-
-    expect(getBySelector('#effective_time_day')).toHaveValue('30');
-
-    fireEvent.click(screen.getByText('批量生成密码'));
-    await act(async () => jest.advanceTimersByTime(100));
-
-    fireEvent.click(screen.getByText('确 认'));
-    await act(async () => jest.advanceTimersByTime(100));
-    expect(authBatchUpdateDBAccountPasswordSpy).toHaveBeenCalledTimes(1);
-    expect(authBatchUpdateDBAccountPasswordSpy).toHaveBeenNthCalledWith(1, {
-      project_uid: mockProjectInfo.projectID,
-      db_account_password: {
-        passwords: [
-          {
-            db_account_password: '123456',
-            db_account_uid: '1795004057392254976'
-          },
-          {
-            db_account_password: '123456',
+            db_account_password: mockGeneratedDBPasswordByCustomRule,
             db_account_uid: '1794998179528183808'
           }
         ],
@@ -146,8 +112,6 @@ describe('provision/DatabaseAccount/BatchModifyPasswordModal', () => {
     authBatchUpdateDBAccountPasswordSpy.mockImplementation(() =>
       createSpyFailResponse({})
     );
-    const generateMySQLPassword = jest.spyOn(Password, 'generateMySQLPassword');
-    generateMySQLPassword.mockReturnValue('123456');
     document.execCommand = jest.fn();
     const eventEmitterSpy = jest.spyOn(EventEmitter, 'emit');
     customRender(true);

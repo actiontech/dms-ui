@@ -35,4 +35,44 @@ describe('Password', () => {
     expect(id.length).toBe(17);
     expect(id).toContain('ob-cluster-');
   });
+
+  it('check generateDBPasswordByCustomCharType function', () => {
+    const pwd = Password.generateDBPasswordByCustomCharType(12, [
+      'require_uppercase',
+      'require_lowercase',
+      'require_digit',
+      'require_special'
+    ]);
+    expect(pwd.length).toBe(12);
+    expect(Password.hasCapitalLetter(pwd)).toBe(true);
+    expect(Password.hasLowercaseLetter(pwd)).toBe(true);
+    expect(Password.hasNumber(pwd)).toBe(true);
+    expect(Password.hasSpecialChar(pwd)).toBe(true);
+  });
+
+  it('check generateMysqlInstanceId function', () => {
+    const id = Password.generateMysqlInstanceId();
+    expect(id.length).toBe(6);
+    expect(/^[a-z0-9]{6}$/.test(id)).toBe(true);
+  });
+
+  it('check hasCapitalLetter function', () => {
+    expect(Password.hasCapitalLetter('abcD')).toBe(true);
+    expect(Password.hasCapitalLetter('abcd')).toBe(false);
+  });
+
+  it('check hasLowercaseLetter function', () => {
+    expect(Password.hasLowercaseLetter('ABCd')).toBe(true);
+    expect(Password.hasLowercaseLetter('ABCD')).toBe(false);
+  });
+
+  it('check hasNumber function', () => {
+    expect(Password.hasNumber('abc1')).toBe(true);
+    expect(Password.hasNumber('abc')).toBe(false);
+  });
+
+  it('check hasSpecialChar function', () => {
+    expect(Password.hasSpecialChar('abc@')).toBe(true);
+    expect(Password.hasSpecialChar('abc')).toBe(false);
+  });
 });
