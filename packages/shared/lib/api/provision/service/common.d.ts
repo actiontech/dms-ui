@@ -251,6 +251,18 @@ export interface ICopyDataPermissionTemplateReply {
   message?: string;
 }
 
+export interface ICustomDBPasswordRule {
+  min_length?: number;
+
+  require_digit?: boolean;
+
+  require_lowercase?: boolean;
+
+  require_special?: boolean;
+
+  require_uppercase?: boolean;
+}
+
 export interface IDBAccount {
   additional_params?: IParams;
 
@@ -447,6 +459,14 @@ export interface IGenAccessTokenReply {
 
 export interface IGenericResp {
   code?: number;
+
+  message?: string;
+}
+
+export interface IGetCustomDBPasswordRuleReply {
+  code?: number;
+
+  data?: ICustomDBPasswordRule;
 
   message?: string;
 }
@@ -1335,6 +1355,12 @@ export interface IUidWithName {
   name?: string;
 
   uid?: string;
+}
+
+export interface IUpdateCustomDBPasswordRuleReply {
+  code?: number;
+
+  message?: string;
 }
 
 export interface IUpdateDBAccount {

@@ -174,7 +174,6 @@ const BatchModifyPasswordModal: React.FC = () => {
                     <Col span={10}>
                       <Form.Item
                         {...field}
-                        key={field.key}
                         label={
                           index === 0
                             ? t('databaseAccount.create.form.password')
@@ -201,7 +200,6 @@ const BatchModifyPasswordModal: React.FC = () => {
                     <Col span={10}>
                       <Form.Item
                         {...field}
-                        key={field.key}
                         label={
                           index === 0
                             ? t('databaseAccount.create.form.confirmPassword')
