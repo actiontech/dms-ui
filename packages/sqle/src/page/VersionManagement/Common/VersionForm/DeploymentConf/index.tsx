@@ -121,6 +121,7 @@ const DeploymentConf: React.FC<{ allowEditStages?: boolean }> = ({
                 <Col span={3}>
                   <FormItemLabel
                     {...field}
+                    key={`${field.name}-form-item-label`}
                     rules={[
                       {
                         required: true,
@@ -162,6 +163,7 @@ const DeploymentConf: React.FC<{ allowEditStages?: boolean }> = ({
                           >
                             <FormItemLabel
                               {...instanceField}
+                              key={`${instanceField.key}-form-item-label`}
                               rules={[
                                 {
                                   required: true,

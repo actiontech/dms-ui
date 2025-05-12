@@ -11,7 +11,10 @@ import { CreateAuditWhitelistReqV1MatchTypeEnum } from '@actiontech/shared/lib/a
 import EventEmitter from '../../../../utils/EventEmitter';
 import EmitterKey from '../../../../data/EmitterKey';
 import { queryBySelector } from '@actiontech/shared/lib/testUtil/customQuery';
-
+import {
+  ignoreConsoleErrors,
+  UtilsConsoleErrorStringsEnum
+} from '@actiontech/shared/lib/testUtil/common';
 jest.mock('react-redux', () => {
   return {
     ...jest.requireActual('react-redux'),
@@ -23,6 +26,9 @@ jest.mock('react-redux', () => {
 describe('slqe/Whitelist/AddWhitelist', () => {
   const dispatchSpy = jest.fn();
   let addWhitelistSpy: jest.SpyInstance;
+
+  ignoreConsoleErrors([UtilsConsoleErrorStringsEnum.UNKNOWN_EVENT_HANDLER]);
+
   beforeEach(() => {
     jest.useFakeTimers();
     (useSelector as jest.Mock).mockImplementation((e) =>
