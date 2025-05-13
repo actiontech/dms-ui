@@ -27,6 +27,10 @@ import { getBySelector } from '@actiontech/shared/lib/testUtil/customQuery';
 import execWorkflow from '../../../../testUtils/mockApi/execWorkflow';
 import { mockUsePermission } from '@actiontech/shared/lib/testUtil/mockHook/mockUsePermission';
 import instance from '../../../../testUtils/mockApi/instance';
+import {
+  ignoreConsoleErrors,
+  UtilsConsoleErrorStringsEnum
+} from '@actiontech/shared/lib/testUtil/common';
 
 jest.mock('react-router-dom', () => {
   return {
@@ -52,6 +56,8 @@ describe('sqle/ExecWorkflow/Detail', () => {
   let batchCompleteWorkflowsSpy: jest.SpyInstance;
   let terminateMultipleTaskByWorkflowSpy: jest.SpyInstance;
   const useParamsMock: jest.Mock = useParams as jest.Mock;
+
+  ignoreConsoleErrors([UtilsConsoleErrorStringsEnum.UNKNOWN_EVENT_HANDLER]);
 
   beforeEach(() => {
     jest.useFakeTimers();

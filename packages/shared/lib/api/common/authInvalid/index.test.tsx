@@ -5,6 +5,7 @@ import * as history from 'history';
 import axios from 'axios';
 import { ResponseCode } from '../../../enum';
 import { eventEmitter } from '../../../utils/EventEmitter';
+import EmitterKey from '../../../data/EmitterKey';
 
 jest.mock('axios');
 jest.mock('react-redux', () => {
@@ -280,6 +281,111 @@ describe('authInvalid', () => {
       });
 
       expect(eventEmitter.emit).toHaveBeenCalled();
+    });
+
+    it('should redirect to login when refresh token returns business error', async () => {
+      const mockResponse = {
+        status: 200,
+        data: {
+          code: 1001,
+          message: 'Business error message'
+        }
+      };
+
+      (axios.post as jest.Mock).mockResolvedValueOnce(mockResponse);
+
+      await act(async () => {
+        await refreshAuthToken();
+        await jest.runAllTimers();
+      });
+
+      expect(window.location.href).toBe(
+        `/login?target=${encodeURIComponent('/')}`
+      );
+
+      expect(scopeDispatch).toHaveBeenCalledWith({
+        payload: { token: '' },
+        type: 'user/updateToken'
+      });
+      expect(scopeDispatch).toHaveBeenCalledWith({
+        payload: { username: '', role: '' },
+        type: 'user/updateUser'
+      });
+      expect(scopeDispatch).toHaveBeenCalledWith({
+        payload: { uid: '' },
+        type: 'user/updateUserUid'
+      });
+      expect(scopeDispatch).toHaveBeenCalledWith({
+        payload: { managementPermissions: [] },
+        type: 'user/updateManagementPermissions'
+      });
+      expect(scopeDispatch).toHaveBeenCalledWith({
+        payload: { bindProjects: [] },
+        type: 'user/updateBindProjects'
+      });
+
+      expect(eventEmitter.emit).toHaveBeenCalledWith(
+        EmitterKey.OPEN_GLOBAL_NOTIFICATION,
+        'error',
+        expect.objectContaining({
+          message: expect.any(String),
+          description: expect.any(String)
+        })
+      );
+    });
+
+    it('should redirect to login when refresh token throws non-401 error', async () => {
+      const error = {
+        response: {
+          status: 500,
+          data: {
+            message: 'Internal server error'
+          }
+        }
+      };
+
+      (axios.post as jest.Mock).mockRejectedValueOnce(error);
+
+      await act(async () => {
+        try {
+          await refreshAuthToken();
+        } catch (e) {}
+        await jest.runAllTimers();
+      });
+
+      expect(window.location.href).toBe(
+        `/login?target=${encodeURIComponent('/')}`
+      );
+
+      expect(scopeDispatch).toHaveBeenCalledWith({
+        payload: { token: '' },
+        type: 'user/updateToken'
+      });
+      expect(scopeDispatch).toHaveBeenCalledWith({
+        payload: { username: '', role: '' },
+        type: 'user/updateUser'
+      });
+      expect(scopeDispatch).toHaveBeenCalledWith({
+        payload: { uid: '' },
+        type: 'user/updateUserUid'
+      });
+      expect(scopeDispatch).toHaveBeenCalledWith({
+        payload: { managementPermissions: [] },
+        type: 'user/updateManagementPermissions'
+      });
+      expect(scopeDispatch).toHaveBeenCalledWith({
+        payload: { bindProjects: [] },
+        type: 'user/updateBindProjects'
+      });
+
+      expect(eventEmitter.emit).toHaveBeenCalledWith(
+        EmitterKey.OPEN_GLOBAL_NOTIFICATION,
+        'error',
+        expect.objectContaining({
+          message: expect.any(String),
+          description: expect.any(String)
+        })
+      );
     });
 
     it('should redirect to login on 401 error response', async () => {
