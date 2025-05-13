@@ -14,6 +14,7 @@ import LoginConnection from './LoginConnection/index';
 import License from './License';
 import PersonalizeSetting from './PersonalizeSetting';
 import GitSSHConfig from './GitSSHConfig';
+import DatabaseAccountPasswordPolicyForm from './DatabaseAccountPasswordPolicy';
 import { ROUTE_PATHS } from '@actiontech/shared/lib/data/routePaths';
 
 const System = () => {
@@ -67,7 +68,14 @@ const System = () => {
         label: t('dmsSystem.tabPaneTitle.gitSSH'),
         value: SystemSegmentedKeyEnum.GitSSHConfig,
         components: <GitSSHConfig />
+      },
+      // #if [provision]
+      {
+        label: t('dmsSystem.tabPaneTitle.databaseAccountPasswordPolicy'),
+        value: SystemSegmentedKeyEnum.DatabaseAccountPasswordPolicy,
+        components: <DatabaseAccountPasswordPolicyForm />
       }
+      // #endif
     ],
     [t]
   );

@@ -16,7 +16,8 @@ export default {
     globalConfiguration: '全局配置',
     license: '许可证',
     personalize: '个性化设置',
-    gitSSH: 'Git SSH配置'
+    gitSSH: 'Git SSH配置',
+    databaseAccountPasswordPolicy: '数据库账号密码策略'
   },
 
   gitSSH: {
