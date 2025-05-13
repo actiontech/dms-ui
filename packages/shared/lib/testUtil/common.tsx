@@ -3,12 +3,16 @@ export const ignoreConsoleErrors = (
   params: Array<UtilsConsoleErrorStringsEnum>
 ) => {
   const originalError = console.error;
+  const paramsWithGlobalRules = [
+    ...params,
+    'Warning: findDOMNode is deprecated and will be removed in the next major release. Instead, add a ref directly to the element you want to reference. Learn more about using refs safely here: https://reactjs.org/link/strict-mode-find-nod'
+  ];
 
   beforeAll(() => {
     console.error = (...arg) => {
       if (
         typeof arg[0] === 'string' &&
-        params.some((v) => arg[0].includes(v))
+        paramsWithGlobalRules.some((v) => arg[0].includes(v))
       ) {
         return;
       }

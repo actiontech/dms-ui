@@ -17,6 +17,10 @@ import {
 } from '@actiontech/shared/lib/testUtil/customQuery';
 import instance from '../../../../testUtils/mockApi/instance';
 import { instanceTipsMockData } from '../../../../testUtils/mockApi/instance/data';
+import {
+  ignoreConsoleErrors,
+  UtilsConsoleErrorStringsEnum
+} from '@actiontech/shared/lib/testUtil/common';
 
 jest.mock('react-redux', () => {
   return {
@@ -30,6 +34,9 @@ describe('slqe/SqlManagementException/CreateSqlManagementException', () => {
   const dispatchSpy = jest.fn();
   let createBlacklistSpy: jest.SpyInstance;
   let getInstanceTipListSpy: jest.SpyInstance;
+
+  ignoreConsoleErrors([UtilsConsoleErrorStringsEnum.UNKNOWN_EVENT_HANDLER]);
+
   beforeEach(() => {
     jest.useFakeTimers();
     (useSelector as jest.Mock).mockImplementation((e) =>
