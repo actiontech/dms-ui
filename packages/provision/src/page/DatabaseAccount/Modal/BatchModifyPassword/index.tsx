@@ -1,5 +1,5 @@
 import { useBoolean } from 'ahooks';
-import { message, Form, Space, Row, Col } from 'antd';
+import { message, Form, Space, Row, Col, FormRule } from 'antd';
 import { useTranslation } from 'react-i18next';
 import { ResponseCode } from '@actiontech/shared/lib/enum';
 import { useCurrentProject } from '@actiontech/shared/lib/features';
@@ -17,15 +17,18 @@ import EventEmitter from '../../../../utils/EventEmitter';
 import { EventEmitterKey, ModalName } from '../../../../data/enum';
 import { accountNameRender } from '../../index.utils';
 import PasswordPolicyField from '../ModifyPassword/PasswordPolicyField';
-import Password from '../../../../utils/Password';
 import { BasicInput } from '@actiontech/shared';
 import { BatchModifyPasswordDrawerStyleWrapper } from '../../style';
 import { FormListAddButtonWrapper } from '@actiontech/shared/lib/styleWrapper/element';
+import useCustomDBPasswordRule from '../../hooks/useCustomDBPasswordRule';
 
 const BatchModifyPasswordModal: React.FC = () => {
   const { t } = useTranslation();
 
   const [form] = Form.useForm<BatchModifyPasswordFormType>();
+
+  const { passwordRules, generatePasswordByRule, getCustomPasswordRule } =
+    useCustomDBPasswordRule();
 
   const passwords = Form.useWatch('passwords', form);
 
@@ -95,12 +98,13 @@ const BatchModifyPasswordModal: React.FC = () => {
           };
         })
       );
+      getCustomPasswordRule();
     }
-  }, [visible, form, selectData]);
+  }, [visible, form, selectData, getCustomPasswordRule]);
 
   const generatePassword = () => {
     passwords.forEach((item) => {
-      const password = Password.generateMySQLPassword(16);
+      const password = generatePasswordByRule();
       item.password = password;
       item.confirm_password = password;
     });
@@ -133,7 +137,7 @@ const BatchModifyPasswordModal: React.FC = () => {
     >
       {contextHolder}
       <Form layout="vertical" form={form}>
-        <PasswordPolicyField visible={visible} />
+        <PasswordPolicyField />
         <Form.Item>
           <FormListAddButtonWrapper
             onClick={generatePassword}
@@ -146,12 +150,8 @@ const BatchModifyPasswordModal: React.FC = () => {
         <Form.List name="passwords">
           {(fields) => (
             <>
-              {fields.map((field, index) => (
-                <Form.Item
-                  key={field.key}
-                  className="database-form-item"
-                  noStyle
-                >
+              {fields.map(({ key, ...field }, index) => (
+                <Form.Item key={key} className="database-form-item" noStyle>
                   <Row wrap={false} gutter={8}>
                     <Col span={4}>
                       <Form.Item
@@ -174,14 +174,25 @@ const BatchModifyPasswordModal: React.FC = () => {
                     <Col span={10}>
                       <Form.Item
                         {...field}
-                        key={field.key}
                         label={
                           index === 0
                             ? t('databaseAccount.create.form.password')
                             : ''
                         }
                         name={[field.name, 'password']}
-                        rules={[{ required: true }]}
+                        rules={[
+                          { required: true },
+                          ...passwordRules.map((rule): FormRule => {
+                            return {
+                              validator(_, value: string) {
+                                if (rule.validate(value)) {
+                                  return Promise.resolve();
+                                }
+                                return Promise.reject(new Error(rule.label));
+                              }
+                            };
+                          })
+                        ]}
                       >
                         <BasicInput.Password />
                       </Form.Item>
@@ -189,7 +200,6 @@ const BatchModifyPasswordModal: React.FC = () => {
                     <Col span={10}>
                       <Form.Item
                         {...field}
-                        key={field.key}
                         label={
                           index === 0
                             ? t('databaseAccount.create.form.confirmPassword')

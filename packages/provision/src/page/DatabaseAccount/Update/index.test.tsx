@@ -5,7 +5,6 @@ import {
   queryBySelector
 } from '@actiontech/shared/lib/testUtil/customQuery';
 import dbAccountService from '../../../testUtil/mockApi/dbAccountService';
-import passwordSecurityPolicy from '../../../testUtil/mockApi/passwordSecurityPolicy';
 import { mockProjectInfo } from '@actiontech/shared/lib/testUtil/mockHook/data';
 import { mockUseCurrentProject } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentProject';
 import { mockUseDbServiceDriver } from '@actiontech/shared/lib/testUtil/mockHook/mockUseDbServiceDriver';
@@ -16,6 +15,7 @@ import { databaseAccountDetailMockData } from '../../../testUtil/mockApi/dbAccou
 import user from '../../../testUtil/mockApi/user';
 import service from '../../../testUtil/mockApi/service';
 import dbRole from '../../../testUtil/mockApi/dbRole';
+import customDBPasswordRule from '../../../testUtil/mockApi/customDBPasswordRule';
 
 jest.mock('react-router-dom', () => {
   return {
@@ -34,7 +34,7 @@ describe('provision/DatabaseAccount/Update', () => {
   let authGetDBAccountMetaSpy: jest.SpyInstance;
   let authListDBRoleTipsSpy: jest.SpyInstance;
   let authListOperationsSpy: jest.SpyInstance;
-
+  let authGetCustomDBPasswordRuleSpy: jest.SpyInstance;
   const useParamsMock: jest.Mock = useParams as jest.Mock;
   const accountId = databaseAccountDetailMockData.db_account_uid;
 
@@ -48,6 +48,8 @@ describe('provision/DatabaseAccount/Update', () => {
     authGetDBAccountMetaSpy = service.authGetDBAccountMeta();
     authListDBRoleTipsSpy = dbRole.authListDBRoleTips();
     authListOperationsSpy = auth.authListOperations();
+    authGetCustomDBPasswordRuleSpy =
+      customDBPasswordRule.authGetCustomDBPasswordRule();
     auth.mockAllApi();
     user.mockAllApi();
     mockUseDbServiceDriver();
@@ -79,6 +81,7 @@ describe('provision/DatabaseAccount/Update', () => {
       page_index: 1,
       page_size: 9999
     });
+    expect(authGetCustomDBPasswordRuleSpy).toHaveBeenCalledTimes(1);
     await act(async () => jest.advanceTimersByTime(3000));
     expect(authGetDBAccountMetaSpy).toHaveBeenCalledTimes(1);
     expect(authListDBRoleTipsSpy).toHaveBeenCalledTimes(1);

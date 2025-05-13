@@ -9,6 +9,7 @@ import {
   BatchUpdateDBAccountPasswordPasswordExpirationPolicyEnum,
   PasswordConfigPasswordExpirationPolicyEnum
 } from '@actiontech/shared/lib/api/provision/service/common.enum';
+import { ICustomDBPasswordRule } from '@actiontech/shared/lib/api/provision/service/common.d';
 
 export type ExpendedDBAccountBody = IDBAccountBody & { id?: string };
 
@@ -26,9 +27,12 @@ export type AccountTableFieldProps = {
   refresh: () => void;
 };
 
-export type CreateAccountFormType = {
+export interface AccountPassword {
   password: string;
   confirm_password: string;
+}
+
+export type CreateAccountFormType = {
   username: string;
   effective_time_day: number;
   policy: string;
@@ -36,7 +40,8 @@ export type CreateAccountFormType = {
   environment: string;
   additionalParams: BackendFormValues;
   password_expiration_policy: AddDBAccountPasswordExpirationPolicyEnum;
-} & IDatabasePrivilegesSelectorBaseFields;
+} & IDatabasePrivilegesSelectorBaseFields &
+  AccountPassword;
 
 export type PermissionsType = {
   id?: string;
@@ -97,18 +102,14 @@ export interface IAccountDetailCustomConfig {
 
 export type ModifyPasswordFormType = {
   policy: string;
-  password: string;
-  confirm_password: string;
   effective_time_day: number;
   password_expiration_policy: PasswordConfigPasswordExpirationPolicyEnum;
-};
+} & AccountPassword;
 
 export type ModifyPasswordItemType = {
   id: string;
   name: string;
-  password: string;
-  confirm_password: string;
-};
+} & AccountPassword;
 
 export type BatchModifyPasswordFormType = {
   policy: string;
@@ -116,3 +117,14 @@ export type BatchModifyPasswordFormType = {
   passwords: ModifyPasswordItemType[];
   password_expiration_policy: BatchUpdateDBAccountPasswordPasswordExpirationPolicyEnum;
 };
+
+export type PasswordRule = {
+  key: keyof ICustomDBPasswordRule;
+  label: string;
+  validate: (value: string) => boolean;
+};
+
+export interface PasswordFieldProps {
+  disabled?: boolean;
+  showLabelTips?: boolean;
+}

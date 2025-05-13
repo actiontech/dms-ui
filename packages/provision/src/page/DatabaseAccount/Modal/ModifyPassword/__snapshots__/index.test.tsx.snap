@@ -268,7 +268,7 @@ exports[`provision/DatabaseAccount/ModifyPasswordModal render init snap 1`] = `
                   </div>
                 </div>
                 <div
-                  class="ant-form-item"
+                  class="ant-form-item has-required-style has-label-tip css-fjanb"
                 >
                   <div
                     class="ant-row ant-form-item-row"
@@ -279,7 +279,7 @@ exports[`provision/DatabaseAccount/ModifyPasswordModal render init snap 1`] = `
                       <label
                         class="ant-form-item-required"
                         for="password"
-                        title="连接密码"
+                        title=""
                       >
                         连接密码
                       </label>
@@ -297,6 +297,7 @@ exports[`provision/DatabaseAccount/ModifyPasswordModal render init snap 1`] = `
                             class="ant-input-affix-wrapper ant-input-password basic-input-wrapper action-password-input css-1x7fd4z"
                           >
                             <input
+                              aria-describedby="password_extra"
                               aria-required="true"
                               class="ant-input"
                               id="password"
@@ -349,11 +350,15 @@ exports[`provision/DatabaseAccount/ModifyPasswordModal render init snap 1`] = `
                           </span>
                         </div>
                       </div>
+                      <div
+                        class="ant-form-item-extra"
+                        id="password_extra"
+                      />
                     </div>
                   </div>
                 </div>
                 <div
-                  class="ant-form-item"
+                  class="ant-form-item has-required-style has-label-tip css-1jlm9cy"
                 >
                   <div
                     class="ant-row ant-form-item-row"
@@ -364,7 +369,7 @@ exports[`provision/DatabaseAccount/ModifyPasswordModal render init snap 1`] = `
                       <label
                         class="ant-form-item-required"
                         for="confirm_password"
-                        title="确认连接密码"
+                        title=""
                       >
                         确认连接密码
                       </label>

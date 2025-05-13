@@ -290,5 +290,18 @@ export default {
     hasDirtyDataTips: '当前内容已经发生更改，是否确认取消修改？',
     successMessage: '成功发布系统公告!',
     notData: '暂无公告信息'
+  },
+  databaseAccountPasswordPolicy: {
+    minLength: '密码长度要求',
+    minLengthError: '最小长度不能小于8',
+    charTypes: '字符组合要求',
+    successMessage: '密码策略更新成功',
+    errorMessage: '密码策略更新失败',
+
+    bit: '位',
+    requireUppercase: '包含大写字母',
+    requireLowercase: '包含小写字母',
+    requireDigit: '包含数字',
+    requireSpecial: '包含特殊字符'
   }
 };

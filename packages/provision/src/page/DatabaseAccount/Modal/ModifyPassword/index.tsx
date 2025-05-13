@@ -14,7 +14,7 @@ import dbAccountService from '@actiontech/shared/lib/api/provision/service/db_ac
 import { useRecoilState } from 'recoil';
 import EventEmitter from '../../../../utils/EventEmitter';
 import { EventEmitterKey, ModalName } from '../../../../data/enum';
-import PasswordField from './PasswordField';
+import PasswordField from '../../components/PasswordField';
 import PasswordPolicyField from './PasswordPolicyField';
 
 const ModifyPasswordModal: React.FC = () => {
@@ -96,8 +96,8 @@ const ModifyPasswordModal: React.FC = () => {
     >
       {contextHolder}
       <Form layout="vertical" form={form}>
-        <PasswordPolicyField visible={visible} />
-        <PasswordField />
+        <PasswordPolicyField />
+        <PasswordField showLabelTips={false} />
       </Form>
     </BasicDrawer>
   );

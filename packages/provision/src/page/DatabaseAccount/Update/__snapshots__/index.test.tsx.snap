@@ -333,7 +333,7 @@ exports[`provision/DatabaseAccount/Update render init snap 1`] = `
                 </div>
               </div>
               <div
-                class="ant-form-item has-required-style has-label-tip css-1jlm9cy ant-form-item-has-success"
+                class="ant-form-item has-required-style has-label-tip css-fjanb ant-form-item-has-success"
               >
                 <div
                   class="ant-row ant-form-item-row"
@@ -373,6 +373,7 @@ exports[`provision/DatabaseAccount/Update render init snap 1`] = `
                           class="ant-input-affix-wrapper ant-input-affix-wrapper-disabled ant-input-password basic-input-wrapper action-password-input css-1x7fd4z ant-input-affix-wrapper-status-success"
                         >
                           <input
+                            aria-describedby="password_extra"
                             aria-required="true"
                             class="ant-input ant-input-disabled"
                             disabled=""
@@ -426,6 +427,87 @@ exports[`provision/DatabaseAccount/Update render init snap 1`] = `
                             </div>
                           </span>
                         </span>
+                      </div>
+                    </div>
+                    <div
+                      class="ant-form-item-extra"
+                      id="password_extra"
+                    >
+                      <div
+                        class="css-9dl9kd"
+                      >
+                        <div
+                          class="item"
+                        >
+                          <span
+                            class="item-icon"
+                          />
+                          <span
+                            class="ant-typography ant-typography-danger"
+                          >
+                            长度至少16个字符
+                          </span>
+                        </div>
+                        <div
+                          class="item"
+                        >
+                          <span
+                            class="item-icon"
+                          />
+                          <span
+                            class="ant-typography ant-typography-danger"
+                          >
+                            包含大写字母
+                          </span>
+                        </div>
+                        <div
+                          class="item"
+                        >
+                          <span
+                            class="item-icon"
+                          />
+                          <span
+                            class="ant-typography ant-typography-danger"
+                          >
+                            包含小写字母
+                          </span>
+                        </div>
+                        <div
+                          class="item"
+                        >
+                          <span
+                            class="item-icon"
+                          >
+                            <svg
+                              height="16"
+                              viewBox="0 0 16 16"
+                              width="16"
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <path
+                                d="M8 14.667A6.667 6.667 0 1 1 8 1.333a6.667 6.667 0 0 1 0 13.334m0-1.334A5.333 5.333 0 1 0 8 2.667a5.333 5.333 0 0 0 0 10.666m-.665-2.666L4.507 7.838l.942-.943 1.886 1.886 3.771-3.771.943.943z"
+                                fill="#1CB889"
+                              />
+                            </svg>
+                          </span>
+                          <span
+                            class="ant-typography ant-typography-success"
+                          >
+                            包含数字
+                          </span>
+                        </div>
+                        <div
+                          class="item"
+                        >
+                          <span
+                            class="item-icon"
+                          />
+                          <span
+                            class="ant-typography ant-typography-danger"
+                          >
+                            包含特殊字符
+                          </span>
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -1636,7 +1718,7 @@ exports[`provision/DatabaseAccount/Update update account permissions 1`] = `
                 </div>
               </div>
               <div
-                class="ant-form-item has-required-style has-label-tip css-1jlm9cy ant-form-item-has-success"
+                class="ant-form-item has-required-style has-label-tip css-fjanb ant-form-item-has-success"
               >
                 <div
                   class="ant-row ant-form-item-row"
@@ -1676,6 +1758,7 @@ exports[`provision/DatabaseAccount/Update update account permissions 1`] = `
                           class="ant-input-affix-wrapper ant-input-affix-wrapper-disabled ant-input-password basic-input-wrapper action-password-input css-1x7fd4z ant-input-affix-wrapper-status-success"
                         >
                           <input
+                            aria-describedby="password_extra"
                             aria-required="true"
                             class="ant-input ant-input-disabled"
                             disabled=""
@@ -1729,6 +1812,87 @@ exports[`provision/DatabaseAccount/Update update account permissions 1`] = `
                             </div>
                           </span>
                         </span>
+                      </div>
+                    </div>
+                    <div
+                      class="ant-form-item-extra"
+                      id="password_extra"
+                    >
+                      <div
+                        class="css-9dl9kd"
+                      >
+                        <div
+                          class="item"
+                        >
+                          <span
+                            class="item-icon"
+                          />
+                          <span
+                            class="ant-typography ant-typography-danger"
+                          >
+                            长度至少16个字符
+                          </span>
+                        </div>
+                        <div
+                          class="item"
+                        >
+                          <span
+                            class="item-icon"
+                          />
+                          <span
+                            class="ant-typography ant-typography-danger"
+                          >
+                            包含大写字母
+                          </span>
+                        </div>
+                        <div
+                          class="item"
+                        >
+                          <span
+                            class="item-icon"
+                          />
+                          <span
+                            class="ant-typography ant-typography-danger"
+                          >
+                            包含小写字母
+                          </span>
+                        </div>
+                        <div
+                          class="item"
+                        >
+                          <span
+                            class="item-icon"
+                          >
+                            <svg
+                              height="16"
+                              viewBox="0 0 16 16"
+                              width="16"
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <path
+                                d="M8 14.667A6.667 6.667 0 1 1 8 1.333a6.667 6.667 0 0 1 0 13.334m0-1.334A5.333 5.333 0 1 0 8 2.667a5.333 5.333 0 0 0 0 10.666m-.665-2.666L4.507 7.838l.942-.943 1.886 1.886 3.771-3.771.943.943z"
+                                fill="#1CB889"
+                              />
+                            </svg>
+                          </span>
+                          <span
+                            class="ant-typography ant-typography-success"
+                          >
+                            包含数字
+                          </span>
+                        </div>
+                        <div
+                          class="item"
+                        >
+                          <span
+                            class="item-icon"
+                          />
+                          <span
+                            class="ant-typography ant-typography-danger"
+                          >
+                            包含特殊字符
+                          </span>
+                        </div>
                       </div>
                     </div>
                   </div>

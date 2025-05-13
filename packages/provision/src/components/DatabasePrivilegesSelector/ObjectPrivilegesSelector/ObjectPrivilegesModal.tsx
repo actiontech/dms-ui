@@ -338,7 +338,7 @@ const ObjectPrivilegesModal: React.FC<ObjectPrivilegesModalProps> = ({
         >
           {(fields, { add, remove }) => (
             <>
-              {fields.map((field, index) => (
+              {fields.map(({ key, ...field }, index) => (
                 <Form.Item
                   label={
                     index === 0 ? (
@@ -353,14 +353,13 @@ const ObjectPrivilegesModal: React.FC<ObjectPrivilegesModalProps> = ({
                     )
                   }
                   required={false}
-                  key={field.key}
+                  key={key}
                   className="database-form-item"
                 >
                   <Row wrap={false}>
                     <Col flex={'180px'} style={{ marginRight: '12px' }}>
                       <Form.Item
                         {...field}
-                        key={field.key}
                         name={[field.name, 'database']}
                         noStyle
                         rules={[
@@ -396,7 +395,6 @@ const ObjectPrivilegesModal: React.FC<ObjectPrivilegesModalProps> = ({
                     <Col flex={1}>
                       <Form.Item
                         {...field}
-                        key={field.key}
                         name={[field.name, 'tables']}
                         noStyle
                       >

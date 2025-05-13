@@ -1,5 +1,4 @@
 import dbAccountService from '../../../testUtil/mockApi/dbAccountService';
-import passwordSecurityPolicy from '../../../testUtil/mockApi/passwordSecurityPolicy';
 import auth from '../../../testUtil/mockApi/auth';
 import { mockUseCurrentProject } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentProject';
 import { mockUseDbServiceDriver } from '@actiontech/shared/lib/testUtil/mockHook/mockUseDbServiceDriver';
@@ -12,7 +11,6 @@ import user from '../../../testUtil/mockApi/user';
 describe('provision/DatabaseAccount/DatabaseAccount', () => {
   beforeEach(() => {
     dbAccountService.mockAllApi();
-    passwordSecurityPolicy.mockAllApi();
     auth.mockAllApi();
     user.mockAllApi();
     mockUseCurrentProject();

@@ -2,7 +2,6 @@ import { superRender } from '@actiontech/shared/lib/testUtil/customRender';
 import { act, cleanup, fireEvent, screen } from '@testing-library/react';
 import { getBySelector } from '@actiontech/shared/lib/testUtil/customQuery';
 import dbAccountService from '../../../testUtil/mockApi/dbAccountService';
-import passwordSecurityPolicy from '../../../testUtil/mockApi/passwordSecurityPolicy';
 import { dbAccountMockData } from '../../../testUtil/mockApi/dbAccountService/data';
 import { mockProjectInfo } from '@actiontech/shared/lib/testUtil/mockHook/data';
 import { mockUseCurrentProject } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentProject';
@@ -23,6 +22,7 @@ import {
   OpPermissionItemOpPermissionTypeEnum
 } from '@actiontech/shared/lib/api/base/service/common.enum';
 import { mockUsePermission } from '@actiontech/shared/lib/testUtil/mockHook/mockUsePermission';
+import customDBPasswordRule from '../../../testUtil/mockApi/customDBPasswordRule';
 
 jest.mock('react-redux', () => ({
   ...jest.requireActual('react-redux'),
@@ -37,6 +37,7 @@ describe('provision/DatabaseAccountPassword/ExpirationAccount-1', () => {
   beforeEach(() => {
     authListDBAccountSpy = dbAccountService.authListDBAccount();
     authListServicesSpy = auth.listServices();
+    customDBPasswordRule.mockAllApi();
     auth.mockAllApi();
     user.mockAllApi();
     mockUseCurrentUser();
@@ -86,6 +87,7 @@ describe('provision/DatabaseAccountPassword/ExpirationAccount-2', () => {
   beforeEach(() => {
     authListDBAccountSpy = dbAccountService.authListDBAccount();
     authListServicesSpy = auth.listServices();
+    customDBPasswordRule.mockAllApi();
     auth.mockAllApi();
     user.mockAllApi();
     mockUseCurrentUser();

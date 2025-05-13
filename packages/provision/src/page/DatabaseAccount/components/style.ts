@@ -1,5 +1,6 @@
 import { styled } from '@mui/material/styles';
 import { BasicTag } from '@actiontech/shared';
+import { FormItemLabel } from '@actiontech/shared/lib/components/CustomForm';
 
 export const MemberGroupTagStyleWrapper = styled(BasicTag)`
   background-color: ${({ theme }) =>
@@ -45,5 +46,32 @@ export const MemberGroupTooltipContentWrapper = styled('div')`
         white-space: nowrap;
       }
     }
+  }
+`;
+
+export const PasswordFieldExtraStyleWrapper = styled('div')`
+  margin: 8px 0 12px;
+
+  .item {
+    display: flex;
+    align-items: center;
+
+    .item-icon {
+      margin-right: 4px;
+      display: inline-flex;
+      width: 16px;
+      align-items: center;
+    }
+  }
+`;
+
+export const PasswordFieldStyleWrapper = styled(FormItemLabel)`
+  .ant-form-item-explain.ant-form-item-explain-connected + div {
+    min-height: 0;
+    height: 0 !important;
+  }
+
+  .ant-form-item-extra {
+    min-height: 0 !important;
   }
 `;

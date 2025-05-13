@@ -8,7 +8,7 @@ import { useTranslation } from 'react-i18next';
 import { passwordExpirationPolicyOptions } from '../../Create/BaseInfoForm/index.data';
 import { PasswordConfigPasswordExpirationPolicyEnum } from '@actiontech/shared/lib/api/provision/service/common.enum';
 
-const PasswordPolicyField: React.FC<{ visible: boolean }> = ({ visible }) => {
+const PasswordPolicyField: React.FC = () => {
   const { t } = useTranslation();
 
   return (

@@ -6,7 +6,6 @@ import {
   selectOptionByIndex
 } from '@actiontech/shared/lib/testUtil/customQuery';
 import dbAccountService from '../../../testUtil/mockApi/dbAccountService';
-import passwordSecurityPolicy from '../../../testUtil/mockApi/passwordSecurityPolicy';
 import { mockProjectInfo } from '@actiontech/shared/lib/testUtil/mockHook/data';
 import { mockUseCurrentProject } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentProject';
 import { mockUseDbServiceDriver } from '@actiontech/shared/lib/testUtil/mockHook/mockUseDbServiceDriver';
@@ -24,6 +23,8 @@ import {
   ignoreConsoleErrors,
   UtilsConsoleErrorStringsEnum
 } from '@actiontech/shared/lib/testUtil/common';
+import customDBPasswordRule from '../../../testUtil/mockApi/customDBPasswordRule';
+import { mockGeneratedDBPasswordByCustomRule } from '../../../testUtil/mockApi/customDBPasswordRule/data';
 
 describe('provision/DatabaseAccount/Create', () => {
   let authListServicesSpy: jest.SpyInstance;
@@ -37,6 +38,7 @@ describe('provision/DatabaseAccount/Create', () => {
   let authListOperationsSpy: jest.SpyInstance;
   ignoreConsoleErrors([UtilsConsoleErrorStringsEnum.UNKNOWN_EVENT_HANDLER]);
 
+  let authGetCustomDBPasswordRuleSpy: jest.SpyInstance;
   beforeEach(() => {
     authListServicesSpy = auth.listServices();
     authListEnvironmentTagsSpy = auth.authListEnvironmentTags();
@@ -47,6 +49,8 @@ describe('provision/DatabaseAccount/Create', () => {
     authGetDBAccountMetaSpy = service.authGetDBAccountMeta();
     authListDBRoleTipsSpy = dbRole.authListDBRoleTips();
     authListOperationsSpy = auth.authListOperations();
+    authGetCustomDBPasswordRuleSpy =
+      customDBPasswordRule.authGetCustomDBPasswordRule();
     auth.mockAllApi();
     user.mockAllApi();
     mockUseDbServiceDriver();
@@ -67,6 +71,7 @@ describe('provision/DatabaseAccount/Create', () => {
     const { baseElement } = superRender(<CreateDatabaseAccount />);
     await act(async () => jest.advanceTimersByTime(3000));
     expect(authListEnvironmentTagsSpy).toHaveBeenCalled();
+    expect(authGetCustomDBPasswordRuleSpy).toHaveBeenCalledTimes(1);
     expect(baseElement).toMatchSnapshot();
     await act(async () => {
       fireEvent.input(getBySelector('#username', baseElement), {
@@ -81,8 +86,13 @@ describe('provision/DatabaseAccount/Create', () => {
   });
 
   it('create account', async () => {
-    const generateMySQLPassword = jest.spyOn(Password, 'generateMySQLPassword');
-    generateMySQLPassword.mockReturnValue('123456');
+    const generateDBPasswordByCustomCharType = jest.spyOn(
+      Password,
+      'generateDBPasswordByCustomCharType'
+    );
+    generateDBPasswordByCustomCharType.mockReturnValue(
+      mockGeneratedDBPasswordByCustomRule
+    );
     document.execCommand = jest.fn();
     const { baseElement } = superRender(<CreateDatabaseAccount />);
     await act(async () => jest.advanceTimersByTime(3000));
@@ -135,9 +145,13 @@ describe('provision/DatabaseAccount/Create', () => {
     expect(getBySelector('#password')).not.toHaveValue();
     expect(getBySelector('#confirm_password')).not.toHaveValue();
     fireEvent.click(screen.getByText('生 成'));
-    expect(generateMySQLPassword).toHaveBeenCalled();
-    expect(getBySelector('#password')).toHaveValue('123456');
-    expect(getBySelector('#confirm_password')).toHaveValue('123456');
+    expect(generateDBPasswordByCustomCharType).toHaveBeenCalled();
+    expect(getBySelector('#password')).toHaveValue(
+      mockGeneratedDBPasswordByCustomRule
+    );
+    expect(getBySelector('#confirm_password')).toHaveValue(
+      mockGeneratedDBPasswordByCustomRule
+    );
 
     // additionalParams_hostname
     fireEvent.input(getBySelector('#additionalParams_hostname'), {
@@ -215,7 +229,7 @@ describe('provision/DatabaseAccount/Create', () => {
     await act(async () => jest.advanceTimersByTime(100));
     const db_account = {
       username: 'test111',
-      password: '123456',
+      password: mockGeneratedDBPasswordByCustomRule,
       explanation: 'desc test',
       additional_params: [
         {
