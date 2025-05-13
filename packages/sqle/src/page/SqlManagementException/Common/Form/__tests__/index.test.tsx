@@ -9,9 +9,16 @@ import instance from '../../../../../testUtils/mockApi/instance';
 import { mockUseDbServiceDriver } from '@actiontech/shared/lib/testUtil/mockHook/mockUseDbServiceDriver';
 import { cleanup, act, screen, fireEvent } from '@testing-library/react';
 import { getBySelector } from '@actiontech/shared/lib/testUtil/customQuery';
+import {
+  ignoreConsoleErrors,
+  UtilsConsoleErrorStringsEnum
+} from '@actiontech/shared/lib/testUtil/common';
 
 describe('sqle/SqlManagementException/SqlManagementExceptionForm', () => {
   let getInstanceTipListSpy: jest.SpyInstance;
+
+  ignoreConsoleErrors([UtilsConsoleErrorStringsEnum.UNKNOWN_EVENT_HANDLER]);
+
   beforeEach(() => {
     jest.useFakeTimers();
     mockUseDbServiceDriver();
