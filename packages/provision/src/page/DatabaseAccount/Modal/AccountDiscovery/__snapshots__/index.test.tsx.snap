@@ -1,0 +1,2121 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`provision/DatabaseAccount/AccountDiscoveryModal render AccountTableField username field should return "-" if username is empty 1`] = `
+<body>
+  <div />
+  <div>
+    <div
+      class="ant-drawer ant-drawer-right ant-drawer-open"
+      tabindex="-1"
+    >
+      <div
+        class="ant-drawer-mask"
+      />
+      <div
+        aria-hidden="true"
+        data-sentinel="start"
+        style="width: 0px; height: 0px; overflow: hidden; outline: none; position: absolute;"
+        tabindex="0"
+      />
+      <div
+        class="ant-drawer-content-wrapper"
+        style="width: 720px;"
+      >
+        <div
+          aria-modal="true"
+          class="ant-drawer-content basic-drawer-wrapper css-1q29jje"
+          role="dialog"
+        >
+          <div
+            class="ant-drawer-wrapper-body"
+          >
+            <div
+              class="ant-drawer-header"
+            >
+              <div
+                class="ant-drawer-header-title"
+              >
+                <div
+                  class="ant-drawer-title"
+                >
+                  账号发现
+                </div>
+              </div>
+            </div>
+            <div
+              class="ant-drawer-body"
+            >
+              <div
+                class="closed-icon-custom"
+              >
+                <span
+                  aria-label="close"
+                  class="anticon anticon-close"
+                  data-testid="basic-drawer-close-icon"
+                  role="img"
+                >
+                  <svg
+                    aria-hidden="true"
+                    data-icon="close"
+                    fill="currentColor"
+                    fill-rule="evenodd"
+                    focusable="false"
+                    height="1em"
+                    viewBox="64 64 896 896"
+                    width="1em"
+                  >
+                    <path
+                      d="M799.86 166.31c.02 0 .04.02.08.06l57.69 57.7c.04.03.05.05.06.08a.12.12 0 010 .06c0 .03-.02.05-.06.09L569.93 512l287.7 287.7c.04.04.05.06.06.09a.12.12 0 010 .07c0 .02-.02.04-.06.08l-57.7 57.69c-.03.04-.05.05-.07.06a.12.12 0 01-.07 0c-.03 0-.05-.02-.09-.06L512 569.93l-287.7 287.7c-.04.04-.06.05-.09.06a.12.12 0 01-.07 0c-.02 0-.04-.02-.08-.06l-57.69-57.7c-.04-.03-.05-.05-.06-.07a.12.12 0 010-.07c0-.03.02-.05.06-.09L454.07 512l-287.7-287.7c-.04-.04-.05-.06-.06-.09a.12.12 0 010-.07c0-.02.02-.04.06-.08l57.7-57.69c.03-.04.05-.05.07-.06a.12.12 0 01.07 0c.03 0 .05.02.09.06L512 454.07l287.7-287.7c.04-.04.06-.05.09-.06a.12.12 0 01.07 0z"
+                    />
+                  </svg>
+                </span>
+              </div>
+              <form
+                class="ant-form ant-form-vertical"
+              >
+                <div
+                  class="ant-form-item ant-form-item-has-success"
+                >
+                  <div
+                    class="ant-row ant-form-item-row"
+                  >
+                    <div
+                      class="ant-col ant-form-item-label"
+                    >
+                      <label
+                        class="ant-form-item-required"
+                        for="environment"
+                        title="环境属性"
+                      >
+                        环境属性
+                      </label>
+                    </div>
+                    <div
+                      class="ant-col ant-form-item-control"
+                    >
+                      <div
+                        class="ant-form-item-control-input"
+                      >
+                        <div
+                          class="ant-form-item-control-input-content"
+                        >
+                          <div
+                            aria-required="true"
+                            class="ant-select ant-select-in-form-item ant-select-status-success basic-select-wrapper css-iy4o4x ant-select-single ant-select-show-arrow"
+                          >
+                            <div
+                              class="ant-select-selector"
+                            >
+                              <span
+                                class="ant-select-selection-search"
+                              >
+                                <input
+                                  aria-activedescendant="environment_list_0"
+                                  aria-autocomplete="list"
+                                  aria-controls="environment_list"
+                                  aria-expanded="false"
+                                  aria-haspopup="listbox"
+                                  aria-owns="environment_list"
+                                  aria-required="true"
+                                  autocomplete="off"
+                                  class="ant-select-selection-search-input"
+                                  id="environment"
+                                  readonly=""
+                                  role="combobox"
+                                  style="opacity: 0;"
+                                  type="search"
+                                  unselectable="on"
+                                  value=""
+                                />
+                              </span>
+                              <span
+                                class="ant-select-selection-item"
+                                title="environment-1"
+                              >
+                                environment-1
+                              </span>
+                            </div>
+                            <span
+                              aria-hidden="true"
+                              class="ant-select-arrow"
+                              style="user-select: none;"
+                              unselectable="on"
+                            >
+                              <span
+                                aria-label="down"
+                                class="anticon anticon-down ant-select-suffix"
+                                role="img"
+                              >
+                                <svg
+                                  aria-hidden="true"
+                                  data-icon="down"
+                                  fill="currentColor"
+                                  focusable="false"
+                                  height="1em"
+                                  viewBox="64 64 896 896"
+                                  width="1em"
+                                >
+                                  <path
+                                    d="M884 256h-75c-5.1 0-9.9 2.5-12.9 6.6L512 654.2 227.9 262.6c-3-4.1-7.8-6.6-12.9-6.6h-75c-6.5 0-10.3 7.4-6.5 12.7l352.6 486.1c12.8 17.6 39 17.6 51.7 0l352.6-486.1c3.9-5.3.1-12.7-6.4-12.7z"
+                                  />
+                                </svg>
+                              </span>
+                            </span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="ant-form-item ant-form-item-has-success"
+                >
+                  <div
+                    class="ant-row ant-form-item-row"
+                  >
+                    <div
+                      class="ant-col ant-form-item-label"
+                    >
+                      <label
+                        class="ant-form-item-required"
+                        for="service"
+                        title="数据源"
+                      >
+                        数据源
+                      </label>
+                    </div>
+                    <div
+                      class="ant-col ant-form-item-control"
+                    >
+                      <div
+                        class="ant-form-item-control-input"
+                      >
+                        <div
+                          class="ant-form-item-control-input-content"
+                        >
+                          <div
+                            aria-required="true"
+                            class="ant-select ant-select-in-form-item ant-select-status-success basic-select-wrapper data-service-select css-iy4o4x ant-select-single ant-select-show-arrow"
+                          >
+                            <div
+                              class="ant-select-selector"
+                            >
+                              <span
+                                class="ant-select-selection-search"
+                              >
+                                <input
+                                  aria-activedescendant="service_list_1"
+                                  aria-autocomplete="list"
+                                  aria-controls="service_list"
+                                  aria-expanded="false"
+                                  aria-haspopup="listbox"
+                                  aria-owns="service_list"
+                                  aria-required="true"
+                                  autocomplete="off"
+                                  class="ant-select-selection-search-input"
+                                  id="service"
+                                  readonly=""
+                                  role="combobox"
+                                  style="opacity: 0;"
+                                  type="search"
+                                  unselectable="on"
+                                  value=""
+                                />
+                              </span>
+                              <span
+                                class="ant-select-selection-item"
+                                title="Julian Lueilwitz (aromatic-hammock.org)"
+                              >
+                                Julian Lueilwitz (aromatic-hammock.org)
+                              </span>
+                            </div>
+                            <span
+                              aria-hidden="true"
+                              class="ant-select-arrow"
+                              style="user-select: none;"
+                              unselectable="on"
+                            >
+                              <span
+                                aria-label="down"
+                                class="anticon anticon-down ant-select-suffix"
+                                role="img"
+                              >
+                                <svg
+                                  aria-hidden="true"
+                                  data-icon="down"
+                                  fill="currentColor"
+                                  focusable="false"
+                                  height="1em"
+                                  viewBox="64 64 896 896"
+                                  width="1em"
+                                >
+                                  <path
+                                    d="M884 256h-75c-5.1 0-9.9 2.5-12.9 6.6L512 654.2 227.9 262.6c-3-4.1-7.8-6.6-12.9-6.6h-75c-6.5 0-10.3 7.4-6.5 12.7l352.6 486.1c12.8 17.6 39 17.6 51.7 0l352.6-486.1c3.9-5.3.1-12.7-6.4-12.7z"
+                                  />
+                                </svg>
+                              </span>
+                            </span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="ant-form-item"
+                >
+                  <div
+                    class="ant-row ant-form-item-row"
+                  >
+                    <div
+                      class="ant-col ant-form-item-label"
+                    >
+                      <label
+                        class="ant-form-item-required"
+                        for="account"
+                        title=""
+                      >
+                        <div
+                          class="ant-space ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
+                        >
+                          <div
+                            class="ant-space-item"
+                            style="margin-right: 8px;"
+                          >
+                            数据库账户
+                          </div>
+                          <div
+                            class="ant-space-item"
+                          >
+                            <span
+                              aria-label="info-circle"
+                              class="anticon anticon-info-circle tooltips-default-icon"
+                              role="img"
+                            >
+                              <svg
+                                aria-hidden="true"
+                                data-icon="info-circle"
+                                fill="currentColor"
+                                focusable="false"
+                                height="1em"
+                                viewBox="64 64 896 896"
+                                width="1em"
+                              >
+                                <path
+                                  d="M512 64C264.6 64 64 264.6 64 512s200.6 448 448 448 448-200.6 448-448S759.4 64 512 64zm0 820c-205.4 0-372-166.6-372-372s166.6-372 372-372 372 166.6 372 372-166.6 372-372 372z"
+                                />
+                                <path
+                                  d="M464 336a48 48 0 1096 0 48 48 0 10-96 0zm72 112h-48c-4.4 0-8 3.6-8 8v272c0 4.4 3.6 8 8 8h48c4.4 0 8-3.6 8-8V456c0-4.4-3.6-8-8-8z"
+                                />
+                              </svg>
+                            </span>
+                          </div>
+                        </div>
+                      </label>
+                    </div>
+                    <div
+                      class="ant-col ant-form-item-control"
+                    >
+                      <div
+                        class="ant-form-item-control-input"
+                      >
+                        <div
+                          class="ant-form-item-control-input-content"
+                        >
+                          <div
+                            class="flex-space-between"
+                          >
+                            <input
+                              class="ant-input ant-input-sm basic-input-wrapper css-1pd1cd5"
+                              placeholder="输入账号名进行搜索"
+                              style="width: 300px;"
+                              type="text"
+                              value=""
+                            />
+                            <button
+                              class="ant-btn ant-btn-default ant-btn-sm ant-btn-icon-only basic-button-wrapper css-geipcv"
+                              type="button"
+                            >
+                              <span
+                                class="ant-btn-icon"
+                              >
+                                <svg
+                                  class="custom-icon custom-icon-refresh"
+                                  height="14"
+                                  viewBox="0 0 14 14"
+                                  width="14"
+                                  xmlns="http://www.w3.org/2000/svg"
+                                >
+                                  <path
+                                    d="M3.187 2.586a5.833 5.833 0 0 1 8.59 7.762L9.918 7h1.75a4.667 4.667 0 0 0-7.899-3.367zm7.626 8.828a5.833 5.833 0 0 1-8.59-7.762L4.083 7h-1.75a4.667 4.667 0 0 0 7.899 3.367z"
+                                  />
+                                </svg>
+                              </span>
+                            </button>
+                          </div>
+                          <div
+                            class="ant-table-wrapper actiontech-table-namespace css-18y1mv6"
+                          >
+                            <div
+                              class="ant-spin-nested-loading"
+                            >
+                              <div
+                                class="ant-spin-container"
+                              >
+                                <div
+                                  class="ant-table ant-table-fixed-header ant-table-fixed-column ant-table-scroll-horizontal ant-table-has-fix-left"
+                                >
+                                  <div
+                                    class="ant-table-container"
+                                  >
+                                    <div
+                                      class="ant-table-header"
+                                      style="overflow: hidden;"
+                                    >
+                                      <table
+                                        style="table-layout: fixed; visibility: hidden;"
+                                      >
+                                        <colgroup>
+                                          <col
+                                            class="ant-table-selection-col"
+                                          />
+                                        </colgroup>
+                                        <thead
+                                          class="ant-table-thead"
+                                        >
+                                          <tr>
+                                            <th
+                                              class="ant-table-cell ant-table-selection-column ant-table-cell-fix-left ant-table-cell-fix-left-last"
+                                              scope="col"
+                                              style="position: sticky; left: 0px;"
+                                            >
+                                              <div
+                                                class="ant-table-selection"
+                                              >
+                                                <label
+                                                  class="ant-checkbox-wrapper ant-checkbox-wrapper-in-form-item"
+                                                >
+                                                  <span
+                                                    class="ant-checkbox"
+                                                  >
+                                                    <input
+                                                      aria-label="Select all"
+                                                      class="ant-checkbox-input"
+                                                      type="checkbox"
+                                                    />
+                                                    <span
+                                                      class="ant-checkbox-inner"
+                                                    />
+                                                  </span>
+                                                </label>
+                                              </div>
+                                            </th>
+                                            <th
+                                              class="ant-table-cell"
+                                              scope="col"
+                                            >
+                                              账号
+                                            </th>
+                                            <th
+                                              class="ant-table-cell"
+                                              scope="col"
+                                            >
+                                              角色
+                                            </th>
+                                            <th
+                                              class="ant-table-cell"
+                                              scope="col"
+                                            >
+                                              权限
+                                            </th>
+                                          </tr>
+                                        </thead>
+                                      </table>
+                                    </div>
+                                    <div
+                                      class="ant-table-body"
+                                      style="overflow-x: auto; overflow-y: scroll; max-height: 540px;"
+                                    >
+                                      <table
+                                        style="min-width: 100%; table-layout: auto;"
+                                      >
+                                        <colgroup>
+                                          <col
+                                            class="ant-table-selection-col"
+                                          />
+                                          <col />
+                                          <col
+                                            style="width: 100px;"
+                                          />
+                                        </colgroup>
+                                        <tbody
+                                          class="ant-table-tbody"
+                                        >
+                                          <tr
+                                            aria-hidden="true"
+                                            class="ant-table-measure-row"
+                                            style="height: 0px; font-size: 0px;"
+                                          >
+                                            <td
+                                              style="padding: 0px; border: 0px; height: 0px;"
+                                            >
+                                              <div
+                                                style="height: 0px; overflow: hidden;"
+                                              >
+                                                 
+                                              </div>
+                                            </td>
+                                            <td
+                                              style="padding: 0px; border: 0px; height: 0px;"
+                                            >
+                                              <div
+                                                style="height: 0px; overflow: hidden;"
+                                              >
+                                                 
+                                              </div>
+                                            </td>
+                                            <td
+                                              style="padding: 0px; border: 0px; height: 0px;"
+                                            >
+                                              <div
+                                                style="height: 0px; overflow: hidden;"
+                                              >
+                                                 
+                                              </div>
+                                            </td>
+                                            <td
+                                              style="padding: 0px; border: 0px; height: 0px;"
+                                            >
+                                              <div
+                                                style="height: 0px; overflow: hidden;"
+                                              >
+                                                 
+                                              </div>
+                                            </td>
+                                          </tr>
+                                          <tr
+                                            class="ant-table-row ant-table-row-level-0"
+                                            data-row-key="undefined_0"
+                                          >
+                                            <td
+                                              class="ant-table-cell ant-table-selection-column ant-table-cell-fix-left ant-table-cell-fix-left-last"
+                                              style="position: sticky; left: 0px;"
+                                            >
+                                              <label
+                                                class="ant-checkbox-wrapper ant-checkbox-wrapper-in-form-item"
+                                              >
+                                                <span
+                                                  class="ant-checkbox"
+                                                >
+                                                  <input
+                                                    class="ant-checkbox-input"
+                                                    type="checkbox"
+                                                  />
+                                                  <span
+                                                    class="ant-checkbox-inner"
+                                                  />
+                                                </span>
+                                              </label>
+                                            </td>
+                                            <td
+                                              class="ant-table-cell"
+                                            >
+                                              -
+                                            </td>
+                                            <td
+                                              class="ant-table-cell"
+                                            >
+                                              <div
+                                                class="css-bwn97z"
+                                              >
+                                                -
+                                              </div>
+                                            </td>
+                                            <td
+                                              class="ant-table-cell"
+                                            >
+                                              <div
+                                                class="css-bwn97z"
+                                              >
+                                                -
+                                              </div>
+                                            </td>
+                                          </tr>
+                                        </tbody>
+                                      </table>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div
+                        class="ant-form-item-extra"
+                        id="account_extra"
+                      >
+                        本次发现数据库账号数量：1
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </form>
+            </div>
+            <div
+              class="ant-drawer-footer"
+            >
+              <div
+                class="ant-space ant-space-horizontal ant-space-align-center"
+              >
+                <div
+                  class="ant-space-item"
+                  style="margin-right: 8px;"
+                >
+                  <button
+                    class="ant-btn ant-btn-default basic-button-wrapper css-geipcv"
+                    type="button"
+                  >
+                    <span>
+                      关 闭
+                    </span>
+                  </button>
+                </div>
+                <div
+                  class="ant-space-item"
+                >
+                  <button
+                    class="ant-btn ant-btn-primary basic-button-wrapper css-geipcv"
+                    type="button"
+                  >
+                    <span>
+                      同步账户
+                    </span>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        aria-hidden="true"
+        data-sentinel="end"
+        style="width: 0px; height: 0px; overflow: hidden; outline: none; position: absolute;"
+        tabindex="0"
+      />
+    </div>
+  </div>
+  <div>
+    <div
+      class="ant-select-dropdown ant-select-dropdown-hidden ant-select-dropdown-placement-bottomLeft"
+      style="--arrow-x: 0px; --arrow-y: 0px; left: 0px; top: 0px; box-sizing: border-box; min-width: 0; width: 0px; pointer-events: none;"
+    >
+      <div>
+        <div
+          id="environment_list"
+          role="listbox"
+          style="height: 0px; width: 0px; overflow: hidden;"
+        >
+          <div
+            aria-label="environment-1"
+            aria-selected="true"
+            id="environment_list_0"
+            role="option"
+          >
+            1
+          </div>
+          <div
+            aria-label="environment-2"
+            aria-selected="false"
+            id="environment_list_1"
+            role="option"
+          >
+            2
+          </div>
+        </div>
+        <div
+          class="rc-virtual-list"
+          style="position: relative;"
+        >
+          <div
+            class="rc-virtual-list-holder"
+            style="max-height: 256px; overflow-y: hidden;"
+          >
+            <div>
+              <div
+                class="rc-virtual-list-holder-inner"
+                style="display: flex; flex-direction: column;"
+              >
+                <div
+                  aria-selected="true"
+                  class="ant-select-item ant-select-item-option ant-select-item-option-active ant-select-item-option-selected"
+                  title="environment-1"
+                >
+                  <div
+                    class="ant-select-item-option-content"
+                  >
+                    environment-1
+                  </div>
+                  <span
+                    aria-hidden="true"
+                    class="ant-select-item-option-state"
+                    style="user-select: none;"
+                    unselectable="on"
+                  />
+                </div>
+                <div
+                  aria-selected="false"
+                  class="ant-select-item ant-select-item-option"
+                  title="environment-2"
+                >
+                  <div
+                    class="ant-select-item-option-content"
+                  >
+                    environment-2
+                  </div>
+                  <span
+                    aria-hidden="true"
+                    class="ant-select-item-option-state"
+                    style="user-select: none;"
+                    unselectable="on"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div>
+    <div
+      class="ant-select-dropdown ant-select-dropdown-hidden ant-select-dropdown-placement-bottomLeft"
+      style="--arrow-x: 0px; --arrow-y: 0px; left: 0px; top: 0px; box-sizing: border-box; min-width: 0; width: 0px; pointer-events: none;"
+    >
+      <div>
+        <div
+          id="service_list"
+          role="listbox"
+          style="height: 0px; width: 0px; overflow: hidden;"
+        >
+          <div
+            aria-selected="false"
+            id="service_list_0"
+            role="presentation"
+          />
+          <div
+            aria-label="Julian Lueilwitz (aromatic-hammock.org)"
+            aria-selected="true"
+            id="service_list_1"
+            role="option"
+          >
+            42343
+          </div>
+          <div
+            aria-label="Gloria Kessler (zigzag-loneliness.com)"
+            aria-selected="false"
+            id="service_list_2"
+            role="option"
+          >
+            30152
+          </div>
+        </div>
+        <div
+          class="rc-virtual-list"
+          style="position: relative;"
+        >
+          <div
+            class="rc-virtual-list-holder"
+            style="max-height: 256px; overflow-y: hidden;"
+          >
+            <div
+              style="height: 504px; position: relative; overflow: hidden;"
+            >
+              <div
+                class="rc-virtual-list-holder-inner"
+                style="display: flex; flex-direction: column; transform: translateY(0px); margin-left: 0px; position: absolute; left: 0px; right: 0px; top: 0px;"
+              >
+                <div
+                  class="ant-select-item ant-select-item-group"
+                >
+                  <div
+                    class="css-1uw16ge"
+                  >
+                    <img
+                      alt=""
+                    />
+                    <span
+                      title="MySQL"
+                    >
+                      MySQL
+                    </span>
+                  </div>
+                </div>
+                <div
+                  aria-selected="true"
+                  class="ant-select-item ant-select-item-option ant-select-item-option-grouped ant-select-item-option-active ant-select-item-option-selected"
+                  title="Julian Lueilwitz (aromatic-hammock.org)"
+                >
+                  <div
+                    class="ant-select-item-option-content"
+                  >
+                    Julian Lueilwitz (aromatic-hammock.org)
+                  </div>
+                  <span
+                    aria-hidden="true"
+                    class="ant-select-item-option-state"
+                    style="user-select: none;"
+                    unselectable="on"
+                  />
+                </div>
+                <div
+                  aria-selected="false"
+                  class="ant-select-item ant-select-item-option ant-select-item-option-grouped"
+                  title="Gloria Kessler (zigzag-loneliness.com)"
+                >
+                  <div
+                    class="ant-select-item-option-content"
+                  >
+                    Gloria Kessler (zigzag-loneliness.com)
+                  </div>
+                  <span
+                    aria-hidden="true"
+                    class="ant-select-item-option-state"
+                    style="user-select: none;"
+                    unselectable="on"
+                  />
+                </div>
+                <div
+                  aria-selected="false"
+                  class="ant-select-item ant-select-item-option ant-select-item-option-grouped"
+                  title="Tyler Mitchell (guilty-marmalade.org)"
+                >
+                  <div
+                    class="ant-select-item-option-content"
+                  >
+                    Tyler Mitchell (guilty-marmalade.org)
+                  </div>
+                  <span
+                    aria-hidden="true"
+                    class="ant-select-item-option-state"
+                    style="user-select: none;"
+                    unselectable="on"
+                  />
+                </div>
+                <div
+                  aria-selected="false"
+                  class="ant-select-item ant-select-item-option ant-select-item-option-grouped"
+                  title="Brent West (oddball-doughnut.com)"
+                >
+                  <div
+                    class="ant-select-item-option-content"
+                  >
+                    Brent West (oddball-doughnut.com)
+                  </div>
+                  <span
+                    aria-hidden="true"
+                    class="ant-select-item-option-state"
+                    style="user-select: none;"
+                    unselectable="on"
+                  />
+                </div>
+                <div
+                  aria-selected="false"
+                  class="ant-select-item ant-select-item-option ant-select-item-option-grouped"
+                  title="Tabitha Herzog (disloyal-sunlamp.org)"
+                >
+                  <div
+                    class="ant-select-item-option-content"
+                  >
+                    Tabitha Herzog (disloyal-sunlamp.org)
+                  </div>
+                  <span
+                    aria-hidden="true"
+                    class="ant-select-item-option-state"
+                    style="user-select: none;"
+                    unselectable="on"
+                  />
+                </div>
+                <div
+                  aria-selected="false"
+                  class="ant-select-item ant-select-item-option ant-select-item-option-grouped"
+                  title="Nicole Barrows (delightful-sense.net)"
+                >
+                  <div
+                    class="ant-select-item-option-content"
+                  >
+                    Nicole Barrows (delightful-sense.net)
+                  </div>
+                  <span
+                    aria-hidden="true"
+                    class="ant-select-item-option-state"
+                    style="user-select: none;"
+                    unselectable="on"
+                  />
+                </div>
+                <div
+                  aria-selected="false"
+                  class="ant-select-item ant-select-item-option ant-select-item-option-grouped"
+                  title="Nicolas Sawayn (active-hosiery.name)"
+                >
+                  <div
+                    class="ant-select-item-option-content"
+                  >
+                    Nicolas Sawayn (active-hosiery.name)
+                  </div>
+                  <span
+                    aria-hidden="true"
+                    class="ant-select-item-option-state"
+                    style="user-select: none;"
+                    unselectable="on"
+                  />
+                </div>
+                <div
+                  aria-selected="false"
+                  class="ant-select-item ant-select-item-option ant-select-item-option-grouped"
+                  title="Miguel Spinka II (droopy-footrest.com)"
+                >
+                  <div
+                    class="ant-select-item-option-content"
+                  >
+                    Miguel Spinka II (droopy-footrest.com)
+                  </div>
+                  <span
+                    aria-hidden="true"
+                    class="ant-select-item-option-state"
+                    style="user-select: none;"
+                    unselectable="on"
+                  />
+                </div>
+                <div
+                  aria-selected="false"
+                  class="ant-select-item ant-select-item-option ant-select-item-option-grouped"
+                  title="Roger Gutkowski (well-made-modification.name)"
+                >
+                  <div
+                    class="ant-select-item-option-content"
+                  >
+                    Roger Gutkowski (well-made-modification.name)
+                  </div>
+                  <span
+                    aria-hidden="true"
+                    class="ant-select-item-option-state"
+                    style="user-select: none;"
+                    unselectable="on"
+                  />
+                </div>
+                <div
+                  aria-selected="false"
+                  class="ant-select-item ant-select-item-option ant-select-item-option-grouped"
+                  title="Brett Rippin (plush-wind.name)"
+                >
+                  <div
+                    class="ant-select-item-option-content"
+                  >
+                    Brett Rippin (plush-wind.name)
+                  </div>
+                  <span
+                    aria-hidden="true"
+                    class="ant-select-item-option-state"
+                    style="user-select: none;"
+                    unselectable="on"
+                  />
+                </div>
+                <div
+                  aria-selected="false"
+                  class="ant-select-item ant-select-item-option ant-select-item-option-grouped"
+                  title="Gilberto Feil (quixotic-scheduling.info)"
+                >
+                  <div
+                    class="ant-select-item-option-content"
+                  >
+                    Gilberto Feil (quixotic-scheduling.info)
+                  </div>
+                  <span
+                    aria-hidden="true"
+                    class="ant-select-item-option-state"
+                    style="user-select: none;"
+                    unselectable="on"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="rc-virtual-list-scrollbar rc-virtual-list-scrollbar-vertical"
+            style="position: absolute; width: 8px; top: 0px; bottom: 0px; right: 0px; visibility: hidden;"
+          >
+            <div
+              class="rc-virtual-list-scrollbar-thumb"
+              style="position: absolute; background: rgba(0, 0, 0, 0.5); border-radius: 99px; cursor: pointer; user-select: none; width: 100%; height: 130px; top: 0px;"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`provision/DatabaseAccount/AccountDiscoveryModal render init snap 1`] = `
+<body>
+  <div />
+  <div>
+    <div
+      class="ant-drawer ant-drawer-right ant-drawer-open"
+      tabindex="-1"
+    >
+      <div
+        class="ant-drawer-mask"
+      />
+      <div
+        aria-hidden="true"
+        data-sentinel="start"
+        style="width: 0px; height: 0px; overflow: hidden; outline: none; position: absolute;"
+        tabindex="0"
+      />
+      <div
+        class="ant-drawer-content-wrapper"
+        style="width: 720px;"
+      >
+        <div
+          aria-modal="true"
+          class="ant-drawer-content basic-drawer-wrapper css-1q29jje"
+          role="dialog"
+        >
+          <div
+            class="ant-drawer-wrapper-body"
+          >
+            <div
+              class="ant-drawer-header"
+            >
+              <div
+                class="ant-drawer-header-title"
+              >
+                <div
+                  class="ant-drawer-title"
+                >
+                  账号发现
+                </div>
+              </div>
+            </div>
+            <div
+              class="ant-drawer-body"
+            >
+              <div
+                class="closed-icon-custom"
+              >
+                <span
+                  aria-label="close"
+                  class="anticon anticon-close"
+                  data-testid="basic-drawer-close-icon"
+                  role="img"
+                >
+                  <svg
+                    aria-hidden="true"
+                    data-icon="close"
+                    fill="currentColor"
+                    fill-rule="evenodd"
+                    focusable="false"
+                    height="1em"
+                    viewBox="64 64 896 896"
+                    width="1em"
+                  >
+                    <path
+                      d="M799.86 166.31c.02 0 .04.02.08.06l57.69 57.7c.04.03.05.05.06.08a.12.12 0 010 .06c0 .03-.02.05-.06.09L569.93 512l287.7 287.7c.04.04.05.06.06.09a.12.12 0 010 .07c0 .02-.02.04-.06.08l-57.7 57.69c-.03.04-.05.05-.07.06a.12.12 0 01-.07 0c-.03 0-.05-.02-.09-.06L512 569.93l-287.7 287.7c-.04.04-.06.05-.09.06a.12.12 0 01-.07 0c-.02 0-.04-.02-.08-.06l-57.69-57.7c-.04-.03-.05-.05-.06-.07a.12.12 0 010-.07c0-.03.02-.05.06-.09L454.07 512l-287.7-287.7c-.04-.04-.05-.06-.06-.09a.12.12 0 010-.07c0-.02.02-.04.06-.08l57.7-57.69c.03-.04.05-.05.07-.06a.12.12 0 01.07 0c.03 0 .05.02.09.06L512 454.07l287.7-287.7c.04-.04.06-.05.09-.06a.12.12 0 01.07 0z"
+                    />
+                  </svg>
+                </span>
+              </div>
+              <form
+                class="ant-form ant-form-vertical"
+              >
+                <div
+                  class="ant-form-item"
+                >
+                  <div
+                    class="ant-row ant-form-item-row"
+                  >
+                    <div
+                      class="ant-col ant-form-item-label"
+                    >
+                      <label
+                        class="ant-form-item-required"
+                        for="environment"
+                        title="环境属性"
+                      >
+                        环境属性
+                      </label>
+                    </div>
+                    <div
+                      class="ant-col ant-form-item-control"
+                    >
+                      <div
+                        class="ant-form-item-control-input"
+                      >
+                        <div
+                          class="ant-form-item-control-input-content"
+                        >
+                          <div
+                            aria-required="true"
+                            class="ant-select ant-select-in-form-item basic-select-wrapper css-iy4o4x ant-select-single ant-select-show-arrow"
+                          >
+                            <div
+                              class="ant-select-selector"
+                            >
+                              <span
+                                class="ant-select-selection-search"
+                              >
+                                <input
+                                  aria-activedescendant="environment_list_0"
+                                  aria-autocomplete="list"
+                                  aria-controls="environment_list"
+                                  aria-expanded="false"
+                                  aria-haspopup="listbox"
+                                  aria-owns="environment_list"
+                                  aria-required="true"
+                                  autocomplete="off"
+                                  class="ant-select-selection-search-input"
+                                  id="environment"
+                                  readonly=""
+                                  role="combobox"
+                                  style="opacity: 0;"
+                                  type="search"
+                                  unselectable="on"
+                                  value=""
+                                />
+                              </span>
+                              <span
+                                class="ant-select-selection-placeholder"
+                              >
+                                请选择环境属性
+                              </span>
+                            </div>
+                            <span
+                              aria-hidden="true"
+                              class="ant-select-arrow"
+                              style="user-select: none;"
+                              unselectable="on"
+                            >
+                              <span
+                                aria-label="down"
+                                class="anticon anticon-down ant-select-suffix"
+                                role="img"
+                              >
+                                <svg
+                                  aria-hidden="true"
+                                  data-icon="down"
+                                  fill="currentColor"
+                                  focusable="false"
+                                  height="1em"
+                                  viewBox="64 64 896 896"
+                                  width="1em"
+                                >
+                                  <path
+                                    d="M884 256h-75c-5.1 0-9.9 2.5-12.9 6.6L512 654.2 227.9 262.6c-3-4.1-7.8-6.6-12.9-6.6h-75c-6.5 0-10.3 7.4-6.5 12.7l352.6 486.1c12.8 17.6 39 17.6 51.7 0l352.6-486.1c3.9-5.3.1-12.7-6.4-12.7z"
+                                  />
+                                </svg>
+                              </span>
+                            </span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="ant-form-item"
+                >
+                  <div
+                    class="ant-row ant-form-item-row"
+                  >
+                    <div
+                      class="ant-col ant-form-item-label"
+                    >
+                      <label
+                        class="ant-form-item-required"
+                        for="service"
+                        title="数据源"
+                      >
+                        数据源
+                      </label>
+                    </div>
+                    <div
+                      class="ant-col ant-form-item-control"
+                    >
+                      <div
+                        class="ant-form-item-control-input"
+                      >
+                        <div
+                          class="ant-form-item-control-input-content"
+                        >
+                          <div
+                            aria-required="true"
+                            class="ant-select ant-select-in-form-item basic-select-wrapper data-service-select css-iy4o4x ant-select-single ant-select-show-arrow"
+                          >
+                            <div
+                              class="ant-select-selector"
+                            >
+                              <span
+                                class="ant-select-selection-search"
+                              >
+                                <input
+                                  aria-activedescendant="service_list_0"
+                                  aria-autocomplete="list"
+                                  aria-controls="service_list"
+                                  aria-expanded="false"
+                                  aria-haspopup="listbox"
+                                  aria-owns="service_list"
+                                  aria-required="true"
+                                  autocomplete="off"
+                                  class="ant-select-selection-search-input"
+                                  id="service"
+                                  readonly=""
+                                  role="combobox"
+                                  style="opacity: 0;"
+                                  type="search"
+                                  unselectable="on"
+                                  value=""
+                                />
+                              </span>
+                              <span
+                                class="ant-select-selection-placeholder"
+                              >
+                                请选择数据源
+                              </span>
+                            </div>
+                            <span
+                              aria-hidden="true"
+                              class="ant-select-arrow"
+                              style="user-select: none;"
+                              unselectable="on"
+                            >
+                              <span
+                                aria-label="down"
+                                class="anticon anticon-down ant-select-suffix"
+                                role="img"
+                              >
+                                <svg
+                                  aria-hidden="true"
+                                  data-icon="down"
+                                  fill="currentColor"
+                                  focusable="false"
+                                  height="1em"
+                                  viewBox="64 64 896 896"
+                                  width="1em"
+                                >
+                                  <path
+                                    d="M884 256h-75c-5.1 0-9.9 2.5-12.9 6.6L512 654.2 227.9 262.6c-3-4.1-7.8-6.6-12.9-6.6h-75c-6.5 0-10.3 7.4-6.5 12.7l352.6 486.1c12.8 17.6 39 17.6 51.7 0l352.6-486.1c3.9-5.3.1-12.7-6.4-12.7z"
+                                  />
+                                </svg>
+                              </span>
+                            </span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="ant-form-item"
+                >
+                  <div
+                    class="ant-row ant-form-item-row"
+                  >
+                    <div
+                      class="ant-col ant-form-item-label"
+                    >
+                      <label
+                        class="ant-form-item-required"
+                        for="account"
+                        title=""
+                      >
+                        <div
+                          class="ant-space ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
+                        >
+                          <div
+                            class="ant-space-item"
+                            style="margin-right: 8px;"
+                          >
+                            数据库账户
+                          </div>
+                          <div
+                            class="ant-space-item"
+                          >
+                            <span
+                              aria-label="info-circle"
+                              class="anticon anticon-info-circle tooltips-default-icon"
+                              role="img"
+                            >
+                              <svg
+                                aria-hidden="true"
+                                data-icon="info-circle"
+                                fill="currentColor"
+                                focusable="false"
+                                height="1em"
+                                viewBox="64 64 896 896"
+                                width="1em"
+                              >
+                                <path
+                                  d="M512 64C264.6 64 64 264.6 64 512s200.6 448 448 448 448-200.6 448-448S759.4 64 512 64zm0 820c-205.4 0-372-166.6-372-372s166.6-372 372-372 372 166.6 372 372-166.6 372-372 372z"
+                                />
+                                <path
+                                  d="M464 336a48 48 0 1096 0 48 48 0 10-96 0zm72 112h-48c-4.4 0-8 3.6-8 8v272c0 4.4 3.6 8 8 8h48c4.4 0 8-3.6 8-8V456c0-4.4-3.6-8-8-8z"
+                                />
+                              </svg>
+                            </span>
+                          </div>
+                        </div>
+                      </label>
+                    </div>
+                    <div
+                      class="ant-col ant-form-item-control"
+                    >
+                      <div
+                        class="ant-form-item-control-input"
+                      >
+                        <div
+                          class="ant-form-item-control-input-content"
+                        >
+                          <div
+                            class="flex-space-between"
+                            hidden=""
+                          >
+                            <input
+                              class="ant-input ant-input-sm basic-input-wrapper css-1pd1cd5"
+                              placeholder="输入账号名进行搜索"
+                              style="width: 300px;"
+                              type="text"
+                              value=""
+                            />
+                            <button
+                              class="ant-btn ant-btn-default ant-btn-sm ant-btn-icon-only basic-button-wrapper css-geipcv"
+                              type="button"
+                            >
+                              <span
+                                class="ant-btn-icon"
+                              >
+                                <svg
+                                  class="custom-icon custom-icon-refresh"
+                                  height="14"
+                                  viewBox="0 0 14 14"
+                                  width="14"
+                                  xmlns="http://www.w3.org/2000/svg"
+                                >
+                                  <path
+                                    d="M3.187 2.586a5.833 5.833 0 0 1 8.59 7.762L9.918 7h1.75a4.667 4.667 0 0 0-7.899-3.367zm7.626 8.828a5.833 5.833 0 0 1-8.59-7.762L4.083 7h-1.75a4.667 4.667 0 0 0 7.899 3.367z"
+                                  />
+                                </svg>
+                              </span>
+                            </button>
+                          </div>
+                          <div
+                            class="ant-table-wrapper actiontech-table-namespace css-18y1mv6"
+                          >
+                            <div
+                              class="ant-spin-nested-loading"
+                            >
+                              <div
+                                class="ant-spin-container"
+                              >
+                                <div
+                                  class="ant-table ant-table-empty ant-table-fixed-header ant-table-fixed-column ant-table-scroll-horizontal ant-table-has-fix-left"
+                                >
+                                  <div
+                                    class="ant-table-container"
+                                  >
+                                    <div
+                                      class="ant-table-header"
+                                      style="overflow: hidden;"
+                                    >
+                                      <table
+                                        style="table-layout: fixed;"
+                                      >
+                                        <thead
+                                          class="ant-table-thead"
+                                        >
+                                          <tr>
+                                            <th
+                                              class="ant-table-cell ant-table-selection-column ant-table-cell-fix-left ant-table-cell-fix-left-last"
+                                              scope="col"
+                                              style="position: sticky; left: 0px;"
+                                            >
+                                              <div
+                                                class="ant-table-selection"
+                                              >
+                                                <label
+                                                  class="ant-checkbox-wrapper ant-checkbox-wrapper-disabled ant-checkbox-wrapper-in-form-item"
+                                                >
+                                                  <span
+                                                    class="ant-checkbox ant-checkbox-disabled"
+                                                  >
+                                                    <input
+                                                      aria-label="Select all"
+                                                      class="ant-checkbox-input"
+                                                      disabled=""
+                                                      type="checkbox"
+                                                    />
+                                                    <span
+                                                      class="ant-checkbox-inner"
+                                                    />
+                                                  </span>
+                                                </label>
+                                              </div>
+                                            </th>
+                                            <th
+                                              class="ant-table-cell"
+                                              scope="col"
+                                            >
+                                              账号
+                                            </th>
+                                            <th
+                                              class="ant-table-cell"
+                                              scope="col"
+                                            >
+                                              角色
+                                            </th>
+                                            <th
+                                              class="ant-table-cell"
+                                              scope="col"
+                                            >
+                                              权限
+                                            </th>
+                                          </tr>
+                                        </thead>
+                                      </table>
+                                    </div>
+                                    <div
+                                      class="ant-table-body"
+                                      style="overflow-x: auto; overflow-y: scroll; max-height: 540px;"
+                                    >
+                                      <table
+                                        style="min-width: 100%; table-layout: auto;"
+                                      >
+                                        <colgroup>
+                                          <col
+                                            class="ant-table-selection-col"
+                                          />
+                                          <col />
+                                          <col
+                                            style="width: 100px;"
+                                          />
+                                        </colgroup>
+                                        <tbody
+                                          class="ant-table-tbody"
+                                        >
+                                          <tr
+                                            aria-hidden="true"
+                                            class="ant-table-measure-row"
+                                            style="height: 0px; font-size: 0px;"
+                                          >
+                                            <td
+                                              style="padding: 0px; border: 0px; height: 0px;"
+                                            >
+                                              <div
+                                                style="height: 0px; overflow: hidden;"
+                                              >
+                                                 
+                                              </div>
+                                            </td>
+                                            <td
+                                              style="padding: 0px; border: 0px; height: 0px;"
+                                            >
+                                              <div
+                                                style="height: 0px; overflow: hidden;"
+                                              >
+                                                 
+                                              </div>
+                                            </td>
+                                            <td
+                                              style="padding: 0px; border: 0px; height: 0px;"
+                                            >
+                                              <div
+                                                style="height: 0px; overflow: hidden;"
+                                              >
+                                                 
+                                              </div>
+                                            </td>
+                                            <td
+                                              style="padding: 0px; border: 0px; height: 0px;"
+                                            >
+                                              <div
+                                                style="height: 0px; overflow: hidden;"
+                                              >
+                                                 
+                                              </div>
+                                            </td>
+                                          </tr>
+                                          <tr
+                                            class="ant-table-placeholder"
+                                          >
+                                            <td
+                                              class="ant-table-cell"
+                                              colspan="4"
+                                            >
+                                              <div
+                                                class="ant-table-expanded-row-fixed"
+                                                style="width: 0px; position: sticky; left: 0px; overflow: hidden;"
+                                              />
+                                            </td>
+                                          </tr>
+                                        </tbody>
+                                      </table>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </form>
+            </div>
+            <div
+              class="ant-drawer-footer"
+            >
+              <div
+                class="ant-space ant-space-horizontal ant-space-align-center"
+              >
+                <div
+                  class="ant-space-item"
+                  style="margin-right: 8px;"
+                >
+                  <button
+                    class="ant-btn ant-btn-default basic-button-wrapper css-geipcv"
+                    type="button"
+                  >
+                    <span>
+                      关 闭
+                    </span>
+                  </button>
+                </div>
+                <div
+                  class="ant-space-item"
+                >
+                  <button
+                    class="ant-btn ant-btn-primary basic-button-wrapper css-geipcv"
+                    type="button"
+                  >
+                    <span>
+                      同步账户
+                    </span>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        aria-hidden="true"
+        data-sentinel="end"
+        style="width: 0px; height: 0px; overflow: hidden; outline: none; position: absolute;"
+        tabindex="0"
+      />
+    </div>
+  </div>
+</body>
+`;
+
+exports[`provision/DatabaseAccount/AccountDiscoveryModal render sync account 1`] = `
+<body>
+  <div />
+  <div>
+    <div
+      class="ant-drawer ant-drawer-right"
+      tabindex="-1"
+    >
+      <div
+        aria-hidden="true"
+        data-sentinel="start"
+        style="width: 0px; height: 0px; overflow: hidden; outline: none; position: absolute;"
+        tabindex="0"
+      />
+      <div
+        class="ant-drawer-content-wrapper ant-drawer-content-wrapper-hidden"
+        style="width: 720px;"
+      >
+        <div
+          aria-modal="true"
+          class="ant-drawer-content basic-drawer-wrapper css-1q29jje"
+          role="dialog"
+        >
+          <div
+            class="ant-drawer-wrapper-body"
+          >
+            <div
+              class="ant-drawer-header"
+            >
+              <div
+                class="ant-drawer-header-title"
+              >
+                <div
+                  class="ant-drawer-title"
+                >
+                  账号发现
+                </div>
+              </div>
+            </div>
+            <div
+              class="ant-drawer-body"
+            >
+              <div
+                class="closed-icon-custom"
+              >
+                <span
+                  aria-label="close"
+                  class="anticon anticon-close"
+                  data-testid="basic-drawer-close-icon"
+                  role="img"
+                >
+                  <svg
+                    aria-hidden="true"
+                    data-icon="close"
+                    fill="currentColor"
+                    fill-rule="evenodd"
+                    focusable="false"
+                    height="1em"
+                    viewBox="64 64 896 896"
+                    width="1em"
+                  >
+                    <path
+                      d="M799.86 166.31c.02 0 .04.02.08.06l57.69 57.7c.04.03.05.05.06.08a.12.12 0 010 .06c0 .03-.02.05-.06.09L569.93 512l287.7 287.7c.04.04.05.06.06.09a.12.12 0 010 .07c0 .02-.02.04-.06.08l-57.7 57.69c-.03.04-.05.05-.07.06a.12.12 0 01-.07 0c-.03 0-.05-.02-.09-.06L512 569.93l-287.7 287.7c-.04.04-.06.05-.09.06a.12.12 0 01-.07 0c-.02 0-.04-.02-.08-.06l-57.69-57.7c-.04-.03-.05-.05-.06-.07a.12.12 0 010-.07c0-.03.02-.05.06-.09L454.07 512l-287.7-287.7c-.04-.04-.05-.06-.06-.09a.12.12 0 010-.07c0-.02.02-.04.06-.08l57.7-57.69c.03-.04.05-.05.07-.06a.12.12 0 01.07 0c.03 0 .05.02.09.06L512 454.07l287.7-287.7c.04-.04.06-.05.09-.06a.12.12 0 01.07 0z"
+                    />
+                  </svg>
+                </span>
+              </div>
+              <form
+                class="ant-form ant-form-vertical"
+              >
+                <div
+                  class="ant-form-item"
+                >
+                  <div
+                    class="ant-row ant-form-item-row"
+                  >
+                    <div
+                      class="ant-col ant-form-item-label"
+                    >
+                      <label
+                        class="ant-form-item-required"
+                        for="environment"
+                        title="环境属性"
+                      >
+                        环境属性
+                      </label>
+                    </div>
+                    <div
+                      class="ant-col ant-form-item-control"
+                    >
+                      <div
+                        class="ant-form-item-control-input"
+                      >
+                        <div
+                          class="ant-form-item-control-input-content"
+                        >
+                          <div
+                            aria-required="true"
+                            class="ant-select ant-select-in-form-item basic-select-wrapper css-iy4o4x ant-select-single ant-select-show-arrow"
+                          >
+                            <div
+                              class="ant-select-selector"
+                            >
+                              <span
+                                class="ant-select-selection-search"
+                              >
+                                <input
+                                  aria-activedescendant="environment_list_0"
+                                  aria-autocomplete="list"
+                                  aria-controls="environment_list"
+                                  aria-expanded="false"
+                                  aria-haspopup="listbox"
+                                  aria-owns="environment_list"
+                                  aria-required="true"
+                                  autocomplete="off"
+                                  class="ant-select-selection-search-input"
+                                  id="environment"
+                                  readonly=""
+                                  role="combobox"
+                                  style="opacity: 0;"
+                                  type="search"
+                                  unselectable="on"
+                                  value=""
+                                />
+                              </span>
+                              <span
+                                class="ant-select-selection-placeholder"
+                              >
+                                请选择环境属性
+                              </span>
+                            </div>
+                            <span
+                              aria-hidden="true"
+                              class="ant-select-arrow"
+                              style="user-select: none;"
+                              unselectable="on"
+                            >
+                              <span
+                                aria-label="down"
+                                class="anticon anticon-down ant-select-suffix"
+                                role="img"
+                              >
+                                <svg
+                                  aria-hidden="true"
+                                  data-icon="down"
+                                  fill="currentColor"
+                                  focusable="false"
+                                  height="1em"
+                                  viewBox="64 64 896 896"
+                                  width="1em"
+                                >
+                                  <path
+                                    d="M884 256h-75c-5.1 0-9.9 2.5-12.9 6.6L512 654.2 227.9 262.6c-3-4.1-7.8-6.6-12.9-6.6h-75c-6.5 0-10.3 7.4-6.5 12.7l352.6 486.1c12.8 17.6 39 17.6 51.7 0l352.6-486.1c3.9-5.3.1-12.7-6.4-12.7z"
+                                  />
+                                </svg>
+                              </span>
+                            </span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="ant-form-item"
+                >
+                  <div
+                    class="ant-row ant-form-item-row"
+                  >
+                    <div
+                      class="ant-col ant-form-item-label"
+                    >
+                      <label
+                        class="ant-form-item-required"
+                        for="service"
+                        title="数据源"
+                      >
+                        数据源
+                      </label>
+                    </div>
+                    <div
+                      class="ant-col ant-form-item-control"
+                    >
+                      <div
+                        class="ant-form-item-control-input"
+                      >
+                        <div
+                          class="ant-form-item-control-input-content"
+                        >
+                          <div
+                            aria-required="true"
+                            class="ant-select ant-select-in-form-item basic-select-wrapper data-service-select css-iy4o4x ant-select-single ant-select-show-arrow"
+                          >
+                            <div
+                              class="ant-select-selector"
+                            >
+                              <span
+                                class="ant-select-selection-search"
+                              >
+                                <input
+                                  aria-activedescendant="service_list_0"
+                                  aria-autocomplete="list"
+                                  aria-controls="service_list"
+                                  aria-expanded="false"
+                                  aria-haspopup="listbox"
+                                  aria-owns="service_list"
+                                  aria-required="true"
+                                  autocomplete="off"
+                                  class="ant-select-selection-search-input"
+                                  id="service"
+                                  readonly=""
+                                  role="combobox"
+                                  style="opacity: 0;"
+                                  type="search"
+                                  unselectable="on"
+                                  value=""
+                                />
+                              </span>
+                              <span
+                                class="ant-select-selection-placeholder"
+                              >
+                                请选择数据源
+                              </span>
+                            </div>
+                            <span
+                              aria-hidden="true"
+                              class="ant-select-arrow"
+                              style="user-select: none;"
+                              unselectable="on"
+                            >
+                              <span
+                                aria-label="down"
+                                class="anticon anticon-down ant-select-suffix"
+                                role="img"
+                              >
+                                <svg
+                                  aria-hidden="true"
+                                  data-icon="down"
+                                  fill="currentColor"
+                                  focusable="false"
+                                  height="1em"
+                                  viewBox="64 64 896 896"
+                                  width="1em"
+                                >
+                                  <path
+                                    d="M884 256h-75c-5.1 0-9.9 2.5-12.9 6.6L512 654.2 227.9 262.6c-3-4.1-7.8-6.6-12.9-6.6h-75c-6.5 0-10.3 7.4-6.5 12.7l352.6 486.1c12.8 17.6 39 17.6 51.7 0l352.6-486.1c3.9-5.3.1-12.7-6.4-12.7z"
+                                  />
+                                </svg>
+                              </span>
+                            </span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="ant-form-item"
+                >
+                  <div
+                    class="ant-row ant-form-item-row"
+                  >
+                    <div
+                      class="ant-col ant-form-item-label"
+                    >
+                      <label
+                        class="ant-form-item-required"
+                        for="account"
+                        title=""
+                      >
+                        <div
+                          class="ant-space ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
+                        >
+                          <div
+                            class="ant-space-item"
+                            style="margin-right: 8px;"
+                          >
+                            数据库账户
+                          </div>
+                          <div
+                            class="ant-space-item"
+                          >
+                            <span
+                              aria-label="info-circle"
+                              class="anticon anticon-info-circle tooltips-default-icon"
+                              role="img"
+                            >
+                              <svg
+                                aria-hidden="true"
+                                data-icon="info-circle"
+                                fill="currentColor"
+                                focusable="false"
+                                height="1em"
+                                viewBox="64 64 896 896"
+                                width="1em"
+                              >
+                                <path
+                                  d="M512 64C264.6 64 64 264.6 64 512s200.6 448 448 448 448-200.6 448-448S759.4 64 512 64zm0 820c-205.4 0-372-166.6-372-372s166.6-372 372-372 372 166.6 372 372-166.6 372-372 372z"
+                                />
+                                <path
+                                  d="M464 336a48 48 0 1096 0 48 48 0 10-96 0zm72 112h-48c-4.4 0-8 3.6-8 8v272c0 4.4 3.6 8 8 8h48c4.4 0 8-3.6 8-8V456c0-4.4-3.6-8-8-8z"
+                                />
+                              </svg>
+                            </span>
+                          </div>
+                        </div>
+                      </label>
+                    </div>
+                    <div
+                      class="ant-col ant-form-item-control"
+                    >
+                      <div
+                        class="ant-form-item-control-input"
+                      >
+                        <div
+                          class="ant-form-item-control-input-content"
+                        >
+                          <div
+                            class="flex-space-between"
+                            hidden=""
+                          >
+                            <input
+                              class="ant-input ant-input-sm basic-input-wrapper css-1pd1cd5"
+                              placeholder="输入账号名进行搜索"
+                              style="width: 300px;"
+                              type="text"
+                              value=""
+                            />
+                            <button
+                              class="ant-btn ant-btn-default ant-btn-sm ant-btn-icon-only basic-button-wrapper css-geipcv"
+                              type="button"
+                            >
+                              <span
+                                class="ant-btn-icon"
+                              >
+                                <svg
+                                  class="custom-icon custom-icon-refresh"
+                                  height="14"
+                                  viewBox="0 0 14 14"
+                                  width="14"
+                                  xmlns="http://www.w3.org/2000/svg"
+                                >
+                                  <path
+                                    d="M3.187 2.586a5.833 5.833 0 0 1 8.59 7.762L9.918 7h1.75a4.667 4.667 0 0 0-7.899-3.367zm7.626 8.828a5.833 5.833 0 0 1-8.59-7.762L4.083 7h-1.75a4.667 4.667 0 0 0 7.899 3.367z"
+                                  />
+                                </svg>
+                              </span>
+                            </button>
+                          </div>
+                          <div
+                            class="ant-table-wrapper actiontech-table-namespace css-18y1mv6"
+                          >
+                            <div
+                              class="ant-spin-nested-loading"
+                            >
+                              <div
+                                class="ant-spin-container"
+                              >
+                                <div
+                                  class="ant-table ant-table-empty ant-table-fixed-header ant-table-fixed-column ant-table-scroll-horizontal ant-table-has-fix-left"
+                                >
+                                  <div
+                                    class="ant-table-container"
+                                  >
+                                    <div
+                                      class="ant-table-header"
+                                      style="overflow: hidden;"
+                                    >
+                                      <table
+                                        style="table-layout: fixed;"
+                                      >
+                                        <thead
+                                          class="ant-table-thead"
+                                        >
+                                          <tr>
+                                            <th
+                                              class="ant-table-cell ant-table-selection-column ant-table-cell-fix-left ant-table-cell-fix-left-last"
+                                              scope="col"
+                                              style="position: sticky; left: 0px;"
+                                            >
+                                              <div
+                                                class="ant-table-selection"
+                                              >
+                                                <label
+                                                  class="ant-checkbox-wrapper ant-checkbox-wrapper-disabled ant-checkbox-wrapper-in-form-item"
+                                                >
+                                                  <span
+                                                    class="ant-checkbox ant-checkbox-disabled"
+                                                  >
+                                                    <input
+                                                      aria-label="Select all"
+                                                      class="ant-checkbox-input"
+                                                      disabled=""
+                                                      type="checkbox"
+                                                    />
+                                                    <span
+                                                      class="ant-checkbox-inner"
+                                                    />
+                                                  </span>
+                                                </label>
+                                              </div>
+                                            </th>
+                                            <th
+                                              class="ant-table-cell"
+                                              scope="col"
+                                            >
+                                              账号
+                                            </th>
+                                            <th
+                                              class="ant-table-cell"
+                                              scope="col"
+                                            >
+                                              角色
+                                            </th>
+                                            <th
+                                              class="ant-table-cell"
+                                              scope="col"
+                                            >
+                                              权限
+                                            </th>
+                                          </tr>
+                                        </thead>
+                                      </table>
+                                    </div>
+                                    <div
+                                      class="ant-table-body"
+                                      style="overflow-x: auto; overflow-y: scroll; max-height: 540px;"
+                                    >
+                                      <table
+                                        style="min-width: 100%; table-layout: auto;"
+                                      >
+                                        <colgroup>
+                                          <col
+                                            class="ant-table-selection-col"
+                                          />
+                                          <col />
+                                          <col
+                                            style="width: 100px;"
+                                          />
+                                        </colgroup>
+                                        <tbody
+                                          class="ant-table-tbody"
+                                        >
+                                          <tr
+                                            aria-hidden="true"
+                                            class="ant-table-measure-row"
+                                            style="height: 0px; font-size: 0px;"
+                                          >
+                                            <td
+                                              style="padding: 0px; border: 0px; height: 0px;"
+                                            >
+                                              <div
+                                                style="height: 0px; overflow: hidden;"
+                                              >
+                                                 
+                                              </div>
+                                            </td>
+                                            <td
+                                              style="padding: 0px; border: 0px; height: 0px;"
+                                            >
+                                              <div
+                                                style="height: 0px; overflow: hidden;"
+                                              >
+                                                 
+                                              </div>
+                                            </td>
+                                            <td
+                                              style="padding: 0px; border: 0px; height: 0px;"
+                                            >
+                                              <div
+                                                style="height: 0px; overflow: hidden;"
+                                              >
+                                                 
+                                              </div>
+                                            </td>
+                                            <td
+                                              style="padding: 0px; border: 0px; height: 0px;"
+                                            >
+                                              <div
+                                                style="height: 0px; overflow: hidden;"
+                                              >
+                                                 
+                                              </div>
+                                            </td>
+                                          </tr>
+                                          <tr
+                                            class="ant-table-placeholder"
+                                          >
+                                            <td
+                                              class="ant-table-cell"
+                                              colspan="4"
+                                            >
+                                              <div
+                                                class="ant-table-expanded-row-fixed"
+                                                style="width: 0px; position: sticky; left: 0px; overflow: hidden;"
+                                              />
+                                            </td>
+                                          </tr>
+                                        </tbody>
+                                      </table>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </form>
+            </div>
+            <div
+              class="ant-drawer-footer"
+            >
+              <div
+                class="ant-space ant-space-horizontal ant-space-align-center"
+              >
+                <div
+                  class="ant-space-item"
+                  style="margin-right: 8px;"
+                >
+                  <button
+                    class="ant-btn ant-btn-default basic-button-wrapper css-geipcv"
+                    type="button"
+                  >
+                    <span>
+                      关 闭
+                    </span>
+                  </button>
+                </div>
+                <div
+                  class="ant-space-item"
+                >
+                  <button
+                    class="ant-btn ant-btn-primary basic-button-wrapper css-geipcv"
+                    type="button"
+                  >
+                    <span>
+                      同步账户
+                    </span>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        aria-hidden="true"
+        data-sentinel="end"
+        style="width: 0px; height: 0px; overflow: hidden; outline: none; position: absolute;"
+        tabindex="0"
+      />
+    </div>
+  </div>
+  <div
+    class="ant-message ant-message-top"
+    style="left: 50%; transform: translateX(-50%); top: 8px;"
+  >
+    <div
+      class="ant-message-notice ant-message-notice-success"
+    >
+      <div
+        class="ant-message-notice-content"
+      >
+        <div
+          class="ant-message-custom-content ant-message-success"
+        >
+          <span
+            aria-label="check-circle"
+            class="anticon anticon-check-circle"
+            role="img"
+          >
+            <svg
+              aria-hidden="true"
+              data-icon="check-circle"
+              fill="currentColor"
+              focusable="false"
+              height="1em"
+              viewBox="64 64 896 896"
+              width="1em"
+            >
+              <path
+                d="M512 64C264.6 64 64 264.6 64 512s200.6 448 448 448 448-200.6 448-448S759.4 64 512 64zm193.5 301.7l-210.6 292a31.8 31.8 0 01-51.7 0L318.5 484.9c-3.8-5.3 0-12.7 6.5-12.7h46.9c10.2 0 19.9 4.9 25.9 13.3l71.2 98.8 157.2-218c6-8.3 15.6-13.3 25.9-13.3H699c6.5 0 10.3 7.4 6.5 12.7z"
+              />
+            </svg>
+          </span>
+          <span>
+            同步账户成功
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+`;

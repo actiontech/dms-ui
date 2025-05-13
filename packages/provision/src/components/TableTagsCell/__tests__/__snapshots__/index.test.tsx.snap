@@ -1,0 +1,129 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`provision/components/TableTagsCell render init snap 1`] = `
+<body>
+  <div>
+    <div
+      class="css-bwn97z"
+    >
+      -
+    </div>
+  </div>
+</body>
+`;
+
+exports[`provision/components/TableTagsCell render tags when data source length greater than 4 1`] = `
+<body>
+  <div>
+    <div
+      class="css-bwn97z"
+    >
+      <span
+        class="ant-tag ant-tag-default pointer basic-tag-wrapper basic-default-tag-wrapper css-1mjwlcb"
+      >
+        123
+      </span>
+      <span
+        class="ant-tag ant-tag-default pointer basic-tag-wrapper basic-default-tag-wrapper css-1mjwlcb"
+      >
+        234
+      </span>
+      <span
+        class="ant-tag ant-tag-default pointer basic-tag-wrapper basic-default-tag-wrapper css-1mjwlcb"
+      >
+        a
+      </span>
+      <span
+        class="ant-tag ant-tag-default pointer basic-tag-wrapper basic-default-tag-wrapper css-1mjwlcb"
+      >
+        b
+      </span>
+      <div
+        class="ant-space ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
+      >
+        <div
+          class="ant-space-item"
+        >
+          <button
+            class="ant-btn ant-btn-default ant-btn-sm ant-btn-icon-only table-row-scan-types-more-button basic-button-wrapper css-geipcv"
+            type="button"
+          >
+            <span
+              class="ant-btn-icon"
+            >
+              <svg
+                height="16"
+                viewBox="0 0 16 16"
+                width="16"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M3.333 6.667C2.6 6.667 2 7.267 2 8s.6 1.333 1.333 1.333c.734 0 1.334-.6 1.334-1.333s-.6-1.333-1.334-1.333m9.334 0c-.734 0-1.334.6-1.334 1.333s.6 1.333 1.334 1.333C13.4 9.333 14 8.733 14 8s-.6-1.333-1.333-1.333M8 6.667c-.733 0-1.333.6-1.333 1.333S7.267 9.333 8 9.333 9.333 8.733 9.333 8 8.733 6.667 8 6.667"
+                  fill="#8A8F99"
+                />
+              </svg>
+            </span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`provision/components/TableTagsCell render tags when has data source 1`] = `
+<body>
+  <div>
+    <div
+      class="css-bwn97z"
+    >
+      <span
+        class="ant-tag ant-tag-default pointer basic-tag-wrapper basic-default-tag-wrapper css-1mjwlcb"
+      >
+        123
+      </span>
+      <span
+        class="ant-tag ant-tag-default pointer basic-tag-wrapper basic-default-tag-wrapper css-1mjwlcb"
+      >
+        234
+      </span>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`provision/components/TableTagsCell render tags when has tagLimit param 1`] = `
+<body>
+  <div>
+    <div
+      class="css-bwn97z"
+    >
+      <span
+        class="ant-tag ant-tag-default pointer basic-tag-wrapper basic-default-tag-wrapper css-1mjwlcb"
+      >
+        123
+      </span>
+      <span
+        class="ant-tag ant-tag-default pointer basic-tag-wrapper basic-default-tag-wrapper css-1mjwlcb"
+      >
+        234
+      </span>
+      <span
+        class="ant-tag ant-tag-default pointer basic-tag-wrapper basic-default-tag-wrapper css-1mjwlcb"
+      >
+        a
+      </span>
+      <span
+        class="ant-tag ant-tag-default pointer basic-tag-wrapper basic-default-tag-wrapper css-1mjwlcb"
+      >
+        b
+      </span>
+      <span
+        class="ant-tag ant-tag-default pointer basic-tag-wrapper basic-default-tag-wrapper css-1mjwlcb"
+      >
+        c
+      </span>
+    </div>
+  </div>
+</body>
+`;

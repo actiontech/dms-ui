@@ -221,6 +221,13 @@ exports[`base/router-base-ee render base route data snap 1`] = `
             "key": "cloudBeaver",
             "path": ":projectID/cloud-beaver",
           },
+          {
+            "element": <div>
+              dataMaskRuleOverview
+            </div>,
+            "key": "dataMaskRuleOverview",
+            "path": ":projectID/data-mask-rule-overview",
+          },
         ],
         "element": <div
           data-test-parent-id="projectDetail"
@@ -764,6 +771,95 @@ exports[`base/router-base-ee render base route data snap 1`] = `
         </div>,
         "key": "sqleProjectDetail",
         "path": "/sqle/project/*",
+      },
+      {
+        "children": [
+          {
+            "children": [
+              {
+                "element": <div>
+                  databaseAccountList
+                </div>,
+                "key": "databaseAccountList",
+                "path": "",
+              },
+              {
+                "element": <div>
+                  createDatabaseAccount
+                </div>,
+                "key": "createDatabaseAccount",
+                "path": "create",
+              },
+              {
+                "element": <div>
+                  updateDatabaseAccount
+                </div>,
+                "key": "updateDatabaseAccount",
+                "path": "update/:id",
+              },
+            ],
+            "element": <div
+              data-test-parent-id="databaseAccount"
+            >
+              <Outlet />
+            </div>,
+            "key": "databaseAccount",
+            "path": ":projectID/database-account",
+          },
+          {
+            "element": <div>
+              databaseAccountPassword
+            </div>,
+            "key": "databaseAccountPassword",
+            "path": ":projectID/database-account-password",
+          },
+          {
+            "children": [
+              {
+                "element": <div>
+                  databaseRoleList
+                </div>,
+                "key": "databaseRoleList",
+                "path": "",
+              },
+              {
+                "element": <div>
+                  createRole
+                </div>,
+                "key": "createRole",
+                "path": "create/:db_service_id",
+              },
+              {
+                "element": <div>
+                  updateRole
+                </div>,
+                "key": "updateRole",
+                "path": "update/:db_service_id/:role_id",
+              },
+            ],
+            "element": <div
+              data-test-parent-id="databaseRole"
+            >
+              <Outlet />
+            </div>,
+            "key": "databaseRole",
+            "path": ":projectID/database-role",
+          },
+          {
+            "element": <div>
+              null
+            </div>,
+            "key": "null",
+            "path": "*",
+          },
+        ],
+        "element": <div
+          data-test-parent-id="provision"
+        >
+          <Outlet />
+        </div>,
+        "key": "provision",
+        "path": "provision/project/*",
       },
     ],
     "element": <div
