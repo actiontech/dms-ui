@@ -134,7 +134,7 @@ const Rule = () => {
         >
           <RuleList
             enableCheckDetail
-            pageHeaderHeight={visible ? 170 : 0}
+            pageHeaderHeight={visible ? 60 : 0}
             rules={templateRulesWithStatus}
           />
         </EmptyBox>
