@@ -1,4 +1,4 @@
-import { superRender } from '../../testUtil/customRender';
+import { superRender } from '../../testUtil/superRender';
 import BasicButton from './BasicButton';
 import { BasicButtonProps } from './BasicButton.types';
 

@@ -14,7 +14,7 @@ import {
   createSpyFailResponse,
   createSpyErrorResponse
 } from '../../testUtil/mockApi';
-import { superRender } from '../../testUtil/customRender';
+import { superRender } from '../../testUtil/superRender';
 
 describe('useProjectBusinessTips', () => {
   let getProjectTipsSpy: jest.SpyInstance;

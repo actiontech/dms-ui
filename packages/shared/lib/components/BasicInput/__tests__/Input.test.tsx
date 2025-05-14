@@ -1,5 +1,5 @@
 import { fireEvent, screen } from '@testing-library/react';
-import { superRender } from '../../../testUtil/customRender';
+import { superRender } from '../../../testUtil/superRender';
 import { BasicInput } from '..';
 import { CloseOutlined } from '@actiontech/icons';
 

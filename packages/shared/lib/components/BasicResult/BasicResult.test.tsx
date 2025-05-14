@@ -1,4 +1,4 @@
-import { superRender } from '../../testUtil/customRender';
+import { superRender } from '../../testUtil/superRender';
 import BasicResult from './BasicResult';
 import { BasicResultProps } from './BasicResult.types';
 
