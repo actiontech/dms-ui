@@ -1,4 +1,4 @@
-import { superRender } from '../../testUtil/customRender';
+import { superRender } from '../../testUtil/superRender';
 import BasicSegmented from './BasicSegmented';
 import { BasicSegmentedProps } from './BasicSegmented.types';
 

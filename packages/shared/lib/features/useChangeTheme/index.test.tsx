@@ -1,4 +1,4 @@
-import { renderHooksWithRedux } from '../../testUtil/customRender';
+import { superRenderHook } from '../../testUtil/superRender';
 import { act } from '@testing-library/react';
 import { SupportTheme } from '../../enum';
 import useChangeTheme from '.';
@@ -6,10 +6,12 @@ import { mockUseCurrentUser } from '../../testUtil/mockHook/mockUseCurrentUser';
 
 describe('useChangeTheme', () => {
   const customRender = () => {
-    return renderHooksWithRedux(() => useChangeTheme(), {
-      user: {
-        theme: SupportTheme.LIGHT,
-        managementPermissions: []
+    return superRenderHook(() => useChangeTheme(), undefined, {
+      initStore: {
+        user: {
+          theme: SupportTheme.LIGHT,
+          managementPermissions: []
+        }
       }
     });
   };

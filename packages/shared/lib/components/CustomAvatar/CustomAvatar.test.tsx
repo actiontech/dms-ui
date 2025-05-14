@@ -1,4 +1,4 @@
-import { superRender } from '../../testUtil/customRender';
+import { superRender } from '../../testUtil/superRender';
 import CustomAvatar from './CustomAvatar';
 import { CustomAvatarProps } from './CustomAvatar.types';
 import { screen } from '@testing-library/react';

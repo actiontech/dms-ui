@@ -36,8 +36,10 @@ describe('useSessionUser', () => {
   });
 
   it('should get use data from request', async () => {
-    const { result } = superRenderHook(() => useSessionUser(), {
-      user: { uid: 'test' }
+    const { result } = superRenderHook(() => useSessionUser(), undefined, {
+      initStore: {
+        user: { uid: 'test' }
+      }
     });
     expect(result.current.getSessionUserLoading).toBeFalsy();
     expect(result.current.sessionUser).toEqual(undefined);

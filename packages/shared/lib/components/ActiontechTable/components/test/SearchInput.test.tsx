@@ -1,5 +1,5 @@
 import { fireEvent, act, cleanup } from '@testing-library/react';
-import { superRender } from '../../../../testUtil/customRender';
+import { superRender } from '../../../../testUtil/superRender';
 
 import { TableSearchInputProps } from '../../index.type';
 import SearchInput from '../SearchInput';

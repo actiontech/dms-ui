@@ -1,4 +1,4 @@
-import { superRender } from '../../../../testUtil/customRender';
+import { superRender } from '../../../../testUtil/superRender';
 import VersionComparison from '../VersionComparison';
 
 describe('shared/EnterpriseFeatureDisplay/VersionComparison', () => {

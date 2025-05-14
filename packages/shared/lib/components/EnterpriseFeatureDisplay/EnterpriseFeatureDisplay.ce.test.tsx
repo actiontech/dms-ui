@@ -3,7 +3,7 @@
  */
 
 import { screen } from '@testing-library/react';
-import { superRender } from '../../testUtil/customRender';
+import { superRender } from '../../testUtil/superRender';
 import EnterpriseFeatureDisplay from './EnterpriseFeatureDisplay';
 
 const children = <>ee version display</>;
