@@ -1,4 +1,4 @@
-import { renderWithReduxAndTheme } from '@actiontech/shared/lib/testUtil/customRender';
+import { superRender } from '@actiontech/shared/lib/testUtil/superRender';
 import UserCenter from '../index';
 import { screen, cleanup, fireEvent, act } from '@testing-library/react';
 import { getBySelector } from '@actiontech/shared/lib/testUtil/customQuery';
@@ -37,7 +37,7 @@ describe('base/UserCenter', () => {
   });
 
   it('should render user list when it first entered the user center', async () => {
-    const { baseElement } = renderWithReduxAndTheme(<UserCenter />);
+    const { baseElement } = superRender(<UserCenter />);
     await act(async () => jest.advanceTimersByTime(3000));
     expect(baseElement).toMatchSnapshot();
     expect(userListSpy).toHaveBeenCalledTimes(1);
@@ -63,7 +63,7 @@ describe('base/UserCenter', () => {
   });
 
   it('switch to role list', async () => {
-    const { baseElement } = renderWithReduxAndTheme(<UserCenter />);
+    const { baseElement } = superRender(<UserCenter />);
     await act(async () => jest.advanceTimersByTime(3000));
     expect(userListSpy).toHaveBeenCalledTimes(1);
     fireEvent.click(screen.getByText('角色列表'));
@@ -86,7 +86,7 @@ describe('base/UserCenter', () => {
   });
 
   it('switch to operate permission list', async () => {
-    const { baseElement } = renderWithReduxAndTheme(<UserCenter />);
+    const { baseElement } = superRender(<UserCenter />);
     await act(async () => jest.advanceTimersByTime(3000));
     expect(userListSpy).toHaveBeenCalledTimes(1);
     fireEvent.click(screen.getByText('操作权限列表'));
@@ -101,7 +101,7 @@ describe('base/UserCenter', () => {
   });
 
   it('should refresh table when click refresh icon', async () => {
-    const { baseElement } = renderWithReduxAndTheme(<UserCenter />);
+    const { baseElement } = superRender(<UserCenter />);
     expect(userListSpy).toHaveBeenCalledTimes(1);
 
     await act(async () => jest.advanceTimersByTime(3000));
@@ -151,7 +151,7 @@ describe('base/UserCenter', () => {
       }
     });
 
-    const { baseElement } = renderWithReduxAndTheme(<UserCenter />);
+    const { baseElement } = superRender(<UserCenter />);
     await act(async () => jest.advanceTimersByTime(3000));
     expect(screen.queryByText('添加用户')).not.toBeInTheDocument();
     expect(screen.queryByText('添加角色')).not.toBeInTheDocument();

@@ -1,5 +1,5 @@
 import UpdateUser from '.';
-import { renderWithReduxAndTheme } from '@actiontech/shared/lib/testUtil/customRender';
+import { superRender } from '@actiontech/shared/lib/testUtil/superRender';
 import userCenter from '../../../../../testUtils/mockApi/userCenter';
 import { userList } from '../../../../../testUtils/mockApi/userCenter/data';
 import EventEmitter from '../../../../../utils/EventEmitter';
@@ -43,7 +43,7 @@ describe('base/UserCenter/Modal/UpdateUser', () => {
 
   it('should send update user request when click submit button', async () => {
     const eventEmitSpy = jest.spyOn(EventEmitter, 'emit');
-    const { baseElement } = renderWithReduxAndTheme(<UpdateUser />);
+    const { baseElement } = superRender(<UpdateUser />);
     await act(async () => jest.advanceTimersByTime(3000));
     expect(baseElement).toMatchSnapshot();
     expect(opPermissionListSpy).toHaveBeenCalledTimes(1);
@@ -98,7 +98,7 @@ describe('base/UserCenter/Modal/UpdateUser', () => {
   });
 
   it('should update user password', async () => {
-    renderWithReduxAndTheme(<UpdateUser />);
+    superRender(<UpdateUser />);
     await act(async () => jest.advanceTimersByTime(3000));
     expect(screen.getByLabelText('是否需要更新密码')).not.toBeChecked();
     fireEvent.click(screen.getByLabelText('是否需要更新密码'));
@@ -141,7 +141,7 @@ describe('base/UserCenter/Modal/UpdateUser', () => {
         }
       })
     );
-    renderWithReduxAndTheme(<UpdateUser />);
+    superRender(<UpdateUser />);
     await act(async () => jest.advanceTimersByTime(3000));
     expect(screen.queryByLabelText('是否禁用')).not.toBeInTheDocument();
     fireEvent.input(screen.getByLabelText('邮箱'), {
@@ -154,7 +154,7 @@ describe('base/UserCenter/Modal/UpdateUser', () => {
   });
 
   it('should close modal when click close button', async () => {
-    const { baseElement } = renderWithReduxAndTheme(<UpdateUser />);
+    const { baseElement } = superRender(<UpdateUser />);
     fireEvent.click(queryBySelector('.closed-icon-custom', baseElement)!);
     await act(async () => jest.advanceTimersByTime(1000));
     expect(dispatchSpy).toHaveBeenCalledTimes(1);

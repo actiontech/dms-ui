@@ -2,7 +2,7 @@ import { act, cleanup, fireEvent, screen } from '@testing-library/react';
 import { useDispatch } from 'react-redux';
 import { useNavigate, useSearchParams } from 'react-router-dom';
 import MockDate from 'mockdate';
-import { superRender } from '../../testUtils/customRender';
+import { baseSuperRender } from '../../testUtils/superRender';
 import dms from '../../testUtils/mockApi/global';
 import {
   oauth2Tips,
@@ -54,7 +54,7 @@ describe('page/Login-ee', () => {
   ]);
 
   const customRender = (params = {}) => {
-    return superRender(<Login />, undefined, { initStore: params });
+    return baseSuperRender(<Login />, undefined, { initStore: params });
   };
 
   beforeEach(() => {
@@ -411,7 +411,7 @@ describe('page/Login-ee', () => {
       })
     );
 
-    superRender(<Login />);
+    baseSuperRender(<Login />);
     await act(async () => jest.advanceTimersByTime(3000));
 
     expect(screen.getByText('登 录').closest('button')).toBeDisabled();

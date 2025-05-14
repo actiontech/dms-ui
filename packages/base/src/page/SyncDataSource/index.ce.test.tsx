@@ -3,11 +3,11 @@
  */
 
 import SyncDataSource from '.';
-import { superRender } from '../../testUtils/customRender';
+import { baseSuperRender } from '../../testUtils/superRender';
 
 describe('base/page/SyncDataSource-ce', () => {
   it('render index page', () => {
-    const { baseElement } = superRender(<SyncDataSource />);
+    const { baseElement } = baseSuperRender(<SyncDataSource />);
 
     expect(baseElement).toMatchSnapshot();
   });

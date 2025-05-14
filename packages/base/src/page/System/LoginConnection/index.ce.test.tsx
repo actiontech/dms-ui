@@ -5,7 +5,7 @@
 import system from '../../../testUtils/mockApi/system';
 
 import { cleanup, act } from '@testing-library/react';
-import { superRender } from '@actiontech/shared/lib/testUtil/customRender';
+import { superRender } from '@actiontech/shared/lib/testUtil/superRender';
 import LoginConnection from '.';
 import { mockUseCurrentUser } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentUser';
 

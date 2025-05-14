@@ -5,7 +5,7 @@ import { ModalName } from '../../../../data/ModalName';
 import system from '../../../../testUtils/mockApi/system';
 
 import { cleanup, act, screen, fireEvent } from '@testing-library/react';
-import { renderWithTheme } from '@actiontech/shared/lib/testUtil/customRender';
+import { superRender } from '@actiontech/shared/lib/testUtil/superRender';
 import { getBySelector } from '@actiontech/shared/lib/testUtil/customQuery';
 
 import EventEmitter from '../../../../utils/EventEmitter';
@@ -23,7 +23,7 @@ describe('base/System/License/ImportLicenseModal', () => {
   let requestSetLicense: jest.SpyInstance;
   const modalStatusDispatch = jest.fn();
   const customRender = () => {
-    return renderWithTheme(<ImportLicenseModal />);
+    return superRender(<ImportLicenseModal />);
   };
 
   beforeEach(() => {

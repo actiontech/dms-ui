@@ -1,4 +1,4 @@
-import { renderWithTheme } from '@actiontech/shared/lib/testUtil/customRender';
+import { superRender } from '@actiontech/shared/lib/testUtil/superRender';
 import SystemBasicTitle, { SystemBasicTitleProps } from '.';
 import { mockUseCurrentUser } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentUser';
 import { cleanup } from '@testing-library/react';
@@ -15,7 +15,7 @@ describe('base/System/components/BasicTitle', () => {
   });
 
   const customRender = (params: SystemBasicTitleProps) => {
-    return renderWithTheme(<SystemBasicTitle {...params} />);
+    return superRender(<SystemBasicTitle {...params} />);
   };
 
   it('render title', () => {

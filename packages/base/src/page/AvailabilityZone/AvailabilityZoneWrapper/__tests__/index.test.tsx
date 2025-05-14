@@ -1,5 +1,5 @@
 import { cleanup, screen, act, fireEvent } from '@testing-library/react';
-import { renderWithReduxAndTheme } from '@actiontech/shared/lib/testUtil/customRender';
+import { superRender } from '@actiontech/shared/lib/testUtil/superRender';
 import AvailabilityZoneWrapper from '..';
 import { useLocation, Outlet, useNavigate } from 'react-router-dom';
 import { mockUseRecentlySelectedZone } from '../../../../testUtils/mockHooks/mockUseRecentlySelectedZone';
@@ -49,7 +49,7 @@ describe('base/AvailabilityZone/AvailabilityZoneWrapper', () => {
       availabilityZoneOptions: mockAvailabilityZoneOptions
     });
 
-    const { container } = renderWithReduxAndTheme(<AvailabilityZoneWrapper />);
+    const { container } = superRender(<AvailabilityZoneWrapper />);
 
     expect(screen.getByText('Outlet Content')).toBeInTheDocument();
     expect(container.querySelector('.ant-modal')).not.toBeInTheDocument();
@@ -61,7 +61,7 @@ describe('base/AvailabilityZone/AvailabilityZoneWrapper', () => {
       availabilityZoneOptions: mockAvailabilityZoneOptions
     });
 
-    renderWithReduxAndTheme(<AvailabilityZoneWrapper />);
+    superRender(<AvailabilityZoneWrapper />);
 
     expect(screen.getByText('选择可用区')).toBeInTheDocument();
     expect(
@@ -75,7 +75,7 @@ describe('base/AvailabilityZone/AvailabilityZoneWrapper', () => {
       availabilityZoneOptions: mockAvailabilityZoneOptions
     });
 
-    renderWithReduxAndTheme(<AvailabilityZoneWrapper />);
+    superRender(<AvailabilityZoneWrapper />);
 
     fireEvent.click(screen.getByText('取 消'));
 
@@ -90,7 +90,7 @@ describe('base/AvailabilityZone/AvailabilityZoneWrapper', () => {
       updateRecentlySelectedZone: updateRecentlySelectedZoneSpy,
       availabilityZoneOptions: mockAvailabilityZoneOptions
     });
-    renderWithReduxAndTheme(<AvailabilityZoneWrapper />);
+    superRender(<AvailabilityZoneWrapper />);
 
     const selectElement = screen.getByRole('combobox');
     fireEvent.mouseDown(selectElement);
@@ -118,7 +118,7 @@ describe('base/AvailabilityZone/AvailabilityZoneWrapper', () => {
       availabilityZoneOptions: mockAvailabilityZoneOptions
     });
 
-    renderWithReduxAndTheme(<AvailabilityZoneWrapper />);
+    superRender(<AvailabilityZoneWrapper />);
 
     expect(screen.getByText('选择可用区')).toBeInTheDocument();
   });
@@ -129,7 +129,7 @@ describe('base/AvailabilityZone/AvailabilityZoneWrapper', () => {
       availabilityZoneOptions: []
     });
 
-    renderWithReduxAndTheme(<AvailabilityZoneWrapper />);
+    superRender(<AvailabilityZoneWrapper />);
 
     expect(screen.getByText('Outlet Content')).toBeInTheDocument();
     expect(screen.queryByText('选择可用区')).not.toBeInTheDocument();

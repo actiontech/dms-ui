@@ -1,5 +1,5 @@
 import userCenter from '../../../../testUtils/mockApi/userCenter';
-import { renderWithReduxAndTheme } from '@actiontech/shared/lib/testUtil/customRender';
+import { superRender } from '@actiontech/shared/lib/testUtil/superRender';
 import { cleanup, act, fireEvent, screen } from '@testing-library/react';
 import { mockUseDbServiceDriver } from '@actiontech/shared/lib/testUtil/mockHook/mockUseDbServiceDriver';
 import dbServices from '../../../../testUtils/mockApi/dbServices';
@@ -24,7 +24,7 @@ describe('base/Member/Modal/AddMemberGroup', () => {
   });
 
   it('should match snap shot', async () => {
-    const { baseElement } = renderWithReduxAndTheme(
+    const { baseElement } = superRender(
       <Form>
         <RoleSelector projectID={mockProjectInfo.projectID} />
       </Form>
@@ -36,7 +36,7 @@ describe('base/Member/Modal/AddMemberGroup', () => {
   });
 
   it('should add fields when click add button', async () => {
-    const { baseElement } = renderWithReduxAndTheme(
+    const { baseElement } = superRender(
       <Form>
         <RoleSelector projectID={mockProjectInfo.projectID} />
       </Form>

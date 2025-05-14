@@ -4,7 +4,7 @@ import { getBySelector } from '@actiontech/shared/lib/testUtil/customQuery';
 import Oauth from '.';
 import { oauthConfig } from '../../../../testUtils/mockApi/system/data';
 import { mockUseCurrentUser } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentUser';
-import { superRender } from '@actiontech/shared/lib/testUtil/customRender';
+import { superRender } from '@actiontech/shared/lib/testUtil/superRender';
 import { createSpySuccessResponse } from '@actiontech/shared/lib/testUtil/mockApi';
 
 describe('base/System/LoginConnection/Oauth', () => {

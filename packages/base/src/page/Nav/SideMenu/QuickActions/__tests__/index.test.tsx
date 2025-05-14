@@ -1,7 +1,7 @@
 import { useNavigate, useLocation } from 'react-router-dom';
 import QuickActions from '..';
 import { act, fireEvent, cleanup } from '@testing-library/react';
-import { superRender } from '../../../../../testUtils/customRender';
+import { baseSuperRender } from '../../../../../testUtils/superRender';
 import {
   getAllBySelector,
   getBySelector,
@@ -49,7 +49,7 @@ describe('base/Nav/QuickActions', () => {
   });
 
   const customRender = () => {
-    return superRender(
+    return baseSuperRender(
       <QuickActions
         setSystemModuleRedDotsLoading={mockSetSystemModuleRedDotsLoading}
       />

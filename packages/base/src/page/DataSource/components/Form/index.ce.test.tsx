@@ -1,9 +1,9 @@
 /**
  * @test_version ce
  */
-import { superRender } from '../../../../testUtils/customRender';
+import { baseSuperRender } from '../../../../testUtils/superRender';
 import { cleanup, screen, act } from '@testing-library/react';
-import { renderHooksWithTheme } from '@actiontech/shared/lib/testUtil/customRender';
+import { superRenderHook } from '@actiontech/shared/lib/testUtil/superRender';
 import project from '../../../../testUtils/mockApi/project';
 import { Form } from 'antd';
 import { DataSourceFormField } from './index.type';
@@ -20,12 +20,12 @@ describe('page/DataSource/DataSourceForm CE', () => {
     isUpdate: boolean;
     defaultData?: IListDBServiceV2;
   }) => {
-    const { result } = renderHooksWithTheme(() =>
+    const { result } = superRenderHook(() =>
       Form.useForm<DataSourceFormField>()
     );
     const isUpdate = params?.isUpdate ?? false;
     const defaultData = params?.defaultData ?? {};
-    return superRender(
+    return baseSuperRender(
       <DataSourceForm
         form={result.current[0]}
         defaultData={defaultData}

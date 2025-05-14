@@ -1,7 +1,7 @@
 import { mockUseCurrentUser } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentUser';
 import { mockUseRecentlyOpenedProjects } from '../testUtils/mockUseRecentlyOpenedProjects';
 import project from '../../../../testUtils/mockApi/project';
-import { superRender } from '../../../../testUtils/customRender';
+import { baseSuperRender } from '../../../../testUtils/superRender';
 import SideMenu from '..';
 import eventEmitter from '../../../../utils/EventEmitter';
 import { act, fireEvent, screen } from '@testing-library/react';
@@ -87,7 +87,7 @@ describe('test Base/Nav/SideMenu/index', () => {
     jest.useRealTimers();
   });
   it('mount and unmount component', async () => {
-    const { baseElement, unmount } = superRender(<SideMenu />);
+    const { baseElement, unmount } = baseSuperRender(<SideMenu />);
     expect(baseElement).toMatchSnapshot();
     expect(getProjectsSpy).toHaveBeenCalledTimes(1);
     expect(getSystemModuleRedDotsSpy).toHaveBeenCalledTimes(1);
@@ -127,7 +127,7 @@ describe('test Base/Nav/SideMenu/index', () => {
   });
 
   it('Click on the menu of the project selector', async () => {
-    const { baseElement } = superRender(<SideMenu />);
+    const { baseElement } = baseSuperRender(<SideMenu />);
     await act(async () => jest.advanceTimersByTime(3000));
     fireEvent.mouseDown(getBySelector('.ant-select-selector'), baseElement);
     await act(async () => jest.advanceTimersByTime(300));
@@ -143,7 +143,7 @@ describe('test Base/Nav/SideMenu/index', () => {
     mockUseRecentlySelectedZone({
       verifyRecentlySelectedZoneRecord: verifyRecentlySelectedZoneRecordSpy
     });
-    superRender(<SideMenu />);
+    baseSuperRender(<SideMenu />);
     await act(async () => jest.advanceTimersByTime(3000));
     expect(getGatewayTipsSpy).toHaveBeenCalledTimes(1);
     expect(dispatchSpy).toHaveBeenCalledWith({

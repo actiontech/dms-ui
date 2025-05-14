@@ -1,5 +1,5 @@
 import userCenter from '../../../../../testUtils/mockApi/userCenter';
-import { renderWithReduxAndTheme } from '@actiontech/shared/lib/testUtil/customRender';
+import { superRender } from '@actiontech/shared/lib/testUtil/superRender';
 import { cleanup, fireEvent, act, screen } from '@testing-library/react';
 import { ModalName } from '../../../../../data/ModalName';
 import UpdateMember from '../UpdateMember';
@@ -52,7 +52,7 @@ describe('base/Member/Modal/UpdateMember', () => {
 
   it('should send update member request when click submit button', async () => {
     const eventEmitSpy = jest.spyOn(EventEmitter, 'emit');
-    const { baseElement } = renderWithReduxAndTheme(<UpdateMember />);
+    const { baseElement } = superRender(<UpdateMember />);
     await act(async () => jest.advanceTimersByTime(3000));
     expect(listUsersSpy).toHaveBeenCalledTimes(1);
     expect(litDBServices).toHaveBeenCalledTimes(1);
@@ -104,7 +104,7 @@ describe('base/Member/Modal/UpdateMember', () => {
   });
 
   it('should close modal when click close button', async () => {
-    const { baseElement } = renderWithReduxAndTheme(<UpdateMember />);
+    const { baseElement } = superRender(<UpdateMember />);
     fireEvent.click(queryBySelector('.closed-icon-custom', baseElement)!);
     await act(async () => jest.advanceTimersByTime(1000));
     expect(dispatchSpy).toHaveBeenCalledTimes(1);

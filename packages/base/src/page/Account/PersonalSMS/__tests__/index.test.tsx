@@ -6,7 +6,7 @@ import { createSpySuccessResponse } from '@actiontech/shared/lib/testUtil/mockAp
 import { mockUseCurrentUser } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentUser';
 import { mockUserInfo } from '@actiontech/shared/lib/testUtil/mockHook/data';
 import account from '../../../../testUtils/mockApi/account';
-import { superRender } from '../../../../testUtils/customRender';
+import { baseSuperRender } from '../../../../testUtils/superRender';
 
 describe('base/System/GlobalSetting/PersonalSMS', () => {
   let updateCurrentUserSpy: jest.SpyInstance;
@@ -17,7 +17,7 @@ describe('base/System/GlobalSetting/PersonalSMS', () => {
     phone = mockUserInfo.userInfo.phone,
     enabled = true
   }) => {
-    return superRender(
+    return baseSuperRender(
       <PersonalSMS
         userBaseInfo={{
           ...mockUserInfo.userInfo,

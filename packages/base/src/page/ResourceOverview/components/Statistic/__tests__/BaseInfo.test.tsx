@@ -1,4 +1,4 @@
-import { superRender } from '../../../../../testUtils/customRender';
+import { baseSuperRender } from '../../../../../testUtils/superRender';
 import ResourceOverviewBaseInfo from '../BaseInfo';
 import resourceOverview from '../../../../../testUtils/mockApi/resourceOverview';
 import { cleanup, act } from '@testing-library/react';
@@ -19,14 +19,14 @@ describe('base/page/ResourceOverview/Statictis/BaseInfo', () => {
   });
 
   it('render init snap', async () => {
-    const { container } = superRender(<ResourceOverviewBaseInfo />);
+    const { container } = baseSuperRender(<ResourceOverviewBaseInfo />);
     await act(async () => jest.advanceTimersByTime(3000));
     expect(container).toMatchSnapshot();
     expect(getResourceOverviewStatisticsV1Spy).toHaveBeenCalledTimes(1);
   });
 
   it('should refresh statictis data when emit Refresh_Resource_Overview_Page event', async () => {
-    superRender(<ResourceOverviewBaseInfo />);
+    baseSuperRender(<ResourceOverviewBaseInfo />);
     await act(async () => jest.advanceTimersByTime(3000));
     expect(getResourceOverviewStatisticsV1Spy).toHaveBeenCalledTimes(1);
     await act(async () => {

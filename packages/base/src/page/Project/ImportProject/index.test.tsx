@@ -1,6 +1,6 @@
 import project from '../../../testUtils/mockApi/project';
 import { mockPreviewImportProjects } from '../../../testUtils/mockApi/project/data';
-import { superRender } from '../../../testUtils/customRender';
+import { baseSuperRender } from '../../../testUtils/superRender';
 import ProjectImport from '.';
 import { act, cleanup, fireEvent, screen } from '@testing-library/react';
 import { useNavigate } from 'react-router-dom';
@@ -39,7 +39,7 @@ describe('base/Project/Import', () => {
   });
 
   test('render return to list page', async () => {
-    const { baseElement } = superRender(<ProjectImport />);
+    const { baseElement } = baseSuperRender(<ProjectImport />);
     await act(async () => jest.advanceTimersByTime(300));
     expect(baseElement).toMatchSnapshot();
     expect(screen.getByText('导入项目及业务')).toBeInTheDocument();
@@ -47,7 +47,7 @@ describe('base/Project/Import', () => {
   });
 
   test('render download project template', async () => {
-    superRender(<ProjectImport />);
+    baseSuperRender(<ProjectImport />);
     await act(async () => {
       fireEvent.click(screen.getByText('下载导入模板'));
       await jest.advanceTimersByTime(100);
@@ -63,7 +63,7 @@ describe('base/Project/Import', () => {
   });
 
   test('render delete file', async () => {
-    const { baseElement } = superRender(<ProjectImport />);
+    const { baseElement } = baseSuperRender(<ProjectImport />);
     await act(async () => jest.advanceTimersByTime(300));
     const file = new File([''], 'test.csv');
     fireEvent.change(getBySelector('#projectFile', baseElement), {
@@ -93,7 +93,7 @@ describe('base/Project/Import', () => {
         data: mockData
       })
     );
-    const { baseElement } = superRender(<ProjectImport />);
+    const { baseElement } = baseSuperRender(<ProjectImport />);
     await act(async () => jest.advanceTimersByTime(300));
     const file = new File([''], 'test.csv');
     fireEvent.change(getBySelector('#projectFile', baseElement), {
@@ -114,7 +114,7 @@ describe('base/Project/Import', () => {
     previewImportProjectsSpy.mockImplementation(() =>
       createSpyErrorResponse({})
     );
-    const { baseElement } = superRender(<ProjectImport />);
+    const { baseElement } = baseSuperRender(<ProjectImport />);
     await act(async () => jest.advanceTimersByTime(300));
     const file = new File([''], 'test.csv');
     fireEvent.change(getBySelector('#projectFile', baseElement), {
@@ -131,7 +131,7 @@ describe('base/Project/Import', () => {
   });
 
   test('render upload file', async () => {
-    const { baseElement } = superRender(<ProjectImport />);
+    const { baseElement } = baseSuperRender(<ProjectImport />);
     await act(async () => jest.advanceTimersByTime(300));
     const file = new File([''], 'test.csv');
     fireEvent.change(getBySelector('#projectFile', baseElement), {

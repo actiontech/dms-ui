@@ -1,6 +1,6 @@
 import { act, fireEvent, screen, waitFor } from '@testing-library/react';
 import ExportDetail from '..';
-import { superRender } from '../../../../../../testUtils/customRender';
+import { baseSuperRender } from '../../../../../../testUtils/superRender';
 import dataExport from '../../../../../../testUtils/mockApi/dataExport';
 import {
   mockDataExportDetailRedux,
@@ -28,7 +28,7 @@ describe('test base/DataExport/Detail/ExportDetail', () => {
   it('should match snapshot', async () => {
     mockUseDataExportDetailReduxManage();
 
-    const { container } = superRender(<ExportDetail />);
+    const { container } = baseSuperRender(<ExportDetail />);
     expect(container).toMatchSnapshot();
 
     expect(getDataExportTaskSQLs).toHaveBeenCalledTimes(1);
@@ -51,7 +51,7 @@ describe('test base/DataExport/Detail/ExportDetail', () => {
   it('should match snapshot when curTaskID is undefined', async () => {
     mockUseDataExportDetailReduxManage({ curTaskID: undefined });
 
-    const { container } = superRender(<ExportDetail />);
+    const { container } = baseSuperRender(<ExportDetail />);
     expect(container).toMatchSnapshot();
     expect(screen.getByText('下载SQL语句').closest('button')).toHaveAttribute(
       'hidden'
@@ -70,7 +70,7 @@ describe('test base/DataExport/Detail/ExportDetail', () => {
 
   it('should render download sql button when  curTaskID is not undefined', async () => {
     mockUseDataExportDetailReduxManage();
-    superRender(<ExportDetail />);
+    baseSuperRender(<ExportDetail />);
 
     expect(
       screen.getByText('下载SQL语句').closest('button')

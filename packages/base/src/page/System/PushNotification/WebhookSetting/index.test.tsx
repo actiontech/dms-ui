@@ -1,6 +1,6 @@
 import system from '../../../../testUtils/mockApi/system';
 import { cleanup, fireEvent, act, screen } from '@testing-library/react';
-import { superRender } from '@actiontech/shared/lib/testUtil/customRender';
+import { superRender } from '@actiontech/shared/lib/testUtil/superRender';
 import { getBySelector } from '@actiontech/shared/lib/testUtil/customQuery';
 import { DEFAULT_CONSTANT } from './index.data';
 import WebHook from '.';

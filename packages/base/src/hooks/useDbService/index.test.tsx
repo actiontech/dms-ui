@@ -13,7 +13,7 @@ import {
   createSpyErrorResponse,
   createSpyFailResponse
 } from '@actiontech/shared/lib/testUtil/mockApi';
-import { renderHooksWithRedux } from '@actiontech/shared/lib/testUtil/customRender';
+import { superRenderHook } from '@actiontech/shared/lib/testUtil/superRender';
 import { ListDBServiceTipsFunctionalModuleEnum } from '@actiontech/shared/lib/api/base/service/DBService/index.enum';
 
 const projectID = '7200';
@@ -31,7 +31,7 @@ describe('useDbService', () => {
   });
 
   it('should get dbService data from request', async () => {
-    const { result } = renderHooksWithRedux(() => useDbService(), {});
+    const { result } = superRenderHook(() => useDbService(), {});
     expect(result.current.loading).toBeFalsy();
     expect(result.current.dbServiceList).toEqual([]);
     act(() =>
@@ -58,7 +58,7 @@ describe('useDbService', () => {
     listDbServicesSpy.mockImplementation(() =>
       createSpyFailResponse({ total: 0, users: [] })
     );
-    const { result } = renderHooksWithRedux(() => useDbService(), {});
+    const { result } = superRenderHook(() => useDbService(), {});
     act(() => {
       result.current.updateDbServiceList({ project_uid: projectID });
     });
@@ -71,7 +71,7 @@ describe('useDbService', () => {
     listDbServicesSpy.mockImplementation(() =>
       createSpyErrorResponse({ total: 0, users: [] })
     );
-    const { result } = renderHooksWithRedux(() => useDbService(), {});
+    const { result } = superRenderHook(() => useDbService(), {});
     act(() => {
       result.current.updateDbServiceList({ project_uid: projectID });
     });
@@ -80,7 +80,7 @@ describe('useDbService', () => {
   });
 
   it('should render options when use generateDbServiceIDSelectOptions', async () => {
-    const { result } = renderHooksWithRedux(() => useDbService(), {});
+    const { result } = superRenderHook(() => useDbService(), {});
 
     act(() => {
       result.current.updateDbServiceList({ project_uid: projectID });
@@ -108,7 +108,7 @@ describe('useDbService', () => {
   });
 
   it('should render options when use generateDbServiceSelectOptions', async () => {
-    const { result } = renderHooksWithRedux(() => useDbService(), {});
+    const { result } = superRenderHook(() => useDbService(), {});
 
     act(() => {
       result.current.updateDbServiceList({ project_uid: projectID });

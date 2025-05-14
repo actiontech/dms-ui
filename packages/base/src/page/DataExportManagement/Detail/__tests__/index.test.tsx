@@ -4,7 +4,7 @@ import {
   mockDataExportDetailRedux,
   mockUseDataExportDetailReduxManage
 } from '../testUtils/mockUseDataExportDetailReduxManage';
-import { superRender } from '../../../../testUtils/customRender';
+import { baseSuperRender } from '../../../../testUtils/superRender';
 import WorkflowDetail from '..';
 import { act, fireEvent, screen } from '@testing-library/react';
 import { GetDataExportWorkflowResponseData } from '../../../../testUtils/mockApi/dataExport/data';
@@ -40,7 +40,7 @@ describe('test base/DataExport/Detail', () => {
   });
 
   it('should match snapshot', async () => {
-    const { baseElement } = superRender(<WorkflowDetail />);
+    const { baseElement } = baseSuperRender(<WorkflowDetail />);
     expect(baseElement).toMatchSnapshot();
 
     await act(async () => jest.advanceTimersByTime(3000));
@@ -80,7 +80,7 @@ describe('test base/DataExport/Detail', () => {
     };
     mockUseDataExportDetailReduxManage({ workflowInfo: rejectWorkflowData });
 
-    const { baseElement } = superRender(<WorkflowDetail />);
+    const { baseElement } = baseSuperRender(<WorkflowDetail />);
     await act(async () => jest.advanceTimersByTime(3000));
     await act(async () => jest.advanceTimersByTime(3000));
     expect(baseElement).toMatchSnapshot();
@@ -92,7 +92,7 @@ describe('test base/DataExport/Detail', () => {
   });
 
   it('should executed clearAllDetailState when unmount component', () => {
-    const { unmount } = superRender(<WorkflowDetail />);
+    const { unmount } = baseSuperRender(<WorkflowDetail />);
     unmount();
     expect(mockDataExportDetailRedux.clearAllDetailState).toHaveBeenCalledTimes(
       1

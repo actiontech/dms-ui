@@ -3,7 +3,7 @@ import ConfigExtraButtons, {
 } from './ConfigExtraButtons';
 
 import { cleanup, fireEvent, act, screen } from '@testing-library/react';
-import { renderWithTheme } from '@actiontech/shared/lib/testUtil/customRender';
+import { superRender } from '@actiontech/shared/lib/testUtil/superRender';
 import {
   getBySelector,
   getAllBySelector
@@ -19,7 +19,7 @@ describe('base/System/PushNotification/Wechat/ConfigExtraButtons', () => {
   const customRender = (
     params: Omit<typeConfigExtraButtons, 'handleClickModify'>
   ) => {
-    return renderWithTheme(
+    return superRender(
       <ConfigExtraButtons {...params} handleClickModify={handleClickModifyFn} />
     );
   };

@@ -1,6 +1,6 @@
 import { act, cleanup, fireEvent, screen } from '@testing-library/react';
 import { useNavigate, useParams } from 'react-router-dom';
-import { superRender } from '../../../../testUtils/customRender';
+import { baseSuperRender } from '../../../../testUtils/superRender';
 import {
   getAllBySelector,
   getBySelector
@@ -29,7 +29,7 @@ describe('page/DataSource/DataSourceList', () => {
   let CheckProjectDBServicesConnectionsSpy: jest.SpyInstance;
 
   const customRender = (params = {}) => {
-    return superRender(<DataSourceList />, undefined, {
+    return baseSuperRender(<DataSourceList />, undefined, {
       initStore: {
         user: {
           username: 'admin',

@@ -1,5 +1,5 @@
 import { cleanup, screen, act, fireEvent } from '@testing-library/react';
-import { renderWithReduxAndTheme } from '@actiontech/shared/lib/testUtil/customRender';
+import { superRender } from '@actiontech/shared/lib/testUtil/superRender';
 import MemberList from '../MemberList';
 import { queryBySelector } from '@actiontech/shared/lib/testUtil/customQuery';
 import member from '../../../../testUtils/mockApi/member';
@@ -47,7 +47,7 @@ describe('base/MemberList', () => {
   });
 
   it('render member table', async () => {
-    const { baseElement } = renderWithReduxAndTheme(
+    const { baseElement } = superRender(
       <MemberList activePage={MemberListTypeEnum.member_list} />
     );
     await act(async () => jest.advanceTimersByTime(3000));
@@ -69,7 +69,7 @@ describe('base/MemberList', () => {
     memberListSpy.mockImplementation(() =>
       createSpyErrorResponse({ data: [] })
     );
-    const { baseElement } = renderWithReduxAndTheme(
+    const { baseElement } = superRender(
       <MemberList activePage={MemberListTypeEnum.member_list} />
     );
     await act(async () => jest.advanceTimersByTime(3000));
@@ -87,9 +87,7 @@ describe('base/MemberList', () => {
         [SystemRole.globalManager]: false
       }
     }));
-    renderWithReduxAndTheme(
-      <MemberList activePage={MemberListTypeEnum.member_list} />
-    );
+    superRender(<MemberList activePage={MemberListTypeEnum.member_list} />);
     await act(async () => jest.advanceTimersByTime(3000));
     expect(screen.queryAllByText('删 除')).toHaveLength(0);
     expect(screen.queryAllByText('编 辑')).toHaveLength(0);
@@ -111,9 +109,7 @@ describe('base/MemberList', () => {
         }
       ]
     }));
-    renderWithReduxAndTheme(
-      <MemberList activePage={MemberListTypeEnum.member_list} />
-    );
+    superRender(<MemberList activePage={MemberListTypeEnum.member_list} />);
     await act(async () => jest.advanceTimersByTime(3000));
     expect(screen.queryAllByText('删 除')).toHaveLength(4);
     expect(screen.queryAllByText('编 辑')).toHaveLength(4);
@@ -141,9 +137,7 @@ describe('base/MemberList', () => {
   });
 
   it('should refresh member table when emit "DMS_Refresh_Member_List" event', async () => {
-    renderWithReduxAndTheme(
-      <MemberList activePage={MemberListTypeEnum.member_list} />
-    );
+    superRender(<MemberList activePage={MemberListTypeEnum.member_list} />);
     await act(async () => jest.advanceTimersByTime(3000));
     expect(memberListSpy).toHaveBeenCalledTimes(1);
     await act(async () =>
@@ -162,9 +156,7 @@ describe('base/MemberList', () => {
     );
     const userName = memberList[1].user.name;
     const deleteUserSpy = member.deleteMember();
-    renderWithReduxAndTheme(
-      <MemberList activePage={MemberListTypeEnum.member_list} />
-    );
+    superRender(<MemberList activePage={MemberListTypeEnum.member_list} />);
     await act(async () => jest.advanceTimersByTime(3000));
     expect(memberListSpy).toHaveBeenCalledTimes(1);
     fireEvent.click(screen.getByText('删 除'));
@@ -188,9 +180,7 @@ describe('base/MemberList', () => {
         data: [memberList[0]]
       })
     );
-    renderWithReduxAndTheme(
-      <MemberList activePage={MemberListTypeEnum.member_list} />
-    );
+    superRender(<MemberList activePage={MemberListTypeEnum.member_list} />);
     await act(async () => jest.advanceTimersByTime(3000));
     expect(memberListSpy).toHaveBeenCalledTimes(1);
     fireEvent.click(screen.getByText('编 辑'));

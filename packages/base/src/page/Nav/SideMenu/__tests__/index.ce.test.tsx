@@ -4,7 +4,7 @@
 
 import { mockUseCurrentUser } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentUser';
 import { mockUsePermission } from '@actiontech/shared/lib/testUtil/mockHook/mockUsePermission';
-import { superRender } from '../../../../testUtils/customRender';
+import { baseSuperRender } from '../../../../testUtils/superRender';
 import { mockSystemConfig } from '../../../../testUtils/mockHooks/mockSystemConfig';
 import CESideMenu from '../index.ce';
 import { act } from '@testing-library/react';
@@ -28,7 +28,7 @@ describe('test base/Nav/SideMenu/index.ce', () => {
     jest.clearAllTimers();
   });
   it('should match snapshot', async () => {
-    const { container } = superRender(<CESideMenu />);
+    const { container } = baseSuperRender(<CESideMenu />);
     await act(async () => jest.advanceTimersByTime(0));
     expect(container).toMatchSnapshot();
     expect(getSystemModuleRedDotsSpy).toHaveBeenCalledTimes(1);

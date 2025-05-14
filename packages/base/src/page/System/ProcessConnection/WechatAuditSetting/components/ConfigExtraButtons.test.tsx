@@ -2,7 +2,7 @@ import ConfigExtraButtons, {
   ConfigExtraButtonsProps
 } from './ConfigExtraButtons';
 import { cleanup, fireEvent, act, screen } from '@testing-library/react';
-import { renderWithTheme } from '@actiontech/shared/lib/testUtil/customRender';
+import { superRender } from '@actiontech/shared/lib/testUtil/superRender';
 import {
   getAllBySelector,
   getBySelector
@@ -17,7 +17,7 @@ describe('base/System/ProcessConnection/WechatAuditSetting/ConfigExtraButtons', 
   const customRender = (
     params: Omit<ConfigExtraButtonsProps, 'handleClickModify'>
   ) => {
-    return renderWithTheme(
+    return superRender(
       <ConfigExtraButtons {...params} handleClickModify={handleClickModifyFn} />
     );
   };

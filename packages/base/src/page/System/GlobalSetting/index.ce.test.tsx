@@ -4,7 +4,7 @@
 import GlobalSetting from '.';
 import system from '../../../testUtils/mockApi/system';
 import { cleanup, act } from '@testing-library/react';
-import { superRender } from '@actiontech/shared/lib/testUtil/customRender';
+import { superRender } from '@actiontech/shared/lib/testUtil/superRender';
 import { mockUseCurrentUser } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentUser';
 
 describe('base/System/GlobalSetting ce', () => {

@@ -1,6 +1,6 @@
 import { act, cleanup, fireEvent, screen } from '@testing-library/react';
 import Router, { useNavigate } from 'react-router-dom';
-import { superRender } from '../../../../testUtils/customRender';
+import { baseSuperRender } from '../../../../testUtils/superRender';
 import {
   getBySelector,
   getAllBySelector
@@ -37,7 +37,7 @@ describe('page/DataSource/UpdateDataSource', () => {
   let listEnvironmentTagsSpy: jest.SpyInstance;
   let getSystemModuleStatusSpy: jest.SpyInstance;
   const customRender = () => {
-    return superRender(<UpdateDataSource />, undefined, {
+    return baseSuperRender(<UpdateDataSource />, undefined, {
       routerProps: {
         initialEntries: [`/project/${projectID}/db-services/update/${uId}`]
       }

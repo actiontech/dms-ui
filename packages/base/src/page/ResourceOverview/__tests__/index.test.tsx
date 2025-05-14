@@ -1,4 +1,4 @@
-import { superRender } from '../../../testUtils/customRender';
+import { baseSuperRender } from '../../../testUtils/superRender';
 import ResourceOverview from '../index';
 import resourceOverview from '../../../testUtils/mockApi/resourceOverview';
 import { mockUseCurrentUser } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentUser';
@@ -26,7 +26,7 @@ describe('base/page/ResourceOverview', () => {
   });
 
   it('render init snap', async () => {
-    const { container } = superRender(<ResourceOverview />);
+    const { container } = baseSuperRender(<ResourceOverview />);
     await act(async () => {
       jest.advanceTimersByTime(3000);
     });
@@ -35,7 +35,7 @@ describe('base/page/ResourceOverview', () => {
 
   it('should emit Refresh_Resource_Overview_Page event when click refresh button', async () => {
     const emitSpy = jest.spyOn(EventEmitter, 'emit');
-    superRender(<ResourceOverview />);
+    baseSuperRender(<ResourceOverview />);
     await act(async () => {
       jest.advanceTimersByTime(3000);
     });

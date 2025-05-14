@@ -7,7 +7,7 @@ import { act, cleanup, fireEvent, screen } from '@testing-library/react';
 import { createSpySuccessResponse } from '@actiontech/shared/lib/testUtil/mockApi';
 import { enableSqlQueryUrlData } from '../../testUtils/mockApi/cloudBeaver/data';
 import { OPEN_CLOUD_BEAVER_URL_PARAM_NAME } from '@actiontech/shared/lib/data/routePaths';
-import { superRender } from '../../testUtils/customRender';
+import { baseSuperRender } from '../../testUtils/superRender';
 
 describe('test base/page/CloudBeaver', () => {
   let getSqlQueryUrlSpy: jest.SpyInstance;
@@ -23,7 +23,7 @@ describe('test base/page/CloudBeaver', () => {
   });
 
   it('should match snapshot when sql query is disabled', async () => {
-    const { container } = superRender(<CloudBeaver />);
+    const { container } = baseSuperRender(<CloudBeaver />);
 
     expect(container).toMatchSnapshot();
     expect(getSqlQueryUrlSpy).toHaveBeenCalledTimes(1);
@@ -40,7 +40,7 @@ describe('test base/page/CloudBeaver', () => {
       })
     );
 
-    const { container } = superRender(<CloudBeaver />);
+    const { container } = baseSuperRender(<CloudBeaver />);
 
     await act(async () => jest.advanceTimersByTime(3000));
 
@@ -57,7 +57,7 @@ describe('test base/page/CloudBeaver', () => {
   it('should auto jump to cloud beaver when "OPEN_CLOUD_BEAVER_URL_PARAM_NAME" in location search', async () => {
     global.open = jest.fn();
 
-    superRender(<CloudBeaver />, undefined, {
+    baseSuperRender(<CloudBeaver />, undefined, {
       routerProps: {
         initialEntries: [
           `/cloudBeaver?${OPEN_CLOUD_BEAVER_URL_PARAM_NAME}=true`
@@ -76,7 +76,7 @@ describe('test base/page/CloudBeaver', () => {
         data: enableSqlQueryUrlData
       })
     );
-    superRender(<CloudBeaver />, undefined, {
+    baseSuperRender(<CloudBeaver />, undefined, {
       routerProps: {
         initialEntries: [
           `/cloudBeaver?${OPEN_CLOUD_BEAVER_URL_PARAM_NAME}=true`

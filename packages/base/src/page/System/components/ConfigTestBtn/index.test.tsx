@@ -1,5 +1,5 @@
 import { cleanup, fireEvent, act, screen } from '@testing-library/react';
-import { renderWithTheme } from '@actiontech/shared/lib/testUtil/customRender';
+import { superRender } from '@actiontech/shared/lib/testUtil/superRender';
 import ConfigTestBtn from '.';
 import { getBySelector } from '@actiontech/shared/lib/testUtil/customQuery';
 
@@ -8,7 +8,7 @@ describe('base/System/components/ConfigTestBtn', () => {
   const testingRef = jest.fn();
 
   const customRender = (popoverOpen = false) => {
-    return renderWithTheme(
+    return superRender(
       <ConfigTestBtn
         popoverOpen={popoverOpen}
         onPopoverOpenChange={onPopoverOpenChangeFn}

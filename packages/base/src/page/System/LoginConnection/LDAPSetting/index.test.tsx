@@ -5,7 +5,7 @@ import {
   getBySelector
 } from '@actiontech/shared/lib/testUtil/customQuery';
 import { mockUseCurrentUser } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentUser';
-import { superRender } from '@actiontech/shared/lib/testUtil/customRender';
+import { superRender } from '@actiontech/shared/lib/testUtil/superRender';
 import LDAPSetting from '.';
 
 describe('base/System/LoginConnection/LDAPSetting', () => {

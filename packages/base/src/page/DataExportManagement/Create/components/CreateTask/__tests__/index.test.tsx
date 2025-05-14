@@ -7,7 +7,7 @@ import {
 } from '@testing-library/react';
 import { mockUseCreateDataExportReduxManage } from '../../../testUtils/mockUseCreateDataExportReduxManage';
 import { mockUseCreateExportTaskForm } from '../../../testUtils/mockUseCreateExportTaskForm';
-import { superRender } from '../../../../../../testUtils/customRender';
+import { baseSuperRender } from '../../../../../../testUtils/superRender';
 import CreateExportTask from '..';
 import { useForm } from 'antd/es/form/Form';
 import {
@@ -42,7 +42,7 @@ describe('test base/DataExport/Create/CreateExportTask', () => {
       ...mockCreateExportTaskForm
     });
 
-    return superRender(<CreateExportTask />);
+    return baseSuperRender(<CreateExportTask />);
   };
 
   beforeEach(() => {

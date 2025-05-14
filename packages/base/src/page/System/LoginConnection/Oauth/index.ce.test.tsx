@@ -3,14 +3,14 @@
  */
 
 import { cleanup, act } from '@testing-library/react';
-import { renderWithTheme } from '@actiontech/shared/lib/testUtil/customRender';
+import { superRender } from '@actiontech/shared/lib/testUtil/superRender';
 
 import Oauth from '.';
 import { mockUseCurrentUser } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentUser';
 
 describe('base/System/LoginConnection/Oauth-ce', () => {
   const customRender = () => {
-    return renderWithTheme(<Oauth />);
+    return superRender(<Oauth />);
   };
 
   beforeEach(() => {

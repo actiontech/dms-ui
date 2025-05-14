@@ -2,7 +2,7 @@ import ProjectSelector from '..';
 import { ProjectSelectorProps } from '../index.type';
 
 import { act, cleanup, fireEvent, screen } from '@testing-library/react';
-import { superRender } from '../../../../../testUtils/customRender';
+import { baseSuperRender } from '../../../../../testUtils/superRender';
 import { getBySelector } from '@actiontech/shared/lib/testUtil/customQuery';
 import {
   ignoreConsoleErrors,
@@ -44,7 +44,7 @@ describe('base/page/Nav/SideMenu/ProjectSelector', () => {
     options: ProjectSelectorProps['options'] = [],
     value: ProjectSelectorProps['value'] = ''
   ) => {
-    return superRender(
+    return baseSuperRender(
       <ProjectSelector
         value={value}
         prefix={<span>prefix node</span>}

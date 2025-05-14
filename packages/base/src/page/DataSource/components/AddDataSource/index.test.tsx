@@ -1,6 +1,6 @@
 import { act, cleanup, fireEvent, screen } from '@testing-library/react';
 import { useNavigate } from 'react-router-dom';
-import { superRender } from '../../../../testUtils/customRender';
+import { baseSuperRender } from '../../../../testUtils/superRender';
 import {
   getAllBySelector,
   getBySelector
@@ -32,7 +32,7 @@ describe('page/DataSource/AddDataSource', () => {
   let getSystemModuleStatusSpy: jest.SpyInstance;
 
   const customRender = () => {
-    return superRender(<AddDataSource />);
+    return baseSuperRender(<AddDataSource />);
   };
 
   beforeEach(() => {
