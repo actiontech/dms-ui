@@ -41,7 +41,7 @@ export const integerValidate = (value: string): boolean => {
 };
 
 export const formatTime = (
-  timeVal?: string | Date,
+  timeVal?: string | Date | Dayjs,
   defaultVal = ''
 ): string => {
   if (!timeVal) {

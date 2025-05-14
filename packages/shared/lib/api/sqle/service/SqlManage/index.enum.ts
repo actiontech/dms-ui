@@ -102,6 +102,22 @@ export enum exportSqlManageV1SortOrderEnum {
   'desc' = 'desc'
 }
 
+export enum GetSqlManageSqlPerformanceInsightsMetricNameEnum {
+  'comprehensive_trend' = 'comprehensive_trend',
+
+  'slow_sql_trend' = 'slow_sql_trend',
+
+  'top_sql_trend' = 'top_sql_trend',
+
+  'active_session_trend' = 'active_session_trend'
+}
+
+export enum GetSqlManageSqlPerformanceInsightsRelatedSQLFilterSourceEnum {
+  'order' = 'order',
+
+  'sql_manage' = 'sql_manage'
+}
+
 export enum GetSqlManageListV2FilterSourceEnum {
   'audit_plan' = 'audit_plan',
 

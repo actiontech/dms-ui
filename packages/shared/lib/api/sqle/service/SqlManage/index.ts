@@ -26,6 +26,12 @@ import {
   IGetSqlManageSqlAnalysisV1Return,
   IGetSqlManageSqlAnalysisChartV1Params,
   IGetSqlManageSqlAnalysisChartV1Return,
+  IGetSqlManageSqlPerformanceInsightsParams,
+  IGetSqlManageSqlPerformanceInsightsReturn,
+  IGetSqlManageSqlPerformanceInsightsRelatedSQLParams,
+  IGetSqlManageSqlPerformanceInsightsRelatedSQLReturn,
+  IGetSqlManageSqlPerformanceInsightsRelatedTransactionParams,
+  IGetSqlManageSqlPerformanceInsightsRelatedTransactionReturn,
   IGetSqlManageListV2Params,
   IGetSqlManageListV2Return,
   IExportSqlManageV2Params,
@@ -179,6 +185,51 @@ class SqlManageService extends ServiceBase {
 
     return this.get<IGetSqlManageSqlAnalysisChartV1Return>(
       `/v1/projects/${project_name}/sql_manages/${sql_manage_id}/sql_analysis_chart`,
+      paramsData,
+      options
+    );
+  }
+
+  public GetSqlManageSqlPerformanceInsights(
+    params: IGetSqlManageSqlPerformanceInsightsParams,
+    options?: AxiosRequestConfig
+  ) {
+    const paramsData = this.cloneDeep(params);
+    const project_name = paramsData.project_name;
+    delete paramsData.project_name;
+
+    return this.get<IGetSqlManageSqlPerformanceInsightsReturn>(
+      `/v1/projects/${project_name}/sql_performance_insights`,
+      paramsData,
+      options
+    );
+  }
+
+  public GetSqlManageSqlPerformanceInsightsRelatedSQL(
+    params: IGetSqlManageSqlPerformanceInsightsRelatedSQLParams,
+    options?: AxiosRequestConfig
+  ) {
+    const paramsData = this.cloneDeep(params);
+    const project_name = paramsData.project_name;
+    delete paramsData.project_name;
+
+    return this.get<IGetSqlManageSqlPerformanceInsightsRelatedSQLReturn>(
+      `/v1/projects/${project_name}/sql_performance_insights/related_sql`,
+      paramsData,
+      options
+    );
+  }
+
+  public GetSqlManageSqlPerformanceInsightsRelatedTransaction(
+    params: IGetSqlManageSqlPerformanceInsightsRelatedTransactionParams,
+    options?: AxiosRequestConfig
+  ) {
+    const paramsData = this.cloneDeep(params);
+    const project_name = paramsData.project_name;
+    delete paramsData.project_name;
+
+    return this.get<IGetSqlManageSqlPerformanceInsightsRelatedTransactionReturn>(
+      `/v1/projects/${project_name}/sql_performance_insights/related_sql/related_transaction`,
       paramsData,
       options
     );
