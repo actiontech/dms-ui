@@ -1,5 +1,5 @@
 import { cleanup, act } from '@testing-library/react';
-import { renderWithTheme } from '../../../../../../testUtils/customRender';
+import { sqleSuperRender } from '../../../../../../testUtils/superRender';
 
 import statistic from '../../../../../../testUtils/mockApi/statistic';
 import {
@@ -12,7 +12,7 @@ import { mockUseCurrentUser } from '@actiontech/shared/lib/testUtil/mockHook/moc
 
 describe('ReportStatistics/topList/SqlOnLineSpendTime', () => {
   const customRender = () => {
-    return renderWithTheme(<SqlOnLineSpendTime />);
+    return sqleSuperRender(<SqlOnLineSpendTime />);
   };
 
   beforeEach(() => {

@@ -1,4 +1,4 @@
-import { superRender } from '../../../../testUtils/customRender';
+import { sqleSuperRender } from '../../../../testUtils/superRender';
 import DataSourceCount from '.';
 import projectOverview from '../../../../testUtils/mockApi/projectOverview';
 import { act, cleanup, fireEvent, screen } from '@testing-library/react';
@@ -48,7 +48,7 @@ describe('page/ProjectOverview/DataSourceCount', () => {
   });
 
   const customRender = () => {
-    return superRender(<DataSourceCount />);
+    return sqleSuperRender(<DataSourceCount />);
   };
 
   it('render data source count and check more data', async () => {
@@ -120,11 +120,11 @@ describe('page/ProjectOverview/DataSourceCount', () => {
 
   it('test ToolTipCustomContent', () => {
     expect(
-      superRender(<ToolTipCustomContent dataSource={[]} />).container
+      sqleSuperRender(<ToolTipCustomContent dataSource={[]} />).container
     ).toMatchSnapshot();
 
     expect(
-      superRender(
+      sqleSuperRender(
         <ToolTipCustomContent
           dataSource={[
             { data: { value: '33', category: DBHealthEnum.health } },

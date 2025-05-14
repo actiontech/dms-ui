@@ -1,7 +1,7 @@
 import MockDate from 'mockdate';
 import { mockUseCurrentProject } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentProject';
 import PushRuleConfiguration from '.';
-import { superRender } from '../../testUtils/customRender';
+import { sqleSuperRender } from '../../testUtils/superRender';
 import MockReportPushConfigService from '../../testUtils/mockApi/reportPushConfigService';
 import { mockUseCurrentUser } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentUser';
 import { mockProjectInfo } from '@actiontech/shared/lib/testUtil/mockHook/data';
@@ -33,7 +33,7 @@ describe('test PushRuleConfiguration', () => {
     MockDate.reset();
   });
   it('should match snapshot', async () => {
-    const { container } = superRender(<PushRuleConfiguration />);
+    const { container } = sqleSuperRender(<PushRuleConfiguration />);
     expect(mockGetReportPushConfigList).toHaveBeenCalledTimes(1);
     expect(mockGetReportPushConfigList).toHaveBeenCalledWith({
       project_name: mockProjectInfo.projectName

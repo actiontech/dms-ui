@@ -3,7 +3,7 @@
  */
 
 import { cleanup } from '@testing-library/react';
-import { renderWithTheme } from '../../testUtils/customRender';
+import { sqleSuperRender } from '../../testUtils/superRender';
 import { mockThemeStyleData } from '../../testUtils/mockHooks/mockThemeStyleData';
 
 import ReportStatistics from '.';
@@ -21,7 +21,7 @@ describe('sqle/ReportStatistics CE', () => {
   });
 
   it('should match snap shot', async () => {
-    const { baseElement } = renderWithTheme(<ReportStatistics />);
+    const { baseElement } = sqleSuperRender(<ReportStatistics />);
     expect(baseElement).toMatchSnapshot();
   });
 });

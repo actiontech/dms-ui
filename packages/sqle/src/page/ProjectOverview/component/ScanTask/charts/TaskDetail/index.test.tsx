@@ -1,4 +1,4 @@
-import { superRender } from '../../../../../../testUtils/customRender';
+import { sqleSuperRender } from '../../../../../../testUtils/superRender';
 import TaskDetail, { ITaskDetail } from '.';
 import { act, cleanup, fireEvent, screen } from '@testing-library/react';
 import { mockUseCurrentProject } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentProject';
@@ -59,7 +59,7 @@ describe('page/ProjectOverview/TaskDetail', () => {
   });
 
   const customRender = (data?: ITaskDetail) => {
-    return superRender(<TaskDetail {...taskDetailProps} {...data} />);
+    return sqleSuperRender(<TaskDetail {...taskDetailProps} {...data} />);
   };
 
   it('render task detail', async () => {

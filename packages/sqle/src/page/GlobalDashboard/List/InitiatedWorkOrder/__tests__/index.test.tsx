@@ -3,7 +3,7 @@ import { mockUseCurrentProject } from '@actiontech/shared/lib/testUtil/mockHook/
 import { mockUseCurrentUser } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentUser';
 import { mockCurrentUserReturn } from '@actiontech/shared/lib/testUtil/mockHook/data';
 import workflow from '../../../../../testUtils/mockApi/execWorkflow';
-import { superRender } from '../../../../../testUtils/customRender';
+import { sqleSuperRender } from '../../../../../testUtils/superRender';
 import InitiatedWorkOrder from '../index';
 import { GlobalDashboardFilterType } from '../../../index.type';
 import { getGlobalWorkflowsV1FilterStatusListEnum } from '@actiontech/shared/lib/api/sqle/service/workflow/index.enum';
@@ -41,7 +41,7 @@ describe('sqle/GlobalDashboard/InitiatedWorkOrder', () => {
   });
 
   const customRender = (filterValues: GlobalDashboardFilterType = {}) => {
-    return superRender(
+    return sqleSuperRender(
       <InitiatedWorkOrder
         filterValues={filterValues}
         updateFilterValue={updateFilterValueFn}

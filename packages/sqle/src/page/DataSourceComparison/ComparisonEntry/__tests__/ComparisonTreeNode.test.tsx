@@ -1,5 +1,5 @@
 import { act, fireEvent, renderHook, screen } from '@testing-library/react';
-import { superRender } from '../../../../testUtils/customRender';
+import { sqleSuperRender } from '../../../../testUtils/superRender';
 import ComparisonDetailDrawer from '../component/ComparisonTreeNode/ComparisonDetailDrawer';
 import useComparisonResultTree from '../hooks/useComparisonResultTree';
 import {
@@ -46,7 +46,7 @@ describe('ComparisonTreeNode', () => {
         'baseline-name',
         'comparison-name'
       );
-      return superRender(
+      return sqleSuperRender(
         <ComparisonDetailDrawer
           open={open}
           onClose={onCloseSpy}
@@ -234,7 +234,7 @@ describe('ComparisonTreeNode', () => {
     const comparisonObjectTreeOnCheckSpy = jest.fn();
     const setTreeExpandedKeysSpy = jest.fn();
     const customRender = () => {
-      return superRender(
+      return sqleSuperRender(
         <ComparisonTreeNode
           comparisonResults={executeDatabaseComparisonMockData}
           selectedBaselineInstanceInfo={{

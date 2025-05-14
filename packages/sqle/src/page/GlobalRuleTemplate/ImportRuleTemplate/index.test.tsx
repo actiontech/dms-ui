@@ -4,7 +4,7 @@ import { mockUseDbServiceDriver } from '@actiontech/shared/lib/testUtil/mockHook
 import { act, cleanup, fireEvent, screen } from '@testing-library/react';
 import { useNavigate } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
-import { renderWithReduxAndTheme } from '@actiontech/shared/lib/testUtil/customRender';
+import { superRender } from '@actiontech/shared/lib/testUtil/superRender';
 import ImportRuleTemplate from '.';
 import { RuleManagerSegmentedKey } from '../../RuleManager/index.type';
 import {
@@ -92,7 +92,7 @@ describe('sqle/GlobalRuleTemplate/ImportRuleTemplate', () => {
   });
 
   it('reset form values', async () => {
-    const { baseElement } = renderWithReduxAndTheme(<ImportRuleTemplate />);
+    const { baseElement } = superRender(<ImportRuleTemplate />);
     expect(baseElement).toMatchSnapshot();
     expect(screen.getByText('导 入').closest('button')).toBeDisabled();
     const file = new File([''], 'test.csv');
@@ -148,7 +148,7 @@ describe('sqle/GlobalRuleTemplate/ImportRuleTemplate', () => {
   });
 
   it('import global rule template', async () => {
-    const { baseElement } = renderWithReduxAndTheme(<ImportRuleTemplate />);
+    const { baseElement } = superRender(<ImportRuleTemplate />);
     const file = new File([''], 'test.json');
     fireEvent.change(getBySelector('#ruleTemplateFile', baseElement), {
       target: { files: [file] }
@@ -224,7 +224,7 @@ describe('sqle/GlobalRuleTemplate/ImportRuleTemplate', () => {
   });
 
   it('rule list action', async () => {
-    const { baseElement } = renderWithReduxAndTheme(<ImportRuleTemplate />);
+    const { baseElement } = superRender(<ImportRuleTemplate />);
     const file = new File([''], 'test.json');
     fireEvent.change(getBySelector('#ruleTemplateFile', baseElement), {
       target: { files: [file] }
@@ -315,7 +315,7 @@ describe('sqle/GlobalRuleTemplate/ImportRuleTemplate', () => {
       });
     });
 
-    const { baseElement } = renderWithReduxAndTheme(<ImportRuleTemplate />);
+    const { baseElement } = superRender(<ImportRuleTemplate />);
     await act(async () => jest.advanceTimersByTime(300));
     const file = new File([''], 'test.csv');
     fireEvent.change(getBySelector('#ruleTemplateFile', baseElement), {
@@ -359,7 +359,7 @@ describe('sqle/GlobalRuleTemplate/ImportRuleTemplate', () => {
       });
     });
 
-    const { baseElement } = renderWithReduxAndTheme(<ImportRuleTemplate />);
+    const { baseElement } = superRender(<ImportRuleTemplate />);
     await act(async () => jest.advanceTimersByTime(300));
     const file = new File([''], 'test.csv');
     fireEvent.change(getBySelector('#ruleTemplateFile', baseElement), {
@@ -373,7 +373,7 @@ describe('sqle/GlobalRuleTemplate/ImportRuleTemplate', () => {
   });
 
   it('rule list action', async () => {
-    const { baseElement } = renderWithReduxAndTheme(<ImportRuleTemplate />);
+    const { baseElement } = superRender(<ImportRuleTemplate />);
     const file = new File([''], 'test.json');
     fireEvent.change(getBySelector('#ruleTemplateFile', baseElement), {
       target: { files: [file] }

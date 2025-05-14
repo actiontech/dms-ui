@@ -1,5 +1,5 @@
 import { cleanup, act } from '@testing-library/react';
-import { renderHooksWithTheme } from '@actiontech/shared/lib/testUtil/customRender';
+import { superRenderHook } from '@actiontech/shared/lib/testUtil/superRender';
 import useCreateRuleTemplateForm from '../useCreateRuleTemplateForm';
 import rule_template from '../../../testUtils/mockApi/rule_template';
 
@@ -16,7 +16,7 @@ describe('sqle/hooks/useRuleTemplateForm/useCreateRuleTemplateForm', () => {
   });
 
   it('init state', async () => {
-    const { result } = renderHooksWithTheme(useCreateRuleTemplateForm);
+    const { result } = superRenderHook(useCreateRuleTemplateForm);
     expect(result.current.getAllRulesLoading).toEqual(false);
     await act(async () => jest.advanceTimersByTime(3000));
     expect(getRulesSpy).toHaveBeenCalledTimes(0);
@@ -29,7 +29,7 @@ describe('sqle/hooks/useRuleTemplateForm/useCreateRuleTemplateForm', () => {
   });
 
   it('loading status control', async () => {
-    const { result } = renderHooksWithTheme(useCreateRuleTemplateForm);
+    const { result } = superRenderHook(useCreateRuleTemplateForm);
 
     await act(async () => {
       result.current.startSubmit();

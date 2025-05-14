@@ -1,5 +1,5 @@
 import { cleanup, act } from '@testing-library/react';
-import { renderWithThemeAndRedux } from '../../../../../../testUtils/customRender';
+import { sqleSuperRender } from '../../../../../../testUtils/superRender';
 
 import statistic from '../../../../../../testUtils/mockApi/statistic';
 import {
@@ -17,7 +17,7 @@ describe('ReportStatistics/WorkOrderState', () => {
   ]);
   let requestPlotsData: jest.SpyInstance;
   const customRender = () => {
-    return renderWithThemeAndRedux(<WorkOrderState />);
+    return sqleSuperRender(<WorkOrderState />);
   };
 
   beforeEach(() => {

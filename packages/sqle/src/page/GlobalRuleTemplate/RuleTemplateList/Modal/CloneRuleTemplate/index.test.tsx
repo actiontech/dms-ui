@@ -1,4 +1,4 @@
-import { renderWithReduxAndTheme } from '@actiontech/shared/lib/testUtil/customRender';
+import { superRender } from '@actiontech/shared/lib/testUtil/superRender';
 import { cleanup, fireEvent, act, screen } from '@testing-library/react';
 import { ModalName } from '../../../../../data/ModalName';
 import CloneRuleTemplate from '.';
@@ -9,7 +9,6 @@ import { mockUseCurrentProject } from '@actiontech/shared/lib/testUtil/mockHook/
 import { useDispatch, useSelector } from 'react-redux';
 import rule_template from '../../../../../testUtils/mockApi/rule_template';
 import { publicRuleTemplateListMockData } from '../../../../../testUtils/mockApi/rule_template/data';
-import { BrowserRouter } from 'react-router-dom';
 
 jest.mock('react-redux', () => ({
   ...jest.requireActual('react-redux'),
@@ -41,12 +40,7 @@ describe('sqle/GlobalRuleTemplate/CloneRuleTemplate', () => {
     cleanup();
   });
 
-  const customRender = () =>
-    renderWithReduxAndTheme(
-      <BrowserRouter>
-        <CloneRuleTemplate />
-      </BrowserRouter>
-    );
+  const customRender = () => superRender(<CloneRuleTemplate />);
 
   it('should send clone project rule template request when click submit button', async () => {
     const eventEmitSpy = jest.spyOn(EventEmitter, 'emit');

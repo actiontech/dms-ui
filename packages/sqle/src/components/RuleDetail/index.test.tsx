@@ -2,7 +2,7 @@ import RuleDetail from '.';
 import { useNavigate, useParams } from 'react-router-dom';
 import { act, cleanup, fireEvent, screen } from '@testing-library/react';
 import rule_template from '../../testUtils/mockApi/rule_template';
-import { renderWithTheme } from '../../testUtils/customRender';
+import { sqleSuperRender } from '../../testUtils/superRender';
 import { mockUseCurrentProject } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentProject';
 import {
   createSpyFailResponse,
@@ -31,7 +31,7 @@ describe('sqle/components/RuleDetail', () => {
   const useParamsMock: jest.Mock = useParams as jest.Mock;
 
   const customRender = () => {
-    return renderWithTheme(<RuleDetail />);
+    return sqleSuperRender(<RuleDetail />);
   };
 
   const mockRouteParams = {

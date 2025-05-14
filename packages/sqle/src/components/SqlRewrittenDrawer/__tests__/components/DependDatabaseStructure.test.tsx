@@ -1,5 +1,5 @@
 import { RewriteSuggestionTypeEnum } from '@actiontech/shared/lib/api/sqle/service/common.enum';
-import { superRender } from '../../../../testUtils/customRender';
+import { sqleSuperRender } from '../../../../testUtils/superRender';
 import { SqlRewrittenMockDataNoDDL } from '../../../../testUtils/mockApi/task/data';
 import DependDatabaseStructure from '../../components/DependDatabaseStructure';
 import { fireEvent, screen } from '@testing-library/dom';
@@ -13,7 +13,7 @@ describe('DependDatabaseStructure', () => {
   it('should render alert message with enable button', () => {
     const toggleEnableStructureOptimizeActionMock = jest.fn();
 
-    superRender(
+    sqleSuperRender(
       <DependDatabaseStructure
         dataSource={mockDataSource}
         toggleEnableStructureOptimizeAction={
@@ -33,7 +33,7 @@ describe('DependDatabaseStructure', () => {
   it('should call toggleEnableStructureOptimizeAction when enable button is clicked', () => {
     const toggleEnableStructureOptimizeActionMock = jest.fn();
 
-    superRender(
+    sqleSuperRender(
       <DependDatabaseStructure
         dataSource={mockDataSource}
         toggleEnableStructureOptimizeAction={
@@ -51,7 +51,7 @@ describe('DependDatabaseStructure', () => {
   });
 
   it('should render list items when dataSource has items', () => {
-    superRender(
+    sqleSuperRender(
       <DependDatabaseStructure
         dataSource={mockDataSource}
         toggleEnableStructureOptimizeAction={() => {}}
@@ -64,7 +64,7 @@ describe('DependDatabaseStructure', () => {
   });
 
   it('should render empty content when dataSource is empty', () => {
-    superRender(
+    sqleSuperRender(
       <DependDatabaseStructure
         dataSource={[]}
         toggleEnableStructureOptimizeAction={() => {}}

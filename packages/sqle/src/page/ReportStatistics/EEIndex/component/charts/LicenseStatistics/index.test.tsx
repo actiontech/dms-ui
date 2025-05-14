@@ -1,5 +1,5 @@
 import { cleanup, act } from '@testing-library/react';
-import { renderWithThemeAndRedux } from '../../../../../../testUtils/customRender';
+import { sqleSuperRender } from '../../../../../../testUtils/superRender';
 
 import statistic from '../../../../../../testUtils/mockApi/statistic';
 import {
@@ -20,7 +20,7 @@ describe('ReportStatistics/LicenseStatistics', () => {
   ]);
   let requestPlotsData: jest.SpyInstance;
   const customRender = () => {
-    return renderWithThemeAndRedux(<LicenseStatistics />);
+    return sqleSuperRender(<LicenseStatistics />);
   };
 
   beforeEach(() => {

@@ -1,6 +1,6 @@
 import { act, cleanup, fireEvent, screen } from '@testing-library/react';
 import PluginAuditList from '.';
-import { superRender } from '../../../testUtils/customRender';
+import { sqleSuperRender } from '../../../testUtils/superRender';
 import { mockUseCurrentProject } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentProject';
 import { mockUseCurrentUser } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentUser';
 import { useDispatch, useSelector } from 'react-redux';
@@ -68,7 +68,7 @@ describe('sqle/PluginAudit/List', () => {
   });
 
   it('render table data', async () => {
-    const { baseElement } = superRender(<PluginAuditList />);
+    const { baseElement } = sqleSuperRender(<PluginAuditList />);
     expect(getSqlDEVRecordListSpy).toHaveBeenCalled();
     expect(getUserTipListSpy).toHaveBeenCalled();
     expect(getInstanceTipListSpy).toHaveBeenCalled();
@@ -81,7 +81,7 @@ describe('sqle/PluginAudit/List', () => {
     getSqlDEVRecordListSpy.mockImplementation(() =>
       createSpySuccessResponse({ data: [] })
     );
-    const { baseElement } = superRender(<PluginAuditList />);
+    const { baseElement } = sqleSuperRender(<PluginAuditList />);
     expect(getSqlDEVRecordListSpy).toHaveBeenCalled();
     await act(async () => jest.advanceTimersByTime(3000));
     expect(baseElement).toMatchSnapshot();
@@ -92,14 +92,14 @@ describe('sqle/PluginAudit/List', () => {
     getSqlDEVRecordListSpy.mockImplementation(() =>
       createSpyFailResponse({ data: [] })
     );
-    const { baseElement } = superRender(<PluginAuditList />);
+    const { baseElement } = sqleSuperRender(<PluginAuditList />);
     expect(getSqlDEVRecordListSpy).toHaveBeenCalled();
     await act(async () => jest.advanceTimersByTime(3000));
     expect(baseElement).toMatchSnapshot();
   });
 
   it('filter data with search', async () => {
-    superRender(<PluginAuditList />);
+    sqleSuperRender(<PluginAuditList />);
     expect(getSqlDEVRecordListSpy).toHaveBeenCalled();
     const searchText = 'search text';
     const inputEle = getBySelector('#actiontech-table-search-input');
@@ -129,7 +129,7 @@ describe('sqle/PluginAudit/List', () => {
     getSqlDEVRecordListSpy.mockImplementation(() =>
       createSpySuccessResponse({ data: [sqlDEVRecordListMockData[0]] })
     );
-    const { baseElement } = superRender(<PluginAuditList />);
+    const { baseElement } = sqleSuperRender(<PluginAuditList />);
     expect(getSqlDEVRecordListSpy).toHaveBeenCalled();
     await act(async () => jest.advanceTimersByTime(3000));
     expect(screen.getAllByText('SELECT').length).toBe(2);
@@ -156,7 +156,7 @@ describe('sqle/PluginAudit/List', () => {
     getSqlDEVRecordListSpy.mockImplementation(() =>
       createSpySuccessResponse({ data: [sqlDEVRecordListMockData[0]] })
     );
-    superRender(<PluginAuditList />);
+    sqleSuperRender(<PluginAuditList />);
     expect(getSqlDEVRecordListSpy).toHaveBeenCalled();
     await act(async () => jest.advanceTimersByTime(3000));
     expect(screen.getAllByText('SELECT').length).toBe(2);
@@ -182,7 +182,7 @@ describe('sqle/PluginAudit/List', () => {
     getSqlDEVRecordListSpy.mockImplementation(() =>
       createSpySuccessResponse({ data: [sqlDEVRecordListMockData[0]] })
     );
-    superRender(<PluginAuditList />);
+    sqleSuperRender(<PluginAuditList />);
     expect(getSqlDEVRecordListSpy).toHaveBeenCalled();
     await act(async () => jest.advanceTimersByTime(3000));
     expect(getAllBySelector('.audit-result-wrapper').length).toBe(1);
@@ -208,7 +208,7 @@ describe('sqle/PluginAudit/List', () => {
     getSqlDEVRecordListSpy.mockImplementation(() =>
       createSpySuccessResponse({ data: [sqlDEVRecordListMockData[0]] })
     );
-    superRender(<PluginAuditList />);
+    sqleSuperRender(<PluginAuditList />);
     expect(getSqlDEVRecordListSpy).toHaveBeenCalled();
     await act(async () => jest.advanceTimersByTime(3000));
     await act(async () => jest.advanceTimersByTime(3000));
@@ -234,7 +234,7 @@ describe('sqle/PluginAudit/List', () => {
     getSqlDEVRecordListSpy.mockImplementation(() =>
       createSpySuccessResponse({ data: [] })
     );
-    const { baseElement } = superRender(<PluginAuditList />);
+    const { baseElement } = sqleSuperRender(<PluginAuditList />);
     expect(getSqlDEVRecordListSpy).toHaveBeenCalled();
     await act(async () => jest.advanceTimersByTime(3000));
     expect(baseElement).toMatchSnapshot();

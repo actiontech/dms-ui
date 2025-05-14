@@ -1,6 +1,6 @@
 import { act, cleanup, screen, fireEvent } from '@testing-library/react';
 import KnowledgeSearchResults from '../index';
-import { superRender } from '../../../testUtils/customRender';
+import { sqleSuperRender } from '../../../testUtils/superRender';
 import knowledgeBase from '../../../testUtils/mockApi/knowledgeBase';
 import {
   ignoreConsoleErrors,
@@ -31,14 +31,14 @@ describe('Knowledge', () => {
   });
 
   it('render init snap', async () => {
-    const { baseElement } = superRender(<KnowledgeSearchResults />);
+    const { baseElement } = sqleSuperRender(<KnowledgeSearchResults />);
     await act(async () => jest.advanceTimersByTime(3000));
     expect(getKnowledgeGraphSpy).toHaveBeenCalled();
     expect(baseElement).toMatchSnapshot();
   });
 
   it('search knowledge base', async () => {
-    superRender(<KnowledgeSearchResults />);
+    sqleSuperRender(<KnowledgeSearchResults />);
     await act(async () => jest.advanceTimersByTime(3000));
     const inputEle = getBySelector('textarea.ant-input');
     fireEvent.change(inputEle, {
@@ -56,7 +56,7 @@ describe('Knowledge', () => {
   });
 
   it('search knowledge base with empty text', async () => {
-    superRender(<KnowledgeSearchResults />);
+    sqleSuperRender(<KnowledgeSearchResults />);
     await act(async () => jest.advanceTimersByTime(3000));
     const inputEle = getBySelector('textarea.ant-input');
     fireEvent.change(inputEle, {

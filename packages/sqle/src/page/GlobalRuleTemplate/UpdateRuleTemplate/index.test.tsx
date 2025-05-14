@@ -4,7 +4,7 @@ import { mockUseDbServiceDriver } from '@actiontech/shared/lib/testUtil/mockHook
 import { act, cleanup, fireEvent, screen } from '@testing-library/react';
 import { useNavigate, useParams } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
-import { renderWithReduxAndTheme } from '@actiontech/shared/lib/testUtil/customRender';
+import { superRender } from '@actiontech/shared/lib/testUtil/superRender';
 import UpdateRuleTemplate from '.';
 import { RuleManagerSegmentedKey } from '../../RuleManager/index.type';
 import {
@@ -89,7 +89,7 @@ describe('sqle/GlobalRuleTemplate/UpdateRuleTemplate', () => {
   });
 
   it('should match snap shot', async () => {
-    const { baseElement } = renderWithReduxAndTheme(<UpdateRuleTemplate />);
+    const { baseElement } = superRender(<UpdateRuleTemplate />);
     await act(async () => jest.advanceTimersByTime(3000));
     expect(baseElement).toMatchSnapshot();
     expect(getAllRuleSpy).toHaveBeenCalledTimes(1);
@@ -107,7 +107,7 @@ describe('sqle/GlobalRuleTemplate/UpdateRuleTemplate', () => {
   });
 
   it('reset form value', async () => {
-    renderWithReduxAndTheme(<UpdateRuleTemplate />);
+    superRender(<UpdateRuleTemplate />);
     await act(async () => jest.advanceTimersByTime(3000));
     expect(getBySelector('#templateName')).toBeDisabled();
     fireEvent.input(getBySelector('#templateDesc'), {
@@ -131,7 +131,7 @@ describe('sqle/GlobalRuleTemplate/UpdateRuleTemplate', () => {
     getRuleTemplateSpy.mockImplementation(() =>
       createSpySuccessResponse({ data: {} })
     );
-    renderWithReduxAndTheme(<UpdateRuleTemplate />);
+    superRender(<UpdateRuleTemplate />);
     await act(async () => jest.advanceTimersByTime(3000));
     expect(getBySelector('#templateName')).toBeDisabled();
     fireEvent.input(getBySelector('#templateDesc'), {
@@ -149,7 +149,7 @@ describe('sqle/GlobalRuleTemplate/UpdateRuleTemplate', () => {
   });
 
   it('update global rule template', async () => {
-    const { baseElement } = renderWithReduxAndTheme(<UpdateRuleTemplate />);
+    const { baseElement } = superRender(<UpdateRuleTemplate />);
     await act(async () => jest.advanceTimersByTime(3000));
     expect(getAllRuleSpy).toHaveBeenCalledTimes(1);
     expect(getAllRuleSpy).toHaveBeenNthCalledWith(1, {
@@ -197,7 +197,7 @@ describe('sqle/GlobalRuleTemplate/UpdateRuleTemplate', () => {
   });
 
   it('rule list action', async () => {
-    const { baseElement } = renderWithReduxAndTheme(<UpdateRuleTemplate />);
+    const { baseElement } = superRender(<UpdateRuleTemplate />);
     await act(async () => jest.advanceTimersByTime(3000));
     expect(getAllRuleSpy).toHaveBeenCalledTimes(1);
     fireEvent.input(getBySelector('#templateDesc'), {
@@ -260,7 +260,7 @@ describe('sqle/GlobalRuleTemplate/UpdateRuleTemplate', () => {
   });
 
   it('rule list filter', async () => {
-    renderWithReduxAndTheme(<UpdateRuleTemplate />);
+    superRender(<UpdateRuleTemplate />);
     await act(async () => jest.advanceTimersByTime(3000));
     expect(getAllRuleSpy).toHaveBeenCalledTimes(1);
     fireEvent.input(getBySelector('#templateDesc'), {

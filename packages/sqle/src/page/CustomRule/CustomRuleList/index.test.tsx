@@ -1,5 +1,5 @@
 import { cleanup, screen, act, fireEvent } from '@testing-library/react';
-import { renderWithReduxAndTheme } from '@actiontech/shared/lib/testUtil/customRender';
+import { superRender } from '@actiontech/shared/lib/testUtil/superRender';
 import CustomRuleList from '.';
 import { getBySelector } from '@actiontech/shared/lib/testUtil/customQuery';
 import EventEmitter from '../../../utils/EventEmitter';
@@ -59,7 +59,7 @@ describe('sqle/CustomRuleList', () => {
     cleanup();
   });
 
-  const customRender = () => renderWithReduxAndTheme(<CustomRuleList />);
+  const customRender = () => superRender(<CustomRuleList />);
 
   it('should match snap shot', async () => {
     const { baseElement } = customRender();
