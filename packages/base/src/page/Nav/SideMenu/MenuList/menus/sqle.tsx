@@ -192,6 +192,15 @@ const dataSourceComparison: GenerateMenuItemI18nConfig = (projectID) => ({
   key: `sqle/project/${SIDE_MENU_DATA_PLACEHOLDER_KEY}/data-source-comparison`,
   structKey: 'data-source-comparison'
 });
+const sqlPerformanceInsights: GenerateMenuItemI18nConfig = (projectID) => ({
+  label: 'dmsMenu.sqlPerformanceInsights',
+  to: parse2ReactRouterPath(ROUTE_PATHS.SQLE.SQL_INSIGHTS.index, {
+    params: { projectID: projectID }
+  }),
+  icon: <RiseSquareOutlined width={18} height={18} />,
+  key: `sqle/project/${SIDE_MENU_DATA_PLACEHOLDER_KEY}/sql-insights`,
+  structKey: 'sql-insights'
+});
 
 const sqleMenusCollection = [
   projectOverviewMenuItem,
@@ -210,7 +219,8 @@ const sqleMenusCollection = [
   sqlManagementException,
   pipelineConfiguration,
   versionManagement,
-  dataSourceComparison
+  dataSourceComparison,
+  sqlPerformanceInsights
 ];
 
 export default sqleMenusCollection;

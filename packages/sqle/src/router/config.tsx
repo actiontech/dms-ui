@@ -225,6 +225,7 @@ const PipelineConfigurationUpdate = React.lazy(
 const VersionManagement = React.lazy(() => import('../page/VersionManagement'));
 
 const GlobalDashboard = React.lazy(() => import('../page/GlobalDashboard'));
+const SqlInsights = React.lazy(() => import('../page/SqlInsights'));
 
 export const projectDetailRouterConfig: RouterConfigItem[] = [
   {
@@ -314,6 +315,11 @@ export const projectDetailRouterConfig: RouterConfigItem[] = [
         path: ROUTE_PATHS.SQLE.SQL_MANAGEMENT_CONF.analyze.path
       }
     ]
+  },
+  {
+    path: ROUTE_PATHS.SQLE.SQL_INSIGHTS.index.path,
+    key: 'sqlInsights',
+    element: <SqlInsights />
   },
   {
     path: ROUTE_PATHS.SQLE.SQL_MANAGEMENT.index.path,

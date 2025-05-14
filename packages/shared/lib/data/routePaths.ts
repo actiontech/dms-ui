@@ -255,6 +255,12 @@ export const ROUTE_PATHS = {
         path: ':sqlManageId/analyze'
       }
     },
+    SQL_INSIGHTS: {
+      index: {
+        prefix: '/sqle/project',
+        path: ':projectID/sql-insights'
+      }
+    },
     PROJECT_DASHBOARD: {
       index: {
         prefix: '/sqle/project',
