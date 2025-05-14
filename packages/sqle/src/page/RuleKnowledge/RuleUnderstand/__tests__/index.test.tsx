@@ -1,5 +1,5 @@
 import RuleUnderstand from '..';
-import { superRender } from '../../../../testUtils/customRender';
+import { sqleSuperRender } from '../../../../testUtils/superRender';
 import {
   ruleNameFirst as ruleName,
   mockMarkdownWithCustomCodeBlock
@@ -49,7 +49,7 @@ describe('page/RuleUnderstand', () => {
   });
 
   const customRender = (data: RuleUnderstandProps) => {
-    return superRender(<RuleUnderstand {...data} />);
+    return sqleSuperRender(<RuleUnderstand {...data} />);
   };
 
   it('render empty data', () => {

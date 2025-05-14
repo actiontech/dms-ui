@@ -3,10 +3,7 @@ import { screen, cleanup, act, fireEvent } from '@testing-library/react';
 import { mockPipelineDetailData } from '../../../../../testUtils/mockApi/pipeline/data';
 import { useNavigate, useParams } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
-import {
-  superRender,
-  renderHooksWithTheme
-} from '@actiontech/shared/lib/testUtil/customRender';
+import { superRender, superRenderHook } from '@actiontech/shared/lib/testUtil/superRender'
 import { mockUseCurrentProject } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentProject';
 import { mockUseCurrentUser } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentUser';
 import { mockUseDbServiceDriver } from '@actiontech/shared/lib/testUtil/mockHook/mockUseDbServiceDriver';
@@ -80,7 +77,7 @@ describe('sqle//PipelineConfiguration/Form', () => {
   });
 
   const customRender = (isEditionMode = false) => {
-    const { result } = renderHooksWithTheme(() => Form.useForm());
+    const { result } = superRenderHook(() => Form.useForm());
     const { baseElement } = superRender(
       <Form colon={false} form={result.current[0]}>
         <PipelineConfigurationForm isEditionMode={isEditionMode} />

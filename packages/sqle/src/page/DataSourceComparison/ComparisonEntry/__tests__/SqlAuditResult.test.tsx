@@ -1,5 +1,5 @@
 import { screen } from '@testing-library/dom';
-import { superRender } from '../../../../testUtils/customRender';
+import { sqleSuperRender } from '../../../../testUtils/superRender';
 import rule_template from '../../../../testUtils/mockApi/rule_template';
 import {
   AuditTaskSQLsMockDataWithExceptionRule,
@@ -21,7 +21,7 @@ describe('SqlAuditResult', () => {
   });
 
   it('should match snapshot when audit result is empty', () => {
-    const { container } = superRender(
+    const { container } = sqleSuperRender(
       <SqlAuditResult auditResults={[]} instanceType="MySQL" shouldFetchRules />
     );
 
@@ -30,7 +30,7 @@ describe('SqlAuditResult', () => {
   });
 
   it('should match snapshot when audit error is not empty', () => {
-    const { container } = superRender(
+    const { container } = sqleSuperRender(
       <SqlAuditResult
         auditResults={[
           {
@@ -51,7 +51,7 @@ describe('SqlAuditResult', () => {
   });
 
   it('should match snapshot when shouldFetchRules is equal false', () => {
-    const { container } = superRender(
+    const { container } = sqleSuperRender(
       <SqlAuditResult
         auditResults={[
           {
@@ -71,7 +71,7 @@ describe('SqlAuditResult', () => {
   });
 
   it('should match snapshot when shouldFetchRules is equal true', () => {
-    const { container } = superRender(
+    const { container } = sqleSuperRender(
       <SqlAuditResult
         auditResults={[
           {
@@ -102,7 +102,7 @@ describe('SqlAuditResult', () => {
   });
 
   it('should render audit exception wrapper when auditResultWithAuditException length greater than zero', () => {
-    const { container } = superRender(
+    const { container } = sqleSuperRender(
       <SqlAuditResult
         instanceType="MySQL"
         shouldFetchRules
@@ -115,7 +115,7 @@ describe('SqlAuditResult', () => {
   });
 
   it('should not render audit result when auditResultWithNormalLevel length is equal zero', () => {
-    superRender(
+    sqleSuperRender(
       <SqlAuditResult
         instanceType="MySQL"
         shouldFetchRules

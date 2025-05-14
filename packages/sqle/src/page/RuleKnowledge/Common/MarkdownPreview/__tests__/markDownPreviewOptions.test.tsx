@@ -3,7 +3,7 @@ import {
   ignoreConsoleErrors
 } from '@actiontech/shared/lib/testUtil/common';
 import { markdownPreviewOptions } from '../markdownPreviewOptions';
-import { superRender } from '@actiontech/shared/lib/testUtil/customRender';
+import { superRender } from '@actiontech/shared/lib/testUtil/superRender';
 import React from 'react';
 
 jest.mock('rehype-rewrite', () => {

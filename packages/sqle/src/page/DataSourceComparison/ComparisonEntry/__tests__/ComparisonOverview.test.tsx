@@ -3,7 +3,7 @@ import { ObjectDiffResultComparisonResultEnum } from '@actiontech/shared/lib/api
 import ComparisonOverview from '../component/ComparisonOverview';
 import { comparisonOverviewDict } from '../component/ComparisonOverview/index.data';
 import { executeDatabaseComparisonMockData } from '../../../../testUtils/mockApi/database_comparison/data';
-import { superRender } from '../../../../testUtils/customRender';
+import { sqleSuperRender } from '../../../../testUtils/superRender';
 
 describe('ComparisonOverview', () => {
   const mockOnCardClick = jest.fn();
@@ -13,7 +13,7 @@ describe('ComparisonOverview', () => {
   });
 
   it('should superRender all comparison result cards', () => {
-    const { container } = superRender(
+    const { container } = sqleSuperRender(
       <ComparisonOverview
         comparisonResults={executeDatabaseComparisonMockData}
         onCardClick={mockOnCardClick}
@@ -23,7 +23,7 @@ describe('ComparisonOverview', () => {
   });
 
   it('should call onCardClick with correct type when card is clicked', () => {
-    superRender(
+    sqleSuperRender(
       <ComparisonOverview
         comparisonResults={executeDatabaseComparisonMockData}
         onCardClick={mockOnCardClick}
@@ -43,7 +43,7 @@ describe('ComparisonOverview', () => {
   });
 
   it('should apply selected class when card is selected', () => {
-    superRender(
+    sqleSuperRender(
       <ComparisonOverview
         comparisonResults={executeDatabaseComparisonMockData}
         onCardClick={mockOnCardClick}
@@ -60,7 +60,7 @@ describe('ComparisonOverview', () => {
   });
 
   it('should handle empty comparison results', () => {
-    superRender(
+    sqleSuperRender(
       <ComparisonOverview
         comparisonResults={[]}
         onCardClick={mockOnCardClick}
@@ -73,7 +73,7 @@ describe('ComparisonOverview', () => {
   });
 
   it('should handle undefined comparison results', () => {
-    superRender(<ComparisonOverview onCardClick={mockOnCardClick} />);
+    sqleSuperRender(<ComparisonOverview onCardClick={mockOnCardClick} />);
 
     expect(screen.getAllByText('0')).toHaveLength(
       Object.keys(comparisonOverviewDict).length

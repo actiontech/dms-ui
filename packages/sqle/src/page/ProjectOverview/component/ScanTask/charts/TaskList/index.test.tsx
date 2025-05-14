@@ -1,4 +1,4 @@
-import { superRender } from '../../../../../../testUtils/customRender';
+import { sqleSuperRender } from '../../../../../../testUtils/superRender';
 import { act, cleanup, fireEvent, screen } from '@testing-library/react';
 import { mockUseCurrentProject } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentProject';
 import { mockUseCurrentUser } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentUser';
@@ -44,7 +44,7 @@ describe('page/ProjectOverview/TaskList', () => {
   });
 
   const customRender = (data?: ITaskList) => {
-    return superRender(<TaskList {...taskListProps} {...data} />);
+    return sqleSuperRender(<TaskList {...taskListProps} {...data} />);
   };
 
   it('render task list', async () => {

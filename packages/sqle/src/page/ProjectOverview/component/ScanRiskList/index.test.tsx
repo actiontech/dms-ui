@@ -1,4 +1,4 @@
-import { superRender } from '../../../../testUtils/customRender';
+import { sqleSuperRender } from '../../../../testUtils/superRender';
 import ScanRiskList from '.';
 import projectOverview from '../../../../testUtils/mockApi/projectOverview';
 import { act, cleanup, fireEvent, screen } from '@testing-library/react';
@@ -38,7 +38,7 @@ describe('page/ProjectOverview/ScanRiskList', () => {
   });
 
   const customRender = () => {
-    return superRender(<ScanRiskList />);
+    return sqleSuperRender(<ScanRiskList />);
   };
 
   it('render scan risk list and check more data', async () => {

@@ -1,4 +1,4 @@
-import { superRender } from '../../../../testUtils/customRender';
+import { sqleSuperRender } from '../../../../testUtils/superRender';
 import OrderStatus from '.';
 import projectOverview from '../../../../testUtils/mockApi/projectOverview';
 import { act, cleanup, fireEvent, screen } from '@testing-library/react';
@@ -32,7 +32,7 @@ describe('page/ProjectOverview/OrderStatus', () => {
   });
 
   const customRender = () => {
-    return superRender(<OrderStatus />);
+    return sqleSuperRender(<OrderStatus />);
   };
 
   it('render order status and click create order', async () => {

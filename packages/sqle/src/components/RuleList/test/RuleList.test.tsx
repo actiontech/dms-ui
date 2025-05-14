@@ -1,6 +1,6 @@
 import RuleList, { pageRemainingHeight } from '../RuleList';
 import { act, cleanup, fireEvent, screen } from '@testing-library/react';
-import { renderWithTheme } from '../../../testUtils/customRender';
+import { sqleSuperRender } from '../../../testUtils/superRender';
 import {
   getAllBySelector,
   getBySelector
@@ -30,7 +30,7 @@ describe('sqle/components/RuleList', () => {
   });
 
   const customRender = (props: RuleListProps) => {
-    return renderWithTheme(
+    return sqleSuperRender(
       <RuleList {...props} onActionHandle={onActionHandleSpy} />
     );
   };

@@ -8,7 +8,7 @@ import { mockUseDbServiceDriver } from '@actiontech/shared/lib/testUtil/mockHook
 import workflow from '../../../testUtils/mockApi/execWorkflow';
 import sqlManage from '../../../testUtils/mockApi/sqlManage';
 import instance from '../../../testUtils/mockApi/instance';
-import { superRender } from '../../../testUtils/customRender';
+import { sqleSuperRender } from '../../../testUtils/superRender';
 import GlobalDashboard from '../index';
 
 describe('sqle/GlobalDashboard ce', () => {
@@ -31,7 +31,7 @@ describe('sqle/GlobalDashboard ce', () => {
   });
 
   it('render init snap shot', async () => {
-    const { baseElement } = superRender(<GlobalDashboard />);
+    const { baseElement } = sqleSuperRender(<GlobalDashboard />);
     await act(async () => jest.advanceTimersByTime(3000));
     expect(baseElement).toMatchSnapshot();
     expect(getGlobalWorkflowsSpy).toHaveBeenCalledTimes(1);

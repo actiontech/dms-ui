@@ -1,5 +1,5 @@
 import { fireEvent, screen } from '@testing-library/dom';
-import { superRender } from '../../../../testUtils/customRender';
+import { sqleSuperRender } from '../../../../testUtils/superRender';
 import OverallRewrittenSuggestion from '../../components/OverallRewrittenSuggestion';
 import {
   SqlRewrittenMockDataNoDDL,
@@ -45,7 +45,7 @@ describe('OverallRewrittenSuggestion', () => {
   });
 
   it('should render summary section with correct information', () => {
-    superRender(<OverallRewrittenSuggestion {...mockProps} />);
+    sqleSuperRender(<OverallRewrittenSuggestion {...mockProps} />);
 
     expect(screen.getByText('总结')).toBeInTheDocument();
     expect(
@@ -57,7 +57,7 @@ describe('OverallRewrittenSuggestion', () => {
   });
 
   it('should render database structure change statement section when overallDDL exists', () => {
-    superRender(
+    sqleSuperRender(
       <OverallRewrittenSuggestion
         {...mockProps}
         suggestions={SqlRewrittenMockDataUseDDL.suggestions!}
@@ -68,13 +68,13 @@ describe('OverallRewrittenSuggestion', () => {
   });
 
   it('should not render database structure change statement section when overallDDL is not exists', () => {
-    superRender(<OverallRewrittenSuggestion {...mockProps} />);
+    sqleSuperRender(<OverallRewrittenSuggestion {...mockProps} />);
 
     expect(screen.queryByText('数据库结构变更语句')).not.toBeInTheDocument();
   });
 
   it('should render sql rewrite result section when rewrittenSql exists', () => {
-    superRender(<OverallRewrittenSuggestion {...mockProps} />);
+    sqleSuperRender(<OverallRewrittenSuggestion {...mockProps} />);
 
     expect(screen.getByText('SQL重写结果')).toBeInTheDocument();
     expect(screen.getByText('复制重写后SQL')).toBeInTheDocument();
@@ -88,7 +88,7 @@ describe('OverallRewrittenSuggestion', () => {
   });
 
   it('should toggle SQL difference view on button click', () => {
-    superRender(<OverallRewrittenSuggestion {...mockProps} />);
+    sqleSuperRender(<OverallRewrittenSuggestion {...mockProps} />);
 
     const diffToggle = screen.getByText('查看差异');
     fireEvent.click(diffToggle);
@@ -99,7 +99,7 @@ describe('OverallRewrittenSuggestion', () => {
   });
 
   it('should render execution order explanation section', () => {
-    const { container } = superRender(
+    const { container } = sqleSuperRender(
       <OverallRewrittenSuggestion {...mockProps} />
     );
 
@@ -113,7 +113,7 @@ describe('OverallRewrittenSuggestion', () => {
   });
 
   it('should render risk warning section when businessNonEquivalentDesc exists', () => {
-    superRender(<OverallRewrittenSuggestion {...mockProps} />);
+    sqleSuperRender(<OverallRewrittenSuggestion {...mockProps} />);
 
     expect(screen.getByText('风险提示')).toBeInTheDocument();
     expect(
@@ -127,7 +127,7 @@ describe('OverallRewrittenSuggestion', () => {
       .spyOn(Copy, 'copyTextByTextarea')
       .mockImplementation(mockCopyTextByTextarea);
 
-    superRender(<OverallRewrittenSuggestion {...mockProps} />);
+    sqleSuperRender(<OverallRewrittenSuggestion {...mockProps} />);
 
     const copyButton = screen.getByText('复制重写后SQL');
     fireEvent.click(copyButton);
@@ -141,7 +141,7 @@ describe('OverallRewrittenSuggestion', () => {
       .spyOn(Copy, 'copyTextByTextarea')
       .mockImplementation(mockCopyTextByTextarea);
 
-    superRender(
+    sqleSuperRender(
       <OverallRewrittenSuggestion
         {...mockProps}
         suggestions={SqlRewrittenMockDataUseDDL.suggestions!}
@@ -168,7 +168,7 @@ describe('OverallRewrittenSuggestion', () => {
       businessNonEquivalentDesc: ''
     };
 
-    superRender(<OverallRewrittenSuggestion {...mockEmptyProps} />);
+    sqleSuperRender(<OverallRewrittenSuggestion {...mockEmptyProps} />);
 
     expect(screen.queryByText('数据库结构变更语句')).not.toBeInTheDocument();
     expect(screen.queryByText('SQL重写结果')).not.toBeInTheDocument();

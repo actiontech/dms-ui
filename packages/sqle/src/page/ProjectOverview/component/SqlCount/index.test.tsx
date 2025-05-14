@@ -1,4 +1,4 @@
-import { superRender } from '../../../../testUtils/customRender';
+import { sqleSuperRender } from '../../../../testUtils/superRender';
 import SqlCount from '.';
 import projectOverview from '../../../../testUtils/mockApi/projectOverview';
 import { act, cleanup, fireEvent, screen } from '@testing-library/react';
@@ -62,7 +62,7 @@ describe('page/ProjectOverview/SqlCount', () => {
   });
 
   const customRender = () => {
-    return superRender(<SqlCount />);
+    return sqleSuperRender(<SqlCount />);
   };
 
   it('render sql count', async () => {

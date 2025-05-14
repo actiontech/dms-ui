@@ -3,7 +3,7 @@ import FormPasswordWithPlaceholder, {
   PASSWORD_TYPE_FIELD_PLACEHOLDER_VALUE
 } from '../FormPasswordWithPlaceholder';
 import { getBySelector } from '@actiontech/shared/lib/testUtil/customQuery';
-import { superRender } from '../../../testUtils/customRender';
+import { sqleSuperRender } from '../../../testUtils/superRender';
 
 describe('FormPasswordWithPlaceholder', () => {
   const defaultProps = {
@@ -11,7 +11,7 @@ describe('FormPasswordWithPlaceholder', () => {
   };
 
   it('should display the default value when enabled and no value is provided', () => {
-    superRender(<FormPasswordWithPlaceholder {...defaultProps} />);
+    sqleSuperRender(<FormPasswordWithPlaceholder {...defaultProps} />);
     expect(getBySelector('.ant-input')).toHaveAttribute(
       'value',
       PASSWORD_TYPE_FIELD_PLACEHOLDER_VALUE
@@ -19,7 +19,7 @@ describe('FormPasswordWithPlaceholder', () => {
   });
 
   it('should display the value when value is provided', () => {
-    superRender(
+    sqleSuperRender(
       <FormPasswordWithPlaceholder {...defaultProps} value="default value" />
     );
     expect(getBySelector('.ant-input')).toHaveAttribute(
@@ -29,7 +29,7 @@ describe('FormPasswordWithPlaceholder', () => {
   });
 
   it('should clear the value on focus when enabled', () => {
-    const { baseElement } = superRender(
+    const { baseElement } = sqleSuperRender(
       <FormPasswordWithPlaceholder {...defaultProps} />
     );
     const input = getBySelector('.ant-input');
@@ -44,7 +44,7 @@ describe('FormPasswordWithPlaceholder', () => {
   });
 
   it('should reset to default value on blur when value is empty and enabled', () => {
-    superRender(<FormPasswordWithPlaceholder {...defaultProps} />);
+    sqleSuperRender(<FormPasswordWithPlaceholder {...defaultProps} />);
     fireEvent.focus(getBySelector('.ant-input'));
     fireEvent.blur(getBySelector('.ant-input'));
     expect(getBySelector('.ant-input')).toHaveAttribute(
@@ -55,7 +55,7 @@ describe('FormPasswordWithPlaceholder', () => {
 
   it('should update the value and call onChange when user types', () => {
     const onChange = jest.fn();
-    superRender(
+    sqleSuperRender(
       <FormPasswordWithPlaceholder {...defaultProps} onChange={onChange} />
     );
 
@@ -66,7 +66,7 @@ describe('FormPasswordWithPlaceholder', () => {
   });
 
   it('should not react to focus or blur events when disabled', () => {
-    const { baseElement } = superRender(
+    const { baseElement } = sqleSuperRender(
       <FormPasswordWithPlaceholder {...defaultProps} disabled={true} />
     );
     expect(baseElement).toMatchSnapshot();
@@ -80,7 +80,7 @@ describe('FormPasswordWithPlaceholder', () => {
   });
 
   it('should not display the default placeholder or react to focus/blur when not enabled', () => {
-    superRender(<FormPasswordWithPlaceholder enabled={false} />);
+    sqleSuperRender(<FormPasswordWithPlaceholder enabled={false} />);
     const input = getBySelector('.ant-input');
 
     fireEvent.focus(input);

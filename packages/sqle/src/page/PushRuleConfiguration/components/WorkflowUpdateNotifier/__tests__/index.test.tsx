@@ -6,7 +6,7 @@ import {
   ReportPushConfigListPushUserTypeEnum,
   ReportPushConfigListTriggerTypeEnum
 } from '@actiontech/shared/lib/api/sqle/service/common.enum';
-import { superRender } from '@actiontech/shared/lib/testUtil/customRender';
+import { superRender } from '@actiontech/shared/lib/testUtil/superRender';
 import WorkflowUpdateNotifier from '..';
 import { fireEvent, screen } from '@testing-library/dom';
 import { act, cleanup } from '@testing-library/react';

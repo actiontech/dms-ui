@@ -1,4 +1,4 @@
-import { superRender } from '../../testUtils/customRender';
+import { sqleSuperRender } from '../../testUtils/superRender';
 import Overview from '.';
 import { act, cleanup, fireEvent, screen } from '@testing-library/react';
 import { mockUseCurrentProject } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentProject';
@@ -34,7 +34,7 @@ describe('page/ProjectOverview', () => {
   });
 
   const customRender = () => {
-    return superRender(<Overview />);
+    return sqleSuperRender(<Overview />);
   };
 
   it('render over view and refresh page', async () => {

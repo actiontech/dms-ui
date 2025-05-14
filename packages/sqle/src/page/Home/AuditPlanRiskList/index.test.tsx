@@ -1,4 +1,4 @@
-import { superRender } from '@actiontech/shared/lib/testUtil/customRender';
+import { superRender } from '@actiontech/shared/lib/testUtil/superRender';
 import home from '../../../testUtils/mockApi/home';
 import AuditPlanRiskList from '.';
 import { act, cleanup, fireEvent, screen } from '@testing-library/react';

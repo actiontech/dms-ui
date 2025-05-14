@@ -7,7 +7,7 @@ import {
 import { mockUseCurrentUser } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentUser';
 import { mockProjectInfo } from '@actiontech/shared/lib/testUtil/mockHook/data';
 import rule_template from '../../../testUtils/mockApi/rule_template';
-import { renderHooksWithTheme } from '../../../testUtils/customRender';
+import { sqleSuperRenderHook } from '../../../testUtils/superRender';
 import { RuleListFilterForm } from '../index.type';
 import useRuleListFilter from './hooks';
 
@@ -28,7 +28,7 @@ describe('sqle/Rule/hooks/useRuleListFilter', () => {
     const getRuleTemplateSpy = rule_template.getRuleTemplate();
     getRuleTemplateSpy.mockClear();
     getRuleTemplateSpy.mockImplementation(() => createSpySuccessResponse({}));
-    const { result } = renderHooksWithTheme(() =>
+    const { result } = sqleSuperRenderHook(() =>
       Form.useForm<RuleListFilterForm>()
     );
     jest.spyOn(Form, 'useWatch').mockImplementation((key) => {
@@ -39,7 +39,7 @@ describe('sqle/Rule/hooks/useRuleListFilter', () => {
           return 'MySQL';
       }
     });
-    const { result: hookResult } = renderHooksWithTheme(() =>
+    const { result: hookResult } = sqleSuperRenderHook(() =>
       useRuleListFilter(result.current[0])
     );
 
@@ -61,7 +61,7 @@ describe('sqle/Rule/hooks/useRuleListFilter', () => {
     getProjectRuleTemplateSpy.mockImplementation(() =>
       createSpySuccessResponse({})
     );
-    const { result } = renderHooksWithTheme(() =>
+    const { result } = sqleSuperRenderHook(() =>
       Form.useForm<RuleListFilterForm>()
     );
     jest.spyOn(Form, 'useWatch').mockImplementation((key) => {
@@ -74,7 +74,7 @@ describe('sqle/Rule/hooks/useRuleListFilter', () => {
           return mockProjectInfo.projectName;
       }
     });
-    const { result: hookResult } = renderHooksWithTheme(() =>
+    const { result: hookResult } = sqleSuperRenderHook(() =>
       useRuleListFilter(result.current[0])
     );
 
@@ -96,11 +96,11 @@ describe('sqle/Rule/hooks/useRuleListFilter', () => {
     getRuleTemplateSpy.mockClear();
     getRuleTemplateSpy.mockImplementation(() => createSpyFailResponse({}));
 
-    const { result } = renderHooksWithTheme(() =>
+    const { result } = sqleSuperRenderHook(() =>
       Form.useForm<RuleListFilterForm>()
     );
 
-    const { result: hookResult } = renderHooksWithTheme(() =>
+    const { result: hookResult } = sqleSuperRenderHook(() =>
       useRuleListFilter(result.current[0])
     );
 

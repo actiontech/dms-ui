@@ -1,8 +1,8 @@
-import { superRender } from '../../../../testUtils/customRender';
+import { sqleSuperRender } from '../../../../testUtils/superRender';
 import CustomLoadingIndicator from '../../components/CustomLoadingIndicator';
 
 describe('CustomLoadingIndicator', () => {
   it('should match snapshot', () => {
-    expect(superRender(<CustomLoadingIndicator />).container).toMatchSnapshot();
+    expect(sqleSuperRender(<CustomLoadingIndicator />).container).toMatchSnapshot();
   });
 });

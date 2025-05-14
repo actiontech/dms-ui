@@ -1,11 +1,11 @@
 import ResultIconRender from '../ResultIconRender';
-import { renderWithTheme } from '../../../testUtils/customRender';
+import { sqleSuperRender } from '../../../testUtils/superRender';
 import { ResultIconRenderProps } from '../index.type';
 import { screen } from '@testing-library/dom';
 
 describe('sqle/components/AuditResultMessage/ResultIconRender', () => {
   const customRender = (params: ResultIconRenderProps) => {
-    return renderWithTheme(<ResultIconRender {...params} />);
+    return sqleSuperRender(<ResultIconRender {...params} />);
   };
 
   it('render icon when has diff icon', () => {

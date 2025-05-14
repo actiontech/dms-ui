@@ -1,6 +1,6 @@
 import PipelineDetailModal from '../';
 import pipeline from '../../../../../testUtils/mockApi/pipeline';
-import { superRender } from '../../../../../testUtils/customRender';
+import { sqleSuperRender } from '../../../../../testUtils/superRender';
 import { useDispatch } from 'react-redux';
 import { mockUseCurrentProject } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentProject';
 import { ModalName } from '../../../../../data/ModalName';
@@ -54,7 +54,7 @@ describe('sqle/PipelineConfiguration/Modal/PipelineDetailModal', () => {
   });
 
   const customRender = (showPipelineNodeTour = false) => {
-    return superRender(<PipelineDetailModal />, undefined, {
+    return sqleSuperRender(<PipelineDetailModal />, undefined, {
       initStore: {
         pipeline: {
           modalStatus: {

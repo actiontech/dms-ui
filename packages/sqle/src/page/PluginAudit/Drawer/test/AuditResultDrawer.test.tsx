@@ -1,6 +1,6 @@
 import { act, cleanup, fireEvent, screen } from '@testing-library/react';
 import AuditResultDrawer from '../AuditResultDrawer';
-import { superRender } from '../../../../testUtils/customRender';
+import { sqleSuperRender } from '../../../../testUtils/superRender';
 import { useDispatch, useSelector } from 'react-redux';
 import { getBySelector } from '@actiontech/shared/lib/testUtil/customQuery';
 import { ModalName } from '../../../../data/ModalName';
@@ -49,7 +49,7 @@ describe('sqle/PluginAudit/AuditResultDrawer', () => {
   ignoreConsoleErrors([UtilsConsoleErrorStringsEnum.UNKNOWN_EVENT_HANDLER]);
 
   it('should match snap shot', async () => {
-    const { baseElement } = superRender(<AuditResultDrawer />);
+    const { baseElement } = sqleSuperRender(<AuditResultDrawer />);
     expect(mockDispatch).toHaveBeenCalled();
     expect(mockDispatch).toHaveBeenCalledWith({
       type: 'pluginAudit/initModalStatus',
@@ -68,7 +68,7 @@ describe('sqle/PluginAudit/AuditResultDrawer', () => {
   });
 
   it('close modal', async () => {
-    superRender(<AuditResultDrawer />);
+    sqleSuperRender(<AuditResultDrawer />);
     await act(async () => jest.advanceTimersByTime(3000));
     fireEvent.click(getBySelector('.closed-icon-custom'));
     await act(async () => jest.advanceTimersByTime(300));

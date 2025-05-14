@@ -1,6 +1,6 @@
 import { act, cleanup, screen, fireEvent } from '@testing-library/react';
 import KnowledgeSearchResults from '../index';
-import { superRender } from '../../../../testUtils/customRender';
+import { sqleSuperRender } from '../../../../testUtils/superRender';
 import knowledgeBase from '../../../../testUtils/mockApi/knowledgeBase';
 import {
   ignoreConsoleErrors,
@@ -48,7 +48,7 @@ describe('KnowledgeSearchResults', () => {
   });
 
   it('render init snap', async () => {
-    const { baseElement } = superRender(<KnowledgeSearchResults />);
+    const { baseElement } = sqleSuperRender(<KnowledgeSearchResults />);
     await act(async () => jest.advanceTimersByTime(3000));
     expect(getKnowledgeBaseListSpy).toHaveBeenCalledTimes(1);
     expect(getKnowledgeBaseListSpy).toHaveBeenCalledWith(
@@ -69,7 +69,7 @@ describe('KnowledgeSearchResults', () => {
     const windowOpenSpy = jest
       .spyOn(window, 'open')
       .mockImplementation(() => null);
-    superRender(<KnowledgeSearchResults />);
+    sqleSuperRender(<KnowledgeSearchResults />);
     await act(async () => jest.advanceTimersByTime(3000));
     fireEvent.click(getAllBySelector('.ant-list-item')[0]);
     await act(async () => jest.advanceTimersByTime(0));
@@ -79,7 +79,7 @@ describe('KnowledgeSearchResults', () => {
   });
 
   it('render toggle paging', async () => {
-    superRender(<KnowledgeSearchResults />);
+    sqleSuperRender(<KnowledgeSearchResults />);
     expect(getKnowledgeBaseListSpy).toHaveBeenCalledTimes(1);
     await act(async () => jest.advanceTimersByTime(3000));
     fireEvent.click(getBySelector('.ant-pagination-item-2'));
@@ -98,7 +98,7 @@ describe('KnowledgeSearchResults', () => {
   });
 
   it('render toggle paging size', async () => {
-    superRender(<KnowledgeSearchResults />);
+    sqleSuperRender(<KnowledgeSearchResults />);
     expect(getKnowledgeBaseListSpy).toHaveBeenCalledTimes(1);
     await act(async () => jest.advanceTimersByTime(3000));
     fireEvent.mouseDown(getBySelector('span[title="20 条/页"]'));
@@ -119,7 +119,7 @@ describe('KnowledgeSearchResults', () => {
   });
 
   it('render modify search test and tags', async () => {
-    superRender(<KnowledgeSearchResults />);
+    sqleSuperRender(<KnowledgeSearchResults />);
     expect(getKnowledgeBaseListSpy).toHaveBeenCalledTimes(1);
     await act(async () => jest.advanceTimersByTime(3000));
     const inputEle = getBySelector('textarea.ant-input');

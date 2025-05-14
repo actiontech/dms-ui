@@ -1,5 +1,5 @@
 import { cleanup, screen, act, fireEvent } from '@testing-library/react';
-import { renderWithReduxAndTheme } from '@actiontech/shared/lib/testUtil/customRender';
+import { superRender } from '@actiontech/shared/lib/testUtil/superRender';
 import RuleManager from '..';
 import { getBySelector } from '@actiontech/shared/lib/testUtil/customQuery';
 import EventEmitter from '../../../utils/EventEmitter';
@@ -65,12 +65,7 @@ describe('sqle/RuleManager', () => {
     cleanup();
   });
 
-  const customRender = () =>
-    renderWithReduxAndTheme(
-      <BrowserRouter>
-        <RuleManager />
-      </BrowserRouter>
-    );
+  const customRender = () => superRender(<RuleManager />);
 
   it('should render global rule template list list when it first entered the page', async () => {
     const { baseElement } = customRender();

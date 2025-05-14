@@ -3,7 +3,7 @@ import { mockUseCurrentUser } from '@actiontech/shared/lib/testUtil/mockHook/moc
 import MockDate from 'mockdate';
 import user from '../../../../../testUtils/mockApi/user';
 import { IReportPushConfigList } from '@actiontech/shared/lib/api/sqle/service/common';
-import { superRender } from '../../../../../testUtils/customRender';
+import { sqleSuperRender } from '../../../../../testUtils/superRender';
 import SqlManagementIssuePush from '..';
 import {
   mockProjectInfo,
@@ -63,7 +63,7 @@ describe('test SqlManagementIssuePush', () => {
     },
     permission = true
   ) => {
-    return superRender(
+    return sqleSuperRender(
       <SqlManagementIssuePush config={config} refetch={refetchSpy} />
     );
   };

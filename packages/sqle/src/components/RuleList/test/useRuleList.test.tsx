@@ -1,6 +1,6 @@
 import useRuleList from '../useRuleList';
 import { act, cleanup } from '@testing-library/react';
-import { renderHooksWithTheme } from '../../../testUtils/customRender';
+import { sqleSuperRenderHook } from '../../../testUtils/superRender';
 import { RuleStatusEnum } from '../index.type';
 import { ruleListMockData } from '../../../testUtils/mockApi/rule_template/data';
 import { IRuleResV1 } from '@actiontech/shared/lib/api/sqle/service/common';
@@ -16,7 +16,7 @@ describe('sqle/components/RuleList/useRuleList', () => {
   });
 
   const customRender = () => {
-    return renderHooksWithTheme(useRuleList);
+    return sqleSuperRenderHook(useRuleList);
   };
 
   it('test rule status', async () => {

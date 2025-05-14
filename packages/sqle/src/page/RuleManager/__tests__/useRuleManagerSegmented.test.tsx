@@ -1,4 +1,4 @@
-import { renderHooksWithRedux } from '@actiontech/shared/lib/testUtil/customRender';
+import { superRenderHook } from '@actiontech/shared/lib/testUtil/superRender';
 import { useDispatch, useSelector } from 'react-redux';
 import useRuleManagerSegmented from '../useRuleManagerSegmented';
 import { ModalName } from '../../../data/ModalName';
@@ -31,7 +31,7 @@ describe('slqe/RuleManager/useRuleManagerSegmented', () => {
         }
       })
     );
-    const { result } = renderHooksWithRedux(useRuleManagerSegmented, {});
+    const { result } = superRenderHook(useRuleManagerSegmented, {});
     expect(result.current.activeKey).toEqual(
       RuleManagerSegmentedKey.GlobalRuleTemplate
     );

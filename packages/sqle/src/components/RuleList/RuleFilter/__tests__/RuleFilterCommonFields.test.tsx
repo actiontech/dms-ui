@@ -1,7 +1,7 @@
 import { act, cleanup, screen } from '@testing-library/react';
 import RuleFilterCommonFields from '../RuleFilterCommonFields';
 import { Form } from 'antd';
-import { superRender } from '../../../../testUtils/customRender';
+import { sqleSuperRender } from '../../../../testUtils/superRender';
 import ruleTemplate from '../../../../testUtils/mockApi/rule_template';
 import { getBySelector } from '@actiontech/shared/lib/testUtil/customQuery';
 
@@ -18,7 +18,7 @@ describe('sqle/components/RuleList/RuleFilterCommonFields', () => {
   });
 
   const customRender = () => {
-    return superRender(
+    return sqleSuperRender(
       <Form>
         <RuleFilterCommonFields />
       </Form>

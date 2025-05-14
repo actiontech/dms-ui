@@ -1,5 +1,5 @@
 import { cleanup, act } from '@testing-library/react';
-import { renderWithTheme } from '../../../../../testUtils/customRender';
+import { sqleSuperRender } from '../../../../../testUtils/superRender';
 import { mockThemeStyleData } from '../../../../../testUtils/mockHooks/mockThemeStyleData';
 import MockDate from 'mockdate';
 import statistic from '../../../../../testUtils/mockApi/statistic';
@@ -12,7 +12,7 @@ import dayjs from 'dayjs';
 
 describe('ReportStatistics/CardNumberShow', () => {
   const customRender = () => {
-    return renderWithTheme(<CardNumberShow />);
+    return sqleSuperRender(<CardNumberShow />);
   };
 
   beforeEach(() => {

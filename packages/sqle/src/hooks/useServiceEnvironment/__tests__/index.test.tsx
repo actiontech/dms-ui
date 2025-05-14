@@ -1,6 +1,6 @@
 import project from '../../../testUtils/mockApi/project';
 import { mockEnvironmentTagsData } from '../../../testUtils/mockApi/project/data';
-import { renderHooksWithRedux } from '@actiontech/shared/lib/testUtil/customRender';
+import { superRenderHook } from '@actiontech/shared/lib/testUtil/superRender';
 import useServiceOptions from '..';
 import { act, cleanup } from '@testing-library/react';
 import {
@@ -27,7 +27,7 @@ describe('sqle/hooks/useServiceEnvironment', () => {
   });
 
   it('should get service environment data from request', async () => {
-    const { result } = renderHooksWithRedux(useServiceOptions, {});
+    const { result } = superRenderHook(useServiceOptions, {});
 
     expect(result.current.loading).toBeFalsy();
     expect(result.current.environmentList).toEqual([]);
@@ -62,7 +62,7 @@ describe('sqle/hooks/useServiceEnvironment', () => {
       createSpyFailResponse({ data: { environment_tags: [] } })
     );
 
-    const { result } = renderHooksWithRedux(useServiceOptions, {});
+    const { result } = superRenderHook(useServiceOptions, {});
     act(() => result.current.updateEnvironmentList(mockProjectInfo.projectID));
     await act(async () => jest.advanceTimersByTime(3000));
     expect(result.current.environmentList).toEqual([]);
@@ -73,7 +73,7 @@ describe('sqle/hooks/useServiceEnvironment', () => {
     listEnvironmentTagsSpy.mockImplementation(() =>
       createSpyErrorResponse({ data: [] })
     );
-    const { result } = renderHooksWithRedux(useServiceOptions, {});
+    const { result } = superRenderHook(useServiceOptions, {});
     act(() => result.current.updateEnvironmentList(mockProjectInfo.projectID));
     await act(async () => jest.advanceTimersByTime(3000));
     expect(result.current.environmentList).toEqual([]);

@@ -1,11 +1,11 @@
 import ChartWrapper, { IChartWrapper } from '.';
 
-import { renderWithTheme } from '../../../testUtils/customRender';
+import { sqleSuperRender } from '../../../testUtils/superRender';
 import { act, cleanup, fireEvent, screen } from '@testing-library/react';
 
 describe('sqle/components/ChartCom/ChartWrapper', () => {
   const customRender = (params: IChartWrapper) => {
-    return renderWithTheme(<ChartWrapper {...params} />);
+    return sqleSuperRender(<ChartWrapper {...params} />);
   };
 
   beforeEach(() => {

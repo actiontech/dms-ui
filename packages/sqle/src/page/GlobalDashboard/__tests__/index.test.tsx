@@ -6,7 +6,7 @@ import workflow from '../../../testUtils/mockApi/execWorkflow';
 import sqlManage from '../../../testUtils/mockApi/sqlManage';
 import instance from '../../../testUtils/mockApi/instance';
 import { instanceTipsMockData } from '../../../testUtils/mockApi/instance/data';
-import { superRender } from '../../../testUtils/customRender';
+import { sqleSuperRender } from '../../../testUtils/superRender';
 import GlobalDashboard from '../index';
 import { getBySelector } from '@actiontech/shared/lib/testUtil/customQuery';
 
@@ -34,7 +34,7 @@ describe('sqle/GlobalDashboard', () => {
   });
 
   it('render init snap shot', async () => {
-    const { baseElement } = superRender(<GlobalDashboard />);
+    const { baseElement } = sqleSuperRender(<GlobalDashboard />);
     await act(async () => jest.advanceTimersByTime(3000));
     expect(baseElement).toMatchSnapshot();
     expect(getGlobalWorkflowsSpy).toHaveBeenCalledTimes(1);
@@ -43,7 +43,7 @@ describe('sqle/GlobalDashboard', () => {
   });
 
   it('render filter list', async () => {
-    superRender(<GlobalDashboard />);
+    sqleSuperRender(<GlobalDashboard />);
     await act(async () => jest.advanceTimersByTime(3000));
     expect(getGlobalWorkflowsSpy).toHaveBeenCalledTimes(1);
     expect(getGlobalSqlManageStatisticsSpy).toHaveBeenCalledTimes(1);
@@ -85,7 +85,7 @@ describe('sqle/GlobalDashboard', () => {
   });
 
   it('test refresh list', async () => {
-    superRender(<GlobalDashboard />);
+    sqleSuperRender(<GlobalDashboard />);
     await act(async () => jest.advanceTimersByTime(3000));
     expect(getGlobalWorkflowsSpy).toHaveBeenCalledTimes(1);
 

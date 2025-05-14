@@ -1,5 +1,5 @@
 import { cleanup, fireEvent, screen, act } from '@testing-library/react';
-import { renderWithThemeAndRedux } from '../../../testUtils/customRender';
+import { sqleSuperRender } from '../../../testUtils/superRender';
 import { mockThemeStyleData } from '../../../testUtils/mockHooks/mockThemeStyleData';
 
 import EEIndex from '.';
@@ -35,7 +35,7 @@ describe('sqle/ReportStatistics/EEIndex', () => {
   });
 
   it('render report statics page', async () => {
-    const { baseElement } = renderWithThemeAndRedux(<EEIndex />);
+    const { baseElement } = sqleSuperRender(<EEIndex />);
     expect(requestPlotsData).toHaveBeenCalled();
     expect(baseElement).toMatchSnapshot();
     expect(screen.getByText('报表统计')).toBeInTheDocument();

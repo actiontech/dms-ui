@@ -1,6 +1,6 @@
 import { cleanup, screen, act, fireEvent } from '@testing-library/react';
 import UpdateCustomRule from '.';
-import { renderWithThemeAndRedux } from '../../../testUtils/customRender';
+import { sqleSuperRender } from '../../../testUtils/superRender';
 import Router, { useNavigate } from 'react-router-dom';
 import { mockUseDbServiceDriver } from '@actiontech/shared/lib/testUtil/mockHook/mockUseDbServiceDriver';
 import { getBySelector } from '@actiontech/shared/lib/testUtil/customQuery';
@@ -75,7 +75,7 @@ describe('sqle/CustomRule/UpdateCustomRule', () => {
   ignoreConsoleErrors([UtilsConsoleErrorStringsEnum.UNKNOWN_EVENT_HANDLER]);
 
   it('return to custom list page', async () => {
-    const { baseElement } = renderWithThemeAndRedux(<UpdateCustomRule />);
+    const { baseElement } = sqleSuperRender(<UpdateCustomRule />);
     await act(async () => jest.advanceTimersByTime(3000));
     expect(baseElement).toMatchSnapshot();
     expect(getCustomRuleSpy).toHaveBeenCalledTimes(1);
@@ -89,7 +89,7 @@ describe('sqle/CustomRule/UpdateCustomRule', () => {
   });
 
   it('reset form values', async () => {
-    renderWithThemeAndRedux(<UpdateCustomRule />);
+    sqleSuperRender(<UpdateCustomRule />);
     await act(async () => jest.advanceTimersByTime(3000));
     expect(getCustomRuleSpy).toHaveBeenCalledTimes(1);
     const descEle = getBySelector('#desc');
@@ -108,7 +108,7 @@ describe('sqle/CustomRule/UpdateCustomRule', () => {
   });
 
   it('update custom rule', async () => {
-    const { baseElement } = renderWithThemeAndRedux(<UpdateCustomRule />);
+    const { baseElement } = sqleSuperRender(<UpdateCustomRule />);
     await act(async () => jest.advanceTimersByTime(3000));
 
     const annotationEle = getBySelector('#annotation');
@@ -198,7 +198,7 @@ describe('sqle/CustomRule/UpdateCustomRule', () => {
   it('when update custom rule return fail', async () => {
     updateCustomRuleSpy.mockClear();
     updateCustomRuleSpy.mockImplementation(() => createSpyFailResponse({}));
-    const { baseElement } = renderWithThemeAndRedux(<UpdateCustomRule />);
+    const { baseElement } = sqleSuperRender(<UpdateCustomRule />);
     await act(async () => jest.advanceTimersByTime(3000));
     fireEvent.click(screen.getByText('下一步'));
     await act(async () => jest.advanceTimersByTime(300));

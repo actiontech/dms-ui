@@ -1,4 +1,4 @@
-import { superRender } from '../../../../testUtils/customRender';
+import { sqleSuperRender } from '../../../../testUtils/superRender';
 import OrderRiskList from '.';
 import projectOverview from '../../../../testUtils/mockApi/projectOverview';
 import { act, cleanup, fireEvent, screen } from '@testing-library/react';
@@ -38,7 +38,7 @@ describe('page/ProjectOverview/OrderRiskList', () => {
   });
 
   const customRender = () => {
-    return superRender(<OrderRiskList />);
+    return sqleSuperRender(<OrderRiskList />);
   };
 
   it('render order risk list and check more data', async () => {
