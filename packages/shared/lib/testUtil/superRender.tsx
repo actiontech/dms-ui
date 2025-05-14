@@ -8,6 +8,7 @@ import { storeFactory } from './mockRedux';
 import { ThemeProvider } from '@mui/system';
 import { StyledEngineProvider } from '@mui/material/styles';
 import lightTheme from '../theme/light';
+import { ToolkitStore } from '@reduxjs/toolkit/dist/configureStore';
 
 export type RenderParams = Parameters<typeof render>;
 
@@ -18,6 +19,7 @@ export type RecoilRootPropsCustom = {
 
 export interface WrapperOptions {
   routerProps?: MemoryRouterProps;
+  storeFactory?: (initStore: any) => ToolkitStore;
   initStore?: any;
   recoilRootProps?: RecoilRootPropsCustom;
   theme?: any;
@@ -26,6 +28,7 @@ export interface WrapperOptions {
 export const createTestWrapper = (options?: WrapperOptions) => {
   const {
     routerProps,
+    storeFactory: customStoreFactory,
     initStore,
     recoilRootProps,
     theme = lightTheme
@@ -36,13 +39,17 @@ export const createTestWrapper = (options?: WrapperOptions) => {
       <ThemeProvider theme={theme}>{children}</ThemeProvider>
     );
 
+    const store = customStoreFactory
+      ? customStoreFactory(initStore)
+      : storeFactory(initStore);
+
     return (
       <ConfigProvider
         locale={zhCN}
         theme={{ algorithm: antdTheme.defaultAlgorithm, hashed: false }}
       >
         <RecoilRoot {...recoilRootProps}>
-          <Provider store={storeFactory(initStore)}>
+          <Provider store={store}>
             <MemoryRouter {...routerProps}>
               <StyledEngineProvider injectFirst>
                 {themeComponent}
