@@ -26,6 +26,7 @@ import pushRule from './pushRule';
 import sqlManagementException from './sqlManagementException';
 import pipelineConfiguration from './pipelineConfiguration';
 import versionManagement from './versionManagement';
+import sqlInsights from './sqlInsights';
 
 // eslint-disable-next-line import/no-anonymous-default-export
 export default {
@@ -57,6 +58,7 @@ export default {
     pushRule,
     sqlManagementException,
     pipelineConfiguration,
-    versionManagement
+    versionManagement,
+    sqlInsights
   }
 };
