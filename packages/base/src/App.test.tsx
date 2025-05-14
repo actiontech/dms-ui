@@ -26,6 +26,13 @@ import { SystemRole } from '@actiontech/shared/lib/enum';
 import { AuthRouterConfig } from './router/router';
 import { cloneDeep } from 'lodash';
 import dmsSystem from './testUtils/mockApi/system';
+import { mockUseRecentlySelectedZone } from './testUtils/mockHooks/mockUseRecentlySelectedZone';
+import { mockUseRecentlySelectedZoneData } from './testUtils/mockHooks/data';
+import gateway from './testUtils/mockApi/gateway';
+import project from './testUtils/mockApi/project';
+import EventEmitter from './utils/EventEmitter';
+import EmitterKey from './data/EmitterKey';
+
 jest.mock('react-router-dom', () => ({
   ...jest.requireActual('react-router-dom'),
   useNavigate: jest.fn()
@@ -56,6 +63,7 @@ describe('App', () => {
     mockUseDbServiceDriver();
     mockUseCurrentUser();
     mockSystemConfig();
+    mockUseRecentlySelectedZone();
     mockUsePermission(
       {
         checkPagePermission: checkPageActionSpy,
@@ -64,6 +72,8 @@ describe('App', () => {
       { useSpyOnMockHooks: true }
     );
     mockDMSGlobalApi.mockAllApi();
+    gateway.getGatewayTips();
+    project.getProjectList();
     requestGetModalStatus = system.getSystemModuleStatus();
     requestGetBasicInfo = mockDMSGlobalApi.getBasicInfo();
     getUserBySessionSpy = mockDMSGlobalApi.getUserBySession();
@@ -277,5 +287,26 @@ describe('App', () => {
     superRender(<App />);
     await act(async () => jest.advanceTimersByTime(3000));
     expect(AuthRouterConfig).toEqual(routerConfigBackup);
+  });
+
+  it('should initialize the availability zone', () => {
+    superRender(<App />);
+    expect(
+      mockUseRecentlySelectedZoneData.initializeAvailabilityZone
+    ).toHaveBeenCalledTimes(1);
+  });
+
+  it('should reload the initial data when the event is triggered', async () => {
+    superRender(<App />);
+    expect(getUserBySessionSpy).toHaveBeenCalledTimes(1);
+    expect(requestGetModalStatus).toHaveBeenCalledTimes(2);
+    expect(mockDBServiceDriverInfo.updateDriverList).toHaveBeenCalledTimes(1);
+
+    act(() => {
+      EventEmitter.emit(EmitterKey.DMS_Reload_Initial_Data);
+    });
+    expect(getUserBySessionSpy).toHaveBeenCalledTimes(2);
+    expect(requestGetModalStatus).toHaveBeenCalledTimes(4);
+    expect(mockDBServiceDriverInfo.updateDriverList).toHaveBeenCalledTimes(2);
   });
 });

@@ -2,10 +2,10 @@
  * @test_version ce
  */
 import { useDispatch } from 'react-redux';
-import { renderWithTheme } from '@actiontech/shared/lib/testUtil/customRender';
 import Account from '.';
 import { mockUseUserInfo } from '@actiontech/shared/lib/testUtil/mockHook/mockUseUserInfo';
 import { mockUserInfo } from '@actiontech/shared/lib/testUtil/mockHook/data';
+import { superRender } from '../../testUtils/customRender';
 
 jest.mock('react-redux', () => {
   return {
@@ -28,7 +28,7 @@ describe('test base/page/Account ce', () => {
 
   it('should match snapshot', () => {
     mockUseUserInfo();
-    const { baseElement } = renderWithTheme(<Account />);
+    const { baseElement } = superRender(<Account />);
     expect(baseElement).toMatchSnapshot();
     expect(mockUserInfo.getUserInfo).toHaveBeenCalledTimes(1);
   });

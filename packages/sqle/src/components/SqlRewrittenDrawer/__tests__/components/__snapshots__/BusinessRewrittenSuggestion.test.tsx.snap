@@ -29,7 +29,7 @@ exports[`BusinessRewrittenSuggestion BusinessRewrittenSuggestion and BusinessRew
       </svg>
     </span>
     <div
-      class="ant-typography ant-typography-ellipsis ant-typography-single-line ant-typography-ellipsis-single-line rule-name basic-typography-ellipsis css-wgj5gs css-dev-only-do-not-override-txh9fw"
+      class="ant-typography ant-typography-ellipsis ant-typography-single-line ant-typography-ellipsis-single-line rule-name basic-typography-ellipsis css-wgj5gs"
     >
       不建议LIMIT的偏移OFFSET大于阈值
     </div>
@@ -66,7 +66,7 @@ exports[`BusinessRewrittenSuggestion BusinessRewrittenSuggestion and BusinessRew
       </svg>
     </span>
     <div
-      class="ant-typography ant-typography-ellipsis ant-typography-single-line ant-typography-ellipsis-single-line rule-name basic-typography-ellipsis css-wgj5gs css-dev-only-do-not-override-txh9fw"
+      class="ant-typography ant-typography-ellipsis ant-typography-single-line ant-typography-ellipsis-single-line rule-name basic-typography-ellipsis css-wgj5gs"
     >
       不建议LIMIT的偏移OFFSET大于阈值
     </div>

@@ -10,7 +10,7 @@ exports[`page/ProjectOverview/TaskList render empty and refresh 1`] = `
         class="icon-center-wrapper MuiBox-root css-0"
       >
         <div
-          class="css-dev-only-do-not-override-txh9fw ant-empty is-icon-tips css-19kysfv"
+          class="ant-empty is-icon-tips css-19kysfv"
         >
           <div
             class="ant-empty-image"
@@ -64,7 +64,7 @@ exports[`page/ProjectOverview/TaskList render empty and refresh 1`] = `
             class="ant-empty-footer"
           >
             <button
-              class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-text ant-btn-sm basic-button-wrapper css-geipcv"
+              class="ant-btn ant-btn-text ant-btn-sm basic-button-wrapper css-geipcv"
               type="button"
             >
               <span>
@@ -89,7 +89,7 @@ exports[`page/ProjectOverview/TaskList render error info 1`] = `
         class="icon-center-wrapper MuiBox-root css-0"
       >
         <div
-          class="css-dev-only-do-not-override-txh9fw ant-empty is-icon-tips css-19kysfv"
+          class="ant-empty is-icon-tips css-19kysfv"
         >
           <div
             class="ant-empty-image"
@@ -154,7 +154,7 @@ exports[`page/ProjectOverview/TaskList render error info 1`] = `
             class="ant-empty-footer"
           >
             <button
-              class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-text ant-btn-sm basic-button-wrapper css-geipcv"
+              class="ant-btn ant-btn-text ant-btn-sm basic-button-wrapper css-geipcv"
               type="button"
             >
               <span>
@@ -180,6 +180,7 @@ exports[`page/ProjectOverview/TaskList render task list 1`] = `
       >
         <div
           data-custom-params="{"data":[{"type":"MySQL","value":6},{"type":"default-custom-bar0","value":0},{"type":"default-custom-bar1","value":0},{"type":"default-custom-bar2","value":0},{"type":"default-custom-bar3","value":0},{"type":"default-custom-bar4","value":0},{"type":"default-custom-bar5","value":0},{"type":"default-custom-bar6","value":0},{"type":"default-custom-bar7","value":0},{"type":"default-custom-bar8","value":0},{"type":"default-custom-bar9","value":0}],"xField":"value","yField":"type","autoFit":true,"meta":{"value":{"alias":"扫描任务总数"}},"yAxis":false,"xAxis":false,"legend":false,"appendPadding":[0,0,20,0],"minBarWidth":28,"maxBarWidth":28,"barStyle":{"radius":4,"fill":"#6094FC","strokeOpacity":0},"barBackground":{"style":{"fill":"#f7f6f4","fillOpacity":1}},"label":{"position":"left","offsetX":-2,"layout":{"type":"limit-in-shape"},"style":{"fill":"#dad9d9","opacity":1},"labelHeight":28},"tooltip":{"showMarkers":false,"showNil":false,"fields":["type","value"]},"interactions":[{"type":"element-active"}],"state":{"active":{}},"theme":"light"}"
+          data-testid="mock-antd-plots"
         />
       </div>
     </div>
@@ -198,6 +199,7 @@ exports[`page/ProjectOverview/TaskList render task list more than 11 1`] = `
       >
         <div
           data-custom-params="{"data":[{"type":"MySQL","value":6},{"type":"default-custom-bar1","value":1},{"type":"2","value":0},{"type":"3","value":1},{"type":"4","value":1},{"type":"5","value":1},{"type":"6","value":1},{"type":"7","value":1},{"type":"8","value":1},{"type":"9","value":1},{"type":"10","value":1},{"type":"11","value":1}],"xField":"value","yField":"type","autoFit":true,"meta":{"value":{"alias":"扫描任务总数"}},"yAxis":false,"xAxis":false,"legend":false,"appendPadding":[0,0,20,0],"minBarWidth":28,"maxBarWidth":28,"barStyle":{"radius":4,"fill":"#6094FC","strokeOpacity":0},"barBackground":{"style":{"fill":"#f7f6f4","fillOpacity":1}},"label":{"position":"left","offsetX":-2,"layout":{"type":"limit-in-shape"},"style":{"fill":"#dad9d9","opacity":1},"labelHeight":28},"tooltip":{"showMarkers":false,"showNil":false,"fields":["type","value"]},"interactions":[{"type":"element-active"}],"state":{"active":{}},"scrollbar":{"type":"vertical","animate":false,"padding":[0,0,0,0]},"theme":"light"}"
+          data-testid="mock-antd-plots"
         />
       </div>
     </div>

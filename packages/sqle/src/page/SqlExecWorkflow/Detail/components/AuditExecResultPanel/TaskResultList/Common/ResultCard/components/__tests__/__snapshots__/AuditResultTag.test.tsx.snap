@@ -4,7 +4,7 @@ exports[`sqle/ExecWorkflow/AuditDetail/AuditResultTag render tag is audit succes
 <body>
   <div>
     <span
-      class="ant-tag ant-tag-green ant-tag-borderless basic-tag-wrapper basic-large-tag-wrapper css-13qu6j1 css-dev-only-do-not-override-txh9fw"
+      class="ant-tag ant-tag-green ant-tag-borderless basic-tag-wrapper basic-large-tag-wrapper css-13qu6j1"
     >
       <svg
         height="16"
@@ -29,13 +29,13 @@ exports[`sqle/ExecWorkflow/AuditDetail/AuditResultTag render tag is error 1`] = 
 <body>
   <div>
     <div
-      class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+      class="ant-space ant-space-horizontal ant-space-align-center"
     >
       <div
         class="ant-space-item"
       >
         <span
-          class="ant-tag ant-tag-red ant-tag-borderless basic-tag-wrapper basic-large-tag-wrapper css-xyvxme css-dev-only-do-not-override-txh9fw"
+          class="ant-tag ant-tag-red ant-tag-borderless basic-tag-wrapper basic-large-tag-wrapper css-xyvxme"
         >
           <svg
             height="16"
@@ -62,14 +62,14 @@ exports[`sqle/ExecWorkflow/AuditDetail/AuditResultTag render tag is notice & war
 <body>
   <div>
     <div
-      class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+      class="ant-space ant-space-horizontal ant-space-align-center"
     >
       <div
         class="ant-space-item"
         style="margin-right: 8px;"
       >
         <span
-          class="ant-tag ant-tag-blue ant-tag-borderless basic-tag-wrapper basic-large-tag-wrapper css-1q0n2j9 css-dev-only-do-not-override-txh9fw"
+          class="ant-tag ant-tag-blue ant-tag-borderless basic-tag-wrapper basic-large-tag-wrapper css-1q0n2j9"
         >
           <svg
             height="19"
@@ -92,7 +92,7 @@ exports[`sqle/ExecWorkflow/AuditDetail/AuditResultTag render tag is notice & war
         style="margin-right: 8px;"
       >
         <span
-          class="ant-tag ant-tag-orange ant-tag-borderless basic-tag-wrapper basic-large-tag-wrapper css-17gmaof css-dev-only-do-not-override-txh9fw"
+          class="ant-tag ant-tag-orange ant-tag-borderless basic-tag-wrapper basic-large-tag-wrapper css-17gmaof"
         >
           <svg
             fill="none"
@@ -115,7 +115,7 @@ exports[`sqle/ExecWorkflow/AuditDetail/AuditResultTag render tag is notice & war
         class="ant-space-item"
       >
         <span
-          class="ant-tag ant-tag-red ant-tag-borderless basic-tag-wrapper basic-large-tag-wrapper css-xyvxme css-dev-only-do-not-override-txh9fw"
+          class="ant-tag ant-tag-red ant-tag-borderless basic-tag-wrapper basic-large-tag-wrapper css-xyvxme"
         >
           <svg
             height="16"
@@ -142,13 +142,13 @@ exports[`sqle/ExecWorkflow/AuditDetail/AuditResultTag render tag is notice 1`] =
 <body>
   <div>
     <div
-      class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+      class="ant-space ant-space-horizontal ant-space-align-center"
     >
       <div
         class="ant-space-item"
       >
         <span
-          class="ant-tag ant-tag-blue ant-tag-borderless basic-tag-wrapper basic-large-tag-wrapper css-1q0n2j9 css-dev-only-do-not-override-txh9fw"
+          class="ant-tag ant-tag-blue ant-tag-borderless basic-tag-wrapper basic-large-tag-wrapper css-1q0n2j9"
         >
           <svg
             height="19"
@@ -175,13 +175,13 @@ exports[`sqle/ExecWorkflow/AuditDetail/AuditResultTag render tag is warn 1`] = `
 <body>
   <div>
     <div
-      class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+      class="ant-space ant-space-horizontal ant-space-align-center"
     >
       <div
         class="ant-space-item"
       >
         <span
-          class="ant-tag ant-tag-orange ant-tag-borderless basic-tag-wrapper basic-large-tag-wrapper css-17gmaof css-dev-only-do-not-override-txh9fw"
+          class="ant-tag ant-tag-orange ant-tag-borderless basic-tag-wrapper basic-large-tag-wrapper css-17gmaof"
         >
           <svg
             fill="none"

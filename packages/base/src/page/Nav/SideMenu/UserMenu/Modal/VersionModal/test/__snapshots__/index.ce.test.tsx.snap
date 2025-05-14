@@ -11,7 +11,7 @@ exports[`base/Nav/SideMenu/UserMenu/VersionModal-ce render snap when open is tru
   <div />
   <div>
     <div
-      class="ant-modal-root css-dev-only-do-not-override-txh9fw"
+      class="ant-modal-root"
     >
       <div
         class="ant-modal-mask"
@@ -22,7 +22,7 @@ exports[`base/Nav/SideMenu/UserMenu/VersionModal-ce render snap when open is tru
       >
         <div
           aria-modal="true"
-          class="ant-modal css-dev-only-do-not-override-txh9fw version-modal basic-modal-wrapper css-vvpsbb ant-zoom-appear ant-zoom-appear-prepare ant-zoom"
+          class="ant-modal version-modal basic-modal-wrapper css-vvpsbb ant-zoom-appear ant-zoom-appear-prepare ant-zoom"
           role="dialog"
           style="width: 960px;"
         >
@@ -59,20 +59,20 @@ exports[`base/Nav/SideMenu/UserMenu/VersionModal-ce render snap when open is tru
               class="ant-modal-body"
             >
               <div
-                class="ant-space css-dev-only-do-not-override-txh9fw ant-space-vertical"
+                class="ant-space ant-space-vertical"
               >
                 <div
                   class="ant-space-item"
                   style="margin-bottom: 24px;"
                 >
                   <div
-                    class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+                    class="ant-space ant-space-horizontal ant-space-align-center"
                   >
                     <div
                       class="ant-space-item"
                     >
                       <h2
-                        class="ant-typography css-dev-only-do-not-override-txh9fw"
+                        class="ant-typography"
                       >
                         SQLE
                       </h2>
@@ -84,14 +84,14 @@ exports[`base/Nav/SideMenu/UserMenu/VersionModal-ce render snap when open is tru
                   style="margin-bottom: 24px;"
                 >
                   <div
-                    class="ant-space css-dev-only-do-not-override-txh9fw ant-space-vertical ant-space-align-start"
+                    class="ant-space ant-space-vertical ant-space-align-start"
                   >
                     <div
                       class="ant-space-item"
                       style="margin-bottom: 8px;"
                     >
                       <h5
-                        class="ant-typography css-dev-only-do-not-override-txh9fw"
+                        class="ant-typography"
                       >
                         版本信息
                       </h5>
@@ -100,14 +100,14 @@ exports[`base/Nav/SideMenu/UserMenu/VersionModal-ce render snap when open is tru
                       class="ant-space-item"
                     >
                       <div
-                        class="ant-space css-dev-only-do-not-override-txh9fw ant-space-vertical"
+                        class="ant-space ant-space-vertical"
                       >
                         <div
                           class="ant-space-item"
                           style="margin-bottom: 8px;"
                         >
                           <article
-                            class="ant-typography css-dev-only-do-not-override-txh9fw"
+                            class="ant-typography"
                           >
                             UI: 
                             feature/add-make-command   ba9c9c5
@@ -118,7 +118,7 @@ exports[`base/Nav/SideMenu/UserMenu/VersionModal-ce render snap when open is tru
                           style="margin-bottom: 8px;"
                         >
                           <article
-                            class="ant-typography css-dev-only-do-not-override-txh9fw"
+                            class="ant-typography"
                           >
                             DMS: 
                             -
@@ -128,7 +128,7 @@ exports[`base/Nav/SideMenu/UserMenu/VersionModal-ce render snap when open is tru
                           class="ant-space-item"
                         >
                           <article
-                            class="ant-typography css-dev-only-do-not-override-txh9fw"
+                            class="ant-typography"
                           >
                             SQLE: 
                             -
@@ -143,14 +143,14 @@ exports[`base/Nav/SideMenu/UserMenu/VersionModal-ce render snap when open is tru
                   style="margin-bottom: 24px;"
                 >
                   <div
-                    class="ant-space css-dev-only-do-not-override-txh9fw ant-space-vertical ant-space-align-start"
+                    class="ant-space ant-space-vertical ant-space-align-start"
                   >
                     <div
                       class="ant-space-item"
                       style="margin-bottom: 8px;"
                     >
                       <h5
-                        class="ant-typography css-dev-only-do-not-override-txh9fw"
+                        class="ant-typography"
                       >
                         产品简介
                       </h5>
@@ -159,7 +159,7 @@ exports[`base/Nav/SideMenu/UserMenu/VersionModal-ce render snap when open is tru
                       class="ant-space-item"
                     >
                       <span
-                        class="ant-typography css-dev-only-do-not-override-txh9fw"
+                        class="ant-typography"
                       >
                         SQLE 是爱可生自主研发，支持多元数据库的 SQL 质量管理平台。应用于开发、测试、上线发布、生产运行阶段的 SQL 质量治理。通过 “建立规范、事前控制、事后监督、标准发布” 的方式，为企业提供 SQL 全生命周期质量管控能力，同时推动企业内部开发规范快速落地。
                       </span>
@@ -170,14 +170,14 @@ exports[`base/Nav/SideMenu/UserMenu/VersionModal-ce render snap when open is tru
                   class="ant-space-item"
                 >
                   <div
-                    class="ant-space css-dev-only-do-not-override-txh9fw ant-space-vertical ant-space-align-start full-width-element css-ac649q"
+                    class="ant-space ant-space-vertical ant-space-align-start full-width-element css-ac649q"
                   >
                     <div
                       class="ant-space-item"
                       style="margin-bottom: 8px;"
                     >
                       <h5
-                        class="ant-typography css-dev-only-do-not-override-txh9fw"
+                        class="ant-typography"
                       >
                         功能特点
                       </h5>
@@ -186,7 +186,7 @@ exports[`base/Nav/SideMenu/UserMenu/VersionModal-ce render snap when open is tru
                       class="ant-space-item"
                     >
                       <div
-                        class="ant-space css-dev-only-do-not-override-txh9fw ant-space-vertical full-width-element version-comparison-wrap css-11wj1aa"
+                        class="ant-space ant-space-vertical full-width-element version-comparison-wrap css-11wj1aa"
                       >
                         <div
                           class="ant-space-item"
@@ -196,34 +196,34 @@ exports[`base/Nav/SideMenu/UserMenu/VersionModal-ce render snap when open is tru
                             class="content-wrap"
                           >
                             <div
-                              class="ant-card ant-card-bordered ant-card-hoverable version-card css-13zv8cx css-dev-only-do-not-override-txh9fw"
+                              class="ant-card ant-card-bordered ant-card-hoverable version-card css-13zv8cx"
                               color="green"
                             >
                               <div
                                 class="ant-card-body"
                               >
                                 <div
-                                  class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center version-tag-wrap"
+                                  class="ant-space ant-space-horizontal ant-space-align-center version-tag-wrap"
                                 >
                                   <div
                                     class="ant-space-item"
                                   >
                                     <span
-                                      class="ant-tag ant-tag-green basic-tag-wrapper basic-large-tag-wrapper css-13qu6j1 css-dev-only-do-not-override-txh9fw"
+                                      class="ant-tag ant-tag-green basic-tag-wrapper basic-large-tag-wrapper css-13qu6j1"
                                     >
                                       社区版
                                     </span>
                                   </div>
                                 </div>
                                 <div
-                                  class="ant-space css-dev-only-do-not-override-txh9fw ant-space-vertical ant-space-align-center version-item"
+                                  class="ant-space ant-space-vertical ant-space-align-center version-item"
                                 >
                                   <div
                                     class="ant-space-item"
                                     style="margin-bottom: 16px;"
                                   >
                                     <h4
-                                      class="ant-typography css-dev-only-do-not-override-txh9fw"
+                                      class="ant-typography"
                                     >
                                       免费
                                     </h4>
@@ -233,7 +233,7 @@ exports[`base/Nav/SideMenu/UserMenu/VersionModal-ce render snap when open is tru
                                     style="margin-bottom: 16px;"
                                   >
                                     <span
-                                      class="ant-typography term-wrap css-dev-only-do-not-override-txh9fw"
+                                      class="ant-typography term-wrap"
                                     >
                                       永久
                                     </span>
@@ -243,7 +243,7 @@ exports[`base/Nav/SideMenu/UserMenu/VersionModal-ce render snap when open is tru
                                     style="margin-bottom: 16px;"
                                   >
                                     <a
-                                      class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary apply-button basic-button-wrapper css-geipcv"
+                                      class="ant-btn ant-btn-primary apply-button basic-button-wrapper css-geipcv"
                                       href="https://actiontech.github.io/sqle-docs/docs/deploy-manual/intro"
                                       target="_blank"
                                     >
@@ -257,7 +257,7 @@ exports[`base/Nav/SideMenu/UserMenu/VersionModal-ce render snap when open is tru
                                     style="margin-bottom: 16px;"
                                   >
                                     <span
-                                      class="ant-typography version-subTitle-wrap css-dev-only-do-not-override-txh9fw"
+                                      class="ant-typography version-subTitle-wrap"
                                     >
                                       适用于MySQL基础审核场景
                                     </span>
@@ -267,7 +267,7 @@ exports[`base/Nav/SideMenu/UserMenu/VersionModal-ce render snap when open is tru
                                     style="margin-bottom: 16px;"
                                   >
                                     <div
-                                      class="ant-divider css-dev-only-do-not-override-txh9fw ant-divider-horizontal"
+                                      class="ant-divider ant-divider-horizontal"
                                       role="separator"
                                     />
                                   </div>
@@ -275,14 +275,14 @@ exports[`base/Nav/SideMenu/UserMenu/VersionModal-ce render snap when open is tru
                                     class="ant-space-item"
                                   >
                                     <div
-                                      class="ant-space css-dev-only-do-not-override-txh9fw ant-space-vertical content-list"
+                                      class="ant-space ant-space-vertical content-list"
                                     >
                                       <div
                                         class="ant-space-item"
                                         style="margin-bottom: 8px;"
                                       >
                                         <div
-                                          class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-start full-width-element version-desc-wrap"
+                                          class="ant-space ant-space-horizontal ant-space-align-start full-width-element version-desc-wrap"
                                         >
                                           <div
                                             class="ant-space-item"
@@ -304,7 +304,7 @@ exports[`base/Nav/SideMenu/UserMenu/VersionModal-ce render snap when open is tru
                                             class="ant-space-item"
                                           >
                                             <span
-                                              class="ant-typography css-dev-only-do-not-override-txh9fw"
+                                              class="ant-typography"
                                             >
                                               支持纳管MySQL数据源
                                             </span>
@@ -316,7 +316,7 @@ exports[`base/Nav/SideMenu/UserMenu/VersionModal-ce render snap when open is tru
                                         style="margin-bottom: 8px;"
                                       >
                                         <div
-                                          class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-start full-width-element version-desc-wrap"
+                                          class="ant-space ant-space-horizontal ant-space-align-start full-width-element version-desc-wrap"
                                         >
                                           <div
                                             class="ant-space-item"
@@ -338,7 +338,7 @@ exports[`base/Nav/SideMenu/UserMenu/VersionModal-ce render snap when open is tru
                                             class="ant-space-item"
                                           >
                                             <span
-                                              class="ant-typography css-dev-only-do-not-override-txh9fw"
+                                              class="ant-typography"
                                             >
                                               提供专业SQL审核能力
                                             </span>
@@ -350,7 +350,7 @@ exports[`base/Nav/SideMenu/UserMenu/VersionModal-ce render snap when open is tru
                                         style="margin-bottom: 8px;"
                                       >
                                         <div
-                                          class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-start full-width-element version-desc-wrap"
+                                          class="ant-space ant-space-horizontal ant-space-align-start full-width-element version-desc-wrap"
                                         >
                                           <div
                                             class="ant-space-item"
@@ -372,7 +372,7 @@ exports[`base/Nav/SideMenu/UserMenu/VersionModal-ce render snap when open is tru
                                             class="ant-space-item"
                                           >
                                             <span
-                                              class="ant-typography css-dev-only-do-not-override-txh9fw"
+                                              class="ant-typography"
                                             >
                                               集成CloudBeaver在线查询
                                             </span>
@@ -384,7 +384,7 @@ exports[`base/Nav/SideMenu/UserMenu/VersionModal-ce render snap when open is tru
                                         style="margin-bottom: 8px;"
                                       >
                                         <div
-                                          class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-start full-width-element version-desc-wrap"
+                                          class="ant-space ant-space-horizontal ant-space-align-start full-width-element version-desc-wrap"
                                         >
                                           <div
                                             class="ant-space-item"
@@ -406,7 +406,7 @@ exports[`base/Nav/SideMenu/UserMenu/VersionModal-ce render snap when open is tru
                                             class="ant-space-item"
                                           >
                                             <span
-                                              class="ant-typography css-dev-only-do-not-override-txh9fw"
+                                              class="ant-typography"
                                             >
                                               支持IDE工具审核
                                             </span>
@@ -418,7 +418,7 @@ exports[`base/Nav/SideMenu/UserMenu/VersionModal-ce render snap when open is tru
                                         style="margin-bottom: 8px;"
                                       >
                                         <div
-                                          class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-start full-width-element version-desc-wrap"
+                                          class="ant-space ant-space-horizontal ant-space-align-start full-width-element version-desc-wrap"
                                         >
                                           <div
                                             class="ant-space-item"
@@ -440,7 +440,7 @@ exports[`base/Nav/SideMenu/UserMenu/VersionModal-ce render snap when open is tru
                                             class="ant-space-item"
                                           >
                                             <span
-                                              class="ant-typography css-dev-only-do-not-override-txh9fw"
+                                              class="ant-typography"
                                             >
                                               支持多方式采集MySQL数据
                                             </span>
@@ -451,7 +451,7 @@ exports[`base/Nav/SideMenu/UserMenu/VersionModal-ce render snap when open is tru
                                         class="ant-space-item"
                                       >
                                         <div
-                                          class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-start full-width-element version-desc-wrap"
+                                          class="ant-space ant-space-horizontal ant-space-align-start full-width-element version-desc-wrap"
                                         >
                                           <div
                                             class="ant-space-item"
@@ -473,7 +473,7 @@ exports[`base/Nav/SideMenu/UserMenu/VersionModal-ce render snap when open is tru
                                             class="ant-space-item"
                                           >
                                             <span
-                                              class="ant-typography css-dev-only-do-not-override-txh9fw"
+                                              class="ant-typography"
                                             >
                                               无实例限制
                                             </span>
@@ -486,34 +486,34 @@ exports[`base/Nav/SideMenu/UserMenu/VersionModal-ce render snap when open is tru
                               </div>
                             </div>
                             <div
-                              class="ant-card ant-card-bordered ant-card-hoverable version-card css-1npclps css-dev-only-do-not-override-txh9fw"
+                              class="ant-card ant-card-bordered ant-card-hoverable version-card css-1npclps"
                               color="blue"
                             >
                               <div
                                 class="ant-card-body"
                               >
                                 <div
-                                  class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center version-tag-wrap"
+                                  class="ant-space ant-space-horizontal ant-space-align-center version-tag-wrap"
                                 >
                                   <div
                                     class="ant-space-item"
                                   >
                                     <span
-                                      class="ant-tag ant-tag-blue basic-tag-wrapper basic-large-tag-wrapper css-1q0n2j9 css-dev-only-do-not-override-txh9fw"
+                                      class="ant-tag ant-tag-blue basic-tag-wrapper basic-large-tag-wrapper css-1q0n2j9"
                                     >
                                       专业版
                                     </span>
                                   </div>
                                 </div>
                                 <div
-                                  class="ant-space css-dev-only-do-not-override-txh9fw ant-space-vertical ant-space-align-center version-item"
+                                  class="ant-space ant-space-vertical ant-space-align-center version-item"
                                 >
                                   <div
                                     class="ant-space-item"
                                     style="margin-bottom: 16px;"
                                   >
                                     <h4
-                                      class="ant-typography css-dev-only-do-not-override-txh9fw"
+                                      class="ant-typography"
                                     >
                                       免费
                                     </h4>
@@ -523,7 +523,7 @@ exports[`base/Nav/SideMenu/UserMenu/VersionModal-ce render snap when open is tru
                                     style="margin-bottom: 16px;"
                                   >
                                     <span
-                                      class="ant-typography term-wrap css-dev-only-do-not-override-txh9fw"
+                                      class="ant-typography term-wrap"
                                     >
                                       永久
                                     </span>
@@ -533,7 +533,7 @@ exports[`base/Nav/SideMenu/UserMenu/VersionModal-ce render snap when open is tru
                                     style="margin-bottom: 16px;"
                                   >
                                     <a
-                                      class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary apply-button basic-button-wrapper css-geipcv"
+                                      class="ant-btn ant-btn-primary apply-button basic-button-wrapper css-geipcv"
                                       href="https://www.actionsky.com/sqle?question=true"
                                       target="_blank"
                                     >
@@ -547,7 +547,7 @@ exports[`base/Nav/SideMenu/UserMenu/VersionModal-ce render snap when open is tru
                                     style="margin-bottom: 16px;"
                                   >
                                     <span
-                                      class="ant-typography version-subTitle-wrap css-dev-only-do-not-override-txh9fw"
+                                      class="ant-typography version-subTitle-wrap"
                                     >
                                       适用于多种数据源类型体验场景
                                     </span>
@@ -557,7 +557,7 @@ exports[`base/Nav/SideMenu/UserMenu/VersionModal-ce render snap when open is tru
                                     style="margin-bottom: 16px;"
                                   >
                                     <div
-                                      class="ant-divider css-dev-only-do-not-override-txh9fw ant-divider-horizontal"
+                                      class="ant-divider ant-divider-horizontal"
                                       role="separator"
                                     />
                                   </div>
@@ -565,14 +565,14 @@ exports[`base/Nav/SideMenu/UserMenu/VersionModal-ce render snap when open is tru
                                     class="ant-space-item"
                                   >
                                     <div
-                                      class="ant-space css-dev-only-do-not-override-txh9fw ant-space-vertical content-list"
+                                      class="ant-space ant-space-vertical content-list"
                                     >
                                       <div
                                         class="ant-space-item"
                                         style="margin-bottom: 8px;"
                                       >
                                         <div
-                                          class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-start full-width-element version-desc-wrap"
+                                          class="ant-space ant-space-horizontal ant-space-align-start full-width-element version-desc-wrap"
                                         >
                                           <div
                                             class="ant-space-item"
@@ -594,7 +594,7 @@ exports[`base/Nav/SideMenu/UserMenu/VersionModal-ce render snap when open is tru
                                             class="ant-space-item"
                                           >
                                             <span
-                                              class="ant-typography css-dev-only-do-not-override-txh9fw"
+                                              class="ant-typography"
                                             >
                                               支持纳管10多种主流数据源
                                             </span>
@@ -606,7 +606,7 @@ exports[`base/Nav/SideMenu/UserMenu/VersionModal-ce render snap when open is tru
                                         style="margin-bottom: 8px;"
                                       >
                                         <div
-                                          class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-start full-width-element version-desc-wrap"
+                                          class="ant-space ant-space-horizontal ant-space-align-start full-width-element version-desc-wrap"
                                         >
                                           <div
                                             class="ant-space-item"
@@ -628,7 +628,7 @@ exports[`base/Nav/SideMenu/UserMenu/VersionModal-ce render snap when open is tru
                                             class="ant-space-item"
                                           >
                                             <span
-                                              class="ant-typography css-dev-only-do-not-override-txh9fw"
+                                              class="ant-typography"
                                             >
                                               提供专业SQL审核能力
                                             </span>
@@ -640,7 +640,7 @@ exports[`base/Nav/SideMenu/UserMenu/VersionModal-ce render snap when open is tru
                                         style="margin-bottom: 8px;"
                                       >
                                         <div
-                                          class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-start full-width-element version-desc-wrap"
+                                          class="ant-space ant-space-horizontal ant-space-align-start full-width-element version-desc-wrap"
                                         >
                                           <div
                                             class="ant-space-item"
@@ -662,7 +662,7 @@ exports[`base/Nav/SideMenu/UserMenu/VersionModal-ce render snap when open is tru
                                             class="ant-space-item"
                                           >
                                             <span
-                                              class="ant-typography css-dev-only-do-not-override-txh9fw"
+                                              class="ant-typography"
                                             >
                                               集成CloudBeaver在线查询
                                             </span>
@@ -674,7 +674,7 @@ exports[`base/Nav/SideMenu/UserMenu/VersionModal-ce render snap when open is tru
                                         style="margin-bottom: 8px;"
                                       >
                                         <div
-                                          class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-start full-width-element version-desc-wrap"
+                                          class="ant-space ant-space-horizontal ant-space-align-start full-width-element version-desc-wrap"
                                         >
                                           <div
                                             class="ant-space-item"
@@ -696,7 +696,7 @@ exports[`base/Nav/SideMenu/UserMenu/VersionModal-ce render snap when open is tru
                                             class="ant-space-item"
                                           >
                                             <span
-                                              class="ant-typography css-dev-only-do-not-override-txh9fw"
+                                              class="ant-typography"
                                             >
                                               支持IDE工具审核
                                             </span>
@@ -708,7 +708,7 @@ exports[`base/Nav/SideMenu/UserMenu/VersionModal-ce render snap when open is tru
                                         style="margin-bottom: 8px;"
                                       >
                                         <div
-                                          class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-start full-width-element version-desc-wrap"
+                                          class="ant-space ant-space-horizontal ant-space-align-start full-width-element version-desc-wrap"
                                         >
                                           <div
                                             class="ant-space-item"
@@ -730,7 +730,7 @@ exports[`base/Nav/SideMenu/UserMenu/VersionModal-ce render snap when open is tru
                                             class="ant-space-item"
                                           >
                                             <span
-                                              class="ant-typography css-dev-only-do-not-override-txh9fw"
+                                              class="ant-typography"
                                             >
                                               支持多方式采集各数据源数据
                                             </span>
@@ -741,7 +741,7 @@ exports[`base/Nav/SideMenu/UserMenu/VersionModal-ce render snap when open is tru
                                         class="ant-space-item"
                                       >
                                         <div
-                                          class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-start full-width-element version-desc-wrap"
+                                          class="ant-space ant-space-horizontal ant-space-align-start full-width-element version-desc-wrap"
                                         >
                                           <div
                                             class="ant-space-item"
@@ -763,7 +763,7 @@ exports[`base/Nav/SideMenu/UserMenu/VersionModal-ce render snap when open is tru
                                             class="ant-space-item"
                                           >
                                             <span
-                                              class="ant-typography css-dev-only-do-not-override-txh9fw"
+                                              class="ant-typography"
                                             >
                                               最大实例个数20
                                             </span>
@@ -776,34 +776,34 @@ exports[`base/Nav/SideMenu/UserMenu/VersionModal-ce render snap when open is tru
                               </div>
                             </div>
                             <div
-                              class="ant-card ant-card-bordered ant-card-hoverable version-card css-1gci04r css-dev-only-do-not-override-txh9fw"
+                              class="ant-card ant-card-bordered ant-card-hoverable version-card css-1gci04r"
                               color="orange"
                             >
                               <div
                                 class="ant-card-body"
                               >
                                 <div
-                                  class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center version-tag-wrap"
+                                  class="ant-space ant-space-horizontal ant-space-align-center version-tag-wrap"
                                 >
                                   <div
                                     class="ant-space-item"
                                   >
                                     <span
-                                      class="ant-tag ant-tag-orange basic-tag-wrapper basic-large-tag-wrapper css-17gmaof css-dev-only-do-not-override-txh9fw"
+                                      class="ant-tag ant-tag-orange basic-tag-wrapper basic-large-tag-wrapper css-17gmaof"
                                     >
                                       企业版
                                     </span>
                                   </div>
                                 </div>
                                 <div
-                                  class="ant-space css-dev-only-do-not-override-txh9fw ant-space-vertical ant-space-align-center version-item"
+                                  class="ant-space ant-space-vertical ant-space-align-center version-item"
                                 >
                                   <div
                                     class="ant-space-item"
                                     style="margin-bottom: 16px;"
                                   >
                                     <h4
-                                      class="ant-typography css-dev-only-do-not-override-txh9fw"
+                                      class="ant-typography"
                                     >
                                       定制
                                     </h4>
@@ -813,7 +813,7 @@ exports[`base/Nav/SideMenu/UserMenu/VersionModal-ce render snap when open is tru
                                     style="margin-bottom: 16px;"
                                   >
                                     <span
-                                      class="ant-typography term-wrap css-dev-only-do-not-override-txh9fw"
+                                      class="ant-typography term-wrap"
                                     />
                                   </div>
                                   <div
@@ -821,7 +821,7 @@ exports[`base/Nav/SideMenu/UserMenu/VersionModal-ce render snap when open is tru
                                     style="margin-bottom: 16px;"
                                   >
                                     <a
-                                      class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary apply-button basic-button-wrapper css-geipcv"
+                                      class="ant-btn ant-btn-primary apply-button basic-button-wrapper css-geipcv"
                                       href="https://actiontech.github.io/sqle-docs/docs/support/commercial-support/"
                                       target="_blank"
                                     >
@@ -835,7 +835,7 @@ exports[`base/Nav/SideMenu/UserMenu/VersionModal-ce render snap when open is tru
                                     style="margin-bottom: 16px;"
                                   >
                                     <span
-                                      class="ant-typography version-subTitle-wrap css-dev-only-do-not-override-txh9fw"
+                                      class="ant-typography version-subTitle-wrap"
                                     >
                                       适用于私有云用户定制场景
                                     </span>
@@ -845,7 +845,7 @@ exports[`base/Nav/SideMenu/UserMenu/VersionModal-ce render snap when open is tru
                                     style="margin-bottom: 16px;"
                                   >
                                     <div
-                                      class="ant-divider css-dev-only-do-not-override-txh9fw ant-divider-horizontal"
+                                      class="ant-divider ant-divider-horizontal"
                                       role="separator"
                                     />
                                   </div>
@@ -853,14 +853,14 @@ exports[`base/Nav/SideMenu/UserMenu/VersionModal-ce render snap when open is tru
                                     class="ant-space-item"
                                   >
                                     <div
-                                      class="ant-space css-dev-only-do-not-override-txh9fw ant-space-vertical content-list"
+                                      class="ant-space ant-space-vertical content-list"
                                     >
                                       <div
                                         class="ant-space-item"
                                         style="margin-bottom: 8px;"
                                       >
                                         <div
-                                          class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-start full-width-element version-desc-wrap"
+                                          class="ant-space ant-space-horizontal ant-space-align-start full-width-element version-desc-wrap"
                                         >
                                           <div
                                             class="ant-space-item"
@@ -882,7 +882,7 @@ exports[`base/Nav/SideMenu/UserMenu/VersionModal-ce render snap when open is tru
                                             class="ant-space-item"
                                           >
                                             <span
-                                              class="ant-typography css-dev-only-do-not-override-txh9fw"
+                                              class="ant-typography"
                                             >
                                               支持纳管10多种主流数据源
                                             </span>
@@ -894,7 +894,7 @@ exports[`base/Nav/SideMenu/UserMenu/VersionModal-ce render snap when open is tru
                                         style="margin-bottom: 8px;"
                                       >
                                         <div
-                                          class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-start full-width-element version-desc-wrap"
+                                          class="ant-space ant-space-horizontal ant-space-align-start full-width-element version-desc-wrap"
                                         >
                                           <div
                                             class="ant-space-item"
@@ -916,7 +916,7 @@ exports[`base/Nav/SideMenu/UserMenu/VersionModal-ce render snap when open is tru
                                             class="ant-space-item"
                                           >
                                             <span
-                                              class="ant-typography css-dev-only-do-not-override-txh9fw"
+                                              class="ant-typography"
                                             >
                                               提供专业SQL审核能力
                                             </span>
@@ -928,7 +928,7 @@ exports[`base/Nav/SideMenu/UserMenu/VersionModal-ce render snap when open is tru
                                         style="margin-bottom: 8px;"
                                       >
                                         <div
-                                          class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-start full-width-element version-desc-wrap"
+                                          class="ant-space ant-space-horizontal ant-space-align-start full-width-element version-desc-wrap"
                                         >
                                           <div
                                             class="ant-space-item"
@@ -950,7 +950,7 @@ exports[`base/Nav/SideMenu/UserMenu/VersionModal-ce render snap when open is tru
                                             class="ant-space-item"
                                           >
                                             <span
-                                              class="ant-typography css-dev-only-do-not-override-txh9fw"
+                                              class="ant-typography"
                                             >
                                               集成CloudBeaver在线查询
                                             </span>
@@ -962,7 +962,7 @@ exports[`base/Nav/SideMenu/UserMenu/VersionModal-ce render snap when open is tru
                                         style="margin-bottom: 8px;"
                                       >
                                         <div
-                                          class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-start full-width-element version-desc-wrap"
+                                          class="ant-space ant-space-horizontal ant-space-align-start full-width-element version-desc-wrap"
                                         >
                                           <div
                                             class="ant-space-item"
@@ -984,7 +984,7 @@ exports[`base/Nav/SideMenu/UserMenu/VersionModal-ce render snap when open is tru
                                             class="ant-space-item"
                                           >
                                             <span
-                                              class="ant-typography css-dev-only-do-not-override-txh9fw"
+                                              class="ant-typography"
                                             >
                                               支持IDE工具审核
                                             </span>
@@ -996,7 +996,7 @@ exports[`base/Nav/SideMenu/UserMenu/VersionModal-ce render snap when open is tru
                                         style="margin-bottom: 8px;"
                                       >
                                         <div
-                                          class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-start full-width-element version-desc-wrap"
+                                          class="ant-space ant-space-horizontal ant-space-align-start full-width-element version-desc-wrap"
                                         >
                                           <div
                                             class="ant-space-item"
@@ -1018,7 +1018,7 @@ exports[`base/Nav/SideMenu/UserMenu/VersionModal-ce render snap when open is tru
                                             class="ant-space-item"
                                           >
                                             <span
-                                              class="ant-typography css-dev-only-do-not-override-txh9fw"
+                                              class="ant-typography"
                                             >
                                               支持多方式采集各数据源数据
                                             </span>
@@ -1030,7 +1030,7 @@ exports[`base/Nav/SideMenu/UserMenu/VersionModal-ce render snap when open is tru
                                         style="margin-bottom: 8px;"
                                       >
                                         <div
-                                          class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-start full-width-element version-desc-wrap"
+                                          class="ant-space ant-space-horizontal ant-space-align-start full-width-element version-desc-wrap"
                                         >
                                           <div
                                             class="ant-space-item"
@@ -1052,7 +1052,7 @@ exports[`base/Nav/SideMenu/UserMenu/VersionModal-ce render snap when open is tru
                                             class="ant-space-item"
                                           >
                                             <span
-                                              class="ant-typography css-dev-only-do-not-override-txh9fw"
+                                              class="ant-typography"
                                             >
                                               无实例限制
                                             </span>
@@ -1064,7 +1064,7 @@ exports[`base/Nav/SideMenu/UserMenu/VersionModal-ce render snap when open is tru
                                         style="margin-bottom: 8px;"
                                       >
                                         <div
-                                          class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-start full-width-element version-desc-wrap"
+                                          class="ant-space ant-space-horizontal ant-space-align-start full-width-element version-desc-wrap"
                                         >
                                           <div
                                             class="ant-space-item"
@@ -1086,7 +1086,7 @@ exports[`base/Nav/SideMenu/UserMenu/VersionModal-ce render snap when open is tru
                                             class="ant-space-item"
                                           >
                                             <span
-                                              class="ant-typography css-dev-only-do-not-override-txh9fw"
+                                              class="ant-typography"
                                             >
                                               提供SQL问题下钻能力
                                             </span>
@@ -1098,7 +1098,7 @@ exports[`base/Nav/SideMenu/UserMenu/VersionModal-ce render snap when open is tru
                                         style="margin-bottom: 8px;"
                                       >
                                         <div
-                                          class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-start full-width-element version-desc-wrap"
+                                          class="ant-space ant-space-horizontal ant-space-align-start full-width-element version-desc-wrap"
                                         >
                                           <div
                                             class="ant-space-item"
@@ -1120,7 +1120,7 @@ exports[`base/Nav/SideMenu/UserMenu/VersionModal-ce render snap when open is tru
                                             class="ant-space-item"
                                           >
                                             <span
-                                              class="ant-typography css-dev-only-do-not-override-txh9fw"
+                                              class="ant-typography"
                                             >
                                               支持 SQL 变更的版本化管理
                                             </span>
@@ -1132,7 +1132,7 @@ exports[`base/Nav/SideMenu/UserMenu/VersionModal-ce render snap when open is tru
                                         style="margin-bottom: 8px;"
                                       >
                                         <div
-                                          class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-start full-width-element version-desc-wrap"
+                                          class="ant-space ant-space-horizontal ant-space-align-start full-width-element version-desc-wrap"
                                         >
                                           <div
                                             class="ant-space-item"
@@ -1154,7 +1154,7 @@ exports[`base/Nav/SideMenu/UserMenu/VersionModal-ce render snap when open is tru
                                             class="ant-space-item"
                                           >
                                             <span
-                                              class="ant-typography css-dev-only-do-not-override-txh9fw"
+                                              class="ant-typography"
                                             >
                                               支持备份恢复
                                             </span>
@@ -1166,7 +1166,7 @@ exports[`base/Nav/SideMenu/UserMenu/VersionModal-ce render snap when open is tru
                                         style="margin-bottom: 8px;"
                                       >
                                         <div
-                                          class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-start full-width-element version-desc-wrap"
+                                          class="ant-space ant-space-horizontal ant-space-align-start full-width-element version-desc-wrap"
                                         >
                                           <div
                                             class="ant-space-item"
@@ -1188,7 +1188,7 @@ exports[`base/Nav/SideMenu/UserMenu/VersionModal-ce render snap when open is tru
                                             class="ant-space-item"
                                           >
                                             <span
-                                              class="ant-typography css-dev-only-do-not-override-txh9fw"
+                                              class="ant-typography"
                                             >
                                               支持结构对比
                                             </span>
@@ -1200,7 +1200,7 @@ exports[`base/Nav/SideMenu/UserMenu/VersionModal-ce render snap when open is tru
                                         style="margin-bottom: 8px;"
                                       >
                                         <div
-                                          class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-start full-width-element version-desc-wrap"
+                                          class="ant-space ant-space-horizontal ant-space-align-start full-width-element version-desc-wrap"
                                         >
                                           <div
                                             class="ant-space-item"
@@ -1222,7 +1222,7 @@ exports[`base/Nav/SideMenu/UserMenu/VersionModal-ce render snap when open is tru
                                             class="ant-space-item"
                                           >
                                             <span
-                                              class="ant-typography css-dev-only-do-not-override-txh9fw"
+                                              class="ant-typography"
                                             >
                                               SQL合规重写
                                             </span>
@@ -1234,7 +1234,7 @@ exports[`base/Nav/SideMenu/UserMenu/VersionModal-ce render snap when open is tru
                                         style="margin-bottom: 8px;"
                                       >
                                         <div
-                                          class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-start full-width-element version-desc-wrap"
+                                          class="ant-space ant-space-horizontal ant-space-align-start full-width-element version-desc-wrap"
                                         >
                                           <div
                                             class="ant-space-item"
@@ -1256,7 +1256,7 @@ exports[`base/Nav/SideMenu/UserMenu/VersionModal-ce render snap when open is tru
                                             class="ant-space-item"
                                           >
                                             <span
-                                              class="ant-typography css-dev-only-do-not-override-txh9fw"
+                                              class="ant-typography"
                                             >
                                               SQL智能优化
                                             </span>
@@ -1268,7 +1268,7 @@ exports[`base/Nav/SideMenu/UserMenu/VersionModal-ce render snap when open is tru
                                         style="margin-bottom: 8px;"
                                       >
                                         <div
-                                          class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-start full-width-element version-desc-wrap"
+                                          class="ant-space ant-space-horizontal ant-space-align-start full-width-element version-desc-wrap"
                                         >
                                           <div
                                             class="ant-space-item"
@@ -1290,7 +1290,7 @@ exports[`base/Nav/SideMenu/UserMenu/VersionModal-ce render snap when open is tru
                                             class="ant-space-item"
                                           >
                                             <span
-                                              class="ant-typography css-dev-only-do-not-override-txh9fw"
+                                              class="ant-typography"
                                             >
                                               支持版本控制
                                             </span>
@@ -1302,7 +1302,7 @@ exports[`base/Nav/SideMenu/UserMenu/VersionModal-ce render snap when open is tru
                                         style="margin-bottom: 8px;"
                                       >
                                         <div
-                                          class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-start full-width-element version-desc-wrap"
+                                          class="ant-space ant-space-horizontal ant-space-align-start full-width-element version-desc-wrap"
                                         >
                                           <div
                                             class="ant-space-item"
@@ -1324,7 +1324,7 @@ exports[`base/Nav/SideMenu/UserMenu/VersionModal-ce render snap when open is tru
                                             class="ant-space-item"
                                           >
                                             <span
-                                              class="ant-typography css-dev-only-do-not-override-txh9fw"
+                                              class="ant-typography"
                                             >
                                               多维度智能统计
                                             </span>
@@ -1335,7 +1335,7 @@ exports[`base/Nav/SideMenu/UserMenu/VersionModal-ce render snap when open is tru
                                         class="ant-space-item"
                                       >
                                         <div
-                                          class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-start full-width-element version-desc-wrap"
+                                          class="ant-space ant-space-horizontal ant-space-align-start full-width-element version-desc-wrap"
                                         >
                                           <div
                                             class="ant-space-item"
@@ -1357,7 +1357,7 @@ exports[`base/Nav/SideMenu/UserMenu/VersionModal-ce render snap when open is tru
                                             class="ant-space-item"
                                           >
                                             <span
-                                              class="ant-typography css-dev-only-do-not-override-txh9fw"
+                                              class="ant-typography"
                                             >
                                               个性化定制
                                             </span>
@@ -1376,12 +1376,12 @@ exports[`base/Nav/SideMenu/UserMenu/VersionModal-ce render snap when open is tru
                         >
                           <div>
                             <span
-                              class="ant-typography css-dev-only-do-not-override-txh9fw"
+                              class="ant-typography"
                             >
                               各版本完整功能对比请参考：
                             </span>
                             <a
-                              class="ant-typography css-dev-only-do-not-override-txh9fw"
+                              class="ant-typography"
                               href="https://actiontech.github.io/sqle-docs/docs/support/compare"
                               rel="noopener noreferrer"
                               target="_blank"
@@ -1400,14 +1400,14 @@ exports[`base/Nav/SideMenu/UserMenu/VersionModal-ce render snap when open is tru
               class="ant-modal-footer"
             >
               <div
-                class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+                class="ant-space ant-space-horizontal ant-space-align-center"
               >
                 <div
                   class="ant-space-item"
                   style="margin-right: 8px;"
                 >
                   <button
-                    class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary basic-button-wrapper css-geipcv"
+                    class="ant-btn ant-btn-primary basic-button-wrapper css-geipcv"
                     type="button"
                   >
                     <a
@@ -1423,7 +1423,7 @@ exports[`base/Nav/SideMenu/UserMenu/VersionModal-ce render snap when open is tru
                   class="ant-space-item"
                 >
                   <button
-                    class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary basic-button-wrapper css-geipcv"
+                    class="ant-btn ant-btn-primary basic-button-wrapper css-geipcv"
                     type="button"
                   >
                     <span>
@@ -1451,7 +1451,7 @@ exports[`base/Nav/SideMenu/UserMenu/VersionModal-ce render snap when open is tru
   <div />
   <div>
     <div
-      class="ant-modal-root css-dev-only-do-not-override-txh9fw"
+      class="ant-modal-root"
     >
       <div
         class="ant-modal-mask"
@@ -1462,7 +1462,7 @@ exports[`base/Nav/SideMenu/UserMenu/VersionModal-ce render snap when open is tru
       >
         <div
           aria-modal="true"
-          class="ant-modal css-dev-only-do-not-override-txh9fw version-modal basic-modal-wrapper css-vvpsbb ant-zoom-appear ant-zoom-appear-prepare ant-zoom"
+          class="ant-modal version-modal basic-modal-wrapper css-vvpsbb ant-zoom-appear ant-zoom-appear-prepare ant-zoom"
           role="dialog"
           style="width: 960px;"
         >
@@ -1499,20 +1499,20 @@ exports[`base/Nav/SideMenu/UserMenu/VersionModal-ce render snap when open is tru
               class="ant-modal-body"
             >
               <div
-                class="ant-space css-dev-only-do-not-override-txh9fw ant-space-vertical"
+                class="ant-space ant-space-vertical"
               >
                 <div
                   class="ant-space-item"
                   style="margin-bottom: 24px;"
                 >
                   <div
-                    class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+                    class="ant-space ant-space-horizontal ant-space-align-center"
                   >
                     <div
                       class="ant-space-item"
                     >
                       <h2
-                        class="ant-typography css-dev-only-do-not-override-txh9fw"
+                        class="ant-typography"
                       >
                         SQLE
                       </h2>
@@ -1524,14 +1524,14 @@ exports[`base/Nav/SideMenu/UserMenu/VersionModal-ce render snap when open is tru
                   style="margin-bottom: 24px;"
                 >
                   <div
-                    class="ant-space css-dev-only-do-not-override-txh9fw ant-space-vertical ant-space-align-start"
+                    class="ant-space ant-space-vertical ant-space-align-start"
                   >
                     <div
                       class="ant-space-item"
                       style="margin-bottom: 8px;"
                     >
                       <h5
-                        class="ant-typography css-dev-only-do-not-override-txh9fw"
+                        class="ant-typography"
                       >
                         版本信息
                       </h5>
@@ -1540,14 +1540,14 @@ exports[`base/Nav/SideMenu/UserMenu/VersionModal-ce render snap when open is tru
                       class="ant-space-item"
                     >
                       <div
-                        class="ant-space css-dev-only-do-not-override-txh9fw ant-space-vertical"
+                        class="ant-space ant-space-vertical"
                       >
                         <div
                           class="ant-space-item"
                           style="margin-bottom: 8px;"
                         >
                           <article
-                            class="ant-typography css-dev-only-do-not-override-txh9fw"
+                            class="ant-typography"
                           >
                             UI: 
                             feature/add-make-command   ba9c9c5
@@ -1558,7 +1558,7 @@ exports[`base/Nav/SideMenu/UserMenu/VersionModal-ce render snap when open is tru
                           style="margin-bottom: 8px;"
                         >
                           <article
-                            class="ant-typography css-dev-only-do-not-override-txh9fw"
+                            class="ant-typography"
                           >
                             DMS: 
                             -
@@ -1568,7 +1568,7 @@ exports[`base/Nav/SideMenu/UserMenu/VersionModal-ce render snap when open is tru
                           class="ant-space-item"
                         >
                           <article
-                            class="ant-typography css-dev-only-do-not-override-txh9fw"
+                            class="ant-typography"
                           >
                             SQLE: 
                             -
@@ -1583,14 +1583,14 @@ exports[`base/Nav/SideMenu/UserMenu/VersionModal-ce render snap when open is tru
                   style="margin-bottom: 24px;"
                 >
                   <div
-                    class="ant-space css-dev-only-do-not-override-txh9fw ant-space-vertical ant-space-align-start"
+                    class="ant-space ant-space-vertical ant-space-align-start"
                   >
                     <div
                       class="ant-space-item"
                       style="margin-bottom: 8px;"
                     >
                       <h5
-                        class="ant-typography css-dev-only-do-not-override-txh9fw"
+                        class="ant-typography"
                       >
                         产品简介
                       </h5>
@@ -1599,7 +1599,7 @@ exports[`base/Nav/SideMenu/UserMenu/VersionModal-ce render snap when open is tru
                       class="ant-space-item"
                     >
                       <span
-                        class="ant-typography css-dev-only-do-not-override-txh9fw"
+                        class="ant-typography"
                       >
                         SQLE 是爱可生自主研发，支持多元数据库的 SQL 质量管理平台。应用于开发、测试、上线发布、生产运行阶段的 SQL 质量治理。通过 “建立规范、事前控制、事后监督、标准发布” 的方式，为企业提供 SQL 全生命周期质量管控能力，同时推动企业内部开发规范快速落地。
                       </span>
@@ -1610,14 +1610,14 @@ exports[`base/Nav/SideMenu/UserMenu/VersionModal-ce render snap when open is tru
                   class="ant-space-item"
                 >
                   <div
-                    class="ant-space css-dev-only-do-not-override-txh9fw ant-space-vertical ant-space-align-start full-width-element css-ac649q"
+                    class="ant-space ant-space-vertical ant-space-align-start full-width-element css-ac649q"
                   >
                     <div
                       class="ant-space-item"
                       style="margin-bottom: 8px;"
                     >
                       <h5
-                        class="ant-typography css-dev-only-do-not-override-txh9fw"
+                        class="ant-typography"
                       >
                         功能特点
                       </h5>
@@ -1626,7 +1626,7 @@ exports[`base/Nav/SideMenu/UserMenu/VersionModal-ce render snap when open is tru
                       class="ant-space-item"
                     >
                       <div
-                        class="ant-space css-dev-only-do-not-override-txh9fw ant-space-vertical full-width-element version-comparison-wrap css-11wj1aa"
+                        class="ant-space ant-space-vertical full-width-element version-comparison-wrap css-11wj1aa"
                       >
                         <div
                           class="ant-space-item"
@@ -1636,34 +1636,34 @@ exports[`base/Nav/SideMenu/UserMenu/VersionModal-ce render snap when open is tru
                             class="content-wrap"
                           >
                             <div
-                              class="ant-card ant-card-bordered ant-card-hoverable version-card css-13zv8cx css-dev-only-do-not-override-txh9fw"
+                              class="ant-card ant-card-bordered ant-card-hoverable version-card css-13zv8cx"
                               color="green"
                             >
                               <div
                                 class="ant-card-body"
                               >
                                 <div
-                                  class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center version-tag-wrap"
+                                  class="ant-space ant-space-horizontal ant-space-align-center version-tag-wrap"
                                 >
                                   <div
                                     class="ant-space-item"
                                   >
                                     <span
-                                      class="ant-tag ant-tag-green basic-tag-wrapper basic-large-tag-wrapper css-13qu6j1 css-dev-only-do-not-override-txh9fw"
+                                      class="ant-tag ant-tag-green basic-tag-wrapper basic-large-tag-wrapper css-13qu6j1"
                                     >
                                       社区版
                                     </span>
                                   </div>
                                 </div>
                                 <div
-                                  class="ant-space css-dev-only-do-not-override-txh9fw ant-space-vertical ant-space-align-center version-item"
+                                  class="ant-space ant-space-vertical ant-space-align-center version-item"
                                 >
                                   <div
                                     class="ant-space-item"
                                     style="margin-bottom: 16px;"
                                   >
                                     <h4
-                                      class="ant-typography css-dev-only-do-not-override-txh9fw"
+                                      class="ant-typography"
                                     >
                                       免费
                                     </h4>
@@ -1673,7 +1673,7 @@ exports[`base/Nav/SideMenu/UserMenu/VersionModal-ce render snap when open is tru
                                     style="margin-bottom: 16px;"
                                   >
                                     <span
-                                      class="ant-typography term-wrap css-dev-only-do-not-override-txh9fw"
+                                      class="ant-typography term-wrap"
                                     >
                                       永久
                                     </span>
@@ -1683,7 +1683,7 @@ exports[`base/Nav/SideMenu/UserMenu/VersionModal-ce render snap when open is tru
                                     style="margin-bottom: 16px;"
                                   >
                                     <a
-                                      class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary apply-button basic-button-wrapper css-geipcv"
+                                      class="ant-btn ant-btn-primary apply-button basic-button-wrapper css-geipcv"
                                       href="https://actiontech.github.io/sqle-docs/docs/deploy-manual/intro"
                                       target="_blank"
                                     >
@@ -1697,7 +1697,7 @@ exports[`base/Nav/SideMenu/UserMenu/VersionModal-ce render snap when open is tru
                                     style="margin-bottom: 16px;"
                                   >
                                     <span
-                                      class="ant-typography version-subTitle-wrap css-dev-only-do-not-override-txh9fw"
+                                      class="ant-typography version-subTitle-wrap"
                                     >
                                       适用于MySQL基础审核场景
                                     </span>
@@ -1707,7 +1707,7 @@ exports[`base/Nav/SideMenu/UserMenu/VersionModal-ce render snap when open is tru
                                     style="margin-bottom: 16px;"
                                   >
                                     <div
-                                      class="ant-divider css-dev-only-do-not-override-txh9fw ant-divider-horizontal"
+                                      class="ant-divider ant-divider-horizontal"
                                       role="separator"
                                     />
                                   </div>
@@ -1715,14 +1715,14 @@ exports[`base/Nav/SideMenu/UserMenu/VersionModal-ce render snap when open is tru
                                     class="ant-space-item"
                                   >
                                     <div
-                                      class="ant-space css-dev-only-do-not-override-txh9fw ant-space-vertical content-list"
+                                      class="ant-space ant-space-vertical content-list"
                                     >
                                       <div
                                         class="ant-space-item"
                                         style="margin-bottom: 8px;"
                                       >
                                         <div
-                                          class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-start full-width-element version-desc-wrap"
+                                          class="ant-space ant-space-horizontal ant-space-align-start full-width-element version-desc-wrap"
                                         >
                                           <div
                                             class="ant-space-item"
@@ -1744,7 +1744,7 @@ exports[`base/Nav/SideMenu/UserMenu/VersionModal-ce render snap when open is tru
                                             class="ant-space-item"
                                           >
                                             <span
-                                              class="ant-typography css-dev-only-do-not-override-txh9fw"
+                                              class="ant-typography"
                                             >
                                               支持纳管MySQL数据源
                                             </span>
@@ -1756,7 +1756,7 @@ exports[`base/Nav/SideMenu/UserMenu/VersionModal-ce render snap when open is tru
                                         style="margin-bottom: 8px;"
                                       >
                                         <div
-                                          class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-start full-width-element version-desc-wrap"
+                                          class="ant-space ant-space-horizontal ant-space-align-start full-width-element version-desc-wrap"
                                         >
                                           <div
                                             class="ant-space-item"
@@ -1778,7 +1778,7 @@ exports[`base/Nav/SideMenu/UserMenu/VersionModal-ce render snap when open is tru
                                             class="ant-space-item"
                                           >
                                             <span
-                                              class="ant-typography css-dev-only-do-not-override-txh9fw"
+                                              class="ant-typography"
                                             >
                                               提供专业SQL审核能力
                                             </span>
@@ -1790,7 +1790,7 @@ exports[`base/Nav/SideMenu/UserMenu/VersionModal-ce render snap when open is tru
                                         style="margin-bottom: 8px;"
                                       >
                                         <div
-                                          class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-start full-width-element version-desc-wrap"
+                                          class="ant-space ant-space-horizontal ant-space-align-start full-width-element version-desc-wrap"
                                         >
                                           <div
                                             class="ant-space-item"
@@ -1812,7 +1812,7 @@ exports[`base/Nav/SideMenu/UserMenu/VersionModal-ce render snap when open is tru
                                             class="ant-space-item"
                                           >
                                             <span
-                                              class="ant-typography css-dev-only-do-not-override-txh9fw"
+                                              class="ant-typography"
                                             >
                                               集成CloudBeaver在线查询
                                             </span>
@@ -1824,7 +1824,7 @@ exports[`base/Nav/SideMenu/UserMenu/VersionModal-ce render snap when open is tru
                                         style="margin-bottom: 8px;"
                                       >
                                         <div
-                                          class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-start full-width-element version-desc-wrap"
+                                          class="ant-space ant-space-horizontal ant-space-align-start full-width-element version-desc-wrap"
                                         >
                                           <div
                                             class="ant-space-item"
@@ -1846,7 +1846,7 @@ exports[`base/Nav/SideMenu/UserMenu/VersionModal-ce render snap when open is tru
                                             class="ant-space-item"
                                           >
                                             <span
-                                              class="ant-typography css-dev-only-do-not-override-txh9fw"
+                                              class="ant-typography"
                                             >
                                               支持IDE工具审核
                                             </span>
@@ -1858,7 +1858,7 @@ exports[`base/Nav/SideMenu/UserMenu/VersionModal-ce render snap when open is tru
                                         style="margin-bottom: 8px;"
                                       >
                                         <div
-                                          class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-start full-width-element version-desc-wrap"
+                                          class="ant-space ant-space-horizontal ant-space-align-start full-width-element version-desc-wrap"
                                         >
                                           <div
                                             class="ant-space-item"
@@ -1880,7 +1880,7 @@ exports[`base/Nav/SideMenu/UserMenu/VersionModal-ce render snap when open is tru
                                             class="ant-space-item"
                                           >
                                             <span
-                                              class="ant-typography css-dev-only-do-not-override-txh9fw"
+                                              class="ant-typography"
                                             >
                                               支持多方式采集MySQL数据
                                             </span>
@@ -1891,7 +1891,7 @@ exports[`base/Nav/SideMenu/UserMenu/VersionModal-ce render snap when open is tru
                                         class="ant-space-item"
                                       >
                                         <div
-                                          class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-start full-width-element version-desc-wrap"
+                                          class="ant-space ant-space-horizontal ant-space-align-start full-width-element version-desc-wrap"
                                         >
                                           <div
                                             class="ant-space-item"
@@ -1913,7 +1913,7 @@ exports[`base/Nav/SideMenu/UserMenu/VersionModal-ce render snap when open is tru
                                             class="ant-space-item"
                                           >
                                             <span
-                                              class="ant-typography css-dev-only-do-not-override-txh9fw"
+                                              class="ant-typography"
                                             >
                                               无实例限制
                                             </span>
@@ -1926,34 +1926,34 @@ exports[`base/Nav/SideMenu/UserMenu/VersionModal-ce render snap when open is tru
                               </div>
                             </div>
                             <div
-                              class="ant-card ant-card-bordered ant-card-hoverable version-card css-1npclps css-dev-only-do-not-override-txh9fw"
+                              class="ant-card ant-card-bordered ant-card-hoverable version-card css-1npclps"
                               color="blue"
                             >
                               <div
                                 class="ant-card-body"
                               >
                                 <div
-                                  class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center version-tag-wrap"
+                                  class="ant-space ant-space-horizontal ant-space-align-center version-tag-wrap"
                                 >
                                   <div
                                     class="ant-space-item"
                                   >
                                     <span
-                                      class="ant-tag ant-tag-blue basic-tag-wrapper basic-large-tag-wrapper css-1q0n2j9 css-dev-only-do-not-override-txh9fw"
+                                      class="ant-tag ant-tag-blue basic-tag-wrapper basic-large-tag-wrapper css-1q0n2j9"
                                     >
                                       专业版
                                     </span>
                                   </div>
                                 </div>
                                 <div
-                                  class="ant-space css-dev-only-do-not-override-txh9fw ant-space-vertical ant-space-align-center version-item"
+                                  class="ant-space ant-space-vertical ant-space-align-center version-item"
                                 >
                                   <div
                                     class="ant-space-item"
                                     style="margin-bottom: 16px;"
                                   >
                                     <h4
-                                      class="ant-typography css-dev-only-do-not-override-txh9fw"
+                                      class="ant-typography"
                                     >
                                       免费
                                     </h4>
@@ -1963,7 +1963,7 @@ exports[`base/Nav/SideMenu/UserMenu/VersionModal-ce render snap when open is tru
                                     style="margin-bottom: 16px;"
                                   >
                                     <span
-                                      class="ant-typography term-wrap css-dev-only-do-not-override-txh9fw"
+                                      class="ant-typography term-wrap"
                                     >
                                       永久
                                     </span>
@@ -1973,7 +1973,7 @@ exports[`base/Nav/SideMenu/UserMenu/VersionModal-ce render snap when open is tru
                                     style="margin-bottom: 16px;"
                                   >
                                     <a
-                                      class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary apply-button basic-button-wrapper css-geipcv"
+                                      class="ant-btn ant-btn-primary apply-button basic-button-wrapper css-geipcv"
                                       href="https://www.actionsky.com/sqle?question=true"
                                       target="_blank"
                                     >
@@ -1987,7 +1987,7 @@ exports[`base/Nav/SideMenu/UserMenu/VersionModal-ce render snap when open is tru
                                     style="margin-bottom: 16px;"
                                   >
                                     <span
-                                      class="ant-typography version-subTitle-wrap css-dev-only-do-not-override-txh9fw"
+                                      class="ant-typography version-subTitle-wrap"
                                     >
                                       适用于多种数据源类型体验场景
                                     </span>
@@ -1997,7 +1997,7 @@ exports[`base/Nav/SideMenu/UserMenu/VersionModal-ce render snap when open is tru
                                     style="margin-bottom: 16px;"
                                   >
                                     <div
-                                      class="ant-divider css-dev-only-do-not-override-txh9fw ant-divider-horizontal"
+                                      class="ant-divider ant-divider-horizontal"
                                       role="separator"
                                     />
                                   </div>
@@ -2005,14 +2005,14 @@ exports[`base/Nav/SideMenu/UserMenu/VersionModal-ce render snap when open is tru
                                     class="ant-space-item"
                                   >
                                     <div
-                                      class="ant-space css-dev-only-do-not-override-txh9fw ant-space-vertical content-list"
+                                      class="ant-space ant-space-vertical content-list"
                                     >
                                       <div
                                         class="ant-space-item"
                                         style="margin-bottom: 8px;"
                                       >
                                         <div
-                                          class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-start full-width-element version-desc-wrap"
+                                          class="ant-space ant-space-horizontal ant-space-align-start full-width-element version-desc-wrap"
                                         >
                                           <div
                                             class="ant-space-item"
@@ -2034,7 +2034,7 @@ exports[`base/Nav/SideMenu/UserMenu/VersionModal-ce render snap when open is tru
                                             class="ant-space-item"
                                           >
                                             <span
-                                              class="ant-typography css-dev-only-do-not-override-txh9fw"
+                                              class="ant-typography"
                                             >
                                               支持纳管10多种主流数据源
                                             </span>
@@ -2046,7 +2046,7 @@ exports[`base/Nav/SideMenu/UserMenu/VersionModal-ce render snap when open is tru
                                         style="margin-bottom: 8px;"
                                       >
                                         <div
-                                          class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-start full-width-element version-desc-wrap"
+                                          class="ant-space ant-space-horizontal ant-space-align-start full-width-element version-desc-wrap"
                                         >
                                           <div
                                             class="ant-space-item"
@@ -2068,7 +2068,7 @@ exports[`base/Nav/SideMenu/UserMenu/VersionModal-ce render snap when open is tru
                                             class="ant-space-item"
                                           >
                                             <span
-                                              class="ant-typography css-dev-only-do-not-override-txh9fw"
+                                              class="ant-typography"
                                             >
                                               提供专业SQL审核能力
                                             </span>
@@ -2080,7 +2080,7 @@ exports[`base/Nav/SideMenu/UserMenu/VersionModal-ce render snap when open is tru
                                         style="margin-bottom: 8px;"
                                       >
                                         <div
-                                          class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-start full-width-element version-desc-wrap"
+                                          class="ant-space ant-space-horizontal ant-space-align-start full-width-element version-desc-wrap"
                                         >
                                           <div
                                             class="ant-space-item"
@@ -2102,7 +2102,7 @@ exports[`base/Nav/SideMenu/UserMenu/VersionModal-ce render snap when open is tru
                                             class="ant-space-item"
                                           >
                                             <span
-                                              class="ant-typography css-dev-only-do-not-override-txh9fw"
+                                              class="ant-typography"
                                             >
                                               集成CloudBeaver在线查询
                                             </span>
@@ -2114,7 +2114,7 @@ exports[`base/Nav/SideMenu/UserMenu/VersionModal-ce render snap when open is tru
                                         style="margin-bottom: 8px;"
                                       >
                                         <div
-                                          class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-start full-width-element version-desc-wrap"
+                                          class="ant-space ant-space-horizontal ant-space-align-start full-width-element version-desc-wrap"
                                         >
                                           <div
                                             class="ant-space-item"
@@ -2136,7 +2136,7 @@ exports[`base/Nav/SideMenu/UserMenu/VersionModal-ce render snap when open is tru
                                             class="ant-space-item"
                                           >
                                             <span
-                                              class="ant-typography css-dev-only-do-not-override-txh9fw"
+                                              class="ant-typography"
                                             >
                                               支持IDE工具审核
                                             </span>
@@ -2148,7 +2148,7 @@ exports[`base/Nav/SideMenu/UserMenu/VersionModal-ce render snap when open is tru
                                         style="margin-bottom: 8px;"
                                       >
                                         <div
-                                          class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-start full-width-element version-desc-wrap"
+                                          class="ant-space ant-space-horizontal ant-space-align-start full-width-element version-desc-wrap"
                                         >
                                           <div
                                             class="ant-space-item"
@@ -2170,7 +2170,7 @@ exports[`base/Nav/SideMenu/UserMenu/VersionModal-ce render snap when open is tru
                                             class="ant-space-item"
                                           >
                                             <span
-                                              class="ant-typography css-dev-only-do-not-override-txh9fw"
+                                              class="ant-typography"
                                             >
                                               支持多方式采集各数据源数据
                                             </span>
@@ -2181,7 +2181,7 @@ exports[`base/Nav/SideMenu/UserMenu/VersionModal-ce render snap when open is tru
                                         class="ant-space-item"
                                       >
                                         <div
-                                          class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-start full-width-element version-desc-wrap"
+                                          class="ant-space ant-space-horizontal ant-space-align-start full-width-element version-desc-wrap"
                                         >
                                           <div
                                             class="ant-space-item"
@@ -2203,7 +2203,7 @@ exports[`base/Nav/SideMenu/UserMenu/VersionModal-ce render snap when open is tru
                                             class="ant-space-item"
                                           >
                                             <span
-                                              class="ant-typography css-dev-only-do-not-override-txh9fw"
+                                              class="ant-typography"
                                             >
                                               最大实例个数20
                                             </span>
@@ -2216,34 +2216,34 @@ exports[`base/Nav/SideMenu/UserMenu/VersionModal-ce render snap when open is tru
                               </div>
                             </div>
                             <div
-                              class="ant-card ant-card-bordered ant-card-hoverable version-card css-1gci04r css-dev-only-do-not-override-txh9fw"
+                              class="ant-card ant-card-bordered ant-card-hoverable version-card css-1gci04r"
                               color="orange"
                             >
                               <div
                                 class="ant-card-body"
                               >
                                 <div
-                                  class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center version-tag-wrap"
+                                  class="ant-space ant-space-horizontal ant-space-align-center version-tag-wrap"
                                 >
                                   <div
                                     class="ant-space-item"
                                   >
                                     <span
-                                      class="ant-tag ant-tag-orange basic-tag-wrapper basic-large-tag-wrapper css-17gmaof css-dev-only-do-not-override-txh9fw"
+                                      class="ant-tag ant-tag-orange basic-tag-wrapper basic-large-tag-wrapper css-17gmaof"
                                     >
                                       企业版
                                     </span>
                                   </div>
                                 </div>
                                 <div
-                                  class="ant-space css-dev-only-do-not-override-txh9fw ant-space-vertical ant-space-align-center version-item"
+                                  class="ant-space ant-space-vertical ant-space-align-center version-item"
                                 >
                                   <div
                                     class="ant-space-item"
                                     style="margin-bottom: 16px;"
                                   >
                                     <h4
-                                      class="ant-typography css-dev-only-do-not-override-txh9fw"
+                                      class="ant-typography"
                                     >
                                       定制
                                     </h4>
@@ -2253,7 +2253,7 @@ exports[`base/Nav/SideMenu/UserMenu/VersionModal-ce render snap when open is tru
                                     style="margin-bottom: 16px;"
                                   >
                                     <span
-                                      class="ant-typography term-wrap css-dev-only-do-not-override-txh9fw"
+                                      class="ant-typography term-wrap"
                                     />
                                   </div>
                                   <div
@@ -2261,7 +2261,7 @@ exports[`base/Nav/SideMenu/UserMenu/VersionModal-ce render snap when open is tru
                                     style="margin-bottom: 16px;"
                                   >
                                     <a
-                                      class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary apply-button basic-button-wrapper css-geipcv"
+                                      class="ant-btn ant-btn-primary apply-button basic-button-wrapper css-geipcv"
                                       href="https://actiontech.github.io/sqle-docs/docs/support/commercial-support/"
                                       target="_blank"
                                     >
@@ -2275,7 +2275,7 @@ exports[`base/Nav/SideMenu/UserMenu/VersionModal-ce render snap when open is tru
                                     style="margin-bottom: 16px;"
                                   >
                                     <span
-                                      class="ant-typography version-subTitle-wrap css-dev-only-do-not-override-txh9fw"
+                                      class="ant-typography version-subTitle-wrap"
                                     >
                                       适用于私有云用户定制场景
                                     </span>
@@ -2285,7 +2285,7 @@ exports[`base/Nav/SideMenu/UserMenu/VersionModal-ce render snap when open is tru
                                     style="margin-bottom: 16px;"
                                   >
                                     <div
-                                      class="ant-divider css-dev-only-do-not-override-txh9fw ant-divider-horizontal"
+                                      class="ant-divider ant-divider-horizontal"
                                       role="separator"
                                     />
                                   </div>
@@ -2293,14 +2293,14 @@ exports[`base/Nav/SideMenu/UserMenu/VersionModal-ce render snap when open is tru
                                     class="ant-space-item"
                                   >
                                     <div
-                                      class="ant-space css-dev-only-do-not-override-txh9fw ant-space-vertical content-list"
+                                      class="ant-space ant-space-vertical content-list"
                                     >
                                       <div
                                         class="ant-space-item"
                                         style="margin-bottom: 8px;"
                                       >
                                         <div
-                                          class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-start full-width-element version-desc-wrap"
+                                          class="ant-space ant-space-horizontal ant-space-align-start full-width-element version-desc-wrap"
                                         >
                                           <div
                                             class="ant-space-item"
@@ -2322,7 +2322,7 @@ exports[`base/Nav/SideMenu/UserMenu/VersionModal-ce render snap when open is tru
                                             class="ant-space-item"
                                           >
                                             <span
-                                              class="ant-typography css-dev-only-do-not-override-txh9fw"
+                                              class="ant-typography"
                                             >
                                               支持纳管10多种主流数据源
                                             </span>
@@ -2334,7 +2334,7 @@ exports[`base/Nav/SideMenu/UserMenu/VersionModal-ce render snap when open is tru
                                         style="margin-bottom: 8px;"
                                       >
                                         <div
-                                          class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-start full-width-element version-desc-wrap"
+                                          class="ant-space ant-space-horizontal ant-space-align-start full-width-element version-desc-wrap"
                                         >
                                           <div
                                             class="ant-space-item"
@@ -2356,7 +2356,7 @@ exports[`base/Nav/SideMenu/UserMenu/VersionModal-ce render snap when open is tru
                                             class="ant-space-item"
                                           >
                                             <span
-                                              class="ant-typography css-dev-only-do-not-override-txh9fw"
+                                              class="ant-typography"
                                             >
                                               提供专业SQL审核能力
                                             </span>
@@ -2368,7 +2368,7 @@ exports[`base/Nav/SideMenu/UserMenu/VersionModal-ce render snap when open is tru
                                         style="margin-bottom: 8px;"
                                       >
                                         <div
-                                          class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-start full-width-element version-desc-wrap"
+                                          class="ant-space ant-space-horizontal ant-space-align-start full-width-element version-desc-wrap"
                                         >
                                           <div
                                             class="ant-space-item"
@@ -2390,7 +2390,7 @@ exports[`base/Nav/SideMenu/UserMenu/VersionModal-ce render snap when open is tru
                                             class="ant-space-item"
                                           >
                                             <span
-                                              class="ant-typography css-dev-only-do-not-override-txh9fw"
+                                              class="ant-typography"
                                             >
                                               集成CloudBeaver在线查询
                                             </span>
@@ -2402,7 +2402,7 @@ exports[`base/Nav/SideMenu/UserMenu/VersionModal-ce render snap when open is tru
                                         style="margin-bottom: 8px;"
                                       >
                                         <div
-                                          class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-start full-width-element version-desc-wrap"
+                                          class="ant-space ant-space-horizontal ant-space-align-start full-width-element version-desc-wrap"
                                         >
                                           <div
                                             class="ant-space-item"
@@ -2424,7 +2424,7 @@ exports[`base/Nav/SideMenu/UserMenu/VersionModal-ce render snap when open is tru
                                             class="ant-space-item"
                                           >
                                             <span
-                                              class="ant-typography css-dev-only-do-not-override-txh9fw"
+                                              class="ant-typography"
                                             >
                                               支持IDE工具审核
                                             </span>
@@ -2436,7 +2436,7 @@ exports[`base/Nav/SideMenu/UserMenu/VersionModal-ce render snap when open is tru
                                         style="margin-bottom: 8px;"
                                       >
                                         <div
-                                          class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-start full-width-element version-desc-wrap"
+                                          class="ant-space ant-space-horizontal ant-space-align-start full-width-element version-desc-wrap"
                                         >
                                           <div
                                             class="ant-space-item"
@@ -2458,7 +2458,7 @@ exports[`base/Nav/SideMenu/UserMenu/VersionModal-ce render snap when open is tru
                                             class="ant-space-item"
                                           >
                                             <span
-                                              class="ant-typography css-dev-only-do-not-override-txh9fw"
+                                              class="ant-typography"
                                             >
                                               支持多方式采集各数据源数据
                                             </span>
@@ -2470,7 +2470,7 @@ exports[`base/Nav/SideMenu/UserMenu/VersionModal-ce render snap when open is tru
                                         style="margin-bottom: 8px;"
                                       >
                                         <div
-                                          class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-start full-width-element version-desc-wrap"
+                                          class="ant-space ant-space-horizontal ant-space-align-start full-width-element version-desc-wrap"
                                         >
                                           <div
                                             class="ant-space-item"
@@ -2492,7 +2492,7 @@ exports[`base/Nav/SideMenu/UserMenu/VersionModal-ce render snap when open is tru
                                             class="ant-space-item"
                                           >
                                             <span
-                                              class="ant-typography css-dev-only-do-not-override-txh9fw"
+                                              class="ant-typography"
                                             >
                                               无实例限制
                                             </span>
@@ -2504,7 +2504,7 @@ exports[`base/Nav/SideMenu/UserMenu/VersionModal-ce render snap when open is tru
                                         style="margin-bottom: 8px;"
                                       >
                                         <div
-                                          class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-start full-width-element version-desc-wrap"
+                                          class="ant-space ant-space-horizontal ant-space-align-start full-width-element version-desc-wrap"
                                         >
                                           <div
                                             class="ant-space-item"
@@ -2526,7 +2526,7 @@ exports[`base/Nav/SideMenu/UserMenu/VersionModal-ce render snap when open is tru
                                             class="ant-space-item"
                                           >
                                             <span
-                                              class="ant-typography css-dev-only-do-not-override-txh9fw"
+                                              class="ant-typography"
                                             >
                                               提供SQL问题下钻能力
                                             </span>
@@ -2538,7 +2538,7 @@ exports[`base/Nav/SideMenu/UserMenu/VersionModal-ce render snap when open is tru
                                         style="margin-bottom: 8px;"
                                       >
                                         <div
-                                          class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-start full-width-element version-desc-wrap"
+                                          class="ant-space ant-space-horizontal ant-space-align-start full-width-element version-desc-wrap"
                                         >
                                           <div
                                             class="ant-space-item"
@@ -2560,7 +2560,7 @@ exports[`base/Nav/SideMenu/UserMenu/VersionModal-ce render snap when open is tru
                                             class="ant-space-item"
                                           >
                                             <span
-                                              class="ant-typography css-dev-only-do-not-override-txh9fw"
+                                              class="ant-typography"
                                             >
                                               支持 SQL 变更的版本化管理
                                             </span>
@@ -2572,7 +2572,7 @@ exports[`base/Nav/SideMenu/UserMenu/VersionModal-ce render snap when open is tru
                                         style="margin-bottom: 8px;"
                                       >
                                         <div
-                                          class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-start full-width-element version-desc-wrap"
+                                          class="ant-space ant-space-horizontal ant-space-align-start full-width-element version-desc-wrap"
                                         >
                                           <div
                                             class="ant-space-item"
@@ -2594,7 +2594,7 @@ exports[`base/Nav/SideMenu/UserMenu/VersionModal-ce render snap when open is tru
                                             class="ant-space-item"
                                           >
                                             <span
-                                              class="ant-typography css-dev-only-do-not-override-txh9fw"
+                                              class="ant-typography"
                                             >
                                               支持备份恢复
                                             </span>
@@ -2606,7 +2606,7 @@ exports[`base/Nav/SideMenu/UserMenu/VersionModal-ce render snap when open is tru
                                         style="margin-bottom: 8px;"
                                       >
                                         <div
-                                          class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-start full-width-element version-desc-wrap"
+                                          class="ant-space ant-space-horizontal ant-space-align-start full-width-element version-desc-wrap"
                                         >
                                           <div
                                             class="ant-space-item"
@@ -2628,7 +2628,7 @@ exports[`base/Nav/SideMenu/UserMenu/VersionModal-ce render snap when open is tru
                                             class="ant-space-item"
                                           >
                                             <span
-                                              class="ant-typography css-dev-only-do-not-override-txh9fw"
+                                              class="ant-typography"
                                             >
                                               支持结构对比
                                             </span>
@@ -2640,7 +2640,7 @@ exports[`base/Nav/SideMenu/UserMenu/VersionModal-ce render snap when open is tru
                                         style="margin-bottom: 8px;"
                                       >
                                         <div
-                                          class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-start full-width-element version-desc-wrap"
+                                          class="ant-space ant-space-horizontal ant-space-align-start full-width-element version-desc-wrap"
                                         >
                                           <div
                                             class="ant-space-item"
@@ -2662,7 +2662,7 @@ exports[`base/Nav/SideMenu/UserMenu/VersionModal-ce render snap when open is tru
                                             class="ant-space-item"
                                           >
                                             <span
-                                              class="ant-typography css-dev-only-do-not-override-txh9fw"
+                                              class="ant-typography"
                                             >
                                               SQL合规重写
                                             </span>
@@ -2674,7 +2674,7 @@ exports[`base/Nav/SideMenu/UserMenu/VersionModal-ce render snap when open is tru
                                         style="margin-bottom: 8px;"
                                       >
                                         <div
-                                          class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-start full-width-element version-desc-wrap"
+                                          class="ant-space ant-space-horizontal ant-space-align-start full-width-element version-desc-wrap"
                                         >
                                           <div
                                             class="ant-space-item"
@@ -2696,7 +2696,7 @@ exports[`base/Nav/SideMenu/UserMenu/VersionModal-ce render snap when open is tru
                                             class="ant-space-item"
                                           >
                                             <span
-                                              class="ant-typography css-dev-only-do-not-override-txh9fw"
+                                              class="ant-typography"
                                             >
                                               SQL智能优化
                                             </span>
@@ -2708,7 +2708,7 @@ exports[`base/Nav/SideMenu/UserMenu/VersionModal-ce render snap when open is tru
                                         style="margin-bottom: 8px;"
                                       >
                                         <div
-                                          class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-start full-width-element version-desc-wrap"
+                                          class="ant-space ant-space-horizontal ant-space-align-start full-width-element version-desc-wrap"
                                         >
                                           <div
                                             class="ant-space-item"
@@ -2730,7 +2730,7 @@ exports[`base/Nav/SideMenu/UserMenu/VersionModal-ce render snap when open is tru
                                             class="ant-space-item"
                                           >
                                             <span
-                                              class="ant-typography css-dev-only-do-not-override-txh9fw"
+                                              class="ant-typography"
                                             >
                                               支持版本控制
                                             </span>
@@ -2742,7 +2742,7 @@ exports[`base/Nav/SideMenu/UserMenu/VersionModal-ce render snap when open is tru
                                         style="margin-bottom: 8px;"
                                       >
                                         <div
-                                          class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-start full-width-element version-desc-wrap"
+                                          class="ant-space ant-space-horizontal ant-space-align-start full-width-element version-desc-wrap"
                                         >
                                           <div
                                             class="ant-space-item"
@@ -2764,7 +2764,7 @@ exports[`base/Nav/SideMenu/UserMenu/VersionModal-ce render snap when open is tru
                                             class="ant-space-item"
                                           >
                                             <span
-                                              class="ant-typography css-dev-only-do-not-override-txh9fw"
+                                              class="ant-typography"
                                             >
                                               多维度智能统计
                                             </span>
@@ -2775,7 +2775,7 @@ exports[`base/Nav/SideMenu/UserMenu/VersionModal-ce render snap when open is tru
                                         class="ant-space-item"
                                       >
                                         <div
-                                          class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-start full-width-element version-desc-wrap"
+                                          class="ant-space ant-space-horizontal ant-space-align-start full-width-element version-desc-wrap"
                                         >
                                           <div
                                             class="ant-space-item"
@@ -2797,7 +2797,7 @@ exports[`base/Nav/SideMenu/UserMenu/VersionModal-ce render snap when open is tru
                                             class="ant-space-item"
                                           >
                                             <span
-                                              class="ant-typography css-dev-only-do-not-override-txh9fw"
+                                              class="ant-typography"
                                             >
                                               个性化定制
                                             </span>
@@ -2816,12 +2816,12 @@ exports[`base/Nav/SideMenu/UserMenu/VersionModal-ce render snap when open is tru
                         >
                           <div>
                             <span
-                              class="ant-typography css-dev-only-do-not-override-txh9fw"
+                              class="ant-typography"
                             >
                               各版本完整功能对比请参考：
                             </span>
                             <a
-                              class="ant-typography css-dev-only-do-not-override-txh9fw"
+                              class="ant-typography"
                               href="https://actiontech.github.io/sqle-docs/docs/support/compare"
                               rel="noopener noreferrer"
                               target="_blank"
@@ -2840,14 +2840,14 @@ exports[`base/Nav/SideMenu/UserMenu/VersionModal-ce render snap when open is tru
               class="ant-modal-footer"
             >
               <div
-                class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+                class="ant-space ant-space-horizontal ant-space-align-center"
               >
                 <div
                   class="ant-space-item"
                   style="margin-right: 8px;"
                 >
                   <button
-                    class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary basic-button-wrapper css-geipcv"
+                    class="ant-btn ant-btn-primary basic-button-wrapper css-geipcv"
                     type="button"
                   >
                     <a
@@ -2863,7 +2863,7 @@ exports[`base/Nav/SideMenu/UserMenu/VersionModal-ce render snap when open is tru
                   class="ant-space-item"
                 >
                   <button
-                    class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary basic-button-wrapper css-geipcv"
+                    class="ant-btn ant-btn-primary basic-button-wrapper css-geipcv"
                     type="button"
                   >
                     <span>

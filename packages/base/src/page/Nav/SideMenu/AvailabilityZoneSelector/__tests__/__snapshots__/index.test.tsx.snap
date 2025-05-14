@@ -1,0 +1,145 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`AvailabilityZoneSelector opens dropdown when clicked and displays zones 1`] = `
+<body>
+  <div>
+    <div
+      class="ant-dropdown-trigger ant-dropdown-open css-me3d58"
+    >
+      <svg
+        height="16"
+        viewBox="0 0 1024 1024"
+        width="16"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M512 938.667c-53.333 0-384-257.259-384-469.334s171.925-384 384-384 384 171.926 384 384-330.667 469.334-384 469.334m0-352c64.8 0 117.333-52.534 117.333-117.334S576.8 352 512 352s-117.333 52.533-117.333 117.333S447.2 586.667 512 586.667"
+          fill="#4583FF"
+        />
+      </svg>
+      <div
+        class="text"
+        title="Zone 1"
+      >
+        Zone 1
+      </div>
+    </div>
+  </div>
+  <div>
+    <div
+      class="ant-dropdown ant-dropdown-placement-bottomRight"
+      style="--arrow-x: 0px; --arrow-y: 0px; left: -1000vw; top: -1000vh; box-sizing: border-box;"
+    >
+      <div
+        class="css-1oybe14"
+      >
+        <div
+          class="search-container"
+        >
+          <input
+            class="ant-input ant-input-borderless"
+            placeholder="搜索"
+            type="text"
+            value=""
+          />
+        </div>
+        <div
+          class="divider"
+        />
+        <div
+          class="zones-container"
+        >
+          <div
+            class="zone-item selected"
+          >
+            <svg
+              class="icon"
+              color="currentColor"
+              height="16"
+              viewBox="0 0 1024 1024"
+              width="16"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M512 938.667c-53.333 0-384-257.259-384-469.334s171.925-384 384-384 384 171.926 384 384-330.667 469.334-384 469.334m0-352c64.8 0 117.333-52.534 117.333-117.334S576.8 352 512 352s-117.333 52.533-117.333 117.333S447.2 586.667 512 586.667"
+                fill="currentColor"
+              />
+            </svg>
+            <span>
+              Zone 1
+            </span>
+          </div>
+          <div
+            class="zone-item "
+          >
+            <svg
+              class="icon"
+              color="currentColor"
+              height="16"
+              viewBox="0 0 1024 1024"
+              width="16"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M512 938.667c-53.333 0-384-257.259-384-469.334s171.925-384 384-384 384 171.926 384 384-330.667 469.334-384 469.334m0-352c64.8 0 117.333-52.534 117.333-117.334S576.8 352 512 352s-117.333 52.533-117.333 117.333S447.2 586.667 512 586.667"
+                fill="currentColor"
+              />
+            </svg>
+            <span>
+              Zone 2
+            </span>
+          </div>
+          <div
+            class="zone-item "
+          >
+            <svg
+              class="icon"
+              color="currentColor"
+              height="16"
+              viewBox="0 0 1024 1024"
+              width="16"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M512 938.667c-53.333 0-384-257.259-384-469.334s171.925-384 384-384 384 171.926 384 384-330.667 469.334-384 469.334m0-352c64.8 0 117.333-52.534 117.333-117.334S576.8 352 512 352s-117.333 52.533-117.333 117.333S447.2 586.667 512 586.667"
+                fill="currentColor"
+              />
+            </svg>
+            <span>
+              Zone 3
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`AvailabilityZoneSelector renders with current availability zone 1`] = `
+<body>
+  <div>
+    <div
+      class="ant-dropdown-trigger css-me3d58"
+    >
+      <svg
+        height="16"
+        viewBox="0 0 1024 1024"
+        width="16"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M512 938.667c-53.333 0-384-257.259-384-469.334s171.925-384 384-384 384 171.926 384 384-330.667 469.334-384 469.334m0-352c64.8 0 117.333-52.534 117.333-117.334S576.8 352 512 352s-117.333 52.533-117.333 117.333S447.2 586.667 512 586.667"
+          fill="#4583FF"
+        />
+      </svg>
+      <div
+        class="text"
+        title="Zone 1"
+      >
+        Zone 1
+      </div>
+    </div>
+  </div>
+</body>
+`;

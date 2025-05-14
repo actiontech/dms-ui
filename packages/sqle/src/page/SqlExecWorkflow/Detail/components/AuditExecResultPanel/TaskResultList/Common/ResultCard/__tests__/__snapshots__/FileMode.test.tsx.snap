@@ -6,7 +6,7 @@ exports[`test TaskResultList/Result/FileMode should match snapshot 1`] = `
     class="css-1gxdwqg"
   >
     <div
-      class="ant-collapse ant-collapse-icon-position-start ant-collapse-ghost file-result-collapse-wrapper css-dev-only-do-not-override-txh9fw"
+      class="ant-collapse ant-collapse-icon-position-start ant-collapse-ghost file-result-collapse-wrapper"
     >
       <div
         class="ant-collapse-item"
@@ -48,7 +48,7 @@ exports[`test TaskResultList/Result/FileMode should match snapshot 1`] = `
               class="file-result-card-wrapper result-card-header"
             >
               <div
-                class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+                class="ant-space ant-space-horizontal ant-space-align-center"
               >
                 <div
                   class="ant-space-item"
@@ -95,23 +95,23 @@ exports[`test TaskResultList/Result/FileMode should match snapshot 1`] = `
                 class="result-card-status-wrap"
               >
                 <span
-                  class="ant-tag ant-tag-default ant-tag-borderless basic-tag-wrapper basic-large-tag-wrapper css-1mjwlcb css-dev-only-do-not-override-txh9fw"
+                  class="ant-tag ant-tag-default ant-tag-borderless basic-tag-wrapper basic-large-tag-wrapper css-1mjwlcb"
                 >
                   准备执行
                 </span>
                 <div
-                  class="ant-divider css-dev-only-do-not-override-txh9fw ant-divider-vertical result-card-status-divider"
+                  class="ant-divider ant-divider-vertical result-card-status-divider"
                   role="separator"
                 />
                 <div
-                  class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+                  class="ant-space ant-space-horizontal ant-space-align-center"
                 >
                   <div
                     class="ant-space-item"
                     style="margin-right: 8px;"
                   >
                     <span
-                      class="ant-tag ant-tag-blue ant-tag-borderless basic-tag-wrapper basic-large-tag-wrapper css-1q0n2j9 css-dev-only-do-not-override-txh9fw"
+                      class="ant-tag ant-tag-blue ant-tag-borderless basic-tag-wrapper basic-large-tag-wrapper css-1q0n2j9"
                     >
                       <svg
                         height="19"
@@ -133,7 +133,7 @@ exports[`test TaskResultList/Result/FileMode should match snapshot 1`] = `
                     class="ant-space-item"
                   >
                     <span
-                      class="ant-tag ant-tag-orange ant-tag-borderless basic-tag-wrapper basic-large-tag-wrapper css-17gmaof css-dev-only-do-not-override-txh9fw"
+                      class="ant-tag ant-tag-orange ant-tag-borderless basic-tag-wrapper basic-large-tag-wrapper css-17gmaof"
                     >
                       <svg
                         fill="none"
@@ -169,7 +169,7 @@ exports[`test TaskResultList/Result/FileMode should match snapshot 2`] = `
     class="css-1gxdwqg"
   >
     <div
-      class="ant-collapse ant-collapse-icon-position-start ant-collapse-ghost file-result-collapse-wrapper css-dev-only-do-not-override-txh9fw"
+      class="ant-collapse ant-collapse-icon-position-start ant-collapse-ghost file-result-collapse-wrapper"
     >
       <div
         class="ant-collapse-item"
@@ -211,7 +211,7 @@ exports[`test TaskResultList/Result/FileMode should match snapshot 2`] = `
               class="file-result-card-wrapper result-card-header"
             >
               <div
-                class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+                class="ant-space ant-space-horizontal ant-space-align-center"
               >
                 <div
                   class="ant-space-item"
@@ -258,23 +258,23 @@ exports[`test TaskResultList/Result/FileMode should match snapshot 2`] = `
                 class="result-card-status-wrap"
               >
                 <span
-                  class="ant-tag ant-tag-default ant-tag-borderless basic-tag-wrapper basic-large-tag-wrapper css-1mjwlcb css-dev-only-do-not-override-txh9fw"
+                  class="ant-tag ant-tag-default ant-tag-borderless basic-tag-wrapper basic-large-tag-wrapper css-1mjwlcb"
                 >
                   准备执行
                 </span>
                 <div
-                  class="ant-divider css-dev-only-do-not-override-txh9fw ant-divider-vertical result-card-status-divider"
+                  class="ant-divider ant-divider-vertical result-card-status-divider"
                   role="separator"
                 />
                 <div
-                  class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+                  class="ant-space ant-space-horizontal ant-space-align-center"
                 >
                   <div
                     class="ant-space-item"
                     style="margin-right: 8px;"
                   >
                     <span
-                      class="ant-tag ant-tag-blue ant-tag-borderless basic-tag-wrapper basic-large-tag-wrapper css-1q0n2j9 css-dev-only-do-not-override-txh9fw"
+                      class="ant-tag ant-tag-blue ant-tag-borderless basic-tag-wrapper basic-large-tag-wrapper css-1q0n2j9"
                     >
                       <svg
                         height="19"
@@ -296,7 +296,7 @@ exports[`test TaskResultList/Result/FileMode should match snapshot 2`] = `
                     class="ant-space-item"
                   >
                     <span
-                      class="ant-tag ant-tag-orange ant-tag-borderless basic-tag-wrapper basic-large-tag-wrapper css-17gmaof css-dev-only-do-not-override-txh9fw"
+                      class="ant-tag ant-tag-orange ant-tag-borderless basic-tag-wrapper basic-large-tag-wrapper css-17gmaof"
                     >
                       <svg
                         fill="none"
@@ -332,7 +332,7 @@ exports[`test TaskResultList/Result/FileMode should render audit result count 1`
     class="css-1gxdwqg"
   >
     <div
-      class="ant-collapse ant-collapse-icon-position-start ant-collapse-ghost file-result-collapse-wrapper css-dev-only-do-not-override-txh9fw"
+      class="ant-collapse ant-collapse-icon-position-start ant-collapse-ghost file-result-collapse-wrapper"
     >
       <div
         class="ant-collapse-item"
@@ -374,7 +374,7 @@ exports[`test TaskResultList/Result/FileMode should render audit result count 1`
               class="file-result-card-wrapper result-card-header"
             >
               <div
-                class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+                class="ant-space ant-space-horizontal ant-space-align-center"
               >
                 <div
                   class="ant-space-item"
@@ -421,23 +421,23 @@ exports[`test TaskResultList/Result/FileMode should render audit result count 1`
                 class="result-card-status-wrap"
               >
                 <span
-                  class="ant-tag ant-tag-default ant-tag-borderless basic-tag-wrapper basic-large-tag-wrapper css-1mjwlcb css-dev-only-do-not-override-txh9fw"
+                  class="ant-tag ant-tag-default ant-tag-borderless basic-tag-wrapper basic-large-tag-wrapper css-1mjwlcb"
                 >
                   准备执行
                 </span>
                 <div
-                  class="ant-divider css-dev-only-do-not-override-txh9fw ant-divider-vertical result-card-status-divider"
+                  class="ant-divider ant-divider-vertical result-card-status-divider"
                   role="separator"
                 />
                 <div
-                  class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+                  class="ant-space ant-space-horizontal ant-space-align-center"
                 >
                   <div
                     class="ant-space-item"
                     style="margin-right: 8px;"
                   >
                     <span
-                      class="ant-tag ant-tag-blue ant-tag-borderless basic-tag-wrapper basic-large-tag-wrapper css-1q0n2j9 css-dev-only-do-not-override-txh9fw"
+                      class="ant-tag ant-tag-blue ant-tag-borderless basic-tag-wrapper basic-large-tag-wrapper css-1q0n2j9"
                     >
                       <svg
                         height="19"
@@ -460,7 +460,7 @@ exports[`test TaskResultList/Result/FileMode should render audit result count 1`
                     style="margin-right: 8px;"
                   >
                     <span
-                      class="ant-tag ant-tag-orange ant-tag-borderless basic-tag-wrapper basic-large-tag-wrapper css-17gmaof css-dev-only-do-not-override-txh9fw"
+                      class="ant-tag ant-tag-orange ant-tag-borderless basic-tag-wrapper basic-large-tag-wrapper css-17gmaof"
                     >
                       <svg
                         fill="none"
@@ -483,7 +483,7 @@ exports[`test TaskResultList/Result/FileMode should render audit result count 1`
                     class="ant-space-item"
                   >
                     <span
-                      class="ant-tag ant-tag-red ant-tag-borderless basic-tag-wrapper basic-large-tag-wrapper css-xyvxme css-dev-only-do-not-override-txh9fw"
+                      class="ant-tag ant-tag-red ant-tag-borderless basic-tag-wrapper basic-large-tag-wrapper css-xyvxme"
                     >
                       <svg
                         height="16"
@@ -518,7 +518,7 @@ exports[`test TaskResultList/Result/FileMode should render collapse children and
     class="css-1gxdwqg"
   >
     <div
-      class="ant-collapse ant-collapse-icon-position-start ant-collapse-ghost file-result-collapse-wrapper css-dev-only-do-not-override-txh9fw"
+      class="ant-collapse ant-collapse-icon-position-start ant-collapse-ghost file-result-collapse-wrapper"
     >
       <div
         class="ant-collapse-item ant-collapse-item-active"
@@ -561,7 +561,7 @@ exports[`test TaskResultList/Result/FileMode should render collapse children and
               class="file-result-card-wrapper result-card-header"
             >
               <div
-                class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+                class="ant-space ant-space-horizontal ant-space-align-center"
               >
                 <div
                   class="ant-space-item"
@@ -608,23 +608,23 @@ exports[`test TaskResultList/Result/FileMode should render collapse children and
                 class="result-card-status-wrap"
               >
                 <span
-                  class="ant-tag ant-tag-default ant-tag-borderless basic-tag-wrapper basic-large-tag-wrapper css-1mjwlcb css-dev-only-do-not-override-txh9fw"
+                  class="ant-tag ant-tag-default ant-tag-borderless basic-tag-wrapper basic-large-tag-wrapper css-1mjwlcb"
                 >
                   准备执行
                 </span>
                 <div
-                  class="ant-divider css-dev-only-do-not-override-txh9fw ant-divider-vertical result-card-status-divider"
+                  class="ant-divider ant-divider-vertical result-card-status-divider"
                   role="separator"
                 />
                 <div
-                  class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+                  class="ant-space ant-space-horizontal ant-space-align-center"
                 >
                   <div
                     class="ant-space-item"
                     style="margin-right: 8px;"
                   >
                     <span
-                      class="ant-tag ant-tag-blue ant-tag-borderless basic-tag-wrapper basic-large-tag-wrapper css-1q0n2j9 css-dev-only-do-not-override-txh9fw"
+                      class="ant-tag ant-tag-blue ant-tag-borderless basic-tag-wrapper basic-large-tag-wrapper css-1q0n2j9"
                     >
                       <svg
                         height="19"
@@ -646,7 +646,7 @@ exports[`test TaskResultList/Result/FileMode should render collapse children and
                     class="ant-space-item"
                   >
                     <span
-                      class="ant-tag ant-tag-orange ant-tag-borderless basic-tag-wrapper basic-large-tag-wrapper css-17gmaof css-dev-only-do-not-override-txh9fw"
+                      class="ant-tag ant-tag-orange ant-tag-borderless basic-tag-wrapper basic-large-tag-wrapper css-17gmaof"
                     >
                       <svg
                         fill="none"
@@ -680,10 +680,10 @@ exports[`test TaskResultList/Result/FileMode should render collapse children and
               class="css-1r1dawj"
             >
               <div
-                class="ant-table-wrapper actiontech-table-namespace clear-padding-bottom css-fxd6ka css-dev-only-do-not-override-bj9uhl"
+                class="ant-table-wrapper actiontech-table-namespace clear-padding-bottom css-fxd6ka"
               >
                 <div
-                  class="ant-spin-nested-loading css-dev-only-do-not-override-bj9uhl"
+                  class="ant-spin-nested-loading"
                 >
                   <div
                     class="ant-spin-container"
@@ -811,7 +811,7 @@ exports[`test TaskResultList/Result/FileMode should render collapse children and
                                     class="actiontech-sql-snippet-renderer-wrapper css-dz7fl9"
                                   >
                                     <div
-                                      class="ant-typography ant-typography-ellipsis ant-typography-single-line ant-typography-ellipsis-single-line margin-bottom-0 css-dev-only-do-not-override-bj9uhl"
+                                      class="ant-typography ant-typography-ellipsis ant-typography-single-line ant-typography-ellipsis-single-line margin-bottom-0"
                                     >
                                       <span>
                                         <span
@@ -860,7 +860,7 @@ exports[`test TaskResultList/Result/FileMode should render collapse children and
                                     class="audit-result-wrapper"
                                   >
                                     <div
-                                      class="ant-space css-dev-only-do-not-override-bj9uhl ant-space-horizontal ant-space-align-center"
+                                      class="ant-space ant-space-horizontal ant-space-align-center"
                                     >
                                       <div
                                         class="ant-space-item"
@@ -884,7 +884,7 @@ exports[`test TaskResultList/Result/FileMode should render collapse children and
                                   class="ant-table-cell exec-status-column"
                                 >
                                   <span
-                                    class="ant-tag ant-tag-default ant-tag-borderless basic-tag-wrapper basic-large-tag-wrapper css-1mjwlcb css-dev-only-do-not-override-bj9uhl"
+                                    class="ant-tag ant-tag-default ant-tag-borderless basic-tag-wrapper basic-large-tag-wrapper css-1mjwlcb"
                                   >
                                     准备执行
                                   </span>

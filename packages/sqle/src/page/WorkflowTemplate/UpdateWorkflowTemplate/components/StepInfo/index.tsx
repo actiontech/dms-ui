@@ -148,6 +148,7 @@ const StepInfo: React.FC<IUpdateWorkflowStepInfoProps> = (props) => {
                       <Row key={`${step.key}-box-wrapper`} wrap={false}>
                         <StepCard
                           {...step}
+                          key={`${step.key}-step-card`}
                           indexNumber={index}
                           close={props?.removeReviewNode}
                           click={props.clickReviewNode}

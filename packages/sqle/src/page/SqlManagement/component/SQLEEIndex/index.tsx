@@ -39,6 +39,7 @@ import {
 } from '@actiontech/shared/lib/api/sqle/service/SqlManage/index.enum';
 import SqlManagementColumn, {
   ExtraFilterMeta,
+  ExtraFilterMetaType,
   type SqlManagementTableFilterParamType
 } from './column';
 import {
@@ -337,7 +338,10 @@ const SQLEEIndex = () => {
     [username]
   );
   const { filterButtonMeta, filterContainerMeta, updateAllSelectedFilterItem } =
-    useTableFilterContainer(columns, updateTableFilterInfo, ExtraFilterMeta());
+    useTableFilterContainer<
+      ExtraFilterMetaType,
+      SqlManagementTableFilterParamType
+    >(columns, updateTableFilterInfo, ExtraFilterMeta());
 
   const { filterCustomProps } = useGetTableFilterInfo();
 

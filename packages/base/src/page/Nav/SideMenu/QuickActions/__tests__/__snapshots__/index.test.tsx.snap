@@ -7,14 +7,14 @@ exports[`base/Nav/QuickActions render navigate event 1`] = `
       class="css-22avtw"
     >
       <div
-        class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center action-space-wrapper"
+        class="ant-space ant-space-horizontal ant-space-align-center action-space-wrapper"
       >
         <div
           class="ant-space-item"
           style="margin-right: 8px;"
         >
           <div
-            class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
+            class="ant-space ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
           >
             <div
               class="ant-space-item"
@@ -48,7 +48,7 @@ exports[`base/Nav/QuickActions render navigate event 1`] = `
           style="margin-right: 8px;"
         >
           <div
-            class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
+            class="ant-space ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
           >
             <div
               class="ant-space-item"
@@ -77,7 +77,7 @@ exports[`base/Nav/QuickActions render navigate event 1`] = `
           style="margin-right: 8px;"
         >
           <div
-            class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
+            class="ant-space ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
           >
             <div
               class="ant-space-item"
@@ -105,7 +105,7 @@ exports[`base/Nav/QuickActions render navigate event 1`] = `
           class="ant-space-item"
         >
           <div
-            class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
+            class="ant-space ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
           >
             <div
               class="ant-space-item"
@@ -161,14 +161,14 @@ exports[`base/Nav/QuickActions render quick action when current user is admin 1`
       class="css-22avtw"
     >
       <div
-        class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center action-space-wrapper"
+        class="ant-space ant-space-horizontal ant-space-align-center action-space-wrapper"
       >
         <div
           class="ant-space-item"
           style="margin-right: 8px;"
         >
           <div
-            class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
+            class="ant-space ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
           >
             <div
               class="ant-space-item"
@@ -225,7 +225,7 @@ exports[`base/Nav/QuickActions render quick action when current user is admin 1`
           style="margin-right: 8px;"
         >
           <div
-            class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
+            class="ant-space ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
           >
             <div
               class="ant-space-item"
@@ -254,7 +254,7 @@ exports[`base/Nav/QuickActions render quick action when current user is admin 1`
           style="margin-right: 8px;"
         >
           <div
-            class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
+            class="ant-space ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
           >
             <div
               class="ant-space-item"
@@ -282,7 +282,7 @@ exports[`base/Nav/QuickActions render quick action when current user is admin 1`
           class="ant-space-item"
         >
           <div
-            class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
+            class="ant-space ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
           >
             <div
               class="ant-space-item"

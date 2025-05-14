@@ -4,7 +4,7 @@ exports[`page/ProjectOverview/OrderStatus no permission for create order 1`] = `
 <body>
   <div>
     <div
-      class="ant-card ant-card-hoverable css-121p60i css-dev-only-do-not-override-txh9fw"
+      class="ant-card ant-card-hoverable css-121p60i"
     >
       <div
         class="ant-card-body"
@@ -35,7 +35,7 @@ exports[`page/ProjectOverview/OrderStatus no permission for create order 1`] = `
               class="icon-center-wrapper MuiBox-root css-0"
             >
               <div
-                class="css-dev-only-do-not-override-txh9fw ant-empty is-icon-tips css-19kysfv"
+                class="ant-empty is-icon-tips css-19kysfv"
               >
                 <div
                   class="ant-empty-image"
@@ -89,7 +89,7 @@ exports[`page/ProjectOverview/OrderStatus no permission for create order 1`] = `
                   class="ant-empty-footer"
                 >
                   <button
-                    class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-text ant-btn-sm basic-button-wrapper css-geipcv"
+                    class="ant-btn ant-btn-text ant-btn-sm basic-button-wrapper css-geipcv"
                     type="button"
                   >
                     <span>
@@ -111,7 +111,7 @@ exports[`page/ProjectOverview/OrderStatus render no data and refresh data 1`] = 
 <body>
   <div>
     <div
-      class="ant-card ant-card-hoverable css-121p60i css-dev-only-do-not-override-txh9fw"
+      class="ant-card ant-card-hoverable css-121p60i"
     >
       <div
         class="ant-card-body"
@@ -135,7 +135,7 @@ exports[`page/ProjectOverview/OrderStatus render no data and refresh data 1`] = 
               href="/sqle/project/700300/exec-workflow/create"
             >
               <button
-                class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default ant-btn-sm basic-button-wrapper css-geipcv"
+                class="ant-btn ant-btn-default ant-btn-sm basic-button-wrapper css-geipcv"
                 type="button"
               >
                 <span>
@@ -155,7 +155,7 @@ exports[`page/ProjectOverview/OrderStatus render no data and refresh data 1`] = 
               class="icon-center-wrapper MuiBox-root css-0"
             >
               <div
-                class="css-dev-only-do-not-override-txh9fw ant-empty is-icon-tips css-19kysfv"
+                class="ant-empty is-icon-tips css-19kysfv"
               >
                 <div
                   class="ant-empty-image"
@@ -209,7 +209,7 @@ exports[`page/ProjectOverview/OrderStatus render no data and refresh data 1`] = 
                   class="ant-empty-footer"
                 >
                   <button
-                    class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-text ant-btn-sm basic-button-wrapper css-geipcv"
+                    class="ant-btn ant-btn-text ant-btn-sm basic-button-wrapper css-geipcv"
                     type="button"
                   >
                     <span>
@@ -231,7 +231,7 @@ exports[`page/ProjectOverview/OrderStatus render order status and click create o
 <body>
   <div>
     <div
-      class="ant-card ant-card-hoverable css-121p60i css-dev-only-do-not-override-txh9fw"
+      class="ant-card ant-card-hoverable css-121p60i"
     >
       <div
         class="ant-card-body"
@@ -255,7 +255,7 @@ exports[`page/ProjectOverview/OrderStatus render order status and click create o
               href="/sqle/project/700300/exec-workflow/create"
             >
               <button
-                class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default ant-btn-sm basic-button-wrapper css-geipcv"
+                class="ant-btn ant-btn-default ant-btn-sm basic-button-wrapper css-geipcv"
                 type="button"
               >
                 <span>
@@ -344,11 +344,11 @@ exports[`page/ProjectOverview/OrderStatus render order status and click create o
                     class="legend-wrapper"
                   >
                     <div
-                      class="ant-row css-dev-only-do-not-override-txh9fw"
+                      class="ant-row"
                       style="margin-left: -10px; margin-right: -10px;"
                     >
                       <div
-                        class="ant-col css-dev-only-do-not-override-txh9fw"
+                        class="ant-col"
                         style="padding-left: 10px; padding-right: 10px; width: 14.285714285714286%;"
                       >
                         <div
@@ -381,7 +381,7 @@ exports[`page/ProjectOverview/OrderStatus render order status and click create o
                         </div>
                       </div>
                       <div
-                        class="ant-col css-dev-only-do-not-override-txh9fw"
+                        class="ant-col"
                         style="padding-left: 10px; padding-right: 10px; width: 14.285714285714286%;"
                       >
                         <div
@@ -414,7 +414,7 @@ exports[`page/ProjectOverview/OrderStatus render order status and click create o
                         </div>
                       </div>
                       <div
-                        class="ant-col css-dev-only-do-not-override-txh9fw"
+                        class="ant-col"
                         style="padding-left: 10px; padding-right: 10px; width: 14.285714285714286%;"
                       >
                         <div
@@ -448,7 +448,7 @@ exports[`page/ProjectOverview/OrderStatus render order status and click create o
                         </div>
                       </div>
                       <div
-                        class="ant-col css-dev-only-do-not-override-txh9fw"
+                        class="ant-col"
                         style="padding-left: 10px; padding-right: 10px; width: 14.285714285714286%;"
                       >
                         <div
@@ -481,7 +481,7 @@ exports[`page/ProjectOverview/OrderStatus render order status and click create o
                         </div>
                       </div>
                       <div
-                        class="ant-col css-dev-only-do-not-override-txh9fw"
+                        class="ant-col"
                         style="padding-left: 10px; padding-right: 10px; width: 14.285714285714286%;"
                       >
                         <div
@@ -515,7 +515,7 @@ exports[`page/ProjectOverview/OrderStatus render order status and click create o
                         </div>
                       </div>
                       <div
-                        class="ant-col css-dev-only-do-not-override-txh9fw"
+                        class="ant-col"
                         style="padding-left: 10px; padding-right: 10px; width: 14.285714285714286%;"
                       >
                         <div
@@ -549,7 +549,7 @@ exports[`page/ProjectOverview/OrderStatus render order status and click create o
                         </div>
                       </div>
                       <div
-                        class="ant-col css-dev-only-do-not-override-txh9fw"
+                        class="ant-col"
                         style="padding-left: 10px; padding-right: 10px; width: 14.285714285714286%;"
                       >
                         <div

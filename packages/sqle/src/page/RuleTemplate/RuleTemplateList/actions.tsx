@@ -37,7 +37,7 @@ export const RuleTemplateTableActions = (
       {
         text: t('common.delete'),
         key: 'delete-project-template',
-        buttonProps: (record) => ({
+        buttonProps: () => ({
           danger: true
         }),
         confirm: (record) => {

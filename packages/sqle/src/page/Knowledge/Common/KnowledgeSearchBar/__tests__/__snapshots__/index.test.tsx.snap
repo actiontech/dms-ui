@@ -9,7 +9,7 @@ exports[`KnowledgeSearchBar render init snap 1`] = `
       class="input-wrapper"
     >
       <textarea
-        class="ant-input ant-input-borderless css-dev-only-do-not-override-txh9fw basic-input-wrapper css-1pd1cd5"
+        class="ant-input ant-input-borderless basic-input-wrapper css-1pd1cd5"
         placeholder="请输入关键字搜索你感兴趣的SQL语法"
         style="overflow-y: hidden; resize: none;"
       />
@@ -38,7 +38,7 @@ exports[`KnowledgeSearchBar render with allowSelectTag 1`] = `
     class="css-o4a44a"
   >
     <div
-      class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center css-5rjiyz"
+      class="ant-space ant-space-horizontal ant-space-align-center css-5rjiyz"
       style="flex-wrap: wrap; margin-bottom: -4px;"
     >
       <div
@@ -72,7 +72,7 @@ exports[`KnowledgeSearchBar render with allowSelectTag 1`] = `
       class="input-wrapper"
     >
       <textarea
-        class="ant-input ant-input-borderless css-dev-only-do-not-override-txh9fw basic-input-wrapper css-1pd1cd5"
+        class="ant-input ant-input-borderless basic-input-wrapper css-1pd1cd5"
         placeholder="请输入关键字搜索你感兴趣的SQL语法"
         style="overflow-y: hidden; resize: none;"
       />

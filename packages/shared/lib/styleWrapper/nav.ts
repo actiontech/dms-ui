@@ -15,6 +15,7 @@ export const SideMenuStyleWrapper = styled('div')`
     background-color: ${({ theme }) => theme.sharedTheme.nav.backgroundColor};
     box-shadow: ${({ theme }) => theme.sharedTheme.nav.boxShadow};
     border-right: ${({ theme }) => theme.sharedTheme.nav.border};
+    scrollbar-gutter: stable;
 
     &::-webkit-scrollbar {
       width: 4px;
@@ -28,19 +29,28 @@ export const SideMenuStyleWrapper = styled('div')`
       display: flex;
       flex-direction: column;
       align-items: flex-start;
+      width: 100%;
 
       .ant-spin-nested-loading {
         width: 100%;
       }
 
+      .title-wrapper {
+        flex: 1;
+        overflow: hidden;
+      }
+
       .title {
         display: flex;
         height: 60px;
-        padding: 8px;
+        padding: 8px 0 8px 2px;
         align-items: center;
         flex-shrink: 0;
         align-self: stretch;
         cursor: pointer;
+        width: 100%;
+        overflow: hidden;
+        display: flex;
 
         .label {
           text-align: center;
@@ -53,19 +63,21 @@ export const SideMenuStyleWrapper = styled('div')`
 
         .label-primary {
           color: ${({ theme }) => theme.sharedTheme.nav.title.color[0]};
-          margin-right: 10px;
+          margin-right: 6px;
         }
 
         .label-base {
           color: ${({ theme }) => theme.sharedTheme.nav.title.color[1]};
+          flex: 1;
+          white-space: nowrap;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          text-align: left;
         }
       }
 
       .custom-project-selector {
-        width: calc(
-          ${({ theme }) => theme.sharedTheme.nav.width}px -
-            ${({ theme }) => theme.sharedTheme.nav.padding * 2}px
-        );
+        width: 100%;
       }
 
       .custom-menu.ant-menu.ant-menu-inline {

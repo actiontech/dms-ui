@@ -7,10 +7,10 @@ exports[`base/System/ProcessConnection render snap 1`] = `
       class="system-form-wrapper"
     >
       <div
-        class="ant-row ant-row-space-between ant-row-middle config-title-wrapper has-border css-dev-only-do-not-override-txh9fw"
+        class="ant-row ant-row-space-between ant-row-middle config-title-wrapper has-border"
       >
         <div
-          class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+          class="ant-space ant-space-horizontal ant-space-align-center"
         >
           <div
             class="ant-space-item"
@@ -23,13 +23,13 @@ exports[`base/System/ProcessConnection render snap 1`] = `
         class="config-form-wrapper"
       >
         <div
-          class="ant-spin-nested-loading css-dev-only-do-not-override-txh9fw"
+          class="ant-spin-nested-loading"
         >
           <div>
             <div
               aria-busy="true"
               aria-live="polite"
-              class="ant-spin ant-spin-spinning css-dev-only-do-not-override-txh9fw"
+              class="ant-spin ant-spin-spinning"
             >
               <span
                 class="ant-spin-dot ant-spin-dot-spin"
@@ -53,19 +53,19 @@ exports[`base/System/ProcessConnection render snap 1`] = `
             class="ant-spin-container ant-spin-blur"
           >
             <form
-              class="ant-form ant-form-horizontal css-dev-only-do-not-override-txh9fw"
+              class="ant-form ant-form-horizontal"
             >
               <div
                 class="switch-field-wrapper"
               >
                 <div
-                  class="ant-form-item has-label-tip css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+                  class="ant-form-item has-label-tip css-1jlm9cy"
                 >
                   <div
-                    class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                    class="ant-row ant-form-item-row"
                   >
                     <div
-                      class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left css-dev-only-do-not-override-txh9fw"
+                      class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left"
                     >
                       <label
                         class="ant-form-item-no-colon"
@@ -86,7 +86,7 @@ exports[`base/System/ProcessConnection render snap 1`] = `
                       </label>
                     </div>
                     <div
-                      class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                      class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control"
                     >
                       <div
                         class="ant-form-item-control-input"
@@ -95,14 +95,14 @@ exports[`base/System/ProcessConnection render snap 1`] = `
                           class="ant-form-item-control-input-content"
                         >
                           <div
-                            class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+                            class="ant-space ant-space-horizontal ant-space-align-center"
                           >
                             <div
                               class="ant-space-item"
                               style="margin-right: 12px;"
                             >
                               <div
-                                class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+                                class="ant-space ant-space-horizontal ant-space-align-center"
                                 hidden=""
                               >
                                 <div
@@ -110,13 +110,13 @@ exports[`base/System/ProcessConnection render snap 1`] = `
                                   style="margin-right: 12px;"
                                 >
                                   <div
-                                    class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
+                                    class="ant-space ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
                                   >
                                     <div
                                       class="ant-space-item"
                                     >
                                       <button
-                                        class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-text ant-btn-icon-only system-config-button basic-button-wrapper css-geipcv"
+                                        class="ant-btn ant-btn-text ant-btn-icon-only system-config-button basic-button-wrapper css-geipcv"
                                         type="button"
                                       >
                                         <span
@@ -141,13 +141,13 @@ exports[`base/System/ProcessConnection render snap 1`] = `
                                   class="ant-space-item"
                                 >
                                   <div
-                                    class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
+                                    class="ant-space ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
                                   >
                                     <div
                                       class="ant-space-item"
                                     >
                                       <button
-                                        class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-text ant-btn-icon-only system-config-button basic-button-wrapper css-geipcv"
+                                        class="ant-btn ant-btn-text ant-btn-icon-only system-config-button basic-button-wrapper css-geipcv"
                                         type="button"
                                       >
                                         <span
@@ -176,13 +176,13 @@ exports[`base/System/ProcessConnection render snap 1`] = `
                               class="ant-space-item"
                             >
                               <div
-                                class="ant-form-item css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+                                class="ant-form-item css-1jlm9cy"
                               >
                                 <div
-                                  class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                                  class="ant-row ant-form-item-row"
                                 >
                                   <div
-                                    class="ant-col ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                                    class="ant-col ant-form-item-control"
                                   >
                                     <div
                                       class="ant-form-item-control-input"
@@ -192,7 +192,7 @@ exports[`base/System/ProcessConnection render snap 1`] = `
                                       >
                                         <button
                                           aria-checked="false"
-                                          class="ant-switch basic-switch-wrapper system-config-switch css-g6dhbn css-dev-only-do-not-override-txh9fw"
+                                          class="ant-switch basic-switch-wrapper system-config-switch css-g6dhbn"
                                           id="enabled"
                                           role="switch"
                                           type="button"
@@ -229,13 +229,13 @@ exports[`base/System/ProcessConnection render snap 1`] = `
                 hidden=""
               >
                 <div
-                  class="ant-form-item has-required-style css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+                  class="ant-form-item has-required-style css-1jlm9cy"
                 >
                   <div
-                    class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                    class="ant-row ant-form-item-row"
                   >
                     <div
-                      class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left css-dev-only-do-not-override-txh9fw"
+                      class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left"
                     >
                       <label
                         class="ant-form-item-required ant-form-item-no-colon"
@@ -246,7 +246,7 @@ exports[`base/System/ProcessConnection render snap 1`] = `
                       </label>
                     </div>
                     <div
-                      class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                      class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control"
                     >
                       <div
                         class="ant-form-item-control-input"
@@ -256,7 +256,7 @@ exports[`base/System/ProcessConnection render snap 1`] = `
                         >
                           <input
                             aria-required="true"
-                            class="ant-input css-dev-only-do-not-override-ywkr0o basic-input-wrapper css-1pd1cd5"
+                            class="ant-input basic-input-wrapper css-1pd1cd5"
                             id="appKey"
                             placeholder="请输入AppKey"
                             type="text"
@@ -268,13 +268,13 @@ exports[`base/System/ProcessConnection render snap 1`] = `
                   </div>
                 </div>
                 <div
-                  class="ant-form-item has-required-style css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+                  class="ant-form-item has-required-style css-1jlm9cy"
                 >
                   <div
-                    class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                    class="ant-row ant-form-item-row"
                   >
                     <div
-                      class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left css-dev-only-do-not-override-txh9fw"
+                      class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left"
                     >
                       <label
                         class="ant-form-item-required ant-form-item-no-colon"
@@ -285,7 +285,7 @@ exports[`base/System/ProcessConnection render snap 1`] = `
                       </label>
                     </div>
                     <div
-                      class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                      class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control"
                     >
                       <div
                         class="ant-form-item-control-input"
@@ -294,11 +294,11 @@ exports[`base/System/ProcessConnection render snap 1`] = `
                           class="ant-form-item-control-input-content"
                         >
                           <span
-                            class="ant-input-affix-wrapper ant-input-password basic-input-wrapper css-1pd1cd5 css-dev-only-do-not-override-txh9fw"
+                            class="ant-input-affix-wrapper ant-input-password basic-input-wrapper css-1pd1cd5"
                           >
                             <input
                               aria-required="true"
-                              class="ant-input css-dev-only-do-not-override-txh9fw"
+                              class="ant-input"
                               id="appSecret"
                               placeholder="请输入AppSecret"
                               type="password"
@@ -337,13 +337,13 @@ exports[`base/System/ProcessConnection render snap 1`] = `
                   </div>
                 </div>
                 <div
-                  class="ant-form-item css-15d6abf css-dev-only-do-not-override-txh9fw"
+                  class="ant-form-item css-15d6abf"
                 >
                   <div
-                    class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                    class="ant-row ant-form-item-row"
                   >
                     <div
-                      class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left css-dev-only-do-not-override-txh9fw"
+                      class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left"
                     >
                       <label
                         class="ant-form-item-no-colon"
@@ -353,7 +353,7 @@ exports[`base/System/ProcessConnection render snap 1`] = `
                       </label>
                     </div>
                     <div
-                      class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                      class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control"
                     >
                       <div
                         class="ant-form-item-control-input"
@@ -362,14 +362,14 @@ exports[`base/System/ProcessConnection render snap 1`] = `
                           class="ant-form-item-control-input-content"
                         >
                           <div
-                            class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+                            class="ant-space ant-space-horizontal ant-space-align-center"
                           >
                             <div
                               class="ant-space-item"
                               style="margin-right: 12px;"
                             >
                               <button
-                                class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default basic-button-wrapper css-geipcv"
+                                class="ant-btn ant-btn-default basic-button-wrapper css-geipcv"
                                 type="button"
                               >
                                 <span>
@@ -381,7 +381,7 @@ exports[`base/System/ProcessConnection render snap 1`] = `
                               class="ant-space-item"
                             >
                               <button
-                                class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary basic-button-wrapper css-geipcv"
+                                class="ant-btn ant-btn-primary basic-button-wrapper css-geipcv"
                                 type="submit"
                               >
                                 <span>
@@ -405,13 +405,13 @@ exports[`base/System/ProcessConnection render snap 1`] = `
         class="config-form-wrapper"
       >
         <div
-          class="ant-spin-nested-loading css-dev-only-do-not-override-txh9fw"
+          class="ant-spin-nested-loading"
         >
           <div>
             <div
               aria-busy="true"
               aria-live="polite"
-              class="ant-spin ant-spin-spinning css-dev-only-do-not-override-txh9fw"
+              class="ant-spin ant-spin-spinning"
             >
               <span
                 class="ant-spin-dot ant-spin-dot-spin"
@@ -435,19 +435,19 @@ exports[`base/System/ProcessConnection render snap 1`] = `
             class="ant-spin-container ant-spin-blur"
           >
             <form
-              class="ant-form ant-form-horizontal css-dev-only-do-not-override-txh9fw"
+              class="ant-form ant-form-horizontal"
             >
               <div
                 class="switch-field-wrapper"
               >
                 <div
-                  class="ant-form-item has-label-tip css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+                  class="ant-form-item has-label-tip css-1jlm9cy"
                 >
                   <div
-                    class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                    class="ant-row ant-form-item-row"
                   >
                     <div
-                      class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left css-dev-only-do-not-override-txh9fw"
+                      class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left"
                     >
                       <label
                         class="ant-form-item-no-colon"
@@ -468,7 +468,7 @@ exports[`base/System/ProcessConnection render snap 1`] = `
                       </label>
                     </div>
                     <div
-                      class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                      class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control"
                     >
                       <div
                         class="ant-form-item-control-input"
@@ -477,14 +477,14 @@ exports[`base/System/ProcessConnection render snap 1`] = `
                           class="ant-form-item-control-input-content"
                         >
                           <div
-                            class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+                            class="ant-space ant-space-horizontal ant-space-align-center"
                           >
                             <div
                               class="ant-space-item"
                               style="margin-right: 12px;"
                             >
                               <div
-                                class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+                                class="ant-space ant-space-horizontal ant-space-align-center"
                                 hidden=""
                               >
                                 <div
@@ -492,13 +492,13 @@ exports[`base/System/ProcessConnection render snap 1`] = `
                                   style="margin-right: 12px;"
                                 >
                                   <div
-                                    class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
+                                    class="ant-space ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
                                   >
                                     <div
                                       class="ant-space-item"
                                     >
                                       <button
-                                        class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-text ant-btn-icon-only system-config-button basic-button-wrapper css-geipcv"
+                                        class="ant-btn ant-btn-text ant-btn-icon-only system-config-button basic-button-wrapper css-geipcv"
                                         type="button"
                                       >
                                         <span
@@ -523,13 +523,13 @@ exports[`base/System/ProcessConnection render snap 1`] = `
                                   class="ant-space-item"
                                 >
                                   <div
-                                    class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
+                                    class="ant-space ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
                                   >
                                     <div
                                       class="ant-space-item"
                                     >
                                       <button
-                                        class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-text ant-btn-icon-only system-config-button basic-button-wrapper css-geipcv"
+                                        class="ant-btn ant-btn-text ant-btn-icon-only system-config-button basic-button-wrapper css-geipcv"
                                         type="button"
                                       >
                                         <span
@@ -558,13 +558,13 @@ exports[`base/System/ProcessConnection render snap 1`] = `
                               class="ant-space-item"
                             >
                               <div
-                                class="ant-form-item css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+                                class="ant-form-item css-1jlm9cy"
                               >
                                 <div
-                                  class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                                  class="ant-row ant-form-item-row"
                                 >
                                   <div
-                                    class="ant-col ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                                    class="ant-col ant-form-item-control"
                                   >
                                     <div
                                       class="ant-form-item-control-input"
@@ -574,7 +574,7 @@ exports[`base/System/ProcessConnection render snap 1`] = `
                                       >
                                         <button
                                           aria-checked="false"
-                                          class="ant-switch basic-switch-wrapper system-config-switch css-g6dhbn css-dev-only-do-not-override-txh9fw"
+                                          class="ant-switch basic-switch-wrapper system-config-switch css-g6dhbn"
                                           id="enabled"
                                           role="switch"
                                           type="button"
@@ -611,13 +611,13 @@ exports[`base/System/ProcessConnection render snap 1`] = `
                 hidden=""
               >
                 <div
-                  class="ant-form-item has-required-style css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+                  class="ant-form-item has-required-style css-1jlm9cy"
                 >
                   <div
-                    class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                    class="ant-row ant-form-item-row"
                   >
                     <div
-                      class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left css-dev-only-do-not-override-txh9fw"
+                      class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left"
                     >
                       <label
                         class="ant-form-item-required ant-form-item-no-colon"
@@ -628,7 +628,7 @@ exports[`base/System/ProcessConnection render snap 1`] = `
                       </label>
                     </div>
                     <div
-                      class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                      class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control"
                     >
                       <div
                         class="ant-form-item-control-input"
@@ -638,7 +638,7 @@ exports[`base/System/ProcessConnection render snap 1`] = `
                         >
                           <input
                             aria-required="true"
-                            class="ant-input css-dev-only-do-not-override-ywkr0o basic-input-wrapper css-1pd1cd5"
+                            class="ant-input basic-input-wrapper css-1pd1cd5"
                             id="appKey"
                             placeholder="请输入App Key"
                             type="text"
@@ -650,13 +650,13 @@ exports[`base/System/ProcessConnection render snap 1`] = `
                   </div>
                 </div>
                 <div
-                  class="ant-form-item has-required-style css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+                  class="ant-form-item has-required-style css-1jlm9cy"
                 >
                   <div
-                    class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                    class="ant-row ant-form-item-row"
                   >
                     <div
-                      class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left css-dev-only-do-not-override-txh9fw"
+                      class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left"
                     >
                       <label
                         class="ant-form-item-required ant-form-item-no-colon"
@@ -667,7 +667,7 @@ exports[`base/System/ProcessConnection render snap 1`] = `
                       </label>
                     </div>
                     <div
-                      class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                      class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control"
                     >
                       <div
                         class="ant-form-item-control-input"
@@ -676,11 +676,11 @@ exports[`base/System/ProcessConnection render snap 1`] = `
                           class="ant-form-item-control-input-content"
                         >
                           <span
-                            class="ant-input-affix-wrapper ant-input-password basic-input-wrapper css-1pd1cd5 css-dev-only-do-not-override-txh9fw"
+                            class="ant-input-affix-wrapper ant-input-password basic-input-wrapper css-1pd1cd5"
                           >
                             <input
                               aria-required="true"
-                              class="ant-input css-dev-only-do-not-override-txh9fw"
+                              class="ant-input"
                               id="appSecret"
                               placeholder="请输入App Secret"
                               type="password"
@@ -719,13 +719,13 @@ exports[`base/System/ProcessConnection render snap 1`] = `
                   </div>
                 </div>
                 <div
-                  class="ant-form-item css-15d6abf css-dev-only-do-not-override-txh9fw"
+                  class="ant-form-item css-15d6abf"
                 >
                   <div
-                    class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                    class="ant-row ant-form-item-row"
                   >
                     <div
-                      class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left css-dev-only-do-not-override-txh9fw"
+                      class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left"
                     >
                       <label
                         class="ant-form-item-no-colon"
@@ -735,7 +735,7 @@ exports[`base/System/ProcessConnection render snap 1`] = `
                       </label>
                     </div>
                     <div
-                      class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                      class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control"
                     >
                       <div
                         class="ant-form-item-control-input"
@@ -744,14 +744,14 @@ exports[`base/System/ProcessConnection render snap 1`] = `
                           class="ant-form-item-control-input-content"
                         >
                           <div
-                            class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+                            class="ant-space ant-space-horizontal ant-space-align-center"
                           >
                             <div
                               class="ant-space-item"
                               style="margin-right: 12px;"
                             >
                               <button
-                                class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default basic-button-wrapper css-geipcv"
+                                class="ant-btn ant-btn-default basic-button-wrapper css-geipcv"
                                 type="button"
                               >
                                 <span>
@@ -763,7 +763,7 @@ exports[`base/System/ProcessConnection render snap 1`] = `
                               class="ant-space-item"
                             >
                               <button
-                                class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary basic-button-wrapper css-geipcv"
+                                class="ant-btn ant-btn-primary basic-button-wrapper css-geipcv"
                                 type="submit"
                               >
                                 <span>
@@ -787,13 +787,13 @@ exports[`base/System/ProcessConnection render snap 1`] = `
         class="config-form-wrapper"
       >
         <div
-          class="ant-spin-nested-loading css-dev-only-do-not-override-txh9fw"
+          class="ant-spin-nested-loading"
         >
           <div>
             <div
               aria-busy="true"
               aria-live="polite"
-              class="ant-spin ant-spin-spinning css-dev-only-do-not-override-txh9fw"
+              class="ant-spin ant-spin-spinning"
             >
               <span
                 class="ant-spin-dot ant-spin-dot-spin"
@@ -817,19 +817,19 @@ exports[`base/System/ProcessConnection render snap 1`] = `
             class="ant-spin-container ant-spin-blur"
           >
             <form
-              class="ant-form ant-form-horizontal css-dev-only-do-not-override-txh9fw"
+              class="ant-form ant-form-horizontal"
             >
               <div
                 class="switch-field-wrapper"
               >
                 <div
-                  class="ant-form-item has-label-tip css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+                  class="ant-form-item has-label-tip css-1jlm9cy"
                 >
                   <div
-                    class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                    class="ant-row ant-form-item-row"
                   >
                     <div
-                      class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left css-dev-only-do-not-override-txh9fw"
+                      class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left"
                     >
                       <label
                         class="ant-form-item-no-colon"
@@ -850,7 +850,7 @@ exports[`base/System/ProcessConnection render snap 1`] = `
                       </label>
                     </div>
                     <div
-                      class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                      class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control"
                     >
                       <div
                         class="ant-form-item-control-input"
@@ -859,14 +859,14 @@ exports[`base/System/ProcessConnection render snap 1`] = `
                           class="ant-form-item-control-input-content"
                         >
                           <div
-                            class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+                            class="ant-space ant-space-horizontal ant-space-align-center"
                           >
                             <div
                               class="ant-space-item"
                               style="margin-right: 12px;"
                             >
                               <div
-                                class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+                                class="ant-space ant-space-horizontal ant-space-align-center"
                                 hidden=""
                               >
                                 <div
@@ -874,13 +874,13 @@ exports[`base/System/ProcessConnection render snap 1`] = `
                                   style="margin-right: 12px;"
                                 >
                                   <div
-                                    class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
+                                    class="ant-space ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
                                   >
                                     <div
                                       class="ant-space-item"
                                     >
                                       <button
-                                        class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-text ant-btn-icon-only system-config-button basic-button-wrapper css-geipcv"
+                                        class="ant-btn ant-btn-text ant-btn-icon-only system-config-button basic-button-wrapper css-geipcv"
                                         type="button"
                                       >
                                         <span
@@ -905,13 +905,13 @@ exports[`base/System/ProcessConnection render snap 1`] = `
                                   class="ant-space-item"
                                 >
                                   <div
-                                    class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
+                                    class="ant-space ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
                                   >
                                     <div
                                       class="ant-space-item"
                                     >
                                       <button
-                                        class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-text ant-btn-icon-only system-config-button basic-button-wrapper css-geipcv"
+                                        class="ant-btn ant-btn-text ant-btn-icon-only system-config-button basic-button-wrapper css-geipcv"
                                         type="button"
                                       >
                                         <span
@@ -940,13 +940,13 @@ exports[`base/System/ProcessConnection render snap 1`] = `
                               class="ant-space-item"
                             >
                               <div
-                                class="ant-form-item css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+                                class="ant-form-item css-1jlm9cy"
                               >
                                 <div
-                                  class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                                  class="ant-row ant-form-item-row"
                                 >
                                   <div
-                                    class="ant-col ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                                    class="ant-col ant-form-item-control"
                                   >
                                     <div
                                       class="ant-form-item-control-input"
@@ -956,7 +956,7 @@ exports[`base/System/ProcessConnection render snap 1`] = `
                                       >
                                         <button
                                           aria-checked="false"
-                                          class="ant-switch basic-switch-wrapper system-config-switch css-g6dhbn css-dev-only-do-not-override-txh9fw"
+                                          class="ant-switch basic-switch-wrapper system-config-switch css-g6dhbn"
                                           id="enabled"
                                           role="switch"
                                           type="button"
@@ -993,13 +993,13 @@ exports[`base/System/ProcessConnection render snap 1`] = `
                 hidden=""
               >
                 <div
-                  class="ant-form-item has-required-style css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+                  class="ant-form-item has-required-style css-1jlm9cy"
                 >
                   <div
-                    class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                    class="ant-row ant-form-item-row"
                   >
                     <div
-                      class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left css-dev-only-do-not-override-txh9fw"
+                      class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left"
                     >
                       <label
                         class="ant-form-item-required ant-form-item-no-colon"
@@ -1010,7 +1010,7 @@ exports[`base/System/ProcessConnection render snap 1`] = `
                       </label>
                     </div>
                     <div
-                      class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                      class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control"
                     >
                       <div
                         class="ant-form-item-control-input"
@@ -1020,7 +1020,7 @@ exports[`base/System/ProcessConnection render snap 1`] = `
                         >
                           <input
                             aria-required="true"
-                            class="ant-input css-dev-only-do-not-override-ywkr0o basic-input-wrapper css-1pd1cd5"
+                            class="ant-input basic-input-wrapper css-1pd1cd5"
                             id="corpID"
                             placeholder="请输入CorpID(微信企业号ID)"
                             type="text"
@@ -1032,13 +1032,13 @@ exports[`base/System/ProcessConnection render snap 1`] = `
                   </div>
                 </div>
                 <div
-                  class="ant-form-item has-required-style css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+                  class="ant-form-item has-required-style css-1jlm9cy"
                 >
                   <div
-                    class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                    class="ant-row ant-form-item-row"
                   >
                     <div
-                      class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left css-dev-only-do-not-override-txh9fw"
+                      class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left"
                     >
                       <label
                         class="ant-form-item-required ant-form-item-no-colon"
@@ -1049,7 +1049,7 @@ exports[`base/System/ProcessConnection render snap 1`] = `
                       </label>
                     </div>
                     <div
-                      class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                      class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control"
                     >
                       <div
                         class="ant-form-item-control-input"
@@ -1058,11 +1058,11 @@ exports[`base/System/ProcessConnection render snap 1`] = `
                           class="ant-form-item-control-input-content"
                         >
                           <span
-                            class="ant-input-affix-wrapper ant-input-password basic-input-wrapper css-1pd1cd5 css-dev-only-do-not-override-txh9fw"
+                            class="ant-input-affix-wrapper ant-input-password basic-input-wrapper css-1pd1cd5"
                           >
                             <input
                               aria-required="true"
-                              class="ant-input css-dev-only-do-not-override-txh9fw"
+                              class="ant-input"
                               id="corpSecret"
                               placeholder="请输入企业微信应用Secret"
                               type="password"
@@ -1101,13 +1101,13 @@ exports[`base/System/ProcessConnection render snap 1`] = `
                   </div>
                 </div>
                 <div
-                  class="ant-form-item css-15d6abf css-dev-only-do-not-override-txh9fw"
+                  class="ant-form-item css-15d6abf"
                 >
                   <div
-                    class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                    class="ant-row ant-form-item-row"
                   >
                     <div
-                      class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left css-dev-only-do-not-override-txh9fw"
+                      class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left"
                     >
                       <label
                         class="ant-form-item-no-colon"
@@ -1117,7 +1117,7 @@ exports[`base/System/ProcessConnection render snap 1`] = `
                       </label>
                     </div>
                     <div
-                      class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                      class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control"
                     >
                       <div
                         class="ant-form-item-control-input"
@@ -1126,14 +1126,14 @@ exports[`base/System/ProcessConnection render snap 1`] = `
                           class="ant-form-item-control-input-content"
                         >
                           <div
-                            class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+                            class="ant-space ant-space-horizontal ant-space-align-center"
                           >
                             <div
                               class="ant-space-item"
                               style="margin-right: 12px;"
                             >
                               <button
-                                class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default basic-button-wrapper css-geipcv"
+                                class="ant-btn ant-btn-default basic-button-wrapper css-geipcv"
                                 type="button"
                               >
                                 <span>
@@ -1145,7 +1145,7 @@ exports[`base/System/ProcessConnection render snap 1`] = `
                               class="ant-space-item"
                             >
                               <button
-                                class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary basic-button-wrapper css-geipcv"
+                                class="ant-btn ant-btn-primary basic-button-wrapper css-geipcv"
                                 type="submit"
                               >
                                 <span>
@@ -1169,13 +1169,13 @@ exports[`base/System/ProcessConnection render snap 1`] = `
         class="config-form-wrapper"
       >
         <div
-          class="ant-spin-nested-loading css-dev-only-do-not-override-txh9fw"
+          class="ant-spin-nested-loading"
         >
           <div>
             <div
               aria-busy="true"
               aria-live="polite"
-              class="ant-spin ant-spin-spinning css-dev-only-do-not-override-txh9fw"
+              class="ant-spin ant-spin-spinning"
             >
               <span
                 class="ant-spin-dot ant-spin-dot-spin"
@@ -1202,19 +1202,19 @@ exports[`base/System/ProcessConnection render snap 1`] = `
               class="css-zupqof"
             >
               <form
-                class="ant-form ant-form-horizontal css-dev-only-do-not-override-txh9fw"
+                class="ant-form ant-form-horizontal"
               >
                 <div
                   class="switch-field-wrapper"
                 >
                   <div
-                    class="ant-form-item has-label-tip css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+                    class="ant-form-item has-label-tip css-1jlm9cy"
                   >
                     <div
-                      class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                      class="ant-row ant-form-item-row"
                     >
                       <div
-                        class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left css-dev-only-do-not-override-txh9fw"
+                        class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left"
                       >
                         <label
                           class="ant-form-item-no-colon"
@@ -1235,7 +1235,7 @@ exports[`base/System/ProcessConnection render snap 1`] = `
                         </label>
                       </div>
                       <div
-                        class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                        class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control"
                       >
                         <div
                           class="ant-form-item-control-input"
@@ -1244,14 +1244,14 @@ exports[`base/System/ProcessConnection render snap 1`] = `
                             class="ant-form-item-control-input-content"
                           >
                             <div
-                              class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+                              class="ant-space ant-space-horizontal ant-space-align-center"
                             >
                               <div
                                 class="ant-space-item"
                                 style="margin-right: 12px;"
                               >
                                 <div
-                                  class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+                                  class="ant-space ant-space-horizontal ant-space-align-center"
                                   hidden=""
                                 >
                                   <div
@@ -1259,13 +1259,13 @@ exports[`base/System/ProcessConnection render snap 1`] = `
                                     style="margin-right: 12px;"
                                   >
                                     <div
-                                      class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
+                                      class="ant-space ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
                                     >
                                       <div
                                         class="ant-space-item"
                                       >
                                         <button
-                                          class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-text ant-btn-icon-only system-config-button basic-button-wrapper css-geipcv"
+                                          class="ant-btn ant-btn-text ant-btn-icon-only system-config-button basic-button-wrapper css-geipcv"
                                           type="button"
                                         >
                                           <span
@@ -1290,13 +1290,13 @@ exports[`base/System/ProcessConnection render snap 1`] = `
                                     class="ant-space-item"
                                   >
                                     <div
-                                      class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
+                                      class="ant-space ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
                                     >
                                       <div
                                         class="ant-space-item"
                                       >
                                         <button
-                                          class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-text ant-btn-icon-only modify-coding-configuration basic-button-wrapper css-11ugcfo"
+                                          class="ant-btn ant-btn-text ant-btn-icon-only modify-coding-configuration basic-button-wrapper css-11ugcfo"
                                           type="button"
                                         >
                                           <span
@@ -1325,13 +1325,13 @@ exports[`base/System/ProcessConnection render snap 1`] = `
                                 class="ant-space-item"
                               >
                                 <div
-                                  class="ant-form-item css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+                                  class="ant-form-item css-1jlm9cy"
                                 >
                                   <div
-                                    class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                                    class="ant-row ant-form-item-row"
                                   >
                                     <div
-                                      class="ant-col ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                                      class="ant-col ant-form-item-control"
                                     >
                                       <div
                                         class="ant-form-item-control-input"
@@ -1341,7 +1341,7 @@ exports[`base/System/ProcessConnection render snap 1`] = `
                                         >
                                           <button
                                             aria-checked="false"
-                                            class="ant-switch basic-switch-wrapper system-config-switch css-g6dhbn css-dev-only-do-not-override-txh9fw"
+                                            class="ant-switch basic-switch-wrapper system-config-switch css-g6dhbn"
                                             id="enabled"
                                             role="switch"
                                             type="button"
@@ -1378,13 +1378,13 @@ exports[`base/System/ProcessConnection render snap 1`] = `
                   hidden=""
                 >
                   <div
-                    class="ant-form-item has-required-style css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+                    class="ant-form-item has-required-style css-1jlm9cy"
                   >
                     <div
-                      class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                      class="ant-row ant-form-item-row"
                     >
                       <div
-                        class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left css-dev-only-do-not-override-txh9fw"
+                        class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left"
                       >
                         <label
                           class="ant-form-item-required ant-form-item-no-colon"
@@ -1395,7 +1395,7 @@ exports[`base/System/ProcessConnection render snap 1`] = `
                         </label>
                       </div>
                       <div
-                        class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                        class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control"
                       >
                         <div
                           class="ant-form-item-control-input"
@@ -1405,7 +1405,7 @@ exports[`base/System/ProcessConnection render snap 1`] = `
                           >
                             <input
                               aria-required="true"
-                              class="ant-input css-dev-only-do-not-override-ywkr0o basic-input-wrapper css-1pd1cd5"
+                              class="ant-input basic-input-wrapper css-1pd1cd5"
                               id="codingUrl"
                               placeholder="请输入服务地址"
                               type="text"
@@ -1417,13 +1417,13 @@ exports[`base/System/ProcessConnection render snap 1`] = `
                     </div>
                   </div>
                   <div
-                    class="ant-form-item has-required-style css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+                    class="ant-form-item has-required-style css-1jlm9cy"
                   >
                     <div
-                      class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                      class="ant-row ant-form-item-row"
                     >
                       <div
-                        class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left css-dev-only-do-not-override-txh9fw"
+                        class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left"
                       >
                         <label
                           class="ant-form-item-required ant-form-item-no-colon"
@@ -1434,7 +1434,7 @@ exports[`base/System/ProcessConnection render snap 1`] = `
                         </label>
                       </div>
                       <div
-                        class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                        class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control"
                       >
                         <div
                           class="ant-form-item-control-input"
@@ -1443,11 +1443,11 @@ exports[`base/System/ProcessConnection render snap 1`] = `
                             class="ant-form-item-control-input-content"
                           >
                             <span
-                              class="ant-input-affix-wrapper ant-input-password basic-input-wrapper css-1pd1cd5 css-dev-only-do-not-override-txh9fw"
+                              class="ant-input-affix-wrapper ant-input-password basic-input-wrapper css-1pd1cd5"
                             >
                               <input
                                 aria-required="true"
-                                class="ant-input css-dev-only-do-not-override-txh9fw"
+                                class="ant-input"
                                 id="token"
                                 placeholder="请输入访问令牌"
                                 type="password"
@@ -1486,13 +1486,13 @@ exports[`base/System/ProcessConnection render snap 1`] = `
                     </div>
                   </div>
                   <div
-                    class="ant-form-item css-15d6abf css-dev-only-do-not-override-txh9fw"
+                    class="ant-form-item css-15d6abf"
                   >
                     <div
-                      class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                      class="ant-row ant-form-item-row"
                     >
                       <div
-                        class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left css-dev-only-do-not-override-txh9fw"
+                        class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left"
                       >
                         <label
                           class="ant-form-item-no-colon"
@@ -1502,7 +1502,7 @@ exports[`base/System/ProcessConnection render snap 1`] = `
                         </label>
                       </div>
                       <div
-                        class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                        class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control"
                       >
                         <div
                           class="ant-form-item-control-input"
@@ -1511,14 +1511,14 @@ exports[`base/System/ProcessConnection render snap 1`] = `
                             class="ant-form-item-control-input-content"
                           >
                             <div
-                              class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+                              class="ant-space ant-space-horizontal ant-space-align-center"
                             >
                               <div
                                 class="ant-space-item"
                                 style="margin-right: 12px;"
                               >
                                 <button
-                                  class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default basic-button-wrapper css-geipcv"
+                                  class="ant-btn ant-btn-default basic-button-wrapper css-geipcv"
                                   type="button"
                                 >
                                   <span>
@@ -1530,7 +1530,7 @@ exports[`base/System/ProcessConnection render snap 1`] = `
                                 class="ant-space-item"
                               >
                                 <button
-                                  class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary basic-button-wrapper css-geipcv"
+                                  class="ant-btn ant-btn-primary basic-button-wrapper css-geipcv"
                                   type="submit"
                                 >
                                   <span>
@@ -1562,10 +1562,10 @@ exports[`base/System/ProcessConnection render snap 2`] = `
       class="system-form-wrapper"
     >
       <div
-        class="ant-row ant-row-space-between ant-row-middle config-title-wrapper has-border css-dev-only-do-not-override-txh9fw"
+        class="ant-row ant-row-space-between ant-row-middle config-title-wrapper has-border"
       >
         <div
-          class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+          class="ant-space ant-space-horizontal ant-space-align-center"
         >
           <div
             class="ant-space-item"
@@ -1578,25 +1578,25 @@ exports[`base/System/ProcessConnection render snap 2`] = `
         class="config-form-wrapper"
       >
         <div
-          class="ant-spin-nested-loading css-dev-only-do-not-override-txh9fw"
+          class="ant-spin-nested-loading"
         >
           <div
             class="ant-spin-container"
           >
             <form
-              class="ant-form ant-form-horizontal css-dev-only-do-not-override-txh9fw"
+              class="ant-form ant-form-horizontal"
             >
               <div
                 class="switch-field-wrapper"
               >
                 <div
-                  class="ant-form-item has-label-tip css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+                  class="ant-form-item has-label-tip css-1jlm9cy"
                 >
                   <div
-                    class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                    class="ant-row ant-form-item-row"
                   >
                     <div
-                      class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left css-dev-only-do-not-override-txh9fw"
+                      class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left"
                     >
                       <label
                         class="ant-form-item-no-colon"
@@ -1617,7 +1617,7 @@ exports[`base/System/ProcessConnection render snap 2`] = `
                       </label>
                     </div>
                     <div
-                      class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                      class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control"
                     >
                       <div
                         class="ant-form-item-control-input"
@@ -1626,14 +1626,14 @@ exports[`base/System/ProcessConnection render snap 2`] = `
                           class="ant-form-item-control-input-content"
                         >
                           <div
-                            class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+                            class="ant-space ant-space-horizontal ant-space-align-center"
                           >
                             <div
                               class="ant-space-item"
                               style="margin-right: 12px;"
                             >
                               <div
-                                class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+                                class="ant-space ant-space-horizontal ant-space-align-center"
                                 hidden=""
                               >
                                 <div
@@ -1641,13 +1641,13 @@ exports[`base/System/ProcessConnection render snap 2`] = `
                                   style="margin-right: 12px;"
                                 >
                                   <div
-                                    class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
+                                    class="ant-space ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
                                   >
                                     <div
                                       class="ant-space-item"
                                     >
                                       <button
-                                        class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-text ant-btn-icon-only system-config-button basic-button-wrapper css-geipcv"
+                                        class="ant-btn ant-btn-text ant-btn-icon-only system-config-button basic-button-wrapper css-geipcv"
                                         type="button"
                                       >
                                         <span
@@ -1672,13 +1672,13 @@ exports[`base/System/ProcessConnection render snap 2`] = `
                                   class="ant-space-item"
                                 >
                                   <div
-                                    class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
+                                    class="ant-space ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
                                   >
                                     <div
                                       class="ant-space-item"
                                     >
                                       <button
-                                        class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-text ant-btn-icon-only system-config-button basic-button-wrapper css-geipcv"
+                                        class="ant-btn ant-btn-text ant-btn-icon-only system-config-button basic-button-wrapper css-geipcv"
                                         type="button"
                                       >
                                         <span
@@ -1707,13 +1707,13 @@ exports[`base/System/ProcessConnection render snap 2`] = `
                               class="ant-space-item"
                             >
                               <div
-                                class="ant-form-item css-1jlm9cy css-dev-only-do-not-override-txh9fw ant-form-item-has-success"
+                                class="ant-form-item css-1jlm9cy ant-form-item-has-success"
                               >
                                 <div
-                                  class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                                  class="ant-row ant-form-item-row"
                                 >
                                   <div
-                                    class="ant-col ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                                    class="ant-col ant-form-item-control"
                                   >
                                     <div
                                       class="ant-form-item-control-input"
@@ -1723,7 +1723,7 @@ exports[`base/System/ProcessConnection render snap 2`] = `
                                       >
                                         <button
                                           aria-checked="false"
-                                          class="ant-switch basic-switch-wrapper system-config-switch css-g6dhbn css-dev-only-do-not-override-txh9fw"
+                                          class="ant-switch basic-switch-wrapper system-config-switch css-g6dhbn"
                                           id="enabled"
                                           role="switch"
                                           type="button"
@@ -1760,13 +1760,13 @@ exports[`base/System/ProcessConnection render snap 2`] = `
                 hidden=""
               >
                 <div
-                  class="ant-form-item has-required-style css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+                  class="ant-form-item has-required-style css-1jlm9cy"
                 >
                   <div
-                    class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                    class="ant-row ant-form-item-row"
                   >
                     <div
-                      class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left css-dev-only-do-not-override-txh9fw"
+                      class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left"
                     >
                       <label
                         class="ant-form-item-required ant-form-item-no-colon"
@@ -1777,7 +1777,7 @@ exports[`base/System/ProcessConnection render snap 2`] = `
                       </label>
                     </div>
                     <div
-                      class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                      class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control"
                     >
                       <div
                         class="ant-form-item-control-input"
@@ -1787,7 +1787,7 @@ exports[`base/System/ProcessConnection render snap 2`] = `
                         >
                           <input
                             aria-required="true"
-                            class="ant-input css-dev-only-do-not-override-ywkr0o basic-input-wrapper css-1pd1cd5"
+                            class="ant-input basic-input-wrapper css-1pd1cd5"
                             id="appKey"
                             placeholder="请输入AppKey"
                             type="text"
@@ -1799,13 +1799,13 @@ exports[`base/System/ProcessConnection render snap 2`] = `
                   </div>
                 </div>
                 <div
-                  class="ant-form-item has-required-style css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+                  class="ant-form-item has-required-style css-1jlm9cy"
                 >
                   <div
-                    class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                    class="ant-row ant-form-item-row"
                   >
                     <div
-                      class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left css-dev-only-do-not-override-txh9fw"
+                      class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left"
                     >
                       <label
                         class="ant-form-item-required ant-form-item-no-colon"
@@ -1816,7 +1816,7 @@ exports[`base/System/ProcessConnection render snap 2`] = `
                       </label>
                     </div>
                     <div
-                      class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                      class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control"
                     >
                       <div
                         class="ant-form-item-control-input"
@@ -1825,11 +1825,11 @@ exports[`base/System/ProcessConnection render snap 2`] = `
                           class="ant-form-item-control-input-content"
                         >
                           <span
-                            class="ant-input-affix-wrapper ant-input-password basic-input-wrapper css-1pd1cd5 css-dev-only-do-not-override-txh9fw"
+                            class="ant-input-affix-wrapper ant-input-password basic-input-wrapper css-1pd1cd5"
                           >
                             <input
                               aria-required="true"
-                              class="ant-input css-dev-only-do-not-override-txh9fw"
+                              class="ant-input"
                               id="appSecret"
                               placeholder="请输入AppSecret"
                               type="password"
@@ -1868,13 +1868,13 @@ exports[`base/System/ProcessConnection render snap 2`] = `
                   </div>
                 </div>
                 <div
-                  class="ant-form-item css-15d6abf css-dev-only-do-not-override-txh9fw"
+                  class="ant-form-item css-15d6abf"
                 >
                   <div
-                    class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                    class="ant-row ant-form-item-row"
                   >
                     <div
-                      class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left css-dev-only-do-not-override-txh9fw"
+                      class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left"
                     >
                       <label
                         class="ant-form-item-no-colon"
@@ -1884,7 +1884,7 @@ exports[`base/System/ProcessConnection render snap 2`] = `
                       </label>
                     </div>
                     <div
-                      class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                      class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control"
                     >
                       <div
                         class="ant-form-item-control-input"
@@ -1893,14 +1893,14 @@ exports[`base/System/ProcessConnection render snap 2`] = `
                           class="ant-form-item-control-input-content"
                         >
                           <div
-                            class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+                            class="ant-space ant-space-horizontal ant-space-align-center"
                           >
                             <div
                               class="ant-space-item"
                               style="margin-right: 12px;"
                             >
                               <button
-                                class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default basic-button-wrapper css-geipcv"
+                                class="ant-btn ant-btn-default basic-button-wrapper css-geipcv"
                                 type="button"
                               >
                                 <span>
@@ -1912,7 +1912,7 @@ exports[`base/System/ProcessConnection render snap 2`] = `
                               class="ant-space-item"
                             >
                               <button
-                                class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary basic-button-wrapper css-geipcv"
+                                class="ant-btn ant-btn-primary basic-button-wrapper css-geipcv"
                                 type="submit"
                               >
                                 <span>
@@ -1936,25 +1936,25 @@ exports[`base/System/ProcessConnection render snap 2`] = `
         class="config-form-wrapper"
       >
         <div
-          class="ant-spin-nested-loading css-dev-only-do-not-override-txh9fw"
+          class="ant-spin-nested-loading"
         >
           <div
             class="ant-spin-container"
           >
             <form
-              class="ant-form ant-form-horizontal css-dev-only-do-not-override-txh9fw"
+              class="ant-form ant-form-horizontal"
             >
               <div
                 class="switch-field-wrapper"
               >
                 <div
-                  class="ant-form-item has-label-tip css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+                  class="ant-form-item has-label-tip css-1jlm9cy"
                 >
                   <div
-                    class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                    class="ant-row ant-form-item-row"
                   >
                     <div
-                      class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left css-dev-only-do-not-override-txh9fw"
+                      class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left"
                     >
                       <label
                         class="ant-form-item-no-colon"
@@ -1975,7 +1975,7 @@ exports[`base/System/ProcessConnection render snap 2`] = `
                       </label>
                     </div>
                     <div
-                      class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                      class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control"
                     >
                       <div
                         class="ant-form-item-control-input"
@@ -1984,14 +1984,14 @@ exports[`base/System/ProcessConnection render snap 2`] = `
                           class="ant-form-item-control-input-content"
                         >
                           <div
-                            class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+                            class="ant-space ant-space-horizontal ant-space-align-center"
                           >
                             <div
                               class="ant-space-item"
                               style="margin-right: 12px;"
                             >
                               <div
-                                class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+                                class="ant-space ant-space-horizontal ant-space-align-center"
                                 hidden=""
                               >
                                 <div
@@ -1999,13 +1999,13 @@ exports[`base/System/ProcessConnection render snap 2`] = `
                                   style="margin-right: 12px;"
                                 >
                                   <div
-                                    class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
+                                    class="ant-space ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
                                   >
                                     <div
                                       class="ant-space-item"
                                     >
                                       <button
-                                        class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-text ant-btn-icon-only system-config-button basic-button-wrapper css-geipcv"
+                                        class="ant-btn ant-btn-text ant-btn-icon-only system-config-button basic-button-wrapper css-geipcv"
                                         type="button"
                                       >
                                         <span
@@ -2030,13 +2030,13 @@ exports[`base/System/ProcessConnection render snap 2`] = `
                                   class="ant-space-item"
                                 >
                                   <div
-                                    class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
+                                    class="ant-space ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
                                   >
                                     <div
                                       class="ant-space-item"
                                     >
                                       <button
-                                        class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-text ant-btn-icon-only system-config-button basic-button-wrapper css-geipcv"
+                                        class="ant-btn ant-btn-text ant-btn-icon-only system-config-button basic-button-wrapper css-geipcv"
                                         type="button"
                                       >
                                         <span
@@ -2065,13 +2065,13 @@ exports[`base/System/ProcessConnection render snap 2`] = `
                               class="ant-space-item"
                             >
                               <div
-                                class="ant-form-item css-1jlm9cy css-dev-only-do-not-override-txh9fw ant-form-item-has-success"
+                                class="ant-form-item css-1jlm9cy ant-form-item-has-success"
                               >
                                 <div
-                                  class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                                  class="ant-row ant-form-item-row"
                                 >
                                   <div
-                                    class="ant-col ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                                    class="ant-col ant-form-item-control"
                                   >
                                     <div
                                       class="ant-form-item-control-input"
@@ -2081,7 +2081,7 @@ exports[`base/System/ProcessConnection render snap 2`] = `
                                       >
                                         <button
                                           aria-checked="false"
-                                          class="ant-switch basic-switch-wrapper system-config-switch css-g6dhbn css-dev-only-do-not-override-txh9fw"
+                                          class="ant-switch basic-switch-wrapper system-config-switch css-g6dhbn"
                                           id="enabled"
                                           role="switch"
                                           type="button"
@@ -2118,13 +2118,13 @@ exports[`base/System/ProcessConnection render snap 2`] = `
                 hidden=""
               >
                 <div
-                  class="ant-form-item has-required-style css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+                  class="ant-form-item has-required-style css-1jlm9cy"
                 >
                   <div
-                    class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                    class="ant-row ant-form-item-row"
                   >
                     <div
-                      class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left css-dev-only-do-not-override-txh9fw"
+                      class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left"
                     >
                       <label
                         class="ant-form-item-required ant-form-item-no-colon"
@@ -2135,7 +2135,7 @@ exports[`base/System/ProcessConnection render snap 2`] = `
                       </label>
                     </div>
                     <div
-                      class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                      class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control"
                     >
                       <div
                         class="ant-form-item-control-input"
@@ -2145,7 +2145,7 @@ exports[`base/System/ProcessConnection render snap 2`] = `
                         >
                           <input
                             aria-required="true"
-                            class="ant-input css-dev-only-do-not-override-ywkr0o basic-input-wrapper css-1pd1cd5"
+                            class="ant-input basic-input-wrapper css-1pd1cd5"
                             id="appKey"
                             placeholder="请输入App Key"
                             type="text"
@@ -2157,13 +2157,13 @@ exports[`base/System/ProcessConnection render snap 2`] = `
                   </div>
                 </div>
                 <div
-                  class="ant-form-item has-required-style css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+                  class="ant-form-item has-required-style css-1jlm9cy"
                 >
                   <div
-                    class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                    class="ant-row ant-form-item-row"
                   >
                     <div
-                      class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left css-dev-only-do-not-override-txh9fw"
+                      class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left"
                     >
                       <label
                         class="ant-form-item-required ant-form-item-no-colon"
@@ -2174,7 +2174,7 @@ exports[`base/System/ProcessConnection render snap 2`] = `
                       </label>
                     </div>
                     <div
-                      class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                      class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control"
                     >
                       <div
                         class="ant-form-item-control-input"
@@ -2183,11 +2183,11 @@ exports[`base/System/ProcessConnection render snap 2`] = `
                           class="ant-form-item-control-input-content"
                         >
                           <span
-                            class="ant-input-affix-wrapper ant-input-password basic-input-wrapper css-1pd1cd5 css-dev-only-do-not-override-txh9fw"
+                            class="ant-input-affix-wrapper ant-input-password basic-input-wrapper css-1pd1cd5"
                           >
                             <input
                               aria-required="true"
-                              class="ant-input css-dev-only-do-not-override-txh9fw"
+                              class="ant-input"
                               id="appSecret"
                               placeholder="请输入App Secret"
                               type="password"
@@ -2226,13 +2226,13 @@ exports[`base/System/ProcessConnection render snap 2`] = `
                   </div>
                 </div>
                 <div
-                  class="ant-form-item css-15d6abf css-dev-only-do-not-override-txh9fw"
+                  class="ant-form-item css-15d6abf"
                 >
                   <div
-                    class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                    class="ant-row ant-form-item-row"
                   >
                     <div
-                      class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left css-dev-only-do-not-override-txh9fw"
+                      class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left"
                     >
                       <label
                         class="ant-form-item-no-colon"
@@ -2242,7 +2242,7 @@ exports[`base/System/ProcessConnection render snap 2`] = `
                       </label>
                     </div>
                     <div
-                      class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                      class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control"
                     >
                       <div
                         class="ant-form-item-control-input"
@@ -2251,14 +2251,14 @@ exports[`base/System/ProcessConnection render snap 2`] = `
                           class="ant-form-item-control-input-content"
                         >
                           <div
-                            class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+                            class="ant-space ant-space-horizontal ant-space-align-center"
                           >
                             <div
                               class="ant-space-item"
                               style="margin-right: 12px;"
                             >
                               <button
-                                class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default basic-button-wrapper css-geipcv"
+                                class="ant-btn ant-btn-default basic-button-wrapper css-geipcv"
                                 type="button"
                               >
                                 <span>
@@ -2270,7 +2270,7 @@ exports[`base/System/ProcessConnection render snap 2`] = `
                               class="ant-space-item"
                             >
                               <button
-                                class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary basic-button-wrapper css-geipcv"
+                                class="ant-btn ant-btn-primary basic-button-wrapper css-geipcv"
                                 type="submit"
                               >
                                 <span>
@@ -2294,25 +2294,25 @@ exports[`base/System/ProcessConnection render snap 2`] = `
         class="config-form-wrapper"
       >
         <div
-          class="ant-spin-nested-loading css-dev-only-do-not-override-txh9fw"
+          class="ant-spin-nested-loading"
         >
           <div
             class="ant-spin-container"
           >
             <form
-              class="ant-form ant-form-horizontal css-dev-only-do-not-override-txh9fw"
+              class="ant-form ant-form-horizontal"
             >
               <div
                 class="switch-field-wrapper"
               >
                 <div
-                  class="ant-form-item has-label-tip css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+                  class="ant-form-item has-label-tip css-1jlm9cy"
                 >
                   <div
-                    class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                    class="ant-row ant-form-item-row"
                   >
                     <div
-                      class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left css-dev-only-do-not-override-txh9fw"
+                      class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left"
                     >
                       <label
                         class="ant-form-item-no-colon"
@@ -2333,7 +2333,7 @@ exports[`base/System/ProcessConnection render snap 2`] = `
                       </label>
                     </div>
                     <div
-                      class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                      class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control"
                     >
                       <div
                         class="ant-form-item-control-input"
@@ -2342,14 +2342,14 @@ exports[`base/System/ProcessConnection render snap 2`] = `
                           class="ant-form-item-control-input-content"
                         >
                           <div
-                            class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+                            class="ant-space ant-space-horizontal ant-space-align-center"
                           >
                             <div
                               class="ant-space-item"
                               style="margin-right: 12px;"
                             >
                               <div
-                                class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+                                class="ant-space ant-space-horizontal ant-space-align-center"
                                 hidden=""
                               >
                                 <div
@@ -2357,13 +2357,13 @@ exports[`base/System/ProcessConnection render snap 2`] = `
                                   style="margin-right: 12px;"
                                 >
                                   <div
-                                    class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
+                                    class="ant-space ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
                                   >
                                     <div
                                       class="ant-space-item"
                                     >
                                       <button
-                                        class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-text ant-btn-icon-only system-config-button basic-button-wrapper css-geipcv"
+                                        class="ant-btn ant-btn-text ant-btn-icon-only system-config-button basic-button-wrapper css-geipcv"
                                         type="button"
                                       >
                                         <span
@@ -2388,13 +2388,13 @@ exports[`base/System/ProcessConnection render snap 2`] = `
                                   class="ant-space-item"
                                 >
                                   <div
-                                    class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
+                                    class="ant-space ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
                                   >
                                     <div
                                       class="ant-space-item"
                                     >
                                       <button
-                                        class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-text ant-btn-icon-only system-config-button basic-button-wrapper css-geipcv"
+                                        class="ant-btn ant-btn-text ant-btn-icon-only system-config-button basic-button-wrapper css-geipcv"
                                         type="button"
                                       >
                                         <span
@@ -2423,13 +2423,13 @@ exports[`base/System/ProcessConnection render snap 2`] = `
                               class="ant-space-item"
                             >
                               <div
-                                class="ant-form-item css-1jlm9cy css-dev-only-do-not-override-txh9fw ant-form-item-has-success"
+                                class="ant-form-item css-1jlm9cy ant-form-item-has-success"
                               >
                                 <div
-                                  class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                                  class="ant-row ant-form-item-row"
                                 >
                                   <div
-                                    class="ant-col ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                                    class="ant-col ant-form-item-control"
                                   >
                                     <div
                                       class="ant-form-item-control-input"
@@ -2439,7 +2439,7 @@ exports[`base/System/ProcessConnection render snap 2`] = `
                                       >
                                         <button
                                           aria-checked="false"
-                                          class="ant-switch basic-switch-wrapper system-config-switch css-g6dhbn css-dev-only-do-not-override-txh9fw"
+                                          class="ant-switch basic-switch-wrapper system-config-switch css-g6dhbn"
                                           id="enabled"
                                           role="switch"
                                           type="button"
@@ -2476,13 +2476,13 @@ exports[`base/System/ProcessConnection render snap 2`] = `
                 hidden=""
               >
                 <div
-                  class="ant-form-item has-required-style css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+                  class="ant-form-item has-required-style css-1jlm9cy"
                 >
                   <div
-                    class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                    class="ant-row ant-form-item-row"
                   >
                     <div
-                      class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left css-dev-only-do-not-override-txh9fw"
+                      class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left"
                     >
                       <label
                         class="ant-form-item-required ant-form-item-no-colon"
@@ -2493,7 +2493,7 @@ exports[`base/System/ProcessConnection render snap 2`] = `
                       </label>
                     </div>
                     <div
-                      class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                      class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control"
                     >
                       <div
                         class="ant-form-item-control-input"
@@ -2503,7 +2503,7 @@ exports[`base/System/ProcessConnection render snap 2`] = `
                         >
                           <input
                             aria-required="true"
-                            class="ant-input css-dev-only-do-not-override-ywkr0o basic-input-wrapper css-1pd1cd5"
+                            class="ant-input basic-input-wrapper css-1pd1cd5"
                             id="corpID"
                             placeholder="请输入CorpID(微信企业号ID)"
                             type="text"
@@ -2515,13 +2515,13 @@ exports[`base/System/ProcessConnection render snap 2`] = `
                   </div>
                 </div>
                 <div
-                  class="ant-form-item has-required-style css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+                  class="ant-form-item has-required-style css-1jlm9cy"
                 >
                   <div
-                    class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                    class="ant-row ant-form-item-row"
                   >
                     <div
-                      class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left css-dev-only-do-not-override-txh9fw"
+                      class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left"
                     >
                       <label
                         class="ant-form-item-required ant-form-item-no-colon"
@@ -2532,7 +2532,7 @@ exports[`base/System/ProcessConnection render snap 2`] = `
                       </label>
                     </div>
                     <div
-                      class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                      class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control"
                     >
                       <div
                         class="ant-form-item-control-input"
@@ -2541,11 +2541,11 @@ exports[`base/System/ProcessConnection render snap 2`] = `
                           class="ant-form-item-control-input-content"
                         >
                           <span
-                            class="ant-input-affix-wrapper ant-input-password basic-input-wrapper css-1pd1cd5 css-dev-only-do-not-override-txh9fw"
+                            class="ant-input-affix-wrapper ant-input-password basic-input-wrapper css-1pd1cd5"
                           >
                             <input
                               aria-required="true"
-                              class="ant-input css-dev-only-do-not-override-txh9fw"
+                              class="ant-input"
                               id="corpSecret"
                               placeholder="请输入企业微信应用Secret"
                               type="password"
@@ -2584,13 +2584,13 @@ exports[`base/System/ProcessConnection render snap 2`] = `
                   </div>
                 </div>
                 <div
-                  class="ant-form-item css-15d6abf css-dev-only-do-not-override-txh9fw"
+                  class="ant-form-item css-15d6abf"
                 >
                   <div
-                    class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                    class="ant-row ant-form-item-row"
                   >
                     <div
-                      class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left css-dev-only-do-not-override-txh9fw"
+                      class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left"
                     >
                       <label
                         class="ant-form-item-no-colon"
@@ -2600,7 +2600,7 @@ exports[`base/System/ProcessConnection render snap 2`] = `
                       </label>
                     </div>
                     <div
-                      class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                      class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control"
                     >
                       <div
                         class="ant-form-item-control-input"
@@ -2609,14 +2609,14 @@ exports[`base/System/ProcessConnection render snap 2`] = `
                           class="ant-form-item-control-input-content"
                         >
                           <div
-                            class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+                            class="ant-space ant-space-horizontal ant-space-align-center"
                           >
                             <div
                               class="ant-space-item"
                               style="margin-right: 12px;"
                             >
                               <button
-                                class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default basic-button-wrapper css-geipcv"
+                                class="ant-btn ant-btn-default basic-button-wrapper css-geipcv"
                                 type="button"
                               >
                                 <span>
@@ -2628,7 +2628,7 @@ exports[`base/System/ProcessConnection render snap 2`] = `
                               class="ant-space-item"
                             >
                               <button
-                                class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary basic-button-wrapper css-geipcv"
+                                class="ant-btn ant-btn-primary basic-button-wrapper css-geipcv"
                                 type="submit"
                               >
                                 <span>
@@ -2652,7 +2652,7 @@ exports[`base/System/ProcessConnection render snap 2`] = `
         class="config-form-wrapper"
       >
         <div
-          class="ant-spin-nested-loading css-dev-only-do-not-override-txh9fw"
+          class="ant-spin-nested-loading"
         >
           <div
             class="ant-spin-container"
@@ -2661,19 +2661,19 @@ exports[`base/System/ProcessConnection render snap 2`] = `
               class="css-zupqof"
             >
               <form
-                class="ant-form ant-form-horizontal css-dev-only-do-not-override-txh9fw"
+                class="ant-form ant-form-horizontal"
               >
                 <div
                   class="switch-field-wrapper"
                 >
                   <div
-                    class="ant-form-item has-label-tip css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+                    class="ant-form-item has-label-tip css-1jlm9cy"
                   >
                     <div
-                      class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                      class="ant-row ant-form-item-row"
                     >
                       <div
-                        class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left css-dev-only-do-not-override-txh9fw"
+                        class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left"
                       >
                         <label
                           class="ant-form-item-no-colon"
@@ -2694,7 +2694,7 @@ exports[`base/System/ProcessConnection render snap 2`] = `
                         </label>
                       </div>
                       <div
-                        class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                        class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control"
                       >
                         <div
                           class="ant-form-item-control-input"
@@ -2703,14 +2703,14 @@ exports[`base/System/ProcessConnection render snap 2`] = `
                             class="ant-form-item-control-input-content"
                           >
                             <div
-                              class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+                              class="ant-space ant-space-horizontal ant-space-align-center"
                             >
                               <div
                                 class="ant-space-item"
                                 style="margin-right: 12px;"
                               >
                                 <div
-                                  class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+                                  class="ant-space ant-space-horizontal ant-space-align-center"
                                   hidden=""
                                 >
                                   <div
@@ -2718,13 +2718,13 @@ exports[`base/System/ProcessConnection render snap 2`] = `
                                     style="margin-right: 12px;"
                                   >
                                     <div
-                                      class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
+                                      class="ant-space ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
                                     >
                                       <div
                                         class="ant-space-item"
                                       >
                                         <button
-                                          class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-text ant-btn-icon-only system-config-button basic-button-wrapper css-geipcv"
+                                          class="ant-btn ant-btn-text ant-btn-icon-only system-config-button basic-button-wrapper css-geipcv"
                                           type="button"
                                         >
                                           <span
@@ -2749,13 +2749,13 @@ exports[`base/System/ProcessConnection render snap 2`] = `
                                     class="ant-space-item"
                                   >
                                     <div
-                                      class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
+                                      class="ant-space ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
                                     >
                                       <div
                                         class="ant-space-item"
                                       >
                                         <button
-                                          class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-text ant-btn-icon-only modify-coding-configuration basic-button-wrapper css-11ugcfo"
+                                          class="ant-btn ant-btn-text ant-btn-icon-only modify-coding-configuration basic-button-wrapper css-11ugcfo"
                                           type="button"
                                         >
                                           <span
@@ -2784,13 +2784,13 @@ exports[`base/System/ProcessConnection render snap 2`] = `
                                 class="ant-space-item"
                               >
                                 <div
-                                  class="ant-form-item css-1jlm9cy css-dev-only-do-not-override-txh9fw ant-form-item-has-success"
+                                  class="ant-form-item css-1jlm9cy ant-form-item-has-success"
                                 >
                                   <div
-                                    class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                                    class="ant-row ant-form-item-row"
                                   >
                                     <div
-                                      class="ant-col ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                                      class="ant-col ant-form-item-control"
                                     >
                                       <div
                                         class="ant-form-item-control-input"
@@ -2800,7 +2800,7 @@ exports[`base/System/ProcessConnection render snap 2`] = `
                                         >
                                           <button
                                             aria-checked="true"
-                                            class="ant-switch basic-switch-wrapper system-config-switch css-g6dhbn css-dev-only-do-not-override-txh9fw ant-switch-checked"
+                                            class="ant-switch basic-switch-wrapper system-config-switch css-g6dhbn ant-switch-checked"
                                             id="enabled"
                                             role="switch"
                                             type="button"
@@ -2837,13 +2837,13 @@ exports[`base/System/ProcessConnection render snap 2`] = `
                   hidden=""
                 >
                   <div
-                    class="ant-form-item has-required-style css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+                    class="ant-form-item has-required-style css-1jlm9cy"
                   >
                     <div
-                      class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                      class="ant-row ant-form-item-row"
                     >
                       <div
-                        class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left css-dev-only-do-not-override-txh9fw"
+                        class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left"
                       >
                         <label
                           class="ant-form-item-required ant-form-item-no-colon"
@@ -2854,7 +2854,7 @@ exports[`base/System/ProcessConnection render snap 2`] = `
                         </label>
                       </div>
                       <div
-                        class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                        class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control"
                       >
                         <div
                           class="ant-form-item-control-input"
@@ -2864,7 +2864,7 @@ exports[`base/System/ProcessConnection render snap 2`] = `
                           >
                             <input
                               aria-required="true"
-                              class="ant-input css-dev-only-do-not-override-ywkr0o basic-input-wrapper css-1pd1cd5"
+                              class="ant-input basic-input-wrapper css-1pd1cd5"
                               id="codingUrl"
                               placeholder="请输入服务地址"
                               type="text"
@@ -2876,13 +2876,13 @@ exports[`base/System/ProcessConnection render snap 2`] = `
                     </div>
                   </div>
                   <div
-                    class="ant-form-item has-required-style css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+                    class="ant-form-item has-required-style css-1jlm9cy"
                   >
                     <div
-                      class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                      class="ant-row ant-form-item-row"
                     >
                       <div
-                        class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left css-dev-only-do-not-override-txh9fw"
+                        class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left"
                       >
                         <label
                           class="ant-form-item-required ant-form-item-no-colon"
@@ -2893,7 +2893,7 @@ exports[`base/System/ProcessConnection render snap 2`] = `
                         </label>
                       </div>
                       <div
-                        class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                        class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control"
                       >
                         <div
                           class="ant-form-item-control-input"
@@ -2902,11 +2902,11 @@ exports[`base/System/ProcessConnection render snap 2`] = `
                             class="ant-form-item-control-input-content"
                           >
                             <span
-                              class="ant-input-affix-wrapper ant-input-password basic-input-wrapper css-1pd1cd5 css-dev-only-do-not-override-txh9fw"
+                              class="ant-input-affix-wrapper ant-input-password basic-input-wrapper css-1pd1cd5"
                             >
                               <input
                                 aria-required="true"
-                                class="ant-input css-dev-only-do-not-override-txh9fw"
+                                class="ant-input"
                                 id="token"
                                 placeholder="请输入访问令牌"
                                 type="password"
@@ -2945,13 +2945,13 @@ exports[`base/System/ProcessConnection render snap 2`] = `
                     </div>
                   </div>
                   <div
-                    class="ant-form-item css-15d6abf css-dev-only-do-not-override-txh9fw"
+                    class="ant-form-item css-15d6abf"
                   >
                     <div
-                      class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                      class="ant-row ant-form-item-row"
                     >
                       <div
-                        class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left css-dev-only-do-not-override-txh9fw"
+                        class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left"
                       >
                         <label
                           class="ant-form-item-no-colon"
@@ -2961,7 +2961,7 @@ exports[`base/System/ProcessConnection render snap 2`] = `
                         </label>
                       </div>
                       <div
-                        class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                        class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control"
                       >
                         <div
                           class="ant-form-item-control-input"
@@ -2970,14 +2970,14 @@ exports[`base/System/ProcessConnection render snap 2`] = `
                             class="ant-form-item-control-input-content"
                           >
                             <div
-                              class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+                              class="ant-space ant-space-horizontal ant-space-align-center"
                             >
                               <div
                                 class="ant-space-item"
                                 style="margin-right: 12px;"
                               >
                                 <button
-                                  class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default basic-button-wrapper css-geipcv"
+                                  class="ant-btn ant-btn-default basic-button-wrapper css-geipcv"
                                   type="button"
                                 >
                                   <span>
@@ -2989,7 +2989,7 @@ exports[`base/System/ProcessConnection render snap 2`] = `
                                 class="ant-space-item"
                               >
                                 <button
-                                  class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary basic-button-wrapper css-geipcv"
+                                  class="ant-btn ant-btn-primary basic-button-wrapper css-geipcv"
                                   type="submit"
                                 >
                                   <span>
@@ -3006,7 +3006,7 @@ exports[`base/System/ProcessConnection render snap 2`] = `
                 </div>
               </form>
               <div
-                class="ant-descriptions system-config-view-wrapper css-cs8tvb css-dev-only-do-not-override-txh9fw"
+                class="ant-descriptions system-config-view-wrapper css-cs8tvb"
               >
                 <div
                   class="ant-descriptions-view"
@@ -3032,7 +3032,7 @@ exports[`base/System/ProcessConnection render snap 2`] = `
                               class="ant-descriptions-item-content"
                             >
                               <div
-                                class="ant-typography css-dev-only-do-not-override-txh9fw"
+                                class="ant-typography"
                               >
                                 https://g-izbz2140.coding.net/
                               </div>

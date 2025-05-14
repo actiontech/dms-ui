@@ -6,13 +6,13 @@ exports[`page/SyncDataSource/SyncTaskForm render for loading form 1`] = `
   <div />
   <div>
     <div
-      class="ant-spin-nested-loading css-dev-only-do-not-override-txh9fw"
+      class="ant-spin-nested-loading"
     >
       <div>
         <div
           aria-busy="true"
           aria-live="polite"
-          class="ant-spin ant-spin-spinning css-dev-only-do-not-override-txh9fw"
+          class="ant-spin ant-spin-spinning"
         >
           <span
             class="ant-spin-dot ant-spin-dot-spin"
@@ -36,7 +36,7 @@ exports[`page/SyncDataSource/SyncTaskForm render for loading form 1`] = `
         class="ant-spin-container ant-spin-blur"
       >
         <form
-          class="ant-form ant-form-horizontal css-dev-only-do-not-override-txh9fw hasTopHeader css-19jfn7e"
+          class="ant-form ant-form-horizontal hasTopHeader css-19jfn7e"
         >
           <section
             class="has-border css-1114g56"
@@ -45,18 +45,18 @@ exports[`page/SyncDataSource/SyncTaskForm render for loading form 1`] = `
               class="css-bspaai"
             >
               <h3
-                class="ant-typography css-p50odb css-dev-only-do-not-override-txh9fw"
+                class="ant-typography css-p50odb"
               >
                 这里是标题
               </h3>
               <div
-                class="ant-form-item css-15d6abf css-dev-only-do-not-override-txh9fw"
+                class="ant-form-item css-15d6abf"
               >
                 <div
-                  class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                  class="ant-row ant-form-item-row"
                 >
                   <div
-                    class="ant-col ant-col-0 ant-form-item-label ant-form-item-label-left css-dev-only-do-not-override-txh9fw"
+                    class="ant-col ant-col-0 ant-form-item-label ant-form-item-label-left"
                   >
                     <label
                       class="ant-form-item-required ant-form-item-no-colon"
@@ -65,7 +65,7 @@ exports[`page/SyncDataSource/SyncTaskForm render for loading form 1`] = `
                     />
                   </div>
                   <div
-                    class="ant-col ant-col-24 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                    class="ant-col ant-col-24 ant-form-item-control"
                   >
                     <div
                       class="ant-form-item-control-input"
@@ -75,7 +75,7 @@ exports[`page/SyncDataSource/SyncTaskForm render for loading form 1`] = `
                       >
                         <input
                           aria-required="true"
-                          class="ant-input css-dev-only-do-not-override-ywkr0o basic-input-wrapper css-opeiev"
+                          class="ant-input basic-input-wrapper css-opeiev"
                           id="name"
                           placeholder="请输入同步任务名称"
                           type="text"
@@ -87,18 +87,18 @@ exports[`page/SyncDataSource/SyncTaskForm render for loading form 1`] = `
                 </div>
               </div>
               <h1
-                class="ant-typography css-1eepp70 css-dev-only-do-not-override-txh9fw"
+                class="ant-typography css-1eepp70"
               >
                 基础配置
               </h1>
               <div
-                class="ant-form-item has-required-style has-label-tip css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+                class="ant-form-item has-required-style has-label-tip css-1jlm9cy"
               >
                 <div
-                  class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                  class="ant-row ant-form-item-row"
                 >
                   <div
-                    class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left css-dev-only-do-not-override-txh9fw"
+                    class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left"
                   >
                     <label
                       class="ant-form-item-required ant-form-item-no-colon"
@@ -109,7 +109,7 @@ exports[`page/SyncDataSource/SyncTaskForm render for loading form 1`] = `
                     </label>
                   </div>
                   <div
-                    class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                    class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control"
                   >
                     <div
                       class="ant-form-item-control-input"
@@ -119,7 +119,7 @@ exports[`page/SyncDataSource/SyncTaskForm render for loading form 1`] = `
                       >
                         <div
                           aria-required="true"
-                          class="ant-select ant-select-in-form-item basic-select-wrapper css-iy4o4x css-dev-only-do-not-override-v9sov3 ant-select-single ant-select-allow-clear ant-select-show-arrow"
+                          class="ant-select ant-select-in-form-item basic-select-wrapper css-iy4o4x ant-select-single ant-select-allow-clear ant-select-show-arrow"
                         >
                           <div
                             class="ant-select-selector"
@@ -185,13 +185,13 @@ exports[`page/SyncDataSource/SyncTaskForm render for loading form 1`] = `
                 </div>
               </div>
               <div
-                class="ant-form-item has-required-style has-label-tip css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+                class="ant-form-item has-required-style has-label-tip css-1jlm9cy"
               >
                 <div
-                  class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                  class="ant-row ant-form-item-row"
                 >
                   <div
-                    class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left css-dev-only-do-not-override-txh9fw"
+                    class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left"
                   >
                     <label
                       class="ant-form-item-required ant-form-item-no-colon"
@@ -213,7 +213,7 @@ exports[`page/SyncDataSource/SyncTaskForm render for loading form 1`] = `
                     </label>
                   </div>
                   <div
-                    class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                    class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control"
                   >
                     <div
                       class="ant-form-item-control-input"
@@ -223,7 +223,7 @@ exports[`page/SyncDataSource/SyncTaskForm render for loading form 1`] = `
                       >
                         <input
                           aria-required="true"
-                          class="ant-input css-dev-only-do-not-override-ywkr0o basic-input-wrapper css-1pd1cd5"
+                          class="ant-input basic-input-wrapper css-1pd1cd5"
                           id="url"
                           placeholder="请输入地址"
                           type="text"
@@ -235,13 +235,13 @@ exports[`page/SyncDataSource/SyncTaskForm render for loading form 1`] = `
                 </div>
               </div>
               <div
-                class="ant-form-item has-required-style css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+                class="ant-form-item has-required-style css-1jlm9cy"
               >
                 <div
-                  class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                  class="ant-row ant-form-item-row"
                 >
                   <div
-                    class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left css-dev-only-do-not-override-txh9fw"
+                    class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left"
                   >
                     <label
                       class="ant-form-item-required ant-form-item-no-colon"
@@ -252,7 +252,7 @@ exports[`page/SyncDataSource/SyncTaskForm render for loading form 1`] = `
                     </label>
                   </div>
                   <div
-                    class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                    class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control"
                   >
                     <div
                       class="ant-form-item-control-input"
@@ -262,7 +262,7 @@ exports[`page/SyncDataSource/SyncTaskForm render for loading form 1`] = `
                       >
                         <div
                           aria-required="true"
-                          class="ant-select ant-select-in-form-item basic-select-wrapper css-iy4o4x css-dev-only-do-not-override-v9sov3 ant-select-single ant-select-allow-clear ant-select-show-arrow"
+                          class="ant-select ant-select-in-form-item basic-select-wrapper css-iy4o4x ant-select-single ant-select-allow-clear ant-select-show-arrow"
                         >
                           <div
                             class="ant-select-selector"
@@ -328,7 +328,7 @@ exports[`page/SyncDataSource/SyncTaskForm render for loading form 1`] = `
                 </div>
               </div>
               <div
-                class="ant-alert ant-alert-info ant-alert-no-icon css-dev-only-do-not-override-txh9fw"
+                class="ant-alert ant-alert-info ant-alert-no-icon"
                 data-show="true"
                 role="alert"
               >
@@ -362,18 +362,18 @@ exports[`page/SyncDataSource/SyncTaskForm render for loading form 1`] = `
               class="css-bspaai"
             >
               <h1
-                class="ant-typography css-1eepp70 css-dev-only-do-not-override-txh9fw"
+                class="ant-typography css-1eepp70"
               >
                 SQL审核配置
               </h1>
               <div
-                class="ant-form-item css-1jlm9cy css-dev-only-do-not-override-txh9fw ant-form-item-has-success"
+                class="ant-form-item css-1jlm9cy ant-form-item-has-success"
               >
                 <div
-                  class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                  class="ant-row ant-form-item-row"
                 >
                   <div
-                    class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left css-dev-only-do-not-override-txh9fw"
+                    class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left"
                   >
                     <label
                       class="ant-form-item-no-colon"
@@ -384,7 +384,7 @@ exports[`page/SyncDataSource/SyncTaskForm render for loading form 1`] = `
                     </label>
                   </div>
                   <div
-                    class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                    class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control"
                   >
                     <div
                       class="ant-form-item-control-input"
@@ -394,7 +394,7 @@ exports[`page/SyncDataSource/SyncTaskForm render for loading form 1`] = `
                       >
                         <button
                           aria-checked="true"
-                          class="ant-switch basic-switch-wrapper css-g6dhbn css-dev-only-do-not-override-txh9fw ant-switch-checked"
+                          class="ant-switch basic-switch-wrapper css-g6dhbn ant-switch-checked"
                           role="switch"
                           type="button"
                         >
@@ -418,13 +418,13 @@ exports[`page/SyncDataSource/SyncTaskForm render for loading form 1`] = `
                 </div>
               </div>
               <div
-                class="ant-form-item css-1jlm9cy css-dev-only-do-not-override-txh9fw ant-form-item-hidden"
+                class="ant-form-item css-1jlm9cy ant-form-item-hidden"
               >
                 <div
-                  class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                  class="ant-row ant-form-item-row"
                 >
                   <div
-                    class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                    class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control"
                   >
                     <div
                       class="ant-form-item-control-input"
@@ -433,7 +433,7 @@ exports[`page/SyncDataSource/SyncTaskForm render for loading form 1`] = `
                         class="ant-form-item-control-input-content"
                       >
                         <input
-                          class="ant-input css-dev-only-do-not-override-ywkr0o basic-input-wrapper css-1pd1cd5"
+                          class="ant-input basic-input-wrapper css-1pd1cd5"
                           id="ruleTemplateId"
                           placeholder="请输入{{name}}"
                           type="text"
@@ -445,13 +445,13 @@ exports[`page/SyncDataSource/SyncTaskForm render for loading form 1`] = `
                 </div>
               </div>
               <div
-                class="ant-form-item has-required-style css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+                class="ant-form-item has-required-style css-1jlm9cy"
               >
                 <div
-                  class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                  class="ant-row ant-form-item-row"
                 >
                   <div
-                    class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left css-dev-only-do-not-override-txh9fw"
+                    class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left"
                   >
                     <label
                       class="ant-form-item-required ant-form-item-no-colon"
@@ -462,7 +462,7 @@ exports[`page/SyncDataSource/SyncTaskForm render for loading form 1`] = `
                     </label>
                   </div>
                   <div
-                    class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                    class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control"
                   >
                     <div
                       class="ant-form-item-control-input"
@@ -472,7 +472,7 @@ exports[`page/SyncDataSource/SyncTaskForm render for loading form 1`] = `
                       >
                         <div
                           aria-required="true"
-                          class="ant-select ant-select-in-form-item basic-select-wrapper css-iy4o4x css-dev-only-do-not-override-v9sov3 ant-select-single ant-select-allow-clear ant-select-show-arrow"
+                          class="ant-select ant-select-in-form-item basic-select-wrapper css-iy4o4x ant-select-single ant-select-allow-clear ant-select-show-arrow"
                         >
                           <div
                             class="ant-select-selector"
@@ -538,13 +538,13 @@ exports[`page/SyncDataSource/SyncTaskForm render for loading form 1`] = `
                 </div>
               </div>
               <div
-                class="ant-form-item css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+                class="ant-form-item css-1jlm9cy"
               >
                 <div
-                  class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                  class="ant-row ant-form-item-row"
                 >
                   <div
-                    class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left css-dev-only-do-not-override-txh9fw"
+                    class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left"
                   >
                     <label
                       class="ant-form-item-no-colon"
@@ -555,7 +555,7 @@ exports[`page/SyncDataSource/SyncTaskForm render for loading form 1`] = `
                     </label>
                   </div>
                   <div
-                    class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                    class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control"
                   >
                     <div
                       class="ant-form-item-control-input"
@@ -565,7 +565,7 @@ exports[`page/SyncDataSource/SyncTaskForm render for loading form 1`] = `
                       >
                         <button
                           aria-checked="false"
-                          class="ant-switch basic-switch-wrapper css-g6dhbn css-dev-only-do-not-override-txh9fw"
+                          class="ant-switch basic-switch-wrapper css-g6dhbn"
                           id="needAuditForSqlQuery"
                           role="switch"
                           type="button"
@@ -590,13 +590,13 @@ exports[`page/SyncDataSource/SyncTaskForm render for loading form 1`] = `
                 </div>
               </div>
               <div
-                class="ant-form-item css-1jlm9cy css-dev-only-do-not-override-txh9fw ant-form-item-hidden"
+                class="ant-form-item css-1jlm9cy ant-form-item-hidden"
               >
                 <div
-                  class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                  class="ant-row ant-form-item-row"
                 >
                   <div
-                    class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left css-dev-only-do-not-override-txh9fw"
+                    class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left"
                   >
                     <label
                       class="ant-form-item-no-colon"
@@ -607,7 +607,7 @@ exports[`page/SyncDataSource/SyncTaskForm render for loading form 1`] = `
                     </label>
                   </div>
                   <div
-                    class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                    class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control"
                   >
                     <div
                       class="ant-form-item-control-input"
@@ -616,7 +616,7 @@ exports[`page/SyncDataSource/SyncTaskForm render for loading form 1`] = `
                         class="ant-form-item-control-input-content"
                       >
                         <div
-                          class="ant-select ant-select-in-form-item basic-select-wrapper css-iy4o4x css-dev-only-do-not-override-v9sov3 ant-select-single ant-select-show-arrow"
+                          class="ant-select ant-select-in-form-item basic-select-wrapper css-iy4o4x ant-select-single ant-select-show-arrow"
                         >
                           <div
                             class="ant-select-selector"
@@ -689,18 +689,18 @@ exports[`page/SyncDataSource/SyncTaskForm render for loading form 1`] = `
               class="css-bspaai"
             >
               <h1
-                class="ant-typography css-1eepp70 css-dev-only-do-not-override-txh9fw"
+                class="ant-typography css-1eepp70"
               >
                 自定义任务同步周期
               </h1>
               <div
-                class="ant-form-item has-required-style has-label-tip css-1jlm9cy css-dev-only-do-not-override-txh9fw ant-form-item-has-success"
+                class="ant-form-item has-required-style has-label-tip css-1jlm9cy ant-form-item-has-success"
               >
                 <div
-                  class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                  class="ant-row ant-form-item-row"
                 >
                   <div
-                    class="ant-col ant-col-24 ant-form-item-label ant-form-item-label-left css-dev-only-do-not-override-txh9fw"
+                    class="ant-col ant-col-24 ant-form-item-label ant-form-item-label-left"
                   >
                     <label
                       class="ant-form-item-required ant-form-item-no-colon"
@@ -722,7 +722,7 @@ exports[`page/SyncDataSource/SyncTaskForm render for loading form 1`] = `
                     </label>
                   </div>
                   <div
-                    class="ant-col ant-col-24 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                    class="ant-col ant-col-24 ant-form-item-control"
                   >
                     <div
                       class="ant-form-item-control-input"
@@ -734,13 +734,13 @@ exports[`page/SyncDataSource/SyncTaskForm render for loading form 1`] = `
                           class="css-1q8fejj"
                         >
                           <input
-                            class="ant-input ant-input-status-success css-dev-only-do-not-override-ywkr0o basic-input-wrapper input-element css-1pd1cd5"
+                            class="ant-input ant-input-status-success basic-input-wrapper input-element css-1pd1cd5"
                             placeholder="请输入时间"
                             type="text"
                             value="0 0 * * *"
                           />
                           <button
-                            class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default ant-btn-lg ant-btn-icon-only button-element basic-button-wrapper css-geipcv"
+                            class="ant-btn ant-btn-default ant-btn-lg ant-btn-icon-only button-element basic-button-wrapper css-geipcv"
                             type="button"
                           >
                             <span
@@ -780,13 +780,13 @@ exports[`page/SyncDataSource/SyncTaskForm render name rule 1`] = `
   <div />
   <div>
     <div
-      class="ant-spin-nested-loading css-dev-only-do-not-override-txh9fw"
+      class="ant-spin-nested-loading"
     >
       <div
         class="ant-spin-container"
       >
         <form
-          class="ant-form ant-form-horizontal css-dev-only-do-not-override-txh9fw hasTopHeader css-19jfn7e"
+          class="ant-form ant-form-horizontal hasTopHeader css-19jfn7e"
         >
           <section
             class="has-border css-1114g56"
@@ -795,18 +795,18 @@ exports[`page/SyncDataSource/SyncTaskForm render name rule 1`] = `
               class="css-bspaai"
             >
               <h3
-                class="ant-typography css-p50odb css-dev-only-do-not-override-txh9fw"
+                class="ant-typography css-p50odb"
               >
                 这里是标题
               </h3>
               <div
-                class="ant-form-item css-15d6abf css-dev-only-do-not-override-txh9fw ant-form-item-has-error"
+                class="ant-form-item css-15d6abf ant-form-item-has-error"
               >
                 <div
-                  class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                  class="ant-row ant-form-item-row"
                 >
                   <div
-                    class="ant-col ant-col-0 ant-form-item-label ant-form-item-label-left css-dev-only-do-not-override-txh9fw"
+                    class="ant-col ant-col-0 ant-form-item-label ant-form-item-label-left"
                   >
                     <label
                       class="ant-form-item-required ant-form-item-no-colon"
@@ -815,7 +815,7 @@ exports[`page/SyncDataSource/SyncTaskForm render name rule 1`] = `
                     />
                   </div>
                   <div
-                    class="ant-col ant-col-24 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                    class="ant-col ant-col-24 ant-form-item-control"
                   >
                     <div
                       class="ant-form-item-control-input"
@@ -827,7 +827,7 @@ exports[`page/SyncDataSource/SyncTaskForm render name rule 1`] = `
                           aria-describedby="name_help"
                           aria-invalid="true"
                           aria-required="true"
-                          class="ant-input ant-input-status-error css-dev-only-do-not-override-ywkr0o basic-input-wrapper css-opeiev"
+                          class="ant-input ant-input-status-error basic-input-wrapper css-opeiev"
                           id="name"
                           placeholder="请输入同步任务名称"
                           type="text"
@@ -850,18 +850,18 @@ exports[`page/SyncDataSource/SyncTaskForm render name rule 1`] = `
                 />
               </div>
               <h1
-                class="ant-typography css-1eepp70 css-dev-only-do-not-override-txh9fw"
+                class="ant-typography css-1eepp70"
               >
                 基础配置
               </h1>
               <div
-                class="ant-form-item has-required-style has-label-tip css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+                class="ant-form-item has-required-style has-label-tip css-1jlm9cy"
               >
                 <div
-                  class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                  class="ant-row ant-form-item-row"
                 >
                   <div
-                    class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left css-dev-only-do-not-override-txh9fw"
+                    class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left"
                   >
                     <label
                       class="ant-form-item-required ant-form-item-no-colon"
@@ -872,7 +872,7 @@ exports[`page/SyncDataSource/SyncTaskForm render name rule 1`] = `
                     </label>
                   </div>
                   <div
-                    class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                    class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control"
                   >
                     <div
                       class="ant-form-item-control-input"
@@ -882,7 +882,7 @@ exports[`page/SyncDataSource/SyncTaskForm render name rule 1`] = `
                       >
                         <div
                           aria-required="true"
-                          class="ant-select ant-select-in-form-item basic-select-wrapper css-iy4o4x css-dev-only-do-not-override-v9sov3 ant-select-single ant-select-allow-clear ant-select-show-arrow"
+                          class="ant-select ant-select-in-form-item basic-select-wrapper css-iy4o4x ant-select-single ant-select-allow-clear ant-select-show-arrow"
                         >
                           <div
                             class="ant-select-selector"
@@ -948,13 +948,13 @@ exports[`page/SyncDataSource/SyncTaskForm render name rule 1`] = `
                 </div>
               </div>
               <div
-                class="ant-form-item has-required-style has-label-tip css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+                class="ant-form-item has-required-style has-label-tip css-1jlm9cy"
               >
                 <div
-                  class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                  class="ant-row ant-form-item-row"
                 >
                   <div
-                    class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left css-dev-only-do-not-override-txh9fw"
+                    class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left"
                   >
                     <label
                       class="ant-form-item-required ant-form-item-no-colon"
@@ -976,7 +976,7 @@ exports[`page/SyncDataSource/SyncTaskForm render name rule 1`] = `
                     </label>
                   </div>
                   <div
-                    class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                    class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control"
                   >
                     <div
                       class="ant-form-item-control-input"
@@ -986,7 +986,7 @@ exports[`page/SyncDataSource/SyncTaskForm render name rule 1`] = `
                       >
                         <input
                           aria-required="true"
-                          class="ant-input css-dev-only-do-not-override-ywkr0o basic-input-wrapper css-1pd1cd5"
+                          class="ant-input basic-input-wrapper css-1pd1cd5"
                           id="url"
                           placeholder="请输入地址"
                           type="text"
@@ -998,13 +998,13 @@ exports[`page/SyncDataSource/SyncTaskForm render name rule 1`] = `
                 </div>
               </div>
               <div
-                class="ant-form-item has-required-style css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+                class="ant-form-item has-required-style css-1jlm9cy"
               >
                 <div
-                  class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                  class="ant-row ant-form-item-row"
                 >
                   <div
-                    class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left css-dev-only-do-not-override-txh9fw"
+                    class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left"
                   >
                     <label
                       class="ant-form-item-required ant-form-item-no-colon"
@@ -1015,7 +1015,7 @@ exports[`page/SyncDataSource/SyncTaskForm render name rule 1`] = `
                     </label>
                   </div>
                   <div
-                    class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                    class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control"
                   >
                     <div
                       class="ant-form-item-control-input"
@@ -1025,7 +1025,7 @@ exports[`page/SyncDataSource/SyncTaskForm render name rule 1`] = `
                       >
                         <div
                           aria-required="true"
-                          class="ant-select ant-select-in-form-item basic-select-wrapper css-iy4o4x css-dev-only-do-not-override-v9sov3 ant-select-single ant-select-allow-clear ant-select-show-arrow"
+                          class="ant-select ant-select-in-form-item basic-select-wrapper css-iy4o4x ant-select-single ant-select-allow-clear ant-select-show-arrow"
                         >
                           <div
                             class="ant-select-selector"
@@ -1091,7 +1091,7 @@ exports[`page/SyncDataSource/SyncTaskForm render name rule 1`] = `
                 </div>
               </div>
               <div
-                class="ant-alert ant-alert-info ant-alert-no-icon css-dev-only-do-not-override-txh9fw"
+                class="ant-alert ant-alert-info ant-alert-no-icon"
                 data-show="true"
                 role="alert"
               >
@@ -1125,18 +1125,18 @@ exports[`page/SyncDataSource/SyncTaskForm render name rule 1`] = `
               class="css-bspaai"
             >
               <h1
-                class="ant-typography css-1eepp70 css-dev-only-do-not-override-txh9fw"
+                class="ant-typography css-1eepp70"
               >
                 SQL审核配置
               </h1>
               <div
-                class="ant-form-item css-1jlm9cy css-dev-only-do-not-override-txh9fw ant-form-item-has-success"
+                class="ant-form-item css-1jlm9cy ant-form-item-has-success"
               >
                 <div
-                  class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                  class="ant-row ant-form-item-row"
                 >
                   <div
-                    class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left css-dev-only-do-not-override-txh9fw"
+                    class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left"
                   >
                     <label
                       class="ant-form-item-no-colon"
@@ -1147,7 +1147,7 @@ exports[`page/SyncDataSource/SyncTaskForm render name rule 1`] = `
                     </label>
                   </div>
                   <div
-                    class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                    class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control"
                   >
                     <div
                       class="ant-form-item-control-input"
@@ -1157,7 +1157,7 @@ exports[`page/SyncDataSource/SyncTaskForm render name rule 1`] = `
                       >
                         <button
                           aria-checked="true"
-                          class="ant-switch basic-switch-wrapper css-g6dhbn css-dev-only-do-not-override-txh9fw ant-switch-checked"
+                          class="ant-switch basic-switch-wrapper css-g6dhbn ant-switch-checked"
                           role="switch"
                           type="button"
                         >
@@ -1181,13 +1181,13 @@ exports[`page/SyncDataSource/SyncTaskForm render name rule 1`] = `
                 </div>
               </div>
               <div
-                class="ant-form-item css-1jlm9cy css-dev-only-do-not-override-txh9fw ant-form-item-hidden"
+                class="ant-form-item css-1jlm9cy ant-form-item-hidden"
               >
                 <div
-                  class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                  class="ant-row ant-form-item-row"
                 >
                   <div
-                    class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                    class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control"
                   >
                     <div
                       class="ant-form-item-control-input"
@@ -1196,7 +1196,7 @@ exports[`page/SyncDataSource/SyncTaskForm render name rule 1`] = `
                         class="ant-form-item-control-input-content"
                       >
                         <input
-                          class="ant-input css-dev-only-do-not-override-ywkr0o basic-input-wrapper css-1pd1cd5"
+                          class="ant-input basic-input-wrapper css-1pd1cd5"
                           id="ruleTemplateId"
                           placeholder="请输入{{name}}"
                           type="text"
@@ -1208,13 +1208,13 @@ exports[`page/SyncDataSource/SyncTaskForm render name rule 1`] = `
                 </div>
               </div>
               <div
-                class="ant-form-item has-required-style css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+                class="ant-form-item has-required-style css-1jlm9cy"
               >
                 <div
-                  class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                  class="ant-row ant-form-item-row"
                 >
                   <div
-                    class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left css-dev-only-do-not-override-txh9fw"
+                    class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left"
                   >
                     <label
                       class="ant-form-item-required ant-form-item-no-colon"
@@ -1225,7 +1225,7 @@ exports[`page/SyncDataSource/SyncTaskForm render name rule 1`] = `
                     </label>
                   </div>
                   <div
-                    class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                    class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control"
                   >
                     <div
                       class="ant-form-item-control-input"
@@ -1235,7 +1235,7 @@ exports[`page/SyncDataSource/SyncTaskForm render name rule 1`] = `
                       >
                         <div
                           aria-required="true"
-                          class="ant-select ant-select-in-form-item basic-select-wrapper css-iy4o4x css-dev-only-do-not-override-v9sov3 ant-select-single ant-select-allow-clear ant-select-show-arrow"
+                          class="ant-select ant-select-in-form-item basic-select-wrapper css-iy4o4x ant-select-single ant-select-allow-clear ant-select-show-arrow"
                         >
                           <div
                             class="ant-select-selector"
@@ -1301,13 +1301,13 @@ exports[`page/SyncDataSource/SyncTaskForm render name rule 1`] = `
                 </div>
               </div>
               <div
-                class="ant-form-item css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+                class="ant-form-item css-1jlm9cy"
               >
                 <div
-                  class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                  class="ant-row ant-form-item-row"
                 >
                   <div
-                    class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left css-dev-only-do-not-override-txh9fw"
+                    class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left"
                   >
                     <label
                       class="ant-form-item-no-colon"
@@ -1318,7 +1318,7 @@ exports[`page/SyncDataSource/SyncTaskForm render name rule 1`] = `
                     </label>
                   </div>
                   <div
-                    class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                    class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control"
                   >
                     <div
                       class="ant-form-item-control-input"
@@ -1328,7 +1328,7 @@ exports[`page/SyncDataSource/SyncTaskForm render name rule 1`] = `
                       >
                         <button
                           aria-checked="false"
-                          class="ant-switch basic-switch-wrapper css-g6dhbn css-dev-only-do-not-override-txh9fw"
+                          class="ant-switch basic-switch-wrapper css-g6dhbn"
                           id="needAuditForSqlQuery"
                           role="switch"
                           type="button"
@@ -1353,13 +1353,13 @@ exports[`page/SyncDataSource/SyncTaskForm render name rule 1`] = `
                 </div>
               </div>
               <div
-                class="ant-form-item css-1jlm9cy css-dev-only-do-not-override-txh9fw ant-form-item-hidden"
+                class="ant-form-item css-1jlm9cy ant-form-item-hidden"
               >
                 <div
-                  class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                  class="ant-row ant-form-item-row"
                 >
                   <div
-                    class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left css-dev-only-do-not-override-txh9fw"
+                    class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left"
                   >
                     <label
                       class="ant-form-item-no-colon"
@@ -1370,7 +1370,7 @@ exports[`page/SyncDataSource/SyncTaskForm render name rule 1`] = `
                     </label>
                   </div>
                   <div
-                    class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                    class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control"
                   >
                     <div
                       class="ant-form-item-control-input"
@@ -1379,7 +1379,7 @@ exports[`page/SyncDataSource/SyncTaskForm render name rule 1`] = `
                         class="ant-form-item-control-input-content"
                       >
                         <div
-                          class="ant-select ant-select-in-form-item basic-select-wrapper css-iy4o4x css-dev-only-do-not-override-v9sov3 ant-select-single ant-select-show-arrow"
+                          class="ant-select ant-select-in-form-item basic-select-wrapper css-iy4o4x ant-select-single ant-select-show-arrow"
                         >
                           <div
                             class="ant-select-selector"
@@ -1452,18 +1452,18 @@ exports[`page/SyncDataSource/SyncTaskForm render name rule 1`] = `
               class="css-bspaai"
             >
               <h1
-                class="ant-typography css-1eepp70 css-dev-only-do-not-override-txh9fw"
+                class="ant-typography css-1eepp70"
               >
                 自定义任务同步周期
               </h1>
               <div
-                class="ant-form-item has-required-style has-label-tip css-1jlm9cy css-dev-only-do-not-override-txh9fw ant-form-item-has-success"
+                class="ant-form-item has-required-style has-label-tip css-1jlm9cy ant-form-item-has-success"
               >
                 <div
-                  class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                  class="ant-row ant-form-item-row"
                 >
                   <div
-                    class="ant-col ant-col-24 ant-form-item-label ant-form-item-label-left css-dev-only-do-not-override-txh9fw"
+                    class="ant-col ant-col-24 ant-form-item-label ant-form-item-label-left"
                   >
                     <label
                       class="ant-form-item-required ant-form-item-no-colon"
@@ -1485,7 +1485,7 @@ exports[`page/SyncDataSource/SyncTaskForm render name rule 1`] = `
                     </label>
                   </div>
                   <div
-                    class="ant-col ant-col-24 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                    class="ant-col ant-col-24 ant-form-item-control"
                   >
                     <div
                       class="ant-form-item-control-input"
@@ -1497,13 +1497,13 @@ exports[`page/SyncDataSource/SyncTaskForm render name rule 1`] = `
                           class="css-1q8fejj"
                         >
                           <input
-                            class="ant-input ant-input-status-success css-dev-only-do-not-override-ywkr0o basic-input-wrapper input-element css-1pd1cd5"
+                            class="ant-input ant-input-status-success basic-input-wrapper input-element css-1pd1cd5"
                             placeholder="请输入时间"
                             type="text"
                             value="0 0 * * *"
                           />
                           <button
-                            class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default ant-btn-lg ant-btn-icon-only button-element basic-button-wrapper css-geipcv"
+                            class="ant-btn ant-btn-default ant-btn-lg ant-btn-icon-only button-element basic-button-wrapper css-geipcv"
                             type="button"
                           >
                             <span
@@ -1543,13 +1543,13 @@ exports[`page/SyncDataSource/SyncTaskForm render name rule 2`] = `
   <div />
   <div>
     <div
-      class="ant-spin-nested-loading css-dev-only-do-not-override-txh9fw"
+      class="ant-spin-nested-loading"
     >
       <div
         class="ant-spin-container"
       >
         <form
-          class="ant-form ant-form-horizontal css-dev-only-do-not-override-txh9fw hasTopHeader css-19jfn7e"
+          class="ant-form ant-form-horizontal hasTopHeader css-19jfn7e"
         >
           <section
             class="has-border css-1114g56"
@@ -1558,18 +1558,18 @@ exports[`page/SyncDataSource/SyncTaskForm render name rule 2`] = `
               class="css-bspaai"
             >
               <h3
-                class="ant-typography css-p50odb css-dev-only-do-not-override-txh9fw"
+                class="ant-typography css-p50odb"
               >
                 这里是标题
               </h3>
               <div
-                class="ant-form-item css-15d6abf css-dev-only-do-not-override-txh9fw ant-form-item-has-error"
+                class="ant-form-item css-15d6abf ant-form-item-has-error"
               >
                 <div
-                  class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                  class="ant-row ant-form-item-row"
                 >
                   <div
-                    class="ant-col ant-col-0 ant-form-item-label ant-form-item-label-left css-dev-only-do-not-override-txh9fw"
+                    class="ant-col ant-col-0 ant-form-item-label ant-form-item-label-left"
                   >
                     <label
                       class="ant-form-item-required ant-form-item-no-colon"
@@ -1578,7 +1578,7 @@ exports[`page/SyncDataSource/SyncTaskForm render name rule 2`] = `
                     />
                   </div>
                   <div
-                    class="ant-col ant-col-24 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                    class="ant-col ant-col-24 ant-form-item-control"
                   >
                     <div
                       class="ant-form-item-control-input"
@@ -1590,7 +1590,7 @@ exports[`page/SyncDataSource/SyncTaskForm render name rule 2`] = `
                           aria-describedby="name_help"
                           aria-invalid="true"
                           aria-required="true"
-                          class="ant-input ant-input-status-error css-dev-only-do-not-override-ywkr0o basic-input-wrapper css-opeiev"
+                          class="ant-input ant-input-status-error basic-input-wrapper css-opeiev"
                           id="name"
                           placeholder="请输入同步任务名称"
                           type="text"
@@ -1613,18 +1613,18 @@ exports[`page/SyncDataSource/SyncTaskForm render name rule 2`] = `
                 />
               </div>
               <h1
-                class="ant-typography css-1eepp70 css-dev-only-do-not-override-txh9fw"
+                class="ant-typography css-1eepp70"
               >
                 基础配置
               </h1>
               <div
-                class="ant-form-item has-required-style has-label-tip css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+                class="ant-form-item has-required-style has-label-tip css-1jlm9cy"
               >
                 <div
-                  class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                  class="ant-row ant-form-item-row"
                 >
                   <div
-                    class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left css-dev-only-do-not-override-txh9fw"
+                    class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left"
                   >
                     <label
                       class="ant-form-item-required ant-form-item-no-colon"
@@ -1635,7 +1635,7 @@ exports[`page/SyncDataSource/SyncTaskForm render name rule 2`] = `
                     </label>
                   </div>
                   <div
-                    class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                    class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control"
                   >
                     <div
                       class="ant-form-item-control-input"
@@ -1645,7 +1645,7 @@ exports[`page/SyncDataSource/SyncTaskForm render name rule 2`] = `
                       >
                         <div
                           aria-required="true"
-                          class="ant-select ant-select-in-form-item basic-select-wrapper css-iy4o4x css-dev-only-do-not-override-v9sov3 ant-select-single ant-select-allow-clear ant-select-show-arrow"
+                          class="ant-select ant-select-in-form-item basic-select-wrapper css-iy4o4x ant-select-single ant-select-allow-clear ant-select-show-arrow"
                         >
                           <div
                             class="ant-select-selector"
@@ -1711,13 +1711,13 @@ exports[`page/SyncDataSource/SyncTaskForm render name rule 2`] = `
                 </div>
               </div>
               <div
-                class="ant-form-item has-required-style has-label-tip css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+                class="ant-form-item has-required-style has-label-tip css-1jlm9cy"
               >
                 <div
-                  class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                  class="ant-row ant-form-item-row"
                 >
                   <div
-                    class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left css-dev-only-do-not-override-txh9fw"
+                    class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left"
                   >
                     <label
                       class="ant-form-item-required ant-form-item-no-colon"
@@ -1739,7 +1739,7 @@ exports[`page/SyncDataSource/SyncTaskForm render name rule 2`] = `
                     </label>
                   </div>
                   <div
-                    class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                    class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control"
                   >
                     <div
                       class="ant-form-item-control-input"
@@ -1749,7 +1749,7 @@ exports[`page/SyncDataSource/SyncTaskForm render name rule 2`] = `
                       >
                         <input
                           aria-required="true"
-                          class="ant-input css-dev-only-do-not-override-ywkr0o basic-input-wrapper css-1pd1cd5"
+                          class="ant-input basic-input-wrapper css-1pd1cd5"
                           id="url"
                           placeholder="请输入地址"
                           type="text"
@@ -1761,13 +1761,13 @@ exports[`page/SyncDataSource/SyncTaskForm render name rule 2`] = `
                 </div>
               </div>
               <div
-                class="ant-form-item has-required-style css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+                class="ant-form-item has-required-style css-1jlm9cy"
               >
                 <div
-                  class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                  class="ant-row ant-form-item-row"
                 >
                   <div
-                    class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left css-dev-only-do-not-override-txh9fw"
+                    class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left"
                   >
                     <label
                       class="ant-form-item-required ant-form-item-no-colon"
@@ -1778,7 +1778,7 @@ exports[`page/SyncDataSource/SyncTaskForm render name rule 2`] = `
                     </label>
                   </div>
                   <div
-                    class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                    class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control"
                   >
                     <div
                       class="ant-form-item-control-input"
@@ -1788,7 +1788,7 @@ exports[`page/SyncDataSource/SyncTaskForm render name rule 2`] = `
                       >
                         <div
                           aria-required="true"
-                          class="ant-select ant-select-in-form-item basic-select-wrapper css-iy4o4x css-dev-only-do-not-override-v9sov3 ant-select-single ant-select-allow-clear ant-select-show-arrow"
+                          class="ant-select ant-select-in-form-item basic-select-wrapper css-iy4o4x ant-select-single ant-select-allow-clear ant-select-show-arrow"
                         >
                           <div
                             class="ant-select-selector"
@@ -1854,7 +1854,7 @@ exports[`page/SyncDataSource/SyncTaskForm render name rule 2`] = `
                 </div>
               </div>
               <div
-                class="ant-alert ant-alert-info ant-alert-no-icon css-dev-only-do-not-override-txh9fw"
+                class="ant-alert ant-alert-info ant-alert-no-icon"
                 data-show="true"
                 role="alert"
               >
@@ -1888,18 +1888,18 @@ exports[`page/SyncDataSource/SyncTaskForm render name rule 2`] = `
               class="css-bspaai"
             >
               <h1
-                class="ant-typography css-1eepp70 css-dev-only-do-not-override-txh9fw"
+                class="ant-typography css-1eepp70"
               >
                 SQL审核配置
               </h1>
               <div
-                class="ant-form-item css-1jlm9cy css-dev-only-do-not-override-txh9fw ant-form-item-has-success"
+                class="ant-form-item css-1jlm9cy ant-form-item-has-success"
               >
                 <div
-                  class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                  class="ant-row ant-form-item-row"
                 >
                   <div
-                    class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left css-dev-only-do-not-override-txh9fw"
+                    class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left"
                   >
                     <label
                       class="ant-form-item-no-colon"
@@ -1910,7 +1910,7 @@ exports[`page/SyncDataSource/SyncTaskForm render name rule 2`] = `
                     </label>
                   </div>
                   <div
-                    class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                    class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control"
                   >
                     <div
                       class="ant-form-item-control-input"
@@ -1920,7 +1920,7 @@ exports[`page/SyncDataSource/SyncTaskForm render name rule 2`] = `
                       >
                         <button
                           aria-checked="true"
-                          class="ant-switch basic-switch-wrapper css-g6dhbn css-dev-only-do-not-override-txh9fw ant-switch-checked"
+                          class="ant-switch basic-switch-wrapper css-g6dhbn ant-switch-checked"
                           role="switch"
                           type="button"
                         >
@@ -1944,13 +1944,13 @@ exports[`page/SyncDataSource/SyncTaskForm render name rule 2`] = `
                 </div>
               </div>
               <div
-                class="ant-form-item css-1jlm9cy css-dev-only-do-not-override-txh9fw ant-form-item-hidden"
+                class="ant-form-item css-1jlm9cy ant-form-item-hidden"
               >
                 <div
-                  class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                  class="ant-row ant-form-item-row"
                 >
                   <div
-                    class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                    class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control"
                   >
                     <div
                       class="ant-form-item-control-input"
@@ -1959,7 +1959,7 @@ exports[`page/SyncDataSource/SyncTaskForm render name rule 2`] = `
                         class="ant-form-item-control-input-content"
                       >
                         <input
-                          class="ant-input css-dev-only-do-not-override-ywkr0o basic-input-wrapper css-1pd1cd5"
+                          class="ant-input basic-input-wrapper css-1pd1cd5"
                           id="ruleTemplateId"
                           placeholder="请输入{{name}}"
                           type="text"
@@ -1971,13 +1971,13 @@ exports[`page/SyncDataSource/SyncTaskForm render name rule 2`] = `
                 </div>
               </div>
               <div
-                class="ant-form-item has-required-style css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+                class="ant-form-item has-required-style css-1jlm9cy"
               >
                 <div
-                  class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                  class="ant-row ant-form-item-row"
                 >
                   <div
-                    class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left css-dev-only-do-not-override-txh9fw"
+                    class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left"
                   >
                     <label
                       class="ant-form-item-required ant-form-item-no-colon"
@@ -1988,7 +1988,7 @@ exports[`page/SyncDataSource/SyncTaskForm render name rule 2`] = `
                     </label>
                   </div>
                   <div
-                    class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                    class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control"
                   >
                     <div
                       class="ant-form-item-control-input"
@@ -1998,7 +1998,7 @@ exports[`page/SyncDataSource/SyncTaskForm render name rule 2`] = `
                       >
                         <div
                           aria-required="true"
-                          class="ant-select ant-select-in-form-item basic-select-wrapper css-iy4o4x css-dev-only-do-not-override-v9sov3 ant-select-single ant-select-allow-clear ant-select-show-arrow"
+                          class="ant-select ant-select-in-form-item basic-select-wrapper css-iy4o4x ant-select-single ant-select-allow-clear ant-select-show-arrow"
                         >
                           <div
                             class="ant-select-selector"
@@ -2064,13 +2064,13 @@ exports[`page/SyncDataSource/SyncTaskForm render name rule 2`] = `
                 </div>
               </div>
               <div
-                class="ant-form-item css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+                class="ant-form-item css-1jlm9cy"
               >
                 <div
-                  class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                  class="ant-row ant-form-item-row"
                 >
                   <div
-                    class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left css-dev-only-do-not-override-txh9fw"
+                    class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left"
                   >
                     <label
                       class="ant-form-item-no-colon"
@@ -2081,7 +2081,7 @@ exports[`page/SyncDataSource/SyncTaskForm render name rule 2`] = `
                     </label>
                   </div>
                   <div
-                    class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                    class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control"
                   >
                     <div
                       class="ant-form-item-control-input"
@@ -2091,7 +2091,7 @@ exports[`page/SyncDataSource/SyncTaskForm render name rule 2`] = `
                       >
                         <button
                           aria-checked="false"
-                          class="ant-switch basic-switch-wrapper css-g6dhbn css-dev-only-do-not-override-txh9fw"
+                          class="ant-switch basic-switch-wrapper css-g6dhbn"
                           id="needAuditForSqlQuery"
                           role="switch"
                           type="button"
@@ -2116,13 +2116,13 @@ exports[`page/SyncDataSource/SyncTaskForm render name rule 2`] = `
                 </div>
               </div>
               <div
-                class="ant-form-item css-1jlm9cy css-dev-only-do-not-override-txh9fw ant-form-item-hidden"
+                class="ant-form-item css-1jlm9cy ant-form-item-hidden"
               >
                 <div
-                  class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                  class="ant-row ant-form-item-row"
                 >
                   <div
-                    class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left css-dev-only-do-not-override-txh9fw"
+                    class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left"
                   >
                     <label
                       class="ant-form-item-no-colon"
@@ -2133,7 +2133,7 @@ exports[`page/SyncDataSource/SyncTaskForm render name rule 2`] = `
                     </label>
                   </div>
                   <div
-                    class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                    class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control"
                   >
                     <div
                       class="ant-form-item-control-input"
@@ -2142,7 +2142,7 @@ exports[`page/SyncDataSource/SyncTaskForm render name rule 2`] = `
                         class="ant-form-item-control-input-content"
                       >
                         <div
-                          class="ant-select ant-select-in-form-item basic-select-wrapper css-iy4o4x css-dev-only-do-not-override-v9sov3 ant-select-single ant-select-show-arrow"
+                          class="ant-select ant-select-in-form-item basic-select-wrapper css-iy4o4x ant-select-single ant-select-show-arrow"
                         >
                           <div
                             class="ant-select-selector"
@@ -2215,18 +2215,18 @@ exports[`page/SyncDataSource/SyncTaskForm render name rule 2`] = `
               class="css-bspaai"
             >
               <h1
-                class="ant-typography css-1eepp70 css-dev-only-do-not-override-txh9fw"
+                class="ant-typography css-1eepp70"
               >
                 自定义任务同步周期
               </h1>
               <div
-                class="ant-form-item has-required-style has-label-tip css-1jlm9cy css-dev-only-do-not-override-txh9fw ant-form-item-has-success"
+                class="ant-form-item has-required-style has-label-tip css-1jlm9cy ant-form-item-has-success"
               >
                 <div
-                  class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                  class="ant-row ant-form-item-row"
                 >
                   <div
-                    class="ant-col ant-col-24 ant-form-item-label ant-form-item-label-left css-dev-only-do-not-override-txh9fw"
+                    class="ant-col ant-col-24 ant-form-item-label ant-form-item-label-left"
                   >
                     <label
                       class="ant-form-item-required ant-form-item-no-colon"
@@ -2248,7 +2248,7 @@ exports[`page/SyncDataSource/SyncTaskForm render name rule 2`] = `
                     </label>
                   </div>
                   <div
-                    class="ant-col ant-col-24 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                    class="ant-col ant-col-24 ant-form-item-control"
                   >
                     <div
                       class="ant-form-item-control-input"
@@ -2260,13 +2260,13 @@ exports[`page/SyncDataSource/SyncTaskForm render name rule 2`] = `
                           class="css-1q8fejj"
                         >
                           <input
-                            class="ant-input ant-input-status-success css-dev-only-do-not-override-ywkr0o basic-input-wrapper input-element css-1pd1cd5"
+                            class="ant-input ant-input-status-success basic-input-wrapper input-element css-1pd1cd5"
                             placeholder="请输入时间"
                             type="text"
                             value="0 0 * * *"
                           />
                           <button
-                            class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default ant-btn-lg ant-btn-icon-only button-element basic-button-wrapper css-geipcv"
+                            class="ant-btn ant-btn-default ant-btn-lg ant-btn-icon-only button-element basic-button-wrapper css-geipcv"
                             type="button"
                           >
                             <span
@@ -2306,13 +2306,13 @@ exports[`page/SyncDataSource/SyncTaskForm render syncInterval for form item 1`] 
   <div />
   <div>
     <div
-      class="ant-spin-nested-loading css-dev-only-do-not-override-txh9fw"
+      class="ant-spin-nested-loading"
     >
       <div
         class="ant-spin-container"
       >
         <form
-          class="ant-form ant-form-horizontal css-dev-only-do-not-override-txh9fw hasTopHeader css-19jfn7e"
+          class="ant-form ant-form-horizontal hasTopHeader css-19jfn7e"
         >
           <section
             class="has-border css-1114g56"
@@ -2321,18 +2321,18 @@ exports[`page/SyncDataSource/SyncTaskForm render syncInterval for form item 1`] 
               class="css-bspaai"
             >
               <h3
-                class="ant-typography css-p50odb css-dev-only-do-not-override-txh9fw"
+                class="ant-typography css-p50odb"
               >
                 这里是标题
               </h3>
               <div
-                class="ant-form-item css-15d6abf css-dev-only-do-not-override-txh9fw"
+                class="ant-form-item css-15d6abf"
               >
                 <div
-                  class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                  class="ant-row ant-form-item-row"
                 >
                   <div
-                    class="ant-col ant-col-0 ant-form-item-label ant-form-item-label-left css-dev-only-do-not-override-txh9fw"
+                    class="ant-col ant-col-0 ant-form-item-label ant-form-item-label-left"
                   >
                     <label
                       class="ant-form-item-required ant-form-item-no-colon"
@@ -2341,7 +2341,7 @@ exports[`page/SyncDataSource/SyncTaskForm render syncInterval for form item 1`] 
                     />
                   </div>
                   <div
-                    class="ant-col ant-col-24 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                    class="ant-col ant-col-24 ant-form-item-control"
                   >
                     <div
                       class="ant-form-item-control-input"
@@ -2351,7 +2351,7 @@ exports[`page/SyncDataSource/SyncTaskForm render syncInterval for form item 1`] 
                       >
                         <input
                           aria-required="true"
-                          class="ant-input css-dev-only-do-not-override-ywkr0o basic-input-wrapper css-opeiev"
+                          class="ant-input basic-input-wrapper css-opeiev"
                           id="name"
                           placeholder="请输入同步任务名称"
                           type="text"
@@ -2363,18 +2363,18 @@ exports[`page/SyncDataSource/SyncTaskForm render syncInterval for form item 1`] 
                 </div>
               </div>
               <h1
-                class="ant-typography css-1eepp70 css-dev-only-do-not-override-txh9fw"
+                class="ant-typography css-1eepp70"
               >
                 基础配置
               </h1>
               <div
-                class="ant-form-item has-required-style has-label-tip css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+                class="ant-form-item has-required-style has-label-tip css-1jlm9cy"
               >
                 <div
-                  class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                  class="ant-row ant-form-item-row"
                 >
                   <div
-                    class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left css-dev-only-do-not-override-txh9fw"
+                    class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left"
                   >
                     <label
                       class="ant-form-item-required ant-form-item-no-colon"
@@ -2385,7 +2385,7 @@ exports[`page/SyncDataSource/SyncTaskForm render syncInterval for form item 1`] 
                     </label>
                   </div>
                   <div
-                    class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                    class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control"
                   >
                     <div
                       class="ant-form-item-control-input"
@@ -2395,7 +2395,7 @@ exports[`page/SyncDataSource/SyncTaskForm render syncInterval for form item 1`] 
                       >
                         <div
                           aria-required="true"
-                          class="ant-select ant-select-in-form-item basic-select-wrapper css-iy4o4x css-dev-only-do-not-override-v9sov3 ant-select-single ant-select-allow-clear ant-select-show-arrow"
+                          class="ant-select ant-select-in-form-item basic-select-wrapper css-iy4o4x ant-select-single ant-select-allow-clear ant-select-show-arrow"
                         >
                           <div
                             class="ant-select-selector"
@@ -2461,13 +2461,13 @@ exports[`page/SyncDataSource/SyncTaskForm render syncInterval for form item 1`] 
                 </div>
               </div>
               <div
-                class="ant-form-item has-required-style has-label-tip css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+                class="ant-form-item has-required-style has-label-tip css-1jlm9cy"
               >
                 <div
-                  class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                  class="ant-row ant-form-item-row"
                 >
                   <div
-                    class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left css-dev-only-do-not-override-txh9fw"
+                    class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left"
                   >
                     <label
                       class="ant-form-item-required ant-form-item-no-colon"
@@ -2489,7 +2489,7 @@ exports[`page/SyncDataSource/SyncTaskForm render syncInterval for form item 1`] 
                     </label>
                   </div>
                   <div
-                    class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                    class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control"
                   >
                     <div
                       class="ant-form-item-control-input"
@@ -2499,7 +2499,7 @@ exports[`page/SyncDataSource/SyncTaskForm render syncInterval for form item 1`] 
                       >
                         <input
                           aria-required="true"
-                          class="ant-input css-dev-only-do-not-override-ywkr0o basic-input-wrapper css-1pd1cd5"
+                          class="ant-input basic-input-wrapper css-1pd1cd5"
                           id="url"
                           placeholder="请输入地址"
                           type="text"
@@ -2511,13 +2511,13 @@ exports[`page/SyncDataSource/SyncTaskForm render syncInterval for form item 1`] 
                 </div>
               </div>
               <div
-                class="ant-form-item has-required-style css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+                class="ant-form-item has-required-style css-1jlm9cy"
               >
                 <div
-                  class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                  class="ant-row ant-form-item-row"
                 >
                   <div
-                    class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left css-dev-only-do-not-override-txh9fw"
+                    class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left"
                   >
                     <label
                       class="ant-form-item-required ant-form-item-no-colon"
@@ -2528,7 +2528,7 @@ exports[`page/SyncDataSource/SyncTaskForm render syncInterval for form item 1`] 
                     </label>
                   </div>
                   <div
-                    class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                    class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control"
                   >
                     <div
                       class="ant-form-item-control-input"
@@ -2538,7 +2538,7 @@ exports[`page/SyncDataSource/SyncTaskForm render syncInterval for form item 1`] 
                       >
                         <div
                           aria-required="true"
-                          class="ant-select ant-select-in-form-item basic-select-wrapper css-iy4o4x css-dev-only-do-not-override-v9sov3 ant-select-single ant-select-allow-clear ant-select-show-arrow"
+                          class="ant-select ant-select-in-form-item basic-select-wrapper css-iy4o4x ant-select-single ant-select-allow-clear ant-select-show-arrow"
                         >
                           <div
                             class="ant-select-selector"
@@ -2604,7 +2604,7 @@ exports[`page/SyncDataSource/SyncTaskForm render syncInterval for form item 1`] 
                 </div>
               </div>
               <div
-                class="ant-alert ant-alert-info ant-alert-no-icon css-dev-only-do-not-override-txh9fw"
+                class="ant-alert ant-alert-info ant-alert-no-icon"
                 data-show="true"
                 role="alert"
               >
@@ -2638,18 +2638,18 @@ exports[`page/SyncDataSource/SyncTaskForm render syncInterval for form item 1`] 
               class="css-bspaai"
             >
               <h1
-                class="ant-typography css-1eepp70 css-dev-only-do-not-override-txh9fw"
+                class="ant-typography css-1eepp70"
               >
                 SQL审核配置
               </h1>
               <div
-                class="ant-form-item css-1jlm9cy css-dev-only-do-not-override-txh9fw ant-form-item-has-success"
+                class="ant-form-item css-1jlm9cy ant-form-item-has-success"
               >
                 <div
-                  class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                  class="ant-row ant-form-item-row"
                 >
                   <div
-                    class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left css-dev-only-do-not-override-txh9fw"
+                    class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left"
                   >
                     <label
                       class="ant-form-item-no-colon"
@@ -2660,7 +2660,7 @@ exports[`page/SyncDataSource/SyncTaskForm render syncInterval for form item 1`] 
                     </label>
                   </div>
                   <div
-                    class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                    class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control"
                   >
                     <div
                       class="ant-form-item-control-input"
@@ -2670,7 +2670,7 @@ exports[`page/SyncDataSource/SyncTaskForm render syncInterval for form item 1`] 
                       >
                         <button
                           aria-checked="true"
-                          class="ant-switch basic-switch-wrapper css-g6dhbn css-dev-only-do-not-override-txh9fw ant-switch-checked"
+                          class="ant-switch basic-switch-wrapper css-g6dhbn ant-switch-checked"
                           role="switch"
                           type="button"
                         >
@@ -2694,13 +2694,13 @@ exports[`page/SyncDataSource/SyncTaskForm render syncInterval for form item 1`] 
                 </div>
               </div>
               <div
-                class="ant-form-item css-1jlm9cy css-dev-only-do-not-override-txh9fw ant-form-item-hidden"
+                class="ant-form-item css-1jlm9cy ant-form-item-hidden"
               >
                 <div
-                  class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                  class="ant-row ant-form-item-row"
                 >
                   <div
-                    class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                    class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control"
                   >
                     <div
                       class="ant-form-item-control-input"
@@ -2709,7 +2709,7 @@ exports[`page/SyncDataSource/SyncTaskForm render syncInterval for form item 1`] 
                         class="ant-form-item-control-input-content"
                       >
                         <input
-                          class="ant-input css-dev-only-do-not-override-ywkr0o basic-input-wrapper css-1pd1cd5"
+                          class="ant-input basic-input-wrapper css-1pd1cd5"
                           id="ruleTemplateId"
                           placeholder="请输入{{name}}"
                           type="text"
@@ -2721,13 +2721,13 @@ exports[`page/SyncDataSource/SyncTaskForm render syncInterval for form item 1`] 
                 </div>
               </div>
               <div
-                class="ant-form-item has-required-style css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+                class="ant-form-item has-required-style css-1jlm9cy"
               >
                 <div
-                  class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                  class="ant-row ant-form-item-row"
                 >
                   <div
-                    class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left css-dev-only-do-not-override-txh9fw"
+                    class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left"
                   >
                     <label
                       class="ant-form-item-required ant-form-item-no-colon"
@@ -2738,7 +2738,7 @@ exports[`page/SyncDataSource/SyncTaskForm render syncInterval for form item 1`] 
                     </label>
                   </div>
                   <div
-                    class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                    class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control"
                   >
                     <div
                       class="ant-form-item-control-input"
@@ -2748,7 +2748,7 @@ exports[`page/SyncDataSource/SyncTaskForm render syncInterval for form item 1`] 
                       >
                         <div
                           aria-required="true"
-                          class="ant-select ant-select-in-form-item basic-select-wrapper css-iy4o4x css-dev-only-do-not-override-v9sov3 ant-select-single ant-select-allow-clear ant-select-show-arrow ant-select-loading"
+                          class="ant-select ant-select-in-form-item basic-select-wrapper css-iy4o4x ant-select-single ant-select-allow-clear ant-select-show-arrow ant-select-loading"
                         >
                           <div
                             class="ant-select-selector"
@@ -2814,13 +2814,13 @@ exports[`page/SyncDataSource/SyncTaskForm render syncInterval for form item 1`] 
                 </div>
               </div>
               <div
-                class="ant-form-item css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+                class="ant-form-item css-1jlm9cy"
               >
                 <div
-                  class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                  class="ant-row ant-form-item-row"
                 >
                   <div
-                    class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left css-dev-only-do-not-override-txh9fw"
+                    class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left"
                   >
                     <label
                       class="ant-form-item-no-colon"
@@ -2831,7 +2831,7 @@ exports[`page/SyncDataSource/SyncTaskForm render syncInterval for form item 1`] 
                     </label>
                   </div>
                   <div
-                    class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                    class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control"
                   >
                     <div
                       class="ant-form-item-control-input"
@@ -2841,7 +2841,7 @@ exports[`page/SyncDataSource/SyncTaskForm render syncInterval for form item 1`] 
                       >
                         <button
                           aria-checked="false"
-                          class="ant-switch basic-switch-wrapper css-g6dhbn css-dev-only-do-not-override-txh9fw"
+                          class="ant-switch basic-switch-wrapper css-g6dhbn"
                           id="needAuditForSqlQuery"
                           role="switch"
                           type="button"
@@ -2866,13 +2866,13 @@ exports[`page/SyncDataSource/SyncTaskForm render syncInterval for form item 1`] 
                 </div>
               </div>
               <div
-                class="ant-form-item css-1jlm9cy css-dev-only-do-not-override-txh9fw ant-form-item-hidden"
+                class="ant-form-item css-1jlm9cy ant-form-item-hidden"
               >
                 <div
-                  class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                  class="ant-row ant-form-item-row"
                 >
                   <div
-                    class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left css-dev-only-do-not-override-txh9fw"
+                    class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left"
                   >
                     <label
                       class="ant-form-item-no-colon"
@@ -2883,7 +2883,7 @@ exports[`page/SyncDataSource/SyncTaskForm render syncInterval for form item 1`] 
                     </label>
                   </div>
                   <div
-                    class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                    class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control"
                   >
                     <div
                       class="ant-form-item-control-input"
@@ -2892,7 +2892,7 @@ exports[`page/SyncDataSource/SyncTaskForm render syncInterval for form item 1`] 
                         class="ant-form-item-control-input-content"
                       >
                         <div
-                          class="ant-select ant-select-in-form-item basic-select-wrapper css-iy4o4x css-dev-only-do-not-override-v9sov3 ant-select-single ant-select-show-arrow"
+                          class="ant-select ant-select-in-form-item basic-select-wrapper css-iy4o4x ant-select-single ant-select-show-arrow"
                         >
                           <div
                             class="ant-select-selector"
@@ -2965,18 +2965,18 @@ exports[`page/SyncDataSource/SyncTaskForm render syncInterval for form item 1`] 
               class="css-bspaai"
             >
               <h1
-                class="ant-typography css-1eepp70 css-dev-only-do-not-override-txh9fw"
+                class="ant-typography css-1eepp70"
               >
                 自定义任务同步周期
               </h1>
               <div
-                class="ant-form-item has-required-style has-label-tip css-1jlm9cy css-dev-only-do-not-override-txh9fw ant-form-item-has-error"
+                class="ant-form-item has-required-style has-label-tip css-1jlm9cy ant-form-item-has-error"
               >
                 <div
-                  class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                  class="ant-row ant-form-item-row"
                 >
                   <div
-                    class="ant-col ant-col-24 ant-form-item-label ant-form-item-label-left css-dev-only-do-not-override-txh9fw"
+                    class="ant-col ant-col-24 ant-form-item-label ant-form-item-label-left"
                   >
                     <label
                       class="ant-form-item-required ant-form-item-no-colon"
@@ -2998,7 +2998,7 @@ exports[`page/SyncDataSource/SyncTaskForm render syncInterval for form item 1`] 
                     </label>
                   </div>
                   <div
-                    class="ant-col ant-col-24 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                    class="ant-col ant-col-24 ant-form-item-control"
                   >
                     <div
                       class="ant-form-item-control-input"
@@ -3010,13 +3010,13 @@ exports[`page/SyncDataSource/SyncTaskForm render syncInterval for form item 1`] 
                           class="css-1q8fejj"
                         >
                           <input
-                            class="ant-input ant-input-status-error css-dev-only-do-not-override-ywkr0o basic-input-wrapper input-element css-1pd1cd5"
+                            class="ant-input ant-input-status-error basic-input-wrapper input-element css-1pd1cd5"
                             placeholder="请输入时间"
                             type="text"
                             value="0 0 * *"
                           />
                           <button
-                            class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default ant-btn-lg ant-btn-icon-only button-element basic-button-wrapper css-geipcv"
+                            class="ant-btn ant-btn-default ant-btn-lg ant-btn-icon-only button-element basic-button-wrapper css-geipcv"
                             type="button"
                           >
                             <span
@@ -3067,13 +3067,13 @@ exports[`page/SyncDataSource/SyncTaskForm render syncInterval for form item 2`] 
   <div />
   <div>
     <div
-      class="ant-spin-nested-loading css-dev-only-do-not-override-txh9fw"
+      class="ant-spin-nested-loading"
     >
       <div
         class="ant-spin-container"
       >
         <form
-          class="ant-form ant-form-horizontal css-dev-only-do-not-override-txh9fw hasTopHeader css-19jfn7e"
+          class="ant-form ant-form-horizontal hasTopHeader css-19jfn7e"
         >
           <section
             class="has-border css-1114g56"
@@ -3082,18 +3082,18 @@ exports[`page/SyncDataSource/SyncTaskForm render syncInterval for form item 2`] 
               class="css-bspaai"
             >
               <h3
-                class="ant-typography css-p50odb css-dev-only-do-not-override-txh9fw"
+                class="ant-typography css-p50odb"
               >
                 这里是标题
               </h3>
               <div
-                class="ant-form-item css-15d6abf css-dev-only-do-not-override-txh9fw"
+                class="ant-form-item css-15d6abf"
               >
                 <div
-                  class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                  class="ant-row ant-form-item-row"
                 >
                   <div
-                    class="ant-col ant-col-0 ant-form-item-label ant-form-item-label-left css-dev-only-do-not-override-txh9fw"
+                    class="ant-col ant-col-0 ant-form-item-label ant-form-item-label-left"
                   >
                     <label
                       class="ant-form-item-required ant-form-item-no-colon"
@@ -3102,7 +3102,7 @@ exports[`page/SyncDataSource/SyncTaskForm render syncInterval for form item 2`] 
                     />
                   </div>
                   <div
-                    class="ant-col ant-col-24 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                    class="ant-col ant-col-24 ant-form-item-control"
                   >
                     <div
                       class="ant-form-item-control-input"
@@ -3112,7 +3112,7 @@ exports[`page/SyncDataSource/SyncTaskForm render syncInterval for form item 2`] 
                       >
                         <input
                           aria-required="true"
-                          class="ant-input css-dev-only-do-not-override-ywkr0o basic-input-wrapper css-opeiev"
+                          class="ant-input basic-input-wrapper css-opeiev"
                           id="name"
                           placeholder="请输入同步任务名称"
                           type="text"
@@ -3124,18 +3124,18 @@ exports[`page/SyncDataSource/SyncTaskForm render syncInterval for form item 2`] 
                 </div>
               </div>
               <h1
-                class="ant-typography css-1eepp70 css-dev-only-do-not-override-txh9fw"
+                class="ant-typography css-1eepp70"
               >
                 基础配置
               </h1>
               <div
-                class="ant-form-item has-required-style has-label-tip css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+                class="ant-form-item has-required-style has-label-tip css-1jlm9cy"
               >
                 <div
-                  class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                  class="ant-row ant-form-item-row"
                 >
                   <div
-                    class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left css-dev-only-do-not-override-txh9fw"
+                    class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left"
                   >
                     <label
                       class="ant-form-item-required ant-form-item-no-colon"
@@ -3146,7 +3146,7 @@ exports[`page/SyncDataSource/SyncTaskForm render syncInterval for form item 2`] 
                     </label>
                   </div>
                   <div
-                    class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                    class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control"
                   >
                     <div
                       class="ant-form-item-control-input"
@@ -3156,7 +3156,7 @@ exports[`page/SyncDataSource/SyncTaskForm render syncInterval for form item 2`] 
                       >
                         <div
                           aria-required="true"
-                          class="ant-select ant-select-in-form-item basic-select-wrapper css-iy4o4x css-dev-only-do-not-override-v9sov3 ant-select-single ant-select-allow-clear ant-select-show-arrow"
+                          class="ant-select ant-select-in-form-item basic-select-wrapper css-iy4o4x ant-select-single ant-select-allow-clear ant-select-show-arrow"
                         >
                           <div
                             class="ant-select-selector"
@@ -3222,13 +3222,13 @@ exports[`page/SyncDataSource/SyncTaskForm render syncInterval for form item 2`] 
                 </div>
               </div>
               <div
-                class="ant-form-item has-required-style has-label-tip css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+                class="ant-form-item has-required-style has-label-tip css-1jlm9cy"
               >
                 <div
-                  class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                  class="ant-row ant-form-item-row"
                 >
                   <div
-                    class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left css-dev-only-do-not-override-txh9fw"
+                    class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left"
                   >
                     <label
                       class="ant-form-item-required ant-form-item-no-colon"
@@ -3250,7 +3250,7 @@ exports[`page/SyncDataSource/SyncTaskForm render syncInterval for form item 2`] 
                     </label>
                   </div>
                   <div
-                    class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                    class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control"
                   >
                     <div
                       class="ant-form-item-control-input"
@@ -3260,7 +3260,7 @@ exports[`page/SyncDataSource/SyncTaskForm render syncInterval for form item 2`] 
                       >
                         <input
                           aria-required="true"
-                          class="ant-input css-dev-only-do-not-override-ywkr0o basic-input-wrapper css-1pd1cd5"
+                          class="ant-input basic-input-wrapper css-1pd1cd5"
                           id="url"
                           placeholder="请输入地址"
                           type="text"
@@ -3272,13 +3272,13 @@ exports[`page/SyncDataSource/SyncTaskForm render syncInterval for form item 2`] 
                 </div>
               </div>
               <div
-                class="ant-form-item has-required-style css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+                class="ant-form-item has-required-style css-1jlm9cy"
               >
                 <div
-                  class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                  class="ant-row ant-form-item-row"
                 >
                   <div
-                    class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left css-dev-only-do-not-override-txh9fw"
+                    class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left"
                   >
                     <label
                       class="ant-form-item-required ant-form-item-no-colon"
@@ -3289,7 +3289,7 @@ exports[`page/SyncDataSource/SyncTaskForm render syncInterval for form item 2`] 
                     </label>
                   </div>
                   <div
-                    class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                    class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control"
                   >
                     <div
                       class="ant-form-item-control-input"
@@ -3299,7 +3299,7 @@ exports[`page/SyncDataSource/SyncTaskForm render syncInterval for form item 2`] 
                       >
                         <div
                           aria-required="true"
-                          class="ant-select ant-select-in-form-item basic-select-wrapper css-iy4o4x css-dev-only-do-not-override-v9sov3 ant-select-single ant-select-allow-clear ant-select-show-arrow"
+                          class="ant-select ant-select-in-form-item basic-select-wrapper css-iy4o4x ant-select-single ant-select-allow-clear ant-select-show-arrow"
                         >
                           <div
                             class="ant-select-selector"
@@ -3365,7 +3365,7 @@ exports[`page/SyncDataSource/SyncTaskForm render syncInterval for form item 2`] 
                 </div>
               </div>
               <div
-                class="ant-alert ant-alert-info ant-alert-no-icon css-dev-only-do-not-override-txh9fw"
+                class="ant-alert ant-alert-info ant-alert-no-icon"
                 data-show="true"
                 role="alert"
               >
@@ -3399,18 +3399,18 @@ exports[`page/SyncDataSource/SyncTaskForm render syncInterval for form item 2`] 
               class="css-bspaai"
             >
               <h1
-                class="ant-typography css-1eepp70 css-dev-only-do-not-override-txh9fw"
+                class="ant-typography css-1eepp70"
               >
                 SQL审核配置
               </h1>
               <div
-                class="ant-form-item css-1jlm9cy css-dev-only-do-not-override-txh9fw ant-form-item-has-success"
+                class="ant-form-item css-1jlm9cy ant-form-item-has-success"
               >
                 <div
-                  class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                  class="ant-row ant-form-item-row"
                 >
                   <div
-                    class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left css-dev-only-do-not-override-txh9fw"
+                    class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left"
                   >
                     <label
                       class="ant-form-item-no-colon"
@@ -3421,7 +3421,7 @@ exports[`page/SyncDataSource/SyncTaskForm render syncInterval for form item 2`] 
                     </label>
                   </div>
                   <div
-                    class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                    class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control"
                   >
                     <div
                       class="ant-form-item-control-input"
@@ -3431,7 +3431,7 @@ exports[`page/SyncDataSource/SyncTaskForm render syncInterval for form item 2`] 
                       >
                         <button
                           aria-checked="true"
-                          class="ant-switch basic-switch-wrapper css-g6dhbn css-dev-only-do-not-override-txh9fw ant-switch-checked"
+                          class="ant-switch basic-switch-wrapper css-g6dhbn ant-switch-checked"
                           role="switch"
                           type="button"
                         >
@@ -3455,13 +3455,13 @@ exports[`page/SyncDataSource/SyncTaskForm render syncInterval for form item 2`] 
                 </div>
               </div>
               <div
-                class="ant-form-item css-1jlm9cy css-dev-only-do-not-override-txh9fw ant-form-item-hidden"
+                class="ant-form-item css-1jlm9cy ant-form-item-hidden"
               >
                 <div
-                  class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                  class="ant-row ant-form-item-row"
                 >
                   <div
-                    class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                    class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control"
                   >
                     <div
                       class="ant-form-item-control-input"
@@ -3470,7 +3470,7 @@ exports[`page/SyncDataSource/SyncTaskForm render syncInterval for form item 2`] 
                         class="ant-form-item-control-input-content"
                       >
                         <input
-                          class="ant-input css-dev-only-do-not-override-ywkr0o basic-input-wrapper css-1pd1cd5"
+                          class="ant-input basic-input-wrapper css-1pd1cd5"
                           id="ruleTemplateId"
                           placeholder="请输入{{name}}"
                           type="text"
@@ -3482,13 +3482,13 @@ exports[`page/SyncDataSource/SyncTaskForm render syncInterval for form item 2`] 
                 </div>
               </div>
               <div
-                class="ant-form-item has-required-style css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+                class="ant-form-item has-required-style css-1jlm9cy"
               >
                 <div
-                  class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                  class="ant-row ant-form-item-row"
                 >
                   <div
-                    class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left css-dev-only-do-not-override-txh9fw"
+                    class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left"
                   >
                     <label
                       class="ant-form-item-required ant-form-item-no-colon"
@@ -3499,7 +3499,7 @@ exports[`page/SyncDataSource/SyncTaskForm render syncInterval for form item 2`] 
                     </label>
                   </div>
                   <div
-                    class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                    class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control"
                   >
                     <div
                       class="ant-form-item-control-input"
@@ -3509,7 +3509,7 @@ exports[`page/SyncDataSource/SyncTaskForm render syncInterval for form item 2`] 
                       >
                         <div
                           aria-required="true"
-                          class="ant-select ant-select-in-form-item basic-select-wrapper css-iy4o4x css-dev-only-do-not-override-v9sov3 ant-select-single ant-select-allow-clear ant-select-show-arrow ant-select-loading"
+                          class="ant-select ant-select-in-form-item basic-select-wrapper css-iy4o4x ant-select-single ant-select-allow-clear ant-select-show-arrow ant-select-loading"
                         >
                           <div
                             class="ant-select-selector"
@@ -3575,13 +3575,13 @@ exports[`page/SyncDataSource/SyncTaskForm render syncInterval for form item 2`] 
                 </div>
               </div>
               <div
-                class="ant-form-item css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+                class="ant-form-item css-1jlm9cy"
               >
                 <div
-                  class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                  class="ant-row ant-form-item-row"
                 >
                   <div
-                    class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left css-dev-only-do-not-override-txh9fw"
+                    class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left"
                   >
                     <label
                       class="ant-form-item-no-colon"
@@ -3592,7 +3592,7 @@ exports[`page/SyncDataSource/SyncTaskForm render syncInterval for form item 2`] 
                     </label>
                   </div>
                   <div
-                    class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                    class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control"
                   >
                     <div
                       class="ant-form-item-control-input"
@@ -3602,7 +3602,7 @@ exports[`page/SyncDataSource/SyncTaskForm render syncInterval for form item 2`] 
                       >
                         <button
                           aria-checked="false"
-                          class="ant-switch basic-switch-wrapper css-g6dhbn css-dev-only-do-not-override-txh9fw"
+                          class="ant-switch basic-switch-wrapper css-g6dhbn"
                           id="needAuditForSqlQuery"
                           role="switch"
                           type="button"
@@ -3627,13 +3627,13 @@ exports[`page/SyncDataSource/SyncTaskForm render syncInterval for form item 2`] 
                 </div>
               </div>
               <div
-                class="ant-form-item css-1jlm9cy css-dev-only-do-not-override-txh9fw ant-form-item-hidden"
+                class="ant-form-item css-1jlm9cy ant-form-item-hidden"
               >
                 <div
-                  class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                  class="ant-row ant-form-item-row"
                 >
                   <div
-                    class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left css-dev-only-do-not-override-txh9fw"
+                    class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left"
                   >
                     <label
                       class="ant-form-item-no-colon"
@@ -3644,7 +3644,7 @@ exports[`page/SyncDataSource/SyncTaskForm render syncInterval for form item 2`] 
                     </label>
                   </div>
                   <div
-                    class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                    class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control"
                   >
                     <div
                       class="ant-form-item-control-input"
@@ -3653,7 +3653,7 @@ exports[`page/SyncDataSource/SyncTaskForm render syncInterval for form item 2`] 
                         class="ant-form-item-control-input-content"
                       >
                         <div
-                          class="ant-select ant-select-in-form-item basic-select-wrapper css-iy4o4x css-dev-only-do-not-override-v9sov3 ant-select-single ant-select-show-arrow"
+                          class="ant-select ant-select-in-form-item basic-select-wrapper css-iy4o4x ant-select-single ant-select-show-arrow"
                         >
                           <div
                             class="ant-select-selector"
@@ -3726,18 +3726,18 @@ exports[`page/SyncDataSource/SyncTaskForm render syncInterval for form item 2`] 
               class="css-bspaai"
             >
               <h1
-                class="ant-typography css-1eepp70 css-dev-only-do-not-override-txh9fw"
+                class="ant-typography css-1eepp70"
               >
                 自定义任务同步周期
               </h1>
               <div
-                class="ant-form-item has-required-style has-label-tip css-1jlm9cy css-dev-only-do-not-override-txh9fw ant-form-item-has-success"
+                class="ant-form-item has-required-style has-label-tip css-1jlm9cy ant-form-item-has-success"
               >
                 <div
-                  class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                  class="ant-row ant-form-item-row"
                 >
                   <div
-                    class="ant-col ant-col-24 ant-form-item-label ant-form-item-label-left css-dev-only-do-not-override-txh9fw"
+                    class="ant-col ant-col-24 ant-form-item-label ant-form-item-label-left"
                   >
                     <label
                       class="ant-form-item-required ant-form-item-no-colon"
@@ -3759,7 +3759,7 @@ exports[`page/SyncDataSource/SyncTaskForm render syncInterval for form item 2`] 
                     </label>
                   </div>
                   <div
-                    class="ant-col ant-col-24 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                    class="ant-col ant-col-24 ant-form-item-control"
                   >
                     <div
                       class="ant-form-item-control-input"
@@ -3771,13 +3771,13 @@ exports[`page/SyncDataSource/SyncTaskForm render syncInterval for form item 2`] 
                           class="css-1q8fejj"
                         >
                           <input
-                            class="ant-input ant-input-status-success css-dev-only-do-not-override-ywkr0o basic-input-wrapper input-element css-1pd1cd5"
+                            class="ant-input ant-input-status-success basic-input-wrapper input-element css-1pd1cd5"
                             placeholder="请输入时间"
                             type="text"
                             value="0 0 * * *"
                           />
                           <button
-                            class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default ant-btn-lg ant-btn-icon-only button-element basic-button-wrapper css-geipcv"
+                            class="ant-btn ant-btn-default ant-btn-lg ant-btn-icon-only button-element basic-button-wrapper css-geipcv"
                             type="button"
                           >
                             <span

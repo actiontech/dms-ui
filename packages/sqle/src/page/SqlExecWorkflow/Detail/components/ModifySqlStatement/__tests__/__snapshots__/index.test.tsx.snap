@@ -4,7 +4,7 @@ exports[`sqle/ExecWorkflow/Detail/ModifySqlStatement render snap when click form
 <body>
   <div>
     <div
-      class="ant-spin-nested-loading css-dev-only-do-not-override-txh9fw"
+      class="ant-spin-nested-loading"
     >
       <div
         class="ant-spin-container"
@@ -19,7 +19,7 @@ exports[`sqle/ExecWorkflow/Detail/ModifySqlStatement render snap when click form
               class="title"
             >
               <button
-                class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default basic-button-wrapper css-geipcv"
+                class="ant-btn ant-btn-default basic-button-wrapper css-geipcv"
                 type="button"
               >
                 <span
@@ -46,7 +46,7 @@ exports[`sqle/ExecWorkflow/Detail/ModifySqlStatement render snap when click form
               class="extra"
             >
               <button
-                class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary basic-button-wrapper css-geipcv"
+                class="ant-btn ant-btn-primary basic-button-wrapper css-geipcv"
                 type="button"
               >
                 <span>
@@ -56,7 +56,7 @@ exports[`sqle/ExecWorkflow/Detail/ModifySqlStatement render snap when click form
             </div>
           </div>
           <form
-            class="ant-form ant-form-horizontal css-dev-only-do-not-override-txh9fw hasTopHeader clearPaddingBottom css-re75ti"
+            class="ant-form ant-form-horizontal hasTopHeader clearPaddingBottom css-re75ti"
           >
             <section
               class="has-border css-1114g56"
@@ -65,7 +65,7 @@ exports[`sqle/ExecWorkflow/Detail/ModifySqlStatement render snap when click form
                 class="css-bspaai"
               >
                 <h3
-                  class="ant-typography css-p50odb css-dev-only-do-not-override-txh9fw"
+                  class="ant-typography css-p50odb"
                 >
                   <span
                     class="anticon title-icon"
@@ -92,13 +92,13 @@ exports[`sqle/ExecWorkflow/Detail/ModifySqlStatement render snap when click form
                   </span>
                 </h3>
                 <div
-                  class="ant-form-item form-item-label-mb-16 css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+                  class="ant-form-item form-item-label-mb-16 css-1jlm9cy"
                 >
                   <div
-                    class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                    class="ant-row ant-form-item-row"
                   >
                     <div
-                      class="ant-col ant-form-item-label ant-form-item-label-left css-dev-only-do-not-override-txh9fw"
+                      class="ant-col ant-form-item-label ant-form-item-label-left"
                     >
                       <label
                         class="ant-form-item-no-colon"
@@ -133,7 +133,7 @@ exports[`sqle/ExecWorkflow/Detail/ModifySqlStatement render snap when click form
                       </label>
                     </div>
                     <div
-                      class="ant-col ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                      class="ant-col ant-form-item-control"
                     >
                       <div
                         class="ant-form-item-control-input"
@@ -146,13 +146,13 @@ exports[`sqle/ExecWorkflow/Detail/ModifySqlStatement render snap when click form
                   </div>
                 </div>
                 <div
-                  class="ant-form-item css-15d6abf css-dev-only-do-not-override-txh9fw"
+                  class="ant-form-item css-15d6abf"
                 >
                   <div
-                    class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                    class="ant-row ant-form-item-row"
                   >
                     <div
-                      class="ant-col ant-form-item-label ant-form-item-label-left css-dev-only-do-not-override-txh9fw"
+                      class="ant-col ant-form-item-label ant-form-item-label-left"
                     >
                       <label
                         class="ant-form-item-no-colon"
@@ -161,7 +161,7 @@ exports[`sqle/ExecWorkflow/Detail/ModifySqlStatement render snap when click form
                       />
                     </div>
                     <div
-                      class="ant-col ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                      class="ant-col ant-form-item-control"
                     >
                       <div
                         class="ant-form-item-control-input"
@@ -170,12 +170,12 @@ exports[`sqle/ExecWorkflow/Detail/ModifySqlStatement render snap when click form
                           class="ant-form-item-control-input-content"
                         >
                           <div
-                            class="ant-row actiontech-mode-switcher css-dev-only-do-not-override-txh9fw"
+                            class="ant-row actiontech-mode-switcher"
                             id="0_currentUploadType"
                             style="margin-left: -6px; margin-right: -6px;"
                           >
                             <div
-                              class="ant-col ant-col-8 css-dev-only-do-not-override-txh9fw"
+                              class="ant-col ant-col-8"
                               style="padding-left: 6px; padding-right: 6px;"
                             >
                               <div
@@ -231,7 +231,7 @@ exports[`sqle/ExecWorkflow/Detail/ModifySqlStatement render snap when click form
                               </div>
                             </div>
                             <div
-                              class="ant-col ant-col-8 css-dev-only-do-not-override-txh9fw"
+                              class="ant-col ant-col-8"
                               style="padding-left: 6px; padding-right: 6px;"
                             >
                               <div
@@ -288,7 +288,7 @@ exports[`sqle/ExecWorkflow/Detail/ModifySqlStatement render snap when click form
                               </div>
                             </div>
                             <div
-                              class="ant-col ant-col-8 css-dev-only-do-not-override-txh9fw"
+                              class="ant-col ant-col-8"
                               style="padding-left: 6px; padding-right: 6px;"
                             >
                               <div
@@ -354,13 +354,13 @@ exports[`sqle/ExecWorkflow/Detail/ModifySqlStatement render snap when click form
                   class="lazy-load-wrapper lazy-load-wrapper-show css-952l0m"
                 >
                   <div
-                    class="ant-form-item css-15d6abf css-dev-only-do-not-override-txh9fw"
+                    class="ant-form-item css-15d6abf"
                   >
                     <div
-                      class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                      class="ant-row ant-form-item-row"
                     >
                       <div
-                        class="ant-col ant-form-item-label ant-form-item-label-left css-dev-only-do-not-override-txh9fw"
+                        class="ant-col ant-form-item-label ant-form-item-label-left"
                       >
                         <label
                           class="ant-form-item-required ant-form-item-no-colon"
@@ -369,7 +369,7 @@ exports[`sqle/ExecWorkflow/Detail/ModifySqlStatement render snap when click form
                         />
                       </div>
                       <div
-                        class="ant-col ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                        class="ant-col ant-form-item-control"
                       >
                         <div
                           class="ant-form-item-control-input"
@@ -398,13 +398,13 @@ exports[`sqle/ExecWorkflow/Detail/ModifySqlStatement render snap when click form
                   </div>
                 </div>
                 <div
-                  class="ant-form-item css-15d6abf css-dev-only-do-not-override-txh9fw"
+                  class="ant-form-item css-15d6abf"
                 >
                   <div
-                    class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                    class="ant-row ant-form-item-row"
                   >
                     <div
-                      class="ant-col ant-form-item-label ant-form-item-label-left css-dev-only-do-not-override-txh9fw"
+                      class="ant-col ant-form-item-label ant-form-item-label-left"
                     >
                       <label
                         class="ant-form-item-no-colon"
@@ -412,7 +412,7 @@ exports[`sqle/ExecWorkflow/Detail/ModifySqlStatement render snap when click form
                       />
                     </div>
                     <div
-                      class="ant-col ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                      class="ant-col ant-form-item-control"
                     >
                       <div
                         class="ant-form-item-control-input"
@@ -421,14 +421,14 @@ exports[`sqle/ExecWorkflow/Detail/ModifySqlStatement render snap when click form
                           class="ant-form-item-control-input-content"
                         >
                           <div
-                            class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+                            class="ant-space ant-space-horizontal ant-space-align-center"
                           >
                             <div
                               class="ant-space-item"
                               style="margin-right: 12px;"
                             >
                               <button
-                                class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary basic-button-wrapper css-geipcv"
+                                class="ant-btn ant-btn-primary basic-button-wrapper css-geipcv"
                                 type="button"
                               >
                                 <span>
@@ -440,14 +440,14 @@ exports[`sqle/ExecWorkflow/Detail/ModifySqlStatement render snap when click form
                               class="ant-space-item"
                             >
                               <div
-                                class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
+                                class="ant-space ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
                               >
                                 <div
                                   class="ant-space-item"
                                   style="margin-right: 8px;"
                                 >
                                   <button
-                                    class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default basic-button-wrapper css-geipcv"
+                                    class="ant-btn ant-btn-default basic-button-wrapper css-geipcv"
                                     type="button"
                                   >
                                     <span>
@@ -496,10 +496,10 @@ exports[`sqle/ExecWorkflow/Detail/ModifySqlStatement render snap when click form
             class="css-avbjmz"
           >
             <div
-              class="ant-row ant-row-space-between css-156vlto css-dev-only-do-not-override-txh9fw"
+              class="ant-row ant-row-space-between css-156vlto"
             >
               <div
-                class="ant-segmented basic-segmented-wrapper css-192b3m1 css-dev-only-do-not-override-txh9fw"
+                class="ant-segmented basic-segmented-wrapper css-192b3m1"
               >
                 <div
                   class="ant-segmented-group"
@@ -545,7 +545,7 @@ exports[`sqle/ExecWorkflow/Detail/ModifySqlStatement render snap when click form
                 </div>
               </div>
               <div
-                class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+                class="ant-space ant-space-horizontal ant-space-align-center"
               >
                 <div
                   class="ant-space-item"
@@ -566,7 +566,7 @@ exports[`sqle/ExecWorkflow/Detail/ModifySqlStatement render snap when click form
                   style="margin-right: 4px;"
                 >
                   <div
-                    class="ant-divider css-dev-only-do-not-override-txh9fw ant-divider-vertical"
+                    class="ant-divider ant-divider-vertical"
                     role="separator"
                     style="height: 28px;"
                   />
@@ -575,7 +575,7 @@ exports[`sqle/ExecWorkflow/Detail/ModifySqlStatement render snap when click form
                   class="ant-space-item"
                 >
                   <button
-                    class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default ant-btn-sm basic-button-wrapper css-geipcv"
+                    class="ant-btn ant-btn-default ant-btn-sm basic-button-wrapper css-geipcv"
                     type="button"
                   >
                     <span
@@ -593,7 +593,7 @@ exports[`sqle/ExecWorkflow/Detail/ModifySqlStatement render snap when click form
                       </svg>
                     </span>
                     <div
-                      class="ant-space css-dev-only-do-not-override-674gwq ant-space-horizontal ant-space-align-center"
+                      class="ant-space ant-space-horizontal ant-space-align-center"
                     >
                       <div
                         class="ant-space-item"
@@ -659,7 +659,7 @@ exports[`sqle/ExecWorkflow/Detail/ModifySqlStatement render snap when click form
                 </div>
               </div>
               <div
-                class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center audit-result-info"
+                class="ant-space ant-space-horizontal ant-space-align-center audit-result-info"
               >
                 <div
                   class="ant-space-item"
@@ -721,10 +721,10 @@ exports[`sqle/ExecWorkflow/Detail/ModifySqlStatement render snap when click form
               </div>
             </div>
             <div
-              class="ant-table-wrapper actiontech-table-namespace css-fxd6ka css-dev-only-do-not-override-bj9uhl"
+              class="ant-table-wrapper actiontech-table-namespace css-fxd6ka"
             >
               <div
-                class="ant-spin-nested-loading css-dev-only-do-not-override-bj9uhl"
+                class="ant-spin-nested-loading"
               >
                 <div
                   class="ant-spin-container"
@@ -883,7 +883,7 @@ exports[`sqle/ExecWorkflow/Detail/ModifySqlStatement render snap when open is tr
 <body>
   <div>
     <div
-      class="ant-spin-nested-loading css-dev-only-do-not-override-txh9fw"
+      class="ant-spin-nested-loading"
     >
       <div
         class="ant-spin-container"
@@ -898,7 +898,7 @@ exports[`sqle/ExecWorkflow/Detail/ModifySqlStatement render snap when open is tr
               class="title"
             >
               <button
-                class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default basic-button-wrapper css-geipcv"
+                class="ant-btn ant-btn-default basic-button-wrapper css-geipcv"
                 type="button"
               >
                 <span
@@ -925,7 +925,7 @@ exports[`sqle/ExecWorkflow/Detail/ModifySqlStatement render snap when open is tr
               class="extra"
             >
               <button
-                class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary basic-button-wrapper css-geipcv"
+                class="ant-btn ant-btn-primary basic-button-wrapper css-geipcv"
                 type="button"
               >
                 <span>
@@ -935,7 +935,7 @@ exports[`sqle/ExecWorkflow/Detail/ModifySqlStatement render snap when open is tr
             </div>
           </div>
           <form
-            class="ant-form ant-form-horizontal css-dev-only-do-not-override-txh9fw hasTopHeader clearPaddingBottom css-re75ti"
+            class="ant-form ant-form-horizontal hasTopHeader clearPaddingBottom css-re75ti"
           >
             <section
               class="has-border css-1114g56"
@@ -944,7 +944,7 @@ exports[`sqle/ExecWorkflow/Detail/ModifySqlStatement render snap when open is tr
                 class="css-bspaai"
               >
                 <h3
-                  class="ant-typography css-p50odb css-dev-only-do-not-override-txh9fw"
+                  class="ant-typography css-p50odb"
                 >
                   <span
                     class="anticon title-icon"
@@ -971,13 +971,13 @@ exports[`sqle/ExecWorkflow/Detail/ModifySqlStatement render snap when open is tr
                   </span>
                 </h3>
                 <div
-                  class="ant-form-item form-item-label-mb-16 css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+                  class="ant-form-item form-item-label-mb-16 css-1jlm9cy"
                 >
                   <div
-                    class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                    class="ant-row ant-form-item-row"
                   >
                     <div
-                      class="ant-col ant-form-item-label ant-form-item-label-left css-dev-only-do-not-override-txh9fw"
+                      class="ant-col ant-form-item-label ant-form-item-label-left"
                     >
                       <label
                         class="ant-form-item-no-colon"
@@ -1012,7 +1012,7 @@ exports[`sqle/ExecWorkflow/Detail/ModifySqlStatement render snap when open is tr
                       </label>
                     </div>
                     <div
-                      class="ant-col ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                      class="ant-col ant-form-item-control"
                     >
                       <div
                         class="ant-form-item-control-input"
@@ -1025,13 +1025,13 @@ exports[`sqle/ExecWorkflow/Detail/ModifySqlStatement render snap when open is tr
                   </div>
                 </div>
                 <div
-                  class="ant-form-item css-15d6abf css-dev-only-do-not-override-txh9fw"
+                  class="ant-form-item css-15d6abf"
                 >
                   <div
-                    class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                    class="ant-row ant-form-item-row"
                   >
                     <div
-                      class="ant-col ant-form-item-label ant-form-item-label-left css-dev-only-do-not-override-txh9fw"
+                      class="ant-col ant-form-item-label ant-form-item-label-left"
                     >
                       <label
                         class="ant-form-item-no-colon"
@@ -1040,7 +1040,7 @@ exports[`sqle/ExecWorkflow/Detail/ModifySqlStatement render snap when open is tr
                       />
                     </div>
                     <div
-                      class="ant-col ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                      class="ant-col ant-form-item-control"
                     >
                       <div
                         class="ant-form-item-control-input"
@@ -1049,12 +1049,12 @@ exports[`sqle/ExecWorkflow/Detail/ModifySqlStatement render snap when open is tr
                           class="ant-form-item-control-input-content"
                         >
                           <div
-                            class="ant-row actiontech-mode-switcher css-dev-only-do-not-override-txh9fw"
+                            class="ant-row actiontech-mode-switcher"
                             id="0_currentUploadType"
                             style="margin-left: -6px; margin-right: -6px;"
                           >
                             <div
-                              class="ant-col ant-col-8 css-dev-only-do-not-override-txh9fw"
+                              class="ant-col ant-col-8"
                               style="padding-left: 6px; padding-right: 6px;"
                             >
                               <div
@@ -1110,7 +1110,7 @@ exports[`sqle/ExecWorkflow/Detail/ModifySqlStatement render snap when open is tr
                               </div>
                             </div>
                             <div
-                              class="ant-col ant-col-8 css-dev-only-do-not-override-txh9fw"
+                              class="ant-col ant-col-8"
                               style="padding-left: 6px; padding-right: 6px;"
                             >
                               <div
@@ -1167,7 +1167,7 @@ exports[`sqle/ExecWorkflow/Detail/ModifySqlStatement render snap when open is tr
                               </div>
                             </div>
                             <div
-                              class="ant-col ant-col-8 css-dev-only-do-not-override-txh9fw"
+                              class="ant-col ant-col-8"
                               style="padding-left: 6px; padding-right: 6px;"
                             >
                               <div
@@ -1233,13 +1233,13 @@ exports[`sqle/ExecWorkflow/Detail/ModifySqlStatement render snap when open is tr
                   class="lazy-load-wrapper lazy-load-wrapper-show css-952l0m"
                 >
                   <div
-                    class="ant-form-item css-15d6abf css-dev-only-do-not-override-txh9fw"
+                    class="ant-form-item css-15d6abf"
                   >
                     <div
-                      class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                      class="ant-row ant-form-item-row"
                     >
                       <div
-                        class="ant-col ant-form-item-label ant-form-item-label-left css-dev-only-do-not-override-txh9fw"
+                        class="ant-col ant-form-item-label ant-form-item-label-left"
                       >
                         <label
                           class="ant-form-item-required ant-form-item-no-colon"
@@ -1248,7 +1248,7 @@ exports[`sqle/ExecWorkflow/Detail/ModifySqlStatement render snap when open is tr
                         />
                       </div>
                       <div
-                        class="ant-col ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                        class="ant-col ant-form-item-control"
                       >
                         <div
                           class="ant-form-item-control-input"
@@ -1277,13 +1277,13 @@ exports[`sqle/ExecWorkflow/Detail/ModifySqlStatement render snap when open is tr
                   </div>
                 </div>
                 <div
-                  class="ant-form-item css-15d6abf css-dev-only-do-not-override-txh9fw"
+                  class="ant-form-item css-15d6abf"
                 >
                   <div
-                    class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                    class="ant-row ant-form-item-row"
                   >
                     <div
-                      class="ant-col ant-form-item-label ant-form-item-label-left css-dev-only-do-not-override-txh9fw"
+                      class="ant-col ant-form-item-label ant-form-item-label-left"
                     >
                       <label
                         class="ant-form-item-no-colon"
@@ -1291,7 +1291,7 @@ exports[`sqle/ExecWorkflow/Detail/ModifySqlStatement render snap when open is tr
                       />
                     </div>
                     <div
-                      class="ant-col ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                      class="ant-col ant-form-item-control"
                     >
                       <div
                         class="ant-form-item-control-input"
@@ -1300,14 +1300,14 @@ exports[`sqle/ExecWorkflow/Detail/ModifySqlStatement render snap when open is tr
                           class="ant-form-item-control-input-content"
                         >
                           <div
-                            class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+                            class="ant-space ant-space-horizontal ant-space-align-center"
                           >
                             <div
                               class="ant-space-item"
                               style="margin-right: 12px;"
                             >
                               <button
-                                class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary basic-button-wrapper css-geipcv"
+                                class="ant-btn ant-btn-primary basic-button-wrapper css-geipcv"
                                 type="button"
                               >
                                 <span>
@@ -1319,14 +1319,14 @@ exports[`sqle/ExecWorkflow/Detail/ModifySqlStatement render snap when open is tr
                               class="ant-space-item"
                             >
                               <div
-                                class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
+                                class="ant-space ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
                               >
                                 <div
                                   class="ant-space-item"
                                   style="margin-right: 8px;"
                                 >
                                   <button
-                                    class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default basic-button-wrapper css-geipcv"
+                                    class="ant-btn ant-btn-default basic-button-wrapper css-geipcv"
                                     type="button"
                                   >
                                     <span>
@@ -1375,10 +1375,10 @@ exports[`sqle/ExecWorkflow/Detail/ModifySqlStatement render snap when open is tr
             class="css-avbjmz"
           >
             <div
-              class="ant-row ant-row-space-between css-156vlto css-dev-only-do-not-override-txh9fw"
+              class="ant-row ant-row-space-between css-156vlto"
             >
               <div
-                class="ant-segmented basic-segmented-wrapper css-192b3m1 css-dev-only-do-not-override-txh9fw"
+                class="ant-segmented basic-segmented-wrapper css-192b3m1"
               >
                 <div
                   class="ant-segmented-group"
@@ -1424,7 +1424,7 @@ exports[`sqle/ExecWorkflow/Detail/ModifySqlStatement render snap when open is tr
                 </div>
               </div>
               <div
-                class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+                class="ant-space ant-space-horizontal ant-space-align-center"
               >
                 <div
                   class="ant-space-item"
@@ -1445,7 +1445,7 @@ exports[`sqle/ExecWorkflow/Detail/ModifySqlStatement render snap when open is tr
                   style="margin-right: 4px;"
                 >
                   <div
-                    class="ant-divider css-dev-only-do-not-override-txh9fw ant-divider-vertical"
+                    class="ant-divider ant-divider-vertical"
                     role="separator"
                     style="height: 28px;"
                   />
@@ -1454,7 +1454,7 @@ exports[`sqle/ExecWorkflow/Detail/ModifySqlStatement render snap when open is tr
                   class="ant-space-item"
                 >
                   <button
-                    class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default ant-btn-sm basic-button-wrapper css-geipcv"
+                    class="ant-btn ant-btn-default ant-btn-sm basic-button-wrapper css-geipcv"
                     type="button"
                   >
                     <span
@@ -1472,7 +1472,7 @@ exports[`sqle/ExecWorkflow/Detail/ModifySqlStatement render snap when open is tr
                       </svg>
                     </span>
                     <div
-                      class="ant-space css-dev-only-do-not-override-674gwq ant-space-horizontal ant-space-align-center"
+                      class="ant-space ant-space-horizontal ant-space-align-center"
                     >
                       <div
                         class="ant-space-item"
@@ -1538,7 +1538,7 @@ exports[`sqle/ExecWorkflow/Detail/ModifySqlStatement render snap when open is tr
                 </div>
               </div>
               <div
-                class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center audit-result-info"
+                class="ant-space ant-space-horizontal ant-space-align-center audit-result-info"
               >
                 <div
                   class="ant-space-item"
@@ -1600,10 +1600,10 @@ exports[`sqle/ExecWorkflow/Detail/ModifySqlStatement render snap when open is tr
               </div>
             </div>
             <div
-              class="ant-table-wrapper actiontech-table-namespace css-fxd6ka css-dev-only-do-not-override-bj9uhl"
+              class="ant-table-wrapper actiontech-table-namespace css-fxd6ka"
             >
               <div
-                class="ant-spin-nested-loading css-dev-only-do-not-override-bj9uhl"
+                class="ant-spin-nested-loading"
               >
                 <div
                   class="ant-spin-container"
@@ -1756,7 +1756,7 @@ exports[`sqle/ExecWorkflow/Detail/ModifySqlStatement render snap when open is tr
 <body>
   <div>
     <div
-      class="ant-spin-nested-loading css-dev-only-do-not-override-txh9fw"
+      class="ant-spin-nested-loading"
     >
       <div
         class="ant-spin-container"
@@ -1771,7 +1771,7 @@ exports[`sqle/ExecWorkflow/Detail/ModifySqlStatement render snap when open is tr
               class="title"
             >
               <button
-                class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default basic-button-wrapper css-geipcv"
+                class="ant-btn ant-btn-default basic-button-wrapper css-geipcv"
                 type="button"
               >
                 <span
@@ -1798,7 +1798,7 @@ exports[`sqle/ExecWorkflow/Detail/ModifySqlStatement render snap when open is tr
               class="extra"
             >
               <button
-                class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary basic-button-wrapper css-geipcv"
+                class="ant-btn ant-btn-primary basic-button-wrapper css-geipcv"
                 type="button"
               >
                 <span>
@@ -1808,7 +1808,7 @@ exports[`sqle/ExecWorkflow/Detail/ModifySqlStatement render snap when open is tr
             </div>
           </div>
           <form
-            class="ant-form ant-form-horizontal css-dev-only-do-not-override-txh9fw hasTopHeader clearPaddingBottom css-re75ti"
+            class="ant-form ant-form-horizontal hasTopHeader clearPaddingBottom css-re75ti"
           >
             <section
               class="has-border css-1114g56"
@@ -1817,7 +1817,7 @@ exports[`sqle/ExecWorkflow/Detail/ModifySqlStatement render snap when open is tr
                 class="css-bspaai"
               >
                 <h3
-                  class="ant-typography css-p50odb css-dev-only-do-not-override-txh9fw"
+                  class="ant-typography css-p50odb"
                 >
                   <span
                     class="anticon title-icon"
@@ -1844,13 +1844,13 @@ exports[`sqle/ExecWorkflow/Detail/ModifySqlStatement render snap when open is tr
                   </span>
                 </h3>
                 <div
-                  class="ant-form-item form-item-label-mb-16 css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+                  class="ant-form-item form-item-label-mb-16 css-1jlm9cy"
                 >
                   <div
-                    class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                    class="ant-row ant-form-item-row"
                   >
                     <div
-                      class="ant-col ant-form-item-label ant-form-item-label-left css-dev-only-do-not-override-txh9fw"
+                      class="ant-col ant-form-item-label ant-form-item-label-left"
                     >
                       <label
                         class="ant-form-item-no-colon"
@@ -1885,7 +1885,7 @@ exports[`sqle/ExecWorkflow/Detail/ModifySqlStatement render snap when open is tr
                       </label>
                     </div>
                     <div
-                      class="ant-col ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                      class="ant-col ant-form-item-control"
                     >
                       <div
                         class="ant-form-item-control-input"
@@ -1898,13 +1898,13 @@ exports[`sqle/ExecWorkflow/Detail/ModifySqlStatement render snap when open is tr
                   </div>
                 </div>
                 <div
-                  class="ant-form-item css-15d6abf css-dev-only-do-not-override-txh9fw"
+                  class="ant-form-item css-15d6abf"
                 >
                   <div
-                    class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                    class="ant-row ant-form-item-row"
                   >
                     <div
-                      class="ant-col ant-form-item-label ant-form-item-label-left css-dev-only-do-not-override-txh9fw"
+                      class="ant-col ant-form-item-label ant-form-item-label-left"
                     >
                       <label
                         class="ant-form-item-no-colon"
@@ -1913,7 +1913,7 @@ exports[`sqle/ExecWorkflow/Detail/ModifySqlStatement render snap when open is tr
                       />
                     </div>
                     <div
-                      class="ant-col ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                      class="ant-col ant-form-item-control"
                     >
                       <div
                         class="ant-form-item-control-input"
@@ -1922,12 +1922,12 @@ exports[`sqle/ExecWorkflow/Detail/ModifySqlStatement render snap when open is tr
                           class="ant-form-item-control-input-content"
                         >
                           <div
-                            class="ant-row actiontech-mode-switcher css-dev-only-do-not-override-txh9fw"
+                            class="ant-row actiontech-mode-switcher"
                             id="0_currentUploadType"
                             style="margin-left: -6px; margin-right: -6px;"
                           >
                             <div
-                              class="ant-col ant-col-8 css-dev-only-do-not-override-txh9fw"
+                              class="ant-col ant-col-8"
                               style="padding-left: 6px; padding-right: 6px;"
                             >
                               <div
@@ -1983,7 +1983,7 @@ exports[`sqle/ExecWorkflow/Detail/ModifySqlStatement render snap when open is tr
                               </div>
                             </div>
                             <div
-                              class="ant-col ant-col-8 css-dev-only-do-not-override-txh9fw"
+                              class="ant-col ant-col-8"
                               style="padding-left: 6px; padding-right: 6px;"
                             >
                               <div
@@ -2040,7 +2040,7 @@ exports[`sqle/ExecWorkflow/Detail/ModifySqlStatement render snap when open is tr
                               </div>
                             </div>
                             <div
-                              class="ant-col ant-col-8 css-dev-only-do-not-override-txh9fw"
+                              class="ant-col ant-col-8"
                               style="padding-left: 6px; padding-right: 6px;"
                             >
                               <div
@@ -2106,13 +2106,13 @@ exports[`sqle/ExecWorkflow/Detail/ModifySqlStatement render snap when open is tr
                   class="lazy-load-wrapper lazy-load-wrapper-show css-952l0m"
                 >
                   <div
-                    class="ant-form-item css-15d6abf css-dev-only-do-not-override-txh9fw"
+                    class="ant-form-item css-15d6abf"
                   >
                     <div
-                      class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                      class="ant-row ant-form-item-row"
                     >
                       <div
-                        class="ant-col ant-form-item-label ant-form-item-label-left css-dev-only-do-not-override-txh9fw"
+                        class="ant-col ant-form-item-label ant-form-item-label-left"
                       >
                         <label
                           class="ant-form-item-required ant-form-item-no-colon"
@@ -2121,7 +2121,7 @@ exports[`sqle/ExecWorkflow/Detail/ModifySqlStatement render snap when open is tr
                         />
                       </div>
                       <div
-                        class="ant-col ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                        class="ant-col ant-form-item-control"
                       >
                         <div
                           class="ant-form-item-control-input"
@@ -2151,13 +2151,13 @@ VALUES ('1234567890', 'example@email.com', '123456789012345678', '9876543210', '
                   </div>
                 </div>
                 <div
-                  class="ant-form-item has-label-tip css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+                  class="ant-form-item has-label-tip css-1jlm9cy"
                 >
                   <div
-                    class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                    class="ant-row ant-form-item-row"
                   >
                     <div
-                      class="ant-col ant-col-22 ant-form-item-label ant-form-item-label-left css-dev-only-do-not-override-txh9fw"
+                      class="ant-col ant-col-22 ant-form-item-label ant-form-item-label-left"
                     >
                       <label
                         class="ant-form-item-no-colon"
@@ -2179,7 +2179,7 @@ VALUES ('1234567890', 'example@email.com', '123456789012345678', '9876543210', '
                       </label>
                     </div>
                     <div
-                      class="ant-col ant-col-2 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                      class="ant-col ant-col-2 ant-form-item-control"
                     >
                       <div
                         class="ant-form-item-control-input"
@@ -2189,7 +2189,7 @@ VALUES ('1234567890', 'example@email.com', '123456789012345678', '9876543210', '
                         >
                           <button
                             aria-checked="true"
-                            class="ant-switch basic-switch-wrapper backup-switcher css-g6dhbn css-dev-only-do-not-override-txh9fw ant-switch-checked ant-switch-disabled"
+                            class="ant-switch basic-switch-wrapper backup-switcher css-g6dhbn ant-switch-checked ant-switch-disabled"
                             disabled=""
                             role="switch"
                             type="button"
@@ -2214,13 +2214,13 @@ VALUES ('1234567890', 'example@email.com', '123456789012345678', '9876543210', '
                   </div>
                 </div>
                 <div
-                  class="ant-form-item has-label-tip css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+                  class="ant-form-item has-label-tip css-1jlm9cy"
                 >
                   <div
-                    class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                    class="ant-row ant-form-item-row"
                   >
                     <div
-                      class="ant-col ant-col-14 ant-form-item-label ant-form-item-label-left css-dev-only-do-not-override-txh9fw"
+                      class="ant-col ant-col-14 ant-form-item-label ant-form-item-label-left"
                     >
                       <label
                         class="ant-form-item-no-colon"
@@ -2232,7 +2232,7 @@ VALUES ('1234567890', 'example@email.com', '123456789012345678', '9876543210', '
                         >
                           <div>
                             <div
-                              class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
+                              class="ant-space ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
                             >
                               <div
                                 class="ant-space-item"
@@ -2266,7 +2266,7 @@ VALUES ('1234567890', 'example@email.com', '123456789012345678', '9876543210', '
                       </label>
                     </div>
                     <div
-                      class="ant-col ant-col-10 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                      class="ant-col ant-col-10 ant-form-item-control"
                     >
                       <div
                         class="ant-form-item-control-input"
@@ -2275,7 +2275,7 @@ VALUES ('1234567890', 'example@email.com', '123456789012345678', '9876543210', '
                           class="ant-form-item-control-input-content"
                         >
                           <div
-                            class="ant-input-number ant-input-number-lg ant-input-number-in-form-item css-dev-only-do-not-override-ezmdel basic-inputNumber-wrapper css-1fd5hnt ant-input-number-disabled"
+                            class="ant-input-number ant-input-number-lg ant-input-number-in-form-item basic-inputNumber-wrapper css-1fd5hnt ant-input-number-disabled"
                           >
                             <div
                               class="ant-input-number-handler-wrap"
@@ -2357,13 +2357,13 @@ VALUES ('1234567890', 'example@email.com', '123456789012345678', '9876543210', '
                   </div>
                 </div>
                 <div
-                  class="ant-form-item css-15d6abf css-dev-only-do-not-override-txh9fw"
+                  class="ant-form-item css-15d6abf"
                 >
                   <div
-                    class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                    class="ant-row ant-form-item-row"
                   >
                     <div
-                      class="ant-col ant-form-item-label ant-form-item-label-left css-dev-only-do-not-override-txh9fw"
+                      class="ant-col ant-form-item-label ant-form-item-label-left"
                     >
                       <label
                         class="ant-form-item-no-colon"
@@ -2371,7 +2371,7 @@ VALUES ('1234567890', 'example@email.com', '123456789012345678', '9876543210', '
                       />
                     </div>
                     <div
-                      class="ant-col ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                      class="ant-col ant-form-item-control"
                     >
                       <div
                         class="ant-form-item-control-input"
@@ -2380,14 +2380,14 @@ VALUES ('1234567890', 'example@email.com', '123456789012345678', '9876543210', '
                           class="ant-form-item-control-input-content"
                         >
                           <div
-                            class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+                            class="ant-space ant-space-horizontal ant-space-align-center"
                           >
                             <div
                               class="ant-space-item"
                               style="margin-right: 12px;"
                             >
                               <button
-                                class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary basic-button-wrapper css-geipcv"
+                                class="ant-btn ant-btn-primary basic-button-wrapper css-geipcv"
                                 type="button"
                               >
                                 <span>
@@ -2399,14 +2399,14 @@ VALUES ('1234567890', 'example@email.com', '123456789012345678', '9876543210', '
                               class="ant-space-item"
                             >
                               <div
-                                class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
+                                class="ant-space ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
                               >
                                 <div
                                   class="ant-space-item"
                                   style="margin-right: 8px;"
                                 >
                                   <button
-                                    class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default basic-button-wrapper css-geipcv"
+                                    class="ant-btn ant-btn-default basic-button-wrapper css-geipcv"
                                     type="button"
                                   >
                                     <span>
@@ -2455,10 +2455,10 @@ VALUES ('1234567890', 'example@email.com', '123456789012345678', '9876543210', '
             class="css-avbjmz"
           >
             <div
-              class="ant-row ant-row-space-between css-156vlto css-dev-only-do-not-override-txh9fw"
+              class="ant-row ant-row-space-between css-156vlto"
             >
               <div
-                class="ant-segmented basic-segmented-wrapper css-192b3m1 css-dev-only-do-not-override-txh9fw"
+                class="ant-segmented basic-segmented-wrapper css-192b3m1"
               >
                 <div
                   class="ant-segmented-group"
@@ -2504,7 +2504,7 @@ VALUES ('1234567890', 'example@email.com', '123456789012345678', '9876543210', '
                 </div>
               </div>
               <div
-                class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+                class="ant-space ant-space-horizontal ant-space-align-center"
               >
                 <div
                   class="ant-space-item"
@@ -2525,7 +2525,7 @@ VALUES ('1234567890', 'example@email.com', '123456789012345678', '9876543210', '
                   style="margin-right: 4px;"
                 >
                   <div
-                    class="ant-divider css-dev-only-do-not-override-txh9fw ant-divider-vertical"
+                    class="ant-divider ant-divider-vertical"
                     role="separator"
                     style="height: 28px;"
                   />
@@ -2534,7 +2534,7 @@ VALUES ('1234567890', 'example@email.com', '123456789012345678', '9876543210', '
                   class="ant-space-item"
                 >
                   <button
-                    class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default ant-btn-sm basic-button-wrapper css-geipcv"
+                    class="ant-btn ant-btn-default ant-btn-sm basic-button-wrapper css-geipcv"
                     type="button"
                   >
                     <span
@@ -2552,7 +2552,7 @@ VALUES ('1234567890', 'example@email.com', '123456789012345678', '9876543210', '
                       </svg>
                     </span>
                     <div
-                      class="ant-space css-dev-only-do-not-override-674gwq ant-space-horizontal ant-space-align-center"
+                      class="ant-space ant-space-horizontal ant-space-align-center"
                     >
                       <div
                         class="ant-space-item"
@@ -2618,7 +2618,7 @@ VALUES ('1234567890', 'example@email.com', '123456789012345678', '9876543210', '
                 </div>
               </div>
               <div
-                class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center audit-result-info"
+                class="ant-space ant-space-horizontal ant-space-align-center audit-result-info"
               >
                 <div
                   class="ant-space-item"
@@ -2680,10 +2680,10 @@ VALUES ('1234567890', 'example@email.com', '123456789012345678', '9876543210', '
               </div>
             </div>
             <div
-              class="ant-table-wrapper actiontech-table-namespace css-fxd6ka css-dev-only-do-not-override-bj9uhl"
+              class="ant-table-wrapper actiontech-table-namespace css-fxd6ka"
             >
               <div
-                class="ant-spin-nested-loading css-dev-only-do-not-override-bj9uhl"
+                class="ant-spin-nested-loading"
               >
                 <div
                   class="ant-spin-container"
@@ -2819,7 +2819,7 @@ VALUES ('1234567890', 'example@email.com', '123456789012345678', '9876543210', '
                                   class="actiontech-sql-snippet-renderer-wrapper css-dz7fl9"
                                 >
                                   <div
-                                    class="ant-typography ant-typography-ellipsis ant-typography-single-line ant-typography-ellipsis-single-line margin-bottom-0 css-dev-only-do-not-override-bj9uhl"
+                                    class="ant-typography ant-typography-ellipsis ant-typography-single-line ant-typography-ellipsis-single-line margin-bottom-0"
                                   >
                                     <span>
                                       <span
@@ -2866,7 +2866,7 @@ VALUES ('1234567890', 'example@email.com', '123456789012345678', '9876543210', '
                               >
                                 <div>
                                   <div
-                                    class="ant-space css-dev-only-do-not-override-bj9uhl ant-space-horizontal ant-space-align-center"
+                                    class="ant-space ant-space-horizontal ant-space-align-center"
                                   >
                                     <div
                                       class="ant-space-item"
@@ -2890,7 +2890,7 @@ VALUES ('1234567890', 'example@email.com', '123456789012345678', '9876543210', '
                                 class="ant-table-cell audit-result-describe-column"
                               >
                                 <button
-                                  class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm basic-button-wrapper css-geipcv"
+                                  class="ant-btn ant-btn-default ant-btn-sm basic-button-wrapper css-geipcv"
                                   type="button"
                                 >
                                   <span>
@@ -2906,14 +2906,14 @@ VALUES ('1234567890', 'example@email.com', '123456789012345678', '9876543210', '
                                   class="css-new95e"
                                 >
                                   <div
-                                    class="ant-space css-dev-only-do-not-override-bj9uhl ant-space-horizontal ant-space-align-center"
+                                    class="ant-space ant-space-horizontal ant-space-align-center"
                                   >
                                     <div
                                       class="ant-space-item"
                                       style="margin-right: 8px;"
                                     >
                                       <button
-                                        class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                        class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
                                         type="button"
                                       >
                                         <span>
@@ -2926,7 +2926,7 @@ VALUES ('1234567890', 'example@email.com', '123456789012345678', '9876543210', '
                                       style="margin-right: 8px;"
                                     >
                                       <button
-                                        class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                        class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
                                         type="button"
                                       >
                                         <span>
@@ -2938,7 +2938,7 @@ VALUES ('1234567890', 'example@email.com', '123456789012345678', '9876543210', '
                                       class="ant-space-item"
                                     >
                                       <button
-                                        class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                        class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
                                         type="button"
                                       >
                                         <span
@@ -2971,7 +2971,7 @@ VALUES ('1234567890', 'example@email.com', '123456789012345678', '9876543210', '
                     </div>
                   </div>
                   <ul
-                    class="ant-pagination ant-table-pagination ant-table-pagination-right actiontech-table-pagination actiontech-table-pagination-fixed css-dev-only-do-not-override-bj9uhl"
+                    class="ant-pagination ant-table-pagination ant-table-pagination-right actiontech-table-pagination actiontech-table-pagination-fixed"
                   >
                     <li
                       class="ant-pagination-total-text"
@@ -2983,7 +2983,7 @@ VALUES ('1234567890', 'example@email.com', '123456789012345678', '9876543210', '
                     <li
                       aria-disabled="true"
                       class="ant-pagination-prev ant-pagination-disabled"
-                      title="Previous Page"
+                      title="上一页"
                     >
                       <button
                         class="ant-pagination-item-link"
@@ -3026,7 +3026,7 @@ VALUES ('1234567890', 'example@email.com', '123456789012345678', '9876543210', '
                     <li
                       aria-disabled="true"
                       class="ant-pagination-next ant-pagination-disabled"
-                      title="Next Page"
+                      title="下一页"
                     >
                       <button
                         class="ant-pagination-item-link"
@@ -3059,8 +3059,8 @@ VALUES ('1234567890', 'example@email.com', '123456789012345678', '9876543210', '
                       class="ant-pagination-options"
                     >
                       <div
-                        aria-label="Page Size"
-                        class="ant-select ant-pagination-options-size-changer css-dev-only-do-not-override-bj9uhl ant-select-single ant-select-show-arrow ant-select-show-search"
+                        aria-label="页码"
+                        class="ant-select ant-pagination-options-size-changer ant-select-single ant-select-show-arrow ant-select-show-search"
                       >
                         <div
                           class="ant-select-selector"
@@ -3074,7 +3074,7 @@ VALUES ('1234567890', 'example@email.com', '123456789012345678', '9876543210', '
                               aria-controls="rc_select_TEST_OR_SSR_list"
                               aria-expanded="false"
                               aria-haspopup="listbox"
-                              aria-label="Page Size"
+                              aria-label="页码"
                               aria-owns="rc_select_TEST_OR_SSR_list"
                               autocomplete="off"
                               class="ant-select-selection-search-input"
@@ -3086,9 +3086,9 @@ VALUES ('1234567890', 'example@email.com', '123456789012345678', '9876543210', '
                           </span>
                           <span
                             class="ant-select-selection-item"
-                            title="20 / page"
+                            title="20 条/页"
                           >
-                            20 / page
+                            20 条/页
                           </span>
                         </div>
                         <span
@@ -3135,7 +3135,7 @@ exports[`sqle/ExecWorkflow/Detail/ModifySqlStatement render snap when open is tr
 <body>
   <div>
     <div
-      class="ant-spin-nested-loading css-dev-only-do-not-override-txh9fw"
+      class="ant-spin-nested-loading"
     >
       <div
         class="ant-spin-container"
@@ -3150,7 +3150,7 @@ exports[`sqle/ExecWorkflow/Detail/ModifySqlStatement render snap when open is tr
               class="title"
             >
               <button
-                class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default basic-button-wrapper css-geipcv"
+                class="ant-btn ant-btn-default basic-button-wrapper css-geipcv"
                 type="button"
               >
                 <span
@@ -3177,7 +3177,7 @@ exports[`sqle/ExecWorkflow/Detail/ModifySqlStatement render snap when open is tr
               class="extra"
             >
               <button
-                class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary basic-button-wrapper css-geipcv"
+                class="ant-btn ant-btn-primary basic-button-wrapper css-geipcv"
                 type="button"
               >
                 <span>
@@ -3187,7 +3187,7 @@ exports[`sqle/ExecWorkflow/Detail/ModifySqlStatement render snap when open is tr
             </div>
           </div>
           <form
-            class="ant-form ant-form-horizontal css-dev-only-do-not-override-txh9fw hasTopHeader clearPaddingBottom css-re75ti"
+            class="ant-form ant-form-horizontal hasTopHeader clearPaddingBottom css-re75ti"
           >
             <section
               class="has-border css-1114g56"
@@ -3196,7 +3196,7 @@ exports[`sqle/ExecWorkflow/Detail/ModifySqlStatement render snap when open is tr
                 class="css-bspaai"
               >
                 <h3
-                  class="ant-typography css-p50odb css-dev-only-do-not-override-txh9fw"
+                  class="ant-typography css-p50odb"
                 >
                   <span
                     class="anticon title-icon"
@@ -3223,13 +3223,13 @@ exports[`sqle/ExecWorkflow/Detail/ModifySqlStatement render snap when open is tr
                   </span>
                 </h3>
                 <div
-                  class="ant-form-item form-item-label-mb-16 css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+                  class="ant-form-item form-item-label-mb-16 css-1jlm9cy"
                 >
                   <div
-                    class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                    class="ant-row ant-form-item-row"
                   >
                     <div
-                      class="ant-col ant-form-item-label ant-form-item-label-left css-dev-only-do-not-override-txh9fw"
+                      class="ant-col ant-form-item-label ant-form-item-label-left"
                     >
                       <label
                         class="ant-form-item-no-colon"
@@ -3264,7 +3264,7 @@ exports[`sqle/ExecWorkflow/Detail/ModifySqlStatement render snap when open is tr
                       </label>
                     </div>
                     <div
-                      class="ant-col ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                      class="ant-col ant-form-item-control"
                     >
                       <div
                         class="ant-form-item-control-input"
@@ -3277,13 +3277,13 @@ exports[`sqle/ExecWorkflow/Detail/ModifySqlStatement render snap when open is tr
                   </div>
                 </div>
                 <div
-                  class="ant-form-item css-15d6abf css-dev-only-do-not-override-txh9fw"
+                  class="ant-form-item css-15d6abf"
                 >
                   <div
-                    class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                    class="ant-row ant-form-item-row"
                   >
                     <div
-                      class="ant-col ant-form-item-label ant-form-item-label-left css-dev-only-do-not-override-txh9fw"
+                      class="ant-col ant-form-item-label ant-form-item-label-left"
                     >
                       <label
                         class="ant-form-item-no-colon"
@@ -3292,7 +3292,7 @@ exports[`sqle/ExecWorkflow/Detail/ModifySqlStatement render snap when open is tr
                       />
                     </div>
                     <div
-                      class="ant-col ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                      class="ant-col ant-form-item-control"
                     >
                       <div
                         class="ant-form-item-control-input"
@@ -3301,12 +3301,12 @@ exports[`sqle/ExecWorkflow/Detail/ModifySqlStatement render snap when open is tr
                           class="ant-form-item-control-input-content"
                         >
                           <div
-                            class="ant-row actiontech-mode-switcher css-dev-only-do-not-override-txh9fw"
+                            class="ant-row actiontech-mode-switcher"
                             id="0_currentUploadType"
                             style="margin-left: -6px; margin-right: -6px;"
                           >
                             <div
-                              class="ant-col ant-col-8 css-dev-only-do-not-override-txh9fw"
+                              class="ant-col ant-col-8"
                               style="padding-left: 6px; padding-right: 6px;"
                             >
                               <div
@@ -3362,7 +3362,7 @@ exports[`sqle/ExecWorkflow/Detail/ModifySqlStatement render snap when open is tr
                               </div>
                             </div>
                             <div
-                              class="ant-col ant-col-8 css-dev-only-do-not-override-txh9fw"
+                              class="ant-col ant-col-8"
                               style="padding-left: 6px; padding-right: 6px;"
                             >
                               <div
@@ -3419,7 +3419,7 @@ exports[`sqle/ExecWorkflow/Detail/ModifySqlStatement render snap when open is tr
                               </div>
                             </div>
                             <div
-                              class="ant-col ant-col-8 css-dev-only-do-not-override-txh9fw"
+                              class="ant-col ant-col-8"
                               style="padding-left: 6px; padding-right: 6px;"
                             >
                               <div
@@ -3485,13 +3485,13 @@ exports[`sqle/ExecWorkflow/Detail/ModifySqlStatement render snap when open is tr
                   class="lazy-load-wrapper lazy-load-wrapper-show css-952l0m"
                 >
                   <div
-                    class="ant-form-item css-15d6abf css-dev-only-do-not-override-txh9fw"
+                    class="ant-form-item css-15d6abf"
                   >
                     <div
-                      class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                      class="ant-row ant-form-item-row"
                     >
                       <div
-                        class="ant-col ant-form-item-label ant-form-item-label-left css-dev-only-do-not-override-txh9fw"
+                        class="ant-col ant-form-item-label ant-form-item-label-left"
                       >
                         <label
                           class="ant-form-item-required ant-form-item-no-colon"
@@ -3500,7 +3500,7 @@ exports[`sqle/ExecWorkflow/Detail/ModifySqlStatement render snap when open is tr
                         />
                       </div>
                       <div
-                        class="ant-col ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                        class="ant-col ant-form-item-control"
                       >
                         <div
                           class="ant-form-item-control-input"
@@ -3529,13 +3529,13 @@ exports[`sqle/ExecWorkflow/Detail/ModifySqlStatement render snap when open is tr
                   </div>
                 </div>
                 <div
-                  class="ant-form-item has-label-tip css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+                  class="ant-form-item has-label-tip css-1jlm9cy"
                 >
                   <div
-                    class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                    class="ant-row ant-form-item-row"
                   >
                     <div
-                      class="ant-col ant-col-22 ant-form-item-label ant-form-item-label-left css-dev-only-do-not-override-txh9fw"
+                      class="ant-col ant-col-22 ant-form-item-label ant-form-item-label-left"
                     >
                       <label
                         class="ant-form-item-no-colon"
@@ -3557,7 +3557,7 @@ exports[`sqle/ExecWorkflow/Detail/ModifySqlStatement render snap when open is tr
                       </label>
                     </div>
                     <div
-                      class="ant-col ant-col-2 ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                      class="ant-col ant-col-2 ant-form-item-control"
                     >
                       <div
                         class="ant-form-item-control-input"
@@ -3567,7 +3567,7 @@ exports[`sqle/ExecWorkflow/Detail/ModifySqlStatement render snap when open is tr
                         >
                           <button
                             aria-checked="false"
-                            class="ant-switch basic-switch-wrapper backup-switcher css-g6dhbn css-dev-only-do-not-override-txh9fw ant-switch-disabled"
+                            class="ant-switch basic-switch-wrapper backup-switcher css-g6dhbn ant-switch-disabled"
                             disabled=""
                             role="switch"
                             type="button"
@@ -3592,13 +3592,13 @@ exports[`sqle/ExecWorkflow/Detail/ModifySqlStatement render snap when open is tr
                   </div>
                 </div>
                 <div
-                  class="ant-form-item css-15d6abf css-dev-only-do-not-override-txh9fw"
+                  class="ant-form-item css-15d6abf"
                 >
                   <div
-                    class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                    class="ant-row ant-form-item-row"
                   >
                     <div
-                      class="ant-col ant-form-item-label ant-form-item-label-left css-dev-only-do-not-override-txh9fw"
+                      class="ant-col ant-form-item-label ant-form-item-label-left"
                     >
                       <label
                         class="ant-form-item-no-colon"
@@ -3606,7 +3606,7 @@ exports[`sqle/ExecWorkflow/Detail/ModifySqlStatement render snap when open is tr
                       />
                     </div>
                     <div
-                      class="ant-col ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                      class="ant-col ant-form-item-control"
                     >
                       <div
                         class="ant-form-item-control-input"
@@ -3615,14 +3615,14 @@ exports[`sqle/ExecWorkflow/Detail/ModifySqlStatement render snap when open is tr
                           class="ant-form-item-control-input-content"
                         >
                           <div
-                            class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+                            class="ant-space ant-space-horizontal ant-space-align-center"
                           >
                             <div
                               class="ant-space-item"
                               style="margin-right: 12px;"
                             >
                               <button
-                                class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary basic-button-wrapper css-geipcv"
+                                class="ant-btn ant-btn-primary basic-button-wrapper css-geipcv"
                                 type="button"
                               >
                                 <span>
@@ -3634,14 +3634,14 @@ exports[`sqle/ExecWorkflow/Detail/ModifySqlStatement render snap when open is tr
                               class="ant-space-item"
                             >
                               <div
-                                class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
+                                class="ant-space ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
                               >
                                 <div
                                   class="ant-space-item"
                                   style="margin-right: 8px;"
                                 >
                                   <button
-                                    class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default basic-button-wrapper css-geipcv"
+                                    class="ant-btn ant-btn-default basic-button-wrapper css-geipcv"
                                     type="button"
                                   >
                                     <span>
@@ -3690,10 +3690,10 @@ exports[`sqle/ExecWorkflow/Detail/ModifySqlStatement render snap when open is tr
             class="css-avbjmz"
           >
             <div
-              class="ant-row ant-row-space-between css-156vlto css-dev-only-do-not-override-txh9fw"
+              class="ant-row ant-row-space-between css-156vlto"
             >
               <div
-                class="ant-segmented basic-segmented-wrapper css-192b3m1 css-dev-only-do-not-override-txh9fw"
+                class="ant-segmented basic-segmented-wrapper css-192b3m1"
               >
                 <div
                   class="ant-segmented-group"
@@ -3739,7 +3739,7 @@ exports[`sqle/ExecWorkflow/Detail/ModifySqlStatement render snap when open is tr
                 </div>
               </div>
               <div
-                class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+                class="ant-space ant-space-horizontal ant-space-align-center"
               >
                 <div
                   class="ant-space-item"
@@ -3760,7 +3760,7 @@ exports[`sqle/ExecWorkflow/Detail/ModifySqlStatement render snap when open is tr
                   style="margin-right: 4px;"
                 >
                   <div
-                    class="ant-divider css-dev-only-do-not-override-txh9fw ant-divider-vertical"
+                    class="ant-divider ant-divider-vertical"
                     role="separator"
                     style="height: 28px;"
                   />
@@ -3769,7 +3769,7 @@ exports[`sqle/ExecWorkflow/Detail/ModifySqlStatement render snap when open is tr
                   class="ant-space-item"
                 >
                   <button
-                    class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default ant-btn-sm basic-button-wrapper css-geipcv"
+                    class="ant-btn ant-btn-default ant-btn-sm basic-button-wrapper css-geipcv"
                     type="button"
                   >
                     <span
@@ -3787,7 +3787,7 @@ exports[`sqle/ExecWorkflow/Detail/ModifySqlStatement render snap when open is tr
                       </svg>
                     </span>
                     <div
-                      class="ant-space css-dev-only-do-not-override-674gwq ant-space-horizontal ant-space-align-center"
+                      class="ant-space ant-space-horizontal ant-space-align-center"
                     >
                       <div
                         class="ant-space-item"
@@ -3853,7 +3853,7 @@ exports[`sqle/ExecWorkflow/Detail/ModifySqlStatement render snap when open is tr
                 </div>
               </div>
               <div
-                class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center audit-result-info"
+                class="ant-space ant-space-horizontal ant-space-align-center audit-result-info"
               >
                 <div
                   class="ant-space-item"
@@ -3915,10 +3915,10 @@ exports[`sqle/ExecWorkflow/Detail/ModifySqlStatement render snap when open is tr
               </div>
             </div>
             <div
-              class="ant-table-wrapper actiontech-table-namespace css-fxd6ka css-dev-only-do-not-override-bj9uhl"
+              class="ant-table-wrapper actiontech-table-namespace css-fxd6ka"
             >
               <div
-                class="ant-spin-nested-loading css-dev-only-do-not-override-bj9uhl"
+                class="ant-spin-nested-loading"
               >
                 <div
                   class="ant-spin-container"
@@ -4054,7 +4054,7 @@ exports[`sqle/ExecWorkflow/Detail/ModifySqlStatement render snap when open is tr
                                   class="actiontech-sql-snippet-renderer-wrapper css-dz7fl9"
                                 >
                                   <div
-                                    class="ant-typography ant-typography-ellipsis ant-typography-single-line ant-typography-ellipsis-single-line margin-bottom-0 css-dev-only-do-not-override-bj9uhl"
+                                    class="ant-typography ant-typography-ellipsis ant-typography-single-line ant-typography-ellipsis-single-line margin-bottom-0"
                                   >
                                     <span>
                                       <span
@@ -4101,7 +4101,7 @@ exports[`sqle/ExecWorkflow/Detail/ModifySqlStatement render snap when open is tr
                               >
                                 <div>
                                   <div
-                                    class="ant-space css-dev-only-do-not-override-bj9uhl ant-space-horizontal ant-space-align-center"
+                                    class="ant-space ant-space-horizontal ant-space-align-center"
                                   >
                                     <div
                                       class="ant-space-item"
@@ -4125,7 +4125,7 @@ exports[`sqle/ExecWorkflow/Detail/ModifySqlStatement render snap when open is tr
                                 class="ant-table-cell audit-result-describe-column"
                               >
                                 <button
-                                  class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm basic-button-wrapper css-geipcv"
+                                  class="ant-btn ant-btn-default ant-btn-sm basic-button-wrapper css-geipcv"
                                   type="button"
                                 >
                                   <span>
@@ -4141,14 +4141,14 @@ exports[`sqle/ExecWorkflow/Detail/ModifySqlStatement render snap when open is tr
                                   class="css-new95e"
                                 >
                                   <div
-                                    class="ant-space css-dev-only-do-not-override-bj9uhl ant-space-horizontal ant-space-align-center"
+                                    class="ant-space ant-space-horizontal ant-space-align-center"
                                   >
                                     <div
                                       class="ant-space-item"
                                       style="margin-right: 8px;"
                                     >
                                       <button
-                                        class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                        class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
                                         type="button"
                                       >
                                         <span>
@@ -4161,7 +4161,7 @@ exports[`sqle/ExecWorkflow/Detail/ModifySqlStatement render snap when open is tr
                                       style="margin-right: 8px;"
                                     >
                                       <button
-                                        class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                        class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
                                         type="button"
                                       >
                                         <span>
@@ -4173,7 +4173,7 @@ exports[`sqle/ExecWorkflow/Detail/ModifySqlStatement render snap when open is tr
                                       class="ant-space-item"
                                     >
                                       <button
-                                        class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                        class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
                                         type="button"
                                       >
                                         <span
@@ -4206,7 +4206,7 @@ exports[`sqle/ExecWorkflow/Detail/ModifySqlStatement render snap when open is tr
                     </div>
                   </div>
                   <ul
-                    class="ant-pagination ant-table-pagination ant-table-pagination-right actiontech-table-pagination actiontech-table-pagination-fixed css-dev-only-do-not-override-bj9uhl"
+                    class="ant-pagination ant-table-pagination ant-table-pagination-right actiontech-table-pagination actiontech-table-pagination-fixed"
                   >
                     <li
                       class="ant-pagination-total-text"
@@ -4218,7 +4218,7 @@ exports[`sqle/ExecWorkflow/Detail/ModifySqlStatement render snap when open is tr
                     <li
                       aria-disabled="true"
                       class="ant-pagination-prev ant-pagination-disabled"
-                      title="Previous Page"
+                      title="上一页"
                     >
                       <button
                         class="ant-pagination-item-link"
@@ -4261,7 +4261,7 @@ exports[`sqle/ExecWorkflow/Detail/ModifySqlStatement render snap when open is tr
                     <li
                       aria-disabled="true"
                       class="ant-pagination-next ant-pagination-disabled"
-                      title="Next Page"
+                      title="下一页"
                     >
                       <button
                         class="ant-pagination-item-link"
@@ -4294,8 +4294,8 @@ exports[`sqle/ExecWorkflow/Detail/ModifySqlStatement render snap when open is tr
                       class="ant-pagination-options"
                     >
                       <div
-                        aria-label="Page Size"
-                        class="ant-select ant-pagination-options-size-changer css-dev-only-do-not-override-bj9uhl ant-select-single ant-select-show-arrow ant-select-show-search"
+                        aria-label="页码"
+                        class="ant-select ant-pagination-options-size-changer ant-select-single ant-select-show-arrow ant-select-show-search"
                       >
                         <div
                           class="ant-select-selector"
@@ -4309,7 +4309,7 @@ exports[`sqle/ExecWorkflow/Detail/ModifySqlStatement render snap when open is tr
                               aria-controls="rc_select_TEST_OR_SSR_list"
                               aria-expanded="false"
                               aria-haspopup="listbox"
-                              aria-label="Page Size"
+                              aria-label="页码"
                               aria-owns="rc_select_TEST_OR_SSR_list"
                               autocomplete="off"
                               class="ant-select-selection-search-input"
@@ -4321,9 +4321,9 @@ exports[`sqle/ExecWorkflow/Detail/ModifySqlStatement render snap when open is tr
                           </span>
                           <span
                             class="ant-select-selection-item"
-                            title="20 / page"
+                            title="20 条/页"
                           >
-                            20 / page
+                            20 条/页
                           </span>
                         </div>
                         <span

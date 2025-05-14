@@ -4,7 +4,7 @@ exports[`page/ProjectOverview/OrderRiskList render no data and refresh list 1`] 
 <body>
   <div>
     <div
-      class="ant-card ant-card-hoverable css-121p60i css-dev-only-do-not-override-txh9fw"
+      class="ant-card ant-card-hoverable css-121p60i"
     >
       <div
         class="ant-card-body"
@@ -25,7 +25,7 @@ exports[`page/ProjectOverview/OrderRiskList render no data and refresh list 1`] 
             class="extra"
           >
             <button
-              class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default ant-btn-sm basic-button-wrapper css-geipcv"
+              class="ant-btn ant-btn-default ant-btn-sm basic-button-wrapper css-geipcv"
               type="button"
             >
               <span>
@@ -44,7 +44,7 @@ exports[`page/ProjectOverview/OrderRiskList render no data and refresh list 1`] 
               class="icon-center-wrapper MuiBox-root css-0"
             >
               <div
-                class="css-dev-only-do-not-override-txh9fw ant-empty is-icon-tips css-19kysfv"
+                class="ant-empty is-icon-tips css-19kysfv"
               >
                 <div
                   class="ant-empty-image"
@@ -98,7 +98,7 @@ exports[`page/ProjectOverview/OrderRiskList render no data and refresh list 1`] 
                   class="ant-empty-footer"
                 >
                   <button
-                    class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-text ant-btn-sm basic-button-wrapper css-geipcv"
+                    class="ant-btn ant-btn-text ant-btn-sm basic-button-wrapper css-geipcv"
                     type="button"
                   >
                     <span>
@@ -120,7 +120,7 @@ exports[`page/ProjectOverview/OrderRiskList render order risk list and check mor
 <body>
   <div>
     <div
-      class="ant-card ant-card-hoverable css-121p60i css-dev-only-do-not-override-txh9fw"
+      class="ant-card ant-card-hoverable css-121p60i"
     >
       <div
         class="ant-card-body"
@@ -141,7 +141,7 @@ exports[`page/ProjectOverview/OrderRiskList render order risk list and check mor
             class="extra"
           >
             <button
-              class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default ant-btn-sm basic-button-wrapper css-geipcv"
+              class="ant-btn ant-btn-default ant-btn-sm basic-button-wrapper css-geipcv"
               type="button"
             >
               <span>
@@ -163,10 +163,10 @@ exports[`page/ProjectOverview/OrderRiskList render order risk list and check mor
                 class="report-base-table-wrapper css-dyc61v"
               >
                 <div
-                  class="ant-table-wrapper report-base-table css-dev-only-do-not-override-1ror0i4"
+                  class="ant-table-wrapper report-base-table"
                 >
                   <div
-                    class="ant-spin-nested-loading css-dev-only-do-not-override-1ror0i4"
+                    class="ant-spin-nested-loading"
                   >
                     <div
                       class="ant-spin-container"
@@ -336,13 +336,13 @@ exports[`page/ProjectOverview/OrderRiskList render order risk list and check mor
                                     style="text-align: left;"
                                   >
                                     <div
-                                      class="ant-space css-dev-only-do-not-override-1ror0i4 ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
+                                      class="ant-space ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
                                     >
                                       <div
                                         class="ant-space-item"
                                       >
                                         <span
-                                          class="ant-avatar ant-avatar-circle action-avatar css-1wq79dc css-dev-only-do-not-override-1ror0i4"
+                                          class="ant-avatar ant-avatar-circle action-avatar css-1wq79dc"
                                         >
                                           <span
                                             class="ant-avatar-string"

@@ -5,7 +5,7 @@ exports[`test ScheduleTimeModal ce should not render enable wechat notification 
   <div />
   <div>
     <div
-      class="ant-modal-root css-dev-only-do-not-override-txh9fw"
+      class="ant-modal-root"
     >
       <div
         class="ant-modal-mask"
@@ -17,7 +17,7 @@ exports[`test ScheduleTimeModal ce should not render enable wechat notification 
         <div
           aria-labelledby="test-id"
           aria-modal="true"
-          class="ant-modal css-dev-only-do-not-override-txh9fw basic-modal-wrapper css-vvpsbb"
+          class="ant-modal basic-modal-wrapper css-vvpsbb"
           role="dialog"
           style="width: 480px;"
         >
@@ -43,7 +43,7 @@ exports[`test ScheduleTimeModal ce should not render enable wechat notification 
               class="ant-modal-body"
             >
               <form
-                class="ant-form ant-form-horizontal css-dev-only-do-not-override-txh9fw clearPaddingBottom css-19jfn7e"
+                class="ant-form ant-form-horizontal clearPaddingBottom css-19jfn7e"
               >
                 <div
                   class="css-haw22i"
@@ -57,13 +57,13 @@ exports[`test ScheduleTimeModal ce should not render enable wechat notification 
                   任意时间
                 </div>
                 <div
-                  class="ant-form-item css-15d6abf css-dev-only-do-not-override-txh9fw ant-form-item-has-success"
+                  class="ant-form-item css-15d6abf ant-form-item-has-success"
                 >
                   <div
-                    class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                    class="ant-row ant-form-item-row"
                   >
                     <div
-                      class="ant-col ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                      class="ant-col ant-form-item-control"
                     >
                       <div
                         class="ant-form-item-control-input"
@@ -104,7 +104,7 @@ exports[`test ScheduleTimeModal ce should not render enable wechat notification 
                               />
                             </svg>
                             <div
-                              class="ant-picker ant-picker-status-success css-dev-only-do-not-override-1xo6ltj ant-picker-focused"
+                              class="ant-picker ant-picker-status-success ant-picker-focused"
                             >
                               <div
                                 class="ant-picker-input"
@@ -113,7 +113,7 @@ exports[`test ScheduleTimeModal ce should not render enable wechat notification 
                                   aria-required="true"
                                   autocomplete="off"
                                   id="schedule_time"
-                                  placeholder="Select date"
+                                  placeholder="请选择日期"
                                   size="21"
                                   title="2024-12-29 06:06:06"
                                   value="2024-12-29 06:06:06"
@@ -146,13 +146,14 @@ exports[`test ScheduleTimeModal ce should not render enable wechat notification 
                                       aria-hidden="true"
                                       data-icon="close-circle"
                                       fill="currentColor"
+                                      fill-rule="evenodd"
                                       focusable="false"
                                       height="1em"
                                       viewBox="64 64 896 896"
                                       width="1em"
                                     >
                                       <path
-                                        d="M512 64C264.6 64 64 264.6 64 512s200.6 448 448 448 448-200.6 448-448S759.4 64 512 64zm165.4 618.2l-66-.3L512 563.4l-99.3 118.4-66.1.3c-4.4 0-8-3.5-8-8 0-1.9.7-3.7 1.9-5.2l130.1-155L340.5 359a8.32 8.32 0 01-1.9-5.2c0-4.4 3.6-8 8-8l66.1.3L512 464.6l99.3-118.4 66-.3c4.4 0 8 3.5 8 8 0 1.9-.7 3.7-1.9 5.2L553.5 514l130 155c1.2 1.5 1.9 3.3 1.9 5.2 0 4.4-3.6 8-8 8z"
+                                        d="M512 64c247.4 0 448 200.6 448 448S759.4 960 512 960 64 759.4 64 512 264.6 64 512 64zm127.98 274.82h-.04l-.08.06L512 466.75 384.14 338.88c-.04-.05-.06-.06-.08-.06a.12.12 0 00-.07 0c-.03 0-.05.01-.09.05l-45.02 45.02a.2.2 0 00-.05.09.12.12 0 000 .07v.02a.27.27 0 00.06.06L466.75 512 338.88 639.86c-.05.04-.06.06-.06.08a.12.12 0 000 .07c0 .03.01.05.05.09l45.02 45.02a.2.2 0 00.09.05.12.12 0 00.07 0c.02 0 .04-.01.08-.05L512 557.25l127.86 127.87c.04.04.06.05.08.05a.12.12 0 00.07 0c.03 0 .05-.01.09-.05l45.02-45.02a.2.2 0 00.05-.09.12.12 0 000-.07v-.02a.27.27 0 00-.05-.06L557.25 512l127.87-127.86c.04-.04.05-.06.05-.08a.12.12 0 000-.07c0-.03-.01-.05-.05-.09l-45.02-45.02a.2.2 0 00-.09-.05.12.12 0 00-.07 0z"
                                       />
                                     </svg>
                                   </span>
@@ -160,7 +161,7 @@ exports[`test ScheduleTimeModal ce should not render enable wechat notification 
                               </div>
                             </div>
                             <div
-                              class="ant-picker-dropdown ant-picker-dropdown-hidden css-dev-only-do-not-override-1xo6ltj ant-picker-dropdown-placement-bottomLeft"
+                              class="ant-picker-dropdown ant-picker-dropdown-hidden ant-picker-dropdown-placement-bottomLeft"
                               style="--arrow-x: 0px; --arrow-y: 0px; left: 0px; top: 0px; box-sizing: border-box; pointer-events: none;"
                             >
                               <div
@@ -216,18 +217,18 @@ exports[`test ScheduleTimeModal ce should not render enable wechat notification 
                                             class="ant-picker-header-view"
                                           >
                                             <button
+                                              class="ant-picker-year-btn"
+                                              tabindex="-1"
+                                              type="button"
+                                            >
+                                              2024年
+                                            </button>
+                                            <button
                                               class="ant-picker-month-btn"
                                               tabindex="-1"
                                               type="button"
                                             >
                                               Dec
-                                            </button>
-                                            <button
-                                              class="ant-picker-year-btn"
-                                              tabindex="-1"
-                                              type="button"
-                                            >
-                                              2024
                                             </button>
                                           </div>
                                           <button
@@ -2069,18 +2070,18 @@ exports[`test ScheduleTimeModal ce should not render enable wechat notification 
                                           <a
                                             class="ant-picker-now-btn"
                                           >
-                                            Now
+                                            此刻
                                           </a>
                                         </li>
                                         <li
                                           class="ant-picker-ok"
                                         >
                                           <button
-                                            class="ant-btn css-dev-only-do-not-override-1xo6ltj ant-btn-primary ant-btn-sm"
+                                            class="ant-btn ant-btn-primary ant-btn-sm"
                                             type="button"
                                           >
                                             <span>
-                                              OK
+                                              确 定
                                             </span>
                                           </button>
                                         </li>
@@ -2102,7 +2103,7 @@ exports[`test ScheduleTimeModal ce should not render enable wechat notification 
               class="ant-modal-footer"
             >
               <button
-                class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default basic-button-wrapper css-geipcv"
+                class="ant-btn ant-btn-default basic-button-wrapper css-geipcv"
                 type="button"
               >
                 <span>
@@ -2110,7 +2111,7 @@ exports[`test ScheduleTimeModal ce should not render enable wechat notification 
                 </span>
               </button>
               <button
-                class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary basic-button-wrapper css-geipcv"
+                class="ant-btn ant-btn-primary basic-button-wrapper css-geipcv"
                 data-testid="confirm-button"
                 type="button"
               >

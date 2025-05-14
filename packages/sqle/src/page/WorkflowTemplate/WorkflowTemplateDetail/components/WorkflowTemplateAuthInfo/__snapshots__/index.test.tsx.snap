@@ -10,19 +10,19 @@ exports[`page/WorkflowTemplate/WorkflowTemplateAuthInfo render auth info 1`] = `
         class="css-4kgje5"
       >
         <span
-          class="ant-typography top-auth-level css-dev-only-do-not-override-txh9fw"
+          class="ant-typography top-auth-level"
         >
           允许创建工单的最高审核等级
         </span>
         <span
-          class="ant-typography auth-level-text css-dev-only-do-not-override-txh9fw"
+          class="ant-typography auth-level-text"
           style="color: rgb(235, 173, 28);"
         >
           告警(Warning)
         </span>
         <div
           aria-valuenow="75"
-          class="ant-progress ant-progress-status-normal ant-progress-steps css-dev-only-do-not-override-txh9fw"
+          class="ant-progress ant-progress-status-normal ant-progress-steps"
           role="progressbar"
         >
           <div
@@ -51,12 +51,12 @@ exports[`page/WorkflowTemplate/WorkflowTemplateAuthInfo render auth info 1`] = `
         class="css-aaj731"
       >
         <span
-          class="ant-typography auth-info-title css-dev-only-do-not-override-txh9fw"
+          class="ant-typography auth-info-title"
         >
           注意事项
         </span>
         <div
-          class="ant-typography auth-info-item css-dev-only-do-not-override-txh9fw"
+          class="ant-typography auth-info-item"
         >
           <ul
             class="auth-info-item-icon"
@@ -83,12 +83,12 @@ exports[`page/WorkflowTemplate/WorkflowTemplateAuthInfo render auth info 1`] = `
         class="css-aaj731"
       >
         <span
-          class="ant-typography auth-info-title css-dev-only-do-not-override-txh9fw"
+          class="ant-typography auth-info-title"
         >
           审批流程模板更新时间
         </span>
         <div
-          class="ant-typography auth-info-item auth-info-time css-dev-only-do-not-override-txh9fw"
+          class="ant-typography auth-info-item auth-info-time"
         >
           <svg
             height="16"
