@@ -1,6 +1,6 @@
 import { act, cleanup, screen, fireEvent } from '@testing-library/react';
 import TagSelectorBar from '../TagSelectorBar';
-import { superRender } from '../../../../../testUtils/customRender';
+import { sqleSuperRender } from '../../../../../testUtils/superRender';
 import knowledgeBase from '../../../../../testUtils/mockApi/knowledgeBase';
 import { mockKnowledgeBaseTagListData } from '../../../../../testUtils/mockApi/knowledgeBase/data';
 import {
@@ -22,7 +22,7 @@ describe('TagSelectorBar', () => {
   });
 
   it('render init snap', () => {
-    const { container } = superRender(
+    const { container } = sqleSuperRender(
       <TagSelectorBar value={['RAND']} onChange={jest.fn()} />
     );
     expect(container).toMatchSnapshot();
@@ -31,7 +31,7 @@ describe('TagSelectorBar', () => {
 
   it('render select tag', async () => {
     const onChangeSpy = jest.fn();
-    const { baseElement } = superRender(
+    const { baseElement } = sqleSuperRender(
       <TagSelectorBar value={[]} onChange={onChangeSpy} />
     );
     expect(getKnowledgeBaseTagList).toHaveBeenCalledTimes(1);
@@ -58,7 +58,7 @@ describe('TagSelectorBar', () => {
 
   it('render delete tag', async () => {
     const onChangeSpy = jest.fn();
-    superRender(<TagSelectorBar value={['RAND']} onChange={onChangeSpy} />);
+    sqleSuperRender(<TagSelectorBar value={['RAND']} onChange={onChangeSpy} />);
     expect(getKnowledgeBaseTagList).toHaveBeenCalledTimes(1);
     await act(async () => jest.advanceTimersByTime(3000));
     expect(screen.getByText('已选择标签(1)')).toBeInTheDocument();

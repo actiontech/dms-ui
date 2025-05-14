@@ -1,5 +1,5 @@
 import { fireEvent, screen } from '@testing-library/dom';
-import { superRender } from '../../../../testUtils/customRender';
+import { sqleSuperRender } from '../../../../testUtils/superRender';
 import BusinessRewrittenSuggestion from '../../components/BusinessRewrittenSuggestion';
 import { IRewriteSuggestion } from '@actiontech/shared/lib/api/sqle/service/common';
 import { SqlRewrittenMockDataNoDDL } from '../../../../testUtils/mockApi/task/data';
@@ -19,7 +19,7 @@ describe('BusinessRewrittenSuggestion', () => {
 
     describe('BusinessRewrittenSuggestion', () => {
       it('should render empty content when dataSource is empty', () => {
-        superRender(<BusinessRewrittenSuggestion dataSource={[]} />);
+        sqleSuperRender(<BusinessRewrittenSuggestion dataSource={[]} />);
         expect(screen.getByText('当前SQL重写无需人工介入')).toBeInTheDocument();
       });
 
@@ -27,7 +27,7 @@ describe('BusinessRewrittenSuggestion', () => {
         const mockDataSource = SqlRewrittenMockDataNoDDL.suggestions?.filter(
           (v) => v.type === RewriteSuggestionTypeEnum.statement
         )!;
-        superRender(
+        sqleSuperRender(
           <BusinessRewrittenSuggestion dataSource={mockDataSource} />
         );
         expect(getAllBySelector('.ant-list-items')[0].childElementCount).toBe(
@@ -40,7 +40,7 @@ describe('BusinessRewrittenSuggestion', () => {
       const mockProps = SqlRewrittenMockDataNoDDL.suggestions![0];
 
       it('should render markdown content correctly', () => {
-        const { container } = superRender(
+        const { container } = sqleSuperRender(
           <BusinessRewrittenDetails {...mockProps} />
         );
         expect(container).toMatchSnapshot();

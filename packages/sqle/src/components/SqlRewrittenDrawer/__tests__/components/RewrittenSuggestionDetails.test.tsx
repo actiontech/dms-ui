@@ -1,5 +1,5 @@
 import { fireEvent, screen } from '@testing-library/dom';
-import { superRender } from '../../../../testUtils/customRender';
+import { sqleSuperRender } from '../../../../testUtils/superRender';
 import RewrittenSuggestionDetails from '../../components/RewrittenSuggestionDetails';
 import {
   SqlRewrittenMockDataNoDDL,
@@ -51,7 +51,7 @@ LIMIT 1000 OFFSET 500;
         sqlNumber: 1
       };
 
-      superRender(<RewrittenSuggestionDetails {...props} />);
+      sqleSuperRender(<RewrittenSuggestionDetails {...props} />);
       expect(screen.getByText('当前SQL无优化空间')).toBeInTheDocument();
     });
 
@@ -66,7 +66,7 @@ LIMIT 1000 OFFSET 500;
         sqlNumber: 1
       };
 
-      superRender(<RewrittenSuggestionDetails {...props} />);
+      sqleSuperRender(<RewrittenSuggestionDetails {...props} />);
       expect(getAllBySelector('.ant-list-items')[0].childElementCount).toBe(
         mockDataSource.length
       );
@@ -102,7 +102,7 @@ LIMIT 1000 OFFSET 500;
     };
 
     it('should toggle details visibility on click', () => {
-      const { container } = superRender(
+      const { container } = sqleSuperRender(
         <RewrittenSuggestionItem {...mockProps} />
       );
 
@@ -116,7 +116,7 @@ LIMIT 1000 OFFSET 500;
       const mockDataSource = SqlRewrittenMockDataNoDDL.suggestions?.filter(
         (v) => v.type === RewriteSuggestionTypeEnum.statement
       )!;
-      const { container } = superRender(
+      const { container } = sqleSuperRender(
         <RewrittenSuggestionDetails
           dataSource={[mockDataSource[0], mockDataSource[1]]}
           originalSql={mockProps.originalSql}
@@ -135,7 +135,7 @@ LIMIT 1000 OFFSET 500;
         .spyOn(Copy, 'copyTextByTextarea')
         .mockImplementation(mockCopyTextByTextareaSpy);
 
-      superRender(<RewrittenSuggestionItem {...mockProps} />);
+      sqleSuperRender(<RewrittenSuggestionItem {...mockProps} />);
 
       const ruleItem = screen.getByText(mockDataSource.rule_name);
       fireEvent.click(ruleItem);
@@ -151,7 +151,7 @@ LIMIT 1000 OFFSET 500;
     });
 
     it('should handle show SQL difference action', () => {
-      const { container } = superRender(
+      const { container } = sqleSuperRender(
         <RewrittenSuggestionItem
           {...mockProps}
           dataSource={mockUseDDLDataSource}
@@ -169,7 +169,7 @@ LIMIT 1000 OFFSET 500;
     });
 
     it('should render SQL analysis link if DDL/DCL exists', () => {
-      superRender(
+      sqleSuperRender(
         <RewrittenSuggestionItem
           {...mockProps}
           dataSource={mockUseDDLDataSource}
@@ -187,7 +187,7 @@ LIMIT 1000 OFFSET 500;
 
     it('should not render SQL difference related components when rewrittenSQL is equal originalSQL', () => {
       const dataSource = SqlRewrittenMockDataWithNotRewriter.suggestions![1];
-      superRender(
+      sqleSuperRender(
         <RewrittenSuggestionItem
           {...mockProps}
           originalSql={dataSource.rewritten_sql!}

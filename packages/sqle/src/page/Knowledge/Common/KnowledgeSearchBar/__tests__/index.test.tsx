@@ -1,6 +1,6 @@
 import { act, cleanup, screen, fireEvent } from '@testing-library/react';
 import KnowledgeSearchBar from '../index';
-import { superRender } from '../../../../../testUtils/customRender';
+import { sqleSuperRender } from '../../../../../testUtils/superRender';
 import knowledgeBase from '../../../../../testUtils/mockApi/knowledgeBase';
 import {
   ignoreConsoleErrors,
@@ -24,13 +24,13 @@ describe('KnowledgeSearchBar', () => {
   });
 
   it('render init snap', () => {
-    const { container } = superRender(<KnowledgeSearchBar />);
+    const { container } = sqleSuperRender(<KnowledgeSearchBar />);
     expect(container).toMatchSnapshot();
     expect(getKnowledgeBaseTagList).not.toHaveBeenCalled();
   });
 
   it('render with allowSelectTag', async () => {
-    const { container } = superRender(<KnowledgeSearchBar allowSelectTag />);
+    const { container } = sqleSuperRender(<KnowledgeSearchBar allowSelectTag />);
     expect(getKnowledgeBaseTagList).toHaveBeenCalled();
     await act(async () => jest.advanceTimersByTime(3000));
     expect(screen.getByText('已选择标签(0)')).toBeInTheDocument();
@@ -40,7 +40,7 @@ describe('KnowledgeSearchBar', () => {
   });
 
   it('search empty searchText when allowSearchEmptyText is false', async () => {
-    superRender(<KnowledgeSearchBar />);
+    sqleSuperRender(<KnowledgeSearchBar />);
     const inputEle = getBySelector('textarea.ant-input');
     fireEvent.change(inputEle, {
       target: {
@@ -55,7 +55,7 @@ describe('KnowledgeSearchBar', () => {
 
   it('search empty searchText when allowSearchEmptyText is true', async () => {
     const onSearchSpy = jest.fn();
-    superRender(
+    sqleSuperRender(
       <KnowledgeSearchBar allowSearchEmptyText onSearch={onSearchSpy} />
     );
     fireEvent.click(getBySelector('.search-icon'));
@@ -70,7 +70,7 @@ describe('KnowledgeSearchBar', () => {
   it('render controlled mode', async () => {
     const setSearchTextSpy = jest.fn();
     const onSearchSpy = jest.fn();
-    superRender(
+    sqleSuperRender(
       <KnowledgeSearchBar
         allowSelectTag
         searchText="test"
@@ -92,7 +92,7 @@ describe('KnowledgeSearchBar', () => {
 
   it('render uncontrolled mode', async () => {
     const onSearchSpy = jest.fn();
-    superRender(<KnowledgeSearchBar allowSelectTag onSearch={onSearchSpy} />);
+    sqleSuperRender(<KnowledgeSearchBar allowSelectTag onSearch={onSearchSpy} />);
     await act(async () => jest.advanceTimersByTime(3000));
     const inputEle = getBySelector('textarea.ant-input');
     fireEvent.change(inputEle, {

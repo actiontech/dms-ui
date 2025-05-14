@@ -12,7 +12,7 @@ import {
   instanceTipsMockData
 } from '../../../../../../testUtils/mockApi/instance/data';
 import { projectRuleTemplateList } from '../../../../../../testUtils/mockApi/rule_template/data';
-import { superRender } from '@actiontech/shared/lib/testUtil/customRender';
+import { superRender } from '@actiontech/shared/lib/testUtil/superRender';
 import {
   pipelineNodeDetailObjectTypeEnum,
   pipelineNodeDetailAuditMethodEnum,

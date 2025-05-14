@@ -2,7 +2,7 @@ import {
   UtilsConsoleErrorStringsEnum,
   ignoreConsoleErrors
 } from '@actiontech/shared/lib/testUtil/common';
-import { superRender } from '../../../../../testUtils/customRender';
+import { sqleSuperRender } from '../../../../../testUtils/superRender';
 import RewrittenSqlCommonEditor from '../../../components/Common/RewrittenSqlCommonEditor';
 
 describe('RewrittenSqlCommonEditor', () => {
@@ -16,13 +16,13 @@ describe('RewrittenSqlCommonEditor', () => {
 
   it('should render DiffViewOnlyEditor when showSqlDifference is true', () => {
     expect(
-      superRender(<RewrittenSqlCommonEditor {...mockProps} />).container
+      sqleSuperRender(<RewrittenSqlCommonEditor {...mockProps} />).container
     ).toMatchSnapshot();
   });
 
   it('should render ViewOnlyEditor when showSqlDifference is false', () => {
     expect(
-      superRender(<RewrittenSqlCommonEditor {...mockProps} />).container
+      sqleSuperRender(<RewrittenSqlCommonEditor {...mockProps} />).container
     ).toMatchSnapshot();
   });
 });

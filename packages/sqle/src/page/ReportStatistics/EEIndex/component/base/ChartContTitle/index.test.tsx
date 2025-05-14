@@ -1,4 +1,4 @@
-import { renderWithTheme } from '../../../../../../testUtils/customRender';
+import { sqleSuperRender } from '../../../../../../testUtils/superRender';
 
 import ChartContTitle, { IChartTitle } from '.';
 
@@ -9,7 +9,7 @@ const partsOfParams = {
 
 describe('ReportStatistics/ChartContTitle', () => {
   const customRender = (params?: IChartTitle) => {
-    return renderWithTheme(<ChartContTitle {...partsOfParams} {...params} />);
+    return sqleSuperRender(<ChartContTitle {...partsOfParams} {...params} />);
   };
 
   it('render snap when has fixed params', () => {

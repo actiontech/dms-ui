@@ -1,5 +1,5 @@
 import RuleKnowledge from '.';
-import { superRender } from '../../testUtils/customRender';
+import { sqleSuperRender } from '../../testUtils/superRender';
 import {
   ruleKnowledgeData,
   ruleType as dbType,
@@ -65,7 +65,7 @@ describe('page/RuleKnowledge', () => {
   });
 
   const customRender = () => {
-    return superRender(<RuleKnowledge />);
+    return sqleSuperRender(<RuleKnowledge />);
   };
 
   it('request rule info and not custom rule knowledge', async () => {

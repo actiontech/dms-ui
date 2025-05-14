@@ -1,5 +1,5 @@
 import { cleanup, screen, act, fireEvent } from '@testing-library/react';
-import { renderWithReduxAndTheme } from '@actiontech/shared/lib/testUtil/customRender';
+import { superRender } from '@actiontech/shared/lib/testUtil/superRender';
 import RuleTemplateList from '.';
 import EventEmitter from '../../../utils/EventEmitter';
 import EmitterKey from '../../../data/EmitterKey';
@@ -9,7 +9,6 @@ import { mockUseDbServiceDriver } from '@actiontech/shared/lib/testUtil/mockHook
 import { mockCurrentUserReturn } from '@actiontech/shared/lib/testUtil/mockHook/data';
 import rule_template from '../../../testUtils/mockApi/rule_template';
 import { publicRuleTemplateListMockData } from '../../../testUtils/mockApi/rule_template/data';
-import { useNavigate, BrowserRouter } from 'react-router-dom';
 import { ModalName } from '../../../data/ModalName';
 import { useDispatch, useSelector } from 'react-redux';
 import {
@@ -62,11 +61,7 @@ describe('sqle/GlobalRuleTemplate/RuleTemplateList', () => {
   });
 
   const customRender = (hiddenOperations = false) =>
-    renderWithReduxAndTheme(
-      <BrowserRouter>
-        <RuleTemplateList hiddenOperations={hiddenOperations} />
-      </BrowserRouter>
-    );
+    superRender(<RuleTemplateList hiddenOperations={hiddenOperations} />);
 
   it('render rule template list when hiddenOperations is falsy', async () => {
     const { baseElement } = customRender();

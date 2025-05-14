@@ -1,5 +1,5 @@
 import { act, fireEvent, screen } from '@testing-library/react';
-import { superRender } from '../../../../testUtils/customRender';
+import { sqleSuperRender } from '../../../../testUtils/superRender';
 import instance from '../../../../testUtils/mockApi/instance';
 import { mockUseCurrentProject } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentProject';
 import { mockDatabaseType } from '../../../../testUtils/mockHooks/mockDatabaseType';
@@ -48,13 +48,13 @@ describe('EnvironmentSelector', () => {
   });
 
   it('should render the baseline and comparison environment selectors', () => {
-    const { container } = superRender(<ComparisonEntry />);
+    const { container } = sqleSuperRender(<ComparisonEntry />);
 
     expect(container).toMatchSnapshot();
   });
 
   it('should call executeComparison when the button is clicked', async () => {
-    superRender(<ComparisonEntry />);
+    sqleSuperRender(<ComparisonEntry />);
 
     await act(async () => jest.advanceTimersByTime(3000));
 
@@ -96,7 +96,7 @@ describe('EnvironmentSelector', () => {
   });
 
   it('should show an error message when trying to generate SQL without any checked nodes', async () => {
-    superRender(<ComparisonEntry />);
+    sqleSuperRender(<ComparisonEntry />);
 
     await act(async () => jest.advanceTimersByTime(3000));
 
@@ -166,7 +166,7 @@ describe('EnvironmentSelector', () => {
   });
 
   it('should toggle the showDifferencesOnly state and clear checked nodes when the toggle is clicked', async () => {
-    superRender(<ComparisonEntry />);
+    sqleSuperRender(<ComparisonEntry />);
 
     await act(async () => jest.advanceTimersByTime(3000));
 
@@ -223,7 +223,7 @@ describe('EnvironmentSelector', () => {
         )
       })
     );
-    superRender(<ComparisonEntry />);
+    sqleSuperRender(<ComparisonEntry />);
 
     await act(async () => jest.advanceTimersByTime(3000));
 
@@ -255,7 +255,7 @@ describe('EnvironmentSelector', () => {
       writable: true
     });
 
-    const { container } = superRender(<ComparisonEntry />);
+    const { container } = sqleSuperRender(<ComparisonEntry />);
 
     await act(async () => jest.advanceTimersByTime(3000));
 

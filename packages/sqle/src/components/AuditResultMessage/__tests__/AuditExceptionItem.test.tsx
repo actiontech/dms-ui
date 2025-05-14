@@ -1,10 +1,10 @@
-import { superRender } from '../../../testUtils/customRender';
+import { sqleSuperRender } from '../../../testUtils/superRender';
 import { AuditTaskSQLsMockDataWithOnlyExceptionRule } from '../../../testUtils/mockApi/task/data';
 import AuditExceptionItem from '../AuditExceptionItem';
 
 describe('AuditExceptionItem', () => {
   it('should match snapshot', () => {
-    const { container } = superRender(
+    const { container } = sqleSuperRender(
       <AuditExceptionItem
         auditExceptionResult={
           AuditTaskSQLsMockDataWithOnlyExceptionRule[0].audit_result![0]
