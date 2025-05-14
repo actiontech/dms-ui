@@ -9,6 +9,10 @@ import { act, renderHook } from '@testing-library/react';
 import { mockUseCurrentProject } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentProject';
 import { mockUseDbServiceDriver } from '@actiontech/shared/lib/testUtil/mockHook/mockUseDbServiceDriver';
 import { useSelector } from 'react-redux';
+import {
+  ignoreConsoleErrors,
+  UtilsConsoleErrorStringsEnum
+} from '@actiontech/shared/lib/testUtil/common';
 
 jest.mock('react-redux', () => ({
   ...jest.requireActual('react-redux'),
@@ -28,6 +32,8 @@ describe('test sqle/SqlAuditInfoForm', () => {
       </Form>
     );
   };
+
+  ignoreConsoleErrors([UtilsConsoleErrorStringsEnum.UNKNOWN_EVENT_HANDLER]);
 
   beforeEach(() => {
     jest.useFakeTimers();

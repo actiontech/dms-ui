@@ -88,15 +88,15 @@ describe('base/System/LoginConnection/Oauth', () => {
           '关闭配置后当前的编辑信息将不会被保留，是否确认关闭配置？'
         )
       ).toBeInTheDocument();
-      expect(screen.getByText('Cancel')).toBeInTheDocument();
-      expect(screen.getByText('OK')).toBeInTheDocument();
+      expect(screen.getAllByText('取 消')[0]).toBeInTheDocument();
+      expect(screen.getByText('确 定')).toBeInTheDocument();
 
-      fireEvent.click(screen.getByText('Cancel'));
+      fireEvent.click(screen.getAllByText('取 消')[0]);
       await act(async () => jest.advanceTimersByTime(500));
 
       fireEvent.click(switchEle);
       await act(async () => jest.advanceTimersByTime(500));
-      fireEvent.click(screen.getByText('OK'));
+      fireEvent.click(screen.getByText('确 定'));
       await act(async () => jest.advanceTimersByTime(500));
       expect(baseElement).toMatchSnapshot();
     });

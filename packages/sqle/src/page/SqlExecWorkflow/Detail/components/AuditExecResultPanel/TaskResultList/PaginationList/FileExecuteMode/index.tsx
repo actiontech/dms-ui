@@ -108,13 +108,12 @@ const FileExecuteMode: React.FC<FileExecuteModeProps> = ({
             </span>
           ),
           onChange: (page, pageSize) => {
-            tableChange &&
-              tableChange(
-                { current: page, pageSize },
-                {},
-                {},
-                { currentDataSource: [], action: 'paginate' }
-              );
+            tableChange?.(
+              { current: page, pageSize },
+              {},
+              {},
+              { currentDataSource: [], action: 'paginate' }
+            );
           }
         }}
       />

@@ -5,27 +5,27 @@ exports[`test SqlManagementConf/ScanTypesSelection render init snap shot 1`] = `
   <div />
   <div>
     <form
-      class="ant-form ant-form-horizontal css-dev-only-do-not-override-txh9fw"
+      class="ant-form ant-form-horizontal"
     >
       <div
-        class="ant-spin-nested-loading css-dev-only-do-not-override-txh9fw"
+        class="ant-spin-nested-loading"
       >
         <div
           class="ant-spin-container"
         >
           <h1
-            class="ant-typography css-1eepp70 css-dev-only-do-not-override-txh9fw"
+            class="ant-typography css-1eepp70"
           >
             选择扫描类型
           </h1>
           <div
-            class="ant-form-item has-label-tip has-required-style css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+            class="ant-form-item has-label-tip has-required-style css-1jlm9cy"
           >
             <div
-              class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+              class="ant-row ant-form-item-row"
             >
               <div
-                class="ant-col ant-form-item-label css-dev-only-do-not-override-txh9fw"
+                class="ant-col ant-form-item-label"
               >
                 <label
                   class=""
@@ -47,7 +47,7 @@ exports[`test SqlManagementConf/ScanTypesSelection render init snap shot 1`] = `
                 </label>
               </div>
               <div
-                class="ant-col ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                class="ant-col ant-form-item-control"
               >
                 <div
                   class="ant-form-item-control-input"
@@ -78,27 +78,27 @@ exports[`test SqlManagementConf/ScanTypesSelection render scan type field when s
   <div />
   <div>
     <form
-      class="ant-form ant-form-horizontal css-dev-only-do-not-override-txh9fw"
+      class="ant-form ant-form-horizontal"
     >
       <div
-        class="ant-spin-nested-loading css-dev-only-do-not-override-txh9fw"
+        class="ant-spin-nested-loading"
       >
         <div
           class="ant-spin-container"
         >
           <h1
-            class="ant-typography css-1eepp70 css-dev-only-do-not-override-txh9fw"
+            class="ant-typography css-1eepp70"
           >
             选择扫描类型
           </h1>
           <div
-            class="ant-form-item has-label-tip has-required-style css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+            class="ant-form-item has-label-tip has-required-style css-1jlm9cy"
           >
             <div
-              class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+              class="ant-row ant-form-item-row"
             >
               <div
-                class="ant-col ant-form-item-label css-dev-only-do-not-override-txh9fw"
+                class="ant-col ant-form-item-label"
               >
                 <label
                   class=""
@@ -120,7 +120,7 @@ exports[`test SqlManagementConf/ScanTypesSelection render scan type field when s
                 </label>
               </div>
               <div
-                class="ant-col ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                class="ant-col ant-form-item-control"
               >
                 <div
                   class="ant-form-item-control-input"
@@ -129,7 +129,7 @@ exports[`test SqlManagementConf/ScanTypesSelection render scan type field when s
                     class="ant-form-item-control-input-content"
                   >
                     <div
-                      class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center scan-types-selector actiontech-toggle-tokens css-jucxeg"
+                      class="ant-space ant-space-horizontal ant-space-align-center scan-types-selector actiontech-toggle-tokens css-jucxeg"
                       id="scanTypes"
                       style="flex-wrap: wrap; margin-bottom: -8px;"
                     >
@@ -162,7 +162,7 @@ exports[`test SqlManagementConf/ScanTypesSelection render scan type field when s
                             title=""
                           >
                             <div
-                              class="ant-typography ant-typography-ellipsis ant-typography-single-line ant-typography-ellipsis-single-line basic-typography-ellipsis css-wgj5gs css-dev-only-do-not-override-txh9fw"
+                              class="ant-typography ant-typography-ellipsis ant-typography-single-line ant-typography-ellipsis-single-line basic-typography-ellipsis css-wgj5gs"
                             >
                               自定义
                             </div>
@@ -182,7 +182,7 @@ exports[`test SqlManagementConf/ScanTypesSelection render scan type field when s
                             title=""
                           >
                             <div
-                              class="ant-typography ant-typography-ellipsis ant-typography-single-line ant-typography-ellipsis-single-line basic-typography-ellipsis css-wgj5gs css-dev-only-do-not-override-txh9fw"
+                              class="ant-typography ant-typography-ellipsis ant-typography-single-line ant-typography-ellipsis-single-line basic-typography-ellipsis css-wgj5gs"
                             >
                               Mybatis 扫描
                             </div>
@@ -202,7 +202,7 @@ exports[`test SqlManagementConf/ScanTypesSelection render scan type field when s
                             title=""
                           >
                             <div
-                              class="ant-typography ant-typography-ellipsis ant-typography-single-line ant-typography-ellipsis-single-line basic-typography-ellipsis css-wgj5gs css-dev-only-do-not-override-txh9fw"
+                              class="ant-typography ant-typography-ellipsis ant-typography-single-line ant-typography-ellipsis-single-line basic-typography-ellipsis css-wgj5gs"
                             >
                               MySQL库表元数据
                             </div>
@@ -222,7 +222,7 @@ exports[`test SqlManagementConf/ScanTypesSelection render scan type field when s
                             title=""
                           >
                             <div
-                              class="ant-typography ant-typography-ellipsis ant-typography-single-line ant-typography-ellipsis-single-line basic-typography-ellipsis css-wgj5gs css-dev-only-do-not-override-txh9fw"
+                              class="ant-typography ant-typography-ellipsis ant-typography-single-line ant-typography-ellipsis-single-line basic-typography-ellipsis css-wgj5gs"
                             >
                               阿里RDS MySQL慢日志
                             </div>
@@ -242,7 +242,7 @@ exports[`test SqlManagementConf/ScanTypesSelection render scan type field when s
                             title=""
                           >
                             <div
-                              class="ant-typography ant-typography-ellipsis ant-typography-single-line ant-typography-ellipsis-single-line basic-typography-ellipsis css-wgj5gs css-dev-only-do-not-override-txh9fw"
+                              class="ant-typography ant-typography-ellipsis ant-typography-single-line ant-typography-ellipsis-single-line basic-typography-ellipsis css-wgj5gs"
                             >
                               SQL文件
                             </div>
@@ -262,7 +262,7 @@ exports[`test SqlManagementConf/ScanTypesSelection render scan type field when s
                             title=""
                           >
                             <div
-                              class="ant-typography ant-typography-ellipsis ant-typography-single-line ant-typography-ellipsis-single-line basic-typography-ellipsis css-wgj5gs css-dev-only-do-not-override-txh9fw"
+                              class="ant-typography ant-typography-ellipsis ant-typography-single-line ant-typography-ellipsis-single-line basic-typography-ellipsis css-wgj5gs"
                             >
                               测试扫描类型
                             </div>
@@ -287,27 +287,27 @@ exports[`test SqlManagementConf/ScanTypesSelection render select All type 1`] = 
   <div />
   <div>
     <form
-      class="ant-form ant-form-horizontal css-dev-only-do-not-override-txh9fw"
+      class="ant-form ant-form-horizontal"
     >
       <div
-        class="ant-spin-nested-loading css-dev-only-do-not-override-txh9fw"
+        class="ant-spin-nested-loading"
       >
         <div
           class="ant-spin-container"
         >
           <h1
-            class="ant-typography css-1eepp70 css-dev-only-do-not-override-txh9fw"
+            class="ant-typography css-1eepp70"
           >
             选择扫描类型
           </h1>
           <div
-            class="ant-form-item has-label-tip has-required-style css-1jlm9cy css-dev-only-do-not-override-txh9fw ant-form-item-has-success"
+            class="ant-form-item has-label-tip has-required-style css-1jlm9cy ant-form-item-has-success"
           >
             <div
-              class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+              class="ant-row ant-form-item-row"
             >
               <div
-                class="ant-col ant-form-item-label css-dev-only-do-not-override-txh9fw"
+                class="ant-col ant-form-item-label"
               >
                 <label
                   class=""
@@ -329,7 +329,7 @@ exports[`test SqlManagementConf/ScanTypesSelection render select All type 1`] = 
                 </label>
               </div>
               <div
-                class="ant-col ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                class="ant-col ant-form-item-control"
               >
                 <div
                   class="ant-form-item-control-input"
@@ -338,7 +338,7 @@ exports[`test SqlManagementConf/ScanTypesSelection render select All type 1`] = 
                     class="ant-form-item-control-input-content"
                   >
                     <div
-                      class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center scan-types-selector actiontech-toggle-tokens css-jucxeg"
+                      class="ant-space ant-space-horizontal ant-space-align-center scan-types-selector actiontech-toggle-tokens css-jucxeg"
                       id="scanTypes"
                       style="flex-wrap: wrap; margin-bottom: -8px;"
                     >
@@ -416,7 +416,7 @@ exports[`test SqlManagementConf/ScanTypesSelection render select All type 1`] = 
                               title=""
                             >
                               <div
-                                class="ant-typography ant-typography-ellipsis ant-typography-single-line ant-typography-ellipsis-single-line basic-typography-ellipsis css-wgj5gs css-dev-only-do-not-override-txh9fw"
+                                class="ant-typography ant-typography-ellipsis ant-typography-single-line ant-typography-ellipsis-single-line basic-typography-ellipsis css-wgj5gs"
                               >
                                 自定义
                               </div>
@@ -459,7 +459,7 @@ exports[`test SqlManagementConf/ScanTypesSelection render select All type 1`] = 
                               title=""
                             >
                               <div
-                                class="ant-typography ant-typography-ellipsis ant-typography-single-line ant-typography-ellipsis-single-line basic-typography-ellipsis css-wgj5gs css-dev-only-do-not-override-txh9fw"
+                                class="ant-typography ant-typography-ellipsis ant-typography-single-line ant-typography-ellipsis-single-line basic-typography-ellipsis css-wgj5gs"
                               >
                                 Mybatis 扫描
                               </div>
@@ -502,7 +502,7 @@ exports[`test SqlManagementConf/ScanTypesSelection render select All type 1`] = 
                               title=""
                             >
                               <div
-                                class="ant-typography ant-typography-ellipsis ant-typography-single-line ant-typography-ellipsis-single-line basic-typography-ellipsis css-wgj5gs css-dev-only-do-not-override-txh9fw"
+                                class="ant-typography ant-typography-ellipsis ant-typography-single-line ant-typography-ellipsis-single-line basic-typography-ellipsis css-wgj5gs"
                               >
                                 MySQL库表元数据
                               </div>
@@ -545,7 +545,7 @@ exports[`test SqlManagementConf/ScanTypesSelection render select All type 1`] = 
                               title=""
                             >
                               <div
-                                class="ant-typography ant-typography-ellipsis ant-typography-single-line ant-typography-ellipsis-single-line basic-typography-ellipsis css-wgj5gs css-dev-only-do-not-override-txh9fw"
+                                class="ant-typography ant-typography-ellipsis ant-typography-single-line ant-typography-ellipsis-single-line basic-typography-ellipsis css-wgj5gs"
                               >
                                 阿里RDS MySQL慢日志
                               </div>
@@ -588,7 +588,7 @@ exports[`test SqlManagementConf/ScanTypesSelection render select All type 1`] = 
                               title=""
                             >
                               <div
-                                class="ant-typography ant-typography-ellipsis ant-typography-single-line ant-typography-ellipsis-single-line basic-typography-ellipsis css-wgj5gs css-dev-only-do-not-override-txh9fw"
+                                class="ant-typography ant-typography-ellipsis ant-typography-single-line ant-typography-ellipsis-single-line basic-typography-ellipsis css-wgj5gs"
                               >
                                 SQL文件
                               </div>
@@ -631,7 +631,7 @@ exports[`test SqlManagementConf/ScanTypesSelection render select All type 1`] = 
                               title=""
                             >
                               <div
-                                class="ant-typography ant-typography-ellipsis ant-typography-single-line ant-typography-ellipsis-single-line basic-typography-ellipsis css-wgj5gs css-dev-only-do-not-override-txh9fw"
+                                class="ant-typography ant-typography-ellipsis ant-typography-single-line ant-typography-ellipsis-single-line basic-typography-ellipsis css-wgj5gs"
                               >
                                 测试扫描类型
                               </div>
@@ -657,27 +657,27 @@ exports[`test SqlManagementConf/ScanTypesSelection render select item type 1`] =
   <div />
   <div>
     <form
-      class="ant-form ant-form-horizontal css-dev-only-do-not-override-txh9fw"
+      class="ant-form ant-form-horizontal"
     >
       <div
-        class="ant-spin-nested-loading css-dev-only-do-not-override-txh9fw"
+        class="ant-spin-nested-loading"
       >
         <div
           class="ant-spin-container"
         >
           <h1
-            class="ant-typography css-1eepp70 css-dev-only-do-not-override-txh9fw"
+            class="ant-typography css-1eepp70"
           >
             选择扫描类型
           </h1>
           <div
-            class="ant-form-item has-label-tip has-required-style css-1jlm9cy css-dev-only-do-not-override-txh9fw ant-form-item-has-success"
+            class="ant-form-item has-label-tip has-required-style css-1jlm9cy ant-form-item-has-success"
           >
             <div
-              class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+              class="ant-row ant-form-item-row"
             >
               <div
-                class="ant-col ant-form-item-label css-dev-only-do-not-override-txh9fw"
+                class="ant-col ant-form-item-label"
               >
                 <label
                   class=""
@@ -699,7 +699,7 @@ exports[`test SqlManagementConf/ScanTypesSelection render select item type 1`] =
                 </label>
               </div>
               <div
-                class="ant-col ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                class="ant-col ant-form-item-control"
               >
                 <div
                   class="ant-form-item-control-input"
@@ -708,7 +708,7 @@ exports[`test SqlManagementConf/ScanTypesSelection render select item type 1`] =
                     class="ant-form-item-control-input-content"
                   >
                     <div
-                      class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center scan-types-selector actiontech-toggle-tokens css-jucxeg"
+                      class="ant-space ant-space-horizontal ant-space-align-center scan-types-selector actiontech-toggle-tokens css-jucxeg"
                       id="scanTypes"
                       style="flex-wrap: wrap; margin-bottom: -8px;"
                     >
@@ -741,7 +741,7 @@ exports[`test SqlManagementConf/ScanTypesSelection render select item type 1`] =
                             title=""
                           >
                             <div
-                              class="ant-typography ant-typography-ellipsis ant-typography-single-line ant-typography-ellipsis-single-line basic-typography-ellipsis css-wgj5gs css-dev-only-do-not-override-txh9fw"
+                              class="ant-typography ant-typography-ellipsis ant-typography-single-line ant-typography-ellipsis-single-line basic-typography-ellipsis css-wgj5gs"
                             >
                               自定义
                             </div>
@@ -761,7 +761,7 @@ exports[`test SqlManagementConf/ScanTypesSelection render select item type 1`] =
                             title=""
                           >
                             <div
-                              class="ant-typography ant-typography-ellipsis ant-typography-single-line ant-typography-ellipsis-single-line basic-typography-ellipsis css-wgj5gs css-dev-only-do-not-override-txh9fw"
+                              class="ant-typography ant-typography-ellipsis ant-typography-single-line ant-typography-ellipsis-single-line basic-typography-ellipsis css-wgj5gs"
                             >
                               Mybatis 扫描
                             </div>
@@ -803,7 +803,7 @@ exports[`test SqlManagementConf/ScanTypesSelection render select item type 1`] =
                               title=""
                             >
                               <div
-                                class="ant-typography ant-typography-ellipsis ant-typography-single-line ant-typography-ellipsis-single-line basic-typography-ellipsis css-wgj5gs css-dev-only-do-not-override-txh9fw"
+                                class="ant-typography ant-typography-ellipsis ant-typography-single-line ant-typography-ellipsis-single-line basic-typography-ellipsis css-wgj5gs"
                               >
                                 MySQL库表元数据
                               </div>
@@ -824,7 +824,7 @@ exports[`test SqlManagementConf/ScanTypesSelection render select item type 1`] =
                             title=""
                           >
                             <div
-                              class="ant-typography ant-typography-ellipsis ant-typography-single-line ant-typography-ellipsis-single-line basic-typography-ellipsis css-wgj5gs css-dev-only-do-not-override-txh9fw"
+                              class="ant-typography ant-typography-ellipsis ant-typography-single-line ant-typography-ellipsis-single-line basic-typography-ellipsis css-wgj5gs"
                             >
                               阿里RDS MySQL慢日志
                             </div>
@@ -844,7 +844,7 @@ exports[`test SqlManagementConf/ScanTypesSelection render select item type 1`] =
                             title=""
                           >
                             <div
-                              class="ant-typography ant-typography-ellipsis ant-typography-single-line ant-typography-ellipsis-single-line basic-typography-ellipsis css-wgj5gs css-dev-only-do-not-override-txh9fw"
+                              class="ant-typography ant-typography-ellipsis ant-typography-single-line ant-typography-ellipsis-single-line basic-typography-ellipsis css-wgj5gs"
                             >
                               SQL文件
                             </div>
@@ -864,7 +864,7 @@ exports[`test SqlManagementConf/ScanTypesSelection render select item type 1`] =
                             title=""
                           >
                             <div
-                              class="ant-typography ant-typography-ellipsis ant-typography-single-line ant-typography-ellipsis-single-line basic-typography-ellipsis css-wgj5gs css-dev-only-do-not-override-txh9fw"
+                              class="ant-typography ant-typography-ellipsis ant-typography-single-line ant-typography-ellipsis-single-line basic-typography-ellipsis css-wgj5gs"
                             >
                               测试扫描类型
                             </div>

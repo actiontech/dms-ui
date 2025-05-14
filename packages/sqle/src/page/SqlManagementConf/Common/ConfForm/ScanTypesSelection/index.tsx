@@ -181,7 +181,7 @@ const ScanTypesSelection: React.FC = () => {
         }
         rules={[
           {
-            validator(rule, value, callback) {
+            validator(rule, value) {
               if (!value || !value?.length) {
                 return Promise.reject(
                   t('managementConf.create.scanTypeRequiredMessage')

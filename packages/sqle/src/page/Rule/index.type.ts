@@ -18,6 +18,7 @@ export type RuleListFilterFormKey = keyof RuleListFilterForm;
 
 export type RuleListFilterProps = {
   form: FormInstance<RuleListFilterForm>;
-  setShowNorRuleTemplatePage: (v: boolean) => void;
+  visible: boolean;
   bindProjects: IBindProject[];
+  setShowNorRuleTemplatePage: (v: boolean) => void;
 };

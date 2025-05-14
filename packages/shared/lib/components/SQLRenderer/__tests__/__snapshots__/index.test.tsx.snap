@@ -8,7 +8,7 @@ exports[`test SQLrenderer should match snapshot 1`] = `
     <code
       dangerouslySetInnerHTML={
         {
-          "__html": "<div class="code-line"><span class="hljs-keyword">CREATE</span> <span class="hljs-keyword">TABLE</span> IF <span class="hljs-keyword">NOT</span> <span class="hljs-keyword">EXISTS</span></div><div class="code-line">    task (</div><div class="code-line">      id <span class="hljs-type">BIGINT</span> UNSIGNED AUTO_INCREMENT <span class="hljs-keyword">PRIMARY</span> KEY,</div><div class="code-line">      title <span class="hljs-type">VARCHAR</span>(<span class="hljs-number">255</span>) <span class="hljs-keyword">NOT</span> <span class="hljs-keyword">NULL</span> <span class="hljs-keyword">DEFAULT</span> <span class="hljs-string">&#x27;&#x27;</span>,</div><div class="code-line">      description TEXT,</div><div class="code-line">      status ENUM(<span class="hljs-string">&#x27;pending&#x27;</span>, <span class="hljs-string">&#x27;completed&#x27;</span>) <span class="hljs-keyword">NOT</span> <span class="hljs-keyword">NULL</span> <span class="hljs-keyword">DEFAULT</span> <span class="hljs-string">&#x27;pending&#x27;</span>,</div><div class="code-line">      created_at <span class="hljs-type">TIMESTAMP</span> <span class="hljs-keyword">DEFAULT</span> <span class="hljs-built_in">CURRENT_TIMESTAMP</span>,</div><div class="code-line">      updated_at <span class="hljs-type">TIMESTAMP</span> <span class="hljs-keyword">DEFAULT</span> <span class="hljs-built_in">CURRENT_TIMESTAMP</span> <span class="hljs-keyword">ON</span> <span class="hljs-keyword">UPDATE</span> <span class="hljs-built_in">CURRENT_TIMESTAMP</span></div><div class="code-line">    );</div>",
+          "__html": "<div class="code-line"><span class="hljs-keyword">CREATE TABLE</span> IF <span class="hljs-keyword">NOT</span> <span class="hljs-keyword">EXISTS</span></div><div class="code-line">    task (</div><div class="code-line">      id <span class="hljs-type">BIGINT</span> UNSIGNED AUTO_INCREMENT <span class="hljs-keyword">PRIMARY KEY</span>,</div><div class="code-line">      title <span class="hljs-type">VARCHAR</span>(<span class="hljs-number">255</span>) <span class="hljs-keyword">NOT NULL</span> <span class="hljs-keyword">DEFAULT</span> <span class="hljs-string">&#x27;&#x27;</span>,</div><div class="code-line">      description TEXT,</div><div class="code-line">      status ENUM(<span class="hljs-string">&#x27;pending&#x27;</span>, <span class="hljs-string">&#x27;completed&#x27;</span>) <span class="hljs-keyword">NOT NULL</span> <span class="hljs-keyword">DEFAULT</span> <span class="hljs-string">&#x27;pending&#x27;</span>,</div><div class="code-line">      created_at <span class="hljs-type">TIMESTAMP</span> <span class="hljs-keyword">DEFAULT</span> <span class="hljs-built_in">CURRENT_TIMESTAMP</span>,</div><div class="code-line">      updated_at <span class="hljs-type">TIMESTAMP</span> <span class="hljs-keyword">DEFAULT</span> <span class="hljs-built_in">CURRENT_TIMESTAMP</span> <span class="hljs-keyword">ON</span> <span class="hljs-keyword">UPDATE</span> <span class="hljs-built_in">CURRENT_TIMESTAMP</span></div><div class="code-line">    );</div>",
         }
       }
     />
@@ -39,12 +39,12 @@ exports[`test SQLrenderer should match snapshot 2`] = `
               <code
                 dangerouslySetInnerHTML={
                   {
-                    "__html": "<span class="hljs-keyword">CREATE</span> <span class="hljs-keyword">TABLE</span> IF <span class="hljs-keyword">NOT</span> <span class="hljs-keyword">EXISTS</span>
+                    "__html": "<span class="hljs-keyword">CREATE TABLE</span> IF <span class="hljs-keyword">NOT</span> <span class="hljs-keyword">EXISTS</span>
     task (
-      id <span class="hljs-type">BIGINT</span> UNSIGNED AUTO_INCREMENT <span class="hljs-keyword">PRIMARY</span> KEY,
-      title <span class="hljs-type">VARCHAR</span>(<span class="hljs-number">255</span>) <span class="hljs-keyword">NOT</span> <span class="hljs-keyword">NULL</span> <span class="hljs-keyword">DEFAULT</span> <span class="hljs-string">&#x27;&#x27;</span>,
+      id <span class="hljs-type">BIGINT</span> UNSIGNED AUTO_INCREMENT <span class="hljs-keyword">PRIMARY KEY</span>,
+      title <span class="hljs-type">VARCHAR</span>(<span class="hljs-number">255</span>) <span class="hljs-keyword">NOT NULL</span> <span class="hljs-keyword">DEFAULT</span> <span class="hljs-string">&#x27;&#x27;</span>,
       description TEXT,
-      status ENUM(<span class="hljs-string">&#x27;pending&#x27;</span>, <span class="hljs-string">&#x27;completed&#x27;</span>) <span class="hljs-keyword">NOT</span> <span class="hljs-keyword">NULL</span> <span class="hljs-keyword">DEFAULT</span> <span class="hljs-string">&#x27;pending&#x27;</span>,
+      status ENUM(<span class="hljs-string">&#x27;pending&#x27;</span>, <span class="hljs-string">&#x27;completed&#x27;</span>) <span class="hljs-keyword">NOT NULL</span> <span class="hljs-keyword">DEFAULT</span> <span class="hljs-string">&#x27;pending&#x27;</span>,
       created_at <span class="hljs-type">TIMESTAMP</span> <span class="hljs-keyword">DEFAULT</span> <span class="hljs-built_in">CURRENT_TIMESTAMP</span>,
       updated_at <span class="hljs-type">TIMESTAMP</span> <span class="hljs-keyword">DEFAULT</span> <span class="hljs-built_in">CURRENT_TIMESTAMP</span> <span class="hljs-keyword">ON</span> <span class="hljs-keyword">UPDATE</span> <span class="hljs-built_in">CURRENT_TIMESTAMP</span>
     );",
@@ -60,12 +60,12 @@ exports[`test SQLrenderer should match snapshot 2`] = `
     <span
       dangerouslySetInnerHTML={
         {
-          "__html": "<span class="hljs-keyword">CREATE</span> <span class="hljs-keyword">TABLE</span> IF <span class="hljs-keyword">NOT</span> <span class="hljs-keyword">EXISTS</span>
+          "__html": "<span class="hljs-keyword">CREATE TABLE</span> IF <span class="hljs-keyword">NOT</span> <span class="hljs-keyword">EXISTS</span>
     task (
-      id <span class="hljs-type">BIGINT</span> UNSIGNED AUTO_INCREMENT <span class="hljs-keyword">PRIMARY</span> KEY,
-      title <span class="hljs-type">VARCHAR</span>(<span class="hljs-number">255</span>) <span class="hljs-keyword">NOT</span> <span class="hljs-keyword">NULL</span> <span class="hljs-keyword">DEFAULT</span> <span class="hljs-string">&#x27;&#x27;</span>,
+      id <span class="hljs-type">BIGINT</span> UNSIGNED AUTO_INCREMENT <span class="hljs-keyword">PRIMARY KEY</span>,
+      title <span class="hljs-type">VARCHAR</span>(<span class="hljs-number">255</span>) <span class="hljs-keyword">NOT NULL</span> <span class="hljs-keyword">DEFAULT</span> <span class="hljs-string">&#x27;&#x27;</span>,
       description TEXT,
-      status ENUM(<span class="hljs-string">&#x27;pending&#x27;</span>, <span class="hljs-string">&#x27;completed&#x27;</span>) <span class="hljs-keyword">NOT</span> <span class="hljs-keyword">NULL</span> <span class="hljs-keyword">DEFAULT</span> <span class="hljs-string">&#x27;pending&#x27;</span>,
+      status ENUM(<span class="hljs-string">&#x27;pending&#x27;</span>, <span class="hljs-string">&#x27;completed&#x27;</span>) <span class="hljs-keyword">NOT NULL</span> <span class="hljs-keyword">DEFAULT</span> <span class="hljs-string">&#x27;pending&#x27;</span>,
       created_at <span class="hljs-type">TIMESTAMP</span> <span class="hljs-keyword">DEFAULT</span> <span class="hljs-built_in">CURRENT_TIMESTAMP</span>,
       updated_at <span class="hljs-type">TIMESTAMP</span> <span class="hljs-keyword">DEFAULT</span> <span class="hljs-built_in">CURRENT_TIMESTAMP</span> <span class="hljs-keyword">ON</span> <span class="hljs-keyword">UPDATE</span> <span class="hljs-built_in">CURRENT_TIMESTAMP</span>
     );",

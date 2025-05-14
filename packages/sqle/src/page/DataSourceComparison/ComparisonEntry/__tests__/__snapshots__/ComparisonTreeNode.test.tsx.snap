@@ -6,7 +6,7 @@ exports[`ComparisonTreeNode ComparisonDetailDrawer should render the drawer when
   <div />
   <div>
     <div
-      class="ant-drawer ant-drawer-right css-dev-only-do-not-override-txh9fw ant-drawer-open"
+      class="ant-drawer ant-drawer-right ant-drawer-open"
       tabindex="-1"
     >
       <div
@@ -55,25 +55,27 @@ exports[`ComparisonTreeNode ComparisonDetailDrawer should render the drawer when
                 <span
                   aria-label="close"
                   class="anticon anticon-close"
+                  data-testid="basic-drawer-close-icon"
                   role="img"
                 >
                   <svg
                     aria-hidden="true"
                     data-icon="close"
                     fill="currentColor"
+                    fill-rule="evenodd"
                     focusable="false"
                     height="1em"
                     viewBox="64 64 896 896"
                     width="1em"
                   >
                     <path
-                      d="M563.8 512l262.5-312.9c4.4-5.2.7-13.1-6.1-13.1h-79.8c-4.7 0-9.2 2.1-12.3 5.7L511.6 449.8 295.1 191.7c-3-3.6-7.5-5.7-12.3-5.7H203c-6.8 0-10.5 7.9-6.1 13.1L459.4 512 196.9 824.9A7.95 7.95 0 00203 838h79.8c4.7 0 9.2-2.1 12.3-5.7l216.5-258.1 216.5 258.1c3 3.6 7.5 5.7 12.3 5.7h79.8c6.8 0 10.5-7.9 6.1-13.1L563.8 512z"
+                      d="M799.86 166.31c.02 0 .04.02.08.06l57.69 57.7c.04.03.05.05.06.08a.12.12 0 010 .06c0 .03-.02.05-.06.09L569.93 512l287.7 287.7c.04.04.05.06.06.09a.12.12 0 010 .07c0 .02-.02.04-.06.08l-57.7 57.69c-.03.04-.05.05-.07.06a.12.12 0 01-.07 0c-.03 0-.05-.02-.09-.06L512 569.93l-287.7 287.7c-.04.04-.06.05-.09.06a.12.12 0 01-.07 0c-.02 0-.04-.02-.08-.06l-57.69-57.7c-.04-.03-.05-.05-.06-.07a.12.12 0 010-.07c0-.03.02-.05.06-.09L454.07 512l-287.7-287.7c-.04-.04-.05-.06-.06-.09a.12.12 0 010-.07c0-.02.02-.04.06-.08l57.7-57.69c.03-.04.05-.05.07-.06a.12.12 0 01.07 0c.03 0 .05.02.09.06L512 454.07l287.7-287.7c.04-.04.06-.05.09-.06a.12.12 0 01.07 0z"
                     />
                   </svg>
                 </span>
               </div>
               <div
-                class="ant-spin-nested-loading css-dev-only-do-not-override-txh9fw"
+                class="ant-spin-nested-loading"
               >
                 <div
                   class="ant-spin-container"
@@ -82,7 +84,7 @@ exports[`ComparisonTreeNode ComparisonDetailDrawer should render the drawer when
                     class="css-17ndm04"
                   >
                     <h4
-                      class="ant-typography css-dev-only-do-not-override-txh9fw"
+                      class="ant-typography"
                     >
                       建表语句差异
                     </h4>
@@ -105,7 +107,7 @@ exports[`ComparisonTreeNode ComparisonDetailDrawer should render the drawer when
                           />
                         </svg>
                         <span
-                          class="ant-typography subtitle-item-text css-dev-only-do-not-override-txh9fw"
+                          class="ant-typography subtitle-item-text"
                         >
                           baseline-name.test3
                         </span>
@@ -126,7 +128,7 @@ exports[`ComparisonTreeNode ComparisonDetailDrawer should render the drawer when
                           />
                         </svg>
                         <span
-                          class="ant-typography subtitle-item-text css-dev-only-do-not-override-txh9fw"
+                          class="ant-typography subtitle-item-text"
                         >
                           comparison-name.test3
                         </span>
@@ -170,7 +172,7 @@ exports[`ComparisonTreeNode ComparisonDetailDrawer should render the drawer when
   <div />
   <div>
     <div
-      class="ant-drawer ant-drawer-right css-dev-only-do-not-override-txh9fw ant-drawer-open"
+      class="ant-drawer ant-drawer-right ant-drawer-open"
       tabindex="-1"
     >
       <div
@@ -210,7 +212,7 @@ exports[`ComparisonTreeNode ComparisonDetailDrawer should render the drawer when
                 class="ant-drawer-extra"
               >
                 <button
-                  class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary basic-button-wrapper css-geipcv"
+                  class="ant-btn ant-btn-primary basic-button-wrapper css-geipcv"
                   type="button"
                 >
                   <span>
@@ -228,25 +230,27 @@ exports[`ComparisonTreeNode ComparisonDetailDrawer should render the drawer when
                 <span
                   aria-label="close"
                   class="anticon anticon-close"
+                  data-testid="basic-drawer-close-icon"
                   role="img"
                 >
                   <svg
                     aria-hidden="true"
                     data-icon="close"
                     fill="currentColor"
+                    fill-rule="evenodd"
                     focusable="false"
                     height="1em"
                     viewBox="64 64 896 896"
                     width="1em"
                   >
                     <path
-                      d="M563.8 512l262.5-312.9c4.4-5.2.7-13.1-6.1-13.1h-79.8c-4.7 0-9.2 2.1-12.3 5.7L511.6 449.8 295.1 191.7c-3-3.6-7.5-5.7-12.3-5.7H203c-6.8 0-10.5 7.9-6.1 13.1L459.4 512 196.9 824.9A7.95 7.95 0 00203 838h79.8c4.7 0 9.2-2.1 12.3-5.7l216.5-258.1 216.5 258.1c3 3.6 7.5 5.7 12.3 5.7h79.8c6.8 0 10.5-7.9 6.1-13.1L563.8 512z"
+                      d="M799.86 166.31c.02 0 .04.02.08.06l57.69 57.7c.04.03.05.05.06.08a.12.12 0 010 .06c0 .03-.02.05-.06.09L569.93 512l287.7 287.7c.04.04.05.06.06.09a.12.12 0 010 .07c0 .02-.02.04-.06.08l-57.7 57.69c-.03.04-.05.05-.07.06a.12.12 0 01-.07 0c-.03 0-.05-.02-.09-.06L512 569.93l-287.7 287.7c-.04.04-.06.05-.09.06a.12.12 0 01-.07 0c-.02 0-.04-.02-.08-.06l-57.69-57.7c-.04-.03-.05-.05-.06-.07a.12.12 0 010-.07c0-.03.02-.05.06-.09L454.07 512l-287.7-287.7c-.04-.04-.05-.06-.06-.09a.12.12 0 010-.07c0-.02.02-.04.06-.08l57.7-57.69c.03-.04.05-.05.07-.06a.12.12 0 01.07 0c.03 0 .05.02.09.06L512 454.07l287.7-287.7c.04-.04.06-.05.09-.06a.12.12 0 01.07 0z"
                     />
                   </svg>
                 </span>
               </div>
               <div
-                class="ant-spin-nested-loading css-dev-only-do-not-override-txh9fw"
+                class="ant-spin-nested-loading"
               >
                 <div
                   class="ant-spin-container"
@@ -255,7 +259,7 @@ exports[`ComparisonTreeNode ComparisonDetailDrawer should render the drawer when
                     class="css-17ndm04"
                   >
                     <h4
-                      class="ant-typography css-dev-only-do-not-override-txh9fw"
+                      class="ant-typography"
                     >
                       建表语句差异
                     </h4>
@@ -278,7 +282,7 @@ exports[`ComparisonTreeNode ComparisonDetailDrawer should render the drawer when
                           />
                         </svg>
                         <span
-                          class="ant-typography subtitle-item-text css-dev-only-do-not-override-txh9fw"
+                          class="ant-typography subtitle-item-text"
                         >
                           baseline-name.test3
                         </span>
@@ -299,7 +303,7 @@ exports[`ComparisonTreeNode ComparisonDetailDrawer should render the drawer when
                           />
                         </svg>
                         <span
-                          class="ant-typography subtitle-item-text css-dev-only-do-not-override-txh9fw"
+                          class="ant-typography subtitle-item-text"
                         >
                           comparison-name.test3
                         </span>
@@ -318,7 +322,7 @@ exports[`ComparisonTreeNode ComparisonDetailDrawer should render the drawer when
                     </div>
                   </div>
                   <div
-                    class="ant-collapse ant-collapse-icon-position-start css-vh3t0y css-dev-only-do-not-override-txh9fw"
+                    class="ant-collapse ant-collapse-icon-position-start css-vh3t0y"
                   >
                     <div
                       class="ant-collapse-item"
@@ -382,18 +386,50 @@ exports[`ComparisonTreeNode ComparisonDetailDrawer should render the drawer when
 `;
 
 exports[`ComparisonTreeNode ComparisonTreeNode should render the baseline and comparison trees 1`] = `
+[
+  "TREE_PARENT_NODE_KEY",
+  "0",
+  "1",
+  "2",
+  "0_TREE_NODE_KEY_SEPARATOR_TABLE",
+]
+`;
+
+exports[`ComparisonTreeNode ComparisonTreeNode should render the baseline and comparison trees 2`] = `
 <div>
   <div
     class="css-ov1ktg"
   >
     <div
-      class="ant-card ant-card-bordered css-ri1dts css-dev-only-do-not-override-txh9fw"
+      class="ant-card ant-card-hoverable css-1qxznty"
     >
+      <div
+        class="ant-card-head"
+      >
+        <div
+          class="ant-card-head-wrapper"
+        >
+          <div
+            class="ant-card-head-title"
+          >
+            <div
+              class="css-1kpyopg"
+            >
+              <span>
+                基准环境
+              </span>
+              <span>
+                (baseline-name) 
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
       <div
         class="ant-card-body"
       >
         <div
-          class="ant-tree ant-tree-icon-hide ant-tree-unselectable css-dev-only-do-not-override-txh9fw"
+          class="ant-tree ant-tree-icon-hide ant-tree-unselectable ant-tree-show-line"
           role="tree"
         >
           <div>
@@ -423,7 +459,7 @@ exports[`ComparisonTreeNode ComparisonTreeNode should render the baseline and co
           >
             <div
               class="ant-tree-list-holder"
-              style="max-height: 352px; overflow-y: hidden;"
+              style="max-height: 1200px; overflow-y: hidden;"
             >
               <div>
                 <div
@@ -432,7 +468,7 @@ exports[`ComparisonTreeNode ComparisonTreeNode should render the baseline and co
                 >
                   <div
                     aria-grabbed="false"
-                    class="ant-tree-treenode ant-tree-treenode-switcher-open ant-tree-treenode-leaf-last"
+                    class="ant-tree-treenode ant-tree-treenode-switcher-close ant-tree-treenode-leaf-last"
                     draggable="false"
                   >
                     <span
@@ -440,31 +476,29 @@ exports[`ComparisonTreeNode ComparisonTreeNode should render the baseline and co
                       class="ant-tree-indent"
                     />
                     <span
-                      class="ant-tree-switcher ant-tree-switcher_open"
+                      class="ant-tree-switcher ant-tree-switcher_close"
                     >
                       <svg
                         class="ant-tree-switcher-icon"
-                        color="currentColor"
                         height="16"
-                        viewBox="0 0 16 16"
+                        viewBox="0 0 14 14"
                         width="16"
                         xmlns="http://www.w3.org/2000/svg"
                       >
                         <path
-                          d="m8 8.781 3.3-3.3.943.943L8 10.667 3.757 6.424l.943-.943z"
-                          fill="currentColor"
+                          d="M7.684 7 4.796 4.112l.825-.824L9.334 7 5.62 10.712l-.825-.825z"
                         />
                       </svg>
                     </span>
                     <span
-                      class="ant-tree-node-content-wrapper ant-tree-node-content-wrapper-open"
+                      class="ant-tree-node-content-wrapper ant-tree-node-content-wrapper-close"
                       title=""
                     >
                       <span
                         class="ant-tree-title"
                       >
                         <div
-                          class="css-1wc7lqr"
+                          class="css-1bi0c9x"
                         >
                           <svg
                             color="#4583ff"
@@ -487,454 +521,43 @@ exports[`ComparisonTreeNode ComparisonTreeNode should render the baseline and co
                       </span>
                     </span>
                   </div>
-                  <div
-                    aria-grabbed="false"
-                    class="ant-tree-treenode ant-tree-treenode-switcher-open"
-                    draggable="false"
-                  >
-                    <span
-                      aria-hidden="true"
-                      class="ant-tree-indent"
-                    >
-                      <span
-                        class="ant-tree-indent-unit ant-tree-indent-unit-start ant-tree-indent-unit-end"
-                      />
-                    </span>
-                    <span
-                      class="ant-tree-switcher ant-tree-switcher_open"
-                    >
-                      <svg
-                        class="ant-tree-switcher-icon"
-                        color="currentColor"
-                        height="16"
-                        viewBox="0 0 16 16"
-                        width="16"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          d="m8 8.781 3.3-3.3.943.943L8 10.667 3.757 6.424l.943-.943z"
-                          fill="currentColor"
-                        />
-                      </svg>
-                    </span>
-                    <span
-                      class="ant-tree-node-content-wrapper ant-tree-node-content-wrapper-open"
-                      title=""
-                    >
-                      <span
-                        class="ant-tree-title"
-                      >
-                        <div
-                          class="css-1wc7lqr"
-                        >
-                          <svg
-                            color="#4583ff"
-                            height="16"
-                            viewBox="0 0 18 18"
-                            width="16"
-                            xmlns="http://www.w3.org/2000/svg"
-                          >
-                            <path
-                              d="M8.25 5.25V3A.75.75 0 0 1 9 2.25h6.75a.75.75 0 0 1 .75.75v12a.75.75 0 0 1-.75.75H2.25A.75.75 0 0 1 1.5 15V6a.75.75 0 0 1 .75-.75zM3.75 12v1.5H7.5V12zm6.75 0v1.5h3.75V12zm0-2.25v1.5h3.75v-1.5zm0-2.25V9h3.75V7.5zM3.75 9.75v1.5H7.5v-1.5z"
-                              fill="currentColor"
-                            />
-                          </svg>
-                          <span
-                            class="content"
-                          >
-                            test
-                          </span>
-                        </div>
-                      </span>
-                    </span>
-                  </div>
-                  <div
-                    aria-grabbed="false"
-                    class="ant-tree-treenode ant-tree-treenode-switcher-open ant-tree-treenode-leaf-last"
-                    draggable="false"
-                  >
-                    <span
-                      aria-hidden="true"
-                      class="ant-tree-indent"
-                    >
-                      <span
-                        class="ant-tree-indent-unit ant-tree-indent-unit-start ant-tree-indent-unit-end"
-                      />
-                      <span
-                        class="ant-tree-indent-unit ant-tree-indent-unit-start"
-                      />
-                    </span>
-                    <span
-                      class="ant-tree-switcher ant-tree-switcher_open"
-                    >
-                      <svg
-                        class="ant-tree-switcher-icon"
-                        color="currentColor"
-                        height="16"
-                        viewBox="0 0 16 16"
-                        width="16"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          d="m8 8.781 3.3-3.3.943.943L8 10.667 3.757 6.424l.943-.943z"
-                          fill="currentColor"
-                        />
-                      </svg>
-                    </span>
-                    <span
-                      class="ant-tree-node-content-wrapper ant-tree-node-content-wrapper-open"
-                      title=""
-                    >
-                      <span
-                        class="ant-tree-title"
-                      >
-                        <div
-                          class="css-1wc7lqr"
-                        >
-                          <svg
-                            height="18"
-                            viewBox="0 0 1024 1024"
-                            width="18"
-                            xmlns="http://www.w3.org/2000/svg"
-                          >
-                            <path
-                              d="M165.3 417.3V739c0 22.2 19 40.3 42.4 40.3H815c23.4 0 42.4-18 42.4-40.3V412h-692v5.3zM815 278.6H519.5v-8.8c0-28.5-23.7-51.6-52.7-51.6H218c-29 0-52.7 23.1-52.7 51.6V368h692.1v-49.1c0-22.3-19-40.3-42.4-40.3m0 0"
-                              fill="#4583FF"
-                            />
-                          </svg>
-                          <span
-                            class="content"
-                          >
-                            TABLE
-                          </span>
-                        </div>
-                      </span>
-                    </span>
-                  </div>
-                  <div
-                    aria-grabbed="false"
-                    class="ant-tree-treenode ant-tree-treenode-switcher-close ant-tree-treenode-leaf-last"
-                    draggable="false"
-                  >
-                    <span
-                      aria-hidden="true"
-                      class="ant-tree-indent"
-                    >
-                      <span
-                        class="ant-tree-indent-unit ant-tree-indent-unit-start ant-tree-indent-unit-end"
-                      />
-                      <span
-                        class="ant-tree-indent-unit ant-tree-indent-unit-start"
-                      />
-                      <span
-                        class="ant-tree-indent-unit ant-tree-indent-unit-start ant-tree-indent-unit-end"
-                      />
-                    </span>
-                    <span
-                      class="ant-tree-switcher ant-tree-switcher-noop"
-                    />
-                    <span
-                      class="ant-tree-node-content-wrapper ant-tree-node-content-wrapper-normal"
-                      title=""
-                    >
-                      <span
-                        class="ant-tree-title"
-                      >
-                        <div
-                          class="css-1wc7lqr"
-                        >
-                          <div
-                            class="name-container"
-                          >
-                            <svg
-                              height="16"
-                              viewBox="0 0 1024 1024"
-                              width="16"
-                              xmlns="http://www.w3.org/2000/svg"
-                            >
-                              <path
-                                d="M828.952 121.905a73.143 73.143 0 0 1 73.143 73.143v633.904a73.143 73.143 0 0 1-73.143 73.143H195.048a73.143 73.143 0 0 1-73.143-73.143V195.048a73.143 73.143 0 0 1 73.143-73.143zm-512 597.333H195.048v109.714h121.904zm512 0H390.095v109.714h438.857zm-512-182.857H195.048v109.714h121.904zm512 0H390.095v109.714h438.857zm-512-182.857H195.048v109.714h121.904zm512 0H390.095v109.714h438.857z"
-                                fill="#4583FF"
-                              />
-                            </svg>
-                            <span
-                              class="content"
-                            >
-                              task
-                            </span>
-                          </div>
-                        </div>
-                      </span>
-                    </span>
-                  </div>
-                  <div
-                    aria-grabbed="false"
-                    class="ant-tree-treenode ant-tree-treenode-switcher-open"
-                    draggable="false"
-                  >
-                    <span
-                      aria-hidden="true"
-                      class="ant-tree-indent"
-                    >
-                      <span
-                        class="ant-tree-indent-unit ant-tree-indent-unit-start ant-tree-indent-unit-end"
-                      />
-                    </span>
-                    <span
-                      class="ant-tree-switcher ant-tree-switcher_open"
-                    >
-                      <svg
-                        class="ant-tree-switcher-icon"
-                        color="currentColor"
-                        height="16"
-                        viewBox="0 0 16 16"
-                        width="16"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          d="m8 8.781 3.3-3.3.943.943L8 10.667 3.757 6.424l.943-.943z"
-                          fill="currentColor"
-                        />
-                      </svg>
-                    </span>
-                    <span
-                      class="ant-tree-node-content-wrapper ant-tree-node-content-wrapper-open"
-                      title=""
-                    >
-                      <span
-                        class="ant-tree-title"
-                      >
-                        <div
-                          class="css-1wc7lqr"
-                        >
-                          <svg
-                            color="#4583ff"
-                            height="16"
-                            viewBox="0 0 18 18"
-                            width="16"
-                            xmlns="http://www.w3.org/2000/svg"
-                          >
-                            <path
-                              d="M8.25 5.25V3A.75.75 0 0 1 9 2.25h6.75a.75.75 0 0 1 .75.75v12a.75.75 0 0 1-.75.75H2.25A.75.75 0 0 1 1.5 15V6a.75.75 0 0 1 .75-.75zM3.75 12v1.5H7.5V12zm6.75 0v1.5h3.75V12zm0-2.25v1.5h3.75v-1.5zm0-2.25V9h3.75V7.5zM3.75 9.75v1.5H7.5v-1.5z"
-                              fill="currentColor"
-                            />
-                          </svg>
-                          <span
-                            class="content"
-                          >
-                            test2
-                          </span>
-                        </div>
-                      </span>
-                    </span>
-                  </div>
-                  <div
-                    aria-grabbed="false"
-                    class="ant-tree-treenode ant-tree-treenode-switcher-close ant-tree-treenode-leaf-last"
-                    draggable="false"
-                  >
-                    <span
-                      aria-hidden="true"
-                      class="ant-tree-indent"
-                    >
-                      <span
-                        class="ant-tree-indent-unit ant-tree-indent-unit-start ant-tree-indent-unit-end"
-                      />
-                      <span
-                        class="ant-tree-indent-unit"
-                      />
-                    </span>
-                    <span
-                      class="ant-tree-switcher ant-tree-switcher_close"
-                    >
-                      <svg
-                        class="ant-tree-switcher-icon"
-                        height="16"
-                        viewBox="0 0 14 14"
-                        width="16"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          d="M7.684 7 4.796 4.112l.825-.824L9.334 7 5.62 10.712l-.825-.825z"
-                        />
-                      </svg>
-                    </span>
-                    <span
-                      class="ant-tree-node-content-wrapper ant-tree-node-content-wrapper-close"
-                      title=""
-                    >
-                      <span
-                        class="ant-tree-title"
-                      >
-                        <div
-                          class="css-1wc7lqr"
-                        >
-                          <svg
-                            height="18"
-                            viewBox="0 0 1024 1024"
-                            width="18"
-                            xmlns="http://www.w3.org/2000/svg"
-                          >
-                            <path
-                              d="M165.3 417.3V739c0 22.2 19 40.3 42.4 40.3H815c23.4 0 42.4-18 42.4-40.3V412h-692v5.3zM815 278.6H519.5v-8.8c0-28.5-23.7-51.6-52.7-51.6H218c-29 0-52.7 23.1-52.7 51.6V368h692.1v-49.1c0-22.3-19-40.3-42.4-40.3m0 0"
-                              fill="#4583FF"
-                            />
-                          </svg>
-                          <span
-                            class="content"
-                          >
-                            TABLE
-                          </span>
-                        </div>
-                      </span>
-                    </span>
-                  </div>
-                  <div
-                    aria-grabbed="false"
-                    class="ant-tree-treenode ant-tree-treenode-switcher-open ant-tree-treenode-leaf-last"
-                    draggable="false"
-                  >
-                    <span
-                      aria-hidden="true"
-                      class="ant-tree-indent"
-                    >
-                      <span
-                        class="ant-tree-indent-unit ant-tree-indent-unit-start ant-tree-indent-unit-end"
-                      />
-                    </span>
-                    <span
-                      class="ant-tree-switcher ant-tree-switcher_open"
-                    >
-                      <svg
-                        class="ant-tree-switcher-icon"
-                        color="currentColor"
-                        height="16"
-                        viewBox="0 0 16 16"
-                        width="16"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          d="m8 8.781 3.3-3.3.943.943L8 10.667 3.757 6.424l.943-.943z"
-                          fill="currentColor"
-                        />
-                      </svg>
-                    </span>
-                    <span
-                      class="ant-tree-node-content-wrapper ant-tree-node-content-wrapper-open"
-                      title=""
-                    >
-                      <span
-                        class="ant-tree-title"
-                      >
-                        <div
-                          class="css-1wc7lqr"
-                        >
-                          <svg
-                            color="#4583ff"
-                            height="16"
-                            viewBox="0 0 18 18"
-                            width="16"
-                            xmlns="http://www.w3.org/2000/svg"
-                          >
-                            <path
-                              d="M8.25 5.25V3A.75.75 0 0 1 9 2.25h6.75a.75.75 0 0 1 .75.75v12a.75.75 0 0 1-.75.75H2.25A.75.75 0 0 1 1.5 15V6a.75.75 0 0 1 .75-.75zM3.75 12v1.5H7.5V12zm6.75 0v1.5h3.75V12zm0-2.25v1.5h3.75v-1.5zm0-2.25V9h3.75V7.5zM3.75 9.75v1.5H7.5v-1.5z"
-                              fill="currentColor"
-                            />
-                          </svg>
-                          <span
-                            class="content"
-                          >
-                            test3
-                          </span>
-                        </div>
-                      </span>
-                    </span>
-                  </div>
-                  <div
-                    aria-grabbed="false"
-                    class="ant-tree-treenode ant-tree-treenode-switcher-close ant-tree-treenode-leaf-last"
-                    draggable="false"
-                  >
-                    <span
-                      aria-hidden="true"
-                      class="ant-tree-indent"
-                    >
-                      <span
-                        class="ant-tree-indent-unit ant-tree-indent-unit-start ant-tree-indent-unit-end"
-                      />
-                      <span
-                        class="ant-tree-indent-unit ant-tree-indent-unit-end"
-                      />
-                    </span>
-                    <span
-                      class="ant-tree-switcher ant-tree-switcher_close"
-                    >
-                      <svg
-                        class="ant-tree-switcher-icon"
-                        height="16"
-                        viewBox="0 0 14 14"
-                        width="16"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          d="M7.684 7 4.796 4.112l.825-.824L9.334 7 5.62 10.712l-.825-.825z"
-                        />
-                      </svg>
-                    </span>
-                    <span
-                      class="ant-tree-node-content-wrapper ant-tree-node-content-wrapper-close"
-                      title=""
-                    >
-                      <span
-                        class="ant-tree-title"
-                      >
-                        <div
-                          class="css-1wc7lqr"
-                        >
-                          <svg
-                            height="18"
-                            viewBox="0 0 1024 1024"
-                            width="18"
-                            xmlns="http://www.w3.org/2000/svg"
-                          >
-                            <path
-                              d="M165.3 417.3V739c0 22.2 19 40.3 42.4 40.3H815c23.4 0 42.4-18 42.4-40.3V412h-692v5.3zM815 278.6H519.5v-8.8c0-28.5-23.7-51.6-52.7-51.6H218c-29 0-52.7 23.1-52.7 51.6V368h692.1v-49.1c0-22.3-19-40.3-42.4-40.3m0 0"
-                              fill="#4583FF"
-                            />
-                          </svg>
-                          <span
-                            class="content"
-                          >
-                            TABLE
-                          </span>
-                        </div>
-                      </span>
-                    </span>
-                  </div>
                 </div>
               </div>
-            </div>
-            <div
-              class="ant-tree-list-scrollbar"
-              style="width: 8px; top: 0px; bottom: 0px; right: 0px; position: absolute; display: none;"
-            >
-              <div
-                class="ant-tree-list-scrollbar-thumb"
-                style="width: 100%; height: 176px; top: 0px; left: 0px; position: absolute; background: rgba(0, 0, 0, 0.5); border-radius: 99px; cursor: pointer; user-select: none;"
-              />
             </div>
           </div>
         </div>
       </div>
     </div>
     <div
-      class="ant-card ant-card-bordered css-ri1dts css-dev-only-do-not-override-txh9fw"
+      class="ant-card ant-card-hoverable css-1qxznty"
     >
+      <div
+        class="ant-card-head"
+      >
+        <div
+          class="ant-card-head-wrapper"
+        >
+          <div
+            class="ant-card-head-title"
+          >
+            <div
+              class="css-1kpyopg"
+            >
+              <span>
+                比对环境
+              </span>
+              <span>
+                (comparison-name)
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
       <div
         class="ant-card-body"
       >
         <div
-          class="ant-tree ant-tree-icon-hide ant-tree-unselectable css-dev-only-do-not-override-txh9fw"
+          class="ant-tree ant-tree-icon-hide ant-tree-unselectable ant-tree-show-line"
           role="tree"
         >
           <div>
@@ -964,7 +587,7 @@ exports[`ComparisonTreeNode ComparisonTreeNode should render the baseline and co
           >
             <div
               class="ant-tree-list-holder"
-              style="max-height: 352px; overflow-y: hidden;"
+              style="max-height: 1200px; overflow-y: hidden;"
             >
               <div>
                 <div
@@ -973,7 +596,7 @@ exports[`ComparisonTreeNode ComparisonTreeNode should render the baseline and co
                 >
                   <div
                     aria-grabbed="false"
-                    class="ant-tree-treenode ant-tree-treenode-switcher-open ant-tree-treenode-leaf-last"
+                    class="ant-tree-treenode ant-tree-treenode-switcher-close ant-tree-treenode-leaf-last"
                     draggable="false"
                   >
                     <span
@@ -981,19 +604,17 @@ exports[`ComparisonTreeNode ComparisonTreeNode should render the baseline and co
                       class="ant-tree-indent"
                     />
                     <span
-                      class="ant-tree-switcher ant-tree-switcher_open"
+                      class="ant-tree-switcher ant-tree-switcher_close"
                     >
                       <svg
                         class="ant-tree-switcher-icon"
-                        color="currentColor"
                         height="16"
-                        viewBox="0 0 16 16"
+                        viewBox="0 0 14 14"
                         width="16"
                         xmlns="http://www.w3.org/2000/svg"
                       >
                         <path
-                          d="m8 8.781 3.3-3.3.943.943L8 10.667 3.757 6.424l.943-.943z"
-                          fill="currentColor"
+                          d="M7.684 7 4.796 4.112l.825-.824L9.334 7 5.62 10.712l-.825-.825z"
                         />
                       </svg>
                     </span>
@@ -1005,14 +626,14 @@ exports[`ComparisonTreeNode ComparisonTreeNode should render the baseline and co
                       />
                     </span>
                     <span
-                      class="ant-tree-node-content-wrapper ant-tree-node-content-wrapper-open"
+                      class="ant-tree-node-content-wrapper ant-tree-node-content-wrapper-close"
                       title=""
                     >
                       <span
                         class="ant-tree-title"
                       >
                         <div
-                          class="css-1wc7lqr"
+                          class="css-1bi0c9x"
                         >
                           <svg
                             color="#4583ff"
@@ -1035,534 +656,8 @@ exports[`ComparisonTreeNode ComparisonTreeNode should render the baseline and co
                       </span>
                     </span>
                   </div>
-                  <div
-                    aria-grabbed="false"
-                    class="ant-tree-treenode ant-tree-treenode-switcher-open"
-                    draggable="false"
-                  >
-                    <span
-                      aria-hidden="true"
-                      class="ant-tree-indent"
-                    >
-                      <span
-                        class="ant-tree-indent-unit ant-tree-indent-unit-start ant-tree-indent-unit-end"
-                      />
-                    </span>
-                    <span
-                      class="ant-tree-switcher ant-tree-switcher_open"
-                    >
-                      <svg
-                        class="ant-tree-switcher-icon"
-                        color="currentColor"
-                        height="16"
-                        viewBox="0 0 16 16"
-                        width="16"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          d="m8 8.781 3.3-3.3.943.943L8 10.667 3.757 6.424l.943-.943z"
-                          fill="currentColor"
-                        />
-                      </svg>
-                    </span>
-                    <span
-                      class="ant-tree-checkbox"
-                    >
-                      <span
-                        class="ant-tree-checkbox-inner"
-                      />
-                    </span>
-                    <span
-                      class="ant-tree-node-content-wrapper ant-tree-node-content-wrapper-open"
-                      title=""
-                    >
-                      <span
-                        class="ant-tree-title"
-                      >
-                        <div
-                          class="css-1wc7lqr"
-                        >
-                          <svg
-                            color="#4583ff"
-                            height="16"
-                            viewBox="0 0 18 18"
-                            width="16"
-                            xmlns="http://www.w3.org/2000/svg"
-                          >
-                            <path
-                              d="M8.25 5.25V3A.75.75 0 0 1 9 2.25h6.75a.75.75 0 0 1 .75.75v12a.75.75 0 0 1-.75.75H2.25A.75.75 0 0 1 1.5 15V6a.75.75 0 0 1 .75-.75zM3.75 12v1.5H7.5V12zm6.75 0v1.5h3.75V12zm0-2.25v1.5h3.75v-1.5zm0-2.25V9h3.75V7.5zM3.75 9.75v1.5H7.5v-1.5z"
-                              fill="currentColor"
-                            />
-                          </svg>
-                          <span
-                            class="content"
-                          >
-                            test
-                            (
-                            0
-                            )
-                          </span>
-                        </div>
-                      </span>
-                    </span>
-                  </div>
-                  <div
-                    aria-grabbed="false"
-                    class="ant-tree-treenode ant-tree-treenode-switcher-open ant-tree-treenode-leaf-last"
-                    draggable="false"
-                  >
-                    <span
-                      aria-hidden="true"
-                      class="ant-tree-indent"
-                    >
-                      <span
-                        class="ant-tree-indent-unit ant-tree-indent-unit-start ant-tree-indent-unit-end"
-                      />
-                      <span
-                        class="ant-tree-indent-unit ant-tree-indent-unit-start"
-                      />
-                    </span>
-                    <span
-                      class="ant-tree-switcher ant-tree-switcher_open"
-                    >
-                      <svg
-                        class="ant-tree-switcher-icon"
-                        color="currentColor"
-                        height="16"
-                        viewBox="0 0 16 16"
-                        width="16"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          d="m8 8.781 3.3-3.3.943.943L8 10.667 3.757 6.424l.943-.943z"
-                          fill="currentColor"
-                        />
-                      </svg>
-                    </span>
-                    <span
-                      class="ant-tree-checkbox"
-                    >
-                      <span
-                        class="ant-tree-checkbox-inner"
-                      />
-                    </span>
-                    <span
-                      class="ant-tree-node-content-wrapper ant-tree-node-content-wrapper-open"
-                      title=""
-                    >
-                      <span
-                        class="ant-tree-title"
-                      >
-                        <div
-                          class="css-1wc7lqr"
-                        >
-                          <svg
-                            height="18"
-                            viewBox="0 0 1024 1024"
-                            width="18"
-                            xmlns="http://www.w3.org/2000/svg"
-                          >
-                            <path
-                              d="M165.3 417.3V739c0 22.2 19 40.3 42.4 40.3H815c23.4 0 42.4-18 42.4-40.3V412h-692v5.3zM815 278.6H519.5v-8.8c0-28.5-23.7-51.6-52.7-51.6H218c-29 0-52.7 23.1-52.7 51.6V368h692.1v-49.1c0-22.3-19-40.3-42.4-40.3m0 0"
-                              fill="#4583FF"
-                            />
-                          </svg>
-                          <span
-                            class="content"
-                          >
-                            TABLE
-                             (
-                            0
-                            )
-                          </span>
-                        </div>
-                      </span>
-                    </span>
-                  </div>
-                  <div
-                    aria-grabbed="false"
-                    class="ant-tree-treenode ant-tree-treenode-switcher-close ant-tree-treenode-leaf-last"
-                    draggable="false"
-                  >
-                    <span
-                      aria-hidden="true"
-                      class="ant-tree-indent"
-                    >
-                      <span
-                        class="ant-tree-indent-unit ant-tree-indent-unit-start ant-tree-indent-unit-end"
-                      />
-                      <span
-                        class="ant-tree-indent-unit ant-tree-indent-unit-start"
-                      />
-                      <span
-                        class="ant-tree-indent-unit ant-tree-indent-unit-start ant-tree-indent-unit-end"
-                      />
-                    </span>
-                    <span
-                      class="ant-tree-switcher ant-tree-switcher-noop"
-                    />
-                    <span
-                      class="ant-tree-checkbox"
-                    >
-                      <span
-                        class="ant-tree-checkbox-inner"
-                      />
-                    </span>
-                    <span
-                      class="ant-tree-node-content-wrapper ant-tree-node-content-wrapper-normal"
-                      title=""
-                    >
-                      <span
-                        class="ant-tree-title"
-                      >
-                        <div
-                          class="object-comparison-result-pass css-1wc7lqr"
-                        >
-                          <div
-                            class="name-container"
-                          >
-                            <svg
-                              height="16"
-                              viewBox="0 0 1024 1024"
-                              width="16"
-                              xmlns="http://www.w3.org/2000/svg"
-                            >
-                              <path
-                                d="M828.952 121.905a73.143 73.143 0 0 1 73.143 73.143v633.904a73.143 73.143 0 0 1-73.143 73.143H195.048a73.143 73.143 0 0 1-73.143-73.143V195.048a73.143 73.143 0 0 1 73.143-73.143zm-512 597.333H195.048v109.714h121.904zm512 0H390.095v109.714h438.857zm-512-182.857H195.048v109.714h121.904zm512 0H390.095v109.714h438.857zm-512-182.857H195.048v109.714h121.904zm512 0H390.095v109.714h438.857z"
-                                fill="#4583FF"
-                              />
-                            </svg>
-                            <span
-                              class="content"
-                              title="task"
-                            >
-                              task
-                            </span>
-                          </div>
-                          <div
-                            class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
-                          >
-                            <div
-                              class="ant-space-item"
-                            >
-                              <svg
-                                class="view-detail-icon"
-                                color="#4583ff"
-                                height="16"
-                                viewBox="0 0 1024 1024"
-                                width="16"
-                                xmlns="http://www.w3.org/2000/svg"
-                              >
-                                <path
-                                  d="M910.423 893.2 790.027 772.662c31.305-42.579 49.833-95.127 49.833-151.932 0-141.624-115.086-256.85-256.54-256.85S326.785 479.106 326.785 620.73 441.866 877.58 583.32 877.58c56.737 0 109.222-18.55 151.75-49.893l120.397 120.538c7.59 7.593 17.532 11.393 27.479 11.393s19.888-3.8 27.478-11.394c15.174-15.198 15.174-39.832-.001-55.024M583.32 814.359c-106.638 0-193.39-86.863-193.39-193.629s86.752-193.628 193.39-193.628 193.395 86.861 193.395 193.628-86.758 193.629-193.395 193.629"
-                                  fill="currentColor"
-                                />
-                                <path
-                                  d="M251.215 631.364c0-181.288 146.78-328.252 327.844-328.252 110.88 0 208.904 55.113 268.236 139.473V124.164c0-32.988-26.736-59.78-59.715-59.78H161.91c-32.977 0-59.714 26.763-59.714 59.779v775.672c0 32.99 26.735 59.782 59.715 59.782h417.148c-181.063 0-327.844-146.964-327.844-328.253m-29.803-447.616c0-16.481 13.344-29.841 29.804-29.841h447.06c16.46 0 29.804 13.36 29.804 29.84s-13.343 29.842-29.804 29.842h-447.06c-16.46 0-29.804-13.361-29.804-29.841"
-                                  fill="currentColor"
-                                />
-                              </svg>
-                            </div>
-                          </div>
-                        </div>
-                      </span>
-                    </span>
-                  </div>
-                  <div
-                    aria-grabbed="false"
-                    class="ant-tree-treenode ant-tree-treenode-switcher-open"
-                    draggable="false"
-                  >
-                    <span
-                      aria-hidden="true"
-                      class="ant-tree-indent"
-                    >
-                      <span
-                        class="ant-tree-indent-unit ant-tree-indent-unit-start ant-tree-indent-unit-end"
-                      />
-                    </span>
-                    <span
-                      class="ant-tree-switcher ant-tree-switcher_open"
-                    >
-                      <svg
-                        class="ant-tree-switcher-icon"
-                        color="currentColor"
-                        height="16"
-                        viewBox="0 0 16 16"
-                        width="16"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          d="m8 8.781 3.3-3.3.943.943L8 10.667 3.757 6.424l.943-.943z"
-                          fill="currentColor"
-                        />
-                      </svg>
-                    </span>
-                    <span
-                      class="ant-tree-checkbox"
-                    >
-                      <span
-                        class="ant-tree-checkbox-inner"
-                      />
-                    </span>
-                    <span
-                      class="ant-tree-node-content-wrapper ant-tree-node-content-wrapper-open"
-                      title=""
-                    >
-                      <span
-                        class="ant-tree-title"
-                      >
-                        <div
-                          class="css-1wc7lqr"
-                        >
-                          <svg
-                            color="#4583ff"
-                            height="16"
-                            viewBox="0 0 18 18"
-                            width="16"
-                            xmlns="http://www.w3.org/2000/svg"
-                          >
-                            <path
-                              d="M8.25 5.25V3A.75.75 0 0 1 9 2.25h6.75a.75.75 0 0 1 .75.75v12a.75.75 0 0 1-.75.75H2.25A.75.75 0 0 1 1.5 15V6a.75.75 0 0 1 .75-.75zM3.75 12v1.5H7.5V12zm6.75 0v1.5h3.75V12zm0-2.25v1.5h3.75v-1.5zm0-2.25V9h3.75V7.5zM3.75 9.75v1.5H7.5v-1.5z"
-                              fill="currentColor"
-                            />
-                          </svg>
-                          <span
-                            class="content"
-                          >
-                            test2
-                            (
-                            0
-                            )
-                          </span>
-                        </div>
-                      </span>
-                    </span>
-                  </div>
-                  <div
-                    aria-grabbed="false"
-                    class="ant-tree-treenode ant-tree-treenode-switcher-close ant-tree-treenode-leaf-last"
-                    draggable="false"
-                  >
-                    <span
-                      aria-hidden="true"
-                      class="ant-tree-indent"
-                    >
-                      <span
-                        class="ant-tree-indent-unit ant-tree-indent-unit-start ant-tree-indent-unit-end"
-                      />
-                      <span
-                        class="ant-tree-indent-unit"
-                      />
-                    </span>
-                    <span
-                      class="ant-tree-switcher ant-tree-switcher_close"
-                    >
-                      <svg
-                        class="ant-tree-switcher-icon"
-                        height="16"
-                        viewBox="0 0 14 14"
-                        width="16"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          d="M7.684 7 4.796 4.112l.825-.824L9.334 7 5.62 10.712l-.825-.825z"
-                        />
-                      </svg>
-                    </span>
-                    <span
-                      class="ant-tree-checkbox"
-                    >
-                      <span
-                        class="ant-tree-checkbox-inner"
-                      />
-                    </span>
-                    <span
-                      class="ant-tree-node-content-wrapper ant-tree-node-content-wrapper-close"
-                      title=""
-                    >
-                      <span
-                        class="ant-tree-title"
-                      >
-                        <div
-                          class="css-1wc7lqr"
-                        >
-                          <svg
-                            height="18"
-                            viewBox="0 0 1024 1024"
-                            width="18"
-                            xmlns="http://www.w3.org/2000/svg"
-                          >
-                            <path
-                              d="M165.3 417.3V739c0 22.2 19 40.3 42.4 40.3H815c23.4 0 42.4-18 42.4-40.3V412h-692v5.3zM815 278.6H519.5v-8.8c0-28.5-23.7-51.6-52.7-51.6H218c-29 0-52.7 23.1-52.7 51.6V368h692.1v-49.1c0-22.3-19-40.3-42.4-40.3m0 0"
-                              fill="#4583FF"
-                            />
-                          </svg>
-                          <span
-                            class="content"
-                          >
-                            TABLE
-                             (
-                            0
-                            )
-                          </span>
-                        </div>
-                      </span>
-                    </span>
-                  </div>
-                  <div
-                    aria-grabbed="false"
-                    class="ant-tree-treenode ant-tree-treenode-switcher-open ant-tree-treenode-leaf-last"
-                    draggable="false"
-                  >
-                    <span
-                      aria-hidden="true"
-                      class="ant-tree-indent"
-                    >
-                      <span
-                        class="ant-tree-indent-unit ant-tree-indent-unit-start ant-tree-indent-unit-end"
-                      />
-                    </span>
-                    <span
-                      class="ant-tree-switcher ant-tree-switcher_open"
-                    >
-                      <svg
-                        class="ant-tree-switcher-icon"
-                        color="currentColor"
-                        height="16"
-                        viewBox="0 0 16 16"
-                        width="16"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          d="m8 8.781 3.3-3.3.943.943L8 10.667 3.757 6.424l.943-.943z"
-                          fill="currentColor"
-                        />
-                      </svg>
-                    </span>
-                    <span
-                      class="ant-tree-checkbox"
-                    >
-                      <span
-                        class="ant-tree-checkbox-inner"
-                      />
-                    </span>
-                    <span
-                      class="ant-tree-node-content-wrapper ant-tree-node-content-wrapper-open"
-                      title=""
-                    >
-                      <span
-                        class="ant-tree-title"
-                      >
-                        <div
-                          class="css-1wc7lqr"
-                        >
-                          <svg
-                            color="#4583ff"
-                            height="16"
-                            viewBox="0 0 18 18"
-                            width="16"
-                            xmlns="http://www.w3.org/2000/svg"
-                          >
-                            <path
-                              d="M8.25 5.25V3A.75.75 0 0 1 9 2.25h6.75a.75.75 0 0 1 .75.75v12a.75.75 0 0 1-.75.75H2.25A.75.75 0 0 1 1.5 15V6a.75.75 0 0 1 .75-.75zM3.75 12v1.5H7.5V12zm6.75 0v1.5h3.75V12zm0-2.25v1.5h3.75v-1.5zm0-2.25V9h3.75V7.5zM3.75 9.75v1.5H7.5v-1.5z"
-                              fill="currentColor"
-                            />
-                          </svg>
-                          <span
-                            class="content"
-                          >
-                            test3
-                            (
-                            2
-                            )
-                          </span>
-                        </div>
-                      </span>
-                    </span>
-                  </div>
-                  <div
-                    aria-grabbed="false"
-                    class="ant-tree-treenode ant-tree-treenode-switcher-close ant-tree-treenode-leaf-last"
-                    draggable="false"
-                  >
-                    <span
-                      aria-hidden="true"
-                      class="ant-tree-indent"
-                    >
-                      <span
-                        class="ant-tree-indent-unit ant-tree-indent-unit-start ant-tree-indent-unit-end"
-                      />
-                      <span
-                        class="ant-tree-indent-unit ant-tree-indent-unit-end"
-                      />
-                    </span>
-                    <span
-                      class="ant-tree-switcher ant-tree-switcher_close"
-                    >
-                      <svg
-                        class="ant-tree-switcher-icon"
-                        height="16"
-                        viewBox="0 0 14 14"
-                        width="16"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          d="M7.684 7 4.796 4.112l.825-.824L9.334 7 5.62 10.712l-.825-.825z"
-                        />
-                      </svg>
-                    </span>
-                    <span
-                      class="ant-tree-checkbox"
-                    >
-                      <span
-                        class="ant-tree-checkbox-inner"
-                      />
-                    </span>
-                    <span
-                      class="ant-tree-node-content-wrapper ant-tree-node-content-wrapper-close"
-                      title=""
-                    >
-                      <span
-                        class="ant-tree-title"
-                      >
-                        <div
-                          class="css-1wc7lqr"
-                        >
-                          <svg
-                            height="18"
-                            viewBox="0 0 1024 1024"
-                            width="18"
-                            xmlns="http://www.w3.org/2000/svg"
-                          >
-                            <path
-                              d="M165.3 417.3V739c0 22.2 19 40.3 42.4 40.3H815c23.4 0 42.4-18 42.4-40.3V412h-692v5.3zM815 278.6H519.5v-8.8c0-28.5-23.7-51.6-52.7-51.6H218c-29 0-52.7 23.1-52.7 51.6V368h692.1v-49.1c0-22.3-19-40.3-42.4-40.3m0 0"
-                              fill="#4583FF"
-                            />
-                          </svg>
-                          <span
-                            class="content"
-                          >
-                            TABLE
-                             (
-                            2
-                            )
-                          </span>
-                        </div>
-                      </span>
-                    </span>
-                  </div>
                 </div>
               </div>
-            </div>
-            <div
-              class="ant-tree-list-scrollbar"
-              style="width: 8px; top: 0px; bottom: 0px; right: 0px; position: absolute; display: none;"
-            >
-              <div
-                class="ant-tree-list-scrollbar-thumb"
-                style="width: 100%; height: 176px; top: 0px; left: 0px; position: absolute; background: rgba(0, 0, 0, 0.5); border-radius: 99px; cursor: pointer; user-select: none;"
-              />
             </div>
           </div>
         </div>

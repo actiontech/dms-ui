@@ -73,6 +73,8 @@ export default {
       title: '编辑扫描详情·{{typeName}}',
       hightPriorityConditions: {
         mark: '标记高优先级SQL',
+        markTips:
+          '请设置筛选条件，符合以下任意一个已启用条件的SQL，都将被标记为高优先级',
         standard: '标准',
         threshold: '阈值',
         operator: '运算符'

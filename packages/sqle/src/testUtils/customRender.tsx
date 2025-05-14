@@ -33,16 +33,29 @@ const themeData = {
 };
 
 export const renderWithRouter = (...[ui, option]: [...RenderParams]) => {
-  return render(<BrowserRouter>{ui}</BrowserRouter>, option);
+  return render(
+    <ConfigProvider
+      locale={zhCN}
+      theme={{ algorithm: antdTheme.defaultAlgorithm, hashed: false }}
+    >
+      <BrowserRouter>{ui}</BrowserRouter>
+    </ConfigProvider>,
+    option
+  );
 };
 
 export const renderWithRouterAndRedux = (
   ...[ui, option, initStore]: [...RenderParams, Dictionary?]
 ) => {
   return render(
-    <BrowserRouter>
-      <Provider store={storeFactory(initStore)}>{ui}</Provider>
-    </BrowserRouter>,
+    <ConfigProvider
+      locale={zhCN}
+      theme={{ algorithm: antdTheme.defaultAlgorithm, hashed: false }}
+    >
+      <BrowserRouter>
+        <Provider store={storeFactory(initStore)}>{ui}</Provider>
+      </BrowserRouter>
+    </ConfigProvider>,
     option
   );
 };
@@ -51,7 +64,12 @@ export const renderWithRedux = (
   ...[ui, option, initStore]: [...RenderParams, Dictionary?]
 ) => {
   return render(
-    <Provider store={storeFactory(initStore)}>{ui}</Provider>,
+    <ConfigProvider
+      locale={zhCN}
+      theme={{ algorithm: antdTheme.defaultAlgorithm, hashed: false }}
+    >
+      <Provider store={storeFactory(initStore)}>{ui}</Provider>
+    </ConfigProvider>,
     option
   );
 };
@@ -75,7 +93,7 @@ export const renderHooksWithTheme = <TProps, TResult>(
     wrapper: ({ children }) => (
       <ConfigProvider
         locale={zhCN}
-        theme={{ algorithm: antdTheme.defaultAlgorithm }}
+        theme={{ algorithm: antdTheme.defaultAlgorithm, hashed: false }}
       >
         <StyledEngineProvider injectFirst>
           <ThemeProvider theme={lightTheme}>{children}</ThemeProvider>
@@ -87,9 +105,14 @@ export const renderHooksWithTheme = <TProps, TResult>(
 
 export const renderWithTheme = (...[ui, option]: [...RenderParams]) => {
   return render(
-    <StyledEngineProvider injectFirst>
-      <ThemeProvider theme={themeData}>{ui}</ThemeProvider>
-    </StyledEngineProvider>,
+    <ConfigProvider
+      locale={zhCN}
+      theme={{ algorithm: antdTheme.defaultAlgorithm, hashed: false }}
+    >
+      <StyledEngineProvider injectFirst>
+        <ThemeProvider theme={themeData}>{ui}</ThemeProvider>
+      </StyledEngineProvider>
+    </ConfigProvider>,
     option
   );
 };
@@ -98,11 +121,16 @@ export const renderWithThemeAndRedux = (
   ...[ui, option, initStore]: [...RenderParams, Dictionary?]
 ) => {
   return render(
-    <Provider store={storeFactory(initStore)}>
-      <StyledEngineProvider injectFirst>
-        <ThemeProvider theme={themeData}>{ui}</ThemeProvider>
-      </StyledEngineProvider>
-    </Provider>,
+    <ConfigProvider
+      locale={zhCN}
+      theme={{ algorithm: antdTheme.defaultAlgorithm, hashed: false }}
+    >
+      <Provider store={storeFactory(initStore)}>
+        <StyledEngineProvider injectFirst>
+          <ThemeProvider theme={themeData}>{ui}</ThemeProvider>
+        </StyledEngineProvider>
+      </Provider>
+    </ConfigProvider>,
     option
   );
 };
@@ -111,11 +139,16 @@ export const renderWithThemeAndServerRouter = (
   ...[ui, option, props]: [...RenderParams, RouterProps]
 ) => {
   return render(
-    <Router {...props}>
-      <StyledEngineProvider injectFirst>
-        <ThemeProvider theme={themeData}>{ui}</ThemeProvider>
-      </StyledEngineProvider>
-    </Router>,
+    <ConfigProvider
+      locale={zhCN}
+      theme={{ algorithm: antdTheme.defaultAlgorithm, hashed: false }}
+    >
+      <Router {...props}>
+        <StyledEngineProvider injectFirst>
+          <ThemeProvider theme={themeData}>{ui}</ThemeProvider>
+        </StyledEngineProvider>
+      </Router>
+    </ConfigProvider>,
     option
   );
 };
@@ -124,11 +157,16 @@ export const renderWithThemeAndRouter = (
   ...[ui, option, props]: [...RenderParams, MemoryRouterProps?]
 ) => {
   return render(
-    <MemoryRouter {...props}>
-      <StyledEngineProvider injectFirst>
-        <ThemeProvider theme={themeData}>{ui}</ThemeProvider>
-      </StyledEngineProvider>
-    </MemoryRouter>,
+    <ConfigProvider
+      locale={zhCN}
+      theme={{ algorithm: antdTheme.defaultAlgorithm, hashed: false }}
+    >
+      <MemoryRouter {...props}>
+        <StyledEngineProvider injectFirst>
+          <ThemeProvider theme={themeData}>{ui}</ThemeProvider>
+        </StyledEngineProvider>
+      </MemoryRouter>
+    </ConfigProvider>,
     option
   );
 };
@@ -145,13 +183,18 @@ export const superRender = (
   const renderReturn = render(ui, {
     wrapper: ({ children }) => {
       return (
-        <Provider store={storeFactory(otherProps?.initStore)}>
-          <MemoryRouter {...otherProps?.routerProps}>
-            <StyledEngineProvider injectFirst>
-              <ThemeProvider theme={themeData}>{children}</ThemeProvider>
-            </StyledEngineProvider>
-          </MemoryRouter>
-        </Provider>
+        <ConfigProvider
+          locale={zhCN}
+          theme={{ algorithm: antdTheme.defaultAlgorithm, hashed: false }}
+        >
+          <Provider store={storeFactory(otherProps?.initStore)}>
+            <MemoryRouter {...otherProps?.routerProps}>
+              <StyledEngineProvider injectFirst>
+                <ThemeProvider theme={themeData}>{children}</ThemeProvider>
+              </StyledEngineProvider>
+            </MemoryRouter>
+          </Provider>
+        </ConfigProvider>
       );
     },
     ...option

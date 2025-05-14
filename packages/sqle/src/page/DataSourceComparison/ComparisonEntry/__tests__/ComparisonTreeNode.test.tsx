@@ -18,6 +18,10 @@ import dayjs from 'dayjs';
 import MockDate from 'mockdate';
 import ComparisonTreeNode from '../component/ComparisonTreeNode';
 import { createSpySuccessResponse } from '@actiontech/shared/lib/testUtil/mockApi';
+import {
+  UtilsConsoleErrorStringsEnum,
+  ignoreConsoleErrors
+} from '@actiontech/shared/lib/testUtil/common';
 
 describe('ComparisonTreeNode', () => {
   describe('ComparisonDetailDrawer', () => {
@@ -87,6 +91,8 @@ describe('ComparisonTreeNode', () => {
       jest.useRealTimers();
       MockDate.reset();
     });
+
+    ignoreConsoleErrors([UtilsConsoleErrorStringsEnum.UNKNOWN_EVENT_HANDLER]);
 
     it('should render the drawer when open is true', async () => {
       const { baseElement } = customRender();
@@ -226,6 +232,7 @@ describe('ComparisonTreeNode', () => {
 
   describe('ComparisonTreeNode', () => {
     const comparisonObjectTreeOnCheckSpy = jest.fn();
+    const setTreeExpandedKeysSpy = jest.fn();
     const customRender = () => {
       return superRender(
         <ComparisonTreeNode
@@ -242,6 +249,8 @@ describe('ComparisonTreeNode', () => {
           }}
           comparisonObjectCheckKeys={[]}
           comparisonObjectTreeOnCheck={comparisonObjectTreeOnCheckSpy}
+          setTreeExpandedKeys={setTreeExpandedKeysSpy}
+          treeExpandedKeys={[]}
         />
       );
     };
@@ -257,6 +266,8 @@ describe('ComparisonTreeNode', () => {
 
     it('should render the baseline and comparison trees', () => {
       const { container } = customRender();
+      expect(setTreeExpandedKeysSpy).toHaveBeenCalledTimes(1);
+      expect(setTreeExpandedKeysSpy.mock.calls[0][0]).toMatchSnapshot();
 
       expect(container).toMatchSnapshot();
     });

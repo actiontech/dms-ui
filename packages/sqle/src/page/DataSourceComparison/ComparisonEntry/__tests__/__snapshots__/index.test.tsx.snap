@@ -1,226 +1,3562 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`EnvironmentSelector should handle card click correctly 1`] = `
+<div>
+  <div
+    class="css-e6v8ex"
+  >
+    <div
+      class="ant-card css-1423xkt"
+    >
+      <div
+        class="ant-card-body"
+      >
+        <form
+          class="ant-form ant-form-horizontal css-1smbjja"
+        >
+          <div
+            class="css-cp2xvl"
+          >
+            <h4
+              class="ant-typography"
+            >
+              基准环境
+            </h4>
+            <span
+              class="ant-typography environment-section-desc"
+            >
+              请选择您认为是"标准"的数据源环境，
+这个环境将作为比较的基准点。
+            </span>
+            <div
+              class="ant-form-item css-15d6abf ant-form-item-has-success"
+            >
+              <div
+                class="ant-row ant-form-item-row"
+              >
+                <div
+                  class="ant-col ant-form-item-label"
+                >
+                  <label
+                    class="ant-form-item-required"
+                    for="baselineInstance"
+                    title=""
+                  />
+                </div>
+                <div
+                  class="ant-col ant-form-item-control"
+                >
+                  <div
+                    class="ant-form-item-control-input"
+                  >
+                    <div
+                      class="ant-form-item-control-input-content"
+                    >
+                      <div
+                        aria-required="true"
+                        class="ant-select ant-tree-select ant-select-in-form-item ant-select-status-success basic-tree-select-wrapper css-1ggbq54 ant-select-single ant-select-allow-clear ant-select-show-arrow ant-select-show-search"
+                      >
+                        <div
+                          class="ant-select-selector"
+                        >
+                          <span
+                            class="ant-select-selection-search"
+                          >
+                            <input
+                              aria-autocomplete="list"
+                              aria-controls="baselineInstance_list"
+                              aria-expanded="false"
+                              aria-haspopup="listbox"
+                              aria-owns="baselineInstance_list"
+                              aria-required="true"
+                              autocomplete="off"
+                              class="ant-select-selection-search-input"
+                              id="baselineInstance"
+                              role="combobox"
+                              type="search"
+                              value=""
+                            />
+                          </span>
+                          <span
+                            class="ant-select-selection-item"
+                          >
+                            <span
+                              class="css-g5caig"
+                            >
+                              <svg
+                                color="#4583ff"
+                                height="18"
+                                viewBox="0 0 18 18"
+                                width="18"
+                                xmlns="http://www.w3.org/2000/svg"
+                              >
+                                <path
+                                  d="M15.75 7.125v2.25c0 1.864-3.023 3.375-6.75 3.375s-6.75-1.511-6.75-3.375v-2.25C2.25 8.989 5.273 10.5 9 10.5s6.75-1.511 6.75-3.375m-13.5 3.75c0 1.864 3.023 3.375 6.75 3.375s6.75-1.511 6.75-3.375v2.25c0 1.864-3.023 3.375-6.75 3.375s-6.75-1.511-6.75-3.375zM9 9C5.273 9 2.25 7.489 2.25 5.625S5.273 2.25 9 2.25s6.75 1.511 6.75 3.375S12.727 9 9 9"
+                                  fill="currentColor"
+                                />
+                              </svg>
+                              <span
+                                class="content"
+                              >
+                                mysql-1(10.186.62.13:33061)
+                              </span>
+                            </span>
+                          </span>
+                        </div>
+                        <span
+                          aria-hidden="true"
+                          class="ant-select-arrow"
+                          style="user-select: none;"
+                          unselectable="on"
+                        >
+                          <span
+                            aria-label="down"
+                            class="anticon anticon-down ant-select-suffix"
+                            role="img"
+                          >
+                            <svg
+                              aria-hidden="true"
+                              data-icon="down"
+                              fill="currentColor"
+                              focusable="false"
+                              height="1em"
+                              viewBox="64 64 896 896"
+                              width="1em"
+                            >
+                              <path
+                                d="M884 256h-75c-5.1 0-9.9 2.5-12.9 6.6L512 654.2 227.9 262.6c-3-4.1-7.8-6.6-12.9-6.6h-75c-6.5 0-10.3 7.4-6.5 12.7l352.6 486.1c12.8 17.6 39 17.6 51.7 0l352.6-486.1c3.9-5.3.1-12.7-6.4-12.7z"
+                              />
+                            </svg>
+                          </span>
+                        </span>
+                        <span
+                          aria-hidden="true"
+                          class="ant-select-clear"
+                          style="user-select: none;"
+                          unselectable="on"
+                        >
+                          <svg
+                            height="14"
+                            viewBox="0 0 14 14"
+                            width="14"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              d="m7 6.175 2.887-2.887.825.825L7.825 7l2.887 2.888-.825.824L7 7.825l-2.888 2.887-.824-.824L6.175 7 3.288 4.113l.824-.825z"
+                            />
+                          </svg>
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="css-cp2xvl"
+          >
+            <h4
+              class="ant-typography"
+            >
+              比对环境
+            </h4>
+            <span
+              class="ant-typography environment-section-desc"
+            >
+              请选择您想要检查或更新的数据库环境，
+这个环境将与基准环境进行比较，以找出差异。
+            </span>
+            <div
+              class="ant-form-item css-15d6abf ant-form-item-has-success"
+            >
+              <div
+                class="ant-row ant-form-item-row"
+              >
+                <div
+                  class="ant-col ant-form-item-label"
+                >
+                  <label
+                    class="ant-form-item-required"
+                    for="comparisonInstance"
+                    title=""
+                  />
+                </div>
+                <div
+                  class="ant-col ant-form-item-control"
+                >
+                  <div
+                    class="ant-form-item-control-input"
+                  >
+                    <div
+                      class="ant-form-item-control-input-content"
+                    >
+                      <div
+                        aria-required="true"
+                        class="ant-select ant-tree-select ant-select-in-form-item ant-select-status-success basic-tree-select-wrapper css-1ggbq54 ant-select-single ant-select-allow-clear ant-select-show-arrow ant-select-show-search"
+                      >
+                        <div
+                          class="ant-select-selector"
+                        >
+                          <span
+                            class="ant-select-selection-search"
+                          >
+                            <input
+                              aria-autocomplete="list"
+                              aria-controls="comparisonInstance_list"
+                              aria-expanded="false"
+                              aria-haspopup="listbox"
+                              aria-owns="comparisonInstance_list"
+                              aria-required="true"
+                              autocomplete="off"
+                              class="ant-select-selection-search-input"
+                              id="comparisonInstance"
+                              role="combobox"
+                              type="search"
+                              value=""
+                            />
+                          </span>
+                          <span
+                            class="ant-select-selection-item"
+                          >
+                            <span
+                              class="css-g5caig"
+                            >
+                              <svg
+                                color="#4583ff"
+                                height="18"
+                                viewBox="0 0 18 18"
+                                width="18"
+                                xmlns="http://www.w3.org/2000/svg"
+                              >
+                                <path
+                                  d="M15.75 7.125v2.25c0 1.864-3.023 3.375-6.75 3.375s-6.75-1.511-6.75-3.375v-2.25C2.25 8.989 5.273 10.5 9 10.5s6.75-1.511 6.75-3.375m-13.5 3.75c0 1.864 3.023 3.375 6.75 3.375s6.75-1.511 6.75-3.375v2.25c0 1.864-3.023 3.375-6.75 3.375s-6.75-1.511-6.75-3.375zM9 9C5.273 9 2.25 7.489 2.25 5.625S5.273 2.25 9 2.25s6.75 1.511 6.75 3.375S12.727 9 9 9"
+                                  fill="currentColor"
+                                />
+                              </svg>
+                              <span
+                                class="content"
+                              >
+                                xin-test-database(10.186.62.15:33063)
+                              </span>
+                            </span>
+                          </span>
+                        </div>
+                        <span
+                          aria-hidden="true"
+                          class="ant-select-arrow"
+                          style="user-select: none;"
+                          unselectable="on"
+                        >
+                          <span
+                            aria-label="down"
+                            class="anticon anticon-down ant-select-suffix"
+                            role="img"
+                          >
+                            <svg
+                              aria-hidden="true"
+                              data-icon="down"
+                              fill="currentColor"
+                              focusable="false"
+                              height="1em"
+                              viewBox="64 64 896 896"
+                              width="1em"
+                            >
+                              <path
+                                d="M884 256h-75c-5.1 0-9.9 2.5-12.9 6.6L512 654.2 227.9 262.6c-3-4.1-7.8-6.6-12.9-6.6h-75c-6.5 0-10.3 7.4-6.5 12.7l352.6 486.1c12.8 17.6 39 17.6 51.7 0l352.6-486.1c3.9-5.3.1-12.7-6.4-12.7z"
+                              />
+                            </svg>
+                          </span>
+                        </span>
+                        <span
+                          aria-hidden="true"
+                          class="ant-select-clear"
+                          style="user-select: none;"
+                          unselectable="on"
+                        >
+                          <svg
+                            height="14"
+                            viewBox="0 0 14 14"
+                            width="14"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              d="m7 6.175 2.887-2.887.825.825L7.825 7l2.887 2.888-.825.824L7 7.825l-2.888 2.887-.824-.824L6.175 7 3.288 4.113l.824-.825z"
+                            />
+                          </svg>
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </form>
+        <button
+          class="ant-btn ant-btn-primary ant-btn-lg full-width-element basic-button-wrapper css-geipcv"
+          style="margin-top: 16px;"
+          type="button"
+        >
+          <span>
+            执行对比
+          </span>
+        </button>
+      </div>
+    </div>
+    <div
+      class="ant-card css-1423xkt"
+    >
+      <div
+        class="ant-card-head"
+      >
+        <div
+          class="ant-card-head-wrapper"
+        >
+          <div
+            class="ant-card-head-title"
+          >
+            结果概览
+          </div>
+          <div
+            class="ant-card-extra"
+          >
+            <div
+              class="css-1n1nyax"
+            >
+              <div>
+                开始时间
+                :
+                 
+                2024-12-18 12:00:00
+              </div>
+              <div>
+                结束时间
+                :
+                 
+                2024-12-18 12:00:00
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="ant-card-body"
+      >
+        <div
+          class="css-25fr8k"
+        >
+          <div
+            class="ant-row"
+            style="margin-left: -8px; margin-right: -8px;"
+          >
+            <div
+              class="ant-col ant-col-6"
+              style="padding-left: 8px; padding-right: 8px;"
+            >
+              <div
+                class="ant-card ant-card-bordered card-comparison-not-exist-mode css-wpolr5"
+              >
+                <div
+                  class="ant-card-body"
+                >
+                  <h4
+                    class="ant-typography card-title"
+                  >
+                    缺失对象
+                  </h4>
+                  <div
+                    class="stat-number"
+                  >
+                    2
+                  </div>
+                  <div
+                    class="card-footer"
+                  >
+                    <span
+                      class="ant-typography suggestion"
+                    >
+                      需要及时处理
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
+              class="ant-col ant-col-6"
+              style="padding-left: 8px; padding-right: 8px;"
+            >
+              <div
+                class="ant-card ant-card-bordered card-base-not-exist-mode css-wpolr5"
+              >
+                <div
+                  class="ant-card-body"
+                >
+                  <h4
+                    class="ant-typography card-title"
+                  >
+                    新增对象
+                  </h4>
+                  <div
+                    class="stat-number"
+                  >
+                    0
+                  </div>
+                  <div
+                    class="card-footer"
+                  >
+                    <span
+                      class="ant-typography suggestion"
+                    >
+                      需要及时处理
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
+              class="ant-col ant-col-6"
+              style="padding-left: 8px; padding-right: 8px;"
+            >
+              <div
+                class="ant-card ant-card-bordered card-inconsistent-mode selected css-wpolr5"
+              >
+                <div
+                  class="ant-card-body"
+                >
+                  <h4
+                    class="ant-typography card-title"
+                  >
+                    定义差异
+                  </h4>
+                  <div
+                    class="stat-number"
+                  >
+                    0
+                  </div>
+                  <div
+                    class="card-footer"
+                  >
+                    <span
+                      class="ant-typography suggestion"
+                    >
+                      建议检查确认
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
+              class="ant-col ant-col-6"
+              style="padding-left: 8px; padding-right: 8px;"
+            >
+              <div
+                class="ant-card ant-card-bordered card-same-mode css-wpolr5"
+              >
+                <div
+                  class="ant-card-body"
+                >
+                  <h4
+                    class="ant-typography card-title"
+                  >
+                    一致对象
+                  </h4>
+                  <div
+                    class="stat-number"
+                  >
+                    2
+                  </div>
+                  <div
+                    class="card-footer"
+                  >
+                    <span
+                      class="ant-typography suggestion"
+                    >
+                      无需处理
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="ant-card css-1423xkt"
+    >
+      <div
+        class="ant-card-head"
+      >
+        <div
+          class="ant-card-head-wrapper"
+        >
+          <div
+            class="ant-card-head-title"
+          >
+            结果详情
+          </div>
+          <div
+            class="ant-card-extra"
+          >
+            <div
+              class="ant-space ant-space-horizontal ant-space-align-center css-4ph0pf"
+            >
+              <div
+                class="ant-space-item"
+                style="margin-right: 12px;"
+              >
+                <div
+                  class="css-1f8xqgy"
+                >
+                  只看差异
+                </div>
+              </div>
+              <div
+                class="ant-space-item"
+              >
+                <div
+                  class="ant-space ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
+                >
+                  <div
+                    class="ant-space-item"
+                  >
+                    <button
+                      class="ant-btn ant-btn-default basic-button-wrapper css-geipcv"
+                      disabled=""
+                      type="button"
+                    >
+                      <span>
+                        生成变更SQL
+                      </span>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="ant-card-body"
+      >
+        <div
+          class="css-ov1ktg"
+        >
+          <div
+            class="ant-card ant-card-hoverable css-1qxznty"
+          >
+            <div
+              class="ant-card-head"
+            >
+              <div
+                class="ant-card-head-wrapper"
+              >
+                <div
+                  class="ant-card-head-title"
+                >
+                  <div
+                    class="css-1kpyopg"
+                  >
+                    <span>
+                      基准环境
+                    </span>
+                    <span>
+                      (mysql-1) 
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
+              class="ant-card-body"
+            >
+              <div
+                class="ant-tree ant-tree-icon-hide ant-tree-unselectable ant-tree-show-line"
+                role="tree"
+              >
+                <div>
+                  <input
+                    aria-label="for screen reader"
+                    style="width: 0px; height: 0px; display: flex; overflow: hidden; opacity: 0; border: 0px; padding: 0px; margin: 0px;"
+                    tabindex="0"
+                    value=""
+                  />
+                </div>
+                <div
+                  aria-hidden="true"
+                  class="ant-tree-treenode"
+                  style="position: absolute; pointer-events: none; visibility: hidden; height: 0px; overflow: hidden; border: 0px; padding: 0px;"
+                >
+                  <div
+                    class="ant-tree-indent"
+                  >
+                    <div
+                      class="ant-tree-indent-unit"
+                    />
+                  </div>
+                </div>
+                <div
+                  class="ant-tree-list"
+                  style="position: relative;"
+                >
+                  <div
+                    class="ant-tree-list-holder"
+                    style="max-height: 1200px; overflow-y: hidden;"
+                  >
+                    <div>
+                      <div
+                        class="ant-tree-list-holder-inner"
+                        style="display: flex; flex-direction: column;"
+                      >
+                        <div
+                          aria-grabbed="false"
+                          class="ant-tree-treenode ant-tree-treenode-switcher-open ant-tree-treenode-leaf-last"
+                          draggable="false"
+                        >
+                          <span
+                            aria-hidden="true"
+                            class="ant-tree-indent"
+                          />
+                          <span
+                            class="ant-tree-switcher ant-tree-switcher_open"
+                          >
+                            <svg
+                              class="ant-tree-switcher-icon"
+                              color="currentColor"
+                              height="16"
+                              viewBox="0 0 16 16"
+                              width="16"
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <path
+                                d="m8 8.781 3.3-3.3.943.943L8 10.667 3.757 6.424l.943-.943z"
+                                fill="currentColor"
+                              />
+                            </svg>
+                          </span>
+                          <span
+                            class="ant-tree-node-content-wrapper ant-tree-node-content-wrapper-open"
+                            title=""
+                          >
+                            <span
+                              class="ant-tree-title"
+                            >
+                              <div
+                                class="css-1bi0c9x"
+                              >
+                                <svg
+                                  color="#4583ff"
+                                  height="16"
+                                  viewBox="0 0 18 18"
+                                  width="16"
+                                  xmlns="http://www.w3.org/2000/svg"
+                                >
+                                  <path
+                                    d="M15.75 7.125v2.25c0 1.864-3.023 3.375-6.75 3.375s-6.75-1.511-6.75-3.375v-2.25C2.25 8.989 5.273 10.5 9 10.5s6.75-1.511 6.75-3.375m-13.5 3.75c0 1.864 3.023 3.375 6.75 3.375s6.75-1.511 6.75-3.375v2.25c0 1.864-3.023 3.375-6.75 3.375s-6.75-1.511-6.75-3.375zM9 9C5.273 9 2.25 7.489 2.25 5.625S5.273 2.25 9 2.25s6.75 1.511 6.75 3.375S12.727 9 9 9"
+                                    fill="currentColor"
+                                  />
+                                </svg>
+                                <span
+                                  class="content"
+                                >
+                                  mysql-1
+                                </span>
+                              </div>
+                            </span>
+                          </span>
+                        </div>
+                        <div
+                          aria-grabbed="false"
+                          class="ant-tree-treenode ant-tree-treenode-switcher-open"
+                          draggable="false"
+                        >
+                          <span
+                            aria-hidden="true"
+                            class="ant-tree-indent"
+                          >
+                            <span
+                              class="ant-tree-indent-unit ant-tree-indent-unit-start ant-tree-indent-unit-end"
+                            />
+                          </span>
+                          <span
+                            class="ant-tree-switcher ant-tree-switcher_open"
+                          >
+                            <svg
+                              class="ant-tree-switcher-icon"
+                              color="currentColor"
+                              height="16"
+                              viewBox="0 0 16 16"
+                              width="16"
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <path
+                                d="m8 8.781 3.3-3.3.943.943L8 10.667 3.757 6.424l.943-.943z"
+                                fill="currentColor"
+                              />
+                            </svg>
+                          </span>
+                          <span
+                            class="ant-tree-node-content-wrapper ant-tree-node-content-wrapper-open"
+                            title=""
+                          >
+                            <span
+                              class="ant-tree-title"
+                            >
+                              <div
+                                class="css-1bi0c9x"
+                              >
+                                <svg
+                                  color="#4583ff"
+                                  height="16"
+                                  viewBox="0 0 18 18"
+                                  width="16"
+                                  xmlns="http://www.w3.org/2000/svg"
+                                >
+                                  <path
+                                    d="M8.25 5.25V3A.75.75 0 0 1 9 2.25h6.75a.75.75 0 0 1 .75.75v12a.75.75 0 0 1-.75.75H2.25A.75.75 0 0 1 1.5 15V6a.75.75 0 0 1 .75-.75zM3.75 12v1.5H7.5V12zm6.75 0v1.5h3.75V12zm0-2.25v1.5h3.75v-1.5zm0-2.25V9h3.75V7.5zM3.75 9.75v1.5H7.5v-1.5z"
+                                    fill="currentColor"
+                                  />
+                                </svg>
+                                <span
+                                  class="content"
+                                >
+                                  test
+                                </span>
+                              </div>
+                            </span>
+                          </span>
+                        </div>
+                        <div
+                          aria-grabbed="false"
+                          class="ant-tree-treenode ant-tree-treenode-switcher-open ant-tree-treenode-leaf-last"
+                          draggable="false"
+                        >
+                          <span
+                            aria-hidden="true"
+                            class="ant-tree-indent"
+                          >
+                            <span
+                              class="ant-tree-indent-unit ant-tree-indent-unit-start ant-tree-indent-unit-end"
+                            />
+                            <span
+                              class="ant-tree-indent-unit ant-tree-indent-unit-start"
+                            />
+                          </span>
+                          <span
+                            class="ant-tree-switcher ant-tree-switcher-noop"
+                          >
+                            <span
+                              class="ant-tree-switcher-leaf-line"
+                            />
+                          </span>
+                          <span
+                            class="ant-tree-node-content-wrapper ant-tree-node-content-wrapper-normal"
+                            title=""
+                          >
+                            <span
+                              class="ant-tree-title"
+                            >
+                              <div
+                                class="css-1bi0c9x"
+                              >
+                                <svg
+                                  height="18"
+                                  viewBox="0 0 1024 1024"
+                                  width="18"
+                                  xmlns="http://www.w3.org/2000/svg"
+                                >
+                                  <path
+                                    d="M165.3 417.3V739c0 22.2 19 40.3 42.4 40.3H815c23.4 0 42.4-18 42.4-40.3V412h-692v5.3zM815 278.6H519.5v-8.8c0-28.5-23.7-51.6-52.7-51.6H218c-29 0-52.7 23.1-52.7 51.6V368h692.1v-49.1c0-22.3-19-40.3-42.4-40.3m0 0"
+                                    fill="#4583FF"
+                                  />
+                                </svg>
+                                <span
+                                  class="content"
+                                >
+                                  TABLE
+                                </span>
+                              </div>
+                            </span>
+                          </span>
+                        </div>
+                        <div
+                          aria-grabbed="false"
+                          class="ant-tree-treenode ant-tree-treenode-switcher-open"
+                          draggable="false"
+                        >
+                          <span
+                            aria-hidden="true"
+                            class="ant-tree-indent"
+                          >
+                            <span
+                              class="ant-tree-indent-unit ant-tree-indent-unit-start ant-tree-indent-unit-end"
+                            />
+                          </span>
+                          <span
+                            class="ant-tree-switcher ant-tree-switcher_open"
+                          >
+                            <svg
+                              class="ant-tree-switcher-icon"
+                              color="currentColor"
+                              height="16"
+                              viewBox="0 0 16 16"
+                              width="16"
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <path
+                                d="m8 8.781 3.3-3.3.943.943L8 10.667 3.757 6.424l.943-.943z"
+                                fill="currentColor"
+                              />
+                            </svg>
+                          </span>
+                          <span
+                            class="ant-tree-node-content-wrapper ant-tree-node-content-wrapper-open"
+                            title=""
+                          >
+                            <span
+                              class="ant-tree-title"
+                            >
+                              <div
+                                class="css-1bi0c9x"
+                              >
+                                <svg
+                                  color="#4583ff"
+                                  height="16"
+                                  viewBox="0 0 18 18"
+                                  width="16"
+                                  xmlns="http://www.w3.org/2000/svg"
+                                >
+                                  <path
+                                    d="M8.25 5.25V3A.75.75 0 0 1 9 2.25h6.75a.75.75 0 0 1 .75.75v12a.75.75 0 0 1-.75.75H2.25A.75.75 0 0 1 1.5 15V6a.75.75 0 0 1 .75-.75zM3.75 12v1.5H7.5V12zm6.75 0v1.5h3.75V12zm0-2.25v1.5h3.75v-1.5zm0-2.25V9h3.75V7.5zM3.75 9.75v1.5H7.5v-1.5z"
+                                    fill="currentColor"
+                                  />
+                                </svg>
+                                <span
+                                  class="content"
+                                >
+                                  test2
+                                </span>
+                              </div>
+                            </span>
+                          </span>
+                        </div>
+                        <div
+                          aria-grabbed="false"
+                          class="ant-tree-treenode ant-tree-treenode-switcher-close ant-tree-treenode-leaf-last"
+                          draggable="false"
+                        >
+                          <span
+                            aria-hidden="true"
+                            class="ant-tree-indent"
+                          >
+                            <span
+                              class="ant-tree-indent-unit ant-tree-indent-unit-start ant-tree-indent-unit-end"
+                            />
+                            <span
+                              class="ant-tree-indent-unit"
+                            />
+                          </span>
+                          <span
+                            class="ant-tree-switcher ant-tree-switcher-noop"
+                          >
+                            <span
+                              class="ant-tree-switcher-leaf-line"
+                            />
+                          </span>
+                          <span
+                            class="ant-tree-node-content-wrapper ant-tree-node-content-wrapper-normal"
+                            title=""
+                          >
+                            <span
+                              class="ant-tree-title"
+                            >
+                              <div
+                                class="css-1bi0c9x"
+                              >
+                                <svg
+                                  height="18"
+                                  viewBox="0 0 1024 1024"
+                                  width="18"
+                                  xmlns="http://www.w3.org/2000/svg"
+                                >
+                                  <path
+                                    d="M165.3 417.3V739c0 22.2 19 40.3 42.4 40.3H815c23.4 0 42.4-18 42.4-40.3V412h-692v5.3zM815 278.6H519.5v-8.8c0-28.5-23.7-51.6-52.7-51.6H218c-29 0-52.7 23.1-52.7 51.6V368h692.1v-49.1c0-22.3-19-40.3-42.4-40.3m0 0"
+                                    fill="#4583FF"
+                                  />
+                                </svg>
+                                <span
+                                  class="content"
+                                >
+                                  TABLE
+                                </span>
+                              </div>
+                            </span>
+                          </span>
+                        </div>
+                        <div
+                          aria-grabbed="false"
+                          class="ant-tree-treenode ant-tree-treenode-switcher-open ant-tree-treenode-leaf-last"
+                          draggable="false"
+                        >
+                          <span
+                            aria-hidden="true"
+                            class="ant-tree-indent"
+                          >
+                            <span
+                              class="ant-tree-indent-unit ant-tree-indent-unit-start ant-tree-indent-unit-end"
+                            />
+                          </span>
+                          <span
+                            class="ant-tree-switcher ant-tree-switcher_open"
+                          >
+                            <svg
+                              class="ant-tree-switcher-icon"
+                              color="currentColor"
+                              height="16"
+                              viewBox="0 0 16 16"
+                              width="16"
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <path
+                                d="m8 8.781 3.3-3.3.943.943L8 10.667 3.757 6.424l.943-.943z"
+                                fill="currentColor"
+                              />
+                            </svg>
+                          </span>
+                          <span
+                            class="ant-tree-node-content-wrapper ant-tree-node-content-wrapper-open"
+                            title=""
+                          >
+                            <span
+                              class="ant-tree-title"
+                            >
+                              <div
+                                class="css-1bi0c9x"
+                              >
+                                <svg
+                                  color="#4583ff"
+                                  height="16"
+                                  viewBox="0 0 18 18"
+                                  width="16"
+                                  xmlns="http://www.w3.org/2000/svg"
+                                >
+                                  <path
+                                    d="M8.25 5.25V3A.75.75 0 0 1 9 2.25h6.75a.75.75 0 0 1 .75.75v12a.75.75 0 0 1-.75.75H2.25A.75.75 0 0 1 1.5 15V6a.75.75 0 0 1 .75-.75zM3.75 12v1.5H7.5V12zm6.75 0v1.5h3.75V12zm0-2.25v1.5h3.75v-1.5zm0-2.25V9h3.75V7.5zM3.75 9.75v1.5H7.5v-1.5z"
+                                    fill="currentColor"
+                                  />
+                                </svg>
+                                <span
+                                  class="content"
+                                >
+                                  test3
+                                </span>
+                              </div>
+                            </span>
+                          </span>
+                        </div>
+                        <div
+                          aria-grabbed="false"
+                          class="ant-tree-treenode ant-tree-treenode-switcher-close ant-tree-treenode-leaf-last"
+                          draggable="false"
+                        >
+                          <span
+                            aria-hidden="true"
+                            class="ant-tree-indent"
+                          >
+                            <span
+                              class="ant-tree-indent-unit ant-tree-indent-unit-start ant-tree-indent-unit-end"
+                            />
+                            <span
+                              class="ant-tree-indent-unit ant-tree-indent-unit-end"
+                            />
+                          </span>
+                          <span
+                            class="ant-tree-switcher ant-tree-switcher-noop"
+                          >
+                            <span
+                              class="ant-tree-switcher-leaf-line"
+                            />
+                          </span>
+                          <span
+                            class="ant-tree-node-content-wrapper ant-tree-node-content-wrapper-normal"
+                            title=""
+                          >
+                            <span
+                              class="ant-tree-title"
+                            >
+                              <div
+                                class="css-1bi0c9x"
+                              >
+                                <svg
+                                  height="18"
+                                  viewBox="0 0 1024 1024"
+                                  width="18"
+                                  xmlns="http://www.w3.org/2000/svg"
+                                >
+                                  <path
+                                    d="M165.3 417.3V739c0 22.2 19 40.3 42.4 40.3H815c23.4 0 42.4-18 42.4-40.3V412h-692v5.3zM815 278.6H519.5v-8.8c0-28.5-23.7-51.6-52.7-51.6H218c-29 0-52.7 23.1-52.7 51.6V368h692.1v-49.1c0-22.3-19-40.3-42.4-40.3m0 0"
+                                    fill="#4583FF"
+                                  />
+                                </svg>
+                                <span
+                                  class="content"
+                                >
+                                  TABLE
+                                </span>
+                              </div>
+                            </span>
+                          </span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="ant-card ant-card-hoverable css-1qxznty"
+          >
+            <div
+              class="ant-card-head"
+            >
+              <div
+                class="ant-card-head-wrapper"
+              >
+                <div
+                  class="ant-card-head-title"
+                >
+                  <div
+                    class="css-1kpyopg"
+                  >
+                    <span>
+                      比对环境
+                    </span>
+                    <span>
+                      (xin-test-database)
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
+              class="ant-card-body"
+            >
+              <div
+                class="ant-tree ant-tree-icon-hide ant-tree-unselectable ant-tree-show-line"
+                role="tree"
+              >
+                <div>
+                  <input
+                    aria-label="for screen reader"
+                    style="width: 0px; height: 0px; display: flex; overflow: hidden; opacity: 0; border: 0px; padding: 0px; margin: 0px;"
+                    tabindex="0"
+                    value=""
+                  />
+                </div>
+                <div
+                  aria-hidden="true"
+                  class="ant-tree-treenode"
+                  style="position: absolute; pointer-events: none; visibility: hidden; height: 0px; overflow: hidden; border: 0px; padding: 0px;"
+                >
+                  <div
+                    class="ant-tree-indent"
+                  >
+                    <div
+                      class="ant-tree-indent-unit"
+                    />
+                  </div>
+                </div>
+                <div
+                  class="ant-tree-list"
+                  style="position: relative;"
+                >
+                  <div
+                    class="ant-tree-list-holder"
+                    style="max-height: 1200px; overflow-y: hidden;"
+                  >
+                    <div>
+                      <div
+                        class="ant-tree-list-holder-inner"
+                        style="display: flex; flex-direction: column;"
+                      >
+                        <div
+                          aria-grabbed="false"
+                          class="ant-tree-treenode ant-tree-treenode-switcher-open ant-tree-treenode-leaf-last"
+                          draggable="false"
+                        >
+                          <span
+                            aria-hidden="true"
+                            class="ant-tree-indent"
+                          />
+                          <span
+                            class="ant-tree-switcher ant-tree-switcher_open"
+                          >
+                            <svg
+                              class="ant-tree-switcher-icon"
+                              color="currentColor"
+                              height="16"
+                              viewBox="0 0 16 16"
+                              width="16"
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <path
+                                d="m8 8.781 3.3-3.3.943.943L8 10.667 3.757 6.424l.943-.943z"
+                                fill="currentColor"
+                              />
+                            </svg>
+                          </span>
+                          <span
+                            class="ant-tree-checkbox"
+                          >
+                            <span
+                              class="ant-tree-checkbox-inner"
+                            />
+                          </span>
+                          <span
+                            class="ant-tree-node-content-wrapper ant-tree-node-content-wrapper-open"
+                            title=""
+                          >
+                            <span
+                              class="ant-tree-title"
+                            >
+                              <div
+                                class="css-1bi0c9x"
+                              >
+                                <svg
+                                  color="#4583ff"
+                                  height="16"
+                                  viewBox="0 0 18 18"
+                                  width="16"
+                                  xmlns="http://www.w3.org/2000/svg"
+                                >
+                                  <path
+                                    d="M15.75 7.125v2.25c0 1.864-3.023 3.375-6.75 3.375s-6.75-1.511-6.75-3.375v-2.25C2.25 8.989 5.273 10.5 9 10.5s6.75-1.511 6.75-3.375m-13.5 3.75c0 1.864 3.023 3.375 6.75 3.375s6.75-1.511 6.75-3.375v2.25c0 1.864-3.023 3.375-6.75 3.375s-6.75-1.511-6.75-3.375zM9 9C5.273 9 2.25 7.489 2.25 5.625S5.273 2.25 9 2.25s6.75 1.511 6.75 3.375S12.727 9 9 9"
+                                    fill="currentColor"
+                                  />
+                                </svg>
+                                <span
+                                  class="content"
+                                >
+                                  xin-test-database
+                                </span>
+                              </div>
+                            </span>
+                          </span>
+                        </div>
+                        <div
+                          aria-grabbed="false"
+                          class="ant-tree-treenode ant-tree-treenode-switcher-open"
+                          draggable="false"
+                        >
+                          <span
+                            aria-hidden="true"
+                            class="ant-tree-indent"
+                          >
+                            <span
+                              class="ant-tree-indent-unit ant-tree-indent-unit-start ant-tree-indent-unit-end"
+                            />
+                          </span>
+                          <span
+                            class="ant-tree-switcher ant-tree-switcher_open"
+                          >
+                            <svg
+                              class="ant-tree-switcher-icon"
+                              color="currentColor"
+                              height="16"
+                              viewBox="0 0 16 16"
+                              width="16"
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <path
+                                d="m8 8.781 3.3-3.3.943.943L8 10.667 3.757 6.424l.943-.943z"
+                                fill="currentColor"
+                              />
+                            </svg>
+                          </span>
+                          <span
+                            class="ant-tree-checkbox"
+                          >
+                            <span
+                              class="ant-tree-checkbox-inner"
+                            />
+                          </span>
+                          <span
+                            class="ant-tree-node-content-wrapper ant-tree-node-content-wrapper-open"
+                            title=""
+                          >
+                            <span
+                              class="ant-tree-title"
+                            >
+                              <div
+                                class="css-1bi0c9x"
+                              >
+                                <svg
+                                  color="#4583ff"
+                                  height="16"
+                                  viewBox="0 0 18 18"
+                                  width="16"
+                                  xmlns="http://www.w3.org/2000/svg"
+                                >
+                                  <path
+                                    d="M8.25 5.25V3A.75.75 0 0 1 9 2.25h6.75a.75.75 0 0 1 .75.75v12a.75.75 0 0 1-.75.75H2.25A.75.75 0 0 1 1.5 15V6a.75.75 0 0 1 .75-.75zM3.75 12v1.5H7.5V12zm6.75 0v1.5h3.75V12zm0-2.25v1.5h3.75v-1.5zm0-2.25V9h3.75V7.5zM3.75 9.75v1.5H7.5v-1.5z"
+                                    fill="currentColor"
+                                  />
+                                </svg>
+                                <span
+                                  class="content"
+                                >
+                                  test
+                                  (
+                                  0
+                                  )
+                                </span>
+                              </div>
+                            </span>
+                          </span>
+                        </div>
+                        <div
+                          aria-grabbed="false"
+                          class="ant-tree-treenode ant-tree-treenode-switcher-open ant-tree-treenode-leaf-last"
+                          draggable="false"
+                        >
+                          <span
+                            aria-hidden="true"
+                            class="ant-tree-indent"
+                          >
+                            <span
+                              class="ant-tree-indent-unit ant-tree-indent-unit-start ant-tree-indent-unit-end"
+                            />
+                            <span
+                              class="ant-tree-indent-unit ant-tree-indent-unit-start"
+                            />
+                          </span>
+                          <span
+                            class="ant-tree-switcher ant-tree-switcher-noop"
+                          >
+                            <span
+                              class="ant-tree-switcher-leaf-line"
+                            />
+                          </span>
+                          <span
+                            class="ant-tree-checkbox"
+                          >
+                            <span
+                              class="ant-tree-checkbox-inner"
+                            />
+                          </span>
+                          <span
+                            class="ant-tree-node-content-wrapper ant-tree-node-content-wrapper-normal"
+                            title=""
+                          >
+                            <span
+                              class="ant-tree-title"
+                            >
+                              <div
+                                class="css-1bi0c9x"
+                              >
+                                <svg
+                                  height="18"
+                                  viewBox="0 0 1024 1024"
+                                  width="18"
+                                  xmlns="http://www.w3.org/2000/svg"
+                                >
+                                  <path
+                                    d="M165.3 417.3V739c0 22.2 19 40.3 42.4 40.3H815c23.4 0 42.4-18 42.4-40.3V412h-692v5.3zM815 278.6H519.5v-8.8c0-28.5-23.7-51.6-52.7-51.6H218c-29 0-52.7 23.1-52.7 51.6V368h692.1v-49.1c0-22.3-19-40.3-42.4-40.3m0 0"
+                                    fill="#4583FF"
+                                  />
+                                </svg>
+                                <span
+                                  class="content"
+                                >
+                                  TABLE
+                                   (
+                                  0
+                                  )
+                                </span>
+                              </div>
+                            </span>
+                          </span>
+                        </div>
+                        <div
+                          aria-grabbed="false"
+                          class="ant-tree-treenode ant-tree-treenode-switcher-open"
+                          draggable="false"
+                        >
+                          <span
+                            aria-hidden="true"
+                            class="ant-tree-indent"
+                          >
+                            <span
+                              class="ant-tree-indent-unit ant-tree-indent-unit-start ant-tree-indent-unit-end"
+                            />
+                          </span>
+                          <span
+                            class="ant-tree-switcher ant-tree-switcher_open"
+                          >
+                            <svg
+                              class="ant-tree-switcher-icon"
+                              color="currentColor"
+                              height="16"
+                              viewBox="0 0 16 16"
+                              width="16"
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <path
+                                d="m8 8.781 3.3-3.3.943.943L8 10.667 3.757 6.424l.943-.943z"
+                                fill="currentColor"
+                              />
+                            </svg>
+                          </span>
+                          <span
+                            class="ant-tree-checkbox"
+                          >
+                            <span
+                              class="ant-tree-checkbox-inner"
+                            />
+                          </span>
+                          <span
+                            class="ant-tree-node-content-wrapper ant-tree-node-content-wrapper-open"
+                            title=""
+                          >
+                            <span
+                              class="ant-tree-title"
+                            >
+                              <div
+                                class="css-1bi0c9x"
+                              >
+                                <svg
+                                  color="#4583ff"
+                                  height="16"
+                                  viewBox="0 0 18 18"
+                                  width="16"
+                                  xmlns="http://www.w3.org/2000/svg"
+                                >
+                                  <path
+                                    d="M8.25 5.25V3A.75.75 0 0 1 9 2.25h6.75a.75.75 0 0 1 .75.75v12a.75.75 0 0 1-.75.75H2.25A.75.75 0 0 1 1.5 15V6a.75.75 0 0 1 .75-.75zM3.75 12v1.5H7.5V12zm6.75 0v1.5h3.75V12zm0-2.25v1.5h3.75v-1.5zm0-2.25V9h3.75V7.5zM3.75 9.75v1.5H7.5v-1.5z"
+                                    fill="currentColor"
+                                  />
+                                </svg>
+                                <span
+                                  class="content"
+                                >
+                                  test2
+                                  (
+                                  0
+                                  )
+                                </span>
+                              </div>
+                            </span>
+                          </span>
+                        </div>
+                        <div
+                          aria-grabbed="false"
+                          class="ant-tree-treenode ant-tree-treenode-switcher-close ant-tree-treenode-leaf-last"
+                          draggable="false"
+                        >
+                          <span
+                            aria-hidden="true"
+                            class="ant-tree-indent"
+                          >
+                            <span
+                              class="ant-tree-indent-unit ant-tree-indent-unit-start ant-tree-indent-unit-end"
+                            />
+                            <span
+                              class="ant-tree-indent-unit"
+                            />
+                          </span>
+                          <span
+                            class="ant-tree-switcher ant-tree-switcher-noop"
+                          >
+                            <span
+                              class="ant-tree-switcher-leaf-line"
+                            />
+                          </span>
+                          <span
+                            class="ant-tree-checkbox"
+                          >
+                            <span
+                              class="ant-tree-checkbox-inner"
+                            />
+                          </span>
+                          <span
+                            class="ant-tree-node-content-wrapper ant-tree-node-content-wrapper-normal"
+                            title=""
+                          >
+                            <span
+                              class="ant-tree-title"
+                            >
+                              <div
+                                class="css-1bi0c9x"
+                              >
+                                <svg
+                                  height="18"
+                                  viewBox="0 0 1024 1024"
+                                  width="18"
+                                  xmlns="http://www.w3.org/2000/svg"
+                                >
+                                  <path
+                                    d="M165.3 417.3V739c0 22.2 19 40.3 42.4 40.3H815c23.4 0 42.4-18 42.4-40.3V412h-692v5.3zM815 278.6H519.5v-8.8c0-28.5-23.7-51.6-52.7-51.6H218c-29 0-52.7 23.1-52.7 51.6V368h692.1v-49.1c0-22.3-19-40.3-42.4-40.3m0 0"
+                                    fill="#4583FF"
+                                  />
+                                </svg>
+                                <span
+                                  class="content"
+                                >
+                                  TABLE
+                                   (
+                                  0
+                                  )
+                                </span>
+                              </div>
+                            </span>
+                          </span>
+                        </div>
+                        <div
+                          aria-grabbed="false"
+                          class="ant-tree-treenode ant-tree-treenode-switcher-open ant-tree-treenode-leaf-last"
+                          draggable="false"
+                        >
+                          <span
+                            aria-hidden="true"
+                            class="ant-tree-indent"
+                          >
+                            <span
+                              class="ant-tree-indent-unit ant-tree-indent-unit-start ant-tree-indent-unit-end"
+                            />
+                          </span>
+                          <span
+                            class="ant-tree-switcher ant-tree-switcher_open"
+                          >
+                            <svg
+                              class="ant-tree-switcher-icon"
+                              color="currentColor"
+                              height="16"
+                              viewBox="0 0 16 16"
+                              width="16"
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <path
+                                d="m8 8.781 3.3-3.3.943.943L8 10.667 3.757 6.424l.943-.943z"
+                                fill="currentColor"
+                              />
+                            </svg>
+                          </span>
+                          <span
+                            class="ant-tree-checkbox"
+                          >
+                            <span
+                              class="ant-tree-checkbox-inner"
+                            />
+                          </span>
+                          <span
+                            class="ant-tree-node-content-wrapper ant-tree-node-content-wrapper-open"
+                            title=""
+                          >
+                            <span
+                              class="ant-tree-title"
+                            >
+                              <div
+                                class="css-1bi0c9x"
+                              >
+                                <svg
+                                  color="#4583ff"
+                                  height="16"
+                                  viewBox="0 0 18 18"
+                                  width="16"
+                                  xmlns="http://www.w3.org/2000/svg"
+                                >
+                                  <path
+                                    d="M8.25 5.25V3A.75.75 0 0 1 9 2.25h6.75a.75.75 0 0 1 .75.75v12a.75.75 0 0 1-.75.75H2.25A.75.75 0 0 1 1.5 15V6a.75.75 0 0 1 .75-.75zM3.75 12v1.5H7.5V12zm6.75 0v1.5h3.75V12zm0-2.25v1.5h3.75v-1.5zm0-2.25V9h3.75V7.5zM3.75 9.75v1.5H7.5v-1.5z"
+                                    fill="currentColor"
+                                  />
+                                </svg>
+                                <span
+                                  class="content"
+                                >
+                                  test3
+                                  (
+                                  2
+                                  )
+                                </span>
+                              </div>
+                            </span>
+                          </span>
+                        </div>
+                        <div
+                          aria-grabbed="false"
+                          class="ant-tree-treenode ant-tree-treenode-switcher-close ant-tree-treenode-leaf-last"
+                          draggable="false"
+                        >
+                          <span
+                            aria-hidden="true"
+                            class="ant-tree-indent"
+                          >
+                            <span
+                              class="ant-tree-indent-unit ant-tree-indent-unit-start ant-tree-indent-unit-end"
+                            />
+                            <span
+                              class="ant-tree-indent-unit ant-tree-indent-unit-end"
+                            />
+                          </span>
+                          <span
+                            class="ant-tree-switcher ant-tree-switcher-noop"
+                          >
+                            <span
+                              class="ant-tree-switcher-leaf-line"
+                            />
+                          </span>
+                          <span
+                            class="ant-tree-checkbox"
+                          >
+                            <span
+                              class="ant-tree-checkbox-inner"
+                            />
+                          </span>
+                          <span
+                            class="ant-tree-node-content-wrapper ant-tree-node-content-wrapper-normal"
+                            title=""
+                          >
+                            <span
+                              class="ant-tree-title"
+                            >
+                              <div
+                                class="css-1bi0c9x"
+                              >
+                                <svg
+                                  height="18"
+                                  viewBox="0 0 1024 1024"
+                                  width="18"
+                                  xmlns="http://www.w3.org/2000/svg"
+                                >
+                                  <path
+                                    d="M165.3 417.3V739c0 22.2 19 40.3 42.4 40.3H815c23.4 0 42.4-18 42.4-40.3V412h-692v5.3zM815 278.6H519.5v-8.8c0-28.5-23.7-51.6-52.7-51.6H218c-29 0-52.7 23.1-52.7 51.6V368h692.1v-49.1c0-22.3-19-40.3-42.4-40.3m0 0"
+                                    fill="#4583FF"
+                                  />
+                                </svg>
+                                <span
+                                  class="content"
+                                >
+                                  TABLE
+                                   (
+                                  2
+                                  )
+                                </span>
+                              </div>
+                            </span>
+                          </span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`EnvironmentSelector should handle card click correctly 2`] = `
+<div>
+  <div
+    class="css-e6v8ex"
+  >
+    <div
+      class="ant-card css-1423xkt"
+    >
+      <div
+        class="ant-card-body"
+      >
+        <form
+          class="ant-form ant-form-horizontal css-1smbjja"
+        >
+          <div
+            class="css-cp2xvl"
+          >
+            <h4
+              class="ant-typography"
+            >
+              基准环境
+            </h4>
+            <span
+              class="ant-typography environment-section-desc"
+            >
+              请选择您认为是"标准"的数据源环境，
+这个环境将作为比较的基准点。
+            </span>
+            <div
+              class="ant-form-item css-15d6abf ant-form-item-has-success"
+            >
+              <div
+                class="ant-row ant-form-item-row"
+              >
+                <div
+                  class="ant-col ant-form-item-label"
+                >
+                  <label
+                    class="ant-form-item-required"
+                    for="baselineInstance"
+                    title=""
+                  />
+                </div>
+                <div
+                  class="ant-col ant-form-item-control"
+                >
+                  <div
+                    class="ant-form-item-control-input"
+                  >
+                    <div
+                      class="ant-form-item-control-input-content"
+                    >
+                      <div
+                        aria-required="true"
+                        class="ant-select ant-tree-select ant-select-in-form-item ant-select-status-success basic-tree-select-wrapper css-1ggbq54 ant-select-single ant-select-allow-clear ant-select-show-arrow ant-select-show-search"
+                      >
+                        <div
+                          class="ant-select-selector"
+                        >
+                          <span
+                            class="ant-select-selection-search"
+                          >
+                            <input
+                              aria-autocomplete="list"
+                              aria-controls="baselineInstance_list"
+                              aria-expanded="false"
+                              aria-haspopup="listbox"
+                              aria-owns="baselineInstance_list"
+                              aria-required="true"
+                              autocomplete="off"
+                              class="ant-select-selection-search-input"
+                              id="baselineInstance"
+                              role="combobox"
+                              type="search"
+                              value=""
+                            />
+                          </span>
+                          <span
+                            class="ant-select-selection-item"
+                          >
+                            <span
+                              class="css-g5caig"
+                            >
+                              <svg
+                                color="#4583ff"
+                                height="18"
+                                viewBox="0 0 18 18"
+                                width="18"
+                                xmlns="http://www.w3.org/2000/svg"
+                              >
+                                <path
+                                  d="M15.75 7.125v2.25c0 1.864-3.023 3.375-6.75 3.375s-6.75-1.511-6.75-3.375v-2.25C2.25 8.989 5.273 10.5 9 10.5s6.75-1.511 6.75-3.375m-13.5 3.75c0 1.864 3.023 3.375 6.75 3.375s6.75-1.511 6.75-3.375v2.25c0 1.864-3.023 3.375-6.75 3.375s-6.75-1.511-6.75-3.375zM9 9C5.273 9 2.25 7.489 2.25 5.625S5.273 2.25 9 2.25s6.75 1.511 6.75 3.375S12.727 9 9 9"
+                                  fill="currentColor"
+                                />
+                              </svg>
+                              <span
+                                class="content"
+                              >
+                                mysql-1(10.186.62.13:33061)
+                              </span>
+                            </span>
+                          </span>
+                        </div>
+                        <span
+                          aria-hidden="true"
+                          class="ant-select-arrow"
+                          style="user-select: none;"
+                          unselectable="on"
+                        >
+                          <span
+                            aria-label="down"
+                            class="anticon anticon-down ant-select-suffix"
+                            role="img"
+                          >
+                            <svg
+                              aria-hidden="true"
+                              data-icon="down"
+                              fill="currentColor"
+                              focusable="false"
+                              height="1em"
+                              viewBox="64 64 896 896"
+                              width="1em"
+                            >
+                              <path
+                                d="M884 256h-75c-5.1 0-9.9 2.5-12.9 6.6L512 654.2 227.9 262.6c-3-4.1-7.8-6.6-12.9-6.6h-75c-6.5 0-10.3 7.4-6.5 12.7l352.6 486.1c12.8 17.6 39 17.6 51.7 0l352.6-486.1c3.9-5.3.1-12.7-6.4-12.7z"
+                              />
+                            </svg>
+                          </span>
+                        </span>
+                        <span
+                          aria-hidden="true"
+                          class="ant-select-clear"
+                          style="user-select: none;"
+                          unselectable="on"
+                        >
+                          <svg
+                            height="14"
+                            viewBox="0 0 14 14"
+                            width="14"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              d="m7 6.175 2.887-2.887.825.825L7.825 7l2.887 2.888-.825.824L7 7.825l-2.888 2.887-.824-.824L6.175 7 3.288 4.113l.824-.825z"
+                            />
+                          </svg>
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="css-cp2xvl"
+          >
+            <h4
+              class="ant-typography"
+            >
+              比对环境
+            </h4>
+            <span
+              class="ant-typography environment-section-desc"
+            >
+              请选择您想要检查或更新的数据库环境，
+这个环境将与基准环境进行比较，以找出差异。
+            </span>
+            <div
+              class="ant-form-item css-15d6abf ant-form-item-has-success"
+            >
+              <div
+                class="ant-row ant-form-item-row"
+              >
+                <div
+                  class="ant-col ant-form-item-label"
+                >
+                  <label
+                    class="ant-form-item-required"
+                    for="comparisonInstance"
+                    title=""
+                  />
+                </div>
+                <div
+                  class="ant-col ant-form-item-control"
+                >
+                  <div
+                    class="ant-form-item-control-input"
+                  >
+                    <div
+                      class="ant-form-item-control-input-content"
+                    >
+                      <div
+                        aria-required="true"
+                        class="ant-select ant-tree-select ant-select-in-form-item ant-select-status-success basic-tree-select-wrapper css-1ggbq54 ant-select-single ant-select-allow-clear ant-select-show-arrow ant-select-show-search"
+                      >
+                        <div
+                          class="ant-select-selector"
+                        >
+                          <span
+                            class="ant-select-selection-search"
+                          >
+                            <input
+                              aria-autocomplete="list"
+                              aria-controls="comparisonInstance_list"
+                              aria-expanded="false"
+                              aria-haspopup="listbox"
+                              aria-owns="comparisonInstance_list"
+                              aria-required="true"
+                              autocomplete="off"
+                              class="ant-select-selection-search-input"
+                              id="comparisonInstance"
+                              role="combobox"
+                              type="search"
+                              value=""
+                            />
+                          </span>
+                          <span
+                            class="ant-select-selection-item"
+                          >
+                            <span
+                              class="css-g5caig"
+                            >
+                              <svg
+                                color="#4583ff"
+                                height="18"
+                                viewBox="0 0 18 18"
+                                width="18"
+                                xmlns="http://www.w3.org/2000/svg"
+                              >
+                                <path
+                                  d="M15.75 7.125v2.25c0 1.864-3.023 3.375-6.75 3.375s-6.75-1.511-6.75-3.375v-2.25C2.25 8.989 5.273 10.5 9 10.5s6.75-1.511 6.75-3.375m-13.5 3.75c0 1.864 3.023 3.375 6.75 3.375s6.75-1.511 6.75-3.375v2.25c0 1.864-3.023 3.375-6.75 3.375s-6.75-1.511-6.75-3.375zM9 9C5.273 9 2.25 7.489 2.25 5.625S5.273 2.25 9 2.25s6.75 1.511 6.75 3.375S12.727 9 9 9"
+                                  fill="currentColor"
+                                />
+                              </svg>
+                              <span
+                                class="content"
+                              >
+                                xin-test-database(10.186.62.15:33063)
+                              </span>
+                            </span>
+                          </span>
+                        </div>
+                        <span
+                          aria-hidden="true"
+                          class="ant-select-arrow"
+                          style="user-select: none;"
+                          unselectable="on"
+                        >
+                          <span
+                            aria-label="down"
+                            class="anticon anticon-down ant-select-suffix"
+                            role="img"
+                          >
+                            <svg
+                              aria-hidden="true"
+                              data-icon="down"
+                              fill="currentColor"
+                              focusable="false"
+                              height="1em"
+                              viewBox="64 64 896 896"
+                              width="1em"
+                            >
+                              <path
+                                d="M884 256h-75c-5.1 0-9.9 2.5-12.9 6.6L512 654.2 227.9 262.6c-3-4.1-7.8-6.6-12.9-6.6h-75c-6.5 0-10.3 7.4-6.5 12.7l352.6 486.1c12.8 17.6 39 17.6 51.7 0l352.6-486.1c3.9-5.3.1-12.7-6.4-12.7z"
+                              />
+                            </svg>
+                          </span>
+                        </span>
+                        <span
+                          aria-hidden="true"
+                          class="ant-select-clear"
+                          style="user-select: none;"
+                          unselectable="on"
+                        >
+                          <svg
+                            height="14"
+                            viewBox="0 0 14 14"
+                            width="14"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              d="m7 6.175 2.887-2.887.825.825L7.825 7l2.887 2.888-.825.824L7 7.825l-2.888 2.887-.824-.824L6.175 7 3.288 4.113l.824-.825z"
+                            />
+                          </svg>
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </form>
+        <button
+          class="ant-btn ant-btn-primary ant-btn-lg full-width-element basic-button-wrapper css-geipcv"
+          style="margin-top: 16px;"
+          type="button"
+        >
+          <span>
+            执行对比
+          </span>
+        </button>
+      </div>
+    </div>
+    <div
+      class="ant-card css-1423xkt"
+    >
+      <div
+        class="ant-card-head"
+      >
+        <div
+          class="ant-card-head-wrapper"
+        >
+          <div
+            class="ant-card-head-title"
+          >
+            结果概览
+          </div>
+          <div
+            class="ant-card-extra"
+          >
+            <div
+              class="css-1n1nyax"
+            >
+              <div>
+                开始时间
+                :
+                 
+                2024-12-18 12:00:00
+              </div>
+              <div>
+                结束时间
+                :
+                 
+                2024-12-18 12:00:00
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="ant-card-body"
+      >
+        <div
+          class="css-25fr8k"
+        >
+          <div
+            class="ant-row"
+            style="margin-left: -8px; margin-right: -8px;"
+          >
+            <div
+              class="ant-col ant-col-6"
+              style="padding-left: 8px; padding-right: 8px;"
+            >
+              <div
+                class="ant-card ant-card-bordered card-comparison-not-exist-mode css-wpolr5"
+              >
+                <div
+                  class="ant-card-body"
+                >
+                  <h4
+                    class="ant-typography card-title"
+                  >
+                    缺失对象
+                  </h4>
+                  <div
+                    class="stat-number"
+                  >
+                    2
+                  </div>
+                  <div
+                    class="card-footer"
+                  >
+                    <span
+                      class="ant-typography suggestion"
+                    >
+                      需要及时处理
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
+              class="ant-col ant-col-6"
+              style="padding-left: 8px; padding-right: 8px;"
+            >
+              <div
+                class="ant-card ant-card-bordered card-base-not-exist-mode css-wpolr5"
+              >
+                <div
+                  class="ant-card-body"
+                >
+                  <h4
+                    class="ant-typography card-title"
+                  >
+                    新增对象
+                  </h4>
+                  <div
+                    class="stat-number"
+                  >
+                    0
+                  </div>
+                  <div
+                    class="card-footer"
+                  >
+                    <span
+                      class="ant-typography suggestion"
+                    >
+                      需要及时处理
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
+              class="ant-col ant-col-6"
+              style="padding-left: 8px; padding-right: 8px;"
+            >
+              <div
+                class="ant-card ant-card-bordered card-inconsistent-mode css-wpolr5"
+              >
+                <div
+                  class="ant-card-body"
+                >
+                  <h4
+                    class="ant-typography card-title"
+                  >
+                    定义差异
+                  </h4>
+                  <div
+                    class="stat-number"
+                  >
+                    0
+                  </div>
+                  <div
+                    class="card-footer"
+                  >
+                    <span
+                      class="ant-typography suggestion"
+                    >
+                      建议检查确认
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
+              class="ant-col ant-col-6"
+              style="padding-left: 8px; padding-right: 8px;"
+            >
+              <div
+                class="ant-card ant-card-bordered card-same-mode css-wpolr5"
+              >
+                <div
+                  class="ant-card-body"
+                >
+                  <h4
+                    class="ant-typography card-title"
+                  >
+                    一致对象
+                  </h4>
+                  <div
+                    class="stat-number"
+                  >
+                    2
+                  </div>
+                  <div
+                    class="card-footer"
+                  >
+                    <span
+                      class="ant-typography suggestion"
+                    >
+                      无需处理
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="ant-card css-1423xkt"
+    >
+      <div
+        class="ant-card-head"
+      >
+        <div
+          class="ant-card-head-wrapper"
+        >
+          <div
+            class="ant-card-head-title"
+          >
+            结果详情
+          </div>
+          <div
+            class="ant-card-extra"
+          >
+            <div
+              class="ant-space ant-space-horizontal ant-space-align-center css-4ph0pf"
+            >
+              <div
+                class="ant-space-item"
+                style="margin-right: 12px;"
+              >
+                <div
+                  class="css-1f8xqgy"
+                >
+                  只看差异
+                </div>
+              </div>
+              <div
+                class="ant-space-item"
+              >
+                <div
+                  class="ant-space ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
+                >
+                  <div
+                    class="ant-space-item"
+                  >
+                    <button
+                      class="ant-btn ant-btn-default basic-button-wrapper css-geipcv"
+                      disabled=""
+                      type="button"
+                    >
+                      <span>
+                        生成变更SQL
+                      </span>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="ant-card-body"
+      >
+        <div
+          class="css-ov1ktg"
+        >
+          <div
+            class="ant-card ant-card-hoverable css-1qxznty"
+          >
+            <div
+              class="ant-card-head"
+            >
+              <div
+                class="ant-card-head-wrapper"
+              >
+                <div
+                  class="ant-card-head-title"
+                >
+                  <div
+                    class="css-1kpyopg"
+                  >
+                    <span>
+                      基准环境
+                    </span>
+                    <span>
+                      (mysql-1) 
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
+              class="ant-card-body"
+            >
+              <div
+                class="ant-tree ant-tree-icon-hide ant-tree-unselectable ant-tree-show-line"
+                role="tree"
+              >
+                <div>
+                  <input
+                    aria-label="for screen reader"
+                    style="width: 0px; height: 0px; display: flex; overflow: hidden; opacity: 0; border: 0px; padding: 0px; margin: 0px;"
+                    tabindex="0"
+                    value=""
+                  />
+                </div>
+                <div
+                  aria-hidden="true"
+                  class="ant-tree-treenode"
+                  style="position: absolute; pointer-events: none; visibility: hidden; height: 0px; overflow: hidden; border: 0px; padding: 0px;"
+                >
+                  <div
+                    class="ant-tree-indent"
+                  >
+                    <div
+                      class="ant-tree-indent-unit"
+                    />
+                  </div>
+                </div>
+                <div
+                  class="ant-tree-list"
+                  style="position: relative;"
+                >
+                  <div
+                    class="ant-tree-list-holder"
+                    style="max-height: 1200px; overflow-y: hidden;"
+                  >
+                    <div>
+                      <div
+                        class="ant-tree-list-holder-inner"
+                        style="display: flex; flex-direction: column;"
+                      >
+                        <div
+                          aria-grabbed="false"
+                          class="ant-tree-treenode ant-tree-treenode-switcher-open ant-tree-treenode-leaf-last"
+                          draggable="false"
+                        >
+                          <span
+                            aria-hidden="true"
+                            class="ant-tree-indent"
+                          />
+                          <span
+                            class="ant-tree-switcher ant-tree-switcher_open"
+                          >
+                            <svg
+                              class="ant-tree-switcher-icon"
+                              color="currentColor"
+                              height="16"
+                              viewBox="0 0 16 16"
+                              width="16"
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <path
+                                d="m8 8.781 3.3-3.3.943.943L8 10.667 3.757 6.424l.943-.943z"
+                                fill="currentColor"
+                              />
+                            </svg>
+                          </span>
+                          <span
+                            class="ant-tree-node-content-wrapper ant-tree-node-content-wrapper-open"
+                            title=""
+                          >
+                            <span
+                              class="ant-tree-title"
+                            >
+                              <div
+                                class="css-1bi0c9x"
+                              >
+                                <svg
+                                  color="#4583ff"
+                                  height="16"
+                                  viewBox="0 0 18 18"
+                                  width="16"
+                                  xmlns="http://www.w3.org/2000/svg"
+                                >
+                                  <path
+                                    d="M15.75 7.125v2.25c0 1.864-3.023 3.375-6.75 3.375s-6.75-1.511-6.75-3.375v-2.25C2.25 8.989 5.273 10.5 9 10.5s6.75-1.511 6.75-3.375m-13.5 3.75c0 1.864 3.023 3.375 6.75 3.375s6.75-1.511 6.75-3.375v2.25c0 1.864-3.023 3.375-6.75 3.375s-6.75-1.511-6.75-3.375zM9 9C5.273 9 2.25 7.489 2.25 5.625S5.273 2.25 9 2.25s6.75 1.511 6.75 3.375S12.727 9 9 9"
+                                    fill="currentColor"
+                                  />
+                                </svg>
+                                <span
+                                  class="content"
+                                >
+                                  mysql-1
+                                </span>
+                              </div>
+                            </span>
+                          </span>
+                        </div>
+                        <div
+                          aria-grabbed="false"
+                          class="ant-tree-treenode ant-tree-treenode-switcher-open"
+                          draggable="false"
+                        >
+                          <span
+                            aria-hidden="true"
+                            class="ant-tree-indent"
+                          >
+                            <span
+                              class="ant-tree-indent-unit ant-tree-indent-unit-start ant-tree-indent-unit-end"
+                            />
+                          </span>
+                          <span
+                            class="ant-tree-switcher ant-tree-switcher_open"
+                          >
+                            <svg
+                              class="ant-tree-switcher-icon"
+                              color="currentColor"
+                              height="16"
+                              viewBox="0 0 16 16"
+                              width="16"
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <path
+                                d="m8 8.781 3.3-3.3.943.943L8 10.667 3.757 6.424l.943-.943z"
+                                fill="currentColor"
+                              />
+                            </svg>
+                          </span>
+                          <span
+                            class="ant-tree-node-content-wrapper ant-tree-node-content-wrapper-open"
+                            title=""
+                          >
+                            <span
+                              class="ant-tree-title"
+                            >
+                              <div
+                                class="css-1bi0c9x"
+                              >
+                                <svg
+                                  color="#4583ff"
+                                  height="16"
+                                  viewBox="0 0 18 18"
+                                  width="16"
+                                  xmlns="http://www.w3.org/2000/svg"
+                                >
+                                  <path
+                                    d="M8.25 5.25V3A.75.75 0 0 1 9 2.25h6.75a.75.75 0 0 1 .75.75v12a.75.75 0 0 1-.75.75H2.25A.75.75 0 0 1 1.5 15V6a.75.75 0 0 1 .75-.75zM3.75 12v1.5H7.5V12zm6.75 0v1.5h3.75V12zm0-2.25v1.5h3.75v-1.5zm0-2.25V9h3.75V7.5zM3.75 9.75v1.5H7.5v-1.5z"
+                                    fill="currentColor"
+                                  />
+                                </svg>
+                                <span
+                                  class="content"
+                                >
+                                  test
+                                </span>
+                              </div>
+                            </span>
+                          </span>
+                        </div>
+                        <div
+                          aria-grabbed="false"
+                          class="ant-tree-treenode ant-tree-treenode-switcher-open ant-tree-treenode-leaf-last"
+                          draggable="false"
+                        >
+                          <span
+                            aria-hidden="true"
+                            class="ant-tree-indent"
+                          >
+                            <span
+                              class="ant-tree-indent-unit ant-tree-indent-unit-start ant-tree-indent-unit-end"
+                            />
+                            <span
+                              class="ant-tree-indent-unit ant-tree-indent-unit-start"
+                            />
+                          </span>
+                          <span
+                            class="ant-tree-switcher ant-tree-switcher_open"
+                          >
+                            <svg
+                              class="ant-tree-switcher-icon"
+                              color="currentColor"
+                              height="16"
+                              viewBox="0 0 16 16"
+                              width="16"
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <path
+                                d="m8 8.781 3.3-3.3.943.943L8 10.667 3.757 6.424l.943-.943z"
+                                fill="currentColor"
+                              />
+                            </svg>
+                          </span>
+                          <span
+                            class="ant-tree-node-content-wrapper ant-tree-node-content-wrapper-open"
+                            title=""
+                          >
+                            <span
+                              class="ant-tree-title"
+                            >
+                              <div
+                                class="css-1bi0c9x"
+                              >
+                                <svg
+                                  height="18"
+                                  viewBox="0 0 1024 1024"
+                                  width="18"
+                                  xmlns="http://www.w3.org/2000/svg"
+                                >
+                                  <path
+                                    d="M165.3 417.3V739c0 22.2 19 40.3 42.4 40.3H815c23.4 0 42.4-18 42.4-40.3V412h-692v5.3zM815 278.6H519.5v-8.8c0-28.5-23.7-51.6-52.7-51.6H218c-29 0-52.7 23.1-52.7 51.6V368h692.1v-49.1c0-22.3-19-40.3-42.4-40.3m0 0"
+                                    fill="#4583FF"
+                                  />
+                                </svg>
+                                <span
+                                  class="content"
+                                >
+                                  TABLE
+                                </span>
+                              </div>
+                            </span>
+                          </span>
+                        </div>
+                        <div
+                          aria-grabbed="false"
+                          class="ant-tree-treenode ant-tree-treenode-switcher-close ant-tree-treenode-leaf-last"
+                          draggable="false"
+                        >
+                          <span
+                            aria-hidden="true"
+                            class="ant-tree-indent"
+                          >
+                            <span
+                              class="ant-tree-indent-unit ant-tree-indent-unit-start ant-tree-indent-unit-end"
+                            />
+                            <span
+                              class="ant-tree-indent-unit ant-tree-indent-unit-start"
+                            />
+                            <span
+                              class="ant-tree-indent-unit ant-tree-indent-unit-start ant-tree-indent-unit-end"
+                            />
+                          </span>
+                          <span
+                            class="ant-tree-switcher ant-tree-switcher-noop"
+                          >
+                            <span
+                              class="ant-tree-switcher-leaf-line"
+                            />
+                          </span>
+                          <span
+                            class="ant-tree-node-content-wrapper ant-tree-node-content-wrapper-normal"
+                            title=""
+                          >
+                            <span
+                              class="ant-tree-title"
+                            >
+                              <div
+                                class="object-comparison-result-pass css-1bi0c9x"
+                              >
+                                <div
+                                  class="name-container"
+                                >
+                                  <svg
+                                    height="16"
+                                    viewBox="0 0 1024 1024"
+                                    width="16"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                  >
+                                    <path
+                                      d="M828.952 121.905a73.143 73.143 0 0 1 73.143 73.143v633.904a73.143 73.143 0 0 1-73.143 73.143H195.048a73.143 73.143 0 0 1-73.143-73.143V195.048a73.143 73.143 0 0 1 73.143-73.143zm-512 597.333H195.048v109.714h121.904zm512 0H390.095v109.714h438.857zm-512-182.857H195.048v109.714h121.904zm512 0H390.095v109.714h438.857zm-512-182.857H195.048v109.714h121.904zm512 0H390.095v109.714h438.857z"
+                                      fill="#4583FF"
+                                    />
+                                  </svg>
+                                  <span
+                                    class="content"
+                                  >
+                                    task
+                                  </span>
+                                </div>
+                              </div>
+                            </span>
+                          </span>
+                        </div>
+                        <div
+                          aria-grabbed="false"
+                          class="ant-tree-treenode ant-tree-treenode-switcher-open"
+                          draggable="false"
+                        >
+                          <span
+                            aria-hidden="true"
+                            class="ant-tree-indent"
+                          >
+                            <span
+                              class="ant-tree-indent-unit ant-tree-indent-unit-start ant-tree-indent-unit-end"
+                            />
+                          </span>
+                          <span
+                            class="ant-tree-switcher ant-tree-switcher_open"
+                          >
+                            <svg
+                              class="ant-tree-switcher-icon"
+                              color="currentColor"
+                              height="16"
+                              viewBox="0 0 16 16"
+                              width="16"
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <path
+                                d="m8 8.781 3.3-3.3.943.943L8 10.667 3.757 6.424l.943-.943z"
+                                fill="currentColor"
+                              />
+                            </svg>
+                          </span>
+                          <span
+                            class="ant-tree-node-content-wrapper ant-tree-node-content-wrapper-open"
+                            title=""
+                          >
+                            <span
+                              class="ant-tree-title"
+                            >
+                              <div
+                                class="css-1bi0c9x"
+                              >
+                                <svg
+                                  color="#4583ff"
+                                  height="16"
+                                  viewBox="0 0 18 18"
+                                  width="16"
+                                  xmlns="http://www.w3.org/2000/svg"
+                                >
+                                  <path
+                                    d="M8.25 5.25V3A.75.75 0 0 1 9 2.25h6.75a.75.75 0 0 1 .75.75v12a.75.75 0 0 1-.75.75H2.25A.75.75 0 0 1 1.5 15V6a.75.75 0 0 1 .75-.75zM3.75 12v1.5H7.5V12zm6.75 0v1.5h3.75V12zm0-2.25v1.5h3.75v-1.5zm0-2.25V9h3.75V7.5zM3.75 9.75v1.5H7.5v-1.5z"
+                                    fill="currentColor"
+                                  />
+                                </svg>
+                                <span
+                                  class="content"
+                                >
+                                  test2
+                                </span>
+                              </div>
+                            </span>
+                          </span>
+                        </div>
+                        <div
+                          aria-grabbed="false"
+                          class="ant-tree-treenode ant-tree-treenode-switcher-close ant-tree-treenode-leaf-last"
+                          draggable="false"
+                        >
+                          <span
+                            aria-hidden="true"
+                            class="ant-tree-indent"
+                          >
+                            <span
+                              class="ant-tree-indent-unit ant-tree-indent-unit-start ant-tree-indent-unit-end"
+                            />
+                            <span
+                              class="ant-tree-indent-unit"
+                            />
+                          </span>
+                          <span
+                            class="ant-tree-switcher ant-tree-switcher_close"
+                          >
+                            <svg
+                              class="ant-tree-switcher-icon"
+                              height="16"
+                              viewBox="0 0 14 14"
+                              width="16"
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <path
+                                d="M7.684 7 4.796 4.112l.825-.824L9.334 7 5.62 10.712l-.825-.825z"
+                              />
+                            </svg>
+                          </span>
+                          <span
+                            class="ant-tree-node-content-wrapper ant-tree-node-content-wrapper-close"
+                            title=""
+                          >
+                            <span
+                              class="ant-tree-title"
+                            >
+                              <div
+                                class="css-1bi0c9x"
+                              >
+                                <svg
+                                  height="18"
+                                  viewBox="0 0 1024 1024"
+                                  width="18"
+                                  xmlns="http://www.w3.org/2000/svg"
+                                >
+                                  <path
+                                    d="M165.3 417.3V739c0 22.2 19 40.3 42.4 40.3H815c23.4 0 42.4-18 42.4-40.3V412h-692v5.3zM815 278.6H519.5v-8.8c0-28.5-23.7-51.6-52.7-51.6H218c-29 0-52.7 23.1-52.7 51.6V368h692.1v-49.1c0-22.3-19-40.3-42.4-40.3m0 0"
+                                    fill="#4583FF"
+                                  />
+                                </svg>
+                                <span
+                                  class="content"
+                                >
+                                  TABLE
+                                </span>
+                              </div>
+                            </span>
+                          </span>
+                        </div>
+                        <div
+                          aria-grabbed="false"
+                          class="ant-tree-treenode ant-tree-treenode-switcher-open ant-tree-treenode-leaf-last"
+                          draggable="false"
+                        >
+                          <span
+                            aria-hidden="true"
+                            class="ant-tree-indent"
+                          >
+                            <span
+                              class="ant-tree-indent-unit ant-tree-indent-unit-start ant-tree-indent-unit-end"
+                            />
+                          </span>
+                          <span
+                            class="ant-tree-switcher ant-tree-switcher_open"
+                          >
+                            <svg
+                              class="ant-tree-switcher-icon"
+                              color="currentColor"
+                              height="16"
+                              viewBox="0 0 16 16"
+                              width="16"
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <path
+                                d="m8 8.781 3.3-3.3.943.943L8 10.667 3.757 6.424l.943-.943z"
+                                fill="currentColor"
+                              />
+                            </svg>
+                          </span>
+                          <span
+                            class="ant-tree-node-content-wrapper ant-tree-node-content-wrapper-open"
+                            title=""
+                          >
+                            <span
+                              class="ant-tree-title"
+                            >
+                              <div
+                                class="css-1bi0c9x"
+                              >
+                                <svg
+                                  color="#4583ff"
+                                  height="16"
+                                  viewBox="0 0 18 18"
+                                  width="16"
+                                  xmlns="http://www.w3.org/2000/svg"
+                                >
+                                  <path
+                                    d="M8.25 5.25V3A.75.75 0 0 1 9 2.25h6.75a.75.75 0 0 1 .75.75v12a.75.75 0 0 1-.75.75H2.25A.75.75 0 0 1 1.5 15V6a.75.75 0 0 1 .75-.75zM3.75 12v1.5H7.5V12zm6.75 0v1.5h3.75V12zm0-2.25v1.5h3.75v-1.5zm0-2.25V9h3.75V7.5zM3.75 9.75v1.5H7.5v-1.5z"
+                                    fill="currentColor"
+                                  />
+                                </svg>
+                                <span
+                                  class="content"
+                                >
+                                  test3
+                                </span>
+                              </div>
+                            </span>
+                          </span>
+                        </div>
+                        <div
+                          aria-grabbed="false"
+                          class="ant-tree-treenode ant-tree-treenode-switcher-close ant-tree-treenode-leaf-last"
+                          draggable="false"
+                        >
+                          <span
+                            aria-hidden="true"
+                            class="ant-tree-indent"
+                          >
+                            <span
+                              class="ant-tree-indent-unit ant-tree-indent-unit-start ant-tree-indent-unit-end"
+                            />
+                            <span
+                              class="ant-tree-indent-unit ant-tree-indent-unit-end"
+                            />
+                          </span>
+                          <span
+                            class="ant-tree-switcher ant-tree-switcher_close"
+                          >
+                            <svg
+                              class="ant-tree-switcher-icon"
+                              height="16"
+                              viewBox="0 0 14 14"
+                              width="16"
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <path
+                                d="M7.684 7 4.796 4.112l.825-.824L9.334 7 5.62 10.712l-.825-.825z"
+                              />
+                            </svg>
+                          </span>
+                          <span
+                            class="ant-tree-node-content-wrapper ant-tree-node-content-wrapper-close"
+                            title=""
+                          >
+                            <span
+                              class="ant-tree-title"
+                            >
+                              <div
+                                class="css-1bi0c9x"
+                              >
+                                <svg
+                                  height="18"
+                                  viewBox="0 0 1024 1024"
+                                  width="18"
+                                  xmlns="http://www.w3.org/2000/svg"
+                                >
+                                  <path
+                                    d="M165.3 417.3V739c0 22.2 19 40.3 42.4 40.3H815c23.4 0 42.4-18 42.4-40.3V412h-692v5.3zM815 278.6H519.5v-8.8c0-28.5-23.7-51.6-52.7-51.6H218c-29 0-52.7 23.1-52.7 51.6V368h692.1v-49.1c0-22.3-19-40.3-42.4-40.3m0 0"
+                                    fill="#4583FF"
+                                  />
+                                </svg>
+                                <span
+                                  class="content"
+                                >
+                                  TABLE
+                                </span>
+                              </div>
+                            </span>
+                          </span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="ant-card ant-card-hoverable css-1qxznty"
+          >
+            <div
+              class="ant-card-head"
+            >
+              <div
+                class="ant-card-head-wrapper"
+              >
+                <div
+                  class="ant-card-head-title"
+                >
+                  <div
+                    class="css-1kpyopg"
+                  >
+                    <span>
+                      比对环境
+                    </span>
+                    <span>
+                      (xin-test-database)
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
+              class="ant-card-body"
+            >
+              <div
+                class="ant-tree ant-tree-icon-hide ant-tree-unselectable ant-tree-show-line"
+                role="tree"
+              >
+                <div>
+                  <input
+                    aria-label="for screen reader"
+                    style="width: 0px; height: 0px; display: flex; overflow: hidden; opacity: 0; border: 0px; padding: 0px; margin: 0px;"
+                    tabindex="0"
+                    value=""
+                  />
+                </div>
+                <div
+                  aria-hidden="true"
+                  class="ant-tree-treenode"
+                  style="position: absolute; pointer-events: none; visibility: hidden; height: 0px; overflow: hidden; border: 0px; padding: 0px;"
+                >
+                  <div
+                    class="ant-tree-indent"
+                  >
+                    <div
+                      class="ant-tree-indent-unit"
+                    />
+                  </div>
+                </div>
+                <div
+                  class="ant-tree-list"
+                  style="position: relative;"
+                >
+                  <div
+                    class="ant-tree-list-holder"
+                    style="max-height: 1200px; overflow-y: hidden;"
+                  >
+                    <div>
+                      <div
+                        class="ant-tree-list-holder-inner"
+                        style="display: flex; flex-direction: column;"
+                      >
+                        <div
+                          aria-grabbed="false"
+                          class="ant-tree-treenode ant-tree-treenode-switcher-open ant-tree-treenode-leaf-last"
+                          draggable="false"
+                        >
+                          <span
+                            aria-hidden="true"
+                            class="ant-tree-indent"
+                          />
+                          <span
+                            class="ant-tree-switcher ant-tree-switcher_open"
+                          >
+                            <svg
+                              class="ant-tree-switcher-icon"
+                              color="currentColor"
+                              height="16"
+                              viewBox="0 0 16 16"
+                              width="16"
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <path
+                                d="m8 8.781 3.3-3.3.943.943L8 10.667 3.757 6.424l.943-.943z"
+                                fill="currentColor"
+                              />
+                            </svg>
+                          </span>
+                          <span
+                            class="ant-tree-checkbox"
+                          >
+                            <span
+                              class="ant-tree-checkbox-inner"
+                            />
+                          </span>
+                          <span
+                            class="ant-tree-node-content-wrapper ant-tree-node-content-wrapper-open"
+                            title=""
+                          >
+                            <span
+                              class="ant-tree-title"
+                            >
+                              <div
+                                class="css-1bi0c9x"
+                              >
+                                <svg
+                                  color="#4583ff"
+                                  height="16"
+                                  viewBox="0 0 18 18"
+                                  width="16"
+                                  xmlns="http://www.w3.org/2000/svg"
+                                >
+                                  <path
+                                    d="M15.75 7.125v2.25c0 1.864-3.023 3.375-6.75 3.375s-6.75-1.511-6.75-3.375v-2.25C2.25 8.989 5.273 10.5 9 10.5s6.75-1.511 6.75-3.375m-13.5 3.75c0 1.864 3.023 3.375 6.75 3.375s6.75-1.511 6.75-3.375v2.25c0 1.864-3.023 3.375-6.75 3.375s-6.75-1.511-6.75-3.375zM9 9C5.273 9 2.25 7.489 2.25 5.625S5.273 2.25 9 2.25s6.75 1.511 6.75 3.375S12.727 9 9 9"
+                                    fill="currentColor"
+                                  />
+                                </svg>
+                                <span
+                                  class="content"
+                                >
+                                  xin-test-database
+                                </span>
+                              </div>
+                            </span>
+                          </span>
+                        </div>
+                        <div
+                          aria-grabbed="false"
+                          class="ant-tree-treenode ant-tree-treenode-switcher-open"
+                          draggable="false"
+                        >
+                          <span
+                            aria-hidden="true"
+                            class="ant-tree-indent"
+                          >
+                            <span
+                              class="ant-tree-indent-unit ant-tree-indent-unit-start ant-tree-indent-unit-end"
+                            />
+                          </span>
+                          <span
+                            class="ant-tree-switcher ant-tree-switcher_open"
+                          >
+                            <svg
+                              class="ant-tree-switcher-icon"
+                              color="currentColor"
+                              height="16"
+                              viewBox="0 0 16 16"
+                              width="16"
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <path
+                                d="m8 8.781 3.3-3.3.943.943L8 10.667 3.757 6.424l.943-.943z"
+                                fill="currentColor"
+                              />
+                            </svg>
+                          </span>
+                          <span
+                            class="ant-tree-checkbox"
+                          >
+                            <span
+                              class="ant-tree-checkbox-inner"
+                            />
+                          </span>
+                          <span
+                            class="ant-tree-node-content-wrapper ant-tree-node-content-wrapper-open"
+                            title=""
+                          >
+                            <span
+                              class="ant-tree-title"
+                            >
+                              <div
+                                class="css-1bi0c9x"
+                              >
+                                <svg
+                                  color="#4583ff"
+                                  height="16"
+                                  viewBox="0 0 18 18"
+                                  width="16"
+                                  xmlns="http://www.w3.org/2000/svg"
+                                >
+                                  <path
+                                    d="M8.25 5.25V3A.75.75 0 0 1 9 2.25h6.75a.75.75 0 0 1 .75.75v12a.75.75 0 0 1-.75.75H2.25A.75.75 0 0 1 1.5 15V6a.75.75 0 0 1 .75-.75zM3.75 12v1.5H7.5V12zm6.75 0v1.5h3.75V12zm0-2.25v1.5h3.75v-1.5zm0-2.25V9h3.75V7.5zM3.75 9.75v1.5H7.5v-1.5z"
+                                    fill="currentColor"
+                                  />
+                                </svg>
+                                <span
+                                  class="content"
+                                >
+                                  test
+                                  (
+                                  0
+                                  )
+                                </span>
+                              </div>
+                            </span>
+                          </span>
+                        </div>
+                        <div
+                          aria-grabbed="false"
+                          class="ant-tree-treenode ant-tree-treenode-switcher-open ant-tree-treenode-leaf-last"
+                          draggable="false"
+                        >
+                          <span
+                            aria-hidden="true"
+                            class="ant-tree-indent"
+                          >
+                            <span
+                              class="ant-tree-indent-unit ant-tree-indent-unit-start ant-tree-indent-unit-end"
+                            />
+                            <span
+                              class="ant-tree-indent-unit ant-tree-indent-unit-start"
+                            />
+                          </span>
+                          <span
+                            class="ant-tree-switcher ant-tree-switcher_open"
+                          >
+                            <svg
+                              class="ant-tree-switcher-icon"
+                              color="currentColor"
+                              height="16"
+                              viewBox="0 0 16 16"
+                              width="16"
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <path
+                                d="m8 8.781 3.3-3.3.943.943L8 10.667 3.757 6.424l.943-.943z"
+                                fill="currentColor"
+                              />
+                            </svg>
+                          </span>
+                          <span
+                            class="ant-tree-checkbox"
+                          >
+                            <span
+                              class="ant-tree-checkbox-inner"
+                            />
+                          </span>
+                          <span
+                            class="ant-tree-node-content-wrapper ant-tree-node-content-wrapper-open"
+                            title=""
+                          >
+                            <span
+                              class="ant-tree-title"
+                            >
+                              <div
+                                class="css-1bi0c9x"
+                              >
+                                <svg
+                                  height="18"
+                                  viewBox="0 0 1024 1024"
+                                  width="18"
+                                  xmlns="http://www.w3.org/2000/svg"
+                                >
+                                  <path
+                                    d="M165.3 417.3V739c0 22.2 19 40.3 42.4 40.3H815c23.4 0 42.4-18 42.4-40.3V412h-692v5.3zM815 278.6H519.5v-8.8c0-28.5-23.7-51.6-52.7-51.6H218c-29 0-52.7 23.1-52.7 51.6V368h692.1v-49.1c0-22.3-19-40.3-42.4-40.3m0 0"
+                                    fill="#4583FF"
+                                  />
+                                </svg>
+                                <span
+                                  class="content"
+                                >
+                                  TABLE
+                                   (
+                                  0
+                                  )
+                                </span>
+                              </div>
+                            </span>
+                          </span>
+                        </div>
+                        <div
+                          aria-grabbed="false"
+                          class="ant-tree-treenode ant-tree-treenode-switcher-close ant-tree-treenode-leaf-last"
+                          draggable="false"
+                        >
+                          <span
+                            aria-hidden="true"
+                            class="ant-tree-indent"
+                          >
+                            <span
+                              class="ant-tree-indent-unit ant-tree-indent-unit-start ant-tree-indent-unit-end"
+                            />
+                            <span
+                              class="ant-tree-indent-unit ant-tree-indent-unit-start"
+                            />
+                            <span
+                              class="ant-tree-indent-unit ant-tree-indent-unit-start ant-tree-indent-unit-end"
+                            />
+                          </span>
+                          <span
+                            class="ant-tree-switcher ant-tree-switcher-noop"
+                          >
+                            <span
+                              class="ant-tree-switcher-leaf-line"
+                            />
+                          </span>
+                          <span
+                            class="ant-tree-checkbox"
+                          >
+                            <span
+                              class="ant-tree-checkbox-inner"
+                            />
+                          </span>
+                          <span
+                            class="ant-tree-node-content-wrapper ant-tree-node-content-wrapper-normal"
+                            title=""
+                          >
+                            <span
+                              class="ant-tree-title"
+                            >
+                              <div
+                                class="object-comparison-result-pass css-1bi0c9x"
+                              >
+                                <div
+                                  class="name-container"
+                                >
+                                  <svg
+                                    height="16"
+                                    viewBox="0 0 1024 1024"
+                                    width="16"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                  >
+                                    <path
+                                      d="M828.952 121.905a73.143 73.143 0 0 1 73.143 73.143v633.904a73.143 73.143 0 0 1-73.143 73.143H195.048a73.143 73.143 0 0 1-73.143-73.143V195.048a73.143 73.143 0 0 1 73.143-73.143zm-512 597.333H195.048v109.714h121.904zm512 0H390.095v109.714h438.857zm-512-182.857H195.048v109.714h121.904zm512 0H390.095v109.714h438.857zm-512-182.857H195.048v109.714h121.904zm512 0H390.095v109.714h438.857z"
+                                      fill="#4583FF"
+                                    />
+                                  </svg>
+                                  <span
+                                    class="content"
+                                    title="task"
+                                  >
+                                    task
+                                  </span>
+                                </div>
+                                <div
+                                  class="ant-space ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
+                                >
+                                  <div
+                                    class="ant-space-item"
+                                  >
+                                    <svg
+                                      class="view-detail-icon"
+                                      color="#4583ff"
+                                      height="16"
+                                      viewBox="0 0 1024 1024"
+                                      width="16"
+                                      xmlns="http://www.w3.org/2000/svg"
+                                    >
+                                      <path
+                                        d="M910.423 893.2 790.027 772.662c31.305-42.579 49.833-95.127 49.833-151.932 0-141.624-115.086-256.85-256.54-256.85S326.785 479.106 326.785 620.73 441.866 877.58 583.32 877.58c56.737 0 109.222-18.55 151.75-49.893l120.397 120.538c7.59 7.593 17.532 11.393 27.479 11.393s19.888-3.8 27.478-11.394c15.174-15.198 15.174-39.832-.001-55.024M583.32 814.359c-106.638 0-193.39-86.863-193.39-193.629s86.752-193.628 193.39-193.628 193.395 86.861 193.395 193.628-86.758 193.629-193.395 193.629"
+                                        fill="currentColor"
+                                      />
+                                      <path
+                                        d="M251.215 631.364c0-181.288 146.78-328.252 327.844-328.252 110.88 0 208.904 55.113 268.236 139.473V124.164c0-32.988-26.736-59.78-59.715-59.78H161.91c-32.977 0-59.714 26.763-59.714 59.779v775.672c0 32.99 26.735 59.782 59.715 59.782h417.148c-181.063 0-327.844-146.964-327.844-328.253m-29.803-447.616c0-16.481 13.344-29.841 29.804-29.841h447.06c16.46 0 29.804 13.36 29.804 29.84s-13.343 29.842-29.804 29.842h-447.06c-16.46 0-29.804-13.361-29.804-29.841"
+                                        fill="currentColor"
+                                      />
+                                    </svg>
+                                  </div>
+                                </div>
+                              </div>
+                            </span>
+                          </span>
+                        </div>
+                        <div
+                          aria-grabbed="false"
+                          class="ant-tree-treenode ant-tree-treenode-switcher-open"
+                          draggable="false"
+                        >
+                          <span
+                            aria-hidden="true"
+                            class="ant-tree-indent"
+                          >
+                            <span
+                              class="ant-tree-indent-unit ant-tree-indent-unit-start ant-tree-indent-unit-end"
+                            />
+                          </span>
+                          <span
+                            class="ant-tree-switcher ant-tree-switcher_open"
+                          >
+                            <svg
+                              class="ant-tree-switcher-icon"
+                              color="currentColor"
+                              height="16"
+                              viewBox="0 0 16 16"
+                              width="16"
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <path
+                                d="m8 8.781 3.3-3.3.943.943L8 10.667 3.757 6.424l.943-.943z"
+                                fill="currentColor"
+                              />
+                            </svg>
+                          </span>
+                          <span
+                            class="ant-tree-checkbox"
+                          >
+                            <span
+                              class="ant-tree-checkbox-inner"
+                            />
+                          </span>
+                          <span
+                            class="ant-tree-node-content-wrapper ant-tree-node-content-wrapper-open"
+                            title=""
+                          >
+                            <span
+                              class="ant-tree-title"
+                            >
+                              <div
+                                class="css-1bi0c9x"
+                              >
+                                <svg
+                                  color="#4583ff"
+                                  height="16"
+                                  viewBox="0 0 18 18"
+                                  width="16"
+                                  xmlns="http://www.w3.org/2000/svg"
+                                >
+                                  <path
+                                    d="M8.25 5.25V3A.75.75 0 0 1 9 2.25h6.75a.75.75 0 0 1 .75.75v12a.75.75 0 0 1-.75.75H2.25A.75.75 0 0 1 1.5 15V6a.75.75 0 0 1 .75-.75zM3.75 12v1.5H7.5V12zm6.75 0v1.5h3.75V12zm0-2.25v1.5h3.75v-1.5zm0-2.25V9h3.75V7.5zM3.75 9.75v1.5H7.5v-1.5z"
+                                    fill="currentColor"
+                                  />
+                                </svg>
+                                <span
+                                  class="content"
+                                >
+                                  test2
+                                  (
+                                  0
+                                  )
+                                </span>
+                              </div>
+                            </span>
+                          </span>
+                        </div>
+                        <div
+                          aria-grabbed="false"
+                          class="ant-tree-treenode ant-tree-treenode-switcher-close ant-tree-treenode-leaf-last"
+                          draggable="false"
+                        >
+                          <span
+                            aria-hidden="true"
+                            class="ant-tree-indent"
+                          >
+                            <span
+                              class="ant-tree-indent-unit ant-tree-indent-unit-start ant-tree-indent-unit-end"
+                            />
+                            <span
+                              class="ant-tree-indent-unit"
+                            />
+                          </span>
+                          <span
+                            class="ant-tree-switcher ant-tree-switcher_close"
+                          >
+                            <svg
+                              class="ant-tree-switcher-icon"
+                              height="16"
+                              viewBox="0 0 14 14"
+                              width="16"
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <path
+                                d="M7.684 7 4.796 4.112l.825-.824L9.334 7 5.62 10.712l-.825-.825z"
+                              />
+                            </svg>
+                          </span>
+                          <span
+                            class="ant-tree-checkbox"
+                          >
+                            <span
+                              class="ant-tree-checkbox-inner"
+                            />
+                          </span>
+                          <span
+                            class="ant-tree-node-content-wrapper ant-tree-node-content-wrapper-close"
+                            title=""
+                          >
+                            <span
+                              class="ant-tree-title"
+                            >
+                              <div
+                                class="css-1bi0c9x"
+                              >
+                                <svg
+                                  height="18"
+                                  viewBox="0 0 1024 1024"
+                                  width="18"
+                                  xmlns="http://www.w3.org/2000/svg"
+                                >
+                                  <path
+                                    d="M165.3 417.3V739c0 22.2 19 40.3 42.4 40.3H815c23.4 0 42.4-18 42.4-40.3V412h-692v5.3zM815 278.6H519.5v-8.8c0-28.5-23.7-51.6-52.7-51.6H218c-29 0-52.7 23.1-52.7 51.6V368h692.1v-49.1c0-22.3-19-40.3-42.4-40.3m0 0"
+                                    fill="#4583FF"
+                                  />
+                                </svg>
+                                <span
+                                  class="content"
+                                >
+                                  TABLE
+                                   (
+                                  0
+                                  )
+                                </span>
+                              </div>
+                            </span>
+                          </span>
+                        </div>
+                        <div
+                          aria-grabbed="false"
+                          class="ant-tree-treenode ant-tree-treenode-switcher-open ant-tree-treenode-leaf-last"
+                          draggable="false"
+                        >
+                          <span
+                            aria-hidden="true"
+                            class="ant-tree-indent"
+                          >
+                            <span
+                              class="ant-tree-indent-unit ant-tree-indent-unit-start ant-tree-indent-unit-end"
+                            />
+                          </span>
+                          <span
+                            class="ant-tree-switcher ant-tree-switcher_open"
+                          >
+                            <svg
+                              class="ant-tree-switcher-icon"
+                              color="currentColor"
+                              height="16"
+                              viewBox="0 0 16 16"
+                              width="16"
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <path
+                                d="m8 8.781 3.3-3.3.943.943L8 10.667 3.757 6.424l.943-.943z"
+                                fill="currentColor"
+                              />
+                            </svg>
+                          </span>
+                          <span
+                            class="ant-tree-checkbox"
+                          >
+                            <span
+                              class="ant-tree-checkbox-inner"
+                            />
+                          </span>
+                          <span
+                            class="ant-tree-node-content-wrapper ant-tree-node-content-wrapper-open"
+                            title=""
+                          >
+                            <span
+                              class="ant-tree-title"
+                            >
+                              <div
+                                class="css-1bi0c9x"
+                              >
+                                <svg
+                                  color="#4583ff"
+                                  height="16"
+                                  viewBox="0 0 18 18"
+                                  width="16"
+                                  xmlns="http://www.w3.org/2000/svg"
+                                >
+                                  <path
+                                    d="M8.25 5.25V3A.75.75 0 0 1 9 2.25h6.75a.75.75 0 0 1 .75.75v12a.75.75 0 0 1-.75.75H2.25A.75.75 0 0 1 1.5 15V6a.75.75 0 0 1 .75-.75zM3.75 12v1.5H7.5V12zm6.75 0v1.5h3.75V12zm0-2.25v1.5h3.75v-1.5zm0-2.25V9h3.75V7.5zM3.75 9.75v1.5H7.5v-1.5z"
+                                    fill="currentColor"
+                                  />
+                                </svg>
+                                <span
+                                  class="content"
+                                >
+                                  test3
+                                  (
+                                  2
+                                  )
+                                </span>
+                              </div>
+                            </span>
+                          </span>
+                        </div>
+                        <div
+                          aria-grabbed="false"
+                          class="ant-tree-treenode ant-tree-treenode-switcher-close ant-tree-treenode-leaf-last"
+                          draggable="false"
+                        >
+                          <span
+                            aria-hidden="true"
+                            class="ant-tree-indent"
+                          >
+                            <span
+                              class="ant-tree-indent-unit ant-tree-indent-unit-start ant-tree-indent-unit-end"
+                            />
+                            <span
+                              class="ant-tree-indent-unit ant-tree-indent-unit-end"
+                            />
+                          </span>
+                          <span
+                            class="ant-tree-switcher ant-tree-switcher_close"
+                          >
+                            <svg
+                              class="ant-tree-switcher-icon"
+                              height="16"
+                              viewBox="0 0 14 14"
+                              width="16"
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <path
+                                d="M7.684 7 4.796 4.112l.825-.824L9.334 7 5.62 10.712l-.825-.825z"
+                              />
+                            </svg>
+                          </span>
+                          <span
+                            class="ant-tree-checkbox"
+                          >
+                            <span
+                              class="ant-tree-checkbox-inner"
+                            />
+                          </span>
+                          <span
+                            class="ant-tree-node-content-wrapper ant-tree-node-content-wrapper-close"
+                            title=""
+                          >
+                            <span
+                              class="ant-tree-title"
+                            >
+                              <div
+                                class="css-1bi0c9x"
+                              >
+                                <svg
+                                  height="18"
+                                  viewBox="0 0 1024 1024"
+                                  width="18"
+                                  xmlns="http://www.w3.org/2000/svg"
+                                >
+                                  <path
+                                    d="M165.3 417.3V739c0 22.2 19 40.3 42.4 40.3H815c23.4 0 42.4-18 42.4-40.3V412h-692v5.3zM815 278.6H519.5v-8.8c0-28.5-23.7-51.6-52.7-51.6H218c-29 0-52.7 23.1-52.7 51.6V368h692.1v-49.1c0-22.3-19-40.3-42.4-40.3m0 0"
+                                    fill="#4583FF"
+                                  />
+                                </svg>
+                                <span
+                                  class="content"
+                                >
+                                  TABLE
+                                   (
+                                  2
+                                  )
+                                </span>
+                              </div>
+                            </span>
+                          </span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
 exports[`EnvironmentSelector should render the baseline and comparison environment selectors 1`] = `
 <div>
   <div
-    class="css-1w42xcv"
+    class="css-e6v8ex"
   >
-    <form
-      class="ant-form ant-form-horizontal css-dev-only-do-not-override-txh9fw css-1smbjja"
+    <div
+      class="ant-card css-1423xkt"
     >
       <div
-        class="css-cp2xvl"
+        class="ant-card-body"
       >
-        <h4
-          class="ant-typography css-dev-only-do-not-override-txh9fw"
+        <form
+          class="ant-form ant-form-horizontal css-1smbjja"
         >
-          基准环境
-        </h4>
-        <span
-          class="ant-typography environment-section-desc css-dev-only-do-not-override-txh9fw"
-        >
-          请选择您认为是“标准”的数据源环境，
+          <div
+            class="css-cp2xvl"
+          >
+            <h4
+              class="ant-typography"
+            >
+              基准环境
+            </h4>
+            <span
+              class="ant-typography environment-section-desc"
+            >
+              请选择您认为是"标准"的数据源环境，
 这个环境将作为比较的基准点。
-        </span>
-        <div
-          class="ant-form-item css-15d6abf css-dev-only-do-not-override-txh9fw"
-        >
-          <div
-            class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
-          >
+            </span>
             <div
-              class="ant-col ant-form-item-label css-dev-only-do-not-override-txh9fw"
-            >
-              <label
-                class="ant-form-item-required"
-                for="baselineInstance"
-                title=""
-              />
-            </div>
-            <div
-              class="ant-col ant-form-item-control css-dev-only-do-not-override-txh9fw"
+              class="ant-form-item css-15d6abf"
             >
               <div
-                class="ant-form-item-control-input"
+                class="ant-row ant-form-item-row"
               >
                 <div
-                  class="ant-form-item-control-input-content"
+                  class="ant-col ant-form-item-label"
+                >
+                  <label
+                    class="ant-form-item-required"
+                    for="baselineInstance"
+                    title=""
+                  />
+                </div>
+                <div
+                  class="ant-col ant-form-item-control"
                 >
                   <div
-                    aria-required="true"
-                    class="ant-select ant-tree-select ant-select-in-form-item basic-tree-select-wrapper css-1ggbq54 css-dev-only-do-not-override-v9sov3 ant-select-single ant-select-allow-clear ant-select-show-arrow ant-select-loading ant-select-show-search"
+                    class="ant-form-item-control-input"
                   >
                     <div
-                      class="ant-select-selector"
+                      class="ant-form-item-control-input-content"
                     >
-                      <span
-                        class="ant-select-selection-search"
+                      <div
+                        aria-required="true"
+                        class="ant-select ant-tree-select ant-select-in-form-item basic-tree-select-wrapper css-1ggbq54 ant-select-single ant-select-allow-clear ant-select-show-arrow ant-select-loading ant-select-show-search"
                       >
-                        <input
-                          aria-autocomplete="list"
-                          aria-controls="baselineInstance_list"
-                          aria-expanded="false"
-                          aria-haspopup="listbox"
-                          aria-owns="baselineInstance_list"
-                          aria-required="true"
-                          autocomplete="off"
-                          class="ant-select-selection-search-input"
-                          id="baselineInstance"
-                          role="combobox"
-                          type="search"
-                          value=""
-                        />
-                      </span>
-                      <span
-                        class="ant-select-selection-placeholder"
-                      >
-                        请选择{{name}}
-                      </span>
-                    </div>
-                    <span
-                      aria-hidden="true"
-                      class="ant-select-arrow ant-select-arrow-loading"
-                      style="user-select: none;"
-                      unselectable="on"
-                    >
-                      <span
-                        aria-label="loading"
-                        class="anticon anticon-loading anticon-spin"
-                        role="img"
-                      >
-                        <svg
-                          aria-hidden="true"
-                          data-icon="loading"
-                          fill="currentColor"
-                          focusable="false"
-                          height="1em"
-                          viewBox="0 0 1024 1024"
-                          width="1em"
+                        <div
+                          class="ant-select-selector"
                         >
-                          <path
-                            d="M988 548c-19.9 0-36-16.1-36-36 0-59.4-11.6-117-34.6-171.3a440.45 440.45 0 00-94.3-139.9 437.71 437.71 0 00-139.9-94.3C629 83.6 571.4 72 512 72c-19.9 0-36-16.1-36-36s16.1-36 36-36c69.1 0 136.2 13.5 199.3 40.3C772.3 66 827 103 874 150c47 47 83.9 101.8 109.7 162.7 26.7 63.1 40.2 130.2 40.2 199.3.1 19.9-16 36-35.9 36z"
-                          />
-                        </svg>
-                      </span>
-                    </span>
+                          <span
+                            class="ant-select-selection-search"
+                          >
+                            <input
+                              aria-autocomplete="list"
+                              aria-controls="baselineInstance_list"
+                              aria-expanded="false"
+                              aria-haspopup="listbox"
+                              aria-owns="baselineInstance_list"
+                              aria-required="true"
+                              autocomplete="off"
+                              class="ant-select-selection-search-input"
+                              id="baselineInstance"
+                              role="combobox"
+                              type="search"
+                              value=""
+                            />
+                          </span>
+                          <span
+                            class="ant-select-selection-placeholder"
+                          >
+                            请选择{{name}}
+                          </span>
+                        </div>
+                        <span
+                          aria-hidden="true"
+                          class="ant-select-arrow ant-select-arrow-loading"
+                          style="user-select: none;"
+                          unselectable="on"
+                        >
+                          <span
+                            aria-label="loading"
+                            class="anticon anticon-loading anticon-spin"
+                            role="img"
+                          >
+                            <svg
+                              aria-hidden="true"
+                              data-icon="loading"
+                              fill="currentColor"
+                              focusable="false"
+                              height="1em"
+                              viewBox="0 0 1024 1024"
+                              width="1em"
+                            >
+                              <path
+                                d="M988 548c-19.9 0-36-16.1-36-36 0-59.4-11.6-117-34.6-171.3a440.45 440.45 0 00-94.3-139.9 437.71 437.71 0 00-139.9-94.3C629 83.6 571.4 72 512 72c-19.9 0-36-16.1-36-36s16.1-36 36-36c69.1 0 136.2 13.5 199.3 40.3C772.3 66 827 103 874 150c47 47 83.9 101.8 109.7 162.7 26.7 63.1 40.2 130.2 40.2 199.3.1 19.9-16 36-35.9 36z"
+                              />
+                            </svg>
+                          </span>
+                        </span>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
           </div>
-        </div>
-      </div>
-      <div
-        class="css-cp2xvl"
-      >
-        <h4
-          class="ant-typography css-dev-only-do-not-override-txh9fw"
-        >
-          比对环境
-        </h4>
-        <span
-          class="ant-typography environment-section-desc css-dev-only-do-not-override-txh9fw"
-        >
-          请选择您想要检查或更新的数据库环境，
+          <div
+            class="css-cp2xvl"
+          >
+            <h4
+              class="ant-typography"
+            >
+              比对环境
+            </h4>
+            <span
+              class="ant-typography environment-section-desc"
+            >
+              请选择您想要检查或更新的数据库环境，
 这个环境将与基准环境进行比较，以找出差异。
-        </span>
-        <div
-          class="ant-form-item css-15d6abf css-dev-only-do-not-override-txh9fw"
-        >
-          <div
-            class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
-          >
+            </span>
             <div
-              class="ant-col ant-form-item-label css-dev-only-do-not-override-txh9fw"
-            >
-              <label
-                class="ant-form-item-required"
-                for="comparisonInstance"
-                title=""
-              />
-            </div>
-            <div
-              class="ant-col ant-form-item-control css-dev-only-do-not-override-txh9fw"
+              class="ant-form-item css-15d6abf"
             >
               <div
-                class="ant-form-item-control-input"
+                class="ant-row ant-form-item-row"
               >
                 <div
-                  class="ant-form-item-control-input-content"
+                  class="ant-col ant-form-item-label"
+                >
+                  <label
+                    class="ant-form-item-required"
+                    for="comparisonInstance"
+                    title=""
+                  />
+                </div>
+                <div
+                  class="ant-col ant-form-item-control"
                 >
                   <div
-                    aria-required="true"
-                    class="ant-select ant-tree-select ant-select-in-form-item basic-tree-select-wrapper css-1ggbq54 css-dev-only-do-not-override-v9sov3 ant-select-single ant-select-allow-clear ant-select-show-arrow ant-select-loading ant-select-show-search"
+                    class="ant-form-item-control-input"
                   >
                     <div
-                      class="ant-select-selector"
+                      class="ant-form-item-control-input-content"
                     >
-                      <span
-                        class="ant-select-selection-search"
+                      <div
+                        aria-required="true"
+                        class="ant-select ant-tree-select ant-select-in-form-item basic-tree-select-wrapper css-1ggbq54 ant-select-single ant-select-allow-clear ant-select-show-arrow ant-select-loading ant-select-show-search"
                       >
-                        <input
-                          aria-autocomplete="list"
-                          aria-controls="comparisonInstance_list"
-                          aria-expanded="false"
-                          aria-haspopup="listbox"
-                          aria-owns="comparisonInstance_list"
-                          aria-required="true"
-                          autocomplete="off"
-                          class="ant-select-selection-search-input"
-                          id="comparisonInstance"
-                          role="combobox"
-                          type="search"
-                          value=""
-                        />
-                      </span>
-                      <span
-                        class="ant-select-selection-placeholder"
-                      >
-                        请选择{{name}}
-                      </span>
-                    </div>
-                    <span
-                      aria-hidden="true"
-                      class="ant-select-arrow ant-select-arrow-loading"
-                      style="user-select: none;"
-                      unselectable="on"
-                    >
-                      <span
-                        aria-label="loading"
-                        class="anticon anticon-loading anticon-spin"
-                        role="img"
-                      >
-                        <svg
-                          aria-hidden="true"
-                          data-icon="loading"
-                          fill="currentColor"
-                          focusable="false"
-                          height="1em"
-                          viewBox="0 0 1024 1024"
-                          width="1em"
+                        <div
+                          class="ant-select-selector"
                         >
-                          <path
-                            d="M988 548c-19.9 0-36-16.1-36-36 0-59.4-11.6-117-34.6-171.3a440.45 440.45 0 00-94.3-139.9 437.71 437.71 0 00-139.9-94.3C629 83.6 571.4 72 512 72c-19.9 0-36-16.1-36-36s16.1-36 36-36c69.1 0 136.2 13.5 199.3 40.3C772.3 66 827 103 874 150c47 47 83.9 101.8 109.7 162.7 26.7 63.1 40.2 130.2 40.2 199.3.1 19.9-16 36-35.9 36z"
-                          />
-                        </svg>
-                      </span>
-                    </span>
+                          <span
+                            class="ant-select-selection-search"
+                          >
+                            <input
+                              aria-autocomplete="list"
+                              aria-controls="comparisonInstance_list"
+                              aria-expanded="false"
+                              aria-haspopup="listbox"
+                              aria-owns="comparisonInstance_list"
+                              aria-required="true"
+                              autocomplete="off"
+                              class="ant-select-selection-search-input"
+                              id="comparisonInstance"
+                              role="combobox"
+                              type="search"
+                              value=""
+                            />
+                          </span>
+                          <span
+                            class="ant-select-selection-placeholder"
+                          >
+                            请选择{{name}}
+                          </span>
+                        </div>
+                        <span
+                          aria-hidden="true"
+                          class="ant-select-arrow ant-select-arrow-loading"
+                          style="user-select: none;"
+                          unselectable="on"
+                        >
+                          <span
+                            aria-label="loading"
+                            class="anticon anticon-loading anticon-spin"
+                            role="img"
+                          >
+                            <svg
+                              aria-hidden="true"
+                              data-icon="loading"
+                              fill="currentColor"
+                              focusable="false"
+                              height="1em"
+                              viewBox="0 0 1024 1024"
+                              width="1em"
+                            >
+                              <path
+                                d="M988 548c-19.9 0-36-16.1-36-36 0-59.4-11.6-117-34.6-171.3a440.45 440.45 0 00-94.3-139.9 437.71 437.71 0 00-139.9-94.3C629 83.6 571.4 72 512 72c-19.9 0-36-16.1-36-36s16.1-36 36-36c69.1 0 136.2 13.5 199.3 40.3C772.3 66 827 103 874 150c47 47 83.9 101.8 109.7 162.7 26.7 63.1 40.2 130.2 40.2 199.3.1 19.9-16 36-35.9 36z"
+                              />
+                            </svg>
+                          </span>
+                        </span>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
           </div>
-        </div>
+        </form>
+        <button
+          class="ant-btn ant-btn-primary ant-btn-lg full-width-element basic-button-wrapper css-geipcv"
+          style="margin-top: 16px;"
+          type="button"
+        >
+          <span>
+            执行对比
+          </span>
+        </button>
       </div>
-    </form>
-    <button
-      class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary ant-btn-lg full-width-element basic-button-wrapper css-geipcv"
-      type="button"
-    >
-      <span>
-        执行对比
-      </span>
-    </button>
+    </div>
   </div>
 </div>
 `;

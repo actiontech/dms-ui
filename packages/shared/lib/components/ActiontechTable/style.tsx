@@ -1,19 +1,6 @@
-import { ConfigProviderProps } from 'antd/es/config-provider';
 import { ACTIONTECH_TABLE_OPERATOR_COLUMN_CLS } from './hooks/useTableAction';
 import { styled } from '@mui/material/styles';
 import { Table } from 'antd';
-
-export const tableToken: ConfigProviderProps['theme'] = {
-  token: {
-    fontSize: 13,
-    fontWeightStrong: 500
-  },
-  components: {
-    Pagination: {
-      itemSize: 28
-    }
-  }
-};
 
 export const ActiontechTableStyleWrapper = styled(Table)`
   &.ant-table-wrapper.table-row-cursor {

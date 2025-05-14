@@ -1,5 +1,5 @@
 import { fireEvent, act, cleanup } from '@testing-library/react';
-import { renderWithTheme } from '../../../../testUtil/customRender';
+import { superRender } from '../../../../testUtil/customRender';
 
 import { TableRefreshButtonProps } from '../../index.type';
 import RefreshButton from '../RefreshButton';
@@ -17,7 +17,7 @@ describe('lib/ActiontechTable-RefreshButton', () => {
   });
 
   const customRender = (params: TableRefreshButtonProps) => {
-    return renderWithTheme(<RefreshButton {...params} />);
+    return superRender(<RefreshButton {...params} />);
   };
 
   it('render refresh btn', () => {

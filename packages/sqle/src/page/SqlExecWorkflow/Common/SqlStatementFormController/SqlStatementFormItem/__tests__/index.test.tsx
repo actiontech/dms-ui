@@ -6,8 +6,14 @@ import SqlStatementFormItem from '..';
 import { superRender } from '../../../../../../testUtils/customRender';
 import { getBySelector } from '@actiontech/shared/lib/testUtil/customQuery';
 import { SQL_EDITOR_PLACEHOLDER_VALUE } from '@actiontech/shared/lib/data/common';
+import {
+  ignoreConsoleErrors,
+  UtilsConsoleErrorStringsEnum
+} from '@actiontech/shared/lib/testUtil/common';
 
 describe('test SqlStatementFormItem', () => {
+  ignoreConsoleErrors([UtilsConsoleErrorStringsEnum.UNKNOWN_EVENT_HANDLER]);
+
   beforeEach(() => {
     mockUseCurrentProject();
   });

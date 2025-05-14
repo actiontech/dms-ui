@@ -7,13 +7,13 @@ exports[`sqle/VersionManagement/Detail/CustomActionNode render allowExecute is f
       class="css-1diyz6t"
     >
       <div
-        class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center ant-tooltip-open basic-tooltips-wrapper css-4jbtl9"
+        class="ant-space ant-space-horizontal ant-space-align-center ant-tooltip-open basic-tooltips-wrapper css-4jbtl9"
       >
         <div
           class="ant-space-item"
         >
           <button
-            class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary basic-button-wrapper css-geipcv"
+            class="ant-btn ant-btn-primary basic-button-wrapper css-geipcv"
             disabled=""
             type="button"
           >
@@ -49,7 +49,7 @@ exports[`sqle/VersionManagement/Detail/CustomActionNode render allowExecute is f
   </div>
   <div>
     <div
-      class="ant-tooltip ant-zoom-big-fast-appear ant-zoom-big-fast-appear-prepare ant-zoom-big-fast whitespace-pre-line css-dev-only-do-not-override-txh9fw ant-tooltip-placement-top"
+      class="ant-tooltip ant-zoom-big-fast-appear ant-zoom-big-fast-appear-prepare ant-zoom-big-fast whitespace-pre-line ant-tooltip-placement-top"
       style="--arrow-x: 0px; --arrow-y: 0px; left: -1000vw; top: -1000vh; box-sizing: border-box;"
     >
       <div
@@ -79,7 +79,7 @@ exports[`sqle/VersionManagement/Detail/CustomActionNode render allowExecute is t
       class="css-1diyz6t"
     >
       <button
-        class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary basic-button-wrapper css-geipcv"
+        class="ant-btn ant-btn-primary basic-button-wrapper css-geipcv"
         type="button"
       >
         <span

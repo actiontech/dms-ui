@@ -4,16 +4,16 @@ exports[`base/System/PushNotification/Wechat/ConfigField render snap 1`] = `
 <body>
   <div>
     <form
-      class="ant-form ant-form-horizontal css-dev-only-do-not-override-txh9fw"
+      class="ant-form ant-form-horizontal"
     >
       <div
-        class="ant-form-item has-required-style css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+        class="ant-form-item has-required-style css-1jlm9cy"
       >
         <div
-          class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+          class="ant-row ant-form-item-row"
         >
           <div
-            class="ant-col ant-form-item-label css-dev-only-do-not-override-txh9fw"
+            class="ant-col ant-form-item-label"
           >
             <label
               class="ant-form-item-required"
@@ -24,7 +24,7 @@ exports[`base/System/PushNotification/Wechat/ConfigField render snap 1`] = `
             </label>
           </div>
           <div
-            class="ant-col ant-form-item-control css-dev-only-do-not-override-txh9fw"
+            class="ant-col ant-form-item-control"
           >
             <div
               class="ant-form-item-control-input"
@@ -34,7 +34,7 @@ exports[`base/System/PushNotification/Wechat/ConfigField render snap 1`] = `
               >
                 <input
                   aria-required="true"
-                  class="ant-input css-dev-only-do-not-override-ywkr0o basic-input-wrapper css-1pd1cd5"
+                  class="ant-input basic-input-wrapper css-1pd1cd5"
                   id="corp_id"
                   placeholder="请输入CorpID(微信企业号ID)"
                   type="text"
@@ -46,13 +46,13 @@ exports[`base/System/PushNotification/Wechat/ConfigField render snap 1`] = `
         </div>
       </div>
       <div
-        class="ant-form-item has-required-style css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+        class="ant-form-item has-required-style css-1jlm9cy"
       >
         <div
-          class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+          class="ant-row ant-form-item-row"
         >
           <div
-            class="ant-col ant-form-item-label css-dev-only-do-not-override-txh9fw"
+            class="ant-col ant-form-item-label"
           >
             <label
               class="ant-form-item-required"
@@ -63,7 +63,7 @@ exports[`base/System/PushNotification/Wechat/ConfigField render snap 1`] = `
             </label>
           </div>
           <div
-            class="ant-col ant-form-item-control css-dev-only-do-not-override-txh9fw"
+            class="ant-col ant-form-item-control"
           >
             <div
               class="ant-form-item-control-input"
@@ -73,7 +73,7 @@ exports[`base/System/PushNotification/Wechat/ConfigField render snap 1`] = `
               >
                 <input
                   aria-required="true"
-                  class="ant-input css-dev-only-do-not-override-ywkr0o basic-input-wrapper css-1pd1cd5"
+                  class="ant-input basic-input-wrapper css-1pd1cd5"
                   id="agent_id"
                   placeholder="请输入企业微信应用ID"
                   type="text"
@@ -85,13 +85,13 @@ exports[`base/System/PushNotification/Wechat/ConfigField render snap 1`] = `
         </div>
       </div>
       <div
-        class="ant-form-item has-required-style css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+        class="ant-form-item has-required-style css-1jlm9cy"
       >
         <div
-          class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+          class="ant-row ant-form-item-row"
         >
           <div
-            class="ant-col ant-form-item-label css-dev-only-do-not-override-txh9fw"
+            class="ant-col ant-form-item-label"
           >
             <label
               class="ant-form-item-required"
@@ -102,7 +102,7 @@ exports[`base/System/PushNotification/Wechat/ConfigField render snap 1`] = `
             </label>
           </div>
           <div
-            class="ant-col ant-form-item-control css-dev-only-do-not-override-txh9fw"
+            class="ant-col ant-form-item-control"
           >
             <div
               class="ant-form-item-control-input"
@@ -111,11 +111,11 @@ exports[`base/System/PushNotification/Wechat/ConfigField render snap 1`] = `
                 class="ant-form-item-control-input-content"
               >
                 <span
-                  class="ant-input-affix-wrapper ant-input-password basic-input-wrapper css-1pd1cd5 css-dev-only-do-not-override-txh9fw"
+                  class="ant-input-affix-wrapper ant-input-password basic-input-wrapper css-1pd1cd5"
                 >
                   <input
                     aria-required="true"
-                    class="ant-input css-dev-only-do-not-override-txh9fw"
+                    class="ant-input"
                     id="corp_secret"
                     placeholder="请输入企业微信应用Secret"
                     type="password"
@@ -155,13 +155,13 @@ exports[`base/System/PushNotification/Wechat/ConfigField render snap 1`] = `
         </div>
       </div>
       <div
-        class="ant-form-item css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+        class="ant-form-item css-1jlm9cy"
       >
         <div
-          class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+          class="ant-row ant-form-item-row"
         >
           <div
-            class="ant-col ant-form-item-label css-dev-only-do-not-override-txh9fw"
+            class="ant-col ant-form-item-label"
           >
             <label
               class=""
@@ -172,7 +172,7 @@ exports[`base/System/PushNotification/Wechat/ConfigField render snap 1`] = `
             </label>
           </div>
           <div
-            class="ant-col ant-form-item-control css-dev-only-do-not-override-txh9fw"
+            class="ant-col ant-form-item-control"
           >
             <div
               class="ant-form-item-control-input"
@@ -182,7 +182,7 @@ exports[`base/System/PushNotification/Wechat/ConfigField render snap 1`] = `
               >
                 <button
                   aria-checked="false"
-                  class="ant-switch basic-switch-wrapper css-g6dhbn css-dev-only-do-not-override-txh9fw"
+                  class="ant-switch basic-switch-wrapper css-g6dhbn"
                   id="safe_enabled"
                   role="switch"
                   type="button"
@@ -207,13 +207,13 @@ exports[`base/System/PushNotification/Wechat/ConfigField render snap 1`] = `
         </div>
       </div>
       <div
-        class="ant-form-item css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+        class="ant-form-item css-1jlm9cy"
       >
         <div
-          class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+          class="ant-row ant-form-item-row"
         >
           <div
-            class="ant-col ant-form-item-label css-dev-only-do-not-override-txh9fw"
+            class="ant-col ant-form-item-label"
           >
             <label
               class=""
@@ -224,7 +224,7 @@ exports[`base/System/PushNotification/Wechat/ConfigField render snap 1`] = `
             </label>
           </div>
           <div
-            class="ant-col ant-form-item-control css-dev-only-do-not-override-txh9fw"
+            class="ant-col ant-form-item-control"
           >
             <div
               class="ant-form-item-control-input"
@@ -233,7 +233,7 @@ exports[`base/System/PushNotification/Wechat/ConfigField render snap 1`] = `
                 class="ant-form-item-control-input-content"
               >
                 <input
-                  class="ant-input css-dev-only-do-not-override-ywkr0o basic-input-wrapper css-1pd1cd5"
+                  class="ant-input basic-input-wrapper css-1pd1cd5"
                   id="proxy_ip"
                   placeholder="请输入代理服务器IP"
                   type="text"
@@ -253,16 +253,16 @@ exports[`base/System/PushNotification/Wechat/ConfigField render validate agent_i
 <body>
   <div>
     <form
-      class="ant-form ant-form-horizontal css-dev-only-do-not-override-txh9fw"
+      class="ant-form ant-form-horizontal"
     >
       <div
-        class="ant-form-item has-required-style css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+        class="ant-form-item has-required-style css-1jlm9cy"
       >
         <div
-          class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+          class="ant-row ant-form-item-row"
         >
           <div
-            class="ant-col ant-form-item-label css-dev-only-do-not-override-txh9fw"
+            class="ant-col ant-form-item-label"
           >
             <label
               class="ant-form-item-required"
@@ -273,7 +273,7 @@ exports[`base/System/PushNotification/Wechat/ConfigField render validate agent_i
             </label>
           </div>
           <div
-            class="ant-col ant-form-item-control css-dev-only-do-not-override-txh9fw"
+            class="ant-col ant-form-item-control"
           >
             <div
               class="ant-form-item-control-input"
@@ -283,7 +283,7 @@ exports[`base/System/PushNotification/Wechat/ConfigField render validate agent_i
               >
                 <input
                   aria-required="true"
-                  class="ant-input css-dev-only-do-not-override-ywkr0o basic-input-wrapper css-1pd1cd5"
+                  class="ant-input basic-input-wrapper css-1pd1cd5"
                   id="corp_id"
                   placeholder="请输入CorpID(微信企业号ID)"
                   type="text"
@@ -295,13 +295,13 @@ exports[`base/System/PushNotification/Wechat/ConfigField render validate agent_i
         </div>
       </div>
       <div
-        class="ant-form-item has-required-style css-1jlm9cy css-dev-only-do-not-override-txh9fw ant-form-item-has-error"
+        class="ant-form-item has-required-style css-1jlm9cy ant-form-item-has-error"
       >
         <div
-          class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+          class="ant-row ant-form-item-row"
         >
           <div
-            class="ant-col ant-form-item-label css-dev-only-do-not-override-txh9fw"
+            class="ant-col ant-form-item-label"
           >
             <label
               class="ant-form-item-required"
@@ -312,7 +312,7 @@ exports[`base/System/PushNotification/Wechat/ConfigField render validate agent_i
             </label>
           </div>
           <div
-            class="ant-col ant-form-item-control css-dev-only-do-not-override-txh9fw"
+            class="ant-col ant-form-item-control"
           >
             <div
               class="ant-form-item-control-input"
@@ -324,7 +324,7 @@ exports[`base/System/PushNotification/Wechat/ConfigField render validate agent_i
                   aria-describedby="agent_id_help"
                   aria-invalid="true"
                   aria-required="true"
-                  class="ant-input ant-input-status-error css-dev-only-do-not-override-ywkr0o basic-input-wrapper css-1pd1cd5"
+                  class="ant-input ant-input-status-error basic-input-wrapper css-1pd1cd5"
                   id="agent_id"
                   placeholder="请输入企业微信应用ID"
                   type="text"
@@ -347,13 +347,13 @@ exports[`base/System/PushNotification/Wechat/ConfigField render validate agent_i
         />
       </div>
       <div
-        class="ant-form-item has-required-style css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+        class="ant-form-item has-required-style css-1jlm9cy"
       >
         <div
-          class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+          class="ant-row ant-form-item-row"
         >
           <div
-            class="ant-col ant-form-item-label css-dev-only-do-not-override-txh9fw"
+            class="ant-col ant-form-item-label"
           >
             <label
               class="ant-form-item-required"
@@ -364,7 +364,7 @@ exports[`base/System/PushNotification/Wechat/ConfigField render validate agent_i
             </label>
           </div>
           <div
-            class="ant-col ant-form-item-control css-dev-only-do-not-override-txh9fw"
+            class="ant-col ant-form-item-control"
           >
             <div
               class="ant-form-item-control-input"
@@ -373,11 +373,11 @@ exports[`base/System/PushNotification/Wechat/ConfigField render validate agent_i
                 class="ant-form-item-control-input-content"
               >
                 <span
-                  class="ant-input-affix-wrapper ant-input-password basic-input-wrapper css-1pd1cd5 css-dev-only-do-not-override-txh9fw"
+                  class="ant-input-affix-wrapper ant-input-password basic-input-wrapper css-1pd1cd5"
                 >
                   <input
                     aria-required="true"
-                    class="ant-input css-dev-only-do-not-override-txh9fw"
+                    class="ant-input"
                     id="corp_secret"
                     placeholder="请输入企业微信应用Secret"
                     type="password"
@@ -416,13 +416,13 @@ exports[`base/System/PushNotification/Wechat/ConfigField render validate agent_i
         </div>
       </div>
       <div
-        class="ant-form-item css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+        class="ant-form-item css-1jlm9cy"
       >
         <div
-          class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+          class="ant-row ant-form-item-row"
         >
           <div
-            class="ant-col ant-form-item-label css-dev-only-do-not-override-txh9fw"
+            class="ant-col ant-form-item-label"
           >
             <label
               class=""
@@ -433,7 +433,7 @@ exports[`base/System/PushNotification/Wechat/ConfigField render validate agent_i
             </label>
           </div>
           <div
-            class="ant-col ant-form-item-control css-dev-only-do-not-override-txh9fw"
+            class="ant-col ant-form-item-control"
           >
             <div
               class="ant-form-item-control-input"
@@ -443,7 +443,7 @@ exports[`base/System/PushNotification/Wechat/ConfigField render validate agent_i
               >
                 <button
                   aria-checked="false"
-                  class="ant-switch basic-switch-wrapper css-g6dhbn css-dev-only-do-not-override-txh9fw"
+                  class="ant-switch basic-switch-wrapper css-g6dhbn"
                   id="safe_enabled"
                   role="switch"
                   type="button"
@@ -468,13 +468,13 @@ exports[`base/System/PushNotification/Wechat/ConfigField render validate agent_i
         </div>
       </div>
       <div
-        class="ant-form-item css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+        class="ant-form-item css-1jlm9cy"
       >
         <div
-          class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+          class="ant-row ant-form-item-row"
         >
           <div
-            class="ant-col ant-form-item-label css-dev-only-do-not-override-txh9fw"
+            class="ant-col ant-form-item-label"
           >
             <label
               class=""
@@ -485,7 +485,7 @@ exports[`base/System/PushNotification/Wechat/ConfigField render validate agent_i
             </label>
           </div>
           <div
-            class="ant-col ant-form-item-control css-dev-only-do-not-override-txh9fw"
+            class="ant-col ant-form-item-control"
           >
             <div
               class="ant-form-item-control-input"
@@ -494,7 +494,7 @@ exports[`base/System/PushNotification/Wechat/ConfigField render validate agent_i
                 class="ant-form-item-control-input-content"
               >
                 <input
-                  class="ant-input css-dev-only-do-not-override-ywkr0o basic-input-wrapper css-1pd1cd5"
+                  class="ant-input basic-input-wrapper css-1pd1cd5"
                   id="proxy_ip"
                   placeholder="请输入代理服务器IP"
                   type="text"
@@ -514,16 +514,16 @@ exports[`base/System/PushNotification/Wechat/ConfigField render validate agent_i
 <body>
   <div>
     <form
-      class="ant-form ant-form-horizontal css-dev-only-do-not-override-txh9fw"
+      class="ant-form ant-form-horizontal"
     >
       <div
-        class="ant-form-item has-required-style css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+        class="ant-form-item has-required-style css-1jlm9cy"
       >
         <div
-          class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+          class="ant-row ant-form-item-row"
         >
           <div
-            class="ant-col ant-form-item-label css-dev-only-do-not-override-txh9fw"
+            class="ant-col ant-form-item-label"
           >
             <label
               class="ant-form-item-required"
@@ -534,7 +534,7 @@ exports[`base/System/PushNotification/Wechat/ConfigField render validate agent_i
             </label>
           </div>
           <div
-            class="ant-col ant-form-item-control css-dev-only-do-not-override-txh9fw"
+            class="ant-col ant-form-item-control"
           >
             <div
               class="ant-form-item-control-input"
@@ -544,7 +544,7 @@ exports[`base/System/PushNotification/Wechat/ConfigField render validate agent_i
               >
                 <input
                   aria-required="true"
-                  class="ant-input css-dev-only-do-not-override-ywkr0o basic-input-wrapper css-1pd1cd5"
+                  class="ant-input basic-input-wrapper css-1pd1cd5"
                   id="corp_id"
                   placeholder="请输入CorpID(微信企业号ID)"
                   type="text"
@@ -556,13 +556,13 @@ exports[`base/System/PushNotification/Wechat/ConfigField render validate agent_i
         </div>
       </div>
       <div
-        class="ant-form-item has-required-style css-1jlm9cy css-dev-only-do-not-override-txh9fw ant-form-item-has-success"
+        class="ant-form-item has-required-style css-1jlm9cy ant-form-item-has-success"
       >
         <div
-          class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+          class="ant-row ant-form-item-row"
         >
           <div
-            class="ant-col ant-form-item-label css-dev-only-do-not-override-txh9fw"
+            class="ant-col ant-form-item-label"
           >
             <label
               class="ant-form-item-required"
@@ -573,7 +573,7 @@ exports[`base/System/PushNotification/Wechat/ConfigField render validate agent_i
             </label>
           </div>
           <div
-            class="ant-col ant-form-item-control css-dev-only-do-not-override-txh9fw"
+            class="ant-col ant-form-item-control"
           >
             <div
               class="ant-form-item-control-input"
@@ -583,7 +583,7 @@ exports[`base/System/PushNotification/Wechat/ConfigField render validate agent_i
               >
                 <input
                   aria-required="true"
-                  class="ant-input ant-input-status-success css-dev-only-do-not-override-ywkr0o basic-input-wrapper css-1pd1cd5"
+                  class="ant-input ant-input-status-success basic-input-wrapper css-1pd1cd5"
                   id="agent_id"
                   placeholder="请输入企业微信应用ID"
                   type="text"
@@ -606,13 +606,13 @@ exports[`base/System/PushNotification/Wechat/ConfigField render validate agent_i
         />
       </div>
       <div
-        class="ant-form-item has-required-style css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+        class="ant-form-item has-required-style css-1jlm9cy"
       >
         <div
-          class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+          class="ant-row ant-form-item-row"
         >
           <div
-            class="ant-col ant-form-item-label css-dev-only-do-not-override-txh9fw"
+            class="ant-col ant-form-item-label"
           >
             <label
               class="ant-form-item-required"
@@ -623,7 +623,7 @@ exports[`base/System/PushNotification/Wechat/ConfigField render validate agent_i
             </label>
           </div>
           <div
-            class="ant-col ant-form-item-control css-dev-only-do-not-override-txh9fw"
+            class="ant-col ant-form-item-control"
           >
             <div
               class="ant-form-item-control-input"
@@ -632,11 +632,11 @@ exports[`base/System/PushNotification/Wechat/ConfigField render validate agent_i
                 class="ant-form-item-control-input-content"
               >
                 <span
-                  class="ant-input-affix-wrapper ant-input-password basic-input-wrapper css-1pd1cd5 css-dev-only-do-not-override-txh9fw"
+                  class="ant-input-affix-wrapper ant-input-password basic-input-wrapper css-1pd1cd5"
                 >
                   <input
                     aria-required="true"
-                    class="ant-input css-dev-only-do-not-override-txh9fw"
+                    class="ant-input"
                     id="corp_secret"
                     placeholder="请输入企业微信应用Secret"
                     type="password"
@@ -675,13 +675,13 @@ exports[`base/System/PushNotification/Wechat/ConfigField render validate agent_i
         </div>
       </div>
       <div
-        class="ant-form-item css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+        class="ant-form-item css-1jlm9cy"
       >
         <div
-          class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+          class="ant-row ant-form-item-row"
         >
           <div
-            class="ant-col ant-form-item-label css-dev-only-do-not-override-txh9fw"
+            class="ant-col ant-form-item-label"
           >
             <label
               class=""
@@ -692,7 +692,7 @@ exports[`base/System/PushNotification/Wechat/ConfigField render validate agent_i
             </label>
           </div>
           <div
-            class="ant-col ant-form-item-control css-dev-only-do-not-override-txh9fw"
+            class="ant-col ant-form-item-control"
           >
             <div
               class="ant-form-item-control-input"
@@ -702,7 +702,7 @@ exports[`base/System/PushNotification/Wechat/ConfigField render validate agent_i
               >
                 <button
                   aria-checked="false"
-                  class="ant-switch basic-switch-wrapper css-g6dhbn css-dev-only-do-not-override-txh9fw"
+                  class="ant-switch basic-switch-wrapper css-g6dhbn"
                   id="safe_enabled"
                   role="switch"
                   type="button"
@@ -727,13 +727,13 @@ exports[`base/System/PushNotification/Wechat/ConfigField render validate agent_i
         </div>
       </div>
       <div
-        class="ant-form-item css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+        class="ant-form-item css-1jlm9cy"
       >
         <div
-          class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+          class="ant-row ant-form-item-row"
         >
           <div
-            class="ant-col ant-form-item-label css-dev-only-do-not-override-txh9fw"
+            class="ant-col ant-form-item-label"
           >
             <label
               class=""
@@ -744,7 +744,7 @@ exports[`base/System/PushNotification/Wechat/ConfigField render validate agent_i
             </label>
           </div>
           <div
-            class="ant-col ant-form-item-control css-dev-only-do-not-override-txh9fw"
+            class="ant-col ant-form-item-control"
           >
             <div
               class="ant-form-item-control-input"
@@ -753,7 +753,7 @@ exports[`base/System/PushNotification/Wechat/ConfigField render validate agent_i
                 class="ant-form-item-control-input-content"
               >
                 <input
-                  class="ant-input css-dev-only-do-not-override-ywkr0o basic-input-wrapper css-1pd1cd5"
+                  class="ant-input basic-input-wrapper css-1pd1cd5"
                   id="proxy_ip"
                   placeholder="请输入代理服务器IP"
                   type="text"

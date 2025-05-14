@@ -1,29 +1,35 @@
 import { useTranslation } from 'react-i18next';
-import { Spin, Form } from 'antd';
+import { Spin, Form, Space, Typography } from 'antd';
 import {
   BasicEmpty,
+  BasicTag,
   EmptyBox,
   PageHeader,
   TypedLink
 } from '@actiontech/shared';
-import { RuleStatus, RuleList } from '../../components/RuleList';
-import useRuleList from '../../components/RuleList/useRuleList';
-import { RuleStatusWrapperStyleWrapper } from '@actiontech/shared/lib/styleWrapper/element';
-import { RuleListStyleWrapper } from './style';
+import { RuleList, RuleStatus } from '../../components/RuleList';
+import {
+  RuleStatusWrapperStyleWrapper,
+  ToggleButtonStyleWrapper
+} from '@actiontech/shared/lib/styleWrapper/element';
+import { RuleBaseInfoStyleWrapper, RuleListStyleWrapper } from './style';
+import { FilterOutlined } from '@actiontech/icons';
+import useRuleListFilter from './RuleListFilter/hooks';
 import RuleListFilter from './RuleListFilter';
-import useRuleListFilter from './hooks/useRuleListFilter';
-import { RuleListFilterForm } from './index.type';
 import {
   PermissionControl,
   PERMISSIONS
 } from '@actiontech/shared/lib/features';
 import { ROUTE_PATHS } from '@actiontech/shared/lib/data/routePaths';
+import CustomSearchInput from '../../components/RuleList/RuleFilter/RuleFilterCommonFields/CustomInput';
+import useRuleList from '../../components/RuleList/useRuleList';
+import { useMemo } from 'react';
+import { RuleListFilterForm } from './index.type';
 
 const Rule = () => {
   const { t } = useTranslation();
-  const { ruleStatus, setRuleStatus, getCurrentStatusRules } = useRuleList();
-
   const [form] = Form.useForm<RuleListFilterForm>();
+  const { ruleStatus, setRuleStatus, getCurrentStatusRules } = useRuleList();
 
   const {
     showNotRuleTemplatePage,
@@ -34,26 +40,69 @@ const Rule = () => {
     filterRuleTemplate,
     allRules,
     templateRules,
-    tags
+    visible,
+    toggleFilterVisible,
+    onFuzzyKeywordChange
   } = useRuleListFilter(form);
+
+  const filterDbType = Form.useWatch('filter_db_type', form);
+  const filterRuleVersion = Form.useWatch('filter_rule_version', form);
+
+  const templateRulesWithStatus = useMemo(() => {
+    return getCurrentStatusRules(allRules, templateRules, filterRuleTemplate);
+  }, [getCurrentStatusRules, allRules, templateRules, filterRuleTemplate]);
 
   return (
     <RuleListStyleWrapper>
       <PageHeader title={t('rule.pageTitle')} />
       <Spin spinning={loading} delay={400}>
         <RuleStatusWrapperStyleWrapper className="flex-space-between flex-align-center">
-          <RuleListFilter
-            form={form}
-            setShowNorRuleTemplatePage={setShowNorRuleTemplatePage}
-            bindProjects={bindProjects}
-          />
-          {filterRuleTemplate && (
-            <RuleStatus
-              currentRuleStatus={ruleStatus}
-              ruleStatusChange={setRuleStatus}
+          <RuleBaseInfoStyleWrapper>
+            <Typography.Title level={4} className="base-info-item">
+              {filterDbType}
+            </Typography.Title>
+            <BasicTag size="large" color="blue" className="base-info-item">
+              {t('rule.ruleCount', {
+                count: filterRuleTemplate
+                  ? templateRulesWithStatus.length
+                  : (allRules ?? []).length
+              })}
+            </BasicTag>
+            <EmptyBox if={filterRuleVersion !== undefined}>
+              <BasicTag size="large" color="gray" className="base-info-item">
+                {`v${filterRuleVersion}`}
+              </BasicTag>
+            </EmptyBox>
+          </RuleBaseInfoStyleWrapper>
+          <Space size={12}>
+            <ToggleButtonStyleWrapper
+              active={visible}
+              onClick={toggleFilterVisible}
+            >
+              <FilterOutlined fill="currentColor" />
+              <span>{t('rule.filter.filterCondition')}</span>
+            </ToggleButtonStyleWrapper>
+            {filterRuleTemplate && (
+              <RuleStatus
+                currentRuleStatus={ruleStatus}
+                ruleStatusChange={setRuleStatus}
+              />
+            )}
+            <CustomSearchInput
+              id="fuzzy_keyword"
+              placeholder={t('rule.form.fuzzy_text_placeholder')}
+              allowClear
+              onChange={onFuzzyKeywordChange}
             />
-          )}
+          </Space>
         </RuleStatusWrapperStyleWrapper>
+        <RuleListFilter
+          form={form}
+          visible={visible}
+          bindProjects={bindProjects}
+          setShowNorRuleTemplatePage={setShowNorRuleTemplatePage}
+        />
+
         <EmptyBox
           if={!showNotRuleTemplatePage}
           defaultNode={
@@ -85,13 +134,8 @@ const Rule = () => {
         >
           <RuleList
             enableCheckDetail
-            pageHeaderHeight={0}
-            rules={getCurrentStatusRules(
-              allRules,
-              templateRules,
-              filterRuleTemplate
-            )}
-            tags={tags}
+            pageHeaderHeight={visible ? 60 : 0}
+            rules={templateRulesWithStatus}
           />
         </EmptyBox>
       </Spin>

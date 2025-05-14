@@ -1,24 +1,9 @@
 import { RouteObject, useRoutes, Outlet } from 'react-router-dom';
 import { RouterConfigItem } from '@actiontech/shared/lib/types/common.type';
 import { AuthRouterConfig, unAuthRouterConfig } from '../router';
-import {
-  BaseGlobalRouterConfig,
-  BaseProjectRouterConfig
-} from '../router.base';
-import { ROUTE_PATHS } from '@actiontech/shared/lib/data/routePaths';
-import ProjectDetail from '../../page/Project/Detail';
 
 const routeData = {
-  base: [
-    ...BaseGlobalRouterConfig,
-    {
-      key: 'projectDetail',
-      path: ROUTE_PATHS.BASE.PROJECT_DETAIL,
-      element: <ProjectDetail />,
-      children: BaseProjectRouterConfig
-    }
-  ],
-  sqle: AuthRouterConfig,
+  auth: AuthRouterConfig,
   unAuth: unAuthRouterConfig
 };
 
@@ -55,15 +40,7 @@ const generateLazyElement = (route: any): RouterConfigItem => {
 export const mockUseRoutes = (type: typeMockRouteCate) => {
   const processedRoutes = routeData[type].map(
     (route: RouterConfigItem | RouteObject) => {
-      const { children, ...rest } = route;
-      if (children) {
-        return {
-          ...rest,
-          children: children.map((item) => generateLazyElement(item))
-        };
-      } else {
-        return generateLazyElement(route);
-      }
+      return generateLazyElement(route);
     }
   );
 

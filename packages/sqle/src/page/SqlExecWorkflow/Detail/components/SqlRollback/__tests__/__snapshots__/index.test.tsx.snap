@@ -16,7 +16,7 @@ exports[`sqle/ExecWorkflow/Detail/SqlRollback render isAtRollbackStep is true 1`
         class="title"
       >
         <button
-          class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default basic-button-wrapper css-geipcv"
+          class="ant-btn ant-btn-default basic-button-wrapper css-geipcv"
           type="button"
         >
           <span
@@ -43,7 +43,7 @@ exports[`sqle/ExecWorkflow/Detail/SqlRollback render isAtRollbackStep is true 1`
         class="extra"
       >
         <button
-          class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary basic-button-wrapper css-geipcv"
+          class="ant-btn ant-btn-primary basic-button-wrapper css-geipcv"
           disabled=""
           type="button"
         >
@@ -57,7 +57,7 @@ exports[`sqle/ExecWorkflow/Detail/SqlRollback render isAtRollbackStep is true 1`
       class="css-1ysnhnl"
     >
       <div
-        class="ant-transfer ant-transfer-customize-list full-width-element css-dev-only-do-not-override-txh9fw"
+        class="ant-transfer ant-transfer-customize-list full-width-element"
       >
         <div
           class="ant-transfer-list"
@@ -70,13 +70,13 @@ exports[`sqle/ExecWorkflow/Detail/SqlRollback render isAtRollbackStep is true 1`
             >
               2
                
-              items
+              项
             </span>
             <span
               class="ant-transfer-list-header-title"
             >
               <div
-                class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+                class="ant-space ant-space-horizontal ant-space-align-center"
               >
                 <div
                   class="ant-space-item"
@@ -88,7 +88,7 @@ exports[`sqle/ExecWorkflow/Detail/SqlRollback render isAtRollbackStep is true 1`
                   class="ant-space-item"
                 >
                   <div
-                    class="ant-space css-dev-only-do-not-override-1kh50jg ant-space-horizontal ant-space-align-center actiontech-table-filter-container-namespace full-width-element css-de5ds5"
+                    class="ant-space ant-space-horizontal ant-space-align-center actiontech-table-filter-container-namespace full-width-element css-tvjydu"
                     style="flex-wrap: wrap; margin-bottom: -12px;"
                   >
                     <div
@@ -96,7 +96,7 @@ exports[`sqle/ExecWorkflow/Detail/SqlRollback render isAtRollbackStep is true 1`
                       style="margin-right: 12px; padding-bottom: 12px;"
                     >
                       <div
-                        class="ant-select ant-select-sm ant-select-borderless basic-select-wrapper custom-select-namespace css-pti5z8 css-dev-only-do-not-override-jx040l ant-select-single ant-select-allow-clear ant-select-show-arrow"
+                        class="ant-select ant-select-sm ant-select-borderless basic-select-wrapper custom-select-namespace css-pti5z8 ant-select-single ant-select-allow-clear ant-select-show-arrow"
                       >
                         <div
                           class="ant-select-selector"
@@ -154,7 +154,7 @@ exports[`sqle/ExecWorkflow/Detail/SqlRollback render isAtRollbackStep is true 1`
                       style="padding-bottom: 12px;"
                     >
                       <div
-                        class="ant-select ant-select-sm ant-select-borderless basic-select-wrapper custom-select-namespace css-pti5z8 css-dev-only-do-not-override-jx040l ant-select-single ant-select-allow-clear ant-select-show-arrow"
+                        class="ant-select ant-select-sm ant-select-borderless basic-select-wrapper custom-select-namespace css-pti5z8 ant-select-single ant-select-allow-clear ant-select-show-arrow"
                       >
                         <div
                           class="ant-select-selector"
@@ -219,10 +219,10 @@ exports[`sqle/ExecWorkflow/Detail/SqlRollback render isAtRollbackStep is true 1`
               class="ant-transfer-list-body-customize-wrapper"
             >
               <div
-                class="ant-table-wrapper actiontech-table-namespace left-table css-fxd6ka css-dev-only-do-not-override-bj9uhl"
+                class="ant-table-wrapper actiontech-table-namespace left-table css-fxd6ka"
               >
                 <div
-                  class="ant-spin-nested-loading css-dev-only-do-not-override-bj9uhl"
+                  class="ant-spin-nested-loading"
                 >
                   <div
                     class="ant-spin-container"
@@ -257,10 +257,10 @@ exports[`sqle/ExecWorkflow/Detail/SqlRollback render isAtRollbackStep is true 1`
                                     class="ant-table-selection"
                                   >
                                     <label
-                                      class="ant-checkbox-wrapper css-dev-only-do-not-override-bj9uhl"
+                                      class="ant-checkbox-wrapper"
                                     >
                                       <span
-                                        class="ant-checkbox css-dev-only-do-not-override-bj9uhl"
+                                        class="ant-checkbox"
                                       >
                                         <input
                                           aria-label="Select all"
@@ -407,10 +407,10 @@ exports[`sqle/ExecWorkflow/Detail/SqlRollback render isAtRollbackStep is true 1`
                                   class="ant-table-cell ant-table-selection-column"
                                 >
                                   <label
-                                    class="ant-checkbox-wrapper css-dev-only-do-not-override-bj9uhl"
+                                    class="ant-checkbox-wrapper"
                                   >
                                     <span
-                                      class="ant-checkbox css-dev-only-do-not-override-bj9uhl"
+                                      class="ant-checkbox"
                                     >
                                       <input
                                         class="ant-checkbox-input"
@@ -429,7 +429,7 @@ exports[`sqle/ExecWorkflow/Detail/SqlRollback render isAtRollbackStep is true 1`
                                     class="actiontech-sql-snippet-renderer-wrapper css-dz7fl9"
                                   >
                                     <div
-                                      class="ant-typography ant-typography-ellipsis ant-typography-ellipsis-multiple-line margin-bottom-0 css-dev-only-do-not-override-bj9uhl"
+                                      class="ant-typography ant-typography-ellipsis ant-typography-ellipsis-multiple-line margin-bottom-0"
                                     >
                                       <span>
                                         <span
@@ -475,7 +475,7 @@ exports[`sqle/ExecWorkflow/Detail/SqlRollback render isAtRollbackStep is true 1`
                                   class="ant-table-cell"
                                 >
                                   <span
-                                    class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-1mjwlcb css-dev-only-do-not-override-bj9uhl"
+                                    class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-1mjwlcb"
                                   >
                                     基于反向SQL回滚
                                   </span>
@@ -489,7 +489,7 @@ exports[`sqle/ExecWorkflow/Detail/SqlRollback render isAtRollbackStep is true 1`
                                   class="ant-table-cell"
                                 >
                                   <span
-                                    class="ant-tag ant-tag-green ant-tag-borderless basic-tag-wrapper basic-large-tag-wrapper css-13qu6j1 css-dev-only-do-not-override-bj9uhl"
+                                    class="ant-tag ant-tag-green ant-tag-borderless basic-tag-wrapper basic-large-tag-wrapper css-13qu6j1"
                                   >
                                     执行成功
                                   </span>
@@ -508,10 +508,10 @@ exports[`sqle/ExecWorkflow/Detail/SqlRollback render isAtRollbackStep is true 1`
                                   class="ant-table-cell ant-table-selection-column"
                                 >
                                   <label
-                                    class="ant-checkbox-wrapper css-dev-only-do-not-override-bj9uhl"
+                                    class="ant-checkbox-wrapper"
                                   >
                                     <span
-                                      class="ant-checkbox css-dev-only-do-not-override-bj9uhl"
+                                      class="ant-checkbox"
                                     >
                                       <input
                                         class="ant-checkbox-input"
@@ -530,7 +530,7 @@ exports[`sqle/ExecWorkflow/Detail/SqlRollback render isAtRollbackStep is true 1`
                                     class="actiontech-sql-snippet-renderer-wrapper css-dz7fl9"
                                   >
                                     <div
-                                      class="ant-typography ant-typography-ellipsis ant-typography-ellipsis-multiple-line margin-bottom-0 css-dev-only-do-not-override-bj9uhl"
+                                      class="ant-typography ant-typography-ellipsis ant-typography-ellipsis-multiple-line margin-bottom-0"
                                     >
                                       <span>
                                         <span
@@ -576,7 +576,7 @@ exports[`sqle/ExecWorkflow/Detail/SqlRollback render isAtRollbackStep is true 1`
                                   class="ant-table-cell"
                                 >
                                   <span
-                                    class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-1mjwlcb css-dev-only-do-not-override-bj9uhl"
+                                    class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-1mjwlcb"
                                   >
                                     基于行级备份回滚
                                   </span>
@@ -590,7 +590,7 @@ exports[`sqle/ExecWorkflow/Detail/SqlRollback render isAtRollbackStep is true 1`
                                   class="ant-table-cell"
                                 >
                                   <span
-                                    class="ant-tag ant-tag-green ant-tag-borderless basic-tag-wrapper basic-large-tag-wrapper css-13qu6j1 css-dev-only-do-not-override-bj9uhl"
+                                    class="ant-tag ant-tag-green ant-tag-borderless basic-tag-wrapper basic-large-tag-wrapper css-13qu6j1"
                                   >
                                     执行成功
                                   </span>
@@ -607,7 +607,7 @@ exports[`sqle/ExecWorkflow/Detail/SqlRollback render isAtRollbackStep is true 1`
                       </div>
                     </div>
                     <ul
-                      class="ant-pagination ant-pagination-mini ant-table-pagination ant-table-pagination-right actiontech-table-pagination css-dev-only-do-not-override-bj9uhl"
+                      class="ant-pagination ant-pagination-mini ant-table-pagination ant-table-pagination-right actiontech-table-pagination"
                     >
                       <li
                         class="ant-pagination-total-text"
@@ -619,7 +619,7 @@ exports[`sqle/ExecWorkflow/Detail/SqlRollback render isAtRollbackStep is true 1`
                       <li
                         aria-disabled="true"
                         class="ant-pagination-prev ant-pagination-disabled"
-                        title="Previous Page"
+                        title="上一页"
                       >
                         <button
                           class="ant-pagination-item-link"
@@ -662,7 +662,7 @@ exports[`sqle/ExecWorkflow/Detail/SqlRollback render isAtRollbackStep is true 1`
                       <li
                         aria-disabled="true"
                         class="ant-pagination-next ant-pagination-disabled"
-                        title="Next Page"
+                        title="下一页"
                       >
                         <button
                           class="ant-pagination-item-link"
@@ -695,8 +695,8 @@ exports[`sqle/ExecWorkflow/Detail/SqlRollback render isAtRollbackStep is true 1`
                         class="ant-pagination-options"
                       >
                         <div
-                          aria-label="Page Size"
-                          class="ant-select ant-select-sm ant-pagination-options-size-changer css-dev-only-do-not-override-bj9uhl ant-select-single ant-select-show-arrow ant-select-show-search"
+                          aria-label="页码"
+                          class="ant-select ant-select-sm ant-pagination-options-size-changer ant-select-single ant-select-show-arrow ant-select-show-search"
                         >
                           <div
                             class="ant-select-selector"
@@ -710,7 +710,7 @@ exports[`sqle/ExecWorkflow/Detail/SqlRollback render isAtRollbackStep is true 1`
                                 aria-controls="rc_select_TEST_OR_SSR_list"
                                 aria-expanded="false"
                                 aria-haspopup="listbox"
-                                aria-label="Page Size"
+                                aria-label="页码"
                                 aria-owns="rc_select_TEST_OR_SSR_list"
                                 autocomplete="off"
                                 class="ant-select-selection-search-input"
@@ -722,9 +722,9 @@ exports[`sqle/ExecWorkflow/Detail/SqlRollback render isAtRollbackStep is true 1`
                             </span>
                             <span
                               class="ant-select-selection-item"
-                              title="20 / page"
+                              title="20 条/页"
                             >
-                              20 / page
+                              20 条/页
                             </span>
                           </div>
                           <span
@@ -766,7 +766,7 @@ exports[`sqle/ExecWorkflow/Detail/SqlRollback render isAtRollbackStep is true 1`
           class="ant-transfer-operation"
         >
           <button
-            class="ant-btn css-dev-only-do-not-override-txh9fw ant-btn-primary ant-btn-sm ant-btn-icon-only"
+            class="ant-btn ant-btn-primary ant-btn-sm ant-btn-icon-only"
             disabled=""
             type="button"
           >
@@ -795,7 +795,7 @@ exports[`sqle/ExecWorkflow/Detail/SqlRollback render isAtRollbackStep is true 1`
             </span>
           </button>
           <button
-            class="ant-btn css-dev-only-do-not-override-txh9fw ant-btn-primary ant-btn-sm ant-btn-icon-only"
+            class="ant-btn ant-btn-primary ant-btn-sm ant-btn-icon-only"
             disabled=""
             type="button"
           >
@@ -835,7 +835,7 @@ exports[`sqle/ExecWorkflow/Detail/SqlRollback render isAtRollbackStep is true 1`
             >
               0
                
-              item
+              项
             </span>
             <span
               class="ant-transfer-list-header-title"
@@ -850,10 +850,10 @@ exports[`sqle/ExecWorkflow/Detail/SqlRollback render isAtRollbackStep is true 1`
               class="ant-transfer-list-body-customize-wrapper"
             >
               <div
-                class="ant-table-wrapper actiontech-table-namespace right-table css-fxd6ka css-dev-only-do-not-override-bj9uhl"
+                class="ant-table-wrapper actiontech-table-namespace right-table css-fxd6ka"
               >
                 <div
-                  class="ant-spin-nested-loading css-dev-only-do-not-override-bj9uhl"
+                  class="ant-spin-nested-loading"
                 >
                   <div
                     class="ant-spin-container"
@@ -888,10 +888,10 @@ exports[`sqle/ExecWorkflow/Detail/SqlRollback render isAtRollbackStep is true 1`
                                     class="ant-table-selection"
                                   >
                                     <label
-                                      class="ant-checkbox-wrapper ant-checkbox-wrapper-disabled css-dev-only-do-not-override-bj9uhl"
+                                      class="ant-checkbox-wrapper ant-checkbox-wrapper-disabled"
                                     >
                                       <span
-                                        class="ant-checkbox css-dev-only-do-not-override-bj9uhl ant-checkbox-disabled"
+                                        class="ant-checkbox ant-checkbox-disabled"
                                       >
                                         <input
                                           aria-label="Select all"
@@ -1089,7 +1089,7 @@ exports[`sqle/ExecWorkflow/Detail/SqlRollback render select rollback sql 1`] = `
         class="title"
       >
         <button
-          class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default basic-button-wrapper css-geipcv"
+          class="ant-btn ant-btn-default basic-button-wrapper css-geipcv"
           type="button"
         >
           <span
@@ -1116,7 +1116,7 @@ exports[`sqle/ExecWorkflow/Detail/SqlRollback render select rollback sql 1`] = `
         class="extra"
       >
         <button
-          class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary basic-button-wrapper css-geipcv"
+          class="ant-btn ant-btn-primary basic-button-wrapper css-geipcv"
           type="button"
         >
           <span>
@@ -1129,7 +1129,7 @@ exports[`sqle/ExecWorkflow/Detail/SqlRollback render select rollback sql 1`] = `
       class="css-1ysnhnl"
     >
       <div
-        class="ant-transfer ant-transfer-customize-list full-width-element css-dev-only-do-not-override-txh9fw"
+        class="ant-transfer ant-transfer-customize-list full-width-element"
       >
         <div
           class="ant-transfer-list"
@@ -1142,13 +1142,13 @@ exports[`sqle/ExecWorkflow/Detail/SqlRollback render select rollback sql 1`] = `
             >
               2
                
-              items
+              项
             </span>
             <span
               class="ant-transfer-list-header-title"
             >
               <div
-                class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+                class="ant-space ant-space-horizontal ant-space-align-center"
               >
                 <div
                   class="ant-space-item"
@@ -1160,7 +1160,7 @@ exports[`sqle/ExecWorkflow/Detail/SqlRollback render select rollback sql 1`] = `
                   class="ant-space-item"
                 >
                   <div
-                    class="ant-space css-dev-only-do-not-override-1kh50jg ant-space-horizontal ant-space-align-center actiontech-table-filter-container-namespace full-width-element css-de5ds5"
+                    class="ant-space ant-space-horizontal ant-space-align-center actiontech-table-filter-container-namespace full-width-element css-tvjydu"
                     style="flex-wrap: wrap; margin-bottom: -12px;"
                   >
                     <div
@@ -1168,7 +1168,7 @@ exports[`sqle/ExecWorkflow/Detail/SqlRollback render select rollback sql 1`] = `
                       style="margin-right: 12px; padding-bottom: 12px;"
                     >
                       <div
-                        class="ant-select ant-select-sm ant-select-borderless basic-select-wrapper custom-select-namespace css-pti5z8 css-dev-only-do-not-override-jx040l ant-select-single ant-select-allow-clear ant-select-show-arrow"
+                        class="ant-select ant-select-sm ant-select-borderless basic-select-wrapper custom-select-namespace css-pti5z8 ant-select-single ant-select-allow-clear ant-select-show-arrow"
                       >
                         <div
                           class="ant-select-selector"
@@ -1226,7 +1226,7 @@ exports[`sqle/ExecWorkflow/Detail/SqlRollback render select rollback sql 1`] = `
                       style="padding-bottom: 12px;"
                     >
                       <div
-                        class="ant-select ant-select-sm ant-select-borderless basic-select-wrapper custom-select-namespace css-pti5z8 css-dev-only-do-not-override-jx040l ant-select-single ant-select-allow-clear ant-select-show-arrow"
+                        class="ant-select ant-select-sm ant-select-borderless basic-select-wrapper custom-select-namespace css-pti5z8 ant-select-single ant-select-allow-clear ant-select-show-arrow"
                       >
                         <div
                           class="ant-select-selector"
@@ -1291,10 +1291,10 @@ exports[`sqle/ExecWorkflow/Detail/SqlRollback render select rollback sql 1`] = `
               class="ant-transfer-list-body-customize-wrapper"
             >
               <div
-                class="ant-table-wrapper actiontech-table-namespace left-table css-fxd6ka css-dev-only-do-not-override-bj9uhl"
+                class="ant-table-wrapper actiontech-table-namespace left-table css-fxd6ka"
               >
                 <div
-                  class="ant-spin-nested-loading css-dev-only-do-not-override-bj9uhl"
+                  class="ant-spin-nested-loading"
                 >
                   <div
                     class="ant-spin-container"
@@ -1329,10 +1329,10 @@ exports[`sqle/ExecWorkflow/Detail/SqlRollback render select rollback sql 1`] = `
                                     class="ant-table-selection"
                                   >
                                     <label
-                                      class="ant-checkbox-wrapper ant-checkbox-wrapper-disabled css-dev-only-do-not-override-bj9uhl"
+                                      class="ant-checkbox-wrapper ant-checkbox-wrapper-disabled"
                                     >
                                       <span
-                                        class="ant-checkbox css-dev-only-do-not-override-bj9uhl ant-checkbox-disabled"
+                                        class="ant-checkbox ant-checkbox-disabled"
                                       >
                                         <input
                                           aria-label="Select all"
@@ -1480,10 +1480,10 @@ exports[`sqle/ExecWorkflow/Detail/SqlRollback render select rollback sql 1`] = `
                                   class="ant-table-cell ant-table-selection-column"
                                 >
                                   <label
-                                    class="ant-checkbox-wrapper ant-checkbox-wrapper-disabled css-dev-only-do-not-override-bj9uhl"
+                                    class="ant-checkbox-wrapper ant-checkbox-wrapper-disabled"
                                   >
                                     <span
-                                      class="ant-checkbox css-dev-only-do-not-override-bj9uhl ant-checkbox-disabled"
+                                      class="ant-checkbox ant-checkbox-disabled"
                                     >
                                       <input
                                         class="ant-checkbox-input"
@@ -1503,7 +1503,7 @@ exports[`sqle/ExecWorkflow/Detail/SqlRollback render select rollback sql 1`] = `
                                     class="actiontech-sql-snippet-renderer-wrapper css-dz7fl9"
                                   >
                                     <div
-                                      class="ant-typography ant-typography-ellipsis ant-typography-ellipsis-multiple-line margin-bottom-0 css-dev-only-do-not-override-bj9uhl"
+                                      class="ant-typography ant-typography-ellipsis ant-typography-ellipsis-multiple-line margin-bottom-0"
                                     >
                                       <span>
                                         <span
@@ -1549,7 +1549,7 @@ exports[`sqle/ExecWorkflow/Detail/SqlRollback render select rollback sql 1`] = `
                                   class="ant-table-cell"
                                 >
                                   <span
-                                    class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-1mjwlcb css-dev-only-do-not-override-bj9uhl"
+                                    class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-1mjwlcb"
                                   >
                                     基于反向SQL回滚
                                   </span>
@@ -1563,7 +1563,7 @@ exports[`sqle/ExecWorkflow/Detail/SqlRollback render select rollback sql 1`] = `
                                   class="ant-table-cell"
                                 >
                                   <span
-                                    class="ant-tag ant-tag-green ant-tag-borderless basic-tag-wrapper basic-large-tag-wrapper css-13qu6j1 css-dev-only-do-not-override-bj9uhl"
+                                    class="ant-tag ant-tag-green ant-tag-borderless basic-tag-wrapper basic-large-tag-wrapper css-13qu6j1"
                                   >
                                     执行成功
                                   </span>
@@ -1582,10 +1582,10 @@ exports[`sqle/ExecWorkflow/Detail/SqlRollback render select rollback sql 1`] = `
                                   class="ant-table-cell ant-table-selection-column"
                                 >
                                   <label
-                                    class="ant-checkbox-wrapper ant-checkbox-wrapper-disabled css-dev-only-do-not-override-bj9uhl"
+                                    class="ant-checkbox-wrapper ant-checkbox-wrapper-disabled"
                                   >
                                     <span
-                                      class="ant-checkbox css-dev-only-do-not-override-bj9uhl ant-checkbox-disabled"
+                                      class="ant-checkbox ant-checkbox-disabled"
                                     >
                                       <input
                                         class="ant-checkbox-input"
@@ -1605,7 +1605,7 @@ exports[`sqle/ExecWorkflow/Detail/SqlRollback render select rollback sql 1`] = `
                                     class="actiontech-sql-snippet-renderer-wrapper css-dz7fl9"
                                   >
                                     <div
-                                      class="ant-typography ant-typography-ellipsis ant-typography-ellipsis-multiple-line margin-bottom-0 css-dev-only-do-not-override-bj9uhl"
+                                      class="ant-typography ant-typography-ellipsis ant-typography-ellipsis-multiple-line margin-bottom-0"
                                     >
                                       <span>
                                         <span
@@ -1651,7 +1651,7 @@ exports[`sqle/ExecWorkflow/Detail/SqlRollback render select rollback sql 1`] = `
                                   class="ant-table-cell"
                                 >
                                   <span
-                                    class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-1mjwlcb css-dev-only-do-not-override-bj9uhl"
+                                    class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-1mjwlcb"
                                   >
                                     基于行级备份回滚
                                   </span>
@@ -1665,7 +1665,7 @@ exports[`sqle/ExecWorkflow/Detail/SqlRollback render select rollback sql 1`] = `
                                   class="ant-table-cell"
                                 >
                                   <span
-                                    class="ant-tag ant-tag-green ant-tag-borderless basic-tag-wrapper basic-large-tag-wrapper css-13qu6j1 css-dev-only-do-not-override-bj9uhl"
+                                    class="ant-tag ant-tag-green ant-tag-borderless basic-tag-wrapper basic-large-tag-wrapper css-13qu6j1"
                                   >
                                     执行成功
                                   </span>
@@ -1682,7 +1682,7 @@ exports[`sqle/ExecWorkflow/Detail/SqlRollback render select rollback sql 1`] = `
                       </div>
                     </div>
                     <ul
-                      class="ant-pagination ant-pagination-mini ant-table-pagination ant-table-pagination-right actiontech-table-pagination css-dev-only-do-not-override-bj9uhl"
+                      class="ant-pagination ant-pagination-mini ant-table-pagination ant-table-pagination-right actiontech-table-pagination"
                     >
                       <li
                         class="ant-pagination-total-text"
@@ -1694,7 +1694,7 @@ exports[`sqle/ExecWorkflow/Detail/SqlRollback render select rollback sql 1`] = `
                       <li
                         aria-disabled="true"
                         class="ant-pagination-prev ant-pagination-disabled"
-                        title="Previous Page"
+                        title="上一页"
                       >
                         <button
                           class="ant-pagination-item-link"
@@ -1737,7 +1737,7 @@ exports[`sqle/ExecWorkflow/Detail/SqlRollback render select rollback sql 1`] = `
                       <li
                         aria-disabled="true"
                         class="ant-pagination-next ant-pagination-disabled"
-                        title="Next Page"
+                        title="下一页"
                       >
                         <button
                           class="ant-pagination-item-link"
@@ -1770,8 +1770,8 @@ exports[`sqle/ExecWorkflow/Detail/SqlRollback render select rollback sql 1`] = `
                         class="ant-pagination-options"
                       >
                         <div
-                          aria-label="Page Size"
-                          class="ant-select ant-select-sm ant-pagination-options-size-changer css-dev-only-do-not-override-bj9uhl ant-select-single ant-select-show-arrow ant-select-show-search"
+                          aria-label="页码"
+                          class="ant-select ant-select-sm ant-pagination-options-size-changer ant-select-single ant-select-show-arrow ant-select-show-search"
                         >
                           <div
                             class="ant-select-selector"
@@ -1785,7 +1785,7 @@ exports[`sqle/ExecWorkflow/Detail/SqlRollback render select rollback sql 1`] = `
                                 aria-controls="rc_select_TEST_OR_SSR_list"
                                 aria-expanded="false"
                                 aria-haspopup="listbox"
-                                aria-label="Page Size"
+                                aria-label="页码"
                                 aria-owns="rc_select_TEST_OR_SSR_list"
                                 autocomplete="off"
                                 class="ant-select-selection-search-input"
@@ -1797,9 +1797,9 @@ exports[`sqle/ExecWorkflow/Detail/SqlRollback render select rollback sql 1`] = `
                             </span>
                             <span
                               class="ant-select-selection-item"
-                              title="20 / page"
+                              title="20 条/页"
                             >
-                              20 / page
+                              20 条/页
                             </span>
                           </div>
                           <span
@@ -1841,7 +1841,7 @@ exports[`sqle/ExecWorkflow/Detail/SqlRollback render select rollback sql 1`] = `
           class="ant-transfer-operation"
         >
           <button
-            class="ant-btn css-dev-only-do-not-override-txh9fw ant-btn-primary ant-btn-sm ant-btn-icon-only"
+            class="ant-btn ant-btn-primary ant-btn-sm ant-btn-icon-only"
             disabled=""
             type="button"
           >
@@ -1870,7 +1870,7 @@ exports[`sqle/ExecWorkflow/Detail/SqlRollback render select rollback sql 1`] = `
             </span>
           </button>
           <button
-            class="ant-btn css-dev-only-do-not-override-txh9fw ant-btn-primary ant-btn-sm ant-btn-icon-only"
+            class="ant-btn ant-btn-primary ant-btn-sm ant-btn-icon-only"
             disabled=""
             type="button"
           >
@@ -1910,7 +1910,7 @@ exports[`sqle/ExecWorkflow/Detail/SqlRollback render select rollback sql 1`] = `
             >
               0
                
-              item
+              项
             </span>
             <span
               class="ant-transfer-list-header-title"
@@ -1925,10 +1925,10 @@ exports[`sqle/ExecWorkflow/Detail/SqlRollback render select rollback sql 1`] = `
               class="ant-transfer-list-body-customize-wrapper"
             >
               <div
-                class="ant-table-wrapper actiontech-table-namespace right-table css-fxd6ka css-dev-only-do-not-override-bj9uhl"
+                class="ant-table-wrapper actiontech-table-namespace right-table css-fxd6ka"
               >
                 <div
-                  class="ant-spin-nested-loading css-dev-only-do-not-override-bj9uhl"
+                  class="ant-spin-nested-loading"
                 >
                   <div
                     class="ant-spin-container"
@@ -1963,10 +1963,10 @@ exports[`sqle/ExecWorkflow/Detail/SqlRollback render select rollback sql 1`] = `
                                     class="ant-table-selection"
                                   >
                                     <label
-                                      class="ant-checkbox-wrapper css-dev-only-do-not-override-bj9uhl"
+                                      class="ant-checkbox-wrapper"
                                     >
                                       <span
-                                        class="ant-checkbox css-dev-only-do-not-override-bj9uhl"
+                                        class="ant-checkbox"
                                       >
                                         <input
                                           aria-label="Select all"
@@ -2131,10 +2131,10 @@ exports[`sqle/ExecWorkflow/Detail/SqlRollback render select rollback sql 1`] = `
                                   class="ant-table-cell ant-table-selection-column"
                                 >
                                   <label
-                                    class="ant-checkbox-wrapper css-dev-only-do-not-override-bj9uhl"
+                                    class="ant-checkbox-wrapper"
                                   >
                                     <span
-                                      class="ant-checkbox css-dev-only-do-not-override-bj9uhl"
+                                      class="ant-checkbox"
                                     >
                                       <input
                                         class="ant-checkbox-input"
@@ -2153,7 +2153,7 @@ exports[`sqle/ExecWorkflow/Detail/SqlRollback render select rollback sql 1`] = `
                                     class="actiontech-sql-snippet-renderer-wrapper css-dz7fl9"
                                   >
                                     <div
-                                      class="ant-typography ant-typography-ellipsis ant-typography-ellipsis-multiple-line margin-bottom-0 css-dev-only-do-not-override-bj9uhl"
+                                      class="ant-typography ant-typography-ellipsis ant-typography-ellipsis-multiple-line margin-bottom-0"
                                     >
                                       <span>
                                         <span
@@ -2199,7 +2199,7 @@ exports[`sqle/ExecWorkflow/Detail/SqlRollback render select rollback sql 1`] = `
                                   class="ant-table-cell"
                                 >
                                   <span
-                                    class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-1mjwlcb css-dev-only-do-not-override-bj9uhl"
+                                    class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-1mjwlcb"
                                   >
                                     基于反向SQL回滚
                                   </span>
@@ -2213,7 +2213,7 @@ exports[`sqle/ExecWorkflow/Detail/SqlRollback render select rollback sql 1`] = `
                                   class="ant-table-cell"
                                 >
                                   <span
-                                    class="ant-tag ant-tag-green ant-tag-borderless basic-tag-wrapper basic-large-tag-wrapper css-13qu6j1 css-dev-only-do-not-override-bj9uhl"
+                                    class="ant-tag ant-tag-green ant-tag-borderless basic-tag-wrapper basic-large-tag-wrapper css-13qu6j1"
                                   >
                                     执行成功
                                   </span>
@@ -2227,7 +2227,7 @@ exports[`sqle/ExecWorkflow/Detail/SqlRollback render select rollback sql 1`] = `
                                   class="ant-table-cell rollback-remark-column"
                                 >
                                   <button
-                                    class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm basic-button-wrapper css-geipcv"
+                                    class="ant-btn ant-btn-default ant-btn-sm basic-button-wrapper css-geipcv"
                                     type="button"
                                   >
                                     <span>
@@ -2244,10 +2244,10 @@ exports[`sqle/ExecWorkflow/Detail/SqlRollback render select rollback sql 1`] = `
                                   class="ant-table-cell ant-table-selection-column"
                                 >
                                   <label
-                                    class="ant-checkbox-wrapper css-dev-only-do-not-override-bj9uhl"
+                                    class="ant-checkbox-wrapper"
                                   >
                                     <span
-                                      class="ant-checkbox css-dev-only-do-not-override-bj9uhl"
+                                      class="ant-checkbox"
                                     >
                                       <input
                                         class="ant-checkbox-input"
@@ -2266,7 +2266,7 @@ exports[`sqle/ExecWorkflow/Detail/SqlRollback render select rollback sql 1`] = `
                                     class="actiontech-sql-snippet-renderer-wrapper css-dz7fl9"
                                   >
                                     <div
-                                      class="ant-typography ant-typography-ellipsis ant-typography-ellipsis-multiple-line margin-bottom-0 css-dev-only-do-not-override-bj9uhl"
+                                      class="ant-typography ant-typography-ellipsis ant-typography-ellipsis-multiple-line margin-bottom-0"
                                     >
                                       <span>
                                         <span
@@ -2312,7 +2312,7 @@ exports[`sqle/ExecWorkflow/Detail/SqlRollback render select rollback sql 1`] = `
                                   class="ant-table-cell"
                                 >
                                   <span
-                                    class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-1mjwlcb css-dev-only-do-not-override-bj9uhl"
+                                    class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-1mjwlcb"
                                   >
                                     基于行级备份回滚
                                   </span>
@@ -2326,7 +2326,7 @@ exports[`sqle/ExecWorkflow/Detail/SqlRollback render select rollback sql 1`] = `
                                   class="ant-table-cell"
                                 >
                                   <span
-                                    class="ant-tag ant-tag-green ant-tag-borderless basic-tag-wrapper basic-large-tag-wrapper css-13qu6j1 css-dev-only-do-not-override-bj9uhl"
+                                    class="ant-tag ant-tag-green ant-tag-borderless basic-tag-wrapper basic-large-tag-wrapper css-13qu6j1"
                                   >
                                     执行成功
                                   </span>
@@ -2340,7 +2340,7 @@ exports[`sqle/ExecWorkflow/Detail/SqlRollback render select rollback sql 1`] = `
                                   class="ant-table-cell rollback-remark-column"
                                 >
                                   <button
-                                    class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm basic-button-wrapper css-geipcv"
+                                    class="ant-btn ant-btn-default ant-btn-sm basic-button-wrapper css-geipcv"
                                     type="button"
                                   >
                                     <span>

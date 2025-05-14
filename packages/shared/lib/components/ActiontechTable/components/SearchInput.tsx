@@ -19,6 +19,7 @@ const SearchInput: React.FC<TableSearchInputProps> = ({
 
   return (
     <SearchInputStyleWrapper
+      allowClear
       id="actiontech-table-search-input"
       size="small"
       className={classnames(

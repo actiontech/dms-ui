@@ -43,14 +43,14 @@ exports[`test base/DataExport/Detail/WorkflowRecordInfo should match snapshot 1`
           创建人
         </div>
         <div
-          class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center workflow-steps-basic-info-item-value"
+          class="ant-space ant-space-horizontal ant-space-align-center workflow-steps-basic-info-item-value"
         >
           <div
             class="ant-space-item"
             style="margin-right: 8px;"
           >
             <span
-              class="ant-avatar ant-avatar-circle action-avatar css-1wq79dc css-dev-only-do-not-override-txh9fw"
+              class="ant-avatar ant-avatar-circle action-avatar css-1wq79dc"
               style="width: 20px; height: 20px; line-height: 20px; font-size: 18px;"
             >
               <span
@@ -79,7 +79,7 @@ exports[`test base/DataExport/Detail/WorkflowRecordInfo should match snapshot 1`
           创建时间
         </div>
         <div
-          class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center workflow-steps-basic-info-item-value"
+          class="ant-space ant-space-horizontal ant-space-align-center workflow-steps-basic-info-item-value"
         >
           <div
             class="ant-space-item"
@@ -159,7 +159,7 @@ exports[`test base/DataExport/Detail/WorkflowRecordInfo should match snapshot 1`
         工单进度
       </div>
       <div
-        class="ant-steps ant-steps-vertical css-1epey7k css-dev-only-do-not-override-txh9fw"
+        class="ant-steps ant-steps-vertical css-1epey7k"
       >
         <div
           class="ant-steps-item ant-steps-item-finish ant-steps-item-custom"
@@ -208,7 +208,7 @@ exports[`test base/DataExport/Detail/WorkflowRecordInfo should match snapshot 1`
                     class="step-info"
                   >
                     <div
-                      class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+                      class="ant-space ant-space-horizontal ant-space-align-center"
                     >
                       <div
                         class="ant-space-item"
@@ -223,7 +223,7 @@ exports[`test base/DataExport/Detail/WorkflowRecordInfo should match snapshot 1`
                         style="margin-right: 8px;"
                       >
                         <div
-                          class="ant-divider css-dev-only-do-not-override-txh9fw ant-divider-vertical"
+                          class="ant-divider ant-divider-vertical"
                           role="separator"
                         />
                       </div>
@@ -287,7 +287,7 @@ exports[`test base/DataExport/Detail/WorkflowRecordInfo should match snapshot 1`
                     class="step-info"
                   >
                     <div
-                      class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+                      class="ant-space ant-space-horizontal ant-space-align-center"
                     >
                       <div
                         class="ant-space-item"
@@ -302,7 +302,7 @@ exports[`test base/DataExport/Detail/WorkflowRecordInfo should match snapshot 1`
                         style="margin-right: 8px;"
                       >
                         <div
-                          class="ant-divider css-dev-only-do-not-override-txh9fw ant-divider-vertical"
+                          class="ant-divider ant-divider-vertical"
                           role="separator"
                         />
                       </div>

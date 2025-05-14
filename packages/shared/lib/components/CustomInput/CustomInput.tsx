@@ -5,7 +5,6 @@ import { CustomInputProps } from './CustomInput.types';
 const CustomInput: React.FC<CustomInputProps> = ({
   onCustomPressEnter,
   className,
-  value,
   ...props
 }) => {
   return (
@@ -14,7 +13,7 @@ const CustomInput: React.FC<CustomInputProps> = ({
       className={classNames('custom-input-namespace', className)}
       {...props}
       onPressEnter={(event) => {
-        onCustomPressEnter(event.target.value ?? '');
+        onCustomPressEnter((event.target as HTMLInputElement).value ?? '');
       }}
     />
   );

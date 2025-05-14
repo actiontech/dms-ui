@@ -1,10 +1,10 @@
-import { renderWithTheme } from '../../../../testUtil/customRender';
+import { superRender } from '../../../../testUtil/customRender';
 import { FormItemNoLabelProps } from '../FormItem.types';
 import FormItemNoLabel from '../FormItemNoLabel';
 
 describe('lib/IFormItemNoLabel', () => {
   const customRender = (params: FormItemNoLabelProps) => {
-    return renderWithTheme(<FormItemNoLabel {...params} />);
+    return superRender(<FormItemNoLabel {...params} />);
   };
 
   it('should render ui', () => {

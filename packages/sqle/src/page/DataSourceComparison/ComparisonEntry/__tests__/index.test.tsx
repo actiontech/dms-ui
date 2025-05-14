@@ -14,6 +14,8 @@ import { mockProjectInfo } from '@actiontech/shared/lib/testUtil/mockHook/data';
 import { mockUsePermission } from '@actiontech/shared/lib/testUtil/mockHook/mockUsePermission';
 import { createSpySuccessResponse } from '@actiontech/shared/lib/testUtil/mockApi';
 import { executeDatabaseComparisonMockData } from '../../../../testUtils/mockApi/database_comparison/data';
+import MockDate from 'mockdate';
+import dayjs from 'dayjs';
 
 describe('EnvironmentSelector', () => {
   let executeDatabaseComparisonSpy: jest.SpyInstance;
@@ -23,6 +25,8 @@ describe('EnvironmentSelector', () => {
     instance.getInstanceTipList();
     instance.getInstanceSchemas();
     jest.useFakeTimers();
+    MockDate.set(dayjs('2024-12-18 12:00:00').valueOf());
+
     mockUseCurrentProject();
     mockDatabaseType();
     mockUseCurrentUser();
@@ -40,6 +44,7 @@ describe('EnvironmentSelector', () => {
     jest.useRealTimers();
     jest.clearAllMocks();
     jest.clearAllTimers();
+    MockDate.reset();
   });
 
   it('should render the baseline and comparison environment selectors', () => {
@@ -240,5 +245,64 @@ describe('EnvironmentSelector', () => {
     fireEvent.mouseEnter(screen.getByText('只看差异'));
 
     await screen.findByText('当前对比结果暂无差异');
+  });
+
+  it('should handle card click correctly', async () => {
+    const originalScrollTo = window.scrollTo;
+    const mockScrollTo = jest.fn();
+    Object.defineProperty(window, 'scrollTo', {
+      value: mockScrollTo,
+      writable: true
+    });
+
+    const { container } = superRender(<ComparisonEntry />);
+
+    await act(async () => jest.advanceTimersByTime(3000));
+
+    const baselineInstanceSelect = getBySelector('#baselineInstance');
+    fireEvent.mouseDown(baselineInstanceSelect);
+    fireEvent.click(screen.getAllByText('mysql-1(10.186.62.13:33061)')[0]);
+
+    const comparisonInstanceSelect = getBySelector('#comparisonInstance');
+    fireEvent.mouseDown(comparisonInstanceSelect);
+    fireEvent.click(
+      screen.getAllByText('xin-test-database(10.186.62.15:33063)')[1]
+    );
+    await act(async () => jest.advanceTimersByTime(0));
+
+    fireEvent.click(screen.getByText('执行对比'));
+    await act(async () => jest.advanceTimersByTime(0));
+    await act(async () => jest.advanceTimersByTime(3000));
+
+    const inconsistentCard = screen.getByText('定义差异');
+    fireEvent.click(inconsistentCard);
+
+    await act(async () => jest.advanceTimersByTime(400));
+    expect(screen.getByText('test3')).toBeInTheDocument();
+
+    expect(container).toMatchSnapshot();
+
+    fireEvent.click(inconsistentCard);
+    await act(async () => jest.advanceTimersByTime(400));
+    await act(async () => jest.advanceTimersByTime(2000));
+
+    expect(container).toMatchSnapshot();
+
+    const missingCard = screen.getByText('缺失对象');
+    fireEvent.click(missingCard);
+    await act(async () => jest.advanceTimersByTime(400));
+
+    const newCard = screen.getByText('新增对象');
+    fireEvent.click(newCard);
+    await act(async () => jest.advanceTimersByTime(400));
+
+    const sameCard = screen.getByText('一致对象');
+    fireEvent.click(sameCard);
+    await act(async () => jest.advanceTimersByTime(400));
+
+    Object.defineProperty(window, 'scrollTo', {
+      value: originalScrollTo,
+      writable: true
+    });
   });
 });

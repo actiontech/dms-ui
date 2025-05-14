@@ -3,10 +3,10 @@
 exports[`RewrittenSuggestionDetails and RewrittenSuggestionItem RewrittenSuggestionItem should display combined SQL for subsequent items 1`] = `
 <div>
   <div
-    class="ant-list ant-list-split css-dev-only-do-not-override-txh9fw"
+    class="ant-list ant-list-split"
   >
     <div
-      class="ant-spin-nested-loading css-dev-only-do-not-override-txh9fw"
+      class="ant-spin-nested-loading"
     >
       <div
         class="ant-spin-container"
@@ -41,7 +41,7 @@ exports[`RewrittenSuggestionDetails and RewrittenSuggestionItem RewrittenSuggest
               </svg>
             </span>
             <div
-              class="ant-typography ant-typography-ellipsis ant-typography-single-line ant-typography-ellipsis-single-line rule-name basic-typography-ellipsis css-wgj5gs css-dev-only-do-not-override-txh9fw"
+              class="ant-typography ant-typography-ellipsis ant-typography-single-line ant-typography-ellipsis-single-line rule-name basic-typography-ellipsis css-wgj5gs"
             >
               不建议LIMIT的偏移OFFSET大于阈值
             </div>
@@ -56,7 +56,7 @@ exports[`RewrittenSuggestionDetails and RewrittenSuggestionItem RewrittenSuggest
                 class="action-items-wrapper"
               >
                 <button
-                  class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default basic-button-wrapper css-geipcv"
+                  class="ant-btn ant-btn-default basic-button-wrapper css-geipcv"
                   type="button"
                 >
                   <span>
@@ -159,7 +159,7 @@ LIMIT 1000 OFFSET 500;
               </svg>
             </span>
             <div
-              class="ant-typography ant-typography-ellipsis ant-typography-single-line ant-typography-ellipsis-single-line rule-name basic-typography-ellipsis css-wgj5gs css-dev-only-do-not-override-txh9fw"
+              class="ant-typography ant-typography-ellipsis ant-typography-single-line ant-typography-ellipsis-single-line rule-name basic-typography-ellipsis css-wgj5gs"
             >
               禁止对索引列进行数学运算和使用函数
             </div>
@@ -197,7 +197,7 @@ exports[`RewrittenSuggestionDetails and RewrittenSuggestionItem RewrittenSuggest
       </svg>
     </span>
     <div
-      class="ant-typography ant-typography-ellipsis ant-typography-single-line ant-typography-ellipsis-single-line rule-name basic-typography-ellipsis css-wgj5gs css-dev-only-do-not-override-txh9fw"
+      class="ant-typography ant-typography-ellipsis ant-typography-single-line ant-typography-ellipsis-single-line rule-name basic-typography-ellipsis css-wgj5gs"
     >
       SQL查询条件需要走索引
     </div>
@@ -212,7 +212,7 @@ exports[`RewrittenSuggestionDetails and RewrittenSuggestionItem RewrittenSuggest
         class="action-items-wrapper"
       >
         <button
-          class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default basic-button-wrapper css-geipcv"
+          class="ant-btn ant-btn-default basic-button-wrapper css-geipcv"
           type="button"
         >
           <span>
@@ -358,7 +358,7 @@ exports[`RewrittenSuggestionDetails and RewrittenSuggestionItem RewrittenSuggest
       </svg>
     </span>
     <div
-      class="ant-typography ant-typography-ellipsis ant-typography-single-line ant-typography-ellipsis-single-line rule-name basic-typography-ellipsis css-wgj5gs css-dev-only-do-not-override-txh9fw"
+      class="ant-typography ant-typography-ellipsis ant-typography-single-line ant-typography-ellipsis-single-line rule-name basic-typography-ellipsis css-wgj5gs"
     >
       不建议LIMIT的偏移OFFSET大于阈值
     </div>
@@ -373,7 +373,7 @@ exports[`RewrittenSuggestionDetails and RewrittenSuggestionItem RewrittenSuggest
         class="action-items-wrapper"
       >
         <button
-          class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default basic-button-wrapper css-geipcv"
+          class="ant-btn ant-btn-default basic-button-wrapper css-geipcv"
           type="button"
         >
           <span>

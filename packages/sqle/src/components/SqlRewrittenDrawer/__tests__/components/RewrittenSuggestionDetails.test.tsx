@@ -82,7 +82,8 @@ LIMIT 1000 OFFSET 500;
     });
 
     ignoreConsoleErrors([
-      UtilsConsoleErrorStringsEnum.INVALID_CUSTOM_ATTRIBUTE
+      UtilsConsoleErrorStringsEnum.INVALID_CUSTOM_ATTRIBUTE,
+      UtilsConsoleErrorStringsEnum.UNKNOWN_EVENT_HANDLER
     ]);
 
     const mockDataSource = SqlRewrittenMockDataNoDDL.suggestions?.filter(

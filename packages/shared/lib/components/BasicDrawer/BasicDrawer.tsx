@@ -33,7 +33,7 @@ const BasicDrawer: React.FC<BasicDrawerProps> = ({
     >
       {showClosedIcon && (
         <div className="closed-icon-custom" onClick={onClose}>
-          <CloseOutlined />
+          <CloseOutlined data-testid="basic-drawer-close-icon" />
         </div>
       )}
       {children}

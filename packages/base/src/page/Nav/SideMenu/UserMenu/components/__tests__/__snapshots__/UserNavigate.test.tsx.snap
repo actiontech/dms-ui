@@ -4,7 +4,7 @@ exports[`base/page/Nav/SideMenu/UserNavigate-ee render snap 1`] = `
 <body>
   <div>
     <span
-      class="ant-avatar ant-avatar-circle action-avatar css-1wq79dc css-dev-only-do-not-override-txh9fw"
+      class="ant-avatar ant-avatar-circle action-avatar css-1wq79dc"
     >
       <span
         class="ant-avatar-string"
@@ -21,7 +21,7 @@ exports[`base/page/Nav/SideMenu/UserNavigate-ee render snap 2`] = `
 <body>
   <div>
     <span
-      class="ant-avatar ant-avatar-circle action-avatar ant-popover-open css-1wq79dc css-dev-only-do-not-override-txh9fw"
+      class="ant-avatar ant-avatar-circle action-avatar ant-popover-open css-1wq79dc"
     >
       <span
         class="ant-avatar-string"
@@ -33,7 +33,7 @@ exports[`base/page/Nav/SideMenu/UserNavigate-ee render snap 2`] = `
   </div>
   <div>
     <div
-      class="ant-popover css-dev-only-do-not-override-txh9fw css-dev-only-do-not-override-txh9fw ant-popover-placement-topRight"
+      class="ant-popover ant-popover-placement-topRight"
       style="--arrow-x: 0px; --arrow-y: 0px; left: -1000vw; top: -1000vh; box-sizing: border-box;"
     >
       <div
@@ -203,7 +203,7 @@ exports[`base/page/Nav/SideMenu/UserNavigate-ee render snap 3`] = `
 <body>
   <div>
     <span
-      class="ant-avatar ant-avatar-circle action-avatar css-1wq79dc css-dev-only-do-not-override-txh9fw"
+      class="ant-avatar ant-avatar-circle action-avatar css-1wq79dc"
     >
       <span
         class="ant-avatar-string"
@@ -215,7 +215,7 @@ exports[`base/page/Nav/SideMenu/UserNavigate-ee render snap 3`] = `
   </div>
   <div>
     <div
-      class="ant-popover ant-popover-hidden css-dev-only-do-not-override-txh9fw css-dev-only-do-not-override-txh9fw ant-popover-placement-topRight"
+      class="ant-popover ant-popover-hidden ant-popover-placement-topRight"
       style="--arrow-x: 0px; --arrow-y: 0px; left: 0px; top: 0px; box-sizing: border-box; pointer-events: none;"
     >
       <div
@@ -385,7 +385,7 @@ exports[`base/page/Nav/SideMenu/UserNavigate-ee should update the user's languag
 <body>
   <div>
     <span
-      class="ant-avatar ant-avatar-circle action-avatar ant-popover-open css-1wq79dc css-dev-only-do-not-override-txh9fw"
+      class="ant-avatar ant-avatar-circle action-avatar ant-popover-open css-1wq79dc"
     >
       <span
         class="ant-avatar-string"
@@ -397,7 +397,7 @@ exports[`base/page/Nav/SideMenu/UserNavigate-ee should update the user's languag
   </div>
   <div>
     <div
-      class="ant-popover css-dev-only-do-not-override-txh9fw css-dev-only-do-not-override-txh9fw ant-popover-placement-topRight"
+      class="ant-popover ant-popover-placement-topRight"
       style="--arrow-x: 0px; --arrow-y: 0px; left: -1000vw; top: -1000vh; box-sizing: border-box;"
     >
       <div
@@ -463,7 +463,7 @@ exports[`base/page/Nav/SideMenu/UserNavigate-ee should update the user's languag
                         />
                       </svg>
                       <div
-                        class="ant-popover css-dev-only-do-not-override-txh9fw css-dev-only-do-not-override-txh9fw ant-popover-placement-right"
+                        class="ant-popover ant-popover-placement-right"
                         style="--arrow-x: 0px; --arrow-y: 0px; left: -1000vw; top: -1000vh; box-sizing: border-box;"
                       >
                         <div
@@ -490,7 +490,7 @@ exports[`base/page/Nav/SideMenu/UserNavigate-ee should update the user's languag
                                       class="content-item-text"
                                     >
                                       <label
-                                        class="ant-radio-wrapper ant-radio-wrapper-checked full-width-element css-dev-only-do-not-override-txh9fw"
+                                        class="ant-radio-wrapper ant-radio-wrapper-checked full-width-element"
                                       >
                                         <span
                                           class="ant-radio ant-radio-checked"
@@ -517,7 +517,7 @@ exports[`base/page/Nav/SideMenu/UserNavigate-ee should update the user's languag
                                       class="content-item-text"
                                     >
                                       <label
-                                        class="ant-radio-wrapper full-width-element css-dev-only-do-not-override-txh9fw"
+                                        class="ant-radio-wrapper full-width-element"
                                       >
                                         <span
                                           class="ant-radio"

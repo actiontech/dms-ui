@@ -52,16 +52,16 @@ exports[`page/Login-ee render login snap 1`] = `
             </div>
           </div>
           <form
-            class="ant-form ant-form-horizontal css-dev-only-do-not-override-txh9fw"
+            class="ant-form ant-form-horizontal"
           >
             <div
-              class="ant-form-item css-dev-only-do-not-override-txh9fw"
+              class="ant-form-item"
             >
               <div
-                class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                class="ant-row ant-form-item-row"
               >
                 <div
-                  class="ant-col ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                  class="ant-col ant-form-item-control"
                 >
                   <div
                     class="ant-form-item-control-input"
@@ -70,7 +70,7 @@ exports[`page/Login-ee render login snap 1`] = `
                       class="ant-form-item-control-input-content"
                     >
                       <span
-                        class="ant-input-affix-wrapper ant-input-affix-wrapper-focused basic-input-wrapper login-form-field css-1pd1cd5 css-dev-only-do-not-override-ywkr0o"
+                        class="ant-input-affix-wrapper ant-input-affix-wrapper-focused basic-input-wrapper login-form-field css-1pd1cd5"
                       >
                         <span
                           class="ant-input-prefix"
@@ -93,7 +93,7 @@ exports[`page/Login-ee render login snap 1`] = `
                         </span>
                         <input
                           aria-required="true"
-                          class="ant-input css-dev-only-do-not-override-ywkr0o"
+                          class="ant-input"
                           id="username"
                           placeholder="用户名"
                           type="text"
@@ -106,13 +106,13 @@ exports[`page/Login-ee render login snap 1`] = `
               </div>
             </div>
             <div
-              class="ant-form-item css-dev-only-do-not-override-txh9fw"
+              class="ant-form-item"
             >
               <div
-                class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                class="ant-row ant-form-item-row"
               >
                 <div
-                  class="ant-col ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                  class="ant-col ant-form-item-control"
                 >
                   <div
                     class="ant-form-item-control-input"
@@ -121,7 +121,7 @@ exports[`page/Login-ee render login snap 1`] = `
                       class="ant-form-item-control-input-content"
                     >
                       <span
-                        class="ant-input-affix-wrapper ant-input-password basic-input-wrapper login-form-field css-1pd1cd5 css-dev-only-do-not-override-txh9fw"
+                        class="ant-input-affix-wrapper ant-input-password basic-input-wrapper login-form-field css-1pd1cd5"
                       >
                         <span
                           class="ant-input-prefix"
@@ -145,7 +145,7 @@ exports[`page/Login-ee render login snap 1`] = `
                         </span>
                         <input
                           aria-required="true"
-                          class="ant-input css-dev-only-do-not-override-txh9fw"
+                          class="ant-input"
                           id="password"
                           placeholder="密码"
                           type="password"
@@ -184,13 +184,13 @@ exports[`page/Login-ee render login snap 1`] = `
               </div>
             </div>
             <div
-              class="ant-form-item css-dev-only-do-not-override-txh9fw"
+              class="ant-form-item"
             >
               <div
-                class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                class="ant-row ant-form-item-row"
               >
                 <div
-                  class="ant-col ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                  class="ant-col ant-form-item-control"
                 >
                   <div
                     class="ant-form-item-control-input"
@@ -199,10 +199,10 @@ exports[`page/Login-ee render login snap 1`] = `
                       class="ant-form-item-control-input-content"
                     >
                       <label
-                        class="ant-checkbox-wrapper ant-checkbox-wrapper-checked ant-checkbox-wrapper-in-form-item css-dev-only-do-not-override-txh9fw"
+                        class="ant-checkbox-wrapper ant-checkbox-wrapper-checked ant-checkbox-wrapper-in-form-item"
                       >
                         <span
-                          class="ant-checkbox css-dev-only-do-not-override-txh9fw ant-checkbox-checked"
+                          class="ant-checkbox ant-checkbox-checked"
                         >
                           <input
                             checked=""
@@ -216,7 +216,7 @@ exports[`page/Login-ee render login snap 1`] = `
                         </span>
                         <span>
                           <div
-                            class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+                            class="ant-space ant-space-horizontal ant-space-align-center"
                           >
                             <div
                               class="ant-space-item"
@@ -228,7 +228,7 @@ exports[`page/Login-ee render login snap 1`] = `
                               class="ant-space-item"
                             >
                               <a
-                                class="ant-typography css-dev-only-do-not-override-txh9fw"
+                                class="ant-typography"
                                 href="/user-agreement.html"
                                 rel="noopener noreferrer"
                                 target="_blank"
@@ -245,7 +245,7 @@ exports[`page/Login-ee render login snap 1`] = `
               </div>
             </div>
             <button
-              class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary login-btn basic-button-wrapper css-geipcv"
+              class="ant-btn ant-btn-primary login-btn basic-button-wrapper css-geipcv"
               type="submit"
             >
               <span>
@@ -253,7 +253,7 @@ exports[`page/Login-ee render login snap 1`] = `
               </span>
             </button>
             <a
-              class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default other-login-btn basic-button-wrapper css-geipcv"
+              class="ant-btn ant-btn-default other-login-btn basic-button-wrapper css-geipcv"
               href="/v1/dms/oauth2/link"
             >
               <span>
@@ -320,16 +320,16 @@ exports[`page/Login-ee render login success when has location search val render 
             </div>
           </div>
           <form
-            class="ant-form ant-form-horizontal css-dev-only-do-not-override-txh9fw"
+            class="ant-form ant-form-horizontal"
           >
             <div
-              class="ant-form-item css-dev-only-do-not-override-txh9fw ant-form-item-has-success"
+              class="ant-form-item ant-form-item-has-success"
             >
               <div
-                class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                class="ant-row ant-form-item-row"
               >
                 <div
-                  class="ant-col ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                  class="ant-col ant-form-item-control"
                 >
                   <div
                     class="ant-form-item-control-input"
@@ -338,7 +338,7 @@ exports[`page/Login-ee render login success when has location search val render 
                       class="ant-form-item-control-input-content"
                     >
                       <span
-                        class="ant-input-affix-wrapper ant-input-affix-wrapper-focused basic-input-wrapper login-form-field css-1pd1cd5 ant-input-affix-wrapper-status-success css-dev-only-do-not-override-ywkr0o"
+                        class="ant-input-affix-wrapper ant-input-affix-wrapper-focused basic-input-wrapper login-form-field css-1pd1cd5 ant-input-affix-wrapper-status-success"
                       >
                         <span
                           class="ant-input-prefix"
@@ -361,7 +361,7 @@ exports[`page/Login-ee render login success when has location search val render 
                         </span>
                         <input
                           aria-required="true"
-                          class="ant-input css-dev-only-do-not-override-ywkr0o"
+                          class="ant-input"
                           id="username"
                           placeholder="用户名"
                           type="text"
@@ -374,13 +374,13 @@ exports[`page/Login-ee render login success when has location search val render 
               </div>
             </div>
             <div
-              class="ant-form-item css-dev-only-do-not-override-txh9fw ant-form-item-has-success"
+              class="ant-form-item ant-form-item-has-success"
             >
               <div
-                class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                class="ant-row ant-form-item-row"
               >
                 <div
-                  class="ant-col ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                  class="ant-col ant-form-item-control"
                 >
                   <div
                     class="ant-form-item-control-input"
@@ -389,7 +389,7 @@ exports[`page/Login-ee render login success when has location search val render 
                       class="ant-form-item-control-input-content"
                     >
                       <span
-                        class="ant-input-affix-wrapper ant-input-password basic-input-wrapper login-form-field css-1pd1cd5 css-dev-only-do-not-override-txh9fw"
+                        class="ant-input-affix-wrapper ant-input-password basic-input-wrapper login-form-field css-1pd1cd5 ant-input-affix-wrapper-status-success"
                       >
                         <span
                           class="ant-input-prefix"
@@ -413,7 +413,7 @@ exports[`page/Login-ee render login success when has location search val render 
                         </span>
                         <input
                           aria-required="true"
-                          class="ant-input css-dev-only-do-not-override-txh9fw"
+                          class="ant-input"
                           id="password"
                           placeholder="密码"
                           type="password"
@@ -453,13 +453,13 @@ exports[`page/Login-ee render login success when has location search val render 
               </div>
             </div>
             <div
-              class="ant-form-item css-dev-only-do-not-override-txh9fw"
+              class="ant-form-item"
             >
               <div
-                class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                class="ant-row ant-form-item-row"
               >
                 <div
-                  class="ant-col ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                  class="ant-col ant-form-item-control"
                 >
                   <div
                     class="ant-form-item-control-input"
@@ -468,10 +468,10 @@ exports[`page/Login-ee render login success when has location search val render 
                       class="ant-form-item-control-input-content"
                     >
                       <label
-                        class="ant-checkbox-wrapper ant-checkbox-wrapper-checked ant-checkbox-wrapper-in-form-item css-dev-only-do-not-override-txh9fw"
+                        class="ant-checkbox-wrapper ant-checkbox-wrapper-checked ant-checkbox-wrapper-in-form-item"
                       >
                         <span
-                          class="ant-checkbox css-dev-only-do-not-override-txh9fw ant-checkbox-checked"
+                          class="ant-checkbox ant-checkbox-checked"
                         >
                           <input
                             checked=""
@@ -485,7 +485,7 @@ exports[`page/Login-ee render login success when has location search val render 
                         </span>
                         <span>
                           <div
-                            class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+                            class="ant-space ant-space-horizontal ant-space-align-center"
                           >
                             <div
                               class="ant-space-item"
@@ -497,7 +497,7 @@ exports[`page/Login-ee render login success when has location search val render 
                               class="ant-space-item"
                             >
                               <a
-                                class="ant-typography css-dev-only-do-not-override-txh9fw"
+                                class="ant-typography"
                                 href="/user-agreement.html"
                                 rel="noopener noreferrer"
                                 target="_blank"
@@ -514,7 +514,7 @@ exports[`page/Login-ee render login success when has location search val render 
               </div>
             </div>
             <button
-              class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary ant-btn-loading login-btn basic-button-wrapper css-geipcv"
+              class="ant-btn ant-btn-primary ant-btn-loading login-btn basic-button-wrapper css-geipcv"
               type="submit"
             >
               <span
@@ -545,7 +545,7 @@ exports[`page/Login-ee render login success when has location search val render 
               </span>
             </button>
             <a
-              class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default other-login-btn basic-button-wrapper css-geipcv"
+              class="ant-btn ant-btn-default other-login-btn basic-button-wrapper css-geipcv"
               href="/v1/dms/oauth2/link"
             >
               <span>
@@ -612,16 +612,16 @@ exports[`page/Login-ee render login success when has location search val render 
             </div>
           </div>
           <form
-            class="ant-form ant-form-horizontal css-dev-only-do-not-override-txh9fw"
+            class="ant-form ant-form-horizontal"
           >
             <div
-              class="ant-form-item css-dev-only-do-not-override-txh9fw ant-form-item-has-success"
+              class="ant-form-item ant-form-item-has-success"
             >
               <div
-                class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                class="ant-row ant-form-item-row"
               >
                 <div
-                  class="ant-col ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                  class="ant-col ant-form-item-control"
                 >
                   <div
                     class="ant-form-item-control-input"
@@ -630,7 +630,7 @@ exports[`page/Login-ee render login success when has location search val render 
                       class="ant-form-item-control-input-content"
                     >
                       <span
-                        class="ant-input-affix-wrapper ant-input-affix-wrapper-focused basic-input-wrapper login-form-field css-1pd1cd5 ant-input-affix-wrapper-status-success css-dev-only-do-not-override-ywkr0o"
+                        class="ant-input-affix-wrapper ant-input-affix-wrapper-focused basic-input-wrapper login-form-field css-1pd1cd5 ant-input-affix-wrapper-status-success"
                       >
                         <span
                           class="ant-input-prefix"
@@ -653,7 +653,7 @@ exports[`page/Login-ee render login success when has location search val render 
                         </span>
                         <input
                           aria-required="true"
-                          class="ant-input css-dev-only-do-not-override-ywkr0o"
+                          class="ant-input"
                           id="username"
                           placeholder="用户名"
                           type="text"
@@ -666,13 +666,13 @@ exports[`page/Login-ee render login success when has location search val render 
               </div>
             </div>
             <div
-              class="ant-form-item css-dev-only-do-not-override-txh9fw ant-form-item-has-success"
+              class="ant-form-item ant-form-item-has-success"
             >
               <div
-                class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                class="ant-row ant-form-item-row"
               >
                 <div
-                  class="ant-col ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                  class="ant-col ant-form-item-control"
                 >
                   <div
                     class="ant-form-item-control-input"
@@ -681,7 +681,7 @@ exports[`page/Login-ee render login success when has location search val render 
                       class="ant-form-item-control-input-content"
                     >
                       <span
-                        class="ant-input-affix-wrapper ant-input-password basic-input-wrapper login-form-field css-1pd1cd5 css-dev-only-do-not-override-txh9fw"
+                        class="ant-input-affix-wrapper ant-input-password basic-input-wrapper login-form-field css-1pd1cd5 ant-input-affix-wrapper-status-success"
                       >
                         <span
                           class="ant-input-prefix"
@@ -705,7 +705,7 @@ exports[`page/Login-ee render login success when has location search val render 
                         </span>
                         <input
                           aria-required="true"
-                          class="ant-input css-dev-only-do-not-override-txh9fw"
+                          class="ant-input"
                           id="password"
                           placeholder="密码"
                           type="password"
@@ -745,13 +745,13 @@ exports[`page/Login-ee render login success when has location search val render 
               </div>
             </div>
             <div
-              class="ant-form-item css-dev-only-do-not-override-txh9fw"
+              class="ant-form-item"
             >
               <div
-                class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                class="ant-row ant-form-item-row"
               >
                 <div
-                  class="ant-col ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                  class="ant-col ant-form-item-control"
                 >
                   <div
                     class="ant-form-item-control-input"
@@ -760,10 +760,10 @@ exports[`page/Login-ee render login success when has location search val render 
                       class="ant-form-item-control-input-content"
                     >
                       <label
-                        class="ant-checkbox-wrapper ant-checkbox-wrapper-checked ant-checkbox-wrapper-in-form-item css-dev-only-do-not-override-txh9fw"
+                        class="ant-checkbox-wrapper ant-checkbox-wrapper-checked ant-checkbox-wrapper-in-form-item"
                       >
                         <span
-                          class="ant-checkbox css-dev-only-do-not-override-txh9fw ant-checkbox-checked"
+                          class="ant-checkbox ant-checkbox-checked"
                         >
                           <input
                             checked=""
@@ -777,7 +777,7 @@ exports[`page/Login-ee render login success when has location search val render 
                         </span>
                         <span>
                           <div
-                            class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+                            class="ant-space ant-space-horizontal ant-space-align-center"
                           >
                             <div
                               class="ant-space-item"
@@ -789,7 +789,7 @@ exports[`page/Login-ee render login success when has location search val render 
                               class="ant-space-item"
                             >
                               <a
-                                class="ant-typography css-dev-only-do-not-override-txh9fw"
+                                class="ant-typography"
                                 href="/user-agreement.html"
                                 rel="noopener noreferrer"
                                 target="_blank"
@@ -806,7 +806,7 @@ exports[`page/Login-ee render login success when has location search val render 
               </div>
             </div>
             <button
-              class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary ant-btn-loading login-btn basic-button-wrapper css-geipcv"
+              class="ant-btn ant-btn-primary ant-btn-loading login-btn basic-button-wrapper css-geipcv"
               type="submit"
             >
               <span
@@ -837,7 +837,7 @@ exports[`page/Login-ee render login success when has location search val render 
               </span>
             </button>
             <a
-              class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default other-login-btn basic-button-wrapper css-geipcv"
+              class="ant-btn ant-btn-default other-login-btn basic-button-wrapper css-geipcv"
               href="/v1/dms/oauth2/link"
             >
               <span>
@@ -904,16 +904,16 @@ exports[`page/Login-ee render login success when has location search val render 
             </div>
           </div>
           <form
-            class="ant-form ant-form-horizontal css-dev-only-do-not-override-txh9fw"
+            class="ant-form ant-form-horizontal"
           >
             <div
-              class="ant-form-item css-dev-only-do-not-override-txh9fw ant-form-item-has-success"
+              class="ant-form-item ant-form-item-has-success"
             >
               <div
-                class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                class="ant-row ant-form-item-row"
               >
                 <div
-                  class="ant-col ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                  class="ant-col ant-form-item-control"
                 >
                   <div
                     class="ant-form-item-control-input"
@@ -922,7 +922,7 @@ exports[`page/Login-ee render login success when has location search val render 
                       class="ant-form-item-control-input-content"
                     >
                       <span
-                        class="ant-input-affix-wrapper ant-input-affix-wrapper-focused basic-input-wrapper login-form-field css-1pd1cd5 ant-input-affix-wrapper-status-success css-dev-only-do-not-override-ywkr0o"
+                        class="ant-input-affix-wrapper ant-input-affix-wrapper-focused basic-input-wrapper login-form-field css-1pd1cd5 ant-input-affix-wrapper-status-success"
                       >
                         <span
                           class="ant-input-prefix"
@@ -945,7 +945,7 @@ exports[`page/Login-ee render login success when has location search val render 
                         </span>
                         <input
                           aria-required="true"
-                          class="ant-input css-dev-only-do-not-override-ywkr0o"
+                          class="ant-input"
                           id="username"
                           placeholder="用户名"
                           type="text"
@@ -958,13 +958,13 @@ exports[`page/Login-ee render login success when has location search val render 
               </div>
             </div>
             <div
-              class="ant-form-item css-dev-only-do-not-override-txh9fw ant-form-item-has-success"
+              class="ant-form-item ant-form-item-has-success"
             >
               <div
-                class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                class="ant-row ant-form-item-row"
               >
                 <div
-                  class="ant-col ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                  class="ant-col ant-form-item-control"
                 >
                   <div
                     class="ant-form-item-control-input"
@@ -973,7 +973,7 @@ exports[`page/Login-ee render login success when has location search val render 
                       class="ant-form-item-control-input-content"
                     >
                       <span
-                        class="ant-input-affix-wrapper ant-input-password basic-input-wrapper login-form-field css-1pd1cd5 css-dev-only-do-not-override-txh9fw"
+                        class="ant-input-affix-wrapper ant-input-password basic-input-wrapper login-form-field css-1pd1cd5 ant-input-affix-wrapper-status-success"
                       >
                         <span
                           class="ant-input-prefix"
@@ -997,7 +997,7 @@ exports[`page/Login-ee render login success when has location search val render 
                         </span>
                         <input
                           aria-required="true"
-                          class="ant-input css-dev-only-do-not-override-txh9fw"
+                          class="ant-input"
                           id="password"
                           placeholder="密码"
                           type="password"
@@ -1037,13 +1037,13 @@ exports[`page/Login-ee render login success when has location search val render 
               </div>
             </div>
             <div
-              class="ant-form-item css-dev-only-do-not-override-txh9fw"
+              class="ant-form-item"
             >
               <div
-                class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                class="ant-row ant-form-item-row"
               >
                 <div
-                  class="ant-col ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                  class="ant-col ant-form-item-control"
                 >
                   <div
                     class="ant-form-item-control-input"
@@ -1052,10 +1052,10 @@ exports[`page/Login-ee render login success when has location search val render 
                       class="ant-form-item-control-input-content"
                     >
                       <label
-                        class="ant-checkbox-wrapper ant-checkbox-wrapper-checked ant-checkbox-wrapper-in-form-item css-dev-only-do-not-override-txh9fw"
+                        class="ant-checkbox-wrapper ant-checkbox-wrapper-checked ant-checkbox-wrapper-in-form-item"
                       >
                         <span
-                          class="ant-checkbox css-dev-only-do-not-override-txh9fw ant-checkbox-checked"
+                          class="ant-checkbox ant-checkbox-checked"
                         >
                           <input
                             checked=""
@@ -1069,7 +1069,7 @@ exports[`page/Login-ee render login success when has location search val render 
                         </span>
                         <span>
                           <div
-                            class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+                            class="ant-space ant-space-horizontal ant-space-align-center"
                           >
                             <div
                               class="ant-space-item"
@@ -1081,7 +1081,7 @@ exports[`page/Login-ee render login success when has location search val render 
                               class="ant-space-item"
                             >
                               <a
-                                class="ant-typography css-dev-only-do-not-override-txh9fw"
+                                class="ant-typography"
                                 href="/user-agreement.html"
                                 rel="noopener noreferrer"
                                 target="_blank"
@@ -1098,7 +1098,7 @@ exports[`page/Login-ee render login success when has location search val render 
               </div>
             </div>
             <button
-              class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary ant-btn-loading login-btn basic-button-wrapper css-geipcv"
+              class="ant-btn ant-btn-primary ant-btn-loading login-btn basic-button-wrapper css-geipcv"
               type="submit"
             >
               <span
@@ -1129,7 +1129,7 @@ exports[`page/Login-ee render login success when has location search val render 
               </span>
             </button>
             <a
-              class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default other-login-btn basic-button-wrapper css-geipcv"
+              class="ant-btn ant-btn-default other-login-btn basic-button-wrapper css-geipcv"
               href="/v1/dms/oauth2/link"
             >
               <span>
@@ -1196,16 +1196,16 @@ exports[`page/Login-ee render login when return no auth 1`] = `
             </div>
           </div>
           <form
-            class="ant-form ant-form-horizontal css-dev-only-do-not-override-txh9fw"
+            class="ant-form ant-form-horizontal"
           >
             <div
-              class="ant-form-item css-dev-only-do-not-override-txh9fw ant-form-item-has-success"
+              class="ant-form-item ant-form-item-has-success"
             >
               <div
-                class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                class="ant-row ant-form-item-row"
               >
                 <div
-                  class="ant-col ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                  class="ant-col ant-form-item-control"
                 >
                   <div
                     class="ant-form-item-control-input"
@@ -1214,7 +1214,7 @@ exports[`page/Login-ee render login when return no auth 1`] = `
                       class="ant-form-item-control-input-content"
                     >
                       <span
-                        class="ant-input-affix-wrapper ant-input-affix-wrapper-focused basic-input-wrapper login-form-field css-1pd1cd5 ant-input-affix-wrapper-status-success css-dev-only-do-not-override-ywkr0o"
+                        class="ant-input-affix-wrapper ant-input-affix-wrapper-focused basic-input-wrapper login-form-field css-1pd1cd5 ant-input-affix-wrapper-status-success"
                       >
                         <span
                           class="ant-input-prefix"
@@ -1237,7 +1237,7 @@ exports[`page/Login-ee render login when return no auth 1`] = `
                         </span>
                         <input
                           aria-required="true"
-                          class="ant-input css-dev-only-do-not-override-ywkr0o"
+                          class="ant-input"
                           id="username"
                           placeholder="用户名"
                           type="text"
@@ -1250,13 +1250,13 @@ exports[`page/Login-ee render login when return no auth 1`] = `
               </div>
             </div>
             <div
-              class="ant-form-item css-dev-only-do-not-override-txh9fw ant-form-item-has-success"
+              class="ant-form-item ant-form-item-has-success"
             >
               <div
-                class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                class="ant-row ant-form-item-row"
               >
                 <div
-                  class="ant-col ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                  class="ant-col ant-form-item-control"
                 >
                   <div
                     class="ant-form-item-control-input"
@@ -1265,7 +1265,7 @@ exports[`page/Login-ee render login when return no auth 1`] = `
                       class="ant-form-item-control-input-content"
                     >
                       <span
-                        class="ant-input-affix-wrapper ant-input-password basic-input-wrapper login-form-field css-1pd1cd5 css-dev-only-do-not-override-txh9fw"
+                        class="ant-input-affix-wrapper ant-input-password basic-input-wrapper login-form-field css-1pd1cd5 ant-input-affix-wrapper-status-success"
                       >
                         <span
                           class="ant-input-prefix"
@@ -1289,10 +1289,11 @@ exports[`page/Login-ee render login when return no auth 1`] = `
                         </span>
                         <input
                           aria-required="true"
-                          class="ant-input css-dev-only-do-not-override-txh9fw"
+                          class="ant-input"
                           id="password"
                           placeholder="密码"
                           type="password"
+                          value="admin"
                         />
                         <span
                           class="ant-input-suffix"
@@ -1328,13 +1329,13 @@ exports[`page/Login-ee render login when return no auth 1`] = `
               </div>
             </div>
             <div
-              class="ant-form-item css-dev-only-do-not-override-txh9fw ant-form-item-has-success"
+              class="ant-form-item ant-form-item-has-success"
             >
               <div
-                class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                class="ant-row ant-form-item-row"
               >
                 <div
-                  class="ant-col ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                  class="ant-col ant-form-item-control"
                 >
                   <div
                     class="ant-form-item-control-input"
@@ -1343,10 +1344,10 @@ exports[`page/Login-ee render login when return no auth 1`] = `
                       class="ant-form-item-control-input-content"
                     >
                       <label
-                        class="ant-checkbox-wrapper ant-checkbox-wrapper-in-form-item css-dev-only-do-not-override-txh9fw"
+                        class="ant-checkbox-wrapper ant-checkbox-wrapper-in-form-item"
                       >
                         <span
-                          class="ant-checkbox css-dev-only-do-not-override-txh9fw"
+                          class="ant-checkbox"
                         >
                           <input
                             checked=""
@@ -1360,7 +1361,7 @@ exports[`page/Login-ee render login when return no auth 1`] = `
                         </span>
                         <span>
                           <div
-                            class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+                            class="ant-space ant-space-horizontal ant-space-align-center"
                           >
                             <div
                               class="ant-space-item"
@@ -1372,7 +1373,7 @@ exports[`page/Login-ee render login when return no auth 1`] = `
                               class="ant-space-item"
                             >
                               <a
-                                class="ant-typography css-dev-only-do-not-override-txh9fw"
+                                class="ant-typography"
                                 href="/user-agreement.html"
                                 rel="noopener noreferrer"
                                 target="_blank"
@@ -1389,7 +1390,7 @@ exports[`page/Login-ee render login when return no auth 1`] = `
               </div>
             </div>
             <button
-              class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary login-btn basic-button-wrapper css-geipcv"
+              class="ant-btn ant-btn-primary login-btn basic-button-wrapper css-geipcv"
               type="submit"
             >
               <span>
@@ -1402,11 +1403,11 @@ exports[`page/Login-ee render login when return no auth 1`] = `
     </section>
   </div>
   <div
-    class="ant-message ant-message-top css-dev-only-do-not-override-txh9fw"
+    class="ant-message ant-message-top"
     style="left: 50%; transform: translateX(-50%); top: 8px;"
   >
     <div
-      class="ant-message-notice ant-message-notice-error css-dev-only-do-not-override-txh9fw"
+      class="ant-message-notice ant-message-notice-error"
     >
       <div
         class="ant-message-notice-content"
@@ -1423,13 +1424,14 @@ exports[`page/Login-ee render login when return no auth 1`] = `
               aria-hidden="true"
               data-icon="close-circle"
               fill="currentColor"
+              fill-rule="evenodd"
               focusable="false"
               height="1em"
               viewBox="64 64 896 896"
               width="1em"
             >
               <path
-                d="M512 64C264.6 64 64 264.6 64 512s200.6 448 448 448 448-200.6 448-448S759.4 64 512 64zm165.4 618.2l-66-.3L512 563.4l-99.3 118.4-66.1.3c-4.4 0-8-3.5-8-8 0-1.9.7-3.7 1.9-5.2l130.1-155L340.5 359a8.32 8.32 0 01-1.9-5.2c0-4.4 3.6-8 8-8l66.1.3L512 464.6l99.3-118.4 66-.3c4.4 0 8 3.5 8 8 0 1.9-.7 3.7-1.9 5.2L553.5 514l130 155c1.2 1.5 1.9 3.3 1.9 5.2 0 4.4-3.6 8-8 8z"
+                d="M512 64c247.4 0 448 200.6 448 448S759.4 960 512 960 64 759.4 64 512 264.6 64 512 64zm127.98 274.82h-.04l-.08.06L512 466.75 384.14 338.88c-.04-.05-.06-.06-.08-.06a.12.12 0 00-.07 0c-.03 0-.05.01-.09.05l-45.02 45.02a.2.2 0 00-.05.09.12.12 0 000 .07v.02a.27.27 0 00.06.06L466.75 512 338.88 639.86c-.05.04-.06.06-.06.08a.12.12 0 000 .07c0 .03.01.05.05.09l45.02 45.02a.2.2 0 00.09.05.12.12 0 00.07 0c.02 0 .04-.01.08-.05L512 557.25l127.86 127.87c.04.04.06.05.08.05a.12.12 0 00.07 0c.03 0 .05-.01.09-.05l45.02-45.02a.2.2 0 00.05-.09.12.12 0 000-.07v-.02a.27.27 0 00-.05-.06L557.25 512l127.87-127.86c.04-.04.05-.06.05-.08a.12.12 0 000-.07c0-.03-.01-.05-.05-.09l-45.02-45.02a.2.2 0 00-.09-.05.12.12 0 00-.07 0z"
               />
             </svg>
           </span>
@@ -1495,17 +1497,17 @@ exports[`page/Login-ee render login when two_factor_enabled is true 1`] = `
             </div>
           </div>
           <form
-            class="ant-form ant-form-horizontal css-dev-only-do-not-override-txh9fw"
+            class="ant-form ant-form-horizontal"
             hidden=""
           >
             <div
-              class="ant-form-item css-dev-only-do-not-override-txh9fw ant-form-item-has-success"
+              class="ant-form-item ant-form-item-has-success"
             >
               <div
-                class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                class="ant-row ant-form-item-row"
               >
                 <div
-                  class="ant-col ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                  class="ant-col ant-form-item-control"
                 >
                   <div
                     class="ant-form-item-control-input"
@@ -1514,7 +1516,7 @@ exports[`page/Login-ee render login when two_factor_enabled is true 1`] = `
                       class="ant-form-item-control-input-content"
                     >
                       <span
-                        class="ant-input-affix-wrapper ant-input-affix-wrapper-focused basic-input-wrapper login-form-field css-1pd1cd5 ant-input-affix-wrapper-status-success css-dev-only-do-not-override-ywkr0o"
+                        class="ant-input-affix-wrapper ant-input-affix-wrapper-focused basic-input-wrapper login-form-field css-1pd1cd5 ant-input-affix-wrapper-status-success"
                       >
                         <span
                           class="ant-input-prefix"
@@ -1537,7 +1539,7 @@ exports[`page/Login-ee render login when two_factor_enabled is true 1`] = `
                         </span>
                         <input
                           aria-required="true"
-                          class="ant-input css-dev-only-do-not-override-ywkr0o"
+                          class="ant-input"
                           id="username"
                           placeholder="用户名"
                           type="text"
@@ -1550,13 +1552,13 @@ exports[`page/Login-ee render login when two_factor_enabled is true 1`] = `
               </div>
             </div>
             <div
-              class="ant-form-item css-dev-only-do-not-override-txh9fw ant-form-item-has-success"
+              class="ant-form-item ant-form-item-has-success"
             >
               <div
-                class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                class="ant-row ant-form-item-row"
               >
                 <div
-                  class="ant-col ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                  class="ant-col ant-form-item-control"
                 >
                   <div
                     class="ant-form-item-control-input"
@@ -1565,7 +1567,7 @@ exports[`page/Login-ee render login when two_factor_enabled is true 1`] = `
                       class="ant-form-item-control-input-content"
                     >
                       <span
-                        class="ant-input-affix-wrapper ant-input-password basic-input-wrapper login-form-field css-1pd1cd5 css-dev-only-do-not-override-txh9fw"
+                        class="ant-input-affix-wrapper ant-input-password basic-input-wrapper login-form-field css-1pd1cd5 ant-input-affix-wrapper-status-success"
                       >
                         <span
                           class="ant-input-prefix"
@@ -1589,7 +1591,7 @@ exports[`page/Login-ee render login when two_factor_enabled is true 1`] = `
                         </span>
                         <input
                           aria-required="true"
-                          class="ant-input css-dev-only-do-not-override-txh9fw"
+                          class="ant-input"
                           id="password"
                           placeholder="密码"
                           type="password"
@@ -1629,13 +1631,13 @@ exports[`page/Login-ee render login when two_factor_enabled is true 1`] = `
               </div>
             </div>
             <div
-              class="ant-form-item css-dev-only-do-not-override-txh9fw"
+              class="ant-form-item"
             >
               <div
-                class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                class="ant-row ant-form-item-row"
               >
                 <div
-                  class="ant-col ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                  class="ant-col ant-form-item-control"
                 >
                   <div
                     class="ant-form-item-control-input"
@@ -1644,10 +1646,10 @@ exports[`page/Login-ee render login when two_factor_enabled is true 1`] = `
                       class="ant-form-item-control-input-content"
                     >
                       <label
-                        class="ant-checkbox-wrapper ant-checkbox-wrapper-checked ant-checkbox-wrapper-in-form-item css-dev-only-do-not-override-txh9fw"
+                        class="ant-checkbox-wrapper ant-checkbox-wrapper-checked ant-checkbox-wrapper-in-form-item"
                       >
                         <span
-                          class="ant-checkbox css-dev-only-do-not-override-txh9fw ant-checkbox-checked"
+                          class="ant-checkbox ant-checkbox-checked"
                         >
                           <input
                             checked=""
@@ -1661,7 +1663,7 @@ exports[`page/Login-ee render login when two_factor_enabled is true 1`] = `
                         </span>
                         <span>
                           <div
-                            class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+                            class="ant-space ant-space-horizontal ant-space-align-center"
                           >
                             <div
                               class="ant-space-item"
@@ -1673,7 +1675,7 @@ exports[`page/Login-ee render login when two_factor_enabled is true 1`] = `
                               class="ant-space-item"
                             >
                               <a
-                                class="ant-typography css-dev-only-do-not-override-txh9fw"
+                                class="ant-typography"
                                 href="/user-agreement.html"
                                 rel="noopener noreferrer"
                                 target="_blank"
@@ -1690,7 +1692,7 @@ exports[`page/Login-ee render login when two_factor_enabled is true 1`] = `
               </div>
             </div>
             <button
-              class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary login-btn basic-button-wrapper css-geipcv"
+              class="ant-btn ant-btn-primary login-btn basic-button-wrapper css-geipcv"
               type="submit"
             >
               <span>
@@ -1698,7 +1700,7 @@ exports[`page/Login-ee render login when two_factor_enabled is true 1`] = `
               </span>
             </button>
             <a
-              class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default other-login-btn basic-button-wrapper css-geipcv"
+              class="ant-btn ant-btn-default other-login-btn basic-button-wrapper css-geipcv"
               href="/v1/dms/oauth2/link"
             >
               <span>
@@ -1707,16 +1709,16 @@ exports[`page/Login-ee render login when two_factor_enabled is true 1`] = `
             </a>
           </form>
           <form
-            class="ant-form ant-form-horizontal css-dev-only-do-not-override-txh9fw"
+            class="ant-form ant-form-horizontal"
           >
             <div
-              class="ant-form-item css-dev-only-do-not-override-txh9fw"
+              class="ant-form-item"
             >
               <div
-                class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                class="ant-row ant-form-item-row"
               >
                 <div
-                  class="ant-col ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                  class="ant-col ant-form-item-control"
                 >
                   <div
                     class="ant-form-item-control-input"
@@ -1725,10 +1727,10 @@ exports[`page/Login-ee render login when two_factor_enabled is true 1`] = `
                       class="ant-form-item-control-input-content"
                     >
                       <span
-                        class="ant-typography ant-typography-secondary css-dev-only-do-not-override-txh9fw"
+                        class="ant-typography ant-typography-secondary"
                       >
                         <div
-                          class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+                          class="ant-space ant-space-horizontal ant-space-align-center"
                         >
                           <div
                             class="ant-space-item"
@@ -1749,13 +1751,13 @@ exports[`page/Login-ee render login when two_factor_enabled is true 1`] = `
               </div>
             </div>
             <div
-              class="ant-form-item css-dev-only-do-not-override-txh9fw"
+              class="ant-form-item"
             >
               <div
-                class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                class="ant-row ant-form-item-row"
               >
                 <div
-                  class="ant-col ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                  class="ant-col ant-form-item-control"
                 >
                   <div
                     class="ant-form-item-control-input"
@@ -1764,7 +1766,7 @@ exports[`page/Login-ee render login when two_factor_enabled is true 1`] = `
                       class="ant-form-item-control-input-content"
                     >
                       <div
-                        class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center css-jxd35n"
+                        class="ant-space ant-space-horizontal ant-space-align-center css-jxd35n"
                       >
                         <div
                           class="ant-space-item"
@@ -1772,7 +1774,7 @@ exports[`page/Login-ee render login when two_factor_enabled is true 1`] = `
                         >
                           <input
                             aria-required="true"
-                            class="ant-input css-dev-only-do-not-override-ywkr0o basic-input-wrapper css-1pd1cd5"
+                            class="ant-input basic-input-wrapper css-1pd1cd5"
                             id="verificationCode"
                             placeholder="请输入验证码"
                             type="text"
@@ -1783,7 +1785,7 @@ exports[`page/Login-ee render login when two_factor_enabled is true 1`] = `
                           class="ant-space-item"
                         >
                           <button
-                            class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default basic-button-wrapper css-geipcv"
+                            class="ant-btn ant-btn-default basic-button-wrapper css-geipcv"
                             type="button"
                           >
                             <span>
@@ -1798,13 +1800,13 @@ exports[`page/Login-ee render login when two_factor_enabled is true 1`] = `
               </div>
             </div>
             <div
-              class="ant-form-item css-dev-only-do-not-override-txh9fw"
+              class="ant-form-item"
             >
               <div
-                class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                class="ant-row ant-form-item-row"
               >
                 <div
-                  class="ant-col ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                  class="ant-col ant-form-item-control"
                 >
                   <div
                     class="ant-form-item-control-input"
@@ -1813,7 +1815,7 @@ exports[`page/Login-ee render login when two_factor_enabled is true 1`] = `
                       class="ant-form-item-control-input-content"
                     >
                       <button
-                        class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary login-btn basic-button-wrapper css-geipcv"
+                        class="ant-btn ant-btn-primary login-btn basic-button-wrapper css-geipcv"
                         type="submit"
                       >
                         <span>
@@ -1829,7 +1831,7 @@ exports[`page/Login-ee render login when two_factor_enabled is true 1`] = `
               class="css-1q2lbmy"
             >
               <a
-                class="ant-typography css-dev-only-do-not-override-txh9fw"
+                class="ant-typography"
               >
                 返回登录
               </a>

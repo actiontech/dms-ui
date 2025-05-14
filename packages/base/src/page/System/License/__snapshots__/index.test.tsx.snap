@@ -7,10 +7,10 @@ exports[`base/System/License click collect btn when request return blob data 1`]
       class="system-form-wrapper"
     >
       <div
-        class="ant-row ant-row-space-between ant-row-middle config-title-wrapper has-border css-dev-only-do-not-override-txh9fw"
+        class="ant-row ant-row-space-between ant-row-middle config-title-wrapper has-border"
       >
         <div
-          class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+          class="ant-space ant-space-horizontal ant-space-align-center"
         >
           <div
             class="ant-space-item"
@@ -22,7 +22,7 @@ exports[`base/System/License click collect btn when request return blob data 1`]
             class="ant-space-item"
           >
             <div
-              class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
+              class="ant-space ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
             >
               <div
                 class="ant-space-item"
@@ -44,20 +44,20 @@ exports[`base/System/License click collect btn when request return blob data 1`]
           </div>
         </div>
         <div
-          class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+          class="ant-space ant-space-horizontal ant-space-align-center"
         >
           <div
             class="ant-space-item"
             style="margin-right: 8px;"
           >
             <div
-              class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center ant-tooltip-open basic-tooltips-wrapper css-4jbtl9"
+              class="ant-space ant-space-horizontal ant-space-align-center ant-tooltip-open basic-tooltips-wrapper css-4jbtl9"
             >
               <div
                 class="ant-space-item"
               >
                 <button
-                  class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary basic-button-wrapper css-geipcv"
+                  class="ant-btn ant-btn-primary basic-button-wrapper css-geipcv"
                   type="button"
                 >
                   <span>
@@ -71,7 +71,7 @@ exports[`base/System/License click collect btn when request return blob data 1`]
             class="ant-space-item"
           >
             <button
-              class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary basic-button-wrapper css-geipcv"
+              class="ant-btn ant-btn-primary basic-button-wrapper css-geipcv"
               type="button"
             >
               <span>
@@ -82,10 +82,10 @@ exports[`base/System/License click collect btn when request return blob data 1`]
         </div>
       </div>
       <div
-        class="ant-table-wrapper actiontech-table-namespace clear-padding-bottom css-fxd6ka css-dev-only-do-not-override-bj9uhl"
+        class="ant-table-wrapper actiontech-table-namespace clear-padding-bottom css-fxd6ka"
       >
         <div
-          class="ant-spin-nested-loading css-dev-only-do-not-override-bj9uhl"
+          class="ant-spin-nested-loading"
         >
           <div
             class="ant-spin-container"
@@ -174,7 +174,7 @@ exports[`base/System/License click collect btn when request return blob data 1`]
   </div>
   <div>
     <div
-      class="ant-tooltip ant-zoom-big-fast-appear ant-zoom-big-fast-appear-prepare ant-zoom-big-fast css-dev-only-do-not-override-txh9fw ant-tooltip-placement-top"
+      class="ant-tooltip ant-zoom-big-fast-appear ant-zoom-big-fast-appear-prepare ant-zoom-big-fast ant-tooltip-placement-top"
       style="--arrow-x: 0px; --arrow-y: 0px; left: -1000vw; top: -1000vh; box-sizing: border-box;"
     >
       <div
@@ -190,7 +190,7 @@ exports[`base/System/License click collect btn when request return blob data 1`]
             width="326"
           >
             <div
-              class="ant-qrcode css-dev-only-do-not-override-txh9fw"
+              class="ant-qrcode"
               style="width: 300px; height: 300px; background-color: transparent;"
             >
               <canvas
@@ -214,10 +214,10 @@ exports[`base/System/License click collect btn when request return blob data 2`]
       class="system-form-wrapper"
     >
       <div
-        class="ant-row ant-row-space-between ant-row-middle config-title-wrapper has-border css-dev-only-do-not-override-txh9fw"
+        class="ant-row ant-row-space-between ant-row-middle config-title-wrapper has-border"
       >
         <div
-          class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+          class="ant-space ant-space-horizontal ant-space-align-center"
         >
           <div
             class="ant-space-item"
@@ -229,7 +229,7 @@ exports[`base/System/License click collect btn when request return blob data 2`]
             class="ant-space-item"
           >
             <div
-              class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
+              class="ant-space ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
             >
               <div
                 class="ant-space-item"
@@ -251,20 +251,20 @@ exports[`base/System/License click collect btn when request return blob data 2`]
           </div>
         </div>
         <div
-          class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+          class="ant-space ant-space-horizontal ant-space-align-center"
         >
           <div
             class="ant-space-item"
             style="margin-right: 8px;"
           >
             <div
-              class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
+              class="ant-space ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
             >
               <div
                 class="ant-space-item"
               >
                 <button
-                  class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary basic-button-wrapper css-geipcv"
+                  class="ant-btn ant-btn-primary basic-button-wrapper css-geipcv"
                   type="button"
                 >
                   <span>
@@ -278,7 +278,7 @@ exports[`base/System/License click collect btn when request return blob data 2`]
             class="ant-space-item"
           >
             <button
-              class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary basic-button-wrapper css-geipcv"
+              class="ant-btn ant-btn-primary basic-button-wrapper css-geipcv"
               type="button"
             >
               <span>
@@ -289,10 +289,10 @@ exports[`base/System/License click collect btn when request return blob data 2`]
         </div>
       </div>
       <div
-        class="ant-table-wrapper actiontech-table-namespace clear-padding-bottom css-fxd6ka css-dev-only-do-not-override-bj9uhl"
+        class="ant-table-wrapper actiontech-table-namespace clear-padding-bottom css-fxd6ka"
       >
         <div
-          class="ant-spin-nested-loading css-dev-only-do-not-override-bj9uhl"
+          class="ant-spin-nested-loading"
         >
           <div
             class="ant-spin-container"
@@ -381,7 +381,7 @@ exports[`base/System/License click collect btn when request return blob data 2`]
   </div>
   <div>
     <div
-      class="ant-tooltip ant-tooltip-hidden css-dev-only-do-not-override-txh9fw ant-tooltip-placement-top"
+      class="ant-tooltip ant-tooltip-hidden ant-tooltip-placement-top"
       style="--arrow-x: 0px; --arrow-y: 0px; left: 0px; top: 0px; box-sizing: border-box; pointer-events: none;"
     >
       <div
@@ -397,7 +397,7 @@ exports[`base/System/License click collect btn when request return blob data 2`]
             width="326"
           >
             <div
-              class="ant-qrcode css-dev-only-do-not-override-txh9fw"
+              class="ant-qrcode"
               style="width: 300px; height: 300px; background-color: transparent;"
             >
               <canvas
@@ -421,10 +421,10 @@ exports[`base/System/License click collect btn when request return error message
       class="system-form-wrapper"
     >
       <div
-        class="ant-row ant-row-space-between ant-row-middle config-title-wrapper has-border css-dev-only-do-not-override-txh9fw"
+        class="ant-row ant-row-space-between ant-row-middle config-title-wrapper has-border"
       >
         <div
-          class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+          class="ant-space ant-space-horizontal ant-space-align-center"
         >
           <div
             class="ant-space-item"
@@ -436,7 +436,7 @@ exports[`base/System/License click collect btn when request return error message
             class="ant-space-item"
           >
             <div
-              class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
+              class="ant-space ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
             >
               <div
                 class="ant-space-item"
@@ -458,20 +458,20 @@ exports[`base/System/License click collect btn when request return error message
           </div>
         </div>
         <div
-          class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+          class="ant-space ant-space-horizontal ant-space-align-center"
         >
           <div
             class="ant-space-item"
             style="margin-right: 8px;"
           >
             <div
-              class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
+              class="ant-space ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
             >
               <div
                 class="ant-space-item"
               >
                 <button
-                  class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary basic-button-wrapper css-geipcv"
+                  class="ant-btn ant-btn-primary basic-button-wrapper css-geipcv"
                   type="button"
                 >
                   <span>
@@ -485,7 +485,7 @@ exports[`base/System/License click collect btn when request return error message
             class="ant-space-item"
           >
             <button
-              class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary basic-button-wrapper css-geipcv"
+              class="ant-btn ant-btn-primary basic-button-wrapper css-geipcv"
               type="button"
             >
               <span>
@@ -496,10 +496,10 @@ exports[`base/System/License click collect btn when request return error message
         </div>
       </div>
       <div
-        class="ant-table-wrapper actiontech-table-namespace clear-padding-bottom css-fxd6ka css-dev-only-do-not-override-bj9uhl"
+        class="ant-table-wrapper actiontech-table-namespace clear-padding-bottom css-fxd6ka"
       >
         <div
-          class="ant-spin-nested-loading css-dev-only-do-not-override-bj9uhl"
+          class="ant-spin-nested-loading"
         >
           <div
             class="ant-spin-container"
@@ -596,10 +596,10 @@ exports[`base/System/License render snap 1`] = `
       class="system-form-wrapper"
     >
       <div
-        class="ant-row ant-row-space-between ant-row-middle config-title-wrapper has-border css-dev-only-do-not-override-txh9fw"
+        class="ant-row ant-row-space-between ant-row-middle config-title-wrapper has-border"
       >
         <div
-          class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+          class="ant-space ant-space-horizontal ant-space-align-center"
         >
           <div
             class="ant-space-item"
@@ -611,7 +611,7 @@ exports[`base/System/License render snap 1`] = `
             class="ant-space-item"
           >
             <div
-              class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
+              class="ant-space ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
             >
               <div
                 class="ant-space-item"
@@ -633,20 +633,20 @@ exports[`base/System/License render snap 1`] = `
           </div>
         </div>
         <div
-          class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+          class="ant-space ant-space-horizontal ant-space-align-center"
         >
           <div
             class="ant-space-item"
             style="margin-right: 8px;"
           >
             <div
-              class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
+              class="ant-space ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
             >
               <div
                 class="ant-space-item"
               >
                 <button
-                  class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary basic-button-wrapper css-geipcv"
+                  class="ant-btn ant-btn-primary basic-button-wrapper css-geipcv"
                   type="button"
                 >
                   <span>
@@ -660,7 +660,7 @@ exports[`base/System/License render snap 1`] = `
             class="ant-space-item"
           >
             <button
-              class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary basic-button-wrapper css-geipcv"
+              class="ant-btn ant-btn-primary basic-button-wrapper css-geipcv"
               type="button"
             >
               <span>
@@ -671,16 +671,16 @@ exports[`base/System/License render snap 1`] = `
         </div>
       </div>
       <div
-        class="ant-table-wrapper actiontech-table-namespace clear-padding-bottom css-fxd6ka css-dev-only-do-not-override-bj9uhl"
+        class="ant-table-wrapper actiontech-table-namespace clear-padding-bottom css-fxd6ka"
       >
         <div
-          class="ant-spin-nested-loading css-dev-only-do-not-override-bj9uhl"
+          class="ant-spin-nested-loading"
         >
           <div>
             <div
               aria-busy="true"
               aria-live="polite"
-              class="ant-spin ant-spin-spinning css-dev-only-do-not-override-bj9uhl"
+              class="ant-spin ant-spin-spinning"
             >
               <span
                 class="ant-spin-dot ant-spin-dot-spin"
@@ -795,10 +795,10 @@ exports[`base/System/License render snap 2`] = `
       class="system-form-wrapper"
     >
       <div
-        class="ant-row ant-row-space-between ant-row-middle config-title-wrapper has-border css-dev-only-do-not-override-txh9fw"
+        class="ant-row ant-row-space-between ant-row-middle config-title-wrapper has-border"
       >
         <div
-          class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+          class="ant-space ant-space-horizontal ant-space-align-center"
         >
           <div
             class="ant-space-item"
@@ -810,7 +810,7 @@ exports[`base/System/License render snap 2`] = `
             class="ant-space-item"
           >
             <div
-              class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
+              class="ant-space ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
             >
               <div
                 class="ant-space-item"
@@ -832,20 +832,20 @@ exports[`base/System/License render snap 2`] = `
           </div>
         </div>
         <div
-          class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+          class="ant-space ant-space-horizontal ant-space-align-center"
         >
           <div
             class="ant-space-item"
             style="margin-right: 8px;"
           >
             <div
-              class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
+              class="ant-space ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
             >
               <div
                 class="ant-space-item"
               >
                 <button
-                  class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary basic-button-wrapper css-geipcv"
+                  class="ant-btn ant-btn-primary basic-button-wrapper css-geipcv"
                   type="button"
                 >
                   <span>
@@ -859,7 +859,7 @@ exports[`base/System/License render snap 2`] = `
             class="ant-space-item"
           >
             <button
-              class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary basic-button-wrapper css-geipcv"
+              class="ant-btn ant-btn-primary basic-button-wrapper css-geipcv"
               type="button"
             >
               <span>
@@ -870,10 +870,10 @@ exports[`base/System/License render snap 2`] = `
         </div>
       </div>
       <div
-        class="ant-table-wrapper actiontech-table-namespace clear-padding-bottom css-fxd6ka css-dev-only-do-not-override-bj9uhl"
+        class="ant-table-wrapper actiontech-table-namespace clear-padding-bottom css-fxd6ka"
       >
         <div
-          class="ant-spin-nested-loading css-dev-only-do-not-override-bj9uhl"
+          class="ant-spin-nested-loading"
         >
           <div
             class="ant-spin-container"
@@ -970,10 +970,10 @@ exports[`base/System/License render snap when click import btn 1`] = `
       class="system-form-wrapper"
     >
       <div
-        class="ant-row ant-row-space-between ant-row-middle config-title-wrapper has-border css-dev-only-do-not-override-txh9fw"
+        class="ant-row ant-row-space-between ant-row-middle config-title-wrapper has-border"
       >
         <div
-          class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+          class="ant-space ant-space-horizontal ant-space-align-center"
         >
           <div
             class="ant-space-item"
@@ -985,7 +985,7 @@ exports[`base/System/License render snap when click import btn 1`] = `
             class="ant-space-item"
           >
             <div
-              class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
+              class="ant-space ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
             >
               <div
                 class="ant-space-item"
@@ -1007,20 +1007,20 @@ exports[`base/System/License render snap when click import btn 1`] = `
           </div>
         </div>
         <div
-          class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+          class="ant-space ant-space-horizontal ant-space-align-center"
         >
           <div
             class="ant-space-item"
             style="margin-right: 8px;"
           >
             <div
-              class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
+              class="ant-space ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
             >
               <div
                 class="ant-space-item"
               >
                 <button
-                  class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary basic-button-wrapper css-geipcv"
+                  class="ant-btn ant-btn-primary basic-button-wrapper css-geipcv"
                   type="button"
                 >
                   <span>
@@ -1034,7 +1034,7 @@ exports[`base/System/License render snap when click import btn 1`] = `
             class="ant-space-item"
           >
             <button
-              class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary basic-button-wrapper css-geipcv"
+              class="ant-btn ant-btn-primary basic-button-wrapper css-geipcv"
               type="button"
             >
               <span>
@@ -1045,10 +1045,10 @@ exports[`base/System/License render snap when click import btn 1`] = `
         </div>
       </div>
       <div
-        class="ant-table-wrapper actiontech-table-namespace clear-padding-bottom css-fxd6ka css-dev-only-do-not-override-bj9uhl"
+        class="ant-table-wrapper actiontech-table-namespace clear-padding-bottom css-fxd6ka"
       >
         <div
-          class="ant-spin-nested-loading css-dev-only-do-not-override-bj9uhl"
+          class="ant-spin-nested-loading"
         >
           <div
             class="ant-spin-container"
@@ -1145,10 +1145,10 @@ exports[`base/System/License render snap when limit data name is \`info\` 1`] = 
       class="system-form-wrapper"
     >
       <div
-        class="ant-row ant-row-space-between ant-row-middle config-title-wrapper has-border css-dev-only-do-not-override-txh9fw"
+        class="ant-row ant-row-space-between ant-row-middle config-title-wrapper has-border"
       >
         <div
-          class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+          class="ant-space ant-space-horizontal ant-space-align-center"
         >
           <div
             class="ant-space-item"
@@ -1160,7 +1160,7 @@ exports[`base/System/License render snap when limit data name is \`info\` 1`] = 
             class="ant-space-item"
           >
             <div
-              class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
+              class="ant-space ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
             >
               <div
                 class="ant-space-item"
@@ -1182,20 +1182,20 @@ exports[`base/System/License render snap when limit data name is \`info\` 1`] = 
           </div>
         </div>
         <div
-          class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+          class="ant-space ant-space-horizontal ant-space-align-center"
         >
           <div
             class="ant-space-item"
             style="margin-right: 8px;"
           >
             <div
-              class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
+              class="ant-space ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
             >
               <div
                 class="ant-space-item"
               >
                 <button
-                  class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary basic-button-wrapper css-geipcv"
+                  class="ant-btn ant-btn-primary basic-button-wrapper css-geipcv"
                   type="button"
                 >
                   <span>
@@ -1209,7 +1209,7 @@ exports[`base/System/License render snap when limit data name is \`info\` 1`] = 
             class="ant-space-item"
           >
             <button
-              class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary basic-button-wrapper css-geipcv"
+              class="ant-btn ant-btn-primary basic-button-wrapper css-geipcv"
               type="button"
             >
               <span>
@@ -1220,10 +1220,10 @@ exports[`base/System/License render snap when limit data name is \`info\` 1`] = 
         </div>
       </div>
       <div
-        class="ant-table-wrapper actiontech-table-namespace clear-padding-bottom css-fxd6ka css-dev-only-do-not-override-bj9uhl"
+        class="ant-table-wrapper actiontech-table-namespace clear-padding-bottom css-fxd6ka"
       >
         <div
-          class="ant-spin-nested-loading css-dev-only-do-not-override-bj9uhl"
+          class="ant-spin-nested-loading"
         >
           <div
             class="ant-spin-container"
@@ -1304,11 +1304,11 @@ exports[`base/System/License render snap when limit data name is \`info\` 1`] = 
                           >
                             <div
                               aria-label="limit string cont"
-                              class="ant-typography ant-typography-ellipsis ant-typography-single-line basic-typography-ellipsis css-wgj5gs css-dev-only-do-not-override-bj9uhl"
+                              class="ant-typography ant-typography-ellipsis ant-typography-single-line basic-typography-ellipsis css-wgj5gs"
                             >
                               limit string cont
                               <div
-                                aria-label="Copy"
+                                aria-label="复制"
                                 class="ant-typography-copy"
                                 role="button"
                                 style="border: 0px; background: transparent; padding: 0px; line-height: inherit; display: inline-block;"
@@ -1350,7 +1350,7 @@ exports[`base/System/License render snap when limit data name is \`info\` 1`] = 
                                   ...
                                 </span>
                                 <div
-                                  aria-label="Copy"
+                                  aria-label="复制"
                                   class="ant-typography-copy"
                                   role="button"
                                   style="border: 0px; background: transparent; padding: 0px; line-height: inherit; display: inline-block;"

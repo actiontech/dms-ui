@@ -1,6 +1,3 @@
-/* eslint-disable no-console */
-/* eslint-disable @typescript-eslint/no-var-requires */
-
 // https://github.com/ArtiomTr/jest-coverage-report-action/issues/244
 
 const path = require('path');

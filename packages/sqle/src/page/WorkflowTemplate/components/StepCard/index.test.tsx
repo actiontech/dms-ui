@@ -29,7 +29,7 @@ describe('page/WorkflowTemplate/StepCard', () => {
   });
 
   const customRender = (data: IStepCardProps) => {
-    return superRender(<StepCard {...data} />);
+    return superRender(<StepCard {...data} key={`${data.key}-step-card`} />);
   };
   it('render step card with no operator and not active', async () => {
     const { baseElement } = customRender({ ...workflowTemplateCardProps });

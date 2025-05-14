@@ -9,7 +9,7 @@ type RuleFilterProps = {
 
 const RuleFilter: React.FC<RuleFilterProps> = ({ form }) => {
   return (
-    <FilterContainerStyleWrapper className="full-width-element">
+    <FilterContainerStyleWrapper className="full-width-element flex-space-between">
       <Form form={form}>
         <RuleFilterCommonFields />
       </Form>

@@ -22,6 +22,10 @@ import configuration from '../../../testUtils/mockApi/configuration';
 import { formatterSQL } from '@actiontech/shared/lib/utils/FormatterSQL';
 import rule_template from '../../../testUtils/mockApi/rule_template';
 import { createSpySuccessResponse } from '@actiontech/shared/lib/testUtil/mockApi';
+import {
+  UtilsConsoleErrorStringsEnum,
+  ignoreConsoleErrors
+} from '@actiontech/shared/lib/testUtil/common';
 
 jest.mock('react-router-dom', () => {
   return {
@@ -90,6 +94,8 @@ describe('sqle/SqlAudit/Create', () => {
       </BrowserRouter>
     );
   };
+
+  ignoreConsoleErrors([UtilsConsoleErrorStringsEnum.UNKNOWN_EVENT_HANDLER]);
 
   it('enter default content to create sql audit', async () => {
     const { baseElement } = renderWithThemeAndRedux(customRender());

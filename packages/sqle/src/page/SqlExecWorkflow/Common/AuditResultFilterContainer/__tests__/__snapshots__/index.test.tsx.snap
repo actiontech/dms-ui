@@ -21,7 +21,7 @@ exports[`sqle/ExecWorkflow/Common/AuditResultFilterContainer render snap when au
         </div>
       </div>
       <div
-        class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center audit-result-info"
+        class="ant-space ant-space-horizontal ant-space-align-center audit-result-info"
       >
         <div
           class="ant-space-item"
@@ -83,7 +83,7 @@ exports[`sqle/ExecWorkflow/Common/AuditResultFilterContainer render snap when au
         </div>
       </div>
       <div
-        class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center audit-result-info"
+        class="ant-space ant-space-horizontal ant-space-align-center audit-result-info"
       >
         <div
           class="ant-space-item"
@@ -145,7 +145,7 @@ exports[`sqle/ExecWorkflow/Common/AuditResultFilterContainer render snap when au
         </div>
       </div>
       <div
-        class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center audit-result-info"
+        class="ant-space ant-space-horizontal ant-space-align-center audit-result-info"
       >
         <div
           class="ant-space-item"
@@ -207,7 +207,7 @@ exports[`sqle/ExecWorkflow/Common/AuditResultFilterContainer render snap when au
         </div>
       </div>
       <div
-        class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center audit-result-info"
+        class="ant-space ant-space-horizontal ant-space-align-center audit-result-info"
       >
         <div
           class="ant-space-item"
@@ -269,7 +269,7 @@ exports[`sqle/ExecWorkflow/Common/AuditResultFilterContainer render snap when bo
         </div>
       </div>
       <div
-        class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center audit-result-info"
+        class="ant-space ant-space-horizontal ant-space-align-center audit-result-info"
       >
         <div
           class="ant-space-item"
@@ -331,7 +331,7 @@ exports[`sqle/ExecWorkflow/Common/AuditResultFilterContainer render snap when no
         </div>
       </div>
       <div
-        class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center audit-result-info"
+        class="ant-space ant-space-horizontal ant-space-align-center audit-result-info"
       >
         <div
           class="ant-space-item"
@@ -393,7 +393,7 @@ exports[`sqle/ExecWorkflow/Common/AuditResultFilterContainer render snap when ot
         </div>
       </div>
       <div
-        class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center audit-result-info"
+        class="ant-space ant-space-horizontal ant-space-align-center audit-result-info"
       >
         <div
           class="ant-space-item"

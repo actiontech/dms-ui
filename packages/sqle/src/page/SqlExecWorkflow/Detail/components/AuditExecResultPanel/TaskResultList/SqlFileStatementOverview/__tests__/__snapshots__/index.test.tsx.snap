@@ -35,7 +35,7 @@ exports[`test AuditDetail/SqlFileStatementOverview should match snapshot 1`] = `
         class="extra"
       >
         <button
-          class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default basic-button-wrapper css-geipcv"
+          class="ant-btn ant-btn-default basic-button-wrapper css-geipcv"
           type="button"
         >
           <span
@@ -60,7 +60,7 @@ exports[`test AuditDetail/SqlFileStatementOverview should match snapshot 1`] = `
       </div>
     </div>
     <div
-      class="ant-row ant-row-space-between css-156vlto css-dev-only-do-not-override-txh9fw"
+      class="ant-row ant-row-space-between css-156vlto"
     >
       <div
         class="audit-result-filter-container-borderless clear-padding css-1c0dogt"
@@ -121,19 +121,19 @@ exports[`test AuditDetail/SqlFileStatementOverview should match snapshot 1`] = `
         </div>
       </div>
       <div
-        class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center audit-result-actions-wrap"
+        class="ant-space ant-space-horizontal ant-space-align-center audit-result-actions-wrap"
       >
         <div
           class="ant-space-item"
           style="margin-right: 12px;"
         >
           <button
-            class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default ant-btn-sm ant-btn-two-chinese-chars actiontech-filter-button-namespace basic-button-wrapper css-geipcv"
+            class="ant-btn ant-btn-default ant-btn-sm ant-btn-two-chinese-chars actiontech-filter-button-namespace basic-button-wrapper css-geipcv"
             style="padding: 0px 6px 0px 10px;"
             type="button"
           >
             <div
-              class="ant-space css-dev-only-do-not-override-674gwq ant-space-horizontal ant-space-align-center css-1nt49ug"
+              class="ant-space ant-space-horizontal ant-space-align-center css-1nt49ug"
             >
               <div
                 class="ant-space-item"
@@ -145,7 +145,7 @@ exports[`test AuditDetail/SqlFileStatementOverview should match snapshot 1`] = `
                 class="ant-space-item"
               >
                 <svg
-                  color="currrentColor"
+                  color="currentColor"
                   height="14"
                   viewBox="0 0 16 16"
                   width="14"
@@ -165,7 +165,7 @@ exports[`test AuditDetail/SqlFileStatementOverview should match snapshot 1`] = `
           style="margin-right: 12px;"
         >
           <div
-            class="ant-divider css-dev-only-do-not-override-txh9fw ant-divider-vertical audit-result-actions-divider"
+            class="ant-divider ant-divider-vertical audit-result-actions-divider"
             role="separator"
           />
         </div>
@@ -183,7 +183,7 @@ exports[`test AuditDetail/SqlFileStatementOverview should match snapshot 1`] = `
           class="ant-space-item"
         >
           <button
-            class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default ant-btn-sm basic-button-wrapper css-geipcv"
+            class="ant-btn ant-btn-default ant-btn-sm basic-button-wrapper css-geipcv"
             type="button"
           >
             <span
@@ -201,7 +201,7 @@ exports[`test AuditDetail/SqlFileStatementOverview should match snapshot 1`] = `
               </svg>
             </span>
             <div
-              class="ant-space css-dev-only-do-not-override-674gwq ant-space-horizontal ant-space-align-center"
+              class="ant-space ant-space-horizontal ant-space-align-center"
             >
               <div
                 class="ant-space-item"
@@ -238,16 +238,16 @@ exports[`test AuditDetail/SqlFileStatementOverview should match snapshot 1`] = `
       class="css-1r1dawj"
     >
       <div
-        class="ant-table-wrapper actiontech-table-namespace table-row-cursor css-fxd6ka css-dev-only-do-not-override-bj9uhl"
+        class="ant-table-wrapper actiontech-table-namespace table-row-cursor css-fxd6ka"
       >
         <div
-          class="ant-spin-nested-loading css-dev-only-do-not-override-bj9uhl"
+          class="ant-spin-nested-loading"
         >
           <div>
             <div
               aria-busy="true"
               aria-live="polite"
-              class="ant-spin ant-spin-spinning css-dev-only-do-not-override-bj9uhl"
+              class="ant-spin ant-spin-spinning"
             >
               <span
                 class="ant-spin-dot ant-spin-dot-spin"
@@ -425,7 +425,7 @@ exports[`test AuditDetail/SqlFileStatementOverview should match snapshot 2`] = `
         class="extra"
       >
         <button
-          class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default basic-button-wrapper css-geipcv"
+          class="ant-btn ant-btn-default basic-button-wrapper css-geipcv"
           type="button"
         >
           <span
@@ -450,7 +450,7 @@ exports[`test AuditDetail/SqlFileStatementOverview should match snapshot 2`] = `
       </div>
     </div>
     <div
-      class="ant-row ant-row-space-between css-156vlto css-dev-only-do-not-override-txh9fw"
+      class="ant-row ant-row-space-between css-156vlto"
     >
       <div
         class="audit-result-filter-container-borderless clear-padding css-1c0dogt"
@@ -511,19 +511,19 @@ exports[`test AuditDetail/SqlFileStatementOverview should match snapshot 2`] = `
         </div>
       </div>
       <div
-        class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center audit-result-actions-wrap"
+        class="ant-space ant-space-horizontal ant-space-align-center audit-result-actions-wrap"
       >
         <div
           class="ant-space-item"
           style="margin-right: 12px;"
         >
           <button
-            class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default ant-btn-sm ant-btn-two-chinese-chars actiontech-filter-button-namespace basic-button-wrapper css-geipcv"
+            class="ant-btn ant-btn-default ant-btn-sm ant-btn-two-chinese-chars actiontech-filter-button-namespace basic-button-wrapper css-geipcv"
             style="padding: 0px 6px 0px 10px;"
             type="button"
           >
             <div
-              class="ant-space css-dev-only-do-not-override-674gwq ant-space-horizontal ant-space-align-center css-1nt49ug"
+              class="ant-space ant-space-horizontal ant-space-align-center css-1nt49ug"
             >
               <div
                 class="ant-space-item"
@@ -535,7 +535,7 @@ exports[`test AuditDetail/SqlFileStatementOverview should match snapshot 2`] = `
                 class="ant-space-item"
               >
                 <svg
-                  color="currrentColor"
+                  color="currentColor"
                   height="14"
                   viewBox="0 0 16 16"
                   width="14"
@@ -555,7 +555,7 @@ exports[`test AuditDetail/SqlFileStatementOverview should match snapshot 2`] = `
           style="margin-right: 12px;"
         >
           <div
-            class="ant-divider css-dev-only-do-not-override-txh9fw ant-divider-vertical audit-result-actions-divider"
+            class="ant-divider ant-divider-vertical audit-result-actions-divider"
             role="separator"
           />
         </div>
@@ -573,7 +573,7 @@ exports[`test AuditDetail/SqlFileStatementOverview should match snapshot 2`] = `
           class="ant-space-item"
         >
           <button
-            class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default ant-btn-sm basic-button-wrapper css-geipcv"
+            class="ant-btn ant-btn-default ant-btn-sm basic-button-wrapper css-geipcv"
             type="button"
           >
             <span
@@ -591,7 +591,7 @@ exports[`test AuditDetail/SqlFileStatementOverview should match snapshot 2`] = `
               </svg>
             </span>
             <div
-              class="ant-space css-dev-only-do-not-override-674gwq ant-space-horizontal ant-space-align-center"
+              class="ant-space ant-space-horizontal ant-space-align-center"
             >
               <div
                 class="ant-space-item"
@@ -628,10 +628,10 @@ exports[`test AuditDetail/SqlFileStatementOverview should match snapshot 2`] = `
       class="css-1r1dawj"
     >
       <div
-        class="ant-table-wrapper actiontech-table-namespace table-row-cursor css-fxd6ka css-dev-only-do-not-override-bj9uhl"
+        class="ant-table-wrapper actiontech-table-namespace table-row-cursor css-fxd6ka"
       >
         <div
-          class="ant-spin-nested-loading css-dev-only-do-not-override-bj9uhl"
+          class="ant-spin-nested-loading"
         >
           <div
             class="ant-spin-container"
@@ -745,7 +745,7 @@ exports[`test AuditDetail/SqlFileStatementOverview should match snapshot 2`] = `
                             class="actiontech-sql-snippet-renderer-wrapper css-dz7fl9"
                           >
                             <div
-                              class="ant-typography ant-typography-ellipsis ant-typography-single-line ant-typography-ellipsis-single-line margin-bottom-0 css-dev-only-do-not-override-bj9uhl"
+                              class="ant-typography ant-typography-ellipsis ant-typography-single-line ant-typography-ellipsis-single-line margin-bottom-0"
                             >
                               <span>
                                 <span
@@ -794,7 +794,7 @@ exports[`test AuditDetail/SqlFileStatementOverview should match snapshot 2`] = `
                             class="audit-result-wrapper"
                           >
                             <div
-                              class="ant-space css-dev-only-do-not-override-bj9uhl ant-space-horizontal ant-space-align-center"
+                              class="ant-space ant-space-horizontal ant-space-align-center"
                             >
                               <div
                                 class="ant-space-item"
@@ -818,7 +818,7 @@ exports[`test AuditDetail/SqlFileStatementOverview should match snapshot 2`] = `
                           class="ant-table-cell exec-status-column"
                         >
                           <span
-                            class="ant-tag ant-tag-default ant-tag-borderless basic-tag-wrapper basic-large-tag-wrapper css-1mjwlcb css-dev-only-do-not-override-bj9uhl"
+                            class="ant-tag ant-tag-default ant-tag-borderless basic-tag-wrapper basic-large-tag-wrapper css-1mjwlcb"
                           >
                             准备执行
                           </span>
@@ -830,7 +830,7 @@ exports[`test AuditDetail/SqlFileStatementOverview should match snapshot 2`] = `
               </div>
             </div>
             <ul
-              class="ant-pagination ant-table-pagination ant-table-pagination-right actiontech-table-pagination actiontech-table-pagination-fixed css-dev-only-do-not-override-bj9uhl"
+              class="ant-pagination ant-table-pagination ant-table-pagination-right actiontech-table-pagination actiontech-table-pagination-fixed"
             >
               <li
                 class="ant-pagination-total-text"
@@ -842,7 +842,7 @@ exports[`test AuditDetail/SqlFileStatementOverview should match snapshot 2`] = `
               <li
                 aria-disabled="true"
                 class="ant-pagination-prev ant-pagination-disabled"
-                title="Previous Page"
+                title="上一页"
               >
                 <button
                   class="ant-pagination-item-link"
@@ -885,7 +885,7 @@ exports[`test AuditDetail/SqlFileStatementOverview should match snapshot 2`] = `
               <li
                 aria-disabled="true"
                 class="ant-pagination-next ant-pagination-disabled"
-                title="Next Page"
+                title="下一页"
               >
                 <button
                   class="ant-pagination-item-link"
@@ -918,8 +918,8 @@ exports[`test AuditDetail/SqlFileStatementOverview should match snapshot 2`] = `
                 class="ant-pagination-options"
               >
                 <div
-                  aria-label="Page Size"
-                  class="ant-select ant-pagination-options-size-changer css-dev-only-do-not-override-bj9uhl ant-select-single ant-select-show-arrow ant-select-show-search"
+                  aria-label="页码"
+                  class="ant-select ant-pagination-options-size-changer ant-select-single ant-select-show-arrow ant-select-show-search"
                 >
                   <div
                     class="ant-select-selector"
@@ -933,7 +933,7 @@ exports[`test AuditDetail/SqlFileStatementOverview should match snapshot 2`] = `
                         aria-controls="rc_select_TEST_OR_SSR_list"
                         aria-expanded="false"
                         aria-haspopup="listbox"
-                        aria-label="Page Size"
+                        aria-label="页码"
                         aria-owns="rc_select_TEST_OR_SSR_list"
                         autocomplete="off"
                         class="ant-select-selection-search-input"
@@ -945,9 +945,9 @@ exports[`test AuditDetail/SqlFileStatementOverview should match snapshot 2`] = `
                     </span>
                     <span
                       class="ant-select-selection-item"
-                      title="20 / page"
+                      title="20 条/页"
                     >
-                      20 / page
+                      20 条/页
                     </span>
                   </div>
                   <span

@@ -13,7 +13,7 @@ exports[`test AuditResultStep render switch backup policy button 1`] = `
           href="/sqle/project/700300/exec-workflow"
         >
           <button
-            class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default basic-button-wrapper css-geipcv"
+            class="ant-btn ant-btn-default basic-button-wrapper css-geipcv"
             type="button"
           >
             <span
@@ -41,14 +41,14 @@ exports[`test AuditResultStep render switch backup policy button 1`] = `
         class="extra"
       >
         <div
-          class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+          class="ant-space ant-space-horizontal ant-space-align-center"
         >
           <div
             class="ant-space-item"
             style="margin-right: 8px;"
           >
             <button
-              class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default basic-button-wrapper css-geipcv"
+              class="ant-btn ant-btn-default basic-button-wrapper css-geipcv"
               type="button"
             >
               <span>
@@ -60,7 +60,7 @@ exports[`test AuditResultStep render switch backup policy button 1`] = `
             class="ant-space-item"
           >
             <button
-              class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary basic-button-wrapper css-geipcv"
+              class="ant-btn ant-btn-primary basic-button-wrapper css-geipcv"
               type="button"
             >
               <span>
@@ -72,10 +72,10 @@ exports[`test AuditResultStep render switch backup policy button 1`] = `
       </div>
     </div>
     <div
-      class=" css-sjztq0"
+      class="css-sjztq0"
     >
       <div
-        class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center workflow-base-info-title"
+        class="ant-space ant-space-horizontal ant-space-align-center workflow-base-info-title"
       >
         <div
           class="ant-space-item"
@@ -97,10 +97,10 @@ exports[`test AuditResultStep render switch backup policy button 1`] = `
       class="css-avbjmz"
     >
       <div
-        class="ant-row ant-row-space-between css-156vlto css-dev-only-do-not-override-txh9fw"
+        class="ant-row ant-row-space-between css-156vlto"
       >
         <div
-          class="ant-segmented basic-segmented-wrapper css-192b3m1 css-dev-only-do-not-override-txh9fw"
+          class="ant-segmented basic-segmented-wrapper css-192b3m1"
         >
           <div
             class="ant-segmented-group"
@@ -182,7 +182,7 @@ exports[`test AuditResultStep render switch backup policy button 1`] = `
           </div>
         </div>
         <div
-          class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+          class="ant-space ant-space-horizontal ant-space-align-center"
         >
           <div
             class="ant-space-item"
@@ -203,7 +203,7 @@ exports[`test AuditResultStep render switch backup policy button 1`] = `
             style="margin-right: 4px;"
           >
             <div
-              class="ant-divider css-dev-only-do-not-override-txh9fw ant-divider-vertical"
+              class="ant-divider ant-divider-vertical"
               role="separator"
               style="height: 28px;"
             />
@@ -212,7 +212,7 @@ exports[`test AuditResultStep render switch backup policy button 1`] = `
             class="ant-space-item"
           >
             <button
-              class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default ant-btn-sm basic-button-wrapper css-geipcv"
+              class="ant-btn ant-btn-default ant-btn-sm basic-button-wrapper css-geipcv"
               type="button"
             >
               <span
@@ -230,7 +230,7 @@ exports[`test AuditResultStep render switch backup policy button 1`] = `
                 </svg>
               </span>
               <div
-                class="ant-space css-dev-only-do-not-override-674gwq ant-space-horizontal ant-space-align-center"
+                class="ant-space ant-space-horizontal ant-space-align-center"
               >
                 <div
                   class="ant-space-item"
@@ -296,7 +296,7 @@ exports[`test AuditResultStep render switch backup policy button 1`] = `
           </div>
         </div>
         <div
-          class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center audit-result-info"
+          class="ant-space ant-space-horizontal ant-space-align-center audit-result-info"
         >
           <div
             class="ant-space-item"
@@ -358,16 +358,16 @@ exports[`test AuditResultStep render switch backup policy button 1`] = `
         </div>
       </div>
       <div
-        class="ant-table-wrapper actiontech-table-namespace css-fxd6ka css-dev-only-do-not-override-bj9uhl"
+        class="ant-table-wrapper actiontech-table-namespace css-fxd6ka"
       >
         <div
-          class="ant-spin-nested-loading css-dev-only-do-not-override-bj9uhl"
+          class="ant-spin-nested-loading"
         >
           <div>
             <div
               aria-busy="true"
               aria-live="polite"
-              class="ant-spin ant-spin-spinning css-dev-only-do-not-override-bj9uhl"
+              class="ant-spin ant-spin-spinning"
             >
               <span
                 class="ant-spin-dot ant-spin-dot-spin"
@@ -442,7 +442,7 @@ exports[`test AuditResultStep render switch backup policy button 1`] = `
                           scope="col"
                         >
                           <div
-                            class="ant-space css-dev-only-do-not-override-bj9uhl ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
+                            class="ant-space ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
                           >
                             <div
                               class="ant-space-item"
@@ -595,7 +595,7 @@ exports[`test AuditResultStep render switch data source backup policy 1`] = `
           href="/sqle/project/700300/exec-workflow"
         >
           <button
-            class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default basic-button-wrapper css-geipcv"
+            class="ant-btn ant-btn-default basic-button-wrapper css-geipcv"
             type="button"
           >
             <span
@@ -623,14 +623,14 @@ exports[`test AuditResultStep render switch data source backup policy 1`] = `
         class="extra"
       >
         <div
-          class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+          class="ant-space ant-space-horizontal ant-space-align-center"
         >
           <div
             class="ant-space-item"
             style="margin-right: 8px;"
           >
             <button
-              class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default basic-button-wrapper css-geipcv"
+              class="ant-btn ant-btn-default basic-button-wrapper css-geipcv"
               type="button"
             >
               <span>
@@ -642,7 +642,7 @@ exports[`test AuditResultStep render switch data source backup policy 1`] = `
             class="ant-space-item"
           >
             <button
-              class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary basic-button-wrapper css-geipcv"
+              class="ant-btn ant-btn-primary basic-button-wrapper css-geipcv"
               type="button"
             >
               <span>
@@ -654,10 +654,10 @@ exports[`test AuditResultStep render switch data source backup policy 1`] = `
       </div>
     </div>
     <div
-      class=" css-sjztq0"
+      class="css-sjztq0"
     >
       <div
-        class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center workflow-base-info-title"
+        class="ant-space ant-space-horizontal ant-space-align-center workflow-base-info-title"
       >
         <div
           class="ant-space-item"
@@ -679,10 +679,10 @@ exports[`test AuditResultStep render switch data source backup policy 1`] = `
       class="css-avbjmz"
     >
       <div
-        class="ant-row ant-row-space-between css-156vlto css-dev-only-do-not-override-txh9fw"
+        class="ant-row ant-row-space-between css-156vlto"
       >
         <div
-          class="ant-segmented basic-segmented-wrapper css-192b3m1 css-dev-only-do-not-override-txh9fw"
+          class="ant-segmented basic-segmented-wrapper css-192b3m1"
         >
           <div
             class="ant-segmented-group"
@@ -764,14 +764,14 @@ exports[`test AuditResultStep render switch data source backup policy 1`] = `
           </div>
         </div>
         <div
-          class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+          class="ant-space ant-space-horizontal ant-space-align-center"
         >
           <div
             class="ant-space-item"
             style="margin-right: 4px;"
           >
             <button
-              class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default basic-button-wrapper css-geipcv"
+              class="ant-btn ant-btn-default basic-button-wrapper css-geipcv"
               type="button"
             >
               <span>
@@ -779,7 +779,7 @@ exports[`test AuditResultStep render switch data source backup policy 1`] = `
               </span>
             </button>
             <div
-              class="ant-divider css-dev-only-do-not-override-txh9fw ant-divider-vertical"
+              class="ant-divider ant-divider-vertical"
               role="separator"
               style="height: 28px;"
             />
@@ -799,7 +799,7 @@ exports[`test AuditResultStep render switch data source backup policy 1`] = `
             style="margin-right: 4px;"
           >
             <div
-              class="ant-divider css-dev-only-do-not-override-txh9fw ant-divider-vertical"
+              class="ant-divider ant-divider-vertical"
               role="separator"
               style="height: 28px;"
             />
@@ -808,7 +808,7 @@ exports[`test AuditResultStep render switch data source backup policy 1`] = `
             class="ant-space-item"
           >
             <button
-              class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default ant-btn-sm basic-button-wrapper css-geipcv"
+              class="ant-btn ant-btn-default ant-btn-sm basic-button-wrapper css-geipcv"
               type="button"
             >
               <span
@@ -826,7 +826,7 @@ exports[`test AuditResultStep render switch data source backup policy 1`] = `
                 </svg>
               </span>
               <div
-                class="ant-space css-dev-only-do-not-override-674gwq ant-space-horizontal ant-space-align-center"
+                class="ant-space ant-space-horizontal ant-space-align-center"
               >
                 <div
                   class="ant-space-item"
@@ -892,7 +892,7 @@ exports[`test AuditResultStep render switch data source backup policy 1`] = `
           </div>
         </div>
         <div
-          class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center audit-result-info"
+          class="ant-space ant-space-horizontal ant-space-align-center audit-result-info"
         >
           <div
             class="ant-space-item"
@@ -954,10 +954,10 @@ exports[`test AuditResultStep render switch data source backup policy 1`] = `
         </div>
       </div>
       <div
-        class="ant-table-wrapper actiontech-table-namespace css-fxd6ka css-dev-only-do-not-override-bj9uhl"
+        class="ant-table-wrapper actiontech-table-namespace css-fxd6ka"
       >
         <div
-          class="ant-spin-nested-loading css-dev-only-do-not-override-bj9uhl"
+          class="ant-spin-nested-loading"
         >
           <div
             class="ant-spin-container"
@@ -1014,7 +1014,7 @@ exports[`test AuditResultStep render switch data source backup policy 1`] = `
                           scope="col"
                         >
                           <div
-                            class="ant-space css-dev-only-do-not-override-bj9uhl ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
+                            class="ant-space ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
                           >
                             <div
                               class="ant-space-item"
@@ -1144,7 +1144,7 @@ exports[`test AuditResultStep render switch data source backup policy 1`] = `
                             class="actiontech-sql-snippet-renderer-wrapper css-dz7fl9"
                           >
                             <div
-                              class="ant-typography ant-typography-ellipsis ant-typography-single-line ant-typography-ellipsis-single-line margin-bottom-0 css-dev-only-do-not-override-bj9uhl"
+                              class="ant-typography ant-typography-ellipsis ant-typography-single-line ant-typography-ellipsis-single-line margin-bottom-0"
                             >
                               <span>
                                 <span
@@ -1191,7 +1191,7 @@ exports[`test AuditResultStep render switch data source backup policy 1`] = `
                         >
                           <div>
                             <div
-                              class="ant-space css-dev-only-do-not-override-bj9uhl ant-space-horizontal ant-space-align-center"
+                              class="ant-space ant-space-horizontal ant-space-align-center"
                             >
                               <div
                                 class="ant-space-item"
@@ -1220,7 +1220,7 @@ exports[`test AuditResultStep render switch data source backup policy 1`] = `
                           class="ant-table-cell audit-result-describe-column"
                         >
                           <button
-                            class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm basic-button-wrapper css-geipcv"
+                            class="ant-btn ant-btn-default ant-btn-sm basic-button-wrapper css-geipcv"
                             type="button"
                           >
                             <span>
@@ -1236,14 +1236,14 @@ exports[`test AuditResultStep render switch data source backup policy 1`] = `
                             class="css-new95e"
                           >
                             <div
-                              class="ant-space css-dev-only-do-not-override-bj9uhl ant-space-horizontal ant-space-align-center"
+                              class="ant-space ant-space-horizontal ant-space-align-center"
                             >
                               <div
                                 class="ant-space-item"
                                 style="margin-right: 8px;"
                               >
                                 <button
-                                  class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                  class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
                                   type="button"
                                 >
                                   <span>
@@ -1256,7 +1256,7 @@ exports[`test AuditResultStep render switch data source backup policy 1`] = `
                                 style="margin-right: 8px;"
                               >
                                 <button
-                                  class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                  class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
                                   type="button"
                                 >
                                   <span>
@@ -1268,7 +1268,7 @@ exports[`test AuditResultStep render switch data source backup policy 1`] = `
                                 class="ant-space-item"
                               >
                                 <button
-                                  class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                  class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
                                   type="button"
                                 >
                                   <span
@@ -1301,7 +1301,7 @@ exports[`test AuditResultStep render switch data source backup policy 1`] = `
               </div>
             </div>
             <ul
-              class="ant-pagination ant-table-pagination ant-table-pagination-right actiontech-table-pagination actiontech-table-pagination-fixed css-dev-only-do-not-override-bj9uhl"
+              class="ant-pagination ant-table-pagination ant-table-pagination-right actiontech-table-pagination actiontech-table-pagination-fixed"
             >
               <li
                 class="ant-pagination-total-text"
@@ -1313,7 +1313,7 @@ exports[`test AuditResultStep render switch data source backup policy 1`] = `
               <li
                 aria-disabled="true"
                 class="ant-pagination-prev ant-pagination-disabled"
-                title="Previous Page"
+                title="上一页"
               >
                 <button
                   class="ant-pagination-item-link"
@@ -1356,7 +1356,7 @@ exports[`test AuditResultStep render switch data source backup policy 1`] = `
               <li
                 aria-disabled="true"
                 class="ant-pagination-next ant-pagination-disabled"
-                title="Next Page"
+                title="下一页"
               >
                 <button
                   class="ant-pagination-item-link"
@@ -1389,8 +1389,8 @@ exports[`test AuditResultStep render switch data source backup policy 1`] = `
                 class="ant-pagination-options"
               >
                 <div
-                  aria-label="Page Size"
-                  class="ant-select ant-pagination-options-size-changer css-dev-only-do-not-override-bj9uhl ant-select-single ant-select-show-arrow ant-select-show-search"
+                  aria-label="页码"
+                  class="ant-select ant-pagination-options-size-changer ant-select-single ant-select-show-arrow ant-select-show-search"
                 >
                   <div
                     class="ant-select-selector"
@@ -1404,7 +1404,7 @@ exports[`test AuditResultStep render switch data source backup policy 1`] = `
                         aria-controls="rc_select_TEST_OR_SSR_list"
                         aria-expanded="false"
                         aria-haspopup="listbox"
-                        aria-label="Page Size"
+                        aria-label="页码"
                         aria-owns="rc_select_TEST_OR_SSR_list"
                         autocomplete="off"
                         class="ant-select-selection-search-input"
@@ -1416,9 +1416,9 @@ exports[`test AuditResultStep render switch data source backup policy 1`] = `
                     </span>
                     <span
                       class="ant-select-selection-item"
-                      title="20 / page"
+                      title="20 条/页"
                     >
-                      20 / page
+                      20 条/页
                     </span>
                   </div>
                   <span
@@ -1457,7 +1457,7 @@ exports[`test AuditResultStep render switch data source backup policy 1`] = `
   </div>
   <div>
     <div
-      class="ant-modal-root css-dev-only-do-not-override-txh9fw"
+      class="ant-modal-root"
     >
       <div
         class="ant-modal-mask"
@@ -1469,7 +1469,7 @@ exports[`test AuditResultStep render switch data source backup policy 1`] = `
         <div
           aria-labelledby="test-id"
           aria-modal="true"
-          class="ant-modal css-dev-only-do-not-override-txh9fw basic-modal-wrapper css-vvpsbb ant-zoom-appear ant-zoom-appear-prepare ant-zoom"
+          class="ant-modal basic-modal-wrapper css-vvpsbb ant-zoom-appear ant-zoom-appear-prepare ant-zoom"
           role="dialog"
           style="width: 480px; transform-origin: NaNpx NaNpx;"
         >
@@ -1495,14 +1495,14 @@ exports[`test AuditResultStep render switch data source backup policy 1`] = `
               class="ant-modal-body"
             >
               <div
-                class="ant-space css-dev-only-do-not-override-txh9fw ant-space-vertical full-width-element"
+                class="ant-space ant-space-vertical full-width-element"
               >
                 <div
                   class="ant-space-item"
                   style="margin-bottom: 8px;"
                 >
                   <span
-                    class="ant-typography ant-typography-secondary css-dev-only-do-not-override-txh9fw"
+                    class="ant-typography ant-typography-secondary"
                   >
                     统一变更当前数据源上SQL的备份回滚策略为
                   </span>
@@ -1511,16 +1511,16 @@ exports[`test AuditResultStep render switch data source backup policy 1`] = `
                   class="ant-space-item"
                 >
                   <form
-                    class="ant-form ant-form-vertical css-dev-only-do-not-override-txh9fw"
+                    class="ant-form ant-form-vertical"
                   >
                     <div
-                      class="ant-form-item css-dev-only-do-not-override-txh9fw"
+                      class="ant-form-item"
                     >
                       <div
-                        class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                        class="ant-row ant-form-item-row"
                       >
                         <div
-                          class="ant-col ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                          class="ant-col ant-form-item-control"
                         >
                           <div
                             class="ant-form-item-control-input"
@@ -1530,7 +1530,7 @@ exports[`test AuditResultStep render switch data source backup policy 1`] = `
                             >
                               <div
                                 aria-required="true"
-                                class="ant-select ant-select-in-form-item basic-select-wrapper css-iy4o4x css-dev-only-do-not-override-v9sov3 ant-select-single ant-select-show-arrow"
+                                class="ant-select ant-select-in-form-item basic-select-wrapper css-iy4o4x ant-select-single ant-select-show-arrow"
                               >
                                 <div
                                   class="ant-select-selector"
@@ -1603,7 +1603,7 @@ exports[`test AuditResultStep render switch data source backup policy 1`] = `
               class="ant-modal-footer"
             >
               <button
-                class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default basic-button-wrapper css-geipcv"
+                class="ant-btn ant-btn-default basic-button-wrapper css-geipcv"
                 type="button"
               >
                 <span>
@@ -1611,7 +1611,7 @@ exports[`test AuditResultStep render switch data source backup policy 1`] = `
                 </span>
               </button>
               <button
-                class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary basic-button-wrapper css-geipcv"
+                class="ant-btn ant-btn-primary basic-button-wrapper css-geipcv"
                 type="button"
               >
                 <span>
@@ -1644,7 +1644,7 @@ exports[`test AuditResultStep should match snapshot 1`] = `
         href="/sqle/project/700300/exec-workflow"
       >
         <button
-          class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default basic-button-wrapper css-geipcv"
+          class="ant-btn ant-btn-default basic-button-wrapper css-geipcv"
           type="button"
         >
           <span
@@ -1672,14 +1672,14 @@ exports[`test AuditResultStep should match snapshot 1`] = `
       class="extra"
     >
       <div
-        class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+        class="ant-space ant-space-horizontal ant-space-align-center"
       >
         <div
           class="ant-space-item"
           style="margin-right: 8px;"
         >
           <button
-            class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default basic-button-wrapper css-geipcv"
+            class="ant-btn ant-btn-default basic-button-wrapper css-geipcv"
             type="button"
           >
             <span>
@@ -1691,7 +1691,7 @@ exports[`test AuditResultStep should match snapshot 1`] = `
           class="ant-space-item"
         >
           <button
-            class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary basic-button-wrapper css-geipcv"
+            class="ant-btn ant-btn-primary basic-button-wrapper css-geipcv"
             type="button"
           >
             <span>
@@ -1703,10 +1703,10 @@ exports[`test AuditResultStep should match snapshot 1`] = `
     </div>
   </div>
   <div
-    class=" css-sjztq0"
+    class="css-sjztq0"
   >
     <div
-      class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center workflow-base-info-title"
+      class="ant-space ant-space-horizontal ant-space-align-center workflow-base-info-title"
     >
       <div
         class="ant-space-item"
@@ -1728,10 +1728,10 @@ exports[`test AuditResultStep should match snapshot 1`] = `
     class="css-avbjmz"
   >
     <div
-      class="ant-row ant-row-space-between css-156vlto css-dev-only-do-not-override-txh9fw"
+      class="ant-row ant-row-space-between css-156vlto"
     >
       <div
-        class="ant-segmented basic-segmented-wrapper css-192b3m1 css-dev-only-do-not-override-txh9fw"
+        class="ant-segmented basic-segmented-wrapper css-192b3m1"
       >
         <div
           class="ant-segmented-group"
@@ -1813,14 +1813,14 @@ exports[`test AuditResultStep should match snapshot 1`] = `
         </div>
       </div>
       <div
-        class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+        class="ant-space ant-space-horizontal ant-space-align-center"
       >
         <div
           class="ant-space-item"
           style="margin-right: 4px;"
         >
           <button
-            class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default basic-button-wrapper css-geipcv"
+            class="ant-btn ant-btn-default basic-button-wrapper css-geipcv"
             type="button"
           >
             <span>
@@ -1828,7 +1828,7 @@ exports[`test AuditResultStep should match snapshot 1`] = `
             </span>
           </button>
           <div
-            class="ant-divider css-dev-only-do-not-override-txh9fw ant-divider-vertical"
+            class="ant-divider ant-divider-vertical"
             role="separator"
             style="height: 28px;"
           />
@@ -1848,7 +1848,7 @@ exports[`test AuditResultStep should match snapshot 1`] = `
           style="margin-right: 4px;"
         >
           <div
-            class="ant-divider css-dev-only-do-not-override-txh9fw ant-divider-vertical"
+            class="ant-divider ant-divider-vertical"
             role="separator"
             style="height: 28px;"
           />
@@ -1857,7 +1857,7 @@ exports[`test AuditResultStep should match snapshot 1`] = `
           class="ant-space-item"
         >
           <button
-            class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default ant-btn-sm basic-button-wrapper css-geipcv"
+            class="ant-btn ant-btn-default ant-btn-sm basic-button-wrapper css-geipcv"
             type="button"
           >
             <span
@@ -1875,7 +1875,7 @@ exports[`test AuditResultStep should match snapshot 1`] = `
               </svg>
             </span>
             <div
-              class="ant-space css-dev-only-do-not-override-674gwq ant-space-horizontal ant-space-align-center"
+              class="ant-space ant-space-horizontal ant-space-align-center"
             >
               <div
                 class="ant-space-item"
@@ -1941,7 +1941,7 @@ exports[`test AuditResultStep should match snapshot 1`] = `
         </div>
       </div>
       <div
-        class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center audit-result-info"
+        class="ant-space ant-space-horizontal ant-space-align-center audit-result-info"
       >
         <div
           class="ant-space-item"
@@ -2003,10 +2003,10 @@ exports[`test AuditResultStep should match snapshot 1`] = `
       </div>
     </div>
     <div
-      class="ant-table-wrapper actiontech-table-namespace css-fxd6ka css-dev-only-do-not-override-bj9uhl"
+      class="ant-table-wrapper actiontech-table-namespace css-fxd6ka"
     >
       <div
-        class="ant-spin-nested-loading css-dev-only-do-not-override-bj9uhl"
+        class="ant-spin-nested-loading"
       >
         <div
           class="ant-spin-container"
@@ -2063,7 +2063,7 @@ exports[`test AuditResultStep should match snapshot 1`] = `
                         scope="col"
                       >
                         <div
-                          class="ant-space css-dev-only-do-not-override-bj9uhl ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
+                          class="ant-space ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
                         >
                           <div
                             class="ant-space-item"

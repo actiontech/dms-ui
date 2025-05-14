@@ -3,16 +3,16 @@
 exports[`test DatabaseSelectionItems cloudbeaver navigate should decompress compressionData from searchParams and populate form fields when cloud_beaver redirects to create a work order page 1`] = `
 <div>
   <form
-    class="ant-form ant-form-horizontal css-dev-only-do-not-override-txh9fw"
+    class="ant-form ant-form-horizontal"
   >
     <div
-      class="ant-form-item has-required-style form-item-label-mb-16 css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+      class="ant-form-item has-required-style form-item-label-mb-16 css-1jlm9cy"
     >
       <div
-        class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+        class="ant-row ant-form-item-row"
       >
         <div
-          class="ant-col ant-form-item-label css-dev-only-do-not-override-txh9fw"
+          class="ant-col ant-form-item-label"
         >
           <label
             class=""
@@ -47,7 +47,7 @@ exports[`test DatabaseSelectionItems cloudbeaver navigate should decompress comp
           </label>
         </div>
         <div
-          class="ant-col ant-form-item-control css-dev-only-do-not-override-txh9fw"
+          class="ant-col ant-form-item-control"
         >
           <div
             class="ant-form-item-control-input"
@@ -60,27 +60,27 @@ exports[`test DatabaseSelectionItems cloudbeaver navigate should decompress comp
       </div>
     </div>
     <div
-      class="ant-space css-dev-only-do-not-override-txh9fw ant-space-vertical database-list-item"
+      class="ant-space ant-space-vertical database-list-item"
     >
       <div
         class="ant-space-item"
         style="margin-bottom: 0px;"
       >
         <div
-          class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-start"
+          class="ant-space ant-space-horizontal ant-space-align-start"
         >
           <div
             class="ant-space-item"
             style="margin-right: 12px;"
           >
             <div
-              class="ant-form-item css-15d6abf css-dev-only-do-not-override-txh9fw ant-form-item-has-success"
+              class="ant-form-item css-15d6abf ant-form-item-has-success"
             >
               <div
-                class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                class="ant-row ant-form-item-row"
               >
                 <div
-                  class="ant-col ant-form-item-label css-dev-only-do-not-override-txh9fw"
+                  class="ant-col ant-form-item-label"
                 >
                   <label
                     class="ant-form-item-required"
@@ -89,7 +89,7 @@ exports[`test DatabaseSelectionItems cloudbeaver navigate should decompress comp
                   />
                 </div>
                 <div
-                  class="ant-col ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                  class="ant-col ant-form-item-control"
                 >
                   <div
                     class="ant-form-item-control-input"
@@ -99,7 +99,7 @@ exports[`test DatabaseSelectionItems cloudbeaver navigate should decompress comp
                     >
                       <div
                         aria-required="true"
-                        class="ant-select ant-select-in-form-item ant-select-status-success basic-select-wrapper custom-select-namespace data-source-row-select css-pti5z8 css-dev-only-do-not-override-v9sov3 ant-select-single ant-select-show-arrow ant-select-loading"
+                        class="ant-select ant-select-in-form-item ant-select-status-success basic-select-wrapper custom-select-namespace data-source-row-select css-pti5z8 ant-select-single ant-select-show-arrow ant-select-loading"
                       >
                         <div
                           class="ant-select-selector"
@@ -171,13 +171,13 @@ exports[`test DatabaseSelectionItems cloudbeaver navigate should decompress comp
             style="margin-right: 12px;"
           >
             <div
-              class="ant-form-item css-15d6abf css-dev-only-do-not-override-txh9fw ant-form-item-has-success"
+              class="ant-form-item css-15d6abf ant-form-item-has-success"
             >
               <div
-                class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                class="ant-row ant-form-item-row"
               >
                 <div
-                  class="ant-col ant-form-item-label css-dev-only-do-not-override-txh9fw"
+                  class="ant-col ant-form-item-label"
                 >
                   <label
                     class=""
@@ -186,7 +186,7 @@ exports[`test DatabaseSelectionItems cloudbeaver navigate should decompress comp
                   />
                 </div>
                 <div
-                  class="ant-col ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                  class="ant-col ant-form-item-control"
                 >
                   <div
                     class="ant-form-item-control-input"
@@ -195,7 +195,7 @@ exports[`test DatabaseSelectionItems cloudbeaver navigate should decompress comp
                       class="ant-form-item-control-input-content"
                     >
                       <div
-                        class="ant-select ant-select-in-form-item ant-select-status-success basic-select-wrapper custom-select-namespace data-source-row-select css-pti5z8 css-dev-only-do-not-override-v9sov3 ant-select-single ant-select-allow-clear ant-select-show-arrow"
+                        class="ant-select ant-select-in-form-item ant-select-status-success basic-select-wrapper custom-select-namespace data-source-row-select css-pti5z8 ant-select-single ant-select-allow-clear ant-select-show-arrow"
                       >
                         <div
                           class="ant-select-selector"
@@ -284,7 +284,7 @@ exports[`test DatabaseSelectionItems cloudbeaver navigate should decompress comp
             style="margin-right: 12px;"
           >
             <div
-              class="ant-divider css-dev-only-do-not-override-txh9fw ant-divider-vertical data-source-row-divider"
+              class="ant-divider ant-divider-vertical data-source-row-divider"
               role="separator"
             />
           </div>
@@ -293,7 +293,7 @@ exports[`test DatabaseSelectionItems cloudbeaver navigate should decompress comp
             style="margin-right: 12px;"
           >
             <button
-              class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default ant-btn-icon-only data-source-row-rule-template basic-button-wrapper css-geipcv"
+              class="ant-btn ant-btn-default ant-btn-icon-only data-source-row-rule-template basic-button-wrapper css-geipcv"
               type="button"
             >
               <span
@@ -317,7 +317,7 @@ exports[`test DatabaseSelectionItems cloudbeaver navigate should decompress comp
             class="ant-space-item"
           >
             <button
-              class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default ant-btn-icon-only data-source-row-button data-source-col-delete-button basic-button-wrapper css-geipcv"
+              class="ant-btn ant-btn-default ant-btn-icon-only data-source-row-button data-source-col-delete-button basic-button-wrapper css-geipcv"
               type="button"
             >
               <span
@@ -349,13 +349,13 @@ exports[`test DatabaseSelectionItems cloudbeaver navigate should decompress comp
       </div>
     </div>
     <div
-      class="ant-form-item css-15d6abf css-dev-only-do-not-override-txh9fw"
+      class="ant-form-item css-15d6abf"
     >
       <div
-        class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+        class="ant-row ant-form-item-row"
       >
         <div
-          class="ant-col ant-form-item-label css-dev-only-do-not-override-txh9fw"
+          class="ant-col ant-form-item-label"
         >
           <label
             class=""
@@ -363,7 +363,7 @@ exports[`test DatabaseSelectionItems cloudbeaver navigate should decompress comp
           />
         </div>
         <div
-          class="ant-col ant-form-item-control css-dev-only-do-not-override-txh9fw"
+          class="ant-col ant-form-item-control"
         >
           <div
             class="ant-form-item-control-input"
@@ -372,14 +372,14 @@ exports[`test DatabaseSelectionItems cloudbeaver navigate should decompress comp
               class="ant-form-item-control-input-content"
             >
               <div
-                class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-start"
+                class="ant-space ant-space-horizontal ant-space-align-start"
               >
                 <div
                   class="ant-space-item"
                   style="margin-right: 12px;"
                 >
                   <button
-                    class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary basic-button-wrapper css-geipcv"
+                    class="ant-btn ant-btn-primary basic-button-wrapper css-geipcv"
                     type="button"
                   >
                     <span>
@@ -391,7 +391,7 @@ exports[`test DatabaseSelectionItems cloudbeaver navigate should decompress comp
                   class="ant-space-item"
                 >
                   <button
-                    class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default basic-button-wrapper css-geipcv"
+                    class="ant-btn ant-btn-default basic-button-wrapper css-geipcv"
                     type="button"
                   >
                     <span>
@@ -412,16 +412,16 @@ exports[`test DatabaseSelectionItems cloudbeaver navigate should decompress comp
 exports[`test DatabaseSelectionItems should match snapshot 1`] = `
 <div>
   <form
-    class="ant-form ant-form-horizontal css-dev-only-do-not-override-txh9fw"
+    class="ant-form ant-form-horizontal"
   >
     <div
-      class="ant-form-item has-required-style form-item-label-mb-16 css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+      class="ant-form-item has-required-style form-item-label-mb-16 css-1jlm9cy"
     >
       <div
-        class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+        class="ant-row ant-form-item-row"
       >
         <div
-          class="ant-col ant-form-item-label css-dev-only-do-not-override-txh9fw"
+          class="ant-col ant-form-item-label"
         >
           <label
             class=""
@@ -456,7 +456,7 @@ exports[`test DatabaseSelectionItems should match snapshot 1`] = `
           </label>
         </div>
         <div
-          class="ant-col ant-form-item-control css-dev-only-do-not-override-txh9fw"
+          class="ant-col ant-form-item-control"
         >
           <div
             class="ant-form-item-control-input"
@@ -469,27 +469,27 @@ exports[`test DatabaseSelectionItems should match snapshot 1`] = `
       </div>
     </div>
     <div
-      class="ant-space css-dev-only-do-not-override-txh9fw ant-space-vertical database-list-item"
+      class="ant-space ant-space-vertical database-list-item"
     >
       <div
         class="ant-space-item"
         style="margin-bottom: 0px;"
       >
         <div
-          class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-start"
+          class="ant-space ant-space-horizontal ant-space-align-start"
         >
           <div
             class="ant-space-item"
             style="margin-right: 12px;"
           >
             <div
-              class="ant-form-item css-15d6abf css-dev-only-do-not-override-txh9fw"
+              class="ant-form-item css-15d6abf"
             >
               <div
-                class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                class="ant-row ant-form-item-row"
               >
                 <div
-                  class="ant-col ant-form-item-label css-dev-only-do-not-override-txh9fw"
+                  class="ant-col ant-form-item-label"
                 >
                   <label
                     class="ant-form-item-required"
@@ -498,7 +498,7 @@ exports[`test DatabaseSelectionItems should match snapshot 1`] = `
                   />
                 </div>
                 <div
-                  class="ant-col ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                  class="ant-col ant-form-item-control"
                 >
                   <div
                     class="ant-form-item-control-input"
@@ -508,7 +508,7 @@ exports[`test DatabaseSelectionItems should match snapshot 1`] = `
                     >
                       <div
                         aria-required="true"
-                        class="ant-select ant-select-in-form-item basic-select-wrapper custom-select-namespace data-source-row-select css-pti5z8 css-dev-only-do-not-override-v9sov3 ant-select-single ant-select-show-arrow"
+                        class="ant-select ant-select-in-form-item basic-select-wrapper custom-select-namespace data-source-row-select css-pti5z8 ant-select-single ant-select-show-arrow"
                       >
                         <div
                           class="ant-select-selector"
@@ -606,13 +606,13 @@ exports[`test DatabaseSelectionItems should match snapshot 1`] = `
             style="margin-right: 12px;"
           >
             <div
-              class="ant-form-item css-15d6abf css-dev-only-do-not-override-txh9fw"
+              class="ant-form-item css-15d6abf"
             >
               <div
-                class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                class="ant-row ant-form-item-row"
               >
                 <div
-                  class="ant-col ant-form-item-label css-dev-only-do-not-override-txh9fw"
+                  class="ant-col ant-form-item-label"
                 >
                   <label
                     class=""
@@ -621,7 +621,7 @@ exports[`test DatabaseSelectionItems should match snapshot 1`] = `
                   />
                 </div>
                 <div
-                  class="ant-col ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                  class="ant-col ant-form-item-control"
                 >
                   <div
                     class="ant-form-item-control-input"
@@ -630,7 +630,7 @@ exports[`test DatabaseSelectionItems should match snapshot 1`] = `
                       class="ant-form-item-control-input-content"
                     >
                       <div
-                        class="ant-select ant-select-in-form-item basic-select-wrapper custom-select-namespace data-source-row-select css-pti5z8 css-dev-only-do-not-override-v9sov3 ant-select-single ant-select-allow-clear ant-select-show-arrow ant-select-disabled"
+                        class="ant-select ant-select-in-form-item basic-select-wrapper custom-select-namespace data-source-row-select css-pti5z8 ant-select-single ant-select-allow-clear ant-select-show-arrow ant-select-disabled"
                       >
                         <div
                           class="ant-select-selector"
@@ -728,7 +728,7 @@ exports[`test DatabaseSelectionItems should match snapshot 1`] = `
             style="margin-right: 12px;"
           >
             <div
-              class="ant-divider css-dev-only-do-not-override-txh9fw ant-divider-vertical data-source-row-divider"
+              class="ant-divider ant-divider-vertical data-source-row-divider"
               role="separator"
             />
           </div>
@@ -737,7 +737,7 @@ exports[`test DatabaseSelectionItems should match snapshot 1`] = `
             style="margin-right: 12px;"
           >
             <button
-              class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default ant-btn-icon-only data-source-row-rule-template basic-button-wrapper css-geipcv"
+              class="ant-btn ant-btn-default ant-btn-icon-only data-source-row-rule-template basic-button-wrapper css-geipcv"
               type="button"
             >
               <span
@@ -761,7 +761,7 @@ exports[`test DatabaseSelectionItems should match snapshot 1`] = `
             class="ant-space-item"
           >
             <button
-              class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default ant-btn-icon-only data-source-row-button data-source-col-delete-button basic-button-wrapper css-geipcv"
+              class="ant-btn ant-btn-default ant-btn-icon-only data-source-row-button data-source-col-delete-button basic-button-wrapper css-geipcv"
               type="button"
             >
               <span
@@ -793,13 +793,13 @@ exports[`test DatabaseSelectionItems should match snapshot 1`] = `
       </div>
     </div>
     <div
-      class="ant-form-item css-15d6abf css-dev-only-do-not-override-txh9fw"
+      class="ant-form-item css-15d6abf"
     >
       <div
-        class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+        class="ant-row ant-form-item-row"
       >
         <div
-          class="ant-col ant-form-item-label css-dev-only-do-not-override-txh9fw"
+          class="ant-col ant-form-item-label"
         >
           <label
             class=""
@@ -807,7 +807,7 @@ exports[`test DatabaseSelectionItems should match snapshot 1`] = `
           />
         </div>
         <div
-          class="ant-col ant-form-item-control css-dev-only-do-not-override-txh9fw"
+          class="ant-col ant-form-item-control"
         >
           <div
             class="ant-form-item-control-input"
@@ -816,14 +816,14 @@ exports[`test DatabaseSelectionItems should match snapshot 1`] = `
               class="ant-form-item-control-input-content"
             >
               <div
-                class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-start"
+                class="ant-space ant-space-horizontal ant-space-align-start"
               >
                 <div
                   class="ant-space-item"
                   style="margin-right: 12px;"
                 >
                   <button
-                    class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary basic-button-wrapper css-geipcv"
+                    class="ant-btn ant-btn-primary basic-button-wrapper css-geipcv"
                     type="button"
                   >
                     <span>
@@ -835,7 +835,7 @@ exports[`test DatabaseSelectionItems should match snapshot 1`] = `
                   class="ant-space-item"
                 >
                   <button
-                    class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default basic-button-wrapper css-geipcv"
+                    class="ant-btn ant-btn-default basic-button-wrapper css-geipcv"
                     disabled=""
                     type="button"
                   >
@@ -857,16 +857,16 @@ exports[`test DatabaseSelectionItems should match snapshot 1`] = `
 exports[`test DatabaseSelectionItems should match snapshot when isAssociationVersionMode is truth 1`] = `
 <div>
   <form
-    class="ant-form ant-form-horizontal css-dev-only-do-not-override-txh9fw"
+    class="ant-form ant-form-horizontal"
   >
     <div
-      class="ant-form-item has-required-style form-item-label-mb-16 css-1jlm9cy css-dev-only-do-not-override-txh9fw"
+      class="ant-form-item has-required-style form-item-label-mb-16 css-1jlm9cy"
     >
       <div
-        class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+        class="ant-row ant-form-item-row"
       >
         <div
-          class="ant-col ant-form-item-label css-dev-only-do-not-override-txh9fw"
+          class="ant-col ant-form-item-label"
         >
           <label
             class=""
@@ -901,7 +901,7 @@ exports[`test DatabaseSelectionItems should match snapshot when isAssociationVer
           </label>
         </div>
         <div
-          class="ant-col ant-form-item-control css-dev-only-do-not-override-txh9fw"
+          class="ant-col ant-form-item-control"
         >
           <div
             class="ant-form-item-control-input"
@@ -914,27 +914,27 @@ exports[`test DatabaseSelectionItems should match snapshot when isAssociationVer
       </div>
     </div>
     <div
-      class="ant-space css-dev-only-do-not-override-txh9fw ant-space-vertical database-list-item"
+      class="ant-space ant-space-vertical database-list-item"
     >
       <div
         class="ant-space-item"
         style="margin-bottom: 0px;"
       >
         <div
-          class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-start"
+          class="ant-space ant-space-horizontal ant-space-align-start"
         >
           <div
             class="ant-space-item"
             style="margin-right: 12px;"
           >
             <div
-              class="ant-form-item css-15d6abf css-dev-only-do-not-override-txh9fw"
+              class="ant-form-item css-15d6abf"
             >
               <div
-                class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                class="ant-row ant-form-item-row"
               >
                 <div
-                  class="ant-col ant-form-item-label css-dev-only-do-not-override-txh9fw"
+                  class="ant-col ant-form-item-label"
                 >
                   <label
                     class="ant-form-item-required"
@@ -943,7 +943,7 @@ exports[`test DatabaseSelectionItems should match snapshot when isAssociationVer
                   />
                 </div>
                 <div
-                  class="ant-col ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                  class="ant-col ant-form-item-control"
                 >
                   <div
                     class="ant-form-item-control-input"
@@ -953,7 +953,7 @@ exports[`test DatabaseSelectionItems should match snapshot when isAssociationVer
                     >
                       <div
                         aria-required="true"
-                        class="ant-select ant-select-in-form-item basic-select-wrapper custom-select-namespace data-source-row-select css-pti5z8 css-dev-only-do-not-override-v9sov3 ant-select-single ant-select-show-arrow"
+                        class="ant-select ant-select-in-form-item basic-select-wrapper custom-select-namespace data-source-row-select css-pti5z8 ant-select-single ant-select-show-arrow"
                       >
                         <div
                           class="ant-select-selector"
@@ -1051,13 +1051,13 @@ exports[`test DatabaseSelectionItems should match snapshot when isAssociationVer
             style="margin-right: 12px;"
           >
             <div
-              class="ant-form-item css-15d6abf css-dev-only-do-not-override-txh9fw"
+              class="ant-form-item css-15d6abf"
             >
               <div
-                class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                class="ant-row ant-form-item-row"
               >
                 <div
-                  class="ant-col ant-form-item-label css-dev-only-do-not-override-txh9fw"
+                  class="ant-col ant-form-item-label"
                 >
                   <label
                     class=""
@@ -1066,7 +1066,7 @@ exports[`test DatabaseSelectionItems should match snapshot when isAssociationVer
                   />
                 </div>
                 <div
-                  class="ant-col ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                  class="ant-col ant-form-item-control"
                 >
                   <div
                     class="ant-form-item-control-input"
@@ -1075,7 +1075,7 @@ exports[`test DatabaseSelectionItems should match snapshot when isAssociationVer
                       class="ant-form-item-control-input-content"
                     >
                       <div
-                        class="ant-select ant-select-in-form-item basic-select-wrapper custom-select-namespace data-source-row-select css-pti5z8 css-dev-only-do-not-override-v9sov3 ant-select-single ant-select-allow-clear ant-select-show-arrow ant-select-disabled"
+                        class="ant-select ant-select-in-form-item basic-select-wrapper custom-select-namespace data-source-row-select css-pti5z8 ant-select-single ant-select-allow-clear ant-select-show-arrow ant-select-disabled"
                       >
                         <div
                           class="ant-select-selector"
@@ -1173,7 +1173,7 @@ exports[`test DatabaseSelectionItems should match snapshot when isAssociationVer
             style="margin-right: 12px;"
           >
             <div
-              class="ant-divider css-dev-only-do-not-override-txh9fw ant-divider-vertical data-source-row-divider"
+              class="ant-divider ant-divider-vertical data-source-row-divider"
               role="separator"
             />
           </div>
@@ -1182,7 +1182,7 @@ exports[`test DatabaseSelectionItems should match snapshot when isAssociationVer
             style="margin-right: 12px;"
           >
             <button
-              class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default ant-btn-icon-only data-source-row-rule-template basic-button-wrapper css-geipcv"
+              class="ant-btn ant-btn-default ant-btn-icon-only data-source-row-rule-template basic-button-wrapper css-geipcv"
               type="button"
             >
               <span
@@ -1206,7 +1206,7 @@ exports[`test DatabaseSelectionItems should match snapshot when isAssociationVer
             class="ant-space-item"
           >
             <button
-              class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default ant-btn-icon-only data-source-row-button data-source-col-delete-button basic-button-wrapper css-geipcv"
+              class="ant-btn ant-btn-default ant-btn-icon-only data-source-row-button data-source-col-delete-button basic-button-wrapper css-geipcv"
               type="button"
             >
               <span
@@ -1238,13 +1238,13 @@ exports[`test DatabaseSelectionItems should match snapshot when isAssociationVer
       </div>
     </div>
     <div
-      class="ant-form-item css-15d6abf css-dev-only-do-not-override-txh9fw"
+      class="ant-form-item css-15d6abf"
     >
       <div
-        class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+        class="ant-row ant-form-item-row"
       >
         <div
-          class="ant-col ant-form-item-label css-dev-only-do-not-override-txh9fw"
+          class="ant-col ant-form-item-label"
         >
           <label
             class=""
@@ -1252,7 +1252,7 @@ exports[`test DatabaseSelectionItems should match snapshot when isAssociationVer
           />
         </div>
         <div
-          class="ant-col ant-form-item-control css-dev-only-do-not-override-txh9fw"
+          class="ant-col ant-form-item-control"
         >
           <div
             class="ant-form-item-control-input"
@@ -1261,14 +1261,14 @@ exports[`test DatabaseSelectionItems should match snapshot when isAssociationVer
               class="ant-form-item-control-input-content"
             >
               <div
-                class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-start"
+                class="ant-space ant-space-horizontal ant-space-align-start"
               >
                 <div
                   class="ant-space-item"
                   style="margin-right: 12px;"
                 >
                   <button
-                    class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-primary basic-button-wrapper css-geipcv"
+                    class="ant-btn ant-btn-primary basic-button-wrapper css-geipcv"
                     type="button"
                   >
                     <span>
@@ -1280,7 +1280,7 @@ exports[`test DatabaseSelectionItems should match snapshot when isAssociationVer
                   class="ant-space-item"
                 >
                   <button
-                    class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default basic-button-wrapper css-geipcv"
+                    class="ant-btn ant-btn-default basic-button-wrapper css-geipcv"
                     disabled=""
                     type="button"
                   >

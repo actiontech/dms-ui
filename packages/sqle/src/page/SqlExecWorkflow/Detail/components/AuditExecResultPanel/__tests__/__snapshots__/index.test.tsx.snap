@@ -11,10 +11,10 @@ exports[`test AuditExecResultPanel matches snapshot and selects task on initial 
       审核结果
     </div>
     <div
-      class="ant-row ant-row-space-between css-156vlto css-dev-only-do-not-override-txh9fw"
+      class="ant-row ant-row-space-between css-156vlto"
     >
       <div
-        class="ant-segmented basic-segmented-wrapper css-192b3m1 css-dev-only-do-not-override-txh9fw"
+        class="ant-segmented basic-segmented-wrapper css-192b3m1"
       >
         <div
           class="ant-segmented-group"
@@ -111,19 +111,19 @@ exports[`test AuditExecResultPanel matches snapshot and selects task on initial 
       </div>
       <div>
         <div
-          class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center audit-result-actions-wrap"
+          class="ant-space ant-space-horizontal ant-space-align-center audit-result-actions-wrap"
         >
           <div
             class="ant-space-item"
             style="margin-right: 12px;"
           >
             <button
-              class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default ant-btn-sm ant-btn-two-chinese-chars actiontech-filter-button-namespace basic-button-wrapper css-geipcv"
+              class="ant-btn ant-btn-default ant-btn-sm ant-btn-two-chinese-chars actiontech-filter-button-namespace basic-button-wrapper css-geipcv"
               style="padding: 0px 6px 0px 10px;"
               type="button"
             >
               <div
-                class="ant-space css-dev-only-do-not-override-674gwq ant-space-horizontal ant-space-align-center css-1nt49ug"
+                class="ant-space ant-space-horizontal ant-space-align-center css-1nt49ug"
               >
                 <div
                   class="ant-space-item"
@@ -135,7 +135,7 @@ exports[`test AuditExecResultPanel matches snapshot and selects task on initial 
                   class="ant-space-item"
                 >
                   <svg
-                    color="currrentColor"
+                    color="currentColor"
                     height="14"
                     viewBox="0 0 16 16"
                     width="14"
@@ -155,7 +155,7 @@ exports[`test AuditExecResultPanel matches snapshot and selects task on initial 
             style="margin-right: 12px;"
           >
             <div
-              class="ant-divider css-dev-only-do-not-override-txh9fw ant-divider-vertical audit-result-actions-divider"
+              class="ant-divider ant-divider-vertical audit-result-actions-divider"
               role="separator"
             />
           </div>
@@ -173,7 +173,7 @@ exports[`test AuditExecResultPanel matches snapshot and selects task on initial 
             class="ant-space-item"
           >
             <button
-              class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default ant-btn-sm basic-button-wrapper css-geipcv"
+              class="ant-btn ant-btn-default ant-btn-sm basic-button-wrapper css-geipcv"
               type="button"
             >
               <span
@@ -191,7 +191,7 @@ exports[`test AuditExecResultPanel matches snapshot and selects task on initial 
                 </svg>
               </span>
               <div
-                class="ant-space css-dev-only-do-not-override-674gwq ant-space-horizontal ant-space-align-center"
+                class="ant-space ant-space-horizontal ant-space-align-center"
               >
                 <div
                   class="ant-space-item"
@@ -224,11 +224,11 @@ exports[`test AuditExecResultPanel matches snapshot and selects task on initial 
           </div>
         </div>
         <button
-          class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default ant-btn-sm basic-button-wrapper css-geipcv"
+          class="ant-btn ant-btn-default ant-btn-sm basic-button-wrapper css-geipcv"
           type="button"
         >
           <div
-            class="ant-space css-dev-only-do-not-override-674gwq ant-space-horizontal ant-space-align-center"
+            class="ant-space ant-space-horizontal ant-space-align-center"
           >
             <div
               class="ant-space-item"
@@ -338,7 +338,7 @@ exports[`test AuditExecResultPanel matches snapshot and selects task on initial 
         </div>
       </div>
       <div
-        class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center audit-result-info"
+        class="ant-space ant-space-horizontal ant-space-align-center audit-result-info"
       >
         <div
           class="ant-space-item"
@@ -403,16 +403,16 @@ exports[`test AuditExecResultPanel matches snapshot and selects task on initial 
       class="task-result-pagination-list sql-mode-task-result-pagination-list css-wd7bz1"
     >
       <div
-        class="ant-list ant-list-vertical ant-list-loading ant-list-something-after-last-item css-dev-only-do-not-override-txh9fw"
+        class="ant-list ant-list-vertical ant-list-loading ant-list-something-after-last-item"
       >
         <div
-          class="ant-spin-nested-loading css-dev-only-do-not-override-txh9fw"
+          class="ant-spin-nested-loading"
         >
           <div>
             <div
               aria-busy="true"
               aria-live="polite"
-              class="ant-spin ant-spin-spinning css-dev-only-do-not-override-txh9fw"
+              class="ant-spin ant-spin-spinning"
             >
               <span
                 class="ant-spin-dot ant-spin-dot-spin"
@@ -444,7 +444,7 @@ exports[`test AuditExecResultPanel matches snapshot and selects task on initial 
           class="ant-list-pagination ant-list-pagination-align-end"
         >
           <ul
-            class="ant-pagination task-result-pagination-list css-dev-only-do-not-override-txh9fw"
+            class="ant-pagination task-result-pagination-list"
           >
             <li
               class="ant-pagination-total-text"
@@ -456,7 +456,7 @@ exports[`test AuditExecResultPanel matches snapshot and selects task on initial 
             <li
               aria-disabled="true"
               class="ant-pagination-prev ant-pagination-disabled"
-              title="Previous Page"
+              title="上一页"
             >
               <button
                 class="ant-pagination-item-link"
@@ -499,7 +499,7 @@ exports[`test AuditExecResultPanel matches snapshot and selects task on initial 
             <li
               aria-disabled="true"
               class="ant-pagination-next ant-pagination-disabled"
-              title="Next Page"
+              title="下一页"
             >
               <button
                 class="ant-pagination-item-link"
@@ -532,8 +532,8 @@ exports[`test AuditExecResultPanel matches snapshot and selects task on initial 
               class="ant-pagination-options"
             >
               <div
-                aria-label="Page Size"
-                class="ant-select ant-pagination-options-size-changer css-dev-only-do-not-override-txh9fw ant-select-single ant-select-show-arrow ant-select-show-search"
+                aria-label="页码"
+                class="ant-select ant-pagination-options-size-changer ant-select-single ant-select-show-arrow ant-select-show-search"
               >
                 <div
                   class="ant-select-selector"
@@ -547,7 +547,7 @@ exports[`test AuditExecResultPanel matches snapshot and selects task on initial 
                       aria-controls="rc_select_TEST_OR_SSR_list"
                       aria-expanded="false"
                       aria-haspopup="listbox"
-                      aria-label="Page Size"
+                      aria-label="页码"
                       aria-owns="rc_select_TEST_OR_SSR_list"
                       autocomplete="off"
                       class="ant-select-selection-search-input"
@@ -559,9 +559,9 @@ exports[`test AuditExecResultPanel matches snapshot and selects task on initial 
                   </span>
                   <span
                     class="ant-select-selection-item"
-                    title="20 / page"
+                    title="20 条/页"
                   >
-                    20 / page
+                    20 条/页
                   </span>
                 </div>
                 <span
@@ -611,10 +611,10 @@ exports[`test AuditExecResultPanel matches snapshot and selects task on initial 
       审核结果
     </div>
     <div
-      class="ant-row ant-row-space-between css-156vlto css-dev-only-do-not-override-txh9fw"
+      class="ant-row ant-row-space-between css-156vlto"
     >
       <div
-        class="ant-segmented basic-segmented-wrapper css-192b3m1 css-dev-only-do-not-override-txh9fw"
+        class="ant-segmented basic-segmented-wrapper css-192b3m1"
       >
         <div
           class="ant-segmented-group"
@@ -711,19 +711,19 @@ exports[`test AuditExecResultPanel matches snapshot and selects task on initial 
       </div>
       <div>
         <div
-          class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center audit-result-actions-wrap"
+          class="ant-space ant-space-horizontal ant-space-align-center audit-result-actions-wrap"
         >
           <div
             class="ant-space-item"
             style="margin-right: 12px;"
           >
             <button
-              class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default ant-btn-sm ant-btn-two-chinese-chars actiontech-filter-button-namespace basic-button-wrapper css-geipcv"
+              class="ant-btn ant-btn-default ant-btn-sm ant-btn-two-chinese-chars actiontech-filter-button-namespace basic-button-wrapper css-geipcv"
               style="padding: 0px 6px 0px 10px;"
               type="button"
             >
               <div
-                class="ant-space css-dev-only-do-not-override-674gwq ant-space-horizontal ant-space-align-center css-1nt49ug"
+                class="ant-space ant-space-horizontal ant-space-align-center css-1nt49ug"
               >
                 <div
                   class="ant-space-item"
@@ -735,7 +735,7 @@ exports[`test AuditExecResultPanel matches snapshot and selects task on initial 
                   class="ant-space-item"
                 >
                   <svg
-                    color="currrentColor"
+                    color="currentColor"
                     height="14"
                     viewBox="0 0 16 16"
                     width="14"
@@ -755,7 +755,7 @@ exports[`test AuditExecResultPanel matches snapshot and selects task on initial 
             style="margin-right: 12px;"
           >
             <div
-              class="ant-divider css-dev-only-do-not-override-txh9fw ant-divider-vertical audit-result-actions-divider"
+              class="ant-divider ant-divider-vertical audit-result-actions-divider"
               role="separator"
             />
           </div>
@@ -773,7 +773,7 @@ exports[`test AuditExecResultPanel matches snapshot and selects task on initial 
             class="ant-space-item"
           >
             <button
-              class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default ant-btn-sm basic-button-wrapper css-geipcv"
+              class="ant-btn ant-btn-default ant-btn-sm basic-button-wrapper css-geipcv"
               type="button"
             >
               <span
@@ -791,7 +791,7 @@ exports[`test AuditExecResultPanel matches snapshot and selects task on initial 
                 </svg>
               </span>
               <div
-                class="ant-space css-dev-only-do-not-override-674gwq ant-space-horizontal ant-space-align-center"
+                class="ant-space ant-space-horizontal ant-space-align-center"
               >
                 <div
                   class="ant-space-item"
@@ -824,11 +824,11 @@ exports[`test AuditExecResultPanel matches snapshot and selects task on initial 
           </div>
         </div>
         <button
-          class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default ant-btn-sm basic-button-wrapper css-geipcv"
+          class="ant-btn ant-btn-default ant-btn-sm basic-button-wrapper css-geipcv"
           type="button"
         >
           <div
-            class="ant-space css-dev-only-do-not-override-674gwq ant-space-horizontal ant-space-align-center"
+            class="ant-space ant-space-horizontal ant-space-align-center"
           >
             <div
               class="ant-space-item"
@@ -938,7 +938,7 @@ exports[`test AuditExecResultPanel matches snapshot and selects task on initial 
         </div>
       </div>
       <div
-        class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center audit-result-info"
+        class="ant-space ant-space-horizontal ant-space-align-center audit-result-info"
       >
         <div
           class="ant-space-item"
@@ -1003,10 +1003,10 @@ exports[`test AuditExecResultPanel matches snapshot and selects task on initial 
       class="task-result-pagination-list sql-mode-task-result-pagination-list css-wd7bz1"
     >
       <div
-        class="ant-list ant-list-vertical ant-list-something-after-last-item css-dev-only-do-not-override-txh9fw"
+        class="ant-list ant-list-vertical ant-list-something-after-last-item"
       >
         <div
-          class="ant-spin-nested-loading css-dev-only-do-not-override-txh9fw"
+          class="ant-spin-nested-loading"
         >
           <div
             class="ant-spin-container"
@@ -1024,7 +1024,7 @@ exports[`test AuditExecResultPanel matches snapshot and selects task on initial 
                     class="result-card-header"
                   >
                     <div
-                      class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+                      class="ant-space ant-space-horizontal ant-space-align-center"
                     >
                       <div
                         class="ant-space-item"
@@ -1044,22 +1044,22 @@ exports[`test AuditExecResultPanel matches snapshot and selects task on initial 
                           class="result-card-status-wrap"
                         >
                           <span
-                            class="ant-tag ant-tag-default ant-tag-borderless basic-tag-wrapper basic-large-tag-wrapper css-1mjwlcb css-dev-only-do-not-override-txh9fw"
+                            class="ant-tag ant-tag-default ant-tag-borderless basic-tag-wrapper basic-large-tag-wrapper css-1mjwlcb"
                           >
                             准备执行
                           </span>
                           <div
-                            class="ant-divider css-dev-only-do-not-override-txh9fw ant-divider-vertical result-card-status-divider"
+                            class="ant-divider ant-divider-vertical result-card-status-divider"
                             role="separator"
                           />
                           <div
-                            class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+                            class="ant-space ant-space-horizontal ant-space-align-center"
                           >
                             <div
                               class="ant-space-item"
                             >
                               <span
-                                class="ant-tag ant-tag-has-color ant-tag-borderless basic-tag-wrapper basic-large-tag-wrapper css-dfzxkh css-dev-only-do-not-override-txh9fw"
+                                class="ant-tag ant-tag-has-color ant-tag-borderless basic-tag-wrapper basic-large-tag-wrapper css-dfzxkh"
                                 style="background-color: gray;"
                               >
                                 <svg
@@ -1081,14 +1081,14 @@ exports[`test AuditExecResultPanel matches snapshot and selects task on initial 
                       </div>
                     </div>
                     <div
-                      class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+                      class="ant-space ant-space-horizontal ant-space-align-center"
                     >
                       <div
                         class="ant-space-item"
                         style="margin-right: 8px;"
                       >
                         <button
-                          class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default ant-dropdown-trigger basic-button-wrapper css-geipcv"
+                          class="ant-btn ant-btn-default ant-dropdown-trigger basic-button-wrapper css-geipcv"
                           type="button"
                         >
                           <span>
@@ -1113,7 +1113,7 @@ exports[`test AuditExecResultPanel matches snapshot and selects task on initial 
                         style="margin-right: 8px;"
                       >
                         <button
-                          class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default ant-btn-sm basic-button-wrapper css-geipcv"
+                          class="ant-btn ant-btn-default ant-btn-sm basic-button-wrapper css-geipcv"
                           type="button"
                         >
                           <span>
@@ -1125,7 +1125,7 @@ exports[`test AuditExecResultPanel matches snapshot and selects task on initial 
                         class="ant-space-item"
                       >
                         <button
-                          class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default ant-btn-sm basic-button-wrapper css-geipcv"
+                          class="ant-btn ant-btn-default ant-btn-sm basic-button-wrapper css-geipcv"
                           type="button"
                         >
                           <span>
@@ -1145,10 +1145,10 @@ exports[`test AuditExecResultPanel matches snapshot and selects task on initial 
                         class="segmented-tabs-wrapper"
                       >
                         <div
-                          class="ant-row segmented-row-wrapper css-156vlto css-dev-only-do-not-override-txh9fw"
+                          class="ant-row segmented-row-wrapper css-156vlto"
                         >
                           <div
-                            class="ant-segmented basic-segmented-wrapper css-192b3m1 css-dev-only-do-not-override-txh9fw"
+                            class="ant-segmented basic-segmented-wrapper css-192b3m1"
                           >
                             <div
                               class="ant-segmented-group"
@@ -1199,26 +1199,26 @@ exports[`test AuditExecResultPanel matches snapshot and selects task on initial 
                             </div>
                           </div>
                           <div
-                            class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+                            class="ant-space ant-space-horizontal ant-space-align-center"
                           >
                             <div
                               class="ant-space-item"
                               style="margin-right: 0px;"
                             >
                               <div
-                                class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
+                                class="ant-space ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
                               >
                                 <div
                                   class="ant-space-item"
                                 >
                                   <div
-                                    class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+                                    class="ant-space ant-space-horizontal ant-space-align-center"
                                   >
                                     <div
                                       class="ant-space-item"
                                     >
                                       <span
-                                        class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-1mjwlcb css-dev-only-do-not-override-txh9fw"
+                                        class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-1mjwlcb"
                                       >
                                         <svg
                                           color="#4583FF"
@@ -1250,7 +1250,7 @@ exports[`test AuditExecResultPanel matches snapshot and selects task on initial 
                               class="ant-space-item"
                             >
                               <span
-                                class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-1mjwlcb css-dev-only-do-not-override-txh9fw"
+                                class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-1mjwlcb"
                               >
                                 <svg
                                   height="18"
@@ -1311,7 +1311,7 @@ exports[`test AuditExecResultPanel matches snapshot and selects task on initial 
                       </div>
                     </div>
                     <div
-                      class="ant-tree ant-tree-icon-hide ant-tree-unselectable css-ks72ok css-dev-only-do-not-override-txh9fw ant-tree-show-line"
+                      class="ant-tree ant-tree-icon-hide ant-tree-unselectable css-ks72ok ant-tree-show-line"
                       role="tree"
                     >
                       <div>
@@ -1400,7 +1400,7 @@ exports[`test AuditExecResultPanel matches snapshot and selects task on initial 
                     class="result-card-footer"
                   >
                     <div
-                      class="ant-spin-nested-loading css-dev-only-do-not-override-txh9fw"
+                      class="ant-spin-nested-loading"
                     >
                       <div
                         class="ant-spin-container"
@@ -1420,7 +1420,7 @@ exports[`test AuditExecResultPanel matches snapshot and selects task on initial 
                             />
                           </svg>
                           <input
-                            class="ant-input css-dev-only-do-not-override-ywkr0o basic-input-wrapper result-describe-input css-1pd1cd5"
+                            class="ant-input basic-input-wrapper result-describe-input css-1pd1cd5"
                             placeholder="添加说明"
                             type="text"
                             value="test"
@@ -1438,7 +1438,7 @@ exports[`test AuditExecResultPanel matches snapshot and selects task on initial 
           class="ant-list-pagination ant-list-pagination-align-end"
         >
           <ul
-            class="ant-pagination task-result-pagination-list css-dev-only-do-not-override-txh9fw"
+            class="ant-pagination task-result-pagination-list"
           >
             <li
               class="ant-pagination-total-text"
@@ -1450,7 +1450,7 @@ exports[`test AuditExecResultPanel matches snapshot and selects task on initial 
             <li
               aria-disabled="true"
               class="ant-pagination-prev ant-pagination-disabled"
-              title="Previous Page"
+              title="上一页"
             >
               <button
                 class="ant-pagination-item-link"
@@ -1493,7 +1493,7 @@ exports[`test AuditExecResultPanel matches snapshot and selects task on initial 
             <li
               aria-disabled="true"
               class="ant-pagination-next ant-pagination-disabled"
-              title="Next Page"
+              title="下一页"
             >
               <button
                 class="ant-pagination-item-link"
@@ -1526,8 +1526,8 @@ exports[`test AuditExecResultPanel matches snapshot and selects task on initial 
               class="ant-pagination-options"
             >
               <div
-                aria-label="Page Size"
-                class="ant-select ant-pagination-options-size-changer css-dev-only-do-not-override-txh9fw ant-select-single ant-select-show-arrow ant-select-show-search"
+                aria-label="页码"
+                class="ant-select ant-pagination-options-size-changer ant-select-single ant-select-show-arrow ant-select-show-search"
               >
                 <div
                   class="ant-select-selector"
@@ -1541,7 +1541,7 @@ exports[`test AuditExecResultPanel matches snapshot and selects task on initial 
                       aria-controls="rc_select_TEST_OR_SSR_list"
                       aria-expanded="false"
                       aria-haspopup="listbox"
-                      aria-label="Page Size"
+                      aria-label="页码"
                       aria-owns="rc_select_TEST_OR_SSR_list"
                       autocomplete="off"
                       class="ant-select-selection-search-input"
@@ -1553,9 +1553,9 @@ exports[`test AuditExecResultPanel matches snapshot and selects task on initial 
                   </span>
                   <span
                     class="ant-select-selection-item"
-                    title="20 / page"
+                    title="20 条/页"
                   >
-                    20 / page
+                    20 条/页
                   </span>
                 </div>
                 <span
@@ -1605,10 +1605,10 @@ exports[`test AuditExecResultPanel matches snapshot with default setup 1`] = `
       审核结果
     </div>
     <div
-      class="ant-row ant-row-space-between css-156vlto css-dev-only-do-not-override-txh9fw"
+      class="ant-row ant-row-space-between css-156vlto"
     >
       <div
-        class="ant-segmented basic-segmented-wrapper css-192b3m1 css-dev-only-do-not-override-txh9fw"
+        class="ant-segmented basic-segmented-wrapper css-192b3m1"
       >
         <div
           class="ant-segmented-group"
@@ -1707,19 +1707,19 @@ exports[`test AuditExecResultPanel matches snapshot with default setup 1`] = `
         hidden=""
       >
         <div
-          class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center audit-result-actions-wrap"
+          class="ant-space ant-space-horizontal ant-space-align-center audit-result-actions-wrap"
         >
           <div
             class="ant-space-item"
             style="margin-right: 12px;"
           >
             <button
-              class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default ant-btn-sm ant-btn-two-chinese-chars actiontech-filter-button-namespace basic-button-wrapper css-geipcv"
+              class="ant-btn ant-btn-default ant-btn-sm ant-btn-two-chinese-chars actiontech-filter-button-namespace basic-button-wrapper css-geipcv"
               style="padding: 0px 6px 0px 10px;"
               type="button"
             >
               <div
-                class="ant-space css-dev-only-do-not-override-674gwq ant-space-horizontal ant-space-align-center css-1nt49ug"
+                class="ant-space ant-space-horizontal ant-space-align-center css-1nt49ug"
               >
                 <div
                   class="ant-space-item"
@@ -1731,7 +1731,7 @@ exports[`test AuditExecResultPanel matches snapshot with default setup 1`] = `
                   class="ant-space-item"
                 >
                   <svg
-                    color="currrentColor"
+                    color="currentColor"
                     height="14"
                     viewBox="0 0 16 16"
                     width="14"
@@ -1751,7 +1751,7 @@ exports[`test AuditExecResultPanel matches snapshot with default setup 1`] = `
             style="margin-right: 12px;"
           >
             <div
-              class="ant-divider css-dev-only-do-not-override-txh9fw ant-divider-vertical audit-result-actions-divider"
+              class="ant-divider ant-divider-vertical audit-result-actions-divider"
               role="separator"
             />
           </div>
@@ -1769,7 +1769,7 @@ exports[`test AuditExecResultPanel matches snapshot with default setup 1`] = `
             class="ant-space-item"
           >
             <button
-              class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default ant-btn-sm basic-button-wrapper css-geipcv"
+              class="ant-btn ant-btn-default ant-btn-sm basic-button-wrapper css-geipcv"
               type="button"
             >
               <span
@@ -1787,7 +1787,7 @@ exports[`test AuditExecResultPanel matches snapshot with default setup 1`] = `
                 </svg>
               </span>
               <div
-                class="ant-space css-dev-only-do-not-override-674gwq ant-space-horizontal ant-space-align-center"
+                class="ant-space ant-space-horizontal ant-space-align-center"
               >
                 <div
                   class="ant-space-item"
@@ -1820,11 +1820,11 @@ exports[`test AuditExecResultPanel matches snapshot with default setup 1`] = `
           </div>
         </div>
         <button
-          class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default ant-btn-sm basic-button-wrapper css-geipcv"
+          class="ant-btn ant-btn-default ant-btn-sm basic-button-wrapper css-geipcv"
           type="button"
         >
           <div
-            class="ant-space css-dev-only-do-not-override-674gwq ant-space-horizontal ant-space-align-center"
+            class="ant-space ant-space-horizontal ant-space-align-center"
           >
             <div
               class="ant-space-item"
@@ -1877,10 +1877,10 @@ exports[`test AuditExecResultPanel matches snapshot with default setup 1`] = `
       </div>
     </div>
     <div
-      class="ant-table-wrapper actiontech-table-namespace table-row-cursor css-fxd6ka css-dev-only-do-not-override-bj9uhl"
+      class="ant-table-wrapper actiontech-table-namespace table-row-cursor css-fxd6ka"
     >
       <div
-        class="ant-spin-nested-loading css-dev-only-do-not-override-bj9uhl"
+        class="ant-spin-nested-loading"
       >
         <div
           class="ant-spin-container"
@@ -2164,14 +2164,14 @@ exports[`test AuditExecResultPanel matches snapshot with default setup 1`] = `
                           class="css-new95e"
                         >
                           <div
-                            class="ant-space css-dev-only-do-not-override-bj9uhl ant-space-horizontal ant-space-align-center"
+                            class="ant-space ant-space-horizontal ant-space-align-center"
                           >
                             <div
                               class="ant-space-item"
                               style="margin-right: 8px;"
                             >
                               <button
-                                class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm ant-btn-dangerous actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                class="ant-btn ant-btn-default ant-btn-sm ant-btn-dangerous actiontech-table-actions-button basic-button-wrapper css-geipcv"
                                 disabled=""
                                 hidden=""
                                 type="button"
@@ -2186,7 +2186,7 @@ exports[`test AuditExecResultPanel matches snapshot with default setup 1`] = `
                               style="margin-right: 8px;"
                             >
                               <button
-                                class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
                                 disabled=""
                                 hidden=""
                                 type="button"
@@ -2201,7 +2201,7 @@ exports[`test AuditExecResultPanel matches snapshot with default setup 1`] = `
                               style="margin-right: 8px;"
                             >
                               <button
-                                class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
                                 disabled=""
                                 hidden=""
                                 type="button"
@@ -2215,7 +2215,7 @@ exports[`test AuditExecResultPanel matches snapshot with default setup 1`] = `
                               class="ant-space-item"
                             >
                               <button
-                                class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
                                 disabled=""
                                 hidden=""
                                 type="button"
@@ -2313,14 +2313,14 @@ exports[`test AuditExecResultPanel matches snapshot with default setup 1`] = `
                           class="css-new95e"
                         >
                           <div
-                            class="ant-space css-dev-only-do-not-override-bj9uhl ant-space-horizontal ant-space-align-center"
+                            class="ant-space ant-space-horizontal ant-space-align-center"
                           >
                             <div
                               class="ant-space-item"
                               style="margin-right: 8px;"
                             >
                               <button
-                                class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm ant-btn-dangerous actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                class="ant-btn ant-btn-default ant-btn-sm ant-btn-dangerous actiontech-table-actions-button basic-button-wrapper css-geipcv"
                                 disabled=""
                                 hidden=""
                                 type="button"
@@ -2335,7 +2335,7 @@ exports[`test AuditExecResultPanel matches snapshot with default setup 1`] = `
                               style="margin-right: 8px;"
                             >
                               <button
-                                class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
                                 disabled=""
                                 hidden=""
                                 type="button"
@@ -2350,7 +2350,7 @@ exports[`test AuditExecResultPanel matches snapshot with default setup 1`] = `
                               style="margin-right: 8px;"
                             >
                               <button
-                                class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
                                 disabled=""
                                 hidden=""
                                 type="button"
@@ -2364,7 +2364,7 @@ exports[`test AuditExecResultPanel matches snapshot with default setup 1`] = `
                               class="ant-space-item"
                             >
                               <button
-                                class="ant-btn css-dev-only-do-not-override-9n8g17 ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
                                 disabled=""
                                 hidden=""
                                 type="button"
@@ -2401,10 +2401,10 @@ exports[`test AuditExecResultPanel updates layout to waterfall and retrieves tas
       审核结果
     </div>
     <div
-      class="ant-row ant-row-space-between css-156vlto css-dev-only-do-not-override-txh9fw"
+      class="ant-row ant-row-space-between css-156vlto"
     >
       <div
-        class="ant-segmented basic-segmented-wrapper css-192b3m1 css-dev-only-do-not-override-txh9fw"
+        class="ant-segmented basic-segmented-wrapper css-192b3m1"
       >
         <div
           class="ant-segmented-group"
@@ -2501,19 +2501,19 @@ exports[`test AuditExecResultPanel updates layout to waterfall and retrieves tas
       </div>
       <div>
         <div
-          class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center audit-result-actions-wrap"
+          class="ant-space ant-space-horizontal ant-space-align-center audit-result-actions-wrap"
         >
           <div
             class="ant-space-item"
             style="margin-right: 12px;"
           >
             <button
-              class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default ant-btn-sm ant-btn-two-chinese-chars actiontech-filter-button-namespace basic-button-wrapper css-geipcv"
+              class="ant-btn ant-btn-default ant-btn-sm ant-btn-two-chinese-chars actiontech-filter-button-namespace basic-button-wrapper css-geipcv"
               style="padding: 0px 6px 0px 10px;"
               type="button"
             >
               <div
-                class="ant-space css-dev-only-do-not-override-674gwq ant-space-horizontal ant-space-align-center css-1nt49ug"
+                class="ant-space ant-space-horizontal ant-space-align-center css-1nt49ug"
               >
                 <div
                   class="ant-space-item"
@@ -2525,7 +2525,7 @@ exports[`test AuditExecResultPanel updates layout to waterfall and retrieves tas
                   class="ant-space-item"
                 >
                   <svg
-                    color="currrentColor"
+                    color="currentColor"
                     height="14"
                     viewBox="0 0 16 16"
                     width="14"
@@ -2545,7 +2545,7 @@ exports[`test AuditExecResultPanel updates layout to waterfall and retrieves tas
             style="margin-right: 12px;"
           >
             <div
-              class="ant-divider css-dev-only-do-not-override-txh9fw ant-divider-vertical audit-result-actions-divider"
+              class="ant-divider ant-divider-vertical audit-result-actions-divider"
               role="separator"
             />
           </div>
@@ -2563,7 +2563,7 @@ exports[`test AuditExecResultPanel updates layout to waterfall and retrieves tas
             class="ant-space-item"
           >
             <button
-              class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default ant-btn-sm basic-button-wrapper css-geipcv"
+              class="ant-btn ant-btn-default ant-btn-sm basic-button-wrapper css-geipcv"
               type="button"
             >
               <span
@@ -2581,7 +2581,7 @@ exports[`test AuditExecResultPanel updates layout to waterfall and retrieves tas
                 </svg>
               </span>
               <div
-                class="ant-space css-dev-only-do-not-override-674gwq ant-space-horizontal ant-space-align-center"
+                class="ant-space ant-space-horizontal ant-space-align-center"
               >
                 <div
                   class="ant-space-item"
@@ -2614,11 +2614,11 @@ exports[`test AuditExecResultPanel updates layout to waterfall and retrieves tas
           </div>
         </div>
         <button
-          class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default ant-btn-sm basic-button-wrapper css-geipcv"
+          class="ant-btn ant-btn-default ant-btn-sm basic-button-wrapper css-geipcv"
           type="button"
         >
           <div
-            class="ant-space css-dev-only-do-not-override-674gwq ant-space-horizontal ant-space-align-center"
+            class="ant-space ant-space-horizontal ant-space-align-center"
           >
             <div
               class="ant-space-item"
@@ -2728,7 +2728,7 @@ exports[`test AuditExecResultPanel updates layout to waterfall and retrieves tas
         </div>
       </div>
       <div
-        class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center audit-result-info"
+        class="ant-space ant-space-horizontal ant-space-align-center audit-result-info"
       >
         <div
           class="ant-space-item"
@@ -2800,10 +2800,10 @@ exports[`test AuditExecResultPanel updates layout to waterfall and retrieves tas
           style="height: auto; overflow: auto;"
         >
           <div
-            class="ant-list ant-list-vertical css-dev-only-do-not-override-txh9fw"
+            class="ant-list ant-list-vertical"
           >
             <div
-              class="ant-spin-nested-loading css-dev-only-do-not-override-txh9fw"
+              class="ant-spin-nested-loading"
             >
               <div
                 class="ant-spin-container"
@@ -2821,7 +2821,7 @@ exports[`test AuditExecResultPanel updates layout to waterfall and retrieves tas
                         class="result-card-header"
                       >
                         <div
-                          class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+                          class="ant-space ant-space-horizontal ant-space-align-center"
                         >
                           <div
                             class="ant-space-item"
@@ -2841,22 +2841,22 @@ exports[`test AuditExecResultPanel updates layout to waterfall and retrieves tas
                               class="result-card-status-wrap"
                             >
                               <span
-                                class="ant-tag ant-tag-default ant-tag-borderless basic-tag-wrapper basic-large-tag-wrapper css-1mjwlcb css-dev-only-do-not-override-txh9fw"
+                                class="ant-tag ant-tag-default ant-tag-borderless basic-tag-wrapper basic-large-tag-wrapper css-1mjwlcb"
                               >
                                 准备执行
                               </span>
                               <div
-                                class="ant-divider css-dev-only-do-not-override-txh9fw ant-divider-vertical result-card-status-divider"
+                                class="ant-divider ant-divider-vertical result-card-status-divider"
                                 role="separator"
                               />
                               <div
-                                class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+                                class="ant-space ant-space-horizontal ant-space-align-center"
                               >
                                 <div
                                   class="ant-space-item"
                                 >
                                   <span
-                                    class="ant-tag ant-tag-has-color ant-tag-borderless basic-tag-wrapper basic-large-tag-wrapper css-dfzxkh css-dev-only-do-not-override-txh9fw"
+                                    class="ant-tag ant-tag-has-color ant-tag-borderless basic-tag-wrapper basic-large-tag-wrapper css-dfzxkh"
                                     style="background-color: gray;"
                                   >
                                     <svg
@@ -2878,14 +2878,14 @@ exports[`test AuditExecResultPanel updates layout to waterfall and retrieves tas
                           </div>
                         </div>
                         <div
-                          class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+                          class="ant-space ant-space-horizontal ant-space-align-center"
                         >
                           <div
                             class="ant-space-item"
                             style="margin-right: 8px;"
                           >
                             <button
-                              class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default ant-dropdown-trigger basic-button-wrapper css-geipcv"
+                              class="ant-btn ant-btn-default ant-dropdown-trigger basic-button-wrapper css-geipcv"
                               type="button"
                             >
                               <span>
@@ -2910,7 +2910,7 @@ exports[`test AuditExecResultPanel updates layout to waterfall and retrieves tas
                             style="margin-right: 8px;"
                           >
                             <button
-                              class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default ant-btn-sm basic-button-wrapper css-geipcv"
+                              class="ant-btn ant-btn-default ant-btn-sm basic-button-wrapper css-geipcv"
                               type="button"
                             >
                               <span>
@@ -2922,7 +2922,7 @@ exports[`test AuditExecResultPanel updates layout to waterfall and retrieves tas
                             class="ant-space-item"
                           >
                             <button
-                              class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default ant-btn-sm basic-button-wrapper css-geipcv"
+                              class="ant-btn ant-btn-default ant-btn-sm basic-button-wrapper css-geipcv"
                               type="button"
                             >
                               <span>
@@ -2942,10 +2942,10 @@ exports[`test AuditExecResultPanel updates layout to waterfall and retrieves tas
                             class="segmented-tabs-wrapper"
                           >
                             <div
-                              class="ant-row segmented-row-wrapper css-156vlto css-dev-only-do-not-override-txh9fw"
+                              class="ant-row segmented-row-wrapper css-156vlto"
                             >
                               <div
-                                class="ant-segmented basic-segmented-wrapper css-192b3m1 css-dev-only-do-not-override-txh9fw"
+                                class="ant-segmented basic-segmented-wrapper css-192b3m1"
                               >
                                 <div
                                   class="ant-segmented-group"
@@ -2996,26 +2996,26 @@ exports[`test AuditExecResultPanel updates layout to waterfall and retrieves tas
                                 </div>
                               </div>
                               <div
-                                class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+                                class="ant-space ant-space-horizontal ant-space-align-center"
                               >
                                 <div
                                   class="ant-space-item"
                                   style="margin-right: 0px;"
                                 >
                                   <div
-                                    class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
+                                    class="ant-space ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
                                   >
                                     <div
                                       class="ant-space-item"
                                     >
                                       <div
-                                        class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+                                        class="ant-space ant-space-horizontal ant-space-align-center"
                                       >
                                         <div
                                           class="ant-space-item"
                                         >
                                           <span
-                                            class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-1mjwlcb css-dev-only-do-not-override-txh9fw"
+                                            class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-1mjwlcb"
                                           >
                                             <svg
                                               color="#4583FF"
@@ -3047,7 +3047,7 @@ exports[`test AuditExecResultPanel updates layout to waterfall and retrieves tas
                                   class="ant-space-item"
                                 >
                                   <span
-                                    class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-1mjwlcb css-dev-only-do-not-override-txh9fw"
+                                    class="ant-tag ant-tag-default basic-tag-wrapper basic-default-tag-wrapper css-1mjwlcb"
                                   >
                                     <svg
                                       height="18"
@@ -3108,7 +3108,7 @@ exports[`test AuditExecResultPanel updates layout to waterfall and retrieves tas
                           </div>
                         </div>
                         <div
-                          class="ant-tree ant-tree-icon-hide ant-tree-unselectable css-ks72ok css-dev-only-do-not-override-txh9fw ant-tree-show-line"
+                          class="ant-tree ant-tree-icon-hide ant-tree-unselectable css-ks72ok ant-tree-show-line"
                           role="tree"
                         >
                           <div>
@@ -3197,7 +3197,7 @@ exports[`test AuditExecResultPanel updates layout to waterfall and retrieves tas
                         class="result-card-footer"
                       >
                         <div
-                          class="ant-spin-nested-loading css-dev-only-do-not-override-txh9fw"
+                          class="ant-spin-nested-loading"
                         >
                           <div
                             class="ant-spin-container"
@@ -3217,7 +3217,7 @@ exports[`test AuditExecResultPanel updates layout to waterfall and retrieves tas
                                 />
                               </svg>
                               <input
-                                class="ant-input css-dev-only-do-not-override-ywkr0o basic-input-wrapper result-describe-input css-1pd1cd5"
+                                class="ant-input basic-input-wrapper result-describe-input css-1pd1cd5"
                                 placeholder="添加说明"
                                 type="text"
                                 value="test"

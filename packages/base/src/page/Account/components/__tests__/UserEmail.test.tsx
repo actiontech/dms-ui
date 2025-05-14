@@ -1,8 +1,8 @@
-import { renderWithTheme } from '@actiontech/shared/lib/testUtil/customRender';
 import UserEmail from '../UserEmail';
-import { act, fireEvent, screen } from '@testing-library/react';
+import { act, fireEvent } from '@testing-library/react';
 import { getBySelector } from '@actiontech/shared/lib/testUtil/customQuery';
 import account from '../../../../testUtils/mockApi/account';
+import { superRender } from '../../../../testUtils/customRender';
 
 describe('test base/page/Account/UserEmail', () => {
   const updateUserInfoSpy = jest.fn();
@@ -10,7 +10,7 @@ describe('test base/page/Account/UserEmail', () => {
   const messageErrorSpy = jest.fn();
 
   const customRender = (email?: string) => {
-    return renderWithTheme(
+    return superRender(
       <UserEmail
         messageApi={{
           success: messageSuccessSpy,

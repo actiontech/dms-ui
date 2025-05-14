@@ -97,6 +97,11 @@ exports[`test base/hooks/useThemeStyleData should match snapshot 1`] = `
     },
   },
   "sideMenu": {
+    "availabilityZoneSelector": {
+      "dropdown": {
+        "boxShadowColor": "0 6px 16px 0 rgba(0, 0, 0, 0.08), 0 3px 6px -4px rgba(0, 0, 0, 0.12), 0 9px 28px 8px rgba(0, 0, 0, 0.05)",
+      },
+    },
     "projectSelector": {
       "dropdown": {
         "activeIconColor": "#EBAD1C",
@@ -611,6 +616,80 @@ exports[`test base/hooks/useThemeStyleData should match snapshot 2`] = `
 exports[`test base/hooks/useThemeStyleData should match snapshot 3`] = `
 {
   "dataSourceComparison": {
+    "comparisonEntry": {
+      "card": {
+        "borderColor": "#f0f0f0",
+        "boxShadow": "0 1px 2px 0 rgba(0, 0, 0, 0.03), 0 1px 6px -1px rgba(0, 0, 0, 0.02), 0 2px 4px 0 rgba(0, 0, 0, 0.02)",
+      },
+      "overview": {
+        "card": {
+          "hoverBoxShadow": "0 4px 12px rgba(0, 0, 0, 0.15)",
+          "mode": {
+            "baseNotExist": {
+              "borderColor": "#2196f3",
+              "color": "#2196f3",
+              "selectedBgColor": "rgba(33, 150, 243, 0.05)",
+            },
+            "comparisonNotExist": {
+              "borderColor": "#ff4d4f",
+              "color": "#ff4d4f",
+              "selectedBgColor": "rgba(255, 77, 79, 0.05)",
+            },
+            "inconsistent": {
+              "borderColor": "#faad14",
+              "color": "#faad14",
+              "selectedBgColor": "rgba(250, 173, 20, 0.05)",
+            },
+            "same": {
+              "borderColor": "#52c41a",
+              "color": "#52c41a",
+              "selectedBgColor": "rgba(82, 196, 26, 0.05)",
+            },
+          },
+          "suggestion": {
+            "color": "#8c8c8c",
+          },
+        },
+      },
+      "timeInfo": {
+        "color": "#8c8c8c",
+      },
+      "treeNode": {
+        "node": {
+          "inconsistent": {
+            "baselineBgColor": "rgba(245, 124, 0, 0.05)",
+            "color": "#f57c00",
+            "comparisonBgColor": "rgba(245, 124, 0, 0.1)",
+          },
+          "missing": {
+            "baselineBgColor": "rgba(211, 47, 47, 0.05)",
+            "color": "#d32f2f",
+            "comparisonBgColor": "rgba(211, 47, 47, 0.1)",
+          },
+          "new": {
+            "bgColor": "rgba(33, 150, 243, 0.1)",
+            "color": "#2196f3",
+          },
+          "tag": {
+            "inconsistent": {
+              "bgColor": "rgba(245, 124, 0, 0.1)",
+              "color": "#f57c00",
+            },
+            "missing": {
+              "bgColor": "rgba(211, 47, 47, 0.1)",
+              "color": "#d32f2f",
+            },
+            "new": {
+              "bgColor": "rgba(33, 150, 243, 0.1)",
+              "color": "#2196f3",
+            },
+          },
+        },
+        "title": {
+          "bgColor": "#f5f7fa",
+        },
+      },
+    },
     "comparisonResultDiffBackgroundColor": "#ffebe9",
   },
   "execWorkflow": {

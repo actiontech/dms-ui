@@ -4,14 +4,14 @@ exports[`VerificationCodeInput renders correctly with default props 1`] = `
 <body>
   <div>
     <div
-      class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center css-jxd35n"
+      class="ant-space ant-space-horizontal ant-space-align-center css-jxd35n"
     >
       <div
         class="ant-space-item"
         style="margin-right: 8px;"
       >
         <input
-          class="ant-input css-dev-only-do-not-override-ywkr0o basic-input-wrapper css-1pd1cd5"
+          class="ant-input basic-input-wrapper css-1pd1cd5"
           placeholder="请输入验证码"
           type="text"
           value=""
@@ -21,7 +21,7 @@ exports[`VerificationCodeInput renders correctly with default props 1`] = `
         class="ant-space-item"
       >
         <button
-          class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-default basic-button-wrapper css-geipcv"
+          class="ant-btn ant-btn-default basic-button-wrapper css-geipcv"
           type="button"
         >
           <span>

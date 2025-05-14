@@ -40,7 +40,11 @@ const WorkflowTemplateStepInfo: React.FC<IWorkflowTemplateStepInfoProps> = (
               </Col>
               <Col key={`${step.key}-box`} className="step-box">
                 <Row key={`${step.key}-card`} wrap={false}>
-                  <StepCard {...step} stepCardKey={step.key} />
+                  <StepCard
+                    {...step}
+                    key={`${step.key}-step-card`}
+                    stepCardKey={step.key}
+                  />
                 </Row>
               </Col>
             </Row>

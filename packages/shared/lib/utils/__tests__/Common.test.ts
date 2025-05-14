@@ -15,12 +15,14 @@ import {
   translateTimeForRequest,
   findDuplicateKeys,
   paramsSerializer,
-  maskPhoneNumber
+  maskPhoneNumber,
+  getRecentlySelectedZone
 } from '../Common';
 import { act } from '@testing-library/react';
 import 'blob-polyfill';
 import { MIMETypeEnum } from '../../enum';
 import dayjs from 'dayjs';
+import LocalStorageWrapper from '../LocalStorageWrapper';
 
 describe('utils/Common', () => {
   test('should check params is a email address', () => {
@@ -343,5 +345,49 @@ describe('utils/Common', () => {
   it('should mask phone number', () => {
     expect(maskPhoneNumber('12345678901')).toBe('123****8901');
     expect(maskPhoneNumber('123')).toBe('123');
+  });
+
+  describe('getRecentlySelectedZone', () => {
+    it('should return empty string when localStorage is empty', () => {
+      jest.spyOn(LocalStorageWrapper, 'get').mockReturnValue(null);
+      expect(getRecentlySelectedZone()).toBe('');
+    });
+
+    it('should return empty string when localStorage contains an empty array', () => {
+      jest.spyOn(LocalStorageWrapper, 'get').mockReturnValue('[]');
+      expect(getRecentlySelectedZone()).toBe('');
+    });
+
+    it('should return uid from the first item in parsed data array', () => {
+      const mockZoneData = [
+        { uid: 'zone-123', name: 'Zone 1' },
+        { uid: 'zone-456', name: 'Zone 2' }
+      ];
+      jest
+        .spyOn(LocalStorageWrapper, 'get')
+        .mockReturnValue(JSON.stringify(mockZoneData));
+      expect(getRecentlySelectedZone()).toBe('zone-123');
+    });
+
+    it('should return empty string when first item does not have uid property', () => {
+      const mockZoneData = [
+        { id: 'zone-123', name: 'Zone 1' },
+        { uid: 'zone-456', name: 'Zone 2' }
+      ];
+      jest
+        .spyOn(LocalStorageWrapper, 'get')
+        .mockReturnValue(JSON.stringify(mockZoneData));
+      expect(getRecentlySelectedZone()).toBe('');
+    });
+
+    it('should handle JSON parse error and return empty string', () => {
+      const consoleSpy = jest
+        .spyOn(console, 'error')
+        .mockImplementation(jest.fn());
+      jest.spyOn(LocalStorageWrapper, 'get').mockReturnValue('{invalid-json');
+      expect(getRecentlySelectedZone()).toBe('');
+      expect(consoleSpy).toHaveBeenCalled();
+      consoleSpy.mockRestore();
+    });
   });
 });

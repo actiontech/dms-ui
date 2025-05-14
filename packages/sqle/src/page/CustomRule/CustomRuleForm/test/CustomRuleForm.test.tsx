@@ -8,6 +8,10 @@ import rule_template from '../../../../testUtils/mockApi/rule_template';
 import CustomRuleForm from '../CustomRuleForm';
 import { customRuleDetailMockData } from '../../../../testUtils/mockApi/rule_template/data';
 import { mockUsePermission } from '@actiontech/shared/lib/testUtil/mockHook/mockUsePermission';
+import {
+  UtilsConsoleErrorStringsEnum,
+  ignoreConsoleErrors
+} from '@actiontech/shared/lib/testUtil/common';
 
 jest.mock('react-router-dom', () => {
   return {
@@ -44,6 +48,8 @@ describe('sqle/CustomRule/Form', () => {
     jest.useRealTimers();
     cleanup();
   });
+
+  ignoreConsoleErrors([UtilsConsoleErrorStringsEnum.UNKNOWN_EVENT_HANDLER]);
 
   it('should match snap', async () => {
     const { result } = renderHooksWithRedux(useCustomRuleTemplateForm, {});

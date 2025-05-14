@@ -41,10 +41,12 @@ describe('sqle/VersionManagement/Detail/ModifyWorkflowSql', () => {
   let getWorkflowTemplateSpy: jest.SpyInstance;
   let updateWorkflowSpy: jest.SpyInstance;
   const dispatchSpy = jest.fn();
-  const navigateSpy = jest.fn();
   const hideModifyWorkflowSqlStatementSpy = jest.fn();
 
-  ignoreConsoleErrors([UtilsConsoleErrorStringsEnum.UNIQUE_KEY_REQUIRED]);
+  ignoreConsoleErrors([
+    UtilsConsoleErrorStringsEnum.UNIQUE_KEY_REQUIRED,
+    UtilsConsoleErrorStringsEnum.UNKNOWN_EVENT_HANDLER
+  ]);
 
   beforeEach(() => {
     jest.useFakeTimers();

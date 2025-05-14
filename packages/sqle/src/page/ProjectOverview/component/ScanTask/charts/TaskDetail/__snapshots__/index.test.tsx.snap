@@ -10,7 +10,7 @@ exports[`page/ProjectOverview/TaskDetail render empty and refresh 1`] = `
         class="icon-center-wrapper MuiBox-root css-0"
       >
         <div
-          class="css-dev-only-do-not-override-txh9fw ant-empty is-icon-tips css-19kysfv"
+          class="ant-empty is-icon-tips css-19kysfv"
         >
           <div
             class="ant-empty-image"
@@ -64,7 +64,7 @@ exports[`page/ProjectOverview/TaskDetail render empty and refresh 1`] = `
             class="ant-empty-footer"
           >
             <button
-              class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-text ant-btn-sm basic-button-wrapper css-geipcv"
+              class="ant-btn ant-btn-text ant-btn-sm basic-button-wrapper css-geipcv"
               type="button"
             >
               <span>
@@ -89,7 +89,7 @@ exports[`page/ProjectOverview/TaskDetail render error info 1`] = `
         class="icon-center-wrapper MuiBox-root css-0"
       >
         <div
-          class="css-dev-only-do-not-override-txh9fw ant-empty is-icon-tips css-19kysfv"
+          class="ant-empty is-icon-tips css-19kysfv"
         >
           <div
             class="ant-empty-image"
@@ -154,7 +154,7 @@ exports[`page/ProjectOverview/TaskDetail render error info 1`] = `
             class="ant-empty-footer"
           >
             <button
-              class="ant-btn css-dev-only-do-not-override-674gwq ant-btn-text ant-btn-sm basic-button-wrapper css-geipcv"
+              class="ant-btn ant-btn-text ant-btn-sm basic-button-wrapper css-geipcv"
               type="button"
             >
               <span>

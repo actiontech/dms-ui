@@ -5,7 +5,7 @@ export default {
   entry: {
     baselineEnvironment: '基准环境',
     baselineEnvironmentDescription:
-      '请选择您认为是“标准”的数据源环境，\n这个环境将作为比较的基准点。',
+      '请选择您认为是"标准"的数据源环境，\n这个环境将作为比较的基准点。',
     comparisonEnvironment: '比对环境',
     comparisonEnvironmentDescription:
       '请选择您想要检查或更新的数据库环境，\n这个环境将与基准环境进行比较，以找出差异。',
@@ -21,6 +21,18 @@ export default {
       '当前选中的节点中包含对比结果一致的对象，请修改选择对象后重试！',
     generateSQLDisabledTips: '请先选择数据对象',
     noDifferencesFound: '当前对比结果暂无差异',
+    structureDifference: '结构差异',
+    newObject: '新增',
+    missingObject: '缺失',
+    selector: {
+      title: '对比选择'
+    },
+    overview: {
+      title: '结果概览'
+    },
+    details: {
+      title: '结果详情'
+    },
     comparisonDetail: {
       title: '查看对比详情',
       generateSQL: '生成变更SQL',
@@ -46,5 +58,16 @@ export default {
     modifiedSqlAuditResult: {
       cardTitle: '变更语句'
     }
+  },
+  overview: {
+    missingObjects: '缺失对象',
+    newObjects: '新增对象',
+    differentDefinitions: '定义差异',
+    sameObjects: '一致对象',
+    needsAction: '需要及时处理',
+    suggestCheck: '建议检查确认',
+    noActionNeeded: '无需处理',
+    startTime: '开始时间',
+    endTime: '结束时间'
   }
 };

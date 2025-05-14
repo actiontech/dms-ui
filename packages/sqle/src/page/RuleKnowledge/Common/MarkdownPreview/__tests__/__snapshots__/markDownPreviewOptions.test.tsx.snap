@@ -3,12 +3,12 @@
 exports[`markdownPreviewOptions should handle label code blocks correctly 1`] = `
 <div>
   <span
-    class="ant-tag ant-tag-geekblue tag basic-tag-wrapper basic-small-tag-wrapper css-c557z4 css-dev-only-do-not-override-txh9fw"
+    class="ant-tag ant-tag-geekblue tag basic-tag-wrapper basic-small-tag-wrapper css-c557z4"
   >
     test1
   </span>
   <span
-    class="ant-tag ant-tag-geekblue tag basic-tag-wrapper basic-small-tag-wrapper css-c557z4 css-dev-only-do-not-override-txh9fw"
+    class="ant-tag ant-tag-geekblue tag basic-tag-wrapper basic-small-tag-wrapper css-c557z4"
   >
      test2
   </span>
@@ -37,7 +37,7 @@ exports[`markdownPreviewOptions should handle sql code blocks correctly 1`] = `
     class="actiontech-sql-snippet-renderer-wrapper css-eqikrj"
   >
     <div
-      class="ant-typography ant-typography-ellipsis margin-bottom-0 css-dev-only-do-not-override-txh9fw"
+      class="ant-typography ant-typography-ellipsis margin-bottom-0"
     >
       <span>
         <span

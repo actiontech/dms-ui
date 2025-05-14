@@ -1,5 +1,3 @@
-const { transpileModule } = require('typescript');
-
 module.exports = {
   processors: ['stylelint-processor-styled-components'],
   extends: [
@@ -52,6 +50,7 @@ module.exports = {
     'color-hex-length': null,
     'alpha-value-notation': null,
     'color-function-notation': 'legacy',
-    'selector-not-notation': ['simple', 'complex']
+    'selector-not-notation': ['simple', 'complex'],
+    'declaration-block-no-redundant-longhand-properties': null
   }
 };

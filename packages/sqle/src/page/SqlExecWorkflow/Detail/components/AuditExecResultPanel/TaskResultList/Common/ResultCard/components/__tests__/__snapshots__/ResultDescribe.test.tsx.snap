@@ -18,7 +18,7 @@ exports[`sqle/ExecWorkflow/AuditDetail/ResultDescribe render snap when has value
         />
       </svg>
       <input
-        class="ant-input css-dev-only-do-not-override-ywkr0o basic-input-wrapper result-describe-input css-1pd1cd5"
+        class="ant-input basic-input-wrapper result-describe-input css-1pd1cd5"
         placeholder="添加说明"
         type="text"
         value="this is a desc"
@@ -46,7 +46,7 @@ exports[`sqle/ExecWorkflow/AuditDetail/ResultDescribe render snap when value is 
         />
       </svg>
       <input
-        class="ant-input css-dev-only-do-not-override-ywkr0o basic-input-wrapper result-describe-input css-1pd1cd5"
+        class="ant-input basic-input-wrapper result-describe-input css-1pd1cd5"
         placeholder="添加说明"
         type="text"
         value=""

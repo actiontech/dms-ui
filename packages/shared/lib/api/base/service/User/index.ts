@@ -24,7 +24,11 @@ import {
   IDelUserParams,
   IDelUserReturn,
   IGetUserOpPermissionParams,
-  IGetUserOpPermissionReturn
+  IGetUserOpPermissionReturn,
+  IUpdateUserV2Params,
+  IUpdateUserV2Return,
+  IDelUserV2Params,
+  IDelUserV2Return
 } from './index.d';
 
 class UserService extends ServiceBase {
@@ -120,6 +124,33 @@ class UserService extends ServiceBase {
 
     return this.get<IGetUserOpPermissionReturn>(
       `/v1/dms/users/${user_uid}/op_permission`,
+      paramsData,
+      options
+    );
+  }
+
+  public UpdateUserV2(
+    params: IUpdateUserV2Params,
+    options?: AxiosRequestConfig
+  ) {
+    const paramsData = this.cloneDeep(params);
+    const user_name = paramsData.user_name;
+    delete paramsData.user_name;
+
+    return this.put<IUpdateUserV2Return>(
+      `/v2/dms/users/${user_name}`,
+      paramsData,
+      options
+    );
+  }
+
+  public DelUserV2(params: IDelUserV2Params, options?: AxiosRequestConfig) {
+    const paramsData = this.cloneDeep(params);
+    const user_name = paramsData.user_name;
+    delete paramsData.user_name;
+
+    return this.delete<IDelUserV2Return>(
+      `/v2/dms/users/${user_name}`,
       paramsData,
       options
     );

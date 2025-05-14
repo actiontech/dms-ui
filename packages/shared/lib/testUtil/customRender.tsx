@@ -25,26 +25,55 @@ type RecoilRootPropsCustom = {
 };
 
 export const renderWithRouter = (...[ui, option]: [...RenderParams]) => {
-  return render(<BrowserRouter>{ui}</BrowserRouter>, option);
+  return render(
+    <ConfigProvider
+      locale={zhCN}
+      theme={{ algorithm: antdTheme.defaultAlgorithm, hashed: false }}
+    >
+      <BrowserRouter>{ui}</BrowserRouter>
+    </ConfigProvider>,
+    option
+  );
 };
 
 export const renderWithServerRouter = (
   ...[ui, option, props]: [...RenderParams, RouterProps]
 ) => {
-  return render(<Router {...props}>{ui}</Router>, option);
+  return render(
+    <ConfigProvider
+      locale={zhCN}
+      theme={{ algorithm: antdTheme.defaultAlgorithm, hashed: false }}
+    >
+      <Router {...props}>{ui}</Router>
+    </ConfigProvider>,
+    option
+  );
 };
 
 export const renderWithMemoryRouter = (
   ...[ui, option, props]: [...RenderParams, MemoryRouterProps?]
 ) => {
-  return render(<MemoryRouter {...props}>{ui}</MemoryRouter>, option);
+  return render(
+    <ConfigProvider
+      locale={zhCN}
+      theme={{ algorithm: antdTheme.defaultAlgorithm, hashed: false }}
+    >
+      <MemoryRouter {...props}>{ui}</MemoryRouter>
+    </ConfigProvider>,
+    option
+  );
 };
 
 export const renderWithRedux = (
   ...[ui, option, initStore]: [...RenderParams, Dictionary?]
 ) => {
   return render(
-    <Provider store={storeFactory(initStore)}>{ui}</Provider>,
+    <ConfigProvider
+      locale={zhCN}
+      theme={{ algorithm: antdTheme.defaultAlgorithm, hashed: false }}
+    >
+      <Provider store={storeFactory(initStore)}>{ui}</Provider>
+    </ConfigProvider>,
     option
   );
 };
@@ -54,11 +83,16 @@ export const renderWithReduxAndTheme = (
 ) => {
   return render(ui, {
     wrapper: ({ children }) => (
-      <ThemeProvider theme={lightTheme}>
-        <Provider store={storeFactory(initStore)}>{children}</Provider>
-      </ThemeProvider>
+      <ConfigProvider
+        locale={zhCN}
+        theme={{ algorithm: antdTheme.defaultAlgorithm, hashed: false }}
+      >
+        <ThemeProvider theme={lightTheme}>
+          <Provider store={storeFactory(initStore)}>{children}</Provider>
+        </ThemeProvider>
+      </ConfigProvider>
     ),
-    ...Option
+    ...option
   });
 };
 
@@ -93,7 +127,7 @@ export const renderHooksWithTheme = <TProps, TResult>(
     wrapper: ({ children }) => (
       <ConfigProvider
         locale={zhCN}
-        theme={{ algorithm: antdTheme.defaultAlgorithm }}
+        theme={{ algorithm: antdTheme.defaultAlgorithm, hashed: false }}
       >
         <StyledEngineProvider injectFirst>
           <ThemeProvider theme={lightTheme}>{children}</ThemeProvider>
@@ -104,18 +138,31 @@ export const renderHooksWithTheme = <TProps, TResult>(
 };
 
 export const renderWithTheme = (...[ui, option]: [...RenderParams]) => {
-  return render(<ThemeProvider theme={lightTheme}>{ui}</ThemeProvider>, option);
+  return render(
+    <ConfigProvider
+      locale={zhCN}
+      theme={{ algorithm: antdTheme.defaultAlgorithm, hashed: false }}
+    >
+      <ThemeProvider theme={lightTheme}>{ui}</ThemeProvider>
+    </ConfigProvider>,
+    option
+  );
 };
 
 export const renderWithThemeAndRouter = (
   ...[ui, option, props]: [...RenderParams, MemoryRouterProps?]
 ) => {
   return render(
-    <MemoryRouter {...props}>
-      <StyledEngineProvider injectFirst>
-        <ThemeProvider theme={lightTheme}>{ui}</ThemeProvider>
-      </StyledEngineProvider>
-    </MemoryRouter>,
+    <ConfigProvider
+      locale={zhCN}
+      theme={{ algorithm: antdTheme.defaultAlgorithm, hashed: false }}
+    >
+      <MemoryRouter {...props}>
+        <StyledEngineProvider injectFirst>
+          <ThemeProvider theme={lightTheme}>{ui}</ThemeProvider>
+        </StyledEngineProvider>
+      </MemoryRouter>
+    </ConfigProvider>,
     option
   );
 };
@@ -133,13 +180,18 @@ export const superRender = (
   const renderReturn = render(ui, {
     wrapper: ({ children }) => {
       return (
-        <RecoilRoot {...otherProps?.recoilRootProps}>
-          <Provider store={storeFactory(otherProps?.initStore)}>
-            <MemoryRouter {...otherProps?.routerProps}>
-              <ThemeProvider theme={lightTheme}>{children}</ThemeProvider>
-            </MemoryRouter>
-          </Provider>
-        </RecoilRoot>
+        <ConfigProvider
+          locale={zhCN}
+          theme={{ algorithm: antdTheme.defaultAlgorithm, hashed: false }}
+        >
+          <RecoilRoot {...otherProps?.recoilRootProps}>
+            <Provider store={storeFactory(otherProps?.initStore)}>
+              <MemoryRouter {...otherProps?.routerProps}>
+                <ThemeProvider theme={lightTheme}>{children}</ThemeProvider>
+              </MemoryRouter>
+            </Provider>
+          </RecoilRoot>
+        </ConfigProvider>
       );
     },
     ...option
