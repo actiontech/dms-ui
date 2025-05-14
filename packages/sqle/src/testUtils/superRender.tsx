@@ -8,6 +8,7 @@ import {
 import sharedTheme from '@actiontech/shared/lib/theme/light';
 import lightTheme from '../theme/light';
 import { renderHook } from '@testing-library/react-hooks';
+import { storeFactory } from './mockRedux';
 
 const themeData = {
   ...sharedTheme,
@@ -19,7 +20,8 @@ export const sqleSuperRender = (
 ) => {
   return superRender(ui, option, {
     ...otherProps,
-    theme: themeData
+    theme: themeData,
+    storeFactory: storeFactory
   });
 };
 
@@ -33,7 +35,8 @@ export const sqleSuperRenderHook = <TProps, TResult>(
 ) => {
   const wrapper = createTestWrapper({
     ...wrapperOptions,
-    theme: themeData
+    theme: themeData,
+    storeFactory: storeFactory
   });
 
   return superRenderHook(hook, {
