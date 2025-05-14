@@ -1,10 +1,10 @@
 import { WorkflowStepStateEnum } from '@actiontech/shared/lib/api/base/service/common.enum';
 import RejectReason from '.';
-import { superRender } from '../../../../../testUtils/customRender';
+import { baseSuperRender } from '../../../../../testUtils/superRender';
 
 describe('test base/DataExport/Detail/RejectReason', () => {
   it('should match snapshot', () => {
-    const { container } = superRender(
+    const { container } = baseSuperRender(
       <RejectReason
         stepInfo={{
           number: 1,

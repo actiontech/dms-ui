@@ -1,7 +1,7 @@
 import SystemEEPage from './';
 import { useDispatch } from 'react-redux';
 import { cleanup, act, fireEvent, screen } from '@testing-library/react';
-import { superRender } from '../../testUtils/customRender';
+import { baseSuperRender } from '../../testUtils/superRender';
 import system from '../../testUtils/mockApi/system';
 import dms from '../../testUtils/mockApi/global';
 import { DMS_DEFAULT_WEB_TITLE } from '@actiontech/shared/lib/data/common';
@@ -17,7 +17,7 @@ jest.mock('react-redux', () => ({
 describe('base/System-ee', () => {
   const dispatchSpy = jest.fn();
   const customRender = (initialEntry: string[] = ['/system']) => {
-    return superRender(<SystemEEPage />, undefined, {
+    return baseSuperRender(<SystemEEPage />, undefined, {
       initStore: {
         system: {
           modalStatus: {},

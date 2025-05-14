@@ -14,7 +14,7 @@ import dms from '../../../../testUtils/mockApi/global';
 import dbServices from '../../../../testUtils/mockApi/dbServices';
 import { globalDataSourceMockData } from '../../../../testUtils/mockApi/dbServices/data';
 import project from '../../../../testUtils/mockApi/project';
-import { superRender } from '@actiontech/shared/lib/testUtil/customRender';
+import { superRender } from '@actiontech/shared/lib/testUtil/superRender';
 import { mockUseCurrentProject } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentProject';
 import { mockUseCurrentUser } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentUser';
 import { mockUseDbServiceDriver } from '@actiontech/shared/lib/testUtil/mockHook/mockUseDbServiceDriver';

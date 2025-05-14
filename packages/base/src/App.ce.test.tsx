@@ -12,7 +12,7 @@ import { mockSystemConfig } from './testUtils/mockHooks/mockSystemConfig';
 import { LocalStorageWrapper } from '@actiontech/shared';
 import system from 'sqle/src/testUtils/mockApi/system';
 import baseSystem from './testUtils/mockApi/system';
-import { superRender } from '@actiontech/shared/lib/testUtil/customRender';
+import { superRender } from '@actiontech/shared/lib/testUtil/superRender';
 import { compressToBase64 } from 'lz-string';
 import App from './App';
 import { ModalName } from './data/ModalName';

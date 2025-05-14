@@ -1,6 +1,6 @@
 import { cleanup } from '@testing-library/react-hooks';
 import AccessToken from '..';
-import { superRender } from '../../../../../testUtils/customRender';
+import { baseSuperRender } from '../../../../../testUtils/superRender';
 import { AccessTokenProps } from '../../../index.type';
 import { fireEvent, screen } from '@testing-library/dom';
 
@@ -8,7 +8,7 @@ describe('test AccessToken', () => {
   const updateUserInfoSpy = jest.fn();
 
   const customRender = (props: Omit<AccessTokenProps, 'updateUserInfo'>) => {
-    return superRender(
+    return baseSuperRender(
       <AccessToken {...props} updateUserInfo={updateUserInfoSpy} />
     );
   };

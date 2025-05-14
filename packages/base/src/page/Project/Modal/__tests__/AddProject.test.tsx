@@ -2,7 +2,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { ModalName } from '../../../../data/ModalName';
 import project from '../../../../testUtils/mockApi/project';
 import EventEmitter from '../../../../utils/EventEmitter';
-import { superRender } from '../../../../testUtils/customRender';
+import { baseSuperRender } from '../../../../testUtils/superRender';
 import AddProject from '../AddProject';
 import { act, fireEvent, screen } from '@testing-library/react';
 import EmitterKey from '../../../../data/EmitterKey';
@@ -55,13 +55,13 @@ describe('test base/page/project/modal/add', () => {
   });
 
   it('should match snapshot', () => {
-    const { baseElement } = superRender(<AddProject />);
+    const { baseElement } = baseSuperRender(<AddProject />);
     expect(baseElement).toMatchSnapshot();
     expect(listBusinessTagsSpy).toHaveBeenCalledTimes(1);
   });
 
   it('should send create project request', async () => {
-    superRender(<AddProject />);
+    baseSuperRender(<AddProject />);
     await act(async () => jest.advanceTimersByTime(3000));
 
     fireEvent.input(screen.getByLabelText('项目名称'), {
@@ -123,7 +123,7 @@ describe('test base/page/project/modal/add', () => {
 
   it('should match snapshot when getPreferredLanguages return "en-us"', async () => {
     mockUseCurrentUser({ language: SupportLanguage.enUS });
-    const { baseElement } = superRender(<AddProject />);
+    const { baseElement } = baseSuperRender(<AddProject />);
 
     expect(baseElement).toMatchSnapshot();
   });

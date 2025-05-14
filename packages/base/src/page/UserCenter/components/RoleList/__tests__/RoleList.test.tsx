@@ -1,6 +1,6 @@
 import userCenter from '../../../../../testUtils/mockApi/userCenter';
 import { roleList } from '../../../../../testUtils/mockApi/userCenter/data';
-import { renderWithReduxAndTheme } from '@actiontech/shared/lib/testUtil/customRender';
+import { superRender } from '@actiontech/shared/lib/testUtil/superRender';
 import { act, screen, cleanup, fireEvent } from '@testing-library/react';
 import { queryBySelector } from '@actiontech/shared/lib/testUtil/customQuery';
 import RoleList from '../List';
@@ -39,7 +39,7 @@ describe('base/UserCenter/RoleList', () => {
   });
 
   it('render role table', async () => {
-    const { baseElement } = renderWithReduxAndTheme(
+    const { baseElement } = superRender(
       <RoleList activePage={UserCenterListEnum.role_list} />
     );
 
@@ -54,7 +54,7 @@ describe('base/UserCenter/RoleList', () => {
   it('should render empty tips when request not success', async () => {
     roleListSpy.mockClear();
     roleListSpy.mockImplementation(() => createSpyErrorResponse({ data: [] }));
-    const { baseElement } = renderWithReduxAndTheme(
+    const { baseElement } = superRender(
       <RoleList activePage={UserCenterListEnum.role_list} />
     );
     await act(async () => jest.advanceTimersByTime(3300));
@@ -78,7 +78,7 @@ describe('base/UserCenter/RoleList', () => {
         data: mockData
       })
     );
-    const { baseElement } = renderWithReduxAndTheme(
+    const { baseElement } = superRender(
       <RoleList activePage={UserCenterListEnum.role_list} />
     );
     await act(async () => jest.advanceTimersByTime(3300));
@@ -95,9 +95,7 @@ describe('base/UserCenter/RoleList', () => {
   });
 
   it('should refresh role table when emit "DMS_Refresh_User_Center_List" event', async () => {
-    renderWithReduxAndTheme(
-      <RoleList activePage={UserCenterListEnum.role_list} />
-    );
+    superRender(<RoleList activePage={UserCenterListEnum.role_list} />);
     await act(async () =>
       EventEmitter.emit(EmitterKey.DMS_Refresh_User_Center_List)
     );
@@ -113,9 +111,7 @@ describe('base/UserCenter/RoleList', () => {
     );
     const deleteRoleSpy = userCenter.deleteRole();
     const roleName = roleList[0].name;
-    renderWithReduxAndTheme(
-      <RoleList activePage={UserCenterListEnum.role_list} />
-    );
+    superRender(<RoleList activePage={UserCenterListEnum.role_list} />);
     await act(async () => jest.advanceTimersByTime(3300));
     expect(roleListSpy).toHaveBeenCalledTimes(1);
     fireEvent.click(screen.getByText('删 除'));
@@ -141,9 +137,7 @@ describe('base/UserCenter/RoleList', () => {
         data: [roleList[0]]
       })
     );
-    renderWithReduxAndTheme(
-      <RoleList activePage={UserCenterListEnum.role_list} />
-    );
+    superRender(<RoleList activePage={UserCenterListEnum.role_list} />);
     await act(async () => jest.advanceTimersByTime(3300));
     expect(roleListSpy).toHaveBeenCalledTimes(1);
     fireEvent.click(screen.getByText('编 辑'));

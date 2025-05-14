@@ -2,7 +2,7 @@ import UserPhone from '../UserPhone';
 import { act, fireEvent } from '@testing-library/react';
 import { getBySelector } from '@actiontech/shared/lib/testUtil/customQuery';
 import account from '../../../../testUtils/mockApi/account';
-import { superRender } from '../../../../testUtils/customRender';
+import { baseSuperRender } from '../../../../testUtils/superRender';
 
 describe('test base/page/Account/UserPhone', () => {
   const updateUserInfoSpy = jest.fn();
@@ -10,7 +10,7 @@ describe('test base/page/Account/UserPhone', () => {
   const messageErrorSpy = jest.fn();
 
   const customRender = (phone?: string) => {
-    return superRender(
+    return baseSuperRender(
       <UserPhone
         messageApi={{
           success: messageSuccessSpy,

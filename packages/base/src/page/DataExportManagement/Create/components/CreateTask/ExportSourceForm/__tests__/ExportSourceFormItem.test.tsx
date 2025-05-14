@@ -1,4 +1,4 @@
-import { superRender } from '../../../../../../../testUtils/customRender';
+import { baseSuperRender } from '../../../../../../../testUtils/superRender';
 import dbServices from '../../../../../../../testUtils/mockApi/dbServices';
 import instance from 'sqle/src/testUtils/mockApi/instance';
 import ExportSourceFormItem from '../ExportSourceFormItem';
@@ -23,7 +23,7 @@ describe('test ExportSourceFormItem', () => {
   const customRender = () => {
     const { result } = renderHook(() => useForm());
 
-    return superRender(
+    return baseSuperRender(
       <Form form={result.current[0]}>
         <ExportSourceFormItem
           sourceForm={result.current[0]}

@@ -1,6 +1,6 @@
 import { mockUseCurrentProject } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentProject';
 import SubmitExportWorkflow from '..';
-import { superRender } from '../../../../../../testUtils/customRender';
+import { baseSuperRender } from '../../../../../../testUtils/superRender';
 import {
   mockCreateDataExportRedux,
   mockUseCreateDataExportReduxManage
@@ -58,7 +58,7 @@ describe('test base/DataExport/Create/SubmitWorkflow', () => {
   });
 
   it('should match snapshot', async () => {
-    const { container } = superRender(<SubmitExportWorkflow />);
+    const { container } = baseSuperRender(<SubmitExportWorkflow />);
 
     expect(container).toMatchSnapshot();
     expect(mockCreateDataExportRedux.initModalStatus).toHaveBeenCalledTimes(1);
@@ -70,7 +70,7 @@ describe('test base/DataExport/Create/SubmitWorkflow', () => {
   });
 
   it('should execute updateModalStatus when clicked edit button', () => {
-    superRender(<SubmitExportWorkflow />);
+    baseSuperRender(<SubmitExportWorkflow />);
     fireEvent.click(screen.getByText('修改工单'));
     expect(mockCreateDataExportRedux.updateModalStatus).toHaveBeenCalledTimes(
       1
@@ -83,7 +83,7 @@ describe('test base/DataExport/Create/SubmitWorkflow', () => {
 
   it('should disabled edit button and submit button when submitLoading is equal true', () => {
     mockUseCreateDataExportReduxManage({ submitLoading: true });
-    superRender(<SubmitExportWorkflow />);
+    baseSuperRender(<SubmitExportWorkflow />);
 
     expect(screen.getByText('修改工单').closest('button')).toBeDisabled();
     expect(screen.getByText('提交工单').closest('button')).toHaveClass(
@@ -93,7 +93,7 @@ describe('test base/DataExport/Create/SubmitWorkflow', () => {
 
   it('should send submit request when clicked submit button', async () => {
     const addDataExportWorkflowSpy = dataExport.AddDataExportWorkflow();
-    superRender(<SubmitExportWorkflow />);
+    baseSuperRender(<SubmitExportWorkflow />);
 
     fireEvent.click(screen.getByText('提交工单'));
     expect(mockCreateDataExportRedux.updateSubmitLoading).toHaveBeenCalledTimes(
@@ -157,7 +157,7 @@ describe('test base/DataExport/Create/SubmitWorkflow', () => {
       })
     );
 
-    superRender(<SubmitExportWorkflow />);
+    baseSuperRender(<SubmitExportWorkflow />);
     await act(async () => jest.advanceTimersByTime(3000));
     await act(async () => jest.advanceTimersByTime(3000));
     expect(screen.getByText('提交工单').closest('button')).toBeDisabled();

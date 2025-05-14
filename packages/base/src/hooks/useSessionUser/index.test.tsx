@@ -1,7 +1,7 @@
 import { act, cleanup } from '@testing-library/react';
 import mockDMSGlobalApi from '../../testUtils/mockApi/global';
 import useSessionUser from '.';
-import { renderHooksWithRedux } from '@actiontech/shared/lib/testUtil/customRender';
+import { superRenderHook } from '@actiontech/shared/lib/testUtil/superRender';
 import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 
@@ -36,7 +36,7 @@ describe('useSessionUser', () => {
   });
 
   it('should get use data from request', async () => {
-    const { result } = renderHooksWithRedux(() => useSessionUser(), {
+    const { result } = superRenderHook(() => useSessionUser(), {
       user: { uid: 'test' }
     });
     expect(result.current.getSessionUserLoading).toBeFalsy();

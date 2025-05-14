@@ -2,7 +2,7 @@ import { MemoryRouterProps } from 'react-router-dom';
 import { act, screen, cleanup } from '@testing-library/react';
 
 import mockUseRoutes, { RenderRouterComponent } from './data';
-import { superRender } from '../../testUtils/customRender';
+import { baseSuperRender } from '../../testUtils/superRender';
 import { mockProjectInfo } from '@actiontech/shared/lib/testUtil/mockHook/data';
 import { DataSourceManagerSegmentedKey } from '../../page/DataSourceManagement/index.type';
 import userCenter from '../../testUtils/mockApi/userCenter';
@@ -14,7 +14,7 @@ describe('base/router-base-ee', () => {
   const customRender = (
     initialEntries: MemoryRouterProps['initialEntries'] = []
   ) => {
-    return superRender(<RenderRouterComponent type="auth" />, undefined, {
+    return baseSuperRender(<RenderRouterComponent type="auth" />, undefined, {
       routerProps: {
         initialEntries
       }

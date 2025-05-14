@@ -1,4 +1,4 @@
-import { superRender } from '@actiontech/shared/lib/testUtil/customRender';
+import { superRender } from '@actiontech/shared/lib/testUtil/superRender';
 import CloudBeaver from '.';
 import cloudBeaver from '../../testUtils/mockApi/cloudBeaver';
 import { act, cleanup, fireEvent, screen } from '@testing-library/react';

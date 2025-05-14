@@ -1,6 +1,6 @@
-import { superRender } from '../../../../testUtils/customRender';
+import { baseSuperRender } from '../../../../testUtils/superRender';
 import { act, cleanup, fireEvent, screen } from '@testing-library/react';
-import { renderHooksWithTheme } from '@actiontech/shared/lib/testUtil/customRender';
+import { superRenderHook } from '@actiontech/shared/lib/testUtil/superRender';
 import {
   getAllBySelector,
   getBySelector
@@ -29,12 +29,12 @@ describe('page/DataSource/DataSourceForm', () => {
     isUpdate: boolean;
     defaultData?: IListDBServiceV2;
   }) => {
-    const { result } = renderHooksWithTheme(() =>
+    const { result } = superRenderHook(() =>
       Form.useForm<DataSourceFormField>()
     );
     const isUpdate = params?.isUpdate ?? false;
     const defaultData = params?.defaultData ?? {};
-    return superRender(
+    return baseSuperRender(
       <DataSourceForm
         form={result.current[0]}
         defaultData={defaultData}
