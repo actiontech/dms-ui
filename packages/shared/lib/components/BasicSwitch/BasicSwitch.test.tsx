@@ -1,4 +1,4 @@
-import { superRender } from '../../testUtil/customRender';
+import { superRender } from '../../testUtil/superRender';
 import BasicSwitch from './BasicSwitch';
 import { BasicSwitchProps } from './BasicSwitch.types';
 

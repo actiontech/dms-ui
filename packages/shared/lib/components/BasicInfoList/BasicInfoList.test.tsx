@@ -1,4 +1,4 @@
-import { superRender } from '../../testUtil/customRender';
+import { superRender } from '../../testUtil/superRender';
 import BasicEmpty from '../BasicEmpty/BasicEmpty';
 import BasicInfoList from './BasicInfoList';
 import { BasicInfoListProps } from './BasicInfoList.types';
