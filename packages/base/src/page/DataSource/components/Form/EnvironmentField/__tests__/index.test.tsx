@@ -1,5 +1,5 @@
 import EnvironmentField from '../index';
-import { superRender } from '../../../../../../testUtils/customRender';
+import { baseSuperRender } from '../../../../../../testUtils/superRender';
 import project from '../../../../../../testUtils/mockApi/project';
 import { act, cleanup, fireEvent, screen } from '@testing-library/react';
 import {
@@ -33,7 +33,7 @@ describe('Project/EnvironmentField', () => {
   });
 
   const customRender = () => {
-    return superRender(
+    return baseSuperRender(
       <EnvironmentField projectID={mockProjectInfo.projectID} />
     );
   };

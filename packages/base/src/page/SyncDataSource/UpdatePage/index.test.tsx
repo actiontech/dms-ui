@@ -1,6 +1,6 @@
 import Router, { useNavigate } from 'react-router-dom';
 import { act, cleanup, fireEvent, screen } from '@testing-library/react';
-import { superRender } from '../../../testUtils/customRender';
+import { baseSuperRender } from '../../../testUtils/superRender';
 import syncTaskList from '../../../testUtils/mockApi/syncTaskList';
 import ruleTemplate from 'sqle/src/testUtils/mockApi/rule_template';
 import EmitterKey from '../../../data/EmitterKey';
@@ -23,7 +23,7 @@ describe('page/SyncDataSource/UpdateSyncTask', () => {
   const taskId = '1739531854064652288';
 
   const customRender = () => {
-    return superRender(<UpdateSyncTask />);
+    return baseSuperRender(<UpdateSyncTask />);
   };
 
   beforeEach(() => {

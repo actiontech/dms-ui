@@ -1,4 +1,4 @@
-import { superRender } from '../../../testUtils/customRender';
+import { baseSuperRender } from '../../../testUtils/superRender';
 import CBOperationLogsList from '.';
 import cloudBeaver from '../../../testUtils/mockApi/cloudBeaver';
 import { act, cleanup, fireEvent, screen } from '@testing-library/react';
@@ -74,7 +74,7 @@ describe('test base/CloudBeaver/List', () => {
   });
 
   const customRender = () => {
-    return superRender(
+    return baseSuperRender(
       <CBOperationLogsList
         setGetOperationLogsLoading={mockSetGetOperationLogsLoading}
       />

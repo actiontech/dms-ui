@@ -2,7 +2,7 @@ import CompanyNoticeModal from '.';
 import { useDispatch, useSelector } from 'react-redux';
 
 import { act, cleanup, fireEvent, screen } from '@testing-library/react';
-import { superRender } from '../../../../../../testUtils/customRender';
+import { baseSuperRender } from '../../../../../../testUtils/superRender';
 import { getBySelector } from '@actiontech/shared/lib/testUtil/customQuery';
 import dms from '../../../../../../testUtils/mockApi/global';
 import { mockUseCurrentUser } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentUser';
@@ -22,7 +22,7 @@ describe('base/page/Nav/SideMenu/UserMenu/CompanyNoticeModal', () => {
   let requestUpdateCompanyNotice: jest.SpyInstance;
   const scopeDispatch = jest.fn();
   const customRender = () => {
-    return superRender(<CompanyNoticeModal />);
+    return baseSuperRender(<CompanyNoticeModal />);
   };
 
   beforeEach(() => {

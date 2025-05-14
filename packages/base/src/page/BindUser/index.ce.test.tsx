@@ -4,7 +4,7 @@
 import { act, cleanup, fireEvent, screen } from '@testing-library/react';
 import { useNavigate } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
-import { superRender } from '../../testUtils/customRender';
+import { baseSuperRender } from '../../testUtils/superRender';
 import dms from '../../testUtils/mockApi/global';
 import BindUser from '.';
 import { getBySelector } from '@actiontech/shared/lib/testUtil/customQuery';
@@ -27,7 +27,7 @@ describe('page/BindUser-ce', () => {
   const navigateSpy = jest.fn();
   const dispatchSpy = jest.fn();
   const customRender = (path = '/user/bind') => {
-    return superRender(<BindUser />, undefined, {
+    return baseSuperRender(<BindUser />, undefined, {
       routerProps: { initialEntries: [path] }
     });
   };

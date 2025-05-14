@@ -1,5 +1,5 @@
 import { act, cleanup, fireEvent, screen } from '@testing-library/react';
-import { superRender } from '../../../../../testUtils/customRender';
+import { baseSuperRender } from '../../../../../testUtils/superRender';
 import account from '../../../../../testUtils/mockApi/account';
 import GenerateTokenModal from '../GenerateTokenModal';
 import { getBySelector } from '@actiontech/shared/lib/testUtil/customQuery';
@@ -21,7 +21,7 @@ describe('test GenerateTokenModal', () => {
   const refreshSpy = jest.fn();
 
   const customRender = (open = true) => {
-    return superRender(
+    return baseSuperRender(
       <GenerateTokenModal
         open={open}
         onClose={onCloseSpy}

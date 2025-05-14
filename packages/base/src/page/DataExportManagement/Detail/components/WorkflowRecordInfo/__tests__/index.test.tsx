@@ -1,6 +1,6 @@
 import { fireEvent } from '@testing-library/react';
 import WorkflowRecordInfo from '..';
-import { superRender } from '../../../../../../testUtils/customRender';
+import { baseSuperRender } from '../../../../../../testUtils/superRender';
 import {
   mockDataExportDetailRedux,
   mockUseDataExportDetailReduxManage
@@ -19,7 +19,7 @@ describe('test base/DataExport/Detail/WorkflowRecordInfo', () => {
   });
 
   it('should match snapshot', () => {
-    const { container } = superRender(<WorkflowRecordInfo />);
+    const { container } = baseSuperRender(<WorkflowRecordInfo />);
     expect(container).toMatchSnapshot();
 
     fireEvent.click(getBySelector('.custom-icon-close'));

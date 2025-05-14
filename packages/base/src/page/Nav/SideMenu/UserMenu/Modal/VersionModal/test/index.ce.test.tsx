@@ -5,12 +5,12 @@
 import VersionModal from '..';
 
 import { cleanup, fireEvent, screen, act } from '@testing-library/react';
-import { superRender } from '../../../../../../../testUtils/customRender';
+import { baseSuperRender } from '../../../../../../../testUtils/superRender';
 
 describe('base/Nav/SideMenu/UserMenu/VersionModal-ce', () => {
   const VersionModalCloseFn = jest.fn();
   const customRender = (open: boolean = false) => {
-    return superRender(
+    return baseSuperRender(
       <VersionModal open={open} setVersionModalClose={VersionModalCloseFn} />
     );
   };

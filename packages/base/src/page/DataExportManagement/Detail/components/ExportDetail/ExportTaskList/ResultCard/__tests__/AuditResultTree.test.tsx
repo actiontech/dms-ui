@@ -1,13 +1,13 @@
 import { RuleResV1LevelEnum } from '@actiontech/shared/lib/api/sqle/service/common.enum';
-import { superRender } from '../../../../../../../../testUtils/customRender';
+import { baseSuperRender } from '../../../../../../../../testUtils/superRender';
 import AuditResultTree from '../AuditResultTree';
 
 describe('test base/DataExport/Detail/ExportDetail/ExportTaskList/AuditResultTree ', () => {
   it('should match snapshot', () => {
-    expect(superRender(<AuditResultTree />)).toMatchSnapshot();
+    expect(baseSuperRender(<AuditResultTree />)).toMatchSnapshot();
 
     expect(
-      superRender(
+      baseSuperRender(
         <AuditResultTree
           auditResult={[
             {

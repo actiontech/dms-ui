@@ -3,7 +3,7 @@ import dms from '../../../testUtils/mockApi/global';
 import system from '../../../testUtils/mockApi/system';
 import { mockSystemConfig } from '../../../testUtils/mockHooks/mockSystemConfig';
 import { cleanup, act, screen, fireEvent } from '@testing-library/react';
-import { superRender } from '@actiontech/shared/lib/testUtil/customRender';
+import { superRender } from '@actiontech/shared/lib/testUtil/superRender';
 import {
   getAllBySelector,
   getBySelector

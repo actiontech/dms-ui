@@ -1,5 +1,5 @@
 import { cleanup, screen, act, fireEvent } from '@testing-library/react';
-import { superRender } from '@actiontech/shared/lib/testUtil/customRender';
+import { superRender } from '@actiontech/shared/lib/testUtil/superRender';
 import AvailabilityZoneList from '../index';
 import { queryBySelector } from '@actiontech/shared/lib/testUtil/customQuery';
 import gateway from '../../../../testUtils/mockApi/gateway';

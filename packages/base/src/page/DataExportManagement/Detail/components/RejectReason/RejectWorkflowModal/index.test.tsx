@@ -1,6 +1,6 @@
 import { mockUseCurrentProject } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentProject';
 import RejectWorkflowModal from '.';
-import { superRender } from '../../../../../../testUtils/customRender';
+import { baseSuperRender } from '../../../../../../testUtils/superRender';
 import {
   mockDataExportDetailRedux,
   mockUseDataExportDetailReduxManage
@@ -25,7 +25,7 @@ describe('test RejectWorkflowModal', () => {
   });
 
   it('should match snapshot', () => {
-    const { baseElement } = superRender(<RejectWorkflowModal />);
+    const { baseElement } = baseSuperRender(<RejectWorkflowModal />);
 
     expect(baseElement).toMatchSnapshot();
   });
@@ -33,7 +33,7 @@ describe('test RejectWorkflowModal', () => {
   it('should send reject workflow request when clicked reject button', async () => {
     const emitSpy = jest.spyOn(eventEmitter, 'emit');
     const rejectSpy = dataExport.RejectDataExportWorkflow();
-    superRender(<RejectWorkflowModal />);
+    baseSuperRender(<RejectWorkflowModal />);
 
     fireEvent.change(screen.getByLabelText('驳回原因'), {
       target: { value: 'reject reason' }
@@ -77,7 +77,7 @@ describe('test RejectWorkflowModal', () => {
   });
 
   it('should clear form and close modal', async () => {
-    superRender(<RejectWorkflowModal />);
+    baseSuperRender(<RejectWorkflowModal />);
 
     fireEvent.change(screen.getByLabelText('驳回原因'), {
       target: { value: 'reject reason' }

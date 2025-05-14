@@ -2,13 +2,13 @@ import { MemoryRouterProps } from 'react-router-dom';
 import { cleanup } from '@testing-library/react';
 
 import mockUseRoutes, { RenderRouterComponent } from './data';
-import { superRender } from '../../testUtils/customRender';
+import { baseSuperRender } from '../../testUtils/superRender';
 
 describe('base/router- un Auth -ee', () => {
   const customRender = (
     initialEntries: MemoryRouterProps['initialEntries'] = []
   ) => {
-    return superRender(<RenderRouterComponent type="unAuth" />, undefined, {
+    return baseSuperRender(<RenderRouterComponent type="unAuth" />, undefined, {
       routerProps: {
         initialEntries
       }

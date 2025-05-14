@@ -4,7 +4,7 @@
 
 import { cleanup, screen } from '@testing-library/react';
 import { useNavigate, useParams } from 'react-router-dom';
-import { superRender } from '../../../../testUtils/customRender';
+import { baseSuperRender } from '../../../../testUtils/superRender';
 import dms from '../../../../testUtils/mockApi/global';
 import { mockProjectInfo } from '@actiontech/shared/lib/testUtil/mockHook/data';
 import { SupportTheme, SystemRole } from '@actiontech/shared/lib/enum';
@@ -25,7 +25,7 @@ describe('page/DataSource/DataSourceList', () => {
   const useParamsMock: jest.Mock = useParams as jest.Mock;
 
   const customRender = (params = {}) => {
-    return superRender(<DataSourceList />, undefined, {
+    return baseSuperRender(<DataSourceList />, undefined, {
       initStore: {
         user: {
           username: 'admin',

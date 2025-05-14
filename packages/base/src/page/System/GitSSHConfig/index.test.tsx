@@ -1,6 +1,6 @@
 import GitSSHConfig from './index';
 import { act, cleanup, fireEvent, screen } from '@testing-library/react';
-import { superRender } from '../../../testUtils/customRender';
+import { baseSuperRender } from '../../../testUtils/superRender';
 import configuration from 'sqle/src/testUtils/mockApi/configuration';
 import { getSSHPublicKeyMockData } from 'sqle/src/testUtils/mockApi/configuration/data';
 import { Copy } from '@actiontech/shared';
@@ -22,7 +22,7 @@ describe('base/System/GitSSHConfig', () => {
   });
 
   const customRender = () => {
-    return superRender(<GitSSHConfig />);
+    return baseSuperRender(<GitSSHConfig />);
   };
 
   it('should match snapshot when get ssh public key', async () => {

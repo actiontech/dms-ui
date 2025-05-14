@@ -1,5 +1,5 @@
 import AvailabilityZoneModal from '../index';
-import { superRender } from '@actiontech/shared/lib/testUtil/customRender';
+import { superRender } from '@actiontech/shared/lib/testUtil/superRender';
 import { useDispatch, useSelector } from 'react-redux';
 import { ModalName } from '../../../../data/ModalName';
 

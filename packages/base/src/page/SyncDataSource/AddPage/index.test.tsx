@@ -1,5 +1,5 @@
 import { act, cleanup, fireEvent, screen } from '@testing-library/react';
-import { superRender } from '../../../testUtils/customRender';
+import { baseSuperRender } from '../../../testUtils/superRender';
 import {
   getAllBySelector,
   getBySelector
@@ -14,7 +14,7 @@ import AddSyncTask from '.';
 
 describe('page/SyncDataSource/AddPage', () => {
   const customRender = () => {
-    return superRender(<AddSyncTask />);
+    return baseSuperRender(<AddSyncTask />);
   };
 
   beforeEach(() => {

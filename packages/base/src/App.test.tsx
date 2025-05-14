@@ -1,6 +1,6 @@
 import { useNavigate } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
-import { superRender } from '@actiontech/shared/lib/testUtil/customRender';
+import { baseSuperRender } from './testUtils/superRender';
 import App, { Wrapper } from './App';
 import { act, cleanup, screen } from '@testing-library/react';
 import mockDMSGlobalApi from './testUtils/mockApi/global';
@@ -105,7 +105,7 @@ describe('App', () => {
 
   it('render Wrapper when token is existed', () => {
     const [, LocationComponent] = renderLocationDisplay();
-    superRender(
+    baseSuperRender(
       <Wrapper>
         <span>children</span>
         <LocationComponent />
@@ -132,7 +132,7 @@ describe('App', () => {
     });
 
     const [, LocationComponent] = renderLocationDisplay();
-    superRender(
+    baseSuperRender(
       <Wrapper>
         <span>children</span>
         <LocationComponent />
@@ -152,7 +152,7 @@ describe('App', () => {
   });
 
   it('render App when token is existed', async () => {
-    const { container } = superRender(<App />, undefined, {
+    const { container } = baseSuperRender(<App />, undefined, {
       routerProps: { initialEntries: ['/'] }
     });
     expect(requestGetBasicInfo).toHaveBeenCalledTimes(1);
@@ -170,26 +170,26 @@ describe('App', () => {
 
   it('render App when "isUserInfoFetched" is equal false', () => {
     mockUseCurrentUser({ isUserInfoFetched: false });
-    const { container } = superRender(<App />);
+    const { container } = baseSuperRender(<App />);
     expect(container).toMatchSnapshot();
   });
 
   it('render App when "isDriverInfoFetched" is equal false', () => {
     mockUseDbServiceDriver({ isDriverInfoFetched: false });
-    const { container } = superRender(<App />);
+    const { container } = baseSuperRender(<App />);
     expect(container).toMatchSnapshot();
   });
 
   it('render App when "isFeatureSupportFetched" is equal false', () => {
     mockUseCurrentUser({ isUserInfoFetched: true });
     mockUseDbServiceDriver({ isDriverInfoFetched: true });
-    const { container } = superRender(<App />);
+    const { container } = baseSuperRender(<App />);
     expect(container).toMatchSnapshot();
   });
 
   it('render App when "checkPageAction" is false', async () => {
     checkPageActionSpy.mockReturnValue(false);
-    const { container } = superRender(<App />);
+    const { container } = baseSuperRender(<App />);
     await act(async () => jest.advanceTimersByTime(3000));
 
     expect(container).toMatchSnapshot();
@@ -208,7 +208,7 @@ describe('App', () => {
         }
       });
     });
-    const { container } = superRender(<App />, undefined, {
+    const { container } = baseSuperRender(<App />, undefined, {
       routerProps: { initialEntries: ['/exec-workflow?query=test'] }
     });
 
@@ -233,7 +233,7 @@ describe('App', () => {
 
     LocalStorageWrapperGetSpy.mockReturnValue('');
 
-    superRender(<App />);
+    baseSuperRender(<App />);
 
     expect(LocalStorageWrapperSetSpy).toHaveBeenCalledTimes(1);
     expect(LocalStorageWrapperSetSpy).toHaveBeenCalledWith(
@@ -248,7 +248,7 @@ describe('App', () => {
 
     LocalStorageWrapperGetSpy.mockReturnValue('ce');
 
-    superRender(<App />);
+    baseSuperRender(<App />);
 
     expect(LocalStorageWrapperSetSpy).toHaveBeenCalledTimes(1);
     expect(LocalStorageWrapperSetSpy).toHaveBeenCalledWith(
@@ -263,14 +263,14 @@ describe('App', () => {
 
     LocalStorageWrapperGetSpy.mockReturnValue('ee');
 
-    superRender(<App />);
+    baseSuperRender(<App />);
 
     expect(LocalStorageWrapperSetSpy).toHaveBeenCalledTimes(0);
   });
 
   it('verify route permission should not modify the route datasource', async () => {
     const routerConfigBackup = cloneDeep(AuthRouterConfig);
-    superRender(<App />);
+    baseSuperRender(<App />);
     await act(async () => jest.advanceTimersByTime(3000));
     expect(AuthRouterConfig).toEqual(routerConfigBackup);
 
@@ -284,20 +284,20 @@ describe('App', () => {
         [SystemRole.createProject]: false
       }
     });
-    superRender(<App />);
+    baseSuperRender(<App />);
     await act(async () => jest.advanceTimersByTime(3000));
     expect(AuthRouterConfig).toEqual(routerConfigBackup);
   });
 
   it('should initialize the availability zone', () => {
-    superRender(<App />);
+    baseSuperRender(<App />);
     expect(
       mockUseRecentlySelectedZoneData.initializeAvailabilityZone
     ).toHaveBeenCalledTimes(1);
   });
 
   it('should reload the initial data when the event is triggered', async () => {
-    superRender(<App />);
+    baseSuperRender(<App />);
     expect(getUserBySessionSpy).toHaveBeenCalledTimes(1);
     expect(requestGetModalStatus).toHaveBeenCalledTimes(2);
     expect(mockDBServiceDriverInfo.updateDriverList).toHaveBeenCalledTimes(1);
