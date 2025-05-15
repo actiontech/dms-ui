@@ -540,7 +540,7 @@ exports[`test DataExport/Common/AuditResultList should match snapshot 3`] = `
                           class="ant-table-cell audit-result-exec-sql-column"
                         >
                           <div
-                            class="actiontech-sql-snippet-renderer-wrapper css-dz7fl9"
+                            class="actiontech-sql-snippet-renderer-wrapper css-q962ee"
                           >
                             <div
                               class="ant-typography ant-typography-ellipsis ant-typography-single-line ant-typography-ellipsis-single-line margin-bottom-0"
@@ -646,7 +646,7 @@ exports[`test DataExport/Common/AuditResultList should match snapshot 3`] = `
                           class="ant-table-cell audit-result-exec-sql-column"
                         >
                           <div
-                            class="actiontech-sql-snippet-renderer-wrapper css-dz7fl9"
+                            class="actiontech-sql-snippet-renderer-wrapper css-q962ee"
                           >
                             <div
                               class="ant-typography ant-typography-ellipsis ant-typography-single-line ant-typography-ellipsis-single-line margin-bottom-0"
@@ -752,7 +752,7 @@ exports[`test DataExport/Common/AuditResultList should match snapshot 3`] = `
                           class="ant-table-cell audit-result-exec-sql-column"
                         >
                           <div
-                            class="actiontech-sql-snippet-renderer-wrapper css-dz7fl9"
+                            class="actiontech-sql-snippet-renderer-wrapper css-q962ee"
                           >
                             <div
                               class="ant-typography ant-typography-ellipsis ant-typography-single-line ant-typography-ellipsis-single-line margin-bottom-0"
@@ -858,7 +858,7 @@ exports[`test DataExport/Common/AuditResultList should match snapshot 3`] = `
                           class="ant-table-cell audit-result-exec-sql-column"
                         >
                           <div
-                            class="actiontech-sql-snippet-renderer-wrapper css-dz7fl9"
+                            class="actiontech-sql-snippet-renderer-wrapper css-q962ee"
                           >
                             <div
                               class="ant-typography ant-typography-ellipsis ant-typography-single-line ant-typography-ellipsis-single-line margin-bottom-0"
@@ -964,7 +964,7 @@ exports[`test DataExport/Common/AuditResultList should match snapshot 3`] = `
                           class="ant-table-cell audit-result-exec-sql-column"
                         >
                           <div
-                            class="actiontech-sql-snippet-renderer-wrapper css-dz7fl9"
+                            class="actiontech-sql-snippet-renderer-wrapper css-q962ee"
                           >
                             <div
                               class="ant-typography ant-typography-ellipsis ant-typography-single-line ant-typography-ellipsis-single-line margin-bottom-0"
@@ -1070,7 +1070,7 @@ exports[`test DataExport/Common/AuditResultList should match snapshot 3`] = `
                           class="ant-table-cell audit-result-exec-sql-column"
                         >
                           <div
-                            class="actiontech-sql-snippet-renderer-wrapper css-dz7fl9"
+                            class="actiontech-sql-snippet-renderer-wrapper css-q962ee"
                           >
                             <div
                               class="ant-typography ant-typography-ellipsis ant-typography-single-line ant-typography-ellipsis-single-line margin-bottom-0"
@@ -1506,7 +1506,7 @@ exports[`test DataExport/Common/AuditResultList should match snapshot 4`] = `
                           class="ant-table-cell audit-result-exec-sql-column"
                         >
                           <div
-                            class="actiontech-sql-snippet-renderer-wrapper css-dz7fl9"
+                            class="actiontech-sql-snippet-renderer-wrapper css-q962ee"
                           >
                             <div
                               class="ant-typography ant-typography-ellipsis ant-typography-single-line ant-typography-ellipsis-single-line margin-bottom-0"
@@ -1612,7 +1612,7 @@ exports[`test DataExport/Common/AuditResultList should match snapshot 4`] = `
                           class="ant-table-cell audit-result-exec-sql-column"
                         >
                           <div
-                            class="actiontech-sql-snippet-renderer-wrapper css-dz7fl9"
+                            class="actiontech-sql-snippet-renderer-wrapper css-q962ee"
                           >
                             <div
                               class="ant-typography ant-typography-ellipsis ant-typography-single-line ant-typography-ellipsis-single-line margin-bottom-0"
@@ -1718,7 +1718,7 @@ exports[`test DataExport/Common/AuditResultList should match snapshot 4`] = `
                           class="ant-table-cell audit-result-exec-sql-column"
                         >
                           <div
-                            class="actiontech-sql-snippet-renderer-wrapper css-dz7fl9"
+                            class="actiontech-sql-snippet-renderer-wrapper css-q962ee"
                           >
                             <div
                               class="ant-typography ant-typography-ellipsis ant-typography-single-line ant-typography-ellipsis-single-line margin-bottom-0"
@@ -1824,7 +1824,7 @@ exports[`test DataExport/Common/AuditResultList should match snapshot 4`] = `
                           class="ant-table-cell audit-result-exec-sql-column"
                         >
                           <div
-                            class="actiontech-sql-snippet-renderer-wrapper css-dz7fl9"
+                            class="actiontech-sql-snippet-renderer-wrapper css-q962ee"
                           >
                             <div
                               class="ant-typography ant-typography-ellipsis ant-typography-single-line ant-typography-ellipsis-single-line margin-bottom-0"
@@ -1930,7 +1930,7 @@ exports[`test DataExport/Common/AuditResultList should match snapshot 4`] = `
                           class="ant-table-cell audit-result-exec-sql-column"
                         >
                           <div
-                            class="actiontech-sql-snippet-renderer-wrapper css-dz7fl9"
+                            class="actiontech-sql-snippet-renderer-wrapper css-q962ee"
                           >
                             <div
                               class="ant-typography ant-typography-ellipsis ant-typography-single-line ant-typography-ellipsis-single-line margin-bottom-0"
@@ -2036,7 +2036,7 @@ exports[`test DataExport/Common/AuditResultList should match snapshot 4`] = `
                           class="ant-table-cell audit-result-exec-sql-column"
                         >
                           <div
-                            class="actiontech-sql-snippet-renderer-wrapper css-dz7fl9"
+                            class="actiontech-sql-snippet-renderer-wrapper css-q962ee"
                           >
                             <div
                               class="ant-typography ant-typography-ellipsis ant-typography-single-line ant-typography-ellipsis-single-line margin-bottom-0"
@@ -2598,7 +2598,7 @@ exports[`test DataExport/Common/AuditResultList should match snapshot when data 
                         class="ant-table-cell audit-result-exec-sql-column"
                       >
                         <div
-                          class="actiontech-sql-snippet-renderer-wrapper css-dz7fl9"
+                          class="actiontech-sql-snippet-renderer-wrapper css-q962ee"
                         >
                           <span
                             class="empty-sql-placeholder"
@@ -2668,7 +2668,7 @@ exports[`test DataExport/Common/AuditResultList should match snapshot when data 
                         class="ant-table-cell audit-result-exec-sql-column"
                       >
                         <div
-                          class="actiontech-sql-snippet-renderer-wrapper css-dz7fl9"
+                          class="actiontech-sql-snippet-renderer-wrapper css-q962ee"
                         >
                           <div
                             class="ant-typography ant-typography-ellipsis ant-typography-single-line ant-typography-ellipsis-single-line margin-bottom-0"
@@ -3126,7 +3126,7 @@ exports[`test DataExport/Common/AuditResultList should switch tab when click lab
                         class="ant-table-cell audit-result-exec-sql-column"
                       >
                         <div
-                          class="actiontech-sql-snippet-renderer-wrapper css-dz7fl9"
+                          class="actiontech-sql-snippet-renderer-wrapper css-q962ee"
                         >
                           <div
                             class="ant-typography ant-typography-ellipsis ant-typography-single-line ant-typography-ellipsis-single-line margin-bottom-0"
@@ -3232,7 +3232,7 @@ exports[`test DataExport/Common/AuditResultList should switch tab when click lab
                         class="ant-table-cell audit-result-exec-sql-column"
                       >
                         <div
-                          class="actiontech-sql-snippet-renderer-wrapper css-dz7fl9"
+                          class="actiontech-sql-snippet-renderer-wrapper css-q962ee"
                         >
                           <div
                             class="ant-typography ant-typography-ellipsis ant-typography-single-line ant-typography-ellipsis-single-line margin-bottom-0"
@@ -3338,7 +3338,7 @@ exports[`test DataExport/Common/AuditResultList should switch tab when click lab
                         class="ant-table-cell audit-result-exec-sql-column"
                       >
                         <div
-                          class="actiontech-sql-snippet-renderer-wrapper css-dz7fl9"
+                          class="actiontech-sql-snippet-renderer-wrapper css-q962ee"
                         >
                           <div
                             class="ant-typography ant-typography-ellipsis ant-typography-single-line ant-typography-ellipsis-single-line margin-bottom-0"
@@ -3444,7 +3444,7 @@ exports[`test DataExport/Common/AuditResultList should switch tab when click lab
                         class="ant-table-cell audit-result-exec-sql-column"
                       >
                         <div
-                          class="actiontech-sql-snippet-renderer-wrapper css-dz7fl9"
+                          class="actiontech-sql-snippet-renderer-wrapper css-q962ee"
                         >
                           <div
                             class="ant-typography ant-typography-ellipsis ant-typography-single-line ant-typography-ellipsis-single-line margin-bottom-0"
@@ -3550,7 +3550,7 @@ exports[`test DataExport/Common/AuditResultList should switch tab when click lab
                         class="ant-table-cell audit-result-exec-sql-column"
                       >
                         <div
-                          class="actiontech-sql-snippet-renderer-wrapper css-dz7fl9"
+                          class="actiontech-sql-snippet-renderer-wrapper css-q962ee"
                         >
                           <div
                             class="ant-typography ant-typography-ellipsis ant-typography-single-line ant-typography-ellipsis-single-line margin-bottom-0"
@@ -3656,7 +3656,7 @@ exports[`test DataExport/Common/AuditResultList should switch tab when click lab
                         class="ant-table-cell audit-result-exec-sql-column"
                       >
                         <div
-                          class="actiontech-sql-snippet-renderer-wrapper css-dz7fl9"
+                          class="actiontech-sql-snippet-renderer-wrapper css-q962ee"
                         >
                           <div
                             class="ant-typography ant-typography-ellipsis ant-typography-single-line ant-typography-ellipsis-single-line margin-bottom-0"
