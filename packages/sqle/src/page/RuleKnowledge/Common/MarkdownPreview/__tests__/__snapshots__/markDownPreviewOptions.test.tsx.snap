@@ -34,7 +34,7 @@ exports[`markdownPreviewOptions should handle null or undefined children 2`] = `
 exports[`markdownPreviewOptions should handle sql code blocks correctly 1`] = `
 <div>
   <div
-    class="actiontech-sql-snippet-renderer-wrapper css-eqikrj"
+    class="actiontech-sql-snippet-renderer-wrapper css-zy5ig9"
   >
     <div
       class="ant-typography ant-typography-ellipsis margin-bottom-0"

@@ -256,12 +256,12 @@ exports[`sqle/ExecWorkflow/AuditDetail/SqlMode render associated rollback workfl
               class="lazy-load-wrapper segmented-item-content lazy-load-wrapper-show css-952l0m"
             >
               <div
-                class="actiontech-sql-renderer-wrapper css-dz7fl9"
+                class="actiontech-sql-renderer-wrapper word-wrap css-q962ee"
               >
                 <pre>
                   <code>
                     <div
-                      class="code-line"
+                      class="code-line wrapped-line with-line-number"
                     >
                       <span
                         class="code-line-number"
@@ -635,12 +635,12 @@ exports[`sqle/ExecWorkflow/AuditDetail/SqlMode render backup strategy tip 1`] = 
               class="lazy-load-wrapper segmented-item-content lazy-load-wrapper-hidden css-952l0m"
             >
               <div
-                class="actiontech-sql-renderer-wrapper css-dz7fl9"
+                class="actiontech-sql-renderer-wrapper word-wrap css-q962ee"
               >
                 <pre>
                   <code>
                     <div
-                      class="code-line"
+                      class="code-line wrapped-line with-line-number"
                     >
                       <span
                         class="code-line-number"
@@ -710,12 +710,12 @@ exports[`sqle/ExecWorkflow/AuditDetail/SqlMode render backup strategy tip 1`] = 
                   class="ant-space-item"
                 >
                   <div
-                    class="actiontech-sql-renderer-wrapper css-dz7fl9"
+                    class="actiontech-sql-renderer-wrapper word-wrap css-q962ee"
                   >
                     <pre>
                       <code>
                         <div
-                          class="code-line"
+                          class="code-line wrapped-line with-line-number"
                         >
                           <span
                             class="code-line-number"
@@ -1091,12 +1091,12 @@ exports[`sqle/ExecWorkflow/AuditDetail/SqlMode render change exec_sql & rollback
               class="lazy-load-wrapper segmented-item-content lazy-load-wrapper-show css-952l0m"
             >
               <div
-                class="actiontech-sql-renderer-wrapper css-dz7fl9"
+                class="actiontech-sql-renderer-wrapper word-wrap css-q962ee"
               >
                 <pre>
                   <code>
                     <div
-                      class="code-line"
+                      class="code-line wrapped-line with-line-number"
                     >
                       <span
                         class="code-line-number"
@@ -1470,12 +1470,12 @@ exports[`sqle/ExecWorkflow/AuditDetail/SqlMode render change exec_sql & rollback
               class="lazy-load-wrapper segmented-item-content lazy-load-wrapper-hidden css-952l0m"
             >
               <div
-                class="actiontech-sql-renderer-wrapper css-dz7fl9"
+                class="actiontech-sql-renderer-wrapper word-wrap css-q962ee"
               >
                 <pre>
                   <code>
                     <div
-                      class="code-line"
+                      class="code-line wrapped-line with-line-number"
                     >
                       <span
                         class="code-line-number"
@@ -1530,12 +1530,12 @@ exports[`sqle/ExecWorkflow/AuditDetail/SqlMode render change exec_sql & rollback
                   class="ant-space-item"
                 >
                   <div
-                    class="actiontech-sql-renderer-wrapper css-dz7fl9"
+                    class="actiontech-sql-renderer-wrapper word-wrap css-q962ee"
                   >
                     <pre>
                       <code>
                         <div
-                          class="code-line"
+                          class="code-line wrapped-line with-line-number"
                         >
                           <span
                             class="code-line-number"
@@ -1911,12 +1911,12 @@ exports[`sqle/ExecWorkflow/AuditDetail/SqlMode render change exec_sql & rollback
               class="lazy-load-wrapper segmented-item-content lazy-load-wrapper-show css-952l0m"
             >
               <div
-                class="actiontech-sql-renderer-wrapper css-dz7fl9"
+                class="actiontech-sql-renderer-wrapper word-wrap css-q962ee"
               >
                 <pre>
                   <code>
                     <div
-                      class="code-line"
+                      class="code-line wrapped-line with-line-number"
                     >
                       <span
                         class="code-line-number"
@@ -1971,12 +1971,12 @@ exports[`sqle/ExecWorkflow/AuditDetail/SqlMode render change exec_sql & rollback
                   class="ant-space-item"
                 >
                   <div
-                    class="actiontech-sql-renderer-wrapper css-dz7fl9"
+                    class="actiontech-sql-renderer-wrapper word-wrap css-q962ee"
                   >
                     <pre>
                       <code>
                         <div
-                          class="code-line"
+                          class="code-line wrapped-line with-line-number"
                         >
                           <span
                             class="code-line-number"
@@ -2352,12 +2352,12 @@ exports[`sqle/ExecWorkflow/AuditDetail/SqlMode render change exec_sql & rollback
               class="lazy-load-wrapper segmented-item-content lazy-load-wrapper-hidden css-952l0m"
             >
               <div
-                class="actiontech-sql-renderer-wrapper css-dz7fl9"
+                class="actiontech-sql-renderer-wrapper word-wrap css-q962ee"
               >
                 <pre>
                   <code>
                     <div
-                      class="code-line"
+                      class="code-line wrapped-line with-line-number"
                     >
                       <span
                         class="code-line-number"
@@ -2412,12 +2412,12 @@ exports[`sqle/ExecWorkflow/AuditDetail/SqlMode render change exec_sql & rollback
                   class="ant-space-item"
                 >
                   <div
-                    class="actiontech-sql-renderer-wrapper css-dz7fl9"
+                    class="actiontech-sql-renderer-wrapper word-wrap css-q962ee"
                   >
                     <pre>
                       <code>
                         <div
-                          class="code-line"
+                          class="code-line wrapped-line with-line-number"
                         >
                           <span
                             class="code-line-number"
@@ -2798,7 +2798,7 @@ exports[`sqle/ExecWorkflow/AuditDetail/SqlMode render click add desc 1`] = `
               class="lazy-load-wrapper segmented-item-content lazy-load-wrapper-show css-952l0m"
             >
               <div
-                class="actiontech-sql-renderer-wrapper css-dz7fl9"
+                class="actiontech-sql-renderer-wrapper word-wrap css-q962ee"
               >
                 <span
                   class="empty-sql-placeholder"
@@ -3168,7 +3168,7 @@ exports[`sqle/ExecWorkflow/AuditDetail/SqlMode render click add desc 2`] = `
               class="lazy-load-wrapper segmented-item-content lazy-load-wrapper-show css-952l0m"
             >
               <div
-                class="actiontech-sql-renderer-wrapper css-dz7fl9"
+                class="actiontech-sql-renderer-wrapper word-wrap css-q962ee"
               >
                 <span
                   class="empty-sql-placeholder"
@@ -3547,7 +3547,7 @@ exports[`sqle/ExecWorkflow/AuditDetail/SqlMode render click icon arrow when has 
               class="lazy-load-wrapper segmented-item-content lazy-load-wrapper-show css-952l0m"
             >
               <div
-                class="actiontech-sql-renderer-wrapper css-dz7fl9"
+                class="actiontech-sql-renderer-wrapper word-wrap css-q962ee"
               >
                 <span
                   class="empty-sql-placeholder"
@@ -3955,7 +3955,7 @@ exports[`sqle/ExecWorkflow/AuditDetail/SqlMode render click icon arrow when no c
               class="lazy-load-wrapper segmented-item-content lazy-load-wrapper-show css-952l0m"
             >
               <div
-                class="actiontech-sql-renderer-wrapper css-dz7fl9"
+                class="actiontech-sql-renderer-wrapper word-wrap css-q962ee"
               >
                 <span
                   class="empty-sql-placeholder"
@@ -4356,12 +4356,12 @@ exports[`sqle/ExecWorkflow/AuditDetail/SqlMode render has backup conflict 1`] = 
               class="lazy-load-wrapper segmented-item-content lazy-load-wrapper-hidden css-952l0m"
             >
               <div
-                class="actiontech-sql-renderer-wrapper css-dz7fl9"
+                class="actiontech-sql-renderer-wrapper word-wrap css-q962ee"
               >
                 <pre>
                   <code>
                     <div
-                      class="code-line"
+                      class="code-line wrapped-line with-line-number"
                     >
                       <span
                         class="code-line-number"
@@ -4431,12 +4431,12 @@ exports[`sqle/ExecWorkflow/AuditDetail/SqlMode render has backup conflict 1`] = 
                   class="ant-space-item"
                 >
                   <div
-                    class="actiontech-sql-renderer-wrapper css-dz7fl9"
+                    class="actiontech-sql-renderer-wrapper word-wrap css-q962ee"
                   >
                     <pre>
                       <code>
                         <div
-                          class="code-line"
+                          class="code-line wrapped-line with-line-number"
                         >
                           <span
                             class="code-line-number"
@@ -4833,12 +4833,12 @@ exports[`sqle/ExecWorkflow/AuditDetail/SqlMode render no sql execution result 1`
               class="lazy-load-wrapper segmented-item-content lazy-load-wrapper-hidden css-952l0m"
             >
               <div
-                class="actiontech-sql-renderer-wrapper css-dz7fl9"
+                class="actiontech-sql-renderer-wrapper word-wrap css-q962ee"
               >
                 <pre>
                   <code>
                     <div
-                      class="code-line"
+                      class="code-line wrapped-line with-line-number"
                     >
                       <span
                         class="code-line-number"
@@ -4920,12 +4920,12 @@ exports[`sqle/ExecWorkflow/AuditDetail/SqlMode render no sql execution result 1`
                   class="ant-space-item"
                 >
                   <div
-                    class="actiontech-sql-renderer-wrapper css-dz7fl9"
+                    class="actiontech-sql-renderer-wrapper word-wrap css-q962ee"
                   >
                     <pre>
                       <code>
                         <div
-                          class="code-line"
+                          class="code-line wrapped-line with-line-number"
                         >
                           <span
                             class="code-line-number"
@@ -5322,12 +5322,12 @@ exports[`sqle/ExecWorkflow/AuditDetail/SqlMode render no sql execution result an
               class="lazy-load-wrapper segmented-item-content lazy-load-wrapper-hidden css-952l0m"
             >
               <div
-                class="actiontech-sql-renderer-wrapper css-dz7fl9"
+                class="actiontech-sql-renderer-wrapper word-wrap css-q962ee"
               >
                 <pre>
                   <code>
                     <div
-                      class="code-line"
+                      class="code-line wrapped-line with-line-number"
                     >
                       <span
                         class="code-line-number"
@@ -5408,12 +5408,12 @@ exports[`sqle/ExecWorkflow/AuditDetail/SqlMode render no sql execution result an
                   class="ant-space-item"
                 >
                   <div
-                    class="actiontech-sql-renderer-wrapper css-dz7fl9"
+                    class="actiontech-sql-renderer-wrapper word-wrap css-q962ee"
                   >
                     <pre>
                       <code>
                         <div
-                          class="code-line"
+                          class="code-line wrapped-line with-line-number"
                         >
                           <span
                             class="code-line-number"
@@ -5789,7 +5789,7 @@ exports[`sqle/ExecWorkflow/AuditDetail/SqlMode render snap when data is empty 1`
               class="lazy-load-wrapper segmented-item-content lazy-load-wrapper-show css-952l0m"
             >
               <div
-                class="actiontech-sql-renderer-wrapper css-dz7fl9"
+                class="actiontech-sql-renderer-wrapper word-wrap css-q962ee"
               >
                 <span
                   class="empty-sql-placeholder"
@@ -6180,12 +6180,12 @@ exports[`sqle/ExecWorkflow/AuditDetail/SqlMode render sql execution result 1`] =
               class="lazy-load-wrapper segmented-item-content lazy-load-wrapper-hidden css-952l0m"
             >
               <div
-                class="actiontech-sql-renderer-wrapper css-dz7fl9"
+                class="actiontech-sql-renderer-wrapper word-wrap css-q962ee"
               >
                 <pre>
                   <code>
                     <div
-                      class="code-line"
+                      class="code-line wrapped-line with-line-number"
                     >
                       <span
                         class="code-line-number"
@@ -6267,12 +6267,12 @@ exports[`sqle/ExecWorkflow/AuditDetail/SqlMode render sql execution result 1`] =
                   class="ant-space-item"
                 >
                   <div
-                    class="actiontech-sql-renderer-wrapper css-dz7fl9"
+                    class="actiontech-sql-renderer-wrapper word-wrap css-q962ee"
                   >
                     <pre>
                       <code>
                         <div
-                          class="code-line"
+                          class="code-line wrapped-line with-line-number"
                         >
                           <span
                             class="code-line-number"
