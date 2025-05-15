@@ -1046,6 +1046,16 @@ export const PERMISSION_MANIFEST: Record<
       opType: OpPermissionItemOpPermissionTypeEnum.save_audit_plan
     }
   },
+  [PERMISSIONS.ACTIONS.SQLE.SQL_MANAGEMENT_CONF.RESET_TOKEN]: {
+    id: PERMISSIONS.ACTIONS.SQLE.SQL_MANAGEMENT_CONF.RESET_TOKEN,
+    type: 'action',
+    projectArchived: false,
+    projectManager: true,
+    role: [SystemRole.admin, SystemRole.globalManager],
+    dbServicePermission: {
+      opType: OpPermissionItemOpPermissionTypeEnum.save_audit_plan
+    }
+  },
 
   // 快捷审核
   [PERMISSIONS.ACTIONS.SQLE.SQL_AUDIT.CREATE]: {

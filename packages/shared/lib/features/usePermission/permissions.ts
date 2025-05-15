@@ -239,7 +239,8 @@ export const PERMISSIONS = {
         DETAIL_AUDIT: 'action:sql_management_conf_detail_audit_operator',
         DETAIL_STOP: 'action:sql_management_conf_detail_stop_operator',
         DETAIL_ENABLE: 'action:sql_management_conf_detail_enable_operator',
-        DETAIL_DELETE: 'action:sql_management_conf_detail_delete_operator'
+        DETAIL_DELETE: 'action:sql_management_conf_detail_delete_operator',
+        RESET_TOKEN: 'action:sql_management_conf_reset_token'
       },
       SQL_AUDIT: {
         CREATE: 'action:create_sql_audit'
