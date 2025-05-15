@@ -1,5 +1,166 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`test SQLRenderer should apply word-wrap class when wordWrap is true 1`] = `
+<div>
+  <div
+    class="actiontech-sql-renderer-wrapper word-wrap css-q962ee"
+  >
+    <pre>
+      <code>
+        <div
+          class="code-line wrapped-line"
+        >
+          <span
+            class="hljs-keyword"
+          >
+            CREATE TABLE
+          </span>
+           IF 
+          <span
+            class="hljs-keyword"
+          >
+            NOT
+          </span>
+           
+          <span
+            class="hljs-keyword"
+          >
+            EXISTS
+          </span>
+           task (id 
+          <span
+            class="hljs-type"
+          >
+            BIGINT
+          </span>
+           UNSIGNED AUTO_INCREMENT 
+          <span
+            class="hljs-keyword"
+          >
+            PRIMARY KEY
+          </span>
+          ,title 
+          <span
+            class="hljs-type"
+          >
+            VARCHAR
+          </span>
+          (
+          <span
+            class="hljs-number"
+          >
+            255
+          </span>
+          ) 
+          <span
+            class="hljs-keyword"
+          >
+            NOT NULL
+          </span>
+           
+          <span
+            class="hljs-keyword"
+          >
+            DEFAULT
+          </span>
+           
+          <span
+            class="hljs-string"
+          >
+            ''
+          </span>
+          , description TEXT, status ENUM(
+          <span
+            class="hljs-string"
+          >
+            'pending'
+          </span>
+          , 
+          <span
+            class="hljs-string"
+          >
+            'completed'
+          </span>
+          ) 
+          <span
+            class="hljs-keyword"
+          >
+            NOT NULL
+          </span>
+           
+          <span
+            class="hljs-keyword"
+          >
+            DEFAULT
+          </span>
+           
+          <span
+            class="hljs-string"
+          >
+            'pending'
+          </span>
+          , created_at 
+          <span
+            class="hljs-type"
+          >
+            TIMESTAMP
+          </span>
+           
+          <span
+            class="hljs-keyword"
+          >
+            DEFAULT
+          </span>
+           
+          <span
+            class="hljs-built_in"
+          >
+            CURRENT_TIMESTAMP
+          </span>
+          , updated_at 
+          <span
+            class="hljs-type"
+          >
+            TIMESTAMP
+          </span>
+           
+          <span
+            class="hljs-keyword"
+          >
+            DEFAULT
+          </span>
+           
+          <span
+            class="hljs-built_in"
+          >
+            CURRENT_TIMESTAMP
+          </span>
+           
+          <span
+            class="hljs-keyword"
+          >
+            ON
+          </span>
+           
+          <span
+            class="hljs-keyword"
+          >
+            UPDATE
+          </span>
+           
+          <span
+            class="hljs-built_in"
+          >
+            CURRENT_TIMESTAMP
+          </span>
+          );
+        </div>
+      </code>
+    </pre>
+  </div>
+</div>
+`;
+
 exports[`test SQLRenderer should render with different props configurations 1`] = `
 <div>
   <div
@@ -9,7 +170,7 @@ exports[`test SQLRenderer should render with different props configurations 1`] 
       class="ant-spin-container"
     >
       <div
-        class="actiontech-sql-renderer-wrapper css-dz7fl9"
+        class="actiontech-sql-renderer-wrapper css-q962ee"
       >
         <pre>
           <code>
@@ -210,7 +371,7 @@ exports[`test SQLRenderer should render with different props configurations 1`] 
 exports[`test SQLRenderer should render with different props configurations 2`] = `
 <div>
   <div
-    class="actiontech-sql-renderer-wrapper css-dz7fl9"
+    class="actiontech-sql-renderer-wrapper css-q962ee"
   >
     <span
       class="empty-sql-placeholder"
@@ -224,7 +385,7 @@ exports[`test SQLRenderer should render with different props configurations 2`] 
 exports[`test SQLRenderer should render with different showCopyIcon values 1`] = `
 <div>
   <div
-    class="actiontech-sql-renderer-wrapper css-dz7fl9"
+    class="actiontech-sql-renderer-wrapper css-q962ee"
   >
     <pre>
       <code>
