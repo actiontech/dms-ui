@@ -48,3 +48,13 @@ export interface IUpdatePipelineV1Params extends IUpdatePipelineReqV1 {
 }
 
 export interface IUpdatePipelineV1Return extends IBaseRes {}
+
+export interface IGeneratePipelineNodeTokenV1Params {
+  project_name: string;
+
+  pipeline_id: string;
+
+  node_id: string;
+}
+
+export interface IGeneratePipelineNodeTokenV1Return extends IBaseRes {}
