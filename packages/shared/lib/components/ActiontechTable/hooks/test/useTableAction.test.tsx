@@ -1,8 +1,5 @@
 import { cleanup, fireEvent, screen } from '@testing-library/react';
-import {
-  renderHooksWithTheme,
-  superRender
-} from '../../../../testUtil/customRender';
+import { superRenderHook, superRender } from '../../../../testUtil/superRender';
 import useTableAction from '../useTableAction';
 import { ButtonProps } from 'antd/lib/button';
 
@@ -50,7 +47,7 @@ describe('lib/ActiontechTable-hooks-useTableAction', () => {
   };
   describe('-renderAction', () => {
     it('render use renderAction', async () => {
-      const { result } = renderHooksWithTheme(() => useTableAction());
+      const { result } = superRenderHook(() => useTableAction());
       const elementResult = result.current.renderAction(
         mockActions,
         mockRecord
@@ -66,7 +63,7 @@ describe('lib/ActiontechTable-hooks-useTableAction', () => {
     });
 
     it('render btn is disabled', async () => {
-      const { result } = renderHooksWithTheme(() => useTableAction());
+      const { result } = superRenderHook(() => useTableAction());
       const elementResult = result.current.renderAction(
         [
           {
@@ -91,7 +88,7 @@ describe('lib/ActiontechTable-hooks-useTableAction', () => {
     });
 
     it('render btn click fn', async () => {
-      const { result } = renderHooksWithTheme(() => useTableAction());
+      const { result } = superRenderHook(() => useTableAction());
       const onClickSpy = jest.fn();
       const elementResult = result.current.renderAction(
         [
@@ -123,7 +120,7 @@ describe('lib/ActiontechTable-hooks-useTableAction', () => {
     });
 
     it('render btn click confirm', async () => {
-      const { result } = renderHooksWithTheme(() => useTableAction());
+      const { result } = superRenderHook(() => useTableAction());
       const onConfirmSpy = jest.fn();
       const elementResult = result.current.renderAction(
         [
@@ -160,7 +157,7 @@ describe('lib/ActiontechTable-hooks-useTableAction', () => {
     });
 
     it('render btn when action type is "navigate-link"', () => {
-      const { result } = renderHooksWithTheme(() => useTableAction());
+      const { result } = superRenderHook(() => useTableAction());
       const elementResult = result.current.renderAction(
         [
           {
@@ -193,7 +190,7 @@ describe('lib/ActiontechTable-hooks-useTableAction', () => {
 
   describe('-renderActionInTable', () => {
     it('render action when actions is empty', async () => {
-      const { result } = renderHooksWithTheme(() => useTableAction());
+      const { result } = superRenderHook(() => useTableAction());
       const elementResult = result.current.renderActionInTable([]);
       expect(elementResult).toBeNull();
     });
@@ -210,14 +207,14 @@ describe('lib/ActiontechTable-hooks-useTableAction', () => {
             } as Omit<ButtonProps, 'children'>)
         }
       ];
-      const { result } = renderHooksWithTheme(() => useTableAction());
+      const { result } = superRenderHook(() => useTableAction());
       const elementResult = result.current.renderActionInTable(mockActionData);
 
       expect(elementResult).toMatchSnapshot();
     });
 
     it('render buttons | moreButtons is empty', async () => {
-      const { result } = renderHooksWithTheme(() => useTableAction());
+      const { result } = superRenderHook(() => useTableAction());
       const elementResult = result.current.renderActionInTable({
         buttons: [],
         moreButtons: []
@@ -226,7 +223,7 @@ describe('lib/ActiontechTable-hooks-useTableAction', () => {
     });
 
     it('render buttons', async () => {
-      const { result } = renderHooksWithTheme(() => useTableAction());
+      const { result } = superRenderHook(() => useTableAction());
       const elementResult = result.current.renderActionInTable({
         buttons: mockActions,
         moreButtons: []
@@ -241,7 +238,7 @@ describe('lib/ActiontechTable-hooks-useTableAction', () => {
     });
 
     it('render moreButtons', async () => {
-      const { result } = renderHooksWithTheme(() => useTableAction());
+      const { result } = superRenderHook(() => useTableAction());
       const elementResult = result.current.renderActionInTable({
         buttons: [],
         moreButtons: [
@@ -280,7 +277,7 @@ describe('lib/ActiontechTable-hooks-useTableAction', () => {
     });
 
     it('render button & moreButtons', async () => {
-      const { result } = renderHooksWithTheme(() => useTableAction());
+      const { result } = superRenderHook(() => useTableAction());
       const elementResult = result.current.renderActionInTable({
         buttons: [
           {
@@ -308,7 +305,7 @@ describe('lib/ActiontechTable-hooks-useTableAction', () => {
     });
 
     it('render moreButtons when it is a function', async () => {
-      const { result } = renderHooksWithTheme(() => useTableAction());
+      const { result } = superRenderHook(() => useTableAction());
       const elementResult = result.current.renderActionInTable({
         buttons: [
           {
