@@ -202,6 +202,7 @@ exports[`usePermission should match snapshot 1`] = `
         "DETAIL_STOP": "action:sql_management_conf_detail_stop_operator",
         "EDIT": "action:sql_management_conf_edit_operator",
         "ENABLE": "action:sql_management_conf_enable_operator",
+        "RESET_TOKEN": "action:sql_management_conf_reset_token",
         "STOP": "action:sql_management_conf_stop_operator",
       },
       "SQL_MANAGEMENT_EXCEPTION": {
@@ -1292,6 +1293,19 @@ exports[`usePermission should match snapshot 2`] = `
       "opType": "save_audit_plan",
     },
     "id": "action:sql_management_conf_enable_operator",
+    "projectArchived": false,
+    "projectManager": true,
+    "role": [
+      "admin",
+      "globalManager",
+    ],
+    "type": "action",
+  },
+  "action:sql_management_conf_reset_token": {
+    "dbServicePermission": {
+      "opType": "save_audit_plan",
+    },
+    "id": "action:sql_management_conf_reset_token",
     "projectArchived": false,
     "projectManager": true,
     "role": [
