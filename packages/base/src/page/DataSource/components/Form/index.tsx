@@ -42,7 +42,7 @@ import { SQLQueryConfigAllowQueryWhenLessThanAuditLevelEnum } from '@actiontech/
 import rule_template from '@actiontech/shared/lib/api/sqle/service/rule_template';
 import useSqlReviewTemplateToggle from '../../../../hooks/useSqlReviewTemplateToggle';
 import classNames from 'classnames';
-import { DatabaseFilled } from '@actiontech/icons';
+import { DatabaseFilled, FaLessThanEqualOutlined } from '@actiontech/icons';
 import Icon from '@ant-design/icons';
 import useProjectTips from '../../../../hooks/useProjectTips';
 import { SQLE_INSTANCE_SOURCE_NAME } from '@actiontech/shared/lib/data/common';
@@ -479,7 +479,7 @@ const DataSourceForm: React.FC<IDataSourceFormProps> = (props) => {
             )}
             name="allowQueryWhenLessThanAuditLevel"
           >
-            <BasicSelect>
+            <BasicSelect prefix={<FaLessThanEqualOutlined />}>
               {Object.values(
                 SQLQueryConfigAllowQueryWhenLessThanAuditLevelEnum
               ).map((v) => {

@@ -601,9 +601,9 @@ exports[`page/SyncDataSource/SyncTaskForm render for loading form 1`] = `
                     <label
                       class="ant-form-item-no-colon"
                       for="allowQueryWhenLessThanAuditLevel"
-                      title="运行查询的最高审核等级"
+                      title="自动放行的最高审核等级"
                     >
-                      运行查询的最高审核等级
+                      自动放行的最高审核等级
                     </label>
                   </div>
                   <div
@@ -616,64 +616,83 @@ exports[`page/SyncDataSource/SyncTaskForm render for loading form 1`] = `
                         class="ant-form-item-control-input-content"
                       >
                         <div
-                          class="ant-select ant-select-in-form-item basic-select-wrapper css-iy4o4x ant-select-single ant-select-show-arrow"
+                          class="basic-select-container has-prefix css-12vdeki"
                         >
-                          <div
-                            class="ant-select-selector"
+                          <span
+                            class="basic-select-prefix"
                           >
-                            <span
-                              class="ant-select-selection-search"
+                            <svg
+                              class="FaLessThanEqualOutlined_svg__icon"
+                              height="16"
+                              viewBox="0 0 1024 1024"
+                              width="16"
+                              xmlns="http://www.w3.org/2000/svg"
                             >
-                              <input
-                                aria-activedescendant="allowQueryWhenLessThanAuditLevel_list_0"
-                                aria-autocomplete="list"
-                                aria-controls="allowQueryWhenLessThanAuditLevel_list"
-                                aria-expanded="false"
-                                aria-haspopup="listbox"
-                                aria-owns="allowQueryWhenLessThanAuditLevel_list"
-                                autocomplete="off"
-                                class="ant-select-selection-search-input"
-                                id="allowQueryWhenLessThanAuditLevel"
-                                readonly=""
-                                role="combobox"
-                                style="opacity: 0;"
-                                type="search"
-                                unselectable="on"
-                                value=""
+                              <path
+                                d="M896 981.333A42.667 42.667 0 0 1 853.333 1024H170.667a42.667 42.667 0 1 1 0-85.333h682.666A42.667 42.667 0 0 1 896 981.333M870.187 728.79l-622.08-267.178c-25.643-11.008-34.731-36.31-34.731-56.278s9.13-45.312 34.73-56.277l622.08-267.179A42.667 42.667 0 0 0 836.524 3.5L214.357 270.635C161.067 293.547 128 345.173 128 405.333s33.11 111.787 86.4 134.699l622.123 267.179a42.667 42.667 0 0 0 33.664-78.379z"
                               />
-                            </span>
-                            <span
-                              class="ant-select-selection-placeholder"
+                            </svg>
+                          </span>
+                          <div
+                            class="ant-select ant-select-in-form-item basic-select-wrapper css-iy4o4x ant-select-single ant-select-show-arrow"
+                          >
+                            <div
+                              class="ant-select-selector"
                             >
-                              请选择{{name}}
+                              <span
+                                class="ant-select-selection-search"
+                              >
+                                <input
+                                  aria-activedescendant="allowQueryWhenLessThanAuditLevel_list_0"
+                                  aria-autocomplete="list"
+                                  aria-controls="allowQueryWhenLessThanAuditLevel_list"
+                                  aria-expanded="false"
+                                  aria-haspopup="listbox"
+                                  aria-owns="allowQueryWhenLessThanAuditLevel_list"
+                                  autocomplete="off"
+                                  class="ant-select-selection-search-input"
+                                  id="allowQueryWhenLessThanAuditLevel"
+                                  readonly=""
+                                  role="combobox"
+                                  style="opacity: 0;"
+                                  type="search"
+                                  unselectable="on"
+                                  value=""
+                                />
+                              </span>
+                              <span
+                                class="ant-select-selection-placeholder"
+                              >
+                                请选择{{name}}
+                              </span>
+                            </div>
+                            <span
+                              aria-hidden="true"
+                              class="ant-select-arrow"
+                              style="user-select: none;"
+                              unselectable="on"
+                            >
+                              <span
+                                aria-label="down"
+                                class="anticon anticon-down ant-select-suffix"
+                                role="img"
+                              >
+                                <svg
+                                  aria-hidden="true"
+                                  data-icon="down"
+                                  fill="currentColor"
+                                  focusable="false"
+                                  height="1em"
+                                  viewBox="64 64 896 896"
+                                  width="1em"
+                                >
+                                  <path
+                                    d="M884 256h-75c-5.1 0-9.9 2.5-12.9 6.6L512 654.2 227.9 262.6c-3-4.1-7.8-6.6-12.9-6.6h-75c-6.5 0-10.3 7.4-6.5 12.7l352.6 486.1c12.8 17.6 39 17.6 51.7 0l352.6-486.1c3.9-5.3.1-12.7-6.4-12.7z"
+                                  />
+                                </svg>
+                              </span>
                             </span>
                           </div>
-                          <span
-                            aria-hidden="true"
-                            class="ant-select-arrow"
-                            style="user-select: none;"
-                            unselectable="on"
-                          >
-                            <span
-                              aria-label="down"
-                              class="anticon anticon-down ant-select-suffix"
-                              role="img"
-                            >
-                              <svg
-                                aria-hidden="true"
-                                data-icon="down"
-                                fill="currentColor"
-                                focusable="false"
-                                height="1em"
-                                viewBox="64 64 896 896"
-                                width="1em"
-                              >
-                                <path
-                                  d="M884 256h-75c-5.1 0-9.9 2.5-12.9 6.6L512 654.2 227.9 262.6c-3-4.1-7.8-6.6-12.9-6.6h-75c-6.5 0-10.3 7.4-6.5 12.7l352.6 486.1c12.8 17.6 39 17.6 51.7 0l352.6-486.1c3.9-5.3.1-12.7-6.4-12.7z"
-                                />
-                              </svg>
-                            </span>
-                          </span>
                         </div>
                       </div>
                     </div>
@@ -1364,9 +1383,9 @@ exports[`page/SyncDataSource/SyncTaskForm render name rule 1`] = `
                     <label
                       class="ant-form-item-no-colon"
                       for="allowQueryWhenLessThanAuditLevel"
-                      title="运行查询的最高审核等级"
+                      title="自动放行的最高审核等级"
                     >
-                      运行查询的最高审核等级
+                      自动放行的最高审核等级
                     </label>
                   </div>
                   <div
@@ -1379,64 +1398,83 @@ exports[`page/SyncDataSource/SyncTaskForm render name rule 1`] = `
                         class="ant-form-item-control-input-content"
                       >
                         <div
-                          class="ant-select ant-select-in-form-item basic-select-wrapper css-iy4o4x ant-select-single ant-select-show-arrow"
+                          class="basic-select-container has-prefix css-12vdeki"
                         >
-                          <div
-                            class="ant-select-selector"
+                          <span
+                            class="basic-select-prefix"
                           >
-                            <span
-                              class="ant-select-selection-search"
+                            <svg
+                              class="FaLessThanEqualOutlined_svg__icon"
+                              height="16"
+                              viewBox="0 0 1024 1024"
+                              width="16"
+                              xmlns="http://www.w3.org/2000/svg"
                             >
-                              <input
-                                aria-activedescendant="allowQueryWhenLessThanAuditLevel_list_0"
-                                aria-autocomplete="list"
-                                aria-controls="allowQueryWhenLessThanAuditLevel_list"
-                                aria-expanded="false"
-                                aria-haspopup="listbox"
-                                aria-owns="allowQueryWhenLessThanAuditLevel_list"
-                                autocomplete="off"
-                                class="ant-select-selection-search-input"
-                                id="allowQueryWhenLessThanAuditLevel"
-                                readonly=""
-                                role="combobox"
-                                style="opacity: 0;"
-                                type="search"
-                                unselectable="on"
-                                value=""
+                              <path
+                                d="M896 981.333A42.667 42.667 0 0 1 853.333 1024H170.667a42.667 42.667 0 1 1 0-85.333h682.666A42.667 42.667 0 0 1 896 981.333M870.187 728.79l-622.08-267.178c-25.643-11.008-34.731-36.31-34.731-56.278s9.13-45.312 34.73-56.277l622.08-267.179A42.667 42.667 0 0 0 836.524 3.5L214.357 270.635C161.067 293.547 128 345.173 128 405.333s33.11 111.787 86.4 134.699l622.123 267.179a42.667 42.667 0 0 0 33.664-78.379z"
                               />
-                            </span>
-                            <span
-                              class="ant-select-selection-placeholder"
+                            </svg>
+                          </span>
+                          <div
+                            class="ant-select ant-select-in-form-item basic-select-wrapper css-iy4o4x ant-select-single ant-select-show-arrow"
+                          >
+                            <div
+                              class="ant-select-selector"
                             >
-                              请选择{{name}}
+                              <span
+                                class="ant-select-selection-search"
+                              >
+                                <input
+                                  aria-activedescendant="allowQueryWhenLessThanAuditLevel_list_0"
+                                  aria-autocomplete="list"
+                                  aria-controls="allowQueryWhenLessThanAuditLevel_list"
+                                  aria-expanded="false"
+                                  aria-haspopup="listbox"
+                                  aria-owns="allowQueryWhenLessThanAuditLevel_list"
+                                  autocomplete="off"
+                                  class="ant-select-selection-search-input"
+                                  id="allowQueryWhenLessThanAuditLevel"
+                                  readonly=""
+                                  role="combobox"
+                                  style="opacity: 0;"
+                                  type="search"
+                                  unselectable="on"
+                                  value=""
+                                />
+                              </span>
+                              <span
+                                class="ant-select-selection-placeholder"
+                              >
+                                请选择{{name}}
+                              </span>
+                            </div>
+                            <span
+                              aria-hidden="true"
+                              class="ant-select-arrow"
+                              style="user-select: none;"
+                              unselectable="on"
+                            >
+                              <span
+                                aria-label="down"
+                                class="anticon anticon-down ant-select-suffix"
+                                role="img"
+                              >
+                                <svg
+                                  aria-hidden="true"
+                                  data-icon="down"
+                                  fill="currentColor"
+                                  focusable="false"
+                                  height="1em"
+                                  viewBox="64 64 896 896"
+                                  width="1em"
+                                >
+                                  <path
+                                    d="M884 256h-75c-5.1 0-9.9 2.5-12.9 6.6L512 654.2 227.9 262.6c-3-4.1-7.8-6.6-12.9-6.6h-75c-6.5 0-10.3 7.4-6.5 12.7l352.6 486.1c12.8 17.6 39 17.6 51.7 0l352.6-486.1c3.9-5.3.1-12.7-6.4-12.7z"
+                                  />
+                                </svg>
+                              </span>
                             </span>
                           </div>
-                          <span
-                            aria-hidden="true"
-                            class="ant-select-arrow"
-                            style="user-select: none;"
-                            unselectable="on"
-                          >
-                            <span
-                              aria-label="down"
-                              class="anticon anticon-down ant-select-suffix"
-                              role="img"
-                            >
-                              <svg
-                                aria-hidden="true"
-                                data-icon="down"
-                                fill="currentColor"
-                                focusable="false"
-                                height="1em"
-                                viewBox="64 64 896 896"
-                                width="1em"
-                              >
-                                <path
-                                  d="M884 256h-75c-5.1 0-9.9 2.5-12.9 6.6L512 654.2 227.9 262.6c-3-4.1-7.8-6.6-12.9-6.6h-75c-6.5 0-10.3 7.4-6.5 12.7l352.6 486.1c12.8 17.6 39 17.6 51.7 0l352.6-486.1c3.9-5.3.1-12.7-6.4-12.7z"
-                                />
-                              </svg>
-                            </span>
-                          </span>
                         </div>
                       </div>
                     </div>
@@ -2127,9 +2165,9 @@ exports[`page/SyncDataSource/SyncTaskForm render name rule 2`] = `
                     <label
                       class="ant-form-item-no-colon"
                       for="allowQueryWhenLessThanAuditLevel"
-                      title="运行查询的最高审核等级"
+                      title="自动放行的最高审核等级"
                     >
-                      运行查询的最高审核等级
+                      自动放行的最高审核等级
                     </label>
                   </div>
                   <div
@@ -2142,64 +2180,83 @@ exports[`page/SyncDataSource/SyncTaskForm render name rule 2`] = `
                         class="ant-form-item-control-input-content"
                       >
                         <div
-                          class="ant-select ant-select-in-form-item basic-select-wrapper css-iy4o4x ant-select-single ant-select-show-arrow"
+                          class="basic-select-container has-prefix css-12vdeki"
                         >
-                          <div
-                            class="ant-select-selector"
+                          <span
+                            class="basic-select-prefix"
                           >
-                            <span
-                              class="ant-select-selection-search"
+                            <svg
+                              class="FaLessThanEqualOutlined_svg__icon"
+                              height="16"
+                              viewBox="0 0 1024 1024"
+                              width="16"
+                              xmlns="http://www.w3.org/2000/svg"
                             >
-                              <input
-                                aria-activedescendant="allowQueryWhenLessThanAuditLevel_list_0"
-                                aria-autocomplete="list"
-                                aria-controls="allowQueryWhenLessThanAuditLevel_list"
-                                aria-expanded="false"
-                                aria-haspopup="listbox"
-                                aria-owns="allowQueryWhenLessThanAuditLevel_list"
-                                autocomplete="off"
-                                class="ant-select-selection-search-input"
-                                id="allowQueryWhenLessThanAuditLevel"
-                                readonly=""
-                                role="combobox"
-                                style="opacity: 0;"
-                                type="search"
-                                unselectable="on"
-                                value=""
+                              <path
+                                d="M896 981.333A42.667 42.667 0 0 1 853.333 1024H170.667a42.667 42.667 0 1 1 0-85.333h682.666A42.667 42.667 0 0 1 896 981.333M870.187 728.79l-622.08-267.178c-25.643-11.008-34.731-36.31-34.731-56.278s9.13-45.312 34.73-56.277l622.08-267.179A42.667 42.667 0 0 0 836.524 3.5L214.357 270.635C161.067 293.547 128 345.173 128 405.333s33.11 111.787 86.4 134.699l622.123 267.179a42.667 42.667 0 0 0 33.664-78.379z"
                               />
-                            </span>
-                            <span
-                              class="ant-select-selection-placeholder"
+                            </svg>
+                          </span>
+                          <div
+                            class="ant-select ant-select-in-form-item basic-select-wrapper css-iy4o4x ant-select-single ant-select-show-arrow"
+                          >
+                            <div
+                              class="ant-select-selector"
                             >
-                              请选择{{name}}
+                              <span
+                                class="ant-select-selection-search"
+                              >
+                                <input
+                                  aria-activedescendant="allowQueryWhenLessThanAuditLevel_list_0"
+                                  aria-autocomplete="list"
+                                  aria-controls="allowQueryWhenLessThanAuditLevel_list"
+                                  aria-expanded="false"
+                                  aria-haspopup="listbox"
+                                  aria-owns="allowQueryWhenLessThanAuditLevel_list"
+                                  autocomplete="off"
+                                  class="ant-select-selection-search-input"
+                                  id="allowQueryWhenLessThanAuditLevel"
+                                  readonly=""
+                                  role="combobox"
+                                  style="opacity: 0;"
+                                  type="search"
+                                  unselectable="on"
+                                  value=""
+                                />
+                              </span>
+                              <span
+                                class="ant-select-selection-placeholder"
+                              >
+                                请选择{{name}}
+                              </span>
+                            </div>
+                            <span
+                              aria-hidden="true"
+                              class="ant-select-arrow"
+                              style="user-select: none;"
+                              unselectable="on"
+                            >
+                              <span
+                                aria-label="down"
+                                class="anticon anticon-down ant-select-suffix"
+                                role="img"
+                              >
+                                <svg
+                                  aria-hidden="true"
+                                  data-icon="down"
+                                  fill="currentColor"
+                                  focusable="false"
+                                  height="1em"
+                                  viewBox="64 64 896 896"
+                                  width="1em"
+                                >
+                                  <path
+                                    d="M884 256h-75c-5.1 0-9.9 2.5-12.9 6.6L512 654.2 227.9 262.6c-3-4.1-7.8-6.6-12.9-6.6h-75c-6.5 0-10.3 7.4-6.5 12.7l352.6 486.1c12.8 17.6 39 17.6 51.7 0l352.6-486.1c3.9-5.3.1-12.7-6.4-12.7z"
+                                  />
+                                </svg>
+                              </span>
                             </span>
                           </div>
-                          <span
-                            aria-hidden="true"
-                            class="ant-select-arrow"
-                            style="user-select: none;"
-                            unselectable="on"
-                          >
-                            <span
-                              aria-label="down"
-                              class="anticon anticon-down ant-select-suffix"
-                              role="img"
-                            >
-                              <svg
-                                aria-hidden="true"
-                                data-icon="down"
-                                fill="currentColor"
-                                focusable="false"
-                                height="1em"
-                                viewBox="64 64 896 896"
-                                width="1em"
-                              >
-                                <path
-                                  d="M884 256h-75c-5.1 0-9.9 2.5-12.9 6.6L512 654.2 227.9 262.6c-3-4.1-7.8-6.6-12.9-6.6h-75c-6.5 0-10.3 7.4-6.5 12.7l352.6 486.1c12.8 17.6 39 17.6 51.7 0l352.6-486.1c3.9-5.3.1-12.7-6.4-12.7z"
-                                />
-                              </svg>
-                            </span>
-                          </span>
                         </div>
                       </div>
                     </div>
@@ -2877,9 +2934,9 @@ exports[`page/SyncDataSource/SyncTaskForm render syncInterval for form item 1`] 
                     <label
                       class="ant-form-item-no-colon"
                       for="allowQueryWhenLessThanAuditLevel"
-                      title="运行查询的最高审核等级"
+                      title="自动放行的最高审核等级"
                     >
-                      运行查询的最高审核等级
+                      自动放行的最高审核等级
                     </label>
                   </div>
                   <div
@@ -2892,64 +2949,83 @@ exports[`page/SyncDataSource/SyncTaskForm render syncInterval for form item 1`] 
                         class="ant-form-item-control-input-content"
                       >
                         <div
-                          class="ant-select ant-select-in-form-item basic-select-wrapper css-iy4o4x ant-select-single ant-select-show-arrow"
+                          class="basic-select-container has-prefix css-12vdeki"
                         >
-                          <div
-                            class="ant-select-selector"
+                          <span
+                            class="basic-select-prefix"
                           >
-                            <span
-                              class="ant-select-selection-search"
+                            <svg
+                              class="FaLessThanEqualOutlined_svg__icon"
+                              height="16"
+                              viewBox="0 0 1024 1024"
+                              width="16"
+                              xmlns="http://www.w3.org/2000/svg"
                             >
-                              <input
-                                aria-activedescendant="allowQueryWhenLessThanAuditLevel_list_0"
-                                aria-autocomplete="list"
-                                aria-controls="allowQueryWhenLessThanAuditLevel_list"
-                                aria-expanded="false"
-                                aria-haspopup="listbox"
-                                aria-owns="allowQueryWhenLessThanAuditLevel_list"
-                                autocomplete="off"
-                                class="ant-select-selection-search-input"
-                                id="allowQueryWhenLessThanAuditLevel"
-                                readonly=""
-                                role="combobox"
-                                style="opacity: 0;"
-                                type="search"
-                                unselectable="on"
-                                value=""
+                              <path
+                                d="M896 981.333A42.667 42.667 0 0 1 853.333 1024H170.667a42.667 42.667 0 1 1 0-85.333h682.666A42.667 42.667 0 0 1 896 981.333M870.187 728.79l-622.08-267.178c-25.643-11.008-34.731-36.31-34.731-56.278s9.13-45.312 34.73-56.277l622.08-267.179A42.667 42.667 0 0 0 836.524 3.5L214.357 270.635C161.067 293.547 128 345.173 128 405.333s33.11 111.787 86.4 134.699l622.123 267.179a42.667 42.667 0 0 0 33.664-78.379z"
                               />
-                            </span>
-                            <span
-                              class="ant-select-selection-placeholder"
+                            </svg>
+                          </span>
+                          <div
+                            class="ant-select ant-select-in-form-item basic-select-wrapper css-iy4o4x ant-select-single ant-select-show-arrow"
+                          >
+                            <div
+                              class="ant-select-selector"
                             >
-                              请选择{{name}}
+                              <span
+                                class="ant-select-selection-search"
+                              >
+                                <input
+                                  aria-activedescendant="allowQueryWhenLessThanAuditLevel_list_0"
+                                  aria-autocomplete="list"
+                                  aria-controls="allowQueryWhenLessThanAuditLevel_list"
+                                  aria-expanded="false"
+                                  aria-haspopup="listbox"
+                                  aria-owns="allowQueryWhenLessThanAuditLevel_list"
+                                  autocomplete="off"
+                                  class="ant-select-selection-search-input"
+                                  id="allowQueryWhenLessThanAuditLevel"
+                                  readonly=""
+                                  role="combobox"
+                                  style="opacity: 0;"
+                                  type="search"
+                                  unselectable="on"
+                                  value=""
+                                />
+                              </span>
+                              <span
+                                class="ant-select-selection-placeholder"
+                              >
+                                请选择{{name}}
+                              </span>
+                            </div>
+                            <span
+                              aria-hidden="true"
+                              class="ant-select-arrow"
+                              style="user-select: none;"
+                              unselectable="on"
+                            >
+                              <span
+                                aria-label="down"
+                                class="anticon anticon-down ant-select-suffix"
+                                role="img"
+                              >
+                                <svg
+                                  aria-hidden="true"
+                                  data-icon="down"
+                                  fill="currentColor"
+                                  focusable="false"
+                                  height="1em"
+                                  viewBox="64 64 896 896"
+                                  width="1em"
+                                >
+                                  <path
+                                    d="M884 256h-75c-5.1 0-9.9 2.5-12.9 6.6L512 654.2 227.9 262.6c-3-4.1-7.8-6.6-12.9-6.6h-75c-6.5 0-10.3 7.4-6.5 12.7l352.6 486.1c12.8 17.6 39 17.6 51.7 0l352.6-486.1c3.9-5.3.1-12.7-6.4-12.7z"
+                                  />
+                                </svg>
+                              </span>
                             </span>
                           </div>
-                          <span
-                            aria-hidden="true"
-                            class="ant-select-arrow"
-                            style="user-select: none;"
-                            unselectable="on"
-                          >
-                            <span
-                              aria-label="down"
-                              class="anticon anticon-down ant-select-suffix"
-                              role="img"
-                            >
-                              <svg
-                                aria-hidden="true"
-                                data-icon="down"
-                                fill="currentColor"
-                                focusable="false"
-                                height="1em"
-                                viewBox="64 64 896 896"
-                                width="1em"
-                              >
-                                <path
-                                  d="M884 256h-75c-5.1 0-9.9 2.5-12.9 6.6L512 654.2 227.9 262.6c-3-4.1-7.8-6.6-12.9-6.6h-75c-6.5 0-10.3 7.4-6.5 12.7l352.6 486.1c12.8 17.6 39 17.6 51.7 0l352.6-486.1c3.9-5.3.1-12.7-6.4-12.7z"
-                                />
-                              </svg>
-                            </span>
-                          </span>
                         </div>
                       </div>
                     </div>
@@ -3638,9 +3714,9 @@ exports[`page/SyncDataSource/SyncTaskForm render syncInterval for form item 2`] 
                     <label
                       class="ant-form-item-no-colon"
                       for="allowQueryWhenLessThanAuditLevel"
-                      title="运行查询的最高审核等级"
+                      title="自动放行的最高审核等级"
                     >
-                      运行查询的最高审核等级
+                      自动放行的最高审核等级
                     </label>
                   </div>
                   <div
@@ -3653,64 +3729,83 @@ exports[`page/SyncDataSource/SyncTaskForm render syncInterval for form item 2`] 
                         class="ant-form-item-control-input-content"
                       >
                         <div
-                          class="ant-select ant-select-in-form-item basic-select-wrapper css-iy4o4x ant-select-single ant-select-show-arrow"
+                          class="basic-select-container has-prefix css-12vdeki"
                         >
-                          <div
-                            class="ant-select-selector"
+                          <span
+                            class="basic-select-prefix"
                           >
-                            <span
-                              class="ant-select-selection-search"
+                            <svg
+                              class="FaLessThanEqualOutlined_svg__icon"
+                              height="16"
+                              viewBox="0 0 1024 1024"
+                              width="16"
+                              xmlns="http://www.w3.org/2000/svg"
                             >
-                              <input
-                                aria-activedescendant="allowQueryWhenLessThanAuditLevel_list_0"
-                                aria-autocomplete="list"
-                                aria-controls="allowQueryWhenLessThanAuditLevel_list"
-                                aria-expanded="false"
-                                aria-haspopup="listbox"
-                                aria-owns="allowQueryWhenLessThanAuditLevel_list"
-                                autocomplete="off"
-                                class="ant-select-selection-search-input"
-                                id="allowQueryWhenLessThanAuditLevel"
-                                readonly=""
-                                role="combobox"
-                                style="opacity: 0;"
-                                type="search"
-                                unselectable="on"
-                                value=""
+                              <path
+                                d="M896 981.333A42.667 42.667 0 0 1 853.333 1024H170.667a42.667 42.667 0 1 1 0-85.333h682.666A42.667 42.667 0 0 1 896 981.333M870.187 728.79l-622.08-267.178c-25.643-11.008-34.731-36.31-34.731-56.278s9.13-45.312 34.73-56.277l622.08-267.179A42.667 42.667 0 0 0 836.524 3.5L214.357 270.635C161.067 293.547 128 345.173 128 405.333s33.11 111.787 86.4 134.699l622.123 267.179a42.667 42.667 0 0 0 33.664-78.379z"
                               />
-                            </span>
-                            <span
-                              class="ant-select-selection-placeholder"
+                            </svg>
+                          </span>
+                          <div
+                            class="ant-select ant-select-in-form-item basic-select-wrapper css-iy4o4x ant-select-single ant-select-show-arrow"
+                          >
+                            <div
+                              class="ant-select-selector"
                             >
-                              请选择{{name}}
+                              <span
+                                class="ant-select-selection-search"
+                              >
+                                <input
+                                  aria-activedescendant="allowQueryWhenLessThanAuditLevel_list_0"
+                                  aria-autocomplete="list"
+                                  aria-controls="allowQueryWhenLessThanAuditLevel_list"
+                                  aria-expanded="false"
+                                  aria-haspopup="listbox"
+                                  aria-owns="allowQueryWhenLessThanAuditLevel_list"
+                                  autocomplete="off"
+                                  class="ant-select-selection-search-input"
+                                  id="allowQueryWhenLessThanAuditLevel"
+                                  readonly=""
+                                  role="combobox"
+                                  style="opacity: 0;"
+                                  type="search"
+                                  unselectable="on"
+                                  value=""
+                                />
+                              </span>
+                              <span
+                                class="ant-select-selection-placeholder"
+                              >
+                                请选择{{name}}
+                              </span>
+                            </div>
+                            <span
+                              aria-hidden="true"
+                              class="ant-select-arrow"
+                              style="user-select: none;"
+                              unselectable="on"
+                            >
+                              <span
+                                aria-label="down"
+                                class="anticon anticon-down ant-select-suffix"
+                                role="img"
+                              >
+                                <svg
+                                  aria-hidden="true"
+                                  data-icon="down"
+                                  fill="currentColor"
+                                  focusable="false"
+                                  height="1em"
+                                  viewBox="64 64 896 896"
+                                  width="1em"
+                                >
+                                  <path
+                                    d="M884 256h-75c-5.1 0-9.9 2.5-12.9 6.6L512 654.2 227.9 262.6c-3-4.1-7.8-6.6-12.9-6.6h-75c-6.5 0-10.3 7.4-6.5 12.7l352.6 486.1c12.8 17.6 39 17.6 51.7 0l352.6-486.1c3.9-5.3.1-12.7-6.4-12.7z"
+                                  />
+                                </svg>
+                              </span>
                             </span>
                           </div>
-                          <span
-                            aria-hidden="true"
-                            class="ant-select-arrow"
-                            style="user-select: none;"
-                            unselectable="on"
-                          >
-                            <span
-                              aria-label="down"
-                              class="anticon anticon-down ant-select-suffix"
-                              role="img"
-                            >
-                              <svg
-                                aria-hidden="true"
-                                data-icon="down"
-                                fill="currentColor"
-                                focusable="false"
-                                height="1em"
-                                viewBox="64 64 896 896"
-                                width="1em"
-                              >
-                                <path
-                                  d="M884 256h-75c-5.1 0-9.9 2.5-12.9 6.6L512 654.2 227.9 262.6c-3-4.1-7.8-6.6-12.9-6.6h-75c-6.5 0-10.3 7.4-6.5 12.7l352.6 486.1c12.8 17.6 39 17.6 51.7 0l352.6-486.1c3.9-5.3.1-12.7-6.4-12.7z"
-                                />
-                              </svg>
-                            </span>
-                          </span>
                         </div>
                       </div>
                     </div>
