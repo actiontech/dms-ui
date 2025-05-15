@@ -1,15 +1,15 @@
 import {
-  renderWithReduxAndTheme,
-  renderHooksWithTheme
-} from '@actiontech/shared/lib/testUtil/customRender';
+  superRender,
+  superRenderHook
+} from '@actiontech/shared/lib/testUtil/superRender';
 import RoleForm from '.';
 import { Form } from 'antd';
 import { screen } from '@testing-library/react';
 
 describe('base/UserCenter/Modal/Role/RoleForm', () => {
   const customRender = (isUpdate = false) => {
-    const { result } = renderHooksWithTheme(() => Form.useForm());
-    const { baseElement } = renderWithReduxAndTheme(
+    const { result } = superRenderHook(() => Form.useForm());
+    const { baseElement } = superRender(
       <RoleForm form={result.current[0]} visible={true} isUpdate={isUpdate} />
     );
     return baseElement;
