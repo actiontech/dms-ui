@@ -1,5 +1,5 @@
 import { cleanup, screen, act, fireEvent } from '@testing-library/react';
-import { renderWithReduxAndTheme } from '@actiontech/shared/lib/testUtil/customRender';
+import { superRender } from '@actiontech/shared/lib/testUtil/superRender';
 import RuleTemplateList from '.';
 import { getBySelector } from '@actiontech/shared/lib/testUtil/customQuery';
 import EventEmitter from '../../../utils/EventEmitter';
@@ -57,7 +57,7 @@ describe('sqle/RuleTemplate/List', () => {
   });
 
   const customRender = () =>
-    renderWithReduxAndTheme(
+    superRender(
       <BrowserRouter>
         <RuleTemplateList />
       </BrowserRouter>

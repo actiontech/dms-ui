@@ -1,9 +1,8 @@
 import SqlAuditDetail from '.';
 import sqlAuditRecord from '../../../testUtils/mockApi/sqlAuditRecord';
 import task from '../../../testUtils/mockApi/task';
-import { BrowserRouter } from 'react-router-dom';
 import { act, cleanup, screen } from '@testing-library/react';
-import { renderWithThemeAndRedux } from '../../../testUtils/customRender';
+import { sqleSuperRender } from '../../../testUtils/superRender';
 import { mockUseCurrentUser } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentUser';
 import { mockUseCurrentProject } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentProject';
 import { mockProjectInfo } from '@actiontech/shared/lib/testUtil/mockHook/data';
@@ -49,11 +48,7 @@ describe('sqle/SqlAudit/Detail', () => {
   it('should match snap shot', async () => {
     const getSqlAuditRecordDetailSpy = sqlAuditRecord.getSQLAuditRecord();
     const getAuditTaskSqlSpy = task.getAuditTaskSQLs();
-    const { baseElement } = renderWithThemeAndRedux(
-      <BrowserRouter>
-        <SqlAuditDetail />
-      </BrowserRouter>
-    );
+    const { baseElement } = sqleSuperRender(<SqlAuditDetail />);
     await act(async () => jest.advanceTimersByTime(3000));
     expect(getSqlAuditRecordDetailSpy).toHaveBeenCalledTimes(1);
     expect(getAuditTaskSqlSpy).toHaveBeenCalledTimes(1);
@@ -73,11 +68,7 @@ describe('sqle/SqlAudit/Detail', () => {
         }
       ]
     });
-    renderWithThemeAndRedux(
-      <BrowserRouter>
-        <SqlAuditDetail />
-      </BrowserRouter>
-    );
+    sqleSuperRender(<SqlAuditDetail />);
     await act(async () => jest.advanceTimersByTime(3000));
     expect(screen.queryByText('创建审核')).not.toBeInTheDocument();
   });

@@ -2,7 +2,7 @@ import AuditResultDrawer from '../AuditResultDrawer';
 import { getBySelector } from '@actiontech/shared/lib/testUtil/customQuery';
 import { fireEvent, act, cleanup, screen } from '@testing-library/react';
 import { AuditResultDrawerProps } from '../index.type';
-import { superRender } from '../../../../../../testUtils/customRender';
+import { sqleSuperRender } from '../../../../../../testUtils/superRender';
 import { mockUseCurrentUser } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentUser';
 
 describe('sqle/ExecWorkflow/Common/AuditResultList/AuditResultDrawer', () => {
@@ -16,7 +16,7 @@ describe('sqle/ExecWorkflow/Common/AuditResultList/AuditResultDrawer', () => {
       'onClose' | 'clickAnalyze' | 'handleClickSqlRewritten'
     >
   ) => {
-    return superRender(
+    return sqleSuperRender(
       <AuditResultDrawer
         onClose={onCloseFn}
         clickAnalyze={clickAnalyzeFn}

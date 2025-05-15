@@ -4,7 +4,7 @@ import sqlVersion from '../../../../testUtils/mockApi/sql_version';
 import { mockUseCurrentProject } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentProject';
 import { mockUseDbServiceDriver } from '@actiontech/shared/lib/testUtil/mockHook/mockUseDbServiceDriver';
 import { mockProjectInfo } from '@actiontech/shared/lib/testUtil/mockHook/data';
-import { superRender } from '../../../..//testUtils/customRender';
+import { sqleSuperRender } from '../../../../testUtils/superRender';
 import {
   getAllBySelector,
   getBySelector
@@ -33,7 +33,7 @@ describe('sqle/VersionManagement/Create', () => {
   });
 
   it('render init snap shot', () => {
-    const { baseElement } = superRender(<CreateVersion />);
+    const { baseElement } = sqleSuperRender(<CreateVersion />);
     expect(baseElement).toMatchSnapshot();
     expect(screen.getByText('创建版本')).toBeInTheDocument();
     expect(screen.getByText('返回版本管理列表')).toBeInTheDocument();
@@ -43,7 +43,7 @@ describe('sqle/VersionManagement/Create', () => {
   });
 
   it('render create version', async () => {
-    const { baseElement } = superRender(<CreateVersion />);
+    const { baseElement } = sqleSuperRender(<CreateVersion />);
     await act(async () => jest.advanceTimersByTime(3000));
     fireEvent.change(getBySelector('#version'), {
       target: { value: 'v1_1_0' }
@@ -133,7 +133,7 @@ describe('sqle/VersionManagement/Create', () => {
   });
 
   it('render version stage configuration', async () => {
-    superRender(<CreateVersion />);
+    sqleSuperRender(<CreateVersion />);
     await act(async () => jest.advanceTimersByTime(3000));
 
     // 添加阶段数据源

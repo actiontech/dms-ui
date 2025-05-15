@@ -1,4 +1,4 @@
-import { superRender } from '../../../../../testUtils/customRender';
+import { sqleSuperRender } from '../../../../../testUtils/superRender';
 import WorkflowTemplateStepInfo from '.';
 import { workflowTemplateData } from '../../../../../testUtils/mockApi/workflowTemplate/data';
 import { screen } from '@testing-library/react';
@@ -28,7 +28,7 @@ describe('page/WorkflowTemplate/WorkflowTemplateStepInfo', () => {
   };
 
   const customRender = (data: IWorkflowTemplateStepInfoProps) => {
-    return superRender(<WorkflowTemplateStepInfo {...data} />);
+    return sqleSuperRender(<WorkflowTemplateStepInfo {...data} />);
   };
 
   it('render step info detail', async () => {

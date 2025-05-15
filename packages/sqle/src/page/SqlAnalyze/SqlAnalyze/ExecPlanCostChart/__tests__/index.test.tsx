@@ -1,4 +1,4 @@
-import { superRender } from '@actiontech/shared/lib/testUtil/customRender';
+import { superRender } from '@actiontech/shared/lib/testUtil/superRender';
 import ExecPlanCostChart from '../index';
 import { PieConfig } from '@ant-design/plots';
 import { mockSqlManageSqlAnalysisChartData } from '../../../../../testUtils/mockApi/sqlManage/data';

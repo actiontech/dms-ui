@@ -1,8 +1,8 @@
 import ScanTypesDynamicParams from '../ScanTypesDynamicParams';
 import {
-  superRender,
-  renderHooksWithTheme
-} from '../../../../../testUtils/customRender';
+  sqleSuperRender,
+  sqleSuperRenderHook
+} from '../../../../../testUtils/superRender';
 import { ConfFormContextProvide, SelectScanTypeParamsType } from '../context';
 import { Form } from 'antd';
 import {
@@ -100,8 +100,8 @@ describe('test SqlManagementConf/ScanTypesDynamicParams', () => {
     selectedScanTypeParams: SelectScanTypeParamsType = selectedScanTypeParamsMock,
     defaultValue?: SqlManagementConfFormFields
   ) => {
-    const { result } = renderHooksWithTheme(() => Form.useForm());
-    return superRender(
+    const { result } = sqleSuperRenderHook(() => Form.useForm());
+    return sqleSuperRender(
       <ConfFormContextProvide
         value={{
           submitLoading,

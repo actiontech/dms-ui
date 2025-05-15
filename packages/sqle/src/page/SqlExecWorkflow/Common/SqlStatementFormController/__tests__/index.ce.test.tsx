@@ -4,7 +4,7 @@
 
 import { Form } from 'antd';
 import SqlStatementFormController from '..';
-import { superRender } from '../../../../../testUtils/customRender';
+import { sqleSuperRender } from '../../../../../testUtils/superRender';
 import { renderHook } from '@testing-library/react';
 import { mockUseCurrentUser } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentUser';
 import { mockUseCurrentProject } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentProject';
@@ -13,7 +13,7 @@ describe('test SqlStatementFormController ce', () => {
   it('should match snapshot', () => {
     mockUseCurrentProject();
     const { result } = renderHook(() => Form.useForm());
-    const { container } = superRender(
+    const { container } = sqleSuperRender(
       <Form form={result.current[0]}>
         <SqlStatementFormController
           activeKey="1"

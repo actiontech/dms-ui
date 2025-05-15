@@ -13,7 +13,7 @@ import {
   queryBySelector
 } from '@actiontech/shared/lib/testUtil/customQuery';
 import { createSpySuccessResponse } from '@actiontech/shared/lib/testUtil/mockApi';
-import { superRender } from '../../../testUtils/customRender';
+import { sqleSuperRender } from '../../../testUtils/superRender';
 import { useSelector } from 'react-redux';
 import { driverMeta } from '../../../hooks/useDatabaseType/index.test.data';
 
@@ -54,7 +54,7 @@ describe('sqle/SqlAudit/List', () => {
   });
 
   it('render sql audit record table when request return data', async () => {
-    const { baseElement } = superRender(<SqlAuditList />);
+    const { baseElement } = sqleSuperRender(<SqlAuditList />);
 
     await act(async () => jest.advanceTimersByTime(3000));
     expect(baseElement).toMatchSnapshot();
@@ -81,7 +81,7 @@ describe('sqle/SqlAudit/List', () => {
   });
 
   it('should request list with url params', async () => {
-    superRender(<SqlAuditList />, undefined, {
+    sqleSuperRender(<SqlAuditList />, undefined, {
       routerProps: { initialEntries: ['/sql-audit?SQLAuditRecordID=123456'] }
     });
     await act(async () => jest.advanceTimersByTime(3000));
@@ -100,7 +100,7 @@ describe('sqle/SqlAudit/List', () => {
     sqlAuditRecordsSpy.mockImplementationOnce(() =>
       createSpyErrorResponse({ message: 'error info' })
     );
-    const { baseElement } = superRender(<SqlAuditList />);
+    const { baseElement } = sqleSuperRender(<SqlAuditList />);
 
     await act(async () => jest.advanceTimersByTime(3000));
     expect(screen.getByText('快捷审核')).toBeInTheDocument();
@@ -108,7 +108,7 @@ describe('sqle/SqlAudit/List', () => {
   });
 
   it('render table list when action filter', async () => {
-    const { baseElement } = superRender(<SqlAuditList />);
+    const { baseElement } = sqleSuperRender(<SqlAuditList />);
 
     await act(async () => jest.advanceTimersByTime(3000));
     expect(sqlAuditRecordsSpy).toHaveBeenCalledTimes(1);
@@ -142,7 +142,7 @@ describe('sqle/SqlAudit/List', () => {
   });
 
   it('render action when filter item show', async () => {
-    const { baseElement } = superRender(<SqlAuditList />);
+    const { baseElement } = sqleSuperRender(<SqlAuditList />);
 
     await act(async () => jest.advanceTimersByTime(3000));
     expect(sqlAuditRecordsSpy).toHaveBeenCalledTimes(1);
@@ -158,7 +158,7 @@ describe('sqle/SqlAudit/List', () => {
   });
 
   it('should hide link button when project is archived', async () => {
-    superRender(<SqlAuditList />);
+    sqleSuperRender(<SqlAuditList />);
 
     await act(async () => jest.advanceTimersByTime(3000));
     expect(screen.getByText('创建审核')).toBeInTheDocument();
@@ -174,7 +174,7 @@ describe('sqle/SqlAudit/List', () => {
         }
       ]
     });
-    superRender(<SqlAuditList />);
+    sqleSuperRender(<SqlAuditList />);
     await act(async () => jest.advanceTimersByTime(3000));
     expect(screen.queryByText('创建审核')).not.toBeInTheDocument();
   });
@@ -187,7 +187,7 @@ describe('sqle/SqlAudit/List', () => {
         total_nums: 2
       })
     );
-    superRender(<SqlAuditList />);
+    sqleSuperRender(<SqlAuditList />);
 
     await act(async () => jest.advanceTimersByTime(3000));
     fireEvent.click(
@@ -231,7 +231,7 @@ describe('sqle/SqlAudit/List', () => {
           total_nums: 2
         })
       );
-    superRender(<SqlAuditList />);
+    sqleSuperRender(<SqlAuditList />);
 
     await act(async () => jest.advanceTimersByTime(3000));
     expect(sqlAuditRecordsSpy).toHaveBeenCalledTimes(1);
@@ -251,7 +251,7 @@ describe('sqle/SqlAudit/List', () => {
         total_nums: 2
       })
     );
-    superRender(<SqlAuditList />);
+    sqleSuperRender(<SqlAuditList />);
     await act(async () => jest.advanceTimersByTime(3000));
     expect(sqlAuditRecordsSpy).toHaveBeenCalledTimes(1);
   });

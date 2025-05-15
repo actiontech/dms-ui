@@ -1,7 +1,7 @@
 import WorkflowDetail from '..';
 import { useParams } from 'react-router-dom';
 import { act, cleanup, fireEvent, screen } from '@testing-library/react';
-import { superRender } from '../../../../testUtils/customRender';
+import { sqleSuperRender } from '../../../../testUtils/superRender';
 import {
   workflowsDetailWaitForAuditData,
   workflowsDetailWaitForExecutionData,
@@ -95,7 +95,7 @@ describe('sqle/ExecWorkflow/Detail', () => {
   });
 
   const customRender = () => {
-    return superRender(<WorkflowDetail />);
+    return sqleSuperRender(<WorkflowDetail />);
   };
 
   it('render snap detail', async () => {

@@ -1,4 +1,4 @@
-import { superRender } from '../../../../testUtils/customRender';
+import { sqleSuperRender } from '../../../../testUtils/superRender';
 import StepCard from '.';
 import { fireEvent, screen } from '@testing-library/react';
 import { getBySelector } from '@actiontech/shared/lib/testUtil/customQuery';
@@ -29,7 +29,7 @@ describe('page/WorkflowTemplate/StepCard', () => {
   });
 
   const customRender = (data: IStepCardProps) => {
-    return superRender(<StepCard {...data} />);
+    return sqleSuperRender(<StepCard {...data} />);
   };
   it('render step card with no operator and not active', async () => {
     const { baseElement } = customRender({ ...workflowTemplateCardProps });

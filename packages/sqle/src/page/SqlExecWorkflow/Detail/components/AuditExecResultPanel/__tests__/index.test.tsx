@@ -3,7 +3,7 @@ import {
   ignoreConsoleErrors
 } from '@actiontech/shared/lib/testUtil/common';
 import AuditExecResultPanel from '..';
-import { superRender } from '../../../../../../testUtils/customRender';
+import { sqleSuperRender } from '../../../../../../testUtils/superRender';
 import {
   AuditTaskResData,
   WorkflowTasksItemData,
@@ -29,7 +29,7 @@ describe('test AuditExecResultPanel', () => {
   const refreshWorkflow = jest.fn();
   const refreshOverviewAction = jest.fn();
   const customRender = (params?: Partial<AuditExecResultPanelProps>) => {
-    return superRender(
+    return sqleSuperRender(
       <AuditExecResultPanel
         activeTabKey={WORKFLOW_OVERVIEW_TAB_KEY}
         activeTabChangeEvent={activeTabChangeEvent}

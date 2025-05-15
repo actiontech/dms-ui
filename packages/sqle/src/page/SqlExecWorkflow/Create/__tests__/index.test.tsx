@@ -8,7 +8,7 @@ import {
 import { mockUseCurrentProject } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentProject';
 import { mockUseCurrentUser } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentUser';
 import { mockProjectInfo } from '@actiontech/shared/lib/testUtil/mockHook/data';
-import { superRender } from '../../../../testUtils/customRender';
+import { sqleSuperRender } from '../../../../testUtils/superRender';
 import CreateSqlExecWorkflow from '..';
 import { mockDatabaseType } from '../../../../testUtils/mockHooks/mockDatabaseType';
 import execWorkflow from '../../../../testUtils/mockApi/execWorkflow';
@@ -57,7 +57,7 @@ describe('sqle/SqlExecWorkflow/Create', () => {
   const dispatchSpy = jest.fn();
 
   const customRender = () => {
-    return superRender(<CreateSqlExecWorkflow />);
+    return sqleSuperRender(<CreateSqlExecWorkflow />);
   };
 
   ignoreConsoleErrors([
@@ -165,13 +165,17 @@ describe('sqle/SqlExecWorkflow/Create', () => {
   });
 
   it('should snapshot render initial workflow creation UI when current is clone workflow mode', async () => {
-    const { baseElement } = superRender(<CreateSqlExecWorkflow />, undefined, {
-      routerProps: {
-        initialEntries: [
-          `/sqle/project/700300/exec-workflow/create?sourceWorkflowId=123456`
-        ]
+    const { baseElement } = sqleSuperRender(
+      <CreateSqlExecWorkflow />,
+      undefined,
+      {
+        routerProps: {
+          initialEntries: [
+            `/sqle/project/700300/exec-workflow/create?sourceWorkflowId=123456`
+          ]
+        }
       }
-    });
+    );
     await act(async () => jest.advanceTimersByTime(3000));
     expect(getBySelector('#workflow_subject', baseElement)).toHaveValue(
       'workflow-name-test'
@@ -864,13 +868,17 @@ describe('sqle/SqlExecWorkflow/Create', () => {
   });
 
   it('render associated version when create workflow', async () => {
-    const { baseElement } = superRender(<CreateSqlExecWorkflow />, undefined, {
-      routerProps: {
-        initialEntries: [
-          `/sqle/project/700300/exec-workflow/create?versionName=v1-test&versionId=1`
-        ]
+    const { baseElement } = sqleSuperRender(
+      <CreateSqlExecWorkflow />,
+      undefined,
+      {
+        routerProps: {
+          initialEntries: [
+            `/sqle/project/700300/exec-workflow/create?versionName=v1-test&versionId=1`
+          ]
+        }
       }
-    });
+    );
 
     await act(async () => jest.advanceTimersByTime(3000));
     expect(requestInstanceTip).toHaveBeenCalledTimes(1);
@@ -1094,13 +1102,17 @@ describe('sqle/SqlExecWorkflow/Create', () => {
         }
       })
     );
-    const { baseElement } = superRender(<CreateSqlExecWorkflow />, undefined, {
-      routerProps: {
-        initialEntries: [
-          `/sqle/project/700300/exec-workflow/create?rollbackWorkflowId=1`
-        ]
+    const { baseElement } = sqleSuperRender(
+      <CreateSqlExecWorkflow />,
+      undefined,
+      {
+        routerProps: {
+          initialEntries: [
+            `/sqle/project/700300/exec-workflow/create?rollbackWorkflowId=1`
+          ]
+        }
       }
-    });
+    );
 
     await act(async () => jest.advanceTimersByTime(3000));
     expect(requestInstanceTip).toHaveBeenCalledTimes(1);

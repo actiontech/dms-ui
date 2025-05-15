@@ -1,5 +1,5 @@
 import { mockUseCurrentProject } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentProject';
-import { superRender } from '../../../../../../../../../testUtils/customRender';
+import { sqleSuperRender } from '../../../../../../../../../testUtils/superRender';
 import task from '../../../../../../../../../testUtils/mockApi/task';
 import SortableSqlFilesModal from '../SortableSqlFilesModal';
 import { SortableSQLFilesModalProps } from '../SortableSqlFilesModal/index.type';
@@ -29,7 +29,7 @@ describe('test SortableSqlFilesModal', () => {
   });
 
   const customRender = (params?: Partial<SortableSQLFilesModalProps>) => {
-    return superRender(
+    return sqleSuperRender(
       <SortableSqlFilesModal
         open
         onClose={onClose}

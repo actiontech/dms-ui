@@ -3,7 +3,10 @@ import { screen, cleanup, act, fireEvent } from '@testing-library/react';
 import { mockPipelineDetailData } from '../../../../../testUtils/mockApi/pipeline/data';
 import { useNavigate, useParams } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
-import { superRender, superRenderHook } from '@actiontech/shared/lib/testUtil/superRender'
+import {
+  superRender,
+  superRenderHook
+} from '@actiontech/shared/lib/testUtil/superRender';
 import { mockUseCurrentProject } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentProject';
 import { mockUseCurrentUser } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentUser';
 import { mockUseDbServiceDriver } from '@actiontech/shared/lib/testUtil/mockHook/mockUseDbServiceDriver';

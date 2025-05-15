@@ -1,5 +1,5 @@
 import { cleanup, act, screen, fireEvent } from '@testing-library/react';
-import { superRender } from '../../../../../..//testUtils/customRender';
+import { sqleSuperRender } from '../../../../../../testUtils/superRender';
 import StageNode from '../index';
 import { StageNodeData } from '../../../index.type';
 import {
@@ -22,7 +22,7 @@ describe('sqle/VersionManagement/Detail/StageNode', () => {
   });
 
   const customRender = (data: Omit<StageNodeData, 'stageId'>) => {
-    return superRender(
+    return sqleSuperRender(
       <ReactFlowProvider>
         <StageNode
           id="test-custom-action-node"

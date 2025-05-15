@@ -1,17 +1,17 @@
 import {
-  renderWithReduxAndTheme,
-  renderHooksWithTheme
-} from '@actiontech/shared/lib/testUtil/customRender';
+  superRender,
+  superRenderHook
+} from '@actiontech/shared/lib/testUtil/superRender';
 import { Form } from 'antd';
 import WhitelistForm from '../WhitelistForm';
 import { WhitelistFormFields } from '../index.type';
 
 describe('sqle/Whitelist/WhitelistForm', () => {
   it('should match snapshot', () => {
-    const { result } = renderHooksWithTheme(() =>
+    const { result } = superRenderHook(() =>
       Form.useForm<WhitelistFormFields>()
     );
-    const { baseElement } = renderWithReduxAndTheme(
+    const { baseElement } = superRender(
       <WhitelistForm form={result.current[0]} />
     );
     expect(baseElement).toMatchSnapshot();

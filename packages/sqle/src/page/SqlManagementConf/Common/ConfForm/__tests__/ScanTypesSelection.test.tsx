@@ -1,8 +1,8 @@
 import ScanTypesSelection from '../ScanTypesSelection';
 import {
-  superRender,
-  renderHooksWithTheme
-} from '../../../../../testUtils/customRender';
+  sqleSuperRender,
+  sqleSuperRenderHook
+} from '../../../../../testUtils/superRender';
 import { ConfFormContextProvide, SelectScanTypeParamsType } from '../context';
 import { Form } from 'antd';
 import instance from '../../../../../testUtils/mockApi/instance';
@@ -31,8 +31,8 @@ describe('test SqlManagementConf/ScanTypesSelection', () => {
   const customRender = (
     selectedScanTypeParams: SelectScanTypeParamsType = []
   ) => {
-    const { result } = renderHooksWithTheme(() => Form.useForm());
-    const { baseElement } = superRender(
+    const { result } = sqleSuperRenderHook(() => Form.useForm());
+    const { baseElement } = sqleSuperRender(
       <ConfFormContextProvide
         value={{
           submitLoading: false,

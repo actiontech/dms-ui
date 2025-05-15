@@ -1,6 +1,6 @@
 import { cleanup, screen, act, fireEvent } from '@testing-library/react';
 import CreateSqlOptimization from '.';
-import { renderWithThemeAndRedux } from '../../../testUtils/customRender';
+import { sqleSuperRender } from '../../../testUtils/superRender';
 import { useNavigate, BrowserRouter } from 'react-router-dom';
 import { mockUseCurrentUser } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentUser';
 import { mockUseCurrentProject } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentProject';
@@ -55,21 +55,17 @@ describe('sqle/SqlOptimization/Create', () => {
   });
 
   const customRender = () => {
-    return (
-      <BrowserRouter>
-        <CreateSqlOptimization />
-      </BrowserRouter>
-    );
+    return <CreateSqlOptimization />;
   };
 
   it('render return back to optimization list page', async () => {
-    renderWithThemeAndRedux(customRender());
+    sqleSuperRender(customRender());
     expect(screen.getByText('返回智能调优列表')).toBeInTheDocument();
     fireEvent.click(screen.getByText('返回智能调优列表'));
   });
 
   it('enter default content to create sql optimization', async () => {
-    const { baseElement } = renderWithThemeAndRedux(customRender());
+    const { baseElement } = sqleSuperRender(customRender());
     await act(async () => jest.advanceTimersByTime(3000));
 
     expect(getInstanceTipListSpy).toHaveBeenCalledTimes(1);
@@ -148,7 +144,7 @@ describe('sqle/SqlOptimization/Create', () => {
   });
 
   it('upload sql file', async () => {
-    const { baseElement } = renderWithThemeAndRedux(customRender());
+    const { baseElement } = sqleSuperRender(customRender());
     await act(async () => jest.advanceTimersByTime(3000));
 
     expect(getInstanceTipListSpy).toHaveBeenCalledTimes(1);
@@ -229,7 +225,7 @@ describe('sqle/SqlOptimization/Create', () => {
   });
 
   it('upload xml file', async () => {
-    const { baseElement } = renderWithThemeAndRedux(customRender());
+    const { baseElement } = sqleSuperRender(customRender());
     await act(async () => jest.advanceTimersByTime(3000));
 
     expect(getInstanceTipListSpy).toHaveBeenCalledTimes(1);
@@ -292,7 +288,7 @@ describe('sqle/SqlOptimization/Create', () => {
   });
 
   it('upload zip file', async () => {
-    const { baseElement } = renderWithThemeAndRedux(customRender());
+    const { baseElement } = sqleSuperRender(customRender());
     await act(async () => jest.advanceTimersByTime(3000));
 
     expect(getInstanceTipListSpy).toHaveBeenCalledTimes(1);
@@ -355,7 +351,7 @@ describe('sqle/SqlOptimization/Create', () => {
   });
 
   it('configure git repository', async () => {
-    const { baseElement } = renderWithThemeAndRedux(customRender());
+    const { baseElement } = sqleSuperRender(customRender());
     await act(async () => jest.advanceTimersByTime(3000));
 
     expect(getInstanceTipListSpy).toHaveBeenCalledTimes(1);
@@ -428,7 +424,7 @@ describe('sqle/SqlOptimization/Create', () => {
   });
 
   it('reset form values', async () => {
-    const { baseElement } = renderWithThemeAndRedux(customRender());
+    const { baseElement } = sqleSuperRender(customRender());
     await act(async () => jest.advanceTimersByTime(3000));
 
     const dataSourcesSelectors = getAllBySelector(

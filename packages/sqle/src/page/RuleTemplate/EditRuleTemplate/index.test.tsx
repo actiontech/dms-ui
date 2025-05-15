@@ -1,5 +1,5 @@
 import { act, cleanup, fireEvent, screen } from '@testing-library/react';
-import { renderWithThemeAndRedux } from '../../../testUtils/customRender';
+import { sqleSuperRender } from '../../../testUtils/superRender';
 import EditRuleTemplate from '.';
 import { ruleListMockData } from '../../../testUtils/mockApi/rule_template/data';
 import { RuleParamResV1TypeEnum } from '@actiontech/shared/lib/api/sqle/service/common.enum';
@@ -21,7 +21,7 @@ describe('sqle/RuleTemplate/EditRuleTemplate', () => {
   });
 
   it('should match snap shot', async () => {
-    const { baseElement } = renderWithThemeAndRedux(
+    const { baseElement } = sqleSuperRender(
       <EditRuleTemplate
         visible
         title="编辑规则"
@@ -41,7 +41,7 @@ describe('sqle/RuleTemplate/EditRuleTemplate', () => {
   });
 
   it('when dataSource is empty object', async () => {
-    const { baseElement } = renderWithThemeAndRedux(
+    const { baseElement } = sqleSuperRender(
       <EditRuleTemplate
         visible
         title="编辑规则"
@@ -55,7 +55,7 @@ describe('sqle/RuleTemplate/EditRuleTemplate', () => {
   });
 
   it('when param type is boolean', async () => {
-    const { baseElement } = renderWithThemeAndRedux(
+    const { baseElement } = sqleSuperRender(
       <EditRuleTemplate
         visible
         title="编辑规则"

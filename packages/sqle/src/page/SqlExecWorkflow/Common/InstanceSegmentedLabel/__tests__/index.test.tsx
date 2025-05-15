@@ -1,10 +1,10 @@
 import { AuditTaskResV1AuditLevelEnum } from '@actiontech/shared/lib/api/sqle/service/common.enum';
 import InstanceSegmentedLabel, { InstanceSegmentedLabelProps } from '..';
-import { superRender } from '../../../../../testUtils/customRender';
+import { sqleSuperRender } from '../../../../../testUtils/superRender';
 
 describe('sqle/ExecWorkflow/Common/InstanceSegmentedLabel', () => {
   const customRender = (auditLevel?: AuditTaskResV1AuditLevelEnum) => {
-    return superRender(
+    return sqleSuperRender(
       <InstanceSegmentedLabel
         instanceName="instance name a"
         auditLevel={auditLevel}

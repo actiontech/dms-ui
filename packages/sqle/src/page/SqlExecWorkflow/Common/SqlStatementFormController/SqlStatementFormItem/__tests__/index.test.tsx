@@ -3,7 +3,7 @@ import { SqlStatementFormItemProps } from '../index.type';
 import { act, fireEvent, renderHook, screen } from '@testing-library/react';
 import { Form } from 'antd';
 import SqlStatementFormItem from '..';
-import { superRender } from '../../../../../../testUtils/customRender';
+import { sqleSuperRender } from '../../../../../../testUtils/superRender';
 import { getBySelector } from '@actiontech/shared/lib/testUtil/customQuery';
 import { SQL_EDITOR_PLACEHOLDER_VALUE } from '@actiontech/shared/lib/data/common';
 
@@ -19,7 +19,7 @@ describe('test SqlStatementFormItem', () => {
 
   const customRender = (params?: Partial<SqlStatementFormItemProps>) => {
     const { result } = renderHook(() => Form.useForm());
-    return superRender(
+    return sqleSuperRender(
       <Form form={result.current[0]}>
         <SqlStatementFormItem
           fieldPrefixPath="1"

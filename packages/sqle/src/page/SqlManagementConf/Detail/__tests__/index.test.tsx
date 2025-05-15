@@ -5,7 +5,7 @@ import {
   useSearchParams
 } from 'react-router-dom';
 import instanceAuditPlan from '../../../../testUtils/mockApi/instanceAuditPlan';
-import { superRender } from '../../../../testUtils/customRender';
+import { sqleSuperRender } from '../../../../testUtils/superRender';
 import ConfDetail from '..';
 import { act, cleanup, fireEvent } from '@testing-library/react';
 import { mockUseCurrentProject } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentProject';
@@ -71,7 +71,7 @@ describe('test SqlManagementConf/Detail/index.tsx', () => {
     cleanup();
   });
   it('should match snapshot', async () => {
-    const { container } = superRender(<ConfDetail />);
+    const { container } = sqleSuperRender(<ConfDetail />);
     expect(container).toMatchSnapshot();
     expect(getInstanceAuditPlanDetailSpy).toHaveBeenCalledTimes(1);
     expect(getInstanceAuditPlanDetailSpy).toHaveBeenNthCalledWith(1, {
@@ -89,7 +89,7 @@ describe('test SqlManagementConf/Detail/index.tsx', () => {
     );
     const getInstanceAuditPlanSQLExportSpy =
       instanceAuditPlan.getInstanceAuditPlanSQLExport();
-    const { getByText, queryByText, getAllByText } = superRender(
+    const { getByText, queryByText, getAllByText } = sqleSuperRender(
       <ConfDetail />
     );
     await act(async () => jest.advanceTimersByTime(3000));
@@ -149,7 +149,7 @@ describe('test SqlManagementConf/Detail/index.tsx', () => {
     getInstanceAuditPlanDetailSpy.mockImplementation(() =>
       createSpyErrorResponse({})
     );
-    const { container, getByText } = superRender(<ConfDetail />);
+    const { container, getByText } = sqleSuperRender(<ConfDetail />);
 
     await act(async () => jest.advanceTimersByTime(3000));
 
@@ -165,7 +165,7 @@ describe('test SqlManagementConf/Detail/index.tsx', () => {
         active_audit_plan_id: '9'
       })
     ]);
-    const { getAllByText, getByText } = superRender(<ConfDetail />);
+    const { getAllByText, getByText } = sqleSuperRender(<ConfDetail />);
     await act(async () => jest.advanceTimersByTime(3000));
 
     expect(getAllByText('自定义')[0].parentNode).toHaveClass(
@@ -188,7 +188,7 @@ describe('test SqlManagementConf/Detail/index.tsx', () => {
   it('should trigger refresh event for the correct component when refresh button is clicked', async () => {
     mockUsePermission(undefined, { useSpyOnMockHooks: true });
     const emitSpy = jest.spyOn(eventEmitter, 'emit');
-    const { getAllByText } = superRender(<ConfDetail />);
+    const { getAllByText } = sqleSuperRender(<ConfDetail />);
     await act(async () => jest.advanceTimersByTime(3000));
 
     fireEvent.click(getBySelector('.custom-icon-refresh'));

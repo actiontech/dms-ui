@@ -1,6 +1,6 @@
 import { act, fireEvent, renderHook, screen } from '@testing-library/react';
 import FileUpload from '.';
-import { superRender } from '../../../../testUtils/customRender';
+import { sqleSuperRender } from '../../../../testUtils/superRender';
 import { useForm } from 'antd/es/form/Form';
 import { Form, UploadProps } from 'antd';
 import { FileUploadCheckStatusType } from '../../../../hooks/useRuleTemplateForm/index.type';
@@ -16,7 +16,7 @@ describe('test FileUpload', () => {
     }
   ) => {
     const { result } = renderHook(() => useForm());
-    return superRender(
+    return sqleSuperRender(
       <Form form={result.current[0]}>
         <Form.Item name="fileType" initialValue="csv">
           <input />

@@ -1,6 +1,6 @@
 import { Form } from 'antd';
 import SqlStatementFormController from '..';
-import { superRender } from '../../../../../testUtils/customRender';
+import { sqleSuperRender } from '../../../../../testUtils/superRender';
 import { fireEvent, renderHook, screen } from '@testing-library/react';
 import { SqlStatementFormControllerProps } from '../index.type';
 import { mockUseCurrentProject } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentProject';
@@ -10,7 +10,7 @@ describe('test SqlStatementFormController', () => {
 
   const customRender = (params: Partial<SqlStatementFormControllerProps>) => {
     const { result } = renderHook(() => Form.useForm());
-    return superRender(
+    return sqleSuperRender(
       <Form form={result.current[0]}>
         <SqlStatementFormController
           activeKey="1"

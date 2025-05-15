@@ -1,6 +1,6 @@
 import DatabaseSelectionItems from '..';
 import { MockSharedStepDetail } from '../../../../../../hooks/mockData';
-import { superRender } from '../../../../../../../../../testUtils/customRender';
+import { sqleSuperRender } from '../../../../../../../../../testUtils/superRender';
 import { mockUseCurrentProject } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentProject';
 import instance from '../../../../../../../../../testUtils/mockApi/instance';
 import system from '../../../../../../../../../testUtils/mockApi/system';
@@ -60,7 +60,7 @@ describe('test DatabaseSelectionItems', () => {
   it('should match snapshot', async () => {
     const handleInstanceNameChangeSpy = jest.fn();
     const { result } = renderHook(() => Form.useForm());
-    const { container, baseElement } = superRender(
+    const { container, baseElement } = sqleSuperRender(
       <Form form={result.current[0]}>
         <DatabaseSelectionItems
           handleInstanceNameChange={handleInstanceNameChangeSpy}
@@ -91,7 +91,7 @@ describe('test DatabaseSelectionItems', () => {
   it('should match snapshot when isAssociationVersionMode is truth', async () => {
     const handleInstanceNameChangeSpy = jest.fn();
     const { result } = renderHook(() => Form.useForm());
-    const { container, baseElement } = superRender(
+    const { container, baseElement } = sqleSuperRender(
       <Form form={result.current[0]}>
         <DatabaseSelectionItems
           handleInstanceNameChange={handleInstanceNameChangeSpy}
@@ -146,7 +146,7 @@ describe('test DatabaseSelectionItems', () => {
         JSON.stringify({ instanceName, schema, sql })
       );
       const { result } = renderHook(() => Form.useForm());
-      const { container } = superRender(
+      const { container } = sqleSuperRender(
         <Form form={result.current[0]}>
           <DatabaseSelectionItems
             handleInstanceNameChange={handleInstanceNameChangeSpy}
@@ -184,7 +184,7 @@ describe('test DatabaseSelectionItems', () => {
       const handleInstanceNameChangeSpy = jest.fn();
 
       const { result } = renderHook(() => Form.useForm());
-      superRender(
+      sqleSuperRender(
         <Form form={result.current[0]}>
           <DatabaseSelectionItems
             handleInstanceNameChange={handleInstanceNameChangeSpy}
@@ -208,7 +208,7 @@ describe('test DatabaseSelectionItems', () => {
       const handleInstanceNameChangeSpy = jest.fn();
 
       const { result } = renderHook(() => Form.useForm());
-      superRender(
+      sqleSuperRender(
         <Form form={result.current[0]}>
           <DatabaseSelectionItems
             handleInstanceNameChange={handleInstanceNameChangeSpy}

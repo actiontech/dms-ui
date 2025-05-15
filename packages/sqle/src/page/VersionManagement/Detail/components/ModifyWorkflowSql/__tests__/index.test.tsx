@@ -1,5 +1,5 @@
 import { cleanup, act, screen, fireEvent } from '@testing-library/react';
-import { superRender } from '../../../../../..//testUtils/customRender';
+import { sqleSuperRender } from '../../../../../../testUtils/superRender';
 import ModifyWorkflowSql from '../index';
 import { useDispatch, useSelector } from 'react-redux';
 import { mockUseCurrentProject } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentProject';
@@ -105,7 +105,7 @@ describe('sqle/VersionManagement/Detail/ModifyWorkflowSql', () => {
   });
 
   const customRender = () => {
-    return superRender(
+    return sqleSuperRender(
       <ModifyWorkflowSql
         hideModifyWorkflowSqlStatement={hideModifyWorkflowSqlStatementSpy}
       />

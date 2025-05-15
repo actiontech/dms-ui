@@ -4,7 +4,7 @@ import { projectRuleTemplateListMockData } from '../../../testUtils/mockApi/rule
 import { ModalName } from '../../../data/ModalName';
 import rule_template from '../../../testUtils/mockApi/rule_template';
 import { act, cleanup, fireEvent, screen } from '@testing-library/react';
-import { superRender } from '../../../testUtils/customRender';
+import { sqleSuperRender } from '../../../testUtils/superRender';
 import { mockUseCurrentProject } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentProject';
 import { mockProjectInfo } from '@actiontech/shared/lib/testUtil/mockHook/data';
 
@@ -42,7 +42,7 @@ describe('test Modal/ExportRuleTemplate', () => {
   });
 
   it('should call dispatch with the correct action to close the modal when onClose is triggered', () => {
-    superRender(<ExportRuleTemplateModal />);
+    sqleSuperRender(<ExportRuleTemplateModal />);
 
     fireEvent.click(screen.getByText('取 消'));
     expect(dispatchSpy).toHaveBeenCalledTimes(1);
@@ -56,7 +56,7 @@ describe('test Modal/ExportRuleTemplate', () => {
   });
 
   it('should call the rule_template.exportRuleTemplateV1 API with the correct parameters when onSubmit is triggered', async () => {
-    superRender(<ExportRuleTemplateModal />);
+    sqleSuperRender(<ExportRuleTemplateModal />);
 
     fireEvent.click(screen.getByText('json'));
 

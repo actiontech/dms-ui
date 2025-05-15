@@ -1,8 +1,8 @@
 import { cleanup } from '@testing-library/react';
 import {
-  renderHooksWithTheme,
-  renderWithThemeAndRedux
-} from '../../../../../../testUtils/customRender';
+  sqleSuperRenderHook,
+  sqleSuperRender
+} from '../../../../../../testUtils/superRender';
 
 import { mockThemeStyleData } from '../../../../../../testUtils/mockHooks/mockThemeStyleData';
 import { mockUseCurrentUser } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentUser';
@@ -43,7 +43,7 @@ describe('ReportStatistics/LicenseStatistics/LicenseColumn', () => {
   };
   ignoreAntdPlotsAttrAndFCRef();
   const customRender = (data?: ILicenseColumn['data']) => {
-    return renderWithThemeAndRedux(
+    return sqleSuperRender(
       <LicenseColumn
         onReady={jest.fn()}
         data={
@@ -96,47 +96,47 @@ describe('ReportStatistics/LicenseStatistics/LicenseColumn', () => {
   });
 
   it('render label formatter with full text', async () => {
-    const { result } = renderHooksWithTheme(() => renderLabelFormatter('1', 1));
+    const { result } = sqleSuperRenderHook(() => renderLabelFormatter('1', 1));
     expect(result.current).toStrictEqual('1');
   });
 
   it('render label formatter with ellipsis', async () => {
-    const { result } = renderHooksWithTheme(() =>
+    const { result } = sqleSuperRenderHook(() =>
       renderLabelFormatter('1234', 3)
     );
     expect(result.current).toStrictEqual('1...');
   });
 
   it('render label content with limit', async () => {
-    const { result } = renderHooksWithTheme(() =>
+    const { result } = sqleSuperRenderHook(() =>
       renderLabelContent({ value: 1, limit: 1 })
     );
     expect(result.current).toStrictEqual('100.00%');
   });
 
   it('render label content without limit', async () => {
-    const { result } = renderHooksWithTheme(() =>
+    const { result } = sqleSuperRenderHook(() =>
       renderLabelContent({ value: 1 })
     );
     expect(result.current).toStrictEqual(1);
   });
 
   it('render tooltip formatter', async () => {
-    const { result } = renderHooksWithTheme(() =>
+    const { result } = sqleSuperRenderHook(() =>
       renderTooltipFormatter?.({ type: '', value: '' })
     );
     expect(result.current).toStrictEqual({ name: '', value: '' });
   });
 
   it('render empty tooltip customContent', async () => {
-    const { result } = renderHooksWithTheme(() =>
+    const { result } = sqleSuperRenderHook(() =>
       renderTooltipCustomContent([], themeData.sharedTheme)
     );
     expect(result.current).toBe(null);
   });
 
   it('render tooltip customContent', async () => {
-    const { result } = renderHooksWithTheme(() =>
+    const { result } = sqleSuperRenderHook(() =>
       renderTooltipCustomContent(
         [
           {

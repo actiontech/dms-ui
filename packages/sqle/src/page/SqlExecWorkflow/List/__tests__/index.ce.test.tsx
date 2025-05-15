@@ -8,7 +8,7 @@ import { mockUseCurrentProject } from '@actiontech/shared/lib/testUtil/mockHook/
 import { mockUseCurrentUser } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentUser';
 import WorkflowList from '..';
 
-import { superRender } from '../../../../testUtils/customRender';
+import { sqleSuperRender } from '../../../../testUtils/superRender';
 import user from '../../../../testUtils/mockApi/user';
 import instance from '../../../../testUtils/mockApi/instance';
 import execWorkflow from '../../../../testUtils/mockApi/execWorkflow';
@@ -41,7 +41,7 @@ describe('sqle/Workflow/List', () => {
   let RequestBatchCancel: jest.SpyInstance;
 
   const customRender = () => {
-    return superRender(<WorkflowList />);
+    return sqleSuperRender(<WorkflowList />);
   };
   ignoreConsoleErrors([UtilsConsoleErrorStringsEnum.UNIQUE_KEY_REQUIRED]);
 

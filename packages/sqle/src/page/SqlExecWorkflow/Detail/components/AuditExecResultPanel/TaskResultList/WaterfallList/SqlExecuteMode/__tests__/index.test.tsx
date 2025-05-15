@@ -5,7 +5,7 @@ import { act, cleanup, fireEvent } from '@testing-library/react';
 import { IAuditTaskSQLResV2 } from '@actiontech/shared/lib/api/sqle/service/common';
 import { getBySelector } from '@actiontech/shared/lib/testUtil/customQuery';
 import { TaskResultListLayoutEnum } from '../../../../index.enum';
-import { superRender } from '../../../../../../../../../testUtils/customRender';
+import { sqleSuperRender } from '../../../../../../../../../testUtils/superRender';
 import task from '../../../../../../../../../testUtils/mockApi/task';
 import { WORKFLOW_OVERVIEW_TAB_KEY } from '../../../../../../hooks/useAuditExecResultPanelSetup';
 import { mockCurrentUserReturn } from '@actiontech/shared/lib/testUtil/mockHook/data';
@@ -41,7 +41,7 @@ describe('test WaterfallList/SQLExecuteMode', () => {
       assigneeUserNames: [mockCurrentUserReturn.username],
       execStatusFilterValue: null
     };
-    return superRender(<SqlExecuteMode {...{ ..._params, ...params }} />);
+    return sqleSuperRender(<SqlExecuteMode {...{ ..._params, ...params }} />);
   };
 
   beforeEach(() => {
