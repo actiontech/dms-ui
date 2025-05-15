@@ -1,5 +1,5 @@
 import { UpdateAuditPlanStatusReqV1ActiveEnum } from '@actiontech/shared/lib/api/sqle/service/common.enum';
-import instance_audit_plan from '@actiontech/shared/lib/api/sqle/service/instance_audit_plan';
+import { SqleApi } from '@actiontech/shared/lib/api/';
 import { useCurrentProject } from '@actiontech/shared/lib/features';
 import { useRequest } from 'ahooks';
 
@@ -9,7 +9,7 @@ export const useTableAction = () => {
   const { runAsync: disabledAction, loading: disabledActionPending } =
     useRequest(
       (id: string, auditPlanId: string) =>
-        instance_audit_plan.updateAuditPlanStatusV1({
+        SqleApi.InstanceAuditPlanService.updateAuditPlanStatusV1({
           project_name: projectName,
           instance_audit_plan_id: id,
           audit_plan_id: auditPlanId,
@@ -22,7 +22,7 @@ export const useTableAction = () => {
 
   const { runAsync: enabledAction, loading: enabledActionPending } = useRequest(
     (id: string, auditPlanId: string) =>
-      instance_audit_plan.updateAuditPlanStatusV1({
+      SqleApi.InstanceAuditPlanService.updateAuditPlanStatusV1({
         project_name: projectName,
         instance_audit_plan_id: id,
         audit_plan_id: auditPlanId,
@@ -35,7 +35,7 @@ export const useTableAction = () => {
 
   const { runAsync: deleteAction, loading: deleteActionPending } = useRequest(
     (id: string, auditPlanId: string) =>
-      instance_audit_plan.deleteAuditPlanByTypeV1({
+      SqleApi.InstanceAuditPlanService.deleteAuditPlanByTypeV1({
         project_name: projectName,
         instance_audit_plan_id: id,
         audit_plan_id: auditPlanId
@@ -45,12 +45,26 @@ export const useTableAction = () => {
     }
   );
 
+  const { runAsync: resetTokenAction, loading: resetTokenActionPending } =
+    useRequest(
+      (id: string) => {
+        return SqleApi.InstanceAuditPlanService.generateAuditPlanTokenV1({
+          project_name: projectName,
+          instance_audit_plan_id: id,
+          expires_in_days: 365
+        });
+      },
+      { manual: true }
+    );
+
   return {
     disabledAction,
     enabledAction,
     enabledActionPending,
     disabledActionPending,
     deleteAction,
-    deleteActionPending
+    deleteActionPending,
+    resetTokenAction,
+    resetTokenActionPending
   };
 };

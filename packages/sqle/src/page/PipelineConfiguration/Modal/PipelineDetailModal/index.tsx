@@ -9,7 +9,7 @@ import {
   updatePipelineNodeTourStatus,
   updatePipelineModalStatus
 } from '../../../../store/pipeline';
-import pipeline from '@actiontech/shared/lib/api/sqle/service/pipeline';
+import { SqleApi } from '@actiontech/shared/lib/api/';
 import { useRequest } from 'ahooks';
 import { useCurrentProject } from '@actiontech/shared/lib/features';
 import { ResponseCode } from '@actiontech/shared/lib/enum';
@@ -22,6 +22,7 @@ import { useEffect, useRef, useCallback } from 'react';
 import { PipelineDetailModalStyleWrapper } from './style';
 import classNames from 'classnames';
 import { ROUTE_PATHS } from '@actiontech/shared/lib/data/routePaths';
+import { PipelineConfigurationDetailListActions } from './actions';
 
 const PipelineDetailModal: React.FC = () => {
   const { t } = useTranslation();
@@ -50,21 +51,37 @@ const PipelineDetailModal: React.FC = () => {
     showTour: state.pipeline.showPipelineNodeTour
   }));
 
-  const { loading, data } = useRequest(
+  const { loading, data, refresh } = useRequest(
     () =>
-      pipeline
-        .getPipelineDetailV1({
-          pipeline_id: pipelineState.id?.toString() ?? '',
-          project_name: projectName ?? ''
-        })
-        .then((res) => {
-          if (res.data.code === ResponseCode.SUCCESS) {
-            return res.data.data;
-          }
-        }),
+      SqleApi.PipelineService.getPipelineDetailV1({
+        pipeline_id: pipelineState.id?.toString() ?? '',
+        project_name: projectName ?? ''
+      }).then((res) => {
+        if (res.data.code === ResponseCode.SUCCESS) {
+          return res.data.data;
+        }
+      }),
     {
       ready: !!pipelineState.id
     }
+  );
+
+  const { run: resetToken, loading: resetTokenLoading } = useRequest(
+    (id: string) => {
+      return SqleApi.PipelineService.generatePipelineNodeTokenV1({
+        pipeline_id: pipelineState.id?.toString() ?? '',
+        project_name: projectName,
+        node_id: id
+      }).then((res) => {
+        if (res.data.code === ResponseCode.SUCCESS) {
+          refresh();
+          messageApi.success(
+            t('pipelineConfiguration.table.resetTokenSuccessTips')
+          );
+        }
+      });
+    },
+    { manual: true }
   );
 
   const hidePipelineNodeTour = useCallback(() => {
@@ -84,11 +101,10 @@ const PipelineDetailModal: React.FC = () => {
 
   const onDelete = () => {
     const hide = messageApi.loading(t('pipelineConfiguration.table.deleting'));
-    pipeline
-      .deletePipelineV1({
-        pipeline_id: pipelineState.id?.toString() ?? '',
-        project_name: projectName
-      })
+    SqleApi.PipelineService.deletePipelineV1({
+      pipeline_id: pipelineState.id?.toString() ?? '',
+      project_name: projectName
+    })
       .then((res) => {
         if (res.data.code === ResponseCode.SUCCESS) {
           messageApi.success(t('pipelineConfiguration.table.deleteSuccess'));
@@ -174,6 +190,10 @@ const PipelineDetailModal: React.FC = () => {
                   dataSource={data?.nodes}
                   columns={PipelineNodeTableColumn()}
                   pagination={false}
+                  actions={PipelineConfigurationDetailListActions(
+                    resetToken,
+                    resetTokenLoading
+                  )}
                 />
               </section>
             </FormItemLabel>
