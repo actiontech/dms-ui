@@ -1,6 +1,6 @@
 import { act, cleanup, fireEvent, screen } from '@testing-library/react';
 import SqlOptimizationList from '.';
-import { superRender } from '../../../testUtils/customRender';
+import { sqleSuperRender } from '../../../testUtils/superRender';
 import { mockUseCurrentProject } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentProject';
 import { mockUseCurrentUser } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentUser';
 import { mockUseDbServiceDriver } from '@actiontech/shared/lib/testUtil/mockHook/mockUseDbServiceDriver';
@@ -42,7 +42,7 @@ describe('sqle/SqlOptimizationList', () => {
   });
 
   it('render table data', async () => {
-    const { baseElement } = superRender(<SqlOptimizationList />);
+    const { baseElement } = sqleSuperRender(<SqlOptimizationList />);
     expect(getOptimizationRecordsSpy).toHaveBeenCalled();
     expect(getInstanceTipListSpy).toHaveBeenCalled();
     await act(async () => jest.advanceTimersByTime(3000));
@@ -50,7 +50,7 @@ describe('sqle/SqlOptimizationList', () => {
   });
 
   it('render create optimization button', async () => {
-    superRender(<SqlOptimizationList />);
+    sqleSuperRender(<SqlOptimizationList />);
     expect(getOptimizationRecordsSpy).toHaveBeenCalled();
     expect(screen.getByText('创建智能调优')).toBeInTheDocument();
     expect(screen.getByText('创建智能调优').closest('a')).toHaveAttribute(
@@ -60,7 +60,7 @@ describe('sqle/SqlOptimizationList', () => {
   });
 
   it('filter data with search', async () => {
-    superRender(<SqlOptimizationList />);
+    sqleSuperRender(<SqlOptimizationList />);
     expect(getOptimizationRecordsSpy).toHaveBeenCalled();
     const searchText = 'search text';
     const inputEle = getBySelector('#actiontech-table-search-input');
@@ -86,7 +86,7 @@ describe('sqle/SqlOptimizationList', () => {
   });
 
   it('render click table row', async () => {
-    superRender(<SqlOptimizationList />);
+    sqleSuperRender(<SqlOptimizationList />);
     expect(getOptimizationRecordsSpy).toHaveBeenCalled();
     await act(async () => jest.advanceTimersByTime(3000));
     const tableRows = getAllBySelector(

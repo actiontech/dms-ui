@@ -2,7 +2,7 @@ import {
   ignoreConsoleErrors,
   UtilsConsoleErrorStringsEnum
 } from '@actiontech/shared/lib/testUtil/common';
-import { superRender } from '@actiontech/shared/lib/testUtil/customRender';
+import { superRender } from '@actiontech/shared/lib/testUtil/superRender';
 import SqlAnalyze from '../SqlAnalyze';
 import { SQLManageSqlAnalyzeData } from '../../__testData__';
 import { mockSqlManageSqlAnalysisChartData } from '../../../../testUtils/mockApi/sqlManage/data';

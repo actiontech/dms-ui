@@ -1,4 +1,4 @@
-import { superRender } from '../../../testUtils/customRender';
+import { sqleSuperRender } from '../../../testUtils/superRender';
 import UpdateWorkflowTemplate from '.';
 import { workflowTemplateData } from '../../../testUtils/mockApi/workflowTemplate/data';
 import { act, fireEvent, screen, cleanup } from '@testing-library/react';
@@ -34,7 +34,7 @@ describe('page/WorkflowTemplate/UpdateWorkflowTemplate', () => {
   const useParamsMock: jest.Mock = useParams as jest.Mock;
 
   const customRender = () => {
-    return superRender(<UpdateWorkflowTemplate />);
+    return sqleSuperRender(<UpdateWorkflowTemplate />);
   };
 
   beforeEach(() => {

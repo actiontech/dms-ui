@@ -6,7 +6,7 @@ import {
   resolveThreeSecond
 } from '../../../testUtils/mockRequest';
 import { AuditPlanSqlAnalyzeData } from '../__testData__';
-import { renderWithReduxAndTheme } from '@actiontech/shared/lib/testUtil/customRender';
+import { superRender } from '@actiontech/shared/lib/testUtil/superRender';
 import { getAllBySelector } from '@actiontech/shared/lib/testUtil/customQuery';
 import {
   ignoreConsoleErrors,
@@ -73,9 +73,7 @@ describe('SqlAnalyze/ManagementConfAnalyze', () => {
 
   test('should get analyze data from origin', async () => {
     const spy = mockGetAnalyzeData();
-    const { container, baseElement } = renderWithReduxAndTheme(
-      <ManagementConfAnalyze />
-    );
+    const { container, baseElement } = superRender(<ManagementConfAnalyze />);
     expect(spy).toHaveBeenCalledTimes(1);
     expect(spy).toHaveBeenCalledWith({
       project_name: projectName,
@@ -94,7 +92,7 @@ describe('SqlAnalyze/ManagementConfAnalyze', () => {
 
   it('filter sql execution plan cost', async () => {
     mockGetAnalyzeData();
-    const { container } = renderWithReduxAndTheme(<ManagementConfAnalyze />);
+    const { container } = superRender(<ManagementConfAnalyze />);
     await act(async () => jest.advanceTimersByTime(3000));
     expect(container).toMatchSnapshot();
 
@@ -135,7 +133,7 @@ describe('SqlAnalyze/ManagementConfAnalyze', () => {
         }
       })
     );
-    const { container } = renderWithReduxAndTheme(<ManagementConfAnalyze />);
+    const { container } = superRender(<ManagementConfAnalyze />);
     await act(async () => jest.advanceTimersByTime(3000));
 
     expect(container).toMatchSnapshot();
@@ -150,7 +148,7 @@ describe('SqlAnalyze/ManagementConfAnalyze', () => {
         }
       })
     );
-    const { container } = renderWithReduxAndTheme(<ManagementConfAnalyze />);
+    const { container } = superRender(<ManagementConfAnalyze />);
     await act(async () => jest.advanceTimersByTime(3000));
 
     expect(container).toMatchSnapshot();

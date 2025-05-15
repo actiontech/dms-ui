@@ -1,4 +1,4 @@
-import { superRender } from '../../../../../testUtils/customRender';
+import { sqleSuperRender } from '../../../../../testUtils/superRender';
 import StepInfo from '.';
 import { workflowTemplateData } from '../../../../../testUtils/mockApi/workflowTemplate/data';
 import { act, fireEvent, screen } from '@testing-library/react';
@@ -45,7 +45,7 @@ describe('page/WorkflowTemplate/StepInfo', () => {
   };
 
   const customRender = (data: IUpdateWorkflowStepInfoProps) => {
-    return superRender(<StepInfo {...data} />);
+    return sqleSuperRender(<StepInfo {...data} />);
   };
 
   it('render step info and change review node number', async () => {

@@ -2,7 +2,7 @@
  * @test_version ce
  */
 
-import { superRender } from '../../../testUtils/customRender';
+import { sqleSuperRender } from '../../../testUtils/superRender';
 import WorkflowTemplateDetail from '.';
 import { act, cleanup, screen } from '@testing-library/react';
 import workflowTemplate from '../../../testUtils/mockApi/workflowTemplate';
@@ -25,7 +25,7 @@ describe('page/WorkflowTemplate CE', () => {
   });
 
   const customRender = () => {
-    return superRender(<WorkflowTemplateDetail />);
+    return sqleSuperRender(<WorkflowTemplateDetail />);
   };
 
   it('render workflow template detail', async () => {

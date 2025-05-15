@@ -1,6 +1,6 @@
 import { fireEvent } from '@testing-library/dom';
 import AuditResultStep from '..';
-import { superRender } from '../../../../../../testUtils/customRender';
+import { sqleSuperRender } from '../../../../../../testUtils/superRender';
 import execWorkflow from '../../../../../../testUtils/mockApi/execWorkflow';
 import { AuditTaskResData } from '../../../../../../testUtils/mockApi/execWorkflow/data';
 import { MockSharedStepDetail } from '../../../hooks/mockData';
@@ -28,7 +28,7 @@ jest.mock('react-redux', () => ({
 
 describe('test AuditResultStep', () => {
   const customRender = (createAction: () => Promise<void>) => {
-    return superRender(
+    return sqleSuperRender(
       <AuditResultStep
         baseFormValues={{ desc: 'desc', workflow_subject: 'workflow_subject' }}
         tasks={AuditTaskResData}

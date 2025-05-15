@@ -1,9 +1,9 @@
 import { mockUseCurrentProject } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentProject';
 import { mockUseCurrentUser } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentUser';
 import {
-  renderHooksWithTheme,
-  superRender
-} from '../../../../testUtils/customRender';
+  sqleSuperRenderHook,
+  sqleSuperRender
+} from '../../../../testUtils/superRender';
 import useComparisonResultTree from '../hooks/useComparisonResultTree';
 import { executeDatabaseComparisonMockData } from '../../../../testUtils/mockApi/database_comparison/data';
 import { Tree } from 'antd';
@@ -29,7 +29,7 @@ describe('useComparisonResultTree', () => {
   });
 
   it('should assemble baseline tree data correctly', () => {
-    const { result } = renderHooksWithTheme(() =>
+    const { result } = sqleSuperRenderHook(() =>
       useComparisonResultTree(executeDatabaseComparisonMockData)
     );
     const baselineTreeData =
@@ -39,7 +39,7 @@ describe('useComparisonResultTree', () => {
   });
 
   it('should assemble comparison tree data correctly', () => {
-    const { result } = renderHooksWithTheme(() =>
+    const { result } = sqleSuperRenderHook(() =>
       useComparisonResultTree(executeDatabaseComparisonMockData)
     );
     const comparisonTreeData = result.current.assemblingComparisonTreeData(
@@ -50,11 +50,11 @@ describe('useComparisonResultTree', () => {
   });
 
   it('should reset state and close comparison detail drawer', () => {
-    const { result } = renderHooksWithTheme(() =>
+    const { result } = sqleSuperRenderHook(() =>
       useComparisonResultTree(executeDatabaseComparisonMockData)
     );
 
-    superRender(
+    sqleSuperRender(
       <Tree
         defaultExpandAll
         treeData={result.current.assemblingComparisonTreeData(
@@ -78,7 +78,7 @@ describe('useComparisonResultTree', () => {
   });
 
   it('should generate correct comparison detail params for base not exist', () => {
-    const { result } = renderHooksWithTheme(() =>
+    const { result } = sqleSuperRenderHook(() =>
       useComparisonResultTree([
         {
           base_schema_name: 'baseline-schema',
@@ -126,7 +126,7 @@ describe('useComparisonResultTree', () => {
   });
 
   it('should generate correct comparison detail params for comparison not exist', () => {
-    const { result } = renderHooksWithTheme(() =>
+    const { result } = sqleSuperRenderHook(() =>
       useComparisonResultTree([
         {
           base_schema_name: 'baseline-schema',
@@ -174,7 +174,7 @@ describe('useComparisonResultTree', () => {
   });
 
   it('should generate correct comparison detail params for different', () => {
-    const { result } = renderHooksWithTheme(() =>
+    const { result } = sqleSuperRenderHook(() =>
       useComparisonResultTree([
         {
           base_schema_name: 'baseline-schema',
@@ -225,7 +225,7 @@ describe('useComparisonResultTree', () => {
   });
 
   it('should generate modified SQL params with all parameters provided', () => {
-    const { result } = renderHooksWithTheme(() =>
+    const { result } = sqleSuperRenderHook(() =>
       useComparisonResultTree([
         {
           base_schema_name: 'baseline-schema',
@@ -277,7 +277,7 @@ describe('useComparisonResultTree', () => {
   });
 
   it('should generate modified SQL params with some parameters missing', () => {
-    const { result } = renderHooksWithTheme(() =>
+    const { result } = sqleSuperRenderHook(() =>
       useComparisonResultTree([
         {
           base_schema_name: 'baseline-schema',
@@ -327,7 +327,7 @@ describe('useComparisonResultTree', () => {
   });
 
   it('should generate modified SQL params with only required parameters', () => {
-    const { result } = renderHooksWithTheme(() =>
+    const { result } = sqleSuperRenderHook(() =>
       useComparisonResultTree([
         {
           base_schema_name: 'baseline-schema',

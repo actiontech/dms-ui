@@ -1,6 +1,6 @@
 import { mockUseCurrentProject } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentProject';
 import WorkflowOverviewList from '..';
-import { superRender } from '../../../../../../../testUtils/customRender';
+import { sqleSuperRender } from '../../../../../../../testUtils/superRender';
 import {
   WorkflowTasksItemData,
   WorkflowsOverviewListData
@@ -39,7 +39,7 @@ describe('test OverviewList', () => {
   ignoreConsoleErrors([UtilsConsoleErrorStringsEnum.INVALID_CUSTOM_ATTRIBUTE]);
 
   const customRender = (params?: Partial<WorkflowOverviewListProps>) => {
-    return superRender(
+    return sqleSuperRender(
       <WorkflowOverviewList
         workflowInfo={{
           ...WorkflowsOverviewListData,

@@ -2,7 +2,7 @@ import { act, fireEvent, screen } from '@testing-library/react';
 import SqlFileStatementOverview from '..';
 import { useNavigate, useParams } from 'react-router-dom';
 import task from '../../../../../../../../testUtils/mockApi/task';
-import { superRender } from '../../../../../../../../testUtils/customRender';
+import { sqleSuperRender } from '../../../../../../../../testUtils/superRender';
 import {
   UtilsConsoleErrorStringsEnum,
   ignoreConsoleErrors
@@ -37,7 +37,7 @@ describe('test AuditDetail/SqlFileStatementOverview', () => {
     jest.useRealTimers();
   });
   it('should match snapshot', async () => {
-    const { container } = superRender(<SqlFileStatementOverview />);
+    const { container } = sqleSuperRender(<SqlFileStatementOverview />);
 
     expect(getAuditFileExecStatistic).toHaveBeenCalledTimes(1);
     expect(getAuditFileExecStatistic).toHaveBeenCalledWith({
@@ -62,7 +62,7 @@ describe('test AuditDetail/SqlFileStatementOverview', () => {
   });
 
   it('should call navigate when clicked back to detail button', async () => {
-    superRender(<SqlFileStatementOverview />);
+    sqleSuperRender(<SqlFileStatementOverview />);
     await act(async () => jest.advanceTimersByTime(3000));
 
     fireEvent.click(screen.getByText('返回工单详情'));
@@ -71,7 +71,7 @@ describe('test AuditDetail/SqlFileStatementOverview', () => {
   });
 
   it('render table filter', async () => {
-    superRender(<SqlFileStatementOverview />);
+    sqleSuperRender(<SqlFileStatementOverview />);
     await act(async () => jest.advanceTimersByTime(3000));
 
     fireEvent.click(screen.getAllByText('准备执行')[0]);

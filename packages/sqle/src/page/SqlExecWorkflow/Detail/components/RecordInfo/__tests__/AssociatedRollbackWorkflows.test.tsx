@@ -1,4 +1,4 @@
-import { superRender } from '../../../../../../testUtils/customRender';
+import { sqleSuperRender } from '../../../../../../testUtils/superRender';
 import AssociatedRollbackWorkflows from '../components/AssociatedRollbackWorkflows';
 import { WorkflowsOverviewListData } from '../../../../../../testUtils/mockApi/execWorkflow/data';
 import { mockUseCurrentProject } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentProject';
@@ -14,12 +14,12 @@ describe('sqle/SqlExecWorkflow/Detail/AssociatedRollbackWorkflows', () => {
   });
 
   it('render init snap', () => {
-    const { baseElement } = superRender(<AssociatedRollbackWorkflows />);
+    const { baseElement } = sqleSuperRender(<AssociatedRollbackWorkflows />);
     expect(baseElement).toMatchSnapshot();
   });
 
   it('render associated stage workflows', () => {
-    const { baseElement } = superRender(
+    const { baseElement } = sqleSuperRender(
       <AssociatedRollbackWorkflows
         associatedWorkflows={
           WorkflowsOverviewListData.associated_rollback_workflows

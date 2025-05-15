@@ -8,7 +8,7 @@ import {
 import VersionForm from '..';
 import { mockUseCurrentProject } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentProject';
 import { mockUseDbServiceDriver } from '@actiontech/shared/lib/testUtil/mockHook/mockUseDbServiceDriver';
-import { superRender } from '../../../../..//testUtils/customRender';
+import { sqleSuperRender } from '../../../../../testUtils/superRender';
 import {
   getAllBySelector,
   getBySelector
@@ -33,7 +33,7 @@ describe('sqle/VersionManagement/VersionForm', () => {
 
   const customRender = (isUpdate = false, allowEditStages = false) => {
     const { result } = renderHook(() => useVersionFormState());
-    return superRender(
+    return sqleSuperRender(
       <Form form={result.current.form}>
         <VersionForm isUpdate={isUpdate} allowEditStages={allowEditStages} />
       </Form>

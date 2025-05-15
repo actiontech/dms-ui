@@ -3,7 +3,7 @@ import { mockUseCurrentProject } from '@actiontech/shared/lib/testUtil/mockHook/
 import sqlManage from '../../../../../../../testUtils/mockApi/sqlManage';
 import { useSelector, useDispatch } from 'react-redux';
 import { ModalName } from '../../../../../../../data/ModalName';
-import { superRender } from '../../../../../../../testUtils/customRender';
+import { sqleSuperRender } from '../../../../../../../testUtils/superRender';
 import PushToCodingModal from '..';
 import { sqlManageListData } from '../../../../../../../testUtils/mockApi/sqlManage/data';
 import { mockProjectInfo } from '@actiontech/shared/lib/testUtil/mockHook/data';
@@ -47,7 +47,7 @@ describe('page/SqlManagement/PushToCodingModal', () => {
     jest.useRealTimers();
     cleanup();
   });
-  const customRender = () => superRender(<PushToCodingModal />);
+  const customRender = () => sqleSuperRender(<PushToCodingModal />);
 
   it('render init snap', () => {
     const { baseElement } = customRender();

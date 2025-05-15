@@ -1,6 +1,6 @@
 import { act, fireEvent, screen } from '@testing-library/react';
 import { useParams } from 'react-router-dom';
-import { renderWithReduxAndTheme } from '@actiontech/shared/lib/testUtil/customRender';
+import { superRender } from '@actiontech/shared/lib/testUtil/superRender';
 import { getAllBySelector } from '@actiontech/shared/lib/testUtil/customQuery';
 import {
   ignoreConsoleErrors,
@@ -72,9 +72,7 @@ describe('SqlAnalyze/SQLManage', () => {
 
   it('should get analyze data from origin', async () => {
     const spy = mockGetAnalyzeData();
-    const { container, baseElement } = renderWithReduxAndTheme(
-      <SQLManageAnalyze />
-    );
+    const { container, baseElement } = superRender(<SQLManageAnalyze />);
     expect(spy).toHaveBeenCalledTimes(1);
     expect(spy).toHaveBeenCalledWith({
       project_name: projectName,
@@ -95,7 +93,7 @@ describe('SqlAnalyze/SQLManage', () => {
 
   it('filter sql execution plan cost', async () => {
     mockGetAnalyzeData();
-    const { container } = renderWithReduxAndTheme(<SQLManageAnalyze />);
+    const { container } = superRender(<SQLManageAnalyze />);
     await act(async () => jest.advanceTimersByTime(3000));
     expect(container).toMatchSnapshot();
 
@@ -151,7 +149,7 @@ describe('SqlAnalyze/SQLManage', () => {
         }
       )
     );
-    const { container } = renderWithReduxAndTheme(<SQLManageAnalyze />);
+    const { container } = superRender(<SQLManageAnalyze />);
     await act(async () => jest.advanceTimersByTime(3000));
 
     expect(container).toMatchSnapshot();
@@ -181,7 +179,7 @@ describe('SqlAnalyze/SQLManage', () => {
         }
       )
     );
-    const { container } = renderWithReduxAndTheme(<SQLManageAnalyze />);
+    const { container } = superRender(<SQLManageAnalyze />);
     await act(async () => jest.advanceTimersByTime(3000));
 
     expect(container).toMatchSnapshot();

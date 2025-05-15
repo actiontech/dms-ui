@@ -1,6 +1,6 @@
 import AuditResultList from '..';
 import { AuditResultListProps } from '../index.type';
-import { superRender } from '../../../../../testUtils/customRender';
+import { sqleSuperRender } from '../../../../../testUtils/superRender';
 import { act, cleanup, fireEvent, screen } from '@testing-library/react';
 import { IAuditTaskSQLResV2 } from '@actiontech/shared/lib/api/sqle/service/common';
 import { createSpySuccessResponse } from '@actiontech/shared/lib/testUtil/mockApi';
@@ -27,7 +27,7 @@ describe('sqle/ExecWorkflow/Common/AuditResultList', () => {
   const updateTaskRecordCountSpy = jest.fn();
   let requestGetAuditTaskSQLs: jest.SpyInstance;
   const customRender = (params: AuditResultListProps) => {
-    return superRender(
+    return sqleSuperRender(
       <AuditResultList
         updateTaskRecordCount={updateTaskRecordCountSpy}
         {...params}

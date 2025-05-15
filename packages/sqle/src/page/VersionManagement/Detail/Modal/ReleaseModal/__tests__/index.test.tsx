@@ -1,7 +1,7 @@
 import { cleanup, act, screen, fireEvent } from '@testing-library/react';
 import { useSelector, useDispatch } from 'react-redux';
 import AssociateWorkflowModal from '../index';
-import { superRender } from '../../../../../..//testUtils/customRender';
+import { sqleSuperRender } from '../../../../../../testUtils/superRender';
 import { mockUseCurrentProject } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentProject';
 import { mockProjectInfo } from '@actiontech/shared/lib/testUtil/mockHook/data';
 import { mockUseCurrentUser } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentUser';
@@ -101,7 +101,7 @@ describe('sqle/VersionManagement/Detail/AssociateWorkflowModal', () => {
   });
 
   it('render init snap shot', async () => {
-    const { baseElement } = superRender(<AssociateWorkflowModal />);
+    const { baseElement } = sqleSuperRender(<AssociateWorkflowModal />);
     await act(async () => jest.advanceTimersByTime(3000));
     expect(baseElement).toMatchSnapshot();
     expect(screen.getByText('批量发布工单')).toBeInTheDocument();
@@ -115,7 +115,7 @@ describe('sqle/VersionManagement/Detail/AssociateWorkflowModal', () => {
 
   it('render release form  default value when next stage instance has only one', async () => {
     const eventEmitSpy = jest.spyOn(EventEmitter, 'emit');
-    const { baseElement } = superRender(<AssociateWorkflowModal />);
+    const { baseElement } = sqleSuperRender(<AssociateWorkflowModal />);
     expect(getInstanceTipListSpy).toHaveBeenCalledTimes(1);
     await act(async () => jest.advanceTimersByTime(3000));
     expect(getDependenciesBetweenStageInstanceSpy).toHaveBeenCalledTimes(1);
@@ -217,7 +217,7 @@ describe('sqle/VersionManagement/Detail/AssociateWorkflowModal', () => {
         }
       })
     );
-    const { baseElement } = superRender(<AssociateWorkflowModal />);
+    const { baseElement } = sqleSuperRender(<AssociateWorkflowModal />);
     expect(getInstanceTipListSpy).toHaveBeenCalledTimes(1);
     await act(async () => jest.advanceTimersByTime(3000));
     expect(getDependenciesBetweenStageInstanceSpy).toHaveBeenCalledTimes(1);
@@ -289,7 +289,7 @@ describe('sqle/VersionManagement/Detail/AssociateWorkflowModal', () => {
       })
     );
     const eventEmitSpy = jest.spyOn(EventEmitter, 'emit');
-    superRender(<AssociateWorkflowModal />);
+    sqleSuperRender(<AssociateWorkflowModal />);
     expect(getInstanceTipListSpy).toHaveBeenCalledTimes(1);
     await act(async () => jest.advanceTimersByTime(3000));
     expect(getDependenciesBetweenStageInstanceSpy).toHaveBeenCalledTimes(1);
@@ -339,7 +339,7 @@ describe('sqle/VersionManagement/Detail/AssociateWorkflowModal', () => {
         ]
       })
     );
-    const { baseElement } = superRender(<AssociateWorkflowModal />);
+    const { baseElement } = sqleSuperRender(<AssociateWorkflowModal />);
     expect(getInstanceTipListSpy).toHaveBeenCalledTimes(1);
     expect(
       screen.getByText('测试数据源连通性').closest('button')
@@ -375,7 +375,7 @@ describe('sqle/VersionManagement/Detail/AssociateWorkflowModal', () => {
         ]
       })
     );
-    const { baseElement } = superRender(<AssociateWorkflowModal />);
+    const { baseElement } = sqleSuperRender(<AssociateWorkflowModal />);
     expect(getInstanceTipListSpy).toHaveBeenCalledTimes(1);
     expect(
       screen.getByText('测试数据源连通性').closest('button')
@@ -411,7 +411,7 @@ describe('sqle/VersionManagement/Detail/AssociateWorkflowModal', () => {
         ]
       })
     );
-    const { baseElement } = superRender(<AssociateWorkflowModal />);
+    const { baseElement } = sqleSuperRender(<AssociateWorkflowModal />);
     expect(getInstanceTipListSpy).toHaveBeenCalledTimes(1);
     expect(
       screen.getByText('测试数据源连通性').closest('button')

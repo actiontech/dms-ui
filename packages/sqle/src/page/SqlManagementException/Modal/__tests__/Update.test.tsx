@@ -1,5 +1,5 @@
 import { cleanup, act, fireEvent, screen } from '@testing-library/react';
-import { superRender } from '../../../../testUtils/customRender';
+import { sqleSuperRender } from '../../../../testUtils/superRender';
 import { useDispatch } from 'react-redux';
 import { ModalName } from '../../../../data/ModalName';
 import { mockUseCurrentProject } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentProject';
@@ -52,7 +52,7 @@ describe('slqe/SqlManagementException/UpdateSqlManagementException', () => {
   ignoreConsoleErrors([UtilsConsoleErrorStringsEnum.UNKNOWN_EVENT_HANDLER]);
 
   const customRender = (selectRow?: IBlacklistResV1) => {
-    return superRender(<UpdateSqlManagementException />, undefined, {
+    return sqleSuperRender(<UpdateSqlManagementException />, undefined, {
       initStore: {
         sqlManagementException: {
           modalStatus: { [ModalName.Update_Sql_Management_Exception]: true },

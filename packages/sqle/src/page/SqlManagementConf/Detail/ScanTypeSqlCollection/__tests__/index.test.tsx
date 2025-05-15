@@ -1,6 +1,6 @@
 import { mockUseCurrentProject } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentProject';
 import instanceAuditPlan from '../../../../../testUtils/mockApi/instanceAuditPlan';
-import { superRender } from '../../../../../testUtils/customRender';
+import { sqleSuperRender } from '../../../../../testUtils/superRender';
 import ScanTypeSqlCollection from '../indx';
 import { act, fireEvent } from '@testing-library/react';
 import { mockProjectInfo } from '@actiontech/shared/lib/testUtil/mockHook/data';
@@ -39,7 +39,7 @@ describe('test ScanTypeSqlCollection', () => {
   const instanceType = 'MySQL';
 
   const customRender = () => {
-    return superRender(
+    return sqleSuperRender(
       <ScanTypeSqlCollection
         instanceAuditPlanId={instanceAuditPlanId}
         auditPlanId={auditPlanId}

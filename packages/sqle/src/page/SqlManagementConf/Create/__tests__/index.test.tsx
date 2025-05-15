@@ -14,7 +14,7 @@ import {
 } from '../../../../testUtils/mockApi/instance/data';
 import rule_template from '../../../../testUtils/mockApi/rule_template';
 import { projectRuleTemplateList } from '../../../../testUtils/mockApi/rule_template/data';
-import { superRender } from '../../../../testUtils/customRender';
+import { sqleSuperRender } from '../../../../testUtils/superRender';
 import { createSpySuccessResponse } from '@actiontech/shared/lib/testUtil/mockApi';
 import {
   getAllBySelector,
@@ -66,7 +66,7 @@ describe('test sqle/SqlManagementConf/Create', () => {
   });
 
   it('render init snap shot', async () => {
-    const { baseElement } = superRender(<CreateSqlManagementConf />);
+    const { baseElement } = sqleSuperRender(<CreateSqlManagementConf />);
     expect(baseElement).toMatchSnapshot();
     expect(screen.getByText('为数据源开启扫描任务')).toBeInTheDocument();
     expect(screen.getByText('返回智能扫描配置')).toBeInTheDocument();
@@ -81,7 +81,7 @@ describe('test sqle/SqlManagementConf/Create', () => {
   });
 
   it('render create audit plan', async () => {
-    const { baseElement } = superRender(
+    const { baseElement } = sqleSuperRender(
       <CreateSqlManagementConf />,
       undefined,
       {
@@ -320,7 +320,7 @@ describe('test sqle/SqlManagementConf/Create', () => {
 
   it('create audit plan when current url has params', async () => {
     const instanceId = instanceTipsMockData[0].instance_id;
-    const { baseElement } = superRender(
+    const { baseElement } = sqleSuperRender(
       <CreateSqlManagementConf />,
       undefined,
       {

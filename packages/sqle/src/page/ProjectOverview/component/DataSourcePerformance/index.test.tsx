@@ -1,8 +1,8 @@
 import { cleanup, act, fireEvent, screen } from '@testing-library/react';
 import {
-  renderHooksWithTheme,
-  renderWithThemeAndRedux
-} from '../../../../testUtils/customRender';
+  sqleSuperRenderHook,
+  sqleSuperRender
+} from '../../../../testUtils/superRender';
 import sqlOptimization from '../../../../testUtils/mockApi/sqlOptimization';
 import {
   ignoreConsoleErrors,
@@ -60,7 +60,7 @@ describe('ProjectOverview/DataSourcePerformance', () => {
   ]);
   let getDBPerformanceImproveOverviewSpy: jest.SpyInstance;
   const customRender = () => {
-    return renderWithThemeAndRedux(<DataSourcePerformance />);
+    return sqleSuperRender(<DataSourcePerformance />);
   };
 
   beforeEach(() => {
@@ -123,7 +123,7 @@ describe('ProjectOverview/DataSourcePerformance', () => {
   });
 
   it('render tooltip formatter', async () => {
-    const { result } = renderHooksWithTheme(() =>
+    const { result } = sqleSuperRenderHook(() =>
       renderTooltipFormatter?.({
         instance_name: '',
         avg_performance_improve: ''
@@ -133,14 +133,14 @@ describe('ProjectOverview/DataSourcePerformance', () => {
   });
 
   it('render empty tooltip customContent', async () => {
-    const { result } = renderHooksWithTheme(() =>
+    const { result } = sqleSuperRenderHook(() =>
       renderTooltipCustomContent([], themeData.sqleTheme, themeData.sharedTheme)
     );
     expect(result.current).toBe(null);
   });
 
   it('render tooltip name start with defaultItemKey', async () => {
-    const { result } = renderHooksWithTheme(() =>
+    const { result } = sqleSuperRenderHook(() =>
       renderTooltipCustomContent(
         [{ name: `${defaultItemKey}1`, value: 0 }],
         themeData.sqleTheme,
@@ -151,7 +151,7 @@ describe('ProjectOverview/DataSourcePerformance', () => {
   });
 
   it('render tooltip customContent', async () => {
-    const { result } = renderHooksWithTheme(() =>
+    const { result } = sqleSuperRenderHook(() =>
       renderTooltipCustomContent(
         [{ name: '1', value: 1 }],
         themeData.sqleTheme,
@@ -162,12 +162,12 @@ describe('ProjectOverview/DataSourcePerformance', () => {
   });
 
   it('render label', async () => {
-    const { result } = renderHooksWithTheme(() => labelFormatter('test-label'));
+    const { result } = sqleSuperRenderHook(() => labelFormatter('test-label'));
     expect(result.current).toEqual('test-label');
   });
 
   it('render label when start with defaultItemKey', async () => {
-    const { result } = renderHooksWithTheme(() =>
+    const { result } = sqleSuperRenderHook(() =>
       labelFormatter(`${defaultItemKey}1`)
     );
     expect(result.current).toEqual('');

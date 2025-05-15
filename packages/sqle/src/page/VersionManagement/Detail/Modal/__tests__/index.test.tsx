@@ -1,7 +1,7 @@
 import { cleanup, act } from '@testing-library/react';
 import { useSelector, useDispatch } from 'react-redux';
 import VersionDetailModal from '../index';
-import { superRender } from '../../../../..//testUtils/customRender';
+import { sqleSuperRender } from '../../../../../testUtils/superRender';
 import { mockUseCurrentProject } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentProject';
 import { mockUseCurrentUser } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentUser';
 import { mockUseDbServiceDriver } from '@actiontech/shared/lib/testUtil/mockHook/mockUseDbServiceDriver';
@@ -39,7 +39,7 @@ describe('sqle/VersionManagement/Detail/Modal', () => {
   });
 
   it('render init snap shot', async () => {
-    const { baseElement } = superRender(<VersionDetailModal />);
+    const { baseElement } = sqleSuperRender(<VersionDetailModal />);
     await act(async () => jest.advanceTimersByTime(0));
     expect(baseElement).toMatchSnapshot();
     expect(dispatchSpy).toHaveBeenCalledTimes(1);

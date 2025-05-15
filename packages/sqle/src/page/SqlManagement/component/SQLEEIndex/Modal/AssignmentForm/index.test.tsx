@@ -4,9 +4,9 @@ import { act, cleanup, fireEvent, screen } from '@testing-library/react';
 import { AssignmentFormField } from './index.type';
 import AssignmentForm from '.';
 import {
-  renderHooksWithTheme,
-  superRender
-} from '../../../../../../testUtils/customRender';
+  sqleSuperRenderHook,
+  sqleSuperRender
+} from '../../../../../../testUtils/superRender';
 import { Form } from 'antd';
 import {
   getAllBySelector,
@@ -28,10 +28,10 @@ describe('page/SqlManagement/AssignmentForm', () => {
   });
 
   const customRender = (data?: { [key: string]: boolean }) => {
-    const { result } = renderHooksWithTheme(() =>
+    const { result } = sqleSuperRenderHook(() =>
       Form.useForm<AssignmentFormField>()
     );
-    return superRender(
+    return sqleSuperRender(
       <AssignmentForm
         form={result.current[0]}
         init={true}

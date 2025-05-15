@@ -18,7 +18,7 @@ import {
 } from '../../../../testUtils/mockApi/instance/data';
 import rule_template from '../../../../testUtils/mockApi/rule_template';
 import { projectRuleTemplateList } from '../../../../testUtils/mockApi/rule_template/data';
-import { superRender } from '../../../../testUtils/customRender';
+import { sqleSuperRender } from '../../../../testUtils/superRender';
 import { createSpySuccessResponse } from '@actiontech/shared/lib/testUtil/mockApi';
 import {
   getAllBySelector,
@@ -94,7 +94,7 @@ describe('test sqle/SqlManagementConf/Update', () => {
   });
 
   it('render init snap shot', async () => {
-    const { baseElement } = superRender(<UpdateSqlManagementConf />);
+    const { baseElement } = sqleSuperRender(<UpdateSqlManagementConf />);
     await act(async () => jest.advanceTimersByTime(3000));
     expect(screen.getByText('为数据源开启扫描任务')).toBeInTheDocument();
     expect(screen.getByText('返回智能扫描配置')).toBeInTheDocument();
@@ -124,7 +124,7 @@ describe('test sqle/SqlManagementConf/Update', () => {
   });
 
   it('render update audit plan', async () => {
-    const { baseElement } = superRender(<UpdateSqlManagementConf />);
+    const { baseElement } = sqleSuperRender(<UpdateSqlManagementConf />);
     await act(async () => jest.advanceTimersByTime(3000));
 
     await act(async () => jest.advanceTimersByTime(3000));
@@ -392,7 +392,7 @@ describe('test sqle/SqlManagementConf/Update', () => {
         }
       })
     );
-    const { baseElement } = superRender(<UpdateSqlManagementConf />);
+    const { baseElement } = sqleSuperRender(<UpdateSqlManagementConf />);
     await act(async () => jest.advanceTimersByTime(3000));
 
     await act(async () => jest.advanceTimersByTime(3000));

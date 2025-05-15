@@ -1,5 +1,5 @@
 import { cleanup, act, fireEvent, screen } from '@testing-library/react';
-import { renderWithReduxAndTheme } from '@actiontech/shared/lib/testUtil/customRender';
+import { superRender } from '@actiontech/shared/lib/testUtil/superRender';
 import { useDispatch, useSelector } from 'react-redux';
 import { ModalName } from '../../../../data/ModalName';
 import { mockUseCurrentProject } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentProject';
@@ -50,7 +50,7 @@ describe('slqe/Whitelist/AddWhitelist', () => {
   it('should send add whitelist request when click submit button', async () => {
     const mockCreated = jest.fn();
     const eventEmitSpy = jest.spyOn(EventEmitter, 'emit');
-    const { baseElement } = renderWithReduxAndTheme(
+    const { baseElement } = superRender(
       <AddWhitelist onCreated={mockCreated} />
     );
     await act(async () => jest.advanceTimersByTime(3000));
@@ -96,7 +96,7 @@ describe('slqe/Whitelist/AddWhitelist', () => {
   });
 
   it('should close modal when click close button', async () => {
-    const { baseElement } = renderWithReduxAndTheme(<AddWhitelist />);
+    const { baseElement } = superRender(<AddWhitelist />);
     fireEvent.click(queryBySelector('.closed-icon-custom', baseElement)!);
     await act(async () => jest.advanceTimersByTime(1000));
     expect(dispatchSpy).toHaveBeenCalledTimes(3);

@@ -1,4 +1,4 @@
-import { superRender } from '../../../../../testUtils/customRender';
+import { sqleSuperRender } from '../../../../../testUtils/superRender';
 import ReviewAndExecNodeInfo from '.';
 import { Form, Select } from 'antd';
 import { NodeTypeEnum } from './index.type';
@@ -39,7 +39,7 @@ describe('page/WorkflowTemplate/ReviewNodeInfo', () => {
   const customRender = (data?: {
     [key: string]: NodeTypeEnum | IWorkFlowStepTemplateResV1;
   }) => {
-    return superRender(
+    return sqleSuperRender(
       <ReviewAndExecNodeInfo
         form={result.current[0]}
         type={NodeTypeEnum.review}

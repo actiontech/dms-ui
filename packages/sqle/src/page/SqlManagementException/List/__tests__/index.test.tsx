@@ -1,6 +1,6 @@
 import { screen, cleanup, act, fireEvent } from '@testing-library/react';
 import SqlManagementExceptionList from '../';
-import { superRender } from '@actiontech/shared/lib/testUtil/customRender';
+import { superRender } from '@actiontech/shared/lib/testUtil/superRender';
 import blacklist from '../../../../testUtils/mockApi/blacklist';
 import { mockBlacklistData } from '../../../../testUtils/mockApi/blacklist/data';
 import { getBySelector } from '@actiontech/shared/lib/testUtil/customQuery';

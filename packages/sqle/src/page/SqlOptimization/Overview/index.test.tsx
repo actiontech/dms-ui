@@ -1,6 +1,6 @@
 import { act, cleanup, fireEvent, screen } from '@testing-library/react';
 import SqlOptimizationOverview from '.';
-import { superRender } from '../../../testUtils/customRender';
+import { sqleSuperRender } from '../../../testUtils/superRender';
 import { mockUseCurrentProject } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentProject';
 import { mockUseCurrentUser } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentUser';
 import { mockUseDbServiceDriver } from '@actiontech/shared/lib/testUtil/mockHook/mockUseDbServiceDriver';
@@ -47,7 +47,7 @@ describe('sqle/SqlOptimization/Overview', () => {
   });
 
   it('render overview page', async () => {
-    const { baseElement } = superRender(<SqlOptimizationOverview />);
+    const { baseElement } = sqleSuperRender(<SqlOptimizationOverview />);
     await act(async () => jest.advanceTimersByTime(3000));
     expect(baseElement).toMatchSnapshot();
     expect(getOptimizationRecordReqSpy).toHaveBeenCalled();
@@ -66,7 +66,7 @@ describe('sqle/SqlOptimization/Overview', () => {
         }
       })
     );
-    const { baseElement } = superRender(<SqlOptimizationOverview />);
+    const { baseElement } = sqleSuperRender(<SqlOptimizationOverview />);
     await act(async () => jest.advanceTimersByTime(3000));
     expect(baseElement).toMatchSnapshot();
     expect(getOptimizationRecordReqSpy).toHaveBeenCalledTimes(1);
@@ -82,7 +82,7 @@ describe('sqle/SqlOptimization/Overview', () => {
         }
       })
     );
-    const { baseElement } = superRender(<SqlOptimizationOverview />);
+    const { baseElement } = sqleSuperRender(<SqlOptimizationOverview />);
     await act(async () => jest.advanceTimersByTime(3000));
     expect(baseElement).toMatchSnapshot();
     expect(getOptimizationRecordReqSpy).toHaveBeenCalled();
@@ -106,7 +106,7 @@ describe('sqle/SqlOptimization/Overview', () => {
         }
       })
     );
-    const { baseElement } = superRender(<SqlOptimizationOverview />);
+    const { baseElement } = sqleSuperRender(<SqlOptimizationOverview />);
     await act(async () => jest.advanceTimersByTime(3000));
     expect(baseElement).toMatchSnapshot();
     expect(getOptimizationRecordReqSpy).toHaveBeenCalled();
@@ -114,13 +114,13 @@ describe('sqle/SqlOptimization/Overview', () => {
   });
 
   it('render return back to optimization list page', async () => {
-    superRender(<SqlOptimizationOverview />);
+    sqleSuperRender(<SqlOptimizationOverview />);
     expect(screen.getByText('返回智能调优列表')).toBeInTheDocument();
     fireEvent.click(screen.getByText('返回智能调优列表'));
   });
 
   it('render link to detail page', async () => {
-    superRender(<SqlOptimizationOverview />);
+    sqleSuperRender(<SqlOptimizationOverview />);
     await act(async () => jest.advanceTimersByTime(3000));
     expect(getOptimizationRecordReqSpy).toHaveBeenCalled();
     await act(async () => jest.advanceTimersByTime(3000));

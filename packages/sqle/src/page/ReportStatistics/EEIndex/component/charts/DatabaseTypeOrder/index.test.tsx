@@ -1,8 +1,8 @@
 import { cleanup, act } from '@testing-library/react';
 import {
-  renderWithThemeAndRedux,
-  renderHooksWithTheme
-} from '../../../../../../testUtils/customRender';
+  sqleSuperRender,
+  sqleSuperRenderHook
+} from '../../../../../../testUtils/superRender';
 
 import statistic from '../../../../../../testUtils/mockApi/statistic';
 import {
@@ -28,7 +28,7 @@ describe('ReportStatistics/DatabaseTypeOrder', () => {
   ]);
   let requestPlotsData: jest.SpyInstance;
   const customRender = () => {
-    return renderWithThemeAndRedux(<DatabaseTypeOrder />);
+    return sqleSuperRender(<DatabaseTypeOrder />);
   };
   beforeEach(() => {
     jest.useFakeTimers();
@@ -81,26 +81,26 @@ describe('ReportStatistics/DatabaseTypeOrder', () => {
   });
 
   it('render label content', async () => {
-    const { result } = renderHooksWithTheme(() => renderLabelContent({}));
+    const { result } = sqleSuperRenderHook(() => renderLabelContent({}));
     expect(result.current).toStrictEqual('');
   });
 
   it('render tooltip formatter', async () => {
-    const { result } = renderHooksWithTheme(() =>
+    const { result } = sqleSuperRenderHook(() =>
       renderTooltipFormatter?.({ name: '', value: '' })
     );
     expect(result.current).toStrictEqual({ name: '', value: '' });
   });
 
   it('render empty tooltip customContent', async () => {
-    const { result } = renderHooksWithTheme(() =>
+    const { result } = sqleSuperRenderHook(() =>
       renderTooltipCustomContent([], themeData.sharedTheme, 1)
     );
     expect(result.current).toBe(null);
   });
 
   it('render tooltip customContent', async () => {
-    const { result } = renderHooksWithTheme(() =>
+    const { result } = sqleSuperRenderHook(() =>
       renderTooltipCustomContent(
         [{ color: 'red', data: { data: { name: 'test', value: '12' } } }],
         themeData.sharedTheme,

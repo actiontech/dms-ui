@@ -1,10 +1,10 @@
 import InstanceTasksStatus from '..';
 import { GetWorkflowTasksItemV2StatusEnum } from '@actiontech/shared/lib/api/sqle/service/common.enum';
-import { superRender } from '../../../../../../../../testUtils/customRender';
+import { sqleSuperRender } from '../../../../../../../../testUtils/superRender';
 
 describe('sqle/ExecWorkflow/AuditDetail/InstanceTasksStatus', () => {
   const customRender = (status?: GetWorkflowTasksItemV2StatusEnum) => {
-    return superRender(<InstanceTasksStatus status={status} />);
+    return sqleSuperRender(<InstanceTasksStatus status={status} />);
   };
 
   it('render snap when status is undefined', () => {

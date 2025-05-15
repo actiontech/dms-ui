@@ -3,7 +3,7 @@ import { act, cleanup } from '@testing-library/react';
 import { sqlManageListData } from '../../../../../../testUtils/mockApi/sqlManage/data';
 import { ISqlManage } from '@actiontech/shared/lib/api/sqle/service/common';
 import { useDispatch, useSelector } from 'react-redux';
-import { renderHooksWithRedux } from '../../../../../../testUtils/customRender';
+import { sqleSuperRenderHook } from '../../../../../../testUtils/superRender';
 
 jest.mock('react-redux', () => ({
   ...jest.requireActual('react-redux'),
@@ -37,16 +37,14 @@ describe('SqlManagement/useSqlManagementRedux', () => {
   });
 
   it('get redux data', async () => {
-    const { result } = renderHooksWithRedux(() =>
-      useSqlManagementRedux('test')
-    );
+    const { result } = sqleSuperRenderHook(() => useSqlManagementRedux('test'));
     expect(result.current.open).toBe(true);
     expect(result.current.batchSelectSqlManagement).toBe(null);
     expect(result.current.selectSqlManagement).toBe(null);
   });
 
   it('init modal status', async () => {
-    const { result } = renderHooksWithRedux(() => useSqlManagementRedux());
+    const { result } = sqleSuperRenderHook(() => useSqlManagementRedux());
     await act(async () => {
       result.current.initModalStatus({ test: true });
       jest.advanceTimersByTime(3000);
@@ -63,7 +61,7 @@ describe('SqlManagement/useSqlManagementRedux', () => {
   });
 
   it('set select data', async () => {
-    const { result } = renderHooksWithRedux(() => useSqlManagementRedux());
+    const { result } = sqleSuperRenderHook(() => useSqlManagementRedux());
     await act(async () => {
       result.current.setSelectData(sqlManageListData?.data[0] as ISqlManage);
       jest.advanceTimersByTime(3000);
@@ -76,7 +74,7 @@ describe('SqlManagement/useSqlManagementRedux', () => {
   });
 
   it('update modal status', async () => {
-    const { result } = renderHooksWithRedux(() => useSqlManagementRedux());
+    const { result } = sqleSuperRenderHook(() => useSqlManagementRedux());
     await act(async () => {
       result.current.updateModalStatus('test', true);
       jest.advanceTimersByTime(3000);
@@ -92,7 +90,7 @@ describe('SqlManagement/useSqlManagementRedux', () => {
   });
 
   it('set batch select data', async () => {
-    const { result } = renderHooksWithRedux(() => useSqlManagementRedux());
+    const { result } = sqleSuperRenderHook(() => useSqlManagementRedux());
     await act(async () => {
       result.current.setBatchSelectData(sqlManageListData.data as ISqlManage[]);
       jest.advanceTimersByTime(3000);

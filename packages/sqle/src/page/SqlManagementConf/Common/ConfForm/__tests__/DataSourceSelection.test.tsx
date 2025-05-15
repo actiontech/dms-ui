@@ -1,7 +1,7 @@
 import { mockUseCurrentProject } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentProject';
 // import { mockUseProjectBusinessTips } from '@actiontech/shared/lib/testUtil/mockHook/mockUseProjectBusinessTips';
 import { useSearchParams } from 'react-router-dom';
-import { superRender } from '../../../../../testUtils/customRender';
+import { sqleSuperRender } from '../../../../../testUtils/superRender';
 import DataSourceSelection from '../DataSourceSelection';
 import { ConfFormContextProvide, ConfFormContextType } from '../context';
 import { URLSearchParams } from 'url';
@@ -33,7 +33,7 @@ describe('test SqlManagementConf/common/ConfForm/DataSourceSelection', () => {
   const useSearchParamsSpy: jest.Mock = useSearchParams as jest.Mock;
   const customRender = (value: Partial<ConfFormContextType>) => {
     const { result } = renderHook(() => Form.useForm());
-    return superRender(
+    return sqleSuperRender(
       <ConfFormContextProvide
         value={{
           ...{

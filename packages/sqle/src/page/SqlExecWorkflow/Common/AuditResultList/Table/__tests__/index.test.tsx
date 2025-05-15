@@ -1,6 +1,6 @@
 import AuditResultTable from '..';
 import { AuditResultTableProps } from '../index.type';
-import { superRender } from '../../../../../../testUtils/customRender';
+import { sqleSuperRender } from '../../../../../../testUtils/superRender';
 import { fireEvent, act, cleanup, screen } from '@testing-library/react';
 import { getAuditTaskSQLsV2FilterAuditLevelEnum } from '@actiontech/shared/lib/api/sqle/service/task/index.enum';
 import {
@@ -45,7 +45,7 @@ describe('sqle/ExecWorkflow/Common/AuditResultList/List', () => {
   const dispatchSpy = jest.fn();
 
   const customRender = (params: AuditResultTableProps) => {
-    return superRender(<AuditResultTable {...params} />);
+    return sqleSuperRender(<AuditResultTable {...params} />);
   };
 
   ignoreConsoleErrors([

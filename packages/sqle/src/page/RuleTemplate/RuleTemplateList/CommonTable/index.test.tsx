@@ -1,5 +1,5 @@
 import { cleanup, screen, act } from '@testing-library/react';
-import { renderWithReduxAndTheme } from '@actiontech/shared/lib/testUtil/customRender';
+import { superRender } from '@actiontech/shared/lib/testUtil/superRender';
 import CommonTable from '.';
 import EventEmitter from '../../../../utils/EventEmitter';
 import EmitterKey from '../../../../data/EmitterKey';
@@ -30,7 +30,7 @@ describe('sqle/RuleTemplate/List/CommonTable', () => {
   });
 
   const customRender = () =>
-    renderWithReduxAndTheme(
+    superRender(
       <BrowserRouter>
         <CommonTable />
       </BrowserRouter>

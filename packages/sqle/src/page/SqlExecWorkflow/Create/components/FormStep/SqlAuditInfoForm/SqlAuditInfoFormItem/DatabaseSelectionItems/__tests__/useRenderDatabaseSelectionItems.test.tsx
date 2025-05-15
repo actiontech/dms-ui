@@ -10,7 +10,7 @@ import {
 } from '../../../../../../../../../testUtils/mockApi/instance/data';
 import system from '../../../../../../../../../testUtils/mockApi/system';
 import { getSystemModuleStatusModuleNameEnum } from '@actiontech/shared/lib/api/sqle/service/system/index.enum';
-import { superRender } from '../../../../../../../../../testUtils/customRender';
+import { sqleSuperRender } from '../../../../../../../../../testUtils/superRender';
 import { mockUseCurrentUser } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentUser';
 import { useSelector } from 'react-redux';
 import * as useCreationMode from '../../../../../../hooks/useCreationMode';
@@ -271,7 +271,7 @@ describe('test useRenderDatabaseSelectionItems', () => {
       })
     );
 
-    const { container } = superRender(
+    const { container } = sqleSuperRender(
       result.current.renderDeleteItemButton(
         [{ key: 1, name: 1 }],
         '1',
@@ -298,7 +298,7 @@ describe('test useRenderDatabaseSelectionItems', () => {
       })
     );
 
-    const { container } = superRender(
+    const { container } = sqleSuperRender(
       result.current.renderDeleteItemButton(
         [
           { key: 1, name: 1 },
@@ -336,7 +336,7 @@ describe('test useRenderDatabaseSelectionItems', () => {
       })
     );
 
-    const { getByText } = superRender(
+    const { getByText } = sqleSuperRender(
       result.current.renderAddItemButton(
         [
           { key: 1, name: 1 },
@@ -359,7 +359,7 @@ describe('test useRenderDatabaseSelectionItems', () => {
       })
     );
 
-    const { getByText } = superRender(
+    const { getByText } = sqleSuperRender(
       result.current.renderAddItemButton(
         Array.from({ length: 20 }, (_, index) => ({ name: index, key: index })),
         handleClickSpy

@@ -1,6 +1,6 @@
 import SqlRollback from '..';
 import { cleanup, act, fireEvent, screen } from '@testing-library/react';
-import { superRender } from '../../../../../../testUtils/customRender';
+import { sqleSuperRender } from '../../../../../../testUtils/superRender';
 import { mockUseCurrentProject } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentProject';
 import { useDispatch } from 'react-redux';
 import instance from '../../../../../../testUtils/mockApi/instance';
@@ -50,7 +50,7 @@ describe('sqle/ExecWorkflow/Detail/SqlRollback', () => {
   });
 
   const customRender = (isAtRollbackStep = true) => {
-    return superRender(
+    return sqleSuperRender(
       <SqlRollback
         isAtRollbackStep={isAtRollbackStep}
         backToWorkflowDetail={backToWorkflowDetail}

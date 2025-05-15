@@ -1,5 +1,5 @@
 import { cleanup, screen, act, fireEvent } from '@testing-library/react';
-import { renderWithReduxAndTheme } from '@actiontech/shared/lib/testUtil/customRender';
+import { superRender } from '@actiontech/shared/lib/testUtil/superRender';
 import ProjectTable from '.';
 import EventEmitter from '../../../../utils/EventEmitter';
 import EmitterKey from '../../../../data/EmitterKey';
@@ -69,7 +69,7 @@ describe('sqle/RuleTemplate/List/ProjectTable', () => {
   });
 
   const customRender = (actionPermission?: boolean) =>
-    renderWithReduxAndTheme(
+    superRender(
       <BrowserRouter>
         <ProjectTable />
       </BrowserRouter>

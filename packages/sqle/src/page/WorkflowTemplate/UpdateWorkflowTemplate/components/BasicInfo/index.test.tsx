@@ -1,4 +1,4 @@
-import { superRender } from '../../../../../testUtils/customRender';
+import { sqleSuperRender } from '../../../../../testUtils/superRender';
 import BasicInfo from '.';
 import { act, fireEvent, screen, renderHook } from '@testing-library/react';
 import {
@@ -25,7 +25,7 @@ describe('page/WorkflowTemplate/BasicInfo', () => {
 
   const { result } = renderHook(() => Form.useForm());
   const customRender = (data?: { [key: string]: undefined }) => {
-    return superRender(
+    return sqleSuperRender(
       <BasicInfo
         form={result.current[0]}
         defaultData={workflowTemplateData}

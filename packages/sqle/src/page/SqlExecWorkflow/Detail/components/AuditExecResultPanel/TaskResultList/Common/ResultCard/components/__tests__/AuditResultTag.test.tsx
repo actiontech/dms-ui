@@ -1,11 +1,11 @@
 import { RuleResV1LevelEnum } from '@actiontech/shared/lib/api/sqle/service/common.enum';
 import AuditResultTag, { AuditResultTagProps } from '../AuditResultTag';
-import { superRender } from '../../../../../../../../../../testUtils/customRender';
+import { sqleSuperRender } from '../../../../../../../../../../testUtils/superRender';
 import { screen } from '@testing-library/dom';
 
 describe('sqle/ExecWorkflow/AuditDetail/AuditResultTag', () => {
   const customRender = (params: AuditResultTagProps = {}) => {
-    return superRender(<AuditResultTag {...params} />);
+    return sqleSuperRender(<AuditResultTag {...params} />);
   };
 
   it('render tag is audit success', () => {

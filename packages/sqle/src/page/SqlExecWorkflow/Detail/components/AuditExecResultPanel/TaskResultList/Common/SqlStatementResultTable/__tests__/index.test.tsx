@@ -4,7 +4,7 @@ import {
   getAllBySelector,
   getBySelector
 } from '@actiontech/shared/lib/testUtil/customQuery';
-import { superRender } from '../../../../../../../../../testUtils/customRender';
+import { sqleSuperRender } from '../../../../../../../../../testUtils/superRender';
 import rule_template from '../../../../../../../../../testUtils/mockApi/rule_template';
 import { mockUseCurrentUser } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentUser';
 import { cleanup } from '@testing-library/react';
@@ -28,7 +28,7 @@ describe('test TaskResultList/SQLStatementResultTable', () => {
     openSpy.mockImplementation(jest.fn());
     rule_template.getRuleList();
     jest.useFakeTimers();
-    const { baseElement } = superRender(
+    const { baseElement } = sqleSuperRender(
       <SqlStatementResultTable
         taskId="1"
         dataSource={[

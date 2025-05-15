@@ -7,7 +7,7 @@ import {
 } from '@actiontech/shared/lib/testUtil/mockApi';
 import execWorkflow from '../../../../../../../../testUtils/mockApi/execWorkflow';
 import configuration from '../../../../../../../../testUtils/mockApi/configuration';
-import { superRender } from '../../../../../../../../testUtils/customRender';
+import { sqleSuperRender } from '../../../../../../../../testUtils/superRender';
 import ConfirmationSettingForm from '../components/ConfirmationSettingForm';
 import { mockUseCurrentUser } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentUser';
 import { SupportLanguage } from '@actiontech/shared/lib/enum';
@@ -45,7 +45,7 @@ describe('test ConfirmationSettingForm', () => {
   ];
 
   const customRender = (enable = true) => {
-    return superRender(
+    return sqleSuperRender(
       <Form>
         <ConfirmationSettingForm
           enable={enable}

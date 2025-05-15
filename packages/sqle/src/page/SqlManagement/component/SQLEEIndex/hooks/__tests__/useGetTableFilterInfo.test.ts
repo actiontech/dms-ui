@@ -5,7 +5,7 @@ import { act, cleanup } from '@testing-library/react';
 import { mockUseCurrentProject } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentProject';
 import instance from '../../../../../../testUtils/mockApi/instance';
 import { CustomSelectProps } from '@actiontech/shared/lib/components/CustomSelect';
-import { renderHooksWithRedux } from '../../../../../../testUtils/customRender';
+import { sqleSuperRenderHook } from '../../../../../../testUtils/superRender';
 import { useSelector } from 'react-redux';
 import { mockUseAuditPlanTypes } from '../../../../../../testUtils/mockRequest';
 import { useSearchParams } from 'react-router-dom';
@@ -58,7 +58,7 @@ describe('SqlManagement/useGetTableFilterInfo', () => {
   it('send request and render select options', async () => {
     const ruleTipsRequest = sqlManage.getSqlManageRuleTips();
     const instanceRequest = instance.getInstanceTipList();
-    const { result } = renderHooksWithRedux(() => useGetTableFilterInfo());
+    const { result } = sqleSuperRenderHook(() => useGetTableFilterInfo());
     expect(ruleTipsRequest).toHaveBeenCalledWith({
       project_name: mockProjectInfo.projectName
     });

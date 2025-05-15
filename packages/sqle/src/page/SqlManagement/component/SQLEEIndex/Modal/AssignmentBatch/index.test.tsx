@@ -1,6 +1,6 @@
 import { act, cleanup, fireEvent, screen } from '@testing-library/react';
 import AssignmentBatch from '.';
-import { superRender } from '../../../../../../testUtils/customRender';
+import { sqleSuperRender } from '../../../../../../testUtils/superRender';
 import user from '../../../../../../testUtils/mockApi/user';
 import { mockUseCurrentProject } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentProject';
 import { ModalName } from '../../../../../../data/ModalName';
@@ -39,7 +39,7 @@ describe('page/SqlManagement/AssignmentBatch', () => {
   });
 
   const customRender = (data?: boolean) => {
-    return superRender(<AssignmentBatch />, undefined, {
+    return sqleSuperRender(<AssignmentBatch />, undefined, {
       initStore: {
         sqlManagement: {
           modalStatus: {

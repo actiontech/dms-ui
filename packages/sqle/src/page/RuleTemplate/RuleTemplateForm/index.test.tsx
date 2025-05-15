@@ -5,9 +5,9 @@ import { mockUseDbServiceDriver } from '@actiontech/shared/lib/testUtil/mockHook
 import { act, cleanup } from '@testing-library/react';
 import { useDispatch } from 'react-redux';
 import {
-  renderWithReduxAndTheme,
-  renderHooksWithTheme
-} from '@actiontech/shared/lib/testUtil/customRender';
+  superRender,
+  superRenderHook
+} from '@actiontech/shared/lib/testUtil/superRender';
 import RuleTemplateForm from '.';
 import { ruleListMockData } from '../../../testUtils/mockApi/rule_template/data';
 import configuration from '../../../testUtils/mockApi/configuration';
@@ -45,13 +45,13 @@ describe('sqle/RuleTemplate/RuleTemplateForm', () => {
   });
 
   it('should match snap shot', async () => {
-    const { result } = renderHooksWithTheme(() =>
+    const { result } = superRenderHook(() =>
       Form.useForm<RuleTemplateBaseInfoFields>()
     );
-    const { result: filterResult } = renderHooksWithTheme(() =>
+    const { result: filterResult } = superRenderHook(() =>
       Form.useForm<RuleFilterFieldsType>()
     );
-    const { baseElement } = renderWithReduxAndTheme(
+    const { baseElement } = superRender(
       <RuleTemplateForm
         mode="create"
         title="test"

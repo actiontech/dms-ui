@@ -5,7 +5,7 @@ import {
   cleanup,
   renderHook
 } from '@testing-library/react';
-import { superRender } from '@actiontech/shared/lib/testUtil/customRender';
+import { superRender } from '@actiontech/shared/lib/testUtil/superRender';
 import { Form } from 'antd';
 import SQLStatementFormWrapper from '../index';
 import { FormSubmitStatusContext } from '../..';

@@ -9,7 +9,7 @@ import {
 } from '@actiontech/shared/lib/testUtil/common';
 import { UpdateWorkflowScheduleReqV2NotifyTypeEnum } from '@actiontech/shared/lib/api/sqle/service/common.enum';
 import { createSpySuccessResponse } from '@actiontech/shared/lib/testUtil/mockApi';
-import { superRender } from '../../../../../../../../testUtils/customRender';
+import { sqleSuperRender } from '../../../../../../../../testUtils/superRender';
 import configuration from '../../../../../../../../testUtils/mockApi/configuration';
 import execWorkflow from '../../../../../../../../testUtils/mockApi/execWorkflow';
 import { mockUseCurrentUser } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentUser';
@@ -23,7 +23,7 @@ describe('sqle/ExecWorkflow/AuditDetail/ScheduleTimeModal', () => {
   const customRender = (
     params: Pick<ScheduleTimeModalProps, 'open' | 'maintenanceTime'>
   ) => {
-    return superRender(
+    return sqleSuperRender(
       <ScheduleTimeModal
         {...params}
         closeScheduleModal={closeScheduleModalFn}

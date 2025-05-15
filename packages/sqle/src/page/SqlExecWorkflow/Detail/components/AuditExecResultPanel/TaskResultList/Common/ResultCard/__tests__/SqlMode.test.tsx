@@ -7,7 +7,7 @@ import { getAuditTaskSQLsV2FilterExecStatusEnum } from '@actiontech/shared/lib/a
 import { Copy } from '@actiontech/shared';
 import SQLMode from '../SqlMode';
 import { SqlExecuteResultCardProps } from '../index.type';
-import { superRender } from '../../../../../../../../../testUtils/customRender';
+import { sqleSuperRender } from '../../../../../../../../../testUtils/superRender';
 import task from '../../../../../../../../../testUtils/mockApi/task';
 import rule_template from '../../../../../../../../../testUtils/mockApi/rule_template';
 import { mockUseCurrentUser } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentUser';
@@ -36,7 +36,9 @@ describe('sqle/ExecWorkflow/AuditDetail/SqlMode', () => {
       taskId,
       onUpdateDescription: onUpdateDescriptionFn
     };
-    return superRender(<SQLMode {...someParams} {...params} dbType="MySQL" />);
+    return sqleSuperRender(
+      <SQLMode {...someParams} {...params} dbType="MySQL" />
+    );
   };
 
   beforeEach(() => {

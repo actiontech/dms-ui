@@ -1,4 +1,4 @@
-import { renderHooksWithTheme } from '@actiontech/shared/lib/testUtil/customRender';
+import { superRenderHook } from '@actiontech/shared/lib/testUtil/superRender';
 import { useDispatch } from 'react-redux';
 import { cleanup, act } from '@testing-library/react';
 import useSqlManagementExceptionRedux from '../useSqlManagementExceptionRedux';
@@ -24,9 +24,7 @@ describe('sqle/SqlManagementException/hooks/useSqlManagementExceptionRedux', () 
   });
 
   it('render open create sql management exception modal', async () => {
-    const { result } = renderHooksWithTheme(() =>
-      useSqlManagementExceptionRedux()
-    );
+    const { result } = superRenderHook(() => useSqlManagementExceptionRedux());
 
     act(() => {
       result.current.openCreateSqlManagementExceptionModal();
@@ -43,9 +41,7 @@ describe('sqle/SqlManagementException/hooks/useSqlManagementExceptionRedux', () 
   });
 
   it('render update Select Sql Management Exception Record', async () => {
-    const { result } = renderHooksWithTheme(() =>
-      useSqlManagementExceptionRedux()
-    );
+    const { result } = superRenderHook(() => useSqlManagementExceptionRedux());
 
     act(() => {
       result.current.updateSelectSqlManagementExceptionRecord({

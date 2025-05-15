@@ -8,7 +8,7 @@ import { AuditTaskResData } from '../../../../../../testUtils/mockApi/execWorkfl
 import { getBySelector } from '@actiontech/shared/lib/testUtil/customQuery';
 import { createSpySuccessResponse } from '@actiontech/shared/lib/testUtil/mockApi';
 import execWorkflow from '../../../../../../testUtils/mockApi/execWorkflow';
-import { superRender } from '../../../../../../testUtils/customRender';
+import { sqleSuperRender } from '../../../../../../testUtils/superRender';
 import { mockProjectInfo } from '@actiontech/shared/lib/testUtil/mockHook/data';
 import { WORKFLOW_OVERVIEW_TAB_KEY } from '../../../hooks/useAuditExecResultPanelSetup';
 import {
@@ -55,7 +55,9 @@ describe('sqle/ExecWorkflow/Detail/ModifySqlStatement', () => {
       workflowId,
       auditExecPanelTabChangeEvent: auditExecPanelTabChangeEventFn
     };
-    return superRender(<ModifySqlStatement {...params} {...customParams} />);
+    return sqleSuperRender(
+      <ModifySqlStatement {...params} {...customParams} />
+    );
   };
 
   ignoreConsoleErrors([
