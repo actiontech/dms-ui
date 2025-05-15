@@ -14,9 +14,9 @@ import { instanceInfoMockData } from '../../../../../testUtils/mockApi/instance/
 import rule_template from '../../../../../testUtils/mockApi/rule_template';
 import { projectRuleTemplateList } from '../../../../../testUtils/mockApi/rule_template/data';
 import {
-  superRender,
-  renderHooksWithTheme
-} from '../../../../../testUtils/customRender';
+  sqleSuperRender,
+  sqleSuperRenderHook
+} from '../../../../../testUtils/superRender';
 import { createSpySuccessResponse } from '@actiontech/shared/lib/testUtil/mockApi';
 import { getBySelector } from '@actiontech/shared/lib/testUtil/customQuery';
 import { FormStyleWrapper } from '@actiontech/shared/lib/components/CustomForm/style';
@@ -67,8 +67,8 @@ describe('test sqle/SqlManagementConf/ConfForm', () => {
     selectedScanTypeParams: SelectScanTypeParamsType = [],
     defaultValue?: SqlManagementConfFormFields
   ) => {
-    const { result } = renderHooksWithTheme(() => Form.useForm());
-    const { baseElement } = superRender(
+    const { result } = sqleSuperRenderHook(() => Form.useForm());
+    const { baseElement } = sqleSuperRender(
       <ConfFormContextProvide
         value={{
           submitLoading: false,

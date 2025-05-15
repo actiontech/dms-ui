@@ -2,14 +2,14 @@
  * @test_version ce
  */
 import DownloadRecord from '..';
-import { superRender } from '../../../../../testUtils/customRender';
+import { sqleSuperRender } from '../../../../../testUtils/superRender';
 import { DownloadRecordProps } from '../index.type';
 import { fireEvent, act, cleanup, screen } from '@testing-library/react';
 import { mockUseCurrentProject } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentProject';
 
 describe('sqle/ExecWorkflow/Common/DownloadRecord ce', () => {
   const customRender = (params: DownloadRecordProps) => {
-    return superRender(<DownloadRecord {...params} />);
+    return sqleSuperRender(<DownloadRecord {...params} />);
   };
 
   beforeEach(() => {

@@ -1,6 +1,6 @@
 import CodeBlock from '../CodeBlock';
 import { cleanup, fireEvent, act } from '@testing-library/react';
-import { superRender } from '../../../../testUtils/customRender';
+import { sqleSuperRender } from '../../../../testUtils/superRender';
 import { getBySelector } from '@actiontech/shared/lib/testUtil/customQuery';
 
 describe('sqle/SqlOptimization/CodeBlock', () => {
@@ -14,7 +14,7 @@ describe('sqle/SqlOptimization/CodeBlock', () => {
   });
 
   const customRender = (code = '1123123') => {
-    return superRender(<CodeBlock code={code} />);
+    return sqleSuperRender(<CodeBlock code={code} />);
   };
 
   it('render snap shot', () => {

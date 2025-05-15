@@ -2,7 +2,7 @@ import SqlBackupSwitcher from '../components/SqlBackupSwitcher';
 import { fireEvent, renderHook, screen, act } from '@testing-library/react';
 import { Form } from 'antd';
 import { SqlBackupSwitcherProps } from '../components/index.type';
-import { superRender } from '../../../../../../testUtils/customRender';
+import { sqleSuperRender } from '../../../../../../testUtils/superRender';
 import { getBySelector } from '@actiontech/shared/lib/testUtil/customQuery';
 
 describe('test SqlBackupSwitcher', () => {
@@ -42,7 +42,7 @@ describe('test SqlBackupSwitcher', () => {
     search = ''
   ) => {
     const { result } = renderHook(() => Form.useForm());
-    return superRender(
+    return sqleSuperRender(
       <Form form={result.current[0]}>
         <SqlBackupSwitcher
           fieldPrefixPath="1"

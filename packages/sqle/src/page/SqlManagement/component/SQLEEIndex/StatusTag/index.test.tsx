@@ -1,6 +1,6 @@
 import { cleanup, screen } from '@testing-library/react';
 import StatusTag from '.';
-import { superRender } from '../../../../../testUtils/customRender';
+import { sqleSuperRender } from '../../../../../testUtils/superRender';
 import { SqlManageStatusEnum } from '@actiontech/shared/lib/api/sqle/service/common.enum';
 
 describe('page/SqlManagement/StatusTag', () => {
@@ -15,7 +15,7 @@ describe('page/SqlManagement/StatusTag', () => {
   });
 
   const customRender = (status: SqlManageStatusEnum) => {
-    return superRender(<StatusTag status={status} />);
+    return sqleSuperRender(<StatusTag status={status} />);
   };
 
   it('render ignored status tag', () => {

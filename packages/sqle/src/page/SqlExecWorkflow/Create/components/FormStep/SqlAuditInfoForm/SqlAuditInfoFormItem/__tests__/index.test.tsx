@@ -1,6 +1,6 @@
 import { mockUseCurrentUser } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentUser';
 import SqlAuditInfoFormItem from '..';
-import { superRender } from '../../../../../../../../testUtils/customRender';
+import { sqleSuperRender } from '../../../../../../../../testUtils/superRender';
 import execWorkflow from '../../../../../../../../testUtils/mockApi/execWorkflow';
 import { MockSharedStepDetail } from '../../../../../hooks/mockData';
 import { SharedStepDetails } from '../../../../../index.type';
@@ -22,7 +22,7 @@ jest.mock('react-redux', () => ({
 describe('test sqle/SqlAuditInfoForm', () => {
   const customRender = (params: SharedStepDetails) => {
     const { result } = renderHook(() => Form.useForm());
-    return superRender(
+    return sqleSuperRender(
       <Form form={result.current[0]}>
         <SqlAuditInfoFormItem
           auditAction={jest.fn()}

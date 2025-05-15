@@ -30,7 +30,9 @@ describe('KnowledgeSearchBar', () => {
   });
 
   it('render with allowSelectTag', async () => {
-    const { container } = sqleSuperRender(<KnowledgeSearchBar allowSelectTag />);
+    const { container } = sqleSuperRender(
+      <KnowledgeSearchBar allowSelectTag />
+    );
     expect(getKnowledgeBaseTagList).toHaveBeenCalled();
     await act(async () => jest.advanceTimersByTime(3000));
     expect(screen.getByText('已选择标签(0)')).toBeInTheDocument();
@@ -92,7 +94,9 @@ describe('KnowledgeSearchBar', () => {
 
   it('render uncontrolled mode', async () => {
     const onSearchSpy = jest.fn();
-    sqleSuperRender(<KnowledgeSearchBar allowSelectTag onSearch={onSearchSpy} />);
+    sqleSuperRender(
+      <KnowledgeSearchBar allowSelectTag onSearch={onSearchSpy} />
+    );
     await act(async () => jest.advanceTimersByTime(3000));
     const inputEle = getBySelector('textarea.ant-input');
     fireEvent.change(inputEle, {

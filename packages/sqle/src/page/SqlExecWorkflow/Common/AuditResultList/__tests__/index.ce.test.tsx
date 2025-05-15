@@ -4,7 +4,7 @@
 
 import AuditResultList from '..';
 import { AuditResultListProps } from '../index.type';
-import { superRender } from '../../../../../testUtils/customRender';
+import { sqleSuperRender } from '../../../../../testUtils/superRender';
 import { cleanup } from '@testing-library/react';
 import execWorkflow from '../../../../../testUtils/mockApi/execWorkflow';
 import { mockUseCurrentProject } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentProject';
@@ -28,7 +28,7 @@ describe('sqle/ExecWorkflow/Common/AuditResultList ce', () => {
   const updateTaskRecordCountSpy = jest.fn();
   let requestGetAuditTaskSQLs: jest.SpyInstance;
   const customRender = (params: AuditResultListProps) => {
-    return superRender(
+    return sqleSuperRender(
       <AuditResultList
         updateTaskRecordCount={updateTaskRecordCountSpy}
         {...params}

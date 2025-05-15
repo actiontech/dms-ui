@@ -1,5 +1,5 @@
 import { cleanup, act, fireEvent, screen } from '@testing-library/react';
-import { renderWithReduxAndTheme } from '@actiontech/shared/lib/testUtil/customRender';
+import { superRender } from '@actiontech/shared/lib/testUtil/superRender';
 import { useDispatch, useSelector } from 'react-redux';
 import { ModalName } from '../../../../data/ModalName';
 import { mockUseCurrentProject } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentProject';
@@ -62,7 +62,7 @@ describe('slqe/SqlManagementException/CreateSqlManagementException', () => {
   it('render create sql management exception', async () => {
     const eventEmitSpy = jest.spyOn(EventEmitter, 'emit');
     const mockCreated = jest.fn();
-    const { baseElement } = renderWithReduxAndTheme(
+    const { baseElement } = superRender(
       <CreateSqlManagementException onCreated={mockCreated} />
     );
     await act(async () => jest.advanceTimersByTime(3000));
@@ -110,9 +110,7 @@ describe('slqe/SqlManagementException/CreateSqlManagementException', () => {
 
   it('render create sql management exception when type is ip', async () => {
     const eventEmitSpy = jest.spyOn(EventEmitter, 'emit');
-    const { baseElement } = renderWithReduxAndTheme(
-      <CreateSqlManagementException />
-    );
+    const { baseElement } = superRender(<CreateSqlManagementException />);
     await act(async () => jest.advanceTimersByTime(3000));
     expect(getInstanceTipListSpy).toHaveBeenCalledTimes(1);
     fireEvent.click(screen.getByText('IP'));
@@ -145,9 +143,7 @@ describe('slqe/SqlManagementException/CreateSqlManagementException', () => {
 
   it('render create sql management exception when type is cidr', async () => {
     const eventEmitSpy = jest.spyOn(EventEmitter, 'emit');
-    const { baseElement } = renderWithReduxAndTheme(
-      <CreateSqlManagementException />
-    );
+    const { baseElement } = superRender(<CreateSqlManagementException />);
     await act(async () => jest.advanceTimersByTime(3000));
     expect(getInstanceTipListSpy).toHaveBeenCalledTimes(1);
     fireEvent.click(screen.getByText('网段'));
@@ -180,9 +176,7 @@ describe('slqe/SqlManagementException/CreateSqlManagementException', () => {
 
   it('render create sql management exception when type is host', async () => {
     const eventEmitSpy = jest.spyOn(EventEmitter, 'emit');
-    const { baseElement } = renderWithReduxAndTheme(
-      <CreateSqlManagementException />
-    );
+    const { baseElement } = superRender(<CreateSqlManagementException />);
     await act(async () => jest.advanceTimersByTime(3000));
     expect(getInstanceTipListSpy).toHaveBeenCalledTimes(1);
     fireEvent.click(screen.getByText('主机名'));
@@ -215,9 +209,7 @@ describe('slqe/SqlManagementException/CreateSqlManagementException', () => {
 
   it('render create sql management exception when type is instance', async () => {
     const eventEmitSpy = jest.spyOn(EventEmitter, 'emit');
-    const { baseElement } = renderWithReduxAndTheme(
-      <CreateSqlManagementException />
-    );
+    const { baseElement } = superRender(<CreateSqlManagementException />);
     await act(async () => jest.advanceTimersByTime(3000));
     expect(getInstanceTipListSpy).toHaveBeenCalledTimes(1);
     fireEvent.click(screen.getByText('数据源'));
@@ -252,9 +244,7 @@ describe('slqe/SqlManagementException/CreateSqlManagementException', () => {
   });
 
   it('should close modal when click close button', async () => {
-    const { baseElement } = renderWithReduxAndTheme(
-      <CreateSqlManagementException />
-    );
+    const { baseElement } = superRender(<CreateSqlManagementException />);
     fireEvent.click(queryBySelector('.closed-icon-custom', baseElement)!);
     await act(async () => jest.advanceTimersByTime(1000));
     expect(dispatchSpy).toHaveBeenCalledTimes(3);

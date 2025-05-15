@@ -1,10 +1,10 @@
 import { act, fireEvent, screen } from '@testing-library/react';
-import { renderHooksWithTheme } from '../../../../testUtils/customRender';
+import { sqleSuperRenderHook } from '../../../../testUtils/superRender';
 
 import useSQLExecPlan from '../useSQLExecPlan';
 import { sqlExecPlans } from '../../__testData__';
 import { mockSqlManageSqlAnalysisChartData } from '../../../../testUtils/mockApi/sqlManage/data';
-import { superRender } from '@actiontech/shared/lib/testUtil/customRender';
+import { superRender } from '@actiontech/shared/lib/testUtil/superRender';
 import MockDate from 'mockdate';
 import dayjs from 'dayjs';
 import { getBySelector } from '@actiontech/shared/lib/testUtil/customQuery';
@@ -21,7 +21,7 @@ describe('SqlAnalyze/useSQLExecPlan', () => {
   });
 
   it('render generateSQLExecPlanContent when have err_message', async () => {
-    const { result } = renderHooksWithTheme(() => useSQLExecPlan({}));
+    const { result } = sqleSuperRenderHook(() => useSQLExecPlan({}));
 
     await act(async () => {
       const elementEmpty = result.current.generateSQLExecPlanContent({});
@@ -37,7 +37,7 @@ describe('SqlAnalyze/useSQLExecPlan', () => {
   });
 
   it('render generateSQLExecPlanContent when have data', async () => {
-    const { result } = renderHooksWithTheme(() => useSQLExecPlan({}));
+    const { result } = sqleSuperRenderHook(() => useSQLExecPlan({}));
 
     await act(async () => {
       const elementSQL = result.current.generateSQLExecPlanContent({
@@ -76,7 +76,7 @@ describe('SqlAnalyze/useSQLExecPlan', () => {
   });
 
   it('render generateSQLExecPlanContent when showExecPlanCostChart is true', async () => {
-    const { result } = renderHooksWithTheme(() =>
+    const { result } = sqleSuperRenderHook(() =>
       useSQLExecPlan({
         showExecPlanCostChart: true,
         sqlExecPlanCostDataSource: mockSqlManageSqlAnalysisChartData.points,
@@ -98,7 +98,7 @@ describe('SqlAnalyze/useSQLExecPlan', () => {
   });
 
   it('render generateSQLExecPlanContent when selected point is not undefined', async () => {
-    const { result } = renderHooksWithTheme(() =>
+    const { result } = sqleSuperRenderHook(() =>
       useSQLExecPlan({
         showExecPlanCostChart: true,
         sqlExecPlanCostDataSource: mockSqlManageSqlAnalysisChartData.points,
@@ -131,7 +131,7 @@ describe('SqlAnalyze/useSQLExecPlan', () => {
 
   it('render generateSQLExecPlanContent when filter execute plan cost chart', async () => {
     const getSqlExecPlanCostDataSourceSpy = jest.fn();
-    const { result } = renderHooksWithTheme(() =>
+    const { result } = sqleSuperRenderHook(() =>
       useSQLExecPlan({
         showExecPlanCostChart: true,
         sqlExecPlanCostDataSource: mockSqlManageSqlAnalysisChartData.points,

@@ -1,7 +1,7 @@
 import { cleanup, act } from '@testing-library/react';
 import { WorkflowRecordResV2StatusEnum } from '@actiontech/shared/lib/api/sqle/service/common.enum';
 import { mockUseCurrentUser } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentUser';
-import { renderHooksWithRedux } from '../../../../../../testUtils/customRender';
+import { sqleSuperRenderHook } from '../../../../../../testUtils/superRender';
 import useWorkflowDetailAction from '../hooks/useWorkflowDetailAction';
 import { WorkflowDetailPageHeaderExtraProps } from '../index.type';
 import { mockUseCurrentProject } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentProject';
@@ -27,7 +27,7 @@ describe('sqle/SqlExecWorkflow/Detail/useWorkflowDetailAction', () => {
       >
     > = {}
   ) => {
-    return renderHooksWithRedux(() =>
+    return sqleSuperRenderHook(() =>
       useWorkflowDetailAction({
         projectName: 'project name',
         workflowInfo: {

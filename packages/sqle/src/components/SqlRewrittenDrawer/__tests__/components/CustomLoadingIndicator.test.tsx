@@ -3,6 +3,8 @@ import CustomLoadingIndicator from '../../components/CustomLoadingIndicator';
 
 describe('CustomLoadingIndicator', () => {
   it('should match snapshot', () => {
-    expect(sqleSuperRender(<CustomLoadingIndicator />).container).toMatchSnapshot();
+    expect(
+      sqleSuperRender(<CustomLoadingIndicator />).container
+    ).toMatchSnapshot();
   });
 });

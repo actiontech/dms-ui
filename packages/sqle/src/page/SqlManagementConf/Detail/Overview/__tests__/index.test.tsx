@@ -1,6 +1,6 @@
 import { mockUseCurrentProject } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentProject';
 import ConfDetailOverview from '..';
-import { superRender } from '../../../../../testUtils/customRender';
+import { sqleSuperRender } from '../../../../../testUtils/superRender';
 import { SQL_MANAGEMENT_CONF_OVERVIEW_TAB_KEY } from '../../index.data';
 import { mockUseCurrentUser } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentUser';
 import instanceAuditPlan from '../../../../../testUtils/mockApi/instanceAuditPlan';
@@ -28,7 +28,7 @@ describe('test Overview', () => {
   const instanceAuditPlanId = '1';
   const refreshAuditPlanDetailSpy = jest.fn();
   const customRender = () => {
-    return superRender(
+    return sqleSuperRender(
       <ConfDetailOverview
         activeTabKey={SQL_MANAGEMENT_CONF_OVERVIEW_TAB_KEY}
         handleChangeTab={handleChangeTabSpy}

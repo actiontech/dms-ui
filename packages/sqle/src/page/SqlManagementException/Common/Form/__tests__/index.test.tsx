@@ -1,7 +1,7 @@
 import {
-  renderWithReduxAndTheme,
-  renderHooksWithTheme
-} from '@actiontech/shared/lib/testUtil/customRender';
+  superRender,
+  superRenderHook
+} from '@actiontech/shared/lib/testUtil/superRender';
 import { Form } from 'antd';
 import SqlManagementExceptionForm from '../index';
 import { SqlManagementExceptionFormFieldType } from '../../../index.type';
@@ -31,12 +31,10 @@ describe('sqle/SqlManagementException/SqlManagementExceptionForm', () => {
   });
 
   const customRender = () => {
-    const { result } = renderHooksWithTheme(() =>
+    const { result } = superRenderHook(() =>
       Form.useForm<SqlManagementExceptionFormFieldType>()
     );
-    return renderWithReduxAndTheme(
-      <SqlManagementExceptionForm form={result.current[0]} />
-    );
+    return superRender(<SqlManagementExceptionForm form={result.current[0]} />);
   };
 
   it('should match snapshot', () => {

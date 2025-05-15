@@ -8,7 +8,7 @@ import instance from '../../../../testUtils/mockApi/instance';
 import sqlVersion from '../../../../testUtils/mockApi/sql_version';
 import execWorkflow from '../../../../testUtils/mockApi/execWorkflow';
 import task from '../../../../testUtils/mockApi/task';
-import { superRender } from '../../../..//testUtils/customRender';
+import { sqleSuperRender } from '../../../../testUtils/superRender';
 import { useSelector, useDispatch } from 'react-redux';
 import { mockReactFlow } from '../mockData/mockReactFlow';
 import { useNavigate } from 'react-router-dom';
@@ -79,7 +79,7 @@ describe('sqle/VersionManagement/Detail', () => {
   });
 
   it('render init snap', async () => {
-    const { baseElement } = superRender(<VersionDetail />);
+    const { baseElement } = sqleSuperRender(<VersionDetail />);
     await act(async () => jest.advanceTimersByTime(3000));
     expect(baseElement).toMatchSnapshot();
     expect(getInstanceTipListSpy).toHaveBeenCalledTimes(1);
@@ -91,14 +91,14 @@ describe('sqle/VersionManagement/Detail', () => {
     getSqlVersionDetailSpy.mockImplementation(() =>
       createSpySuccessResponse(mockVersionDetailWithoutWorkflowData)
     );
-    const { baseElement } = superRender(<VersionDetail />);
+    const { baseElement } = sqleSuperRender(<VersionDetail />);
     await act(async () => jest.advanceTimersByTime(3000));
     expect(baseElement).toMatchSnapshot();
     expect(getAllBySelector('.empty-card').length).toBe(2);
   });
 
   it('render create new workflow order', async () => {
-    superRender(<VersionDetail />);
+    sqleSuperRender(<VersionDetail />);
     await act(async () => jest.advanceTimersByTime(3000));
     fireEvent.click(screen.queryAllByText('创建新工单')[0]);
     await act(async () => jest.advanceTimersByTime(0));
@@ -121,7 +121,7 @@ describe('sqle/VersionManagement/Detail', () => {
   });
 
   it('render associate workflow order', async () => {
-    superRender(<VersionDetail />);
+    sqleSuperRender(<VersionDetail />);
     await act(async () => jest.advanceTimersByTime(3000));
     fireEvent.click(screen.queryAllByText('添加已有工单')[0]);
     await act(async () => jest.advanceTimersByTime(0));
@@ -146,7 +146,7 @@ describe('sqle/VersionManagement/Detail', () => {
     getSqlVersionDetailSpy.mockImplementation(() =>
       createSpySuccessResponse(mockVersionDetailWhenWorkflowStatusISExecFailed)
     );
-    const { baseElement } = superRender(<VersionDetail />);
+    const { baseElement } = sqleSuperRender(<VersionDetail />);
     await act(async () => jest.advanceTimersByTime(3000));
     expect(baseElement).toMatchSnapshot();
     expect(screen.getByText('上线失败')).toBeInTheDocument();
@@ -176,7 +176,7 @@ describe('sqle/VersionManagement/Detail', () => {
     getSqlVersionDetailSpy.mockImplementation(() =>
       createSpySuccessResponse(mockVersionDetailWhenWorkflowStatusISExecFailed)
     );
-    const { baseElement } = superRender(<VersionDetail />);
+    const { baseElement } = sqleSuperRender(<VersionDetail />);
     await act(async () => jest.advanceTimersByTime(3000));
     fireEvent.click(screen.getByText('重 试'));
     await act(async () => jest.advanceTimersByTime(0));
@@ -196,7 +196,7 @@ describe('sqle/VersionManagement/Detail', () => {
     getSqlVersionDetailSpy.mockImplementation(() =>
       createSpySuccessResponse(mockVersionDetailWhenWorkflowStatusISExecFailed)
     );
-    superRender(<VersionDetail />);
+    sqleSuperRender(<VersionDetail />);
     await act(async () => jest.advanceTimersByTime(3000));
     expect(screen.getByText('上线').closest('button')).toBeDisabled();
     expect(screen.getByText('发布').closest('button')).toBeDisabled();
@@ -207,7 +207,7 @@ describe('sqle/VersionManagement/Detail', () => {
     getSqlVersionDetailSpy.mockImplementation(() =>
       createSpySuccessResponse(mockVersionDetailAllowExecWorkflowOrderData)
     );
-    superRender(<VersionDetail />);
+    sqleSuperRender(<VersionDetail />);
     await act(async () => jest.advanceTimersByTime(3000));
     fireEvent.click(screen.getByText('上线'));
     await act(async () => jest.advanceTimersByTime(0));
@@ -235,7 +235,7 @@ describe('sqle/VersionManagement/Detail', () => {
     getSqlVersionDetailSpy.mockImplementation(() =>
       createSpySuccessResponse(mockVersionDetailAllowReleaseWorkflowOrderData)
     );
-    superRender(<VersionDetail />);
+    sqleSuperRender(<VersionDetail />);
     await act(async () => jest.advanceTimersByTime(3000));
     fireEvent.click(screen.getByText('发布'));
     await act(async () => jest.advanceTimersByTime(0));
@@ -278,13 +278,13 @@ describe('sqle/VersionManagement/Detail', () => {
     getSqlVersionDetailSpy.mockImplementation(() =>
       createSpySuccessResponse(mockVersionDetailAllowReleaseWorkflowOrderData)
     );
-    superRender(<VersionDetail />);
+    sqleSuperRender(<VersionDetail />);
     await act(async () => jest.advanceTimersByTime(3000));
     expect(screen.getByText('发布').closest('button')).toBeDisabled();
   });
 
   it('render refresh version detail', async () => {
-    superRender(<VersionDetail />);
+    sqleSuperRender(<VersionDetail />);
     await act(async () => jest.advanceTimersByTime(3000));
     expect(getSqlVersionDetailSpy).toHaveBeenCalledTimes(1);
     await act(async () => {
