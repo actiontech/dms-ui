@@ -216,16 +216,15 @@ describe('test Overview', () => {
     const moreButtonTrigger = getAllBySelector(
       '.actiontech-table-actions-more-button'
     );
-    const generateAuditPlanTokenSpy =
-      instanceAuditPlan.generateAuditPlanToken();
+    const refreshAuditPlanTokenSpy = instanceAuditPlan.refreshAuditPlanToken();
     fireEvent.click(moreButtonTrigger[0]);
     fireEvent.click(getAllByText('重置Token')[0]);
     await findByText(
       '重置后将生成新的Token，有效期365天。旧Token将立即失效，是否继续？'
     );
     fireEvent.click(getByText('确 定'));
-    expect(generateAuditPlanTokenSpy).toHaveBeenCalledTimes(1);
-    expect(generateAuditPlanTokenSpy).toHaveBeenNthCalledWith(1, {
+    expect(refreshAuditPlanTokenSpy).toHaveBeenCalledTimes(1);
+    expect(refreshAuditPlanTokenSpy).toHaveBeenNthCalledWith(1, {
       project_name: mockProjectInfo.projectName,
       instance_audit_plan_id: instanceAuditPlanId,
       expires_in_days: 365

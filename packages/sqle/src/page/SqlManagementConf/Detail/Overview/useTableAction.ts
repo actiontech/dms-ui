@@ -48,7 +48,7 @@ export const useTableAction = () => {
   const { runAsync: resetTokenAction, loading: resetTokenActionPending } =
     useRequest(
       (id: string) => {
-        return SqleApi.InstanceAuditPlanService.generateAuditPlanTokenV1({
+        return SqleApi.InstanceAuditPlanService.refreshAuditPlanTokenV1({
           project_name: projectName,
           instance_audit_plan_id: id,
           expires_in_days: 365

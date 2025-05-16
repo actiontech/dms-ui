@@ -31,7 +31,7 @@ class MockInstanceAuditPlanApi implements MockSpyApy {
     this.deleteAuditPlanByType();
     this.updateAuditPlanStatus();
     this.auditPlanTriggerSqlAudit();
-    this.generateAuditPlanToken();
+    this.refreshAuditPlanToken();
   }
 
   public getInstanceAuditPlans() {
@@ -169,8 +169,8 @@ class MockInstanceAuditPlanApi implements MockSpyApy {
     return spy;
   }
 
-  public generateAuditPlanToken() {
-    const spy = jest.spyOn(instance_audit_plan, 'generateAuditPlanTokenV1');
+  public refreshAuditPlanToken() {
+    const spy = jest.spyOn(instance_audit_plan, 'refreshAuditPlanTokenV1');
     spy.mockImplementation(() => createSpySuccessResponse({}));
     return spy;
   }

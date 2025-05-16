@@ -12,7 +12,7 @@ class Pipeline implements MockSpyApy {
     this.createPipeline();
     this.updatePipeline();
     this.getPipelineDetail();
-    this.generatePipelineNodeToken();
+    this.refreshPipelineNodeToken();
   }
 
   public getPipelines() {
@@ -54,8 +54,8 @@ class Pipeline implements MockSpyApy {
     return spy;
   }
 
-  public generatePipelineNodeToken() {
-    const spy = jest.spyOn(pipeline, 'generatePipelineNodeTokenV1');
+  public refreshPipelineNodeToken() {
+    const spy = jest.spyOn(pipeline, 'refreshPipelineNodeTokenV1');
     spy.mockImplementation(() => createSpySuccessResponse({}));
     return spy;
   }
