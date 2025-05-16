@@ -2,6 +2,10 @@
  * @test_version ce
  */
 
+import {
+  UtilsConsoleErrorStringsEnum,
+  ignoreConsoleErrors
+} from '@actiontech/shared/lib/testUtil/common';
 import { mockUseCurrentProject } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentProject';
 import { SqlStatementFormItemProps } from '../index.type';
 import { fireEvent, renderHook, screen } from '@testing-library/react';
@@ -10,6 +14,7 @@ import SqlStatementFormItem from '..';
 import { superRender } from '../../../../../../testUtils/customRender';
 
 describe('test SqlStatementFormItem', () => {
+  ignoreConsoleErrors([UtilsConsoleErrorStringsEnum.UNKNOWN_EVENT_HANDLER]);
   beforeEach(() => {
     mockUseCurrentProject();
   });
