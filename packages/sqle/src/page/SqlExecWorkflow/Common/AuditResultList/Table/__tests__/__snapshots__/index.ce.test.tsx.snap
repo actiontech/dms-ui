@@ -140,7 +140,7 @@ exports[`sqle/ExecWorkflow/Common/AuditResultList render snap when add note 1`] 
                         class="ant-table-cell audit-result-exec-sql-column"
                       >
                         <div
-                          class="actiontech-sql-snippet-renderer-wrapper css-dz7fl9"
+                          class="actiontech-sql-snippet-renderer-wrapper css-q962ee"
                         >
                           <div
                             class="ant-typography ant-typography-ellipsis ant-typography-single-line ant-typography-ellipsis-single-line margin-bottom-0"
@@ -616,7 +616,7 @@ exports[`sqle/ExecWorkflow/Common/AuditResultList render snap when add note 2`] 
                         class="ant-table-cell audit-result-exec-sql-column"
                       >
                         <div
-                          class="actiontech-sql-snippet-renderer-wrapper css-dz7fl9"
+                          class="actiontech-sql-snippet-renderer-wrapper css-q962ee"
                         >
                           <div
                             class="ant-typography ant-typography-ellipsis ant-typography-single-line ant-typography-ellipsis-single-line margin-bottom-0"

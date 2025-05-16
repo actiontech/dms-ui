@@ -180,7 +180,9 @@ const SqlMode: React.FC<SqlExecuteResultCardProps> = ({
               {
                 value: TaskResultContentTypeEnum.exec_sql,
                 label: t('execWorkflow.audit.table.execSql'),
-                children: <SQLRenderer sql={props.exec_sql} showLineNumbers />
+                children: (
+                  <SQLRenderer sql={props.exec_sql} showLineNumbers wordWrap />
+                )
               },
               {
                 value: TaskResultContentTypeEnum.rollback_sql,
@@ -226,7 +228,11 @@ const SqlMode: React.FC<SqlExecuteResultCardProps> = ({
                       </EmptyBox>
                     </Space>
                     {/* #endif */}
-                    <SQLRenderer sql={formattedRollbackSql} showLineNumbers />
+                    <SQLRenderer
+                      sql={formattedRollbackSql}
+                      showLineNumbers
+                      wordWrap
+                    />
                   </Space>
                 )
               },
