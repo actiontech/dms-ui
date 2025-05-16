@@ -63,3 +63,30 @@ export const BasicSelectStyleWrapper = styled(Select<any>)`
     }
   }
 `;
+
+export const SelectContainerStyleWrapper = styled('div')`
+  &.basic-select-container {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    width: 100%;
+
+    .basic-select-prefix {
+      position: absolute;
+      z-index: 1;
+      display: flex;
+      align-items: center;
+      height: 100%;
+      padding-left: 11px;
+      color: ${({ theme }) => theme.sharedTheme.uiToken.colorTextSecondary};
+    }
+
+    &.has-prefix {
+      .basic-select-wrapper {
+        .ant-select-selector {
+          padding-left: 36px;
+        }
+      }
+    }
+  }
+`;
