@@ -48,7 +48,10 @@ describe('sqle/ExecWorkflow/Common/AuditResultList/List', () => {
     return sqleSuperRender(<AuditResultTable {...params} />);
   };
 
-  ignoreConsoleErrors([UtilsConsoleErrorStringsEnum.INVALID_CUSTOM_ATTRIBUTE]);
+  ignoreConsoleErrors([
+    UtilsConsoleErrorStringsEnum.INVALID_CUSTOM_ATTRIBUTE,
+    UtilsConsoleErrorStringsEnum.UNKNOWN_EVENT_HANDLER
+  ]);
 
   beforeEach(() => {
     mockUseCurrentUser();

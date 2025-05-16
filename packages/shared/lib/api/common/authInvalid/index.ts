@@ -30,6 +30,14 @@ class AuthManager {
   redirectToLogin = () => {
     const currentPath = window.location.pathname;
     const currentSearch = window.location.search;
+
+    store.dispatch(updateToken({ token: '' }));
+    store.dispatch(updateUser({ username: '', role: '' }));
+    store.dispatch(updateUserUid({ uid: '' }));
+    store.dispatch(updateManagementPermissions({ managementPermissions: [] }));
+    store.dispatch(updateBindProjects({ bindProjects: [] }));
+    store.dispatch(updateUserInfoFetchStatus(false));
+
     if (currentPath === '/login') {
       return;
     }
@@ -38,13 +46,6 @@ class AuthManager {
     window.location.href = `/login?${DMS_REDIRECT_KEY_PARAMS_NAME}=${encodeURIComponent(
       targetUrl
     )}`;
-
-    store.dispatch(updateToken({ token: '' }));
-    store.dispatch(updateUser({ username: '', role: '' }));
-    store.dispatch(updateUserUid({ uid: '' }));
-    store.dispatch(updateManagementPermissions({ managementPermissions: [] }));
-    store.dispatch(updateBindProjects({ bindProjects: [] }));
-    store.dispatch(updateUserInfoFetchStatus(false));
   };
 
   refreshAuthToken = () => {
@@ -89,6 +90,7 @@ class AuthManager {
             request.reject('Token refresh failed')
           );
           this.failedRequestsQueue.length = 0;
+          this.redirectToLogin();
 
           const errorMessage = getErrorMessage(res.data.message ?? '');
           eventEmitter.emit<[NotificationInstanceKeyType, ArgsProps]>(
@@ -119,9 +121,7 @@ class AuthManager {
           }
         );
 
-        if (error.response?.status === 401) {
-          this.redirectToLogin();
-        }
+        this.redirectToLogin();
         return Promise.reject(error);
       })
       .finally(() => {

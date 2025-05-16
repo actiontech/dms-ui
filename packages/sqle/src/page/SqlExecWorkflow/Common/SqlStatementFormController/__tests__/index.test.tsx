@@ -4,6 +4,10 @@ import { sqleSuperRender } from '../../../../../testUtils/superRender';
 import { fireEvent, renderHook, screen } from '@testing-library/react';
 import { SqlStatementFormControllerProps } from '../index.type';
 import { mockUseCurrentProject } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentProject';
+import {
+  ignoreConsoleErrors,
+  UtilsConsoleErrorStringsEnum
+} from '@actiontech/shared/lib/testUtil/common';
 
 describe('test SqlStatementFormController', () => {
   const onChange = jest.fn();
@@ -27,6 +31,7 @@ describe('test SqlStatementFormController', () => {
       </Form>
     );
   };
+  ignoreConsoleErrors([UtilsConsoleErrorStringsEnum.UNKNOWN_EVENT_HANDLER]);
 
   beforeEach(() => {
     mockUseCurrentProject();

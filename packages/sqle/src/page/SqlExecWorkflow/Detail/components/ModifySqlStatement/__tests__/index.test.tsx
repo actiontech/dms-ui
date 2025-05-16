@@ -60,7 +60,10 @@ describe('sqle/ExecWorkflow/Detail/ModifySqlStatement', () => {
     );
   };
 
-  ignoreConsoleErrors([UtilsConsoleErrorStringsEnum.UNIQUE_KEY_REQUIRED]);
+  ignoreConsoleErrors([
+    UtilsConsoleErrorStringsEnum.UNIQUE_KEY_REQUIRED,
+    UtilsConsoleErrorStringsEnum.UNKNOWN_EVENT_HANDLER
+  ]);
 
   beforeEach(() => {
     jest.useFakeTimers();

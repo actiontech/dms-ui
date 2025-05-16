@@ -29,7 +29,9 @@ describe('page/WorkflowTemplate/StepCard', () => {
   });
 
   const customRender = (data: IStepCardProps) => {
-    return sqleSuperRender(<StepCard {...data} />);
+    return sqleSuperRender(
+      <StepCard {...data} key={`${data.key}-step-card`} />
+    );
   };
   it('render step card with no operator and not active', async () => {
     const { baseElement } = customRender({ ...workflowTemplateCardProps });

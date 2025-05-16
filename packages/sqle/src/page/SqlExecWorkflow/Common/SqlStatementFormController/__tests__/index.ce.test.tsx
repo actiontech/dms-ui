@@ -8,8 +8,13 @@ import { sqleSuperRender } from '../../../../../testUtils/superRender';
 import { renderHook } from '@testing-library/react';
 import { mockUseCurrentUser } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentUser';
 import { mockUseCurrentProject } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentProject';
+import {
+  UtilsConsoleErrorStringsEnum,
+  ignoreConsoleErrors
+} from '@actiontech/shared/lib/testUtil/common';
 
 describe('test SqlStatementFormController ce', () => {
+  ignoreConsoleErrors([UtilsConsoleErrorStringsEnum.UNKNOWN_EVENT_HANDLER]);
   it('should match snapshot', () => {
     mockUseCurrentProject();
     const { result } = renderHook(() => Form.useForm());

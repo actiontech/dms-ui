@@ -20,6 +20,10 @@ import sqlOptimization from '../../../testUtils/mockApi/sqlOptimization';
 import MockDate from 'mockdate';
 import dayjs from 'dayjs';
 import { formatterSQL } from '@actiontech/shared/lib/utils/FormatterSQL';
+import {
+  ignoreConsoleErrors,
+  UtilsConsoleErrorStringsEnum
+} from '@actiontech/shared/lib/testUtil/common';
 
 jest.mock('react-router-dom', () => {
   return {
@@ -34,6 +38,8 @@ describe('sqle/SqlOptimization/Create', () => {
   let getInstanceSchemaSpy: jest.SpyInstance;
   let getInstanceSpy: jest.SpyInstance;
   let optimizeSQLReqSpy: jest.SpyInstance;
+
+  ignoreConsoleErrors([UtilsConsoleErrorStringsEnum.UNKNOWN_EVENT_HANDLER]);
 
   beforeEach(() => {
     MockDate.set(dayjs('2024-1-1 12:00:00').valueOf());

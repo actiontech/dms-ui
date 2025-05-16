@@ -1,9 +1,10 @@
-import { SelectProps } from 'antd';
 import { fireEvent, act, cleanup } from '@testing-library/react';
 import { superRender } from '../../testUtil/superRender';
 import { filterOptionByLabel } from './utils';
 import { getAllBySelector, getBySelector } from '../../testUtil/customQuery';
 import BasicSelect from './BasicSelect';
+import { SearchOutlined } from '@actiontech/icons';
+import { BasicSelectProps } from './BasicSelect.types';
 
 describe('lib/BasicSelect', () => {
   beforeEach(() => {
@@ -16,7 +17,7 @@ describe('lib/BasicSelect', () => {
     cleanup();
   });
 
-  const customRender = (params: SelectProps) => {
+  const customRender = (params: BasicSelectProps) => {
     return superRender(<BasicSelect {...params} />);
   };
 
@@ -83,5 +84,28 @@ describe('lib/BasicSelect', () => {
       getAllBySelector('.ant-select-item-option', baseElement).length
     ).toBe(1);
     expect(baseElement).toMatchSnapshot();
+  });
+
+  it('render with prefix icon', () => {
+    const { container } = customRender({
+      prefix: <SearchOutlined />,
+      options: [
+        {
+          label: '选项一',
+          value: 'option1'
+        },
+        {
+          label: '选项二',
+          value: 'option2'
+        }
+      ],
+      placeholder: '带图标的选择框'
+    });
+
+    expect(container.querySelector('.basic-select-container')).not.toBeNull();
+    expect(container.querySelector('.basic-select-prefix')).not.toBeNull();
+    expect(container.querySelector('.basic-select-prefix svg')).not.toBeNull();
+
+    expect(container).toMatchSnapshot();
   });
 });

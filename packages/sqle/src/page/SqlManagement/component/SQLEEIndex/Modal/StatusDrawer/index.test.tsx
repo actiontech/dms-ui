@@ -1,22 +1,17 @@
 import { act, cleanup, fireEvent, screen } from '@testing-library/react';
 import StatusDrawer from '.';
 import { sqleSuperRender } from '../../../../../../testUtils/superRender';
-import { mockUseCurrentProject } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentProject';
 import { ModalName } from '../../../../../../data/ModalName';
 import { sqlManageListData } from '../../../../../../testUtils/mockApi/sqlManage/data';
-import sqlManage from '../../../../../../testUtils/mockApi/sqlManage';
-import { mockProjectInfo } from '@actiontech/shared/lib/testUtil/mockHook/data';
-import {
-  getAllBySelector,
-  getBySelector
-} from '@actiontech/shared/lib/testUtil/customQuery';
-import EventEmitter from '../../../../../../utils/EventEmitter';
+import { getBySelector } from '@actiontech/shared/lib/testUtil/customQuery';
 import { useDispatch } from 'react-redux';
-import EmitterKey from '../../../../../../data/EmitterKey';
-import { BatchUpdateSqlManageReqStatusEnum } from '@actiontech/shared/lib/api/sqle/service/common.enum';
 import rule_template from '../../../../../../testUtils/mockApi/rule_template';
 import { ISqlManage } from '@actiontech/shared/lib/api/sqle/service/common';
 import { mockUseCurrentUser } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentUser';
+import {
+  ignoreConsoleErrors,
+  UtilsConsoleErrorStringsEnum
+} from '@actiontech/shared/lib/testUtil/common';
 
 jest.mock('react-redux', () => ({
   ...jest.requireActual('react-redux'),
@@ -25,6 +20,8 @@ jest.mock('react-redux', () => ({
 
 describe('page/SqlManagement/StatusDrawer', () => {
   const dispatchSpy = jest.fn();
+
+  ignoreConsoleErrors([UtilsConsoleErrorStringsEnum.UNKNOWN_EVENT_HANDLER]);
 
   beforeEach(() => {
     mockUseCurrentUser();

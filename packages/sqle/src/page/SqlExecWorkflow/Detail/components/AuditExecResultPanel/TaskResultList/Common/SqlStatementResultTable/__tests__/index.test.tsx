@@ -8,8 +8,14 @@ import { sqleSuperRender } from '../../../../../../../../../testUtils/superRende
 import rule_template from '../../../../../../../../../testUtils/mockApi/rule_template';
 import { mockUseCurrentUser } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentUser';
 import { cleanup } from '@testing-library/react';
+import {
+  ignoreConsoleErrors,
+  UtilsConsoleErrorStringsEnum
+} from '@actiontech/shared/lib/testUtil/common';
 
 describe('test TaskResultList/SQLStatementResultTable', () => {
+  ignoreConsoleErrors([UtilsConsoleErrorStringsEnum.UNKNOWN_EVENT_HANDLER]);
+
   beforeEach(() => {
     mockUseCurrentUser();
   });

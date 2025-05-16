@@ -35,7 +35,7 @@ describe('sqle/PipelineConfiguration/Modal/PipelineDetailModal', () => {
 
   let getPipelineDetailSpy: jest.SpyInstance;
   let deletePipelineSpy: jest.SpyInstance;
-
+  let refreshPipelineNodeTokenSpy: jest.SpyInstance;
   ignoreConsoleErrors([UtilsConsoleErrorStringsEnum.TRIGGER_ELEMENT_SAME_ROOT]);
 
   beforeEach(() => {
@@ -44,6 +44,7 @@ describe('sqle/PipelineConfiguration/Modal/PipelineDetailModal', () => {
     mockUseCurrentProject();
     getPipelineDetailSpy = pipeline.getPipelineDetail();
     deletePipelineSpy = pipeline.deletePipeline();
+    refreshPipelineNodeTokenSpy = pipeline.refreshPipelineNodeToken();
     (useNavigate as jest.Mock).mockImplementation(() => navigateSpy);
   });
 
@@ -147,5 +148,28 @@ describe('sqle/PipelineConfiguration/Modal/PipelineDetailModal', () => {
       payload: { show: false },
       type: 'pipeline/updatePipelineNodeTourStatus'
     });
+  });
+
+  it('reset token', async () => {
+    customRender(true);
+    await act(async () => jest.advanceTimersByTime(3000));
+    fireEvent.click(screen.getByText('重置Token'));
+    await act(async () => jest.advanceTimersByTime(0));
+    expect(
+      screen.getByText(
+        '重置后将生成新的Token，有效期365天。旧Token将立即失效，是否继续？'
+      )
+    ).toBeInTheDocument();
+    fireEvent.click(screen.getByText('确 认'));
+    await act(async () => jest.advanceTimersByTime(0));
+    expect(refreshPipelineNodeTokenSpy).toHaveBeenCalledTimes(1);
+    expect(refreshPipelineNodeTokenSpy).toHaveBeenCalledWith({
+      node_id: '1',
+      pipeline_id: '1',
+      project_name: mockProjectInfo.projectName
+    });
+    await act(async () => jest.advanceTimersByTime(3000));
+    expect(screen.getByText('重置Token成功！')).toBeInTheDocument();
+    expect(getPipelineDetailSpy).toHaveBeenCalledTimes(2);
   });
 });

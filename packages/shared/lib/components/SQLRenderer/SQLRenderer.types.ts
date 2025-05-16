@@ -79,11 +79,13 @@ export type SQLRendererProps = {
    * default value: false
    */
   loading?: boolean;
+
+  wordWrap?: boolean;
 };
 
 export type SQLSnippetRendererProps = Omit<
   SQLRendererProps,
-  'showLineNumbers' | 'preserveOriginalFormat'
+  'showLineNumbers' | 'preserveOriginalFormat' | 'wordWrap'
 > & {
   /**
    * 展示的 SQL 切片的行数
