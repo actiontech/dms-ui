@@ -1287,7 +1287,7 @@ exports[`test ce EnterpriseFeatureDisplay should match snapshot 1`] = `
                   class="title"
                 >
                   Action 
-                  SQLE
+                  DMS
                 </div>
                 <p
                   class="cont-tip"
@@ -1386,7 +1386,7 @@ exports[`test ce EnterpriseFeatureDisplay should match snapshot 1`] = `
                   class="title"
                 >
                   Action 
-                  SQLE
+                  DMS
                 </div>
                 <p
                   class="cont-tip"

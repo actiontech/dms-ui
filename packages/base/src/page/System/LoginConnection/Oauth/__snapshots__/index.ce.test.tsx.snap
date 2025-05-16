@@ -1290,7 +1290,7 @@ exports[`base/System/LoginConnection/Oauth-ce render snap 1`] = `
                         class="title"
                       >
                         Action 
-                        SQLE
+                        DMS
                       </div>
                       <p
                         class="cont-tip"
@@ -1389,7 +1389,7 @@ exports[`base/System/LoginConnection/Oauth-ce render snap 1`] = `
                         class="title"
                       >
                         Action 
-                        SQLE
+                        DMS
                       </div>
                       <p
                         class="cont-tip"

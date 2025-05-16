@@ -1,0 +1,319 @@
+import { superRender } from '@actiontech/shared/lib/testUtil/customRender';
+import { act, cleanup, fireEvent, screen } from '@testing-library/react';
+import {
+  getBySelector,
+  selectOptionByIndex
+} from '@actiontech/shared/lib/testUtil/customQuery';
+import dbAccountService from '../../../../testUtil/mockApi/dbAccountService';
+import { mockProjectInfo } from '@actiontech/shared/lib/testUtil/mockHook/data';
+import { mockUseCurrentProject } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentProject';
+import { mockUseDbServiceDriver } from '@actiontech/shared/lib/testUtil/mockHook/mockUseDbServiceDriver';
+import auth from '../../../../testUtil/mockApi/auth';
+import AccountDiscoveryModal from '.';
+import { DatabaseAccountModalStatus } from '../../../../store/databaseAccount';
+import { EventEmitterKey, ModalName } from '../../../../data/enum';
+import { discoveryDBAccountMockData } from '../../../../testUtil/mockApi/dbAccountService/data';
+import EventEmitter from '../../../../utils/EventEmitter';
+import {
+  createSpyFailResponse,
+  createSpySuccessResponse
+} from '@actiontech/shared/lib/testUtil/mockApi';
+import user from '../../../../testUtil/mockApi/user';
+import { mockUsePermission } from '@actiontech/shared/lib/testUtil/mockHook/mockUsePermission';
+
+describe('provision/DatabaseAccount/AccountDiscoveryModal', () => {
+  let authListServicesSpy: jest.SpyInstance;
+  let authListEnvironmentTagsSpy: jest.SpyInstance;
+  let authDiscoveryDBAccountsSpy: jest.SpyInstance;
+  let authSyncDBAccountSpy: jest.SpyInstance;
+
+  beforeEach(() => {
+    authListServicesSpy = auth.listServices();
+    authListEnvironmentTagsSpy = auth.authListEnvironmentTags();
+    authDiscoveryDBAccountsSpy = dbAccountService.authDiscoveryDBAccount();
+    authSyncDBAccountSpy = dbAccountService.authSyncDBAccount();
+    auth.mockAllApi();
+    user.mockAllApi();
+    mockUseDbServiceDriver();
+    mockUseCurrentProject();
+    mockUsePermission(
+      { checkDbServicePermission: jest.fn().mockReturnValue(true) },
+      { useSpyOnMockHooks: true }
+    );
+    jest.useFakeTimers();
+  });
+
+  afterEach(() => {
+    jest.useRealTimers();
+    cleanup();
+  });
+
+  const customRender = (defaultVisible = true) => {
+    return superRender(<AccountDiscoveryModal />, undefined, {
+      recoilRootProps: {
+        initializeState({ set }) {
+          set(DatabaseAccountModalStatus, {
+            [ModalName.DatabaseAccountDiscoveryModal]: defaultVisible
+          });
+        }
+      }
+    });
+  };
+
+  it('render init snap', async () => {
+    const { baseElement } = customRender();
+    await act(async () => jest.advanceTimersByTime(3000));
+    expect(authListEnvironmentTagsSpy).toHaveBeenCalledTimes(1);
+    expect(authListServicesSpy).not.toHaveBeenCalled();
+    expect(authDiscoveryDBAccountsSpy).not.toHaveBeenCalled();
+    expect(baseElement).toMatchSnapshot();
+    expect(screen.getByText('账号发现')).toBeInTheDocument();
+  });
+
+  it('render sync account', async () => {
+    const eventEmitterSpy = jest.spyOn(EventEmitter, 'emit');
+    const { baseElement } = customRender();
+    await act(async () => jest.advanceTimersByTime(3000));
+    selectOptionByIndex('环境属性', 'environment-1', 0);
+    await act(async () => jest.advanceTimersByTime(0));
+    expect(authListEnvironmentTagsSpy).toHaveBeenCalledTimes(1);
+    expect(authListServicesSpy).toHaveBeenNthCalledWith(1, {
+      filter_by_environment_tag_uid: '1',
+      filter_by_namespace: mockProjectInfo.projectID,
+      page_index: 1,
+      page_size: 9999
+    });
+    await act(async () => jest.advanceTimersByTime(2900));
+    fireEvent.mouseDown(getBySelector('#service'));
+    await act(async () => jest.advanceTimersByTime(100));
+    expect(
+      screen.getByText('Julian Lueilwitz (aromatic-hammock.org)')
+    ).toBeInTheDocument();
+    fireEvent.click(
+      screen.getByText('Julian Lueilwitz (aromatic-hammock.org)')
+    );
+    await act(async () => jest.advanceTimersByTime(100));
+    expect(authDiscoveryDBAccountsSpy).toHaveBeenCalledTimes(1);
+    expect(authDiscoveryDBAccountsSpy).toHaveBeenNthCalledWith(1, {
+      db_service_uid: '42343',
+      project_uid: mockProjectInfo.projectID
+    });
+    await act(async () => jest.advanceTimersByTime(3000));
+    expect(screen.getByText('mysql.session')).toBeInTheDocument();
+    fireEvent.click(getBySelector('.ant-table-thead .ant-checkbox-input'));
+    await act(async () => jest.advanceTimersByTime(100));
+    fireEvent.click(screen.getByText('同步账户'));
+    await act(async () => jest.advanceTimersByTime(100));
+    expect(authSyncDBAccountSpy).toHaveBeenCalledTimes(1);
+    expect(authSyncDBAccountSpy).toHaveBeenNthCalledWith(1, {
+      project_uid: mockProjectInfo.projectID,
+      db_service_uid: '42343',
+      accounts: discoveryDBAccountMockData
+    });
+    await act(async () => jest.advanceTimersByTime(3000));
+    expect(screen.getByText('同步账户成功')).toBeInTheDocument();
+    expect(baseElement).toMatchSnapshot();
+    expect(eventEmitterSpy).toHaveBeenCalledTimes(1);
+    expect(eventEmitterSpy).toHaveBeenNthCalledWith(
+      1,
+      EventEmitterKey.Refresh_Account_Management_List_Table,
+      'filter_by_db_service',
+      '42343'
+    );
+  });
+
+  it('render filter account table field', async () => {
+    customRender();
+    await act(async () => jest.advanceTimersByTime(3000));
+    const filterInput = getBySelector(
+      'input[placeholder="输入账号名进行搜索"]'
+    );
+    expect(filterInput).not.toBeVisible();
+    expect(getBySelector('.ant-btn-icon-only')).not.toBeVisible();
+    selectOptionByIndex('环境属性', 'environment-1', 0);
+    await act(async () => jest.advanceTimersByTime(100));
+    expect(authListServicesSpy).toHaveBeenCalledTimes(1);
+    expect(authListServicesSpy).toHaveBeenNthCalledWith(1, {
+      filter_by_environment_tag_uid: '1',
+      filter_by_namespace: mockProjectInfo.projectID,
+      page_index: 1,
+      page_size: 9999
+    });
+    await act(async () => jest.advanceTimersByTime(2900));
+    fireEvent.mouseDown(getBySelector('#service'));
+    await act(async () => jest.advanceTimersByTime(100));
+    expect(
+      screen.getByText('Julian Lueilwitz (aromatic-hammock.org)')
+    ).toBeInTheDocument();
+    fireEvent.click(
+      screen.getByText('Julian Lueilwitz (aromatic-hammock.org)')
+    );
+    await act(async () => jest.advanceTimersByTime(100));
+    expect(authDiscoveryDBAccountsSpy).toHaveBeenCalledTimes(1);
+    expect(authDiscoveryDBAccountsSpy).toHaveBeenNthCalledWith(1, {
+      db_service_uid: '42343',
+      project_uid: mockProjectInfo.projectID
+    });
+    await act(async () => jest.advanceTimersByTime(3000));
+    expect(getBySelector('.ant-btn-icon-only')).toBeVisible();
+    expect(filterInput).toBeVisible();
+    expect(screen.getByText('mysql.session')).toBeInTheDocument();
+    expect(screen.getByText('root')).toBeInTheDocument();
+    fireEvent.input(getBySelector('input[placeholder="输入账号名进行搜索"]'), {
+      target: { value: 'root' }
+    });
+    await act(async () => jest.advanceTimersByTime(100));
+    expect(screen.queryByText('mysql.session')).not.toBeInTheDocument();
+    expect(screen.getByText('root')).toBeInTheDocument();
+  });
+
+  it('render sync account error', async () => {
+    authSyncDBAccountSpy.mockClear();
+    authSyncDBAccountSpy.mockImplementation(() => createSpyFailResponse({}));
+    const eventEmitterSpy = jest.spyOn(EventEmitter, 'emit');
+    customRender();
+    await act(async () => jest.advanceTimersByTime(3000));
+    selectOptionByIndex('环境属性', 'environment-1', 0);
+    await act(async () => jest.advanceTimersByTime(100));
+    expect(authListServicesSpy).toHaveBeenCalledTimes(1);
+    await act(async () => jest.advanceTimersByTime(2900));
+    fireEvent.mouseDown(getBySelector('#service'));
+    await act(async () => jest.advanceTimersByTime(100));
+    expect(
+      screen.getByText('Julian Lueilwitz (aromatic-hammock.org)')
+    ).toBeInTheDocument();
+    fireEvent.click(
+      screen.getByText('Julian Lueilwitz (aromatic-hammock.org)')
+    );
+    await act(async () => jest.advanceTimersByTime(100));
+    expect(authDiscoveryDBAccountsSpy).toHaveBeenCalledTimes(1);
+
+    await act(async () => jest.advanceTimersByTime(3000));
+    expect(screen.getByText('mysql.session')).toBeInTheDocument();
+    fireEvent.click(getBySelector('.ant-table-thead .ant-checkbox-input'));
+    await act(async () => jest.advanceTimersByTime(100));
+    fireEvent.click(screen.getByText('同步账户'));
+    await act(async () => jest.advanceTimersByTime(100));
+    expect(authSyncDBAccountSpy).toHaveBeenCalledTimes(1);
+    expect(authSyncDBAccountSpy).toHaveBeenNthCalledWith(1, {
+      project_uid: mockProjectInfo.projectID,
+      db_service_uid: '42343',
+      accounts: discoveryDBAccountMockData
+    });
+    expect(screen.getByText('同步账户').closest('button')).toHaveClass(
+      'ant-btn-loading'
+    );
+    await act(async () => jest.advanceTimersByTime(3000));
+    expect(eventEmitterSpy).not.toHaveBeenCalled();
+    expect(screen.getByText('同步账户').closest('button')).not.toHaveClass(
+      'ant-btn-loading'
+    );
+    fireEvent.click(screen.getByText('关 闭'));
+    await act(async () => jest.advanceTimersByTime(100));
+  });
+
+  describe('render AccountTableField username field', () => {
+    it('should return "-" if username is empty', async () => {
+      authDiscoveryDBAccountsSpy.mockImplementation(() =>
+        createSpySuccessResponse({
+          data: {
+            accounts: [
+              {
+                user: undefined
+              }
+            ]
+          }
+        })
+      );
+      const { baseElement } = customRender();
+      await act(async () => jest.advanceTimersByTime(3000));
+
+      selectOptionByIndex('环境属性', 'environment-1', 0);
+      await act(async () => jest.advanceTimersByTime(3000));
+      fireEvent.mouseDown(getBySelector('#service'));
+      await act(async () => jest.advanceTimersByTime(0));
+      fireEvent.click(
+        screen.getByText('Julian Lueilwitz (aromatic-hammock.org)')
+      );
+      expect(authDiscoveryDBAccountsSpy).toHaveBeenCalledTimes(1);
+      await act(async () => jest.advanceTimersByTime(3000));
+      expect(baseElement).toMatchSnapshot();
+    });
+
+    it('should return username if hostname is not found', async () => {
+      customRender();
+      await act(async () => jest.advanceTimersByTime(3000));
+
+      selectOptionByIndex('环境属性', 'environment-1', 0);
+      await act(async () => jest.advanceTimersByTime(3000));
+      fireEvent.mouseDown(getBySelector('#service'));
+      await act(async () => jest.advanceTimersByTime(0));
+      fireEvent.click(
+        screen.getByText('Julian Lueilwitz (aromatic-hammock.org)')
+      );
+      expect(authDiscoveryDBAccountsSpy).toHaveBeenCalledTimes(1);
+      await act(async () => jest.advanceTimersByTime(3000));
+      expect(screen.getByText('root')).toBeInTheDocument();
+      expect(screen.getByText('mysql.session')).toBeInTheDocument();
+    });
+
+    it('should return username@hostname if hostname is found', async () => {
+      authDiscoveryDBAccountsSpy.mockImplementation(() =>
+        createSpySuccessResponse({
+          data: {
+            accounts: [
+              {
+                user: 'test_user1',
+                additional_param: [
+                  {
+                    key: 'hostname',
+                    value: 'localhost',
+                    desc: '主机名',
+                    type: 'string'
+                  }
+                ],
+                permission_info: {
+                  grants: [
+                    'GRANT SELECT,INSERT,UPDATE,DELETE ON `test_db`.* TO `test_user1`@`localhost`'
+                  ]
+                },
+                db_roles: []
+              },
+              {
+                user: 'test_user2',
+                additional_param: [
+                  {
+                    key: 'hostname',
+                    value: '%',
+                    desc: '主机名',
+                    type: 'string'
+                  }
+                ],
+                permission_info: {
+                  grants: [
+                    'GRANT SELECT ON `test_db`.* TO `test_user2`@`localhost`'
+                  ]
+                },
+                db_roles: []
+              }
+            ]
+          }
+        })
+      );
+      customRender();
+      await act(async () => jest.advanceTimersByTime(3000));
+
+      selectOptionByIndex('环境属性', 'environment-1', 0);
+      await act(async () => jest.advanceTimersByTime(3000));
+      fireEvent.mouseDown(getBySelector('#service'));
+      await act(async () => jest.advanceTimersByTime(0));
+      fireEvent.click(
+        screen.getByText('Julian Lueilwitz (aromatic-hammock.org)')
+      );
+      expect(authDiscoveryDBAccountsSpy).toHaveBeenCalledTimes(1);
+      await act(async () => jest.advanceTimersByTime(3000));
+      expect(screen.getByText('test_user1@localhost')).toBeInTheDocument();
+      expect(screen.getByText('test_user2@%')).toBeInTheDocument();
+    });
+  });
+});
