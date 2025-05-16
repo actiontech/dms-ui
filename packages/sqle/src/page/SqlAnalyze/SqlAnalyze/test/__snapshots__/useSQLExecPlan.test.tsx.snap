@@ -25,7 +25,7 @@ exports[`SqlAnalyze/useSQLExecPlan render generateSQLExecPlanContent when filter
           class="basic-cont-wrapper sql-cont"
         >
           <div
-            class="actiontech-sql-snippet-renderer-wrapper css-dz7fl9"
+            class="actiontech-sql-snippet-renderer-wrapper css-q962ee"
           >
             <div
               class="ant-typography ant-typography-ellipsis ant-typography-ellipsis-multiple-line margin-bottom-0"
@@ -1143,7 +1143,7 @@ exports[`SqlAnalyze/useSQLExecPlan render generateSQLExecPlanContent when select
           class="basic-cont-wrapper sql-cont"
         >
           <div
-            class="actiontech-sql-snippet-renderer-wrapper css-dz7fl9"
+            class="actiontech-sql-snippet-renderer-wrapper css-q962ee"
           >
             <div
               class="ant-typography ant-typography-ellipsis ant-typography-ellipsis-multiple-line margin-bottom-0"
@@ -2287,7 +2287,7 @@ exports[`SqlAnalyze/useSQLExecPlan render generateSQLExecPlanContent when showEx
           class="basic-cont-wrapper sql-cont"
         >
           <div
-            class="actiontech-sql-snippet-renderer-wrapper css-dz7fl9"
+            class="actiontech-sql-snippet-renderer-wrapper css-q962ee"
           >
             <div
               class="ant-typography ant-typography-ellipsis ant-typography-ellipsis-multiple-line margin-bottom-0"
