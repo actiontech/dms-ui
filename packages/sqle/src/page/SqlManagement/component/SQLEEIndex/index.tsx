@@ -1,13 +1,7 @@
 import { useTranslation } from 'react-i18next';
 import { useBoolean, useRequest } from 'ahooks';
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
-import {
-  BasicButton,
-  PageHeader,
-  useTypedQuery,
-  TypedLink,
-  EmptyBox
-} from '@actiontech/shared';
+import { BasicButton, PageHeader, useTypedQuery } from '@actiontech/shared';
 import SQLStatistics, { ISQLStatisticsProps } from '../SQLStatistics';
 import {
   useTableFilterContainer,
@@ -49,7 +43,7 @@ import {
 import { ModalName } from '../../../../data/ModalName';
 import { SorterResult, TableRowSelection } from 'antd/es/table/interface';
 import { ISqlManage } from '@actiontech/shared/lib/api/sqle/service/common';
-import { Spin, message, Alert, Space } from 'antd';
+import { Spin, message } from 'antd';
 import SqlManagementModal from './Modal';
 import EmitterKey from '../../../../data/EmitterKey';
 import EventEmitter from '../../../../utils/EventEmitter';
@@ -60,14 +54,15 @@ import useGetTableFilterInfo from './hooks/useGetTableFilterInfo';
 import { DownArrowLineOutlined } from '@actiontech/icons';
 import useSqlManagementExceptionRedux from '../../../SqlManagementException/hooks/useSqlManagementExceptionRedux';
 import useWhitelistRedux from '../../../Whitelist/hooks/useWhitelistRedux';
-import {
-  SqlManagementTableStyleWrapper,
-  AbnormalAuditPlanTipsStyleWrapper
-} from './style';
+import { SqlManagementTableStyleWrapper } from './style';
 import { SqlManageAuditStatusEnum } from '@actiontech/shared/lib/api/sqle/service/common.enum';
 import { GetSqlManageListV3FilterSourceEnum } from '@actiontech/shared/lib/api/sqle/service/SqlManage/index.enum';
 import { ROUTE_PATHS } from '@actiontech/shared/lib/data/routePaths';
 import { parse2ReactRouterPath } from '@actiontech/shared/lib/components/TypedRouter/utils';
+import dayjs from 'dayjs';
+import AbnormalInstance from './AbnormalInstance';
+import { formatTime } from '@actiontech/shared/lib/utils/Common';
+import { AbnormalInstanceStatusCodeEnum } from './index.data';
 
 const SQLEEIndex = () => {
   const { t } = useTranslation();
@@ -215,8 +210,30 @@ const SQLEEIndex = () => {
       SqleApi.SqlManageService.getAbnormalInstanceAuditPlansV1({
         project_name: projectName
       }).then((res) => {
-        if (res.data.code === ResponseCode.SUCCESS) {
-          return res.data.data;
+        const { data, code } = res.data;
+        if (code === ResponseCode.SUCCESS) {
+          return {
+            instances: data?.filter(
+              (i) =>
+                i.abnormal_status_code ===
+                AbnormalInstanceStatusCodeEnum.ABNORMAL
+            ),
+            scannerWillExpiredInstances: data
+              ?.filter(
+                (i) =>
+                  i.abnormal_status_code ===
+                  AbnormalInstanceStatusCodeEnum.WILL_EXPIRED
+              )
+              .map((i) => ({
+                ...i,
+                expire: formatTime(dayjs.unix(i.token_exp ?? 0))
+              })),
+            scannerExpiredInstances: data?.filter(
+              (i) =>
+                i.abnormal_status_code ===
+                AbnormalInstanceStatusCodeEnum.EXPIRED
+            )
+          };
         }
       })
     );
@@ -492,35 +509,11 @@ const SQLEEIndex = () => {
         errorMessage={getListError}
         loading={loading}
       />
-      <EmptyBox if={!!abnormalInstances?.length}>
-        <AbnormalAuditPlanTipsStyleWrapper>
-          <Alert
-            message={
-              <>
-                <Space>
-                  {abnormalInstances?.map((instance, index) => {
-                    return (
-                      <TypedLink
-                        to={ROUTE_PATHS.SQLE.SQL_MANAGEMENT_CONF.detail}
-                        params={{
-                          projectID,
-                          id: instance.instance_audit_plan_id?.toString() ?? ''
-                        }}
-                        key={index}
-                      >
-                        {instance.instance_name}
-                      </TypedLink>
-                    );
-                  })}
-                </Space>
-                {t('sqlManagement.abnormalAuditPlanTips')}
-              </>
-            }
-            type="warning"
-            showIcon
-          />
-        </AbnormalAuditPlanTipsStyleWrapper>
-      </EmptyBox>
+      <AbnormalInstance
+        abnormalInstances={abnormalInstances?.instances}
+        willExpiredInstances={abnormalInstances?.scannerWillExpiredInstances}
+        expiredInstances={abnormalInstances?.scannerExpiredInstances}
+      />
       {/* table  */}
       <TableToolbar
         refreshButton={{ refresh, disabled: loading }}
@@ -546,7 +539,7 @@ const SQLEEIndex = () => {
         filterCustomProps={filterCustomProps}
       />
       <SqlManagementTableStyleWrapper
-        hasAbnormalAuditPlan={!!abnormalInstances?.length}
+        hasAbnormalAuditPlan={!!abnormalInstances?.instances?.length}
         className="table-row-cursor"
         setting={tableSetting}
         dataSource={sqlList?.list}

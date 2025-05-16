@@ -325,10 +325,18 @@ export const mockAbnormalInstanceAuditPlansData: IAbnormalAuditPlanInstance[] =
   [
     {
       instance_audit_plan_id: 1,
-      instance_name: 'mysql-1'
+      instance_name: 'mysql-1',
+      abnormal_status_code: 1
     },
     {
       instance_audit_plan_id: 2,
-      instance_name: 'mysql-2'
+      instance_name: 'mysql-2',
+      abnormal_status_code: 4,
+      token_exp: 1749027937
+    },
+    {
+      instance_audit_plan_id: 3,
+      instance_name: 'mysql-3',
+      abnormal_status_code: 2
     }
   ];

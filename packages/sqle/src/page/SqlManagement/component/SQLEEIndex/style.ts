@@ -16,4 +16,12 @@ export const SqlManagementTableStyleWrapper = styled(ActiontechTable)<{
 
 export const AbnormalAuditPlanTipsStyleWrapper = styled('div')`
   padding: 10px 40px 0;
+
+  & .ant-alert {
+    align-items: flex-start !important;
+
+    .ant-alert-icon {
+      margin-top: 4px;
+    }
+  }
 `;

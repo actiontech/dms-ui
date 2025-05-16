@@ -16,7 +16,9 @@ import {
   IDeletePipelineV1Params,
   IDeletePipelineV1Return,
   IUpdatePipelineV1Params,
-  IUpdatePipelineV1Return
+  IUpdatePipelineV1Return,
+  IRefreshPipelineNodeTokenV1Params,
+  IRefreshPipelineNodeTokenV1Return
 } from './index.d';
 
 class PipelineService extends ServiceBase {
@@ -99,6 +101,27 @@ class PipelineService extends ServiceBase {
 
     return this.patch<IUpdatePipelineV1Return>(
       `/v1/projects/${project_name}/pipelines/${pipeline_id}/`,
+      paramsData,
+      options
+    );
+  }
+
+  public refreshPipelineNodeTokenV1(
+    params: IRefreshPipelineNodeTokenV1Params,
+    options?: AxiosRequestConfig
+  ) {
+    const paramsData = this.cloneDeep(params);
+    const project_name = paramsData.project_name;
+    delete paramsData.project_name;
+
+    const pipeline_id = paramsData.pipeline_id;
+    delete paramsData.pipeline_id;
+
+    const node_id = paramsData.node_id;
+    delete paramsData.node_id;
+
+    return this.patch<IRefreshPipelineNodeTokenV1Return>(
+      `/v1/projects/${project_name}/pipelines/${pipeline_id}/token/${node_id}/`,
       paramsData,
       options
     );

@@ -10,7 +10,7 @@ import {
 } from '@actiontech/shared/lib/features';
 import { ConfDetailOverviewProps } from './index.type';
 import { useRequest } from 'ahooks';
-import instance_audit_plan from '@actiontech/shared/lib/api/sqle/service/instance_audit_plan';
+import { SqleApi } from '@actiontech/shared/lib/api/';
 import { SQL_MANAGEMENT_CONF_OVERVIEW_TAB_KEY } from '../index.data';
 import { useTableAction } from './useTableAction';
 import { Spin, message } from 'antd';
@@ -29,6 +29,7 @@ const ConfDetailOverview: React.FC<ConfDetailOverviewProps> = ({
   const { t } = useTranslation();
   const { projectName, projectID } = useCurrentProject();
   const [messageApi, messageContextHolder] = message.useMessage();
+
   const { parse2TableActionPermissions } = usePermission();
 
   const columns = ConfDetailOverviewColumns(projectID);
@@ -42,13 +43,15 @@ const ConfDetailOverview: React.FC<ConfDetailOverviewProps> = ({
     enabledAction,
     enabledActionPending,
     deleteAction,
-    deleteActionPending
+    deleteActionPending,
+    resetTokenAction,
+    resetTokenActionPending
   } = useTableAction();
 
   const { data, loading, refresh } = useRequest(
     () =>
       handleTableRequestError(
-        instance_audit_plan.getInstanceAuditPlanOverviewV1({
+        SqleApi.InstanceAuditPlanService.getInstanceAuditPlanOverviewV1({
           project_name: projectName,
           instance_audit_plan_id: instanceAuditPlanId
         })
@@ -72,7 +75,6 @@ const ConfDetailOverview: React.FC<ConfDetailOverviewProps> = ({
   return (
     <Spin spinning={loading} delay={300}>
       {messageContextHolder}
-
       <ActiontechTable
         rowKey={(record) => record.audit_plan_type?.audit_plan_id!}
         className="table-row-cursor"
@@ -127,9 +129,22 @@ const ConfDetailOverview: React.FC<ConfDetailOverviewProps> = ({
                 }
               });
             },
+            resetTokenAction: () => {
+              resetTokenAction(instanceAuditPlanId).then((res) => {
+                if (res.data.code === ResponseCode.SUCCESS) {
+                  messageApi.success(
+                    t(
+                      'managementConf.detail.overview.actions.resetTokenSuccessTips'
+                    )
+                  );
+                  refresh();
+                }
+              });
+            },
             disabledActionPending,
             enabledActionPending,
-            deleteActionPending
+            deleteActionPending,
+            resetTokenActionPending
           })
         )}
       />
