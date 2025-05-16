@@ -36,8 +36,8 @@ import {
   IGetInstanceAuditPlanSQLsV1Return,
   IGetAuditPlanSqlAnalysisDataV1Params,
   IGetAuditPlanSqlAnalysisDataV1Return,
-  IGenerateAuditPlanTokenV1Params,
-  IGenerateAuditPlanTokenV1Return,
+  IRefreshAuditPlanTokenV1Params,
+  IRefreshAuditPlanTokenV1Return,
   IUploadInstanceAuditPlanSQLsV2Params,
   IUploadInstanceAuditPlanSQLsV2Return,
   IGetInstanceAuditPlansV2Params,
@@ -335,8 +335,8 @@ class InstanceAuditPlanService extends ServiceBase {
     );
   }
 
-  public generateAuditPlanTokenV1(
-    params: IGenerateAuditPlanTokenV1Params,
+  public refreshAuditPlanTokenV1(
+    params: IRefreshAuditPlanTokenV1Params,
     options?: AxiosRequestConfig
   ) {
     const paramsData = this.cloneDeep(params);
@@ -346,7 +346,7 @@ class InstanceAuditPlanService extends ServiceBase {
     const instance_audit_plan_id = paramsData.instance_audit_plan_id;
     delete paramsData.instance_audit_plan_id;
 
-    return this.patch<IGenerateAuditPlanTokenV1Return>(
+    return this.patch<IRefreshAuditPlanTokenV1Return>(
       `/v1/projects/${project_name}/instance_audit_plans/${instance_audit_plan_id}/token`,
       paramsData,
       options
