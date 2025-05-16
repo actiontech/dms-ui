@@ -1110,10 +1110,6 @@ export interface IGenModifylSQLReqV1 {
   database_schema_objects?: IDatabaseSchemaObject[];
 }
 
-export interface IGenerateAuditPlanTokenReqV1 {
-  expires_in_days?: number;
-}
-
 export interface IGetAbnormalAuditPlanInstancesResp {
   code?: number;
 
@@ -2648,6 +2644,10 @@ export interface IRecordSource {
   name?: RecordSourceNameEnum;
 
   value?: string;
+}
+
+export interface IRefreshAuditPlanTokenReqV1 {
+  expires_in_days?: number;
 }
 
 export interface IRejectWorkflowReqV1 {

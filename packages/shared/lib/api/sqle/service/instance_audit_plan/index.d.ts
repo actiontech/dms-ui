@@ -14,7 +14,7 @@ import {
   IGetAuditPlanSQLMetaResV1,
   IGetAuditPlanSQLsResV1,
   IGetSqlManageSqlAnalysisResp,
-  IGenerateAuditPlanTokenReqV1,
+  IRefreshAuditPlanTokenReqV1,
   IUploadInstanceAuditPlanSQLsReqV2,
   IGetInstanceAuditPlansRes,
   IGetInstanceAuditPlanDetailRes
@@ -186,14 +186,14 @@ export interface IGetAuditPlanSqlAnalysisDataV1Params {
 export interface IGetAuditPlanSqlAnalysisDataV1Return
   extends IGetSqlManageSqlAnalysisResp {}
 
-export interface IGenerateAuditPlanTokenV1Params
-  extends IGenerateAuditPlanTokenReqV1 {
+export interface IRefreshAuditPlanTokenV1Params
+  extends IRefreshAuditPlanTokenReqV1 {
   project_name: string;
 
   instance_audit_plan_id: string;
 }
 
-export interface IGenerateAuditPlanTokenV1Return extends IBaseRes {}
+export interface IRefreshAuditPlanTokenV1Return extends IBaseRes {}
 
 export interface IUploadInstanceAuditPlanSQLsV2Params
   extends IUploadInstanceAuditPlanSQLsReqV2 {
