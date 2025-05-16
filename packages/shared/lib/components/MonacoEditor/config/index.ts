@@ -12,6 +12,9 @@ export const editorDefaultOptions: EditorProps['options'] = {
   lineHeight: 24,
   letterSpacing: 0.8,
   overviewRulerBorder: false,
+  wordWrap: 'on',
+  wrappingStrategy: 'advanced',
+  wrappingIndent: 'indent',
   // 滚动配置
   scrollbar: {
     vertical: 'visible',
