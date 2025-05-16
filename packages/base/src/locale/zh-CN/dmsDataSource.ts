@@ -72,7 +72,7 @@ export default {
     closeAuditSqlServiceTips:
       '如果不启用SQL审核业务，则在SQL审核相关业务中无法使用该数据源，是否确认关闭？',
     needAuditForSqlQuery: 'SQL工作台查询是否需要审核',
-    allowQueryWhenLessThanAuditLevel: '运行查询的最高审核等级',
+    allowQueryWhenLessThanAuditLevel: '自动放行的最高审核等级',
     passwordTips:
       '这里不会显示您已经配置的当前数据源密码，提交时如果您没有填写密码，那么将不会对数据源密码进行变更。',
     needUpdatePassword: '是否更新密码',

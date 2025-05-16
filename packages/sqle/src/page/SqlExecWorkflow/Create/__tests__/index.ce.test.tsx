@@ -29,7 +29,8 @@ describe('sqle/SqlExecWorkflow/Create ce', () => {
   };
   ignoreConsoleErrors([
     UtilsConsoleErrorStringsEnum.UNIQUE_KEY_REQUIRED,
-    UtilsConsoleErrorStringsEnum.INVALID_CSS_VALUE
+    UtilsConsoleErrorStringsEnum.INVALID_CSS_VALUE,
+    UtilsConsoleErrorStringsEnum.UNKNOWN_EVENT_HANDLER
   ]);
 
   beforeEach(() => {
