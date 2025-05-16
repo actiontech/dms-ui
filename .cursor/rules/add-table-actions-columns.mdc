@@ -1,0 +1,230 @@
+---
+description: 
+globs: 
+alwaysApply: false
+---
+# 如何为 Table 添加动作按钮
+
+Table 相关的动作按钮分为两类：
+1. 表格操作列按钮：在 Table columns 的最后添加一个操作列，将相关按钮添加到此列中
+2. 表格工具栏按钮：在表格上方工具栏中显示的操作按钮
+
+## 动作按钮权限规则
+
+在创建动作按钮前需要新建动作权限。这需要在两个文件中进行操作：
+
+### 1. 在 `@permissions.ts` 中添加动作权限清单
+
+- 权限清单分为页面权限(`PAGES`)和动作权限(`ACTIONS`)
+- 创建动作权限时，需要在 `ACTIONS` 对象下找到对应子包：`BASE.USER_CENTER.USER.ADD`
+- 权限值应使用前缀 `action:` 并遵循小写+下划线命名法，例如er`
+
+示例：
+```typescript
+// @permissions.ts
+{
+  ACTIONS: {
+    // ...
+    BASE: {
+      USER_CENTER: {
+        USER: {
+          ADD: 'action:add_user',
+          EDIT: 'action:edit_user',
+          DELETE: 'action:delete_user'
+        },
+        ROLE: {
+          ADD: 'action:add_role',
+          EDIT: 'action:edit_role',
+          DELETE: 'action:delete_role'
+        }
+ ..
+  }
+}
+```
+
+### 2. 在 `@permissionManifest.ts` 中添加权限数据
+
+- 为每个添加到 `@permissions.ts` 的动作权限创建对应的权限数据
+- 使用权限的完整路径作为键，创建包含 `id` 和 `type` 的对象
+- 动作权限的 `type` 字段统一设置为 `'action'`
+
+示例：
+```typescript
+// @permissionManifest.ts
+{
+  // ...
+  [PERMISSIONS.ACTIONS.BASE.USER_CENTER.USER.ADD]: {
+    id: PERMISSIONS.ACTIONS.BASE.USER_CENTER.USER.ADD,
+    type: 'action',
+  },
+  [PERMISSIONS.ACTIONS.BASE.USER_CENTER.USER.EDIT]: {
+    id: PERMISSIONS.ACTIONS.BASE.USER_CENTER.USER.EDIT,
+    type: 'action',
+  },
+  // ...
+}
+```
+
+### 注意事项
+
+- 务必确保权限Key和Value在各文件中保持一致
+- 添加新权限后，需要在使用该权限的组件中通过权限判断控制动作按钮的显示
+- 权限命名应当清晰表达所控制的功能，便于管理和理解
+
+## 表格操作列按钮
+
+表格操作列按钮定义通常需要创建一个单独的 `action.tsx` 文件，在 table 同级目录下。
+
+- `TableAction` 的定义请使用一个函数, 而不是 React 组件或者 hooks, 内部需要的 `t` 函数请从当前包内的 `src/locale` 中导入
+- 需要在正确的文件位置中生成 `TableAction` 需要的语言包数据。
+- 请先详细了解引入的相关类型, 然后根据类型再生成相关数据
+
+### 注意事项
+
+- 无需设置 button 的 type 为 primary, 使用默认的类型即可
+
+### 代码示例
+
+```tsx
+import { ActiontechTableActionsWithPermissions } from '@actiontech/shared/lib/features';
+import { PERMISSIONS } from '@actiontech/shared/lib/features/usePermission/permissions';
+
+export const xxxxTableAction: (
+  btnActionFunction: () => void;
+) => ActiontechTableActionsWithPermissions<TableListItemType> = (
+  btnActionFunction,
+) => {
+  return {
+    buttons: [
+      {
+        key: 'btn-key',
+        text: t('i18n.key'),
+        buttonProps: (record) => ({
+          onClick: () => btnActionFunction(record ?? {})
+        }),
+        // 当前 action 所需要的权限
+        permissions: PERMISSIONS.ACTIONS.xxxxx
+      },
+      {
+        key: 'remove-whitelist',
+        text: t('i18n.key'),
+        // 如果需要调整按钮样式需要在这里修改 props
+        buttonProps: () => ({ danger: true }),
+        // 如果是删除等危险操作，需要让用户进行二次确认
+        confirm: (record) => ({
+          title: t('i18n.key'),
+          onConfirm: () => btnActionFunction(record.xxxx)
+        }),
+        permissions: PERMISSIONS.ACTIONS.xxxxxx
+      }
+    ]
+  };
+};
+```
+
+### 在 Table 中使用
+
+```tsx
+import { usePermission } from '@actiontech/shared/lib/features';
+import { xxxxTableAction } from './action';
+
+const { parse2TableActionPermissions } = usePermission();
+
+const btnActionFunction = (params: xxxx) => {
+  // 实现按钮功能
+};
+
+<ActiontechTable
+  actions={parse2TableActionPermissions(
+    xxxxTableAction(btnActionFunction)
+  )}
+/>
+```
+
+## 表格工具栏按钮
+
+定义方式与表格操作列按钮类似，但使用方式略有不同。
+
+- `TableToolbarActions` 的定义请使用一个函数, 而不是 React 组件或者 hooks, 内部需要的 `t` 函数请从当前包内的 `src/locale` 中导入
+- 需要在正确的文件位置中生成 `TableToolbarActions` 需要的语言包数据。
+- 请先详细了解引入的相关类型, 然后根据类型再生成相关数据
+
+### 代码示例
+
+```tsx
+import { ActiontechTableToolbarActionWithPermissions } from '@actiontech/shared/lib/features';
+import { PERMISSIONS } from '@actiontech/shared/lib/features/usePermission/permissions';
+
+export const xxxxxTableToolbarActions = (
+  btnActionFunction: () => void;
+): ActiontechTableToolbarActionWithPermissions => {
+  return [
+    {
+      key: 'btn-key',
+      text: t('i18n.key'),
+      // 如果在某些情况下按钮不可用，或请求过程中需要 loading，都在这里设置
+      buttonProps: {
+        disabled
+      },
+      // 高危操作需要二次确认
+      confirm: {
+        onConfirm: btnActionFunction,
+        title: t('i18n.key'),
+        okButtonProps: {
+          disabled: loading
+        }
+      },
+      // 当前 action 所需要的权限
+      permissions: PERMISSIONS.ACTIONS.xxxxxxx
+    },
+    {
+      key: 'btn-key-2',
+      text: t('i18n.key'),
+      // 非高危操作可以使用普通的 click 事件
+      buttonProps: {
+        disabled,
+        onClick: () => btnActionFunction()
+      },
+      permissions: PERMISSIONS.ACTIONS.xxxxxxx
+    }
+  ];
+};
+```
+
+### 在 Table 中使用
+
+```tsx
+import { usePermission } from '@actiontech/shared/lib/features';
+import { xxxxxTableToolbarActions } from './action';
+import { TableToolbar } from '@actiontech/shared';
+
+const { parse2TableToolbarActionPermissions } = usePermission();
+
+const onDelete = (params: xxxx) => {
+  // 实现删除功能
+};
+
+const getTableToolbarActions = useMemo(() => {
+  return parse2TableToolbarActionPermissions(
+    xxxxxTableToolbarActions(onDelete)
+  );
+}, [onDelete]);
+
+<TableToolbar
+  actions={getTableToolbarActions}
+/>
+```
+
+## 权限管理
+
+所有操作按钮都应该有权限管理。在定义按钮时，需要指定相应的权限：
+
+1. 首先查看 `packages/shared/lib/features/usePermission/permissions.ts` 中是否存在相关权限定义
+2. 在按钮定义中使用 `permissions` 属性指定所需权限
+3. 使用 `parse2TableActionPermissions` 或 `parse2TableToolbarActionPermissions` 处理权限逻辑
+
+## 注意事项
+
+1. 按钮功能应根据具体业务需求实现
+2. 高危操作应使用 `confirm` 属性进行二次确认
+3. 所有显示文本应使用 i18n 国际化处理

@@ -33,6 +33,7 @@ import AutoCreatedFormItemByApi from 'sqle/src/components/BackendForm/AutoCreate
 import { SQLQueryConfigAllowQueryWhenLessThanAuditLevelEnum } from '@actiontech/shared/lib/api/base/service/common.enum';
 import useAsyncParams from 'sqle/src/components/BackendForm/useAsyncParams';
 import { SyncTaskFormProps } from './index.type';
+import { FaLessThanEqualOutlined } from '@actiontech/icons';
 
 const SyncTaskForm: React.FC<SyncTaskFormProps> = ({
   form,
@@ -388,7 +389,7 @@ const SyncTaskForm: React.FC<SyncTaskFormProps> = ({
               )}
               name="allowQueryWhenLessThanAuditLevel"
             >
-              <BasicSelect>
+              <BasicSelect prefix={<FaLessThanEqualOutlined />}>
                 {Object.values(
                   SQLQueryConfigAllowQueryWhenLessThanAuditLevelEnum
                 ).map((v) => {

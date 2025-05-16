@@ -129,9 +129,13 @@ export interface IRuleCategoryStatistic {
 }
 
 export interface IAbnormalAuditPlanInstance {
+  abnormal_status_code?: number;
+
   instance_audit_plan_id?: number;
 
   instance_name?: string;
+
+  token_exp?: number;
 }
 
 export interface IAffectRows {
@@ -1482,6 +1486,14 @@ export interface IGetInstanceHealthResV1 {
   message?: string;
 }
 
+export interface IGetInstanceOverviewStatisticsRes {
+  code?: number;
+
+  data?: IInstanceOverviewStatistics[];
+
+  message?: string;
+}
+
 export interface IGetInstanceSchemaResV1 {
   code?: number;
 
@@ -2215,6 +2227,8 @@ export interface IInstanceAuditPlanInfo {
 
   last_collection_time?: string;
 
+  token_exp?: number;
+
   total_sql_nums?: number;
 
   unsolved_sql_nums?: number;
@@ -2268,6 +2282,16 @@ export interface IInstanceInfo {
   instance_id?: string;
 
   instance_name?: string;
+}
+
+export interface IInstanceOverviewStatistics {
+  avg_score?: number;
+
+  high_priority_sql_count?: number;
+
+  instance_id?: string;
+
+  pending_workflow_count?: number;
 }
 
 export interface IInstanceSchemaResV1 {
@@ -2622,6 +2646,10 @@ export interface IRecordSource {
   value?: string;
 }
 
+export interface IRefreshAuditPlanTokenReqV1 {
+  expires_in_days?: number;
+}
+
 export interface IRejectWorkflowReqV1 {
   reason?: string;
 }
@@ -2810,6 +2838,8 @@ export interface IRuleResV1 {
   rule_name?: string;
 
   type?: string;
+
+  version?: number;
 }
 
 export interface IRuleRespV1 {
