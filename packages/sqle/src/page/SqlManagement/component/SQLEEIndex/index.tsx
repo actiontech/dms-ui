@@ -61,6 +61,8 @@ import { ROUTE_PATHS } from '@actiontech/shared/lib/data/routePaths';
 import { parse2ReactRouterPath } from '@actiontech/shared/lib/components/TypedRouter/utils';
 import dayjs from 'dayjs';
 import AbnormalInstance from './AbnormalInstance';
+import { formatTime } from '@actiontech/shared/lib/utils/Common';
+import { AbnormalInstanceStatusCodeEnum } from './index.data';
 
 const SQLEEIndex = () => {
   const { t } = useTranslation();
@@ -211,17 +213,25 @@ const SQLEEIndex = () => {
         const { data, code } = res.data;
         if (code === ResponseCode.SUCCESS) {
           return {
-            instances: data?.filter((i) => i.abnormal_status_code === 1),
+            instances: data?.filter(
+              (i) =>
+                i.abnormal_status_code ===
+                AbnormalInstanceStatusCodeEnum.ABNORMAL
+            ),
             scannerWillExpiredInstances: data
-              ?.filter((i) => i.abnormal_status_code === 4)
+              ?.filter(
+                (i) =>
+                  i.abnormal_status_code ===
+                  AbnormalInstanceStatusCodeEnum.WILL_EXPIRED
+              )
               .map((i) => ({
                 ...i,
-                expire: dayjs
-                  .unix(i.token_exp ?? 0)
-                  .format('YYYY-MM-DD HH:mm:ss')
+                expire: formatTime(dayjs.unix(i.token_exp ?? 0))
               })),
             scannerExpiredInstances: data?.filter(
-              (i) => i.abnormal_status_code === 2
+              (i) =>
+                i.abnormal_status_code ===
+                AbnormalInstanceStatusCodeEnum.EXPIRED
             )
           };
         }

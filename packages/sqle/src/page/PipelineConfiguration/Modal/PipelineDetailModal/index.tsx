@@ -68,7 +68,7 @@ const PipelineDetailModal: React.FC = () => {
 
   const { run: resetToken, loading: resetTokenLoading } = useRequest(
     (id: string) => {
-      return SqleApi.PipelineService.generatePipelineNodeTokenV1({
+      return SqleApi.PipelineService.refreshPipelineNodeTokenV1({
         pipeline_id: pipelineState.id?.toString() ?? '',
         project_name: projectName,
         node_id: id
