@@ -836,9 +836,10 @@ describe('page/SqlManagement/SQLEEIndex', () => {
     request.mockImplementation(() =>
       createSpySuccessResponse({ data: mockAbnormalInstanceAuditPlansData })
     );
-    superRender(<SQLEEIndex />);
+    const { baseElement } = superRender(<SQLEEIndex />);
     expect(request).toHaveBeenCalled();
     await act(async () => jest.advanceTimersByTime(3000));
     expect(getBySelector('.ant-alert-warning')).toBeInTheDocument();
+    expect(baseElement.querySelector('.ant-alert-warning')).toMatchSnapshot();
   });
 });

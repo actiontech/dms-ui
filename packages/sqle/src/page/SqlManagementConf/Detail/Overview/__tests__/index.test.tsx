@@ -14,6 +14,7 @@ import {
 } from '@actiontech/shared/lib/api/sqle/service/common.enum';
 import { mockUsePermission } from '@actiontech/shared/lib/testUtil/mockHook/mockUsePermission';
 import { createSpySuccessResponse } from '@actiontech/shared/lib/testUtil/mockApi';
+import { getAllBySelector } from '@actiontech/shared/lib/testUtil/customQuery';
 
 jest.mock('react-redux', () => {
   return {
@@ -89,7 +90,10 @@ describe('test Overview', () => {
       ].closest('button')
     ).toBeDisabled();
 
-    expect(getAllByText('删 除').length).toBe(mockInstanceAuditPlanInfo.length);
+    const moreButtonTrigger = getAllBySelector(
+      '.actiontech-table-actions-more-button'
+    );
+    expect(moreButtonTrigger.length).toBe(mockInstanceAuditPlanInfo.length);
 
     // disabled
     fireEvent.click(getAllByText('停 用')[0]);
@@ -139,9 +143,10 @@ describe('test Overview', () => {
     expect(getInstanceAuditPlanOverviewSpy).toHaveBeenCalledTimes(3);
 
     //delete
-    fireEvent.click(getAllByText('删 除')[0]);
+    fireEvent.click(moreButtonTrigger[0]);
+    fireEvent.click(getAllByText('删除')[0]);
     await findByText('删除后该类型智能扫描数据将不再被保留，是否确认删除？');
-    fireEvent.click(getAllByText('确 认')[1]);
+    fireEvent.click(getByText('确 定'));
     expect(deleteAuditPlanByTypeSpy).toHaveBeenCalledTimes(1);
     expect(deleteAuditPlanByTypeSpy).toHaveBeenNthCalledWith(1, {
       project_name: mockProjectInfo.projectName,
@@ -150,9 +155,7 @@ describe('test Overview', () => {
         mockInstanceAuditPlanInfo[0].audit_plan_type?.audit_plan_id?.toString()
     });
 
-    expect(getAllByText('删 除')[0].closest('button')).toBeDisabled();
     await act(async () => jest.advanceTimersByTime(3000));
-    expect(getAllByText('删 除')[0].closest('button')).not.toBeDisabled();
     expect(getByText('删除成功！')).toBeInTheDocument();
     expect(getInstanceAuditPlanOverviewSpy).toHaveBeenCalledTimes(4);
     expect(refreshAuditPlanDetailSpy).toHaveBeenCalledTimes(1);
@@ -199,5 +202,36 @@ describe('test Overview', () => {
     await act(async () => jest.advanceTimersByTime(3000));
     expect(container).toMatchSnapshot();
     expect(screen.getByText('运行异常')).toBeInTheDocument();
+  });
+
+  it('reset token', async () => {
+    getInstanceAuditPlanOverviewSpy.mockImplementation(() =>
+      createSpySuccessResponse({
+        data: [{ ...mockInstanceAuditPlanInfo[0], exec_cmd: 'test' }]
+      })
+    );
+    const { getAllByText, findByText, getByText } = customRender();
+    await act(async () => jest.advanceTimersByTime(3000));
+
+    const moreButtonTrigger = getAllBySelector(
+      '.actiontech-table-actions-more-button'
+    );
+    const refreshAuditPlanTokenSpy = instanceAuditPlan.refreshAuditPlanToken();
+    fireEvent.click(moreButtonTrigger[0]);
+    fireEvent.click(getAllByText('重置Token')[0]);
+    await findByText(
+      '重置后将生成新的Token，有效期365天。旧Token将立即失效，是否继续？'
+    );
+    fireEvent.click(getByText('确 定'));
+    expect(refreshAuditPlanTokenSpy).toHaveBeenCalledTimes(1);
+    expect(refreshAuditPlanTokenSpy).toHaveBeenNthCalledWith(1, {
+      project_name: mockProjectInfo.projectName,
+      instance_audit_plan_id: instanceAuditPlanId,
+      expires_in_days: 365
+    });
+
+    await act(async () => jest.advanceTimersByTime(3000));
+    expect(getByText('重置Token成功！')).toBeInTheDocument();
+    expect(getInstanceAuditPlanOverviewSpy).toHaveBeenCalledTimes(2);
   });
 });

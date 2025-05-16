@@ -264,7 +264,7 @@ exports[`sqle/PipelineConfiguration/Modal/PipelineDetailModal render init snap 1
                                         class="ant-spin-container"
                                       >
                                         <div
-                                          class="ant-table ant-table-scroll-horizontal"
+                                          class="ant-table ant-table-fixed-column ant-table-scroll-horizontal ant-table-has-fix-right"
                                         >
                                           <div
                                             class="ant-table-container"
@@ -276,7 +276,15 @@ exports[`sqle/PipelineConfiguration/Modal/PipelineDetailModal render init snap 1
                                               <table
                                                 style="min-width: 100%; table-layout: auto;"
                                               >
-                                                <colgroup />
+                                                <colgroup>
+                                                  <col />
+                                                  <col />
+                                                  <col />
+                                                  <col />
+                                                  <col
+                                                    style="width: 82px;"
+                                                  />
+                                                </colgroup>
                                                 <thead
                                                   class="ant-table-thead"
                                                 >
@@ -305,6 +313,13 @@ exports[`sqle/PipelineConfiguration/Modal/PipelineDetailModal render init snap 1
                                                     >
                                                       对接说明
                                                     </th>
+                                                    <th
+                                                      class="ant-table-cell actiontech-table-actions-column ant-table-cell-fix-right ant-table-cell-fix-right-first"
+                                                      scope="col"
+                                                      style="position: sticky; right: 0px;"
+                                                    >
+                                                      操作
+                                                    </th>
                                                   </tr>
                                                 </thead>
                                                 <tbody
@@ -315,6 +330,15 @@ exports[`sqle/PipelineConfiguration/Modal/PipelineDetailModal render init snap 1
                                                     class="ant-table-measure-row"
                                                     style="height: 0px; font-size: 0px;"
                                                   >
+                                                    <td
+                                                      style="padding: 0px; border: 0px; height: 0px;"
+                                                    >
+                                                      <div
+                                                        style="height: 0px; overflow: hidden;"
+                                                      >
+                                                         
+                                                      </div>
+                                                    </td>
                                                     <td
                                                       style="padding: 0px; border: 0px; height: 0px;"
                                                     >
@@ -386,6 +410,23 @@ exports[`sqle/PipelineConfiguration/Modal/PipelineDetailModal render init snap 1
                                                             查看
                                                           </a>
                                                         </div>
+                                                      </div>
+                                                    </td>
+                                                    <td
+                                                      class="ant-table-cell actiontech-table-actions-column ant-table-cell-fix-right ant-table-cell-fix-right-first"
+                                                      style="position: sticky; right: 0px;"
+                                                    >
+                                                      <div
+                                                        class="css-new95e"
+                                                      >
+                                                        <button
+                                                          class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                                          type="button"
+                                                        >
+                                                          <span>
+                                                            重置Token
+                                                          </span>
+                                                        </button>
                                                       </div>
                                                     </td>
                                                   </tr>
@@ -686,7 +727,7 @@ exports[`sqle/PipelineConfiguration/Modal/PipelineDetailModal render show tour 1
                                         class="ant-spin-container"
                                       >
                                         <div
-                                          class="ant-table ant-table-scroll-horizontal"
+                                          class="ant-table ant-table-fixed-column ant-table-scroll-horizontal ant-table-has-fix-right"
                                         >
                                           <div
                                             class="ant-table-container"
@@ -698,7 +739,15 @@ exports[`sqle/PipelineConfiguration/Modal/PipelineDetailModal render show tour 1
                                               <table
                                                 style="min-width: 100%; table-layout: auto;"
                                               >
-                                                <colgroup />
+                                                <colgroup>
+                                                  <col />
+                                                  <col />
+                                                  <col />
+                                                  <col />
+                                                  <col
+                                                    style="width: 82px;"
+                                                  />
+                                                </colgroup>
                                                 <thead
                                                   class="ant-table-thead"
                                                 >
@@ -727,6 +776,13 @@ exports[`sqle/PipelineConfiguration/Modal/PipelineDetailModal render show tour 1
                                                     >
                                                       对接说明
                                                     </th>
+                                                    <th
+                                                      class="ant-table-cell actiontech-table-actions-column ant-table-cell-fix-right ant-table-cell-fix-right-first"
+                                                      scope="col"
+                                                      style="position: sticky; right: 0px;"
+                                                    >
+                                                      操作
+                                                    </th>
                                                   </tr>
                                                 </thead>
                                                 <tbody
@@ -737,6 +793,15 @@ exports[`sqle/PipelineConfiguration/Modal/PipelineDetailModal render show tour 1
                                                     class="ant-table-measure-row"
                                                     style="height: 0px; font-size: 0px;"
                                                   >
+                                                    <td
+                                                      style="padding: 0px; border: 0px; height: 0px;"
+                                                    >
+                                                      <div
+                                                        style="height: 0px; overflow: hidden;"
+                                                      >
+                                                         
+                                                      </div>
+                                                    </td>
                                                     <td
                                                       style="padding: 0px; border: 0px; height: 0px;"
                                                     >
@@ -808,6 +873,23 @@ exports[`sqle/PipelineConfiguration/Modal/PipelineDetailModal render show tour 1
                                                             查看
                                                           </a>
                                                         </div>
+                                                      </div>
+                                                    </td>
+                                                    <td
+                                                      class="ant-table-cell actiontech-table-actions-column ant-table-cell-fix-right ant-table-cell-fix-right-first"
+                                                      style="position: sticky; right: 0px;"
+                                                    >
+                                                      <div
+                                                        class="css-new95e"
+                                                      >
+                                                        <button
+                                                          class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                                          type="button"
+                                                        >
+                                                          <span>
+                                                            重置Token
+                                                          </span>
+                                                        </button>
                                                       </div>
                                                     </td>
                                                   </tr>

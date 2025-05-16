@@ -25,6 +25,8 @@ import {
   IStatisticWorkflowStatusV1Return,
   IGetProjectStatisticsV1Params,
   IGetProjectStatisticsV1Return,
+  IGetInstanceOverviewStatisticsV1Params,
+  IGetInstanceOverviewStatisticsV1Return,
   IGetSqlAverageExecutionTimeV1Params,
   IGetSqlAverageExecutionTimeV1Return,
   IGetSqlExecutionFailPercentV1Params,
@@ -177,6 +179,18 @@ class StatisticService extends ServiceBase {
 
     return this.get<IGetProjectStatisticsV1Return>(
       `/v1/projects/${project_name}/statistics`,
+      paramsData,
+      options
+    );
+  }
+
+  public getInstanceOverviewStatisticsV1(
+    params: IGetInstanceOverviewStatisticsV1Params,
+    options?: AxiosRequestConfig
+  ) {
+    const paramsData = this.cloneDeep(params);
+    return this.get<IGetInstanceOverviewStatisticsV1Return>(
+      '/v1/statistic/instances/resource_overview_statistics',
       paramsData,
       options
     );

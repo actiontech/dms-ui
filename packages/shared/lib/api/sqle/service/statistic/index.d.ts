@@ -8,6 +8,7 @@ import {
   IGetRoleUserCountResV1,
   IGetWorkflowStatusCountResV1,
   IGetProjectStatisticsResV1,
+  IGetInstanceOverviewStatisticsRes,
   IGetSqlAverageExecutionTimeResV1,
   IGetSqlExecutionFailPercentResV1,
   IGetInstancesTypePercentResV1,
@@ -80,6 +81,13 @@ export interface IGetProjectStatisticsV1Params {
 
 export interface IGetProjectStatisticsV1Return
   extends IGetProjectStatisticsResV1 {}
+
+export interface IGetInstanceOverviewStatisticsV1Params {
+  filter_by_db_service_ids?: string[];
+}
+
+export interface IGetInstanceOverviewStatisticsV1Return
+  extends IGetInstanceOverviewStatisticsRes {}
 
 export interface IGetSqlAverageExecutionTimeV1Params {
   limit: number;
