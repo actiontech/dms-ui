@@ -1,0 +1,142 @@
+---
+description: 
+globs: 
+alwaysApply: false
+---
+# Table相关功能实现指南
+
+本规则文档详细说明了DMS-UI项目中表格相关功能（分页、筛选、排序、模糊搜索）的实现方式。
+
+## 核心组件与Hooks
+
+- 主要功能Hook: [useTableRequestParams.tsx](mdc:packages/shared/lib/components/ActiontechTable/hooks/useTableRequestParams.tsx)
+- 筛选条件展示组件: [FilterContainer.tsx](mdc:packages/shared/lib/components/ActiontechTable/components/FilterContainer.tsx)
+- 表格组件: [ActiontechTable.tsx](mdc:packages/shared/lib/components/ActiontechTable/index.tsx)
+- 表格工具栏: [TableToolbar.tsx](mdc:packages/shared/lib/components/ActiontechTable/components/TableToolbar.tsx)
+
+## 实现方式说明
+
+本项目中的表格功能采用自定义实现方式，不直接依赖antd自身的filter功能，而是通过自定义组件和hooks实现更灵活的表格操作。
+
+### 标准使用流程
+
+1. 使用`useTableRequestParams` Hook获取表格操作相关状态和方法
+2. 使用`useTableFilterContainer` Hook处理筛选相关配置
+3. 结合`useRequest`发起API请求并传入筛选、分页、排序参数
+4. 使用`TableToolbar`、`TableFilterContainer`和`ActiontechTable`组件展示UI
+
+### 代码示例
+
+```tsx
+// 1. 设置表格操作hooks
+const {
+  tableFilterInfo,
+  updateTableFilterInfo,
+  tableChange,
+  pagination,
+  searchKeyword,
+  setSearchKeyword,
+  refreshBySearchKeyword
+} = useTableRequestParams<TableListItemType, TableListRequestParamType>();
+
+// 2. 设置筛选容器hooks
+const { filterButtonMeta, filterContainerMeta, updateAllSelectedFilterItem } =
+  useTableFilterContainer(columns, updateTableFilterInfo);
+
+// 3. 如需自定义筛选选项，可设置filterCustomProps
+const filterCustomProps = useMemo(() => {
+  return new Map<keyof TableListItemType, FilterCustomProps>([
+    ['tableField', { options: [{label: 'xx', value: 'xx'}] }]
+  ]);
+}, []);
+
+// 4. 使用useRequest发送请求
+const {
+  data: list,
+  loading,
+  refresh
+} = useRequest(
+  () => {
+    const params: RequestParamsType = {
+      ...tableFilterInfo,
+      page_index: String(pagination.page_index),
+      page_size: String(pagination.page_size),
+      project_name: projectName,
+      fuzzy_search_value: searchKeyword
+    };
+
+    createSortParams(params);
+    return handleTableRequestError(
+      apiserver.获取数据的方法(params)
+    );
+  },
+  {
+    refreshDeps: [pagination, tableFilterInfo, sortInfo],
+  }
+);
+
+// 5. 渲染UI组件
+return (
+  <>
+    <TableToolbar
+      refreshButton={{ refresh, disabled: loading }}
+      filterButton={{
+        filterButtonMeta,
+        updateAllSelectedFilterItem
+      }}
+      searchInput={{
+        onChange: setSearchKeyword,
+        onSearch: () => {
+          refreshBySearchKeyword();
+        }
+      }}
+    />
+    <TableFilterContainer
+      filterContainerMeta={filterContainerMeta}
+      updateTableFilterInfo={updateTableFilterInfo}
+      disabled={loading}
+      filterCustomProps={filterCustomProps}
+    />
+    <ActiontechTable
+      dataSource={list?.list}
+      pagination={{
+        total: list?.total ?? 0
+      }}
+      columns={columns}
+      errorMessage={requestErrorMessage}
+      onChange={tableChange}
+      scroll={{}}
+    />
+  </>
+);
+```
+
+## 列配置说明
+
+为了使表格列支持筛选功能，需要在columns配置中添加特定属性：
+
+```tsx
+// 列定义示例
+{
+  dataIndex: 'operation_person',
+  title: t('i18n key'),
+  filterCustomType: 'select',  // 筛选类型，如'select'、'input'等
+  filterKey: 'filter_operation_person_uid',  // 筛选字段对应的API参数名
+  sorter: true,
+  // ...其他列属性
+}
+```
+
+### 重要说明
+
+1. **筛选功能**: 
+   - 不使用antd原生filters属性
+   - 必须提供`filterKey`指定筛选参数名
+   - 通过`filterCustomType`指定筛选控件类型，默认为'input'
+
+2. **排序功能**:
+   - 不是所有列都支持排序
+   - 需要明确指定哪些列支持排序
+
+3. **筛选选项**:
+   - 对于select类型的筛选，需通过`filterCustomProps`提供选项数据

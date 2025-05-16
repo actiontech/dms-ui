@@ -1,0 +1,68 @@
+---
+description: 
+globs: 
+alwaysApply: true
+---
+# 样式方案规则
+
+## 基本规范
+
+- 本项目使用MUI的CSS-in-JS方案实现样式
+- 样式文件统一命名为`style.ts`
+- 引入styled的方式必须为：`import { styled } from '@mui/material/styles';`
+- 样式组件命名规则：每个组件必须以`StyleWrapper`结尾，例如`HeaderStyleWrapper`、`ContentStyleWrapper`等
+
+## 主题方案
+
+- 主题定义分布在两个位置：
+  - 基准主题：`packages/shared/lib/theme`
+  - 子包主题：每个子包下的`src/theme`目录
+- 主题类型定义位于：
+  - 基础类型：`packages/shared/lib/types/theme.type.ts`
+  - 详细类型：`packages/shared/lib/theme/theme.type.ts`
+- 主题结构采用分层设计：
+  - `SharedTheme`接口定义了整体主题结构
+  - 主题包含`uiToken`、`basic`、`nav`、`components`等分类
+  - 组件主题通过类型如`BasicButtonTheme`、`TableTheme`等定义
+- light与dark主题使用相同的变量名，便于主题切换
+- 开发新组件时应参考现有主题变量，保持风格一致
+- 主题中包含了大量设计标准化的颜色、间距、阴影等变量，应优先使用这些变量
+
+## 浏览器兼容性
+
+- 本项目需要支持的最低 chrome 版本为 80, 需保证使用的 css 属性能够支持在 chrome 80 中有正常的表现.
+- 不允许使用flex:gap等不符合兼容性的 css 属性，推荐使用margin来替代
+
+## 公共StyleWrapper
+
+- 本项目存在一些公共样式组件，存放于 `packages/shared/lib/styleWrapper`
+- 主要包含两个文件：
+  - `element.ts`：提供通用UI元素样式，如`FilterButtonStyleWrapper`、`PageLayoutHasFixedHeaderStyleWrapper`等
+  - `nav.ts`：提供导航相关样式，如`SideMenuStyleWrapper`
+- 希望在某些情况下直接使用以下的公共StyleWrapper：
+  - `FilterButtonStyleWrapper`：用于过滤按钮样式
+  - `TableColumnWithIconStyleWrapper`：用于带图标的表格列
+  - `DrawerFormIconWrapper`：用于抽屉内表单的图标样式
+  - `FormListAddButtonWrapper`：用于FormList中的添加按钮
+  - `SideMenuStyleWrapper`：用于侧边导航菜单
+  - 等等
+
+## 样式示例
+
+参考[packages/base/src/page/Account/style.ts](mdc:packages/base/src/page/Account/style.ts)
+
+```typescript
+import { styled } from '@mui/material/styles';
+
+export const AccountContentTitleStyleWrapper = styled('div')`
+  padding: 60px 0 32px;
+  color: ${({ theme }) => theme.sharedTheme.uiToken.colorTextBase};
+  font-size: 24px;
+  font-weight: 500;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid
+    ${({ theme }) => theme.sharedTheme.uiToken.colorBorderSecondary};
+`;
+```

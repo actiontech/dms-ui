@@ -1,0 +1,40 @@
+---
+description: 
+globs: 
+alwaysApply: true
+---
+# UI组件库使用规则
+
+本项目的UI组件基于antd做了样式上的二次封装，并添加了一些自定义组件。所有这些组件都在`packages/shared/lib/components`目录中。
+
+## 组件使用原则
+
+在开发中选择使用组件时，应遵循以下优先级：
+
+1. 优先查看`@actiontech/shared`库中是否存在符合需求的组件
+2. 如果shared库中没有合适的组件，再使用antd提供的原始组件
+
+## 已封装的组件
+
+shared库中包含大量已封装的基础组件，如：
+
+- BasicButton - 按钮组件
+- BasicModal - 模态框组件
+- BasicInput - 输入框组件
+- BasicSelect - 选择器组件
+- BasicTable - 表格组件
+- 其他更多组件...
+
+这些组件在保持原antd组件API的基础上，增加了统一的样式和一些额外功能。
+
+## 示例
+
+```jsx
+// ✅ 推荐：使用封装的组件
+import { BasicButton } from '@actiontech/shared';
+
+// ❌ 不推荐：直接使用antd组件
+import { Button } from 'antd';
+```
+
+所有封装组件都从`@actiontech/shared`导出，因此可以直接从该库导入使用。
