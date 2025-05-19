@@ -1,12 +1,12 @@
 import { superRender } from '@actiontech/shared/lib/testUtil/superRender';
 import { mockUseCurrentUser } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentUser';
 import { mockUseUserInfo } from '@actiontech/shared/lib/testUtil/mockHook/mockUseUserInfo';
-import project from '../../../testUtils/mockApi/project';
+import project from '@actiontech/shared/lib/testUtil/mockApi/base/project';
 import ProjectList from '.';
 import { useDispatch } from 'react-redux';
 import { ModalName } from '../../../data/ModalName';
 import { act, cleanup, fireEvent, screen } from '@testing-library/react';
-import { mockProjectList } from '../../../testUtils/mockApi/project/data';
+import { mockProjectList } from '@actiontech/shared/lib/testUtil/mockApi/base/project/data';
 import { baseSuperRender } from '../../../testUtils/superRender';
 import EventEmitter from '../../../utils/EventEmitter';
 import EmitterKey from '../../../data/EmitterKey';

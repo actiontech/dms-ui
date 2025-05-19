@@ -1,6 +1,6 @@
 import PersonalizeSetting from '.';
-import dms from '../../../testUtils/mockApi/global';
-import system from '../../../testUtils/mockApi/system';
+import dms from '@actiontech/shared/lib/testUtil/mockApi/base/global';
+import system from '@actiontech/shared/lib/testUtil/mockApi/base/system';
 import { mockSystemConfig } from '../../../testUtils/mockHooks/mockSystemConfig';
 import { cleanup, act, screen, fireEvent } from '@testing-library/react';
 import { superRender } from '@actiontech/shared/lib/testUtil/superRender';

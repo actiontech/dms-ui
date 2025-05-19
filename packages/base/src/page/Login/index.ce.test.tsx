@@ -3,8 +3,8 @@
  */
 import { act, cleanup, fireEvent, screen } from '@testing-library/react';
 import { useDispatch } from 'react-redux';
-import dms from '../../testUtils/mockApi/global';
-import { UserInfo } from '../../testUtils/mockApi/global/data';
+import dms from '@actiontech/shared/lib/testUtil/mockApi/base/global';
+import { UserInfo } from '@actiontech/shared/lib/testUtil/mockApi/base/global/data';
 import { baseSuperRender } from '../../testUtils/superRender';
 
 import Login from '.';

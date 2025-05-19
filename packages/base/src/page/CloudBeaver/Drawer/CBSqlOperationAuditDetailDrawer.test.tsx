@@ -4,8 +4,8 @@ import { baseSuperRender } from '../../../testUtils/superRender';
 import { useDispatch, useSelector } from 'react-redux';
 import { getBySelector } from '@actiontech/shared/lib/testUtil/customQuery';
 import { ModalName } from '../../../data/ModalName';
-import rule_template from 'sqle/src/testUtils/mockApi/rule_template/index';
-import { listCBOperationLogsMockData } from '../../../testUtils/mockApi/cloudBeaver/data';
+import rule_template from '@actiontech/shared/lib/testUtil/mockApi/sqle/rule_template/index';
+import { listCBOperationLogsMockData } from '@actiontech/shared/lib/testUtil/mockApi/base/cloudBeaver/data';
 import { mockUseCurrentProject } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentProject';
 import { mockUseCurrentUser } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentUser';
 import {

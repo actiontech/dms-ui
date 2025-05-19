@@ -1,7 +1,7 @@
 import { useDispatch } from 'react-redux';
 import License from '.';
 import { ModalName } from '../../../data/ModalName';
-import system from '../../../testUtils/mockApi/system';
+import system from '@actiontech/shared/lib/testUtil/mockApi/base/system';
 import { cleanup, act, screen, fireEvent } from '@testing-library/react';
 import { superRender } from '@actiontech/shared/lib/testUtil/superRender';
 import { createSpySuccessResponse } from '@actiontech/shared/lib/testUtil/mockApi';

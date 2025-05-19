@@ -1,5 +1,5 @@
 import { mockUseCurrentUser } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentUser';
-import project from '../../testUtils/mockApi/project';
+import project from '@actiontech/shared/lib/testUtil/mockApi/base/project';
 import EventEmitter from '../../utils/EventEmitter';
 import { mockUseUserInfo } from '@actiontech/shared/lib/testUtil/mockHook/mockUseUserInfo';
 import { useDispatch, useSelector } from 'react-redux';

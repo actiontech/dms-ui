@@ -6,8 +6,8 @@ import {
   getAllBySelector
 } from '@actiontech/shared/lib/testUtil/customQuery';
 
-import dms from '../../../../testUtils/mockApi/global';
-import ruleTemplate from 'sqle/src/testUtils/mockApi/rule_template';
+import dms from '@actiontech/shared/lib/testUtil/mockApi/base/global';
+import ruleTemplate from '@actiontech/shared/lib/testUtil/mockApi/sqle/rule_template';
 import EmitterKey from '../../../../data/EmitterKey';
 import EventEmitter from '../../../../utils/EventEmitter';
 import { mockUseCurrentProject } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentProject';
@@ -18,10 +18,10 @@ import {
   createSpyFailResponse,
   createSpySuccessResponse
 } from '@actiontech/shared/lib/testUtil/mockApi';
-import rule_template from 'sqle/src/testUtils/mockApi/rule_template';
-import dbServices from '../../../../testUtils/mockApi/dbServices';
-import project from '../../../../testUtils/mockApi/project';
-import system from 'sqle/src/testUtils/mockApi/system';
+import rule_template from '@actiontech/shared/lib/testUtil/mockApi/sqle/rule_template';
+import dbServices from '@actiontech/shared/lib/testUtil/mockApi/base/dbServices';
+import project from '@actiontech/shared/lib/testUtil/mockApi/base/project';
+import system from '@actiontech/shared/lib/testUtil/mockApi/sqle/system';
 
 jest.mock('react-router-dom', () => {
   return {

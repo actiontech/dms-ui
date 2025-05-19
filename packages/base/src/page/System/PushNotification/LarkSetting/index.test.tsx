@@ -1,6 +1,6 @@
 import LarkSetting from '.';
 
-import system from '../../../../testUtils/mockApi/system';
+import system from '@actiontech/shared/lib/testUtil/mockApi/base/system';
 
 import { cleanup, fireEvent, act, screen } from '@testing-library/react';
 import { superRender } from '@actiontech/shared/lib/testUtil/superRender';

@@ -1,7 +1,7 @@
 import UpdateUser from '.';
 import { superRender } from '@actiontech/shared/lib/testUtil/superRender';
-import userCenter from '../../../../../testUtils/mockApi/userCenter';
-import { userList } from '../../../../../testUtils/mockApi/userCenter/data';
+import userCenter from '@actiontech/shared/lib/testUtil/mockApi/base/userCenter';
+import { userList } from '@actiontech/shared/lib/testUtil/mockApi/base/userCenter/data';
 import EventEmitter from '../../../../../utils/EventEmitter';
 import { screen, act, cleanup, fireEvent } from '@testing-library/react';
 import { useDispatch, useSelector } from 'react-redux';

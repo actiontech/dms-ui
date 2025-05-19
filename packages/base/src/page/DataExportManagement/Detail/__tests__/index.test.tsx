@@ -1,5 +1,5 @@
 import { useParams } from 'react-router-dom';
-import dataExport from '../../../../testUtils/mockApi/dataExport';
+import dataExport from '@actiontech/shared/lib/testUtil/mockApi/base/dataExport';
 import {
   mockDataExportDetailRedux,
   mockUseDataExportDetailReduxManage
@@ -7,7 +7,7 @@ import {
 import { baseSuperRender } from '../../../../testUtils/superRender';
 import WorkflowDetail from '..';
 import { act, fireEvent, screen } from '@testing-library/react';
-import { GetDataExportWorkflowResponseData } from '../../../../testUtils/mockApi/dataExport/data';
+import { GetDataExportWorkflowResponseData } from '@actiontech/shared/lib/testUtil/mockApi/base/dataExport/data';
 import {
   WorkflowRecordStatusEnum,
   WorkflowStepStateEnum

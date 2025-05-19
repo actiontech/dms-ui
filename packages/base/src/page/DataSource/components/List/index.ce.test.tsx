@@ -5,11 +5,11 @@
 import { cleanup, screen } from '@testing-library/react';
 import { useNavigate, useParams } from 'react-router-dom';
 import { baseSuperRender } from '../../../../testUtils/superRender';
-import dms from '../../../../testUtils/mockApi/global';
+import dms from '@actiontech/shared/lib/testUtil/mockApi/base/global';
 import { mockProjectInfo } from '@actiontech/shared/lib/testUtil/mockHook/data';
 import { SupportTheme, SystemRole } from '@actiontech/shared/lib/enum';
 import DataSourceList from '.';
-import dbServices from '../../../../testUtils/mockApi/dbServices';
+import dbServices from '@actiontech/shared/lib/testUtil/mockApi/base/dbServices';
 
 jest.mock('react-router-dom', () => {
   return {

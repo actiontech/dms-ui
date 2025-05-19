@@ -5,14 +5,14 @@ import {
   getAllBySelector,
   getBySelector
 } from '@actiontech/shared/lib/testUtil/customQuery';
-import dms from '../../../../testUtils/mockApi/global';
-import { DBServicesList } from '../../../../testUtils/mockApi/global/data';
+import dms from '@actiontech/shared/lib/testUtil/mockApi/base/global';
+import { DBServicesList } from '@actiontech/shared/lib/testUtil/mockApi/base/global/data';
 import { mockProjectInfo } from '@actiontech/shared/lib/testUtil/mockHook/data';
 import { SupportTheme, SystemRole } from '@actiontech/shared/lib/enum';
 import { createSpySuccessResponse } from '@actiontech/shared/lib/testUtil/mockApi';
 import DataSourceList from '.';
-import dbServices from '../../../../testUtils/mockApi/dbServices';
-import project from '../../../../testUtils/mockApi/project';
+import dbServices from '@actiontech/shared/lib/testUtil/mockApi/base/dbServices';
+import project from '@actiontech/shared/lib/testUtil/mockApi/base/project';
 
 jest.mock('react-router-dom', () => {
   return {

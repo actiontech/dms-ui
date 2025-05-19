@@ -1,7 +1,7 @@
 import { cleanup, renderHook, act } from '@testing-library/react';
 import useUserGroup from '.';
-import userCenter from '../../testUtils/mockApi/userCenter';
-import { userGroupList } from '../../testUtils/mockApi/userCenter/data';
+import userCenter from '@actiontech/shared/lib/testUtil/mockApi/base/userCenter';
+import { userGroupList } from '@actiontech/shared/lib/testUtil/mockApi/base/userCenter/data';
 import {
   createSpyErrorResponse,
   createSpyFailResponse

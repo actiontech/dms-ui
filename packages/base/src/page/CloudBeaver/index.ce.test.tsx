@@ -2,10 +2,10 @@
  * @test_version ce
  */
 import CloudBeaver from '.';
-import cloudBeaver from '../../testUtils/mockApi/cloudBeaver';
+import cloudBeaver from '@actiontech/shared/lib/testUtil/mockApi/base/cloudBeaver';
 import { act, cleanup, fireEvent, screen } from '@testing-library/react';
 import { createSpySuccessResponse } from '@actiontech/shared/lib/testUtil/mockApi';
-import { enableSqlQueryUrlData } from '../../testUtils/mockApi/cloudBeaver/data';
+import { enableSqlQueryUrlData } from '@actiontech/shared/lib/testUtil/mockApi/base/cloudBeaver/data';
 import { OPEN_CLOUD_BEAVER_URL_PARAM_NAME } from '@actiontech/shared/lib/data/routePaths';
 import { baseSuperRender } from '../../testUtils/superRender';
 

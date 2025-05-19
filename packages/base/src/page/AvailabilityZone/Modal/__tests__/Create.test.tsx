@@ -5,7 +5,7 @@ import CreateAvailabilityZoneModal from '../Create';
 import EventEmitter from '../../../../utils/EventEmitter';
 import EmitterKey from '../../../../data/EmitterKey';
 import { useDispatch, useSelector } from 'react-redux';
-import gateway from '../../../../testUtils/mockApi/gateway';
+import gateway from '@actiontech/shared/lib/testUtil/mockApi/base/gateway';
 import MockDate from 'mockdate';
 import dayjs from 'dayjs';
 

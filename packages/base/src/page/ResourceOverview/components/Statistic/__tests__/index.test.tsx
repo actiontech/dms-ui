@@ -1,6 +1,6 @@
 import { baseSuperRender } from '../../../../../testUtils/superRender';
 import ResourceOverviewStatistic from '../index';
-import resourceOverview from '../../../../../testUtils/mockApi/resourceOverview';
+import resourceOverview from '@actiontech/shared/lib/testUtil/mockApi/base/resourceOverview';
 import { cleanup, act } from '@testing-library/react';
 
 describe('base/page/ResourceOverview/Statictis', () => {
