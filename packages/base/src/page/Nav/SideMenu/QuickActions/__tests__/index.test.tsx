@@ -7,7 +7,7 @@ import {
   getBySelector,
   queryBySelector
 } from '@actiontech/shared/lib/testUtil/customQuery';
-import system from '../../../../../testUtils/mockApi/system';
+import system from '@actiontech/shared/lib/testUtil/mockApi/base/system';
 import { mockUsePermission } from '@actiontech/shared/lib/testUtil/mockHook/mockUsePermission';
 import { SystemRole } from '@actiontech/shared/lib/enum';
 import { mockCurrentUserReturn } from '@actiontech/shared/lib/testUtil/mockHook/data';

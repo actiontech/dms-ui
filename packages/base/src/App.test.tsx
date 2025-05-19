@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { baseSuperRender } from './testUtils/superRender';
 import App, { Wrapper } from './App';
 import { act, cleanup, screen } from '@testing-library/react';
-import mockDMSGlobalApi from './testUtils/mockApi/global';
+import mockDMSGlobalApi from '@actiontech/shared/lib/testUtil/mockApi/base/global';
 import { mockUseDbServiceDriver } from '@actiontech/shared/lib/testUtil/mockHook/mockUseDbServiceDriver';
 import { renderLocationDisplay } from '@actiontech/shared/lib/testUtil/LocationDisplay';
 import { mockUseCurrentUser } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentUser';
@@ -11,25 +11,25 @@ import { mockUsePermission } from '@actiontech/shared/lib/testUtil/mockHook/mock
 import { mockSystemConfig } from './testUtils/mockHooks/mockSystemConfig';
 import { ModalName } from './data/ModalName';
 import { mockSystemConfigData } from './testUtils/mockHooks/data';
-import { BasicInfoMockData } from './testUtils/mockApi/global/data';
+import { BasicInfoMockData } from '@actiontech/shared/lib/testUtil/mockApi/base/global/data';
 import { mockDBServiceDriverInfo } from '@actiontech/shared/lib/testUtil/mockHook/data';
 import {
   ignoreConsoleErrors,
   UtilsConsoleErrorStringsEnum
 } from '@actiontech/shared/lib/testUtil/common';
-import system from 'sqle/src/testUtils/mockApi/system';
-import baseSystem from './testUtils/mockApi/system';
+import system from '@actiontech/shared/lib/testUtil/mockApi/sqle/system';
+import baseSystem from '@actiontech/shared/lib/testUtil/mockApi/base/system';
 import { LocalStorageWrapper } from '@actiontech/shared';
 import { compressToBase64 } from 'lz-string';
 import { DMS_REDIRECT_KEY_PARAMS_NAME } from '@actiontech/shared/lib/data/routePaths';
 import { SystemRole } from '@actiontech/shared/lib/enum';
 import { AuthRouterConfig } from './router/router';
 import { cloneDeep } from 'lodash';
-import dmsSystem from './testUtils/mockApi/system';
+import dmsSystem from '@actiontech/shared/lib/testUtil/mockApi/base/system';
 import { mockUseRecentlySelectedZone } from './testUtils/mockHooks/mockUseRecentlySelectedZone';
 import { mockUseRecentlySelectedZoneData } from './testUtils/mockHooks/data';
-import gateway from './testUtils/mockApi/gateway';
-import project from './testUtils/mockApi/project';
+import gateway from '@actiontech/shared/lib/testUtil/mockApi/base/gateway';
+import project from '@actiontech/shared/lib/testUtil/mockApi/base/project';
 import EventEmitter from './utils/EventEmitter';
 import EmitterKey from './data/EmitterKey';
 

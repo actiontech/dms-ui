@@ -6,7 +6,7 @@ import {
   mockUseDataExportDetailReduxManage
 } from '../../../testUtils/mockUseDataExportDetailReduxManage';
 import { act, fireEvent, screen } from '@testing-library/react';
-import dataExport from '../../../../../../testUtils/mockApi/dataExport';
+import dataExport from '@actiontech/shared/lib/testUtil/mockApi/base/dataExport';
 import { mockProjectInfo } from '@actiontech/shared/lib/testUtil/mockHook/data';
 import eventEmitter from '../../../../../../utils/EventEmitter';
 import EmitterKey from '../../../../../../data/EmitterKey';

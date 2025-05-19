@@ -1,6 +1,6 @@
 import { baseSuperRender } from '../../../../../../../testUtils/superRender';
-import dbServices from '../../../../../../../testUtils/mockApi/dbServices';
-import instance from 'sqle/src/testUtils/mockApi/instance';
+import dbServices from '@actiontech/shared/lib/testUtil/mockApi/base/dbServices';
+import instance from '@actiontech/shared/lib/testUtil/mockApi/sqle/instance';
 import ExportSourceFormItem from '../ExportSourceFormItem';
 import {
   act,

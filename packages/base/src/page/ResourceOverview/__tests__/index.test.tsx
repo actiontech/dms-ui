@@ -1,14 +1,14 @@
 import { baseSuperRender } from '../../../testUtils/superRender';
 import ResourceOverview from '../index';
-import resourceOverview from '../../../testUtils/mockApi/resourceOverview';
+import resourceOverview from '@actiontech/shared/lib/testUtil/mockApi/base/resourceOverview';
 import { mockUseCurrentUser } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentUser';
 import { mockUseDbServiceDriver } from '@actiontech/shared/lib/testUtil/mockHook/mockUseDbServiceDriver';
 import { cleanup, act, fireEvent } from '@testing-library/react';
 import EmitterKey from '../../../data/EmitterKey';
 import EventEmitter from '../../../utils/EventEmitter';
 import { getBySelector } from '@actiontech/shared/lib/testUtil/customQuery';
-import project from '../../../testUtils/mockApi/project';
-import dbServices from '../../../testUtils/mockApi/dbServices';
+import project from '@actiontech/shared/lib/testUtil/mockApi/base/project';
+import dbServices from '@actiontech/shared/lib/testUtil/mockApi/base/dbServices';
 
 describe('base/page/ResourceOverview', () => {
   beforeEach(() => {

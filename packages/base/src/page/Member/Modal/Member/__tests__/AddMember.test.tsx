@@ -1,8 +1,8 @@
-import userCenter from '../../../../../testUtils/mockApi/userCenter';
+import userCenter from '@actiontech/shared/lib/testUtil/mockApi/base/userCenter';
 import {
   userList,
   roleList
-} from '../../../../../testUtils/mockApi/userCenter/data';
+} from '@actiontech/shared/lib/testUtil/mockApi/base/userCenter/data';
 import { superRender } from '@actiontech/shared/lib/testUtil/superRender';
 import { cleanup, fireEvent, act, screen } from '@testing-library/react';
 import { ModalName } from '../../../../../data/ModalName';
@@ -13,11 +13,11 @@ import { selectOptionByIndex } from '@actiontech/shared/lib/testUtil/customQuery
 import { queryBySelector } from '@actiontech/shared/lib/testUtil/customQuery';
 import { mockUseCurrentProject } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentProject';
 import { mockProjectInfo } from '@actiontech/shared/lib/testUtil/mockHook/data';
-import member from '../../../../../testUtils/mockApi/member';
+import member from '@actiontech/shared/lib/testUtil/mockApi/base/member';
 import { useDispatch, useSelector } from 'react-redux';
 import { mockUseDbServiceDriver } from '@actiontech/shared/lib/testUtil/mockHook/mockUseDbServiceDriver';
-import dbServices from '../../../../../testUtils/mockApi/dbServices';
-import { dbServices as dbServicesList } from '../../../../../testUtils/mockApi/dbServices/data';
+import dbServices from '@actiontech/shared/lib/testUtil/mockApi/base/dbServices';
+import { dbServices as dbServicesList } from '@actiontech/shared/lib/testUtil/mockApi/base/dbServices/data';
 import { ListMemberRoleWithOpRangeOpRangeTypeEnum } from '@actiontech/shared/lib/api/base/service/common.enum';
 
 jest.mock('react-redux', () => ({

@@ -2,7 +2,7 @@ import { act, cleanup, fireEvent, screen } from '@testing-library/react';
 import { useNavigate } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { baseSuperRender } from '../../testUtils/superRender';
-import dms from '../../testUtils/mockApi/global';
+import dms from '@actiontech/shared/lib/testUtil/mockApi/base/global';
 import { getBySelector } from '@actiontech/shared/lib/testUtil/customQuery';
 import { eventEmitter } from '@actiontech/shared/lib/utils/EventEmitter';
 import EmitterKey from '@actiontech/shared/lib/data/EmitterKey';

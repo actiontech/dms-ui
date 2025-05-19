@@ -1,8 +1,8 @@
 import { fireEvent } from '@testing-library/dom';
 import DataSourceManagement from '..';
 import { baseSuperRender } from '../../../testUtils/superRender';
-import dbServices from '../../../testUtils/mockApi/dbServices';
-import syncTaskList from '../../../testUtils/mockApi/syncTaskList';
+import dbServices from '@actiontech/shared/lib/testUtil/mockApi/base/dbServices';
+import syncTaskList from '@actiontech/shared/lib/testUtil/mockApi/base/syncTaskList';
 import { DataSourceManagerSegmentedKey } from '../index.type';
 import { useNavigate } from 'react-router-dom';
 import eventEmitter from '../../../utils/EventEmitter';

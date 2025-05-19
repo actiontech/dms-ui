@@ -7,9 +7,9 @@ import { useParams } from 'react-router-dom';
 import { act, renderHook } from '@testing-library/react';
 import useInitDataWithRequest from '../useInitDataWithRequest';
 import { mockProjectInfo } from '@actiontech/shared/lib/testUtil/mockHook/data';
-import dataExport from '../../../../../testUtils/mockApi/dataExport';
+import dataExport from '@actiontech/shared/lib/testUtil/mockApi/base/dataExport';
 import { createSpySuccessResponse } from '@actiontech/shared/lib/testUtil/mockApi';
-import { GetDataExportWorkflowResponseData } from '../../../../../testUtils/mockApi/dataExport/data';
+import { GetDataExportWorkflowResponseData } from '@actiontech/shared/lib/testUtil/mockApi/base/dataExport/data';
 import eventEmitter from '../../../../../utils/EventEmitter';
 import EmitterKey from '../../../../../data/EmitterKey';
 

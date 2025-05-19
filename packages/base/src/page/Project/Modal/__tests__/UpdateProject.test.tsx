@@ -1,12 +1,12 @@
 import { useDispatch, useSelector } from 'react-redux';
 import { ModalName } from '../../../../data/ModalName';
-import project from '../../../../testUtils/mockApi/project';
+import project from '@actiontech/shared/lib/testUtil/mockApi/base/project';
 import EventEmitter from '../../../../utils/EventEmitter';
 import { baseSuperRender } from '../../../../testUtils/superRender';
 import UpdateProject from '../UpdateProject';
 import { act, fireEvent, screen } from '@testing-library/react';
 import EmitterKey from '../../../../data/EmitterKey';
-import { mockProjectList } from '../../../../testUtils/mockApi/project/data';
+import { mockProjectList } from '@actiontech/shared/lib/testUtil/mockApi/base/project/data';
 import {
   getAllBySelector,
   getBySelector

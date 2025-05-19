@@ -8,13 +8,13 @@ import {
 } from '@testing-library/react';
 import { Select } from 'antd';
 import useTaskSource from '.';
-import syncTaskList from '../../testUtils/mockApi/syncTaskList';
+import syncTaskList from '@actiontech/shared/lib/testUtil/mockApi/base/syncTaskList';
 import {
   createSpyErrorResponse,
   createSpyFailResponse
 } from '@actiontech/shared/lib/testUtil/mockApi';
 import { superRenderHook } from '@actiontech/shared/lib/testUtil/superRender';
-import { syncTaskTipsMockData } from '../../testUtils/mockApi/syncTaskList/data';
+import { syncTaskTipsMockData } from '@actiontech/shared/lib/testUtil/mockApi/base/syncTaskList/data';
 
 describe('useTaskSource', () => {
   let requestSpy: jest.SpyInstance;

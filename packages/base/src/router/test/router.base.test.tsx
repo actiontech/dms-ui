@@ -5,7 +5,7 @@ import mockUseRoutes, { RenderRouterComponent } from './data';
 import { baseSuperRender } from '../../testUtils/superRender';
 import { mockProjectInfo } from '@actiontech/shared/lib/testUtil/mockHook/data';
 import { DataSourceManagerSegmentedKey } from '../../page/DataSourceManagement/index.type';
-import userCenter from '../../testUtils/mockApi/userCenter';
+import userCenter from '@actiontech/shared/lib/testUtil/mockApi/base/userCenter';
 import { mockUseRecentlySelectedZone } from '../../testUtils/mockHooks/mockUseRecentlySelectedZone';
 
 describe('base/router-base-ee', () => {

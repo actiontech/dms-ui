@@ -1,5 +1,5 @@
 import { act, cleanup } from '@testing-library/react';
-import mockDMSGlobalApi from '../../testUtils/mockApi/global';
+import mockDMSGlobalApi from '@actiontech/shared/lib/testUtil/mockApi/base/global';
 import useSessionUser from '.';
 import { superRenderHook } from '@actiontech/shared/lib/testUtil/superRender';
 import { useDispatch } from 'react-redux';

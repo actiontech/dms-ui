@@ -1,5 +1,5 @@
-import system from '../../../../../testUtils/mockApi/system';
-import { mockSMSConfigurationData } from '../../../../../testUtils/mockApi/system/data';
+import system from '@actiontech/shared/lib/testUtil/mockApi/base/system';
+import { mockSMSConfigurationData } from '@actiontech/shared/lib/testUtil/mockApi/base/system/data';
 import { cleanup, fireEvent, act, screen } from '@testing-library/react';
 import { superRender } from '@actiontech/shared/lib/testUtil/superRender';
 import { getBySelector } from '@actiontech/shared/lib/testUtil/customQuery';
