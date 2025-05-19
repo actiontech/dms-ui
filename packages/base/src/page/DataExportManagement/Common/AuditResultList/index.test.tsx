@@ -1,11 +1,11 @@
 import { act, fireEvent, screen } from '@testing-library/react';
 import AuditResultList from '.';
 import { baseSuperRender } from '../../../../testUtils/superRender';
-import dataExport from '../../../../testUtils/mockApi/dataExport';
+import dataExport from '@actiontech/shared/lib/testUtil/mockApi/base/dataExport';
 import {
   BatchGetDataExportTaskResponseData,
   ListDataExportTaskSQLsResponseData
-} from '../../../../testUtils/mockApi/dataExport/data';
+} from '@actiontech/shared/lib/testUtil/mockApi/base/dataExport/data';
 import { createSpySuccessResponse } from '@actiontech/shared/lib/testUtil/mockApi';
 import { GetDataExportTaskStatusEnum } from '@actiontech/shared/lib/api/base/service/common.enum';
 import {

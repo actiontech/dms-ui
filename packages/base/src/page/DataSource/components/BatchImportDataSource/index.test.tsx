@@ -1,5 +1,5 @@
-import project from '../../../../testUtils/mockApi/project';
-import { mockBatchImportDBCheckData } from '../../../../testUtils/mockApi/project/data';
+import project from '@actiontech/shared/lib/testUtil/mockApi/base/project';
+import { mockBatchImportDBCheckData } from '@actiontech/shared/lib/testUtil/mockApi/base/project/data';
 import { baseSuperRender } from '../../../../testUtils/superRender';
 import ProjectImport from '.';
 import { act, cleanup, fireEvent, screen } from '@testing-library/react';

@@ -7,12 +7,12 @@ import {
 } from '../../../testUtils/mockUseCreateDataExportReduxManage';
 import { act, cleanup, fireEvent, screen } from '@testing-library/react';
 import { ModalName } from '../../../../../../data/ModalName';
-import dataExport from '../../../../../../testUtils/mockApi/dataExport';
+import dataExport from '@actiontech/shared/lib/testUtil/mockApi/base/dataExport';
 import { mockProjectInfo } from '@actiontech/shared/lib/testUtil/mockHook/data';
 import {
   AddDataExportWorkflowResponseData,
   ListDataExportTaskSQLsResponseData
-} from '../../../../../../testUtils/mockApi/dataExport/data';
+} from '@actiontech/shared/lib/testUtil/mockApi/base/dataExport/data';
 import { CreateDataExportPageEnum } from '../../../../../../store/dataExport';
 import {
   createSpyFailResponse,

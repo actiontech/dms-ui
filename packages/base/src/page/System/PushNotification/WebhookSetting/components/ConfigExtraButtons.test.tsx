@@ -6,7 +6,7 @@ import { cleanup, fireEvent, act } from '@testing-library/react';
 import { superRender } from '@actiontech/shared/lib/testUtil/superRender';
 import { getAllBySelector } from '@actiontech/shared/lib/testUtil/customQuery';
 
-import system from '../../../../../testUtils/mockApi/system';
+import system from '@actiontech/shared/lib/testUtil/mockApi/base/system';
 import { createSpySuccessResponse } from '@actiontech/shared/lib/testUtil/mockApi';
 import { mockUseCurrentUser } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentUser';
 

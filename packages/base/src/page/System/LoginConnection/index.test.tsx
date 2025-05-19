@@ -1,4 +1,4 @@
-import system from '../../../testUtils/mockApi/system';
+import system from '@actiontech/shared/lib/testUtil/mockApi/base/system';
 import { cleanup, act, screen, fireEvent } from '@testing-library/react';
 import LoginConnection from '.';
 import { mockUseCurrentUser } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentUser';
@@ -7,7 +7,7 @@ import { getAllBySelector } from '@actiontech/shared/lib/testUtil/customQuery';
 import {
   LDAPConfig,
   oauthConfig
-} from '../../../testUtils/mockApi/system/data';
+} from '@actiontech/shared/lib/testUtil/mockApi/base/system/data';
 import { createSpySuccessResponse } from '@actiontech/shared/lib/testUtil/mockApi';
 
 describe('base/System/LoginConnection', () => {

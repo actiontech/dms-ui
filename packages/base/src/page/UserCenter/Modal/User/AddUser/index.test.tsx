@@ -1,6 +1,6 @@
 import AddUser from '.';
 import { superRender } from '@actiontech/shared/lib/testUtil/superRender';
-import userCenter from '../../../../../testUtils/mockApi/userCenter';
+import userCenter from '@actiontech/shared/lib/testUtil/mockApi/base/userCenter';
 import EventEmitter from '../../../../../utils/EventEmitter';
 import { screen, act, cleanup, fireEvent } from '@testing-library/react';
 import { useDispatch, useSelector } from 'react-redux';

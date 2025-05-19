@@ -1,7 +1,7 @@
 import BusinessField from '../index';
 import { baseSuperRender } from '../../../../../../testUtils/superRender';
-import { mockProjectList } from '../../../../../../testUtils/mockApi/project/data';
-import project from '../../../../../../testUtils/mockApi/project';
+import { mockProjectList } from '@actiontech/shared/lib/testUtil/mockApi/base/project/data';
+import project from '@actiontech/shared/lib/testUtil/mockApi/base/project';
 import { act, cleanup, fireEvent, screen } from '@testing-library/react';
 import {
   getBySelector,

@@ -3,12 +3,12 @@ import { useDispatch } from 'react-redux';
 import { useNavigate, useSearchParams } from 'react-router-dom';
 import MockDate from 'mockdate';
 import { baseSuperRender } from '../../testUtils/superRender';
-import dms from '../../testUtils/mockApi/global';
+import dms from '@actiontech/shared/lib/testUtil/mockApi/base/global';
 import {
   oauth2Tips,
   UserInfo,
   mockVerifyLoginData
-} from '../../testUtils/mockApi/global/data';
+} from '@actiontech/shared/lib/testUtil/mockApi/base/global/data';
 import { getBySelector } from '@actiontech/shared/lib/testUtil/customQuery';
 import { createSpySuccessResponse } from '@actiontech/shared/lib/testUtil/mockApi';
 import { LocalStorageWrapper } from '@actiontech/shared';
@@ -24,8 +24,8 @@ import {
   ignoreConsoleErrors,
   UtilsConsoleErrorStringsEnum
 } from '@actiontech/shared/lib/testUtil/common';
-import system from '../../testUtils/mockApi/system';
-import sms from '../../testUtils/mockApi/sms';
+import system from '@actiontech/shared/lib/testUtil/mockApi/base/system';
+import sms from '@actiontech/shared/lib/testUtil/mockApi/base/sms';
 
 jest.mock('react-router-dom', () => {
   return {

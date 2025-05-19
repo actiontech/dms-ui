@@ -7,8 +7,8 @@ import {
   screen
 } from '@testing-library/react';
 import useUserName from '.';
-import userCenter from '../../testUtils/mockApi/userCenter';
-import { userList } from '../../testUtils/mockApi/userCenter/data';
+import userCenter from '@actiontech/shared/lib/testUtil/mockApi/base/userCenter';
+import { userList } from '@actiontech/shared/lib/testUtil/mockApi/base/userCenter/data';
 import { Select } from 'antd';
 import {
   createSpyErrorResponse,

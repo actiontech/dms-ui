@@ -2,8 +2,8 @@ import { cleanup, screen, act, fireEvent } from '@testing-library/react';
 import { superRender } from '@actiontech/shared/lib/testUtil/superRender';
 import Member from '..';
 import { getBySelector } from '@actiontech/shared/lib/testUtil/customQuery';
-import member from '../../../testUtils/mockApi/member';
-import { memberList } from '../../../testUtils/mockApi/member/data';
+import member from '@actiontech/shared/lib/testUtil/mockApi/base/member';
+import { memberList } from '@actiontech/shared/lib/testUtil/mockApi/base/member/data';
 import EventEmitter from '../../../utils/EventEmitter';
 import EmitterKey from '../../../data/EmitterKey';
 import { mockUseCurrentProject } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentProject';
@@ -12,8 +12,8 @@ import {
   mockCurrentUserReturn,
   mockProjectInfo
 } from '@actiontech/shared/lib/testUtil/mockHook/data';
-import userCenter from '../../../testUtils/mockApi/userCenter';
-import dbServices from '../../../testUtils/mockApi/dbServices';
+import userCenter from '@actiontech/shared/lib/testUtil/mockApi/base/userCenter';
+import dbServices from '@actiontech/shared/lib/testUtil/mockApi/base/dbServices';
 import { SystemRole } from '@actiontech/shared/lib/enum';
 
 describe('base/Member', () => {

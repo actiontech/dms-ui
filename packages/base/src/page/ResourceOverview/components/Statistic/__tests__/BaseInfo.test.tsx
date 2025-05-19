@@ -1,6 +1,6 @@
 import { baseSuperRender } from '../../../../../testUtils/superRender';
 import ResourceOverviewBaseInfo from '../BaseInfo';
-import resourceOverview from '../../../../../testUtils/mockApi/resourceOverview';
+import resourceOverview from '@actiontech/shared/lib/testUtil/mockApi/base/resourceOverview';
 import { cleanup, act } from '@testing-library/react';
 import EmitterKey from '../../../../../data/EmitterKey';
 import EventEmitter from '../../../../../utils/EventEmitter';

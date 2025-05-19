@@ -6,8 +6,8 @@ import SystemEEPage from '.';
 import { cleanup, act, fireEvent } from '@testing-library/react';
 import { baseSuperRender } from '../../testUtils/superRender';
 
-import system from '../../testUtils/mockApi/system';
-import dms from '../../testUtils/mockApi/global';
+import system from '@actiontech/shared/lib/testUtil/mockApi/base/system';
+import dms from '@actiontech/shared/lib/testUtil/mockApi/base/global';
 
 import { DMS_DEFAULT_WEB_TITLE } from '@actiontech/shared/lib/data/common';
 import { getAllBySelector } from '@actiontech/shared/lib/testUtil/customQuery';

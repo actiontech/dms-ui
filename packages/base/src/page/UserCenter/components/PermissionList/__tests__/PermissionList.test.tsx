@@ -1,4 +1,4 @@
-import userCenter from '../../../../../testUtils/mockApi/userCenter';
+import userCenter from '@actiontech/shared/lib/testUtil/mockApi/base/userCenter';
 import { superRender } from '@actiontech/shared/lib/testUtil/superRender';
 import PermissionList from '../List';
 import { act, screen, cleanup, fireEvent } from '@testing-library/react';

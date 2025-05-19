@@ -3,7 +3,7 @@ import {
   mockDataExportDetailRedux,
   mockUseDataExportDetailReduxManage
 } from '../../../testUtils/mockUseDataExportDetailReduxManage';
-import dataExport from '../../../../../../testUtils/mockApi/dataExport';
+import dataExport from '@actiontech/shared/lib/testUtil/mockApi/base/dataExport';
 import { baseSuperRender } from '../../../../../../testUtils/superRender';
 import ExportTaskList from '.';
 import { act } from '@testing-library/react';

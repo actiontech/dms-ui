@@ -1,11 +1,11 @@
-import sms from '../../../../testUtils/mockApi/sms';
+import sms from '@actiontech/shared/lib/testUtil/mockApi/base/sms';
 import { cleanup, fireEvent, act, screen } from '@testing-library/react';
 import { getBySelector } from '@actiontech/shared/lib/testUtil/customQuery';
 import PersonalSMS from '..';
 import { createSpySuccessResponse } from '@actiontech/shared/lib/testUtil/mockApi';
 import { mockUseCurrentUser } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentUser';
 import { mockUserInfo } from '@actiontech/shared/lib/testUtil/mockHook/data';
-import account from '../../../../testUtils/mockApi/account';
+import account from '@actiontech/shared/lib/testUtil/mockApi/base/account';
 import { baseSuperRender } from '../../../../testUtils/superRender';
 
 describe('base/System/GlobalSetting/PersonalSMS', () => {

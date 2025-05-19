@@ -1,8 +1,8 @@
-import userCenter from '../../../../testUtils/mockApi/userCenter';
+import userCenter from '@actiontech/shared/lib/testUtil/mockApi/base/userCenter';
 import { superRender } from '@actiontech/shared/lib/testUtil/superRender';
 import { cleanup, act, fireEvent, screen } from '@testing-library/react';
 import { mockUseDbServiceDriver } from '@actiontech/shared/lib/testUtil/mockHook/mockUseDbServiceDriver';
-import dbServices from '../../../../testUtils/mockApi/dbServices';
+import dbServices from '@actiontech/shared/lib/testUtil/mockApi/base/dbServices';
 import RoleSelector from '../RoleSelector';
 import { mockProjectInfo } from '@actiontech/shared/lib/testUtil/mockHook/data';
 import { Form } from 'antd';

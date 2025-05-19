@@ -1,5 +1,5 @@
-import project from '../../../testUtils/mockApi/project';
-import { mockBusinessTagsData } from '../../../testUtils/mockApi/project/data';
+import project from '@actiontech/shared/lib/testUtil/mockApi/base/project';
+import { mockBusinessTagsData } from '@actiontech/shared/lib/testUtil/mockApi/base/project/data';
 import { superRenderHook } from '@actiontech/shared/lib/testUtil/superRender';
 import useBusinessTag from '..';
 import { act, cleanup } from '@testing-library/react';

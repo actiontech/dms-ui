@@ -1,7 +1,7 @@
 import useVersionInfo from './useVersionInfo';
 
 import { act, cleanup, renderHook } from '@testing-library/react';
-import dms from '../../../../../testUtils/mockApi/global';
+import dms from '@actiontech/shared/lib/testUtil/mockApi/base/global';
 import { createSpySuccessResponse } from '@actiontech/shared/lib/testUtil/mockApi';
 
 describe('base/page/Nav/SideMenu/useVersionInfo', () => {

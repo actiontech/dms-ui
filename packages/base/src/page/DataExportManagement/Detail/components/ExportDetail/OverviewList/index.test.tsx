@@ -8,7 +8,7 @@ import { baseSuperRender } from '../../../../../../testUtils/superRender';
 import OverviewList from '.';
 import { act, fireEvent, screen } from '@testing-library/react';
 import { getAllBySelector } from '@actiontech/shared/lib/testUtil/customQuery';
-import dataExport from '../../../../../../testUtils/mockApi/dataExport';
+import dataExport from '@actiontech/shared/lib/testUtil/mockApi/base/dataExport';
 import { mockProjectInfo } from '@actiontech/shared/lib/testUtil/mockHook/data';
 import MockDate from 'mockdate';
 

@@ -1,5 +1,5 @@
 import { useDispatch } from 'react-redux';
-import account from '../../testUtils/mockApi/account';
+import account from '@actiontech/shared/lib/testUtil/mockApi/base/account';
 import Account from '.';
 import { mockUseUserInfo } from '@actiontech/shared/lib/testUtil/mockHook/mockUseUserInfo';
 import { mockUserInfo } from '@actiontech/shared/lib/testUtil/mockHook/data';

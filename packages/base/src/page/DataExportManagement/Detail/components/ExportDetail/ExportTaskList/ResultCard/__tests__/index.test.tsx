@@ -1,7 +1,7 @@
 import { fireEvent, screen } from '@testing-library/react';
 import ExportResultCard from '..';
 import { baseSuperRender } from '../../../../../../../../testUtils/superRender';
-import { ListDataExportTaskSQLsResponseData } from '../../../../../../../../testUtils/mockApi/dataExport/data';
+import { ListDataExportTaskSQLsResponseData } from '@actiontech/shared/lib/testUtil/mockApi/base/dataExport/data';
 import { mockDataExportDetailRedux } from '../../../../../testUtils/mockUseDataExportDetailReduxManage';
 import { Copy } from '@actiontech/shared';
 

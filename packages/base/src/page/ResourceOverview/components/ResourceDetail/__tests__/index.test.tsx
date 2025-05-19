@@ -1,6 +1,6 @@
 import ResourceDetail from '../index';
 import { baseSuperRender } from '../../../../../testUtils/superRender';
-import resourceOverview from '../../../../../testUtils/mockApi/resourceOverview';
+import resourceOverview from '@actiontech/shared/lib/testUtil/mockApi/base/resourceOverview';
 import { mockUseCurrentUser } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentUser';
 import { mockUseDbServiceDriver } from '@actiontech/shared/lib/testUtil/mockHook/mockUseDbServiceDriver';
 import { cleanup, act, fireEvent, screen } from '@testing-library/react';
@@ -10,8 +10,8 @@ import {
   getAllBySelector,
   getBySelector
 } from '@actiontech/shared/lib/testUtil/customQuery';
-import project from '../../../../../testUtils/mockApi/project';
-import dbServices from '../../../../../testUtils/mockApi/dbServices';
+import project from '@actiontech/shared/lib/testUtil/mockApi/base/project';
+import dbServices from '@actiontech/shared/lib/testUtil/mockApi/base/dbServices';
 import { useNavigate } from 'react-router-dom';
 
 jest.mock('react-router-dom', () => ({

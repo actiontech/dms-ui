@@ -4,7 +4,7 @@ import useCheckTaskAuditRuleExceptionStatus from '../useCheckTaskAuditRuleExcept
 import {
   AuditTaskSQLsMockData,
   AuditTaskSQLsMockDataWithExceptionRule
-} from 'sqle/src/testUtils/mockApi/task/data';
+} from '@actiontech/shared/lib/testUtil/mockApi/sqle/task/data';
 
 describe('useCheckTaskAuditRuleExceptionStatus', () => {
   it('should initialize with no exception audit rules', () => {

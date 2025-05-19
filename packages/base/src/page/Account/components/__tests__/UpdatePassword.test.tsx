@@ -1,6 +1,6 @@
 import UpdatePassword from '../UpdatePassword';
 import { useDispatch } from 'react-redux';
-import account from '../../../../testUtils/mockApi/account';
+import account from '@actiontech/shared/lib/testUtil/mockApi/base/account';
 import { act, fireEvent, screen } from '@testing-library/react';
 import { baseSuperRender } from '../../../../testUtils/superRender';
 

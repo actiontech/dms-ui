@@ -1,5 +1,5 @@
-import userCenter from '../../../../../testUtils/mockApi/userCenter';
-import { roleList } from '../../../../../testUtils/mockApi/userCenter/data';
+import userCenter from '@actiontech/shared/lib/testUtil/mockApi/base/userCenter';
+import { roleList } from '@actiontech/shared/lib/testUtil/mockApi/base/userCenter/data';
 import { superRender } from '@actiontech/shared/lib/testUtil/superRender';
 import { act, screen, cleanup, fireEvent } from '@testing-library/react';
 import { queryBySelector } from '@actiontech/shared/lib/testUtil/customQuery';

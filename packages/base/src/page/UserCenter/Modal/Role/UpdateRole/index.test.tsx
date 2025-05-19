@@ -1,4 +1,4 @@
-import userCenter from '../../../../../testUtils/mockApi/userCenter';
+import userCenter from '@actiontech/shared/lib/testUtil/mockApi/base/userCenter';
 import { superRender } from '@actiontech/shared/lib/testUtil/superRender';
 import { cleanup, fireEvent, act, screen } from '@testing-library/react';
 import { useDispatch, useSelector } from 'react-redux';

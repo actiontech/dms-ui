@@ -1,6 +1,6 @@
-import userCenter from '../../../../testUtils/mockApi/userCenter';
-import dbServices from '../../../../testUtils/mockApi/dbServices';
-import dataExport from '../../../../testUtils/mockApi/dataExport';
+import userCenter from '@actiontech/shared/lib/testUtil/mockApi/base/userCenter';
+import dbServices from '@actiontech/shared/lib/testUtil/mockApi/base/dbServices';
+import dataExport from '@actiontech/shared/lib/testUtil/mockApi/base/dataExport';
 import { baseSuperRender } from '../../../../testUtils/superRender';
 import ExportWorkflowList from '..';
 import { mockUseCurrentProject } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentProject';
@@ -15,7 +15,7 @@ import {
   getAllBySelector,
   getBySelector
 } from '@actiontech/shared/lib/testUtil/customQuery';
-import { DataExportWorkflowList } from '../../../../testUtils/mockApi/dataExport/data';
+import { DataExportWorkflowList } from '@actiontech/shared/lib/testUtil/mockApi/base/dataExport/data';
 import { SystemRole } from '@actiontech/shared/lib/enum';
 
 jest.mock('react-router-dom', () => {

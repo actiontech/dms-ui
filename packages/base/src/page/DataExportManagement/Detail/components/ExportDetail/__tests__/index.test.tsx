@@ -1,7 +1,7 @@
 import { act, fireEvent, screen, waitFor } from '@testing-library/react';
 import ExportDetail from '..';
 import { baseSuperRender } from '../../../../../../testUtils/superRender';
-import dataExport from '../../../../../../testUtils/mockApi/dataExport';
+import dataExport from '@actiontech/shared/lib/testUtil/mockApi/base/dataExport';
 import {
   mockDataExportDetailRedux,
   mockUseDataExportDetailReduxManage

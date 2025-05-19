@@ -8,7 +8,7 @@ import { baseSuperRender } from '../../../../testUtils/superRender';
 import { mockSystemConfig } from '../../../../testUtils/mockHooks/mockSystemConfig';
 import CESideMenu from '../index.ce';
 import { act } from '@testing-library/react';
-import system from '../../../../testUtils/mockApi/system';
+import system from '@actiontech/shared/lib/testUtil/mockApi/base/system';
 
 describe('test base/Nav/SideMenu/index.ce', () => {
   let getSystemModuleRedDotsSpy: jest.SpyInstance;

@@ -2,7 +2,7 @@ import { superRender } from '@actiontech/shared/lib/testUtil/superRender';
 import UserCenter from '../index';
 import { screen, cleanup, fireEvent, act } from '@testing-library/react';
 import { getBySelector } from '@actiontech/shared/lib/testUtil/customQuery';
-import userCenter from '../../../testUtils/mockApi/userCenter';
+import userCenter from '@actiontech/shared/lib/testUtil/mockApi/base/userCenter';
 import { useDispatch } from 'react-redux';
 import { ModalName } from '../../../data/ModalName';
 import { ListOpPermissionsFilterByTargetEnum } from '@actiontech/shared/lib/api/base/service/OpPermission/index.enum';

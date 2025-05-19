@@ -20,7 +20,7 @@ import { getBySelector } from '@actiontech/shared/lib/testUtil/customQuery';
 import { ModalName } from '../../../../../../data/ModalName';
 import MockDate from 'mockdate';
 import dayjs from 'dayjs';
-import dbServices from '../../../../../../testUtils/mockApi/dbServices';
+import dbServices from '@actiontech/shared/lib/testUtil/mockApi/base/dbServices';
 
 describe('test base/DataExport/Create/UpdateInfoDrawer', () => {
   const customRender = (

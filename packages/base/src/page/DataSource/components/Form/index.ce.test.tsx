@@ -4,11 +4,11 @@
 import { baseSuperRender } from '../../../../testUtils/superRender';
 import { cleanup, screen, act } from '@testing-library/react';
 import { superRenderHook } from '@actiontech/shared/lib/testUtil/superRender';
-import project from '../../../../testUtils/mockApi/project';
+import project from '@actiontech/shared/lib/testUtil/mockApi/base/project';
 import { Form } from 'antd';
 import { DataSourceFormField } from './index.type';
-import dms from '../../../../testUtils/mockApi/global';
-import ruleTemplate from 'sqle/src/testUtils/mockApi/rule_template';
+import dms from '@actiontech/shared/lib/testUtil/mockApi/base/global';
+import ruleTemplate from '@actiontech/shared/lib/testUtil/mockApi/sqle/rule_template';
 import { IListDBServiceV2 } from '@actiontech/shared/lib/api/base/service/common';
 import DataSourceForm from '.';
 import { mockUseCurrentProject } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentProject';

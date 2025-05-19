@@ -3,7 +3,7 @@ import { act, screen, cleanup } from '@testing-library/react';
 import { RenderRouterComponent } from './data';
 import { baseSuperRender } from '../../testUtils/superRender';
 import { mockProjectInfo } from '@actiontech/shared/lib/testUtil/mockHook/data';
-import userCenter from '../../testUtils/mockApi/userCenter';
+import userCenter from '@actiontech/shared/lib/testUtil/mockApi/base/userCenter';
 import { mockUseRecentlySelectedZone } from '../../testUtils/mockHooks/mockUseRecentlySelectedZone';
 
 describe('base/router-sqle-ee', () => {

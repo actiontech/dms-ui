@@ -15,7 +15,7 @@ import {
   UtilsConsoleErrorStringsEnum
 } from '@actiontech/shared/lib/testUtil/common';
 import { CreateDataExportPageEnum } from '../../../../../../store/dataExport';
-import dbServices from '../../../../../../testUtils/mockApi/dbServices';
+import dbServices from '@actiontech/shared/lib/testUtil/mockApi/base/dbServices';
 
 describe('test base/DataExport/Create/CreateExportTask', () => {
   ignoreConsoleErrors([

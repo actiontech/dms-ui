@@ -7,8 +7,8 @@ import {
 } from '@testing-library/react';
 import useDbService from '.';
 import { Select } from 'antd';
-import dbServices from '../../testUtils/mockApi/dbServices';
-import { dbServicesTips } from '../../testUtils/mockApi/dbServices/data';
+import dbServices from '@actiontech/shared/lib/testUtil/mockApi/base/dbServices';
+import { dbServicesTips } from '@actiontech/shared/lib/testUtil/mockApi/base/dbServices/data';
 import {
   createSpyErrorResponse,
   createSpyFailResponse

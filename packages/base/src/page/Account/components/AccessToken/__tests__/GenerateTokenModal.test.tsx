@@ -1,6 +1,6 @@
 import { act, cleanup, fireEvent, screen } from '@testing-library/react';
 import { baseSuperRender } from '../../../../../testUtils/superRender';
-import account from '../../../../../testUtils/mockApi/account';
+import account from '@actiontech/shared/lib/testUtil/mockApi/base/account';
 import GenerateTokenModal from '../GenerateTokenModal';
 import { getBySelector } from '@actiontech/shared/lib/testUtil/customQuery';
 

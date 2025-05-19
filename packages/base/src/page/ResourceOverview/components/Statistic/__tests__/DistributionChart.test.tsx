@@ -1,5 +1,5 @@
 import ResourceOverviewDistributionChart from '../DistributionChart';
-import resourceOverview from '../../../../../testUtils/mockApi/resourceOverview';
+import resourceOverview from '@actiontech/shared/lib/testUtil/mockApi/base/resourceOverview';
 import { cleanup, act, screen, fireEvent } from '@testing-library/react';
 import { baseSuperRender } from '../../../../../testUtils/superRender';
 import EmitterKey from '../../../../../data/EmitterKey';

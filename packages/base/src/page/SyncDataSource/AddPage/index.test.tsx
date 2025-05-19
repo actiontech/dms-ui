@@ -4,8 +4,8 @@ import {
   getAllBySelector,
   getBySelector
 } from '@actiontech/shared/lib/testUtil/customQuery';
-import syncTaskList from '../../../testUtils/mockApi/syncTaskList';
-import ruleTemplate from 'sqle/src/testUtils/mockApi/rule_template';
+import syncTaskList from '@actiontech/shared/lib/testUtil/mockApi/base/syncTaskList';
+import ruleTemplate from '@actiontech/shared/lib/testUtil/mockApi/sqle/rule_template';
 import { mockUseCurrentProject } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentProject';
 import EmitterKey from '../../../data/EmitterKey';
 import EventEmitter from '../../../utils/EventEmitter';

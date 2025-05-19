@@ -1,7 +1,7 @@
 import UserPhone from '../UserPhone';
 import { act, fireEvent } from '@testing-library/react';
 import { getBySelector } from '@actiontech/shared/lib/testUtil/customQuery';
-import account from '../../../../testUtils/mockApi/account';
+import account from '@actiontech/shared/lib/testUtil/mockApi/base/account';
 import { baseSuperRender } from '../../../../testUtils/superRender';
 
 describe('test base/page/Account/UserPhone', () => {
