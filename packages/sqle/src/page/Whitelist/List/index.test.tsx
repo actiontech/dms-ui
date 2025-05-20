@@ -1,8 +1,8 @@
 import { screen, cleanup, act, fireEvent } from '@testing-library/react';
 import WhitelistList from '.';
 import { superRender } from '@actiontech/shared/lib/testUtil/superRender';
-import auditWhiteList from '../../../testUtils/mockApi/auditWhiteList';
-import { auditWhiteListMockData } from '../../../testUtils/mockApi/auditWhiteList/data';
+import auditWhiteList from '@actiontech/shared/lib/testUtil/mockApi/sqle/auditWhiteList';
+import { auditWhiteListMockData } from '@actiontech/shared/lib/testUtil/mockApi/sqle/auditWhiteList/data';
 import { getBySelector } from '@actiontech/shared/lib/testUtil/customQuery';
 import { useSelector, useDispatch } from 'react-redux';
 import { ModalName } from '../../../data/ModalName';

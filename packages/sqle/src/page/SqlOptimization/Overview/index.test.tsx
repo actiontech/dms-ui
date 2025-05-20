@@ -4,11 +4,11 @@ import { sqleSuperRender } from '../../../testUtils/superRender';
 import { mockUseCurrentProject } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentProject';
 import { mockUseCurrentUser } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentUser';
 import { mockUseDbServiceDriver } from '@actiontech/shared/lib/testUtil/mockHook/mockUseDbServiceDriver';
-import sqlOptimization from '../../../testUtils/mockApi/sqlOptimization';
+import sqlOptimization from '@actiontech/shared/lib/testUtil/mockApi/sqle/sqlOptimization';
 import {
   optimizationRecordSqlMockData,
   optimizationRecordMockData
-} from '../../../testUtils/mockApi/sqlOptimization/data';
+} from '@actiontech/shared/lib/testUtil/mockApi/sqle/sqlOptimization/data';
 import { mockProjectInfo } from '@actiontech/shared/lib/testUtil/mockHook/data';
 import { useNavigate, useParams } from 'react-router-dom';
 import { createSpySuccessResponse } from '@actiontech/shared/lib/testUtil/mockApi';

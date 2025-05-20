@@ -4,7 +4,7 @@ import {
   useParams,
   useSearchParams
 } from 'react-router-dom';
-import instanceAuditPlan from '../../../../testUtils/mockApi/instanceAuditPlan';
+import instanceAuditPlan from '@actiontech/shared/lib/testUtil/mockApi/sqle/instanceAuditPlan';
 import { sqleSuperRender } from '../../../../testUtils/superRender';
 import ConfDetail from '..';
 import { act, cleanup, fireEvent } from '@testing-library/react';
@@ -14,7 +14,7 @@ import {
   mockProjectInfo,
   mockUseUserOperationPermissionData
 } from '@actiontech/shared/lib/testUtil/mockHook/data';
-import { mockAuditPlanDetailData } from '../../../../testUtils/mockApi/instanceAuditPlan/data';
+import { mockAuditPlanDetailData } from '@actiontech/shared/lib/testUtil/mockApi/sqle/instanceAuditPlan/data';
 import { createSpyErrorResponse } from '@actiontech/shared/lib/testUtil/mockApi';
 import { getBySelector } from '@actiontech/shared/lib/testUtil/customQuery';
 import eventEmitter from '../../../../utils/EventEmitter';

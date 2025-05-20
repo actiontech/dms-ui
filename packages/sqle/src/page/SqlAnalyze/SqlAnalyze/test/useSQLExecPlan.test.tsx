@@ -3,7 +3,7 @@ import { sqleSuperRenderHook } from '../../../../testUtils/superRender';
 
 import useSQLExecPlan from '../useSQLExecPlan';
 import { sqlExecPlans } from '../../__testData__';
-import { mockSqlManageSqlAnalysisChartData } from '../../../../testUtils/mockApi/sqlManage/data';
+import { mockSqlManageSqlAnalysisChartData } from '@actiontech/shared/lib/testUtil/mockApi/sqle/sqlManage/data';
 import { superRender } from '@actiontech/shared/lib/testUtil/superRender';
 import MockDate from 'mockdate';
 import dayjs from 'dayjs';

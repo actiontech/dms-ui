@@ -3,7 +3,7 @@ import TaskDetail, { ITaskDetail } from '.';
 import { act, cleanup, fireEvent, screen } from '@testing-library/react';
 import { mockUseCurrentProject } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentProject';
 import { mockUseCurrentUser } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentUser';
-import { statisticAuditPlanData } from '../../../../../../testUtils/mockApi/projectOverview/data';
+import { statisticAuditPlanData } from '@actiontech/shared/lib/testUtil/mockApi/sqle/projectOverview/data';
 import { PieConfig } from '@ant-design/plots';
 
 jest.mock('@ant-design/plots', () => {

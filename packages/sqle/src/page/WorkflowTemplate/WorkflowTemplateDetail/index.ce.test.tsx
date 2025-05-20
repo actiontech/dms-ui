@@ -5,10 +5,10 @@
 import { sqleSuperRender } from '../../../testUtils/superRender';
 import WorkflowTemplateDetail from '.';
 import { act, cleanup, screen } from '@testing-library/react';
-import workflowTemplate from '../../../testUtils/mockApi/workflowTemplate';
+import workflowTemplate from '@actiontech/shared/lib/testUtil/mockApi/sqle/workflowTemplate';
 import { mockUseCurrentProject } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentProject';
 import { mockUseCurrentUser } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentUser';
-import user from '../../../testUtils/mockApi/user';
+import user from '@actiontech/shared/lib/testUtil/mockApi/sqle/user';
 
 describe('page/WorkflowTemplate CE', () => {
   beforeEach(() => {

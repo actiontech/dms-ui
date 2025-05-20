@@ -5,7 +5,7 @@ import {
 } from '../../../../testUtils/superRender';
 import MockDate from 'mockdate';
 import dayjs from 'dayjs';
-import sqlOptimization from '../../../../testUtils/mockApi/sqlOptimization';
+import sqlOptimization from '@actiontech/shared/lib/testUtil/mockApi/sqle/sqlOptimization';
 import {
   ignoreConsoleErrors,
   UtilsConsoleErrorStringsEnum

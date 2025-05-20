@@ -1,5 +1,5 @@
 import PipelineDetailModal from '../';
-import pipeline from '../../../../../testUtils/mockApi/pipeline';
+import pipeline from '@actiontech/shared/lib/testUtil/mockApi/sqle/pipeline';
 import { sqleSuperRender } from '../../../../../testUtils/superRender';
 import { useDispatch } from 'react-redux';
 import { mockUseCurrentProject } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentProject';

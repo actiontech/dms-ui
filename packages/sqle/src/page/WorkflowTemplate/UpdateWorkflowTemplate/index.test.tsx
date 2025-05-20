@@ -1,13 +1,13 @@
 import { sqleSuperRender } from '../../../testUtils/superRender';
 import UpdateWorkflowTemplate from '.';
-import { workflowTemplateData } from '../../../testUtils/mockApi/workflowTemplate/data';
+import { workflowTemplateData } from '@actiontech/shared/lib/testUtil/mockApi/sqle/workflowTemplate/data';
 import { act, fireEvent, screen, cleanup } from '@testing-library/react';
 import {
   getAllBySelector,
   getBySelector
 } from '@actiontech/shared/lib/testUtil/customQuery';
 import { mockUseCurrentProject } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentProject';
-import workflowTemplate from '../../../testUtils/mockApi/workflowTemplate';
+import workflowTemplate from '@actiontech/shared/lib/testUtil/mockApi/sqle/workflowTemplate';
 import { mockProjectInfo } from '@actiontech/shared/lib/testUtil/mockHook/data';
 import { UpdateWorkflowTemplateReqV1AllowSubmitWhenLessAuditLevelEnum } from '@actiontech/shared/lib/api/sqle/service/common.enum';
 import { useParams } from 'react-router-dom';
@@ -19,7 +19,7 @@ import {
   ignoreConsoleErrors,
   UtilsConsoleErrorStringsEnum
 } from '@actiontech/shared/lib/testUtil/common';
-import user from '../../../testUtils/mockApi/user';
+import user from '@actiontech/shared/lib/testUtil/mockApi/sqle/user';
 
 jest.mock('react-router-dom', () => ({
   ...jest.requireActual('react-router-dom'),

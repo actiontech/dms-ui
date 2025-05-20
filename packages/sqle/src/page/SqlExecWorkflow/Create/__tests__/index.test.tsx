@@ -11,12 +11,12 @@ import { mockProjectInfo } from '@actiontech/shared/lib/testUtil/mockHook/data';
 import { sqleSuperRender } from '../../../../testUtils/superRender';
 import CreateSqlExecWorkflow from '..';
 import { mockDatabaseType } from '../../../../testUtils/mockHooks/mockDatabaseType';
-import execWorkflow from '../../../../testUtils/mockApi/execWorkflow';
-import instance from '../../../../testUtils/mockApi/instance';
-import task from '../../../../testUtils/mockApi/task';
-import system from '../../../../testUtils/mockApi/system';
+import execWorkflow from '@actiontech/shared/lib/testUtil/mockApi/sqle/execWorkflow';
+import instance from '@actiontech/shared/lib/testUtil/mockApi/sqle/instance';
+import task from '@actiontech/shared/lib/testUtil/mockApi/sqle/task';
+import system from '@actiontech/shared/lib/testUtil/mockApi/sqle/system';
 import { getInstanceTipListV1FunctionalModuleEnum } from '@actiontech/shared/lib/api/sqle/service/instance/index.enum';
-import { instanceTipsMockData } from '../../../../testUtils/mockApi/instance/data';
+import { instanceTipsMockData } from '@actiontech/shared/lib/testUtil/mockApi/sqle/instance/data';
 import { createSpySuccessResponse } from '@actiontech/shared/lib/testUtil/mockApi';
 import {
   UtilsConsoleErrorStringsEnum,
@@ -30,7 +30,7 @@ import {
   CreateAuditTasksGroupReqV1ExecModeEnum
 } from '@actiontech/shared/lib/api/sqle/service/common.enum';
 import { ModalName } from '../../../../data/ModalName';
-import { AuditTaskResData } from '../../../../testUtils/mockApi/execWorkflow/data';
+import { AuditTaskResData } from '@actiontech/shared/lib/testUtil/mockApi/sqle/execWorkflow/data';
 
 jest.mock('react-redux', () => ({
   ...jest.requireActual('react-redux'),

@@ -1,6 +1,6 @@
 import { sqleSuperRender } from '../../../../../testUtils/superRender';
 import StepInfo from '.';
-import { workflowTemplateData } from '../../../../../testUtils/mockApi/workflowTemplate/data';
+import { workflowTemplateData } from '@actiontech/shared/lib/testUtil/mockApi/sqle/workflowTemplate/data';
 import { act, fireEvent, screen } from '@testing-library/react';
 import {
   getAllBySelector,
@@ -9,7 +9,7 @@ import {
 import { IUpdateWorkflowStepInfoProps } from '../../../components/StepCard/index.type';
 import { WorkflowTemplateDetailResV1AllowSubmitWhenLessAuditLevelEnum } from '@actiontech/shared/lib/api/sqle/service/common.enum';
 import { mockUseCurrentUser } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentUser';
-import { userTipListData } from '../../../../../testUtils/mockApi/user/data';
+import { userTipListData } from '@actiontech/shared/lib/testUtil/mockApi/sqle/user/data';
 
 describe('page/WorkflowTemplate/StepInfo', () => {
   beforeEach(() => {

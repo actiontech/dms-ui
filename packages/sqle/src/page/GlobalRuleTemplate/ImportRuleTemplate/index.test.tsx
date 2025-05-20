@@ -11,12 +11,12 @@ import {
   getBySelector,
   selectOptionByIndex
 } from '@actiontech/shared/lib/testUtil/customQuery';
-import rule_template from '../../../testUtils/mockApi/rule_template';
+import rule_template from '@actiontech/shared/lib/testUtil/mockApi/sqle/rule_template';
 import {
   ruleType,
   ruleListData,
   importRuleTemplateMockData
-} from '../../../testUtils/mockApi/rule_template/data';
+} from '@actiontech/shared/lib/testUtil/mockApi/sqle/rule_template/data';
 import configuration from '@actiontech/shared/lib/api/sqle/service/configuration';
 import { createSpySuccessResponse } from '@actiontech/shared/lib/testUtil/mockApi';
 import { mockUsePermission } from '@actiontech/shared/lib/testUtil/mockHook/mockUsePermission';

@@ -6,7 +6,7 @@ import {
   superRenderHook
 } from '@actiontech/shared/lib/testUtil/superRender';
 import BaseInfoForm from '.';
-import configuration from '../../../../testUtils/mockApi/configuration';
+import sqlMockApi from '@actiontech/shared/lib/testUtil/mockApi/sqle';
 import { Form } from 'antd';
 import { RuleTemplateBaseInfoFields } from './index.type';
 import { mockUsePermission } from '@actiontech/shared/lib/testUtil/mockHook/mockUsePermission';
@@ -19,9 +19,12 @@ jest.mock('react-redux', () => ({
 describe('sqle/RuleTemplate/BaseInfoForm', () => {
   const dispatchSpy = jest.fn();
   let getDriversSpy: jest.SpyInstance;
+  let mockGetDriverRuleVersionTipsSpy: jest.SpyInstance;
   beforeEach(() => {
     (useDispatch as jest.Mock).mockImplementation(() => dispatchSpy);
-    getDriversSpy = configuration.getDrivers();
+    getDriversSpy = sqlMockApi.configuration.getDrivers();
+    mockGetDriverRuleVersionTipsSpy =
+      sqlMockApi.rule_template.mockGetDriverRuleVersionTips();
     mockUsePermission(undefined, {
       useSpyOnMockHooks: true
     });
@@ -49,6 +52,7 @@ describe('sqle/RuleTemplate/BaseInfoForm', () => {
     );
     await act(async () => jest.advanceTimersByTime(3000));
     expect(getDriversSpy).toHaveBeenCalledTimes(1);
+    expect(mockGetDriverRuleVersionTipsSpy).toHaveBeenCalledTimes(1);
     expect(baseElement).toMatchSnapshot();
   });
 

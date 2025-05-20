@@ -5,7 +5,7 @@ import {
   sqleSuperRender
 } from '../../../../testUtils/superRender';
 import useComparisonResultTree from '../hooks/useComparisonResultTree';
-import { executeDatabaseComparisonMockData } from '../../../../testUtils/mockApi/database_comparison/data';
+import { executeDatabaseComparisonMockData } from '@actiontech/shared/lib/testUtil/mockApi/sqle/database_comparison/data';
 import { Tree } from 'antd';
 import { fireEvent } from '@testing-library/dom';
 import { act } from '@testing-library/react-hooks';

@@ -1,7 +1,7 @@
 import { screen, cleanup, act } from '@testing-library/react';
 import WhiteList from '.';
 import { superRender } from '@actiontech/shared/lib/testUtil/superRender';
-import auditWhiteList from '../../testUtils/mockApi/auditWhiteList';
+import auditWhiteList from '@actiontech/shared/lib/testUtil/mockApi/sqle/auditWhiteList';
 import { getBySelector } from '@actiontech/shared/lib/testUtil/customQuery';
 import { useSelector } from 'react-redux';
 import { ModalName } from '../../data/ModalName';

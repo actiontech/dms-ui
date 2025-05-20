@@ -1,6 +1,6 @@
 import { RewriteSuggestionTypeEnum } from '@actiontech/shared/lib/api/sqle/service/common.enum';
 import { sqleSuperRender } from '../../../../testUtils/superRender';
-import { SqlRewrittenMockDataNoDDL } from '../../../../testUtils/mockApi/task/data';
+import { SqlRewrittenMockDataNoDDL } from '@actiontech/shared/lib/testUtil/mockApi/sqle/task/data';
 import DependDatabaseStructure from '../../components/DependDatabaseStructure';
 import { fireEvent, screen } from '@testing-library/dom';
 import { getAllBySelector } from '@actiontech/shared/lib/testUtil/customQuery';

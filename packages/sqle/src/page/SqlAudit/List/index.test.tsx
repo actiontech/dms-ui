@@ -1,8 +1,8 @@
 import { cleanup, screen, act, fireEvent } from '@testing-library/react';
 import SqlAuditList from '.';
-import sqlAuditRecord from '../../../testUtils/mockApi/sqlAuditRecord';
-import instance from '../../../testUtils/mockApi/instance';
-import { sqlAuditRecordMockData } from '../../../testUtils/mockApi/sqlAuditRecord/data';
+import sqlAuditRecord from '@actiontech/shared/lib/testUtil/mockApi/sqle/sqlAuditRecord';
+import instance from '@actiontech/shared/lib/testUtil/mockApi/sqle/instance';
+import { sqlAuditRecordMockData } from '@actiontech/shared/lib/testUtil/mockApi/sqle/sqlAuditRecord/data';
 import { mockUseCurrentProject } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentProject';
 import { mockUseCurrentUser } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentUser';
 import { mockProjectInfo } from '@actiontech/shared/lib/testUtil/mockHook/data';

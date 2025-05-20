@@ -1,7 +1,7 @@
 import { act, fireEvent, screen } from '@testing-library/react';
 import SqlFileStatementOverview from '..';
 import { useNavigate, useParams } from 'react-router-dom';
-import task from '../../../../../../../../testUtils/mockApi/task';
+import task from '@actiontech/shared/lib/testUtil/mockApi/sqle/task';
 import { sqleSuperRender } from '../../../../../../../../testUtils/superRender';
 import {
   UtilsConsoleErrorStringsEnum,

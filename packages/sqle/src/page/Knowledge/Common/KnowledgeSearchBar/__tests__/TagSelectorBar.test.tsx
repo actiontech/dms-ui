@@ -1,8 +1,8 @@
 import { act, cleanup, screen, fireEvent } from '@testing-library/react';
 import TagSelectorBar from '../TagSelectorBar';
 import { sqleSuperRender } from '../../../../../testUtils/superRender';
-import knowledgeBase from '../../../../../testUtils/mockApi/knowledgeBase';
-import { mockKnowledgeBaseTagListData } from '../../../../../testUtils/mockApi/knowledgeBase/data';
+import knowledgeBase from '@actiontech/shared/lib/testUtil/mockApi/sqle/knowledgeBase';
+import { mockKnowledgeBaseTagListData } from '@actiontech/shared/lib/testUtil/mockApi/sqle/knowledgeBase/data';
 import {
   getAllBySelector,
   getBySelector

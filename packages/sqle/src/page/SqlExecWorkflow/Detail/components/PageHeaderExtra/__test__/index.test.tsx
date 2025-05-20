@@ -7,7 +7,7 @@ import {
   WorkflowStepResV2TypeEnum
 } from '@actiontech/shared/lib/api/sqle/service/common.enum';
 import { getBySelector } from '@actiontech/shared/lib/testUtil/customQuery';
-import workflow from '../../../../../../testUtils/mockApi/workflowTemplate';
+import workflow from '@actiontech/shared/lib/testUtil/mockApi/sqle/workflowTemplate';
 import { sqleSuperRender } from '../../../../../../testUtils/superRender';
 import { mockUseCurrentProject } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentProject';
 import { OpPermissionTypeUid } from '@actiontech/shared/lib/enum';

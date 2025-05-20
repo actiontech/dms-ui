@@ -5,8 +5,8 @@ import {
   createSpyErrorResponse,
   createSpySuccessResponse
 } from '@actiontech/shared/lib/testUtil/mockApi';
-import execWorkflow from '../../../../../../../../testUtils/mockApi/execWorkflow';
-import configuration from '../../../../../../../../testUtils/mockApi/configuration';
+import execWorkflow from '@actiontech/shared/lib/testUtil/mockApi/sqle/execWorkflow';
+import configuration from '@actiontech/shared/lib/testUtil/mockApi/sqle/configuration';
 import { sqleSuperRender } from '../../../../../../../../testUtils/superRender';
 import ConfirmationSettingForm from '../components/ConfirmationSettingForm';
 import { mockUseCurrentUser } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentUser';

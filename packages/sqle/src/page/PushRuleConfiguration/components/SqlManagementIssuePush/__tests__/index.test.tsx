@@ -1,7 +1,7 @@
 import { mockUseCurrentProject } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentProject';
 import { mockUseCurrentUser } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentUser';
 import MockDate from 'mockdate';
-import user from '../../../../../testUtils/mockApi/user';
+import user from '@actiontech/shared/lib/testUtil/mockApi/sqle/user';
 import { IReportPushConfigList } from '@actiontech/shared/lib/api/sqle/service/common';
 import { sqleSuperRender } from '../../../../../testUtils/superRender';
 import SqlManagementIssuePush from '..';
@@ -18,7 +18,7 @@ import {
   getBySelector,
   queryBySelector
 } from '@actiontech/shared/lib/testUtil/customQuery';
-import MockReportPushConfigService from '../../../../../testUtils/mockApi/reportPushConfigService';
+import MockReportPushConfigService from '@actiontech/shared/lib/testUtil/mockApi/sqle/reportPushConfigService';
 import { mockUsePermission } from '@actiontech/shared/lib/testUtil/mockHook/mockUsePermission';
 import { SystemRole } from '@actiontech/shared/lib/enum';
 

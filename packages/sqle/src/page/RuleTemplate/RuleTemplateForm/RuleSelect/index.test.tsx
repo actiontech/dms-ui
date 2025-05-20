@@ -2,7 +2,7 @@ import { act, cleanup, renderHook } from '@testing-library/react';
 import { useDispatch } from 'react-redux';
 import { superRender } from '@actiontech/shared/lib/testUtil/superRender';
 import RuleSelect from '.';
-import { ruleListMockData } from '../../../../testUtils/mockApi/rule_template/data';
+import { ruleListMockData } from '@actiontech/shared/lib/testUtil/mockApi/sqle/rule_template/data';
 import { mockUsePermission } from '@actiontech/shared/lib/testUtil/mockHook/mockUsePermission';
 import { Form } from 'antd';
 import { RuleFilterFieldsType } from '../../../../components/RuleList';

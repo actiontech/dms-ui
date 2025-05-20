@@ -2,7 +2,7 @@ import { act, cleanup, fireEvent, screen } from '@testing-library/react';
 import { getBySelector } from '@actiontech/shared/lib/testUtil/customQuery';
 import AuditResultTree, { AuditResultTreeProps } from '../AuditResultTree';
 import { sqleSuperRender } from '../../../../../../../../../../testUtils/superRender';
-import rule_template from '../../../../../../../../../../testUtils/mockApi/rule_template';
+import rule_template from '@actiontech/shared/lib/testUtil/mockApi/sqle/rule_template';
 
 describe('sqle/ExecWorkflow/AuditDetail/AuditResultTree', () => {
   let requestRuleList: jest.SpyInstance;

@@ -4,7 +4,7 @@ import {
   sqleSuperRenderHook
 } from '../../../../../../testUtils/superRender';
 
-import statistic from '../../../../../../testUtils/mockApi/statistic';
+import statistic from '@actiontech/shared/lib/testUtil/mockApi/sqle/statistic';
 import {
   ignoreConsoleErrors,
   UtilsConsoleErrorStringsEnum

@@ -7,8 +7,8 @@ import EmitterKey from '../../../../../data/EmitterKey';
 import { queryBySelector } from '@actiontech/shared/lib/testUtil/customQuery';
 import { mockUseCurrentProject } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentProject';
 import { useDispatch, useSelector } from 'react-redux';
-import rule_template from '../../../../../testUtils/mockApi/rule_template';
-import { publicRuleTemplateListMockData } from '../../../../../testUtils/mockApi/rule_template/data';
+import rule_template from '@actiontech/shared/lib/testUtil/mockApi/sqle/rule_template';
+import { publicRuleTemplateListMockData } from '@actiontech/shared/lib/testUtil/mockApi/sqle/rule_template/data';
 
 jest.mock('react-redux', () => ({
   ...jest.requireActual('react-redux'),

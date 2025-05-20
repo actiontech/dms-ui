@@ -1,6 +1,6 @@
 import useSqlManagementRedux from '../useSqlManagementRedux';
 import { act, cleanup } from '@testing-library/react';
-import { sqlManageListData } from '../../../../../../testUtils/mockApi/sqlManage/data';
+import { sqlManageListData } from '@actiontech/shared/lib/testUtil/mockApi/sqle/sqlManage/data';
 import { ISqlManage } from '@actiontech/shared/lib/api/sqle/service/common';
 import { useDispatch, useSelector } from 'react-redux';
 import { sqleSuperRenderHook } from '../../../../../../testUtils/superRender';

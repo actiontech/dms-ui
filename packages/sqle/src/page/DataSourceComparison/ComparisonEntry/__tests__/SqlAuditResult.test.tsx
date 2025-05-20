@@ -1,10 +1,10 @@
 import { screen } from '@testing-library/dom';
 import { sqleSuperRender } from '../../../../testUtils/superRender';
-import rule_template from '../../../../testUtils/mockApi/rule_template';
+import rule_template from '@actiontech/shared/lib/testUtil/mockApi/sqle/rule_template';
 import {
   AuditTaskSQLsMockDataWithExceptionRule,
   AuditTaskSQLsMockDataWithOnlyExceptionRule
-} from '../../../../testUtils/mockApi/task/data';
+} from '@actiontech/shared/lib/testUtil/mockApi/sqle/task/data';
 import SqlAuditResult from '../component/SqlAuditResult';
 
 describe('SqlAuditResult', () => {

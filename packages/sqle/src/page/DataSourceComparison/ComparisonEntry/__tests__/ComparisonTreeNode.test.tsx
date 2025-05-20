@@ -5,11 +5,11 @@ import useComparisonResultTree from '../hooks/useComparisonResultTree';
 import {
   executeDatabaseComparisonMockData,
   genDatabaseDiffModifySQLsMockData
-} from '../../../../testUtils/mockApi/database_comparison/data';
+} from '@actiontech/shared/lib/testUtil/mockApi/sqle/database_comparison/data';
 import { generateTreeNodeKey } from '../utils/TreeNode';
 import { mockUseCurrentProject } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentProject';
 import { mockUseCurrentUser } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentUser';
-import DatabaseComparisonMockService from '../../../../testUtils/mockApi/database_comparison';
+import DatabaseComparisonMockService from '@actiontech/shared/lib/testUtil/mockApi/sqle/database_comparison';
 import { getBySelector } from '@actiontech/shared/lib/testUtil/customQuery';
 import { mockProjectInfo } from '@actiontech/shared/lib/testUtil/mockHook/data';
 import { Copy, Download } from '@actiontech/shared';

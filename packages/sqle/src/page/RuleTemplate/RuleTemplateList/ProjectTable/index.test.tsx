@@ -7,9 +7,9 @@ import { mockUseCurrentProject } from '@actiontech/shared/lib/testUtil/mockHook/
 import { mockUseCurrentUser } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentUser';
 import { mockUseDbServiceDriver } from '@actiontech/shared/lib/testUtil/mockHook/mockUseDbServiceDriver';
 import { mockProjectInfo } from '@actiontech/shared/lib/testUtil/mockHook/data';
-import rule_template from '../../../../testUtils/mockApi/rule_template';
-import { projectRuleTemplateListMockData } from '../../../../testUtils/mockApi/rule_template/data';
-import { useNavigate, BrowserRouter } from 'react-router-dom';
+import rule_template from '@actiontech/shared/lib/testUtil/mockApi/sqle/rule_template';
+import { projectRuleTemplateListMockData } from '@actiontech/shared/lib/testUtil/mockApi/sqle/rule_template/data';
+import { useNavigate } from 'react-router-dom';
 import { ModalName } from '../../../../data/ModalName';
 import { useDispatch, useSelector } from 'react-redux';
 import {
@@ -69,11 +69,7 @@ describe('sqle/RuleTemplate/List/ProjectTable', () => {
   });
 
   const customRender = (actionPermission?: boolean) =>
-    superRender(
-      <BrowserRouter>
-        <ProjectTable />
-      </BrowserRouter>
-    );
+    superRender(<ProjectTable />);
 
   it('should render empty tips when request not success', async () => {
     getProjectRuleTemplateListSpy.mockClear();

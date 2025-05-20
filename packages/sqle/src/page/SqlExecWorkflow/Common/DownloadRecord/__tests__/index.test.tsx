@@ -1,6 +1,6 @@
 import DownloadRecord from '..';
 import { sqleSuperRender } from '../../../../../testUtils/superRender';
-import execWorkflow from '../../../../../testUtils/mockApi/execWorkflow';
+import execWorkflow from '@actiontech/shared/lib/testUtil/mockApi/sqle/execWorkflow';
 import { DownloadRecordProps } from '../index.type';
 import { fireEvent, act, cleanup, screen } from '@testing-library/react';
 import { mockUseCurrentProject } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentProject';
