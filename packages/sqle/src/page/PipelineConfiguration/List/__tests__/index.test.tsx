@@ -1,7 +1,7 @@
 import PipelineConfigurationList from '..';
 import { screen, cleanup, act, fireEvent } from '@testing-library/react';
-import pipeline from '../../../../testUtils/mockApi/pipeline';
-import { mockPipelineListData } from '../../../../testUtils/mockApi/pipeline/data';
+import pipeline from '@actiontech/shared/lib/testUtil/mockApi/sqle/pipeline';
+import { mockPipelineListData } from '@actiontech/shared/lib/testUtil/mockApi/sqle/pipeline/data';
 import { useNavigate } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { superRender } from '@actiontech/shared/lib/testUtil/superRender';

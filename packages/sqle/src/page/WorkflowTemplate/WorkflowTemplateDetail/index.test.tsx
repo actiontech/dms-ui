@@ -1,8 +1,8 @@
 import { sqleSuperRender } from '../../../testUtils/superRender';
 import WorkflowTemplateDetail from '.';
-import { workflowTemplateData } from '../../../testUtils/mockApi/workflowTemplate/data';
+import { workflowTemplateData } from '@actiontech/shared/lib/testUtil/mockApi/sqle/workflowTemplate/data';
 import { act, cleanup, screen } from '@testing-library/react';
-import workflowTemplate from '../../../testUtils/mockApi/workflowTemplate';
+import workflowTemplate from '@actiontech/shared/lib/testUtil/mockApi/sqle/workflowTemplate';
 import { mockUseCurrentProject } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentProject';
 import { mockUseCurrentUser } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentUser';
 import { getBySelector } from '@actiontech/shared/lib/testUtil/customQuery';
@@ -11,7 +11,7 @@ import {
   mockCurrentUserReturn
 } from '@actiontech/shared/lib/testUtil/mockHook/data';
 import { createSpySuccessResponse } from '@actiontech/shared/lib/testUtil/mockApi';
-import user from '../../../testUtils/mockApi/user';
+import user from '@actiontech/shared/lib/testUtil/mockApi/sqle/user';
 import { mockUsePermission } from '@actiontech/shared/lib/testUtil/mockHook/mockUsePermission';
 import { SystemRole } from '@actiontech/shared/lib/enum';
 

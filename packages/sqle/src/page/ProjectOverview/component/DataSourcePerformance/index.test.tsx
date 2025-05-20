@@ -3,7 +3,7 @@ import {
   sqleSuperRenderHook,
   sqleSuperRender
 } from '../../../../testUtils/superRender';
-import sqlOptimization from '../../../../testUtils/mockApi/sqlOptimization';
+import sqlOptimization from '@actiontech/shared/lib/testUtil/mockApi/sqle/sqlOptimization';
 import {
   ignoreConsoleErrors,
   UtilsConsoleErrorStringsEnum

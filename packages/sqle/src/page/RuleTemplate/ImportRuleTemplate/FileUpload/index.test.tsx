@@ -5,7 +5,7 @@ import { useForm } from 'antd/es/form/Form';
 import { Form, UploadProps } from 'antd';
 import { FileUploadCheckStatusType } from '../../../../hooks/useRuleTemplateForm/index.type';
 import { mockDatabaseType } from '../../../../testUtils/mockHooks/mockDatabaseType';
-import rule_template from '../../../../testUtils/mockApi/rule_template';
+import rule_template from '@actiontech/shared/lib/testUtil/mockApi/sqle/rule_template';
 import { mockUseDatabaseType } from '../../../../testUtils/mockHooks/data';
 import { selectOptionByIndex } from '@actiontech/shared/lib/testUtil/customQuery';
 

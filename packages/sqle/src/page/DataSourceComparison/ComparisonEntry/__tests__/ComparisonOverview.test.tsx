@@ -2,7 +2,7 @@ import { screen, fireEvent } from '@testing-library/react';
 import { ObjectDiffResultComparisonResultEnum } from '@actiontech/shared/lib/api/sqle/service/common.enum';
 import ComparisonOverview from '../component/ComparisonOverview';
 import { comparisonOverviewDict } from '../component/ComparisonOverview/index.data';
-import { executeDatabaseComparisonMockData } from '../../../../testUtils/mockApi/database_comparison/data';
+import { executeDatabaseComparisonMockData } from '@actiontech/shared/lib/testUtil/mockApi/sqle/database_comparison/data';
 import { sqleSuperRender } from '../../../../testUtils/superRender';
 
 describe('ComparisonOverview', () => {

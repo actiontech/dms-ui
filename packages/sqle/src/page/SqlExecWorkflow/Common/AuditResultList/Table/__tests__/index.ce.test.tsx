@@ -9,7 +9,7 @@ import { fireEvent, act, cleanup, screen } from '@testing-library/react';
 import { getAuditTaskSQLsV2FilterAuditLevelEnum } from '@actiontech/shared/lib/api/sqle/service/task/index.enum';
 import { createSpyFailResponse } from '@actiontech/shared/lib/testUtil/mockApi';
 import { getBySelector } from '@actiontech/shared/lib/testUtil/customQuery';
-import execWorkflow from '../../../../../../testUtils/mockApi/execWorkflow';
+import execWorkflow from '@actiontech/shared/lib/testUtil/mockApi/sqle/execWorkflow';
 import { mockUseCurrentUser } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentUser';
 import { useSelector } from 'react-redux';
 import { ModalName } from '../../../../../../data/ModalName';

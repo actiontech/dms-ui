@@ -5,7 +5,7 @@ import {
   getBySelector
 } from '@actiontech/shared/lib/testUtil/customQuery';
 import { sqleSuperRender } from '../../../../../../../../../testUtils/superRender';
-import rule_template from '../../../../../../../../../testUtils/mockApi/rule_template';
+import rule_template from '@actiontech/shared/lib/testUtil/mockApi/sqle/rule_template';
 import { mockUseCurrentUser } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentUser';
 import { cleanup } from '@testing-library/react';
 import {

@@ -9,7 +9,7 @@ import { superRender } from '@actiontech/shared/lib/testUtil/superRender';
 import { Form } from 'antd';
 import SQLStatementFormWrapper from '../index';
 import { FormSubmitStatusContext } from '../..';
-import configuration from '../../../../../testUtils/mockApi/configuration';
+import configuration from '@actiontech/shared/lib/testUtil/mockApi/sqle/configuration';
 import { createSpySuccessResponse } from '@actiontech/shared/lib/testUtil/mockApi';
 import {
   UtilsConsoleErrorStringsEnum,

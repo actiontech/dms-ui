@@ -4,7 +4,7 @@ import { FileExecuteModeProps } from '../index.type';
 import { act, cleanup, screen } from '@testing-library/react';
 import { TaskResultListLayoutEnum } from '../../../../index.enum';
 import { sqleSuperRender } from '../../../../../../../../../testUtils/superRender';
-import task from '../../../../../../../../../testUtils/mockApi/task';
+import task from '@actiontech/shared/lib/testUtil/mockApi/sqle/task';
 import { WORKFLOW_OVERVIEW_TAB_KEY } from '../../../../../../hooks/useAuditExecResultPanelSetup';
 import { mockCurrentUserReturn } from '@actiontech/shared/lib/testUtil/mockHook/data';
 import { mockUseCurrentUser } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentUser';

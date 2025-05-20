@@ -51,6 +51,7 @@ class MockRuleTemplateApi implements MockSpyApy {
     this.updateRuleTemplate();
     this.getRuleTemplateFile();
     this.getCategoryStatistics();
+    this.mockGetDriverRuleVersionTips();
   }
 
   public getRuleTemplateTips() {

@@ -1,4 +1,4 @@
-import rule_template from '../../../testUtils/mockApi/rule_template';
+import rule_template from '@actiontech/shared/lib/testUtil/mockApi/sqle/rule_template';
 import useAuditResultRuleInfo from '../useAuditResultRuleInfo';
 import { act, cleanup, renderHook } from '@testing-library/react';
 

@@ -1,6 +1,6 @@
 import { act, fireEvent, screen } from '@testing-library/react';
 import { sqleSuperRender } from '../../../../testUtils/superRender';
-import instance from '../../../../testUtils/mockApi/instance';
+import instance from '@actiontech/shared/lib/testUtil/mockApi/sqle/instance';
 import { mockUseCurrentProject } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentProject';
 import { mockDatabaseType } from '../../../../testUtils/mockHooks/mockDatabaseType';
 import { mockUseCurrentUser } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentUser';
@@ -9,11 +9,11 @@ import {
   getBySelector
 } from '@actiontech/shared/lib/testUtil/customQuery';
 import ComparisonEntry from '..';
-import DatabaseComparisonMockService from '../../../../testUtils/mockApi/database_comparison';
+import DatabaseComparisonMockService from '@actiontech/shared/lib/testUtil/mockApi/sqle/database_comparison';
 import { mockProjectInfo } from '@actiontech/shared/lib/testUtil/mockHook/data';
 import { mockUsePermission } from '@actiontech/shared/lib/testUtil/mockHook/mockUsePermission';
 import { createSpySuccessResponse } from '@actiontech/shared/lib/testUtil/mockApi';
-import { executeDatabaseComparisonMockData } from '../../../../testUtils/mockApi/database_comparison/data';
+import { executeDatabaseComparisonMockData } from '@actiontech/shared/lib/testUtil/mockApi/sqle/database_comparison/data';
 import MockDate from 'mockdate';
 import dayjs from 'dayjs';
 

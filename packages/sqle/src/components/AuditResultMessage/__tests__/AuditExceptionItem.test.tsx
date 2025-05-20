@@ -1,5 +1,5 @@
 import { sqleSuperRender } from '../../../testUtils/superRender';
-import { AuditTaskSQLsMockDataWithOnlyExceptionRule } from '../../../testUtils/mockApi/task/data';
+import { AuditTaskSQLsMockDataWithOnlyExceptionRule } from '@actiontech/shared/lib/testUtil/mockApi/sqle/task/data';
 import AuditExceptionItem from '../AuditExceptionItem';
 
 describe('AuditExceptionItem', () => {

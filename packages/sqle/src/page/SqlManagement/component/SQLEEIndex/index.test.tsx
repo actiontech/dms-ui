@@ -1,15 +1,15 @@
 import { act, cleanup, fireEvent, screen } from '@testing-library/react';
 import SQLEEIndex from '.';
 import { sqleSuperRender } from '../../../../testUtils/superRender';
-import sqlManage from '../../../../testUtils/mockApi/sqlManage';
-import { mockAbnormalInstanceAuditPlansData } from '../../../../testUtils/mockApi/sqlManage/data';
+import sqlManage from '@actiontech/shared/lib/testUtil/mockApi/sqle/sqlManage';
+import { mockAbnormalInstanceAuditPlansData } from '@actiontech/shared/lib/testUtil/mockApi/sqle/sqlManage/data';
 import { mockUseCurrentProject } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentProject';
 import { mockUseCurrentUser } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentUser';
 import { mockUseProjectBusinessTips } from '@actiontech/shared/lib/testUtil/mockHook/mockUseProjectBusinessTips';
 import { useDispatch, useSelector } from 'react-redux';
 import { driverMeta } from '../../../../hooks/useDatabaseType/index.test.data';
 import { createSpySuccessResponse } from '@actiontech/shared/lib/testUtil/mockApi';
-import { sqlManageListData } from '../../../../testUtils/mockApi/sqlManage/data';
+import { sqlManageListData } from '@actiontech/shared/lib/testUtil/mockApi/sqle/sqlManage/data';
 import {
   getAllBySelector,
   getBySelector,
@@ -19,7 +19,7 @@ import {
   mockCurrentUserReturn,
   mockProjectInfo
 } from '@actiontech/shared/lib/testUtil/mockHook/data';
-import instance from '../../../../testUtils/mockApi/instance';
+import instance from '@actiontech/shared/lib/testUtil/mockApi/sqle/instance';
 import { ModalName } from '../../../../data/ModalName';
 import { mockUseAuditPlanTypes } from '../../../../testUtils/mockRequest';
 import {
@@ -29,7 +29,7 @@ import {
 import { SupportLanguage } from '@actiontech/shared/lib/enum';
 import { SystemRole } from '@actiontech/shared/lib/enum';
 import { useSearchParams } from 'react-router-dom';
-import project from '../../../../testUtils/mockApi/project';
+import project from '@actiontech/shared/lib/testUtil/mockApi/base/project';
 
 jest.mock('react-redux', () => {
   return {

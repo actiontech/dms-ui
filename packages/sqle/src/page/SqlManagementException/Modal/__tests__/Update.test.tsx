@@ -6,7 +6,7 @@ import { mockUseCurrentProject } from '@actiontech/shared/lib/testUtil/mockHook/
 import { mockUseCurrentUser } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentUser';
 import { mockProjectInfo } from '@actiontech/shared/lib/testUtil/mockHook/data';
 import UpdateSqlManagementException from '../Update';
-import blacklist from '../../../../testUtils/mockApi/blacklist';
+import blacklist from '@actiontech/shared/lib/testUtil/mockApi/sqle/blacklist';
 import EventEmitter from '../../../../utils/EventEmitter';
 import EmitterKey from '../../../../data/EmitterKey';
 import {
@@ -16,8 +16,8 @@ import {
 import { IBlacklistResV1 } from '@actiontech/shared/lib/api/sqle/service/common';
 import { BlacklistResV1TypeEnum } from '@actiontech/shared/lib/api/sqle/service/common.enum';
 import { mockUseDbServiceDriver } from '@actiontech/shared/lib/testUtil/mockHook/mockUseDbServiceDriver';
-import instance from '../../../../testUtils/mockApi/instance';
-import { instanceTipsMockData } from '../../../../testUtils/mockApi/instance/data';
+import instance from '@actiontech/shared/lib/testUtil/mockApi/sqle/instance';
+import { instanceTipsMockData } from '@actiontech/shared/lib/testUtil/mockApi/sqle/instance/data';
 import {
   UtilsConsoleErrorStringsEnum,
   ignoreConsoleErrors

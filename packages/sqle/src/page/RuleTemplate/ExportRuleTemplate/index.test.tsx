@@ -1,8 +1,8 @@
 import { useDispatch, useSelector } from 'react-redux';
 import ExportRuleTemplateModal from '.';
-import { projectRuleTemplateListMockData } from '../../../testUtils/mockApi/rule_template/data';
+import { projectRuleTemplateListMockData } from '@actiontech/shared/lib/testUtil/mockApi/sqle/rule_template/data';
 import { ModalName } from '../../../data/ModalName';
-import rule_template from '../../../testUtils/mockApi/rule_template';
+import rule_template from '@actiontech/shared/lib/testUtil/mockApi/sqle/rule_template';
 import { act, cleanup, fireEvent, screen } from '@testing-library/react';
 import { sqleSuperRender } from '../../../testUtils/superRender';
 import { mockUseCurrentProject } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentProject';

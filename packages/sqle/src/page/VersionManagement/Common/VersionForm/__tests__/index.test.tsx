@@ -13,7 +13,7 @@ import {
   getAllBySelector,
   getBySelector
 } from '@actiontech/shared/lib/testUtil/customQuery';
-import instance from '../../../../../testUtils/mockApi/instance';
+import instance from '@actiontech/shared/lib/testUtil/mockApi/sqle/instance';
 import useVersionFormState from '../hooks/useVersionFormState';
 import { Form } from 'antd';
 

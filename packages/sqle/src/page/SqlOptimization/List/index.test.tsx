@@ -4,15 +4,15 @@ import { sqleSuperRender } from '../../../testUtils/superRender';
 import { mockUseCurrentProject } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentProject';
 import { mockUseCurrentUser } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentUser';
 import { mockUseDbServiceDriver } from '@actiontech/shared/lib/testUtil/mockHook/mockUseDbServiceDriver';
-import sqlOptimization from '../../../testUtils/mockApi/sqlOptimization';
-import { sqlOptimizationRecordsMockData } from '../../../testUtils/mockApi/sqlOptimization/data';
+import sqlOptimization from '@actiontech/shared/lib/testUtil/mockApi/sqle/sqlOptimization';
+import { sqlOptimizationRecordsMockData } from '@actiontech/shared/lib/testUtil/mockApi/sqle/sqlOptimization/data';
 import {
   getAllBySelector,
   getBySelector
 } from '@actiontech/shared/lib/testUtil/customQuery';
 import { mockProjectInfo } from '@actiontech/shared/lib/testUtil/mockHook/data';
 import { useNavigate } from 'react-router-dom';
-import instance from '../../../testUtils/mockApi/instance';
+import instance from '@actiontech/shared/lib/testUtil/mockApi/sqle/instance';
 
 jest.mock('react-router-dom', () => {
   return {

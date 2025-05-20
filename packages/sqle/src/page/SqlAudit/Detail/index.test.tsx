@@ -1,6 +1,6 @@
 import SqlAuditDetail from '.';
-import sqlAuditRecord from '../../../testUtils/mockApi/sqlAuditRecord';
-import task from '../../../testUtils/mockApi/task';
+import sqlAuditRecord from '@actiontech/shared/lib/testUtil/mockApi/sqle/sqlAuditRecord';
+import task from '@actiontech/shared/lib/testUtil/mockApi/sqle/task';
 import { act, cleanup, screen } from '@testing-library/react';
 import { sqleSuperRender } from '../../../testUtils/superRender';
 import { mockUseCurrentUser } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentUser';

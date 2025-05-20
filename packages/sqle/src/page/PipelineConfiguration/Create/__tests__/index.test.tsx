@@ -1,6 +1,6 @@
 import CreatePipelineConfiguration from '../';
 import { screen, cleanup, act, fireEvent } from '@testing-library/react';
-import pipeline from '../../../../testUtils/mockApi/pipeline';
+import pipeline from '@actiontech/shared/lib/testUtil/mockApi/sqle/pipeline';
 import { useNavigate } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { superRender } from '@actiontech/shared/lib/testUtil/superRender';
@@ -10,14 +10,14 @@ import { mockUseCurrentUser } from '@actiontech/shared/lib/testUtil/mockHook/moc
 import { mockUseDbServiceDriver } from '@actiontech/shared/lib/testUtil/mockHook/mockUseDbServiceDriver';
 import { createSpySuccessResponse } from '@actiontech/shared/lib/testUtil/mockApi';
 import { getBySelector } from '@actiontech/shared/lib/testUtil/customQuery';
-import configuration from '../../../../testUtils/mockApi/configuration';
-import instance from '../../../../testUtils/mockApi/instance';
-import rule_template from '../../../../testUtils/mockApi/rule_template';
+import configuration from '@actiontech/shared/lib/testUtil/mockApi/sqle/configuration';
+import instance from '@actiontech/shared/lib/testUtil/mockApi/sqle/instance';
+import rule_template from '@actiontech/shared/lib/testUtil/mockApi/sqle/rule_template';
 import {
   instanceInfoMockData,
   instanceTipsMockData
-} from '../../../../testUtils/mockApi/instance/data';
-import { projectRuleTemplateList } from '../../../../testUtils/mockApi/rule_template/data';
+} from '@actiontech/shared/lib/testUtil/mockApi/sqle/instance/data';
+import { projectRuleTemplateList } from '@actiontech/shared/lib/testUtil/mockApi/sqle/rule_template/data';
 import { ModalName } from '../../../../data/ModalName';
 
 jest.mock('react-router-dom', () => {

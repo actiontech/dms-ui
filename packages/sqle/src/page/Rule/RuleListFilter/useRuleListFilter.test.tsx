@@ -6,7 +6,7 @@ import {
 } from '@actiontech/shared/lib/testUtil/mockApi';
 import { mockUseCurrentUser } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentUser';
 import { mockProjectInfo } from '@actiontech/shared/lib/testUtil/mockHook/data';
-import rule_template from '../../../testUtils/mockApi/rule_template';
+import rule_template from '@actiontech/shared/lib/testUtil/mockApi/sqle/rule_template';
 import { sqleSuperRenderHook } from '../../../testUtils/superRender';
 import { RuleListFilterForm } from '../index.type';
 import useRuleListFilter from './hooks';

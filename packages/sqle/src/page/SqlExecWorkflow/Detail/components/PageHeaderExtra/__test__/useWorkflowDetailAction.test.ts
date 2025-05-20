@@ -5,7 +5,7 @@ import { sqleSuperRenderHook } from '../../../../../../testUtils/superRender';
 import useWorkflowDetailAction from '../hooks/useWorkflowDetailAction';
 import { WorkflowDetailPageHeaderExtraProps } from '../index.type';
 import { mockUseCurrentProject } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentProject';
-import { WorkflowListData } from '../../../../../../testUtils/mockApi/execWorkflow/data';
+import { WorkflowListData } from '@actiontech/shared/lib/testUtil/mockApi/sqle/execWorkflow/data';
 
 describe('sqle/SqlExecWorkflow/Detail/useWorkflowDetailAction', () => {
   const refreshWorkflowFn = jest.fn();

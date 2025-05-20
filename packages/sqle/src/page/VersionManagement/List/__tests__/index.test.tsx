@@ -1,7 +1,7 @@
 import { cleanup, act, fireEvent, screen } from '@testing-library/react';
 import VersionManagementList from '..';
-import sqlVersion from '../../../../testUtils/mockApi/sql_version';
-import { getSqlVersionListV1MockData } from '../../../../testUtils/mockApi/sql_version/data';
+import sqlVersion from '@actiontech/shared/lib/testUtil/mockApi/sqle/sql_version';
+import { getSqlVersionListV1MockData } from '@actiontech/shared/lib/testUtil/mockApi/sqle/sql_version/data';
 import { mockUseCurrentProject } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentProject';
 import { mockUseCurrentUser } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentUser';
 import { mockProjectInfo } from '@actiontech/shared/lib/testUtil/mockHook/data';

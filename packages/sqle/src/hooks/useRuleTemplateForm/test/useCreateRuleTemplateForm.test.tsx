@@ -1,7 +1,7 @@
 import { cleanup, act } from '@testing-library/react';
 import { superRenderHook } from '@actiontech/shared/lib/testUtil/superRender';
 import useCreateRuleTemplateForm from '../useCreateRuleTemplateForm';
-import rule_template from '../../../testUtils/mockApi/rule_template';
+import rule_template from '@actiontech/shared/lib/testUtil/mockApi/sqle/rule_template';
 
 describe('sqle/hooks/useRuleTemplateForm/useCreateRuleTemplateForm', () => {
   let getRulesSpy: jest.SpyInstance;

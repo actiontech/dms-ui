@@ -1,5 +1,5 @@
-import project from '../../../testUtils/mockApi/project';
-import { mockEnvironmentTagsData } from '../../../testUtils/mockApi/project/data';
+import project from '@actiontech/shared/lib/testUtil/mockApi/base/project';
+import { mockEnvironmentTagsData } from '@actiontech/shared/lib/testUtil/mockApi/base/project/data';
 import { superRenderHook } from '@actiontech/shared/lib/testUtil/superRender';
 import useServiceOptions from '..';
 import { act, cleanup } from '@testing-library/react';
