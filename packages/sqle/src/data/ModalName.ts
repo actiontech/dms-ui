@@ -34,5 +34,8 @@ export enum ModalName {
 
   Version_Management_Associate_Workflow_Modal = 'Version_Management_Associate_Workflow_Modal',
 
-  Version_Management_Offline_Execute_Modal = 'Version_Management_Offline_Execute_Modal'
+  Version_Management_Offline_Execute_Modal = 'Version_Management_Offline_Execute_Modal',
+
+  // sql insights
+  Sql_Insights_Related_SQL_Item_Relate_Transaction_Drawer = 'SQL_INSIGHTS_RELATED_SQL_ITEM_RELATE_TRANSACTION_DRAWER'
 }

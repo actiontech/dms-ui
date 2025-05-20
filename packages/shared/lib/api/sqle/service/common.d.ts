@@ -41,6 +41,7 @@ import {
   ObjectDiffResultComparisonResultEnum,
   OperationRecordListStatusEnum,
   RecordSourceNameEnum,
+  RelatedSQLInfoSourceEnum,
   ReportPushConfigListPushUserTypeEnum,
   ReportPushConfigListTriggerTypeEnum,
   RewriteSuggestionAuditLevelEnum,
@@ -57,6 +58,10 @@ import {
   SqlVersionDetailResV1StatusEnum,
   SqlVersionResV1StatusEnum,
   TestFeishuConfigurationReqV1AccountTypeEnum,
+  TransactionInfoLockTypeEnum,
+  TransactionInfoTransactionStateEnum,
+  TransactionLockInfoLockTypeEnum,
+  TransactionSQLLockTypeEnum,
   UpdateAuditPlanNotifyConfigReqV1NotifyLevelEnum,
   UpdateAuditPlanStatusReqV1ActiveEnum,
   UpdateAuditWhitelistReqV1MatchTypeEnum,
@@ -1896,6 +1901,32 @@ export interface IGetSqlManageSqlAnalysisResp {
   message?: string;
 }
 
+export interface IGetSqlManageSqlPerformanceInsightsRelatedSQLResp {
+  code?: number;
+
+  data?: IRelatedSQLInfo[];
+
+  message?: string;
+
+  total_nums?: number;
+}
+
+export interface IGetSqlManageSqlPerformanceInsightsRelatedTransactionResp {
+  code?: number;
+
+  data?: IRelatedTransactionInfo;
+
+  message?: string;
+}
+
+export interface IGetSqlManageSqlPerformanceInsightsResp {
+  code?: number;
+
+  data?: ISqlManageSqlPerformanceInsights;
+
+  message?: string;
+}
+
 export interface IGetSqlVersionDetailResV1 {
   code?: number;
 
@@ -2384,6 +2415,12 @@ export interface ILicenseUsageV1 {
   users_usage?: ILicenseUsageItem;
 }
 
+export interface ILine {
+  line_name?: string;
+
+  points?: IChartPoint[];
+}
+
 export interface IListTableBySchemaResV1 {
   code?: number;
 
@@ -2652,6 +2689,32 @@ export interface IRefreshAuditPlanTokenReqV1 {
 
 export interface IRejectWorkflowReqV1 {
   reason?: string;
+}
+
+export interface IRelatedSQLInfo {
+  execute_end_time?: string;
+
+  execute_start_time?: string;
+
+  execute_time?: number;
+
+  execution_cost_trend?: ISqlAnalysisScatterChart;
+
+  lock_wait_time?: number;
+
+  source?: RelatedSQLInfoSourceEnum;
+
+  sql_fingerprint?: string;
+}
+
+export interface IRelatedTransactionInfo {
+  related_sql_info?: ITransactionSQL[];
+
+  transaction_info?: ITransactionInfo;
+
+  transaction_lock_info?: ITransactionLockInfo[];
+
+  transaction_timeline?: ITransactionTimeline;
 }
 
 export interface IReleaseWorkflows {
@@ -2984,6 +3047,22 @@ export interface ISSHPublicKeyInfoV1Rsp {
   message?: string;
 }
 
+export interface IScatterPoint {
+  cost?: number;
+
+  id?: number;
+
+  info?: Array<{
+    [key: string]: string;
+  }>;
+
+  is_in_transaction?: boolean;
+
+  sql?: string;
+
+  time?: string;
+}
+
 export interface IScheduleTaskDefaultOption {
   default_selector?: ScheduleTaskDefaultOptionDefaultSelectorEnum;
 }
@@ -3038,6 +3117,16 @@ export interface ISqlAnalysisResDataV1 {
   sql_explain?: ISQLExplain;
 
   table_metas?: ITableMeta[];
+}
+
+export interface ISqlAnalysisScatterChart {
+  message?: string;
+
+  points?: IScatterPoint[];
+
+  x_info?: string;
+
+  y_info?: string;
 }
 
 export interface ISqlAverageExecutionTime {
@@ -3140,6 +3229,16 @@ export interface ISqlManageCodingReq {
   sql_manage_id_list?: number[];
 
   type?: SqlManageCodingReqTypeEnum;
+}
+
+export interface ISqlManageSqlPerformanceInsights {
+  lines?: ILine[];
+
+  message?: string;
+
+  x_info?: string;
+
+  y_info?: string;
 }
 
 export interface ISqlVersionDetailResV1 {
@@ -3394,6 +3493,48 @@ export interface ITimeResV1 {
   hour?: number;
 
   minute?: number;
+}
+
+export interface ITransactionInfo {
+  lock_type?: TransactionInfoLockTypeEnum;
+
+  transaction_duration?: number;
+
+  transaction_end_time?: string;
+
+  transaction_id?: string;
+
+  transaction_start_time?: string;
+
+  transaction_state?: TransactionInfoTransactionStateEnum;
+}
+
+export interface ITransactionLockInfo {
+  create_lock_sql?: string;
+
+  lock_type?: TransactionLockInfoLockTypeEnum;
+
+  table_name?: string;
+}
+
+export interface ITransactionSQL {
+  execute_duration?: number;
+
+  lock_type?: TransactionSQLLockTypeEnum;
+
+  sql?: string;
+}
+
+export interface ITransactionTimeline {
+  current_step_index?: number;
+
+  timeline?: ITransactionTimelineItem[];
+}
+
+export interface ITransactionTimelineItem {
+  description?: string;
+
+  start_time?: string;
 }
 
 export interface ITriggerAuditPlanResV1 {
