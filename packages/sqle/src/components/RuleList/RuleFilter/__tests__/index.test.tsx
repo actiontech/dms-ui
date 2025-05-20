@@ -2,7 +2,7 @@ import { act, cleanup, renderHook, screen } from '@testing-library/react';
 import RuleFilter from '../index';
 import { Form } from 'antd';
 import { sqleSuperRender } from '../../../../testUtils/superRender';
-import ruleTemplate from '../../../../testUtils/mockApi/rule_template';
+import ruleTemplate from '@actiontech/shared/lib/testUtil/mockApi/sqle/rule_template';
 import { getBySelector } from '@actiontech/shared/lib/testUtil/customQuery';
 
 describe('sqle/components/RuleList/RuleFilter', () => {

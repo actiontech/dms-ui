@@ -1,8 +1,8 @@
 import { cleanup, screen, act, fireEvent } from '@testing-library/react';
 import { superRender } from '@actiontech/shared/lib/testUtil/superRender';
 import OperationRecordList from '.';
-import operationRecord from '../../../testUtils/mockApi/operationRecord';
-import { operationRecordListMockData } from '../../../testUtils/mockApi/operationRecord/data';
+import operationRecord from '@actiontech/shared/lib/testUtil/mockApi/sqle/operationRecord';
+import { operationRecordListMockData } from '@actiontech/shared/lib/testUtil/mockApi/sqle/operationRecord/data';
 import { mockUseCurrentProject } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentProject';
 import { mockProjectInfo } from '@actiontech/shared/lib/testUtil/mockHook/data';
 import { createSpyErrorResponse } from '@actiontech/shared/lib/testUtil/mockApi';

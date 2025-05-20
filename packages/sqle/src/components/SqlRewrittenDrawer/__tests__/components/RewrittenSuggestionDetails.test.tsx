@@ -5,7 +5,7 @@ import {
   SqlRewrittenMockDataNoDDL,
   SqlRewrittenMockDataUseDDL,
   SqlRewrittenMockDataWithNotRewriter
-} from '../../../../testUtils/mockApi/task/data';
+} from '@actiontech/shared/lib/testUtil/mockApi/sqle/task/data';
 import { RewriteSuggestionTypeEnum } from '@actiontech/shared/lib/api/sqle/service/common.enum';
 import {
   getAllBySelector,

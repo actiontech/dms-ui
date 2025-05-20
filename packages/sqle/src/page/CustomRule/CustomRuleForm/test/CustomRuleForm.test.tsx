@@ -3,10 +3,10 @@ import { superRenderHook } from '@actiontech/shared/lib/testUtil/superRender';
 import { cleanup, screen, act, fireEvent } from '@testing-library/react';
 import { sqleSuperRender } from '../../../../testUtils/superRender';
 import { mockUseDbServiceDriver } from '@actiontech/shared/lib/testUtil/mockHook/mockUseDbServiceDriver';
-import configuration from '../../../../testUtils/mockApi/configuration';
-import rule_template from '../../../../testUtils/mockApi/rule_template';
+import configuration from '@actiontech/shared/lib/testUtil/mockApi/sqle/configuration';
+import rule_template from '@actiontech/shared/lib/testUtil/mockApi/sqle/rule_template';
 import CustomRuleForm from '../CustomRuleForm';
-import { customRuleDetailMockData } from '../../../../testUtils/mockApi/rule_template/data';
+import { customRuleDetailMockData } from '@actiontech/shared/lib/testUtil/mockApi/sqle/rule_template/data';
 import { mockUsePermission } from '@actiontech/shared/lib/testUtil/mockHook/mockUsePermission';
 import {
   UtilsConsoleErrorStringsEnum,

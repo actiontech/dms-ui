@@ -9,15 +9,15 @@ import { mockUseDbServiceDriver } from '@actiontech/shared/lib/testUtil/mockHook
 import { ModalName } from '../../../../../../data/ModalName';
 import EmitterKey from '../../../../../../data/EmitterKey';
 import EventEmitter from '../../../../../../utils/EventEmitter';
-import sqlVersion from '../../../../../../testUtils/mockApi/sql_version';
+import sqlVersion from '@actiontech/shared/lib/testUtil/mockApi/sqle/sql_version';
 import { useParams } from 'react-router-dom';
 import { getBySelector } from '@actiontech/shared/lib/testUtil/customQuery';
-import instance from '../../../../../../testUtils/mockApi/instance';
+import instance from '@actiontech/shared/lib/testUtil/mockApi/sqle/instance';
 import {
   instanceTipsMockData,
   instanceInfoMockData,
   instanceSchemasMockData
-} from '../../../../../../testUtils/mockApi/instance/data';
+} from '@actiontech/shared/lib/testUtil/mockApi/sqle/instance/data';
 import { createSpySuccessResponse } from '@actiontech/shared/lib/testUtil/mockApi';
 import { ResponseCode } from '@actiontech/shared/lib/enum';
 

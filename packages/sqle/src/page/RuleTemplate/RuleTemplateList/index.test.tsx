@@ -11,9 +11,8 @@ import {
   mockCurrentUserReturn,
   mockProjectInfo
 } from '@actiontech/shared/lib/testUtil/mockHook/data';
-import rule_template from '../../../testUtils/mockApi/rule_template';
-import { projectRuleTemplateListMockData } from '../../../testUtils/mockApi/rule_template/data';
-import { BrowserRouter } from 'react-router-dom';
+import rule_template from '@actiontech/shared/lib/testUtil/mockApi/sqle/rule_template';
+import { projectRuleTemplateListMockData } from '@actiontech/shared/lib/testUtil/mockApi/sqle/rule_template/data';
 import { ModalName } from '../../../data/ModalName';
 import { useDispatch, useSelector } from 'react-redux';
 import { SystemRole } from '@actiontech/shared/lib/enum';
@@ -56,12 +55,7 @@ describe('sqle/RuleTemplate/List', () => {
     cleanup();
   });
 
-  const customRender = () =>
-    superRender(
-      <BrowserRouter>
-        <RuleTemplateList />
-      </BrowserRouter>
-    );
+  const customRender = () => superRender(<RuleTemplateList />);
 
   it('should render project rule template list list when it first entered the page', async () => {
     const { baseElement } = customRender();

@@ -2,8 +2,8 @@ import { act, cleanup, fireEvent, screen } from '@testing-library/react';
 import SqlOptimizationOverview from '.';
 import { sqleSuperRender } from '../../../testUtils/superRender';
 import { mockUseCurrentProject } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentProject';
-import sqlOptimization from '../../../testUtils/mockApi/sqlOptimization';
-import { optimizationDetailMockData } from '../../../testUtils/mockApi/sqlOptimization/data';
+import sqlOptimization from '@actiontech/shared/lib/testUtil/mockApi/sqle/sqlOptimization';
+import { optimizationDetailMockData } from '@actiontech/shared/lib/testUtil/mockApi/sqle/sqlOptimization/data';
 import { useParams } from 'react-router-dom';
 import { createSpySuccessResponse } from '@actiontech/shared/lib/testUtil/mockApi';
 

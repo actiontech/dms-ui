@@ -9,13 +9,13 @@ import {
   superRenderHook
 } from '@actiontech/shared/lib/testUtil/superRender';
 import RuleTemplateForm from '.';
-import { ruleListMockData } from '../../../testUtils/mockApi/rule_template/data';
-import configuration from '../../../testUtils/mockApi/configuration';
+import { ruleListMockData } from '@actiontech/shared/lib/testUtil/mockApi/sqle/rule_template/data';
+import configuration from '@actiontech/shared/lib/testUtil/mockApi/sqle/configuration';
 import { Form } from 'antd';
 import { RuleTemplateBaseInfoFields } from './BaseInfoForm/index.type';
 import { mockUsePermission } from '@actiontech/shared/lib/testUtil/mockHook/mockUsePermission';
 import { RuleFilterFieldsType } from '../../../components/RuleList';
-import rule_template from '../../../testUtils/mockApi/rule_template';
+import rule_template from '@actiontech/shared/lib/testUtil/mockApi/sqle/rule_template';
 
 jest.mock('react-redux', () => ({
   ...jest.requireActual('react-redux'),

@@ -1,14 +1,14 @@
 import { mockUseCurrentProject } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentProject';
-import instanceAuditPlan from '../../../../../testUtils/mockApi/instanceAuditPlan';
+import instanceAuditPlan from '@actiontech/shared/lib/testUtil/mockApi/sqle/instanceAuditPlan';
 import { sqleSuperRender } from '../../../../../testUtils/superRender';
 import ScanTypeSqlCollection from '../indx';
 import { act, fireEvent } from '@testing-library/react';
 import { mockProjectInfo } from '@actiontech/shared/lib/testUtil/mockHook/data';
 import { mockUseCurrentUser } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentUser';
 import { getAllBySelector } from '@actiontech/shared/lib/testUtil/customQuery';
-import rule_template from '../../../../../testUtils/mockApi/rule_template';
+import rule_template from '@actiontech/shared/lib/testUtil/mockApi/sqle/rule_template';
 import { createSpySuccessResponse } from '@actiontech/shared/lib/testUtil/mockApi';
-import { mockAuditPlanSQLData } from '../../../../../testUtils/mockApi/instanceAuditPlan/data';
+import { mockAuditPlanSQLData } from '@actiontech/shared/lib/testUtil/mockApi/sqle/instanceAuditPlan/data';
 import {
   ignoreConsoleErrors,
   UtilsConsoleErrorStringsEnum

@@ -1,8 +1,8 @@
 import useRuleTips from '../useRuleTips';
-import sqlManage from '../../../../../../testUtils/mockApi/sqlManage';
+import sqlManage from '@actiontech/shared/lib/testUtil/mockApi/sqle/sqlManage';
 import { act, cleanup } from '@testing-library/react';
 import { mockProjectInfo } from '@actiontech/shared/lib/testUtil/mockHook/data';
-import { ruleTipsData } from '../../../../../../testUtils/mockApi/sqlManage/data';
+import { ruleTipsData } from '@actiontech/shared/lib/testUtil/mockApi/sqle/sqlManage/data';
 import { createSpySuccessResponse } from '@actiontech/shared/lib/testUtil/mockApi';
 import { useSelector } from 'react-redux';
 import { sqleSuperRenderHook } from '../../../../../../testUtils/superRender';

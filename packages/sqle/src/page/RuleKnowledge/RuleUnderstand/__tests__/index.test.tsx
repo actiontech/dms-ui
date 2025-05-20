@@ -3,14 +3,14 @@ import { sqleSuperRender } from '../../../../testUtils/superRender';
 import {
   ruleNameFirst as ruleName,
   mockMarkdownWithCustomCodeBlock
-} from '../../../../testUtils/mockApi/rule_template/data';
+} from '@actiontech/shared/lib/testUtil/mockApi/sqle/rule_template/data';
 import { RuleUnderstandProps } from '../index.type';
 import { screen, act } from '@testing-library/react';
 import {
   ignoreConsoleErrors,
   UtilsConsoleErrorStringsEnum
 } from '@actiontech/shared/lib/testUtil/common';
-import knowledgeBase from '../../../../testUtils/mockApi/knowledgeBase';
+import knowledgeBase from '@actiontech/shared/lib/testUtil/mockApi/sqle/knowledgeBase';
 
 jest.mock('react-redux', () => {
   return {

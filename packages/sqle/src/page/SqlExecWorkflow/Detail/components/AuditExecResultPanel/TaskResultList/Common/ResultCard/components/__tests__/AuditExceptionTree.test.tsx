@@ -6,7 +6,7 @@ import {
   getBySelector,
   queryBySelector
 } from '@actiontech/shared/lib/testUtil/customQuery';
-import { AuditTaskSQLsMockDataWithExceptionRule } from '../../../../../../../../../../testUtils/mockApi/task/data';
+import { AuditTaskSQLsMockDataWithExceptionRule } from '@actiontech/shared/lib/testUtil/mockApi/sqle/task/data';
 
 describe('AuditExceptionTree', () => {
   beforeEach(() => {

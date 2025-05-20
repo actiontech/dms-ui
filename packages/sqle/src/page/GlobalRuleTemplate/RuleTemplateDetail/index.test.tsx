@@ -2,7 +2,7 @@ import { act, cleanup } from '@testing-library/react';
 import { sqleSuperRender } from '../../../testUtils/superRender';
 import RuleTemplateDetail from '.';
 import { mockUseCurrentUser } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentUser';
-import rule_template from '../../../testUtils/mockApi/rule_template';
+import rule_template from '@actiontech/shared/lib/testUtil/mockApi/sqle/rule_template';
 import { useParams } from 'react-router-dom';
 import { mockUsePermission } from '@actiontech/shared/lib/testUtil/mockHook/mockUsePermission';
 

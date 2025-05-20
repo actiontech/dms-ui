@@ -8,13 +8,13 @@ import {
   workflowsDetailExecutingData,
   workflowsDetailData,
   WorkflowTasksItemData
-} from '../../../../testUtils/mockApi/execWorkflow/data';
+} from '@actiontech/shared/lib/testUtil/mockApi/sqle/execWorkflow/data';
 import { mockUseCurrentUser } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentUser';
 import { mockUseCurrentProject } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentProject';
 import { mockUseDbServiceDriver } from '@actiontech/shared/lib/testUtil/mockHook/mockUseDbServiceDriver';
 import { mockProjectInfo } from '@actiontech/shared/lib/testUtil/mockHook/data';
-import task from '../../../../testUtils/mockApi/task';
-import { workflowTaskDetailMockData } from '../../../../testUtils/mockApi/task/data';
+import task from '@actiontech/shared/lib/testUtil/mockApi/sqle/task';
+import { workflowTaskDetailMockData } from '@actiontech/shared/lib/testUtil/mockApi/sqle/task/data';
 import {
   createSpySuccessResponse,
   createSpyErrorResponse
@@ -24,9 +24,9 @@ import {
   GetWorkflowTasksItemV2StatusEnum
 } from '@actiontech/shared/lib/api/sqle/service/common.enum';
 import { getBySelector } from '@actiontech/shared/lib/testUtil/customQuery';
-import execWorkflow from '../../../../testUtils/mockApi/execWorkflow';
+import execWorkflow from '@actiontech/shared/lib/testUtil/mockApi/sqle/execWorkflow';
 import { mockUsePermission } from '@actiontech/shared/lib/testUtil/mockHook/mockUsePermission';
-import instance from '../../../../testUtils/mockApi/instance';
+import instance from '@actiontech/shared/lib/testUtil/mockApi/sqle/instance';
 import {
   ignoreConsoleErrors,
   UtilsConsoleErrorStringsEnum

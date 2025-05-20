@@ -1,20 +1,20 @@
 import { act, fireEvent, renderHook } from '@testing-library/react';
 import useRenderDatabaseSelectionItems from '../hooks/useRenderDatabaseSelectionItems';
 import { MockSharedStepDetail } from '../../../../../../hooks/mockData';
-import instance from '../../../../../../../../../testUtils/mockApi/instance';
+import instance from '@actiontech/shared/lib/testUtil/mockApi/sqle/instance';
 import { mockUseCurrentProject } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentProject';
 import { mockProjectInfo } from '@actiontech/shared/lib/testUtil/mockHook/data';
 import {
   instanceInfoMockData,
   instanceSchemasMockData
-} from '../../../../../../../../../testUtils/mockApi/instance/data';
-import system from '../../../../../../../../../testUtils/mockApi/system';
+} from '@actiontech/shared/lib/testUtil/mockApi/sqle/instance/data';
+import system from '@actiontech/shared/lib/testUtil/mockApi/sqle/system';
 import { getSystemModuleStatusModuleNameEnum } from '@actiontech/shared/lib/api/sqle/service/system/index.enum';
 import { sqleSuperRender } from '../../../../../../../../../testUtils/superRender';
 import { mockUseCurrentUser } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentUser';
 import { useSelector } from 'react-redux';
 import * as useCreationMode from '../../../../../../hooks/useCreationMode';
-import { instanceTipsMockData } from '../../../../../../../../../testUtils/mockApi/instance/data';
+import { instanceTipsMockData } from '@actiontech/shared/lib/testUtil/mockApi/sqle/instance/data';
 import { InstanceTipResV2SupportedBackupStrategyEnum } from '@actiontech/shared/lib/api/sqle/service/common.enum';
 
 jest.mock('react-redux', () => ({

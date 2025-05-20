@@ -15,10 +15,10 @@ import {
 } from '@actiontech/shared/lib/testUtil/customQuery';
 import { mockProjectInfo } from '@actiontech/shared/lib/testUtil/mockHook/data';
 import { ModalName } from '../../../data/ModalName';
-import sqlDEVRecord from '../../../testUtils/mockApi/sqlDEVRecord';
-import { sqlDEVRecordListMockData } from '../../../testUtils/mockApi/sqlDEVRecord/data';
-import user from '../../../testUtils/mockApi/user';
-import instance from '../../../testUtils/mockApi/instance';
+import sqlDEVRecord from '@actiontech/shared/lib/testUtil/mockApi/sqle/sqlDEVRecord';
+import { sqlDEVRecordListMockData } from '@actiontech/shared/lib/testUtil/mockApi/sqle/sqlDEVRecord/data';
+import user from '@actiontech/shared/lib/testUtil/mockApi/sqle/user';
+import instance from '@actiontech/shared/lib/testUtil/mockApi/sqle/instance';
 import { SupportLanguage } from '@actiontech/shared/lib/enum';
 
 jest.mock('react-redux', () => {

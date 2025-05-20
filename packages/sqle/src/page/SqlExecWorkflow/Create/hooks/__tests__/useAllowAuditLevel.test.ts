@@ -1,7 +1,7 @@
 import { useAllowAuditLevel } from '../useAllowAuditLevel';
 import { act, cleanup, renderHook } from '@testing-library/react';
 import { WorkflowTemplateDetailResV1AllowSubmitWhenLessAuditLevelEnum } from '@actiontech/shared/lib/api/sqle/service/common.enum';
-import execWorkflow from '../../../../../testUtils/mockApi/execWorkflow';
+import execWorkflow from '@actiontech/shared/lib/testUtil/mockApi/sqle/execWorkflow';
 
 describe('sqle/useAllowAuditLevel', () => {
   const customRender = () => {

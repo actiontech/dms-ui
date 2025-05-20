@@ -1,6 +1,6 @@
 import { sqleSuperRender } from '../../../../../../testUtils/superRender';
 import AssociatedRollbackWorkflows from '../components/AssociatedRollbackWorkflows';
-import { WorkflowsOverviewListData } from '../../../../../../testUtils/mockApi/execWorkflow/data';
+import { WorkflowsOverviewListData } from '@actiontech/shared/lib/testUtil/mockApi/sqle/execWorkflow/data';
 import { mockUseCurrentProject } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentProject';
 import { cleanup } from '@testing-library/react';
 

@@ -2,7 +2,7 @@ import { cleanup, act } from '@testing-library/react';
 import { sqleSuperRender } from '../../../../../testUtils/superRender';
 import { mockThemeStyleData } from '../../../../../testUtils/mockHooks/mockThemeStyleData';
 import MockDate from 'mockdate';
-import statistic from '../../../../../testUtils/mockApi/statistic';
+import statistic from '@actiontech/shared/lib/testUtil/mockApi/sqle/statistic';
 import {
   createSpySuccessResponse,
   createSpyFailResponse

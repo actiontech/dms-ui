@@ -7,7 +7,7 @@ import { getBySelector } from '@actiontech/shared/lib/testUtil/customQuery';
 import {
   WorkflowListData,
   WorkflowsOverviewListData
-} from '../../../../../../testUtils/mockApi/execWorkflow/data';
+} from '@actiontech/shared/lib/testUtil/mockApi/sqle/execWorkflow/data';
 import { sqleSuperRender } from '../../../../../../testUtils/superRender';
 import { mockThemeStyleData } from '../../../../../../testUtils/mockHooks/mockThemeStyleData';
 

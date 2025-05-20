@@ -4,10 +4,10 @@ import { mockProjectInfo } from '@actiontech/shared/lib/testUtil/mockHook/data';
 import { mockUseCurrentUser } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentUser';
 import { mockUseDbServiceDriver } from '@actiontech/shared/lib/testUtil/mockHook/mockUseDbServiceDriver';
 import VersionDetail from '../index';
-import instance from '../../../../testUtils/mockApi/instance';
-import sqlVersion from '../../../../testUtils/mockApi/sql_version';
-import execWorkflow from '../../../../testUtils/mockApi/execWorkflow';
-import task from '../../../../testUtils/mockApi/task';
+import instance from '@actiontech/shared/lib/testUtil/mockApi/sqle/instance';
+import sqlVersion from '@actiontech/shared/lib/testUtil/mockApi/sqle/sql_version';
+import execWorkflow from '@actiontech/shared/lib/testUtil/mockApi/sqle/execWorkflow';
+import task from '@actiontech/shared/lib/testUtil/mockApi/sqle/task';
 import { sqleSuperRender } from '../../../../testUtils/superRender';
 import { useSelector, useDispatch } from 'react-redux';
 import { mockReactFlow } from '../mockData/mockReactFlow';
@@ -18,7 +18,7 @@ import {
   mockVersionDetailWhenWorkflowStatusISExecFailed,
   mockVersionDetailAllowExecWorkflowOrderData,
   mockVersionDetailAllowReleaseWorkflowOrderData
-} from '../../../../testUtils/mockApi/sql_version/data';
+} from '@actiontech/shared/lib/testUtil/mockApi/sqle/sql_version/data';
 import { createSpySuccessResponse } from '@actiontech/shared/lib/testUtil/mockApi';
 import { getAllBySelector } from '@actiontech/shared/lib/testUtil/customQuery';
 import { ModalName } from '../../../../data/ModalName';

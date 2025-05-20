@@ -16,7 +16,7 @@ import instance_audit_plan from '@actiontech/shared/lib/api/sqle/service/instanc
 import { mockUseCurrentProject } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentProject';
 import MockDate from 'mockdate';
 import dayjs from 'dayjs';
-import sqlManage from '../../../testUtils/mockApi/sqlManage';
+import sqlManage from '@actiontech/shared/lib/testUtil/mockApi/sqle/sqlManage';
 import { translateTimeForRequest } from '@actiontech/shared/lib/utils/Common';
 
 jest.mock('react-router', () => {

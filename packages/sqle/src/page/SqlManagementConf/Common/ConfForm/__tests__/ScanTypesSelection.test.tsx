@@ -5,8 +5,8 @@ import {
 } from '../../../../../testUtils/superRender';
 import { ConfFormContextProvide, SelectScanTypeParamsType } from '../context';
 import { Form } from 'antd';
-import instance from '../../../../../testUtils/mockApi/instance';
-import { mockAuditPlanMetaData } from '../../../../../testUtils/mockApi/instanceAuditPlan/data';
+import instance from '@actiontech/shared/lib/testUtil/mockApi/sqle/instance';
+import { mockAuditPlanMetaData } from '@actiontech/shared/lib/testUtil/mockApi/sqle/instanceAuditPlan/data';
 import { mockUseCurrentProject } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentProject';
 import { mockUseCurrentUser } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentUser';
 import { cleanup, act, fireEvent, screen } from '@testing-library/react';

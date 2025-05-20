@@ -1,7 +1,7 @@
 import { act, cleanup, fireEvent, screen } from '@testing-library/react';
 import { sqleSuperRender } from '../../../testUtils/superRender';
 import EditRuleTemplate from '.';
-import { ruleListMockData } from '../../../testUtils/mockApi/rule_template/data';
+import { ruleListMockData } from '@actiontech/shared/lib/testUtil/mockApi/sqle/rule_template/data';
 import { RuleParamResV1TypeEnum } from '@actiontech/shared/lib/api/sqle/service/common.enum';
 import { mockUsePermission } from '@actiontech/shared/lib/testUtil/mockHook/mockUsePermission';
 

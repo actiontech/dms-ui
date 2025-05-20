@@ -6,8 +6,8 @@ import { mockUseCurrentProject } from '@actiontech/shared/lib/testUtil/mockHook/
 import { mockUseCurrentUser } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentUser';
 import { mockProjectInfo } from '@actiontech/shared/lib/testUtil/mockHook/data';
 import UpdateWhitelist from '../UpdateWhitelist';
-import auditWhiteList from '../../../../testUtils/mockApi/auditWhiteList';
-import { auditWhiteListMockData } from '../../../../testUtils/mockApi/auditWhiteList/data';
+import auditWhiteList from '@actiontech/shared/lib/testUtil/mockApi/sqle/auditWhiteList';
+import { auditWhiteListMockData } from '@actiontech/shared/lib/testUtil/mockApi/sqle/auditWhiteList/data';
 import { CreateAuditWhitelistReqV1MatchTypeEnum } from '@actiontech/shared/lib/api/sqle/service/common.enum';
 import EventEmitter from '../../../../utils/EventEmitter';
 import EmitterKey from '../../../../data/EmitterKey';

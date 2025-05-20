@@ -7,7 +7,7 @@ import { mockProjectInfo } from '@actiontech/shared/lib/testUtil/mockHook/data';
 import { mockUseCurrentUser } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentUser';
 import { mockUseDbServiceDriver } from '@actiontech/shared/lib/testUtil/mockHook/mockUseDbServiceDriver';
 import { ModalName } from '../../../../../../data/ModalName';
-import workflow from '../../../../../../testUtils/mockApi/execWorkflow';
+import workflow from '@actiontech/shared/lib/testUtil/mockApi/sqle/execWorkflow';
 import { getBySelector } from '@actiontech/shared/lib/testUtil/customQuery';
 import EmitterKey from '../../../../../../data/EmitterKey';
 import EventEmitter from '../../../../../../utils/EventEmitter';

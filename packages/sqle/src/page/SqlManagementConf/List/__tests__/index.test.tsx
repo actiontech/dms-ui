@@ -7,8 +7,8 @@ import {
   mockProjectInfo,
   mockUseUserOperationPermissionData
 } from '@actiontech/shared/lib/testUtil/mockHook/data';
-import instanceAuditPlan from '../../../../testUtils/mockApi/instanceAuditPlan';
-import { mockInstanceAuditPlanListData } from '../../../../testUtils/mockApi/instanceAuditPlan/data';
+import instanceAuditPlan from '@actiontech/shared/lib/testUtil/mockApi/sqle/instanceAuditPlan';
+import { mockInstanceAuditPlanListData } from '@actiontech/shared/lib/testUtil/mockApi/sqle/instanceAuditPlan/data';
 import { sqleSuperRender } from '../../../../testUtils/superRender';
 import {
   getBySelector,
@@ -20,14 +20,14 @@ import {
   UpdateInstanceAuditPlanStatusReqV1ActiveEnum,
   InstanceAuditPlanResV1ActiveStatusEnum
 } from '@actiontech/shared/lib/api/sqle/service/common.enum';
-import instance from '../../../../testUtils/mockApi/instance';
+import instance from '@actiontech/shared/lib/testUtil/mockApi/sqle/instance';
 import { InstanceAuditPlanStatusEnum } from '../index.enum';
 import { mockUsePermission } from '@actiontech/shared/lib/testUtil/mockHook/mockUsePermission';
 import {
   AuditPlanTypeResBaseActiveStatusEnum,
   AuditPlanTypeResBaseLastCollectionStatusEnum
 } from '@actiontech/shared/lib/api/sqle/service/common.enum';
-import project from '../../../../testUtils/mockApi/project';
+import project from '@actiontech/shared/lib/testUtil/mockApi/base/project';
 
 jest.mock('react-redux', () => {
   return {

@@ -1,6 +1,6 @@
 import { fireEvent, screen } from '@testing-library/dom';
 import { sqleSuperRender } from '../../../testUtils/superRender';
-import task from '../../../testUtils/mockApi/task';
+import task from '@actiontech/shared/lib/testUtil/mockApi/sqle/task';
 import SqlRewrittenDrawerEE from '../index.ee';
 import {
   getBySelector,
@@ -17,7 +17,7 @@ import {
 import {
   SqlRewrittenMockDataNoDDL,
   SqlRewrittenMockDataUseDDL
-} from '../../../testUtils/mockApi/task/data';
+} from '@actiontech/shared/lib/testUtil/mockApi/sqle/task/data';
 import { RewriteSuggestionTypeEnum } from '@actiontech/shared/lib/api/sqle/service/common.enum';
 import { ThemeProvider, StyledEngineProvider } from '@mui/material/styles';
 import sharedTheme from '@actiontech/shared/lib/theme/light';

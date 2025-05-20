@@ -1,6 +1,6 @@
 import reducers, { updatePluginAuditRecord } from '.';
 import { IReduxState } from '..';
-import { sqlDEVRecordListMockData } from '../../testUtils/mockApi/sqlDEVRecord/data';
+import { sqlDEVRecordListMockData } from '@actiontech/shared/lib/testUtil/mockApi/sqle/sqlDEVRecord/data';
 
 describe('store/pluginAudit', () => {
   test('should create action', () => {

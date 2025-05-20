@@ -1,8 +1,8 @@
 import { screen, cleanup, act, fireEvent } from '@testing-library/react';
 import SqlManagementExceptionList from '../';
 import { superRender } from '@actiontech/shared/lib/testUtil/superRender';
-import blacklist from '../../../../testUtils/mockApi/blacklist';
-import { mockBlacklistData } from '../../../../testUtils/mockApi/blacklist/data';
+import blacklist from '@actiontech/shared/lib/testUtil/mockApi/sqle/blacklist';
+import { mockBlacklistData } from '@actiontech/shared/lib/testUtil/mockApi/sqle/blacklist/data';
 import { getBySelector } from '@actiontech/shared/lib/testUtil/customQuery';
 import { useSelector, useDispatch } from 'react-redux';
 import { ModalName } from '../../../../data/ModalName';

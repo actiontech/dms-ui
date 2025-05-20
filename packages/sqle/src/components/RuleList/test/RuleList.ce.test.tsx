@@ -6,7 +6,7 @@ import RuleList, { pageRemainingHeight } from '../RuleList';
 import { act, cleanup } from '@testing-library/react';
 import { sqleSuperRender } from '../../../testUtils/superRender';
 import { RuleListProps, RuleStatusEnum } from '../index.type';
-import { ruleListMockData } from '../../../testUtils/mockApi/rule_template/data';
+import { ruleListMockData } from '@actiontech/shared/lib/testUtil/mockApi/sqle/rule_template/data';
 import { mockUsePermission } from '@actiontech/shared/lib/testUtil/mockHook/mockUsePermission';
 
 describe('sqle/components/RuleList CE', () => {

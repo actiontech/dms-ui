@@ -1,5 +1,5 @@
 import { cleanup, act } from '@testing-library/react';
-import sqlVersion from '../../../testUtils/mockApi/sql_version';
+import sqlVersion from '@actiontech/shared/lib/testUtil/mockApi/sqle/sql_version';
 import { mockUseCurrentProject } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentProject';
 import { mockUseCurrentUser } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentUser';
 import { sqleSuperRender } from '../../../testUtils/superRender';

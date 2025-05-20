@@ -5,7 +5,7 @@ import {
 import { Form } from 'antd';
 import SqlManagementExceptionForm from '../index';
 import { SqlManagementExceptionFormFieldType } from '../../../index.type';
-import instance from '../../../../../testUtils/mockApi/instance';
+import instance from '@actiontech/shared/lib/testUtil/mockApi/sqle/instance';
 import { mockUseDbServiceDriver } from '@actiontech/shared/lib/testUtil/mockHook/mockUseDbServiceDriver';
 import { cleanup, act, screen, fireEvent } from '@testing-library/react';
 import { getBySelector } from '@actiontech/shared/lib/testUtil/customQuery';

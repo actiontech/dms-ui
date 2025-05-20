@@ -1,7 +1,7 @@
 import { act, cleanup, screen, fireEvent } from '@testing-library/react';
 import KnowledgeSearchBar from '../index';
 import { sqleSuperRender } from '../../../../../testUtils/superRender';
-import knowledgeBase from '../../../../../testUtils/mockApi/knowledgeBase';
+import knowledgeBase from '@actiontech/shared/lib/testUtil/mockApi/sqle/knowledgeBase';
 import {
   ignoreConsoleErrors,
   UtilsConsoleErrorStringsEnum

@@ -5,12 +5,12 @@ import { useDispatch, useSelector } from 'react-redux';
 import { mockUseCurrentProject } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentProject';
 import { mockUseCurrentUser } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentUser';
 import { mockUseDbServiceDriver } from '@actiontech/shared/lib/testUtil/mockHook/mockUseDbServiceDriver';
-import task from '../../../../../../testUtils/mockApi/task';
-import execWorkflow from '../../../../../../testUtils/mockApi/execWorkflow';
+import task from '@actiontech/shared/lib/testUtil/mockApi/sqle/task';
+import execWorkflow from '@actiontech/shared/lib/testUtil/mockApi/sqle/execWorkflow';
 import {
   WorkflowsOverviewListData,
   AuditTaskResData
-} from '../../../../../../testUtils/mockApi/execWorkflow/data';
+} from '@actiontech/shared/lib/testUtil/mockApi/sqle/execWorkflow/data';
 import { createSpySuccessResponse } from '@actiontech/shared/lib/testUtil/mockApi';
 import { getBySelector } from '@actiontech/shared/lib/testUtil/customQuery';
 import { WorkflowResV2ModeEnum } from '@actiontech/shared/lib/api/sqle/service/common.enum';
@@ -20,8 +20,8 @@ import {
 } from '@actiontech/shared/lib/testUtil/common';
 import EventEmitter from '../../../../../../utils/EventEmitter';
 import EmitterKey from '../../../../../../data/EmitterKey';
-import workflowTemplate from '../../../../../../testUtils/mockApi/workflowTemplate';
-import instance from '../../../../../../testUtils/mockApi/instance';
+import workflowTemplate from '@actiontech/shared/lib/testUtil/mockApi/sqle/workflowTemplate';
+import instance from '@actiontech/shared/lib/testUtil/mockApi/sqle/instance';
 
 jest.mock('react-redux', () => {
   return {

@@ -2,7 +2,7 @@ import { superRender } from '@actiontech/shared/lib/testUtil/superRender';
 import Home from '.';
 import { mockUseCurrentProject } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentProject';
 import { mockUseCurrentUser } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentUser';
-import home from '../../testUtils/mockApi/home';
+import home from '@actiontech/shared/lib/testUtil/mockApi/sqle/home';
 import { cleanup, fireEvent, screen, act } from '@testing-library/react';
 import { getAllBySelector } from '@actiontech/shared/lib/testUtil/customQuery';
 

@@ -1,12 +1,12 @@
 import { act, renderHook } from '@testing-library/react';
 import { useSearchParams } from 'react-router-dom';
 import useSetFormValuesWithGenModifiedSqlParams from '../hooks/useSetFormValuesWithGenModifiedSqlParams';
-import DatabaseComparisonMockService from '../../../../../../../../../testUtils/mockApi/database_comparison';
+import DatabaseComparisonMockService from '@actiontech/shared/lib/testUtil/mockApi/sqle/database_comparison';
 import { compressToEncodedURIComponent } from 'lz-string';
 import { DatabaseObjectObjectTypeEnum } from '@actiontech/shared/lib/api/sqle/service/common.enum';
 import { SAME_SQL_MODE_DEFAULT_FIELD_KEY } from '../../../../../../../Common/SqlStatementFormController/SqlStatementFormItem/index.data';
 import { createSpySuccessResponse } from '@actiontech/shared/lib/testUtil/mockApi';
-import { genDatabaseDiffModifySQLsMockData } from '../../../../../../../../../testUtils/mockApi/database_comparison/data';
+import { genDatabaseDiffModifySQLsMockData } from '@actiontech/shared/lib/testUtil/mockApi/sqle/database_comparison/data';
 
 jest.mock('react-router-dom', () => {
   return {

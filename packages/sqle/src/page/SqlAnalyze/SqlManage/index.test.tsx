@@ -15,7 +15,7 @@ import SqlManage from '@actiontech/shared/lib/api/sqle/service/SqlManage';
 import { SQLManageSqlAnalyzeData } from '../__testData__';
 import SQLManageAnalyze from '.';
 import { mockUseCurrentProject } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentProject';
-import sqlManageMock from '../../../testUtils/mockApi/sqlManage';
+import sqlManageMock from '@actiontech/shared/lib/testUtil/mockApi/sqle/sqlManage';
 import MockDate from 'mockdate';
 import dayjs from 'dayjs';
 import { translateTimeForRequest } from '@actiontech/shared/lib/utils/Common';

@@ -3,9 +3,9 @@ import FileMode from '../FileMode';
 import { fireEvent, screen } from '@testing-library/dom';
 import { getBySelector } from '@actiontech/shared/lib/testUtil/customQuery';
 import { act } from '@testing-library/react';
-import task from '../../../../../../../../../testUtils/mockApi/task';
+import task from '@actiontech/shared/lib/testUtil/mockApi/sqle/task';
 import { sqleSuperRender } from '../../../../../../../../../testUtils/superRender';
-import { TaskFileListMockData } from '../../../../../../../../../testUtils/mockApi/task/data';
+import { TaskFileListMockData } from '@actiontech/shared/lib/testUtil/mockApi/sqle/task/data';
 import { mockUseCurrentUser } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentUser';
 
 describe('test TaskResultList/Result/FileMode', () => {

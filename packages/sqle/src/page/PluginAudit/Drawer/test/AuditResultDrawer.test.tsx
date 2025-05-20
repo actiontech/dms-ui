@@ -4,8 +4,8 @@ import { sqleSuperRender } from '../../../../testUtils/superRender';
 import { useDispatch, useSelector } from 'react-redux';
 import { getBySelector } from '@actiontech/shared/lib/testUtil/customQuery';
 import { ModalName } from '../../../../data/ModalName';
-import { sqlDEVRecordListMockData } from '../../../../testUtils/mockApi/sqlDEVRecord/data';
-import rule_template from '../../../../testUtils/mockApi/rule_template/index';
+import { sqlDEVRecordListMockData } from '@actiontech/shared/lib/testUtil/mockApi/sqle/sqlDEVRecord/data';
+import rule_template from '@actiontech/shared/lib/testUtil/mockApi/sqle/rule_template/index';
 import { mockUseCurrentUser } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentUser';
 import {
   UtilsConsoleErrorStringsEnum,

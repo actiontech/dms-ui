@@ -11,12 +11,12 @@ import {
   queryBySelector,
   getBySelector
 } from '@actiontech/shared/lib/testUtil/customQuery';
-import instance from '../../../testUtils/mockApi/instance';
+import instance from '@actiontech/shared/lib/testUtil/mockApi/sqle/instance';
 import {
   instanceInfoMockData,
   instanceTipsMockData
-} from '../../../testUtils/mockApi/instance/data';
-import sqlOptimization from '../../../testUtils/mockApi/sqlOptimization';
+} from '@actiontech/shared/lib/testUtil/mockApi/sqle/instance/data';
+import sqlOptimization from '@actiontech/shared/lib/testUtil/mockApi/sqle/sqlOptimization';
 import MockDate from 'mockdate';
 import dayjs from 'dayjs';
 import { formatterSQL } from '@actiontech/shared/lib/utils/FormatterSQL';

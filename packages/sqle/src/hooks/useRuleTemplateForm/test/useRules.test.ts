@@ -1,8 +1,8 @@
 import { cleanup, act } from '@testing-library/react';
 import { superRenderHook } from '@actiontech/shared/lib/testUtil/superRender';
 import useRules from '../useRules';
-import rule_template from '../../../testUtils/mockApi/rule_template';
-import { ruleListData } from '../../../testUtils/mockApi/rule_template/data';
+import rule_template from '@actiontech/shared/lib/testUtil/mockApi/sqle/rule_template';
+import { ruleListData } from '@actiontech/shared/lib/testUtil/mockApi/sqle/rule_template/data';
 import { Form } from 'antd';
 import { RuleFilterFieldsType } from '../../../components/RuleList';
 import { NamePath } from 'antd/es/form/interface';

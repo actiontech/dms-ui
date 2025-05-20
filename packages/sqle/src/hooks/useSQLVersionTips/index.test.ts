@@ -1,8 +1,8 @@
 import { act, renderHook, cleanup } from '@testing-library/react-hooks';
 import { mockUseCurrentProject } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentProject';
-import sqlVersion from '../../testUtils/mockApi/sql_version';
+import sqlVersion from '@actiontech/shared/lib/testUtil/mockApi/sqle/sql_version';
 import useSQLVersionTips from '.';
-import { getSqlVersionListV1MockData } from '../../testUtils/mockApi/sql_version/data';
+import { getSqlVersionListV1MockData } from '@actiontech/shared/lib/testUtil/mockApi/sqle/sql_version/data';
 import {
   createSpyErrorResponse,
   createSpyFailResponse

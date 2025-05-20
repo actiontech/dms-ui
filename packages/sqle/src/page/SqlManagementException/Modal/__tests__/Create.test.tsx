@@ -7,7 +7,7 @@ import { mockUseCurrentUser } from '@actiontech/shared/lib/testUtil/mockHook/moc
 import { mockUseDbServiceDriver } from '@actiontech/shared/lib/testUtil/mockHook/mockUseDbServiceDriver';
 import { mockProjectInfo } from '@actiontech/shared/lib/testUtil/mockHook/data';
 import CreateSqlManagementException from '../Create';
-import blacklist from '../../../../testUtils/mockApi/blacklist';
+import blacklist from '@actiontech/shared/lib/testUtil/mockApi/sqle/blacklist';
 import { CreateBlacklistReqV1TypeEnum } from '@actiontech/shared/lib/api/sqle/service/common.enum';
 import EventEmitter from '../../../../utils/EventEmitter';
 import EmitterKey from '../../../../data/EmitterKey';
@@ -15,8 +15,8 @@ import {
   queryBySelector,
   getBySelector
 } from '@actiontech/shared/lib/testUtil/customQuery';
-import instance from '../../../../testUtils/mockApi/instance';
-import { instanceTipsMockData } from '../../../../testUtils/mockApi/instance/data';
+import instance from '@actiontech/shared/lib/testUtil/mockApi/sqle/instance';
+import { instanceTipsMockData } from '@actiontech/shared/lib/testUtil/mockApi/sqle/instance/data';
 import {
   ignoreConsoleErrors,
   UtilsConsoleErrorStringsEnum

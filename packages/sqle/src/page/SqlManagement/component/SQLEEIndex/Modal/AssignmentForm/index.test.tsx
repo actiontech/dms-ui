@@ -1,5 +1,5 @@
 import { mockUseCurrentProject } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentProject';
-import user from '../../../../../../testUtils/mockApi/user';
+import user from '@actiontech/shared/lib/testUtil/mockApi/sqle/user';
 import { act, cleanup, fireEvent, screen } from '@testing-library/react';
 import { AssignmentFormField } from './index.type';
 import AssignmentForm from '.';
@@ -12,7 +12,7 @@ import {
   getAllBySelector,
   getBySelector
 } from '@actiontech/shared/lib/testUtil/customQuery';
-import { userTipListData } from '../../../../../../testUtils/mockApi/user/data';
+import { userTipListData } from '@actiontech/shared/lib/testUtil/mockApi/sqle/user/data';
 
 describe('page/SqlManagement/AssignmentForm', () => {
   beforeEach(() => {

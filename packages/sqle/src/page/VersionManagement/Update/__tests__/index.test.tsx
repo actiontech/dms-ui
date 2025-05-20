@@ -1,6 +1,6 @@
 import { cleanup, act, fireEvent, screen } from '@testing-library/react';
 import UpdateVersion from '..';
-import sqlVersion from '../../../../testUtils/mockApi/sql_version';
+import sqlVersion from '@actiontech/shared/lib/testUtil/mockApi/sqle/sql_version';
 import { mockUseCurrentProject } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentProject';
 import { mockUseDbServiceDriver } from '@actiontech/shared/lib/testUtil/mockHook/mockUseDbServiceDriver';
 import { mockProjectInfo } from '@actiontech/shared/lib/testUtil/mockHook/data';
@@ -9,8 +9,8 @@ import {
   getAllBySelector,
   getBySelector
 } from '@actiontech/shared/lib/testUtil/customQuery';
-import instance from '../../../../testUtils/mockApi/instance';
-import { instanceTipsMockData } from '../../../../testUtils/mockApi/instance/data';
+import instance from '@actiontech/shared/lib/testUtil/mockApi/sqle/instance';
+import { instanceTipsMockData } from '@actiontech/shared/lib/testUtil/mockApi/sqle/instance/data';
 import { useParams } from 'react-router-dom';
 import { createSpySuccessResponse } from '@actiontech/shared/lib/testUtil/mockApi';
 

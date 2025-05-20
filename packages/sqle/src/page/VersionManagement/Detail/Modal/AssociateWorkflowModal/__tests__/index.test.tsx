@@ -9,8 +9,8 @@ import { mockUseDbServiceDriver } from '@actiontech/shared/lib/testUtil/mockHook
 import { ModalName } from '../../../../../../data/ModalName';
 import EmitterKey from '../../../../../../data/EmitterKey';
 import EventEmitter from '../../../../../../utils/EventEmitter';
-import sqlVersion from '../../../../../../testUtils/mockApi/sql_version';
-import { GetWorkflowsThatCanBeAssociatedToVersionV1MockData } from '../../../../../../testUtils/mockApi/sql_version/data';
+import sqlVersion from '@actiontech/shared/lib/testUtil/mockApi/sqle/sql_version';
+import { GetWorkflowsThatCanBeAssociatedToVersionV1MockData } from '@actiontech/shared/lib/testUtil/mockApi/sqle/sql_version/data';
 import { useParams } from 'react-router-dom';
 import { getBySelector } from '@actiontech/shared/lib/testUtil/customQuery';
 

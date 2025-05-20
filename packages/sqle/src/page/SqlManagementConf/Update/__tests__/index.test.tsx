@@ -5,19 +5,19 @@ import { mockUseCurrentUser } from '@actiontech/shared/lib/testUtil/mockHook/moc
 import { mockUseDbServiceDriver } from '@actiontech/shared/lib/testUtil/mockHook/mockUseDbServiceDriver';
 import { mockUseProjectBusinessTips } from '@actiontech/shared/lib/testUtil/mockHook/mockUseProjectBusinessTips';
 import { mockProjectInfo } from '@actiontech/shared/lib/testUtil/mockHook/data';
-import instanceAuditPlan from '../../../../testUtils/mockApi/instanceAuditPlan';
+import instanceAuditPlan from '@actiontech/shared/lib/testUtil/mockApi/sqle/instanceAuditPlan';
 import {
   mockAuditPlanMetaData,
   mockAuditPlanDetailData
-} from '../../../../testUtils/mockApi/instanceAuditPlan/data';
-import configuration from '../../../../testUtils/mockApi/configuration';
-import instance from '../../../../testUtils/mockApi/instance';
+} from '@actiontech/shared/lib/testUtil/mockApi/sqle/instanceAuditPlan/data';
+import configuration from '@actiontech/shared/lib/testUtil/mockApi/sqle/configuration';
+import instance from '@actiontech/shared/lib/testUtil/mockApi/sqle/instance';
 import {
   instanceInfoMockData,
   instanceTipsMockData
-} from '../../../../testUtils/mockApi/instance/data';
-import rule_template from '../../../../testUtils/mockApi/rule_template';
-import { projectRuleTemplateList } from '../../../../testUtils/mockApi/rule_template/data';
+} from '@actiontech/shared/lib/testUtil/mockApi/sqle/instance/data';
+import rule_template from '@actiontech/shared/lib/testUtil/mockApi/sqle/rule_template';
+import { projectRuleTemplateList } from '@actiontech/shared/lib/testUtil/mockApi/sqle/rule_template/data';
 import { sqleSuperRender } from '../../../../testUtils/superRender';
 import { createSpySuccessResponse } from '@actiontech/shared/lib/testUtil/mockApi';
 import {
@@ -29,7 +29,7 @@ import {
   AuditPlanParamResV1TypeEnum,
   HighPriorityConditionResV1TypeEnum
 } from '@actiontech/shared/lib/api/sqle/service/common.enum';
-import project from '../../../../testUtils/mockApi/project';
+import project from '@actiontech/shared/lib/testUtil/mockApi/base/project';
 
 jest.mock('react-router-dom', () => {
   return {

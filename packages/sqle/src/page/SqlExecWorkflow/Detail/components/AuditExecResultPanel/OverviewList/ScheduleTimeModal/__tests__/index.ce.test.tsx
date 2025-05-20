@@ -11,7 +11,7 @@ import {
 import MockDate from 'mockdate';
 import ScheduleTimeModal from '..';
 import { getBySelector } from '@actiontech/shared/lib/testUtil/customQuery';
-import configuration from '../../../../../../../../testUtils/mockApi/configuration';
+import configuration from '@actiontech/shared/lib/testUtil/mockApi/sqle/configuration';
 import { sqleSuperRender } from '../../../../../../../../testUtils/superRender';
 
 describe('test ScheduleTimeModal ce', () => {

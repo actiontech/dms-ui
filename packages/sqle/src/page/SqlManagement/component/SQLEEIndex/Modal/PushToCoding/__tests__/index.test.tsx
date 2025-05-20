@@ -1,11 +1,11 @@
 import { act, cleanup, fireEvent, screen } from '@testing-library/react';
 import { mockUseCurrentProject } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentProject';
-import sqlManage from '../../../../../../../testUtils/mockApi/sqlManage';
+import sqlManage from '@actiontech/shared/lib/testUtil/mockApi/sqle/sqlManage';
 import { useSelector, useDispatch } from 'react-redux';
 import { ModalName } from '../../../../../../../data/ModalName';
 import { sqleSuperRender } from '../../../../../../../testUtils/superRender';
 import PushToCodingModal from '..';
-import { sqlManageListData } from '../../../../../../../testUtils/mockApi/sqlManage/data';
+import { sqlManageListData } from '@actiontech/shared/lib/testUtil/mockApi/sqle/sqlManage/data';
 import { mockProjectInfo } from '@actiontech/shared/lib/testUtil/mockHook/data';
 import {
   SqlManageCodingReqTypeEnum,

@@ -1,7 +1,7 @@
 import { act, renderHook } from '@testing-library/react';
 import useTestDatabaseConnect from '../hooks/useTestDatabaseConnect';
 import { mockUseCurrentProject } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentProject';
-import instance from '../../../../../../../../../testUtils/mockApi/instance';
+import instance from '@actiontech/shared/lib/testUtil/mockApi/sqle/instance';
 import { mockProjectInfo } from '@actiontech/shared/lib/testUtil/mockHook/data';
 import { sqleSuperRender } from '../../../../../../../../../testUtils/superRender';
 

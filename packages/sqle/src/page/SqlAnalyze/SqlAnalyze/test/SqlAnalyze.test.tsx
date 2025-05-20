@@ -5,7 +5,7 @@ import {
 import { superRender } from '@actiontech/shared/lib/testUtil/superRender';
 import SqlAnalyze from '../SqlAnalyze';
 import { SQLManageSqlAnalyzeData } from '../../__testData__';
-import { mockSqlManageSqlAnalysisChartData } from '../../../../testUtils/mockApi/sqlManage/data';
+import { mockSqlManageSqlAnalysisChartData } from '@actiontech/shared/lib/testUtil/mockApi/sqle/sqlManage/data';
 import { screen } from '@testing-library/dom';
 import MockDate from 'mockdate';
 import dayjs from 'dayjs';

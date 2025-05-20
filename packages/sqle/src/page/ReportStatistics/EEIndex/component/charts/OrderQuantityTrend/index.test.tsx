@@ -6,7 +6,7 @@ import {
 import MockDate from 'mockdate';
 import dayjs from 'dayjs';
 
-import statistic from '../../../../../../testUtils/mockApi/statistic';
+import statistic from '@actiontech/shared/lib/testUtil/mockApi/sqle/statistic';
 import {
   ignoreConsoleErrors,
   UtilsConsoleErrorStringsEnum

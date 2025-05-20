@@ -1,8 +1,8 @@
 import { fireEvent } from '@testing-library/dom';
 import AuditResultStep from '..';
 import { sqleSuperRender } from '../../../../../../testUtils/superRender';
-import execWorkflow from '../../../../../../testUtils/mockApi/execWorkflow';
-import { AuditTaskResData } from '../../../../../../testUtils/mockApi/execWorkflow/data';
+import execWorkflow from '@actiontech/shared/lib/testUtil/mockApi/sqle/execWorkflow';
+import { AuditTaskResData } from '@actiontech/shared/lib/testUtil/mockApi/sqle/execWorkflow/data';
 import { MockSharedStepDetail } from '../../../hooks/mockData';
 import { act, screen } from '@testing-library/react';
 import { mockUseCurrentProject } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentProject';
@@ -17,7 +17,7 @@ import { ModalName } from '../../../../../../data/ModalName';
 import { getBySelector } from '@actiontech/shared/lib/testUtil/customQuery';
 import EventEmitter from '../../../../../../utils/EventEmitter';
 import EmitterKey from '../../../../../../data/EmitterKey';
-import instance from '../../../../../../testUtils/mockApi/instance';
+import instance from '@actiontech/shared/lib/testUtil/mockApi/sqle/instance';
 import { mockUseDbServiceDriver } from '@actiontech/shared/lib/testUtil/mockHook/mockUseDbServiceDriver';
 import { InstanceTipResV2SupportedBackupStrategyEnum } from '@actiontech/shared/lib/api/sqle/service/common.enum';
 

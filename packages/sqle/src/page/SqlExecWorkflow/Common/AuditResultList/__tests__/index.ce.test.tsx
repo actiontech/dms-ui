@@ -6,7 +6,7 @@ import AuditResultList from '..';
 import { AuditResultListProps } from '../index.type';
 import { sqleSuperRender } from '../../../../../testUtils/superRender';
 import { cleanup } from '@testing-library/react';
-import execWorkflow from '../../../../../testUtils/mockApi/execWorkflow';
+import execWorkflow from '@actiontech/shared/lib/testUtil/mockApi/sqle/execWorkflow';
 import { mockUseCurrentProject } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentProject';
 import {
   UtilsConsoleErrorStringsEnum,
@@ -15,7 +15,7 @@ import {
 import { mockUseCurrentUser } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentUser';
 import { useSelector } from 'react-redux';
 import { ModalName } from '../../../../../data/ModalName';
-import { mockSqlExecWorkflowTasksData } from '../../../../../testUtils/mockApi/execWorkflow/data';
+import { mockSqlExecWorkflowTasksData } from '@actiontech/shared/lib/testUtil/mockApi/sqle/execWorkflow/data';
 
 jest.mock('react-redux', () => {
   return {

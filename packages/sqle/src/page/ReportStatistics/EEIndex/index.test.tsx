@@ -4,7 +4,7 @@ import { mockThemeStyleData } from '../../../testUtils/mockHooks/mockThemeStyleD
 
 import EEIndex from '.';
 import { getBySelector } from '@actiontech/shared/lib/testUtil/customQuery';
-import statistic from '../../../testUtils/mockApi/statistic';
+import statistic from '@actiontech/shared/lib/testUtil/mockApi/sqle/statistic';
 import { mockUseCurrentUser } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentUser';
 import MockDate from 'mockdate';
 import dayjs from 'dayjs';

@@ -1,6 +1,6 @@
 import { fireEvent, screen, act, cleanup } from '@testing-library/react';
-import sqlAuditRecord from '../../testUtils/mockApi/sqlAuditRecord';
-import { sqlAuditRecordTagTipsMockData } from '../../testUtils/mockApi/sqlAuditRecord/data';
+import sqlAuditRecord from '@actiontech/shared/lib/testUtil/mockApi/sqle/sqlAuditRecord';
+import { sqlAuditRecordTagTipsMockData } from '@actiontech/shared/lib/testUtil/mockApi/sqle/sqlAuditRecord/data';
 import useSQLAuditRecordTag from '.';
 import {
   superRenderHook,

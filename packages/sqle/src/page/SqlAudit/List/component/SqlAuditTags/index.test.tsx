@@ -2,8 +2,8 @@ import SqlAuditTags from '.';
 import { superRender } from '@actiontech/shared/lib/testUtil/superRender';
 import { mockProjectInfo } from '@actiontech/shared/lib/testUtil/mockHook/data';
 import { cleanup, screen, act, fireEvent } from '@testing-library/react';
-import sqlAuditRecord from '../../../../../testUtils/mockApi/sqlAuditRecord';
-import { sqlAuditRecordTagTipsMockData } from '../../../../../testUtils/mockApi/sqlAuditRecord/data';
+import sqlAuditRecord from '@actiontech/shared/lib/testUtil/mockApi/sqle/sqlAuditRecord';
+import { sqlAuditRecordTagTipsMockData } from '@actiontech/shared/lib/testUtil/mockApi/sqle/sqlAuditRecord/data';
 import {
   queryBySelector,
   getBySelector

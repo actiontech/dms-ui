@@ -5,7 +5,7 @@
 import { mockUseCurrentProject } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentProject';
 import PushRuleConfiguration from '.';
 import { sqleSuperRender } from '../../testUtils/superRender';
-import MockReportPushConfigService from '../../testUtils/mockApi/reportPushConfigService';
+import MockReportPushConfigService from '@actiontech/shared/lib/testUtil/mockApi/sqle/reportPushConfigService';
 import { mockUseCurrentUser } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentUser';
 import { mockProjectInfo } from '@actiontech/shared/lib/testUtil/mockHook/data';
 import { act } from '@testing-library/react';

@@ -9,9 +9,9 @@ import { mockUseCurrentUser } from '@actiontech/shared/lib/testUtil/mockHook/moc
 import WorkflowList from '..';
 
 import { sqleSuperRender } from '../../../../testUtils/superRender';
-import user from '../../../../testUtils/mockApi/user';
-import instance from '../../../../testUtils/mockApi/instance';
-import execWorkflow from '../../../../testUtils/mockApi/execWorkflow';
+import user from '@actiontech/shared/lib/testUtil/mockApi/sqle/user';
+import instance from '@actiontech/shared/lib/testUtil/mockApi/sqle/instance';
+import execWorkflow from '@actiontech/shared/lib/testUtil/mockApi/sqle/execWorkflow';
 import { mockDatabaseType } from '../../../../testUtils/mockHooks/mockDatabaseType';
 import {
   ignoreConsoleErrors,

@@ -8,9 +8,8 @@ import { queryBySelector } from '@actiontech/shared/lib/testUtil/customQuery';
 import { mockUseCurrentProject } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentProject';
 import { mockProjectInfo } from '@actiontech/shared/lib/testUtil/mockHook/data';
 import { useDispatch, useSelector } from 'react-redux';
-import rule_template from '../../../testUtils/mockApi/rule_template';
-import { projectRuleTemplateListMockData } from '../../../testUtils/mockApi/rule_template/data';
-import { BrowserRouter } from 'react-router-dom';
+import rule_template from '@actiontech/shared/lib/testUtil/mockApi/sqle/rule_template';
+import { projectRuleTemplateListMockData } from '@actiontech/shared/lib/testUtil/mockApi/sqle/rule_template/data';
 import { mockUsePermission } from '@actiontech/shared/lib/testUtil/mockHook/mockUsePermission';
 
 jest.mock('react-redux', () => ({
@@ -46,12 +45,7 @@ describe('sqle/RuleTemplate/CloneRuleTemplate', () => {
     cleanup();
   });
 
-  const customRender = () =>
-    superRender(
-      <BrowserRouter>
-        <CloneRuleTemplate />
-      </BrowserRouter>
-    );
+  const customRender = () => superRender(<CloneRuleTemplate />);
 
   it('should send clone project rule template request when click submit button', async () => {
     const eventEmitSpy = jest.spyOn(EventEmitter, 'emit');

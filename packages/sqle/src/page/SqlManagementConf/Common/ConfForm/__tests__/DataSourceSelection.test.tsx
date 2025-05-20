@@ -1,11 +1,10 @@
 import { mockUseCurrentProject } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentProject';
-// import { mockUseProjectBusinessTips } from '@actiontech/shared/lib/testUtil/mockHook/mockUseProjectBusinessTips';
 import { useSearchParams } from 'react-router-dom';
 import { sqleSuperRender } from '../../../../../testUtils/superRender';
 import DataSourceSelection from '../DataSourceSelection';
 import { ConfFormContextProvide, ConfFormContextType } from '../context';
 import { URLSearchParams } from 'url';
-import instance from '../../../../../testUtils/mockApi/instance';
+import instance from '@actiontech/shared/lib/testUtil/mockApi/sqle/instance';
 import {
   act,
   cleanup,
@@ -16,9 +15,10 @@ import {
 import { Form } from 'antd';
 import { getBySelector } from '@actiontech/shared/lib/testUtil/customQuery';
 import { mockProjectInfo } from '@actiontech/shared/lib/testUtil/mockHook/data';
-import configuration from '../../../../../testUtils/mockApi/configuration';
+import configuration from '@actiontech/shared/lib/testUtil/mockApi/sqle/configuration';
 import { mockUseDbServiceDriver } from '@actiontech/shared/lib/testUtil/mockHook/mockUseDbServiceDriver';
-import project from '../../../../../testUtils/mockApi/project';
+import project from '@actiontech/shared/lib/testUtil/mockApi/base/project';
+
 jest.mock('react-router-dom', () => {
   return {
     ...jest.requireActual('react-router-dom'),

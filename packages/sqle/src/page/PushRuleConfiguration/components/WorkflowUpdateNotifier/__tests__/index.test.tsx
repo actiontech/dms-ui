@@ -1,6 +1,6 @@
 import { mockUseCurrentProject } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentProject';
 import { mockUseCurrentUser } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentUser';
-import MockReportPushConfigService from '../../../../../testUtils/mockApi/reportPushConfigService';
+import MockReportPushConfigService from '@actiontech/shared/lib/testUtil/mockApi/sqle/reportPushConfigService';
 import { IReportPushConfigList } from '@actiontech/shared/lib/api/sqle/service/common';
 import {
   ReportPushConfigListPushUserTypeEnum,

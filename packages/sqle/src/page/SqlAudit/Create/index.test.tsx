@@ -11,16 +11,16 @@ import {
   queryBySelector,
   getBySelector
 } from '@actiontech/shared/lib/testUtil/customQuery';
-import sqlAuditRecord from '../../../testUtils/mockApi/sqlAuditRecord';
-import instance from '../../../testUtils/mockApi/instance';
-import { createSqlAuditResponseMockData } from '../../../testUtils/mockApi/sqlAuditRecord/data';
+import sqlAuditRecord from '@actiontech/shared/lib/testUtil/mockApi/sqle/sqlAuditRecord';
+import instance from '@actiontech/shared/lib/testUtil/mockApi/sqle/instance';
+import { createSqlAuditResponseMockData } from '@actiontech/shared/lib/testUtil/mockApi/sqle/sqlAuditRecord/data';
 import {
   instanceInfoMockData,
   instanceTipsMockData
-} from '../../../testUtils/mockApi/instance/data';
-import configuration from '../../../testUtils/mockApi/configuration';
+} from '@actiontech/shared/lib/testUtil/mockApi/sqle/instance/data';
+import configuration from '@actiontech/shared/lib/testUtil/mockApi/sqle/configuration';
 import { formatterSQL } from '@actiontech/shared/lib/utils/FormatterSQL';
-import rule_template from '../../../testUtils/mockApi/rule_template';
+import rule_template from '@actiontech/shared/lib/testUtil/mockApi/sqle/rule_template';
 import { createSpySuccessResponse } from '@actiontech/shared/lib/testUtil/mockApi';
 import {
   UtilsConsoleErrorStringsEnum,

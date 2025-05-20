@@ -1,8 +1,8 @@
 import { superRender } from '@actiontech/shared/lib/testUtil/superRender';
-import home from '../../../testUtils/mockApi/home';
+import home from '@actiontech/shared/lib/testUtil/mockApi/sqle/home';
 import AuditPlanRiskList from '.';
 import { act, cleanup, fireEvent, screen } from '@testing-library/react';
-import { authPlanRiskMockData } from '../../../testUtils/mockApi/home/data';
+import { authPlanRiskMockData } from '@actiontech/shared/lib/testUtil/mockApi/sqle/home/data';
 import { createSpySuccessResponse } from '@actiontech/shared/lib/testUtil/mockApi';
 import { getBySelector } from '@actiontech/shared/lib/testUtil/customQuery';
 import { mockProjectInfo } from '@actiontech/shared/lib/testUtil/mockHook/data';

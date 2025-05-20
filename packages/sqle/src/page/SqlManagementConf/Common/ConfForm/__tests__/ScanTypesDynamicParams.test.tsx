@@ -8,13 +8,13 @@ import { Form } from 'antd';
 import {
   mockAuditPlanMetaData,
   mockAuditPlanDetailData
-} from '../../../../../testUtils/mockApi/instanceAuditPlan/data';
+} from '@actiontech/shared/lib/testUtil/mockApi/sqle/instanceAuditPlan/data';
 import { mockUseCurrentProject } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentProject';
 import { mockUseCurrentUser } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentUser';
 import { cleanup, act } from '@testing-library/react';
 import { getBySelector } from '@actiontech/shared/lib/testUtil/customQuery';
 import { AuditPlanParamResV1TypeEnum } from '@actiontech/shared/lib/api/sqle/service/common.enum';
-import rule_template from '../../../../../testUtils/mockApi/rule_template';
+import rule_template from '@actiontech/shared/lib/testUtil/mockApi/sqle/rule_template';
 import { SqlManagementConfFormFields } from '../index.type';
 
 describe('test SqlManagementConf/ScanTypesDynamicParams', () => {

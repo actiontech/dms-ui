@@ -2,10 +2,10 @@ import { act, cleanup, fireEvent, screen } from '@testing-library/react';
 import StatusDrawer from '.';
 import { sqleSuperRender } from '../../../../../../testUtils/superRender';
 import { ModalName } from '../../../../../../data/ModalName';
-import { sqlManageListData } from '../../../../../../testUtils/mockApi/sqlManage/data';
+import { sqlManageListData } from '@actiontech/shared/lib/testUtil/mockApi/sqle/sqlManage/data';
 import { getBySelector } from '@actiontech/shared/lib/testUtil/customQuery';
 import { useDispatch } from 'react-redux';
-import rule_template from '../../../../../../testUtils/mockApi/rule_template';
+import rule_template from '@actiontech/shared/lib/testUtil/mockApi/sqle/rule_template';
 import { ISqlManage } from '@actiontech/shared/lib/api/sqle/service/common';
 import { mockUseCurrentUser } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentUser';
 import {

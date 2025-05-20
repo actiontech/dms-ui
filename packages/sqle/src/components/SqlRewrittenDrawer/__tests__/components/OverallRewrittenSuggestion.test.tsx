@@ -5,7 +5,7 @@ import {
   SqlRewrittenMockDataNoDDL,
   SqlRewrittenMockDataUseDDL,
   SqlRewrittenMockDataWithLogic
-} from '../../../../testUtils/mockApi/task/data';
+} from '@actiontech/shared/lib/testUtil/mockApi/sqle/task/data';
 import { mockUseCurrentUser } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentUser';
 import {
   UtilsConsoleErrorStringsEnum,

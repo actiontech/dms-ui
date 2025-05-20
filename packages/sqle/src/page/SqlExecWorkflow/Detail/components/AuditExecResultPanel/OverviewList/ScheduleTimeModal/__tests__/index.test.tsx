@@ -10,8 +10,8 @@ import {
 import { UpdateWorkflowScheduleReqV2NotifyTypeEnum } from '@actiontech/shared/lib/api/sqle/service/common.enum';
 import { createSpySuccessResponse } from '@actiontech/shared/lib/testUtil/mockApi';
 import { sqleSuperRender } from '../../../../../../../../testUtils/superRender';
-import configuration from '../../../../../../../../testUtils/mockApi/configuration';
-import execWorkflow from '../../../../../../../../testUtils/mockApi/execWorkflow';
+import configuration from '@actiontech/shared/lib/testUtil/mockApi/sqle/configuration';
+import execWorkflow from '@actiontech/shared/lib/testUtil/mockApi/sqle/execWorkflow';
 import { mockUseCurrentUser } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentUser';
 
 describe('sqle/ExecWorkflow/AuditDetail/ScheduleTimeModal', () => {

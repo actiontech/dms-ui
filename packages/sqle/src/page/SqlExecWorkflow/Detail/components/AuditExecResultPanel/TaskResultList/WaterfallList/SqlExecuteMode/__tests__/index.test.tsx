@@ -6,7 +6,7 @@ import { IAuditTaskSQLResV2 } from '@actiontech/shared/lib/api/sqle/service/comm
 import { getBySelector } from '@actiontech/shared/lib/testUtil/customQuery';
 import { TaskResultListLayoutEnum } from '../../../../index.enum';
 import { sqleSuperRender } from '../../../../../../../../../testUtils/superRender';
-import task from '../../../../../../../../../testUtils/mockApi/task';
+import task from '@actiontech/shared/lib/testUtil/mockApi/sqle/task';
 import { WORKFLOW_OVERVIEW_TAB_KEY } from '../../../../../../hooks/useAuditExecResultPanelSetup';
 import { mockCurrentUserReturn } from '@actiontech/shared/lib/testUtil/mockHook/data';
 import { mockUseCurrentUser } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentUser';

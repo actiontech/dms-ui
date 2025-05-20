@@ -9,14 +9,14 @@ import {
   WorkflowTasksItemData,
   WorkflowsOverviewListData,
   workflowsDetailData
-} from '../../../../../../testUtils/mockApi/execWorkflow/data';
+} from '@actiontech/shared/lib/testUtil/mockApi/sqle/execWorkflow/data';
 import { mockUseCurrentProject } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentProject';
 import { WORKFLOW_OVERVIEW_TAB_KEY } from '../../../hooks/useAuditExecResultPanelSetup';
 import { fireEvent, screen } from '@testing-library/dom';
 import { mockUseCurrentUser } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentUser';
 import { AuditExecResultPanelProps } from '../index.type';
 import { act } from '@testing-library/react';
-import task from '../../../../../../testUtils/mockApi/task';
+import task from '@actiontech/shared/lib/testUtil/mockApi/sqle/task';
 import { mockUsePermission } from '@actiontech/shared/lib/testUtil/mockHook/mockUsePermission';
 
 jest.mock('react-redux', () => ({

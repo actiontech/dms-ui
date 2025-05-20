@@ -14,8 +14,8 @@ import {
   ignoreConsoleErrors
 } from '@actiontech/shared/lib/testUtil/common';
 import { mockDatabaseType } from '../../../../testUtils/mockHooks/mockDatabaseType';
-import execWorkflow from '../../../../testUtils/mockApi/execWorkflow';
-import instance from '../../../../testUtils/mockApi/instance';
+import execWorkflow from '@actiontech/shared/lib/testUtil/mockApi/sqle/execWorkflow';
+import instance from '@actiontech/shared/lib/testUtil/mockApi/sqle/instance';
 import { useSelector } from 'react-redux';
 
 jest.mock('react-redux', () => ({
