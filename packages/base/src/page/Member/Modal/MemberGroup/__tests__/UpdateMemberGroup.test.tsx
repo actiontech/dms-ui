@@ -13,12 +13,15 @@ import { useDispatch, useSelector } from 'react-redux';
 import { mockUseDbServiceDriver } from '@actiontech/shared/lib/testUtil/mockHook/mockUseDbServiceDriver';
 import dbServices from '@actiontech/shared/lib/testUtil/mockApi/base/dbServices';
 import { memberGroupList } from '@actiontech/shared/lib/testUtil/mockApi/base/member/data';
+import dbAccountService from 'provision/src/testUtil/mockApi/dbAccountService';
+import { createSpySuccessResponse } from '@actiontech/shared/lib/testUtil/mockApi';
 
 jest.mock('react-redux', () => ({
   ...jest.requireActual('react-redux'),
   useDispatch: jest.fn(),
   useSelector: jest.fn()
 }));
+let mockAuthListDBAccount: jest.SpyInstance;
 
 describe('base/Member/Modal/UpdateMemberGroup', () => {
   let updateMemberGroup: jest.SpyInstance;
@@ -43,6 +46,10 @@ describe('base/Member/Modal/UpdateMemberGroup', () => {
     listUsersSpy = userCenter.getUserList();
     litDBServices = dbServices.ListDBServicesTips();
     listRoleSpy = userCenter.getRoleList();
+    mockAuthListDBAccount = dbAccountService
+      .authListDBAccount()
+      .mockImplementationOnce(() => createSpySuccessResponse({ data: [] }))
+      .mockImplementationOnce(() => createSpySuccessResponse({ data: [] }));
   });
 
   afterEach(() => {
@@ -70,6 +77,8 @@ describe('base/Member/Modal/UpdateMemberGroup', () => {
     expect(screen.getByLabelText('项目管理员')).toBeChecked();
     fireEvent.click(screen.getByText('提 交'));
     await act(async () => jest.advanceTimersByTime(0));
+    await act(async () => jest.advanceTimersByTime(3000));
+
     expect(screen.getByText('提 交').parentNode).toHaveClass('ant-btn-loading');
     expect(screen.getByText('关 闭').parentNode).toHaveAttribute('disabled');
     expect(updateMemberGroup).toHaveBeenCalledTimes(1);

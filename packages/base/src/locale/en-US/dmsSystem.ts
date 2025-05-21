@@ -16,7 +16,9 @@ export default {
     loginConnection: 'Login connection',
     globalConfiguration: 'Global configuration',
     license: 'License',
-    personalize: 'Personalization settings'
+    personalize: 'Personalization settings',
+    gitSSH: 'Git SSH configuration',
+    databaseAccountPasswordPolicy: 'DB Account Password Policy'
   },
 
   title: {

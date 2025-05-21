@@ -47,7 +47,7 @@ exports[`page/BindUser-ee render bind user form item render form item error when
               <span
                 class="label label-base"
               >
-                SQLE
+                DMS
               </span>
             </div>
           </div>
@@ -97,7 +97,7 @@ exports[`page/BindUser-ee render bind user form item render form item error when
                           aria-required="true"
                           class="ant-input"
                           id="username"
-                          placeholder="绑定的SQLE用户名"
+                          placeholder="绑定的DMS用户名"
                           type="text"
                           value=""
                         />
@@ -277,7 +277,7 @@ exports[`page/BindUser-ee render bind user form item render oauth2_token params 
               <span
                 class="label label-base"
               >
-                SQLE
+                DMS
               </span>
             </div>
           </div>
@@ -325,7 +325,7 @@ exports[`page/BindUser-ee render bind user form item render oauth2_token params 
                           aria-required="true"
                           class="ant-input"
                           id="username"
-                          placeholder="绑定的SQLE用户名"
+                          placeholder="绑定的DMS用户名"
                           type="text"
                           value="oauth2_admin"
                         />
@@ -482,7 +482,7 @@ exports[`page/BindUser-ee render bind user ui snap 1`] = `
               <span
                 class="label label-base"
               >
-                SQLE
+                DMS
               </span>
             </div>
           </div>
@@ -530,7 +530,7 @@ exports[`page/BindUser-ee render bind user ui snap 1`] = `
                           aria-required="true"
                           class="ant-input"
                           id="username"
-                          placeholder="绑定的SQLE用户名"
+                          placeholder="绑定的DMS用户名"
                           type="text"
                           value=""
                         />

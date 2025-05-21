@@ -1,0 +1,451 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`base/System/DatabaseAccountPasswordPolicy renders initial state correctly 1`] = `
+<body>
+  <div>
+    <div
+      class="ant-spin-nested-loading"
+    >
+      <div
+        class="ant-spin-container"
+      >
+        <section
+          class="system-form-wrapper"
+        >
+          <div
+            class="ant-row ant-row-space-between ant-row-middle config-title-wrapper has-border"
+          >
+            <div
+              class="ant-space ant-space-horizontal ant-space-align-center"
+            >
+              <div
+                class="ant-space-item"
+              >
+                数据库账号密码策略
+              </div>
+            </div>
+            <button
+              class="ant-btn ant-btn-primary basic-button-wrapper css-geipcv"
+              type="button"
+            >
+              <span>
+                编 辑
+              </span>
+            </button>
+          </div>
+          <div
+            class="ant-descriptions system-config-view-wrapper css-cs8tvb"
+          >
+            <div
+              class="ant-descriptions-view"
+            >
+              <table>
+                <tbody>
+                  <tr
+                    class="ant-descriptions-row"
+                  >
+                    <td
+                      class="ant-descriptions-item"
+                      colspan="1"
+                    >
+                      <div
+                        class="ant-descriptions-item-container"
+                      >
+                        <span
+                          class="ant-descriptions-item-label"
+                        >
+                          密码长度要求
+                        </span>
+                        <span
+                          class="ant-descriptions-item-content"
+                        >
+                          ≥ 16 位
+                        </span>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr
+                    class="ant-descriptions-row"
+                  >
+                    <td
+                      class="ant-descriptions-item"
+                      colspan="1"
+                    >
+                      <div
+                        class="ant-descriptions-item-container"
+                      >
+                        <span
+                          class="ant-descriptions-item-label"
+                        >
+                          字符组合要求
+                        </span>
+                        <span
+                          class="ant-descriptions-item-content"
+                        >
+                          <ul
+                            class="css-1dq9s68"
+                          >
+                            <li>
+                              包含大写字母
+                            </li>
+                            <li>
+                              包含小写字母
+                            </li>
+                            <li>
+                              包含数字
+                            </li>
+                            <li>
+                              包含特殊字符
+                            </li>
+                          </ul>
+                        </span>
+                      </div>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </section>
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`base/System/DatabaseAccountPasswordPolicy switches to edit mode when edit button is clicked 1`] = `
+<body>
+  <div>
+    <div
+      class="ant-spin-nested-loading"
+    >
+      <div
+        class="ant-spin-container"
+      >
+        <section
+          class="system-form-wrapper"
+        >
+          <div
+            class="ant-row ant-row-space-between ant-row-middle config-title-wrapper has-border"
+          >
+            <div
+              class="ant-space ant-space-horizontal ant-space-align-center"
+            >
+              <div
+                class="ant-space-item"
+              >
+                数据库账号密码策略
+              </div>
+            </div>
+          </div>
+          <form
+            class="ant-form ant-form-horizontal css-13pay4g"
+          >
+            <div
+              class="ant-form-item has-required-style css-1jlm9cy"
+            >
+              <div
+                class="ant-row ant-form-item-row"
+              >
+                <div
+                  class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left"
+                >
+                  <label
+                    class="ant-form-item-required ant-form-item-no-colon"
+                    for="minLength"
+                    title="密码长度要求"
+                  >
+                    密码长度要求
+                  </label>
+                </div>
+                <div
+                  class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control"
+                >
+                  <div
+                    class="ant-form-item-control-input"
+                  >
+                    <div
+                      class="ant-form-item-control-input-content"
+                    >
+                      <div
+                        class="ant-input-number-group-wrapper"
+                      >
+                        <div
+                          class="ant-input-number-wrapper ant-input-number-group"
+                        >
+                          <div
+                            class="ant-input-number-group-addon"
+                          >
+                            ≥
+                          </div>
+                          <div
+                            class="ant-input-number ant-input-number-in-form-item"
+                          >
+                            <div
+                              class="ant-input-number-handler-wrap"
+                            >
+                              <span
+                                aria-disabled="false"
+                                aria-label="Increase Value"
+                                class="ant-input-number-handler ant-input-number-handler-up"
+                                role="button"
+                                unselectable="on"
+                              >
+                                <span
+                                  aria-label="up"
+                                  class="anticon anticon-up ant-input-number-handler-up-inner"
+                                  role="img"
+                                >
+                                  <svg
+                                    aria-hidden="true"
+                                    data-icon="up"
+                                    fill="currentColor"
+                                    focusable="false"
+                                    height="1em"
+                                    viewBox="64 64 896 896"
+                                    width="1em"
+                                  >
+                                    <path
+                                      d="M890.5 755.3L537.9 269.2c-12.8-17.6-39-17.6-51.7 0L133.5 755.3A8 8 0 00140 768h75c5.1 0 9.9-2.5 12.9-6.6L512 369.8l284.1 391.6c3 4.1 7.8 6.6 12.9 6.6h75c6.5 0 10.3-7.4 6.5-12.7z"
+                                    />
+                                  </svg>
+                                </span>
+                              </span>
+                              <span
+                                aria-disabled="false"
+                                aria-label="Decrease Value"
+                                class="ant-input-number-handler ant-input-number-handler-down"
+                                role="button"
+                                unselectable="on"
+                              >
+                                <span
+                                  aria-label="down"
+                                  class="anticon anticon-down ant-input-number-handler-down-inner"
+                                  role="img"
+                                >
+                                  <svg
+                                    aria-hidden="true"
+                                    data-icon="down"
+                                    fill="currentColor"
+                                    focusable="false"
+                                    height="1em"
+                                    viewBox="64 64 896 896"
+                                    width="1em"
+                                  >
+                                    <path
+                                      d="M884 256h-75c-5.1 0-9.9 2.5-12.9 6.6L512 654.2 227.9 262.6c-3-4.1-7.8-6.6-12.9-6.6h-75c-6.5 0-10.3 7.4-6.5 12.7l352.6 486.1c12.8 17.6 39 17.6 51.7 0l352.6-486.1c3.9-5.3.1-12.7-6.4-12.7z"
+                                    />
+                                  </svg>
+                                </span>
+                              </span>
+                            </div>
+                            <div
+                              class="ant-input-number-input-wrap"
+                            >
+                              <input
+                                aria-required="true"
+                                aria-valuenow="16"
+                                autocomplete="off"
+                                class="ant-input-number-input"
+                                id="minLength"
+                                role="spinbutton"
+                                step="1"
+                                value="16"
+                              />
+                            </div>
+                          </div>
+                          <div
+                            class="ant-input-number-group-addon"
+                          >
+                            位
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
+              class="ant-form-item has-required-style css-1jlm9cy"
+            >
+              <div
+                class="ant-row ant-form-item-row"
+              >
+                <div
+                  class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left"
+                >
+                  <label
+                    class="ant-form-item-required ant-form-item-no-colon"
+                    for="charTypes"
+                    title="字符组合要求"
+                  >
+                    字符组合要求
+                  </label>
+                </div>
+                <div
+                  class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control"
+                >
+                  <div
+                    class="ant-form-item-control-input"
+                  >
+                    <div
+                      class="ant-form-item-control-input-content"
+                    >
+                      <div
+                        aria-required="true"
+                        class="ant-checkbox-group"
+                        id="charTypes"
+                      >
+                        <label
+                          class="ant-checkbox-wrapper ant-checkbox-wrapper-checked ant-checkbox-wrapper-in-form-item ant-checkbox-group-item"
+                        >
+                          <span
+                            class="ant-checkbox ant-checkbox-checked"
+                          >
+                            <input
+                              checked=""
+                              class="ant-checkbox-input"
+                              type="checkbox"
+                              value="require_uppercase"
+                            />
+                            <span
+                              class="ant-checkbox-inner"
+                            />
+                          </span>
+                          <span>
+                            包含大写字母
+                          </span>
+                        </label>
+                        <label
+                          class="ant-checkbox-wrapper ant-checkbox-wrapper-checked ant-checkbox-wrapper-in-form-item ant-checkbox-group-item"
+                        >
+                          <span
+                            class="ant-checkbox ant-checkbox-checked"
+                          >
+                            <input
+                              checked=""
+                              class="ant-checkbox-input"
+                              type="checkbox"
+                              value="require_lowercase"
+                            />
+                            <span
+                              class="ant-checkbox-inner"
+                            />
+                          </span>
+                          <span>
+                            包含小写字母
+                          </span>
+                        </label>
+                        <label
+                          class="ant-checkbox-wrapper ant-checkbox-wrapper-checked ant-checkbox-wrapper-in-form-item ant-checkbox-group-item"
+                        >
+                          <span
+                            class="ant-checkbox ant-checkbox-checked"
+                          >
+                            <input
+                              checked=""
+                              class="ant-checkbox-input"
+                              type="checkbox"
+                              value="require_digit"
+                            />
+                            <span
+                              class="ant-checkbox-inner"
+                            />
+                          </span>
+                          <span>
+                            包含数字
+                          </span>
+                        </label>
+                        <label
+                          class="ant-checkbox-wrapper ant-checkbox-wrapper-checked ant-checkbox-wrapper-in-form-item ant-checkbox-group-item"
+                        >
+                          <span
+                            class="ant-checkbox ant-checkbox-checked"
+                          >
+                            <input
+                              checked=""
+                              class="ant-checkbox-input"
+                              type="checkbox"
+                              value="require_special"
+                            />
+                            <span
+                              class="ant-checkbox-inner"
+                            />
+                          </span>
+                          <span>
+                            包含特殊字符
+                          </span>
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
+              class="ant-form-item css-15d6abf"
+            >
+              <div
+                class="ant-row ant-form-item-row"
+              >
+                <div
+                  class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left"
+                >
+                  <label
+                    class="ant-form-item-no-colon"
+                    title=" "
+                  >
+                     
+                  </label>
+                </div>
+                <div
+                  class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control"
+                >
+                  <div
+                    class="ant-form-item-control-input"
+                  >
+                    <div
+                      class="ant-form-item-control-input-content"
+                    >
+                      <div
+                        class="ant-space ant-space-horizontal ant-space-align-center"
+                      >
+                        <div
+                          class="ant-space-item"
+                          style="margin-right: 12px;"
+                        >
+                          <button
+                            class="ant-btn ant-btn-default basic-button-wrapper css-geipcv"
+                            type="button"
+                          >
+                            <span>
+                              取 消
+                            </span>
+                          </button>
+                        </div>
+                        <div
+                          class="ant-space-item"
+                        >
+                          <button
+                            class="ant-btn ant-btn-primary basic-button-wrapper css-geipcv"
+                            type="submit"
+                          >
+                            <span>
+                              提 交
+                            </span>
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </form>
+        </section>
+      </div>
+    </div>
+  </div>
+</body>
+`;

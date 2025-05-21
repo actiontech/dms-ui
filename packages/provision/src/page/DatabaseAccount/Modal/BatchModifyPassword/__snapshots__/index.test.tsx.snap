@@ -1,0 +1,699 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`provision/DatabaseAccount/BatchModifyPasswordModal render init snap 1`] = `
+<body>
+  <div />
+  <div>
+    <div
+      class="ant-drawer ant-drawer-right ant-drawer-open"
+      tabindex="-1"
+    >
+      <div
+        class="ant-drawer-mask"
+      />
+      <div
+        aria-hidden="true"
+        data-sentinel="start"
+        style="width: 0px; height: 0px; overflow: hidden; outline: none; position: absolute;"
+        tabindex="0"
+      />
+      <div
+        class="ant-drawer-content-wrapper"
+        style="width: 720px;"
+      >
+        <div
+          aria-modal="true"
+          class="ant-drawer-content basic-drawer-wrapper css-43p3j3"
+          role="dialog"
+        >
+          <div
+            class="ant-drawer-wrapper-body"
+          >
+            <div
+              class="ant-drawer-header"
+            >
+              <div
+                class="ant-drawer-header-title"
+              >
+                <div
+                  class="ant-drawer-title"
+                >
+                  批量修改密码
+                </div>
+              </div>
+            </div>
+            <div
+              class="ant-drawer-body"
+            >
+              <div
+                class="closed-icon-custom"
+              >
+                <span
+                  aria-label="close"
+                  class="anticon anticon-close"
+                  data-testid="basic-drawer-close-icon"
+                  role="img"
+                >
+                  <svg
+                    aria-hidden="true"
+                    data-icon="close"
+                    fill="currentColor"
+                    fill-rule="evenodd"
+                    focusable="false"
+                    height="1em"
+                    viewBox="64 64 896 896"
+                    width="1em"
+                  >
+                    <path
+                      d="M799.86 166.31c.02 0 .04.02.08.06l57.69 57.7c.04.03.05.05.06.08a.12.12 0 010 .06c0 .03-.02.05-.06.09L569.93 512l287.7 287.7c.04.04.05.06.06.09a.12.12 0 010 .07c0 .02-.02.04-.06.08l-57.7 57.69c-.03.04-.05.05-.07.06a.12.12 0 01-.07 0c-.03 0-.05-.02-.09-.06L512 569.93l-287.7 287.7c-.04.04-.06.05-.09.06a.12.12 0 01-.07 0c-.02 0-.04-.02-.08-.06l-57.69-57.7c-.04-.03-.05-.05-.06-.07a.12.12 0 010-.07c0-.03.02-.05.06-.09L454.07 512l-287.7-287.7c-.04-.04-.05-.06-.06-.09a.12.12 0 010-.07c0-.02.02-.04.06-.08l57.7-57.69c.03-.04.05-.05.07-.06a.12.12 0 01.07 0c.03 0 .05.02.09.06L512 454.07l287.7-287.7c.04-.04.06-.05.09-.06a.12.12 0 01.07 0z"
+                    />
+                  </svg>
+                </span>
+              </div>
+              <form
+                class="ant-form ant-form-vertical"
+              >
+                <div
+                  class="ant-form-item"
+                >
+                  <div
+                    class="ant-row ant-form-item-row"
+                  >
+                    <div
+                      class="ant-col ant-form-item-label"
+                    >
+                      <label
+                        class="ant-form-item-required"
+                        for="effective_time_day"
+                        title="密码有效期（天）"
+                      >
+                        密码有效期（天）
+                      </label>
+                    </div>
+                    <div
+                      class="ant-col ant-form-item-control"
+                    >
+                      <div
+                        class="ant-form-item-control-input"
+                      >
+                        <div
+                          class="ant-form-item-control-input-content"
+                        >
+                          <div
+                            class="ant-input-number ant-input-number-lg ant-input-number-in-form-item basic-inputNumber-wrapper css-1fd5hnt"
+                          >
+                            <div
+                              class="ant-input-number-handler-wrap"
+                            >
+                              <span
+                                aria-disabled="false"
+                                aria-label="Increase Value"
+                                class="ant-input-number-handler ant-input-number-handler-up"
+                                role="button"
+                                unselectable="on"
+                              >
+                                <span
+                                  aria-label="up"
+                                  class="anticon anticon-up ant-input-number-handler-up-inner"
+                                  role="img"
+                                >
+                                  <svg
+                                    aria-hidden="true"
+                                    data-icon="up"
+                                    fill="currentColor"
+                                    focusable="false"
+                                    height="1em"
+                                    viewBox="64 64 896 896"
+                                    width="1em"
+                                  >
+                                    <path
+                                      d="M890.5 755.3L537.9 269.2c-12.8-17.6-39-17.6-51.7 0L133.5 755.3A8 8 0 00140 768h75c5.1 0 9.9-2.5 12.9-6.6L512 369.8l284.1 391.6c3 4.1 7.8 6.6 12.9 6.6h75c6.5 0 10.3-7.4 6.5-12.7z"
+                                    />
+                                  </svg>
+                                </span>
+                              </span>
+                              <span
+                                aria-disabled="false"
+                                aria-label="Decrease Value"
+                                class="ant-input-number-handler ant-input-number-handler-down"
+                                role="button"
+                                unselectable="on"
+                              >
+                                <span
+                                  aria-label="down"
+                                  class="anticon anticon-down ant-input-number-handler-down-inner"
+                                  role="img"
+                                >
+                                  <svg
+                                    aria-hidden="true"
+                                    data-icon="down"
+                                    fill="currentColor"
+                                    focusable="false"
+                                    height="1em"
+                                    viewBox="64 64 896 896"
+                                    width="1em"
+                                  >
+                                    <path
+                                      d="M884 256h-75c-5.1 0-9.9 2.5-12.9 6.6L512 654.2 227.9 262.6c-3-4.1-7.8-6.6-12.9-6.6h-75c-6.5 0-10.3 7.4-6.5 12.7l352.6 486.1c12.8 17.6 39 17.6 51.7 0l352.6-486.1c3.9-5.3.1-12.7-6.4-12.7z"
+                                    />
+                                  </svg>
+                                </span>
+                              </span>
+                            </div>
+                            <div
+                              class="ant-input-number-input-wrap"
+                            >
+                              <input
+                                aria-required="true"
+                                aria-valuemin="0"
+                                aria-valuenow="30"
+                                autocomplete="off"
+                                class="ant-input-number-input"
+                                id="effective_time_day"
+                                role="spinbutton"
+                                step="1"
+                                value="30"
+                              />
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="ant-form-item has-label-tip css-1jlm9cy"
+                >
+                  <div
+                    class="ant-row ant-form-item-row"
+                  >
+                    <div
+                      class="ant-col ant-form-item-label"
+                    >
+                      <label
+                        class=""
+                        for="password_expiration_policy"
+                        title=""
+                      >
+                        <div
+                          class="label-cont-custom"
+                        >
+                          <div>
+                            密码到期策略
+                          </div>
+                          <div
+                            class="tip-content-box"
+                          >
+                            到期后保持可用适用于应用服务账号;到期后自动锁定适用于普通测试账号
+                          </div>
+                        </div>
+                      </label>
+                    </div>
+                    <div
+                      class="ant-col ant-form-item-control"
+                    >
+                      <div
+                        class="ant-form-item-control-input"
+                      >
+                        <div
+                          class="ant-form-item-control-input-content"
+                        >
+                          <div
+                            class="ant-radio-group ant-radio-group-outline"
+                            id="password_expiration_policy"
+                          >
+                            <label
+                              class="ant-radio-wrapper ant-radio-wrapper-in-form-item"
+                            >
+                              <span
+                                class="ant-radio"
+                              >
+                                <input
+                                  class="ant-radio-input"
+                                  type="radio"
+                                  value="expiration_available"
+                                />
+                                <span
+                                  class="ant-radio-inner"
+                                />
+                              </span>
+                              <span>
+                                到期后保持可用
+                              </span>
+                            </label>
+                            <label
+                              class="ant-radio-wrapper ant-radio-wrapper-checked ant-radio-wrapper-in-form-item"
+                            >
+                              <span
+                                class="ant-radio ant-radio-checked"
+                              >
+                                <input
+                                  checked=""
+                                  class="ant-radio-input"
+                                  type="radio"
+                                  value="expiration_lock"
+                                />
+                                <span
+                                  class="ant-radio-inner"
+                                />
+                              </span>
+                              <span>
+                                到期后自动锁定
+                              </span>
+                            </label>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="ant-form-item"
+                >
+                  <div
+                    class="ant-row ant-form-item-row"
+                  >
+                    <div
+                      class="ant-col ant-form-item-control"
+                    >
+                      <div
+                        class="ant-form-item-control-input"
+                      >
+                        <div
+                          class="ant-form-item-control-input-content"
+                        >
+                          <button
+                            class="ant-btn ant-btn-default form-list-add add-object-button basic-button-wrapper css-1719g3l"
+                            type="button"
+                          >
+                            <span>
+                              批量生成密码
+                            </span>
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="ant-row ant-row-no-wrap"
+                  style="margin-left: -4px; margin-right: -4px;"
+                >
+                  <div
+                    class="ant-col ant-col-4"
+                    style="padding-left: 4px; padding-right: 4px;"
+                  >
+                    <div
+                      class="ant-form-item"
+                    >
+                      <div
+                        class="ant-row ant-form-item-row"
+                      >
+                        <div
+                          class="ant-col ant-form-item-label"
+                        >
+                          <label
+                            class=""
+                            title="账号"
+                          >
+                            账号
+                          </label>
+                        </div>
+                        <div
+                          class="ant-col ant-form-item-control"
+                        >
+                          <div
+                            class="ant-form-item-control-input"
+                          >
+                            <div
+                              class="ant-form-item-control-input-content"
+                            >
+                              <div
+                                class="ant-typography ant-typography-ellipsis ant-typography-single-line ant-typography-ellipsis-single-line account-name-item basic-typography-ellipsis css-wgj5gs"
+                              >
+                                test1@%
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    class="ant-col ant-col-10"
+                    style="padding-left: 4px; padding-right: 4px;"
+                  >
+                    <div
+                      class="ant-form-item"
+                    >
+                      <div
+                        class="ant-row ant-form-item-row"
+                      >
+                        <div
+                          class="ant-col ant-form-item-label"
+                        >
+                          <label
+                            class="ant-form-item-required"
+                            for="passwords_0_password"
+                            title="连接密码"
+                          >
+                            连接密码
+                          </label>
+                        </div>
+                        <div
+                          class="ant-col ant-form-item-control"
+                        >
+                          <div
+                            class="ant-form-item-control-input"
+                          >
+                            <div
+                              class="ant-form-item-control-input-content"
+                            >
+                              <span
+                                class="ant-input-affix-wrapper ant-input-password basic-input-wrapper css-1pd1cd5"
+                              >
+                                <input
+                                  aria-required="true"
+                                  class="ant-input"
+                                  id="passwords_0_password"
+                                  placeholder="请输入{{name}}"
+                                  type="password"
+                                />
+                                <span
+                                  class="ant-input-suffix"
+                                >
+                                  <span
+                                    aria-label="eye-invisible"
+                                    class="anticon anticon-eye-invisible ant-input-password-icon"
+                                    role="img"
+                                    tabindex="-1"
+                                  >
+                                    <svg
+                                      aria-hidden="true"
+                                      data-icon="eye-invisible"
+                                      fill="currentColor"
+                                      focusable="false"
+                                      height="1em"
+                                      viewBox="64 64 896 896"
+                                      width="1em"
+                                    >
+                                      <path
+                                        d="M942.2 486.2Q889.47 375.11 816.7 305l-50.88 50.88C807.31 395.53 843.45 447.4 874.7 512 791.5 684.2 673.4 766 512 766q-72.67 0-133.87-22.38L323 798.75Q408 838 512 838q288.3 0 430.2-300.3a60.29 60.29 0 000-51.5zm-63.57-320.64L836 122.88a8 8 0 00-11.32 0L715.31 232.2Q624.86 186 512 186q-288.3 0-430.2 300.3a60.3 60.3 0 000 51.5q56.69 119.4 136.5 191.41L112.48 835a8 8 0 000 11.31L155.17 889a8 8 0 0011.31 0l712.15-712.12a8 8 0 000-11.32zM149.3 512C232.6 339.8 350.7 258 512 258c54.54 0 104.13 9.36 149.12 28.39l-70.3 70.3a176 176 0 00-238.13 238.13l-83.42 83.42C223.1 637.49 183.3 582.28 149.3 512zm246.7 0a112.11 112.11 0 01146.2-106.69L401.31 546.2A112 112 0 01396 512z"
+                                      />
+                                      <path
+                                        d="M508 624c-3.46 0-6.87-.16-10.25-.47l-52.82 52.82a176.09 176.09 0 00227.42-227.42l-52.82 52.82c.31 3.38.47 6.79.47 10.25a111.94 111.94 0 01-112 112z"
+                                      />
+                                    </svg>
+                                  </span>
+                                </span>
+                              </span>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    class="ant-col ant-col-10"
+                    style="padding-left: 4px; padding-right: 4px;"
+                  >
+                    <div
+                      class="ant-form-item"
+                    >
+                      <div
+                        class="ant-row ant-form-item-row"
+                      >
+                        <div
+                          class="ant-col ant-form-item-label"
+                        >
+                          <label
+                            class="ant-form-item-required"
+                            for="passwords_0_confirm_password"
+                            title="确认连接密码"
+                          >
+                            确认连接密码
+                          </label>
+                        </div>
+                        <div
+                          class="ant-col ant-form-item-control"
+                        >
+                          <div
+                            class="ant-form-item-control-input"
+                          >
+                            <div
+                              class="ant-form-item-control-input-content"
+                            >
+                              <span
+                                class="ant-input-affix-wrapper ant-input-password basic-input-wrapper css-1pd1cd5"
+                              >
+                                <input
+                                  aria-required="true"
+                                  class="ant-input"
+                                  id="passwords_0_confirm_password"
+                                  placeholder="请输入{{name}}"
+                                  type="password"
+                                />
+                                <span
+                                  class="ant-input-suffix"
+                                >
+                                  <span
+                                    aria-label="eye-invisible"
+                                    class="anticon anticon-eye-invisible ant-input-password-icon"
+                                    role="img"
+                                    tabindex="-1"
+                                  >
+                                    <svg
+                                      aria-hidden="true"
+                                      data-icon="eye-invisible"
+                                      fill="currentColor"
+                                      focusable="false"
+                                      height="1em"
+                                      viewBox="64 64 896 896"
+                                      width="1em"
+                                    >
+                                      <path
+                                        d="M942.2 486.2Q889.47 375.11 816.7 305l-50.88 50.88C807.31 395.53 843.45 447.4 874.7 512 791.5 684.2 673.4 766 512 766q-72.67 0-133.87-22.38L323 798.75Q408 838 512 838q288.3 0 430.2-300.3a60.29 60.29 0 000-51.5zm-63.57-320.64L836 122.88a8 8 0 00-11.32 0L715.31 232.2Q624.86 186 512 186q-288.3 0-430.2 300.3a60.3 60.3 0 000 51.5q56.69 119.4 136.5 191.41L112.48 835a8 8 0 000 11.31L155.17 889a8 8 0 0011.31 0l712.15-712.12a8 8 0 000-11.32zM149.3 512C232.6 339.8 350.7 258 512 258c54.54 0 104.13 9.36 149.12 28.39l-70.3 70.3a176 176 0 00-238.13 238.13l-83.42 83.42C223.1 637.49 183.3 582.28 149.3 512zm246.7 0a112.11 112.11 0 01146.2-106.69L401.31 546.2A112 112 0 01396 512z"
+                                      />
+                                      <path
+                                        d="M508 624c-3.46 0-6.87-.16-10.25-.47l-52.82 52.82a176.09 176.09 0 00227.42-227.42l-52.82 52.82c.31 3.38.47 6.79.47 10.25a111.94 111.94 0 01-112 112z"
+                                      />
+                                    </svg>
+                                  </span>
+                                </span>
+                              </span>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="ant-row ant-row-no-wrap"
+                  style="margin-left: -4px; margin-right: -4px;"
+                >
+                  <div
+                    class="ant-col ant-col-4"
+                    style="padding-left: 4px; padding-right: 4px;"
+                  >
+                    <div
+                      class="ant-form-item"
+                    >
+                      <div
+                        class="ant-row ant-form-item-row"
+                      >
+                        <div
+                          class="ant-col ant-form-item-control"
+                        >
+                          <div
+                            class="ant-form-item-control-input"
+                          >
+                            <div
+                              class="ant-form-item-control-input-content"
+                            >
+                              <div
+                                class="ant-typography ant-typography-ellipsis ant-typography-single-line ant-typography-ellipsis-single-line account-name-item basic-typography-ellipsis css-wgj5gs"
+                              >
+                                testa11@%
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    class="ant-col ant-col-10"
+                    style="padding-left: 4px; padding-right: 4px;"
+                  >
+                    <div
+                      class="ant-form-item"
+                    >
+                      <div
+                        class="ant-row ant-form-item-row"
+                      >
+                        <div
+                          class="ant-col ant-form-item-control"
+                        >
+                          <div
+                            class="ant-form-item-control-input"
+                          >
+                            <div
+                              class="ant-form-item-control-input-content"
+                            >
+                              <span
+                                class="ant-input-affix-wrapper ant-input-password basic-input-wrapper css-1pd1cd5"
+                              >
+                                <input
+                                  aria-required="true"
+                                  class="ant-input"
+                                  id="passwords_1_password"
+                                  placeholder="请输入{{name}}"
+                                  type="password"
+                                />
+                                <span
+                                  class="ant-input-suffix"
+                                >
+                                  <span
+                                    aria-label="eye-invisible"
+                                    class="anticon anticon-eye-invisible ant-input-password-icon"
+                                    role="img"
+                                    tabindex="-1"
+                                  >
+                                    <svg
+                                      aria-hidden="true"
+                                      data-icon="eye-invisible"
+                                      fill="currentColor"
+                                      focusable="false"
+                                      height="1em"
+                                      viewBox="64 64 896 896"
+                                      width="1em"
+                                    >
+                                      <path
+                                        d="M942.2 486.2Q889.47 375.11 816.7 305l-50.88 50.88C807.31 395.53 843.45 447.4 874.7 512 791.5 684.2 673.4 766 512 766q-72.67 0-133.87-22.38L323 798.75Q408 838 512 838q288.3 0 430.2-300.3a60.29 60.29 0 000-51.5zm-63.57-320.64L836 122.88a8 8 0 00-11.32 0L715.31 232.2Q624.86 186 512 186q-288.3 0-430.2 300.3a60.3 60.3 0 000 51.5q56.69 119.4 136.5 191.41L112.48 835a8 8 0 000 11.31L155.17 889a8 8 0 0011.31 0l712.15-712.12a8 8 0 000-11.32zM149.3 512C232.6 339.8 350.7 258 512 258c54.54 0 104.13 9.36 149.12 28.39l-70.3 70.3a176 176 0 00-238.13 238.13l-83.42 83.42C223.1 637.49 183.3 582.28 149.3 512zm246.7 0a112.11 112.11 0 01146.2-106.69L401.31 546.2A112 112 0 01396 512z"
+                                      />
+                                      <path
+                                        d="M508 624c-3.46 0-6.87-.16-10.25-.47l-52.82 52.82a176.09 176.09 0 00227.42-227.42l-52.82 52.82c.31 3.38.47 6.79.47 10.25a111.94 111.94 0 01-112 112z"
+                                      />
+                                    </svg>
+                                  </span>
+                                </span>
+                              </span>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    class="ant-col ant-col-10"
+                    style="padding-left: 4px; padding-right: 4px;"
+                  >
+                    <div
+                      class="ant-form-item"
+                    >
+                      <div
+                        class="ant-row ant-form-item-row"
+                      >
+                        <div
+                          class="ant-col ant-form-item-control"
+                        >
+                          <div
+                            class="ant-form-item-control-input"
+                          >
+                            <div
+                              class="ant-form-item-control-input-content"
+                            >
+                              <span
+                                class="ant-input-affix-wrapper ant-input-password basic-input-wrapper css-1pd1cd5"
+                              >
+                                <input
+                                  aria-required="true"
+                                  class="ant-input"
+                                  id="passwords_1_confirm_password"
+                                  placeholder="请输入{{name}}"
+                                  type="password"
+                                />
+                                <span
+                                  class="ant-input-suffix"
+                                >
+                                  <span
+                                    aria-label="eye-invisible"
+                                    class="anticon anticon-eye-invisible ant-input-password-icon"
+                                    role="img"
+                                    tabindex="-1"
+                                  >
+                                    <svg
+                                      aria-hidden="true"
+                                      data-icon="eye-invisible"
+                                      fill="currentColor"
+                                      focusable="false"
+                                      height="1em"
+                                      viewBox="64 64 896 896"
+                                      width="1em"
+                                    >
+                                      <path
+                                        d="M942.2 486.2Q889.47 375.11 816.7 305l-50.88 50.88C807.31 395.53 843.45 447.4 874.7 512 791.5 684.2 673.4 766 512 766q-72.67 0-133.87-22.38L323 798.75Q408 838 512 838q288.3 0 430.2-300.3a60.29 60.29 0 000-51.5zm-63.57-320.64L836 122.88a8 8 0 00-11.32 0L715.31 232.2Q624.86 186 512 186q-288.3 0-430.2 300.3a60.3 60.3 0 000 51.5q56.69 119.4 136.5 191.41L112.48 835a8 8 0 000 11.31L155.17 889a8 8 0 0011.31 0l712.15-712.12a8 8 0 000-11.32zM149.3 512C232.6 339.8 350.7 258 512 258c54.54 0 104.13 9.36 149.12 28.39l-70.3 70.3a176 176 0 00-238.13 238.13l-83.42 83.42C223.1 637.49 183.3 582.28 149.3 512zm246.7 0a112.11 112.11 0 01146.2-106.69L401.31 546.2A112 112 0 01396 512z"
+                                      />
+                                      <path
+                                        d="M508 624c-3.46 0-6.87-.16-10.25-.47l-52.82 52.82a176.09 176.09 0 00227.42-227.42l-52.82 52.82c.31 3.38.47 6.79.47 10.25a111.94 111.94 0 01-112 112z"
+                                      />
+                                    </svg>
+                                  </span>
+                                </span>
+                              </span>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </form>
+            </div>
+            <div
+              class="ant-drawer-footer"
+            >
+              <div
+                class="ant-space ant-space-horizontal ant-space-align-center"
+              >
+                <div
+                  class="ant-space-item"
+                  style="margin-right: 8px;"
+                >
+                  <button
+                    class="ant-btn ant-btn-default basic-button-wrapper css-geipcv"
+                    type="button"
+                  >
+                    <span>
+                      关 闭
+                    </span>
+                  </button>
+                </div>
+                <div
+                  class="ant-space-item"
+                >
+                  <button
+                    class="ant-btn ant-btn-primary basic-button-wrapper css-geipcv"
+                    type="button"
+                  >
+                    <span>
+                      确 认
+                    </span>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        aria-hidden="true"
+        data-sentinel="end"
+        style="width: 0px; height: 0px; overflow: hidden; outline: none; position: absolute;"
+        tabindex="0"
+      />
+    </div>
+  </div>
+</body>
+`;

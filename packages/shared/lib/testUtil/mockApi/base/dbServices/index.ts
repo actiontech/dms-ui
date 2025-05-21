@@ -8,6 +8,7 @@ import {
   globalDBServicesTipsMockData
 } from './data';
 import DBService from '../../../../api/base/service/DBService';
+import auth from '../../../../api/provision/service/auth';
 
 class MockDbServicesApi implements MockSpyApy {
   public mockAllApi(): void {
@@ -64,6 +65,11 @@ class MockDbServicesApi implements MockSpyApy {
     return spy;
   }
 
+  public AuthSyncService() {
+    const spy = jest.spyOn(auth, 'AuthSyncService');
+    spy.mockImplementation(() => createSpySuccessResponse({}));
+    return spy;
+  }
   public checkInstanceIsConnectableByNameV1() {
     const spy = jest.spyOn(instance, 'checkInstanceIsConnectableByNameV1');
     spy.mockImplementation(() =>
