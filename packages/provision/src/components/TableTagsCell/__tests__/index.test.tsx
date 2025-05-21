@@ -1,4 +1,4 @@
-import { superRender } from '@actiontech/shared/lib/testUtil/customRender';
+import { superRender } from '@actiontech/shared/lib/testUtil/superRender';
 import TableTagsCell from '../index';
 
 describe('provision/components/TableTagsCell', () => {

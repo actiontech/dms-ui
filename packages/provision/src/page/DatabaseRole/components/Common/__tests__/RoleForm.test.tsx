@@ -1,4 +1,4 @@
-import { superRender } from '@actiontech/shared/lib/testUtil/customRender';
+import { superRender } from '@actiontech/shared/lib/testUtil/superRender';
 import { act, renderHook } from '@testing-library/react';
 import RoleForm from '../RoleForm';
 import auth from '../../../../../testUtil/mockApi/auth';

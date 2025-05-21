@@ -1,5 +1,5 @@
 import DatabaseRoleModal from '..';
-import { superRender } from '@actiontech/shared/lib/testUtil/customRender';
+import { superRender } from '@actiontech/shared/lib/testUtil/superRender';
 import { DatabaseRoleModalStatus } from '../../../../store/databaseRole';
 import { ModalName } from '../../../../data/enum';
 

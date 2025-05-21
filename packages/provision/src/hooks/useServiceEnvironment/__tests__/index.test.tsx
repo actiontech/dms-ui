@@ -1,6 +1,6 @@
 import auth from '../../../testUtil/mockApi/auth';
 import { mockEnvironmentTagsData } from '../../../testUtil/mockApi/auth/data';
-import { renderHooksWithRedux } from '@actiontech/shared/lib/testUtil/customRender';
+import { superRenderHook } from '@actiontech/shared/lib/testUtil/superRender';
 import useServiceOptions from '..';
 import { act, cleanup } from '@testing-library/react';
 import {
@@ -29,7 +29,7 @@ describe('provision/hooks/useServiceEnviroment', () => {
   });
 
   it('should get service environment data from request', async () => {
-    const { result } = renderHooksWithRedux(useServiceOptions, {});
+    const { result } = superRenderHook(useServiceOptions, {});
 
     expect(result.current.loading).toBeFalsy();
     expect(result.current.environmentList).toEqual([]);
@@ -65,7 +65,7 @@ describe('provision/hooks/useServiceEnviroment', () => {
       createSpyFailResponse({ data: { environment_tags: [] } })
     );
 
-    const { result } = renderHooksWithRedux(useServiceOptions, {});
+    const { result } = superRenderHook(useServiceOptions, {});
     act(() =>
       result.current.updateEnvironmentList({
         namespace_uid: mockProjectInfo.projectID
@@ -80,7 +80,7 @@ describe('provision/hooks/useServiceEnviroment', () => {
     authListEnvironmentTagsSpy.mockImplementation(() =>
       createSpyErrorResponse({ data: [] })
     );
-    const { result } = renderHooksWithRedux(useServiceOptions, {});
+    const { result } = superRenderHook(useServiceOptions, {});
     act(() =>
       result.current.updateEnvironmentList({
         namespace_uid: mockProjectInfo.projectID

@@ -1,5 +1,5 @@
 import RoleDetail from '..';
-import { superRender } from '@actiontech/shared/lib/testUtil/customRender';
+import { superRender } from '@actiontech/shared/lib/testUtil/superRender';
 import { act, fireEvent, screen } from '@testing-library/react';
 import dbRole from '../../../../../testUtil/mockApi/dbRole';
 import { mockDBRoleData } from '../../../../../testUtil/mockApi/dbRole/data';

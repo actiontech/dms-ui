@@ -1,6 +1,6 @@
 import { eventEmitter } from '@actiontech/shared/lib/utils/EventEmitter';
 import apiInstance from './Api';
-import TestMockApi from '@actiontech/shared/lib/testUtil/mockApi';
+import { TestMockApi } from '@actiontech/shared/lib/testUtil/mockApi';
 import EmitterKey from '@actiontech/shared/lib/data/EmitterKey';
 
 const emitSpy = jest.spyOn(eventEmitter, 'emit');

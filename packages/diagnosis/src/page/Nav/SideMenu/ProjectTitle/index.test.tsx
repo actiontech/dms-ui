@@ -1,6 +1,6 @@
 import { useNavigate } from 'react-router-dom';
 import ProjectTitle from '.';
-import { renderWithRouter } from '@actiontech/shared/lib/testUtil/customRender';
+import { superRender } from '@actiontech/shared/lib/testUtil/superRender';
 import { fireEvent, screen } from '@testing-library/react';
 import { getBySelector } from '@actiontech/shared/lib/testUtil/customQuery';
 
@@ -24,14 +24,14 @@ describe('diagnosis/ProjectTitle', () => {
   });
 
   it('should match snapshot', async () => {
-    const { baseElement } = renderWithRouter(<ProjectTitle />);
+    const { baseElement } = superRender(<ProjectTitle />);
     expect(baseElement).toMatchSnapshot();
     expect(screen.getByText('Action')).toBeInTheDocument();
     expect(screen.getByText('Diagnosis')).toBeInTheDocument();
   });
 
   it('should return to home page by click project title', async () => {
-    const { baseElement } = renderWithRouter(<ProjectTitle />);
+    const { baseElement } = superRender(<ProjectTitle />);
     expect(baseElement).toMatchSnapshot();
     fireEvent.click(getBySelector('.home-page-shortcut'));
     expect(navigateSpy).toHaveBeenCalledTimes(1);

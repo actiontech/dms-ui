@@ -1,4 +1,4 @@
-import { renderHooksWithReduxAndRouter } from '@actiontech/shared/lib/testUtil/customRender';
+import { superRenderHook } from '@actiontech/shared/lib/testUtil/superRender';
 import { act } from '@testing-library/react';
 import useGetUserScope from '.';
 import { useDispatch } from 'react-redux';
@@ -28,7 +28,7 @@ describe('diagnosis/useGetUserScope', () => {
   });
 
   const customRender = () => {
-    return renderHooksWithReduxAndRouter(() => useGetUserScope(), {});
+    return superRenderHook(() => useGetUserScope(), {});
   };
 
   it('request get user info success', async () => {

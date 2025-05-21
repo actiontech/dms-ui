@@ -1,5 +1,5 @@
 import DatabasePrivilegesSelector from '../index';
-import { superRender } from '@actiontech/shared/lib/testUtil/customRender';
+import { superRender } from '@actiontech/shared/lib/testUtil/superRender';
 import { renderHook, act, screen, fireEvent } from '@testing-library/react';
 import { Form } from 'antd';
 import {

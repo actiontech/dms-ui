@@ -2,7 +2,7 @@ import dbAccountService from '../../../testUtil/mockApi/dbAccountService';
 import auth from '../../../testUtil/mockApi/auth';
 import { mockUseCurrentProject } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentProject';
 import { mockUseDbServiceDriver } from '@actiontech/shared/lib/testUtil/mockHook/mockUseDbServiceDriver';
-import { superRender } from '@actiontech/shared/lib/testUtil/customRender';
+import { superRender } from '@actiontech/shared/lib/testUtil/superRender';
 import DatabaseAccountModal from '.';
 import { cleanup, screen } from '@testing-library/react';
 import { DatabaseAccountModalStatus } from '../../../store/databaseAccount';

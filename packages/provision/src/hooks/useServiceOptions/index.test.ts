@@ -1,5 +1,5 @@
 import auth from '../../testUtil/mockApi/auth';
-import { renderHooksWithRedux } from '@actiontech/shared/lib/testUtil/customRender';
+import { superRenderHook } from '@actiontech/shared/lib/testUtil/superRender';
 import useServiceOptions from '.';
 import { act, cleanup } from '@testing-library/react';
 import { instanceList } from '../../testUtil/mockApi/auth/data';
@@ -58,7 +58,7 @@ describe('provision/hooks/useServiceOptions', () => {
   });
 
   it('should get service data from request', async () => {
-    const { result } = renderHooksWithRedux(useServiceOptions, {});
+    const { result } = superRenderHook(useServiceOptions, {});
 
     expect(result.current.loading).toBeFalsy();
     expect(result.current.serviceList).toEqual([]);
@@ -87,7 +87,7 @@ describe('provision/hooks/useServiceOptions', () => {
 
   it('should get service data by params and success callback will be called', async () => {
     const onSuccess = jest.fn();
-    const { result } = renderHooksWithRedux(useServiceOptions, {});
+    const { result } = superRenderHook(useServiceOptions, {});
 
     act(() => {
       result.current.updateServiceList(
@@ -111,7 +111,7 @@ describe('provision/hooks/useServiceOptions', () => {
   });
 
   it('should get service data from request when isNeedFilterByOperationPermission is true', async () => {
-    const { result } = renderHooksWithRedux(() => useServiceOptions(true), {});
+    const { result } = superRenderHook(() => useServiceOptions(true), {});
 
     act(() => {
       result.current.updateServiceList();
@@ -131,7 +131,7 @@ describe('provision/hooks/useServiceOptions', () => {
       createSpyFailResponse({ data: [] })
     );
 
-    const { result } = renderHooksWithRedux(useServiceOptions, {});
+    const { result } = superRenderHook(useServiceOptions, {});
     act(() => result.current.updateServiceList());
     await act(async () => jest.advanceTimersByTime(3000));
     expect(result.current.serviceList).toEqual([]);
@@ -142,7 +142,7 @@ describe('provision/hooks/useServiceOptions', () => {
     authListServicesSpy.mockImplementation(() =>
       createSpyErrorResponse({ data: [] })
     );
-    const { result } = renderHooksWithRedux(useServiceOptions, {});
+    const { result } = superRenderHook(useServiceOptions, {});
     act(() => result.current.updateServiceList());
     await act(async () => jest.advanceTimersByTime(3000));
     expect(result.current.serviceList).toEqual([]);
