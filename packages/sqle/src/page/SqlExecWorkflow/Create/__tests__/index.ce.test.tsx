@@ -7,15 +7,15 @@ import MockDate from 'mockdate';
 import dayjs from 'dayjs';
 import { mockUseCurrentProject } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentProject';
 import { mockUseCurrentUser } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentUser';
-import { superRender } from '../../../../testUtils/customRender';
+import { sqleSuperRender } from '../../../../testUtils/superRender';
 import CreateSqlExecWorkflow from '..';
 import {
   UtilsConsoleErrorStringsEnum,
   ignoreConsoleErrors
 } from '@actiontech/shared/lib/testUtil/common';
 import { mockDatabaseType } from '../../../../testUtils/mockHooks/mockDatabaseType';
-import execWorkflow from '../../../../testUtils/mockApi/execWorkflow';
-import instance from '../../../../testUtils/mockApi/instance';
+import execWorkflow from '@actiontech/shared/lib/testUtil/mockApi/sqle/execWorkflow';
+import instance from '@actiontech/shared/lib/testUtil/mockApi/sqle/instance';
 import { useSelector } from 'react-redux';
 
 jest.mock('react-redux', () => ({
@@ -25,7 +25,7 @@ jest.mock('react-redux', () => ({
 
 describe('sqle/SqlExecWorkflow/Create ce', () => {
   const customRender = () => {
-    return superRender(<CreateSqlExecWorkflow />);
+    return sqleSuperRender(<CreateSqlExecWorkflow />);
   };
   ignoreConsoleErrors([
     UtilsConsoleErrorStringsEnum.UNIQUE_KEY_REQUIRED,

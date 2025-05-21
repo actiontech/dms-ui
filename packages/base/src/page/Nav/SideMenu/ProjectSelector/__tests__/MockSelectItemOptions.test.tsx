@@ -2,7 +2,7 @@ import { IBindProject } from '../index.type';
 import MockSelectItemOptions from '../MockSelectItemOptions';
 
 import { cleanup, fireEvent, screen, act } from '@testing-library/react';
-import { superRender } from '../../../../../testUtils/customRender';
+import { baseSuperRender } from '../../../../../testUtils/superRender';
 import { useNavigate } from 'react-router-dom';
 
 jest.mock('react-router-dom', () => {
@@ -17,7 +17,7 @@ describe('base/page/Nav/SideMenu/MockSelectItemOptions', () => {
   const closeSelectDropdownFn = jest.fn();
 
   const customRender = (listData: IBindProject[] = []) => {
-    return superRender(
+    return baseSuperRender(
       <MockSelectItemOptions
         list={listData}
         closeSelectDropdown={closeSelectDropdownFn}

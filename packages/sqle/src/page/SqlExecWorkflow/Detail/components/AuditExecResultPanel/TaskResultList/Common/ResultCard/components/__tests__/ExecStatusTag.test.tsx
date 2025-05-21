@@ -1,4 +1,4 @@
-import { superRender } from '../../../../../../../../../../testUtils/customRender';
+import { sqleSuperRender } from '../../../../../../../../../../testUtils/superRender';
 import ExecStatusTag, { ExecStatusTagProps } from '../ExecStatusTag';
 import { getAuditTaskSQLsV2FilterExecStatusEnum } from '@actiontech/shared/lib/api/sqle/service/task/index.enum';
 
@@ -8,7 +8,7 @@ describe('sqle/ExecWorkflow/AuditDetail/execStatusMap', () => {
       status: getAuditTaskSQLsV2FilterExecStatusEnum.initialized
     }
   ) => {
-    return superRender(<ExecStatusTag {...params} />);
+    return sqleSuperRender(<ExecStatusTag {...params} />);
   };
 
   it('render initialized tag', () => {

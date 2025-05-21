@@ -1,8 +1,8 @@
 import { cleanup, screen, act, fireEvent } from '@testing-library/react';
-import { renderWithReduxAndTheme } from '@actiontech/shared/lib/testUtil/customRender';
+import { superRender } from '@actiontech/shared/lib/testUtil/superRender';
 import OperationRecordList from '.';
-import operationRecord from '../../../testUtils/mockApi/operationRecord';
-import { operationRecordListMockData } from '../../../testUtils/mockApi/operationRecord/data';
+import operationRecord from '@actiontech/shared/lib/testUtil/mockApi/sqle/operationRecord';
+import { operationRecordListMockData } from '@actiontech/shared/lib/testUtil/mockApi/sqle/operationRecord/data';
 import { mockUseCurrentProject } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentProject';
 import { mockProjectInfo } from '@actiontech/shared/lib/testUtil/mockHook/data';
 import { createSpyErrorResponse } from '@actiontech/shared/lib/testUtil/mockApi';
@@ -27,7 +27,7 @@ describe('sqle/OperationRecord/List', () => {
     const operationRecordListSpy = operationRecord.getOperationActionList();
     const actionSpy = operationRecord.getOperationActionList();
     const typeNameSpy = operationRecord.getOperationTypeNameList();
-    const { baseElement } = renderWithReduxAndTheme(<OperationRecordList />);
+    const { baseElement } = superRender(<OperationRecordList />);
     await act(async () => jest.advanceTimersByTime(3000));
     expect(baseElement).toMatchSnapshot();
     expect(operationRecordListSpy).toHaveBeenCalledTimes(1);
@@ -43,7 +43,7 @@ describe('sqle/OperationRecord/List', () => {
     operationRecordListSpy.mockImplementationOnce(() =>
       createSpyErrorResponse({ message: 'error info' })
     );
-    const { baseElement } = renderWithReduxAndTheme(<OperationRecordList />);
+    const { baseElement } = superRender(<OperationRecordList />);
     await act(async () => jest.advanceTimersByTime(3000));
     expect(screen.getByText('SQLE操作记录')).toBeInTheDocument();
     expect(baseElement).toMatchSnapshot();
@@ -51,7 +51,7 @@ describe('sqle/OperationRecord/List', () => {
 
   it('render table list when action filter', async () => {
     const operationRecordListSpy = operationRecord.getOperationRecordList();
-    const { baseElement } = renderWithReduxAndTheme(<OperationRecordList />);
+    const { baseElement } = superRender(<OperationRecordList />);
     await act(async () => jest.advanceTimersByTime(3000));
     expect(operationRecordListSpy).toHaveBeenCalledTimes(1);
     const searchInputEle = getBySelector(
@@ -84,7 +84,7 @@ describe('sqle/OperationRecord/List', () => {
 
   it('render action when filter item show', async () => {
     const operationRecordListSpy = operationRecord.getOperationActionList();
-    const { baseElement } = renderWithReduxAndTheme(<OperationRecordList />);
+    const { baseElement } = superRender(<OperationRecordList />);
     await act(async () => jest.advanceTimersByTime(3000));
     expect(operationRecordListSpy).toHaveBeenCalledTimes(1);
 
@@ -100,7 +100,7 @@ describe('sqle/OperationRecord/List', () => {
 
   it('should export data file when click export button', async () => {
     const exportListSpy = operationRecord.exportOperationRecordList();
-    renderWithReduxAndTheme(<OperationRecordList />);
+    superRender(<OperationRecordList />);
     await act(async () => jest.advanceTimersByTime(3000));
     fireEvent.click(screen.getByText('导出'));
     await act(async () => jest.advanceTimersByTime(300));

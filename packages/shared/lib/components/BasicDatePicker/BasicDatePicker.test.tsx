@@ -1,6 +1,6 @@
 import { fireEvent, act, cleanup } from '@testing-library/react';
 import { getBySelector } from '../../testUtil/customQuery';
-import { superRender } from '../../testUtil/customRender';
+import { superRender } from '../../testUtil/superRender';
 import {
   ignoreConsoleErrors,
   UtilsConsoleErrorStringsEnum

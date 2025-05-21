@@ -1,4 +1,4 @@
-import { superRender } from '../../../../testUtils/customRender';
+import { sqleSuperRender } from '../../../../testUtils/superRender';
 import UserAvatar from '.';
 import { act, fireEvent, screen } from '@testing-library/react';
 import { getBySelector } from '@actiontech/shared/lib/testUtil/customQuery';
@@ -14,7 +14,7 @@ describe('page/WorkflowTemplate/UserAvatar', () => {
   });
 
   it('render user avatar', async () => {
-    const { baseElement } = superRender(<UserAvatar data="admin" />);
+    const { baseElement } = sqleSuperRender(<UserAvatar data="admin" />);
     expect(baseElement).toMatchSnapshot();
     expect(screen.getByText('A')).toBeInTheDocument();
     fireEvent.mouseOver(getBySelector('.ant-avatar'));

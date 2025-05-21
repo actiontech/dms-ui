@@ -1,5 +1,5 @@
-import userCenter from '../../../../../testUtils/mockApi/userCenter';
-import { renderWithReduxAndTheme } from '@actiontech/shared/lib/testUtil/customRender';
+import userCenter from '@actiontech/shared/lib/testUtil/mockApi/base/userCenter';
+import { superRender } from '@actiontech/shared/lib/testUtil/superRender';
 import { cleanup, fireEvent, act, screen } from '@testing-library/react';
 import { ModalName } from '../../../../../data/ModalName';
 import UpdateMemberGroup from '../UpdateMemberGroup';
@@ -8,11 +8,11 @@ import EmitterKey from '../../../../../data/EmitterKey';
 import { queryBySelector } from '@actiontech/shared/lib/testUtil/customQuery';
 import { mockUseCurrentProject } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentProject';
 import { mockProjectInfo } from '@actiontech/shared/lib/testUtil/mockHook/data';
-import member from '../../../../../testUtils/mockApi/member';
+import member from '@actiontech/shared/lib/testUtil/mockApi/base/member';
 import { useDispatch, useSelector } from 'react-redux';
 import { mockUseDbServiceDriver } from '@actiontech/shared/lib/testUtil/mockHook/mockUseDbServiceDriver';
-import dbServices from '../../../../../testUtils/mockApi/dbServices';
-import { memberGroupList } from '../../../../../testUtils/mockApi/member/data';
+import dbServices from '@actiontech/shared/lib/testUtil/mockApi/base/dbServices';
+import { memberGroupList } from '@actiontech/shared/lib/testUtil/mockApi/base/member/data';
 
 jest.mock('react-redux', () => ({
   ...jest.requireActual('react-redux'),
@@ -52,7 +52,7 @@ describe('base/Member/Modal/UpdateMemberGroup', () => {
 
   it('should send update member group request when click submit button', async () => {
     const eventEmitSpy = jest.spyOn(EventEmitter, 'emit');
-    const { baseElement } = renderWithReduxAndTheme(<UpdateMemberGroup />);
+    const { baseElement } = superRender(<UpdateMemberGroup />);
     await act(async () => jest.advanceTimersByTime(3000));
     expect(listUsersSpy).toHaveBeenCalledTimes(1);
     expect(litDBServices).toHaveBeenCalledTimes(1);
@@ -104,7 +104,7 @@ describe('base/Member/Modal/UpdateMemberGroup', () => {
   });
 
   it('should close modal when click close button', async () => {
-    const { baseElement } = renderWithReduxAndTheme(<UpdateMemberGroup />);
+    const { baseElement } = superRender(<UpdateMemberGroup />);
     fireEvent.click(queryBySelector('.closed-icon-custom', baseElement)!);
     await act(async () => jest.advanceTimersByTime(1000));
     expect(dispatchSpy).toHaveBeenCalledTimes(1);

@@ -3,11 +3,11 @@
  */
 
 import GlobalDataSource from '..';
-import { superRender } from '../../../testUtils/customRender';
+import { baseSuperRender } from '../../../testUtils/superRender';
 
 describe('test base/GlobalDataSource ce', () => {
   it('should match snapshot', () => {
-    const { container } = superRender(<GlobalDataSource />);
+    const { container } = baseSuperRender(<GlobalDataSource />);
     expect(container).toMatchSnapshot();
   });
 });

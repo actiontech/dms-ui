@@ -1,6 +1,6 @@
 import { fireEvent, screen } from '@testing-library/react';
 import useBack from '../../hooks/useBack';
-import { superRender } from '../../testUtil/customRender';
+import { superRender } from '../../testUtil/superRender';
 import BackButton from './BackButton';
 
 jest.mock('../../hooks/useBack', () => {

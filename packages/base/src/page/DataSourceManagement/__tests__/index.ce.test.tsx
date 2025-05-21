@@ -4,7 +4,7 @@
 
 import { fireEvent } from '@testing-library/dom';
 import DataSourceManagement from '..';
-import { superRender } from '../../../testUtils/customRender';
+import { baseSuperRender } from '../../../testUtils/superRender';
 import { mockUsePermission } from '@actiontech/shared/lib/testUtil/mockHook/mockUsePermission';
 
 describe('test DataSourceManagement ce', () => {
@@ -13,7 +13,7 @@ describe('test DataSourceManagement ce', () => {
       { checkPagePermission: jest.fn().mockReturnValue(true) },
       { useSpyOnMockHooks: true }
     );
-    const { container, getByText } = superRender(<DataSourceManagement />);
+    const { container, getByText } = baseSuperRender(<DataSourceManagement />);
 
     expect(container).toMatchSnapshot();
 

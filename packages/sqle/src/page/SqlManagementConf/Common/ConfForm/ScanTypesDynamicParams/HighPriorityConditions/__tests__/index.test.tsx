@@ -2,7 +2,7 @@ import { act, fireEvent, renderHook } from '@testing-library/react';
 import { Form } from 'antd';
 import HighPriorityConditions from '..';
 import { IHighPriorityConditionResV1 } from '@actiontech/shared/lib/api/sqle/service/common';
-import { superRender } from '../../../../../../../testUtils/customRender';
+import { sqleSuperRender } from '../../../../../../../testUtils/superRender';
 
 describe('test HighPriorityConditions', () => {
   const prefixPath = 'prefixPath';
@@ -44,7 +44,7 @@ describe('test HighPriorityConditions', () => {
   const customRender = (conditions = conditionsValue, loading = false) => {
     const { result } = renderHook(() => Form.useForm());
 
-    return superRender(
+    return sqleSuperRender(
       <Form form={result.current[0]}>
         <HighPriorityConditions
           prefixPath={prefixPath}

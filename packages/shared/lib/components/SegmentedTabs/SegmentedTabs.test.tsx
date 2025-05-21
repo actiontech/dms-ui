@@ -1,6 +1,6 @@
 import { fireEvent, screen } from '@testing-library/dom';
 import SegmentedTabs from './SegmentedTabs';
-import { superRender } from '../../testUtil/customRender';
+import { superRender } from '../../testUtil/superRender';
 import { getBySelector } from '../../testUtil/customQuery';
 
 describe('lib/BasicSegmentedPage', () => {

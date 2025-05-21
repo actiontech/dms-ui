@@ -1,7 +1,7 @@
 import { cleanup, act } from '@testing-library/react';
-import { renderHooksWithRedux } from '@actiontech/shared/lib/testUtil/customRender';
+import { superRenderHook } from '@actiontech/shared/lib/testUtil/superRender';
 import useUpdateRuleTemplateForm from '../useUpdateRuleTemplateForm';
-import rule_template from '../../../testUtils/mockApi/rule_template';
+import rule_template from '@actiontech/shared/lib/testUtil/mockApi/sqle/rule_template';
 import EventEmitter from '../../../utils/EventEmitter';
 import EmitterKey from '../../../data/EmitterKey';
 
@@ -18,7 +18,7 @@ describe('sqle/hooks/useRuleTemplateForm/useUpdateRuleTemplateForm', () => {
   });
 
   it('init state', async () => {
-    const { result } = renderHooksWithRedux(useUpdateRuleTemplateForm, {});
+    const { result } = superRenderHook(useUpdateRuleTemplateForm, {});
     expect(result.current.getAllRulesLoading).toEqual(false);
     await act(async () => jest.advanceTimersByTime(3000));
     expect(getRulesSpy).toHaveBeenCalledTimes(0);
@@ -31,7 +31,7 @@ describe('sqle/hooks/useRuleTemplateForm/useUpdateRuleTemplateForm', () => {
   });
 
   it('loading status control', async () => {
-    const { result } = renderHooksWithRedux(useUpdateRuleTemplateForm, {});
+    const { result } = superRenderHook(useUpdateRuleTemplateForm, {});
 
     await act(async () => {
       result.current.startSubmit();

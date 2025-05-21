@@ -22,17 +22,18 @@ module.exports = {
   moduleNameMapper: {
     '.+\\.(css|style|less|sass|scss|ttf|woff|woff2)$': 'identity-obj-proxy',
     '@ant-design/plots':
-      '<rootDir>/packages/shared/lib/testUtil/mockAntDesignPlots.jsx',
-    'monaco-editor': '<rootDir>/packages/shared/lib/testUtil/mockEditor.jsx',
+      '<rootDir>/packages/shared/lib/testUtil/mockModule/mockAntDesignPlots.jsx',
+    'monaco-editor':
+      '<rootDir>/packages/shared/lib/testUtil/mockModule/mockEditor.jsx',
     '@monaco-editor/react':
-      '<rootDir>/packages/shared/lib/testUtil/mockEditor.jsx',
+      '<rootDir>/packages/shared/lib/testUtil/mockModule/mockEditor.jsx',
     '@uiw/react-md-editor':
-      '<rootDir>/packages/shared/lib/testUtil/mockEditor.jsx',
+      '<rootDir>/packages/shared/lib/testUtil/mockModule/mockEditor.jsx',
     '@actiontech/(.*)': '<rootDir>/packages/$1',
     '@react-sigma/core(.*)$':
-      '<rootDir>/packages/shared/lib/testUtil/mockSigmaCore.tsx',
+      '<rootDir>/packages/shared/lib/testUtil/mockModule/mockSigmaCore.tsx',
     '@react-sigma/graph-search$':
-      '<rootDir>/packages/shared/lib/testUtil/mockSigmaGraphSearch.tsx',
+      '<rootDir>/packages/shared/lib/testUtil/mockModule/mockSigmaGraphSearch.tsx',
     ...pathsToModuleNameMapper(compilerOptions.paths)
   },
 

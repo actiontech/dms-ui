@@ -1,6 +1,6 @@
 import { cleanup } from '@testing-library/react';
 import SqlAudit from '.';
-import { superRender } from '@actiontech/shared/lib/testUtil/customRender';
+import { superRender } from '@actiontech/shared/lib/testUtil/superRender';
 
 describe('sqle/SqlAudit', () => {
   beforeEach(() => {

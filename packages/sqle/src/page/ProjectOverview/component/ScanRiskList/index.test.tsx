@@ -1,6 +1,6 @@
-import { superRender } from '../../../../testUtils/customRender';
+import { sqleSuperRender } from '../../../../testUtils/superRender';
 import ScanRiskList from '.';
-import projectOverview from '../../../../testUtils/mockApi/projectOverview';
+import projectOverview from '@actiontech/shared/lib/testUtil/mockApi/sqle/projectOverview';
 import { act, cleanup, fireEvent, screen } from '@testing-library/react';
 import { mockUseCurrentProject } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentProject';
 import { mockProjectInfo } from '@actiontech/shared/lib/testUtil/mockHook/data';
@@ -11,7 +11,7 @@ import { useNavigate } from 'react-router-dom';
 import { createSpySuccessResponse } from '@actiontech/shared/lib/testUtil/mockApi';
 import eventEmitter from '../../../../utils/EventEmitter';
 import { getAllBySelector } from '@actiontech/shared/lib/testUtil/customQuery';
-import { riskAuditPlanData } from '../../../../testUtils/mockApi/projectOverview/data';
+import { riskAuditPlanData } from '@actiontech/shared/lib/testUtil/mockApi/sqle/projectOverview/data';
 
 jest.mock('react-router-dom', () => {
   return {
@@ -38,7 +38,7 @@ describe('page/ProjectOverview/ScanRiskList', () => {
   });
 
   const customRender = () => {
-    return superRender(<ScanRiskList />);
+    return sqleSuperRender(<ScanRiskList />);
   };
 
   it('render scan risk list and check more data', async () => {

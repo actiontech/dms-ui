@@ -2,8 +2,8 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import useUserInfo from '.';
 import { act, renderHook } from '@testing-library/react';
-import global from '../../../../base/src/testUtils/mockApi/global';
-import { GetUserPayload } from '../../../../base/src/testUtils/mockApi/global/data';
+import global from '../../testUtil/mockApi/base/global';
+import { GetUserPayload } from '../../testUtil/mockApi/base/global/data';
 import {
   createSpyErrorResponse,
   createSpyFailResponse

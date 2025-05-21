@@ -4,19 +4,19 @@ import ModifySqlStatement from '..';
 import { mockUseCurrentProject } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentProject';
 import { mockUseCurrentUser } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentUser';
 import { AuditTaskResV1SqlSourceEnum } from '@actiontech/shared/lib/api/sqle/service/common.enum';
-import { AuditTaskResData } from '../../../../../../testUtils/mockApi/execWorkflow/data';
+import { AuditTaskResData } from '@actiontech/shared/lib/testUtil/mockApi/sqle/execWorkflow/data';
 import { getBySelector } from '@actiontech/shared/lib/testUtil/customQuery';
 import { createSpySuccessResponse } from '@actiontech/shared/lib/testUtil/mockApi';
-import execWorkflow from '../../../../../../testUtils/mockApi/execWorkflow';
-import { superRender } from '../../../../../../testUtils/customRender';
+import execWorkflow from '@actiontech/shared/lib/testUtil/mockApi/sqle/execWorkflow';
+import { sqleSuperRender } from '../../../../../../testUtils/superRender';
 import { mockProjectInfo } from '@actiontech/shared/lib/testUtil/mockHook/data';
 import { WORKFLOW_OVERVIEW_TAB_KEY } from '../../../hooks/useAuditExecResultPanelSetup';
 import {
   UtilsConsoleErrorStringsEnum,
   ignoreConsoleErrors
 } from '@actiontech/shared/lib/testUtil/common';
-import workflowTemplate from '../../../../../../testUtils/mockApi/workflowTemplate';
-import instance from '../../../../../../testUtils/mockApi/instance';
+import workflowTemplate from '@actiontech/shared/lib/testUtil/mockApi/sqle/workflowTemplate';
+import instance from '@actiontech/shared/lib/testUtil/mockApi/sqle/instance';
 import { useSelector } from 'react-redux';
 import { mockUseDbServiceDriver } from '@actiontech/shared/lib/testUtil/mockHook/mockUseDbServiceDriver';
 import { InstanceTipResV2SupportedBackupStrategyEnum } from '@actiontech/shared/lib/api/sqle/service/common.enum';
@@ -55,7 +55,9 @@ describe('sqle/ExecWorkflow/Detail/ModifySqlStatement', () => {
       workflowId,
       auditExecPanelTabChangeEvent: auditExecPanelTabChangeEventFn
     };
-    return superRender(<ModifySqlStatement {...params} {...customParams} />);
+    return sqleSuperRender(
+      <ModifySqlStatement {...params} {...customParams} />
+    );
   };
 
   ignoreConsoleErrors([

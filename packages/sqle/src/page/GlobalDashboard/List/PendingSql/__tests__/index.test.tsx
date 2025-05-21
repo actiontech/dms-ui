@@ -1,13 +1,13 @@
 import { cleanup, act, fireEvent, screen } from '@testing-library/react';
 import { mockUseCurrentProject } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentProject';
 import { mockUseCurrentUser } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentUser';
-import { superRender } from '../../../../../testUtils/customRender';
+import { sqleSuperRender } from '../../../../../testUtils/superRender';
 import PendingSqlList from '../index';
 import { GlobalDashboardFilterType } from '../../../index.type';
 import { ListProjectV2ProjectPriorityEnum } from '@actiontech/shared/lib/api/base/service/common.enum';
 import eventEmitter from '../../../../../utils/EventEmitter';
 import EmitterKey from '../../../../../data/EmitterKey';
-import sqlManage from '../../../../../testUtils/mockApi/sqlManage';
+import sqlManage from '@actiontech/shared/lib/testUtil/mockApi/sqle/sqlManage';
 
 describe('sqle/GlobalDashboard/PendingSqlList', () => {
   let getGlobalSqlManageList: jest.SpyInstance;
@@ -31,7 +31,7 @@ describe('sqle/GlobalDashboard/PendingSqlList', () => {
   });
 
   const customRender = (filterValues: GlobalDashboardFilterType = {}) => {
-    return superRender(
+    return sqleSuperRender(
       <PendingSqlList
         filterValues={filterValues}
         updateFilterValue={updateFilterValueFn}

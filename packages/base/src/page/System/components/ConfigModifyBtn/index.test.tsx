@@ -1,5 +1,5 @@
 import { cleanup, fireEvent, act } from '@testing-library/react';
-import { renderWithTheme } from '@actiontech/shared/lib/testUtil/customRender';
+import { superRender } from '@actiontech/shared/lib/testUtil/superRender';
 import { getBySelector } from '@actiontech/shared/lib/testUtil/customQuery';
 import { mockUseCurrentUser } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentUser';
 
@@ -18,7 +18,7 @@ describe('base/System/components/ConfigModifyBtn', () => {
 
   it('render snap', async () => {
     const onClickFn = jest.fn();
-    const { baseElement } = renderWithTheme(
+    const { baseElement } = superRender(
       <ConfigModifyBtn onClick={onClickFn} />
     );
     expect(baseElement).toMatchSnapshot();
@@ -39,7 +39,7 @@ describe('base/System/components/ConfigModifyBtn', () => {
     mockUseCurrentUser({ isAdmin: false });
 
     expect(
-      renderWithTheme(<ConfigModifyBtn onClick={onClickFn} />).container
+      superRender(<ConfigModifyBtn onClick={onClickFn} />).container
     ).toMatchSnapshot();
   });
 });

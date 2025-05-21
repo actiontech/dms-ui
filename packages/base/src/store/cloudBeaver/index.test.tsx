@@ -1,6 +1,6 @@
 import { IReduxState } from '..';
 import reducers, { updateCBSqlOperationRecord } from '.';
-import { listCBOperationLogsMockData } from '../../testUtils/mockApi/cloudBeaver/data';
+import { listCBOperationLogsMockData } from '@actiontech/shared/lib/testUtil/mockApi/base/cloudBeaver/data';
 
 describe('store/cloudBeaver', () => {
   const state: IReduxState['cloudBeaver'] = {

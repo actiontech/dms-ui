@@ -1,4 +1,4 @@
-import { superRender } from '../../testUtil/customRender';
+import { superRender } from '../../testUtil/superRender';
 import { screen } from '@testing-library/react';
 import BasicTypographyEllipsis from './BasicTypographyEllipsis';
 import { BasicTypographyEllipsisProps } from './BasicTypographyEllipsis.types';

@@ -1,5 +1,5 @@
 import { useParams } from 'react-router-dom';
-import { superRender } from '../../../../../../../../../testUtils/customRender';
+import { sqleSuperRender } from '../../../../../../../../../testUtils/superRender';
 import FileModeHeader from '..';
 import { fireEvent, screen } from '@testing-library/dom';
 import { mockUseCurrentProject } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentProject';
@@ -20,7 +20,7 @@ describe('test FileModeHeader', () => {
   });
 
   it('should render the header with title and extra button when allowExec is true', () => {
-    const { baseElement } = superRender(
+    const { baseElement } = sqleSuperRender(
       <FileModeHeader taskId="1" refresh={jest.fn()} allowExec={true} />
     );
     expect(baseElement).toMatchSnapshot();
@@ -32,7 +32,7 @@ describe('test FileModeHeader', () => {
   });
 
   it('should not render the extra button when allowExec is false', () => {
-    superRender(
+    sqleSuperRender(
       <FileModeHeader taskId="1" refresh={jest.fn()} allowExec={false} />
     );
 

@@ -1,6 +1,6 @@
 import { fireEvent, screen } from '@testing-library/dom';
 import LazyLoadComponent from '../LazyLoadComponent';
-import { superRender } from '../../../testUtil/customRender';
+import { superRender } from '../../../testUtil/superRender';
 import { useState } from 'react';
 import { LazyLoadComponentProps } from '../LazyLoadComponent.types';
 import { getBySelector } from '../../../testUtil/customQuery';

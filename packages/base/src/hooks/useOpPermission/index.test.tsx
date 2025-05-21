@@ -7,8 +7,8 @@ import {
   screen
 } from '@testing-library/react';
 import useOpPermission from '.';
-import userCenter from '../../testUtils/mockApi/userCenter';
-import { opPermissionList } from '../../testUtils/mockApi/userCenter/data';
+import userCenter from '@actiontech/shared/lib/testUtil/mockApi/base/userCenter';
+import { opPermissionList } from '@actiontech/shared/lib/testUtil/mockApi/base/userCenter/data';
 import {
   createSpyErrorResponse,
   createSpyFailResponse

@@ -1,7 +1,7 @@
 import { cleanup, act } from '@testing-library/react';
-import { renderWithTheme } from '../../../../../../testUtils/customRender';
+import { sqleSuperRender } from '../../../../../../testUtils/superRender';
 
-import statistic from '../../../../../../testUtils/mockApi/statistic';
+import statistic from '@actiontech/shared/lib/testUtil/mockApi/sqle/statistic';
 import {
   createSpyFailResponse,
   createSpySuccessResponse
@@ -17,7 +17,7 @@ import {
 describe('ReportStatistics/topList/DiffOrderReject', () => {
   ignoreConsoleErrors([UtilsConsoleErrorStringsEnum.UNIQUE_KEY_REQUIRED]);
   const customRender = () => {
-    return renderWithTheme(<DiffOrderReject />);
+    return sqleSuperRender(<DiffOrderReject />);
   };
 
   beforeEach(() => {

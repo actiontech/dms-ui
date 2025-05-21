@@ -1,12 +1,12 @@
 import { useDispatch, useSelector } from 'react-redux';
 import { ModalName } from '../../../../data/ModalName';
-import project from '../../../../testUtils/mockApi/project';
+import project from '@actiontech/shared/lib/testUtil/mockApi/base/project';
 import EventEmitter from '../../../../utils/EventEmitter';
-import { superRender } from '../../../../testUtils/customRender';
+import { baseSuperRender } from '../../../../testUtils/superRender';
 import UpdateProject from '../UpdateProject';
 import { act, fireEvent, screen } from '@testing-library/react';
 import EmitterKey from '../../../../data/EmitterKey';
-import { mockProjectList } from '../../../../testUtils/mockApi/project/data';
+import { mockProjectList } from '@actiontech/shared/lib/testUtil/mockApi/base/project/data';
 import {
   getAllBySelector,
   getBySelector
@@ -51,7 +51,7 @@ describe('test base/page/project/modal/update', () => {
     jest.clearAllTimers();
   });
   it('should set form fields value when opened modal', () => {
-    superRender(<UpdateProject />);
+    baseSuperRender(<UpdateProject />);
 
     expect(screen.getByLabelText('项目名称')).toHaveValue(
       mockProjectList[1].name
@@ -65,7 +65,7 @@ describe('test base/page/project/modal/update', () => {
   });
 
   it('should send update project request when user click submit button', async () => {
-    superRender(<UpdateProject />);
+    baseSuperRender(<UpdateProject />);
 
     await act(async () => jest.advanceTimersByTime(3000));
 

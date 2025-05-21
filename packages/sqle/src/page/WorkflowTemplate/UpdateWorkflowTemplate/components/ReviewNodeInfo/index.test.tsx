@@ -1,15 +1,15 @@
-import { superRender } from '../../../../../testUtils/customRender';
+import { sqleSuperRender } from '../../../../../testUtils/superRender';
 import ReviewAndExecNodeInfo from '.';
 import { Form, Select } from 'antd';
 import { NodeTypeEnum } from './index.type';
-import { workflowTemplateData } from '../../../../../testUtils/mockApi/workflowTemplate/data';
+import { workflowTemplateData } from '@actiontech/shared/lib/testUtil/mockApi/sqle/workflowTemplate/data';
 import { act, fireEvent, screen, renderHook } from '@testing-library/react';
 import {
   getAllBySelector,
   getBySelector
 } from '@actiontech/shared/lib/testUtil/customQuery';
 import { IWorkFlowStepTemplateResV1 } from '@actiontech/shared/lib/api/sqle/service/common';
-import { userTipListData } from '../../../../../testUtils/mockApi/user/data';
+import { userTipListData } from '@actiontech/shared/lib/testUtil/mockApi/sqle/user/data';
 
 describe('page/WorkflowTemplate/ReviewNodeInfo', () => {
   beforeEach(() => {
@@ -39,7 +39,7 @@ describe('page/WorkflowTemplate/ReviewNodeInfo', () => {
   const customRender = (data?: {
     [key: string]: NodeTypeEnum | IWorkFlowStepTemplateResV1;
   }) => {
-    return superRender(
+    return sqleSuperRender(
       <ReviewAndExecNodeInfo
         form={result.current[0]}
         type={NodeTypeEnum.review}

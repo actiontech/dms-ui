@@ -1,7 +1,7 @@
-import userCenter from '../../../../testUtils/mockApi/userCenter';
-import dbServices from '../../../../testUtils/mockApi/dbServices';
-import dataExport from '../../../../testUtils/mockApi/dataExport';
-import { superRender } from '../../../../testUtils/customRender';
+import userCenter from '@actiontech/shared/lib/testUtil/mockApi/base/userCenter';
+import dbServices from '@actiontech/shared/lib/testUtil/mockApi/base/dbServices';
+import dataExport from '@actiontech/shared/lib/testUtil/mockApi/base/dataExport';
+import { baseSuperRender } from '../../../../testUtils/superRender';
 import ExportWorkflowList from '..';
 import { mockUseCurrentProject } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentProject';
 import { mockUseCurrentUser } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentUser';
@@ -15,7 +15,7 @@ import {
   getAllBySelector,
   getBySelector
 } from '@actiontech/shared/lib/testUtil/customQuery';
-import { DataExportWorkflowList } from '../../../../testUtils/mockApi/dataExport/data';
+import { DataExportWorkflowList } from '@actiontech/shared/lib/testUtil/mockApi/base/dataExport/data';
 import { SystemRole } from '@actiontech/shared/lib/enum';
 
 jest.mock('react-router-dom', () => {
@@ -49,7 +49,7 @@ describe('test base/DataExport/List', () => {
   });
 
   it('render init snapshot', async () => {
-    const { container } = superRender(<ExportWorkflowList />);
+    const { container } = baseSuperRender(<ExportWorkflowList />);
 
     expect(container).toMatchSnapshot();
 
@@ -95,7 +95,7 @@ describe('test base/DataExport/List', () => {
       }
     });
 
-    const { container } = superRender(<ExportWorkflowList />);
+    const { container } = baseSuperRender(<ExportWorkflowList />);
     await act(async () => jest.advanceTimersByTime(3000));
     expect(container).toMatchSnapshot();
     expect(screen.queryByText('批量关闭')).not.toBeInTheDocument();
@@ -109,7 +109,7 @@ describe('test base/DataExport/List', () => {
         [SystemRole.admin]: true
       }
     });
-    superRender(<ExportWorkflowList />);
+    baseSuperRender(<ExportWorkflowList />);
     expect(screen.queryByText('批量关闭')).toBeInTheDocument();
 
     jest.clearAllMocks();
@@ -132,7 +132,7 @@ describe('test base/DataExport/List', () => {
     });
 
     const batchCloseSpy = dataExport.batchCloseWorkflowAction();
-    superRender(<ExportWorkflowList />);
+    baseSuperRender(<ExportWorkflowList />);
     await act(async () => jest.advanceTimersByTime(3000));
 
     expect(screen.queryByText('批量关闭')).toBeInTheDocument();
@@ -181,7 +181,7 @@ describe('test base/DataExport/List', () => {
   });
 
   it('render table filter items', async () => {
-    const { container } = superRender(<ExportWorkflowList />);
+    const { container } = baseSuperRender(<ExportWorkflowList />);
     await act(async () => jest.advanceTimersByTime(3000));
     fireEvent.click(screen.getByText('待导出'));
     await act(async () => jest.advanceTimersByTime(0));
@@ -212,7 +212,7 @@ describe('test base/DataExport/List', () => {
         }
       ]
     });
-    superRender(<ExportWorkflowList />);
+    baseSuperRender(<ExportWorkflowList />);
 
     expect(screen.queryByText('创建导出')).not.toBeInTheDocument();
     cleanup();
@@ -229,12 +229,12 @@ describe('test base/DataExport/List', () => {
       ]
     });
 
-    superRender(<ExportWorkflowList />);
+    baseSuperRender(<ExportWorkflowList />);
     expect(screen.queryByText('创建导出')).toBeInTheDocument();
   });
 
   it('should execute navigate function when clicked table row', async () => {
-    superRender(<ExportWorkflowList />);
+    baseSuperRender(<ExportWorkflowList />);
     await act(async () => jest.advanceTimersByTime(3000));
     fireEvent.click(screen.getByText(DataExportWorkflowList[0].workflow_name!));
     expect(navigateSpy).toHaveBeenCalledTimes(1);
