@@ -18,6 +18,9 @@ import { formatterLegendItemName, getLegendMarkerStyle } from './index.data';
 import { DBHealthEnum } from './index.enum';
 import { SqleTheme } from '../../../../types/theme.type';
 import ToolTipCustomContent from './ToolTipCustomContent';
+import { SupportTheme, ThemeData } from '../../../../theme';
+
+const themeData = ThemeData[SupportTheme.LIGHT];
 
 jest.mock('react-router-dom', () => {
   return {
@@ -120,7 +123,13 @@ describe('page/ProjectOverview/DataSourceCount', () => {
 
   it('test ToolTipCustomContent', () => {
     expect(
-      superRender(<ToolTipCustomContent dataSource={[]} />).container
+      superRender(
+        <ToolTipCustomContent
+          dataSource={[]}
+          sharedTheme={themeData.sharedTheme}
+          sqleTheme={themeData.sqleTheme}
+        />
+      ).container
     ).toMatchSnapshot();
 
     expect(
@@ -141,6 +150,8 @@ describe('page/ProjectOverview/DataSourceCount', () => {
               value: 'pg'
             }
           ]}
+          sharedTheme={themeData.sharedTheme}
+          sqleTheme={themeData.sqleTheme}
         />
       ).container
     ).toMatchSnapshot();
