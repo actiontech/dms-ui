@@ -1,4 +1,4 @@
-import { MockSpyApy, createSpySuccessResponse } from '../../../mockApi';
+import { MockSpyApy, createSpySuccessResponse } from '../../common';
 import instance_audit_plan from '../../../../api/sqle/service/instance_audit_plan';
 import {
   mockInstanceAuditPlanListData,

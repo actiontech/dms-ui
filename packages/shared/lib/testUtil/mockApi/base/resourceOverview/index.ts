@@ -1,4 +1,4 @@
-import { createSpySuccessResponse, MockSpyApy } from '../../../mockApi';
+import { createSpySuccessResponse, MockSpyApy } from '../../common';
 import { ResourceOverviewService } from '../../../../api/base';
 import {
   mockResourceListData,

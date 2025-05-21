@@ -1,5 +1,5 @@
 import task from '../../../../api/sqle/service/task';
-import { MockSpyApy, createSpySuccessResponse } from '../../../mockApi';
+import { MockSpyApy, createSpySuccessResponse } from '../../common';
 import {
   AuditTaskSQLsMockData,
   SqlRewrittenMockDataNoDDL,

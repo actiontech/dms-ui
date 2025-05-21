@@ -1,5 +1,5 @@
 import blacklist from '../../../../api/sqle/service/blacklist';
-import { MockSpyApy, createSpySuccessResponse } from '../../../mockApi';
+import { MockSpyApy, createSpySuccessResponse } from '../../common';
 import { mockBlacklistData } from './data';
 
 class AuditWhiteList implements MockSpyApy {

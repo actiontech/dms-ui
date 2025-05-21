@@ -6,10 +6,13 @@ import {
   superRenderHook
 } from '@actiontech/shared/lib/testUtil/superRender';
 import BaseInfoForm from '.';
-import sqlMockApi from '@actiontech/shared/lib/testUtil/mockApi/sqle';
+import {
+  sqleMockApi,
+  mockUsePermission
+} from '@actiontech/shared/lib/testUtil';
 import { Form } from 'antd';
 import { RuleTemplateBaseInfoFields } from './index.type';
-import { mockUsePermission } from '@actiontech/shared/lib/testUtil/mockHook/mockUsePermission';
+// import { mockUsePermission } from '@actiontech/shared/lib/testUtil/mockHook/mockUsePermission';
 
 jest.mock('react-redux', () => ({
   ...jest.requireActual('react-redux'),
@@ -22,9 +25,9 @@ describe('sqle/RuleTemplate/BaseInfoForm', () => {
   let mockGetDriverRuleVersionTipsSpy: jest.SpyInstance;
   beforeEach(() => {
     (useDispatch as jest.Mock).mockImplementation(() => dispatchSpy);
-    getDriversSpy = sqlMockApi.configuration.getDrivers();
+    getDriversSpy = sqleMockApi.configuration.getDrivers();
     mockGetDriverRuleVersionTipsSpy =
-      sqlMockApi.rule_template.mockGetDriverRuleVersionTips();
+      sqleMockApi.rule_template.mockGetDriverRuleVersionTips();
     mockUsePermission(undefined, {
       useSpyOnMockHooks: true
     });

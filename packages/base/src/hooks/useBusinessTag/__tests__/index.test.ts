@@ -1,18 +1,18 @@
-import project from '@actiontech/shared/lib/testUtil/mockApi/base/project';
+import {
+  baseMockApi,
+  createSpyErrorResponse,
+  createSpyFailResponse,
+  superRenderHook
+} from '@actiontech/shared/lib/testUtil';
 import { mockBusinessTagsData } from '@actiontech/shared/lib/testUtil/mockApi/base/project/data';
-import { superRenderHook } from '@actiontech/shared/lib/testUtil/superRender';
 import useBusinessTag from '..';
 import { act, cleanup } from '@testing-library/react';
-import {
-  createSpyErrorResponse,
-  createSpyFailResponse
-} from '@actiontech/shared/lib/testUtil/mockApi';
 
 describe('base/hooks/useBusinessTag', () => {
   let listBusinessTagsSpy: jest.SpyInstance;
   beforeEach(() => {
     jest.useFakeTimers();
-    listBusinessTagsSpy = project.listBusinessTags();
+    listBusinessTagsSpy = baseMockApi.project.listBusinessTags();
   });
 
   afterEach(() => {

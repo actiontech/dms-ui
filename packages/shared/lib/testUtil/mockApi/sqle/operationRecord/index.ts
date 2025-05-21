@@ -1,5 +1,5 @@
 import operationRecord from '../../../../api/sqle/service/OperationRecord';
-import { MockSpyApy, createSpySuccessResponse } from '../../../mockApi';
+import { MockSpyApy, createSpySuccessResponse } from '../../common';
 import {
   operationRecordListMockData,
   operationTypeNameMockData,

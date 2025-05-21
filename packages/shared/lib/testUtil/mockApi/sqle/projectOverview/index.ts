@@ -1,5 +1,5 @@
 import statistic from '../../../../api/sqle/service/statistic';
-import { MockSpyApy, createSpySuccessResponse } from '../../../mockApi';
+import { MockSpyApy, createSpySuccessResponse } from '../../common';
 import {
   instanceHealthData,
   projectScoreData,

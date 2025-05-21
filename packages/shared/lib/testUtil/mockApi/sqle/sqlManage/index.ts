@@ -1,5 +1,5 @@
 import SqlManage from '../../../../api/sqle/service/SqlManage';
-import { MockSpyApy, createSpySuccessResponse } from '../../../mockApi';
+import { MockSpyApy, createSpySuccessResponse } from '../../common';
 import {
   ruleTipsData,
   sqlManageListData,

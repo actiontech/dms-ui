@@ -1,5 +1,5 @@
 import system from '../../../../api/sqle/service/system';
-import { MockSpyApy, createSpySuccessResponse } from '../../../mockApi';
+import { MockSpyApy, createSpySuccessResponse } from '../../common';
 
 class SystemMockApi implements MockSpyApy {
   public mockAllApi(): void {

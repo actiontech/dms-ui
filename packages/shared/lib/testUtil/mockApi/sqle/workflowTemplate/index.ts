@@ -1,5 +1,5 @@
 import workflow from '../../../../api/sqle/service/workflow';
-import { MockSpyApy, createSpySuccessResponse } from '../../../mockApi';
+import { MockSpyApy, createSpySuccessResponse } from '../../common';
 import { workflowTemplateData } from './data';
 import { cloneDeep } from 'lodash';
 

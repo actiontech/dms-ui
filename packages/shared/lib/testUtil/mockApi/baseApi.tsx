@@ -1,5 +1,5 @@
 import { rest } from 'msw';
-import { MockApi } from './mockApi';
+import { MockApi } from './common';
 
 class MockBaseApi implements MockApi {
   public getHandler() {

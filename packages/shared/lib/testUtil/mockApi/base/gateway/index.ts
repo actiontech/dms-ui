@@ -1,4 +1,4 @@
-import { createSpySuccessResponse, MockSpyApy } from '../../../mockApi';
+import { createSpySuccessResponse, MockSpyApy } from '../../common';
 import { GatewayService } from '../../../../api/base';
 import { mockGatewayListData, mockGatewayTipsData } from './data';
 
