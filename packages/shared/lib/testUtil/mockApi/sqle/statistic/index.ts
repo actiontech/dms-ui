@@ -1,4 +1,4 @@
-import { MockSpyApy, createSpySuccessResponse } from '../../../mockApi';
+import { MockSpyApy, createSpySuccessResponse } from '../../common';
 import statistic from '../../../../api/sqle/service/statistic';
 import {
   InstancesTypePercentData,

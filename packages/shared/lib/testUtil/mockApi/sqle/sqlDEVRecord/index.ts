@@ -1,5 +1,5 @@
 import sqlDEVRecord from '../../../../api/sqle/service/SqlDEVRecord';
-import { MockSpyApy, createSpySuccessResponse } from '../../../mockApi';
+import { MockSpyApy, createSpySuccessResponse } from '../../common';
 import { sqlDEVRecordListMockData } from './data';
 
 class SqlDEVRecord implements MockSpyApy {

@@ -1,4 +1,4 @@
-import { createSpySuccessResponse, MockSpyApy } from '../../../mockApi';
+import { createSpySuccessResponse, MockSpyApy } from '../../common';
 import { mockSendCodeData, mockVerifyCodeData } from './data';
 import { SMSService } from '../../../../api/base';
 

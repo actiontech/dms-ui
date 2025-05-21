@@ -1,4 +1,4 @@
-import { createSpySuccessResponse, MockSpyApy } from '../../../mockApi';
+import { createSpySuccessResponse, MockSpyApy } from '../../common';
 import { memberGroupList, memberList } from './data';
 import MemberGroup from '../../../../api/base/service/MemberGroup';
 import Member from '../../../../api/base/service/Member';

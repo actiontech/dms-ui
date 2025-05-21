@@ -1,5 +1,5 @@
 import instance from '../../../../api/sqle/service/instance';
-import { MockSpyApy, createSpySuccessResponse } from '../../../mockApi';
+import { MockSpyApy, createSpySuccessResponse } from '../../common';
 import {
   checkConnectableReply,
   dbServices,

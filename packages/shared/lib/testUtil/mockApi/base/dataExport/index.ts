@@ -1,4 +1,4 @@
-import { MockSpyApy, createSpySuccessResponse } from '../../../mockApi';
+import { MockSpyApy, createSpySuccessResponse } from '../../common';
 import {
   AddDataExportTaskResponseData,
   AddDataExportWorkflowResponseData,

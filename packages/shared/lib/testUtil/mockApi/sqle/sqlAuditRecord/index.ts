@@ -1,5 +1,5 @@
 import sql_audit_record from '../../../../api/sqle/service/sql_audit_record';
-import { MockSpyApy, createSpySuccessResponse } from '../../../mockApi';
+import { MockSpyApy, createSpySuccessResponse } from '../../common';
 import {
   sqlAuditRecordMockData,
   sqlAuditRecordTagTipsMockData,

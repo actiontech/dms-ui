@@ -1,4 +1,4 @@
-import { MockSpyApy, createSpySuccessResponse } from '../../../mockApi';
+import { MockSpyApy, createSpySuccessResponse } from '../../common';
 import User from '../../../../api/base/service/User';
 
 class MockAccountApi implements MockSpyApy {

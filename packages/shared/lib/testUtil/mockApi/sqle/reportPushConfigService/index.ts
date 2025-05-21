@@ -1,4 +1,4 @@
-import { MockSpyApy, createSpySuccessResponse } from '../../../mockApi';
+import { MockSpyApy, createSpySuccessResponse } from '../../common';
 import ReportPushConfigService from '../../../../api/sqle/service/ReportPushConfig';
 import { reportPushConfigMockData } from './data';
 

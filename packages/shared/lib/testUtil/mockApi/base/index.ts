@@ -1,31 +1,13 @@
-// Auto-generated index file for base mock APIs
-
-import accountMockApi from './account';
-import cloudBeaverMockApi from './cloudBeaver';
-import dataExportMockApi from './dataExport';
-import dbServicesMockApi from './dbServices';
-import gatewayMockApi from './gateway';
-import globalMockApi from './global';
-import memberMockApi from './member';
-import projectMockApi from './project';
-import resourceOverviewMockApi from './resourceOverview';
-import smsMockApi from './sms';
-import syncTaskListMockApi from './syncTaskList';
-import systemMockApi from './system';
-import userCenterMockApi from './userCenter';
-
-export default {
-  account: accountMockApi,
-  cloudBeaver: cloudBeaverMockApi,
-  dataExport: dataExportMockApi,
-  dbServices: dbServicesMockApi,
-  gateway: gatewayMockApi,
-  global: globalMockApi,
-  member: memberMockApi,
-  project: projectMockApi,
-  resourceOverview: resourceOverviewMockApi,
-  sms: smsMockApi,
-  syncTaskList: syncTaskListMockApi,
-  system: systemMockApi,
-  userCenter: userCenterMockApi
-};
+export { default as account } from './account';
+export { default as cloudBeaver } from './cloudBeaver';
+export { default as dataExport } from './dataExport';
+export { default as dbServices } from './dbServices';
+export { default as gateway } from './gateway';
+export { default as global } from './global';
+export { default as member } from './member';
+export { default as project } from './project';
+export { default as resourceOverview } from './resourceOverview';
+export { default as sms } from './sms';
+export { default as syncTaskList } from './syncTaskList';
+export { default as system } from './system';
+export { default as userCenter } from './userCenter';

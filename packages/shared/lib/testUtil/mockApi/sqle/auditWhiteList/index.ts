@@ -1,5 +1,5 @@
 import audit_whitelist from '../../../../api/sqle/service/audit_whitelist';
-import { MockSpyApy, createSpySuccessResponse } from '../../../mockApi';
+import { MockSpyApy, createSpySuccessResponse } from '../../common';
 import { auditWhiteListMockData } from './data';
 
 class AuditWhiteList implements MockSpyApy {

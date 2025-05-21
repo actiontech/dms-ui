@@ -1,5 +1,5 @@
 import pipeline from '../../../../api/sqle/service/pipeline';
-import { MockSpyApy, createSpySuccessResponse } from '../../../mockApi';
+import { MockSpyApy, createSpySuccessResponse } from '../../common';
 import { mockPipelineListData, mockPipelineDetailData } from './data';
 
 class Pipeline implements MockSpyApy {

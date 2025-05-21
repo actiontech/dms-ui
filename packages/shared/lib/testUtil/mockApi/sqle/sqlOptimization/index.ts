@@ -1,5 +1,5 @@
 import sqlOptimization from '../../../../api/sqle/service/sql_optimization';
-import { MockSpyApy, createSpySuccessResponse } from '../../../mockApi';
+import { MockSpyApy, createSpySuccessResponse } from '../../common';
 import {
   sqlOptimizationRecordsMockData,
   createOptimizationResMockData,

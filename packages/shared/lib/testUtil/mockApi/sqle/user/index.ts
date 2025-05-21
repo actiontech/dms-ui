@@ -1,4 +1,4 @@
-import { MockSpyApy, createSpySuccessResponse } from '../../../mockApi';
+import { MockSpyApy, createSpySuccessResponse } from '../../common';
 import user from '../../../../api/sqle/service/user';
 import { userTipListData } from './data';
 

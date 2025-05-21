@@ -1,4 +1,4 @@
-import { MockSpyApy, createSpySuccessResponse } from '../../../mockApi';
+import { MockSpyApy, createSpySuccessResponse } from '../../common';
 import workflow from '../../../../api/sqle/service/workflow';
 import task from '../../../../api/sqle/service/task';
 import {

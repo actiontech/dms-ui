@@ -1,5 +1,5 @@
 import configuration from '../../../../api/sqle/service/configuration';
-import { MockSpyApy, createSpySuccessResponse } from '../../../mockApi';
+import { MockSpyApy, createSpySuccessResponse } from '../../common';
 import {
   deriversMockData,
   getSSHPublicKeyMockData,

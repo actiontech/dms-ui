@@ -1,5 +1,5 @@
 import knowledge_base from '../../../../api/sqle/service/knowledge_base';
-import { MockSpyApy, createSpySuccessResponse } from '../../../mockApi';
+import { MockSpyApy, createSpySuccessResponse } from '../../common';
 import {
   mockKnowledgeBaseTagListData,
   mockKnowledgeBaseListData,

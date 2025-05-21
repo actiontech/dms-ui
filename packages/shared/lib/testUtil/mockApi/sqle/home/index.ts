@@ -1,7 +1,7 @@
 import statistic from '../../../../api/sqle/service/statistic';
 import workflow from '../../../../api/sqle/service/workflow';
 import dashboard from '../../../../api/sqle/service/dashboard';
-import { MockSpyApy, createSpySuccessResponse } from '../../../mockApi';
+import { MockSpyApy, createSpySuccessResponse } from '../../common';
 import {
   authPlanRiskMockData,
   dashboardMockData,
