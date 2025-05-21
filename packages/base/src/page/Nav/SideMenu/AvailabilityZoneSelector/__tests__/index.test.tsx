@@ -1,5 +1,5 @@
 import { act, cleanup, fireEvent, screen } from '@testing-library/react';
-import { superRender } from '../../../../../testUtils/customRender';
+import { baseSuperRender } from '../../../../../testUtils/superRender';
 import AvailabilityZoneSelector from '../index';
 import { mockUseRecentlySelectedZone } from '../../../../../testUtils/mockHooks/mockUseRecentlySelectedZone';
 import { mockUseRecentlySelectedZoneData } from '../../../../../testUtils/mockHooks/data';
@@ -40,7 +40,7 @@ describe('AvailabilityZoneSelector', () => {
   });
 
   it('renders with current availability zone', () => {
-    const { baseElement } = superRender(
+    const { baseElement } = baseSuperRender(
       <AvailabilityZoneSelector zoneTips={mockZoneTips} />
     );
 
@@ -53,12 +53,12 @@ describe('AvailabilityZoneSelector', () => {
       availabilityZone: undefined
     });
 
-    superRender(<AvailabilityZoneSelector zoneTips={mockZoneTips} />);
+    baseSuperRender(<AvailabilityZoneSelector zoneTips={mockZoneTips} />);
     expect(screen.getByText('请选择')).toBeInTheDocument();
   });
 
   it('opens dropdown when clicked and displays zones', async () => {
-    const { baseElement } = superRender(
+    const { baseElement } = baseSuperRender(
       <AvailabilityZoneSelector zoneTips={mockZoneTips} />
     );
 
@@ -71,7 +71,7 @@ describe('AvailabilityZoneSelector', () => {
   });
 
   it('filters zones based on search input', async () => {
-    const { baseElement } = superRender(
+    const { baseElement } = baseSuperRender(
       <AvailabilityZoneSelector zoneTips={mockZoneTips} />
     );
 
@@ -89,7 +89,7 @@ describe('AvailabilityZoneSelector', () => {
   });
 
   it('displays empty state when no zones match search', async () => {
-    const { baseElement } = superRender(
+    const { baseElement } = baseSuperRender(
       <AvailabilityZoneSelector zoneTips={mockZoneTips} />
     );
 
@@ -108,7 +108,7 @@ describe('AvailabilityZoneSelector', () => {
   });
 
   it('handles empty zoneTips array', async () => {
-    const { baseElement } = superRender(
+    const { baseElement } = baseSuperRender(
       <AvailabilityZoneSelector zoneTips={[]} />
     );
 
@@ -122,7 +122,7 @@ describe('AvailabilityZoneSelector', () => {
   });
 
   it('selects a different zone and calls updateRecentlySelectedZone', async () => {
-    const { baseElement } = superRender(
+    const { baseElement } = baseSuperRender(
       <AvailabilityZoneSelector zoneTips={mockZoneTips} />
     );
 
@@ -156,7 +156,7 @@ describe('AvailabilityZoneSelector', () => {
   });
 
   it('does not trigger popconfirm for currently selected zone', async () => {
-    const { baseElement } = superRender(
+    const { baseElement } = baseSuperRender(
       <AvailabilityZoneSelector zoneTips={mockZoneTips} />
     );
 

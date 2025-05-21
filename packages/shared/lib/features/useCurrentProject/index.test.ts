@@ -1,7 +1,7 @@
 import { useParams } from 'react-router-dom';
 import useCurrentProject from '.';
 import { DEFAULT_PROJECT_NAME } from '../../data/common';
-import { renderHooksWithRedux } from '../../testUtil/customRender';
+import { superRenderHook } from '../../testUtil/superRender';
 
 jest.mock('react-router-dom', () => ({
   ...jest.requireActual('react-router-dom'),
@@ -17,15 +17,17 @@ describe('useCurrentProject', () => {
   });
 
   test('should have default value when params is undefined', () => {
-    const { result } = renderHooksWithRedux(() => useCurrentProject(), {
-      user: {
-        bindProjects: [
-          {
-            project_id: '',
-            project_name: DEFAULT_PROJECT_NAME
-          }
-        ],
-        managementPermissions: []
+    const { result } = superRenderHook(() => useCurrentProject(), undefined, {
+      initStore: {
+        user: {
+          bindProjects: [
+            {
+              project_id: '',
+              project_name: DEFAULT_PROJECT_NAME
+            }
+          ],
+          managementPermissions: []
+        }
       }
     });
     expect(result.current.projectName).toBe(DEFAULT_PROJECT_NAME);
@@ -33,15 +35,17 @@ describe('useCurrentProject', () => {
 
   test('should return value when params is defined', () => {
     useParamsMock.mockReturnValue({ projectName: 'testSpace' });
-    const { result } = renderHooksWithRedux(() => useCurrentProject(), {
-      user: {
-        bindProjects: [
-          {
-            project_id: '',
-            project_name: 'testSpace'
-          }
-        ],
-        managementPermissions: []
+    const { result } = superRenderHook(() => useCurrentProject(), undefined, {
+      initStore: {
+        user: {
+          bindProjects: [
+            {
+              project_id: '',
+              project_name: 'testSpace'
+            }
+          ],
+          managementPermissions: []
+        }
       }
     });
     expect(result.current.projectName).toBe('testSpace');

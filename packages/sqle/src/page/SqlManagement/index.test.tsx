@@ -1,6 +1,6 @@
 import { cleanup, screen } from '@testing-library/react';
 import SqlManagement from '.';
-import { superRender } from '../../testUtils/customRender';
+import { sqleSuperRender } from '../../testUtils/superRender';
 import { mockUseCurrentProject } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentProject';
 import { mockUseCurrentUser } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentUser';
 import { useSelector } from 'react-redux';
@@ -41,7 +41,7 @@ describe('page/SqlManagement', () => {
   });
 
   it('render sql management page', () => {
-    const { baseElement } = superRender(<SqlManagement />);
+    const { baseElement } = sqleSuperRender(<SqlManagement />);
     expect(baseElement).toMatchSnapshot();
     expect(screen.getByText('SQL管控')).toBeInTheDocument();
   });

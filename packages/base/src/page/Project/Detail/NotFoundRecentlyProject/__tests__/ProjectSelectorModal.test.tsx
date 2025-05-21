@@ -1,5 +1,5 @@
 import { act, fireEvent, screen } from '@testing-library/react';
-import { superRender } from '../../../../../testUtils/customRender';
+import { baseSuperRender } from '../../../../../testUtils/superRender';
 import ProjectSelectorModal from '../ProjectSelectorModal';
 import { ProjectSelectorModalProps } from '../index.type';
 import { getBySelector } from '@actiontech/shared/lib/testUtil/customQuery';
@@ -23,7 +23,7 @@ describe('test base/page/project/detail/notFoundRecentlyProject/ProjectSelectorM
     setProjectSelectorValue: jest.fn()
   };
   const customRender = (open = true) => {
-    return superRender(<ProjectSelectorModal {...param} open={open} />);
+    return baseSuperRender(<ProjectSelectorModal {...param} open={open} />);
   };
 
   beforeEach(() => {

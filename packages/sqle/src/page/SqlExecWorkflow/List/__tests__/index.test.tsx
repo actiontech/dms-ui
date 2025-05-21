@@ -12,16 +12,16 @@ import {
   getAllBySelector,
   getBySelector
 } from '@actiontech/shared/lib/testUtil/customQuery';
-import { superRender } from '../../../../testUtils/customRender';
-import user from '../../../../testUtils/mockApi/user';
-import instance from '../../../../testUtils/mockApi/instance';
-import execWorkflow from '../../../../testUtils/mockApi/execWorkflow';
+import { sqleSuperRender } from '../../../../testUtils/superRender';
+import user from '@actiontech/shared/lib/testUtil/mockApi/sqle/user';
+import instance from '@actiontech/shared/lib/testUtil/mockApi/sqle/instance';
+import execWorkflow from '@actiontech/shared/lib/testUtil/mockApi/sqle/execWorkflow';
 import { mockDatabaseType } from '../../../../testUtils/mockHooks/mockDatabaseType';
 import {
   ignoreConsoleErrors,
   UtilsConsoleErrorStringsEnum
 } from '@actiontech/shared/lib/testUtil/common';
-import sqlVersion from '../../../../testUtils/mockApi/sql_version';
+import sqlVersion from '@actiontech/shared/lib/testUtil/mockApi/sqle/sql_version';
 import { mockUsePermission } from '@actiontech/shared/lib/testUtil/mockHook/mockUsePermission';
 
 jest.mock('react-redux', () => {
@@ -50,7 +50,7 @@ describe('sqle/Workflow/List', () => {
   let RequestSqlVersionListV1: jest.SpyInstance;
 
   const customRender = () => {
-    return superRender(<WorkflowList />);
+    return sqleSuperRender(<WorkflowList />);
   };
   ignoreConsoleErrors([UtilsConsoleErrorStringsEnum.UNIQUE_KEY_REQUIRED]);
   beforeEach(() => {

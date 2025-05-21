@@ -1,13 +1,13 @@
-import { renderWithThemeAndRouter } from '@actiontech/shared/lib/testUtil/customRender';
+import { superRender } from '@actiontech/shared/lib/testUtil/superRender';
 import { mockUseCurrentUser } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentUser';
 import { mockUseUserInfo } from '@actiontech/shared/lib/testUtil/mockHook/mockUseUserInfo';
-import project from '../../../testUtils/mockApi/project';
+import project from '@actiontech/shared/lib/testUtil/mockApi/base/project';
 import ProjectList from '.';
 import { useDispatch } from 'react-redux';
 import { ModalName } from '../../../data/ModalName';
 import { act, cleanup, fireEvent, screen } from '@testing-library/react';
-import { mockProjectList } from '../../../testUtils/mockApi/project/data';
-import { superRender } from '../../../testUtils/customRender';
+import { mockProjectList } from '@actiontech/shared/lib/testUtil/mockApi/base/project/data';
+import { baseSuperRender } from '../../../testUtils/superRender';
 import EventEmitter from '../../../utils/EventEmitter';
 import EmitterKey from '../../../data/EmitterKey';
 import { SystemRole } from '@actiontech/shared/lib/enum';
@@ -48,7 +48,7 @@ describe('test base/project/list', () => {
     const subscriptSpy = jest.spyOn(EventEmitter, 'subscribe');
 
     expect(getProjectListSpy).toHaveBeenCalledTimes(0);
-    const { container } = superRender(<ProjectList />);
+    const { container } = baseSuperRender(<ProjectList />);
     expect(container).toMatchSnapshot();
     expect(getProjectListSpy).toHaveBeenCalledTimes(1);
     await act(async () => jest.advanceTimersByTime(3000));
@@ -62,7 +62,7 @@ describe('test base/project/list', () => {
   });
 
   it('should be called delete request when clicking the delete button', async () => {
-    superRender(<ProjectList />);
+    baseSuperRender(<ProjectList />);
     await act(async () => jest.advanceTimersByTime(3000));
 
     expect(deleteProjectList).toHaveBeenCalledTimes(0);
@@ -95,7 +95,7 @@ describe('test base/project/list', () => {
   });
 
   it('should be called archive request when clicking the archive button', async () => {
-    superRender(<ProjectList />);
+    baseSuperRender(<ProjectList />);
     await act(async () => jest.advanceTimersByTime(3000));
 
     expect(archiveProjectSpy).toHaveBeenCalledTimes(0);
@@ -131,7 +131,7 @@ describe('test base/project/list', () => {
   });
 
   it('should be called unarchive request when clicking the unarchive button', async () => {
-    superRender(<ProjectList />);
+    baseSuperRender(<ProjectList />);
     await act(async () => jest.advanceTimersByTime(3000));
 
     expect(unarchiveProjectSpy).toHaveBeenCalledTimes(0);
@@ -168,7 +168,7 @@ describe('test base/project/list', () => {
   });
 
   it('should open the modal for updating a project when click the Update Project button', async () => {
-    superRender(<ProjectList />);
+    baseSuperRender(<ProjectList />);
     await act(async () => jest.advanceTimersByTime(3000));
     expect(screen.getAllByText('编 辑')[0].closest('button')).toBeDisabled();
     expect(screen.getAllByText('编 辑')[1]).toBeInTheDocument();
@@ -204,7 +204,7 @@ describe('test base/project/list', () => {
         [SystemRole.globalViewing]: false
       }
     });
-    superRender(<ProjectList />);
+    baseSuperRender(<ProjectList />);
     await act(async () => jest.advanceTimersByTime(3000));
     expect(screen.queryAllByText('删 除')[1].closest('button')).toBeDisabled();
 
@@ -239,7 +239,7 @@ describe('test base/project/list', () => {
       isProjectManager: mockIsProjectManager
     });
     mockIsProjectManager.mockReturnValue(true);
-    superRender(<ProjectList />);
+    baseSuperRender(<ProjectList />);
     await act(async () => jest.advanceTimersByTime(3000));
     expect(
       screen.queryAllByText('删 除')[1].closest('button')

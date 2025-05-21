@@ -1,5 +1,5 @@
 import { fireEvent, act, screen } from '@testing-library/react';
-import { renderWithTheme } from '../../../testUtil/customRender';
+import { superRender } from '../../../testUtil/superRender';
 import EditableSelect from '../EditableSelect';
 import { EditableSelectOption } from '../index.type';
 import {
@@ -29,7 +29,7 @@ describe('EditableSelect', () => {
   });
 
   const customRender = (props = {}) => {
-    return renderWithTheme(
+    return superRender(
       <EditableSelect
         options={mockOptions}
         onChange={mockOnChange}

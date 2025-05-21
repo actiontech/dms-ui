@@ -8,8 +8,8 @@ import {
 } from '@testing-library/react';
 import { Select } from 'antd';
 import useRole from '.';
-import userCenter from '../../testUtils/mockApi/userCenter';
-import { roleList } from '../../testUtils/mockApi/userCenter/data';
+import userCenter from '@actiontech/shared/lib/testUtil/mockApi/base/userCenter';
+import { roleList } from '@actiontech/shared/lib/testUtil/mockApi/base/userCenter/data';
 import {
   createSpyErrorResponse,
   createSpyFailResponse

@@ -3,11 +3,11 @@
  */
 
 import DataSourceComparison from '..';
-import { superRender } from '../../../testUtils/customRender';
+import { sqleSuperRender } from '../../../testUtils/superRender';
 
 describe('DataSourceComparison ce', () => {
   it('should match snapshot', () => {
-    const { container } = superRender(<DataSourceComparison />);
+    const { container } = sqleSuperRender(<DataSourceComparison />);
 
     expect(container).toMatchSnapshot();
   });

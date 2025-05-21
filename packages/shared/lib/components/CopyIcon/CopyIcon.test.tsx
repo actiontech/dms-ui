@@ -1,5 +1,5 @@
 import { getBySelector } from '../../testUtil/customQuery';
-import { superRender } from '../../testUtil/customRender';
+import { superRender } from '../../testUtil/superRender';
 import CopyIcon from './CopyIcon';
 import Copy from '../../utils/Copy';
 import { fireEvent, act, cleanup, screen } from '@testing-library/react';

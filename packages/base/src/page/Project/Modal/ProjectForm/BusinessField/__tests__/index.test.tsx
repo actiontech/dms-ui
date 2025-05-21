@@ -1,7 +1,7 @@
 import BusinessField from '../index';
-import { superRender } from '../../../../../../testUtils/customRender';
-import { mockProjectList } from '../../../../../../testUtils/mockApi/project/data';
-import project from '../../../../../../testUtils/mockApi/project';
+import { baseSuperRender } from '../../../../../../testUtils/superRender';
+import { mockProjectList } from '@actiontech/shared/lib/testUtil/mockApi/base/project/data';
+import project from '@actiontech/shared/lib/testUtil/mockApi/base/project';
 import { act, cleanup, fireEvent, screen } from '@testing-library/react';
 import {
   getBySelector,
@@ -31,13 +31,13 @@ describe('Project/BusinessField', () => {
   });
 
   it('render init snap', () => {
-    const { baseElement } = superRender(<BusinessField />);
+    const { baseElement } = baseSuperRender(<BusinessField />);
     expect(baseElement).toMatchSnapshot();
     expect(listBusinessTagsSpy).toHaveBeenCalledTimes(1);
   });
 
   it('render add business tag', async () => {
-    superRender(<BusinessField />);
+    baseSuperRender(<BusinessField />);
     expect(listBusinessTagsSpy).toHaveBeenCalledTimes(1);
     fireEvent.click(getBySelector('.editable-select-trigger'));
     await act(async () => jest.advanceTimersByTime(0));
@@ -58,7 +58,7 @@ describe('Project/BusinessField', () => {
   });
 
   it('render update business tag', async () => {
-    superRender(<BusinessField />);
+    baseSuperRender(<BusinessField />);
     await act(async () => jest.advanceTimersByTime(3000));
     expect(listBusinessTagsSpy).toHaveBeenCalledTimes(1);
     fireEvent.click(getBySelector('.editable-select-trigger'));
@@ -84,7 +84,7 @@ describe('Project/BusinessField', () => {
   });
 
   it('render delete business tag when business tag is bound', async () => {
-    superRender(<BusinessField />);
+    baseSuperRender(<BusinessField />);
     await act(async () => jest.advanceTimersByTime(3000));
     expect(listBusinessTagsSpy).toHaveBeenCalledTimes(1);
     fireEvent.click(getBySelector('.editable-select-trigger'));
@@ -117,7 +117,7 @@ describe('Project/BusinessField', () => {
         data: []
       })
     );
-    superRender(<BusinessField />);
+    baseSuperRender(<BusinessField />);
     await act(async () => jest.advanceTimersByTime(3000));
     expect(listBusinessTagsSpy).toHaveBeenCalledTimes(1);
     fireEvent.click(getBySelector('.editable-select-trigger'));

@@ -1,4 +1,4 @@
-import { renderWithTheme } from '../../../testUtils/customRender';
+import { sqleSuperRender } from '../../../testUtils/superRender';
 
 import ChartTooltip, { IChartTooltip } from '.';
 import { SupportTheme, ThemeData } from '../../../theme';
@@ -7,7 +7,7 @@ const themeData = ThemeData[SupportTheme.LIGHT];
 
 describe('sqle/components/ChartCom/ChartTooltip', () => {
   const customRender = (params: IChartTooltip) => {
-    return renderWithTheme(<ChartTooltip {...params} />);
+    return sqleSuperRender(<ChartTooltip {...params} />);
   };
 
   it('render snap title', () => {

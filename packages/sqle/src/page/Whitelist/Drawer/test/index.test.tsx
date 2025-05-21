@@ -1,6 +1,6 @@
 import { cleanup, act } from '@testing-library/react';
 import WhitelistDrawer from '../index';
-import { renderWithReduxAndTheme } from '@actiontech/shared/lib/testUtil/customRender';
+import { superRender } from '@actiontech/shared/lib/testUtil/superRender';
 import { useDispatch, useSelector } from 'react-redux';
 import { ModalName } from '../../../../data/ModalName';
 import { mockUseCurrentProject } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentProject';
@@ -34,7 +34,7 @@ describe('slqe/Whitelist/Drawer', () => {
   });
 
   test('should dispatch init modal status action', async () => {
-    renderWithReduxAndTheme(<WhitelistDrawer />);
+    superRender(<WhitelistDrawer />);
     await act(async () => jest.advanceTimersByTime(3000));
     expect(dispatchSpy).toHaveBeenCalledWith({
       type: 'whitelist/initModalStatus',

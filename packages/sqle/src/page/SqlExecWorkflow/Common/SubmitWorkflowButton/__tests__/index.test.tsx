@@ -1,12 +1,12 @@
 import { fireEvent, screen } from '@testing-library/dom';
 import SubmitWorkflowButton from '..';
-import { superRender } from '../../../../../testUtils/customRender';
+import { sqleSuperRender } from '../../../../../testUtils/superRender';
 
 describe('test SubmitWorkflowButton', () => {
   it('handles button click', () => {
     const onClick = jest.fn();
 
-    const { container } = superRender(
+    const { container } = sqleSuperRender(
       <SubmitWorkflowButton
         isConfirmationRequiredForSubmission={false}
         loading={false}
@@ -23,7 +23,7 @@ describe('test SubmitWorkflowButton', () => {
   it('displays the confirmation message when isConfirmationRequiredForSubmission is true', async () => {
     const onClick = jest.fn();
 
-    superRender(
+    sqleSuperRender(
       <SubmitWorkflowButton
         isConfirmationRequiredForSubmission
         submitWorkflowConfirmationMessage="Confirmation Message"
@@ -45,7 +45,7 @@ describe('test SubmitWorkflowButton', () => {
   it('disables the button when loading prop is true', () => {
     const onClick = jest.fn();
 
-    superRender(
+    sqleSuperRender(
       <SubmitWorkflowButton
         isConfirmationRequiredForSubmission={false}
         loading={true}
@@ -60,7 +60,7 @@ describe('test SubmitWorkflowButton', () => {
   it('displays the confirm message when hasExceptionAuditRule is equal true', async () => {
     const onClick = jest.fn();
 
-    superRender(
+    sqleSuperRender(
       <SubmitWorkflowButton
         isConfirmationRequiredForSubmission
         submitWorkflowConfirmationMessage="Confirmation Message"

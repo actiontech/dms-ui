@@ -1,5 +1,5 @@
-import userCenter from '../../../../../testUtils/mockApi/userCenter';
-import { renderWithTheme } from '@actiontech/shared/lib/testUtil/customRender';
+import userCenter from '@actiontech/shared/lib/testUtil/mockApi/base/userCenter';
+import { superRender } from '@actiontech/shared/lib/testUtil/superRender';
 import PermissionList from '../List';
 import { act, screen, cleanup, fireEvent } from '@testing-library/react';
 import { queryBySelector } from '@actiontech/shared/lib/testUtil/customQuery';
@@ -24,7 +24,7 @@ describe('base/UserCenter/PermissionList', () => {
   });
 
   it('should render permission table when request success', async () => {
-    const { baseElement } = renderWithTheme(
+    const { baseElement } = superRender(
       <PermissionList activePage={UserCenterListEnum.operate_permission_list} />
     );
 
@@ -43,7 +43,7 @@ describe('base/UserCenter/PermissionList', () => {
     permissionListSpy.mockImplementation(() =>
       createSpyErrorResponse({ data: [] })
     );
-    const { baseElement } = renderWithTheme(
+    const { baseElement } = superRender(
       <PermissionList activePage={UserCenterListEnum.operate_permission_list} />
     );
     await act(async () => jest.advanceTimersByTime(3000));
@@ -68,7 +68,7 @@ describe('base/UserCenter/PermissionList', () => {
         data: mockData
       })
     );
-    const { baseElement } = renderWithTheme(
+    const { baseElement } = superRender(
       <PermissionList activePage={UserCenterListEnum.operate_permission_list} />
     );
     await act(async () => jest.advanceTimersByTime(3000));

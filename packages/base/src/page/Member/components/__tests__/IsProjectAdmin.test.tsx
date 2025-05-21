@@ -1,12 +1,10 @@
 import IsProjectAdmin from '../IsProjectAdmin';
-import { renderWithReduxAndTheme } from '@actiontech/shared/lib/testUtil/customRender';
+import { superRender } from '@actiontech/shared/lib/testUtil/superRender';
 
 describe('base/Member/components/IsProjectAdmin', () => {
   it('should match snap shot', () => {
-    const { baseElement } = renderWithReduxAndTheme(
-      <IsProjectAdmin value={true} />
-    );
-    const { baseElement: baseElement2 } = renderWithReduxAndTheme(
+    const { baseElement } = superRender(<IsProjectAdmin value={true} />);
+    const { baseElement: baseElement2 } = superRender(
       <IsProjectAdmin value={false} />
     );
     expect(baseElement).toMatchSnapshot();

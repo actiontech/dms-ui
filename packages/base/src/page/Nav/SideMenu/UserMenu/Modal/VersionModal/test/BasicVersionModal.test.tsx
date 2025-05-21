@@ -2,7 +2,7 @@ import BasicVersionModal from '../BasicVersionModal';
 
 import { cleanup, fireEvent, act } from '@testing-library/react';
 import { mockVersionInfo } from '../../../../../../../page/Nav/SideMenu/testUtils/mockVersionInfo';
-import { superRender } from '../../../../../../../testUtils/customRender';
+import { baseSuperRender } from '../../../../../../../testUtils/superRender';
 import { VersionEnum } from '../../../index.enum';
 import { getBySelector } from '@actiontech/shared/lib/testUtil/customQuery';
 
@@ -12,7 +12,7 @@ describe('base/Nav/SideMenu/UserMenu/BasicVersionModal', () => {
     open: boolean = false,
     versions: VersionEnum[] = []
   ) => {
-    return superRender(
+    return baseSuperRender(
       <BasicVersionModal
         open={open}
         versions={versions}

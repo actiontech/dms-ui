@@ -1,7 +1,7 @@
 import { cleanup, act, screen, fireEvent } from '@testing-library/react';
 import { useSelector, useDispatch } from 'react-redux';
 import AssociateWorkflowModal from '../index';
-import { superRender } from '../../../../../..//testUtils/customRender';
+import { sqleSuperRender } from '../../../../../../testUtils/superRender';
 import { mockUseCurrentProject } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentProject';
 import { mockProjectInfo } from '@actiontech/shared/lib/testUtil/mockHook/data';
 import { mockUseCurrentUser } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentUser';
@@ -9,8 +9,8 @@ import { mockUseDbServiceDriver } from '@actiontech/shared/lib/testUtil/mockHook
 import { ModalName } from '../../../../../../data/ModalName';
 import EmitterKey from '../../../../../../data/EmitterKey';
 import EventEmitter from '../../../../../../utils/EventEmitter';
-import sqlVersion from '../../../../../../testUtils/mockApi/sql_version';
-import { GetWorkflowsThatCanBeAssociatedToVersionV1MockData } from '../../../../../../testUtils/mockApi/sql_version/data';
+import sqlVersion from '@actiontech/shared/lib/testUtil/mockApi/sqle/sql_version';
+import { GetWorkflowsThatCanBeAssociatedToVersionV1MockData } from '@actiontech/shared/lib/testUtil/mockApi/sqle/sql_version/data';
 import { useParams } from 'react-router-dom';
 import { getBySelector } from '@actiontech/shared/lib/testUtil/customQuery';
 
@@ -64,7 +64,7 @@ describe('sqle/VersionManagement/Detail/AssociateWorkflowModal', () => {
   });
 
   it('render init snap shot', async () => {
-    const { baseElement } = superRender(<AssociateWorkflowModal />);
+    const { baseElement } = sqleSuperRender(<AssociateWorkflowModal />);
     await act(async () => jest.advanceTimersByTime(3000));
     expect(baseElement).toMatchSnapshot();
     expect(screen.getByText('关联已有工单')).toBeInTheDocument();
@@ -80,7 +80,7 @@ describe('sqle/VersionManagement/Detail/AssociateWorkflowModal', () => {
 
   it('render associate workflow', async () => {
     const eventEmitSpy = jest.spyOn(EventEmitter, 'emit');
-    superRender(<AssociateWorkflowModal />);
+    sqleSuperRender(<AssociateWorkflowModal />);
     await act(async () => jest.advanceTimersByTime(3000));
     fireEvent.click(getBySelector('.ant-table-thead .ant-checkbox-input'));
     await act(async () => jest.advanceTimersByTime(0));

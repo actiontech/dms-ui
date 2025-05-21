@@ -1,11 +1,11 @@
 import { act, cleanup } from '@testing-library/react';
 import PluginAudit from '..';
-import { superRender } from '../../../testUtils/customRender';
+import { sqleSuperRender } from '../../../testUtils/superRender';
 import { mockUseCurrentProject } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentProject';
 import { mockUseCurrentUser } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentUser';
 import { useDispatch, useSelector } from 'react-redux';
 import { driverMeta } from '../../../hooks/useDatabaseType/index.test.data';
-import sqlDEVRecord from '../../../testUtils/mockApi/sqlDEVRecord';
+import sqlDEVRecord from '@actiontech/shared/lib/testUtil/mockApi/sqle/sqlDEVRecord';
 import { ModalName } from '../../../data/ModalName';
 
 jest.mock('react-redux', () => {
@@ -48,7 +48,7 @@ describe('sqle/PluginAudit', () => {
   });
 
   it('render table data', async () => {
-    const { baseElement } = superRender(<PluginAudit />);
+    const { baseElement } = sqleSuperRender(<PluginAudit />);
     expect(getSqlDEVRecordListSpy).toHaveBeenCalled();
     await act(async () => jest.advanceTimersByTime(3000));
     expect(baseElement).toMatchSnapshot();

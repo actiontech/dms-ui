@@ -1,12 +1,14 @@
 import { act, cleanup, fireEvent } from '@testing-library/react';
 import { getBySelector } from '@actiontech/shared/lib/testUtil/customQuery';
 import ResultDescribe from '../ResultDescribe';
-import { superRender } from '../../../../../../../../../../testUtils/customRender';
+import { sqleSuperRender } from '../../../../../../../../../../testUtils/superRender';
 
 describe('sqle/ExecWorkflow/AuditDetail/ResultDescribe', () => {
   const onSubmitFn = jest.fn();
   const customRender = (value: string = '') => {
-    return superRender(<ResultDescribe value={value} onSubmit={onSubmitFn} />);
+    return sqleSuperRender(
+      <ResultDescribe value={value} onSubmit={onSubmitFn} />
+    );
   };
 
   beforeEach(() => {

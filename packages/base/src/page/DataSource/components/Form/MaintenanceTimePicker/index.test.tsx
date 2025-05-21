@@ -1,5 +1,5 @@
 import { act, cleanup, fireEvent, screen } from '@testing-library/react';
-import { superRender } from '../../../../../testUtils/customRender';
+import { baseSuperRender } from '../../../../../testUtils/superRender';
 
 import { MaintenanceTimeValue } from '.';
 import MaintenanceTimePicker from './MaintenanceTimePicker';
@@ -11,7 +11,7 @@ import {
 describe('page/DataSource/MaintenanceTimePicker', () => {
   const onChangeFn = jest.fn();
   const customRender = (value = [] as MaintenanceTimeValue[]) => {
-    return superRender(
+    return baseSuperRender(
       <MaintenanceTimePicker onChange={onChangeFn} value={value} />
     );
   };

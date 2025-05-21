@@ -3,8 +3,8 @@ import SQLExecuteMode from '..';
 import { act, cleanup } from '@testing-library/react';
 import { SqlExecuteModeProps } from '../index.type';
 import { TaskResultListLayoutEnum } from '../../../../index.enum';
-import { superRender } from '../../../../../../../../../testUtils/customRender';
-import task from '../../../../../../../../../testUtils/mockApi/task';
+import { sqleSuperRender } from '../../../../../../../../../testUtils/superRender';
+import task from '@actiontech/shared/lib/testUtil/mockApi/sqle/task';
 import { WORKFLOW_OVERVIEW_TAB_KEY } from '../../../../../../hooks/useAuditExecResultPanelSetup';
 import { mockCurrentUserReturn } from '@actiontech/shared/lib/testUtil/mockHook/data';
 import { mockUseCurrentUser } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentUser';
@@ -22,7 +22,7 @@ describe('test PaginationList/SQLExecuteMode', () => {
       assigneeUserNames: [mockCurrentUserReturn.username],
       execStatusFilterValue: null
     };
-    return superRender(<SQLExecuteMode {...{ ..._params, ...params }} />);
+    return sqleSuperRender(<SQLExecuteMode {...{ ..._params, ...params }} />);
   };
 
   beforeEach(() => {

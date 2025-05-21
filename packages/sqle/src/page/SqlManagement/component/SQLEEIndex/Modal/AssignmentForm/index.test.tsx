@@ -1,18 +1,18 @@
 import { mockUseCurrentProject } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentProject';
-import user from '../../../../../../testUtils/mockApi/user';
+import user from '@actiontech/shared/lib/testUtil/mockApi/sqle/user';
 import { act, cleanup, fireEvent, screen } from '@testing-library/react';
 import { AssignmentFormField } from './index.type';
 import AssignmentForm from '.';
 import {
-  renderHooksWithTheme,
-  superRender
-} from '../../../../../../testUtils/customRender';
+  sqleSuperRenderHook,
+  sqleSuperRender
+} from '../../../../../../testUtils/superRender';
 import { Form } from 'antd';
 import {
   getAllBySelector,
   getBySelector
 } from '@actiontech/shared/lib/testUtil/customQuery';
-import { userTipListData } from '../../../../../../testUtils/mockApi/user/data';
+import { userTipListData } from '@actiontech/shared/lib/testUtil/mockApi/sqle/user/data';
 
 describe('page/SqlManagement/AssignmentForm', () => {
   beforeEach(() => {
@@ -28,10 +28,10 @@ describe('page/SqlManagement/AssignmentForm', () => {
   });
 
   const customRender = (data?: { [key: string]: boolean }) => {
-    const { result } = renderHooksWithTheme(() =>
+    const { result } = sqleSuperRenderHook(() =>
       Form.useForm<AssignmentFormField>()
     );
-    return superRender(
+    return sqleSuperRender(
       <AssignmentForm
         form={result.current[0]}
         init={true}

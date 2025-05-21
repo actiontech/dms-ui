@@ -1,6 +1,6 @@
 import { fireEvent, act, cleanup } from '@testing-library/react';
 import CustomSelectSearchInput from '../CustomSelectSearchInput';
-import { superRender } from '../../../testUtil/customRender';
+import { superRender } from '../../../testUtil/superRender';
 import { getBySelector } from '../../../testUtil/customQuery';
 
 describe('lib/CustomSelectSearchInput', () => {

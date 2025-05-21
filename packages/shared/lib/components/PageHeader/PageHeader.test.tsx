@@ -1,4 +1,4 @@
-import { superRender } from '../../testUtil/customRender';
+import { superRender } from '../../testUtil/superRender';
 import { getBySelector } from '../../testUtil/customQuery';
 import PageHeader from './PageHeader';
 import { PageHeaderProps } from './PageHeader.types';

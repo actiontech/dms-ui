@@ -1,4 +1,4 @@
-import { superRender } from '../../../../testUtil/customRender';
+import { superRender } from '../../../../testUtil/superRender';
 import { fireEvent, act, cleanup } from '@testing-library/react';
 
 import FilterButton from '../FilterButton';

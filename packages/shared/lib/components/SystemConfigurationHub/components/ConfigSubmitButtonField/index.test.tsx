@@ -1,6 +1,6 @@
 import { cleanup, fireEvent, act, screen } from '@testing-library/react';
 import ConfigSubmitButtonField from '.';
-import { superRender } from '../../../../testUtil/customRender';
+import { superRender } from '../../../../testUtil/superRender';
 
 describe('base/System/components/ConfigSubmitButtonField', () => {
   const handleClickCancelFn = jest.fn();

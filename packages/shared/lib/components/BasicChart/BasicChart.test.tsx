@@ -1,4 +1,4 @@
-import { superRender } from '../../testUtil/customRender';
+import { superRender } from '../../testUtil/superRender';
 import BasicChart from './BasicChart';
 import { ChartTypeEnum } from './BasicChart.enum';
 import { BasicChartProps } from './BasicChart.types';

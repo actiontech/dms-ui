@@ -4,9 +4,9 @@
 
 import RuleList, { pageRemainingHeight } from '../RuleList';
 import { act, cleanup } from '@testing-library/react';
-import { renderWithTheme } from '../../../testUtils/customRender';
+import { sqleSuperRender } from '../../../testUtils/superRender';
 import { RuleListProps, RuleStatusEnum } from '../index.type';
-import { ruleListMockData } from '../../../testUtils/mockApi/rule_template/data';
+import { ruleListMockData } from '@actiontech/shared/lib/testUtil/mockApi/sqle/rule_template/data';
 import { mockUsePermission } from '@actiontech/shared/lib/testUtil/mockHook/mockUsePermission';
 
 describe('sqle/components/RuleList CE', () => {
@@ -29,7 +29,7 @@ describe('sqle/components/RuleList CE', () => {
   });
 
   const customRender = (props: RuleListProps) => {
-    return renderWithTheme(
+    return sqleSuperRender(
       <RuleList {...props} onActionHandle={onActionHandleSpy} />
     );
   };

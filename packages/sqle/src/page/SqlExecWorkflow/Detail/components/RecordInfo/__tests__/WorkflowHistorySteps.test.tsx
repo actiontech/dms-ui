@@ -3,13 +3,13 @@ import { WorkflowRecordResV2StatusEnum } from '@actiontech/shared/lib/api/sqle/s
 import { getBySelector } from '@actiontech/shared/lib/testUtil/customQuery';
 import { mockUseCurrentProject } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentProject';
 import { mockUseCurrentUser } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentUser';
-import { superRender } from '../../../../../../testUtils/customRender';
+import { sqleSuperRender } from '../../../../../../testUtils/superRender';
 import WorkflowHistorySteps from '../components/WorkflowHistorySteps';
 import { WorkflowHistoryStepsProps } from '../index.type';
 
 describe('sqle/SqlExecWorkflow/Detail/WorkflowHistorySteps', () => {
   const customRender = (params: WorkflowHistoryStepsProps) => {
-    return superRender(<WorkflowHistorySteps {...params} />);
+    return sqleSuperRender(<WorkflowHistorySteps {...params} />);
   };
 
   beforeEach(() => {

@@ -1,9 +1,9 @@
-import { superRender } from '../../../../testUtils/customRender';
+import { sqleSuperRender } from '../../../../testUtils/superRender';
 import { getBySelector } from '@actiontech/shared/lib/testUtil/customQuery';
 import { fireEvent, screen } from '@testing-library/react';
 import DraggableCard, { DraggableCardProps } from '.';
 import { StepInfoArrowEnum } from '../StepCard/index.type';
-import { workflowTemplateData } from '../../../../testUtils/mockApi/workflowTemplate/data';
+import { workflowTemplateData } from '@actiontech/shared/lib/testUtil/mockApi/sqle/workflowTemplate/data';
 import { HonourFilled } from '@actiontech/icons';
 
 const workflowTemplateCardProps = {
@@ -26,7 +26,7 @@ const workflowTemplateCardProps = {
 describe('page/WorkflowTemplate/DraggableCard', () => {
   const removeMock = jest.fn();
   const customRender = (data: DraggableCardProps) => {
-    return superRender(<DraggableCard {...data} />);
+    return sqleSuperRender(<DraggableCard {...data} />);
   };
 
   it('render no card', async () => {

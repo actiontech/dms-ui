@@ -1,12 +1,12 @@
 import { fireEvent, screen } from '@testing-library/dom';
 import SubmitWorkflowButton from '..';
-import { superRender } from '../../../../../../../testUtils/customRender';
+import { baseSuperRender } from '../../../../../../../testUtils/superRender';
 
 describe('test SubmitWorkflowButton', () => {
   it('handles button click', () => {
     const onClick = jest.fn();
 
-    const { container } = superRender(
+    const { container } = baseSuperRender(
       <SubmitWorkflowButton
         executeSQLsIsDQL={true}
         loading={false}
@@ -23,7 +23,7 @@ describe('test SubmitWorkflowButton', () => {
   it('displays the tooltip message when executeSQLsIsDQL is false', async () => {
     const onClick = jest.fn();
 
-    superRender(
+    baseSuperRender(
       <SubmitWorkflowButton
         executeSQLsIsDQL={false}
         loading={false}
@@ -42,7 +42,7 @@ describe('test SubmitWorkflowButton', () => {
   it('disables the button when loading prop is true', () => {
     const onClick = jest.fn();
 
-    superRender(
+    baseSuperRender(
       <SubmitWorkflowButton
         executeSQLsIsDQL={true}
         loading={true}
@@ -57,7 +57,7 @@ describe('test SubmitWorkflowButton', () => {
   it('displays the confirm message when hasExceptionAuditRule is equal true', async () => {
     const onClick = jest.fn();
 
-    superRender(
+    baseSuperRender(
       <SubmitWorkflowButton
         executeSQLsIsDQL={false}
         loading={false}

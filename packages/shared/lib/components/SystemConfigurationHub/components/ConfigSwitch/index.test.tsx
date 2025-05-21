@@ -1,7 +1,7 @@
 import { cleanup, fireEvent, act, screen } from '@testing-library/react';
 import ConfigSwitch, { ConfigSwitchParams } from '.';
 import Form from 'antd/es/form/Form';
-import { superRender } from '../../../../testUtil/customRender';
+import { superRender } from '../../../../testUtil/superRender';
 import { getBySelector } from '../../../../testUtil/customQuery';
 
 describe('base/System/components/ConfigSwitch', () => {

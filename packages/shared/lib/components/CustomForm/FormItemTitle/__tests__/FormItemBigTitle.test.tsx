@@ -1,4 +1,4 @@
-import { superRender } from '../../../../testUtil/customRender';
+import { superRender } from '../../../../testUtil/superRender';
 import FormItemBigTitle from '../FormItemBigTitle';
 import { FormItemBigTitleProps } from '../FormItemTitle.types';
 

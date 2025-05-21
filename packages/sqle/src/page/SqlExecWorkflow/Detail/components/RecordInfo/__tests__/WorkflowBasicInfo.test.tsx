@@ -1,6 +1,6 @@
 import { cleanup } from '@testing-library/react';
 import { WorkflowRecordResV2StatusEnum } from '@actiontech/shared/lib/api/sqle/service/common.enum';
-import { superRender } from '../../../../../../testUtils/customRender';
+import { sqleSuperRender } from '../../../../../../testUtils/superRender';
 import { WorkflowBasicInfoProps } from '../index.type';
 import WorkflowBasicInfo from '../components/WorkflowBasicInfo';
 
@@ -10,7 +10,7 @@ describe('sqle/SqlExecWorkflow/Detail/WorkflowBasicInfo', () => {
       createTime: '2024-01-05T11:00:33Z',
       createUserName: 'admin'
     };
-    return superRender(
+    return sqleSuperRender(
       <WorkflowBasicInfo {...params} workflowStatus={workflowStatus} />
     );
   };

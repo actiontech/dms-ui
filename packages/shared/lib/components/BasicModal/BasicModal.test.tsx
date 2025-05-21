@@ -1,5 +1,5 @@
 import { screen } from '@testing-library/react';
-import { superRender } from '../../testUtil/customRender';
+import { superRender } from '../../testUtil/superRender';
 import BasicModal from './BasicModal';
 import { BasicModalProps } from './BasicModal.types';
 

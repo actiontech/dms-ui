@@ -1,5 +1,5 @@
-import userCenter from '../../../../../testUtils/mockApi/userCenter';
-import { renderWithReduxAndTheme } from '@actiontech/shared/lib/testUtil/customRender';
+import userCenter from '@actiontech/shared/lib/testUtil/mockApi/base/userCenter';
+import { superRender } from '@actiontech/shared/lib/testUtil/superRender';
 import { cleanup, fireEvent, act, screen } from '@testing-library/react';
 import { useDispatch, useSelector } from 'react-redux';
 import { ModalName } from '../../../../../data/ModalName';
@@ -40,7 +40,7 @@ describe('base/UserCenter/Modal/Role/AddRole', () => {
   it('should send add role request when click submit button', async () => {
     const eventEmitSpy = jest.spyOn(EventEmitter, 'emit');
     const mockRoleName = 'test_role_name';
-    const { baseElement } = renderWithReduxAndTheme(<AddRole />);
+    const { baseElement } = superRender(<AddRole />);
     await act(async () => jest.advanceTimersByTime(3000));
     expect(baseElement).toMatchSnapshot();
     expect(opPermissionListSpy).toHaveBeenCalledTimes(1);
@@ -87,7 +87,7 @@ describe('base/UserCenter/Modal/Role/AddRole', () => {
   });
 
   it('should close modal when click close button', async () => {
-    const { baseElement } = renderWithReduxAndTheme(<AddRole />);
+    const { baseElement } = superRender(<AddRole />);
     fireEvent.click(queryBySelector('.closed-icon-custom', baseElement)!);
     await act(async () => jest.advanceTimersByTime(1000));
     expect(dispatchSpy).toHaveBeenCalledTimes(1);

@@ -1,5 +1,5 @@
 import { fireEvent, screen } from '@testing-library/dom';
-import { superRender } from '../../testUtil/customRender';
+import { superRender } from '../../testUtil/superRender';
 import { getBySelector } from '../../testUtil/customQuery';
 import BasicTreeSelect from './BasicTreeSelect';
 

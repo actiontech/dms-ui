@@ -1,7 +1,7 @@
 import { getBySelector } from '@actiontech/shared/lib/testUtil/customQuery';
 import CardWrapper, { ICardWrapper } from '.';
 
-import { renderWithTheme } from '../../testUtils/customRender';
+import { sqleSuperRender } from '../../testUtils/superRender';
 import { act, cleanup, fireEvent, screen } from '@testing-library/react';
 import { useNavigate } from 'react-router-dom';
 
@@ -16,7 +16,7 @@ describe('sqle/components/CardWrapper', () => {
   const navigateSpy = jest.fn();
 
   const customRender = (params: ICardWrapper) => {
-    return renderWithTheme(<CardWrapper {...params} />);
+    return sqleSuperRender(<CardWrapper {...params} />);
   };
 
   beforeEach(() => {

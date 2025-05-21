@@ -1,12 +1,12 @@
 import useDataSourceSelectorTree from '../hooks/useDataSourceSelectorTree';
-import instance from '../../../../testUtils/mockApi/instance';
-import { renderHooksWithTheme } from '@actiontech/shared/lib/testUtil/customRender';
+import instance from '@actiontech/shared/lib/testUtil/mockApi/sqle/instance';
+import { superRenderHook } from '@actiontech/shared/lib/testUtil/superRender';
 import { mockUseCurrentProject } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentProject';
 import { mockDatabaseType } from '../../../../testUtils/mockHooks/mockDatabaseType';
 import { mockUseCurrentUser } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentUser';
 import { mockProjectInfo } from '@actiontech/shared/lib/testUtil/mockHook/data';
 import { getInstanceTipListV2FunctionalModuleEnum } from '@actiontech/shared/lib/api/sqle/service/instance/index.enum';
-import { instanceTipsMockData } from '../../../../testUtils/mockApi/instance/data';
+import { instanceTipsMockData } from '@actiontech/shared/lib/testUtil/mockApi/sqle/instance/data';
 import { act } from '@testing-library/react';
 
 describe('useDataSourceSelectorTree', () => {
@@ -30,7 +30,7 @@ describe('useDataSourceSelectorTree', () => {
   });
 
   it('should initialize data correctly', async () => {
-    const { result } = renderHooksWithTheme(() => useDataSourceSelectorTree());
+    const { result } = superRenderHook(() => useDataSourceSelectorTree());
 
     expect(getInstanceTipsSpy).toHaveBeenCalledTimes(1);
     expect(getInstanceTipsSpy).toHaveBeenCalledWith({
@@ -57,7 +57,7 @@ describe('useDataSourceSelectorTree', () => {
   });
 
   it('should parse database comparison object correctly', () => {
-    const { result } = renderHooksWithTheme(() => useDataSourceSelectorTree());
+    const { result } = superRenderHook(() => useDataSourceSelectorTree());
 
     expect(result.current.parse2DatabaseCompareObject(undefined)).toEqual({});
 
@@ -76,7 +76,7 @@ describe('useDataSourceSelectorTree', () => {
   });
 
   it('should get instance info by selected value', async () => {
-    const { result } = renderHooksWithTheme(() => useDataSourceSelectorTree());
+    const { result } = superRenderHook(() => useDataSourceSelectorTree());
     await act(async () => jest.advanceTimersByTime(3000));
 
     expect(
@@ -106,7 +106,7 @@ describe('useDataSourceSelectorTree', () => {
   });
 
   it('should disable tree nodes based on selection', async () => {
-    const { result } = renderHooksWithTheme(() => useDataSourceSelectorTree());
+    const { result } = superRenderHook(() => useDataSourceSelectorTree());
     await act(async () => jest.advanceTimersByTime(3000));
 
     expect(result.current.disableTreeNodesBasedOnSelection()).toEqual(

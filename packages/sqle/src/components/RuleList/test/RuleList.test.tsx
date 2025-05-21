@@ -1,12 +1,12 @@
 import RuleList, { pageRemainingHeight } from '../RuleList';
 import { act, cleanup, fireEvent, screen } from '@testing-library/react';
-import { renderWithTheme } from '../../../testUtils/customRender';
+import { sqleSuperRender } from '../../../testUtils/superRender';
 import {
   getAllBySelector,
   getBySelector
 } from '@actiontech/shared/lib/testUtil/customQuery';
 import { RuleListProps, RuleStatusEnum } from '../index.type';
-import { ruleListMockData } from '../../../testUtils/mockApi/rule_template/data';
+import { ruleListMockData } from '@actiontech/shared/lib/testUtil/mockApi/sqle/rule_template/data';
 import { RuleResV1LevelEnum } from '@actiontech/shared/lib/api/sqle/service/common.enum';
 import { mockUsePermission } from '@actiontech/shared/lib/testUtil/mockHook/mockUsePermission';
 
@@ -30,7 +30,7 @@ describe('sqle/components/RuleList', () => {
   });
 
   const customRender = (props: RuleListProps) => {
-    return renderWithTheme(
+    return sqleSuperRender(
       <RuleList {...props} onActionHandle={onActionHandleSpy} />
     );
   };

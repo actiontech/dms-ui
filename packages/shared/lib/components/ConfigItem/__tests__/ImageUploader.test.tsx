@@ -1,5 +1,5 @@
 import { fireEvent, act, cleanup } from '@testing-library/react';
-import { superRender } from '../../../testUtil/customRender';
+import { superRender } from '../../../testUtil/superRender';
 import { ConfigItemImageUploaderProps } from '../ConfigItem.types';
 import ImageUploader from '../components/ImageUploader';
 import { getBySelector } from '../../../testUtil/customQuery';

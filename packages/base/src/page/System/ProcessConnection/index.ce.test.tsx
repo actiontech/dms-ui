@@ -2,7 +2,7 @@
  * @test_version ce
  */
 
-import { superRender } from '@actiontech/shared/lib/testUtil/customRender';
+import { superRender } from '@actiontech/shared/lib/testUtil/superRender';
 import ProcessConnection from '.';
 
 describe('base/System/ProcessConnection ce', () => {
