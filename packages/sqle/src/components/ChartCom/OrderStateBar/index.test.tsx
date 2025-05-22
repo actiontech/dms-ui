@@ -1,6 +1,6 @@
 import OrderStateBar, { IOrderStateBar } from '.';
 
-import { renderWithTheme } from '../../../testUtils/customRender';
+import { sqleSuperRender } from '../../../testUtils/superRender';
 import { getAllBySelector } from '@actiontech/shared/lib/testUtil/customQuery';
 import { act, cleanup, fireEvent } from '@testing-library/react';
 
@@ -37,7 +37,7 @@ const typeItemData = [
 
 describe('sqle/components/ChartCom/OrderStateBar', () => {
   const customRender = (params: IOrderStateBar) => {
-    return renderWithTheme(<OrderStateBar {...params} />);
+    return sqleSuperRender(<OrderStateBar {...params} />);
   };
 
   beforeEach(() => {

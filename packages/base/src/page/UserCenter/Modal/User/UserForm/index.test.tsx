@@ -1,7 +1,7 @@
 import {
-  renderWithReduxAndTheme,
-  renderHooksWithTheme
-} from '@actiontech/shared/lib/testUtil/customRender';
+  superRender,
+  superRenderHook
+} from '@actiontech/shared/lib/testUtil/superRender';
 import { Form } from 'antd';
 import { IUserFormFields, IUserFormProps } from './index.type';
 import UserForm from '.';
@@ -11,10 +11,8 @@ describe('base/UserCenter/Modal/UserForm', () => {
   const customRender = (
     props?: Pick<IUserFormProps, 'isAdmin' | 'isUpdate'>
   ) => {
-    const { result } = renderHooksWithTheme(() =>
-      Form.useForm<IUserFormFields>()
-    );
-    const { baseElement } = renderWithReduxAndTheme(
+    const { result } = superRenderHook(() => Form.useForm<IUserFormFields>());
+    const { baseElement } = superRender(
       <UserForm form={result.current[0]} visible={true} {...props} />
     );
     return baseElement;

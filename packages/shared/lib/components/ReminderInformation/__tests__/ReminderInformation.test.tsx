@@ -1,4 +1,4 @@
-import { superRender } from '../../../testUtil/customRender';
+import { superRender } from '../../../testUtil/superRender';
 import ReminderInformation from '../ReminderInformation';
 
 describe('shared/lib/components/ReminderInformation', () => {

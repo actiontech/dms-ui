@@ -1,11 +1,11 @@
 import { cleanup, screen, act, fireEvent } from '@testing-library/react';
 import CreateCustomRule from '.';
-import { renderWithThemeAndRedux } from '../../../testUtils/customRender';
+import { sqleSuperRender } from '../../../testUtils/superRender';
 import { useNavigate } from 'react-router-dom';
 import { mockUseDbServiceDriver } from '@actiontech/shared/lib/testUtil/mockHook/mockUseDbServiceDriver';
 import { getBySelector } from '@actiontech/shared/lib/testUtil/customQuery';
-import configuration from '../../../testUtils/mockApi/configuration';
-import rule_template from '../../../testUtils/mockApi/rule_template';
+import configuration from '@actiontech/shared/lib/testUtil/mockApi/sqle/configuration';
+import rule_template from '@actiontech/shared/lib/testUtil/mockApi/sqle/rule_template';
 import { useDispatch, useSelector } from 'react-redux';
 import { RuleManagerSegmentedKey } from '../../RuleManager/index.type';
 import { CreateCustomRuleReqV1LevelEnum } from '@actiontech/shared/lib/api/sqle/service/common.enum';
@@ -69,7 +69,7 @@ describe('sqle/CustomRule/CreateCustomRule', () => {
   ignoreConsoleErrors([UtilsConsoleErrorStringsEnum.UNKNOWN_EVENT_HANDLER]);
 
   it('return to custom list page', async () => {
-    const { baseElement } = renderWithThemeAndRedux(<CreateCustomRule />);
+    const { baseElement } = sqleSuperRender(<CreateCustomRule />);
     await act(async () => jest.advanceTimersByTime(3000));
     expect(baseElement).toMatchSnapshot();
     expect(getDriversSpy).toHaveBeenCalledTimes(1);
@@ -82,7 +82,7 @@ describe('sqle/CustomRule/CreateCustomRule', () => {
   });
 
   it('reset form values', async () => {
-    renderWithThemeAndRedux(<CreateCustomRule />);
+    sqleSuperRender(<CreateCustomRule />);
     await act(async () => jest.advanceTimersByTime(3000));
     const descEle = getBySelector('#desc');
     fireEvent.input(descEle, {
@@ -108,7 +108,7 @@ describe('sqle/CustomRule/CreateCustomRule', () => {
   });
 
   it('create custom rule', async () => {
-    const { baseElement } = renderWithThemeAndRedux(<CreateCustomRule />);
+    const { baseElement } = sqleSuperRender(<CreateCustomRule />);
     await act(async () => jest.advanceTimersByTime(3000));
     const descEle = getBySelector('#desc');
     fireEvent.input(descEle, {
@@ -209,7 +209,7 @@ describe('sqle/CustomRule/CreateCustomRule', () => {
   it('when create custom rule request fail', async () => {
     createCustomRuleSpy.mockClear();
     createCustomRuleSpy.mockImplementation(() => createSpyFailResponse({}));
-    const { baseElement } = renderWithThemeAndRedux(<CreateCustomRule />);
+    const { baseElement } = sqleSuperRender(<CreateCustomRule />);
     await act(async () => jest.advanceTimersByTime(3000));
     const descEle = getBySelector('#desc');
     fireEvent.input(descEle, {

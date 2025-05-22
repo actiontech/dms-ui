@@ -1,6 +1,6 @@
 import RuleStatus from '../RuleStatus';
 import { act, cleanup, fireEvent, screen } from '@testing-library/react';
-import { renderWithTheme } from '../../../testUtils/customRender';
+import { sqleSuperRender } from '../../../testUtils/superRender';
 import { RuleStatusEnum } from '../index.type';
 
 describe('sqle/components/RuleStatus', () => {
@@ -15,7 +15,7 @@ describe('sqle/components/RuleStatus', () => {
   });
 
   it('should match snap shot when enabled', async () => {
-    const { baseElement } = renderWithTheme(
+    const { baseElement } = sqleSuperRender(
       <RuleStatus currentRuleStatus={RuleStatusEnum.enabled} />
     );
     await act(async () => jest.advanceTimersByTime(3000));
@@ -23,7 +23,7 @@ describe('sqle/components/RuleStatus', () => {
   });
 
   it('should match snap shot when disabled', async () => {
-    const { baseElement } = renderWithTheme(
+    const { baseElement } = sqleSuperRender(
       <RuleStatus currentRuleStatus={RuleStatusEnum.disabled} />
     );
     await act(async () => jest.advanceTimersByTime(3000));
@@ -31,7 +31,7 @@ describe('sqle/components/RuleStatus', () => {
   });
 
   it('should match snap shot when has ruleStatusChange', async () => {
-    const { baseElement } = renderWithTheme(
+    const { baseElement } = sqleSuperRender(
       <RuleStatus
         currentRuleStatus={RuleStatusEnum.disabled}
         ruleStatusChange={ruleStatusChangeSpy}
@@ -51,7 +51,7 @@ describe('sqle/components/RuleStatus', () => {
     const renderLabel = (label: string, status: RuleStatusEnum) =>
       `${customLabel[status]} - ${label}`;
 
-    const { baseElement } = renderWithTheme(
+    const { baseElement } = sqleSuperRender(
       <RuleStatus
         currentRuleStatus={RuleStatusEnum.enabled}
         options={{ renderLabel }}

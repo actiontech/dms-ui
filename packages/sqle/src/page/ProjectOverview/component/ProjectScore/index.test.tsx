@@ -1,6 +1,6 @@
-import { superRender } from '../../../../testUtils/customRender';
+import { sqleSuperRender } from '../../../../testUtils/superRender';
 import ProjectScore from '.';
-import projectOverview from '../../../../testUtils/mockApi/projectOverview';
+import projectOverview from '@actiontech/shared/lib/testUtil/mockApi/sqle/projectOverview';
 import { act, cleanup, fireEvent, screen } from '@testing-library/react';
 import { mockUseCurrentProject } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentProject';
 import { mockProjectInfo } from '@actiontech/shared/lib/testUtil/mockHook/data';
@@ -38,7 +38,7 @@ describe('page/ProjectOverview/ProjectScore', () => {
   });
 
   const customRender = () => {
-    return superRender(<ProjectScore />);
+    return sqleSuperRender(<ProjectScore />);
   };
 
   it('render order status and click create order', async () => {

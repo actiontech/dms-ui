@@ -1,11 +1,11 @@
 import { RuleResV1LevelEnum } from '@actiontech/shared/lib/api/sqle/service/common.enum';
 import RuleLevelIcon, { typeRuleLevelIcon } from '.';
 
-import { renderWithTheme } from '../../../testUtils/customRender';
+import { sqleSuperRender } from '../../../testUtils/superRender';
 
 describe('sqle/components/RuleList/RuleLevelIcon', () => {
   const customRender = (params: typeRuleLevelIcon) => {
-    return renderWithTheme(<RuleLevelIcon {...params} />);
+    return sqleSuperRender(<RuleLevelIcon {...params} />);
   };
 
   it('render snap when data is empty', () => {

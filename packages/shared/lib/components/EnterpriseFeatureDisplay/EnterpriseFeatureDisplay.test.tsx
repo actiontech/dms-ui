@@ -1,6 +1,6 @@
 import EnterpriseFeatureDisplay from './EnterpriseFeatureDisplay';
 import { Space } from 'antd';
-import { superRender } from '../../testUtil/customRender';
+import { superRender } from '../../testUtil/superRender';
 
 const children = <>ee version display</>;
 

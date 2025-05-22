@@ -8,7 +8,7 @@ import {
   roleList,
   userGroupList,
   userList
-} from '../../testUtils/mockApi/userCenter/data';
+} from '@actiontech/shared/lib/testUtil/mockApi/base/userCenter/data';
 
 describe('test store/user-center', () => {
   const state: IReduxState['userCenter'] = {

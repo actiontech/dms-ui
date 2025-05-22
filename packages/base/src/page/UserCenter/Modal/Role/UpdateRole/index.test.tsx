@@ -1,5 +1,5 @@
-import userCenter from '../../../../../testUtils/mockApi/userCenter';
-import { renderWithReduxAndTheme } from '@actiontech/shared/lib/testUtil/customRender';
+import userCenter from '@actiontech/shared/lib/testUtil/mockApi/base/userCenter';
+import { superRender } from '@actiontech/shared/lib/testUtil/superRender';
 import { cleanup, fireEvent, act, screen } from '@testing-library/react';
 import { useDispatch, useSelector } from 'react-redux';
 import { ModalName } from '../../../../../data/ModalName';
@@ -52,7 +52,7 @@ describe('base/UserCenter/Modal/Role/UpdateRole', () => {
 
   it('should send update role request when click submit button', async () => {
     const eventEmitSpy = jest.spyOn(EventEmitter, 'emit');
-    const { baseElement } = renderWithReduxAndTheme(<UpdateRole />);
+    const { baseElement } = superRender(<UpdateRole />);
     await act(async () => jest.advanceTimersByTime(3000));
     expect(screen.getByText('编辑角色')).toBeInTheDocument();
     expect(baseElement).toMatchSnapshot();
@@ -103,7 +103,7 @@ describe('base/UserCenter/Modal/Role/UpdateRole', () => {
   });
 
   it('should close modal when click close button', async () => {
-    const { baseElement } = renderWithReduxAndTheme(<UpdateRole />);
+    const { baseElement } = superRender(<UpdateRole />);
     fireEvent.click(queryBySelector('.closed-icon-custom', baseElement)!);
     await act(async () => jest.advanceTimersByTime(1000));
     expect(dispatchSpy).toHaveBeenCalledTimes(1);

@@ -1,10 +1,10 @@
 import { useNavigate } from 'react-router-dom';
 import { act, cleanup, fireEvent, screen } from '@testing-library/react';
-import { superRender } from '../../../testUtils/customRender';
-import syncTaskList from '../../../testUtils/mockApi/syncTaskList';
+import { baseSuperRender } from '../../../testUtils/superRender';
+import syncTaskList from '@actiontech/shared/lib/testUtil/mockApi/base/syncTaskList';
 import SyncTaskList from '.';
 import { mockUseCurrentUser } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentUser';
-import { syncTaskListMockData } from '../../../testUtils/mockApi/syncTaskList/data';
+import { syncTaskListMockData } from '@actiontech/shared/lib/testUtil/mockApi/base/syncTaskList/data';
 import { SystemRole } from '@actiontech/shared/lib/enum';
 
 jest.mock('react-router-dom', () => {
@@ -18,7 +18,7 @@ describe('page/SyncDataSource/SyncTaskList', () => {
   const navigateSpy = jest.fn();
   let requestTableList: jest.SpyInstance;
   const customRender = () => {
-    return superRender(<SyncTaskList />);
+    return baseSuperRender(<SyncTaskList />);
   };
 
   beforeEach(() => {

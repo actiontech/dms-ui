@@ -1,12 +1,12 @@
 import { cleanup, fireEvent, act, screen } from '@testing-library/react';
-import { renderWithTheme } from '@actiontech/shared/lib/testUtil/customRender';
+import { superRender } from '@actiontech/shared/lib/testUtil/superRender';
 
 import ConfigSubmitButtonField from '.';
 
 describe('base/System/components/ConfigSubmitButtonField', () => {
   const handleClickCancelFn = jest.fn();
   const customRender = (submitLoading: boolean) => {
-    return renderWithTheme(
+    return superRender(
       <ConfigSubmitButtonField
         submitLoading={submitLoading}
         handleClickCancel={handleClickCancelFn}

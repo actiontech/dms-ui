@@ -8,8 +8,8 @@ import {
 } from '@testing-library/react';
 import { Select } from 'antd';
 import useOperationActions from '.';
-import operationRecord from '../../testUtils/mockApi/operationRecord';
-import { operationActionMockData } from '../../testUtils/mockApi/operationRecord/data';
+import operationRecord from '@actiontech/shared/lib/testUtil/mockApi/sqle/operationRecord';
+import { operationActionMockData } from '@actiontech/shared/lib/testUtil/mockApi/sqle/operationRecord/data';
 import {
   createSpyErrorResponse,
   createSpyFailResponse,

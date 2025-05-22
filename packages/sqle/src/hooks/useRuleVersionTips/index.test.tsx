@@ -1,11 +1,11 @@
 import { act, renderHook } from '@testing-library/react';
 import useRuleVersionTips from '.';
-import rule_template from '../../testUtils/mockApi/rule_template';
+import rule_template from '@actiontech/shared/lib/testUtil/mockApi/sqle/rule_template';
 import {
   createSpyErrorResponse,
   createSpyFailResponse
 } from '@actiontech/shared/lib/testUtil/mockApi';
-import { GetDriverRuleVersionTipsMockData } from '../../testUtils/mockApi/rule_template/data';
+import { GetDriverRuleVersionTipsMockData } from '@actiontech/shared/lib/testUtil/mockApi/sqle/rule_template/data';
 
 describe('useRuleVersionTips', () => {
   let requestSpy: jest.SpyInstance;

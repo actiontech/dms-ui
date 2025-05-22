@@ -1,5 +1,5 @@
 import { fireEvent, act, cleanup } from '@testing-library/react';
-import { superRender } from '../../../testUtil/customRender';
+import { superRender } from '../../../testUtil/superRender';
 
 import { ConfigItemEditInputNumberProps } from '../ConfigItem.types';
 import EditInputNumber from '../components/EditInputNumber';

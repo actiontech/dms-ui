@@ -1,11 +1,11 @@
 import { act, fireEvent, screen } from '@testing-library/react';
 import AuditResultList from '.';
-import { superRender } from '../../../../testUtils/customRender';
-import dataExport from '../../../../testUtils/mockApi/dataExport';
+import { baseSuperRender } from '../../../../testUtils/superRender';
+import dataExport from '@actiontech/shared/lib/testUtil/mockApi/base/dataExport';
 import {
   BatchGetDataExportTaskResponseData,
   ListDataExportTaskSQLsResponseData
-} from '../../../../testUtils/mockApi/dataExport/data';
+} from '@actiontech/shared/lib/testUtil/mockApi/base/dataExport/data';
 import { createSpySuccessResponse } from '@actiontech/shared/lib/testUtil/mockApi';
 import { GetDataExportTaskStatusEnum } from '@actiontech/shared/lib/api/base/service/common.enum';
 import {
@@ -62,7 +62,7 @@ describe('test DataExport/Common/AuditResultList', () => {
   ignoreConsoleErrors([UtilsConsoleErrorStringsEnum.UNKNOWN_EVENT_HANDLER]);
 
   it('should match snapshot', async () => {
-    const { baseElement } = superRender(
+    const { baseElement } = baseSuperRender(
       <AuditResultList taskIDs={taskIDs} projectID={projectID} />
     );
     expect(baseElement).toMatchSnapshot();
@@ -116,7 +116,9 @@ describe('test DataExport/Common/AuditResultList', () => {
         data: [ListDataExportTaskSQLsResponseData[0]]
       })
     );
-    superRender(<AuditResultList taskIDs={taskIDs} projectID={projectID} />);
+    baseSuperRender(
+      <AuditResultList taskIDs={taskIDs} projectID={projectID} />
+    );
     await act(async () => jest.advanceTimersByTime(3000));
     await act(async () => jest.advanceTimersByTime(3000));
     expect(screen.getByText('添加为审核SQL例外')).toBeInTheDocument();
@@ -177,7 +179,7 @@ describe('test DataExport/Common/AuditResultList', () => {
         ]
       })
     );
-    const { container } = superRender(
+    const { container } = baseSuperRender(
       <AuditResultList taskIDs={taskIDs} projectID={projectID} />
     );
     await act(async () => jest.advanceTimersByTime(3000));
@@ -213,7 +215,7 @@ describe('test DataExport/Common/AuditResultList', () => {
       })
     );
 
-    const { container } = superRender(
+    const { container } = baseSuperRender(
       <AuditResultList taskIDs={taskIDs} projectID={projectID} />
     );
     await act(async () => jest.advanceTimersByTime(3000));
@@ -234,7 +236,7 @@ describe('test DataExport/Common/AuditResultList', () => {
 
   it('should execute onSuccessGetDataExportTaskSqlsSpy', async () => {
     const onSuccessGetDataExportTaskSqlsSpy = jest.fn();
-    superRender(
+    baseSuperRender(
       <AuditResultList
         taskIDs={taskIDs}
         projectID={projectID}
@@ -257,7 +259,7 @@ describe('test DataExport/Common/AuditResultList', () => {
   //       data: [ListDataExportTaskSQLsResponseData[0]]
   //     })
   //   );
-  //   superRender(<AuditResultList taskIDs={taskIDs} projectID={projectID} />);
+  //   baseSuperRender(<AuditResultList taskIDs={taskIDs} projectID={projectID} />);
 
   //   await act(async () => jest.advanceTimersByTime(3000));
   //   await act(async () => jest.advanceTimersByTime(3000));

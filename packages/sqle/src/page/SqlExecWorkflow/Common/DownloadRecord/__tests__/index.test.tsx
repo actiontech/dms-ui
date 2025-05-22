@@ -1,6 +1,6 @@
 import DownloadRecord from '..';
-import { superRender } from '../../../../../testUtils/customRender';
-import execWorkflow from '../../../../../testUtils/mockApi/execWorkflow';
+import { sqleSuperRender } from '../../../../../testUtils/superRender';
+import execWorkflow from '@actiontech/shared/lib/testUtil/mockApi/sqle/execWorkflow';
 import { DownloadRecordProps } from '../index.type';
 import { fireEvent, act, cleanup, screen } from '@testing-library/react';
 import { mockUseCurrentProject } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentProject';
@@ -11,7 +11,7 @@ describe('sqle/ExecWorkflow/Common/DownloadRecord', () => {
   let requestDownloadReport: jest.SpyInstance;
   let downloadBackupFileSpy: jest.SpyInstance;
   const customRender = (params: DownloadRecordProps) => {
-    return superRender(<DownloadRecord {...params} />);
+    return sqleSuperRender(<DownloadRecord {...params} />);
   };
 
   beforeEach(() => {

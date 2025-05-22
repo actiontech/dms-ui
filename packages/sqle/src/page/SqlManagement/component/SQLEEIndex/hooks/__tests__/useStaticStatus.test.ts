@@ -1,4 +1,4 @@
-import { renderHooksWithRedux } from '../../../../../../testUtils/customRender';
+import { sqleSuperRenderHook } from '../../../../../../testUtils/superRender';
 import useStaticStatus from '../useStaticStatus';
 import {
   GetSqlManageListV2FilterAuditLevelEnum,
@@ -7,7 +7,7 @@ import {
 
 describe('SqlManagement/useStaticStatus', () => {
   it('render select options', async () => {
-    const { result } = renderHooksWithRedux(() => useStaticStatus());
+    const { result } = sqleSuperRenderHook(() => useStaticStatus());
     expect(result.current.generateAuditLevelSelectOptions.length).toBe(4);
     expect(result.current.generateAuditLevelSelectOptions[0].value).toBe(
       GetSqlManageListV2FilterAuditLevelEnum.normal

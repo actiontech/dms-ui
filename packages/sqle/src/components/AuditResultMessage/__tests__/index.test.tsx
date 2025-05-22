@@ -1,11 +1,11 @@
 import AuditResultMessage from '..';
 import { AuditResultMessageProps } from '../index.type';
 
-import { renderWithTheme } from '../../../testUtils/customRender';
+import { sqleSuperRender } from '../../../testUtils/superRender';
 
 describe('sqle/components/AuditResultMessage', () => {
   const customRender = (params: AuditResultMessageProps) => {
-    return renderWithTheme(<AuditResultMessage {...params} />);
+    return sqleSuperRender(<AuditResultMessage {...params} />);
   };
 
   it('render snap when auditResult is {}', () => {

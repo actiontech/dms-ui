@@ -6,7 +6,7 @@ import {
   WorkflowStepResV2StateEnum,
   WorkflowStepResV2TypeEnum
 } from '@actiontech/shared/lib/api/sqle/service/common.enum';
-import { superRender } from '../../../../../../testUtils/customRender';
+import { sqleSuperRender } from '../../../../../../testUtils/superRender';
 import { mockThemeStyleData } from '../../../../../../testUtils/mockHooks/mockThemeStyleData';
 
 const workflowSteps = [
@@ -66,7 +66,7 @@ const workflowSteps = [
 
 describe('sqle/SqlExecWorkflow/Detail/WorkflowSteps', () => {
   const customRender = (params: WorkflowStepsProps) => {
-    return superRender(<WorkflowSteps {...params} />);
+    return sqleSuperRender(<WorkflowSteps {...params} />);
   };
 
   beforeEach(() => {

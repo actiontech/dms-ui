@@ -1,10 +1,10 @@
 import { act, cleanup, fireEvent, screen } from '@testing-library/react';
 import ChangePriority from '.';
-import { superRender } from '../../../../../../testUtils/customRender';
+import { sqleSuperRender } from '../../../../../../testUtils/superRender';
 import { mockUseCurrentProject } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentProject';
 import { ModalName } from '../../../../../../data/ModalName';
-import { sqlManageListData } from '../../../../../../testUtils/mockApi/sqlManage/data';
-import sqlManage from '../../../../../../testUtils/mockApi/sqlManage';
+import { sqlManageListData } from '@actiontech/shared/lib/testUtil/mockApi/sqle/sqlManage/data';
+import sqlManage from '@actiontech/shared/lib/testUtil/mockApi/sqle/sqlManage';
 import { mockProjectInfo } from '@actiontech/shared/lib/testUtil/mockHook/data';
 import { getAllBySelector } from '@actiontech/shared/lib/testUtil/customQuery';
 import EventEmitter from '../../../../../../utils/EventEmitter';
@@ -35,7 +35,7 @@ describe('page/SqlManagement/ChangePriority', () => {
   });
 
   const customRender = (data?: boolean) => {
-    return superRender(<ChangePriority />, undefined, {
+    return sqleSuperRender(<ChangePriority />, undefined, {
       initStore: {
         sqlManagement: {
           modalStatus: {

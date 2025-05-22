@@ -6,9 +6,9 @@ import UserNavigate from '../UserNavigate';
 import { useNavigate } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { act, cleanup, fireEvent, screen } from '@testing-library/react';
-import { superRender } from '../../../../../../testUtils/customRender';
+import { baseSuperRender } from '../../../../../../testUtils/superRender';
 import { getBySelector } from '@actiontech/shared/lib/testUtil/customQuery';
-import dms from '../../../../../../testUtils/mockApi/global';
+import dms from '@actiontech/shared/lib/testUtil/mockApi/base/global';
 import { LocalStorageWrapper } from '@actiontech/shared';
 import {
   CompanyNoticeDisplayStatusEnum,
@@ -37,7 +37,7 @@ describe('base/page/Nav/SideMenu/UserNavigate-ce', () => {
   let requestDelSession: jest.SpyInstance;
 
   const customRender = () => {
-    return superRender(
+    return baseSuperRender(
       <UserNavigate
         language={SupportLanguage.zhCN}
         username="Test name"

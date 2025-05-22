@@ -4,7 +4,7 @@
 import WorkflowDetailPageHeaderExtra from '..';
 import { cleanup, screen } from '@testing-library/react';
 import { mockUseCurrentUser } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentUser';
-import { superRender } from '../../../../../../testUtils/customRender';
+import { sqleSuperRender } from '../../../../../../testUtils/superRender';
 import {
   WorkflowRecordResV2StatusEnum,
   WorkflowStepResV2TypeEnum
@@ -38,7 +38,7 @@ describe('sqle/SqlExecWorkflow/Detail/WorkflowDetailPageHeaderExtra ce', () => {
 
   it('render rollback button', async () => {
     mockUseCurrentProject({ projectArchive: false });
-    const { baseElement } = superRender(
+    const { baseElement } = sqleSuperRender(
       <WorkflowDetailPageHeaderExtra
         refreshWorkflow={jest.fn(() => Promise.resolve())}
         passAction={jest.fn(() => Promise.resolve())}

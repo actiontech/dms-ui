@@ -1,21 +1,21 @@
 import { act, cleanup, fireEvent, screen } from '@testing-library/react';
 import { useNavigate } from 'react-router-dom';
-import { superRender } from '../../../../testUtils/customRender';
+import { baseSuperRender } from '../../../../testUtils/superRender';
 import {
   getAllBySelector,
   getBySelector
 } from '@actiontech/shared/lib/testUtil/customQuery';
-import dms from '../../../../testUtils/mockApi/global';
-import ruleTemplate from 'sqle/src/testUtils/mockApi/rule_template';
+import dms from '@actiontech/shared/lib/testUtil/mockApi/base/global';
+import ruleTemplate from '@actiontech/shared/lib/testUtil/mockApi/sqle/rule_template';
 import EmitterKey from '../../../../data/EmitterKey';
 import EventEmitter from '../../../../utils/EventEmitter';
 import { mockUseCurrentProject } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentProject';
 import { mockProjectInfo } from '@actiontech/shared/lib/testUtil/mockHook/data';
-import project from '../../../../testUtils/mockApi/project';
-import { mockProjectList } from '../../../../testUtils/mockApi/project/data';
+import project from '@actiontech/shared/lib/testUtil/mockApi/base/project';
+import { mockProjectList } from '@actiontech/shared/lib/testUtil/mockApi/base/project/data';
 import { createSpySuccessResponse } from '@actiontech/shared/lib/testUtil/mockApi';
 import AddDataSource from '.';
-import system from 'sqle/src/testUtils/mockApi/system';
+import system from '@actiontech/shared/lib/testUtil/mockApi/sqle/system';
 
 jest.mock('react-router-dom', () => {
   return {
@@ -32,7 +32,7 @@ describe('page/DataSource/AddDataSource', () => {
   let getSystemModuleStatusSpy: jest.SpyInstance;
 
   const customRender = () => {
-    return superRender(<AddDataSource />);
+    return baseSuperRender(<AddDataSource />);
   };
 
   beforeEach(() => {

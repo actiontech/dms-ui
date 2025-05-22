@@ -1,6 +1,6 @@
 import { fireEvent, screen } from '@testing-library/dom';
-import { superRender } from '../../../testUtils/customRender';
-import task from '../../../testUtils/mockApi/task';
+import { sqleSuperRender } from '../../../testUtils/superRender';
+import task from '@actiontech/shared/lib/testUtil/mockApi/sqle/task';
 import SqlRewrittenDrawerEE from '../index.ee';
 import {
   getBySelector,
@@ -17,7 +17,7 @@ import {
 import {
   SqlRewrittenMockDataNoDDL,
   SqlRewrittenMockDataUseDDL
-} from '../../../testUtils/mockApi/task/data';
+} from '@actiontech/shared/lib/testUtil/mockApi/sqle/task/data';
 import { RewriteSuggestionTypeEnum } from '@actiontech/shared/lib/api/sqle/service/common.enum';
 import { ThemeProvider, StyledEngineProvider } from '@mui/material/styles';
 import sharedTheme from '@actiontech/shared/lib/theme/light';
@@ -57,7 +57,7 @@ describe('SqlRewrittenDrawerEE Unit Tests', () => {
 
   describe('when loading data', () => {
     it('should show loading indicator when fetching data', async () => {
-      superRender(<SqlRewrittenDrawerEE {...mockProps} />);
+      sqleSuperRender(<SqlRewrittenDrawerEE {...mockProps} />);
 
       expect(queryBySelector('.custom-loading-container')).toBeInTheDocument();
 
@@ -77,14 +77,14 @@ describe('SqlRewrittenDrawerEE Unit Tests', () => {
 
   describe('when data is fetched successfully', () => {
     it('should render overall rewrite suggestions section', async () => {
-      superRender(<SqlRewrittenDrawerEE {...mockProps} />);
+      sqleSuperRender(<SqlRewrittenDrawerEE {...mockProps} />);
       await act(async () => jest.advanceTimersByTime(3000));
 
       expect(screen.getByText('整体重写建议')).toBeInTheDocument();
     });
 
     it('should render already rewritten rules section with correct count', async () => {
-      superRender(<SqlRewrittenDrawerEE {...mockProps} />);
+      sqleSuperRender(<SqlRewrittenDrawerEE {...mockProps} />);
       await act(async () => jest.advanceTimersByTime(3000));
 
       expect(screen.getByText('已应用的规则')).toBeInTheDocument();
@@ -96,7 +96,7 @@ describe('SqlRewrittenDrawerEE Unit Tests', () => {
     });
 
     it('should render pending rewrite rules section with button to toggle structure optimization', async () => {
-      superRender(<SqlRewrittenDrawerEE {...mockProps} />);
+      sqleSuperRender(<SqlRewrittenDrawerEE {...mockProps} />);
       await act(async () => jest.advanceTimersByTime(3000));
 
       expect(screen.getByText('待应用的规则')).toBeInTheDocument();
@@ -109,7 +109,7 @@ describe('SqlRewrittenDrawerEE Unit Tests', () => {
     });
 
     it('should hide pending rewrite rules section when structure optimization is enabled', async () => {
-      superRender(<SqlRewrittenDrawerEE {...mockProps} />);
+      sqleSuperRender(<SqlRewrittenDrawerEE {...mockProps} />);
       await act(async () => jest.advanceTimersByTime(3000));
 
       const button = screen.getByText('启动数据库结构优化');
@@ -127,7 +127,7 @@ describe('SqlRewrittenDrawerEE Unit Tests', () => {
     });
 
     it('should render business intervention required section with correct count', async () => {
-      superRender(<SqlRewrittenDrawerEE {...mockProps} />);
+      sqleSuperRender(<SqlRewrittenDrawerEE {...mockProps} />);
       await act(async () => jest.advanceTimersByTime(3000));
 
       expect(screen.getByText('待人工介入的规则')).toBeInTheDocument();

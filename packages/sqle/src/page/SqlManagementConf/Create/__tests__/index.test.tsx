@@ -4,23 +4,23 @@ import { mockUseCurrentProject } from '@actiontech/shared/lib/testUtil/mockHook/
 import { mockUseCurrentUser } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentUser';
 import { mockUseDbServiceDriver } from '@actiontech/shared/lib/testUtil/mockHook/mockUseDbServiceDriver';
 import { mockProjectInfo } from '@actiontech/shared/lib/testUtil/mockHook/data';
-import instanceAuditPlan from '../../../../testUtils/mockApi/instanceAuditPlan';
-import { mockAuditPlanMetaData } from '../../../../testUtils/mockApi/instanceAuditPlan/data';
-import configuration from '../../../../testUtils/mockApi/configuration';
-import instance from '../../../../testUtils/mockApi/instance';
+import instanceAuditPlan from '@actiontech/shared/lib/testUtil/mockApi/sqle/instanceAuditPlan';
+import { mockAuditPlanMetaData } from '@actiontech/shared/lib/testUtil/mockApi/sqle/instanceAuditPlan/data';
+import configuration from '@actiontech/shared/lib/testUtil/mockApi/sqle/configuration';
+import instance from '@actiontech/shared/lib/testUtil/mockApi/sqle/instance';
 import {
   instanceInfoMockData,
   instanceTipsMockData
-} from '../../../../testUtils/mockApi/instance/data';
-import rule_template from '../../../../testUtils/mockApi/rule_template';
-import { projectRuleTemplateList } from '../../../../testUtils/mockApi/rule_template/data';
-import { superRender } from '../../../../testUtils/customRender';
+} from '@actiontech/shared/lib/testUtil/mockApi/sqle/instance/data';
+import rule_template from '@actiontech/shared/lib/testUtil/mockApi/sqle/rule_template';
+import { projectRuleTemplateList } from '@actiontech/shared/lib/testUtil/mockApi/sqle/rule_template/data';
+import { sqleSuperRender } from '../../../../testUtils/superRender';
 import { createSpySuccessResponse } from '@actiontech/shared/lib/testUtil/mockApi';
 import {
   getAllBySelector,
   getBySelector
 } from '@actiontech/shared/lib/testUtil/customQuery';
-import project from '../../../../testUtils/mockApi/project';
+import project from '@actiontech/shared/lib/testUtil/mockApi/base/project';
 
 describe('test sqle/SqlManagementConf/Create', () => {
   let createInstanceAuditPlanSpy: jest.SpyInstance;
@@ -66,7 +66,7 @@ describe('test sqle/SqlManagementConf/Create', () => {
   });
 
   it('render init snap shot', async () => {
-    const { baseElement } = superRender(<CreateSqlManagementConf />);
+    const { baseElement } = sqleSuperRender(<CreateSqlManagementConf />);
     expect(baseElement).toMatchSnapshot();
     expect(screen.getByText('为数据源开启扫描任务')).toBeInTheDocument();
     expect(screen.getByText('返回智能扫描配置')).toBeInTheDocument();
@@ -81,7 +81,7 @@ describe('test sqle/SqlManagementConf/Create', () => {
   });
 
   it('render create audit plan', async () => {
-    const { baseElement } = superRender(
+    const { baseElement } = sqleSuperRender(
       <CreateSqlManagementConf />,
       undefined,
       {
@@ -320,7 +320,7 @@ describe('test sqle/SqlManagementConf/Create', () => {
 
   it('create audit plan when current url has params', async () => {
     const instanceId = instanceTipsMockData[0].instance_id;
-    const { baseElement } = superRender(
+    const { baseElement } = sqleSuperRender(
       <CreateSqlManagementConf />,
       undefined,
       {

@@ -1,8 +1,8 @@
 import { act, fireEvent, screen } from '@testing-library/react';
-import { superRender } from '@actiontech/shared/lib/testUtil/customRender';
+import { superRender } from '@actiontech/shared/lib/testUtil/superRender';
 import LoginBasicSetting from '.';
 import { createSpyFailResponse } from '@actiontech/shared/lib/testUtil/mockApi';
-import system from '../../../../testUtils/mockApi/system';
+import system from '@actiontech/shared/lib/testUtil/mockApi/base/system';
 import { getBySelector } from '@actiontech/shared/lib/testUtil/customQuery';
 import { useLoginConnectionContext } from '../context';
 

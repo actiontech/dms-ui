@@ -1,4 +1,4 @@
-import { superRender } from '../../../../../../../testUtils/customRender';
+import { baseSuperRender } from '../../../../../../../testUtils/superRender';
 import BaseInfoFormItem from '../BaseInfoFormItem';
 import {
   ignoreConsoleErrors,
@@ -10,7 +10,7 @@ describe('test base/DataExport/Create/BaseInfoForm/BaseInfoFormItem', () => {
   ignoreConsoleErrors([UtilsConsoleErrorStringsEnum.INVALID_CSS_VALUE]);
 
   it('should match snapshot with slot', () => {
-    const { container: containerWithSlot } = superRender(
+    const { container: containerWithSlot } = baseSuperRender(
       <Form>
         <BaseInfoFormItem slot={<span>slot</span>} />
       </Form>

@@ -3,9 +3,9 @@ import FileMode from '../FileMode';
 import { fireEvent, screen } from '@testing-library/dom';
 import { getBySelector } from '@actiontech/shared/lib/testUtil/customQuery';
 import { act } from '@testing-library/react';
-import task from '../../../../../../../../../testUtils/mockApi/task';
-import { superRender } from '../../../../../../../../../testUtils/customRender';
-import { TaskFileListMockData } from '../../../../../../../../../testUtils/mockApi/task/data';
+import task from '@actiontech/shared/lib/testUtil/mockApi/sqle/task';
+import { sqleSuperRender } from '../../../../../../../../../testUtils/superRender';
+import { TaskFileListMockData } from '@actiontech/shared/lib/testUtil/mockApi/sqle/task/data';
 import { mockUseCurrentUser } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentUser';
 
 describe('test TaskResultList/Result/FileMode', () => {
@@ -21,7 +21,7 @@ describe('test TaskResultList/Result/FileMode', () => {
   });
 
   it('should match snapshot', async () => {
-    const { container } = superRender(
+    const { container } = sqleSuperRender(
       <FileMode
         taskId="123"
         projectID="300200"
@@ -40,7 +40,7 @@ describe('test TaskResultList/Result/FileMode', () => {
   });
 
   it('should render collapse children and called request', async () => {
-    const { container } = superRender(
+    const { container } = sqleSuperRender(
       <FileMode
         taskId="123"
         projectID="300200"
@@ -65,7 +65,7 @@ describe('test TaskResultList/Result/FileMode', () => {
   });
 
   it('should render audit result count', () => {
-    const { container } = superRender(
+    const { container } = sqleSuperRender(
       <FileMode
         taskId="123"
         projectID="300200"

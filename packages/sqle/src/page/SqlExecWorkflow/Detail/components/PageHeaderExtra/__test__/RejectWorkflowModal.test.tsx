@@ -2,7 +2,7 @@ import RejectWorkflowModal from '../RejectWorkflowModal';
 import { fireEvent, act, cleanup, screen } from '@testing-library/react';
 import { getBySelector } from '@actiontech/shared/lib/testUtil/customQuery';
 import { RejectWorkflowModalProps } from '../RejectWorkflowModal/index.type';
-import { superRender } from '../../../../../../testUtils/customRender';
+import { sqleSuperRender } from '../../../../../../testUtils/superRender';
 
 describe('sqle/ExecWorkflow/Detail/RejectWorkflowModal', () => {
   const rejectFn = jest.fn();
@@ -21,7 +21,7 @@ describe('sqle/ExecWorkflow/Detail/RejectWorkflowModal', () => {
   const customRender = (
     params?: Pick<RejectWorkflowModalProps, 'open' | 'loading'>
   ) => {
-    return superRender(
+    return sqleSuperRender(
       <RejectWorkflowModal
         open={params?.open || false}
         loading={params?.loading || false}

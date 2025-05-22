@@ -1,5 +1,5 @@
 import { cleanup, act } from '@testing-library/react';
-import { renderHooksWithRedux } from '@actiontech/shared/lib/testUtil/customRender';
+import { superRenderHook } from '@actiontech/shared/lib/testUtil/superRender';
 import useImportRuleTemplateForm from '../useImportRuleTemplateForm';
 
 describe('sqle/hooks/useRuleTemplateForm/useImportRuleTemplateForm', () => {
@@ -13,7 +13,7 @@ describe('sqle/hooks/useRuleTemplateForm/useImportRuleTemplateForm', () => {
   });
 
   it('init state', async () => {
-    const { result } = renderHooksWithRedux(useImportRuleTemplateForm, {});
+    const { result } = superRenderHook(useImportRuleTemplateForm, {});
     await act(async () => jest.advanceTimersByTime(3000));
     expect(result.current.activeRule).toEqual([]);
     expect(result.current.getAllRulesLoading).toEqual(false);
@@ -25,7 +25,7 @@ describe('sqle/hooks/useRuleTemplateForm/useImportRuleTemplateForm', () => {
   });
 
   it('loading status control', async () => {
-    const { result } = renderHooksWithRedux(useImportRuleTemplateForm, {});
+    const { result } = superRenderHook(useImportRuleTemplateForm, {});
 
     await act(async () => {
       result.current.startCreate();

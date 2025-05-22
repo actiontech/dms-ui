@@ -3,7 +3,7 @@ import useNotificationContext from '.';
 import { eventEmitter } from '../../utils/EventEmitter';
 import EmitterKey from '../../data/EmitterKey';
 import { notification } from 'antd';
-import { superRender } from '../../testUtil/customRender';
+import { superRender } from '../../testUtil/superRender';
 
 jest.mock('antd', () => ({
   ...jest.requireActual('antd'),

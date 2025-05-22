@@ -1,12 +1,12 @@
 import { mockUseCurrentProject } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentProject';
 import ConfDetailOverview from '..';
-import { superRender } from '../../../../../testUtils/customRender';
+import { sqleSuperRender } from '../../../../../testUtils/superRender';
 import { SQL_MANAGEMENT_CONF_OVERVIEW_TAB_KEY } from '../../index.data';
 import { mockUseCurrentUser } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentUser';
-import instanceAuditPlan from '../../../../../testUtils/mockApi/instanceAuditPlan';
+import instanceAuditPlan from '@actiontech/shared/lib/testUtil/mockApi/sqle/instanceAuditPlan';
 import { act, fireEvent, screen } from '@testing-library/react';
 import { mockProjectInfo } from '@actiontech/shared/lib/testUtil/mockHook/data';
-import { mockInstanceAuditPlanInfo } from '../../../../../testUtils/mockApi/instanceAuditPlan/data';
+import { mockInstanceAuditPlanInfo } from '@actiontech/shared/lib/testUtil/mockApi/sqle/instanceAuditPlan/data';
 import {
   InstanceAuditPlanInfoActiveStatusEnum,
   UpdateAuditPlanStatusReqV1ActiveEnum,
@@ -28,7 +28,7 @@ describe('test Overview', () => {
   const instanceAuditPlanId = '1';
   const refreshAuditPlanDetailSpy = jest.fn();
   const customRender = () => {
-    return superRender(
+    return sqleSuperRender(
       <ConfDetailOverview
         activeTabKey={SQL_MANAGEMENT_CONF_OVERVIEW_TAB_KEY}
         handleChangeTab={handleChangeTabSpy}

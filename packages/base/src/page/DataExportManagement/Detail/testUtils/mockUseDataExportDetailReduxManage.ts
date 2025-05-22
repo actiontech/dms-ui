@@ -1,6 +1,6 @@
 import { GetDataExportTaskStatusEnum } from '@actiontech/shared/lib/api/base/service/common.enum';
 import * as useDataExportDetailReduxManage from '../hooks/index.redux';
-import { GetDataExportWorkflowResponseData } from '../../../../testUtils/mockApi/dataExport/data';
+import { GetDataExportWorkflowResponseData } from '@actiontech/shared/lib/testUtil/mockApi/base/dataExport/data';
 
 export const mockDataExportDetailRedux = {
   workflowStepOpen: false,

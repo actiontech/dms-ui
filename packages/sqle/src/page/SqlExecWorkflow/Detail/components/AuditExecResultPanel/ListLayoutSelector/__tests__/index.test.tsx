@@ -1,13 +1,13 @@
 import ListLayoutSelector from '..';
 import { fireEvent, act, cleanup, screen } from '@testing-library/react';
 import { TaskResultListLayoutEnum } from '../../index.enum';
-import { superRender } from '../../../../../../../testUtils/customRender';
+import { sqleSuperRender } from '../../../../../../../testUtils/superRender';
 
 describe('sqle/ExecWorkflow/Detail/Common/ListLayoutSelector', () => {
   const onChangeFn = jest.fn();
 
   const customRender = (value: TaskResultListLayoutEnum) => {
-    return superRender(
+    return sqleSuperRender(
       <ListLayoutSelector onChange={onChangeFn} value={value} />
     );
   };

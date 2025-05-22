@@ -1,6 +1,6 @@
 import ResourceDetail from '../index';
-import { superRender } from '../../../../../testUtils/customRender';
-import resourceOverview from '../../../../../testUtils/mockApi/resourceOverview';
+import { baseSuperRender } from '../../../../../testUtils/superRender';
+import resourceOverview from '@actiontech/shared/lib/testUtil/mockApi/base/resourceOverview';
 import { mockUseCurrentUser } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentUser';
 import { mockUseDbServiceDriver } from '@actiontech/shared/lib/testUtil/mockHook/mockUseDbServiceDriver';
 import { cleanup, act, fireEvent, screen } from '@testing-library/react';
@@ -10,8 +10,8 @@ import {
   getAllBySelector,
   getBySelector
 } from '@actiontech/shared/lib/testUtil/customQuery';
-import project from '../../../../../testUtils/mockApi/project';
-import dbServices from '../../../../../testUtils/mockApi/dbServices';
+import project from '@actiontech/shared/lib/testUtil/mockApi/base/project';
+import dbServices from '@actiontech/shared/lib/testUtil/mockApi/base/dbServices';
 import { useNavigate } from 'react-router-dom';
 
 jest.mock('react-router-dom', () => ({
@@ -53,7 +53,7 @@ describe('base/page/ResourceDetail/ResourceDetail', () => {
   });
 
   it('render init snap', async () => {
-    const { container } = superRender(<ResourceDetail />);
+    const { container } = baseSuperRender(<ResourceDetail />);
     await act(async () => {
       jest.advanceTimersByTime(3000);
     });
@@ -66,7 +66,7 @@ describe('base/page/ResourceDetail/ResourceDetail', () => {
   });
 
   it('should refresh data when emit Refresh_Resource_Overview_Page event', async () => {
-    superRender(<ResourceDetail />);
+    baseSuperRender(<ResourceDetail />);
     await act(async () => jest.advanceTimersByTime(3000));
     expect(getResourceOverviewResourceListV1Spy).toHaveBeenCalledTimes(1);
     expect(getResourceOverviewTopologyV1Spy).toHaveBeenCalledTimes(1);
@@ -79,7 +79,7 @@ describe('base/page/ResourceDetail/ResourceDetail', () => {
   });
 
   it('filter resource list', async () => {
-    superRender(<ResourceDetail />);
+    baseSuperRender(<ResourceDetail />);
     await act(async () => jest.advanceTimersByTime(3000));
     expect(getResourceOverviewResourceListV1Spy).toHaveBeenCalledTimes(1);
     expect(getResourceOverviewTopologyV1Spy).toHaveBeenCalledTimes(1);
@@ -112,7 +112,7 @@ describe('base/page/ResourceDetail/ResourceDetail', () => {
   });
 
   it('navigate to service list page', async () => {
-    superRender(<ResourceDetail />);
+    baseSuperRender(<ResourceDetail />);
     await act(async () => jest.advanceTimersByTime(3000));
     fireEvent.click(screen.getAllByText('查看详情')[0]);
     await act(async () => jest.advanceTimersByTime(0));
@@ -120,7 +120,7 @@ describe('base/page/ResourceDetail/ResourceDetail', () => {
   });
 
   it('resource tree is fully expanded by default', async () => {
-    superRender(<ResourceDetail />);
+    baseSuperRender(<ResourceDetail />);
     await act(async () => jest.advanceTimersByTime(3000));
     expect(screen.getByText('展开全部').closest('button')).toHaveClass(
       'btn-active'
@@ -137,7 +137,7 @@ describe('base/page/ResourceDetail/ResourceDetail', () => {
   });
 
   it('select resource tree node', async () => {
-    superRender(<ResourceDetail />);
+    baseSuperRender(<ResourceDetail />);
     await act(async () => jest.advanceTimersByTime(3000));
 
     fireEvent.click(
@@ -148,7 +148,7 @@ describe('base/page/ResourceDetail/ResourceDetail', () => {
   });
 
   it('select table row', async () => {
-    superRender(<ResourceDetail />);
+    baseSuperRender(<ResourceDetail />);
     await act(async () => jest.advanceTimersByTime(3000));
 
     fireEvent.click(screen.getByText('折叠全部'));
@@ -159,7 +159,7 @@ describe('base/page/ResourceDetail/ResourceDetail', () => {
   });
 
   it('download resource list', async () => {
-    superRender(<ResourceDetail />);
+    baseSuperRender(<ResourceDetail />);
     await act(async () => jest.advanceTimersByTime(3000));
     fireEvent.click(screen.getByText('导 出'));
     await act(async () => jest.advanceTimersByTime(0));

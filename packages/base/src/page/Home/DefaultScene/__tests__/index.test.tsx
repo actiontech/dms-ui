@@ -1,6 +1,6 @@
 import { mockUseCurrentUser } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentUser';
 import DefaultScene from '..';
-import { superRender } from '../../../../testUtils/customRender';
+import { baseSuperRender } from '../../../../testUtils/superRender';
 import { fireEvent, screen } from '@testing-library/react';
 import { useNavigate } from 'react-router-dom';
 import { mockUseRecentlyOpenedProjects } from '../../../Nav/SideMenu/testUtils/mockUseRecentlyOpenedProjects';
@@ -27,7 +27,7 @@ describe('test base/home/DefaultScene', () => {
   it('should match snapshot when role is admin', () => {
     mockUseCurrentUser();
 
-    const { container } = superRender(<DefaultScene />);
+    const { container } = baseSuperRender(<DefaultScene />);
     expect(container).toMatchSnapshot();
     fireEvent.click(screen.getByText('查看审核规则'));
     expect(navigateSpy).not.toHaveBeenCalled();
@@ -44,14 +44,14 @@ describe('test base/home/DefaultScene', () => {
       }
     });
 
-    const { container } = superRender(<DefaultScene />);
+    const { container } = baseSuperRender(<DefaultScene />);
     expect(container).toMatchSnapshot();
   });
 
   it('should render modal when clicked view rule list and current project id is undefined', () => {
     mockUseCurrentUser();
 
-    superRender(<DefaultScene />);
+    baseSuperRender(<DefaultScene />);
     expect(screen.queryByText('选择项目')).not.toBeInTheDocument();
 
     fireEvent.click(screen.getByText('查看审核规则'));
@@ -63,7 +63,7 @@ describe('test base/home/DefaultScene', () => {
   it('should execute navigate when clicked view rule list and current project id is not undefined', () => {
     mockUseRecentlyOpenedProjects({ currentProjectID: '1' });
     mockUseCurrentUser();
-    superRender(<DefaultScene />);
+    baseSuperRender(<DefaultScene />);
     expect(screen.queryByText('选择项目')).not.toBeInTheDocument();
 
     fireEvent.click(screen.getByText('查看审核规则'));

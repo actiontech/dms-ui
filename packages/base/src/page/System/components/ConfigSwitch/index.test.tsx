@@ -1,5 +1,5 @@
 import { cleanup, fireEvent, act, screen } from '@testing-library/react';
-import { renderWithTheme } from '@actiontech/shared/lib/testUtil/customRender';
+import { superRender } from '@actiontech/shared/lib/testUtil/superRender';
 import ConfigSwitch, { ConfigSwitchParams } from '.';
 import Form from 'antd/es/form/Form';
 import { getBySelector } from '@actiontech/shared/lib/testUtil/customQuery';
@@ -15,7 +15,7 @@ describe('base/System/components/ConfigSwitch', () => {
       'switchFieldName' | 'onConfirm' | 'onSwitchChange' | 'onSwitchPopoverOpen'
     >
   ) => {
-    return renderWithTheme(
+    return superRender(
       <Form>
         <ConfigSwitch
           switchFieldName="enabled"

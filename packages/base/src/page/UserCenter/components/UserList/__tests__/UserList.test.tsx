@@ -1,6 +1,6 @@
-import userCenter from '../../../../../testUtils/mockApi/userCenter';
-import { userList } from '../../../../../testUtils/mockApi/userCenter/data';
-import { renderWithReduxAndTheme } from '@actiontech/shared/lib/testUtil/customRender';
+import userCenter from '@actiontech/shared/lib/testUtil/mockApi/base/userCenter';
+import { userList } from '@actiontech/shared/lib/testUtil/mockApi/base/userCenter/data';
+import { superRender } from '@actiontech/shared/lib/testUtil/superRender';
 import { act, screen, cleanup, fireEvent } from '@testing-library/react';
 import { queryBySelector } from '@actiontech/shared/lib/testUtil/customQuery';
 import UserList from '../List';
@@ -41,7 +41,7 @@ describe('base/UserCenter/UserList', () => {
   });
 
   it('render user table', async () => {
-    const { baseElement } = renderWithReduxAndTheme(
+    const { baseElement } = superRender(
       <UserList activePage={UserCenterListEnum.user_list} />
     );
     await act(async () => jest.advanceTimersByTime(3000));
@@ -58,7 +58,7 @@ describe('base/UserCenter/UserList', () => {
   it('should render empty tips when request not success', async () => {
     userListSpy.mockClear();
     userListSpy.mockImplementation(() => createSpyErrorResponse({ data: [] }));
-    const { baseElement } = renderWithReduxAndTheme(
+    const { baseElement } = superRender(
       <UserList activePage={UserCenterListEnum.user_list} />
     );
     await act(async () => jest.advanceTimersByTime(3000));
@@ -83,7 +83,7 @@ describe('base/UserCenter/UserList', () => {
         data: mockData
       })
     );
-    const { baseElement } = renderWithReduxAndTheme(
+    const { baseElement } = superRender(
       <UserList activePage={UserCenterListEnum.user_list} />
     );
     await act(async () => jest.advanceTimersByTime(3000));
@@ -100,9 +100,7 @@ describe('base/UserCenter/UserList', () => {
   });
 
   it('should refresh user table when emit "DMS_Refresh_User_Center_List" event', async () => {
-    renderWithReduxAndTheme(
-      <UserList activePage={UserCenterListEnum.user_list} />
-    );
+    superRender(<UserList activePage={UserCenterListEnum.user_list} />);
     await act(async () =>
       EventEmitter.emit(EmitterKey.DMS_Refresh_User_Center_List)
     );
@@ -118,9 +116,7 @@ describe('base/UserCenter/UserList', () => {
     );
     const userName = userList[0].name;
     const deleteUserSpy = userCenter.deleteUser();
-    renderWithReduxAndTheme(
-      <UserList activePage={UserCenterListEnum.user_list} />
-    );
+    superRender(<UserList activePage={UserCenterListEnum.user_list} />);
     await act(async () => jest.advanceTimersByTime(3000));
     expect(userListSpy).toHaveBeenCalledTimes(1);
     fireEvent.click(screen.getByText('删 除'));
@@ -146,9 +142,7 @@ describe('base/UserCenter/UserList', () => {
         data: [userList[0]]
       })
     );
-    renderWithReduxAndTheme(
-      <UserList activePage={UserCenterListEnum.user_list} />
-    );
+    superRender(<UserList activePage={UserCenterListEnum.user_list} />);
     await act(async () => jest.advanceTimersByTime(3000));
     expect(userListSpy).toHaveBeenCalledTimes(1);
     fireEvent.click(screen.getByText('管 理'));
@@ -180,7 +174,7 @@ describe('base/UserCenter/UserList', () => {
       }
     });
 
-    const { container } = renderWithReduxAndTheme(
+    const { container } = superRender(
       <UserList activePage={UserCenterListEnum.user_list} />
     );
     await act(async () => jest.advanceTimersByTime(3000));
@@ -200,7 +194,7 @@ describe('base/UserCenter/UserList', () => {
       }
     });
 
-    const { container } = renderWithReduxAndTheme(
+    const { container } = superRender(
       <UserList activePage={UserCenterListEnum.user_list} />
     );
     await act(async () => jest.advanceTimersByTime(3000));

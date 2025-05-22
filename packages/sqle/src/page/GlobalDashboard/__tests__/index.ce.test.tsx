@@ -5,10 +5,10 @@ import { cleanup, act } from '@testing-library/react';
 import { mockUseCurrentProject } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentProject';
 import { mockUseCurrentUser } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentUser';
 import { mockUseDbServiceDriver } from '@actiontech/shared/lib/testUtil/mockHook/mockUseDbServiceDriver';
-import workflow from '../../../testUtils/mockApi/execWorkflow';
-import sqlManage from '../../../testUtils/mockApi/sqlManage';
-import instance from '../../../testUtils/mockApi/instance';
-import { superRender } from '../../../testUtils/customRender';
+import workflow from '@actiontech/shared/lib/testUtil/mockApi/sqle/execWorkflow';
+import sqlManage from '@actiontech/shared/lib/testUtil/mockApi/sqle/sqlManage';
+import instance from '@actiontech/shared/lib/testUtil/mockApi/sqle/instance';
+import { sqleSuperRender } from '../../../testUtils/superRender';
 import GlobalDashboard from '../index';
 
 describe('sqle/GlobalDashboard ce', () => {
@@ -31,7 +31,7 @@ describe('sqle/GlobalDashboard ce', () => {
   });
 
   it('render init snap shot', async () => {
-    const { baseElement } = superRender(<GlobalDashboard />);
+    const { baseElement } = sqleSuperRender(<GlobalDashboard />);
     await act(async () => jest.advanceTimersByTime(3000));
     expect(baseElement).toMatchSnapshot();
     expect(getGlobalWorkflowsSpy).toHaveBeenCalledTimes(1);

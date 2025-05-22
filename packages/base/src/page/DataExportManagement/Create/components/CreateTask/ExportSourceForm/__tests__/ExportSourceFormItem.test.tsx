@@ -1,6 +1,6 @@
-import { superRender } from '../../../../../../../testUtils/customRender';
-import dbServices from '../../../../../../../testUtils/mockApi/dbServices';
-import instance from 'sqle/src/testUtils/mockApi/instance';
+import { baseSuperRender } from '../../../../../../../testUtils/superRender';
+import dbServices from '@actiontech/shared/lib/testUtil/mockApi/base/dbServices';
+import instance from '@actiontech/shared/lib/testUtil/mockApi/sqle/instance';
 import ExportSourceFormItem from '../ExportSourceFormItem';
 import {
   act,
@@ -23,7 +23,7 @@ describe('test ExportSourceFormItem', () => {
   const customRender = () => {
     const { result } = renderHook(() => useForm());
 
-    return superRender(
+    return baseSuperRender(
       <Form form={result.current[0]}>
         <ExportSourceFormItem
           sourceForm={result.current[0]}

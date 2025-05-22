@@ -1,13 +1,12 @@
-import { superRender } from '@actiontech/shared/lib/testUtil/customRender';
+import { superRender } from '@actiontech/shared/lib/testUtil/superRender';
 import { cleanup, fireEvent, act, screen } from '@testing-library/react';
 import { ModalName } from '../../../../data/ModalName';
 import UpdateAvailabilityZoneModal from '../Update';
 import EventEmitter from '../../../../utils/EventEmitter';
 import EmitterKey from '../../../../data/EmitterKey';
 import { useDispatch, useSelector } from 'react-redux';
-import gateway from '../../../../testUtils/mockApi/gateway';
-import { mockGatewayListData } from '../../../../testUtils/mockApi/gateway/data';
-import { message } from 'antd';
+import gateway from '@actiontech/shared/lib/testUtil/mockApi/base/gateway';
+import { mockGatewayListData } from '@actiontech/shared/lib/testUtil/mockApi/base/gateway/data';
 
 jest.mock('react-redux', () => ({
   ...jest.requireActual('react-redux'),

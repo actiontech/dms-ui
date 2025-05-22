@@ -1,13 +1,13 @@
 import { act, cleanup, fireEvent, screen } from '@testing-library/react';
 import Router, { useNavigate } from 'react-router-dom';
-import { superRender } from '../../../../testUtils/customRender';
+import { baseSuperRender } from '../../../../testUtils/superRender';
 import {
   getBySelector,
   getAllBySelector
 } from '@actiontech/shared/lib/testUtil/customQuery';
 
-import dms from '../../../../testUtils/mockApi/global';
-import ruleTemplate from 'sqle/src/testUtils/mockApi/rule_template';
+import dms from '@actiontech/shared/lib/testUtil/mockApi/base/global';
+import ruleTemplate from '@actiontech/shared/lib/testUtil/mockApi/sqle/rule_template';
 import EmitterKey from '../../../../data/EmitterKey';
 import EventEmitter from '../../../../utils/EventEmitter';
 import { mockUseCurrentProject } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentProject';
@@ -18,10 +18,10 @@ import {
   createSpyFailResponse,
   createSpySuccessResponse
 } from '@actiontech/shared/lib/testUtil/mockApi';
-import rule_template from 'sqle/src/testUtils/mockApi/rule_template';
-import dbServices from '../../../../testUtils/mockApi/dbServices';
-import project from '../../../../testUtils/mockApi/project';
-import system from 'sqle/src/testUtils/mockApi/system';
+import rule_template from '@actiontech/shared/lib/testUtil/mockApi/sqle/rule_template';
+import dbServices from '@actiontech/shared/lib/testUtil/mockApi/base/dbServices';
+import project from '@actiontech/shared/lib/testUtil/mockApi/base/project';
+import system from '@actiontech/shared/lib/testUtil/mockApi/sqle/system';
 
 jest.mock('react-router-dom', () => {
   return {
@@ -37,7 +37,7 @@ describe('page/DataSource/UpdateDataSource', () => {
   let listEnvironmentTagsSpy: jest.SpyInstance;
   let getSystemModuleStatusSpy: jest.SpyInstance;
   const customRender = () => {
-    return superRender(<UpdateDataSource />, undefined, {
+    return baseSuperRender(<UpdateDataSource />, undefined, {
       routerProps: {
         initialEntries: [`/project/${projectID}/db-services/update/${uId}`]
       }

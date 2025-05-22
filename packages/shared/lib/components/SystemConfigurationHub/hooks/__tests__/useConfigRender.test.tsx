@@ -4,7 +4,7 @@ import {
   renderReadOnlyModeConfig,
   useConfigRender
 } from '../useConfigRender';
-import { superRender } from '../../../../testUtil/customRender';
+import { superRender } from '../../../../testUtil/superRender';
 import { getBySelector } from '../../../../testUtil/customQuery';
 
 describe('test useConfigRender', () => {

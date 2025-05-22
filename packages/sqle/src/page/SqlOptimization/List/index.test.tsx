@@ -1,18 +1,18 @@
 import { act, cleanup, fireEvent, screen } from '@testing-library/react';
 import SqlOptimizationList from '.';
-import { superRender } from '../../../testUtils/customRender';
+import { sqleSuperRender } from '../../../testUtils/superRender';
 import { mockUseCurrentProject } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentProject';
 import { mockUseCurrentUser } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentUser';
 import { mockUseDbServiceDriver } from '@actiontech/shared/lib/testUtil/mockHook/mockUseDbServiceDriver';
-import sqlOptimization from '../../../testUtils/mockApi/sqlOptimization';
-import { sqlOptimizationRecordsMockData } from '../../../testUtils/mockApi/sqlOptimization/data';
+import sqlOptimization from '@actiontech/shared/lib/testUtil/mockApi/sqle/sqlOptimization';
+import { sqlOptimizationRecordsMockData } from '@actiontech/shared/lib/testUtil/mockApi/sqle/sqlOptimization/data';
 import {
   getAllBySelector,
   getBySelector
 } from '@actiontech/shared/lib/testUtil/customQuery';
 import { mockProjectInfo } from '@actiontech/shared/lib/testUtil/mockHook/data';
 import { useNavigate } from 'react-router-dom';
-import instance from '../../../testUtils/mockApi/instance';
+import instance from '@actiontech/shared/lib/testUtil/mockApi/sqle/instance';
 
 jest.mock('react-router-dom', () => {
   return {
@@ -42,7 +42,7 @@ describe('sqle/SqlOptimizationList', () => {
   });
 
   it('render table data', async () => {
-    const { baseElement } = superRender(<SqlOptimizationList />);
+    const { baseElement } = sqleSuperRender(<SqlOptimizationList />);
     expect(getOptimizationRecordsSpy).toHaveBeenCalled();
     expect(getInstanceTipListSpy).toHaveBeenCalled();
     await act(async () => jest.advanceTimersByTime(3000));
@@ -50,7 +50,7 @@ describe('sqle/SqlOptimizationList', () => {
   });
 
   it('render create optimization button', async () => {
-    superRender(<SqlOptimizationList />);
+    sqleSuperRender(<SqlOptimizationList />);
     expect(getOptimizationRecordsSpy).toHaveBeenCalled();
     expect(screen.getByText('创建智能调优')).toBeInTheDocument();
     expect(screen.getByText('创建智能调优').closest('a')).toHaveAttribute(
@@ -60,7 +60,7 @@ describe('sqle/SqlOptimizationList', () => {
   });
 
   it('filter data with search', async () => {
-    superRender(<SqlOptimizationList />);
+    sqleSuperRender(<SqlOptimizationList />);
     expect(getOptimizationRecordsSpy).toHaveBeenCalled();
     const searchText = 'search text';
     const inputEle = getBySelector('#actiontech-table-search-input');
@@ -86,7 +86,7 @@ describe('sqle/SqlOptimizationList', () => {
   });
 
   it('render click table row', async () => {
-    superRender(<SqlOptimizationList />);
+    sqleSuperRender(<SqlOptimizationList />);
     expect(getOptimizationRecordsSpy).toHaveBeenCalled();
     await act(async () => jest.advanceTimersByTime(3000));
     const tableRows = getAllBySelector(

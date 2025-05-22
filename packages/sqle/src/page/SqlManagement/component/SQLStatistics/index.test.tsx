@@ -1,6 +1,6 @@
 import { cleanup, screen } from '@testing-library/react';
 import SQLStatistics, { ISQLStatisticsProps } from '.';
-import { superRender } from '../../../../testUtils/customRender';
+import { sqleSuperRender } from '../../../../testUtils/superRender';
 
 describe('page/SqlManagement/SQLStatistics', () => {
   beforeEach(() => {
@@ -14,7 +14,7 @@ describe('page/SqlManagement/SQLStatistics', () => {
   });
 
   const customRender = (data: ISQLStatisticsProps) => {
-    return superRender(<SQLStatistics {...data} />);
+    return sqleSuperRender(<SQLStatistics {...data} />);
   };
 
   const staticsData = {

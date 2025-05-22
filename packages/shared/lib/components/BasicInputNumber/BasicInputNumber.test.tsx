@@ -1,4 +1,4 @@
-import { superRender } from '../../testUtil/customRender';
+import { superRender } from '../../testUtil/superRender';
 import { fireEvent } from '@testing-library/react';
 import BasicInputNumber from './BasicInputNumber';
 import { BasicInputNumberProps } from './BasicInputNumber.types';

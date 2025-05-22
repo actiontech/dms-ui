@@ -1,11 +1,11 @@
-import { superRender } from '@actiontech/shared/lib/testUtil/customRender';
+import { superRender } from '@actiontech/shared/lib/testUtil/superRender';
 import { cleanup, fireEvent, act, screen } from '@testing-library/react';
 import { ModalName } from '../../../../data/ModalName';
 import CreateAvailabilityZoneModal from '../Create';
 import EventEmitter from '../../../../utils/EventEmitter';
 import EmitterKey from '../../../../data/EmitterKey';
 import { useDispatch, useSelector } from 'react-redux';
-import gateway from '../../../../testUtils/mockApi/gateway';
+import gateway from '@actiontech/shared/lib/testUtil/mockApi/base/gateway';
 import MockDate from 'mockdate';
 import dayjs from 'dayjs';
 

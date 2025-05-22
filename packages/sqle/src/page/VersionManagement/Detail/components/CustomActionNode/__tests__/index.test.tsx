@@ -1,5 +1,5 @@
 import { cleanup, act, screen, fireEvent } from '@testing-library/react';
-import { superRender } from '../../../../../..//testUtils/customRender';
+import { sqleSuperRender } from '../../../../../../testUtils/superRender';
 import CustomActionNode from '../index';
 
 describe('sqle/VersionManagement/Detail/CustomActionNode', () => {
@@ -14,7 +14,7 @@ describe('sqle/VersionManagement/Detail/CustomActionNode', () => {
   });
 
   const customRender = (allowExecute = false) => {
-    return superRender(
+    return sqleSuperRender(
       <CustomActionNode
         id="test-custom-action-node"
         type="action-node"

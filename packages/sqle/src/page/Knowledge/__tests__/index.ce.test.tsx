@@ -2,11 +2,11 @@
  * @test_version ce
  */
 import KnowledgeSearchResults from '../index';
-import { superRender } from '../../../testUtils/customRender';
+import { sqleSuperRender } from '../../../testUtils/superRender';
 
 describe('Knowledge ce', () => {
   it('render init snap', async () => {
-    const { baseElement } = superRender(<KnowledgeSearchResults />);
+    const { baseElement } = sqleSuperRender(<KnowledgeSearchResults />);
     expect(baseElement).toMatchSnapshot();
   });
 });

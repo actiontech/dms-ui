@@ -1,8 +1,8 @@
 import { act, cleanup, renderHook, screen } from '@testing-library/react';
 import RuleFilter from '../index';
 import { Form } from 'antd';
-import { superRender } from '../../../../testUtils/customRender';
-import ruleTemplate from '../../../../testUtils/mockApi/rule_template';
+import { sqleSuperRender } from '../../../../testUtils/superRender';
+import ruleTemplate from '@actiontech/shared/lib/testUtil/mockApi/sqle/rule_template';
 import { getBySelector } from '@actiontech/shared/lib/testUtil/customQuery';
 
 describe('sqle/components/RuleList/RuleFilter', () => {
@@ -22,7 +22,7 @@ describe('sqle/components/RuleList/RuleFilter', () => {
       return Form.useForm();
     });
 
-    return superRender(<RuleFilter form={result.current[0]} />);
+    return sqleSuperRender(<RuleFilter form={result.current[0]} />);
   };
 
   it('render init snap shot', async () => {

@@ -1,5 +1,5 @@
 import { cleanup, fireEvent, screen } from '@testing-library/react';
-import { renderWithTheme } from '@actiontech/shared/lib/testUtil/customRender';
+import { superRender } from '@actiontech/shared/lib/testUtil/superRender';
 
 import ConfigTestPopoverForm from '.';
 
@@ -7,7 +7,7 @@ describe('base/System/components/ConfigTestPopoverForm', () => {
   const handleTestFn = jest.fn();
   const handleCancelFn = jest.fn();
   const customRender = () => {
-    return renderWithTheme(
+    return superRender(
       <ConfigTestPopoverForm
         handleTest={handleTestFn}
         handleCancel={handleCancelFn}

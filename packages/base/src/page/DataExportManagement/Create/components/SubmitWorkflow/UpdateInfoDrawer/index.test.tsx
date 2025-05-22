@@ -8,7 +8,7 @@ import {
   mockUseCreateExportTaskForm,
   mockUseCreateExportTaskFormReturn
 } from '../../../testUtils/mockUseCreateExportTaskForm';
-import { superRender } from '../../../../../../testUtils/customRender';
+import { baseSuperRender } from '../../../../../../testUtils/superRender';
 import UpdateInfoDrawer from '.';
 import { act, fireEvent, renderHook, screen } from '@testing-library/react';
 import { useForm } from 'antd/es/form/Form';
@@ -20,7 +20,7 @@ import { getBySelector } from '@actiontech/shared/lib/testUtil/customQuery';
 import { ModalName } from '../../../../../../data/ModalName';
 import MockDate from 'mockdate';
 import dayjs from 'dayjs';
-import dbServices from '../../../../../../testUtils/mockApi/dbServices';
+import dbServices from '@actiontech/shared/lib/testUtil/mockApi/base/dbServices';
 
 describe('test base/DataExport/Create/UpdateInfoDrawer', () => {
   const customRender = (
@@ -45,7 +45,7 @@ describe('test base/DataExport/Create/UpdateInfoDrawer', () => {
       ...mockCreateExportTaskForm
     });
 
-    return superRender(<UpdateInfoDrawer />);
+    return baseSuperRender(<UpdateInfoDrawer />);
   };
 
   beforeEach(() => {

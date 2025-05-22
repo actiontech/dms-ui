@@ -1,6 +1,6 @@
-import { superRender } from '../../../../../testUtils/customRender';
+import { sqleSuperRender } from '../../../../../testUtils/superRender';
 import WorkflowTemplateAuthInfo from '.';
-import { workflowTemplateData } from '../../../../../testUtils/mockApi/workflowTemplate/data';
+import { workflowTemplateData } from '@actiontech/shared/lib/testUtil/mockApi/sqle/workflowTemplate/data';
 import { screen } from '@testing-library/react';
 import { WorkflowTemplateAuthInfoProps } from './index.type';
 import { mockUseCurrentUser } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentUser';
@@ -16,7 +16,7 @@ describe('page/WorkflowTemplate/WorkflowTemplateAuthInfo', () => {
   };
 
   const customRender = (data: WorkflowTemplateAuthInfoProps) => {
-    return superRender(<WorkflowTemplateAuthInfo {...data} />);
+    return sqleSuperRender(<WorkflowTemplateAuthInfo {...data} />);
   };
 
   it('render auth info', () => {

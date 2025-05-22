@@ -4,7 +4,7 @@
 
 import { screen } from '@testing-library/react';
 import SqlOptimization from '.';
-import { renderWithReduxAndTheme } from '@actiontech/shared/lib/testUtil/customRender';
+import { superRender } from '@actiontech/shared/lib/testUtil/superRender';
 
 jest.mock('react-router-dom', () => {
   return {
@@ -15,7 +15,7 @@ jest.mock('react-router-dom', () => {
 
 describe('slqe/SqlOptimization CE', () => {
   test('should match snap shot', async () => {
-    const { baseElement } = renderWithReduxAndTheme(<SqlOptimization />);
+    const { baseElement } = superRender(<SqlOptimization />);
     expect(baseElement).toMatchSnapshot();
     expect(screen.queryByText('智能调优')).toBeInTheDocument();
   });
