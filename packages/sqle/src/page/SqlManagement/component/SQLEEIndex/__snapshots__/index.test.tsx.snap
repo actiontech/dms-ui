@@ -1825,7 +1825,7 @@ exports[`page/SqlManagement/SQLEEIndex render abnormal status audit plan tips wh
                 >
                   mysql-2
                 </a>
-                上的scanner 即将于2025-06-04 17:05:37过期，为保障SQL管控功能正常运行，请及时重置并更新
+                上的scanner token即将于2025-06-04 17:05:37过期，为保障SQL管控功能正常运行，请及时重置并更新token
               </div>
             </div>
           </div>
@@ -1847,7 +1847,7 @@ exports[`page/SqlManagement/SQLEEIndex render abnormal status audit plan tips wh
                 </a>
               </div>
             </div>
-            上的scanner 已过期，为保障SQL管控功能正常运行，请及时重置并更新
+            上的scanner token已过期，为保障SQL管控功能正常运行，请及时重置并更新token
           </div>
         </div>
       </div>
