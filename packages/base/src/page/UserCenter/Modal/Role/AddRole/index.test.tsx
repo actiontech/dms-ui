@@ -6,8 +6,10 @@ import { ModalName } from '../../../../../data/ModalName';
 import AddRole from '.';
 import EventEmitter from '../../../../../utils/EventEmitter';
 import EmitterKey from '../../../../../data/EmitterKey';
-import { selectOptionByIndex } from '@actiontech/shared/lib/testUtil/customQuery';
-import { queryBySelector } from '@actiontech/shared/lib/testUtil/customQuery';
+import {
+  getAllBySelector,
+  queryBySelector
+} from '@actiontech/shared/lib/testUtil/customQuery';
 
 jest.mock('react-redux', () => ({
   ...jest.requireActual('react-redux'),
@@ -51,7 +53,14 @@ describe('base/UserCenter/Modal/Role/AddRole', () => {
     fireEvent.input(screen.getByLabelText('描述'), {
       target: { value: 'test1' }
     });
-    selectOptionByIndex('操作权限', '创建项目', 0);
+    fireEvent.mouseDown(screen.getByLabelText('操作权限'));
+    expect(
+      getAllBySelector('.ant-select-item-option-content', baseElement)[0]
+        .childNodes[0]
+    ).toHaveTextContent('创建项目');
+    fireEvent.click(
+      getAllBySelector('.ant-select-item-option-content', baseElement)[0]
+    );
     fireEvent.click(screen.getByText('提 交'));
     await act(async () => jest.advanceTimersByTime(0));
     expect(screen.getByText('提 交').parentNode).toHaveClass('ant-btn-loading');

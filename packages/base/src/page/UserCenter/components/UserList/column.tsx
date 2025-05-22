@@ -4,17 +4,12 @@ import {
   ActiontechTableActionMeta
 } from '@actiontech/shared/lib/components/ActiontechTable/index.type';
 import { ListUserStatEnum } from '@actiontech/shared/lib/api/base/service/common.enum';
-import { orderBy } from 'lodash';
 import { t } from '../../../../locale';
 import { TableColumnWithIconStyleWrapper } from '@actiontech/shared/lib/styleWrapper/element';
 import { OpPermissionTypeUid, SystemRole } from '@actiontech/shared/lib/enum';
-import {
-  CheckHexagonOutlined,
-  CloseHexagonOutlined,
-  FlagFilled
-} from '@actiontech/icons';
-import { Space } from 'antd';
-import { BasicTag } from '@actiontech/shared';
+import { CheckHexagonOutlined, CloseHexagonOutlined } from '@actiontech/icons';
+import SystemRoleTagList from '../../../../components/SystemRoleTagList';
+import ProjectTagList from '../../../../components/ProjectTagList';
 
 export const UserListColumns: () => ActiontechTableColumn<IListUser> = () => [
   {
@@ -58,55 +53,12 @@ export const UserListColumns: () => ActiontechTableColumn<IListUser> = () => [
   {
     dataIndex: 'op_permissions',
     title: () => t('dmsUserCenter.user.userList.columns.platformRoles'),
-    render: (list) => {
-      if (!Array.isArray(list) || list.length === 0) {
-        return '-';
-      }
-
-      return (
-        <Space size={0}>
-          {orderBy(list, ['uid'], ['asc']).map((e) => (
-            <BasicTag
-              style={{ height: 28 }}
-              size="small"
-              color="cyan"
-              key={e.uid}
-            >
-              {e.name}
-            </BasicTag>
-          ))}
-        </Space>
-      );
-    }
+    render: (list) => <SystemRoleTagList roles={list} />
   },
   {
     dataIndex: 'projects',
     title: () => t('dmsUserCenter.user.userList.columns.projects'),
-    render: (list) => {
-      if (!Array.isArray(list) || list.length === 0) {
-        return '-';
-      }
-
-      const MAX_PROJECT_NUM = 3;
-      return (
-        <Space size={0}>
-          {list.slice(0, MAX_PROJECT_NUM).map((e) => (
-            <BasicTag style={{ height: 28 }} size="small" color="gray" key={e}>
-              <FlagFilled />
-              {e}
-            </BasicTag>
-          ))}
-
-          {list.length > MAX_PROJECT_NUM && (
-            <BasicTag style={{ height: 28 }} size="small" color="blue">
-              {t('dmsUserCenter.user.userList.columns.projectsCount', {
-                count: list.length - MAX_PROJECT_NUM
-              })}
-            </BasicTag>
-          )}
-        </Space>
-      );
-    }
+    render: (list) => <ProjectTagList projectList={list} />
   }
 ];
 
