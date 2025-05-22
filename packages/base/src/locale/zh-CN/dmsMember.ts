@@ -4,14 +4,20 @@ export default {
   pageDesc: '您可以在成员与权限管理中添加成员，并配置成员权限',
   memberList: {
     title: '成员列表',
-    deleteConfirmTitle: '确定要删除成员:{{name}}?',
-    deleteSuccessTips: '删除成员{{name}}成功',
+    deleteConfirmTitle: '确定要移除成员:{{name}}?',
+    deleteSuccessTips: '移除成员{{name}}成功',
     columns: {
-      opRanges: '平台操作权限',
+      opRanges: '当前项目权限',
       opRangeTips: '格式 角色: [操作范围11,操作范围2 ...]',
-      isProjectAdmin: '项目管理员'
+      isProjectAdmin: '项目管理员',
+      projects: '所属项目',
+      projectsCount: '+{{count}}个项目',
+      platformRoles: '平台角色'
     },
-    allPermission: 'ALL: 拥有对所有数据源的全部操作权限'
+    allPermission: 'ALL: 拥有对所有数据源的全部操作权限',
+    actions: {
+      removeMember: '移除'
+    }
   },
   addMember: {
     modalTitle: '添加成员',
@@ -41,7 +47,7 @@ export default {
     columns: {
       userGroupName: '成员组名',
       users: '用户名',
-      opRanges: '平台操作权限',
+      opRanges: '当前项目权限',
       opRangeTips: '格式 角色: [操作范围11,操作范围2 ...]',
       isProjectAdmin: '项目管理员'
     },

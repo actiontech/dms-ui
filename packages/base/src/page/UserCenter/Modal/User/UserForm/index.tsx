@@ -153,12 +153,18 @@ const UserForm: React.FC<IUserFormProps> = (props) => {
         />
       </Form.Item>
       <Form.Item
-        name="opPermissionUids"
+        name="opPermissionUid"
         label={t('dmsUserCenter.user.userForm.opPermissions')}
+        rules={[
+          {
+            required: true,
+            message: t('common.form.placeholder.select', {
+              name: t('dmsUserCenter.user.userForm.opPermissions')
+            })
+          }
+        ]}
       >
         <BasicSelect
-          mode="multiple"
-          showSearch
           loading={getOpPermissionListLoading}
           placeholder={t('common.form.placeholder.select', {
             name: t('dmsUserCenter.user.userForm.opPermissions')
