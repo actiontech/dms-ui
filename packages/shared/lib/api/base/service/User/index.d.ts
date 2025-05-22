@@ -13,8 +13,7 @@ import {
   IGetUserReply,
   IUpdateUserReq,
   IUserOpPermission,
-  IGetUserOpPermissionReply,
-  IUpdateUserReqV2
+  IGetUserOpPermissionReply
 } from '../common.d';
 
 export interface IListUsersParams {
@@ -74,15 +73,3 @@ export interface IGetUserOpPermissionParams extends IUserOpPermission {
 }
 
 export interface IGetUserOpPermissionReturn extends IGetUserOpPermissionReply {}
-
-export interface IUpdateUserV2Params extends IUpdateUserReqV2 {
-  user_name: string;
-}
-
-export interface IUpdateUserV2Return extends IGenericResp {}
-
-export interface IDelUserV2Params {
-  user_name: string;
-}
-
-export interface IDelUserV2Return extends IGenericResp {}

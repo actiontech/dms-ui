@@ -11,7 +11,10 @@ export default {
       addUserButton: '添加用户',
       columns: {
         status: '状态',
-        authenticationType: '用户认证类型'
+        authenticationType: '用户认证类型',
+        platformRoles: '平台角色',
+        projects: '所属项目',
+        projectsCount: '+{{count}}个项目'
       }
     },
     userForm: {
@@ -23,7 +26,7 @@ export default {
       phone: '手机',
       wxid: '微信ID',
       userGroups: '所属用户组',
-      opPermissions: '平台管理权限',
+      opPermissions: '平台角色',
       isDisabled: '是否禁用',
       disabledTips: '当用户被禁用，该用户将无法登录'
     },
@@ -35,7 +38,8 @@ export default {
       updateSuccessTips: '编辑用户 "{{name}}" 成功'
     },
     deleteUser: {
-      confirmTitle: '确认要删除用户: "{{username}}"?',
+      confirmTitle:
+        '当前用户 "{{username}}" 存在于项目「{{projects}}」中，是否确认删除？',
       deleting: '正在删除用户: "{{username}}..."',
       deleteSuccess: '删除用户 "{{username}}" 成功'
     },
