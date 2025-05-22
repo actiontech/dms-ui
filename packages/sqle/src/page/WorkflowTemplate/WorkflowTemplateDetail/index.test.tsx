@@ -73,7 +73,7 @@ describe('page/WorkflowTemplate/WorkflowTemplateDetail', () => {
       userRoles: {
         ...mockCurrentUserReturn.userRoles,
         [SystemRole.admin]: false,
-        [SystemRole.globalManager]: false
+        [SystemRole.systemAdministrator]: false
       }
     });
     const getInfoRequest = workflowTemplate.getWorkflowTemplate();
@@ -92,7 +92,7 @@ describe('page/WorkflowTemplate/WorkflowTemplateDetail', () => {
       userRoles: {
         ...mockCurrentUserReturn.userRoles,
         [SystemRole.admin]: false,
-        [SystemRole.globalManager]: false
+        [SystemRole.systemAdministrator]: false
       },
       bindProjects: [
         {
@@ -113,7 +113,7 @@ describe('page/WorkflowTemplate/WorkflowTemplateDetail', () => {
       userRoles: {
         ...mockCurrentUserReturn.userRoles,
         [SystemRole.admin]: false,
-        [SystemRole.globalManager]: false
+        [SystemRole.systemAdministrator]: false
       },
       bindProjects: [
         {

@@ -433,7 +433,7 @@ const VersionDetail = () => {
                   : undefined,
                 allowRelease:
                   (userRoles.admin ||
-                    userRoles.globalManager ||
+                    userRoles.systemAdministrator ||
                     hasNextStageCreateWorkflowPermission(node.data.stageId)) &&
                   allowRelease(node.data.workflowList ?? [])
               }
