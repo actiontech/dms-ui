@@ -1,10 +1,11 @@
 import { useTranslation } from 'react-i18next';
 import ChartTooltip from '../../../../components/ChartCom/ChartTooltip';
-import useThemeStyleData from '../../../../hooks/useThemeStyleData';
 import { DBHealthEnum } from './index.enum';
 import { formatParamsBySeparator } from '@actiontech/shared/lib/utils/Tool';
+import { SharedTheme } from '@actiontech/shared/lib/types/theme.type';
+import { SqleTheme } from '../../../../types/theme.type';
 
-const ToolTipCustomContent: React.FC<{
+interface IToolTipCustomContentProps {
   dataSource: Array<{
     value?: string;
     data?: {
@@ -12,9 +13,16 @@ const ToolTipCustomContent: React.FC<{
       category: DBHealthEnum;
     };
   }>;
-}> = ({ dataSource }) => {
+  sharedTheme: SharedTheme;
+  sqleTheme: SqleTheme;
+}
+
+const ToolTipCustomContent: React.FC<IToolTipCustomContentProps> = ({
+  dataSource,
+  sharedTheme,
+  sqleTheme
+}) => {
   const { t } = useTranslation();
-  const { sharedTheme, sqleTheme } = useThemeStyleData();
 
   const comListDataBySource = () => {
     const sourceData = dataSource.filter(

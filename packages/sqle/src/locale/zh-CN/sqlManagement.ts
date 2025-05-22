@@ -16,9 +16,9 @@ export default {
   abnormalAuditPlanTips:
     '上的SQL采集存在问题，为保障SQL管控功能正常运行，请及时进行诊断排查',
   scannerWillExpiredTips:
-    '上的scanner 即将于{{date}}过期，为保障SQL管控功能正常运行，请及时重置并更新',
+    '上的scanner token即将于{{date}}过期，为保障SQL管控功能正常运行，请及时重置并更新token',
   scannerExpiredTips:
-    '上的scanner 已过期，为保障SQL管控功能正常运行，请及时重置并更新',
+    '上的scanner token已过期，为保障SQL管控功能正常运行，请及时重置并更新token',
   ceTips:
     'SQL管控为用户提供SQL全生命周期监控，面板将整合所有的业务SQL，用户可以在该面板中查看项目中采集并审核的所有SQL，暴露其中的问题SQL，同时支持用户解决问题SQL。',
   table: {
