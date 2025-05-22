@@ -135,7 +135,11 @@ const DataSourceCount = () => {
         showMarkers: false,
         fields: ['type', 'value'],
         customContent: (_, dataSource) => (
-          <ToolTipCustomContent dataSource={dataSource} />
+          <ToolTipCustomContent
+            dataSource={dataSource}
+            sharedTheme={sharedTheme}
+            sqleTheme={sqleTheme}
+          />
         )
       }
     };
