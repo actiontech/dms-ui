@@ -1,5 +1,5 @@
 import SqlAuditStatusFilter from '.';
-import { renderWithReduxAndTheme } from '@actiontech/shared/lib/testUtil/customRender';
+import { superRender } from '@actiontech/shared/lib/testUtil/superRender';
 import { fireEvent, screen, act, cleanup } from '@testing-library/react';
 
 describe('sqle/SqlAudit/SqlAuditStatusFilter', () => {
@@ -13,7 +13,7 @@ describe('sqle/SqlAudit/SqlAuditStatusFilter', () => {
   });
 
   it('should match snap shot when status is all', async () => {
-    const { baseElement } = renderWithReduxAndTheme(
+    const { baseElement } = superRender(
       <SqlAuditStatusFilter status="all" onChange={jest.fn()} />
     );
     expect(baseElement).toMatchSnapshot();

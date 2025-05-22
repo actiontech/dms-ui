@@ -1,7 +1,7 @@
 import {
-  renderWithReduxAndTheme,
-  renderHooksWithTheme
-} from '@actiontech/shared/lib/testUtil/customRender';
+  superRender,
+  superRenderHook
+} from '@actiontech/shared/lib/testUtil/superRender';
 import { Form } from 'antd';
 import MemberForm from '../MemberForm';
 import { screen } from '@testing-library/react';
@@ -10,10 +10,8 @@ import { IMemberFormFields } from '../../index.type';
 
 describe('base/Member/Modal/MemberForm', () => {
   const customRender = (isUpdate?: boolean) => {
-    const { result } = renderHooksWithTheme(() =>
-      Form.useForm<IMemberFormFields>()
-    );
-    const { baseElement } = renderWithReduxAndTheme(
+    const { result } = superRenderHook(() => Form.useForm<IMemberFormFields>());
+    const { baseElement } = superRender(
       <MemberForm
         form={result.current[0]}
         projectID={mockProjectInfo.projectID}

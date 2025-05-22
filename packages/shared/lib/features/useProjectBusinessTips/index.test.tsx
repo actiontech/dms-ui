@@ -7,14 +7,14 @@ import {
 } from '@testing-library/react';
 import useProjectBusinessTips from '.';
 import { Select } from 'antd';
-import project from '../../../../base/src/testUtils/mockApi/project';
-import { mockProjectTips } from '../../../../base/src/testUtils/mockApi/project/data';
+import project from '../../testUtil/mockApi/base/project';
+import { mockProjectTips } from '../../testUtil/mockApi/base/project/data';
 import { mockUseCurrentProject } from '../../testUtil/mockHook/mockUseCurrentProject';
 import {
   createSpyFailResponse,
   createSpyErrorResponse
 } from '../../testUtil/mockApi';
-import { superRender } from '../../testUtil/customRender';
+import { superRender } from '../../testUtil/superRender';
 
 describe('useProjectBusinessTips', () => {
   let getProjectTipsSpy: jest.SpyInstance;

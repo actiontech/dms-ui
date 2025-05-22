@@ -1,13 +1,13 @@
 import { cleanup, act, screen, fireEvent } from '@testing-library/react';
 import { useSelector, useDispatch } from 'react-redux';
 import OfflineExecModal from '../index';
-import { superRender } from '../../../../../..//testUtils/customRender';
+import { sqleSuperRender } from '../../../../../../testUtils/superRender';
 import { mockUseCurrentProject } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentProject';
 import { mockProjectInfo } from '@actiontech/shared/lib/testUtil/mockHook/data';
 import { mockUseCurrentUser } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentUser';
 import { mockUseDbServiceDriver } from '@actiontech/shared/lib/testUtil/mockHook/mockUseDbServiceDriver';
 import { ModalName } from '../../../../../../data/ModalName';
-import workflow from '../../../../../../testUtils/mockApi/execWorkflow';
+import workflow from '@actiontech/shared/lib/testUtil/mockApi/sqle/execWorkflow';
 import { getBySelector } from '@actiontech/shared/lib/testUtil/customQuery';
 import EmitterKey from '../../../../../../data/EmitterKey';
 import EventEmitter from '../../../../../../utils/EventEmitter';
@@ -49,7 +49,7 @@ describe('sqle/VersionManagement/Detail/OfflineExecModal', () => {
   });
 
   it('render init snap shot', async () => {
-    const { baseElement } = superRender(<OfflineExecModal />);
+    const { baseElement } = sqleSuperRender(<OfflineExecModal />);
     await act(async () => jest.advanceTimersByTime(0));
     expect(baseElement).toMatchSnapshot();
     expect(screen.getByText('线下执行')).toBeInTheDocument();
@@ -57,7 +57,7 @@ describe('sqle/VersionManagement/Detail/OfflineExecModal', () => {
 
   it('render complete workflow', async () => {
     const eventEmitSpy = jest.spyOn(EventEmitter, 'emit');
-    superRender(<OfflineExecModal />);
+    sqleSuperRender(<OfflineExecModal />);
     await act(async () => jest.advanceTimersByTime(3000));
     fireEvent.change(getBySelector('#remarks'), {
       target: { value: 'test remarks' }

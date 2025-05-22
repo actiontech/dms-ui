@@ -1,15 +1,15 @@
 import EnvironmentField from '../index';
-import { superRender } from '../../../../../../testUtils/customRender';
-import project from '../../../../../../testUtils/mockApi/project';
+import { baseSuperRender } from '../../../../../../testUtils/superRender';
+import project from '@actiontech/shared/lib/testUtil/mockApi/base/project';
 import { act, cleanup, fireEvent, screen } from '@testing-library/react';
 import {
   getBySelector,
   getAllBySelector
 } from '@actiontech/shared/lib/testUtil/customQuery';
 import { createSpySuccessResponse } from '@actiontech/shared/lib/testUtil/mockApi';
-import dms from '../../../../../../testUtils/mockApi/global';
+import dms from '@actiontech/shared/lib/testUtil/mockApi/base/global';
 import { mockProjectInfo } from '@actiontech/shared/lib/testUtil/mockHook/data';
-import { DBServicesList } from '../../../../../../testUtils/mockApi/global/data';
+import { DBServicesList } from '@actiontech/shared/lib/testUtil/mockApi/base/global/data';
 
 describe('Project/EnvironmentField', () => {
   let listEnvironmentTagsSpy: jest.SpyInstance;
@@ -33,7 +33,7 @@ describe('Project/EnvironmentField', () => {
   });
 
   const customRender = () => {
-    return superRender(
+    return baseSuperRender(
       <EnvironmentField projectID={mockProjectInfo.projectID} />
     );
   };

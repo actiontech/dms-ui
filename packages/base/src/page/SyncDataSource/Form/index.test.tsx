@@ -1,12 +1,12 @@
 import { act, cleanup, fireEvent } from '@testing-library/react';
-import { superRender } from '../../../testUtils/customRender';
+import { baseSuperRender } from '../../../testUtils/superRender';
 import { getBySelector } from '@actiontech/shared/lib/testUtil/customQuery';
 import { Form } from 'antd';
 import { IGetDBServiceSyncTask } from '@actiontech/shared/lib/api/base/service/common';
 import SyncTaskForm from '.';
-import { renderHooksWithTheme } from '@actiontech/shared/lib/testUtil/customRender';
-import syncTaskList from '../../../testUtils/mockApi/syncTaskList';
-import ruleTemplate from 'sqle/src/testUtils/mockApi/rule_template';
+import { superRenderHook } from '@actiontech/shared/lib/testUtil/superRender';
+import syncTaskList from '@actiontech/shared/lib/testUtil/mockApi/base/syncTaskList';
+import ruleTemplate from '@actiontech/shared/lib/testUtil/mockApi/sqle/rule_template';
 import useTaskSource from '../../../hooks/useTaskSource';
 import { mockUseDbServiceDriver } from '@actiontech/shared/lib/testUtil/mockHook/mockUseDbServiceDriver';
 import { SyncTaskFormFields } from './index.type';
@@ -16,16 +16,14 @@ describe('page/SyncDataSource/SyncTaskForm', () => {
     loading?: boolean;
     defaultValue?: IGetDBServiceSyncTask;
   }) => {
-    const { result } = renderHooksWithTheme(() =>
+    const { result } = superRenderHook(() =>
       Form.useForm<SyncTaskFormFields>()
     );
-    const { result: taskSourceTips } = renderHooksWithTheme(() =>
-      useTaskSource()
-    );
+    const { result: taskSourceTips } = superRenderHook(() => useTaskSource());
     const isLoading = params?.loading ?? false;
     const defaultData = params?.defaultValue ?? undefined;
 
-    return superRender(
+    return baseSuperRender(
       <SyncTaskForm
         form={result.current[0]}
         defaultValue={defaultData}

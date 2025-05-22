@@ -1,8 +1,8 @@
 import UpdatePassword from '../UpdatePassword';
 import { useDispatch } from 'react-redux';
-import account from '../../../../testUtils/mockApi/account';
+import account from '@actiontech/shared/lib/testUtil/mockApi/base/account';
 import { act, fireEvent, screen } from '@testing-library/react';
-import { superRender } from '../../../../testUtils/customRender';
+import { baseSuperRender } from '../../../../testUtils/superRender';
 
 jest.mock('react-redux', () => {
   return {
@@ -14,7 +14,7 @@ jest.mock('react-redux', () => {
 describe('test base/page/Account/UpdatePassword', () => {
   const onCloseSpy = jest.fn();
   const customRender = () => {
-    return superRender(<UpdatePassword open onClose={onCloseSpy} />);
+    return baseSuperRender(<UpdatePassword open onClose={onCloseSpy} />);
   };
 
   const scopeDispatch = jest.fn();

@@ -1,11 +1,11 @@
 import AuditResultList from '..';
 import { AuditResultListProps } from '../index.type';
-import { superRender } from '../../../../../testUtils/customRender';
+import { sqleSuperRender } from '../../../../../testUtils/superRender';
 import { act, cleanup, fireEvent, screen } from '@testing-library/react';
 import { IAuditTaskSQLResV2 } from '@actiontech/shared/lib/api/sqle/service/common';
 import { createSpySuccessResponse } from '@actiontech/shared/lib/testUtil/mockApi';
 import { getAllBySelector } from '@actiontech/shared/lib/testUtil/customQuery';
-import execWorkflow from '../../../../../testUtils/mockApi/execWorkflow';
+import execWorkflow from '@actiontech/shared/lib/testUtil/mockApi/sqle/execWorkflow';
 import { mockUseCurrentProject } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentProject';
 import {
   UtilsConsoleErrorStringsEnum,
@@ -14,7 +14,7 @@ import {
 import { mockUseCurrentUser } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentUser';
 import { useSelector } from 'react-redux';
 import { ModalName } from '../../../../../data/ModalName';
-import { mockSqlExecWorkflowTasksData } from '../../../../../testUtils/mockApi/execWorkflow/data';
+import { mockSqlExecWorkflowTasksData } from '@actiontech/shared/lib/testUtil/mockApi/sqle/execWorkflow/data';
 
 jest.mock('react-redux', () => {
   return {
@@ -27,7 +27,7 @@ describe('sqle/ExecWorkflow/Common/AuditResultList', () => {
   const updateTaskRecordCountSpy = jest.fn();
   let requestGetAuditTaskSQLs: jest.SpyInstance;
   const customRender = (params: AuditResultListProps) => {
-    return superRender(
+    return sqleSuperRender(
       <AuditResultList
         updateTaskRecordCount={updateTaskRecordCountSpy}
         {...params}

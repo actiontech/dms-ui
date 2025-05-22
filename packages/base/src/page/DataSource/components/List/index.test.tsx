@@ -1,18 +1,18 @@
 import { act, cleanup, fireEvent, screen } from '@testing-library/react';
 import { useNavigate, useParams } from 'react-router-dom';
-import { superRender } from '../../../../testUtils/customRender';
+import { baseSuperRender } from '../../../../testUtils/superRender';
 import {
   getAllBySelector,
   getBySelector
 } from '@actiontech/shared/lib/testUtil/customQuery';
-import dms from '../../../../testUtils/mockApi/global';
-import { DBServicesList } from '../../../../testUtils/mockApi/global/data';
+import dms from '@actiontech/shared/lib/testUtil/mockApi/base/global';
+import { DBServicesList } from '@actiontech/shared/lib/testUtil/mockApi/base/global/data';
 import { mockProjectInfo } from '@actiontech/shared/lib/testUtil/mockHook/data';
 import { SupportTheme, SystemRole } from '@actiontech/shared/lib/enum';
 import { createSpySuccessResponse } from '@actiontech/shared/lib/testUtil/mockApi';
 import DataSourceList from '.';
-import dbServices from '../../../../testUtils/mockApi/dbServices';
-import project from '../../../../testUtils/mockApi/project';
+import dbServices from '@actiontech/shared/lib/testUtil/mockApi/base/dbServices';
+import project from '@actiontech/shared/lib/testUtil/mockApi/base/project';
 
 jest.mock('react-router-dom', () => {
   return {
@@ -29,7 +29,7 @@ describe('page/DataSource/DataSourceList', () => {
   let CheckProjectDBServicesConnectionsSpy: jest.SpyInstance;
 
   const customRender = (params = {}) => {
-    return superRender(<DataSourceList />, undefined, {
+    return baseSuperRender(<DataSourceList />, undefined, {
       initStore: {
         user: {
           username: 'admin',

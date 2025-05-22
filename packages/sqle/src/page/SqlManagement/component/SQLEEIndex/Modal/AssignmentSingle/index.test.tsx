@@ -1,17 +1,17 @@
 import { act, cleanup, fireEvent, screen } from '@testing-library/react';
 import AssignmentSingle from '.';
-import { superRender } from '../../../../../../testUtils/customRender';
-import user from '../../../../../../testUtils/mockApi/user';
+import { sqleSuperRender } from '../../../../../../testUtils/superRender';
+import user from '@actiontech/shared/lib/testUtil/mockApi/sqle/user';
 import { mockUseCurrentProject } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentProject';
 import { ModalName } from '../../../../../../data/ModalName';
-import { sqlManageListData } from '../../../../../../testUtils/mockApi/sqlManage/data';
-import sqlManage from '../../../../../../testUtils/mockApi/sqlManage';
+import { sqlManageListData } from '@actiontech/shared/lib/testUtil/mockApi/sqle/sqlManage/data';
+import sqlManage from '@actiontech/shared/lib/testUtil/mockApi/sqle/sqlManage';
 import { mockProjectInfo } from '@actiontech/shared/lib/testUtil/mockHook/data';
 import {
   getAllBySelector,
   getBySelector
 } from '@actiontech/shared/lib/testUtil/customQuery';
-import { userTipListData } from '../../../../../../testUtils/mockApi/user/data';
+import { userTipListData } from '@actiontech/shared/lib/testUtil/mockApi/sqle/user/data';
 import EventEmitter from '../../../../../../utils/EventEmitter';
 import { useDispatch } from 'react-redux';
 import EmitterKey from '../../../../../../data/EmitterKey';
@@ -39,7 +39,7 @@ describe('page/SqlManagement/AssignmentSingle', () => {
   });
 
   const customRender = (data?: boolean) => {
-    return superRender(<AssignmentSingle />, undefined, {
+    return sqleSuperRender(<AssignmentSingle />, undefined, {
       initStore: {
         sqlManagement: {
           modalStatus: {

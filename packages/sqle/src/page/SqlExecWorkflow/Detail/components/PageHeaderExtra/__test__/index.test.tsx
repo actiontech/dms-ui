@@ -7,8 +7,8 @@ import {
   WorkflowStepResV2TypeEnum
 } from '@actiontech/shared/lib/api/sqle/service/common.enum';
 import { getBySelector } from '@actiontech/shared/lib/testUtil/customQuery';
-import workflow from '../../../../../../testUtils/mockApi/workflowTemplate';
-import { superRender } from '../../../../../../testUtils/customRender';
+import workflow from '@actiontech/shared/lib/testUtil/mockApi/sqle/workflowTemplate';
+import { sqleSuperRender } from '../../../../../../testUtils/superRender';
 import { mockUseCurrentProject } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentProject';
 import { OpPermissionTypeUid } from '@actiontech/shared/lib/enum';
 import { mockProjectInfo } from '@actiontech/shared/lib/testUtil/mockHook/data';
@@ -33,7 +33,7 @@ describe('sqle/SqlExecWorkflow/Detail/WorkflowDetailPageHeaderExtra', () => {
   const startRollback = jest.fn();
   const showModifySqlStatementStep = jest.fn();
   const customRender = (params: paramsType) => {
-    return superRender(
+    return sqleSuperRender(
       <WorkflowDetailPageHeaderExtra
         refreshWorkflow={jest.fn(() => Promise.resolve())}
         passAction={jest.fn(() => Promise.resolve())}

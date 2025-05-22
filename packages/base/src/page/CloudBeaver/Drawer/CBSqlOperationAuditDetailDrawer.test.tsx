@@ -1,11 +1,11 @@
 import { act, cleanup, fireEvent, screen } from '@testing-library/react';
 import CBSqlOperationAuditDetailDrawer from './CBSqlOperationAuditDetailDrawer';
-import { superRender } from '../../../testUtils/customRender';
+import { baseSuperRender } from '../../../testUtils/superRender';
 import { useDispatch, useSelector } from 'react-redux';
 import { getBySelector } from '@actiontech/shared/lib/testUtil/customQuery';
 import { ModalName } from '../../../data/ModalName';
-import rule_template from 'sqle/src/testUtils/mockApi/rule_template/index';
-import { listCBOperationLogsMockData } from '../../../testUtils/mockApi/cloudBeaver/data';
+import rule_template from '@actiontech/shared/lib/testUtil/mockApi/sqle/rule_template/index';
+import { listCBOperationLogsMockData } from '@actiontech/shared/lib/testUtil/mockApi/base/cloudBeaver/data';
 import { mockUseCurrentProject } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentProject';
 import { mockUseCurrentUser } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentUser';
 import {
@@ -51,7 +51,9 @@ describe('base/CloudBeaver/CBSqlOperationAuditDetailDrawer', () => {
   ignoreConsoleErrors([UtilsConsoleErrorStringsEnum.UNKNOWN_EVENT_HANDLER]);
 
   it('should match snap shot', async () => {
-    const { baseElement } = superRender(<CBSqlOperationAuditDetailDrawer />);
+    const { baseElement } = baseSuperRender(
+      <CBSqlOperationAuditDetailDrawer />
+    );
     expect(mockDispatch).toHaveBeenCalled();
     expect(mockDispatch).toHaveBeenCalledWith({
       type: 'cloudBeaver/initModalStatus',
@@ -70,7 +72,7 @@ describe('base/CloudBeaver/CBSqlOperationAuditDetailDrawer', () => {
   });
 
   it('close modal', async () => {
-    superRender(<CBSqlOperationAuditDetailDrawer />);
+    baseSuperRender(<CBSqlOperationAuditDetailDrawer />);
     await act(async () => jest.advanceTimersByTime(3000));
     fireEvent.click(getBySelector('.closed-icon-custom'));
     await act(async () => jest.advanceTimersByTime(300));

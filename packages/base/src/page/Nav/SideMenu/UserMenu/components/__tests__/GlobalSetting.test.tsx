@@ -1,6 +1,6 @@
 import GlobalSetting from '../GlobalSetting';
 import { useNavigate } from 'react-router-dom';
-import { superRender } from '../../../../../../testUtils/customRender';
+import { baseSuperRender } from '../../../../../../testUtils/superRender';
 import { act, cleanup, fireEvent, screen } from '@testing-library/react';
 import {
   getAllBySelector,
@@ -36,7 +36,7 @@ describe('base/page/Nav/SideMenu/GlobalSetting', () => {
       { useSpyOnMockHooks: true }
     );
 
-    const { baseElement } = superRender(<GlobalSetting />);
+    const { baseElement } = baseSuperRender(<GlobalSetting />);
     expect(baseElement).toMatchSnapshot();
   });
 
@@ -47,7 +47,7 @@ describe('base/page/Nav/SideMenu/GlobalSetting', () => {
       },
       { useSpyOnMockHooks: true }
     );
-    const { baseElement } = superRender(<GlobalSetting />);
+    const { baseElement } = baseSuperRender(<GlobalSetting />);
     expect(baseElement).toMatchSnapshot();
 
     const iconSystem = getBySelector('.custom-icon-global-system', baseElement);

@@ -3,10 +3,10 @@ import ConfigExtraButtons, {
 } from './ConfigExtraButtons';
 
 import { cleanup, fireEvent, act } from '@testing-library/react';
-import { renderWithTheme } from '@actiontech/shared/lib/testUtil/customRender';
+import { superRender } from '@actiontech/shared/lib/testUtil/superRender';
 import { getAllBySelector } from '@actiontech/shared/lib/testUtil/customQuery';
 
-import system from '../../../../../testUtils/mockApi/system';
+import system from '@actiontech/shared/lib/testUtil/mockApi/base/system';
 import { createSpySuccessResponse } from '@actiontech/shared/lib/testUtil/mockApi';
 import { mockUseCurrentUser } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentUser';
 
@@ -16,7 +16,7 @@ describe('base/System/ProcessConnection/DingTalkSetting/ConfigExtraButtons', () 
   const customRender = (
     params: Omit<ConfigExtraButtonsProps, 'handleClickModify'>
   ) => {
-    return renderWithTheme(
+    return superRender(
       <ConfigExtraButtons {...params} handleClickModify={handleClickModifyFn} />
     );
   };

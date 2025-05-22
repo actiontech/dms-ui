@@ -1,6 +1,6 @@
 import { useDispatch, useSelector } from 'react-redux';
 import { act, cleanup } from '@testing-library/react';
-import { superRender } from '../../../../../testUtils/customRender';
+import { sqleSuperRender } from '../../../../../testUtils/superRender';
 import { ModalName } from '../../../../../data/ModalName';
 import SqlManagementModal from './index';
 import { mockUseCurrentUser } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentUser';
@@ -42,7 +42,7 @@ describe('test init sql manage modal', () => {
   });
 
   it('init modal status data', async () => {
-    const { container } = superRender(<SqlManagementModal />);
+    const { container } = sqleSuperRender(<SqlManagementModal />);
     await act(async () => jest.advanceTimersByTime(3000));
     expect(container).toMatchInlineSnapshot('<div />');
     expect(mockDispatch).toHaveBeenCalledTimes(3);

@@ -10,7 +10,7 @@ import {
   mockUseExportDetailAction
 } from '../../../testUtils/mockUseExportDetailAction';
 import { IGetDataExportWorkflow } from '@actiontech/shared/lib/api/base/service/common';
-import { GetDataExportWorkflowResponseData } from '../../../../../../testUtils/mockApi/dataExport/data';
+import { GetDataExportWorkflowResponseData } from '@actiontech/shared/lib/testUtil/mockApi/base/dataExport/data';
 import { WorkflowRecordStatusEnum } from '@actiontech/shared/lib/api/base/service/common.enum';
 
 const notExistCurrentStepWorkflowInfo: IGetDataExportWorkflow = {

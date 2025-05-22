@@ -1,6 +1,6 @@
 import { act, cleanup, fireEvent, screen } from '@testing-library/react';
 import RollbackWorkflowEntry from '../RollbackWorkflowEntry';
-import { superRender } from '../../../../../../../../../../testUtils/customRender';
+import { sqleSuperRender } from '../../../../../../../../../../testUtils/superRender';
 import { mockUseCurrentProject } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentProject';
 
 describe('sqle/ExecWorkflow/AuditDetail/RollbackWorkflowEntry', () => {
@@ -16,14 +16,14 @@ describe('sqle/ExecWorkflow/AuditDetail/RollbackWorkflowEntry', () => {
   });
 
   it('render snap when value is empty', async () => {
-    const { baseElement } = superRender(
+    const { baseElement } = sqleSuperRender(
       <RollbackWorkflowEntry workflows={[]} />
     );
     expect(baseElement).toMatchSnapshot();
   });
 
   it('render drop down menu', async () => {
-    const { baseElement } = superRender(
+    const { baseElement } = sqleSuperRender(
       <RollbackWorkflowEntry
         workflows={[
           {

@@ -2,14 +2,17 @@ import { mockProjectInfo } from '@actiontech/shared/lib/testUtil/mockHook/data';
 import { act, cleanup } from '@testing-library/react';
 import { useDispatch } from 'react-redux';
 import {
-  renderWithReduxAndTheme,
-  renderHooksWithTheme
-} from '@actiontech/shared/lib/testUtil/customRender';
+  superRender,
+  superRenderHook
+} from '@actiontech/shared/lib/testUtil/superRender';
 import BaseInfoForm from '.';
-import configuration from '../../../../testUtils/mockApi/configuration';
+import {
+  sqleMockApi,
+  mockUsePermission
+} from '@actiontech/shared/lib/testUtil';
 import { Form } from 'antd';
 import { RuleTemplateBaseInfoFields } from './index.type';
-import { mockUsePermission } from '@actiontech/shared/lib/testUtil/mockHook/mockUsePermission';
+// import { mockUsePermission } from '@actiontech/shared/lib/testUtil/mockHook/mockUsePermission';
 
 jest.mock('react-redux', () => ({
   ...jest.requireActual('react-redux'),
@@ -19,9 +22,12 @@ jest.mock('react-redux', () => ({
 describe('sqle/RuleTemplate/BaseInfoForm', () => {
   const dispatchSpy = jest.fn();
   let getDriversSpy: jest.SpyInstance;
+  let mockGetDriverRuleVersionTipsSpy: jest.SpyInstance;
   beforeEach(() => {
     (useDispatch as jest.Mock).mockImplementation(() => dispatchSpy);
-    getDriversSpy = configuration.getDrivers();
+    getDriversSpy = sqleMockApi.configuration.getDrivers();
+    mockGetDriverRuleVersionTipsSpy =
+      sqleMockApi.rule_template.mockGetDriverRuleVersionTips();
     mockUsePermission(undefined, {
       useSpyOnMockHooks: true
     });
@@ -34,10 +40,10 @@ describe('sqle/RuleTemplate/BaseInfoForm', () => {
   });
 
   it('should match snap shot', async () => {
-    const { result } = renderHooksWithTheme(() =>
+    const { result } = superRenderHook(() =>
       Form.useForm<RuleTemplateBaseInfoFields>()
     );
-    const { baseElement } = renderWithReduxAndTheme(
+    const { baseElement } = superRender(
       <BaseInfoForm
         mode="create"
         form={result.current[0]}
@@ -49,14 +55,15 @@ describe('sqle/RuleTemplate/BaseInfoForm', () => {
     );
     await act(async () => jest.advanceTimersByTime(3000));
     expect(getDriversSpy).toHaveBeenCalledTimes(1);
+    expect(mockGetDriverRuleVersionTipsSpy).toHaveBeenCalledTimes(1);
     expect(baseElement).toMatchSnapshot();
   });
 
   it('should disabled dbType when form mode is import', async () => {
-    const { result } = renderHooksWithTheme(() =>
+    const { result } = superRenderHook(() =>
       Form.useForm<RuleTemplateBaseInfoFields>()
     );
-    const { getByLabelText } = renderWithReduxAndTheme(
+    const { getByLabelText } = superRender(
       <BaseInfoForm
         mode="import"
         form={result.current[0]}

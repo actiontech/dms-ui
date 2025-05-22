@@ -1,7 +1,7 @@
 import { cleanup, act } from '@testing-library/react';
-import { renderWithThemeAndRedux } from '../../../../../../testUtils/customRender';
+import { sqleSuperRender } from '../../../../../../testUtils/superRender';
 
-import statistic from '../../../../../../testUtils/mockApi/statistic';
+import statistic from '@actiontech/shared/lib/testUtil/mockApi/sqle/statistic';
 import {
   ignoreConsoleErrors,
   UtilsConsoleErrorStringsEnum
@@ -20,7 +20,7 @@ describe('ReportStatistics/LicenseStatistics', () => {
   ]);
   let requestPlotsData: jest.SpyInstance;
   const customRender = () => {
-    return renderWithThemeAndRedux(<LicenseStatistics />);
+    return sqleSuperRender(<LicenseStatistics />);
   };
 
   beforeEach(() => {

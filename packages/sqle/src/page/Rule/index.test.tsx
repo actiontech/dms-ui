@@ -2,13 +2,13 @@ import { cleanup, act, fireEvent, screen } from '@testing-library/react';
 import { mockUseCurrentUser } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentUser';
 import { mockUseDbServiceDriver } from '@actiontech/shared/lib/testUtil/mockHook/mockUseDbServiceDriver';
 import Rule from '.';
-import rule_template from '../../testUtils/mockApi/rule_template';
+import rule_template from '@actiontech/shared/lib/testUtil/mockApi/sqle/rule_template';
 import {
   getAllBySelector,
   getBySelector,
   queryBySelector
 } from '@actiontech/shared/lib/testUtil/customQuery';
-import { superRender } from '../../testUtils/customRender';
+import { sqleSuperRender } from '../../testUtils/superRender';
 import { createSpySuccessResponse } from '@actiontech/shared/lib/testUtil/mockApi';
 import Project from '@actiontech/shared/lib/api/base/service/Project';
 import { DatabaseTypeLogo } from '@actiontech/shared';
@@ -122,7 +122,7 @@ describe('sqle/Rule', () => {
   });
 
   it('should render Rule component correctly and match snapshot', async () => {
-    const { baseElement } = superRender(<Rule />);
+    const { baseElement } = sqleSuperRender(<Rule />);
     await act(async () => jest.advanceTimersByTime(3000));
     expect(getGlobalTemplateListSpy).toHaveBeenCalledTimes(1);
     await act(async () => jest.advanceTimersByTime(3000));
@@ -152,7 +152,7 @@ describe('sqle/Rule', () => {
   });
 
   it('should toggle filter visibility when clicking the toggle button', async () => {
-    const { baseElement } = superRender(<Rule />);
+    const { baseElement } = sqleSuperRender(<Rule />);
     await act(async () => jest.advanceTimersByTime(3000));
 
     // 筛选条件最初应该是隐藏的
@@ -176,13 +176,13 @@ describe('sqle/Rule', () => {
   it('should show empty state when request returns no data', async () => {
     getAllRulesSpy.mockClear();
     getAllRulesSpy.mockImplementation(() => createSpySuccessResponse({}));
-    const { baseElement } = superRender(<Rule />);
+    const { baseElement } = sqleSuperRender(<Rule />);
     await act(async () => jest.advanceTimersByTime(6000));
     expect(baseElement).toMatchSnapshot();
   });
 
   it('should filter list based on rule name correctly', async () => {
-    const { baseElement } = superRender(<Rule />);
+    const { baseElement } = sqleSuperRender(<Rule />);
     await act(async () => jest.advanceTimersByTime(3000));
     expect(getGlobalTemplateListSpy).toHaveBeenCalledTimes(1);
     await act(async () => jest.advanceTimersByTime(3000));
@@ -288,7 +288,7 @@ describe('sqle/Rule', () => {
         }
       }
     );
-    const { baseElement } = superRender(<Rule />);
+    const { baseElement } = sqleSuperRender(<Rule />);
     await act(async () => jest.advanceTimersByTime(3000));
     expect(getGlobalTemplateListSpy).toHaveBeenCalledTimes(1);
     await act(async () => jest.advanceTimersByTime(3000));
@@ -331,7 +331,7 @@ describe('sqle/Rule', () => {
     getProjectRuleTemplateTipsSpy.mockImplementation(() =>
       createSpySuccessResponse({})
     );
-    const { baseElement: baseElement2 } = superRender(<Rule />);
+    const { baseElement: baseElement2 } = sqleSuperRender(<Rule />);
     await act(async () => jest.advanceTimersByTime(6000));
     fireEvent.mouseDown(getBySelector('#project_name', baseElement2));
     await act(async () => jest.advanceTimersByTime(300));
@@ -350,7 +350,7 @@ describe('sqle/Rule', () => {
   });
 
   it('should filter list based on template name correctly', async () => {
-    const { baseElement } = superRender(<Rule />);
+    const { baseElement } = sqleSuperRender(<Rule />);
     await act(async () => jest.advanceTimersByTime(3000));
     expect(getGlobalTemplateListSpy).toHaveBeenCalledTimes(1);
     await act(async () => jest.advanceTimersByTime(3000));
@@ -381,7 +381,7 @@ describe('sqle/Rule', () => {
   });
 
   it('should filter list based on database type correctly', async () => {
-    const { baseElement } = superRender(<Rule />);
+    const { baseElement } = sqleSuperRender(<Rule />);
     await act(async () => jest.advanceTimersByTime(3000));
     expect(getGlobalTemplateListSpy).toHaveBeenCalledTimes(1);
     await act(async () => jest.advanceTimersByTime(3000));
@@ -398,7 +398,7 @@ describe('sqle/Rule', () => {
   });
 
   it('should filter list by rule category correctly', async () => {
-    superRender(<Rule />);
+    sqleSuperRender(<Rule />);
     await act(async () => jest.advanceTimersByTime(3000));
     expect(getGlobalTemplateListSpy).toHaveBeenCalledTimes(1);
     await act(async () => jest.advanceTimersByTime(3000));
@@ -488,7 +488,7 @@ describe('sqle/Rule', () => {
     getProjectRuleTemplateTipsSpy.mockImplementation(() =>
       createSpySuccessResponse({})
     );
-    const { baseElement } = superRender(<Rule />);
+    const { baseElement } = sqleSuperRender(<Rule />);
     await act(async () => jest.advanceTimersByTime(6000));
     fireEvent.mouseDown(getBySelector('#project_name', baseElement));
     await act(async () => jest.advanceTimersByTime(300));
@@ -502,7 +502,7 @@ describe('sqle/Rule', () => {
   });
 
   it('should handle URL parameters correctly and load appropriate project data', async () => {
-    superRender(<Rule />, undefined, {
+    sqleSuperRender(<Rule />, undefined, {
       routerProps: { initialEntries: ['/rule?projectID=1'] }
     });
     await act(async () => jest.advanceTimersByTime(3300));

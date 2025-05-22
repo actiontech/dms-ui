@@ -1,8 +1,8 @@
 import { exportWorkflowV1FilterStatusEnum } from '@actiontech/shared/lib/api/sqle/service/workflow/index.enum';
-import { superRender } from '../../../../../testUtils/customRender';
+import { sqleSuperRender } from '../../../../../testUtils/superRender';
 import ExportWorkflowButton from '../ExportWorkflowButton';
 import { fireEvent } from '@testing-library/dom';
-import execWorkflow from '../../../../../testUtils/mockApi/execWorkflow';
+import execWorkflow from '@actiontech/shared/lib/testUtil/mockApi/sqle/execWorkflow';
 import { mockUseCurrentProject } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentProject';
 import { mockProjectInfo } from '@actiontech/shared/lib/testUtil/mockHook/data';
 import { act } from '@testing-library/react';
@@ -32,7 +32,7 @@ describe('test ExportWorkflowButton', () => {
     jest.clearAllTimers();
   });
   it('should be called request with params when the button is clicked', async () => {
-    const { getByText } = superRender(
+    const { getByText } = sqleSuperRender(
       <ExportWorkflowButton
         tableFilterInfo={{
           filter_task_execute_start_time_from: '2024-05-01T17:02:21+08:00',

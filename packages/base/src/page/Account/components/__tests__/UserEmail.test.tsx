@@ -1,8 +1,8 @@
 import UserEmail from '../UserEmail';
 import { act, fireEvent } from '@testing-library/react';
 import { getBySelector } from '@actiontech/shared/lib/testUtil/customQuery';
-import account from '../../../../testUtils/mockApi/account';
-import { superRender } from '../../../../testUtils/customRender';
+import account from '@actiontech/shared/lib/testUtil/mockApi/base/account';
+import { baseSuperRender } from '../../../../testUtils/superRender';
 
 describe('test base/page/Account/UserEmail', () => {
   const updateUserInfoSpy = jest.fn();
@@ -10,7 +10,7 @@ describe('test base/page/Account/UserEmail', () => {
   const messageErrorSpy = jest.fn();
 
   const customRender = (email?: string) => {
-    return superRender(
+    return baseSuperRender(
       <UserEmail
         messageApi={{
           success: messageSuccessSpy,

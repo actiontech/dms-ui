@@ -1,4 +1,4 @@
-import { renderWithReduxAndTheme } from '@actiontech/shared/lib/testUtil/customRender';
+import { superRender } from '@actiontech/shared/lib/testUtil/superRender';
 import renderRolesInfo from '../renderRolesInfo';
 import { ListMemberRoleWithOpRangeOpRangeTypeEnum } from '@actiontech/shared/lib/api/base/service/common.enum';
 
@@ -14,16 +14,14 @@ describe('base/Member/Common/renderRolesInfo', () => {
     }
   ];
   it('should match snapshot when ellipsis is falsy', () => {
-    const { baseElement } = renderWithReduxAndTheme(
+    const { baseElement } = superRender(
       <>{renderRolesInfo(mockData, false)}</>
     );
     expect(baseElement).toMatchSnapshot();
   });
 
   it('should match snapshot when ellipsis is truthy', () => {
-    const { baseElement } = renderWithReduxAndTheme(
-      <>{renderRolesInfo(mockData, true)}</>
-    );
+    const { baseElement } = superRender(<>{renderRolesInfo(mockData, true)}</>);
     expect(baseElement).toMatchSnapshot();
   });
 });

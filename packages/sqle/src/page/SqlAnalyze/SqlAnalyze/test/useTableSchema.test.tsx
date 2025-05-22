@@ -1,5 +1,5 @@
 import { act } from '@testing-library/react';
-import { renderHooksWithTheme } from '../../../../testUtils/customRender';
+import { sqleSuperRenderHook } from '../../../../testUtils/superRender';
 
 import instance from '@actiontech/shared/lib/api/sqle/service/instance';
 import { tableSchemas } from '../../__testData__';
@@ -11,7 +11,7 @@ import { createSpySuccessResponse } from '@actiontech/shared/lib/testUtil/mockAp
 describe('SqlAnalyze/useTableSchema', () => {
   describe('render generateTableSchemaContent', () => {
     it('render ele when isShow is false', async () => {
-      const { result } = renderHooksWithTheme(() => useTableSchema());
+      const { result } = sqleSuperRenderHook(() => useTableSchema());
 
       await act(async () => {
         const tableSchemasNoShow = result.current.generateTableSchemaContent({
@@ -24,7 +24,7 @@ describe('SqlAnalyze/useTableSchema', () => {
     });
 
     it('render ele when hasError info', async () => {
-      const { result } = renderHooksWithTheme(() => useTableSchema());
+      const { result } = sqleSuperRenderHook(() => useTableSchema());
 
       await act(async () => {
         const tableSchemasError = result.current.generateTableSchemaContent({
@@ -37,7 +37,7 @@ describe('SqlAnalyze/useTableSchema', () => {
     });
 
     it('render ele when has data', async () => {
-      const { result } = renderHooksWithTheme(() => useTableSchema());
+      const { result } = sqleSuperRenderHook(() => useTableSchema());
 
       await act(async () => {
         const tableSchemasData = result.current.generateTableSchemaContent({
@@ -50,7 +50,7 @@ describe('SqlAnalyze/useTableSchema', () => {
     });
 
     it('render ele when tableMeta hasError message', async () => {
-      const { result } = renderHooksWithTheme(() => useTableSchema());
+      const { result } = sqleSuperRenderHook(() => useTableSchema());
 
       await act(async () => {
         const tableSchemasError = result.current.generateTableSchemaContent({
@@ -110,7 +110,7 @@ describe('SqlAnalyze/useTableSchema', () => {
     });
 
     it('it render table Schemas data when have not options data', async () => {
-      const { result } = renderHooksWithTheme(() => useTableSchema({}));
+      const { result } = sqleSuperRenderHook(() => useTableSchema({}));
 
       await act(async () => {
         result.current.getTableSchemas('table-test-name', 'default-name');
@@ -120,7 +120,7 @@ describe('SqlAnalyze/useTableSchema', () => {
 
     it('it render table Schemas data', async () => {
       const spy = mockGetAnalyzeData();
-      const { result } = renderHooksWithTheme(() =>
+      const { result } = sqleSuperRenderHook(() =>
         useTableSchema({
           schemaName: 'test-schema-name',
           dataSourceName: 'dataSource-name'
@@ -152,7 +152,7 @@ describe('SqlAnalyze/useTableSchema', () => {
       spy.mockImplementation(() =>
         createSpySuccessResponse({ data: [], message: 'error', code: 500 })
       );
-      const { result } = renderHooksWithTheme(() =>
+      const { result } = sqleSuperRenderHook(() =>
         useTableSchema({
           schemaName: 'test-schema-name',
           dataSourceName: 'dataSource-name'

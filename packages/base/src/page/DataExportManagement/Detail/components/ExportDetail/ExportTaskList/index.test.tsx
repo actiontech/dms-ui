@@ -3,8 +3,8 @@ import {
   mockDataExportDetailRedux,
   mockUseDataExportDetailReduxManage
 } from '../../../testUtils/mockUseDataExportDetailReduxManage';
-import dataExport from '../../../../../../testUtils/mockApi/dataExport';
-import { superRender } from '../../../../../../testUtils/customRender';
+import dataExport from '@actiontech/shared/lib/testUtil/mockApi/base/dataExport';
+import { baseSuperRender } from '../../../../../../testUtils/superRender';
 import ExportTaskList from '.';
 import { act } from '@testing-library/react';
 import { mockProjectInfo } from '@actiontech/shared/lib/testUtil/mockHook/data';
@@ -25,7 +25,7 @@ describe('test ExportTaskList', () => {
   });
 
   it('should match snapshot', async () => {
-    const { container } = superRender(<ExportTaskList />);
+    const { container } = baseSuperRender(<ExportTaskList />);
 
     expect(container).toMatchSnapshot();
 

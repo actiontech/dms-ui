@@ -1,6 +1,6 @@
-import { superRender } from '../../../../testUtils/customRender';
+import { sqleSuperRender } from '../../../../testUtils/superRender';
 import DataSourceCount from '.';
-import projectOverview from '../../../../testUtils/mockApi/projectOverview';
+import projectOverview from '@actiontech/shared/lib/testUtil/mockApi/sqle/projectOverview';
 import { act, cleanup, fireEvent, screen } from '@testing-library/react';
 import { mockUseCurrentProject } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentProject';
 import { mockProjectInfo } from '@actiontech/shared/lib/testUtil/mockHook/data';
@@ -51,7 +51,7 @@ describe('page/ProjectOverview/DataSourceCount', () => {
   });
 
   const customRender = () => {
-    return superRender(<DataSourceCount />);
+    return sqleSuperRender(<DataSourceCount />);
   };
 
   it('render data source count and check more data', async () => {
@@ -123,7 +123,7 @@ describe('page/ProjectOverview/DataSourceCount', () => {
 
   it('test ToolTipCustomContent', () => {
     expect(
-      superRender(
+      sqleSuperRender(
         <ToolTipCustomContent
           dataSource={[]}
           sharedTheme={themeData.sharedTheme}
@@ -133,7 +133,7 @@ describe('page/ProjectOverview/DataSourceCount', () => {
     ).toMatchSnapshot();
 
     expect(
-      superRender(
+      sqleSuperRender(
         <ToolTipCustomContent
           dataSource={[
             { data: { value: '33', category: DBHealthEnum.health } },

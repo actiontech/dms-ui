@@ -1,5 +1,5 @@
 import { fireEvent, act, cleanup, screen } from '@testing-library/react';
-import { superRender } from '../../../testUtil/customRender';
+import { superRender } from '../../../testUtil/superRender';
 import { ConfigItemProps } from '../ConfigItem.types';
 import ConfigItem from '../ConfigItem';
 import { getBySelector } from '../../../testUtil/customQuery';

@@ -8,13 +8,13 @@ import {
 } from '@testing-library/react';
 import { Select } from 'antd';
 import useTaskSource from '.';
-import syncTaskList from '../../testUtils/mockApi/syncTaskList';
+import syncTaskList from '@actiontech/shared/lib/testUtil/mockApi/base/syncTaskList';
 import {
   createSpyErrorResponse,
   createSpyFailResponse
 } from '@actiontech/shared/lib/testUtil/mockApi';
-import { renderHooksWithRedux } from '@actiontech/shared/lib/testUtil/customRender';
-import { syncTaskTipsMockData } from '../../testUtils/mockApi/syncTaskList/data';
+import { superRenderHook } from '@actiontech/shared/lib/testUtil/superRender';
+import { syncTaskTipsMockData } from '@actiontech/shared/lib/testUtil/mockApi/base/syncTaskList/data';
 
 describe('useTaskSource', () => {
   let requestSpy: jest.SpyInstance;
@@ -28,7 +28,7 @@ describe('useTaskSource', () => {
   });
 
   it('should get task source from request', async () => {
-    const { result } = renderHooksWithRedux(() => useTaskSource(), {});
+    const { result } = superRenderHook(() => useTaskSource(), {});
     expect(result.current.loading).toBe(false);
     expect(result.current.taskSourceList).toEqual([]);
     const { baseElement } = render(
@@ -69,7 +69,7 @@ describe('useTaskSource', () => {
 
   it('should set list to empty array when response code is not equal success code', async () => {
     requestSpy.mockImplementation(() => createSpyFailResponse({ data: [] }));
-    const { result } = renderHooksWithRedux(() => useTaskSource(), {});
+    const { result } = superRenderHook(() => useTaskSource(), {});
     expect(result.current.loading).toBe(false);
     expect(result.current.taskSourceList).toEqual([]);
 
@@ -86,7 +86,7 @@ describe('useTaskSource', () => {
   it('should set list to empty array when response throw error', async () => {
     requestSpy.mockImplementation(() => createSpyErrorResponse({ data: [] }));
 
-    const { result } = renderHooksWithRedux(() => useTaskSource(), {});
+    const { result } = superRenderHook(() => useTaskSource(), {});
 
     act(() => {
       result.current.updateTaskSourceList();
@@ -99,7 +99,7 @@ describe('useTaskSource', () => {
   });
 
   it('should generate dbTypes select options with source', async () => {
-    const { result } = renderHooksWithRedux(() => useTaskSource(), {});
+    const { result } = superRenderHook(() => useTaskSource(), {});
     act(() => {
       result.current.updateTaskSourceList();
     });

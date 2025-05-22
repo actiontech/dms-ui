@@ -1,6 +1,6 @@
-import { superRender } from '../../../../testUtils/customRender';
+import { sqleSuperRender } from '../../../../testUtils/superRender';
 import SqlCount from '.';
-import projectOverview from '../../../../testUtils/mockApi/projectOverview';
+import projectOverview from '@actiontech/shared/lib/testUtil/mockApi/sqle/projectOverview';
 import { act, cleanup, fireEvent, screen } from '@testing-library/react';
 import { mockUseCurrentProject } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentProject';
 import { mockProjectInfo } from '@actiontech/shared/lib/testUtil/mockHook/data';
@@ -62,7 +62,7 @@ describe('page/ProjectOverview/SqlCount', () => {
   });
 
   const customRender = () => {
-    return superRender(<SqlCount />);
+    return sqleSuperRender(<SqlCount />);
   };
 
   it('render sql count', async () => {

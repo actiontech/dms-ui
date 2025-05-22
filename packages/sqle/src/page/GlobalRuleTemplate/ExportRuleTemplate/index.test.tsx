@@ -1,6 +1,6 @@
 import { act, fireEvent, renderHook, screen } from '@testing-library/react';
 import ExportRuleTemplate from '.';
-import { superRender } from '../../../testUtils/customRender';
+import { sqleSuperRender } from '../../../testUtils/superRender';
 import { useForm } from 'antd/es/form/Form';
 
 describe('test ExportRuleTemplate', () => {
@@ -9,7 +9,7 @@ describe('test ExportRuleTemplate', () => {
 
   const customRender = (open = true, submitPending = false) => {
     const { result } = renderHook(() => useForm());
-    return superRender(
+    return sqleSuperRender(
       <ExportRuleTemplate
         open={open}
         form={result.current[0]}

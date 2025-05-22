@@ -1,12 +1,12 @@
-import { superRender } from '../../../testUtils/customRender';
+import { baseSuperRender } from '../../../testUtils/superRender';
 import CBOperationLogsList from '.';
-import cloudBeaver from '../../../testUtils/mockApi/cloudBeaver';
+import cloudBeaver from '@actiontech/shared/lib/testUtil/mockApi/base/cloudBeaver';
 import { act, cleanup, fireEvent, screen } from '@testing-library/react';
 import { mockUseCurrentProject } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentProject';
 import { mockUseCurrentUser } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentUser';
 import { mockUseDbServiceDriver } from '@actiontech/shared/lib/testUtil/mockHook/mockUseDbServiceDriver';
-import userCenter from '../../../testUtils/mockApi/userCenter';
-import dbServices from '../../../testUtils/mockApi/dbServices';
+import userCenter from '@actiontech/shared/lib/testUtil/mockApi/base/userCenter';
+import dbServices from '@actiontech/shared/lib/testUtil/mockApi/base/dbServices';
 import {
   getBySelector,
   getAllBySelector
@@ -15,7 +15,7 @@ import { mockProjectInfo } from '@actiontech/shared/lib/testUtil/mockHook/data';
 import { useDispatch, useSelector } from 'react-redux';
 import { driverMeta } from 'sqle/src/hooks/useDatabaseType/index.test.data';
 import { createSpyFailResponse } from '@actiontech/shared/lib/testUtil/mockApi';
-import { listCBOperationLogsMockData } from '../../../testUtils/mockApi/cloudBeaver/data';
+import { listCBOperationLogsMockData } from '@actiontech/shared/lib/testUtil/mockApi/base/cloudBeaver/data';
 import { ModalName } from '../../../data/ModalName';
 import { ModalName as SqleModalName } from 'sqle/src/data/ModalName';
 import { SystemRole } from '@actiontech/shared/lib/enum';
@@ -74,7 +74,7 @@ describe('test base/CloudBeaver/List', () => {
   });
 
   const customRender = () => {
-    return superRender(
+    return baseSuperRender(
       <CBOperationLogsList
         setGetOperationLogsLoading={mockSetGetOperationLogsLoading}
       />

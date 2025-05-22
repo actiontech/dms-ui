@@ -11,8 +11,8 @@ import {
 import MockDate from 'mockdate';
 import ScheduleTimeModal from '..';
 import { getBySelector } from '@actiontech/shared/lib/testUtil/customQuery';
-import configuration from '../../../../../../../../testUtils/mockApi/configuration';
-import { superRender } from '../../../../../../../../testUtils/customRender';
+import configuration from '@actiontech/shared/lib/testUtil/mockApi/sqle/configuration';
+import { sqleSuperRender } from '../../../../../../../../testUtils/superRender';
 
 describe('test ScheduleTimeModal ce', () => {
   const closeScheduleModalFn = jest.fn();
@@ -36,7 +36,7 @@ describe('test ScheduleTimeModal ce', () => {
   const customRender = (
     params: Pick<ScheduleTimeModalProps, 'open' | 'maintenanceTime'>
   ) => {
-    return superRender(
+    return sqleSuperRender(
       <ScheduleTimeModal
         {...params}
         closeScheduleModal={closeScheduleModalFn}

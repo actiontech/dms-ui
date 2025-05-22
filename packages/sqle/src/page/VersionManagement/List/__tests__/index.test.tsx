@@ -1,11 +1,11 @@
 import { cleanup, act, fireEvent, screen } from '@testing-library/react';
 import VersionManagementList from '..';
-import sqlVersion from '../../../../testUtils/mockApi/sql_version';
-import { getSqlVersionListV1MockData } from '../../../../testUtils/mockApi/sql_version/data';
+import sqlVersion from '@actiontech/shared/lib/testUtil/mockApi/sqle/sql_version';
+import { getSqlVersionListV1MockData } from '@actiontech/shared/lib/testUtil/mockApi/sqle/sql_version/data';
 import { mockUseCurrentProject } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentProject';
 import { mockUseCurrentUser } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentUser';
 import { mockProjectInfo } from '@actiontech/shared/lib/testUtil/mockHook/data';
-import { superRender } from '../../../..//testUtils/customRender';
+import { sqleSuperRender } from '../../../../testUtils/superRender';
 import { getAllBySelector } from '@actiontech/shared/lib/testUtil/customQuery';
 import { createSpySuccessResponse } from '@actiontech/shared/lib/testUtil/mockApi';
 import { useNavigate } from 'react-router-dom';
@@ -45,7 +45,7 @@ describe('sqle/VersionManagement/List', () => {
   });
 
   it('render init snap', async () => {
-    const { baseElement } = superRender(<VersionManagementList />);
+    const { baseElement } = sqleSuperRender(<VersionManagementList />);
     await act(async () => jest.advanceTimersByTime(3000));
     expect(baseElement).toMatchSnapshot();
     expect(getSqlVersionListSpy).toHaveBeenCalledTimes(1);
@@ -54,7 +54,7 @@ describe('sqle/VersionManagement/List', () => {
 
   it('hide action button when current user is not admin or project manager', async () => {
     checkActionPermissionSpy.mockReturnValue(false);
-    superRender(<VersionManagementList />);
+    sqleSuperRender(<VersionManagementList />);
     await act(async () => jest.advanceTimersByTime(3000));
     expect(getSqlVersionListSpy).toHaveBeenCalledTimes(1);
     expect(screen.queryByText('添加版本')).not.toBeInTheDocument();
@@ -64,7 +64,7 @@ describe('sqle/VersionManagement/List', () => {
   });
 
   it('render filter item', async () => {
-    const { baseElement } = superRender(<VersionManagementList />);
+    const { baseElement } = sqleSuperRender(<VersionManagementList />);
     await act(async () => jest.advanceTimersByTime(3000));
     expect(getSqlVersionListSpy).toHaveBeenCalledTimes(1);
     fireEvent.click(screen.getByText('筛选'));
@@ -80,7 +80,7 @@ describe('sqle/VersionManagement/List', () => {
         data: [firstMockVersion]
       })
     );
-    superRender(<VersionManagementList />);
+    sqleSuperRender(<VersionManagementList />);
     await act(async () => jest.advanceTimersByTime(3000));
     fireEvent.click(screen.getByText('编 辑'));
     await act(async () => jest.advanceTimersByTime(0));
@@ -97,7 +97,7 @@ describe('sqle/VersionManagement/List', () => {
         data: [firstMockVersion]
       })
     );
-    superRender(<VersionManagementList />);
+    sqleSuperRender(<VersionManagementList />);
     await act(async () => jest.advanceTimersByTime(3000));
     expect(getSqlVersionListSpy).toHaveBeenCalledTimes(1);
     fireEvent.click(screen.getByText('删 除'));
@@ -125,7 +125,7 @@ describe('sqle/VersionManagement/List', () => {
         data: [firstMockVersion]
       })
     );
-    superRender(<VersionManagementList />);
+    sqleSuperRender(<VersionManagementList />);
     await act(async () => jest.advanceTimersByTime(3000));
     expect(getSqlVersionListSpy).toHaveBeenCalledTimes(1);
     fireEvent.click(screen.getByText('锁 定'));

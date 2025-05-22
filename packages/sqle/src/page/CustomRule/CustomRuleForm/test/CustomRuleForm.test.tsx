@@ -1,12 +1,12 @@
 import useCustomRuleTemplateForm from '../../hooks/useCustomRuleTemplateForm';
-import { renderHooksWithRedux } from '@actiontech/shared/lib/testUtil/customRender';
+import { superRenderHook } from '@actiontech/shared/lib/testUtil/superRender';
 import { cleanup, screen, act, fireEvent } from '@testing-library/react';
-import { renderWithThemeAndRedux } from '../../../../testUtils/customRender';
+import { sqleSuperRender } from '../../../../testUtils/superRender';
 import { mockUseDbServiceDriver } from '@actiontech/shared/lib/testUtil/mockHook/mockUseDbServiceDriver';
-import configuration from '../../../../testUtils/mockApi/configuration';
-import rule_template from '../../../../testUtils/mockApi/rule_template';
+import configuration from '@actiontech/shared/lib/testUtil/mockApi/sqle/configuration';
+import rule_template from '@actiontech/shared/lib/testUtil/mockApi/sqle/rule_template';
 import CustomRuleForm from '../CustomRuleForm';
-import { customRuleDetailMockData } from '../../../../testUtils/mockApi/rule_template/data';
+import { customRuleDetailMockData } from '@actiontech/shared/lib/testUtil/mockApi/sqle/rule_template/data';
 import { mockUsePermission } from '@actiontech/shared/lib/testUtil/mockHook/mockUsePermission';
 import {
   UtilsConsoleErrorStringsEnum,
@@ -52,8 +52,8 @@ describe('sqle/CustomRule/Form', () => {
   ignoreConsoleErrors([UtilsConsoleErrorStringsEnum.UNKNOWN_EVENT_HANDLER]);
 
   it('should match snap', async () => {
-    const { result } = renderHooksWithRedux(useCustomRuleTemplateForm, {});
-    const { baseElement } = renderWithThemeAndRedux(
+    const { result } = superRenderHook(useCustomRuleTemplateForm, {});
+    const { baseElement } = sqleSuperRender(
       <CustomRuleForm
         title="创建"
         submit={jest.fn()}
@@ -68,8 +68,8 @@ describe('sqle/CustomRule/Form', () => {
   });
 
   it('should match snap when provide defaultData', async () => {
-    const { result } = renderHooksWithRedux(useCustomRuleTemplateForm, {});
-    const { baseElement } = renderWithThemeAndRedux(
+    const { result } = superRenderHook(useCustomRuleTemplateForm, {});
+    const { baseElement } = sqleSuperRender(
       <CustomRuleForm
         title="编辑"
         submit={jest.fn()}

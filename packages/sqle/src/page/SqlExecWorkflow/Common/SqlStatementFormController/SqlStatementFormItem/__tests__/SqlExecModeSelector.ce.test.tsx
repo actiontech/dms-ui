@@ -3,8 +3,8 @@
  */
 
 import { Form } from 'antd';
-import { superRender } from '../../../../../../testUtils/customRender';
-import task from '../../../../../../testUtils/mockApi/task';
+import { sqleSuperRender } from '../../../../../../testUtils/superRender';
+import task from '@actiontech/shared/lib/testUtil/mockApi/sqle/task';
 import SqlExecModeSelector from '../components/SqlExecModeSelector';
 import { act, fireEvent, renderHook, screen } from '@testing-library/react';
 import { AuditTaskResV1SqlSourceEnum } from '@actiontech/shared/lib/api/sqle/service/common.enum';
@@ -24,7 +24,7 @@ describe('test SqlExecModeSelector', () => {
 
   const customRender = (params?: Partial<SqlExecModeSelectorProps>) => {
     const { result } = renderHook(() => Form.useForm());
-    return superRender(
+    return sqleSuperRender(
       <Form form={result.current[0]}>
         <SqlExecModeSelector
           fieldPrefixPath="prefix"

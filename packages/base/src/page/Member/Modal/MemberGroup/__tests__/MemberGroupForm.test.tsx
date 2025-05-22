@@ -1,7 +1,7 @@
 import {
-  renderWithReduxAndTheme,
-  renderHooksWithTheme
-} from '@actiontech/shared/lib/testUtil/customRender';
+  superRender,
+  superRenderHook
+} from '@actiontech/shared/lib/testUtil/superRender';
 import { Form } from 'antd';
 import MemberGroupForm from '../MemberGroupForm';
 import { screen } from '@testing-library/react';
@@ -10,10 +10,10 @@ import { IMemberGroupFormFields } from '../../index.type';
 
 describe('base/Member/Modal/MemberGroupForm', () => {
   const customRender = (isUpdate?: boolean) => {
-    const { result } = renderHooksWithTheme(() =>
+    const { result } = superRenderHook(() =>
       Form.useForm<IMemberGroupFormFields>()
     );
-    const { baseElement } = renderWithReduxAndTheme(
+    const { baseElement } = superRender(
       <MemberGroupForm
         form={result.current[0]}
         projectID={mockProjectInfo.projectID}

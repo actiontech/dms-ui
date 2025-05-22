@@ -1,5 +1,5 @@
 import { cleanup } from '@testing-library/react';
-import { renderWithThemeAndRedux } from '../../testUtils/customRender';
+import { sqleSuperRender } from '../../testUtils/superRender';
 import { mockThemeStyleData } from '../../testUtils/mockHooks/mockThemeStyleData';
 
 import ReportStatistics from '.';
@@ -8,7 +8,7 @@ import {
   ignoreConsoleErrors,
   UtilsConsoleErrorStringsEnum
 } from '@actiontech/shared/lib/testUtil/common';
-import statistic from '../../testUtils/mockApi/statistic';
+import statistic from '@actiontech/shared/lib/testUtil/mockApi/sqle/statistic';
 import MockDate from 'mockdate';
 import dayjs from 'dayjs';
 
@@ -39,7 +39,7 @@ describe('sqle/ReportStatistics', () => {
   });
 
   it('should match snap shot', async () => {
-    const { baseElement } = renderWithThemeAndRedux(<ReportStatistics />);
+    const { baseElement } = sqleSuperRender(<ReportStatistics />);
     expect(baseElement).toMatchSnapshot();
   });
 });

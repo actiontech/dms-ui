@@ -1,5 +1,5 @@
 import { fireEvent, act, cleanup, screen } from '@testing-library/react';
-import { superRender } from '../../testUtil/customRender';
+import { superRender } from '../../testUtil/superRender';
 import { getBySelector, getAllBySelector } from '../../testUtil/customQuery';
 import CronInputCom from './CronInput';
 import { CronInputModeEnum } from './CronInput.enum';

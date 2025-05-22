@@ -1,7 +1,7 @@
 import { cleanup, screen, act, fireEvent } from '@testing-library/react';
 import CreateSqlAudit from '.';
-import { renderWithThemeAndRedux } from '../../../testUtils/customRender';
-import { useNavigate, BrowserRouter } from 'react-router-dom';
+import { sqleSuperRender } from '../../../testUtils/superRender';
+import { useNavigate } from 'react-router-dom';
 import { mockUseCurrentUser } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentUser';
 import { mockUseCurrentProject } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentProject';
 import { mockUseDbServiceDriver } from '@actiontech/shared/lib/testUtil/mockHook/mockUseDbServiceDriver';
@@ -11,16 +11,16 @@ import {
   queryBySelector,
   getBySelector
 } from '@actiontech/shared/lib/testUtil/customQuery';
-import sqlAuditRecord from '../../../testUtils/mockApi/sqlAuditRecord';
-import instance from '../../../testUtils/mockApi/instance';
-import { createSqlAuditResponseMockData } from '../../../testUtils/mockApi/sqlAuditRecord/data';
+import sqlAuditRecord from '@actiontech/shared/lib/testUtil/mockApi/sqle/sqlAuditRecord';
+import instance from '@actiontech/shared/lib/testUtil/mockApi/sqle/instance';
+import { createSqlAuditResponseMockData } from '@actiontech/shared/lib/testUtil/mockApi/sqle/sqlAuditRecord/data';
 import {
   instanceInfoMockData,
   instanceTipsMockData
-} from '../../../testUtils/mockApi/instance/data';
-import configuration from '../../../testUtils/mockApi/configuration';
+} from '@actiontech/shared/lib/testUtil/mockApi/sqle/instance/data';
+import configuration from '@actiontech/shared/lib/testUtil/mockApi/sqle/configuration';
 import { formatterSQL } from '@actiontech/shared/lib/utils/FormatterSQL';
-import rule_template from '../../../testUtils/mockApi/rule_template';
+import rule_template from '@actiontech/shared/lib/testUtil/mockApi/sqle/rule_template';
 import { createSpySuccessResponse } from '@actiontech/shared/lib/testUtil/mockApi';
 import {
   UtilsConsoleErrorStringsEnum,
@@ -88,17 +88,13 @@ describe('sqle/SqlAudit/Create', () => {
   });
 
   const customRender = () => {
-    return (
-      <BrowserRouter>
-        <CreateSqlAudit />
-      </BrowserRouter>
-    );
+    return <CreateSqlAudit />;
   };
 
   ignoreConsoleErrors([UtilsConsoleErrorStringsEnum.UNKNOWN_EVENT_HANDLER]);
 
   it('enter default content to create sql audit', async () => {
-    const { baseElement } = renderWithThemeAndRedux(customRender());
+    const { baseElement } = sqleSuperRender(customRender());
     await act(async () => jest.advanceTimersByTime(3000));
     expect(getSQLAuditRecordTagTipsSpy).toHaveBeenCalledTimes(1);
     expect(getInstanceTipListSpy).toHaveBeenCalledTimes(1);
@@ -194,7 +190,7 @@ describe('sqle/SqlAudit/Create', () => {
   });
 
   it('select static audit type', async () => {
-    const { baseElement } = renderWithThemeAndRedux(customRender());
+    const { baseElement } = sqleSuperRender(customRender());
     await act(async () => jest.advanceTimersByTime(3000));
     fireEvent.click(screen.getByText('离线审核'));
     await act(async () => jest.advanceTimersByTime(3000));
@@ -261,7 +257,7 @@ describe('sqle/SqlAudit/Create', () => {
   });
 
   it('upload sql file', async () => {
-    const { baseElement } = renderWithThemeAndRedux(customRender());
+    const { baseElement } = sqleSuperRender(customRender());
     await act(async () => jest.advanceTimersByTime(3000));
     fireEvent.click(screen.getByText('离线审核'));
     await act(async () => jest.advanceTimersByTime(3000));
@@ -321,7 +317,7 @@ describe('sqle/SqlAudit/Create', () => {
   });
 
   it('upload xml file', async () => {
-    const { baseElement } = renderWithThemeAndRedux(customRender());
+    const { baseElement } = sqleSuperRender(customRender());
     await act(async () => jest.advanceTimersByTime(3000));
     fireEvent.mouseDown(getBySelector('#instanceName', baseElement));
     fireEvent.click(
@@ -369,7 +365,7 @@ describe('sqle/SqlAudit/Create', () => {
   });
 
   it('upload zip file', async () => {
-    const { baseElement } = renderWithThemeAndRedux(customRender());
+    const { baseElement } = sqleSuperRender(customRender());
     await act(async () => jest.advanceTimersByTime(3000));
     fireEvent.click(screen.getByText('离线审核'));
     await act(async () => jest.advanceTimersByTime(3000));
@@ -413,7 +409,7 @@ describe('sqle/SqlAudit/Create', () => {
   });
 
   it('reset form values', async () => {
-    const { baseElement } = renderWithThemeAndRedux(customRender());
+    const { baseElement } = sqleSuperRender(customRender());
     await act(async () => jest.advanceTimersByTime(3000));
     fireEvent.click(screen.getByText('离线审核'));
     await act(async () => jest.advanceTimersByTime(3000));
@@ -452,7 +448,7 @@ describe('sqle/SqlAudit/Create', () => {
   });
 
   it('create business tags', async () => {
-    const { baseElement } = renderWithThemeAndRedux(customRender());
+    const { baseElement } = sqleSuperRender(customRender());
     await act(async () => jest.advanceTimersByTime(3000));
     fireEvent.mouseDown(screen.getByLabelText('业务标签'));
     await act(async () => await jest.advanceTimersByTime(100));
@@ -544,7 +540,7 @@ describe('sqle/SqlAudit/Create', () => {
 
   describe('Git Repository Configuration', () => {
     const setupGitRepositoryTest = async () => {
-      const { baseElement } = renderWithThemeAndRedux(customRender());
+      const { baseElement } = sqleSuperRender(customRender());
       await act(async () => jest.advanceTimersByTime(3000));
       fireEvent.click(screen.getByText('离线审核'));
       await act(async () => jest.advanceTimersByTime(3000));
