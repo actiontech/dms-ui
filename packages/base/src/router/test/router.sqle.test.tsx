@@ -1,9 +1,9 @@
 import { MemoryRouterProps } from 'react-router-dom';
 import { act, screen, cleanup } from '@testing-library/react';
 import { RenderRouterComponent } from './data';
-import { superRender } from '../../testUtils/customRender';
+import { baseSuperRender } from '../../testUtils/superRender';
 import { mockProjectInfo } from '@actiontech/shared/lib/testUtil/mockHook/data';
-import userCenter from '../../testUtils/mockApi/userCenter';
+import userCenter from '@actiontech/shared/lib/testUtil/mockApi/base/userCenter';
 import { mockUseRecentlySelectedZone } from '../../testUtils/mockHooks/mockUseRecentlySelectedZone';
 
 describe('base/router-sqle-ee', () => {
@@ -12,7 +12,7 @@ describe('base/router-sqle-ee', () => {
   const customRender = (
     initialEntries: MemoryRouterProps['initialEntries'] = []
   ) => {
-    return superRender(<RenderRouterComponent type="auth" />, undefined, {
+    return baseSuperRender(<RenderRouterComponent type="auth" />, undefined, {
       routerProps: {
         initialEntries
       }

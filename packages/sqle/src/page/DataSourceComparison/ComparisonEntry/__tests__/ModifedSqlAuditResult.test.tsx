@@ -2,7 +2,7 @@ import {
   IDatabaseDiffModifySQL,
   ISQLStatementWithAuditResult
 } from '@actiontech/shared/lib/api/sqle/service/common';
-import { superRender } from '../../../../testUtils/customRender';
+import { sqleSuperRender } from '../../../../testUtils/superRender';
 import ModifiedSqlAuditResult from '../component/ModifiedSqlAuditResult';
 import { mockUseCurrentUser } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentUser';
 import { fireEvent, screen } from '@testing-library/dom';
@@ -156,7 +156,7 @@ describe('ModifiedSqlAuditResult', () => {
 
   describe('index', () => {
     const customRender = (dataSource?: IDatabaseDiffModifySQL[]) => {
-      return superRender(
+      return sqleSuperRender(
         <ModifiedSqlAuditResult
           dataSource={dataSource}
           instanceName={instanceName}
@@ -222,7 +222,7 @@ describe('ModifiedSqlAuditResult', () => {
       dataSource?: ISQLStatementWithAuditResult[],
       auditError?: string
     ) => {
-      return superRender(
+      return sqleSuperRender(
         <ModifiedSqlAuditResultList
           dataSource={dataSource}
           instanceType={instanceType}

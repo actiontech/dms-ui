@@ -1,6 +1,6 @@
 import { cleanup } from '@testing-library/react';
 import { useDispatch } from 'react-redux';
-import { superRender } from '../../../../testUtils/customRender';
+import { baseSuperRender } from '../../../../testUtils/superRender';
 import ProjectManageModal from '..';
 
 jest.mock('react-redux', () => {
@@ -15,7 +15,7 @@ describe('test base/page/Project/Modal', () => {
     const dispatchSpy = jest.fn();
     (useDispatch as jest.Mock).mockImplementation(() => dispatchSpy);
 
-    const { baseElement } = superRender(<ProjectManageModal />);
+    const { baseElement } = baseSuperRender(<ProjectManageModal />);
     expect(baseElement).toMatchSnapshot();
     expect(dispatchSpy).toHaveBeenCalledTimes(1);
     expect(dispatchSpy).toHaveBeenCalledWith({

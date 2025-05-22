@@ -1,6 +1,6 @@
 import useProvisionUser from '.';
 import { act, cleanup } from '@testing-library/react';
-import { renderHooksWithRedux } from '@actiontech/shared/lib/testUtil/customRender';
+import { superRenderHook } from '@actiontech/shared/lib/testUtil/superRender';
 import auth from '../../testUtil/mockApi/auth';
 import { userList } from '../../testUtil/mockApi/auth/data';
 import {
@@ -26,7 +26,7 @@ describe('provision/hooks/useProvisionUser', () => {
   });
 
   it('should get provision user data from request', async () => {
-    const { result } = renderHooksWithRedux(() => useProvisionUser(), {});
+    const { result } = superRenderHook(() => useProvisionUser(), {});
 
     expect(result.current.loading).toBeFalsy();
     expect(result.current.userList).toEqual([]);
@@ -54,7 +54,7 @@ describe('provision/hooks/useProvisionUser', () => {
       createSpyFailResponse({ data: [] })
     );
 
-    const { result } = renderHooksWithRedux(() => useProvisionUser(), {});
+    const { result } = superRenderHook(() => useProvisionUser(), {});
     act(() => result.current.updateUserList());
     await act(async () => jest.advanceTimersByTime(3000));
     expect(result.current.userList).toEqual([]);
@@ -65,7 +65,7 @@ describe('provision/hooks/useProvisionUser', () => {
     authListUserSpy.mockImplementation(() =>
       createSpyErrorResponse({ data: [] })
     );
-    const { result } = renderHooksWithRedux(() => useProvisionUser(), {});
+    const { result } = superRenderHook(() => useProvisionUser(), {});
     act(() => result.current.updateUserList());
     await act(async () => jest.advanceTimersByTime(3000));
     expect(result.current.userList).toEqual([]);

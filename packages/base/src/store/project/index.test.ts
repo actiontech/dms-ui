@@ -1,6 +1,6 @@
 import reducers, { updateSelectProject } from '.';
 import { IReduxState } from '..';
-import { mockProjectList } from '../../testUtils/mockApi/project/data';
+import { mockProjectList } from '@actiontech/shared/lib/testUtil/mockApi/base/project/data';
 
 describe('store/project', () => {
   const state: IReduxState['project'] = {

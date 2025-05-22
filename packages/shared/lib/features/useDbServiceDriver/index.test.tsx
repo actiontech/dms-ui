@@ -15,7 +15,7 @@ import {
   UtilsConsoleErrorStringsEnum
 } from '../../testUtil/common';
 import DBService from '../../api/base/service/DBService';
-import { superRender } from '../../testUtil/customRender';
+import { superRender } from '../../testUtil/superRender';
 
 jest.mock('react-redux', () => {
   return {

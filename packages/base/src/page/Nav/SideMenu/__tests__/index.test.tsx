@@ -1,7 +1,7 @@
 import { mockUseCurrentUser } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentUser';
 import { mockUseRecentlyOpenedProjects } from '../testUtils/mockUseRecentlyOpenedProjects';
-import project from '../../../../testUtils/mockApi/project';
-import { superRender } from '../../../../testUtils/customRender';
+import project from '@actiontech/shared/lib/testUtil/mockApi/base/project';
+import { baseSuperRender } from '../../../../testUtils/superRender';
 import SideMenu from '..';
 import eventEmitter from '../../../../utils/EventEmitter';
 import { act, fireEvent, screen } from '@testing-library/react';
@@ -13,13 +13,13 @@ import {
 import { useDispatch } from 'react-redux';
 import { getBySelector } from '@actiontech/shared/lib/testUtil/customQuery';
 import { useNavigate } from 'react-router-dom';
-import { mockProjectList } from '../../../../testUtils/mockApi/project/data';
+import { mockProjectList } from '@actiontech/shared/lib/testUtil/mockApi/base/project/data';
 import { ModalName } from '../../../../data/ModalName';
 import { mockUsePermission } from '@actiontech/shared/lib/testUtil/mockHook/mockUsePermission';
-import system from '../../../../testUtils/mockApi/system';
+import system from '@actiontech/shared/lib/testUtil/mockApi/base/system';
 import { mockUseRecentlySelectedZone } from '../../../../testUtils/mockHooks/mockUseRecentlySelectedZone';
-import gateway from '../../../../testUtils/mockApi/gateway';
-import { mockGatewayTipsData } from '../../../../testUtils/mockApi/gateway/data';
+import gateway from '@actiontech/shared/lib/testUtil/mockApi/base/gateway';
+import { mockGatewayTipsData } from '@actiontech/shared/lib/testUtil/mockApi/base/gateway/data';
 
 jest.mock('react-redux', () => {
   return {
@@ -94,7 +94,7 @@ describe('test Base/Nav/SideMenu/index', () => {
   });
   it('mount and unmount component', async () => {
     checkPagePermissionSpy.mockReturnValue(true);
-    const { baseElement, unmount } = superRender(<SideMenu />);
+    const { baseElement, unmount } = baseSuperRender(<SideMenu />);
     expect(baseElement).toMatchSnapshot();
     expect(getProjectsSpy).toHaveBeenCalledTimes(1);
     expect(getSystemModuleRedDotsSpy).toHaveBeenCalledTimes(1);
@@ -135,7 +135,7 @@ describe('test Base/Nav/SideMenu/index', () => {
   });
 
   it('Click on the menu of the project selector', async () => {
-    const { baseElement } = superRender(<SideMenu />);
+    const { baseElement } = baseSuperRender(<SideMenu />);
     await act(async () => jest.advanceTimersByTime(3000));
     fireEvent.mouseDown(getBySelector('.ant-select-selector'), baseElement);
     await act(async () => jest.advanceTimersByTime(300));
@@ -148,7 +148,7 @@ describe('test Base/Nav/SideMenu/index', () => {
 
   it('should match snapshot when checkPagePermission return value is equal false', async () => {
     checkPagePermissionSpy.mockReturnValue(false);
-    const { container } = superRender(<SideMenu />);
+    const { container } = baseSuperRender(<SideMenu />);
     await act(async () => jest.advanceTimersByTime(0));
     expect(container).toMatchSnapshot();
     expect(getSystemModuleRedDotsSpy).toHaveBeenCalledTimes(1);
@@ -162,7 +162,7 @@ describe('test Base/Nav/SideMenu/index', () => {
     mockUseRecentlySelectedZone({
       verifyRecentlySelectedZoneRecord: verifyRecentlySelectedZoneRecordSpy
     });
-    superRender(<SideMenu />);
+    baseSuperRender(<SideMenu />);
     await act(async () => jest.advanceTimersByTime(3000));
     expect(getGatewayTipsSpy).toHaveBeenCalledTimes(1);
     expect(dispatchSpy).toHaveBeenCalledWith({

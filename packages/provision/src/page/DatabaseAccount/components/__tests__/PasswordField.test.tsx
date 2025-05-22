@@ -1,4 +1,4 @@
-import { superRender } from '@actiontech/shared/lib/testUtil/customRender';
+import { superRender } from '@actiontech/shared/lib/testUtil/superRender';
 import { act, fireEvent, screen, cleanup } from '@testing-library/react';
 import { Form } from 'antd';
 import PasswordField from '../PasswordField';

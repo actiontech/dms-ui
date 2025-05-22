@@ -1,4 +1,4 @@
-import { renderHooksWithReduxAndRouter } from '@actiontech/shared/lib/testUtil/customRender';
+import { superRenderHook } from '@actiontech/shared/lib/testUtil/superRender';
 import { act } from '@testing-library/react';
 import useGetRoleData from './useGetRoleData';
 import user from '../../../testUtils/mockApi/userManagement';
@@ -16,7 +16,7 @@ describe('diagnosis/useGetRoleData', () => {
   });
 
   const customRender = () => {
-    return renderHooksWithReduxAndRouter(() => useGetRoleData(true), {});
+    return superRenderHook(() => useGetRoleData(true), {});
   };
 
   it('request get user info success', async () => {

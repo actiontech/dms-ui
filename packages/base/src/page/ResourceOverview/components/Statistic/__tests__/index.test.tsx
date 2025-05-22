@@ -1,6 +1,6 @@
-import { superRender } from '../../../../../testUtils/customRender';
+import { baseSuperRender } from '../../../../../testUtils/superRender';
 import ResourceOverviewStatistic from '../index';
-import resourceOverview from '../../../../../testUtils/mockApi/resourceOverview';
+import resourceOverview from '@actiontech/shared/lib/testUtil/mockApi/base/resourceOverview';
 import { cleanup, act } from '@testing-library/react';
 
 describe('base/page/ResourceOverview/Statictis', () => {
@@ -15,7 +15,7 @@ describe('base/page/ResourceOverview/Statictis', () => {
   });
 
   it('render init snap', async () => {
-    const { container } = superRender(<ResourceOverviewStatistic />);
+    const { container } = baseSuperRender(<ResourceOverviewStatistic />);
     await act(async () => {
       jest.advanceTimersByTime(3000);
     });

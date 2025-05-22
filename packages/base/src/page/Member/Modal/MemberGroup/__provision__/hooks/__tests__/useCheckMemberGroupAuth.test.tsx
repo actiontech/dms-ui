@@ -4,7 +4,7 @@ import { mockUseCurrentProject } from '@actiontech/shared/lib/testUtil/mockHook/
 import dbAccountService from 'provision/src/testUtil/mockApi/dbAccountService';
 import { mockProjectInfo } from '@actiontech/shared/lib/testUtil/mockHook/data';
 import { paramsSerializer } from '@actiontech/shared';
-import { superRender } from '../../../../../../../testUtils/customRender';
+import { baseSuperRender } from '../../../../../../../testUtils/superRender';
 import { useState } from 'react';
 import {
   createSpyFailResponse,
@@ -245,7 +245,7 @@ describe('useCheckMemberGroupAuth', () => {
       );
     };
 
-    const { baseElement } = superRender(<Wrapper />);
+    const { baseElement } = baseSuperRender(<Wrapper />);
     mockAuthListDBAccount
       .mockImplementationOnce(() =>
         createSpySuccessResponse({ data: mockDbAccountListWithFilterUsers })

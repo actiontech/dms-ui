@@ -1,4 +1,4 @@
-import { superRender } from '@actiontech/shared/lib/testUtil/customRender';
+import { superRender } from '@actiontech/shared/lib/testUtil/superRender';
 import InputPassword from '.';
 import { act, fireEvent, screen } from '@testing-library/react';
 import { getBySelector, queryBySelector, sleep } from '~/testUtil/customQuery';

@@ -1,11 +1,11 @@
 import { BackendFormProps } from '..';
 import AutoCreatedFormItemByApi from '../AutoCreatedFormItemByApi';
-import { renderWithTheme } from '../../../testUtils/customRender';
+import { sqleSuperRender } from '../../../testUtils/superRender';
 import Form from 'antd/es/form/Form';
 
 describe('sqle/components/BackendForm', () => {
   const customRender = (params: BackendFormProps) => {
-    return renderWithTheme(
+    return sqleSuperRender(
       <Form>
         <AutoCreatedFormItemByApi {...params} formMode="create" />
       </Form>

@@ -1,4 +1,4 @@
-import { renderWithReduxAndTheme } from '@actiontech/shared/lib/testUtil/customRender';
+import { superRender } from '@actiontech/shared/lib/testUtil/superRender';
 import { useDispatch } from 'react-redux';
 import { cleanup } from '@testing-library/react';
 import MemberModal from '.';
@@ -22,7 +22,7 @@ describe('base/Member/Modal', () => {
   });
 
   it('should dispatch init action', () => {
-    renderWithReduxAndTheme(<MemberModal />);
+    superRender(<MemberModal />);
     expect(dispatchSpy).toHaveBeenCalledTimes(1);
     expect(dispatchSpy).toHaveBeenCalledWith({
       payload: {

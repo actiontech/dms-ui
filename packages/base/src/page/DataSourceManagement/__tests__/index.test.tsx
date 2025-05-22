@@ -1,8 +1,8 @@
 import { fireEvent } from '@testing-library/dom';
 import DataSourceManagement from '..';
-import { superRender } from '../../../testUtils/customRender';
-import dbServices from '../../../testUtils/mockApi/dbServices';
-import syncTaskList from '../../../testUtils/mockApi/syncTaskList';
+import { baseSuperRender } from '../../../testUtils/superRender';
+import dbServices from '@actiontech/shared/lib/testUtil/mockApi/base/dbServices';
+import syncTaskList from '@actiontech/shared/lib/testUtil/mockApi/base/syncTaskList';
 import { DataSourceManagerSegmentedKey } from '../index.type';
 import { useNavigate } from 'react-router-dom';
 import eventEmitter from '../../../utils/EventEmitter';
@@ -40,7 +40,7 @@ describe('test DataSourceManagement', () => {
   });
 
   it('should match snapshot', () => {
-    const { container, getByText } = superRender(<DataSourceManagement />);
+    const { container, getByText } = baseSuperRender(<DataSourceManagement />);
 
     expect(container).toMatchSnapshot();
     fireEvent.click(getByText('外部数据源同步'));
@@ -55,7 +55,7 @@ describe('test DataSourceManagement', () => {
   it('should send emit event when click refresh icon', () => {
     const emitSpy = jest.spyOn(eventEmitter, 'emit');
 
-    const { getByText } = superRender(<DataSourceManagement />);
+    const { getByText } = baseSuperRender(<DataSourceManagement />);
 
     fireEvent.click(getBySelector('.custom-icon-refresh'));
 
@@ -75,7 +75,7 @@ describe('test DataSourceManagement', () => {
   it('should send emit event when click batch test connect button', () => {
     const emitSpy = jest.spyOn(eventEmitter, 'emit');
 
-    const { getByText } = superRender(<DataSourceManagement />);
+    const { getByText } = baseSuperRender(<DataSourceManagement />);
 
     fireEvent.click(getByText('批量测试数据源连通性'));
 
@@ -100,7 +100,7 @@ describe('test DataSourceManagement', () => {
       { useSpyOnMockHooks: true }
     );
 
-    const { queryByText } = superRender(<DataSourceManagement />);
+    const { queryByText } = baseSuperRender(<DataSourceManagement />);
 
     expect(queryByText('全局数据源')).not.toBeInTheDocument();
     expect(queryByText('外部数据源同步')).not.toBeInTheDocument();

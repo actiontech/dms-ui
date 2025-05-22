@@ -1,7 +1,7 @@
 import ApiBase from '.';
 import Download from '../../../utils/Download';
 import axios from 'axios';
-import TestMockApi from '../../../testUtil/mockApi';
+import { TestMockApi } from '../../../testUtil/mockApi';
 import { eventEmitter } from '../../../utils/EventEmitter';
 import EmitterKey from '../../../data/EmitterKey';
 import 'blob-polyfill';

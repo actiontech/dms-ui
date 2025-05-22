@@ -1,8 +1,8 @@
-import { superRender } from '../../../../testUtils/customRender';
+import { sqleSuperRender } from '../../../../testUtils/superRender';
 import StepCard from '.';
 import { fireEvent, screen } from '@testing-library/react';
 import { getBySelector } from '@actiontech/shared/lib/testUtil/customQuery';
-import { workflowTemplateData } from '../../../../testUtils/mockApi/workflowTemplate/data';
+import { workflowTemplateData } from '@actiontech/shared/lib/testUtil/mockApi/sqle/workflowTemplate/data';
 import { IStepCardProps, StepInfoArrowEnum } from './index.type';
 import { HonourFilled } from '@actiontech/icons';
 
@@ -29,7 +29,9 @@ describe('page/WorkflowTemplate/StepCard', () => {
   });
 
   const customRender = (data: IStepCardProps) => {
-    return superRender(<StepCard {...data} key={`${data.key}-step-card`} />);
+    return sqleSuperRender(
+      <StepCard {...data} key={`${data.key}-step-card`} />
+    );
   };
   it('render step card with no operator and not active', async () => {
     const { baseElement } = customRender({ ...workflowTemplateCardProps });

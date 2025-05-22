@@ -1,7 +1,7 @@
 import { screen, cleanup, act } from '@testing-library/react';
 import WhiteList from '.';
-import { renderWithReduxAndTheme } from '@actiontech/shared/lib/testUtil/customRender';
-import auditWhiteList from '../../testUtils/mockApi/auditWhiteList';
+import { superRender } from '@actiontech/shared/lib/testUtil/superRender';
+import auditWhiteList from '@actiontech/shared/lib/testUtil/mockApi/sqle/auditWhiteList';
 import { getBySelector } from '@actiontech/shared/lib/testUtil/customQuery';
 import { useSelector } from 'react-redux';
 import { ModalName } from '../../data/ModalName';
@@ -39,7 +39,7 @@ describe('slqe/Whitelist', () => {
   });
 
   test('should render white list', async () => {
-    const { baseElement } = renderWithReduxAndTheme(<WhiteList />);
+    const { baseElement } = superRender(<WhiteList />);
     await act(async () => jest.advanceTimersByTime(3000));
     expect(baseElement).toMatchSnapshot();
     expect(whiteListSpy).toHaveBeenCalledTimes(1);

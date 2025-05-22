@@ -1,11 +1,11 @@
 import { mockUseCurrentProject } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentProject';
 import CreateResultStep from '..';
-import { superRender } from '../../../../../../testUtils/customRender';
+import { sqleSuperRender } from '../../../../../../testUtils/superRender';
 
 describe('sqle/SqlExecWorkflow/Create/CreatedResult', () => {
   it('render snap', () => {
     mockUseCurrentProject();
-    const { baseElement } = superRender(
+    const { baseElement } = sqleSuperRender(
       <CreateResultStep workflowID="1234" desc="desc" />
     );
     expect(baseElement).toMatchSnapshot();

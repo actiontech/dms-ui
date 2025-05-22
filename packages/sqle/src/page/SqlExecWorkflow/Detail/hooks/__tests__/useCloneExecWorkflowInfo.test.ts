@@ -1,10 +1,10 @@
 import { act, cleanup, renderHook } from '@testing-library/react';
-import execWorkflow from '../../../../../testUtils/mockApi/execWorkflow';
+import execWorkflow from '@actiontech/shared/lib/testUtil/mockApi/sqle/execWorkflow';
 import { mockUseCurrentProject } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentProject';
 import { mockProjectInfo } from '@actiontech/shared/lib/testUtil/mockHook/data';
 import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
-import { WorkflowsOverviewListData } from '../../../../../testUtils/mockApi/execWorkflow/data';
+import { WorkflowsOverviewListData } from '@actiontech/shared/lib/testUtil/mockApi/sqle/execWorkflow/data';
 import useCloneExecWorkflowInfo from '../useCloneExecWorkflowInfo';
 import {
   AuditTaskResV1AuditLevelEnum,

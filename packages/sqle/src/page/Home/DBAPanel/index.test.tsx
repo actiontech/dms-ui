@@ -1,10 +1,10 @@
-import { superRender } from '@actiontech/shared/lib/testUtil/customRender';
+import { superRender } from '@actiontech/shared/lib/testUtil/superRender';
 import DBAPanel from '.';
 import {
   dashboardMockData,
   workflowMockData
-} from '../../../testUtils/mockApi/home/data';
-import home from '../../../testUtils/mockApi/home';
+} from '@actiontech/shared/lib/testUtil/mockApi/sqle/home/data';
+import home from '@actiontech/shared/lib/testUtil/mockApi/sqle/home';
 import { act, cleanup, fireEvent, screen } from '@testing-library/react';
 import { mockUseCurrentProject } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentProject';
 import { mockUseCurrentUser } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentUser';

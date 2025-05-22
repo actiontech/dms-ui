@@ -1,7 +1,7 @@
 import TableTopList, { ITableTopList } from '.';
 
 import { act, cleanup, fireEvent } from '@testing-library/react';
-import { renderWithTheme } from '../../../testUtils/customRender';
+import { sqleSuperRender } from '../../../testUtils/superRender';
 import { mockThemeStyleData } from '../../../testUtils/mockHooks/mockThemeStyleData';
 
 type typeTableItem = {
@@ -11,7 +11,7 @@ type typeTableItem = {
 
 describe('sqle/components/ChartCom/TableTopList', () => {
   const customRender = (params: ITableTopList<typeTableItem>) => {
-    return renderWithTheme(<TableTopList {...params} />);
+    return sqleSuperRender(<TableTopList {...params} />);
   };
 
   beforeEach(() => {

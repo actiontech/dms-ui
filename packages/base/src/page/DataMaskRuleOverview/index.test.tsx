@@ -1,6 +1,6 @@
 import { cleanup, screen, act } from '@testing-library/react';
-import { superRender } from '../../testUtils/customRender';
-import dms from '../../testUtils/mockApi/global';
+import { baseSuperRender } from '../../testUtils/superRender';
+import dms from '@actiontech/shared/lib/testUtil/mockApi/base/global';
 import DataMaskRuleOverview from '.';
 import { createSpySuccessResponse } from '@actiontech/shared/lib/testUtil/mockApi';
 
@@ -14,7 +14,7 @@ jest.mock('react-router-dom', () => {
 
 describe('page/DataMaskRuleOverview', () => {
   const customRender = () => {
-    return superRender(<DataMaskRuleOverview />);
+    return baseSuperRender(<DataMaskRuleOverview />);
   };
 
   beforeEach(() => {

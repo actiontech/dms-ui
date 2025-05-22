@@ -1,4 +1,4 @@
-import { renderHooksWithReduxAndRouter } from '@actiontech/shared/lib/testUtil/customRender';
+import { superRenderHook } from '@actiontech/shared/lib/testUtil/superRender';
 import { act } from '@testing-library/react';
 import useGetUserInfo from '.';
 import { useDispatch } from 'react-redux';
@@ -42,7 +42,7 @@ describe('diagnosis/useGetUserInfo', () => {
   });
 
   const customRender = () => {
-    return renderHooksWithReduxAndRouter(() => useGetUserInfo(), {});
+    return superRenderHook(() => useGetUserInfo(), {});
   };
 
   it('request get user info success', async () => {

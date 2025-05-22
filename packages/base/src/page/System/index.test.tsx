@@ -1,9 +1,9 @@
 import SystemEEPage from './';
 import { useDispatch } from 'react-redux';
 import { cleanup, act, fireEvent, screen } from '@testing-library/react';
-import { superRender } from '../../testUtils/customRender';
-import system from '../../testUtils/mockApi/system';
-import dms from '../../testUtils/mockApi/global';
+import { baseSuperRender } from '../../testUtils/superRender';
+import system from '@actiontech/shared/lib/testUtil/mockApi/base/system';
+import dms from '@actiontech/shared/lib/testUtil/mockApi/base/global';
 import { DMS_DEFAULT_WEB_TITLE } from '@actiontech/shared/lib/data/common';
 import { ModalName } from '../../data/ModalName';
 import { getAllBySelector } from '@actiontech/shared/lib/testUtil/customQuery';
@@ -17,7 +17,7 @@ jest.mock('react-redux', () => ({
 describe('base/System-ee', () => {
   const dispatchSpy = jest.fn();
   const customRender = (initialEntry: string[] = ['/system']) => {
-    return superRender(<SystemEEPage />, undefined, {
+    return baseSuperRender(<SystemEEPage />, undefined, {
       initStore: {
         system: {
           modalStatus: {},

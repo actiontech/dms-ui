@@ -1,6 +1,6 @@
 import { fireEvent } from '@testing-library/dom';
 import { getBySelector } from '../../../testUtil/customQuery';
-import { superRender } from '../../../testUtil/customRender';
+import { superRender } from '../../../testUtil/superRender';
 import Snippet from '../component/Snippet';
 import { SQLSnippetRendererProps } from '../SQLRenderer.types';
 import Copy from '../../../utils/Copy';

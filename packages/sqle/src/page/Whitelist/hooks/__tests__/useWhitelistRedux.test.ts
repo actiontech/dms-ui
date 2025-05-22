@@ -1,4 +1,4 @@
-import { renderHooksWithTheme } from '@actiontech/shared/lib/testUtil/customRender';
+import { superRenderHook } from '@actiontech/shared/lib/testUtil/superRender';
 import { useDispatch } from 'react-redux';
 import { cleanup, act } from '@testing-library/react';
 import useWhitelistRedux from '../useWhitelistRedux';
@@ -24,7 +24,7 @@ describe('sqle/Whitelist/hooks/useWhitelistRedux', () => {
   });
 
   it('render open create sql management exception modal', async () => {
-    const { result } = renderHooksWithTheme(() => useWhitelistRedux());
+    const { result } = superRenderHook(() => useWhitelistRedux());
 
     act(() => {
       result.current.openCreateWhitelistModal();
@@ -41,7 +41,7 @@ describe('sqle/Whitelist/hooks/useWhitelistRedux', () => {
   });
 
   it('render update Select Sql Management Exception Record', async () => {
-    const { result } = renderHooksWithTheme(() => useWhitelistRedux());
+    const { result } = superRenderHook(() => useWhitelistRedux());
 
     act(() => {
       result.current.updateSelectWhitelistRecord({

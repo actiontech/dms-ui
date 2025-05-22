@@ -1,4 +1,4 @@
-import { superRender } from '@actiontech/shared/lib/testUtil/customRender';
+import { superRender } from '@actiontech/shared/lib/testUtil/superRender';
 import { act, fireEvent, screen } from '@testing-library/react';
 import CreateRole from '..';
 import auth from '../../../../../testUtil/mockApi/auth';

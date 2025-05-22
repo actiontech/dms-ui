@@ -1,9 +1,9 @@
 import { act, cleanup, fireEvent, screen } from '@testing-library/react';
 import SqlOptimizationOverview from '.';
-import { superRender } from '../../../testUtils/customRender';
+import { sqleSuperRender } from '../../../testUtils/superRender';
 import { mockUseCurrentProject } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentProject';
-import sqlOptimization from '../../../testUtils/mockApi/sqlOptimization';
-import { optimizationDetailMockData } from '../../../testUtils/mockApi/sqlOptimization/data';
+import sqlOptimization from '@actiontech/shared/lib/testUtil/mockApi/sqle/sqlOptimization';
+import { optimizationDetailMockData } from '@actiontech/shared/lib/testUtil/mockApi/sqle/sqlOptimization/data';
 import { useParams } from 'react-router-dom';
 import { createSpySuccessResponse } from '@actiontech/shared/lib/testUtil/mockApi';
 
@@ -37,7 +37,7 @@ describe('sqle/SqlOptimization/Detail', () => {
   });
 
   it('render detail page', async () => {
-    const { baseElement } = superRender(<SqlOptimizationOverview />);
+    const { baseElement } = sqleSuperRender(<SqlOptimizationOverview />);
     await act(async () => jest.advanceTimersByTime(3000));
     expect(baseElement).toMatchSnapshot();
     expect(getOptimizationReqSpy).toHaveBeenCalled();
@@ -53,7 +53,7 @@ describe('sqle/SqlOptimization/Detail', () => {
         explain_validation_details: {}
       })
     );
-    const { baseElement } = superRender(<SqlOptimizationOverview />);
+    const { baseElement } = sqleSuperRender(<SqlOptimizationOverview />);
     await act(async () => jest.advanceTimersByTime(3000));
     expect(baseElement).toMatchSnapshot();
     expect(getOptimizationReqSpy).toHaveBeenCalled();
@@ -67,14 +67,14 @@ describe('sqle/SqlOptimization/Detail', () => {
         optimized_sql: ''
       })
     );
-    const { baseElement } = superRender(<SqlOptimizationOverview />);
+    const { baseElement } = sqleSuperRender(<SqlOptimizationOverview />);
     await act(async () => jest.advanceTimersByTime(3000));
     expect(baseElement).toMatchSnapshot();
     expect(getOptimizationReqSpy).toHaveBeenCalled();
   });
 
   it('render link to overview page', async () => {
-    superRender(<SqlOptimizationOverview />);
+    sqleSuperRender(<SqlOptimizationOverview />);
     await act(async () => jest.advanceTimersByTime(3000));
     expect(getOptimizationReqSpy).toHaveBeenCalled();
 

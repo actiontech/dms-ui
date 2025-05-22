@@ -1,7 +1,7 @@
 import { act, renderHook, cleanup } from '@testing-library/react';
 import useProjectTips from '.';
-import project from '../../testUtils/mockApi/project';
-import { mockProjectList } from '../../testUtils/mockApi/project/data';
+import project from '@actiontech/shared/lib/testUtil/mockApi/base/project';
+import { mockProjectList } from '@actiontech/shared/lib/testUtil/mockApi/base/project/data';
 import {
   createSpyErrorResponse,
   createSpyFailResponse

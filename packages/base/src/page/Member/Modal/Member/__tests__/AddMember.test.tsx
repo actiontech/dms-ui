@@ -1,9 +1,9 @@
-import userCenter from '../../../../../testUtils/mockApi/userCenter';
+import userCenter from '@actiontech/shared/lib/testUtil/mockApi/base/userCenter';
 import {
   userList,
   roleList
-} from '../../../../../testUtils/mockApi/userCenter/data';
-import { renderWithReduxAndTheme } from '@actiontech/shared/lib/testUtil/customRender';
+} from '@actiontech/shared/lib/testUtil/mockApi/base/userCenter/data';
+import { superRender } from '@actiontech/shared/lib/testUtil/superRender';
 import { cleanup, fireEvent, act, screen } from '@testing-library/react';
 import { ModalName } from '../../../../../data/ModalName';
 import AddMember from '../AddMember';
@@ -13,11 +13,11 @@ import { selectOptionByIndex } from '@actiontech/shared/lib/testUtil/customQuery
 import { queryBySelector } from '@actiontech/shared/lib/testUtil/customQuery';
 import { mockUseCurrentProject } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentProject';
 import { mockProjectInfo } from '@actiontech/shared/lib/testUtil/mockHook/data';
-import member from '../../../../../testUtils/mockApi/member';
+import member from '@actiontech/shared/lib/testUtil/mockApi/base/member';
 import { useDispatch, useSelector } from 'react-redux';
 import { mockUseDbServiceDriver } from '@actiontech/shared/lib/testUtil/mockHook/mockUseDbServiceDriver';
-import dbServices from '../../../../../testUtils/mockApi/dbServices';
-import { dbServices as dbServicesList } from '../../../../../testUtils/mockApi/dbServices/data';
+import dbServices from '@actiontech/shared/lib/testUtil/mockApi/base/dbServices';
+import { dbServices as dbServicesList } from '@actiontech/shared/lib/testUtil/mockApi/base/dbServices/data';
 import { ListMemberRoleWithOpRangeOpRangeTypeEnum } from '@actiontech/shared/lib/api/base/service/common.enum';
 
 jest.mock('react-redux', () => ({
@@ -55,7 +55,7 @@ describe('base/Member/Modal/AddMember', () => {
 
   it('should send add member request when click submit button', async () => {
     const eventEmitSpy = jest.spyOn(EventEmitter, 'emit');
-    const { baseElement } = renderWithReduxAndTheme(<AddMember />);
+    const { baseElement } = superRender(<AddMember />);
     await act(async () => jest.advanceTimersByTime(3000));
     expect(listUsersSpy).toHaveBeenCalledTimes(1);
     expect(litDBServices).toHaveBeenCalledTimes(1);
@@ -105,7 +105,7 @@ describe('base/Member/Modal/AddMember', () => {
   });
 
   it('should send add member request when click submit button with role', async () => {
-    const { baseElement } = renderWithReduxAndTheme(<AddMember />);
+    const { baseElement } = superRender(<AddMember />);
     await act(async () => jest.advanceTimersByTime(3000));
     selectOptionByIndex('用户名称', userList[0].name ?? '', 0);
     fireEvent.click(queryBySelector('.member-form-add-button', baseElement)!);
@@ -150,7 +150,7 @@ describe('base/Member/Modal/AddMember', () => {
   });
 
   it('should close modal when click close button', async () => {
-    const { baseElement } = renderWithReduxAndTheme(<AddMember />);
+    const { baseElement } = superRender(<AddMember />);
     fireEvent.click(queryBySelector('.closed-icon-custom', baseElement)!);
     await act(async () => jest.advanceTimersByTime(1000));
     expect(dispatchSpy).toHaveBeenCalledTimes(1);

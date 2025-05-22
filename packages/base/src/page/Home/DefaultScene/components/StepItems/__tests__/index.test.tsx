@@ -1,6 +1,6 @@
 import { cleanup, fireEvent, renderHook, screen } from '@testing-library/react';
 import StepItems from '..';
-import { superRender } from '../../../../../../testUtils/customRender';
+import { baseSuperRender } from '../../../../../../testUtils/superRender';
 import { AdminUserDevopsSteps, NormalUserDevopsSteps } from '../index.data';
 import { DataSourceManagerSegmentedKey } from '../../../../../DataSourceManagement/index.type';
 import { useNavigate } from 'react-router-dom';
@@ -26,7 +26,7 @@ describe('test base/Home/StepItems', () => {
       setOpenRulePageProjectSelectorModal:
         setOpenRulePageProjectSelectorModalSpy
     });
-    return superRender(<StepItems steps={steps_admin} />);
+    return baseSuperRender(<StepItems steps={steps_admin} />);
   };
   beforeEach(() => {
     (useNavigate as jest.Mock).mockImplementation(() => navigateSpy);
@@ -152,7 +152,7 @@ describe('test base/Home/StepItems', () => {
       setOpenRulePageProjectSelectorModal:
         setOpenRulePageProjectSelectorModalSpy
     });
-    superRender(<StepItems steps={steps_admin_not_project} />);
+    baseSuperRender(<StepItems steps={steps_admin_not_project} />);
 
     fireEvent.click(screen.getByText('查看审核规则'));
     expect(navigateSpy).toHaveBeenCalledTimes(0);
@@ -166,7 +166,7 @@ describe('test base/Home/StepItems', () => {
       projectID: ''
     });
 
-    const { container: normal_container } = superRender(
+    const { container: normal_container } = baseSuperRender(
       <StepItems steps={steps_normal} />
     );
 

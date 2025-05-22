@@ -2,7 +2,7 @@
  * @test_version ce
  */
 
-import { superRender } from '@actiontech/shared/lib/testUtil/customRender';
+import { superRender } from '@actiontech/shared/lib/testUtil/superRender';
 import { renderLocationDisplay } from '@actiontech/shared/lib/testUtil/LocationDisplay';
 import CEIndexProjectDetail from '../index.ce';
 import { cleanup, screen } from '@testing-library/react';

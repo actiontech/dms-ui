@@ -3,11 +3,11 @@
  */
 
 import DataExportManagement from '..';
-import { superRender } from '../../../testUtils/customRender';
+import { baseSuperRender } from '../../../testUtils/superRender';
 
 describe('test base/DataExport ce', () => {
   it('should match snapshot', () => {
-    const { container } = superRender(<DataExportManagement />);
+    const { container } = baseSuperRender(<DataExportManagement />);
     expect(container).toMatchSnapshot();
   });
 });

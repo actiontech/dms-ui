@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 
 import { cleanup, fireEvent, screen, act } from '@testing-library/react';
 import { mockSystemConfig } from '../../../../testUtils/mockHooks/mockSystemConfig';
-import { renderWithTheme } from '@actiontech/shared/lib/testUtil/customRender';
+import { superRender } from '@actiontech/shared/lib/testUtil/superRender';
 
 jest.mock('react-router-dom', () => {
   return {
@@ -27,7 +27,7 @@ describe('base/page/Nav/SideMenu/ProjectTitle', () => {
   });
 
   it('render snap', async () => {
-    const { baseElement } = renderWithTheme(<ProjectTitle />);
+    const { baseElement } = superRender(<ProjectTitle />);
     expect(baseElement).toMatchSnapshot();
 
     expect(screen.getByText('DMS')).toBeInTheDocument();

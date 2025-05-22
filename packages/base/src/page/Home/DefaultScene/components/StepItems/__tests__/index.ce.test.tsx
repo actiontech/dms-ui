@@ -3,7 +3,7 @@
  */
 import { fireEvent, renderHook, screen } from '@testing-library/react';
 import { AdminUserDevopsSteps } from '../index.data';
-import { superRender } from '../../../../../../testUtils/customRender';
+import { baseSuperRender } from '../../../../../../testUtils/superRender';
 import StepItems from '..';
 import { useNavigate } from 'react-router-dom';
 import { useTypedNavigate } from '@actiontech/shared';
@@ -30,7 +30,7 @@ describe('test base/Home/StepItems', () => {
       setOpenRulePageProjectSelectorModal:
         setOpenRulePageProjectSelectorModalSpy
     });
-    superRender(<StepItems steps={steps_admin} />);
+    baseSuperRender(<StepItems steps={steps_admin} />);
 
     fireEvent.click(screen.getByText('发起导出工单'));
     expect(navigateSpy).toHaveBeenCalledTimes(1);

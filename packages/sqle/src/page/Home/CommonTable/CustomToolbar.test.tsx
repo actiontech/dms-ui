@@ -1,4 +1,4 @@
-import { superRender } from '@actiontech/shared/lib/testUtil/customRender';
+import { superRender } from '@actiontech/shared/lib/testUtil/superRender';
 import { CustomToolbar } from './CustomToolbar';
 import { fireEvent, screen } from '@testing-library/react';
 import { DASHBOARD_COMMON_GET_ORDER_NUMBER } from '.';

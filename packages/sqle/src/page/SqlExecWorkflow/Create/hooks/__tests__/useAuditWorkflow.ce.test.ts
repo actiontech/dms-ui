@@ -10,11 +10,11 @@ import { createSpySuccessResponse } from '@actiontech/shared/lib/testUtil/mockAp
 import { mockProjectInfo } from '@actiontech/shared/lib/testUtil/mockHook/data';
 import { mockUseCurrentProject } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentProject';
 import { act, renderHook } from '@testing-library/react';
-import { AuditTaskResData } from '../../../../../testUtils/mockApi/execWorkflow/data';
+import { AuditTaskResData } from '@actiontech/shared/lib/testUtil/mockApi/sqle/execWorkflow/data';
 import { SAME_SQL_MODE_DEFAULT_FIELD_KEY } from '../../../Common/SqlStatementFormController/SqlStatementFormItem/index.data';
 import { SqlAuditInfoFormFields, SqlStatementFields } from '../../index.type';
 import useAuditWorkflow from '../useAuditWorkflow';
-import execWorkflow from '../../../../../testUtils/mockApi/execWorkflow';
+import execWorkflow from '@actiontech/shared/lib/testUtil/mockApi/sqle/execWorkflow';
 
 describe('test useAuditWorkflow ce', () => {
   const sqlFile = new File(

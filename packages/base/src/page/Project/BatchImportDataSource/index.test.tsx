@@ -1,6 +1,6 @@
-import project from '../../../testUtils/mockApi/project';
-import { mockBatchImportDBCheckData } from '../../../testUtils/mockApi/project/data';
-import { superRender } from '../../../testUtils/customRender';
+import project from '@actiontech/shared/lib/testUtil/mockApi/base/project';
+import { mockBatchImportDBCheckData } from '@actiontech/shared/lib/testUtil/mockApi/base/project/data';
+import { baseSuperRender } from '../../../testUtils/superRender';
 import ProjectImport from '.';
 import { act, cleanup, fireEvent, screen } from '@testing-library/react';
 import { getBySelector } from '@actiontech/shared/lib/testUtil/customQuery';
@@ -30,7 +30,7 @@ describe('base/Project/BatchImportDataSource', () => {
   });
 
   it('render init snap', async () => {
-    const { baseElement } = superRender(<ProjectImport />);
+    const { baseElement } = baseSuperRender(<ProjectImport />);
     await act(async () => jest.advanceTimersByTime(300));
     expect(baseElement).toMatchSnapshot();
     expect(screen.getByText('批量导入数据源')).toBeInTheDocument();
@@ -38,7 +38,7 @@ describe('base/Project/BatchImportDataSource', () => {
   });
 
   it('render download data source template', async () => {
-    superRender(<ProjectImport />);
+    baseSuperRender(<ProjectImport />);
     await act(async () => {
       fireEvent.click(screen.getByText('下载导入模板'));
       await jest.advanceTimersByTime(100);
@@ -54,7 +54,7 @@ describe('base/Project/BatchImportDataSource', () => {
   });
 
   it('render delete file', async () => {
-    const { baseElement } = superRender(<ProjectImport />);
+    const { baseElement } = baseSuperRender(<ProjectImport />);
     await act(async () => jest.advanceTimersByTime(300));
     const file = new File([''], 'test.csv');
     fireEvent.change(getBySelector('#files', baseElement), {
@@ -92,7 +92,7 @@ describe('base/Project/BatchImportDataSource', () => {
       });
     });
 
-    const { baseElement } = superRender(<ProjectImport />);
+    const { baseElement } = baseSuperRender(<ProjectImport />);
     await act(async () => jest.advanceTimersByTime(300));
     const file = new File([''], 'test.csv');
     fireEvent.change(getBySelector('#files', baseElement), {
@@ -111,7 +111,7 @@ describe('base/Project/BatchImportDataSource', () => {
   });
 
   it('render upload file', async () => {
-    const { baseElement } = superRender(<ProjectImport />);
+    const { baseElement } = baseSuperRender(<ProjectImport />);
     await act(async () => jest.advanceTimersByTime(300));
     expect(screen.getByText('导 入').closest('button')).toBeDisabled();
     const file = new File([''], 'test.csv');
@@ -145,7 +145,7 @@ describe('base/Project/BatchImportDataSource', () => {
     importDBServicesOfProjectsSpy.mockImplementation(() =>
       createSpyFailResponse({})
     );
-    const { baseElement } = superRender(<ProjectImport />);
+    const { baseElement } = baseSuperRender(<ProjectImport />);
     await act(async () => jest.advanceTimersByTime(300));
     expect(screen.getByText('导 入').closest('button')).toBeDisabled();
     const file = new File([''], 'test.csv');

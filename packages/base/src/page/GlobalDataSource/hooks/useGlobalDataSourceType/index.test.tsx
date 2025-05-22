@@ -1,7 +1,7 @@
 import { act, renderHook, cleanup, render } from '@testing-library/react';
 import useGlobalDataSourceType from '.';
-import dbServices from '../../../../testUtils/mockApi/dbServices';
-import { globalDBServicesTipsMockData } from '../../../../testUtils/mockApi/dbServices/data';
+import dbServices from '@actiontech/shared/lib/testUtil/mockApi/base/dbServices';
+import { globalDBServicesTipsMockData } from '@actiontech/shared/lib/testUtil/mockApi/base/dbServices/data';
 import {
   createSpyErrorResponse,
   createSpyFailResponse

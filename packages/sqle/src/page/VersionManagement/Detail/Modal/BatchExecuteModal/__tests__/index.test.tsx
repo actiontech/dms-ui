@@ -1,7 +1,7 @@
 import { cleanup, act, screen, fireEvent } from '@testing-library/react';
 import { useSelector, useDispatch } from 'react-redux';
 import BatchExecuteModal from '../index';
-import { superRender } from '../../../../../..//testUtils/customRender';
+import { sqleSuperRender } from '../../../../../../testUtils/superRender';
 import { mockUseCurrentProject } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentProject';
 import { mockProjectInfo } from '@actiontech/shared/lib/testUtil/mockHook/data';
 import { mockUseCurrentUser } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentUser';
@@ -9,7 +9,7 @@ import { mockUseDbServiceDriver } from '@actiontech/shared/lib/testUtil/mockHook
 import { ModalName } from '../../../../../../data/ModalName';
 import EmitterKey from '../../../../../../data/EmitterKey';
 import EventEmitter from '../../../../../../utils/EventEmitter';
-import sqlVersion from '../../../../../../testUtils/mockApi/sql_version';
+import sqlVersion from '@actiontech/shared/lib/testUtil/mockApi/sqle/sql_version';
 import { useParams } from 'react-router-dom';
 
 jest.mock('react-redux', () => {
@@ -75,7 +75,7 @@ describe('sqle/VersionManagement/Detail/BatchExecuteModal', () => {
   });
 
   it('render init snap shot', async () => {
-    const { baseElement } = superRender(<BatchExecuteModal />);
+    const { baseElement } = sqleSuperRender(<BatchExecuteModal />);
     await act(async () => jest.advanceTimersByTime(0));
     expect(baseElement).toMatchSnapshot();
     expect(screen.getByText('批量上线工单')).toBeInTheDocument();
@@ -83,7 +83,7 @@ describe('sqle/VersionManagement/Detail/BatchExecuteModal', () => {
 
   it('render batch execute workflow', async () => {
     const eventEmitSpy = jest.spyOn(EventEmitter, 'emit');
-    superRender(<BatchExecuteModal />);
+    sqleSuperRender(<BatchExecuteModal />);
     await act(async () => jest.advanceTimersByTime(3000));
     fireEvent.click(screen.getByText('提 交'));
     await act(async () => jest.advanceTimersByTime(0));

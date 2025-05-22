@@ -1,6 +1,6 @@
 import { mockUseCurrentProject } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentProject';
 import BackToList from '.';
-import { superRender } from '../../../../testUtils/customRender';
+import { sqleSuperRender } from '../../../../testUtils/superRender';
 
 describe('test BackToList', () => {
   beforeEach(() => {
@@ -12,10 +12,12 @@ describe('test BackToList', () => {
   });
 
   it('render snapshot when isAuditing is truthy', () => {
-    expect(superRender(<BackToList isAuditing />)).toMatchSnapshot();
+    expect(sqleSuperRender(<BackToList isAuditing />)).toMatchSnapshot();
   });
 
   it('render snapshot when isAuditing is falsy', () => {
-    expect(superRender(<BackToList isAuditing={false} />)).toMatchSnapshot();
+    expect(
+      sqleSuperRender(<BackToList isAuditing={false} />)
+    ).toMatchSnapshot();
   });
 });

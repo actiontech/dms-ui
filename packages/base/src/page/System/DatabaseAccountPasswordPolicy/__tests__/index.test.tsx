@@ -1,5 +1,5 @@
 import { cleanup, act, fireEvent, screen } from '@testing-library/react';
-import { superRender } from '../../../../testUtils/customRender';
+import { baseSuperRender } from '../../../../testUtils/superRender';
 import DatabaseAccountPasswordPolicy from '../index';
 import { getBySelector } from '@actiontech/shared/lib/testUtil/customQuery';
 import customDBPasswordRule from 'provision/src/testUtil/mockApi/customDBPasswordRule';
@@ -23,7 +23,7 @@ describe('base/System/DatabaseAccountPasswordPolicy', () => {
   });
 
   const customRender = () => {
-    return superRender(<DatabaseAccountPasswordPolicy />);
+    return baseSuperRender(<DatabaseAccountPasswordPolicy />);
   };
 
   it('renders initial state correctly', async () => {

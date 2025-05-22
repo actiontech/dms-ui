@@ -1,4 +1,4 @@
-import { renderHooksWithRedux } from '@actiontech/shared/lib/testUtil/customRender';
+import { superRenderHook } from '@actiontech/shared/lib/testUtil/superRender';
 
 import { act } from '@testing-library/react';
 import useChangeTheme from '.';
@@ -6,7 +6,7 @@ import { SupportTheme } from '@actiontech/shared/lib/enum';
 
 describe('diagnosis/useChangeTheme', () => {
   const customRender = (themeData?: SupportTheme) => {
-    return renderHooksWithRedux(() => useChangeTheme(), {
+    return superRenderHook(() => useChangeTheme(), {
       user: {
         theme: themeData ?? SupportTheme.LIGHT
       }
