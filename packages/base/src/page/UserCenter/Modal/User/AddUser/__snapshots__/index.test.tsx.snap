@@ -374,11 +374,11 @@ exports[`base/UserCenter/Modal/AddUser should send add user request when click s
                       class="ant-col ant-form-item-label"
                     >
                       <label
-                        class=""
-                        for="opPermissionUids"
-                        title="平台管理权限"
+                        class="ant-form-item-required"
+                        for="opPermissionUid"
+                        title="平台角色"
                       >
-                        平台管理权限
+                        平台角色
                       </label>
                     </div>
                     <div
@@ -391,52 +391,38 @@ exports[`base/UserCenter/Modal/AddUser should send add user request when click s
                           class="ant-form-item-control-input-content"
                         >
                           <div
-                            class="ant-select ant-select-in-form-item basic-select-wrapper css-iy4o4x ant-select-multiple ant-select-show-arrow ant-select-show-search"
+                            aria-required="true"
+                            class="ant-select ant-select-in-form-item basic-select-wrapper css-iy4o4x ant-select-single ant-select-show-arrow"
                           >
                             <div
                               class="ant-select-selector"
                             >
-                              <div
-                                class="ant-select-selection-overflow"
+                              <span
+                                class="ant-select-selection-search"
                               >
-                                <div
-                                  class="ant-select-selection-overflow-item ant-select-selection-overflow-item-suffix"
-                                  style="opacity: 1;"
-                                >
-                                  <div
-                                    class="ant-select-selection-search"
-                                    style="width: 0px;"
-                                  >
-                                    <input
-                                      aria-activedescendant="opPermissionUids_list_0"
-                                      aria-autocomplete="list"
-                                      aria-controls="opPermissionUids_list"
-                                      aria-expanded="false"
-                                      aria-haspopup="listbox"
-                                      aria-owns="opPermissionUids_list"
-                                      autocomplete="off"
-                                      class="ant-select-selection-search-input"
-                                      id="opPermissionUids"
-                                      readonly=""
-                                      role="combobox"
-                                      style="opacity: 0;"
-                                      type="search"
-                                      unselectable="on"
-                                      value=""
-                                    />
-                                    <span
-                                      aria-hidden="true"
-                                      class="ant-select-selection-search-mirror"
-                                    >
-                                       
-                                    </span>
-                                  </div>
-                                </div>
-                              </div>
+                                <input
+                                  aria-activedescendant="opPermissionUid_list_0"
+                                  aria-autocomplete="list"
+                                  aria-controls="opPermissionUid_list"
+                                  aria-expanded="false"
+                                  aria-haspopup="listbox"
+                                  aria-owns="opPermissionUid_list"
+                                  aria-required="true"
+                                  autocomplete="off"
+                                  class="ant-select-selection-search-input"
+                                  id="opPermissionUid"
+                                  readonly=""
+                                  role="combobox"
+                                  style="opacity: 0;"
+                                  type="search"
+                                  unselectable="on"
+                                  value=""
+                                />
+                              </span>
                               <span
                                 class="ant-select-selection-placeholder"
                               >
-                                请选择平台管理权限
+                                请选择平台角色
                               </span>
                             </div>
                             <span

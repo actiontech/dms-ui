@@ -59,8 +59,8 @@ describe('base/MemberList', () => {
     expect(
       screen.getByText(`共 ${memberList.length} 条数据`)
     ).toBeInTheDocument();
-    expect(screen.getAllByText('删 除')).toHaveLength(4);
-    expect(screen.getAllByText('删 除')[0]).not.toBeVisible();
+    expect(screen.getAllByText('移 除')).toHaveLength(4);
+    expect(screen.getAllByText('移 除')[0]).not.toBeVisible();
     expect(screen.getAllByText('编 辑')).toHaveLength(4);
   });
 
@@ -89,7 +89,7 @@ describe('base/MemberList', () => {
     }));
     superRender(<MemberList activePage={MemberListTypeEnum.member_list} />);
     await act(async () => jest.advanceTimersByTime(3000));
-    expect(screen.queryAllByText('删 除')).toHaveLength(0);
+    expect(screen.queryAllByText('移 除')).toHaveLength(0);
     expect(screen.queryAllByText('编 辑')).toHaveLength(0);
     useCurrentUserSpy.mockClear();
     cleanup();
@@ -111,7 +111,7 @@ describe('base/MemberList', () => {
     }));
     superRender(<MemberList activePage={MemberListTypeEnum.member_list} />);
     await act(async () => jest.advanceTimersByTime(3000));
-    expect(screen.queryAllByText('删 除')).toHaveLength(4);
+    expect(screen.queryAllByText('移 除')).toHaveLength(4);
     expect(screen.queryAllByText('编 辑')).toHaveLength(4);
     useCurrentUserSpy.mockClear();
     cleanup();
@@ -132,7 +132,7 @@ describe('base/MemberList', () => {
       ]
     }));
     await act(async () => jest.advanceTimersByTime(3000));
-    expect(screen.queryAllByText('删 除')).toHaveLength(0);
+    expect(screen.queryAllByText('移 除')).toHaveLength(0);
     expect(screen.queryAllByText('编 辑')).toHaveLength(0);
   });
 
@@ -159,9 +159,9 @@ describe('base/MemberList', () => {
     superRender(<MemberList activePage={MemberListTypeEnum.member_list} />);
     await act(async () => jest.advanceTimersByTime(3000));
     expect(memberListSpy).toHaveBeenCalledTimes(1);
-    fireEvent.click(screen.getByText('删 除'));
+    fireEvent.click(screen.getByText('移 除'));
     await act(async () => jest.advanceTimersByTime(300));
-    expect(screen.getByText(`确定要删除成员:${userName}?`)).toBeInTheDocument();
+    expect(screen.getByText(`确定要移除成员:${userName}?`)).toBeInTheDocument();
     fireEvent.click(screen.getByText('确 认'));
     await act(async () => jest.advanceTimersByTime(3300));
     expect(deleteUserSpy).toHaveBeenCalledTimes(1);
@@ -169,7 +169,7 @@ describe('base/MemberList', () => {
       member_uid: memberList[1].uid,
       project_uid: mockProjectInfo.projectID
     });
-    expect(screen.getByText(`删除成员${userName}成功`)).toBeInTheDocument();
+    expect(screen.getByText(`移除成员${userName}成功`)).toBeInTheDocument();
     await act(async () => jest.advanceTimersByTime(3000));
     expect(memberListSpy).toHaveBeenCalled();
   });

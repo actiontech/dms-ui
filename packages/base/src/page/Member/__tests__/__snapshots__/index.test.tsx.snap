@@ -121,10 +121,16 @@ exports[`base/Member should render member list when it first entered the member 
                       >
                         <colgroup>
                           <col
-                            style="width: 25%;"
+                            style="width: 10%;"
                           />
                           <col
-                            style="width: 45%;"
+                            style="width: 10%;"
+                          />
+                          <col
+                            style="width: 35%;"
+                          />
+                          <col
+                            style="width: 30%;"
                           />
                           <col
                             style="width: 20%;"
@@ -144,6 +150,18 @@ exports[`base/Member should render member list when it first entered the member 
                               用户名
                             </th>
                             <th
+                              class="ant-table-cell"
+                              scope="col"
+                            >
+                              平台角色
+                            </th>
+                            <th
+                              class="ant-table-cell"
+                              scope="col"
+                            >
+                              所属项目
+                            </th>
+                            <th
                               class="ant-table-cell ellipsis-column-width"
                               scope="col"
                             >
@@ -154,7 +172,7 @@ exports[`base/Member should render member list when it first entered the member 
                                   class="ant-space-item"
                                   style="margin-right: 8px;"
                                 >
-                                  平台操作权限
+                                  当前项目权限
                                 </div>
                                 <div
                                   class="ant-space-item"
@@ -212,6 +230,16 @@ exports[`base/Member should render member list when it first entered the member 
                               admin
                             </td>
                             <td
+                              class="ant-table-cell"
+                            >
+                              -
+                            </td>
+                            <td
+                              class="ant-table-cell"
+                            >
+                              -
+                            </td>
+                            <td
                               class="ant-table-cell ellipsis-column-width"
                             >
                               ALL
@@ -263,6 +291,16 @@ exports[`base/Member should render member list when it first entered the member 
                               class="ant-table-cell"
                             >
                               test1
+                            </td>
+                            <td
+                              class="ant-table-cell"
+                            >
+                              -
+                            </td>
+                            <td
+                              class="ant-table-cell"
+                            >
+                              -
                             </td>
                             <td
                               class="ant-table-cell ellipsis-column-width"
@@ -338,6 +376,16 @@ exports[`base/Member should render member list when it first entered the member 
                               test2
                             </td>
                             <td
+                              class="ant-table-cell"
+                            >
+                              -
+                            </td>
+                            <td
+                              class="ant-table-cell"
+                            >
+                              -
+                            </td>
+                            <td
                               class="ant-table-cell ellipsis-column-width"
                             >
                               -
@@ -364,6 +412,16 @@ exports[`base/Member should render member list when it first entered the member 
                               class="ant-table-cell"
                             >
                               test
+                            </td>
+                            <td
+                              class="ant-table-cell"
+                            >
+                              -
+                            </td>
+                            <td
+                              class="ant-table-cell"
+                            >
+                              -
                             </td>
                             <td
                               class="ant-table-cell ellipsis-column-width"
@@ -739,10 +797,16 @@ exports[`base/Member should update content when change segmented value 1`] = `
                       >
                         <colgroup>
                           <col
-                            style="width: 25%;"
+                            style="width: 10%;"
                           />
                           <col
-                            style="width: 45%;"
+                            style="width: 10%;"
+                          />
+                          <col
+                            style="width: 35%;"
+                          />
+                          <col
+                            style="width: 30%;"
                           />
                           <col
                             style="width: 20%;"
@@ -762,6 +826,18 @@ exports[`base/Member should update content when change segmented value 1`] = `
                               用户名
                             </th>
                             <th
+                              class="ant-table-cell"
+                              scope="col"
+                            >
+                              平台角色
+                            </th>
+                            <th
+                              class="ant-table-cell"
+                              scope="col"
+                            >
+                              所属项目
+                            </th>
+                            <th
                               class="ant-table-cell ellipsis-column-width"
                               scope="col"
                             >
@@ -772,7 +848,7 @@ exports[`base/Member should update content when change segmented value 1`] = `
                                   class="ant-space-item"
                                   style="margin-right: 8px;"
                                 >
-                                  平台操作权限
+                                  当前项目权限
                                 </div>
                                 <div
                                   class="ant-space-item"
@@ -825,7 +901,7 @@ exports[`base/Member should update content when change segmented value 1`] = `
                           >
                             <td
                               class="ant-table-cell"
-                              colspan="4"
+                              colspan="6"
                             >
                               <div
                                 class="ant-empty ant-empty-normal"
@@ -944,7 +1020,7 @@ exports[`base/Member should update content when change segmented value 1`] = `
                                   class="ant-space-item"
                                   style="margin-right: 8px;"
                                 >
-                                  平台操作权限
+                                  当前项目权限
                                 </div>
                                 <div
                                   class="ant-space-item"

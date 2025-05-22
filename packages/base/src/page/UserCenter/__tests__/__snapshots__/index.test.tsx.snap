@@ -139,6 +139,7 @@ exports[`base/UserCenter should hidden action when user is not admin 1`] = `
                           <col />
                           <col />
                           <col />
+                          <col />
                           <col
                             style="width: 164px;"
                           />
@@ -181,7 +182,13 @@ exports[`base/UserCenter should hidden action when user is not admin 1`] = `
                               class="ant-table-cell"
                               scope="col"
                             >
-                              平台管理权限
+                              平台角色
+                            </th>
+                            <th
+                              class="ant-table-cell"
+                              scope="col"
+                            >
+                              所属项目
                             </th>
                             <th
                               class="ant-table-cell actiontech-table-actions-column ant-table-cell-fix-right ant-table-cell-fix-right-first"
@@ -200,6 +207,15 @@ exports[`base/UserCenter should hidden action when user is not admin 1`] = `
                             class="ant-table-measure-row"
                             style="height: 0px; font-size: 0px;"
                           >
+                            <td
+                              style="padding: 0px; border: 0px; height: 0px;"
+                            >
+                              <div
+                                style="height: 0px; overflow: hidden;"
+                              >
+                                 
+                              </div>
+                            </td>
                             <td
                               style="padding: 0px; border: 0px; height: 0px;"
                             >
@@ -321,7 +337,53 @@ exports[`base/UserCenter should hidden action when user is not admin 1`] = `
                             <td
                               class="ant-table-cell"
                             >
-                              创建项目
+                              <div
+                                class="ant-space ant-space-horizontal ant-space-align-center"
+                                style="flex-wrap: wrap; margin-bottom: -4px;"
+                              >
+                                <div
+                                  class="ant-space-item"
+                                  style="padding-bottom: 4px;"
+                                >
+                                  <span
+                                    class="ant-tag ant-tag-orange basic-tag-wrapper basic-small-tag-wrapper css-17gmaof"
+                                    style="height: 28px;"
+                                  >
+                                    创建项目
+                                  </span>
+                                </div>
+                              </div>
+                            </td>
+                            <td
+                              class="ant-table-cell"
+                            >
+                              <div
+                                class="ant-space ant-space-horizontal ant-space-align-center"
+                                style="flex-wrap: wrap; margin-bottom: -4px;"
+                              >
+                                <div
+                                  class="ant-space-item"
+                                  style="padding-bottom: 4px;"
+                                >
+                                  <span
+                                    class="ant-tag ant-tag-has-color basic-tag-wrapper basic-small-tag-wrapper css-dfzxkh"
+                                    style="background-color: gray; height: 28px;"
+                                  >
+                                    <svg
+                                      height="16"
+                                      viewBox="0 0 18 18"
+                                      width="16"
+                                      xmlns="http://www.w3.org/2000/svg"
+                                    >
+                                      <path
+                                        d="M2.25 2.25h7.037a.75.75 0 0 1 .67.415L10.5 3.75H15a.75.75 0 0 1 .75.75v8.25a.75.75 0 0 1-.75.75h-4.786a.75.75 0 0 1-.671-.415L9 12H3.75v4.5h-1.5z"
+                                        fill="#EBAD1C"
+                                      />
+                                    </svg>
+                                    default
+                                  </span>
+                                </div>
+                              </div>
                             </td>
                             <td
                               class="ant-table-cell actiontech-table-actions-column ant-table-cell-fix-right ant-table-cell-fix-right-first"
@@ -388,7 +450,14 @@ exports[`base/UserCenter should hidden action when user is not admin 1`] = `
                             </td>
                             <td
                               class="ant-table-cell"
-                            />
+                            >
+                              -
+                            </td>
+                            <td
+                              class="ant-table-cell"
+                            >
+                              -
+                            </td>
                             <td
                               class="ant-table-cell actiontech-table-actions-column ant-table-cell-fix-right ant-table-cell-fix-right-first"
                               style="position: sticky; right: 0px;"
@@ -458,6 +527,81 @@ exports[`base/UserCenter should hidden action when user is not admin 1`] = `
                               -
                             </td>
                             <td
+                              class="ant-table-cell"
+                            >
+                              <div
+                                class="ant-space ant-space-horizontal ant-space-align-center"
+                                style="flex-wrap: wrap; margin-bottom: -4px;"
+                              >
+                                <div
+                                  class="ant-space-item"
+                                  style="margin-right: 0px; padding-bottom: 4px;"
+                                >
+                                  <span
+                                    class="ant-tag ant-tag-has-color basic-tag-wrapper basic-small-tag-wrapper css-dfzxkh"
+                                    style="background-color: gray; height: 28px;"
+                                  >
+                                    <svg
+                                      height="16"
+                                      viewBox="0 0 18 18"
+                                      width="16"
+                                      xmlns="http://www.w3.org/2000/svg"
+                                    >
+                                      <path
+                                        d="M2.25 2.25h7.037a.75.75 0 0 1 .67.415L10.5 3.75H15a.75.75 0 0 1 .75.75v8.25a.75.75 0 0 1-.75.75h-4.786a.75.75 0 0 1-.671-.415L9 12H3.75v4.5h-1.5z"
+                                        fill="#EBAD1C"
+                                      />
+                                    </svg>
+                                    test-project
+                                  </span>
+                                </div>
+                                <div
+                                  class="ant-space-item"
+                                  style="margin-right: 0px; padding-bottom: 4px;"
+                                >
+                                  <span
+                                    class="ant-tag ant-tag-has-color basic-tag-wrapper basic-small-tag-wrapper css-dfzxkh"
+                                    style="background-color: gray; height: 28px;"
+                                  >
+                                    <svg
+                                      height="16"
+                                      viewBox="0 0 18 18"
+                                      width="16"
+                                      xmlns="http://www.w3.org/2000/svg"
+                                    >
+                                      <path
+                                        d="M2.25 2.25h7.037a.75.75 0 0 1 .67.415L10.5 3.75H15a.75.75 0 0 1 .75.75v8.25a.75.75 0 0 1-.75.75h-4.786a.75.75 0 0 1-.671-.415L9 12H3.75v4.5h-1.5z"
+                                        fill="#EBAD1C"
+                                      />
+                                    </svg>
+                                    default
+                                  </span>
+                                </div>
+                                <div
+                                  class="ant-space-item"
+                                  style="padding-bottom: 4px;"
+                                >
+                                  <span
+                                    class="ant-tag ant-tag-has-color basic-tag-wrapper basic-small-tag-wrapper css-dfzxkh"
+                                    style="background-color: gray; height: 28px;"
+                                  >
+                                    <svg
+                                      height="16"
+                                      viewBox="0 0 18 18"
+                                      width="16"
+                                      xmlns="http://www.w3.org/2000/svg"
+                                    >
+                                      <path
+                                        d="M2.25 2.25h7.037a.75.75 0 0 1 .67.415L10.5 3.75H15a.75.75 0 0 1 .75.75v8.25a.75.75 0 0 1-.75.75h-4.786a.75.75 0 0 1-.671-.415L9 12H3.75v4.5h-1.5z"
+                                        fill="#EBAD1C"
+                                      />
+                                    </svg>
+                                    test-project-2
+                                  </span>
+                                </div>
+                              </div>
+                            </td>
+                            <td
                               class="ant-table-cell actiontech-table-actions-column ant-table-cell-fix-right ant-table-cell-fix-right-first"
                               style="position: sticky; right: 0px;"
                             >
@@ -523,7 +667,27 @@ exports[`base/UserCenter should hidden action when user is not admin 1`] = `
                             <td
                               class="ant-table-cell"
                             >
-                              全局浏览
+                              <div
+                                class="ant-space ant-space-horizontal ant-space-align-center"
+                                style="flex-wrap: wrap; margin-bottom: -4px;"
+                              >
+                                <div
+                                  class="ant-space-item"
+                                  style="padding-bottom: 4px;"
+                                >
+                                  <span
+                                    class="ant-tag ant-tag-blue basic-tag-wrapper basic-small-tag-wrapper css-1q0n2j9"
+                                    style="height: 28px;"
+                                  >
+                                    全局浏览
+                                  </span>
+                                </div>
+                              </div>
+                            </td>
+                            <td
+                              class="ant-table-cell"
+                            >
+                              -
                             </td>
                             <td
                               class="ant-table-cell actiontech-table-actions-column ant-table-cell-fix-right ant-table-cell-fix-right-first"
@@ -591,7 +755,27 @@ exports[`base/UserCenter should hidden action when user is not admin 1`] = `
                             <td
                               class="ant-table-cell"
                             >
-                              全局管理
+                              <div
+                                class="ant-space ant-space-horizontal ant-space-align-center"
+                                style="flex-wrap: wrap; margin-bottom: -4px;"
+                              >
+                                <div
+                                  class="ant-space-item"
+                                  style="padding-bottom: 4px;"
+                                >
+                                  <span
+                                    class="ant-tag ant-tag-purple basic-tag-wrapper basic-small-tag-wrapper css-96wxh3"
+                                    style="height: 28px;"
+                                  >
+                                    全局管理
+                                  </span>
+                                </div>
+                              </div>
+                            </td>
+                            <td
+                              class="ant-table-cell"
+                            >
+                              -
                             </td>
                             <td
                               class="ant-table-cell actiontech-table-actions-column ant-table-cell-fix-right ant-table-cell-fix-right-first"
@@ -962,6 +1146,7 @@ exports[`base/UserCenter should render user list when it first entered the user 
                           <col />
                           <col />
                           <col />
+                          <col />
                           <col
                             style="width: 164px;"
                           />
@@ -1004,7 +1189,13 @@ exports[`base/UserCenter should render user list when it first entered the user 
                               class="ant-table-cell"
                               scope="col"
                             >
-                              平台管理权限
+                              平台角色
+                            </th>
+                            <th
+                              class="ant-table-cell"
+                              scope="col"
+                            >
+                              所属项目
                             </th>
                             <th
                               class="ant-table-cell actiontech-table-actions-column ant-table-cell-fix-right ant-table-cell-fix-right-first"
@@ -1023,6 +1214,15 @@ exports[`base/UserCenter should render user list when it first entered the user 
                             class="ant-table-measure-row"
                             style="height: 0px; font-size: 0px;"
                           >
+                            <td
+                              style="padding: 0px; border: 0px; height: 0px;"
+                            >
+                              <div
+                                style="height: 0px; overflow: hidden;"
+                              >
+                                 
+                              </div>
+                            </td>
                             <td
                               style="padding: 0px; border: 0px; height: 0px;"
                             >
@@ -1144,7 +1344,53 @@ exports[`base/UserCenter should render user list when it first entered the user 
                             <td
                               class="ant-table-cell"
                             >
-                              创建项目
+                              <div
+                                class="ant-space ant-space-horizontal ant-space-align-center"
+                                style="flex-wrap: wrap; margin-bottom: -4px;"
+                              >
+                                <div
+                                  class="ant-space-item"
+                                  style="padding-bottom: 4px;"
+                                >
+                                  <span
+                                    class="ant-tag ant-tag-orange basic-tag-wrapper basic-small-tag-wrapper css-17gmaof"
+                                    style="height: 28px;"
+                                  >
+                                    创建项目
+                                  </span>
+                                </div>
+                              </div>
+                            </td>
+                            <td
+                              class="ant-table-cell"
+                            >
+                              <div
+                                class="ant-space ant-space-horizontal ant-space-align-center"
+                                style="flex-wrap: wrap; margin-bottom: -4px;"
+                              >
+                                <div
+                                  class="ant-space-item"
+                                  style="padding-bottom: 4px;"
+                                >
+                                  <span
+                                    class="ant-tag ant-tag-has-color basic-tag-wrapper basic-small-tag-wrapper css-dfzxkh"
+                                    style="background-color: gray; height: 28px;"
+                                  >
+                                    <svg
+                                      height="16"
+                                      viewBox="0 0 18 18"
+                                      width="16"
+                                      xmlns="http://www.w3.org/2000/svg"
+                                    >
+                                      <path
+                                        d="M2.25 2.25h7.037a.75.75 0 0 1 .67.415L10.5 3.75H15a.75.75 0 0 1 .75.75v8.25a.75.75 0 0 1-.75.75h-4.786a.75.75 0 0 1-.671-.415L9 12H3.75v4.5h-1.5z"
+                                        fill="#EBAD1C"
+                                      />
+                                    </svg>
+                                    default
+                                  </span>
+                                </div>
+                              </div>
                             </td>
                             <td
                               class="ant-table-cell actiontech-table-actions-column ant-table-cell-fix-right ant-table-cell-fix-right-first"
@@ -1165,7 +1411,7 @@ exports[`base/UserCenter should render user list when it first entered the user 
                                       type="button"
                                     >
                                       <span>
-                                        管 理
+                                        编 辑
                                       </span>
                                     </button>
                                   </div>
@@ -1241,7 +1487,14 @@ exports[`base/UserCenter should render user list when it first entered the user 
                             </td>
                             <td
                               class="ant-table-cell"
-                            />
+                            >
+                              -
+                            </td>
+                            <td
+                              class="ant-table-cell"
+                            >
+                              -
+                            </td>
                             <td
                               class="ant-table-cell actiontech-table-actions-column ant-table-cell-fix-right ant-table-cell-fix-right-first"
                               style="position: sticky; right: 0px;"
@@ -1261,7 +1514,7 @@ exports[`base/UserCenter should render user list when it first entered the user 
                                       type="button"
                                     >
                                       <span>
-                                        管 理
+                                        编 辑
                                       </span>
                                     </button>
                                   </div>
@@ -1341,6 +1594,81 @@ exports[`base/UserCenter should render user list when it first entered the user 
                               -
                             </td>
                             <td
+                              class="ant-table-cell"
+                            >
+                              <div
+                                class="ant-space ant-space-horizontal ant-space-align-center"
+                                style="flex-wrap: wrap; margin-bottom: -4px;"
+                              >
+                                <div
+                                  class="ant-space-item"
+                                  style="margin-right: 0px; padding-bottom: 4px;"
+                                >
+                                  <span
+                                    class="ant-tag ant-tag-has-color basic-tag-wrapper basic-small-tag-wrapper css-dfzxkh"
+                                    style="background-color: gray; height: 28px;"
+                                  >
+                                    <svg
+                                      height="16"
+                                      viewBox="0 0 18 18"
+                                      width="16"
+                                      xmlns="http://www.w3.org/2000/svg"
+                                    >
+                                      <path
+                                        d="M2.25 2.25h7.037a.75.75 0 0 1 .67.415L10.5 3.75H15a.75.75 0 0 1 .75.75v8.25a.75.75 0 0 1-.75.75h-4.786a.75.75 0 0 1-.671-.415L9 12H3.75v4.5h-1.5z"
+                                        fill="#EBAD1C"
+                                      />
+                                    </svg>
+                                    test-project
+                                  </span>
+                                </div>
+                                <div
+                                  class="ant-space-item"
+                                  style="margin-right: 0px; padding-bottom: 4px;"
+                                >
+                                  <span
+                                    class="ant-tag ant-tag-has-color basic-tag-wrapper basic-small-tag-wrapper css-dfzxkh"
+                                    style="background-color: gray; height: 28px;"
+                                  >
+                                    <svg
+                                      height="16"
+                                      viewBox="0 0 18 18"
+                                      width="16"
+                                      xmlns="http://www.w3.org/2000/svg"
+                                    >
+                                      <path
+                                        d="M2.25 2.25h7.037a.75.75 0 0 1 .67.415L10.5 3.75H15a.75.75 0 0 1 .75.75v8.25a.75.75 0 0 1-.75.75h-4.786a.75.75 0 0 1-.671-.415L9 12H3.75v4.5h-1.5z"
+                                        fill="#EBAD1C"
+                                      />
+                                    </svg>
+                                    default
+                                  </span>
+                                </div>
+                                <div
+                                  class="ant-space-item"
+                                  style="padding-bottom: 4px;"
+                                >
+                                  <span
+                                    class="ant-tag ant-tag-has-color basic-tag-wrapper basic-small-tag-wrapper css-dfzxkh"
+                                    style="background-color: gray; height: 28px;"
+                                  >
+                                    <svg
+                                      height="16"
+                                      viewBox="0 0 18 18"
+                                      width="16"
+                                      xmlns="http://www.w3.org/2000/svg"
+                                    >
+                                      <path
+                                        d="M2.25 2.25h7.037a.75.75 0 0 1 .67.415L10.5 3.75H15a.75.75 0 0 1 .75.75v8.25a.75.75 0 0 1-.75.75h-4.786a.75.75 0 0 1-.671-.415L9 12H3.75v4.5h-1.5z"
+                                        fill="#EBAD1C"
+                                      />
+                                    </svg>
+                                    test-project-2
+                                  </span>
+                                </div>
+                              </div>
+                            </td>
+                            <td
                               class="ant-table-cell actiontech-table-actions-column ant-table-cell-fix-right ant-table-cell-fix-right-first"
                               style="position: sticky; right: 0px;"
                             >
@@ -1359,7 +1687,7 @@ exports[`base/UserCenter should render user list when it first entered the user 
                                       type="button"
                                     >
                                       <span>
-                                        管 理
+                                        编 辑
                                       </span>
                                     </button>
                                   </div>
@@ -1437,7 +1765,27 @@ exports[`base/UserCenter should render user list when it first entered the user 
                             <td
                               class="ant-table-cell"
                             >
-                              全局浏览
+                              <div
+                                class="ant-space ant-space-horizontal ant-space-align-center"
+                                style="flex-wrap: wrap; margin-bottom: -4px;"
+                              >
+                                <div
+                                  class="ant-space-item"
+                                  style="padding-bottom: 4px;"
+                                >
+                                  <span
+                                    class="ant-tag ant-tag-blue basic-tag-wrapper basic-small-tag-wrapper css-1q0n2j9"
+                                    style="height: 28px;"
+                                  >
+                                    全局浏览
+                                  </span>
+                                </div>
+                              </div>
+                            </td>
+                            <td
+                              class="ant-table-cell"
+                            >
+                              -
                             </td>
                             <td
                               class="ant-table-cell actiontech-table-actions-column ant-table-cell-fix-right ant-table-cell-fix-right-first"
@@ -1458,7 +1806,7 @@ exports[`base/UserCenter should render user list when it first entered the user 
                                       type="button"
                                     >
                                       <span>
-                                        管 理
+                                        编 辑
                                       </span>
                                     </button>
                                   </div>
@@ -1535,7 +1883,27 @@ exports[`base/UserCenter should render user list when it first entered the user 
                             <td
                               class="ant-table-cell"
                             >
-                              全局管理
+                              <div
+                                class="ant-space ant-space-horizontal ant-space-align-center"
+                                style="flex-wrap: wrap; margin-bottom: -4px;"
+                              >
+                                <div
+                                  class="ant-space-item"
+                                  style="padding-bottom: 4px;"
+                                >
+                                  <span
+                                    class="ant-tag ant-tag-purple basic-tag-wrapper basic-small-tag-wrapper css-96wxh3"
+                                    style="height: 28px;"
+                                  >
+                                    全局管理
+                                  </span>
+                                </div>
+                              </div>
+                            </td>
+                            <td
+                              class="ant-table-cell"
+                            >
+                              -
                             </td>
                             <td
                               class="ant-table-cell actiontech-table-actions-column ant-table-cell-fix-right ant-table-cell-fix-right-first"
@@ -1556,7 +1924,7 @@ exports[`base/UserCenter should render user list when it first entered the user 
                                       type="button"
                                     >
                                       <span>
-                                        管 理
+                                        编 辑
                                       </span>
                                     </button>
                                   </div>
@@ -1937,6 +2305,7 @@ exports[`base/UserCenter switch to operate permission list 1`] = `
                           <col />
                           <col />
                           <col />
+                          <col />
                           <col
                             style="width: 164px;"
                           />
@@ -1979,7 +2348,13 @@ exports[`base/UserCenter switch to operate permission list 1`] = `
                               class="ant-table-cell"
                               scope="col"
                             >
-                              平台管理权限
+                              平台角色
+                            </th>
+                            <th
+                              class="ant-table-cell"
+                              scope="col"
+                            >
+                              所属项目
                             </th>
                             <th
                               class="ant-table-cell actiontech-table-actions-column ant-table-cell-fix-right ant-table-cell-fix-right-first"
@@ -1998,6 +2373,15 @@ exports[`base/UserCenter switch to operate permission list 1`] = `
                             class="ant-table-measure-row"
                             style="height: 0px; font-size: 0px;"
                           >
+                            <td
+                              style="padding: 0px; border: 0px; height: 0px;"
+                            >
+                              <div
+                                style="height: 0px; overflow: hidden;"
+                              >
+                                 
+                              </div>
+                            </td>
                             <td
                               style="padding: 0px; border: 0px; height: 0px;"
                             >
@@ -2119,7 +2503,53 @@ exports[`base/UserCenter switch to operate permission list 1`] = `
                             <td
                               class="ant-table-cell"
                             >
-                              创建项目
+                              <div
+                                class="ant-space ant-space-horizontal ant-space-align-center"
+                                style="flex-wrap: wrap; margin-bottom: -4px;"
+                              >
+                                <div
+                                  class="ant-space-item"
+                                  style="padding-bottom: 4px;"
+                                >
+                                  <span
+                                    class="ant-tag ant-tag-orange basic-tag-wrapper basic-small-tag-wrapper css-17gmaof"
+                                    style="height: 28px;"
+                                  >
+                                    创建项目
+                                  </span>
+                                </div>
+                              </div>
+                            </td>
+                            <td
+                              class="ant-table-cell"
+                            >
+                              <div
+                                class="ant-space ant-space-horizontal ant-space-align-center"
+                                style="flex-wrap: wrap; margin-bottom: -4px;"
+                              >
+                                <div
+                                  class="ant-space-item"
+                                  style="padding-bottom: 4px;"
+                                >
+                                  <span
+                                    class="ant-tag ant-tag-has-color basic-tag-wrapper basic-small-tag-wrapper css-dfzxkh"
+                                    style="background-color: gray; height: 28px;"
+                                  >
+                                    <svg
+                                      height="16"
+                                      viewBox="0 0 18 18"
+                                      width="16"
+                                      xmlns="http://www.w3.org/2000/svg"
+                                    >
+                                      <path
+                                        d="M2.25 2.25h7.037a.75.75 0 0 1 .67.415L10.5 3.75H15a.75.75 0 0 1 .75.75v8.25a.75.75 0 0 1-.75.75h-4.786a.75.75 0 0 1-.671-.415L9 12H3.75v4.5h-1.5z"
+                                        fill="#EBAD1C"
+                                      />
+                                    </svg>
+                                    default
+                                  </span>
+                                </div>
+                              </div>
                             </td>
                             <td
                               class="ant-table-cell actiontech-table-actions-column ant-table-cell-fix-right ant-table-cell-fix-right-first"
@@ -2140,7 +2570,7 @@ exports[`base/UserCenter switch to operate permission list 1`] = `
                                       type="button"
                                     >
                                       <span>
-                                        管 理
+                                        编 辑
                                       </span>
                                     </button>
                                   </div>
@@ -2216,7 +2646,14 @@ exports[`base/UserCenter switch to operate permission list 1`] = `
                             </td>
                             <td
                               class="ant-table-cell"
-                            />
+                            >
+                              -
+                            </td>
+                            <td
+                              class="ant-table-cell"
+                            >
+                              -
+                            </td>
                             <td
                               class="ant-table-cell actiontech-table-actions-column ant-table-cell-fix-right ant-table-cell-fix-right-first"
                               style="position: sticky; right: 0px;"
@@ -2236,7 +2673,7 @@ exports[`base/UserCenter switch to operate permission list 1`] = `
                                       type="button"
                                     >
                                       <span>
-                                        管 理
+                                        编 辑
                                       </span>
                                     </button>
                                   </div>
@@ -2316,6 +2753,81 @@ exports[`base/UserCenter switch to operate permission list 1`] = `
                               -
                             </td>
                             <td
+                              class="ant-table-cell"
+                            >
+                              <div
+                                class="ant-space ant-space-horizontal ant-space-align-center"
+                                style="flex-wrap: wrap; margin-bottom: -4px;"
+                              >
+                                <div
+                                  class="ant-space-item"
+                                  style="margin-right: 0px; padding-bottom: 4px;"
+                                >
+                                  <span
+                                    class="ant-tag ant-tag-has-color basic-tag-wrapper basic-small-tag-wrapper css-dfzxkh"
+                                    style="background-color: gray; height: 28px;"
+                                  >
+                                    <svg
+                                      height="16"
+                                      viewBox="0 0 18 18"
+                                      width="16"
+                                      xmlns="http://www.w3.org/2000/svg"
+                                    >
+                                      <path
+                                        d="M2.25 2.25h7.037a.75.75 0 0 1 .67.415L10.5 3.75H15a.75.75 0 0 1 .75.75v8.25a.75.75 0 0 1-.75.75h-4.786a.75.75 0 0 1-.671-.415L9 12H3.75v4.5h-1.5z"
+                                        fill="#EBAD1C"
+                                      />
+                                    </svg>
+                                    test-project
+                                  </span>
+                                </div>
+                                <div
+                                  class="ant-space-item"
+                                  style="margin-right: 0px; padding-bottom: 4px;"
+                                >
+                                  <span
+                                    class="ant-tag ant-tag-has-color basic-tag-wrapper basic-small-tag-wrapper css-dfzxkh"
+                                    style="background-color: gray; height: 28px;"
+                                  >
+                                    <svg
+                                      height="16"
+                                      viewBox="0 0 18 18"
+                                      width="16"
+                                      xmlns="http://www.w3.org/2000/svg"
+                                    >
+                                      <path
+                                        d="M2.25 2.25h7.037a.75.75 0 0 1 .67.415L10.5 3.75H15a.75.75 0 0 1 .75.75v8.25a.75.75 0 0 1-.75.75h-4.786a.75.75 0 0 1-.671-.415L9 12H3.75v4.5h-1.5z"
+                                        fill="#EBAD1C"
+                                      />
+                                    </svg>
+                                    default
+                                  </span>
+                                </div>
+                                <div
+                                  class="ant-space-item"
+                                  style="padding-bottom: 4px;"
+                                >
+                                  <span
+                                    class="ant-tag ant-tag-has-color basic-tag-wrapper basic-small-tag-wrapper css-dfzxkh"
+                                    style="background-color: gray; height: 28px;"
+                                  >
+                                    <svg
+                                      height="16"
+                                      viewBox="0 0 18 18"
+                                      width="16"
+                                      xmlns="http://www.w3.org/2000/svg"
+                                    >
+                                      <path
+                                        d="M2.25 2.25h7.037a.75.75 0 0 1 .67.415L10.5 3.75H15a.75.75 0 0 1 .75.75v8.25a.75.75 0 0 1-.75.75h-4.786a.75.75 0 0 1-.671-.415L9 12H3.75v4.5h-1.5z"
+                                        fill="#EBAD1C"
+                                      />
+                                    </svg>
+                                    test-project-2
+                                  </span>
+                                </div>
+                              </div>
+                            </td>
+                            <td
                               class="ant-table-cell actiontech-table-actions-column ant-table-cell-fix-right ant-table-cell-fix-right-first"
                               style="position: sticky; right: 0px;"
                             >
@@ -2334,7 +2846,7 @@ exports[`base/UserCenter switch to operate permission list 1`] = `
                                       type="button"
                                     >
                                       <span>
-                                        管 理
+                                        编 辑
                                       </span>
                                     </button>
                                   </div>
@@ -2412,7 +2924,27 @@ exports[`base/UserCenter switch to operate permission list 1`] = `
                             <td
                               class="ant-table-cell"
                             >
-                              全局浏览
+                              <div
+                                class="ant-space ant-space-horizontal ant-space-align-center"
+                                style="flex-wrap: wrap; margin-bottom: -4px;"
+                              >
+                                <div
+                                  class="ant-space-item"
+                                  style="padding-bottom: 4px;"
+                                >
+                                  <span
+                                    class="ant-tag ant-tag-blue basic-tag-wrapper basic-small-tag-wrapper css-1q0n2j9"
+                                    style="height: 28px;"
+                                  >
+                                    全局浏览
+                                  </span>
+                                </div>
+                              </div>
+                            </td>
+                            <td
+                              class="ant-table-cell"
+                            >
+                              -
                             </td>
                             <td
                               class="ant-table-cell actiontech-table-actions-column ant-table-cell-fix-right ant-table-cell-fix-right-first"
@@ -2433,7 +2965,7 @@ exports[`base/UserCenter switch to operate permission list 1`] = `
                                       type="button"
                                     >
                                       <span>
-                                        管 理
+                                        编 辑
                                       </span>
                                     </button>
                                   </div>
@@ -2510,7 +3042,27 @@ exports[`base/UserCenter switch to operate permission list 1`] = `
                             <td
                               class="ant-table-cell"
                             >
-                              全局管理
+                              <div
+                                class="ant-space ant-space-horizontal ant-space-align-center"
+                                style="flex-wrap: wrap; margin-bottom: -4px;"
+                              >
+                                <div
+                                  class="ant-space-item"
+                                  style="padding-bottom: 4px;"
+                                >
+                                  <span
+                                    class="ant-tag ant-tag-purple basic-tag-wrapper basic-small-tag-wrapper css-96wxh3"
+                                    style="height: 28px;"
+                                  >
+                                    全局管理
+                                  </span>
+                                </div>
+                              </div>
+                            </td>
+                            <td
+                              class="ant-table-cell"
+                            >
+                              -
                             </td>
                             <td
                               class="ant-table-cell actiontech-table-actions-column ant-table-cell-fix-right ant-table-cell-fix-right-first"
@@ -2531,7 +3083,7 @@ exports[`base/UserCenter switch to operate permission list 1`] = `
                                       type="button"
                                     >
                                       <span>
-                                        管 理
+                                        编 辑
                                       </span>
                                     </button>
                                   </div>
@@ -3210,6 +3762,7 @@ exports[`base/UserCenter switch to role list 1`] = `
                           <col />
                           <col />
                           <col />
+                          <col />
                           <col
                             style="width: 164px;"
                           />
@@ -3252,7 +3805,13 @@ exports[`base/UserCenter switch to role list 1`] = `
                               class="ant-table-cell"
                               scope="col"
                             >
-                              平台管理权限
+                              平台角色
+                            </th>
+                            <th
+                              class="ant-table-cell"
+                              scope="col"
+                            >
+                              所属项目
                             </th>
                             <th
                               class="ant-table-cell actiontech-table-actions-column ant-table-cell-fix-right ant-table-cell-fix-right-first"
@@ -3271,6 +3830,15 @@ exports[`base/UserCenter switch to role list 1`] = `
                             class="ant-table-measure-row"
                             style="height: 0px; font-size: 0px;"
                           >
+                            <td
+                              style="padding: 0px; border: 0px; height: 0px;"
+                            >
+                              <div
+                                style="height: 0px; overflow: hidden;"
+                              >
+                                 
+                              </div>
+                            </td>
                             <td
                               style="padding: 0px; border: 0px; height: 0px;"
                             >
@@ -3392,7 +3960,53 @@ exports[`base/UserCenter switch to role list 1`] = `
                             <td
                               class="ant-table-cell"
                             >
-                              创建项目
+                              <div
+                                class="ant-space ant-space-horizontal ant-space-align-center"
+                                style="flex-wrap: wrap; margin-bottom: -4px;"
+                              >
+                                <div
+                                  class="ant-space-item"
+                                  style="padding-bottom: 4px;"
+                                >
+                                  <span
+                                    class="ant-tag ant-tag-orange basic-tag-wrapper basic-small-tag-wrapper css-17gmaof"
+                                    style="height: 28px;"
+                                  >
+                                    创建项目
+                                  </span>
+                                </div>
+                              </div>
+                            </td>
+                            <td
+                              class="ant-table-cell"
+                            >
+                              <div
+                                class="ant-space ant-space-horizontal ant-space-align-center"
+                                style="flex-wrap: wrap; margin-bottom: -4px;"
+                              >
+                                <div
+                                  class="ant-space-item"
+                                  style="padding-bottom: 4px;"
+                                >
+                                  <span
+                                    class="ant-tag ant-tag-has-color basic-tag-wrapper basic-small-tag-wrapper css-dfzxkh"
+                                    style="background-color: gray; height: 28px;"
+                                  >
+                                    <svg
+                                      height="16"
+                                      viewBox="0 0 18 18"
+                                      width="16"
+                                      xmlns="http://www.w3.org/2000/svg"
+                                    >
+                                      <path
+                                        d="M2.25 2.25h7.037a.75.75 0 0 1 .67.415L10.5 3.75H15a.75.75 0 0 1 .75.75v8.25a.75.75 0 0 1-.75.75h-4.786a.75.75 0 0 1-.671-.415L9 12H3.75v4.5h-1.5z"
+                                        fill="#EBAD1C"
+                                      />
+                                    </svg>
+                                    default
+                                  </span>
+                                </div>
+                              </div>
                             </td>
                             <td
                               class="ant-table-cell actiontech-table-actions-column ant-table-cell-fix-right ant-table-cell-fix-right-first"
@@ -3413,7 +4027,7 @@ exports[`base/UserCenter switch to role list 1`] = `
                                       type="button"
                                     >
                                       <span>
-                                        管 理
+                                        编 辑
                                       </span>
                                     </button>
                                   </div>
@@ -3489,7 +4103,14 @@ exports[`base/UserCenter switch to role list 1`] = `
                             </td>
                             <td
                               class="ant-table-cell"
-                            />
+                            >
+                              -
+                            </td>
+                            <td
+                              class="ant-table-cell"
+                            >
+                              -
+                            </td>
                             <td
                               class="ant-table-cell actiontech-table-actions-column ant-table-cell-fix-right ant-table-cell-fix-right-first"
                               style="position: sticky; right: 0px;"
@@ -3509,7 +4130,7 @@ exports[`base/UserCenter switch to role list 1`] = `
                                       type="button"
                                     >
                                       <span>
-                                        管 理
+                                        编 辑
                                       </span>
                                     </button>
                                   </div>
@@ -3589,6 +4210,81 @@ exports[`base/UserCenter switch to role list 1`] = `
                               -
                             </td>
                             <td
+                              class="ant-table-cell"
+                            >
+                              <div
+                                class="ant-space ant-space-horizontal ant-space-align-center"
+                                style="flex-wrap: wrap; margin-bottom: -4px;"
+                              >
+                                <div
+                                  class="ant-space-item"
+                                  style="margin-right: 0px; padding-bottom: 4px;"
+                                >
+                                  <span
+                                    class="ant-tag ant-tag-has-color basic-tag-wrapper basic-small-tag-wrapper css-dfzxkh"
+                                    style="background-color: gray; height: 28px;"
+                                  >
+                                    <svg
+                                      height="16"
+                                      viewBox="0 0 18 18"
+                                      width="16"
+                                      xmlns="http://www.w3.org/2000/svg"
+                                    >
+                                      <path
+                                        d="M2.25 2.25h7.037a.75.75 0 0 1 .67.415L10.5 3.75H15a.75.75 0 0 1 .75.75v8.25a.75.75 0 0 1-.75.75h-4.786a.75.75 0 0 1-.671-.415L9 12H3.75v4.5h-1.5z"
+                                        fill="#EBAD1C"
+                                      />
+                                    </svg>
+                                    test-project
+                                  </span>
+                                </div>
+                                <div
+                                  class="ant-space-item"
+                                  style="margin-right: 0px; padding-bottom: 4px;"
+                                >
+                                  <span
+                                    class="ant-tag ant-tag-has-color basic-tag-wrapper basic-small-tag-wrapper css-dfzxkh"
+                                    style="background-color: gray; height: 28px;"
+                                  >
+                                    <svg
+                                      height="16"
+                                      viewBox="0 0 18 18"
+                                      width="16"
+                                      xmlns="http://www.w3.org/2000/svg"
+                                    >
+                                      <path
+                                        d="M2.25 2.25h7.037a.75.75 0 0 1 .67.415L10.5 3.75H15a.75.75 0 0 1 .75.75v8.25a.75.75 0 0 1-.75.75h-4.786a.75.75 0 0 1-.671-.415L9 12H3.75v4.5h-1.5z"
+                                        fill="#EBAD1C"
+                                      />
+                                    </svg>
+                                    default
+                                  </span>
+                                </div>
+                                <div
+                                  class="ant-space-item"
+                                  style="padding-bottom: 4px;"
+                                >
+                                  <span
+                                    class="ant-tag ant-tag-has-color basic-tag-wrapper basic-small-tag-wrapper css-dfzxkh"
+                                    style="background-color: gray; height: 28px;"
+                                  >
+                                    <svg
+                                      height="16"
+                                      viewBox="0 0 18 18"
+                                      width="16"
+                                      xmlns="http://www.w3.org/2000/svg"
+                                    >
+                                      <path
+                                        d="M2.25 2.25h7.037a.75.75 0 0 1 .67.415L10.5 3.75H15a.75.75 0 0 1 .75.75v8.25a.75.75 0 0 1-.75.75h-4.786a.75.75 0 0 1-.671-.415L9 12H3.75v4.5h-1.5z"
+                                        fill="#EBAD1C"
+                                      />
+                                    </svg>
+                                    test-project-2
+                                  </span>
+                                </div>
+                              </div>
+                            </td>
+                            <td
                               class="ant-table-cell actiontech-table-actions-column ant-table-cell-fix-right ant-table-cell-fix-right-first"
                               style="position: sticky; right: 0px;"
                             >
@@ -3607,7 +4303,7 @@ exports[`base/UserCenter switch to role list 1`] = `
                                       type="button"
                                     >
                                       <span>
-                                        管 理
+                                        编 辑
                                       </span>
                                     </button>
                                   </div>
@@ -3685,7 +4381,27 @@ exports[`base/UserCenter switch to role list 1`] = `
                             <td
                               class="ant-table-cell"
                             >
-                              全局浏览
+                              <div
+                                class="ant-space ant-space-horizontal ant-space-align-center"
+                                style="flex-wrap: wrap; margin-bottom: -4px;"
+                              >
+                                <div
+                                  class="ant-space-item"
+                                  style="padding-bottom: 4px;"
+                                >
+                                  <span
+                                    class="ant-tag ant-tag-blue basic-tag-wrapper basic-small-tag-wrapper css-1q0n2j9"
+                                    style="height: 28px;"
+                                  >
+                                    全局浏览
+                                  </span>
+                                </div>
+                              </div>
+                            </td>
+                            <td
+                              class="ant-table-cell"
+                            >
+                              -
                             </td>
                             <td
                               class="ant-table-cell actiontech-table-actions-column ant-table-cell-fix-right ant-table-cell-fix-right-first"
@@ -3706,7 +4422,7 @@ exports[`base/UserCenter switch to role list 1`] = `
                                       type="button"
                                     >
                                       <span>
-                                        管 理
+                                        编 辑
                                       </span>
                                     </button>
                                   </div>
@@ -3783,7 +4499,27 @@ exports[`base/UserCenter switch to role list 1`] = `
                             <td
                               class="ant-table-cell"
                             >
-                              全局管理
+                              <div
+                                class="ant-space ant-space-horizontal ant-space-align-center"
+                                style="flex-wrap: wrap; margin-bottom: -4px;"
+                              >
+                                <div
+                                  class="ant-space-item"
+                                  style="padding-bottom: 4px;"
+                                >
+                                  <span
+                                    class="ant-tag ant-tag-purple basic-tag-wrapper basic-small-tag-wrapper css-96wxh3"
+                                    style="height: 28px;"
+                                  >
+                                    全局管理
+                                  </span>
+                                </div>
+                              </div>
+                            </td>
+                            <td
+                              class="ant-table-cell"
+                            >
+                              -
                             </td>
                             <td
                               class="ant-table-cell actiontech-table-actions-column ant-table-cell-fix-right ant-table-cell-fix-right-first"
@@ -3804,7 +4540,7 @@ exports[`base/UserCenter switch to role list 1`] = `
                                       type="button"
                                     >
                                       <span>
-                                        管 理
+                                        编 辑
                                       </span>
                                     </button>
                                   </div>

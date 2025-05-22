@@ -7,7 +7,10 @@ import { screen, act, cleanup, fireEvent } from '@testing-library/react';
 import { useDispatch, useSelector } from 'react-redux';
 import { ModalName } from '../../../../../data/ModalName';
 import EmitterKey from '../../../../../data/EmitterKey';
-import { queryBySelector } from '@actiontech/shared/lib/testUtil/customQuery';
+import {
+  getAllBySelector,
+  queryBySelector
+} from '@actiontech/shared/lib/testUtil/customQuery';
 
 jest.mock('react-redux', () => ({
   ...jest.requireActual('react-redux'),
@@ -141,13 +144,17 @@ describe('base/UserCenter/Modal/UpdateUser', () => {
         }
       })
     );
-    superRender(<UpdateUser />);
+    const { baseElement } = superRender(<UpdateUser />);
     await act(async () => jest.advanceTimersByTime(3000));
     expect(screen.queryByLabelText('是否禁用')).not.toBeInTheDocument();
     fireEvent.input(screen.getByLabelText('邮箱'), {
       target: { value: 'test@163.com' }
     });
     await act(async () => jest.advanceTimersByTime(0));
+    fireEvent.mouseDown(screen.getByLabelText('平台角色'));
+    fireEvent.click(
+      getAllBySelector('.ant-select-item-option-content', baseElement)[0]
+    );
     fireEvent.click(screen.getByText('提 交'));
     await act(async () => jest.advanceTimersByTime(0));
     expect(updateUserSpy).toHaveBeenCalledTimes(1);

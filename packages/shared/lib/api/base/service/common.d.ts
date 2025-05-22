@@ -1682,7 +1682,7 @@ export interface IListMaskingRulesReply {
 export interface IListMember {
   is_project_admin?: boolean;
 
-  platform_roles?: string[];
+  platform_roles?: IUidWithName[];
 
   projects?: string[];
 

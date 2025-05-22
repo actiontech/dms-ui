@@ -8,9 +8,10 @@ import {
 } from '@actiontech/shared/lib/api/base/service/common';
 import renderRolesInfo from '../Common/renderRolesInfo';
 import IsProjectAdmin from '../components/IsProjectAdmin';
-import { BasicTag, BasicToolTip } from '@actiontech/shared';
+import { BasicToolTip } from '@actiontech/shared';
 import { MemberPermissionStyleWrapper } from '../style';
-import { FlagFilled } from '@actiontech/icons';
+import ProjectTagList from '../../../components/ProjectTagList';
+import SystemRoleTagList from '../../../components/SystemRoleTagList';
 
 const commonRoleOperateRangesRender = (
   roles: IListMemberRoleWithOpRange[],
@@ -44,6 +45,7 @@ export const MemberListColumns: ActiontechTableColumn<IListMember> = [
   {
     dataIndex: 'user',
     title: t('common.username'),
+    width: '10%',
     render: (user) => {
       return user?.name ?? '-';
     }
@@ -51,49 +53,17 @@ export const MemberListColumns: ActiontechTableColumn<IListMember> = [
   {
     dataIndex: 'platform_roles',
     title: () => t('dmsMember.memberList.columns.platformRoles'),
+    width: '10%',
     render: (list) => {
-      if (!Array.isArray(list) || list.length === 0) {
-        return '-';
-      }
-
-      return (
-        <Space size={0}>
-          {list.map((item) => (
-            <BasicTag style={{ height: 28 }} size="small" color="cyan">
-              {item}
-            </BasicTag>
-          ))}
-        </Space>
-      );
+      return <SystemRoleTagList roles={list} />;
     }
   },
   {
     dataIndex: 'projects',
     title: () => t('dmsMember.memberList.columns.projects'),
+    width: '35%',
     render: (list) => {
-      if (!Array.isArray(list) || list.length === 0) {
-        return '-';
-      }
-
-      const MAX_PROJECT_NUM = 3;
-      return (
-        <Space size={0}>
-          {list.slice(0, MAX_PROJECT_NUM).map((e) => (
-            <BasicTag style={{ height: 28 }} size="small" color="gray" key={e}>
-              <FlagFilled />
-              {e}
-            </BasicTag>
-          ))}
-
-          {list.length > MAX_PROJECT_NUM && (
-            <BasicTag style={{ height: 28 }} size="small" color="blue">
-              {t('dmsMember.memberList.columns.projectsCount', {
-                count: list.length - MAX_PROJECT_NUM
-              })}
-            </BasicTag>
-          )}
-        </Space>
-      );
+      return <ProjectTagList projectList={list} />;
     }
   },
   {
@@ -123,6 +93,7 @@ export const MemberListColumns: ActiontechTableColumn<IListMember> = [
   {
     dataIndex: 'is_project_admin',
     title: t('dmsMember.memberList.columns.isProjectAdmin'),
+    width: '20%',
     render: (isAdmin) => {
       if (typeof isAdmin !== 'boolean') {
         return t('common.unknownStatus');
