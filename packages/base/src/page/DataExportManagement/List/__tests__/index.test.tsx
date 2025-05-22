@@ -91,7 +91,7 @@ describe('test base/DataExport/List', () => {
       userRoles: {
         ...mockCurrentUserReturn.userRoles,
         [SystemRole.admin]: false,
-        [SystemRole.globalManager]: false
+        [SystemRole.systemAdministrator]: false
       }
     });
 
@@ -119,7 +119,7 @@ describe('test base/DataExport/List', () => {
       userRoles: {
         ...mockCurrentUserReturn.userRoles,
         [SystemRole.admin]: false,
-        [SystemRole.globalManager]: false
+        [SystemRole.systemAdministrator]: false
       },
       bindProjects: [
         {

@@ -162,10 +162,10 @@ describe('base/page/Nav/SideMenu/UserMenu/CompanyNoticeModal', () => {
       mockUseCurrentUser({
         userRoles: {
           [SystemRole.admin]: false,
-          [SystemRole.globalManager]: false,
-          [SystemRole.globalViewing]: false,
+          [SystemRole.systemAdministrator]: false,
+          [SystemRole.auditAdministrator]: false,
           [SystemRole.certainProjectManager]: false,
-          [SystemRole.createProject]: false
+          [SystemRole.projectDirector]: false
         }
       });
     });

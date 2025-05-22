@@ -128,7 +128,7 @@ describe('test WorkflowUpdateNotifier', () => {
       userRoles: {
         ...mockCurrentUserReturn.userRoles,
         [SystemRole.admin]: false,
-        [SystemRole.globalManager]: false
+        [SystemRole.systemAdministrator]: false
       }
     });
     const { container } = customRender({

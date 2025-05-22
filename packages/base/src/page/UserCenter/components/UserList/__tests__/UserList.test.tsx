@@ -167,9 +167,9 @@ describe('base/UserCenter/UserList', () => {
     mockUseCurrentUser({
       userRoles: {
         [SystemRole.admin]: false,
-        [SystemRole.globalViewing]: true,
-        [SystemRole.globalManager]: true,
-        [SystemRole.createProject]: true,
+        [SystemRole.auditAdministrator]: true,
+        [SystemRole.systemAdministrator]: true,
+        [SystemRole.projectDirector]: true,
         [SystemRole.certainProjectManager]: true
       }
     });
@@ -187,9 +187,9 @@ describe('base/UserCenter/UserList', () => {
     mockUseCurrentUser({
       userRoles: {
         [SystemRole.admin]: false,
-        [SystemRole.globalViewing]: true,
-        [SystemRole.globalManager]: false,
-        [SystemRole.createProject]: false,
+        [SystemRole.auditAdministrator]: true,
+        [SystemRole.systemAdministrator]: false,
+        [SystemRole.projectDirector]: false,
         [SystemRole.certainProjectManager]: true
       }
     });

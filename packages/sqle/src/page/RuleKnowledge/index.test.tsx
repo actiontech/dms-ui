@@ -200,7 +200,7 @@ describe('page/RuleKnowledge', () => {
         userRoles: {
           ...mockCurrentUserReturn.userRoles,
           [SystemRole.admin]: false,
-          [SystemRole.globalManager]: false
+          [SystemRole.systemAdministrator]: false
         }
       }
     });

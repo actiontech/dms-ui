@@ -65,30 +65,21 @@ const useCurrentUser = () => {
     return bindProjects?.some((v) => v.is_manager) ?? false;
   }, [bindProjects]);
 
-  const hasGlobalViewingPermission = useMemo(() => {
-    return managementPermissions.some(
-      (v) => v.uid === OpPermissionTypeUid.global_viewing
-    );
-  }, [managementPermissions]);
-
   const userRoles: UserRolesType = useMemo(() => {
     return {
       [SystemRole.admin]: isAdmin,
       [SystemRole.certainProjectManager]: isCertainProjectManager,
-      [SystemRole.globalViewing]: hasGlobalViewingPermission,
-      [SystemRole.globalManager]: managementPermissions.some(
-        (v) => v.uid === OpPermissionTypeUid.global_management
+      [SystemRole.auditAdministrator]: managementPermissions.some(
+        (v) => v.uid === OpPermissionTypeUid.audit_administrator
       ),
-      [SystemRole.createProject]: managementPermissions.some(
-        (v) => v.uid === OpPermissionTypeUid.create_project
+      [SystemRole.systemAdministrator]: managementPermissions.some(
+        (v) => v.uid === OpPermissionTypeUid.system_administrator
+      ),
+      [SystemRole.projectDirector]: managementPermissions.some(
+        (v) => v.uid === OpPermissionTypeUid.project_director
       )
     };
-  }, [
-    hasGlobalViewingPermission,
-    isAdmin,
-    isCertainProjectManager,
-    managementPermissions
-  ]);
+  }, [isAdmin, isCertainProjectManager, managementPermissions]);
 
   return {
     isAdmin,
@@ -104,8 +95,7 @@ const useCurrentUser = () => {
     isCertainProjectManager,
     userRoles,
     language,
-    updateLanguage,
-    hasGlobalViewingPermission
+    updateLanguage
   };
 };
 export default useCurrentUser;

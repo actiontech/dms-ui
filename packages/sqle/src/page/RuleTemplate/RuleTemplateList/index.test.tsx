@@ -113,7 +113,7 @@ describe('sqle/RuleTemplate/List', () => {
         userRoles: {
           ...mockCurrentUserReturn.userRoles,
           [SystemRole.admin]: false,
-          [SystemRole.globalManager]: false
+          [SystemRole.systemAdministrator]: false
         },
         bindProjects: [
           {
@@ -138,7 +138,7 @@ describe('sqle/RuleTemplate/List', () => {
         userRoles: {
           ...mockCurrentUserReturn.userRoles,
           [SystemRole.admin]: false,
-          [SystemRole.globalManager]: false
+          [SystemRole.systemAdministrator]: false
         }
       };
     });
@@ -155,7 +155,7 @@ describe('sqle/RuleTemplate/List', () => {
         userRoles: {
           ...mockCurrentUserReturn.userRoles,
           [SystemRole.admin]: false,
-          [SystemRole.globalManager]: false
+          [SystemRole.systemAdministrator]: false
         },
         bindProjects: [
           {

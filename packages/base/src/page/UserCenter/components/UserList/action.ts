@@ -23,7 +23,7 @@ export const UserListActions = (
     }
     if (
       record?.op_permissions?.some(
-        (v) => v.uid === OpPermissionTypeUid.global_management
+        (v) => v.uid === OpPermissionTypeUid.system_administrator
       )
     ) {
       return username === SystemRole.admin || username === record.name;
@@ -44,7 +44,7 @@ export const UserListActions = (
 
     if (
       record?.op_permissions?.some(
-        (v) => v.uid === OpPermissionTypeUid.global_management
+        (v) => v.uid === OpPermissionTypeUid.system_administrator
       )
     ) {
       return username === SystemRole.admin;

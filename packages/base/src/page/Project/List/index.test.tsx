@@ -199,9 +199,9 @@ describe('test base/project/list', () => {
       userRoles: {
         [SystemRole.admin]: false,
         [SystemRole.certainProjectManager]: false,
-        [SystemRole.globalManager]: false,
-        [SystemRole.createProject]: false,
-        [SystemRole.globalViewing]: false
+        [SystemRole.systemAdministrator]: false,
+        [SystemRole.projectDirector]: false,
+        [SystemRole.auditAdministrator]: false
       }
     });
     baseSuperRender(<ProjectList />);

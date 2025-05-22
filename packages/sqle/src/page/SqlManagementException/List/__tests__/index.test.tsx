@@ -112,7 +112,7 @@ describe('slqe/Whitelist/SqlManagementExceptionList', () => {
       userRoles: {
         ...mockCurrentUserReturn.userRoles,
         [SystemRole.admin]: false,
-        [SystemRole.globalManager]: false
+        [SystemRole.systemAdministrator]: false
       }
     }));
     superRender(<SqlManagementExceptionList />);
@@ -127,7 +127,7 @@ describe('slqe/Whitelist/SqlManagementExceptionList', () => {
       userRoles: {
         ...mockCurrentUserReturn.userRoles,
         [SystemRole.admin]: false,
-        [SystemRole.globalManager]: false
+        [SystemRole.systemAdministrator]: false
       },
       bindProjects: [
         {

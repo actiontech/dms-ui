@@ -99,9 +99,9 @@ describe('page/SyncDataSource/SyncTaskList', () => {
     mockUseCurrentUser({
       userRoles: {
         [SystemRole.admin]: false,
-        [SystemRole.globalManager]: false,
-        [SystemRole.globalViewing]: false,
-        [SystemRole.createProject]: false,
+        [SystemRole.systemAdministrator]: false,
+        [SystemRole.auditAdministrator]: false,
+        [SystemRole.projectDirector]: false,
         [SystemRole.certainProjectManager]: true
       }
     });

@@ -118,7 +118,7 @@ export const UserListActions = (
   const calculateActionDisabled = (record?: IListUser) => {
     if (
       record?.op_permissions?.some(
-        (v) => v.uid === OpPermissionTypeUid.global_management
+        (v) => v.uid === OpPermissionTypeUid.system_administrator
       ) ||
       record?.name === SystemRole.admin
     ) {
