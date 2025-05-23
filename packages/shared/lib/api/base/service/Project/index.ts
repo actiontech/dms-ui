@@ -19,6 +19,8 @@ import {
   IUpdateBusinessTagReturn,
   IDeleteBusinessTagParams,
   IDeleteBusinessTagReturn,
+  ICheckDBServicesPrivilegesParams,
+  ICheckDBServicesPrivilegesReturn,
   IDBServicesConnectionParams,
   IDBServicesConnectionReturn,
   ICheckGlobalDBServicesConnectionsParams,
@@ -135,6 +137,18 @@ class ProjectService extends ServiceBase {
 
     return this.delete<IDeleteBusinessTagReturn>(
       `/v1/dms/projects/business_tags/${business_tag_uid}`,
+      paramsData,
+      options
+    );
+  }
+
+  public CheckDBServicesPrivileges(
+    params: ICheckDBServicesPrivilegesParams,
+    options?: AxiosRequestConfig
+  ) {
+    const paramsData = this.cloneDeep(params);
+    return this.post<ICheckDBServicesPrivilegesReturn>(
+      '/v1/dms/projects/check_db_services_privileges',
       paramsData,
       options
     );

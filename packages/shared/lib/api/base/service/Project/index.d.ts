@@ -14,6 +14,8 @@ import {
   ICreateBusinessTagReq,
   IGenericResp,
   IUpdateBusinessTagReq,
+  ICheckDBServicesPrivilegesReq,
+  ICheckDBServicesPrivilegesReply,
   IDBServiceConnectionReq,
   IDBServicesConnectionReply,
   IDBServicesConnectionReq,
@@ -80,6 +82,12 @@ export interface IDeleteBusinessTagParams {
 }
 
 export interface IDeleteBusinessTagReturn extends IGenericResp {}
+
+export interface ICheckDBServicesPrivilegesParams
+  extends ICheckDBServicesPrivilegesReq {}
+
+export interface ICheckDBServicesPrivilegesReturn
+  extends ICheckDBServicesPrivilegesReply {}
 
 export interface IDBServicesConnectionParams extends IDBServiceConnectionReq {}
 
