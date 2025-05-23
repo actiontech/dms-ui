@@ -74,7 +74,7 @@ exports[`base/Nav/SideMenu/UserMenu/VersionModal-ee render snap when open is tru
                       <h2
                         class="ant-typography"
                       >
-                        SQLE
+                        DMS
                       </h2>
                     </div>
                   </div>
@@ -126,6 +126,17 @@ exports[`base/Nav/SideMenu/UserMenu/VersionModal-ee render snap when open is tru
                         </div>
                         <div
                           class="ant-space-item"
+                          style="margin-bottom: 8px;"
+                        >
+                          <article
+                            class="ant-typography"
+                          >
+                            PROVISION: 
+                            -
+                          </article>
+                        </div>
+                        <div
+                          class="ant-space-item"
                         >
                           <article
                             class="ant-typography"
@@ -161,7 +172,7 @@ exports[`base/Nav/SideMenu/UserMenu/VersionModal-ee render snap when open is tru
                       <span
                         class="ant-typography"
                       >
-                        SQLE 是爱可生自主研发，支持多元数据库的 SQL 质量管理平台。应用于开发、测试、上线发布、生产运行阶段的 SQL 质量治理。通过 “建立规范、事前控制、事后监督、标准发布” 的方式，为企业提供 SQL 全生命周期质量管控能力，同时推动企业内部开发规范快速落地。
+                        DMS是由爱可生自主研发的全面支持多元数据库的SQL质量管理与权限安全管理平台。SQL审核功能广泛应用于开发、测试、上线发布和生产运行阶段的SQL质量治理，帮助企业实现全生命周期的SQL质量管控，促进内部开发规范的快速落地。同时，数据访问控制策略功能致力于提供细粒度的数据库权限控制，确保数据的安全性和一致性。我们的目标是为您提供高效而安全的SQL管理和权限管理解决方案。
                       </span>
                     </div>
                   </div>
@@ -192,6 +203,7 @@ exports[`base/Nav/SideMenu/UserMenu/VersionModal-ee render snap when open is tru
 2. 提供运维专家团队多年的技术沉淀，并支持规则知识库的自主沉淀。
 3. 提供慢日志等十几种的 SQL智能扫描，覆盖事前事后 SQL 采集需求。
 4. 提供SQL全流程的管控视角，追踪问题SQL解决进度、并提供快捷优化。
+5.提供精细化的数据库操作权限控制，增强数据操作的安全性。
                       </span>
                     </div>
                   </div>
@@ -316,7 +328,7 @@ exports[`base/Nav/SideMenu/UserMenu/VersionModal-ee render snap when open is tru
                       <h2
                         class="ant-typography"
                       >
-                        SQLE
+                        DMS
                       </h2>
                     </div>
                   </div>
@@ -368,6 +380,17 @@ exports[`base/Nav/SideMenu/UserMenu/VersionModal-ee render snap when open is tru
                         </div>
                         <div
                           class="ant-space-item"
+                          style="margin-bottom: 8px;"
+                        >
+                          <article
+                            class="ant-typography"
+                          >
+                            PROVISION: 
+                            -
+                          </article>
+                        </div>
+                        <div
+                          class="ant-space-item"
                         >
                           <article
                             class="ant-typography"
@@ -403,7 +426,7 @@ exports[`base/Nav/SideMenu/UserMenu/VersionModal-ee render snap when open is tru
                       <span
                         class="ant-typography"
                       >
-                        SQLE 是爱可生自主研发，支持多元数据库的 SQL 质量管理平台。应用于开发、测试、上线发布、生产运行阶段的 SQL 质量治理。通过 “建立规范、事前控制、事后监督、标准发布” 的方式，为企业提供 SQL 全生命周期质量管控能力，同时推动企业内部开发规范快速落地。
+                        DMS是由爱可生自主研发的全面支持多元数据库的SQL质量管理与权限安全管理平台。SQL审核功能广泛应用于开发、测试、上线发布和生产运行阶段的SQL质量治理，帮助企业实现全生命周期的SQL质量管控，促进内部开发规范的快速落地。同时，数据访问控制策略功能致力于提供细粒度的数据库权限控制，确保数据的安全性和一致性。我们的目标是为您提供高效而安全的SQL管理和权限管理解决方案。
                       </span>
                     </div>
                   </div>
@@ -434,6 +457,7 @@ exports[`base/Nav/SideMenu/UserMenu/VersionModal-ee render snap when open is tru
 2. 提供运维专家团队多年的技术沉淀，并支持规则知识库的自主沉淀。
 3. 提供慢日志等十几种的 SQL智能扫描，覆盖事前事后 SQL 采集需求。
 4. 提供SQL全流程的管控视角，追踪问题SQL解决进度、并提供快捷优化。
+5.提供精细化的数据库操作权限控制，增强数据操作的安全性。
                       </span>
                     </div>
                   </div>

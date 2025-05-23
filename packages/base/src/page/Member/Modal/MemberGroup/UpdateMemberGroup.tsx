@@ -1,6 +1,6 @@
 import { useBoolean } from 'ahooks';
 import { message, Space, Form } from 'antd';
-import { useEffect } from 'react';
+import { useEffect, useMemo } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useDispatch, useSelector } from 'react-redux';
 import EmitterKey from '../../../../data/EmitterKey';
@@ -18,6 +18,10 @@ import MemberGroup from '@actiontech/shared/lib/api/base/service/MemberGroup';
 import { BasicButton } from '@actiontech/shared';
 import { MemberDrawerStyledWrapper } from '../../style';
 
+// #if [provision]
+import useCheckMemberGroupAuth from './__provision__/hooks/useCheckMemberGroupAuth';
+// #endif
+
 const UpdateMemberGroup: React.FC = () => {
   const { t } = useTranslation();
 
@@ -31,6 +35,14 @@ const UpdateMemberGroup: React.FC = () => {
 
   const [submitLoading, { setFalse: submitFinish, setTrue: startSubmit }] =
     useBoolean();
+
+  // #if [provision]
+  const {
+    checkMemberGroupAuth,
+    loading: checkMemberGroupAuthLoading,
+    contextHolder: checkMemberGroupAuthContextHolder
+  } = useCheckMemberGroupAuth();
+  // #endif
 
   const { visible, selectMemberGroup } = useSelector((state: IReduxState) => ({
     visible: state.member.modalStatus[ModalName.DMS_Update_Member_Group],
@@ -48,6 +60,21 @@ const UpdateMemberGroup: React.FC = () => {
       },
       project_uid: projectID
     };
+
+    // #if [provision]
+    if (
+      !(await checkMemberGroupAuth({
+        userUids: values.userUids.filter(
+          (v) => !selectMemberGroup?.users?.some((i) => i.uid === v)
+        ),
+        memberGroupUid: selectMemberGroup?.uid!,
+        memberGroupName: selectMemberGroup?.name!
+      }))
+    ) {
+      return;
+    }
+    // #endif
+
     startSubmit();
     MemberGroup.UpdateMemberGroup(params)
       .then((res) => {
@@ -76,6 +103,19 @@ const UpdateMemberGroup: React.FC = () => {
     );
   };
 
+  const actionPending = useMemo(() => {
+    let loading = submitLoading;
+    // #if [provision]
+    loading = submitLoading || checkMemberGroupAuthLoading;
+    // #endif
+    return loading;
+  }, [
+    submitLoading,
+    // #if [provision]
+    checkMemberGroupAuthLoading
+    // #endif
+  ]);
+
   useEffect(() => {
     if (visible) {
       form.setFieldsValue({
@@ -98,16 +138,20 @@ const UpdateMemberGroup: React.FC = () => {
       onClose={onClose}
       footer={
         <Space>
-          <BasicButton onClick={onClose} disabled={submitLoading}>
+          <BasicButton onClick={onClose} disabled={actionPending}>
             {t('common.close')}
           </BasicButton>
-          <BasicButton type="primary" onClick={submit} loading={submitLoading}>
+          <BasicButton type="primary" onClick={submit} loading={actionPending}>
             {t('common.submit')}
           </BasicButton>
         </Space>
       }
     >
       {contextHolder}
+
+      {/* #if [provision] */}
+      {checkMemberGroupAuthContextHolder}
+      {/* #endif */}
       <MemberGroupForm form={form} isUpdate={true} projectID={projectID} />
     </MemberDrawerStyledWrapper>
   );

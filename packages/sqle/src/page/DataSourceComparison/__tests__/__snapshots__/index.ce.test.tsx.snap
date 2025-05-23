@@ -1306,7 +1306,7 @@ exports[`DataSourceComparison ce should match snapshot 1`] = `
                     class="title"
                   >
                     Action 
-                    SQLE
+                    DMS
                   </div>
                   <p
                     class="cont-tip"
@@ -1405,7 +1405,7 @@ exports[`DataSourceComparison ce should match snapshot 1`] = `
                     class="title"
                   >
                     Action 
-                    SQLE
+                    DMS
                   </div>
                   <p
                     class="cont-tip"

@@ -82,20 +82,22 @@ const LicenseColumn = memo(
       getChart: () => Plot<ColumnConfig>;
     } | null>(null);
 
+    const handleResize = throttle(() => {
+      const chartWrapper = chartWrapperRef.current;
+      if (chartWrapper) {
+        setWrapperWidth(
+          chartWrapper?.getChart().container.getBoundingClientRect()?.width
+        );
+      }
+    }, 300);
+
     useEffect(() => {
-      const handleResize = throttle(() => {
-        const chartWrapper = chartWrapperRef.current;
-        if (chartWrapper) {
-          setWrapperWidth(
-            chartWrapper?.getChart().container.getBoundingClientRect()?.width
-          );
-        }
-      }, 300);
       handleResize();
       window.addEventListener('resize', handleResize);
       return () => {
         window.removeEventListener('resize', handleResize);
       };
+      // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
 
     useEffect(() => {

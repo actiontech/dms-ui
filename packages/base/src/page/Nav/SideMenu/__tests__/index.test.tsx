@@ -44,6 +44,7 @@ describe('test Base/Nav/SideMenu/index', () => {
   const dispatchSpy = jest.fn();
   const navigateSpy = jest.fn();
   const unsubscribeSpy = jest.fn();
+  const checkPagePermissionSpy = jest.fn();
 
   const mockBindProjects = mockProjectList.map((v) => ({
     project_id: v.uid ?? '',
@@ -58,7 +59,12 @@ describe('test Base/Nav/SideMenu/index', () => {
       .spyOn(eventEmitter, 'subscribe')
       .mockImplementation(() => ({ unsubscribe: unsubscribeSpy }));
     jest.useFakeTimers();
-    mockUsePermission(undefined, { useSpyOnMockHooks: true });
+    mockUsePermission(
+      { checkPagePermission: checkPagePermissionSpy },
+      {
+        useSpyOnMockHooks: true
+      }
+    );
     mockUseCurrentUser({
       bindProjects: mockBindProjects
     });
@@ -87,6 +93,7 @@ describe('test Base/Nav/SideMenu/index', () => {
     jest.useRealTimers();
   });
   it('mount and unmount component', async () => {
+    checkPagePermissionSpy.mockReturnValue(true);
     const { baseElement, unmount } = baseSuperRender(<SideMenu />);
     expect(baseElement).toMatchSnapshot();
     expect(getProjectsSpy).toHaveBeenCalledTimes(1);
@@ -99,6 +106,7 @@ describe('test Base/Nav/SideMenu/index', () => {
     expect(subscribeSpy.mock.calls[1][0]).toBe(
       EmitterKey.DMS_Sync_Project_Archived_Status
     );
+    expect(screen.queryByText('操作与审计')).toBeInTheDocument();
 
     await act(async () => jest.advanceTimersByTime(3000));
     expect(dispatchSpy).toHaveBeenNthCalledWith(1, {
@@ -136,6 +144,17 @@ describe('test Base/Nav/SideMenu/index', () => {
     expect(navigateSpy).toHaveBeenCalledWith(
       `/sqle/project/${mockBindProjects[1].project_id}/overview`
     );
+  });
+
+  it('should match snapshot when checkPagePermission return value is equal false', async () => {
+    checkPagePermissionSpy.mockReturnValue(false);
+    const { container } = baseSuperRender(<SideMenu />);
+    await act(async () => jest.advanceTimersByTime(0));
+    expect(container).toMatchSnapshot();
+    expect(getSystemModuleRedDotsSpy).toHaveBeenCalledTimes(1);
+    await act(async () => jest.advanceTimersByTime(3000));
+    expect(container).toMatchSnapshot();
+    expect(screen.queryByText('操作与审计')).not.toBeInTheDocument();
   });
 
   it('should dispatch updateAvailabilityZoneTips and call verifyRecentlySelectedZoneRecord func after request gateway tips', async () => {
