@@ -34,6 +34,10 @@ import { ROUTE_PATHS } from '@actiontech/shared/lib/data/routePaths';
 import useStaticTips from '../../../hooks/useStaticTips';
 import { DmsApi } from '@actiontech/shared/lib/api';
 import useServiceEnvironment from 'sqle/src/hooks/useServiceEnvironment';
+import {
+  getDBServiceConnectableErrorMessage,
+  getDbServiceIsConnectbale
+} from '../../../utils/common';
 
 const GlobalDataSourceList = () => {
   const { t } = useTranslation();
@@ -199,20 +203,9 @@ const GlobalDataSourceList = () => {
           hide();
           if (res.data.code === ResponseCode.SUCCESS) {
             const connections = res.data.data ?? [];
-            const isConnectable = connections.every(
-              (connection) => !!connection?.is_connectable
-            );
-            const connectErrorMessage = connections.reduce(
-              (acc, cur, curIndex) =>
-                !!cur?.is_connectable
-                  ? acc
-                  : acc +
-                    `${cur.component}: ${cur?.connect_error_message?.replace(
-                      /\n$/,
-                      ''
-                    )} ${curIndex < connections.length - 1 ? '\n\r' : ''}`,
-              ''
-            );
+            const isConnectable = getDbServiceIsConnectbale(connections);
+            const connectErrorMessage =
+              getDBServiceConnectableErrorMessage(connections);
             if (isConnectable) {
               messageApi.success(
                 t('common.testDatabaseConnectButton.testSuccess')

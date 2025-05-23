@@ -85,7 +85,10 @@ export default {
     enableDataSourceBackup: '是否开启数据源上的SQL备份能力',
     enableDataSourceBackupTips: '开启后，数据源上创建的工单将默认开启备份能力',
     lineNumberLimit: '回滚行数限制',
-    lineNumberLimitTips: '当预计影响行数超过指定值则不回滚'
+    lineNumberLimitTips: '当预计影响行数超过指定值则不回滚',
+    dataSourceConnectError: '数据源连通性测试失败',
+    returnModify: '返回修改',
+    continueSubmit: '继续提交'
   },
 
   testConnectModal: {
