@@ -154,9 +154,9 @@ describe('usePermission', () => {
       userRoles: {
         [SystemRole.admin]: false,
         [SystemRole.certainProjectManager]: true,
-        [SystemRole.globalManager]: false,
-        [SystemRole.createProject]: false,
-        [SystemRole.globalViewing]: false
+        [SystemRole.systemAdministrator]: false,
+        [SystemRole.projectDirector]: false,
+        [SystemRole.auditAdministrator]: false
       }
     });
     const { result } = renderHook(() => usePermission());
@@ -191,9 +191,9 @@ describe('usePermission', () => {
       userRoles: {
         [SystemRole.admin]: true,
         [SystemRole.certainProjectManager]: false,
-        [SystemRole.globalManager]: false,
-        [SystemRole.createProject]: false,
-        [SystemRole.globalViewing]: false
+        [SystemRole.systemAdministrator]: false,
+        [SystemRole.projectDirector]: false,
+        [SystemRole.auditAdministrator]: false
       }
     });
     mockUseCurrentProject({
@@ -235,9 +235,9 @@ describe('usePermission', () => {
       userRoles: {
         [SystemRole.admin]: false,
         [SystemRole.certainProjectManager]: false,
-        [SystemRole.globalManager]: false,
-        [SystemRole.createProject]: false,
-        [SystemRole.globalViewing]: false
+        [SystemRole.systemAdministrator]: false,
+        [SystemRole.projectDirector]: false,
+        [SystemRole.auditAdministrator]: false
       },
       bindProjects: [
         {
@@ -274,9 +274,9 @@ describe('usePermission', () => {
       userRoles: {
         [SystemRole.admin]: false,
         [SystemRole.certainProjectManager]: false,
-        [SystemRole.globalManager]: false,
-        [SystemRole.createProject]: false,
-        [SystemRole.globalViewing]: false
+        [SystemRole.systemAdministrator]: false,
+        [SystemRole.projectDirector]: false,
+        [SystemRole.auditAdministrator]: false
       }
     });
 
@@ -310,9 +310,9 @@ describe('usePermission', () => {
       userRoles: {
         [SystemRole.admin]: false,
         [SystemRole.certainProjectManager]: false,
-        [SystemRole.globalManager]: false,
-        [SystemRole.createProject]: false,
-        [SystemRole.globalViewing]: false
+        [SystemRole.systemAdministrator]: false,
+        [SystemRole.projectDirector]: false,
+        [SystemRole.auditAdministrator]: false
       }
     });
 
@@ -340,9 +340,9 @@ describe('usePermission', () => {
       userRoles: {
         [SystemRole.admin]: false,
         [SystemRole.certainProjectManager]: false,
-        [SystemRole.globalManager]: false,
-        [SystemRole.createProject]: false,
-        [SystemRole.globalViewing]: false
+        [SystemRole.systemAdministrator]: false,
+        [SystemRole.projectDirector]: false,
+        [SystemRole.auditAdministrator]: false
       },
       bindProjects: [
         {

@@ -13,17 +13,16 @@ exports[`base/UserCenter/UserList render user table 1`] = `
           class="ant-spin-container"
         >
           <div
-            class="ant-table ant-table-fixed-column ant-table-scroll-horizontal ant-table-has-fix-right"
+            class="ant-table ant-table-has-fix-right"
           >
             <div
               class="ant-table-container"
             >
               <div
                 class="ant-table-content"
-                style="overflow-x: auto; overflow-y: hidden;"
               >
                 <table
-                  style="min-width: 100%; table-layout: auto;"
+                  style="table-layout: auto;"
                 >
                   <colgroup>
                     <col />
@@ -32,6 +31,9 @@ exports[`base/UserCenter/UserList render user table 1`] = `
                     <col />
                     <col />
                     <col />
+                    <col
+                      style="width: 35%;"
+                    />
                     <col
                       style="width: 164px;"
                     />
@@ -74,7 +76,13 @@ exports[`base/UserCenter/UserList render user table 1`] = `
                         class="ant-table-cell"
                         scope="col"
                       >
-                        平台管理权限
+                        平台角色
+                      </th>
+                      <th
+                        class="ant-table-cell"
+                        scope="col"
+                      >
+                        所属项目
                       </th>
                       <th
                         class="ant-table-cell actiontech-table-actions-column ant-table-cell-fix-right ant-table-cell-fix-right-first"
@@ -88,75 +96,6 @@ exports[`base/UserCenter/UserList render user table 1`] = `
                   <tbody
                     class="ant-table-tbody"
                   >
-                    <tr
-                      aria-hidden="true"
-                      class="ant-table-measure-row"
-                      style="height: 0px; font-size: 0px;"
-                    >
-                      <td
-                        style="padding: 0px; border: 0px; height: 0px;"
-                      >
-                        <div
-                          style="height: 0px; overflow: hidden;"
-                        >
-                           
-                        </div>
-                      </td>
-                      <td
-                        style="padding: 0px; border: 0px; height: 0px;"
-                      >
-                        <div
-                          style="height: 0px; overflow: hidden;"
-                        >
-                           
-                        </div>
-                      </td>
-                      <td
-                        style="padding: 0px; border: 0px; height: 0px;"
-                      >
-                        <div
-                          style="height: 0px; overflow: hidden;"
-                        >
-                           
-                        </div>
-                      </td>
-                      <td
-                        style="padding: 0px; border: 0px; height: 0px;"
-                      >
-                        <div
-                          style="height: 0px; overflow: hidden;"
-                        >
-                           
-                        </div>
-                      </td>
-                      <td
-                        style="padding: 0px; border: 0px; height: 0px;"
-                      >
-                        <div
-                          style="height: 0px; overflow: hidden;"
-                        >
-                           
-                        </div>
-                      </td>
-                      <td
-                        style="padding: 0px; border: 0px; height: 0px;"
-                      >
-                        <div
-                          style="height: 0px; overflow: hidden;"
-                        >
-                           
-                        </div>
-                      </td>
-                      <td
-                        style="padding: 0px; border: 0px; height: 0px;"
-                      >
-                        <div
-                          style="height: 0px; overflow: hidden;"
-                        >
-                           
-                        </div>
-                      </td>
-                    </tr>
                     <tr
                       class="ant-table-row ant-table-row-level-0"
                       data-row-key="11132422"
@@ -214,7 +153,53 @@ exports[`base/UserCenter/UserList render user table 1`] = `
                       <td
                         class="ant-table-cell"
                       >
-                        创建项目
+                        <div
+                          class="ant-space ant-space-horizontal ant-space-align-center"
+                          style="flex-wrap: wrap; margin-bottom: -4px;"
+                        >
+                          <div
+                            class="ant-space-item"
+                            style="padding-bottom: 4px;"
+                          >
+                            <span
+                              class="ant-tag ant-tag-orange basic-tag-wrapper basic-small-tag-wrapper css-17gmaof"
+                              style="height: 28px;"
+                            >
+                              创建项目
+                            </span>
+                          </div>
+                        </div>
+                      </td>
+                      <td
+                        class="ant-table-cell"
+                      >
+                        <div
+                          class="ant-space ant-space-horizontal ant-space-align-center"
+                          style="flex-wrap: wrap; margin-bottom: -4px;"
+                        >
+                          <div
+                            class="ant-space-item"
+                            style="padding-bottom: 4px;"
+                          >
+                            <span
+                              class="ant-tag ant-tag-has-color basic-tag-wrapper basic-small-tag-wrapper css-dfzxkh"
+                              style="background-color: gray; height: 28px;"
+                            >
+                              <svg
+                                height="16"
+                                viewBox="0 0 18 18"
+                                width="16"
+                                xmlns="http://www.w3.org/2000/svg"
+                              >
+                                <path
+                                  d="M2.25 2.25h7.037a.75.75 0 0 1 .67.415L10.5 3.75H15a.75.75 0 0 1 .75.75v8.25a.75.75 0 0 1-.75.75h-4.786a.75.75 0 0 1-.671-.415L9 12H3.75v4.5h-1.5z"
+                                  fill="#EBAD1C"
+                                />
+                              </svg>
+                              default
+                            </span>
+                          </div>
+                        </div>
                       </td>
                       <td
                         class="ant-table-cell actiontech-table-actions-column ant-table-cell-fix-right ant-table-cell-fix-right-first"
@@ -235,7 +220,7 @@ exports[`base/UserCenter/UserList render user table 1`] = `
                                 type="button"
                               >
                                 <span>
-                                  管 理
+                                  编 辑
                                 </span>
                               </button>
                             </div>
@@ -311,7 +296,14 @@ exports[`base/UserCenter/UserList render user table 1`] = `
                       </td>
                       <td
                         class="ant-table-cell"
-                      />
+                      >
+                        -
+                      </td>
+                      <td
+                        class="ant-table-cell"
+                      >
+                        -
+                      </td>
                       <td
                         class="ant-table-cell actiontech-table-actions-column ant-table-cell-fix-right ant-table-cell-fix-right-first"
                         style="position: sticky; right: 0px;"
@@ -331,7 +323,7 @@ exports[`base/UserCenter/UserList render user table 1`] = `
                                 type="button"
                               >
                                 <span>
-                                  管 理
+                                  编 辑
                                 </span>
                               </button>
                             </div>
@@ -411,6 +403,81 @@ exports[`base/UserCenter/UserList render user table 1`] = `
                         -
                       </td>
                       <td
+                        class="ant-table-cell"
+                      >
+                        <div
+                          class="ant-space ant-space-horizontal ant-space-align-center"
+                          style="flex-wrap: wrap; margin-bottom: -4px;"
+                        >
+                          <div
+                            class="ant-space-item"
+                            style="margin-right: 0px; padding-bottom: 4px;"
+                          >
+                            <span
+                              class="ant-tag ant-tag-has-color basic-tag-wrapper basic-small-tag-wrapper css-dfzxkh"
+                              style="background-color: gray; height: 28px;"
+                            >
+                              <svg
+                                height="16"
+                                viewBox="0 0 18 18"
+                                width="16"
+                                xmlns="http://www.w3.org/2000/svg"
+                              >
+                                <path
+                                  d="M2.25 2.25h7.037a.75.75 0 0 1 .67.415L10.5 3.75H15a.75.75 0 0 1 .75.75v8.25a.75.75 0 0 1-.75.75h-4.786a.75.75 0 0 1-.671-.415L9 12H3.75v4.5h-1.5z"
+                                  fill="#EBAD1C"
+                                />
+                              </svg>
+                              test-project
+                            </span>
+                          </div>
+                          <div
+                            class="ant-space-item"
+                            style="margin-right: 0px; padding-bottom: 4px;"
+                          >
+                            <span
+                              class="ant-tag ant-tag-has-color basic-tag-wrapper basic-small-tag-wrapper css-dfzxkh"
+                              style="background-color: gray; height: 28px;"
+                            >
+                              <svg
+                                height="16"
+                                viewBox="0 0 18 18"
+                                width="16"
+                                xmlns="http://www.w3.org/2000/svg"
+                              >
+                                <path
+                                  d="M2.25 2.25h7.037a.75.75 0 0 1 .67.415L10.5 3.75H15a.75.75 0 0 1 .75.75v8.25a.75.75 0 0 1-.75.75h-4.786a.75.75 0 0 1-.671-.415L9 12H3.75v4.5h-1.5z"
+                                  fill="#EBAD1C"
+                                />
+                              </svg>
+                              default
+                            </span>
+                          </div>
+                          <div
+                            class="ant-space-item"
+                            style="padding-bottom: 4px;"
+                          >
+                            <span
+                              class="ant-tag ant-tag-has-color basic-tag-wrapper basic-small-tag-wrapper css-dfzxkh"
+                              style="background-color: gray; height: 28px;"
+                            >
+                              <svg
+                                height="16"
+                                viewBox="0 0 18 18"
+                                width="16"
+                                xmlns="http://www.w3.org/2000/svg"
+                              >
+                                <path
+                                  d="M2.25 2.25h7.037a.75.75 0 0 1 .67.415L10.5 3.75H15a.75.75 0 0 1 .75.75v8.25a.75.75 0 0 1-.75.75h-4.786a.75.75 0 0 1-.671-.415L9 12H3.75v4.5h-1.5z"
+                                  fill="#EBAD1C"
+                                />
+                              </svg>
+                              test-project-2
+                            </span>
+                          </div>
+                        </div>
+                      </td>
+                      <td
                         class="ant-table-cell actiontech-table-actions-column ant-table-cell-fix-right ant-table-cell-fix-right-first"
                         style="position: sticky; right: 0px;"
                       >
@@ -429,7 +496,7 @@ exports[`base/UserCenter/UserList render user table 1`] = `
                                 type="button"
                               >
                                 <span>
-                                  管 理
+                                  编 辑
                                 </span>
                               </button>
                             </div>
@@ -507,7 +574,27 @@ exports[`base/UserCenter/UserList render user table 1`] = `
                       <td
                         class="ant-table-cell"
                       >
-                        全局浏览
+                        <div
+                          class="ant-space ant-space-horizontal ant-space-align-center"
+                          style="flex-wrap: wrap; margin-bottom: -4px;"
+                        >
+                          <div
+                            class="ant-space-item"
+                            style="padding-bottom: 4px;"
+                          >
+                            <span
+                              class="ant-tag ant-tag-blue basic-tag-wrapper basic-small-tag-wrapper css-1q0n2j9"
+                              style="height: 28px;"
+                            >
+                              全局浏览
+                            </span>
+                          </div>
+                        </div>
+                      </td>
+                      <td
+                        class="ant-table-cell"
+                      >
+                        -
                       </td>
                       <td
                         class="ant-table-cell actiontech-table-actions-column ant-table-cell-fix-right ant-table-cell-fix-right-first"
@@ -528,7 +615,7 @@ exports[`base/UserCenter/UserList render user table 1`] = `
                                 type="button"
                               >
                                 <span>
-                                  管 理
+                                  编 辑
                                 </span>
                               </button>
                             </div>
@@ -605,7 +692,27 @@ exports[`base/UserCenter/UserList render user table 1`] = `
                       <td
                         class="ant-table-cell"
                       >
-                        全局管理
+                        <div
+                          class="ant-space ant-space-horizontal ant-space-align-center"
+                          style="flex-wrap: wrap; margin-bottom: -4px;"
+                        >
+                          <div
+                            class="ant-space-item"
+                            style="padding-bottom: 4px;"
+                          >
+                            <span
+                              class="ant-tag ant-tag-purple basic-tag-wrapper basic-small-tag-wrapper css-96wxh3"
+                              style="height: 28px;"
+                            >
+                              全局管理
+                            </span>
+                          </div>
+                        </div>
+                      </td>
+                      <td
+                        class="ant-table-cell"
+                      >
+                        -
                       </td>
                       <td
                         class="ant-table-cell actiontech-table-actions-column ant-table-cell-fix-right ant-table-cell-fix-right-first"
@@ -626,7 +733,7 @@ exports[`base/UserCenter/UserList render user table 1`] = `
                                 type="button"
                               >
                                 <span>
-                                  管 理
+                                  编 辑
                                 </span>
                               </button>
                             </div>
@@ -820,17 +927,16 @@ exports[`base/UserCenter/UserList should disabled action when current role is no
         class="ant-spin-container"
       >
         <div
-          class="ant-table ant-table-fixed-column ant-table-scroll-horizontal ant-table-has-fix-right"
+          class="ant-table ant-table-has-fix-right"
         >
           <div
             class="ant-table-container"
           >
             <div
               class="ant-table-content"
-              style="overflow-x: auto; overflow-y: hidden;"
             >
               <table
-                style="min-width: 100%; table-layout: auto;"
+                style="table-layout: auto;"
               >
                 <colgroup>
                   <col />
@@ -839,6 +945,9 @@ exports[`base/UserCenter/UserList should disabled action when current role is no
                   <col />
                   <col />
                   <col />
+                  <col
+                    style="width: 35%;"
+                  />
                   <col
                     style="width: 164px;"
                   />
@@ -881,7 +990,13 @@ exports[`base/UserCenter/UserList should disabled action when current role is no
                       class="ant-table-cell"
                       scope="col"
                     >
-                      平台管理权限
+                      平台角色
+                    </th>
+                    <th
+                      class="ant-table-cell"
+                      scope="col"
+                    >
+                      所属项目
                     </th>
                     <th
                       class="ant-table-cell actiontech-table-actions-column ant-table-cell-fix-right ant-table-cell-fix-right-first"
@@ -895,75 +1010,6 @@ exports[`base/UserCenter/UserList should disabled action when current role is no
                 <tbody
                   class="ant-table-tbody"
                 >
-                  <tr
-                    aria-hidden="true"
-                    class="ant-table-measure-row"
-                    style="height: 0px; font-size: 0px;"
-                  >
-                    <td
-                      style="padding: 0px; border: 0px; height: 0px;"
-                    >
-                      <div
-                        style="height: 0px; overflow: hidden;"
-                      >
-                         
-                      </div>
-                    </td>
-                    <td
-                      style="padding: 0px; border: 0px; height: 0px;"
-                    >
-                      <div
-                        style="height: 0px; overflow: hidden;"
-                      >
-                         
-                      </div>
-                    </td>
-                    <td
-                      style="padding: 0px; border: 0px; height: 0px;"
-                    >
-                      <div
-                        style="height: 0px; overflow: hidden;"
-                      >
-                         
-                      </div>
-                    </td>
-                    <td
-                      style="padding: 0px; border: 0px; height: 0px;"
-                    >
-                      <div
-                        style="height: 0px; overflow: hidden;"
-                      >
-                         
-                      </div>
-                    </td>
-                    <td
-                      style="padding: 0px; border: 0px; height: 0px;"
-                    >
-                      <div
-                        style="height: 0px; overflow: hidden;"
-                      >
-                         
-                      </div>
-                    </td>
-                    <td
-                      style="padding: 0px; border: 0px; height: 0px;"
-                    >
-                      <div
-                        style="height: 0px; overflow: hidden;"
-                      >
-                         
-                      </div>
-                    </td>
-                    <td
-                      style="padding: 0px; border: 0px; height: 0px;"
-                    >
-                      <div
-                        style="height: 0px; overflow: hidden;"
-                      >
-                         
-                      </div>
-                    </td>
-                  </tr>
                   <tr
                     class="ant-table-row ant-table-row-level-0"
                     data-row-key="11132422"
@@ -1021,7 +1067,53 @@ exports[`base/UserCenter/UserList should disabled action when current role is no
                     <td
                       class="ant-table-cell"
                     >
-                      创建项目
+                      <div
+                        class="ant-space ant-space-horizontal ant-space-align-center"
+                        style="flex-wrap: wrap; margin-bottom: -4px;"
+                      >
+                        <div
+                          class="ant-space-item"
+                          style="padding-bottom: 4px;"
+                        >
+                          <span
+                            class="ant-tag ant-tag-orange basic-tag-wrapper basic-small-tag-wrapper css-17gmaof"
+                            style="height: 28px;"
+                          >
+                            创建项目
+                          </span>
+                        </div>
+                      </div>
+                    </td>
+                    <td
+                      class="ant-table-cell"
+                    >
+                      <div
+                        class="ant-space ant-space-horizontal ant-space-align-center"
+                        style="flex-wrap: wrap; margin-bottom: -4px;"
+                      >
+                        <div
+                          class="ant-space-item"
+                          style="padding-bottom: 4px;"
+                        >
+                          <span
+                            class="ant-tag ant-tag-has-color basic-tag-wrapper basic-small-tag-wrapper css-dfzxkh"
+                            style="background-color: gray; height: 28px;"
+                          >
+                            <svg
+                              height="16"
+                              viewBox="0 0 18 18"
+                              width="16"
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <path
+                                d="M2.25 2.25h7.037a.75.75 0 0 1 .67.415L10.5 3.75H15a.75.75 0 0 1 .75.75v8.25a.75.75 0 0 1-.75.75h-4.786a.75.75 0 0 1-.671-.415L9 12H3.75v4.5h-1.5z"
+                                fill="#EBAD1C"
+                              />
+                            </svg>
+                            default
+                          </span>
+                        </div>
+                      </div>
                     </td>
                     <td
                       class="ant-table-cell actiontech-table-actions-column ant-table-cell-fix-right ant-table-cell-fix-right-first"
@@ -1088,7 +1180,14 @@ exports[`base/UserCenter/UserList should disabled action when current role is no
                     </td>
                     <td
                       class="ant-table-cell"
-                    />
+                    >
+                      -
+                    </td>
+                    <td
+                      class="ant-table-cell"
+                    >
+                      -
+                    </td>
                     <td
                       class="ant-table-cell actiontech-table-actions-column ant-table-cell-fix-right ant-table-cell-fix-right-first"
                       style="position: sticky; right: 0px;"
@@ -1158,6 +1257,81 @@ exports[`base/UserCenter/UserList should disabled action when current role is no
                       -
                     </td>
                     <td
+                      class="ant-table-cell"
+                    >
+                      <div
+                        class="ant-space ant-space-horizontal ant-space-align-center"
+                        style="flex-wrap: wrap; margin-bottom: -4px;"
+                      >
+                        <div
+                          class="ant-space-item"
+                          style="margin-right: 0px; padding-bottom: 4px;"
+                        >
+                          <span
+                            class="ant-tag ant-tag-has-color basic-tag-wrapper basic-small-tag-wrapper css-dfzxkh"
+                            style="background-color: gray; height: 28px;"
+                          >
+                            <svg
+                              height="16"
+                              viewBox="0 0 18 18"
+                              width="16"
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <path
+                                d="M2.25 2.25h7.037a.75.75 0 0 1 .67.415L10.5 3.75H15a.75.75 0 0 1 .75.75v8.25a.75.75 0 0 1-.75.75h-4.786a.75.75 0 0 1-.671-.415L9 12H3.75v4.5h-1.5z"
+                                fill="#EBAD1C"
+                              />
+                            </svg>
+                            test-project
+                          </span>
+                        </div>
+                        <div
+                          class="ant-space-item"
+                          style="margin-right: 0px; padding-bottom: 4px;"
+                        >
+                          <span
+                            class="ant-tag ant-tag-has-color basic-tag-wrapper basic-small-tag-wrapper css-dfzxkh"
+                            style="background-color: gray; height: 28px;"
+                          >
+                            <svg
+                              height="16"
+                              viewBox="0 0 18 18"
+                              width="16"
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <path
+                                d="M2.25 2.25h7.037a.75.75 0 0 1 .67.415L10.5 3.75H15a.75.75 0 0 1 .75.75v8.25a.75.75 0 0 1-.75.75h-4.786a.75.75 0 0 1-.671-.415L9 12H3.75v4.5h-1.5z"
+                                fill="#EBAD1C"
+                              />
+                            </svg>
+                            default
+                          </span>
+                        </div>
+                        <div
+                          class="ant-space-item"
+                          style="padding-bottom: 4px;"
+                        >
+                          <span
+                            class="ant-tag ant-tag-has-color basic-tag-wrapper basic-small-tag-wrapper css-dfzxkh"
+                            style="background-color: gray; height: 28px;"
+                          >
+                            <svg
+                              height="16"
+                              viewBox="0 0 18 18"
+                              width="16"
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <path
+                                d="M2.25 2.25h7.037a.75.75 0 0 1 .67.415L10.5 3.75H15a.75.75 0 0 1 .75.75v8.25a.75.75 0 0 1-.75.75h-4.786a.75.75 0 0 1-.671-.415L9 12H3.75v4.5h-1.5z"
+                                fill="#EBAD1C"
+                              />
+                            </svg>
+                            test-project-2
+                          </span>
+                        </div>
+                      </div>
+                    </td>
+                    <td
                       class="ant-table-cell actiontech-table-actions-column ant-table-cell-fix-right ant-table-cell-fix-right-first"
                       style="position: sticky; right: 0px;"
                     >
@@ -1223,7 +1397,27 @@ exports[`base/UserCenter/UserList should disabled action when current role is no
                     <td
                       class="ant-table-cell"
                     >
-                      全局浏览
+                      <div
+                        class="ant-space ant-space-horizontal ant-space-align-center"
+                        style="flex-wrap: wrap; margin-bottom: -4px;"
+                      >
+                        <div
+                          class="ant-space-item"
+                          style="padding-bottom: 4px;"
+                        >
+                          <span
+                            class="ant-tag ant-tag-blue basic-tag-wrapper basic-small-tag-wrapper css-1q0n2j9"
+                            style="height: 28px;"
+                          >
+                            全局浏览
+                          </span>
+                        </div>
+                      </div>
+                    </td>
+                    <td
+                      class="ant-table-cell"
+                    >
+                      -
                     </td>
                     <td
                       class="ant-table-cell actiontech-table-actions-column ant-table-cell-fix-right ant-table-cell-fix-right-first"
@@ -1291,7 +1485,27 @@ exports[`base/UserCenter/UserList should disabled action when current role is no
                     <td
                       class="ant-table-cell"
                     >
-                      全局管理
+                      <div
+                        class="ant-space ant-space-horizontal ant-space-align-center"
+                        style="flex-wrap: wrap; margin-bottom: -4px;"
+                      >
+                        <div
+                          class="ant-space-item"
+                          style="padding-bottom: 4px;"
+                        >
+                          <span
+                            class="ant-tag ant-tag-purple basic-tag-wrapper basic-small-tag-wrapper css-96wxh3"
+                            style="height: 28px;"
+                          >
+                            全局管理
+                          </span>
+                        </div>
+                      </div>
+                    </td>
+                    <td
+                      class="ant-table-cell"
+                    >
+                      -
                     </td>
                     <td
                       class="ant-table-cell actiontech-table-actions-column ant-table-cell-fix-right ant-table-cell-fix-right-first"
@@ -1475,17 +1689,16 @@ exports[`base/UserCenter/UserList should hidden action column when is not admin 
         class="ant-spin-container"
       >
         <div
-          class="ant-table ant-table-fixed-column ant-table-scroll-horizontal ant-table-has-fix-right"
+          class="ant-table ant-table-has-fix-right"
         >
           <div
             class="ant-table-container"
           >
             <div
               class="ant-table-content"
-              style="overflow-x: auto; overflow-y: hidden;"
             >
               <table
-                style="min-width: 100%; table-layout: auto;"
+                style="table-layout: auto;"
               >
                 <colgroup>
                   <col />
@@ -1494,6 +1707,9 @@ exports[`base/UserCenter/UserList should hidden action column when is not admin 
                   <col />
                   <col />
                   <col />
+                  <col
+                    style="width: 35%;"
+                  />
                   <col
                     style="width: 164px;"
                   />
@@ -1536,7 +1752,13 @@ exports[`base/UserCenter/UserList should hidden action column when is not admin 
                       class="ant-table-cell"
                       scope="col"
                     >
-                      平台管理权限
+                      平台角色
+                    </th>
+                    <th
+                      class="ant-table-cell"
+                      scope="col"
+                    >
+                      所属项目
                     </th>
                     <th
                       class="ant-table-cell actiontech-table-actions-column ant-table-cell-fix-right ant-table-cell-fix-right-first"
@@ -1550,75 +1772,6 @@ exports[`base/UserCenter/UserList should hidden action column when is not admin 
                 <tbody
                   class="ant-table-tbody"
                 >
-                  <tr
-                    aria-hidden="true"
-                    class="ant-table-measure-row"
-                    style="height: 0px; font-size: 0px;"
-                  >
-                    <td
-                      style="padding: 0px; border: 0px; height: 0px;"
-                    >
-                      <div
-                        style="height: 0px; overflow: hidden;"
-                      >
-                         
-                      </div>
-                    </td>
-                    <td
-                      style="padding: 0px; border: 0px; height: 0px;"
-                    >
-                      <div
-                        style="height: 0px; overflow: hidden;"
-                      >
-                         
-                      </div>
-                    </td>
-                    <td
-                      style="padding: 0px; border: 0px; height: 0px;"
-                    >
-                      <div
-                        style="height: 0px; overflow: hidden;"
-                      >
-                         
-                      </div>
-                    </td>
-                    <td
-                      style="padding: 0px; border: 0px; height: 0px;"
-                    >
-                      <div
-                        style="height: 0px; overflow: hidden;"
-                      >
-                         
-                      </div>
-                    </td>
-                    <td
-                      style="padding: 0px; border: 0px; height: 0px;"
-                    >
-                      <div
-                        style="height: 0px; overflow: hidden;"
-                      >
-                         
-                      </div>
-                    </td>
-                    <td
-                      style="padding: 0px; border: 0px; height: 0px;"
-                    >
-                      <div
-                        style="height: 0px; overflow: hidden;"
-                      >
-                         
-                      </div>
-                    </td>
-                    <td
-                      style="padding: 0px; border: 0px; height: 0px;"
-                    >
-                      <div
-                        style="height: 0px; overflow: hidden;"
-                      >
-                         
-                      </div>
-                    </td>
-                  </tr>
                   <tr
                     class="ant-table-row ant-table-row-level-0"
                     data-row-key="11132422"
@@ -1676,7 +1829,53 @@ exports[`base/UserCenter/UserList should hidden action column when is not admin 
                     <td
                       class="ant-table-cell"
                     >
-                      创建项目
+                      <div
+                        class="ant-space ant-space-horizontal ant-space-align-center"
+                        style="flex-wrap: wrap; margin-bottom: -4px;"
+                      >
+                        <div
+                          class="ant-space-item"
+                          style="padding-bottom: 4px;"
+                        >
+                          <span
+                            class="ant-tag ant-tag-orange basic-tag-wrapper basic-small-tag-wrapper css-17gmaof"
+                            style="height: 28px;"
+                          >
+                            创建项目
+                          </span>
+                        </div>
+                      </div>
+                    </td>
+                    <td
+                      class="ant-table-cell"
+                    >
+                      <div
+                        class="ant-space ant-space-horizontal ant-space-align-center"
+                        style="flex-wrap: wrap; margin-bottom: -4px;"
+                      >
+                        <div
+                          class="ant-space-item"
+                          style="padding-bottom: 4px;"
+                        >
+                          <span
+                            class="ant-tag ant-tag-has-color basic-tag-wrapper basic-small-tag-wrapper css-dfzxkh"
+                            style="background-color: gray; height: 28px;"
+                          >
+                            <svg
+                              height="16"
+                              viewBox="0 0 18 18"
+                              width="16"
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <path
+                                d="M2.25 2.25h7.037a.75.75 0 0 1 .67.415L10.5 3.75H15a.75.75 0 0 1 .75.75v8.25a.75.75 0 0 1-.75.75h-4.786a.75.75 0 0 1-.671-.415L9 12H3.75v4.5h-1.5z"
+                                fill="#EBAD1C"
+                              />
+                            </svg>
+                            default
+                          </span>
+                        </div>
+                      </div>
                     </td>
                     <td
                       class="ant-table-cell actiontech-table-actions-column ant-table-cell-fix-right ant-table-cell-fix-right-first"
@@ -1697,7 +1896,7 @@ exports[`base/UserCenter/UserList should hidden action column when is not admin 
                               type="button"
                             >
                               <span>
-                                管 理
+                                编 辑
                               </span>
                             </button>
                           </div>
@@ -1773,7 +1972,14 @@ exports[`base/UserCenter/UserList should hidden action column when is not admin 
                     </td>
                     <td
                       class="ant-table-cell"
-                    />
+                    >
+                      -
+                    </td>
+                    <td
+                      class="ant-table-cell"
+                    >
+                      -
+                    </td>
                     <td
                       class="ant-table-cell actiontech-table-actions-column ant-table-cell-fix-right ant-table-cell-fix-right-first"
                       style="position: sticky; right: 0px;"
@@ -1793,7 +1999,7 @@ exports[`base/UserCenter/UserList should hidden action column when is not admin 
                               type="button"
                             >
                               <span>
-                                管 理
+                                编 辑
                               </span>
                             </button>
                           </div>
@@ -1873,6 +2079,81 @@ exports[`base/UserCenter/UserList should hidden action column when is not admin 
                       -
                     </td>
                     <td
+                      class="ant-table-cell"
+                    >
+                      <div
+                        class="ant-space ant-space-horizontal ant-space-align-center"
+                        style="flex-wrap: wrap; margin-bottom: -4px;"
+                      >
+                        <div
+                          class="ant-space-item"
+                          style="margin-right: 0px; padding-bottom: 4px;"
+                        >
+                          <span
+                            class="ant-tag ant-tag-has-color basic-tag-wrapper basic-small-tag-wrapper css-dfzxkh"
+                            style="background-color: gray; height: 28px;"
+                          >
+                            <svg
+                              height="16"
+                              viewBox="0 0 18 18"
+                              width="16"
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <path
+                                d="M2.25 2.25h7.037a.75.75 0 0 1 .67.415L10.5 3.75H15a.75.75 0 0 1 .75.75v8.25a.75.75 0 0 1-.75.75h-4.786a.75.75 0 0 1-.671-.415L9 12H3.75v4.5h-1.5z"
+                                fill="#EBAD1C"
+                              />
+                            </svg>
+                            test-project
+                          </span>
+                        </div>
+                        <div
+                          class="ant-space-item"
+                          style="margin-right: 0px; padding-bottom: 4px;"
+                        >
+                          <span
+                            class="ant-tag ant-tag-has-color basic-tag-wrapper basic-small-tag-wrapper css-dfzxkh"
+                            style="background-color: gray; height: 28px;"
+                          >
+                            <svg
+                              height="16"
+                              viewBox="0 0 18 18"
+                              width="16"
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <path
+                                d="M2.25 2.25h7.037a.75.75 0 0 1 .67.415L10.5 3.75H15a.75.75 0 0 1 .75.75v8.25a.75.75 0 0 1-.75.75h-4.786a.75.75 0 0 1-.671-.415L9 12H3.75v4.5h-1.5z"
+                                fill="#EBAD1C"
+                              />
+                            </svg>
+                            default
+                          </span>
+                        </div>
+                        <div
+                          class="ant-space-item"
+                          style="padding-bottom: 4px;"
+                        >
+                          <span
+                            class="ant-tag ant-tag-has-color basic-tag-wrapper basic-small-tag-wrapper css-dfzxkh"
+                            style="background-color: gray; height: 28px;"
+                          >
+                            <svg
+                              height="16"
+                              viewBox="0 0 18 18"
+                              width="16"
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <path
+                                d="M2.25 2.25h7.037a.75.75 0 0 1 .67.415L10.5 3.75H15a.75.75 0 0 1 .75.75v8.25a.75.75 0 0 1-.75.75h-4.786a.75.75 0 0 1-.671-.415L9 12H3.75v4.5h-1.5z"
+                                fill="#EBAD1C"
+                              />
+                            </svg>
+                            test-project-2
+                          </span>
+                        </div>
+                      </div>
+                    </td>
+                    <td
                       class="ant-table-cell actiontech-table-actions-column ant-table-cell-fix-right ant-table-cell-fix-right-first"
                       style="position: sticky; right: 0px;"
                     >
@@ -1891,7 +2172,7 @@ exports[`base/UserCenter/UserList should hidden action column when is not admin 
                               type="button"
                             >
                               <span>
-                                管 理
+                                编 辑
                               </span>
                             </button>
                           </div>
@@ -1969,7 +2250,27 @@ exports[`base/UserCenter/UserList should hidden action column when is not admin 
                     <td
                       class="ant-table-cell"
                     >
-                      全局浏览
+                      <div
+                        class="ant-space ant-space-horizontal ant-space-align-center"
+                        style="flex-wrap: wrap; margin-bottom: -4px;"
+                      >
+                        <div
+                          class="ant-space-item"
+                          style="padding-bottom: 4px;"
+                        >
+                          <span
+                            class="ant-tag ant-tag-blue basic-tag-wrapper basic-small-tag-wrapper css-1q0n2j9"
+                            style="height: 28px;"
+                          >
+                            全局浏览
+                          </span>
+                        </div>
+                      </div>
+                    </td>
+                    <td
+                      class="ant-table-cell"
+                    >
+                      -
                     </td>
                     <td
                       class="ant-table-cell actiontech-table-actions-column ant-table-cell-fix-right ant-table-cell-fix-right-first"
@@ -1990,7 +2291,7 @@ exports[`base/UserCenter/UserList should hidden action column when is not admin 
                               type="button"
                             >
                               <span>
-                                管 理
+                                编 辑
                               </span>
                             </button>
                           </div>
@@ -2067,7 +2368,27 @@ exports[`base/UserCenter/UserList should hidden action column when is not admin 
                     <td
                       class="ant-table-cell"
                     >
-                      全局管理
+                      <div
+                        class="ant-space ant-space-horizontal ant-space-align-center"
+                        style="flex-wrap: wrap; margin-bottom: -4px;"
+                      >
+                        <div
+                          class="ant-space-item"
+                          style="padding-bottom: 4px;"
+                        >
+                          <span
+                            class="ant-tag ant-tag-purple basic-tag-wrapper basic-small-tag-wrapper css-96wxh3"
+                            style="height: 28px;"
+                          >
+                            全局管理
+                          </span>
+                        </div>
+                      </div>
+                    </td>
+                    <td
+                      class="ant-table-cell"
+                    >
+                      -
                     </td>
                     <td
                       class="ant-table-cell actiontech-table-actions-column ant-table-cell-fix-right ant-table-cell-fix-right-first"
@@ -2088,7 +2409,7 @@ exports[`base/UserCenter/UserList should hidden action column when is not admin 
                               type="button"
                             >
                               <span>
-                                管 理
+                                编 辑
                               </span>
                             </button>
                           </div>
@@ -2282,17 +2603,16 @@ exports[`base/UserCenter/UserList should refresh user table when change current 
           class="ant-spin-container"
         >
           <div
-            class="ant-table ant-table-fixed-column ant-table-scroll-horizontal ant-table-has-fix-right"
+            class="ant-table ant-table-has-fix-right"
           >
             <div
               class="ant-table-container"
             >
               <div
                 class="ant-table-content"
-                style="overflow-x: auto; overflow-y: hidden;"
               >
                 <table
-                  style="min-width: 100%; table-layout: auto;"
+                  style="table-layout: auto;"
                 >
                   <colgroup>
                     <col />
@@ -2301,6 +2621,9 @@ exports[`base/UserCenter/UserList should refresh user table when change current 
                     <col />
                     <col />
                     <col />
+                    <col
+                      style="width: 35%;"
+                    />
                     <col
                       style="width: 164px;"
                     />
@@ -2343,7 +2666,13 @@ exports[`base/UserCenter/UserList should refresh user table when change current 
                         class="ant-table-cell"
                         scope="col"
                       >
-                        平台管理权限
+                        平台角色
+                      </th>
+                      <th
+                        class="ant-table-cell"
+                        scope="col"
+                      >
+                        所属项目
                       </th>
                       <th
                         class="ant-table-cell actiontech-table-actions-column ant-table-cell-fix-right ant-table-cell-fix-right-first"
@@ -2357,75 +2686,6 @@ exports[`base/UserCenter/UserList should refresh user table when change current 
                   <tbody
                     class="ant-table-tbody"
                   >
-                    <tr
-                      aria-hidden="true"
-                      class="ant-table-measure-row"
-                      style="height: 0px; font-size: 0px;"
-                    >
-                      <td
-                        style="padding: 0px; border: 0px; height: 0px;"
-                      >
-                        <div
-                          style="height: 0px; overflow: hidden;"
-                        >
-                           
-                        </div>
-                      </td>
-                      <td
-                        style="padding: 0px; border: 0px; height: 0px;"
-                      >
-                        <div
-                          style="height: 0px; overflow: hidden;"
-                        >
-                           
-                        </div>
-                      </td>
-                      <td
-                        style="padding: 0px; border: 0px; height: 0px;"
-                      >
-                        <div
-                          style="height: 0px; overflow: hidden;"
-                        >
-                           
-                        </div>
-                      </td>
-                      <td
-                        style="padding: 0px; border: 0px; height: 0px;"
-                      >
-                        <div
-                          style="height: 0px; overflow: hidden;"
-                        >
-                           
-                        </div>
-                      </td>
-                      <td
-                        style="padding: 0px; border: 0px; height: 0px;"
-                      >
-                        <div
-                          style="height: 0px; overflow: hidden;"
-                        >
-                           
-                        </div>
-                      </td>
-                      <td
-                        style="padding: 0px; border: 0px; height: 0px;"
-                      >
-                        <div
-                          style="height: 0px; overflow: hidden;"
-                        >
-                           
-                        </div>
-                      </td>
-                      <td
-                        style="padding: 0px; border: 0px; height: 0px;"
-                      >
-                        <div
-                          style="height: 0px; overflow: hidden;"
-                        >
-                           
-                        </div>
-                      </td>
-                    </tr>
                     <tr
                       class="ant-table-row ant-table-row-level-0"
                       data-row-key="164789575286679550"
@@ -2479,7 +2739,27 @@ exports[`base/UserCenter/UserList should refresh user table when change current 
                       <td
                         class="ant-table-cell"
                       >
-                        创建项目
+                        <div
+                          class="ant-space ant-space-horizontal ant-space-align-center"
+                          style="flex-wrap: wrap; margin-bottom: -4px;"
+                        >
+                          <div
+                            class="ant-space-item"
+                            style="padding-bottom: 4px;"
+                          >
+                            <span
+                              class="ant-tag ant-tag-orange basic-tag-wrapper basic-small-tag-wrapper css-17gmaof"
+                              style="height: 28px;"
+                            >
+                              创建项目
+                            </span>
+                          </div>
+                        </div>
+                      </td>
+                      <td
+                        class="ant-table-cell"
+                      >
+                        -
                       </td>
                       <td
                         class="ant-table-cell actiontech-table-actions-column ant-table-cell-fix-right ant-table-cell-fix-right-first"
@@ -2500,7 +2780,7 @@ exports[`base/UserCenter/UserList should refresh user table when change current 
                                 type="button"
                               >
                                 <span>
-                                  管 理
+                                  编 辑
                                 </span>
                               </button>
                             </div>
@@ -2573,7 +2853,27 @@ exports[`base/UserCenter/UserList should refresh user table when change current 
                       <td
                         class="ant-table-cell"
                       >
-                        创建项目
+                        <div
+                          class="ant-space ant-space-horizontal ant-space-align-center"
+                          style="flex-wrap: wrap; margin-bottom: -4px;"
+                        >
+                          <div
+                            class="ant-space-item"
+                            style="padding-bottom: 4px;"
+                          >
+                            <span
+                              class="ant-tag ant-tag-orange basic-tag-wrapper basic-small-tag-wrapper css-17gmaof"
+                              style="height: 28px;"
+                            >
+                              创建项目
+                            </span>
+                          </div>
+                        </div>
+                      </td>
+                      <td
+                        class="ant-table-cell"
+                      >
+                        -
                       </td>
                       <td
                         class="ant-table-cell actiontech-table-actions-column ant-table-cell-fix-right ant-table-cell-fix-right-first"
@@ -2594,7 +2894,7 @@ exports[`base/UserCenter/UserList should refresh user table when change current 
                                 type="button"
                               >
                                 <span>
-                                  管 理
+                                  编 辑
                                 </span>
                               </button>
                             </div>
@@ -2667,7 +2967,27 @@ exports[`base/UserCenter/UserList should refresh user table when change current 
                       <td
                         class="ant-table-cell"
                       >
-                        创建项目
+                        <div
+                          class="ant-space ant-space-horizontal ant-space-align-center"
+                          style="flex-wrap: wrap; margin-bottom: -4px;"
+                        >
+                          <div
+                            class="ant-space-item"
+                            style="padding-bottom: 4px;"
+                          >
+                            <span
+                              class="ant-tag ant-tag-orange basic-tag-wrapper basic-small-tag-wrapper css-17gmaof"
+                              style="height: 28px;"
+                            >
+                              创建项目
+                            </span>
+                          </div>
+                        </div>
+                      </td>
+                      <td
+                        class="ant-table-cell"
+                      >
+                        -
                       </td>
                       <td
                         class="ant-table-cell actiontech-table-actions-column ant-table-cell-fix-right ant-table-cell-fix-right-first"
@@ -2688,7 +3008,7 @@ exports[`base/UserCenter/UserList should refresh user table when change current 
                                 type="button"
                               >
                                 <span>
-                                  管 理
+                                  编 辑
                                 </span>
                               </button>
                             </div>
@@ -2761,7 +3081,27 @@ exports[`base/UserCenter/UserList should refresh user table when change current 
                       <td
                         class="ant-table-cell"
                       >
-                        创建项目
+                        <div
+                          class="ant-space ant-space-horizontal ant-space-align-center"
+                          style="flex-wrap: wrap; margin-bottom: -4px;"
+                        >
+                          <div
+                            class="ant-space-item"
+                            style="padding-bottom: 4px;"
+                          >
+                            <span
+                              class="ant-tag ant-tag-orange basic-tag-wrapper basic-small-tag-wrapper css-17gmaof"
+                              style="height: 28px;"
+                            >
+                              创建项目
+                            </span>
+                          </div>
+                        </div>
+                      </td>
+                      <td
+                        class="ant-table-cell"
+                      >
+                        -
                       </td>
                       <td
                         class="ant-table-cell actiontech-table-actions-column ant-table-cell-fix-right ant-table-cell-fix-right-first"
@@ -2782,7 +3122,7 @@ exports[`base/UserCenter/UserList should refresh user table when change current 
                                 type="button"
                               >
                                 <span>
-                                  管 理
+                                  编 辑
                                 </span>
                               </button>
                             </div>
@@ -2855,7 +3195,27 @@ exports[`base/UserCenter/UserList should refresh user table when change current 
                       <td
                         class="ant-table-cell"
                       >
-                        创建项目
+                        <div
+                          class="ant-space ant-space-horizontal ant-space-align-center"
+                          style="flex-wrap: wrap; margin-bottom: -4px;"
+                        >
+                          <div
+                            class="ant-space-item"
+                            style="padding-bottom: 4px;"
+                          >
+                            <span
+                              class="ant-tag ant-tag-orange basic-tag-wrapper basic-small-tag-wrapper css-17gmaof"
+                              style="height: 28px;"
+                            >
+                              创建项目
+                            </span>
+                          </div>
+                        </div>
+                      </td>
+                      <td
+                        class="ant-table-cell"
+                      >
+                        -
                       </td>
                       <td
                         class="ant-table-cell actiontech-table-actions-column ant-table-cell-fix-right ant-table-cell-fix-right-first"
@@ -2876,7 +3236,7 @@ exports[`base/UserCenter/UserList should refresh user table when change current 
                                 type="button"
                               >
                                 <span>
-                                  管 理
+                                  编 辑
                                 </span>
                               </button>
                             </div>
@@ -2949,7 +3309,27 @@ exports[`base/UserCenter/UserList should refresh user table when change current 
                       <td
                         class="ant-table-cell"
                       >
-                        创建项目
+                        <div
+                          class="ant-space ant-space-horizontal ant-space-align-center"
+                          style="flex-wrap: wrap; margin-bottom: -4px;"
+                        >
+                          <div
+                            class="ant-space-item"
+                            style="padding-bottom: 4px;"
+                          >
+                            <span
+                              class="ant-tag ant-tag-orange basic-tag-wrapper basic-small-tag-wrapper css-17gmaof"
+                              style="height: 28px;"
+                            >
+                              创建项目
+                            </span>
+                          </div>
+                        </div>
+                      </td>
+                      <td
+                        class="ant-table-cell"
+                      >
+                        -
                       </td>
                       <td
                         class="ant-table-cell actiontech-table-actions-column ant-table-cell-fix-right ant-table-cell-fix-right-first"
@@ -2970,7 +3350,7 @@ exports[`base/UserCenter/UserList should refresh user table when change current 
                                 type="button"
                               >
                                 <span>
-                                  管 理
+                                  编 辑
                                 </span>
                               </button>
                             </div>
@@ -3043,7 +3423,27 @@ exports[`base/UserCenter/UserList should refresh user table when change current 
                       <td
                         class="ant-table-cell"
                       >
-                        创建项目
+                        <div
+                          class="ant-space ant-space-horizontal ant-space-align-center"
+                          style="flex-wrap: wrap; margin-bottom: -4px;"
+                        >
+                          <div
+                            class="ant-space-item"
+                            style="padding-bottom: 4px;"
+                          >
+                            <span
+                              class="ant-tag ant-tag-orange basic-tag-wrapper basic-small-tag-wrapper css-17gmaof"
+                              style="height: 28px;"
+                            >
+                              创建项目
+                            </span>
+                          </div>
+                        </div>
+                      </td>
+                      <td
+                        class="ant-table-cell"
+                      >
+                        -
                       </td>
                       <td
                         class="ant-table-cell actiontech-table-actions-column ant-table-cell-fix-right ant-table-cell-fix-right-first"
@@ -3064,7 +3464,7 @@ exports[`base/UserCenter/UserList should refresh user table when change current 
                                 type="button"
                               >
                                 <span>
-                                  管 理
+                                  编 辑
                                 </span>
                               </button>
                             </div>
@@ -3137,7 +3537,27 @@ exports[`base/UserCenter/UserList should refresh user table when change current 
                       <td
                         class="ant-table-cell"
                       >
-                        创建项目
+                        <div
+                          class="ant-space ant-space-horizontal ant-space-align-center"
+                          style="flex-wrap: wrap; margin-bottom: -4px;"
+                        >
+                          <div
+                            class="ant-space-item"
+                            style="padding-bottom: 4px;"
+                          >
+                            <span
+                              class="ant-tag ant-tag-orange basic-tag-wrapper basic-small-tag-wrapper css-17gmaof"
+                              style="height: 28px;"
+                            >
+                              创建项目
+                            </span>
+                          </div>
+                        </div>
+                      </td>
+                      <td
+                        class="ant-table-cell"
+                      >
+                        -
                       </td>
                       <td
                         class="ant-table-cell actiontech-table-actions-column ant-table-cell-fix-right ant-table-cell-fix-right-first"
@@ -3158,7 +3578,7 @@ exports[`base/UserCenter/UserList should refresh user table when change current 
                                 type="button"
                               >
                                 <span>
-                                  管 理
+                                  编 辑
                                 </span>
                               </button>
                             </div>
@@ -3231,7 +3651,27 @@ exports[`base/UserCenter/UserList should refresh user table when change current 
                       <td
                         class="ant-table-cell"
                       >
-                        创建项目
+                        <div
+                          class="ant-space ant-space-horizontal ant-space-align-center"
+                          style="flex-wrap: wrap; margin-bottom: -4px;"
+                        >
+                          <div
+                            class="ant-space-item"
+                            style="padding-bottom: 4px;"
+                          >
+                            <span
+                              class="ant-tag ant-tag-orange basic-tag-wrapper basic-small-tag-wrapper css-17gmaof"
+                              style="height: 28px;"
+                            >
+                              创建项目
+                            </span>
+                          </div>
+                        </div>
+                      </td>
+                      <td
+                        class="ant-table-cell"
+                      >
+                        -
                       </td>
                       <td
                         class="ant-table-cell actiontech-table-actions-column ant-table-cell-fix-right ant-table-cell-fix-right-first"
@@ -3252,7 +3692,7 @@ exports[`base/UserCenter/UserList should refresh user table when change current 
                                 type="button"
                               >
                                 <span>
-                                  管 理
+                                  编 辑
                                 </span>
                               </button>
                             </div>
@@ -3325,7 +3765,27 @@ exports[`base/UserCenter/UserList should refresh user table when change current 
                       <td
                         class="ant-table-cell"
                       >
-                        创建项目
+                        <div
+                          class="ant-space ant-space-horizontal ant-space-align-center"
+                          style="flex-wrap: wrap; margin-bottom: -4px;"
+                        >
+                          <div
+                            class="ant-space-item"
+                            style="padding-bottom: 4px;"
+                          >
+                            <span
+                              class="ant-tag ant-tag-orange basic-tag-wrapper basic-small-tag-wrapper css-17gmaof"
+                              style="height: 28px;"
+                            >
+                              创建项目
+                            </span>
+                          </div>
+                        </div>
+                      </td>
+                      <td
+                        class="ant-table-cell"
+                      >
+                        -
                       </td>
                       <td
                         class="ant-table-cell actiontech-table-actions-column ant-table-cell-fix-right ant-table-cell-fix-right-first"
@@ -3346,7 +3806,7 @@ exports[`base/UserCenter/UserList should refresh user table when change current 
                                 type="button"
                               >
                                 <span>
-                                  管 理
+                                  编 辑
                                 </span>
                               </button>
                             </div>
@@ -3419,7 +3879,27 @@ exports[`base/UserCenter/UserList should refresh user table when change current 
                       <td
                         class="ant-table-cell"
                       >
-                        创建项目
+                        <div
+                          class="ant-space ant-space-horizontal ant-space-align-center"
+                          style="flex-wrap: wrap; margin-bottom: -4px;"
+                        >
+                          <div
+                            class="ant-space-item"
+                            style="padding-bottom: 4px;"
+                          >
+                            <span
+                              class="ant-tag ant-tag-orange basic-tag-wrapper basic-small-tag-wrapper css-17gmaof"
+                              style="height: 28px;"
+                            >
+                              创建项目
+                            </span>
+                          </div>
+                        </div>
+                      </td>
+                      <td
+                        class="ant-table-cell"
+                      >
+                        -
                       </td>
                       <td
                         class="ant-table-cell actiontech-table-actions-column ant-table-cell-fix-right ant-table-cell-fix-right-first"
@@ -3440,7 +3920,7 @@ exports[`base/UserCenter/UserList should refresh user table when change current 
                                 type="button"
                               >
                                 <span>
-                                  管 理
+                                  编 辑
                                 </span>
                               </button>
                             </div>
@@ -3513,7 +3993,27 @@ exports[`base/UserCenter/UserList should refresh user table when change current 
                       <td
                         class="ant-table-cell"
                       >
-                        创建项目
+                        <div
+                          class="ant-space ant-space-horizontal ant-space-align-center"
+                          style="flex-wrap: wrap; margin-bottom: -4px;"
+                        >
+                          <div
+                            class="ant-space-item"
+                            style="padding-bottom: 4px;"
+                          >
+                            <span
+                              class="ant-tag ant-tag-orange basic-tag-wrapper basic-small-tag-wrapper css-17gmaof"
+                              style="height: 28px;"
+                            >
+                              创建项目
+                            </span>
+                          </div>
+                        </div>
+                      </td>
+                      <td
+                        class="ant-table-cell"
+                      >
+                        -
                       </td>
                       <td
                         class="ant-table-cell actiontech-table-actions-column ant-table-cell-fix-right ant-table-cell-fix-right-first"
@@ -3534,7 +4034,7 @@ exports[`base/UserCenter/UserList should refresh user table when change current 
                                 type="button"
                               >
                                 <span>
-                                  管 理
+                                  编 辑
                                 </span>
                               </button>
                             </div>
@@ -3607,7 +4107,27 @@ exports[`base/UserCenter/UserList should refresh user table when change current 
                       <td
                         class="ant-table-cell"
                       >
-                        创建项目
+                        <div
+                          class="ant-space ant-space-horizontal ant-space-align-center"
+                          style="flex-wrap: wrap; margin-bottom: -4px;"
+                        >
+                          <div
+                            class="ant-space-item"
+                            style="padding-bottom: 4px;"
+                          >
+                            <span
+                              class="ant-tag ant-tag-orange basic-tag-wrapper basic-small-tag-wrapper css-17gmaof"
+                              style="height: 28px;"
+                            >
+                              创建项目
+                            </span>
+                          </div>
+                        </div>
+                      </td>
+                      <td
+                        class="ant-table-cell"
+                      >
+                        -
                       </td>
                       <td
                         class="ant-table-cell actiontech-table-actions-column ant-table-cell-fix-right ant-table-cell-fix-right-first"
@@ -3628,7 +4148,7 @@ exports[`base/UserCenter/UserList should refresh user table when change current 
                                 type="button"
                               >
                                 <span>
-                                  管 理
+                                  编 辑
                                 </span>
                               </button>
                             </div>
@@ -3701,7 +4221,27 @@ exports[`base/UserCenter/UserList should refresh user table when change current 
                       <td
                         class="ant-table-cell"
                       >
-                        创建项目
+                        <div
+                          class="ant-space ant-space-horizontal ant-space-align-center"
+                          style="flex-wrap: wrap; margin-bottom: -4px;"
+                        >
+                          <div
+                            class="ant-space-item"
+                            style="padding-bottom: 4px;"
+                          >
+                            <span
+                              class="ant-tag ant-tag-orange basic-tag-wrapper basic-small-tag-wrapper css-17gmaof"
+                              style="height: 28px;"
+                            >
+                              创建项目
+                            </span>
+                          </div>
+                        </div>
+                      </td>
+                      <td
+                        class="ant-table-cell"
+                      >
+                        -
                       </td>
                       <td
                         class="ant-table-cell actiontech-table-actions-column ant-table-cell-fix-right ant-table-cell-fix-right-first"
@@ -3722,7 +4262,7 @@ exports[`base/UserCenter/UserList should refresh user table when change current 
                                 type="button"
                               >
                                 <span>
-                                  管 理
+                                  编 辑
                                 </span>
                               </button>
                             </div>
@@ -3795,7 +4335,27 @@ exports[`base/UserCenter/UserList should refresh user table when change current 
                       <td
                         class="ant-table-cell"
                       >
-                        创建项目
+                        <div
+                          class="ant-space ant-space-horizontal ant-space-align-center"
+                          style="flex-wrap: wrap; margin-bottom: -4px;"
+                        >
+                          <div
+                            class="ant-space-item"
+                            style="padding-bottom: 4px;"
+                          >
+                            <span
+                              class="ant-tag ant-tag-orange basic-tag-wrapper basic-small-tag-wrapper css-17gmaof"
+                              style="height: 28px;"
+                            >
+                              创建项目
+                            </span>
+                          </div>
+                        </div>
+                      </td>
+                      <td
+                        class="ant-table-cell"
+                      >
+                        -
                       </td>
                       <td
                         class="ant-table-cell actiontech-table-actions-column ant-table-cell-fix-right ant-table-cell-fix-right-first"
@@ -3816,7 +4376,7 @@ exports[`base/UserCenter/UserList should refresh user table when change current 
                                 type="button"
                               >
                                 <span>
-                                  管 理
+                                  编 辑
                                 </span>
                               </button>
                             </div>
@@ -3889,7 +4449,27 @@ exports[`base/UserCenter/UserList should refresh user table when change current 
                       <td
                         class="ant-table-cell"
                       >
-                        创建项目
+                        <div
+                          class="ant-space ant-space-horizontal ant-space-align-center"
+                          style="flex-wrap: wrap; margin-bottom: -4px;"
+                        >
+                          <div
+                            class="ant-space-item"
+                            style="padding-bottom: 4px;"
+                          >
+                            <span
+                              class="ant-tag ant-tag-orange basic-tag-wrapper basic-small-tag-wrapper css-17gmaof"
+                              style="height: 28px;"
+                            >
+                              创建项目
+                            </span>
+                          </div>
+                        </div>
+                      </td>
+                      <td
+                        class="ant-table-cell"
+                      >
+                        -
                       </td>
                       <td
                         class="ant-table-cell actiontech-table-actions-column ant-table-cell-fix-right ant-table-cell-fix-right-first"
@@ -3910,7 +4490,7 @@ exports[`base/UserCenter/UserList should refresh user table when change current 
                                 type="button"
                               >
                                 <span>
-                                  管 理
+                                  编 辑
                                 </span>
                               </button>
                             </div>
@@ -3983,7 +4563,27 @@ exports[`base/UserCenter/UserList should refresh user table when change current 
                       <td
                         class="ant-table-cell"
                       >
-                        创建项目
+                        <div
+                          class="ant-space ant-space-horizontal ant-space-align-center"
+                          style="flex-wrap: wrap; margin-bottom: -4px;"
+                        >
+                          <div
+                            class="ant-space-item"
+                            style="padding-bottom: 4px;"
+                          >
+                            <span
+                              class="ant-tag ant-tag-orange basic-tag-wrapper basic-small-tag-wrapper css-17gmaof"
+                              style="height: 28px;"
+                            >
+                              创建项目
+                            </span>
+                          </div>
+                        </div>
+                      </td>
+                      <td
+                        class="ant-table-cell"
+                      >
+                        -
                       </td>
                       <td
                         class="ant-table-cell actiontech-table-actions-column ant-table-cell-fix-right ant-table-cell-fix-right-first"
@@ -4004,7 +4604,7 @@ exports[`base/UserCenter/UserList should refresh user table when change current 
                                 type="button"
                               >
                                 <span>
-                                  管 理
+                                  编 辑
                                 </span>
                               </button>
                             </div>
@@ -4077,7 +4677,27 @@ exports[`base/UserCenter/UserList should refresh user table when change current 
                       <td
                         class="ant-table-cell"
                       >
-                        创建项目
+                        <div
+                          class="ant-space ant-space-horizontal ant-space-align-center"
+                          style="flex-wrap: wrap; margin-bottom: -4px;"
+                        >
+                          <div
+                            class="ant-space-item"
+                            style="padding-bottom: 4px;"
+                          >
+                            <span
+                              class="ant-tag ant-tag-orange basic-tag-wrapper basic-small-tag-wrapper css-17gmaof"
+                              style="height: 28px;"
+                            >
+                              创建项目
+                            </span>
+                          </div>
+                        </div>
+                      </td>
+                      <td
+                        class="ant-table-cell"
+                      >
+                        -
                       </td>
                       <td
                         class="ant-table-cell actiontech-table-actions-column ant-table-cell-fix-right ant-table-cell-fix-right-first"
@@ -4098,7 +4718,7 @@ exports[`base/UserCenter/UserList should refresh user table when change current 
                                 type="button"
                               >
                                 <span>
-                                  管 理
+                                  编 辑
                                 </span>
                               </button>
                             </div>
@@ -4171,7 +4791,27 @@ exports[`base/UserCenter/UserList should refresh user table when change current 
                       <td
                         class="ant-table-cell"
                       >
-                        创建项目
+                        <div
+                          class="ant-space ant-space-horizontal ant-space-align-center"
+                          style="flex-wrap: wrap; margin-bottom: -4px;"
+                        >
+                          <div
+                            class="ant-space-item"
+                            style="padding-bottom: 4px;"
+                          >
+                            <span
+                              class="ant-tag ant-tag-orange basic-tag-wrapper basic-small-tag-wrapper css-17gmaof"
+                              style="height: 28px;"
+                            >
+                              创建项目
+                            </span>
+                          </div>
+                        </div>
+                      </td>
+                      <td
+                        class="ant-table-cell"
+                      >
+                        -
                       </td>
                       <td
                         class="ant-table-cell actiontech-table-actions-column ant-table-cell-fix-right ant-table-cell-fix-right-first"
@@ -4192,7 +4832,7 @@ exports[`base/UserCenter/UserList should refresh user table when change current 
                                 type="button"
                               >
                                 <span>
-                                  管 理
+                                  编 辑
                                 </span>
                               </button>
                             </div>
@@ -4265,7 +4905,27 @@ exports[`base/UserCenter/UserList should refresh user table when change current 
                       <td
                         class="ant-table-cell"
                       >
-                        创建项目
+                        <div
+                          class="ant-space ant-space-horizontal ant-space-align-center"
+                          style="flex-wrap: wrap; margin-bottom: -4px;"
+                        >
+                          <div
+                            class="ant-space-item"
+                            style="padding-bottom: 4px;"
+                          >
+                            <span
+                              class="ant-tag ant-tag-orange basic-tag-wrapper basic-small-tag-wrapper css-17gmaof"
+                              style="height: 28px;"
+                            >
+                              创建项目
+                            </span>
+                          </div>
+                        </div>
+                      </td>
+                      <td
+                        class="ant-table-cell"
+                      >
+                        -
                       </td>
                       <td
                         class="ant-table-cell actiontech-table-actions-column ant-table-cell-fix-right ant-table-cell-fix-right-first"
@@ -4286,7 +4946,7 @@ exports[`base/UserCenter/UserList should refresh user table when change current 
                                 type="button"
                               >
                                 <span>
-                                  管 理
+                                  编 辑
                                 </span>
                               </button>
                             </div>
@@ -4492,17 +5152,16 @@ exports[`base/UserCenter/UserList should refresh user table when change current 
           class="ant-spin-container"
         >
           <div
-            class="ant-table ant-table-fixed-column ant-table-scroll-horizontal ant-table-has-fix-right"
+            class="ant-table ant-table-has-fix-right"
           >
             <div
               class="ant-table-container"
             >
               <div
                 class="ant-table-content"
-                style="overflow-x: auto; overflow-y: hidden;"
               >
                 <table
-                  style="min-width: 100%; table-layout: auto;"
+                  style="table-layout: auto;"
                 >
                   <colgroup>
                     <col />
@@ -4511,6 +5170,9 @@ exports[`base/UserCenter/UserList should refresh user table when change current 
                     <col />
                     <col />
                     <col />
+                    <col
+                      style="width: 35%;"
+                    />
                     <col
                       style="width: 164px;"
                     />
@@ -4553,7 +5215,13 @@ exports[`base/UserCenter/UserList should refresh user table when change current 
                         class="ant-table-cell"
                         scope="col"
                       >
-                        平台管理权限
+                        平台角色
+                      </th>
+                      <th
+                        class="ant-table-cell"
+                        scope="col"
+                      >
+                        所属项目
                       </th>
                       <th
                         class="ant-table-cell actiontech-table-actions-column ant-table-cell-fix-right ant-table-cell-fix-right-first"
@@ -4567,75 +5235,6 @@ exports[`base/UserCenter/UserList should refresh user table when change current 
                   <tbody
                     class="ant-table-tbody"
                   >
-                    <tr
-                      aria-hidden="true"
-                      class="ant-table-measure-row"
-                      style="height: 0px; font-size: 0px;"
-                    >
-                      <td
-                        style="padding: 0px; border: 0px; height: 0px;"
-                      >
-                        <div
-                          style="height: 0px; overflow: hidden;"
-                        >
-                           
-                        </div>
-                      </td>
-                      <td
-                        style="padding: 0px; border: 0px; height: 0px;"
-                      >
-                        <div
-                          style="height: 0px; overflow: hidden;"
-                        >
-                           
-                        </div>
-                      </td>
-                      <td
-                        style="padding: 0px; border: 0px; height: 0px;"
-                      >
-                        <div
-                          style="height: 0px; overflow: hidden;"
-                        >
-                           
-                        </div>
-                      </td>
-                      <td
-                        style="padding: 0px; border: 0px; height: 0px;"
-                      >
-                        <div
-                          style="height: 0px; overflow: hidden;"
-                        >
-                           
-                        </div>
-                      </td>
-                      <td
-                        style="padding: 0px; border: 0px; height: 0px;"
-                      >
-                        <div
-                          style="height: 0px; overflow: hidden;"
-                        >
-                           
-                        </div>
-                      </td>
-                      <td
-                        style="padding: 0px; border: 0px; height: 0px;"
-                      >
-                        <div
-                          style="height: 0px; overflow: hidden;"
-                        >
-                           
-                        </div>
-                      </td>
-                      <td
-                        style="padding: 0px; border: 0px; height: 0px;"
-                      >
-                        <div
-                          style="height: 0px; overflow: hidden;"
-                        >
-                           
-                        </div>
-                      </td>
-                    </tr>
                     <tr
                       class="ant-table-row ant-table-row-level-0"
                       data-row-key="1647895752866795520"
@@ -4689,7 +5288,27 @@ exports[`base/UserCenter/UserList should refresh user table when change current 
                       <td
                         class="ant-table-cell"
                       >
-                        创建项目
+                        <div
+                          class="ant-space ant-space-horizontal ant-space-align-center"
+                          style="flex-wrap: wrap; margin-bottom: -4px;"
+                        >
+                          <div
+                            class="ant-space-item"
+                            style="padding-bottom: 4px;"
+                          >
+                            <span
+                              class="ant-tag ant-tag-orange basic-tag-wrapper basic-small-tag-wrapper css-17gmaof"
+                              style="height: 28px;"
+                            >
+                              创建项目
+                            </span>
+                          </div>
+                        </div>
+                      </td>
+                      <td
+                        class="ant-table-cell"
+                      >
+                        -
                       </td>
                       <td
                         class="ant-table-cell actiontech-table-actions-column ant-table-cell-fix-right ant-table-cell-fix-right-first"
@@ -4710,7 +5329,7 @@ exports[`base/UserCenter/UserList should refresh user table when change current 
                                 type="button"
                               >
                                 <span>
-                                  管 理
+                                  编 辑
                                 </span>
                               </button>
                             </div>
@@ -4783,7 +5402,27 @@ exports[`base/UserCenter/UserList should refresh user table when change current 
                       <td
                         class="ant-table-cell"
                       >
-                        创建项目
+                        <div
+                          class="ant-space ant-space-horizontal ant-space-align-center"
+                          style="flex-wrap: wrap; margin-bottom: -4px;"
+                        >
+                          <div
+                            class="ant-space-item"
+                            style="padding-bottom: 4px;"
+                          >
+                            <span
+                              class="ant-tag ant-tag-orange basic-tag-wrapper basic-small-tag-wrapper css-17gmaof"
+                              style="height: 28px;"
+                            >
+                              创建项目
+                            </span>
+                          </div>
+                        </div>
+                      </td>
+                      <td
+                        class="ant-table-cell"
+                      >
+                        -
                       </td>
                       <td
                         class="ant-table-cell actiontech-table-actions-column ant-table-cell-fix-right ant-table-cell-fix-right-first"
@@ -4804,7 +5443,7 @@ exports[`base/UserCenter/UserList should refresh user table when change current 
                                 type="button"
                               >
                                 <span>
-                                  管 理
+                                  编 辑
                                 </span>
                               </button>
                             </div>
@@ -4877,7 +5516,27 @@ exports[`base/UserCenter/UserList should refresh user table when change current 
                       <td
                         class="ant-table-cell"
                       >
-                        创建项目
+                        <div
+                          class="ant-space ant-space-horizontal ant-space-align-center"
+                          style="flex-wrap: wrap; margin-bottom: -4px;"
+                        >
+                          <div
+                            class="ant-space-item"
+                            style="padding-bottom: 4px;"
+                          >
+                            <span
+                              class="ant-tag ant-tag-orange basic-tag-wrapper basic-small-tag-wrapper css-17gmaof"
+                              style="height: 28px;"
+                            >
+                              创建项目
+                            </span>
+                          </div>
+                        </div>
+                      </td>
+                      <td
+                        class="ant-table-cell"
+                      >
+                        -
                       </td>
                       <td
                         class="ant-table-cell actiontech-table-actions-column ant-table-cell-fix-right ant-table-cell-fix-right-first"
@@ -4898,7 +5557,7 @@ exports[`base/UserCenter/UserList should refresh user table when change current 
                                 type="button"
                               >
                                 <span>
-                                  管 理
+                                  编 辑
                                 </span>
                               </button>
                             </div>
@@ -4971,7 +5630,27 @@ exports[`base/UserCenter/UserList should refresh user table when change current 
                       <td
                         class="ant-table-cell"
                       >
-                        创建项目
+                        <div
+                          class="ant-space ant-space-horizontal ant-space-align-center"
+                          style="flex-wrap: wrap; margin-bottom: -4px;"
+                        >
+                          <div
+                            class="ant-space-item"
+                            style="padding-bottom: 4px;"
+                          >
+                            <span
+                              class="ant-tag ant-tag-orange basic-tag-wrapper basic-small-tag-wrapper css-17gmaof"
+                              style="height: 28px;"
+                            >
+                              创建项目
+                            </span>
+                          </div>
+                        </div>
+                      </td>
+                      <td
+                        class="ant-table-cell"
+                      >
+                        -
                       </td>
                       <td
                         class="ant-table-cell actiontech-table-actions-column ant-table-cell-fix-right ant-table-cell-fix-right-first"
@@ -4992,7 +5671,7 @@ exports[`base/UserCenter/UserList should refresh user table when change current 
                                 type="button"
                               >
                                 <span>
-                                  管 理
+                                  编 辑
                                 </span>
                               </button>
                             </div>
@@ -5065,7 +5744,27 @@ exports[`base/UserCenter/UserList should refresh user table when change current 
                       <td
                         class="ant-table-cell"
                       >
-                        创建项目
+                        <div
+                          class="ant-space ant-space-horizontal ant-space-align-center"
+                          style="flex-wrap: wrap; margin-bottom: -4px;"
+                        >
+                          <div
+                            class="ant-space-item"
+                            style="padding-bottom: 4px;"
+                          >
+                            <span
+                              class="ant-tag ant-tag-orange basic-tag-wrapper basic-small-tag-wrapper css-17gmaof"
+                              style="height: 28px;"
+                            >
+                              创建项目
+                            </span>
+                          </div>
+                        </div>
+                      </td>
+                      <td
+                        class="ant-table-cell"
+                      >
+                        -
                       </td>
                       <td
                         class="ant-table-cell actiontech-table-actions-column ant-table-cell-fix-right ant-table-cell-fix-right-first"
@@ -5086,7 +5785,7 @@ exports[`base/UserCenter/UserList should refresh user table when change current 
                                 type="button"
                               >
                                 <span>
-                                  管 理
+                                  编 辑
                                 </span>
                               </button>
                             </div>
@@ -5159,7 +5858,27 @@ exports[`base/UserCenter/UserList should refresh user table when change current 
                       <td
                         class="ant-table-cell"
                       >
-                        创建项目
+                        <div
+                          class="ant-space ant-space-horizontal ant-space-align-center"
+                          style="flex-wrap: wrap; margin-bottom: -4px;"
+                        >
+                          <div
+                            class="ant-space-item"
+                            style="padding-bottom: 4px;"
+                          >
+                            <span
+                              class="ant-tag ant-tag-orange basic-tag-wrapper basic-small-tag-wrapper css-17gmaof"
+                              style="height: 28px;"
+                            >
+                              创建项目
+                            </span>
+                          </div>
+                        </div>
+                      </td>
+                      <td
+                        class="ant-table-cell"
+                      >
+                        -
                       </td>
                       <td
                         class="ant-table-cell actiontech-table-actions-column ant-table-cell-fix-right ant-table-cell-fix-right-first"
@@ -5180,7 +5899,7 @@ exports[`base/UserCenter/UserList should refresh user table when change current 
                                 type="button"
                               >
                                 <span>
-                                  管 理
+                                  编 辑
                                 </span>
                               </button>
                             </div>
@@ -5253,7 +5972,27 @@ exports[`base/UserCenter/UserList should refresh user table when change current 
                       <td
                         class="ant-table-cell"
                       >
-                        创建项目
+                        <div
+                          class="ant-space ant-space-horizontal ant-space-align-center"
+                          style="flex-wrap: wrap; margin-bottom: -4px;"
+                        >
+                          <div
+                            class="ant-space-item"
+                            style="padding-bottom: 4px;"
+                          >
+                            <span
+                              class="ant-tag ant-tag-orange basic-tag-wrapper basic-small-tag-wrapper css-17gmaof"
+                              style="height: 28px;"
+                            >
+                              创建项目
+                            </span>
+                          </div>
+                        </div>
+                      </td>
+                      <td
+                        class="ant-table-cell"
+                      >
+                        -
                       </td>
                       <td
                         class="ant-table-cell actiontech-table-actions-column ant-table-cell-fix-right ant-table-cell-fix-right-first"
@@ -5274,7 +6013,7 @@ exports[`base/UserCenter/UserList should refresh user table when change current 
                                 type="button"
                               >
                                 <span>
-                                  管 理
+                                  编 辑
                                 </span>
                               </button>
                             </div>
@@ -5347,7 +6086,27 @@ exports[`base/UserCenter/UserList should refresh user table when change current 
                       <td
                         class="ant-table-cell"
                       >
-                        创建项目
+                        <div
+                          class="ant-space ant-space-horizontal ant-space-align-center"
+                          style="flex-wrap: wrap; margin-bottom: -4px;"
+                        >
+                          <div
+                            class="ant-space-item"
+                            style="padding-bottom: 4px;"
+                          >
+                            <span
+                              class="ant-tag ant-tag-orange basic-tag-wrapper basic-small-tag-wrapper css-17gmaof"
+                              style="height: 28px;"
+                            >
+                              创建项目
+                            </span>
+                          </div>
+                        </div>
+                      </td>
+                      <td
+                        class="ant-table-cell"
+                      >
+                        -
                       </td>
                       <td
                         class="ant-table-cell actiontech-table-actions-column ant-table-cell-fix-right ant-table-cell-fix-right-first"
@@ -5368,7 +6127,7 @@ exports[`base/UserCenter/UserList should refresh user table when change current 
                                 type="button"
                               >
                                 <span>
-                                  管 理
+                                  编 辑
                                 </span>
                               </button>
                             </div>
@@ -5441,7 +6200,27 @@ exports[`base/UserCenter/UserList should refresh user table when change current 
                       <td
                         class="ant-table-cell"
                       >
-                        创建项目
+                        <div
+                          class="ant-space ant-space-horizontal ant-space-align-center"
+                          style="flex-wrap: wrap; margin-bottom: -4px;"
+                        >
+                          <div
+                            class="ant-space-item"
+                            style="padding-bottom: 4px;"
+                          >
+                            <span
+                              class="ant-tag ant-tag-orange basic-tag-wrapper basic-small-tag-wrapper css-17gmaof"
+                              style="height: 28px;"
+                            >
+                              创建项目
+                            </span>
+                          </div>
+                        </div>
+                      </td>
+                      <td
+                        class="ant-table-cell"
+                      >
+                        -
                       </td>
                       <td
                         class="ant-table-cell actiontech-table-actions-column ant-table-cell-fix-right ant-table-cell-fix-right-first"
@@ -5462,7 +6241,7 @@ exports[`base/UserCenter/UserList should refresh user table when change current 
                                 type="button"
                               >
                                 <span>
-                                  管 理
+                                  编 辑
                                 </span>
                               </button>
                             </div>
@@ -5535,7 +6314,27 @@ exports[`base/UserCenter/UserList should refresh user table when change current 
                       <td
                         class="ant-table-cell"
                       >
-                        创建项目
+                        <div
+                          class="ant-space ant-space-horizontal ant-space-align-center"
+                          style="flex-wrap: wrap; margin-bottom: -4px;"
+                        >
+                          <div
+                            class="ant-space-item"
+                            style="padding-bottom: 4px;"
+                          >
+                            <span
+                              class="ant-tag ant-tag-orange basic-tag-wrapper basic-small-tag-wrapper css-17gmaof"
+                              style="height: 28px;"
+                            >
+                              创建项目
+                            </span>
+                          </div>
+                        </div>
+                      </td>
+                      <td
+                        class="ant-table-cell"
+                      >
+                        -
                       </td>
                       <td
                         class="ant-table-cell actiontech-table-actions-column ant-table-cell-fix-right ant-table-cell-fix-right-first"
@@ -5556,7 +6355,7 @@ exports[`base/UserCenter/UserList should refresh user table when change current 
                                 type="button"
                               >
                                 <span>
-                                  管 理
+                                  编 辑
                                 </span>
                               </button>
                             </div>
@@ -5629,7 +6428,27 @@ exports[`base/UserCenter/UserList should refresh user table when change current 
                       <td
                         class="ant-table-cell"
                       >
-                        创建项目
+                        <div
+                          class="ant-space ant-space-horizontal ant-space-align-center"
+                          style="flex-wrap: wrap; margin-bottom: -4px;"
+                        >
+                          <div
+                            class="ant-space-item"
+                            style="padding-bottom: 4px;"
+                          >
+                            <span
+                              class="ant-tag ant-tag-orange basic-tag-wrapper basic-small-tag-wrapper css-17gmaof"
+                              style="height: 28px;"
+                            >
+                              创建项目
+                            </span>
+                          </div>
+                        </div>
+                      </td>
+                      <td
+                        class="ant-table-cell"
+                      >
+                        -
                       </td>
                       <td
                         class="ant-table-cell actiontech-table-actions-column ant-table-cell-fix-right ant-table-cell-fix-right-first"
@@ -5650,7 +6469,7 @@ exports[`base/UserCenter/UserList should refresh user table when change current 
                                 type="button"
                               >
                                 <span>
-                                  管 理
+                                  编 辑
                                 </span>
                               </button>
                             </div>
@@ -5723,7 +6542,27 @@ exports[`base/UserCenter/UserList should refresh user table when change current 
                       <td
                         class="ant-table-cell"
                       >
-                        创建项目
+                        <div
+                          class="ant-space ant-space-horizontal ant-space-align-center"
+                          style="flex-wrap: wrap; margin-bottom: -4px;"
+                        >
+                          <div
+                            class="ant-space-item"
+                            style="padding-bottom: 4px;"
+                          >
+                            <span
+                              class="ant-tag ant-tag-orange basic-tag-wrapper basic-small-tag-wrapper css-17gmaof"
+                              style="height: 28px;"
+                            >
+                              创建项目
+                            </span>
+                          </div>
+                        </div>
+                      </td>
+                      <td
+                        class="ant-table-cell"
+                      >
+                        -
                       </td>
                       <td
                         class="ant-table-cell actiontech-table-actions-column ant-table-cell-fix-right ant-table-cell-fix-right-first"
@@ -5744,7 +6583,7 @@ exports[`base/UserCenter/UserList should refresh user table when change current 
                                 type="button"
                               >
                                 <span>
-                                  管 理
+                                  编 辑
                                 </span>
                               </button>
                             </div>
@@ -5817,7 +6656,27 @@ exports[`base/UserCenter/UserList should refresh user table when change current 
                       <td
                         class="ant-table-cell"
                       >
-                        创建项目
+                        <div
+                          class="ant-space ant-space-horizontal ant-space-align-center"
+                          style="flex-wrap: wrap; margin-bottom: -4px;"
+                        >
+                          <div
+                            class="ant-space-item"
+                            style="padding-bottom: 4px;"
+                          >
+                            <span
+                              class="ant-tag ant-tag-orange basic-tag-wrapper basic-small-tag-wrapper css-17gmaof"
+                              style="height: 28px;"
+                            >
+                              创建项目
+                            </span>
+                          </div>
+                        </div>
+                      </td>
+                      <td
+                        class="ant-table-cell"
+                      >
+                        -
                       </td>
                       <td
                         class="ant-table-cell actiontech-table-actions-column ant-table-cell-fix-right ant-table-cell-fix-right-first"
@@ -5838,7 +6697,7 @@ exports[`base/UserCenter/UserList should refresh user table when change current 
                                 type="button"
                               >
                                 <span>
-                                  管 理
+                                  编 辑
                                 </span>
                               </button>
                             </div>
@@ -5911,7 +6770,27 @@ exports[`base/UserCenter/UserList should refresh user table when change current 
                       <td
                         class="ant-table-cell"
                       >
-                        创建项目
+                        <div
+                          class="ant-space ant-space-horizontal ant-space-align-center"
+                          style="flex-wrap: wrap; margin-bottom: -4px;"
+                        >
+                          <div
+                            class="ant-space-item"
+                            style="padding-bottom: 4px;"
+                          >
+                            <span
+                              class="ant-tag ant-tag-orange basic-tag-wrapper basic-small-tag-wrapper css-17gmaof"
+                              style="height: 28px;"
+                            >
+                              创建项目
+                            </span>
+                          </div>
+                        </div>
+                      </td>
+                      <td
+                        class="ant-table-cell"
+                      >
+                        -
                       </td>
                       <td
                         class="ant-table-cell actiontech-table-actions-column ant-table-cell-fix-right ant-table-cell-fix-right-first"
@@ -5932,7 +6811,7 @@ exports[`base/UserCenter/UserList should refresh user table when change current 
                                 type="button"
                               >
                                 <span>
-                                  管 理
+                                  编 辑
                                 </span>
                               </button>
                             </div>
@@ -6005,7 +6884,27 @@ exports[`base/UserCenter/UserList should refresh user table when change current 
                       <td
                         class="ant-table-cell"
                       >
-                        创建项目
+                        <div
+                          class="ant-space ant-space-horizontal ant-space-align-center"
+                          style="flex-wrap: wrap; margin-bottom: -4px;"
+                        >
+                          <div
+                            class="ant-space-item"
+                            style="padding-bottom: 4px;"
+                          >
+                            <span
+                              class="ant-tag ant-tag-orange basic-tag-wrapper basic-small-tag-wrapper css-17gmaof"
+                              style="height: 28px;"
+                            >
+                              创建项目
+                            </span>
+                          </div>
+                        </div>
+                      </td>
+                      <td
+                        class="ant-table-cell"
+                      >
+                        -
                       </td>
                       <td
                         class="ant-table-cell actiontech-table-actions-column ant-table-cell-fix-right ant-table-cell-fix-right-first"
@@ -6026,7 +6925,7 @@ exports[`base/UserCenter/UserList should refresh user table when change current 
                                 type="button"
                               >
                                 <span>
-                                  管 理
+                                  编 辑
                                 </span>
                               </button>
                             </div>
@@ -6099,7 +6998,27 @@ exports[`base/UserCenter/UserList should refresh user table when change current 
                       <td
                         class="ant-table-cell"
                       >
-                        创建项目
+                        <div
+                          class="ant-space ant-space-horizontal ant-space-align-center"
+                          style="flex-wrap: wrap; margin-bottom: -4px;"
+                        >
+                          <div
+                            class="ant-space-item"
+                            style="padding-bottom: 4px;"
+                          >
+                            <span
+                              class="ant-tag ant-tag-orange basic-tag-wrapper basic-small-tag-wrapper css-17gmaof"
+                              style="height: 28px;"
+                            >
+                              创建项目
+                            </span>
+                          </div>
+                        </div>
+                      </td>
+                      <td
+                        class="ant-table-cell"
+                      >
+                        -
                       </td>
                       <td
                         class="ant-table-cell actiontech-table-actions-column ant-table-cell-fix-right ant-table-cell-fix-right-first"
@@ -6120,7 +7039,7 @@ exports[`base/UserCenter/UserList should refresh user table when change current 
                                 type="button"
                               >
                                 <span>
-                                  管 理
+                                  编 辑
                                 </span>
                               </button>
                             </div>
@@ -6193,7 +7112,27 @@ exports[`base/UserCenter/UserList should refresh user table when change current 
                       <td
                         class="ant-table-cell"
                       >
-                        创建项目
+                        <div
+                          class="ant-space ant-space-horizontal ant-space-align-center"
+                          style="flex-wrap: wrap; margin-bottom: -4px;"
+                        >
+                          <div
+                            class="ant-space-item"
+                            style="padding-bottom: 4px;"
+                          >
+                            <span
+                              class="ant-tag ant-tag-orange basic-tag-wrapper basic-small-tag-wrapper css-17gmaof"
+                              style="height: 28px;"
+                            >
+                              创建项目
+                            </span>
+                          </div>
+                        </div>
+                      </td>
+                      <td
+                        class="ant-table-cell"
+                      >
+                        -
                       </td>
                       <td
                         class="ant-table-cell actiontech-table-actions-column ant-table-cell-fix-right ant-table-cell-fix-right-first"
@@ -6214,7 +7153,7 @@ exports[`base/UserCenter/UserList should refresh user table when change current 
                                 type="button"
                               >
                                 <span>
-                                  管 理
+                                  编 辑
                                 </span>
                               </button>
                             </div>
@@ -6287,7 +7226,27 @@ exports[`base/UserCenter/UserList should refresh user table when change current 
                       <td
                         class="ant-table-cell"
                       >
-                        创建项目
+                        <div
+                          class="ant-space ant-space-horizontal ant-space-align-center"
+                          style="flex-wrap: wrap; margin-bottom: -4px;"
+                        >
+                          <div
+                            class="ant-space-item"
+                            style="padding-bottom: 4px;"
+                          >
+                            <span
+                              class="ant-tag ant-tag-orange basic-tag-wrapper basic-small-tag-wrapper css-17gmaof"
+                              style="height: 28px;"
+                            >
+                              创建项目
+                            </span>
+                          </div>
+                        </div>
+                      </td>
+                      <td
+                        class="ant-table-cell"
+                      >
+                        -
                       </td>
                       <td
                         class="ant-table-cell actiontech-table-actions-column ant-table-cell-fix-right ant-table-cell-fix-right-first"
@@ -6308,7 +7267,7 @@ exports[`base/UserCenter/UserList should refresh user table when change current 
                                 type="button"
                               >
                                 <span>
-                                  管 理
+                                  编 辑
                                 </span>
                               </button>
                             </div>
@@ -6381,7 +7340,27 @@ exports[`base/UserCenter/UserList should refresh user table when change current 
                       <td
                         class="ant-table-cell"
                       >
-                        创建项目
+                        <div
+                          class="ant-space ant-space-horizontal ant-space-align-center"
+                          style="flex-wrap: wrap; margin-bottom: -4px;"
+                        >
+                          <div
+                            class="ant-space-item"
+                            style="padding-bottom: 4px;"
+                          >
+                            <span
+                              class="ant-tag ant-tag-orange basic-tag-wrapper basic-small-tag-wrapper css-17gmaof"
+                              style="height: 28px;"
+                            >
+                              创建项目
+                            </span>
+                          </div>
+                        </div>
+                      </td>
+                      <td
+                        class="ant-table-cell"
+                      >
+                        -
                       </td>
                       <td
                         class="ant-table-cell actiontech-table-actions-column ant-table-cell-fix-right ant-table-cell-fix-right-first"
@@ -6402,7 +7381,7 @@ exports[`base/UserCenter/UserList should refresh user table when change current 
                                 type="button"
                               >
                                 <span>
-                                  管 理
+                                  编 辑
                                 </span>
                               </button>
                             </div>
@@ -6475,7 +7454,27 @@ exports[`base/UserCenter/UserList should refresh user table when change current 
                       <td
                         class="ant-table-cell"
                       >
-                        创建项目
+                        <div
+                          class="ant-space ant-space-horizontal ant-space-align-center"
+                          style="flex-wrap: wrap; margin-bottom: -4px;"
+                        >
+                          <div
+                            class="ant-space-item"
+                            style="padding-bottom: 4px;"
+                          >
+                            <span
+                              class="ant-tag ant-tag-orange basic-tag-wrapper basic-small-tag-wrapper css-17gmaof"
+                              style="height: 28px;"
+                            >
+                              创建项目
+                            </span>
+                          </div>
+                        </div>
+                      </td>
+                      <td
+                        class="ant-table-cell"
+                      >
+                        -
                       </td>
                       <td
                         class="ant-table-cell actiontech-table-actions-column ant-table-cell-fix-right ant-table-cell-fix-right-first"
@@ -6496,7 +7495,7 @@ exports[`base/UserCenter/UserList should refresh user table when change current 
                                 type="button"
                               >
                                 <span>
-                                  管 理
+                                  编 辑
                                 </span>
                               </button>
                             </div>
@@ -6702,17 +7701,16 @@ exports[`base/UserCenter/UserList should render empty tips when request not succ
           class="ant-spin-container"
         >
           <div
-            class="ant-table ant-table-empty ant-table-fixed-column ant-table-scroll-horizontal ant-table-has-fix-right"
+            class="ant-table ant-table-empty ant-table-has-fix-right"
           >
             <div
               class="ant-table-container"
             >
               <div
                 class="ant-table-content"
-                style="overflow-x: auto; overflow-y: hidden;"
               >
                 <table
-                  style="min-width: 100%; table-layout: auto;"
+                  style="table-layout: auto;"
                 >
                   <colgroup>
                     <col />
@@ -6721,6 +7719,9 @@ exports[`base/UserCenter/UserList should render empty tips when request not succ
                     <col />
                     <col />
                     <col />
+                    <col
+                      style="width: 35%;"
+                    />
                     <col
                       style="width: 164px;"
                     />
@@ -6763,7 +7764,13 @@ exports[`base/UserCenter/UserList should render empty tips when request not succ
                         class="ant-table-cell"
                         scope="col"
                       >
-                        平台管理权限
+                        平台角色
+                      </th>
+                      <th
+                        class="ant-table-cell"
+                        scope="col"
+                      >
+                        所属项目
                       </th>
                       <th
                         class="ant-table-cell actiontech-table-actions-column ant-table-cell-fix-right ant-table-cell-fix-right-first"
@@ -6778,85 +7785,50 @@ exports[`base/UserCenter/UserList should render empty tips when request not succ
                     class="ant-table-tbody"
                   >
                     <tr
-                      aria-hidden="true"
-                      class="ant-table-measure-row"
-                      style="height: 0px; font-size: 0px;"
-                    >
-                      <td
-                        style="padding: 0px; border: 0px; height: 0px;"
-                      >
-                        <div
-                          style="height: 0px; overflow: hidden;"
-                        >
-                           
-                        </div>
-                      </td>
-                      <td
-                        style="padding: 0px; border: 0px; height: 0px;"
-                      >
-                        <div
-                          style="height: 0px; overflow: hidden;"
-                        >
-                           
-                        </div>
-                      </td>
-                      <td
-                        style="padding: 0px; border: 0px; height: 0px;"
-                      >
-                        <div
-                          style="height: 0px; overflow: hidden;"
-                        >
-                           
-                        </div>
-                      </td>
-                      <td
-                        style="padding: 0px; border: 0px; height: 0px;"
-                      >
-                        <div
-                          style="height: 0px; overflow: hidden;"
-                        >
-                           
-                        </div>
-                      </td>
-                      <td
-                        style="padding: 0px; border: 0px; height: 0px;"
-                      >
-                        <div
-                          style="height: 0px; overflow: hidden;"
-                        >
-                           
-                        </div>
-                      </td>
-                      <td
-                        style="padding: 0px; border: 0px; height: 0px;"
-                      >
-                        <div
-                          style="height: 0px; overflow: hidden;"
-                        >
-                           
-                        </div>
-                      </td>
-                      <td
-                        style="padding: 0px; border: 0px; height: 0px;"
-                      >
-                        <div
-                          style="height: 0px; overflow: hidden;"
-                        >
-                           
-                        </div>
-                      </td>
-                    </tr>
-                    <tr
                       class="ant-table-placeholder"
                     >
                       <td
                         class="ant-table-cell"
-                        colspan="7"
+                        colspan="8"
                       >
                         <div
-                          class="ant-table-expanded-row-fixed"
-                          style="width: 0px; position: sticky; left: 0px; overflow: hidden;"
-                        />
+                          class="ant-result ant-result-error"
+                        >
+                          <div
+                            class="ant-result-icon"
+                          >
+                            <span
+                              aria-label="close-circle"
+                              class="anticon anticon-close-circle"
+                              role="img"
+                            >
+                              <svg
+                                aria-hidden="true"
+                                data-icon="close-circle"
+                                fill="currentColor"
+                                fill-rule="evenodd"
+                                focusable="false"
+                                height="1em"
+                                viewBox="64 64 896 896"
+                                width="1em"
+                              >
+                                <path
+                                  d="M512 64c247.4 0 448 200.6 448 448S759.4 960 512 960 64 759.4 64 512 264.6 64 512 64zm127.98 274.82h-.04l-.08.06L512 466.75 384.14 338.88c-.04-.05-.06-.06-.08-.06a.12.12 0 00-.07 0c-.03 0-.05.01-.09.05l-45.02 45.02a.2.2 0 00-.05.09.12.12 0 000 .07v.02a.27.27 0 00.06.06L466.75 512 338.88 639.86c-.05.04-.06.06-.06.08a.12.12 0 000 .07c0 .03.01.05.05.09l45.02 45.02a.2.2 0 00.09.05.12.12 0 00.07 0c.02 0 .04-.01.08-.05L512 557.25l127.86 127.87c.04.04.06.05.08.05a.12.12 0 00.07 0c.03 0 .05-.01.09-.05l45.02-45.02a.2.2 0 00.05-.09.12.12 0 000-.07v-.02a.27.27 0 00-.05-.06L557.25 512l127.87-127.86c.04-.04.05-.06.05-.08a.12.12 0 000-.07c0-.03-.01-.05-.05-.09l-45.02-45.02a.2.2 0 00-.09-.05.12.12 0 00-.07 0z"
+                                />
+                              </svg>
+                            </span>
+                          </div>
+                          <div
+                            class="ant-result-title"
+                          >
+                            请求错误
+                          </div>
+                          <div
+                            class="ant-result-subtitle"
+                          >
+                            error
+                          </div>
+                        </div>
                       </td>
                     </tr>
                   </tbody>

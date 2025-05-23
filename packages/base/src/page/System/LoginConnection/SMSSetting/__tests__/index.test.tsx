@@ -45,10 +45,10 @@ describe('base/System/GlobalSetting/SMSSetting', () => {
     mockUseCurrentUser({
       userRoles: {
         [SystemRole.admin]: false,
-        [SystemRole.globalManager]: false,
+        [SystemRole.systemAdministrator]: false,
         [SystemRole.certainProjectManager]: true,
-        [SystemRole.globalViewing]: true,
-        [SystemRole.createProject]: true
+        [SystemRole.auditAdministrator]: true,
+        [SystemRole.projectDirector]: true
       }
     });
     customRender();

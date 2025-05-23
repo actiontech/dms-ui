@@ -92,7 +92,7 @@ describe('base/Member', () => {
         userRoles: {
           ...mockCurrentUserReturn.userRoles,
           [SystemRole.admin]: false,
-          [SystemRole.globalManager]: false
+          [SystemRole.systemAdministrator]: false
         },
         bindProjects: [
           {
@@ -115,7 +115,7 @@ describe('base/Member', () => {
         userRoles: {
           ...mockCurrentUserReturn.userRoles,
           [SystemRole.admin]: false,
-          [SystemRole.globalManager]: false
+          [SystemRole.systemAdministrator]: false
         }
       };
     });
@@ -131,7 +131,7 @@ describe('base/Member', () => {
         userRoles: {
           ...mockCurrentUserReturn.userRoles,
           [SystemRole.admin]: false,
-          [SystemRole.globalManager]: false
+          [SystemRole.systemAdministrator]: false
         },
         bindProjects: [
           {

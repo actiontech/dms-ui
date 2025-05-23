@@ -102,8 +102,8 @@ describe('base/Nav/QuickActions', () => {
           userRoles: {
             ...mockCurrentUserReturn.userRoles,
             [SystemRole.admin]: false,
-            [SystemRole.globalViewing]: true,
-            [SystemRole.globalManager]: false
+            [SystemRole.auditAdministrator]: true,
+            [SystemRole.systemAdministrator]: false
           }
         },
         mockSelector: true
@@ -128,8 +128,8 @@ describe('base/Nav/QuickActions', () => {
           userRoles: {
             ...mockCurrentUserReturn.userRoles,
             [SystemRole.admin]: false,
-            [SystemRole.globalViewing]: false,
-            [SystemRole.globalManager]: false
+            [SystemRole.auditAdministrator]: false,
+            [SystemRole.systemAdministrator]: false
           }
         },
         mockSelector: true

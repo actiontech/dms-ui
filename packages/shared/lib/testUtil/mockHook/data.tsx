@@ -28,7 +28,7 @@ export const mockCurrentUserReturn = {
   ],
   managementPermissions: [
     {
-      uid: OpPermissionTypeUid.create_project,
+      uid: OpPermissionTypeUid.project_director,
       name: '创建项目'
     }
   ],
@@ -45,9 +45,9 @@ export const mockCurrentUserReturn = {
   userRoles: {
     [SystemRole.admin]: true,
     [SystemRole.certainProjectManager]: true,
-    [SystemRole.globalManager]: true,
-    [SystemRole.globalViewing]: true,
-    [SystemRole.createProject]: true
+    [SystemRole.systemAdministrator]: true,
+    [SystemRole.auditAdministrator]: true,
+    [SystemRole.projectDirector]: true
   },
   hasGlobalViewingPermission: true
 };

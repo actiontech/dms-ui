@@ -61,7 +61,7 @@ exports[`base/MemberGroupList render member group table 1`] = `
                             class="ant-space-item"
                             style="margin-right: 8px;"
                           >
-                            平台操作权限
+                            当前项目权限
                           </div>
                           <div
                             class="ant-space-item"
@@ -775,7 +775,7 @@ exports[`base/MemberGroupList should render empty tips when request not success 
                             class="ant-space-item"
                             style="margin-right: 8px;"
                           >
-                            平台操作权限
+                            当前项目权限
                           </div>
                           <div
                             class="ant-space-item"

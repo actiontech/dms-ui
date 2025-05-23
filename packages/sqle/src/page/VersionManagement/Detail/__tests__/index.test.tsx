@@ -268,9 +268,9 @@ describe('sqle/VersionManagement/Detail', () => {
     mockUseCurrentUser({
       userRoles: {
         [SystemRole.admin]: false,
-        [SystemRole.globalViewing]: false,
-        [SystemRole.globalManager]: false,
-        [SystemRole.createProject]: false,
+        [SystemRole.auditAdministrator]: false,
+        [SystemRole.systemAdministrator]: false,
+        [SystemRole.projectDirector]: false,
         [SystemRole.certainProjectManager]: false
       }
     });

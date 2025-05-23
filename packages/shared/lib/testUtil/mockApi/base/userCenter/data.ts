@@ -30,7 +30,8 @@ export const userList: IListUser[] = [
         name: '创建项目',
         uid: '700001'
       }
-    ]
+    ],
+    projects: ['default']
   },
   {
     uid: '1647895752866795520',
@@ -40,7 +41,8 @@ export const userList: IListUser[] = [
     email: '',
     phone: '',
     wxid: '',
-    op_permissions: []
+    op_permissions: [],
+    projects: []
   },
   {
     uid: '700200',
@@ -49,7 +51,8 @@ export const userList: IListUser[] = [
     authentication_type: ListUserAuthenticationTypeEnum.dms,
     email: '',
     phone: '',
-    wxid: ''
+    wxid: '',
+    projects: ['test-project', 'default', 'test-project-2']
   },
   {
     uid: '7002001',

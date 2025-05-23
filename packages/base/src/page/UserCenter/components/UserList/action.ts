@@ -23,7 +23,7 @@ export const UserListActions = (
     }
     if (
       record?.op_permissions?.some(
-        (v) => v.uid === OpPermissionTypeUid.global_management
+        (v) => v.uid === OpPermissionTypeUid.system_administrator
       )
     ) {
       return username === SystemRole.admin || username === record.name;
@@ -44,7 +44,7 @@ export const UserListActions = (
 
     if (
       record?.op_permissions?.some(
-        (v) => v.uid === OpPermissionTypeUid.global_management
+        (v) => v.uid === OpPermissionTypeUid.system_administrator
       )
     ) {
       return username === SystemRole.admin;
@@ -54,7 +54,7 @@ export const UserListActions = (
   };
   return [
     {
-      text: t('common.manage'),
+      text: t('common.edit'),
       key: 'userManage',
       buttonProps: (record) => {
         return {
@@ -76,7 +76,8 @@ export const UserListActions = (
       confirm: (record) => {
         return {
           title: t('dmsUserCenter.user.deleteUser.confirmTitle', {
-            username: record?.name ?? ''
+            username: record?.name ?? '',
+            projects: record?.projects?.join(',')
           }),
           onConfirm: () => {
             onDeleteUser(record);

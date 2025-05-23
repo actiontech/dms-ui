@@ -26,7 +26,7 @@ export const MemberListActions = (
     permissions: PERMISSIONS.ACTIONS.BASE.MEMBER.EDIT_MEMBER
   },
   {
-    text: t('common.delete'),
+    text: t('dmsMember.memberList.actions.removeMember'),
     buttonProps: (record) => ({
       danger: true,
       hidden: record?.user?.name === SystemRole.admin

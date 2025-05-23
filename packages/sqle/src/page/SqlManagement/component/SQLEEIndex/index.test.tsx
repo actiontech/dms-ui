@@ -502,7 +502,7 @@ describe('page/SqlManagement/SQLEEIndex', () => {
       userRoles: {
         ...mockCurrentUserReturn.userRoles,
         [SystemRole.admin]: false,
-        [SystemRole.globalManager]: false
+        [SystemRole.systemAdministrator]: false
       },
       bindProjects: [
         {
@@ -535,7 +535,7 @@ describe('page/SqlManagement/SQLEEIndex', () => {
       userRoles: {
         ...mockCurrentUserReturn.userRoles,
         [SystemRole.admin]: false,
-        [SystemRole.globalManager]: false
+        [SystemRole.systemAdministrator]: false
       }
     });
     const { baseElement: noPermissionBaseElement } = sqleSuperRender(
@@ -560,7 +560,7 @@ describe('page/SqlManagement/SQLEEIndex', () => {
       userRoles: {
         ...mockCurrentUserReturn.userRoles,
         [SystemRole.admin]: false,
-        [SystemRole.globalManager]: false
+        [SystemRole.systemAdministrator]: false
       },
       bindProjects: [
         {

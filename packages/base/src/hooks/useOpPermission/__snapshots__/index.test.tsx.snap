@@ -149,7 +149,6 @@ exports[`test useManagerPermission should render options when use generateOpPerm
           style="height: 0px; width: 0px; overflow: hidden;"
         >
           <div
-            aria-label="创建项目"
             aria-selected="false"
             id="rc_select_TEST_OR_SSR_list_0"
             role="option"
@@ -157,7 +156,6 @@ exports[`test useManagerPermission should render options when use generateOpPerm
             700001
           </div>
           <div
-            aria-label="创建项目"
             aria-selected="false"
             id="rc_select_TEST_OR_SSR_list_1"
             role="option"
@@ -181,12 +179,13 @@ exports[`test useManagerPermission should render options when use generateOpPerm
                 <div
                   aria-selected="false"
                   class="ant-select-item ant-select-item-option ant-select-item-option-active"
-                  title="创建项目"
                 >
                   <div
                     class="ant-select-item-option-content"
                   >
-                    创建项目
+                    <span>
+                      创建项目
+                    </span>
                   </div>
                   <span
                     aria-hidden="true"
@@ -198,12 +197,13 @@ exports[`test useManagerPermission should render options when use generateOpPerm
                 <div
                   aria-selected="false"
                   class="ant-select-item ant-select-item-option"
-                  title="创建项目"
                 >
                   <div
                     class="ant-select-item-option-content"
                   >
-                    创建项目
+                    <span>
+                      创建项目
+                    </span>
                   </div>
                   <span
                     aria-hidden="true"
@@ -215,12 +215,13 @@ exports[`test useManagerPermission should render options when use generateOpPerm
                 <div
                   aria-selected="false"
                   class="ant-select-item ant-select-item-option"
-                  title="修改项目"
                 >
                   <div
                     class="ant-select-item-option-content"
                   >
-                    修改项目
+                    <span>
+                      修改项目
+                    </span>
                   </div>
                   <span
                     aria-hidden="true"
