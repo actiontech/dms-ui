@@ -77,7 +77,10 @@ export default {
     successTitle: '批量导入数据源成功',
     checkSuccess: '校验通过',
     requestAuditErrorMessage:
-      '当前导入信息存在校验失败，请结合下载文件中的提示进行修改，并重新导入'
+      '当前导入信息存在校验失败，请结合下载文件中的提示进行修改，并重新导入',
+    dataSourceConnectError: '数据源连通性测试失败',
+    returnModify: '返回修改',
+    continueSubmit: '继续提交'
   },
   backToList: '返回项目列表',
   businessDescription: {

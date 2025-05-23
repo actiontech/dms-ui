@@ -15,6 +15,8 @@ import { useCallback } from 'react';
 import { LeftArrowOutlined } from '@actiontech/icons';
 import { ROUTE_PATHS } from '@actiontech/shared/lib/data/routePaths';
 import { DmsApi } from '@actiontech/shared/lib/api';
+import ConnectableErrorModal from '../../../Project/BatchImportDataSource/ConnectableErrorModal';
+import useBatchCheckConnectable from '../../../Project/BatchImportDataSource/hooks/useBatchCheckConnectable';
 
 const BatchImportDataSource = () => {
   const { t } = useTranslation();
@@ -36,8 +38,16 @@ const BatchImportDataSource = () => {
     clearUploadCheckStatus
   } = useBatchImportDataSource();
 
+  const {
+    batchCheckConnectable,
+    batchCheckConnectableLoading,
+    connectErrorModalVisible,
+    showConnectErrorModal,
+    hideConnectErrorModal,
+    connectableInfo
+  } = useBatchCheckConnectable();
+
   const onSubmit = async () => {
-    await form.validateFields();
     setImportPending();
     DmsApi.DBServiceService.ImportDBServicesOfOneProjectV2({
       db_services: dbServices,
@@ -50,7 +60,19 @@ const BatchImportDataSource = () => {
       })
       .finally(() => {
         setImportDone();
+        hideConnectErrorModal();
       });
+  };
+
+  const onCheckConnectableBeforeSubmit = async () => {
+    await form.validateFields();
+    await batchCheckConnectable(dbServices ?? []).then((res) => {
+      if (res?.isConnectable) {
+        onSubmit();
+      } else {
+        showConnectErrorModal();
+      }
+    });
   };
 
   const onUploadCustomRequest = useCallback<
@@ -94,8 +116,8 @@ const BatchImportDataSource = () => {
           <EmptyBox if={!resultVisible}>
             <BasicButton
               type="primary"
-              onClick={onSubmit}
-              loading={importLoading}
+              onClick={onCheckConnectableBeforeSubmit}
+              loading={importLoading || batchCheckConnectableLoading}
               disabled={!dbServices?.length}
             >
               {t('dmsDataSource.batchImportDataSource.importFile')}
@@ -128,6 +150,13 @@ const BatchImportDataSource = () => {
           clearUploadCheckStatus={clearUploadCheckStatus}
         />
       </EmptyBox>
+      <ConnectableErrorModal
+        modalOpen={connectErrorModalVisible}
+        closeModal={hideConnectErrorModal}
+        onSumit={onSubmit}
+        loading={importLoading}
+        connectErrorList={connectableInfo?.connectErrorList}
+      />
     </>
   );
 };

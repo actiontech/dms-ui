@@ -22,6 +22,8 @@ import { IUpdateDBServiceV2Params } from '@actiontech/shared/lib/api/base/servic
 import { LeftArrowOutlined } from '@actiontech/icons';
 import { ROUTE_PATHS } from '@actiontech/shared/lib/data/routePaths';
 import { DmsApi } from '@actiontech/shared/lib/api';
+import { DataSourceFormContextProvide } from '../../context';
+import useCheckConnectable from '../../hooks/useCheckConnectable';
 
 const UpdateDataSource = () => {
   const { t } = useTranslation();
@@ -35,6 +37,9 @@ const UpdateDataSource = () => {
   const [form] = useForm<DataSourceFormField>();
   const urlParams =
     useTypedParams<typeof ROUTE_PATHS.BASE.DATA_SOURCE.update>();
+
+  const { onCheckConnectable, loading, connectAble, connectErrorMessage } =
+    useCheckConnectable(form);
 
   const [retryLoading, setRetryLoading] = useState(false);
   const [submitLoading, { setTrue: startSubmit, setFalse: submitFinish }] =
@@ -140,57 +145,67 @@ const UpdateDataSource = () => {
   return (
     <PageLayoutHasFixedHeaderStyleWrapper>
       {messageContextHolder}
-      <PageHeader
-        fixed
-        title={
-          <BasicButton
-            onClick={() => navigate(-1)}
-            icon={<LeftArrowOutlined />}
-          >
-            {t('dmsDataSource.backDesc')}
-          </BasicButton>
-        }
-        extra={
-          <BasicButton
-            type="primary"
-            loading={submitLoading}
-            onClick={() => onSubmitForm()}
-          >
-            {t('common.submit')}
-          </BasicButton>
-        }
-      />
-      <EmptyBox
-        if={!initError}
-        defaultNode={
-          <Empty
-            image={Empty.PRESENTED_IMAGE_DEFAULT}
-            description={
-              <Typography.Text type="danger">
-                {t('dmsDataSource.updateDatabase.getDatabaseInfoError')}:{' '}
-                {initError}
-              </Typography.Text>
-            }
-          >
-            <Button
-              type="primary"
-              onClick={getInstanceInfo}
-              loading={retryLoading}
-            >
-              {t('common.retry')}
-            </Button>
-          </Empty>
-        }
+      <DataSourceFormContextProvide
+        value={{
+          onCheckConnectable,
+          loading,
+          connectAble,
+          connectErrorMessage,
+          submitLoading
+        }}
       >
-        <Spin spinning={retryLoading}>
-          <DataSourceForm
-            form={form}
-            isUpdate={true}
-            defaultData={instanceInfo}
-            submit={updateDatabase}
-          />
-        </Spin>
-      </EmptyBox>
+        <PageHeader
+          fixed
+          title={
+            <BasicButton
+              onClick={() => navigate(-1)}
+              icon={<LeftArrowOutlined />}
+            >
+              {t('dmsDataSource.backDesc')}
+            </BasicButton>
+          }
+          extra={
+            <BasicButton
+              type="primary"
+              loading={submitLoading || loading}
+              onClick={() => onSubmitForm()}
+            >
+              {t('common.submit')}
+            </BasicButton>
+          }
+        />
+        <EmptyBox
+          if={!initError}
+          defaultNode={
+            <Empty
+              image={Empty.PRESENTED_IMAGE_DEFAULT}
+              description={
+                <Typography.Text type="danger">
+                  {t('dmsDataSource.updateDatabase.getDatabaseInfoError')}:{' '}
+                  {initError}
+                </Typography.Text>
+              }
+            >
+              <Button
+                type="primary"
+                onClick={getInstanceInfo}
+                loading={retryLoading}
+              >
+                {t('common.retry')}
+              </Button>
+            </Empty>
+          }
+        >
+          <Spin spinning={retryLoading}>
+            <DataSourceForm
+              form={form}
+              isUpdate={true}
+              defaultData={instanceInfo}
+              submit={updateDatabase}
+            />
+          </Spin>
+        </EmptyBox>
+      </DataSourceFormContextProvide>
     </PageLayoutHasFixedHeaderStyleWrapper>
   );
 };

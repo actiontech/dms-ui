@@ -13,6 +13,8 @@ import { UploadProps } from 'antd';
 import { useCallback } from 'react';
 import { LeftArrowOutlined } from '@actiontech/icons';
 import { DmsApi } from '@actiontech/shared/lib/api';
+import ConnectableErrorModal from '../../Project/BatchImportDataSource/ConnectableErrorModal';
+import useBatchCheckConnectable from '../../Project/BatchImportDataSource/hooks/useBatchCheckConnectable';
 
 const GlobalBatchImportDataSource = () => {
   const { t } = useTranslation();
@@ -32,8 +34,16 @@ const GlobalBatchImportDataSource = () => {
     clearUploadCheckStatus
   } = useBatchImportDataSource();
 
+  const {
+    batchCheckConnectable,
+    batchCheckConnectableLoading,
+    connectErrorModalVisible,
+    showConnectErrorModal,
+    hideConnectErrorModal,
+    connectableInfo
+  } = useBatchCheckConnectable();
+
   const onSubmit = async () => {
-    await form.validateFields();
     setImportPending();
     DmsApi.ProjectService.ImportDBServicesOfProjectsV2({
       db_services: dbServices
@@ -45,7 +55,19 @@ const GlobalBatchImportDataSource = () => {
       })
       .finally(() => {
         setImportDone();
+        hideConnectErrorModal();
       });
+  };
+
+  const onCheckConnectableBeforeSubmit = async () => {
+    await form.validateFields();
+    await batchCheckConnectable(dbServices ?? []).then((res) => {
+      if (res?.isConnectable) {
+        onSubmit();
+      } else {
+        showConnectErrorModal();
+      }
+    });
   };
 
   const onUploadCustomRequest = useCallback<
@@ -81,8 +103,8 @@ const GlobalBatchImportDataSource = () => {
           <EmptyBox if={!resultVisible}>
             <BasicButton
               type="primary"
-              onClick={onSubmit}
-              loading={importLoading}
+              onClick={onCheckConnectableBeforeSubmit}
+              loading={importLoading || batchCheckConnectableLoading}
               disabled={!dbServices?.length}
             >
               {t('dmsGlobalDataSource.batchImportDataSource.submitButton')}
@@ -115,6 +137,13 @@ const GlobalBatchImportDataSource = () => {
           clearUploadCheckStatus={clearUploadCheckStatus}
         />
       </EmptyBox>
+      <ConnectableErrorModal
+        modalOpen={connectErrorModalVisible}
+        closeModal={hideConnectErrorModal}
+        onSumit={onSubmit}
+        loading={importLoading}
+        connectErrorList={connectableInfo?.connectErrorList}
+      />
     </>
   );
 };
