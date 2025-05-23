@@ -10,6 +10,8 @@ import renderRolesInfo from '../Common/renderRolesInfo';
 import IsProjectAdmin from '../components/IsProjectAdmin';
 import { BasicToolTip } from '@actiontech/shared';
 import { MemberPermissionStyleWrapper } from '../style';
+import ProjectTagList from '../../../components/ProjectTagList';
+import SystemRoleTagList from '../../../components/SystemRoleTagList';
 
 const commonRoleOperateRangesRender = (
   roles: IListMemberRoleWithOpRange[],
@@ -43,15 +45,31 @@ export const MemberListColumns: ActiontechTableColumn<IListMember> = [
   {
     dataIndex: 'user',
     title: t('common.username'),
-    width: '25%',
+    width: '10%',
     render: (user) => {
       return user?.name ?? '-';
     }
   },
   {
+    dataIndex: 'platform_roles',
+    title: () => t('dmsMember.memberList.columns.platformRoles'),
+    width: '10%',
+    render: (list) => {
+      return <SystemRoleTagList roles={list} />;
+    }
+  },
+  {
+    dataIndex: 'projects',
+    title: () => t('dmsMember.memberList.columns.projects'),
+    width: '35%',
+    render: (list) => {
+      return <ProjectTagList projectList={list} />;
+    }
+  },
+  {
     dataIndex: 'role_with_op_ranges',
-    width: '45%',
     className: 'ellipsis-column-width',
+    width: '30%',
     title: () => {
       return (
         <BasicToolTip

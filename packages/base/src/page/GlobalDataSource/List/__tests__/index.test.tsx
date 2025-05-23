@@ -320,7 +320,7 @@ describe('page/GlobalDataSource/List', () => {
         userRoles: {
           ...mockCurrentUserReturn.userRoles,
           [SystemRole.admin]: false,
-          [SystemRole.globalManager]: false,
+          [SystemRole.systemAdministrator]: false,
           [SystemRole.certainProjectManager]: false
         }
       });

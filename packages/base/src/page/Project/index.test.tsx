@@ -78,8 +78,8 @@ describe('test base/page/project', () => {
       userRoles: {
         ...mockCurrentUserReturn.userRoles,
         [SystemRole.admin]: true,
-        [SystemRole.globalManager]: false,
-        [SystemRole.createProject]: false
+        [SystemRole.systemAdministrator]: false,
+        [SystemRole.projectDirector]: false
       }
     });
     baseSuperRender(<Project />);
@@ -102,8 +102,8 @@ describe('test base/page/project', () => {
       userRoles: {
         ...mockCurrentUserReturn.userRoles,
         [SystemRole.admin]: false,
-        [SystemRole.globalManager]: false,
-        [SystemRole.createProject]: true
+        [SystemRole.systemAdministrator]: false,
+        [SystemRole.projectDirector]: true
       }
     });
     baseSuperRender(<Project />);
@@ -123,8 +123,8 @@ describe('test base/page/project', () => {
       userRoles: {
         ...mockCurrentUserReturn.userRoles,
         [SystemRole.admin]: false,
-        [SystemRole.globalManager]: false,
-        [SystemRole.createProject]: false
+        [SystemRole.systemAdministrator]: false,
+        [SystemRole.projectDirector]: false
       }
     });
     baseSuperRender(<Project />);
@@ -139,9 +139,9 @@ describe('test base/page/project', () => {
       userRoles: {
         ...mockCurrentUserReturn.userRoles,
         [SystemRole.admin]: false,
-        [SystemRole.globalManager]: false,
+        [SystemRole.systemAdministrator]: false,
         [SystemRole.certainProjectManager]: false,
-        [SystemRole.globalViewing]: false
+        [SystemRole.auditAdministrator]: false
       }
     });
     baseSuperRender(<Project />);
@@ -167,8 +167,8 @@ describe('test base/page/project', () => {
       userRoles: {
         ...mockCurrentUserReturn.userRoles,
         [SystemRole.admin]: true,
-        [SystemRole.globalManager]: false,
-        [SystemRole.createProject]: false
+        [SystemRole.systemAdministrator]: false,
+        [SystemRole.projectDirector]: false
       }
     });
     baseSuperRender(<Project />);
@@ -182,7 +182,7 @@ describe('test base/page/project', () => {
       userRoles: {
         ...mockCurrentUserReturn.userRoles,
         [SystemRole.admin]: false,
-        [SystemRole.globalManager]: false
+        [SystemRole.systemAdministrator]: false
       }
     });
     baseSuperRender(<Project />);
@@ -200,8 +200,8 @@ describe('test base/page/project', () => {
       userRoles: {
         ...mockCurrentUserReturn.userRoles,
         [SystemRole.admin]: false,
-        [SystemRole.globalManager]: false,
-        [SystemRole.globalViewing]: false
+        [SystemRole.systemAdministrator]: false,
+        [SystemRole.auditAdministrator]: false
       }
     });
     baseSuperRender(<Project />);

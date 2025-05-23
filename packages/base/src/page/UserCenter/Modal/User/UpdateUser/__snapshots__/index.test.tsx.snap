@@ -289,11 +289,11 @@ exports[`base/UserCenter/Modal/UpdateUser should send update user request when c
                       class="ant-col ant-form-item-label"
                     >
                       <label
-                        class=""
-                        for="opPermissionUids"
-                        title="平台管理权限"
+                        class="ant-form-item-required"
+                        for="opPermissionUid"
+                        title="平台角色"
                       >
-                        平台管理权限
+                        平台角色
                       </label>
                     </div>
                     <div
@@ -306,90 +306,41 @@ exports[`base/UserCenter/Modal/UpdateUser should send update user request when c
                           class="ant-form-item-control-input-content"
                         >
                           <div
-                            class="ant-select ant-select-in-form-item basic-select-wrapper css-iy4o4x ant-select-multiple ant-select-show-arrow ant-select-show-search"
+                            aria-required="true"
+                            class="ant-select ant-select-in-form-item basic-select-wrapper css-iy4o4x ant-select-single ant-select-show-arrow"
                           >
                             <div
                               class="ant-select-selector"
                             >
-                              <div
-                                class="ant-select-selection-overflow"
+                              <span
+                                class="ant-select-selection-search"
                               >
-                                <div
-                                  class="ant-select-selection-overflow-item"
-                                  style="opacity: 1;"
-                                >
-                                  <span
-                                    class="ant-select-selection-item"
-                                    title="创建项目"
-                                  >
-                                    <span
-                                      class="ant-select-selection-item-content"
-                                    >
-                                      创建项目
-                                    </span>
-                                    <span
-                                      aria-hidden="true"
-                                      class="ant-select-selection-item-remove"
-                                      style="user-select: none;"
-                                      unselectable="on"
-                                    >
-                                      <span
-                                        aria-label="close"
-                                        class="anticon anticon-close"
-                                        role="img"
-                                      >
-                                        <svg
-                                          aria-hidden="true"
-                                          data-icon="close"
-                                          fill="currentColor"
-                                          fill-rule="evenodd"
-                                          focusable="false"
-                                          height="1em"
-                                          viewBox="64 64 896 896"
-                                          width="1em"
-                                        >
-                                          <path
-                                            d="M799.86 166.31c.02 0 .04.02.08.06l57.69 57.7c.04.03.05.05.06.08a.12.12 0 010 .06c0 .03-.02.05-.06.09L569.93 512l287.7 287.7c.04.04.05.06.06.09a.12.12 0 010 .07c0 .02-.02.04-.06.08l-57.7 57.69c-.03.04-.05.05-.07.06a.12.12 0 01-.07 0c-.03 0-.05-.02-.09-.06L512 569.93l-287.7 287.7c-.04.04-.06.05-.09.06a.12.12 0 01-.07 0c-.02 0-.04-.02-.08-.06l-57.69-57.7c-.04-.03-.05-.05-.06-.07a.12.12 0 010-.07c0-.03.02-.05.06-.09L454.07 512l-287.7-287.7c-.04-.04-.05-.06-.06-.09a.12.12 0 010-.07c0-.02.02-.04.06-.08l57.7-57.69c.03-.04.05-.05.07-.06a.12.12 0 01.07 0c.03 0 .05.02.09.06L512 454.07l287.7-287.7c.04-.04.06-.05.09-.06a.12.12 0 01.07 0z"
-                                          />
-                                        </svg>
-                                      </span>
-                                    </span>
-                                  </span>
-                                </div>
-                                <div
-                                  class="ant-select-selection-overflow-item ant-select-selection-overflow-item-suffix"
-                                  style="opacity: 1;"
-                                >
-                                  <div
-                                    class="ant-select-selection-search"
-                                    style="width: 0px;"
-                                  >
-                                    <input
-                                      aria-activedescendant="opPermissionUids_list_0"
-                                      aria-autocomplete="list"
-                                      aria-controls="opPermissionUids_list"
-                                      aria-expanded="false"
-                                      aria-haspopup="listbox"
-                                      aria-owns="opPermissionUids_list"
-                                      autocomplete="off"
-                                      class="ant-select-selection-search-input"
-                                      id="opPermissionUids"
-                                      readonly=""
-                                      role="combobox"
-                                      style="opacity: 0;"
-                                      type="search"
-                                      unselectable="on"
-                                      value=""
-                                    />
-                                    <span
-                                      aria-hidden="true"
-                                      class="ant-select-selection-search-mirror"
-                                    >
-                                       
-                                    </span>
-                                  </div>
-                                </div>
-                              </div>
+                                <input
+                                  aria-activedescendant="opPermissionUid_list_0"
+                                  aria-autocomplete="list"
+                                  aria-controls="opPermissionUid_list"
+                                  aria-expanded="false"
+                                  aria-haspopup="listbox"
+                                  aria-owns="opPermissionUid_list"
+                                  aria-required="true"
+                                  autocomplete="off"
+                                  class="ant-select-selection-search-input"
+                                  id="opPermissionUid"
+                                  readonly=""
+                                  role="combobox"
+                                  style="opacity: 0;"
+                                  type="search"
+                                  unselectable="on"
+                                  value=""
+                                />
+                              </span>
+                              <span
+                                class="ant-select-selection-item"
+                              >
+                                <span>
+                                  创建项目
+                                </span>
+                              </span>
                             </div>
                             <span
                               aria-hidden="true"

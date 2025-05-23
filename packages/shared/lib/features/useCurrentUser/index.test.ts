@@ -87,9 +87,9 @@ describe('hooks/useCurrentUser', () => {
     expect(result.current.userRoles).toEqual({
       [SystemRole.admin]: true,
       [SystemRole.certainProjectManager]: true,
-      [SystemRole.globalViewing]: false,
-      [SystemRole.createProject]: true,
-      [SystemRole.globalManager]: false
+      [SystemRole.auditAdministrator]: false,
+      [SystemRole.projectDirector]: true,
+      [SystemRole.systemAdministrator]: false
     });
   });
 
@@ -123,9 +123,9 @@ describe('hooks/useCurrentUser', () => {
     expect(result.current.userRoles).toEqual({
       [SystemRole.admin]: false,
       [SystemRole.certainProjectManager]: false,
-      [SystemRole.globalViewing]: true,
-      [SystemRole.createProject]: false,
-      [SystemRole.globalManager]: false
+      [SystemRole.auditAdministrator]: true,
+      [SystemRole.projectDirector]: false,
+      [SystemRole.systemAdministrator]: false
     });
   });
 

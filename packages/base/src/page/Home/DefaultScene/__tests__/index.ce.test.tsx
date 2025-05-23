@@ -19,9 +19,9 @@ describe('test base/home/CEDefaultScene', () => {
       userRoles: {
         [SystemRole.admin]: false,
         [SystemRole.certainProjectManager]: false,
-        [SystemRole.globalManager]: false,
-        [SystemRole.globalViewing]: false,
-        [SystemRole.createProject]: false
+        [SystemRole.systemAdministrator]: false,
+        [SystemRole.auditAdministrator]: false,
+        [SystemRole.projectDirector]: false
       }
     });
 

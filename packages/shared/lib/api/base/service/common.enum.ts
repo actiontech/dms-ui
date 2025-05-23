@@ -223,7 +223,9 @@ export enum OpPermissionItemOpPermissionTypeEnum {
 
   'view_others_optimization' = 'view_others_optimization',
 
-  'create_pipeline' = 'create_pipeline'
+  'create_pipeline' = 'create_pipeline',
+
+  'none' = 'none'
 }
 
 export enum OpPermissionItemRangeTypeEnum {

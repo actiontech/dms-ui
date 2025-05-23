@@ -4,7 +4,7 @@ import { ResponseCode } from '@actiontech/shared/lib/enum';
 import { ListOpPermissionsFilterByTargetEnum } from '@actiontech/shared/lib/api/base/service/OpPermission/index.enum';
 import { IListOpPermission } from '@actiontech/shared/lib/api/base/service/common';
 import OpPermission from '@actiontech/shared/lib/api/base/service/OpPermission';
-import { Select } from 'antd';
+import { Select, Tooltip } from 'antd';
 
 const useOpPermission = () => {
   const [opPermissionList, setOpPermissionList] = useState<IListOpPermission[]>(
@@ -41,7 +41,7 @@ const useOpPermission = () => {
   const opPermissionOptions = useMemo(() => {
     return opPermissionList.map((i) => {
       return {
-        label: i.op_permission?.name,
+        label: <Tooltip title={i.description}>{i.op_permission?.name}</Tooltip>,
         value: i.op_permission?.uid
       };
     });
@@ -51,7 +51,7 @@ const useOpPermission = () => {
     return opPermissionList.map((i) => {
       return (
         <Select.Option key={i.op_permission?.uid} value={i.op_permission?.uid}>
-          {i.op_permission?.name}
+          <Tooltip title={i.description}>{i.op_permission?.name}</Tooltip>
         </Select.Option>
       );
     });
