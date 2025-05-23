@@ -5,7 +5,7 @@ import EventEmitter from '../../../../../utils/EventEmitter';
 import { screen, act, cleanup, fireEvent } from '@testing-library/react';
 import { useDispatch, useSelector } from 'react-redux';
 import { ModalName } from '../../../../../data/ModalName';
-import { selectOptionByIndex } from '@actiontech/shared/lib/testUtil/customQuery';
+import { getAllBySelector } from '@actiontech/shared/lib/testUtil/customQuery';
 import EmitterKey from '../../../../../data/EmitterKey';
 import { queryBySelector } from '@actiontech/shared/lib/testUtil/customQuery';
 import MockDate from 'mockdate';
@@ -75,7 +75,10 @@ describe('base/UserCenter/Modal/AddUser', () => {
     fireEvent.input(screen.getByLabelText('微信ID'), {
       target: { value: 'qwe' }
     });
-    selectOptionByIndex('平台管理权限', '创建项目', 0);
+    fireEvent.mouseDown(screen.getByLabelText('平台角色'));
+    fireEvent.click(
+      getAllBySelector('.ant-select-item-option-content', baseElement)[0]
+    );
     fireEvent.click(screen.getByText('提 交'));
     await act(async () => jest.advanceTimersByTime(0));
     expect(addUserSpy).toHaveBeenCalledTimes(1);

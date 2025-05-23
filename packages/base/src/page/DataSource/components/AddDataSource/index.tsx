@@ -19,6 +19,8 @@ import { ResponseCode } from '@actiontech/shared/lib/enum';
 import { IDBServiceV2 } from '@actiontech/shared/lib/api/base/service/common';
 import { DataSourceFormField } from '../Form/index.type';
 import { DmsApi } from '@actiontech/shared/lib/api';
+import { DataSourceFormContextProvide } from '../../context';
+import useCheckConnectable from '../../hooks/useCheckConnectable';
 
 const AddDataSource = () => {
   const { t } = useTranslation();
@@ -26,6 +28,9 @@ const AddDataSource = () => {
   const navigate = useTypedNavigate();
 
   const [form] = useForm<DataSourceFormField>();
+
+  const { onCheckConnectable, loading, connectAble, connectErrorMessage } =
+    useCheckConnectable(form);
 
   const [resultVisible, { setTrue: showResult, setFalse: hideResult }] =
     useBoolean();
@@ -98,45 +103,55 @@ const AddDataSource = () => {
 
   return (
     <PageLayoutHasFixedHeaderStyleWrapper>
-      <PageHeader
-        fixed
-        title={<BackButton>{t('dmsDataSource.backDesc')}</BackButton>}
-        extra={
-          <Space hidden={resultVisible}>
-            <BasicButton onClick={onReset}>{t('common.reset')}</BasicButton>
-            <BasicButton
-              type="primary"
-              loading={submitLoading}
-              onClick={onSubmit}
-            >
-              {t('common.submit')}
-            </BasicButton>
-          </Space>
-        }
-      />
-      <EmptyBox
-        if={resultVisible}
-        defaultNode={<DataSourceForm form={form} submit={addDatabase} />}
+      <DataSourceFormContextProvide
+        value={{
+          loading,
+          connectAble,
+          connectErrorMessage,
+          onCheckConnectable,
+          submitLoading
+        }}
       >
-        <BasicResult
-          status="success"
-          title={t('dmsDataSource.addDatabaseSuccess')}
-          subTitle={
-            <Typography.Link onClick={() => navigate(-1)}>
-              {t('dmsDataSource.addDatabaseSuccessGuide')} {'>'}
-            </Typography.Link>
+        <PageHeader
+          fixed
+          title={<BackButton>{t('dmsDataSource.backDesc')}</BackButton>}
+          extra={
+            <Space hidden={resultVisible}>
+              <BasicButton onClick={onReset}>{t('common.reset')}</BasicButton>
+              <BasicButton
+                type="primary"
+                loading={submitLoading || loading}
+                onClick={onSubmit}
+              >
+                {t('common.submit')}
+              </BasicButton>
+            </Space>
           }
-          extra={[
-            <BasicButton
-              type="primary"
-              key="resetAndClose"
-              onClick={resetAndHideResult}
-            >
-              {t('common.resetAndClose')}
-            </BasicButton>
-          ]}
         />
-      </EmptyBox>
+        <EmptyBox
+          if={resultVisible}
+          defaultNode={<DataSourceForm form={form} submit={addDatabase} />}
+        >
+          <BasicResult
+            status="success"
+            title={t('dmsDataSource.addDatabaseSuccess')}
+            subTitle={
+              <Typography.Link onClick={() => navigate(-1)}>
+                {t('dmsDataSource.addDatabaseSuccessGuide')} {'>'}
+              </Typography.Link>
+            }
+            extra={[
+              <BasicButton
+                type="primary"
+                key="resetAndClose"
+                onClick={resetAndHideResult}
+              >
+                {t('common.resetAndClose')}
+              </BasicButton>
+            ]}
+          />
+        </EmptyBox>
+      </DataSourceFormContextProvide>
     </PageLayoutHasFixedHeaderStyleWrapper>
   );
 };

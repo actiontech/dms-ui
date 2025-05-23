@@ -6,8 +6,10 @@ import { ModalName } from '../../../../../data/ModalName';
 import UpdateRole from '.';
 import EventEmitter from '../../../../../utils/EventEmitter';
 import EmitterKey from '../../../../../data/EmitterKey';
-import { queryBySelector } from '@actiontech/shared/lib/testUtil/customQuery';
-import { selectOptionByIndex } from '@actiontech/shared/lib/testUtil/customQuery';
+import {
+  getAllBySelector,
+  queryBySelector
+} from '@actiontech/shared/lib/testUtil/customQuery';
 
 jest.mock('react-redux', () => ({
   ...jest.requireActual('react-redux'),
@@ -66,7 +68,14 @@ describe('base/UserCenter/Modal/Role/UpdateRole', () => {
     fireEvent.click(screen.getByLabelText('是否禁用'));
     await act(async () => jest.advanceTimersByTime(0));
     expect(screen.getByLabelText('是否禁用')).toBeChecked();
-    selectOptionByIndex('操作权限', '修改项目', 0);
+    fireEvent.mouseDown(screen.getByLabelText('操作权限'));
+    expect(
+      getAllBySelector('.ant-select-item-option-content', baseElement)[2]
+        .childNodes[0]
+    ).toHaveTextContent('修改项目');
+    fireEvent.click(
+      getAllBySelector('.ant-select-item-option-content', baseElement)[2]
+    );
     fireEvent.click(screen.getByText('提 交'));
     await act(async () => jest.advanceTimersByTime(0));
     expect(screen.getByText('提 交').parentNode).toHaveClass('ant-btn-loading');

@@ -205,7 +205,7 @@ describe('test SqlManagementIssuePush', () => {
       userRoles: {
         ...mockCurrentUserReturn.userRoles,
         [SystemRole.admin]: false,
-        [SystemRole.globalManager]: false
+        [SystemRole.systemAdministrator]: false
       }
     });
     const { baseElement } = customRender({

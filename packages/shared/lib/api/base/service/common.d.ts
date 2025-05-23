@@ -409,6 +409,22 @@ export interface ICheckDBServicesIsConnectableReq {
   db_services?: IDbServiceConnections[];
 }
 
+export interface ICheckDBServicesPrivilegesItem {
+  CheckDBServicesPrivileges?: ICheckDBServiceIsConnectableReplyItem[];
+}
+
+export interface ICheckDBServicesPrivilegesReply {
+  code?: number;
+
+  data?: ICheckDBServicesPrivilegesItem[];
+
+  message?: string;
+}
+
+export interface ICheckDBServicesPrivilegesReq {
+  db_services?: ICheckDbConnectable[];
+}
+
 export interface ICheckDbConnectable {
   additional_params?: IAdditionalParam[];
 
@@ -1682,6 +1698,10 @@ export interface IListMaskingRulesReply {
 export interface IListMember {
   is_project_admin?: boolean;
 
+  platform_roles?: IUidWithName[];
+
+  projects?: string[];
+
   role_with_op_ranges?: IListMemberRoleWithOpRange[];
 
   uid?: string;
@@ -1871,6 +1891,8 @@ export interface IListUser {
   op_permissions?: IUidWithName[];
 
   phone?: string;
+
+  projects?: string[];
 
   stat?: ListUserStatEnum;
 
@@ -2301,6 +2323,10 @@ export interface ISendSmsCodeReq {
   username?: string;
 }
 
+export interface ISyncGatewayReq {
+  gateways?: IGateway[];
+}
+
 export interface ITask {
   task_uid?: string;
 }
@@ -2696,6 +2722,12 @@ export interface IUpdateUser {
 
   phone?: string;
 
+  third_party_user_id?: string;
+
+  third_party_user_info?: string;
+
+  user_authentication_type?: string;
+
   user_group_uids?: string[];
 
   wxid?: string;
@@ -2714,10 +2746,6 @@ export interface IUpdateUserGroupReq {
 }
 
 export interface IUpdateUserReq {
-  user?: IUpdateUser;
-}
-
-export interface IUpdateUserReqV2 {
   user?: IUpdateUser;
 }
 
@@ -2756,7 +2784,13 @@ export interface IUser {
 
   phone?: string;
 
+  third_party_user_id?: string;
+
+  third_party_user_info?: string;
+
   uid?: string;
+
+  user_authentication_type?: string;
 
   user_group_uids?: string[];
 

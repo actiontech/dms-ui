@@ -57,7 +57,9 @@ const UpdateUser = () => {
       email: values.email ?? '',
       phone: values.phone ?? '',
       wxid: values.wxid ?? '',
-      op_permission_uids: values.opPermissionUids ?? [],
+      op_permission_uids: values.opPermissionUid
+        ? [values.opPermissionUid]
+        : [],
       is_disabled: values.username !== 'admin' ? !!values.isDisabled : false
     };
     setTrue();
@@ -89,7 +91,9 @@ const UpdateUser = () => {
         email: currentUser?.email,
         phone: currentUser?.phone,
         wxid: currentUser?.wxid,
-        opPermissionUids: currentUser?.op_permissions?.map((v) => v.uid ?? ''),
+        opPermissionUid: currentUser?.op_permissions?.map(
+          (v) => v.uid ?? ''
+        )?.[0],
         isDisabled:
           (currentUser?.stat ?? ListUserStatEnum.未知) ===
           ListUserStatEnum.被禁用

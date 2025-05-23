@@ -82,7 +82,7 @@ describe('base/MemberGroupList', () => {
       userRoles: {
         ...mockCurrentUserReturn.userRoles,
         [SystemRole.admin]: false,
-        [SystemRole.globalManager]: false
+        [SystemRole.systemAdministrator]: false
       }
     }));
     superRender(
@@ -98,7 +98,7 @@ describe('base/MemberGroupList', () => {
       userRoles: {
         ...mockCurrentUserReturn.userRoles,
         [SystemRole.admin]: false,
-        [SystemRole.globalManager]: false
+        [SystemRole.systemAdministrator]: false
       },
       bindProjects: [
         {
@@ -122,7 +122,7 @@ describe('base/MemberGroupList', () => {
       userRoles: {
         ...mockCurrentUserReturn.userRoles,
         [SystemRole.admin]: false,
-        [SystemRole.globalManager]: false
+        [SystemRole.systemAdministrator]: false
       },
       bindProjects: [
         {

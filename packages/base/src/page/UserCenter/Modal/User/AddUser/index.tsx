@@ -50,7 +50,9 @@ const AddUser = () => {
         email: values.email ?? '',
         phone: values.phone ?? '',
         wxid: values.wxid ?? '',
-        op_permission_uids: values.opPermissionUids ?? [],
+        op_permission_uids: values.opPermissionUid
+          ? [values.opPermissionUid]
+          : [],
         uid: dayjs().format('YYYYMMDDHHmmssSSS')
       }
     })

@@ -23,15 +23,19 @@ export const PERMISSION_MANIFEST: Record<
   [PERMISSIONS.PAGES.BASE.USER_CENTER]: {
     id: PERMISSIONS.PAGES.BASE.USER_CENTER,
     type: 'page',
-    role: [SystemRole.admin, SystemRole.globalManager, SystemRole.globalViewing]
+    role: [
+      SystemRole.admin,
+      SystemRole.systemAdministrator,
+      SystemRole.auditAdministrator
+    ]
   },
   [PERMISSIONS.PAGES.BASE.DATA_SOURCE_MANAGEMENT]: {
     id: PERMISSIONS.PAGES.BASE.DATA_SOURCE_MANAGEMENT,
     type: 'page',
     role: [
       SystemRole.admin,
-      SystemRole.globalManager,
-      SystemRole.globalViewing,
+      SystemRole.systemAdministrator,
+      SystemRole.auditAdministrator,
       SystemRole.certainProjectManager
     ]
   },
@@ -40,35 +44,55 @@ export const PERMISSION_MANIFEST: Record<
     type: 'page',
     role: [
       SystemRole.admin,
-      SystemRole.globalManager,
-      SystemRole.globalViewing,
+      SystemRole.systemAdministrator,
+      SystemRole.auditAdministrator,
       SystemRole.certainProjectManager
     ]
   },
   [PERMISSIONS.PAGES.BASE.SYNC_DATA_SOURCE]: {
     id: PERMISSIONS.PAGES.BASE.SYNC_DATA_SOURCE,
     type: 'page',
-    role: [SystemRole.admin, SystemRole.globalManager, SystemRole.globalViewing]
+    role: [
+      SystemRole.admin,
+      SystemRole.systemAdministrator,
+      SystemRole.auditAdministrator
+    ]
   },
   [PERMISSIONS.PAGES.SQLE.REPORT_STATISTICS]: {
     id: PERMISSIONS.PAGES.SQLE.REPORT_STATISTICS,
     type: 'page',
-    role: [SystemRole.admin, SystemRole.globalManager, SystemRole.globalViewing]
+    role: [
+      SystemRole.admin,
+      SystemRole.systemAdministrator,
+      SystemRole.auditAdministrator
+    ]
   },
   [PERMISSIONS.PAGES.SQLE.RULE_MANAGEMENT]: {
     id: PERMISSIONS.PAGES.SQLE.RULE_MANAGEMENT,
     type: 'page',
-    role: [SystemRole.admin, SystemRole.globalManager, SystemRole.globalViewing]
+    role: [
+      SystemRole.admin,
+      SystemRole.systemAdministrator,
+      SystemRole.auditAdministrator
+    ]
   },
   [PERMISSIONS.PAGES.BASE.SYSTEM_SETTING]: {
     id: PERMISSIONS.PAGES.BASE.SYSTEM_SETTING,
     type: 'page',
-    role: [SystemRole.admin, SystemRole.globalManager, SystemRole.globalViewing]
+    role: [
+      SystemRole.admin,
+      SystemRole.systemAdministrator,
+      SystemRole.auditAdministrator
+    ]
   },
   [PERMISSIONS.PAGES.SQLE.OPERATION_RECORD]: {
     id: PERMISSIONS.PAGES.SQLE.OPERATION_RECORD,
     type: 'page',
-    role: [SystemRole.admin, SystemRole.globalManager, SystemRole.globalViewing]
+    role: [
+      SystemRole.admin,
+      SystemRole.systemAdministrator,
+      SystemRole.auditAdministrator
+    ]
   },
   [PERMISSIONS.PAGES.SQLE.SQL_OPTIMIZATION]: {
     id: PERMISSIONS.PAGES.SQLE.SQL_OPTIMIZATION,
@@ -85,8 +109,8 @@ export const PERMISSION_MANIFEST: Record<
     type: 'page',
     role: [
       SystemRole.admin,
-      SystemRole.globalManager,
-      SystemRole.globalViewing,
+      SystemRole.systemAdministrator,
+      SystemRole.auditAdministrator,
       SystemRole.certainProjectManager
     ]
   },
@@ -100,7 +124,7 @@ export const PERMISSION_MANIFEST: Record<
   [PERMISSIONS.ACTIONS.BASE.CLOUD_BEAVER.CREATE_WHITE_LIST]: {
     id: PERMISSIONS.ACTIONS.BASE.CLOUD_BEAVER.CREATE_WHITE_LIST,
     type: 'action',
-    role: [SystemRole.admin, SystemRole.globalManager],
+    role: [SystemRole.admin, SystemRole.systemAdministrator],
     projectManager: true,
     projectArchived: false
   },
@@ -109,21 +133,21 @@ export const PERMISSION_MANIFEST: Record<
   [PERMISSIONS.ACTIONS.BASE.DB_SERVICE.ADD]: {
     id: PERMISSIONS.ACTIONS.BASE.DB_SERVICE.ADD,
     type: 'action',
-    role: [SystemRole.admin, SystemRole.globalManager],
+    role: [SystemRole.admin, SystemRole.systemAdministrator],
     projectManager: true,
     projectArchived: false
   },
   [PERMISSIONS.ACTIONS.BASE.DB_SERVICE.BATCH_IMPORT]: {
     id: PERMISSIONS.ACTIONS.BASE.DB_SERVICE.BATCH_IMPORT,
     type: 'action',
-    role: [SystemRole.admin, SystemRole.globalManager],
+    role: [SystemRole.admin, SystemRole.systemAdministrator],
     projectManager: true,
     projectArchived: false
   },
   [PERMISSIONS.ACTIONS.BASE.DB_SERVICE.CREATE_AUDIT_PLAN]: {
     id: PERMISSIONS.ACTIONS.BASE.DB_SERVICE.CREATE_AUDIT_PLAN,
     type: 'action',
-    role: [SystemRole.admin, SystemRole.globalManager],
+    role: [SystemRole.admin, SystemRole.systemAdministrator],
     projectManager: true,
     projectArchived: false,
     dbServicePermission: {
@@ -134,14 +158,14 @@ export const PERMISSION_MANIFEST: Record<
   [PERMISSIONS.ACTIONS.BASE.DB_SERVICE.EDIT]: {
     id: PERMISSIONS.ACTIONS.BASE.DB_SERVICE.EDIT,
     type: 'action',
-    role: [SystemRole.admin, SystemRole.globalManager],
+    role: [SystemRole.admin, SystemRole.systemAdministrator],
     projectManager: true,
     projectArchived: false
   },
   [PERMISSIONS.ACTIONS.BASE.DB_SERVICE.DELETE]: {
     id: PERMISSIONS.ACTIONS.BASE.DB_SERVICE.DELETE,
     type: 'action',
-    role: [SystemRole.admin, SystemRole.globalManager],
+    role: [SystemRole.admin, SystemRole.systemAdministrator],
     projectManager: true,
     projectArchived: false
   },
@@ -159,7 +183,7 @@ export const PERMISSION_MANIFEST: Record<
     id: PERMISSIONS.ACTIONS.BASE.DB_SERVICE.BATCH_TEST_CONNECT,
     type: 'action',
     projectArchived: false,
-    role: [SystemRole.admin, SystemRole.globalManager],
+    role: [SystemRole.admin, SystemRole.systemAdministrator],
     projectManager: true
   },
 
@@ -167,32 +191,32 @@ export const PERMISSION_MANIFEST: Record<
   [PERMISSIONS.ACTIONS.BASE.USER_CENTER.USER.ADD]: {
     id: PERMISSIONS.ACTIONS.BASE.USER_CENTER.USER.ADD,
     type: 'action',
-    role: [SystemRole.admin, SystemRole.globalManager]
+    role: [SystemRole.admin, SystemRole.systemAdministrator]
   },
   [PERMISSIONS.ACTIONS.BASE.USER_CENTER.USER.EDIT]: {
     id: PERMISSIONS.ACTIONS.BASE.USER_CENTER.USER.EDIT,
     type: 'action',
-    role: [SystemRole.admin, SystemRole.globalManager]
+    role: [SystemRole.admin, SystemRole.systemAdministrator]
   },
   [PERMISSIONS.ACTIONS.BASE.USER_CENTER.USER.DELETE]: {
     id: PERMISSIONS.ACTIONS.BASE.USER_CENTER.USER.DELETE,
     type: 'action',
-    role: [SystemRole.admin, SystemRole.globalManager]
+    role: [SystemRole.admin, SystemRole.systemAdministrator]
   },
   [PERMISSIONS.ACTIONS.BASE.USER_CENTER.ROLE.ADD]: {
     id: PERMISSIONS.ACTIONS.BASE.USER_CENTER.ROLE.ADD,
     type: 'action',
-    role: [SystemRole.admin, SystemRole.globalManager]
+    role: [SystemRole.admin, SystemRole.systemAdministrator]
   },
   [PERMISSIONS.ACTIONS.BASE.USER_CENTER.ROLE.EDIT]: {
     id: PERMISSIONS.ACTIONS.BASE.USER_CENTER.ROLE.EDIT,
     type: 'action',
-    role: [SystemRole.admin, SystemRole.globalManager]
+    role: [SystemRole.admin, SystemRole.systemAdministrator]
   },
   [PERMISSIONS.ACTIONS.BASE.USER_CENTER.ROLE.DELETE]: {
     id: PERMISSIONS.ACTIONS.BASE.USER_CENTER.ROLE.DELETE,
     type: 'action',
-    role: [SystemRole.admin, SystemRole.globalManager]
+    role: [SystemRole.admin, SystemRole.systemAdministrator]
   },
 
   //全局数据源
@@ -201,7 +225,7 @@ export const PERMISSION_MANIFEST: Record<
     type: 'action',
     role: [
       SystemRole.admin,
-      SystemRole.globalManager,
+      SystemRole.systemAdministrator,
       SystemRole.certainProjectManager
     ]
   },
@@ -210,7 +234,7 @@ export const PERMISSION_MANIFEST: Record<
     type: 'action',
     role: [
       SystemRole.admin,
-      SystemRole.globalManager,
+      SystemRole.systemAdministrator,
       SystemRole.certainProjectManager
     ]
   },
@@ -219,7 +243,7 @@ export const PERMISSION_MANIFEST: Record<
     type: 'action',
     role: [
       SystemRole.admin,
-      SystemRole.globalManager,
+      SystemRole.systemAdministrator,
       SystemRole.certainProjectManager
     ]
   },
@@ -228,7 +252,7 @@ export const PERMISSION_MANIFEST: Record<
     type: 'action',
     role: [
       SystemRole.admin,
-      SystemRole.globalManager,
+      SystemRole.systemAdministrator,
       SystemRole.certainProjectManager
     ]
   },
@@ -239,70 +263,70 @@ export const PERMISSION_MANIFEST: Record<
   [PERMISSIONS.ACTIONS.BASE.GLOBAL_DATA_SOURCE.BATCH_TEST_CONNECT]: {
     id: PERMISSIONS.ACTIONS.BASE.GLOBAL_DATA_SOURCE.BATCH_TEST_CONNECT,
     type: 'action',
-    role: [SystemRole.admin, SystemRole.globalManager]
+    role: [SystemRole.admin, SystemRole.systemAdministrator]
   },
 
   // 同步外部数据源
   [PERMISSIONS.ACTIONS.BASE.SYNC_DATA_SOURCE.ADD]: {
     id: PERMISSIONS.ACTIONS.BASE.SYNC_DATA_SOURCE.ADD,
     type: 'action',
-    role: [SystemRole.admin, SystemRole.globalManager]
+    role: [SystemRole.admin, SystemRole.systemAdministrator]
   },
   [PERMISSIONS.ACTIONS.BASE.SYNC_DATA_SOURCE.DELETE]: {
     id: PERMISSIONS.ACTIONS.BASE.SYNC_DATA_SOURCE.DELETE,
     type: 'action',
-    role: [SystemRole.admin, SystemRole.globalManager]
+    role: [SystemRole.admin, SystemRole.systemAdministrator]
   },
   [PERMISSIONS.ACTIONS.BASE.SYNC_DATA_SOURCE.SYNC]: {
     id: PERMISSIONS.ACTIONS.BASE.SYNC_DATA_SOURCE.SYNC,
     type: 'action',
-    role: [SystemRole.admin, SystemRole.globalManager]
+    role: [SystemRole.admin, SystemRole.systemAdministrator]
   },
   [PERMISSIONS.ACTIONS.BASE.SYNC_DATA_SOURCE.EDIT]: {
     id: PERMISSIONS.ACTIONS.BASE.SYNC_DATA_SOURCE.EDIT,
     type: 'action',
-    role: [SystemRole.admin, SystemRole.globalManager]
+    role: [SystemRole.admin, SystemRole.systemAdministrator]
   },
 
   // Home
   [PERMISSIONS.ACTIONS.BASE.HOME.ALL_OPERATIONS]: {
     id: PERMISSIONS.ACTIONS.BASE.HOME.ALL_OPERATIONS,
     type: 'action',
-    role: [SystemRole.admin, SystemRole.globalManager]
+    role: [SystemRole.admin, SystemRole.systemAdministrator]
   },
 
   // 菜单
   [PERMISSIONS.ACTIONS.BASE.NAV.EDIT_SYSTEM_NOTICE]: {
     id: PERMISSIONS.ACTIONS.BASE.NAV.EDIT_SYSTEM_NOTICE,
     type: 'action',
-    role: [SystemRole.admin, SystemRole.globalManager]
+    role: [SystemRole.admin, SystemRole.systemAdministrator]
   },
 
   //全局规则模板
   [PERMISSIONS.ACTIONS.SQLE.GLOBAL_RULE_TEMPLATE.IMPORT]: {
     id: PERMISSIONS.ACTIONS.SQLE.GLOBAL_RULE_TEMPLATE.IMPORT,
     type: 'action',
-    role: [SystemRole.admin, SystemRole.globalManager]
+    role: [SystemRole.admin, SystemRole.systemAdministrator]
   },
   [PERMISSIONS.ACTIONS.SQLE.GLOBAL_RULE_TEMPLATE.CREATE]: {
     id: PERMISSIONS.ACTIONS.SQLE.GLOBAL_RULE_TEMPLATE.CREATE,
     type: 'action',
-    role: [SystemRole.admin, SystemRole.globalManager]
+    role: [SystemRole.admin, SystemRole.systemAdministrator]
   },
   [PERMISSIONS.ACTIONS.SQLE.GLOBAL_RULE_TEMPLATE.EDIT]: {
     id: PERMISSIONS.ACTIONS.SQLE.GLOBAL_RULE_TEMPLATE.EDIT,
     type: 'action',
-    role: [SystemRole.admin, SystemRole.globalManager]
+    role: [SystemRole.admin, SystemRole.systemAdministrator]
   },
   [PERMISSIONS.ACTIONS.SQLE.GLOBAL_RULE_TEMPLATE.DELETE]: {
     id: PERMISSIONS.ACTIONS.SQLE.GLOBAL_RULE_TEMPLATE.DELETE,
     type: 'action',
-    role: [SystemRole.admin, SystemRole.globalManager]
+    role: [SystemRole.admin, SystemRole.systemAdministrator]
   },
   [PERMISSIONS.ACTIONS.SQLE.GLOBAL_RULE_TEMPLATE.CLONE]: {
     id: PERMISSIONS.ACTIONS.SQLE.GLOBAL_RULE_TEMPLATE.CLONE,
     type: 'action',
-    role: [SystemRole.admin, SystemRole.globalManager]
+    role: [SystemRole.admin, SystemRole.systemAdministrator]
   },
   [PERMISSIONS.ACTIONS.SQLE.GLOBAL_RULE_TEMPLATE.EXPORT]: {
     id: PERMISSIONS.ACTIONS.SQLE.GLOBAL_RULE_TEMPLATE.EXPORT,
@@ -313,155 +337,155 @@ export const PERMISSION_MANIFEST: Record<
   [PERMISSIONS.ACTIONS.SQLE.CUSTOM_RULE.EDIT]: {
     id: PERMISSIONS.ACTIONS.SQLE.CUSTOM_RULE.EDIT,
     type: 'action',
-    role: [SystemRole.admin, SystemRole.globalManager]
+    role: [SystemRole.admin, SystemRole.systemAdministrator]
   },
   [PERMISSIONS.ACTIONS.SQLE.CUSTOM_RULE.CREATE]: {
     id: PERMISSIONS.ACTIONS.SQLE.CUSTOM_RULE.CREATE,
     type: 'action',
-    role: [SystemRole.admin, SystemRole.globalManager]
+    role: [SystemRole.admin, SystemRole.systemAdministrator]
   },
   [PERMISSIONS.ACTIONS.SQLE.CUSTOM_RULE.DELETE]: {
     id: PERMISSIONS.ACTIONS.SQLE.CUSTOM_RULE.DELETE,
     type: 'action',
-    role: [SystemRole.admin, SystemRole.globalManager]
+    role: [SystemRole.admin, SystemRole.systemAdministrator]
   },
 
   //系统设置
   [PERMISSIONS.ACTIONS.BASE.SYSTEM.PUSH_NOTIFICATION.ENABLE_SMTP]: {
     id: PERMISSIONS.ACTIONS.BASE.SYSTEM.PUSH_NOTIFICATION.ENABLE_SMTP,
     type: 'action',
-    role: [SystemRole.admin, SystemRole.globalManager]
+    role: [SystemRole.admin, SystemRole.systemAdministrator]
   },
   [PERMISSIONS.ACTIONS.BASE.SYSTEM.PUSH_NOTIFICATION.ENABLE_WECHAT]: {
     id: PERMISSIONS.ACTIONS.BASE.SYSTEM.PUSH_NOTIFICATION.ENABLE_WECHAT,
     type: 'action',
-    role: [SystemRole.admin, SystemRole.globalManager]
+    role: [SystemRole.admin, SystemRole.systemAdministrator]
   },
   [PERMISSIONS.ACTIONS.BASE.SYSTEM.PUSH_NOTIFICATION.ENABLE_LARK]: {
     id: PERMISSIONS.ACTIONS.BASE.SYSTEM.PUSH_NOTIFICATION.ENABLE_LARK,
     type: 'action',
-    role: [SystemRole.admin, SystemRole.globalManager]
+    role: [SystemRole.admin, SystemRole.systemAdministrator]
   },
   [PERMISSIONS.ACTIONS.BASE.SYSTEM.PUSH_NOTIFICATION.ENABLE_WEBHOOKS]: {
     id: PERMISSIONS.ACTIONS.BASE.SYSTEM.PUSH_NOTIFICATION.ENABLE_WEBHOOKS,
     type: 'action',
-    role: [SystemRole.admin, SystemRole.globalManager]
+    role: [SystemRole.admin, SystemRole.systemAdministrator]
   },
   [PERMISSIONS.ACTIONS.BASE.SYSTEM.PROCESS_CONNECTION.ENABLE_DING_TALK]: {
     id: PERMISSIONS.ACTIONS.BASE.SYSTEM.PROCESS_CONNECTION.ENABLE_DING_TALK,
     type: 'action',
-    role: [SystemRole.admin, SystemRole.globalManager]
+    role: [SystemRole.admin, SystemRole.systemAdministrator]
   },
   [PERMISSIONS.ACTIONS.BASE.SYSTEM.PROCESS_CONNECTION.ENABLE_LARK_AUDIT]: {
     id: PERMISSIONS.ACTIONS.BASE.SYSTEM.PROCESS_CONNECTION.ENABLE_LARK_AUDIT,
     type: 'action',
-    role: [SystemRole.admin, SystemRole.globalManager]
+    role: [SystemRole.admin, SystemRole.systemAdministrator]
   },
   [PERMISSIONS.ACTIONS.BASE.SYSTEM.PROCESS_CONNECTION.ENABLE_WECHAT_AUDIT]: {
     id: PERMISSIONS.ACTIONS.BASE.SYSTEM.PROCESS_CONNECTION.ENABLE_WECHAT_AUDIT,
     type: 'action',
-    role: [SystemRole.admin, SystemRole.globalManager]
+    role: [SystemRole.admin, SystemRole.systemAdministrator]
   },
   [PERMISSIONS.ACTIONS.BASE.SYSTEM.PROCESS_CONNECTION.ENABLE_CODING]: {
     id: PERMISSIONS.ACTIONS.BASE.SYSTEM.PROCESS_CONNECTION.ENABLE_CODING,
     type: 'action',
-    role: [SystemRole.admin, SystemRole.globalManager]
+    role: [SystemRole.admin, SystemRole.systemAdministrator]
   },
   [PERMISSIONS.ACTIONS.BASE.SYSTEM.LOGIN_CONNECTION.ENABLE_LDAP]: {
     id: PERMISSIONS.ACTIONS.BASE.SYSTEM.LOGIN_CONNECTION.ENABLE_LDAP,
     type: 'action',
-    role: [SystemRole.admin, SystemRole.globalManager]
+    role: [SystemRole.admin, SystemRole.systemAdministrator]
   },
   [PERMISSIONS.ACTIONS.BASE.SYSTEM.LOGIN_CONNECTION.ENABLE_OAUTH2]: {
     id: PERMISSIONS.ACTIONS.BASE.SYSTEM.LOGIN_CONNECTION.ENABLE_OAUTH2,
     type: 'action',
-    role: [SystemRole.admin, SystemRole.globalManager]
+    role: [SystemRole.admin, SystemRole.systemAdministrator]
   },
   [PERMISSIONS.ACTIONS.BASE.SYSTEM.GLOBAL_SETTING.OPERATION_LOG_EXPIRED_HOURS]:
     {
       id: PERMISSIONS.ACTIONS.BASE.SYSTEM.GLOBAL_SETTING
         .OPERATION_LOG_EXPIRED_HOURS,
       type: 'action',
-      role: [SystemRole.admin, SystemRole.globalManager]
+      role: [SystemRole.admin, SystemRole.systemAdministrator]
     },
   [PERMISSIONS.ACTIONS.BASE.SYSTEM.GLOBAL_SETTING
     .CB_OPERATION_LOG_EXPIRED_HOURS]: {
     id: PERMISSIONS.ACTIONS.BASE.SYSTEM.GLOBAL_SETTING
       .CB_OPERATION_LOG_EXPIRED_HOURS,
     type: 'action',
-    role: [SystemRole.admin, SystemRole.globalManager]
+    role: [SystemRole.admin, SystemRole.systemAdministrator]
   },
   [PERMISSIONS.ACTIONS.BASE.SYSTEM.GLOBAL_SETTING.URL_ADDRESS_PREFIX]: {
     id: PERMISSIONS.ACTIONS.BASE.SYSTEM.GLOBAL_SETTING.URL_ADDRESS_PREFIX,
     type: 'action',
-    role: [SystemRole.admin, SystemRole.globalManager]
+    role: [SystemRole.admin, SystemRole.systemAdministrator]
   },
   [PERMISSIONS.ACTIONS.BASE.SYSTEM.GLOBAL_SETTING.SMS_SERVICE]: {
     id: PERMISSIONS.ACTIONS.BASE.SYSTEM.GLOBAL_SETTING.SMS_SERVICE,
     type: 'action',
-    role: [SystemRole.admin, SystemRole.globalManager]
+    role: [SystemRole.admin, SystemRole.systemAdministrator]
   },
   [PERMISSIONS.ACTIONS.BASE.SYSTEM.LICENSE.COLLECT_LICENSE]: {
     id: PERMISSIONS.ACTIONS.BASE.SYSTEM.LICENSE.COLLECT_LICENSE,
     type: 'action',
-    role: [SystemRole.admin, SystemRole.globalManager]
+    role: [SystemRole.admin, SystemRole.systemAdministrator]
   },
   [PERMISSIONS.ACTIONS.BASE.SYSTEM.LICENSE.IMPORT_LICENSE]: {
     id: PERMISSIONS.ACTIONS.BASE.SYSTEM.LICENSE.IMPORT_LICENSE,
     type: 'action',
-    role: [SystemRole.admin, SystemRole.globalManager]
+    role: [SystemRole.admin, SystemRole.systemAdministrator]
   },
   [PERMISSIONS.ACTIONS.BASE.SYSTEM.PERSONALIZE_SETTING.PERSONALIZE_TITLE]: {
     id: PERMISSIONS.ACTIONS.BASE.SYSTEM.PERSONALIZE_SETTING.PERSONALIZE_TITLE,
     type: 'action',
-    role: [SystemRole.admin, SystemRole.globalManager]
+    role: [SystemRole.admin, SystemRole.systemAdministrator]
   },
   [PERMISSIONS.ACTIONS.BASE.SYSTEM.PERSONALIZE_SETTING.PERSONALIZE_LOGO]: {
     id: PERMISSIONS.ACTIONS.BASE.SYSTEM.PERSONALIZE_SETTING.PERSONALIZE_LOGO,
     type: 'action',
-    role: [SystemRole.admin, SystemRole.globalManager]
+    role: [SystemRole.admin, SystemRole.systemAdministrator]
   },
 
   // 成员与权限管理
   [PERMISSIONS.ACTIONS.BASE.MEMBER.ADD_MEMBER]: {
     id: PERMISSIONS.ACTIONS.BASE.MEMBER.ADD_MEMBER,
     type: 'action',
-    role: [SystemRole.admin, SystemRole.globalManager],
+    role: [SystemRole.admin, SystemRole.systemAdministrator],
     projectManager: true,
     projectArchived: false
   },
   [PERMISSIONS.ACTIONS.BASE.MEMBER.EDIT_MEMBER]: {
     id: PERMISSIONS.ACTIONS.BASE.MEMBER.EDIT_MEMBER,
     type: 'action',
-    role: [SystemRole.admin, SystemRole.globalManager],
+    role: [SystemRole.admin, SystemRole.systemAdministrator],
     projectManager: true,
     projectArchived: false
   },
   [PERMISSIONS.ACTIONS.BASE.MEMBER.DELETE_MEMBER]: {
     id: PERMISSIONS.ACTIONS.BASE.MEMBER.DELETE_MEMBER,
     type: 'action',
-    role: [SystemRole.admin, SystemRole.globalManager],
+    role: [SystemRole.admin, SystemRole.systemAdministrator],
     projectManager: true,
     projectArchived: false
   },
   [PERMISSIONS.ACTIONS.BASE.MEMBER.ADD_MEMBER_GROUP]: {
     id: PERMISSIONS.ACTIONS.BASE.MEMBER.ADD_MEMBER_GROUP,
     type: 'action',
-    role: [SystemRole.admin, SystemRole.globalManager],
+    role: [SystemRole.admin, SystemRole.systemAdministrator],
     projectManager: true,
     projectArchived: false
   },
   [PERMISSIONS.ACTIONS.BASE.MEMBER.EDIT_MEMBER_GROUP]: {
     id: PERMISSIONS.ACTIONS.BASE.MEMBER.EDIT_MEMBER_GROUP,
     type: 'action',
-    role: [SystemRole.admin, SystemRole.globalManager],
+    role: [SystemRole.admin, SystemRole.systemAdministrator],
     projectManager: true,
     projectArchived: false
   },
   [PERMISSIONS.ACTIONS.BASE.MEMBER.DELETE_MEMBER_GROUP]: {
     id: PERMISSIONS.ACTIONS.BASE.MEMBER.DELETE_MEMBER_GROUP,
     type: 'action',
-    role: [SystemRole.admin, SystemRole.globalManager],
+    role: [SystemRole.admin, SystemRole.systemAdministrator],
     projectManager: true,
     projectArchived: false
   },
@@ -470,13 +494,13 @@ export const PERMISSION_MANIFEST: Record<
   [PERMISSIONS.ACTIONS.BASE.DATA_EXPORT.BATCH_CLOSE]: {
     id: PERMISSIONS.ACTIONS.BASE.DATA_EXPORT.BATCH_CLOSE,
     type: 'action',
-    role: [SystemRole.admin, SystemRole.globalManager],
+    role: [SystemRole.admin, SystemRole.systemAdministrator],
     projectManager: true
   },
   [PERMISSIONS.ACTIONS.BASE.DATA_EXPORT.CREATE_WHITELIST]: {
     id: PERMISSIONS.ACTIONS.BASE.DATA_EXPORT.CREATE_WHITELIST,
     type: 'action',
-    role: [SystemRole.admin, SystemRole.globalManager],
+    role: [SystemRole.admin, SystemRole.systemAdministrator],
     projectManager: true,
     projectArchived: false
   },
@@ -525,7 +549,7 @@ export const PERMISSION_MANIFEST: Record<
     id: PERMISSIONS.ACTIONS.SQLE.SQL_EXEC_WORKFLOW.CLONE,
     type: 'action',
     projectArchived: false,
-    role: [SystemRole.admin, SystemRole.globalManager],
+    role: [SystemRole.admin, SystemRole.systemAdministrator],
     dbServicePermission: {
       opType: OpPermissionItemOpPermissionTypeEnum.create_workflow
     }
@@ -579,14 +603,14 @@ export const PERMISSION_MANIFEST: Record<
   [PERMISSIONS.ACTIONS.SQLE.SQL_EXEC_WORKFLOW.CREATE_WHITE_LIST]: {
     id: PERMISSIONS.ACTIONS.SQLE.SQL_EXEC_WORKFLOW.CREATE_WHITE_LIST,
     type: 'action',
-    role: [SystemRole.admin, SystemRole.globalManager],
+    role: [SystemRole.admin, SystemRole.systemAdministrator],
     projectManager: true,
     projectArchived: false
   },
   [PERMISSIONS.ACTIONS.SQLE.SQL_EXEC_WORKFLOW.BATCH_CLOSE]: {
     id: PERMISSIONS.ACTIONS.SQLE.SQL_EXEC_WORKFLOW.CREATE_WHITE_LIST,
     type: 'action',
-    role: [SystemRole.admin, SystemRole.globalManager]
+    role: [SystemRole.admin, SystemRole.systemAdministrator]
   },
   [PERMISSIONS.ACTIONS.SQLE.SQL_EXEC_WORKFLOW.RETRY]: {
     id: PERMISSIONS.ACTIONS.SQLE.SQL_EXEC_WORKFLOW.RETRY,
@@ -603,77 +627,77 @@ export const PERMISSION_MANIFEST: Record<
   [PERMISSIONS.ACTIONS.SQLE.SQL_MANAGEMENT.ASSIGNMENT]: {
     id: PERMISSIONS.ACTIONS.SQLE.SQL_MANAGEMENT.ASSIGNMENT,
     type: 'action',
-    role: [SystemRole.admin, SystemRole.globalManager],
+    role: [SystemRole.admin, SystemRole.systemAdministrator],
     projectManager: true,
     projectArchived: false
   },
   [PERMISSIONS.ACTIONS.SQLE.SQL_MANAGEMENT.UPDATE_STATUS]: {
     id: PERMISSIONS.ACTIONS.SQLE.SQL_MANAGEMENT.UPDATE_STATUS,
     type: 'action',
-    role: [SystemRole.admin, SystemRole.globalManager],
+    role: [SystemRole.admin, SystemRole.systemAdministrator],
     projectManager: true,
     projectArchived: false
   },
   [PERMISSIONS.ACTIONS.SQLE.SQL_MANAGEMENT.UPDATE_PRIORITY]: {
     id: PERMISSIONS.ACTIONS.SQLE.SQL_MANAGEMENT.UPDATE_PRIORITY,
     type: 'action',
-    role: [SystemRole.admin, SystemRole.globalManager],
+    role: [SystemRole.admin, SystemRole.systemAdministrator],
     projectManager: true,
     projectArchived: false
   },
   [PERMISSIONS.ACTIONS.SQLE.SQL_MANAGEMENT.CREATE_SQL_EXCEPTION]: {
     id: PERMISSIONS.ACTIONS.SQLE.SQL_MANAGEMENT.CREATE_SQL_EXCEPTION,
     type: 'action',
-    role: [SystemRole.admin, SystemRole.globalManager],
+    role: [SystemRole.admin, SystemRole.systemAdministrator],
     projectManager: true,
     projectArchived: false
   },
   [PERMISSIONS.ACTIONS.SQLE.SQL_MANAGEMENT.CREATE_WHITE_LIST]: {
     id: PERMISSIONS.ACTIONS.SQLE.SQL_MANAGEMENT.CREATE_WHITE_LIST,
     type: 'action',
-    role: [SystemRole.admin, SystemRole.globalManager],
+    role: [SystemRole.admin, SystemRole.systemAdministrator],
     projectManager: true,
     projectArchived: false
   },
   [PERMISSIONS.ACTIONS.SQLE.SQL_MANAGEMENT.BATCH_ASSIGNMENT]: {
     id: PERMISSIONS.ACTIONS.SQLE.SQL_MANAGEMENT.BATCH_ASSIGNMENT,
     type: 'action',
-    role: [SystemRole.admin, SystemRole.globalManager],
+    role: [SystemRole.admin, SystemRole.systemAdministrator],
     projectManager: true,
     projectArchived: false
   },
   [PERMISSIONS.ACTIONS.SQLE.SQL_MANAGEMENT.BATCH_RESOLVE]: {
     id: PERMISSIONS.ACTIONS.SQLE.SQL_MANAGEMENT.BATCH_RESOLVE,
     type: 'action',
-    role: [SystemRole.admin, SystemRole.globalManager],
+    role: [SystemRole.admin, SystemRole.systemAdministrator],
     projectManager: true,
     projectArchived: false
   },
   [PERMISSIONS.ACTIONS.SQLE.SQL_MANAGEMENT.BATCH_IGNORE]: {
     id: PERMISSIONS.ACTIONS.SQLE.SQL_MANAGEMENT.BATCH_IGNORE,
     type: 'action',
-    role: [SystemRole.admin, SystemRole.globalManager],
+    role: [SystemRole.admin, SystemRole.systemAdministrator],
     projectManager: true,
     projectArchived: false
   },
   [PERMISSIONS.ACTIONS.SQLE.SQL_MANAGEMENT.ACTION_LAYOUT]: {
     id: PERMISSIONS.ACTIONS.SQLE.SQL_MANAGEMENT.ACTION_LAYOUT,
     type: 'action',
-    role: [SystemRole.admin, SystemRole.globalManager],
+    role: [SystemRole.admin, SystemRole.systemAdministrator],
     projectManager: true,
     projectArchived: false
   },
   [PERMISSIONS.ACTIONS.SQLE.SQL_MANAGEMENT.EDIT_REMARK]: {
     id: PERMISSIONS.ACTIONS.SQLE.SQL_MANAGEMENT.ACTION_LAYOUT,
     type: 'action',
-    role: [SystemRole.admin, SystemRole.globalManager],
+    role: [SystemRole.admin, SystemRole.systemAdministrator],
     projectManager: true,
     projectArchived: false
   },
   [PERMISSIONS.ACTIONS.SQLE.SQL_MANAGEMENT.PUSH_TO_CODING]: {
     id: PERMISSIONS.ACTIONS.SQLE.SQL_MANAGEMENT.PUSH_TO_CODING,
     type: 'action',
-    role: [SystemRole.admin, SystemRole.globalManager],
+    role: [SystemRole.admin, SystemRole.systemAdministrator],
     projectManager: true,
     projectArchived: false
   },
@@ -682,21 +706,21 @@ export const PERMISSION_MANIFEST: Record<
   [PERMISSIONS.ACTIONS.SQLE.SQL_MANAGEMENT_EXCEPTION.CREATE]: {
     id: PERMISSIONS.ACTIONS.SQLE.SQL_MANAGEMENT_EXCEPTION.CREATE,
     type: 'action',
-    role: [SystemRole.admin, SystemRole.globalManager],
+    role: [SystemRole.admin, SystemRole.systemAdministrator],
     projectManager: true,
     projectArchived: false
   },
   [PERMISSIONS.ACTIONS.SQLE.SQL_MANAGEMENT_EXCEPTION.EDIT]: {
     id: PERMISSIONS.ACTIONS.SQLE.SQL_MANAGEMENT_EXCEPTION.EDIT,
     type: 'action',
-    role: [SystemRole.admin, SystemRole.globalManager],
+    role: [SystemRole.admin, SystemRole.systemAdministrator],
     projectManager: true,
     projectArchived: false
   },
   [PERMISSIONS.ACTIONS.SQLE.SQL_MANAGEMENT_EXCEPTION.DELETE]: {
     id: PERMISSIONS.ACTIONS.SQLE.SQL_MANAGEMENT_EXCEPTION.DELETE,
     type: 'action',
-    role: [SystemRole.admin, SystemRole.globalManager],
+    role: [SystemRole.admin, SystemRole.systemAdministrator],
     projectManager: true,
     projectArchived: false
   },
@@ -705,21 +729,21 @@ export const PERMISSION_MANIFEST: Record<
   [PERMISSIONS.ACTIONS.SQLE.WHITE_LIST.CREATE]: {
     id: PERMISSIONS.ACTIONS.SQLE.WHITE_LIST.CREATE,
     type: 'action',
-    role: [SystemRole.admin, SystemRole.globalManager],
+    role: [SystemRole.admin, SystemRole.systemAdministrator],
     projectManager: true,
     projectArchived: false
   },
   [PERMISSIONS.ACTIONS.SQLE.WHITE_LIST.EDIT]: {
     id: PERMISSIONS.ACTIONS.SQLE.WHITE_LIST.EDIT,
     type: 'action',
-    role: [SystemRole.admin, SystemRole.globalManager],
+    role: [SystemRole.admin, SystemRole.systemAdministrator],
     projectManager: true,
     projectArchived: false
   },
   [PERMISSIONS.ACTIONS.SQLE.WHITE_LIST.DELETE]: {
     id: PERMISSIONS.ACTIONS.SQLE.WHITE_LIST.DELETE,
     type: 'action',
-    role: [SystemRole.admin, SystemRole.globalManager],
+    role: [SystemRole.admin, SystemRole.systemAdministrator],
     projectManager: true,
     projectArchived: false
   },
@@ -728,7 +752,7 @@ export const PERMISSION_MANIFEST: Record<
   [PERMISSIONS.ACTIONS.SQLE.WORKFLOW_TEMPLATE.UPDATE]: {
     id: PERMISSIONS.ACTIONS.SQLE.WORKFLOW_TEMPLATE.UPDATE,
     type: 'action',
-    role: [SystemRole.admin, SystemRole.globalManager],
+    role: [SystemRole.admin, SystemRole.systemAdministrator],
     projectManager: true,
     projectArchived: false
   },
@@ -737,41 +761,41 @@ export const PERMISSION_MANIFEST: Record<
   [PERMISSIONS.ACTIONS.SQLE.PROJECT_RULE_TEMPLATE.CREATE]: {
     id: PERMISSIONS.ACTIONS.SQLE.PROJECT_RULE_TEMPLATE.CREATE,
     type: 'action',
-    role: [SystemRole.admin, SystemRole.globalManager],
+    role: [SystemRole.admin, SystemRole.systemAdministrator],
     projectManager: true,
     projectArchived: false
   },
   [PERMISSIONS.ACTIONS.SQLE.PROJECT_RULE_TEMPLATE.IMPORT]: {
     id: PERMISSIONS.ACTIONS.SQLE.PROJECT_RULE_TEMPLATE.IMPORT,
     type: 'action',
-    role: [SystemRole.admin, SystemRole.globalManager],
+    role: [SystemRole.admin, SystemRole.systemAdministrator],
     projectManager: true,
     projectArchived: false
   },
   [PERMISSIONS.ACTIONS.SQLE.PROJECT_RULE_TEMPLATE.EDIT]: {
     id: PERMISSIONS.ACTIONS.SQLE.PROJECT_RULE_TEMPLATE.EDIT,
     type: 'action',
-    role: [SystemRole.admin, SystemRole.globalManager],
+    role: [SystemRole.admin, SystemRole.systemAdministrator],
     projectManager: true,
     projectArchived: false
   },
   [PERMISSIONS.ACTIONS.SQLE.PROJECT_RULE_TEMPLATE.DELETE]: {
     id: PERMISSIONS.ACTIONS.SQLE.PROJECT_RULE_TEMPLATE.DELETE,
     type: 'action',
-    role: [SystemRole.admin, SystemRole.globalManager],
+    role: [SystemRole.admin, SystemRole.systemAdministrator],
     projectManager: true,
     projectArchived: false
   },
   [PERMISSIONS.ACTIONS.SQLE.PROJECT_RULE_TEMPLATE.CLONE]: {
     id: PERMISSIONS.ACTIONS.SQLE.PROJECT_RULE_TEMPLATE.CLONE,
     type: 'action',
-    role: [SystemRole.admin, SystemRole.globalManager],
+    role: [SystemRole.admin, SystemRole.systemAdministrator],
     projectManager: true
   },
   [PERMISSIONS.ACTIONS.SQLE.PROJECT_RULE_TEMPLATE.EXPORT]: {
     id: PERMISSIONS.ACTIONS.SQLE.PROJECT_RULE_TEMPLATE.EXPORT,
     type: 'action',
-    role: [SystemRole.admin, SystemRole.globalManager],
+    role: [SystemRole.admin, SystemRole.systemAdministrator],
     projectManager: true
   },
 
@@ -779,7 +803,7 @@ export const PERMISSION_MANIFEST: Record<
   [PERMISSIONS.ACTIONS.SQLE.RULE_KNOWLEDGE.EDIT]: {
     id: PERMISSIONS.ACTIONS.SQLE.RULE_KNOWLEDGE.EDIT,
     type: 'action',
-    role: [SystemRole.admin, SystemRole.globalManager]
+    role: [SystemRole.admin, SystemRole.systemAdministrator]
   },
 
   // 推送规则配置
@@ -788,7 +812,7 @@ export const PERMISSION_MANIFEST: Record<
     id: PERMISSIONS.ACTIONS.SQLE.PUSH_RULE_CONFIGURATION
       .WORKFLOW_MODIFICATION_NOTIFIER_SWITCHER_SWITCH,
     type: 'action',
-    role: [SystemRole.admin, SystemRole.globalManager],
+    role: [SystemRole.admin, SystemRole.systemAdministrator],
     projectManager: true
   },
   [PERMISSIONS.ACTIONS.SQLE.PUSH_RULE_CONFIGURATION
@@ -796,7 +820,7 @@ export const PERMISSION_MANIFEST: Record<
     id: PERMISSIONS.ACTIONS.SQLE.PUSH_RULE_CONFIGURATION
       .SQL_MANAGEMENT_ISSUE_PUSH_SWITCH,
     type: 'action',
-    role: [SystemRole.admin, SystemRole.globalManager],
+    role: [SystemRole.admin, SystemRole.systemAdministrator],
     projectManager: true
   },
 
@@ -804,7 +828,7 @@ export const PERMISSION_MANIFEST: Record<
   [PERMISSIONS.ACTIONS.SQLE.RULE.CREATE_RULE_TEMPLATE]: {
     id: PERMISSIONS.ACTIONS.SQLE.RULE.CREATE_RULE_TEMPLATE,
     type: 'action',
-    role: [SystemRole.admin, SystemRole.globalManager],
+    role: [SystemRole.admin, SystemRole.systemAdministrator],
     projectManager: true,
     projectArchived: false
   },
@@ -813,7 +837,7 @@ export const PERMISSION_MANIFEST: Record<
   [PERMISSIONS.ACTIONS.SQLE.PLUGIN_AUDIT.CREATE_WHITELIST]: {
     id: PERMISSIONS.ACTIONS.SQLE.PLUGIN_AUDIT.CREATE_WHITELIST,
     type: 'action',
-    role: [SystemRole.admin, SystemRole.globalManager],
+    role: [SystemRole.admin, SystemRole.systemAdministrator],
     projectManager: true,
     projectArchived: false
   },
@@ -825,7 +849,7 @@ export const PERMISSION_MANIFEST: Record<
       .CREATE_MODIFIED_SQL_WORKFLOW,
     type: 'action',
     projectArchived: false,
-    role: [SystemRole.admin, SystemRole.globalManager],
+    role: [SystemRole.admin, SystemRole.systemAdministrator],
     dbServicePermission: {
       opType: OpPermissionItemOpPermissionTypeEnum.create_workflow
     }
@@ -835,85 +859,101 @@ export const PERMISSION_MANIFEST: Record<
   [PERMISSIONS.ACTIONS.BASE.PROJECT_MANAGER.BATCH_IMPORT_DATA_SOURCE]: {
     id: PERMISSIONS.ACTIONS.BASE.PROJECT_MANAGER.BATCH_IMPORT_DATA_SOURCE,
     type: 'action',
-    role: [SystemRole.admin, SystemRole.globalManager]
+    role: [SystemRole.admin, SystemRole.systemAdministrator]
   },
   [PERMISSIONS.ACTIONS.BASE.PROJECT_MANAGER.IMPORT]: {
     id: PERMISSIONS.ACTIONS.BASE.PROJECT_MANAGER.IMPORT,
     type: 'action',
-    role: [SystemRole.admin, SystemRole.globalManager, SystemRole.createProject]
+    role: [
+      SystemRole.admin,
+      SystemRole.systemAdministrator,
+      SystemRole.projectDirector
+    ]
   },
   [PERMISSIONS.ACTIONS.BASE.PROJECT_MANAGER.EXPORT]: {
     id: PERMISSIONS.ACTIONS.BASE.PROJECT_MANAGER.EXPORT,
     type: 'action',
-    role: [SystemRole.admin, SystemRole.globalManager, SystemRole.createProject]
+    role: [
+      SystemRole.admin,
+      SystemRole.systemAdministrator,
+      SystemRole.projectDirector
+    ]
   },
   [PERMISSIONS.ACTIONS.BASE.PROJECT_MANAGER.CREATE]: {
     id: PERMISSIONS.ACTIONS.BASE.PROJECT_MANAGER.CREATE,
     type: 'action',
-    role: [SystemRole.admin, SystemRole.globalManager, SystemRole.createProject]
+    role: [
+      SystemRole.admin,
+      SystemRole.systemAdministrator,
+      SystemRole.projectDirector
+    ]
   },
   [PERMISSIONS.ACTIONS.BASE.PROJECT_MANAGER.EDIT]: {
     id: PERMISSIONS.ACTIONS.BASE.PROJECT_MANAGER.EDIT,
     type: 'action',
     projectManager: true,
-    role: [SystemRole.admin, SystemRole.globalManager]
+    role: [SystemRole.admin, SystemRole.systemAdministrator]
   },
   [PERMISSIONS.ACTIONS.BASE.PROJECT_MANAGER.DELETE]: {
     id: PERMISSIONS.ACTIONS.BASE.PROJECT_MANAGER.DELETE,
     type: 'action',
     projectManager: true,
-    role: [SystemRole.admin, SystemRole.globalManager]
+    role: [SystemRole.admin, SystemRole.systemAdministrator]
   },
   [PERMISSIONS.ACTIONS.BASE.PROJECT_MANAGER.ARCHIVE]: {
     id: PERMISSIONS.ACTIONS.BASE.PROJECT_MANAGER.ARCHIVE,
     type: 'action',
     projectManager: true,
-    role: [SystemRole.admin, SystemRole.globalManager]
+    role: [SystemRole.admin, SystemRole.systemAdministrator]
   },
   [PERMISSIONS.ACTIONS.BASE.PROJECT_MANAGER.UNARCHIVE]: {
     id: PERMISSIONS.ACTIONS.BASE.PROJECT_MANAGER.UNARCHIVE,
     type: 'action',
     projectManager: true,
-    role: [SystemRole.admin, SystemRole.globalManager]
+    role: [SystemRole.admin, SystemRole.systemAdministrator]
   },
   [PERMISSIONS.ACTIONS.BASE.PROJECT_MANAGER.GLOBAL_RESOURCE_OVERVIEW]: {
     id: PERMISSIONS.ACTIONS.BASE.PROJECT_MANAGER.GLOBAL_RESOURCE_OVERVIEW,
     type: 'action',
     role: [
       SystemRole.admin,
-      SystemRole.globalManager,
-      SystemRole.globalViewing,
+      SystemRole.systemAdministrator,
+      SystemRole.auditAdministrator,
       SystemRole.certainProjectManager
     ]
   },
   [PERMISSIONS.ACTIONS.BASE.PROJECT_MANAGER.CONFIGURE_AVAILABILITY_ZONE]: {
     id: PERMISSIONS.ACTIONS.BASE.PROJECT_MANAGER.CONFIGURE_AVAILABILITY_ZONE,
     type: 'action',
-    role: [SystemRole.admin, SystemRole.globalManager, SystemRole.globalViewing]
+    role: [
+      SystemRole.admin,
+      SystemRole.systemAdministrator,
+      SystemRole.auditAdministrator
+    ]
   },
   [PERMISSIONS.ACTIONS.BASE.RESOURCE_OVERVIEW.EXPORT]: {
     id: PERMISSIONS.ACTIONS.BASE.RESOURCE_OVERVIEW.EXPORT,
     type: 'action',
     role: [
       SystemRole.admin,
-      SystemRole.globalManager,
+      SystemRole.systemAdministrator,
       SystemRole.certainProjectManager
     ]
   },
   [PERMISSIONS.ACTIONS.BASE.AVAILABILITY_ZONE.CREATE]: {
     id: PERMISSIONS.ACTIONS.BASE.AVAILABILITY_ZONE.CREATE,
     type: 'action',
-    role: [SystemRole.admin, SystemRole.globalManager]
+    role: [SystemRole.admin, SystemRole.systemAdministrator]
   },
   [PERMISSIONS.ACTIONS.BASE.AVAILABILITY_ZONE.EDIT]: {
     id: PERMISSIONS.ACTIONS.BASE.AVAILABILITY_ZONE.EDIT,
     type: 'action',
-    role: [SystemRole.admin, SystemRole.globalManager]
+    role: [SystemRole.admin, SystemRole.systemAdministrator]
   },
   [PERMISSIONS.ACTIONS.BASE.AVAILABILITY_ZONE.DELETE]: {
     id: PERMISSIONS.ACTIONS.BASE.AVAILABILITY_ZONE.DELETE,
     type: 'action',
-    role: [SystemRole.admin, SystemRole.globalManager]
+    role: [SystemRole.admin, SystemRole.systemAdministrator]
   },
 
   // 版本管理
@@ -922,28 +962,28 @@ export const PERMISSION_MANIFEST: Record<
     type: 'action',
     projectArchived: false,
     projectManager: true,
-    role: [SystemRole.admin, SystemRole.globalManager]
+    role: [SystemRole.admin, SystemRole.systemAdministrator]
   },
   [PERMISSIONS.ACTIONS.SQLE.VERSION_MANAGEMENT.EDIT]: {
     id: PERMISSIONS.ACTIONS.SQLE.VERSION_MANAGEMENT.EDIT,
     type: 'action',
     projectArchived: false,
     projectManager: true,
-    role: [SystemRole.admin, SystemRole.globalManager]
+    role: [SystemRole.admin, SystemRole.systemAdministrator]
   },
   [PERMISSIONS.ACTIONS.SQLE.VERSION_MANAGEMENT.DELETE]: {
     id: PERMISSIONS.ACTIONS.SQLE.VERSION_MANAGEMENT.DELETE,
     type: 'action',
     projectArchived: false,
     projectManager: true,
-    role: [SystemRole.admin, SystemRole.globalManager]
+    role: [SystemRole.admin, SystemRole.systemAdministrator]
   },
   [PERMISSIONS.ACTIONS.SQLE.VERSION_MANAGEMENT.LOCK]: {
     id: PERMISSIONS.ACTIONS.SQLE.VERSION_MANAGEMENT.LOCK,
     type: 'action',
     projectArchived: false,
     projectManager: true,
-    role: [SystemRole.admin, SystemRole.globalManager]
+    role: [SystemRole.admin, SystemRole.systemAdministrator]
   },
   [PERMISSIONS.ACTIONS.SQLE.VERSION_MANAGEMENT.DEPLOY]: {
     id: PERMISSIONS.ACTIONS.SQLE.VERSION_MANAGEMENT.DEPLOY,
@@ -953,7 +993,7 @@ export const PERMISSION_MANIFEST: Record<
     dbServicePermission: {
       opType: OpPermissionItemOpPermissionTypeEnum.create_workflow
     },
-    role: [SystemRole.admin, SystemRole.globalManager]
+    role: [SystemRole.admin, SystemRole.systemAdministrator]
   },
 
   //SQL管控配置
@@ -967,7 +1007,7 @@ export const PERMISSION_MANIFEST: Record<
     type: 'action',
     projectArchived: false,
     projectManager: true,
-    role: [SystemRole.admin, SystemRole.globalManager],
+    role: [SystemRole.admin, SystemRole.systemAdministrator],
     dbServicePermission: {
       fieldName: 'instance_id',
       opType: OpPermissionItemOpPermissionTypeEnum.save_audit_plan
@@ -978,7 +1018,7 @@ export const PERMISSION_MANIFEST: Record<
     type: 'action',
     projectArchived: false,
     projectManager: true,
-    role: [SystemRole.admin, SystemRole.globalManager],
+    role: [SystemRole.admin, SystemRole.systemAdministrator],
     dbServicePermission: {
       fieldName: 'instance_id',
       opType: OpPermissionItemOpPermissionTypeEnum.save_audit_plan
@@ -989,7 +1029,7 @@ export const PERMISSION_MANIFEST: Record<
     type: 'action',
     projectArchived: false,
     projectManager: true,
-    role: [SystemRole.admin, SystemRole.globalManager],
+    role: [SystemRole.admin, SystemRole.systemAdministrator],
     dbServicePermission: {
       fieldName: 'instance_id',
       opType: OpPermissionItemOpPermissionTypeEnum.save_audit_plan
@@ -1000,7 +1040,7 @@ export const PERMISSION_MANIFEST: Record<
     type: 'action',
     projectArchived: false,
     projectManager: true,
-    role: [SystemRole.admin, SystemRole.globalManager],
+    role: [SystemRole.admin, SystemRole.systemAdministrator],
     dbServicePermission: {
       fieldName: 'instance_id',
       opType: OpPermissionItemOpPermissionTypeEnum.save_audit_plan
@@ -1011,7 +1051,7 @@ export const PERMISSION_MANIFEST: Record<
     type: 'action',
     projectArchived: false,
     projectManager: true,
-    role: [SystemRole.admin, SystemRole.globalManager],
+    role: [SystemRole.admin, SystemRole.systemAdministrator],
     dbServicePermission: {
       opType: OpPermissionItemOpPermissionTypeEnum.save_audit_plan
     }
@@ -1021,7 +1061,7 @@ export const PERMISSION_MANIFEST: Record<
     type: 'action',
     projectArchived: false,
     projectManager: true,
-    role: [SystemRole.admin, SystemRole.globalManager],
+    role: [SystemRole.admin, SystemRole.systemAdministrator],
     dbServicePermission: {
       opType: OpPermissionItemOpPermissionTypeEnum.save_audit_plan
     }
@@ -1031,7 +1071,7 @@ export const PERMISSION_MANIFEST: Record<
     type: 'action',
     projectArchived: false,
     projectManager: true,
-    role: [SystemRole.admin, SystemRole.globalManager],
+    role: [SystemRole.admin, SystemRole.systemAdministrator],
     dbServicePermission: {
       opType: OpPermissionItemOpPermissionTypeEnum.save_audit_plan
     }
@@ -1041,7 +1081,7 @@ export const PERMISSION_MANIFEST: Record<
     type: 'action',
     projectArchived: false,
     projectManager: true,
-    role: [SystemRole.admin, SystemRole.globalManager],
+    role: [SystemRole.admin, SystemRole.systemAdministrator],
     dbServicePermission: {
       opType: OpPermissionItemOpPermissionTypeEnum.save_audit_plan
     }
@@ -1051,7 +1091,7 @@ export const PERMISSION_MANIFEST: Record<
     type: 'action',
     projectArchived: false,
     projectManager: true,
-    role: [SystemRole.admin, SystemRole.globalManager],
+    role: [SystemRole.admin, SystemRole.systemAdministrator],
     dbServicePermission: {
       opType: OpPermissionItemOpPermissionTypeEnum.save_audit_plan
     }
@@ -1070,6 +1110,6 @@ export const PERMISSION_MANIFEST: Record<
     type: 'action',
     projectArchived: false,
     projectManager: true,
-    role: [SystemRole.admin, SystemRole.globalManager]
+    role: [SystemRole.admin, SystemRole.systemAdministrator]
   }
 } as const;

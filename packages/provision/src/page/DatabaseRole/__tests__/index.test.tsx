@@ -89,7 +89,7 @@ describe('provision/DatabaseRole', () => {
       userRoles: {
         ...mockCurrentUserReturn.userRoles,
         [SystemRole.admin]: false,
-        [SystemRole.globalManager]: false
+        [SystemRole.systemAdministrator]: false
       },
       bindProjects: [
         {
@@ -109,7 +109,7 @@ describe('provision/DatabaseRole', () => {
       userRoles: {
         ...mockCurrentUserReturn.userRoles,
         [SystemRole.admin]: true,
-        [SystemRole.globalManager]: true
+        [SystemRole.systemAdministrator]: true
       },
       bindProjects: [
         {

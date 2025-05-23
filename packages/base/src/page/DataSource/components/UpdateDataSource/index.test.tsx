@@ -1,27 +1,19 @@
 import { act, cleanup, fireEvent, screen } from '@testing-library/react';
 import Router, { useNavigate } from 'react-router-dom';
 import { baseSuperRender } from '../../../../testUtils/superRender';
-import {
-  getBySelector,
-  getAllBySelector
-} from '@actiontech/shared/lib/testUtil/customQuery';
-
-import dms from '@actiontech/shared/lib/testUtil/mockApi/base/global';
-import ruleTemplate from '@actiontech/shared/lib/testUtil/mockApi/sqle/rule_template';
 import EmitterKey from '../../../../data/EmitterKey';
 import EventEmitter from '../../../../utils/EventEmitter';
-import { mockUseCurrentProject } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentProject';
-import { mockProjectInfo } from '@actiontech/shared/lib/testUtil/mockHook/data';
-
-import UpdateDataSource from '.';
 import {
+  baseMockApi,
+  sqleMockApi,
+  getBySelector,
+  getAllBySelector,
   createSpyFailResponse,
-  createSpySuccessResponse
-} from '@actiontech/shared/lib/testUtil/mockApi';
-import rule_template from '@actiontech/shared/lib/testUtil/mockApi/sqle/rule_template';
-import dbServices from '@actiontech/shared/lib/testUtil/mockApi/base/dbServices';
-import project from '@actiontech/shared/lib/testUtil/mockApi/base/project';
-import system from '@actiontech/shared/lib/testUtil/mockApi/sqle/system';
+  createSpySuccessResponse,
+  mockUseCurrentProject,
+  mockProjectInfo
+} from '@actiontech/shared/lib/testUtil';
+import UpdateDataSource from '.';
 
 jest.mock('react-router-dom', () => {
   return {
@@ -36,6 +28,10 @@ describe('page/DataSource/UpdateDataSource', () => {
   const uId = '1739531854064652288';
   let listEnvironmentTagsSpy: jest.SpyInstance;
   let getSystemModuleStatusSpy: jest.SpyInstance;
+  let checkDbServiceIsConnectableSpy: jest.SpyInstance;
+  let updateDBServiceSpy: jest.SpyInstance;
+  let getListDBServicesSpy: jest.SpyInstance;
+
   const customRender = () => {
     return baseSuperRender(<UpdateDataSource />, undefined, {
       routerProps: {
@@ -47,15 +43,19 @@ describe('page/DataSource/UpdateDataSource', () => {
   beforeEach(() => {
     jest.useFakeTimers();
     (useNavigate as jest.Mock).mockImplementation(() => navigateSpy);
-    dms.mockAllApi();
     jest.spyOn(Router, 'useParams').mockReturnValue({
       dbServiceUid: uId
     });
-    ruleTemplate.mockAllApi();
-    listEnvironmentTagsSpy = mockUseCurrentProject();
-    project.listEnvironmentTags();
-    project.getProjectList();
-    getSystemModuleStatusSpy = system.getSystemModuleStatus();
+    baseMockApi.global.mockAllApi();
+    sqleMockApi.rule_template.mockAllApi();
+    mockUseCurrentProject();
+    listEnvironmentTagsSpy = baseMockApi.project.listEnvironmentTags();
+    baseMockApi.project.getProjectList();
+    getSystemModuleStatusSpy = sqleMockApi.system.getSystemModuleStatus();
+    updateDBServiceSpy = baseMockApi.global.UpdateDBService();
+    checkDbServiceIsConnectableSpy =
+      baseMockApi.dbServices.checkDbServiceIsConnectable();
+    getListDBServicesSpy = baseMockApi.global.getListDBServices();
   });
 
   afterEach(() => {
@@ -63,6 +63,60 @@ describe('page/DataSource/UpdateDataSource', () => {
     jest.clearAllMocks();
     cleanup();
   });
+
+  const mockDBListData = {
+    total_nums: 1,
+    data: [
+      {
+        uid: uId,
+        name: 'mysql-1',
+        db_type: 'mysql',
+        host: '1.1.1.1',
+        is_enable_masking: true,
+        port: '33061',
+        user: 'root',
+        password: 'Zgl4cTg5xeIq9c/pkc8Y5A==',
+        environment_tag: {
+          uid: '1',
+          name: 'environment-1'
+        },
+        maintenance_times: [
+          {
+            maintenance_start_time: {
+              hour: '1',
+              minute: '1'
+            },
+            maintenance_stop_time: {
+              hour: '9',
+              minute: '9'
+            }
+          }
+        ],
+        desc: 'desc cont',
+        source: 'SQLE',
+        project_uid: '700300',
+        sqle_config: {
+          rule_template_name: 'default_MySQL',
+          rule_template_id: '1',
+          sql_query_config: {
+            max_pre_query_rows: 0,
+            query_timeout_second: 0,
+            audit_enabled: false
+          }
+        },
+        additional_params: [
+          {
+            description: 'test_params',
+            name: 'params_key',
+            type: 'string',
+            value: 'test'
+          }
+        ],
+        enable_backup: true,
+        backup_max_rows: 2000
+      }
+    ]
+  };
 
   it('render edit database snap', async () => {
     const { baseElement } = customRender();
@@ -77,75 +131,71 @@ describe('page/DataSource/UpdateDataSource', () => {
   });
 
   it('render prepare api', async () => {
-    const requestRuleTemplateList = rule_template.getRuleTemplateTips();
-    const requestDriverOptions = dms.getListDBServices();
+    const requestRuleTemplateList =
+      sqleMockApi.rule_template.getRuleTemplateTips();
 
     const { baseElement } = customRender();
     await act(async () => jest.advanceTimersByTime(9300));
     expect(requestRuleTemplateList).toHaveBeenCalled();
-    expect(requestDriverOptions).toHaveBeenCalled();
+    expect(getListDBServicesSpy).toHaveBeenCalled();
     expect(listEnvironmentTagsSpy).toHaveBeenCalled();
     expect(baseElement).toMatchSnapshot();
   });
 
   it('render edit data when has all value', async () => {
-    const requestTableList = dms.getListDBServices();
-    const checkDBServiceIsConnectableSpy =
-      dbServices.checkDbServiceIsConnectable();
-    requestTableList.mockImplementationOnce(() =>
+    checkDbServiceIsConnectableSpy.mockClear();
+    checkDbServiceIsConnectableSpy.mockImplementation(() =>
       createSpySuccessResponse({
-        total_nums: 1,
         data: [
           {
-            uid: uId,
-            name: 'mysql-1',
-            db_type: 'mysql',
-            host: '1.1.1.1',
-            is_enable_masking: true,
-            port: '33061',
-            user: 'root',
-            password: 'Zgl4cTg5xeIq9c/pkc8Y5A==',
-            environment_tag: {
-              uid: '1',
-              name: 'environment-1'
-            },
-            maintenance_times: [
-              {
-                maintenance_start_time: {
-                  hour: '1',
-                  minute: '1'
-                },
-                maintenance_stop_time: {
-                  hour: '9',
-                  minute: '9'
-                }
-              }
-            ],
-            desc: 'desc cont',
-            source: 'SQLE',
-            project_uid: '700300',
-            sqle_config: {
-              rule_template_name: 'default_MySQL',
-              rule_template_id: '1',
-              sql_query_config: {
-                max_pre_query_rows: 0,
-                query_timeout_second: 0,
-                audit_enabled: false
-              }
-            },
-            additional_params: [
-              {
-                description: 'test_params',
-                name: 'params_key',
-                type: 'string',
-                value: 'test'
-              }
-            ],
-            enable_backup: true,
-            backup_max_rows: 2000
+            component: 'sqle',
+            is_connectable: true
           }
         ]
       })
+    );
+    getListDBServicesSpy.mockImplementationOnce(() =>
+      createSpySuccessResponse(mockDBListData)
+    );
+    const { baseElement } = customRender();
+    await act(async () => jest.advanceTimersByTime(9300));
+
+    expect(getSystemModuleStatusSpy).toHaveBeenCalledTimes(1);
+    const updatePasswordLabel = getBySelector('label[title="更新连接密码"]');
+    expect(updatePasswordLabel).not.toHaveClass('ant-form-item-required');
+    const needUpdatePassword = getBySelector('#needUpdatePassword');
+    fireEvent.click(needUpdatePassword);
+    await act(async () => jest.advanceTimersByTime(300));
+    expect(updatePasswordLabel).toHaveClass('ant-form-item-required');
+    fireEvent.change(getBySelector('#password', baseElement), {
+      target: { value: '123' }
+    });
+    await act(async () => jest.advanceTimersByTime(300));
+    // environment
+    fireEvent.click(getBySelector('.editable-select-trigger', baseElement));
+    await act(async () => jest.advanceTimersByTime(0));
+    const firstOption = getAllBySelector('.ant-dropdown-menu-item')[0];
+    fireEvent.click(firstOption);
+    await act(async () => jest.advanceTimersByTime(0));
+
+    await act(async () => {
+      fireEvent.click(screen.getByText('提 交'));
+      await act(async () => jest.advanceTimersByTime(300));
+    });
+    expect(checkDbServiceIsConnectableSpy).toHaveBeenCalledTimes(1);
+    await act(async () => jest.advanceTimersByTime(3000));
+    expect(updateDBServiceSpy).toHaveBeenCalledTimes(1);
+    await act(async () => jest.advanceTimersByTime(3000));
+    expect(screen.getByText(`数据源"mysql-1"更新成功`)).toBeInTheDocument();
+
+    await act(async () => jest.advanceTimersByTime(800));
+    expect(navigateSpy).toHaveBeenCalled();
+    expect(navigateSpy).toHaveBeenCalledWith(-1);
+  });
+
+  it('render connectable modal when service can not connect', async () => {
+    getListDBServicesSpy.mockImplementationOnce(() =>
+      createSpySuccessResponse(mockDBListData)
     );
     const { baseElement } = customRender();
     await act(async () => jest.advanceTimersByTime(9300));
@@ -167,10 +217,8 @@ describe('page/DataSource/UpdateDataSource', () => {
     });
 
     await act(async () => jest.advanceTimersByTime(3000));
-    expect(baseElement).toMatchSnapshot();
     expect(screen.queryByText('provision: 链接失败')).toBeInTheDocument();
-    expect(baseElement).toMatchSnapshot();
-    expect(checkDBServiceIsConnectableSpy).toHaveBeenCalled();
+    expect(checkDbServiceIsConnectableSpy).toHaveBeenCalledTimes(1);
     await act(async () => {
       EventEmitter.emit(EmitterKey.Reset_Test_Data_Source_Connect);
       await act(async () => jest.advanceTimersByTime(300));
@@ -188,22 +236,23 @@ describe('page/DataSource/UpdateDataSource', () => {
       fireEvent.click(screen.getByText('提 交'));
       await act(async () => jest.advanceTimersByTime(300));
     });
-    expect(baseElement).toMatchSnapshot();
+    expect(checkDbServiceIsConnectableSpy).toHaveBeenCalledTimes(2);
     await act(async () => jest.advanceTimersByTime(3000));
     expect(eventEmitSpy).toHaveBeenCalled();
     expect(eventEmitSpy).toHaveBeenCalledWith(
       EmitterKey.DMS_Submit_DataSource_Form
     );
-    expect(screen.getByText(`数据源"mysql-1"更新成功`)).toBeInTheDocument();
-
-    await act(async () => jest.advanceTimersByTime(800));
-    expect(navigateSpy).toHaveBeenCalled();
-    expect(navigateSpy).toHaveBeenCalledWith(-1);
+    await act(async () => jest.advanceTimersByTime(3000));
+    expect(screen.queryByText('provision: 链接失败')).toBeInTheDocument();
+    fireEvent.click(screen.getByText('继续提交'));
+    await act(async () => jest.advanceTimersByTime(3000));
+    expect(updateDBServiceSpy).toHaveBeenCalledTimes(1);
   });
 
   it('render get default val error', async () => {
-    const requestDetail = dms.getListDBServices();
-    requestDetail.mockImplementationOnce(() => createSpyFailResponse({}));
+    getListDBServicesSpy.mockImplementationOnce(() =>
+      createSpyFailResponse({})
+    );
     const { baseElement } = customRender();
     await act(async () => jest.advanceTimersByTime(9300));
 
@@ -214,7 +263,7 @@ describe('page/DataSource/UpdateDataSource', () => {
     await act(async () => jest.advanceTimersByTime(300));
     expect(baseElement).toMatchSnapshot();
     await act(async () => jest.advanceTimersByTime(3000));
-    expect(requestDetail).toHaveBeenCalled();
+    expect(getListDBServicesSpy).toHaveBeenCalled();
   });
 
   it('return list by click return button', async () => {
