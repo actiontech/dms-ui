@@ -6,7 +6,7 @@ describe('ConnectableErrorModal', () => {
   const defaultProps = {
     modalOpen: true,
     closeModal: jest.fn(),
-    onSumit: jest.fn(),
+    onSubmit: jest.fn(),
     loading: false,
     connectErrorList: [
       {
