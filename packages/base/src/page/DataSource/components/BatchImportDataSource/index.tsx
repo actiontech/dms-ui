@@ -153,7 +153,7 @@ const BatchImportDataSource = () => {
       <ConnectableErrorModal
         modalOpen={connectErrorModalVisible}
         closeModal={hideConnectErrorModal}
-        onSumit={onSubmit}
+        onSubmit={onSubmit}
         loading={importLoading}
         connectErrorList={connectableInfo?.connectErrorList}
       />

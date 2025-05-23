@@ -8,7 +8,7 @@ import { ConnectableInfoModalWrapper } from '../style';
 interface IConnectableErrorModalProps {
   modalOpen: boolean;
   closeModal: () => void;
-  onSumit: () => void;
+  onSubmit: () => void;
   loading: boolean;
   connectErrorList?: {
     name: string | undefined;
@@ -18,7 +18,7 @@ interface IConnectableErrorModalProps {
 const ConnectableErrorModal = ({
   modalOpen,
   closeModal,
-  onSumit,
+  onSubmit,
   loading,
   connectErrorList
 }: IConnectableErrorModalProps) => {
@@ -34,7 +34,7 @@ const ConnectableErrorModal = ({
             {t('dmsProject.batchImportDataSource.returnModify')}
           </BasicButton>
           <BasicButton
-            onClick={onSumit}
+            onClick={onSubmit}
             loading={loading}
             type="primary"
             className="connectable-modal-btn"
