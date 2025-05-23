@@ -6,7 +6,8 @@ import {
   mockBatchImportDBCheckData,
   mockDbServicesConnectionData,
   mockEnvironmentTagsData,
-  mockBusinessTagsData
+  mockBusinessTagsData,
+  mockCheckDBServicesPrivilegesData
 } from './data';
 import { AxiosResponse } from 'axios';
 import { MIMETypeEnum } from '../../../../enum';
@@ -41,6 +42,7 @@ class MockProjectApi implements MockSpyApy {
     this.createBusinessTag();
     this.updateBusinessTag();
     this.deleteBusinessTag();
+    this.checkDBServicesPrivileges();
   }
 
   public getProjectList() {
@@ -278,6 +280,16 @@ class MockProjectApi implements MockSpyApy {
   public deleteBusinessTag() {
     const spy = jest.spyOn(Project, 'DeleteBusinessTag');
     spy.mockImplementation(() => createSpySuccessResponse({}));
+    return spy;
+  }
+
+  public checkDBServicesPrivileges() {
+    const spy = jest.spyOn(Project, 'CheckDBServicesPrivileges');
+    spy.mockImplementation(() =>
+      createSpySuccessResponse({
+        data: mockCheckDBServicesPrivilegesData
+      })
+    );
     return spy;
   }
 }

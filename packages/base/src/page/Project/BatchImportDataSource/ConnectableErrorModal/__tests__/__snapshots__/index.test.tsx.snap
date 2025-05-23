@@ -1,0 +1,176 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ConnectableErrorModal should render error list correctly 1`] = `
+<body>
+  <div />
+  <div>
+    <div
+      class="ant-modal-root"
+    >
+      <div
+        class="ant-modal-mask"
+      />
+      <div
+        class="ant-modal-wrap"
+        tabindex="-1"
+      >
+        <div
+          aria-labelledby="test-id"
+          aria-modal="true"
+          class="ant-modal basic-modal-wrapper css-vvpsbb ant-zoom-appear ant-zoom-appear-prepare ant-zoom"
+          role="dialog"
+          style="width: 480px;"
+        >
+          <div
+            aria-hidden="true"
+            style="width: 0px; height: 0px; overflow: hidden; outline: none;"
+            tabindex="0"
+          />
+          <div
+            class="ant-modal-content"
+          >
+            <div
+              class="ant-modal-header"
+            >
+              <div
+                class="ant-modal-title"
+                id="test-id"
+              >
+                数据源连通性测试失败
+              </div>
+            </div>
+            <div
+              class="ant-modal-body"
+            >
+              <div
+                class="css-1vhff5g"
+              >
+                <div>
+                  <div>
+                    mysql-db
+                  </div>
+                  <div
+                    class="ant-space ant-space-horizontal ant-space-align-start css-1nec0wd"
+                  >
+                    <div
+                      class="ant-space-item"
+                      style="margin-right: 8px;"
+                    >
+                      <span
+                        class="css-u3jcp4"
+                      >
+                        <svg
+                          class="custom-icon"
+                          height="16"
+                          viewBox="0 0 16 16"
+                          width="16"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M8 14.667A6.666 6.666 0 1 1 8 1.334a6.666 6.666 0 0 1 0 13.333m0-1.334A5.333 5.333 0 1 0 8 2.667a5.333 5.333 0 0 0 0 10.666m0-6.276 1.885-1.886.944.944L8.943 8l1.886 1.885-.944.944L8 8.943l-1.885 1.886-.944-.944L7.057 8 5.171 6.115l.944-.944z"
+                            fill="#F66074"
+                          />
+                        </svg>
+                      </span>
+                    </div>
+                    <div
+                      class="ant-space-item"
+                    >
+                      <span
+                        class="ant-typography ant-typography-danger"
+                      >
+                        <pre>
+                          Connection timeout
+                        </pre>
+                      </span>
+                    </div>
+                  </div>
+                </div>
+                <div>
+                  <div>
+                    postgres-db
+                  </div>
+                  <div
+                    class="ant-space ant-space-horizontal ant-space-align-start css-1nec0wd"
+                  >
+                    <div
+                      class="ant-space-item"
+                      style="margin-right: 8px;"
+                    >
+                      <span
+                        class="css-u3jcp4"
+                      >
+                        <svg
+                          class="custom-icon"
+                          height="16"
+                          viewBox="0 0 16 16"
+                          width="16"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M8 14.667A6.666 6.666 0 1 1 8 1.334a6.666 6.666 0 0 1 0 13.333m0-1.334A5.333 5.333 0 1 0 8 2.667a5.333 5.333 0 0 0 0 10.666m0-6.276 1.885-1.886.944.944L8.943 8l1.886 1.885-.944.944L8 8.943l-1.885 1.886-.944-.944L7.057 8 5.171 6.115l.944-.944z"
+                            fill="#F66074"
+                          />
+                        </svg>
+                      </span>
+                    </div>
+                    <div
+                      class="ant-space-item"
+                    >
+                      <span
+                        class="ant-typography ant-typography-danger"
+                      >
+                        <pre>
+                          Authentication failed
+                        </pre>
+                      </span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
+              class="ant-modal-footer"
+            >
+              <div
+                class="ant-space ant-space-horizontal ant-space-align-center"
+              >
+                <div
+                  class="ant-space-item"
+                  style="margin-right: 8px;"
+                >
+                  <button
+                    class="ant-btn ant-btn-default basic-button-wrapper css-geipcv"
+                    type="button"
+                  >
+                    <span>
+                      返回修改
+                    </span>
+                  </button>
+                </div>
+                <div
+                  class="ant-space-item"
+                >
+                  <button
+                    class="ant-btn ant-btn-primary connectable-modal-btn basic-button-wrapper css-geipcv"
+                    type="button"
+                  >
+                    <span>
+                      继续提交
+                    </span>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            aria-hidden="true"
+            style="width: 0px; height: 0px; overflow: hidden; outline: none;"
+            tabindex="0"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+`;

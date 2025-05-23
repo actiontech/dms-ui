@@ -1,7 +1,6 @@
 import {
   superRender,
   superRenderHook,
-  createTestWrapper,
   WrapperOptions,
   RenderParams
 } from '@actiontech/shared/lib/testUtil/superRender';
@@ -33,14 +32,9 @@ export const sqleSuperRenderHook = <TProps, TResult>(
   >,
   wrapperOptions?: WrapperOptions
 ) => {
-  const wrapper = createTestWrapper({
+  return superRenderHook(hook, renderHookOptions, {
     ...wrapperOptions,
     theme: themeData,
     storeFactory: storeFactory
-  });
-
-  return superRenderHook(hook, {
-    ...renderHookOptions,
-    wrapper
   });
 };
