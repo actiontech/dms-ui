@@ -58,6 +58,7 @@ export const UserListColumns: () => ActiontechTableColumn<IListUser> = () => [
   {
     dataIndex: 'projects',
     title: () => t('dmsUserCenter.user.userList.columns.projects'),
+    width: '35%',
     render: (list) => <ProjectTagList projectList={list} />
   }
 ];
