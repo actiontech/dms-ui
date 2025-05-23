@@ -409,6 +409,22 @@ export interface ICheckDBServicesIsConnectableReq {
   db_services?: IDbServiceConnections[];
 }
 
+export interface ICheckDBServicesPrivilegesItem {
+  CheckDBServicesPrivileges?: ICheckDBServiceIsConnectableReplyItem[];
+}
+
+export interface ICheckDBServicesPrivilegesReply {
+  code?: number;
+
+  data?: ICheckDBServicesPrivilegesItem[];
+
+  message?: string;
+}
+
+export interface ICheckDBServicesPrivilegesReq {
+  db_services?: ICheckDbConnectable[];
+}
+
 export interface ICheckDbConnectable {
   additional_params?: IAdditionalParam[];
 
