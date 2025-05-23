@@ -4,7 +4,8 @@ import {
   IProjectTips,
   IImportDBServiceV2,
   IEnvironmentTag,
-  IBusinessTag
+  IBusinessTag,
+  ICheckDBServicesPrivilegesItem
 } from '../../../../api/base/service/common';
 import { ListProjectV2ProjectPriorityEnum } from '../../../../api/base/service/common.enum';
 
@@ -153,6 +154,60 @@ export const mockBatchImportDBCheckData: IImportDBServiceV2[] = [
     is_enable_masking: false
   }
 ];
+
+export const mockCheckDBServicesPrivilegesData: ICheckDBServicesPrivilegesItem[] =
+  [
+    {
+      CheckDBServicesPrivileges: [
+        {
+          component: 'slqe',
+          is_connectable: true,
+          connect_error_message: undefined
+        },
+        {
+          component: 'provision',
+          is_connectable: true,
+          connect_error_message: undefined
+        }
+      ]
+    },
+    {
+      CheckDBServicesPrivileges: [
+        {
+          component: 'slqe',
+          is_connectable: true,
+          connect_error_message: undefined
+        }
+      ]
+    }
+  ];
+
+export const mockCheckDBServicesPrivilegesIncludeErrorData: ICheckDBServicesPrivilegesItem[] =
+  [
+    {
+      CheckDBServicesPrivileges: [
+        {
+          component: 'slqe',
+          is_connectable: false,
+          connect_error_message: '权限不足'
+        },
+        {
+          component: 'provision',
+          is_connectable: true,
+          connect_error_message: undefined
+        }
+      ]
+    },
+    {
+      CheckDBServicesPrivileges: [
+        {
+          component: 'slqe',
+          is_connectable: true,
+          connect_error_message: undefined
+        }
+      ]
+    }
+  ];
 
 export const mockDbServicesConnectionData = {
   successful_num: 1,

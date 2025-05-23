@@ -1,7 +1,7 @@
 import { useBoolean } from 'ahooks';
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useContext } from 'react';
 import { useTranslation } from 'react-i18next';
-import { FormInstance, Form } from 'antd';
+import { FormInstance } from 'antd';
 import EmitterKey from '../../../../../data/EmitterKey';
 import EventEmitter from '../../../../../utils/EventEmitter';
 import { DataSourceFormField } from '../index.type';
@@ -12,16 +12,14 @@ import {
   EmptyBox,
   TestDatabaseConnectButton
 } from '@actiontech/shared';
-import { ResponseCode } from '@actiontech/shared/lib/enum';
-import DBService from '@actiontech/shared/lib/api/base/service/DBService';
 import {
   FormItemLabel,
   FormItemNoLabel
 } from '@actiontech/shared/lib/components/CustomForm';
 import { validatorPort } from '@actiontech/shared/lib/utils/FormRule';
 import AutoCreatedFormItemByApi from 'sqle/src/components/BackendForm/AutoCreatedFormItemByApi';
-import useAsyncParams from 'sqle/src/components/BackendForm/useAsyncParams';
 import { FormItem } from 'sqle/src/components/BackendForm';
+import { DataSourceFormContext } from '../../../context';
 
 const DatabaseFormItem: React.FC<{
   form: FormInstance<DataSourceFormField>;
@@ -33,12 +31,9 @@ const DatabaseFormItem: React.FC<{
   isExternalInstance?: boolean;
 }> = (props) => {
   const { t } = useTranslation();
-  const projectID = Form.useWatch('project', props.form);
 
-  const [loading, { setTrue: setLoadingTrue, setFalse: setLoadingFalse }] =
-    useBoolean();
-  const [connectAble, setConnectAble] = useState(false);
-  const [connectErrorMessage, setConnectErrorMessage] = useState('');
+  const formContext = useContext(DataSourceFormContext);
+
   const [
     hideConnectionInfo,
     { setFalse: setConnectionInfoShow, setTrue: setConnectionInfoHide }
@@ -50,64 +45,10 @@ const DatabaseFormItem: React.FC<{
     props.form.setFieldsValue({ needUpdatePassword: check });
   };
 
-  const { mergeFromValueIntoParams } = useAsyncParams();
-
   const testDatabaseConnect = async () => {
-    const values = await props.form.validateFields([
-      'ip',
-      'password',
-      'port',
-      'user',
-      'type',
-      'params'
-    ]);
-
-    if (values.params && props.currentAsyncParams) {
-      values.asyncParams = mergeFromValueIntoParams(
-        values.params,
-        props.currentAsyncParams
-      ).map((v) => ({ name: v.key, value: v.value }));
-      delete values.params;
-    }
-
-    setLoadingTrue();
-    DBService.CheckDBServiceIsConnectable({
-      db_service: {
-        host: values.ip,
-        port: `${values.port}`,
-        user: values.user,
-        db_type: values.type,
-        password: values.password,
-        additional_params: values.asyncParams ?? []
-      },
-      project_uid: projectID
-    })
-      .then((res) => {
-        if (res.data.code === ResponseCode.SUCCESS) {
-          const connections = res.data.data ?? [];
-          const isConnectable = connections.every(
-            (connection) => !!connection?.is_connectable
-          );
-          const errorMessage = connections.reduce(
-            (acc, cur, curIndex) =>
-              !!cur?.is_connectable
-                ? acc
-                : acc +
-                  `${cur.component}: ${cur?.connect_error_message?.replace(
-                    /\n$/,
-                    ''
-                  )} ${curIndex < connections.length - 1 ? '\n\r' : ''}`,
-            ''
-          );
-
-          setConnectAble(isConnectable);
-          setConnectErrorMessage(errorMessage);
-        }
-      })
-      .finally(() => {
-        setConnectionInfoShow();
-        setLoadingFalse();
-      });
+    formContext?.onCheckConnectable(props.currentAsyncParams).finally(() => {
+      setConnectionInfoShow();
+    });
   };
 
   useEffect(() => {
@@ -261,9 +202,9 @@ const DatabaseFormItem: React.FC<{
         <TestDatabaseConnectButton
           initHide={hideConnectionInfo}
           onClickTestButton={testDatabaseConnect}
-          loading={loading}
-          connectAble={connectAble}
-          connectDisableReason={connectErrorMessage}
+          loading={formContext?.loading ?? false}
+          connectAble={formContext?.connectAble ?? false}
+          connectDisableReason={formContext?.connectErrorMessage}
         />
       </FormItemNoLabel>
     </>
