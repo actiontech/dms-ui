@@ -1110,6 +1110,6 @@ export const PERMISSION_MANIFEST: Record<
     type: 'action',
     projectArchived: false,
     projectManager: true,
-    role: [SystemRole.admin, SystemRole.globalManager]
+    role: [SystemRole.admin, SystemRole.systemAdministrator]
   }
 } as const;
