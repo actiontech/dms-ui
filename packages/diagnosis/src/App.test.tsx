@@ -5,7 +5,7 @@ import user from './testUtils/mockApi/userManagement';
 import { SupportTheme } from '@actiontech/shared/lib/enum';
 import { adminPermission } from './testUtils/mockApi/userManagement/data';
 import monitorSourceConfig from './testUtils/mockApi/monitorSourceConfig';
-import { superRender } from './testUtils/customRender';
+import { diagnosisSuperRender } from './testUtils/superRender';
 
 jest.mock('react-redux', () => {
   return {
@@ -48,7 +48,7 @@ describe('test diagnosis App', () => {
   });
 
   test('should render App', async () => {
-    const { container } = superRender(<App />);
+    const { container } = diagnosisSuperRender(<App />);
     await act(async () => jest.advanceTimersByTime(3000));
     expect(container).toMatchSnapshot();
     expect(getUserInfoSpy).toHaveBeenCalled();

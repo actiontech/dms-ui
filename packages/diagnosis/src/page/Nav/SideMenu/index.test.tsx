@@ -1,5 +1,5 @@
 import SideMenu from '.';
-import { superRender } from '../../../testUtils/customRender';
+import { diagnosisSuperRender } from '../../../testUtils/superRender';
 import { screen, act, fireEvent } from '@testing-library/react';
 
 describe('diagnosis/SideMenu', () => {
@@ -12,7 +12,7 @@ describe('diagnosis/SideMenu', () => {
   });
 
   it('should match snapshot', async () => {
-    const { baseElement } = superRender(<SideMenu />);
+    const { baseElement } = diagnosisSuperRender(<SideMenu />);
     await act(async () => {
       jest.runOnlyPendingTimers();
     });
@@ -22,7 +22,7 @@ describe('diagnosis/SideMenu', () => {
   });
 
   it('click other menu', async () => {
-    const { baseElement } = superRender(<SideMenu />);
+    const { baseElement } = diagnosisSuperRender(<SideMenu />);
     await act(async () => {
       jest.runOnlyPendingTimers();
     });

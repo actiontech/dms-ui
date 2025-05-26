@@ -46,4 +46,6 @@ class DbService extends ServiceBase {
   }
 }
 
-export default new DbService();
+const dbService = new DbService();
+
+export default dbService;

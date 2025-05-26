@@ -30,7 +30,7 @@ exports[`test diagnosis App should render App 1`] = `
           </div>
         </div>
         <ul
-          class="ant-menu ant-menu-root ant-menu-inline ant-menu-light custom-menu css-dev-only-do-not-override-1thf7qv"
+          class="ant-menu ant-menu-root ant-menu-inline ant-menu-light custom-menu"
           data-menu-list="true"
           role="menu"
           tabindex="0"
@@ -102,7 +102,7 @@ exports[`test diagnosis App should render App 1`] = `
         class="dms-layout-side-end"
       >
         <span
-          class="ant-avatar ant-avatar-circle action-avatar css-1wq79dc css-dev-only-do-not-override-1thf7qv"
+          class="ant-avatar ant-avatar-circle action-avatar css-1wq79dc"
         >
           <span
             class="ant-avatar-string"
@@ -122,7 +122,7 @@ exports[`test diagnosis App should render App 1`] = `
             class="title"
           >
             <div
-              class="ant-space css-dev-only-do-not-override-1thf7qv ant-space-horizontal ant-space-align-center"
+              class="ant-space ant-space-horizontal ant-space-align-center"
             >
               <div
                 class="ant-space-item"
@@ -135,7 +135,7 @@ exports[`test diagnosis App should render App 1`] = `
             class="extra"
           >
             <button
-              class="ant-btn css-dev-only-do-not-override-1thf7qv ant-btn-primary basic-button-wrapper css-geipcv"
+              class="ant-btn ant-btn-primary basic-button-wrapper css-geipcv"
               type="button"
             >
               <span
@@ -167,10 +167,10 @@ exports[`test diagnosis App should render App 1`] = `
           class="segmented-tabs-wrapper"
         >
           <div
-            class="ant-row segmented-row-wrapper css-156vlto css-dev-only-do-not-override-1thf7qv"
+            class="ant-row segmented-row-wrapper css-156vlto"
           >
             <div
-              class="ant-segmented basic-segmented-wrapper css-192b3m1 css-dev-only-do-not-override-1thf7qv"
+              class="ant-segmented basic-segmented-wrapper css-192b3m1"
             >
               <div
                 class="ant-segmented-group"
@@ -207,7 +207,7 @@ exports[`test diagnosis App should render App 1`] = `
               </div>
             </div>
             <div
-              class="ant-space css-dev-only-do-not-override-1thf7qv ant-space-horizontal ant-space-align-center flex-space-between "
+              class="ant-space ant-space-horizontal ant-space-align-center flex-space-between "
               style="margin-left: 12px;"
             >
               <div
@@ -215,10 +215,10 @@ exports[`test diagnosis App should render App 1`] = `
                 style="margin-right: 8px;"
               >
                 <span
-                  class="ant-input-affix-wrapper basic-input-wrapper actiontech-table-search-input-namespace css-1f6svkh ant-input-affix-wrapper-sm css-dev-only-do-not-override-1thf7qv"
+                  class="ant-input-affix-wrapper basic-input-wrapper actiontech-table-search-input-namespace css-1f6svkh ant-input-affix-wrapper-sm"
                 >
                   <input
-                    class="ant-input ant-input-sm css-dev-only-do-not-override-1thf7qv"
+                    class="ant-input ant-input-sm"
                     id="actiontech-table-search-input"
                     placeholder="输入关键字搜索"
                     type="text"
@@ -262,7 +262,7 @@ exports[`test diagnosis App should render App 1`] = `
                 class="ant-space-item"
               >
                 <button
-                  class="ant-btn css-dev-only-do-not-override-1thf7qv ant-btn-default ant-btn-sm ant-btn-icon-only ant-btn-loading basic-button-wrapper css-geipcv"
+                  class="ant-btn ant-btn-default ant-btn-sm ant-btn-icon-only ant-btn-loading basic-button-wrapper css-geipcv"
                   disabled=""
                   type="button"
                 >
@@ -297,16 +297,16 @@ exports[`test diagnosis App should render App 1`] = `
             class="lazy-load-wrapper segmented-item-content lazy-load-wrapper-show css-952l0m"
           >
             <div
-              class="ant-table-wrapper actiontech-table-namespace css-fxd6ka css-dev-only-do-not-override-1thf7qv"
+              class="ant-table-wrapper actiontech-table-namespace css-fxd6ka"
             >
               <div
-                class="ant-spin-nested-loading css-dev-only-do-not-override-1thf7qv"
+                class="ant-spin-nested-loading"
               >
                 <div>
                   <div
                     aria-busy="true"
                     aria-live="polite"
-                    class="ant-spin ant-spin-spinning css-dev-only-do-not-override-1thf7qv"
+                    class="ant-spin ant-spin-spinning"
                   >
                     <span
                       class="custom-icon-spin-dot ant-spin-dot css-u3jcp4"

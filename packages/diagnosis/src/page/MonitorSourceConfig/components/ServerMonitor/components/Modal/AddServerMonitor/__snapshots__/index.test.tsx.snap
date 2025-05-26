@@ -5,7 +5,7 @@ exports[`test add server monitor close modal by click close button 1`] = `
   <div />
   <div>
     <div
-      class="ant-drawer ant-drawer-right css-dev-only-do-not-override-txh9fw ant-drawer-open"
+      class="ant-drawer ant-drawer-right ant-drawer-open"
       tabindex="-1"
     >
       <div
@@ -71,16 +71,16 @@ exports[`test add server monitor close modal by click close button 1`] = `
                 </span>
               </div>
               <form
-                class="ant-form ant-form-vertical css-dev-only-do-not-override-txh9fw"
+                class="ant-form ant-form-vertical"
               >
                 <div
-                  class="ant-form-item css-dev-only-do-not-override-txh9fw"
+                  class="ant-form-item"
                 >
                   <div
-                    class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                    class="ant-row ant-form-item-row"
                   >
                     <div
-                      class="ant-col ant-form-item-label css-dev-only-do-not-override-txh9fw"
+                      class="ant-col ant-form-item-label"
                     >
                       <label
                         class="ant-form-item-required"
@@ -91,7 +91,7 @@ exports[`test add server monitor close modal by click close button 1`] = `
                       </label>
                     </div>
                     <div
-                      class="ant-col ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                      class="ant-col ant-form-item-control"
                     >
                       <div
                         class="ant-form-item-control-input"
@@ -101,7 +101,7 @@ exports[`test add server monitor close modal by click close button 1`] = `
                         >
                           <input
                             aria-required="true"
-                            class="ant-input css-dev-only-do-not-override-txh9fw basic-input-wrapper css-1pd1cd5"
+                            class="ant-input basic-input-wrapper css-1pd1cd5"
                             id="host"
                             placeholder="请输入{{name}}"
                             type="text"
@@ -113,13 +113,13 @@ exports[`test add server monitor close modal by click close button 1`] = `
                   </div>
                 </div>
                 <div
-                  class="ant-form-item css-dev-only-do-not-override-txh9fw"
+                  class="ant-form-item"
                 >
                   <div
-                    class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                    class="ant-row ant-form-item-row"
                   >
                     <div
-                      class="ant-col ant-form-item-label css-dev-only-do-not-override-txh9fw"
+                      class="ant-col ant-form-item-label"
                     >
                       <label
                         class="ant-form-item-required"
@@ -130,7 +130,7 @@ exports[`test add server monitor close modal by click close button 1`] = `
                       </label>
                     </div>
                     <div
-                      class="ant-col ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                      class="ant-col ant-form-item-control"
                     >
                       <div
                         class="ant-form-item-control-input"
@@ -139,7 +139,7 @@ exports[`test add server monitor close modal by click close button 1`] = `
                           class="ant-form-item-control-input-content"
                         >
                           <div
-                            class="ant-input-number ant-input-number-lg ant-input-number-in-form-item css-dev-only-do-not-override-txh9fw basic-inputNumber-wrapper css-1fd5hnt"
+                            class="ant-input-number ant-input-number-lg ant-input-number-in-form-item basic-inputNumber-wrapper css-1fd5hnt"
                           >
                             <div
                               class="ant-input-number-handler-wrap"
@@ -220,13 +220,13 @@ exports[`test add server monitor close modal by click close button 1`] = `
                   </div>
                 </div>
                 <div
-                  class="ant-form-item css-dev-only-do-not-override-txh9fw"
+                  class="ant-form-item"
                 >
                   <div
-                    class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                    class="ant-row ant-form-item-row"
                   >
                     <div
-                      class="ant-col ant-form-item-label css-dev-only-do-not-override-txh9fw"
+                      class="ant-col ant-form-item-label"
                     >
                       <label
                         class="ant-form-item-required"
@@ -237,7 +237,7 @@ exports[`test add server monitor close modal by click close button 1`] = `
                       </label>
                     </div>
                     <div
-                      class="ant-col ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                      class="ant-col ant-form-item-control"
                     >
                       <div
                         class="ant-form-item-control-input"
@@ -247,7 +247,7 @@ exports[`test add server monitor close modal by click close button 1`] = `
                         >
                           <input
                             aria-required="true"
-                            class="ant-input css-dev-only-do-not-override-txh9fw basic-input-wrapper css-1pd1cd5"
+                            class="ant-input basic-input-wrapper css-1pd1cd5"
                             id="user"
                             placeholder="请输入{{name}}"
                             type="text"
@@ -259,13 +259,13 @@ exports[`test add server monitor close modal by click close button 1`] = `
                   </div>
                 </div>
                 <div
-                  class="ant-form-item css-dev-only-do-not-override-txh9fw"
+                  class="ant-form-item"
                 >
                   <div
-                    class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                    class="ant-row ant-form-item-row"
                   >
                     <div
-                      class="ant-col ant-form-item-label css-dev-only-do-not-override-txh9fw"
+                      class="ant-col ant-form-item-label"
                     >
                       <label
                         class="ant-form-item-required"
@@ -276,7 +276,7 @@ exports[`test add server monitor close modal by click close button 1`] = `
                       </label>
                     </div>
                     <div
-                      class="ant-col ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                      class="ant-col ant-form-item-control"
                     >
                       <div
                         class="ant-form-item-control-input"
@@ -285,11 +285,11 @@ exports[`test add server monitor close modal by click close button 1`] = `
                           class="ant-form-item-control-input-content"
                         >
                           <span
-                            class="ant-input-affix-wrapper ant-input-password basic-input-wrapper css-1pd1cd5 css-dev-only-do-not-override-txh9fw"
+                            class="ant-input-affix-wrapper ant-input-password basic-input-wrapper css-1pd1cd5"
                           >
                             <input
                               aria-required="true"
-                              class="ant-input css-dev-only-do-not-override-txh9fw"
+                              class="ant-input"
                               id="password"
                               placeholder="请输入{{name}}"
                               type="password"
@@ -328,13 +328,13 @@ exports[`test add server monitor close modal by click close button 1`] = `
                   </div>
                 </div>
                 <div
-                  class="ant-form-item css-dev-only-do-not-override-txh9fw"
+                  class="ant-form-item"
                 >
                   <div
-                    class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                    class="ant-row ant-form-item-row"
                   >
                     <div
-                      class="ant-col ant-form-item-label css-dev-only-do-not-override-txh9fw"
+                      class="ant-col ant-form-item-label"
                     >
                       <label
                         class="ant-form-item-required"
@@ -345,7 +345,7 @@ exports[`test add server monitor close modal by click close button 1`] = `
                       </label>
                     </div>
                     <div
-                      class="ant-col ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                      class="ant-col ant-form-item-control"
                     >
                       <div
                         class="ant-form-item-control-input"
@@ -354,11 +354,11 @@ exports[`test add server monitor close modal by click close button 1`] = `
                           class="ant-form-item-control-input-content"
                         >
                           <span
-                            class="ant-input-affix-wrapper basic-input-wrapper css-1pd1cd5 css-dev-only-do-not-override-txh9fw"
+                            class="ant-input-affix-wrapper basic-input-wrapper css-1pd1cd5"
                           >
                             <input
                               aria-required="true"
-                              class="ant-input css-dev-only-do-not-override-txh9fw"
+                              class="ant-input"
                               id="name"
                               placeholder="请输入监控源名"
                               type="text"
@@ -381,14 +381,14 @@ exports[`test add server monitor close modal by click close button 1`] = `
               class="ant-drawer-footer"
             >
               <div
-                class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+                class="ant-space ant-space-horizontal ant-space-align-center"
               >
                 <div
                   class="ant-space-item"
                   style="margin-right: 8px;"
                 >
                   <button
-                    class="ant-btn css-dev-only-do-not-override-txh9fw ant-btn-default basic-button-wrapper css-geipcv"
+                    class="ant-btn ant-btn-default basic-button-wrapper css-geipcv"
                     type="button"
                   >
                     <span>
@@ -400,7 +400,7 @@ exports[`test add server monitor close modal by click close button 1`] = `
                   class="ant-space-item"
                 >
                   <button
-                    class="ant-btn css-dev-only-do-not-override-txh9fw ant-btn-primary basic-button-wrapper css-geipcv"
+                    class="ant-btn ant-btn-primary basic-button-wrapper css-geipcv"
                     type="button"
                   >
                     <span>
@@ -429,7 +429,7 @@ exports[`test add server monitor should match snapshot when modal state is true 
   <div />
   <div>
     <div
-      class="ant-drawer ant-drawer-right css-dev-only-do-not-override-txh9fw ant-drawer-open"
+      class="ant-drawer ant-drawer-right ant-drawer-open"
       tabindex="-1"
     >
       <div
@@ -495,16 +495,16 @@ exports[`test add server monitor should match snapshot when modal state is true 
                 </span>
               </div>
               <form
-                class="ant-form ant-form-vertical css-dev-only-do-not-override-txh9fw"
+                class="ant-form ant-form-vertical"
               >
                 <div
-                  class="ant-form-item css-dev-only-do-not-override-txh9fw"
+                  class="ant-form-item"
                 >
                   <div
-                    class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                    class="ant-row ant-form-item-row"
                   >
                     <div
-                      class="ant-col ant-form-item-label css-dev-only-do-not-override-txh9fw"
+                      class="ant-col ant-form-item-label"
                     >
                       <label
                         class="ant-form-item-required"
@@ -515,7 +515,7 @@ exports[`test add server monitor should match snapshot when modal state is true 
                       </label>
                     </div>
                     <div
-                      class="ant-col ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                      class="ant-col ant-form-item-control"
                     >
                       <div
                         class="ant-form-item-control-input"
@@ -525,7 +525,7 @@ exports[`test add server monitor should match snapshot when modal state is true 
                         >
                           <input
                             aria-required="true"
-                            class="ant-input css-dev-only-do-not-override-txh9fw basic-input-wrapper css-1pd1cd5"
+                            class="ant-input basic-input-wrapper css-1pd1cd5"
                             id="host"
                             placeholder="请输入{{name}}"
                             type="text"
@@ -537,13 +537,13 @@ exports[`test add server monitor should match snapshot when modal state is true 
                   </div>
                 </div>
                 <div
-                  class="ant-form-item css-dev-only-do-not-override-txh9fw"
+                  class="ant-form-item"
                 >
                   <div
-                    class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                    class="ant-row ant-form-item-row"
                   >
                     <div
-                      class="ant-col ant-form-item-label css-dev-only-do-not-override-txh9fw"
+                      class="ant-col ant-form-item-label"
                     >
                       <label
                         class="ant-form-item-required"
@@ -554,7 +554,7 @@ exports[`test add server monitor should match snapshot when modal state is true 
                       </label>
                     </div>
                     <div
-                      class="ant-col ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                      class="ant-col ant-form-item-control"
                     >
                       <div
                         class="ant-form-item-control-input"
@@ -563,7 +563,7 @@ exports[`test add server monitor should match snapshot when modal state is true 
                           class="ant-form-item-control-input-content"
                         >
                           <div
-                            class="ant-input-number ant-input-number-lg ant-input-number-in-form-item css-dev-only-do-not-override-txh9fw basic-inputNumber-wrapper css-1fd5hnt"
+                            class="ant-input-number ant-input-number-lg ant-input-number-in-form-item basic-inputNumber-wrapper css-1fd5hnt"
                           >
                             <div
                               class="ant-input-number-handler-wrap"
@@ -644,13 +644,13 @@ exports[`test add server monitor should match snapshot when modal state is true 
                   </div>
                 </div>
                 <div
-                  class="ant-form-item css-dev-only-do-not-override-txh9fw"
+                  class="ant-form-item"
                 >
                   <div
-                    class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                    class="ant-row ant-form-item-row"
                   >
                     <div
-                      class="ant-col ant-form-item-label css-dev-only-do-not-override-txh9fw"
+                      class="ant-col ant-form-item-label"
                     >
                       <label
                         class="ant-form-item-required"
@@ -661,7 +661,7 @@ exports[`test add server monitor should match snapshot when modal state is true 
                       </label>
                     </div>
                     <div
-                      class="ant-col ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                      class="ant-col ant-form-item-control"
                     >
                       <div
                         class="ant-form-item-control-input"
@@ -671,7 +671,7 @@ exports[`test add server monitor should match snapshot when modal state is true 
                         >
                           <input
                             aria-required="true"
-                            class="ant-input css-dev-only-do-not-override-txh9fw basic-input-wrapper css-1pd1cd5"
+                            class="ant-input basic-input-wrapper css-1pd1cd5"
                             id="user"
                             placeholder="请输入{{name}}"
                             type="text"
@@ -683,13 +683,13 @@ exports[`test add server monitor should match snapshot when modal state is true 
                   </div>
                 </div>
                 <div
-                  class="ant-form-item css-dev-only-do-not-override-txh9fw"
+                  class="ant-form-item"
                 >
                   <div
-                    class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                    class="ant-row ant-form-item-row"
                   >
                     <div
-                      class="ant-col ant-form-item-label css-dev-only-do-not-override-txh9fw"
+                      class="ant-col ant-form-item-label"
                     >
                       <label
                         class="ant-form-item-required"
@@ -700,7 +700,7 @@ exports[`test add server monitor should match snapshot when modal state is true 
                       </label>
                     </div>
                     <div
-                      class="ant-col ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                      class="ant-col ant-form-item-control"
                     >
                       <div
                         class="ant-form-item-control-input"
@@ -709,11 +709,11 @@ exports[`test add server monitor should match snapshot when modal state is true 
                           class="ant-form-item-control-input-content"
                         >
                           <span
-                            class="ant-input-affix-wrapper ant-input-password basic-input-wrapper css-1pd1cd5 css-dev-only-do-not-override-txh9fw"
+                            class="ant-input-affix-wrapper ant-input-password basic-input-wrapper css-1pd1cd5"
                           >
                             <input
                               aria-required="true"
-                              class="ant-input css-dev-only-do-not-override-txh9fw"
+                              class="ant-input"
                               id="password"
                               placeholder="请输入{{name}}"
                               type="password"
@@ -752,13 +752,13 @@ exports[`test add server monitor should match snapshot when modal state is true 
                   </div>
                 </div>
                 <div
-                  class="ant-form-item css-dev-only-do-not-override-txh9fw"
+                  class="ant-form-item"
                 >
                   <div
-                    class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                    class="ant-row ant-form-item-row"
                   >
                     <div
-                      class="ant-col ant-form-item-label css-dev-only-do-not-override-txh9fw"
+                      class="ant-col ant-form-item-label"
                     >
                       <label
                         class="ant-form-item-required"
@@ -769,7 +769,7 @@ exports[`test add server monitor should match snapshot when modal state is true 
                       </label>
                     </div>
                     <div
-                      class="ant-col ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                      class="ant-col ant-form-item-control"
                     >
                       <div
                         class="ant-form-item-control-input"
@@ -778,11 +778,11 @@ exports[`test add server monitor should match snapshot when modal state is true 
                           class="ant-form-item-control-input-content"
                         >
                           <span
-                            class="ant-input-affix-wrapper basic-input-wrapper css-1pd1cd5 css-dev-only-do-not-override-txh9fw"
+                            class="ant-input-affix-wrapper basic-input-wrapper css-1pd1cd5"
                           >
                             <input
                               aria-required="true"
-                              class="ant-input css-dev-only-do-not-override-txh9fw"
+                              class="ant-input"
                               id="name"
                               placeholder="请输入监控源名"
                               type="text"
@@ -805,14 +805,14 @@ exports[`test add server monitor should match snapshot when modal state is true 
               class="ant-drawer-footer"
             >
               <div
-                class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+                class="ant-space ant-space-horizontal ant-space-align-center"
               >
                 <div
                   class="ant-space-item"
                   style="margin-right: 8px;"
                 >
                   <button
-                    class="ant-btn css-dev-only-do-not-override-txh9fw ant-btn-default basic-button-wrapper css-geipcv"
+                    class="ant-btn ant-btn-default basic-button-wrapper css-geipcv"
                     type="button"
                   >
                     <span>
@@ -824,7 +824,7 @@ exports[`test add server monitor should match snapshot when modal state is true 
                   class="ant-space-item"
                 >
                   <button
-                    class="ant-btn css-dev-only-do-not-override-txh9fw ant-btn-primary basic-button-wrapper css-geipcv"
+                    class="ant-btn ant-btn-primary basic-button-wrapper css-geipcv"
                     type="button"
                   >
                     <span>
@@ -853,7 +853,7 @@ exports[`test add server monitor should send request failed 1`] = `
   <div />
   <div>
     <div
-      class="ant-drawer ant-drawer-right css-dev-only-do-not-override-txh9fw ant-drawer-open"
+      class="ant-drawer ant-drawer-right ant-drawer-open"
       tabindex="-1"
     >
       <div
@@ -919,16 +919,16 @@ exports[`test add server monitor should send request failed 1`] = `
                 </span>
               </div>
               <form
-                class="ant-form ant-form-vertical css-dev-only-do-not-override-txh9fw"
+                class="ant-form ant-form-vertical"
               >
                 <div
-                  class="ant-form-item css-dev-only-do-not-override-txh9fw"
+                  class="ant-form-item"
                 >
                   <div
-                    class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                    class="ant-row ant-form-item-row"
                   >
                     <div
-                      class="ant-col ant-form-item-label css-dev-only-do-not-override-txh9fw"
+                      class="ant-col ant-form-item-label"
                     >
                       <label
                         class="ant-form-item-required"
@@ -939,7 +939,7 @@ exports[`test add server monitor should send request failed 1`] = `
                       </label>
                     </div>
                     <div
-                      class="ant-col ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                      class="ant-col ant-form-item-control"
                     >
                       <div
                         class="ant-form-item-control-input"
@@ -949,7 +949,7 @@ exports[`test add server monitor should send request failed 1`] = `
                         >
                           <input
                             aria-required="true"
-                            class="ant-input css-dev-only-do-not-override-txh9fw basic-input-wrapper css-1pd1cd5"
+                            class="ant-input basic-input-wrapper css-1pd1cd5"
                             id="host"
                             placeholder="请输入{{name}}"
                             type="text"
@@ -961,13 +961,13 @@ exports[`test add server monitor should send request failed 1`] = `
                   </div>
                 </div>
                 <div
-                  class="ant-form-item css-dev-only-do-not-override-txh9fw"
+                  class="ant-form-item"
                 >
                   <div
-                    class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                    class="ant-row ant-form-item-row"
                   >
                     <div
-                      class="ant-col ant-form-item-label css-dev-only-do-not-override-txh9fw"
+                      class="ant-col ant-form-item-label"
                     >
                       <label
                         class="ant-form-item-required"
@@ -978,7 +978,7 @@ exports[`test add server monitor should send request failed 1`] = `
                       </label>
                     </div>
                     <div
-                      class="ant-col ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                      class="ant-col ant-form-item-control"
                     >
                       <div
                         class="ant-form-item-control-input"
@@ -987,7 +987,7 @@ exports[`test add server monitor should send request failed 1`] = `
                           class="ant-form-item-control-input-content"
                         >
                           <div
-                            class="ant-input-number ant-input-number-lg ant-input-number-in-form-item css-dev-only-do-not-override-txh9fw basic-inputNumber-wrapper css-1fd5hnt"
+                            class="ant-input-number ant-input-number-lg ant-input-number-in-form-item basic-inputNumber-wrapper css-1fd5hnt"
                           >
                             <div
                               class="ant-input-number-handler-wrap"
@@ -1068,13 +1068,13 @@ exports[`test add server monitor should send request failed 1`] = `
                   </div>
                 </div>
                 <div
-                  class="ant-form-item css-dev-only-do-not-override-txh9fw"
+                  class="ant-form-item"
                 >
                   <div
-                    class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                    class="ant-row ant-form-item-row"
                   >
                     <div
-                      class="ant-col ant-form-item-label css-dev-only-do-not-override-txh9fw"
+                      class="ant-col ant-form-item-label"
                     >
                       <label
                         class="ant-form-item-required"
@@ -1085,7 +1085,7 @@ exports[`test add server monitor should send request failed 1`] = `
                       </label>
                     </div>
                     <div
-                      class="ant-col ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                      class="ant-col ant-form-item-control"
                     >
                       <div
                         class="ant-form-item-control-input"
@@ -1095,7 +1095,7 @@ exports[`test add server monitor should send request failed 1`] = `
                         >
                           <input
                             aria-required="true"
-                            class="ant-input css-dev-only-do-not-override-txh9fw basic-input-wrapper css-1pd1cd5"
+                            class="ant-input basic-input-wrapper css-1pd1cd5"
                             id="user"
                             placeholder="请输入{{name}}"
                             type="text"
@@ -1107,13 +1107,13 @@ exports[`test add server monitor should send request failed 1`] = `
                   </div>
                 </div>
                 <div
-                  class="ant-form-item css-dev-only-do-not-override-txh9fw"
+                  class="ant-form-item"
                 >
                   <div
-                    class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                    class="ant-row ant-form-item-row"
                   >
                     <div
-                      class="ant-col ant-form-item-label css-dev-only-do-not-override-txh9fw"
+                      class="ant-col ant-form-item-label"
                     >
                       <label
                         class="ant-form-item-required"
@@ -1124,7 +1124,7 @@ exports[`test add server monitor should send request failed 1`] = `
                       </label>
                     </div>
                     <div
-                      class="ant-col ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                      class="ant-col ant-form-item-control"
                     >
                       <div
                         class="ant-form-item-control-input"
@@ -1133,11 +1133,11 @@ exports[`test add server monitor should send request failed 1`] = `
                           class="ant-form-item-control-input-content"
                         >
                           <span
-                            class="ant-input-affix-wrapper ant-input-password basic-input-wrapper css-1pd1cd5 css-dev-only-do-not-override-txh9fw"
+                            class="ant-input-affix-wrapper ant-input-password basic-input-wrapper css-1pd1cd5"
                           >
                             <input
                               aria-required="true"
-                              class="ant-input css-dev-only-do-not-override-txh9fw"
+                              class="ant-input"
                               id="password"
                               placeholder="请输入{{name}}"
                               type="password"
@@ -1176,13 +1176,13 @@ exports[`test add server monitor should send request failed 1`] = `
                   </div>
                 </div>
                 <div
-                  class="ant-form-item css-dev-only-do-not-override-txh9fw"
+                  class="ant-form-item"
                 >
                   <div
-                    class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                    class="ant-row ant-form-item-row"
                   >
                     <div
-                      class="ant-col ant-form-item-label css-dev-only-do-not-override-txh9fw"
+                      class="ant-col ant-form-item-label"
                     >
                       <label
                         class="ant-form-item-required"
@@ -1193,7 +1193,7 @@ exports[`test add server monitor should send request failed 1`] = `
                       </label>
                     </div>
                     <div
-                      class="ant-col ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                      class="ant-col ant-form-item-control"
                     >
                       <div
                         class="ant-form-item-control-input"
@@ -1202,11 +1202,11 @@ exports[`test add server monitor should send request failed 1`] = `
                           class="ant-form-item-control-input-content"
                         >
                           <span
-                            class="ant-input-affix-wrapper basic-input-wrapper css-1pd1cd5 css-dev-only-do-not-override-txh9fw"
+                            class="ant-input-affix-wrapper basic-input-wrapper css-1pd1cd5"
                           >
                             <input
                               aria-required="true"
-                              class="ant-input css-dev-only-do-not-override-txh9fw"
+                              class="ant-input"
                               id="name"
                               placeholder="请输入监控源名"
                               type="text"
@@ -1229,14 +1229,14 @@ exports[`test add server monitor should send request failed 1`] = `
               class="ant-drawer-footer"
             >
               <div
-                class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+                class="ant-space ant-space-horizontal ant-space-align-center"
               >
                 <div
                   class="ant-space-item"
                   style="margin-right: 8px;"
                 >
                   <button
-                    class="ant-btn css-dev-only-do-not-override-txh9fw ant-btn-default basic-button-wrapper css-geipcv"
+                    class="ant-btn ant-btn-default basic-button-wrapper css-geipcv"
                     type="button"
                   >
                     <span>
@@ -1248,7 +1248,7 @@ exports[`test add server monitor should send request failed 1`] = `
                   class="ant-space-item"
                 >
                   <button
-                    class="ant-btn css-dev-only-do-not-override-txh9fw ant-btn-primary basic-button-wrapper css-geipcv"
+                    class="ant-btn ant-btn-primary basic-button-wrapper css-geipcv"
                     type="button"
                   >
                     <span>
@@ -1277,7 +1277,7 @@ exports[`test add server monitor should send request when input correct fields i
   <div />
   <div>
     <div
-      class="ant-drawer ant-drawer-right css-dev-only-do-not-override-txh9fw ant-drawer-open"
+      class="ant-drawer ant-drawer-right ant-drawer-open"
       tabindex="-1"
     >
       <div
@@ -1343,16 +1343,16 @@ exports[`test add server monitor should send request when input correct fields i
                 </span>
               </div>
               <form
-                class="ant-form ant-form-vertical css-dev-only-do-not-override-txh9fw"
+                class="ant-form ant-form-vertical"
               >
                 <div
-                  class="ant-form-item css-dev-only-do-not-override-txh9fw"
+                  class="ant-form-item"
                 >
                   <div
-                    class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                    class="ant-row ant-form-item-row"
                   >
                     <div
-                      class="ant-col ant-form-item-label css-dev-only-do-not-override-txh9fw"
+                      class="ant-col ant-form-item-label"
                     >
                       <label
                         class="ant-form-item-required"
@@ -1363,7 +1363,7 @@ exports[`test add server monitor should send request when input correct fields i
                       </label>
                     </div>
                     <div
-                      class="ant-col ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                      class="ant-col ant-form-item-control"
                     >
                       <div
                         class="ant-form-item-control-input"
@@ -1373,7 +1373,7 @@ exports[`test add server monitor should send request when input correct fields i
                         >
                           <input
                             aria-required="true"
-                            class="ant-input css-dev-only-do-not-override-txh9fw basic-input-wrapper css-1pd1cd5"
+                            class="ant-input basic-input-wrapper css-1pd1cd5"
                             id="host"
                             placeholder="请输入{{name}}"
                             type="text"
@@ -1385,13 +1385,13 @@ exports[`test add server monitor should send request when input correct fields i
                   </div>
                 </div>
                 <div
-                  class="ant-form-item css-dev-only-do-not-override-txh9fw"
+                  class="ant-form-item"
                 >
                   <div
-                    class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                    class="ant-row ant-form-item-row"
                   >
                     <div
-                      class="ant-col ant-form-item-label css-dev-only-do-not-override-txh9fw"
+                      class="ant-col ant-form-item-label"
                     >
                       <label
                         class="ant-form-item-required"
@@ -1402,7 +1402,7 @@ exports[`test add server monitor should send request when input correct fields i
                       </label>
                     </div>
                     <div
-                      class="ant-col ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                      class="ant-col ant-form-item-control"
                     >
                       <div
                         class="ant-form-item-control-input"
@@ -1411,7 +1411,7 @@ exports[`test add server monitor should send request when input correct fields i
                           class="ant-form-item-control-input-content"
                         >
                           <div
-                            class="ant-input-number ant-input-number-lg ant-input-number-in-form-item css-dev-only-do-not-override-txh9fw basic-inputNumber-wrapper css-1fd5hnt"
+                            class="ant-input-number ant-input-number-lg ant-input-number-in-form-item basic-inputNumber-wrapper css-1fd5hnt"
                           >
                             <div
                               class="ant-input-number-handler-wrap"
@@ -1492,13 +1492,13 @@ exports[`test add server monitor should send request when input correct fields i
                   </div>
                 </div>
                 <div
-                  class="ant-form-item css-dev-only-do-not-override-txh9fw"
+                  class="ant-form-item"
                 >
                   <div
-                    class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                    class="ant-row ant-form-item-row"
                   >
                     <div
-                      class="ant-col ant-form-item-label css-dev-only-do-not-override-txh9fw"
+                      class="ant-col ant-form-item-label"
                     >
                       <label
                         class="ant-form-item-required"
@@ -1509,7 +1509,7 @@ exports[`test add server monitor should send request when input correct fields i
                       </label>
                     </div>
                     <div
-                      class="ant-col ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                      class="ant-col ant-form-item-control"
                     >
                       <div
                         class="ant-form-item-control-input"
@@ -1519,7 +1519,7 @@ exports[`test add server monitor should send request when input correct fields i
                         >
                           <input
                             aria-required="true"
-                            class="ant-input css-dev-only-do-not-override-txh9fw basic-input-wrapper css-1pd1cd5"
+                            class="ant-input basic-input-wrapper css-1pd1cd5"
                             id="user"
                             placeholder="请输入{{name}}"
                             type="text"
@@ -1531,13 +1531,13 @@ exports[`test add server monitor should send request when input correct fields i
                   </div>
                 </div>
                 <div
-                  class="ant-form-item css-dev-only-do-not-override-txh9fw"
+                  class="ant-form-item"
                 >
                   <div
-                    class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                    class="ant-row ant-form-item-row"
                   >
                     <div
-                      class="ant-col ant-form-item-label css-dev-only-do-not-override-txh9fw"
+                      class="ant-col ant-form-item-label"
                     >
                       <label
                         class="ant-form-item-required"
@@ -1548,7 +1548,7 @@ exports[`test add server monitor should send request when input correct fields i
                       </label>
                     </div>
                     <div
-                      class="ant-col ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                      class="ant-col ant-form-item-control"
                     >
                       <div
                         class="ant-form-item-control-input"
@@ -1557,11 +1557,11 @@ exports[`test add server monitor should send request when input correct fields i
                           class="ant-form-item-control-input-content"
                         >
                           <span
-                            class="ant-input-affix-wrapper ant-input-password basic-input-wrapper css-1pd1cd5 css-dev-only-do-not-override-txh9fw"
+                            class="ant-input-affix-wrapper ant-input-password basic-input-wrapper css-1pd1cd5"
                           >
                             <input
                               aria-required="true"
-                              class="ant-input css-dev-only-do-not-override-txh9fw"
+                              class="ant-input"
                               id="password"
                               placeholder="请输入{{name}}"
                               type="password"
@@ -1600,13 +1600,13 @@ exports[`test add server monitor should send request when input correct fields i
                   </div>
                 </div>
                 <div
-                  class="ant-form-item css-dev-only-do-not-override-txh9fw"
+                  class="ant-form-item"
                 >
                   <div
-                    class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                    class="ant-row ant-form-item-row"
                   >
                     <div
-                      class="ant-col ant-form-item-label css-dev-only-do-not-override-txh9fw"
+                      class="ant-col ant-form-item-label"
                     >
                       <label
                         class="ant-form-item-required"
@@ -1617,7 +1617,7 @@ exports[`test add server monitor should send request when input correct fields i
                       </label>
                     </div>
                     <div
-                      class="ant-col ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                      class="ant-col ant-form-item-control"
                     >
                       <div
                         class="ant-form-item-control-input"
@@ -1626,11 +1626,11 @@ exports[`test add server monitor should send request when input correct fields i
                           class="ant-form-item-control-input-content"
                         >
                           <span
-                            class="ant-input-affix-wrapper basic-input-wrapper css-1pd1cd5 css-dev-only-do-not-override-txh9fw"
+                            class="ant-input-affix-wrapper basic-input-wrapper css-1pd1cd5"
                           >
                             <input
                               aria-required="true"
-                              class="ant-input css-dev-only-do-not-override-txh9fw"
+                              class="ant-input"
                               id="name"
                               placeholder="请输入监控源名"
                               type="text"
@@ -1653,14 +1653,14 @@ exports[`test add server monitor should send request when input correct fields i
               class="ant-drawer-footer"
             >
               <div
-                class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+                class="ant-space ant-space-horizontal ant-space-align-center"
               >
                 <div
                   class="ant-space-item"
                   style="margin-right: 8px;"
                 >
                   <button
-                    class="ant-btn css-dev-only-do-not-override-txh9fw ant-btn-default basic-button-wrapper css-geipcv"
+                    class="ant-btn ant-btn-default basic-button-wrapper css-geipcv"
                     type="button"
                   >
                     <span>
@@ -1672,7 +1672,7 @@ exports[`test add server monitor should send request when input correct fields i
                   class="ant-space-item"
                 >
                   <button
-                    class="ant-btn css-dev-only-do-not-override-txh9fw ant-btn-primary basic-button-wrapper css-geipcv"
+                    class="ant-btn ant-btn-primary basic-button-wrapper css-geipcv"
                     type="button"
                   >
                     <span>
@@ -1701,7 +1701,7 @@ exports[`test add server monitor show error info when get host name failed 1`] =
   <div />
   <div>
     <div
-      class="ant-drawer ant-drawer-right css-dev-only-do-not-override-txh9fw ant-drawer-open"
+      class="ant-drawer ant-drawer-right ant-drawer-open"
       tabindex="-1"
     >
       <div
@@ -1767,16 +1767,16 @@ exports[`test add server monitor show error info when get host name failed 1`] =
                 </span>
               </div>
               <form
-                class="ant-form ant-form-vertical css-dev-only-do-not-override-txh9fw"
+                class="ant-form ant-form-vertical"
               >
                 <div
-                  class="ant-form-item css-dev-only-do-not-override-txh9fw"
+                  class="ant-form-item"
                 >
                   <div
-                    class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                    class="ant-row ant-form-item-row"
                   >
                     <div
-                      class="ant-col ant-form-item-label css-dev-only-do-not-override-txh9fw"
+                      class="ant-col ant-form-item-label"
                     >
                       <label
                         class="ant-form-item-required"
@@ -1787,7 +1787,7 @@ exports[`test add server monitor show error info when get host name failed 1`] =
                       </label>
                     </div>
                     <div
-                      class="ant-col ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                      class="ant-col ant-form-item-control"
                     >
                       <div
                         class="ant-form-item-control-input"
@@ -1797,7 +1797,7 @@ exports[`test add server monitor show error info when get host name failed 1`] =
                         >
                           <input
                             aria-required="true"
-                            class="ant-input css-dev-only-do-not-override-txh9fw basic-input-wrapper css-1pd1cd5"
+                            class="ant-input basic-input-wrapper css-1pd1cd5"
                             id="host"
                             placeholder="请输入{{name}}"
                             type="text"
@@ -1809,13 +1809,13 @@ exports[`test add server monitor show error info when get host name failed 1`] =
                   </div>
                 </div>
                 <div
-                  class="ant-form-item css-dev-only-do-not-override-txh9fw"
+                  class="ant-form-item"
                 >
                   <div
-                    class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                    class="ant-row ant-form-item-row"
                   >
                     <div
-                      class="ant-col ant-form-item-label css-dev-only-do-not-override-txh9fw"
+                      class="ant-col ant-form-item-label"
                     >
                       <label
                         class="ant-form-item-required"
@@ -1826,7 +1826,7 @@ exports[`test add server monitor show error info when get host name failed 1`] =
                       </label>
                     </div>
                     <div
-                      class="ant-col ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                      class="ant-col ant-form-item-control"
                     >
                       <div
                         class="ant-form-item-control-input"
@@ -1835,7 +1835,7 @@ exports[`test add server monitor show error info when get host name failed 1`] =
                           class="ant-form-item-control-input-content"
                         >
                           <div
-                            class="ant-input-number ant-input-number-lg ant-input-number-in-form-item css-dev-only-do-not-override-txh9fw basic-inputNumber-wrapper css-1fd5hnt"
+                            class="ant-input-number ant-input-number-lg ant-input-number-in-form-item basic-inputNumber-wrapper css-1fd5hnt"
                           >
                             <div
                               class="ant-input-number-handler-wrap"
@@ -1916,13 +1916,13 @@ exports[`test add server monitor show error info when get host name failed 1`] =
                   </div>
                 </div>
                 <div
-                  class="ant-form-item css-dev-only-do-not-override-txh9fw"
+                  class="ant-form-item"
                 >
                   <div
-                    class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                    class="ant-row ant-form-item-row"
                   >
                     <div
-                      class="ant-col ant-form-item-label css-dev-only-do-not-override-txh9fw"
+                      class="ant-col ant-form-item-label"
                     >
                       <label
                         class="ant-form-item-required"
@@ -1933,7 +1933,7 @@ exports[`test add server monitor show error info when get host name failed 1`] =
                       </label>
                     </div>
                     <div
-                      class="ant-col ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                      class="ant-col ant-form-item-control"
                     >
                       <div
                         class="ant-form-item-control-input"
@@ -1943,7 +1943,7 @@ exports[`test add server monitor show error info when get host name failed 1`] =
                         >
                           <input
                             aria-required="true"
-                            class="ant-input css-dev-only-do-not-override-txh9fw basic-input-wrapper css-1pd1cd5"
+                            class="ant-input basic-input-wrapper css-1pd1cd5"
                             id="user"
                             placeholder="请输入{{name}}"
                             type="text"
@@ -1955,13 +1955,13 @@ exports[`test add server monitor show error info when get host name failed 1`] =
                   </div>
                 </div>
                 <div
-                  class="ant-form-item css-dev-only-do-not-override-txh9fw"
+                  class="ant-form-item"
                 >
                   <div
-                    class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                    class="ant-row ant-form-item-row"
                   >
                     <div
-                      class="ant-col ant-form-item-label css-dev-only-do-not-override-txh9fw"
+                      class="ant-col ant-form-item-label"
                     >
                       <label
                         class="ant-form-item-required"
@@ -1972,7 +1972,7 @@ exports[`test add server monitor show error info when get host name failed 1`] =
                       </label>
                     </div>
                     <div
-                      class="ant-col ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                      class="ant-col ant-form-item-control"
                     >
                       <div
                         class="ant-form-item-control-input"
@@ -1981,11 +1981,11 @@ exports[`test add server monitor show error info when get host name failed 1`] =
                           class="ant-form-item-control-input-content"
                         >
                           <span
-                            class="ant-input-affix-wrapper ant-input-password basic-input-wrapper css-1pd1cd5 css-dev-only-do-not-override-txh9fw"
+                            class="ant-input-affix-wrapper ant-input-password basic-input-wrapper css-1pd1cd5"
                           >
                             <input
                               aria-required="true"
-                              class="ant-input css-dev-only-do-not-override-txh9fw"
+                              class="ant-input"
                               id="password"
                               placeholder="请输入{{name}}"
                               type="password"
@@ -2024,13 +2024,13 @@ exports[`test add server monitor show error info when get host name failed 1`] =
                   </div>
                 </div>
                 <div
-                  class="ant-form-item css-dev-only-do-not-override-txh9fw"
+                  class="ant-form-item"
                 >
                   <div
-                    class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                    class="ant-row ant-form-item-row"
                   >
                     <div
-                      class="ant-col ant-form-item-label css-dev-only-do-not-override-txh9fw"
+                      class="ant-col ant-form-item-label"
                     >
                       <label
                         class="ant-form-item-required"
@@ -2041,7 +2041,7 @@ exports[`test add server monitor show error info when get host name failed 1`] =
                       </label>
                     </div>
                     <div
-                      class="ant-col ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                      class="ant-col ant-form-item-control"
                     >
                       <div
                         class="ant-form-item-control-input"
@@ -2050,11 +2050,11 @@ exports[`test add server monitor show error info when get host name failed 1`] =
                           class="ant-form-item-control-input-content"
                         >
                           <span
-                            class="ant-input-affix-wrapper basic-input-wrapper css-1pd1cd5 css-dev-only-do-not-override-txh9fw"
+                            class="ant-input-affix-wrapper basic-input-wrapper css-1pd1cd5"
                           >
                             <input
                               aria-required="true"
-                              class="ant-input css-dev-only-do-not-override-txh9fw"
+                              class="ant-input"
                               id="name"
                               placeholder="请输入监控源名"
                               type="text"
@@ -2077,14 +2077,14 @@ exports[`test add server monitor show error info when get host name failed 1`] =
               class="ant-drawer-footer"
             >
               <div
-                class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+                class="ant-space ant-space-horizontal ant-space-align-center"
               >
                 <div
                   class="ant-space-item"
                   style="margin-right: 8px;"
                 >
                   <button
-                    class="ant-btn css-dev-only-do-not-override-txh9fw ant-btn-default basic-button-wrapper css-geipcv"
+                    class="ant-btn ant-btn-default basic-button-wrapper css-geipcv"
                     type="button"
                   >
                     <span>
@@ -2096,7 +2096,7 @@ exports[`test add server monitor show error info when get host name failed 1`] =
                   class="ant-space-item"
                 >
                   <button
-                    class="ant-btn css-dev-only-do-not-override-txh9fw ant-btn-primary basic-button-wrapper css-geipcv"
+                    class="ant-btn ant-btn-primary basic-button-wrapper css-geipcv"
                     type="button"
                   >
                     <span>

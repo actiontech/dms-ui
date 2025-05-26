@@ -8,7 +8,7 @@ import {
 } from '../../testUtils/mockApi/monitorSourceConfig/data';
 import { createSpySuccessResponse } from '@actiontech/shared/lib/testUtil/mockApi';
 import { useDispatch } from 'react-redux';
-import { superRender } from '../../testUtils/customRender';
+import { diagnosisSuperRender } from '../../testUtils/superRender';
 import { ModalName } from '../../data/ModalName';
 import eventEmitter from '../../utils/EventEmitter';
 import EmitterKey from '../../data/EmitterKey';
@@ -36,7 +36,7 @@ describe('test monitor source config', () => {
   });
 
   const customRender = (data = adminPermission) => {
-    return superRender(<MonitorSourceConfig />, undefined, {
+    return diagnosisSuperRender(<MonitorSourceConfig />, undefined, {
       initStore: {
         user: {
           userScope: data

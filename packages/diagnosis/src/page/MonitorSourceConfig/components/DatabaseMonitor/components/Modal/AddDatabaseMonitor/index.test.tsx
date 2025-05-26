@@ -2,7 +2,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import monitorSourceConfig from '../../../../../../../testUtils/mockApi/monitorSourceConfig';
 import { act, cleanup, fireEvent, screen } from '@testing-library/react';
 import AddDatabaseMonitor from './index';
-import { superRender } from '../../../../../../../testUtils/customRender';
+import { diagnosisSuperRender } from '../../../../../../../testUtils/superRender';
 import {
   getAllBySelector,
   getBySelector
@@ -56,13 +56,13 @@ describe('test add database monitor', () => {
         }
       });
     });
-    const { container } = superRender(<AddDatabaseMonitor />);
+    const { container } = diagnosisSuperRender(<AddDatabaseMonitor />);
     await act(async () => jest.advanceTimersByTime(3000));
     expect(container).toMatchInlineSnapshot('<div />');
   });
 
   it('should match snapshot when modal state is true ', async () => {
-    const { baseElement } = superRender(<AddDatabaseMonitor />);
+    const { baseElement } = diagnosisSuperRender(<AddDatabaseMonitor />);
     await act(async () => jest.advanceTimersByTime(3000));
     expect(baseElement).toMatchSnapshot();
     expect(screen.getByText('添加数据库监控源')).toBeInTheDocument();
@@ -72,7 +72,7 @@ describe('test add database monitor', () => {
   });
 
   it('close modal by click close button', async () => {
-    const { baseElement } = superRender(<AddDatabaseMonitor />);
+    const { baseElement } = diagnosisSuperRender(<AddDatabaseMonitor />);
     await act(async () => jest.advanceTimersByTime(1000));
     expect(baseElement).toMatchSnapshot();
 
@@ -91,7 +91,7 @@ describe('test add database monitor', () => {
   it('should send request when input correct fields info', async () => {
     const emitSpy = jest.spyOn(eventEmitter, 'emit');
     const requestAddDatabaseMonitor = monitorSourceConfig.addDatabaseMonitor();
-    const { baseElement } = superRender(<AddDatabaseMonitor />);
+    const { baseElement } = diagnosisSuperRender(<AddDatabaseMonitor />);
     await act(async () => jest.advanceTimersByTime(1000));
     expect(baseElement).toMatchSnapshot();
     // monitor name
@@ -186,7 +186,7 @@ describe('test add database monitor', () => {
     requestAddDatabaseMonitor.mockImplementation(() =>
       createSpySuccessResponse({ code: 300, message: 'error' })
     );
-    const { baseElement } = superRender(<AddDatabaseMonitor />);
+    const { baseElement } = diagnosisSuperRender(<AddDatabaseMonitor />);
     await act(async () => jest.advanceTimersByTime(1000));
     expect(baseElement).toMatchSnapshot();
     // monitor name

@@ -1,5 +1,5 @@
 import { act, cleanup, fireEvent, screen } from '@testing-library/react';
-import { superRender } from '../../../../../../testUtils/customRender';
+import { diagnosisSuperRender } from '../../../../../../testUtils/superRender';
 import OperationTypes, { ALL_Operation } from './index';
 
 describe('diagnosis/OperationTypes', () => {
@@ -15,7 +15,7 @@ describe('diagnosis/OperationTypes', () => {
 
   it('render normal type filter', async () => {
     const clickMock = jest.fn();
-    const { container } = superRender(
+    const { container } = diagnosisSuperRender(
       <OperationTypes
         typeData={['1', '2', '3']}
         currentType={ALL_Operation}

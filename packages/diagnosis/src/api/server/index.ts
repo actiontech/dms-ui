@@ -74,4 +74,6 @@ class ServerService extends ServiceBase {
   }
 }
 
-export default new ServerService();
+const serverService = new ServerService();
+
+export default serverService;

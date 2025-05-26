@@ -1,5 +1,5 @@
 import UserNavigate from '.';
-import { superRender } from '../../../../testUtils/customRender';
+import { diagnosisSuperRender } from '../../../../testUtils/superRender';
 import { SupportTheme } from '@actiontech/shared/lib/enum';
 import { act, fireEvent, screen } from '@testing-library/react';
 import { getBySelector } from '@actiontech/shared/lib/testUtil/customQuery';
@@ -26,7 +26,7 @@ describe('diagnosis/UserNavigate', () => {
   });
 
   const customRender = () => {
-    return superRender(
+    return diagnosisSuperRender(
       <UserNavigate
         username="admin"
         theme={SupportTheme.LIGHT}

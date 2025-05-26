@@ -1,6 +1,6 @@
 import { useDispatch, useSelector } from 'react-redux';
 import { act, cleanup } from '@testing-library/react';
-import { superRender } from '../../../../../../testUtils/customRender';
+import { diagnosisSuperRender } from '../../../../../../testUtils/superRender';
 import { ModalName } from '../../../../../../data/ModalName';
 import DatabaseMonitorModal from './index';
 
@@ -36,7 +36,7 @@ describe('test init monitor item config modal', () => {
   });
 
   it('init check monitor config modal status data', async () => {
-    const { container } = superRender(<DatabaseMonitorModal />);
+    const { container } = diagnosisSuperRender(<DatabaseMonitorModal />);
     await act(async () => jest.advanceTimersByTime(3000));
     expect(container).toMatchInlineSnapshot('<div />');
     expect(mockDispatch).toHaveBeenCalledTimes(1);

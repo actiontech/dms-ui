@@ -2,7 +2,7 @@ import { act, cleanup, fireEvent, screen } from '@testing-library/react';
 import userManagement from '../../../../testUtils/mockApi/userManagement';
 import { createSpySuccessResponse } from '@actiontech/shared/lib/testUtil/mockApi';
 import { useDispatch } from 'react-redux';
-import { superRender } from '../../../../testUtils/customRender';
+import { diagnosisSuperRender } from '../../../../testUtils/superRender';
 import PermissionList from './';
 import { getAllBySelector } from '@actiontech/shared/lib/testUtil/customQuery';
 import { roleListData } from '../../../../testUtils/mockApi/userManagement/data';
@@ -29,7 +29,7 @@ describe('diagnosis/test user table', () => {
   });
 
   const customRender = (id?: string) => {
-    return superRender(<PermissionList />, undefined, {
+    return diagnosisSuperRender(<PermissionList />, undefined, {
       initStore: {
         userManagement: {
           modalStatus: {},

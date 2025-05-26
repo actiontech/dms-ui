@@ -5,7 +5,7 @@ exports[`diagnosis/update user modal close modal by click close button 1`] = `
   <div />
   <div>
     <div
-      class="ant-drawer ant-drawer-right css-dev-only-do-not-override-txh9fw ant-drawer-open"
+      class="ant-drawer ant-drawer-right ant-drawer-open"
       tabindex="-1"
     >
       <div
@@ -71,16 +71,16 @@ exports[`diagnosis/update user modal close modal by click close button 1`] = `
                 </span>
               </div>
               <form
-                class="ant-form ant-form-vertical css-dev-only-do-not-override-txh9fw"
+                class="ant-form ant-form-vertical"
               >
                 <div
-                  class="ant-form-item css-dev-only-do-not-override-txh9fw"
+                  class="ant-form-item"
                 >
                   <div
-                    class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                    class="ant-row ant-form-item-row"
                   >
                     <div
-                      class="ant-col ant-form-item-label css-dev-only-do-not-override-txh9fw"
+                      class="ant-col ant-form-item-label"
                     >
                       <label
                         class="ant-form-item-required"
@@ -91,7 +91,7 @@ exports[`diagnosis/update user modal close modal by click close button 1`] = `
                       </label>
                     </div>
                     <div
-                      class="ant-col ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                      class="ant-col ant-form-item-control"
                     >
                       <div
                         class="ant-form-item-control-input"
@@ -101,7 +101,7 @@ exports[`diagnosis/update user modal close modal by click close button 1`] = `
                         >
                           <input
                             aria-required="true"
-                            class="ant-input ant-input-disabled css-dev-only-do-not-override-txh9fw basic-input-wrapper css-1pd1cd5"
+                            class="ant-input ant-input-disabled basic-input-wrapper css-1pd1cd5"
                             disabled=""
                             id="username"
                             placeholder="请输入{{name}}"
@@ -114,13 +114,13 @@ exports[`diagnosis/update user modal close modal by click close button 1`] = `
                   </div>
                 </div>
                 <div
-                  class="ant-form-item css-dev-only-do-not-override-txh9fw"
+                  class="ant-form-item"
                 >
                   <div
-                    class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                    class="ant-row ant-form-item-row"
                   >
                     <div
-                      class="ant-col ant-form-item-label css-dev-only-do-not-override-txh9fw"
+                      class="ant-col ant-form-item-label"
                     >
                       <label
                         class=""
@@ -131,7 +131,7 @@ exports[`diagnosis/update user modal close modal by click close button 1`] = `
                       </label>
                     </div>
                     <div
-                      class="ant-col ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                      class="ant-col ant-form-item-control"
                     >
                       <div
                         class="ant-form-item-control-input"
@@ -141,7 +141,7 @@ exports[`diagnosis/update user modal close modal by click close button 1`] = `
                         >
                           <button
                             aria-checked="false"
-                            class="ant-switch basic-switch-wrapper css-g6dhbn css-dev-only-do-not-override-txh9fw"
+                            class="ant-switch basic-switch-wrapper css-g6dhbn"
                             id="isNeedUpdatePassword"
                             role="switch"
                             type="button"
@@ -166,13 +166,13 @@ exports[`diagnosis/update user modal close modal by click close button 1`] = `
                   </div>
                 </div>
                 <div
-                  class="ant-form-item css-dev-only-do-not-override-txh9fw"
+                  class="ant-form-item"
                 >
                   <div
-                    class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                    class="ant-row ant-form-item-row"
                   >
                     <div
-                      class="ant-col ant-form-item-label css-dev-only-do-not-override-txh9fw"
+                      class="ant-col ant-form-item-label"
                     >
                       <label
                         class="ant-form-item-required"
@@ -183,7 +183,7 @@ exports[`diagnosis/update user modal close modal by click close button 1`] = `
                       </label>
                     </div>
                     <div
-                      class="ant-col ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                      class="ant-col ant-form-item-control"
                     >
                       <div
                         class="ant-form-item-control-input"
@@ -193,7 +193,7 @@ exports[`diagnosis/update user modal close modal by click close button 1`] = `
                         >
                           <div
                             aria-required="true"
-                            class="ant-select ant-select-in-form-item basic-select-wrapper css-iy4o4x css-dev-only-do-not-override-txh9fw ant-select-single ant-select-allow-clear ant-select-show-arrow ant-select-loading ant-select-show-search"
+                            class="ant-select ant-select-in-form-item basic-select-wrapper css-iy4o4x ant-select-single ant-select-allow-clear ant-select-show-arrow ant-select-loading ant-select-show-search"
                           >
                             <div
                               class="ant-select-selector"
@@ -280,14 +280,14 @@ exports[`diagnosis/update user modal close modal by click close button 1`] = `
               class="ant-drawer-footer"
             >
               <div
-                class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+                class="ant-space ant-space-horizontal ant-space-align-center"
               >
                 <div
                   class="ant-space-item"
                   style="margin-right: 8px;"
                 >
                   <button
-                    class="ant-btn css-dev-only-do-not-override-txh9fw ant-btn-default basic-button-wrapper css-geipcv"
+                    class="ant-btn ant-btn-default basic-button-wrapper css-geipcv"
                     type="button"
                   >
                     <span>
@@ -299,7 +299,7 @@ exports[`diagnosis/update user modal close modal by click close button 1`] = `
                   class="ant-space-item"
                 >
                   <button
-                    class="ant-btn css-dev-only-do-not-override-txh9fw ant-btn-primary basic-button-wrapper css-geipcv"
+                    class="ant-btn ant-btn-primary basic-button-wrapper css-geipcv"
                     type="button"
                   >
                     <span>
@@ -328,7 +328,7 @@ exports[`diagnosis/update user modal should disabled role select when user name 
   <div />
   <div>
     <div
-      class="ant-drawer ant-drawer-right css-dev-only-do-not-override-txh9fw ant-drawer-open"
+      class="ant-drawer ant-drawer-right ant-drawer-open"
       tabindex="-1"
     >
       <div
@@ -394,16 +394,16 @@ exports[`diagnosis/update user modal should disabled role select when user name 
                 </span>
               </div>
               <form
-                class="ant-form ant-form-vertical css-dev-only-do-not-override-txh9fw"
+                class="ant-form ant-form-vertical"
               >
                 <div
-                  class="ant-form-item css-dev-only-do-not-override-txh9fw"
+                  class="ant-form-item"
                 >
                   <div
-                    class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                    class="ant-row ant-form-item-row"
                   >
                     <div
-                      class="ant-col ant-form-item-label css-dev-only-do-not-override-txh9fw"
+                      class="ant-col ant-form-item-label"
                     >
                       <label
                         class="ant-form-item-required"
@@ -414,7 +414,7 @@ exports[`diagnosis/update user modal should disabled role select when user name 
                       </label>
                     </div>
                     <div
-                      class="ant-col ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                      class="ant-col ant-form-item-control"
                     >
                       <div
                         class="ant-form-item-control-input"
@@ -424,7 +424,7 @@ exports[`diagnosis/update user modal should disabled role select when user name 
                         >
                           <input
                             aria-required="true"
-                            class="ant-input ant-input-disabled css-dev-only-do-not-override-txh9fw basic-input-wrapper css-1pd1cd5"
+                            class="ant-input ant-input-disabled basic-input-wrapper css-1pd1cd5"
                             disabled=""
                             id="username"
                             placeholder="请输入{{name}}"
@@ -437,13 +437,13 @@ exports[`diagnosis/update user modal should disabled role select when user name 
                   </div>
                 </div>
                 <div
-                  class="ant-form-item css-dev-only-do-not-override-txh9fw"
+                  class="ant-form-item"
                 >
                   <div
-                    class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                    class="ant-row ant-form-item-row"
                   >
                     <div
-                      class="ant-col ant-form-item-label css-dev-only-do-not-override-txh9fw"
+                      class="ant-col ant-form-item-label"
                     >
                       <label
                         class=""
@@ -454,7 +454,7 @@ exports[`diagnosis/update user modal should disabled role select when user name 
                       </label>
                     </div>
                     <div
-                      class="ant-col ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                      class="ant-col ant-form-item-control"
                     >
                       <div
                         class="ant-form-item-control-input"
@@ -464,7 +464,7 @@ exports[`diagnosis/update user modal should disabled role select when user name 
                         >
                           <button
                             aria-checked="false"
-                            class="ant-switch basic-switch-wrapper css-g6dhbn css-dev-only-do-not-override-txh9fw"
+                            class="ant-switch basic-switch-wrapper css-g6dhbn"
                             id="isNeedUpdatePassword"
                             role="switch"
                             type="button"
@@ -489,13 +489,13 @@ exports[`diagnosis/update user modal should disabled role select when user name 
                   </div>
                 </div>
                 <div
-                  class="ant-form-item css-dev-only-do-not-override-txh9fw"
+                  class="ant-form-item"
                 >
                   <div
-                    class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                    class="ant-row ant-form-item-row"
                   >
                     <div
-                      class="ant-col ant-form-item-label css-dev-only-do-not-override-txh9fw"
+                      class="ant-col ant-form-item-label"
                     >
                       <label
                         class="ant-form-item-required"
@@ -506,7 +506,7 @@ exports[`diagnosis/update user modal should disabled role select when user name 
                       </label>
                     </div>
                     <div
-                      class="ant-col ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                      class="ant-col ant-form-item-control"
                     >
                       <div
                         class="ant-form-item-control-input"
@@ -516,7 +516,7 @@ exports[`diagnosis/update user modal should disabled role select when user name 
                         >
                           <div
                             aria-required="true"
-                            class="ant-select ant-select-in-form-item basic-select-wrapper css-iy4o4x css-dev-only-do-not-override-txh9fw ant-select-single ant-select-allow-clear ant-select-show-arrow ant-select-disabled ant-select-loading ant-select-show-search"
+                            class="ant-select ant-select-in-form-item basic-select-wrapper css-iy4o4x ant-select-single ant-select-allow-clear ant-select-show-arrow ant-select-disabled ant-select-loading ant-select-show-search"
                           >
                             <div
                               class="ant-select-selector"
@@ -586,14 +586,14 @@ exports[`diagnosis/update user modal should disabled role select when user name 
               class="ant-drawer-footer"
             >
               <div
-                class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+                class="ant-space ant-space-horizontal ant-space-align-center"
               >
                 <div
                   class="ant-space-item"
                   style="margin-right: 8px;"
                 >
                   <button
-                    class="ant-btn css-dev-only-do-not-override-txh9fw ant-btn-default basic-button-wrapper css-geipcv"
+                    class="ant-btn ant-btn-default basic-button-wrapper css-geipcv"
                     type="button"
                   >
                     <span>
@@ -605,7 +605,7 @@ exports[`diagnosis/update user modal should disabled role select when user name 
                   class="ant-space-item"
                 >
                   <button
-                    class="ant-btn css-dev-only-do-not-override-txh9fw ant-btn-primary basic-button-wrapper css-geipcv"
+                    class="ant-btn ant-btn-primary basic-button-wrapper css-geipcv"
                     type="button"
                   >
                     <span>
@@ -634,7 +634,7 @@ exports[`diagnosis/update user modal should match snapshot when modal state is t
   <div />
   <div>
     <div
-      class="ant-drawer ant-drawer-right css-dev-only-do-not-override-txh9fw ant-drawer-open"
+      class="ant-drawer ant-drawer-right ant-drawer-open"
       tabindex="-1"
     >
       <div
@@ -700,16 +700,16 @@ exports[`diagnosis/update user modal should match snapshot when modal state is t
                 </span>
               </div>
               <form
-                class="ant-form ant-form-vertical css-dev-only-do-not-override-txh9fw"
+                class="ant-form ant-form-vertical"
               >
                 <div
-                  class="ant-form-item css-dev-only-do-not-override-txh9fw"
+                  class="ant-form-item"
                 >
                   <div
-                    class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                    class="ant-row ant-form-item-row"
                   >
                     <div
-                      class="ant-col ant-form-item-label css-dev-only-do-not-override-txh9fw"
+                      class="ant-col ant-form-item-label"
                     >
                       <label
                         class="ant-form-item-required"
@@ -720,7 +720,7 @@ exports[`diagnosis/update user modal should match snapshot when modal state is t
                       </label>
                     </div>
                     <div
-                      class="ant-col ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                      class="ant-col ant-form-item-control"
                     >
                       <div
                         class="ant-form-item-control-input"
@@ -730,7 +730,7 @@ exports[`diagnosis/update user modal should match snapshot when modal state is t
                         >
                           <input
                             aria-required="true"
-                            class="ant-input ant-input-disabled css-dev-only-do-not-override-txh9fw basic-input-wrapper css-1pd1cd5"
+                            class="ant-input ant-input-disabled basic-input-wrapper css-1pd1cd5"
                             disabled=""
                             id="username"
                             placeholder="请输入{{name}}"
@@ -743,13 +743,13 @@ exports[`diagnosis/update user modal should match snapshot when modal state is t
                   </div>
                 </div>
                 <div
-                  class="ant-form-item css-dev-only-do-not-override-txh9fw"
+                  class="ant-form-item"
                 >
                   <div
-                    class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                    class="ant-row ant-form-item-row"
                   >
                     <div
-                      class="ant-col ant-form-item-label css-dev-only-do-not-override-txh9fw"
+                      class="ant-col ant-form-item-label"
                     >
                       <label
                         class=""
@@ -760,7 +760,7 @@ exports[`diagnosis/update user modal should match snapshot when modal state is t
                       </label>
                     </div>
                     <div
-                      class="ant-col ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                      class="ant-col ant-form-item-control"
                     >
                       <div
                         class="ant-form-item-control-input"
@@ -770,7 +770,7 @@ exports[`diagnosis/update user modal should match snapshot when modal state is t
                         >
                           <button
                             aria-checked="false"
-                            class="ant-switch basic-switch-wrapper css-g6dhbn css-dev-only-do-not-override-txh9fw"
+                            class="ant-switch basic-switch-wrapper css-g6dhbn"
                             id="isNeedUpdatePassword"
                             role="switch"
                             type="button"
@@ -795,13 +795,13 @@ exports[`diagnosis/update user modal should match snapshot when modal state is t
                   </div>
                 </div>
                 <div
-                  class="ant-form-item css-dev-only-do-not-override-txh9fw"
+                  class="ant-form-item"
                 >
                   <div
-                    class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                    class="ant-row ant-form-item-row"
                   >
                     <div
-                      class="ant-col ant-form-item-label css-dev-only-do-not-override-txh9fw"
+                      class="ant-col ant-form-item-label"
                     >
                       <label
                         class="ant-form-item-required"
@@ -812,7 +812,7 @@ exports[`diagnosis/update user modal should match snapshot when modal state is t
                       </label>
                     </div>
                     <div
-                      class="ant-col ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                      class="ant-col ant-form-item-control"
                     >
                       <div
                         class="ant-form-item-control-input"
@@ -822,7 +822,7 @@ exports[`diagnosis/update user modal should match snapshot when modal state is t
                         >
                           <div
                             aria-required="true"
-                            class="ant-select ant-select-in-form-item basic-select-wrapper css-iy4o4x css-dev-only-do-not-override-txh9fw ant-select-single ant-select-allow-clear ant-select-show-arrow ant-select-show-search"
+                            class="ant-select ant-select-in-form-item basic-select-wrapper css-iy4o4x ant-select-single ant-select-allow-clear ant-select-show-arrow ant-select-show-search"
                           >
                             <div
                               class="ant-select-selector"
@@ -909,14 +909,14 @@ exports[`diagnosis/update user modal should match snapshot when modal state is t
               class="ant-drawer-footer"
             >
               <div
-                class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+                class="ant-space ant-space-horizontal ant-space-align-center"
               >
                 <div
                   class="ant-space-item"
                   style="margin-right: 8px;"
                 >
                   <button
-                    class="ant-btn css-dev-only-do-not-override-txh9fw ant-btn-default basic-button-wrapper css-geipcv"
+                    class="ant-btn ant-btn-default basic-button-wrapper css-geipcv"
                     type="button"
                   >
                     <span>
@@ -928,7 +928,7 @@ exports[`diagnosis/update user modal should match snapshot when modal state is t
                   class="ant-space-item"
                 >
                   <button
-                    class="ant-btn css-dev-only-do-not-override-txh9fw ant-btn-primary basic-button-wrapper css-geipcv"
+                    class="ant-btn ant-btn-primary basic-button-wrapper css-geipcv"
                     type="button"
                   >
                     <span>
@@ -957,7 +957,7 @@ exports[`diagnosis/update user modal should not disabled role select when user n
   <div />
   <div>
     <div
-      class="ant-drawer ant-drawer-right css-dev-only-do-not-override-txh9fw ant-drawer-open"
+      class="ant-drawer ant-drawer-right ant-drawer-open"
       tabindex="-1"
     >
       <div
@@ -1023,16 +1023,16 @@ exports[`diagnosis/update user modal should not disabled role select when user n
                 </span>
               </div>
               <form
-                class="ant-form ant-form-vertical css-dev-only-do-not-override-txh9fw"
+                class="ant-form ant-form-vertical"
               >
                 <div
-                  class="ant-form-item css-dev-only-do-not-override-txh9fw"
+                  class="ant-form-item"
                 >
                   <div
-                    class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                    class="ant-row ant-form-item-row"
                   >
                     <div
-                      class="ant-col ant-form-item-label css-dev-only-do-not-override-txh9fw"
+                      class="ant-col ant-form-item-label"
                     >
                       <label
                         class="ant-form-item-required"
@@ -1043,7 +1043,7 @@ exports[`diagnosis/update user modal should not disabled role select when user n
                       </label>
                     </div>
                     <div
-                      class="ant-col ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                      class="ant-col ant-form-item-control"
                     >
                       <div
                         class="ant-form-item-control-input"
@@ -1053,7 +1053,7 @@ exports[`diagnosis/update user modal should not disabled role select when user n
                         >
                           <input
                             aria-required="true"
-                            class="ant-input ant-input-disabled css-dev-only-do-not-override-txh9fw basic-input-wrapper css-1pd1cd5"
+                            class="ant-input ant-input-disabled basic-input-wrapper css-1pd1cd5"
                             disabled=""
                             id="username"
                             placeholder="请输入{{name}}"
@@ -1066,13 +1066,13 @@ exports[`diagnosis/update user modal should not disabled role select when user n
                   </div>
                 </div>
                 <div
-                  class="ant-form-item css-dev-only-do-not-override-txh9fw"
+                  class="ant-form-item"
                 >
                   <div
-                    class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                    class="ant-row ant-form-item-row"
                   >
                     <div
-                      class="ant-col ant-form-item-label css-dev-only-do-not-override-txh9fw"
+                      class="ant-col ant-form-item-label"
                     >
                       <label
                         class=""
@@ -1083,7 +1083,7 @@ exports[`diagnosis/update user modal should not disabled role select when user n
                       </label>
                     </div>
                     <div
-                      class="ant-col ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                      class="ant-col ant-form-item-control"
                     >
                       <div
                         class="ant-form-item-control-input"
@@ -1093,7 +1093,7 @@ exports[`diagnosis/update user modal should not disabled role select when user n
                         >
                           <button
                             aria-checked="false"
-                            class="ant-switch basic-switch-wrapper css-g6dhbn css-dev-only-do-not-override-txh9fw"
+                            class="ant-switch basic-switch-wrapper css-g6dhbn"
                             id="isNeedUpdatePassword"
                             role="switch"
                             type="button"
@@ -1118,13 +1118,13 @@ exports[`diagnosis/update user modal should not disabled role select when user n
                   </div>
                 </div>
                 <div
-                  class="ant-form-item css-dev-only-do-not-override-txh9fw"
+                  class="ant-form-item"
                 >
                   <div
-                    class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                    class="ant-row ant-form-item-row"
                   >
                     <div
-                      class="ant-col ant-form-item-label css-dev-only-do-not-override-txh9fw"
+                      class="ant-col ant-form-item-label"
                     >
                       <label
                         class="ant-form-item-required"
@@ -1135,7 +1135,7 @@ exports[`diagnosis/update user modal should not disabled role select when user n
                       </label>
                     </div>
                     <div
-                      class="ant-col ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                      class="ant-col ant-form-item-control"
                     >
                       <div
                         class="ant-form-item-control-input"
@@ -1145,7 +1145,7 @@ exports[`diagnosis/update user modal should not disabled role select when user n
                         >
                           <div
                             aria-required="true"
-                            class="ant-select ant-select-in-form-item basic-select-wrapper css-iy4o4x css-dev-only-do-not-override-txh9fw ant-select-single ant-select-allow-clear ant-select-show-arrow ant-select-loading ant-select-show-search"
+                            class="ant-select ant-select-in-form-item basic-select-wrapper css-iy4o4x ant-select-single ant-select-allow-clear ant-select-show-arrow ant-select-loading ant-select-show-search"
                           >
                             <div
                               class="ant-select-selector"
@@ -1232,14 +1232,14 @@ exports[`diagnosis/update user modal should not disabled role select when user n
               class="ant-drawer-footer"
             >
               <div
-                class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+                class="ant-space ant-space-horizontal ant-space-align-center"
               >
                 <div
                   class="ant-space-item"
                   style="margin-right: 8px;"
                 >
                   <button
-                    class="ant-btn css-dev-only-do-not-override-txh9fw ant-btn-default basic-button-wrapper css-geipcv"
+                    class="ant-btn ant-btn-default basic-button-wrapper css-geipcv"
                     type="button"
                   >
                     <span>
@@ -1251,7 +1251,7 @@ exports[`diagnosis/update user modal should not disabled role select when user n
                   class="ant-space-item"
                 >
                   <button
-                    class="ant-btn css-dev-only-do-not-override-txh9fw ant-btn-primary basic-button-wrapper css-geipcv"
+                    class="ant-btn ant-btn-primary basic-button-wrapper css-geipcv"
                     type="button"
                   >
                     <span>
@@ -1280,7 +1280,7 @@ exports[`diagnosis/update user modal should send request failed 1`] = `
   <div />
   <div>
     <div
-      class="ant-drawer ant-drawer-right css-dev-only-do-not-override-txh9fw ant-drawer-open"
+      class="ant-drawer ant-drawer-right ant-drawer-open"
       tabindex="-1"
     >
       <div
@@ -1346,16 +1346,16 @@ exports[`diagnosis/update user modal should send request failed 1`] = `
                 </span>
               </div>
               <form
-                class="ant-form ant-form-vertical css-dev-only-do-not-override-txh9fw"
+                class="ant-form ant-form-vertical"
               >
                 <div
-                  class="ant-form-item css-dev-only-do-not-override-txh9fw"
+                  class="ant-form-item"
                 >
                   <div
-                    class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                    class="ant-row ant-form-item-row"
                   >
                     <div
-                      class="ant-col ant-form-item-label css-dev-only-do-not-override-txh9fw"
+                      class="ant-col ant-form-item-label"
                     >
                       <label
                         class="ant-form-item-required"
@@ -1366,7 +1366,7 @@ exports[`diagnosis/update user modal should send request failed 1`] = `
                       </label>
                     </div>
                     <div
-                      class="ant-col ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                      class="ant-col ant-form-item-control"
                     >
                       <div
                         class="ant-form-item-control-input"
@@ -1376,7 +1376,7 @@ exports[`diagnosis/update user modal should send request failed 1`] = `
                         >
                           <input
                             aria-required="true"
-                            class="ant-input ant-input-disabled css-dev-only-do-not-override-txh9fw basic-input-wrapper css-1pd1cd5"
+                            class="ant-input ant-input-disabled basic-input-wrapper css-1pd1cd5"
                             disabled=""
                             id="username"
                             placeholder="请输入{{name}}"
@@ -1389,13 +1389,13 @@ exports[`diagnosis/update user modal should send request failed 1`] = `
                   </div>
                 </div>
                 <div
-                  class="ant-form-item css-dev-only-do-not-override-txh9fw"
+                  class="ant-form-item"
                 >
                   <div
-                    class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                    class="ant-row ant-form-item-row"
                   >
                     <div
-                      class="ant-col ant-form-item-label css-dev-only-do-not-override-txh9fw"
+                      class="ant-col ant-form-item-label"
                     >
                       <label
                         class=""
@@ -1406,7 +1406,7 @@ exports[`diagnosis/update user modal should send request failed 1`] = `
                       </label>
                     </div>
                     <div
-                      class="ant-col ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                      class="ant-col ant-form-item-control"
                     >
                       <div
                         class="ant-form-item-control-input"
@@ -1416,7 +1416,7 @@ exports[`diagnosis/update user modal should send request failed 1`] = `
                         >
                           <button
                             aria-checked="false"
-                            class="ant-switch basic-switch-wrapper css-g6dhbn css-dev-only-do-not-override-txh9fw"
+                            class="ant-switch basic-switch-wrapper css-g6dhbn"
                             id="isNeedUpdatePassword"
                             role="switch"
                             type="button"
@@ -1441,13 +1441,13 @@ exports[`diagnosis/update user modal should send request failed 1`] = `
                   </div>
                 </div>
                 <div
-                  class="ant-form-item css-dev-only-do-not-override-txh9fw"
+                  class="ant-form-item"
                 >
                   <div
-                    class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                    class="ant-row ant-form-item-row"
                   >
                     <div
-                      class="ant-col ant-form-item-label css-dev-only-do-not-override-txh9fw"
+                      class="ant-col ant-form-item-label"
                     >
                       <label
                         class="ant-form-item-required"
@@ -1458,7 +1458,7 @@ exports[`diagnosis/update user modal should send request failed 1`] = `
                       </label>
                     </div>
                     <div
-                      class="ant-col ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                      class="ant-col ant-form-item-control"
                     >
                       <div
                         class="ant-form-item-control-input"
@@ -1468,7 +1468,7 @@ exports[`diagnosis/update user modal should send request failed 1`] = `
                         >
                           <div
                             aria-required="true"
-                            class="ant-select ant-select-in-form-item basic-select-wrapper css-iy4o4x css-dev-only-do-not-override-txh9fw ant-select-single ant-select-allow-clear ant-select-show-arrow ant-select-loading ant-select-show-search"
+                            class="ant-select ant-select-in-form-item basic-select-wrapper css-iy4o4x ant-select-single ant-select-allow-clear ant-select-show-arrow ant-select-loading ant-select-show-search"
                           >
                             <div
                               class="ant-select-selector"
@@ -1555,14 +1555,14 @@ exports[`diagnosis/update user modal should send request failed 1`] = `
               class="ant-drawer-footer"
             >
               <div
-                class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+                class="ant-space ant-space-horizontal ant-space-align-center"
               >
                 <div
                   class="ant-space-item"
                   style="margin-right: 8px;"
                 >
                   <button
-                    class="ant-btn css-dev-only-do-not-override-txh9fw ant-btn-default basic-button-wrapper css-geipcv"
+                    class="ant-btn ant-btn-default basic-button-wrapper css-geipcv"
                     type="button"
                   >
                     <span>
@@ -1574,7 +1574,7 @@ exports[`diagnosis/update user modal should send request failed 1`] = `
                   class="ant-space-item"
                 >
                   <button
-                    class="ant-btn css-dev-only-do-not-override-txh9fw ant-btn-primary basic-button-wrapper css-geipcv"
+                    class="ant-btn ant-btn-primary basic-button-wrapper css-geipcv"
                     type="button"
                   >
                     <span>
@@ -1603,7 +1603,7 @@ exports[`diagnosis/update user modal should send request when input correct fiel
   <div />
   <div>
     <div
-      class="ant-drawer ant-drawer-right css-dev-only-do-not-override-txh9fw ant-drawer-open"
+      class="ant-drawer ant-drawer-right ant-drawer-open"
       tabindex="-1"
     >
       <div
@@ -1669,16 +1669,16 @@ exports[`diagnosis/update user modal should send request when input correct fiel
                 </span>
               </div>
               <form
-                class="ant-form ant-form-vertical css-dev-only-do-not-override-txh9fw"
+                class="ant-form ant-form-vertical"
               >
                 <div
-                  class="ant-form-item css-dev-only-do-not-override-txh9fw"
+                  class="ant-form-item"
                 >
                   <div
-                    class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                    class="ant-row ant-form-item-row"
                   >
                     <div
-                      class="ant-col ant-form-item-label css-dev-only-do-not-override-txh9fw"
+                      class="ant-col ant-form-item-label"
                     >
                       <label
                         class="ant-form-item-required"
@@ -1689,7 +1689,7 @@ exports[`diagnosis/update user modal should send request when input correct fiel
                       </label>
                     </div>
                     <div
-                      class="ant-col ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                      class="ant-col ant-form-item-control"
                     >
                       <div
                         class="ant-form-item-control-input"
@@ -1699,7 +1699,7 @@ exports[`diagnosis/update user modal should send request when input correct fiel
                         >
                           <input
                             aria-required="true"
-                            class="ant-input ant-input-disabled css-dev-only-do-not-override-txh9fw basic-input-wrapper css-1pd1cd5"
+                            class="ant-input ant-input-disabled basic-input-wrapper css-1pd1cd5"
                             disabled=""
                             id="username"
                             placeholder="请输入{{name}}"
@@ -1712,13 +1712,13 @@ exports[`diagnosis/update user modal should send request when input correct fiel
                   </div>
                 </div>
                 <div
-                  class="ant-form-item css-dev-only-do-not-override-txh9fw"
+                  class="ant-form-item"
                 >
                   <div
-                    class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                    class="ant-row ant-form-item-row"
                   >
                     <div
-                      class="ant-col ant-form-item-label css-dev-only-do-not-override-txh9fw"
+                      class="ant-col ant-form-item-label"
                     >
                       <label
                         class=""
@@ -1729,7 +1729,7 @@ exports[`diagnosis/update user modal should send request when input correct fiel
                       </label>
                     </div>
                     <div
-                      class="ant-col ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                      class="ant-col ant-form-item-control"
                     >
                       <div
                         class="ant-form-item-control-input"
@@ -1739,7 +1739,7 @@ exports[`diagnosis/update user modal should send request when input correct fiel
                         >
                           <button
                             aria-checked="false"
-                            class="ant-switch basic-switch-wrapper css-g6dhbn css-dev-only-do-not-override-txh9fw"
+                            class="ant-switch basic-switch-wrapper css-g6dhbn"
                             id="isNeedUpdatePassword"
                             role="switch"
                             type="button"
@@ -1764,13 +1764,13 @@ exports[`diagnosis/update user modal should send request when input correct fiel
                   </div>
                 </div>
                 <div
-                  class="ant-form-item css-dev-only-do-not-override-txh9fw"
+                  class="ant-form-item"
                 >
                   <div
-                    class="ant-row ant-form-item-row css-dev-only-do-not-override-txh9fw"
+                    class="ant-row ant-form-item-row"
                   >
                     <div
-                      class="ant-col ant-form-item-label css-dev-only-do-not-override-txh9fw"
+                      class="ant-col ant-form-item-label"
                     >
                       <label
                         class="ant-form-item-required"
@@ -1781,7 +1781,7 @@ exports[`diagnosis/update user modal should send request when input correct fiel
                       </label>
                     </div>
                     <div
-                      class="ant-col ant-form-item-control css-dev-only-do-not-override-txh9fw"
+                      class="ant-col ant-form-item-control"
                     >
                       <div
                         class="ant-form-item-control-input"
@@ -1791,7 +1791,7 @@ exports[`diagnosis/update user modal should send request when input correct fiel
                         >
                           <div
                             aria-required="true"
-                            class="ant-select ant-select-in-form-item basic-select-wrapper css-iy4o4x css-dev-only-do-not-override-txh9fw ant-select-single ant-select-allow-clear ant-select-show-arrow ant-select-loading ant-select-show-search"
+                            class="ant-select ant-select-in-form-item basic-select-wrapper css-iy4o4x ant-select-single ant-select-allow-clear ant-select-show-arrow ant-select-loading ant-select-show-search"
                           >
                             <div
                               class="ant-select-selector"
@@ -1878,14 +1878,14 @@ exports[`diagnosis/update user modal should send request when input correct fiel
               class="ant-drawer-footer"
             >
               <div
-                class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+                class="ant-space ant-space-horizontal ant-space-align-center"
               >
                 <div
                   class="ant-space-item"
                   style="margin-right: 8px;"
                 >
                   <button
-                    class="ant-btn css-dev-only-do-not-override-txh9fw ant-btn-default basic-button-wrapper css-geipcv"
+                    class="ant-btn ant-btn-default basic-button-wrapper css-geipcv"
                     type="button"
                   >
                     <span>
@@ -1897,7 +1897,7 @@ exports[`diagnosis/update user modal should send request when input correct fiel
                   class="ant-space-item"
                 >
                   <button
-                    class="ant-btn css-dev-only-do-not-override-txh9fw ant-btn-primary basic-button-wrapper css-geipcv"
+                    class="ant-btn ant-btn-primary basic-button-wrapper css-geipcv"
                     type="button"
                   >
                     <span>

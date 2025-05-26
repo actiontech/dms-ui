@@ -1,7 +1,7 @@
 import { useDispatch } from 'react-redux';
 import { act, cleanup, fireEvent, screen } from '@testing-library/react';
 import UpdateUser from './index';
-import { superRender } from '../../../../../../../testUtils/customRender';
+import { diagnosisSuperRender } from '../../../../../../../testUtils/superRender';
 import { getBySelector } from '@actiontech/shared/lib/testUtil/customQuery';
 import { ModalName } from '../../../../../../../data/ModalName';
 import eventEmitter from '../../../../../../../utils/EventEmitter';
@@ -35,7 +35,7 @@ describe('diagnosis/update user modal', () => {
   });
 
   const customRender = (status = true, selectData = userListData[1]) => {
-    return superRender(<UpdateUser />, undefined, {
+    return diagnosisSuperRender(<UpdateUser />, undefined, {
       initStore: {
         userManagement: {
           modalStatus: {
