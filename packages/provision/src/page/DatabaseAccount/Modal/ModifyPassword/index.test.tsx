@@ -1,9 +1,9 @@
 import { superRender } from '@actiontech/shared/lib/testUtil/superRender';
 import { act, cleanup, fireEvent, screen } from '@testing-library/react';
 import { getBySelector } from '@actiontech/shared/lib/testUtil/customQuery';
-import dbAccountService from '../../../../testUtil/mockApi/dbAccountService';
-import { dbAccountMockData } from '../../../../testUtil/mockApi/dbAccountService/data';
-import auth from '../../../../testUtil/mockApi/auth';
+import dbAccountService from '@actiontech/shared/lib/testUtil/mockApi/provision/dbAccountService';
+import { dbAccountMockData } from '@actiontech/shared/lib/testUtil/mockApi/provision/dbAccountService/data';
+import auth from '@actiontech/shared/lib/testUtil/mockApi/provision/auth';
 import EventEmitter from '../../../../utils/EventEmitter';
 import { createSpyFailResponse } from '@actiontech/shared/lib/testUtil/mockApi';
 import {
@@ -16,8 +16,8 @@ import { mockProjectInfo } from '@actiontech/shared/lib/testUtil/mockHook/data';
 import { mockUseCurrentProject } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentProject';
 import { IListDBAccount } from '@actiontech/shared/lib/api/provision/service/common';
 import Password from '../../../../utils/Password';
-import customDBPasswordRule from '../../../../testUtil/mockApi/customDBPasswordRule';
-import { mockGeneratedDBPasswordByCustomRule } from '../../../../testUtil/mockApi/customDBPasswordRule/data';
+import customDBPasswordRule from '@actiontech/shared/lib/testUtil/mockApi/provision/customDBPasswordRule';
+import { mockGeneratedDBPasswordByCustomRule } from '@actiontech/shared/lib/testUtil/mockApi/provision/customDBPasswordRule/data';
 
 describe('provision/DatabaseAccount/ModifyPasswordModal', () => {
   let authUpdateDBAccountSpy: jest.SpyInstance;

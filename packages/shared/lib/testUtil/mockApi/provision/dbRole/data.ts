@@ -2,7 +2,7 @@ import {
   IListDBRoleTips,
   IListDBRole,
   IDBRoleDetail
-} from '@actiontech/shared/lib/api/provision/service/common';
+} from '../../../../api/provision/service/common';
 
 export const mockDBRoleTips: IListDBRoleTips[] = [
   {

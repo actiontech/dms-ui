@@ -1,8 +1,8 @@
-import { IGetUserOpPermissionReply } from '@actiontech/shared/lib/api/base/service/common';
+import { IGetUserOpPermissionReply } from '../../../../api/base/service/common';
 import {
   OpPermissionItemRangeTypeEnum,
   OpPermissionItemOpPermissionTypeEnum
-} from '@actiontech/shared/lib/api/base/service/common.enum';
+} from '../../../../api/base/service/common.enum';
 
 export const userOperationPermissionMockData: IGetUserOpPermissionReply['data'] =
   {

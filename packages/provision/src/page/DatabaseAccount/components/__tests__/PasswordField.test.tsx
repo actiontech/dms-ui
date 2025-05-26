@@ -2,8 +2,8 @@ import { superRender } from '@actiontech/shared/lib/testUtil/superRender';
 import { act, fireEvent, screen, cleanup } from '@testing-library/react';
 import { Form } from 'antd';
 import PasswordField from '../PasswordField';
-import customDBPasswordRule from '../../../../testUtil/mockApi/customDBPasswordRule';
-import { mockGeneratedDBPasswordByCustomRule } from '../../../../testUtil/mockApi/customDBPasswordRule/data';
+import customDBPasswordRule from '@actiontech/shared/lib/testUtil/mockApi/provision/customDBPasswordRule';
+import { mockGeneratedDBPasswordByCustomRule } from '@actiontech/shared/lib/testUtil/mockApi/provision/customDBPasswordRule/data';
 import Password from '../../../../utils/Password';
 import { getBySelector } from '@actiontech/shared/lib/testUtil/customQuery';
 

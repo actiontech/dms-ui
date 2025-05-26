@@ -1,9 +1,9 @@
 import { superRender } from '@actiontech/shared/lib/testUtil/superRender';
 import { act, cleanup, fireEvent, screen } from '@testing-library/react';
 import { getBySelector } from '@actiontech/shared/lib/testUtil/customQuery';
-import dbAccountService from '../../../../testUtil/mockApi/dbAccountService';
-import { dbAccountMockData } from '../../../../testUtil/mockApi/dbAccountService/data';
-import auth from '../../../../testUtil/mockApi/auth';
+import dbAccountService from '@actiontech/shared/lib/testUtil/mockApi/provision/dbAccountService';
+import { dbAccountMockData } from '@actiontech/shared/lib/testUtil/mockApi/provision/dbAccountService/data';
+import auth from '@actiontech/shared/lib/testUtil/mockApi/provision/auth';
 import {
   DatabaseAccountModalStatus,
   DatabaseAccountSelectData
@@ -13,7 +13,7 @@ import DatabaseAccountDetailModal from '.';
 import { mockUseCurrentProject } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentProject';
 import { IListDBAccount } from '@actiontech/shared/lib/api/provision/service/common';
 import { createSpySuccessResponse } from '@actiontech/shared/lib/testUtil/mockApi';
-import { databaseAccountDetailMockData } from '../../../../testUtil/mockApi/dbAccountService/data';
+import { databaseAccountDetailMockData } from '@actiontech/shared/lib/testUtil/mockApi/provision/dbAccountService/data';
 
 describe('provision/DatabaseAccount/DatabaseAccountDetailModal', () => {
   let authGetDBAccountSpy: jest.SpyInstance;

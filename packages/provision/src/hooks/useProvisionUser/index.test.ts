@@ -1,8 +1,8 @@
 import useProvisionUser from '.';
 import { act, cleanup } from '@testing-library/react';
 import { superRenderHook } from '@actiontech/shared/lib/testUtil/superRender';
-import auth from '../../testUtil/mockApi/auth';
-import { userList } from '../../testUtil/mockApi/auth/data';
+import auth from '@actiontech/shared/lib/testUtil/mockApi/provision/auth';
+import { userList } from '@actiontech/shared/lib/testUtil/mockApi/provision/auth/data';
 import {
   createSpyErrorResponse,
   createSpyFailResponse

@@ -1,12 +1,12 @@
-import dbAccountService from '../../../testUtil/mockApi/dbAccountService';
-import auth from '../../../testUtil/mockApi/auth';
+import dbAccountService from '@actiontech/shared/lib/testUtil/mockApi/provision/dbAccountService';
+import auth from '@actiontech/shared/lib/testUtil/mockApi/provision/auth';
 import { mockUseCurrentProject } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentProject';
 import { mockUseDbServiceDriver } from '@actiontech/shared/lib/testUtil/mockHook/mockUseDbServiceDriver';
 import { mockUseCurrentUser } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentUser';
 import { superRender } from '@actiontech/shared/lib/testUtil/superRender';
 import DatabaseAccount from '..';
 import { cleanup, act } from '@testing-library/react';
-import user from '../../../testUtil/mockApi/user';
+import user from '@actiontech/shared/lib/testUtil/mockApi/provision/user';
 
 describe('provision/DatabaseAccount/DatabaseAccount', () => {
   beforeEach(() => {

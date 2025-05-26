@@ -1,8 +1,8 @@
 import RoleDetail from '..';
 import { superRender } from '@actiontech/shared/lib/testUtil/superRender';
 import { act, fireEvent, screen } from '@testing-library/react';
-import dbRole from '../../../../../testUtil/mockApi/dbRole';
-import { mockDBRoleData } from '../../../../../testUtil/mockApi/dbRole/data';
+import dbRole from '@actiontech/shared/lib/testUtil/mockApi/provision/dbRole';
+import { mockDBRoleData } from '@actiontech/shared/lib/testUtil/mockApi/provision/dbRole/data';
 import { IListDBRole } from '@actiontech/shared/lib/api/provision/service/common';
 import {
   DatabaseRoleFilteredDBServiceID,

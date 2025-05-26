@@ -1,13 +1,13 @@
 import { superRender } from '@actiontech/shared/lib/testUtil/superRender';
 import { act, cleanup, fireEvent, screen } from '@testing-library/react';
 import { getBySelector } from '@actiontech/shared/lib/testUtil/customQuery';
-import dbAccountService from '../../../testUtil/mockApi/dbAccountService';
-import { dbAccountMockData } from '../../../testUtil/mockApi/dbAccountService/data';
+import dbAccountService from '@actiontech/shared/lib/testUtil/mockApi/provision/dbAccountService';
+import { dbAccountMockData } from '@actiontech/shared/lib/testUtil/mockApi/provision/dbAccountService/data';
 import { mockProjectInfo } from '@actiontech/shared/lib/testUtil/mockHook/data';
 import { mockUseCurrentProject } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentProject';
 import { mockUseCurrentUser } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentUser';
 import { mockUseDbServiceDriver } from '@actiontech/shared/lib/testUtil/mockHook/mockUseDbServiceDriver';
-import auth from '../../../testUtil/mockApi/auth';
+import auth from '@actiontech/shared/lib/testUtil/mockApi/provision/auth';
 import ExpirationAccountList from './index';
 import RecoilObservable from '../../../testUtil/RecoilObservable';
 import { DatabaseAccountModalStatus } from '../../../store/databaseAccount';
@@ -16,13 +16,13 @@ import { createSpySuccessResponse } from '@actiontech/shared/lib/testUtil/mockAp
 import EventEmitter from '../../../utils/EventEmitter';
 import MockDate from 'mockdate';
 import dayjs from 'dayjs';
-import user from '../../../testUtil/mockApi/user';
+import user from '@actiontech/shared/lib/testUtil/mockApi/provision/user';
 import {
   OpPermissionItemRangeTypeEnum,
   OpPermissionItemOpPermissionTypeEnum
 } from '@actiontech/shared/lib/api/base/service/common.enum';
 import { mockUsePermission } from '@actiontech/shared/lib/testUtil/mockHook/mockUsePermission';
-import customDBPasswordRule from '../../../testUtil/mockApi/customDBPasswordRule';
+import customDBPasswordRule from '@actiontech/shared/lib/testUtil/mockApi/provision/customDBPasswordRule';
 
 jest.mock('react-redux', () => ({
   ...jest.requireActual('react-redux'),

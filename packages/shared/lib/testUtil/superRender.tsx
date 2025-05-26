@@ -23,6 +23,7 @@ export interface WrapperOptions {
   initStore?: any;
   recoilRootProps?: RecoilRootPropsCustom;
   theme?: any;
+  otherChildren?: React.ReactNode;
 }
 
 export const createTestWrapper = (options?: WrapperOptions) => {
@@ -31,7 +32,8 @@ export const createTestWrapper = (options?: WrapperOptions) => {
     storeFactory: customStoreFactory,
     initStore,
     recoilRootProps,
-    theme = lightTheme
+    theme = lightTheme,
+    otherChildren
   } = options || {};
 
   return ({ children }: { children: React.ReactNode }) => {
@@ -53,6 +55,7 @@ export const createTestWrapper = (options?: WrapperOptions) => {
             <MemoryRouter {...routerProps}>
               <StyledEngineProvider injectFirst>
                 {themeComponent}
+                {otherChildren}
               </StyledEngineProvider>
             </MemoryRouter>
           </Provider>

@@ -1,14 +1,14 @@
 import { superRender } from '@actiontech/shared/lib/testUtil/superRender';
 import { act, cleanup } from '@testing-library/react';
-import dbAccountService from '../../testUtil/mockApi/dbAccountService';
+import dbAccountService from '@actiontech/shared/lib/testUtil/mockApi/provision/dbAccountService';
 import { mockUseCurrentProject } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentProject';
 import { mockUseCurrentUser } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentUser';
 import { mockUseDbServiceDriver } from '@actiontech/shared/lib/testUtil/mockHook/mockUseDbServiceDriver';
-import auth from '../../testUtil/mockApi/auth';
+import auth from '@actiontech/shared/lib/testUtil/mockApi/provision/auth';
 import DatabaseAccountPassword from './index';
 import MockDate from 'mockdate';
 import dayjs from 'dayjs';
-import user from '../../testUtil/mockApi/user';
+import user from '@actiontech/shared/lib/testUtil/mockApi/provision/user';
 
 describe('provision/DatabaseAccountPassword/DatabaseAccountPassword', () => {
   let authListDBAccountSpy: jest.SpyInstance;

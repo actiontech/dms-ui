@@ -5,26 +5,26 @@ import {
   queryBySelector,
   selectOptionByIndex
 } from '@actiontech/shared/lib/testUtil/customQuery';
-import dbAccountService from '../../../testUtil/mockApi/dbAccountService';
+import dbAccountService from '@actiontech/shared/lib/testUtil/mockApi/provision/dbAccountService';
 import { mockProjectInfo } from '@actiontech/shared/lib/testUtil/mockHook/data';
 import { mockUseCurrentProject } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentProject';
 import { mockUseDbServiceDriver } from '@actiontech/shared/lib/testUtil/mockHook/mockUseDbServiceDriver';
-import auth from '../../../testUtil/mockApi/auth';
-import { instanceList } from '../../../testUtil/mockApi/auth/data';
+import auth from '@actiontech/shared/lib/testUtil/mockApi/provision/auth';
+import { instanceList } from '@actiontech/shared/lib/testUtil/mockApi/provision/auth/data';
 import CreateDatabaseAccount from './index';
 import Password from '../../../utils/Password';
-import user from '../../../testUtil/mockApi/user';
+import user from '@actiontech/shared/lib/testUtil/mockApi/provision/user';
 import { mockUsePermission } from '@actiontech/shared/lib/testUtil/mockHook/mockUsePermission';
-import service from '../../../testUtil/mockApi/service';
-import dbRole from '../../../testUtil/mockApi/dbRole';
+import service from '@actiontech/shared/lib/testUtil/mockApi/provision/service';
+import dbRole from '@actiontech/shared/lib/testUtil/mockApi/provision/dbRole';
 import { createSpySuccessResponse } from '@actiontech/shared/lib/testUtil/mockApi';
 import { ListServiceDbTypeEnum } from '@actiontech/shared/lib/api/provision/service/common.enum';
 import {
   ignoreConsoleErrors,
   UtilsConsoleErrorStringsEnum
 } from '@actiontech/shared/lib/testUtil/common';
-import customDBPasswordRule from '../../../testUtil/mockApi/customDBPasswordRule';
-import { mockGeneratedDBPasswordByCustomRule } from '../../../testUtil/mockApi/customDBPasswordRule/data';
+import customDBPasswordRule from '@actiontech/shared/lib/testUtil/mockApi/provision/customDBPasswordRule';
+import { mockGeneratedDBPasswordByCustomRule } from '@actiontech/shared/lib/testUtil/mockApi/provision/customDBPasswordRule/data';
 
 describe('provision/DatabaseAccount/Create', () => {
   let authListServicesSpy: jest.SpyInstance;

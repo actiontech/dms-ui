@@ -1,8 +1,5 @@
-import dbRole from '@actiontech/shared/lib/api/provision/service/db_role';
-import {
-  MockSpyApy,
-  createSpySuccessResponse
-} from '@actiontech/shared/lib/testUtil/mockApi';
+import dbRole from '../../../../api/provision/service/db_role';
+import { MockSpyApy, createSpySuccessResponse } from '../../../mockApi';
 import { mockDBRoleTips, mockDBRoleData, mockRoleDetailMockData } from './data';
 
 class MockAuthApi implements MockSpyApy {

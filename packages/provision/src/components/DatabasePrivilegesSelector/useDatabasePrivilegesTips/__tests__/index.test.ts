@@ -1,6 +1,6 @@
 import { renderHook, act } from '@testing-library/react';
 import useDatabasePrivilegesTips from '../index';
-import auth from '../../../../testUtil/mockApi/auth';
+import auth from '@actiontech/shared/lib/testUtil/mockApi/provision/auth';
 import { AuthListOperationsDbTypeEnum } from '@actiontech/shared/lib/api/provision/service/auth/index.enum';
 import { createSpySuccessResponse } from '@actiontech/shared/lib/testUtil/mockApi';
 

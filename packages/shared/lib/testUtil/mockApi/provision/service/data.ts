@@ -1,4 +1,4 @@
-import { IDBAccountMeta } from '@actiontech/shared/lib/api/provision/service/common';
+import { IDBAccountMeta } from '../../../../api/provision/service/common';
 
 export const mockDatabaseAccountMeta: IDBAccountMeta[] = [
   {

@@ -1,9 +1,9 @@
 import { superRender } from '@actiontech/shared/lib/testUtil/superRender';
 import { act, renderHook } from '@testing-library/react';
 import RoleForm from '../RoleForm';
-import auth from '../../../../../testUtil/mockApi/auth';
-import { mockOracleInstanceData } from '../../../../../testUtil/mockApi/auth/data';
-import dbRole from '../../../../../testUtil/mockApi/dbRole';
+import auth from '@actiontech/shared/lib/testUtil/mockApi/provision/auth';
+import { mockOracleInstanceData } from '@actiontech/shared/lib/testUtil/mockApi/provision/auth/data';
+import dbRole from '@actiontech/shared/lib/testUtil/mockApi/provision/dbRole';
 import { createSpySuccessResponse } from '@actiontech/shared/lib/testUtil/mockApi';
 import { mockUseCurrentUser } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentUser';
 import { mockUseCurrentProject } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentProject';

@@ -3,11 +3,11 @@ import {
   IAccountStatics,
   IStatement,
   IDBAccountBody
-} from '@actiontech/shared/lib/api/provision/service/common';
+} from '../../../../api/provision/service/common';
 import {
   ListDBAccountPasswordExpirationPolicyEnum,
   ListDBAccountStatusEnum
-} from '@actiontech/shared/lib/api/provision/service/common.enum';
+} from '../../../../api/provision/service/common.enum';
 
 export const dbAccountMockData: IListDBAccount[] = [
   {

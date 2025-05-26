@@ -1,9 +1,9 @@
 import { superRender } from '@actiontech/shared/lib/testUtil/superRender';
 import { act, cleanup, fireEvent, screen } from '@testing-library/react';
 import { getBySelector } from '@actiontech/shared/lib/testUtil/customQuery';
-import dbAccountService from '../../../../testUtil/mockApi/dbAccountService';
-import { dbAccountMockData } from '../../../../testUtil/mockApi/dbAccountService/data';
-import auth from '../../../../testUtil/mockApi/auth';
+import dbAccountService from '@actiontech/shared/lib/testUtil/mockApi/provision/dbAccountService';
+import { dbAccountMockData } from '@actiontech/shared/lib/testUtil/mockApi/provision/dbAccountService/data';
+import auth from '@actiontech/shared/lib/testUtil/mockApi/provision/auth';
 import EventEmitter from '../../../../utils/EventEmitter';
 import { createSpyFailResponse } from '@actiontech/shared/lib/testUtil/mockApi';
 import {

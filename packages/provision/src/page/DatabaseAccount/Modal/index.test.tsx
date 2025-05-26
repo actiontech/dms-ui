@@ -1,5 +1,5 @@
-import dbAccountService from '../../../testUtil/mockApi/dbAccountService';
-import auth from '../../../testUtil/mockApi/auth';
+import dbAccountService from '@actiontech/shared/lib/testUtil/mockApi/provision/dbAccountService';
+import auth from '@actiontech/shared/lib/testUtil/mockApi/provision/auth';
 import { mockUseCurrentProject } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentProject';
 import { mockUseDbServiceDriver } from '@actiontech/shared/lib/testUtil/mockHook/mockUseDbServiceDriver';
 import { superRender } from '@actiontech/shared/lib/testUtil/superRender';
@@ -7,7 +7,7 @@ import DatabaseAccountModal from '.';
 import { cleanup, screen } from '@testing-library/react';
 import { DatabaseAccountModalStatus } from '../../../store/databaseAccount';
 import { ModalName } from '../../../data/enum';
-import user from '../../../testUtil/mockApi/user';
+import user from '@actiontech/shared/lib/testUtil/mockApi/provision/user';
 
 describe('provision/DatabaseAccount/DatabaseAccountModal', () => {
   beforeEach(() => {

@@ -4,18 +4,18 @@ import {
   getBySelector,
   queryBySelector
 } from '@actiontech/shared/lib/testUtil/customQuery';
-import dbAccountService from '../../../testUtil/mockApi/dbAccountService';
+import dbAccountService from '@actiontech/shared/lib/testUtil/mockApi/provision/dbAccountService';
 import { mockProjectInfo } from '@actiontech/shared/lib/testUtil/mockHook/data';
 import { mockUseCurrentProject } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentProject';
 import { mockUseDbServiceDriver } from '@actiontech/shared/lib/testUtil/mockHook/mockUseDbServiceDriver';
-import auth from '../../../testUtil/mockApi/auth';
+import auth from '@actiontech/shared/lib/testUtil/mockApi/provision/auth';
 import UpdateDatabaseAccount from './index';
 import { useParams } from 'react-router-dom';
-import { databaseAccountDetailMockData } from '../../../testUtil/mockApi/dbAccountService/data';
-import user from '../../../testUtil/mockApi/user';
-import service from '../../../testUtil/mockApi/service';
-import dbRole from '../../../testUtil/mockApi/dbRole';
-import customDBPasswordRule from '../../../testUtil/mockApi/customDBPasswordRule';
+import { databaseAccountDetailMockData } from '@actiontech/shared/lib/testUtil/mockApi/provision/dbAccountService/data';
+import user from '@actiontech/shared/lib/testUtil/mockApi/provision/user';
+import service from '@actiontech/shared/lib/testUtil/mockApi/provision/service';
+import dbRole from '@actiontech/shared/lib/testUtil/mockApi/provision/dbRole';
+import customDBPasswordRule from '@actiontech/shared/lib/testUtil/mockApi/provision/customDBPasswordRule';
 
 jest.mock('react-router-dom', () => {
   return {

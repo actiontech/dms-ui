@@ -1,7 +1,6 @@
 import {
   superRender as sharedSuperRender,
   superRenderHook,
-  createTestWrapper,
   WrapperOptions,
   RenderParams
 } from '@actiontech/shared/lib/testUtil/superRender';
@@ -30,14 +29,8 @@ export const provisionSuperRenderHook = <TProps, TResult>(
   >,
   wrapperOptions?: WrapperOptions
 ) => {
-  const wrapper = createTestWrapper({
+  return superRenderHook(hook, renderHookOptions, {
     ...wrapperOptions,
-    theme: themeData
-  });
-
-  return superRenderHook(hook, {
-    ...renderHookOptions,
-    wrapper,
     theme: themeData
   });
 };
