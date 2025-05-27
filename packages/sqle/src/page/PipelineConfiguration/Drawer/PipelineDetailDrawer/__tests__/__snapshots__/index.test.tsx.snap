@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`sqle/PipelineConfiguration/Modal/PipelineDetailModal render init snap 1`] = `
+exports[`sqle/PipelineConfiguration/Drawer/PipelineDetailDrawer render init snap 1`] = `
 <body>
   <div>
     <section
@@ -463,7 +463,7 @@ exports[`sqle/PipelineConfiguration/Modal/PipelineDetailModal render init snap 1
 </body>
 `;
 
-exports[`sqle/PipelineConfiguration/Modal/PipelineDetailModal render show tour 1`] = `
+exports[`sqle/PipelineConfiguration/Drawer/PipelineDetailDrawer render show tour 1`] = `
 <body>
   <div>
     <section

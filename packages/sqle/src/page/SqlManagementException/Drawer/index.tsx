@@ -5,7 +5,7 @@ import { ModalName } from '../../../data/ModalName';
 import { initSqlManagementExceptModalStatus } from '../../../store/sqlManagementException';
 import { useDispatch } from 'react-redux';
 
-const SqlManagementExceptionModal = () => {
+const SqlManagementExceptionDrawer = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -24,4 +24,4 @@ const SqlManagementExceptionModal = () => {
   );
 };
 
-export default SqlManagementExceptionModal;
+export default SqlManagementExceptionDrawer;

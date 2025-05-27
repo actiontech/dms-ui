@@ -24,7 +24,7 @@ import classNames from 'classnames';
 import { ROUTE_PATHS } from '@actiontech/shared/lib/data/routePaths';
 import { PipelineConfigurationDetailListActions } from './actions';
 
-const PipelineDetailModal: React.FC = () => {
+const PipelineDetailDrawer: React.FC = () => {
   const { t } = useTranslation();
 
   const navigate = useTypedNavigate();
@@ -88,7 +88,7 @@ const PipelineDetailModal: React.FC = () => {
     dispatch(updatePipelineNodeTourStatus({ show: false }));
   }, [dispatch]);
 
-  const closeModal = () => {
+  const closeDrawer = () => {
     dispatch(updateSelectPipelineId({ id: undefined }));
     hidePipelineNodeTour();
     dispatch(
@@ -108,7 +108,7 @@ const PipelineDetailModal: React.FC = () => {
       .then((res) => {
         if (res.data.code === ResponseCode.SUCCESS) {
           messageApi.success(t('pipelineConfiguration.table.deleteSuccess'));
-          closeModal();
+          closeDrawer();
           EventEmitter.emit(EmitterKey.Refresh_Pipeline_Configuration_list);
         }
       })
@@ -118,7 +118,7 @@ const PipelineDetailModal: React.FC = () => {
   };
 
   const onEdit = () => {
-    closeModal();
+    closeDrawer();
     navigate(ROUTE_PATHS.SQLE.PIPELINE_CONFIGURATION.update, {
       params: { projectID, id: pipelineState.id?.toString() ?? '' }
     });
@@ -142,7 +142,7 @@ const PipelineDetailModal: React.FC = () => {
         size="large"
         title={t('pipelineConfiguration.modal.title')}
         open={visible}
-        onClose={closeModal}
+        onClose={closeDrawer}
         extra={
           <Space>
             <Popconfirm
@@ -204,4 +204,4 @@ const PipelineDetailModal: React.FC = () => {
   );
 };
 
-export default PipelineDetailModal;
+export default PipelineDetailDrawer;

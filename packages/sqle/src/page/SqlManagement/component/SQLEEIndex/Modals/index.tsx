@@ -5,14 +5,14 @@ import ChangeStatus from './ChangeStatus';
 import StatusDrawer from './StatusDrawer';
 import useSqlManagementRedux from '../hooks/useSqlManagementRedux';
 import { ModalName } from '../../../../../data/ModalName';
-import CreateSqlManagementException from '../../../../SqlManagementException/Modal/Create';
+import CreateSqlManagementException from '../../../../SqlManagementException/Drawer/Create';
 import EventEmitter from '../../../../../utils/EventEmitter';
 import EmitterKey from '../../../../../data/EmitterKey';
 import AddWhitelist from '../../../../Whitelist/Drawer/AddWhitelist';
 import ChangePriority from './ChangePriority';
 import PushToCodingModal from './PushToCoding';
 
-const SqlManagementModal = () => {
+const SqlManagementModals = () => {
   const { initModalStatus } = useSqlManagementRedux();
 
   useEffect(() => {
@@ -45,4 +45,4 @@ const SqlManagementModal = () => {
   );
 };
 
-export default SqlManagementModal;
+export default SqlManagementModals;
