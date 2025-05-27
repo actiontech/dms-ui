@@ -24,7 +24,7 @@ import { RingPieFilled } from '@actiontech/icons';
 import useInstance from '../../../../../hooks/useInstance';
 import { useCurrentProject } from '@actiontech/shared/lib/features';
 import { getInstanceTipListV2FunctionalModuleEnum } from '@actiontech/shared/lib/api/sqle/service/instance/index.enum';
-import { ReleaseModalFormStyleWrapper } from '../../style';
+import { ReleaseDrawerFormStyleWrapper } from '../../style';
 import DataSourceField from './DataSourceField';
 import { ReleaseWorkflowFormType } from '../../index.type';
 import useTestConnection from './hooks/useTestConnection';
@@ -35,7 +35,7 @@ import EmitterKey from '../../../../../data/EmitterKey';
 import EventEmitter from '../../../../../utils/EventEmitter';
 import { ROUTE_PATHS } from '@actiontech/shared/lib/data/routePaths';
 
-const ReleaseModal: React.FC = () => {
+const ReleaseDrawer: React.FC = () => {
   const { t } = useTranslation();
 
   const dispatch = useDispatch();
@@ -234,7 +234,7 @@ const ReleaseModal: React.FC = () => {
           <Typography.Text type="secondary">
             {t('versionManagement.release.currentAllowReleaseWorkflow')}：
           </Typography.Text>
-          <ReleaseModalFormStyleWrapper
+          <ReleaseDrawerFormStyleWrapper
             form={form}
             layout="vertical"
             {...DrawerFormLayout}
@@ -340,11 +340,11 @@ const ReleaseModal: React.FC = () => {
                 </FormItemLabel>
               );
             })}
-          </ReleaseModalFormStyleWrapper>
+          </ReleaseDrawerFormStyleWrapper>
         </Space>
       </Spin>
     </BasicDrawer>
   );
 };
 
-export default ReleaseModal;
+export default ReleaseDrawer;

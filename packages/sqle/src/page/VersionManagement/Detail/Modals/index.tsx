@@ -1,13 +1,13 @@
-import ReleaseModal from './ReleaseModal';
+import ReleaseDrawer from './ReleaseDrawer';
 import BatchExecuteModal from './BatchExecuteModal';
-import AssociateWorkflowModal from './AssociateWorkflowModal';
+import AssociateWorkflowDrawer from './AssociateWorkflowDrawer';
 import OfflineExecModal from './OfflineExecModal';
 import { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import { ModalName } from '../../../../data/ModalName';
 import { initVersionManagementModalStatus } from '../../../../store/versionManagement';
 
-const VersionDetailModal = () => {
+const VersionDetailModals = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -22,12 +22,12 @@ const VersionDetailModal = () => {
 
   return (
     <>
-      <ReleaseModal />
+      <ReleaseDrawer />
       <BatchExecuteModal />
-      <AssociateWorkflowModal />
+      <AssociateWorkflowDrawer />
       <OfflineExecModal />
     </>
   );
 };
 
-export default VersionDetailModal;
+export default VersionDetailModals;

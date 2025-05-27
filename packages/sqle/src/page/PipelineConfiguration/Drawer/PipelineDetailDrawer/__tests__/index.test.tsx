@@ -1,4 +1,4 @@
-import PipelineDetailModal from '../';
+import PipelineDetailDrawer from '../';
 import pipeline from '@actiontech/shared/lib/testUtil/mockApi/sqle/pipeline';
 import { sqleSuperRender } from '../../../../../testUtils/superRender';
 import { useDispatch } from 'react-redux';
@@ -29,7 +29,7 @@ jest.mock('react-router-dom', () => {
   };
 });
 
-describe('sqle/PipelineConfiguration/Modal/PipelineDetailModal', () => {
+describe('sqle/PipelineConfiguration/Drawer/PipelineDetailDrawer', () => {
   const dispatchSpy = jest.fn();
   const navigateSpy = jest.fn();
 
@@ -54,7 +54,7 @@ describe('sqle/PipelineConfiguration/Modal/PipelineDetailModal', () => {
   });
 
   const customRender = (showPipelineNodeTour = false) => {
-    return sqleSuperRender(<PipelineDetailModal />, undefined, {
+    return sqleSuperRender(<PipelineDetailDrawer />, undefined, {
       initStore: {
         pipeline: {
           modalStatus: {

@@ -1,7 +1,7 @@
 import CloneRuleTemplateModal from './CloneRuleTemplate';
 
-const RuleTemplateListModal = () => {
+const RuleTemplateListDrawer = () => {
   return <CloneRuleTemplateModal />;
 };
 
-export default RuleTemplateListModal;
+export default RuleTemplateListDrawer;

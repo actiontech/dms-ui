@@ -1,5 +1,5 @@
 import { cleanup, act } from '@testing-library/react';
-import SqlManagementExceptionModal from '../index';
+import SqlManagementExceptionDrawer from '../index';
 import { superRender } from '@actiontech/shared/lib/testUtil/superRender';
 import { useDispatch, useSelector } from 'react-redux';
 import { ModalName } from '../../../../data/ModalName';
@@ -14,7 +14,7 @@ jest.mock('react-redux', () => {
   };
 });
 
-describe('slqe/SqlManagementException/Modal', () => {
+describe('slqe/SqlManagementException/Drawer', () => {
   const dispatchSpy = jest.fn();
   beforeEach(() => {
     jest.useFakeTimers();
@@ -34,7 +34,7 @@ describe('slqe/SqlManagementException/Modal', () => {
   });
 
   test('should dispatch init modal status action', async () => {
-    superRender(<SqlManagementExceptionModal />);
+    superRender(<SqlManagementExceptionDrawer />);
     await act(async () => jest.advanceTimersByTime(3000));
     expect(dispatchSpy).toHaveBeenCalledWith({
       type: 'sqlManagementException/initModalStatus',

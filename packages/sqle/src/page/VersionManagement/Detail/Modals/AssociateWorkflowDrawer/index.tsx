@@ -23,7 +23,7 @@ import { DrawerFormLayout } from '@actiontech/shared/lib/data/common';
 import WorkflowTableField from './WorkflowTableField';
 import { ROUTE_PATHS } from '@actiontech/shared/lib/data/routePaths';
 
-const AssociateWorkflowModal: React.FC = () => {
+const AssociateWorkflowDrawer: React.FC = () => {
   const { t } = useTranslation();
 
   const dispatch = useDispatch();
@@ -140,4 +140,4 @@ const AssociateWorkflowModal: React.FC = () => {
   );
 };
 
-export default AssociateWorkflowModal;
+export default AssociateWorkflowDrawer;
