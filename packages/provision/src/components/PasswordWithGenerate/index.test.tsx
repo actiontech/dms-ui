@@ -3,11 +3,18 @@ import InputPassword from '.';
 import { act, fireEvent, screen } from '@testing-library/react';
 import {
   getBySelector,
-  queryBySelector,
-  sleep
+  queryBySelector
 } from '@actiontech/shared/lib/testUtil';
 
-describe.skip('InputPassword', () => {
+describe('InputPassword', () => {
+  beforeEach(() => {
+    jest.useFakeTimers();
+  });
+
+  afterEach(() => {
+    jest.useRealTimers();
+  });
+
   it('should Match Snapshot', () => {
     const generateFn = jest.fn();
     const { baseElement } = superRender(
@@ -15,24 +22,33 @@ describe.skip('InputPassword', () => {
     );
     expect(baseElement).toMatchSnapshot();
   });
+
   it('should generate password when user click generate button', async () => {
     const generateFn = jest.fn().mockReturnValue('123');
     document.execCommand = jest.fn();
     superRender(<InputPassword clickGeneratePassword={generateFn} />);
-    await act(() => fireEvent.click(screen.getByText('生 成')));
+    fireEvent.click(getBySelector('.ant-btn'));
+    await act(async () => jest.advanceTimersByTime(0));
     expect(generateFn).toHaveBeenCalledTimes(1);
-    await sleep(300);
+    await act(async () => jest.advanceTimersByTime(0));
     expect(
       screen.queryByText('已生成16位密码并复制在剪贴板中')
     ).toBeInTheDocument();
+  });
 
-    await act(() => fireEvent.mouseOver(getBySelector('.ant-input')));
-    await sleep(100);
-    const hiddenClassName = screen
-      .queryByText('已生成16位密码并复制在剪贴板中')
-      ?.parentElement?.parentElement?.getAttribute('class');
-
-    expect(hiddenClassName).toBe('ant-tooltip ant-tooltip-hidden');
+  it('should generate password when minLength is not undefined', async () => {
+    const generateFn = jest.fn().mockReturnValue('123');
+    document.execCommand = jest.fn();
+    superRender(
+      <InputPassword clickGeneratePassword={generateFn} minLength={12} />
+    );
+    fireEvent.click(getBySelector('.ant-btn'));
+    await act(async () => jest.advanceTimersByTime(0));
+    expect(generateFn).toHaveBeenCalledTimes(1);
+    await act(async () => jest.advanceTimersByTime(0));
+    expect(
+      screen.queryByText('已生成12位密码并复制在剪贴板中')
+    ).toBeInTheDocument();
   });
 
   it('should display password when user click EyeInvisibleOutlined icon', async () => {

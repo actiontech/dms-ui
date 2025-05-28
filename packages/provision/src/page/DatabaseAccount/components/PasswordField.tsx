@@ -22,8 +22,12 @@ const PasswordField: React.FC<PasswordFieldProps> = ({
   const form = Form.useFormInstance<AccountPassword>();
   const password = Form.useWatch('password', form);
   const { t } = useTranslation();
-  const { getCustomPasswordRule, passwordRules, generatePasswordByRule } =
-    useCustomDBPasswordRule();
+  const {
+    getCustomPasswordRule,
+    passwordRules,
+    generatePasswordByRule,
+    customPasswordRule
+  } = useCustomDBPasswordRule();
 
   const ruleStatus = useMemo(() => {
     return passwordRules.map((rule) => rule.validate(password));
@@ -98,6 +102,7 @@ const PasswordField: React.FC<PasswordFieldProps> = ({
         <InputPassword
           clickGeneratePassword={generatePassword}
           disabled={disabled}
+          minLength={customPasswordRule?.min_length}
         />
       </PasswordFieldStyleWrapper>
       <FormItemLabel
