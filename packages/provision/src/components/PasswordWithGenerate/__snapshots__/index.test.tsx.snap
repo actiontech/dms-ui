@@ -4,10 +4,11 @@ exports[`InputPassword should Match Snapshot 1`] = `
 <body>
   <div>
     <span
-      class="ant-input-affix-wrapper ant-input-password action-password-input"
+      class="ant-input-affix-wrapper ant-input-password basic-input-wrapper action-password-input css-1x7fd4z"
     >
       <input
         class="ant-input"
+        placeholder="请输入{{name}}"
         type="password"
         value=""
       />
@@ -16,7 +17,7 @@ exports[`InputPassword should Match Snapshot 1`] = `
       >
         <span
           aria-label="eye-invisible"
-          class="anticon anticon-eye-invisible"
+          class="anticon anticon-eye-invisible suffix-icon"
           role="img"
           tabindex="-1"
         >
@@ -37,14 +38,22 @@ exports[`InputPassword should Match Snapshot 1`] = `
             />
           </svg>
         </span>
-        <button
-          class="ant-btn ant-btn-primary ant-btn-sm"
-          type="button"
+        <div
+          class="ant-space ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
         >
-          <span>
-            生 成
-          </span>
-        </button>
+          <div
+            class="ant-space-item"
+          >
+            <button
+              class="ant-btn ant-btn-primary ant-btn-sm basic-button-wrapper css-geipcv"
+              type="button"
+            >
+              <span>
+                生 成
+              </span>
+            </button>
+          </div>
+        </div>
       </span>
     </span>
   </div>
@@ -53,29 +62,22 @@ exports[`InputPassword should Match Snapshot 1`] = `
 
 exports[`InputPassword should display password when user click EyeInvisibleOutlined icon 1`] = `
 <body>
-  <style
-    data-rc-order="append"
-    rc-util-key="antd-wave"
-  >
-    
-      [ant-click-animating-without-extra-node='true']::after, .ant-click-animating-node {
-        --antd-wave-shadow-color: buttonface;
-      }
-  </style>
   <div>
     <span
-      class="ant-input-affix-wrapper ant-input-affix-wrapper-focused ant-input-password action-password-input"
+      class="ant-input-affix-wrapper ant-input-affix-wrapper-focused ant-input-password basic-input-wrapper action-password-input css-1x7fd4z"
     >
       <input
         class="ant-input"
+        placeholder="请输入{{name}}"
         type="text"
+        value=""
       />
       <span
         class="ant-input-suffix"
       >
         <span
           aria-label="eye"
-          class="anticon anticon-eye"
+          class="anticon anticon-eye suffix-icon"
           role="img"
           tabindex="-1"
         >
@@ -93,14 +95,22 @@ exports[`InputPassword should display password when user click EyeInvisibleOutli
             />
           </svg>
         </span>
-        <button
-          class="ant-btn ant-btn-primary ant-btn-sm"
-          type="button"
+        <div
+          class="ant-space ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
         >
-          <span>
-            生 成
-          </span>
-        </button>
+          <div
+            class="ant-space-item"
+          >
+            <button
+              class="ant-btn ant-btn-primary ant-btn-sm basic-button-wrapper css-geipcv"
+              type="button"
+            >
+              <span>
+                生 成
+              </span>
+            </button>
+          </div>
+        </div>
       </span>
     </span>
   </div>
@@ -109,29 +119,22 @@ exports[`InputPassword should display password when user click EyeInvisibleOutli
 
 exports[`InputPassword should display password when user click EyeInvisibleOutlined icon 2`] = `
 <body>
-  <style
-    data-rc-order="append"
-    rc-util-key="antd-wave"
-  >
-    
-      [ant-click-animating-without-extra-node='true']::after, .ant-click-animating-node {
-        --antd-wave-shadow-color: buttonface;
-      }
-  </style>
   <div>
     <span
-      class="ant-input-affix-wrapper ant-input-affix-wrapper-focused ant-input-password action-password-input"
+      class="ant-input-affix-wrapper ant-input-affix-wrapper-focused ant-input-password basic-input-wrapper action-password-input css-1x7fd4z"
     >
       <input
         class="ant-input"
+        placeholder="请输入{{name}}"
         type="password"
+        value=""
       />
       <span
         class="ant-input-suffix"
       >
         <span
           aria-label="eye-invisible"
-          class="anticon anticon-eye-invisible"
+          class="anticon anticon-eye-invisible suffix-icon"
           role="img"
           tabindex="-1"
         >
@@ -152,14 +155,22 @@ exports[`InputPassword should display password when user click EyeInvisibleOutli
             />
           </svg>
         </span>
-        <button
-          class="ant-btn ant-btn-primary ant-btn-sm"
-          type="button"
+        <div
+          class="ant-space ant-space-horizontal ant-space-align-center basic-tooltips-wrapper css-4jbtl9"
         >
-          <span>
-            生 成
-          </span>
-        </button>
+          <div
+            class="ant-space-item"
+          >
+            <button
+              class="ant-btn ant-btn-primary ant-btn-sm basic-button-wrapper css-geipcv"
+              type="button"
+            >
+              <span>
+                生 成
+              </span>
+            </button>
+          </div>
+        </div>
       </span>
     </span>
   </div>

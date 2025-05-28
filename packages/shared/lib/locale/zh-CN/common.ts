@@ -49,7 +49,7 @@ export default {
   alreadyUsed: '已使用',
   userNumber: '用户数量',
   generate: '生成',
-  generatePasswordSuccess: '已生成16位密码并复制在剪贴板中',
+  generatePasswordSuccess: '已生成{{minLength}}位密码并复制在剪贴板中',
   test: '测试',
   download: '下载',
   uploadAndUpdate: '上传并更新',

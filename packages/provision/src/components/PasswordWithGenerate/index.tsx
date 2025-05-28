@@ -8,11 +8,13 @@ import { PasswordWidthGenerateStyleWrapper } from './style';
 
 interface IInputPassword extends PasswordProps {
   clickGeneratePassword: () => string;
+  minLength?: number;
 }
 
 const InputPassword: FC<IInputPassword> = ({
   clickGeneratePassword,
   disabled,
+  minLength,
   ...otherProps
 }) => {
   const { t } = useTranslation();
@@ -66,7 +68,9 @@ const InputPassword: FC<IInputPassword> = ({
                     />
                   </g>
                 </svg>
-                {t('common.generatePasswordSuccess')}
+                {t('common.generatePasswordSuccess', {
+                  minLength: minLength ?? 16
+                })}
               </Space>
             }
           >
