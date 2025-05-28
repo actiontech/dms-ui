@@ -11,7 +11,7 @@ exports[`test monitor source config render without permission 1`] = `
           class="title"
         >
           <div
-            class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+            class="ant-space ant-space-horizontal ant-space-align-center"
           >
             <div
               class="ant-space-item"
@@ -28,10 +28,10 @@ exports[`test monitor source config render without permission 1`] = `
         class="segmented-tabs-wrapper"
       >
         <div
-          class="ant-row segmented-row-wrapper css-156vlto css-dev-only-do-not-override-txh9fw"
+          class="ant-row segmented-row-wrapper css-156vlto"
         >
           <div
-            class="ant-segmented basic-segmented-wrapper css-192b3m1 css-dev-only-do-not-override-txh9fw"
+            class="ant-segmented basic-segmented-wrapper css-192b3m1"
           >
             <div
               class="ant-segmented-group"
@@ -68,7 +68,7 @@ exports[`test monitor source config render without permission 1`] = `
             </div>
           </div>
           <div
-            class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center flex-space-between "
+            class="ant-space ant-space-horizontal ant-space-align-center flex-space-between "
             style="margin-left: 12px;"
           >
             <div
@@ -76,10 +76,10 @@ exports[`test monitor source config render without permission 1`] = `
               style="margin-right: 8px;"
             >
               <span
-                class="ant-input-affix-wrapper basic-input-wrapper actiontech-table-search-input-namespace css-1f6svkh ant-input-affix-wrapper-sm css-dev-only-do-not-override-txh9fw"
+                class="ant-input-affix-wrapper basic-input-wrapper actiontech-table-search-input-namespace css-1f6svkh ant-input-affix-wrapper-sm"
               >
                 <input
-                  class="ant-input ant-input-sm css-dev-only-do-not-override-txh9fw"
+                  class="ant-input ant-input-sm"
                   id="actiontech-table-search-input"
                   placeholder="输入关键字搜索"
                   type="text"
@@ -123,7 +123,7 @@ exports[`test monitor source config render without permission 1`] = `
               class="ant-space-item"
             >
               <button
-                class="ant-btn css-dev-only-do-not-override-txh9fw ant-btn-default ant-btn-sm ant-btn-icon-only basic-button-wrapper css-geipcv"
+                class="ant-btn ant-btn-default ant-btn-sm ant-btn-icon-only basic-button-wrapper css-geipcv"
                 type="button"
               >
                 <span
@@ -149,10 +149,10 @@ exports[`test monitor source config render without permission 1`] = `
           class="lazy-load-wrapper segmented-item-content lazy-load-wrapper-show css-952l0m"
         >
           <div
-            class="ant-table-wrapper actiontech-table-namespace css-fxd6ka css-dev-only-do-not-override-txh9fw"
+            class="ant-table-wrapper actiontech-table-namespace css-fxd6ka"
           >
             <div
-              class="ant-spin-nested-loading css-dev-only-do-not-override-txh9fw"
+              class="ant-spin-nested-loading"
             >
               <div
                 class="ant-spin-container"
@@ -437,7 +437,7 @@ exports[`test monitor source config render without permission 1`] = `
                   </div>
                 </div>
                 <ul
-                  class="ant-pagination ant-table-pagination ant-table-pagination-right actiontech-table-pagination actiontech-table-pagination-fixed css-dev-only-do-not-override-txh9fw"
+                  class="ant-pagination ant-table-pagination ant-table-pagination-right actiontech-table-pagination actiontech-table-pagination-fixed"
                 >
                   <li
                     class="ant-pagination-total-text"
@@ -526,7 +526,7 @@ exports[`test monitor source config render without permission 1`] = `
                   >
                     <div
                       aria-label="页码"
-                      class="ant-select ant-pagination-options-size-changer css-dev-only-do-not-override-txh9fw ant-select-single ant-select-show-arrow ant-select-show-search"
+                      class="ant-select ant-pagination-options-size-changer ant-select-single ant-select-show-arrow ant-select-show-search"
                     >
                       <div
                         class="ant-select-selector"
@@ -607,7 +607,7 @@ exports[`test monitor source config should open model when click add button 1`] 
           class="title"
         >
           <div
-            class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+            class="ant-space ant-space-horizontal ant-space-align-center"
           >
             <div
               class="ant-space-item"
@@ -620,7 +620,7 @@ exports[`test monitor source config should open model when click add button 1`] 
           class="extra"
         >
           <button
-            class="ant-btn css-dev-only-do-not-override-txh9fw ant-btn-primary basic-button-wrapper css-geipcv"
+            class="ant-btn ant-btn-primary basic-button-wrapper css-geipcv"
             type="button"
           >
             <span
@@ -652,10 +652,10 @@ exports[`test monitor source config should open model when click add button 1`] 
         class="segmented-tabs-wrapper"
       >
         <div
-          class="ant-row segmented-row-wrapper css-156vlto css-dev-only-do-not-override-txh9fw"
+          class="ant-row segmented-row-wrapper css-156vlto"
         >
           <div
-            class="ant-segmented basic-segmented-wrapper css-192b3m1 css-dev-only-do-not-override-txh9fw"
+            class="ant-segmented basic-segmented-wrapper css-192b3m1"
           >
             <div
               class="ant-segmented-group"
@@ -692,7 +692,7 @@ exports[`test monitor source config should open model when click add button 1`] 
             </div>
           </div>
           <div
-            class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center flex-space-between "
+            class="ant-space ant-space-horizontal ant-space-align-center flex-space-between "
             style="margin-left: 12px;"
           >
             <div
@@ -700,10 +700,10 @@ exports[`test monitor source config should open model when click add button 1`] 
               style="margin-right: 8px;"
             >
               <span
-                class="ant-input-affix-wrapper basic-input-wrapper actiontech-table-search-input-namespace css-1f6svkh ant-input-affix-wrapper-sm css-dev-only-do-not-override-txh9fw"
+                class="ant-input-affix-wrapper basic-input-wrapper actiontech-table-search-input-namespace css-1f6svkh ant-input-affix-wrapper-sm"
               >
                 <input
-                  class="ant-input ant-input-sm css-dev-only-do-not-override-txh9fw"
+                  class="ant-input ant-input-sm"
                   id="actiontech-table-search-input"
                   placeholder="输入关键字搜索"
                   type="text"
@@ -747,7 +747,7 @@ exports[`test monitor source config should open model when click add button 1`] 
               class="ant-space-item"
             >
               <button
-                class="ant-btn css-dev-only-do-not-override-txh9fw ant-btn-default ant-btn-sm ant-btn-icon-only basic-button-wrapper css-geipcv"
+                class="ant-btn ant-btn-default ant-btn-sm ant-btn-icon-only basic-button-wrapper css-geipcv"
                 type="button"
               >
                 <span
@@ -773,10 +773,10 @@ exports[`test monitor source config should open model when click add button 1`] 
           class="lazy-load-wrapper segmented-item-content lazy-load-wrapper-show css-952l0m"
         >
           <div
-            class="ant-table-wrapper actiontech-table-namespace css-fxd6ka css-dev-only-do-not-override-txh9fw"
+            class="ant-table-wrapper actiontech-table-namespace css-fxd6ka"
           >
             <div
-              class="ant-spin-nested-loading css-dev-only-do-not-override-txh9fw"
+              class="ant-spin-nested-loading"
             >
               <div
                 class="ant-spin-container"
@@ -972,14 +972,14 @@ exports[`test monitor source config should open model when click add button 1`] 
                                 class="css-new95e"
                               >
                                 <div
-                                  class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+                                  class="ant-space ant-space-horizontal ant-space-align-center"
                                 >
                                   <div
                                     class="ant-space-item"
                                     style="margin-right: 8px;"
                                   >
                                     <button
-                                      class="ant-btn css-dev-only-do-not-override-txh9fw ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                      class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
                                       type="button"
                                     >
                                       <span>
@@ -991,7 +991,7 @@ exports[`test monitor source config should open model when click add button 1`] 
                                     class="ant-space-item"
                                   >
                                     <button
-                                      class="ant-btn css-dev-only-do-not-override-txh9fw ant-btn-default ant-btn-sm ant-btn-dangerous actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                      class="ant-btn ant-btn-default ant-btn-sm ant-btn-dangerous actiontech-table-actions-button basic-button-wrapper css-geipcv"
                                       type="button"
                                     >
                                       <span>
@@ -1049,14 +1049,14 @@ exports[`test monitor source config should open model when click add button 1`] 
                                 class="css-new95e"
                               >
                                 <div
-                                  class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+                                  class="ant-space ant-space-horizontal ant-space-align-center"
                                 >
                                   <div
                                     class="ant-space-item"
                                     style="margin-right: 8px;"
                                   >
                                     <button
-                                      class="ant-btn css-dev-only-do-not-override-txh9fw ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                      class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
                                       type="button"
                                     >
                                       <span>
@@ -1068,7 +1068,7 @@ exports[`test monitor source config should open model when click add button 1`] 
                                     class="ant-space-item"
                                   >
                                     <button
-                                      class="ant-btn css-dev-only-do-not-override-txh9fw ant-btn-default ant-btn-sm ant-btn-dangerous actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                      class="ant-btn ant-btn-default ant-btn-sm ant-btn-dangerous actiontech-table-actions-button basic-button-wrapper css-geipcv"
                                       type="button"
                                     >
                                       <span>
@@ -1126,14 +1126,14 @@ exports[`test monitor source config should open model when click add button 1`] 
                                 class="css-new95e"
                               >
                                 <div
-                                  class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+                                  class="ant-space ant-space-horizontal ant-space-align-center"
                                 >
                                   <div
                                     class="ant-space-item"
                                     style="margin-right: 8px;"
                                   >
                                     <button
-                                      class="ant-btn css-dev-only-do-not-override-txh9fw ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                      class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
                                       type="button"
                                     >
                                       <span>
@@ -1145,7 +1145,7 @@ exports[`test monitor source config should open model when click add button 1`] 
                                     class="ant-space-item"
                                   >
                                     <button
-                                      class="ant-btn css-dev-only-do-not-override-txh9fw ant-btn-default ant-btn-sm ant-btn-dangerous actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                      class="ant-btn ant-btn-default ant-btn-sm ant-btn-dangerous actiontech-table-actions-button basic-button-wrapper css-geipcv"
                                       type="button"
                                     >
                                       <span>
@@ -1163,7 +1163,7 @@ exports[`test monitor source config should open model when click add button 1`] 
                   </div>
                 </div>
                 <ul
-                  class="ant-pagination ant-table-pagination ant-table-pagination-right actiontech-table-pagination actiontech-table-pagination-fixed css-dev-only-do-not-override-txh9fw"
+                  class="ant-pagination ant-table-pagination ant-table-pagination-right actiontech-table-pagination actiontech-table-pagination-fixed"
                 >
                   <li
                     class="ant-pagination-total-text"
@@ -1252,7 +1252,7 @@ exports[`test monitor source config should open model when click add button 1`] 
                   >
                     <div
                       aria-label="页码"
-                      class="ant-select ant-pagination-options-size-changer css-dev-only-do-not-override-txh9fw ant-select-single ant-select-show-arrow ant-select-show-search"
+                      class="ant-select ant-pagination-options-size-changer ant-select-single ant-select-show-arrow ant-select-show-search"
                     >
                       <div
                         class="ant-select-selector"
@@ -1333,7 +1333,7 @@ exports[`test monitor source config should render normal server monitor table 1`
           class="title"
         >
           <div
-            class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+            class="ant-space ant-space-horizontal ant-space-align-center"
           >
             <div
               class="ant-space-item"
@@ -1346,7 +1346,7 @@ exports[`test monitor source config should render normal server monitor table 1`
           class="extra"
         >
           <button
-            class="ant-btn css-dev-only-do-not-override-txh9fw ant-btn-primary basic-button-wrapper css-geipcv"
+            class="ant-btn ant-btn-primary basic-button-wrapper css-geipcv"
             type="button"
           >
             <span
@@ -1378,10 +1378,10 @@ exports[`test monitor source config should render normal server monitor table 1`
         class="segmented-tabs-wrapper"
       >
         <div
-          class="ant-row segmented-row-wrapper css-156vlto css-dev-only-do-not-override-txh9fw"
+          class="ant-row segmented-row-wrapper css-156vlto"
         >
           <div
-            class="ant-segmented basic-segmented-wrapper css-192b3m1 css-dev-only-do-not-override-txh9fw"
+            class="ant-segmented basic-segmented-wrapper css-192b3m1"
           >
             <div
               class="ant-segmented-group"
@@ -1418,7 +1418,7 @@ exports[`test monitor source config should render normal server monitor table 1`
             </div>
           </div>
           <div
-            class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center flex-space-between "
+            class="ant-space ant-space-horizontal ant-space-align-center flex-space-between "
             style="margin-left: 12px;"
           >
             <div
@@ -1426,10 +1426,10 @@ exports[`test monitor source config should render normal server monitor table 1`
               style="margin-right: 8px;"
             >
               <span
-                class="ant-input-affix-wrapper basic-input-wrapper actiontech-table-search-input-namespace css-1f6svkh ant-input-affix-wrapper-sm css-dev-only-do-not-override-txh9fw"
+                class="ant-input-affix-wrapper basic-input-wrapper actiontech-table-search-input-namespace css-1f6svkh ant-input-affix-wrapper-sm"
               >
                 <input
-                  class="ant-input ant-input-sm css-dev-only-do-not-override-txh9fw"
+                  class="ant-input ant-input-sm"
                   id="actiontech-table-search-input"
                   placeholder="输入关键字搜索"
                   type="text"
@@ -1473,7 +1473,7 @@ exports[`test monitor source config should render normal server monitor table 1`
               class="ant-space-item"
             >
               <button
-                class="ant-btn css-dev-only-do-not-override-txh9fw ant-btn-default ant-btn-sm ant-btn-icon-only basic-button-wrapper css-geipcv"
+                class="ant-btn ant-btn-default ant-btn-sm ant-btn-icon-only basic-button-wrapper css-geipcv"
                 type="button"
               >
                 <span
@@ -1499,10 +1499,10 @@ exports[`test monitor source config should render normal server monitor table 1`
           class="lazy-load-wrapper segmented-item-content lazy-load-wrapper-show css-952l0m"
         >
           <div
-            class="ant-table-wrapper actiontech-table-namespace css-fxd6ka css-dev-only-do-not-override-txh9fw"
+            class="ant-table-wrapper actiontech-table-namespace css-fxd6ka"
           >
             <div
-              class="ant-spin-nested-loading css-dev-only-do-not-override-txh9fw"
+              class="ant-spin-nested-loading"
             >
               <div
                 class="ant-spin-container"
@@ -1698,14 +1698,14 @@ exports[`test monitor source config should render normal server monitor table 1`
                                 class="css-new95e"
                               >
                                 <div
-                                  class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+                                  class="ant-space ant-space-horizontal ant-space-align-center"
                                 >
                                   <div
                                     class="ant-space-item"
                                     style="margin-right: 8px;"
                                   >
                                     <button
-                                      class="ant-btn css-dev-only-do-not-override-txh9fw ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                      class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
                                       type="button"
                                     >
                                       <span>
@@ -1717,7 +1717,7 @@ exports[`test monitor source config should render normal server monitor table 1`
                                     class="ant-space-item"
                                   >
                                     <button
-                                      class="ant-btn css-dev-only-do-not-override-txh9fw ant-btn-default ant-btn-sm ant-btn-dangerous actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                      class="ant-btn ant-btn-default ant-btn-sm ant-btn-dangerous actiontech-table-actions-button basic-button-wrapper css-geipcv"
                                       type="button"
                                     >
                                       <span>
@@ -1775,14 +1775,14 @@ exports[`test monitor source config should render normal server monitor table 1`
                                 class="css-new95e"
                               >
                                 <div
-                                  class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+                                  class="ant-space ant-space-horizontal ant-space-align-center"
                                 >
                                   <div
                                     class="ant-space-item"
                                     style="margin-right: 8px;"
                                   >
                                     <button
-                                      class="ant-btn css-dev-only-do-not-override-txh9fw ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                      class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
                                       type="button"
                                     >
                                       <span>
@@ -1794,7 +1794,7 @@ exports[`test monitor source config should render normal server monitor table 1`
                                     class="ant-space-item"
                                   >
                                     <button
-                                      class="ant-btn css-dev-only-do-not-override-txh9fw ant-btn-default ant-btn-sm ant-btn-dangerous actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                      class="ant-btn ant-btn-default ant-btn-sm ant-btn-dangerous actiontech-table-actions-button basic-button-wrapper css-geipcv"
                                       type="button"
                                     >
                                       <span>
@@ -1852,14 +1852,14 @@ exports[`test monitor source config should render normal server monitor table 1`
                                 class="css-new95e"
                               >
                                 <div
-                                  class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+                                  class="ant-space ant-space-horizontal ant-space-align-center"
                                 >
                                   <div
                                     class="ant-space-item"
                                     style="margin-right: 8px;"
                                   >
                                     <button
-                                      class="ant-btn css-dev-only-do-not-override-txh9fw ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                      class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
                                       type="button"
                                     >
                                       <span>
@@ -1871,7 +1871,7 @@ exports[`test monitor source config should render normal server monitor table 1`
                                     class="ant-space-item"
                                   >
                                     <button
-                                      class="ant-btn css-dev-only-do-not-override-txh9fw ant-btn-default ant-btn-sm ant-btn-dangerous actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                      class="ant-btn ant-btn-default ant-btn-sm ant-btn-dangerous actiontech-table-actions-button basic-button-wrapper css-geipcv"
                                       type="button"
                                     >
                                       <span>
@@ -1889,7 +1889,7 @@ exports[`test monitor source config should render normal server monitor table 1`
                   </div>
                 </div>
                 <ul
-                  class="ant-pagination ant-table-pagination ant-table-pagination-right actiontech-table-pagination actiontech-table-pagination-fixed css-dev-only-do-not-override-txh9fw"
+                  class="ant-pagination ant-table-pagination ant-table-pagination-right actiontech-table-pagination actiontech-table-pagination-fixed"
                 >
                   <li
                     class="ant-pagination-total-text"
@@ -1978,7 +1978,7 @@ exports[`test monitor source config should render normal server monitor table 1`
                   >
                     <div
                       aria-label="页码"
-                      class="ant-select ant-pagination-options-size-changer css-dev-only-do-not-override-txh9fw ant-select-single ant-select-show-arrow ant-select-show-search"
+                      class="ant-select ant-pagination-options-size-changer ant-select-single ant-select-show-arrow ant-select-show-search"
                     >
                       <div
                         class="ant-select-selector"
@@ -2059,7 +2059,7 @@ exports[`test monitor source config should render search result for database tab
           class="title"
         >
           <div
-            class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+            class="ant-space ant-space-horizontal ant-space-align-center"
           >
             <div
               class="ant-space-item"
@@ -2072,7 +2072,7 @@ exports[`test monitor source config should render search result for database tab
           class="extra"
         >
           <button
-            class="ant-btn css-dev-only-do-not-override-txh9fw ant-btn-primary basic-button-wrapper css-geipcv"
+            class="ant-btn ant-btn-primary basic-button-wrapper css-geipcv"
             type="button"
           >
             <span
@@ -2104,10 +2104,10 @@ exports[`test monitor source config should render search result for database tab
         class="segmented-tabs-wrapper"
       >
         <div
-          class="ant-row segmented-row-wrapper css-156vlto css-dev-only-do-not-override-txh9fw"
+          class="ant-row segmented-row-wrapper css-156vlto"
         >
           <div
-            class="ant-segmented basic-segmented-wrapper css-192b3m1 css-dev-only-do-not-override-txh9fw"
+            class="ant-segmented basic-segmented-wrapper css-192b3m1"
           >
             <div
               class="ant-segmented-group"
@@ -2144,7 +2144,7 @@ exports[`test monitor source config should render search result for database tab
             </div>
           </div>
           <div
-            class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center flex-space-between "
+            class="ant-space ant-space-horizontal ant-space-align-center flex-space-between "
             style="margin-left: 12px;"
           >
             <div
@@ -2152,10 +2152,10 @@ exports[`test monitor source config should render search result for database tab
               style="margin-right: 8px;"
             >
               <span
-                class="ant-input-affix-wrapper basic-input-wrapper actiontech-table-search-input-namespace css-1f6svkh ant-input-affix-wrapper-sm css-dev-only-do-not-override-txh9fw"
+                class="ant-input-affix-wrapper basic-input-wrapper actiontech-table-search-input-namespace css-1f6svkh ant-input-affix-wrapper-sm"
               >
                 <input
-                  class="ant-input ant-input-sm css-dev-only-do-not-override-txh9fw"
+                  class="ant-input ant-input-sm"
                   id="actiontech-table-search-input"
                   placeholder="输入关键字搜索"
                   type="text"
@@ -2199,7 +2199,7 @@ exports[`test monitor source config should render search result for database tab
               class="ant-space-item"
             >
               <button
-                class="ant-btn css-dev-only-do-not-override-txh9fw ant-btn-default ant-btn-sm ant-btn-icon-only basic-button-wrapper css-geipcv"
+                class="ant-btn ant-btn-default ant-btn-sm ant-btn-icon-only basic-button-wrapper css-geipcv"
                 type="button"
               >
                 <span
@@ -2225,10 +2225,10 @@ exports[`test monitor source config should render search result for database tab
           class="lazy-load-wrapper segmented-item-content lazy-load-wrapper-show css-952l0m"
         >
           <div
-            class="ant-table-wrapper actiontech-table-namespace css-fxd6ka css-dev-only-do-not-override-txh9fw"
+            class="ant-table-wrapper actiontech-table-namespace css-fxd6ka"
           >
             <div
-              class="ant-spin-nested-loading css-dev-only-do-not-override-txh9fw"
+              class="ant-spin-nested-loading"
             >
               <div
                 class="ant-spin-container"
@@ -2424,14 +2424,14 @@ exports[`test monitor source config should render search result for database tab
                                 class="css-new95e"
                               >
                                 <div
-                                  class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+                                  class="ant-space ant-space-horizontal ant-space-align-center"
                                 >
                                   <div
                                     class="ant-space-item"
                                     style="margin-right: 8px;"
                                   >
                                     <button
-                                      class="ant-btn css-dev-only-do-not-override-txh9fw ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                      class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
                                       type="button"
                                     >
                                       <span>
@@ -2443,7 +2443,7 @@ exports[`test monitor source config should render search result for database tab
                                     class="ant-space-item"
                                   >
                                     <button
-                                      class="ant-btn css-dev-only-do-not-override-txh9fw ant-btn-default ant-btn-sm ant-btn-dangerous actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                      class="ant-btn ant-btn-default ant-btn-sm ant-btn-dangerous actiontech-table-actions-button basic-button-wrapper css-geipcv"
                                       type="button"
                                     >
                                       <span>
@@ -2461,7 +2461,7 @@ exports[`test monitor source config should render search result for database tab
                   </div>
                 </div>
                 <ul
-                  class="ant-pagination ant-table-pagination ant-table-pagination-right actiontech-table-pagination actiontech-table-pagination-fixed css-dev-only-do-not-override-txh9fw"
+                  class="ant-pagination ant-table-pagination ant-table-pagination-right actiontech-table-pagination actiontech-table-pagination-fixed"
                 >
                   <li
                     class="ant-pagination-total-text"
@@ -2550,7 +2550,7 @@ exports[`test monitor source config should render search result for database tab
                   >
                     <div
                       aria-label="页码"
-                      class="ant-select ant-pagination-options-size-changer css-dev-only-do-not-override-txh9fw ant-select-single ant-select-show-arrow ant-select-show-search"
+                      class="ant-select ant-pagination-options-size-changer ant-select-single ant-select-show-arrow ant-select-show-search"
                     >
                       <div
                         class="ant-select-selector"
@@ -2631,7 +2631,7 @@ exports[`test monitor source config should render search result for table and re
           class="title"
         >
           <div
-            class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+            class="ant-space ant-space-horizontal ant-space-align-center"
           >
             <div
               class="ant-space-item"
@@ -2644,7 +2644,7 @@ exports[`test monitor source config should render search result for table and re
           class="extra"
         >
           <button
-            class="ant-btn css-dev-only-do-not-override-txh9fw ant-btn-primary basic-button-wrapper css-geipcv"
+            class="ant-btn ant-btn-primary basic-button-wrapper css-geipcv"
             type="button"
           >
             <span
@@ -2676,10 +2676,10 @@ exports[`test monitor source config should render search result for table and re
         class="segmented-tabs-wrapper"
       >
         <div
-          class="ant-row segmented-row-wrapper css-156vlto css-dev-only-do-not-override-txh9fw"
+          class="ant-row segmented-row-wrapper css-156vlto"
         >
           <div
-            class="ant-segmented basic-segmented-wrapper css-192b3m1 css-dev-only-do-not-override-txh9fw"
+            class="ant-segmented basic-segmented-wrapper css-192b3m1"
           >
             <div
               class="ant-segmented-group"
@@ -2716,7 +2716,7 @@ exports[`test monitor source config should render search result for table and re
             </div>
           </div>
           <div
-            class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center flex-space-between "
+            class="ant-space ant-space-horizontal ant-space-align-center flex-space-between "
             style="margin-left: 12px;"
           >
             <div
@@ -2724,10 +2724,10 @@ exports[`test monitor source config should render search result for table and re
               style="margin-right: 8px;"
             >
               <span
-                class="ant-input-affix-wrapper basic-input-wrapper actiontech-table-search-input-namespace css-1f6svkh ant-input-affix-wrapper-sm css-dev-only-do-not-override-txh9fw"
+                class="ant-input-affix-wrapper basic-input-wrapper actiontech-table-search-input-namespace css-1f6svkh ant-input-affix-wrapper-sm"
               >
                 <input
-                  class="ant-input ant-input-sm css-dev-only-do-not-override-txh9fw"
+                  class="ant-input ant-input-sm"
                   id="actiontech-table-search-input"
                   placeholder="输入关键字搜索"
                   type="text"
@@ -2771,7 +2771,7 @@ exports[`test monitor source config should render search result for table and re
               class="ant-space-item"
             >
               <button
-                class="ant-btn css-dev-only-do-not-override-txh9fw ant-btn-default ant-btn-sm ant-btn-icon-only basic-button-wrapper css-geipcv"
+                class="ant-btn ant-btn-default ant-btn-sm ant-btn-icon-only basic-button-wrapper css-geipcv"
                 type="button"
               >
                 <span
@@ -2797,10 +2797,10 @@ exports[`test monitor source config should render search result for table and re
           class="lazy-load-wrapper segmented-item-content lazy-load-wrapper-show css-952l0m"
         >
           <div
-            class="ant-table-wrapper actiontech-table-namespace css-fxd6ka css-dev-only-do-not-override-txh9fw"
+            class="ant-table-wrapper actiontech-table-namespace css-fxd6ka"
           >
             <div
-              class="ant-spin-nested-loading css-dev-only-do-not-override-txh9fw"
+              class="ant-spin-nested-loading"
             >
               <div
                 class="ant-spin-container"
@@ -2996,14 +2996,14 @@ exports[`test monitor source config should render search result for table and re
                                 class="css-new95e"
                               >
                                 <div
-                                  class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+                                  class="ant-space ant-space-horizontal ant-space-align-center"
                                 >
                                   <div
                                     class="ant-space-item"
                                     style="margin-right: 8px;"
                                   >
                                     <button
-                                      class="ant-btn css-dev-only-do-not-override-txh9fw ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                      class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
                                       type="button"
                                     >
                                       <span>
@@ -3015,7 +3015,7 @@ exports[`test monitor source config should render search result for table and re
                                     class="ant-space-item"
                                   >
                                     <button
-                                      class="ant-btn css-dev-only-do-not-override-txh9fw ant-btn-default ant-btn-sm ant-btn-dangerous actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                      class="ant-btn ant-btn-default ant-btn-sm ant-btn-dangerous actiontech-table-actions-button basic-button-wrapper css-geipcv"
                                       type="button"
                                     >
                                       <span>
@@ -3033,7 +3033,7 @@ exports[`test monitor source config should render search result for table and re
                   </div>
                 </div>
                 <ul
-                  class="ant-pagination ant-table-pagination ant-table-pagination-right actiontech-table-pagination actiontech-table-pagination-fixed css-dev-only-do-not-override-txh9fw"
+                  class="ant-pagination ant-table-pagination ant-table-pagination-right actiontech-table-pagination actiontech-table-pagination-fixed"
                 >
                   <li
                     class="ant-pagination-total-text"
@@ -3122,7 +3122,7 @@ exports[`test monitor source config should render search result for table and re
                   >
                     <div
                       aria-label="页码"
-                      class="ant-select ant-pagination-options-size-changer css-dev-only-do-not-override-txh9fw ant-select-single ant-select-show-arrow ant-select-show-search"
+                      class="ant-select ant-pagination-options-size-changer ant-select-single ant-select-show-arrow ant-select-show-search"
                     >
                       <div
                         class="ant-select-selector"
@@ -3203,7 +3203,7 @@ exports[`test monitor source config should render server monitor table for defau
           class="title"
         >
           <div
-            class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+            class="ant-space ant-space-horizontal ant-space-align-center"
           >
             <div
               class="ant-space-item"
@@ -3216,7 +3216,7 @@ exports[`test monitor source config should render server monitor table for defau
           class="extra"
         >
           <button
-            class="ant-btn css-dev-only-do-not-override-txh9fw ant-btn-primary basic-button-wrapper css-geipcv"
+            class="ant-btn ant-btn-primary basic-button-wrapper css-geipcv"
             type="button"
           >
             <span
@@ -3248,10 +3248,10 @@ exports[`test monitor source config should render server monitor table for defau
         class="segmented-tabs-wrapper"
       >
         <div
-          class="ant-row segmented-row-wrapper css-156vlto css-dev-only-do-not-override-txh9fw"
+          class="ant-row segmented-row-wrapper css-156vlto"
         >
           <div
-            class="ant-segmented basic-segmented-wrapper css-192b3m1 css-dev-only-do-not-override-txh9fw"
+            class="ant-segmented basic-segmented-wrapper css-192b3m1"
           >
             <div
               class="ant-segmented-group"
@@ -3288,7 +3288,7 @@ exports[`test monitor source config should render server monitor table for defau
             </div>
           </div>
           <div
-            class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center flex-space-between "
+            class="ant-space ant-space-horizontal ant-space-align-center flex-space-between "
             style="margin-left: 12px;"
           >
             <div
@@ -3296,10 +3296,10 @@ exports[`test monitor source config should render server monitor table for defau
               style="margin-right: 8px;"
             >
               <span
-                class="ant-input-affix-wrapper basic-input-wrapper actiontech-table-search-input-namespace css-1f6svkh ant-input-affix-wrapper-sm css-dev-only-do-not-override-txh9fw"
+                class="ant-input-affix-wrapper basic-input-wrapper actiontech-table-search-input-namespace css-1f6svkh ant-input-affix-wrapper-sm"
               >
                 <input
-                  class="ant-input ant-input-sm css-dev-only-do-not-override-txh9fw"
+                  class="ant-input ant-input-sm"
                   id="actiontech-table-search-input"
                   placeholder="输入关键字搜索"
                   type="text"
@@ -3343,7 +3343,7 @@ exports[`test monitor source config should render server monitor table for defau
               class="ant-space-item"
             >
               <button
-                class="ant-btn css-dev-only-do-not-override-txh9fw ant-btn-default ant-btn-sm ant-btn-icon-only basic-button-wrapper css-geipcv"
+                class="ant-btn ant-btn-default ant-btn-sm ant-btn-icon-only basic-button-wrapper css-geipcv"
                 type="button"
               >
                 <span
@@ -3369,10 +3369,10 @@ exports[`test monitor source config should render server monitor table for defau
           class="lazy-load-wrapper segmented-item-content lazy-load-wrapper-show css-952l0m"
         >
           <div
-            class="ant-table-wrapper actiontech-table-namespace css-fxd6ka css-dev-only-do-not-override-txh9fw"
+            class="ant-table-wrapper actiontech-table-namespace css-fxd6ka"
           >
             <div
-              class="ant-spin-nested-loading css-dev-only-do-not-override-txh9fw"
+              class="ant-spin-nested-loading"
             >
               <div
                 class="ant-spin-container"
@@ -3568,14 +3568,14 @@ exports[`test monitor source config should render server monitor table for defau
                                 class="css-new95e"
                               >
                                 <div
-                                  class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+                                  class="ant-space ant-space-horizontal ant-space-align-center"
                                 >
                                   <div
                                     class="ant-space-item"
                                     style="margin-right: 8px;"
                                   >
                                     <button
-                                      class="ant-btn css-dev-only-do-not-override-txh9fw ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                      class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
                                       type="button"
                                     >
                                       <span>
@@ -3587,7 +3587,7 @@ exports[`test monitor source config should render server monitor table for defau
                                     class="ant-space-item"
                                   >
                                     <button
-                                      class="ant-btn css-dev-only-do-not-override-txh9fw ant-btn-default ant-btn-sm ant-btn-dangerous actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                      class="ant-btn ant-btn-default ant-btn-sm ant-btn-dangerous actiontech-table-actions-button basic-button-wrapper css-geipcv"
                                       type="button"
                                     >
                                       <span>
@@ -3645,14 +3645,14 @@ exports[`test monitor source config should render server monitor table for defau
                                 class="css-new95e"
                               >
                                 <div
-                                  class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+                                  class="ant-space ant-space-horizontal ant-space-align-center"
                                 >
                                   <div
                                     class="ant-space-item"
                                     style="margin-right: 8px;"
                                   >
                                     <button
-                                      class="ant-btn css-dev-only-do-not-override-txh9fw ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                      class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
                                       type="button"
                                     >
                                       <span>
@@ -3664,7 +3664,7 @@ exports[`test monitor source config should render server monitor table for defau
                                     class="ant-space-item"
                                   >
                                     <button
-                                      class="ant-btn css-dev-only-do-not-override-txh9fw ant-btn-default ant-btn-sm ant-btn-dangerous actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                      class="ant-btn ant-btn-default ant-btn-sm ant-btn-dangerous actiontech-table-actions-button basic-button-wrapper css-geipcv"
                                       type="button"
                                     >
                                       <span>
@@ -3722,14 +3722,14 @@ exports[`test monitor source config should render server monitor table for defau
                                 class="css-new95e"
                               >
                                 <div
-                                  class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+                                  class="ant-space ant-space-horizontal ant-space-align-center"
                                 >
                                   <div
                                     class="ant-space-item"
                                     style="margin-right: 8px;"
                                   >
                                     <button
-                                      class="ant-btn css-dev-only-do-not-override-txh9fw ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                      class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
                                       type="button"
                                     >
                                       <span>
@@ -3741,7 +3741,7 @@ exports[`test monitor source config should render server monitor table for defau
                                     class="ant-space-item"
                                   >
                                     <button
-                                      class="ant-btn css-dev-only-do-not-override-txh9fw ant-btn-default ant-btn-sm ant-btn-dangerous actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                      class="ant-btn ant-btn-default ant-btn-sm ant-btn-dangerous actiontech-table-actions-button basic-button-wrapper css-geipcv"
                                       type="button"
                                     >
                                       <span>
@@ -3759,7 +3759,7 @@ exports[`test monitor source config should render server monitor table for defau
                   </div>
                 </div>
                 <ul
-                  class="ant-pagination ant-table-pagination ant-table-pagination-right actiontech-table-pagination actiontech-table-pagination-fixed css-dev-only-do-not-override-txh9fw"
+                  class="ant-pagination ant-table-pagination ant-table-pagination-right actiontech-table-pagination actiontech-table-pagination-fixed"
                 >
                   <li
                     class="ant-pagination-total-text"
@@ -3848,7 +3848,7 @@ exports[`test monitor source config should render server monitor table for defau
                   >
                     <div
                       aria-label="页码"
-                      class="ant-select ant-pagination-options-size-changer css-dev-only-do-not-override-txh9fw ant-select-single ant-select-show-arrow ant-select-show-search"
+                      class="ant-select ant-pagination-options-size-changer ant-select-single ant-select-show-arrow ant-select-show-search"
                     >
                       <div
                         class="ant-select-selector"
@@ -3929,7 +3929,7 @@ exports[`test monitor source config should reset search input when click segment
           class="title"
         >
           <div
-            class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+            class="ant-space ant-space-horizontal ant-space-align-center"
           >
             <div
               class="ant-space-item"
@@ -3942,7 +3942,7 @@ exports[`test monitor source config should reset search input when click segment
           class="extra"
         >
           <button
-            class="ant-btn css-dev-only-do-not-override-txh9fw ant-btn-primary basic-button-wrapper css-geipcv"
+            class="ant-btn ant-btn-primary basic-button-wrapper css-geipcv"
             type="button"
           >
             <span
@@ -3974,10 +3974,10 @@ exports[`test monitor source config should reset search input when click segment
         class="segmented-tabs-wrapper"
       >
         <div
-          class="ant-row segmented-row-wrapper css-156vlto css-dev-only-do-not-override-txh9fw"
+          class="ant-row segmented-row-wrapper css-156vlto"
         >
           <div
-            class="ant-segmented basic-segmented-wrapper css-192b3m1 css-dev-only-do-not-override-txh9fw"
+            class="ant-segmented basic-segmented-wrapper css-192b3m1"
           >
             <div
               class="ant-segmented-group"
@@ -4014,7 +4014,7 @@ exports[`test monitor source config should reset search input when click segment
             </div>
           </div>
           <div
-            class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center flex-space-between "
+            class="ant-space ant-space-horizontal ant-space-align-center flex-space-between "
             style="margin-left: 12px;"
           >
             <div
@@ -4022,10 +4022,10 @@ exports[`test monitor source config should reset search input when click segment
               style="margin-right: 8px;"
             >
               <span
-                class="ant-input-affix-wrapper basic-input-wrapper actiontech-table-search-input-namespace css-1f6svkh ant-input-affix-wrapper-sm css-dev-only-do-not-override-txh9fw"
+                class="ant-input-affix-wrapper basic-input-wrapper actiontech-table-search-input-namespace css-1f6svkh ant-input-affix-wrapper-sm"
               >
                 <input
-                  class="ant-input ant-input-sm css-dev-only-do-not-override-txh9fw"
+                  class="ant-input ant-input-sm"
                   id="actiontech-table-search-input"
                   placeholder="输入关键字搜索"
                   type="text"
@@ -4069,7 +4069,7 @@ exports[`test monitor source config should reset search input when click segment
               class="ant-space-item"
             >
               <button
-                class="ant-btn css-dev-only-do-not-override-txh9fw ant-btn-default ant-btn-sm ant-btn-icon-only basic-button-wrapper css-geipcv"
+                class="ant-btn ant-btn-default ant-btn-sm ant-btn-icon-only basic-button-wrapper css-geipcv"
                 type="button"
               >
                 <span
@@ -4095,10 +4095,10 @@ exports[`test monitor source config should reset search input when click segment
           class="lazy-load-wrapper segmented-item-content lazy-load-wrapper-show css-952l0m"
         >
           <div
-            class="ant-table-wrapper actiontech-table-namespace css-fxd6ka css-dev-only-do-not-override-txh9fw"
+            class="ant-table-wrapper actiontech-table-namespace css-fxd6ka"
           >
             <div
-              class="ant-spin-nested-loading css-dev-only-do-not-override-txh9fw"
+              class="ant-spin-nested-loading"
             >
               <div
                 class="ant-spin-container"
@@ -4294,14 +4294,14 @@ exports[`test monitor source config should reset search input when click segment
                                 class="css-new95e"
                               >
                                 <div
-                                  class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+                                  class="ant-space ant-space-horizontal ant-space-align-center"
                                 >
                                   <div
                                     class="ant-space-item"
                                     style="margin-right: 8px;"
                                   >
                                     <button
-                                      class="ant-btn css-dev-only-do-not-override-txh9fw ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                      class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
                                       type="button"
                                     >
                                       <span>
@@ -4313,7 +4313,7 @@ exports[`test monitor source config should reset search input when click segment
                                     class="ant-space-item"
                                   >
                                     <button
-                                      class="ant-btn css-dev-only-do-not-override-txh9fw ant-btn-default ant-btn-sm ant-btn-dangerous actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                      class="ant-btn ant-btn-default ant-btn-sm ant-btn-dangerous actiontech-table-actions-button basic-button-wrapper css-geipcv"
                                       type="button"
                                     >
                                       <span>
@@ -4371,14 +4371,14 @@ exports[`test monitor source config should reset search input when click segment
                                 class="css-new95e"
                               >
                                 <div
-                                  class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+                                  class="ant-space ant-space-horizontal ant-space-align-center"
                                 >
                                   <div
                                     class="ant-space-item"
                                     style="margin-right: 8px;"
                                   >
                                     <button
-                                      class="ant-btn css-dev-only-do-not-override-txh9fw ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                      class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
                                       type="button"
                                     >
                                       <span>
@@ -4390,7 +4390,7 @@ exports[`test monitor source config should reset search input when click segment
                                     class="ant-space-item"
                                   >
                                     <button
-                                      class="ant-btn css-dev-only-do-not-override-txh9fw ant-btn-default ant-btn-sm ant-btn-dangerous actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                      class="ant-btn ant-btn-default ant-btn-sm ant-btn-dangerous actiontech-table-actions-button basic-button-wrapper css-geipcv"
                                       type="button"
                                     >
                                       <span>
@@ -4448,14 +4448,14 @@ exports[`test monitor source config should reset search input when click segment
                                 class="css-new95e"
                               >
                                 <div
-                                  class="ant-space css-dev-only-do-not-override-txh9fw ant-space-horizontal ant-space-align-center"
+                                  class="ant-space ant-space-horizontal ant-space-align-center"
                                 >
                                   <div
                                     class="ant-space-item"
                                     style="margin-right: 8px;"
                                   >
                                     <button
-                                      class="ant-btn css-dev-only-do-not-override-txh9fw ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                      class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
                                       type="button"
                                     >
                                       <span>
@@ -4467,7 +4467,7 @@ exports[`test monitor source config should reset search input when click segment
                                     class="ant-space-item"
                                   >
                                     <button
-                                      class="ant-btn css-dev-only-do-not-override-txh9fw ant-btn-default ant-btn-sm ant-btn-dangerous actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                      class="ant-btn ant-btn-default ant-btn-sm ant-btn-dangerous actiontech-table-actions-button basic-button-wrapper css-geipcv"
                                       type="button"
                                     >
                                       <span>
@@ -4485,7 +4485,7 @@ exports[`test monitor source config should reset search input when click segment
                   </div>
                 </div>
                 <ul
-                  class="ant-pagination ant-table-pagination ant-table-pagination-right actiontech-table-pagination actiontech-table-pagination-fixed css-dev-only-do-not-override-txh9fw"
+                  class="ant-pagination ant-table-pagination ant-table-pagination-right actiontech-table-pagination actiontech-table-pagination-fixed"
                 >
                   <li
                     class="ant-pagination-total-text"
@@ -4574,7 +4574,7 @@ exports[`test monitor source config should reset search input when click segment
                   >
                     <div
                       aria-label="页码"
-                      class="ant-select ant-pagination-options-size-changer css-dev-only-do-not-override-txh9fw ant-select-single ant-select-show-arrow ant-select-show-search"
+                      class="ant-select ant-pagination-options-size-changer ant-select-single ant-select-show-arrow ant-select-show-search"
                     >
                       <div
                         class="ant-select-selector"

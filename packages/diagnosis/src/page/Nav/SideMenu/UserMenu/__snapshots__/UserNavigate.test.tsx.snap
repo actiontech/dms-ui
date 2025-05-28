@@ -7,7 +7,7 @@ exports[`diagnosis/UserNavigate should match snapshot 1`] = `
       class="dms-layout-side-end"
     >
       <span
-        class="ant-avatar ant-avatar-circle action-avatar css-1wq79dc css-dev-only-do-not-override-txh9fw"
+        class="ant-avatar ant-avatar-circle action-avatar css-1wq79dc"
       >
         <span
           class="ant-avatar-string"
@@ -28,7 +28,7 @@ exports[`diagnosis/UserNavigate show user popover when click user avatar 1`] = `
       class="dms-layout-side-end"
     >
       <span
-        class="ant-avatar ant-avatar-circle action-avatar ant-popover-open css-1wq79dc css-dev-only-do-not-override-txh9fw"
+        class="ant-avatar ant-avatar-circle action-avatar ant-popover-open css-1wq79dc"
       >
         <span
           class="ant-avatar-string"
@@ -41,7 +41,7 @@ exports[`diagnosis/UserNavigate show user popover when click user avatar 1`] = `
   </div>
   <div>
     <div
-      class="ant-popover ant-zoom-big-appear ant-zoom-big-appear-prepare ant-zoom-big css-dev-only-do-not-override-txh9fw css-dev-only-do-not-override-txh9fw ant-popover-placement-topRight"
+      class="ant-popover ant-zoom-big-appear ant-zoom-big-appear-prepare ant-zoom-big ant-popover-placement-topRight"
       style="--arrow-x: 0px; --arrow-y: 0px; left: -1000vw; top: -1000vh; box-sizing: border-box;"
     >
       <div

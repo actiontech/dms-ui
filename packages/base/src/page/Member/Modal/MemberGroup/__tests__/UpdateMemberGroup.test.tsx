@@ -13,7 +13,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { mockUseDbServiceDriver } from '@actiontech/shared/lib/testUtil/mockHook/mockUseDbServiceDriver';
 import dbServices from '@actiontech/shared/lib/testUtil/mockApi/base/dbServices';
 import { memberGroupList } from '@actiontech/shared/lib/testUtil/mockApi/base/member/data';
-import dbAccountService from 'provision/src/testUtil/mockApi/dbAccountService';
+import { provisionMockApi } from '@actiontech/shared/lib/testUtil/mockApi';
 import { createSpySuccessResponse } from '@actiontech/shared/lib/testUtil/mockApi';
 
 jest.mock('react-redux', () => ({
@@ -46,7 +46,7 @@ describe('base/Member/Modal/UpdateMemberGroup', () => {
     listUsersSpy = userCenter.getUserList();
     litDBServices = dbServices.ListDBServicesTips();
     listRoleSpy = userCenter.getRoleList();
-    mockAuthListDBAccount = dbAccountService
+    mockAuthListDBAccount = provisionMockApi.dbAccountService
       .authListDBAccount()
       .mockImplementationOnce(() => createSpySuccessResponse({ data: [] }))
       .mockImplementationOnce(() => createSpySuccessResponse({ data: [] }));

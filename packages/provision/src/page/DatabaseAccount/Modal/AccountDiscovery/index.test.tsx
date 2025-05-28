@@ -4,21 +4,21 @@ import {
   getBySelector,
   selectOptionByIndex
 } from '@actiontech/shared/lib/testUtil/customQuery';
-import dbAccountService from '../../../../testUtil/mockApi/dbAccountService';
+import dbAccountService from '@actiontech/shared/lib/testUtil/mockApi/provision/dbAccountService';
 import { mockProjectInfo } from '@actiontech/shared/lib/testUtil/mockHook/data';
 import { mockUseCurrentProject } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentProject';
 import { mockUseDbServiceDriver } from '@actiontech/shared/lib/testUtil/mockHook/mockUseDbServiceDriver';
-import auth from '../../../../testUtil/mockApi/auth';
+import auth from '@actiontech/shared/lib/testUtil/mockApi/provision/auth';
 import AccountDiscoveryModal from '.';
 import { DatabaseAccountModalStatus } from '../../../../store/databaseAccount';
 import { EventEmitterKey, ModalName } from '../../../../data/enum';
-import { discoveryDBAccountMockData } from '../../../../testUtil/mockApi/dbAccountService/data';
+import { discoveryDBAccountMockData } from '@actiontech/shared/lib/testUtil/mockApi/provision/dbAccountService/data';
 import EventEmitter from '../../../../utils/EventEmitter';
 import {
   createSpyFailResponse,
   createSpySuccessResponse
 } from '@actiontech/shared/lib/testUtil/mockApi';
-import user from '../../../../testUtil/mockApi/user';
+import user from '@actiontech/shared/lib/testUtil/mockApi/provision/user';
 import { mockUsePermission } from '@actiontech/shared/lib/testUtil/mockHook/mockUsePermission';
 
 describe('provision/DatabaseAccount/AccountDiscoveryModal', () => {

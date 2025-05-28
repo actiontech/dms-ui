@@ -1,8 +1,7 @@
 import { renderHook, act } from '@testing-library/react';
 import useDBAuthRoleTips from './index';
-import auth from '../../testUtil/mockApi/auth';
-import dbRole from '../../testUtil/mockApi/dbRole';
-import { mockDBRoleTips } from '../../testUtil/mockApi/dbRole/data';
+import dbRole from '@actiontech/shared/lib/testUtil/mockApi/provision/dbRole';
+import { mockDBRoleTips } from '@actiontech/shared/lib/testUtil/mockApi/provision/dbRole/data';
 import { mockProjectInfo } from '@actiontech/shared/lib/testUtil/mockHook/data';
 
 describe('provision/hooks/useDBAuthRoleTips', () => {

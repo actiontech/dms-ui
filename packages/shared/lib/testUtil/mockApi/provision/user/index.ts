@@ -1,8 +1,5 @@
-import {
-  MockSpyApy,
-  createSpySuccessResponse
-} from '@actiontech/shared/lib/testUtil/mockApi';
-import User from '@actiontech/shared/lib/api/base/service/User';
+import { MockSpyApy, createSpySuccessResponse } from '../../../mockApi';
+import User from '../../../../api/base/service/User';
 import { userOperationPermissionMockData } from './data';
 
 class MockUserApi implements MockSpyApy {

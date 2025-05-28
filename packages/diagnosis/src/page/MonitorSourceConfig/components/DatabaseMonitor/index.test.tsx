@@ -6,7 +6,7 @@ import {
 } from '@actiontech/shared/lib/testUtil/customQuery';
 import { createSpySuccessResponse } from '@actiontech/shared/lib/testUtil/mockApi';
 import { useDispatch } from 'react-redux';
-import { superRender } from '../../../../testUtils/customRender';
+import { diagnosisSuperRender } from '../../../../testUtils/superRender';
 import { ModalName } from '../../../../data/ModalName';
 import { databaseMonitorListData } from '../../../../testUtils/mockApi/monitorSourceConfig/data';
 import DatabaseMonitor from './';
@@ -36,7 +36,7 @@ describe('test database monitor table', () => {
   });
 
   const customRender = (data = adminPermission) => {
-    return superRender(
+    return diagnosisSuperRender(
       <DatabaseMonitor setLoading={mockSetLoading} searchValue="" />,
       undefined,
       {

@@ -1,6 +1,6 @@
 import Login from '.';
 import { act, fireEvent, screen } from '@testing-library/react';
-import { superRender } from '../../testUtils/customRender';
+import { diagnosisSuperRender } from '../../testUtils/superRender';
 import {
   getBySelector,
   getHrefByText
@@ -33,7 +33,7 @@ describe('diagnosis/login', () => {
   });
 
   it('render login page', () => {
-    const { baseElement } = superRender(<Login />);
+    const { baseElement } = diagnosisSuperRender(<Login />);
     expect(baseElement).toMatchSnapshot();
     expect(getBySelector('#username')).toHaveAttribute('placeholder', '用户名');
     expect(getBySelector('#password')).toHaveAttribute('placeholder', '密码');
@@ -44,7 +44,7 @@ describe('diagnosis/login', () => {
 
   it('submit user info from login page', async () => {
     const loginRequest = login.login();
-    const { baseElement } = superRender(<Login />);
+    const { baseElement } = diagnosisSuperRender(<Login />);
     expect(baseElement).toMatchSnapshot();
     // username
     fireEvent.change(getBySelector('#username'), {
@@ -91,7 +91,7 @@ describe('diagnosis/login', () => {
   });
 
   it('show tip when not check user agreement', async () => {
-    const { baseElement } = superRender(<Login />);
+    const { baseElement } = diagnosisSuperRender(<Login />);
     expect(baseElement).toMatchSnapshot();
     // username
     fireEvent.change(getBySelector('#username'), {
@@ -127,7 +127,7 @@ describe('diagnosis/login', () => {
         user_id: 1
       })
     );
-    const { baseElement } = superRender(<Login />);
+    const { baseElement } = diagnosisSuperRender(<Login />);
     expect(baseElement).toMatchSnapshot();
     // username
     fireEvent.change(getBySelector('#username'), {
@@ -168,7 +168,7 @@ describe('diagnosis/login', () => {
         user_id: undefined
       })
     );
-    const { baseElement } = superRender(<Login />);
+    const { baseElement } = diagnosisSuperRender(<Login />);
     expect(baseElement).toMatchSnapshot();
     // username
     fireEvent.change(getBySelector('#username'), {

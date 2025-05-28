@@ -2,7 +2,7 @@ import { cleanup, act, fireEvent, screen } from '@testing-library/react';
 import { baseSuperRender } from '../../../../testUtils/superRender';
 import DatabaseAccountPasswordPolicy from '../index';
 import { getBySelector } from '@actiontech/shared/lib/testUtil/customQuery';
-import customDBPasswordRule from 'provision/src/testUtil/mockApi/customDBPasswordRule';
+import { provisionMockApi } from '@actiontech/shared/lib/testUtil/mockApi';
 
 describe('base/System/DatabaseAccountPasswordPolicy', () => {
   let getCustomDBPasswordRuleSpy: jest.SpyInstance;
@@ -11,9 +11,9 @@ describe('base/System/DatabaseAccountPasswordPolicy', () => {
   beforeEach(() => {
     jest.useFakeTimers();
     getCustomDBPasswordRuleSpy =
-      customDBPasswordRule.authGetCustomDBPasswordRule();
+      provisionMockApi.customDBPasswordRule.authGetCustomDBPasswordRule();
     updateCustomDBPasswordRuleSpy =
-      customDBPasswordRule.authUpdateCustomDBPasswordRule();
+      provisionMockApi.customDBPasswordRule.authUpdateCustomDBPasswordRule();
   });
 
   afterEach(() => {

@@ -3,7 +3,7 @@ import userManagement from '../../../../testUtils/mockApi/userManagement';
 import { getBySelector } from '@actiontech/shared/lib/testUtil/customQuery';
 import { createSpySuccessResponse } from '@actiontech/shared/lib/testUtil/mockApi';
 import { useDispatch } from 'react-redux';
-import { superRender } from '../../../../testUtils/customRender';
+import { diagnosisSuperRender } from '../../../../testUtils/superRender';
 import { ModalName } from '../../../../data/ModalName';
 import {
   adminPermission,
@@ -33,7 +33,7 @@ describe('diagnosis/test user table', () => {
   });
 
   const customRender = (data = adminPermission) => {
-    return superRender(<UserList />, undefined, {
+    return diagnosisSuperRender(<UserList />, undefined, {
       initStore: {
         userManagement: {
           modalStatus: {}

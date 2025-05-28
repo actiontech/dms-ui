@@ -7,7 +7,7 @@ import {
 import { serverMonitorListData } from '../../../../testUtils/mockApi/monitorSourceConfig/data';
 import { createSpySuccessResponse } from '@actiontech/shared/lib/testUtil/mockApi';
 import { useDispatch } from 'react-redux';
-import { superRender } from '../../../../testUtils/customRender';
+import { diagnosisSuperRender } from '../../../../testUtils/superRender';
 import { ModalName } from '../../../../data/ModalName';
 import ServerMonitor from './';
 import { adminPermission } from '../../../../testUtils/mockApi/userManagement/data';
@@ -36,7 +36,7 @@ describe('test server monitor table', () => {
   });
 
   const customRender = (data = adminPermission) => {
-    return superRender(
+    return diagnosisSuperRender(
       <ServerMonitor setLoading={mockSetLoading} searchValue="" />,
       undefined,
       {

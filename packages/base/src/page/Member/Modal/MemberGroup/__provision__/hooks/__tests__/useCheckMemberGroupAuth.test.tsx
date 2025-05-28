@@ -1,14 +1,14 @@
 import { renderHook, act, screen, fireEvent } from '@testing-library/react';
 import useCheckMemberGroupAuth from '../useCheckMemberGroupAuth';
 import { mockUseCurrentProject } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentProject';
-import dbAccountService from 'provision/src/testUtil/mockApi/dbAccountService';
 import { mockProjectInfo } from '@actiontech/shared/lib/testUtil/mockHook/data';
 import { paramsSerializer } from '@actiontech/shared';
 import { baseSuperRender } from '../../../../../../../testUtils/superRender';
 import { useState } from 'react';
 import {
   createSpyFailResponse,
-  createSpySuccessResponse
+  createSpySuccessResponse,
+  provisionMockApi
 } from '@actiontech/shared/lib/testUtil/mockApi';
 
 describe('useCheckMemberGroupAuth', () => {
@@ -119,7 +119,8 @@ describe('useCheckMemberGroupAuth', () => {
   beforeEach(() => {
     jest.useFakeTimers();
     mockUseCurrentProject();
-    mockAuthListDBAccount = dbAccountService.authListDBAccount();
+    mockAuthListDBAccount =
+      provisionMockApi.dbAccountService.authListDBAccount();
   });
 
   afterEach(() => {

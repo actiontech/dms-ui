@@ -1,8 +1,8 @@
 import { act, cleanup } from '@testing-library/react';
 import { renderHook } from '@testing-library/react-hooks';
 import useCustomDBPasswordRule from '../useCustomDBPasswordRule';
-import customDBPasswordRule from '../../../../testUtil/mockApi/customDBPasswordRule';
-import { mockCustomDBPasswordRuleData } from '../../../../testUtil/mockApi/customDBPasswordRule/data';
+import customDBPasswordRule from '@actiontech/shared/lib/testUtil/mockApi/provision/customDBPasswordRule';
+import { mockCustomDBPasswordRuleData } from '@actiontech/shared/lib/testUtil/mockApi/provision/customDBPasswordRule/data';
 import {
   createSpyErrorResponse,
   createSpyFailResponse,

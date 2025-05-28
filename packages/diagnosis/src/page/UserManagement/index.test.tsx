@@ -1,7 +1,7 @@
 import { act, cleanup, fireEvent, screen } from '@testing-library/react';
 import { getBySelector } from '@actiontech/shared/lib/testUtil/customQuery';
 import { useDispatch } from 'react-redux';
-import { superRender } from '../../testUtils/customRender';
+import { diagnosisSuperRender } from '../../testUtils/superRender';
 import { ModalName } from '../../data/ModalName';
 import eventEmitter from '../../utils/EventEmitter';
 import EmitterKey from '../../data/EmitterKey';
@@ -31,7 +31,7 @@ describe('test user management', () => {
   });
 
   const customRender = (data = adminPermission) => {
-    return superRender(<UserManagement />, undefined, {
+    return diagnosisSuperRender(<UserManagement />, undefined, {
       initStore: {
         user: {
           userScope: data

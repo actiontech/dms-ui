@@ -4,7 +4,7 @@ import monitorSourceConfig from '../../../../testUtils/mockApi/monitorSourceConf
 import { getBySelector } from '@actiontech/shared/lib/testUtil/customQuery';
 import { createSpySuccessResponse } from '@actiontech/shared/lib/testUtil/mockApi';
 import { useDispatch } from 'react-redux';
-import { superRender } from '../../../../testUtils/customRender';
+import { diagnosisSuperRender } from '../../../../testUtils/superRender';
 import { ModalName } from '../../../../data/ModalName';
 import { monitorRoutineListData } from '../../../../testUtils/mockApi/monitorSourceConfig/data';
 import Router from 'react-router-dom';
@@ -42,7 +42,7 @@ describe('test monitor item config table', () => {
   });
 
   const customRender = (data = adminPermission) => {
-    return superRender(<CheckMonitorConfig />, undefined, {
+    return diagnosisSuperRender(<CheckMonitorConfig />, undefined, {
       initStore: {
         user: {
           userScope: data

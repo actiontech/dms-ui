@@ -1,7 +1,11 @@
 import { superRender } from '@actiontech/shared/lib/testUtil/superRender';
 import InputPassword from '.';
 import { act, fireEvent, screen } from '@testing-library/react';
-import { getBySelector, queryBySelector, sleep } from '~/testUtil/customQuery';
+import {
+  getBySelector,
+  queryBySelector,
+  sleep
+} from '@actiontech/shared/lib/testUtil';
 
 describe.skip('InputPassword', () => {
   it('should Match Snapshot', () => {

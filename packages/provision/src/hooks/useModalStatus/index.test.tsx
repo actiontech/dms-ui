@@ -1,16 +1,17 @@
 import { act } from '@testing-library/react';
-import { ModalName } from '~/data/enum';
-import { AuthListModalStatus } from '~/store/auth/list';
-import { superRenderHooks } from '~/testUtil/customRender';
-import RecoilObservable from '~/testUtil/RecoilObservable';
+import { ModalName } from '../../data/enum';
+import { AuthListModalStatus } from '../../store/auth/list';
+import { provisionSuperRenderHook } from '../../testUtil/superRender';
+import RecoilObservable from '../../testUtil/RecoilObservable';
 import useModalStatus from '.';
 import { ModalStatus } from '@actiontech/shared/lib/types/common.type';
 
 describe('useModalStatus', () => {
   const customRender = (initModalStatus?: ModalStatus, name?: ModalName) => {
     const authListModalStatusChange = jest.fn();
-    const renderReturn = superRenderHooks(
+    const renderReturn = provisionSuperRenderHook(
       () => useModalStatus(AuthListModalStatus, name),
+      undefined,
       {
         otherChildren: (
           <RecoilObservable

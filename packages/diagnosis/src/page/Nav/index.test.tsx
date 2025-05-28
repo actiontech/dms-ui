@@ -1,5 +1,5 @@
 import Nav from '.';
-import { superRender } from '../../testUtils/customRender';
+import { diagnosisSuperRender } from '../../testUtils/superRender';
 import { act } from '@testing-library/react';
 
 describe('diagnosis/Nav', () => {
@@ -12,7 +12,7 @@ describe('diagnosis/Nav', () => {
   });
 
   it('should match snapshot', async () => {
-    const { baseElement } = superRender(<Nav />);
+    const { baseElement } = diagnosisSuperRender(<Nav />);
     await act(async () => {
       jest.runOnlyPendingTimers();
     });

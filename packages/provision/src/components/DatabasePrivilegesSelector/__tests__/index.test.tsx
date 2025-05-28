@@ -7,10 +7,13 @@ import {
   IDatabasePrivilegesSelectorProps
 } from '../index.type';
 import { mockProjectInfo } from '@actiontech/shared/lib/testUtil/mockHook/data';
-import auth from '../../../testUtil/mockApi/auth';
-import dbRole from '../../../testUtil/mockApi/dbRole';
+import auth from '@actiontech/shared/lib/testUtil/mockApi/provision/auth';
+import dbRole from '@actiontech/shared/lib/testUtil/mockApi/provision/dbRole';
 import { ListServiceDbTypeEnum } from '@actiontech/shared/lib/api/provision/service/common.enum';
-import { getBySelector, queryBySelector } from '~/testUtil/customQuery';
+import {
+  getBySelector,
+  queryBySelector
+} from '@actiontech/shared/lib/testUtil';
 
 describe('provision/DatabasePrivilegesSelector', () => {
   let authListDBRoleTipsSpy: jest.SpyInstance;

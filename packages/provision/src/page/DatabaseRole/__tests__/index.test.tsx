@@ -1,10 +1,10 @@
 import { superRender } from '@actiontech/shared/lib/testUtil/superRender';
 import { act, cleanup, fireEvent, screen } from '@testing-library/react';
 import DatabaseRole from '..';
-import auth from '../../../testUtil/mockApi/auth';
-import { mockOracleInstanceData } from '../../../testUtil/mockApi/auth/data';
-import dbRole from '../../../testUtil/mockApi/dbRole';
-import { mockDBRoleData } from '../../../testUtil/mockApi/dbRole/data';
+import auth from '@actiontech/shared/lib/testUtil/mockApi/provision/auth';
+import { mockOracleInstanceData } from '@actiontech/shared/lib/testUtil/mockApi/provision/auth/data';
+import dbRole from '@actiontech/shared/lib/testUtil/mockApi/provision/dbRole';
+import { mockDBRoleData } from '@actiontech/shared/lib/testUtil/mockApi/provision/dbRole/data';
 import { createSpySuccessResponse } from '@actiontech/shared/lib/testUtil/mockApi';
 import { mockUsePermission } from '@actiontech/shared/lib/testUtil/mockHook/mockUsePermission';
 import { useDispatch } from 'react-redux';

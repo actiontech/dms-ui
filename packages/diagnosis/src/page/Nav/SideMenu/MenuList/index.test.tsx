@@ -1,6 +1,6 @@
 import { useLocation, useNavigate } from 'react-router-dom';
 import MenuList from '.';
-import { renderWithThemeAndRouter } from '../../../../testUtils/customRender';
+import { diagnosisSuperRender } from '../../../../testUtils/superRender';
 import { act, fireEvent, screen } from '@testing-library/react';
 import {
   getAllBySelector,
@@ -36,7 +36,7 @@ describe('diagnosis/MenuList', () => {
   });
 
   it('should match snapshot', async () => {
-    const { baseElement } = renderWithThemeAndRouter(<MenuList />);
+    const { baseElement } = diagnosisSuperRender(<MenuList />);
     await act(async () => {
       jest.runOnlyPendingTimers();
     });
@@ -44,8 +44,10 @@ describe('diagnosis/MenuList', () => {
   });
 
   it('render menu list', async () => {
-    renderWithThemeAndRouter(<MenuList />, undefined, {
-      initialEntries: ['/']
+    diagnosisSuperRender(<MenuList />, undefined, {
+      routerProps: {
+        initialEntries: ['/']
+      }
     });
     await act(async () => {
       jest.runOnlyPendingTimers();
@@ -55,8 +57,10 @@ describe('diagnosis/MenuList', () => {
   });
 
   it('click menu and render selected menu', async () => {
-    renderWithThemeAndRouter(<MenuList />, undefined, {
-      initialEntries: ['/']
+    diagnosisSuperRender(<MenuList />, undefined, {
+      routerProps: {
+        initialEntries: ['/']
+      }
     });
     await act(async () => {
       jest.runOnlyPendingTimers();

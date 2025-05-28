@@ -6,7 +6,7 @@ import {
 } from '@actiontech/shared/lib/testUtil/customQuery';
 import { createSpySuccessResponse } from '@actiontech/shared/lib/testUtil/mockApi';
 import { useDispatch } from 'react-redux';
-import { superRender } from '../../../../testUtils/customRender';
+import { diagnosisSuperRender } from '../../../../testUtils/superRender';
 import { ModalName } from '../../../../data/ModalName';
 import {
   adminPermission,
@@ -36,16 +36,20 @@ describe('diagnosis/test role table', () => {
   });
 
   const customRender = (data = adminPermission) => {
-    return superRender(<RoleList handleChange={jest.fn()} />, undefined, {
-      initStore: {
-        userManagement: {
-          modalStatus: {}
-        },
-        user: {
-          userScope: data
+    return diagnosisSuperRender(
+      <RoleList handleChange={jest.fn()} />,
+      undefined,
+      {
+        initStore: {
+          userManagement: {
+            modalStatus: {}
+          },
+          user: {
+            userScope: data
+          }
         }
       }
-    });
+    );
   };
 
   it('render without permission', async () => {

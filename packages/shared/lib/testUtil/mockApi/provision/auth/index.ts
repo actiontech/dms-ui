@@ -1,7 +1,4 @@
-import {
-  MockSpyApy,
-  createSpySuccessResponse
-} from '@actiontech/shared/lib/testUtil/mockApi';
+import { MockSpyApy, createSpySuccessResponse } from '../../../mockApi';
 import {
   instanceList,
   databaseList,
@@ -11,7 +8,7 @@ import {
   mockDBOperationsData,
   mockEnvironmentTagsData
 } from './data';
-import auth from '@actiontech/shared/lib/api/provision/service/auth';
+import auth from '../../../../api/provision/service/auth';
 
 class MockAuthApi implements MockSpyApy {
   public mockAllApi(): void {

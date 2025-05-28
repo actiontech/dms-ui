@@ -39,4 +39,6 @@ class MonitorService extends ServiceBase {
   }
 }
 
-export default new MonitorService();
+const monitorService = new MonitorService();
+
+export default monitorService;

@@ -1,4 +1,4 @@
-import { superRender } from '../../../testUtils/customRender';
+import { diagnosisSuperRender } from '../../../testUtils/superRender';
 import LoginLayout from './LoginLayout';
 import leftBg from '../../../assets/img/login-left-bg.png';
 import i18n from '../../../locale';
@@ -7,7 +7,7 @@ import { getBySelector } from '@actiontech/shared/lib/testUtil/customQuery';
 
 describe('diagnosis/LoginLayout', () => {
   it('render login layout without props', () => {
-    const { baseElement } = superRender(<LoginLayout />);
+    const { baseElement } = diagnosisSuperRender(<LoginLayout />);
     expect(baseElement).toMatchSnapshot();
     expect(getBySelector('.banner img')).toHaveAttribute(
       'src',
@@ -19,7 +19,7 @@ describe('diagnosis/LoginLayout', () => {
   });
 
   it('render login layout with props', () => {
-    const { baseElement } = superRender(
+    const { baseElement } = diagnosisSuperRender(
       <LoginLayout leftBackgroundImg={leftBg}>
         <>{i18n.t('login.login')}</>
       </LoginLayout>

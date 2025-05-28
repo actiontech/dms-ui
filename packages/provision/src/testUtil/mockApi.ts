@@ -1,6 +1,6 @@
 import { setupServer } from 'msw/node';
 import { RestContext, RestHandler, MockedRequest, DefaultBodyType } from 'msw';
-import MockBaseApi from './mockApi/baseApi';
+import MockBaseApi from '@actiontech/shared/lib/testUtil/mockApi/baseApi';
 
 class TestMockApi {
   private server!: ReturnType<typeof setupServer>;

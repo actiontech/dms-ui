@@ -1,4 +1,4 @@
-import { ICustomDBPasswordRule } from '@actiontech/shared/lib/api/provision/service/common.d';
+import { ICustomDBPasswordRule } from '../../../../api/provision/service/common.d';
 
 export const mockCustomDBPasswordRuleData: ICustomDBPasswordRule = {
   min_length: 16,

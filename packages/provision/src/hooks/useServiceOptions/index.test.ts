@@ -1,8 +1,8 @@
-import auth from '../../testUtil/mockApi/auth';
+import auth from '@actiontech/shared/lib/testUtil/mockApi/provision/auth';
 import { superRenderHook } from '@actiontech/shared/lib/testUtil/superRender';
 import useServiceOptions from '.';
 import { act, cleanup } from '@testing-library/react';
-import { instanceList } from '../../testUtil/mockApi/auth/data';
+import { instanceList } from '@actiontech/shared/lib/testUtil/mockApi/provision/auth/data';
 import {
   createSpyErrorResponse,
   createSpyFailResponse

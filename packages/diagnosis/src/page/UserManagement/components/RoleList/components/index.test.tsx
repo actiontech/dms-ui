@@ -1,6 +1,6 @@
 import { useDispatch } from 'react-redux';
 import { act, cleanup } from '@testing-library/react';
-import { superRender } from '../../../../../testUtils/customRender';
+import { diagnosisSuperRender } from '../../../../../testUtils/superRender';
 import { ModalName } from '../../../../../data/ModalName';
 import RoleModal from './index';
 
@@ -28,7 +28,7 @@ describe('diagnosis/test role list modal', () => {
   });
 
   it('init role list modal status data', async () => {
-    const { container } = superRender(<RoleModal />, undefined, {
+    const { container } = diagnosisSuperRender(<RoleModal />, undefined, {
       initStore: {
         userManagement: {
           modalStatus: {}

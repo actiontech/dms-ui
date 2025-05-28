@@ -16,7 +16,7 @@ exports[`test monitor item config table render without permission 1`] = `
             href="/monitor-source-config"
           >
             <button
-              class="ant-btn css-dev-only-do-not-override-txh9fw ant-btn-default basic-button-wrapper css-geipcv"
+              class="ant-btn ant-btn-default basic-button-wrapper css-geipcv"
               type="button"
             >
               <span
@@ -112,10 +112,10 @@ exports[`test monitor item config table render without permission 1`] = `
         class="detail-table-wrapper"
       >
         <div
-          class="ant-table-wrapper actiontech-table-namespace css-fxd6ka css-dev-only-do-not-override-txh9fw"
+          class="ant-table-wrapper actiontech-table-namespace css-fxd6ka"
         >
           <div
-            class="ant-spin-nested-loading css-dev-only-do-not-override-txh9fw"
+            class="ant-spin-nested-loading"
           >
             <div
               class="ant-spin-container"
@@ -331,7 +331,7 @@ exports[`test monitor item config table render without permission 1`] = `
                 </div>
               </div>
               <ul
-                class="ant-pagination ant-table-pagination ant-table-pagination-right actiontech-table-pagination actiontech-table-pagination-fixed css-dev-only-do-not-override-txh9fw"
+                class="ant-pagination ant-table-pagination ant-table-pagination-right actiontech-table-pagination actiontech-table-pagination-fixed"
               >
                 <li
                   class="ant-pagination-total-text"
@@ -420,7 +420,7 @@ exports[`test monitor item config table render without permission 1`] = `
                 >
                   <div
                     aria-label="页码"
-                    class="ant-select ant-pagination-options-size-changer css-dev-only-do-not-override-txh9fw ant-select-single ant-select-show-arrow ant-select-show-search"
+                    class="ant-select ant-pagination-options-size-changer ant-select-single ant-select-show-arrow ant-select-show-search"
                   >
                     <div
                       class="ant-select-selector"
@@ -505,7 +505,7 @@ exports[`test monitor item config table return error when no params in url 1`] =
             href="/monitor-source-config"
           >
             <button
-              class="ant-btn css-dev-only-do-not-override-txh9fw ant-btn-default basic-button-wrapper css-geipcv"
+              class="ant-btn ant-btn-default basic-button-wrapper css-geipcv"
               type="button"
             >
               <span
@@ -601,10 +601,10 @@ exports[`test monitor item config table return error when no params in url 1`] =
         class="detail-table-wrapper"
       >
         <div
-          class="ant-table-wrapper actiontech-table-namespace css-fxd6ka css-dev-only-do-not-override-txh9fw"
+          class="ant-table-wrapper actiontech-table-namespace css-fxd6ka"
         >
           <div
-            class="ant-spin-nested-loading css-dev-only-do-not-override-txh9fw"
+            class="ant-spin-nested-loading"
           >
             <div
               class="ant-spin-container"
@@ -781,7 +781,7 @@ exports[`test monitor item config table should open check model when click check
             href="/monitor-source-config"
           >
             <button
-              class="ant-btn css-dev-only-do-not-override-txh9fw ant-btn-default basic-button-wrapper css-geipcv"
+              class="ant-btn ant-btn-default basic-button-wrapper css-geipcv"
               type="button"
             >
               <span
@@ -877,10 +877,10 @@ exports[`test monitor item config table should open check model when click check
         class="detail-table-wrapper"
       >
         <div
-          class="ant-table-wrapper actiontech-table-namespace css-fxd6ka css-dev-only-do-not-override-txh9fw"
+          class="ant-table-wrapper actiontech-table-namespace css-fxd6ka"
         >
           <div
-            class="ant-spin-nested-loading css-dev-only-do-not-override-txh9fw"
+            class="ant-spin-nested-loading"
           >
             <div
               class="ant-spin-container"
@@ -1051,7 +1051,7 @@ exports[`test monitor item config table should open check model when click check
                               class="css-new95e"
                             >
                               <button
-                                class="ant-btn css-dev-only-do-not-override-txh9fw ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
                                 type="button"
                               >
                                 <span>
@@ -1098,7 +1098,7 @@ exports[`test monitor item config table should open check model when click check
                               class="css-new95e"
                             >
                               <button
-                                class="ant-btn css-dev-only-do-not-override-txh9fw ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
                                 type="button"
                               >
                                 <span>
@@ -1114,7 +1114,7 @@ exports[`test monitor item config table should open check model when click check
                 </div>
               </div>
               <ul
-                class="ant-pagination ant-table-pagination ant-table-pagination-right actiontech-table-pagination actiontech-table-pagination-fixed css-dev-only-do-not-override-txh9fw"
+                class="ant-pagination ant-table-pagination ant-table-pagination-right actiontech-table-pagination actiontech-table-pagination-fixed"
               >
                 <li
                   class="ant-pagination-total-text"
@@ -1203,7 +1203,7 @@ exports[`test monitor item config table should open check model when click check
                 >
                   <div
                     aria-label="页码"
-                    class="ant-select ant-pagination-options-size-changer css-dev-only-do-not-override-txh9fw ant-select-single ant-select-show-arrow ant-select-show-search"
+                    class="ant-select ant-pagination-options-size-changer ant-select-single ant-select-show-arrow ant-select-show-search"
                   >
                     <div
                       class="ant-select-selector"
@@ -1288,7 +1288,7 @@ exports[`test monitor item config table should refresh table when change paginat
             href="/monitor-source-config"
           >
             <button
-              class="ant-btn css-dev-only-do-not-override-txh9fw ant-btn-default basic-button-wrapper css-geipcv"
+              class="ant-btn ant-btn-default basic-button-wrapper css-geipcv"
               type="button"
             >
               <span
@@ -1384,10 +1384,10 @@ exports[`test monitor item config table should refresh table when change paginat
         class="detail-table-wrapper"
       >
         <div
-          class="ant-table-wrapper actiontech-table-namespace css-fxd6ka css-dev-only-do-not-override-txh9fw"
+          class="ant-table-wrapper actiontech-table-namespace css-fxd6ka"
         >
           <div
-            class="ant-spin-nested-loading css-dev-only-do-not-override-txh9fw"
+            class="ant-spin-nested-loading"
           >
             <div
               class="ant-spin-container"
@@ -1558,7 +1558,7 @@ exports[`test monitor item config table should refresh table when change paginat
                               class="css-new95e"
                             >
                               <button
-                                class="ant-btn css-dev-only-do-not-override-txh9fw ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
                                 type="button"
                               >
                                 <span>
@@ -1605,7 +1605,7 @@ exports[`test monitor item config table should refresh table when change paginat
                               class="css-new95e"
                             >
                               <button
-                                class="ant-btn css-dev-only-do-not-override-txh9fw ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
                                 type="button"
                               >
                                 <span>
@@ -1621,7 +1621,7 @@ exports[`test monitor item config table should refresh table when change paginat
                 </div>
               </div>
               <ul
-                class="ant-pagination ant-table-pagination ant-table-pagination-right actiontech-table-pagination actiontech-table-pagination-fixed css-dev-only-do-not-override-txh9fw"
+                class="ant-pagination ant-table-pagination ant-table-pagination-right actiontech-table-pagination actiontech-table-pagination-fixed"
               >
                 <li
                   class="ant-pagination-total-text"
@@ -1710,7 +1710,7 @@ exports[`test monitor item config table should refresh table when change paginat
                 >
                   <div
                     aria-label="页码"
-                    class="ant-select ant-pagination-options-size-changer css-dev-only-do-not-override-txh9fw ant-select-single ant-select-show-arrow ant-select-show-search"
+                    class="ant-select ant-pagination-options-size-changer ant-select-single ant-select-show-arrow ant-select-show-search"
                   >
                     <div
                       class="ant-select-selector"
@@ -1795,7 +1795,7 @@ exports[`test monitor item config table should render normal table 1`] = `
             href="/monitor-source-config"
           >
             <button
-              class="ant-btn css-dev-only-do-not-override-txh9fw ant-btn-default basic-button-wrapper css-geipcv"
+              class="ant-btn ant-btn-default basic-button-wrapper css-geipcv"
               type="button"
             >
               <span
@@ -1891,10 +1891,10 @@ exports[`test monitor item config table should render normal table 1`] = `
         class="detail-table-wrapper"
       >
         <div
-          class="ant-table-wrapper actiontech-table-namespace css-fxd6ka css-dev-only-do-not-override-txh9fw"
+          class="ant-table-wrapper actiontech-table-namespace css-fxd6ka"
         >
           <div
-            class="ant-spin-nested-loading css-dev-only-do-not-override-txh9fw"
+            class="ant-spin-nested-loading"
           >
             <div
               class="ant-spin-container"
@@ -2065,7 +2065,7 @@ exports[`test monitor item config table should render normal table 1`] = `
                               class="css-new95e"
                             >
                               <button
-                                class="ant-btn css-dev-only-do-not-override-txh9fw ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
                                 type="button"
                               >
                                 <span>
@@ -2112,7 +2112,7 @@ exports[`test monitor item config table should render normal table 1`] = `
                               class="css-new95e"
                             >
                               <button
-                                class="ant-btn css-dev-only-do-not-override-txh9fw ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
+                                class="ant-btn ant-btn-default ant-btn-sm actiontech-table-actions-button basic-button-wrapper css-geipcv"
                                 type="button"
                               >
                                 <span>
@@ -2128,7 +2128,7 @@ exports[`test monitor item config table should render normal table 1`] = `
                 </div>
               </div>
               <ul
-                class="ant-pagination ant-table-pagination ant-table-pagination-right actiontech-table-pagination actiontech-table-pagination-fixed css-dev-only-do-not-override-txh9fw"
+                class="ant-pagination ant-table-pagination ant-table-pagination-right actiontech-table-pagination actiontech-table-pagination-fixed"
               >
                 <li
                   class="ant-pagination-total-text"
@@ -2217,7 +2217,7 @@ exports[`test monitor item config table should render normal table 1`] = `
                 >
                   <div
                     aria-label="页码"
-                    class="ant-select ant-pagination-options-size-changer css-dev-only-do-not-override-txh9fw ant-select-single ant-select-show-arrow ant-select-show-search"
+                    class="ant-select ant-pagination-options-size-changer ant-select-single ant-select-show-arrow ant-select-show-search"
                   >
                     <div
                       class="ant-select-selector"
@@ -2302,7 +2302,7 @@ exports[`test monitor item config table should render table when api return null
             href="/monitor-source-config"
           >
             <button
-              class="ant-btn css-dev-only-do-not-override-txh9fw ant-btn-default basic-button-wrapper css-geipcv"
+              class="ant-btn ant-btn-default basic-button-wrapper css-geipcv"
               type="button"
             >
               <span
@@ -2398,10 +2398,10 @@ exports[`test monitor item config table should render table when api return null
         class="detail-table-wrapper"
       >
         <div
-          class="ant-table-wrapper actiontech-table-namespace css-fxd6ka css-dev-only-do-not-override-txh9fw"
+          class="ant-table-wrapper actiontech-table-namespace css-fxd6ka"
         >
           <div
-            class="ant-spin-nested-loading css-dev-only-do-not-override-txh9fw"
+            class="ant-spin-nested-loading"
           >
             <div
               class="ant-spin-container"

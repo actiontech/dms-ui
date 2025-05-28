@@ -2,7 +2,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import monitorSourceConfig from '../../../../../../../testUtils/mockApi/monitorSourceConfig';
 import { act, cleanup, fireEvent, screen } from '@testing-library/react';
 import UpdateDatabaseMonitor from './index';
-import { superRender } from '../../../../../../../testUtils/customRender';
+import { diagnosisSuperRender } from '../../../../../../../testUtils/superRender';
 import {
   getAllBySelector,
   getBySelector
@@ -58,13 +58,13 @@ describe('test update database monitor', () => {
         }
       });
     });
-    const { container } = superRender(<UpdateDatabaseMonitor />);
+    const { container } = diagnosisSuperRender(<UpdateDatabaseMonitor />);
     await act(async () => jest.advanceTimersByTime(3000));
     expect(container).toMatchInlineSnapshot('<div />');
   });
 
   it('should match snapshot when modal state is true ', async () => {
-    const { baseElement } = superRender(<UpdateDatabaseMonitor />);
+    const { baseElement } = diagnosisSuperRender(<UpdateDatabaseMonitor />);
     await act(async () => jest.advanceTimersByTime(3000));
     expect(baseElement).toMatchSnapshot();
     expect(screen.getByText('修改数据库监控源')).toBeInTheDocument();
@@ -77,7 +77,7 @@ describe('test update database monitor', () => {
     const emitSpy = jest.spyOn(eventEmitter, 'emit');
     const requestUpdateDatabaseMonitor =
       monitorSourceConfig.updateDatabaseMonitor();
-    const { baseElement } = superRender(<UpdateDatabaseMonitor />);
+    const { baseElement } = diagnosisSuperRender(<UpdateDatabaseMonitor />);
     await act(async () => jest.advanceTimersByTime(1000));
     expect(baseElement).toMatchSnapshot();
     // monitor name
@@ -151,7 +151,7 @@ describe('test update database monitor', () => {
     requestUpdateDatabaseMonitor.mockImplementation(() =>
       createSpySuccessResponse({ code: 300, message: 'error' })
     );
-    const { baseElement } = superRender(<UpdateDatabaseMonitor />);
+    const { baseElement } = diagnosisSuperRender(<UpdateDatabaseMonitor />);
     await act(async () => jest.advanceTimersByTime(1000));
     expect(baseElement).toMatchSnapshot();
     // monitor name

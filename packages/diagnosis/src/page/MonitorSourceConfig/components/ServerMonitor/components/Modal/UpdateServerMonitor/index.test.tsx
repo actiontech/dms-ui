@@ -3,7 +3,7 @@ import monitorSourceConfig from '../../../../../../../testUtils/mockApi/monitorS
 import { act, cleanup, fireEvent, screen } from '@testing-library/react';
 import UpdateServerMonitor from './index';
 import { serverMonitorListData } from '../../../../../../../testUtils/mockApi/monitorSourceConfig/data';
-import { superRender } from '../../../../../../../testUtils/customRender';
+import { diagnosisSuperRender } from '../../../../../../../testUtils/superRender';
 import { getBySelector } from '@actiontech/shared/lib/testUtil/customQuery';
 import { ModalName } from '../../../../../../../data/ModalName';
 import eventEmitter from '../../../../../../../utils/EventEmitter';
@@ -55,13 +55,13 @@ describe('test update server monitor', () => {
         }
       });
     });
-    const { container } = superRender(<UpdateServerMonitor />);
+    const { container } = diagnosisSuperRender(<UpdateServerMonitor />);
     await act(async () => jest.advanceTimersByTime(3000));
     expect(container).toMatchInlineSnapshot('<div />');
   });
 
   it('should match snapshot when modal state is true ', async () => {
-    const { baseElement } = superRender(<UpdateServerMonitor />);
+    const { baseElement } = diagnosisSuperRender(<UpdateServerMonitor />);
     await act(async () => jest.advanceTimersByTime(3000));
     expect(baseElement).toMatchSnapshot();
     expect(screen.getByText('修改服务器监控源')).toBeInTheDocument();
@@ -70,7 +70,7 @@ describe('test update server monitor', () => {
   });
 
   it('should init data for updateServerMonitor', async () => {
-    const { baseElement } = superRender(<UpdateServerMonitor />);
+    const { baseElement } = diagnosisSuperRender(<UpdateServerMonitor />);
     await act(async () => jest.advanceTimersByTime(3000));
     expect(baseElement).toMatchSnapshot();
     // // monitor name
@@ -98,7 +98,7 @@ describe('test update server monitor', () => {
   });
 
   it('should show error when not input password', async () => {
-    const { baseElement } = superRender(<UpdateServerMonitor />);
+    const { baseElement } = diagnosisSuperRender(<UpdateServerMonitor />);
     await act(async () => jest.advanceTimersByTime(1000));
     expect(baseElement).toMatchSnapshot();
 
@@ -118,7 +118,7 @@ describe('test update server monitor', () => {
     const emitSpy = jest.spyOn(eventEmitter, 'emit');
     const requestUpdateServerMonitor =
       monitorSourceConfig.updateServerMonitor();
-    const { baseElement } = superRender(<UpdateServerMonitor />);
+    const { baseElement } = diagnosisSuperRender(<UpdateServerMonitor />);
     await act(async () => jest.advanceTimersByTime(1000));
     expect(baseElement).toMatchSnapshot();
     // user
@@ -187,7 +187,7 @@ describe('test update server monitor', () => {
     requestUpdateServerMonitor.mockImplementation(() =>
       createSpySuccessResponse({ code: 300, message: 'error' })
     );
-    const { baseElement } = superRender(<UpdateServerMonitor />);
+    const { baseElement } = diagnosisSuperRender(<UpdateServerMonitor />);
     await act(async () => jest.advanceTimersByTime(1000));
     expect(baseElement).toMatchSnapshot();
     // user

@@ -6,13 +6,13 @@ import {
   getBySelector
 } from '@actiontech/shared/lib/testUtil/customQuery';
 import { useNavigate } from 'react-router-dom';
-import dbAccountService from '../../../testUtil/mockApi/dbAccountService';
-import { dbAccountMockData } from '../../../testUtil/mockApi/dbAccountService/data';
+import dbAccountService from '@actiontech/shared/lib/testUtil/mockApi/provision/dbAccountService';
+import { dbAccountMockData } from '@actiontech/shared/lib/testUtil/mockApi/provision/dbAccountService/data';
 import { mockProjectInfo } from '@actiontech/shared/lib/testUtil/mockHook/data';
 import { mockUseCurrentProject } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentProject';
 import { mockUseCurrentUser } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentUser';
 import { mockUseDbServiceDriver } from '@actiontech/shared/lib/testUtil/mockHook/mockUseDbServiceDriver';
-import auth from '../../../testUtil/mockApi/auth';
+import auth from '@actiontech/shared/lib/testUtil/mockApi/provision/auth';
 import DatabaseAccountList from './index';
 import RecoilObservable from '../../../testUtil/RecoilObservable';
 import { DatabaseAccountModalStatus } from '../../../store/databaseAccount';
@@ -20,7 +20,7 @@ import { EventEmitterKey, ModalName } from '../../../data/enum';
 import { createSpySuccessResponse } from '@actiontech/shared/lib/testUtil/mockApi';
 import { ListDBAccountStatusEnum } from '@actiontech/shared/lib/api/provision/service/common.enum';
 import EventEmitter from '../../../utils/EventEmitter';
-import user from '../../../testUtil/mockApi/user';
+import user from '@actiontech/shared/lib/testUtil/mockApi/provision/user';
 import {
   OpPermissionItemRangeTypeEnum,
   OpPermissionItemOpPermissionTypeEnum,

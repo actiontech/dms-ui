@@ -1,8 +1,5 @@
-import {
-  MockSpyApy,
-  createSpySuccessResponse
-} from '@actiontech/shared/lib/testUtil/mockApi';
-import customDBPasswordRule from '@actiontech/shared/lib/api/provision/service/custom_db_password_rule';
+import { MockSpyApy, createSpySuccessResponse } from '../../../mockApi';
+import customDBPasswordRule from '../../../../api/provision/service/custom_db_password_rule';
 import { mockCustomDBPasswordRuleData } from './data';
 
 class MockCustomDBPasswordRuleApi implements MockSpyApy {

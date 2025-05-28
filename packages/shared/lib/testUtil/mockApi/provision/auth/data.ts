@@ -13,12 +13,12 @@ import {
   IUserInfo,
   IListInternalUser,
   IEnvironmentTag
-} from '@actiontech/shared/lib/api/provision/service/common';
+} from '../../../../api/provision/service/common';
 import {
   DataObjectSourceNameEnum,
   ListServiceDbTypeEnum,
   ListServiceTypeEnum
-} from '@actiontech/shared/lib/api/provision/service/common.enum';
+} from '../../../../api/provision/service/common.enum';
 
 export const userList: IListInternalUser[] = [
   {

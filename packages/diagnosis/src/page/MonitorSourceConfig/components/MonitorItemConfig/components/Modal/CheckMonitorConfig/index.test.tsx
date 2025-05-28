@@ -3,7 +3,7 @@ import CheckMonitorConfig from './';
 import monitorSourceConfig from '../../../../../../../testUtils/mockApi/monitorSourceConfig';
 import { getBySelector } from '@actiontech/shared/lib/testUtil/customQuery';
 import { useDispatch, useSelector } from 'react-redux';
-import { superRender } from '../../../../../../../testUtils/customRender';
+import { diagnosisSuperRender } from '../../../../../../../testUtils/superRender';
 import { ModalName } from '../../../../../../../data/ModalName';
 import { monitorRoutineListData } from '../../../../../../../testUtils/mockApi/monitorSourceConfig/data';
 import { createSpySuccessResponse } from '@actiontech/shared/lib/testUtil/mockApi';
@@ -48,13 +48,13 @@ describe('test check monitor config modal', () => {
         }
       });
     });
-    const { container } = superRender(<CheckMonitorConfig />);
+    const { container } = diagnosisSuperRender(<CheckMonitorConfig />);
     await act(async () => jest.advanceTimersByTime(3000));
     expect(container).toMatchInlineSnapshot('<div />');
   });
 
   it('should match snapshot when modal state is true ', async () => {
-    const { baseElement } = superRender(<CheckMonitorConfig />);
+    const { baseElement } = diagnosisSuperRender(<CheckMonitorConfig />);
     await act(async () => jest.advanceTimersByTime(3000));
     expect(baseElement).toMatchSnapshot();
     expect(screen.getAllByText('监控指标')?.[0]).toBeInTheDocument();
@@ -63,7 +63,7 @@ describe('test check monitor config modal', () => {
 
   it('should render normal table', async () => {
     const request = monitorSourceConfig.getMonitorRoutineMetrics();
-    const { baseElement } = superRender(<CheckMonitorConfig />);
+    const { baseElement } = diagnosisSuperRender(<CheckMonitorConfig />);
     await act(async () => jest.advanceTimersByTime(3300));
     expect(request).toHaveBeenCalled();
     await act(async () => jest.advanceTimersByTime(3300));
@@ -79,7 +79,7 @@ describe('test check monitor config modal', () => {
 
   it('should close model when click close icon', async () => {
     const request = monitorSourceConfig.getMonitorRoutineMetrics();
-    const { baseElement } = superRender(<CheckMonitorConfig />);
+    const { baseElement } = diagnosisSuperRender(<CheckMonitorConfig />);
     await act(async () => jest.advanceTimersByTime(3300));
     expect(request).toHaveBeenCalled();
     await act(async () => jest.advanceTimersByTime(3300));
@@ -104,7 +104,7 @@ describe('test check monitor config modal', () => {
 
   it('should refresh table when change pagination info', async () => {
     const request = monitorSourceConfig.getMonitorRoutineMetrics();
-    const { baseElement } = superRender(<CheckMonitorConfig />);
+    const { baseElement } = diagnosisSuperRender(<CheckMonitorConfig />);
     await act(async () => jest.advanceTimersByTime(3300));
     expect(request).toHaveBeenCalled();
     await act(async () => jest.advanceTimersByTime(3300));
@@ -123,7 +123,7 @@ describe('test check monitor config modal', () => {
     request.mockImplementation(() =>
       createSpySuccessResponse({ code: 500, message: 'error' })
     );
-    const { baseElement } = superRender(<CheckMonitorConfig />);
+    const { baseElement } = diagnosisSuperRender(<CheckMonitorConfig />);
     await act(async () => jest.advanceTimersByTime(3000));
     expect(baseElement).toMatchSnapshot();
   });

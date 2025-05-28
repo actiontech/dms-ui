@@ -1,7 +1,7 @@
 import { useDispatch } from 'react-redux';
 import { act, cleanup, fireEvent, screen } from '@testing-library/react';
 import UpdateRole from './index';
-import { superRender } from '../../../../../../../testUtils/customRender';
+import { diagnosisSuperRender } from '../../../../../../../testUtils/superRender';
 import {
   getAllBySelector,
   getBySelector
@@ -41,7 +41,7 @@ describe('diagnosis/update role modal', () => {
   });
 
   const customRender = (status = true, isNormal = true) => {
-    return superRender(<UpdateRole />, undefined, {
+    return diagnosisSuperRender(<UpdateRole />, undefined, {
       initStore: {
         userManagement: {
           modalStatus: {
