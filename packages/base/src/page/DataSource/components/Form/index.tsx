@@ -294,7 +294,11 @@ const DataSourceForm: React.FC<IDataSourceFormProps> = (props) => {
   }, [reset]);
 
   const onCheckConnectableBeforeSubmit = useCallback(async () => {
-    await props.form.validateFields();
+    const values = await props.form.validateFields();
+    if (props.isUpdate && !values.needUpdatePassword) {
+      submit();
+      return;
+    }
     formContext?.onCheckConnectable().then((isConnectable) => {
       if (isConnectable) {
         submit();

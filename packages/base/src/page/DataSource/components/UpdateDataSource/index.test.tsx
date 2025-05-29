@@ -193,6 +193,31 @@ describe('page/DataSource/UpdateDataSource', () => {
     expect(navigateSpy).toHaveBeenCalledWith(-1);
   });
 
+  it('render update data when needUpdatePassword is false', async () => {
+    getListDBServicesSpy.mockImplementationOnce(() =>
+      createSpySuccessResponse(mockDBListData)
+    );
+    const { baseElement } = customRender();
+    await act(async () => jest.advanceTimersByTime(9300));
+
+    expect(getSystemModuleStatusSpy).toHaveBeenCalledTimes(1);
+    // environment
+    fireEvent.click(getBySelector('.editable-select-trigger', baseElement));
+    await act(async () => jest.advanceTimersByTime(0));
+    const firstOption = getAllBySelector('.ant-dropdown-menu-item')[0];
+    fireEvent.click(firstOption);
+    await act(async () => jest.advanceTimersByTime(0));
+    fireEvent.click(screen.getByText('提 交'));
+    await act(async () => jest.advanceTimersByTime(0));
+    expect(updateDBServiceSpy).toHaveBeenCalledTimes(1);
+    await act(async () => jest.advanceTimersByTime(3000));
+    expect(screen.getByText(`数据源"mysql-1"更新成功`)).toBeInTheDocument();
+
+    await act(async () => jest.advanceTimersByTime(800));
+    expect(navigateSpy).toHaveBeenCalled();
+    expect(navigateSpy).toHaveBeenCalledWith(-1);
+  });
+
   it('render connectable modal when service can not connect', async () => {
     getListDBServicesSpy.mockImplementationOnce(() =>
       createSpySuccessResponse(mockDBListData)
