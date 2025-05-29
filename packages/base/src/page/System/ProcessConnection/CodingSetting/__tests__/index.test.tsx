@@ -76,7 +76,8 @@ describe('base/System/ProcessConnection/CodingSetting', () => {
     await act(async () => jest.advanceTimersByTime(0));
     expect(updateCodingConfigurationSpy).toHaveBeenCalledTimes(1);
     expect(updateCodingConfigurationSpy).toHaveBeenCalledWith({
-      is_coding_enabled: false
+      is_coding_enabled: false,
+      coding_url: mockCodingConfigurationData.coding_url
     });
     await act(async () => jest.advanceTimersByTime(3000));
     expect(getCodingConfigurationSpy).toHaveBeenCalledTimes(2);

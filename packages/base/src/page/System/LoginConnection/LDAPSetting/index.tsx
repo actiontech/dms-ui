@@ -3,14 +3,15 @@ import { useTranslation } from 'react-i18next';
 import { Form, Space, Spin } from 'antd';
 import { useBoolean, useRequest } from 'ahooks';
 import { switchFieldName } from './index.data';
-import ConfigSwitch from '../../components/ConfigSwitch';
-import ConfigModifyBtn from '../../components/ConfigModifyBtn';
-import ConfigField from './components/ConfigField';
-import ConfigSubmitButtonField from '../../components/ConfigSubmitButtonField';
-import useConfigRender, {
+import {
+  ConfigSwitch,
+  ConfigModifyBtn,
+  ConfigSubmitButtonField,
+  useConfigRender,
+  useConfigSwitchControls,
   ReadOnlyConfigColumnsType
-} from '../../hooks/useConfigRender';
-import useConfigSwitch from '../../hooks/useConfigSwitch';
+} from '@actiontech/shared/lib/components/SystemConfigurationHub';
+import ConfigField from './components/ConfigField';
 import Configuration from '@actiontech/shared/lib/api/base/service/Configuration';
 import { LDAPFormFields } from './index.type';
 import { ResponseCode } from '@actiontech/shared/lib/enum';
@@ -121,35 +122,41 @@ const LDAPSetting = () => {
     modifyFinish();
   };
 
-  const handleToggleSwitch = (open: boolean) => {
-    form.setFieldValue(switchFieldName, open);
-  };
-
   const switchOpen = Form.useWatch(switchFieldName, form);
 
   const {
-    configSwitchPopoverVisible,
+    configSwitchPopoverOpenState,
+    generateConfigSwitchPopoverTitle,
     onConfigSwitchPopoverOpen,
-    onConfigSwitchPopoverConfirm,
-    onConfigSwitchChange
-  } = useConfigSwitch({
-    isConfigClosed,
-    switchOpen,
-    modifyFlag,
-    startSubmit: startUpdateLdap,
-    submitFinish: updateLdapFinish,
-    handleClickModify,
-    handleUpdateConfig: () =>
+    handleConfigSwitchChange,
+    hiddenConfigSwitchPopover
+  } = useConfigSwitchControls(form, switchFieldName);
+
+  const onConfigSwitchPopoverConfirm = () => {
+    if (isConfigClosed && modifyFlag) {
+      handleClickCancel();
+      refreshLdapSetting();
+      hiddenConfigSwitchPopover();
+    } else {
+      startUpdateLdap();
       Configuration.UpdateLDAPConfiguration({
         ldap: {
           ...ldapSetting,
           enable_ldap: false
         }
-      }),
-    handleClickCancel,
-    refreshConfig: refreshLdapSetting,
-    handleToggleSwitch
-  });
+      })
+        .then((res) => {
+          if (res.data.code === ResponseCode.SUCCESS) {
+            handleClickCancel();
+            refreshLdapSetting();
+          }
+        })
+        .finally(() => {
+          updateLdapFinish();
+          hiddenConfigSwitchPopover();
+        });
+    }
+  };
 
   const readonlyColumnsConfig: ReadOnlyConfigColumnsType<ILDAPConfigurationResData> =
     useMemo(() => {
@@ -230,13 +237,15 @@ const LDAPSetting = () => {
               }
             >
               <ConfigSwitch
+                title={generateConfigSwitchPopoverTitle(modifyFlag)}
                 switchFieldName={switchFieldName}
-                switchOpen={switchOpen}
-                modifyFlag={modifyFlag}
+                checked={switchOpen}
                 submitLoading={submitLoading}
-                popoverVisible={configSwitchPopoverVisible}
+                popoverVisible={configSwitchPopoverOpenState}
                 onConfirm={onConfigSwitchPopoverConfirm}
-                onSwitchChange={onConfigSwitchChange}
+                onSwitchChange={(open) =>
+                  handleConfigSwitchChange(open, handleClickModify)
+                }
                 onSwitchPopoverOpen={onConfigSwitchPopoverOpen}
               />
             </PermissionControl>
@@ -248,7 +257,7 @@ const LDAPSetting = () => {
               handleClickCancel={handleClickCancel}
             />
           ),
-          submit: handleSubmit
+          onSubmit: handleSubmit
         })}
       </Spin>
     </div>
