@@ -3,14 +3,15 @@ import { useCallback, useMemo } from 'react';
 import { useBoolean, useRequest } from 'ahooks';
 import { switchFieldName } from './index.data';
 import { Form, Spin } from 'antd';
-import ConfigSwitch from '../../components/ConfigSwitch';
-import useConfigSwitch from '../../hooks/useConfigSwitch';
-import useConfigRender, {
+import {
+  ConfigSwitch,
+  ConfigSubmitButtonField,
+  useConfigRender,
+  useConfigSwitchControls,
   ReadOnlyConfigColumnsType
-} from '../../hooks/useConfigRender';
+} from '@actiontech/shared/lib/components/SystemConfigurationHub';
 import ConfigExtraButtons from './components/ConfigExtraButtons';
 import ConfigField from './components/ConfigField';
-import ConfigSubmitButtonField from '../../components/ConfigSubmitButtonField';
 import Configuration from '@actiontech/shared/lib/api/base/service/Configuration';
 import { ResponseCode } from '@actiontech/shared/lib/enum';
 import { WechatFormFields } from './index.type';
@@ -105,35 +106,41 @@ const Wechat = () => {
     modifyFinish();
   };
 
-  const handleToggleSwitch = (open: boolean) => {
-    form.setFieldValue(switchFieldName, open);
-  };
-
   const switchOpen = Form.useWatch(switchFieldName, form);
 
   const {
-    configSwitchPopoverVisible,
+    configSwitchPopoverOpenState,
+    generateConfigSwitchPopoverTitle,
     onConfigSwitchPopoverOpen,
-    onConfigSwitchPopoverConfirm,
-    onConfigSwitchChange
-  } = useConfigSwitch({
-    isConfigClosed,
-    switchOpen,
-    modifyFlag,
-    startSubmit,
-    submitFinish,
-    handleClickModify,
-    handleUpdateConfig: () =>
+    handleConfigSwitchChange,
+    hiddenConfigSwitchPopover
+  } = useConfigSwitchControls(form, switchFieldName);
+
+  const onConfigSwitchPopoverConfirm = () => {
+    if (isConfigClosed && modifyFlag) {
+      handleClickCancel();
+      refreshWechatConfig();
+      hiddenConfigSwitchPopover();
+    } else {
+      startSubmit();
       Configuration.UpdateWeChatConfiguration({
         update_wechat_configuration: {
           ...wechatConfig,
           enable_wechat_notify: false
         }
-      }),
-    handleClickCancel,
-    refreshConfig: refreshWechatConfig,
-    handleToggleSwitch
-  });
+      })
+        .then((res) => {
+          if (res.data.code === ResponseCode.SUCCESS) {
+            handleClickCancel();
+            refreshWechatConfig();
+          }
+        })
+        .finally(() => {
+          submitFinish();
+          hiddenConfigSwitchPopover();
+        });
+    }
+  };
 
   const readonlyColumnsConfig: ReadOnlyConfigColumnsType<IWeChatConfigurationResData> =
     useMemo(() => {
@@ -193,13 +200,15 @@ const Wechat = () => {
               }
             >
               <ConfigSwitch
+                title={generateConfigSwitchPopoverTitle(modifyFlag)}
                 switchFieldName={switchFieldName}
-                switchOpen={switchOpen}
-                modifyFlag={modifyFlag}
+                checked={switchOpen}
                 submitLoading={submitLoading}
-                popoverVisible={configSwitchPopoverVisible}
+                popoverVisible={configSwitchPopoverOpenState}
                 onConfirm={onConfigSwitchPopoverConfirm}
-                onSwitchChange={onConfigSwitchChange}
+                onSwitchChange={(open) =>
+                  handleConfigSwitchChange(open, handleClickModify)
+                }
                 onSwitchPopoverOpen={onConfigSwitchPopoverOpen}
               />
             </PermissionControl>
@@ -211,7 +220,7 @@ const Wechat = () => {
               handleClickCancel={handleClickCancel}
             />
           ),
-          submit
+          onSubmit: submit
         })}
       </Spin>
     </div>

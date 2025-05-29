@@ -7,14 +7,15 @@ import {
   EmptyBox,
   EnterpriseFeatureDisplay
 } from '@actiontech/shared';
-import ConfigModifyBtn from '../../components/ConfigModifyBtn';
-import ConfigSwitch from '../../components/ConfigSwitch';
-import ConfigField from './components/ConfigField';
-import ConfigSubmitButtonField from '../../components/ConfigSubmitButtonField';
-import useConfigRender, {
+import {
+  ConfigSwitch,
+  ConfigModifyBtn,
+  ConfigSubmitButtonField,
+  useConfigRender,
+  useConfigSwitchControls,
   ReadOnlyConfigColumnsType
-} from '../../hooks/useConfigRender';
-import useConfigSwitch from '../../hooks/useConfigSwitch';
+} from '@actiontech/shared/lib/components/SystemConfigurationHub';
+import ConfigField from './components/ConfigField';
 import { switchFieldName } from './index.data';
 import Configuration from '@actiontech/shared/lib/api/base/service/Configuration';
 import { ResponseCode } from '@actiontech/shared/lib/enum';
@@ -83,10 +84,6 @@ const Oauth = () => {
   const handleClickModify = () => {
     setFormDefaultValue();
     startModify();
-  };
-
-  const handleToggleSwitch = (open: boolean) => {
-    form.setFieldValue(switchFieldName, open);
   };
 
   const [submitLoading, { setTrue: startSubmit, setFalse: submitFinish }] =
@@ -158,28 +155,37 @@ const Oauth = () => {
   const switchOpen = Form.useWatch(switchFieldName, form);
 
   const {
-    configSwitchPopoverVisible,
+    configSwitchPopoverOpenState,
+    generateConfigSwitchPopoverTitle,
     onConfigSwitchPopoverOpen,
-    onConfigSwitchPopoverConfirm,
-    onConfigSwitchChange
-  } = useConfigSwitch({
-    isConfigClosed,
-    switchOpen,
-    modifyFlag,
-    startSubmit,
-    submitFinish,
-    handleClickModify,
-    handleUpdateConfig: () =>
-      Configuration.UpdateOauth2Configuration({
-        oauth2: {
-          ...oauthConfig,
-          enable_oauth2: false
+    handleConfigSwitchChange,
+    hiddenConfigSwitchPopover
+  } = useConfigSwitchControls(form, switchFieldName);
+
+  const onConfigSwitchPopoverConfirm = async () => {
+    if (isConfigClosed && modifyFlag) {
+      handleClickCancel();
+      refreshOauthConfig();
+      hiddenConfigSwitchPopover();
+    } else {
+      startSubmit();
+      try {
+        const res = await Configuration.UpdateOauth2Configuration({
+          oauth2: {
+            ...oauthConfig,
+            enable_oauth2: false
+          }
+        });
+        if (res.data.code === ResponseCode.SUCCESS) {
+          handleClickCancel();
+          refreshOauthConfig();
         }
-      }),
-    handleClickCancel,
-    refreshConfig: refreshOauthConfig,
-    handleToggleSwitch
-  });
+      } finally {
+        submitFinish();
+        hiddenConfigSwitchPopover();
+      }
+    }
+  };
 
   const readonlyColumnsConfig: ReadOnlyConfigColumnsType<IGetOauth2ConfigurationResData> =
     useMemo(() => {
@@ -455,13 +461,15 @@ const Oauth = () => {
                   }
                 >
                   <ConfigSwitch
+                    title={generateConfigSwitchPopoverTitle(modifyFlag)}
                     switchFieldName={switchFieldName}
-                    switchOpen={switchOpen}
-                    modifyFlag={modifyFlag}
+                    checked={switchOpen}
                     submitLoading={submitLoading}
-                    popoverVisible={configSwitchPopoverVisible}
+                    popoverVisible={configSwitchPopoverOpenState}
                     onConfirm={onConfigSwitchPopoverConfirm}
-                    onSwitchChange={onConfigSwitchChange}
+                    onSwitchChange={(open) =>
+                      handleConfigSwitchChange(open, handleClickModify)
+                    }
                     onSwitchPopoverOpen={onConfigSwitchPopoverOpen}
                   />
                 </PermissionControl>
@@ -473,7 +481,7 @@ const Oauth = () => {
                   handleClickCancel={handleClickCancel}
                 />
               ),
-              submit: handleSubmit
+              onSubmit: handleSubmit
             })}
           </>
         </EnterpriseFeatureDisplay>

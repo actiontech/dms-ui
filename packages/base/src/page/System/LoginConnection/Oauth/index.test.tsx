@@ -89,14 +89,14 @@ describe('base/System/LoginConnection/Oauth', () => {
         )
       ).toBeInTheDocument();
       expect(screen.getAllByText('取 消')[0]).toBeInTheDocument();
-      expect(screen.getByText('确 定')).toBeInTheDocument();
+      expect(screen.getByText('确 认')).toBeInTheDocument();
 
       fireEvent.click(screen.getAllByText('取 消')[0]);
       await act(async () => jest.advanceTimersByTime(500));
 
       fireEvent.click(switchEle);
       await act(async () => jest.advanceTimersByTime(500));
-      fireEvent.click(screen.getByText('确 定'));
+      fireEvent.click(screen.getByText('确 认'));
       await act(async () => jest.advanceTimersByTime(500));
       expect(baseElement).toMatchSnapshot();
     });

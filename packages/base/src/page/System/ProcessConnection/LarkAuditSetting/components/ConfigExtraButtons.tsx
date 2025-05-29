@@ -1,26 +1,27 @@
 import { useTranslation } from 'react-i18next';
 import { useRef, useState } from 'react';
-
 import {
   Form,
+  message as messageApi,
   Radio,
   RadioGroupProps,
-  Space,
-  message as messageApi
+  Space
 } from 'antd';
-import { BasicInput, EmptyBox } from '@actiontech/shared';
+import { formItemLayout } from '@actiontech/shared/lib/components/CustomForm/style';
 import {
   FormItemLabel,
   FormItemNoLabel
 } from '@actiontech/shared/lib/components/CustomForm';
-import ConfigTestBtn from '../../../components/ConfigTestBtn';
-import ConfigTestPopoverForm from '../../../components/ConfigTestPopoverForm';
-import ConfigModifyBtn from '../../../components/ConfigModifyBtn';
-import { formItemLayout } from '@actiontech/shared/lib/components/CustomForm/style';
+import { BasicInput, EmptyBox } from '@actiontech/shared';
+import { phoneRule } from '@actiontech/shared/lib/utils/FormRule';
+import {
+  ConfigModifyBtn,
+  ConfigTestBtn,
+  ConfigTestPopoverForm
+} from '@actiontech/shared/lib/components/SystemConfigurationHub';
 
 import configuration from '@actiontech/shared/lib/api/sqle/service/configuration';
 import { TestFeishuConfigurationReqV1AccountTypeEnum } from '@actiontech/shared/lib/api/sqle/service/common.enum';
-import { phoneRule } from '@actiontech/shared/lib/utils/FormRule';
 import { TestFormFields } from '../index.type';
 import { ResponseCode } from '@actiontech/shared/lib/enum';
 

@@ -7,9 +7,11 @@ import {
   CustomLabelContent,
   FormItemLabel
 } from '@actiontech/shared/lib/components/CustomForm';
-import ConfigModifyBtn from '../../../components/ConfigModifyBtn';
-import ConfigTestBtn from '../../../components/ConfigTestBtn';
-import ConfigTestPopoverForm from '../../../components/ConfigTestPopoverForm';
+import {
+  ConfigModifyBtn,
+  ConfigTestBtn,
+  ConfigTestPopoverForm
+} from '@actiontech/shared/lib/components/SystemConfigurationHub';
 import { BasicInput } from '@actiontech/shared';
 
 import Configuration from '@actiontech/shared/lib/api/base/service/Configuration';
@@ -120,7 +122,10 @@ const ConfigExtraButtons = ({
           }
           testingRef={testTing}
         />
-        <ConfigModifyBtn onClick={handleClickModify} />
+        <ConfigModifyBtn
+          className="system-config-button"
+          onClick={handleClickModify}
+        />
       </Space>
     </>
   );
