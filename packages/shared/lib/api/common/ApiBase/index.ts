@@ -52,6 +52,11 @@ class ApiBase {
             description: message
           }
         );
+        if (code === ResponseCode.CurrentAvailabilityZoneError) {
+          eventEmitter.emit(
+            EmitterKey.DMS_CLEAR_AVAILABILITY_ZONE_AND_RELOAD_INITIAL_DATA
+          );
+        }
       }
       return res;
     };

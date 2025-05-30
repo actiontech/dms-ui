@@ -15,7 +15,10 @@ export enum ResponseCode {
   NotSupportDML = 8001,
 
   // version management
-  BatchTaskNotFullyCompleted = 8005
+  BatchTaskNotFullyCompleted = 8005,
+
+  // availability zone
+  CurrentAvailabilityZoneError = 7007
 }
 
 export enum SupportTheme {
