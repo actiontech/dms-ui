@@ -84,13 +84,6 @@ export const mockPreviewImportProjects: IPreviewImportProjectsV2[] = [
   }
 ];
 
-export const mockProjectTips: IProjectTips[] = [
-  {
-    is_fixed_business: true,
-    business: ['business1', 'business2', 'business3']
-  }
-];
-
 export const mockBatchImportDBCheckData: IImportDBServiceV2[] = [
   {
     name: 'mysql_1',
