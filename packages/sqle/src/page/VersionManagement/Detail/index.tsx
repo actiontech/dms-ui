@@ -49,7 +49,7 @@ import {
 } from '@actiontech/shared/lib/api/sqle/service/common.enum';
 import EventEmitter from '../../../utils/EventEmitter';
 import EmitterKey from '../../../data/EmitterKey';
-import VersionDetailModal from './Modal';
+import VersionDetailModals from './Modals';
 import { StageNodeData, CustomEdgeData } from './index.type';
 import { OpPermissionItemOpPermissionTypeEnum } from '@actiontech/shared/lib/api/base/service/common.enum';
 import { ROUTE_PATHS } from '@actiontech/shared/lib/data/routePaths';
@@ -504,7 +504,7 @@ const VersionDetail = () => {
           </Spin>
         </VersionDetailStyleWrapper>
       </EmptyBox>
-      <VersionDetailModal />
+      <VersionDetailModals />
     </>
   );
 };

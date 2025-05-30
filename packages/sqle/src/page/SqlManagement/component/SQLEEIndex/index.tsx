@@ -44,7 +44,7 @@ import { ModalName } from '../../../../data/ModalName';
 import { SorterResult, TableRowSelection } from 'antd/es/table/interface';
 import { ISqlManage } from '@actiontech/shared/lib/api/sqle/service/common';
 import { Spin, message } from 'antd';
-import SqlManagementModal from './Modal';
+import SqlManagementModals from './Modals';
 import EmitterKey from '../../../../data/EmitterKey';
 import EventEmitter from '../../../../utils/EventEmitter';
 import { DB_TYPE_RULE_NAME_SEPARATOR } from './hooks/useRuleTips';
@@ -559,7 +559,7 @@ const SQLEEIndex = () => {
       />
       {/* scroll 中的y 只支持string | number 所以这里的 500px 只是为了开启antd的固定列功能随便写的高度 具体高度在styled中动态计算 */}
       {/* modal & drawer */}
-      <SqlManagementModal />
+      <SqlManagementModals />
     </Spin>
   );
 };

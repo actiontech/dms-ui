@@ -8,7 +8,7 @@ import ProjectList from './List';
 import { useDispatch } from 'react-redux';
 import { updateProjectModalStatus } from '../../store/project';
 import { ModalName } from '../../data/ModalName';
-import ProjectManageModal from './Modal';
+import ProjectManageDrawer from './Drawer';
 import { DmsApi } from '@actiontech/shared/lib/api';
 import { useBoolean } from 'ahooks';
 import { ProjectManagementPageHeaderActions } from './action';
@@ -78,7 +78,7 @@ const Project: React.FC = () => {
         }
       />
       <ProjectList />
-      <ProjectManageModal />
+      <ProjectManageDrawer />
     </section>
   );
 };

@@ -28,7 +28,7 @@ import {
   PipelineConfigurationTableFilterParamType
 } from './column';
 import { ResponseCode } from '@actiontech/shared/lib/enum';
-import PipelineDetailModal from '../Modal/PipelineDetailModal';
+import PipelineDetailDrawer from '../Drawer/PipelineDetailDrawer';
 import { useDispatch } from 'react-redux';
 import {
   updateSelectPipelineId,
@@ -177,7 +177,7 @@ const PipelineConfigurationList = () => {
           }}
         />
       </EmptyBox>
-      <PipelineDetailModal />
+      <PipelineDetailDrawer />
     </>
   );
 };

@@ -1,0 +1,7 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`sqle/VersionManagement/Detail/Drawer render init snap shot 1`] = `
+<body>
+  <div />
+</body>
+`;

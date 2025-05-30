@@ -9,7 +9,7 @@ import {
 import { TableRefreshButton } from '@actiontech/shared/lib/components/ActiontechTable';
 import { UserCenterListEnum } from './index.enum';
 import { useTranslation } from 'react-i18next';
-import UserManageModal from './Modal';
+import UserManageDrawer from './Drawer';
 import { updateUserManageModalStatus } from '../../store/userCenter';
 import UserList from './components/UserList/List';
 import RoleList from './components/RoleList/List';
@@ -95,7 +95,7 @@ const UserCenter: React.FC = () => {
         activeKey={activePage}
         onChange={handleTabChange}
       />
-      <UserManageModal />
+      <UserManageDrawer />
     </section>
   );
 };
