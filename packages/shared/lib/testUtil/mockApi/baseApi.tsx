@@ -8,6 +8,7 @@ class MockBaseApi implements MockApi {
       this.downloadFileByCnName(),
       this.downloadFileByEnName(),
       this.response500(),
+      this.response7007(),
       this.responseToken(),
       this.mockLoginWithoutToken(),
       this.responseFileStream()
@@ -59,6 +60,18 @@ class MockBaseApi implements MockApi {
         ctx.json({
           code: 2,
           msg: 'error message'
+        })
+      );
+    });
+  }
+
+  private response7007() {
+    return rest.post('/test/7007', (req, res, ctx) => {
+      return res(
+        ctx.status(200),
+        ctx.json({
+          code: 7007,
+          msg: 'Bad Gateway'
         })
       );
     });

@@ -32,6 +32,8 @@ import gateway from '@actiontech/shared/lib/testUtil/mockApi/base/gateway';
 import project from '@actiontech/shared/lib/testUtil/mockApi/base/project';
 import EventEmitter from './utils/EventEmitter';
 import EmitterKey from './data/EmitterKey';
+import { eventEmitter as sharedEventEmitter } from '@actiontech/shared/lib/utils/EventEmitter';
+import sharedEmitterKey from '@actiontech/shared/lib/data/EmitterKey';
 
 jest.mock('react-router-dom', () => ({
   ...jest.requireActual('react-router-dom'),
@@ -305,6 +307,33 @@ describe('App', () => {
     act(() => {
       EventEmitter.emit(EmitterKey.DMS_Reload_Initial_Data);
     });
+    expect(getUserBySessionSpy).toHaveBeenCalledTimes(2);
+    expect(requestGetModalStatus).toHaveBeenCalledTimes(4);
+    expect(mockDBServiceDriverInfo.updateDriverList).toHaveBeenCalledTimes(2);
+  });
+
+  it('should clear availability zone and reload initial data when shared event is triggered', async () => {
+    baseSuperRender(<App />);
+
+    expect(getUserBySessionSpy).toHaveBeenCalledTimes(1);
+    expect(requestGetModalStatus).toHaveBeenCalledTimes(2);
+    expect(mockDBServiceDriverInfo.updateDriverList).toHaveBeenCalledTimes(1);
+    expect(
+      mockUseRecentlySelectedZoneData.clearRecentlySelectedZone
+    ).toHaveBeenCalledTimes(0);
+
+    act(() => {
+      sharedEventEmitter.emit(
+        sharedEmitterKey.DMS_CLEAR_AVAILABILITY_ZONE_AND_RELOAD_INITIAL_DATA
+      );
+    });
+
+    await act(async () => jest.advanceTimersByTime(1000));
+
+    expect(
+      mockUseRecentlySelectedZoneData.clearRecentlySelectedZone
+    ).toHaveBeenCalledTimes(1);
+
     expect(getUserBySessionSpy).toHaveBeenCalledTimes(2);
     expect(requestGetModalStatus).toHaveBeenCalledTimes(4);
     expect(mockDBServiceDriverInfo.updateDriverList).toHaveBeenCalledTimes(2);
