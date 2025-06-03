@@ -4,7 +4,6 @@
 import { baseSuperRender } from '../../../../testUtils/superRender';
 import { cleanup, screen, act } from '@testing-library/react';
 import { superRenderHook } from '@actiontech/shared/lib/testUtil/superRender';
-import project from '@actiontech/shared/lib/testUtil/mockApi/base/project';
 import { Form } from 'antd';
 import { DataSourceFormField } from './index.type';
 import dms from '@actiontech/shared/lib/testUtil/mockApi/base/global';
@@ -15,7 +14,6 @@ import { mockUseCurrentProject } from '@actiontech/shared/lib/testUtil/mockHook/
 
 describe('page/DataSource/DataSourceForm CE', () => {
   const submitFn = jest.fn();
-  let getProjectTipsSpy: jest.SpyInstance;
   const customRender = (params?: {
     isUpdate: boolean;
     defaultData?: IListDBServiceV2;
@@ -37,7 +35,6 @@ describe('page/DataSource/DataSourceForm CE', () => {
 
   beforeEach(() => {
     jest.useFakeTimers();
-    getProjectTipsSpy = project.getProjectTips();
     dms.mockAllApi();
     ruleTemplate.mockAllApi();
   });
@@ -52,7 +49,6 @@ describe('page/DataSource/DataSourceForm CE', () => {
     mockUseCurrentProject();
     const { baseElement } = customRender();
     await act(async () => jest.advanceTimersByTime(3000));
-    expect(getProjectTipsSpy).not.toHaveBeenCalled();
     expect(screen.getByText('添加数据源')).toBeInTheDocument();
     expect(baseElement).toMatchSnapshot();
   });

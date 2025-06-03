@@ -2,7 +2,6 @@ import { MockSpyApy, createSpySuccessResponse } from '../../common';
 import {
   mockProjectList,
   mockPreviewImportProjects,
-  mockProjectTips,
   mockBatchImportDBCheckData,
   mockDbServicesConnectionData,
   mockEnvironmentTagsData,
@@ -26,7 +25,6 @@ class MockProjectApi implements MockSpyApy {
     this.importProjects();
     this.getImportProjectsTemplate();
     this.previewImportProjects();
-    this.getProjectTips();
     this.importDBServicesOfProjects();
     this.importDBServicesOfOneProject();
     this.getImportDBServicesTemplate();
@@ -126,17 +124,6 @@ class MockProjectApi implements MockSpyApy {
     const spy = jest.spyOn(Project, 'PreviewImportProjectsV2');
     spy.mockImplementation(() =>
       createSpySuccessResponse({ data: mockPreviewImportProjects })
-    );
-    return spy;
-  }
-
-  /**
-   * @deprecated 废弃
-   */
-  public getProjectTips() {
-    const spy = jest.spyOn(Project, 'GetProjectTips');
-    spy.mockImplementation(() =>
-      createSpySuccessResponse({ data: mockProjectTips })
     );
     return spy;
   }
