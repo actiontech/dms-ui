@@ -3,7 +3,6 @@ import { cleanup, act, fireEvent, screen } from '@testing-library/react';
 import { mockUseCurrentProject } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentProject';
 import { mockUseCurrentUser } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentUser';
 import { mockUseDbServiceDriver } from '@actiontech/shared/lib/testUtil/mockHook/mockUseDbServiceDriver';
-import { mockUseProjectBusinessTips } from '@actiontech/shared/lib/testUtil/mockHook/mockUseProjectBusinessTips';
 import { mockProjectInfo } from '@actiontech/shared/lib/testUtil/mockHook/data';
 import instanceAuditPlan from '@actiontech/shared/lib/testUtil/mockApi/sqle/instanceAuditPlan';
 import {
@@ -55,7 +54,6 @@ describe('test sqle/SqlManagementConf/Update', () => {
   const navigateSpy = jest.fn();
 
   beforeEach(() => {
-    mockUseProjectBusinessTips();
     mockUseCurrentProject();
     mockUseCurrentUser();
     mockUseDbServiceDriver();
