@@ -13,7 +13,7 @@ import {
 } from '../../../store/globalRuleTemplate';
 import EventEmitter from '../../../utils/EventEmitter';
 import { RuleTemplateColumns } from './column';
-import RuleTemplateListModal from './Modal';
+import RuleTemplateListDrawer from './Drawer';
 import rule_template from '@actiontech/shared/lib/api/sqle/service/rule_template';
 import { IRuleTemplateResV1 } from '@actiontech/shared/lib/api/sqle/service/common';
 import {
@@ -164,7 +164,7 @@ const RuleTemplateList: React.FC<{ hiddenOperations?: boolean }> = ({
         }}
       />
 
-      <RuleTemplateListModal />
+      <RuleTemplateListDrawer />
       <ExportRuleTemplateModal />
     </>
   );

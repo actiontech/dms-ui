@@ -28,7 +28,7 @@ const CBSqlOperationAuditDetailDrawer = () => {
     ICBOperationLog | null
   >((state) => state.cloudBeaver.cloudBeaverSqlOperationRecord);
 
-  const closeModal = useCallback(() => {
+  const closeDrawer = useCallback(() => {
     dispatch(
       updateCloudBeaverModalStatus({
         modalName: ModalName.Cloud_Beaver_Sql_Operation_Audit_Detail,
@@ -59,7 +59,7 @@ const CBSqlOperationAuditDetailDrawer = () => {
         auditResult: auditResultRuleInfo,
         sql: cloudBeaverSqlOperationRecord?.operation?.operation_detail ?? ''
       }}
-      onClose={closeModal}
+      onClose={closeDrawer}
       showAnnotation
       loading={loading}
     />

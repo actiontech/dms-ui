@@ -4,7 +4,7 @@ import {
   AvailabilityZonePageHeaderActions,
   AvailabilityZoneTableActions
 } from './action';
-import AvailabilityZoneModal from '../Modal';
+import AvailabilityZoneDrawer from '../Drawer';
 import { useDispatch } from 'react-redux';
 import { useEffect, useMemo } from 'react';
 import {
@@ -133,7 +133,7 @@ const AvailabilityZoneList: React.FC = () => {
         onChange={tableChange}
         actions={tableActions}
       />
-      <AvailabilityZoneModal />
+      <AvailabilityZoneDrawer />
     </>
   );
 };
