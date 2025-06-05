@@ -1,10 +1,8 @@
 import { useTranslation } from 'react-i18next';
 import { useRef } from 'react';
 import { message, Space } from 'antd';
-
-import ConfigModifyBtn from '../../../components/ConfigModifyBtn';
 import { BasicButton, BasicToolTip } from '@actiontech/shared';
-
+import { ConfigModifyBtn } from '@actiontech/shared/lib/components/SystemConfigurationHub';
 import Configuration from '@actiontech/shared/lib/api/base/service/Configuration';
 import { ResponseCode } from '@actiontech/shared/lib/enum';
 import { ThunderBoltFilled } from '@actiontech/icons';

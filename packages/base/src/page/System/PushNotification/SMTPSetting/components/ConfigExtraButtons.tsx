@@ -5,9 +5,11 @@ import { useForm } from 'antd/es/form/Form';
 import { formItemLayout } from '@actiontech/shared/lib/components/CustomForm/style';
 import { FormItemLabel } from '@actiontech/shared/lib/components/CustomForm';
 import { BasicInput } from '@actiontech/shared';
-import ConfigTestBtn from '../../../components/ConfigTestBtn';
-import ConfigTestPopoverForm from '../../../components/ConfigTestPopoverForm';
-import ConfigModifyBtn from '../../../components/ConfigModifyBtn';
+import {
+  ConfigModifyBtn,
+  ConfigTestBtn,
+  ConfigTestPopoverForm
+} from '@actiontech/shared/lib/components/SystemConfigurationHub';
 import Configuration from '@actiontech/shared/lib/api/base/service/Configuration';
 import { ResponseCode } from '@actiontech/shared/lib/enum';
 
@@ -121,7 +123,10 @@ const ConfigExtraButtons = ({
             </ConfigTestPopoverForm>
           }
         />
-        <ConfigModifyBtn onClick={handleClickModify} />
+        <ConfigModifyBtn
+          className="system-config-button"
+          onClick={handleClickModify}
+        />
       </Space>
     </>
   );

@@ -1,16 +1,16 @@
 import { useTranslation } from 'react-i18next';
 import { Space, Form, message } from 'antd';
-import {
-  ConfigTestBtn,
-  ConfigTestPopoverForm,
-  BasicInput,
-  ConfigModifyBtn
-} from '@actiontech/shared';
+import { BasicInput } from '@actiontech/shared';
 import { FormItemLabel } from '@actiontech/shared/lib/components/CustomForm';
 import { useRef, useState } from 'react';
 import configuration from '@actiontech/shared/lib/api/sqle/service/configuration';
 import { ResponseCode } from '@actiontech/shared/lib/enum';
 import { formItemLayout } from '@actiontech/shared/lib/components/CustomForm/style';
+import {
+  ConfigModifyBtn,
+  ConfigTestBtn,
+  ConfigTestPopoverForm
+} from '@actiontech/shared/lib/components/SystemConfigurationHub';
 
 export interface ConfigExtraButtonsProps {
   isConfigClosed: boolean;

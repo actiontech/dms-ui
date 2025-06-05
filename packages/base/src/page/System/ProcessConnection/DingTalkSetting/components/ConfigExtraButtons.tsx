@@ -3,7 +3,7 @@ import { useRef } from 'react';
 
 import { message, Space } from 'antd';
 import { BasicToolTip, BasicButton } from '@actiontech/shared';
-import ConfigModifyBtn from '../../../components/ConfigModifyBtn';
+import { ConfigModifyBtn } from '@actiontech/shared/lib/components/SystemConfigurationHub';
 
 import configuration from '@actiontech/shared/lib/api/sqle/service/configuration';
 import { ResponseCode } from '@actiontech/shared/lib/enum';
