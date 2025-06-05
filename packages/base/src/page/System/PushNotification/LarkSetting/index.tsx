@@ -3,12 +3,13 @@ import { useBoolean, useRequest } from 'ahooks';
 import { useCallback, useMemo } from 'react';
 import { Form, Spin, Typography } from 'antd';
 import { FormFields } from './index.type';
-import useConfigSwitch from '../../hooks/useConfigSwitch';
-import useConfigRender, {
+import {
+  ConfigSwitch,
+  ConfigSubmitButtonField,
+  useConfigRender,
+  useConfigSwitchControls,
   ReadOnlyConfigColumnsType
-} from '../../hooks/useConfigRender';
-import ConfigSwitch from '../../components/ConfigSwitch';
-import ConfigSubmitButtonField from '../../components/ConfigSubmitButtonField';
+} from '@actiontech/shared/lib/components/SystemConfigurationHub';
 import ConfigExtraButtons from './conponents/ConfigExtraButtons';
 import ConfigField from './conponents/ConfigField';
 import Configuration from '@actiontech/shared/lib/api/base/service/Configuration';
@@ -78,9 +79,6 @@ const LarkSetting: React.FC = () => {
     setFormDefaultValue();
     modifyFinish();
   };
-  const handleToggleSwitch = (open: boolean) => {
-    form.setFieldValue(switchFieldName, open);
-  };
 
   const submitLarkConfig = (values: FormFields) => {
     startSubmit();
@@ -106,28 +104,38 @@ const LarkSetting: React.FC = () => {
   const switchOpen = Form.useWatch(switchFieldName, form);
 
   const {
-    configSwitchPopoverVisible,
+    configSwitchPopoverOpenState,
+    generateConfigSwitchPopoverTitle,
     onConfigSwitchPopoverOpen,
-    onConfigSwitchPopoverConfirm,
-    onConfigSwitchChange
-  } = useConfigSwitch({
-    isConfigClosed,
-    switchOpen,
-    modifyFlag,
-    startSubmit,
-    submitFinish,
-    handleClickModify,
-    handleUpdateConfig: () =>
+    handleConfigSwitchChange,
+    hiddenConfigSwitchPopover
+  } = useConfigSwitchControls(form, switchFieldName);
+
+  const onConfigSwitchPopoverConfirm = () => {
+    if (isConfigClosed && modifyFlag) {
+      handleClickCancel();
+      refreshLarkInfo();
+      hiddenConfigSwitchPopover();
+    } else {
+      startSubmit();
       Configuration.UpdateFeishuConfiguration({
         update_feishu_configuration: {
           ...larkInfo,
           is_feishu_notification_enabled: false
         }
-      }),
-    handleClickCancel,
-    refreshConfig: refreshLarkInfo,
-    handleToggleSwitch
-  });
+      })
+        .then((res) => {
+          if (res.data.code === ResponseCode.SUCCESS) {
+            handleClickCancel();
+            refreshLarkInfo();
+          }
+        })
+        .finally(() => {
+          submitFinish();
+          hiddenConfigSwitchPopover();
+        });
+    }
+  };
 
   const readonlyColumnsConfig: ReadOnlyConfigColumnsType<IFeishuConfigurationResData> =
     useMemo(() => {
@@ -171,13 +179,15 @@ const LarkSetting: React.FC = () => {
               }
             >
               <ConfigSwitch
+                title={generateConfigSwitchPopoverTitle(modifyFlag)}
                 switchFieldName={switchFieldName}
-                switchOpen={switchOpen}
-                modifyFlag={modifyFlag}
+                checked={switchOpen}
                 submitLoading={submitLoading}
-                popoverVisible={configSwitchPopoverVisible}
+                popoverVisible={configSwitchPopoverOpenState}
                 onConfirm={onConfigSwitchPopoverConfirm}
-                onSwitchChange={onConfigSwitchChange}
+                onSwitchChange={(open) =>
+                  handleConfigSwitchChange(open, handleClickModify)
+                }
                 onSwitchPopoverOpen={onConfigSwitchPopoverOpen}
               />
             </PermissionControl>
@@ -189,7 +199,7 @@ const LarkSetting: React.FC = () => {
               handleClickCancel={handleClickCancel}
             />
           ),
-          submit: submitLarkConfig
+          onSubmit: submitLarkConfig
         })}
       </Spin>
     </div>

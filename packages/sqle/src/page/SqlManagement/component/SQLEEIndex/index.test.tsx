@@ -5,7 +5,6 @@ import sqlManage from '@actiontech/shared/lib/testUtil/mockApi/sqle/sqlManage';
 import { mockAbnormalInstanceAuditPlansData } from '@actiontech/shared/lib/testUtil/mockApi/sqle/sqlManage/data';
 import { mockUseCurrentProject } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentProject';
 import { mockUseCurrentUser } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentUser';
-import { mockUseProjectBusinessTips } from '@actiontech/shared/lib/testUtil/mockHook/mockUseProjectBusinessTips';
 import { useDispatch, useSelector } from 'react-redux';
 import { driverMeta } from '../../../../hooks/useDatabaseType/index.test.data';
 import { createSpySuccessResponse } from '@actiontech/shared/lib/testUtil/mockApi';
@@ -72,7 +71,6 @@ describe('page/SqlManagement/SQLEEIndex', () => {
   beforeEach(() => {
     mockUseCurrentProject();
     mockUseCurrentUser();
-    mockUseProjectBusinessTips();
     mockUseAuditPlanTypes();
     jest.useFakeTimers();
     instance.mockAllApi();

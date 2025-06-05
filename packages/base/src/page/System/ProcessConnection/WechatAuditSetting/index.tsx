@@ -3,18 +3,19 @@ import { useBoolean, useRequest } from 'ahooks';
 import { useCallback, useMemo } from 'react';
 import { Form, Spin, Typography } from 'antd';
 import { CustomLabelContent } from '@actiontech/shared/lib/components/CustomForm';
-import ConfigSwitch from '../../components/ConfigSwitch';
+import {
+  ConfigSwitch,
+  ConfigSubmitButtonField,
+  useConfigRender,
+  useConfigSwitchControls,
+  ReadOnlyConfigColumnsType
+} from '@actiontech/shared/lib/components/SystemConfigurationHub';
 import ConfigExtraButtons from './components/ConfigExtraButtons';
 import ConfigField from './components/ConfigField';
-import useConfigRender, {
-  ReadOnlyConfigColumnsType
-} from '../../hooks/useConfigRender';
-import useConfigSwitch from '../../hooks/useConfigSwitch';
 import configuration from '@actiontech/shared/lib/api/sqle/service/configuration';
 import { ResponseCode } from '@actiontech/shared/lib/enum';
 import { FormFields } from './index.type';
 import { defaultFormData, switchFieldName } from './index.data';
-import ConfigSubmitButtonField from '../../components/ConfigSubmitButtonField';
 import { IWechatConfigurationV1 } from '@actiontech/shared/lib/api/sqle/service/common';
 import {
   PERMISSIONS,
@@ -82,10 +83,6 @@ const WechatAuditSetting: React.FC = () => {
     modifyFinish();
   };
 
-  const handleToggleSwitch = (open: boolean) => {
-    form.setFieldValue(switchFieldName, open);
-  };
-
   const [submitLoading, { setTrue: startSubmit, setFalse: submitFinish }] =
     useBoolean();
   const submitWechatAuditConfig = (values: FormFields) => {
@@ -111,26 +108,37 @@ const WechatAuditSetting: React.FC = () => {
   const switchOpen = Form.useWatch(switchFieldName, form);
 
   const {
-    configSwitchPopoverVisible,
+    configSwitchPopoverOpenState,
+    generateConfigSwitchPopoverTitle,
     onConfigSwitchPopoverOpen,
-    onConfigSwitchPopoverConfirm,
-    onConfigSwitchChange
-  } = useConfigSwitch({
-    isConfigClosed,
-    switchOpen,
-    modifyFlag,
-    startSubmit,
-    submitFinish,
-    handleClickModify,
-    handleUpdateConfig: () =>
-      configuration.updateWechatAuditConfigurationV1({
-        ...defaultFormData,
-        is_wechat_notification_enabled: false
-      }),
-    handleClickCancel,
-    refreshConfig: refreshWechatAuditInfo,
-    handleToggleSwitch
-  });
+    handleConfigSwitchChange,
+    hiddenConfigSwitchPopover
+  } = useConfigSwitchControls(form, switchFieldName);
+
+  const onConfigSwitchPopoverConfirm = () => {
+    if (isConfigClosed && modifyFlag) {
+      handleClickCancel();
+      refreshWechatAuditInfo();
+      hiddenConfigSwitchPopover();
+    } else {
+      startSubmit();
+      configuration
+        .updateWechatAuditConfigurationV1({
+          ...defaultFormData,
+          is_wechat_notification_enabled: false
+        })
+        .then((res: any) => {
+          if (res.data.code === ResponseCode.SUCCESS) {
+            handleClickCancel();
+            refreshWechatAuditInfo();
+          }
+        })
+        .finally(() => {
+          submitFinish();
+          hiddenConfigSwitchPopover();
+        });
+    }
+  };
 
   const readonlyColumnsConfig: ReadOnlyConfigColumnsType<IWechatConfigurationV1> =
     useMemo(() => {
@@ -176,13 +184,15 @@ const WechatAuditSetting: React.FC = () => {
               }
             >
               <ConfigSwitch
+                title={generateConfigSwitchPopoverTitle(modifyFlag)}
                 switchFieldName={switchFieldName}
-                switchOpen={switchOpen}
-                modifyFlag={modifyFlag}
+                checked={switchOpen}
                 submitLoading={submitLoading}
-                popoverVisible={configSwitchPopoverVisible}
+                popoverVisible={configSwitchPopoverOpenState}
                 onConfirm={onConfigSwitchPopoverConfirm}
-                onSwitchChange={onConfigSwitchChange}
+                onSwitchChange={(open) =>
+                  handleConfigSwitchChange(open, handleClickModify)
+                }
                 onSwitchPopoverOpen={onConfigSwitchPopoverOpen}
               />
             </PermissionControl>
@@ -194,7 +204,7 @@ const WechatAuditSetting: React.FC = () => {
               handleClickCancel={handleClickCancel}
             />
           ),
-          submit: submitWechatAuditConfig
+          onSubmit: submitWechatAuditConfig
         })}
       </Spin>
     </div>
