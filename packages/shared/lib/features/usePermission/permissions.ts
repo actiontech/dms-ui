@@ -27,7 +27,8 @@ export const PERMISSIONS = {
         ROLE: {
           ADD: 'action:add_role',
           EDIT: 'action:edit_role',
-          DELETE: 'action:delete_role'
+          DELETE: 'action:delete_role',
+          CLONE: 'action:clone_role'
         }
       },
       GLOBAL_DATA_SOURCE: {
@@ -95,6 +96,7 @@ export const PERMISSIONS = {
         ADD_MEMBER: 'action:add_member',
         EDIT_MEMBER: 'action:edit_member',
         DELETE_MEMBER: 'action:delete_member',
+        MANAGE_MEMBER_GROUP: 'action:manage_member_group',
         ADD_MEMBER_GROUP: 'action:add_member_group',
         EDIT_MEMBER_GROUP: 'action:edit_member_group',
         DELETE_MEMBER_GROUP: 'action:delete_member_group'

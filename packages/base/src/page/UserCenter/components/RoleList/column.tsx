@@ -4,12 +4,12 @@ import { ListRoleStatEnum } from '@actiontech/shared/lib/api/base/service/common
 import { orderBy } from 'lodash';
 import { t } from '../../../../locale';
 import generateTag from '../../utils/generateTag';
-import { Space } from 'antd';
+import { Space, Popover, Typography } from 'antd';
 import { BasicTypographyEllipsis } from '@actiontech/shared';
 import { TableColumnWithIconStyleWrapper } from '@actiontech/shared/lib/styleWrapper/element';
 import { CheckHexagonOutlined, CloseHexagonOutlined } from '@actiontech/icons';
 
-export const RoleListColumns: () => ActiontechTableColumn<IListRole> = () => [
+export const roleListColumns: () => ActiontechTableColumn<IListRole> = () => [
   {
     dataIndex: 'name',
     title: () => t('dmsUserCenter.role.roleForm.name')
@@ -18,6 +18,7 @@ export const RoleListColumns: () => ActiontechTableColumn<IListRole> = () => [
     dataIndex: 'desc',
     title: () => t('dmsUserCenter.role.roleForm.desc'),
     className: 'ellipsis-column-width',
+    ellipsis: true,
     render: (desc) => {
       return desc ? <BasicTypographyEllipsis textCont={desc} /> : '-';
     }
@@ -45,9 +46,28 @@ export const RoleListColumns: () => ActiontechTableColumn<IListRole> = () => [
       if (!Array.isArray(list)) {
         return '-';
       }
-      orderBy(list, ['name'], ['asc']);
-      return <Space wrap>{generateTag(list)}</Space>;
-    },
-    width: 500
+      const sortedList = orderBy(list, ['name'], ['asc']);
+      const displayList = sortedList.slice(0, 3);
+
+      const allPermissionsContent = (
+        <Space wrap>{generateTag(sortedList)}</Space>
+      );
+
+      return (
+        <Space wrap>
+          {generateTag(displayList)}
+          <Popover
+            content={allPermissionsContent}
+            placement="top"
+            overlayStyle={{ maxWidth: 450 }}
+            trigger="click"
+          >
+            <Typography.Link>
+              {t('dmsUserCenter.role.roleForm.viewAll')}
+            </Typography.Link>
+          </Popover>
+        </Space>
+      );
+    }
   }
 ];

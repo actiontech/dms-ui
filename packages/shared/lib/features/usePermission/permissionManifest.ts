@@ -13,6 +13,7 @@ export type PermissionDetail = {
     fieldName?: string;
     opType: OpPermissionItemOpPermissionTypeEnum;
   };
+  menuPermission?: string[];
 };
 
 export const PERMISSION_MANIFEST: Record<
@@ -215,6 +216,11 @@ export const PERMISSION_MANIFEST: Record<
   },
   [PERMISSIONS.ACTIONS.BASE.USER_CENTER.ROLE.DELETE]: {
     id: PERMISSIONS.ACTIONS.BASE.USER_CENTER.ROLE.DELETE,
+    type: 'action',
+    role: [SystemRole.admin, SystemRole.systemAdministrator]
+  },
+  [PERMISSIONS.ACTIONS.BASE.USER_CENTER.ROLE.CLONE]: {
+    id: PERMISSIONS.ACTIONS.BASE.USER_CENTER.ROLE.CLONE,
     type: 'action',
     role: [SystemRole.admin, SystemRole.systemAdministrator]
   },
@@ -463,6 +469,13 @@ export const PERMISSION_MANIFEST: Record<
   },
   [PERMISSIONS.ACTIONS.BASE.MEMBER.DELETE_MEMBER]: {
     id: PERMISSIONS.ACTIONS.BASE.MEMBER.DELETE_MEMBER,
+    type: 'action',
+    role: [SystemRole.admin, SystemRole.systemAdministrator],
+    projectManager: true,
+    projectArchived: false
+  },
+  [PERMISSIONS.ACTIONS.BASE.MEMBER.MANAGE_MEMBER_GROUP]: {
+    id: PERMISSIONS.ACTIONS.BASE.MEMBER.MANAGE_MEMBER_GROUP,
     type: 'action',
     role: [SystemRole.admin, SystemRole.systemAdministrator],
     projectManager: true,

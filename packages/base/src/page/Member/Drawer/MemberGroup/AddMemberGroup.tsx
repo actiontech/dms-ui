@@ -36,7 +36,8 @@ const AddMemberGroup: React.FC = () => {
         name: values.name,
         user_uids: values.userUids,
         role_with_op_ranges: values.roles,
-        is_project_admin: values.isProjectAdmin
+        is_project_admin: values.isProjectAdmin,
+        project_manage_permissions: values.projectManagementPermission
       },
       project_uid: projectID
     };

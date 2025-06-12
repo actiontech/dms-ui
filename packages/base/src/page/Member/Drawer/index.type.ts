@@ -5,6 +5,7 @@ export interface IMemberFormFields {
   userUid: string;
   isProjectAdmin: boolean;
   roles?: IMemberRoleWithOpRange[];
+  projectManagementPermission?: string[];
 }
 
 export interface IMemberFormProps {
@@ -18,6 +19,7 @@ export interface IMemberGroupFormFields {
   isProjectAdmin: boolean;
   roles?: IMemberRoleWithOpRange[];
   userUids: string[];
+  projectManagementPermission?: string[];
 }
 
 export interface IMemberGroupFormProps {

@@ -1,12 +1,12 @@
 import { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
-import { ModalName } from '../../../data/ModalName';
-import { initMemberModalStatus } from '../../../store/member';
-import AddMember from './Member/AddMember';
-import UpdateMember from './Member/UpdateMember';
-import ManageMemberGroup from '../Modal/Member/ManageMemberGroup';
-import AddMemberGroup from './MemberGroup/AddMemberGroup';
-import UpdateMemberGroup from './MemberGroup/UpdateMemberGroup';
+import { ModalName } from '../../data/ModalName';
+import { initMemberModalStatus } from '../../store/member';
+import AddMember from './Drawer/Member/AddMember';
+import UpdateMember from './Drawer/Member/UpdateMember';
+import ManageMemberGroup from './Modal/Member/ManageMemberGroup';
+import AddMemberGroup from './Drawer/MemberGroup/AddMemberGroup';
+import UpdateMemberGroup from './Drawer/MemberGroup/UpdateMemberGroup';
 
 const MemberDrawer: React.FC = () => {
   const dispatch = useDispatch();

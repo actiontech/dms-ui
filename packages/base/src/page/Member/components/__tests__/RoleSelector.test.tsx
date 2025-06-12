@@ -3,7 +3,7 @@ import { superRender } from '@actiontech/shared/lib/testUtil/superRender';
 import { cleanup, act, fireEvent, screen } from '@testing-library/react';
 import { mockUseDbServiceDriver } from '@actiontech/shared/lib/testUtil/mockHook/mockUseDbServiceDriver';
 import dbServices from '@actiontech/shared/lib/testUtil/mockApi/base/dbServices';
-import RoleSelector from '../RoleSelector';
+import RoleSelector from '../PermissionFields';
 import { mockProjectInfo } from '@actiontech/shared/lib/testUtil/mockHook/data';
 import { Form } from 'antd';
 import { queryBySelector } from '@actiontech/shared/lib/testUtil/customQuery';

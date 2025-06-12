@@ -2,13 +2,13 @@ import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { commonModalReducer } from '../common';
 import { ModalStatus } from '@actiontech/shared/lib/types/common.type';
 import {
-  IListMember,
+  IListMemberV2,
   IListMemberGroup
 } from '@actiontech/shared/lib/api/base/service/common';
 
 type MemberReduxState = {
   modalStatus: ModalStatus;
-  selectMember: IListMember | null;
+  selectMember: IListMemberV2 | null;
   selectMemberGroup: IListMemberGroup | null;
 };
 
@@ -24,7 +24,7 @@ const dmsMember = createSlice({
   reducers: {
     updateSelectMember(
       state,
-      { payload: { member } }: PayloadAction<{ member: IListMember | null }>
+      { payload: { member } }: PayloadAction<{ member: IListMemberV2 | null }>
     ) {
       state.selectMember = member;
     },

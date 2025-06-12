@@ -21,10 +21,10 @@ describe('base/UserCenter/Drawer/Role/UpdateRole', () => {
   let updateRoleSpy: jest.SpyInstance;
   let opPermissionListSpy: jest.SpyInstance;
   const dispatchSpy = jest.fn();
+
   beforeEach(() => {
     jest.useFakeTimers();
     updateRoleSpy = userCenter.updateRole();
-
     (useDispatch as jest.Mock).mockImplementation(() => dispatchSpy);
     opPermissionListSpy = userCenter.getOpPermissionsList();
     (useSelector as jest.Mock).mockImplementation((e) =>
@@ -62,20 +62,15 @@ describe('base/UserCenter/Drawer/Role/UpdateRole', () => {
     expect(screen.getByLabelText('角色名')).toHaveValue('test');
     expect(screen.getByLabelText('角色名')).toHaveAttribute('disabled');
     expect(screen.getByLabelText('是否禁用')).not.toBeChecked();
+    expect(screen.getByDisplayValue('700001')).toBeChecked();
     fireEvent.input(screen.getByLabelText('描述'), {
       target: { value: 'test1' }
     });
     fireEvent.click(screen.getByLabelText('是否禁用'));
     await act(async () => jest.advanceTimersByTime(0));
     expect(screen.getByLabelText('是否禁用')).toBeChecked();
-    fireEvent.mouseDown(screen.getByLabelText('操作权限'));
-    expect(
-      getAllBySelector('.ant-select-item-option-content', baseElement)[2]
-        .childNodes[0]
-    ).toHaveTextContent('修改项目');
-    fireEvent.click(
-      getAllBySelector('.ant-select-item-option-content', baseElement)[2]
-    );
+    fireEvent.click(screen.getByDisplayValue('20150'));
+    expect(screen.getByDisplayValue('20150')).toBeChecked();
     fireEvent.click(screen.getByText('提 交'));
     await act(async () => jest.advanceTimersByTime(0));
     expect(screen.getByText('提 交').parentNode).toHaveClass('ant-btn-loading');
@@ -122,6 +117,45 @@ describe('base/UserCenter/Drawer/Role/UpdateRole', () => {
         modalName: ModalName.DMS_Update_Role,
         status: false
       }
+    });
+  });
+
+  it('should handle role with multiple permissions', async () => {
+    (useSelector as jest.Mock).mockImplementation((e) =>
+      e({
+        userCenter: {
+          modalStatus: { [ModalName.DMS_Update_Role]: true },
+          selectRole: {
+            name: 'multi_permission_role',
+            desc: 'role with multiple permissions',
+            uid: '1003',
+            op_permissions: [
+              {
+                name: '创建项目',
+                uid: '700001'
+              },
+              {
+                name: '修改项目',
+                uid: '20150'
+              }
+            ]
+          }
+        }
+      })
+    );
+    superRender(<UpdateRole />);
+    await act(async () => jest.advanceTimersByTime(3000));
+    expect(screen.getByDisplayValue('700001')).toBeChecked();
+    expect(screen.getByDisplayValue('20150')).toBeChecked();
+    fireEvent.click(screen.getByText('提 交'));
+    await act(async () => jest.advanceTimersByTime(0));
+    expect(updateRoleSpy).toHaveBeenCalledWith({
+      role: {
+        desc: 'role with multiple permissions',
+        op_permission_uids: ['700001', '20150'],
+        is_disabled: false
+      },
+      role_uid: '1003'
     });
   });
 });

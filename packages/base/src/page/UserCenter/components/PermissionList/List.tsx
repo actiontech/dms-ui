@@ -3,7 +3,7 @@ import {
   useTableRequestError,
   useTableRequestParams
 } from '@actiontech/shared/lib/components/ActiontechTable';
-import { PermissionListColumns } from './column';
+import { permissionListColumns } from './column';
 import { UserCenterListEnum } from '../../index.enum';
 import { IListOpPermission } from '@actiontech/shared/lib/api/base/service/common';
 import OpPermission from '@actiontech/shared/lib/api/base/service/OpPermission';
@@ -63,7 +63,7 @@ const PermissionList: React.FC<{ activePage: UserCenterListEnum }> = ({
         total: permissionList?.total ?? 0
       }}
       loading={loading}
-      columns={PermissionListColumns()}
+      columns={permissionListColumns()}
       errorMessage={requestErrorMessage}
       onChange={tableChange}
     />

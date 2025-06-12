@@ -14,8 +14,8 @@ import {
   usePermission
 } from '@actiontech/shared/lib/features';
 import { ResponseCode } from '@actiontech/shared/lib/enum';
-import { IListMember } from '@actiontech/shared/lib/api/base/service/common';
-import { IListMembersParams } from '@actiontech/shared/lib/api/base/service/Member/index.d';
+import { IListMemberV2 } from '@actiontech/shared/lib/api/base/service/common';
+import { IListMembersV2Params } from '@actiontech/shared/lib/api/base/service/Member/index.d';
 import Member from '@actiontech/shared/lib/api/base/service/Member';
 import { ModalName } from '../../../data/ModalName';
 import EventEmitter from '../../../utils/EventEmitter';
@@ -47,8 +47,8 @@ const MemberList: React.FC<{ activePage: MemberListTypeEnum }> = ({
     useTableRequestError();
 
   const { pagination, tableChange } = useTableRequestParams<
-    IListMember,
-    IListMembersParams
+    IListMemberV2,
+    IListMembersV2Params
   >();
 
   const {
@@ -57,11 +57,152 @@ const MemberList: React.FC<{ activePage: MemberListTypeEnum }> = ({
     refresh
   } = useRequest(
     () => {
-      const params: IListMembersParams = {
+      const params: IListMembersV2Params = {
         ...pagination,
         project_uid: projectID
       };
-      return handleTableRequestError(Member.ListMembers(params));
+      // return handleTableRequestError(Member.ListMembersV2(params));
+      return Promise.resolve({
+        list: [
+          {
+            uid: '1930102420742868992',
+            user: {
+              uid: '20250604112007136',
+              name: 'test'
+            },
+            is_project_admin: false,
+            is_group_member: true,
+            current_project_op_permissions: [
+              {
+                data_source: 'oracle-test',
+                roles: [
+                  {
+                    uid: '700403',
+                    name: '开发工程师',
+                    op_permissions: [
+                      {
+                        uid: '700003',
+                        name: '创建/编辑工单'
+                      },
+                      {
+                        uid: '700010',
+                        name: 'SQL工作台查询'
+                      },
+                      {
+                        uid: '700015',
+                        name: '配置流水线'
+                      }
+                    ],
+                    member_group: {
+                      name: 'test',
+                      uid: '1930507995565789184',
+                      users: [
+                        {
+                          uid: '20250604112007136',
+                          name: 'test'
+                        },
+                        {
+                          uid: '20250604132036026',
+                          name: 'test-1'
+                        }
+                      ],
+                      op_permissions: [
+                        {
+                          uid: '700003',
+                          name: '创建/编辑工单'
+                        },
+                        {
+                          uid: '700010',
+                          name: 'SQL工作台查询'
+                        },
+                        {
+                          uid: '700015',
+                          name: '配置流水线'
+                        }
+                      ]
+                    }
+                  },
+                  {
+                    uid: '700405',
+                    name: '运维工程师',
+                    op_permissions: [
+                      {
+                        uid: '700005',
+                        name: '授权数据源数据权限'
+                      },
+                      {
+                        uid: '700006',
+                        name: '上线工单'
+                      },
+                      {
+                        uid: '700007',
+                        name: '查看他人创建的工单'
+                      },
+                      {
+                        uid: '700008',
+                        name: '查看他人创建的扫描任务'
+                      },
+                      {
+                        uid: '700009',
+                        name: '创建/编辑扫描任务'
+                      },
+                      {
+                        uid: '700012',
+                        name: '创建数据导出任务'
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                data_source: 'mysql-test',
+                roles: [
+                  {
+                    uid: '700403',
+                    name: '开发工程师',
+                    op_permissions: [
+                      {
+                        uid: '700003',
+                        name: '创建/编辑工单'
+                      },
+                      {
+                        uid: '700010',
+                        name: 'SQL工作台查询'
+                      },
+                      {
+                        uid: '700015',
+                        name: '配置流水线'
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            current_project_manage_permissions: [
+              {
+                uid: '700003',
+                name: '数据源管理'
+              },
+              {
+                uid: '700010',
+                name: '成员管理'
+              },
+              {
+                uid: '700015',
+                name: '审批流程管理'
+              }
+            ],
+            platform_roles: [
+              {
+                uid: '700018',
+                name: '普通用户'
+              }
+            ],
+            projects: ['default']
+          }
+        ],
+        total: 0
+      });
     },
     {
       refreshDeps: [pagination, refreshFlag, projectID, activePage],
@@ -70,7 +211,7 @@ const MemberList: React.FC<{ activePage: MemberListTypeEnum }> = ({
   );
 
   const onEditMember = useCallback(
-    (record?: IListMember) => {
+    (record?: IListMemberV2) => {
       dispatch(updateSelectMember({ member: record ?? null }));
       dispatch(
         updateMemberModalStatus({
@@ -83,7 +224,7 @@ const MemberList: React.FC<{ activePage: MemberListTypeEnum }> = ({
   );
 
   const onDeleteMember = useCallback(
-    async (record?: IListMember) => {
+    async (record?: IListMemberV2) => {
       const res = await Member.DelMember({
         member_uid: record?.uid ?? '',
         project_uid: projectID
@@ -101,11 +242,29 @@ const MemberList: React.FC<{ activePage: MemberListTypeEnum }> = ({
     [messageApi, refresh, t, projectID]
   );
 
+  const onManageMemberGroup = useCallback(
+    (record?: IListMemberV2) => {
+      dispatch(updateSelectMember({ member: record ?? null }));
+      dispatch(
+        updateMemberModalStatus({
+          modalName: ModalName.DMS_Manage_Member_Group,
+          status: true
+        })
+      );
+    },
+    [dispatch]
+  );
+
   const actions = useMemo(() => {
     return parse2TableActionPermissions(
-      MemberListActions(onEditMember, onDeleteMember)
+      MemberListActions(onEditMember, onDeleteMember, onManageMemberGroup)
     );
-  }, [onEditMember, onDeleteMember, parse2TableActionPermissions]);
+  }, [
+    onEditMember,
+    onDeleteMember,
+    parse2TableActionPermissions,
+    onManageMemberGroup
+  ]);
 
   useEffect(() => {
     const { unsubscribe } = EventEmitter.subscribe(

@@ -1,6 +1,6 @@
 import { styled } from '@mui/material/styles';
 import { Row } from 'antd';
-import { BasicDrawer, BasicToolTip } from '@actiontech/shared';
+import { BasicDrawer } from '@actiontech/shared';
 
 export const ProjectMemberStyleWrapper = styled('section')`
   .ant-tabs-nav {
@@ -32,19 +32,14 @@ export const MemberDrawerStyledWrapper = styled(BasicDrawer)`
       theme.sharedTheme.basic.colorPrimaryBgHover} !important;
     color: ${({ theme }) => theme.sharedTheme.uiToken.colorPrimary} !important;
   }
+
+  .ant-typography.member-form-sub-title {
+    font-size: 14px !important;
+  }
 `;
 
 export const MemberRoleSelectorRowStyleWrapper = styled(Row)`
   .ant-col {
     height: 100%;
-  }
-`;
-
-export const MemberPermissionStyleWrapper = styled(BasicToolTip)`
-  max-width: 100%;
-
-  .ant-space,
-  .ant-space-item {
-    width: 100%;
   }
 `;

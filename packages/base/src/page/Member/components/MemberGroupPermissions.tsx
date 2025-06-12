@@ -3,14 +3,17 @@ import {
   IUidWithName
 } from '@actiontech/shared/lib/api/base/service/common';
 import { Space, Typography } from 'antd';
+import React from 'react';
 
-/**
- * @deprecated 待删除
- */
-const renderRolesInfo = (
-  roles: IListMemberRoleWithOpRange[],
-  ellipsis: boolean
-) => {
+type MemberGroupPermissionsProps = {
+  roles: IListMemberRoleWithOpRange[];
+  ellipsis: boolean;
+};
+
+const MemberGroupPermissions: React.FC<MemberGroupPermissionsProps> = ({
+  roles,
+  ellipsis
+}) => {
   const genContent = (roleName: string, ranges: IUidWithName[]) =>
     `${roleName}: [ ${ranges?.map((range) => range.name)?.toString() ?? ''} ]`;
 
@@ -36,4 +39,4 @@ const renderRolesInfo = (
   );
 };
 
-export default renderRolesInfo;
+export default MemberGroupPermissions;

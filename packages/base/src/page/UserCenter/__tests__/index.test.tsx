@@ -71,7 +71,8 @@ describe('base/UserCenter', () => {
     expect(roleListSpy).toHaveBeenCalledTimes(1);
     expect(roleListSpy).toHaveBeenCalledWith({
       page_index: 1,
-      page_size: 20
+      page_size: 20,
+      fuzzy_keyword: ''
     });
     expect(baseElement).toMatchSnapshot();
     fireEvent.click(screen.getByText('添加角色'));
@@ -110,7 +111,7 @@ describe('base/UserCenter', () => {
     expect(userListSpy).toHaveBeenCalledTimes(2);
     expect(userListSpy).toHaveBeenCalledWith({
       page_index: 1,
-      page_size: 20
+      page_size: 20,
     });
     await act(async () => jest.advanceTimersByTime(3000));
 
@@ -122,7 +123,8 @@ describe('base/UserCenter', () => {
     expect(roleListSpy).toHaveBeenCalledTimes(2);
     expect(roleListSpy).toHaveBeenCalledWith({
       page_index: 1,
-      page_size: 20
+      page_size: 20,
+      fuzzy_keyword: ''
     });
     await act(async () => jest.advanceTimersByTime(3000));
 

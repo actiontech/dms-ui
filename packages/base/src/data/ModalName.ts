@@ -2,6 +2,7 @@ export enum ModalName {
   // userCenter manage
   DMS_Add_Role = 'DMS_ADD_ROLE',
   DMS_Update_Role = 'DMS_UPDATE_ROLE',
+  DMS_Clone_Role = 'DMS_CLONE_ROLE',
 
   DMS_Add_User = 'DMS_ADD_USER',
   DMS_Update_User = 'DMS_UPDATE_USER',
@@ -14,6 +15,7 @@ export enum ModalName {
   DMS_Update_Member = 'DMS_UPDATE_MEMBER',
   DMS_Add_Member_Group = 'DMS_Add_Member_Group',
   DMS_Update_Member_Group = 'DMS_Update_Member_Group',
+  DMS_Manage_Member_Group = 'DMS_Manage_Member_Group',
 
   // project manage
   DMS_Add_Project = 'DMS_ADD_PROJECT',

@@ -30,7 +30,8 @@ describe('base/UserCenter/UserManageDrawer', () => {
           [ModalName.DMS_Add_User]: false,
           [ModalName.DMS_Update_User]: false,
           [ModalName.DMS_Add_Role]: false,
-          [ModalName.DMS_Update_Role]: false
+          [ModalName.DMS_Update_Role]: false,
+          [ModalName.DMS_Clone_Role]: false
         }
       },
       type: 'userCenter/initModalStatus'
