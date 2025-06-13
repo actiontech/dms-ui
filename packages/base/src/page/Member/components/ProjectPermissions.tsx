@@ -14,7 +14,11 @@ type OperationPermissionsProps = {
 const ProjectPermissions: React.FC<OperationPermissionsProps> = ({
   permissions
 }) => {
-  const renderRoleTag = (role: IProjectRole, dataSource: string, index: number) => {
+  const renderRoleTag = (
+    role: IProjectRole,
+    dataSource: string,
+    index: number
+  ) => {
     const roleName = role?.name || '';
     const isFromMemberGroup = !!role.member_group;
 

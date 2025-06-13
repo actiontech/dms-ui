@@ -40,7 +40,9 @@ const ProjectManagePermissions: React.FC<ProjectManagePermissionsProps> = ({
         </TableColumnWithIconStyleWrapper>
         <Space wrap>
           {managePermissions.map((permission) => (
-            <BasicTag style={{ height: 28 }} size="small" key={permission.uid}>{permission.name}</BasicTag>
+            <BasicTag style={{ height: 28 }} size="small" key={permission.uid}>
+              {permission.name}
+            </BasicTag>
           ))}
         </Space>
       </Space>

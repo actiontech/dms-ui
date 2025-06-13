@@ -24,7 +24,7 @@ export const MemberGroupCard = styled('div')`
   }
 
   .member-group-title {
-    margin: 0 0 8px 0;
+    margin-bottom: 8px;
     font-size: 16px;
     font-weight: 500;
     color: ${({ theme }) => theme.sharedTheme.uiToken.colorText};

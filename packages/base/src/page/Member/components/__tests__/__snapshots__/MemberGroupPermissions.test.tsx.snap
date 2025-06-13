@@ -1,0 +1,173 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`base/Member/components/MemberGroupPermissions should handle roles with empty range_uids 1`] = `
+<body>
+  <div>
+    <div
+      class="ant-space ant-space-vertical"
+    >
+      <div
+        class="ant-space-item"
+      >
+        <span
+          class="ant-typography ant-typography-ellipsis ant-typography-single-line ant-typography-ellipsis-single-line"
+        >
+          管理员: [  ]
+        </span>
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`base/Member/components/MemberGroupPermissions should handle roles with null role name 1`] = `
+<body>
+  <div>
+    <div
+      class="ant-space ant-space-vertical"
+    >
+      <div
+        class="ant-space-item"
+      >
+        <span
+          class="ant-typography ant-typography-ellipsis ant-typography-single-line ant-typography-ellipsis-single-line"
+        >
+          : [ 数据源1 ]
+        </span>
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`base/Member/components/MemberGroupPermissions should handle roles with undefined range_uids 1`] = `
+<body>
+  <div>
+    <div
+      class="ant-space ant-space-vertical"
+    >
+      <div
+        class="ant-space-item"
+      >
+        <span
+          class="ant-typography ant-typography-ellipsis ant-typography-single-line ant-typography-ellipsis-single-line"
+        >
+          管理员: [  ]
+        </span>
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`base/Member/components/MemberGroupPermissions should handle roles with undefined role_uid 1`] = `
+<body>
+  <div>
+    <div
+      class="ant-space ant-space-vertical"
+    >
+      <div
+        class="ant-space-item"
+      >
+        <span
+          class="ant-typography ant-typography-ellipsis ant-typography-single-line ant-typography-ellipsis-single-line"
+        >
+          : [ 数据源1 ]
+        </span>
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`base/Member/components/MemberGroupPermissions should render empty roles array 1`] = `
+<body>
+  <div />
+</body>
+`;
+
+exports[`base/Member/components/MemberGroupPermissions should render unique keys for roles with same uid 1`] = `
+<body>
+  <div>
+    <div
+      class="ant-space ant-space-vertical"
+    >
+      <div
+        class="ant-space-item"
+        style="margin-bottom: 8px;"
+      >
+        <span
+          class="ant-typography ant-typography-ellipsis ant-typography-single-line ant-typography-ellipsis-single-line"
+        >
+          管理员: [ 数据源1 ]
+        </span>
+      </div>
+      <div
+        class="ant-space-item"
+      >
+        <span
+          class="ant-typography ant-typography-ellipsis ant-typography-single-line ant-typography-ellipsis-single-line"
+        >
+          管理员: [ 数据源2 ]
+        </span>
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`base/Member/components/MemberGroupPermissions should render with ellipsis disabled 1`] = `
+<body>
+  <div>
+    <div
+      class="ant-space ant-space-vertical"
+    >
+      <div
+        class="ant-space-item"
+        style="margin-bottom: 8px;"
+      >
+        <div>
+          管理员: [ 数据源1,数据源2 ]
+        </div>
+      </div>
+      <div
+        class="ant-space-item"
+      >
+        <div>
+          开发者: [ 数据源3 ]
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`base/Member/components/MemberGroupPermissions should render with ellipsis enabled 1`] = `
+<body>
+  <div>
+    <div
+      class="ant-space ant-space-vertical"
+    >
+      <div
+        class="ant-space-item"
+        style="margin-bottom: 8px;"
+      >
+        <span
+          class="ant-typography ant-typography-ellipsis ant-typography-single-line ant-typography-ellipsis-single-line"
+        >
+          管理员: [ 数据源1,数据源2 ]
+        </span>
+      </div>
+      <div
+        class="ant-space-item"
+      >
+        <span
+          class="ant-typography ant-typography-ellipsis ant-typography-single-line ant-typography-ellipsis-single-line"
+        >
+          开发者: [ 数据源3 ]
+        </span>
+      </div>
+    </div>
+  </div>
+</body>
+`;

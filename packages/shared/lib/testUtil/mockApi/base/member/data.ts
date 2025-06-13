@@ -1,8 +1,12 @@
 import {
   IListMemberGroup,
-  IListMember
+  IListMember,
+  IListOpPermission
 } from '../../../../api/base/service/common';
-import { ListMemberRoleWithOpRangeOpRangeTypeEnum } from '../../../../api/base/service/common.enum';
+import {
+  ListMemberRoleWithOpRangeOpRangeTypeEnum,
+  ListOpPermissionRangeTypeEnum
+} from '../../../../api/base/service/common.enum';
 
 export const memberList: IListMember[] = [
   {
@@ -18,7 +22,7 @@ export const memberList: IListMember[] = [
   {
     uid: '700502',
     user: {
-      uid: '20250604112007136',
+      uid: '11132422',
       name: 'test'
     },
     is_project_admin: false,
@@ -218,6 +222,45 @@ export const memberGroupList: IListMemberGroup[] = [
         uid: '102393',
         name: 'test2'
       }
+    ]
+  },
+  {
+    name: 'member-group2',
+
+    role_with_op_ranges: [
+      {
+        op_range_type: ListMemberRoleWithOpRangeOpRangeTypeEnum.db_service,
+        range_uids: [
+          { uid: '701', name: 'Range1' },
+          { uid: '702', name: 'Range2' }
+        ],
+        role_uid: { uid: '5002', name: 'Role2' }
+      }
+    ],
+    uid: '10039482',
+    users: [
+      { uid: '138291', name: 'test3' },
+      { uid: '138214', name: 'test4' }
+    ]
+  },
+  {
+    is_project_admin: false,
+    name: 'member-group3',
+
+    role_with_op_ranges: [
+      {
+        op_range_type: ListMemberRoleWithOpRangeOpRangeTypeEnum.db_service,
+        range_uids: [{ uid: '123123', name: 'mysql-1' }],
+        role_uid: { uid: '1001', name: 'test role 1' }
+      }
+    ],
+    uid: '10039483',
+    users: [
+      {
+        uid: '11132422',
+        name: 'test'
+      },
+      { uid: '1647895752866795520', name: 'test666' }
     ],
     current_project_op_permissions: [
       {
@@ -293,45 +336,6 @@ export const memberGroupList: IListMemberGroup[] = [
     ]
   },
   {
-    name: 'member-group2',
-
-    role_with_op_ranges: [
-      {
-        op_range_type: ListMemberRoleWithOpRangeOpRangeTypeEnum.db_service,
-        range_uids: [
-          { uid: '701', name: 'Range1' },
-          { uid: '702', name: 'Range2' }
-        ],
-        role_uid: { uid: '5002', name: 'Role2' }
-      }
-    ],
-    uid: '10039482',
-    users: [
-      { uid: '138291', name: 'test3' },
-      { uid: '138214', name: 'test4' }
-    ]
-  },
-  {
-    is_project_admin: false,
-    name: 'member-group3',
-
-    role_with_op_ranges: [
-      {
-        op_range_type: ListMemberRoleWithOpRangeOpRangeTypeEnum.db_service,
-        range_uids: [{ uid: '123123', name: 'mysql-1' }],
-        role_uid: { uid: '1001', name: 'test role 1' }
-      }
-    ],
-    uid: '10039483',
-    users: [
-      {
-        uid: '11132422',
-        name: 'test'
-      },
-      { uid: '1647895752866795520', name: 'test666' }
-    ]
-  },
-  {
     name: 'member-group9',
     role_with_op_ranges: [
       {
@@ -344,5 +348,44 @@ export const memberGroupList: IListMemberGroup[] = [
       }
     ],
     uid: '10029385'
+  }
+];
+
+export const memberProjectPermissions: IListOpPermission[] = [
+  {
+    op_permission: { name: '创建项目', uid: '700001' },
+    description: '创建项目权限',
+    range_type: ListOpPermissionRangeTypeEnum.project,
+    module: '项目管理'
+  },
+  {
+    op_permission: { name: '数据源管理', uid: '700003' },
+    description: '数据源管理权限',
+    range_type: ListOpPermissionRangeTypeEnum.project,
+    module: '项目管理'
+  },
+  {
+    op_permission: { name: '成员管理', uid: '700010' },
+    description: '成员管理权限',
+    range_type: ListOpPermissionRangeTypeEnum.project,
+    module: '项目管理'
+  },
+  {
+    op_permission: { name: '审批流程管理', uid: '700015' },
+    description: '审批流程管理权限',
+    range_type: ListOpPermissionRangeTypeEnum.project,
+    module: '项目管理'
+  },
+  {
+    op_permission: { name: '修改项目', uid: '20100' },
+    description: '修改项目权限',
+    range_type: ListOpPermissionRangeTypeEnum.project,
+    module: '项目管理'
+  },
+  {
+    op_permission: { name: '删除项目', uid: '20150' },
+    description: '删除项目权限',
+    range_type: ListOpPermissionRangeTypeEnum.project,
+    module: '项目管理'
   }
 ];

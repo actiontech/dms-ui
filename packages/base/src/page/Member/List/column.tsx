@@ -87,12 +87,9 @@ export const MemberListColumns: ActiontechTableColumn<IListMember> = [
     title: t('dmsMember.memberList.columns.projectManagePermissions'),
     width: '20%',
     render: (isAdmin, record) => {
-      if (typeof isAdmin !== 'boolean') {
-        return t('common.unknownStatus');
-      }
       return (
         <ProjectManagePermissions
-          isProjectAdmin={isAdmin}
+          isProjectAdmin={!!isAdmin}
           managePermissions={record.current_project_manage_permissions}
         />
       );
@@ -148,12 +145,9 @@ export const MemberGroupListColumns: ActiontechTableColumn<IListMemberGroup> = [
     title: t('dmsMember.memberList.columns.projectManagePermissions'),
     width: '30%',
     render: (isAdmin, record) => {
-      if (typeof isAdmin !== 'boolean') {
-        return t('common.unknownStatus');
-      }
       return (
         <ProjectManagePermissions
-          isProjectAdmin={isAdmin}
+          isProjectAdmin={!!isAdmin}
           managePermissions={record.current_project_manage_permissions}
         />
       );
