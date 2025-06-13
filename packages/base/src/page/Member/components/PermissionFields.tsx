@@ -1,4 +1,4 @@
-import { Col, Form, Checkbox, Spin } from 'antd';
+import { Col, Form, Checkbox, Spin, Alert } from 'antd';
 import {
   BasicSelect,
   BasicInput,
@@ -67,6 +67,13 @@ const PermissionFields: React.FC<PermissionFieldsProps> = ({ projectID }) => {
       >
         <BasicSwitch />
       </Form.Item>
+      <EmptyBox if={isProjectAdmin}>
+        <Alert
+          message={t('dmsMember.memberForm.projectAdminTips')}
+          type="info"
+          showIcon
+        />
+      </EmptyBox>
       <EmptyBox if={!isProjectAdmin}>
         <Spin
           spinning={

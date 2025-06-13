@@ -2,7 +2,7 @@ import { Typography, Space } from 'antd';
 import { ActiontechTableColumn } from '@actiontech/shared/lib/components/ActiontechTable/index.type';
 import { t } from '../../../locale';
 import {
-  IListMemberV2,
+  IListMember,
   IProjectOpPermission,
   IListMemberGroup
 } from '@actiontech/shared/lib/api/base/service/common';
@@ -14,7 +14,7 @@ import ProjectPermissions from '../components/ProjectPermissions';
 
 const commonRoleOperateRangesRender = (
   permissions: IProjectOpPermission[],
-  record: IListMemberV2 | IListMemberGroup
+  record: IListMember | IListMemberGroup
 ) => {
   if (
     (!Array.isArray(permissions) || permissions.length === 0) &&
@@ -33,7 +33,7 @@ const commonRoleOperateRangesRender = (
   return <ProjectPermissions permissions={permissions} />;
 };
 
-export const MemberListColumns: ActiontechTableColumn<IListMemberV2> = [
+export const MemberListColumns: ActiontechTableColumn<IListMember> = [
   {
     dataIndex: 'user',
     title: t('common.username'),
@@ -78,7 +78,7 @@ export const MemberListColumns: ActiontechTableColumn<IListMemberV2> = [
         </BasicToolTip>
       );
     },
-    render: (permissions = [], record: IListMemberV2) => {
+    render: (permissions = [], record: IListMember) => {
       return commonRoleOperateRangesRender(permissions, record);
     }
   },

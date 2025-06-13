@@ -13,3 +13,9 @@ export enum ListOpPermissionsFilterByTargetEnum {
 
   'project' = 'project'
 }
+
+export enum ListOpPermissionsServiceEnum {
+  'dms' = 'dms',
+
+  'sqle' = 'sqle'
+}

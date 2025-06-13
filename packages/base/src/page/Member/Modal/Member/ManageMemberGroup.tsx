@@ -18,6 +18,7 @@ import EventEmitter from '../../../../utils/EventEmitter';
 import EmitterKey from '../../../../data/EmitterKey';
 import formatMemberRole from '../../Common/formatMemberRole';
 import { ManageMemberGroupContainer, MemberGroupCard } from './style';
+import { BasicEmpty } from '@actiontech/shared';
 
 const ManageMemberGroup: React.FC = () => {
   const { t } = useTranslation();
@@ -177,7 +178,13 @@ const ManageMemberGroup: React.FC = () => {
       {contextHolder}
       <Spin spinning={loading}>
         <ManageMemberGroupContainer>
-          {memberGroups?.map(renderMemberGroup)}
+          {memberGroups && memberGroups.length > 0 ? (
+            memberGroups.map(renderMemberGroup)
+          ) : (
+            <BasicEmpty
+              emptyCont={t('dmsMember.manageMemberGroup.emptyGroup')}
+            />
+          )}
         </ManageMemberGroupContainer>
       </Spin>
     </BasicModal>

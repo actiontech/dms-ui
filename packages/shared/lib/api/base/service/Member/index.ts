@@ -18,9 +18,7 @@ import {
   IUpdateMemberParams,
   IUpdateMemberReturn,
   IDelMemberParams,
-  IDelMemberReturn,
-  IListMembersV2Params,
-  IListMembersV2Return
+  IDelMemberReturn
 } from './index.d';
 
 class MemberService extends ServiceBase {
@@ -106,21 +104,6 @@ class MemberService extends ServiceBase {
 
     return this.delete<IDelMemberReturn>(
       `/v1/dms/projects/${project_uid}/members/${member_uid}`,
-      paramsData,
-      options
-    );
-  }
-
-  public ListMembersV2(
-    params: IListMembersV2Params,
-    options?: AxiosRequestConfig
-  ) {
-    const paramsData = this.cloneDeep(params);
-    const project_uid = paramsData.project_uid;
-    delete paramsData.project_uid;
-
-    return this.get<IListMembersV2Return>(
-      `/v2/dms/projects/${project_uid}/members`,
       paramsData,
       options
     );

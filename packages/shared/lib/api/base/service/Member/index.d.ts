@@ -1,4 +1,4 @@
-import { ListMembersOrderByEnum, ListMembersV2OrderByEnum } from './index.enum';
+import { ListMembersOrderByEnum } from './index.enum';
 
 import {
   IListMemberReply,
@@ -7,8 +7,7 @@ import {
   IListMembersForInternalReply,
   IListMemberTipsReply,
   IUpdateMemberReq,
-  IGenericResp,
-  IListMemberReplyV2
+  IGenericResp
 } from '../common.d';
 
 export interface IListMembersParams {
@@ -63,17 +62,3 @@ export interface IDelMemberParams {
 }
 
 export interface IDelMemberReturn extends IGenericResp {}
-
-export interface IListMembersV2Params {
-  page_size: number;
-
-  page_index?: number;
-
-  order_by?: ListMembersV2OrderByEnum;
-
-  filter_by_user_uid?: string;
-
-  project_uid: string;
-}
-
-export interface IListMembersV2Return extends IListMemberReplyV2 {}

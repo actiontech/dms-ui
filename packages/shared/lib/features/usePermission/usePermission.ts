@@ -158,6 +158,8 @@ const usePermission = () => {
         );
       }
 
+      // todo 新增项目判断权限 比如：审核SQL例外
+
       return hasRoleOrManagerPermission;
     },
     [getProjectAttributesStatus, checkRoles, checkDbServicePermission]

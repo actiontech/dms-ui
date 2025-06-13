@@ -4,16 +4,16 @@ import {
   PERMISSIONS
 } from '@actiontech/shared/lib/features';
 import {
-  IListMemberV2,
+  IListMember,
   IListMemberGroup
 } from '@actiontech/shared/lib/api/base/service/common';
 import { SystemRole } from '@actiontech/shared/lib/enum';
 
 export const MemberListActions = (
-  onEditMember: (record: IListMemberV2 | undefined) => void,
-  onDeleteMember: (record: IListMemberV2 | undefined) => void,
-  onManageMemberGroup: (record: IListMemberV2 | undefined) => void
-): ActiontechTableActionsWithPermissions<IListMemberV2> => [
+  onEditMember: (record: IListMember | undefined) => void,
+  onDeleteMember: (record: IListMember | undefined) => void,
+  onManageMemberGroup: (record: IListMember | undefined) => void
+): ActiontechTableActionsWithPermissions<IListMember> => [
   {
     text: t('common.edit'),
     key: 'memberEdit',

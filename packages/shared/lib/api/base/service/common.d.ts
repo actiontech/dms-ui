@@ -11,6 +11,7 @@ import {
   ListGlobalDBServiceV2LastConnectionTestStatusEnum,
   ListMemberRoleWithOpRangeOpRangeTypeEnum,
   ListOpPermissionRangeTypeEnum,
+  ListOpPermissionServiceEnum,
   ListProjectV1ProjectPriorityEnum,
   ListProjectV2ProjectPriorityEnum,
   ListRoleStatEnum,
@@ -1696,6 +1697,12 @@ export interface IListMaskingRulesReply {
 }
 
 export interface IListMember {
+  current_project_manage_permissions?: IUidWithName[];
+
+  current_project_op_permissions?: IProjectOpPermission[];
+
+  is_group_member?: boolean;
+
   is_project_admin?: boolean;
 
   platform_roles?: IUidWithName[];
@@ -1745,16 +1752,6 @@ export interface IListMemberReply {
   total_nums?: number;
 }
 
-export interface IListMemberReplyV2 {
-  code?: number;
-
-  data?: IListMemberV2[];
-
-  message?: string;
-
-  total_nums?: number;
-}
-
 export interface IListMemberRoleWithOpRange {
   op_range_type?: ListMemberRoleWithOpRangeOpRangeTypeEnum;
 
@@ -1775,26 +1772,6 @@ export interface IListMemberTipsReply {
   data?: IListMemberTipsItem[];
 
   message?: string;
-}
-
-export interface IListMemberV2 {
-  current_project_manage_permissions?: IUidWithName[];
-
-  current_project_op_permissions?: IProjectOpPermission[];
-
-  is_group_member?: boolean;
-
-  is_project_admin?: boolean;
-
-  platform_roles?: IUidWithName[];
-
-  projects?: string[];
-
-  role_with_op_ranges?: IListMemberRoleWithOpRange[];
-
-  uid?: string;
-
-  user?: IUidWithName;
 }
 
 export interface IListMembersForInternalItem {
@@ -1823,6 +1800,8 @@ export interface IListOpPermission {
   op_permission?: IUidWithName;
 
   range_type?: ListOpPermissionRangeTypeEnum;
+
+  service?: ListOpPermissionServiceEnum;
 }
 
 export interface IListOpPermissionReply {

@@ -5,7 +5,10 @@ import { getBySelector } from '@actiontech/shared/lib/testUtil/customQuery';
 import userCenter from '@actiontech/shared/lib/testUtil/mockApi/base/userCenter';
 import { useDispatch } from 'react-redux';
 import { ModalName } from '../../../data/ModalName';
-import { ListOpPermissionsFilterByTargetEnum } from '@actiontech/shared/lib/api/base/service/OpPermission/index.enum';
+import {
+  ListOpPermissionsFilterByTargetEnum,
+  ListOpPermissionsServiceEnum
+} from '@actiontech/shared/lib/api/base/service/OpPermission/index.enum';
 import { mockUseCurrentUser } from '@actiontech/shared/lib/testUtil/mockHook/mockUseCurrentUser';
 import { SystemRole } from '@actiontech/shared/lib/enum';
 
@@ -96,7 +99,8 @@ describe('base/UserCenter', () => {
     expect(permissionListSpy).toHaveBeenCalledWith({
       page_index: 1,
       page_size: 20,
-      filter_by_target: ListOpPermissionsFilterByTargetEnum.all
+      filter_by_target: ListOpPermissionsFilterByTargetEnum.all,
+      service: ListOpPermissionsServiceEnum.sqle
     });
     expect(baseElement).toMatchSnapshot();
   });
@@ -111,7 +115,7 @@ describe('base/UserCenter', () => {
     expect(userListSpy).toHaveBeenCalledTimes(2);
     expect(userListSpy).toHaveBeenCalledWith({
       page_index: 1,
-      page_size: 20,
+      page_size: 20
     });
     await act(async () => jest.advanceTimersByTime(3000));
 
@@ -137,7 +141,8 @@ describe('base/UserCenter', () => {
     expect(permissionListSpy).toHaveBeenCalledWith({
       page_index: 1,
       page_size: 20,
-      filter_by_target: ListOpPermissionsFilterByTargetEnum.all
+      filter_by_target: ListOpPermissionsFilterByTargetEnum.all,
+      service: ListOpPermissionsServiceEnum.sqle
     });
     await act(async () => jest.advanceTimersByTime(3000));
   });

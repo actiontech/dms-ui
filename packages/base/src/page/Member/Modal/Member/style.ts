@@ -40,8 +40,3 @@ export const MemberGroupCard = styled('div')`
     flex-shrink: 0;
   }
 `;
-
-export const EmptyContainer = styled('div')`
-  text-align: center;
-  padding: 40px;
-`;

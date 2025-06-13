@@ -39,6 +39,7 @@ export default {
     username: '用户名称',
     usernameTips: '需要先在<0>系统设置-用户中心</0>处新增用户',
     isProjectAdmin: '是否为项目管理员',
+    projectAdminTips: '项目管理员默认拥有项目下所有管理权限',
     managerSetter: '管理员设置',
     projectManagementPermission: '项目管理权限',
     projectOpPermission: '项目操作权限',
@@ -81,6 +82,7 @@ export default {
     editPermissions: '编辑权限',
     exitGroup: '退出组',
     exitGroupConfirmTitle: '确定要退出成员组"{{groupName}}"吗？',
-    exitGroupSuccess: '已退出成员组: {{name}}'
+    exitGroupSuccess: '已退出成员组: {{name}}',
+    emptyGroup: '暂无成员组'
   }
 };

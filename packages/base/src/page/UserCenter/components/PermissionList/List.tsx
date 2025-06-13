@@ -6,9 +6,12 @@ import {
 import { permissionListColumns } from './column';
 import { UserCenterListEnum } from '../../index.enum';
 import { IListOpPermission } from '@actiontech/shared/lib/api/base/service/common';
-import OpPermission from '@actiontech/shared/lib/api/base/service/OpPermission';
+import { DmsApi } from '@actiontech/shared/lib/api';
 import { useRequest } from 'ahooks';
-import { ListOpPermissionsFilterByTargetEnum } from '@actiontech/shared/lib/api/base/service/OpPermission/index.enum';
+import {
+  ListOpPermissionsFilterByTargetEnum,
+  ListOpPermissionsServiceEnum
+} from '@actiontech/shared/lib/api/base/service/OpPermission/index.enum';
 import { IListOpPermissionsParams } from '@actiontech/shared/lib/api/base/service/OpPermission/index.d';
 import { useEffect } from 'react';
 import EventEmitter from '../../../../utils/EventEmitter';
@@ -32,11 +35,21 @@ const PermissionList: React.FC<{ activePage: UserCenterListEnum }> = ({
     refresh
   } = useRequest(
     () => {
+      let service: ListOpPermissionsServiceEnum;
+      // #if [dms]
+      service = ListOpPermissionsServiceEnum.dms;
+      // #endif
+      // #if [sqle]
+      service = ListOpPermissionsServiceEnum.sqle;
+      // #endif
       const params: IListOpPermissionsParams = {
         ...pagination,
-        filter_by_target: ListOpPermissionsFilterByTargetEnum.all
+        filter_by_target: ListOpPermissionsFilterByTargetEnum.all,
+        service
       };
-      return handleTableRequestError(OpPermission.ListOpPermissions(params));
+      return handleTableRequestError(
+        DmsApi.OpPermissionService.ListOpPermissions(params)
+      );
     },
     {
       refreshDeps: [pagination, activePage],

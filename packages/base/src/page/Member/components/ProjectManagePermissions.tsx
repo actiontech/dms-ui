@@ -4,7 +4,7 @@ import { TableColumnWithIconStyleWrapper } from '@actiontech/shared/lib/styleWra
 import {
   CheckHexagonOutlined,
   CloseHexagonOutlined,
-  HexagonOutlined
+  InfoHexagonFilled
 } from '@actiontech/icons';
 import { IUidWithName } from '@actiontech/shared/lib/api/base/service/common';
 import { BasicTag } from '@actiontech/shared';
@@ -41,7 +41,7 @@ const ProjectManagePermissions: React.FC<ProjectManagePermissionsProps> = ({
     return (
       <Popover content={permissionContent} placement="topLeft">
         <TableColumnWithIconStyleWrapper>
-          <HexagonOutlined />
+          <InfoHexagonFilled />
           <span>
             {t('dmsMember.memberList.columns.partialManagePermissions')}
           </span>

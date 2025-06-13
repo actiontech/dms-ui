@@ -14,8 +14,8 @@ import {
   usePermission
 } from '@actiontech/shared/lib/features';
 import { ResponseCode } from '@actiontech/shared/lib/enum';
-import { IListMemberV2 } from '@actiontech/shared/lib/api/base/service/common';
-import { IListMembersV2Params } from '@actiontech/shared/lib/api/base/service/Member/index.d';
+import { IListMember } from '@actiontech/shared/lib/api/base/service/common';
+import { IListMembersParams } from '@actiontech/shared/lib/api/base/service/Member/index.d';
 import Member from '@actiontech/shared/lib/api/base/service/Member';
 import { ModalName } from '../../../data/ModalName';
 import EventEmitter from '../../../utils/EventEmitter';
@@ -47,8 +47,8 @@ const MemberList: React.FC<{ activePage: MemberListTypeEnum }> = ({
     useTableRequestError();
 
   const { pagination, tableChange } = useTableRequestParams<
-    IListMemberV2,
-    IListMembersV2Params
+    IListMember,
+    IListMembersParams
   >();
 
   const {
@@ -57,11 +57,11 @@ const MemberList: React.FC<{ activePage: MemberListTypeEnum }> = ({
     refresh
   } = useRequest(
     () => {
-      const params: IListMembersV2Params = {
+      const params: IListMembersParams = {
         ...pagination,
         project_uid: projectID
       };
-      // return handleTableRequestError(Member.ListMembersV2(params));
+      return handleTableRequestError(Member.ListMembers(params));
       return Promise.resolve({
         list: [
           {
@@ -211,7 +211,7 @@ const MemberList: React.FC<{ activePage: MemberListTypeEnum }> = ({
   );
 
   const onEditMember = useCallback(
-    (record?: IListMemberV2) => {
+    (record?: IListMember) => {
       dispatch(updateSelectMember({ member: record ?? null }));
       dispatch(
         updateMemberModalStatus({
@@ -224,7 +224,7 @@ const MemberList: React.FC<{ activePage: MemberListTypeEnum }> = ({
   );
 
   const onDeleteMember = useCallback(
-    async (record?: IListMemberV2) => {
+    async (record?: IListMember) => {
       const res = await Member.DelMember({
         member_uid: record?.uid ?? '',
         project_uid: projectID
@@ -243,7 +243,7 @@ const MemberList: React.FC<{ activePage: MemberListTypeEnum }> = ({
   );
 
   const onManageMemberGroup = useCallback(
-    (record?: IListMemberV2) => {
+    (record?: IListMember) => {
       dispatch(updateSelectMember({ member: record ?? null }));
       dispatch(
         updateMemberModalStatus({
