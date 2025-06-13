@@ -14,7 +14,7 @@ type OperationPermissionsProps = {
 const ProjectPermissions: React.FC<OperationPermissionsProps> = ({
   permissions
 }) => {
-  const renderRoleTag = (role: IProjectRole, dataSource: string) => {
+  const renderRoleTag = (role: IProjectRole, dataSource: string, index: number) => {
     const roleName = role?.name || '';
     const isFromMemberGroup = !!role.member_group;
 
@@ -39,10 +39,12 @@ const ProjectPermissions: React.FC<OperationPermissionsProps> = ({
         content={popoverContent}
         title={null}
         placement="top"
-        key={`${role.uid}-${dataSource}`}
+        key={`${role.uid}-${dataSource}-${index}`}
         overlayStyle={{ maxWidth: 450 }}
       >
-        <BasicTag>{roleName}</BasicTag>
+        <BasicTag style={{ height: 28 }} size="small">
+          {roleName}
+        </BasicTag>
       </Popover>
     );
   };
@@ -54,10 +56,10 @@ const ProjectPermissions: React.FC<OperationPermissionsProps> = ({
         const roles = permission?.roles ?? [];
 
         return (
-          <Space key={`${dataSource}${index}`}>
+          <Space key={`${dataSource}${index}`} direction="vertical">
             <Typography.Text>{dataSource}:</Typography.Text>
             <Space wrap size={[4, 4]}>
-              {roles.map((role) => renderRoleTag(role, dataSource))}
+              {roles.map((role, i) => renderRoleTag(role, dataSource, i))}
             </Space>
           </Space>
         );

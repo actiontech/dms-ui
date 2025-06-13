@@ -60,7 +60,7 @@ export default {
       userGroupName: '成员组名',
       users: '用户名',
       opRanges: '当前项目权限',
-      opRangeTips: '格式 角色: [操作范围11,操作范围2 ...]',
+      opRangeTips: '格式：数据源+角色',
       isProjectAdmin: '项目管理员'
     },
     allPermission: 'ALL: 拥有对所有数据源的全部操作权限'

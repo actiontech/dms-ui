@@ -53,7 +53,7 @@ export const MemberListColumns: ActiontechTableColumn<IListMember> = [
   {
     dataIndex: 'projects',
     title: () => t('dmsMember.memberList.columns.projects'),
-    width: '35%',
+    width: '20%',
     render: (list) => {
       return <ProjectTagList projectList={list} highlightCurrentProject />;
     }
@@ -122,6 +122,7 @@ export const MemberGroupListColumns: ActiontechTableColumn<IListMemberGroup> = [
   {
     dataIndex: 'current_project_op_permissions',
     className: 'ellipsis-column-width',
+    width: '30%',
     title: () => {
       return (
         <BasicToolTip
@@ -145,6 +146,7 @@ export const MemberGroupListColumns: ActiontechTableColumn<IListMemberGroup> = [
   {
     dataIndex: 'is_project_admin',
     title: t('dmsMember.memberList.columns.projectManagePermissions'),
+    width: '30%',
     render: (isAdmin, record) => {
       if (typeof isAdmin !== 'boolean') {
         return t('common.unknownStatus');

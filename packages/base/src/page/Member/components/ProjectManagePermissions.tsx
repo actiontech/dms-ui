@@ -1,5 +1,5 @@
 import { useTranslation } from 'react-i18next';
-import { Space, Popover } from 'antd';
+import { Space } from 'antd';
 import { TableColumnWithIconStyleWrapper } from '@actiontech/shared/lib/styleWrapper/element';
 import {
   CheckHexagonOutlined,
@@ -30,23 +30,20 @@ const ProjectManagePermissions: React.FC<ProjectManagePermissionsProps> = ({
   }
 
   if (managePermissions.length > 0) {
-    const permissionContent = (
-      <Space wrap>
-        {managePermissions.map((permission) => (
-          <BasicTag key={permission.uid}>{permission.name}</BasicTag>
-        ))}
-      </Space>
-    );
-
     return (
-      <Popover content={permissionContent} placement="topLeft">
+      <Space direction="vertical">
         <TableColumnWithIconStyleWrapper>
           <InfoHexagonFilled />
           <span>
             {t('dmsMember.memberList.columns.partialManagePermissions')}
           </span>
         </TableColumnWithIconStyleWrapper>
-      </Popover>
+        <Space wrap>
+          {managePermissions.map((permission) => (
+            <BasicTag style={{ height: 28 }} size="small" key={permission.uid}>{permission.name}</BasicTag>
+          ))}
+        </Space>
+      </Space>
     );
   }
 
