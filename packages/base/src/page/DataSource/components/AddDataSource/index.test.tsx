@@ -142,6 +142,22 @@ describe('page/DataSource/AddDataSource', () => {
     });
 
     expect(checkDbServiceIsConnectableSpy).toHaveBeenCalledTimes(1);
+    expect(checkDbServiceIsConnectableSpy).toHaveBeenNthCalledWith(1, {
+      db_service: {
+        db_type: 'mysql',
+        host: '1.1.1.1',
+        user: 'root',
+        password: 'root',
+        port: '3306',
+        additional_params: [
+          {
+            name: 'cc',
+            value: ''
+          }
+        ]
+      },
+      project_uid: projectID
+    });
     await act(async () => jest.advanceTimersByTime(3000));
     expect(requestAddDBServiceSpy).toHaveBeenCalled();
     expect(requestAddDBServiceSpy).toHaveBeenCalledWith({
