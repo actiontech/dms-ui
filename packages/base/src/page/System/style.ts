@@ -55,20 +55,6 @@ export const SystemStyleWrapper = styled('section')`
         }
       }
 
-      .desc-wrapper {
-        padding: 24px 0 8px;
-        border-top: 1px solid
-          ${({ theme }) => theme.sharedTheme.basic.colorGrayLine};
-
-        .ant-descriptions-item-container {
-          min-height: 20px;
-
-          .ant-descriptions-item-label {
-            width: 240px;
-          }
-        }
-      }
-
       .system-config-button {
         background: ${({ theme }) =>
           theme.baseTheme.system.configButton.backgroundColor};

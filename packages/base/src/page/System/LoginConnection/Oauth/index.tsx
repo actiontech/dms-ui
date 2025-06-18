@@ -107,7 +107,9 @@ const Oauth = () => {
       auto_create_user: value.autoCreateUser,
       auto_create_user_pwd: value.userPassword,
       skip_check_state: value.skipCheckState,
-      login_perm_expr: value.loginPermissionQueryGJsonExpression
+      login_perm_expr: value.loginPermissionQueryGJsonExpression,
+      auto_bind_same_name_user: value.autoBindSameNameUser,
+      enable_manually_bind: value.enableManuallyBind
     };
 
     if (!!value.scopes) {
@@ -148,7 +150,9 @@ const Oauth = () => {
       autoCreateUser: oauthConfig?.auto_create_user,
       // userPassword: oauthConfig?.auto_create_user_pwd,
       skipCheckState: oauthConfig?.skip_check_state,
-      loginPermissionQueryGJsonExpression: oauthConfig?.login_perm_expr
+      loginPermissionQueryGJsonExpression: oauthConfig?.login_perm_expr,
+      autoBindSameNameUser: oauthConfig?.auto_bind_same_name_user,
+      enableManuallyBind: oauthConfig?.enable_manually_bind
     });
   }, [form, oauthConfig]);
 
@@ -378,6 +382,51 @@ const Oauth = () => {
           dataIndex: 'login_perm_expr',
           hidden: !oauthConfig?.enable_oauth2
         },
+
+        {
+          label: (
+            <BasicToolTip
+              suffixIcon={
+                <InfoCircleOutlined
+                  width={14}
+                  height={14}
+                  color={baseTheme.icon.system.basicTitleTips}
+                />
+              }
+              title={t('dmsSystem.oauth.skipStateCheckTips')}
+            >
+              {t('dmsSystem.oauth.skipCheckState')}
+            </BasicToolTip>
+          ),
+          span: 3,
+          dataIndex: 'skip_check_state',
+          hidden: !oauthConfig?.enable_oauth2,
+          render: (skipCheck) => (
+            <>{skipCheck ? t('common.open') : t('common.close')}</>
+          )
+        },
+        {
+          label: (
+            <BasicToolTip
+              suffixIcon={
+                <InfoCircleOutlined
+                  width={14}
+                  height={14}
+                  color={baseTheme.icon.system.basicTitleTips}
+                />
+              }
+              title={t('dmsSystem.oauth.autoBindSameNameUserTips')}
+            >
+              {t('dmsSystem.oauth.autoBindSameNameUser')}
+            </BasicToolTip>
+          ),
+          span: 3,
+          dataIndex: 'auto_bind_same_name_user',
+          hidden: !oauthConfig?.enable_oauth2,
+          render: (skipCheck) => (
+            <>{skipCheck ? t('common.open') : t('common.close')}</>
+          )
+        },
         {
           label: (
             <BasicToolTip
@@ -410,13 +459,13 @@ const Oauth = () => {
                   color={baseTheme.icon.system.basicTitleTips}
                 />
               }
-              title={t('dmsSystem.oauth.skipStateCheckTips')}
+              title={t('dmsSystem.oauth.enableManuallyBindTips')}
             >
-              {t('dmsSystem.oauth.skipCheckState')}
+              {t('dmsSystem.oauth.enableManuallyBind')}
             </BasicToolTip>
           ),
           span: 3,
-          dataIndex: 'skip_check_state',
+          dataIndex: 'enable_manually_bind',
           hidden: !oauthConfig?.enable_oauth2,
           render: (skipCheck) => (
             <>{skipCheck ? t('common.open') : t('common.close')}</>
