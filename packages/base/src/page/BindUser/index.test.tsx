@@ -11,6 +11,7 @@ import {
   CompanyNoticeDisplayStatusEnum,
   StorageKey
 } from '@actiontech/shared/lib/enum';
+import { ROUTE_PATHS } from '@actiontech/shared/lib/data/routePaths';
 
 import BindUser from '.';
 
@@ -95,16 +96,21 @@ describe('page/BindUser-ee', () => {
         EmitterKey.OPEN_GLOBAL_NOTIFICATION,
         'error',
         {
-          description: '没有找到oauth token，请返回登录页面重试',
+          description: '没有找到oauth token，请重试',
           duration: 0,
           message: 'oauth登录错误'
         }
+      );
+      expect(navigateSpy).toHaveBeenCalledTimes(1);
+      expect(navigateSpy).toHaveBeenNthCalledWith(
+        1,
+        ROUTE_PATHS.BASE.LOGIN.index.path
       );
     });
 
     it('render oauth2_token params submit', async () => {
       const LocalStorageWrapperSet = jest.spyOn(LocalStorageWrapper, 'set');
-      const search = `oauth2_token=oauth2_token_val&id_token=id_token_val`;
+      const search = `oauth2_token=oauth2_token_val&refresh_token=id_token_val`;
       const requestFn = dms.bindUser();
       const { baseElement } = customRender(`/user/bind?${search}`);
       await act(async () => jest.advanceTimersByTime(300));
@@ -169,6 +175,11 @@ describe('page/BindUser-ee', () => {
           message: 'oauth登录错误'
         }
       );
+      expect(navigateSpy).toHaveBeenCalledTimes(1);
+      expect(navigateSpy).toHaveBeenNthCalledWith(
+        1,
+        ROUTE_PATHS.BASE.LOGIN.index.path
+      );
     });
 
     it('render search have user_exist is not true', async () => {
@@ -187,10 +198,15 @@ describe('page/BindUser-ee', () => {
         EmitterKey.OPEN_GLOBAL_NOTIFICATION,
         'error',
         {
-          description: '没有找到token，请返回登录页面重试',
+          description: '没有找到token，请重试',
           duration: 0,
           message: 'oauth登录错误'
         }
+      );
+      expect(navigateSpy).toHaveBeenCalledTimes(1);
+      expect(navigateSpy).toHaveBeenNthCalledWith(
+        1,
+        ROUTE_PATHS.BASE.LOGIN.index.path
       );
     });
 

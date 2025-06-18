@@ -4,7 +4,7 @@ exports[`base/System-ee render snap 1`] = `
 <body>
   <div>
     <section
-      class="css-1po17y"
+      class="css-f69rf1"
     >
       <div
         class="actiontech-page-header-namespace css-1xspr0w"
@@ -2196,7 +2196,7 @@ exports[`base/System-ee render snap 2`] = `
 <body>
   <div>
     <section
-      class="css-1po17y"
+      class="css-f69rf1"
     >
       <div
         class="actiontech-page-header-namespace css-1xspr0w"
@@ -2897,7 +2897,7 @@ exports[`base/System-ee render snap 2`] = `
                     </div>
                   </form>
                   <div
-                    class="ant-descriptions system-config-view-wrapper css-cs8tvb"
+                    class="ant-descriptions system-config-view-wrapper css-1iwokd"
                   >
                     <div
                       class="ant-descriptions-view"
@@ -3855,7 +3855,7 @@ exports[`base/System-ee render snap 2`] = `
                     </div>
                   </form>
                   <div
-                    class="ant-descriptions system-config-view-wrapper css-cs8tvb"
+                    class="ant-descriptions system-config-view-wrapper css-1iwokd"
                   >
                     <div
                       class="ant-descriptions-view"
@@ -4460,7 +4460,7 @@ exports[`base/System-ee render snap 3`] = `
 <body>
   <div>
     <section
-      class="css-1po17y"
+      class="css-f69rf1"
     >
       <div
         class="actiontech-page-header-namespace css-1xspr0w"
@@ -6155,7 +6155,7 @@ exports[`base/System-ee should changed current active tab when url params is exi
 <body>
   <div>
     <section
-      class="css-1po17y"
+      class="css-f69rf1"
     >
       <div
         class="actiontech-page-header-namespace css-1xspr0w"
