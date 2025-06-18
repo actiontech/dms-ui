@@ -7,11 +7,11 @@ import { BasicTag } from '@actiontech/shared';
 import { t } from '../../../locale';
 import React from 'react';
 
-type OperationPermissionsProps = {
+type ProjectOpPermissionsProps = {
   permissions: IProjectOpPermission[];
 };
 
-const ProjectPermissions: React.FC<OperationPermissionsProps> = ({
+const ProjectOpPermissions: React.FC<ProjectOpPermissionsProps> = ({
   permissions
 }) => {
   const renderRoleTag = (
@@ -72,4 +72,4 @@ const ProjectPermissions: React.FC<OperationPermissionsProps> = ({
   );
 };
 
-export default ProjectPermissions;
+export default ProjectOpPermissions;

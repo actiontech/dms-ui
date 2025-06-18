@@ -7,13 +7,6 @@ import { ListMemberRoleWithOpRangeOpRangeTypeEnum } from '@actiontech/shared/lib
 export const permissionListColumns: () => ActiontechTableColumn<IListOpPermission> =
   () => [
     {
-      dataIndex: 'op_permission',
-      title: () => t('dmsUserCenter.role.opPermissionList.columns.name'),
-      render: (opPermission) => {
-        return opPermission?.name ?? '';
-      }
-    },
-    {
       dataIndex: 'range_type',
       title: () => t('dmsUserCenter.role.opPermissionList.columns.range'),
       render: (rangeType) =>
@@ -26,6 +19,13 @@ export const permissionListColumns: () => ActiontechTableColumn<IListOpPermissio
       title: () => t('dmsUserCenter.role.opPermissionList.columns.module'),
       render: (module) => {
         return module || '-';
+      }
+    },
+    {
+      dataIndex: 'op_permission',
+      title: () => t('dmsUserCenter.role.opPermissionList.columns.name'),
+      render: (opPermission) => {
+        return opPermission?.name ?? '';
       }
     }
   ];

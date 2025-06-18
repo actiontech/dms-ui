@@ -1,4 +1,4 @@
-import { Col, Form, Checkbox, Spin, Alert } from 'antd';
+import { Col, Form, Spin, Alert } from 'antd';
 import {
   BasicSelect,
   BasicInput,
@@ -16,7 +16,10 @@ import {
   DrawerFormIconWrapper,
   FormListAddButtonWrapper
 } from '@actiontech/shared/lib/styleWrapper/element';
-import { MemberRoleSelectorRowStyleWrapper } from '../style';
+import {
+  MemberRoleSelectorRowStyleWrapper,
+  MemberPermissionCheckboxGroupStyleWrapper
+} from '../style';
 import { PlusCircleFilled, MinusCircleFilled } from '@actiontech/icons';
 import { ListOpPermissionsFilterByTargetEnum } from '@actiontech/shared/lib/api/base/service/OpPermission/index.enum';
 import useOpPermission from '../../../hooks/useOpPermission';
@@ -85,11 +88,8 @@ const PermissionFields: React.FC<PermissionFieldsProps> = ({ projectID }) => {
           <FormItemSubTitle className="member-form-sub-title">
             {t('dmsMember.memberForm.projectManagementPermission')}
           </FormItemSubTitle>
-          <Form.Item
-            name="projectManagementPermission"
-            // label={t('dmsMember.memberForm.projectManagementPermission')}
-          >
-            <Checkbox.Group
+          <Form.Item name="projectManagementPermission">
+            <MemberPermissionCheckboxGroupStyleWrapper
               options={
                 opPermissionList?.map((item) => ({
                   label: item.op_permission?.name ?? '',

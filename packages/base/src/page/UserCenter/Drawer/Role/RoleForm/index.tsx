@@ -7,9 +7,13 @@ import { IRoleFormProps } from './index.type';
 import { ListOpPermissionsFilterByTargetEnum } from '@actiontech/shared/lib/api/base/service/OpPermission/index.enum';
 import useOpPermission from '../../../../../hooks/useOpPermission';
 import OpPermissionCheckboxGroup from './components/OpPermissionCheckboxGroup';
+import { RoleFormAlertStyleWrapper } from './style';
 
 const RoleForm: React.FC<IRoleFormProps> = (props) => {
   const { t } = useTranslation();
+
+  const name = Form.useWatch('name', props.form);
+
   const {
     loading: getOpPermissionListLoading,
     updateOpPermissionList,
@@ -45,6 +49,15 @@ const RoleForm: React.FC<IRoleFormProps> = (props) => {
           })}
         />
       </Form.Item>
+      <EmptyBox if={props.isClone && name === props.cloneName}>
+        <RoleFormAlertStyleWrapper
+          message={t('dmsUserCenter.role.roleForm.nameAlert', {
+            name: props.cloneName
+          })}
+          type="info"
+          showIcon
+        />
+      </EmptyBox>
       <Form.Item name="desc" label={t('dmsUserCenter.role.roleForm.desc')}>
         <BasicInput.TextArea
           style={{ resize: 'none' }}

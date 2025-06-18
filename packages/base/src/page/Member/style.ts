@@ -1,5 +1,5 @@
 import { styled } from '@mui/material/styles';
-import { Row } from 'antd';
+import { Row, Checkbox } from 'antd';
 import { BasicDrawer } from '@actiontech/shared';
 
 export const ProjectMemberStyleWrapper = styled('section')`
@@ -41,5 +41,16 @@ export const MemberDrawerStyledWrapper = styled(BasicDrawer)`
 export const MemberRoleSelectorRowStyleWrapper = styled(Row)`
   .ant-col {
     height: 100%;
+  }
+`;
+
+export const MemberPermissionCheckboxGroupStyleWrapper = styled(Checkbox.Group)`
+  &.ant-checkbox-group {
+    width: 100%;
+    padding-left: 8px;
+
+    .ant-checkbox-wrapper {
+      width: 32%;
+    }
   }
 `;

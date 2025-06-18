@@ -72,9 +72,8 @@ const CloneRole = () => {
 
   useEffect(() => {
     if (visible && currentRole) {
-      const clonedName = `clone_${currentRole.name}`;
       form.setFieldsValue({
-        name: clonedName,
+        name: currentRole.name,
         desc: currentRole.desc ?? '',
         opPermissions: currentRole.op_permissions?.map((e) => e.uid ?? '')
       });
@@ -102,7 +101,12 @@ const CloneRole = () => {
       }
     >
       {contextHolder}
-      <RoleForm form={form} visible={visible} />
+      <RoleForm
+        form={form}
+        visible={visible}
+        isClone
+        cloneName={currentRole?.name}
+      />
     </BasicDrawer>
   );
 };

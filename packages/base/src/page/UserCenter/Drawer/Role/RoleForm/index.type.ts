@@ -11,4 +11,6 @@ export interface IRoleFormProps {
   form: FormInstance<IRoleFormFields>;
   visible: boolean;
   isUpdate?: boolean;
+  isClone?: boolean;
+  cloneName?: string;
 }
