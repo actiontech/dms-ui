@@ -80,7 +80,8 @@ export default {
       name: '角色名',
       desc: '描述',
       opPermissions: '操作权限',
-      isDisabled: '是否禁用'
+      isDisabled: '是否禁用',
+      viewAll: '查看全部'
     },
     createRole: {
       button: '添加角色',
@@ -98,12 +99,18 @@ export default {
       deleting: '正在删除角色 "{{name}}"...',
       deleteSuccessTips: '删除角色 "{{name}}" 成功'
     },
+
+    cloneRole: {
+      modalTitle: '克隆角色',
+      createSuccessTips: '克隆角色 "{{name}}" 成功'
+    },
     opPermissionList: {
       title: '操作权限列表',
       columns: {
-        name: '操作权限名称',
+        name: '权限点',
         range: '操作范围粒度',
-        desc: '描述'
+        desc: '描述',
+        module: '功能模块'
       },
       rangeTypeDictionary: {
         global: '全局',
