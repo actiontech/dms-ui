@@ -16,6 +16,8 @@ export interface IListRolesParams {
   order_by?: ListRolesOrderByEnum;
 
   filter_by_name?: string;
+
+  fuzzy_keyword?: string;
 }
 
 export interface IListRolesReturn extends IListRoleReply {}

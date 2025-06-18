@@ -9,5 +9,13 @@ export enum ListOpPermissionsFilterByTargetEnum {
 
   'user' = 'user',
 
-  'member' = 'member'
+  'member' = 'member',
+
+  'project' = 'project'
+}
+
+export enum ListOpPermissionsServiceEnum {
+  'dms' = 'dms',
+
+  'sqle' = 'sqle'
 }

@@ -1,15 +1,10 @@
 import { useEffect } from 'react';
 import { Form } from 'antd';
-import {
-  BasicSelect,
-  BasicSwitch,
-  BasicToolTip,
-  TypedLink
-} from '@actiontech/shared';
+import { BasicSelect, BasicToolTip, TypedLink } from '@actiontech/shared';
 import { Trans, useTranslation } from 'react-i18next';
 import { IMemberFormProps } from '../index.type';
 import useUsername from '../../../../hooks/useUsername';
-import RoleSelector from '../../components/RoleSelector';
+import PermissionFields from '../../components/PermissionFields';
 import { filterOptionByLabel } from '@actiontech/shared/lib/components/BasicSelect/utils';
 import { ROUTE_PATHS } from '@actiontech/shared/lib/data/routePaths';
 
@@ -25,8 +20,6 @@ const MemberForm: React.FC<IMemberFormProps> = ({
     updateUsernameList,
     generateUsernameSelectOption
   } = useUsername();
-
-  const isProjectAdmin = Form.useWatch('isProjectAdmin', form);
 
   useEffect(() => {
     updateUsernameList();
@@ -71,16 +64,7 @@ const MemberForm: React.FC<IMemberFormProps> = ({
           {generateUsernameSelectOption()}
         </BasicSelect>
       </Form.Item>
-
-      <Form.Item
-        name="isProjectAdmin"
-        label={t('dmsMember.memberForm.isProjectAdmin')}
-        valuePropName="checked"
-        initialValue={false}
-      >
-        <BasicSwitch />
-      </Form.Item>
-      {!isProjectAdmin ? <RoleSelector projectID={projectID} /> : null}
+      <PermissionFields projectID={projectID} />
     </Form>
   );
 };
