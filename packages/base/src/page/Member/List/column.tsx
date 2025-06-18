@@ -1,4 +1,4 @@
-import { Typography, Space } from 'antd';
+import { Typography, Space, Popover } from 'antd';
 import { ActiontechTableColumn } from '@actiontech/shared/lib/components/ActiontechTable/index.type';
 import { t } from '../../../locale';
 import {
@@ -9,25 +9,7 @@ import ProjectManagePermissions from '../components/ProjectManagePermissions';
 import { BasicToolTip } from '@actiontech/shared';
 import ProjectTagList from '../../../components/ProjectTagList';
 import SystemRoleTagList from '../../../components/SystemRoleTagList';
-import ProjectPermissions from '../components/ProjectPermissions';
-
-// const commonRoleOperateRangesRender = (
-//   permissions: IProjectOpPermission[],
-//   record: IListMember
-// ) => {
-//   if (
-//     (!Array.isArray(permissions) || permissions.length === 0) &&
-//     !record.is_project_admin
-//   ) {
-//     return '-';
-//   }
-
-//   if (record.is_project_admin || !!record.current_project_admin?.is_admin) {
-//     return 'ALL';
-//   }
-
-//   return <ProjectPermissions permissions={permissions} />;
-// };
+import ProjectOpPermissions from '../components/ProjectOpPermissions';
 
 export const MemberListColumns: ActiontechTableColumn<IListMember> = [
   {
@@ -77,16 +59,34 @@ export const MemberListColumns: ActiontechTableColumn<IListMember> = [
     render: (permissions = [], record: IListMember) => {
       if (
         (!Array.isArray(permissions) || permissions.length === 0) &&
-        !record.is_project_admin
+        !record.is_project_admin &&
+        !record.current_project_admin?.is_admin
       ) {
         return '-';
       }
 
       if (record.is_project_admin || !!record.current_project_admin?.is_admin) {
-        return 'ALL';
+        return (
+          <Popover
+            content={
+              !!record.current_project_admin?.is_admin &&
+              !!record.current_project_admin?.member_groups?.length
+                ? t('dmsMember.memberList.columns.sourceFromMemberGroup', {
+                    groupName:
+                      record.current_project_admin?.member_groups?.join(',')
+                  })
+                : t('dmsMember.memberList.columns.sourceFromDorectPermission')
+            }
+            title={null}
+            placement="top"
+            overlayStyle={{ maxWidth: 450 }}
+          >
+            ALL
+          </Popover>
+        );
       }
 
-      return <ProjectPermissions permissions={permissions} />;
+      return <ProjectOpPermissions permissions={permissions} />;
     }
   },
   {
@@ -156,7 +156,7 @@ export const MemberGroupListColumns: ActiontechTableColumn<IListMemberGroup> = [
         return 'ALL';
       }
 
-      return <ProjectPermissions permissions={permissions} />;
+      return <ProjectOpPermissions permissions={permissions} />;
     }
   },
   {
@@ -168,6 +168,7 @@ export const MemberGroupListColumns: ActiontechTableColumn<IListMemberGroup> = [
         <ProjectManagePermissions
           isProjectAdmin={!!isAdmin}
           managePermissions={record.current_project_manage_permissions}
+          isGroup
         />
       );
     }

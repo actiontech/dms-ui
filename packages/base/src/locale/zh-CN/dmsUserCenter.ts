@@ -78,6 +78,7 @@ export default {
     },
     roleForm: {
       name: '角色名',
+      nameAlert: '当前基于"{{name}}"角色进行克隆，请修改角色名称',
       desc: '描述',
       opPermissions: '操作权限',
       isDisabled: '是否禁用',
@@ -108,7 +109,7 @@ export default {
       title: '操作权限列表',
       columns: {
         name: '权限点',
-        range: '操作范围粒度',
+        range: '权限作用范围',
         desc: '描述',
         module: '功能模块'
       },

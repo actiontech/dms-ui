@@ -7,10 +7,10 @@ export default {
     deleteConfirmTitle: '确定要移除成员:{{name}}?',
     deleteSuccessTips: '移除成员{{name}}成功',
     columns: {
-      opRanges: '当前项目权限',
+      opRanges: '当前项目操作权限',
       opRangeTips: '格式：数据源+角色',
       isProjectAdmin: '项目管理员',
-      projectManagePermissions: '项目管理权限',
+      projectManagePermissions: '当前项目管理权限',
       projects: '所属项目',
       projectsCount: '+{{count}}个项目',
       platformRoles: '平台角色',
@@ -47,7 +47,7 @@ export default {
   },
 
   roleSelector: {
-    role: '平台角色',
+    role: '项目角色',
     opRange: '操作范围'
   },
 
@@ -59,7 +59,7 @@ export default {
     columns: {
       userGroupName: '成员组名',
       users: '用户名',
-      opRanges: '当前项目权限',
+      opRanges: '当前项目操作权限',
       opRangeTips: '格式：数据源+角色',
       isProjectAdmin: '项目管理员'
     },
