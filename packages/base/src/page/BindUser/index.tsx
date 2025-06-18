@@ -61,11 +61,12 @@ const BindUser = () => {
         duration: 0
       });
       loginLock.current = false;
+      navigate(ROUTE_PATHS.BASE.LOGIN.index.path);
       return;
     }
     OAuth2.BindOauth2User({
       oauth2_token: oauth2Token,
-      refresh_token: urlParams?.id_token,
+      refresh_token: urlParams?.refresh_token,
       user_name: values.username,
       pwd: values.password
     })
@@ -94,6 +95,7 @@ const BindUser = () => {
         description: error,
         duration: 0
       });
+      navigate(ROUTE_PATHS.BASE.LOGIN.index.path);
       return;
     }
     const userExist = urlParams?.user_exist === 'true';
@@ -105,6 +107,7 @@ const BindUser = () => {
         description: t('dmsLogin.oauth.lostToken'),
         duration: 0
       });
+      navigate(ROUTE_PATHS.BASE.LOGIN.index.path);
       return;
     }
     dispatch(updateToken({ token: concatToken(token) }));
