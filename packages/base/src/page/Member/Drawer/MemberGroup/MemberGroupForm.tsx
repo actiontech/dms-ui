@@ -1,8 +1,8 @@
 import { Form } from 'antd';
-import { BasicSelect, BasicInput, BasicSwitch } from '@actiontech/shared';
+import { BasicSelect, BasicInput } from '@actiontech/shared';
 import { useTranslation } from 'react-i18next';
 import { IMemberGroupFormProps } from '../index.type';
-import RoleSelector from '../../components/RoleSelector';
+import PermissionFields from '../../components/PermissionFields';
 import { useEffect } from 'react';
 import useUsername from '../../../../hooks/useUsername';
 import { nameRule } from '@actiontech/shared/lib/utils/FormRule';
@@ -20,8 +20,6 @@ const MemberGroupForm: React.FC<IMemberGroupFormProps> = ({
     updateUsernameList,
     generateUsernameSelectOption
   } = useUsername();
-
-  const isProjectAdmin = Form.useWatch('isProjectAdmin', form);
 
   useEffect(() => {
     updateUsernameList();
@@ -72,15 +70,7 @@ const MemberGroupForm: React.FC<IMemberGroupFormProps> = ({
           {generateUsernameSelectOption()}
         </BasicSelect>
       </Form.Item>
-      <Form.Item
-        name="isProjectAdmin"
-        label={t('dmsMember.memberGroupList.columns.isProjectAdmin')}
-        valuePropName="checked"
-        initialValue={false}
-      >
-        <BasicSwitch />
-      </Form.Item>
-      {!isProjectAdmin ? <RoleSelector projectID={projectID} /> : null}
+      <PermissionFields projectID={projectID} />
     </Form>
   );
 };

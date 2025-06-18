@@ -40,7 +40,8 @@ const AddMember: React.FC = () => {
       member: {
         is_project_admin: values.isProjectAdmin,
         user_uid: values.userUid,
-        role_with_op_ranges: values.roles
+        role_with_op_ranges: values.roles,
+        project_manage_permissions: values.projectManagementPermission
       },
       project_uid: projectID
     };
