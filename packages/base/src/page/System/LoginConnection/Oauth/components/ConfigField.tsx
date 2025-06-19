@@ -301,6 +301,33 @@ const ConfigField = () => {
           })}
         />
       </FormItemLabel>
+
+      <FormItemLabel
+        className="has-label-tip"
+        label={
+          <CustomLabelContent
+            title={t('dmsSystem.oauth.skipCheckState')}
+            tips={t('dmsSystem.oauth.skipStateCheckTips')}
+          />
+        }
+        name="skipCheckState"
+        valuePropName="checked"
+      >
+        <BasicSwitch />
+      </FormItemLabel>
+      <FormItemLabel
+        className="has-label-tip"
+        label={
+          <CustomLabelContent
+            title={t('dmsSystem.oauth.autoBindSameNameUser')}
+            tips={t('dmsSystem.oauth.autoBindSameNameUserTips')}
+          />
+        }
+        name="autoBindSameNameUser"
+        valuePropName="checked"
+      >
+        <BasicSwitch />
+      </FormItemLabel>
       <FormItemLabel
         className="has-label-tip"
         label={
@@ -314,7 +341,24 @@ const ConfigField = () => {
       >
         <BasicSwitch />
       </FormItemLabel>
-      <EmptyBox if={autoCreateUser}>
+      <EmptyBox
+        if={autoCreateUser}
+        defaultNode={
+          <FormItemLabel
+            className="has-label-tip"
+            label={
+              <CustomLabelContent
+                title={t('dmsSystem.oauth.enableManuallyBind')}
+                tips={t('dmsSystem.oauth.enableManuallyBindTips')}
+              />
+            }
+            name="enableManuallyBind"
+            valuePropName="checked"
+          >
+            <BasicSwitch />
+          </FormItemLabel>
+        }
+      >
         <FormItemLabel
           className="has-label-tip"
           label={
@@ -332,19 +376,6 @@ const ConfigField = () => {
           />
         </FormItemLabel>
       </EmptyBox>
-      <FormItemLabel
-        className="has-label-tip"
-        label={
-          <CustomLabelContent
-            title={t('dmsSystem.oauth.skipCheckState')}
-            tips={t('dmsSystem.oauth.skipStateCheckTips')}
-          />
-        }
-        name="skipCheckState"
-        valuePropName="checked"
-      >
-        <BasicSwitch />
-      </FormItemLabel>
     </>
   );
 };

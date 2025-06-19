@@ -171,7 +171,13 @@ export default {
       '系统自动创建的新用户将使用此密码作为初始登录密码，请妥善保存。此外，为保证账户安全，建议用户首次登录后及时修改密码。如果之前配置过该项，更新时不填写该项代表不更新密钥。',
     loginPermissionQueryGJsonExpression: '登录权限查询GJSON表达式',
     loginPermissionQueryGJsonExpressionTips:
-      '通过该表达式查询AccessToken载荷json，存在查询结果即有登录权限，不填默认有登录权限'
+      '通过该表达式查询AccessToken载荷json，存在查询结果即有登录权限，不填默认有登录权限',
+    autoBindSameNameUser: '自动绑定同名用户',
+    autoBindSameNameUserTips:
+      '启用此选项后，当第三方账号首次通过 OAuth2 对接登录 SQLE 时，系统会自动将该账号与 SQLE 平台上用户名称和 OAuth2 用户UID相同的用户进行绑定。这省去了手动干预的需要，让用户能够更顺畅地进行后续平台操作。',
+    enableManuallyBind: '手动绑定用户',
+    enableManuallyBindTips:
+      '当 OAuth2 对接登录后未在 SQLE 平台上找到关联用户，并且未启用“自动创建并绑定用户”时，若启用此配置，用户会进入手动绑定页面，可以手动绑定现有账户。若未启用，系统则会提示错误信息。'
   },
 
   loginBasic: {

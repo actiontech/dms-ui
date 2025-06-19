@@ -17,4 +17,6 @@ export type OauthFormField = {
   skipCheckState: boolean;
   oauth2ButtonText: string;
   loginPermissionQueryGJsonExpression: string;
+  autoBindSameNameUser: boolean;
+  enableManuallyBind: boolean;
 };

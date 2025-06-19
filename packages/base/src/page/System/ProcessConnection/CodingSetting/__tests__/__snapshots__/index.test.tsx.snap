@@ -361,7 +361,7 @@ exports[`base/System/ProcessConnection/CodingSetting render close coding configu
               </div>
             </form>
             <div
-              class="ant-descriptions system-config-view-wrapper css-cs8tvb"
+              class="ant-descriptions system-config-view-wrapper css-1iwokd"
             >
               <div
                 class="ant-descriptions-view"
@@ -1610,7 +1610,7 @@ exports[`base/System/ProcessConnection/CodingSetting render init snap 2`] = `
               </div>
             </form>
             <div
-              class="ant-descriptions system-config-view-wrapper css-cs8tvb"
+              class="ant-descriptions system-config-view-wrapper css-1iwokd"
             >
               <div
                 class="ant-descriptions-view"
@@ -2271,7 +2271,7 @@ exports[`base/System/ProcessConnection/CodingSetting render snap when user is no
               </div>
             </form>
             <div
-              class="ant-descriptions system-config-view-wrapper css-cs8tvb"
+              class="ant-descriptions system-config-view-wrapper css-1iwokd"
             >
               <div
                 class="ant-descriptions-view"
@@ -2677,7 +2677,7 @@ exports[`base/System/ProcessConnection/CodingSetting render test coding connecti
               </div>
             </form>
             <div
-              class="ant-descriptions system-config-view-wrapper css-cs8tvb"
+              class="ant-descriptions system-config-view-wrapper css-1iwokd"
             >
               <div
                 class="ant-descriptions-view"
@@ -3202,7 +3202,7 @@ exports[`base/System/ProcessConnection/CodingSetting render test coding connecti
               </div>
             </form>
             <div
-              class="ant-descriptions system-config-view-wrapper css-cs8tvb"
+              class="ant-descriptions system-config-view-wrapper css-1iwokd"
             >
               <div
                 class="ant-descriptions-view"
