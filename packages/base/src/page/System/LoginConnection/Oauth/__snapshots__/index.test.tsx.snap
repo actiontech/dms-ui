@@ -876,6 +876,132 @@ exports[`base/System/LoginConnection/Oauth render snap 1`] = `
                     >
                       <label
                         class="ant-form-item-no-colon"
+                        for="skipCheckState"
+                        title=""
+                      >
+                        <div
+                          class="label-cont-custom"
+                        >
+                          <div>
+                            跳过请求来源验证
+                          </div>
+                          <div
+                            class="tip-content-box"
+                          >
+                            跳过对请求发送来源的验证，可能会使您的账户面临安全风险，建议仅在可信环境下启用此选项。启用后，SQLE将不再验证回调中的state参数。
+                          </div>
+                        </div>
+                      </label>
+                    </div>
+                    <div
+                      class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control"
+                    >
+                      <div
+                        class="ant-form-item-control-input"
+                      >
+                        <div
+                          class="ant-form-item-control-input-content"
+                        >
+                          <button
+                            aria-checked="false"
+                            class="ant-switch basic-switch-wrapper css-g6dhbn"
+                            id="skipCheckState"
+                            role="switch"
+                            type="button"
+                          >
+                            <div
+                              class="ant-switch-handle"
+                            />
+                            <span
+                              class="ant-switch-inner"
+                            >
+                              <span
+                                class="ant-switch-inner-checked"
+                              />
+                              <span
+                                class="ant-switch-inner-unchecked"
+                              />
+                            </span>
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="ant-form-item has-label-tip css-1jlm9cy"
+                >
+                  <div
+                    class="ant-row ant-form-item-row"
+                  >
+                    <div
+                      class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left"
+                    >
+                      <label
+                        class="ant-form-item-no-colon"
+                        for="autoBindSameNameUser"
+                        title=""
+                      >
+                        <div
+                          class="label-cont-custom"
+                        >
+                          <div>
+                            自动绑定同名用户
+                          </div>
+                          <div
+                            class="tip-content-box"
+                          >
+                            启用此选项后，当第三方账号首次通过 OAuth2 对接登录 SQLE 时，系统会自动将该账号与 SQLE 平台上用户名称和 OAuth2 用户UID相同的用户进行绑定。这省去了手动干预的需要，让用户能够更顺畅地进行后续平台操作。
+                          </div>
+                        </div>
+                      </label>
+                    </div>
+                    <div
+                      class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control"
+                    >
+                      <div
+                        class="ant-form-item-control-input"
+                      >
+                        <div
+                          class="ant-form-item-control-input-content"
+                        >
+                          <button
+                            aria-checked="false"
+                            class="ant-switch basic-switch-wrapper css-g6dhbn"
+                            id="autoBindSameNameUser"
+                            role="switch"
+                            type="button"
+                          >
+                            <div
+                              class="ant-switch-handle"
+                            />
+                            <span
+                              class="ant-switch-inner"
+                            >
+                              <span
+                                class="ant-switch-inner-checked"
+                              />
+                              <span
+                                class="ant-switch-inner-unchecked"
+                              />
+                            </span>
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="ant-form-item has-label-tip css-1jlm9cy"
+                >
+                  <div
+                    class="ant-row ant-form-item-row"
+                  >
+                    <div
+                      class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left"
+                    >
+                      <label
+                        class="ant-form-item-no-colon"
                         for="autoCreateUser"
                         title=""
                       >
@@ -939,19 +1065,19 @@ exports[`base/System/LoginConnection/Oauth render snap 1`] = `
                     >
                       <label
                         class="ant-form-item-no-colon"
-                        for="skipCheckState"
+                        for="enableManuallyBind"
                         title=""
                       >
                         <div
                           class="label-cont-custom"
                         >
                           <div>
-                            跳过请求来源验证
+                            手动绑定用户
                           </div>
                           <div
                             class="tip-content-box"
                           >
-                            跳过对请求发送来源的验证，可能会使您的账户面临安全风险，建议仅在可信环境下启用此选项。启用后，SQLE将不再验证回调中的state参数。
+                            当 OAuth2 对接登录后未在 SQLE 平台上找到关联用户，并且未启用“自动创建并绑定用户”时，若启用此配置，用户会进入手动绑定页面，可以手动绑定现有账户。若未启用，系统则会提示错误信息。
                           </div>
                         </div>
                       </label>
@@ -968,7 +1094,7 @@ exports[`base/System/LoginConnection/Oauth render snap 1`] = `
                           <button
                             aria-checked="false"
                             class="ant-switch basic-switch-wrapper css-g6dhbn"
-                            id="skipCheckState"
+                            id="enableManuallyBind"
                             role="switch"
                             type="button"
                           >
@@ -1912,6 +2038,132 @@ exports[`base/System/LoginConnection/Oauth render snap 2`] = `
                     >
                       <label
                         class="ant-form-item-no-colon"
+                        for="skipCheckState"
+                        title=""
+                      >
+                        <div
+                          class="label-cont-custom"
+                        >
+                          <div>
+                            跳过请求来源验证
+                          </div>
+                          <div
+                            class="tip-content-box"
+                          >
+                            跳过对请求发送来源的验证，可能会使您的账户面临安全风险，建议仅在可信环境下启用此选项。启用后，SQLE将不再验证回调中的state参数。
+                          </div>
+                        </div>
+                      </label>
+                    </div>
+                    <div
+                      class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control"
+                    >
+                      <div
+                        class="ant-form-item-control-input"
+                      >
+                        <div
+                          class="ant-form-item-control-input-content"
+                        >
+                          <button
+                            aria-checked="false"
+                            class="ant-switch basic-switch-wrapper css-g6dhbn"
+                            id="skipCheckState"
+                            role="switch"
+                            type="button"
+                          >
+                            <div
+                              class="ant-switch-handle"
+                            />
+                            <span
+                              class="ant-switch-inner"
+                            >
+                              <span
+                                class="ant-switch-inner-checked"
+                              />
+                              <span
+                                class="ant-switch-inner-unchecked"
+                              />
+                            </span>
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="ant-form-item has-label-tip css-1jlm9cy"
+                >
+                  <div
+                    class="ant-row ant-form-item-row"
+                  >
+                    <div
+                      class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left"
+                    >
+                      <label
+                        class="ant-form-item-no-colon"
+                        for="autoBindSameNameUser"
+                        title=""
+                      >
+                        <div
+                          class="label-cont-custom"
+                        >
+                          <div>
+                            自动绑定同名用户
+                          </div>
+                          <div
+                            class="tip-content-box"
+                          >
+                            启用此选项后，当第三方账号首次通过 OAuth2 对接登录 SQLE 时，系统会自动将该账号与 SQLE 平台上用户名称和 OAuth2 用户UID相同的用户进行绑定。这省去了手动干预的需要，让用户能够更顺畅地进行后续平台操作。
+                          </div>
+                        </div>
+                      </label>
+                    </div>
+                    <div
+                      class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control"
+                    >
+                      <div
+                        class="ant-form-item-control-input"
+                      >
+                        <div
+                          class="ant-form-item-control-input-content"
+                        >
+                          <button
+                            aria-checked="false"
+                            class="ant-switch basic-switch-wrapper css-g6dhbn"
+                            id="autoBindSameNameUser"
+                            role="switch"
+                            type="button"
+                          >
+                            <div
+                              class="ant-switch-handle"
+                            />
+                            <span
+                              class="ant-switch-inner"
+                            >
+                              <span
+                                class="ant-switch-inner-checked"
+                              />
+                              <span
+                                class="ant-switch-inner-unchecked"
+                              />
+                            </span>
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="ant-form-item has-label-tip css-1jlm9cy"
+                >
+                  <div
+                    class="ant-row ant-form-item-row"
+                  >
+                    <div
+                      class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left"
+                    >
+                      <label
+                        class="ant-form-item-no-colon"
                         for="autoCreateUser"
                         title=""
                       >
@@ -1975,19 +2227,19 @@ exports[`base/System/LoginConnection/Oauth render snap 2`] = `
                     >
                       <label
                         class="ant-form-item-no-colon"
-                        for="skipCheckState"
+                        for="enableManuallyBind"
                         title=""
                       >
                         <div
                           class="label-cont-custom"
                         >
                           <div>
-                            跳过请求来源验证
+                            手动绑定用户
                           </div>
                           <div
                             class="tip-content-box"
                           >
-                            跳过对请求发送来源的验证，可能会使您的账户面临安全风险，建议仅在可信环境下启用此选项。启用后，SQLE将不再验证回调中的state参数。
+                            当 OAuth2 对接登录后未在 SQLE 平台上找到关联用户，并且未启用“自动创建并绑定用户”时，若启用此配置，用户会进入手动绑定页面，可以手动绑定现有账户。若未启用，系统则会提示错误信息。
                           </div>
                         </div>
                       </label>
@@ -2004,7 +2256,7 @@ exports[`base/System/LoginConnection/Oauth render snap 2`] = `
                           <button
                             aria-checked="false"
                             class="ant-switch basic-switch-wrapper css-g6dhbn"
-                            id="skipCheckState"
+                            id="enableManuallyBind"
                             role="switch"
                             type="button"
                           >
@@ -2948,6 +3200,132 @@ exports[`base/System/LoginConnection/Oauth render snap when enable oauth2 is tru
                     >
                       <label
                         class="ant-form-item-no-colon"
+                        for="skipCheckState"
+                        title=""
+                      >
+                        <div
+                          class="label-cont-custom"
+                        >
+                          <div>
+                            跳过请求来源验证
+                          </div>
+                          <div
+                            class="tip-content-box"
+                          >
+                            跳过对请求发送来源的验证，可能会使您的账户面临安全风险，建议仅在可信环境下启用此选项。启用后，SQLE将不再验证回调中的state参数。
+                          </div>
+                        </div>
+                      </label>
+                    </div>
+                    <div
+                      class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control"
+                    >
+                      <div
+                        class="ant-form-item-control-input"
+                      >
+                        <div
+                          class="ant-form-item-control-input-content"
+                        >
+                          <button
+                            aria-checked="false"
+                            class="ant-switch basic-switch-wrapper css-g6dhbn"
+                            id="skipCheckState"
+                            role="switch"
+                            type="button"
+                          >
+                            <div
+                              class="ant-switch-handle"
+                            />
+                            <span
+                              class="ant-switch-inner"
+                            >
+                              <span
+                                class="ant-switch-inner-checked"
+                              />
+                              <span
+                                class="ant-switch-inner-unchecked"
+                              />
+                            </span>
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="ant-form-item has-label-tip css-1jlm9cy"
+                >
+                  <div
+                    class="ant-row ant-form-item-row"
+                  >
+                    <div
+                      class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left"
+                    >
+                      <label
+                        class="ant-form-item-no-colon"
+                        for="autoBindSameNameUser"
+                        title=""
+                      >
+                        <div
+                          class="label-cont-custom"
+                        >
+                          <div>
+                            自动绑定同名用户
+                          </div>
+                          <div
+                            class="tip-content-box"
+                          >
+                            启用此选项后，当第三方账号首次通过 OAuth2 对接登录 SQLE 时，系统会自动将该账号与 SQLE 平台上用户名称和 OAuth2 用户UID相同的用户进行绑定。这省去了手动干预的需要，让用户能够更顺畅地进行后续平台操作。
+                          </div>
+                        </div>
+                      </label>
+                    </div>
+                    <div
+                      class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control"
+                    >
+                      <div
+                        class="ant-form-item-control-input"
+                      >
+                        <div
+                          class="ant-form-item-control-input-content"
+                        >
+                          <button
+                            aria-checked="false"
+                            class="ant-switch basic-switch-wrapper css-g6dhbn"
+                            id="autoBindSameNameUser"
+                            role="switch"
+                            type="button"
+                          >
+                            <div
+                              class="ant-switch-handle"
+                            />
+                            <span
+                              class="ant-switch-inner"
+                            >
+                              <span
+                                class="ant-switch-inner-checked"
+                              />
+                              <span
+                                class="ant-switch-inner-unchecked"
+                              />
+                            </span>
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="ant-form-item has-label-tip css-1jlm9cy"
+                >
+                  <div
+                    class="ant-row ant-form-item-row"
+                  >
+                    <div
+                      class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left"
+                    >
+                      <label
+                        class="ant-form-item-no-colon"
                         for="autoCreateUser"
                         title=""
                       >
@@ -3011,19 +3389,19 @@ exports[`base/System/LoginConnection/Oauth render snap when enable oauth2 is tru
                     >
                       <label
                         class="ant-form-item-no-colon"
-                        for="skipCheckState"
+                        for="enableManuallyBind"
                         title=""
                       >
                         <div
                           class="label-cont-custom"
                         >
                           <div>
-                            跳过请求来源验证
+                            手动绑定用户
                           </div>
                           <div
                             class="tip-content-box"
                           >
-                            跳过对请求发送来源的验证，可能会使您的账户面临安全风险，建议仅在可信环境下启用此选项。启用后，SQLE将不再验证回调中的state参数。
+                            当 OAuth2 对接登录后未在 SQLE 平台上找到关联用户，并且未启用“自动创建并绑定用户”时，若启用此配置，用户会进入手动绑定页面，可以手动绑定现有账户。若未启用，系统则会提示错误信息。
                           </div>
                         </div>
                       </label>
@@ -3040,7 +3418,7 @@ exports[`base/System/LoginConnection/Oauth render snap when enable oauth2 is tru
                           <button
                             aria-checked="false"
                             class="ant-switch basic-switch-wrapper css-g6dhbn"
-                            id="skipCheckState"
+                            id="enableManuallyBind"
                             role="switch"
                             type="button"
                           >
@@ -3984,6 +4362,132 @@ exports[`base/System/LoginConnection/Oauth render submit Oauth setting render su
                     >
                       <label
                         class="ant-form-item-no-colon"
+                        for="skipCheckState"
+                        title=""
+                      >
+                        <div
+                          class="label-cont-custom"
+                        >
+                          <div>
+                            跳过请求来源验证
+                          </div>
+                          <div
+                            class="tip-content-box"
+                          >
+                            跳过对请求发送来源的验证，可能会使您的账户面临安全风险，建议仅在可信环境下启用此选项。启用后，SQLE将不再验证回调中的state参数。
+                          </div>
+                        </div>
+                      </label>
+                    </div>
+                    <div
+                      class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control"
+                    >
+                      <div
+                        class="ant-form-item-control-input"
+                      >
+                        <div
+                          class="ant-form-item-control-input-content"
+                        >
+                          <button
+                            aria-checked="false"
+                            class="ant-switch basic-switch-wrapper css-g6dhbn"
+                            id="skipCheckState"
+                            role="switch"
+                            type="button"
+                          >
+                            <div
+                              class="ant-switch-handle"
+                            />
+                            <span
+                              class="ant-switch-inner"
+                            >
+                              <span
+                                class="ant-switch-inner-checked"
+                              />
+                              <span
+                                class="ant-switch-inner-unchecked"
+                              />
+                            </span>
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="ant-form-item has-label-tip css-1jlm9cy"
+                >
+                  <div
+                    class="ant-row ant-form-item-row"
+                  >
+                    <div
+                      class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left"
+                    >
+                      <label
+                        class="ant-form-item-no-colon"
+                        for="autoBindSameNameUser"
+                        title=""
+                      >
+                        <div
+                          class="label-cont-custom"
+                        >
+                          <div>
+                            自动绑定同名用户
+                          </div>
+                          <div
+                            class="tip-content-box"
+                          >
+                            启用此选项后，当第三方账号首次通过 OAuth2 对接登录 SQLE 时，系统会自动将该账号与 SQLE 平台上用户名称和 OAuth2 用户UID相同的用户进行绑定。这省去了手动干预的需要，让用户能够更顺畅地进行后续平台操作。
+                          </div>
+                        </div>
+                      </label>
+                    </div>
+                    <div
+                      class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control"
+                    >
+                      <div
+                        class="ant-form-item-control-input"
+                      >
+                        <div
+                          class="ant-form-item-control-input-content"
+                        >
+                          <button
+                            aria-checked="false"
+                            class="ant-switch basic-switch-wrapper css-g6dhbn"
+                            id="autoBindSameNameUser"
+                            role="switch"
+                            type="button"
+                          >
+                            <div
+                              class="ant-switch-handle"
+                            />
+                            <span
+                              class="ant-switch-inner"
+                            >
+                              <span
+                                class="ant-switch-inner-checked"
+                              />
+                              <span
+                                class="ant-switch-inner-unchecked"
+                              />
+                            </span>
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="ant-form-item has-label-tip css-1jlm9cy"
+                >
+                  <div
+                    class="ant-row ant-form-item-row"
+                  >
+                    <div
+                      class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left"
+                    >
+                      <label
+                        class="ant-form-item-no-colon"
                         for="autoCreateUser"
                         title=""
                       >
@@ -4047,19 +4551,19 @@ exports[`base/System/LoginConnection/Oauth render submit Oauth setting render su
                     >
                       <label
                         class="ant-form-item-no-colon"
-                        for="skipCheckState"
+                        for="enableManuallyBind"
                         title=""
                       >
                         <div
                           class="label-cont-custom"
                         >
                           <div>
-                            跳过请求来源验证
+                            手动绑定用户
                           </div>
                           <div
                             class="tip-content-box"
                           >
-                            跳过对请求发送来源的验证，可能会使您的账户面临安全风险，建议仅在可信环境下启用此选项。启用后，SQLE将不再验证回调中的state参数。
+                            当 OAuth2 对接登录后未在 SQLE 平台上找到关联用户，并且未启用“自动创建并绑定用户”时，若启用此配置，用户会进入手动绑定页面，可以手动绑定现有账户。若未启用，系统则会提示错误信息。
                           </div>
                         </div>
                       </label>
@@ -4076,7 +4580,7 @@ exports[`base/System/LoginConnection/Oauth render submit Oauth setting render su
                           <button
                             aria-checked="false"
                             class="ant-switch basic-switch-wrapper css-g6dhbn"
-                            id="skipCheckState"
+                            id="enableManuallyBind"
                             role="switch"
                             type="button"
                           >
@@ -5020,6 +5524,132 @@ exports[`base/System/LoginConnection/Oauth render submit Oauth setting render su
                     >
                       <label
                         class="ant-form-item-no-colon"
+                        for="skipCheckState"
+                        title=""
+                      >
+                        <div
+                          class="label-cont-custom"
+                        >
+                          <div>
+                            跳过请求来源验证
+                          </div>
+                          <div
+                            class="tip-content-box"
+                          >
+                            跳过对请求发送来源的验证，可能会使您的账户面临安全风险，建议仅在可信环境下启用此选项。启用后，SQLE将不再验证回调中的state参数。
+                          </div>
+                        </div>
+                      </label>
+                    </div>
+                    <div
+                      class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control"
+                    >
+                      <div
+                        class="ant-form-item-control-input"
+                      >
+                        <div
+                          class="ant-form-item-control-input-content"
+                        >
+                          <button
+                            aria-checked="true"
+                            class="ant-switch basic-switch-wrapper css-g6dhbn ant-switch-checked"
+                            id="skipCheckState"
+                            role="switch"
+                            type="button"
+                          >
+                            <div
+                              class="ant-switch-handle"
+                            />
+                            <span
+                              class="ant-switch-inner"
+                            >
+                              <span
+                                class="ant-switch-inner-checked"
+                              />
+                              <span
+                                class="ant-switch-inner-unchecked"
+                              />
+                            </span>
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="ant-form-item has-label-tip css-1jlm9cy ant-form-item-has-success"
+                >
+                  <div
+                    class="ant-row ant-form-item-row"
+                  >
+                    <div
+                      class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left"
+                    >
+                      <label
+                        class="ant-form-item-no-colon"
+                        for="autoBindSameNameUser"
+                        title=""
+                      >
+                        <div
+                          class="label-cont-custom"
+                        >
+                          <div>
+                            自动绑定同名用户
+                          </div>
+                          <div
+                            class="tip-content-box"
+                          >
+                            启用此选项后，当第三方账号首次通过 OAuth2 对接登录 SQLE 时，系统会自动将该账号与 SQLE 平台上用户名称和 OAuth2 用户UID相同的用户进行绑定。这省去了手动干预的需要，让用户能够更顺畅地进行后续平台操作。
+                          </div>
+                        </div>
+                      </label>
+                    </div>
+                    <div
+                      class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control"
+                    >
+                      <div
+                        class="ant-form-item-control-input"
+                      >
+                        <div
+                          class="ant-form-item-control-input-content"
+                        >
+                          <button
+                            aria-checked="true"
+                            class="ant-switch basic-switch-wrapper css-g6dhbn ant-switch-checked"
+                            id="autoBindSameNameUser"
+                            role="switch"
+                            type="button"
+                          >
+                            <div
+                              class="ant-switch-handle"
+                            />
+                            <span
+                              class="ant-switch-inner"
+                            >
+                              <span
+                                class="ant-switch-inner-checked"
+                              />
+                              <span
+                                class="ant-switch-inner-unchecked"
+                              />
+                            </span>
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="ant-form-item has-label-tip css-1jlm9cy ant-form-item-has-success"
+                >
+                  <div
+                    class="ant-row ant-form-item-row"
+                  >
+                    <div
+                      class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left"
+                    >
+                      <label
+                        class="ant-form-item-no-colon"
                         for="autoCreateUser"
                         title=""
                       >
@@ -5147,69 +5777,6 @@ exports[`base/System/LoginConnection/Oauth render submit Oauth setting render su
                               </span>
                             </span>
                           </span>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div
-                  class="ant-form-item has-label-tip css-1jlm9cy ant-form-item-has-success"
-                >
-                  <div
-                    class="ant-row ant-form-item-row"
-                  >
-                    <div
-                      class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left"
-                    >
-                      <label
-                        class="ant-form-item-no-colon"
-                        for="skipCheckState"
-                        title=""
-                      >
-                        <div
-                          class="label-cont-custom"
-                        >
-                          <div>
-                            跳过请求来源验证
-                          </div>
-                          <div
-                            class="tip-content-box"
-                          >
-                            跳过对请求发送来源的验证，可能会使您的账户面临安全风险，建议仅在可信环境下启用此选项。启用后，SQLE将不再验证回调中的state参数。
-                          </div>
-                        </div>
-                      </label>
-                    </div>
-                    <div
-                      class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control"
-                    >
-                      <div
-                        class="ant-form-item-control-input"
-                      >
-                        <div
-                          class="ant-form-item-control-input-content"
-                        >
-                          <button
-                            aria-checked="true"
-                            class="ant-switch basic-switch-wrapper css-g6dhbn ant-switch-checked"
-                            id="skipCheckState"
-                            role="switch"
-                            type="button"
-                          >
-                            <div
-                              class="ant-switch-handle"
-                            />
-                            <span
-                              class="ant-switch-inner"
-                            >
-                              <span
-                                class="ant-switch-inner-checked"
-                              />
-                              <span
-                                class="ant-switch-inner-unchecked"
-                              />
-                            </span>
-                          </button>
                         </div>
                       </div>
                     </div>
@@ -6160,6 +6727,132 @@ exports[`base/System/LoginConnection/Oauth render switch cancel btn render snap 
                     >
                       <label
                         class="ant-form-item-no-colon"
+                        for="skipCheckState"
+                        title=""
+                      >
+                        <div
+                          class="label-cont-custom"
+                        >
+                          <div>
+                            跳过请求来源验证
+                          </div>
+                          <div
+                            class="tip-content-box"
+                          >
+                            跳过对请求发送来源的验证，可能会使您的账户面临安全风险，建议仅在可信环境下启用此选项。启用后，SQLE将不再验证回调中的state参数。
+                          </div>
+                        </div>
+                      </label>
+                    </div>
+                    <div
+                      class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control"
+                    >
+                      <div
+                        class="ant-form-item-control-input"
+                      >
+                        <div
+                          class="ant-form-item-control-input-content"
+                        >
+                          <button
+                            aria-checked="false"
+                            class="ant-switch basic-switch-wrapper css-g6dhbn"
+                            id="skipCheckState"
+                            role="switch"
+                            type="button"
+                          >
+                            <div
+                              class="ant-switch-handle"
+                            />
+                            <span
+                              class="ant-switch-inner"
+                            >
+                              <span
+                                class="ant-switch-inner-checked"
+                              />
+                              <span
+                                class="ant-switch-inner-unchecked"
+                              />
+                            </span>
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="ant-form-item has-label-tip css-1jlm9cy"
+                >
+                  <div
+                    class="ant-row ant-form-item-row"
+                  >
+                    <div
+                      class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left"
+                    >
+                      <label
+                        class="ant-form-item-no-colon"
+                        for="autoBindSameNameUser"
+                        title=""
+                      >
+                        <div
+                          class="label-cont-custom"
+                        >
+                          <div>
+                            自动绑定同名用户
+                          </div>
+                          <div
+                            class="tip-content-box"
+                          >
+                            启用此选项后，当第三方账号首次通过 OAuth2 对接登录 SQLE 时，系统会自动将该账号与 SQLE 平台上用户名称和 OAuth2 用户UID相同的用户进行绑定。这省去了手动干预的需要，让用户能够更顺畅地进行后续平台操作。
+                          </div>
+                        </div>
+                      </label>
+                    </div>
+                    <div
+                      class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control"
+                    >
+                      <div
+                        class="ant-form-item-control-input"
+                      >
+                        <div
+                          class="ant-form-item-control-input-content"
+                        >
+                          <button
+                            aria-checked="false"
+                            class="ant-switch basic-switch-wrapper css-g6dhbn"
+                            id="autoBindSameNameUser"
+                            role="switch"
+                            type="button"
+                          >
+                            <div
+                              class="ant-switch-handle"
+                            />
+                            <span
+                              class="ant-switch-inner"
+                            >
+                              <span
+                                class="ant-switch-inner-checked"
+                              />
+                              <span
+                                class="ant-switch-inner-unchecked"
+                              />
+                            </span>
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="ant-form-item has-label-tip css-1jlm9cy ant-form-item-has-success"
+                >
+                  <div
+                    class="ant-row ant-form-item-row"
+                  >
+                    <div
+                      class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left"
+                    >
+                      <label
+                        class="ant-form-item-no-colon"
                         for="autoCreateUser"
                         title=""
                       >
@@ -6213,7 +6906,7 @@ exports[`base/System/LoginConnection/Oauth render switch cancel btn render snap 
                   </div>
                 </div>
                 <div
-                  class="ant-form-item has-label-tip css-1jlm9cy ant-form-item-has-success"
+                  class="ant-form-item has-label-tip css-1jlm9cy"
                 >
                   <div
                     class="ant-row ant-form-item-row"
@@ -6223,19 +6916,19 @@ exports[`base/System/LoginConnection/Oauth render switch cancel btn render snap 
                     >
                       <label
                         class="ant-form-item-no-colon"
-                        for="skipCheckState"
+                        for="enableManuallyBind"
                         title=""
                       >
                         <div
                           class="label-cont-custom"
                         >
                           <div>
-                            跳过请求来源验证
+                            手动绑定用户
                           </div>
                           <div
                             class="tip-content-box"
                           >
-                            跳过对请求发送来源的验证，可能会使您的账户面临安全风险，建议仅在可信环境下启用此选项。启用后，SQLE将不再验证回调中的state参数。
+                            当 OAuth2 对接登录后未在 SQLE 平台上找到关联用户，并且未启用“自动创建并绑定用户”时，若启用此配置，用户会进入手动绑定页面，可以手动绑定现有账户。若未启用，系统则会提示错误信息。
                           </div>
                         </div>
                       </label>
@@ -6252,7 +6945,7 @@ exports[`base/System/LoginConnection/Oauth render switch cancel btn render snap 
                           <button
                             aria-checked="false"
                             class="ant-switch basic-switch-wrapper css-g6dhbn"
-                            id="skipCheckState"
+                            id="enableManuallyBind"
                             role="switch"
                             type="button"
                           >
@@ -7196,6 +7889,132 @@ exports[`base/System/LoginConnection/Oauth render switch cancel btn render snap 
                     >
                       <label
                         class="ant-form-item-no-colon"
+                        for="skipCheckState"
+                        title=""
+                      >
+                        <div
+                          class="label-cont-custom"
+                        >
+                          <div>
+                            跳过请求来源验证
+                          </div>
+                          <div
+                            class="tip-content-box"
+                          >
+                            跳过对请求发送来源的验证，可能会使您的账户面临安全风险，建议仅在可信环境下启用此选项。启用后，SQLE将不再验证回调中的state参数。
+                          </div>
+                        </div>
+                      </label>
+                    </div>
+                    <div
+                      class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control"
+                    >
+                      <div
+                        class="ant-form-item-control-input"
+                      >
+                        <div
+                          class="ant-form-item-control-input-content"
+                        >
+                          <button
+                            aria-checked="false"
+                            class="ant-switch basic-switch-wrapper css-g6dhbn"
+                            id="skipCheckState"
+                            role="switch"
+                            type="button"
+                          >
+                            <div
+                              class="ant-switch-handle"
+                            />
+                            <span
+                              class="ant-switch-inner"
+                            >
+                              <span
+                                class="ant-switch-inner-checked"
+                              />
+                              <span
+                                class="ant-switch-inner-unchecked"
+                              />
+                            </span>
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="ant-form-item has-label-tip css-1jlm9cy"
+                >
+                  <div
+                    class="ant-row ant-form-item-row"
+                  >
+                    <div
+                      class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left"
+                    >
+                      <label
+                        class="ant-form-item-no-colon"
+                        for="autoBindSameNameUser"
+                        title=""
+                      >
+                        <div
+                          class="label-cont-custom"
+                        >
+                          <div>
+                            自动绑定同名用户
+                          </div>
+                          <div
+                            class="tip-content-box"
+                          >
+                            启用此选项后，当第三方账号首次通过 OAuth2 对接登录 SQLE 时，系统会自动将该账号与 SQLE 平台上用户名称和 OAuth2 用户UID相同的用户进行绑定。这省去了手动干预的需要，让用户能够更顺畅地进行后续平台操作。
+                          </div>
+                        </div>
+                      </label>
+                    </div>
+                    <div
+                      class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control"
+                    >
+                      <div
+                        class="ant-form-item-control-input"
+                      >
+                        <div
+                          class="ant-form-item-control-input-content"
+                        >
+                          <button
+                            aria-checked="false"
+                            class="ant-switch basic-switch-wrapper css-g6dhbn"
+                            id="autoBindSameNameUser"
+                            role="switch"
+                            type="button"
+                          >
+                            <div
+                              class="ant-switch-handle"
+                            />
+                            <span
+                              class="ant-switch-inner"
+                            >
+                              <span
+                                class="ant-switch-inner-checked"
+                              />
+                              <span
+                                class="ant-switch-inner-unchecked"
+                              />
+                            </span>
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="ant-form-item has-label-tip css-1jlm9cy ant-form-item-has-success"
+                >
+                  <div
+                    class="ant-row ant-form-item-row"
+                  >
+                    <div
+                      class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left"
+                    >
+                      <label
+                        class="ant-form-item-no-colon"
                         for="autoCreateUser"
                         title=""
                       >
@@ -7249,7 +8068,7 @@ exports[`base/System/LoginConnection/Oauth render switch cancel btn render snap 
                   </div>
                 </div>
                 <div
-                  class="ant-form-item has-label-tip css-1jlm9cy ant-form-item-has-success"
+                  class="ant-form-item has-label-tip css-1jlm9cy"
                 >
                   <div
                     class="ant-row ant-form-item-row"
@@ -7259,19 +8078,19 @@ exports[`base/System/LoginConnection/Oauth render switch cancel btn render snap 
                     >
                       <label
                         class="ant-form-item-no-colon"
-                        for="skipCheckState"
+                        for="enableManuallyBind"
                         title=""
                       >
                         <div
                           class="label-cont-custom"
                         >
                           <div>
-                            跳过请求来源验证
+                            手动绑定用户
                           </div>
                           <div
                             class="tip-content-box"
                           >
-                            跳过对请求发送来源的验证，可能会使您的账户面临安全风险，建议仅在可信环境下启用此选项。启用后，SQLE将不再验证回调中的state参数。
+                            当 OAuth2 对接登录后未在 SQLE 平台上找到关联用户，并且未启用“自动创建并绑定用户”时，若启用此配置，用户会进入手动绑定页面，可以手动绑定现有账户。若未启用，系统则会提示错误信息。
                           </div>
                         </div>
                       </label>
@@ -7288,7 +8107,7 @@ exports[`base/System/LoginConnection/Oauth render switch cancel btn render snap 
                           <button
                             aria-checked="false"
                             class="ant-switch basic-switch-wrapper css-g6dhbn"
-                            id="skipCheckState"
+                            id="enableManuallyBind"
                             role="switch"
                             type="button"
                           >
@@ -8256,6 +9075,132 @@ exports[`base/System/LoginConnection/Oauth render switch cancel btn render snap 
                     >
                       <label
                         class="ant-form-item-no-colon"
+                        for="skipCheckState"
+                        title=""
+                      >
+                        <div
+                          class="label-cont-custom"
+                        >
+                          <div>
+                            跳过请求来源验证
+                          </div>
+                          <div
+                            class="tip-content-box"
+                          >
+                            跳过对请求发送来源的验证，可能会使您的账户面临安全风险，建议仅在可信环境下启用此选项。启用后，SQLE将不再验证回调中的state参数。
+                          </div>
+                        </div>
+                      </label>
+                    </div>
+                    <div
+                      class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control"
+                    >
+                      <div
+                        class="ant-form-item-control-input"
+                      >
+                        <div
+                          class="ant-form-item-control-input-content"
+                        >
+                          <button
+                            aria-checked="false"
+                            class="ant-switch basic-switch-wrapper css-g6dhbn"
+                            id="skipCheckState"
+                            role="switch"
+                            type="button"
+                          >
+                            <div
+                              class="ant-switch-handle"
+                            />
+                            <span
+                              class="ant-switch-inner"
+                            >
+                              <span
+                                class="ant-switch-inner-checked"
+                              />
+                              <span
+                                class="ant-switch-inner-unchecked"
+                              />
+                            </span>
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="ant-form-item has-label-tip css-1jlm9cy"
+                >
+                  <div
+                    class="ant-row ant-form-item-row"
+                  >
+                    <div
+                      class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left"
+                    >
+                      <label
+                        class="ant-form-item-no-colon"
+                        for="autoBindSameNameUser"
+                        title=""
+                      >
+                        <div
+                          class="label-cont-custom"
+                        >
+                          <div>
+                            自动绑定同名用户
+                          </div>
+                          <div
+                            class="tip-content-box"
+                          >
+                            启用此选项后，当第三方账号首次通过 OAuth2 对接登录 SQLE 时，系统会自动将该账号与 SQLE 平台上用户名称和 OAuth2 用户UID相同的用户进行绑定。这省去了手动干预的需要，让用户能够更顺畅地进行后续平台操作。
+                          </div>
+                        </div>
+                      </label>
+                    </div>
+                    <div
+                      class="ant-col ant-col-11 ant-col-push-2 ant-form-item-control"
+                    >
+                      <div
+                        class="ant-form-item-control-input"
+                      >
+                        <div
+                          class="ant-form-item-control-input-content"
+                        >
+                          <button
+                            aria-checked="false"
+                            class="ant-switch basic-switch-wrapper css-g6dhbn"
+                            id="autoBindSameNameUser"
+                            role="switch"
+                            type="button"
+                          >
+                            <div
+                              class="ant-switch-handle"
+                            />
+                            <span
+                              class="ant-switch-inner"
+                            >
+                              <span
+                                class="ant-switch-inner-checked"
+                              />
+                              <span
+                                class="ant-switch-inner-unchecked"
+                              />
+                            </span>
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="ant-form-item has-label-tip css-1jlm9cy ant-form-item-has-success"
+                >
+                  <div
+                    class="ant-row ant-form-item-row"
+                  >
+                    <div
+                      class="ant-col ant-col-11 ant-form-item-label ant-form-item-label-left"
+                    >
+                      <label
+                        class="ant-form-item-no-colon"
                         for="autoCreateUser"
                         title=""
                       >
@@ -8309,7 +9254,7 @@ exports[`base/System/LoginConnection/Oauth render switch cancel btn render snap 
                   </div>
                 </div>
                 <div
-                  class="ant-form-item has-label-tip css-1jlm9cy ant-form-item-has-success"
+                  class="ant-form-item has-label-tip css-1jlm9cy"
                 >
                   <div
                     class="ant-row ant-form-item-row"
@@ -8319,19 +9264,19 @@ exports[`base/System/LoginConnection/Oauth render switch cancel btn render snap 
                     >
                       <label
                         class="ant-form-item-no-colon"
-                        for="skipCheckState"
+                        for="enableManuallyBind"
                         title=""
                       >
                         <div
                           class="label-cont-custom"
                         >
                           <div>
-                            跳过请求来源验证
+                            手动绑定用户
                           </div>
                           <div
                             class="tip-content-box"
                           >
-                            跳过对请求发送来源的验证，可能会使您的账户面临安全风险，建议仅在可信环境下启用此选项。启用后，SQLE将不再验证回调中的state参数。
+                            当 OAuth2 对接登录后未在 SQLE 平台上找到关联用户，并且未启用“自动创建并绑定用户”时，若启用此配置，用户会进入手动绑定页面，可以手动绑定现有账户。若未启用，系统则会提示错误信息。
                           </div>
                         </div>
                       </label>
@@ -8348,7 +9293,7 @@ exports[`base/System/LoginConnection/Oauth render switch cancel btn render snap 
                           <button
                             aria-checked="false"
                             class="ant-switch basic-switch-wrapper css-g6dhbn"
-                            id="skipCheckState"
+                            id="enableManuallyBind"
                             role="switch"
                             type="button"
                           >

@@ -227,10 +227,10 @@ describe('base/System/LoginConnection/Oauth', () => {
           }
         }
       );
-
+      expect(screen.getByText('手动绑定用户')).toBeInTheDocument();
       fireEvent.click(getBySelector('#autoCreateUser', baseElement));
       await act(async () => jest.advanceTimersByTime(0));
-
+      expect(screen.queryByText('手动绑定用户')).not.toBeInTheDocument();
       expect(screen.getByText('默认登录密码')).toBeInTheDocument();
 
       fireEvent.change(getBySelector('#userPassword', baseElement), {
@@ -240,6 +240,8 @@ describe('base/System/LoginConnection/Oauth', () => {
       });
 
       fireEvent.click(getBySelector('#skipCheckState', baseElement));
+
+      fireEvent.click(getBySelector('#autoBindSameNameUser', baseElement));
 
       fireEvent.click(screen.getByText('提 交'));
       await act(async () => jest.advanceTimersByTime(0));
@@ -265,7 +267,8 @@ describe('base/System/LoginConnection/Oauth', () => {
           skip_check_state: true,
           server_logout_url: 'server layout url',
           auto_create_user_pwd: '123',
-          login_perm_expr: 'resource_access.sqle.roles.#(=="logout")'
+          login_perm_expr: 'resource_access.sqle.roles.#(=="logout")',
+          auto_bind_same_name_user: true
         }
       });
       await act(async () => jest.advanceTimersByTime(3000));

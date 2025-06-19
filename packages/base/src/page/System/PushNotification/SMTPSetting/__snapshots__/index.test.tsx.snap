@@ -1151,7 +1151,7 @@ exports[`base/System/PushNotification/SMTPSetting render snap 2`] = `
               </div>
             </form>
             <div
-              class="ant-descriptions system-config-view-wrapper css-cs8tvb"
+              class="ant-descriptions system-config-view-wrapper css-1iwokd"
             >
               <div
                 class="ant-descriptions-view"
@@ -1847,7 +1847,7 @@ exports[`base/System/PushNotification/SMTPSetting render snap when user is not a
               </div>
             </form>
             <div
-              class="ant-descriptions system-config-view-wrapper css-cs8tvb"
+              class="ant-descriptions system-config-view-wrapper css-1iwokd"
             >
               <div
                 class="ant-descriptions-view"
@@ -2571,7 +2571,7 @@ exports[`base/System/PushNotification/SMTPSetting render submit SMTP setting ren
               </div>
             </form>
             <div
-              class="ant-descriptions system-config-view-wrapper css-cs8tvb"
+              class="ant-descriptions system-config-view-wrapper css-1iwokd"
             >
               <div
                 class="ant-descriptions-view"
@@ -3351,7 +3351,7 @@ exports[`base/System/PushNotification/SMTPSetting render switch cancel btn rende
               </div>
             </form>
             <div
-              class="ant-descriptions system-config-view-wrapper css-cs8tvb"
+              class="ant-descriptions system-config-view-wrapper css-1iwokd"
             >
               <div
                 class="ant-descriptions-view"
@@ -4131,7 +4131,7 @@ exports[`base/System/PushNotification/SMTPSetting render switch cancel btn rende
               </div>
             </form>
             <div
-              class="ant-descriptions system-config-view-wrapper css-cs8tvb"
+              class="ant-descriptions system-config-view-wrapper css-1iwokd"
             >
               <div
                 class="ant-descriptions-view"
@@ -4961,7 +4961,7 @@ exports[`base/System/PushNotification/SMTPSetting render switch cancel btn rende
               </div>
             </form>
             <div
-              class="ant-descriptions system-config-view-wrapper css-cs8tvb"
+              class="ant-descriptions system-config-view-wrapper css-1iwokd"
             >
               <div
                 class="ant-descriptions-view"

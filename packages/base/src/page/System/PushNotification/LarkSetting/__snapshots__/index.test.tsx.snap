@@ -731,7 +731,7 @@ exports[`base/System/PushNotification/LarkSetting render snap 2`] = `
               </div>
             </form>
             <div
-              class="ant-descriptions system-config-view-wrapper css-cs8tvb"
+              class="ant-descriptions system-config-view-wrapper css-1iwokd"
             >
               <div
                 class="ant-descriptions-view"
@@ -1127,7 +1127,7 @@ exports[`base/System/PushNotification/LarkSetting render snap when user is not a
               </div>
             </form>
             <div
-              class="ant-descriptions system-config-view-wrapper css-cs8tvb"
+              class="ant-descriptions system-config-view-wrapper css-1iwokd"
             >
               <div
                 class="ant-descriptions-view"
@@ -1550,7 +1550,7 @@ exports[`base/System/PushNotification/LarkSetting render submit lark setting ren
               </div>
             </form>
             <div
-              class="ant-descriptions system-config-view-wrapper css-cs8tvb"
+              class="ant-descriptions system-config-view-wrapper css-1iwokd"
             >
               <div
                 class="ant-descriptions-view"
@@ -2030,7 +2030,7 @@ exports[`base/System/PushNotification/LarkSetting render switch cancel btn rende
               </div>
             </form>
             <div
-              class="ant-descriptions system-config-view-wrapper css-cs8tvb"
+              class="ant-descriptions system-config-view-wrapper css-1iwokd"
             >
               <div
                 class="ant-descriptions-view"
@@ -2510,7 +2510,7 @@ exports[`base/System/PushNotification/LarkSetting render switch cancel btn rende
               </div>
             </form>
             <div
-              class="ant-descriptions system-config-view-wrapper css-cs8tvb"
+              class="ant-descriptions system-config-view-wrapper css-1iwokd"
             >
               <div
                 class="ant-descriptions-view"
@@ -3040,7 +3040,7 @@ exports[`base/System/PushNotification/LarkSetting render switch cancel btn rende
               </div>
             </form>
             <div
-              class="ant-descriptions system-config-view-wrapper css-cs8tvb"
+              class="ant-descriptions system-config-view-wrapper css-1iwokd"
             >
               <div
                 class="ant-descriptions-view"
