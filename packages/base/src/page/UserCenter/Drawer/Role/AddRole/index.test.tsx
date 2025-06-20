@@ -6,10 +6,7 @@ import { ModalName } from '../../../../../data/ModalName';
 import AddRole from '.';
 import EventEmitter from '../../../../../utils/EventEmitter';
 import EmitterKey from '../../../../../data/EmitterKey';
-import {
-  getAllBySelector,
-  queryBySelector
-} from '@actiontech/shared/lib/testUtil/customQuery';
+import { queryBySelector } from '@actiontech/shared/lib/testUtil/customQuery';
 
 jest.mock('react-redux', () => ({
   ...jest.requireActual('react-redux'),
@@ -21,10 +18,10 @@ describe('base/UserCenter/Drawer/Role/AddRole', () => {
   let addRoleSpy: jest.SpyInstance;
   let opPermissionListSpy: jest.SpyInstance;
   const dispatchSpy = jest.fn();
+
   beforeEach(() => {
     jest.useFakeTimers();
     addRoleSpy = userCenter.addRole();
-
     (useDispatch as jest.Mock).mockImplementation(() => dispatchSpy);
     opPermissionListSpy = userCenter.getOpPermissionsList();
     (useSelector as jest.Mock).mockImplementation((e) =>
@@ -53,14 +50,8 @@ describe('base/UserCenter/Drawer/Role/AddRole', () => {
     fireEvent.input(screen.getByLabelText('描述'), {
       target: { value: 'test1' }
     });
-    fireEvent.mouseDown(screen.getByLabelText('操作权限'));
-    expect(
-      getAllBySelector('.ant-select-item-option-content', baseElement)[0]
-        .childNodes[0]
-    ).toHaveTextContent('创建项目');
-    fireEvent.click(
-      getAllBySelector('.ant-select-item-option-content', baseElement)[0]
-    );
+    fireEvent.click(screen.getByDisplayValue('700001'));
+    expect(screen.getByDisplayValue('700001')).toBeChecked();
     fireEvent.click(screen.getByText('提 交'));
     await act(async () => jest.advanceTimersByTime(0));
     expect(screen.getByText('提 交').parentNode).toHaveClass('ant-btn-loading');
@@ -105,6 +96,33 @@ describe('base/UserCenter/Drawer/Role/AddRole', () => {
       payload: {
         modalName: ModalName.DMS_Add_Role,
         status: false
+      }
+    });
+  });
+
+  it('should handle permission selection', async () => {
+    const mockRoleName = 'permission_test_role';
+    superRender(<AddRole />);
+    await act(async () => jest.advanceTimersByTime(3000));
+    fireEvent.input(screen.getByLabelText('角色名'), {
+      target: { value: mockRoleName }
+    });
+    fireEvent.input(screen.getByLabelText('描述'), {
+      target: { value: 'test description' }
+    });
+    expect(screen.getByDisplayValue('700001')).not.toBeChecked();
+    expect(screen.getByDisplayValue('20150')).not.toBeChecked();
+    fireEvent.click(screen.getByDisplayValue('700001'));
+    fireEvent.click(screen.getByDisplayValue('20150'));
+    expect(screen.getByDisplayValue('700001')).toBeChecked();
+    expect(screen.getByDisplayValue('20150')).toBeChecked();
+    fireEvent.click(screen.getByText('提 交'));
+    await act(async () => jest.advanceTimersByTime(0));
+    expect(addRoleSpy).toHaveBeenCalledWith({
+      role: {
+        name: mockRoleName,
+        desc: 'test description',
+        op_permission_uids: ['700001', '20150']
       }
     });
   });
