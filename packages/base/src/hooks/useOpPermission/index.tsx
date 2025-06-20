@@ -20,10 +20,7 @@ const useOpPermission = () => {
       filterBy: ListOpPermissionsFilterByTargetEnum = ListOpPermissionsFilterByTargetEnum.all
     ) => {
       setTrue();
-      let service: ListOpPermissionsServiceEnum;
-      // #if [dms]
-      service = ListOpPermissionsServiceEnum.dms;
-      // #endif
+      let service: ListOpPermissionsServiceEnum | undefined = undefined;
       // #if [sqle]
       service = ListOpPermissionsServiceEnum.sqle;
       // #endif
