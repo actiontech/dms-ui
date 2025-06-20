@@ -1,0 +1,544 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`base/Member/components/ProjectPermissions should handle complex nested data structure 1`] = `
+<body>
+  <div>
+    <div
+      class="ant-space ant-space-vertical"
+    >
+      <div
+        class="ant-space-item"
+      >
+        <div
+          class="ant-space ant-space-vertical"
+        >
+          <div
+            class="ant-space-item"
+            style="margin-bottom: 8px;"
+          >
+            <span
+              class="ant-typography"
+            >
+              MySQL-Cluster-1
+              :
+            </span>
+          </div>
+          <div
+            class="ant-space-item"
+          >
+            <div
+              class="ant-space ant-space-horizontal ant-space-align-center"
+              style="flex-wrap: wrap; margin-bottom: -4px;"
+            >
+              <div
+                class="ant-space-item"
+                style="margin-right: 4px; padding-bottom: 4px;"
+              >
+                <span
+                  class="ant-tag ant-tag-default basic-tag-wrapper basic-small-tag-wrapper css-1mjwlcb"
+                  style="height: 28px;"
+                >
+                  超级管理员
+                </span>
+              </div>
+              <div
+                class="ant-space-item"
+                style="padding-bottom: 4px;"
+              >
+                <span
+                  class="ant-tag ant-tag-default basic-tag-wrapper basic-small-tag-wrapper css-1mjwlcb"
+                  style="height: 28px;"
+                >
+                  只读用户
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`base/Member/components/ProjectPermissions should handle multiple permissions for same data source 1`] = `
+<body>
+  <div>
+    <div
+      class="ant-space ant-space-vertical"
+    >
+      <div
+        class="ant-space-item"
+        style="margin-bottom: 8px;"
+      >
+        <div
+          class="ant-space ant-space-vertical"
+        >
+          <div
+            class="ant-space-item"
+            style="margin-bottom: 8px;"
+          >
+            <span
+              class="ant-typography"
+            >
+              MySQL-1
+              :
+            </span>
+          </div>
+          <div
+            class="ant-space-item"
+          >
+            <div
+              class="ant-space ant-space-horizontal ant-space-align-center"
+              style="flex-wrap: wrap; margin-bottom: -4px;"
+            >
+              <div
+                class="ant-space-item"
+                style="padding-bottom: 4px;"
+              >
+                <span
+                  class="ant-tag ant-tag-default basic-tag-wrapper basic-small-tag-wrapper css-1mjwlcb"
+                  style="height: 28px;"
+                >
+                  管理员
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="ant-space-item"
+      >
+        <div
+          class="ant-space ant-space-vertical"
+        >
+          <div
+            class="ant-space-item"
+            style="margin-bottom: 8px;"
+          >
+            <span
+              class="ant-typography"
+            >
+              MySQL-1
+              :
+            </span>
+          </div>
+          <div
+            class="ant-space-item"
+          >
+            <div
+              class="ant-space ant-space-horizontal ant-space-align-center"
+              style="flex-wrap: wrap; margin-bottom: -4px;"
+            >
+              <div
+                class="ant-space-item"
+                style="padding-bottom: 4px;"
+              >
+                <span
+                  class="ant-tag ant-tag-default basic-tag-wrapper basic-small-tag-wrapper css-1mjwlcb"
+                  style="height: 28px;"
+                >
+                  开发者
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`base/Member/components/ProjectPermissions should handle permissions with empty roles 1`] = `
+<body>
+  <div>
+    <div
+      class="ant-space ant-space-vertical"
+    >
+      <div
+        class="ant-space-item"
+      >
+        <div
+          class="ant-space ant-space-vertical"
+        >
+          <div
+            class="ant-space-item"
+            style="margin-bottom: 8px;"
+          >
+            <span
+              class="ant-typography"
+            >
+              MySQL-1
+              :
+            </span>
+          </div>
+          <div
+            class="ant-space-item"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`base/Member/components/ProjectPermissions should handle permissions with undefined data_source 1`] = `
+<body>
+  <div>
+    <div
+      class="ant-space ant-space-vertical"
+    >
+      <div
+        class="ant-space-item"
+      >
+        <div
+          class="ant-space ant-space-vertical"
+        >
+          <div
+            class="ant-space-item"
+            style="margin-bottom: 8px;"
+          >
+            <span
+              class="ant-typography"
+            >
+              :
+            </span>
+          </div>
+          <div
+            class="ant-space-item"
+          >
+            <div
+              class="ant-space ant-space-horizontal ant-space-align-center"
+              style="flex-wrap: wrap; margin-bottom: -4px;"
+            >
+              <div
+                class="ant-space-item"
+                style="padding-bottom: 4px;"
+              >
+                <span
+                  class="ant-tag ant-tag-default basic-tag-wrapper basic-small-tag-wrapper css-1mjwlcb"
+                  style="height: 28px;"
+                >
+                  管理员
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`base/Member/components/ProjectPermissions should handle roles with empty name 1`] = `
+<body>
+  <div>
+    <div
+      class="ant-space ant-space-vertical"
+    >
+      <div
+        class="ant-space-item"
+      >
+        <div
+          class="ant-space ant-space-vertical"
+        >
+          <div
+            class="ant-space-item"
+            style="margin-bottom: 8px;"
+          >
+            <span
+              class="ant-typography"
+            >
+              MySQL-1
+              :
+            </span>
+          </div>
+          <div
+            class="ant-space-item"
+          >
+            <div
+              class="ant-space ant-space-horizontal ant-space-align-center"
+              style="flex-wrap: wrap; margin-bottom: -4px;"
+            >
+              <div
+                class="ant-space-item"
+                style="padding-bottom: 4px;"
+              >
+                <span
+                  class="ant-tag ant-tag-default basic-tag-wrapper basic-small-tag-wrapper css-1mjwlcb"
+                  style="height: 28px;"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`base/Member/components/ProjectPermissions should handle roles with undefined op_permissions 1`] = `
+<body>
+  <div>
+    <div
+      class="ant-space ant-space-vertical"
+    >
+      <div
+        class="ant-space-item"
+      >
+        <div
+          class="ant-space ant-space-vertical"
+        >
+          <div
+            class="ant-space-item"
+            style="margin-bottom: 8px;"
+          >
+            <span
+              class="ant-typography"
+            >
+              MySQL-1
+              :
+            </span>
+          </div>
+          <div
+            class="ant-space-item"
+          >
+            <div
+              class="ant-space ant-space-horizontal ant-space-align-center"
+              style="flex-wrap: wrap; margin-bottom: -4px;"
+            >
+              <div
+                class="ant-space-item"
+                style="padding-bottom: 4px;"
+              >
+                <span
+                  class="ant-tag ant-tag-default basic-tag-wrapper basic-small-tag-wrapper css-1mjwlcb"
+                  style="height: 28px;"
+                >
+                  管理员
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`base/Member/components/ProjectPermissions should handle roles without member_group 1`] = `
+<body>
+  <div>
+    <div
+      class="ant-space ant-space-vertical"
+    >
+      <div
+        class="ant-space-item"
+      >
+        <div
+          class="ant-space ant-space-vertical"
+        >
+          <div
+            class="ant-space-item"
+            style="margin-bottom: 8px;"
+          >
+            <span
+              class="ant-typography"
+            >
+              MySQL-1
+              :
+            </span>
+          </div>
+          <div
+            class="ant-space-item"
+          >
+            <div
+              class="ant-space ant-space-horizontal ant-space-align-center"
+              style="flex-wrap: wrap; margin-bottom: -4px;"
+            >
+              <div
+                class="ant-space-item"
+                style="padding-bottom: 4px;"
+              >
+                <span
+                  class="ant-tag ant-tag-default basic-tag-wrapper basic-small-tag-wrapper css-1mjwlcb"
+                  style="height: 28px;"
+                >
+                  管理员
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`base/Member/components/ProjectPermissions should render permissions with multiple data sources 1`] = `
+<body>
+  <div>
+    <div
+      class="ant-space ant-space-vertical"
+    >
+      <div
+        class="ant-space-item"
+        style="margin-bottom: 8px;"
+      >
+        <div
+          class="ant-space ant-space-vertical"
+        >
+          <div
+            class="ant-space-item"
+            style="margin-bottom: 8px;"
+          >
+            <span
+              class="ant-typography"
+            >
+              MySQL-1
+              :
+            </span>
+          </div>
+          <div
+            class="ant-space-item"
+          >
+            <div
+              class="ant-space ant-space-horizontal ant-space-align-center"
+              style="flex-wrap: wrap; margin-bottom: -4px;"
+            >
+              <div
+                class="ant-space-item"
+                style="margin-right: 4px; padding-bottom: 4px;"
+              >
+                <span
+                  class="ant-tag ant-tag-default basic-tag-wrapper basic-small-tag-wrapper css-1mjwlcb"
+                  style="height: 28px;"
+                >
+                  管理员
+                </span>
+              </div>
+              <div
+                class="ant-space-item"
+                style="padding-bottom: 4px;"
+              >
+                <span
+                  class="ant-tag ant-tag-default basic-tag-wrapper basic-small-tag-wrapper css-1mjwlcb"
+                  style="height: 28px;"
+                >
+                  开发者
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="ant-space-item"
+      >
+        <div
+          class="ant-space ant-space-vertical"
+        >
+          <div
+            class="ant-space-item"
+            style="margin-bottom: 8px;"
+          >
+            <span
+              class="ant-typography"
+            >
+              PostgreSQL-1
+              :
+            </span>
+          </div>
+          <div
+            class="ant-space-item"
+          >
+            <div
+              class="ant-space ant-space-horizontal ant-space-align-center"
+              style="flex-wrap: wrap; margin-bottom: -4px;"
+            >
+              <div
+                class="ant-space-item"
+                style="padding-bottom: 4px;"
+              >
+                <span
+                  class="ant-tag ant-tag-default basic-tag-wrapper basic-small-tag-wrapper css-1mjwlcb"
+                  style="height: 28px;"
+                >
+                  测试员
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`base/Member/components/ProjectPermissions should render role tags with proper keys 1`] = `
+<body>
+  <div>
+    <div
+      class="ant-space ant-space-vertical"
+    >
+      <div
+        class="ant-space-item"
+      >
+        <div
+          class="ant-space ant-space-vertical"
+        >
+          <div
+            class="ant-space-item"
+            style="margin-bottom: 8px;"
+          >
+            <span
+              class="ant-typography"
+            >
+              MySQL-1
+              :
+            </span>
+          </div>
+          <div
+            class="ant-space-item"
+          >
+            <div
+              class="ant-space ant-space-horizontal ant-space-align-center"
+              style="flex-wrap: wrap; margin-bottom: -4px;"
+            >
+              <div
+                class="ant-space-item"
+                style="margin-right: 4px; padding-bottom: 4px;"
+              >
+                <span
+                  class="ant-tag ant-tag-default basic-tag-wrapper basic-small-tag-wrapper css-1mjwlcb"
+                  style="height: 28px;"
+                >
+                  管理员
+                </span>
+              </div>
+              <div
+                class="ant-space-item"
+                style="padding-bottom: 4px;"
+              >
+                <span
+                  class="ant-tag ant-tag-default basic-tag-wrapper basic-small-tag-wrapper css-1mjwlcb"
+                  style="height: 28px;"
+                >
+                  管理员
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+`;
