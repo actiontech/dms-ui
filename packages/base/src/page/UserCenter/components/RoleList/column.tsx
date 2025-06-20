@@ -8,6 +8,7 @@ import { Space, Popover, Typography } from 'antd';
 import { BasicTypographyEllipsis } from '@actiontech/shared';
 import { TableColumnWithIconStyleWrapper } from '@actiontech/shared/lib/styleWrapper/element';
 import { CheckHexagonOutlined, CloseHexagonOutlined } from '@actiontech/icons';
+import { groupBy } from 'lodash';
 
 export const roleListColumns: () => ActiontechTableColumn<IListRole> = () => [
   {
@@ -49,15 +50,25 @@ export const roleListColumns: () => ActiontechTableColumn<IListRole> = () => [
       const sortedList = orderBy(list, ['name'], ['asc']);
       const displayList = sortedList.slice(0, 3);
 
-      const allPermissionsContent = (
-        <Space wrap>{generateTag(sortedList)}</Space>
+      const groupedPermissions = groupBy(list, 'module');
+      const allPermissionsContent = Object.keys(groupedPermissions).map(
+        (key, index) => {
+          return (
+            <Space direction="vertical" key={index}>
+              {`${key}:`}
+              <Space wrap>{generateTag(groupedPermissions[key])}</Space>
+            </Space>
+          );
+        }
       );
 
       return (
         <Space wrap>
           {generateTag(displayList)}
           <Popover
-            content={allPermissionsContent}
+            content={
+              <Space direction="vertical">{allPermissionsContent}</Space>
+            }
             placement="top"
             overlayStyle={{ maxWidth: 450 }}
             trigger="click"

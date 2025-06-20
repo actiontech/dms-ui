@@ -3,6 +3,7 @@ import { Checkbox, Space, Typography } from 'antd';
 import { IListOpPermission } from '@actiontech/shared/lib/api/base/service/common';
 import { groupBy } from 'lodash';
 import { OpPermissionCheckboxGroupStyleWrapper } from '../style';
+import classNames from 'classnames';
 
 export interface IOpPermissionCheckboxGroupProps {
   value?: string[];
@@ -48,7 +49,9 @@ const OpPermissionCheckboxGroup: React.FC<IOpPermissionCheckboxGroupProps> = ({
         key={moduleName}
         direction="vertical"
         size={4}
-        isLast={isLast}
+        className={classNames({
+          'last-group': isLast
+        })}
       >
         <Typography.Text type="secondary">{moduleName}</Typography.Text>
         <div>
