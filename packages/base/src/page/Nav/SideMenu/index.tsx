@@ -4,7 +4,7 @@ import { useRequest } from 'ahooks';
 import { SideMenuStyleWrapper } from '@actiontech/shared/lib/styleWrapper/nav';
 import ProjectSelector from './ProjectSelector';
 import useRecentlyOpenedProjects from './useRecentlyOpenedProjects';
-import { useCurrentUser } from '@actiontech/shared/lib/features';
+import { useCurrentUser, usePermission } from '@actiontech/shared/lib/features';
 import { ProjectSelectorLabelStyleWrapper } from './ProjectSelector/style';
 import UserMenu from './UserMenu';
 import ProjectTitle from './ProjectTitle';
@@ -25,20 +25,28 @@ import { ProjectTitleStyleWrapper } from './style';
 import { ResponseCode } from '@actiontech/shared/lib/enum';
 import { EmptyBox } from '@actiontech/shared';
 import useRecentlySelectedZone from '../../../hooks/useRecentlySelectedZone';
+import useFetchPermissionData from '../../../hooks/useFetchPermissionData';
+import { updateUserOperationPermissions } from '../../../store/permission';
 
 const SideMenu: React.FC = () => {
   const navigate = useTypedNavigate();
   const dispatch = useDispatch();
+
+  const { userOperationPermissions } = usePermission();
+
+  const { fetchUserPermissions, isUserPermissionsLoading } =
+    useFetchPermissionData();
 
   const { verifyRecentlySelectedZoneRecord } = useRecentlySelectedZone();
 
   const [systemModuleRedDotsLoading, setSystemModuleRedDotsLoading] =
     useState(false);
 
-  const { username, theme, updateTheme, bindProjects, language } =
+  const { username, theme, updateTheme, bindProjects, language, userId } =
     useCurrentUser();
 
-  const { recentlyProjects, currentProjectID } = useRecentlyOpenedProjects();
+  const { recentlyProjects, currentProjectID, getRecentlyProjectId } =
+    useRecentlyOpenedProjects();
 
   const {
     data: projectList,
@@ -147,6 +155,24 @@ const SideMenu: React.FC = () => {
       params: { projectID }
     });
   };
+
+  useEffect(() => {
+    const id = getRecentlyProjectId();
+    if (!!id && !userOperationPermissions && !isUserPermissionsLoading) {
+      fetchUserPermissions(id, userId).then((response) => {
+        if (response.data.code === ResponseCode.SUCCESS) {
+          dispatch(updateUserOperationPermissions(response.data.data));
+        }
+      });
+    }
+  }, [
+    dispatch,
+    fetchUserPermissions,
+    getRecentlyProjectId,
+    userId,
+    userOperationPermissions,
+    isUserPermissionsLoading
+  ]);
 
   useEffect(() => {
     const { unsubscribe } = EventEmitter.subscribe(
