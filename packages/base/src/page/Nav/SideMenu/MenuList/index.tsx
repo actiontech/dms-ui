@@ -25,7 +25,7 @@ type Props = {
 
 const MenuList: React.FC<Props> = ({ projectID }) => {
   const location = useLocation();
-  const { checkPagePermission } = usePermission();
+  const { checkPagePermission, userOperationPermissions } = usePermission();
   const { t } = useTranslation();
 
   const menuItems = useMemo(() => {
@@ -72,7 +72,7 @@ const MenuList: React.FC<Props> = ({ projectID }) => {
       requiredMenus: CustomMenuItemType[]
     ): CustomMenuItemType[] => {
       return requiredMenus.filter((menu) => {
-        if (menu?.permission) {
+        if (menu?.permission && userOperationPermissions) {
           return checkPagePermission(menu.permission);
         }
 
@@ -92,7 +92,7 @@ const MenuList: React.FC<Props> = ({ projectID }) => {
       }
       return true;
     });
-  }, [projectID, t, checkPagePermission]);
+  }, [projectID, t, checkPagePermission, userOperationPermissions]);
 
   const selectMenu = useCallback(
     (config: MenuProps['items'] = [], pathname: string): string[] => {

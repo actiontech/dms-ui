@@ -124,7 +124,7 @@ function App() {
 
   const { isDriverInfoFetched, updateDriverList } = useDbServiceDriver();
 
-  const { checkPagePermission } = usePermission();
+  const { checkPagePermission, userOperationPermissions } = usePermission();
 
   // #if [ee]
   const { syncWebTitleAndLogo } = useSystemConfig();
@@ -162,11 +162,20 @@ function App() {
       }, verifiedRoutes);
     };
 
-    if (isUserInfoFetched && isFeatureSupportFetched) {
+    if (
+      isUserInfoFetched &&
+      isFeatureSupportFetched &&
+      userOperationPermissions
+    ) {
       return filterRoutesByPermission(AuthRouterConfig);
     }
     return AuthRouterConfig;
-  }, [checkPagePermission, isFeatureSupportFetched, isUserInfoFetched]);
+  }, [
+    checkPagePermission,
+    isFeatureSupportFetched,
+    isUserInfoFetched,
+    userOperationPermissions
+  ]);
 
   const elements = useRoutes(
     token ? (AuthRouterConfigData as RouteObject[]) : unAuthRouterConfig

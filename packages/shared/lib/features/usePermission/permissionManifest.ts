@@ -13,6 +13,7 @@ export type PermissionDetail = {
     fieldName?: string;
     opType: OpPermissionItemOpPermissionTypeEnum;
   };
+  projectPermission?: OpPermissionItemOpPermissionTypeEnum;
 };
 
 export const PERMISSION_MANIFEST: Record<
@@ -57,6 +58,29 @@ export const PERMISSION_MANIFEST: Record<
       SystemRole.systemAdministrator,
       SystemRole.auditAdministrator
     ]
+  },
+  [PERMISSIONS.PAGES.BASE.MEMBER]: {
+    id: PERMISSIONS.PAGES.BASE.MEMBER,
+    type: 'page',
+    role: [
+      SystemRole.admin,
+      SystemRole.systemAdministrator,
+      SystemRole.auditAdministrator,
+      SystemRole.projectDirector
+    ],
+    projectPermission: OpPermissionItemOpPermissionTypeEnum.manage_member
+  },
+  [PERMISSIONS.PAGES.BASE.DB_SERVICE]: {
+    id: PERMISSIONS.PAGES.BASE.DB_SERVICE,
+    type: 'page',
+    role: [
+      SystemRole.admin,
+      SystemRole.systemAdministrator,
+      SystemRole.auditAdministrator,
+      SystemRole.projectDirector
+    ],
+    projectPermission:
+      OpPermissionItemOpPermissionTypeEnum.manage_project_data_source
   },
   [PERMISSIONS.PAGES.SQLE.REPORT_STATISTICS]: {
     id: PERMISSIONS.PAGES.SQLE.REPORT_STATISTICS,
@@ -114,6 +138,65 @@ export const PERMISSION_MANIFEST: Record<
       SystemRole.certainProjectManager
     ]
   },
+  [PERMISSIONS.PAGES.SQLE.PROJECT_RULE_TEMPLATE]: {
+    id: PERMISSIONS.PAGES.SQLE.PROJECT_RULE_TEMPLATE,
+    type: 'page',
+    role: [
+      SystemRole.admin,
+      SystemRole.systemAdministrator,
+      SystemRole.auditAdministrator,
+      SystemRole.projectDirector
+    ],
+    projectPermission:
+      OpPermissionItemOpPermissionTypeEnum.manage_audit_rule_template
+  },
+  [PERMISSIONS.PAGES.SQLE.WORKFLOW_TEMPLATE]: {
+    id: PERMISSIONS.PAGES.SQLE.WORKFLOW_TEMPLATE,
+    type: 'page',
+    role: [
+      SystemRole.admin,
+      SystemRole.systemAdministrator,
+      SystemRole.auditAdministrator,
+      SystemRole.projectDirector
+    ],
+    projectPermission:
+      OpPermissionItemOpPermissionTypeEnum.manage_approval_template
+  },
+  [PERMISSIONS.PAGES.SQLE.PUSH_RULE_CONFIGURATION]: {
+    id: PERMISSIONS.PAGES.SQLE.PUSH_RULE_CONFIGURATION,
+    type: 'page',
+    role: [
+      SystemRole.admin,
+      SystemRole.systemAdministrator,
+      SystemRole.auditAdministrator,
+      SystemRole.projectDirector
+    ],
+    projectPermission: OpPermissionItemOpPermissionTypeEnum.manage_push_rule
+  },
+  [PERMISSIONS.PAGES.SQLE.WHITE_LIST]: {
+    id: PERMISSIONS.PAGES.SQLE.WHITE_LIST,
+    type: 'page',
+    role: [
+      SystemRole.admin,
+      SystemRole.systemAdministrator,
+      SystemRole.auditAdministrator,
+      SystemRole.projectDirector
+    ],
+    projectPermission:
+      OpPermissionItemOpPermissionTypeEnum.manage_audit_sql_white_list
+  },
+  [PERMISSIONS.PAGES.SQLE.SQL_MANAGEMENT_EXCEPTION]: {
+    id: PERMISSIONS.PAGES.SQLE.SQL_MANAGEMENT_EXCEPTION,
+    type: 'page',
+    role: [
+      SystemRole.admin,
+      SystemRole.systemAdministrator,
+      SystemRole.auditAdministrator,
+      SystemRole.projectDirector
+    ],
+    projectPermission:
+      OpPermissionItemOpPermissionTypeEnum.manage_sql_mange_white_list
+  },
   // action
 
   //cloud beaver
@@ -126,7 +209,9 @@ export const PERMISSION_MANIFEST: Record<
     type: 'action',
     role: [SystemRole.admin, SystemRole.systemAdministrator],
     projectManager: true,
-    projectArchived: false
+    projectArchived: false,
+    projectPermission:
+      OpPermissionItemOpPermissionTypeEnum.manage_audit_sql_white_list
   },
 
   //数据源
@@ -135,14 +220,18 @@ export const PERMISSION_MANIFEST: Record<
     type: 'action',
     role: [SystemRole.admin, SystemRole.systemAdministrator],
     projectManager: true,
-    projectArchived: false
+    projectArchived: false,
+    projectPermission:
+      OpPermissionItemOpPermissionTypeEnum.manage_project_data_source
   },
   [PERMISSIONS.ACTIONS.BASE.DB_SERVICE.BATCH_IMPORT]: {
     id: PERMISSIONS.ACTIONS.BASE.DB_SERVICE.BATCH_IMPORT,
     type: 'action',
     role: [SystemRole.admin, SystemRole.systemAdministrator],
     projectManager: true,
-    projectArchived: false
+    projectArchived: false,
+    projectPermission:
+      OpPermissionItemOpPermissionTypeEnum.manage_project_data_source
   },
   [PERMISSIONS.ACTIONS.BASE.DB_SERVICE.CREATE_AUDIT_PLAN]: {
     id: PERMISSIONS.ACTIONS.BASE.DB_SERVICE.CREATE_AUDIT_PLAN,
@@ -153,21 +242,27 @@ export const PERMISSION_MANIFEST: Record<
     dbServicePermission: {
       fieldName: 'uid',
       opType: OpPermissionItemOpPermissionTypeEnum.save_audit_plan
-    }
+    },
+    projectPermission:
+      OpPermissionItemOpPermissionTypeEnum.manage_project_data_source
   },
   [PERMISSIONS.ACTIONS.BASE.DB_SERVICE.EDIT]: {
     id: PERMISSIONS.ACTIONS.BASE.DB_SERVICE.EDIT,
     type: 'action',
     role: [SystemRole.admin, SystemRole.systemAdministrator],
     projectManager: true,
-    projectArchived: false
+    projectArchived: false,
+    projectPermission:
+      OpPermissionItemOpPermissionTypeEnum.manage_project_data_source
   },
   [PERMISSIONS.ACTIONS.BASE.DB_SERVICE.DELETE]: {
     id: PERMISSIONS.ACTIONS.BASE.DB_SERVICE.DELETE,
     type: 'action',
     role: [SystemRole.admin, SystemRole.systemAdministrator],
     projectManager: true,
-    projectArchived: false
+    projectArchived: false,
+    projectPermission:
+      OpPermissionItemOpPermissionTypeEnum.manage_project_data_source
   },
   [PERMISSIONS.ACTIONS.BASE.DB_SERVICE.TEST]: {
     id: PERMISSIONS.ACTIONS.BASE.DB_SERVICE.TEST,
@@ -184,7 +279,9 @@ export const PERMISSION_MANIFEST: Record<
     type: 'action',
     projectArchived: false,
     role: [SystemRole.admin, SystemRole.systemAdministrator],
-    projectManager: true
+    projectManager: true,
+    projectPermission:
+      OpPermissionItemOpPermissionTypeEnum.manage_project_data_source
   },
 
   //用户中心
@@ -457,49 +554,56 @@ export const PERMISSION_MANIFEST: Record<
     type: 'action',
     role: [SystemRole.admin, SystemRole.systemAdministrator],
     projectManager: true,
-    projectArchived: false
+    projectArchived: false,
+    projectPermission: OpPermissionItemOpPermissionTypeEnum.manage_member
   },
   [PERMISSIONS.ACTIONS.BASE.MEMBER.EDIT_MEMBER]: {
     id: PERMISSIONS.ACTIONS.BASE.MEMBER.EDIT_MEMBER,
     type: 'action',
     role: [SystemRole.admin, SystemRole.systemAdministrator],
     projectManager: true,
-    projectArchived: false
+    projectArchived: false,
+    projectPermission: OpPermissionItemOpPermissionTypeEnum.manage_member
   },
   [PERMISSIONS.ACTIONS.BASE.MEMBER.DELETE_MEMBER]: {
     id: PERMISSIONS.ACTIONS.BASE.MEMBER.DELETE_MEMBER,
     type: 'action',
     role: [SystemRole.admin, SystemRole.systemAdministrator],
     projectManager: true,
-    projectArchived: false
+    projectArchived: false,
+    projectPermission: OpPermissionItemOpPermissionTypeEnum.manage_member
   },
   [PERMISSIONS.ACTIONS.BASE.MEMBER.MANAGE_MEMBER_GROUP]: {
     id: PERMISSIONS.ACTIONS.BASE.MEMBER.MANAGE_MEMBER_GROUP,
     type: 'action',
     role: [SystemRole.admin, SystemRole.systemAdministrator],
     projectManager: true,
-    projectArchived: false
+    projectArchived: false,
+    projectPermission: OpPermissionItemOpPermissionTypeEnum.manage_member
   },
   [PERMISSIONS.ACTIONS.BASE.MEMBER.ADD_MEMBER_GROUP]: {
     id: PERMISSIONS.ACTIONS.BASE.MEMBER.ADD_MEMBER_GROUP,
     type: 'action',
     role: [SystemRole.admin, SystemRole.systemAdministrator],
     projectManager: true,
-    projectArchived: false
+    projectArchived: false,
+    projectPermission: OpPermissionItemOpPermissionTypeEnum.manage_member
   },
   [PERMISSIONS.ACTIONS.BASE.MEMBER.EDIT_MEMBER_GROUP]: {
     id: PERMISSIONS.ACTIONS.BASE.MEMBER.EDIT_MEMBER_GROUP,
     type: 'action',
     role: [SystemRole.admin, SystemRole.systemAdministrator],
     projectManager: true,
-    projectArchived: false
+    projectArchived: false,
+    projectPermission: OpPermissionItemOpPermissionTypeEnum.manage_member
   },
   [PERMISSIONS.ACTIONS.BASE.MEMBER.DELETE_MEMBER_GROUP]: {
     id: PERMISSIONS.ACTIONS.BASE.MEMBER.DELETE_MEMBER_GROUP,
     type: 'action',
     role: [SystemRole.admin, SystemRole.systemAdministrator],
     projectManager: true,
-    projectArchived: false
+    projectArchived: false,
+    projectPermission: OpPermissionItemOpPermissionTypeEnum.manage_member
   },
 
   // 数据导出
@@ -514,7 +618,9 @@ export const PERMISSION_MANIFEST: Record<
     type: 'action',
     role: [SystemRole.admin, SystemRole.systemAdministrator],
     projectManager: true,
-    projectArchived: false
+    projectArchived: false,
+    projectPermission:
+      OpPermissionItemOpPermissionTypeEnum.manage_audit_sql_white_list
   },
   [PERMISSIONS.ACTIONS.BASE.DATA_EXPORT.CREATE]: {
     id: PERMISSIONS.ACTIONS.BASE.DATA_EXPORT.CREATE,
@@ -617,10 +723,12 @@ export const PERMISSION_MANIFEST: Record<
     type: 'action',
     role: [SystemRole.admin, SystemRole.systemAdministrator],
     projectManager: true,
-    projectArchived: false
+    projectArchived: false,
+    projectPermission:
+      OpPermissionItemOpPermissionTypeEnum.manage_audit_sql_white_list
   },
   [PERMISSIONS.ACTIONS.SQLE.SQL_EXEC_WORKFLOW.BATCH_CLOSE]: {
-    id: PERMISSIONS.ACTIONS.SQLE.SQL_EXEC_WORKFLOW.CREATE_WHITE_LIST,
+    id: PERMISSIONS.ACTIONS.SQLE.SQL_EXEC_WORKFLOW.BATCH_CLOSE,
     type: 'action',
     role: [SystemRole.admin, SystemRole.systemAdministrator]
   },
@@ -662,14 +770,18 @@ export const PERMISSION_MANIFEST: Record<
     type: 'action',
     role: [SystemRole.admin, SystemRole.systemAdministrator],
     projectManager: true,
-    projectArchived: false
+    projectArchived: false,
+    projectPermission:
+      OpPermissionItemOpPermissionTypeEnum.manage_sql_mange_white_list
   },
   [PERMISSIONS.ACTIONS.SQLE.SQL_MANAGEMENT.CREATE_WHITE_LIST]: {
     id: PERMISSIONS.ACTIONS.SQLE.SQL_MANAGEMENT.CREATE_WHITE_LIST,
     type: 'action',
     role: [SystemRole.admin, SystemRole.systemAdministrator],
     projectManager: true,
-    projectArchived: false
+    projectArchived: false,
+    projectPermission:
+      OpPermissionItemOpPermissionTypeEnum.manage_audit_sql_white_list
   },
   [PERMISSIONS.ACTIONS.SQLE.SQL_MANAGEMENT.BATCH_ASSIGNMENT]: {
     id: PERMISSIONS.ACTIONS.SQLE.SQL_MANAGEMENT.BATCH_ASSIGNMENT,
@@ -697,7 +809,9 @@ export const PERMISSION_MANIFEST: Record<
     type: 'action',
     role: [SystemRole.admin, SystemRole.systemAdministrator],
     projectManager: true,
-    projectArchived: false
+    projectArchived: false,
+    projectPermission:
+      OpPermissionItemOpPermissionTypeEnum.manage_audit_sql_white_list
   },
   [PERMISSIONS.ACTIONS.SQLE.SQL_MANAGEMENT.EDIT_REMARK]: {
     id: PERMISSIONS.ACTIONS.SQLE.SQL_MANAGEMENT.ACTION_LAYOUT,
@@ -720,21 +834,27 @@ export const PERMISSION_MANIFEST: Record<
     type: 'action',
     role: [SystemRole.admin, SystemRole.systemAdministrator],
     projectManager: true,
-    projectArchived: false
+    projectArchived: false,
+    projectPermission:
+      OpPermissionItemOpPermissionTypeEnum.manage_sql_mange_white_list
   },
   [PERMISSIONS.ACTIONS.SQLE.SQL_MANAGEMENT_EXCEPTION.EDIT]: {
     id: PERMISSIONS.ACTIONS.SQLE.SQL_MANAGEMENT_EXCEPTION.EDIT,
     type: 'action',
     role: [SystemRole.admin, SystemRole.systemAdministrator],
     projectManager: true,
-    projectArchived: false
+    projectArchived: false,
+    projectPermission:
+      OpPermissionItemOpPermissionTypeEnum.manage_sql_mange_white_list
   },
   [PERMISSIONS.ACTIONS.SQLE.SQL_MANAGEMENT_EXCEPTION.DELETE]: {
     id: PERMISSIONS.ACTIONS.SQLE.SQL_MANAGEMENT_EXCEPTION.DELETE,
     type: 'action',
     role: [SystemRole.admin, SystemRole.systemAdministrator],
     projectManager: true,
-    projectArchived: false
+    projectArchived: false,
+    projectPermission:
+      OpPermissionItemOpPermissionTypeEnum.manage_sql_mange_white_list
   },
 
   //审核SQL例外
@@ -743,21 +863,27 @@ export const PERMISSION_MANIFEST: Record<
     type: 'action',
     role: [SystemRole.admin, SystemRole.systemAdministrator],
     projectManager: true,
-    projectArchived: false
+    projectArchived: false,
+    projectPermission:
+      OpPermissionItemOpPermissionTypeEnum.manage_audit_sql_white_list
   },
   [PERMISSIONS.ACTIONS.SQLE.WHITE_LIST.EDIT]: {
     id: PERMISSIONS.ACTIONS.SQLE.WHITE_LIST.EDIT,
     type: 'action',
     role: [SystemRole.admin, SystemRole.systemAdministrator],
     projectManager: true,
-    projectArchived: false
+    projectArchived: false,
+    projectPermission:
+      OpPermissionItemOpPermissionTypeEnum.manage_audit_sql_white_list
   },
   [PERMISSIONS.ACTIONS.SQLE.WHITE_LIST.DELETE]: {
     id: PERMISSIONS.ACTIONS.SQLE.WHITE_LIST.DELETE,
     type: 'action',
     role: [SystemRole.admin, SystemRole.systemAdministrator],
     projectManager: true,
-    projectArchived: false
+    projectArchived: false,
+    projectPermission:
+      OpPermissionItemOpPermissionTypeEnum.manage_audit_sql_white_list
   },
 
   // 审批流程模板
@@ -766,7 +892,9 @@ export const PERMISSION_MANIFEST: Record<
     type: 'action',
     role: [SystemRole.admin, SystemRole.systemAdministrator],
     projectManager: true,
-    projectArchived: false
+    projectArchived: false,
+    projectPermission:
+      OpPermissionItemOpPermissionTypeEnum.manage_approval_template
   },
 
   // 审核规则模板
@@ -775,40 +903,52 @@ export const PERMISSION_MANIFEST: Record<
     type: 'action',
     role: [SystemRole.admin, SystemRole.systemAdministrator],
     projectManager: true,
-    projectArchived: false
+    projectArchived: false,
+    projectPermission:
+      OpPermissionItemOpPermissionTypeEnum.manage_audit_rule_template
   },
   [PERMISSIONS.ACTIONS.SQLE.PROJECT_RULE_TEMPLATE.IMPORT]: {
     id: PERMISSIONS.ACTIONS.SQLE.PROJECT_RULE_TEMPLATE.IMPORT,
     type: 'action',
     role: [SystemRole.admin, SystemRole.systemAdministrator],
     projectManager: true,
-    projectArchived: false
+    projectArchived: false,
+    projectPermission:
+      OpPermissionItemOpPermissionTypeEnum.manage_audit_rule_template
   },
   [PERMISSIONS.ACTIONS.SQLE.PROJECT_RULE_TEMPLATE.EDIT]: {
     id: PERMISSIONS.ACTIONS.SQLE.PROJECT_RULE_TEMPLATE.EDIT,
     type: 'action',
     role: [SystemRole.admin, SystemRole.systemAdministrator],
     projectManager: true,
-    projectArchived: false
+    projectArchived: false,
+    projectPermission:
+      OpPermissionItemOpPermissionTypeEnum.manage_audit_rule_template
   },
   [PERMISSIONS.ACTIONS.SQLE.PROJECT_RULE_TEMPLATE.DELETE]: {
     id: PERMISSIONS.ACTIONS.SQLE.PROJECT_RULE_TEMPLATE.DELETE,
     type: 'action',
     role: [SystemRole.admin, SystemRole.systemAdministrator],
     projectManager: true,
-    projectArchived: false
+    projectArchived: false,
+    projectPermission:
+      OpPermissionItemOpPermissionTypeEnum.manage_audit_rule_template
   },
   [PERMISSIONS.ACTIONS.SQLE.PROJECT_RULE_TEMPLATE.CLONE]: {
     id: PERMISSIONS.ACTIONS.SQLE.PROJECT_RULE_TEMPLATE.CLONE,
     type: 'action',
     role: [SystemRole.admin, SystemRole.systemAdministrator],
-    projectManager: true
+    projectManager: true,
+    projectPermission:
+      OpPermissionItemOpPermissionTypeEnum.manage_audit_rule_template
   },
   [PERMISSIONS.ACTIONS.SQLE.PROJECT_RULE_TEMPLATE.EXPORT]: {
     id: PERMISSIONS.ACTIONS.SQLE.PROJECT_RULE_TEMPLATE.EXPORT,
     type: 'action',
     role: [SystemRole.admin, SystemRole.systemAdministrator],
-    projectManager: true
+    projectManager: true,
+    projectPermission:
+      OpPermissionItemOpPermissionTypeEnum.manage_audit_rule_template
   },
 
   // 知识库
@@ -825,7 +965,8 @@ export const PERMISSION_MANIFEST: Record<
       .WORKFLOW_MODIFICATION_NOTIFIER_SWITCHER_SWITCH,
     type: 'action',
     role: [SystemRole.admin, SystemRole.systemAdministrator],
-    projectManager: true
+    projectManager: true,
+    projectPermission: OpPermissionItemOpPermissionTypeEnum.manage_push_rule
   },
   [PERMISSIONS.ACTIONS.SQLE.PUSH_RULE_CONFIGURATION
     .SQL_MANAGEMENT_ISSUE_PUSH_SWITCH]: {
@@ -833,7 +974,8 @@ export const PERMISSION_MANIFEST: Record<
       .SQL_MANAGEMENT_ISSUE_PUSH_SWITCH,
     type: 'action',
     role: [SystemRole.admin, SystemRole.systemAdministrator],
-    projectManager: true
+    projectManager: true,
+    projectPermission: OpPermissionItemOpPermissionTypeEnum.manage_push_rule
   },
 
   // 查看规则
@@ -851,7 +993,9 @@ export const PERMISSION_MANIFEST: Record<
     type: 'action',
     role: [SystemRole.admin, SystemRole.systemAdministrator],
     projectManager: true,
-    projectArchived: false
+    projectArchived: false,
+    projectPermission:
+      OpPermissionItemOpPermissionTypeEnum.manage_audit_sql_white_list
   },
 
   // 数据源结构对比

@@ -187,12 +187,14 @@ export const BaseProjectRouterConfig: RouterConfigItem[] = [
   {
     path: ROUTE_PATHS.BASE.MEMBER.index.path,
     key: 'member',
-    element: <Member />
+    element: <Member />,
+    permission: PERMISSIONS.PAGES.BASE.MEMBER
   },
   {
     path: ROUTE_PATHS.BASE.DATA_SOURCE.index.path,
     key: 'dataSource',
     element: <DataSource />,
+    permission: PERMISSIONS.PAGES.BASE.DB_SERVICE,
     children: [
       {
         index: true,
