@@ -68,6 +68,7 @@ exports[`test genMenuItemsWithMenuStructTree should match snapshot 3`] = `
         >
           数据源
         </ForwardRef(TypedLink)>,
+        "permission": "page:db_service",
         "structKey": "instance",
         "to": "/project/600300/db-services",
       },
@@ -84,6 +85,7 @@ exports[`test genMenuItemsWithMenuStructTree should match snapshot 3`] = `
         >
           成员与权限
         </ForwardRef(TypedLink)>,
+        "permission": "page:member",
         "structKey": "member",
         "to": "/project/600300/member",
       },
@@ -320,6 +322,7 @@ exports[`test genMenuItemsWithMenuStructTree should match snapshot 4`] = `
         >
           数据源
         </ForwardRef(TypedLink)>,
+        "permission": "page:db_service",
         "structKey": "instance",
         "to": "/project/600300/db-services",
       },
@@ -335,6 +338,7 @@ exports[`test genMenuItemsWithMenuStructTree should match snapshot 4`] = `
         >
           审核规则模板
         </ForwardRef(TypedLink)>,
+        "permission": "page:project_rule_template",
         "structKey": "rule-template",
         "to": "/sqle/project/600300/rule/template",
       },
@@ -349,6 +353,7 @@ exports[`test genMenuItemsWithMenuStructTree should match snapshot 4`] = `
         >
           审批流程模板
         </ForwardRef(TypedLink)>,
+        "permission": "page: workflow_template",
         "structKey": "workflow-template",
         "to": "/sqle/project/600300/progress",
       },
@@ -363,6 +368,7 @@ exports[`test genMenuItemsWithMenuStructTree should match snapshot 4`] = `
         >
           成员与权限
         </ForwardRef(TypedLink)>,
+        "permission": "page:member",
         "structKey": "member",
         "to": "/project/600300/member",
       },
@@ -377,6 +383,7 @@ exports[`test genMenuItemsWithMenuStructTree should match snapshot 4`] = `
         >
           推送规则
         </ForwardRef(TypedLink)>,
+        "permission": "page:push_rule_configuration",
         "structKey": "push-rule-configuration",
         "to": "/sqle/project/600300/push-rule",
       },
@@ -391,6 +398,7 @@ exports[`test genMenuItemsWithMenuStructTree should match snapshot 4`] = `
         >
           审核SQL例外
         </ForwardRef(TypedLink)>,
+        "permission": "page:white_list",
         "structKey": "whitelist",
         "to": "/sqle/project/600300/whitelist",
       },
@@ -405,6 +413,7 @@ exports[`test genMenuItemsWithMenuStructTree should match snapshot 4`] = `
         >
           管控SQL例外
         </ForwardRef(TypedLink)>,
+        "permission": "page:sql_management_exception",
         "structKey": "sql-management-exception",
         "to": "/sqle/project/600300/sql-management-exception",
       },
