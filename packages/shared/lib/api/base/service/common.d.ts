@@ -1885,9 +1885,17 @@ export interface IListRole {
 
   name?: string;
 
-  op_permissions?: IUidWithName[];
+  op_permissions?: IListRoleOpPermission[];
 
   stat?: ListRoleStatEnum;
+
+  uid?: string;
+}
+
+export interface IListRoleOpPermission {
+  module?: string;
+
+  name?: string;
 
   uid?: string;
 }
