@@ -184,6 +184,50 @@ describe('usePermission', () => {
         PERMISSIONS.PAGES.SQLE.SQL_OPTIMIZATION
       )
     ).toBeFalsy();
+
+    // case 2: check page permission when project permission is not undefined
+    mockUseCurrentUser({
+      userRoles: {
+        [SystemRole.admin]: false,
+        [SystemRole.certainProjectManager]: false,
+        [SystemRole.systemAdministrator]: false,
+        [SystemRole.projectDirector]: false,
+        [SystemRole.auditAdministrator]: false
+      }
+    });
+    mockState.permission.userOperationPermissions.op_permission_list = [
+      {
+        range_type: OpPermissionItemRangeTypeEnum.project,
+        range_uids: [mockProjectInfo.projectID, '2233'],
+        op_permission_type: OpPermissionItemOpPermissionTypeEnum.manage_member
+      }
+    ];
+    const { result: case2Result } = renderHook(() => usePermission());
+
+    expect(
+      case2Result.current.checkPagePermission(PERMISSIONS.PAGES.BASE.DB_SERVICE)
+    ).toBeFalsy();
+
+    expect(
+      case2Result.current.checkPagePermission(PERMISSIONS.PAGES.BASE.MEMBER)
+    ).toBeTruthy();
+
+    mockState.permission.userOperationPermissions.op_permission_list = [
+      {
+        range_type: OpPermissionItemRangeTypeEnum.project,
+        range_uids: [mockProjectInfo.projectID, '2233'],
+        op_permission_type:
+          OpPermissionItemOpPermissionTypeEnum.manage_project_data_source
+      }
+    ];
+
+    expect(
+      case2Result.current.checkPagePermission(PERMISSIONS.PAGES.BASE.DB_SERVICE)
+    ).toBeTruthy();
+
+    expect(
+      case2Result.current.checkPagePermission(PERMISSIONS.PAGES.BASE.MEMBER)
+    ).toBeFalsy();
   });
 
   it('should check action permission correctly', () => {
@@ -370,6 +414,40 @@ describe('usePermission', () => {
         { targetProjectID: '123' }
       )
     ).toBeTruthy();
+
+    // Case 7: Action requires project manager permission by target project id
+    mockState.permission.userOperationPermissions.is_admin = false;
+    mockUseCurrentUser({
+      userRoles: {
+        [SystemRole.admin]: false,
+        [SystemRole.certainProjectManager]: false,
+        [SystemRole.systemAdministrator]: false,
+        [SystemRole.projectDirector]: false,
+        [SystemRole.auditAdministrator]: false
+      }
+    });
+
+    rerender();
+    expect(
+      result.current.checkActionPermission(
+        PERMISSIONS.ACTIONS.BASE.DB_SERVICE.ADD,
+        { targetProjectID: '123' }
+      )
+    ).toBeFalsy();
+    mockState.permission.userOperationPermissions.op_permission_list = [
+      {
+        range_type: OpPermissionItemRangeTypeEnum.project,
+        range_uids: ['123'],
+        op_permission_type:
+          OpPermissionItemOpPermissionTypeEnum.manage_project_data_source
+      }
+    ];
+    expect(
+      result.current.checkActionPermission(
+        PERMISSIONS.ACTIONS.BASE.DB_SERVICE.ADD,
+        { targetProjectID: '123' }
+      )
+    ).toBeTruthy();
   });
 
   it('should parse table action permissions correctly', () => {
@@ -438,5 +516,39 @@ describe('usePermission', () => {
       expect(typeof parsedActionsArray[0].permissions).toBe('function');
       expect(parsedActionsArray[1].permissions).toBeUndefined();
     }
+  });
+
+  it('should check project permission correctly', () => {
+    const { result } = renderHook(() => usePermission());
+
+    expect(result.current.checkProjectPermission()).toBeFalsy();
+
+    expect(
+      result.current.checkProjectPermission(
+        OpPermissionItemOpPermissionTypeEnum.save_audit_plan
+      )
+    ).toBeFalsy();
+
+    mockState.permission.userOperationPermissions.is_admin = true;
+    expect(
+      result.current.checkProjectPermission(
+        OpPermissionItemOpPermissionTypeEnum.save_audit_plan
+      )
+    ).toBeTruthy();
+
+    mockState.permission.userOperationPermissions.is_admin = false;
+    mockState.permission.userOperationPermissions.op_permission_list = [
+      {
+        range_type: OpPermissionItemRangeTypeEnum.project,
+        range_uids: [mockProjectInfo.projectID, '2233'],
+        op_permission_type:
+          OpPermissionItemOpPermissionTypeEnum.manage_project_data_source
+      }
+    ];
+    expect(
+      result.current.checkProjectPermission(
+        OpPermissionItemOpPermissionTypeEnum.manage_project_data_source
+      )
+    ).toBeTruthy();
   });
 });

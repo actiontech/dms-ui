@@ -19,7 +19,8 @@ const mockUsePermissionData = {
   checkPagePermission: jest.fn(),
   checkActionPermission: jest.fn(),
   parse2TableActionPermissions: jest.fn(),
-  parse2TableToolbarActionPermissions: jest.fn()
+  parse2TableToolbarActionPermissions: jest.fn(),
+  checkProjectPermission: jest.fn()
 };
 
 export const mockUsePermission = (
