@@ -245,8 +245,6 @@ export enum OpPermissionItemOpPermissionTypeEnum {
 
   'view_pipeline' = 'view_pipeline',
 
-  'view_pending_sql_manage' = 'view_pending_sql_manage',
-
   'manage_project_data_source' = 'manage_project_data_source',
 
   'manage_audit_rule_template' = 'manage_audit_rule_template',
