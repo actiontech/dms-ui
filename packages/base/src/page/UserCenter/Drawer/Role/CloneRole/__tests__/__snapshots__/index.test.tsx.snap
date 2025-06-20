@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`base/UserCenter/Drawer/Role/UpdateRole should send update role request when click submit button 1`] = `
+exports[`base/UserCenter/Drawer/Role/CloneRole should send clone role request when click submit button 1`] = `
 <body>
   <div />
   <div>
@@ -38,7 +38,7 @@ exports[`base/UserCenter/Drawer/Role/UpdateRole should send update role request 
                 <div
                   class="ant-drawer-title"
                 >
-                  编辑角色
+                  克隆角色
                 </div>
               </div>
             </div>
@@ -101,15 +101,48 @@ exports[`base/UserCenter/Drawer/Role/UpdateRole should send update role request 
                         >
                           <input
                             aria-required="true"
-                            class="ant-input ant-input-disabled basic-input-wrapper css-1pd1cd5"
-                            disabled=""
+                            class="ant-input basic-input-wrapper css-1pd1cd5"
                             id="name"
                             placeholder="请输入角色名"
                             type="text"
-                            value="test"
+                            value="original_role"
                           />
                         </div>
                       </div>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="ant-alert ant-alert-info css-1pdpjom"
+                  data-show="true"
+                  role="alert"
+                >
+                  <span
+                    aria-label="info-circle"
+                    class="anticon anticon-info-circle ant-alert-icon"
+                    role="img"
+                  >
+                    <svg
+                      aria-hidden="true"
+                      data-icon="info-circle"
+                      fill="currentColor"
+                      focusable="false"
+                      height="1em"
+                      viewBox="64 64 896 896"
+                      width="1em"
+                    >
+                      <path
+                        d="M512 64C264.6 64 64 264.6 64 512s200.6 448 448 448 448-200.6 448-448S759.4 64 512 64zm32 664c0 4.4-3.6 8-8 8h-48c-4.4 0-8-3.6-8-8V456c0-4.4 3.6-8 8-8h48c4.4 0 8 3.6 8 8v272zm-32-344a48.01 48.01 0 010-96 48.01 48.01 0 010 96z"
+                      />
+                    </svg>
+                  </span>
+                  <div
+                    class="ant-alert-content"
+                  >
+                    <div
+                      class="ant-alert-message"
+                    >
+                      当前基于"original_role"角色进行克隆，请修改角色名称
                     </div>
                   </div>
                 </div>
@@ -146,60 +179,8 @@ exports[`base/UserCenter/Drawer/Role/UpdateRole should send update role request 
                             rows="3"
                             style="resize: none;"
                           >
-                            test desc
+                            original role description
                           </textarea>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div
-                  class="ant-form-item"
-                >
-                  <div
-                    class="ant-row ant-form-item-row"
-                  >
-                    <div
-                      class="ant-col ant-form-item-label"
-                    >
-                      <label
-                        class=""
-                        for="isDisabled"
-                        title="是否禁用"
-                      >
-                        是否禁用
-                      </label>
-                    </div>
-                    <div
-                      class="ant-col ant-form-item-control"
-                    >
-                      <div
-                        class="ant-form-item-control-input"
-                      >
-                        <div
-                          class="ant-form-item-control-input-content"
-                        >
-                          <button
-                            aria-checked="false"
-                            class="ant-switch"
-                            id="isDisabled"
-                            role="switch"
-                            type="button"
-                          >
-                            <div
-                              class="ant-switch-handle"
-                            />
-                            <span
-                              class="ant-switch-inner"
-                            >
-                              <span
-                                class="ant-switch-inner-checked"
-                              />
-                              <span
-                                class="ant-switch-inner-unchecked"
-                              />
-                            </span>
-                          </button>
                         </div>
                       </div>
                     </div>
@@ -303,12 +284,13 @@ exports[`base/UserCenter/Drawer/Role/UpdateRole should send update role request 
                                             </span>
                                           </label>
                                           <label
-                                            class="ant-checkbox-wrapper ant-checkbox-wrapper-in-form-item"
+                                            class="ant-checkbox-wrapper ant-checkbox-wrapper-checked ant-checkbox-wrapper-in-form-item"
                                           >
                                             <span
-                                              class="ant-checkbox"
+                                              class="ant-checkbox ant-checkbox-checked"
                                             >
                                               <input
+                                                checked=""
                                                 class="ant-checkbox-input"
                                                 type="checkbox"
                                                 value="20150"
