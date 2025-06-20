@@ -12,7 +12,14 @@ import member from '@actiontech/shared/lib/testUtil/mockApi/base/member';
 import { useDispatch, useSelector } from 'react-redux';
 import { mockUseDbServiceDriver } from '@actiontech/shared/lib/testUtil/mockHook/mockUseDbServiceDriver';
 import dbServices from '@actiontech/shared/lib/testUtil/mockApi/base/dbServices';
-import { memberList } from '@actiontech/shared/lib/testUtil/mockApi/base/member/data';
+import {
+  memberList,
+  memberProjectPermissions
+} from '@actiontech/shared/lib/testUtil/mockApi/base/member/data';
+import { selectOptionByIndex } from '@actiontech/shared/lib/testUtil/customQuery';
+import { ListMemberRoleWithOpRangeOpRangeTypeEnum } from '@actiontech/shared/lib/api/base/service/common.enum';
+import { dbServices as dbServicesList } from '@actiontech/shared/lib/testUtil/mockApi/base/dbServices/data';
+import { createSpySuccessResponse } from '@actiontech/shared/lib/testUtil/mockApi';
 
 jest.mock('react-redux', () => ({
   ...jest.requireActual('react-redux'),
@@ -26,13 +33,15 @@ describe('base/Member/Drawer/UpdateMember', () => {
   let listUsersSpy: jest.SpyInstance;
   let litDBServices: jest.SpyInstance;
   let listRoleSpy: jest.SpyInstance;
+  let getOpPermissionsSpy: jest.SpyInstance;
+
   beforeEach(() => {
     (useDispatch as jest.Mock).mockImplementation(() => dispatchSpy);
     (useSelector as jest.Mock).mockImplementation((e) =>
       e({
         member: {
           modalStatus: { [ModalName.DMS_Update_Member]: true },
-          selectMember: memberList[3]
+          selectMember: memberList[1]
         }
       })
     );
@@ -43,45 +52,64 @@ describe('base/Member/Drawer/UpdateMember', () => {
     listUsersSpy = userCenter.getUserList();
     litDBServices = dbServices.ListDBServicesTips();
     listRoleSpy = userCenter.getRoleList();
+
+    getOpPermissionsSpy = userCenter.getOpPermissionsList();
+    getOpPermissionsSpy.mockImplementation(() =>
+      createSpySuccessResponse({
+        data: memberProjectPermissions
+      })
+    );
   });
 
   afterEach(() => {
     jest.useRealTimers();
     cleanup();
+    dispatchSpy.mockClear();
   });
 
-  it('should send update member request when click submit button', async () => {
-    const eventEmitSpy = jest.spyOn(EventEmitter, 'emit');
+  it('should render update member form with pre-filled data', async () => {
     const { baseElement } = superRender(<UpdateMember />);
     await act(async () => jest.advanceTimersByTime(3000));
+
     expect(listUsersSpy).toHaveBeenCalledTimes(1);
     expect(litDBServices).toHaveBeenCalledTimes(1);
     expect(listRoleSpy).toHaveBeenCalledTimes(1);
+    expect(getOpPermissionsSpy).toHaveBeenCalledTimes(1);
     expect(baseElement).toMatchSnapshot();
     expect(screen.getByText('编辑成员')).toBeInTheDocument();
     expect(screen.getByText('test')).toBeInTheDocument();
-    expect(screen.getByText('添加平台角色与操作范围')).toBeInTheDocument();
-    expect(screen.getByText('test role 1')).toBeInTheDocument();
-    expect(screen.getByText('test (127.0.0.1:3306)')).toBeInTheDocument();
-    fireEvent.click(screen.getByLabelText('项目管理权限'));
+    expect(screen.getByDisplayValue('700003')).toBeChecked();
+    expect(screen.getByDisplayValue('700010')).toBeChecked();
+    expect(screen.getByDisplayValue('700015')).toBeChecked();
+  });
+
+  it('should send update member request with project admin privileges', async () => {
+    const eventEmitSpy = jest.spyOn(EventEmitter, 'emit');
+    superRender(<UpdateMember />);
+    await act(async () => jest.advanceTimersByTime(3000));
+
+    fireEvent.click(screen.getByLabelText('是否为项目管理员'));
     await act(async () => jest.advanceTimersByTime(0));
-    expect(
-      screen.queryByText('添加平台角色与操作范围')
-    ).not.toBeInTheDocument();
-    expect(screen.getByLabelText('项目管理权限')).toBeChecked();
+
+    expect(screen.getByLabelText('是否为项目管理员')).toBeChecked();
+    expect(screen.queryByText('添加项目操作权限')).not.toBeInTheDocument();
+
     fireEvent.click(screen.getByText('提 交'));
     await act(async () => jest.advanceTimersByTime(0));
+
     expect(screen.getByText('提 交').parentNode).toHaveClass('ant-btn-loading');
     expect(screen.getByText('关 闭').parentNode).toHaveAttribute('disabled');
     expect(updateMemberSpy).toHaveBeenCalledTimes(1);
     expect(updateMemberSpy).toHaveBeenCalledWith({
       member: {
         is_project_admin: true,
-        role_with_op_ranges: undefined
+        role_with_op_ranges: undefined,
+        project_manage_permissions: undefined
       },
-      member_uid: memberList[3].uid,
+      member_uid: memberList[1].uid,
       project_uid: mockProjectInfo.projectID
     });
+
     await act(async () => jest.advanceTimersByTime(3300));
     expect(dispatchSpy).toHaveBeenCalledTimes(1);
     expect(dispatchSpy).toHaveBeenCalledWith({
@@ -95,18 +123,69 @@ describe('base/Member/Drawer/UpdateMember', () => {
     expect(eventEmitSpy).toHaveBeenCalledWith(
       EmitterKey.DMS_Refresh_Member_List
     );
-    expect(screen.getByText('提 交').parentNode).not.toHaveClass(
-      'ant-btn-loading'
+  });
+
+  it('should send update member request with added role and operation range', async () => {
+    const { baseElement } = superRender(<UpdateMember />);
+    await act(async () => jest.advanceTimersByTime(3000));
+
+    fireEvent.click(queryBySelector('.member-form-add-button', baseElement)!);
+    await act(async () => jest.advanceTimersByTime(3000));
+
+    fireEvent.click(screen.getByDisplayValue('700003'));
+    await act(async () => jest.advanceTimersByTime(0));
+    expect(screen.getByDisplayValue('700003')).not.toBeChecked();
+
+    fireEvent.click(screen.getByDisplayValue('700001'));
+    await act(async () => jest.advanceTimersByTime(0));
+    expect(screen.getByDisplayValue('700001')).toBeChecked();
+
+    expect(screen.getByText('项目角色')).toBeInTheDocument();
+    expect(screen.getByText('操作范围')).toBeInTheDocument();
+
+    fireEvent.mouseDown(screen.getByLabelText('项目角色'));
+    const roleOptions = screen.getAllByText('test role 1');
+    const option = roleOptions.find((el) =>
+      el.classList.contains('full-width-element')
     );
-    expect(screen.getByText('关 闭').parentNode).not.toHaveAttribute(
-      'disabled'
+    fireEvent.click(option!);
+    await act(async () => jest.advanceTimersByTime(3000));
+
+    const firstDb = dbServicesList[0];
+    selectOptionByIndex(
+      '操作范围',
+      `${firstDb.name} (${firstDb.host}:${firstDb.port})`,
+      0
     );
+    await act(async () => jest.advanceTimersByTime(3000));
+
+    fireEvent.click(screen.getByText('提 交'));
+    await act(async () => jest.advanceTimersByTime(0));
+
+    expect(updateMemberSpy).toHaveBeenCalledWith({
+      member: {
+        is_project_admin: false,
+        role_with_op_ranges: [
+          {
+            op_range_type: ListMemberRoleWithOpRangeOpRangeTypeEnum.db_service,
+            range_uids: [firstDb.uid],
+            role_uid: '1001'
+          }
+        ],
+        project_manage_permissions: ['700001', '700010', '700015']
+      },
+      member_uid: memberList[1].uid,
+      project_uid: mockProjectInfo.projectID
+    });
   });
 
   it('should close modal when click close button', async () => {
     const { baseElement } = superRender(<UpdateMember />);
+    await act(async () => jest.advanceTimersByTime(3000));
+
     fireEvent.click(queryBySelector('.closed-icon-custom', baseElement)!);
     await act(async () => jest.advanceTimersByTime(1000));
+
     expect(dispatchSpy).toHaveBeenCalledTimes(1);
     expect(dispatchSpy).toHaveBeenCalledWith({
       type: 'member/updateModalStatus',
