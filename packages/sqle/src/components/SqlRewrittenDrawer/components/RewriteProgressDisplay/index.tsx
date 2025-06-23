@@ -240,7 +240,9 @@ const RewriteProgressDisplay: React.FC<IRewriteProgressDisplayProps> = ({
 
   // 获取规则项的状态类名
   const getRuleItemStatus = useCallback(
-    (rule: IRuleProgressInfo) => {
+    (
+      rule: IRuleProgressInfo
+    ): 'processing' | 'completed' | 'error' | 'waiting' => {
       if (rule.status === RewriteSuggestionStatusEnum.processed) {
         return 'completed';
       }
@@ -441,7 +443,11 @@ const RewriteProgressDisplay: React.FC<IRewriteProgressDisplayProps> = ({
         {ruleProgressList.map((rule) => (
           <RuleItemStyleWrapper
             key={rule.ruleId}
-            status={getRuleItemStatus(rule)}
+            className={classNames('rule-item', {
+              'rule-item-processing': getRuleItemStatus(rule) === 'processing',
+              'rule-item-completed': getRuleItemStatus(rule) === 'completed',
+              'rule-item-error': getRuleItemStatus(rule) === 'error'
+            })}
           >
             <RuleHeaderStyleWrapper>
               <div className="rule-name">{rule.ruleName}</div>
@@ -465,7 +471,13 @@ const RewriteProgressDisplay: React.FC<IRewriteProgressDisplayProps> = ({
                     {getRuleIcon(rule)}
                   </div>
                 </CircularProgressStyleWrapper>
-                <StatusTextStyleWrapper status={getRuleItemStatus(rule)}>
+                <StatusTextStyleWrapper
+                  className={classNames('rule-item-status-text', {
+                    completed: getRuleItemStatus(rule) === 'completed',
+                    error: getRuleItemStatus(rule) === 'error',
+                    processing: getRuleItemStatus(rule) === 'processing'
+                  })}
+                >
                   {getRuleStatusText(rule)}
                 </StatusTextStyleWrapper>
               </div>
