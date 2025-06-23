@@ -3,7 +3,7 @@
 exports[`SqlRewrittenDrawer should match snapshot 1`] = `
 <Fragment>
   <SqlRewrittenDrawerEE
-    maskClosable={true}
+    maskClosable={false}
     onClose={[MockFunction]}
     open={true}
     originSqlInfo={

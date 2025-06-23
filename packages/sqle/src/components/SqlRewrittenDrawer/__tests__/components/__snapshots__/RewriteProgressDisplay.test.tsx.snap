@@ -1,0 +1,510 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`RewriteProgressDisplay Component Rendering should render progress container when visible is true and overallStatus is not failed 1`] = `
+<div>
+  <div
+    class="css-g2x33c"
+  >
+    <div
+      class="css-1wqzwxo"
+    >
+      <div
+        class="progress-title"
+      >
+        SQL重写进度
+      </div>
+      <div
+        class="progress-status"
+      >
+        <div
+          class="spinner"
+        />
+        <span
+          class="status-text"
+        >
+          正在使用大模型生成结果，请稍候...
+        </span>
+      </div>
+    </div>
+    <div
+      class="css-1gzz1dm"
+    >
+      <div
+        class="overall-progress-bar"
+      >
+        <div
+          class="progress-fill"
+          style="width: 66.67%;"
+        />
+      </div>
+      <div
+        class="progress-text"
+      >
+        66.67%
+         
+        -
+         
+        2 / 3 个规则已处理
+      </div>
+    </div>
+    <div
+      class="css-sfv171"
+    >
+      <div
+        class="css-3ezkqo"
+      >
+        <div
+          class="css-1npjxh2"
+        >
+          <div
+            class="rule-name"
+          >
+            Test Rule 1
+          </div>
+          <div
+            class="rule-status"
+          >
+            <div
+              class="css-7lpfbh"
+            >
+              <div
+                class="circular-progress completed"
+                style="--progress: 360deg;"
+              />
+              <div
+                class="progress-icon"
+              >
+                <svg
+                  height="16"
+                  style="color: rgb(82, 196, 26); font-size: 14px;"
+                  viewBox="0 0 20 20"
+                  width="16"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M10 18.333a8.333 8.333 0 1 1 0-16.666 8.333 8.333 0 1 1 0 16.666m-.83-5 5.89-5.892-1.177-1.178-4.714 4.714-2.357-2.358-1.179 1.179z"
+                    fill="#41BF9A"
+                  />
+                </svg>
+              </div>
+            </div>
+            <span
+              class="css-1n2kety"
+            >
+              已完成
+            </span>
+          </div>
+        </div>
+        <div
+          class="css-fdm2p6"
+        >
+          Description for test rule 1
+        </div>
+        <div
+          class="rewritten-sql-display css-1nb6fb0"
+        >
+          <div
+            class="rewritten-sql-header"
+          >
+            <div
+              class="sql-label"
+            >
+              重写后SQL
+            </div>
+            <div
+              class="sql-actions"
+            >
+              <div
+                class="actiontech-copy-icon css-1s8kb8e"
+              >
+                <span
+                  aria-label="copy"
+                  class="anticon anticon-copy"
+                  role="img"
+                >
+                  <svg
+                    aria-hidden="true"
+                    data-icon="copy"
+                    fill="currentColor"
+                    focusable="false"
+                    height="1em"
+                    viewBox="64 64 896 896"
+                    width="1em"
+                  >
+                    <path
+                      d="M832 64H296c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h496v688c0 4.4 3.6 8 8 8h56c4.4 0 8-3.6 8-8V96c0-17.7-14.3-32-32-32zM704 192H192c-17.7 0-32 14.3-32 32v530.7c0 8.5 3.4 16.6 9.4 22.6l173.3 173.3c2.2 2.2 4.7 4 7.4 5.5v1.9h4.2c3.5 1.3 7.2 2 11 2H704c17.7 0 32-14.3 32-32V224c0-17.7-14.3-32-32-32zM350 856.2L263.9 770H350v86.2zM664 888H414V746c0-22.1-17.9-40-40-40H232V264h432v624z"
+                    />
+                  </svg>
+                </span>
+              </div>
+            </div>
+          </div>
+          <div
+            class="actiontech-sql-snippet-renderer-wrapper css-q962ee"
+          >
+            <div
+              class="ant-typography ant-typography-ellipsis ant-typography-ellipsis-multiple-line margin-bottom-0"
+            >
+              <span>
+                <span
+                  class="hljs-keyword"
+                >
+                  SELECT
+                </span>
+                 
+                <span
+                  class="hljs-operator"
+                >
+                  *
+                </span>
+                 
+                <span
+                  class="hljs-keyword"
+                >
+                  FROM
+                </span>
+                 table1;
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="css-eea64n"
+      >
+        <div
+          class="css-1npjxh2"
+        >
+          <div
+            class="rule-name"
+          >
+            Test Rule 2
+          </div>
+          <div
+            class="rule-status"
+          >
+            <div
+              class="css-7lpfbh"
+            >
+              <div
+                class="circular-progress waiting"
+                style="--progress: 0deg;"
+              />
+              <div
+                class="progress-icon"
+              >
+                <svg
+                  height="16"
+                  style="color: rgb(217, 217, 217); font-size: 14px;"
+                  viewBox="0 0 18 18"
+                  width="16"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M9 16.5a7.5 7.5 0 1 1 0-15 7.5 7.5 0 0 1 0 15M9 15A6 6 0 1 0 9 3a6 6 0 0 0 0 12m.75-6h3v1.5h-4.5V5.25h1.5z"
+                    fill="#8A8F99"
+                  />
+                </svg>
+              </div>
+            </div>
+            <span
+              class="css-1lh9euo"
+            >
+              等待中
+            </span>
+          </div>
+        </div>
+        <div
+          class="css-fdm2p6"
+        >
+          Description for test rule 2
+        </div>
+      </div>
+      <div
+        class="css-3ezkqo"
+      >
+        <div
+          class="css-1npjxh2"
+        >
+          <div
+            class="rule-name"
+          >
+            Test Rule 3
+          </div>
+          <div
+            class="rule-status"
+          >
+            <div
+              class="css-7lpfbh"
+            >
+              <div
+                class="circular-progress completed"
+                style="--progress: 360deg;"
+              />
+              <div
+                class="progress-icon"
+              >
+                <svg
+                  height="16"
+                  style="color: rgb(82, 196, 26); font-size: 14px;"
+                  viewBox="0 0 20 20"
+                  width="16"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M10 18.333a8.333 8.333 0 1 1 0-16.666 8.333 8.333 0 1 1 0 16.666m-.83-5 5.89-5.892-1.177-1.178-4.714 4.714-2.357-2.358-1.179 1.179z"
+                    fill="#41BF9A"
+                  />
+                </svg>
+              </div>
+            </div>
+            <span
+              class="css-1n2kety"
+            >
+              已完成
+            </span>
+          </div>
+        </div>
+        <div
+          class="css-fdm2p6"
+        >
+          Description for test rule 3
+        </div>
+        <div
+          class="css-14hq9e7"
+        >
+          错误
+          : 
+          Test error message
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`RewriteProgressDisplay Component Rendering should render rewrite failed UI when overallStatus is failed and errorMessage exists 1`] = `
+<div>
+  <div
+    class="css-190orqn"
+  >
+    <div
+      class="rewrite-failed-title"
+    >
+      重写失败
+    </div>
+    <div
+      class="rewrite-failed-message"
+    >
+      Test error message
+    </div>
+    <button
+      class="ant-btn ant-btn-default basic-button-wrapper css-geipcv"
+      type="button"
+    >
+      <span>
+        重 试
+      </span>
+    </button>
+  </div>
+</div>
+`;
+
+exports[`RewriteProgressDisplay Rewritten SQL Display should render SQL with SQLRenderer component 1`] = `
+<div
+  class="rewritten-sql-display css-1nb6fb0"
+>
+  <div
+    class="rewritten-sql-header"
+  >
+    <div
+      class="sql-label"
+    >
+      重写后SQL
+    </div>
+    <div
+      class="sql-actions"
+    >
+      <div
+        class="actiontech-copy-icon css-1s8kb8e"
+      >
+        <span
+          aria-label="copy"
+          class="anticon anticon-copy"
+          role="img"
+        >
+          <svg
+            aria-hidden="true"
+            data-icon="copy"
+            fill="currentColor"
+            focusable="false"
+            height="1em"
+            viewBox="64 64 896 896"
+            width="1em"
+          >
+            <path
+              d="M832 64H296c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h496v688c0 4.4 3.6 8 8 8h56c4.4 0 8-3.6 8-8V96c0-17.7-14.3-32-32-32zM704 192H192c-17.7 0-32 14.3-32 32v530.7c0 8.5 3.4 16.6 9.4 22.6l173.3 173.3c2.2 2.2 4.7 4 7.4 5.5v1.9h4.2c3.5 1.3 7.2 2 11 2H704c17.7 0 32-14.3 32-32V224c0-17.7-14.3-32-32-32zM350 856.2L263.9 770H350v86.2zM664 888H414V746c0-22.1-17.9-40-40-40H232V264h432v624z"
+            />
+          </svg>
+        </span>
+      </div>
+    </div>
+  </div>
+  <div
+    class="actiontech-sql-snippet-renderer-wrapper css-q962ee"
+  >
+    <div
+      class="ant-typography ant-typography-ellipsis ant-typography-ellipsis-multiple-line margin-bottom-0"
+    >
+      <span>
+        <span
+          class="hljs-keyword"
+        >
+          SELECT
+        </span>
+         
+        <span
+          class="hljs-operator"
+        >
+          *
+        </span>
+         
+        <span
+          class="hljs-keyword"
+        >
+          FROM
+        </span>
+         users 
+        <span
+          class="hljs-keyword"
+        >
+          WHERE
+        </span>
+         id 
+        <span
+          class="hljs-operator"
+        >
+          =
+        </span>
+         
+        <span
+          class="hljs-number"
+        >
+          1
+        </span>
+        ;
+      </span>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`RewriteProgressDisplay Rewritten SQL Display should render rewritten SQL for processed rules with rewritten SQL 1`] = `
+<div
+  class="rewritten-sql-display css-1nb6fb0"
+>
+  <div
+    class="rewritten-sql-header"
+  >
+    <div
+      class="sql-label"
+    >
+      重写后SQL
+    </div>
+    <div
+      class="sql-actions"
+    >
+      <div
+        class="actiontech-copy-icon css-1s8kb8e"
+      >
+        <span
+          aria-label="copy"
+          class="anticon anticon-copy"
+          role="img"
+        >
+          <svg
+            aria-hidden="true"
+            data-icon="copy"
+            fill="currentColor"
+            focusable="false"
+            height="1em"
+            viewBox="64 64 896 896"
+            width="1em"
+          >
+            <path
+              d="M832 64H296c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h496v688c0 4.4 3.6 8 8 8h56c4.4 0 8-3.6 8-8V96c0-17.7-14.3-32-32-32zM704 192H192c-17.7 0-32 14.3-32 32v530.7c0 8.5 3.4 16.6 9.4 22.6l173.3 173.3c2.2 2.2 4.7 4 7.4 5.5v1.9h4.2c3.5 1.3 7.2 2 11 2H704c17.7 0 32-14.3 32-32V224c0-17.7-14.3-32-32-32zM350 856.2L263.9 770H350v86.2zM664 888H414V746c0-22.1-17.9-40-40-40H232V264h432v624z"
+            />
+          </svg>
+        </span>
+      </div>
+    </div>
+  </div>
+  <div
+    class="actiontech-sql-snippet-renderer-wrapper css-q962ee"
+  >
+    <div
+      class="ant-typography ant-typography-ellipsis ant-typography-ellipsis-multiple-line margin-bottom-0"
+    >
+      <span>
+        <span
+          class="hljs-keyword"
+        >
+          SELECT
+        </span>
+         
+        <span
+          class="hljs-operator"
+        >
+          *
+        </span>
+         
+        <span
+          class="hljs-keyword"
+        >
+          FROM
+        </span>
+         users 
+        <span
+          class="hljs-keyword"
+        >
+          WHERE
+        </span>
+         id 
+        <span
+          class="hljs-operator"
+        >
+          =
+        </span>
+         
+        <span
+          class="hljs-number"
+        >
+          1
+        </span>
+        ;
+      </span>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`RewriteProgressDisplay Rule Status and Icons should show CheckCircleFilled icon for processed rules 1`] = `
+<div
+  class="circular-progress completed"
+  style="--progress: 360deg;"
+/>
+`;
+
+exports[`RewriteProgressDisplay Rule Status and Icons should show ClockCircleOutlined icon for waiting rules 1`] = `
+<div
+  class="circular-progress waiting"
+  style="--progress: 0deg;"
+/>
+`;
+
+exports[`RewriteProgressDisplay Rule Status and Icons should show CloseCircleFilled icon for rules with error 1`] = `
+<div
+  class="circular-progress error"
+  style="--progress: 0deg;"
+/>
+`;
