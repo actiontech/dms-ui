@@ -21,7 +21,7 @@ const useOpPermission = () => {
     ) => {
       setTrue();
       let service: ListOpPermissionsServiceEnum | undefined = undefined;
-      // #if [sqle]
+      // #if [sqle & !dms]
       service = ListOpPermissionsServiceEnum.sqle;
       // #endif
       DmsApi.OpPermissionService.ListOpPermissions({

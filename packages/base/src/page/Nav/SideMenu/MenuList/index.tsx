@@ -86,12 +86,40 @@ const MenuList: React.FC<Props> = ({ projectID }) => {
       });
     };
 
-    return filterMenusByPermissions(menus).filter((menu) => {
+    const removeContinuousDividers = (
+      menuList: CustomMenuItemType[]
+    ): CustomMenuItemType[] => {
+      const result: CustomMenuItemType[] = [];
+      let previousWasDivider = false;
+
+      for (const menu of menuList) {
+        if (
+          menu &&
+          typeof menu === 'object' &&
+          'type' in menu &&
+          menu.type === 'divider'
+        ) {
+          if (!previousWasDivider) {
+            result.push(menu);
+            previousWasDivider = true;
+          }
+        } else {
+          result.push(menu);
+          previousWasDivider = false;
+        }
+      }
+
+      return result;
+    };
+
+    const filteredMenus = filterMenusByPermissions(menus).filter((menu) => {
       if (menu && 'children' in menu) {
         return (menu as SubMenuType).children.length > 0;
       }
       return true;
     });
+
+    return removeContinuousDividers(filteredMenus);
   }, [projectID, t, checkPagePermission, userOperationPermissions]);
 
   const selectMenu = useCallback(
