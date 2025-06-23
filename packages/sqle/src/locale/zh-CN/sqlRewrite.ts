@@ -37,5 +37,19 @@ export default {
   viewExecuteOrderExplanation: '查看SQL执行解释',
   originalSql: '原始SQL',
   rewrittenSql: '重写后SQL',
-  updateRewrittenResult: '更新重写结果'
+  updateRewrittenResult: '更新重写结果',
+  rewriteProgressTitle: 'SQL重写进度',
+  ruleProcessingPreparing: '准备处理规则：{{ruleName}}',
+  ruleProcessingAnalyzing: '正在分析规则：{{ruleName}}',
+  ruleProcessingApplying: '正在应用规则：{{ruleName}}',
+  ruleStatusWaiting: '等待中',
+  ruleStatusCompleted: '已完成',
+  ruleStatusError: '错误',
+  rulesProcessedProgress: '{{completed}} / {{total}} 个规则已处理',
+  progressPercentage: '{{percentage}}%',
+  rewriteInProgress: '重写中...',
+  rewriteFailed: '重写失败',
+  retryRewrite: '重试',
+  closeDrawerConfirm: '重写任务正在进行中，关闭后任务将被终止。确认关闭吗？',
+  leavePageConfirm: '重写任务正在进行中，离开页面将中断任务。确认离开吗？'
 };
