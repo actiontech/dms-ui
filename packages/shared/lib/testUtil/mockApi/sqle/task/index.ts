@@ -4,7 +4,11 @@ import {
   AuditTaskSQLsMockData,
   SqlRewrittenMockDataNoDDL,
   TaskFileListMockData,
-  workflowTaskDetailMockData
+  workflowTaskDetailMockData,
+  AsyncRewriteTaskStatusMockData,
+  AsyncRewriteTaskStatusCompletedMockData,
+  AsyncRewriteTaskStatusFailedMockData,
+  AsyncRewriteTaskStatusPendingMockData
 } from './data';
 
 class TaskMockApi implements MockSpyApy {
@@ -14,6 +18,9 @@ class TaskMockApi implements MockSpyApy {
     this.getAuditTask();
     this.getAuditFileList();
     this.getSqlFileOrderMethod();
+    this.updateSqlFileOrder();
+    this.getTaskSQLRewritten();
+    this.getAsyncRewriteTaskStatus();
   }
 
   public getAuditTaskSQLs() {
@@ -84,7 +91,41 @@ class TaskMockApi implements MockSpyApy {
   public getTaskSQLRewritten() {
     const spy = jest.spyOn(task, 'RewriteSQL');
     spy.mockImplementation(() =>
-      createSpySuccessResponse({ data: SqlRewrittenMockDataNoDDL })
+      createSpySuccessResponse({ data: AsyncRewriteTaskStatusMockData })
+    );
+    return spy;
+  }
+
+  public getAsyncRewriteTaskStatus() {
+    const spy = jest.spyOn(task, 'GetAsyncRewriteTaskStatus');
+    spy.mockImplementation(() =>
+      createSpySuccessResponse({ data: AsyncRewriteTaskStatusMockData })
+    );
+    return spy;
+  }
+
+  public getAsyncRewriteTaskStatusCompleted() {
+    const spy = jest.spyOn(task, 'GetAsyncRewriteTaskStatus');
+    spy.mockImplementation(() =>
+      createSpySuccessResponse({
+        data: AsyncRewriteTaskStatusCompletedMockData
+      })
+    );
+    return spy;
+  }
+
+  public getAsyncRewriteTaskStatusFailed() {
+    const spy = jest.spyOn(task, 'GetAsyncRewriteTaskStatus');
+    spy.mockImplementation(() =>
+      createSpySuccessResponse({ data: AsyncRewriteTaskStatusFailedMockData })
+    );
+    return spy;
+  }
+
+  public getAsyncRewriteTaskStatusPending() {
+    const spy = jest.spyOn(task, 'GetAsyncRewriteTaskStatus');
+    spy.mockImplementation(() =>
+      createSpySuccessResponse({ data: AsyncRewriteTaskStatusPendingMockData })
     );
     return spy;
   }

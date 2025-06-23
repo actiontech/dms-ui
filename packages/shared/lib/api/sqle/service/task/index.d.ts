@@ -12,7 +12,7 @@ import {
   IUpdateAuditTaskSQLsReqV1,
   IGetTaskAnalysisDataResV1,
   IRewriteSQLReq,
-  IRewriteSQLRes,
+  IAsyncRewriteTaskStatusRes,
   IGetAuditFileListRes,
   IGetAuditFileExecStatisticRes,
   IGetAuditTaskSQLsResV2,
@@ -170,7 +170,16 @@ export interface IRewriteSQLParams extends IRewriteSQLReq {
   number: number;
 }
 
-export interface IRewriteSQLReturn extends IRewriteSQLRes {}
+export interface IRewriteSQLReturn extends IAsyncRewriteTaskStatusRes {}
+
+export interface IGetAsyncRewriteTaskStatusParams {
+  task_id: string;
+
+  number: number;
+}
+
+export interface IGetAsyncRewriteTaskStatusReturn
+  extends IAsyncRewriteTaskStatusRes {}
 
 export interface IGetSqlFileOrderMethodV1Return
   extends IGetSqlFileOrderMethodResV1 {}
