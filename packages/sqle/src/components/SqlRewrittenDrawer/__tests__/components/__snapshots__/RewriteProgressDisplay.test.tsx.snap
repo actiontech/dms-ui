@@ -6,7 +6,7 @@ exports[`RewriteProgressDisplay Component Rendering should render progress conta
     class="css-g2x33c"
   >
     <div
-      class="css-1wqzwxo"
+      class="css-1tulf6c"
     >
       <div
         class="progress-title"
@@ -48,13 +48,13 @@ exports[`RewriteProgressDisplay Component Rendering should render progress conta
       </div>
     </div>
     <div
-      class="css-sfv171"
+      class="css-tqq6rd"
     >
       <div
-        class="css-3ezkqo"
+        class="rule-item rule-item-completed css-4tnrqz"
       >
         <div
-          class="css-1npjxh2"
+          class="css-1oi9ubo"
         >
           <div
             class="rule-name"
@@ -65,7 +65,7 @@ exports[`RewriteProgressDisplay Component Rendering should render progress conta
             class="rule-status"
           >
             <div
-              class="css-7lpfbh"
+              class="css-7mvqc5"
             >
               <div
                 class="circular-progress completed"
@@ -89,7 +89,7 @@ exports[`RewriteProgressDisplay Component Rendering should render progress conta
               </div>
             </div>
             <span
-              class="css-1n2kety"
+              class="rule-item-status-text completed css-jj58qx"
             >
               已完成
             </span>
@@ -101,7 +101,7 @@ exports[`RewriteProgressDisplay Component Rendering should render progress conta
           Description for test rule 1
         </div>
         <div
-          class="rewritten-sql-display css-1nb6fb0"
+          class="rewritten-sql-display css-1q9pbra"
         >
           <div
             class="rewritten-sql-header"
@@ -170,10 +170,10 @@ exports[`RewriteProgressDisplay Component Rendering should render progress conta
         </div>
       </div>
       <div
-        class="css-eea64n"
+        class="rule-item css-4tnrqz"
       >
         <div
-          class="css-1npjxh2"
+          class="css-1oi9ubo"
         >
           <div
             class="rule-name"
@@ -184,7 +184,7 @@ exports[`RewriteProgressDisplay Component Rendering should render progress conta
             class="rule-status"
           >
             <div
-              class="css-7lpfbh"
+              class="css-7mvqc5"
             >
               <div
                 class="circular-progress waiting"
@@ -208,7 +208,7 @@ exports[`RewriteProgressDisplay Component Rendering should render progress conta
               </div>
             </div>
             <span
-              class="css-1lh9euo"
+              class="rule-item-status-text css-jj58qx"
             >
               等待中
             </span>
@@ -221,10 +221,10 @@ exports[`RewriteProgressDisplay Component Rendering should render progress conta
         </div>
       </div>
       <div
-        class="css-3ezkqo"
+        class="rule-item rule-item-completed css-4tnrqz"
       >
         <div
-          class="css-1npjxh2"
+          class="css-1oi9ubo"
         >
           <div
             class="rule-name"
@@ -235,7 +235,7 @@ exports[`RewriteProgressDisplay Component Rendering should render progress conta
             class="rule-status"
           >
             <div
-              class="css-7lpfbh"
+              class="css-7mvqc5"
             >
               <div
                 class="circular-progress completed"
@@ -259,7 +259,7 @@ exports[`RewriteProgressDisplay Component Rendering should render progress conta
               </div>
             </div>
             <span
-              class="css-1n2kety"
+              class="rule-item-status-text completed css-jj58qx"
             >
               已完成
             </span>
@@ -312,7 +312,7 @@ exports[`RewriteProgressDisplay Component Rendering should render rewrite failed
 
 exports[`RewriteProgressDisplay Rewritten SQL Display should render SQL with SQLRenderer component 1`] = `
 <div
-  class="rewritten-sql-display css-1nb6fb0"
+  class="rewritten-sql-display css-1q9pbra"
 >
   <div
     class="rewritten-sql-header"
@@ -401,7 +401,7 @@ exports[`RewriteProgressDisplay Rewritten SQL Display should render SQL with SQL
 
 exports[`RewriteProgressDisplay Rewritten SQL Display should render rewritten SQL for processed rules with rewritten SQL 1`] = `
 <div
-  class="rewritten-sql-display css-1nb6fb0"
+  class="rewritten-sql-display css-1q9pbra"
 >
   <div
     class="rewritten-sql-header"

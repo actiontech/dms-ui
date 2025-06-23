@@ -1,4 +1,4 @@
-import { styled } from '@mui/material';
+import { styled } from '@mui/material/styles';
 
 export const RewriteProgressContainerStyleWrapper = styled('div')`
   padding: 20px;
@@ -26,8 +26,11 @@ export const ProgressHeaderStyleWrapper = styled('div')`
   .progress-status {
     display: flex;
     align-items: center;
-    gap: 8px;
     font-size: 14px;
+
+    > * + * {
+      margin-left: 8px;
+    }
 
     .status-text {
       color: ${({ theme }) => theme.sharedTheme.uiToken.colorPrimary};
@@ -56,6 +59,7 @@ export const ProgressHeaderStyleWrapper = styled('div')`
       0% {
         transform: rotate(0deg);
       }
+
       100% {
         transform: rotate(360deg);
       }
@@ -99,10 +103,13 @@ export const OverallProgressStyleWrapper = styled('div')`
 export const RulesListStyleWrapper = styled('div')`
   display: flex;
   flex-direction: column;
-  gap: 12px;
+
+  > * + * {
+    margin-top: 12px;
+  }
 `;
 
-export const RuleItemStyleWrapper = styled('div')<{ status: string }>`
+export const RuleItemStyleWrapper = styled('div')`
   padding: 16px;
   background: ${({ theme }) => theme.sharedTheme.uiToken.colorBgBase};
   border-radius: 8px;
@@ -110,28 +117,22 @@ export const RuleItemStyleWrapper = styled('div')<{ status: string }>`
     ${({ theme }) => theme.sharedTheme.uiToken.colorBorderSecondary};
   transition: all 0.3s ease;
 
-  ${({ status, theme }) => {
-    switch (status) {
-      case 'processing':
-        return `
-          border-color: ${theme.sharedTheme.uiToken.colorPrimary};
-          box-shadow: 0 0 0 2px ${theme.sharedTheme.uiToken.colorPrimary}20;
-          transform: scale(1.01);
-        `;
-      case 'completed':
-        return `
-          border-color: ${theme.sharedTheme.uiToken.colorSuccess};
-          background: ${theme.sharedTheme.uiToken.colorSuccessBgHover};
-        `;
-      case 'error':
-        return `
-          border-color: ${theme.sharedTheme.uiToken.colorError};
-          background: ${theme.sharedTheme.uiToken.colorErrorBgHover};
-        `;
-      default:
-        return '';
-    }
-  }}
+  &.rule-item-processing {
+    border-color: ${({ theme }) => theme.sharedTheme.uiToken.colorPrimary};
+    box-shadow: 0 0 0 2px
+      ${({ theme }) => theme.sharedTheme.uiToken.colorPrimary}20;
+    transform: scale(1.01);
+  }
+
+  &.rule-item-completed {
+    border-color: ${({ theme }) => theme.sharedTheme.uiToken.colorSuccess};
+    background: ${({ theme }) => theme.sharedTheme.uiToken.colorSuccessBgHover};
+  }
+
+  &.rule-item-error {
+    border-color: ${({ theme }) => theme.sharedTheme.uiToken.colorError};
+    background: ${({ theme }) => theme.sharedTheme.uiToken.colorErrorBgHover};
+  }
 `;
 
 export const RuleHeaderStyleWrapper = styled('div')`
@@ -151,11 +152,14 @@ export const RuleHeaderStyleWrapper = styled('div')`
   .rule-status {
     display: flex;
     align-items: center;
-    gap: 12px;
     font-size: 13px;
     font-weight: 500;
     flex-shrink: 0;
     min-width: 200px;
+
+    > * + * {
+      margin-left: 12px;
+    }
   }
 `;
 
@@ -243,13 +247,14 @@ export const CircularProgressStyleWrapper = styled('div')`
     }
 
     &.spinning {
-      animation: iconSpin 1s linear infinite;
+      animation: icon-spin 1s linear infinite;
     }
 
-    @keyframes iconSpin {
+    @keyframes icon-spin {
       0% {
         transform: translate(-50%, -50%) rotate(0deg);
       }
+
       100% {
         transform: translate(-50%, -50%) rotate(360deg);
       }
@@ -257,25 +262,26 @@ export const CircularProgressStyleWrapper = styled('div')`
   }
 `;
 
-export const StatusTextStyleWrapper = styled('span')<{ status: string }>`
-  color: ${({ status, theme }) => {
-    switch (status) {
-      case 'completed':
-        return theme.sharedTheme.uiToken.colorSuccess;
-      case 'error':
-        return theme.sharedTheme.uiToken.colorError;
-      case 'processing':
-        return theme.sharedTheme.uiToken.colorPrimary;
-      default:
-        return theme.sharedTheme.uiToken.colorTextSecondary;
-    }
-  }};
+export const StatusTextStyleWrapper = styled('span')`
   font-size: 13px;
   font-weight: 500;
   white-space: nowrap;
   min-width: 120px;
   text-align: left;
   transition: color 0.3s ease;
+  color: ${({ theme }) => theme.sharedTheme.uiToken.colorTextSecondary};
+
+  &.completed {
+    color: ${({ theme }) => theme.sharedTheme.uiToken.colorSuccess};
+  }
+
+  &.error {
+    color: ${({ theme }) => theme.sharedTheme.uiToken.colorError};
+  }
+
+  &.processing {
+    color: ${({ theme }) => theme.sharedTheme.uiToken.colorPrimary};
+  }
 `;
 
 export const ErrorMessageStyleWrapper = styled('div')`
@@ -330,7 +336,10 @@ export const RewrittenSqlDisplayStyleWrapper = styled('div')`
       color: ${({ theme }) => theme.sharedTheme.uiToken.colorText};
       display: flex;
       align-items: center;
-      gap: 6px;
+
+      > * + * {
+        margin-left: 6px;
+      }
 
       &::before {
         content: '';
@@ -344,7 +353,10 @@ export const RewrittenSqlDisplayStyleWrapper = styled('div')`
 
   .sql-actions {
     display: flex;
-    gap: 8px;
+
+    > * + * {
+      margin-left: 8px;
+    }
 
     .copy-btn {
       background: none;
