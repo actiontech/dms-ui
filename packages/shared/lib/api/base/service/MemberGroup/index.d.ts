@@ -4,6 +4,7 @@ import {
   IListMemberGroupsReply,
   IAddMemberGroupReq,
   IAddMemberGroupReply,
+  IListMemberGroupTipsReply,
   IGetMemberGroupReply,
   IUpdateMemberGroupReq,
   IGenericResp
@@ -28,6 +29,12 @@ export interface IAddMemberGroupParams extends IAddMemberGroupReq {
 }
 
 export interface IAddMemberGroupReturn extends IAddMemberGroupReply {}
+
+export interface IListMemberGroupTipsParams {
+  project_uid: string;
+}
+
+export interface IListMemberGroupTipsReturn extends IListMemberGroupTipsReply {}
 
 export interface IGetMemberGroupParams {
   member_group_uid: string;
