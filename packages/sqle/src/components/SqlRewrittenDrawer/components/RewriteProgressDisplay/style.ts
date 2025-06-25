@@ -9,6 +9,19 @@ export const RewriteProgressContainerStyleWrapper = styled('div')`
   margin-bottom: 24px;
   box-shadow: 0 2px 8px
     ${({ theme }) => theme.sharedTheme.basic.colorShadowByWhite};
+  transition: all 0.3s ease;
+
+  .progress-toggle-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 8px;
+  }
+
+  &.completed {
+    padding: 12px 20px;
+    margin-bottom: 12px;
+  }
 `;
 
 export const ProgressHeaderStyleWrapper = styled('div')`
@@ -27,10 +40,6 @@ export const ProgressHeaderStyleWrapper = styled('div')`
     display: flex;
     align-items: center;
     font-size: 14px;
-
-    > * + * {
-      margin-left: 8px;
-    }
 
     .status-text {
       color: ${({ theme }) => theme.sharedTheme.uiToken.colorPrimary};
@@ -170,98 +179,6 @@ export const RuleDescriptionStyleWrapper = styled('div')`
   margin-bottom: 12px;
 `;
 
-export const CircularProgressStyleWrapper = styled('div')`
-  position: relative;
-  width: 32px;
-  height: 32px;
-  flex-shrink: 0;
-
-  .circular-progress {
-    width: 32px;
-    height: 32px;
-    border-radius: 50%;
-    position: relative;
-    background: ${({ theme }) => theme.sharedTheme.uiToken.colorFillSecondary};
-
-    &::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      border-radius: 50%;
-      background: conic-gradient(
-        ${({ theme }) => theme.sharedTheme.uiToken.colorPrimary}
-          var(--progress, 0deg),
-        transparent var(--progress, 0deg)
-      );
-      transition: background 0.3s ease;
-    }
-
-    &::after {
-      content: '';
-      position: absolute;
-      top: 6px;
-      left: 6px;
-      width: 20px;
-      height: 20px;
-      border-radius: 50%;
-      background: ${({ theme }) => theme.sharedTheme.uiToken.colorBgBase};
-    }
-
-    &.completed {
-      background: ${({ theme }) => theme.sharedTheme.uiToken.colorSuccess};
-
-      &::before {
-        background: ${({ theme }) => theme.sharedTheme.uiToken.colorSuccess};
-      }
-    }
-
-    &.error {
-      background: ${({ theme }) => theme.sharedTheme.uiToken.colorError};
-
-      &::before {
-        background: ${({ theme }) => theme.sharedTheme.uiToken.colorError};
-      }
-    }
-  }
-
-  .progress-icon {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 16px;
-    height: 16px;
-    z-index: 2;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    svg {
-      width: 14px !important;
-      height: 14px !important;
-      margin: 0;
-      vertical-align: middle;
-    }
-
-    &.spinning {
-      animation: icon-spin 1s linear infinite;
-    }
-
-    @keyframes icon-spin {
-      0% {
-        transform: translate(-50%, -50%) rotate(0deg);
-      }
-
-      100% {
-        transform: translate(-50%, -50%) rotate(360deg);
-      }
-    }
-  }
-`;
-
 export const StatusTextStyleWrapper = styled('span')`
   font-size: 13px;
   font-weight: 500;
@@ -337,14 +254,11 @@ export const RewrittenSqlDisplayStyleWrapper = styled('div')`
       display: flex;
       align-items: center;
 
-      > * + * {
-        margin-left: 6px;
-      }
-
       &::before {
         content: '';
         width: 8px;
         height: 8px;
+        margin-right: 6px;
         border-radius: 50%;
         background: ${({ theme }) => theme.sharedTheme.uiToken.colorSuccess};
       }
@@ -372,6 +286,266 @@ export const RewrittenSqlDisplayStyleWrapper = styled('div')`
         background: ${({ theme }) =>
           theme.sharedTheme.basic.colorPrimaryBgHover};
       }
+    }
+  }
+`;
+
+// 折叠状态的紧凑样式
+export const CompactProgressStyleWrapper = styled('div')`
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 0;
+
+  .compact-left {
+    display: flex;
+    align-items: center;
+    flex: 1;
+
+    .compact-title {
+      font-size: 14px;
+      font-weight: 500;
+      color: ${({ theme }) => theme.sharedTheme.uiToken.colorText};
+      margin-right: 12px;
+    }
+
+    .compact-progress-bar {
+      flex: 1;
+      height: 4px;
+      background: ${({ theme }) =>
+        theme.sharedTheme.uiToken.colorFillSecondary};
+      border-radius: 2px;
+      overflow: hidden;
+      margin-right: 16px;
+
+      .progress-fill {
+        height: 100%;
+        background: linear-gradient(
+          90deg,
+          ${({ theme }) => theme.sharedTheme.uiToken.colorSuccess},
+          ${({ theme }) => theme.sharedTheme.uiToken.colorSuccess}
+        );
+        border-radius: 2px;
+        transition: width 0.3s ease;
+      }
+    }
+  }
+
+  .compact-right {
+    display: flex;
+    align-items: center;
+    font-size: 12px;
+    color: ${({ theme }) => theme.sharedTheme.uiToken.colorSuccess};
+    font-weight: 500;
+  }
+`;
+
+// 规则项动画样式
+export const RuleItemAnimationStyleWrapper = styled('div')`
+  .rule-item-move {
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .rule-item-completed {
+    animation: rule-complete 0.6s ease-out;
+  }
+
+  @keyframes rule-complete {
+    0% {
+      transform: scale(1);
+      background: ${({ theme }) => theme.sharedTheme.uiToken.colorBgBase};
+    }
+
+    50% {
+      transform: scale(1.02);
+      background: ${({ theme }) =>
+        theme.sharedTheme.uiToken.colorSuccessBgHover};
+    }
+
+    100% {
+      transform: scale(1);
+      background: ${({ theme }) =>
+        theme.sharedTheme.uiToken.colorSuccessBgHover};
+    }
+  }
+`;
+
+// 新的波浪进度组件样式
+export const WaveProgressStyleWrapper = styled('div')`
+  position: relative;
+  width: 60px;
+  height: 32px;
+  flex-shrink: 0;
+  border-radius: 16px;
+  overflow: hidden;
+  background: ${({ theme }) => theme.sharedTheme.uiToken.colorFillSecondary};
+  border: 1px solid
+    ${({ theme }) => theme.sharedTheme.uiToken.colorBorderSecondary};
+
+  .wave-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 16px;
+    overflow: hidden;
+  }
+
+  .wave-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: ${({ theme }) => theme.sharedTheme.uiToken.colorFillTertiary};
+    border-radius: 16px;
+  }
+
+  .wave {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 200%;
+    height: 60%;
+    border-radius: 50% 50% 0 0;
+    opacity: 0.6;
+    animation: wave-animation 3s ease-in-out infinite;
+  }
+
+  .wave1 {
+    background: ${({ theme }) => theme.sharedTheme.uiToken.colorPrimary};
+    animation-delay: 0s;
+  }
+
+  .wave2 {
+    background: ${({ theme }) => theme.sharedTheme.basic.colorPrimaryActive};
+    animation-delay: 1s;
+    height: 50%;
+    opacity: 0.4;
+  }
+
+  .wave3 {
+    background: ${({ theme }) => theme.sharedTheme.uiToken.colorPrimary};
+    animation-delay: 2s;
+    height: 40%;
+    opacity: 0.3;
+  }
+
+  @keyframes wave-animation {
+    0% {
+      transform: translateX(-50%) translateY(0);
+    }
+
+    50% {
+      transform: translateX(-50%) translateY(-8px);
+    }
+
+    100% {
+      transform: translateX(-50%) translateY(0);
+    }
+  }
+
+  .stage-indicator {
+    position: absolute;
+    top: 2px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 3;
+
+    .stage-dots {
+      display: flex;
+      gap: 3px;
+
+      .stage-dot {
+        width: 4px;
+        height: 4px;
+        border-radius: 50%;
+        background: ${({ theme }) =>
+          theme.sharedTheme.uiToken.colorTextQuaternary};
+        transition: all 0.3s ease;
+
+        &.active {
+          background: ${({ theme }) => theme.sharedTheme.uiToken.colorPrimary};
+          transform: scale(1.3);
+          box-shadow: 0 0 4px
+            ${({ theme }) => theme.sharedTheme.uiToken.colorPrimary}50;
+        }
+
+        &.completed {
+          background: ${({ theme }) => theme.sharedTheme.uiToken.colorSuccess};
+        }
+      }
+    }
+  }
+
+  @keyframes icon-bounce {
+    0% {
+      transform: translate(-50%, -50%) scale(1);
+    }
+
+    50% {
+      transform: translate(-50%, -50%) scale(1.1);
+    }
+
+    100% {
+      transform: translate(-50%, -50%) scale(1);
+    }
+  }
+
+  &.completed {
+    background: ${({ theme }) => theme.sharedTheme.uiToken.colorSuccessBgHover};
+    border-color: ${({ theme }) => theme.sharedTheme.uiToken.colorSuccess};
+
+    .wave {
+      display: none;
+    }
+
+    .wave-background {
+      background: ${({ theme }) => theme.sharedTheme.uiToken.colorSuccess};
+      opacity: 0.2;
+    }
+
+    .progress-icon {
+      background: ${({ theme }) => theme.sharedTheme.uiToken.colorSuccess};
+      border-color: ${({ theme }) => theme.sharedTheme.uiToken.colorSuccess};
+      color: white;
+    }
+  }
+
+  &.error {
+    background: ${({ theme }) => theme.sharedTheme.uiToken.colorErrorBgHover};
+    border-color: ${({ theme }) => theme.sharedTheme.uiToken.colorError};
+
+    .wave {
+      display: none;
+    }
+
+    .wave-background {
+      background: ${({ theme }) => theme.sharedTheme.uiToken.colorError};
+      opacity: 0.2;
+    }
+
+    .progress-icon {
+      background: ${({ theme }) => theme.sharedTheme.uiToken.colorError};
+      border-color: ${({ theme }) => theme.sharedTheme.uiToken.colorError};
+      color: white;
+    }
+  }
+
+  &.waiting {
+    .wave {
+      display: none;
+    }
+
+    .progress-icon {
+      opacity: 0.5;
+    }
+  }
+
+  &.processing {
+    .wave {
+      animation-play-state: running;
     }
   }
 `;

@@ -1,23 +1,26 @@
-import { useCallback, useMemo, useRef, useState } from 'react';
+import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { useRequest } from 'ahooks';
 import { AsyncRewriteTaskStatusEnum } from '@actiontech/shared/lib/api/sqle/service/common.enum';
 import TaskService from '@actiontech/shared/lib/api/sqle/service/task';
 import { ResponseCode } from '@actiontech/shared/lib/enum';
 import {
   IAsyncRewriteTaskParams,
-  IUseAsyncRewriteProgressOptions,
-  IUseAsyncRewriteProgressReturn
+  IRewriteTaskResult,
+  IUseAsyncRewriteProgressOptions
 } from './useAsyncRewriteProgress.type';
 import {
   mapSuggestionsToRuleProgress,
   calculateOverallProgress,
   calculateCompletedRulesCount,
-  calculateDuration,
   shouldStopPolling,
-  createDefaultRuleProgress,
-  buildRewriteTaskResult
+  buildRewriteTaskResult,
+  shouldUpdateRewriteResult
 } from './useAsyncRewriteProgress.utils';
 import { useTranslation } from 'react-i18next';
+import {
+  saveSqlRewriteCache,
+  getSqlRewriteCache
+} from '../../../utils/sqlRewriteCache';
 
 /**
  * 异步重写进度轮询 Hook
@@ -27,26 +30,24 @@ import { useTranslation } from 'react-i18next';
  */
 export const useAsyncRewriteProgress = (
   options: IUseAsyncRewriteProgressOptions = {}
-): IUseAsyncRewriteProgressReturn => {
+) => {
   const { t } = useTranslation();
-  const {
-    onSuccess,
-    onError,
-    pollingInterval = 2000,
-    pollingWhenHidden = false
-  } = options;
+  const { pollingInterval = 2000 } = options;
 
   const rewriteSqlNumber = useRef<number>();
+  const currentTaskId = useRef<string>();
+  const [rewriteResult, setRewriteResult] = useState<IRewriteTaskResult>();
 
-  // 任务时间信息
-  const [startTime, setStartTime] = useState<string>();
-  const [endTime, setEndTime] = useState<string>();
+  // 添加延迟完成状态管理
+  const [isDelayingComplete, setIsDelayingComplete] = useState(false);
+  const delayCompleteTimerRef = useRef<NodeJS.Timeout | null>(null);
+  const [overallStatus, setOverallStatus] =
+    useState<AsyncRewriteTaskStatusEnum>(AsyncRewriteTaskStatusEnum.pending);
 
   // 重写相关状态
   const [showProgress, setShowProgress] = useState(false);
   const [enableStructureOptimize, setEnableStructureOptimize] = useState(false);
   const [errorMessage, setErrorMessage] = useState<string>();
-  const sqlNumberToRewriteStatusMap = useRef<Map<number, boolean>>(new Map());
 
   // 启动异步重写的请求
   const { loading: asyncStartLoading, run: startAsyncRewrite } = useRequest(
@@ -64,8 +65,11 @@ export const useAsyncRewriteProgress = (
           setShowProgress(true);
           setErrorMessage(undefined); // 清除之前的错误信息
           rewriteSqlNumber.current = number;
+          currentTaskId.current = taskId;
           // 启动轮询
           run({ taskId, sqlNumber: number });
+          setRewriteResult(response.data.data?.result);
+          setOverallStatus(AsyncRewriteTaskStatusEnum.pending);
         }
       },
       onError: () => {
@@ -77,7 +81,7 @@ export const useAsyncRewriteProgress = (
 
   // 使用 useRequest 进行轮询
   const {
-    data: taskData,
+    data: pollingData,
     loading: pollingLoading,
     run,
     cancel,
@@ -92,26 +96,22 @@ export const useAsyncRewriteProgress = (
     {
       manual: true,
       pollingInterval,
-      pollingWhenHidden,
       pollingErrorRetryCount: 3,
       onSuccess: (response) => {
         if (!response) return;
 
-        // 更新时间信息
-        if (response.start_time && !startTime) {
-          setStartTime(response.start_time);
-        }
-
-        if (response.end_time && !endTime) {
-          setEndTime(response.end_time);
-        }
+        const currentRewriteResult = buildRewriteTaskResult(response.result);
 
         // 检查是否需要停止轮询
         const currentStatus =
           response.status || AsyncRewriteTaskStatusEnum.pending;
-        const currentRules = response.result?.suggestions
-          ? mapSuggestionsToRuleProgress(response.result.suggestions)
+        const currentRules = currentRewriteResult?.suggestions
+          ? mapSuggestionsToRuleProgress(currentRewriteResult.suggestions)
           : [];
+        if (shouldUpdateRewriteResult(rewriteResult, currentRewriteResult)) {
+          setRewriteResult(currentRewriteResult);
+          setOverallStatus(currentStatus);
+        }
 
         if (shouldStopPolling(currentStatus, currentRules)) {
           cancel();
@@ -121,15 +121,27 @@ export const useAsyncRewriteProgress = (
           if (
             currentStatus === AsyncRewriteTaskStatusEnum.completed &&
             response.result &&
-            rewriteSqlNumber.current !== undefined
+            rewriteSqlNumber.current !== undefined &&
+            currentTaskId.current !== undefined &&
+            currentRewriteResult
           ) {
-            sqlNumberToRewriteStatusMap.current.set(
+            // 保存到localStorage缓存
+            saveSqlRewriteCache(
+              currentTaskId.current,
               rewriteSqlNumber.current,
-              true
+              currentRewriteResult,
+              enableStructureOptimize
             );
-            const result = buildRewriteTaskResult(response.result);
-            if (result) {
-              onSuccess?.(result);
+
+            // 当重写完成获得结果时，先不立即设置结果
+            // 等待进度条展示完成效果后再设置
+            if (!isDelayingComplete) {
+              setIsDelayingComplete(true);
+              // 保存结果，等待延迟完成后使用
+              delayCompleteTimerRef.current = setTimeout(() => {
+                setRewriteResult(currentRewriteResult);
+                setIsDelayingComplete(false);
+              }, 1500); // 延迟1.5秒
             }
           }
 
@@ -138,36 +150,41 @@ export const useAsyncRewriteProgress = (
             const errorText =
               response.error_message || t('common.unknownError');
             setErrorMessage(errorText);
-            onError?.(new Error(errorText));
+            // 清理延迟定时器
+            if (delayCompleteTimerRef.current) {
+              clearTimeout(delayCompleteTimerRef.current);
+              delayCompleteTimerRef.current = null;
+            }
+            setIsDelayingComplete(false);
+            setRewriteResult(undefined);
           }
         }
       },
       onError: (err) => {
         setShowProgress(false);
         setErrorMessage(err.message || t('common.unknownError'));
-        onError?.(err);
+        // 清理延迟定时器
+        if (delayCompleteTimerRef.current) {
+          clearTimeout(delayCompleteTimerRef.current);
+          delayCompleteTimerRef.current = null;
+        }
+        setIsDelayingComplete(false);
+        setRewriteResult(undefined);
       }
     }
   );
 
-  // 计算派生状态
-  const overallStatus = useMemo(
-    () => taskData?.status || AsyncRewriteTaskStatusEnum.pending,
-    [taskData?.status]
-  );
-
   const ruleProgressList = useMemo(() => {
-    if (taskData?.result?.suggestions) {
-      return mapSuggestionsToRuleProgress(taskData.result.suggestions);
+    if (pollingData?.result?.suggestions) {
+      return mapSuggestionsToRuleProgress(pollingData.result.suggestions);
     }
 
-    // 如果任务正在运行但还没有具体规则数据，创建默认规则
-    if (overallStatus === AsyncRewriteTaskStatusEnum.running) {
-      return createDefaultRuleProgress(1);
+    if (rewriteResult?.suggestions) {
+      return mapSuggestionsToRuleProgress(rewriteResult.suggestions);
     }
 
     return [];
-  }, [taskData?.result?.suggestions, overallStatus]);
+  }, [pollingData?.result?.suggestions, rewriteResult?.suggestions]);
 
   const completedRulesCount = useMemo(
     () => calculateCompletedRulesCount(ruleProgressList),
@@ -179,11 +196,6 @@ export const useAsyncRewriteProgress = (
   const progressPercentage = useMemo(
     () => calculateOverallProgress(ruleProgressList),
     [ruleProgressList]
-  );
-
-  const duration = useMemo(
-    () => calculateDuration(startTime, endTime),
-    [startTime, endTime]
   );
 
   // 是否正在重写（包括启动和轮询过程）
@@ -208,24 +220,53 @@ export const useAsyncRewriteProgress = (
     [enableStructureOptimize, startAsyncRewrite]
   );
 
-  const reset = useCallback(() => {
+  const loadCachedRewriteResult = useCallback(
+    (taskId: string, sqlNumber: number) => {
+      const cachedData = getSqlRewriteCache(taskId, sqlNumber);
+      if (cachedData) {
+        setRewriteResult(cachedData.rewriteResult);
+        setEnableStructureOptimize(cachedData.enableStructureOptimize);
+        setOverallStatus(AsyncRewriteTaskStatusEnum.completed);
+        setShowProgress(false);
+        setErrorMessage(undefined);
+        currentTaskId.current = taskId;
+        rewriteSqlNumber.current = sqlNumber;
+      }
+    },
+    []
+  );
+
+  const resetAllState = useCallback(() => {
     cancel();
     mutate(undefined);
     rewriteSqlNumber.current = undefined;
-    setStartTime(undefined);
-    setEndTime(undefined);
+    currentTaskId.current = undefined;
+    setRewriteResult(undefined);
+    setOverallStatus(AsyncRewriteTaskStatusEnum.pending);
     setShowProgress(false);
     setEnableStructureOptimize(false);
     setErrorMessage(undefined);
+    setIsDelayingComplete(false);
+
+    if (delayCompleteTimerRef.current) {
+      clearTimeout(delayCompleteTimerRef.current);
+      delayCompleteTimerRef.current = null;
+    }
   }, [cancel, mutate]);
 
-  // 检查 SQL 是否已经重写过
-  const hasSqlBeenRewritten = useCallback((sqlNumber: number) => {
-    return sqlNumberToRewriteStatusMap.current.has(sqlNumber);
+  // 组件卸载时清理延迟定时器
+  useEffect(() => {
+    return () => {
+      if (delayCompleteTimerRef.current) {
+        clearTimeout(delayCompleteTimerRef.current);
+        delayCompleteTimerRef.current = null;
+      }
+    };
   }, []);
 
   return {
     isRewriting,
+    asyncStartLoading,
     overallStatus,
     ruleProgressList,
     completedRulesCount,
@@ -234,17 +275,14 @@ export const useAsyncRewriteProgress = (
     showProgress,
     enableStructureOptimize,
     errorMessage,
-
-    // 时间信息
-    startTime: taskData?.start_time || startTime,
-    endTime: taskData?.end_time || endTime,
-    duration,
+    rewriteResult,
+    isDelayingComplete,
 
     // 操作方法
     startRewrite,
     toggleStructureOptimize,
-    reset,
-    hasSqlBeenRewritten,
+    resetAllState,
+    loadCachedRewriteResult,
     updateEnableStructureOptimize: setEnableStructureOptimize
   };
 };
